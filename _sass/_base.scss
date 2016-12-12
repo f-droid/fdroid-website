@@ -1,0 +1,76 @@
+body {
+    margin: 0;
+    font: $base-font-weight #{$base-font-size}/#{$base-line-height} $base-font-family;
+    color: $text-color;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0 0 $spacing-unit/2;
+}
+
+// set h1, h2, ... font sizes by scaling base font size
+$heading-sizes: 3.0, 2.0, 1.5, 1.25, 1.0, 1.0;
+@mixin heading-size($heading) {
+    font-size: nth($heading-sizes, $heading) * $base-font-size;
+}
+
+h1 { @include heading-size(1); color: $text-color-light; font-weight: $bold-font-weight; }
+h2 { @include heading-size(2); color: $text-color-light; font-weight: $bold-font-weight; }
+h3 { @include heading-size(3); color: $text-color; font-weight: $base-font-weight; }
+h4 { @include heading-size(4); color: $text-color; font-weight: $base-font-weight; }
+h5 { @include heading-size(5); color: $text-color; font-weight: $bold-font-weight; }
+h6 { @include heading-size(6); color: $text-color; font-weight: $bold-font-weight; font-style: italic }
+
+a {
+    color: $primary-color;
+    transition: opacity .2s;
+    text-decoration: none;
+
+    &:visited {
+        color: darken($primary-color, 15%);
+    }
+    &:hover {
+        opacity: .65;
+        text-decoration: underline;
+    }
+    &:active {
+        opacity: .5;
+    }
+}
+
+
+@mixin button-dark($background-color) {
+    line-height: $spacing-unit*1.5;
+    padding: 0 $spacing-unit/2;
+    background-color: $background-color;
+    color: #fff;
+    font-weight: $bold-font-weight;
+    font-size: $small-font-size;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: background-color .2s;
+
+    &:hover {
+        opacity: 1;
+        background-color: lighten($background-color, 10%);
+    }
+    &:active {
+        opacity: 1;
+        background-color: lighten($background-color, 20%);
+    }
+}
+
+
+%shadow {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, .3);
+    position: relative;
+}
+
+
+%clearfix {
+    &:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}

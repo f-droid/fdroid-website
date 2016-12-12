@@ -1,0 +1,24 @@
+<header class="site-header">
+
+  <a class="site-title" href="{{ site.baseurl }}/">
+    {% include fdroid-logo.svg %}
+    <h1>{{ site.title }}</h1>
+  </a>
+
+  <nav class="site-nav">
+    {% for nav-item in site.data.navigation %}
+      {% if nav-item.title %}
+        {% if nav-item.external %}
+            <a class="page-link" href="{{ nav-item.url }}">{{ nav-item.title }}</a>
+        {% else %}
+          {% if page.permalink == nav-item.url %}
+            <span class="page-link current">{{ nav-item.title }}</span>
+          {% else %}
+            <a class="page-link" href="{{ nav-item.url | prepend: site.baseurl }}">{{ nav-item.title }}</a>
+          {% endif %}
+        {% endif %}
+      {% endif %}
+    {% endfor %}
+  </nav>
+
+</header>
