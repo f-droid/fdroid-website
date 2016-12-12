@@ -1,0 +1,17 @@
+<h3>Latest Apps</h3>
+
+{% for app in site.data.latest-apps %}
+  <a class="latest-app" href="https://browse.f-droid.org/apps/{{app.id}}">
+    <img class="app-icon" src="https://f-droid.org/repo/icons/{{ app.icon }}" />
+
+    <div class="app-info">
+      <h4 class="app-name">
+        {{ app.name }}
+      </h4>
+
+      <div class="app-desc">
+        <span class="app-summary">{{ app.summary }}</span><span class="app-license">{{ app.license }}</span>
+      </div>
+    </div>
+  </a>
+{% endfor %}

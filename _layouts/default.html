@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+  {% include head.html %}
+
+  <body>
+
+    <div class="site-wrapper">
+
+      {% include header.html %}
+
+      <div class="main-content">
+
+        <div class="article-area">
+          {{ content }}
+        </div>
+
+        <div class="sidebar">
+          <div class="sidebar-widget">
+            {% capture donate %}{% include sidebar-donate.md %}{% endcapture %}
+            {{ donate | markdownify }}
+          </div>
+          
+          <div class="sidebar-widget">
+            {% include sidebar-latest-apps.html %}
+          </div>
+          
+          <div class="sidebar-widget">
+            {% include sidebar-news.html %}
+          </div>
+        </div>
+
+      </div>
+
+      {% include footer.html %}
+
+    </div>
+
+  </body>
+
+</html>

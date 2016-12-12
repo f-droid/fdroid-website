@@ -1,0 +1,155 @@
+body {
+    background: $global-background;
+}
+
+.site-wrapper {
+    max-width: $content-width + $spacing-unit;
+    margin: 0 auto;
+    padding: 0 $spacing-unit/2;
+}
+
+
+
+/**
+ * Header
+ */
+.site-header {
+    background: $content-background;
+    z-index: 1;
+    @extend %shadow;
+}
+
+.site-title {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+
+    svg {
+        margin: $spacing-unit;
+        width: $spacing-unit * 3;
+        height: $spacing-unit * 3;
+
+        @include media-query($tablet) {
+            margin: $spacing-unit * 2 / 3;
+            width: $spacing-unit * 2;
+            height: $spacing-unit * 2;
+        }
+
+        @include media-query($phone) {
+            margin: $spacing-unit / 2;
+            width: $spacing-unit * 1.5;
+            height: $spacing-unit * 1.5;
+        }
+    }
+
+    h1 {
+        margin: 0;
+
+        @include media-query($tablet) {
+            @include heading-size(2);
+        }
+
+        @include media-query($phone) {
+            @include heading-size(3);
+        }
+    }
+}
+
+.site-nav {
+    display: flex;
+    flex-wrap: wrap;
+    background: $primary-color;
+
+    .page-link {
+        @include button-dark($primary-color);
+
+        &.current {
+            pointer-events: none;
+            border-bottom: 6px solid rgba(255, 255, 255, .4);
+        }
+    }
+}
+
+
+
+/**
+ * Content
+ */
+.main-content {
+    background: $content-background;
+    padding: $spacing-unit / 2;
+    padding-top: $spacing-unit;
+    display: flex;
+    @extend %shadow;
+
+    .article-area, .sidebar {
+        flex-basis: 0;
+    }
+
+    .article-area {
+        flex-grow: 5;
+    }
+
+    .sidebar {
+        flex-grow: 2;
+        padding-left: $spacing-unit;
+    }
+
+    @include media-query($tablet) {
+        flex-direction: column;
+
+        .sidebar {
+            padding-left: 0;
+        }
+    }
+}
+
+.sidebar-widget {
+    margin-bottom: $spacing-unit;
+
+    &:not(:last-of-type) {
+        padding-bottom: $spacing-unit;
+        border-bottom: 1px solid #ccc;
+    }
+}
+
+
+
+/**
+ * Latest Apps
+ */
+.latest-app {
+    display: flex;
+    align-items: top;
+    color: $text-color;
+    margin-bottom: $spacing-unit / 3;
+
+    .app-icon {
+        width: 48px;
+        height: 48px;
+        margin-top: $spacing-unit / 4;
+        margin-right: $spacing-unit / 2;
+    }
+
+    .app-name {
+        margin: 0;
+    }
+
+    .app-summary {
+        margin-right: 1em;
+    }
+
+    .app-license {
+        color: $text-color-light;
+        font-style: italic;
+    }
+}
+
+
+
+/**
+ * Footer
+ */
+.site-description {
+    font-size: $small-font-size;
+}

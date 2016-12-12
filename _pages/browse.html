@@ -1,0 +1,23 @@
+---
+layout: page
+title: Browse
+permalink: /browse/
+---
+
+{% for app in site.pages %}
+  {% if app.package-name %}
+    <a class="app-header app-link" href="{{ app.url | prepend: site.baseurl }}">
+      <img class="app-icon" src="https://f-droid.org/repo/icons/{{app.package-name}}.{{app.current-version-code}}.png" />
+
+      <div class="app-title">
+        <h3 class="app-name">
+          {{ app.title }}
+        </h3>
+
+        <div class="app-summary">
+          {{ app.summary }}
+        </div>
+      </div>
+    </a>
+  {% endif %}
+{% endfor %}
