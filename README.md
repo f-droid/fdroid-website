@@ -1,2 +1,5 @@
+# Website of F-Droid.org
 
-New _jekyll_-based version of https://f-droid.org
+This website will going to be used on [F-Droid.org](https://f-droid.org).
+It is based on Jekyll and you can find the development version
+[here](https://fdroid.gitlab.io/fdroid-website/).
