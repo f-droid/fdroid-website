@@ -23,12 +23,12 @@ If you see an application missing from the repository (after reading the [inclus
 
 ### Translate
 
-The client application is available in many languages, but if yours is not included, or if it needs updating or improving, please create an account and use the translation system to make your changes.
+The client application is available in many languages, but if yours is not included, or if it needs updating or improving, please create an account and use the [translation system](https://hosted.weblate.org/projects/f-droid/) to make your changes.
 
-There’s also a dedicated forum section for translation discussions.
+There’s also a [dedicated forum section](https://f-droid.org/forums/forum/translation/) for translation discussions.
 
 ### Help with Development
 
-There are three git repositories hosted at Gitlab – one for the Android client application, one for the server tools for running a repository and building/installing applications locally, and one for the associated metadata files for applications in the main F-Droid repository. The easiest way to contribute to development is to make clones of these projects and submit merge requests. If you are making large changes, it would be good to discuss them on IRC or in the forum first, to ensure they fit with the direction of the project, and do not clash with or duplicate work already in development.
+There are three git repositories hosted at Gitlab – one for the [Android client application](https://gitlab.com/fdroid/fdroidclient), one for the [server tools](https://gitlab.com/fdroid/fdroidserver) for running a repository and building/installing applications locally, and one for the associated [metadata files for applications in the main F-Droid repository](https://gitlab.com/fdroid/fdroiddata). The easiest way to contribute to development is to make clones of these projects and submit merge requests. If you are making large changes, it would be good to discuss them on IRC or in the forum first, to ensure they fit with the direction of the project, and do not clash with or duplicate work already in development.
 
-For working with the server project, it’s a good idea to read the manual.
+For working with the server project, it’s a good idea to read [the manual]({{ "/manual/" | prepend: site.baseurl }}).
