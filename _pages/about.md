@@ -8,11 +8,11 @@ F-Droid is a robot with a passion for Free and Open Source (FOSS) software on th
 
 F-Droid is operated by F-Droid Limited, a non-profit organisation registered in England (no. 8420676).
 
-You can also follow F-Droid’s microblog on identi.ca at [fdroid@identi.ca](http://identi.ca/fdroid), or discuss and get help on IRC in channel #fdroid on FreeNode. You can directly contact us by email at [team@f-droid.org](mailto:team@f-droid.org). If you want to help, you can [join us]({{ "/contribute/" | prepend: site.baseurl }}).
+You can discuss F-Droid or get help on IRC in channel [#fdroid on FreeNode](https://webchat.freenode.net/?channels=%23fdroid). The discussions on IRC are logged on [BotBot.me](https://botbot.me/freenode/fdroid). You can also directly contact us by email at [team@f-droid.org](mailto:team@f-droid.org). If you want to help, you can [join us]({{ "/contribute/" | prepend: site.baseurl }}).
 
 The F-Droid logo was created by William Theaker. Updates to that, and additional artwork, are by Robert Martinez. All are dual licensed under CC-BY-SA 3.0 Unported or GPLv3+.
 
-The content of the news and reviews section is licensed under a [Creative Commons Attribution-ShareAlike 3.0 License](http://creativecommons.org/licenses/by-sa/3.0/). 
+The content of the news and reviews section is licensed under a [Creative Commons Attribution-ShareAlike 3.0 License](http://creativecommons.org/licenses/by-sa/3.0/).
 
 [![Creative Commons Logo](https://i.creativecommons.org/l/by-sa/3.0/88x31.png "Creative Commons Logo")](http://creativecommons.org/licenses/by-sa/3.0/)
 
