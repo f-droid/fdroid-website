@@ -24,7 +24,8 @@ F-Droid respects your privacy. We don’t track you, or your device. We don’t 
 
 ### Contributors
 
-The F-Droid project was founded in 2010 by Ciaran Gultnieks, and is brought to you by at least (if your name is missing, it’s a mistake and you should let us know!) the following people:
+The F-Droid project was founded in 2010 by Ciaran Gultnieks,
+and is brought to you by at least the following people:
 
 * Laura Arjona
 * Ben Arnold
@@ -71,5 +72,9 @@ The F-Droid project was founded in 2010 by Ciaran Gultnieks, and is brought to y
 * Ivo Ugrina
 * Matthias Weiler
 * Philipp Wollschlegel
+
+If your name is missing, it’s a mistake and you should
+[add yourself to the list](https://gitlab.com/fdroid/fdroid-website/blob/master/_pages/about.md)!
+Keep it sorted by surname, please.
 
 The original F-Droid client app was based on the Aptoide app developed by Roberto Jacinto.
