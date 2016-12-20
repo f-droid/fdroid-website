@@ -4,24 +4,55 @@ This website will going to be used on [F-Droid.org](https://f-droid.org).
 It is based on Jekyll and you can find the development version
 [here](https://fdroid.gitlab.io/fdroid-website/).
 
-## Building with Jekyll
+## Building
 
-To build the website, you need to have Jekyll 3.0+ installed.
-With Ubuntu 16.04 and Debian Stretch you can simply install Jekyll with your package manager:
+### Install Jekyll 3.2+
 
-```
-sudo apt-get install jekyll
-```
-
-If your package manager does not provides version 3.0+ of Jekyll,
-you need to install it with Gem. Therefore you need Ruby 2.0+.
+To build the website, you need to have Jekyll 3.2+ installed.
+This is easily done by with Gem. Therefore you need Ruby 2.0+.
 
 ```
 sudo apt-get install ruby-full build-essential
 sudo gem install jekyll
 ```
 
-Finally go to the root directory of the website and build it with Jekyll:
+### Install Node.js 6.x
+
+On Debian and Ubuntu, you can download a script that sets up a ppa and then you can install Node.js with the package manager.
+
+````
+curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
+sudo apt-get install -y nodejs
+````
+
+Or have a look at the [official website](https://nodejs.org/en/download/) for other distros and installation possibilities.
+
+### Build the fdroid website
+
+First, navigate into the root directory of this repository.
+
+For the very first time (or if the `package.json` file has been updated in newer versions),
+you have to install all dependencies needed for Node.js by running:
+
+
+````
+npm install
+````
+
+
+To generate the data (e. g. apps), execute the `build.js` script:
+
+````
+nodejs build.js
+````
+
+To build the website with Jekyll, run:
+
+```
+jekyll build
+```
+
+Or if you want to build and also start a local server at localhost:4000, use:
 
 ```
 jekyll serve
