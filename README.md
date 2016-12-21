@@ -6,47 +6,42 @@ It is based on Jekyll and you can find the development version
 
 ## Building
 
-### Install Jekyll 3.2+
+Always navigate into the root directory of this repository before you run the build commands.
 
-To build the website, you need to have Jekyll 3.2+ installed.
-This is easily done by with Gem. Therefore you need Ruby 2.0+.
+#### Generate app data (optional, only for browsing)
 
-```
-sudo apt-get install ruby-full build-essential
-sudo gem install jekyll
-```
-
-### Install Node.js 6.x
-
-On Debian and Ubuntu, you can download a script that sets up a ppa and then you can install Node.js with the package manager.
+You need to have Node.js 6.x installed. On Debian and Ubuntu, you can download a script that sets up a ppa which lets you install Node.js with the package manager.
+Or have a look at the [official website](https://nodejs.org/en/download/) for other distros and installation possibilities.
 
 ````
 curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
 sudo apt-get install -y nodejs
 ````
 
-Or have a look at the [official website](https://nodejs.org/en/download/) for other distros and installation possibilities.
-
-### Build the fdroid website
-
-First, navigate into the root directory of this repository.
-
 For the very first time (or if the `package.json` file has been updated in newer versions),
 you have to install all dependencies needed for Node.js by running:
-
 
 ````
 npm install
 ````
 
-
-To generate the data (e. g. apps), execute the `build.js` script:
+To generate the app data, execute the `build.js` script each time:
 
 ````
 nodejs build.js
 ````
 
-To build the website with Jekyll, run:
+#### Build website with Jekyll
+
+You need to have Jekyll 3.2+ installed.
+This is easily done with Gem which depends on Ruby 2.0+.
+
+```
+sudo apt-get install ruby-full build-essential
+sudo gem install jekyll
+```
+
+To build the website, run:
 
 ```
 jekyll build
