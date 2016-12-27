@@ -1,17 +1,8 @@
 <h3>Latest Apps</h3>
 
-{% for app in site.data.latest-apps %}
-  <a class="latest-app" href="https://browse.f-droid.org/apps/{{app.id}}">
-    <img class="app-icon" src="https://f-droid.org/repo/icons/{{ app.icon }}" />
+{% assign apps = site.pages | where_exp: "item", "item.package" %}
 
-    <div class="app-info">
-      <h4 class="app-name">
-        {{ app.name }}
-      </h4>
-
-      <div class="app-desc">
-        <span class="app-summary">{{ app.summary }}</span><span class="app-license">{{ app.license }}</span>
-      </div>
-    </div>
-  </a>
+{% assign latestApps = apps | sort: "title" | reverse | sort: "added" | reverse %}
+{% for latestApp in latestApps limit:10 %}
+  {% include app-list-item.html app=latestApp %}
 {% endfor %}

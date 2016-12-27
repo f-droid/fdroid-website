@@ -1,6 +1,9 @@
 const fs = require("fs");
 const xml = require("node-xml");
 
+// delete old apps
+require("rimraf").sync("_apps/*");
+
 // download xml data
 require('https').get('https://f-droid.org/repo/index.xml', (res) => {
   let data = '';
@@ -18,6 +21,8 @@ require('https').get('https://f-droid.org/repo/index.xml', (res) => {
 
     // get apps by parsing the xml
     new xml.SaxParser(function(cb) {
+      let isPackage = false;
+
       cb.onStartElementNS(function(elem, attrs, prefix, uri, namespaces) {
           switch (elem) {
             case "application":
@@ -26,7 +31,7 @@ require('https').get('https://f-droid.org/repo/index.xml', (res) => {
               break;
 
             case "id":
-              property = "id";
+              property = "package";
               break;
 
             case "added":
@@ -34,7 +39,7 @@ require('https').get('https://f-droid.org/repo/index.xml', (res) => {
               break;
 
             case "name":
-              property = "name";
+              property = "title";
               break;
 
             case "summary":
@@ -48,33 +53,55 @@ require('https').get('https://f-droid.org/repo/index.xml', (res) => {
             case "icon":
               property = "icon";
               break;
+
+            case "lastupdated":
+              property = "lastupdated";
+              break;
+
+            case "package":
+              isPackage = true;
+              break;
           }
       });
+      cb.onEndElementNS(function(elem, prefix, uri) {
+        switch (elem) {
+          case "package":
+            isPackage = false;
+            break;
+        }
+      })
       cb.onCharacters(function(chars) {
-          if (property !== undefined) {
-            apps[apps.length - 1][property] = chars;
-          }
-          property = undefined;
+        if (property !== undefined && !isPackage) {
+          apps[apps.length - 1][property] = chars;
+        }
+        property = undefined;
       });
     }).parseString(data);
 
-    // sort by added descending
-    apps.sort(function(a, b) {
-      return parseInt(b.added.replace(/-/g, '')) - parseInt(a.added.replace(/-/g, ''));
-    });
-
-    // save latest 10 apps into json file
-    const latestApps = [];
-    for (let i = 0; i < 10 && i < apps.length; i++) {
-      let app = apps[i];
-      latestApps[i] = {
-        id: app.id,
-        name: app.name,
-        summary: app.summary,
-        license: app.license,
-        icon: app.icon
-      };
+    // create new apps directory if necessary
+    if (!fs.existsSync('_apps')) {
+      fs.mkdirSync('_apps');
     }
-    fs.writeFile('_data/latest-apps.json', JSON.stringify(latestApps));
+
+    // create app files
+    for (let app of apps) {
+      let appData = [
+        `---`,
+        `layout: app`,
+        `permalink: "/repository/apps/${app.package}/"`,
+        `---`
+      ];
+
+      for (let property of ['package', 'title', 'summary', 'license', 'icon', 'added', 'lastupdated']) {
+        if (app[property] !== undefined) {
+          appData.splice(
+            appData.length-1, 0,
+            `${property}: "${app[property]}"`
+          );
+        }
+      }
+
+      fs.writeFileSync(`_apps/${app.package}.html`, appData.join('\n'));
+    }
   });
 });
