@@ -4,20 +4,11 @@ title: Browse
 permalink: /browse/
 ---
 
-{% for app in site.pages %}
-  {% if app.package-name %}
-    <a class="app-header app-link" href="{{ app.url | prepend: site.baseurl }}">
-      <img class="app-icon" src="https://f-droid.org/repo/icons/{{app.package-name}}.{{app.current-version-code}}.png" />
+<h3>Last updated</h3>
 
-      <div class="app-title">
-        <h3 class="app-name">
-          {{ app.title }}
-        </h3>
+{% assign apps = site.pages | where_exp: "item", "item.package" %}
 
-        <div class="app-summary">
-          {{ app.summary }}
-        </div>
-      </div>
-    </a>
-  {% endif %}
+{% assign updatedApps = apps | sort: "title" | reverse | sort: "lastupdated" | reverse %}
+{% for updatedApp in updatedApps limit:10 %}
+  {% include app-list-item.html app=updatedApp %}
 {% endfor %}

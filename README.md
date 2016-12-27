@@ -34,11 +34,11 @@ nodejs build.js
 #### Build website with Jekyll
 
 You need to have Jekyll 3.2+ installed.
-This is easily done with Gem which depends on Ruby 2.0+.
+This is easily done with Gem which depends on Ruby 2.0+. You also need to install the dependencies described in `_config.yml` with gem.
 
 ```
 sudo apt-get install ruby-full build-essential
-sudo gem install jekyll
+sudo gem install jekyll jekyll-include-cache
 ```
 
 To build the website, run:
