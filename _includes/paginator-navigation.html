@@ -1,0 +1,30 @@
+{% if include.paginator.total_pages > 1 %}
+<div class="browse-navigation">
+  <div class="previous">
+    {% if include.paginator.previous_page %}
+      <a href="{{ include.paginator.previous_page_path | prepend: site.baseurl }}">Previous</a>
+    {% endif %}
+  </div>
+  <div class="summary">
+    Page {{ include.paginator.page }} of {{ include.paginator.total_pages }}
+  </div>
+  <div class="next">
+    {% if include.paginator.next_page %}
+      <a href="{{ include.paginator.next_page_path | prepend: site.baseurl }}">Next</a>
+    {% endif %}
+  </div>
+</div>
+<div class="browse-pages">
+  {% for page in (1..include.paginator.total_pages) %}
+    {% if page == include.paginator.page %}
+      <b>{{ page }}</b>
+    {% else %}
+      {% if page == 1 %}
+        <a href="{{ include.permalink | prepend: site.baseurl }}">{{ page }}</a>
+      {% else %}
+        <a href="{{ include.permalink | append: page | prepend: site.baseurl }}">{{ page }}</a>
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+</div>
+{% endif %}
