@@ -88,7 +88,7 @@ require('https').get('https://f-droid.org/repo/index.xml', (res) => {
       let appData = [
         `---`,
         `layout: app`,
-        `permalink: "/repository/apps/${app.package}/"`,
+        `permalink: "/packages/apps/${app.package}/"`,
         `redirect_from:`,
         `  - "/app/${app.package}/"`,
         `---`
