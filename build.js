@@ -89,6 +89,8 @@ require('https').get('https://f-droid.org/repo/index.xml', (res) => {
         `---`,
         `layout: app`,
         `permalink: "/repository/apps/${app.package}/"`,
+        `redirect_from:`,
+        `  - "/app/${app.package}/"`,
         `---`
       ];
 

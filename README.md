@@ -38,7 +38,7 @@ This is easily done with Gem which depends on Ruby 2.0+. You also need to instal
 
 ```
 sudo apt-get install ruby-full build-essential
-sudo gem install jekyll jekyll-include-cache jekyll-paginate-v2
+sudo gem install jekyll jekyll-include-cache jekyll-paginate-v2 jekyll-redirect-from
 ```
 
 To build the website, run:

@@ -6,12 +6,18 @@ test:
   stage: test
   script:
   - apt-get update
+  - apt-get install -y locales
+  - echo "en_US UTF-8" > /etc/locale.gen
+  - locale-gen en_US.UTF-8
+  - export LANG=en_US.UTF-8
+  - export LANGUAGE=en_US:en
+  - export LC_ALL=en_US.UTF-8
   - apt-get install -y curl
   - curl -sL https://deb.nodesource.com/setup_6.x | bash -
   - apt-get install -y nodejs
   - npm install
   - nodejs build.js
-  - gem install jekyll jekyll-include-cache jekyll-paginate-v2
+  - gem install jekyll jekyll-include-cache jekyll-paginate-v2 jekyll-redirect-from
   - jekyll build -d test
   artifacts:
     paths:
@@ -23,12 +29,18 @@ pages:
   stage: deploy
   script:
   - apt-get update
+  - apt-get install -y locales
+  - echo "en_US UTF-8" > /etc/locale.gen
+  - locale-gen en_US.UTF-8
+  - export LANG=en_US.UTF-8
+  - export LANGUAGE=en_US:en
+  - export LC_ALL=en_US.UTF-8
   - apt-get install -y curl
   - curl -sL https://deb.nodesource.com/setup_6.x | bash -
   - apt-get install -y nodejs
   - npm install
   - nodejs build.js
-  - gem install jekyll jekyll-include-cache jekyll-paginate-v2
+  - gem install jekyll jekyll-include-cache jekyll-paginate-v2 jekyll-redirect-from
   - jekyll build -d public
   artifacts:
     paths:
