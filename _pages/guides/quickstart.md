@@ -1,0 +1,185 @@
+---
+layout: page
+title: Submitting to F-Droid Quick Start Guide
+permalink: /guides/quickstart/
+---
+### Submitting to F-Droid: Quick Start Guide
+
+by Andy Balaam, original at
+[artificialworlds.net](http://www.artificialworlds.net/blog/2017/01/17/submitting-a-package-to-f-droid/)
+
+Here's what I needed to get a dev environment for
+[F-Droid](https://f-droid.org/) up and running on Ubuntu 16.10, using F-Droid
+server version 0.7.0 (commit id 8147f9235), so that I could submit a package
+for inclusion in the F-Droid repository.
+
+Doing this is apparently the best way to get your own package into the
+repository, since you can provide a direct merge request for the metadata about
+your package, making it easy for the maintainers.
+
+References:
+
+* [F-Droid manual](https://f-droid.org/manual/fdroid.html)
+* [F-Droid's
+CONTRIBUTING.md](https://gitlab.com/fdroid/fdroiddata/blob/master/CONTRIBUTING.md)
+* [F-Droid
+Quickstart](https://gitlab.com/fdroid/fdroiddata/blob/master/README.md#quickstart)
+* [Contribute to F-Droid](https://f-droid.org/contribute/)
+
+#### Setup
+
+Before you start, manually install the Android SDK at ~/Android/Sdk/ - see
+[Download Android
+Studio](https://developer.android.com/studio/index.html#downloads).  I
+installed version 23.0.2, but you will probably have a later one and may need
+to adjust the version number below.
+
+Note: If you're only planning to contribute a package I'm fairly certain you
+don't need to install the Android SDK at all - you can just use the build
+server by running ./makebuildserver as I outline below.
+
+Also before you start, if you want to contribute to the server project you
+should fork the F-Droid server project by going to
+[gitlab.com/fdroid/fdroidserver](https://gitlab.com/fdroid/fdroidserver) and
+clicking Fork.  When you've done that, the git clone command below will need to
+change to clone your own fork via SSH, instead of the HTTPS one cloning the
+main repo that is shown below.  Do the same for the [F-Droid data
+project](https://gitlab.com/fdroid/fdroiddata), which holds the information
+about the packages in F-Droid.  It's the data project where you will want to
+make changes if you are submitting a package.
+
+Run these commands:
+
+```
+# Prerequisites
+sudo apt-get install openjdk-8-jdk subversion git git-svn \
+    mercurial bzr virtualbox ruby ruby-dev vagrant python3 python3-paramiko \
+    python3-pil python3-pyasn1-modules python3-clint
+vagrant plugin install vagrant-cachier
+ln -s ~/Android/Sdk/build-tools/23.0.2/aapt ~/Android/Sdk/platform-tools/
+
+# Get the code
+cd ~/code
+git clone https://gitlab.com/fdroid/fdroidserver.git
+git clone https://gitlab.com/fdroid/fdroiddata.git
+echo 'export PATH="~/code/fdroidserver:$PATH"' >> ~/.profile source ~/.profile
+
+# Config
+cd fdroiddata
+cp ../fdroidserver/examples/config.py ./
+chmod 0600 config.py
+echo 'sdk_path = "$HOME/Android/Sdk"' >> config.py
+
+# Set up Vagrant build box
+cd ../fdroidserver
+cp ./examples/makebuildserver.config.py ./
+./makebuildserver
+# Now wait several hours for this to finish
+
+# Build a package (the F-Droid client) just to check it works
+cd ../fdroiddata
+mkdir repo
+fdroid update --create-key
+fdroid readmeta  # Should give no output if it worked
+fdroid build --server org.fdroid.fdroid
+```
+
+#### Make your own package
+
+Below I'm using my own package, Rabbit Escape, as an example.  Its Android code
+is inside rabbit-escape-ui-android/app, whereas many programs will just have it
+directly in a directory called "app".
+
+Rabbit Escape also builds non-Android-specific Java and other things during its
+build, so your package may be simpler.
+
+```
+cd ../fdroiddata
+fdroid import --url https://github.com/andybalaam/rabbit-escape \
+    --subdir rabbit-escape-ui-android/app
+````
+
+Now edit the new file that was created - in my case it was called
+metadata/net.artificialworlds.rabbitescape.txt.
+
+I set the following info:
+
+```
+Categories:Games
+License:GPL-2.0+
+Author Name:Andy Balaam and the Rabbit Escape developers
+Author Email:rabbitescape@artificialworlds.net
+Web Site:http://artificialworlds.net/rabbit-escape
+Source Code:https://github.com/andybalaam/rabbit-escape
+Issue Tracker:https://github.com/andybalaam/rabbit-escape/issues
+
+Name:Rabbit Escape
+Summary:Lemmings-like puzzle/action game
+Description:
+140 levels of puzzling action!
+ ... blah blah ...
+.
+
+Repo Type:git
+Repo:https://github.com/andybalaam/rabbit-escape
+Binaries:https://github.com/andybalaam/rabbit-escape/releases/download/v%v/rabbit-escape-%v.apk
+
+Build:0.10.2,102
+    commit=v0.10.2
+    subdir=rabbit-escape-ui-android/app
+    gradle=paid
+    build=cd ../.. && \
+        make android-pre-fdroid
+
+Auto Update Mode:Version v%v
+Update Check Mode:Tags v\d+\.\d+(\.\d+)?
+Current Version:0.10.2
+Current Version Code:102
+```
+
+For more info, see the [F-Droid
+manual](https://f-droid.org/manual/fdroid.html#Categories).
+
+And then checked it all worked with:
+
+```
+cd ../fdroiddata
+fdroid lint net.artificialworlds.rabbitescape
+fdroid readmeta
+fdroid checkupdates net.artificialworlds.rabbitescape
+fdroid rewritemeta net.artificialworlds.rabbitescape
+```
+
+When I got the version stuff right the checkupdates command printed:
+
+```
+INFO: Processing net.artificialworlds.rabbitescape...
+INFO: ...updating to version 0.10.1 (101)
+INFO: Finished.
+```
+
+Then I made sure it built OK:
+
+```
+fdroid build --server -v -l net.artificialworlds.rabbitescape
+```
+
+Actually, it didn't work, and I decided I had to request a new package (sox) be
+installed in the build machine environment (in the fdroidserver project).  The
+relevant commit is here:
+[19e372026](https://gitlab.com/andybalaam/fdroidserver/commit/19e372026aaca62349e6f5fd541dc3ba29d94836).
+Actually though, after [discussion with the F-Droid
+devs](https://botbot.me/freenode/fdroid-dev/2017-01-17/?msg=79512863&page=1) we
+agreed I'd be better off not using sox during the build, so I didn't need this.
+
+Side note: if you do end up needing to modify the build environment for
+F-Droid, make sure you delete the fdroiddata/buildserver directory when you
+re-try your build.  That one had me stuck for a few days, with the old
+environment being used no matter what caches I cleared and vagrant commands I
+ran.
+
+And now I was ready to request my package be included in F-Droid by committing
+and pushing the changes I had made to the fdroiddata project to my forked repo,
+and clicking the Merge Request button in the gitlab UI.  My merge request is
+here:
+[gitlab.com/fdroid/fdroiddata/merge_requests/1965](https://gitlab.com/fdroid/fdroiddata/merge_requests/1965)
