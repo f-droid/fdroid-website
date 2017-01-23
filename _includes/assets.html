@@ -1,0 +1,10 @@
+<!-- use variable for assets dir to provide path that works in all instances -->
+{% assign assets = '' %}
+{% assign depth = page.url | split: '/' | size | minus: 1 %}
+{% assign assets = 'assets' %}
+{% if     depth == 1 %}{% assign assets = '../assets' %}
+{% elsif  depth == 2 %}{% assign assets = '../assets' %}
+{% elsif  depth == 3 %}{% assign assets = '../../assets' %}
+{% elsif  depth == 4 %}{% assign assets = '../../../assets' %}
+{% elsif  depth == 5 %}{% assign assets = '../../../../assets' %}
+{% endif %}
