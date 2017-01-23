@@ -1,8 +1,9 @@
 ---
 layout: page
 title: Submitting to F-Droid Quick Start Guide
-permalink: /guides/quickstart/
+permalink: /docs/Submitting_to_F-Droid_Quick_Start_Guide
 ---
+
 ### Submitting to F-Droid: Quick Start Guide
 
 by Andy Balaam, original at
@@ -19,11 +20,9 @@ your package, making it easy for the maintainers.
 
 References:
 
-* [F-Droid manual](https://f-droid.org/manual/fdroid.html)
-* [F-Droid's
-CONTRIBUTING.md](https://gitlab.com/fdroid/fdroiddata/blob/master/CONTRIBUTING.md)
-* [F-Droid
-Quickstart](https://gitlab.com/fdroid/fdroiddata/blob/master/README.md#quickstart)
+* [F-Droid manual](https://f-droid.org/manual/)
+* [F-Droid's CONTRIBUTING.md](https://gitlab.com/fdroid/fdroiddata/blob/master/CONTRIBUTING.md)
+* [F-Droid Quickstart](https://gitlab.com/fdroid/fdroiddata/blob/master/README.md#quickstart)
 * [Contribute to F-Droid](https://f-droid.org/contribute/)
 
 #### Setup

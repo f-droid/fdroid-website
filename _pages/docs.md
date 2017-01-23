@@ -19,6 +19,7 @@ F-Droid is both a repository of verified free software Android apps as well as a
 * [FAQ App Developers](FAQ_-_App_Developers) Frequently Asked Questions about F-Droid
 * [The Manual](../manual/) Essential reading for contributors and those setting up their own repository.
 * [How to Help](How_to_Help) Different ways users can contribute to the F-Droid project.
+* [Submitting to F-Droid: Quick Start Guide](Submitting_to_F-Droid_Quick_Start_Guide) Add an app to f-droid.org
 * [Inclusion Policy](Inclusion_Policy) & [Inclusion How-To](Inclusion_How-To)  Guidelines for how to request the inclusion of a new app.
 * [Whitelabel Builds](Whitelabel_Builds) custom builds of F-Droid
 * [Installing the Server and Repo Tools](Installing_the_Server_and_Repo_Tools) How to install fdroidserver, the tools for running repos and build servers.
