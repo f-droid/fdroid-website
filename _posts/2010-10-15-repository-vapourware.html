@@ -1,0 +1,31 @@
+---
+layout: post
+title: "F-Droid Repository Vapourware"
+author: "F-Droid"
+---
+
+<div class="post-entry">
+<p>The observant amongst you will have noticed the “and more” in this site’s tagline. I thought I’d write a little bit of an introduction to that side of things, since I’ve briefly mentioned it to various people already anyway.</p>
+<p>The plan is to implement something that’s sorely missing from the Android world – a repository of FOSS software. Development of this is well underway, and soon there should be code to be seen and alpha versions to be played with. As of right now there’s nothing to see though, hence the ‘vapourware’ in the title of the post.</p>
+<p>Even so, I think it’s worth outlining the basic plans for the sake of soliciting feedback. There are several components to this, as follows:</p>
+<p><span id="more-231"></span></p>
+<h3>The F-Droid Application</h3>
+<p>This is similar to Google’s Market application in that it sits on the Android device and allows you to search available applications, install them and uninstall them. It’s easier to describe the ways it’s different:</p>
+<ul>
+<li>There is better metadata – as well as less-constrained descriptions, there is the stuff we care about – the license, for example, and links to source code, issue trackers and the like.</li>
+<li>Multiple versions are available. You can install a release candidate or nightly build. You can downgrade to an earlier version.</li>
+<li>Multiple repositories can be added. (By entering the URL, by clicking in a browser, or by scanning a QR code).</li>
+<li>There are no prices, and no “FREE”. Everything is free, as in freedom. As far as free as in beer goes, you should donate to an application’s developer(s) as you see fit.</li>
+</ul>
+<h3>The Repository Front-End</h3>
+<p>A repository can be hosted on a standard web server, as it’s just files. Ideally, but optionally, a repository will serve using HTTPS for the sake of security. A repository consists of an index file, which also contains all the metadata, plus any number of APK files, and their associated icons. Tools (a.k.a. a simple Python script) are available to automatically generate a repository index from a set of APK files and additional metadata files containing information that APKs do not. MD5 hashes of all the binary files are also part of the index.</p>
+<p>This simple setup allows a developer, or anyone else, to host a simple repository for their applications. All a user needs to do to access it is add the address of the repository into the F-Droid application.</p>
+<h3>The Repository Back-End</h3>
+<p>The simple repository described above deals purely in binaries. There is no verification that those binaries match any particular source code. This matters. There is at least one application in the Android Market now that claims to be GPL, but the source published does not match the binary distributed. (In fact, it’s a blatant GPL violation too, since most of the code is from another, genuine, GPL app).</p>
+<p></p><p>The repository back-end generates the relevant files for the front-end directly from the source code of the applications, by tracking the project’s source tree and building the binaries of release versions (or nightlies) from known project states. You can liken this to the way Debian’s packages work, for example – built from source packages, not upstream binaries. Thus, if you trust the repository owner, you can trust that the binary you download and install via the F-Droid application matches the source code. If you don’t trust any repository owner, you can run it yourself, since all this is obviously free software itself.</p>
+<p>I envisage that there will be one or more large repositories containing many applications (I intend to host one at f-droid.org), and also that application developers may want to host their own repository for their application. Additionally, people may have their own personal repositories – either for trust reasons, as mentioned above, or as an easy way to facilitate running customised versions of applications.</p>
+<p>Note that in this scenario APK files will be signed with a different key, depending on where they come from. I don’t think this presents a big problem, since all that’s necessary if you wanted to switch from one version to another is uninstall before installing the other, which the F-Droid application can do automatically.</p>
+<h3>Current Status</h3>
+<p>The F-Droid application itself is nearly usable, and the server front-end scripts work. The more complex server back-end stuff is still at the design stage.</p>
+<p>This is strictly a spare-time project so progress is not rapid, but I hope to release code, and a working version of the application, fairly soon. In the meantime, all feedback is appreciated.</p>
+</div>

@@ -1,0 +1,12 @@
+---
+layout: post
+title: "Security Notice – TextSecure"
+author: "F-Droid"
+---
+
+<div class="post-entry">
+<p>Unfortunately, the TextSecure application is now deleted from the repository.</p>
+<p>Previous versions of this have a serious security flaw. One feature of the software is that all SMS messages sent and received are stored in an encrypted database. However, due to an apparent oversight by the developer, all received messages are logged in plain text to the Android system log file. The end result is that rather than providing more security than the default setup, where a specific Android permission is required to access SMS message content, the messages are exposed in the log file, which is much easier to access and may even be inadvertently posted when sending debug logs to developers. Note that messages sent using end-to-end encryption (i.e. where the other party also uses TextSecure) are logged in encrypted form, so that content is NOT exposed in plain text.</p>
+<p>The latest version of the application is 0.6.2, and the security flaw has now been fixed. However, the author has not published any source code corresponding to the binary he released of this version, and far from wishing to help anyone stuck with his previous disastrous mistake, he actually asked for the application to be removed from our repository as he wants to distribute it via Google Play only.</p>
+<p>As such, I would recommend anyone running this application to cease to use it, and remove it.</p>
+</div>
