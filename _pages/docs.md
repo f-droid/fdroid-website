@@ -2,9 +2,23 @@
 layout: page
 title: Docs
 permalink: /docs/
+redirect_from:
+ - /manual/fdroid.html
+
 ---
 
-F-Droid is both a repository of verified free software Android apps as well as a whole "app store kit", providing all the tools needed to setup and run an app store. It is a community-run free software project developed by a wide range of contributors. It also includes complete build and release tools for managing the process of turning app source code into published builds.
+F-Droid is both a repository of verified free software Android apps as
+well as a whole "app store kit", providing all the tools needed to
+setup and run an app store. It is a community-run free software
+project developed by a wide range of contributors. It also includes
+complete build and release tools for managing the process of turning
+app source code into published builds.
+
+The F-Droid server tools provide various scripts and tools that are used
+to maintain the main F-Droid application repository. You can use these
+same tools to create your own additional or alternative repository for
+publishing, or to assist in creating, testing and submitting metadata to
+the main repository.
 
 
 ### Getting Started
