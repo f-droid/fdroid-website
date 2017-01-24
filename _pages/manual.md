@@ -44,14 +44,6 @@ builds (highly recommended), you will also need:
 On the other hand, if you want to build the apps directly on your system
 without the ’Build Server’ system, you may need:
 
--   All SDK platforms requested by the apps you want to build (The
-    Android SDK is made available by Google under a proprietary license
-    but within that, the SDK platforms, support library and some other
-    components are under the Apache license and source code is provided.
-    Google APIs, used for building apps using Google Maps, are free to
-    the extent that the library comes pre-installed on the device.
-    Google Play Services, Google Admob and others are proprietary and
-    shouldn’t be included in the main F-Droid repository.)
 -   A version of the Android NDK
 -   Ant with Contrib Tasks (Debian packages ant and ant-contrib)
 -   Maven (Debian package maven)
