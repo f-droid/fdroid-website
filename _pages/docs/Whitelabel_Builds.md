@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Whitelabel Builds
-permalink: /docs/Whitelabel_Builds
+permalink: /docs/Whitelabel_Builds/
 ---
 
 F-Droid can be rebranded and embedded in Android ROMs, building upon

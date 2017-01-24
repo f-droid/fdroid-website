@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Installing the Server and Repo Tools
-permalink: /docs/Installing_the_Server_and_Repo_Tools
+permalink: /docs/Installing_the_Server_and_Repo_Tools/
 ---
 
 The [fdroidserver](https://gitlab.com/fdroid/fdroidserver) tools provide

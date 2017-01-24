@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Deterministic, Reproducibile Builds
-permalink: /docs/Deterministic,_Reproducible_Builds
+permalink: /docs/Deterministic,_Reproducible_Builds/
 ---
 
 If projects have deterministic build systems that reproduce the exact

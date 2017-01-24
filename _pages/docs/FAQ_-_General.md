@@ -1,7 +1,7 @@
 ---
 layout: page
 title: FAQ - General
-permalink: /docs/FAQ_-_General
+permalink: /docs/FAQ_-_General/
 ---
 
 Some frequently asked questions.

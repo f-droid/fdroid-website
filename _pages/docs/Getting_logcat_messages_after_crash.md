@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Getting logcat messages after crash
-permalink: /docs/Getting_logcat_messages_after_crash
+permalink: /docs/Getting_logcat_messages_after_crash/
 ---
 
 ### What is logcat?

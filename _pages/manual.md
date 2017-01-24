@@ -1,6 +1,6 @@
 ---
 layout: page
-permalink: /manual
+permalink: /manual/
 description: 'F-Droid Server Manual'
 keywords: 'F-Droid Server Manual'
 title: 'F-Droid Server Manual'

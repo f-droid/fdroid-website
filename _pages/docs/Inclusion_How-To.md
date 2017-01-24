@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Inclusion How-To
-permalink: /docs/Inclusion_How-To
+permalink: /docs/Inclusion_How-To/
 ---
 
 This page documents how a new application gets included in the main

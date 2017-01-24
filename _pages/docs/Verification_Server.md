@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Verification Server
-permalink: /docs/Verification_Server
+permalink: /docs/Verification_Server/
 ---
 
 The idea of a verification server is to reproduce builds and verify that

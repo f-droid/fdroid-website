@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Submitting to F-Droid Quick Start Guide
-permalink: /docs/Submitting_to_F-Droid_Quick_Start_Guide
+permalink: /docs/Submitting_to_F-Droid_Quick_Start_Guide/
 ---
 
 ### Submitting to F-Droid: Quick Start Guide

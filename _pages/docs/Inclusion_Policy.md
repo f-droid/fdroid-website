@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Inclusion Policy
-permalink: /docs/Inclusion_Policy
+permalink: /docs/Inclusion_Policy/
 ---
 
 All applications in the repository must be Free, Libre and Open Source

@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Client Bug Reports
-permalink: /docs/Client_Bug_Reports
+permalink: /docs/Client_Bug_Reports/
 ---
 
 ### What to include in a bug report

@@ -1,7 +1,7 @@
 ---
 layout: page
 title: FAQ for the Android client app
-permalink: /docs/FAQ_-_Client
+permalink: /docs/FAQ_-_Client/
 ---
 
 ### The client shows a newer version. Why didn't it notify me of an update?

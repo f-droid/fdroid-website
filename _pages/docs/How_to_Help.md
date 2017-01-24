@@ -1,7 +1,7 @@
 ---
 layout: page
 title: How to Help
-permalink: /docs/How_to_Help
+permalink: /docs/How_to_Help/
 ---
 
 The project is entirely developed and maintained by volunteers. You can

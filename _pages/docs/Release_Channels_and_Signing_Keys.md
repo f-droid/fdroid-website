@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Release Channels and Signing Keys
-permalink: /docs/Release_Channels_and_Signing_Keys
+permalink: /docs/Release_Channels_and_Signing_Keys/
 ---
 
 This is a list of all signing keys used for F-Droid releases.

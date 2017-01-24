@@ -1,7 +1,7 @@
 ---
 layout: page
 title: FAQ - App Developers
-permalink: /docs/FAQ_-_App_Developers
+permalink: /docs/FAQ_-_App_Developers/
 ---
 
 
