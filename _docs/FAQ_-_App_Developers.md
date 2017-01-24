@@ -11,18 +11,16 @@ redirect_from:
 
 ### How do I get my app included?
 
-Please check the [inclusion policy](Inclusion_Policy) to make
-sure your app is suitable for inclusion in the official F-Droid repo.
-You can make a post in the [submission
-queue](https://gitlab.com/fdroid/rfp/issues) section. Some developers
-like to go a step further and submit the metadata for their app
-themselves — there are instructions for that at
-[CONTRIBUTING.md](https://gitlab.com/fdroid/fdroiddata/blob/master/CONTRIBUTING.md#merge-requests).
-Your app will be included quicker if you send a merge request on
-gitlab.com than if you post it to the queue.
+Please check the [inclusion policy](../Inclusion_Policy) to make sure
+your app is suitable for inclusion in the official F-Droid repo.  The
+quickest way to get an app included is to make a merge request to
+_fdroiddata_, following
+[these instructions](https://gitlab.com/fdroid/fdroiddata/blob/master/CONTRIBUTING.md#merge-requests).
+Requests for packaging can be posted in the
+[Requests for Packaging](https://gitlab.com/fdroid/rfp/issues)
+tracker.
 
-You can also [set up your own
-repo](#Can_I_run_my_own_app_repo)
+You can also [set up your own repo](#Can_I_run_my_own_app_repo)
 and distribute apps yourself, outside of the F-Droid.org repo.
 
 ### How do I change the description and add meta information like screenshots?
@@ -58,7 +56,7 @@ copy of the licences in the root of the repo is helpful (LICENSE or
 COPYING files). Also make a note of the copyright and licenses
 pertaining to external resources or programs and if it does connect to a
 free service, consider using the Affero GPL. See the [Inclusion
-Policy](Inclusion_Policy) for more.
+Policy](../Inclusion_Policy) for more.
 
 
 ### How are donations handled?
@@ -96,7 +94,7 @@ to determine what actually IS an update). For additional information,
 please see the [Android Developer
 Documentation](https://developer.android.com/studio/publish/versioning.html).
 Please make sure not to have contradicting information (e.g. mismatching
-AndroidManifest.xml and build.gradle).
+_AndroidManifest.xml_ and build.gradle).
 
 We try to build only what you would consider to be releases. These
 should have matching version names and, more importantly, matching
@@ -111,14 +109,13 @@ We try not to build from a random repository head version.
 
 ### Do I need to tell you when I update?
 
-We will
-[detect](https://f-droid.org/manual/fdroid.html#Update-Check-Mode) new
+We will [detect](../Build_Metadata_Reference#Update-Check-Mode) new
 releases of your app and update our metadata accordingly, which will
 then cause us to check the code and add new builds to our system. Tags
 help greatly for adding new versions, but do remember to push the tags
 to the origin repo each time. Of course, if you move source code to a
 different website, you should tell us. There are currently some issues
-around detecting new versions when the AndroidManifest.xml is moved so
+around detecting new versions when the _AndroidManifest.xml_ is moved so
 if there is some urgency, you can let us know if that happens.
 
 Some app developers submit merge requests to us with all the relevant
@@ -261,7 +258,7 @@ repostiory" is allowed.
 For external resources, please restrain yourself to "well known
 repositories", e.g. mavenCentral or jCenter (see compelte listing in the
 "srclib" section of
-<https://f-droid.org/manual/html_node/Build.html#Build>\]. Please note
+<https://f-droid.org/manual/html_node/Build.html#Build>). Please note
 that e.g. Bintray does not only offers jCenter, but user-repos as well.
 Those are not part of the trusted repository list.
 
