@@ -1,10 +1,9 @@
 ---
 layout: page
 title: Reproducibile Builds
-
 redirect_from:
- - '/docs/Deterministic,_Reproducible_Builds/'
  - '/wiki/page/Deterministic,_Reproducible_Builds/'
+
 ---
 
 
@@ -57,6 +56,38 @@ builds to make sure that the f-droid.org builds match the original
 source and nothing has been inserted in.  In that case, the resulting
 APKs are not published for installation.  The
 [Verification Server](../Verification_Server) automates this process.
+
+
+### Reproducible Builds
+
+An awful lot of builds already verify with no extra effort since Java
+code is often compiled into the same bytecode by a wide range of Java
+versions.  The Android SDK's _build-tools_ will create differences in
+the resulting XML, PNG, etc. files, but this is usually not a problem
+since the _build.gradle_ includes the exact version of _build-tools_
+to use.
+
+Anything built with the NDK will be much more sensitive.  For example,
+even for builds that use the exact same version of the NDK
+(e.g. _r13b) but on different platforms (.e.g OSX version Ubuntu), the
+resulting binaries will have differences.
+
+Additionally, we'll have to look out for anything that includes
+timestamping information, is sensitive to sort order, etc.
+
+
+### Build Server IDs
+
+To describe the build environment used by F-Droid builds, APKs have two files inserted into them:
+
+* _META-INF/fdroidserverid_ - git commit hash of [_fdroidserver_](https://gitlab.com/fdroid/fdroidserver) used for the build
+* _META-INF/buildserverid_ - git commit hash of [_makebuildserver_](https://gitlab.com/fdroid/fdroidserver/blob/master/makebuildserver) used for the build
+
+To ensure reproducibility, use the exact same revision of the
+`./makebuildserver` and `fdroid build`. You can find the commit hash
+of _fdroidserver_ by going to your git clone and running `git log
+-n1`.  The build server instance is stamped with the git commit hash on
+creation, and that ID is included in builds.
 
 
 ### Migration to reproducible builds
