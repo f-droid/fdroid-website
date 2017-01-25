@@ -6,6 +6,8 @@ redirect_from:
 
 ---
 
+* Do not remove this line (it will not be displayed)
+{:toc}
 
 ### How do I get my app included?
 

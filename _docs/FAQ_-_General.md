@@ -6,7 +6,8 @@ redirect_from:
 
 ---
 
-Some frequently asked questions.
+* Do not remove this line (it will not be displayed)
+{:toc}
 
 ### Where should I ask questions?
 

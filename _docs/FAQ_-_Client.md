@@ -6,6 +6,9 @@ redirect_from:
 
 ---
 
+* Do not remove this line (it will not be displayed)
+{:toc}
+
 ### The client shows a newer version. Why didn't it notify me of an update?
 
 Assuming you have update notifications switched on (in Preferences) this
