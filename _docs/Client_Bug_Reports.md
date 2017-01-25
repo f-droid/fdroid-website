@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Client Bug Reports
-permalink: /docs/Client_Bug_Reports/
+
 ---
 
 ### What to include in a bug report
@@ -12,7 +12,7 @@ In order to ensure that the F-Droid developers have the best chance of reproduci
 * Android version (e.g. "Lollipop" or "Android 5.0")
 * Device (e.g. "Nexus 4")
 * Steps to reproduce the bug
-* A logcat from when the crash occured ([Getting logcat messages after crash](Getting_logcat_messages_after_crash))
+* A logcat from when the crash occured ([Getting logcat messages after crash](../Getting_logcat_messages_after_crash))
 * Whether the bug happens on the previous stable version of F-Droid
 
 

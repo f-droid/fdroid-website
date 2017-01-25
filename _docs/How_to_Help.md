@@ -1,7 +1,7 @@
 ---
 layout: page
 title: How to Help
-permalink: /docs/How_to_Help/
+
 ---
 
 The project is entirely developed and maintained by volunteers. You can
@@ -10,7 +10,7 @@ help in the following ways:
 
 ### Follow our work
 
-The [Feeds](Feeds) page lists the various sites that we work
+The [Feeds](../Feeds) page lists the various sites that we work
 on.
 
 
@@ -25,14 +25,14 @@ page to see how you can help keeping apps and their metadata up to
 date.
 
 If you are reporting an issue with the client,
-[check out these pointers](Client_Bug_Reports) to make sure we have
+[check out these pointers](../Client_Bug_Reports) to make sure we have
 the best chance of reproducing and fixing your issue.
 
 
 ### Submit applications
 
 If you see an application missing from the repository (after reading
-the [Inclusion Policy](Inclusion_Policy)), please feel free to submit
+the [Inclusion Policy](../Inclusion_Policy)), please feel free to submit
 it via the dedicated
 [Submission Queue](http://f-droid.org/forums/forum/submission-queue)
 section of the forum.
@@ -58,7 +58,7 @@ The procedure for updating apps is similar to adding new apps: changes
 are applied to the metadata in the fdroiddata git repository. You'll
 need to already be familiar with adding new apps. Even though it should
 take much less time to update an app one should still be cautious.
-Follow the steps in the [update guide](How_to_update_an_app)
+Follow the steps in the [update guide](../How_to_update_an_app)
 to minimize the risk of messing up and don't be afraid to ask for help!
 
 

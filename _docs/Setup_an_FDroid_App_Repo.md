@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Setup an F-Droid App Repo
-permalink: /docs/Setup_an_F-Droid_App_Repo/
+
 ---
 
 F-Droid.org is the default package repository (repo) in the FDroid

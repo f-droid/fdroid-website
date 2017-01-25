@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Feeds
-permalink: /docs/Feeds/
+
 ---
 
 ### Microblog

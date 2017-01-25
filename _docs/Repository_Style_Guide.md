@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Repository Style Guide
-permalink: /docs/Repository_Style_Guide/
+
 ---
 
 This page is a __work in progress__, and needs attention from experts on

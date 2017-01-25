@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Inclusion How-To
-permalink: /docs/Inclusion_How-To/
+
 ---
 
 This page documents how a new application gets included in the main
@@ -19,8 +19,8 @@ described below in details.
 
 Note that you can propose inclusion even you are not a developer or
 maintainer of the proposed application itself. See [Inclusion
-Policy](Inclusion_Policy) and [Repository Style
-Guide](Repository_Style_Guide) for the policy aspect of this
+Policy](../Inclusion_Policy) and [Repository Style
+Guide](../Repository_Style_Guide) for the policy aspect of this
 section.
 
 ### Proposal by Submission Queue
@@ -51,9 +51,9 @@ When proposing inclusion this way, it is assumed that:
     Software](https://www.gnu.org/philosophy/free-sw.html) means, and
     what F-Droid is for.
 -   You already read and understand the [Inclusion
-    Policy](Inclusion_Policy).
+    Policy](../Inclusion_Policy).
 -   You already read and understand the [Repository Style
-    Guide](Repository_Style_Guide).
+    Guide](../Repository_Style_Guide).
 -   You already read and understand [the relevant parts of F-Droid
     server manual](https://f-droid.org/manual/html_node/Metadata.html).
 -   You know how to use [Git VCS](https://git-scm.com/), and know how
