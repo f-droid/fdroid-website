@@ -3,7 +3,9 @@ layout: page
 title: Docs
 permalink: /docs/
 redirect_from:
+ - /manual/
  - /manual/fdroid.html
+ - /manual/fdroid.txt
 
 ---
 
@@ -31,7 +33,6 @@ the main repository.
 ### Developers
 
 * [FAQ App Developers](FAQ_-_App_Developers) Frequently Asked Questions about F-Droid
-* [The Manual](../manual/) Essential reading for contributors and those setting up their own repository.
 * [How to Help](How_to_Help) Different ways users can contribute to the F-Droid project.
 * [Submitting to F-Droid: Quick Start Guide](Submitting_to_F-Droid_Quick_Start_Guide) Add an app to f-droid.org
 * [Build Metadata Reference](Build_Metadata_Reference) All about the build "recipes"
