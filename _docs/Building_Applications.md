@@ -3,11 +3,9 @@ layout: page
 title: Building Applications
 redirect_from:
  - /manual/html_node/Building-Applications.html
+ - /manual/html_node/Data.html
 
 ---
-
-
-## Building Applications
 
 Instead of (or as well as) including binary APKs from external sources
 in a repository, you can build them directly from the source code.
@@ -48,7 +46,37 @@ chapter, except now you need to:
     have been built.
 
 
-### More about "fdroid build"
+### App data directory aka _fdroiddata_
+
+To do anything, you’ll need at least one repository data directory. It’s
+from this directory that you run the `fdroid` command to perform all
+repository management tasks. You can either create a brand new one, or
+grab a copy of the data used by the main F-Droid repository:
+
+```
+git clone https://gitlab.com/fdroid/fdroiddata.git
+```
+
+Regardless of the intended usage of the tools, you will always need to
+set up some basic configuration details. This is done by creating a file
+called `config.py` in the data directory. You should do this by copying
+the example file (`./examples/config.py`) from the fdroidserver project
+to your data directory and then editing according to the instructions
+within.
+
+Once configured in this way, all the functionality of the tools is
+accessed by running the `fdroid` command. Run it on its own to get a
+list of the available sub-commands.
+
+You can follow any command with `--help` to get a list of additional
+options available for that command.
+
+```
+fdroid update --help
+```
+
+
+### More about `fdroid build`
 
 When run without any parameters, `fdroid build` will build any and all
 versions of applications that you don’t already have in the `repo`
@@ -116,7 +144,7 @@ important that all such prebuilts are built either via the metadata or
 by a reputable third party.
 
 
-### Running "fdroid build" in your app’s source
+### Running `fdroid build` in your app’s source
 
 Another option for using `fdroid build` is to use a metadata file that
 is included in the app’s source itself, rather than in a `metadata/`

@@ -71,36 +71,6 @@ the most sensible thing to do next is to put your new fdroidserver
 directory in your `PATH`.
 
 
-### 3.1 Data<a name="Data"></a>
-
-To do anything, you’ll need at least one repository data directory. It’s
-from this directory that you run the `fdroid` command to perform all
-repository management tasks. You can either create a brand new one, or
-grab a copy of the data used by the main F-Droid repository:
-
-```
-git clone https://gitlab.com/fdroid/fdroiddata.git
-```
-
-Regardless of the intended usage of the tools, you will always need to
-set up some basic configuration details. This is done by creating a file
-called `config.py` in the data directory. You should do this by copying
-the example file (`./examples/config.py`) from the fdroidserver project
-to your data directory and then editing according to the instructions
-within.
-
-Once configured in this way, all the functionality of the tools is
-accessed by running the `fdroid` command. Run it on its own to get a
-list of the available sub-commands.
-
-You can follow any command with `--help` to get a list of additional
-options available for that command.
-
-```
-fdroid update --help
-```
-
-
 ## 4 Simple Binary Repository<a name="Simple-Binary-Repository"></a>
 
 If you want to maintain a simple repository hosting only binary APKs
