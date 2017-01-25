@@ -47,7 +47,7 @@ the main repository.
 * [Known Repositories](https://f-droid.org/wiki/page/Known_Repositories) A list that tries to keep track of known f-droid compatible repositories.
 * [Release Channels and Signing Keys](Release_Channels_and_Signing_Keys) These are the various channels that FDroid software are released on, with info to verify them based on signing keys.
 * [Security Model](Security_Model) A brief explanation of how F-Droid delivers software to users securely.
-* [Deterministic, Reproducible Builds](Deterministic,_Reproducible_Builds) How to use the F-Droid tools to make [reproducible builds](https://reproducible-builds.org) easy.
+* [Reproducible Builds](Reproducible_Builds) How to use the F-Droid tools to make reproducible builds easy.
 * [Verification Server](Verification_Server) Setting up a server to verify app builds are correct.
 * [Privileged Extension](https://gitlab.com/fdroid/privileged-extension) How to use F-Droid Privileged Extension as a user and rom developer
 * [Work in Progress](https://f-droid.org/wiki/page/Work_in_Progress) Feel free to add your own topics and link to others.
