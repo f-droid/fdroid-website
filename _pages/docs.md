@@ -40,6 +40,7 @@ the main repository.
 * [Installing the Server and Repo Tools](Installing_the_Server_and_Repo_Tools) How to install fdroidserver, the tools for running repos and build servers.
 * [Setup an F-Droid App Repo](Setup_an_F-Droid_App_Repo) How to setup your own repository of apps that users can easily add to their FDroid client to get your apps directly from the source.
 * [Build Server Setup](Build_Server_Setup) How to setup the complete f-droid.org build setup on your own machine.
+* [Signing Process](Signing_Process) How to setup cryptographic signatures with F-Droid tools
 * [Known Repositories](https://f-droid.org/wiki/page/Known_Repositories) A list that tries to keep track of known f-droid compatible repositories.
 * [Release Channels and Signing Keys](Release_Channels_and_Signing_Keys) These are the various channels that FDroid software are released on, with info to verify them based on signing keys.
 * [Security Model](Security_Model) A brief explanation of how F-Droid delivers software to users securely.
