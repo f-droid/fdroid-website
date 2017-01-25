@@ -1,6 +1,8 @@
 ---
 layout: page
 title: Feeds
+redirect_from:
+ - /wiki/page/Feeds
 
 ---
 

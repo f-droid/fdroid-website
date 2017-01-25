@@ -1,6 +1,8 @@
 ---
 layout: page
 title: Installing the Server and Repo Tools
+redirect_from:
+ - /wiki/page/Installing_the_Server/Repo_Tools
 
 ---
 

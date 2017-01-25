@@ -1,6 +1,8 @@
 ---
 layout: page
 title: Build Server Setup
+redirect_from:
+ - /wiki/page/Build_Server_Setup
 
 ---
 

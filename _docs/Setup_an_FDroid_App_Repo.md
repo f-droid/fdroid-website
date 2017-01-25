@@ -1,6 +1,8 @@
 ---
 layout: page
 title: Setup an F-Droid App Repo
+redirect_from:
+ - /wiki/page/Setup_an_FDroid_App_Repo
 
 ---
 

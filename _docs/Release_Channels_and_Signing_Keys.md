@@ -1,6 +1,8 @@
 ---
 layout: page
 title: Release Channels and Signing Keys
+redirect_from:
+ - /wiki/page/Release_Channels_and_Signing_Keys
 
 ---
 

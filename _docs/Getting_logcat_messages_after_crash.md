@@ -1,6 +1,8 @@
 ---
 layout: page
 title: Getting logcat messages after crash
+redirect_from:
+ - /wiki/page/Getting_logcat_messages_after_crash
 
 ---
 

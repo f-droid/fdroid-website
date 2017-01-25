@@ -1,6 +1,8 @@
 ---
 layout: page
 title: Inclusion How-To
+redirect_from:
+ - /wiki/page/Inclusion_How-To
 
 ---
 

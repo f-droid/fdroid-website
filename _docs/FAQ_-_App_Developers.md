@@ -1,6 +1,9 @@
 ---
 layout: page
 title: FAQ - App Developers
+redirect_from:
+ - /wiki/page/FAQ_-_App_Developers
+
 ---
 
 

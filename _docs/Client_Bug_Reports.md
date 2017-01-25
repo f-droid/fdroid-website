@@ -1,6 +1,8 @@
 ---
 layout: page
 title: Client Bug Reports
+redirect_from:
+ - /wiki/page/Client_Bug_Reports
 
 ---
 
