@@ -2,9 +2,23 @@
 layout: page
 title: Docs
 permalink: /docs/
+redirect_from:
+ - /manual/fdroid.html
+
 ---
 
-F-Droid is both a repository of verified free software Android apps as well as a whole "app store kit", providing all the tools needed to setup and run an app store. It is a community-run free software project developed by a wide range of contributors. It also includes complete build and release tools for managing the process of turning app source code into published builds.
+F-Droid is both a repository of verified free software Android apps as
+well as a whole "app store kit", providing all the tools needed to
+setup and run an app store. It is a community-run free software
+project developed by a wide range of contributors. It also includes
+complete build and release tools for managing the process of turning
+app source code into published builds.
+
+The F-Droid server tools provide various scripts and tools that are used
+to maintain the main F-Droid application repository. You can use these
+same tools to create your own additional or alternative repository for
+publishing, or to assist in creating, testing and submitting metadata to
+the main repository.
 
 
 ### Getting Started
@@ -20,11 +34,16 @@ F-Droid is both a repository of verified free software Android apps as well as a
 * [The Manual](../manual/) Essential reading for contributors and those setting up their own repository.
 * [How to Help](How_to_Help) Different ways users can contribute to the F-Droid project.
 * [Submitting to F-Droid: Quick Start Guide](Submitting_to_F-Droid_Quick_Start_Guide) Add an app to f-droid.org
+* [Build Metadata Reference](Build_Metadata_Reference) All about the build "recipes"
+* [Update Processing](Update_Processing) How updates get detected and added.
 * [Inclusion Policy](Inclusion_Policy) & [Inclusion How-To](Inclusion_How-To)  Guidelines for how to request the inclusion of a new app.
+* [Importing Applications](Importing_Applications) Using `fdroid import` to build a new project.
+* [Building Applications](Building_Applications) Using `fdroid build` to build an app.
 * [Whitelabel Builds](Whitelabel_Builds) custom builds of F-Droid
 * [Installing the Server and Repo Tools](Installing_the_Server_and_Repo_Tools) How to install fdroidserver, the tools for running repos and build servers.
 * [Setup an F-Droid App Repo](Setup_an_F-Droid_App_Repo) How to setup your own repository of apps that users can easily add to their FDroid client to get your apps directly from the source.
 * [Build Server Setup](Build_Server_Setup) How to setup the complete f-droid.org build setup on your own machine.
+* [Signing Process](Signing_Process) How to setup cryptographic signatures with F-Droid tools
 * [Known Repositories](https://f-droid.org/wiki/page/Known_Repositories) A list that tries to keep track of known f-droid compatible repositories.
 * [Release Channels and Signing Keys](Release_Channels_and_Signing_Keys) These are the various channels that FDroid software are released on, with info to verify them based on signing keys.
 * [Security Model](Security_Model) A brief explanation of how F-Droid delivers software to users securely.

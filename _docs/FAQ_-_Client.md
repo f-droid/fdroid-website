@@ -1,8 +1,13 @@
 ---
 layout: page
-title: FAQ for the Android client app
-permalink: /docs/FAQ_-_Client/
+title: FAQ - Client
+redirect_from:
+ - /wiki/page/FAQ_-_Client
+
 ---
+
+* Do not remove this line (it will not be displayed)
+{:toc}
 
 ### The client shows a newer version. Why didn't it notify me of an update?
 
@@ -196,4 +201,4 @@ and be running Android 4.1 or newer.
 The F-Droid security model started out with HTTPS connections and signed
 metadata. It has been evolving, inspired by [Debian](https://wiki.debian.org/SecureApt), [The Update
 Framework](https://github.com/theupdateframework/tuf/blob/develop/docs/tuf-spec.txt),
-and other things. You can read about details here: [Security Model](Security_Model).
+and other things. You can read about details here: [Security Model](../Security_Model).

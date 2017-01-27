@@ -1,9 +1,13 @@
 ---
 layout: page
 title: FAQ - App Developers
-permalink: /docs/FAQ_-_App_Developers/
+redirect_from:
+ - /wiki/page/FAQ_-_App_Developers
+
 ---
 
+* Do not remove this line (it will not be displayed)
+{:toc}
 
 ### How do I get my app included?
 
@@ -264,6 +268,18 @@ needs.
 -   Google Maps — OpenStreetMap, e.g. through
     [mapsforge](http://www.mapsforge.org) or
     [osmdroid](http://osmdroid.org)
+
+### Aren't Google's SDK and libraries free, open source software?
+
+While much of Android is free open source software, much of it is not
+at all.  The Android SDK binaries is made available by Google under a
+proprietary license but almost all of the source code for the Android
+SDK is available under the Apache license.  Google APIs, used for
+building apps using Google Services like Maps, GCM, etc, are free to
+the extent that the library comes pre-installed on the device.  Almost
+all of the Google libraries, like Play Services, Google Admob, and
+GCM, are proprietary and cannot be included in the main F-Droid
+repository.
 
 
 ### Which build system to use?

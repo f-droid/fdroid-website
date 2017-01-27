@@ -1,7 +1,9 @@
 ---
 layout: page
 title: How to update an app
-permalink: /docs/How_to_update_an_app/
+redirect_from:
+ - /wiki/page/How_to_update_an_app
+
 ---
 
 What I would like to read here would be:

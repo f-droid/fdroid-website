@@ -1,10 +1,13 @@
 ---
 layout: page
 title: FAQ - General
-permalink: /docs/FAQ_-_General/
+redirect_from:
+ - /wiki/page/FAQ_-_General
+
 ---
 
-Some frequently asked questions.
+* Do not remove this line (it will not be displayed)
+{:toc}
 
 ### Where should I ask questions?
 
@@ -30,11 +33,11 @@ Some common reasons:
     trying to resolve. Check the Submissions Held section of the Forum;
 -   It's on our radar, but we haven't got to it yet.
     [Search](https://f-droid.org/search) the Forum;
--   We don't know about it. See the [Inclusion Policy](Inclusion_Policy).
+-   We don't know about it. See the [Inclusion Policy](../Inclusion_Policy).
 
 Otherwise it you think that an app respect the Inclusion Policy and
 actually nobody is talking about it in the forum, you can try to be the
-first to do it: See the [Inclusion How-To](Inclusion_How-To).
+first to do it: See the [Inclusion How-To](../Inclusion_How-To).
 
 
 ### How can I keep track of new apps?

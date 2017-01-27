@@ -1,7 +1,9 @@
 ---
 layout: page
 title: Security Model
-permalink: /docs/Security_Model/
+redirect_from:
+ - /wiki/page/Security_Model
+
 ---
 
 The security architecture is based on models proven by

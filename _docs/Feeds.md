@@ -1,7 +1,9 @@
 ---
 layout: page
 title: Feeds
-permalink: /docs/Feeds/
+redirect_from:
+ - /wiki/page/Feeds
+
 ---
 
 ### Microblog

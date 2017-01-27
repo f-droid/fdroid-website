@@ -1,7 +1,9 @@
 ---
 layout: page
 title: Inclusion Policy
-permalink: /docs/Inclusion_Policy/
+redirect_from:
+ - /wiki/page/Inclusion_Policy
+
 ---
 
 All applications in the repository must be Free, Libre and Open Source
@@ -71,4 +73,4 @@ is often enabled via proprietary binary libraries which we cannot
 include.
 
 For more information on adding applications to the F-Droid Repository,
-see the [Inclusion How-To](Inclusion_How-To).
+see the [Inclusion How-To](../Inclusion_How-To).

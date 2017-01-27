@@ -1,7 +1,9 @@
 ---
 layout: page
 title: Build Server Setup
-permalink: /docs/Build_Server_Setup/
+redirect_from:
+ - /wiki/page/Build_Server_Setup
+
 ---
 
 This is how to set up a working build server, starting from a completely clean minimal Debian/stable install.  This HOWTO assumes you have already [setup _fdroidserver_](Installing_the_Server_and_Repo_Tools).
