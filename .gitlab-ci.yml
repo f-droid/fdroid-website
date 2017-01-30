@@ -12,13 +12,10 @@ test:
   - export LANG=en_US.UTF-8
   - export LANGUAGE=en_US:en
   - export LC_ALL=en_US.UTF-8
-  - apt-get install -y curl
-  - curl -sL https://deb.nodesource.com/setup_6.x | bash -
-  - apt-get install -y nodejs
-  - npm install
-  - nodejs build.js
-  - gem install jekyll jekyll-include-cache jekyll-feed jekyll-paginate-v2 jekyll-redirect-from
-  - jekyll build -d test
+  - apt-get install -y zlib1g-dev
+  - gem install jekyll bundler
+  - bundle install
+  - bundle exec jekyll build -d test
   artifacts:
     paths:
     - test
@@ -35,13 +32,10 @@ pages:
   - export LANG=en_US.UTF-8
   - export LANGUAGE=en_US:en
   - export LC_ALL=en_US.UTF-8
-  - apt-get install -y curl
-  - curl -sL https://deb.nodesource.com/setup_6.x | bash -
-  - apt-get install -y nodejs
-  - npm install
-  - nodejs build.js
-  - gem install jekyll jekyll-include-cache jekyll-feed jekyll-paginate-v2 jekyll-redirect-from
-  - jekyll build -d public
+  - apt-get install -y zlib1g-dev
+  - gem install jekyll bundler
+  - bundle install
+  - bundle exec jekyll build -d public
   artifacts:
     paths:
     - public
