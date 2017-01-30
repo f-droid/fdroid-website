@@ -29,6 +29,15 @@ use:
 bundle exec jekyll serve
 ```
 
+## Local development
+
+* Clone [F-Droid's Jekyll plugin](https://gitlab.com/fdroid/jekyll-fdroid)
+* Configure bundle to use it: `bundle config --local local.jekyll-fdroid ../jekyll-fdroid`
+* Follow the steps above
+
+If you want to use the official Git repository again,
+run `bundle config --delete local.jekyll-fdroid`.
+
 ## License
 
 This program is Free Software:

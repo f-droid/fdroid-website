@@ -7,6 +7,5 @@ group :jekyll_plugins do
    gem "jekyll-include-cache"
    gem "jekyll-paginate-v2"
    gem "jekyll-redirect-from"
-   #gem "jekyll-fdroid", :path => "../jekyll-fdroid"
    gem 'jekyll-fdroid', :git => 'https://gitlab.com/fdroid/jekyll-fdroid.git', :branch => 'master'
  end
