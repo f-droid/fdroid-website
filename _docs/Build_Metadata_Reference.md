@@ -90,7 +90,7 @@ Categories must be separated by a single comma character, ’,’. For
 backwards compatibility, F-Droid will use the first category given as
 &lt;category&gt; element for older clients to at least see one category.
 
-This is converted to (`<categories>`) in the public index file.
+This is converted to (`<categories>`) in the XML file (_index.xml_).
 
 
 
@@ -101,7 +101,7 @@ The name of the author, either full, abbreviated or pseudonym. If
 present, it should represent the name(s) as published by upstream, e.g.
 in their copyright or authors file. This can be omitted (or left blank).
 
-This is converted to (`<author>`) in the public index file.
+This is converted to (`<author>`) in the XML file (_index.xml_).
 
 
 ### 7.3 Author Email<a name="Author-Email"></a>
@@ -110,7 +110,7 @@ This is converted to (`<author>`) in the public index file.
 The e-mail address of the author(s). This can be omitted (or left
 blank).
 
-This is converted to (`<email>`) in the public index file.
+This is converted to (`<email>`) in the XML file (_index.xml_).
 
 
 
@@ -122,7 +122,7 @@ source code only. Values should correspond to short identifiers of the
 [SPDX](https://spdx.org/licenses/) license list. In some cases an
 older, non-standard naming scheme is still used.
 
-This is converted to (`<license>`) in the public index file.
+This is converted to (`<license>`) in the XML file (_index.xml_).
 
 
 
@@ -165,7 +165,7 @@ name, or when you want an app to act as multiple apps.
 The URL for the application’s web site. If there is no relevant web
 site, this can be omitted (or left blank).
 
-This is converted to (`<web>`) in the public index file.
+This is converted to (`<web>`) in the XML file (_index.xml_).
 
 
 ### 7.9 Source Code<a name="Source-Code"></a>
@@ -175,7 +175,7 @@ The URL to view or obtain the application’s source code. This should be
 something human-friendly. Machine-readable source-code is covered in the
 ’Repo’ field.
 
-This is converted to (`<source>`) in the public index file.
+This is converted to (`<source>`) in the XML file (_index.xml_).
 
 
 ### 7.10 Issue Tracker<a name="Issue-Tracker"></a>
@@ -184,7 +184,7 @@ This is converted to (`<source>`) in the public index file.
 The URL for the application’s issue tracker. Optional, since not all
 applications have one.
 
-This is converted to (`<tracker>`) in the public index file.
+This is converted to (`<tracker>`) in the XML file (_index.xml_).
 
 
 ### 7.11 Changelog<a name="Changelog"></a>
@@ -193,7 +193,7 @@ This is converted to (`<tracker>`) in the public index file.
 The URL for the application’s changelog. Optional, since not all
 applications have one.
 
-This is converted to (`<changelog>`) in the public index file.
+This is converted to (`<changelog>`) in the XML file (_index.xml_).
 
 
 
@@ -210,7 +210,7 @@ account, or the PayPal link format changed, things could go wrong. It is
 always best to use a link that the developer explicitly makes public,
 rather than something that is auto-generated ’button code’.
 
-This is converted to (`<donate>`) in the public index file.
+This is converted to (`<donate>`) in the XML file (_index.xml_).
 
 
 ### 7.13 FlattrID<a name="FlattrID"></a>
@@ -220,7 +220,7 @@ The project’s Flattr (http://flattr.com) ID, if it has one. This should
 be a numeric ID, such that (for example) https://flattr.com/thing/xxxx
 leads directly to the page to donate to the project.
 
-This is converted to (`<flattr>`) in the public index file.
+This is converted to (`<flattr>`) in the XML file (_index.xml_).
 
 
 
@@ -229,7 +229,7 @@ This is converted to (`<flattr>`) in the public index file.
 
 A bitcoin address for donating to the project.
 
-This is converted to (`<bitcoin>`) in the public index file.
+This is converted to (`<bitcoin>`) in the XML file (_index.xml_).
 
 
 ### 7.15 Litecoin<a name="Litecoin"></a>
@@ -276,7 +276,7 @@ behind the current version; whether the app supports multiple
 architectures or whether there is a maximum SDK specified (such info not
 being recorded in the index).
 
-This is converted to (`<desc>`) in the public index file.
+This is converted to (`<desc>`) in the XML file (_index.xml_).
 
 
 
@@ -925,7 +925,7 @@ Since.
 
 This field is normally automatically updated - see Update Check Mode.
 
-This is converted to (`<marketversion>`) in the public index file.
+This is converted to (`<marketversion>`) in the XML file (_index.xml_).
 
 
 ### 7.34 Current Version Code<a name="Current-Version-Code"></a>
@@ -941,7 +941,7 @@ This field is normally automatically updated - see Update Check Mode.
 If not set or set to `0`, clients will recommend the highest version
 they can, as if the `Current Version Code` was infinite.
 
-This is converted to (`<marketvercode>`) in the public index file.
+This is converted to (`<marketvercode>`) in the XML file (_index.xml_).
 
 
 ### 7.35 No Source Since<a name="No-Source-Since"></a>
