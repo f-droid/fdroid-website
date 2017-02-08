@@ -914,7 +914,7 @@ Valid modes are:
 ### 7.33 Current Version<a name="Current-Version"></a>
 
 
-The name of the version that is current. There may be newer versions of
+The [name of the version](https://developer.android.com/guide/topics/manifest/manifest-element.html#vname) that is the recommended release. There may be newer versions of
 the application than this (e.g. unstable versions), and there will
 almost certainly be older ones. This should be the one that is
 recommended for general use. In the event that there is no source code
@@ -931,12 +931,13 @@ This is converted to (`<marketversion>`) in the XML file (_index.xml_).
 ### 7.34 Current Version Code<a name="Current-Version-Code"></a>
 
 
-The version code corresponding to the Current Version field. Both these
+The [version code](https://developer.android.com/guide/topics/manifest/manifest-element.html#vcode) corresponding to the [Current Version](#Current-Version) field. Both these
 fields must be correct and matching although it’s the current version
 code that’s used by Android to determine version order and by F-Droid
 client to determine which version should be recommended.
 
-This field is normally automatically updated - see Update Check Mode.
+This field is normally automatically updated - see
+[Update Check Mode](#Update-Check-Mode).
 
 If not set or set to `0`, clients will recommend the highest version
 they can, as if the `Current Version Code` was infinite.
