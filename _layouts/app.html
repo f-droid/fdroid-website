@@ -22,4 +22,22 @@ layout: default
     {{ page.description }}
   </div>
 
+  <p>
+    <b>License</b>: {{ page.license }}
+  </p>
+
+  <p>
+    {% if page.webSite != "" and page.webSite != nil %}<b>Website</b>: <a href="{{ page.webSite }}">{{ page.webSite }}</a><br>{% endif %}
+    {% if page.issueTracker != "" and page.issueTracker != nil %}<b>Issue Tracker</b>: <a href="{{ page.issueTracker }}">{{ page.issueTracker }}</a><br>{% endif %}
+    {% if page.sourceCode != "" and page.sourceCode != nil %}<b>Source Code</b>: <a href="{{ page.sourceCode }}">{{ page.sourceCode }}</a><br>{% endif %}
+    {% if page.changelog != "" and page.changelog != nil %}<b>Changelog</b>: <a href="{{ page.changelog }}">{{ page.changelog }}</a><br>{% endif %}
+    {% if page.donate != "" and page.donate != nil %}<b>Donate</b>: <a href="{{ page.donate }}">{{ page.donate }}</a><br>{% endif %}
+    {% if page.flattr != "" and page.flattr != nil %}<b>Flattr</b>: <a href="https://flattr.com/thing/{{ page.flattr }}">https://flattr.com/thing/{{ page.flattr }}</a><br>{% endif %}
+  </p>
+
+  <p>
+	  For full details and additional technical information,
+	  see <a href="https://f-droid.org/wiki/page/{{ page.package }}">this application's page</a> on the F-Droid wiki.
+  </p>
+
 </article>
