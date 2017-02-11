@@ -12,7 +12,7 @@ F-Droid is powered by your donations!
 
 __Bank Transfer__
 
-```
+```nohighlight
 Name: F-Droid Limited
 IBAN: GB92 BARC 2056 7893 4088 92
 SWIFT: BARCGB22
