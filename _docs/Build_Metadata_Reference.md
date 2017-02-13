@@ -118,22 +118,9 @@ This is converted to (`<email>`) in the public index file.
 
 
 The overall license for the application, or in certain cases, for the
-source code only.
-
-Common values:
-
--   ‘GPLv2’ GNU GPL version 2
--   ‘GPLv2+’ GNU GPL version 2 or later
--   ‘GPLv3’ GNU GPL version 3
--   ‘GPLv3+’ GNU GPL version 3 or later
--   ‘GPL’ An unspecified GPL version. Use this only as a last resort or
-    if there is some confusion over compatiblity of component licenses:
-    particularly the use of Apache libraries with GPLv2 source code.
--   ‘AGPL’ Afferro GPL version 3.
--   ‘Apache2’ Apache 2
--   ‘MIT’ MIT X11 license
--   ‘BSD’ BSD license - the original ’4-clause’ version.
--   ‘NewBSD’ BSD license - the new, or modified, version.
+source code only. Values should correspond to short identifiers of the
+[SPDX](https://spdx.org/licenses/) license list. In some cases an
+older, non-standard naming scheme is still used.
 
 This is converted to (`<license>`) in the public index file.
 
