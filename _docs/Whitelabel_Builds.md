@@ -1,6 +1,8 @@
 ---
 layout: page
 title: Whitelabel Builds
+redirect_from:
+ - /wiki/page/Whitelabel_Builds
 
 ---
 
