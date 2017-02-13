@@ -15,9 +15,9 @@ test:
   - apt-get install -y zlib1g-dev
   - gem install jekyll bundler
   - bundle install
-  - echo "url: https://$CI_PROJECT_NAMESPACE.gitlab.io" > userconfig.yml
-  - echo "baseurl: /$CI_PROJECT_NAME" >> userconfig.yml
-  - bundle exec jekyll build -d test --config _config.yml userconfig.yml
+  - 'echo url: https://$CI_PROJECT_NAMESPACE.gitlab.io > userconfig.yml'
+  - 'echo baseurl: /$CI_PROJECT_NAME >> userconfig.yml'
+  - bundle exec jekyll build -d test --config _config.yml,userconfig.yml
   artifacts:
     paths:
     - test
@@ -37,9 +37,9 @@ pages:
   - apt-get install -y zlib1g-dev
   - gem install jekyll bundler
   - bundle install
-  - echo "url: https://$CI_PROJECT_NAMESPACE.gitlab.io" > userconfig.yml
-  - echo "baseurl: /$CI_PROJECT_NAME" >> userconfig.yml
-  - bundle exec jekyll build -d public --config _config.yml userconfig.yml
+  - 'echo url: https://$CI_PROJECT_NAMESPACE.gitlab.io > userconfig.yml'
+  - 'echo baseurl: /$CI_PROJECT_NAME >> userconfig.yml'
+  - bundle exec jekyll build -d public --config _config.yml,userconfig.yml
   artifacts:
     paths:
     - public
