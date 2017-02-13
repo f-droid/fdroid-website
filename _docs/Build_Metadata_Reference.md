@@ -619,7 +619,7 @@ configuration to the build. These are (roughly in order of application):
     the NDK.
 
     The buildserver supports r9b with its legacy toolchains, r10e, r11c
-    and the latest release as of writing this document, r12b. You may
+    r12b, and the latest release as of writing this document, r13b. You may
     add support for more versions by adding them to ’ndk\_paths’ in your
     config file.
 
