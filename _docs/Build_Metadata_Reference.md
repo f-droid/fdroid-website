@@ -530,6 +530,9 @@ configuration to the build. These are (roughly in order of application):
     -   ‘OSS Sonatype’ - maintained by the people behind mavenCentral,
         this repository focuses on hosting services for open source
         project binaries.
+    -   ‘OSS JFrog’ - maintained by the people behind jCenter, this
+        repository focuses on hosting services for open source project
+        binaries.
     -   ‘JitPack.io’ - builds directly from Github repositories.
         However, they do not provide any option to reproduce or verify
         the resulting binaries. Builds pre-release versions in
