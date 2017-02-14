@@ -72,5 +72,17 @@ actually not entirely free. For example, advertising and spying on user
 is often enabled via proprietary binary libraries which we cannot
 include.
 
+When including donation information, the relevant donation links (e.g. Bitcoin/
+PayPal/Flattr/etc) must also be available either:
+
+-   In a README or similar file in the projects source code.
+-   On the applications main website.
+-   If the software is hosted on GitLab, then it is sufficient that the
+    person requesting donation info to be added to the fdroiddata repository
+    is the same user account which manages the application source code.
+
+This is to prevent arbitrary people from maliciously changing the donation links of
+applications in the main F-Droid repository without the consent of upstream developers.
+
 For more information on adding applications to the F-Droid Repository,
 see the [Inclusion How-To](../Inclusion_How-To).
