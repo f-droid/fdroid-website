@@ -7,17 +7,17 @@ redirect_from:
 ---
 
 This page documents how a new application gets included in the main
-F-Droid repository in technical details, from submitter's perspective.
+F-Droid repository. It includes the technical details that a submitter should be aware of.
 
 Application Inclusion Proposal
 ------------------------------
 
-To propose inclusion of new application to the main F-Droid repository,
-one could post application's relevant information to the Submission
+To propose inclusion of a new application to the main F-Droid repository,
+one could post the applications relevant information to the Submission
 Queue. The more advanced alternative is writing a complete metadata file
 yourself, test, and propose inclusion (merge request) directly into
-fdroiddata Git repository; speeding up the process. Both ways will be
-described below in details.
+the fdroiddata Git repository; speeding up the process. Both ways will be
+described below in detail.
 
 Note that you can propose inclusion even you are not a developer or
 maintainer of the proposed application itself. See [Inclusion
@@ -31,57 +31,56 @@ This is the simplest way to get the application included. But due to an
 amount of reviewer labor required for each application, this is the
 slowest method.
 
-One do this by creating a new ticket at the [F-Droid Submission Queue on
+Do this by creating a new ticket at the [F-Droid Submission Queue on
 GitLab](https://gitlab.com/fdroid/rfp/issues), add all details required
-by minimal template; and wait for people in F-Droid team to review the
+by the minimal issue template; and wait for people in F-Droid team to review the
 application and do all necessary steps for you.
 
 ### Proposal by Metadata Merge Request
 
-A more advanced alternative for application inclusion proposal is to
-write F-Droid metadata file for the application yourself, and propose
-inclusion by filing git merge request on F-Droid application metadata
+A more advanced alternative for application inclusion is to
+write an F-Droid metadata file for the application yourself, and propose
+inclusion by filing a git merge request on the F-Droid application metadata
 repository ([fdroiddata GitLab
 repository](https://gitlab.com/fdroid/fdroidata/)). This will lead to
-much quicker inclusion as the already-available metadata file will limit
-the scope of what reviewers have to do on each inspection; the submitter
+much quicker inclusion as the already-available metadata file will reduce
+the burden on reviewers when inspecting your proposed metadata; the submitter
 assumes responsibility of providing a correct metadata file.
 
 When proposing inclusion this way, it is assumed that:
 
--   You have a good understanding what [Free
+-   You have a good understanding of what [Free
     Software](https://www.gnu.org/philosophy/free-sw.html) means, and
     what F-Droid is for.
 -   You already read and understand the [Inclusion
     Policy](../Inclusion_Policy).
 -   You already read and understand the [Repository Style
     Guide](../Repository_Style_Guide).
--   You already read and understand [the relevant parts of F-Droid
+-   You already read and understand [the relevant parts of the F-Droid
     server manual](https://f-droid.org/manual/html_node/Metadata.html).
 -   You know how to use [Git VCS](https://git-scm.com/), and know how
-    merge request (a.k.a. "pull request" in
-    GitHub term) works in general.
+    a merge request (a.k.a. "pull request" in
+    GitHub terminology) works in general.
 -   You have an account on [GitLab](https://gitlab.com/).
--   You have a local instance of F-Droid server software, and you know
+-   You have a local instance of the F-Droid server software, and you know
     what you are doing.
 
-Recommended steps to propose inclusion this way is written on F-Droid
-application metadata repository itself, which you could [read them
-there](https://gitlab.com/fdroid/fdroiddata/blob/master/CONTRIBUTING.md).
+Recommended steps to propose inclusion this way are written on the [F-Droid
+application metadata repository](https://gitlab.com/fdroid/fdroiddata/blob/master/CONTRIBUTING.md).
 
 Application Review Process
 --------------------------
 
 Once the inclusion proposal is filed, the application will enter a
-reviewing process which F-Droid staffs look into application's source
-code and determine whether the it fits for inclusion. (And when it's
-not, determine all necessary steps to make it so)
+reviewing process where F-Droid staff look into the applications source
+code and determine whether the it fits for inclusion (and when it's
+not, determine all necessary steps to make it so).
 
-As F-Droid is a software repository which promises user on software
-freedom, a review process is for ensuring that all applications
-distributed from F-Droid main repository are Free Software.
+As F-Droid is a software repository which promises users free software,
+a review process is for ensuring that all applications
+distributed from the F-Droid main repository are Free Software.
 
-This is a nonexhaustive list of what reviewer would do:
+This is a nonexhaustive list of what a reviewer would do:
 
 -   They will go to your source code repository, and look for copyright
     notices in license files, including README, to check that the
@@ -93,16 +92,16 @@ This is a nonexhaustive list of what reviewer would do:
 -   They will try to download a copy of your source code.
 -   They will look in all source code files to verify that their
     licenses are consistent with corresponding license/README files.
--   They will check if your application uses pre-compiled library or
+-   They will check if your application uses any pre-compiled libraries or
     binary blobs.
 -   They will look at your non-source code files to identify [non-free
     resources](https://f-droid.org/wiki/page/Antifeature:NonFreeAssets) used in
     your application.
 -   They will skim through the source code to see if your application
-    uses non-Free dependencies, show advertisements, track users,
-    promotes non-Free services/applications, or do anything that is
+    uses non-Free dependencies, shows advertisements, tracks users,
+    promotes non-Free services/applications, or does anything that is
     harmful or otherwise undesirable for users.
--   They will list summary of [AntiFeatures](https://f-droid.org/wiki/page/Antifeatures) in
+-   They will list a summary of any [AntiFeatures](https://f-droid.org/wiki/page/Antifeatures) in
     your application.
 -   They will try patching your application to remove usage of
     third-party proprietary software (if there is any).
@@ -114,40 +113,40 @@ This is a nonexhaustive list of what reviewer would do:
     and add it to local F-Droid build server instance.
     (`fdroid rewritemeta`, `fdroid
     lint` are used to ensure that metadata is well-formed)
--   They will try to build your application in isolated environment to
+-   They will try to build your application in an isolated environment to
     see if the process succeeds and yield a functional APK.
 -   If all went smoothly, they will add a new metadata file to their
     local fdroiddata git repository and synchronizes the change
     to GitLab.
 
-In case that the application failed some steps in the review, feedback
-will be given in the original submission queue thread that the proposal
+In the case that the application failed some steps in the review, feedback
+will be given in the original submission queue thread where the proposal
 was posted.
 
-Once fdroiddata repository is updated on GitLab, it's mostly just a
-matter of time before F-Droid's official build server would fetch, build
-your application, and publish it on the main F-Droid repository.
+Once the fdroiddata repository is updated on GitLab, it's mostly just a
+matter of time before F-Droid's official build server will fetch, build,
+and publish your application on the main F-Droid repository.
 
-You can confirm the inclusion of your application by looking at [GitLab
+You can confirm the inclusion of your application by looking at the [GitLab
 fdroidata revision
 history](https://gitlab.com/fdroid/fdroiddata/commits/master).
 
 ### Special Consideration of Metadata Merge Request
 
-In case the inclusion is from GitLab merge request, review process is
-theoretically the same, although they are done mostly to confirm that
-the proposed metadata is consistent with what are really in the
-application source code; and steps about writing and committing metadata
+In case the inclusion is from a GitLab merge request, the review process is
+theoretically the same. They are done mostly to confirm that
+the proposed metadata is consistent with what is really in the
+application source code. Steps about writing and committing metadata
 are omitted, as they will use the original metadata file you proprosed.
-Feedbacks will be given on the original merge request thread that the
+Feedback will be given on the original merge request thread that the
 application was proposed; and once the process is completed, the request
-will be merged to `master` branch of fdroiddata
+will be merged to the `master` branch of the fdroiddata
 GitLab repository.
 
 In an attempt to optimize the process, when you proposed inclusion via
-metadata merge request, F-Droid staffs relies on several assumption
-([lined above](#Proposal_by_Metadata_Merge_Request)); so the
-reviewing process in several aspect will be much less intensive, and
+metadata merge request, F-Droid staff rely on several assumptions
+([outlined above](#Proposal_by_Metadata_Merge_Request)). As such, the
+reviewing process will be much less intensive in several respects, and
 consumes much less time. Policy-violating applications that somehow
 sneaked in this way will be dealt with after the fact.
 
@@ -155,33 +154,34 @@ Build Process
 -------------
 
 After the application metadata is added to fdroiddata GitLab repository,
-the next step is a duty of main F-Droid build server to fetch
-application's source code and related components, build the application,
+the next step is for the main F-Droid build server to fetch
+the applications source code and related components, build the application,
 and publish it on the main F-Droid repository.
 
-The build process here is done **daily**, and applications are processed
+This build process is done **daily**, and applications are processed
 in batch. As steps are done behind the scene and are mostly automatic;
-all the submitter needs to do is to wait until it finish.
+all the submitter needs to do is to wait for it to finish.
 
-Record of build process for each application is provided on wiki, as a
-subpage `lastbuild` of application's information
-page (e.g. [this one](https://f-droid.org/wiki/page/org.fdroid.fdroid/lastbuild) is for
-F-Droid client); to aid diagnostic in case the build was unexpectedly
+A record of the build process for each application is provided on the F-Droid wiki, as a
+subpage `lastbuild` of the applications information
+page (e.g. [here is the lastbuild page for the F-Droid
+Client](https://f-droid.org/wiki/page/org.fdroid.fdroid/lastbuild)).
+This is useful to aid in diagnosing problems when the build unexpectedly
 failed.
 
 ### Metadata Refreshing Process
 
-When the scheduled building time arrived, F-Droid build server will
-fetch changes from fdroiddata GitLab repository and merge it to local
+When the scheduled building time arrives, the F-Droid build server will
+fetch changes from the fdroiddata GitLab repository and merge it to a local
 repository. Then, update checks will be performed for all
-applications, including new ones; their metadata files will be
-updated, and committed accordingly to the repository with `F-Droid
-Builder <admin@f-droid.org>` as author name and email.
+applications. If a new version is found, their metadata files will be
+updated and committed to the repository by the author `F-Droid
+Builder <admin@f-droid.org>`.
 
-Once metadata files are updated, F-Droid Server will check them against a
-list of released APKs to constuct a bill of new applications and/or
-versions that are needed to be built, then enter application
-preprocessing process, followed by build process for each of them.
+Once metadata files are updated, the F-Droid Server will check them against a
+list of released APKs to constuct a list of new applications and/or
+versions that need to be built. It will then enter the application
+preprocessing process, followed by the build process for each of them.
 
 ### Application Preprocessing
 
@@ -196,15 +196,15 @@ preprocessing process, followed by build process for each of them.
 What to Expect
 --------------
 
-When your application metadata is approved and accepted into fdroiddata
+When your application metadata is approved and accepted into the fdroiddata
 git repository on GitLab, **it won't immediately appear** in the main
 F-Droid repository.
 
-Provided that your application does not have any build problem, it would
-takes somewhere **around 24 hours to 48 hours** from fdroiddata merge
-for the application to appear in the main
+Provided that your application does not have any build problems, it would
+takes somewhere **around 24 to 48 hours** from fdroiddata merge
+until the application to appears in the main
 repository.[1](https://f-droid.org/forums/topic/how-fast-the-main-f-droid-repository-updates/)
-This timing limitation is due to APK signing part of the build process,
+This timing limitation is due to the APK signing part of the build process,
 which requires human intervention on keystore access
 step.[2](https://f-droid.org/forums/topic/encouraging-f-droid-participation-by-developers/#post-17868)
 
