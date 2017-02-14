@@ -79,6 +79,7 @@ The following sections describe the fields recognised within the file.
 
 ### 7.1 Categories<a name="Categories"></a>
 
+
 Any number of categories for the application to be placed in. There is
 no fixed list of categories - both the client and the web site will
 automatically show any categories that exist in any applications.
@@ -102,6 +103,7 @@ present, it should represent the name(s) as published by upstream, e.g.
 in their copyright or authors file. This can be omitted (or left blank).
 
 This is converted to (`<author>`) in the XML file (_index.xml_).
+
 
 
 ### 7.3 Author Email<a name="Author-Email"></a>
@@ -135,6 +137,9 @@ name in the description of commits created when a new update of the
 application is found. The Auto Name entry is generated automatically
 when `fdroid checkupdates` is run.
 
+This is converted to (`<name>`) in the XML file (_index.xml_).
+
+
 
 ### 7.6 Name<a name="Name"></a>
 
@@ -145,6 +150,8 @@ However, in a situation where an APK contains a bad or missing
 application name, it can be overridden using this. Note that this only
 overrides the name in the list of apps presented in the client; it
 doesn’t changed the name or application label in the source code.
+
+This is converted to (`<name>`) in the XML file (_index.xml_).
 
 
 
@@ -157,6 +164,10 @@ this app as installed instead. It will also appear if the user clicks on
 urls linking to the other app IDs. Useful when an app switches package
 name, or when you want an app to act as multiple apps.
 
+Currently this functionality is a stub.
+
+This is converted to (`<provides>`) in the XML file (_index.xml_).
+
 
 
 ### 7.8 Web Site<a name="Web-Site"></a>
@@ -166,6 +177,7 @@ The URL for the application’s web site. If there is no relevant web
 site, this can be omitted (or left blank).
 
 This is converted to (`<web>`) in the XML file (_index.xml_).
+
 
 
 ### 7.9 Source Code<a name="Source-Code"></a>
@@ -237,6 +249,8 @@ This is converted to (`<bitcoin>`) in the XML file (_index.xml_).
 
 A litecoin address for donating to the project.
 
+This is converted to (`<litecoin>`) in the XML file (_index.xml_).
+
 
 
 ### 7.16 Summary<a name="Summary"></a>
@@ -245,6 +259,9 @@ A litecoin address for donating to the project.
 A brief summary of what the application is. Since the summary is only
 allowed one line on the list of the F-Droid client, keeping it to within
 80 characters will ensure it fits most screens.
+
+This is converted to (`<summary>`) in the XML file (_index.xml_).
+
 
 
 ### 7.17 Description<a name="Description"></a>
@@ -713,6 +730,8 @@ description:
     non-free assets. The most common case is apps using artwork -
     images, sounds, music, etc - under a non-commercial license.
 
+This is converted to (`<antifeatures>`) in the XML file (_index.xml_).
+
 
 
 ### 7.24 Disabled<a name="Disabled"></a>
@@ -728,6 +747,7 @@ an app has outlived it’s usefulness, because the source tarball is
 retained.
 
 
+
 ### 7.25 Requires Root<a name="Requires-Root"></a>
 
 
@@ -736,6 +756,8 @@ privileges to be usable. This lets the client filter it out if the user
 so desires. Whether root is required or not, it is good to give a
 paragraph in the description to the conditions on which root may be
 asked for and the reason for it.
+
+This is converted to (`<requirements>`) in the XML file (_index.xml_).
 
 
 
@@ -866,6 +888,7 @@ version to be ignored. For example, ’beta’ could be specified to ignore
 version names that include that text.
 
 
+
 ### 7.30 Update Check Name<a name="Update-Check-Name"></a>
 
 
@@ -879,10 +902,12 @@ only be used in some specific cases, for example if the app’s
 build.gradle file does not contain the package name.
 
 
+
 ### 7.31 Update Check Data<a name="Update-Check-Data"></a>
 
 
 Used in conjunction with `Update Check Mode` for certain modes.
+
 
 
 ### 7.32 Auto Update Mode<a name="Auto-Update-Mode"></a>
@@ -931,6 +956,7 @@ This field is normally automatically updated - see Update Check Mode.
 This is converted to (`<marketversion>`) in the XML file (_index.xml_).
 
 
+
 ### 7.34 Current Version Code<a name="Current-Version-Code"></a>
 
 
@@ -948,6 +974,7 @@ they can, as if the `Current Version Code` was infinite.
 This is converted to (`<marketvercode>`) in the XML file (_index.xml_).
 
 
+
 ### 7.35 No Source Since<a name="No-Source-Since"></a>
 
 
@@ -958,3 +985,6 @@ missing source code for just one or a few versions, but provide source
 code for newer ones are not to be considered here - this field is
 intended to illustrate which apps do not currently distribute source
 code, and since when have they been doing so.
+
+
+
