@@ -9,4 +9,4 @@ F-Droid is an [installable](https://f-droid.org/FDroid.apk) catalogue of FOSS (F
 
 ![My helpful screenshot](assets/fdroid-screenshot.png)
 
-**[DOWNLOAD F-DROID](https://f-droid.org/FDroid.apk)**
+**[DOWNLOAD F-DROID](https://f-droid.org/FDroid.apk){:class="material-button"}**
