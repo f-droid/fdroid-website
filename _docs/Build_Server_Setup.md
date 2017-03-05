@@ -74,17 +74,27 @@ to build apps, for example, _mercurial_ or _subversion_. Once the
 packages are installed and the _fdroid_ user is created, nothing else
 in this process should be run using root or _sudo_.
 
-    root:~# apt-get install vagrant virtualbox git
+    root:~# apt-get install vagrant virtualbox git python3-certifi \
+            python3-libvirt python3-requestbuilder python3-yaml \
+            python3-clint python3-vagrant python3-paramiko
     root:~# adduser --disabled-password fdroid
     root:~# su fdroid
 
-Configure the buildserver settings, running as _fdroid_ user:
+Clone source code and configure the buildserver settings, running
+as _fdroid_ user:
 
     fdroid:~$ cd ~
     fdroid:~$ git clone https://gitlab.com/fdroid/fdroidserver.git
     fdroid:~$ cp fdroidserver/examples/makebuildserver.config.py fdroidserver/
-    root:~$ echo "PATH=\$PATH:$HOME/android-sdk-linux/tools:/home/fdroid/fdroidserver" >>.bashrc
     fdroid:~$ sed -i "s@^baseboxurl.*@baseboxurl = \"https://f-droid.org/jessie64.box\"@" fdroidserver/makebuildserver.config.py
+
+You also have to make sure your `ANDROID_HOME` environment variable is
+[set up](../Installing_the_Server_and_Repo_Tools#building-apps) correctly.
+
+For your convenience you optionally may add the fdroid executable to your path:
+
+    fdroid:~$ echo "PATH=\$PATH:$HOME/fdroidserver" >> ~/.bashrc
+
 
 Create the base buildserver image... (downloading the basebox and all the sdk platforms can take long time).
 
@@ -217,12 +227,77 @@ Now you are ready to run builds. Test by building the latest fdroid version:
 
 It is also possible to QEMU/KVM guest VMs via libvirt instead of the default VirtualBox.  VirtualBox is still the recommended setup since that is what is used by f-droid.org, but there are cases where it is not possible to run VirtualBox, like on a machine that is already running QEMU/KVM guests.
 
-    apt-get install vagrant vagrant-mutate vagrant-libvirt ebtables dnsmasq-base \
+    root:~# apt-get install vagrant vagrant-mutate vagrant-libvirt ebtables dnsmasq-base \
       libvirt-clients libvirt-daemon libvirt-daemon-system qemu-kvm qemu-utils git
+
+    root:~# cat << EOF > /etc/polkit-1/localauthority/50-local.d/50-libvirt-virsh-access.pkla
+    [libvirt Management Access]
+    Identity=unix-group:libvirt
+    Action=org.libvirt.unix.manage
+    ResultAny=yes
+    ResultInactive=yes
+    ResultActive=yes
+    EOF
+
+    root:~# cat << EOF >> /etc/libvirt/qemu.conf
+    user = "libvirt"
+    group = "libvirt"
+    dynamic_ownership = 1
+    EOF
+
+    root:~# service libvirtd restart
+    root:~# adduser fdroid libvirt
 
 Then create a _makebuildserver.config.py_ and add:
 
     vm_provider = 'libvirt'
+
+### advanced nested KVM Setup:
+
+This section is not relevant for using FDroid in a normal setup. If you
+want to run _fdroid_ with _--server_ flag inside a KVM, this chaper will
+help you getting started.
+
+Consider following basic nesting setup:
+
+    bare metal host (l0)
+    \- FDroid VM (l1)
+       \- FDroid builder VM (l2)
+
+The steps above describe how to setup (l1) and _makebuildserver_ sets up (l2).
+
+First of all you'll have to check if you cpu support the _vmx_
+(or _svm_ on amd) instruction set. You can use this command to list
+details about your cpu:
+
+    root:~# cat /proc/cpuinfo
+
+On (l0) you have to check that nesting is enabled:
+
+    root:~# cat /sys/module/kvm_intel/parameters/nested
+
+If it's not enabled you can turn it on by running:
+
+    echo "options kvm-intel nested=Y" > /etc/modprobe.d/kvm-intel.conf
+
+You'll need to reboot to for this to take effect.
+
+Next you'll need to make sure that your (l1) vm configuration forwards
+cpu features required for nesting. So open up your configuration for the
+VM _/etc/libvirt/qemu/my-vm.xml_ and insert a cpu block inside your domain-tag. (_virt-manager_ also provides a user-interface for this operation.)
+
+  <cpu mode='custom' match='exact'>
+    <model fallback='allow'>SandyBridge</model>
+    <vendor>Intel</vendor>
+    <feature policy='require' name='vmx'/>
+  </cpu>
+
+The actually required configuration here depends on your cpu. You
+can find details in [libvirts manual](https://libvirt.org/formatdomain.html#elementsCPU).
+The important part is that you forward _vmx_ (or _svm_ on amd) to
+the guest system.
+
+
 
 This is the setup that is used in the Continuous Integration builds as part of the [reproducible builds](https://reproducible-builds.org) effort.  You can see this in action on the Debian Project's jenkins setup:
 
