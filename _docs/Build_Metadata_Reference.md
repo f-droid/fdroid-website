@@ -717,8 +717,7 @@ description:
     are impossible to replace or that the replacement cannot be
     connected to without major changes to the app.
 -   ‘NonFreeAdd’ - the application promotes non-free add-ons, such that
-    the app is effectively an advert for other non-free software and
-    such software is not clearly labelled as such.
+    the app is effectively an advert for other non-free software.
 -   ‘NonFreeDep’ - the application depends on a non-free application
     (e.g. Google Maps) - i.e. it requires it to be installed on the
     device, but does not include it.
