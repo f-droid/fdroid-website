@@ -17,12 +17,15 @@ F-Droid community:
 -   the IRC chat room: [\#fdroid](irc://irc.freenode.net/fdroid) IRC
     chatroom on Freenode ([click here to join the
     webchat](https://webchat.freenode.net/?randomnick=1&channels=%23fdroid&uio=MT1mYWxzZSYyPXRydWUmND10cnVlJjk9dHJ1ZSYxMD10cnVlJjEyPXRydWU84))
--   the [web forum](https://f-droid.org/forums)
+-   the [web forum](https://forum.f-droid.org/)
 -   [issue tracker](https://gitlab.com/fdroid/fdroidclient/issues) for
     the Android app itself (aka client)
 -   [issue tracker](https://gitlab.com/fdroid/fdroidserver/issues) for
     the developer tools (aka server)
-
+-   [issue tracker](https://gitlab.com/fdroid/rfp/issues) for
+    packaging new apps
+-   [issue tracker](https://gitlab.com/fdroid/fdroiddata/issues) for
+    issues with published apps
 
 ### Why isn't my favorite app included?
 

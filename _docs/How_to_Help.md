@@ -20,7 +20,7 @@ on.
 
 If you experience problems with the site or client software, you can
 report them in the [issue tracker](https://gitlab.com/u/fdroid), discuss
-them in the [Forum](https://f-droid.org/forums) or on IRC
+them in the [Forum](https://forum.f-droid.org/) or on IRC
 ([#fdroid on freenode](https://webchat.freenode.net/?randomnick=1&channels=%23fdroid&uio=MT1mYWxzZSYyPXRydWUmND10cnVlJjk9dHJ1ZSYxMD10cnVlJjEyPXRydWU84)).
 Take a look at the [Repository Maintenance](https://f-droid.org/wiki/page/Repository_Maintenance)
 page to see how you can help keeping apps and their metadata up to
@@ -36,7 +36,7 @@ the best chance of reproducing and fixing your issue.
 If you see an application missing from the repository (after reading
 the [Inclusion Policy](../Inclusion_Policy)), please feel free to submit
 it via the dedicated
-[Submission Queue](http://f-droid.org/forums/forum/submission-queue)
+[Submission Queue](https://gitlab.com/fdroid/rfp/issues)
 section of the forum.
 
 Metadata may already be found there but it can always be improved. Often
@@ -74,7 +74,7 @@ The web site, this wiki , and app descriptions are not covered yet, but
 will be included in the same system at a later date.
 
 There's a
-[dedicated forum section](http://f-droid.org/forums/forum/translation/)
+[dedicated forum section](https://forum.f-droid.org/c/translation)
 for discussions about translation.
 
 
