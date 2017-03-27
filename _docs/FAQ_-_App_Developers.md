@@ -14,7 +14,7 @@ redirect_from:
 Please check the [inclusion policy](Inclusion_Policy) to make
 sure your app is suitable for inclusion in the official F-Droid repo.
 You can make a post in the [submission
-queue](https://f-droid.org/forums/forum/submission-queue/) section of
+queue](https://gitlab.com/fdroid/rfp/issues) section of
 the forum. Some developers like to go a step further and submit the
 metadata for their app themselves — there are instructions for that at
 [CONTRIBUTING.md](https://gitlab.com/fdroid/fdroiddata/blob/master/CONTRIBUTING.md#merge-requests).
@@ -184,7 +184,6 @@ your APKs.
 
 
 ### Can I run my own app repo?<a name="Can_I_run_my_own_app_repo"></a>
-
 
 Yes! You can also setup and run your own F-Droid repository of apps.
 This repository can be either a "[Simple Binary
