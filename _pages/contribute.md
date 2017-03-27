@@ -33,7 +33,7 @@ There are four git repositories hosted at Gitlab –
 one for the [Android client application](https://gitlab.com/fdroid/fdroidclient),
 one for the [server tools](https://gitlab.com/fdroid/fdroidserver) for running a repository and building/installing applications locally,
 and one for the associated [metadata files for applications in the main F-Droid repository](https://gitlab.com/fdroid/fdroiddata).
-The last repo is handling [website and documentation](https://gitlab.com/fdroid/).
+The last repo is handling [website and documentation](https://gitlab.com/fdroid/fdroid-website).
 The easiest way to contribute to development is to make clones of these projects and submit merge requests.
 If you are making large changes,
 it would be good to discuss them on IRC or in the forum first,
