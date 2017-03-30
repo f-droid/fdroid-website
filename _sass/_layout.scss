@@ -119,10 +119,12 @@ body {
 }
 
 
-
 /**
  * Browsing
  */
+
+$icon-size: 48px;
+
 .app-header, .app-header:visited {
     display: flex;
     align-items: top;
@@ -134,8 +136,8 @@ body {
     }
 
     .app-icon {
-        width: 48px;
-        height: 48px;
+        width: $icon-size;
+        height: $icon-size;
         margin-top: $spacing-unit / 4;
         margin-right: $spacing-unit / 2;
     }
@@ -144,13 +146,30 @@ body {
         margin: 0;
     }
 
-    .app-summary {
-        margin-right: 1em;
-    }
-
     .app-license {
         color: $text-color-light;
-        font-style: italic;
+
+        &:before { content: " (" }
+        &:after { content: ")" }
+    }
+}
+
+/**
+ * List of apps for sidebar. Show a more condensed view than the full list of apps.
+ */
+ .sidebar-widget .app-header {
+    .app-icon {
+        width: $icon-size * 5 / 6;
+        height: $icon-size * 5 / 6;
+    }
+
+    .app-name {
+        font-size: $base-font-size * 1.1;
+    }
+
+    .app-summary, .app-license {
+        color: $text-color-light;
+        font-size: $base-font-size * 0.9;
     }
 }
 
