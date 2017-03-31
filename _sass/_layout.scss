@@ -181,16 +181,62 @@ $icon-size: 48px;
 }
 
 .browse-navigation {
+    @include reset-ul;
+
     display: flex;
-    justify-content: space-between;
+    flex-direction: row;
+    margin: 1em;
+    clear: both;
 
-    .previous, .next {
-        flex-basis: 0;
-        flex-grow: 1;
-    }
+    .nav {
+        $border: solid 1px #aaa;
+        $border-radius: 0.2em;
 
-    .next {
-        text-align: right;
+        color: $text-color;
+        border: $border;
+        border-right: none;
+        text-align: center;
+
+        min-width: 30px;
+        min-height: 30px;
+        line-height: 200%;
+
+        &:first-child, &:last-child {
+            .label {
+                padding-left: 0.8em;
+                padding-right: 0.8em;
+            }
+        }
+
+        &:first-child {
+            border-top-left-radius: $border-radius;
+            border-bottom-left-radius: $border-radius;
+        }
+
+        &:last-child {
+            border-top-right-radius: $border-radius;
+            border-bottom-right-radius: $border-radius;
+            border-right: $border;
+        }
+
+        &.disabled {
+            color: #bbb;
+        }
+
+        &.active {
+            background-color: lighten($primary-color, 50%);
+        }
+
+        a {
+            display: block;
+            height: 100%;
+            color: $text-color;
+
+            &:hover {
+                text-decoration: none;
+                background: lighten($primary-color, 15%);
+            }
+        }
     }
 }
 
