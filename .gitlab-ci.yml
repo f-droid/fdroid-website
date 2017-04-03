@@ -1,47 +1,135 @@
-# This file is a template, and might need editing before it works on your project.
-# Full project: https://gitlab.com/pages/jekyll
 image: ruby:2.3
 
-test:
+stages:
+ - test
+ - deploy
+
+variables:
+  OUT_DIR: build
+  STAGING_URL: $CI_COMMIT_REF_NAME-$CI_PROJECT_NAME-$CI_PROJECT_NAMESPACE.surge.sh
+
+
+build:
+
   stage: test
+
+  except:
+   - master
+
+  cache:
+    paths:
+     - vendor/ruby
+
   script:
-  - apt-get update
-  - apt-get install -y locales
-  - echo "en_US UTF-8" > /etc/locale.gen
-  - locale-gen en_US.UTF-8
-  - export LANG=en_US.UTF-8
-  - export LANGUAGE=en_US:en
-  - export LC_ALL=en_US.UTF-8
-  - apt-get install -y zlib1g-dev
-  - gem install jekyll bundler
-  - bundle install
-  - 'echo url: https://$CI_PROJECT_NAMESPACE.gitlab.io > userconfig.yml'
-  - 'echo baseurl: /$CI_PROJECT_NAME >> userconfig.yml'
-  - bundle exec jekyll build -d test --config _config.yml,userconfig.yml --verbose --trace
+   - ruby -v
+   - apt-get update
+   - apt-get install -y locales
+   - echo "en_US UTF-8" > /etc/locale.gen
+   - locale-gen en_US.UTF-8
+   - export LANG=en_US.UTF-8
+   - export LANGUAGE=en_US:en
+   - export LC_ALL=en_US.UTF-8
+   - apt-get install -y zlib1g-dev
+   - gem install jekyll bundler
+   - bundle install --path vendor
+   - 'echo "url: https://$STAGING_URL" > userconfig.yml'
+   - 'echo "baseurl: \"\"" >> userconfig.yml'
+   - echo "Additional Jekyll config used for CI:" && cat userconfig.yml
+   - bundle exec jekyll build -d $OUT_DIR --config _config.yml,userconfig.yml --verbose --trace
+
   artifacts:
     paths:
-    - test
+     - $OUT_DIR
+
+
+# This deploys feature branches to https://surge.sh, a free static site hosting service.
+# See CONTRIBUTING.md for details of how to configure your GitLab project to enable this.
+# Ideally we would use GitLab pages for this, but until they suupport deploying feature
+# branches alongside master branches (https://gitlab.com/gitlab-org/gitlab-pages/issues/33)
+# this is the next best option.
+preview:
+
+  stage: deploy
+
   except:
-  - master
+   - master
+
+  # This is allowed to fail because only those who have setup $SURGE_LOGIN and $SURGE_TOKEN
+  # as GitLab secret variables (see CONTRIBUTING.md) are able to preview like this.
+  allow_failure: true
+
+  image: node:wheezy
+
+  script:
+   - npm install -g surge
+   - surge --project $OUT_DIR --domain $STAGING_URL
+
+  environment:
+    # Should ideally use $STAGING_URL here, but seems custom variables aren't supported.
+    url: https://$CI_COMMIT_REF_NAME-$CI_PROJECT_NAME-$CI_PROJECT_NAMESPACE.surge.sh
+    name: review/$CI_COMMIT_REF_NAME
+    on_stop: teardown_preview
+
+
+teardown_preview:
+
+  stage: deploy
+
+  except:
+   - master
+
+  variables:
+    GIT_STRATEGY: none
+
+  when: manual
+
+  # This is allowed to fail because only those who have setup $SURGE_LOGIN and $SURGE_TOKEN
+  # as GitLab secret variables (see CONTRIBUTING.md) are able to preview like this.
+  allow_failure: true
+
+  image: node:wheezy
+
+  script:
+   - npm install -g surge
+   - surge teardown $STAGING_URL
+
+  environment:
+    name: review/$CI_COMMIT_REF_NAME
+    action: stop
+
 
 pages:
+
   stage: deploy
+
+  only:
+   - master
+
+  cache:
+    paths:
+     - vendor/ruby
+
   script:
-  - apt-get update
-  - apt-get install -y locales
-  - echo "en_US UTF-8" > /etc/locale.gen
-  - locale-gen en_US.UTF-8
-  - export LANG=en_US.UTF-8
-  - export LANGUAGE=en_US:en
-  - export LC_ALL=en_US.UTF-8
-  - apt-get install -y zlib1g-dev
-  - gem install jekyll bundler
-  - bundle install
-  - 'echo url: https://$CI_PROJECT_NAMESPACE.gitlab.io > userconfig.yml'
-  - 'echo baseurl: /$CI_PROJECT_NAME >> userconfig.yml'
-  - bundle exec jekyll build -d public --config _config.yml,userconfig.yml
+   - ruby -v
+   - apt-get update
+   - apt-get install -y locales
+   - echo "en_US UTF-8" > /etc/locale.gen
+   - locale-gen en_US.UTF-8
+   - export LANG=en_US.UTF-8
+   - export LANGUAGE=en_US:en
+   - export LC_ALL=en_US.UTF-8
+   - apt-get install -y zlib1g-dev
+   - gem install jekyll bundler
+   - bundle install --path vendor
+
+   # This is where GitLab pages will deploy to by default (e.g. "https://fdroid.gitlab.io/fdroid-website")
+   # so we need to make sure that the Jekyll configuration understands this.
+   - 'echo url: https://$CI_PROJECT_NAMESPACE.gitlab.io > userconfig.yml'
+   - 'echo baseurl: /$CI_PROJECT_NAME >> userconfig.yml'
+   - echo "Additional Jekyll config used for CI:" && cat userconfig.yml
+
+   - bundle exec jekyll build -d public --config _config.yml,userconfig.yml
+
   artifacts:
     paths:
     - public
-  only:
-  - master
