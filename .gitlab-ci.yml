@@ -17,7 +17,7 @@ test:
   - bundle install
   - 'echo url: https://$CI_PROJECT_NAMESPACE.gitlab.io > userconfig.yml'
   - 'echo baseurl: /$CI_PROJECT_NAME >> userconfig.yml'
-  - bundle exec jekyll build -d test --config _config.yml,userconfig.yml
+  - bundle exec jekyll build -d test --config _config.yml,userconfig.yml --verbose --trace
   artifacts:
     paths:
     - test
