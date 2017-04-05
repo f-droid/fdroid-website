@@ -22,15 +22,17 @@ body {
 .site-title {
     display: flex;
     align-items: center;
-    text-decoration: none;
+
+    &:hover {
+        text-decoration: none;
+    }
 
     svg {
-        margin: $spacing-unit;
+        margin: $spacing-unit * 2 / 3;
         width: $spacing-unit * 3;
         height: $spacing-unit * 3;
 
         @include media-query($tablet) {
-            margin: $spacing-unit * 2 / 3;
             width: $spacing-unit * 2;
             height: $spacing-unit * 2;
         }
@@ -69,7 +71,10 @@ body {
     }
 }
 
-
+.material-button {
+    display: inline-block;
+    @include button-dark($primary-color);
+}
 
 /**
  * Content
@@ -116,6 +121,8 @@ body {
         padding-bottom: $spacing-unit;
         border-bottom: 1px solid #ccc;
     }
+
+    @import "sidebar-donate"
 }
 
 
