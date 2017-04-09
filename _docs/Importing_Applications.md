@@ -29,24 +29,24 @@ a git repo, it will also clone that. For this to work, the URL must
 point to a project format that the script understands. Currently this is
 limited to one of the following:
 
-1.  GitLab - `https://gitlab.com/PROJECTNAME/REPONAME`
-2.  Gitorious - `https://gitorious.org/PROJECTNAME/REPONAME`
-3.  Github - `https://github.com/USER/PROJECT`
-4.  Google Code - `http://code.google.com/p/PROJECT/` Supports git, svn
-    and hg repos.
-
-    Some Google Code projects have multiple repositories, identified by
-    a dropdown list on the `source/checkout` page. To access one other
-    than the default, specify its name using the `--repo` switch.
-
-5.  Bitbucket - `https://bitbucket.org/USER/PROJECT/`
-6.  Git - `git://REPO`
+1.  GitLab - `https://gitlab.com/<PROJECTNAME>/<REPONAME>`
+3.  Github - `https://github.com/<USER>/<PROJECT>`
+4.  Bitbucket - `https://bitbucket.org/<USER>/<PROJECT>/`
+5.  NotABug - `https://notabug.org/<USER>/<PROJECT>`
+6.  Git - `git://<REPO>` or `https://<REPO>`
 
 Depending on the project type, more or less information may be gathered.
-For example, the license will be retrieved from a Google Code project,
-but not a GitHub one. A bare repo url, such as the git:// one, is the
-least preferable optional of all, since you will have to enter much more
-information manually.
+A bare repo url, such as the git:// one, is the least preferable option
+of all, since you will have to enter much more information manually. While
+`gradle` based builds should be auto-detected for all types, links to issue
+trackers can not be set for plain git projects. You can also use one of the
+following arguments to pre-fill your metadata:
+
+* `-u <URL>`, `--url=<URL>`: Project URL to import from.
+* `-s <DIR>`, `--subdir=<DIR>`: Path to main android project subdirectory, if not in root.
+* `-c <CATEGORIES>`, `--categories=<CATEGORIES>`: Comma separated list of categories.
+* `-l <LICENSE>`, `--license=<LICENSE>`: Overall license of the project.
+* `--revision <REV>`: Allows a different revision (or git branch) to be specified for the initial import
 
 If the import is successful, a metadata file will be created. You will
 need to edit this further to check the information, and fill in the
