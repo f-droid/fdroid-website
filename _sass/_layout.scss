@@ -183,40 +183,20 @@ $icon-size: 48px;
 .browse-navigation {
     @include reset-ul;
 
-    display: flex;
-    flex-direction: row;
+    display: inline-block;
     margin: 1em;
-    clear: both;
 
     .nav {
-        $border: solid 1px #aaa;
         $border-radius: 0.2em;
-
+        display: inline;
+        float: left;
         color: $text-color;
-        border: $border;
-        border-right: none;
-        text-align: center;
 
-        min-width: 30px;
-        min-height: 30px;
-        line-height: 200%;
-
-        &:first-child, &:last-child {
-            .label {
-                padding-left: 0.8em;
-                padding-right: 0.8em;
-            }
-        }
-
-        &:first-child {
-            border-top-left-radius: $border-radius;
-            border-bottom-left-radius: $border-radius;
-        }
-
-        &:last-child {
-            border-top-right-radius: $border-radius;
-            border-bottom-right-radius: $border-radius;
-            border-right: $border;
+        .label {
+            border: solid 1px #aaa;
+            margin: 0 0 0 -1px;
+            text-align: center;
+            padding: 0.5em 1em;
         }
 
         &.disabled {
@@ -224,18 +204,28 @@ $icon-size: 48px;
         }
 
         &.active {
-            background-color: lighten($primary-color, 50%);
+            .label {
+                background-color: lighten($primary-color, 50%);
+            }
+        }
+
+        &:first-child .label {
+            border-top-left-radius: $border-radius;
+            border-bottom-left-radius: $border-radius;
+        }
+
+        &:last-child .label {
+            border-top-right-radius: $border-radius;
+            border-bottom-right-radius: $border-radius;
         }
 
         a {
-            display: block;
-            height: 100%;
             color: $text-color;
+        }
 
-            &:hover {
-                text-decoration: none;
-                background: lighten($primary-color, 15%);
-            }
+        a:hover {
+            text-decoration: none;
+            background: lighten($primary-color, 15%);
         }
     }
 }
