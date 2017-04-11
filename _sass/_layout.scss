@@ -196,7 +196,7 @@ $icon-size: 48px;
             border: solid 1px #aaa;
             margin: 0 0 0 -1px;
             text-align: center;
-            padding: 0.5em 1em;
+            padding: 0.25em 0.5em;
         }
 
         &.disabled {
@@ -226,6 +226,20 @@ $icon-size: 48px;
         a:hover {
             text-decoration: none;
             background: lighten($primary-color, 15%);
+        }
+
+    }
+
+    // Only display previous, current, and next on smaller screens.
+    @include media-query($tablet) {
+        .nav .label {
+            display: none;
+        }
+
+        .nav.page.active .label,
+        .nav.previous .label,
+        .nav.next .label {
+            display: inline;
         }
     }
 }
