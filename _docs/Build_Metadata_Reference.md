@@ -190,6 +190,7 @@ something human-friendly. Machine-readable source-code is covered in the
 This is converted to (`<source>`) in the XML file (_index.xml_).
 
 
+
 ### 7.10 Issue Tracker<a name="Issue-Tracker"></a>
 
 
@@ -197,6 +198,7 @@ The URL for the application’s issue tracker. Optional, since not all
 applications have one.
 
 This is converted to (`<tracker>`) in the XML file (_index.xml_).
+
 
 
 ### 7.11 Changelog<a name="Changelog"></a>
@@ -225,6 +227,7 @@ rather than something that is auto-generated ’button code’.
 This is converted to (`<donate>`) in the XML file (_index.xml_).
 
 
+
 ### 7.13 FlattrID<a name="FlattrID"></a>
 
 
@@ -242,6 +245,7 @@ This is converted to (`<flattr>`) in the XML file (_index.xml_).
 A bitcoin address for donating to the project.
 
 This is converted to (`<bitcoin>`) in the XML file (_index.xml_).
+
 
 
 ### 7.15 Litecoin<a name="Litecoin"></a>
@@ -728,6 +732,7 @@ description:
 -   ‘NonFreeAssets’ - the application contains and makes use of
     non-free assets. The most common case is apps using artwork -
     images, sounds, music, etc - under a non-commercial license.
+-   ‘KnownVuln’ - the application has known security vulnerabilities.
 
 This is converted to (`<antifeatures>`) in the XML file (_index.xml_).
 
