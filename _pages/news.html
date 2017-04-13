@@ -4,14 +4,33 @@ title: News
 permalink: /news/
 ---
 
-<ul class="post-list">
-  {% for post in site.posts %}
-    <li>
-      <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
-
-      <h3>
-        <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-      </h3>
-    </li>
-  {% endfor %}
-</ul>
+<div id="news-content">
+	{% for post in site.posts %}
+		<div id="{{ post.id }}">
+			<h3>
+				<a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+			</h3>
+			<i class="post-meta">
+				Posted on {{ post.date | date: "%b %-d, %Y" }}
+				{% if post.author %}
+					by
+					<img
+						src="{{ site.url }}{{ site.baseurl }}/assets/{{ post.author }}.jpg"
+						alt="{{ post.author }}"
+						width="40"
+					/>
+					<span
+						itemprop="author"
+						itemscope itemtype="http://schema.org/Person">
+						<span
+							itemprop="name">{{ post.author }}
+						</span>
+					</span>
+				{% endif %}
+			</i>
+			<div>
+				{{ post.content | truncatewords: 50 }}
+			</div>
+		</div>
+	{% endfor %}
+</div>
