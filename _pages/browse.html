@@ -6,12 +6,13 @@ pagination:
   enabled: true
   collection: apps
   per_page: 30
+  trail:
+    before: 4
+    after: 4
   permalink: '/:num/'
   sort_field: 'title'
   title: ':title'
 ---
-
-{% include_cached paginator-navigation.html paginator=paginator permalink='/packages/' %}
 
 {% for app in paginator.posts %}
   {% include app-list-item.html app=app %}

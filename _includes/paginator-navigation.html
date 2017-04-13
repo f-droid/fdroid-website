@@ -1,30 +1,47 @@
 {% if include.paginator.total_pages > 1 %}
-<div class="browse-navigation">
-  <div class="previous">
+
+  <ul class="browse-navigation">
+
     {% if include.paginator.previous_page %}
-      <a href="{{ include.paginator.previous_page_path | prepend: site.baseurl }}">Previous</a>
-    {% endif %}
-  </div>
-  <div class="summary">
-    Page {{ include.paginator.page }} of {{ include.paginator.total_pages }}
-  </div>
-  <div class="next">
-    {% if include.paginator.next_page %}
-      <a href="{{ include.paginator.next_page_path | prepend: site.baseurl }}">Next</a>
-    {% endif %}
-  </div>
-</div>
-<div class="browse-pages">
-  {% for page in (1..include.paginator.total_pages) %}
-    {% if page == include.paginator.page %}
-      <b>{{ page }}</b>
+      <li class="nav previous">
+        <a class="label" href="{{ include.paginator.previous_page_path | prepend: site.baseurl }}">Previous</a>
+      </li>
     {% else %}
-      {% if page == 1 %}
-        <a href="{{ include.permalink | prepend: site.baseurl }}">{{ page }}</a>
-      {% else %}
-        <a href="{{ include.permalink | append: page | prepend: site.baseurl }}">{{ page }}</a>
-      {% endif %}
+      <li class="nav previous disabled"><span class="label">Previous</span></li>
     {% endif %}
-  {% endfor %}
-</div>
+
+    {% if include.paginator.page_trail[0].num > 1 %}
+      <li class="nav page first">
+        <a class="label" href="{{ include.permalink | prepend: site.baseurl }}">1</a>
+      </li>
+      <li class="nav disabled"><span class="label">&hellip;</span></li>
+    {% endif %}
+
+    {% for trail in include.paginator.page_trail %}
+      {% if include.paginator.page == trail.num %}
+        <li class="nav page active"><span class="label">{{ trail.num }}</span></li>
+      {% else %}
+        <li class="nav page">
+          <a class="label" href="{{ trail.path | prepend: site.baseurl }}">{{ trail.num }}</a>
+        </li>
+      {% endif %}
+    {% endfor %}
+
+    {% if include.paginator.page_trail[-1].num < include.paginator.total_pages %}
+      <li class="nav disabled"><span class="label">&hellip;</span></li>
+      <li class="nav page last">
+        <a class="label" href="{{ include.permalink | append: include.paginator.total_pages | prepend: site.baseurl }}">{{include.paginator.total_pages}}</a>
+      </li>
+    {% endif %}
+
+    {% if include.paginator.next_page %}
+      <li class="nav next">
+        <a class="label" href="{{ include.paginator.next_page_path | prepend: site.baseurl }}">Next</a>
+      </li>
+    {% else %}
+      <li class="nav next disabled"><span class="label">Next</li>
+    {% endif %}
+
+  </ul>
+
 {% endif %}
