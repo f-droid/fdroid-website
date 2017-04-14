@@ -14,17 +14,32 @@ redirect_from:
 Please check the [inclusion policy](Inclusion_Policy) to make
 sure your app is suitable for inclusion in the official F-Droid repo.
 You can make a post in the [submission
-queue](https://gitlab.com/fdroid/rfp/issues) section of
-the forum. Some developers like to go a step further and submit the
-metadata for their app themselves — there are instructions for that at
+queue](https://gitlab.com/fdroid/rfp/issues) section. Some developers
+like to go a step further and submit the metadata for their app
+themselves — there are instructions for that at
 [CONTRIBUTING.md](https://gitlab.com/fdroid/fdroiddata/blob/master/CONTRIBUTING.md#merge-requests).
 Your app will be included quicker if you send a merge request on
-gitlab.com than if you post it to the forum.
+gitlab.com than if you post it to the queue.
 
 You can also [set up your own
 repo](#Can_I_run_my_own_app_repo)
 and distribute apps yourself, outside of the F-Droid.org repo.
 
+### How do I change the description and add meta information like screenshots?
+
+There are three locations we pull metadata from:
+
+* upstream app repo, following the [fastlane](https://github.com/fastlane/fastlane) or [Triple-T play plugin](https://github.com/Triple-T/gradle-play-publisher) structure
+* F-Droid's own [metadata repository](https://gitlab.com/fdroid/fdroiddata/blob/master/metadata)
+* F-Droid's own `repo` staging area that gets published on the public F-Droid server
+
+While you cannot edit the last one, merge requests to the metadata repository
+updating the description are quite welcome. Screenshots on the other hand are
+currently only used from upstream repository.
+
+We hope to pull in more stuff (e.g. changelogs) directly from upstream in the
+future, giving app developers more control of how their app is shown in F-Droid.
+However, we will always keep a minimal, authoritative metadata repo of our own.
 
 ### How do I license my app?
 
