@@ -47,6 +47,7 @@ the main repository.
 * [Inclusion Policy](Inclusion_Policy) & [Inclusion How-To](Inclusion_How-To)  Guidelines for how to request the inclusion of a new app.
 * [Importing Applications](Importing_Applications) Using `fdroid import` to build a new project.
 * [Building Applications](Building_Applications) Using `fdroid build` to build an app.
+* [All About Descriptions, Graphics, and Screenshots](All_About_Descriptions_Graphics_and_Screenshots) Showing off your app in F-Droid.
 * [Installing the Server and Repo Tools](Installing_the_Server_and_Repo_Tools) How to install fdroidserver, the tools for running repos and build servers.
 * [Setup an F-Droid App Repo](Setup_an_F-Droid_App_Repo) How to setup your own repository of apps that users can easily add to their F-Droid client to get your apps directly from the source.
 * [Build Server Setup](Build_Server_Setup) How to setup the complete f-droid.org build setup on your own machine.
