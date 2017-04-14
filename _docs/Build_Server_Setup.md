@@ -254,15 +254,15 @@ Then create a _makebuildserver.config.py_ and add:
 
 ### advanced nested KVM Setup:
 
-This section is not relevant for using FDroid in a normal setup. If you
+This section is not relevant for using F-Droid in a normal setup. If you
 want to run _fdroid_ with _--server_ flag inside a KVM, this chaper will
 help you getting started.
 
 Consider following basic nesting setup:
 
     bare metal host (l0)
-    \- FDroid VM (l1)
-       \- FDroid builder VM (l2)
+    \- F-Droid VM (l1)
+       \- F-Droid builder VM (l2)
 
 The steps above describe how to setup (l1) and _makebuildserver_ sets up (l2).
 

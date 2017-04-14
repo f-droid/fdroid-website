@@ -347,12 +347,12 @@ Bitcoin as well as any other payment method that you can suggest via a
 website.
 
 
-### How is the FDroid client git workflow structured?
+### How is the F-Droid client git workflow structured?
 
 `git` allows tons of flexibility in the workflow of how people work
 together, so it is important to clearly define the workflow of this
 community so that people know what to expect. The `git` workflow the
-FDroid client app uses is relatively simple and based on the very common
+F-Droid client app uses is relatively simple and based on the very common
 workflow established by github.com, gitlab.com and others like it.
 Here's a break down of what that means:
 

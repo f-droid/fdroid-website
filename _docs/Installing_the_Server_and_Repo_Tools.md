@@ -139,7 +139,7 @@ In order to build Android apps with the _fdroidserver_ toolchain,
 Java, the Android SDK, and some other essential tools must be
 installed.  Only
 [parts of the Android SDK](https://qa.debian.org/developer.php?email=android-tools-devel%40lists.alioth.debian.org)
-are available in Debian, so the Android ADK must be installed
+are available in Debian, so the Android SDK must be installed
 manually, as well as the packages that it requires (_the Android SDK
 tools include some 32-bit binaries, so even 64-bit systems need these
 i386 library packages_). The F-Droid tools use the Android SDK to

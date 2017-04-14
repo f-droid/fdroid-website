@@ -10,7 +10,7 @@ redirect_from:
 * Do not remove this line (it will not be displayed)
 {:toc}
 
-F-Droid.org is the default package repository (repo) in the FDroid
+F-Droid.org is the default package repository (repo) in the F-Droid
 client, but it is not the only possibility. Anyone can create their
 own repo, and users can control which repos their client is using,
 including even disabling the default f-droid.org repo. This model is
@@ -26,7 +26,7 @@ If you want to maintain a simple binary repository of APKs and
 packages obtained elsewhere, the process is quite simple:
 
 1.  [Set up the server tools](../Installing_the_Server_and_Repo_Tools)
-2.  create a directory called _fdroid_, then run `fdroid init` in it
+2.  create a directory called _fdroid_, then run `fdroid init` in that directory
 3.  Optionally edit the _config.py_ to your liking, details examples
     are in
     [`./examples/config.py`](https://gitlab.com/fdroid/fdroidserver/blob/master/examples/config.py)
@@ -78,7 +78,7 @@ In the case of this HOWTO, we're going to setup a "simple binary
 repository" to host a collection of APKs. The repo will be set up in
 the recommended _fdroid/_ subdirectory. This gives the `fdroid` tool
 its own directory to work in, and makes the repo URL clearly marked as
-an FDroid repo. Also, the F-Droid client will automatically search for
+an F-Droid repo. Also, the F-Droid client will automatically search for
 a repository at the _/fdroid/repo_ path if the user only the server
 (e.g. "https://f-droid.org"). Let's give our normal user control
 over this subdirectory in the web root so that we don't need to run
@@ -137,7 +137,7 @@ change the name from the default, be sure to update `repo_icon` and
 `archive_icon` in `/usr/share/nginx/www/fdroid/config.py`.
 
 A final note about security: this setup is not a good setup for a real
-public repo, instead it is a quick and easy way to test out FDroid. At
+public repo, instead it is a quick and easy way to test out F-Droid. At
 the very least, when generating the repo in place, make sure that
 _config.py_ is not accessible via the web, since it contains
 passwords. If the file permissions are correct (e.g.  `chmod 0600

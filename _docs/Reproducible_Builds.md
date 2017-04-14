@@ -10,12 +10,12 @@ redirect_from:
 F-Droid supports
 [reproducible builds](https://reproducible-builds.org) of apps, so
 that anyone can run the build process again and reproduce the same APK
-as the original release.  This means that F-Droid can verify that
-F-Droid can still verify that an app is 100% free software while still
-using the original developer's APK signatures.  Ideally, all of the
-built APKs will have the exact same hash, but that is a more difficult
-standard twith less payoff.  Right now, F-Droid verifies reproducible
-builds using the APK signature.
+as the original release.  This means that F-Droid can verify that an
+app is 100% free software while still using the original developer's
+APK signatures.  Ideally, all of the built APKs will have the exact
+same hash, but that is a more difficult standard with less payoff.
+Right now, F-Droid verifies reproducible builds using the APK
+signature.
 
 This concept is occasionally called "deterministic builds".  That is a
 much stricter standard: that means that the whole process runs with
@@ -96,7 +96,7 @@ creation, and that ID is included in builds.
 
 - NDK inserts changing _build-id_, probably via `ld`
 - jar sort order for APKs
-- faketime integrated into FDroid NDK builds?
+- faketime integrated into F-Droid NDK builds?
 - `aapt` versions produce different results (XML and res/ subfolder names)
 - `faketime <timestamp> ant clean release` feasible?
 
