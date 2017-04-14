@@ -157,6 +157,7 @@ the SHA-1 Checksum on Google's download page.
     $ echo "aafe7f28ac51549784efc2f3bdfc620be8a08213  tools_r25.2.3-linux.zip" | sha1sum -c
     tools_r25.2.3-linux.zip: OK
     $ unzip tools_r25.2.3-linux.zip
+    $ export USE_SDK_WRAPPER=yes
     $ export ANDROID_HOME=~/android-sdk-linux
     $ export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
     $ android update sdk --no-ui --filter platform-tools,tools,build-tools-25.0.2,android-24
