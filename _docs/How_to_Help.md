@@ -33,11 +33,13 @@ the best chance of reproducing and fixing your issue.
 
 ### Submit applications
 
-If you see an application missing from the repository (after reading
-the [Inclusion Policy](../Inclusion_Policy)), please feel free to submit
-it via the dedicated
-[Submission Queue](https://gitlab.com/fdroid/rfp/issues)
-section of the forum.
+If you see an application missing from the repository that fits with
+the [Inclusion Policy](../Inclusion_Policy)), then
+[you can add that application](../Submitting_to_F-Droid_Quick_Start_Guide)
+via a merge request.  Otherwise, to make a simple request, go to the
+dedicated
+[Requests for Packaging](https://gitlab.com/fdroid/rfp/issues)
+tracker.
 
 Metadata may already be found there but it can always be improved. Often
 developers don't mark their releases well: you can ask them to use tags
