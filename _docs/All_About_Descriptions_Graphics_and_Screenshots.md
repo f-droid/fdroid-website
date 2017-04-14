@@ -50,54 +50,30 @@ by `fdroid update`.
 
 ```
 - <fdroiddata>/
-  |
-  + - metadata/
-      |
-      + - <package-id>/
-          |
-          + - <locale>/
-              |
-              + - featureGraphic.png
-              |
-              + - icon.png
-              |
-              + - promoGraphic.png
-              |
-              + - tvBanner.png
-              |
-              + - full_description.txt
-              |
-              + - short_description.txt
-              |
-              + - title.txt
-              |
-              + - video.txt
-              |
-              + - changelogs/
-              |   |
-              |   + - <version-code>.txt
-              |   |
-              |   + - <version-code>.txt
-              |
-              + - phoneScreenshots/
-              |   |
-              |   + - *.png
-              |
-              + - sevenInchScreenshots/
-              |   |
-              |   + - *.png
-              |
-              + - tenInchScreenshots/
-              |   |
-              |   + - *.png
-              |
-              + - tvScreenshots/
-              |   |
-              |   + - *.png
-              |
-              + - wearScreenshots/
-                  |
-                  + - *.png
+  └── metadata/
+      └── <package-id>/
+          └── <locale>/
+              ├── featureGraphic.png
+              ├── icon.png
+              ├── promoGraphic.png
+              ├── tvBanner.png
+              ├── full_description.txt
+              ├── short_description.txt
+              ├── title.txt
+              ├── video.txt
+              ├── changelogs/
+              │   └── <version-code>.txt
+              │   └── <version-code>.txt
+              ├── phoneScreenshots/
+              │   └── *.png
+              ├── sevenInchScreenshots/
+              │   └── *.png
+              ├── tenInchScreenshots/
+              │   └── *.png
+              ├── tvScreenshots/
+              │   └── *.png
+              └── wearScreenshots/
+                  └── *.png
 ```
 
 ## directly in the F-Droid repo
@@ -112,40 +88,23 @@ the _fastlane_ layout are ignored if they are in the repo.
 
 ```
 - fdroid/
-  |
-  + - repo/
-      |
-      + - <package-id>/
-          |
-          + - <locale>/
-              |
-              + - featureGraphic.png
-              |
-              + - icon.png
-              |
-              + - promoGraphic.png
-              |
-              + - tvBanner.png
-              |
-              + - phoneScreenshots/
-              |   |
-              |   + - *.png
-              |
-              + - sevenInchScreenshots/
-              |   |
-              |   + - *.png
-              |
-              + - tenInchScreenshots/
-              |   |
-              |   + - *.png
-              |
-              + - tvScreenshots/
-              |   |
-              |   + - *.png
-              |
-              + - wearScreenshots/
-                  |
-                  + - *.png
+  └── repo/
+      └── <package-id>/
+          └── <locale>/
+              ├── featureGraphic.png
+              ├── icon.png
+              ├── promoGraphic.png
+              ├── tvBanner.png
+              ├── phoneScreenshots/
+              │   └── *.png
+              ├── sevenInchScreenshots/
+              │   └── *.png
+              ├── tenInchScreenshots/
+              │   └── *.png
+              ├── tvScreenshots/
+              │   └── *.png
+              └── wearScreenshots/
+                  └── *.png
 ```
 
 `fdroid update` adds all the graphics files it finds in the repo to
