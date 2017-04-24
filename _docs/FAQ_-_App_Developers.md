@@ -198,7 +198,7 @@ your APKs.
 ### Can I run my own F-Droid package repository?<a name="Can_I_run_my_own_app_repo"></a>
 
 Yes! You can also setup and run your own F-Droid repository of apps
-and other packages.  If you make your own app release to other app
+and other packages.  If you also release your own app via other app
 stores, like Google Play, we recommend that you also include those
 releases in your own binary repo, for among other reasons, this will
 provide a source of APKs for

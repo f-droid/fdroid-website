@@ -69,7 +69,7 @@ to use.
 
 Anything built with the NDK will be much more sensitive.  For example,
 even for builds that use the exact same version of the NDK
-(e.g. _r13b) but on different platforms (.e.g OSX version Ubuntu), the
+(e.g. _r13b_) but on different platforms (.e.g OSX version Ubuntu), the
 resulting binaries will have differences.
 
 Additionally, we'll have to look out for anything that includes

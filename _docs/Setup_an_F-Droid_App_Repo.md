@@ -40,7 +40,8 @@ packages obtained elsewhere, the process is quite simple:
 8.  Then, if you’ve changed things, run `fdroid update` again.
 9.  Running `fdroid update` adds an _icons_ directory into the repo
     directory, and also creates the repository index files
-    (_index.xml_, _index.jar_, etc)
+    (_index.xml_, _index.jar_, etc) __NOTE: To make this process
+    secure, read [Real World Setup](#real-world-setup) below!__
 0.  Publish the resulting contents of the _repo_ directory
     to your web server (or set `serverwebroot` in your _config.py_
     then use `fdroid server update`)

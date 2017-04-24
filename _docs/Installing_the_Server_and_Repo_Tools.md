@@ -39,15 +39,17 @@ For installing on older releases, there are a couple more simple steps:
     PPA](https://launchpad.net/~guardianproject/+archive/ppa/+packages)
     (fingerprint: `6B80 A842 07B3 0AC9 DEE2 35FE F50E ADDD
     2234 F563`):
-
+    ```
     sudo add-apt-repository ppa:guardianproject/ppa
     sudo apt-get update
     sudo apt-get install fdroidserver
+    ```
 
 -   Debian/wheezy: [setup wheezy-backports](http://backports.debian.org/Instructions/#index2h2),
     then:
-
+    ```
     apt-get install fdroidserver/wheezy-backports
+    ```
 
 
 ## Apple OSX
@@ -168,7 +170,7 @@ To add these settings permanently to your shell:
     $ echo 'export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools' >> .bashrc
 
 
-## Build it all!
+## Building all apps from f-droid.org
 
 In order to build all apps that are included in f-droid.org, then a
 lot more software packages are required:

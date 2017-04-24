@@ -252,10 +252,10 @@ Then create a _makebuildserver.config.py_ and add:
 
     vm_provider = 'libvirt'
 
-### advanced nested KVM Setup:
+### Advanced nested KVM Setup:
 
 This section is not relevant for using F-Droid in a normal setup. If you
-want to run _fdroid_ with _--server_ flag inside a KVM, this chaper will
+want to run `fdroid build --server` flag inside a KVM, this chaper will
 help you getting started.
 
 Consider following basic nesting setup:
