@@ -57,4 +57,9 @@ are offering free, automated build services in the cloud. Since the
 whole F-Droid toolset is free software and designed to be easy to setup,
 the barriers to setting up automatic auditing are quite low. People in
 separate areas of the world with different risk profiles can run
-verification servers to provide more trustworthy information.
+[verification servers](../Verification_Server) to provide more
+trustworthy information.
+
+The security model of the [Build Server Setup](../Build_Server_Setup)
+and the [Signing Process](../Signing_Process) are documented
+separately.

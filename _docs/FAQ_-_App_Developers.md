@@ -195,17 +195,17 @@ and people can add your repo to their F-Droid client in order to get
 your APKs.
 
 
-### Can I run my own app repo?<a name="Can_I_run_my_own_app_repo"></a>
+### Can I run my own F-Droid package repository?<a name="Can_I_run_my_own_app_repo"></a>
 
-Yes! You can also setup and run your own F-Droid repository of apps.
-This repository can be either a "[Simple Binary
-Repo](https://f-droid.org/manual/html_node/Simple-Binary-Repository.html)",
-which does not use the fdroidserver build system, or you can host your
-own copy of the full F-Droid.org repo if you want. To set up a "Simple
-Binary Repo" using the same release APKs as you upload to Google Play,
-check out this HOWTO:
-
--   <https://guardianproject.info/2013/11/05/setting-up-your-own-app-store-with-f-droid/>
+Yes! You can also setup and run your own F-Droid repository of apps
+and other packages.  If you also release your own app via other app
+stores, like Google Play, we recommend that you also include those
+releases in your own binary repo, for among other reasons, this will
+provide a source of APKs for
+[reproducible builds](../Reproducible_Builds).  This repository can be
+a "[simple binary repo](../Setup_an_F-Droid_App_Repo)", which does not
+use the _fdroidserver_ build system, or you could host your own mirror
+of the full F-Droid.org repo.
 
 
 ### Can I see who's installing my app?
@@ -347,12 +347,12 @@ Bitcoin as well as any other payment method that you can suggest via a
 website.
 
 
-### How is the FDroid client git workflow structured?
+### How is the F-Droid client git workflow structured?
 
 `git` allows tons of flexibility in the workflow of how people work
 together, so it is important to clearly define the workflow of this
 community so that people know what to expect. The `git` workflow the
-FDroid client app uses is relatively simple and based on the very common
+F-Droid client app uses is relatively simple and based on the very common
 workflow established by github.com, gitlab.com and others like it.
 Here's a break down of what that means:
 

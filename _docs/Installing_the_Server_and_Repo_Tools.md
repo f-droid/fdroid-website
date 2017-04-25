@@ -3,6 +3,8 @@ layout: page
 title: Installing the Server and Repo Tools
 redirect_from:
  - /wiki/page/Installing_the_Server/Repo_Tools
+ - /manual/html_node/System-Requirements.html
+ - /manual/html_node/Setup.html
 
 ---
 
@@ -15,6 +17,9 @@ currently the best supported platforms.
 In order to setup and maintain your own collection of apps and media,
 you need to setup an F-Droid repository using the tools from
 *fdroidserver*.
+
+* Do not remove this line (it will not be displayed)
+{:toc}
 
 
 ## Debian/Ubuntu/Mint/etc
@@ -34,15 +39,17 @@ For installing on older releases, there are a couple more simple steps:
     PPA](https://launchpad.net/~guardianproject/+archive/ppa/+packages)
     (fingerprint: `6B80 A842 07B3 0AC9 DEE2 35FE F50E ADDD
     2234 F563`):
-
+    ```
     sudo add-apt-repository ppa:guardianproject/ppa
     sudo apt-get update
     sudo apt-get install fdroidserver
+    ```
 
 -   Debian/wheezy: [setup wheezy-backports](http://backports.debian.org/Instructions/#index2h2),
     then:
-
+    ```
     apt-get install fdroidserver/wheezy-backports
+    ```
 
 
 ## Apple OSX
@@ -77,7 +84,6 @@ or "Windows Subsystem for Linux".
 2.  install *fdroidserver* from the [Guardian Project PPA](https://launchpad.net/~guardianproject/+archive/fdroidserver/+packages)
     (fingerprint: `6B80 A842 07B3 0AC9 DEE2 35FE F50E ADDD
     2234 F563`) by running this in the Bash shell window:
-
 ``` 
 sudo add-apt-repository ppa:guardianproject/fdroidserver
 sudo apt-get update
@@ -97,24 +103,15 @@ sudo apt-get install fdroidserver
 
 Then here's the repo setup:
 
-` export ANDROID_HOME=/cygdrive/c/path/to/android-sdk`\
-` fdroid init   # the keystore gen will fail`
+    export ANDROID_HOME=/cygdrive/c/path/to/android-sdk
+    fdroid init   # the keystore gen will fail
 
-After running `fdroid init`, you need to set the
-Windows path to your keystore in `config.py`.
-
-It is also possible to install *fdroidserver* in a virtual environment
-using *virtualenv* and *pip*.
-
-1.  `easy_install pip`
-2.  `easy_install virtualenv`
-
-Now follow the *virtualenv+pip* instructions above, then you should be
-able to run the `fdroid` command as long as you
-are in the Python "virtualenv".
+After running `fdroid init`, you need to set the Windows path to your
+keystore in `config.py`.  It is also possible to install
+_fdroidserver_ in a virtual environment using _virtualenv_ and _pip_.
 
 
-## Installing the latest code on all platforms
+## Installing the latest code (any platform)
 
 The easiest way to install the fdroidserver tools from source is to use
 virtualenv and pip. First, make sure you have the Python3 version of
@@ -132,38 +129,40 @@ env":
     python3 setup.py install
 
 
-## Buildserver Setup
+## Building apps
 
+To build apps using F-Droid, Java and the whole Android SDK must be
+installed.  This process is currently only developed on GNU/Linux, but
+we'd love patches getting it working on MacOS and Windows. If you only
+want to make F-Droid repositories of APK files that you already have
+or don't know what this means, then you can skip this section.
 
-If you want to build apps using F-Droid, then you will have to install
-the whole Android SDK. This process is currently only developed on
-GNU/Linux, but we'd be happy to accept patches getting it working on
-MacOS and Windows. If you only want to make F-Droid repositories of APK
-files that you already have or don't know what this means, then you can
-skip this section.
+In order to build Android apps with the _fdroidserver_ toolchain,
+Java, the Android SDK, and some other essential tools must be
+installed.  Only
+[parts of the Android SDK](https://qa.debian.org/developer.php?email=android-tools-devel%40lists.alioth.debian.org)
+are available in Debian, so the Android SDK must be installed
+manually, as well as the packages that it requires (_the Android SDK
+tools include some 32-bit binaries, so even 64-bit systems need these
+i386 library packages_). The F-Droid tools use the Android SDK to
+build and inspect apps, so you must have the Android SDK installed and
+setup before using _fdroidserver_.
 
-The F-Droid tools depend on the Android SDK and Java, but only parts of
-the Android SDK are available in Debian. So the Android ADK must be
-installed manually, as well as the packages that it requires (_the
-Android SDK tools include some 32-bit binaries, so even 64-bit systems
-need these i386 library packages_). The F-Droid tools use the Android
-SDK to build and inspect apps, so you must have the Android SDK
-installed and setup before using fdroidserver.
-
-Install the Android SDK and make sure `ANDROID_HOME` is
-properly set. Be sure to verify the file you downloaded, you can
-[double-check the SHA-1Checksum](https://developer.android.com/sdk/index.html#Other_double-check_the_SHA-1_Checksum)
-on Google's download page.
+[Install the Android SDK](https://developer.android.com/sdk/index.html#downloads)
+and make sure the `ANDROID_HOME` environment variable is properly
+set. Be sure to verify the file you downloaded, you can double-check
+the SHA-1 Checksum on Google's download page.
 
     $ sudo apt-get install openjdk-8-jdk lib32stdc++6 lib32gcc1 lib32z1 lib32ncurses5 ...
     $ cd ~
-    $ wget https://dl.google.com/android/android-sdk_r24.3.4-linux.tgz
-    $ echo "fb293d7bca42e05580be56b1adc22055d46603dd  android-sdk_r24.3.4-linux.tgz" | sha1sum -c
-    android-sdk_r24.3.4-linux.tgz: OK
-    $ tar xzf android-sdk_r24.3.4-linux.tgz
-    $ export ANDROID_HOME=~/android-sdk-linux_86
+    $ wget https://dl.google.com/android/repository/tools_r25.2.3-linux.zip
+    $ echo "aafe7f28ac51549784efc2f3bdfc620be8a08213  tools_r25.2.3-linux.zip" | sha1sum -c
+    tools_r25.2.3-linux.zip: OK
+    $ unzip tools_r25.2.3-linux.zip
+    $ export USE_SDK_WRAPPER=yes
+    $ export ANDROID_HOME=~/android-sdk-linux
     $ export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
-    $ android update sdk --no-ui --filter platform-tools,tools,build-tools-22.0.1,android-22
+    $ android update sdk --no-ui --filter platform-tools,tools,build-tools-25.0.2,android-24
 
 To add these settings permanently to your shell:
 
@@ -171,6 +170,43 @@ To add these settings permanently to your shell:
     $ echo 'export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools' >> .bashrc
 
 
-### TODO
+## Building all apps from f-droid.org
+
+In order to build all apps that are included in f-droid.org, then a
+lot more software packages are required:
+
+- all SDK platforms requested by the apps you want to build
+- all Debian packages required by every app build process (maven, ant, etc)
+- every source code management tool (git, subversion, mercurial, etc)
+- every version of the Android NDK that apps use
+
+On top of that, to build apps like they are built on f-droid.org, then
+the whole [Build Server Setup](../Build_Server_Setup) is required.
+That is a more secure, production-ready setup that requires quite a
+bit more setup and resources.  The
+[build server provisioning scripts](https://gitlab.com/fdroid/fdroidserver/tree/master/buildserver/)
+provide a useful reference for all the needed bits.
+
+If you want to make your own official releases with the F-Droid tools,
+then you'll also need to set up the
+[Signing Process](../Signing_Process).
+
+
+## Proprietary, non-free libraries
+
+The Android SDK is made available by Google under a proprietary
+license. Within that, the essential build tools, SDK platforms,
+support library and some other components are under the Apache license
+and source code is provided.
+
+Google APIs, used for building apps using Google Maps, are free to the
+extent that the library comes pre-installed on the device.  Google
+Play Services, Google Admob, GCM, and many other third party libraries
+are proprietary and cannot be included in the main F-Droid repository.
+The [MicroG project](https://microg.org) is developing free software
+replacements for some of the most used proprietary Google libraries
+
+
+__TODO__
 
 -   fix `fdroid init --keystore` with Microsoft Windows paths...

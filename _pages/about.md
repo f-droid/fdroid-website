@@ -27,14 +27,18 @@ F-Droid respects your privacy. We don’t track you, or your device. We don’t 
 The F-Droid project was founded in 2010 by Ciaran Gultnieks,
 and is brought to you by at least the following people:
 
+* Alterechtschreibung
 * Nico Alt
 * Laura Arjona
 * Ben Arnold
 * Michele Azzolari
 * Jan Berkel
+* David Black
 * Jan C Borchardt
+* Valerio Bozzolan
 * Dan Bravender
 * Cédric Cabessa
+* Kevin Cernekee
 * Kevin Everets
 * Alberto A. Fuentes
 * Torsten Grote
@@ -60,6 +64,7 @@ and is brought to you by at least the following people:
 * Alex Oberhauser
 * Nicolas Raoul
 * Fabian Rodriguez
+* Florian Schmaus
 * Hans-Emil Skogh
 * Paul Sokolovsky
 * Graziano Sorbaioli
@@ -69,9 +74,10 @@ and is brought to you by at least the following people:
 * John Sullivan
 * Antonio Tapiador
 * William Theaker
-* Heinrik Tunedal
+* Henrik Tunedal
 * Ivo Ugrina
 * Matthias Weiler
+* Nutchanon Wetchasit
 * Philipp Wollschlegel
 
 If your name is missing, it’s a mistake and you should
