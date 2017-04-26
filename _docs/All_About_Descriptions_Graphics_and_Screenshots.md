@@ -1,7 +1,6 @@
 ---
 layout: page
 title: All About Descriptions, Graphics, and Screenshots
-
 ---
 
 Each app can have complete app store content, including localized
@@ -20,7 +19,7 @@ There are two data formats:
 * graphics and screenshots as PNG or JPEG files
 
 
-## in the app's source repository
+## In the app's source repository
 
 There are two options for including the app store materials in an
 app's source repository:
@@ -38,7 +37,7 @@ includes these files purely based on the standard file layout that
 those tools use.
 
 
-## in the app's build metadata in an _fdroiddata_ collection
+## In the app's build metadata in an _fdroiddata_ collection
 
 All the app store materials can also be added to any _fdroiddata_
 repository of build metadata.  This follows a file layout modeled
@@ -76,7 +75,7 @@ by `fdroid update`.
                   └── *.png
 ```
 
-## directly in the F-Droid repo
+## Directly in the F-Droid repo
 
 The ultimate destination for files from the app's source repo and
 _fdroiddata_ metadata sub-directories is in the F-Droid repo.  The
