@@ -99,8 +99,8 @@ _AndroidManifest.xml_ and build.gradle).
 We try to build only what you would consider to be releases. These
 should have matching version names and, more importantly, matching
 version codes to releases you build yourself, and be built from the same
-code. Obviously this task is easier if your source code history is clear
-- for example, if releases are tagged or otherwise labeled. If you tag
+code. Obviously this task is easier if your source code history is clear -
+for example, if releases are tagged or otherwise labeled. If you tag
 release, please ensure you keep the same tagging scheme, e.g. if you
 start using a "v" prefix, keep using that.
 
