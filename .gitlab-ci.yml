@@ -33,9 +33,9 @@ build:
    - gem install jekyll bundler
    - bundle install --path vendor
    - 'echo "url: https://$STAGING_URL" > userconfig.yml'
-   - 'echo "baseurl: \"\"" >> userconfig.yml'
+   - 'echo baseurl: /$CI_PROJECT_NAME >> userconfig.yml'
    - echo "Additional Jekyll config used for CI:" && cat userconfig.yml
-   - bundle exec jekyll build -d $OUT_DIR --config _config.yml,userconfig.yml --verbose --trace
+   - bundle exec jekyll build -d $OUT_DIR/$CI_PROJECT_NAME --config _config.yml,userconfig.yml --verbose --trace
 
   artifacts:
     paths:
@@ -66,7 +66,7 @@ preview:
 
   environment:
     # Should ideally use $STAGING_URL here, but seems custom variables aren't supported.
-    url: https://$CI_COMMIT_REF_NAME-$CI_PROJECT_NAME-$CI_PROJECT_NAMESPACE.surge.sh
+    url: https://$CI_COMMIT_REF_NAME-$CI_PROJECT_NAME-$CI_PROJECT_NAMESPACE.surge.sh/$CI_PROJECT_NAME
     name: review/$CI_COMMIT_REF_NAME
     on_stop: teardown_preview
 
