@@ -11,7 +11,7 @@ To help with starting work on including a new application, use
 `fdroid import` to set up a new template project. It has two modes of
 operation, starting with a cloned git repo:
 
-```
+```bash
 git clone https://gitlab.com/fdroid/fdroidclient
 cd fdroidclient
 fdroid import
@@ -19,7 +19,7 @@ fdroid import
 
 Or starting with a URL to a project page:
 
-```
+```bash
 fdroid import --url=http://address.of.project
 ```
 

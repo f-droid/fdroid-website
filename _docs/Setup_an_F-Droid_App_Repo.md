@@ -73,7 +73,9 @@ webserver. Before you start, you need to get
 and a webserver. For the webserver, this HOWTO will use _nginx_ since
 its lightweight, but any will do if you already have one running.
 
+```bash
     sudo apt-get install nginx
+```
 
 In the case of this HOWTO, we're going to setup a "simple binary
 repository" to host a collection of APKs. The repo will be set up in
@@ -86,7 +88,7 @@ over this subdirectory in the web root so that we don't need to run
 the F-Droid tools as root (with _nginx_, the webroot is
 _/usr/share/nginx/www_, it is different for other webservers):
 
-```
+```bash
 $ sudo mkdir /usr/share/nginx/www/fdroid
 $ sudo chown -R $USER /usr/share/nginx/www/fdroid
 $ cd /usr/share/nginx/www/fdroid
@@ -98,7 +100,7 @@ are ready to run the commands to build the repo (if `fdroid init`
 cannot find your Android SDK in _/opt/android-sdk_ or `$ANDROID_HOME`,
 it will prompt you for the path):
 
-```
+```bash
 $ cd /usr/share/nginx/www/fdroid
 $ cp /path/to/\*.apk /usr/share/nginx/www/fdroid/repo/
 $ fdroid update --create-metadata
@@ -124,12 +126,14 @@ you can set the name of the repo, the description, the icon, paths to
 specific versions of the build tools, links to a related wiki, and
 whether to keep stats. Here's the basic repo description block:
 
-    repo_url = "http://guardianproject.info/fdroid/repo"
-    repo_name = "My Local Repo"
-    repo_icon = "GP_Logo_hires.png"
-    repo_description = """
-    A local test repository of Hans-Christoph Steiner <hans@guardianproject.info>.
-    It is a repository of Guardian Project apps. """
+```python
+repo_url = "http://guardianproject.info/fdroid/repo"
+repo_name = "My Local Repo"
+repo_icon = "GP_Logo_hires.png"
+repo_description = """
+A local test repository of Hans-Christoph Steiner <hans@guardianproject.info>.
+It is a repository of Guardian Project apps. """
+```
 
 To put your icon into your repo, choose a PNG image to put in your
 repo.  The PNG goes in `/usr/share/nginx/www/fdroid/`, the file can be
@@ -180,7 +184,7 @@ keystore only on that machine (remember to make backups!). Then use
 your repo on a separate server via ssh. So start a new repo from scratch
 on your non-public machine:
 
-```
+```bash
 $ mkdir ~/fdroid
 $ cd ~/fdroid
 $ fdroid init

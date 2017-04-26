@@ -39,7 +39,7 @@ For installing on older releases, there are a couple more simple steps:
     PPA](https://launchpad.net/~guardianproject/+archive/ppa/+packages)
     (fingerprint: `6B80 A842 07B3 0AC9 DEE2 35FE F50E ADDD
     2234 F563`):
-    ```
+    ```bash
     sudo add-apt-repository ppa:guardianproject/ppa
     sudo apt-get update
     sudo apt-get install fdroidserver
@@ -47,7 +47,7 @@ For installing on older releases, there are a couple more simple steps:
 
 -   Debian/wheezy: [setup wheezy-backports](http://backports.debian.org/Instructions/#index2h2),
     then:
-    ```
+    ```bash
     apt-get install fdroidserver/wheezy-backports
     ```
 
@@ -58,17 +58,23 @@ You can install `fdroidserver` directly using [MacPorts](https://www.macports.or
 
 or MacPorts:
 
-    port install fdroidserver
+```bash
+port install fdroidserver
+```
 
 or Homebrew:
 
-    brew install android-sdk
-    android update sdk --no-ui --filter platform-tools,build-tools-22.0.1
-    brew install fdroidserver
+```bash
+brew install android-sdk
+android update sdk --no-ui --filter platform-tools,build-tools-22.0.1
+brew install fdroidserver
+```
 
 With only `easy_install`:
 
-    sudo easy_install fdroidserver
+```
+sudo easy_install fdroidserver
+```
 
 
 ## Windows
@@ -84,7 +90,7 @@ or "Windows Subsystem for Linux".
 2.  install *fdroidserver* from the [Guardian Project PPA](https://launchpad.net/~guardianproject/+archive/fdroidserver/+packages)
     (fingerprint: `6B80 A842 07B3 0AC9 DEE2 35FE F50E ADDD
     2234 F563`) by running this in the Bash shell window:
-``` 
+```bash
 sudo add-apt-repository ppa:guardianproject/fdroidserver
 sudo apt-get update
 sudo apt-get install fdroidserver
@@ -103,8 +109,10 @@ sudo apt-get install fdroidserver
 
 Then here's the repo setup:
 
-    export ANDROID_HOME=/cygdrive/c/path/to/android-sdk
-    fdroid init   # the keystore gen will fail
+```bash
+export ANDROID_HOME=/cygdrive/c/path/to/android-sdk
+fdroid init   # the keystore gen will fail
+```
 
 After running `fdroid init`, you need to set the Windows path to your
 keystore in `config.py`.  It is also possible to install
@@ -121,13 +129,14 @@ mechanisms like dnf/yum/pacman/emerge/Fink/MacPorts/Brew. Then here's
 how to install _fdroidserver_ into a Python "virtual
 env":
 
-    git clone https://gitlab.com/fdroid/fdroidserver.git
-    cd fdroidserver
-    virtualenv env/  # pyvenv also works
-    . env/bin/activate
-    pip3 install -e .
-    python3 setup.py install
-
+```bash
+git clone https://gitlab.com/fdroid/fdroidserver.git
+cd fdroidserver
+virtualenv env/  # pyvenv also works
+. env/bin/activate
+pip3 install -e .
+python3 setup.py install
+```
 
 ## Building apps
 
@@ -153,22 +162,25 @@ and make sure the `ANDROID_HOME` environment variable is properly
 set. Be sure to verify the file you downloaded, you can double-check
 the SHA-1 Checksum on Google's download page.
 
-    $ sudo apt-get install openjdk-8-jdk lib32stdc++6 lib32gcc1 lib32z1 lib32ncurses5 ...
-    $ cd ~
-    $ wget https://dl.google.com/android/repository/tools_r25.2.3-linux.zip
-    $ echo "aafe7f28ac51549784efc2f3bdfc620be8a08213  tools_r25.2.3-linux.zip" | sha1sum -c
-    tools_r25.2.3-linux.zip: OK
-    $ unzip tools_r25.2.3-linux.zip
-    $ export USE_SDK_WRAPPER=yes
-    $ export ANDROID_HOME=~/android-sdk-linux
-    $ export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
-    $ android update sdk --no-ui --filter platform-tools,tools,build-tools-25.0.2,android-24
+```bash
+$ sudo apt-get install openjdk-8-jdk lib32stdc++6 lib32gcc1 lib32z1 lib32ncurses5 ...
+$ cd ~
+$ wget https://dl.google.com/android/repository/tools_r25.2.3-linux.zip
+$ echo "aafe7f28ac51549784efc2f3bdfc620be8a08213  tools_r25.2.3-linux.zip" | sha1sum -c
+tools_r25.2.3-linux.zip: OK
+$ unzip tools_r25.2.3-linux.zip
+$ export USE_SDK_WRAPPER=yes
+$ export ANDROID_HOME=~/android-sdk-linux
+$ export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
+$ android update sdk --no-ui --filter platform-tools,tools,build-tools-25.0.2,android-24
+```
 
 To add these settings permanently to your shell:
 
-    $ echo export ANDROID_HOME=$ANDROID_HOME >> .bashrc
-    $ echo 'export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools' >> .bashrc
-
+```bash
+$ echo export ANDROID_HOME=$ANDROID_HOME >> .bashrc
+$ echo 'export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools' >> .bashrc
+```
 
 ## Building all apps from f-droid.org
 
