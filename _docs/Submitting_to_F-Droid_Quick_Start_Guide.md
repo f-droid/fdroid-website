@@ -49,7 +49,7 @@ make changes if you are submitting a package.
 
 Run these commands:
 
-```
+```bash
 # Prerequisites
 sudo apt-get install openjdk-8-jdk subversion git git-svn \
     mercurial bzr virtualbox ruby ruby-dev vagrant python3 python3-paramiko \
@@ -92,7 +92,7 @@ directly in a directory called "app".
 Rabbit Escape also builds non-Android-specific Java and other things during its
 build, so your package may be simpler.
 
-```
+```bash
 cd ../fdroiddata
 fdroid import --url https://github.com/andybalaam/rabbit-escape \
     --subdir rabbit-escape-ui-android/app
@@ -141,7 +141,7 @@ manual](https://f-droid.org/manual/fdroid.html#Categories).
 
 And then checked it all worked with:
 
-```
+```bash
 cd ../fdroiddata
 fdroid lint net.artificialworlds.rabbitescape
 fdroid readmeta
@@ -159,7 +159,7 @@ INFO: Finished.
 
 Then I made sure it built OK:
 
-```
+```bash
 fdroid build --server -v -l net.artificialworlds.rabbitescape
 ```
 

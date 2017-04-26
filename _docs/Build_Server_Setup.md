@@ -74,40 +74,48 @@ to build apps, for example, _mercurial_ or _subversion_. Once the
 packages are installed and the _fdroid_ user is created, nothing else
 in this process should be run using root or _sudo_.
 
-    root:~# apt-get install vagrant virtualbox git python3-certifi \
-            python3-libvirt python3-requestbuilder python3-yaml \
-            python3-clint python3-vagrant python3-paramiko
-    root:~# adduser --disabled-password fdroid
-    root:~# su fdroid
+```bash
+root:~# apt-get install vagrant virtualbox git python3-certifi \
+        python3-libvirt python3-requestbuilder python3-yaml \
+        python3-clint python3-vagrant python3-paramiko
+root:~# adduser --disabled-password fdroid
+root:~# su fdroid
+```
 
 Clone source code and configure the buildserver settings, running
 as _fdroid_ user:
 
-    fdroid:~$ cd ~
-    fdroid:~$ git clone https://gitlab.com/fdroid/fdroidserver.git
-    fdroid:~$ cp fdroidserver/examples/makebuildserver.config.py fdroidserver/
-    fdroid:~$ sed -i "s@^baseboxurl.*@baseboxurl = \"https://f-droid.org/jessie64.box\"@" fdroidserver/makebuildserver.config.py
+```bash
+fdroid:~$ cd ~
+fdroid:~$ git clone https://gitlab.com/fdroid/fdroidserver.git
+fdroid:~$ cp fdroidserver/examples/makebuildserver.config.py fdroidserver/
+fdroid:~$ sed -i "s@^baseboxurl.*@baseboxurl = \"https://f-droid.org/jessie64.box\"@" fdroidserver/makebuildserver.config.py
+```
 
 You also have to make sure your `ANDROID_HOME` environment variable is
 [set up](../Installing_the_Server_and_Repo_Tools#building-apps) correctly.
 
 For your convenience you optionally may add the fdroid executable to your path:
 
-    fdroid:~$ echo "PATH=\$PATH:$HOME/fdroidserver" >> ~/.bashrc
-
+```bash
+fdroid:~$ echo "PATH=\$PATH:$HOME/fdroidserver" >> ~/.bashrc
+```
 
 Create the base buildserver image... (downloading the basebox and all the sdk platforms can take long time).
 
-    fdroid:~$ cd fdroidserver
-    fdroid:~/fdroidserver$ ./makebuildserver
+```bash
+fdroid:~$ cd fdroidserver
+fdroid:~/fdroidserver$ ./makebuildserver
+```
 
 Get all of the app build metadata from the fdroiddata repo...
 
-    fdroid:~/fdroidserver$ cd ~
-    fdroid:~$ git clone https://gitlab.com/fdroid/fdroiddata.git
-    fdroid:~$ cp fdroidserver/examples/config.py fdroiddata/
-    fdroid:~$ sed -i "s@^[# ]*build_server_always.*@build_server_always = True@" fdroiddata/config.py
-
+```bash
+fdroid:~/fdroidserver$ cd ~
+fdroid:~$ git clone https://gitlab.com/fdroid/fdroiddata.git
+fdroid:~$ cp fdroidserver/examples/config.py fdroiddata/
+fdroid:~$ sed -i "s@^[# ]*build_server_always.*@build_server_always = True@" fdroiddata/config.py
+```
 
 ## Setting up a build server
 
@@ -162,7 +170,7 @@ exist, and an apt proxy definition, both of which may need customising
 for your environment. You can then go to the `fdroidserver` directory
 and run this:
 
-```
+```bash
 ./makebuildserver
 ```
 
@@ -187,7 +195,7 @@ using `android update sdk --no-ui -t android-19`. It is possible to
 create the cache files of this additions from a local installation of
 the SDK including these:
 
-```
+```bash
 cd /path/to/android-sdk/platforms
 tar czf android-19.tar.gz android-19
 mv android-19.tar.gz /path/to/buildserver/addons/cache/platforms/
@@ -196,7 +204,7 @@ mv android-19.tar.gz /path/to/buildserver/addons/cache/platforms/
 If you have already built a buildserver it is also possible to get this
 files directly from the buildserver:
 
-```
+```bash
 vagrant ssh -- -C 'tar -C ~/android-sdk/platforms czf android-19.tar.gz android-19'
 vagrant ssh -- -C 'cat ~/android-sdk/platforms/android-19.tar.gz' > /path/to/fdroidserver/buildserver/cache/platforms/android19.tar.gz
 ```
@@ -219,38 +227,43 @@ When using the buildserver, running `fdroid` directly from a git checkout of _fd
 
 Now you are ready to run builds. Test by building the latest fdroid version:
 
-    fdroid:~/fdroidserver$ cd ~/fdroiddata
-    fdroid:~/fdroiddata$ ~/fdroidserver/fdroid build org.fdroid.fdroid -l --server
-
+```bash
+fdroid:~/fdroidserver$ cd ~/fdroiddata
+fdroid:~/fdroiddata$ ~/fdroidserver/fdroid build org.fdroid.fdroid -l --server
+```
 
 ## Optionally using QEMU/KVM/libvirt instead of VirtualBox
 
 It is also possible to QEMU/KVM guest VMs via libvirt instead of the default VirtualBox.  VirtualBox is still the recommended setup since that is what is used by f-droid.org, but there are cases where it is not possible to run VirtualBox, like on a machine that is already running QEMU/KVM guests.
 
-    root:~# apt-get install vagrant vagrant-mutate vagrant-libvirt ebtables dnsmasq-base \
-      libvirt-clients libvirt-daemon libvirt-daemon-system qemu-kvm qemu-utils git
+```bash
+root:~# apt-get install vagrant vagrant-mutate vagrant-libvirt ebtables dnsmasq-base \
+  libvirt-clients libvirt-daemon libvirt-daemon-system qemu-kvm qemu-utils git
 
-    root:~# cat << EOF > /etc/polkit-1/localauthority/50-local.d/50-libvirt-virsh-access.pkla
-    [libvirt Management Access]
-    Identity=unix-group:libvirt
-    Action=org.libvirt.unix.manage
-    ResultAny=yes
-    ResultInactive=yes
-    ResultActive=yes
-    EOF
+root:~# cat << EOF > /etc/polkit-1/localauthority/50-local.d/50-libvirt-virsh-access.pkla
+[libvirt Management Access]
+Identity=unix-group:libvirt
+Action=org.libvirt.unix.manage
+ResultAny=yes
+ResultInactive=yes
+ResultActive=yes
+EOF
 
-    root:~# cat << EOF >> /etc/libvirt/qemu.conf
-    user = "libvirt"
-    group = "libvirt"
-    dynamic_ownership = 1
-    EOF
+root:~# cat << EOF >> /etc/libvirt/qemu.conf
+user = "libvirt"
+group = "libvirt"
+dynamic_ownership = 1
+EOF
 
-    root:~# service libvirtd restart
-    root:~# adduser fdroid libvirt
+root:~# service libvirtd restart
+root:~# adduser fdroid libvirt
+```
 
 Then create a _makebuildserver.config.py_ and add:
 
-    vm_provider = 'libvirt'
+```python
+vm_provider = 'libvirt'
+```
 
 ### Advanced nested KVM Setup:
 
@@ -260,9 +273,11 @@ help you getting started.
 
 Consider following basic nesting setup:
 
-    bare metal host (l0)
-    \- F-Droid VM (l1)
-       \- F-Droid builder VM (l2)
+```
+bare metal host (l0)
+\- F-Droid VM (l1)
+   \- F-Droid builder VM (l2)
+```
 
 The steps above describe how to setup (l1) and _makebuildserver_ sets up (l2).
 
@@ -270,15 +285,21 @@ First of all you'll have to check if you cpu support the _vmx_
 (or _svm_ on amd) instruction set. You can use this command to list
 details about your cpu:
 
-    root:~# cat /proc/cpuinfo
+```bash
+root:~# cat /proc/cpuinfo
+```
 
 On (l0) you have to check that nesting is enabled:
 
-    root:~# cat /sys/module/kvm_intel/parameters/nested
+```bash
+root:~# cat /sys/module/kvm_intel/parameters/nested
+```
 
 If it's not enabled you can turn it on by running:
 
-    echo "options kvm-intel nested=Y" > /etc/modprobe.d/kvm-intel.conf
+```bash
+echo "options kvm-intel nested=Y" > /etc/modprobe.d/kvm-intel.conf
+```
 
 You'll need to reboot to for this to take effect.
 
@@ -286,11 +307,13 @@ Next you'll need to make sure that your (l1) vm configuration forwards
 cpu features required for nesting. So open up your configuration for the
 VM _/etc/libvirt/qemu/my-vm.xml_ and insert a cpu block inside your domain-tag. (_virt-manager_ also provides a user-interface for this operation.)
 
-  <cpu mode='custom' match='exact'>
+```xml
+<cpu mode='custom' match='exact'>
     <model fallback='allow'>SandyBridge</model>
     <vendor>Intel</vendor>
     <feature policy='require' name='vmx'/>
-  </cpu>
+</cpu>
+```
 
 The actually required configuration here depends on your cpu. You
 can find details in [libvirts manual](https://libvirt.org/formatdomain.html#elementsCPU).

@@ -71,12 +71,11 @@ prevent the prompt from stalling the build jobs forever, set a fake
 username and password as part of the git URL. One way to do that is to
 add this to <em>\~/.gitconfig</em>:
 
-```
+```conf
 [url "https://fakeusername:fakepassword@github.com"]
     insteadOf = https://github.com
 [url "https://fakeusername:fakepassword@gitlab.com"]
     insteadOf = https://gitlab.com
 [url "https://fakeusername:fakepassword@bitbucket.org"]
     insteadOf = https://bitbucket.org
-
 ```

@@ -36,8 +36,10 @@ creating
 [Android signing keys](https://developer.android.com/studio/publish/app-signing.html#signing-manually),
 with a command like:
 
-    keytool -genkey -v -keystore my.keystore -alias repokey \
-      -keyalg RSA -keysize 2048 -validity 10000
+```bash
+keytool -genkey -v -keystore my.keystore -alias repokey \
+  -keyalg RSA -keysize 2048 -validity 10000
+```
 
 In the above, replace _my.keystore_ with the name of the keystore file
 to be created, and ’repokey’ with a name to identify the repo index

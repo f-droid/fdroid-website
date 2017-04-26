@@ -53,7 +53,7 @@ from this directory that you run the `fdroid` command to perform all
 repository management tasks. You can either create a brand new one, or
 grab a copy of the data used by the main F-Droid repository:
 
-```
+```bash
 git clone https://gitlab.com/fdroid/fdroiddata.git
 ```
 
@@ -71,7 +71,7 @@ list of the available sub-commands.
 You can follow any command with `--help` to get a list of additional
 options available for that command.
 
-```
+```bash
 fdroid update --help
 ```
 
@@ -88,7 +88,7 @@ the more common usage modes follows:
 To build a single version of a single application, you could run the
 following:
 
-```
+```bash
 fdroid build org.fdroid.fdroid:16
 ```
 
@@ -111,7 +111,7 @@ generate the binary.
 
 If you were intending to publish these files, you could then run:
 
-```
+```bash
 fdroid publish
 ```
 
@@ -156,7 +156,7 @@ format: JSON, XML, YAML, or F-Droid’s `.txt` format.
 Once you have that setup, you can build the most recent version of the
 app using the whole FDroid stack by running:
 
-```
+```bash
 fdroid build
 ```
 
