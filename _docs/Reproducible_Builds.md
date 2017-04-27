@@ -75,6 +75,11 @@ resulting binaries will have differences.
 Additionally, we'll have to look out for anything that includes
 timestamping information, is sensitive to sort order, etc.
 
+Google is also working towards reproducible builds of Android apps, so
+using recent versions of the Android SDK helps.  One specific case is
+starting with Gradle Android Plugin v2.2.2, timestamps in the APK
+file's ZIP header are automatically zeroed out.
+
 
 ### Build Server IDs
 
