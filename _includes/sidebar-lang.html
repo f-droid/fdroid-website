@@ -1,0 +1,35 @@
+{% comment %}
+  The language chooser is a drop down list which displays the relevant flag to the left.
+  If JavaScript is enabled, then it will automatically redirect to the relevant translation when changed.
+  If the user has JavaScript disabled, then it will show a submit button, and the .htaccess file will rewrite
+  the incoming "?lang=..." query parameter to the correct translated path.
+{% endcomment %}
+
+<form action="{{site.baseurl}}{{ page.url }}" method="get">
+
+  <img class="lang-flag" alt="{{ lang }}" src="{{site.baseurl}}/assets/lang/{{ site.active_lang }}.png" />
+
+  <select id="language-chooser-select" name="lang">
+    {% for lang in site.languages %}
+      <option value="{{ lang }}" {% if lang == site.active_lang %}selected="selected"{% endif %}>
+        {{ lang|upcase }}
+      </option>
+    {% endfor %}
+  </select>
+
+  <script>
+    (function() {
+      document.getElementById('language-chooser-select').onchange = function() {
+        var lang = this.value;
+        var isDefault = lang == 'en';
+        var prefix = isDefault ? '' : '/' + lang;
+        document.location = '{{site.baseurl}}' + prefix + '{{page.url}}';
+      }
+    })();
+  </script>
+
+  <noscript>
+    <input id="language-chooser-submit" type="submit" value="Change" />
+  </noscript>
+
+</form>
