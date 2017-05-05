@@ -37,3 +37,28 @@ RewriteRule ^(.*)$ /packages/search/%1? [L,R=301]
 RewriteCond %{QUERY_STRING} ^.*fdfilter=(.*?)$
 RewriteRule ^(.*)$ /packages/search/%1? [L,R=301]
 
+
+
+##
+## PACKAGE DETAILS
+##
+## Package detail pages are shown for the package name specified by the `fdid` query parameter.
+##
+
+#
+# Rewrites:
+#  /any/path?leading_param=blah&fdid=org.fdroid.fdroid&trailing_param=blah -> /packages/org.fdroid.fdroid/
+#  /any/path?fdid=org.fdroid.fdroid&trailing_param=blah                    -> /packages/org.fdroid.fdroid/
+#
+RewriteCond %{QUERY_STRING} ^.*fdid=(.*?)&.*$
+RewriteRule ^(.*)$ /packages/%1/? [L,R=301]
+
+#
+# The less specific version of the above rule, for when there is no trailing parameters.
+# Rewrites:
+#  /any/path?leading_param=blah&fdid=org.fdroid.fdroid -> /packages/org.fdroid.fdroid/
+#  /any/path?fdid=org.fdroid.fdroid                    -> /org.fdroid.fdroid/
+#
+RewriteCond %{QUERY_STRING} ^.*fdid=(.*?)$
+RewriteRule ^(.*)$ /packages/%1/? [L,R=301]
+
