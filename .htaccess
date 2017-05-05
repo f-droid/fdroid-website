@@ -65,6 +65,33 @@ RewriteRule ^(.*)$ /packages/%1/? [L,R=301]
 
 
 ##
+## CATEGORIES
+##
+## Categories are browsed using the `fdcategory` query parameter.
+## Note: This is often specified twice, and if so, the latter is used. This is categored for because
+## the first .* is greedy, so will consume any prior `fdcategory=` strings before capturing the last.
+##
+
+#
+# Rewrites:
+#  /any/path?leading_param=blah&fdcategory=System&trailing_param=blah -> /packages/category/System/
+#  /any/path?fdcategory=System&trailing_param=blah                    -> /packages/category/System/
+#
+RewriteCond %{QUERY_STRING} ^.*fdcategory=(.*?)&.*$
+RewriteRule ^(.*)$ /packages/category/%1/? [L,R=301]
+
+#
+# The less specific version of the above rule, for when there is no trailing parameters.
+# Rewrites:
+#  /any/path?leading_param=blah&fdcategory=System -> /packages/category/System/
+#  /any/path?fdcategory=System                    -> /packages/category/System/
+#
+RewriteCond %{QUERY_STRING} ^.*fdcategory=(.*)$
+RewriteRule ^(.*)$ /packages/category/%1/? [L,R=301]
+
+
+
+##
 ## MISC PAGES
 ## 
 ## Some random parts which could technically be done via Jekyll, but seeing as we are adding
