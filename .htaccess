@@ -1,0 +1,39 @@
+RewriteEngine On
+
+## 
+## SEARCH QUERIES
+## 
+## Search queries used to read the `fdfilter` query parameter.
+## 
+
+#
+# The first .* matches anything (if any) before the "fdfilter" parameter.
+# The second .*? captures the value of this parameter. It is non-gready so that it doesn't capture subsequent &'s. 
+# The third &.* matches any subsequent parameters.
+# I would have liked to be able to do something like &?.* so that only if there
+# was a trailing & then we would match, but that is incorrect. Instead, we use
+# a second rewrite rule that is less strict to match the case when there is no
+# trailing parameters.
+#
+# Rewrites:
+#  /any/path?leading_param=blah&fdfilter=query&trailing_param=blah -> /packages/search/query
+#  /any/path?fdfilter=query&trailing_param=blah                    -> /packages/search/query
+#
+RewriteCond %{QUERY_STRING} ^.*fdfilter=(.*?)&.*$
+
+#
+# If you were to leave off the "?" at the end, then it appends the entire query string
+# from the original request. By having "?" here, it shows no query string at all, which
+# is what we are after.
+#
+RewriteRule ^(.*)$ /packages/search/%1? [L,R=301]
+
+#
+# The less specific version of the above rule, for when there is no trailing parameters.
+# Rewrites:
+#  /any/path?leading_param&fdfilter=query -> /packages/search/query
+#  /any/path?fdfilter=query               -> /packages/search/query
+#
+RewriteCond %{QUERY_STRING} ^.*fdfilter=(.*?)$
+RewriteRule ^(.*)$ /packages/search/%1? [L,R=301]
+
