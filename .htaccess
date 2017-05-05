@@ -1,14 +1,14 @@
 RewriteEngine On
 
-## 
+##
 ## SEARCH QUERIES
-## 
+##
 ## Search queries used to read the `fdfilter` query parameter.
-## 
+##
 
 #
 # The first .* matches anything (if any) before the "fdfilter" parameter.
-# The second .*? captures the value of this parameter. It is non-gready so that it doesn't capture subsequent &'s. 
+# The second .*? captures the value of this parameter. It is non-gready so that it doesn't capture subsequent &'s.
 # The third &.* matches any subsequent parameters.
 # I would have liked to be able to do something like &?.* so that only if there
 # was a trailing & then we would match, but that is incorrect. Instead, we use
@@ -62,6 +62,18 @@ RewriteRule ^(.*)$ /packages/%1/? [L,R=301]
 RewriteCond %{QUERY_STRING} ^.*fdid=(.*?)$
 RewriteRule ^(.*)$ /packages/%1/? [L,R=301]
 
+#
+# This is from the android docs about the android manifest `package` attribute:
+#
+#   A full Java-language-style package name for the Android application. The name
+#   should be unique. The name may contain uppercase or lowercase letters
+#   ('A' through 'Z'), numbers, and underscores ('_'). However, individual package
+#   name parts may only start with letters.
+#
+# This is a simplified regex, which ignores the "individual package parts..." bit.
+#
+RewriteRule ^app/([a-zA-Z0-9_.]*)$ /packages/$1/ [L,R=301]
+
 
 
 ##
@@ -93,7 +105,7 @@ RewriteRule ^(.*)$ /packages/category/%1/? [L,R=301]
 
 ##
 ## MISC PAGES
-## 
+##
 ## Some random parts which could technically be done via Jekyll, but seeing as we are adding
 ## rewrite rules here that are highly specific to the existing website, it would be nice to
 ## keep other redirects here also.
