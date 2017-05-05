@@ -62,3 +62,20 @@ RewriteRule ^(.*)$ /packages/%1/? [L,R=301]
 RewriteCond %{QUERY_STRING} ^.*fdid=(.*?)$
 RewriteRule ^(.*)$ /packages/%1/? [L,R=301]
 
+
+
+##
+## MISC PAGES
+## 
+## Some random parts which could technically be done via Jekyll, but seeing as we are adding
+## rewrite rules here that are highly specific to the existing website, it would be nice to
+## keep other redirects here also.
+##
+
+#
+# Match anything else which begins with repository/browse. Be generous in what we accept
+# after the /browse part of the path, because we have more specific rules earlier which will
+# catch more important URLs, such as /repository/browse?fdfilter=query
+#
+RewriteRule ^repository/browse.*$ /packages/ [L,R=301]
+
