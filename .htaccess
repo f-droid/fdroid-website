@@ -1,0 +1,120 @@
+RewriteEngine On
+
+##
+## SEARCH QUERIES
+##
+## Search queries used to read the `fdfilter` query parameter.
+##
+
+#
+# The first .* matches anything (if any) before the "fdfilter" parameter.
+# The second .*? captures the value of this parameter. It is non-gready so that it doesn't capture subsequent &'s.
+# The third &.* matches any subsequent parameters.
+# I would have liked to be able to do something like &?.* so that only if there
+# was a trailing & then we would match, but that is incorrect. Instead, we use
+# a second rewrite rule that is less strict to match the case when there is no
+# trailing parameters.
+#
+# Rewrites:
+#  /any/path?leading_param=blah&fdfilter=query&trailing_param=blah -> /packages/search/query
+#  /any/path?fdfilter=query&trailing_param=blah                    -> /packages/search/query
+#
+RewriteCond %{QUERY_STRING} ^.*fdfilter=(.*?)&.*$
+
+#
+# If you were to leave off the "?" at the end, then it appends the entire query string
+# from the original request. By having "?" here, it shows no query string at all, which
+# is what we are after.
+#
+RewriteRule ^(.*)$ /packages/search/%1? [L,R=301]
+
+#
+# The less specific version of the above rule, for when there is no trailing parameters.
+# Rewrites:
+#  /any/path?leading_param&fdfilter=query -> /packages/search/query
+#  /any/path?fdfilter=query               -> /packages/search/query
+#
+RewriteCond %{QUERY_STRING} ^.*fdfilter=(.*?)$
+RewriteRule ^(.*)$ /packages/search/%1? [L,R=301]
+
+
+
+##
+## PACKAGE DETAILS
+##
+## Package detail pages are shown for the package name specified by the `fdid` query parameter.
+##
+
+#
+# Rewrites:
+#  /any/path?leading_param=blah&fdid=org.fdroid.fdroid&trailing_param=blah -> /packages/org.fdroid.fdroid/
+#  /any/path?fdid=org.fdroid.fdroid&trailing_param=blah                    -> /packages/org.fdroid.fdroid/
+#
+RewriteCond %{QUERY_STRING} ^.*fdid=(.*?)&.*$
+RewriteRule ^(.*)$ /packages/%1/? [L,R=301]
+
+#
+# The less specific version of the above rule, for when there is no trailing parameters.
+# Rewrites:
+#  /any/path?leading_param=blah&fdid=org.fdroid.fdroid -> /packages/org.fdroid.fdroid/
+#  /any/path?fdid=org.fdroid.fdroid                    -> /org.fdroid.fdroid/
+#
+RewriteCond %{QUERY_STRING} ^.*fdid=(.*?)$
+RewriteRule ^(.*)$ /packages/%1/? [L,R=301]
+
+#
+# This is from the android docs about the android manifest `package` attribute:
+#
+#   A full Java-language-style package name for the Android application. The name
+#   should be unique. The name may contain uppercase or lowercase letters
+#   ('A' through 'Z'), numbers, and underscores ('_'). However, individual package
+#   name parts may only start with letters.
+#
+# This is a simplified regex, which ignores the "individual package parts..." bit.
+#
+RewriteRule ^app/([a-zA-Z0-9_.]*)$ /packages/$1/ [L,R=301]
+
+
+
+##
+## CATEGORIES
+##
+## Categories are browsed using the `fdcategory` query parameter.
+## Note: This is often specified twice, and if so, the latter is used. This is categored for because
+## the first .* is greedy, so will consume any prior `fdcategory=` strings before capturing the last.
+##
+
+#
+# Rewrites:
+#  /any/path?leading_param=blah&fdcategory=System&trailing_param=blah -> /packages/category/System/
+#  /any/path?fdcategory=System&trailing_param=blah                    -> /packages/category/System/
+#
+RewriteCond %{QUERY_STRING} ^.*fdcategory=(.*?)&.*$
+RewriteRule ^(.*)$ /packages/category/%1/? [L,R=301]
+
+#
+# The less specific version of the above rule, for when there is no trailing parameters.
+# Rewrites:
+#  /any/path?leading_param=blah&fdcategory=System -> /packages/category/System/
+#  /any/path?fdcategory=System                    -> /packages/category/System/
+#
+RewriteCond %{QUERY_STRING} ^.*fdcategory=(.*)$
+RewriteRule ^(.*)$ /packages/category/%1/? [L,R=301]
+
+
+
+##
+## MISC PAGES
+##
+## Some random parts which could technically be done via Jekyll, but seeing as we are adding
+## rewrite rules here that are highly specific to the existing website, it would be nice to
+## keep other redirects here also.
+##
+
+#
+# Match anything else which begins with repository/browse. Be generous in what we accept
+# after the /browse part of the path, because we have more specific rules earlier which will
+# catch more important URLs, such as /repository/browse?fdfilter=query
+#
+RewriteRule ^repository/browse.*$ /packages/ [L,R=301]
+
