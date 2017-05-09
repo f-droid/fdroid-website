@@ -9,6 +9,44 @@ variables:
   STAGING_URL: $CI_COMMIT_REF_NAME-$CI_PROJECT_NAME-$CI_PROJECT_NAMESPACE.surge.sh
 
 
+#
+# This is a manual task for building in preperation to deploy to https://f-droid.org. The intention
+# is for it to be run locally using `gitlab-runner` each time a signed tag is found. Invoke like so:
+#
+#  gitlab-runner exec docker f-droid.org -docker-volumes `pwd`/_site:/builds/output --env DEPLOY_DIR=/builds/output
+#
+# And when it is finished, you should have a directory in `pwd`/_site/build which includes the entire
+# static site ready to be deployed to https://f-droid.org.
+#
+f-droid.org:
+
+  stage: deploy
+
+  when: manual
+
+  cache:
+    paths:
+     - vendor/ruby
+
+  script:
+   - '[ ! -d "$DEPLOY_DIR" ] && echo "DEPLOY_DIR env variable must point to a directory" && exit 1'
+   - ruby -v
+   - apt-get update
+   - apt-get install -y locales
+   - echo "en_US UTF-8" > /etc/locale.gen
+   - locale-gen en_US.UTF-8
+   - export LANG=en_US.UTF-8
+   - export LANGUAGE=en_US:en
+   - export LC_ALL=en_US.UTF-8
+   - apt-get install -y zlib1g-dev
+   - gem install jekyll bundler
+   - bundle install --path vendor
+   - 'echo "url: https://f-droid.org" > userconfig.yml'
+   - 'echo "baseurl: \"\"" >> userconfig.yml'
+   - echo "Additional Jekyll config used for CI:" && cat userconfig.yml
+   - bundle exec jekyll build -d $OUT_DIR --config _config.yml,userconfig.yml --verbose --trace
+   - cp -r $OUT_DIR $DEPLOY_DIR/
+
 build:
 
   stage: test
