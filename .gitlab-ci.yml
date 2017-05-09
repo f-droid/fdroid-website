@@ -9,6 +9,21 @@ variables:
   STAGING_URL: $CI_COMMIT_REF_NAME-$CI_PROJECT_NAME-$CI_PROJECT_NAMESPACE.surge.sh
 
 
+# Common steps required for each type of "Build" (f-droid.org, GitLab Pages, feature branches)
+.setup_for_jekyll: &setup_for_jekyll |
+  ruby -v
+  apt-get update
+  apt-get install -y locales
+  echo "en_US UTF-8" > /etc/locale.gen
+  locale-gen en_US.UTF-8
+  export LANG=en_US.UTF-8
+  export LANGUAGE=en_US:en
+  export LC_ALL=en_US.UTF-8
+  apt-get install -y zlib1g-dev
+  gem install jekyll bundler
+  bundle install --path vendor
+
+
 #
 # This is a manual task for building in preperation to deploy to https://f-droid.org. The intention
 # is for it to be run locally using `gitlab-runner` each time a signed tag is found. Invoke like so:
@@ -30,17 +45,7 @@ f-droid.org:
 
   script:
    - '[ ! -d "$DEPLOY_DIR" ] && echo "DEPLOY_DIR env variable must point to a directory" && exit 1'
-   - ruby -v
-   - apt-get update
-   - apt-get install -y locales
-   - echo "en_US UTF-8" > /etc/locale.gen
-   - locale-gen en_US.UTF-8
-   - export LANG=en_US.UTF-8
-   - export LANGUAGE=en_US:en
-   - export LC_ALL=en_US.UTF-8
-   - apt-get install -y zlib1g-dev
-   - gem install jekyll bundler
-   - bundle install --path vendor
+   - *setup_for_jekyll
    - 'echo "url: https://f-droid.org" > userconfig.yml'
    - 'echo "baseurl: \"\"" >> userconfig.yml'
    - echo "Additional Jekyll config used for CI:" && cat userconfig.yml
@@ -59,17 +64,7 @@ build:
      - vendor/ruby
 
   script:
-   - ruby -v
-   - apt-get update
-   - apt-get install -y locales
-   - echo "en_US UTF-8" > /etc/locale.gen
-   - locale-gen en_US.UTF-8
-   - export LANG=en_US.UTF-8
-   - export LANGUAGE=en_US:en
-   - export LC_ALL=en_US.UTF-8
-   - apt-get install -y zlib1g-dev
-   - gem install jekyll bundler
-   - bundle install --path vendor
+   - *setup_for_jekyll
    - 'echo "url: https://$STAGING_URL" > userconfig.yml'
    - 'echo baseurl: /$CI_PROJECT_NAME >> userconfig.yml'
    - echo "Additional Jekyll config used for CI:" && cat userconfig.yml
@@ -148,17 +143,7 @@ pages:
      - vendor/ruby
 
   script:
-   - ruby -v
-   - apt-get update
-   - apt-get install -y locales
-   - echo "en_US UTF-8" > /etc/locale.gen
-   - locale-gen en_US.UTF-8
-   - export LANG=en_US.UTF-8
-   - export LANGUAGE=en_US:en
-   - export LC_ALL=en_US.UTF-8
-   - apt-get install -y zlib1g-dev
-   - gem install jekyll bundler
-   - bundle install --path vendor
+   - *setup_for_jekyll
 
    # This is where GitLab pages will deploy to by default (e.g. "https://fdroid.gitlab.io/fdroid-website")
    # so we need to make sure that the Jekyll configuration understands this.
