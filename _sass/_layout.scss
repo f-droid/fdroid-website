@@ -66,7 +66,12 @@ body {
         @include button-dark($primary-color);
 
         &.current {
-            border-bottom: 6px solid rgba(255, 255, 255, .4);
+            $border-height: 6px;
+            border-bottom: $border-height solid rgba(255, 255, 255, .4);
+
+            // Prevents the border from making the whole row higher:
+            line-height: ($spacing-unit * 1.5) - (2 * $border-height);
+            padding-top: $border-height;
         }
     }
 }
