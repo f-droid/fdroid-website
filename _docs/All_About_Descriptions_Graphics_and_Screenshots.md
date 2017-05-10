@@ -23,7 +23,7 @@ There are two data formats:
 
 There are two options for including the app store materials in an
 app's source repository:
-[fastlane supply](https://github.com/fastlane/fastlane/blob/1.109.0/supply/README.md#images-and-screenshots)
+[fastlane supply](https://github.com/fastlane/fastlane/blob/2.28.7/supply/README.md#images-and-screenshots)
 and
 [Triple-T Gradle Play Publisher](https://github.com/Triple-T/gradle-play-publisher#play-store-metadata).
 Both of these are free software tools that integrate into an Android
@@ -42,7 +42,7 @@ those tools use.
 All the app store materials can also be added to any _fdroiddata_
 repository of build metadata.  This follows a file layout modeled
 after
-[fastlane supply](https://github.com/fastlane/fastlane/blob/1.109.0/supply/README.md#images-and-screenshots),
+[fastlane supply](https://github.com/fastlane/fastlane/blob/2.28.7/supply/README.md#images-and-screenshots),
 modified to fit into the _fdroiddata_ workflow.  Any files in this
 layout will be copied into the repo and added to the repo's index file
 by `fdroid update`.
@@ -52,16 +52,17 @@ by `fdroid update`.
   └── metadata/
       └── <package-id>/
           └── <locale>/
-              ├── featureGraphic.png
-              ├── icon.png
-              ├── promoGraphic.png
-              ├── tvBanner.png
               ├── full_description.txt
               ├── short_description.txt
               ├── title.txt
               ├── video.txt
+              ├── images/
+              │   ├── featureGraphic.png
+              │   ├── icon.png
+              │   ├── promoGraphic.png
+              │   └── tvBanner.png
               ├── changelogs/
-              │   └── <version-code>.txt
+              │   ├── <version-code>.txt
               │   └── <version-code>.txt
               ├── phoneScreenshots/
               │   └── *.png
