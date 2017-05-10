@@ -89,10 +89,10 @@ the F-Droid tools as root (with _nginx_, the webroot is
 _/usr/share/nginx/www_, it is different for other webservers):
 
 ```bash
-$ sudo mkdir /usr/share/nginx/www/fdroid
-$ sudo chown -R $USER /usr/share/nginx/www/fdroid
-$ cd /usr/share/nginx/www/fdroid
-$ fdroid init
+sudo mkdir /usr/share/nginx/www/fdroid
+sudo chown -R $USER /usr/share/nginx/www/fdroid
+cd /usr/share/nginx/www/fdroid
+fdroid init
 ```
 
 Now put your APK files into _/usr/share/nginx/www/fdroid/repo_ and you
@@ -101,9 +101,9 @@ cannot find your Android SDK in _/opt/android-sdk_ or `$ANDROID_HOME`,
 it will prompt you for the path):
 
 ```bash
-$ cd /usr/share/nginx/www/fdroid
-$ cp /path/to/\*.apk /usr/share/nginx/www/fdroid/repo/
-$ fdroid update --create-metadata
+cd /usr/share/nginx/www/fdroid
+cp /path/to/\*.apk /usr/share/nginx/www/fdroid/repo/
+fdroid update --create-metadata
 ```
 
 Voila! Now you have a working F-Droid Repo! Remember, this is __just a
@@ -185,13 +185,13 @@ your repo on a separate server via ssh. So start a new repo from scratch
 on your non-public machine:
 
 ```bash
-$ mkdir ~/fdroid
-$ cd ~/fdroid
-$ fdroid init
-$ cp /path/to/\*.apk ~/fdroid/repo/
-$ fdroid update --create-metadata
-$ emacs config.py # add the serverwebroot, etc.
-$ fdroid server update -v
+mkdir ~/fdroid
+cd ~/fdroid
+fdroid init
+cp /path/to/\*.apk ~/fdroid/repo/
+fdroid update --create-metadata
+emacs config.py # add the serverwebroot, etc.
+fdroid server update -v
 ```
 
 Now edit _config.py_ to set `serverwebroot`, it is in the form of a
