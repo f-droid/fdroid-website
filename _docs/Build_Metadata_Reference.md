@@ -119,10 +119,17 @@ This is converted to (`<email>`) in the XML file (_index.xml_).
 ### 7.4 License<a name="License"></a>
 
 
-The overall license for the application, or in certain cases, for the
-source code only. Values should correspond to short identifiers of the
-[SPDX](https://spdx.org/licenses/) license list. In some cases an
-older, non-standard naming scheme is still used.
+The overall license for the application in terms of the binary that
+the user can install. Values should correspond to short identifiers of
+the [SPDX](https://spdx.org/licenses/) license list. There can only be
+one license listed here. If there are multiple licenses that apply to
+the source code, then this field should contain the least restrictive
+license that the whole app can be used under.  When multiple licenses
+are combined, that usually means the most restrictive wins.
+
+This field cannot represent the complexity of licenses that apply to
+parts of the app, or apps that have the entire thing released under
+more than one license.
 
 This is converted to (`<license>`) in the XML file (_index.xml_).
 
