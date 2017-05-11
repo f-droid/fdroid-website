@@ -56,7 +56,7 @@ if current_tag:
     subprocess.call(['git', 'tag', '-v', current_tag])  # call again just to get output
     subprocess.check_call(['git', 'clean', '-fdx'])
     subprocess.check_call(['git', 'reset', '--hard', current_tag])
-    print('Set up', current_tag, 'to deploy!')
+    print('Set up ' + current_tag + ' to deploy!')
 else:
     print('ERROR: could not find any signed release tags!')
     sys.exit(1)

@@ -25,13 +25,18 @@ variables:
 
 
 #
-# This is a manual task for building in preperation to deploy to https://f-droid.org. The intention
-# is for it to be run locally using `gitlab-runner` each time a signed tag is found. Invoke like so:
+# This is a manual task for building in preperation to deploy to
+# https://f-droid.org. The intention is for it to be run locally using
+# `gitlab-runner` each time a tag is found that is signed by a key in
+# the whitelist keyring.  Invoke like so:
 #
-#  gitlab-runner exec docker f-droid.org -docker-volumes `pwd`/_site:/builds/output --env DEPLOY_DIR=/builds/output
+#  gitlab-runner exec docker f-droid.org --pre-build-script ./prepare-for-deploy.py \
+#    --docker-volumes "/root/deploy-whitelist-keyring.gpg:/root/.gnupg/pubring.gpg:ro" \
+#    --docker-volumes `pwd`/_site:/builds/output --env DEPLOY_DIR=/builds/output
 #
-# And when it is finished, you should have a directory in `pwd`/_site/build which includes the entire
-# static site ready to be deployed to https://f-droid.org.
+# And when it is finished, you should have a directory in _site/build/
+# which includes the entire static site ready to be deployed to
+# https://f-droid.org.
 #
 f-droid.org:
   stage: deploy
