@@ -115,3 +115,11 @@ Use the [issue tracker](https://gitlab.com/fdroid/fdroidclient/issues)
 or email <team@f-droid.org>. You can also discuss them in the
 [\#fdroid](irc://irc.freenode.net/fdroid) IRC chatroom on Freenode
 ([click here to join the webchat](https://webchat.freenode.net/?randomnick=1&channels=%23fdroid&uio=MT1mYWxzZSYyPXRydWUmND10cnVlJjk9dHJ1ZSYxMD10cnVlJjEyPXRydWU84)).
+
+If you do not already have an account, or do not want to create one,
+you can use our reusable account.  The issue tracker works better if
+reporters use an account that will receive notifications.  Issue
+reports are usually a conversation, not just a single report.
+
+That said, the account username is _fdroid-bug-reporter_ and the
+password is _repository-collection_.
