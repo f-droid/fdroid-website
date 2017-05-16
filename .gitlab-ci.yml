@@ -74,9 +74,12 @@ build:
 # Ideally we would use GitLab pages for this, but until they suupport deploying feature
 # branches alongside master branches (https://gitlab.com/gitlab-org/gitlab-pages/issues/33)
 # this is the next best option.
+#
+# Note that although we are building the entire F-Droid repo in the `build` stage, this `preview`
+# stage only builds the GP repo. This is because i18n versions of f-droid.org increase the size
+# well beyond the 100MiB limit of surge.sh.
 preview:
   stage: deploy
-  image: node:wheezy
   except: [ master ]
 
   # This is allowed to fail because only those who have setup $SURGE_LOGIN and $SURGE_TOKEN
@@ -84,7 +87,15 @@ preview:
   allow_failure: true
 
   script:
+   - *setup_for_jekyll
+   - 'echo "url: https://$STAGING_URL" > userconfig.yml'
+   - 'echo baseurl: /$CI_PROJECT_NAME >> userconfig.yml'
+   - 'echo fdroid-repo: https://guardianproject.info/fdroid/repo >> userconfig.yml'
+   - echo "Additional Jekyll config used for CI:" && cat userconfig.yml
+   - bundle exec jekyll build -d $OUT_DIR/$CI_PROJECT_NAME --config _config.yml,userconfig.yml --verbose --trace
+   - apt-get install -y npm
    - npm install -g surge
+   - update-alternatives --install /usr/bin/node node /usr/bin/nodejs 10
    - surge --project $OUT_DIR --domain $STAGING_URL
 
   environment:
