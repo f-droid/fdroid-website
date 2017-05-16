@@ -25,7 +25,7 @@ If you see an application missing from the repository (after reading the [inclus
 
 The client application is available in many languages, but if yours is not included, or if it needs updating or improving, please create an account and use the [translation system](https://hosted.weblate.org/projects/f-droid/) to make your changes.
 
-There’s also a [dedicated forum section](https://forum.f-droid.org/c/translation) for translation discussions.
+Start with the overview of [Translation and Localization](docs/Translation_and_Localization).  There’s also a [dedicated forum section](https://forum.f-droid.org/c/translation) for translation discussions.
 
 ### Help with Development
 
