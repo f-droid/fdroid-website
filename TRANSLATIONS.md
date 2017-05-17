@@ -1,3 +1,49 @@
+## Adding/updating translatable content
+
+There are two different ways in which content on the website is translated.
+
+### Website
+
+If you are adding content to the home page, sidebars, navigation, or other static parts of the website (i.e. not Jekyll posts/pages)
+then it is done using [localized site data](https://github.com/untra/polyglot#localized-sitedata).
+
+Say you want to add a new paragraph to the home page.
+Firstly, add a new entry to the `_data/strings.json` file:
+
+```json
+{
+  "home": {
+    "my_new_paragraph": "Here is the paragraph to be added (and also translated)",
+    ...
+  },
+  ...
+}
+```
+
+Then, reference this from the `index.md` file:
+
+```markdown
+{{ site.data.strings.home.my_new_paragraph }}
+```
+
+If you need to reference many strings in a single `.md` file, then it may be more concise to first assign a variable:
+
+```markdown
+{% assign strings = site.data.strings.home %}
+{{ strings.my_new_paragraph }}
+```
+
+### Documentation + Website News
+
+When a new `.md` file is added to the `_docs/` or `_posts/` directory, then you need to run:
+
+```bash
+./tools/i18n.sh md2po
+```
+
+This will extract the strings from all Markdown files in these two directories and output them to either `po/_docs.po` or `po/_posts.po`.
+These will then subsequently be translated by Weblate into additional files such as `po/_docs.fr.po`.
+
 ## Configuring Weblate
 
 The translation setup is designed to work with three different Weblate Components:
@@ -23,6 +69,19 @@ It does not document the more simple things such as Name/URL/etc.
 The priority doesn't _need_ to be "Very high", but it is the most front-facing of all parts of the website.
 In addition, it is also the smallest part and hopefully the easiest to translate.
 
+### Documentation + Website News
+
+These two components are managed in exactly the same way.
+The only difference is that one generates translations from `_docs/*.md` and the other from `_posts/*.md`.
+As such, this will only document the process for Documentation.
+For Website News, do the same, but wherever you see `_docs` replace it with `_posts`.
+
+ * **File mask:** `po/_docs.*.po`
+ * **Base file for new translations:** `po/_docs.po`
+ * **File format:** Gettext PO file
+
+It is suggested that the Documentation has a higher **Priority** than Website News.
+
 ## Pulling translations
 
 This section documents pulling translations from Weblate and integrating them with the website.
@@ -34,10 +93,8 @@ Here is an example for the "Website" component, where `example.com` is the webla
 ```bash
 git remote add weblate-website https://example.com/weblategit/fdroid/website/
 ```
- 
-### Website
 
-Merge the latest translations, for example:
+Then, regardless of the component, you will need to pull the translations from the relevant remote, e.g:
 
 ```bash
 git fetch weblate-website
@@ -51,6 +108,21 @@ In addition, it will also attempt to download a flag for any new translations fo
 ```bash
 ./tools/update_langs.py
 ```
+
+### Documentation + Website News
+
+For these two components, all Weblate does is produce translated `.po` file.
+Once you have merged the translations from Weblate, this `.po` file needs to be processed to generate localized versions of each `.md` file.
+This is done by running:
+
+```bash
+./tools/i18n.sh po2md
+```
+
+### Website
+
+There is no special requirements once the Website translations are pulled from Weblate.
+This is because Jekyll directly uses the JSON files that Weblate created.
 
 #### Troubleshooting
 
