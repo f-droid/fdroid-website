@@ -6,26 +6,37 @@ redirect_from:
 
 ---
 
-Information used by update.py to compile the public index comes from two
-sources:
+Information used by `fdroid update` to compile the public index comes
+from several sources:
 
-1.  the APK files in the repo directory, and
-2.  the metadata files in the metadata directory.
+* APK, media, etc files in the _repo_ sub-directory
+* per-package "metadata" files in the _metadata_ sub-directory
+* [localizable texts and graphics](All_About_Descriptions,_Graphics,_and_Screenshots#in-the-apps-build-metadata-in-an-fdroiddata-collection) in the _metadata_ subdirectory
+* localizable texts and graphics [embedded in an app's source code](All_About_Descriptions,_Graphics,_and_Screenshots#in-the-apps-source-repository)
 
-The original metadata files are simple, easy to edit text files, always
-named as the application’s package ID with ’.txt’ appended.
-Additionally, you can use JSON, XML, or YAML for app metadata, using the
-same fields as the original ’.txt’ format.
+These metadata files are simple, easy to edit text files, always named
+as the "package name" with file type appended.  There are a wide range
+of available fields for adding information to describe packages and/or
+apps.  For all of the fields like `AuthorName` that apply to all
+releases of a package/app, the fields use CamelCase starting with an
+upper case letter.  All other fields use camelCase starting with a
+lower case letter, including per-build fields, localized fields, etc.
 
-Note that although the metadata files are designed to be easily read and
-writable by humans, they are also processed and written by various
-scripts. The original ’.txt’ format can be automatically cleaned up when
-necessary. The structure and comments will be preserved correctly,
-although the order of fields will be standardised. (In the event that
-the original file was in a different order, comments are considered as
-being attached to the field following them). In fact, you can
-standardise all the ’.txt’ metadata in a single command, without
-changing the functional content, by running:
+There are three supported file types for metadata files:
+
+* _.yml_ files in [YAML](http://www.yaml.org/start.html) format, used by f-droid.org
+* _.txt_ files in the old, custom, F-Droid text-based format
+* _.json_ files in [JSON](http://json.org/) format
+
+Note that although the metadata files are designed to be easily read
+and writable by humans, they are also processed and written by various
+scripts. They can be automatically cleaned up when necessary. The
+structure and comments will be preserved correctly, although the order
+of fields will be standardised. (In the event that the original file
+was in a different order, comments are considered as being attached to
+the field following them). In fact, you can standardise all packages
+in a repository using a single command, without changing the
+functional content, by running:
 
 ```
 fdroid rewritemeta
