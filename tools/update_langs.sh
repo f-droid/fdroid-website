@@ -18,6 +18,31 @@ function update_langs_in_config {
 
         # Check if string contains $LANG already or not: http://stackoverflow.com/a/229606/2391921
         LANG=`basename ${I18N_DIR}`
+
+        # Check the diff between original strings.json and translated one. If no difference, then bail.
+        DIFF2=`diff --ignore-all-space ${I18N_DIR}/strings.json ${JEKYLL_DIR}/_data/strings.json | wc -l || true`
+        if [ ${DIFF2} == "0" ]; then
+            echo "Ignoring untranslated ${LANG}/strings.json"
+            continue;
+        fi
+
+        if [[ ${LANGS_FOR_YAML} != *"$LANG"* ]]; then
+            LANGS_FOR_YAML="$LANGS_FOR_YAML, \"$LANG\""
+            LANGS_FOR_SH="$LANGS_FOR_SH $LANG"
+        fi
+    done
+
+    for PO in `ls ${JEKYLL_DIR}/po/*.*.po`; do
+        PO_FILE=`basename ${PO}`
+        LANG=`echo ${PO_FILE} | sed -e "s|.*\.\(.*\)\.po|\1|"`
+
+        # Check the number of messages in the .po file which have been translated. If none, then bail.
+        TRANSLATED=`msgattrib --translated ${JEKYLL_DIR}/po/${PO_FILE} | wc -l`
+        if [ ${TRANSLATED} == "0" ]; then
+            echo "Ignoring untranslated $PO_FILE"
+            continue;
+        fi
+
         if [[ ${LANGS_FOR_YAML} != *"$LANG"* ]]; then
             LANGS_FOR_YAML="$LANGS_FOR_YAML, \"$LANG\""
             LANGS_FOR_SH="$LANGS_FOR_SH $LANG"
