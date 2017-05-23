@@ -58,5 +58,6 @@ the main repository.
 * [Verification Server](Verification_Server) Setting up a server to verify app builds are correct.
 * [Whitelabel Builds](Whitelabel_Builds) custom builds of F-Droid
 * [Privileged Extension](https://gitlab.com/fdroid/privileged-extension#f-droid-privileged-extension) How to use F-Droid Privileged Extension as a user and rom developer
+* [Deploying the Website](Deploying_the_Website) How [fdroid-website.git](https://gitlab.com/fdroid/fdroid-website) becomes [f-droid.org](https://f-droid.org)
 
 * [Work in Progress](https://f-droid.org/wiki/page/Work_in_Progress) Feel free to add your own topics and link to others.
