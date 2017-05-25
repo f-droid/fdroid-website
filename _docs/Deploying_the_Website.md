@@ -113,7 +113,10 @@ $ sudo gitlab-runner exec docker f-droid.org \
               --docker-volumes "/path/to/deploy-whitelist-keyring.gpg:/root/.gnupg/pubring.gpg:ro" \
               --docker-volumes `pwd`/_site:/builds/output --env DEPLOY_DIR=/builds/output
 ```
-6. deploy the site's files to the webserver, for example:
+6. deploy the site's files to the webserver, while preventing the
+   _jekyll_ generated files from overwriting
+   [parts of the website](https://gitlab.com/fdroid/fdroid-website/blob/master/.rsync-deploy-exclude-list)
+   that other things manage:
 ```console
-$ rsync -ax --delete --exclude repo/ --exclude archive/  _site/build/  f-droid.org:/var/www/
+$ rsync -ax --delete --exclude-from=_site/build/.rsync-deploy-exclude-list  _site/build/  f-droid.org:/var/www/
 ```
