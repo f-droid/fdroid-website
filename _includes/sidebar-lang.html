@@ -7,7 +7,7 @@
 
 <form action="{{site.baseurl}}{{ page.url }}" method="get">
 
-  <select id="language-chooser-select" name="lang">
+  <select id="language-chooser-select" name="lang" autocomplete="off">
     {% for lang in site.languages %}
       <option value="{{ lang }}" {% if lang == site.active_lang %}selected="selected"{% endif %}>
         {{ lang|upcase }}
@@ -17,11 +17,23 @@
 
   <script>
     (function() {
-      document.getElementById('language-chooser-select').onchange = function() {
+      var chooser = document.getElementById('language-chooser-select');
+      chooser.onchange = function() {
         var lang = this.value;
-        var isDefault = lang == 'en';
-        var prefix = isDefault ? '' : '/' + lang;
-        document.location = '{{site.baseurl}}' + prefix + '{{page.url}}';
+        var activeLang = '{{site.active_lang}}';
+        var pageUrl = '{{page.url}}';
+
+        {% comment %}
+          If we are already on "/fr" and select "ES", we don't want to redirect to "/fr/es".
+          The apache docs website achieves this via AliasMatch in their apache config, but that
+          is not able to go into the .htaccess file and so makes the deployment of the site more
+          difficult. This solves the problem in JavaScript.
+        {% endcomment %}
+        if (new RegExp('^' + activeLang + '/').test(pageUrl)) {
+          pageUrl = pageUrl.substring(activeLang.length + 1);
+        }
+
+        document.location = '{{site.baseurl}}' + '/' + lang + pageUrl;
       }
     })();
   </script>

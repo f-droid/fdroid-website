@@ -131,6 +131,9 @@ RewriteRule ^repository/browse.*$ /packages/ [L,R=301]
 ##
 ## LANGUAGE CHOOSER
 ##
+## Support for the language chooser for users without JavaScript.
+## If JavaScript is enabled, then this rule will not end up getting used as the browser can redirect appropriately.
+##
 ## NOTE: This will only work for websites with a `baseurl` of `/`. This is because the .htaccess file has
 ##       no insight into what the `baseurl` actually is, so we presume `/` as it will be for https://f-droid.org.
 ##
@@ -146,8 +149,5 @@ RewriteRule ^repository/browse.*$ /packages/ [L,R=301]
 #  /any/path?lang=fr_CA -> /fr_CA/any/path
 #  /any/path?trailing_param=blah&lang=fr&trailing_param=blah -> /fr/any/path
 #
-RewriteCond %{QUERY_STRING} ^.*lang=en.*$
-RewriteRule ^(.*)$ /$1? [L,R=302]
-
 RewriteCond %{QUERY_STRING} ^.*lang=(([a-z][a-z](_[A-Z][A-Z])?)?).*$
 RewriteRule ^(.*)$ /%1/$1? [L,R=302]
