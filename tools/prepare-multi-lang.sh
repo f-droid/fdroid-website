@@ -62,10 +62,16 @@ function relative_symlink {
     DEST_DIR=`dirname ${DEST}`
     SRC_RELATIVE_TO_DEST=`realpath --relative-to="${DEST_DIR}" "${SRC}"`
 
-    ln -s ${SRC_RELATIVE_TO_DEST} ${DEST}
+    ln -sf ${SRC_RELATIVE_TO_DEST} ${DEST}
 }
 
-LANGS="fr"
+ls -lah .supported-langs
+
+if [ ! -f .supported-langs ]; then
+    echo "Must be run from the same directory as the .supported-langs file (the Jekyll source dir)."
+    echo "If that file doesn't exist, then you can generate it with ./tools/update_langs.sh"
+    exit 1
+fi
 
 if [[ $# == 0 || ! -d $1/en ]]; then
     echo "First argument must be the directory of the Jekyll website."
@@ -74,6 +80,9 @@ if [[ $# == 0 || ! -d $1/en ]]; then
     echo "the first argument should be 'build/fdroid-website/'"
     exit 1
 fi
+
+# This populates the SUPPORTED_LANGS variable.
+source .supported-langs
 
 cd $1
 
@@ -102,7 +111,7 @@ do
 
     echo "Processing ${DIR}/${FILE}"
 
-    for LANG in en $LANGS; do
+    for LANG in en $SUPPORTED_LANGS; do
         SRC_I18N_FILE=${LANG}/${DIR}/${FILE}
         DEST_I18N_FILE=${DIR}/${FILE}.${LANG}
         assert_file ${SRC_I18N_FILE}
