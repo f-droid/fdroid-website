@@ -1,10 +1,18 @@
-RewriteEngine On
+##
+## Multi lingual support
+##
+## Works in conjunction with the ./tools/prepare-multi-lang.sh script.
+##
+
+Options +Multiviews
 
 ##
 ## SEARCH QUERIES
 ##
 ## Search queries used to read the `fdfilter` query parameter.
 ##
+
+RewriteEngine On
 
 #
 # The first .* matches anything (if any) before the "fdfilter" parameter.
@@ -118,3 +126,28 @@ RewriteRule ^(.*)$ /packages/category/%1/? [L,R=301]
 #
 RewriteRule ^repository/browse.*$ /packages/ [L,R=301]
 
+
+
+##
+## LANGUAGE CHOOSER
+##
+## Support for the language chooser for users without JavaScript.
+## If JavaScript is enabled, then this rule will not end up getting used as the browser can redirect appropriately.
+##
+## NOTE: This will only work for websites with a `baseurl` of `/`. This is because the .htaccess file has
+##       no insight into what the `baseurl` actually is, so we presume `/` as it will be for https://f-droid.org.
+##
+## The lanugage chooser sends GET requests to, for example, `...?lang=fr`.
+## However, the users need to end up on `/fr/...`. Given we need the site to work without JavaScript,
+## the only real way to do this is by rewriting the URL on the server.
+## Given this is a static site, we don't expect much usage of query parameters for anything other
+## than legacy redirects, and so this doesn't make a huge effort to maintain query parameters when rewriting.
+##
+#
+# Rewrites:
+#  /any/path?lang=fr -> /fr/any/path
+#  /any/path?lang=fr_CA -> /fr_CA/any/path
+#  /any/path?trailing_param=blah&lang=fr&trailing_param=blah -> /fr/any/path
+#
+RewriteCond %{QUERY_STRING} ^.*lang=(([a-z][a-z](_[A-Z][A-Z])?)?).*$
+RewriteRule ^(.*)$ /%1/$1? [L,R=302]

@@ -7,11 +7,12 @@
 
   <nav class="site-nav">
     {% for nav-item in site.data.navigation %}
-      {% if nav-item.title %}
+      {% if nav-item.key %}
+        {% assign title = site.data.strings.navigation[nav-item.key] %}
         {% if nav-item.external %}
-          <a class="page-link" href="{{ nav-item.url }}">{{ nav-item.title }}</a>
+          <a class="page-link" href="{{ nav-item.url }}">{{ title }}</a>
         {% else %}
-          <a class="page-link {% if page.url contains nav-item.url %} current {% endif %}" href="{{ nav-item.url | prepend: site.baseurl }}">{{ nav-item.title }}</a>
+          <a class="page-link {% if page.url contains nav-item.url %} current {% endif %}" href="{{ nav-item.url | prepend: site.baseurl }}">{{ title }}</a>
         {% endif %}
       {% endif %}
     {% endfor %}

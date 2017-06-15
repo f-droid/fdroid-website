@@ -1,0 +1,45 @@
+{% comment %}
+  The language chooser is a drop down list which displays the relevant flag to the left.
+  If JavaScript is enabled, then it will automatically redirect to the relevant translation when changed.
+  If the user has JavaScript disabled, then it will show a submit button, and the .htaccess file will rewrite
+  the incoming "?lang=..." query parameter to the correct translated path.
+{% endcomment %}
+
+<form action="{{site.baseurl}}{{ page.url }}" method="get">
+
+  <select id="language-chooser-select" name="lang" autocomplete="off">
+    {% for lang in site.languages %}
+      <option value="{{ lang }}" {% if lang == site.active_lang %}selected="selected"{% endif %}>
+        {{ lang|upcase }}
+      </option>
+    {% endfor %}
+  </select>
+
+  <script>
+    (function() {
+      var chooser = document.getElementById('language-chooser-select');
+      chooser.onchange = function() {
+        var lang = this.value;
+        var activeLang = '{{site.active_lang}}';
+        var pageUrl = '{{page.url}}';
+
+        {% comment %}
+          If we are already on "/fr" and select "ES", we don't want to redirect to "/fr/es".
+          The apache docs website achieves this via AliasMatch in their apache config, but that
+          is not able to go into the .htaccess file and so makes the deployment of the site more
+          difficult. This solves the problem in JavaScript.
+        {% endcomment %}
+        if (new RegExp('^' + activeLang + '/').test(pageUrl)) {
+          pageUrl = pageUrl.substring(activeLang.length + 1);
+        }
+
+        document.location = '{{site.baseurl}}' + '/' + lang + pageUrl;
+      }
+    })();
+  </script>
+
+  <noscript>
+    <input id="language-chooser-submit" type="submit" value="Change" />
+  </noscript>
+
+</form>
