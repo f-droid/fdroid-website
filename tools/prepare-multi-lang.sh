@@ -65,9 +65,25 @@ function relative_symlink {
     ln -s ${SRC_RELATIVE_TO_DEST} ${DEST}
 }
 
-
 LANGS="fr"
-cd _site
+
+if [[ $# == 0 || ! -d $1/en ]]; then
+    echo "First argument must be the directory of the Jekyll website."
+    echo "This should take into account the baseurl as well. If the site"
+    echo "is output to 'build/' and the baseurl is 'fdroid-website/' then"
+    echo "the first argument should be 'build/fdroid-website/'"
+    exit 1
+fi
+
+cd $1
+
+# For deploying to GitLab or surge.sh, we still want it to work, which requires leaving original English *.html files
+# in the webroot rather than just MultiView compatible *.html.LANG files.
+if [[ $# == 2 && $2 == "--no-multi-views" ]]; then
+    MULTI_VIEWS=false
+else
+    MULTI_VIEWS=true
+fi
 
 find en/ -type f -print0 | while IFS= read -r -d '' FILE_PATH
 do
@@ -78,7 +94,7 @@ do
 
     mkdir -p ${DIR}
 
-    if [[ ${FILE} =~ ^(\.htaccess|.*\.css|.*\.js)$ ]]; then
+    if [[ ${MULTI_VIEWS} = false || ${FILE} =~ ^(\.htaccess|.*\.css|.*\.js)$ ]]; then
         echo "Not generating i18n version of ${DIR}/${FILE}"
         cp ${FILE_PATH} ${DIR}/${FILE}
         continue;
