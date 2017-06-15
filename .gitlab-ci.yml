@@ -50,7 +50,7 @@ f-droid.org:
    - 'echo "url: https://f-droid.org" > userconfig.yml'
    - 'echo "baseurl: \"\"" >> userconfig.yml'
    - echo "Additional Jekyll config used for CI:" && cat userconfig.yml
-   - bundle exec jekyll build -d $OUT_DIR --config _config.yml,userconfig.yml --verbose --trace
+   - bundle exec jekyll build -d $OUT_DIR --config _config.yml,userconfig.yml --trace
    - ./tools/prepare-multi-lang.sh $OUT_DIR
    - cp -r $OUT_DIR $DEPLOY_DIR/
 
@@ -67,7 +67,7 @@ build:
    - 'echo "url: https://$STAGING_URL" > userconfig.yml'
    - 'echo baseurl: /$CI_PROJECT_NAME >> userconfig.yml'
    - echo "Additional Jekyll config used for CI:" && cat userconfig.yml
-   - bundle exec jekyll build -d $OUT_DIR/$CI_PROJECT_NAME --config _config.yml,userconfig.yml --verbose --trace
+   - bundle exec jekyll build -d $OUT_DIR/$CI_PROJECT_NAME --config _config.yml,userconfig.yml --trace
    - ./tools/prepare-multi-lang.sh $OUT_DIR/$CI_PROJECT_NAME --no-multi-views
 
 
@@ -94,7 +94,7 @@ preview:
    - 'echo baseurl: /$CI_PROJECT_NAME >> userconfig.yml'
    - 'echo fdroid-repo: https://guardianproject.info/fdroid/repo >> userconfig.yml'
    - echo "Additional Jekyll config used for CI:" && cat userconfig.yml
-   - bundle exec jekyll build -d $OUT_DIR/$CI_PROJECT_NAME --config _config.yml,userconfig.yml --verbose --trace
+   - bundle exec jekyll build -d $OUT_DIR/$CI_PROJECT_NAME --config _config.yml,userconfig.yml --trace
    - ./tools/prepare-multi-lang.sh $OUT_DIR/$CI_PROJECT_NAME --no-multi-views
    - apt-get install -y npm
    - npm install -g surge
