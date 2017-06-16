@@ -120,3 +120,36 @@ $ sudo gitlab-runner exec docker f-droid.org \
 ```console
 $ rsync -ax --delete --exclude-from=_site/build/.rsync-deploy-exclude-list  _site/build/  f-droid.org:/var/www/
 ```
+
+### Apache2 config
+
+The F-Droid website is translated into several languages.
+Two things are required to ensure this works.
+
+The first is taken care of by `.gitlab-ci.yml`, which is to run the `./tools/prepare-multi-langs.sh` script
+_without_ the `--no-type-maps` argument.
+This ensures that each `.html` file is replaced with an Apache2 [TypeMap](https://httpd.apache.org/docs/current/mod/mod_negotiation.html#typemaps).
+
+The second is to add the following to the Apache2 server or VirtualHost config so that the TypeMaps are used correctly,
+telling apache where to find the translated version of the file (replace `/var/www/html` with the actual webroot):
+
+```apacheconfig
+<Files *.html>
+        SetHandler type-map
+</Files>
+
+# virtualize the language sub"directories"
+AliasMatch ^(?:/\w\w/)?(.*)?\$ /var/www/html/\$1
+
+# Tell mod_negotiation which language to prefer
+SetEnvIf Request_URI ^/(\w\w)/ prefer-language=\$1
+```
+
+If this is not done or done incorrectly, then you will see something like the following when viewing any page:
+
+> URI: index.html.en Content-language: en Content-type: text/html URI: index.html.fr Content-language: fr Content-type: text/html 
+
+This is the result of the actual TypeMap being returned to the browser, rather than the translated file.
+
+Note that this also depends on `mod_alias` and `mod_negotiation` being enabled, but this happens by default when
+installing apache2 on Debian.
