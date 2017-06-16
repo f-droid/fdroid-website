@@ -65,7 +65,24 @@ function relative_symlink {
     ln -sf ${SRC_RELATIVE_TO_DEST} ${DEST}
 }
 
-ls -lah .supported-langs
+function write_typemap {
+    OUTPUT_FILE=$1
+    LANGS_TO_WRITE=$2
+
+    echo "" > ${OUTPUT_FILE}
+
+    FILE_NAME=`basename ${OUTPUT_FILE}`
+
+    for LANG in ${LANGS_TO_WRITE}; do
+        cat<<TXT >> ${OUTPUT_FILE}
+URI: ${FILE_NAME}.${LANG}
+Content-language: ${LANG}
+Content-type: text/html
+
+TXT
+    done
+
+}
 
 if [ ! -f .supported-langs ]; then
     echo "Must be run from the same directory as the .supported-langs file (the Jekyll source dir)."
@@ -88,7 +105,7 @@ cd $1
 
 # For deploying to GitLab or surge.sh, we still want it to work, which requires leaving original English *.html files
 # in the webroot rather than just MultiView compatible *.html.LANG files.
-if [[ $# == 2 && $2 == "--no-multi-views" ]]; then
+if [[ $# == 2 && $2 == "--no-type-maps" ]]; then
     MULTI_VIEWS=false
 else
     MULTI_VIEWS=true
@@ -103,7 +120,9 @@ do
 
     mkdir -p ${DIR}
 
-    if [[ ${MULTI_VIEWS} = false || ${FILE} =~ ^(\.htaccess|.*\.css|.*\.js)$ ]]; then
+    # At this stage we are only translating .html files.
+    # In the future when we support i18n of graphics too, then this will need to be updated.
+    if [[ ${MULTI_VIEWS} = false || ${EXTENSION} != "html" ]]; then
         echo "Not generating i18n version of ${DIR}/${FILE}"
         cp ${FILE_PATH} ${DIR}/${FILE}
         continue;
@@ -111,10 +130,31 @@ do
 
     echo "Processing ${DIR}/${FILE}"
 
-    for LANG in en $SUPPORTED_LANGS; do
+    for LANG in $SUPPORTED_LANGS; do
         SRC_I18N_FILE=${LANG}/${DIR}/${FILE}
         DEST_I18N_FILE=${DIR}/${FILE}.${LANG}
         assert_file ${SRC_I18N_FILE}
         relative_symlink ${SRC_I18N_FILE} ${DEST_I18N_FILE}
     done
+
+    write_typemap ${DIR}/${FILE} "$SUPPORTED_LANGS"
 done
+
+if [[ ${MULTI_VIEWS} = true ]]; then
+    cat<<HELP
+
+Finished preparing site for i18n using Apache2 and mod_negotiation.
+Ensure that you have the following in your Apache2 Server/VirtualHost config, where "/var/www/html" is replaced with your webroot:
+
+    <Files *.html>
+            SetHandler type-map
+    </Files>
+
+    # virtualize the language sub"directories"
+    AliasMatch ^(?:/\w\w/)?(.*)?\$ /var/www/html/\$1
+
+    # Tell mod_negotiation which language to prefer
+    SetEnvIf Request_URI ^/(\w\w)/ prefer-language=\$1
+
+HELP
+fi
