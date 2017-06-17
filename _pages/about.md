@@ -53,6 +53,7 @@ and is brought to you by at least the following people:
 * Nikita Kozlov
 * Matt Kraai
 * Daniel Kraft
+* Boris Kraut
 * Mariotaku Lee
 * Leonardo De Luca
 * Greg Lyle
