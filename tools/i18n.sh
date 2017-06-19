@@ -22,13 +22,16 @@ function md2po {
 	echo "Converting .md source into .po files"
 
 	if [ -d ${DIR_BUILD} ]; then rm -r ${DIR_BUILD}; fi
-	generate_po_files _docs
-	generate_po_files _posts
+	generate_po_file _docs
+	generate_po_file _posts
 	rm -r ${DIR_BUILD}
+
+	update_po_files _docs
+	update_po_files _posts
 }
 
 #
-# Usage: generate_po_files SRC_TYPE
+# Usage: generate_po_file SRC_TYPE
 #
 #   Where SRC_TYPE is either _posts or _docs (i.e. directories with .md files that are translated into a single .po file)
 #
@@ -38,7 +41,7 @@ function md2po {
 #  * Once all .md files have had their strings extracted, they are combined into a single .po file using msgcat.
 #  * This .po file is the thing which will end up getting translated.
 #
-function generate_po_files {
+function generate_po_file {
 	SRC_TYPE=$1
 	SRC_SUBDIR=${DIR_SRC}/${SRC_TYPE}
 	BUILD_SUBDIR=${DIR_BUILD}/${SRC_TYPE}/md
@@ -62,6 +65,21 @@ function generate_po_files {
     echo "Combining .po files into $OUT_PO_FILE"
 	mkdir -p `dirname ${OUT_PO_FILE}`
 	msgcat -o ${OUT_PO_FILE} ${DIR_BUILD_PO}/*.pot
+}
+
+#
+# Updates each translated .po file with new/changed strings from the original English .po file.
+# Uses `msgmerge` and supports fuzzy string matching.
+#
+function update_po_files {
+	SRC_TYPE=$1
+	PO=${DIR_PO}/${SRC_TYPE}.po
+
+	for I18N_PO in ${DIR_PO}/${SRC_TYPE}.*.po; do
+	    # The VERSION_CONTROL environment variable prevents a backup file from being written to ${SRC_TYPE}.LANG.po~
+	    echo "Updating ${I18N_PO} with any changes from main .po file ${PO}."
+        VERSION_CONTROL=none msgmerge -U ${I18N_PO} ${PO}
+    done
 }
 
 

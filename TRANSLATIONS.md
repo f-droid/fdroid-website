@@ -44,6 +44,10 @@ When a new `.md` file is added to the `_docs/` or `_posts/` directory, then you 
 This will extract the strings from all Markdown files in these two directories and output them to either `po/_docs.po` or `po/_posts.po`.
 These will then subsequently be translated by Weblate into additional files such as `po/_docs.fr.po`.
 
+In addition, the script will update any already existing translations such as `po/_docs.fr.po`.
+It does so by using the [msgmerge](https://www.gnu.org/software/gettext/manual/html_node/msgmerge-Invocation.html) program from GNU gettext.
+This takes care of fuzzy string matches, new strings, and deleted strings.
+
 ## Configuring Weblate
 
 The translation setup is designed to work with three different Weblate Components:
@@ -77,6 +81,7 @@ As such, this will only document the process for Documentation.
 For Website News, do the same, but wherever you see `_docs` replace it with `_posts`.
 
  * **File mask:** `po/_docs.*.po`
+ * **Edit base file:** No
  * **Base file for new translations:** `po/_docs.po`
  * **File format:** Gettext PO file
 
