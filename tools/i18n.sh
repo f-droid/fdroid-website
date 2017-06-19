@@ -207,11 +207,14 @@ function cp_md_strip_frontmatter_dir {
 	done
 }
 
-# See http://stackoverflow.com/a/7167115/2391921 for matching multiline strings with grep
-# Grep converted newlines to ASCII NUL characters, so we use sed to change them back.
 function extract_frontmatter {
 	FILE=$1
-	grep -Pzo '(?s)---.*?---\n' ${FILE} | sed 's/\x00/\n/'
+
+    # See http://stackoverflow.com/a/7167115/2391921 for matching multiline strings with grep
+    # The -z flag replaces new lines with NUL resulting in "Binary file matches" rather than more
+    # useful output (i.e. the actual matching content). The -a switch makes grep interpret the
+    # output like text again.
+	grep -Pzao '(?s)---.*?---\n' ${FILE}
 }
 
 ################################
