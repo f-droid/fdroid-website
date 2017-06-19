@@ -22,18 +22,20 @@ function md2po {
 	echo "Converting .md source into .pot files"
 
 	if [ -d ${DIR_BUILD} ]; then rm -r ${DIR_BUILD}; fi
-	generate_po_file _docs
-	generate_po_file _posts
+	generate_pot_file _docs
+	generate_pot_file _posts
+	generate_pot_file _pages
 	rm -r ${DIR_BUILD}
 
 	update_po_files _docs
 	update_po_files _posts
+	update_po_files _pages
 }
 
 #
-# Usage: generate_po_file SRC_TYPE
+# Usage: generate_pot_file SRC_TYPE
 #
-#   Where SRC_TYPE is either _posts or _docs (i.e. directories with .md files that are translated into a single .pot file)
+#   Where SRC_TYPE is either _posts, _pages, or _docs (i.e. directories with .md files that are translated into a single .pot file)
 #
 # This will:
 #  * Copy the original .md files, after stripping their metadata, to a temporary build directory.
@@ -41,7 +43,7 @@ function md2po {
 #  * Once all .md files have had their strings extracted, they are combined into a single .pot file using msgcat.
 #  * This .pot file is the thing which will end up getting translated.
 #
-function generate_po_file {
+function generate_pot_file {
 	SRC_TYPE=$1
 	SRC_SUBDIR=${DIR_SRC}/${SRC_TYPE}
 	BUILD_SUBDIR=${DIR_BUILD}/${SRC_TYPE}/md
@@ -75,11 +77,13 @@ function update_po_files {
 	SRC_TYPE=$1
 	PO=${DIR_PO}/${SRC_TYPE}.pot
 
-	for I18N_PO in ${DIR_PO}/${SRC_TYPE}.*.po; do
-	    # The VERSION_CONTROL environment variable prevents a backup file from being written to ${SRC_TYPE}.LANG.po~
-	    echo "Updating ${I18N_PO} with any changes from main .po file ${PO}."
-        VERSION_CONTROL=none msgmerge -U ${I18N_PO} ${PO}
-    done
+	if [ `check_for_po ${SRC_TYPE}` = true ]; then
+        for I18N_PO in ${DIR_PO}/${SRC_TYPE}.*.po; do
+            # The VERSION_CONTROL environment variable prevents a backup file from being written to ${SRC_TYPE}.LANG.po~
+            echo "Updating ${I18N_PO} with any changes from main .po file ${PO}."
+            VERSION_CONTROL=none msgmerge -U ${I18N_PO} ${PO}
+        done
+    fi
 }
 
 
@@ -91,8 +95,9 @@ function po2md {
 	echo "Converting .po files back into .md source"
 
 	if [ -d ${DIR_BUILD} ]; then rm -r ${DIR_BUILD}; fi
-	generate_md_files _posts
 	generate_md_files _docs
+	generate_md_files _posts
+	generate_md_files _pages
 	${DIR_SRC}/tools/update_langs.sh
 	rm -r "${DIR_BUILD}"
 }
@@ -100,7 +105,7 @@ function po2md {
 #
 # Usage: generate_md_files SRC_TYPE
 #
-#   Where SRC_TYPE is either _posts or _docs (i.e. directories with .md files that are translated into a single .po file)
+#   Where SRC_TYPE is either _posts, _pages, or _docs (i.e. directories with .md files that are translated into a single .po file)
 # 
 # This will:
 #  * Copy the original .md files, after stripping their metadata, to a temporary build directory.
@@ -119,9 +124,7 @@ function generate_md_files {
 
 	cp_md_strip_frontmatter_dir ${SRC_SUBDIR} ${BUILD_SUBDIR}/md
 
-    # Only try and iterate over the $SRC_TYPE.[lang].po files if there are some.
-	if compgen -G "$DIR_PO/$SRC_TYPE.*.po" > /dev/null;
-	then
+	if [ `check_for_po ${SRC_TYPE}` = true ]; then
         for PO in ${DIR_PO}/${SRC_TYPE}.*.po; do
             PO_FILE=`basename ${PO}`
             LANG=`echo ${PO_FILE} | sed -e "s/${SRC_TYPE}\.\(.*\)\.po/\1/"`
@@ -170,6 +173,23 @@ function generate_md_files {
 #################################################
 # Helper functions used by both po2md and md2po #
 #################################################
+
+#
+# Helper to check if there are any SRC_TYPE.LANG.po files. This helps to not try and iterate over the files if they
+# don't exist
+#
+# Usage: check_for_po SRC_TYPE
+#
+function check_for_po {
+    SRC_TYPE=$1
+
+	if compgen -G "$DIR_PO/$SRC_TYPE.*.po" > /dev/null;
+	then
+	    echo true
+    else
+        echo false
+    fi
+}
 
 #
 # A helper function for generate_po_files and generate_md_files because they both need to do the same thing.
