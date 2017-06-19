@@ -19,7 +19,7 @@ DIR_PO=${DIR_SRC}/po
 ###################################################
 
 function md2po {
-	echo "Converting .md source into .po files"
+	echo "Converting .md source into .pot files"
 
 	if [ -d ${DIR_BUILD} ]; then rm -r ${DIR_BUILD}; fi
 	generate_po_file _docs
@@ -33,22 +33,22 @@ function md2po {
 #
 # Usage: generate_po_file SRC_TYPE
 #
-#   Where SRC_TYPE is either _posts or _docs (i.e. directories with .md files that are translated into a single .po file)
+#   Where SRC_TYPE is either _posts or _docs (i.e. directories with .md files that are translated into a single .pot file)
 #
 # This will:
 #  * Copy the original .md files, after stripping their metadata, to a temporary build directory.
 #  * For each .md file it invokes po4a to extract the strings into a .pot file.
-#  * Once all .md files have had their strings extracted, they are combined into a single .po file using msgcat.
-#  * This .po file is the thing which will end up getting translated.
+#  * Once all .md files have had their strings extracted, they are combined into a single .pot file using msgcat.
+#  * This .pot file is the thing which will end up getting translated.
 #
 function generate_po_file {
 	SRC_TYPE=$1
 	SRC_SUBDIR=${DIR_SRC}/${SRC_TYPE}
 	BUILD_SUBDIR=${DIR_BUILD}/${SRC_TYPE}/md
     DIR_BUILD_PO=${DIR_BUILD}/${SRC_TYPE}/po
-    OUT_PO_FILE=${DIR_PO}/${SRC_TYPE}.po
+    OUT_PO_FILE=${DIR_PO}/${SRC_TYPE}.pot
 
-    echo "Generating .po files for $SRC_TYPE:"
+    echo "Generating .pot files for $SRC_TYPE:"
     cp_md_strip_frontmatter_dir ${SRC_SUBDIR} ${BUILD_SUBDIR}
 
     for MD in ${BUILD_SUBDIR}/*.md; do
@@ -62,7 +62,7 @@ function generate_po_file {
         po4a-gettextize -f text -o markdown -L utf-8 -M utf-8 -m ${MD} -p ${DIR_BUILD_PO}/${NAME}.pot
     done
 
-    echo "Combining .po files into $OUT_PO_FILE"
+    echo "Combining .pot files into $OUT_PO_FILE"
 	mkdir -p `dirname ${OUT_PO_FILE}`
 	msgcat -o ${OUT_PO_FILE} ${DIR_BUILD_PO}/*.pot
 }
@@ -73,7 +73,7 @@ function generate_po_file {
 #
 function update_po_files {
 	SRC_TYPE=$1
-	PO=${DIR_PO}/${SRC_TYPE}.po
+	PO=${DIR_PO}/${SRC_TYPE}.pot
 
 	for I18N_PO in ${DIR_PO}/${SRC_TYPE}.*.po; do
 	    # The VERSION_CONTROL environment variable prevents a backup file from being written to ${SRC_TYPE}.LANG.po~
@@ -115,7 +115,7 @@ function generate_md_files {
 	SRC_SUBDIR=${DIR_SRC}/${SRC_TYPE}
 	BUILD_SUBDIR=${DIR_BUILD}/${SRC_TYPE}
 	
-	echo "Converting .md files (from $BUILD_SUBDIR) to .po files..."
+	echo "Converting .md files (from $BUILD_SUBDIR) based on .po files..."
 
 	cp_md_strip_frontmatter_dir ${SRC_SUBDIR} ${BUILD_SUBDIR}/md
 
