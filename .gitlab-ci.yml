@@ -68,7 +68,7 @@ build:
    - 'echo baseurl: /$CI_PROJECT_NAME >> userconfig.yml'
    - echo "Additional Jekyll config used for CI:" && cat userconfig.yml
    - bundle exec jekyll build -d $OUT_DIR/$CI_PROJECT_NAME --config _config.yml,userconfig.yml --trace
-   - ./tools/prepare-multi-lang.sh $OUT_DIR/$CI_PROJECT_NAME --no-multi-views
+   - ./tools/prepare-multi-lang.sh $OUT_DIR/$CI_PROJECT_NAME --no-type-maps
 
 
 # This deploys feature branches to https://surge.sh, a free static site hosting service.
@@ -95,7 +95,7 @@ preview:
    - 'echo fdroid-repo: https://guardianproject.info/fdroid/repo >> userconfig.yml'
    - echo "Additional Jekyll config used for CI:" && cat userconfig.yml
    - bundle exec jekyll build -d $OUT_DIR/$CI_PROJECT_NAME --config _config.yml,userconfig.yml --trace
-   - ./tools/prepare-multi-lang.sh $OUT_DIR/$CI_PROJECT_NAME --no-multi-views
+   - ./tools/prepare-multi-lang.sh $OUT_DIR/$CI_PROJECT_NAME --no-type-maps
    - apt-get install -y npm
    - npm install -g surge
    - update-alternatives --install /usr/bin/node node /usr/bin/nodejs 10
@@ -147,4 +147,4 @@ pages:
 
    - echo "Additional Jekyll config used for CI:" && cat userconfig.yml
    - bundle exec jekyll build -d public --config _config.yml,userconfig.yml
-   - ./tools/prepare-multi-lang.sh public/$CI_PROJECT_NAME --no-multi-views
+   - ./tools/prepare-multi-lang.sh public --no-type-maps
