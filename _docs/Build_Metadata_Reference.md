@@ -11,8 +11,8 @@ from several sources:
 
 * APK, media, etc files in the _repo_ sub-directory
 * per-package "metadata" files in the _metadata_ sub-directory
-* [localizable texts and graphics](All_About_Descriptions,_Graphics,_and_Screenshots#in-the-apps-build-metadata-in-an-fdroiddata-collection) in the _metadata_ subdirectory
-* localizable texts and graphics [embedded in an app's source code](All_About_Descriptions,_Graphics,_and_Screenshots#in-the-apps-source-repository)
+* [localizable texts and graphics](../All_About_Descriptions_Graphics_and_Screenshots#in-the-apps-build-metadata-in-an-fdroiddata-collection) in the _metadata_ subdirectory
+* localizable texts and graphics [embedded in an app's source code](../All_About_Descriptions_Graphics_and_Screenshots#in-the-apps-source-repository)
 
 These metadata files are simple, easy to edit text files, always named
 as the "package name" with file type appended.  There are a wide range

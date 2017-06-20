@@ -70,7 +70,7 @@ build:
    - bundle exec jekyll build -d $OUT_DIR/$CI_PROJECT_NAME --config _config.yml,userconfig.yml --trace
    - ./tools/prepare-multi-lang.sh $OUT_DIR/$CI_PROJECT_NAME --no-type-maps
    - ruby -run -e httpd $OUT_DIR -p 4000 2&>1 /dev/null &
-   - 'linkchecker http://localhost:4000 --ignore-url "fdroid.app:.*" --ignore-url ".*/packages/.*" --ignore-url "/201[0-5]/\d\d/\d\d/" --ignore-url "/news/$"'
+   - 'linkchecker http://localhost:4000/$CI_PROJECT_NAME --ignore-url "fdroid.app:.*" --ignore-url ".*/packages/.*" --ignore-url "/201[0-5]/\d\d/\d\d/" --ignore-url "/news/$"'
 
 
 # This deploys feature branches to https://surge.sh, a free static site hosting service.

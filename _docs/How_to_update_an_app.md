@@ -17,12 +17,11 @@ the "external interested user" who just notices that there is a new
 version of an app - but not yet in f-droid system available. "What would
 I do to trigger the update?"
 
---<User:Tverrbjelke> (If s.o. briefs me, I would spend some of my time
+@Tverrbjelke: (If s.o. briefs me, I would spend some of my time
 writing that down. love F-Droid, and hate to see such simple and needed
 issue is not yet ready. :-) )
 
-[daithib8](User:Launchpad.net-daithib8 "wikilink")
-([talk](User_talk:Launchpad.net-daithib8 "wikilink")): Assuming
+@daithib8: Assuming
 everything is setup and the user is familiar with building via fdroid …
 (these instructions take a terminal-based approach. You can manage with
 a web browser, but it takes quite a while to learn the layout of the
