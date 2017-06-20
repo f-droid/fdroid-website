@@ -27,7 +27,6 @@ F-Droid respects your privacy. We don’t track you, or your device. We don’t 
 The F-Droid project was founded in 2010 by Ciaran Gultnieks,
 and is brought to you by at least the following people:
 
-* Alterechtschreibung
 * Nico Alt
 * Laura Arjona
 * Ben Arnold
@@ -54,6 +53,7 @@ and is brought to you by at least the following people:
 * Matt Kraai
 * Daniel Kraft
 * Boris Kraut
+* Tobias Kuban
 * Mariotaku Lee
 * Leonardo De Luca
 * Greg Lyle
