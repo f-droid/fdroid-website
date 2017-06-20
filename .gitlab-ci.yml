@@ -13,7 +13,7 @@ variables:
 .setup_for_jekyll: &setup_for_jekyll |
   ruby -v
   apt-get update
-  apt-get install -y locales zlib1g-dev gettext po4a
+  apt-get install -y locales zlib1g-dev gettext po4a linkchecker
   echo "en_US UTF-8" > /etc/locale.gen
   locale-gen en_US.UTF-8
   export LANG=en_US.UTF-8
@@ -69,6 +69,8 @@ build:
    - echo "Additional Jekyll config used for CI:" && cat userconfig.yml
    - bundle exec jekyll build -d $OUT_DIR/$CI_PROJECT_NAME --config _config.yml,userconfig.yml --trace
    - ./tools/prepare-multi-lang.sh $OUT_DIR/$CI_PROJECT_NAME --no-type-maps
+   - ruby -run -e httpd $OUT_DIR -p 4000 2&>1 /dev/null &
+   - 'linkchecker http://localhost:4000 --ignore-url "fdroid.app:.*" --ignore-url ".*/packages/.*" --ignore-url "/201[0-5]/\d\d/\d\d/" --ignore-url "/news/$"'
 
 
 # This deploys feature branches to https://surge.sh, a free static site hosting service.
