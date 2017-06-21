@@ -17,15 +17,19 @@ For reporting issues, choose an appropriate tracker from the following:
 
 ### Submit Applications
 
-If you see an application missing from the repository (after reading the [inclusion policy](http://f-droid.org/wiki/page/Inclusion_Policy)), please feel free to submit it via the dedicated [Submission Queue](https://gitlab.com/fdroid/rfp/issues) section of the forum. If you have the technical skills required, you can also put together the relevant metadata and submit that via the git repository, which will drastically speed up the inclusion of the application.
+If you see an application missing from the repository (after reading the [inclusion policy](../docs/Inclusion_Policy)), please feel free to submit it via the dedicated [Requests For Packaging](https://gitlab.com/fdroid/rfp/issues) issue tracker.
 
-[The manual]({{ "/manual/" | prepend: site.baseurl }}) should help with this.
+If you have the technical skills required, you can also put together the relevant metadata and [submit that via the F-Droid Data repository](https://gitlab.com/fdroid/fdroiddata/blob/master/CONTRIBUTING.md), which will drastically speed up the inclusion of the application.
+
+The same applies for helping to build newer versions of applications.
+
+Further information can be found in [the documentation](../docs), or by asking on IRC (#fdroid on freenode).
 
 ### Translate
 
 The client application is available in many languages, but if yours is not included, or if it needs updating or improving, please create an account and use the [translation system](https://hosted.weblate.org/projects/f-droid/) to make your changes.
 
-Start with the overview of [Translation and Localization](docs/Translation_and_Localization).  There’s also a [dedicated forum section](https://forum.f-droid.org/c/translation) for translation discussions.
+Start with the overview of [Translation and Localization](../docs/Translation_and_Localization).  There’s also a [dedicated forum section](https://forum.f-droid.org/c/translation) for translation discussions.
 
 ### Help with Development
 
