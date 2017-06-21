@@ -27,9 +27,17 @@ function md2po {
 	generate_pot_file _pages
 	rm -r ${DIR_BUILD}
 
+    PAGES_POT=${DIR_PO}/_pages.pot
+    DOCS_POT=${DIR_PO}/_docs.pot
+    DOCS_TMP_POT=${DIR_PO}/_docs.pot
+
+    echo "Merging ${PAGES_POT} into ${DOCS_POT}"
+    msgcat -o ${DOCS_TMP_POT} ${PAGES_POT} ${DOCS_POT}
+	cp ${DOCS_TMP_POT} ${DOCS_POT}
+	rm ${DOCS_TMP_POT} ${PAGES_POT}
+
 	update_po_files _docs
 	update_po_files _posts
-	update_po_files _pages
 }
 
 #
@@ -95,17 +103,18 @@ function po2md {
 	echo "Converting .po files back into .md source"
 
 	if [ -d ${DIR_BUILD} ]; then rm -r ${DIR_BUILD}; fi
-	generate_md_files _docs
-	generate_md_files _posts
-	generate_md_files _pages
+	#generate_md_files _docs _docs
+	#generate_md_files _posts _posts
+	generate_md_files _pages _docs
 	${DIR_SRC}/tools/update_langs.sh
 	rm -r "${DIR_BUILD}"
 }
 
 #
-# Usage: generate_md_files SRC_TYPE
+# Usage: generate_md_files SRC_TYPE POT_TYPE
 #
 #   Where SRC_TYPE is either _posts, _pages, or _docs (i.e. directories with .md files that are translated into a single .po file)
+#   POT_TYPE is either _posts or _docs (i.e. files in po/POT_TYPE.pot and po/POT_TYPE.LANG.po)
 # 
 # This will:
 #  * Copy the original .md files, after stripping their metadata, to a temporary build directory.
@@ -117,6 +126,7 @@ function po2md {
 #
 function generate_md_files {
 	SRC_TYPE=$1
+	POT_TYPE=$2
 	SRC_SUBDIR=${DIR_SRC}/${SRC_TYPE}
 	BUILD_SUBDIR=${DIR_BUILD}/${SRC_TYPE}
 	
@@ -124,10 +134,10 @@ function generate_md_files {
 
 	cp_md_strip_frontmatter_dir ${SRC_SUBDIR} ${BUILD_SUBDIR}/md
 
-	if [ `check_for_po ${SRC_TYPE}` = true ]; then
-        for PO in ${DIR_PO}/${SRC_TYPE}.*.po; do
+	if [ `check_for_po ${POT_TYPE}` = true ]; then
+        for PO in ${DIR_PO}/${POT_TYPE}.*.po; do
             PO_FILE=`basename ${PO}`
-            LANG=`echo ${PO_FILE} | sed -e "s/${SRC_TYPE}\.\(.*\)\.po/\1/"`
+            LANG=`echo ${PO_FILE} | sed -e "s/${POT_TYPE}\.\(.*\)\.po/\1/"`
             OUT_DIR_I18N_MD=${DIR_SRC}/${SRC_TYPE}/${LANG}
             BUILD_DIR_I18N_MD=${BUILD_SUBDIR}/${LANG}
 
@@ -233,8 +243,9 @@ function extract_frontmatter {
     # See http://stackoverflow.com/a/7167115/2391921 for matching multiline strings with grep
     # The -z flag replaces new lines with NUL resulting in "Binary file matches" rather than more
     # useful output (i.e. the actual matching content). The -a switch makes grep interpret the
-    # output like text again.
-	grep -Pzao '(?s)---.*?---\n' ${FILE}
+    # output like text again. For some reason though on my machine there is still a NUL byte at
+    # the end which trips up this script, so sed replaces it with a newline.
+	grep -Pzao '(?s)---.*?---\n' ${FILE} | sed 's/\x00/\n/'
 }
 
 ################################
