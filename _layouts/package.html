@@ -1,0 +1,105 @@
+---
+layout: default
+---
+
+{% assign strings = site.data.strings.package %}
+
+<article class="package">
+	<header class="package-header">
+		<img class="package-icon" src="{{ site.fdroid-repo }}/icons/{{ page.icon }}" />
+		<div class="package-title">
+			<h3 class="package-name">
+				{{ page.title }}
+			</h3>
+			<div class="package-summary">
+				{{ page.summary }}
+			</div>
+		</div>
+	</header>
+	<div class="package-description">
+		{{ page.description }}
+	</div>
+	<p>
+		<b>{{ strings.license }}</b>:
+		<a href="{{ page.license|get_license_url }}">{{ page.license|get_license_name }}</a>
+	</p>
+	<p>
+		{% if page.webSite != "" and page.webSite != nil %}
+			<b>{{ strings.website }}</b>: <a href="{{ page.webSite }}">{{ page.webSite }}</a><br>
+		{% endif %}
+		{% if page.issueTracker != "" and page.issueTracker != nil %}
+			<b>{{ strings.issue_tracker }}</b>: <a href="{{ page.issueTracker }}">{{ page.issueTracker }}</a><br>
+		{% endif %}
+		{% if page.sourceCode != "" and page.sourceCode != nil %}
+			<b>{{ strings.source_code }}</b>: <a href="{{ page.sourceCode }}">{{ page.sourceCode }}</a><br>
+		{% endif %}
+		{% if page.changelog != "" and page.changelog != nil %}
+			<b>{{ strings.changelog }}</b>: <a href="{{ page.changelog }}">{{ page.changelog }}</a><br>
+		{% endif %}
+		{% if page.donate != "" and page.donate != nil %}
+			<b>{{ strings.donate }}</b>: <a href="{{ page.donate }}">{{ page.donate }}</a><br>
+		{% endif %}
+		{% if page.flattr != "" and page.flattr != nil %}
+			<b>{{ strings.flattr }}</b>: <a href="https://flattr.com/thing/{{ page.flattr }}">https://flattr.com/thing/{{ page.flattr }}</a><br>
+		{% endif %}
+	</p>
+	<p>
+		{% assign wiki_link = 'https://f-droid.org/wiki/page/' | append: page.package %}
+		{{ strings.blah | replace: '[wiki_url]', wiki_link }}
+	</p>
+
+	<div class="package-versions">
+		<h3>{{ strings.packages }}</h3>
+		<p>
+			{{ strings.suggest_downloading_via_fdroid }}
+		</p>
+		<a href="https://f-droid.org/FDroid.apk" class="material-button">{{ site.data.strings.index.download_fdroid }}</a>
+		<ul class="package-versions-list">
+			{% for package in page.packages %}
+			<li class="package-version">
+				<div class="package-version-header">
+					{% comment %}
+					Use YYYY-MM-DD format, because it is more internationalizable than versions which include English month names.
+					{% endcomment %}
+					{% assign package_added_date = package.added | date: '%F' %}
+					{{ strings.version_info | replace: '[package_version]', package.version | replace: '[package_version_code]', package.versionCode | replace: '[package_added_date]', package_added_date }}
+				</div>
+				<p class="package-version-requirement">
+					{% assign android_version = package.sdkVersion | android_sdk_level_to_version %}
+					{{ strings.minimum_android_version | replace: '[android_version]', android_version }}
+				</p>
+
+				<p class="package-version-source">
+					{% if package.srcName != "" and package.srcName != nil %}
+						{% assign source_code_url = site.fdroid-repo | append: '/' | append: package.srcName %}
+						{{ strings.signed_by_fdroid | replace: '[source_code_url]', source_code_url }}
+					{% else %}
+						{{ strings.signed_by_developer }}
+					{% endif %}
+				</p>
+
+				<p class="package-version-download">
+					<a href="{{ site.fdroid-repo }}/{{ package.apkName }}">{{ strings.download_apk }}</a> {{ package.size|file_size_human_readable }}
+					<a href="{{ site.fdroid-repo }}/{{ package.apkName }}.asc">{{ strings.gpg_signature }}</a>
+				</p>
+
+				<div class="package-version-permissions">
+					<h4>{{ strings.permissions }}</h4>
+					<ul class="package-version-permissions-list">
+						{% for permission in package.permissions %}
+						<li>
+							{{ permission }}
+						</li>
+						{% endfor %}
+					</ul>
+				</div>
+
+			</li>
+			
+			{% endfor %}
+
+		</ul>
+
+	</div>
+
+</article>
