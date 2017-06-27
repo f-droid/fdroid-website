@@ -1,0 +1,5 @@
+# This is the list of languages supported by Weblate.
+# It was generated manually by installing Weblate, navigating to /admin/lang and looking at the "Language Code" column.
+# They are used to help create an appropriate Apache config to get mod_negotiation working correctly with this site.
+WEBLATE_LANGS="ach af ak sq am anp ar ar_DZ ar_MA an es_AR hy as ast de_AT ay az ba eu bar be be_Latn bn bn_BD bn_IN brx bs bs_Cyrl bs_Latn br bg my ca km ch chr hne cgg zh zh_HK zh_Hans zh_Hant ksh kw cr hr cs da doi nl nl_BE dz en en_AU en_CA en_IE en_PH en_ZA en_GB en_US eo et fo fil fi frp fr fr_CA fy fur ff gd gl ka de el kl gu gun ht ha haw he hi hu is ig id ia ga it ja jv kab kn ks csb kk rw tlh tlh-qaak kok ko ku ckb ky lo la lv li ln lt jbo nds lb mk mai mg ms ml mt mnk mi arn mr mni mn me mfe nqo nah nap ne se no nb_NO nb nn ny oc or oj os pap nso fa pms pr pl pt pt_BR pt_PT pa ps ro rm ru sa sat sc sco sr sr_Cyrl sr_Latn sh sn szl sd si sk sl so son st es es_US es_MX es_PR su sw sv de_CH tl tg ta tt te th bo ti ts tr tk ug uk hsb ur ur_PK uz uz_Latn ca@valencia ve vec vi wa cy vls wo sah yi yo yue zu"
+
