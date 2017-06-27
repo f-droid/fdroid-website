@@ -107,11 +107,19 @@ git merge weblate-website/master
 ```
 
 Once the translations are available, we need to update the `_config.yml` to ensure it is aware of the translations which are available.
-The following script will update the `languages: [ 'en', ... ]` attribute in the config file.
-In addition, it will also attempt to download a flag for any new translations for the language chooser widget:
+The following script will update the `languages: [ 'en', ... ]` attribute in the config file to those which are marked as 100% translated
+in the ["Website" project on Weblate](https://hosted.weblate.org/projects/f-droid/website/):
 
 ```bash
-./tools/update_langs.py
+$ ./tools/update_langs.py
+
+
+```
+
+For development, you can also request all translations be included, regardless of how complete they are:
+
+```bash
+./tools/update_langs.py --partial
 ```
 
 ### Documentation + Website News
