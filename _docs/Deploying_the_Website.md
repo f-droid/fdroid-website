@@ -135,14 +135,49 @@ telling apache where to find the translated version of the file (replace `/var/w
 
 ```apacheconfig
 <Files *.html>
-        SetHandler type-map
+    SetHandler type-map
 </Files>
 
-# virtualize the language sub"directories"
-AliasMatch ^(?:/\w\w/)?(.*)?\$ /var/www/html/\$1
+# Virtualize the language sub"directories"
+AliasMatch ^(?:/(?:ach|af|ak|sq|am|anp|ar|ar_DZ|ar_MA|an|es_AR|hy|as|ast|de_AT|ay|az|ba|eu|bar|be|be_Latn|bn|bn_BD|bn_IN|brx|bs|bs_Cyrl|bs_Latn|br|bg|my|ca|km|ch|chr|hne|cgg|zh|zh_HK|zh_Hans|zh_Hant|ksh|kw|cr|hr|cs|da|doi|nl|nl_BE|dz|en|en_AU|en_CA|en_IE|en_PH|en_ZA|en_GB|en_US|eo|et|fo|fil|fi|frp|fr|fr_CA|fy|fur|ff|gd|gl|ka|de|el|kl|gu|gun|ht|ha|haw|he|hi|hu|is|ig|id|ia|ga|it|ja|jv|kab|kn|ks|csb|kk|rw|tlh|tlh-qaak|kok|ko|ku|ckb|ky|lo|la|lv|li|ln|lt|jbo|nds|lb|mk|mai|mg|ms|ml|mt|mnk|mi|arn|mr|mni|mn|me|mfe|nqo|nah|nap|ne|se|no|nb_NO|nb|nn|ny|oc|or|oj|os|pap|nso|fa|pms|pr|pl|pt|pt_BR|pt_PT|pa|ps|ro|rm|ru|sa|sat|sc|sco|sr|sr_Cyrl|sr_Latn|sh|sn|szl|sd|si|sk|sl|so|son|st|es|es_US|es_MX|es_PR|su|sw|sv|de_CH|tl|tg|ta|tt|te|th|bo|ti|ts|tr|tk|ug|uk|hsb|ur|ur_PK|uz|uz_Latn|ca@valencia|ve|vec|vi|wa|cy|vls|wo|sah|yi|yo|yue|zu)/)?(.*)?$ /var/www/html/$1
 
 # Tell mod_negotiation which language to prefer
-SetEnvIf Request_URI ^/(\w\w)/ prefer-language=\$1
+SetEnvIf Request_URI ^/(ach|af|ak|sq|am|anp|ar|an|hy|as|ast|ay|az|ba|eu|bar|be|bn|brx|bs|br|bg|my|ca|km|ch|chr|hne|cgg|zh|ksh|kw|cr|hr|cs|da|doi|nl|dz|en|eo|et|fo|fil|fi|frp|fr|fy|fur|ff|gd|gl|ka|de|el|kl|gu|gun|ht|ha|haw|he|hi|hu|is|ig|id|ia|ga|it|ja|jv|kab|kn|ks|csb|kk|rw|tlh|tlh-qaak|kok|ko|ku|ckb|ky|lo|la|lv|li|ln|lt|jbo|nds|lb|mk|mai|mg|ms|ml|mt|mnk|mi|arn|mr|mni|mn|me|mfe|nqo|nah|nap|ne|se|no|nb|nn|ny|oc|or|oj|os|pap|nso|fa|pms|pr|pl|pt|pa|ps|ro|rm|ru|sa|sat|sc|sco|sr|sh|sn|szl|sd|si|sk|sl|so|son|st|es|su|sw|sv|tl|tg|ta|tt|te|th|bo|ti|ts|tr|tk|ug|uk|hsb|ur|uz|ca@valencia|ve|vec|vi|wa|cy|vls|wo|sah|yi|yo|yue|zu)/ prefer-language=$1
+
+# Language codes from Weblate containing capital letters and underscores need to be treated
+# differently, namely the language they refer to is lower case with a hyphen
+SetEnvIf Request_URI ^/uz_Latn/ prefer-language=uz-latn
+SetEnvIf Request_URI ^/ur_PK/ prefer-language=ur-pk
+SetEnvIf Request_URI ^/de_CH/ prefer-language=de-ch
+SetEnvIf Request_URI ^/es_PR/ prefer-language=es-pr
+SetEnvIf Request_URI ^/es_MX/ prefer-language=es-mx
+SetEnvIf Request_URI ^/es_US/ prefer-language=es-us
+SetEnvIf Request_URI ^/sr_Latn/ prefer-language=sr-latn
+SetEnvIf Request_URI ^/sr_Cyrl/ prefer-language=sr-cyrl
+SetEnvIf Request_URI ^/pt_PT/ prefer-language=pt-pt
+SetEnvIf Request_URI ^/pt_BR/ prefer-language=pt-br
+SetEnvIf Request_URI ^/nb_NO/ prefer-language=nb-no
+SetEnvIf Request_URI ^/fr_CA/ prefer-language=fr-ca
+SetEnvIf Request_URI ^/en_US/ prefer-language=en-us
+SetEnvIf Request_URI ^/en_GB/ prefer-language=en-gb
+SetEnvIf Request_URI ^/en_ZA/ prefer-language=en-za
+SetEnvIf Request_URI ^/en_PH/ prefer-language=en-ph
+SetEnvIf Request_URI ^/en_IE/ prefer-language=en-ie
+SetEnvIf Request_URI ^/en_CA/ prefer-language=en-ca
+SetEnvIf Request_URI ^/en_AU/ prefer-language=en-au
+SetEnvIf Request_URI ^/nl_BE/ prefer-language=nl-be
+SetEnvIf Request_URI ^/zh_Hant/ prefer-language=zh-hant
+SetEnvIf Request_URI ^/zh_Hans/ prefer-language=zh-hans
+SetEnvIf Request_URI ^/zh_HK/ prefer-language=zh-hk
+SetEnvIf Request_URI ^/bs_Latn/ prefer-language=bs-latn
+SetEnvIf Request_URI ^/bs_Cyrl/ prefer-language=bs-cyrl
+SetEnvIf Request_URI ^/bn_IN/ prefer-language=bn-in
+SetEnvIf Request_URI ^/bn_BD/ prefer-language=bn-bd
+SetEnvIf Request_URI ^/be_Latn/ prefer-language=be-latn
+SetEnvIf Request_URI ^/de_AT/ prefer-language=de-at
+SetEnvIf Request_URI ^/es_AR/ prefer-language=es-ar
+SetEnvIf Request_URI ^/ar_MA/ prefer-language=ar-ma
+SetEnvIf Request_URI ^/ar_DZ/ prefer-language=ar-dz
 ```
 
 If this is not done or done incorrectly, then you will see something like the following when viewing any page:
