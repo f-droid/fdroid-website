@@ -133,7 +133,7 @@ This ensures that each `.html` file is replaced with an Apache2 [TypeMap](https:
 The second is to add the following to the Apache2 server or VirtualHost config so that the TypeMaps are used correctly,
 telling apache where to find the translated version of the file (replace `/var/www/html` with the actual webroot):
 
-```apacheconfig
+```
 <Files *.html>
     SetHandler type-map
 </Files>
