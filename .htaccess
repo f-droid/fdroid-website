@@ -139,7 +139,9 @@ RewriteRule ^repository/browse.*$ /packages/ [L,R=301]
 # Rewrites:
 #  /any/path?lang=fr -> /fr/any/path
 #  /any/path?lang=fr_CA -> /fr_CA/any/path
+#  /any/path?trailing_param=blah&lang=fr -> /fr/any/path
+# Wont correctly rewrite:
 #  /any/path?trailing_param=blah&lang=fr&trailing_param=blah -> /fr/any/path
 #
-RewriteCond %{QUERY_STRING} ^.*lang=(([a-z][a-z](_[A-Z][A-Z])?)?).*$
+RewriteCond %{QUERY_STRING} ^.*lang=(.*)$
 RewriteRule ^(.*)$ /%1/$1? [L,R=302]
