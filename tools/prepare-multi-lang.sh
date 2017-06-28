@@ -65,6 +65,11 @@ function relative_symlink {
     ln -sf ${SRC_RELATIVE_TO_DEST} ${DEST}
 }
 
+function convert_weblate_language_code {
+    LANG_CODE=$1
+    echo ${LANG_CODE} | tr '[:upper:]' '[:lower:]' | tr '_' '-'
+}
+
 function write_typemap {
     OUTPUT_FILE=$1
     LANGS_TO_WRITE=$2
@@ -73,10 +78,11 @@ function write_typemap {
 
     FILE_NAME=`basename ${OUTPUT_FILE}`
 
-    for LANG in ${LANGS_TO_WRITE}; do
+    for WEBLATE_LANG in ${LANGS_TO_WRITE}; do
+        HTTP_LANG=`convert_weblate_language_code ${WEBLATE_LANG}`
         cat<<TXT >> ${OUTPUT_FILE}
-URI: ${FILE_NAME}.${LANG}
-Content-language: ${LANG}
+URI: ${FILE_NAME}.${WEBLATE_LANG}
+Content-language: ${HTTP_LANG}
 Content-type: text/html
 
 TXT
@@ -100,6 +106,9 @@ fi
 
 # This populates the SUPPORTED_LANGS variable.
 source .supported-langs
+
+# This populates the WEBLATE_LANGS variable.
+source tools/weblate-supported-langs.sh
 
 cd $1
 
@@ -141,6 +150,30 @@ do
 done
 
 if [[ ${MULTI_VIEWS} = true ]]; then
+
+    ALIAS_MATCH=""
+    SIMPLE_LANGS=""
+    SET_ENV_IF=""
+
+    for WEBLATE_LANG in ${WEBLATE_LANGS}; do
+        if [[ ${ALIAS_MATCH} == "" ]]; then
+            ALIAS_MATCH=${WEBLATE_LANG}
+        else
+            ALIAS_MATCH="${ALIAS_MATCH}|${WEBLATE_LANG}"
+        fi
+
+        HTTP_LANG=`convert_weblate_language_code ${WEBLATE_LANG}`
+        if [ ${HTTP_LANG} == ${WEBLATE_LANG} ]; then
+            if [[ ${SIMPLE_LANGS} == "" ]]; then
+                SIMPLE_LANGS=${WEBLATE_LANG}
+            else
+                SIMPLE_LANGS="$SIMPLE_LANGS|$WEBLATE_LANG"
+            fi
+        else
+            SET_ENV_IF=`echo -e "SetEnvIf Request_URI ^/$WEBLATE_LANG/ prefer-language=$HTTP_LANG\n    $SET_ENV_IF"`
+        fi
+    done
+
     cat<<HELP
 
 Finished preparing site for i18n using Apache2 and mod_negotiation.
@@ -150,11 +183,15 @@ Ensure that you have the following in your Apache2 Server/VirtualHost config, wh
             SetHandler type-map
     </Files>
 
-    # virtualize the language sub"directories"
-    AliasMatch ^(?:/\w\w/)?(.*)?\$ /var/www/html/\$1
+    # Virtualize the language sub"directories"
+    AliasMatch ^(?:/(?:${ALIAS_MATCH})/)?(.*)?\$ /var/www/html/\$1
 
     # Tell mod_negotiation which language to prefer
-    SetEnvIf Request_URI ^/(\w\w)/ prefer-language=\$1
+    SetEnvIf Request_URI ^/(${SIMPLE_LANGS})/ prefer-language=\$1
+
+    # Language codes from Weblate containing capital letters and underscores need to be treated
+    # differently, namely the language they refer to is lower case with a hyphen
+    $SET_ENV_IF
 
 HELP
 fi
