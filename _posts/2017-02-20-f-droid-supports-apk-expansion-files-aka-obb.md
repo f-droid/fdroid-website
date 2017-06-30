@@ -14,7 +14,7 @@ to just start the app for the first time.
 Google created OBB aka
 "[APK Expansion](https://developer.android.com/google/play/expansion-files.html)"
 files to provide a flexible means of delivering large amounts of data.
-This arragement also saves lots of bandwidth since the APK file and
+This arrangement also saves lots of bandwidth since the APK file and
 the OBB file can be updated separately.  For example, a game's assets
 do not need to change often, so they can be shipped as an OBB. Then
 when the app itself is updated (i.e. the APK), it does not need to
