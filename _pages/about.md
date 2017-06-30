@@ -66,6 +66,7 @@ and is brought to you by at least the following people:
 * Nicolas Raoul
 * Fabian Rodriguez
 * Florian Schmaus
+* Dominik Schürmann
 * Hans-Emil Skogh
 * Paul Sokolovsky
 * Graziano Sorbaioli
