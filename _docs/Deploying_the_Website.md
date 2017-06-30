@@ -13,7 +13,7 @@ GitHub.  For all of the pages and information about apps and packages
 distributed by _f-droid.org_, those pages are generated using our
 [jekyll-fdroid](https://gitlab.com/fdroid/jekyll-fdroid) plugin, which
 takes the content from the
-[_f-droid.org_ index file](https://f-droid.org/repo/index-v1.json).
+[_f-droid.org_ index file](https://f-droid.org/repo/index-v1.jar).
 
 
 ### Staging on development forks
@@ -80,7 +80,11 @@ After the git tag is verified, the `f-droid.org` target in
 is run to generate the actual files for the site.  Those files are
 then copied into place on the _f-droid.org_ servers.
 
-* TODO document release tag naming scheme
+The deploy tags use a "semantic versioning" naming scheme:
+
+* _\<major>.\<minor>_
+* _\<minor>_ is incremented on each deployment
+* _\<major>_ is only incremented when there are major changes
 
 
 ### Setting up and running the deploy procedure
