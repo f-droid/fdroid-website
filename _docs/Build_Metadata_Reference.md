@@ -108,10 +108,12 @@ This is converted to (`<categories>`) in the XML file (_index.xml_).
 
 ### 7.2 Author Name<a name="Author-Name"></a>
 
-
 The name of the author, either full, abbreviated or pseudonym. If
 present, it should represent the name(s) as published by upstream, e.g.
 in their copyright or authors file. This can be omitted (or left blank).
+
+__Warning__: this overrides all Author Name entries
+[set in the app's source code](../All_About_Descriptions_Graphics_and_Screenshots).
 
 This is converted to (`<author>`) in the XML file (_index.xml_).
 
@@ -119,16 +121,17 @@ This is converted to (`<author>`) in the XML file (_index.xml_).
 
 ### 7.3 Author Email<a name="Author-Email"></a>
 
-
 The e-mail address of the author(s). This can be omitted (or left
 blank).
+
+__Warning__: this overrides all Author Email entries
+[set in the app's source code](../All_About_Descriptions_Graphics_and_Screenshots).
 
 This is converted to (`<email>`) in the XML file (_index.xml_).
 
 
 
 ### 7.4 License<a name="License"></a>
-
 
 The overall license for the application in terms of the binary that
 the user can install. Values should correspond to short identifiers of
@@ -148,12 +151,14 @@ This is converted to (`<license>`) in the XML file (_index.xml_).
 
 ### 7.5 Auto Name<a name="Auto-Name"></a>
 
-
 The name of the application as can best be retrieved from the source
 code. This is done so that the commitupdates script can put a familiar
 name in the description of commits created when a new update of the
 application is found. The Auto Name entry is generated automatically
 when `fdroid checkupdates` is run.
+
+__Warning__: this overrides all Name entries
+[set in the app's source code](../All_About_Descriptions_Graphics_and_Screenshots).
 
 This is converted to (`<name>`) in the XML file (_index.xml_).
 
@@ -161,13 +166,15 @@ This is converted to (`<name>`) in the XML file (_index.xml_).
 
 ### 7.6 Name<a name="Name"></a>
 
-
 The name of the application. Normally, this field should not be present
 since the application’s correct name is retrieved from the APK file.
 However, in a situation where an APK contains a bad or missing
 application name, it can be overridden using this. Note that this only
 overrides the name in the list of apps presented in the client; it
 doesn’t changed the name or application label in the source code.
+
+__Warning__: this overrides all Name entries
+[set in the app's source code](../All_About_Descriptions_Graphics_and_Screenshots).
 
 This is converted to (`<name>`) in the XML file (_index.xml_).
 
@@ -277,17 +284,18 @@ This is converted to (`<litecoin>`) in the XML file (_index.xml_).
 
 ### 7.16 Summary<a name="Summary"></a>
 
-
 A brief summary of what the application is. Since the summary is only
 allowed one line on the list of the F-Droid client, keeping it to within
 80 characters will ensure it fits most screens.
+
+__Warning__: this overrides all Summary entries
+[set in the app's source code](../All_About_Descriptions_Graphics_and_Screenshots).
 
 This is converted to (`<summary>`) in the XML file (_index.xml_).
 
 
 
 ### 7.17 Description<a name="Description"></a>
-
 
 A full description of the application, relevant to the latest version.
 This can span multiple lines (which should be kept to a maximum of 80
@@ -314,6 +322,11 @@ the app is in rapid development or whether the latest version lags
 behind the current version; whether the app supports multiple
 architectures or whether there is a maximum SDK specified (such info not
 being recorded in the index).
+
+4000 char limit
+
+__Warning__: this overrides all Description entries
+[set in the app's source code](../All_About_Descriptions_Graphics_and_Screenshots).
 
 This is converted to (`<desc>`) in the XML file (_index.xml_).
 
