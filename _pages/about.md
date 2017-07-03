@@ -38,6 +38,7 @@ and is brought to you by at least the following people:
 * Dan Bravender
 * Cédric Cabessa
 * Kevin Cernekee
+* Felix Edelmann
 * Kevin Everets
 * Alberto A. Fuentes
 * Torsten Grote
