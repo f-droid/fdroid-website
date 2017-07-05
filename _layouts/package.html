@@ -19,34 +19,45 @@ layout: default
 	<div class="package-description">
 		{{ page.description }}
 	</div>
-	<p>
-		<b>{{ strings.license }}</b>:
-		<a href="{{ page.license|get_license_url }}">{{ page.license|get_license_name }}</a>
-	</p>
-	<p>
+	<ul class="package-links">
+		<li class="package-link">
+			{{ strings.license }}:
+			<a href="{{ page.license|get_license_url }}">{{ page.license|get_license_name }}</a>
+		</li>
 		{% if page.webSite != "" and page.webSite != nil %}
-			<b>{{ strings.website }}</b>: <a href="{{ page.webSite }}">{{ page.webSite }}</a><br>
+			<li class="package-link">
+				<a href="{{ page.webSite }}">{{ strings.website }}</a>
+			</li>
 		{% endif %}
 		{% if page.issueTracker != "" and page.issueTracker != nil %}
-			<b>{{ strings.issue_tracker }}</b>: <a href="{{ page.issueTracker }}">{{ page.issueTracker }}</a><br>
+			<li class="package-link">
+				<a href="{{ page.issueTracker }}">{{ strings.issue_tracker }}</a>
+			</li>
 		{% endif %}
 		{% if page.sourceCode != "" and page.sourceCode != nil %}
-			<b>{{ strings.source_code }}</b>: <a href="{{ page.sourceCode }}">{{ page.sourceCode }}</a><br>
+			<li class="package-link">
+				<a href="{{ page.sourceCode }}">{{ strings.source_code }}</a>
+			</li>
 		{% endif %}
 		{% if page.changelog != "" and page.changelog != nil %}
-			<b>{{ strings.changelog }}</b>: <a href="{{ page.changelog }}">{{ page.changelog }}</a><br>
+			<li class="package-link">
+				<a href="{{ page.changelog }}">{{ strings.changelog }}</a>
+			</li>
 		{% endif %}
 		{% if page.donate != "" and page.donate != nil %}
-			<b>{{ strings.donate }}</b>: <a href="{{ page.donate }}">{{ page.donate }}</a><br>
+			<li class="package-link">
+				<a href="{{ page.donate }}">{{ strings.donate }}</a>
+			</li>
 		{% endif %}
 		{% if page.flattr != "" and page.flattr != nil %}
-			<b>{{ strings.flattr }}</b>: <a href="https://flattr.com/thing/{{ page.flattr }}">https://flattr.com/thing/{{ page.flattr }}</a><br>
+			<li class="package-link">
+				<a href="https://flattr.com/thing/{{ page.flattr }}">{{ strings.flattr }}</a>
+			</li>
 		{% endif %}
-	</p>
-	<p>
-		{% assign wiki_link = 'https://f-droid.org/wiki/page/' | append: page.package %}
-		{{ strings.blah | replace: '[wiki_url]', wiki_link }}
-	</p>
+		<li class="package-link">
+			<a href="https://f-droid.org/wiki/page/{{page.package}}">{{ strings.technical_info }}</a>
+		</li>
+	</ul>
 
 	<div class="package-versions">
 		<h3>{{ strings.packages }}</h3>

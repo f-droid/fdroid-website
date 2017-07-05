@@ -170,6 +170,34 @@ body {
 }
 
 /**
+ * Package
+ */
+ .package {
+     .package-links {
+         @include reset-ul;
+
+         border-top: solid 1px #ccc;
+         border-bottom: solid 1px #ccc;
+         padding-top: 1em;
+         padding-bottom: 1em;
+         margin-bottom: 1em;
+
+         .package-link {
+             display: inline;
+             word-break: keep-all;
+
+             &:after {
+                 content: " | ";
+             }
+
+             &:last-of-type:after {
+                 content: ""
+             }
+         }
+     }
+ }
+
+/**
  * Language chooser
  */
 .sidebar-widget.language {
