@@ -12,6 +12,8 @@ variables:
 # Common steps required for each type of "Build" (f-droid.org, GitLab Pages, feature branches)
 .setup_for_jekyll: &setup_for_jekyll |
   ruby -v
+  git submodule init
+  git submodule update
   apt-get update
   apt-get install -y locales
   echo "en_US UTF-8" > /etc/locale.gen
