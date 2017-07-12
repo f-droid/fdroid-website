@@ -59,5 +59,6 @@ the main repository.
 * [Whitelabel Builds](Whitelabel_Builds) custom builds of F-Droid
 * [Privileged Extension](https://gitlab.com/fdroid/privileged-extension#f-droid-privileged-extension) How to use F-Droid Privileged Extension as a user and rom developer
 * [Deploying the Website](Deploying_the_Website) How [fdroid-website.git](https://gitlab.com/fdroid/fdroid-website) becomes [f-droid.org](https://f-droid.org)
+* [Maintaining the Forum](Maintaining_the_Forum) Useful information for administrators of [F-Droid's forum](https://forum.f-droid.org)
 
 * [Work in Progress](https://f-droid.org/wiki/page/Work_in_Progress) Feel free to add your own topics and link to others.
