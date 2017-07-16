@@ -119,6 +119,13 @@ keystore in `config.py`.  It is also possible to install
 _fdroidserver_ in a virtual environment using _virtualenv_ and _pip_.
 
 
+## Docker Executable Image (any platform)
+
+If you are already running Docker "Executable Images", then the
+easiest way to run _fdroidserver_ is to use our
+[executable image](https://gitlab.com/fdroid/docker-executable-fdroidserver)
+
+
 ## Installing the latest code (any platform)
 
 The easiest way to install the fdroidserver tools from source is to use
