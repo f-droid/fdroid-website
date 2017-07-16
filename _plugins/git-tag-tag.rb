@@ -17,7 +17,7 @@ module Jekyll
 	class GitTag < GitInfoTag
         include Jekyll::LiquidExtensions
 		def render(context)
-			git().describe('HEAD')
+			git().describe('HEAD', :always => true)
 		end
 	end
 
