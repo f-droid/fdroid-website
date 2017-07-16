@@ -764,6 +764,9 @@ description:
     non-free assets. The most common case is apps using artwork -
     images, sounds, music, etc - under a non-commercial license.
 -   ‘KnownVuln’ - the application has known security vulnerabilities.
+-   ‘ApplicationDebuggable‘ - APK file is compiled for debugging
+    (`application-debuggable`), which normally makes it unsuitable
+    for regular users and use cases.
 
 This is converted to (`<antifeatures>`) in the XML file (_index.xml_).
 
