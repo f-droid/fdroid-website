@@ -127,17 +127,30 @@ $ rsync -ax --delete --exclude-from=_site/build/.rsync-deploy-exclude-list  _sit
 
 ### Apache2 config
 
-The F-Droid website is translated into several languages.
-Two things are required to ensure this works.
+The F-Droid website is translated into several languages.  There are a
+few things required to ensure this works.
 
-The first is taken care of by `.gitlab-ci.yml`, which is to run the `./tools/prepare-multi-langs.sh` script
-_without_ the `--no-type-maps` argument.
-This ensures that each `.html` file is replaced with an Apache2 [TypeMap](https://httpd.apache.org/docs/current/mod/mod_negotiation.html#typemaps).
+The first is taken care of by `.gitlab-ci.yml`, which is to run the
+`./tools/prepare-multi-langs.sh` script _without_ the `--no-type-maps`
+argument.  This ensures that each `.html` file is replaced with an
+Apache2
+[TypeMap](https://httpd.apache.org/docs/current/mod/mod_negotiation.html#typemaps).
 
-The second is to add the following to the Apache2 server or VirtualHost config so that the TypeMaps are used correctly,
-telling apache where to find the translated version of the file (replace `/var/www/html` with the actual webroot):
+The second is to enable _mod_rewrite_, which is used to automatically
+choose the correct language for browsers that are not using
+Javascript.  The easiest way to do that is to run `sudo a2enmod
+rewrite`.
+
+The last is to add the following to the Apache2 server or
+_VirtualHost_ config so that the _TypeMaps_ are used correctly,
+telling apache where to find the translated version of the file
+(replace `/var/www/html` with the actual webroot):
 
 ```apache
+<Directory /var/www/html>
+    AllowOverride All
+</Directory>
+
 <Files *.html>
     SetHandler type-map
 </Files>
