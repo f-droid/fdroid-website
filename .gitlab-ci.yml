@@ -2,7 +2,8 @@ image: ruby:2.3
 
 stages:
  - test
- - deploy
+ - staging
+ - production
 
 variables:
   OUT_DIR: build
@@ -14,7 +15,6 @@ variables:
   ruby -v
   apt-get update
   apt-get install -y locales unzip
-  ./tools/add-artwork.sh
   echo "en_US UTF-8" > /etc/locale.gen
   locale-gen en_US.UTF-8
   export LANG=en_US.UTF-8
@@ -40,7 +40,7 @@ variables:
 # https://f-droid.org.
 #
 f-droid.org:
-  stage: deploy
+  stage: production
   when: manual
   cache:
     paths: [ vendor/ruby ]
@@ -48,6 +48,7 @@ f-droid.org:
   script:
    - '[ ! -d "$DEPLOY_DIR" ] && echo "DEPLOY_DIR env variable must point to a directory" && exit 1'
    - *setup_for_jekyll
+   - ./tools/add-artwork.sh
    - 'echo "url: https://f-droid.org" > userconfig.yml'
    - 'echo "baseurl: \"\"" >> userconfig.yml'
    - echo "Additional Jekyll config used for CI:" && cat userconfig.yml
@@ -76,7 +77,7 @@ build:
 # branches alongside master branches (https://gitlab.com/gitlab-org/gitlab-pages/issues/33)
 # this is the next best option.
 preview:
-  stage: deploy
+  stage: staging
   image: node:wheezy
   except: [ master ]
 
@@ -96,7 +97,7 @@ preview:
 
 
 teardown_preview:
-  stage: deploy
+  stage: staging
   image: node:wheezy
   except: [ master ]
   when: manual
@@ -117,7 +118,7 @@ teardown_preview:
 
 
 pages:
-  stage: deploy
+  stage: staging
   only: [ master ]
   cache:
     paths: [ vendor/ruby ]
