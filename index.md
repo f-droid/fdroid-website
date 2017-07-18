@@ -14,4 +14,4 @@ permalink: /
 
 <img
     src="assets/phone-frame.png"
-    style="background: url('assets/fdroid-screenshot-{{ site.active_lang }}.png') center center no-repeat; background-size: 78% auto" />
+    style="background: url('{% fdroid_screenshot %}') center center no-repeat; background-size: 78% auto" />
