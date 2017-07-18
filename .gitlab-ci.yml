@@ -47,12 +47,12 @@ f-droid.org:
   script:
    - '[ ! -d "$DEPLOY_DIR" ] && echo "DEPLOY_DIR env variable must point to a directory" && exit 1'
    - *setup_for_jekyll
-   - ./tools/add-artwork.sh
    - 'echo "url: https://f-droid.org" > userconfig.yml'
    - 'echo "baseurl: \"\"" >> userconfig.yml'
    - echo "Additional Jekyll config used for CI:" && cat userconfig.yml
    - bundle exec jekyll build -d $OUT_DIR --config _config.yml,userconfig.yml --trace
    - ./tools/prepare-multi-lang.sh $OUT_DIR
+   - ./tools/deploy-external-assets.sh $OUT_DIR
    - cp -r $OUT_DIR $DEPLOY_DIR/
 
 build:
