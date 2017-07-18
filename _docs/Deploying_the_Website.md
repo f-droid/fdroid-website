@@ -127,17 +127,30 @@ $ rsync -ax --delete --exclude-from=_site/build/.rsync-deploy-exclude-list  _sit
 
 ### Apache2 config
 
-The F-Droid website is translated into several languages.
-Two things are required to ensure this works.
+The F-Droid website is translated into several languages.  There are a
+few things required to ensure this works.
 
-The first is taken care of by `.gitlab-ci.yml`, which is to run the `./tools/prepare-multi-langs.sh` script
-_without_ the `--no-type-maps` argument.
-This ensures that each `.html` file is replaced with an Apache2 [TypeMap](https://httpd.apache.org/docs/current/mod/mod_negotiation.html#typemaps).
+The first is taken care of by `.gitlab-ci.yml`, which is to run the
+`./tools/prepare-multi-langs.sh` script _without_ the `--no-type-maps`
+argument.  This ensures that each `.html` file is replaced with an
+Apache2
+[TypeMap](https://httpd.apache.org/docs/current/mod/mod_negotiation.html#typemaps).
 
-The second is to add the following to the Apache2 server or VirtualHost config so that the TypeMaps are used correctly,
-telling apache where to find the translated version of the file (replace `/var/www/html` with the actual webroot):
+The second is to enable _mod_rewrite_, which is used to automatically
+choose the correct language for browsers that are not using
+Javascript.  The easiest way to do that is to run `sudo a2enmod
+rewrite`.
 
-```
+The last is to add the following to the Apache2 server or
+_VirtualHost_ config so that the _TypeMaps_ are used correctly,
+telling apache where to find the translated version of the file
+(replace `/var/www/html` with the actual webroot):
+
+```apache
+<Directory /var/www/html>
+    AllowOverride All
+</Directory>
+
 <Files *.html>
     SetHandler type-map
 </Files>
@@ -150,38 +163,38 @@ SetEnvIf Request_URI ^/(ach|af|ak|sq|am|anp|ar|an|hy|as|ast|ay|az|ba|eu|bar|be|b
 
 # Language codes from Weblate containing capital letters and underscores need to be treated
 # differently, namely the language they refer to is lower case with a hyphen
-SetEnvIf Request_URI ^/uz_Latn/ prefer-language=uz-latn
-SetEnvIf Request_URI ^/ur_PK/ prefer-language=ur-pk
-SetEnvIf Request_URI ^/de_CH/ prefer-language=de-ch
-SetEnvIf Request_URI ^/es_PR/ prefer-language=es-pr
-SetEnvIf Request_URI ^/es_MX/ prefer-language=es-mx
-SetEnvIf Request_URI ^/es_US/ prefer-language=es-us
-SetEnvIf Request_URI ^/sr_Latn/ prefer-language=sr-latn
-SetEnvIf Request_URI ^/sr_Cyrl/ prefer-language=sr-cyrl
-SetEnvIf Request_URI ^/pt_PT/ prefer-language=pt-pt
-SetEnvIf Request_URI ^/pt_BR/ prefer-language=pt-br
-SetEnvIf Request_URI ^/nb_NO/ prefer-language=nb-no
-SetEnvIf Request_URI ^/fr_CA/ prefer-language=fr-ca
-SetEnvIf Request_URI ^/en_US/ prefer-language=en-us
-SetEnvIf Request_URI ^/en_GB/ prefer-language=en-gb
-SetEnvIf Request_URI ^/en_ZA/ prefer-language=en-za
-SetEnvIf Request_URI ^/en_PH/ prefer-language=en-ph
-SetEnvIf Request_URI ^/en_IE/ prefer-language=en-ie
-SetEnvIf Request_URI ^/en_CA/ prefer-language=en-ca
-SetEnvIf Request_URI ^/en_AU/ prefer-language=en-au
-SetEnvIf Request_URI ^/nl_BE/ prefer-language=nl-be
-SetEnvIf Request_URI ^/zh_Hant/ prefer-language=zh-hant
-SetEnvIf Request_URI ^/zh_Hans/ prefer-language=zh-hans
-SetEnvIf Request_URI ^/zh_HK/ prefer-language=zh-hk
-SetEnvIf Request_URI ^/bs_Latn/ prefer-language=bs-latn
-SetEnvIf Request_URI ^/bs_Cyrl/ prefer-language=bs-cyrl
-SetEnvIf Request_URI ^/bn_IN/ prefer-language=bn-in
-SetEnvIf Request_URI ^/bn_BD/ prefer-language=bn-bd
-SetEnvIf Request_URI ^/be_Latn/ prefer-language=be-latn
-SetEnvIf Request_URI ^/de_AT/ prefer-language=de-at
-SetEnvIf Request_URI ^/es_AR/ prefer-language=es-ar
-SetEnvIf Request_URI ^/ar_MA/ prefer-language=ar-ma
 SetEnvIf Request_URI ^/ar_DZ/ prefer-language=ar-dz
+SetEnvIf Request_URI ^/ar_MA/ prefer-language=ar-ma
+SetEnvIf Request_URI ^/be_Latn/ prefer-language=be-latn
+SetEnvIf Request_URI ^/bn_BD/ prefer-language=bn-bd
+SetEnvIf Request_URI ^/bn_IN/ prefer-language=bn-in
+SetEnvIf Request_URI ^/bs_Cyrl/ prefer-language=bs-cyrl
+SetEnvIf Request_URI ^/bs_Latn/ prefer-language=bs-latn
+SetEnvIf Request_URI ^/de_AT/ prefer-language=de-at
+SetEnvIf Request_URI ^/de_CH/ prefer-language=de-ch
+SetEnvIf Request_URI ^/en_AU/ prefer-language=en-au
+SetEnvIf Request_URI ^/en_CA/ prefer-language=en-ca
+SetEnvIf Request_URI ^/en_GB/ prefer-language=en-gb
+SetEnvIf Request_URI ^/en_IE/ prefer-language=en-ie
+SetEnvIf Request_URI ^/en_PH/ prefer-language=en-ph
+SetEnvIf Request_URI ^/en_US/ prefer-language=en-us
+SetEnvIf Request_URI ^/en_ZA/ prefer-language=en-za
+SetEnvIf Request_URI ^/es_AR/ prefer-language=es-ar
+SetEnvIf Request_URI ^/es_MX/ prefer-language=es-mx
+SetEnvIf Request_URI ^/es_PR/ prefer-language=es-pr
+SetEnvIf Request_URI ^/es_US/ prefer-language=es-us
+SetEnvIf Request_URI ^/fr_CA/ prefer-language=fr-ca
+SetEnvIf Request_URI ^/nb_NO/ prefer-language=nb-no
+SetEnvIf Request_URI ^/nl_BE/ prefer-language=nl-be
+SetEnvIf Request_URI ^/pt_BR/ prefer-language=pt-br
+SetEnvIf Request_URI ^/pt_PT/ prefer-language=pt-pt
+SetEnvIf Request_URI ^/sr_Cyrl/ prefer-language=sr-cyrl
+SetEnvIf Request_URI ^/sr_Latn/ prefer-language=sr-latn
+SetEnvIf Request_URI ^/ur_PK/ prefer-language=ur-pk
+SetEnvIf Request_URI ^/uz_Latn/ prefer-language=uz-latn
+SetEnvIf Request_URI ^/zh_Hans/ prefer-language=zh-hans
+SetEnvIf Request_URI ^/zh_Hant/ prefer-language=zh-hant
+SetEnvIf Request_URI ^/zh_HK/ prefer-language=zh-hk
 ```
 
 If this is not done or done incorrectly, then you will see something like the following when viewing any page:
