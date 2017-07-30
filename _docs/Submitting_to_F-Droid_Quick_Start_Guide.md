@@ -61,7 +61,8 @@ ln -s ~/Android/Sdk/build-tools/23.0.2/aapt ~/Android/Sdk/platform-tools/
 cd ~/code
 git clone https://gitlab.com/fdroid/fdroidserver.git
 git clone https://gitlab.com/fdroid/fdroiddata.git
-echo 'export PATH="~/code/fdroidserver:$PATH"' >> ~/.profile source ~/.profile
+echo 'export PATH="~/code/fdroidserver:$PATH"' >> ~/.profile
+source ~/.profile
 
 # Config
 cd fdroiddata
