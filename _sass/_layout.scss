@@ -252,3 +252,47 @@ img {
      */
     max-width: 100%;
 }
+
+/**
+ * Home page
+ */
+.download-and-screenshot {
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    .download {
+        padding: 1em;
+        text-align: center;
+
+        .qr {
+
+            img {
+                width: 200px;
+            }
+
+            @include media-query($tablet) {
+                display: none;
+            }
+
+            @include media-query($phone) {
+                display: none;
+            }
+        }
+    }
+
+    .screenshot {
+        display: block;
+
+        max-width: 60%;
+
+        @include media-query($tablet) {
+            max-width: 100%;
+        }
+
+        @include media-query($phone) {
+            max-width: 100%;
+        }
+    }
+}
