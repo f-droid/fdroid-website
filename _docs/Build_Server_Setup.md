@@ -134,12 +134,13 @@ the guest would fail.
 The output of this step is a minimal Debian VM that has support for
 remote login and provisioning.
 
-Unless you’re very trusting, you should create one of these for yourself
-from verified standard Debian installation media. However, by popular
-demand, the `./makebuildserver` script will automatically download a
-prebuilt image unless instructed otherwise. If you choose to use the
-prebuilt image, you may safely skip the rest of this section.
+There are three possible ways to get a debian base box for use with
+`./makebuildserver`/.
 
+
+#### Building a Debian base box from scratch
+
+Create one from scratch form verified standard Debian installation media.
 Documentation for creating a base box can be found at
 <https://www.vagrantup.com/docs/boxes/base.html>.
 
@@ -158,6 +159,68 @@ consider the following:
 2.  Unless you want the VM to become totally inaccessible following a
     failed boot, you need to set `GRUB_RECORDFAIL_TIMEOUT` to a value
     other than -1 in `/etc/grub/default` and then run `update-grub`.
+
+#### Using the Debian provided vagrant boxes
+
+Use the prebuilt vagrant boxes built by the Debian team at
+<https://wiki.debian.org/Teams/Cloud/VagrantBaseBoxes> and adapt them to fit
+F-Droid's requirements.
+
+Install the following vagrant plugins, the first one automatically installs
+the virtualbox guest additions for us, the second one can resize the virtual
+hard disk:
+```bash
+vagrant plugin install vagrant-vbguest
+vagrant plugin install vagrant-disksize
+```
+Then create a file named `Vagrantfile` with the following contents:
+```ruby
+Vagrant.configure("2") do |config|
+  config.vm.box = "debian/jessie64"
+  # Disable default /vagrant folder rsync
+  config.vm.synced_folder ".", "/vagrant", disabled: true
+  config.disksize.size = '60GB'
+
+  config.vm.provision "shell", inline: <<-SHELL
+    sudo apt-get update && sudo apt-get install -y parted
+    sudo swapoff /dev/sda5 # disable swap so we can then remove the partition
+    sudo parted /dev/sda rm 5 rm 2 # remove swap and extended partition
+    # extend sda1 to the full disk
+    sudo parted ---pretend-input-tty /dev/sda resizepart 1 yes 100%
+    sudo resize2fs /dev/sda1 # enlarge filesystem to fill the whole partition
+    sudo dd if=/dev/zero of=/swap bs=1024K count=500 # create a swapfile
+    sudo chmod 600 /swap
+    sudo mkswap /swap
+    sudo swapon /swap
+    sudo sed -i '/swap/d' /etc/fstab # and update fstab with the swapfile
+    echo "/swap       none    swap    sw   0   0" | sudo tee -a /etc/fstab
+  SHELL
+end
+```
+In the same directory run `vagrant up --provider virtualbox`.
+
+This will download and import the debian/jessie64 base.box. It will then
+bring up the box once and do some initial setup including installing the
+virtualbox guest additions, resizing the hard disk, resizing the partition
+and filesystem and adjusting the fstab.
+
+After that is done we can repackage the box and move it to the expected
+fdroid cache location. We also want to make sure there is no left over
+`jessie64` box known to vagrant.
+
+```bash
+vagrant package
+mv package.box ~/.cache/fdroidserver/jessie64.box
+# Remove any previous versions (if one exists) of the 'jessie64' machine
+# created by makebuildserver. Otherwise it will reuse the old version.
+vagrant box remove jessie64
+```
+
+#### Using the F-Droid provided Debian box
+
+The `./makebuildserver` script will automatically download a prebuilt image
+from F-Droid. With this setup you have to completely trust the F-Droid
+maintainers and infrastructure, so using one of the above methods is preferred.
 
 
 ### Creating the F-Droid base box
