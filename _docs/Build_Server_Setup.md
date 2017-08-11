@@ -77,7 +77,8 @@ in this process should be run using root or _sudo_.
 ```bash
 root:~# apt-get install vagrant virtualbox git python3-certifi \
         python3-libvirt python3-requestbuilder python3-yaml \
-        python3-clint python3-vagrant python3-paramiko
+        python3-clint python3-vagrant python3-paramiko python3-pyasn1 \
+        python3-pyasn1-modules
 root:~# adduser --disabled-password fdroid
 root:~# su fdroid
 ```
