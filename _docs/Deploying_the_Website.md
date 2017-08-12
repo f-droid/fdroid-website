@@ -70,7 +70,7 @@ release.
 
 When an update to the website is tested and ready to go, a release
 manager creates a PGP-signed release tag in the main git repo.  The
-deploy server monitors the main git repo for new tgs.  When it sees a
+deploy server monitors the main git repo for new tags.  When it sees a
 new tag, it first checks the PGP signature on the git tag using a
 manually configured GnuPG keyring that contains only the public keys
 of the PGP keys that are allowed to tag website releases.
