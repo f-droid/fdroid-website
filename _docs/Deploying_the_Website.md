@@ -47,7 +47,7 @@ To configure this:
  * Signup for [surge.sh](https://surge.sh): `surge login`
  * Get a "token" to allow CI to deploy on your behalf: `surge token`
  * [Add two "Secret Variables"](https://docs.gitlab.com/ce/ci/variables/README.html#secret-variables) to your fork of this project:
-   * Navigate to your projects Settings -> CI/CD Pipelines -> Secret Variables.
+   * Navigate to your projects Settings -> Pipelines -> Secret Variables.
    * Add the following two variables:
      * `SURGE_LOGIN`: The email you used to signup with `surge login`.
      * `SURGE_TOKEN`: The value given when you ran `surge token`.
