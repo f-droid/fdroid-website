@@ -33,7 +33,7 @@ the main repository.
 ### More Information
 
 * [How to Help](How_to_Help) Different ways anyone can contribute to the F-Droid project.
-* [Known Repositories](https://f-droid.org/wiki/page/Known_Repositories) A list that tries to keep track of known f-droid compatible repositories.
+* [Known Repositories](https://forum.f-droid.org/t/721) A list that tries to keep track of known f-droid compatible repositories.
 * [Release Channels and Signing Keys](Release_Channels_and_Signing_Keys) These are the various channels that F-Droid software are released on, with info to verify them based on signing keys.
 * [Security Model](Security_Model) A brief explanation of how F-Droid delivers software to users securely.
 * [Translation and Localization](Translation_and_Localization) How all the parts of F-Droid are localized.
@@ -57,7 +57,7 @@ the main repository.
 
 * [Verification Server](Verification_Server) Setting up a server to verify app builds are correct.
 * [Whitelabel Builds](Whitelabel_Builds) custom builds of F-Droid
-* [Privileged Extension](https://gitlab.com/fdroid/privileged-extension#f-droid-privileged-extension) How to use F-Droid Privileged Extension as a user and rom developer
+* [Privileged Extension](https://gitlab.com/fdroid/privileged-extension/blob/master/README.md#f-droid-privileged-extension) How to use F-Droid Privileged Extension as a user and rom developer
 * [Deploying the Website](Deploying_the_Website) How [fdroid-website.git](https://gitlab.com/fdroid/fdroid-website) becomes [f-droid.org](https://f-droid.org)
 * [Maintaining the Forum](Maintaining_the_Forum) Useful information for administrators of [F-Droid's forum](https://forum.f-droid.org)
 
