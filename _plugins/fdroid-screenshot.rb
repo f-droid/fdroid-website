@@ -12,12 +12,12 @@ module Jekyll
             lang_without_region = just_lang(active_lang)
 
             preferred_path = "assets/fdroid-screenshot-#{active_lang}.png"
-            acceptable_path = "assets/fdroid-screenshot-#{lang_without_region}.png"
+            acceptable_path = if lang_without_region == nil then nil else "assets/fdroid-screenshot-#{lang_without_region}.png" end
             default_path = "assets/fdroid-screenshot-en.png"
 
             if File::exists? "#{site_source}/#{preferred_path}"
                 return preferred_path
-            elsif File::exists? "#{site_source}/#{acceptable_path}"
+            elsif acceptable_path != nil and File::exists? "#{site_source}/#{acceptable_path}"
                 return acceptable_path
             else
                 Jekyll::logger.warn "FDroid:", "Can't find localized screenshot for #{active_lang} at #{preferred_path} or #{acceptable_path}, falling back to #{default_path}"
@@ -28,7 +28,11 @@ module Jekyll
         def just_lang(locale)
             regex = /(?<lang>[a-zA-Z]+)(?:_.*)?/
             result = locale.match(regex)
-            result[:lang]
+            if result == nil
+                return nil
+            else
+                return result[:lang]
+            end
         end
     end
 end
