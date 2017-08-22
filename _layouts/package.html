@@ -5,8 +5,14 @@ layout: default
 {% assign strings = site.data.strings.package %}
 
 <article class="package">
+	{% if page.feature_graphic %}
+		<img
+			class="feature-graphic"
+			src="{{ site.fdroid-repo}}/{{ page.package_name }}/{{ page.feature_graphic }}" />
+	{% endif %}
+
 	<header class="package-header">
-		<img class="package-icon" src="{{ site.fdroid-repo }}/icons/{{ page.icon }}" />
+		<img class="package-icon" src="{{ site.fdroid-repo }}/{{ page.icon }}" />
 		<div class="package-title">
 			<h3 class="package-name">
 				{{ page.title }}
@@ -59,6 +65,22 @@ layout: default
 		</li>
 	</ul>
 
+	<div class="slider screenshots">
+		<div class="frame js_frame">
+			<ul class="slides js_slides gallery">
+				{% for screenshot in page.phone_screenshots %}
+					<li class="js_slide screenshot"><img src="{{ site.fdroid-repo}}/{{ page.package_name }}/{{ screenshot }}" /></li>
+				{% endfor %}
+			</ul>
+		</div>
+		<span class="js_prev prev">
+			<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 501.5 501.5"><g><path fill="#2E435A" d="M302.67 90.877l55.77 55.508L254.575 250.75 358.44 355.116l-55.77 55.506L143.56 250.75z"/></g></svg>
+		</span>
+		<span class="js_next next">
+			<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 501.5 501.5"><g><path fill="#2E435A" d="M199.33 410.622l-55.77-55.508L247.425 250.75 143.56 146.384l55.77-55.507L358.44 250.75z"/></g></svg>
+		</span>
+	</div>
+
 	<div class="package-versions">
 		<h3>{{ strings.packages }}</h3>
 		<p>
@@ -73,10 +95,10 @@ layout: default
 					Use YYYY-MM-DD format, because it is more internationalizable than versions which include English month names.
 					{% endcomment %}
 					{% assign package_added_date = package.added | date: '%F' %}
-					{{ strings.version_info | replace: '[package_version]', package.version | replace: '[package_version_code]', package.versionCode | replace: '[package_added_date]', package_added_date }}
+					{{ strings.version_info | replace: '[package_version]', package.version_name | replace: '[package_version_code]', package.version_code | replace: '[package_added_date]', package_added_date }}
 				</div>
 				<p class="package-version-requirement">
-					{% assign android_version = package.sdkVersion | android_sdk_level_to_version %}
+					{% assign android_version = package.min_sdk_version | android_sdk_level_to_version %}
 					{{ strings.minimum_android_version | replace: '[android_version]', android_version }}
 				</p>
 
@@ -90,16 +112,19 @@ layout: default
 				</p>
 
 				<p class="package-version-download">
-					<a href="{{ site.fdroid-repo }}/{{ package.apkName }}">{{ strings.download_apk }}</a> {{ package.size|file_size_human_readable }}
-					<a href="{{ site.fdroid-repo }}/{{ package.apkName }}.asc">{{ strings.gpg_signature }}</a>
+					<a href="{{ site.fdroid-repo }}/{{ package.apk_name }}">{{ strings.download_apk }}</a> {{ package.size|file_size_human_readable }}
+					<a href="{{ site.fdroid-repo }}/{{ package.apk_name }}.asc">{{ strings.gpg_signature }}</a>
 				</p>
 
 				<div class="package-version-permissions">
 					<h4>{{ strings.permissions }}</h4>
 					<ul class="package-version-permissions-list">
-						{% for permission in package.permissions %}
+						{% for permission in package.uses_permission %}
 						<li>
-							{{ permission }}
+							{{ permission.permission }}
+							{% if permission.min_sdk %}
+								({{ permission.min_sdk | android_sdk_level_to_version }})
+							{% endif %}
 						</li>
 						{% endfor %}
 					</ul>
@@ -114,3 +139,30 @@ layout: default
 	</div>
 
 </article>
+
+<script src="{{ site.baseurl }}/js/lory.min.js"></script>
+<script>
+	document.addEventListener('DOMContentLoaded', function () {
+		var slider = document.querySelector('.slider');
+
+        function handleEvent(e) {
+			console.log(e)
+        }
+
+        slider.addEventListener('before.lory.init', handleEvent);
+        slider.addEventListener('after.lory.init', handleEvent);
+        slider.addEventListener('before.lory.slide', handleEvent);
+        slider.addEventListener('after.lory.slide', handleEvent);
+        slider.addEventListener('before.lory.destroy', handleEvent);
+        slider.addEventListener('after.lory.destroy', handleEvent);
+
+        slider.addEventListener('on.lory.resize', handleEvent);
+        slider.addEventListener('on.lory.touchend', handleEvent);
+        slider.addEventListener('on.lory.touchmove', handleEvent);
+        slider.addEventListener('on.lory.touchstart', handleEvent);
+
+        lory(slider, {
+            infinite: 1
+        });
+	});
+</script>

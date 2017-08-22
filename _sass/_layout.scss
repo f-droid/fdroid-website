@@ -141,30 +141,34 @@ body {
 }
 
 /**
+ * Image gallery - used by both Posts and Packages.
+ */
+.gallery {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: stretch;
+
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    img {
+        margin: 0.5em;
+        flex-grow: 1;
+        max-width: 300px;
+        box-shadow: 3px 3px 6px #aaa;
+    }
+}
+
+/**
  * Post
  */
 .post {
     .post-content {
         img {
             box-shadow: 3px 3px 6px #aaa;
-        }
-
-        .gallery {
-            display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-content: stretch;
-
-            list-style: none;
-            margin: 0;
-            padding: 0;
-
-            img {
-                margin: 0.5em;
-                flex-grow: 1;
-                max-width: 300px;
-            }
         }
     }
 }
@@ -173,6 +177,17 @@ body {
  * Package
  */
  .package {
+
+     .feature-graphic {
+         width: 100%;
+     }
+     .package-header {
+         .package-icon {
+             width: 76px;
+             height: 76px;
+         }
+     }
+
      .package-links {
          @include reset-ul;
 
@@ -195,6 +210,93 @@ body {
              }
          }
      }
+
+     /**
+      * Most of the CSS for the screenshots is from the loryjs documentation:
+      * http://meandmax.github.io/lory/
+      * The customizations revolve around:
+      *
+      *   On large screens, overlap the next/previous buttons a little bit with the
+      *   leftmost and rightmost portions of the carousel. Also make the hit area the
+      *   entire height of the carousel.
+      *
+      *   On phone screens, hide the left/right feature completely, instead letting
+      *   users swipe left and right.
+      */
+    .screenshots {
+        position: relative;
+
+        .frame {
+            position: relative;
+            font-size: 0;
+            line-height: 0;
+            overflow: hidden;
+            white-space: nowrap;
+
+            margin: 0 30px;
+
+            @include media-query($phone) {
+                margin: 0;
+            }
+        }
+        
+        .slides {
+            display: inline-block;
+        }
+        
+        .screenshot {
+            position: relative;
+            display: inline-block;
+            vertical-align: middle;
+            margin: 10px;
+
+            @include media-query($phone) {
+                margin: 5px;
+            }
+
+            img {
+                max-width: 250px;
+        
+                @include media-query($phone) {
+                    width: 100%;
+                }
+            }
+        }
+        
+        .prev, .next {
+            position: absolute;
+            display: block;
+            cursor: pointer;
+            
+            margin-top: 0;
+            top: 0;
+            height: 100%;
+            width: 50px;
+            
+            @include media-query($phone) {
+                display: none
+            }
+        }
+        
+        .next {
+            right: 0;
+            svg {
+                right: 0;
+            }
+        }
+        
+        .prev {
+            left: 0;
+        }
+        
+        .next svg, .prev svg {
+            width: 25px;
+
+            position: absolute;
+            top: 50%;
+            margin-top: -25px;
+        }
+    }
  }
 
 /**
