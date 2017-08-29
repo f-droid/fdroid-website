@@ -24,8 +24,8 @@ RewriteEngine On
 # trailing parameters.
 #
 # Rewrites:
-#  /any/path?leading_param=blah&fdfilter=query&trailing_param=blah -> /packages/search/query
-#  /any/path?fdfilter=query&trailing_param=blah                    -> /packages/search/query
+#  /any/path?leading_param=blah&fdfilter=query&trailing_param=blah -> /packages/#q=query
+#  /any/path?fdfilter=query&trailing_param=blah                    -> /packages/#q=query
 #
 RewriteCond %{QUERY_STRING} ^.*fdfilter=(.*?)&.*$
 
@@ -34,16 +34,16 @@ RewriteCond %{QUERY_STRING} ^.*fdfilter=(.*?)&.*$
 # from the original request. By having "?" here, it shows no query string at all, which
 # is what we are after.
 #
-RewriteRule ^(.*)$ /packages/search/%1? [L,R=301]
+RewriteRule ^(.*)$ /packages/#q=%1? [L,R=301,NE]
 
 #
 # The less specific version of the above rule, for when there is no trailing parameters.
 # Rewrites:
-#  /any/path?leading_param&fdfilter=query -> /packages/search/query
-#  /any/path?fdfilter=query               -> /packages/search/query
+#  /any/path?leading_param&fdfilter=query -> /packages/#q=query
+#  /any/path?fdfilter=query               -> /packages/#q=query
 #
 RewriteCond %{QUERY_STRING} ^.*fdfilter=(.*?)$
-RewriteRule ^(.*)$ /packages/search/%1? [L,R=301]
+RewriteRule ^(.*)$ /packages/#q=%1? [L,R=301,NE]
 
 
 
