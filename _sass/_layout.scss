@@ -350,13 +350,6 @@ body {
 .sidebar-widget div.awesomplete {
   display: block !important;
 
-  input {
-    padding: 0.4em;
-    font-size: 1.1em;
-    box-sizing: border-box;
-    width: 100%;
-  }
-
   li:hover, li[aria-selected="true"] {
     background: $primary-color !important;
     .package-header {
@@ -365,7 +358,40 @@ body {
       }
     }
   }
+
+  .search-input {
+      width: 100%;
+  }
 }
+
+.search-input {
+  padding: 0.4em;
+  margin: 1px;
+  font-size: 1.1em;
+  box-sizing: border-box;
+  max-width: 100%;
+  width: 300px;
+  padding-left: 40px;
+  background: url('../assets/ic_search_black_24px.svg') no-repeat 10px center;
+  border-radius: 4px;
+  border: solid 1px #aaa;
+}
+
+.post-content {
+    .search-widget {
+        margin-bottom: 1em;
+    }
+}
+
+.search-input:focus {
+  margin: 0;
+  border: solid 2px $primary-color;
+}
+
+.results {
+  @include reset-ul;
+}
+
 
 /**
  * Footer
