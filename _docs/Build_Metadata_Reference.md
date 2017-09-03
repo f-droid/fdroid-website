@@ -835,8 +835,8 @@ Valid modes are:
     new versions are not desired. This method is also used when there is
     no other checking method available and the upstream developer keeps
     us posted on new versions.
--   `RepoManifest` - At the most recent commit, the AndroidManifest.xml
-    file is looked for in the directory where it was found in the the
+-   `RepoManifest` - At the most recent commit, the `AndroidManifest.xml`
+    and `build.gradle` files are looked for in the directory where they were found in the the
     most recent build. The appropriateness of this method depends on the
     development process used by the application’s developers. You should
     not specify this method unless you’re sure it’s appropriate. For
@@ -865,8 +865,8 @@ Valid modes are:
     information to obtain. But, for those apps who automate their build
     process with the commit ref that HEAD points to, RepoTrunk will set
     the Current Version and Current Version Code to that number.
--   `Tags` - The AndroidManifest.xml file in all tagged revisions in the
-    source repository is checked, looking for the highest version code.
+-   `Tags` - The `AndroidManifest.xml` and `build.gradle` files in all tagged revisions in the
+    source repository are checked, looking for the highest version code.
     The appropriateness of this method depends on the development
     process used by the application’s developers. You should not specify
     this method unless you’re sure it’s appropriate. It shouldn’t be
