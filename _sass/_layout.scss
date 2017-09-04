@@ -212,6 +212,21 @@ body {
      }
 
      /**
+      * Screenshots on the app details page.
+      * These styles apply regardless of whether or not JS is enabled.
+      * Other screenshot styles which target .slides instead of .screenshots
+      * only apply when JS is enabled, as the .slides class is only applied
+      * via JS.
+      */
+     .screenshot img {
+        max-width: 250px;
+
+        @include media-query($phone) {
+            width: 100%;
+        }
+    }
+
+     /**
       * Most of the CSS for the screenshots is from the loryjs documentation:
       * http://meandmax.github.io/lory/
       * The customizations revolve around:
@@ -223,7 +238,7 @@ body {
       *   On phone screens, hide the left/right feature completely, instead letting
       *   users swipe left and right.
       */
-    .screenshots {
+    .slider {
         position: relative;
 
         .frame {
@@ -252,14 +267,6 @@ body {
 
             @include media-query($phone) {
                 margin: 5px;
-            }
-
-            img {
-                max-width: 250px;
-        
-                @include media-query($phone) {
-                    width: 100%;
-                }
             }
         }
         
@@ -298,6 +305,7 @@ body {
         }
     }
  }
+ 
 
 /**
  * Language chooser
