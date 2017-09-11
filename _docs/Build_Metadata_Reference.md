@@ -739,6 +739,11 @@ configuration to the build. These are (roughly in order of application):
     is correct. This takes away a useful level of sanity checking, and
     should only be used if the values can’t be extracted.
 
+`antifeatures=<antifeature1>[,<antifeature2>,...]`
+
+:   List of Anti-Features for this specific build. They are described
+    in [AntiFeatures](#AntiFeatures).
+
 Another example, using extra parameters:
 
 ‘Build Version:1.09.03,10903,45,subdir=Timeriffic,oldsdkloc=yes’
