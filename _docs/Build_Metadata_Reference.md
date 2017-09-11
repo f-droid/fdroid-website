@@ -407,8 +407,8 @@ For example:
 
 ‘Build:1.2,12’
 
-The above specifies to build version 1.2, which has a version code of
-12. The `commit=` parameter specifies the tag, commit or revision number
+The above specifies to build version 1.2, which has a version code of 12.
+The `commit=` parameter specifies the tag, commit or revision number
 from which to build it in the source repository. It is the only
 mandatory flag, which in this case could for example be `commit=v1.2`.
 
