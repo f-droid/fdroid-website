@@ -441,9 +441,19 @@ configuration to the build. These are (roughly in order of application):
     source is cloned. Submodules are reset and cleaned like the main app
     repository itself before each build.
 
+`sudo=xxxx`
+
+:   Specifies a script to be run using `sudo bash -x -c "xxxx"` in the
+    buildserver VM guest.  This script is run with full root privileges,
+    but the state will be reset after each build.  The vast majority of
+    apps build using the standard Debian/stable base environment. This
+    is useful for setting up the buildserver for complex builds that
+    need very specific things that are not appropriate to install for
+    all builds, or for things that would conflict with other builds.
+
 `init=xxxx`
 
-:   As for ’prebuild’, but runs on the source code BEFORE any other
+:   Like ’prebuild’, but runs on the source code BEFORE any other
     processing takes place.
 
     You can use \$\$SDK\$\$, \$\$NDK\$\$, \$\$MVN3\$\$ and \$\$QT\$\$ to
