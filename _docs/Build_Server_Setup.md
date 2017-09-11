@@ -235,35 +235,44 @@ fdroid:~/fdroiddata$ ~/fdroidserver/fdroid build org.fdroid.fdroid -l --server
 
 ## Optionally using QEMU/KVM/libvirt instead of VirtualBox
 
-It is also possible to QEMU/KVM guest VMs via libvirt instead of the default VirtualBox.  VirtualBox is still the recommended setup since that is what is used by f-droid.org, but there are cases where it is not possible to run VirtualBox, like on a machine that is already running QEMU/KVM guests.
+It is also possible to QEMU/KVM guest VMs via libvirt instead of the
+default VirtualBox.  VirtualBox is still the recommended setup since
+that is what is used by f-droid.org, but there are cases where it is
+not possible to run VirtualBox, like on a machine that is already
+running QEMU/KVM guests.  In order to make the libvirt image files
+directly readable by `vagrant package`, _libvirt_'s QEMU needs to be
+configured to always set the ownership to `libvirt.libvirt`.
 
-```bash
+```console
 root:~# apt-get install vagrant vagrant-mutate vagrant-libvirt ebtables dnsmasq-base \
-  libvirt-clients libvirt-daemon libvirt-daemon-system qemu-kvm qemu-utils git
-
-root:~# cat << EOF > /etc/polkit-1/localauthority/50-local.d/50-libvirt-virsh-access.pkla
-[libvirt Management Access]
-Identity=unix-group:libvirt
-Action=org.libvirt.unix.manage
-ResultAny=yes
-ResultInactive=yes
-ResultActive=yes
-EOF
-
+        python3-libvirt libvirt-clients libvirt-daemon-system qemu-kvm qemu-utils git
 root:~# cat << EOF >> /etc/libvirt/qemu.conf
 user = "libvirt"
 group = "libvirt"
 dynamic_ownership = 1
 EOF
-
 root:~# service libvirtd restart
-root:~# adduser fdroid libvirt
 ```
 
-Then create a _makebuildserver.config.py_ and add:
+Then create a _makebuildserver.config.py_ next to _makebuildserver_
+and add:
 
 ```python
 vm_provider = 'libvirt'
+```
+
+##### Debian/stretch and Ubuntu/xenial
+
+```console
+root:~# adduser fdroid libvirt
+root:~# adduser fdroid libvirt-qemu
+```
+
+##### older Debian and Ubuntu
+
+```console
+root:~# adduser fdroid libvirtd
+root:~# adduser fdroid kvm
 ```
 
 ### Advanced nested KVM Setup:
