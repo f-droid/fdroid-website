@@ -835,20 +835,20 @@ Valid modes are:
     new versions are not desired. This method is also used when there is
     no other checking method available and the upstream developer keeps
     us posted on new versions.
--   `RepoManifest` - At the most recent commit, the AndroidManifest.xml
-    file is looked for in the directory where it was found in the the
-    most recent build. The appropriateness of this method depends on the
-    development process used by the application’s developers. You should
-    not specify this method unless you’re sure it’s appropriate. For
-    example, some developers bump the version when commencing
-    development instead of when publishing. It will return an error if
-    the AndroidManifest.xml has moved to a different directory or if the
-    package name has changed. The current version that it gives may not
-    be accurate, since not all versions are fit to be published.
-    Therefore, before building, it is often necessary to check if the
-    current version has been published somewhere by the upstream
-    developers, either by checking for apks that they distribute or for
-    tags in the source code repository.
+-   `RepoManifest` - At the most recent commit, the `AndroidManifest.xml`
+    and `build.gradle` files are looked for in the directory where
+    they were found in the the most recent build. The appropriateness of
+    this method depends on the development process used by the
+    application’s developers. You should not specify this method unless
+    you’re sure it’s appropriate. For example, some developers bump the
+    version when commencing development instead of when publishing. It
+    will return an error if the AndroidManifest.xml has moved to a
+    different directory or if the package name has changed. The current
+    version that it gives may not be accurate, since not all versions
+    are fit to be published.  Therefore, before building, it is often
+    necessary to check if the current version has been published
+    somewhere by the upstream developers, either by checking for apks
+    that they distribute or for tags in the source code repository.
 
     It currently works for every repository type to different extents,
     except the srclib repo type. For git, git-svn and hg repo types, you
@@ -865,16 +865,16 @@ Valid modes are:
     information to obtain. But, for those apps who automate their build
     process with the commit ref that HEAD points to, RepoTrunk will set
     the Current Version and Current Version Code to that number.
--   `Tags` - The AndroidManifest.xml file in all tagged revisions in the
-    source repository is checked, looking for the highest version code.
-    The appropriateness of this method depends on the development
-    process used by the application’s developers. You should not specify
-    this method unless you’re sure it’s appropriate. It shouldn’t be
-    used if the developers like to tag unstable versions or are known to
-    forget to tag releases. Like RepoManifest, it will not return the
-    correct value if the directory containing the AndroidManifest.xml
-    has moved. Despite these caveats, it is the often the favourite
-    update check mode.
+-   `Tags` - The `AndroidManifest.xml` and `build.gradle` files in all
+    tagged revisions in the source repository are checked, looking for
+    the highest version code.  The appropriateness of this method
+    depends on the development process used by the application’s
+    developers. You should not specify this method unless you’re sure
+    it’s appropriate. It shouldn’t be used if the developers like to tag
+    unstable versions or are known to forget to tag releases. Like
+    RepoManifest, it will not return the correct value if the directory
+    containing the AndroidManifest.xml has moved. Despite these caveats,
+    it is the often the favourite update check mode.
 
     It currently only works for git, hg, bzr and git-svn repositories.
     In the case of the latter, the repo URL must contain the path to the
