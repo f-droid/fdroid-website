@@ -5,8 +5,14 @@ layout: default
 {% assign strings = site.data.strings.package %}
 
 <article class="package">
+	{% if page.feature_graphic %}
+		<img
+			class="feature-graphic"
+			src="{{ site.fdroid-repo}}/{{ page.package_name }}/{{ page.feature_graphic }}" />
+	{% endif %}
+
 	<header class="package-header">
-		<img class="package-icon" src="{{ site.fdroid-repo }}/icons/{{ page.icon }}" />
+		<img class="package-icon" src="{{ site.fdroid-repo }}/{{ page.icon }}" />
 		<div class="package-title">
 			<h3 class="package-name">
 				{{ page.title }}
@@ -24,19 +30,19 @@ layout: default
 			{{ strings.license }}:
 			<a href="{{ page.license|get_license_url }}">{{ page.license|get_license_name }}</a>
 		</li>
-		{% if page.webSite != "" and page.webSite != nil %}
+		{% if page.website != "" and page.website != nil %}
 			<li class="package-link">
-				<a href="{{ page.webSite }}">{{ strings.website }}</a>
+				<a href="{{ page.website }}">{{ strings.website }}</a>
 			</li>
 		{% endif %}
-		{% if page.issueTracker != "" and page.issueTracker != nil %}
+		{% if page.issue_tracker != "" and page.issue_tracker != nil %}
 			<li class="package-link">
-				<a href="{{ page.issueTracker }}">{{ strings.issue_tracker }}</a>
+				<a href="{{ page.issue_tracker }}">{{ strings.issue_tracker }}</a>
 			</li>
 		{% endif %}
-		{% if page.sourceCode != "" and page.sourceCode != nil %}
+		{% if page.source_code != "" and page.source_code != nil %}
 			<li class="package-link">
-				<a href="{{ page.sourceCode }}">{{ strings.source_code }}</a>
+				<a href="{{ page.source_code }}">{{ strings.source_code }}</a>
 			</li>
 		{% endif %}
 		{% if page.changelog != "" and page.changelog != nil %}
@@ -55,9 +61,27 @@ layout: default
 			</li>
 		{% endif %}
 		<li class="package-link">
-			<a href="https://f-droid.org/wiki/page/{{page.package}}">{{ strings.technical_info }}</a>
+			<a href="https://f-droid.org/wiki/page/{{page.package_name}}">{{ strings.technical_info }}</a>
 		</li>
 	</ul>
+
+	{% if page.phone_screenshots %}
+		<div id="screenshots" class="js_slides screenshots">
+			<div class="frame js_frame">
+				<ul class="slides js_slides gallery">
+					{% for screenshot in page.phone_screenshots %}
+						<li class="js_slide screenshot"><img src="{{ site.fdroid-repo}}/{{ page.package_name }}/{{ screenshot }}" /></li>
+					{% endfor %}
+				</ul>
+			</div>
+			<span class="js_prev slider_nav prev" style="display: none">
+				<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 501.5 501.5"><g><path fill="#2E435A" d="M302.67 90.877l55.77 55.508L254.575 250.75 358.44 355.116l-55.77 55.506L143.56 250.75z"/></g></svg>
+			</span>
+			<span class="js_next slider_nav next" style="display: none">
+				<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 501.5 501.5"><g><path fill="#2E435A" d="M199.33 410.622l-55.77-55.508L247.425 250.75 143.56 146.384l55.77-55.507L358.44 250.75z"/></g></svg>
+			</span>
+		</div>
+	{% endif %}
 
 	<div class="package-versions">
 		<h3>{{ strings.packages }}</h3>
@@ -73,10 +97,10 @@ layout: default
 					Use YYYY-MM-DD format, because it is more internationalizable than versions which include English month names.
 					{% endcomment %}
 					{% assign package_added_date = package.added | date: '%F' %}
-					{{ strings.version_info | replace: '[package_version]', package.version | replace: '[package_version_code]', package.versionCode | replace: '[package_added_date]', package_added_date }}
+					{{ strings.version_info | replace: '[package_version]', package.version_name | replace: '[package_version_code]', package.version_code | replace: '[package_added_date]', package_added_date }}
 				</div>
 				<p class="package-version-requirement">
-					{% assign android_version = package.sdkVersion | android_sdk_level_to_version %}
+					{% assign android_version = package.min_sdk_version | android_sdk_level_to_version %}
 					{{ strings.minimum_android_version | replace: '[android_version]', android_version }}
 				</p>
 
@@ -90,16 +114,19 @@ layout: default
 				</p>
 
 				<p class="package-version-download">
-					<a href="{{ site.fdroid-repo }}/{{ package.apkName }}">{{ strings.download_apk }}</a> {{ package.size|file_size_human_readable }}
-					<a href="{{ site.fdroid-repo }}/{{ package.apkName }}.asc">{{ strings.gpg_signature }}</a>
+					<a href="{{ site.fdroid-repo }}/{{ package.apk_name }}">{{ strings.download_apk }}</a> {{ package.size|file_size_human_readable }}
+					<a href="{{ site.fdroid-repo }}/{{ package.apk_name }}.asc">{{ strings.gpg_signature }}</a>
 				</p>
 
 				<div class="package-version-permissions">
 					<h4>{{ strings.permissions }}</h4>
 					<ul class="package-version-permissions-list">
-						{% for permission in package.permissions %}
+						{% for permission in package.uses_permission %}
 						<li>
-							{{ permission }}
+							{{ permission.permission }}
+							{% if permission.min_sdk %}
+								({{ permission.min_sdk | android_sdk_level_to_version }})
+							{% endif %}
 						</li>
 						{% endfor %}
 					</ul>
@@ -114,3 +141,26 @@ layout: default
 	</div>
 
 </article>
+
+<script src="{{ site.baseurl }}/js/lory.min.js"></script>
+<script>
+	document.addEventListener('DOMContentLoaded', function () {
+		var slider = document.getElementById('screenshots');
+		if (slider == null) {
+			return;
+		}
+
+		// This class is used to display the entire slideshow differently if JS
+		// is enabled. The absense of the 'slider' class will force all images
+		// to be shown in a grid. The presence of it will show them inline and
+		// hide those which don't fit.
+		slider.className = slider.className + ' slider';
+
+		var toShow = slider.querySelectorAll('.slider_nav');
+		for (var i = 0; i < toShow.length; i ++) {
+			toShow[i].style.display = 'block';
+		}
+
+        lory(slider, {rewind: true});
+	});
+</script>
