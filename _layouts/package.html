@@ -22,6 +22,12 @@ layout: default
 			</div>
 		</div>
 	</header>
+	{% if page.whats_new and page.suggested_version_name %}
+		<div class="package-whats-new">
+			<div class="new-in-version">{{ strings.new_in_version | replace: '[latest_version]', page.suggested_version_name }}</div>
+			{{ page.whats_new }}
+		</div>
+	{% endif %}
 	<div class="package-description">
 		{{ page.description }}
 	</div>
