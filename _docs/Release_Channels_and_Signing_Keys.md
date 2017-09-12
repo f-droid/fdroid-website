@@ -8,11 +8,15 @@ redirect_from:
 
 This is a list of all signing keys used for F-Droid releases.
 
-## FDroid app for Android
-
+## F-Droid client app for Android
 
 -   git repo: <https://gitlab.com/fdroid/fdroidclient>
-    -   git tags signed by "Daniel Martí \<mvdan@mvdan.cc>" aka
+    -   git tags signed by "Hans-Christoph Steiner
+        \<hans@guardianproject.info>" aka "Hans-Christoph Steiner
+        \<hans@eds.org>" aka "Hans-Christoph Steiner
+        \<hans@at.or.at>" with fingerprint: <br />
+        `EE66 20C7 136B 0D2C 456C 0A4D E9E2 8DEA 00AA 5556`
+    -   or previously signed by "Daniel Martí \<mvdan@mvdan.cc>" aka
         "Daniel Martí \<mvdan@fsfe.org>" with fingerprint: <br
         />`A9DA 13CD F7A1 4ACD D3DE E530 F4CA FFDB 4348
         041C`
@@ -75,7 +79,12 @@ Be8=
 ## fdroidserver
 
 -   git repo: <https://gitlab.com/fdroid/fdroidserver>
-    -   git tags signed by "Daniel Martí \<mvdan@mvdan.cc>" aka
+    -   git tags signed by "Hans-Christoph Steiner
+        \<hans@guardianproject.info>" aka "Hans-Christoph Steiner
+        \<hans@eds.org>" aka "Hans-Christoph Steiner
+        \<hans@at.or.at>" with fingerprint: <br />
+        `EE66 20C7 136B 0D2C 456C 0A4D E9E2 8DEA 00AA 5556`
+    -   or previously "Daniel Martí \<mvdan@mvdan.cc>" aka
         "Daniel Martí \<mvdan@fsfe.org>" with fingerprint: <br
         />`A9DA 13CD F7A1 4ACD D3DE E530 F4CA FFDB 4348 041C`
     -   release command: `git tag -s`
@@ -87,7 +96,7 @@ Be8=
         \<hans@at.or.at>" with fingerprint: <br />
         `EE66 20C7 136B 0D2C 456C 0A4D E9E2 8DEA 00AA 5556`
         or previously <br />`5E61 C878 0F86 295C E17D 8677 9F0F E587 374B BE81`
-    -   release command: `python setup.py sdist upload --sign`
+    -   release command: `python3 setup.py sdist upload --sign`
 
 -   official Debian package: <https://packages.debian.org/fdroidserver>
     -   package source:
