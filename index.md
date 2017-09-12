@@ -18,12 +18,12 @@ permalink: /
             <a href="https://f-droid.org/FDroid.apk.asc">{{ strings.gpg_signature }}</a>
         </div>
         <div class="qr">
-            <img src="assets/download-fdroid-qr.png" />
+            <img src="{{ site.baseurl }}/assets/download-fdroid-qr.png" />
         </div>
     </div>
     <div class="screenshot">
         <img
-            src="assets/phone-frame.png"
-            style="background: url('{% fdroid_screenshot %}') center center no-repeat; background-size: 78% auto" />
+            src="{{ site.baseurl }}/assets/phone-frame.png"
+            style="background: url('{{ site.baseurl }}/{% fdroid_screenshot %}') center center no-repeat; background-size: 78% auto" />
     </div>
 </div>
