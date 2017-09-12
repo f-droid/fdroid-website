@@ -23,7 +23,7 @@ permalink: /
     </div>
     <div class="screenshot">
         <img
-            src="assets/phone-frame.png"
+            src="{{ site.baseurl }}/assets/phone-frame.png"
             style="background: url('{{ site.baseurl }}/{% fdroid_screenshot %}') center center no-repeat; background-size: 78% auto" />
     </div>
 </div>
