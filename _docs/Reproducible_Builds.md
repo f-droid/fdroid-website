@@ -96,6 +96,26 @@ otherwise reproducible build where the only difference is the
 `platformBuildVersionName` attribute.
 
 
+### PNG Crush/Crunch
+
+A standard part of the Android build process is to run some kind of
+PNG optimization tool, like `aapt singleCrunch` or `pngcrush`.  These
+do not provide deterministic output, it is still an open question as
+to why.  Since PNGs are normally committed to the source repo, a
+workaround to this problem is to run the tool of your choive on the
+PNG files, then commit those changes to the source repo (e.g. `git`).
+Then, disable the default PNG optimization process by adding this to
+_build.gradle_:
+
+```
+android {
+    aaptOptions {
+        cruncherEnabled = false
+    }
+}
+```
+
+
 ### Build Server IDs
 
 To describe the build environment used by F-Droid builds, APKs have two files inserted into them:
