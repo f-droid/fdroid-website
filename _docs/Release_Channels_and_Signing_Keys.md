@@ -94,7 +94,7 @@ Be8=
 
 -   official Debian package: <https://packages.debian.org/fdroidserver>
     -   package source:
-        <https://alioth.debian.org/anonscm/git/collab-maint/fdroidserver.git>
+        <https://anonscm.debian.org/git/collab-maint/fdroidserver.git>
     -   package tags signed by "Hans-Christoph Steiner
         \<hans@guardianproject.info>" aka "Hans-Christoph Steiner
         \<hans@eds.org>" aka "Hans-Christoph Steiner
@@ -102,6 +102,15 @@ Be8=
         `EE66 20C7 136B 0D2C 456C 0A4D E9E2 8DEA 00AA
         5556` or previously <br />
         `5E61 C878 0F86 295C E17D 8677 9F0F E587 374B BE81`
+
+-   official Ubuntu PPA: <https://launchpad.net/~fdroid/+archive/ubuntu/fdroidserver>
+    - fingerprint: `9AAC 2531 93B6 5D4D F1D0 A13E EC46 32C7 9C5E 0151`
+    - how to setup:
+    ```bash
+    sudo add-apt-repository ppa:fdroid/fdroidserver
+    sudo apt-get update
+    sudo apt-get install fdroidserver
+    ```
 
 
 ## Privileged Extension
