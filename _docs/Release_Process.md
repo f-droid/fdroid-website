@@ -23,12 +23,14 @@ steps.  The official signing keys are listed in
    and tag it with the _localization_ label
 5. make sure all tests pass before merging, including all _android-10_
    emulator tests
-6. set _versionCode_ in _app/build.gradle_
-7. add new entry in _metadata/en-US/changelogs/_
-8. copy that new entry to _CHANGELOG.md_
-9. add git signed tag named after the exact version name (no
+6. once the _weblate_ branch is merged, reset the git repo in
+   https://hosted.weblate.org/projects/f-droid/f-droid/#repository
+7. set _versionCode_ in _app/build.gradle_
+8. add new entry in _metadata/en-US/changelogs/_
+9. copy that new entry to _CHANGELOG.md_
+10. add git signed tag named after the exact version name (no
    preceeding __v__)
-10. add new `Build:` entry to
+11. add new `Build:` entry to
     [metadata file](https://gitlab.com/fdroid/fdroiddata/blob/master/metadata/org.fdroid.fdroid.txt)
 
 ### major release
@@ -52,10 +54,12 @@ well.
 4. push local _weblate_ branch to your fork create a merge request,
    and tag it with the _localization_ label
 5. make sure all tests pass before merging
-6. set `version=''` in _setup.py_
-7. add git signed tag named after the exact version name (no
+6. once the _weblate_ branch is merged, reset the git repo in
+   https://hosted.weblate.org/projects/f-droid/fdroidserver/#repository
+7. set `version=''` in _setup.py_
+8. add git signed tag named after the exact version name (no
    preceeding __v__), using the exact same string as `version=''`
-8. upload to pypi.python.org using `python3 setup.py sdist upload --sign`
+9. upload to pypi.python.org using `python3 setup.py sdist upload --sign`
 
 
 ## privileged-extension
@@ -70,13 +74,15 @@ well.
 4. push local _weblate_ branch to your fork create a merge request,
    and tag it with the _localization_ label
 5. make sure all tests pass before merging
-6. set _versionCode_ in _app/src/main/AndroidManifest.xml_
-7. add new entry in _metadata/en-US/changelogs/_
-8. copy that new entry to _CHANGELOG.md_
-9. add git signed tag named after the exact version name (no
+6. once the _weblate_ branch is merged, reset the git repo in
+   https://hosted.weblate.org/projects/f-droid/privileged-extension/#repository
+7. set _versionCode_ in _app/src/main/AndroidManifest.xml_
+8. add new entry in _metadata/en-US/changelogs/_
+9. copy that new entry to _CHANGELOG.md_
+10. add git signed tag named after the exact version name (no
    preceeding __v__)
-10. If the OTA update ZIP should be updated, add new `Build:` entry to
+11. If the OTA update ZIP should be updated, add new `Build:` entry to
     [metadata file](https://gitlab.com/fdroid/fdroiddata/blob/master/metadata/org.fdroid.fdroid.privileged.ota.txt)
-11. The APK should auto-update based on the signing tag.  Double-check
+12. The APK should auto-update based on the signing tag.  Double-check
     that in that
     [metadata file](https://gitlab.com/fdroid/fdroiddata/blob/master/metadata/org.fdroid.fdroid.privileged.txt)
