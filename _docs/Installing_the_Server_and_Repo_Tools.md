@@ -35,12 +35,12 @@ This should be enough to install the basic F-Droid setup:
 
 For installing on older releases, there are a couple more simple steps:
 
--   Ubuntu/Mint: use the [Guardian Project
-    PPA](https://launchpad.net/~guardianproject/+archive/ppa/+packages)
-    (fingerprint: `6B80 A842 07B3 0AC9 DEE2 35FE F50E ADDD
-    2234 F563`):
+-   Ubuntu/Mint: use the
+    [F-Droid PPA](https://launchpad.net/~fdroid/+archive/fdroidserver/+packages)
+    (fingerprint: `9AAC 2531 93B6 5D4D F1D0 A13E EC46 32C7 9C5E 0151`):
+
     ```bash
-    sudo add-apt-repository ppa:guardianproject/ppa
+    sudo add-apt-repository ppa:fdroid/fdroidserver
     sudo apt-get update
     sudo apt-get install fdroidserver
     ```
@@ -87,11 +87,12 @@ that runs in Windows, known has "Bash on Windows", "Ubuntu on Windows",
 or "Windows Subsystem for Linux".
 
 1.  [setup Windows Subsystem for Linux](https://msdn.microsoft.com/en-us/commandline/wsl/install_guide)
-2.  install *fdroidserver* from the [Guardian Project PPA](https://launchpad.net/~guardianproject/+archive/fdroidserver/+packages)
-    (fingerprint: `6B80 A842 07B3 0AC9 DEE2 35FE F50E ADDD
-    2234 F563`) by running this in the Bash shell window:
+2.  install *fdroidserver* from the
+    [F-Droid PPA](https://launchpad.net/~fdroid/+archive/fdroidserver/+packages)
+    (fingerprint: `9AAC 2531 93B6 5D4D F1D0 A13E EC46 32C7 9C5E 0151`)
+    by running this in the Bash shell window:
 ```bash
-sudo add-apt-repository ppa:guardianproject/fdroidserver
+sudo add-apt-repository ppa:fdroid/fdroidserver
 sudo apt-get update
 sudo apt-get install fdroidserver
 ```
