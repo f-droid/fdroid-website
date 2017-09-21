@@ -21,7 +21,7 @@ In order to ensure that your app always can find updates, we are
 introducing two specific libraries:
 
 
-### "Get F-droid" aka [org.fdroid.getfdroid](https://gitlab.com/fdroid/update-channels/tree/master/getfdroid#f-droid-installer)
+### "Get F-Droid" aka [org.fdroid.getfdroid](https://gitlab.com/fdroid/update-channels/tree/master/getfdroid#f-droid-installer)
 
 Checks whether F-Droid is installed.  If not, it will help the user to
 download and install F-Droid in a secure way.  F-Droid then provides

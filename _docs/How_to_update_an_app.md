@@ -14,7 +14,7 @@ What I would like to read here would be:
 
 Target group would be developer/release-manager of the apps **and** for
 the "external interested user" who just notices that there is a new
-version of an app - but not yet in f-droid system available. "What would
+version of an app - but not yet in F-Droid system available. "What would
 I do to trigger the update?"
 
 @Tverrbjelke: (If s.o. briefs me, I would spend some of my time
