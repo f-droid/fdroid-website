@@ -90,9 +90,8 @@ TXT
 
 }
 
-if [ ! -f .supported-langs ]; then
-    echo "Must be run from the same directory as the .supported-langs file (the Jekyll source dir)."
-    echo "If that file doesn't exist, then you can generate it with ./tools/update_langs.sh"
+if [ ! -f _config.yml ]; then
+    echo "Must be run from the same directory as _config.yml (the Jekyll source dir)."
     exit 1
 fi
 
@@ -105,7 +104,7 @@ if [[ $# == 0 || ! -d $1/en ]]; then
 fi
 
 # This populates the SUPPORTED_LANGS variable.
-source .supported-langs
+SUPPORTED_LANGS=`ruby -ryaml -e 'puts YAML.load_file("_config.yml")["languages"]'`
 
 # This populates the WEBLATE_LANGS variable.
 source tools/weblate-supported-langs.sh

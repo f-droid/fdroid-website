@@ -25,10 +25,14 @@ feed:
   path: feed
 fdroid-repo: https://f-droid.org/repo
 
-# The "languages" entry is automatically overridden by the tools/update_langs.sh script when
-# new translations become available.
-languages: [ "en", "de", "es", "es_AR", "fr", "sc", "tr", "zh_Hans", "zh_Hant" ]
-default_lang: "_" # Not specifying a language here forces polyglot to generate a en/ subdirectory too (with correct links). See https://github.com/untra/polyglot/issues/60.
+# Languages are manually chosen by looking at languages that are fully
+# translated across the whole project. Check with this script:
+#   ./tools/check-language-status.sh
+languages: [ "bo", "en", "de", "es", "fr", "tr", "zh_Hans", "zh_Hant" ]
+# Specifying the default language as "_" forces polyglot to generate a
+# en/ subdirectory too (with correct links). See
+# https://github.com/untra/polyglot/issues/60
+default_lang: "_"
 exclude_from_localization:
   - wp-content
   - assets

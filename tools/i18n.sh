@@ -106,7 +106,6 @@ function po2md {
 	#generate_md_files _docs _docs
 	#generate_md_files _posts _posts
 	generate_md_files _pages _docs
-	${DIR_SRC}/tools/update_langs.sh
 	rm -r "${DIR_BUILD}"
 }
 
