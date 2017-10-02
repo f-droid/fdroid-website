@@ -120,7 +120,10 @@ layout: default
 				</p>
 
 				<p class="package-version-download">
-					<a href="{{ site.fdroid-repo }}/{{ package.apk_name }}">{{ strings.download_apk }}</a> {{ package.size|file_size_human_readable }}
+					<a href="{{ site.fdroid-repo }}/{{ package.apk_name }}">
+						{{ strings.download | replace: '[file_extension]', package.file_extension }}
+					</a>
+					{{ package.size|file_size_human_readable }}
 					<a href="{{ site.fdroid-repo }}/{{ package.apk_name }}.asc">{{ strings.gpg_signature }}</a>
 				</p>
 
