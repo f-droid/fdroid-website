@@ -16,8 +16,12 @@ module Jekyll
   #
   class GitTag < GitInfoTag
     include Jekyll::LiquidExtensions
+    @@descr = ''
     def render(context)
-      git().describe('HEAD', :always => true)
+      if @@descr == ''
+        @@descr = git().describe('HEAD', :always => true)
+      end
+      return @@descr
     end
   end
 
@@ -26,8 +30,12 @@ module Jekyll
   #
   class GitHash < GitInfoTag
     include Jekyll::LiquidExtensions
+    @@sha = ''
     def render(context)
-      git().object('HEAD').sha[0..9]
+      if @@sha == ''
+        @@sha = git().object('HEAD').sha[0..9]
+      end
+      return @@sha
     end
   end
 end
