@@ -6,22 +6,24 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: team@f-droid.org\n"
 "POT-Creation-Date: 2017-06-20 07:46+1000\n"
-"PO-Revision-Date: 2017-06-19 21:58+0000\n"
-"Last-Translator: UserName LastName <user@example.com>\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2017-07-10 16:01+0000\n"
+"Last-Translator: Claus Rüdinger <Mail-an-CR@web.de>\n"
+"Language-Team: German <https://hosted.weblate.org/projects/f-droid/website-"
+"posts/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.13.1\n"
+"X-Generator: Weblate 2.16-dev\n"
 
 #. type: Title #
 #: build/_posts/md/2017-02-20-f-droid-supports-apk-expansion-files-aka-obb.md:1
 #, no-wrap
 msgid "\"F-Droid supports APK Expansion Files aka OBB\""
-msgstr ""
+msgstr "\"F-Droid unterstützt APK-Erweiterungsdateien auch bekannt als OBB\""
 
 #. type: Plain text
 #: build/_posts/md/2017-02-20-f-droid-supports-apk-expansion-files-aka-obb.md:9
@@ -33,6 +35,12 @@ msgid ""
 "amounts of data to download in order to just start the app for the first "
 "time."
 msgstr ""
+"Viele Spiele, Kartenwerkzeuge und andere Apps benötigen für ihren Betrieb "
+"große Datenmengen. Die Größe einer APK-Datei für eine Android-App ist auf "
+"100 MB begrenzt, wobei gewöhnlich eine Datei für eine einzige Landkarte "
+"schon weit mehr als 100 MB benötigt. Damit Nutzer Apps möglichst schnell zum "
+"Laufen bringen, sollten sie somit vor dem ersten App-Start nicht den "
+"Download riesiger Datenmengen abwarten müssen."
 
 #. type: Plain text
 #: build/_posts/md/2017-02-20-f-droid-supports-apk-expansion-files-aka-obb.md:18
@@ -45,6 +53,15 @@ msgid ""
 "shipped as an OBB. Then when the app itself is updated (i.e. the APK), it "
 "does not need to include all those assets that are in the OBB file."
 msgstr ""
+"Google schuf OBB, auch bekannt als Erweiterungsdateien (s. “[APK Expansion] "
+"https://developer.android.com/google/play/expansion-files.html“), um ein "
+"flexibles Mittel zur Auslieferung großer Datenmengen bereitzustellen. Diese "
+"Regelung führt zu einer deutlichen Einsparung des Datenverkehrs, da die APK-"
+"Datei und die OBB-Datei getrennt voneinander aktualisiert werden können. Zum "
+"Beispiel muss ein Spielaufbau nicht häufig geändert werden, somit kann er "
+"als OBB ausgeliefert werden. Wenn dann die App selbst (d. h. die APK) "
+"aktualisiert wird, ist es nicht nötig den gesamten Aufbau, der sich in der "
+"OBB-Datei befindet, darin einzuschließen."
 
 #. type: Plain text
 #: build/_posts/md/2017-02-20-f-droid-supports-apk-expansion-files-aka-obb.md:25
@@ -56,6 +73,14 @@ msgid ""
 "URLs in case the app itself needs to handle the OBB download/update.  That "
 "is similar to how it works in Google Play."
 msgstr ""
+"OBB-Dateien werden von vielen Apps wie Spielen oder MAPS.ME verwendet. F-"
+"Droid unterstützt OBB, indem die OBB vor der APK heruntergeladen und "
+"installiert werden kann, so dass die OBB-Dateien bereits an Ort und Stelle "
+"und gebrauchsfertig sind, wenn schließlich die APK installiert wird. F-Droid "
+"bietet auch eine ‘Intent‘-Methode für Apps an, um die Adresse (URL) für den "
+"OBB-Download abzurufen, für den Fall dass die App den Download/die "
+"Aktualisierung der OBB selbst erledigen muss. Die Funktionsweise ähnelt der "
+"in Google Play."
 
 #. type: Plain text
 #: build/_posts/md/2017-02-20-f-droid-supports-apk-expansion-files-aka-obb.md:27
@@ -65,12 +90,17 @@ msgid ""
 "very easy: just copy them to the same folder where the APKs go, i.e. _/path/"
 "to/fdroid/repo/_."
 msgstr ""
+"Um die OBB-Unterstützung nutzen zu können, benötigen Benutzer mindestens F-"
+"Droid v0.102 und das Repository muss _fdroidserver_v0.7.0 oder neuer "
+"verwenden. Das Hinzufügen von OBB-Dateien zum Repository ist sehr leicht: "
+"Kopieren Sie sie einfach in den selben Ordner, in dem sich die APKs "
+"befinden, d. h. in _/Pfad/zu/fdroid/repo/_."
 
 #. type: Title ##
 #: build/_posts/md/2017-02-20-f-droid-supports-apk-expansion-files-aka-obb.md:28
 #, no-wrap
 msgid "Developer Usage"
-msgstr ""
+msgstr "Gebrauchsanweisung für Entwickler"
 
 #. type: Plain text
 #: build/_posts/md/2017-02-20-f-droid-supports-apk-expansion-files-aka-obb.md:38
@@ -83,6 +113,14 @@ msgid ""
 "google/play/licensing/index.html)  service for this, F-Droid provides a "
 "simple method that is all free software."
 msgstr ""
+"Eine der Besonderheiten bei der Verwendung von OBB-Dateien in Apps ist es, "
+"dass deren Installation durch den App Store nicht garantiert wird. Das "
+"bedeutet, die App könnte starten, ohne dass die erwarteten OBB-Dateien "
+"vorhanden sind. In diesem Fall muss die App selbst den Download und die "
+"Installation der OBB-Datei durchführen. Google Play empfiehlt dafür die "
+"Verwendung seines proprietären Dienstes (s. [Application Licensing] "
+"https://developer.android.com/google/play/licensing/index.html), F-Droid "
+"stellt eine einfache Methode bereit, die auf völlig freier Software beruht."
 
 #. type: Plain text
 #: build/_posts/md/2017-02-20-f-droid-supports-apk-expansion-files-aka-obb.md:41
@@ -90,16 +128,18 @@ msgid ""
 "To get the URL for the two possible OBB files, send an `Intent` to F-Droid "
 "using these _Actions_:"
 msgstr ""
+"Um die URL für die zwei möglichen OBB-Dateien zu erhalten, senden Sie einen "
+"‘Intent‘ an F-Droid unter Verwendung dieser _Actions_:"
 
 #. type: Bullet: '* '
 #: build/_posts/md/2017-02-20-f-droid-supports-apk-expansion-files-aka-obb.md:44
 msgid "`org.fdroid.fdroid.action.GET_OBB_MAIN_URL`"
-msgstr ""
+msgstr "`org.fdroid.fdroid.action.GET_OBB_MAIN_URL`"
 
 #. type: Bullet: '* '
 #: build/_posts/md/2017-02-20-f-droid-supports-apk-expansion-files-aka-obb.md:44
 msgid "`org.fdroid.fdroid.action.GET_OBB_PATCH_URL`"
-msgstr ""
+msgstr "`org.fdroid.fdroid.action.GET_OBB_PATCH_URL`"
 
 #. type: Plain text
 #: build/_posts/md/2017-02-20-f-droid-supports-apk-expansion-files-aka-obb.md:47
@@ -109,12 +149,16 @@ msgid ""
 "the file ultimately ends up in _Android/obb/<packageName>_ on the\n"
 "device's External Storage.\n"
 msgstr ""
+"Laden Sie dann die URL mit der von Ihnen favorisierten Methode herunter und "
+"stellen Sie sicher, \n"
+"dass die Datei letztlich in _Android/obb/<packageName>_ \n"
+"auf dem externen Speicher des Geräts landet.\n"
 
 #. type: Title #
 #: build/_posts/md/2017-02-20-new-forum.md:1
 #, no-wrap
 msgid "\"Sailing into a new decade of discussions\""
-msgstr ""
+msgstr "\"Aufbruch in eine neue Ära der Diskussionskultur\""
 
 #. type: Plain text
 #: build/_posts/md/2017-02-20-new-forum.md:5
@@ -122,6 +166,8 @@ msgid ""
 "We are excited to announce the release of the new official F-Droid forum: "
 "[forum.f-droid.org](https://forum.f-droid.org)."
 msgstr ""
+"Wir freuen uns, den Start unseres neuen, offiziellen F-Droid-Forums "
+"bekanntgeben zu können: [forum.f-droid.org](https://forum.f-droid.org)."
 
 #. type: Plain text
 #: build/_posts/md/2017-02-20-new-forum.md:12
@@ -136,6 +182,16 @@ msgid ""
 "indepentently hosted one and chose some modern software called [Discourse]"
 "(https://www.discourse.org)."
 msgstr ""
+"Wir haben hart an der [Überarbeitung der Webseite] "
+"(https://gitlab.com/groups/fdroid/milestones/launch?title=Launch) "
+"gearbeitet, damit sie leichter modernisiert und internationalisiert werden "
+"sowie Beiträge aufnehmen kann. Den Hauptanteil bildet dabei ein Wechsel von "
+"WordPress zu [Jekyll](htps://jekyllrb.com) als zugrunde liegende "
+"Technologie. Das wiederum hatte zur Folge, über das Forum nachzudenken, da "
+"es über ein WordPress-Plugin gesteuert wurde. [Wir entschlossen uns, das "
+"alte Forum aufzugeben] (https://gitlab.com/fdroid/fdroid-website/issues/6) "
+"zugunsten eines unabhängig gehosteten und wählten dafür eine einigermaßen "
+"moderne Software [Discourse](https://www.discourse.org)."
 
 #. type: Plain text
 #: build/_posts/md/2017-02-20-new-forum.md:18
@@ -146,6 +202,12 @@ msgid ""
 "experience was bad, and not only because of increasing number of bugs found "
 "in the forum software."
 msgstr ""
+"Das alte Forum hatte viele Nachteile: Zum Einen waren keine Antworten per "
+"Mail möglich. Zum Anderen hatten F-Droid-Freiwillige viel Zeit damit zu "
+"verschwenden, immense Mengen an Spam zu löschen (das alte Forum lieferte 25% "
+"Spam). Schließlich war der Gesamteindruck für den Nutzer schlecht, und dies "
+"nicht nur wegen der zunehmenden Zahl der in der Forum-Software gefundenen "
+"Fehler."
 
 #. type: Plain text
 #: build/_posts/md/2017-02-20-new-forum.md:26
@@ -157,6 +219,12 @@ msgid ""
 "Droid, whether discussing the client or the server tools, can help each "
 "other there."
 msgstr ""
+"Mit Discourse hoffen wir, die F-Droid-Community wiederzubeleben.  Nachdem "
+"die App-Vorlagen kürzlich [auf GitLab umzogen](https://gitlab.com/fdroid/rfp)"
+", und Fehlerberichte/Funktionswünsche immer noch in GitLab zuhause sind, "
+"soll das neue Forum das neue Zentrum für alle Diskussionen rund um F-Droid "
+"sein.  Alle Nutzer von F-Droid, ob sie nun den Client oder die Server-"
+"Werkzeuge erörtern, können einander hier helfen."
 
 #. type: Plain text
 #: build/_posts/md/2017-02-20-new-forum.md:30
@@ -166,6 +234,10 @@ msgid ""
 "to re-register yourself.  Independent from this all old topics remain at the "
 "current URLs for now."
 msgstr ""
+"Da alle, freiwilligen F-Droid-Mitarbeiter nur begrenzt Zeit investieren "
+"können, war es nicht möglich die alten Forumdaten ins neue zu übertragen. "
+"Das bedeutet, dass Sie sich neu registrieren müssen. Unabhängig davon werden "
+"alle alten Themen vorerst weiter über die derzeitigen URL erreicht."
 
 #. type: Plain text
 #: build/_posts/md/2017-02-20-new-forum.md:34
@@ -176,6 +248,11 @@ msgid ""
 "the moment there is already a [German group](https://forum.f-droid.org/c/"
 "other-languages/german)."
 msgstr ""
+"Eine interessante neue Besonderheit sind [lokale "
+"Communities](https://forum.f-droid.org/c/other-languages).  In diesen "
+"Gemeinschaften können Sie in Ihrer Muttersprache alle Themen besprechen, die "
+"F-Droid und freie Android-Software betreffen. Momentan besteht bereits eine ["
+"deutsche Gruppe](https://forum.f-droid.org/c/other-languages/german)."
 
 #. type: Plain text
 #: build/_posts/md/2017-02-20-new-forum.md:38
@@ -184,6 +261,9 @@ msgid ""
 "[\"Other languages\" category](https://forum.f-droid.org/c/other-languages) "
 "and we will discuss everything else there."
 msgstr ""
+"Wenn Sie Ihre eigene lokale Community gründen möchten, eröffnen Sie bitte "
+"ein Thema in der [Kategorie 'Other languages'](https://forum.f-Droid.org /c/"
+"other languages) und wir werden alles Weitere dort erörtern."
 
 #. type: Plain text
 #: build/_posts/md/2017-02-20-new-forum.md:42
@@ -193,6 +273,11 @@ msgid ""
 "fdroid/fdroid-website/issues/36)  which gets us closer to [comments on "
 "single applications](https://gitlab.com/fdroid/fdroidclient/issues/646)."
 msgstr ""
+"Zuguterletzt ein Ausblick auf die laufende Weiterentwicklung von F-Droid: "
+"Wir planen mittels Discourse die Einführung von [Kommentaren auf der "
+"Webseite] (https://gitlab.com/fdroid/fdroid-website/issues/36), die uns an ["
+"Kommentare zu einzelnen "
+"Apps](https://gitlab.com/fdroid/fdroidclient/issues/646) heranführen sollen."
 
 #. type: Plain text
 #: build/_posts/md/2017-02-20-new-forum.md:44
@@ -200,12 +285,14 @@ msgid ""
 "Make sure you keep an eye on the new developments happening to F-Droid in "
 "2017.  We for our part are curious if you like the new forum."
 msgstr ""
+"Behalten Sie die neuen Entwicklungen von F-Droid im Jahr 2017 im Auge. Wir, "
+"für unseren Teil, sind jedenfalls gespannt, ob Ihnen das neue Forum gefällt."
 
 #. type: Title #
 #: build/_posts/md/2017-04-04-new-ux.md:1
 #, no-wrap
 msgid "\"A new UX 6 years in the making\""
-msgstr "\"Eine neue User-Erfahrung 6 Jahre in der Herstellung\""
+msgstr "\"Eine neue Anwendererfahrung wird nach 6 Jahren erschaffen\""
 
 #. type: Plain text
 #: build/_posts/md/2017-04-04-new-ux.md:8
@@ -217,8 +304,8 @@ msgid ""
 "languages, and much more."
 msgstr ""
 "F-Droid ist seit über 6 Jahren ein Teil des Android-Ökosystems. Seitdem "
-"wurden über 2000 Apps für das Hauptrepository gebaut, [viele tolle Features "
-"wurden "
+"wurden über 2000 Apps für das Hauptrepository erstellt, [viele großartige "
+"Features wurden "
 "hinzugefügt](https://gitlab.com/fdroid/fdroidclient/blob/master/CHANGELOG.md)"
 ", der Client wurde in über 40 verschiedene Sprachen übersetzt und vieles "
 "mehr."
@@ -229,6 +316,9 @@ msgid ""
 "However, the F-Droid UX has never changed much from [the original three tab "
 "layout](https://f-droid.org/posts/f-droid-repository-alpha/):"
 msgstr ""
+"Die F-Droid-Benutzeroberfläche im [ursprünglichen 3-Register-"
+"Layout](https://F-Droid.org/posts/f-droid-repository-alpha/) änderte sich "
+"kaum:"
 
 #. type: Plain text
 #: build/_posts/md/2017-04-04-new-ux.md:14
@@ -238,11 +328,18 @@ msgid ""
 " * ![Version 0.11]({{ site.baseurl }}/assets/posts/2017-04-04-new-ux/0.11.png)\n"
 " * ![Version 0.102]({{ site.baseurl }}/assets/posts/2017-04-04-new-ux/0.102.png)\n"
 msgstr ""
+"{: .gallery}\n"
+" * ![Version 0.11]({{ site.baseurl }}/assets/posts/2017-04-04-new-"
+"ux/0.11.png)\n"
+" * ![Version 0.102]({{ site.baseurl }}/assets/posts/2017-04-04-new-"
+"ux/0.102.png)\n"
 
 #. type: Plain text
 #: build/_posts/md/2017-04-04-new-ux.md:16
 msgid "This will change with the coming release of F-Droid client v0.103."
 msgstr ""
+"Dies wird sich mit der anstehenden Veröffentlichung des F-Droid-Clients "
+"v0.103 ändern."
 
 #. type: Plain text
 #: build/_posts/md/2017-04-04-new-ux.md:19
@@ -251,31 +348,35 @@ msgid ""
 "UX which will help bring F-Droid into the present.  Some of the big ticket "
 "items include:"
 msgstr ""
+"Im Laufe der letzten 6 Monate war das F-Droid-Team damit beschäftigt, die "
+"Benutzeroberfläche modern umzugestalten, damit F-Droid auf der Höhe der Zeit "
+"ist. Einige Punkte der großen Aufgabenliste sind:"
 
 #. type: Bullet: ' * '
 #: build/_posts/md/2017-04-04-new-ux.md:25
 msgid "Screenshots and feature graphics"
-msgstr ""
+msgstr "Screenshots und Funktionsgrafiken"
 
 #. type: Bullet: ' * '
 #: build/_posts/md/2017-04-04-new-ux.md:25
 msgid "Bulk download and install"
-msgstr ""
+msgstr "Sammel-Download und -installation"
 
 #. type: Bullet: ' * '
 #: build/_posts/md/2017-04-04-new-ux.md:25
 msgid "Offline \"queue for download\""
-msgstr ""
+msgstr "Offline \"Vormerkung zum Download\""
 
 #. type: Bullet: ' * '
 #: build/_posts/md/2017-04-04-new-ux.md:25
 msgid "Ability to translate apps metadata"
-msgstr ""
+msgstr "Möglichkeit, Metadaten von Apps zu übersetzen"
 
 #. type: Bullet: ' * '
 #: build/_posts/md/2017-04-04-new-ux.md:25
 msgid "Improved notifications for downloads and pending updates"
 msgstr ""
+"Verbesserte Benachrichtigungen zu Downloads und ausstehenden Aktualisierungen"
 
 #. type: Plain text
 #: build/_posts/md/2017-04-04-new-ux.md:33
@@ -289,6 +390,19 @@ msgid ""
 " * ![App details screen (with screenshots)]({{ site.baseurl }}/assets/posts/2017-04-04-new-ux/appdetails-a.png)\n"
 " * ![App details screen (without screenshots)]({{ site.baseurl }}/assets/posts/2017-04-04-new-ux/appdetails-b.png)\n"
 msgstr ""
+"{: .gallery}\n"
+" * ![Bildschirm »Neu«]({{ site.baseurl }}/assets/posts/2017-04-04-new-"
+"ux/latest.png)\n"
+" * ![Bildschirm »Kategorien«]({{ site.baseurl }}/assets/posts/2017-04-04-new-"
+"ux/categories.png)\n"
+" * ![Bildschirm »Nah«]({{ site.baseurl }}/assets/posts/2017-04-04-new-"
+"ux/nearby.png)\n"
+" * ![Bildschirm »Aktualisierungen«]({{ site.baseurl "
+"}}/assets/posts/2017-04-04-new-ux/updates.png)\n"
+" * ![Bildschirm mit App-Details (mit Bildschirmfotos)]({{ site.baseurl "
+"}}/assets/posts/2017-04-04-new-ux/appdetails-a.png)\n"
+" * ![Bildschirm mit App-Details (ohne Bildschirmfotos)]({{ site.baseurl "
+"}}/assets/posts/2017-04-04-new-ux/appdetails-b.png)\n"
 
 #. type: Plain text
 #: build/_posts/md/2017-04-04-new-ux.md:37
@@ -298,6 +412,10 @@ msgid ""
 "users who make use of tools such as Talkback, and better support for "
 "donating to open source app developers."
 msgstr ""
+"Außerdem haben wir einige kleinere aber nicht weniger wichtige Teile der App "
+"neu gestaltet, wie die bessere Bedienbarkeit für Sehbehinderte, die "
+"Werkzeuge wie Talkback verwenden, und die verbesserte Spendenfunktion, um "
+"Entwickler von Open-Source-Apps zu unterstützen."
 
 #. type: Plain text
 #: build/_posts/md/2017-04-04-new-ux.md:41
@@ -307,6 +425,11 @@ msgid ""
 "the design process, further field tests are currently being conducted to "
 "ensure that usability issues with the new design are identified and resolved."
 msgstr ""
+"Dabei wurden umfangreiche Gestaltungsvorgaben von UX Designern und der "
+"Allgemeinheit eingeschlossen.  Neben Anwendertests, die frühzeitig im "
+"Designprozess durchgeführt wurden, werden aktuell weitere Feldstudien "
+"durchgeführt, die sicherstellen sollen, dass Probleme mit der "
+"Gebrauchstauglichkeit des neuen Designs aufgedeckt und gelöst werden."
 
 #. type: Plain text
 #: build/_posts/md/2017-04-04-new-ux.md:44
@@ -315,6 +438,9 @@ msgid ""
 "your feedback and suggestions about how to continually improve the F-Droid "
 "client."
 msgstr ""
+"In den nächsten Wochen werden Sie Alpha-Versionen für v0.103 entdecken. Wir "
+"fordern Sie ausdrücklich zu Rückmeldungen und Vorschlägen auf, wie der F"
+"-Droid-Client kontinuierlich weiter verbessert werden soll."
 
 #. type: Plain text
 #: build/_posts/md/2017-04-04-new-ux.md:45
@@ -322,3 +448,5 @@ msgid ""
 "This is one of the many improvements happening to the broader F-Droid "
 "ecosystem in 2017, so keep an eye out for more!"
 msgstr ""
+"Dies ist eine der vielen Verbesserungen, die 2017 im umfassenden F-Droid-"
+"Ökosystem geschehen. Halten Sie Ausschau, was sonst noch passieren wird!"
