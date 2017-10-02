@@ -154,7 +154,7 @@ of your source repo, and be called `.fdroid.json`, `.fdroid.xml`,
 format: JSON, XML, YAML, or F-Droid’s `.txt` format.
 
 Once you have that setup, you can build the most recent version of the
-app using the whole FDroid stack by running:
+app using the whole F-Droid stack by running:
 
 ```bash
 fdroid build

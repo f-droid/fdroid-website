@@ -133,9 +133,9 @@ for more details.
 You can't yet. See [Issue 36 - Update
 All](https://f-droid.org/repository/issues/?do=view_issue&issue=36).
 
-I’ve been working on adding NFC in useful ways to the FDroid client app.
+I’ve been working on adding NFC in useful ways to the F-Droid client app.
 So far, it is possible to send custom repo configs via NFC (starting in
-Android 4.0/SDK-14) and send the local FDroid.apk via Android Beam
+Android 4.0/SDK-14) and send the local F-Droid.apk via Android Beam
 (NFC+Bluetooth in starting in Android 4.1/SDK-16). Here’s how:
 
 
@@ -170,7 +170,7 @@ Perhaps you should just try it.
 
 ### How do I send a Repo configuration using NFC?
 
-Starting in v0.59, the FDroid client supports sending repo
+Starting in v0.59, the F-Droid client supports sending repo
 configurations via NFC. For this to work, both the sending and receiving
 device must have NFC and be running Android 4.0 or newer.
 
@@ -181,19 +181,19 @@ device must have NFC and be running Android 4.0 or newer.
 5.  click **OK** on the receiving device
 
 
-### How can I send the FDroid app using NFC or Android Beam?
+### How can I send the F-Droid app using NFC or Android Beam?
 
-Starting in v0.59, the FDroid client supports sending the FDroid app
+Starting in v0.59, the F-Droid client supports sending the F-Droid app
 itself to another device to set it up for the first time. For this to
 work, both the sending and receiving device must have NFC, Android Beam,
 and be running Android 4.1 or newer.
 
-1.  go to the FDroid main screen
+1.  go to the F-Droid main screen
 2.  put the devices together until you get the NFC zoom prompt
-3.  touch the screen with FDroid installed
+3.  touch the screen with F-Droid installed
 4.  keep the devices near each other until the beam completes
 5.  on the receiving device, click the Android Beam notification and
-    install FDroid
+    install F-Droid
 
 
 ### What is the security model that F-Droid uses?
