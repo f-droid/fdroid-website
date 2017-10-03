@@ -125,6 +125,28 @@ $ sudo gitlab-runner exec docker f-droid.org \
 $ rsync -ax --delete --exclude-from=_site/build/.rsync-deploy-exclude-list  _site/build/  f-droid.org:/var/www/
 ```
 
+### Base Debian/Apache setup
+
+These instructions are based on Debian/stretch, but they should be
+very similar on both older and newer versions of Debian, as well as
+any Debian derivatives like Ubuntu, Mint, Elementary, etc.
+
+```console
+$ sudo su -
+# apt install apache2 certbot tor ca-certificates geoip-bin libapache2-mod-geoip \
+  python-certbot-apache rsync unattended-upgrades locales
+# dpkg-reconfigure unattended-upgrades  # turn them on!
+# sed -i 's,^# \(.* UTF-8\)$,\1,' /etc/locale.gen  # enable all UTF-8 locales
+# locale-gen
+# a2dismod status
+# a2enmod headers
+# a2enmod rewrite
+# a2enmod ssl
+# a2enconf security
+# apachectl configtest && apachectl restart
+# certbot --apache
+```
+
 ### Apache2 config
 
 The F-Droid website is translated into several languages.  There are a
@@ -148,7 +170,8 @@ telling apache where to find the translated version of the file
 
 ```apache
 <Directory /var/www/html>
-    AllowOverride All
+    Options -ExecCGI -Indexes -Includes -MultiViews +FollowSymLinks
+    AllowOverride FileInfo
 </Directory>
 
 <Files *.html>
