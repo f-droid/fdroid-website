@@ -21,13 +21,13 @@ DIR_PO=${DIR_SRC}/po
 ###################################################
 
 function md2po {
-	echo "Converting .md source into .pot files"
+    echo "Converting .md source into .pot files"
 
-	if [ -d ${DIR_BUILD} ]; then rm -r ${DIR_BUILD}; fi
-	generate_pot_file _docs
-	generate_pot_file _posts
-	generate_pot_file _pages
-	rm -r ${DIR_BUILD}
+    if [ -d ${DIR_BUILD} ]; then rm -r ${DIR_BUILD}; fi
+    generate_pot_file _docs
+    generate_pot_file _posts
+    generate_pot_file _pages
+    rm -r ${DIR_BUILD}
 
     PAGES_POT=${DIR_PO}/_pages.pot
     DOCS_POT=${DIR_PO}/_docs.pot
@@ -35,11 +35,11 @@ function md2po {
 
     echo "Merging ${PAGES_POT} into ${DOCS_POT}"
     msgcat -o ${DOCS_TMP_POT} ${PAGES_POT} ${DOCS_POT}
-	cp ${DOCS_TMP_POT} ${DOCS_POT}
-	rm ${DOCS_TMP_POT} ${PAGES_POT}
+    cp ${DOCS_TMP_POT} ${DOCS_POT}
+    rm ${DOCS_TMP_POT} ${PAGES_POT}
 
-	update_po_files _docs
-	update_po_files _posts
+    update_po_files _docs
+    update_po_files _posts
 }
 
 #
@@ -56,9 +56,9 @@ function md2po {
 #  * This .pot file is the thing which will end up getting translated.
 #
 function generate_pot_file {
-	SRC_TYPE=$1
-	SRC_SUBDIR=${DIR_SRC}/${SRC_TYPE}
-	BUILD_SUBDIR=${DIR_BUILD}/${SRC_TYPE}/md
+    SRC_TYPE=$1
+    SRC_SUBDIR=${DIR_SRC}/${SRC_TYPE}
+    BUILD_SUBDIR=${DIR_BUILD}/${SRC_TYPE}/md
     DIR_BUILD_PO=${DIR_BUILD}/${SRC_TYPE}/po
     OUT_PO_FILE=${DIR_PO}/${SRC_TYPE}.pot
 
@@ -78,8 +78,8 @@ function generate_pot_file {
     done
 
     echo "Combining .pot files into $OUT_PO_FILE"
-	mkdir -p `dirname ${OUT_PO_FILE}`
-	msgcat -o ${OUT_PO_FILE} ${DIR_BUILD_PO}/*.pot
+    mkdir -p `dirname ${OUT_PO_FILE}`
+    msgcat -o ${OUT_PO_FILE} ${DIR_BUILD_PO}/*.pot
 }
 
 #
@@ -88,10 +88,10 @@ function generate_pot_file {
 # string matching.
 #
 function update_po_files {
-	SRC_TYPE=$1
-	PO=${DIR_PO}/${SRC_TYPE}.pot
+    SRC_TYPE=$1
+    PO=${DIR_PO}/${SRC_TYPE}.pot
 
-	if [ `check_for_po ${SRC_TYPE}` = true ]; then
+    if [ `check_for_po ${SRC_TYPE}` = true ]; then
         for I18N_PO in ${DIR_PO}/${SRC_TYPE}.*.po; do
             # The VERSION_CONTROL environment variable prevents a
             # backup file from being written to ${SRC_TYPE}.LANG.po~
@@ -107,13 +107,13 @@ function update_po_files {
 ########################################
 
 function po2md {
-	echo "Converting .po files back into .md source"
+    echo "Converting .po files back into .md source"
 
-	if [ -d ${DIR_BUILD} ]; then rm -r ${DIR_BUILD}; fi
-	#generate_md_files _docs _docs
-	#generate_md_files _posts _posts
-	generate_md_files _pages _docs
-	rm -r "${DIR_BUILD}"
+    if [ -d ${DIR_BUILD} ]; then rm -r ${DIR_BUILD}; fi
+    #generate_md_files _docs _docs
+    #generate_md_files _posts _posts
+    generate_md_files _pages _docs
+    rm -r "${DIR_BUILD}"
 }
 
 #
@@ -133,16 +133,16 @@ function po2md {
 #  * This is then output into the final translated .md file.
 #
 function generate_md_files {
-	SRC_TYPE=$1
-	POT_TYPE=$2
-	SRC_SUBDIR=${DIR_SRC}/${SRC_TYPE}
-	BUILD_SUBDIR=${DIR_BUILD}/${SRC_TYPE}
-	
-	echo "Converting .md files (from $BUILD_SUBDIR) based on .po files..."
+    SRC_TYPE=$1
+    POT_TYPE=$2
+    SRC_SUBDIR=${DIR_SRC}/${SRC_TYPE}
+    BUILD_SUBDIR=${DIR_BUILD}/${SRC_TYPE}
+    
+    echo "Converting .md files (from $BUILD_SUBDIR) based on .po files..."
 
-	cp_md_strip_frontmatter_dir ${SRC_SUBDIR} ${BUILD_SUBDIR}/md
+    cp_md_strip_frontmatter_dir ${SRC_SUBDIR} ${BUILD_SUBDIR}/md
 
-	if [ `check_for_po ${POT_TYPE}` = true ]; then
+    if [ `check_for_po ${POT_TYPE}` = true ]; then
         for PO in ${DIR_PO}/${POT_TYPE}.*.po; do
             PO_FILE=`basename ${PO}`
             LANG=`echo ${PO_FILE} | sed -e "s/${POT_TYPE}\.\(.*\)\.po/\1/"`
@@ -208,9 +208,9 @@ function generate_md_files {
 function check_for_po {
     SRC_TYPE=$1
 
-	if compgen -G "$DIR_PO/$SRC_TYPE.*.po" > /dev/null;
-	then
-	    echo true
+    if compgen -G "$DIR_PO/$SRC_TYPE.*.po" > /dev/null;
+    then
+        echo true
     else
         echo false
     fi
@@ -230,14 +230,14 @@ function check_for_po {
 #   be copied, after stripping their frontmatter.
 #
 function cp_md_strip_frontmatter_dir {
-	SRC_MD_DIR=$1
-	BUILD_MD_DIR=$2
+    SRC_MD_DIR=$1
+    BUILD_MD_DIR=$2
 
-	echo "Copying .md files and stripping front matter..."
+    echo "Copying .md files and stripping front matter..."
 
-	mkdir -p ${BUILD_MD_DIR}
-	for MD in ${SRC_MD_DIR}/*.md; do
-		FILE=`basename ${MD}`
+    mkdir -p ${BUILD_MD_DIR}
+    for MD in ${SRC_MD_DIR}/*.md; do
+        FILE=`basename ${MD}`
         SRC_MD_FILE=${SRC_MD_DIR}/${FILE}
         BUILD_MD_FILE=${BUILD_MD_DIR}/${FILE}
 
@@ -255,11 +255,11 @@ function cp_md_strip_frontmatter_dir {
         # Strip front-matter from .md files and write to temporary
         # location.  http://stackoverflow.com/a/28222257/2391921
         sed '1 { /^---/ { :a N; /\n---/! ba; d} }' ${SRC_MD_FILE} >> ${BUILD_MD_FILE}
-	done
+    done
 }
 
 function extract_frontmatter {
-	FILE=$1
+    FILE=$1
 
     # See http://stackoverflow.com/a/7167115/2391921 for matching
     # multiline strings with grep The -z flag replaces new lines with
@@ -268,7 +268,7 @@ function extract_frontmatter {
     # grep interpret the output like text again. For some reason
     # though on my machine there is still a NUL byte at the end which
     # trips up this script, so sed replaces it with a newline.
-	grep -Pzao '(?s)---.*?---\n' ${FILE} | sed 's/\x00/\n/'
+    grep -Pzao '(?s)---.*?---\n' ${FILE} | sed 's/\x00/\n/'
 }
 
 ################################
@@ -276,7 +276,7 @@ function extract_frontmatter {
 ################################
 
 function print_usage {
-	cat << EOT
+    cat << EOT
 Internationalization script for F-Droid Jekyll website.
 
 Usage:
@@ -288,20 +288,20 @@ Usage:
     Convert all translated .po files into localized .md files.
 EOT
     cd ${PREVIOUS_CWD}
-	exit 0
+    exit 0
 }
 
 if test $# -lt 1
 then
-	print_usage
+    print_usage
 else
-	case "$1" in
-		md2po) md2po
-		;;
-		po2md) po2md
-		;;
-		*) print_usage
-	esac
+    case "$1" in
+        md2po) md2po
+        ;;
+        po2md) po2md
+        ;;
+        *) print_usage
+    esac
 fi
 
 cd ${PREVIOUS_CWD}
