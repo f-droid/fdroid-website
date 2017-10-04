@@ -1,8 +1,6 @@
 ---
 layout: page
 title: Signing Process
-redirect_from:
- - /manual/html_node/Signing.html
 
 ---
 

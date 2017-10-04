@@ -1,8 +1,6 @@
 ---
 layout: page
 title: Verification Server
-redirect_from:
- - /wiki/page/Verification_Server
 
 ---
 

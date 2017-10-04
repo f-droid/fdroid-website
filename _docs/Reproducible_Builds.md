@@ -1,8 +1,6 @@
 ---
 layout: page
 title: Reproducibile Builds
-redirect_from:
- - '/wiki/page/Deterministic,_Reproducible_Builds/'
 
 ---
 

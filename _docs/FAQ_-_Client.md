@@ -1,8 +1,6 @@
 ---
 layout: page
 title: FAQ - Client
-redirect_from:
- - /wiki/page/FAQ_-_Client
 
 ---
 

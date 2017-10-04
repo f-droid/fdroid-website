@@ -2,10 +2,6 @@
 layout: page
 title: Docs
 permalink: /docs/
-redirect_from:
- - /manual/
- - /manual/fdroid.html
- - /manual/fdroid.txt
 
 ---
 

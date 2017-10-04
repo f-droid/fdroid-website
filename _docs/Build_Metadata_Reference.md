@@ -1,8 +1,6 @@
 ---
 layout: page
 title: Build Metadata Reference
-redirect_from:
- - /manual/html_node/Metadata.html
 
 ---
 

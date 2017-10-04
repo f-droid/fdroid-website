@@ -1,3 +1,6 @@
+
+RewriteEngine On
+
 ##
 ## HTTP Error Document
 ##
@@ -22,8 +25,6 @@ RewriteRule ^.*$ https://fdroid.gitlab.io/artwork/badge/%1 [L,R=302]
 ##
 ## Search queries used to read the `fdfilter` query parameter.
 ##
-
-RewriteEngine On
 
 #
 # The first .* matches anything (if any) before the "fdfilter" parameter.
@@ -219,3 +220,116 @@ Header always set X-Frame-Options: "sameorigin"
 # rather than sanitising the script.
 #
 Header always set X-Xss-Protection: "1; mode=block"
+
+
+
+
+## Permanent Redirects
+## Simple 301 Redirects for pages that have permanently moved
+
+RedirectPermanent /news-and-reviews /news
+RedirectPermanent /translate /docs/Translation_and_Localization
+RedirectPermanent /repository/issues /issues
+
+RedirectPermanent /manual/html_node/Building-Applications.html /docs/Building_Applications/
+RedirectPermanent /manual/html_node/Build-Server.html /docs/Build_Server_Setup/
+RedirectPermanent /manual/html_node/Data.html /docs/Building_Applications/
+RedirectPermanent /manual/html_node/Importing-Applications.html /docs/Importing_Applications/
+RedirectPermanent /manual/html_node/Metadata.html /docs/Build_Metadata_Reference/
+RedirectPermanent /manual/html_node/Setup.html /docs/Installing_the_Server_and_Repo_Tools/
+RedirectPermanent /manual/html_node/Signing.html /docs/Signing_Process/
+RedirectPermanent /manual/html_node/Simple-Binary-Repository.html /docs/Setup_an_F-Droid_App_Repo/
+RedirectPermanent /manual/html_node/System-Requirements.html /docs/Installing_the_Server_and_Repo_Tools/
+RedirectPermanent /manual/html_node/Update-Processing.html /docs/Update_Processing/
+
+RedirectPermanent /manual/html_node/Overview.html /docs/
+RedirectPermanent /manual/html_node /docs
+RedirectPermanent /manual/fdroid.html /docs/
+RedirectPermanent /manual /docs
+
+RedirectPermanent /wiki/page/Build_Server_Setup /docs/Build_Server_Setup
+RedirectPermanent /wiki/page/Client_Bug_Reports /docs/Client_Bug_Reports
+RedirectPermanent /wiki/page/FAQ_-_App_Developers /docs/FAQ_-_App_Developers
+RedirectPermanent /wiki/page/FAQ_-_Client /docs/FAQ_-_Client
+RedirectPermanent /wiki/page/FAQ_-_General /docs/FAQ_-_General
+RedirectPermanent /wiki/page/Feeds /docs/Feeds
+RedirectPermanent /wiki/page/Getting_logcat_messages_after_crash /docs/Getting_logcat_messages_after_crash
+RedirectPermanent /wiki/page/How_to_Help /docs/How_to_Help
+RedirectPermanent /wiki/page/How_to_update_an_app /docs/How_to_update_an_app
+RedirectPermanent /wiki/page/Inclusion_How-To /docs/Inclusion_How-To
+RedirectPermanent /wiki/page/Inclusion_Policy /docs/Inclusion_Policy
+RedirectPermanent /wiki/page/Installing_the_Server/Repo_Tools /docs/Installing_the_Server_and_Repo_Tools
+RedirectPermanent /wiki/page/Release_Channels_and_Signing_Keys /docs/Release_Channels_and_Signing_Keys
+RedirectPermanent /wiki/page/Repository_Style_Guide /docs/Repository_Style_Guide
+RedirectPermanent /wiki/page/Security_Model /docs/Security_Model
+RedirectPermanent /wiki/page/Setup_an_FDroid_App_Repo /docs/Setup_an_F-Droid_App_Repo
+RedirectPermanent /wiki/page/Verification_Server /docs/Verification_Server
+RedirectPermanent /wiki/page/Whitelabel_Builds /docs/Whitelabel_Builds
+
+RedirectPermanent /posts/andors-trail		/2011/11/30/andors-trail.html
+RedirectPermanent /posts/a-new-ux-6-years-in-the-making /2017/04/04/new-ux.html
+RedirectPermanent /posts/beem			/2010/10/05/beem.html
+RedirectPermanent /posts/book-catalogue		/2010/10/06/book-catalogue.html
+RedirectPermanent /posts/client-0-100-released	/2016/06/14/client-0-100-released.html
+RedirectPermanent /posts/client-0-101-released	/2016/10/03/client-0-101-released.html
+RedirectPermanent /posts/client-0-102-released	/2016/12/15/client-0-102-released.html
+RedirectPermanent /posts/client-0-14		/2010/11/15/client-0-14.html
+RedirectPermanent /posts/client-0-28-released	/2012/08/26/client-0-28-released.html
+RedirectPermanent /posts/client-0-31-released	/2012/09/01/client-0-31-released.html
+RedirectPermanent /posts/client-0-33-released	/2012/09/13/client-0-33-released.html
+RedirectPermanent /posts/client-0-38-released	/2012/09/19/client-0-38-released.html
+RedirectPermanent /posts/client-0-42-released	/2013/03/24/client-0-42-released.html
+RedirectPermanent /posts/client-0-45-released	/2013/05/29/client-0-45-released.html
+RedirectPermanent /posts/client-0-46-released	/2013/05/31/client-0-46-released.html
+RedirectPermanent /posts/client-0-50-released	/2013/08/21/client-0-50-released.html
+RedirectPermanent /posts/client-0-54-released	/2013/11/05/client-0-54-released.html
+RedirectPermanent /posts/client-0-55-released	/2013/11/12/client-0-55-released.html
+RedirectPermanent /posts/client-0-58-released	/2014/01/13/client-0-58-released.html
+RedirectPermanent /posts/client-0-63-released	/2014/04/08/client-0-63-released.html
+RedirectPermanent /posts/client-0-66-released	/2014/05/02/client-0-66-released.html
+RedirectPermanent /posts/client-0-76-released	/2014/10/14/client-0-76-released.html
+RedirectPermanent /posts/client-0-78-released	/2015/01/02/client-0-78-released.html
+RedirectPermanent /posts/client-0-83-released	/2015/03/26/client-0-83-released.html
+RedirectPermanent /posts/client-0-88-released	/2015/04/29/client-0-88-released.html
+RedirectPermanent /posts/client-0-91-released	/2015/05/29/client-0-91-released.html
+RedirectPermanent /posts/client-0-92-released	/2015/06/08/client-0-92-released.html
+RedirectPermanent /posts/client-0-95-1-released	/2015/08/13/client-0-95-1-released.html
+RedirectPermanent /posts/client-0-95-released	/2015/08/06/client-0-95-released.html
+RedirectPermanent /posts/client-0-97-released	/2015/11/17/client-0-97-released.html
+RedirectPermanent /posts/client-0-98-1-released	/2016/02/15/client-0-98-1-released.html
+RedirectPermanent /posts/client-0-98-released	/2016/02/02/client-0-98-released.html
+RedirectPermanent /posts/client-0-99-released	/2016/03/03/client-0-99-released.html
+RedirectPermanent /posts/connectbot		/2010/11/04/connectbot.html
+RedirectPermanent /posts/connect-your-charger	/2010/10/01/connect-your-charger.html
+RedirectPermanent /posts/fbreader		/2010/10/07/fbreader.html
+RedirectPermanent /posts/f-droid-at-fosdem	/2014/01/11/f-droid-at-fosdem.html
+RedirectPermanent /posts/f-droid-at-rmll	/2014/07/01/f-droid-at-rmll.html
+RedirectPermanent /posts/f-droid-is-here	/2010/09/29/f-droid-is-here.html
+RedirectPermanent /posts/f-droid-repository-alpha	/2010/10/20/f-droid-repository-alpha.html
+RedirectPermanent /posts/f-droid-talk-catalonia	/2013/10/28/f-droid-talk-catalonia.html
+RedirectPermanent /posts/f-droid-workshop-berlin	/2013/07/27/f-droid-workshop-berlin.html
+RedirectPermanent /posts/fosdem-schedules	/2011/02/04/fosdem-schedules.html
+RedirectPermanent /posts/get-it-on-f-droid-badges	/2016/05/29/get-it-on-f-droid-badges.html
+RedirectPermanent /posts/gvsig-mini	/2010/10/13/gvsig-mini.html
+RedirectPermanent /posts/k-9-mail	/2010/09/29/k-9-mail.html
+RedirectPermanent /posts/lifesaver	/2010/10/02/lifesaver.html
+RedirectPermanent /posts/mathdoku	/2010/10/16/mathdoku.html
+RedirectPermanent /posts/missile-intercept	/2010/10/22/missile-intercept.html
+RedirectPermanent /posts/mythmote	/2010/10/04/mythmote.html
+RedirectPermanent /posts/netcounter	/2010/10/13/netcounter.html
+RedirectPermanent /posts/no-free-beer	/2010/09/30/no-free-beer.html
+RedirectPermanent /posts/permissions	/2010/10/01/permissions.html
+RedirectPermanent /posts/repository-client-0-17	/2011/01/17/repository-client-0-17.html
+RedirectPermanent /posts/repository-client-0-20	/2011/02/01/repository-client-0-20.html
+RedirectPermanent /posts/repository-client-0-21	/2011/02/24/repository-client-0-21.html
+RedirectPermanent /posts/repository-client-0-22	/2011/05/20/repository-client-0-22.html
+RedirectPermanent /posts/repository-client-0-23	/2011/11/14/repository-client-0-23.html
+RedirectPermanent /posts/repository-client-0-24	/2011/12/05/repository-client-0-24.html
+RedirectPermanent /posts/repository-client-0-25	/2012/01/12/repository-client-0-25.html
+RedirectPermanent /posts/repository-vapourware	/2010/10/15/repository-vapourware.html
+RedirectPermanent /posts/sailing-into-a-new-decade-of-discussions /2017/02/20/new-forum.html
+RedirectPermanent /posts/second-f-droid-workshop	/2013/08/14/second-f-droid-workshop.html
+RedirectPermanent /posts/security-notice-textsecure	/2012/08/23/security-notice-textsecure.html
+RedirectPermanent /posts/sokoban		/2011/01/06/sokoban.html
+RedirectPermanent /posts/statusnet-mobile	/2010/10/14/statusnet-mobile.html
+RedirectPermanent /posts/the-donate-pledge	/2010/10/22/the-donate-pledge.html

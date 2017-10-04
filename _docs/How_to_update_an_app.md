@@ -1,8 +1,6 @@
 ---
 layout: page
 title: How to update an app
-redirect_from:
- - /wiki/page/How_to_update_an_app
 
 ---
 

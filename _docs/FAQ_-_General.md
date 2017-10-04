@@ -1,8 +1,6 @@
 ---
 layout: page
 title: FAQ - General
-redirect_from:
- - /wiki/page/FAQ_-_General
 
 ---
 

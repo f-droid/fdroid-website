@@ -1,8 +1,6 @@
 ---
 layout: page
 title: Inclusion Policy
-redirect_from:
- - /wiki/page/Inclusion_Policy
 
 ---
 
