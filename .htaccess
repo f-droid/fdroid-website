@@ -163,9 +163,14 @@ RewriteRule ^repository/browse.*$ /packages/ [L,R=301]
 # Wont correctly rewrite:
 #  /any/path?trailing_param=blah&lang=fr&trailing_param=blah -> /fr/any/path
 #
+RewriteCond %{REQUEST_URI} !^/archive
+RewriteCond %{REQUEST_URI} !^/assets
+RewriteCond %{REQUEST_URI} !^/css
+RewriteCond %{REQUEST_URI} !^/repo
+RewriteCond %{REQUEST_URI} !^/wiki
+RewriteCond %{REQUEST_URI} !^/wp-content
 RewriteCond %{QUERY_STRING} ^.*lang=(.*)$
 RewriteRule ^(.*)$ /%1/$1? [L,R=302]
-
 
 
 # ============================================================================== #
