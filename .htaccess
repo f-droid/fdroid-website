@@ -4,8 +4,9 @@ RewriteEngine On
 ##
 ## HTTP Error Document
 ##
-## This will not respect the language selected via the language chooser, but rather
-## will use the language specified by mod_negotiation below.
+## This will not respect the language selected via the language
+## chooser, but rather will use the language specified by
+## mod_negotiation below.
 ##
 ErrorDocument 403 /403.html
 ErrorDocument 404 /404.html
@@ -13,8 +14,9 @@ ErrorDocument 404 /404.html
 ##
 ## REDIRECT TO GITLAB FOR BADGES
 ##
-## Temporary work around while we figure out why the /badges directory isn't getting deployed correctly.
-## Forwards all requests for files in the /badge directory to GitLab Pages.
+## Temporary work around while we figure out why the /badges directory
+## isn't getting deployed correctly.  Forwards all requests for files
+## in the /badge directory to GitLab Pages.
 ##
 
 RewriteCond %{REQUEST_URI} ^/badge/(.*)$  [NC]
@@ -27,13 +29,14 @@ RewriteRule ^.*$ https://fdroid.gitlab.io/artwork/badge/%1 [L,R=302]
 ##
 
 #
-# The first .* matches anything (if any) before the "fdfilter" parameter.
-# The second .*? captures the value of this parameter. It is non-gready so that it doesn't capture subsequent &'s.
-# The third &.* matches any subsequent parameters.
-# I would have liked to be able to do something like &?.* so that only if there
-# was a trailing & then we would match, but that is incorrect. Instead, we use
-# a second rewrite rule that is less strict to match the case when there is no
-# trailing parameters.
+# The first .* matches anything (if any) before the "fdfilter"
+# parameter.  The second .*? captures the value of this parameter. It
+# is non-gready so that it doesn't capture subsequent &'s.  The third
+# &.* matches any subsequent parameters.  I would have liked to be
+# able to do something like &?.* so that only if there was a trailing
+# & then we would match, but that is incorrect. Instead, we use a
+# second rewrite rule that is less strict to match the case when there
+# is no trailing parameters.
 #
 # Rewrites:
 #  /any/path?leading_param=blah&fdfilter=query&trailing_param=blah -> /packages/#q=query
@@ -42,14 +45,16 @@ RewriteRule ^.*$ https://fdroid.gitlab.io/artwork/badge/%1 [L,R=302]
 RewriteCond %{QUERY_STRING} ^.*fdfilter=(.*?)&.*$
 
 #
-# If you were to leave off the "?" at the end, then it appends the entire query string
-# from the original request. By having "?" here, it shows no query string at all, which
-# is what we are after.
+# If you were to leave off the "?" at the end, then it appends the
+# entire query string from the original request. By having "?" here,
+# it shows no query string at all, which is what we are after.
 #
 RewriteRule ^(.*)$ /packages/#q=%1? [L,R=301,NE]
 
 #
-# The less specific version of the above rule, for when there is no trailing parameters.
+# The less specific version of the above rule, for when there is no
+# trailing parameters.
+#
 # Rewrites:
 #  /any/path?leading_param&fdfilter=query -> /packages/#q=query
 #  /any/path?fdfilter=query               -> /packages/#q=query
@@ -62,7 +67,8 @@ RewriteRule ^(.*)$ /packages/#q=%1? [L,R=301,NE]
 ##
 ## PACKAGE DETAILS
 ##
-## Package detail pages are shown for the package name specified by the `fdid` query parameter.
+## Package detail pages are shown for the package name specified by
+## the `fdid` query parameter.
 ##
 
 #
@@ -74,7 +80,9 @@ RewriteCond %{QUERY_STRING} ^.*fdid=(.*?)&.*$
 RewriteRule ^(.*)$ /packages/%1/? [L,R=301]
 
 #
-# The less specific version of the above rule, for when there is no trailing parameters.
+# The less specific version of the above rule, for when there is no
+# trailing parameters.
+#
 # Rewrites:
 #  /any/path?leading_param=blah&fdid=org.fdroid.fdroid -> /packages/org.fdroid.fdroid/
 #  /any/path?fdid=org.fdroid.fdroid                    -> /org.fdroid.fdroid/
@@ -83,14 +91,17 @@ RewriteCond %{QUERY_STRING} ^.*fdid=(.*?)$
 RewriteRule ^(.*)$ /packages/%1/? [L,R=301]
 
 #
-# This is from the android docs about the android manifest `package` attribute:
+# This is from the android docs about the android manifest `package`
+# attribute:
 #
-#   A full Java-language-style package name for the Android application. The name
-#   should be unique. The name may contain uppercase or lowercase letters
-#   ('A' through 'Z'), numbers, and underscores ('_'). However, individual package
-#   name parts may only start with letters.
+#   A full Java-language-style package name for the Android
+#   application. The name should be unique. The name may contain
+#   uppercase or lowercase letters ('A' through 'Z'), numbers, and
+#   underscores ('_'). However, individual package name parts may only
+#   start with letters.
 #
-# This is a simplified regex, which ignores the "individual package parts..." bit.
+# This is a simplified regex, which ignores the "individual package
+# parts..." bit.
 #
 RewriteRule ^app/([a-zA-Z0-9_.]*)$ /packages/$1/ [L,R=301]
 
@@ -100,8 +111,9 @@ RewriteRule ^app/([a-zA-Z0-9_.]*)$ /packages/$1/ [L,R=301]
 ## CATEGORIES
 ##
 ## Categories are browsed using the `fdcategory` query parameter.
-## Note: This is often specified twice, and if so, the latter is used. This is categored for because
-## the first .* is greedy, so will consume any prior `fdcategory=` strings before capturing the last.
+## Note: This is often specified twice, and if so, the latter is
+## used. This is categored for because the first .* is greedy, so will
+## consume any prior `fdcategory=` strings before capturing the last.
 ##
 
 #
@@ -113,7 +125,9 @@ RewriteCond %{QUERY_STRING} ^.*fdcategory=(.*?)&.*$
 RewriteRule ^(.*)$ /packages/category/%1/? [L,R=301]
 
 #
-# The less specific version of the above rule, for when there is no trailing parameters.
+# The less specific version of the above rule, for when there is no
+# trailing parameters.
+#
 # Rewrites:
 #  /any/path?leading_param=blah&fdcategory=System -> /packages/category/System/
 #  /any/path?fdcategory=System                    -> /packages/category/System/
@@ -126,15 +140,17 @@ RewriteRule ^(.*)$ /packages/category/%1/? [L,R=301]
 ##
 ## MISC PAGES
 ##
-## Some random parts which could technically be done via Jekyll, but seeing as we are adding
-## rewrite rules here that are highly specific to the existing website, it would be nice to
-## keep other redirects here also.
+## Some random parts which could technically be done via Jekyll, but
+## seeing as we are adding rewrite rules here that are highly specific
+## to the existing website, it would be nice to keep other redirects
+## here also.
 ##
 
 #
-# Match anything else which begins with repository/browse. Be generous in what we accept
-# after the /browse part of the path, because we have more specific rules earlier which will
-# catch more important URLs, such as /repository/browse?fdfilter=query
+# Match anything else which begins with repository/browse. Be generous
+# in what we accept after the /browse part of the path, because we
+# have more specific rules earlier which will catch more important
+# URLs, such as /repository/browse?fdfilter=query
 #
 RewriteRule ^repository/browse.*$ /packages/ [L,R=301]
 
@@ -143,17 +159,23 @@ RewriteRule ^repository/browse.*$ /packages/ [L,R=301]
 ##
 ## LANGUAGE CHOOSER
 ##
-## Support for the language chooser for users without JavaScript.
-## If JavaScript is enabled, then this rule will not end up getting used as the browser can redirect appropriately.
+## Support for the language chooser for users without JavaScript.  If
+## JavaScript is enabled, then this rule will not end up getting used
+## as the browser can redirect appropriately.
 ##
-## NOTE: This will only work for websites with a `baseurl` of `/`. This is because the .htaccess file has
-##       no insight into what the `baseurl` actually is, so we presume `/` as it will be for https://f-droid.org.
+## NOTE: This will only work for websites with a `baseurl` of
+##       `/`. This is because the .htaccess file has no insight into
+##       what the `baseurl` actually is, so we presume `/` as it will
+##       be for https://f-droid.org.
 ##
-## The lanugage chooser sends GET requests to, for example, `...?lang=fr`.
-## However, the users need to end up on `/fr/...`. Given we need the site to work without JavaScript,
-## the only real way to do this is by rewriting the URL on the server.
-## Given this is a static site, we don't expect much usage of query parameters for anything other
-## than legacy redirects, and so this doesn't make a huge effort to maintain query parameters when rewriting.
+## The lanugage chooser sends GET requests to, for example,
+## `...?lang=fr`.  However, the users need to end up on
+## `/fr/...`. Given we need the site to work without JavaScript, the
+## only real way to do this is by rewriting the URL on the server.
+## Given this is a static site, we don't expect much usage of query
+## parameters for anything other than legacy redirects, and so this
+## doesn't make a huge effort to maintain query parameters when
+## rewriting.
 ##
 #
 # Rewrites:
@@ -203,15 +225,15 @@ Header always set Content-Security-Policy: "\
 Header always set Referrer-Policy: "strict-origin"
 
 #
-# Setting this header will prevent MSIE from interpreting files as something
-# else than declared by the content type in the HTTP headers.
-# Requires mod_headers to be enabled.
+# Setting this header will prevent MSIE from interpreting files as
+# something else than declared by the content type in the HTTP
+# headers.  Requires mod_headers to be enabled.
 #
 Header always set X-Content-Type-Options: "nosniff"
 
 #
-# Setting this header will prevent other sites from embedding pages from this
-# site as frames. This defends against clickjacking attacks.
+# Setting this header will prevent other sites from embedding pages
+# from this site as frames. This defends against clickjacking attacks.
 # Requires mod_headers to be enabled.
 #
 Header always set X-Frame-Options: "sameorigin"
