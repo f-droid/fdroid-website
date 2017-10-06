@@ -5,8 +5,10 @@ set -eu -o pipefail
 
 DIR_TOOLS=`dirname $0`
 
-# Try to make the path names nice and relative to the root directory. The paths do end up in the resulting .po files,
-# so we don't want this script to change the .po output based on where it is executed from.
+# Try to make the path names nice and relative to the root
+# directory. The paths do end up in the resulting .po files, so we
+# don't want this script to change the .po output based on where it is
+# executed from.
 PREVIOUS_CWD=`pwd`
 cd ${DIR_TOOLS}/../
 
@@ -19,13 +21,13 @@ DIR_PO=${DIR_SRC}/po
 ###################################################
 
 function md2po {
-	echo "Converting .md source into .pot files"
+    echo "Converting .md source into .pot files"
 
-	if [ -d ${DIR_BUILD} ]; then rm -r ${DIR_BUILD}; fi
-	generate_pot_file _docs
-	generate_pot_file _posts
-	generate_pot_file _pages
-	rm -r ${DIR_BUILD}
+    if [ -d ${DIR_BUILD} ]; then rm -r ${DIR_BUILD}; fi
+    generate_pot_file _docs
+    generate_pot_file _posts
+    generate_pot_file _pages
+    rm -r ${DIR_BUILD}
 
     PAGES_POT=${DIR_PO}/_pages.pot
     DOCS_POT=${DIR_PO}/_docs.pot
@@ -33,17 +35,19 @@ function md2po {
 
     echo "Merging ${PAGES_POT} into ${DOCS_POT}"
     msgcat -o ${DOCS_TMP_POT} ${PAGES_POT} ${DOCS_POT}
-	cp ${DOCS_TMP_POT} ${DOCS_POT}
-	rm ${DOCS_TMP_POT} ${PAGES_POT}
+    cp ${DOCS_TMP_POT} ${DOCS_POT}
+    rm ${DOCS_TMP_POT} ${PAGES_POT}
 
-	update_po_files _docs
-	update_po_files _posts
+    update_po_files _docs
+    update_po_files _posts
 }
 
 #
 # Usage: generate_pot_file SRC_TYPE
 #
-#   Where SRC_TYPE is either _posts, _pages, or _docs (i.e. directories with .md files that are translated into a single .pot file)
+#   Where SRC_TYPE is either _posts, _pages, or _docs
+#   (i.e. directories with .md files that are translated into a single
+#   .pot file)
 #
 # This will:
 #  * Copy the original .md files, after stripping their metadata, to a temporary build directory.
@@ -52,9 +56,9 @@ function md2po {
 #  * This .pot file is the thing which will end up getting translated.
 #
 function generate_pot_file {
-	SRC_TYPE=$1
-	SRC_SUBDIR=${DIR_SRC}/${SRC_TYPE}
-	BUILD_SUBDIR=${DIR_BUILD}/${SRC_TYPE}/md
+    SRC_TYPE=$1
+    SRC_SUBDIR=${DIR_SRC}/${SRC_TYPE}
+    BUILD_SUBDIR=${DIR_BUILD}/${SRC_TYPE}/md
     DIR_BUILD_PO=${DIR_BUILD}/${SRC_TYPE}/po
     OUT_PO_FILE=${DIR_PO}/${SRC_TYPE}.pot
 
@@ -68,26 +72,29 @@ function generate_pot_file {
         echo "Extracting strings from $MD"
         mkdir -p ${DIR_BUILD_PO}
 
-        # For some reason these need to be .pot files instead of .po files for msgcat below to work correctly.
+        # For some reason these need to be .pot files instead of .po
+        # files for msgcat below to work correctly.
         po4a-gettextize -f text -o markdown -L utf-8 -M utf-8 -m ${MD} -p ${DIR_BUILD_PO}/${NAME}.pot
     done
 
     echo "Combining .pot files into $OUT_PO_FILE"
-	mkdir -p `dirname ${OUT_PO_FILE}`
-	msgcat -o ${OUT_PO_FILE} ${DIR_BUILD_PO}/*.pot
+    mkdir -p `dirname ${OUT_PO_FILE}`
+    msgcat -o ${OUT_PO_FILE} ${DIR_BUILD_PO}/*.pot
 }
 
 #
-# Updates each translated .po file with new/changed strings from the original English .po file.
-# Uses `msgmerge` and supports fuzzy string matching.
+# Updates each translated .po file with new/changed strings from the
+# original English .po file.  Uses `msgmerge` and supports fuzzy
+# string matching.
 #
 function update_po_files {
-	SRC_TYPE=$1
-	PO=${DIR_PO}/${SRC_TYPE}.pot
+    SRC_TYPE=$1
+    PO=${DIR_PO}/${SRC_TYPE}.pot
 
-	if [ `check_for_po ${SRC_TYPE}` = true ]; then
+    if [ `check_for_po ${SRC_TYPE}` = true ]; then
         for I18N_PO in ${DIR_PO}/${SRC_TYPE}.*.po; do
-            # The VERSION_CONTROL environment variable prevents a backup file from being written to ${SRC_TYPE}.LANG.po~
+            # The VERSION_CONTROL environment variable prevents a
+            # backup file from being written to ${SRC_TYPE}.LANG.po~
             echo "Updating ${I18N_PO} with any changes from main .po file ${PO}."
             VERSION_CONTROL=none msgmerge -U ${I18N_PO} ${PO}
         done
@@ -100,20 +107,22 @@ function update_po_files {
 ########################################
 
 function po2md {
-	echo "Converting .po files back into .md source"
+    echo "Converting .po files back into .md source"
 
-	if [ -d ${DIR_BUILD} ]; then rm -r ${DIR_BUILD}; fi
-	#generate_md_files _docs _docs
-	#generate_md_files _posts _posts
-	generate_md_files _pages _docs
-	rm -r "${DIR_BUILD}"
+    if [ -d ${DIR_BUILD} ]; then rm -r ${DIR_BUILD}; fi
+    #generate_md_files _docs _docs
+    #generate_md_files _posts _posts
+    generate_md_files _pages _docs
+    rm -r "${DIR_BUILD}"
 }
 
 #
 # Usage: generate_md_files SRC_TYPE POT_TYPE
 #
-#   Where SRC_TYPE is either _posts, _pages, or _docs (i.e. directories with .md files that are translated into a single .po file)
-#   POT_TYPE is either _posts or _docs (i.e. files in po/POT_TYPE.pot and po/POT_TYPE.LANG.po)
+#   Where SRC_TYPE is either _posts, _pages, or _docs
+#   (i.e. directories with .md files that are translated into a single
+#   .po file) POT_TYPE is either _posts or _docs (i.e. files in
+#   po/POT_TYPE.pot and po/POT_TYPE.LANG.po)
 # 
 # This will:
 #  * Copy the original .md files, after stripping their metadata, to a temporary build directory.
@@ -124,16 +133,16 @@ function po2md {
 #  * This is then output into the final translated .md file.
 #
 function generate_md_files {
-	SRC_TYPE=$1
-	POT_TYPE=$2
-	SRC_SUBDIR=${DIR_SRC}/${SRC_TYPE}
-	BUILD_SUBDIR=${DIR_BUILD}/${SRC_TYPE}
-	
-	echo "Converting .md files (from $BUILD_SUBDIR) based on .po files..."
+    SRC_TYPE=$1
+    POT_TYPE=$2
+    SRC_SUBDIR=${DIR_SRC}/${SRC_TYPE}
+    BUILD_SUBDIR=${DIR_BUILD}/${SRC_TYPE}
+    
+    echo "Converting .md files (from $BUILD_SUBDIR) based on .po files..."
 
-	cp_md_strip_frontmatter_dir ${SRC_SUBDIR} ${BUILD_SUBDIR}/md
+    cp_md_strip_frontmatter_dir ${SRC_SUBDIR} ${BUILD_SUBDIR}/md
 
-	if [ `check_for_po ${POT_TYPE}` = true ]; then
+    if [ `check_for_po ${POT_TYPE}` = true ]; then
         for PO in ${DIR_PO}/${POT_TYPE}.*.po; do
             PO_FILE=`basename ${PO}`
             LANG=`echo ${PO_FILE} | sed -e "s/${POT_TYPE}\.\(.*\)\.po/\1/"`
@@ -149,10 +158,13 @@ function generate_md_files {
                 OUT_TMP_MD_FILE=${BUILD_DIR_I18N_MD}/${MD_FILE}
                 OUT_MD_FILE=${OUT_DIR_I18N_MD}/${MD_FILE}
 
-                # Extract a the .po file for the translated markdown file. Count up how many translated strings there
-                # are for this file. If none, then don't bother converting (it will just take up space in our repo and
-                # make it harder to see what is actually translated).
-                # Need to take the `realpath`, becuase msggrep will fail with "./build/..." but succeed with "build/..."
+                # Extract a the .po file for the translated markdown
+                # file. Count up how many translated strings there are
+                # for this file. If none, then don't bother converting
+                # (it will just take up space in our repo and make it
+                # harder to see what is actually translated).  Need to
+                # take the `realpath`, becuase msggrep will fail with
+                # "./build/..." but succeed with "build/..."
                 SRC_MD_FILE=`realpath --relative-to . ${BUILD_SUBDIR}`/md/${MD_FILE}
                 TRANSLATED=`msggrep --location=${SRC_MD_FILE} ${DIR_PO}/${PO_FILE} | msgattrib --translated | wc -l`
                 if [ ${TRANSLATED} == "0" ]; then
@@ -164,15 +176,19 @@ function generate_md_files {
                 po4a-translate -f text -o markdown -L utf-8 -M utf-8 -m ${MD} -p ${PO} -l ${OUT_TMP_MD_FILE} -k 0
 
 
-                # Extract the front matter from the source and add it to the top of the final i18n .md file (after
-                # stripping the "# [TITLE]" line we added earlier). This is used to replace the "title:" from the
-                # translated .md file and replace it with the i18n "title:". In the process we ensure that the
+                # Extract the front matter from the source and add it
+                # to the top of the final i18n .md file (after
+                # stripping the "# [TITLE]" line we added
+                # earlier). This is used to replace the "title:" from
+                # the translated .md file and replace it with the i18n
+                # "title:". In the process we ensure that the
                 # frontmatter contains the correct `lang:` attribute.
                 TITLE=`head -n 1 ${OUT_TMP_MD_FILE} | sed 's/^# //'`
                 extract_frontmatter ${SRC_SUBDIR}/${MD_FILE} | sed "s/^title:.*/title: $TITLE\nlang: $LANG/" >> ${OUT_MD_FILE}
 
-                # Finally, copy the translated .md file with no frontmatter, and without the "# Title" we
-                # previously injected into there either, into the final .md file.
+                # Finally, copy the translated .md file with no
+                # frontmatter, and without the "# Title" we previously
+                # injected into there either, into the final .md file.
                 tail -n +2 ${OUT_TMP_MD_FILE} >> ${OUT_MD_FILE}
             done
         done
@@ -184,67 +200,75 @@ function generate_md_files {
 #################################################
 
 #
-# Helper to check if there are any SRC_TYPE.LANG.po files. This helps to not try and iterate over the files if they
-# don't exist
+# Helper to check if there are any SRC_TYPE.LANG.po files. This helps
+# to not try and iterate over the files if they don't exist
 #
 # Usage: check_for_po SRC_TYPE
 #
 function check_for_po {
     SRC_TYPE=$1
 
-	if compgen -G "$DIR_PO/$SRC_TYPE.*.po" > /dev/null;
-	then
-	    echo true
+    if compgen -G "$DIR_PO/$SRC_TYPE.*.po" > /dev/null;
+    then
+        echo true
     else
         echo false
     fi
 }
 
 #
-# A helper function for generate_po_files and generate_md_files because they both need to do the same thing.
-# That is, they both need to strip the frontmatter, then add back in a pseudo "# Title" line, where "Title" is
-# read from the frontmatters "title: " attribute, and then write to a temporary build directory.
+# A helper function for generate_po_files and generate_md_files
+# because they both need to do the same thing.  That is, they both
+# need to strip the frontmatter, then add back in a pseudo "# Title"
+# line, where "Title" is read from the frontmatters "title: "
+# attribute, and then write to a temporary build directory.
 # 
 # Usage: cp_md_strip_frontmatter_dir SRC_MD_DIR BUILD_MD_DIR
 #
-#   Where SRC_MD_DIR contains .md files with frontmatter (delinieated by ---) and BUILD_MD_DIR iw where the resulting
-#   .md files are to be copied, after stripping their frontmatter.
+#   Where SRC_MD_DIR contains .md files with frontmatter (delinieated
+#   by ---) and BUILD_MD_DIR iw where the resulting .md files are to
+#   be copied, after stripping their frontmatter.
 #
 function cp_md_strip_frontmatter_dir {
-	SRC_MD_DIR=$1
-	BUILD_MD_DIR=$2
+    SRC_MD_DIR=$1
+    BUILD_MD_DIR=$2
 
-	echo "Copying .md files and stripping front matter..."
+    echo "Copying .md files and stripping front matter..."
 
-	mkdir -p ${BUILD_MD_DIR}
-	for MD in ${SRC_MD_DIR}/*.md; do
-		FILE=`basename ${MD}`
+    mkdir -p ${BUILD_MD_DIR}
+    for MD in ${SRC_MD_DIR}/*.md; do
+        FILE=`basename ${MD}`
         SRC_MD_FILE=${SRC_MD_DIR}/${FILE}
         BUILD_MD_FILE=${BUILD_MD_DIR}/${FILE}
 
-        # We cheat, by stripping the front matter, and replacing it with "# Title" (where Title is taken
-        # from the "title: " attribute in the frontmatter we are stripping. Then we can remove that line
-        # when it comes time to reassemble the translated files again. This ensures that po4a is able to
-        # make the title available for translation, and also that it is alongside the rest of the document
-        # when Weblate shows each of the strings that belong to a document.
+        # We cheat, by stripping the front matter, and replacing it
+        # with "# Title" (where Title is taken from the "title: "
+        # attribute in the frontmatter we are stripping. Then we can
+        # remove that line when it comes time to reassemble the
+        # translated files again. This ensures that po4a is able to
+        # make the title available for translation, and also that it
+        # is alongside the rest of the document when Weblate shows
+        # each of the strings that belong to a document.
         TITLE=`extract_frontmatter ${SRC_MD_FILE} | grep 'title:' | sed 's/title:\s*//'`
         echo "# $TITLE" > ${BUILD_MD_FILE}
 
-        # Strip front-matter from .md files and write to temporary location.
-        # http://stackoverflow.com/a/28222257/2391921
+        # Strip front-matter from .md files and write to temporary
+        # location.  http://stackoverflow.com/a/28222257/2391921
         sed '1 { /^---/ { :a N; /\n---/! ba; d} }' ${SRC_MD_FILE} >> ${BUILD_MD_FILE}
-	done
+    done
 }
 
 function extract_frontmatter {
-	FILE=$1
+    FILE=$1
 
-    # See http://stackoverflow.com/a/7167115/2391921 for matching multiline strings with grep
-    # The -z flag replaces new lines with NUL resulting in "Binary file matches" rather than more
-    # useful output (i.e. the actual matching content). The -a switch makes grep interpret the
-    # output like text again. For some reason though on my machine there is still a NUL byte at
-    # the end which trips up this script, so sed replaces it with a newline.
-	grep -Pzao '(?s)---.*?---\n' ${FILE} | sed 's/\x00/\n/'
+    # See http://stackoverflow.com/a/7167115/2391921 for matching
+    # multiline strings with grep The -z flag replaces new lines with
+    # NUL resulting in "Binary file matches" rather than more useful
+    # output (i.e. the actual matching content). The -a switch makes
+    # grep interpret the output like text again. For some reason
+    # though on my machine there is still a NUL byte at the end which
+    # trips up this script, so sed replaces it with a newline.
+    grep -Pzao '(?s)---.*?---\n' ${FILE} | sed 's/\x00/\n/'
 }
 
 ################################
@@ -252,7 +276,7 @@ function extract_frontmatter {
 ################################
 
 function print_usage {
-	cat << EOT
+    cat << EOT
 Internationalization script for F-Droid Jekyll website.
 
 Usage:
@@ -264,20 +288,20 @@ Usage:
     Convert all translated .po files into localized .md files.
 EOT
     cd ${PREVIOUS_CWD}
-	exit 0
+    exit 0
 }
 
 if test $# -lt 1
 then
-	print_usage
+    print_usage
 else
-	case "$1" in
-		md2po) md2po
-		;;
-		po2md) po2md
-		;;
-		*) print_usage
-	esac
+    case "$1" in
+        md2po) md2po
+        ;;
+        po2md) po2md
+        ;;
+        *) print_usage
+    esac
 fi
 
 cd ${PREVIOUS_CWD}

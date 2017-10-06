@@ -10,11 +10,13 @@ F-Droid is operated by F-Droid Limited, a non-profit organisation registered in 
 
 You can discuss F-Droid or get help on IRC in channel [#fdroid on FreeNode](https://webchat.freenode.net/?channels=%23fdroid). The discussions on IRC are logged on [BotBot.me](https://botbot.me/freenode/fdroid). You can also directly contact us by email at [team@f-droid.org](mailto:team@f-droid.org). If you want to help, you can [join us]({{ "/contribute/" | prepend: site.baseurl }}).
 
-The F-Droid logo was created by William Theaker. Updates to that, and additional artwork, are by Robert Martinez. All are dual licensed under CC-BY-SA 3.0 Unported or GPLv3+.
+### License
 
-The content of the news and reviews section is licensed under a [Creative Commons Attribution-ShareAlike 3.0 License](http://creativecommons.org/licenses/by-sa/3.0/).
+* The source code for this site and the content produced by the F-Droid community are a availble under the [GNU Affero General Public License version 3 or later (AGPLv3+)](https://www.gnu.org/licenses/agpl-3.0.html).
+* The content of the news section and the F-Droid logo are also available under [Creative Commons Attribution-ShareAlike 3.0 License (CC-BY-SA-3.0)](http://creativecommons.org/licenses/by-sa/3.0/) or [GNU General Public License version 3 or later (GPLv3+)](https://www.gnu.org/licenses/gpl-3.0.html).
+* The descriptive text and graphics for each app have a specific license from that project.  Free software should also have free descriptions and graphics.
+* The F-Droid logo was created by William Theaker. Updates to that, and additional artwork, are by Robert Martinez.
 
-[![Creative Commons Logo](https://i.creativecommons.org/l/by-sa/3.0/88x31.png "Creative Commons Logo")](http://creativecommons.org/licenses/by-sa/3.0/)
 
 ### Terms, etc.
 

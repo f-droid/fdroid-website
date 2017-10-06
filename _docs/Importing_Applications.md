@@ -1,8 +1,6 @@
 ---
 layout: page
 title: Importing Applications
-redirect_from:
- - /manual/html_node/Importing-Applications.html
 
 ---
 

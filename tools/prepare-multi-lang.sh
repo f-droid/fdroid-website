@@ -36,8 +36,9 @@
 #        org.fdroid.fdroid/index.html
 #        ...
 #
-# This is the format used by Apache's MultiViews directive, meaning we don't need to write out Type Maps for each file.
-# Note that it doesn't try to i18n the following files:  .htaccess, *.css, *.js.
+# This is the format used by Apache's MultiViews directive, meaning we
+# don't need to write out Type Maps for each file.  Note that it
+# doesn't try to i18n the following files: .htaccess, *.css, *.js.
 # These are just copied from the en/ subdirectory into the webroot.
 #
 
@@ -52,9 +53,11 @@ function assert_file {
 }
 
 #
-# When in _site and creating a symlink from assets/blah.png.fr to fr/assets/blah.png, the link needs
-# to point to a relative path (i.e. ln -s ../fr/assets.blah.png assets/blah.png.fr).
-# This function uses `realpath --relative-to` to ensure that the relative path is used.
+# When in _site and creating a symlink from assets/blah.png.fr to
+# fr/assets/blah.png, the link needs to point to a relative path
+# (i.e. ln -s ../fr/assets.blah.png assets/blah.png.fr).  This
+# function uses `realpath --relative-to` to ensure that the relative
+# path is used.
 #
 function relative_symlink {
     SRC=$1
@@ -111,8 +114,9 @@ source tools/weblate-supported-langs.sh
 
 cd $1
 
-# For deploying to GitLab or surge.sh, we still want it to work, which requires leaving original English *.html files
-# in the webroot rather than just MultiView compatible *.html.LANG files.
+# For deploying to GitLab or surge.sh, we still want it to work, which
+# requires leaving original English *.html files in the webroot rather
+# than just MultiView compatible *.html.LANG files.
 if [[ $# == 2 && $2 == "--no-type-maps" ]]; then
     MULTI_VIEWS=false
 else
@@ -128,8 +132,9 @@ do
 
     mkdir -p ${DIR}
 
-    # At this stage we are only translating .html files.
-    # In the future when we support i18n of graphics too, then this will need to be updated.
+    # At this stage we are only translating .html files.  In the
+    # future when we support i18n of graphics too, then this will need
+    # to be updated.
     if [[ ${MULTI_VIEWS} = false || ${EXTENSION} != "html" ]]; then
         echo "Not generating i18n version of ${DIR}/${FILE}"
         cp ${FILE_PATH} ${DIR}/${FILE}

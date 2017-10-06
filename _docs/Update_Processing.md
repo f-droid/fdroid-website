@@ -1,8 +1,6 @@
 ---
 layout: page
 title: Update Processing
-redirect_from:
- - /manual/html_node/Update-Processing.html
 
 ---
 

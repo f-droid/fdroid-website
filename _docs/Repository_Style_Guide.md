@@ -1,8 +1,6 @@
 ---
 layout: page
 title: Repository Style Guide
-redirect_from:
- - /wiki/page/Repository_Style_Guide
 
 ---
 

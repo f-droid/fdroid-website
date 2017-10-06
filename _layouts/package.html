@@ -94,7 +94,10 @@ layout: default
 		<p>
 			{{ strings.suggest_downloading_via_fdroid }}
 		</p>
-		<a href="https://f-droid.org/FDroid.apk" class="material-button">{{ site.data.strings.index.download_fdroid }}</a>
+<!-- The FDroid.apk links need the space at the start of the href=""
+to disable the polyglot link "relativization":
+https://github.com/untra/polyglot/issues/79 -->
+		<a href=" https://f-droid.org/FDroid.apk" class="material-button">{{ site.data.strings.index.download_fdroid }}</a>
 		<ul class="package-versions-list">
 			{% for package in page.packages %}
 			<li class="package-version">

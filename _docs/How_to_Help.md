@@ -1,8 +1,6 @@
 ---
 layout: page
 title: How to Help
-redirect_from:
- - /wiki/page/How_to_Help
 
 ---
 

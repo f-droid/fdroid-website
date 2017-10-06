@@ -1,8 +1,6 @@
 ---
 layout: page
 title: Translation and Localization
-redirect_from:
- - /translate
 
 ---
 

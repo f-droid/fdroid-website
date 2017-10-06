@@ -1,8 +1,6 @@
 ---
 layout: page
 title: Security Model
-redirect_from:
- - /wiki/page/Security_Model
 
 ---
 

@@ -1,9 +1,6 @@
 ---
 layout: page
 title: Building Applications
-redirect_from:
- - /manual/html_node/Building-Applications.html
- - /manual/html_node/Data.html
 
 ---
 
