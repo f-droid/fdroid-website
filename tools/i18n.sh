@@ -79,7 +79,7 @@ function generate_pot_file {
 
     echo "Combining .pot files into $OUT_PO_FILE"
     mkdir -p `dirname ${OUT_PO_FILE}`
-    msgcat -o ${OUT_PO_FILE} ${DIR_BUILD_PO}/*.pot
+    msgcat --add-location=file -o ${OUT_PO_FILE} ${DIR_BUILD_PO}/*.pot
 }
 
 #
@@ -96,7 +96,7 @@ function update_po_files {
             # The VERSION_CONTROL environment variable prevents a
             # backup file from being written to ${SRC_TYPE}.LANG.po~
             echo "Updating ${I18N_PO} with any changes from main .po file ${PO}."
-            VERSION_CONTROL=none msgmerge -U ${I18N_PO} ${PO}
+            VERSION_CONTROL=none msgmerge --add-location=file -U ${I18N_PO} ${PO}
         done
     fi
 }
