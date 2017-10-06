@@ -54,8 +54,8 @@ When proposing inclusion this way, it is assumed that:
     Policy](../Inclusion_Policy).
 -   You already read and understand the [Repository Style
     Guide](../Repository_Style_Guide).
--   You already read and understand [the relevant parts of the F-Droid
-    server manual](https://f-droid.org/manual/html_node/Metadata.html).
+-   You already read and understand
+    [the relevant parts of the F-Droid documentation](../Build_Metadata_Reference).
 -   You know how to use [Git VCS](https://git-scm.com/), and know how
     a merge request (a.k.a. "pull request" in
     GitHub terminology) works in general.

@@ -184,13 +184,13 @@ However, things will improve over time.
 
 ### Can APKs signed by my key be included?
 
-Only APKs built by F-Droid are included in the official F-Droid repo. We
-can try to reproduce your APK, as mentioned above, but if this fails (or
-e.g. when you want to distribute an app with closed-source components or
-API keys etc.), you can put any APK in your own "[Simple Binary
-Repo](https://f-droid.org/manual/html_node/Simple-Binary-Repository.html)",
-and people can add your repo to their F-Droid client in order to get
-your APKs.
+Only APKs built by F-Droid are included in the official F-Droid
+repo. We can try to reproduce your APK, as mentioned above, but if
+this fails (or e.g. when you want to distribute an app with
+closed-source components or API keys etc.), you can put any APK in
+your own "[F-Droid binary repo](../Setup_an_F-Droid_App_Repo)", and
+people can add your repo to their F-Droid client in order to get your
+APKs.
 
 
 ### Can I run my own F-Droid package repository?<a name="Can_I_run_my_own_app_repo"></a>
@@ -254,11 +254,11 @@ play-services, fabric, firebase) -- only the "Android support
 repostiory" is allowed.
 
 For external resources, please restrain yourself to "well known
-repositories", e.g. mavenCentral or jCenter (see compelte listing in the
-"srclib" section of
-<https://f-droid.org/manual/html_node/Build.html#Build>). Please note
-that e.g. Bintray does not only offers jCenter, but user-repos as well.
-Those are not part of the trusted repository list.
+repositories", e.g. mavenCentral or jCenter (see compelte listing in
+the "srclib" section of
+[Build Metadata Reference](../Build_Metadata_Reference)). Please note
+that e.g. Bintray does not only offers jCenter, but user-repos as
+well.  Those are not part of the trusted repository list.
 
 If you require dependencies that are not available through those
 repositories, please do not use binary jar files directly, but provide

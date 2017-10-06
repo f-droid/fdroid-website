@@ -20,7 +20,7 @@ your package, making it easy for the maintainers.
 
 References:
 
-* [F-Droid manual](https://f-droid.org/manual/)
+* [F-Droid documentation](https://f-droid.org/docs)
 * [F-Droid's CONTRIBUTING.md](https://gitlab.com/fdroid/fdroiddata/blob/master/CONTRIBUTING.md)
 * [F-Droid Quickstart](https://gitlab.com/fdroid/fdroiddata/blob/master/README.md#quickstart)
 * [Contribute to F-Droid](https://f-droid.org/contribute/)
@@ -137,8 +137,8 @@ Current Version:0.10.2
 Current Version Code:102
 ```
 
-For more info, see the [F-Droid
-manual](https://f-droid.org/manual/fdroid.html#Categories).
+For more info, see the F-Droid
+[Build Metadata Reference](../Build_Metadata_Reference).
 
 And then checked it all worked with:
 

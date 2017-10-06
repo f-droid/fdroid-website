@@ -44,4 +44,4 @@ it would be good to discuss them on IRC or in the forum first,
 to ensure they fit with the direction of the project,
 and do not clash with or duplicate work already in development.
 
-For working with the server and data projects, it’s a good idea to read [the manual]({{ "/manual/" | prepend: site.baseurl }}).
+For working with the server and data projects, it’s a good idea to read [the manual]({{ "/docs/" | prepend: site.baseurl }}).
