@@ -8,7 +8,7 @@ F-Droid is a robot with a passion for Free and Open Source (FOSS) software on th
 
 F-Droid is operated by F-Droid Limited, a non-profit organisation registered in England (no. 8420676).
 
-You can discuss F-Droid or get help on IRC in channel [#fdroid on FreeNode](https://webchat.freenode.net/?channels=%23fdroid). The discussions on IRC are logged on [BotBot.me](https://botbot.me/freenode/fdroid). You can also directly contact us by email at [team@f-droid.org](mailto:team@f-droid.org). If you want to help, you can [join us]({{ "/contribute/" | prepend: site.baseurl }}).
+You can discuss F-Droid or get help on IRC in the [#fdroid channel](https://webchat.freenode.net/?channels=%23fdroid) on freenode. The discussions on IRC are logged on [BotBot.me](https://botbot.me/freenode/fdroid). You can also directly contact us by email at [team@f-droid.org](mailto:team@f-droid.org). If you want to help, you can [join us]({{ "/contribute/" | prepend: site.baseurl }}).
 
 ### License
 
