@@ -9,9 +9,9 @@ in a repository, you can build them directly from the source code.
 
 Using this method, it is is possible to verify that the application
 builds correctly, corresponds to the source code, and contains only free
-software. Unforunately, in the Android world, it seems to be very common
+software. Unfortunately, in the Android world, it seems to be very common
 for an application supplied as a binary APK to present itself as Free
-Software when in fact some or all of the following are true:
+Software when in fact some if not all of the following is true:
 
 1.  The source code (either for a particular version, or even
     all versions!) is unavailable or incomplete.
@@ -113,7 +113,7 @@ fdroid publish
 ```
 
 The source tarball would move to the `repo` directory (which is the
-directory you would push to your web server). A signed and zip-aligned
+directory you would push to your web server). A signed and zipaligned
 version of the APK would also appear there, and both files would be
 removed from the `unsigned` directory.
 
