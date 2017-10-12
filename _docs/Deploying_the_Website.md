@@ -113,7 +113,7 @@ $ git clone https://gitlab.com/fdroid/fdroid-website
 $ cd fdroid-website
 $ git fetch --tags
 $ sudo gitlab-runner exec docker f-droid.org \
-              --pre-build-script ./prepare-for-deploy.py \
+              --pre-build-script ./tools/prepare-for-deploy.py \
               --docker-volumes "/path/to/deploy-whitelist-keyring.gpg:/root/.gnupg/pubring.gpg:ro" \
               --docker-volumes `pwd`/_site:/builds/output
 ```
