@@ -115,7 +115,7 @@ $ git fetch --tags
 $ sudo gitlab-runner exec docker f-droid.org \
               --pre-build-script ./prepare-for-deploy.py \
               --docker-volumes "/path/to/deploy-whitelist-keyring.gpg:/root/.gnupg/pubring.gpg:ro" \
-              --docker-volumes `pwd`/_site:/builds/output --env DEPLOY_DIR=/builds/output
+              --docker-volumes `pwd`/_site:/builds/output
 ```
 6. deploy the site's files to the webserver, while preventing the
    _jekyll_ generated files from overwriting
