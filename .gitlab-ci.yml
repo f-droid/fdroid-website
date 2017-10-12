@@ -14,7 +14,7 @@ variables:
 .setup_for_jekyll: &setup_for_jekyll |
   ruby -v
   apt-get update
-  apt-get install -y locales zlib1g-dev gettext po4a linkchecker bundler unzip python3
+  apt-get install -y locales zlib1g-dev gettext po4a linkchecker bundler unzip python3 rsync
   echo "en_US UTF-8" > /etc/locale.gen
   locale-gen en_US.UTF-8
   export LANG=en_US.UTF-8
@@ -53,7 +53,7 @@ f-droid.org:
    - bundle exec jekyll build -d $OUT_DIR --config _config.yml,userconfig.yml --trace
    - ./tools/prepare-multi-lang.sh $OUT_DIR
    - ./tools/deploy-external-assets.sh $OUT_DIR
-   - cp -r $OUT_DIR /builds/output
+   - rsync -ax --delete $OUT_DIR /builds/output/
 
 build:
   stage: test
