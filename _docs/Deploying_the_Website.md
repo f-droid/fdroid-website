@@ -170,7 +170,7 @@ telling apache where to find the translated version of the file
 
 ```apache
 <Directory /var/www/html>
-    Options -ExecCGI -Indexes -Includes -MultiViews +FollowSymLinks
+    Options FollowSymLinks
     AllowOverride FileInfo
 </Directory>
 
