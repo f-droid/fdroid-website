@@ -1,0 +1,11 @@
+#!/usr/bin/env sh
+
+set -e
+set -x
+
+basedir=$(dirname $0)/..
+for f in favicon.png `find $basedir/assets $basedir/wp-content -type f -name \*.png`; do
+    tmpfile=$(mktemp)
+    zopflipng --iterations=50 --filters=01234mepb --lossy_8bit --lossy_transparent -y $f $tmpfile
+    mv $tmpfile $f
+done
