@@ -1,6 +1,7 @@
 ---
 layout: page
 title: All About Descriptions, Graphics, and Screenshots
+
 ---
 
 Each app can have complete app store content, including localized
@@ -35,6 +36,24 @@ In the end, it is not actually necessary to actually install or use
 either _fastlane supply_ nor _Gradle Play Publisher_.  F-Droid
 includes these files purely based on the standard file layout that
 those tools use.
+
+All the localized descriptions and graphics will automatically show up
+in the F-Droid repo once they are available in the source repo of a
+release that the repo builds.  For example, if these files are
+included in a _git_ repo's _master_ branch but not yet in a tagged
+release, they will not be included.
+
+The last important detail is that the texts in the app's metadata file
+will override all other descriptive texts from
+_Fastlane_/_Triple-T_. That is specifically
+[Name](../Build_Metadata_Reference/#Name)/[AutoName](../Build_Metadata_Reference/#AutoName),
+[Summary](../Build_Metadata_Reference/#Summary), and
+[Description](../Build_Metadata_Reference/#Description).  Once an
+app's descriptive texts have been moved into the source repo, then
+file a
+[merge request](https://gitlab.com/fdroid/fdroiddata/merge_requests)
+or [issue](https://gitlab.com/fdroid/fdroiddata/issues) to remove
+_Summary_ and _Description_ from the app's metadata file.
 
 
 ## In the app's build metadata in an _fdroiddata_ collection

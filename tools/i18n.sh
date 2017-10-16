@@ -217,7 +217,7 @@ function check_for_po {
 }
 
 #
-# A helper function for generate_po_files and generate_md_files
+# A helper function for generate_pot_files and generate_md_files
 # because they both need to do the same thing.  That is, they both
 # need to strip the frontmatter, then add back in a pseudo "# Title"
 # line, where "Title" is read from the frontmatters "title: "

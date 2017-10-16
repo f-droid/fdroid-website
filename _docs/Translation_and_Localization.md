@@ -18,8 +18,8 @@ separately, based on technical requirements:
 * [_Repomaker_ web tool](https://hosted.weblate.org/projects/f-droid/repomaker)
 * [selected app descriptions](https://hosted.weblate.org/projects/f-droid/fdroiddata)
 * [f-droid.org website "chrome" strings](https://hosted.weblate.org/projects/f-droid/website)
-* [f-droid.org website blog posts](https://hosted.weblate.org/projects/f-droid/website-postsd/)
-* [f-droid.org website docs](https://hosted.weblate.org/projects/f-droid/website-docs)
+* [f-droid.org website blog posts](https://hosted.weblate.org/projects/f-droid/website-posts)
+* [f-droid.org website docs and pages](https://hosted.weblate.org/projects/f-droid/website-docs)
 
 If the upstream project's source repo includes app descriptions, then
 those will be automatically included as long as they use the
