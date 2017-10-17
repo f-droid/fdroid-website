@@ -47,7 +47,9 @@ well.
 
 ## fdroidserver
 
-1. pull in latest commits from Weblate into a local branch called
+1. Make sure its passing the
+   [tests on Ubuntu/trusty and OSX](https://travis-ci.org/f-droid/fdroidserver)
+2. pull in latest commits from Weblate into a local branch called
    _weblate_
 3. rebase the _weblate_ branch on the latest commits in _master_ of
    https://gitlab.com/fdroid/fdroidclient and fix any conflicts
