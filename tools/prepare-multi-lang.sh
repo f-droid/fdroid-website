@@ -98,7 +98,13 @@ if [ ! -f _config.yml ]; then
     exit 1
 fi
 
-if [[ $# == 0 || ! -d $1/en ]]; then
+if [[ $# == 0 ]]; then
+    echo "At least one argument required!"
+    exit 1
+fi
+
+if [ ! -d $1/en ]; then
+    echo "$1/en does not exist!"
     echo "First argument must be the directory of the Jekyll website."
     echo "This should take into account the baseurl as well. If the site"
     echo "is output to 'build/' and the baseurl is 'fdroid-website/' then"
