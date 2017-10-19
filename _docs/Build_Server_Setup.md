@@ -135,29 +135,6 @@ remote login and provisioning.
 There are three possible ways to get a debian base box for use with
 `./makebuildserver`/.
 
-
-#### Building a Debian base box from scratch
-
-Create one from scratch form verified standard Debian installation media.
-Documentation for creating a base box can be found at
-<https://www.vagrantup.com/docs/boxes/base.html>.
-
-In addition to carefully following the steps described there, you should
-consider the following:
-
-1.  It is advisable to disable udev network device persistence,
-    otherwise any movement of the VM between machines, or
-    reconfiguration, will result in broken networking.
-
-    For a Debian/Ubuntu default install, just
-    `touch /etc/udev/rules.d/75-persistent-net-generator.rules` to turn
-    off rule generation, and at the same time, get rid of any rules it’s
-    already created in `/etc/udev/rules.d/70-persistent-net.rules`.
-
-2.  Unless you want the VM to become totally inaccessible following a
-    failed boot, you need to set `GRUB_RECORDFAIL_TIMEOUT` to a value
-    other than -1 in `/etc/grub/default` and then run `update-grub`.
-
 #### Using the Debian provided vagrant boxes
 
 Use the prebuilt vagrant boxes built by the Debian team at
@@ -214,12 +191,27 @@ mv package.box ~/.cache/fdroidserver/jessie64.box
 vagrant box remove jessie64
 ```
 
-#### Using the F-Droid provided Debian box
+#### Building a Debian base box from scratch
 
-The `./makebuildserver` script will automatically download a prebuilt image
-from F-Droid. With this setup you have to completely trust the F-Droid
-maintainers and infrastructure, so using one of the above methods is preferred.
+Create one from scratch form verified standard Debian installation media.
+Documentation for creating a base box can be found at
+<https://www.vagrantup.com/docs/boxes/base.html>.
 
+In addition to carefully following the steps described there, you should
+consider the following:
+
+1.  It is advisable to disable udev network device persistence,
+    otherwise any movement of the VM between machines, or
+    reconfiguration, will result in broken networking.
+
+    For a Debian/Ubuntu default install, just
+    `touch /etc/udev/rules.d/75-persistent-net-generator.rules` to turn
+    off rule generation, and at the same time, get rid of any rules it’s
+    already created in `/etc/udev/rules.d/70-persistent-net.rules`.
+
+2.  Unless you want the VM to become totally inaccessible following a
+    failed boot, you need to set `GRUB_RECORDFAIL_TIMEOUT` to a value
+    other than -1 in `/etc/grub/default` and then run `update-grub`.
 
 ### Creating the F-Droid base box
 
