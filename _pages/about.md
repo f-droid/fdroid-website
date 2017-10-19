@@ -48,6 +48,7 @@ and is brought to you by at least the following people:
 * Tias Guns
 * Michael Haas
 * Stefan Handschuh
+* Marcus Hoffmann
 * Kees Hulberts
 * Ayron Jungren
 * João Fernando C. Júnior
