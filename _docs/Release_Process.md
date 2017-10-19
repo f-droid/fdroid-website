@@ -61,7 +61,7 @@ well.
 7. set `version=''` in _setup.py_
 8. add git signed tag named after the exact version name (no
    preceeding __v__), using the exact same string as `version=''`
-9. upload to pypi.python.org using `python3 setup.py sdist upload --sign`
+9. upload to pypi.python.org using `python3 setup.py release`
 10. update [Debian package](https://anonscm.debian.org/git/collab-maint/fdroidserver.git)
 11. upload to [F-Droid PPA](https://launchpad.net/~fdroid/+archive/ubuntu/fdroidserver)
 
