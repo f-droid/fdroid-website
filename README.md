@@ -41,7 +41,7 @@ run `bundle config --delete local.jekyll-fdroid`.
 If you want to have another values for `site.url` and `site.baseurl` (default: `localhost:4000` and `fdroid-website`) you can add the from git ignored config file `userconfig.yml` and run all jekyll commands with this additional parameter:
 
 ```
---config _config.yml userconfig.yml
+--config _config.yml,userconfig.yml
 ```
 
 ## License
