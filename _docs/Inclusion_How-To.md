@@ -220,6 +220,6 @@ External Links
 -   [F-Droid application submission queue on
     forum](https://f-droid.org/forums/forum/submission-queue/) (for
     following-up old submissions)
--   [fdroiddata GitLab repository](https://gitlab.com/fdroid/fdroidata/)
+-   [fdroiddata GitLab repository](https://gitlab.com/fdroid/fdroiddata/)
 -   [fdroiddata revision
     history](https://gitlab.com/fdroid/fdroiddata/commits/master)
