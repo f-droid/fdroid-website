@@ -6,7 +6,11 @@ layout: default
 
 <article class="package">
 	<header class="package-header">
+		{% if page.icon != "" and page.icon != nil %}
 		<img class="package-icon" src="{{ site.fdroid-repo }}/{{ page.icon }}" />
+		{% else %}
+		<img class="package-icon" src="{{ site.baseurl }}/assets/ic_repo_app_default.png " />
+		{% endif %}
 		<div class="package-title">
 			<h3 class="package-name">
 				{{ page.title }}
