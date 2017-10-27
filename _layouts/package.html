@@ -30,6 +30,18 @@ layout: default
 		{{ page.description }}
 	</div>
 	<ul class="package-links">
+		{% if page.author_email != "" and page.author_email != nil %}
+			<div class="package-link">
+			{{ strings.author }}:
+			<a href="mailto:{{ page.author_email }}?subject={{ site.title }}%20on%20{{ site.baseurl }}">
+			{% if page.author_name != "" and page.author_name != nil %}
+				{{ page.author_name }}
+			{% else %}
+				{{ page.author_email }}
+			{% endif %}
+			</a>
+			</div>
+		{% endif %}
 		<li class="package-link">
 			{{ strings.license }}:
 			<a href="{{ page.license|get_license_url }}">{{ page.license|get_license_name }}</a>
