@@ -3,7 +3,7 @@ layout: page
 title: Contribute
 permalink: /contribute/
 ---
-The project is entirely developed and maintained by volunteers. You can help in the following ways:
+The project is entirely developed and maintained by volunteers. You can help:
 
 ### Report Problems
 
@@ -23,17 +23,17 @@ If you have the technical skills required, you can also put together the relevan
 
 The same applies for helping to build newer versions of applications.
 
-Further information can be found in [the documentation](../docs), or by asking on IRC (#fdroid on freenode).
+Further information can be found in [the documentation](../docs), or by asking [on IRC](https://webchat.freenode.net/?channels=%23fdroid) (#fdroid on freenode).
 
 ### Translate
 
-The client application is available in many languages, but if yours is not included, or if it needs updating or improving, please create an account and use the [translation system](https://hosted.weblate.org/projects/f-droid/) to make your changes.
+The client application is available in many languages. Should yours not be among those, or be in need of updates or improvement, please create an account and use the [translation system](https://hosted.weblate.org/projects/f-droid/) to make your changes.
 
-Start with the overview of [Translation and Localization](../docs/Translation_and_Localization).  There’s also a [dedicated forum section](https://forum.f-droid.org/c/translation) for translation discussions.
+Start with the overview of [Translation and Localization](../docs/Translation_and_Localization).  There’s also a [dedicated forum section](https://forum.f-droid.org/c/translation) for translation related discussions.
 
 ### Help with Development
 
-There are four git repositories hosted at Gitlab –
+There are four git repositories hosted at GitLab –
 one for the [Android client application](https://gitlab.com/fdroid/fdroidclient),
 one for the [server tools](https://gitlab.com/fdroid/fdroidserver) for running a repository and building/installing applications locally,
 and one for the associated [metadata files for applications in the main F-Droid repository](https://gitlab.com/fdroid/fdroiddata).
