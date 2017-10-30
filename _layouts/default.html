@@ -3,7 +3,7 @@
 <html lang="en">
 {% else %}
  {% if site.active_lang == "ar" or site.active_lang == "fa" or site.active_lang == "he" %}
-<html lang="{{site.active_lang}}" dir="auto">
+<html lang="{{site.active_lang}}" dir="rtl">
  {% else %}
 <html lang="{{site.active_lang}}">
  {% endif %}
@@ -19,7 +19,11 @@
 
       <div class="main-content">
 
+{% if site.active_lang == "ar" or site.active_lang == "fa" or site.active_lang == "he" %}
+        <div class="article-area" dir="auto">
+{% else %}
         <div class="article-area">
+{% endif %}
           {{ content }}
         </div>
 
