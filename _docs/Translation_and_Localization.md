@@ -88,3 +88,8 @@ added to f-droid.org, it must have:
 * ["chrome" strings](https://hosted.weblate.org/projects/f-droid/website) 100% translated
 * About and Contribute pages in [website docs](https://hosted.weblate.org/projects/f-droid/website-docs) 100% translated
 * 10 apps in [_fdroiddata_](https://hosted.weblate.org/projects/f-droid/fdroiddata) 100% translated
+
+There is a [nightly build of the website](https://staging.f-droid.org)
+that includes all translations on Weblate, no matter how complete they
+are. This lets everyone see the progress, and means we can get new
+languages working well before launching them.
