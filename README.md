@@ -53,3 +53,26 @@ Specifically you can redistribute and/or modify it under the terms of the
 as published by the Free Software Foundation,
 either version 3 of the License,
 or (at your option) any later version.
+
+
+## Translation
+
+Everything on this website can be translated.  See
+[Translation and Localization](https://f-droid.org/docs/Translation_and_Localization)
+for more info.  The [staging site](https://staging.f-droid.org)
+includes all translations, whether they are complete or not.
+
+### chrome strings
+
+[![chrome translation status](https://hosted.weblate.org/widgets/f-droid/-/website/multi-auto.svg)](https://hosted.weblate.org/engage/f-droid/?utm_source=widget)
+
+
+### documentation and pages
+
+[![docs translation status](https://hosted.weblate.org/widgets/f-droid/-/website-docs/multi-auto.svg)](https://hosted.weblate.org/engage/f-droid/?utm_source=widget)
+
+
+### blog posts
+
+[![posts translation status](https://hosted.weblate.org/widgets/f-droid/-/website-posts/multi-auto.svg)](https://hosted.weblate.org/engage/f-droid/?utm_source=widget)
+
