@@ -5,14 +5,12 @@ layout: default
 {% assign strings = site.data.strings.package %}
 
 <article class="package">
-	{% if page.feature_graphic %}
-		<img
-			class="feature-graphic"
-			src="{{ site.fdroid-repo}}/{{ page.package_name }}/{{ page.feature_graphic }}" />
-	{% endif %}
-
 	<header class="package-header">
+		{% if page.icon != "" and page.icon != nil %}
 		<img class="package-icon" src="{{ site.fdroid-repo }}/{{ page.icon }}" />
+		{% else %}
+		<img class="package-icon" src="{{ site.baseurl }}/assets/ic_repo_app_default.png " />
+		{% endif %}
 		<div class="package-title">
 			<h3 class="package-name">
 				{{ page.title }}
@@ -32,6 +30,18 @@ layout: default
 		{{ page.description }}
 	</div>
 	<ul class="package-links">
+		{% if page.author_email != "" and page.author_email != nil %}
+			<div class="package-link">
+			{{ strings.author }}:
+			<a href="mailto:{{ page.author_email }}?subject={{ site.title }}%20on%20{{ site.baseurl }}">
+			{% if page.author_name != "" and page.author_name != nil %}
+				{{ page.author_name }}
+			{% else %}
+				{{ page.author_email }}
+			{% endif %}
+			</a>
+			</div>
+		{% endif %}
 		<li class="package-link">
 			{{ strings.license }}:
 			<a href="{{ page.license|get_license_url }}">{{ page.license|get_license_name }}</a>
@@ -66,6 +76,9 @@ layout: default
 				<a href="https://flattr.com/thing/{{ page.flattr }}">{{ strings.flattr }}</a>
 			</li>
 		{% endif %}
+		<li class="package-link">
+			<a href="https://gitlab.com/fdroid/fdroiddata/tree/master/metadata/{{ page.package_name }}.txt">{{ strings.build_metadata }}</a>
+		</li>
 		<li class="package-link">
 			<a href="https://f-droid.org/wiki/page/{{page.package_name}}">{{ strings.technical_info }}</a>
 		</li>
@@ -106,6 +119,8 @@ https://github.com/untra/polyglot/issues/79 -->
 					Use YYYY-MM-DD format, because it is more internationalizable than versions which include English month names.
 					{% endcomment %}
 					{% assign package_added_date = package.added | date: '%F' %}
+                                        <a name="{{ package.version_name }}"></a>
+                                        <a name="{{ package.version_code }}"></a>
 					{{ strings.version_info | replace: '[package_version]', package.version_name | replace: '[package_version_code]', package.version_code | replace: '[package_added_date]', package_added_date }}
 				</div>
 				<p class="package-version-requirement">
@@ -114,8 +129,8 @@ https://github.com/untra/polyglot/issues/79 -->
 				</p>
 
 				<p class="package-version-source">
-					{% if package.srcName != "" and package.srcName != nil %}
-						{% assign source_code_url = site.fdroid-repo | append: '/' | append: package.srcName %}
+					{% if package.srcname != "" and package.srcname != nil %}
+						{% assign source_code_url = site.fdroid-repo | append: '/' | append: package.srcname %}
 						{{ strings.signed_by_fdroid | replace: '[source_code_url]', source_code_url }}
 					{% else %}
 						{{ strings.signed_by_developer }}
