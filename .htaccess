@@ -28,6 +28,20 @@ AddOutputFilterByType DEFLATE image/svg+xml
 AddOutputFilterByType DEFLATE application/svg+xml
 
 
+# cache all files without checking until max-age, after that, the
+# browser check the ETag value to see whether it needs to redownload
+
+# 12 hours
+<FilesMatch "\.(css|gif|jpg|jpeg|js|json|png|svg|txt|xml)$">
+  Header set Cache-Control "max-age=43200, public"
+</FilesMatch>
+
+# 10 minutes
+<FilesMatch "\.html$">
+  Header set Cache-Control "max-age=600, public"
+</FilesMatch>
+
+
 
 RewriteEngine On
 
