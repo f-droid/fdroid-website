@@ -63,7 +63,9 @@ test:
       - public
   script:
    - *setup_for_jekyll
-   - sed -i "s/^\(languages. \).*/\1[ bo, en, fa, zh_Hans ]/" _config.yml
+   # use the 'gitlab ci' subset of languages
+   - sed -i 's,^languages:,ignored_languages:,' _config.yml
+   - sed -i 's,^gitlab_ci_languages:,languages:,' _config.yml
    - ./tools/check-format-strings.py
    # This is where GitLab pages will deploy to by default (e.g. "https://fdroid.gitlab.io/fdroid-website")
    # so we need to make sure that the Jekyll configuration understands this.
