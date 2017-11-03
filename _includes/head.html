@@ -18,6 +18,8 @@
 {% if lang == site.default_lang or lang == '_' %}
   {% continue %}
 {% endif %}
-  <link rel="alternate" hreflang="{{lang}}" href="{{site.baseurl}}/{{lang}}{{page.permalink}}" />
+  {% if site.baseurl == '' %}
+  <link rel="alternate" hreflang="{{lang}}" href="/{{ lang }}{{ page.permalink }}" />
+  {% endif %}
 {% endfor %}
 </head>
