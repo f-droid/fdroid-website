@@ -12,7 +12,7 @@ variables:
 .setup_for_jekyll: &setup_for_jekyll |
   ruby -v
   apt-get update
-  apt-get install -y locales zlib1g-dev gettext po4a linkchecker bundler unzip python3 rsync
+  apt-get install -y locales zlib1g-dev gettext po4a linkchecker bundler unzip python3 rsync python3-babel
   echo "en_US UTF-8" > /etc/locale.gen
   locale-gen en_US.UTF-8
   export LANG=en_US.UTF-8
@@ -67,6 +67,7 @@ test:
    - sed -i 's,^languages:,ignored_languages:,' _config.yml
    - sed -i 's,^gitlab_ci_languages:,languages:,' _config.yml
    - ./tools/check-format-strings.py
+   - ./tools/check-page-links.py
    # This is where GitLab pages will deploy to by default (e.g. "https://fdroid.gitlab.io/fdroid-website")
    # so we need to make sure that the Jekyll configuration understands this.
    - 'echo url: https://$CI_PROJECT_NAMESPACE.gitlab.io > userconfig.yml'
