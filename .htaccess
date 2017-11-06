@@ -1,3 +1,47 @@
+# using BREACH, CRIME, and other attacks, network observers can tell
+# what pages people are looking at, and even the contents.  Since this
+# site mostly includes public content and no CSRF strings, our
+# concerns are much more limited:
+#
+#  * wiki username/password and related cookies
+#  * which app someone is looking at
+#
+# https://blog.qualys.com/ssllabs/2013/08/07/defending-against-the-breach-attack
+# https://security.stackexchange.com/questions/102013/is-gzipping-content-via-tls-allowed
+
+AddOutputFilterByType DEFLATE text/css
+
+# DO NOT enable this until all logins are removed, e.g. https://f-droid.org/wiki
+# AddOutputFilterByType DEFLATE text/html
+
+AddOutputFilterByType DEFLATE text/xml
+AddOutputFilterByType DEFLATE application/xml
+AddOutputFilterByType DEFLATE application/xhtml+xml
+AddOutputFilterByType DEFLATE application/rss+xml
+
+AddOutputFilterByType DEFLATE text/x-json
+AddOutputFilterByType DEFLATE application/json
+AddOutputFilterByType DEFLATE application/javascript
+AddOutputFilterByType DEFLATE application/x-javascript
+
+AddOutputFilterByType DEFLATE image/svg+xml
+AddOutputFilterByType DEFLATE application/svg+xml
+
+
+# cache all files without checking until max-age, after that, the
+# browser check the ETag value to see whether it needs to redownload
+
+# 12 hours
+<FilesMatch "\.(css|gif|jpg|jpeg|js|json|png|svg|txt|xml)$">
+  Header set Cache-Control "max-age=43200, public"
+</FilesMatch>
+
+# 10 minutes
+<FilesMatch "\.html$">
+  Header set Cache-Control "max-age=600, public"
+</FilesMatch>
+
+
 
 RewriteEngine On
 
