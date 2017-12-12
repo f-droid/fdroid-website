@@ -11,6 +11,8 @@ when apps are added via [build metadata](../Build_Metadata_Reference) as well as
 including pre-built files in a simple repository.  There
 are three paths to including app store content for apps:
 
+
+
 * Do not remove this line (it will not be displayed)
 {:toc}
 
@@ -55,7 +57,6 @@ file a
 or [issue](https://gitlab.com/fdroid/fdroiddata/issues) to remove
 _Summary_ and _Description_ from the app's metadata file.
 
-
 ## In the app's build metadata in an _fdroiddata_ collection
 
 All the app store materials can also be added to any _fdroiddata_
@@ -94,6 +95,22 @@ by `fdroid update`.
               └── wearScreenshots/
                   └── *.png
 ```
+
+Example:
+
+* .../ToGoZip/app/...
+  * the sourcecode for the android app ToGoZip
+* [.../ToGoZip/fastlane/metadata/android/en-US/full_description.txt](https://github.com/k3b/ToGoZip/blob/master/fastlane/metadata/android/en-US/full_description.txt)
+  * contains the (us-) english description of the app ToGoZip.
+* [.../ToGoZip/fastlane/metadata/android/de-DE/full_description.txt](https://github.com/k3b/ToGoZip/blob/master/fastlane/metadata/android/de-DE/full_description.txt)
+  * contains the german description of the app ToGoZip.
+* [.../ToGoZip/fastlane/metadata/android/en-US/changelogs/9.txt](https://github.com/k3b/ToGoZip/blob/master/fastlane/metadata/android/en-US/changelogs/9.txt)
+  * contains description of the changes made in versionCode **9**
+  * in fdroid app this will be shown above the app description
+* .../ToGoZip/fastlane/metadata/android/en-US/images/featureGraphic.png 
+  * this image will be shown on top of the fdroid-s app description
+* .../ToGoZip/fastlane/metadata/android/en-US/images/phoneScreenshots/....
+  * images in this folder will be shown below the fdroid-s app description
 
 ## Directly in the F-Droid repo
 
