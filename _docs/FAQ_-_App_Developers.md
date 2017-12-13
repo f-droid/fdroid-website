@@ -66,9 +66,9 @@ that most users will probably access this straight from the F-Droid
 client on an Android device. You should also have this information
 accessible from within your application.
 
-We have fields in our metadata for Bitcoin and Flattr donations. Be sure
-to contact us if there is a change to the Bitcoin address or if you stop
-accepting it; if you accept new methods you can contact us about that
+We have fields in our metadata for Bitcoin, Litecoin, Flattr and Liberapay
+donations. Be sure to contact us if there is a change to any of those or if
+you stop accepting them; if you accept new methods you can contact us about that
 too.
 
 If your app is in our repo but we are missing any of the above
@@ -340,9 +340,9 @@ proprietary, balance the loss and confusion to the users and maintainers
 of the free app against the feeling of justice that you'll get by seeing
 those illegal clones lose the few cents in ad revenue that they would
 have got. In the longer run we want to improve donations via F-Droid so
-you can be supported financially and we already support Flattr and
-Bitcoin as well as any other payment method that you can suggest via a
-website.
+you can be supported financially and we already support Bitecoin, Litecoin,
+Flattr and Liberapay as well as any other payment method that you can suggest
+via a website.
 
 
 ### How is the F-Droid client git workflow structured?

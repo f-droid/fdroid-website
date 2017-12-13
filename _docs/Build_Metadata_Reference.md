@@ -61,6 +61,7 @@ The following sections describe the fields recognised within the file.
 - [Changelog](#Changelog)
 - [Donate](#Donate)
 - [FlattrID](#FlattrID)
+- [LiberapayID](#LiberapayID)
 - [Bitcoin](#Bitcoin)
 - [Litecoin](#Litecoin)
 - [Summary](#Summary)
@@ -254,7 +255,7 @@ This is converted to (`<donate>`) in the XML file (_index.xml_).
 ### 7.13 FlattrID<a name="FlattrID"></a>
 
 
-The project’s Flattr (http://flattr.com) ID, if it has one. This should
+The project’s Flattr (https://flattr.com) ID, if it has one. This should
 be a numeric ID, such that (for example) https://flattr.com/thing/xxxx
 leads directly to the page to donate to the project.
 
@@ -262,7 +263,18 @@ This is converted to (`<flattr>`) in the XML file (_index.xml_).
 
 
 
-### 7.14 Bitcoin<a name="Bitcoin"></a>
+### 7.14 LiberapayID<a name="LiberapayID"></a>
+
+
+The project’s Liberapay (https://liberapay.com) ID, if it has one. This should
+be a numeric ID, such that (for example) https://liberapay.com/~xxxxx
+which redirects to your account page.
+
+This is converted to (`<liberapay>`) in the XML file (_index.xml_).
+
+
+
+### 7.15 Bitcoin<a name="Bitcoin"></a>
 
 
 A bitcoin address for donating to the project.
@@ -271,7 +283,7 @@ This is converted to (`<bitcoin>`) in the XML file (_index.xml_).
 
 
 
-### 7.15 Litecoin<a name="Litecoin"></a>
+### 7.16 Litecoin<a name="Litecoin"></a>
 
 
 A litecoin address for donating to the project.
@@ -280,7 +292,7 @@ This is converted to (`<litecoin>`) in the XML file (_index.xml_).
 
 
 
-### 7.16 Summary<a name="Summary"></a>
+### 7.17 Summary<a name="Summary"></a>
 
 A brief summary of what the application is. Since the summary is only
 allowed one line on the list of the F-Droid client, keeping it to within
@@ -293,7 +305,7 @@ This is converted to (`<summary>`) in the XML file (_index.xml_).
 
 
 
-### 7.17 Description<a name="Description"></a>
+### 7.18 Description<a name="Description"></a>
 
 A full description of the application, relevant to the latest version.
 This can span multiple lines (which should be kept to a maximum of 80
@@ -330,7 +342,7 @@ This is converted to (`<desc>`) in the XML file (_index.xml_).
 
 
 
-### 7.18 Maintainer Notes<a name="Maintainer-Notes"></a>
+### 7.19 Maintainer Notes<a name="Maintainer-Notes"></a>
 
 
 This is a multi-line field using the same rules and syntax as the
@@ -341,7 +353,7 @@ This information is also published to the wiki.
 
 
 
-### 7.19 Repo Type<a name="Repo-Type"></a>
+### 7.20 Repo Type<a name="Repo-Type"></a>
 
 
 The type of repository - for automatic building from source. If this is
@@ -357,7 +369,7 @@ Possible values are:
 
 
 
-### 7.20 Repo<a name="Repo"></a>
+### 7.21 Repo<a name="Repo"></a>
 
 
 The repository location. Usually a git: or svn: URL, for example.
@@ -381,7 +393,7 @@ and you want to use this srclib, then you have to set Repo to `FooBar`.
 
 
 
-### 7.21 Binaries<a name="Binaries"></a>
+### 7.22 Binaries<a name="Binaries"></a>
 
 
 The location of binaries used in verification process.
@@ -396,7 +408,7 @@ F-Droid will use upstream binaries if the verification succeeded.
 
 
 
-### 7.22 Build<a name="Build"></a>
+### 7.23 Build<a name="Build"></a>
 
 
 Any number of these fields can be present, each specifying a version to
@@ -748,7 +760,7 @@ Another example, using extra parameters:
 
 
 
-### 7.23 AntiFeatures<a name="AntiFeatures"></a>
+### 7.24 AntiFeatures<a name="AntiFeatures"></a>
 
 
 This is optional - if present, it contains a comma-separated list of any
@@ -785,7 +797,7 @@ This is converted to (`<antifeatures>`) in the XML file (_index.xml_).
 
 
 
-### 7.24 Disabled<a name="Disabled"></a>
+### 7.25 Disabled<a name="Disabled"></a>
 
 
 If this field is present, the application does not get put into the
@@ -799,7 +811,7 @@ retained.
 
 
 
-### 7.25 Requires Root<a name="Requires-Root"></a>
+### 7.26 Requires Root<a name="Requires-Root"></a>
 
 
 Set this optional field to "Yes" if the application requires root
@@ -812,7 +824,7 @@ This is converted to (`<requirements>`) in the XML file (_index.xml_).
 
 
 
-### 7.26 Archive Policy<a name="Archive-Policy"></a>
+### 7.27 Archive Policy<a name="Archive-Policy"></a>
 
 
 This determines the policy for moving old versions of an app to the
@@ -826,7 +838,7 @@ number of versions to keep. Defaults to "3 versions".
 
 
 
-### 7.27 Update Check Mode<a name="Update-Check-Mode"></a>
+### 7.28 Update Check Mode<a name="Update-Check-Mode"></a>
 
 
 This determines the method using for determining when new releases are
@@ -915,7 +927,7 @@ Valid modes are:
 
 
 
-### 7.28 Vercode Operation<a name="Vercode-Operation"></a>
+### 7.29 Vercode Operation<a name="Vercode-Operation"></a>
 
 
 Operation to be applied to the vercode obtained by the defined
@@ -930,7 +942,7 @@ upstream version.
 
 
 
-### 7.29 Update Check Ignore<a name="Update-Check-Ignore"></a>
+### 7.30 Update Check Ignore<a name="Update-Check-Ignore"></a>
 
 
 When checking for updates (via `Update Check Mode`) this can be used to
@@ -940,7 +952,7 @@ version names that include that text.
 
 
 
-### 7.30 Update Check Name<a name="Update-Check-Name"></a>
+### 7.31 Update Check Name<a name="Update-Check-Name"></a>
 
 
 When checking for updates (via `Update Check Mode`) this can be used to
@@ -954,14 +966,14 @@ build.gradle file does not contain the package name.
 
 
 
-### 7.31 Update Check Data<a name="Update-Check-Data"></a>
+### 7.32 Update Check Data<a name="Update-Check-Data"></a>
 
 
 Used in conjunction with `Update Check Mode` for certain modes.
 
 
 
-### 7.32 Auto Update Mode<a name="Auto-Update-Mode"></a>
+### 7.33 Auto Update Mode<a name="Auto-Update-Mode"></a>
 
 
 This determines the method using for auto-generating new builds when new
@@ -990,7 +1002,7 @@ Valid modes are:
 
 
 
-### 7.33 Current Version<a name="Current-Version"></a>
+### 7.34 Current Version<a name="Current-Version"></a>
 
 
 The [name of the version](https://developer.android.com/guide/topics/manifest/manifest-element.html#vname) that is the recommended release. There may be newer versions of
@@ -1008,7 +1020,7 @@ This is converted to (`<marketversion>`) in the XML file (_index.xml_).
 
 
 
-### 7.34 Current Version Code<a name="Current-Version-Code"></a>
+### 7.35 Current Version Code<a name="Current-Version-Code"></a>
 
 
 The [version code](https://developer.android.com/guide/topics/manifest/manifest-element.html#vcode) corresponding to the [Current Version](#Current-Version) field. Both these
@@ -1026,7 +1038,7 @@ This is converted to (`<marketvercode>`) in the XML file (_index.xml_).
 
 
 
-### 7.35 No Source Since<a name="No-Source-Since"></a>
+### 7.36 No Source Since<a name="No-Source-Since"></a>
 
 
 In case we are missing the source code for the Current Version reported
