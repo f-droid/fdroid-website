@@ -134,13 +134,14 @@ how to install _fdroidserver_ into a Python "virtual
 env":
 
 ```bash
-git clone https://gitlab.com/fdroid/fdroidserver.git
-cd fdroidserver
-virtualenv env/  # pyvenv also works
-. env/bin/activate
-pip3 install -e .
-python3 setup.py install
+pyvenv fdroidserver-env
+. fdroidserver-env/bin/activate
+pip3 install fdroidserver
 ```
+
+You can find variations on this used in the CI tests:
+https://gitlab.com/fdroid/fdroidserver/blob/master/.gitlab-ci.yml
+
 
 ## Building apps
 
