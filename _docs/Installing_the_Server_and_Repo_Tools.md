@@ -10,9 +10,10 @@ build server, and even host your own website like f-droid.org. The
 F-Droid developers mostly work on Debian, Arch, and Ubuntu, so those are
 currently the best supported platforms.
 
-In order to setup and maintain your own collection of apps and media,
-you need to setup an F-Droid repository using the tools from
-*fdroidserver*.
+To setup and maintain your own collection of apps and media from the
+command line, setup an F-Droid repository using the tools from
+_fdroidserver_.  To run the full F-Droid build server setup, see
+[Build Server Setup](../Build_Server_Setup).
 
 * Do not remove this line (it will not be displayed)
 {:toc}
