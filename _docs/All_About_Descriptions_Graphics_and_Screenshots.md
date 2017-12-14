@@ -21,6 +21,13 @@ There are two data formats:
 * descriptive materials in plain text or HTML
 * graphics and screenshots as PNG or JPEG files
 
+One important detail: dangerous and unneeded metadata is stripped from
+image files before they are included in the repo.  For example, JPEG
+EXIF data has
+[security issues](https://threatpost.com/google-shuts-down-potentially-massive-android-bug/120393/),
+and it is not needed to display images.  This can also mean that the
+images are recompressed.
+
 
 ## In the app's source repository
 

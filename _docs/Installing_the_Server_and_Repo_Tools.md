@@ -10,9 +10,10 @@ build server, and even host your own website like f-droid.org. The
 F-Droid developers mostly work on Debian, Arch, and Ubuntu, so those are
 currently the best supported platforms.
 
-In order to setup and maintain your own collection of apps and media,
-you need to setup an F-Droid repository using the tools from
-*fdroidserver*.
+To setup and maintain your own collection of apps and media from the
+command line, setup an F-Droid repository using the tools from
+_fdroidserver_.  To run the full F-Droid build server setup, see
+[Build Server Setup](../Build_Server_Setup).
 
 * Do not remove this line (it will not be displayed)
 {:toc}
@@ -134,13 +135,14 @@ how to install _fdroidserver_ into a Python "virtual
 env":
 
 ```bash
-git clone https://gitlab.com/fdroid/fdroidserver.git
-cd fdroidserver
-virtualenv env/  # pyvenv also works
-. env/bin/activate
-pip3 install -e .
-python3 setup.py install
+pyvenv fdroidserver-env
+. fdroidserver-env/bin/activate
+pip3 install fdroidserver
 ```
+
+You can find variations on this used in the CI tests:
+https://gitlab.com/fdroid/fdroidserver/blob/master/.gitlab-ci.yml
+
 
 ## Building apps
 
