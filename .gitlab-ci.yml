@@ -1,7 +1,7 @@
 image: ruby:2.3
 
 stages:
- - test
+ - deploy
  - production
 
 variables:
@@ -56,14 +56,15 @@ f-droid.org:
    - ./tools/deploy-external-assets.sh $OUT_DIR
    - rsync -ax --delete $OUT_DIR /builds/output/
 
-test:
-  stage: test
+pages:
+  stage: deploy
   cache:
     paths:
       - vendor/ruby
   artifacts:
     paths:
       - public
+    expire_in: 1w
   script:
    - *setup_for_jekyll
    # use the 'gitlab ci' subset of languages
