@@ -38,6 +38,9 @@ variables:
 #
 f-droid.org:
   stage: production
+  only:
+    - tags@fdroid/fdroidserver
+    - master@fdroid/fdroidserver
   when: manual
   cache:
     paths: [ vendor/ruby ]
