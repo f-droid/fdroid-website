@@ -51,7 +51,7 @@ the main repository.
 * [Build Server Setup](Build_Server_Setup) How to setup the complete f-droid.org build setup on your own machine.
 * [Signing Process](Signing_Process) How to setup cryptographic signatures with F-Droid tools
 * [Reproducible Builds](Reproducible_Builds) How to use the F-Droid tools to make reproducible builds easy.
-
+* [Building a Signing Server](Building_a_Signing_Server) For higher security, isolate the signing keys from the rest.
 * [Verification Server](Verification_Server) Setting up a server to verify app builds are correct.
 * [Whitelabel Builds](Whitelabel_Builds) custom builds of F-Droid
 * [Privileged Extension](https://gitlab.com/fdroid/privileged-extension/#f-droid-privileged-extension) How to use F-Droid Privileged Extension as a user and rom developer
