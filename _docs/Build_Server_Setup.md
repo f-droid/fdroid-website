@@ -132,8 +132,8 @@ the guest would fail.
 The output of this step is a minimal Debian VM that has support for
 remote login and provisioning.
 
-There are three possible ways to get a debian base box for use with
-`./makebuildserver`/.
+There are two possible ways to get a debian base box for use with
+`./makebuildserver`.
 
 #### Using the Debian provided vagrant boxes
 
