@@ -62,18 +62,18 @@ main project that has the _.gitlab-ci-yml_.
    _debug.keystore_, so protect it accordingly!
 
 2. Create a new GitLab "project" by appending _-nightly_ to the
-   name. For example, https://gitlab.com/fdroid/fdroidclient becomes
-   https://gitlab.com/fdroid/fdroidclient-nightly and
-   https://gitlab.com/eighthave/fdroidclient becomes
-   https://gitlab.com/eighthave/fdroidclient-nightly
+   name. For example, <https://gitlab.com/fdroid/fdroidclient> becomes
+   <https://gitlab.com/fdroid/fdroidclient-nightly> and
+   <https://gitlab.com/eighthave/fdroidclient> becomes
+   <https://gitlab.com/eighthave/fdroidclient-nightly>
 
 3. In that new project, add the SSH Public Key derived from your
    _debug.keystore_ as a Deploy Key in your Repository Settings, e.g.
-   https://gitlab.com/eighthave/fdroidclient-nightly/settings/repository
+   `https://gitlab.com/eighthave/fdroidclient-nightly/settings/repository`
 
 4. In the CI/CD Settings of the project being built, paste that into
    GitLab CI Secret Variable called `DEBUG_KEYSTORE`, e.g.
-   https://gitlab.com/eighthave/fdroidclient/settings/ci_cd
+   `https://gitlab.com/eighthave/fdroidclient/settings/ci_cd`
 
 5. Then in that same page, in the Protected section, set up your
    _master_ branch to limit the possibility of leaking the
@@ -100,8 +100,8 @@ deploy_nightly:
 ```
 
 For a real world example using _gitlab-ci_, see _fdroidclient_:
-* https://gitlab.com/fdroid/fdroidclient-nightly
-* https://gitlab.com/fdroid/fdroidclient/blob/master/.gitlab-ci.yml
+* <https://gitlab.com/fdroid/fdroidclient-nightly>
+* <https://gitlab.com/fdroid/fdroidclient/blob/master/.gitlab-ci.yml>
 
 
 ## Configuring for GitHub and Travis CI
@@ -114,8 +114,9 @@ For a real world example using _gitlab-ci_, see _fdroidclient_:
    `DEBUG_KEYSTORE`.  Careful!  That text is the entire
    _debug.keystore_, so protect it accordingly!
 
-2. Set a GitHub Deploy Key for https://github.com/zom/zom-android-nightly:
-  https://github.com/zom/zom-android-nightly/settings/keys
+2. Set a GitHub Deploy Key for
+  `https://github.com/zom/zom-android-nightly` by going to
+  `https://github.com/zom/zom-android-nightly/settings/keys`
 
 3. check _Allow write access_
 
@@ -151,6 +152,6 @@ after_success:
 ```
 
 For a real world example, see _Zom_:
-* https://github.com/zom/Zom-Android-nightly
-* https://github.com/zom/Zom-Android/blob/master/.travis.yml
-* https://travis-ci.org/zom/Zom-Android
+* <https://github.com/zom/Zom-Android-nightly>
+* <https://github.com/zom/Zom-Android/blob/master/.travis.yml>
+* <https://travis-ci.org/zom/Zom-Android>

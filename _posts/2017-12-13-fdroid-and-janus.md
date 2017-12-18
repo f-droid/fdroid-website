@@ -14,15 +14,15 @@ action to keep it far away.
   <img width="300" height="282" src="{{ site.baseurl }}/assets/posts/2017-12-13-fdroid-and-janus/janus.png" />
 </p>
 
-First off, https://f-droid.org, https://guardianproject.info/fdroid
-and https://apt.izzysoft.de/fdroid were scanned for possible Janus
-exploits and none were found.  _f-droid.org_'s greatest protection
-against malware is the requirement that everything must be built from
-source, humans review all apps that are added, and a source tarball
-for each build is stored forever.  Exploit writers do not want to give
-away the source code to their malware nor have their activities
-permanently logged in _git_, so this process keeps them away.  No
-malware has been found in _f-droid.org_ in its 7 years of operation.
+First off, _f-droid.org_, _guardianproject.info/fdroid_ and
+_apt.izzysoft.de/fdroid_ were scanned for possible Janus exploits and
+none were found.  _f-droid.org_'s greatest protection against malware
+is the requirement that everything must be built from source, humans
+review all apps that are added, and a source tarball for each build is
+stored forever.  Exploit writers do not want to give away the source
+code to their malware nor have their activities permanently logged in
+_git_, so this process keeps them away.  No malware has been found in
+_f-droid.org_ in its 7 years of operation.
 
 F-Droid is also an open ecosystem, that means many people are getting
 apps from other sources.  For that reason, we are working to add Janus

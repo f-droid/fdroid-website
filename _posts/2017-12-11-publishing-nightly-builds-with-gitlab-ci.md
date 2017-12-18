@@ -19,8 +19,8 @@ own GitLab/GitHub git repo, where any F-Droid client can access it.
 Learn how to set this up for your app by reading
 [Publishing Nightly Builds]({{ site.baseurl }}/docs/Publishing_Nightly_Builds).
 See it in action in _fdroidclient_:
-* https://gitlab.com/fdroid/fdroidclient-nightly
-* https://gitlab.com/fdroid/fdroidclient/blob/5f26a785/.gitlab-ci.yml
+* <https://gitlab.com/fdroid/fdroidclient-nightly>
+* <https://gitlab.com/fdroid/fdroidclient/blob/5f26a785/.gitlab-ci.yml>
 
 With F-Droid [Update Channels]({{ site.baseurl
 }}/2017/06/01/announcing-new-libraries-f-droid-update-channels.html),
