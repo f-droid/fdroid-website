@@ -109,10 +109,10 @@ To be extra careful, all of the software used should be verified.
 Chromebooks are nice, cheap laptops that run Linux natively.  They
 also use Coreboot for the BIOS.
 
-# Buy a computer off the shelf with cash, avoid having it shipped, especially across borders
-# Buy a Debian-supported [Chromebook](https://www.chromium.org/chromium-os/developer-information-for-chrome-os-devices/acer-c720-chromebook) with removeable WiFi hardware, and needs no binary blobs
-# Install a reproducibly built coreboot binary
-# Install from a reproducibly built Debian image, wiping out Chrome OS entirely
+* Buy a computer off the shelf with cash, avoid having it shipped, especially across borders
+* Buy a Debian-supported [Chromebook](https://www.chromium.org/chromium-os/developer-information-for-chrome-os-devices/acer-c720-chromebook) with removeable WiFi hardware, and needs no binary blobs
+* Install a reproducibly built coreboot binary
+* Install from a reproducibly built Debian image, wiping out Chrome OS entirely
   
 
 ## The Physical Environment
