@@ -8,7 +8,18 @@ F-Droid is a robot with a passion for Free and Open Source (FOSS) software on th
 
 F-Droid is operated by F-Droid Limited, a non-profit organisation registered in England (no. 8420676).
 
-You can discuss F-Droid or get help on IRC in the [#fdroid channel](https://webchat.freenode.net/?channels=%23fdroid) on freenode. The discussions on IRC are logged on [BotBot.me](https://botbot.me/freenode/fdroid). You can also directly contact us by email at [team@f-droid.org](mailto:team@f-droid.org). If you want to help, you can [join us]({{ "/contribute/" | prepend: site.baseurl }}).
+#### Contact
+
+You can discuss F-Droid or get help on the
+[forum](https://forum.f-droid.org) and IRC in the
+[#fdroid channel](https://webchat.freenode.net/?channels=%23fdroid) on
+freenode. The discussions on IRC are logged on
+[BotBot.me](https://botbot.me/freenode/fdroid).  You can send email at
+[team@f-droid.org](mailto:team@f-droid.org), but messages are much
+more likely to be answered on the forum or #fdroid channel. If you
+want to help, you can [join us]({{ "/contribute/" | prepend:
+site.baseurl }}).
+
 
 ### License
 
@@ -23,6 +34,7 @@ You can discuss F-Droid or get help on IRC in the [#fdroid channel](https://webc
 F-Droid is a non-profit [volunteer]({{ "/contribute/" | prepend: site.baseurl }}) project. Although every effort is made to ensure that everything in the repository is safe to install, you use it AT YOUR OWN RISK. Wherever possible, applications in the repository are built from source, and that source code is checked for potential security or privacy issues. This checking is far from exhaustive though, and there are no guarantees.
 
 F-Droid respects your privacy. We don’t track you, or your device. We don’t track what you install. You don’t need an account to use the client, and it sends no additional identifying data when talking to our web server other than its version number. We don’t even allow you to install other applications from the repository that track you, unless you first enable ‘Tracking’ in the AntiFeatures section of preferences. Any personal data you decide to give us (e.g. your email address when registering for an account to post on the forum) goes no further than us, and will not be used for anything other than allowing you to maintain your account.
+
 
 ### Contributors
 

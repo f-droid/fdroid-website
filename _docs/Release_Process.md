@@ -74,7 +74,7 @@ well.
    `./tools/remove-unused-and-blank-translations.py` and commit
    changes
 3. rebase the _weblate_ branch on the latest commits in _master_ of
-   https://gitlab.com/fdroid/fdroidclient and fix any conflicts
+   https://gitlab.com/fdroid/privileged-extension and fix any conflicts
 4. push local _weblate_ branch to your fork create a merge request,
    and tag it with the _localization_ label
 5. make sure all tests pass before merging
@@ -90,3 +90,31 @@ well.
 12. The APK should auto-update based on the signing tag.  Double-check
     that in that
     [metadata file](https://gitlab.com/fdroid/fdroiddata/blob/master/metadata/org.fdroid.fdroid.privileged.txt)
+
+
+## fdroid-website
+
+1. pull in latest commits from Weblate into a local branch called
+   _weblate_
+2. run `./tools/check-format-strings.py`,
+   `./tools/check-page-links.py`, and
+   `./tools/remove-unused-strings.py` and commit changes
+3. rebase the _weblate_ branch on the latest commits in _master_ of
+   https://gitlab.com/fdroid/fdroid-website and fix any conflicts
+4. push local _weblate_ branch to your fork create a merge request,
+   and tag it with the _localization_ label
+5. make sure all tests pass before merging
+6. once the _weblate_ branch is merged, reset the git repo in
+   https://hosted.weblate.org/projects/f-droid/privileged-extension/#repository
+7. add git signed tag named after the exact version name (no
+   preceeding __v__), using the exact same string as `version=''`
+
+
+## jekyll-fdroid
+
+1. Make sure all the tests are passing
+2. set `s.version` and `s.date` in _jekyll-fdroid.gemspec_
+3. Make signed tag matching version number (no preceeding __v__)
+4. Update _fdroid-website_ to use this release by setting both
+   `revision:` and the version number in `specs: jekyll-fdroid
+   (1.0.1)` in _Gemfile.lock_
