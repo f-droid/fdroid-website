@@ -106,19 +106,33 @@ For a real world example using _gitlab-ci_, see _fdroidclient_:
 
 ## Configuring for GitHub and Travis CI
 
-
-1. Run `fdroid nightly --show-secret-var` in the local git repo that
-   is being setup, e.g. _fdroid/fdroidclient_.  It will print out the
-   SSH Public Key.  Using `--show-secret-var` will make it print out
-   base 64 text to be pasted into Travis CI "Secret Variable" called
-   `DEBUG_KEYSTORE`.  Careful!  That text is the entire
-   _debug.keystore_, so protect it accordingly!
-
+1. Generate a new _debug.keystore_ for each app, since GitHub only
+   allows a deploy key to be used on a single repo.  Keep that file
+   safe, since it is the signing key for your nightly build.
+```
+keytool -genkey -v -keystore im.zom.messenger-debug.keystore \
+  -keyalg RSA -keysize 2048 -validity 10000 \
+  -alias androiddebugkey -storepass android -keypass android \
+  -dname "CN=Android Debug,O=Android,C=US"
+```
 2. Set a GitHub Deploy Key for
   `https://github.com/zom/zom-android-nightly` by going to
-  `https://github.com/zom/zom-android-nightly/settings/keys`
-
-3. check _Allow write access_
+  `https://github.com/zom/zom-android-nightly/settings/keys`.  The
+  public SSH key is printed out by running:
+```
+fdroid nightly --keystore im.zom.messenger-debug.keystore
+```
+3. check _Allow write access_ in the GitHub Deploy Key settings
+4. To print out the secret variable contents, use `--show-secret-var`.
+   Careful!  That text is the entire _debug.keystore_, so protect it
+   accordingly!  This prints out base64 text to be pasted into a
+   Travis CI "Environment Variable" in
+   `https://travis-ci.org/zom/Zom-Android/settings`. Call the variable
+   `DEBUG_KEYSTORE` and make sure "Display value in build log" is
+   __OFF__.
+```
+fdroid nightly --keystore im.zom.messenger-debug.keystore --show-secret-var
+```
 
 And here's a simple example of how to add _fdroidserver_ to your
 Travis CI setup to make it deploy the APK after a successful test:
