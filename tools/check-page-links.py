@@ -16,6 +16,12 @@ for f in glob.glob('po/*.po'):
     with open(f, 'r') as fp:
         catalog = read_po(fp)
     for message in catalog:
+        if 'type: Title #' in message.auto_comments:
+            if ':' in message.string:
+                errorcount += 1
+                print('colons not allowed in titles: %s "%s" "%s"'
+                      % (f, message.id, message.string))
+
         idlinks = []
         for m in pattern.findall(message.id):
             idlinks.append(m)
