@@ -754,10 +754,6 @@ configuration to the build. These are (roughly in order of application):
 :   List of Anti-Features for this specific build. They are described
     in [AntiFeatures](#AntiFeatures).
 
-Another example, using extra parameters:
-
-‘Build Version:1.09.03,10903,45,subdir=Timeriffic,oldsdkloc=yes’
-
 
 
 ### 7.24 AntiFeatures<a name="AntiFeatures"></a>
