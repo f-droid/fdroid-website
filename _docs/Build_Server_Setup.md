@@ -160,7 +160,8 @@ Vagrant.configure("2") do |config|
     sudo apt-get update && sudo apt-get install -y parted
     sudo swapoff /dev/sda5 # disable swap so we can then remove the partition
     sudo parted /dev/sda rm 5 rm 2 # remove swap and extended partition
-    # extend sda1 to the full disk
+    # Extend sda1 to the full disk. Yes, this needs three dashes. See
+    # https://unix.stackexchange.com/a/365657/126364.
     sudo parted ---pretend-input-tty /dev/sda resizepart 1 yes 100%
     sudo resize2fs /dev/sda1 # enlarge filesystem to fill the whole partition
     sudo dd if=/dev/zero of=/swap bs=1024K count=500 # create a swapfile
