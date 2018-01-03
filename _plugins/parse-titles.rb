@@ -5,27 +5,29 @@
 Jekyll::Hooks.register :site, :post_read do |site|
 
   site.documents.each do |document|
-    parse_title(document)
+    document.data.each do |key, value|
+      parse_frontmatter(document, key)
+    end
   end
 
 end
 
-def parse_title(document)
+def parse_frontmatter(document, frontmatter_key)
 
   site = document.site
-  title = document.data["title"]
+  value = document.data[frontmatter_key]
 
-  # Title has at least one word, followed by a dot, followed by more words and dots.
-  if (title =~ /^[\w\-]+\.[\w\-.]+$/) == nil
+  # Value has at least one word, followed by a dot, followed by more words and dots.
+  if (value =~ /^[\w\-]+\.[\w\-.]+$/) == nil
     return
   end
 
-  title_parts = title.split(/\./)
-  new_title = recursively_get_value(site.data, title_parts)
+  value_parts = value.split(/\./)
+  new_value = recursively_get_value(site.data, value_parts)
 
-  if new_title != nil and new_title.length > 0
-    Jekyll::logger.debug "i18n", "Translating document title #{title} to #{site.active_lang}: \"#{new_title}\""
-    document.data["title"] = new_title
+  if new_value != nil and new_value.length > 0
+    Jekyll::logger.debug "i18n", "Translating document frontmatter [#{frontmatter_key}: #{value}] to #{site.active_lang}: \"#{new_value}\""
+    document.data[frontmatter_key] = new_value
   end
 
 end
