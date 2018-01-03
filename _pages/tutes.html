@@ -14,7 +14,7 @@ pagination:
 <ul>
   {% for tutorial in paginator.posts %}
     <li>
-      <a href="{{ tutorial.url }}">{{ tutorial.title }}</a>: {{ tutorial.excerpt | strip_html }}
+      <a href="{{ tutorial.url | prepend: site.baseurl }}">{{ tutorial.title }}</a>: {{ tutorial.excerpt | strip_html }}
     </li>
   {% endfor %}
 </ul>
