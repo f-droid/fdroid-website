@@ -1,0 +1,46 @@
+---
+layout: page
+permalink: '/tutorials'
+title: " "
+pagination:
+  enabled: true
+  collection: tutorials
+  per_page: 10000
+  permalink: '/:num/'
+  title: ':title'
+  sort_field: order
+---
+
+<div class="tutorials-list">
+  <h2>{{ site.data.tutorials.misc.overview.title }}</h2>
+  <div class="tutorials-info">
+    {{ site.data.tutorials.misc.overview.summary }}
+  </div>
+  {% for tutorial in paginator.posts %}
+    <div class="tutorial-list-item">
+      <h3>
+        {% if tutorial.paginator_title %}
+          {{ tutorial.paginator_title }}
+        {% else %}
+          {{ tutorial.title }}
+        {% endif %}
+      </h3>
+      <div class="summary">
+        {% if tutorial.paginator_summary %}
+          {{ tutorial.paginator_summary }}
+        {% else %}
+          {{ tutorial.excerpt | strip_html }}
+        {% endif %}
+      </div>
+      <div class="link">
+        <a href="{{ tutorial.url | prepend: site.baseurl }}">
+          {{ site.data.tutorials.misc.overview.tutorial_x_title | replace: '[number]', forloop.index | replace: '[title]', tutorial.title }}
+        </a>
+      </div>
+    </div>
+  {% endfor %}
+</div>
+
+<!-- For now don't paginate, just leave all tutorials on this page.
+     If it becomes a problem with too many tutorials in the future then
+     it can be changed in the future -->

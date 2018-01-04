@@ -92,31 +92,33 @@ body {
     display: flex;
     @extend %shadow;
 
-    .article-area, .sidebar {
-        flex-basis: auto;
-        width: 0px;
+    &.with-sidebar {
+        .article-area, .sidebar {
+            flex-basis: auto;
+            width: 0px;
 
-        @include media-query($tablet) {
-            width: auto;
+            @include media-query($tablet) {
+                width: auto;
+            }
         }
-    }
 
-    .article-area {
-        flex-grow: 4;
-    }
-
-    .sidebar {
-        flex-grow: 2;
-        padding-left: $spacing-unit;
-        word-break: break-all;
-    }
-
-    @include media-query($tablet) {
-        flex-direction: column;
+        .article-area {
+            flex-grow: 4;
+        }
 
         .sidebar {
-            padding-left: 0;
-            padding-top: $spacing-unit * 2;
+            flex-grow: 2;
+            padding-left: $spacing-unit;
+            word-break: break-all;
+        }
+
+        @include media-query($tablet) {
+            flex-direction: column;
+
+            .sidebar {
+                padding-left: 0;
+                padding-top: $spacing-unit * 2;
+            }
         }
     }
 }
@@ -129,7 +131,7 @@ body {
         border-bottom: 1px solid #ccc;
     }
 
-    @import "sidebar-donate"
+    @import "sidebar-donate";
 }
 
 /**
@@ -451,6 +453,178 @@ img {
 
         @include media-query($phone) {
             max-width: 100%;
+        }
+    }
+}
+
+/**
+ * Tutorials
+ */
+.tutorial {
+    h2 {
+        color: #0066cc;
+    }
+
+    h3 {
+        padding-bottom: 14px;
+        margin-bottom: 0;
+    }
+
+    h4 {
+        /*font-family: HelveticaNeue-Medium, serif;*/
+        font-size: 12px;
+        color: #757575;
+        letter-spacing: 0.13px;
+        text-transform: uppercase;
+        margin-bottom: 8px;
+    }
+
+    .tutorial-overview {
+        @include reset-ul;
+
+        & > li {
+            padding: 10px 0 10px 50px;
+
+            background: no-repeat left center;
+            
+            &.link {
+                background-image: url('../assets/tutorials/add-repo/icons/ic_link.svg');
+            }
+
+            &.qr {
+                background-image: url('../assets/tutorials/add-repo/icons/ic_qr.svg');
+            }
+
+            &.no-internet {
+                background-image: url('../assets/tutorials/add-repo/icons/ic_no_internet.svg');
+            }
+        }
+    }
+
+    .steps {
+        @include reset-ul;
+        display: flex;
+        flex-wrap: wrap;
+
+        .step {
+
+            box-sizing: border-box;
+            max-width: 24%;
+
+            @include media-query($tablet) {
+                max-width: 32%;
+            }
+
+            @include media-query($phone) {
+                max-width: 100%;
+            }
+
+            img {
+                width: 200px;
+                height: auto;
+                max-width: 100%;
+
+                &:not(.irregular) {
+                    box-shadow: #aaa 0 2px 5px;
+                }
+            }
+
+            padding: 21px;
+
+            h4 {
+                margin: 1em 0 0.5em 0;
+            }
+
+            p {
+                margin: 0;
+            }
+
+        }
+    }
+
+    /* Allow an individual ".step" or entire collections of ".steps" to be tagged as ".medium" or ".large". */
+    .steps .step.medium, .steps.medium .step {
+        max-width: 33%;
+
+        img {
+            width: 350px;
+            height: auto;
+            max-width: 100%;
+        }
+
+        @include media-query($tablet) {
+            max-width: 49%;
+        }
+    }
+
+    .steps .step.large, .steps.large .step {
+        max-width: 49%;
+
+        img {
+            width: 460px;
+            height: auto;
+            max-width: 100%;
+        }
+
+        @include media-query($tablet) {
+            max-width: 100%;
+        }
+    }
+
+    .tutorial-paginator {
+        margin: - $spacing-unit / 2;
+        margin-top: $spacing-unit / 2;
+        padding: $spacing-unit / 2;
+        display: flex;
+        justify-content: space-between;
+        background-color: #f9f9f9;
+
+        .next a {
+            text-align: right;
+            padding-right: 32px;
+            background: url('../assets/tutorials/icons/ic_right.svg') no-repeat right 5px;
+        }
+        
+        .previous a {
+            padding-left: 32px;
+            background: url('../assets/tutorials/icons/ic_left.svg') no-repeat left 5px;
+        }
+
+        a {
+            display: block;
+            color: black;
+
+            &:hover {
+                text-decoration: none;
+            }
+        }
+
+        .label {
+            font-size: 1.3em;
+        }
+
+        .description {
+
+        }
+    }
+}
+
+.tutorials-list {
+    .tutorials-info {
+
+    }
+
+    .tutorial-list-item {
+        margin-top: 48px;
+
+        h3 {
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .link {
+            margin: 12px 0;
+            font-size: 18px;
         }
     }
 }

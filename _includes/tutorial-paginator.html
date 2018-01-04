@@ -1,0 +1,18 @@
+<div class="tutorial-paginator">
+    <div class="previous">
+        {% if page.previous.url %}
+            <a href="{{ page.previous.url | prepend: site.baseurl | replace: '//', '/' }}">
+                <div class="label">Previous</div>
+                <div class="description">{{page.previous.title}}</div>
+            </a>
+        {% endif %}
+    </div>
+    <div class="next">
+        {% if page.next.url %}
+            <a href="{{ page.next.url | prepend: site.baseurl | replace: '//', '/' }}">
+                <div class="label">Next</div>
+                <div class="description">{{page.next.title}}</div>
+            </a>
+        {% endif %}
+    </div>
+</div>
