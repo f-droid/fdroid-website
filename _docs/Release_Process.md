@@ -18,13 +18,13 @@ steps.  The official signing keys are listed in
    `./tools/remove-unused-and-blank-translations.py` and commit
    changes
 3. rebase the _weblate_ branch on the latest commits in _master_ of
-   https://gitlab.com/fdroid/fdroidclient and fix any conflicts
+   <https://gitlab.com/fdroid/fdroidclient> and fix any conflicts
 4. push local _weblate_ branch to your fork create a merge request,
    and tag it with the _localization_ label
 5. make sure all tests pass before merging, including all _android-10_
    emulator tests
 6. once the _weblate_ branch is merged, reset the git repo in
-   https://hosted.weblate.org/projects/f-droid/f-droid/#repository
+   <https://hosted.weblate.org/projects/f-droid/f-droid/#repository>
 7. set _versionCode_ in _app/build.gradle_
 8. add new entry in _metadata/en-US/changelogs/_
 9. copy that new entry to _CHANGELOG.md_
@@ -52,12 +52,12 @@ well.
 2. pull in latest commits from Weblate into a local branch called
    _weblate_
 3. rebase the _weblate_ branch on the latest commits in _master_ of
-   https://gitlab.com/fdroid/fdroidclient and fix any conflicts
+   <https://gitlab.com/fdroid/fdroidserver> and fix any conflicts
 4. push local _weblate_ branch to your fork create a merge request,
    and tag it with the _localization_ label
 5. make sure all tests pass before merging
 6. once the _weblate_ branch is merged, reset the git repo in
-   https://hosted.weblate.org/projects/f-droid/fdroidserver/#repository
+   <https://hosted.weblate.org/projects/f-droid/fdroidserver/#repository>
 7. set `version=''` in _setup.py_
 8. add git signed tag named after the exact version name (no
    preceeding __v__), using the exact same string as `version=''`
@@ -74,12 +74,12 @@ well.
    `./tools/remove-unused-and-blank-translations.py` and commit
    changes
 3. rebase the _weblate_ branch on the latest commits in _master_ of
-   https://gitlab.com/fdroid/privileged-extension and fix any conflicts
+   <https://gitlab.com/fdroid/privileged-extension> and fix any conflicts
 4. push local _weblate_ branch to your fork create a merge request,
    and tag it with the _localization_ label
 5. make sure all tests pass before merging
 6. once the _weblate_ branch is merged, reset the git repo in
-   https://hosted.weblate.org/projects/f-droid/privileged-extension/#repository
+   <https://hosted.weblate.org/projects/f-droid/privileged-extension/#repository>
 7. set _versionCode_ in _app/src/main/AndroidManifest.xml_
 8. add new entry in _metadata/en-US/changelogs/_
 9. copy that new entry to _CHANGELOG.md_
@@ -100,12 +100,12 @@ well.
    `./tools/check-page-links.py`, and
    `./tools/remove-unused-strings.py` and commit changes
 3. rebase the _weblate_ branch on the latest commits in _master_ of
-   https://gitlab.com/fdroid/fdroid-website and fix any conflicts
+   <https://gitlab.com/fdroid/fdroid-website> and fix any conflicts
 4. push local _weblate_ branch to your fork create a merge request,
    and tag it with the _localization_ label
 5. make sure all tests pass before merging
 6. once the _weblate_ branch is merged, reset the git repo in
-   https://hosted.weblate.org/projects/f-droid/privileged-extension/#repository
+   <https://hosted.weblate.org/projects/f-droid/website/#repository>
 7. add git signed tag named after the exact version name (no
    preceeding __v__), using the exact same string as `version=''`
 
