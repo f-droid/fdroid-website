@@ -7,6 +7,7 @@
 
 {: .donate-options}
  * {:.donate-option .misc} [![{{ strings.paypal_alt }}]({{ site.url }}{{ site.baseurl }}/assets/paypal_donate_button.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=E2FCXCT6837GL)
+ * {:.donate-option .liberapay} [![{{ strings.liberapay_alt }}]({{ site.url }}{{ site.baseurl }}/assets/liberapay_donate_button.svg)](https://liberapay.com/F-Droid-Data/donate)
  * {:.donate-option .flattr} [![{{ strings.flattr_alt }}]({{ site.url }}{{ site.baseurl }}/assets/flattr-badge-large.png)](https://flattr.com/thing/343053/F-Droid-Repository)
  * {:.donate-option .bitcoin-blockchain-info} [![{{ strings.bitcoin_alt }}]({{ site.url }}{{ site.baseurl }}/assets/bitcoin.png)](https://blockchain.info/address/15u8aAPK4jJ5N8wpWJ5gutAyyeHtKX5i18)
  * {:.donate-option .bitcoin-url} [`15u8aAPK4jJ5N8wpWJ5gutAyyeHtKX5i18`](bitcoin:15u8aAPK4jJ5N8wpWJ5gutAyyeHtKX5i18)
