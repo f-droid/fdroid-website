@@ -12,5 +12,8 @@ such as missing or outdated applications,
 please use [this issue tracker](https://gitlab.com/fdroid/fdroiddata/issues).
 
 For the server tools (used for building apps yourself,
-or running your own repo), and issues relating to the web site,
-please use [this issue tracker](https://gitlab.com/fdroid/fdroidserver/issues).
+or running your own repo), please use 
+[this issue tracker](https://gitlab.com/fdroid/fdroidserver/issues).
+
+For issues relating to this web site, you can use
+[this issue tracker](https://gitlab.com/fdroid/fdroid-website/issues).
