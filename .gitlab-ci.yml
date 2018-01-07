@@ -84,3 +84,35 @@ pages:
    - ruby -run -e httpd linkchecker/ -p 4000 2>&1 /dev/null &
    - linkchecker http://localhost:4000/$CI_PROJECT_NAME --config=.linkcheckerrc
       --ignore-url ".*/packages/[b-z].*"
+
+
+
+# Download and verify that the FDroid.apk is signed by the right PGP
+# key.  The only time that F-Droid's signed metadata does not verify
+# the APK is the initial download and install of F-Droid itself.  An
+# attacker could replace the FDroid.apk and PGP signature on the
+# website. The gpg key model is to trust only the key that is included
+# in this script, so there is a test to check that it is starting with
+# an empty keyring.
+
+check_fdroid_apk:
+  stage: deploy
+  only:
+    - schedules
+    - master
+  image: alpine:3.5
+  variables:
+    apk: FDroid.apk
+    asc: FDroid.apk.asc
+    curl: "curl --silent --user-agent F-Droid"
+    fingerprint: 37D2C98789D8311948394E3E41E7044E1DBA2E89
+  script:
+    - apk add --no-cache gnupg curl
+    - ! (gpg --list-keys | grep pub)
+    - gpg --keyserver pgp.mit.edu --recv-key $fingerprint
+    - gpg --list-key --fingerprint | tr -d '[:space:]' | grep $fingerprint
+    - echo "${fingerprint}:6:" | gpg --import-ownertrust
+    - $curl https://f-droid.org/$apk > $apk
+    - $curl https://f-droid.org/$asc > $asc
+    - sha256sum $apk
+    - gpg --batch --trust-model always --verify $asc $apk
