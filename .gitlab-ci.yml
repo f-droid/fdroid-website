@@ -108,7 +108,7 @@ check_fdroid_apk:
     fingerprint: 37D2C98789D8311948394E3E41E7044E1DBA2E89
   script:
     - apk add --no-cache gnupg curl
-    - ! (gpg --list-keys | grep pub)
+    - "! (gpg --list-keys | grep pub)"
     - gpg --keyserver pgp.mit.edu --recv-key $fingerprint
     - gpg --list-key --fingerprint | tr -d '[:space:]' | grep $fingerprint
     - echo "${fingerprint}:6:" | gpg --import-ownertrust
