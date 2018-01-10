@@ -57,6 +57,15 @@ There is also a really good guide called
 on Discourse's forum. In the past, the following instructions were
 helpful:
 
+#### Manually downloading backups
+
+If you ever have problems with Discourse not starting,
+you can always download backups manually over SSH to ensure
+no user data is lost.
+Discourse creates backups itself once a week and stores them
+at the following path:
+_/var/discourse/shared/standalone/backups/default_
+
 #### Rebuilding the container
 
 ```bash
