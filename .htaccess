@@ -248,10 +248,13 @@ RewriteRule ^(.*)$ /%1/$1? [L,R=302]
 # * https://f-droid.org so staging copies can fetch icons
 # * https://fdroid.gitlab.io for "Get on F-Droid" badges
 Header always set Content-Security-Policy: "\
-    default-src 'self'; \
+    default-src 'none'; \
     \
+    base-uri 'self'; \
+    block-all-mixed-content; \
     child-src 'none'; \
     connect-src 'self'; \
+    form-action 'self'; \
     frame-ancestors 'self'; \
     img-src 'self' https://f-droid.org https://fdroid.gitlab.io; \
     media-src 'self'; \
