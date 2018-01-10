@@ -10,6 +10,8 @@ variables:
 
 # Common steps required for each type of "Build" (f-droid.org, GitLab Pages, feature branches)
 .setup_for_jekyll: &setup_for_jekyll |
+  set -x
+  set -e
   ruby -v
   apt-get update
   apt-get install -y locales zlib1g-dev gettext po4a linkchecker bundler unzip python3 rsync python3-babel
