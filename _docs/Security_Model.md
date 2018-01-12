@@ -63,6 +63,59 @@ and the [Signing Process](../Signing_Process) are documented
 separately.
 
 
+## Initial Installs
+
+Most users of F-Droid download the APK from _f-droid.org_ and install
+it.  This is a potential vector of attack that built-in app stores do
+not have.  Therefore, many additional security precautions are taken
+to make it as hard as possible to exploit this vector.
+
+* included on the
+  [HSTS preload list](https://hstspreload.org/?domain=f-droid.org), so
+  major browsers will only ever use HTTPS for all connections to
+  _fdroid.org_
+* a [strong](https://observatory.mozilla.org/analyze.html?host=f-droid.org#third) TLS/HTTPS configuration
+* a [strong](https://observatory.mozilla.org/analyze.html?host=f-droid.org) HTTP Content Security Policy
+* [PGP-signature](https://f-droid.org/F-Droid.apk.asc) on the initial
+  install [download link](https://f-droid.org/F-Droid.apk)
+* automated
+  [regular](https://gitlab.com/fdroid/fdroid-website/-/jobs/47503948)
+  and [random](https://verification.f-droid.org/check-fdroid-apk)
+  [auditing](https://gitlab.com/fdroid/fdroidserver/blob/dfbe114af3c4cef15ce3aa5e979d9f4684f2acbc/tests/check-fdroid-apk)
+  that [F-Droid.apk](https://f-droid.org/F-Droid.apk) has not been tampered with
+* F-Droid Limited controls many potential phishing domains like
+  [fdroid.org](https://whois.icann.org/lookup?name=fdroid.org),
+  [f-droid.com](https://whois.icann.org/lookup?name=f-droid.com), and
+  [f-dro1d.org](https://whois.icann.org/lookup?name=f-dro1d.org). (donations
+  of more are welcome!)
+* website is
+  [statically generated](https://gitlab.com/fdroid/fdroid-website) to
+  greatly reduce the attack surface
+* website is fully functional when Javascript is disabled in the
+  browser, eliminating all possibility of XSS attacks
+
+
+### F-Droid as built in app store
+
+When F-Droid is built into Android, either as part of the ROM or by
+flashing an
+[OTA update](https://f-droid.org/packages/org.fdroid.fdroid.privileged.ota/),
+it no longer needs "Unknown Sources" enabled to function.  This is the
+preferred method of operation, so we aim to make it as easy as
+possible for users to run F-Droid this way.  Flashing the OTA package
+for F-Droid
+[Privileged Extension](https://gitlab.com/fdroid/privileged-extension/#how-do-i-install-it-on-my-device)
+has the same or lower risk profile as installing the standard "gapps"
+package that many people flash onto custom ROMs. So this delivery
+method does not increase the risk profile of those users.
+
+On top of this, F-Droid makes it as easy as possible to
+[build it into](https://gitlab.com/fdroid/privileged-extension/#how-do-i-build-it-into-my-rom)
+ROM projects.  It is already included in
+[Replicant](https://www.replicant.us/),
+[CopperheadOS](https://copperhead.co/android/),
+[LineageOS for microG](https://lineage.microg.org/) and
+[Fairphone Open](https://code.fairphone.com/projects/fp-osos/).
 
 
 ## Security Audits
