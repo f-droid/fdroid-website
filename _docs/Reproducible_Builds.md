@@ -78,6 +78,9 @@ using recent versions of the Android SDK helps.  One specific case is
 starting with Gradle Android Plugin v2.2.2, timestamps in the APK
 file's ZIP header are automatically zeroed out.
 
+
+## _platform_ Revisions
+
 The Android SDK tools
 [were changed](https://issuetracker.google.com/issues/37132313) in
 2014 to
@@ -92,6 +95,23 @@ parallel.  Plus the SDK tools do not support specifying the required
 revision as part of the build process.  This often results in an
 otherwise reproducible build where the only difference is the
 `platformBuildVersionName` attribute.
+
+The "_platform_" is part of the Android SDK that represents the
+standard library that is installed on the phone. They have two parts
+to their version: "version code", which is an integer that represents
+the SDK release, and the "revision", which represents bugfix versions
+to each platform. These versions can be seen in the included
+_build.prop_ file. Each revision has a different number in
+_ro.build.version.incremental_.  Gradle has no way to specify the
+revision in _compileSdkVersion_ or _targetSdkVersion_. Only one
+"_platform-23_" can be installed at a time, unlike _build-tools_, where
+every release can be installed in parallel.
+
+Here are two examples where I think all the differences came from just
+different revisions of the platform:
+
+* https://verification.f-droid.org/de.nico.asura_12.apk.diffoscope.html
+* https://verification.f-droid.org/de.nico.ha_manager_25.apk.diffoscope.html
 
 
 ### PNG Crush/Crunch
@@ -147,3 +167,5 @@ creation, and that ID is included in builds.
 - <https://reproducible-builds.org>
 - <https://wiki.debian.org/ReproducibleBuilds>
 - <https://gitian.org/>
+- <https://issuetracker.google.com/issues/70292819> (_Google login and Javascript required_)
+- <https://issuetracker.google.com/issues/37132313> (_Google login and Javascript required_)
