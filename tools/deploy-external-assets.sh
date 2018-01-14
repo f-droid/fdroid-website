@@ -28,7 +28,7 @@ rm -r fdroid-website-legacy-forum-master*
 
 echo "Deploying download button symlinks..."
 rm -f ${OUTPUT_DIR}/FDroid.apk* ${OUTPUT_DIR}/F-Droid.apk*
-ln -s repo/org.fdroid.fdroid_1000011.apk ${OUTPUT_DIR}/FDroid.apk
-ln -s repo/org.fdroid.fdroid_1000011.apk ${OUTPUT_DIR}/F-Droid.apk
-ln -s repo/org.fdroid.fdroid_1000011.apk.asc ${OUTPUT_DIR}/F-Droid.apk.asc
-ln -s repo/org.fdroid.fdroid_1000011.apk.asc ${OUTPUT_DIR}/FDroid.apk.asc
+ln -s repo/org.fdroid.fdroid_1000012.apk ${OUTPUT_DIR}/FDroid.apk
+ln -s repo/org.fdroid.fdroid_1000012.apk ${OUTPUT_DIR}/F-Droid.apk
+ln -s repo/org.fdroid.fdroid_1000012.apk.asc ${OUTPUT_DIR}/F-Droid.apk.asc
+ln -s repo/org.fdroid.fdroid_1000012.apk.asc ${OUTPUT_DIR}/FDroid.apk.asc
