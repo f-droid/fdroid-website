@@ -79,6 +79,7 @@ and is brought to you by at least the following people:
 * Steven McDonald
 * Andrew McMillan
 * Alex Oberhauser
+* Michael Pöhn
 * Nicolas Raoul
 * Fabian Rodriguez
 * Florian Schmaus
