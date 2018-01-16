@@ -25,10 +25,3 @@ curl https://gitlab.com/fdroid/fdroid-website-legacy-forum/repository/archive.ta
 rm -rf ${OUTPUT_DIR}/forums
 mv fdroid-website-legacy-forum-master-*/forums ${OUTPUT_DIR}/
 rm -r fdroid-website-legacy-forum-master*
-
-echo "Deploying download button symlinks..."
-rm -f ${OUTPUT_DIR}/FDroid.apk* ${OUTPUT_DIR}/F-Droid.apk*
-ln -s repo/org.fdroid.fdroid_1000012.apk ${OUTPUT_DIR}/FDroid.apk
-ln -s repo/org.fdroid.fdroid_1000012.apk ${OUTPUT_DIR}/F-Droid.apk
-ln -s repo/org.fdroid.fdroid_1000012.apk.asc ${OUTPUT_DIR}/F-Droid.apk.asc
-ln -s repo/org.fdroid.fdroid_1000012.apk.asc ${OUTPUT_DIR}/FDroid.apk.asc

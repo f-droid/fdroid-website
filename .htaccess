@@ -67,6 +67,16 @@ RewriteCond %{REQUEST_URI} ^/badge/(.*)$  [NC]
 RewriteRule ^.*$ https://fdroid.gitlab.io/artwork/badge/%1 [L,R=302]
 
 ##
+## CURRENT FDROID APK
+##
+## Point the big download button to the latest stable F-droid APK.
+##
+
+RewriteCond %{REQUEST_URI} ^/F-?Droid.apk(\.asc)?$  [nocase]
+RewriteRule ^.*$ /repo/org.fdroid.fdroid_1000012.apk%1 [last]
+
+
+##
 ## SEARCH QUERIES
 ##
 ## Search queries used to read the `fdfilter` query parameter.
