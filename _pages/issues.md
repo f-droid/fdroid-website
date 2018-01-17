@@ -7,6 +7,9 @@ If you’re having a problem with the F-Droid client application,
 please check if we already know about it, and/or report it,
 in [this issue tracker](https://gitlab.com/fdroid/fdroidclient/issues).
 
+To request a new app be added, submit a "Request For Packaging" on the
+[rfp tracker](https://gitlab.com/fdroid/rfp/issues/new).
+
 For problems relating to the contents of the repository,
 such as missing or outdated applications,
 please use [this issue tracker](https://gitlab.com/fdroid/fdroiddata/issues).
