@@ -61,3 +61,15 @@ trustworthy information.
 The security model of the [Build Server Setup](../Build_Server_Setup)
 and the [Signing Process](../Signing_Process) are documented
 separately.
+
+
+
+
+## Security Audits
+
+1. There was a quick, informal
+   [security audit](https://dev.guardianproject.info/projects/bazaar/wiki/Initial_FDroid_Audit_by_pd0x)
+   done in 2013 by then graduate student Daniel McCarney aka _pd0x_.
+
+2. The first "Bazaar" project funded by Open Tech Fund included an
+   [external public audit]({{ site.baseurl }}/2018/01/20/upcoming-security-audit.html)
