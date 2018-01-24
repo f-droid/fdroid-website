@@ -34,7 +34,7 @@ function md2po {
     DOCS_TMP_POT=${DIR_PO}/_docs.tmp.pot
 
     echo "Merging ${PAGES_POT} into ${DOCS_POT}"
-    msgcat -o ${DOCS_TMP_POT} ${PAGES_POT} ${DOCS_POT}
+    msgcat --width=79 -o ${DOCS_TMP_POT} ${PAGES_POT} ${DOCS_POT}
     cp ${DOCS_TMP_POT} ${DOCS_POT}
     rm ${DOCS_TMP_POT} ${PAGES_POT}
 
@@ -79,7 +79,7 @@ function generate_pot_file {
 
     echo "Combining .pot files into $OUT_PO_FILE"
     mkdir -p `dirname ${OUT_PO_FILE}`
-    msgcat --add-location=file -o ${OUT_PO_FILE} ${DIR_BUILD_PO}/*.pot
+    msgcat --width=79 --add-location=file -o ${OUT_PO_FILE} ${DIR_BUILD_PO}/*.pot
 }
 
 #
@@ -96,7 +96,7 @@ function update_po_files {
             # The VERSION_CONTROL environment variable prevents a
             # backup file from being written to ${SRC_TYPE}.LANG.po~
             echo "Updating ${I18N_PO} with any changes from main .po file ${PO}."
-            VERSION_CONTROL=none msgmerge --add-location=file -U ${I18N_PO} ${PO}
+            VERSION_CONTROL=none msgmerge --width=79 --add-location=file -U ${I18N_PO} ${PO}
         done
     fi
 }
