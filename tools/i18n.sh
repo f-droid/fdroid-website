@@ -65,7 +65,7 @@ function generate_pot_file {
     echo "Generating .pot files for $SRC_TYPE:"
     cp_md_strip_frontmatter_dir ${SRC_SUBDIR} ${BUILD_SUBDIR}
 
-    for MD in ${BUILD_SUBDIR}/*.md; do
+    for MD in `ls -1 ${BUILD_SUBDIR}/*.md | sort`; do
         FILE=`basename ${MD}`
         NAME=${FILE%.*}
 
