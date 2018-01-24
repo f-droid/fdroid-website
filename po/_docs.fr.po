@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
-"POT-Creation-Date: 2018-01-24 11:13+0100\n"
+"POT-Creation-Date: 2018-01-24 13:50+0100\n"
 "PO-Revision-Date: 2018-01-06 23:12+0000\n"
 "Last-Translator: Ldm Public <ldmpub@gmail.com>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/f-droid/website-"
@@ -907,8 +907,8 @@ msgid ""
 "(All_About_Descriptions_Graphics_and_Screenshots) Showing off your app in F-"
 "Droid."
 msgstr ""
-"[Tout sur les descriptions, illustrations et captures d'écran]("
-"All_About_Descriptions_Graphics_and_Screenshots) Promouvoir votre "
+"[Tout sur les descriptions, illustrations et captures d'écran]"
+"(All_About_Descriptions_Graphics_and_Screenshots) Promouvoir votre "
 "application sur F-Droid."
 
 #. type: Bullet: '* '
@@ -1192,9 +1192,10 @@ msgstr ""
 "d'applications, y compris des descriptions localisées, des graphiques et des "
 "captures d'écran (à partir de la version 0.103 de l'application client F-"
 "Droid et v0.8 de _fdroidserver_). Ceci est possible à la fois lorsque les "
-"applications sont ajoutées via [metadata de construction](../Build_Metadata_Reference) ainsi que "
-"lors de l'inclusion de fichiers pré-construits dans un dépôt simple. Il existe trois chemins pour inclure le contenu de la banque "
-"d'applications pour les applications :"
+"applications sont ajoutées via [metadata de construction](../"
+"Build_Metadata_Reference) ainsi que lors de l'inclusion de fichiers pré-"
+"construits dans un dépôt simple. Il existe trois chemins pour inclure le "
+"contenu de la banque d'applications pour les applications :"
 
 #. type: Plain text
 #: build/_docs/md/All_About_Descriptions_Graphics_and_Screenshots.md
@@ -2293,7 +2294,7 @@ msgstr ""
 #: build/_docs/md/Build_Metadata_Reference.md
 msgid ""
 "__Warning__: this overrides all Author Name entries [set in the app's source "
-"code](All_About_Descriptions_Graphics_and_Screenshots)."
+"code](../All_About_Descriptions_Graphics_and_Screenshots)."
 msgstr ""
 
 #. type: Plain text
@@ -2318,7 +2319,7 @@ msgstr ""
 #: build/_docs/md/Build_Metadata_Reference.md
 msgid ""
 "__Warning__: this overrides all Author Email entries [set in the app's "
-"source code](All_About_Descriptions_Graphics_and_Screenshots)."
+"source code](../All_About_Descriptions_Graphics_and_Screenshots)."
 msgstr ""
 
 #. type: Plain text
@@ -2379,7 +2380,7 @@ msgstr ""
 #: build/_docs/md/Build_Metadata_Reference.md
 msgid ""
 "__Warning__: this overrides all Name entries [set in the app's source code]"
-"(All_About_Descriptions_Graphics_and_Screenshots)."
+"(../All_About_Descriptions_Graphics_and_Screenshots)."
 msgstr ""
 
 #. type: Plain text
@@ -2631,7 +2632,7 @@ msgstr ""
 #: build/_docs/md/Build_Metadata_Reference.md
 msgid ""
 "__Warning__: this overrides all Summary entries [set in the app's source "
-"code](All_About_Descriptions_Graphics_and_Screenshots)."
+"code](../All_About_Descriptions_Graphics_and_Screenshots)."
 msgstr ""
 
 #. type: Plain text
@@ -2703,7 +2704,7 @@ msgstr ""
 #: build/_docs/md/Build_Metadata_Reference.md
 msgid ""
 "__Warning__: this overrides all Description entries [set in the app's source "
-"code](All_About_Descriptions_Graphics_and_Screenshots)."
+"code](../All_About_Descriptions_Graphics_and_Screenshots)."
 msgstr ""
 
 #. type: Plain text
@@ -10285,6 +10286,136 @@ msgid ""
 "the [Signing Process](../Signing_Process) are documented separately."
 msgstr ""
 
+#. type: Title ##
+#: build/_docs/md/Security_Model.md
+#, no-wrap
+msgid "Initial Installs"
+msgstr ""
+
+#. type: Plain text
+#: build/_docs/md/Security_Model.md
+msgid ""
+"Most users of F-Droid download the APK from _f-droid.org_ and install it.  "
+"This is a potential vector of attack that built-in app stores do not have.  "
+"Therefore, many additional security precautions are taken to make it as hard "
+"as possible to exploit this vector."
+msgstr ""
+
+#. type: Bullet: '* '
+#: build/_docs/md/Security_Model.md
+msgid ""
+"included on the [HSTS preload list](https://hstspreload.org/?domain=f-droid."
+"org), so major browsers will only ever use HTTPS for all connections to "
+"_fdroid.org_"
+msgstr ""
+
+#. type: Bullet: '* '
+#: build/_docs/md/Security_Model.md
+msgid ""
+"a [strong](https://observatory.mozilla.org/analyze.html?host=f-droid."
+"org#third) TLS/HTTPS configuration"
+msgstr ""
+
+#. type: Bullet: '* '
+#: build/_docs/md/Security_Model.md
+msgid ""
+"a [strong](https://observatory.mozilla.org/analyze.html?host=f-droid.org) "
+"HTTP Content Security Policy"
+msgstr ""
+
+#. type: Bullet: '* '
+#: build/_docs/md/Security_Model.md
+msgid ""
+"[PGP-signature](https://f-droid.org/F-Droid.apk.asc) on the initial install "
+"[download link](https://f-droid.org/F-Droid.apk)"
+msgstr ""
+
+#. type: Bullet: '* '
+#: build/_docs/md/Security_Model.md
+msgid ""
+"automated [regular](https://gitlab.com/fdroid/fdroid-website/-/"
+"jobs/47503948)  and [random](https://verification.f-droid.org/check-fdroid-"
+"apk)  [auditing](https://gitlab.com/fdroid/fdroidserver/blob/"
+"dfbe114af3c4cef15ce3aa5e979d9f4684f2acbc/tests/check-fdroid-apk)  that [F-"
+"Droid.apk](https://f-droid.org/F-Droid.apk) has not been tampered with"
+msgstr ""
+
+#. type: Bullet: '* '
+#: build/_docs/md/Security_Model.md
+msgid ""
+"F-Droid Limited controls many potential phishing domains like [fdroid.org]"
+"(https://whois.icann.org/lookup?name=fdroid.org), [f-droid.com](https://"
+"whois.icann.org/lookup?name=f-droid.com), and [f-dro1d.org](https://whois."
+"icann.org/lookup?name=f-dro1d.org). (donations of more are welcome!)"
+msgstr ""
+
+#. type: Bullet: '* '
+#: build/_docs/md/Security_Model.md
+msgid ""
+"website is [statically generated](https://gitlab.com/fdroid/fdroid-website) "
+"to greatly reduce the attack surface"
+msgstr ""
+
+#. type: Bullet: '* '
+#: build/_docs/md/Security_Model.md
+msgid ""
+"website is fully functional when Javascript is disabled in the browser, "
+"eliminating all possibility of XSS attacks"
+msgstr ""
+
+#. type: Title ###
+#: build/_docs/md/Security_Model.md
+#, no-wrap
+msgid "F-Droid as built in app store"
+msgstr ""
+
+#. type: Plain text
+#: build/_docs/md/Security_Model.md
+msgid ""
+"When F-Droid is built into Android, either as part of the ROM or by flashing "
+"an [OTA update](https://f-droid.org/packages/org.fdroid.fdroid.privileged."
+"ota/), it no longer needs \"Unknown Sources\" enabled to function.  This is "
+"the preferred method of operation, so we aim to make it as easy as possible "
+"for users to run F-Droid this way.  Flashing the OTA package for F-Droid "
+"[Privileged Extension](https://gitlab.com/fdroid/privileged-extension/#how-"
+"do-i-install-it-on-my-device)  has the same or lower risk profile as "
+"installing the standard \"gapps\" package that many people flash onto custom "
+"ROMs. So this delivery method does not increase the risk profile of those "
+"users."
+msgstr ""
+
+#. type: Plain text
+#: build/_docs/md/Security_Model.md
+msgid ""
+"On top of this, F-Droid makes it as easy as possible to [build it into]"
+"(https://gitlab.com/fdroid/privileged-extension/#how-do-i-build-it-into-my-"
+"rom)  ROM projects.  It is already included in [Replicant](https://www."
+"replicant.us/), [CopperheadOS](https://copperhead.co/android/), [LineageOS "
+"for microG](https://lineage.microg.org/) and [Fairphone Open](https://code."
+"fairphone.com/projects/fp-osos/)."
+msgstr ""
+
+#. type: Title ##
+#: build/_docs/md/Security_Model.md
+#, no-wrap
+msgid "Security Audits"
+msgstr ""
+
+#. type: Bullet: '1. '
+#: build/_docs/md/Security_Model.md
+msgid ""
+"There was a quick, informal [security audit](https://dev.guardianproject."
+"info/projects/bazaar/wiki/Initial_FDroid_Audit_by_pd0x)  done in 2013 by "
+"then graduate student Daniel McCarney aka _pd0x_."
+msgstr ""
+
+#. type: Bullet: '2. '
+#: build/_docs/md/Security_Model.md
+msgid ""
+"The first \"Bazaar\" project funded by Open Tech Fund included an [external "
+"public audit]({{ site.baseurl }}/2018/01/20/upcoming-security-audit.html)"
+msgstr ""
+
 #. type: Title #
 #: build/_docs/md/Setup_an_F-Droid_App_Repo.md
 #, no-wrap
@@ -11071,8 +11202,8 @@ msgid ""
 "For more info, see the F-Droid [Build Metadata Reference](../"
 "Build_Metadata_Reference)."
 msgstr ""
-"[Référentiel des métadonnées de construction](../Build_Metadata_Reference) Tout "
-"sur les « recettes » de construction"
+"[Référentiel des métadonnées de construction](../Build_Metadata_Reference) "
+"Tout sur les « recettes » de construction"
 
 #. type: Plain text
 #: build/_docs/md/Submitting_to_F-Droid_Quick_Start_Guide.md
@@ -11221,7 +11352,7 @@ msgstr ""
 msgid ""
 "If the upstream project's source repo includes app descriptions, then those "
 "will be automatically included as long as they use the [supported layouts]"
-"(All_About_Descriptions_Graphics_and_Screenshots).  If there are any "
+"(../All_About_Descriptions_Graphics_and_Screenshots).  If there are any "
 "issues with missing translations or broken localized formats, please [file "
 "an issue](https://gitlab.com/groups/fdroid/issues) so it can be fixed."
 msgstr ""
