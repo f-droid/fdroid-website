@@ -5,8 +5,9 @@ author: "eighthave"
 
 ---
 
-Fairphone is taking a big step towards making a fully free Android
-phone!  They already have
+Fairphone has taken a
+[big step](https://www.fairphone.com/en/2018/01/23/f-droid-auto-updates/)
+towards making a fully free Android phone!  They already have
 [Fairphone Open](https://www.fairphone.com/en/2016/04/28/releasing-the-fairphone-2-open-operating-system-2/),
 an alternate version of Android that does not include any proprietary
 apps.  The built-in Fairphone Updater makes it really easy to switch a
