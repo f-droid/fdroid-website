@@ -31,7 +31,7 @@ function md2po {
 
     PAGES_POT=${DIR_PO}/_pages.pot
     DOCS_POT=${DIR_PO}/_docs.pot
-    DOCS_TMP_POT=${DIR_PO}/_docs.pot
+    DOCS_TMP_POT=${DIR_PO}/_docs.tmp.pot
 
     echo "Merging ${PAGES_POT} into ${DOCS_POT}"
     msgcat -o ${DOCS_TMP_POT} ${PAGES_POT} ${DOCS_POT}
