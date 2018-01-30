@@ -461,6 +461,15 @@ configuration to the build. These are (roughly in order of application):
     need very specific things that are not appropriate to install for
     all builds, or for things that would conflict with other builds.
 
+`timeout=<seconds>`
+
+:   Time limit for this build (in seconds).  After time is up,
+    buildserver VM is forcefully terminated.  The default is 7200
+    (2 hours); 0 means no limit.
+
+    Limitation is applied only in server mode, i.e. when `fdroid build`
+    is invoked with the `--server` option.
+
 `init=xxxx`
 
 :   Like ’prebuild’, but runs on the source code BEFORE any other
