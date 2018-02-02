@@ -76,7 +76,7 @@ pages:
    - ./tools/check-page-links.py
    - ./tools/i18n.sh md2po
    - git checkout po/*.pot  # ignore the newly generated timestamp
-   - git --no-pager diff --exit-code --color=always po/
+   - git --no-pager diff --name-only po/
    # This is where GitLab pages will deploy to by default (e.g. "https://fdroid.gitlab.io/fdroid-website")
    # so we need to make sure that the Jekyll configuration understands this.
    - 'echo url: https://$CI_PROJECT_NAMESPACE.gitlab.io > userconfig.yml'
@@ -128,5 +128,6 @@ i18n_sync:
   script:
     - apk add --no-cache bash gettext git grep po4a sed
     - ./tools/i18n.sh md2po
-    - git --no-pager diff --name-only po/
-
+    - git checkout po/*.pot  # ignore the newly generated timestamp
+    - git --no-pager diff --exit-code --color=always po/
+        || echo 'This test failed because the localization files were not synced.  To do that, run `./tools/i18n.sh md2po` then commit the changes in po/ and include them in this merge request.'
