@@ -76,7 +76,7 @@ pages:
    - ./tools/check-page-links.py
    - ./tools/i18n.sh md2po
    - git checkout po/*.pot  # ignore the newly generated timestamp
-   - git --no-pager diff --name-only po/
+   - git --no-pager diff --ignore-all-space --name-only po/
    # This is where GitLab pages will deploy to by default (e.g. "https://fdroid.gitlab.io/fdroid-website")
    # so we need to make sure that the Jekyll configuration understands this.
    - 'echo url: https://$CI_PROJECT_NAMESPACE.gitlab.io > userconfig.yml'
@@ -128,8 +128,17 @@ i18n_sync:
   script:
     - apt update -y
     - apt-get install -y --no-install-recommends bash gettext git grep po4a sed
-    - ./tools/i18n.sh md2po
+    - for f in po/_posts.*.po; do msgmerge --no-wrap --sort-by-file  --add-location=file --update $f po/_posts.pot; done
+    - for f in po/_docs.*.po; do msgmerge --no-wrap --sort-by-file  --add-location=file --update $f po/_docs.pot; done
     - git checkout po/*.pot  # ignore the newly generated timestamp
-    - git --no-pager diff --exit-code po/
+    - git add po/*.po
+    - git config user.email "you@example.com"
+    - git config user.name "DO NOT MERGE"
+    - git commit po/*.po po/*.pot -m "DO NOT MERGE sort before test"
+    - ./tools/i18n.sh md2po
+    - for f in po/_posts.*.po; do msgmerge --no-wrap --sort-by-file  --add-location=file --update $f po/_posts.pot; done
+    - for f in po/_docs.*.po; do msgmerge --no-wrap --sort-by-file  --add-location=file --update $f po/_docs.pot; done
+    - git checkout po/*.pot  # ignore the newly generated timestamp
+    - git --no-pager diff --exit-code --ignore-all-space -G'^msg' po/
         || (echo 'This test failed because the localization files were not synced.  To do that, run `./tools/i18n.sh md2po` then commit the changes in po/ and include them in this merge request.'; exit 1)
   allow_failure: true
