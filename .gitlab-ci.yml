@@ -1,4 +1,4 @@
-image: ruby:2.3
+image: ruby:2.3-jessie
 
 stages:
  - deploy
@@ -124,10 +124,12 @@ check_fdroid_apk:
 
 i18n_sync:
   stage: deploy
-  image: alpine:3.5
+  image: debian:jessie-slim
   script:
-    - apk add --no-cache bash gettext git grep po4a sed
+    - apt update -y
+    - apt-get install -y --no-install-recommends bash gettext git grep po4a sed
     - ./tools/i18n.sh md2po
     - git checkout po/*.pot  # ignore the newly generated timestamp
-    - git --no-pager diff --exit-code --color=always po/
-        || echo 'This test failed because the localization files were not synced.  To do that, run `./tools/i18n.sh md2po` then commit the changes in po/ and include them in this merge request.'
+    - git --no-pager diff --exit-code po/
+        || (echo 'This test failed because the localization files were not synced.  To do that, run `./tools/i18n.sh md2po` then commit the changes in po/ and include them in this merge request.'; exit 1)
+  allow_failure: true
