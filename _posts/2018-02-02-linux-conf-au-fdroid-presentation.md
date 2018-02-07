@@ -21,5 +21,6 @@ curated app store.
 This is a great primer for new users giving them a behind the scenes view on how 
 apps come to be, from a source code repo to their Android devices.
 
-
-{% include youtubePlayer.html id="y3zVcYuE-WI" %}
+<a class="youtube" href="https://youtube.com/watch?v=y3zVcYuE-WI">
+    <img src="{{ site.baseurl }}/assets/posts/2018-02-02-linux-conf-au-fdroid-presentation/video-thumbnail.png" />
+</a>

@@ -628,3 +628,25 @@ img {
         }
     }
 }
+
+a.youtube {
+    position: relative;
+
+    /** Clever solution from https://stackoverflow.com/a/12660106/2391921 to overlay image on top with only CSS */
+    &:after {
+        position: absolute;
+        content: "";
+        pointer-events: none;
+
+        background: url("../assets/youtube-logo.png") no-repeat center;
+        background-size: cover;
+
+        width: 200px;
+        height: 200px;
+
+        left: calc(50% - 100px);
+        bottom: calc(50% + 100px);
+    }
+
+
+}
