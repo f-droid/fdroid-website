@@ -87,7 +87,7 @@ function update_po_files {
     if [ `check_for_po ${SECTION}` = true ]; then
         for I18N_PO in ${DIR_PO}/${SECTION}.*.po; do
             # The VERSION_CONTROL environment variable prevents a
-            # backup file from being written to ${SECTION}.LANG.po~
+            # backup file from being written to ${SECTION}.LOCALE.po~
             echo "Updating ${I18N_PO} with any changes from main .po file ${POT}."
             VERSION_CONTROL=none msgmerge --no-wrap --add-location=file -U ${I18N_PO} ${POT}
         done
@@ -136,11 +136,11 @@ function generate_md_files {
     if [ `check_for_po ${SECTION}` = true ]; then
         for PO in ${DIR_PO}/${SECTION}.*.po; do
             PO_FILE=`basename ${PO}`
-            LANG=`echo ${PO_FILE} | sed -e "s/${SECTION}\.\(.*\)\.po/\1/"`
-            OUT_DIR_I18N_MD=${DIR_SRC}/${SECTION}/${LANG}
-            BUILD_DIR_I18N_MD=${BUILD_SUBDIR}/${LANG}
+            LOCALE=`echo ${PO_FILE} | sed -e "s/${SECTION}\.\(.*\)\.po/\1/"`
+            OUT_DIR_I18N_MD=${DIR_SRC}/${SECTION}/${LOCALE}
+            BUILD_DIR_I18N_MD=${BUILD_SUBDIR}/${LOCALE}
 
-            echo "Generating $LANG translations from $PO_FILE..."
+            echo "Generating $LOCALE translations from $PO_FILE..."
             rm -rf ${OUT_DIR_I18N_MD}
             mkdir -p ${OUT_DIR_I18N_MD} ${BUILD_DIR_I18N_MD}
 
@@ -174,7 +174,7 @@ function generate_md_files {
                 # "title:". In the process we ensure that the
                 # frontmatter contains the correct `lang:` attribute.
                 TITLE=`head -n 1 ${OUT_TMP_MD_FILE} | sed 's/^# //'`
-                extract_frontmatter ${SRC_SUBDIR}/${MD_FILE} | sed "s/^title:.*/title: $TITLE\nlang: $LANG/" >> ${OUT_MD_FILE}
+                extract_frontmatter ${SRC_SUBDIR}/${MD_FILE} | sed "s/^title:.*/title: $TITLE\nlang: $LOCALE/" >> ${OUT_MD_FILE}
 
                 # Finally, copy the translated .md file with no
                 # frontmatter, and without the "# Title" we previously
@@ -190,7 +190,7 @@ function generate_md_files {
 #################################################
 
 #
-# Helper to check if there are any SECTION.LANG.po files. This helps
+# Helper to check if there are any SECTION.LOCALE.po files. This helps
 # to not try and iterate over the files if they don't exist
 #
 # Usage: check_for_po SECTION
