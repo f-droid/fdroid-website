@@ -36,9 +36,9 @@ function md2po {
 }
 
 #
-# Usage: generate_pot_file SRC_TYPE
+# Usage: generate_pot_file SECTION
 #
-#   Where SRC_TYPE is either _posts, _pages, or _docs
+#   Where SECTION is either _posts, _pages, or _docs
 #   (i.e. directories with .md files that are translated into a single
 #   .pot file)
 #
@@ -49,13 +49,13 @@ function md2po {
 #  * This .pot file is the thing which will end up getting translated.
 #
 function generate_pot_file {
-    SRC_TYPE=$1
-    SRC_SUBDIR=${DIR_SRC}/${SRC_TYPE}
-    BUILD_SUBDIR=${DIR_BUILD}/${SRC_TYPE}/md
-    DIR_BUILD_PO=${DIR_BUILD}/${SRC_TYPE}/po
-    OUT_POT_FILE=${DIR_PO}/${SRC_TYPE}.pot
+    SECTION=$1
+    SRC_SUBDIR=${DIR_SRC}/${SECTION}
+    BUILD_SUBDIR=${DIR_BUILD}/${SECTION}/md
+    DIR_BUILD_PO=${DIR_BUILD}/${SECTION}/po
+    OUT_POT_FILE=${DIR_PO}/${SECTION}.pot
 
-    echo "Generating .pot files for $SRC_TYPE:"
+    echo "Generating .pot files for $SECTION:"
     cp_md_strip_frontmatter_dir ${SRC_SUBDIR} ${BUILD_SUBDIR}
 
     for MD in `ls -1 ${BUILD_SUBDIR}/*.md | sort`; do
@@ -81,13 +81,13 @@ function generate_pot_file {
 # string matching.
 #
 function update_po_files {
-    SRC_TYPE=$1
-    POT=${DIR_PO}/${SRC_TYPE}.pot
+    SECTION=$1
+    POT=${DIR_PO}/${SECTION}.pot
 
-    if [ `check_for_po ${SRC_TYPE}` = true ]; then
-        for I18N_PO in ${DIR_PO}/${SRC_TYPE}.*.po; do
+    if [ `check_for_po ${SECTION}` = true ]; then
+        for I18N_PO in ${DIR_PO}/${SECTION}.*.po; do
             # The VERSION_CONTROL environment variable prevents a
-            # backup file from being written to ${SRC_TYPE}.LANG.po~
+            # backup file from being written to ${SECTION}.LANG.po~
             echo "Updating ${I18N_PO} with any changes from main .po file ${POT}."
             VERSION_CONTROL=none msgmerge --no-wrap --add-location=file -U ${I18N_PO} ${POT}
         done
@@ -103,19 +103,18 @@ function po2md {
     echo "Converting .po files back into .md source"
 
     if [ -d ${DIR_BUILD} ]; then rm -r ${DIR_BUILD}; fi
-    #generate_md_files _docs _docs
-    #generate_md_files _posts _posts
-    generate_md_files _pages _docs
+    generate_md_files _docs
+    generate_md_files _posts
+    generate_md_files _pages
     rm -r "${DIR_BUILD}"
 }
 
 #
-# Usage: generate_md_files SRC_TYPE POT_TYPE
+# Usage: generate_md_files SECTION
 #
-#   Where SRC_TYPE is either _posts, _pages, or _docs
+#   Where SECTION is either _posts, _pages, or _docs
 #   (i.e. directories with .md files that are translated into a single
-#   .po file) POT_TYPE is either _posts or _docs (i.e. files in
-#   po/POT_TYPE.pot and po/POT_TYPE.LANG.po)
+#   .po file)
 # 
 # This will:
 #  * Copy the original .md files, after stripping their metadata, to a temporary build directory.
@@ -126,20 +125,19 @@ function po2md {
 #  * This is then output into the final translated .md file.
 #
 function generate_md_files {
-    SRC_TYPE=$1
-    POT_TYPE=$2
-    SRC_SUBDIR=${DIR_SRC}/${SRC_TYPE}
-    BUILD_SUBDIR=${DIR_BUILD}/${SRC_TYPE}
+    SECTION=$1
+    SRC_SUBDIR=${DIR_SRC}/${SECTION}
+    BUILD_SUBDIR=${DIR_BUILD}/${SECTION}
     
     echo "Converting .md files (from $BUILD_SUBDIR) based on .po files..."
 
     cp_md_strip_frontmatter_dir ${SRC_SUBDIR} ${BUILD_SUBDIR}/md
 
-    if [ `check_for_po ${POT_TYPE}` = true ]; then
-        for PO in ${DIR_PO}/${POT_TYPE}.*.po; do
+    if [ `check_for_po ${SECTION}` = true ]; then
+        for PO in ${DIR_PO}/${SECTION}.*.po; do
             PO_FILE=`basename ${PO}`
-            LANG=`echo ${PO_FILE} | sed -e "s/${POT_TYPE}\.\(.*\)\.po/\1/"`
-            OUT_DIR_I18N_MD=${DIR_SRC}/${SRC_TYPE}/${LANG}
+            LANG=`echo ${PO_FILE} | sed -e "s/${SECTION}\.\(.*\)\.po/\1/"`
+            OUT_DIR_I18N_MD=${DIR_SRC}/${SECTION}/${LANG}
             BUILD_DIR_I18N_MD=${BUILD_SUBDIR}/${LANG}
 
             echo "Generating $LANG translations from $PO_FILE..."
@@ -168,7 +166,6 @@ function generate_md_files {
                 echo "Translating $OUT_MD_FILE"
                 po4a-translate -f text -o markdown -L utf-8 -M utf-8 -m ${MD} -p ${PO} -l ${OUT_TMP_MD_FILE} -k 0
 
-
                 # Extract the front matter from the source and add it
                 # to the top of the final i18n .md file (after
                 # stripping the "# [TITLE]" line we added
@@ -193,15 +190,15 @@ function generate_md_files {
 #################################################
 
 #
-# Helper to check if there are any SRC_TYPE.LANG.po files. This helps
+# Helper to check if there are any SECTION.LANG.po files. This helps
 # to not try and iterate over the files if they don't exist
 #
-# Usage: check_for_po SRC_TYPE
+# Usage: check_for_po SECTION
 #
 function check_for_po {
-    SRC_TYPE=$1
+    SECTION=$1
 
-    if compgen -G "$DIR_PO/$SRC_TYPE.*.po" > /dev/null;
+    if compgen -G "$DIR_PO/$SECTION.*.po" > /dev/null;
     then
         echo true
     else
