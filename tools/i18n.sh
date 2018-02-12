@@ -29,17 +29,9 @@ function md2po {
     generate_pot_file _pages
     rm -r ${DIR_BUILD}
 
-    PAGES_POT=${DIR_PO}/_pages.pot
-    DOCS_POT=${DIR_PO}/_docs.pot
-    DOCS_TMP_POT=${DIR_PO}/_docs.tmp.pot
-
-    echo "Merging ${PAGES_POT} into ${DOCS_POT}"
-    msgcat --no-wrap -o ${DOCS_TMP_POT} ${PAGES_POT} ${DOCS_POT}
-    cp ${DOCS_TMP_POT} ${DOCS_POT}
-    rm ${DOCS_TMP_POT} ${PAGES_POT}
-
     update_po_files _docs
     update_po_files _posts
+    update_po_files _pages
 }
 
 #
