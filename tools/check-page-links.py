@@ -11,7 +11,7 @@ from babel.messages.catalog import Message
 
 errorcount = 0
 pattern = re.compile(r'](\([^h][^\)]+\))')
-for f in glob.glob('po/*.po'):
+for f in glob.glob('po/*.po*'):
     print('\n\n', f, '==================================================================')
     with open(f, 'r') as fp:
         catalog = read_po(fp)
@@ -21,6 +21,13 @@ for f in glob.glob('po/*.po'):
                 errorcount += 1
                 print('colons not allowed in titles: %s "%s" "%s"'
                       % (f, message.id, message.string))
+            if message.string:
+                if '"' in (message.string[0], message.string[-1]) and message.string.count('"') % 2:
+                    errorcount += 1
+                    print('Mismatched " in title:', message.string)
+                if "'" in (message.string[0], message.string[-1]) and message.string.count("'") % 2:
+                    errorcount += 1
+                    print("Mismatched ' in title:", message.string)
 
         idlinks = []
         for m in pattern.findall(message.id):
