@@ -45,6 +45,7 @@ and is brought to you by at least the following people:
 * Laura Arjona
 * Ben Arnold
 * Michele Azzolari
+* Danial Behzadi
 * Jan Berkel
 * David Black
 * Jan C Borchardt
