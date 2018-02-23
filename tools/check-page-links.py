@@ -11,8 +11,8 @@ from babel.messages.catalog import Message
 
 errorcount = 0
 pattern = re.compile(r'](\([^h][^\)]+\))')
-for f in glob.glob('po/*.po*'):
-    print('\n\n', f, '==================================================================')
+for f in sorted(glob.glob('po/*.po*')):
+    print('\n', f, '==================================================================')
     with open(f, 'r') as fp:
         catalog = read_po(fp)
     for message in catalog:
