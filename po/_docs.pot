@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2018-02-12 17:50+0100\n"
+"POT-Creation-Date: 2018-02-23 09:24+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -6441,15 +6441,15 @@ msgstr ""
 msgid "The most important is to know when new versions are published. We have three automatic methods and one manual: from tags; checking the `AndroidManifest.xml` at the most recent revision in the repository; and checking Google Play. If these won't do, we must look at the version of the package published by the upstream developers, either by loading the Google Play web page or downloading an APK and checking its version.  Repository tags are the natural way of labelling new versions (look for them under \"releases\" on an example in [github.com](https://github.com/dschuermann/document-viewer/releases) or under the \"tags\" directory in the case of SVN repos). If you can't find tags it would be a helpful to make an issue about it on the issue tracker. In the example, we point to a changelog page as a backup check; other possiblities are a Google Code download page or a Google Play link."
 msgstr ""
 
-#. type: Title #
+#. type: Title ###
 #: build/_docs/md/Reproducible_Builds.md
 #, no-wrap
-msgid "Reproducibile Builds"
+msgid "Reproducible Builds"
 msgstr ""
 
 #. type: Plain text
 #: build/_docs/md/Reproducible_Builds.md
-msgid "F-Droid supports [reproducible builds](https://reproducible-builds.org) of apps, so that anyone can run the build process again and reproduce the same APK as the original release.  This means that F-Droid can verify that an app is 100% free software while still using the original developer's APK signatures.  Ideally, all of the built APKs will have the exact same hash, but that is a more difficult standard with less payoff.  Right now, F-Droid verifies reproducible builds using the APK signature."
+msgid "F-Droid supports [reproducible builds](https://reproducible-builds.org)  of apps, so that anyone can run the build process again and reproduce the same APK as the original release.  This means that F-Droid can verify that an app is 100% free software while still using the original developer's APK signatures.  Ideally, all of the built APKs will have the exact same hash, but that is a more difficult standard with less payoff. Right now, F-Droid verifies reproducible builds using the APK signature."
 msgstr ""
 
 #. type: Plain text
@@ -6465,17 +6465,74 @@ msgstr ""
 
 #. type: Plain text
 #: build/_docs/md/Reproducible_Builds.md
-msgid "Publishing signed binaries from elsewhere (e.g. the upstream developer)  is now possible after verifying that they match ones built using a recipe. Everything in the metadata should be the same as normal, with the addition of the `Binaries:` directive to specify where (with pattern substitution) to get the binaries from."
+msgid "Publishing signed binaries from elsewhere (e.g. the upstream developer)  is now possible after verifying that they match ones built using a recipe. Publishing only takes place if there is a proper match. (Which seems very unlikely to be the case unless the exact same tool-chain is used, so I would imagine that unless the person building and signing the incoming binaries uses fdroidserver to build them, probably the exact same buildserver id, they will not match. But at least we have the functionality to support that.)"
 msgstr ""
 
 #. type: Plain text
 #: build/_docs/md/Reproducible_Builds.md
-msgid "Publishing only takes place if there is a proper match. (Which seems very unlikely to be the case unless the exact same toolchain is used, so I would imagine that unless the person building and signing the incoming binaries uses fdroidserver to build them, probably the exact same buildserver id, they will not match. But at least we have the functionality to support that.)"
+msgid "This procedures are implemented as part of `fdroid publish`. At the publish step, the reproducibility check will follow this logic:"
 msgstr ""
 
 #. type: Plain text
 #: build/_docs/md/Reproducible_Builds.md
-msgid "This procedure is currently implemented as part of `fdroid publish`. At the publish step, there are two options: a) sign the built apk, or b) download a signed binary from elsewhere, compare it with the built one, and if they match publish the downloaded (externally signed) one. Option b) is enabled by having a `Binaries:https://foo.com/path/to/myapp-0.1.apk` directive in the metadata, to provide a URL where the binaries are to be retrieved from (with substitutions for the version number in the APK file name)."
+msgid "![Flow-chart for reproducibility check]({{ site.baseurl }}/assets/docs/reproducible-builds/publish.png)"
+msgstr ""
+
+#. type: Title ####
+#: build/_docs/md/Reproducible_Builds.md
+#, no-wrap
+msgid "Publish both (upstream-)developer singed and F-Droid signed APKs"
+msgstr ""
+
+#. type: Plain text
+#: build/_docs/md/Reproducible_Builds.md
+msgid "Use this approach for shipping a version of an app, with both (upstream-)developer signed and F-Droid signed APKs. This enables us to ship updates for users who installed apps from other sources than F-Droid (eg. Play Store) which are therefore singed by the app-developers, while also shipping updates for apps which were built and singed by F-Droid."
+msgstr ""
+
+#. type: Plain text
+#: build/_docs/md/Reproducible_Builds.md
+msgid "This requires to put (upstream-)developer signatures into fdroiddata.  We provide a command for easily extracting signatures from APKs:"
+msgstr ""
+
+#. type: Plain text
+#: build/_docs/md/Reproducible_Builds.md
+msgid "```console $ cd /path/to/fdroiddata $ fdroid signatures F-Droid.apk ```"
+msgstr ""
+
+#. type: Plain text
+#: build/_docs/md/Reproducible_Builds.md
+msgid "You may also supply HTTPS-URLs directly to `fdroid signatures` instead of local files. The signature files are extracted to the according metadata directory ready to be used with `fdroid publish`. A signature consists of 3 files and the result of extracting one will resemble this file listing:"
+msgstr ""
+
+#. type: Plain text
+#: build/_docs/md/Reproducible_Builds.md
+msgid "```console $ ls metadata/org.fdroid.fdroid/signatures/1000012/ CIARANG.RSA CIARANG.SF MANIFEST.MF ```"
+msgstr ""
+
+#. type: Title ####
+#: build/_docs/md/Reproducible_Builds.md
+#, no-wrap
+msgid "Exclusively publishing (upstream-)developer signed APKs"
+msgstr ""
+
+#. type: Plain text
+#: build/_docs/md/Reproducible_Builds.md
+msgid "For using this older approach, everything in the metadata should be the same as normal, with the addition of the `Binaries:` directive to specify where to get the binaries from. In this case F-Droid will never attempt to ship APKs signed by F-Droid. Should `fdroid publish` manage to verify that a downloaded APK can be built reproducibly, the downloaded APK will be published. Otherwise F-Droid will skip publishing this version of the app."
+msgstr ""
+
+#. type: Plain text
+#: build/_docs/md/Reproducible_Builds.md
+msgid "Here is an example for a `Binaries` directive:"
+msgstr ""
+
+#. type: Plain text
+#: build/_docs/md/Reproducible_Builds.md
+msgid "```yaml Binaries: https://foo.com/path/to/myapp-%v.apk ```"
+msgstr ""
+
+#. type: Plain text
+#: build/_docs/md/Reproducible_Builds.md
+msgid "Also see: [Build Metadata Reference - Binaries](../Build_Metadata_Reference/#Binaries)"
 msgstr ""
 
 #. type: Title ###
@@ -6487,12 +6544,6 @@ msgstr ""
 #. type: Plain text
 #: build/_docs/md/Reproducible_Builds.md
 msgid "Many people or organizations will only be interested in reproducing builds to make sure that the f-droid.org builds match the original source and nothing has been inserted in.  In that case, the resulting APKs are not published for installation.  The [Verification Server](../Verification_Server) automates this process."
-msgstr ""
-
-#. type: Title ###
-#: build/_docs/md/Reproducible_Builds.md
-#, no-wrap
-msgid "Reproducible Builds"
 msgstr ""
 
 #. type: Plain text
@@ -6554,7 +6605,7 @@ msgstr ""
 
 #. type: Plain text
 #: build/_docs/md/Reproducible_Builds.md
-msgid "A standard part of the Android build process is to run some kind of PNG optimization tool, like `aapt singleCrunch` or `pngcrush`.  These do not provide deterministic output, it is still an open question as to why.  Since PNGs are normally committed to the source repo, a workaround to this problem is to run the tool of your choive on the PNG files, then commit those changes to the source repo (e.g. `git`).  Then, disable the default PNG optimization process by adding this to _build.gradle_:"
+msgid "A standard part of the Android build process is to run some kind of PNG optimization tool, like `aapt singleCrunch` or `pngcrush`.  These do not provide deterministic output, it is still an open question as to why.  Since PNGs are normally committed to the source repo, a workaround to this problem is to run the tool of your choice on the PNG files, then commit those changes to the source repo (e.g. `git`).  Then, disable the default PNG optimization process by adding this to _build.gradle_:"
 msgstr ""
 
 #. type: Plain text
@@ -6594,6 +6645,34 @@ msgstr ""
 #. type: Plain text
 #: build/_docs/md/Reproducible_Builds.md
 msgid "To ensure reproducibility, use the exact same revision of the `./makebuildserver` and `fdroid build`. You can find the commit hash of _fdroidserver_ by going to your git clone and running `git log -n1`.  The build server instance is stamped with the git commit hash on creation, and that ID is included in builds."
+msgstr ""
+
+#. type: Title ###
+#: build/_docs/md/Reproducible_Builds.md
+#, no-wrap
+msgid "ZIP entry info"
+msgstr ""
+
+#. type: Plain text
+#: build/_docs/md/Reproducible_Builds.md
+msgid "The ZIP format was originally designed around the MSDOS FAT filesystem.  UNIX file permissions were added as an extension.  APKs only need the most basic ZIP format, without any of the extensions.  These extensions are often stripped out in the final release signing process.  But the APK build process can add them.  For example:"
+msgstr ""
+
+#. type: Plain text
+#: build/_docs/md/Reproducible_Builds.md
+#, no-wrap
+msgid ""
+"```diff\n"
+"--- a2dp.Vol_137.apk\n"
+"+++ sigcp_a2dp.Vol_137.apk\n"
+"@@ -1,50 +1,50 @@\n"
+"--rw----     2.0 fat     8976 bX defN 79-Nov-30 00:00 AndroidManifest.xml\n"
+"--rw----     2.0 fat  1958312 bX defN 79-Nov-30 00:00 classes.dex\n"
+"--rw----     1.0 fat    78984 bx stor 79-Nov-30 00:00 resources.arsc\n"
+"+-rw-rw-rw-  2.3 unx     8976 b- defN 80-000-00 00:00 AndroidManifest.xml\n"
+"+-rw----     2.4 fat  1958312 b- defN 80-000-00 00:00 classes.dex\n"
+"+-rw-rw-rw-  2.3 unx    78984 b- stor 80-000-00 00:00 resources.arsc\n"
+"```\n"
 msgstr ""
 
 #. type: Title ###
