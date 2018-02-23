@@ -11,6 +11,7 @@ from babel.messages.catalog import Message
 
 errorcount = 0
 pattern = re.compile(r'](\([^h][^\)]+\))')
+bad_md_link = re.compile(r'.*\]\s+\(')
 for f in sorted(glob.glob('po/*.po*')):
     print('\n', f, '==================================================================')
     with open(f, 'r') as fp:
@@ -28,6 +29,11 @@ for f in sorted(glob.glob('po/*.po*')):
                 if "'" in (message.string[0], message.string[-1]) and message.string.count("'") % 2:
                     errorcount += 1
                     print("Mismatched ' in title:", message.string)
+
+        m = bad_md_link.search(message.string)
+        if m:
+            errorcount += 1
+            print('Space breaks Markdown link:', message.id, '\n:', m.group())
 
         idlinks = []
         for m in pattern.findall(message.id):
