@@ -17,9 +17,9 @@ for f in sorted(glob.glob('po/*.po*')):
         catalog = read_po(fp)
     for message in catalog:
         if 'type: Title #' in message.auto_comments:
-            if ':' in message.string:
+            if ':' in message.string and message.string[0] not in ('"', "'"):
                 errorcount += 1
-                print('colons not allowed in titles: %s "%s" "%s"'
+                print('colons not allowed in titles without quotes: %s "%s" "%s"'
                       % (f, message.id, message.string))
             if message.string:
                 if '"' in (message.string[0], message.string[-1]) and message.string.count('"') % 2:
