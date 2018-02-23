@@ -22,7 +22,7 @@ can run the process and end up with the exact same result.
 
 ### How it is implemented as of now
 
-Publishing signed binaries from elsewhere (e.g. the upstream-developer)
+Publishing signed binaries from elsewhere (e.g. the upstream developer)
 is now possible after verifying that they match ones built using a
 recipe. Publishing only takes place if there is a proper match. (Which
 seems very unlikely to be the case unless the exact same tool-chain is
@@ -34,7 +34,7 @@ the functionality to support that.)
 This procedures are implemented as part of `fdroid publish`. At the
 publish step, the reproducibility check will follow this logic:
 
-![Flow-chart for reproducibility check](../../../assets/docs/reproducible-builds/publish.png)
+![Flow-chart for reproducibility check]({{ site.baseurl }}/assets/docs/reproducible-builds/publish.png)
 
 
 #### Publish both (upstream-)developer singed and F-Droid signed APKs
@@ -49,8 +49,10 @@ and singed by F-Droid.
 This requires to put (upstream-)developer signatures into fdroiddata.
 We provide a command for easily extracting signatures from APKs:
 
-    $ cd .../fdroiddata
-    $ fdroid signatures F-Droid.apk
+```console
+$ cd /path/to/fdroiddata
+$ fdroid signatures F-Droid.apk
+```
 
 You may also supply HTTPS-URLs directly to `fdroid signatures` instead
 of local files. The signature files are extracted to the according
@@ -58,9 +60,10 @@ metadata directory ready to be used with `fdroid publish`. A signature
 consists of 3 files and the result of extracting one will resemble this
 file listing:
 
-    $ ls metadata/org.fdroid.fdroid/signatures/1000012/
-    CIARANG.RSA  CIARANG.SF  MANIFEST.MF
-
+```console
+$ ls metadata/org.fdroid.fdroid/signatures/1000012/
+CIARANG.RSA  CIARANG.SF  MANIFEST.MF
+```
 
 #### Exclusively publishing (upstream-)developer signed APKs
 
@@ -74,9 +77,11 @@ publishing this version of the app.
 
 Here is an example for a `Binaries` directive:
 
-    Binaries:https://foo.com/path/to/myapp-%v.apk
+```yaml
+Binaries: https://foo.com/path/to/myapp-%v.apk
+```
 
-Also see: [Build Metadata Reference - Binaries](../Build\_Metadata\_Reference/#Binaries)
+Also see: [Build Metadata Reference - Binaries](../Build_Metadata_Reference/#Binaries)
 
 
 ### Verification builds
@@ -131,7 +136,7 @@ otherwise reproducible build where the only difference is the
 The "_platform_" is part of the Android SDK that represents the
 standard library that is installed on the phone. They have two parts
 to their version: "version code", which is an integer that represents
-the SDK release, and the "revision", which represents bug-fix versions
+the SDK release, and the "revision", which represents bugfix versions
 to each platform. These versions can be seen in the included
 _build.prop_ file. Each revision has a different number in
 _ro.build.version.incremental_.  Gradle has no way to specify the
