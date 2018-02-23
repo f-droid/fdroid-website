@@ -185,6 +185,27 @@ of _fdroidserver_ by going to your git clone and running `git log
 creation, and that ID is included in builds.
 
 
+### ZIP entry info
+
+The ZIP format was originally designed around the MSDOS FAT
+filesystem.  UNIX file permissions were added as an extension.  APKs
+only need the most basic ZIP format, without any of the extensions.
+These extensions are often stripped out in the final release signing
+process.  But the APK build process can add them.  For example:
+
+```diff
+--- a2dp.Vol_137.apk
++++ sigcp_a2dp.Vol_137.apk
+@@ -1,50 +1,50 @@
+--rw----     2.0 fat     8976 bX defN 79-Nov-30 00:00 AndroidManifest.xml
+--rw----     2.0 fat  1958312 bX defN 79-Nov-30 00:00 classes.dex
+--rw----     1.0 fat    78984 bx stor 79-Nov-30 00:00 resources.arsc
++-rw-rw-rw-  2.3 unx     8976 b- defN 80-000-00 00:00 AndroidManifest.xml
++-rw----     2.4 fat  1958312 b- defN 80-000-00 00:00 classes.dex
++-rw-rw-rw-  2.3 unx    78984 b- stor 80-000-00 00:00 resources.arsc
+```
+
+
 ### Migration to reproducible builds
 
 #### TODO
