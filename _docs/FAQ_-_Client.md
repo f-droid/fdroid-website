@@ -131,11 +131,6 @@ for more details.
 You can't yet. See [Issue 36 - Update
 All](https://f-droid.org/repository/issues/?do=view_issue&issue=36).
 
-I’ve been working on adding NFC in useful ways to the F-Droid client app.
-So far, it is possible to send custom repo configs via NFC (starting in
-Android 4.0/SDK-14) and send the local F-Droid.apk via Android Beam
-(NFC+Bluetooth in starting in Android 4.1/SDK-16). Here’s how:
-
 
 ### Why doesn't the client show the number of installs/downloads for each app?
 
