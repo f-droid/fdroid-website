@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: default-package-sidebar
 ---
 
 {% assign strings = site.data.strings.package %}
@@ -66,21 +66,6 @@ layout: default
 				<a href="{{ page.changelog }}">{{ strings.changelog }}</a>
 			</li>
 		{% endif %}
-		{% if page.donate != "" and page.donate != nil %}
-			<li class="package-link">
-				<a href="{{ page.donate }}">{{ strings.donate }}</a>
-			</li>
-		{% endif %}
-		{% if page.flattr != "" and page.flattr != nil %}
-			<li class="package-link">
-				<a href="https://flattr.com/thing/{{ page.flattr }}">{{ strings.flattr }}</a>
-			</li>
-		{% endif %}
-		{% if page.liberapay != "" and page.liberapay != nil %}
-			<li class="package-link">
-				<a href="https://liberapay.com/~{{ page.liberapay }}">{{ strings.liberapay }}</a>
-			</li>
-		{% endif %}
 		<li class="package-link">
 			<a href="https://gitlab.com/fdroid/fdroiddata/tree/master/metadata/{{ page.package_name }}.txt">{{ strings.build_metadata }}</a>
 		</li>
@@ -88,6 +73,41 @@ layout: default
 			<a href="https://f-droid.org/wiki/page/{{page.package_name}}">{{ strings.technical_info }}</a>
 		</li>
 	</ul>
+
+	{% if page.liberapayID != nil or page.flattrID != nil or page.bitcoin != nil or page.litecoin != nil or page.donate != nil %}
+	<h3>{{ strings.donate }}</h3>
+	<ul class="package-links donate-options">
+		{% if page.liberapayID != "" and page.liberapayID != nil %}
+			<li class="package-link">
+				<a href="https://liberapay.com/~{{ page.liberapayID }}"><img src="{{ site.baseurl }}/assets/liberapay_donate_button.svg" alt="{{ strings.liberapay_alt }}"/></a>
+			</li>
+		{% endif %}
+		{% if page.flattrID != "" and page.flattrID != nil %}
+			<li class="package-link">
+				<a href="https://flattr.com/thing/{{ page.flattrID }}"><img src="{{ site.baseurl }}/assets/flattr-badge-large.png" alt="{{ strings.flattr_alt }}"/></a>
+			</li>
+		{% endif %}
+		{% if page.bitcoin != "" and page.bitcoin != nil %}
+			<li class="package-link">
+				<a href="https://live.blockcypher.com/btc/address/{{ page.bitcoin }}" title="{{ page.bitcoin }}" alt="{{ strings.bitcoin_alt }}"><img src="{{ site.baseurl }}/assets/bitcoin.png"/></a>
+			</li>
+		{% endif %}
+		{% if page.litecoin != "" and page.litecoin != nil %}
+			<li class="package-link">
+				<a href="https://live.blockcypher.com/ltc/address/{{ page.litecoin }}" title="{{ page.litecoin }}" alt="{{ strings.litecoin_alt }}"><img src="{{ site.baseurl }}/assets/litecoin.png"/></a>
+			</li>
+		{% endif %}
+		{% if page.donate != "" and page.donate != nil %}
+			<li class="package-link">
+			  {% if page.donate contains "paypal.com" %}
+			  <a href="{{ page.donate }}"><img src="{{ site.baseurl }}/assets/paypal_donate_button.gif" alt="{{ strings.paypal_alt }}"/></a>
+			  {% else %}
+			  <a href="{{ page.donate }}">{{ strings.donate }}: {{ page.donate }}</a>
+			  {% endif %}
+			</li>
+		{% endif %}
+	</ul>
+	{% endif %}
 
 	{% if page.phone_screenshots %}
 		<div id="screenshots" class="js_slides screenshots">
