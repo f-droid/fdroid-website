@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+{% include html-tag.html %}
+
+  {% include head.html %}
+
+  <body>
+
+    <div class="site-wrapper">
+
+      {% include header.html %}
+
+      <div class="main-content with-sidebar">
+
+{% if site.active_lang == "ar" or site.active_lang == "fa" or site.active_lang == "he" %}
+        <div class="article-area" dir="auto">
+{% else %}
+        <div class="article-area">
+{% endif %}
+          {{ content }}
+        </div>
+
+        <div class="sidebar">
+          <div class="sidebar-widget language">
+            {% include sidebar-lang.html %}
+          </div>
+
+          <div class="sidebar-widget">
+            {% include_cached sidebar-search.html %}
+          </div>
+
+          <div class="sidebar-widget">
+            {% include_cached sidebar-lastupdated-packages.html %}
+          </div>
+
+          <div class="sidebar-widget">
+            {% include_cached sidebar-latest-packages.html %}
+          </div>
+        </div>
+
+      </div>
+
+      {% include footer.html %}
+
+    </div>
+
+  </body>
+
+</html>
