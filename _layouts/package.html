@@ -151,17 +151,21 @@ https://github.com/untra/polyglot/issues/79 -->
 				</p>
 
 				<div class="package-version-permissions">
-					<h4>{{ strings.permissions }}</h4>
-					<ul class="package-version-permissions-list">
-						{% for permission in package.uses_permission %}
-						<li>
-							{{ permission.permission }}
-							{% if permission.min_sdk %}
-								({{ permission.min_sdk | android_sdk_level_to_version }})
-							{% endif %}
-						</li>
-						{% endfor %}
-					</ul>
+                    <details {% if forloop.first %}open{% endif %}>
+                        <summary class="package-version-permissions-summary">
+                            {{ strings.permissions }}
+                        </summary>
+                        <ul class="package-version-permissions-list">
+                            {% for permission in package.uses_permission %}
+                            <li>
+                                {{ permission.permission }}
+                                {% if permission.min_sdk %}
+                                    ({{ permission.min_sdk | android_sdk_level_to_version }})
+                                {% endif %}
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </details>
 				</div>
 
 			</li>
