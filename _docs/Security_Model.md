@@ -73,16 +73,16 @@ to make it as hard as possible to exploit this vector.
 * included on the
   [HSTS preload list](https://hstspreload.org/?domain=f-droid.org), so
   major browsers will only ever use HTTPS for all connections to
-  _fdroid.org_
+  _f-droid.org_
 * a [strong](https://observatory.mozilla.org/analyze.html?host=f-droid.org#third) TLS/HTTPS configuration
 * a [strong](https://observatory.mozilla.org/analyze.html?host=f-droid.org) HTTP Content Security Policy
-* [PGP-signature](https://f-droid.org/F-Droid.apk.asc) on the initial
-  install [download link](https://f-droid.org/F-Droid.apk)
+* [PGP-signature](/F-Droid.apk.asc) on the initial
+  install [download link](/F-Droid.apk)
 * automated
   [regular](https://gitlab.com/fdroid/fdroid-website/-/jobs/47503948)
   and [random](https://verification.f-droid.org/check-fdroid-apk)
   [auditing](https://gitlab.com/fdroid/fdroidserver/blob/dfbe114af3c4cef15ce3aa5e979d9f4684f2acbc/tests/check-fdroid-apk)
-  that [F-Droid.apk](https://f-droid.org/F-Droid.apk) has not been tampered with
+  that [F-Droid.apk](/F-Droid.apk) has not been tampered with
 * F-Droid Limited controls many potential phishing domains like
   [fdroid.org](https://whois.icann.org/lookup?name=fdroid.org),
   [f-droid.com](https://whois.icann.org/lookup?name=f-droid.com), and
@@ -99,7 +99,7 @@ to make it as hard as possible to exploit this vector.
 
 When F-Droid is built into Android, either as part of the ROM or by
 flashing an
-[OTA update](https://f-droid.org/packages/org.fdroid.fdroid.privileged.ota/),
+[OTA update]({{ site.baseurl }}/packages/org.fdroid.fdroid.privileged.ota/),
 it no longer needs "Unknown Sources" enabled to function.  This is the
 preferred method of operation, so we aim to make it as easy as
 possible for users to run F-Droid this way.  Flashing the OTA package
