@@ -25,7 +25,7 @@ This new search service also includes a much more complete index, so
 it is now possible to search based on all of the metadata, for example
 by license:
 
-* <https://staging.f-droid.org/search?q=gpl-3.0?
+* <https://staging.f-droid.org/search?q=gpl-3.0>
 * <https://staging.f-droid.org/search?q=apache-2.0>
 
 There is a lot that can be done to improve the search, we welcome
