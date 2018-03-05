@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
-"POT-Creation-Date: 2018-03-01 11:22+0100\n"
+"POT-Creation-Date: 2018-03-05 21:04+0100\n"
 "PO-Revision-Date: 2018-01-31 13:34+0000\n"
 "Last-Translator: Osoitz <oelkoro@gmail.com>\n"
 "Language-Team: Basque <https://hosted.weblate.org/projects/f-droid/website-docs/eu/>\n"
@@ -5628,12 +5628,33 @@ msgstr ""
 
 #. type: Plain text
 #: build/_docs/md/Maintaining_the_Forum.md
-msgid "Here is some general, non-sensitive information about our instance.  When setting up the forum, we followed the [official installation guide](https://github.com/discourse/discourse/blob/master/docs/INSTALL-cloud.md).  Posts from the old forum were not imported due to time restrictions of the voluntary administrators."
+msgid "Here is some general, non-sensitive information about our instance.  When setting up the forum, we followed [Docker's](https://docs.docker.com/engine/installation/linux/docker-ce/debian)  and [Dicourse's](https://github.com/discourse/discourse/blob/master/docs/INSTALL-cloud.md)  official installation guides.  Posts from the old forum were not imported due to time restrictions of the voluntary administrators."
 msgstr ""
 
 #. type: Bullet: '* '
 #: build/_docs/md/Maintaining_the_Forum.md
-msgid "Installation type: [docker](https://github.com/discourse/discourse_docker)"
+msgid "Installation type: [docker-ce](https://github.com/discourse/discourse_docker)"
+msgstr ""
+
+#. type: Bullet: '* '
+#: build/_docs/md/Maintaining_the_Forum.md
+msgid "Storage driver: [AUFS](https://docs.docker.com/engine/userguide/storagedriver/aufs-driver/)"
+msgstr ""
+
+#. type: Bullet: '* '
+#: build/_docs/md/Maintaining_the_Forum.md
+msgid "Sever's specifications: 2 cores, 4GB RAM, 30GB SSD"
+msgstr ""
+
+#. type: Bullet: '* '
+#: build/_docs/md/Maintaining_the_Forum.md
+msgid "Server's location: Amsterdam"
+msgstr ""
+
+#. type: Title ####
+#: build/_docs/md/Maintaining_the_Forum.md
+#, no-wrap
+msgid "Paths"
 msgstr ""
 
 #. type: Bullet: '* '
@@ -5648,12 +5669,38 @@ msgstr ""
 
 #. type: Bullet: '* '
 #: build/_docs/md/Maintaining_the_Forum.md
-msgid "Version: _tests-passed_ (planned to switch to _stable_)"
+msgid "Backups: _/var/discourse/shared/standalone/backups/default_"
+msgstr ""
+
+#. type: Title ####
+#: build/_docs/md/Maintaining_the_Forum.md
+#, no-wrap
+msgid "Discourse"
+msgstr ""
+
+#. type: Bullet: '* '
+#: build/_docs/md/Maintaining_the_Forum.md
+msgid "Version: _tests-passed_"
 msgstr ""
 
 #. type: Bullet: '* '
 #: build/_docs/md/Maintaining_the_Forum.md
 msgid "SSL: Let's Encrypt"
+msgstr ""
+
+#. type: Bullet: '* '
+#: build/_docs/md/Maintaining_the_Forum.md
+msgid "Login methods: local, GitHub"
+msgstr ""
+
+#. type: Bullet: '* '
+#: build/_docs/md/Maintaining_the_Forum.md
+msgid "Backup frequency: every day"
+msgstr ""
+
+#. type: Bullet: '* '
+#: build/_docs/md/Maintaining_the_Forum.md
+msgid "Backups amount: 15"
 msgstr ""
 
 #. type: Title ###
@@ -5701,23 +5748,118 @@ msgstr ""
 #. type: Title ####
 #: build/_docs/md/Maintaining_the_Forum.md
 #, no-wrap
-msgid "Manually downloading backups"
-msgstr ""
-
-#. type: Plain text
-#: build/_docs/md/Maintaining_the_Forum.md
-msgid "If you ever have problems with Discourse not starting, you can always download backups manually over SSH to ensure no user data is lost.  Discourse creates backups itself once a week and stores them at the following path: _/var/discourse/shared/standalone/backups/default_"
-msgstr ""
-
-#. type: Title ####
-#: build/_docs/md/Maintaining_the_Forum.md
-#, no-wrap
 msgid "Rebuilding the container"
 msgstr ""
 
 #. type: Plain text
 #: build/_docs/md/Maintaining_the_Forum.md
 msgid "```bash cd /var/discourse git pull ./launcher rebuild app ```"
+msgstr ""
+
+#. type: Title ###
+#: build/_docs/md/Maintaining_the_Forum.md
+#, no-wrap
+msgid "Installation log"
+msgstr ""
+
+#. type: Plain text
+#: build/_docs/md/Maintaining_the_Forum.md
+msgid "In case we need to set up the virtual machine because of some problem, you can use this instruction to do so quickly."
+msgstr ""
+
+#. type: Plain text
+#: build/_docs/md/Maintaining_the_Forum.md
+#, no-wrap
+msgid "Install Docker"
+msgstr ""
+
+#. type: Plain text
+#: build/_docs/md/Maintaining_the_Forum.md
+#: build/_docs/md/Submitting_to_F-Droid_Quick_Start_Guide.md
+msgid "References:"
+msgstr ""
+
+#. type: Bullet: '* '
+#: build/_docs/md/Maintaining_the_Forum.md
+msgid "https://docs.docker.com/engine/installation/linux/docker-ce/debian"
+msgstr ""
+
+#. type: Plain text
+#: build/_docs/md/Maintaining_the_Forum.md
+msgid "Download Docker's PGP key"
+msgstr ""
+
+#. type: Plain text
+#: build/_docs/md/Maintaining_the_Forum.md
+msgid "```bash wget -O docker-gpg https://download.docker.com/linux/debian/gpg apt-key add docker-gpg ```"
+msgstr ""
+
+#. type: Plain text
+#: build/_docs/md/Maintaining_the_Forum.md
+msgid "Check PGP key"
+msgstr ""
+
+#. type: Plain text
+#: build/_docs/md/Maintaining_the_Forum.md
+#: build/_docs/md/Submitting_to_F-Droid_Quick_Start_Guide.md
+msgid "```bash"
+msgstr ""
+
+#. type: Title #
+#: build/_docs/md/Maintaining_the_Forum.md
+#, no-wrap
+msgid "Must match '9DC8 5822 9FC7 DD38 854A E2D8 8D81 803C 0EBF CD88'"
+msgstr ""
+
+#. type: Plain text
+#: build/_docs/md/Maintaining_the_Forum.md
+msgid "apt-key fingerprint 0EBFCD88 ```"
+msgstr ""
+
+#. type: Plain text
+#: build/_docs/md/Maintaining_the_Forum.md
+msgid "Add Docker repository"
+msgstr ""
+
+#. type: Plain text
+#: build/_docs/md/Maintaining_the_Forum.md
+#, no-wrap
+msgid ""
+"```bash\n"
+"echo 'deb [arch=amd64] https://download.docker.com/linux/debian stretch stable' >> /etc/apt/sources.list.d/docker.com.list\n"
+"apt update\n"
+"```\n"
+msgstr ""
+
+#. type: Plain text
+#: build/_docs/md/Maintaining_the_Forum.md
+msgid "```bash apt install docker-ce ```"
+msgstr ""
+
+#. type: Plain text
+#: build/_docs/md/Maintaining_the_Forum.md
+msgid "Check Docker"
+msgstr ""
+
+#. type: Plain text
+#: build/_docs/md/Maintaining_the_Forum.md
+msgid "```bash docker run hello-world ```"
+msgstr ""
+
+#. type: Title ####
+#: build/_docs/md/Maintaining_the_Forum.md
+#, no-wrap
+msgid "Install Discourse"
+msgstr ""
+
+#. type: Plain text
+#: build/_docs/md/Maintaining_the_Forum.md
+msgid "If you still have the old _/var/discourse_ directory available, you can simply deploy it on the new server and start it by `./launcher rebuild app`."
+msgstr ""
+
+#. type: Plain text
+#: build/_docs/md/Maintaining_the_Forum.md
+msgid "Follow the [official installation guide](https://github.com/discourse/discourse/blob/master/docs/INSTALL-cloud.md)."
 msgstr ""
 
 #. type: Title #
@@ -7282,11 +7424,6 @@ msgstr ""
 msgid "Doing this is apparently the best way to get your own package into the repository, since you can provide a direct merge request for the metadata about your package, making it easy for the maintainers."
 msgstr ""
 
-#. type: Plain text
-#: build/_docs/md/Submitting_to_F-Droid_Quick_Start_Guide.md
-msgid "References:"
-msgstr ""
-
 #. type: Bullet: '* '
 #: build/_docs/md/Submitting_to_F-Droid_Quick_Start_Guide.md
 msgid "[F-Droid documentation](https://f-droid.org/docs)"
@@ -7331,11 +7468,6 @@ msgstr ""
 #. type: Plain text
 #: build/_docs/md/Submitting_to_F-Droid_Quick_Start_Guide.md
 msgid "Run these commands:"
-msgstr ""
-
-#. type: Plain text
-#: build/_docs/md/Submitting_to_F-Droid_Quick_Start_Guide.md
-msgid "```bash"
 msgstr ""
 
 #. type: Title #
