@@ -13,16 +13,31 @@ the forum are stored.
 ### General information
 
 Here is some general, non-sensitive information about our instance.
-When setting up the forum, we followed the
-[official installation guide](https://github.com/discourse/discourse/blob/master/docs/INSTALL-cloud.md).
+When setting up the forum, we followed
+[Docker's](https://docs.docker.com/engine/installation/linux/docker-ce/debian)
+and [Dicourse's](https://github.com/discourse/discourse/blob/master/docs/INSTALL-cloud.md)
+official installation guides.
 Posts from the old forum were not imported
 due to time restrictions of the voluntary administrators.
 
-* Installation type: [docker](https://github.com/discourse/discourse_docker)
+* Installation type: [docker-ce](https://github.com/discourse/discourse_docker)
+* Storage driver: [AUFS](https://docs.docker.com/engine/userguide/storagedriver/aufs-driver/)
+* Sever's specifications: 2 cores, 4GB RAM, 30GB SSD
+* Server's location: Amsterdam
+
+#### Paths
+
 * Installation directory: _/var/discourse_
 * App configuration: _/var/discourse/containers/app.yml_
-* Version: _tests-passed_ (planned to switch to _stable_)
+* Backups: _/var/discourse/shared/standalone/backups/default_
+
+#### Discourse
+
+* Version: _tests-passed_
 * SSL: Let's Encrypt
+* Login methods: local, GitHub
+* Backup frequency: every day
+* Backups amount: 15
 
 ### Upgrading
 
@@ -57,15 +72,6 @@ There is also a really good guide called
 on Discourse's forum. In the past, the following instructions were
 helpful:
 
-#### Manually downloading backups
-
-If you ever have problems with Discourse not starting,
-you can always download backups manually over SSH to ensure
-no user data is lost.
-Discourse creates backups itself once a week and stores them
-at the following path:
-_/var/discourse/shared/standalone/backups/default_
-
 #### Rebuilding the container
 
 ```bash
@@ -73,3 +79,56 @@ cd /var/discourse
 git pull
 ./launcher rebuild app
 ```
+
+### Installation log
+
+In case we need to set up the virtual machine because of some problem,
+you can use this instruction to do so quickly.
+
+#### Install Docker
+
+References:
+
+* https://docs.docker.com/engine/installation/linux/docker-ce/debian
+
+Download Docker's PGP key
+
+```bash
+wget -O docker-gpg https://download.docker.com/linux/debian/gpg
+apt-key add docker-gpg
+```
+
+Check PGP key
+
+```bash
+# Must match '9DC8 5822 9FC7 DD38 854A E2D8 8D81 803C 0EBF CD88'
+apt-key fingerprint 0EBFCD88
+```
+
+Add Docker repository
+
+```bash
+echo 'deb [arch=amd64] https://download.docker.com/linux/debian stretch stable' >> /etc/apt/sources.list.d/docker.com.list
+apt update
+```
+
+Install Docker
+
+```bash
+apt install docker-ce
+```
+
+Check Docker
+
+```bash
+docker run hello-world
+```
+
+#### Install Discourse
+
+If you still have the old _/var/discourse_ directory available,
+you can simply deploy it on the new server and start it by
+`./launcher rebuild app`.
+
+Follow the
+[official installation guide](https://github.com/discourse/discourse/blob/master/docs/INSTALL-cloud.md).
