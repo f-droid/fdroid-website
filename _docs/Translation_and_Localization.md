@@ -4,11 +4,15 @@ title: Translation and Localization
 
 ---
 
-As of release 0.103 of the F-Droid client app, there is now full
-support for localization.  That means that all of the texts can be
-translated into any language.  F-Droid will also use localized formats
-for numbers, currency, dates, etc. which happens automatically based
-on the language and country specified in the device's settings.
+Every piece of F-Droid can be localized, including the Android app,
+the entire website, and the tools.  That means that all of the texts
+can be translated into any language.  F-Droid will also use localized
+formats for numbers, currency, dates, etc. which happens automatically
+based on the language and country specified in the device's settings.
+
+All translation work is done in Weblate. We recommend that translators
+use a https://gitlab.com account for logging into Weblate since that
+same account can be used on all of the F-Droid projects on GitLab.
 
 There are a number of separate sections that are each managed
 separately, based on technical requirements:
