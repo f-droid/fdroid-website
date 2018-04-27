@@ -1,11 +1,11 @@
 ---
 layout: post
-title: "This Week in F-Droid (2018-W17)"
+title: "This Week in F-Droid"
 author: "Coffee"
 
 ---
 
-Hi everyone! This is a little experiment triggered by the [Matrix Project](https://matrix.org/) starting their own [TWIM](https://matrix.org/blog/2018/04/20/this-week-in-matrix-2018-04-20/) (This Week In Matrix), who in turn stole the idea off [TWIR](https://this-week-in-rust.org/) (This Week In Rust). Therefore, we now give you TWIF!
+Hi everyone! This is a little experiment triggered by the [Matrix Project](https://matrix.org/) starting their own [TWIM](https://matrix.org/blog/2018/04/20/this-week-in-matrix-2018-04-20/) (This Week In Matrix), who in turn stole the idea off [TWIR](https://this-week-in-rust.org/) (This Week In Rust). Therefore, we now give you the first trial TWIF!
 
 [F-Droid](https://f-droid.org/) is an installable [catalogue](https://f-droid.org/en/packages/) of [FOSS](https://en.wikipedia.org/wiki/Free_and_open-source_software) (Free and Open Source Software) applications for the Android platform. The [client](https://f-droid.org/app/org.fdroid.fdroid) makes it easy to browse, install, and keep track of updates on your device. This post lists notable things that happened in and around F-Droid this past week.
 
@@ -18,7 +18,7 @@ Hi everyone! This is a little experiment triggered by the [Matrix Project](https
 
   There will probably be more unstable v1.3 alphas since there were a lot of library updates, so please test! And don't upgrade unless you're really willing to use an alpha.
 * CiaranG put androguard on the build server, which should finally fix [admin#65](https://gitlab.com/fdroid/admin/issues/65). This means that users of the Privileged Extension will finally be able to leave Unknown Sources off. It should also fix the arabic names and blank names.
-* The $22K grant for translation workflow has been officially confirmed. It will include some web dev work. It is expected that this will happen in June. Get in touch with _hc if you're interested in working on this.
+* The $22K grant for translation workflow has been officially confirmed. It will include some web dev work. It is expected that this will happen in June.
 * [Liberapay](https://liberapay.com/): The [F-Droid Data team](https://liberapay.com/F-Droid-Data) is currently receiving €61.05 per week from 144 patrons, making it the 5th largest team on Liberapay. Help us get that 3rd position back!
 * If you hadn't noticed yet, **Bubu** made F-Droid accounts on Mastodon ([@fdroidorg](https://mastodon.technology/@fdroidorg)) and Twitter ([@fdroidorg](https://twitter.com/fdroidorg)). We've been surprised and excited that our Mastodon has proven much more popular than our Twitter! The set-up automatically mirrors everything between the two accounts, and Bubu has been doing a good job of pushing regular updates and answering people's questions.
 
