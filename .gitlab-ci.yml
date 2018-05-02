@@ -107,10 +107,17 @@ check_fdroid_apk:
     - master@fdroid/fdroidserver
   image: alpine:3.5
   variables:
-    apk: FDroid.apk
-    asc: FDroid.apk.asc
+    apk: F-Droid.apk
+    asc: F-Droid.apk.asc
     curl: "curl --silent --user-agent F-Droid --retry 20"
     fingerprint: 37D2C98789D8311948394E3E41E7044E1DBA2E89
+  artifacts:
+    name: "$apk-failed-${CI_JOB_ID}"
+    paths:
+      - $apk
+      - $asc
+    expire_in: 180 days
+    when: on_failure
   script:
     - apk add --no-cache gnupg curl
     - "! (gpg --list-keys | grep pub)"
