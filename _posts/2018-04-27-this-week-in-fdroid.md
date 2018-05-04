@@ -2,7 +2,7 @@
 layout: post
 title: "This Week in F-Droid"
 author: "Coffee"
-
+authorWebsite: "https://forum.f-droid.org/u/coffee"
 ---
 
 Hi everyone! This is a little experiment triggered by the [Matrix Project](https://matrix.org/) starting their own [TWIM](https://matrix.org/blog/2018/04/20/this-week-in-matrix-2018-04-20/) (This Week In Matrix), who in turn stole the idea off [TWIR](https://this-week-in-rust.org/) (This Week In Rust). Therefore, we now give you the first trial TWIF!

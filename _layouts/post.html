@@ -10,6 +10,9 @@ layout: default
 		Posted on {{ page.date | date: "%b %-d, %Y" }}
 		{% if page.author %}
 			by
+			{% if page.authorWebsite %}
+				<a href="{{ page.authorWebsite }}">
+			{% endif %}
 			<img
 				src="{{ site.baseurl }}/assets/{{ page.author }}.jpg"
 				alt="{{ page.author }}"
@@ -22,6 +25,9 @@ layout: default
 					itemprop="name">{{ page.author }}
 				</span>
 			</span>
+			{% if page.authorWebsite %}
+				</a>
+			{% endif %}
 		{% endif %}
 	</i>
   </header>
