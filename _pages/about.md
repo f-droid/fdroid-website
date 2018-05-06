@@ -48,6 +48,7 @@ and is brought to you by at least the following people:
 * Danial Behzadi
 * Jan Berkel
 * David Black
+* Ruslan Boitsov
 * Jan C Borchardt
 * Valerio Bozzolan
 * Dan Bravender
