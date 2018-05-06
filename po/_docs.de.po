@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
 "POT-Creation-Date: 2018-04-27 16:02+0200\n"
-"PO-Revision-Date: 2018-04-26 16:38+0000\n"
-"Last-Translator: ssantos <ssantos@web.de>\n"
+"PO-Revision-Date: 2018-05-06 13:04+0000\n"
+"Last-Translator: Claus Rüdinger <Mail-an-CR@web.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/f-droid/website-docs/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
@@ -1512,7 +1512,12 @@ msgid ""
 "    that the version differs significantly from upstream; or to make it\n"
 "    apparent which architecture or platform the apk is designed to\n"
 "    run on.\n"
-msgstr "    Das ist sinnvoll wenn die Version im Quell-Repository bei einem Tag nicht gesetzt wurde, um eine willkürliche Version zu erstellen, um darauf hinzuweisen, dass die Version große Unterschiede zum Upstream aufweist oder um zu zeigen, für welche Architektur die APK gedacht ist.\n"
+msgstr ""
+"    Das ist in folgenden Fällen sinnvoll,\n"
+"    wenn im Quell-Repository kein spezieller Tag für die Version gesetzt wurde;\n"
+"    um eine willkürliche Version zu erstellten;\n"
+"    um darauf hinzuweisen, dass die Version große Unterschiede zum Upstream aufweist;\n"
+"    oder um zu zeigen, für welche Architektur die APK gedacht ist.\n"
 
 #. type: Plain text
 #: build/_docs/md/Build_Metadata_Reference.md
@@ -2169,7 +2174,7 @@ msgstr "7.25 Deaktiviert<a name=\"Disabled\"></a>"
 #. type: Plain text
 #: build/_docs/md/Build_Metadata_Reference.md
 msgid "If this field is present, the application does not get put into the public index. This allows metadata to be retained while an application is temporarily disabled from being published. The value should be a description of why the application is disabled. No apks or source code archives are deleted: to purge an apk see the Build Version section or delete manually for developer builds. The field is therefore used when an app has outlived it’s usefulness, because the source tarball is retained."
-msgstr "Ist dieses Feld vorhanden, wird die Anwendung nicht in das der Öffentlichkeit zugängliche Register eingetragen werden. Dadurch wird das Zurückhalten von Metadaten ermöglicht, solange eine Anwendung vorübergehend von der Veröffentlichung ausgeschlossen ist. Der Wert sollte eine Beschreibung sein, warum die Anwendung gesperrt ist. APKs oder Quelltextarchive werden nicht gelöscht: um eine APK zu beseitigen, sehen Sie im Abschnitt „Build Version“ nach oder löschen Sie sie bei Entwickler-Builds manuell. Das Feld wird dann verwendet, wenn eine App ihren Nutzwert verloren hat, weil der Quellcode-Tarball beibehalten wird."
+msgstr "Ist dieses Feld vorhanden, wird die Anwendung nicht in das der Öffentlichkeit zugängliche Register eingetragen werden. Dadurch wird die Sicherung von Metadaten ermöglicht, solange eine Anwendung vorübergehend von der Veröffentlichung ausgeschlossen ist. Der Wert sollte eine Beschreibung sein, warum die Anwendung deaktiviert ist. Es werden keine APKs oder Quelltextarchive gelöscht: um eine APK zu beseitigen, sehen Sie im Abschnitt „Build Version“ nach oder löschen Sie sie bei Entwickler-Builds manuell. Das Feld wird daher verwendet, wenn eine App ihren Nutzwert verloren hat, weil der Quellcode-Tarball zurückgehalten wird."
 
 #. type: Title ###
 #: build/_docs/md/Build_Metadata_Reference.md
@@ -2180,7 +2185,7 @@ msgstr "7.26 Benötigt Root<a name=\"Requires-Root\"></a>"
 #. type: Plain text
 #: build/_docs/md/Build_Metadata_Reference.md
 msgid "Set this optional field to \"Yes\" if the application requires root privileges to be usable. This lets the client filter it out if the user so desires. Whether root is required or not, it is good to give a paragraph in the description to the conditions on which root may be asked for and the reason for it."
-msgstr "Dieses optionale Feld sollte \"Yes\" enthalten, wenn die Anwendung Root-Rechte benötigt, um nutzbar zu sein. Dadurch kann der Client sie aussortieren, wenn der Nutzer dies so wünscht. Egal ob Root nötig ist oder nicht, empfiehlt es sich, einen Abschnitt in der Beschreibung anzugeben, der die Bedingungen, bei denen Root-Rechte abgefragt werden können, und den Grund dafür nennt."
+msgstr "Dieses optionale Feld sollte \"Yes\" enthalten, wenn die Anwendung Root-Rechte benötigt, um nutzbar zu sein. Dadurch kann der Client sie aussortieren, wenn der Nutzer dies so wünscht. Wenn Root nötig ist, empfiehlt es sich, in der Beschreibung einen Absatz zu ergänzen, der die Bedingungen, bei denen Root-Rechte abgefragt werden, und den Grund dafür nennt."
 
 #. type: Plain text
 #: build/_docs/md/Build_Metadata_Reference.md
@@ -2316,17 +2321,17 @@ msgstr ""
 #: build/_docs/md/Build_Metadata_Reference.md
 #, no-wrap
 msgid "7.29 Vercode Operation<a name=\"Vercode-Operation\"></a>"
-msgstr "7.29 Versionscode-Vorgang<a name=\"Vercode-Operation\"></a>"
+msgstr "7.29 Versionscode-Operation<a name=\"Vercode-Operation\"></a>"
 
 #. type: Plain text
 #: build/_docs/md/Build_Metadata_Reference.md
 msgid "Operation to be applied to the vercode obtained by the defined `Update Check Mode`. `%c` will be replaced by the actual vercode, and the whole string will be passed to python’s `eval` function."
-msgstr ""
+msgstr "Auf den über die festgelegte `Aktualisierungsprüfmethode` bezogenen Versionscode anzuwendende Rechnung. `%c` wird durch den tatsächlichen Versionscode ersetzt und die gesamte Zeichenkette an Python’s `eval`-Funktion übergeben."
 
 #. type: Plain text
 #: build/_docs/md/Build_Metadata_Reference.md
 msgid "Especially useful with apps that we want to compile for different ABIs, but whose vercodes don’t always have trailing zeros. For example, with `Vercode Operation` set at something like `%c*10 + 4`, we will be able to track updates and build up to four different versions of every upstream version."
-msgstr ""
+msgstr "Insbesondere bei Apps hilfreich, die für verschiedene Binärschnittstellen kompiliert werden sollen, deren Versionscodes aber nicht immer auf Null enden. So können, zum Beispiel, durch Festlegung einer Versionscode-Operation auf beispielsweise `%c*10 + 4` bis zu vier verschiedene Versionen jeder Upstream-Version erstellt und Updates dafür verfolgt werden."
 
 #. type: Title ###
 #: build/_docs/md/Build_Metadata_Reference.md
@@ -2337,7 +2342,7 @@ msgstr "7.30 Aktualisierungsprüfung ignorieren<a name=\"Update-Check-Ignore\"><
 #. type: Plain text
 #: build/_docs/md/Build_Metadata_Reference.md
 msgid "When checking for updates (via `Update Check Mode`) this can be used to specify a regex which, if matched against the version name, causes that version to be ignored. For example, ’beta’ could be specified to ignore version names that include that text."
-msgstr ""
+msgstr "Kann bei der Prüfung auf Aktualisierungen (über die `Aktualisierungsprüfmethode`) verwendet werden, um eine Zeichenfolge festzulegen, die bei Übereinstimmung mit einem Teil des Versionsnamens, dazu führt, dass diese Version ignoriert wird. Zum Beispiel kann ’beta’ angegeben werden, damit Versionsbezeichnungen, die diesen Text beinhalten, ignoriert werden."
 
 #. type: Title ###
 #: build/_docs/md/Build_Metadata_Reference.md
@@ -2348,12 +2353,12 @@ msgstr "7.31 Name für Aktualisierungsprüfung<a name=\"Update-Check-Name\"></a>
 #. type: Plain text
 #: build/_docs/md/Build_Metadata_Reference.md
 msgid "When checking for updates (via `Update Check Mode`) this can be used to specify the package name to search for. Useful when apps have a static package name but change it programmatically in some app flavors, by e.g.  appending \".open\" or \".free\" at the end of the package name."
-msgstr ""
+msgstr "Kann bei der Prüfung auf Aktualisierungen (über die `Aktualisierungsprüfmethode`) verwendet werden, um den Paketnamen festzulegen, nach dem gesucht werden soll. Praktisch, wenn Apps einen festen Paketnamen besitzen, er sich aber für bestimmte App-Varianten programmatisch ändert, beispielsweise durch Anhängen von \".open\" oder \".free\" an den Paketnamen."
 
 #. type: Plain text
 #: build/_docs/md/Build_Metadata_Reference.md
 msgid "You can also use `Ignore` to ignore package name searching. This should only be used in some specific cases, for example if the app’s build.gradle file does not contain the package name."
-msgstr ""
+msgstr "Es kann auch `Ignore` verwendet werden, um die Suche nach Paketnamen zu überspringen. Dies sollte nur in einigen bestimmten Fällen angewendet werden, zum Beispiel wenn die build.gradle-Datei der App keinen Paketnamen enthält."
 
 #. type: Title ###
 #: build/_docs/md/Build_Metadata_Reference.md
@@ -2438,17 +2443,17 @@ msgstr "7.35 Aktueller Versionscode<a name=\"Current-Version-Code\"></a>"
 #. type: Plain text
 #: build/_docs/md/Build_Metadata_Reference.md
 msgid "The [version code](https://developer.android.com/guide/topics/manifest/manifest-element.html#vcode) corresponding to the [Current Version](#Current-Version) field. Both these fields must be correct and matching although it’s the current version code that’s used by Android to determine version order and by F-Droid client to determine which version should be recommended."
-msgstr ""
+msgstr "Der [Versionscode](https://developer.android.com/guide/topics/manifest/manifest-element.html#vcode) entsprechend dem Feld [Aktuelle Version](#Current-Version). Beide Felder müssen sachgemäß sein und zueinander passen, da es der aktuelle Versionscode ist, der gleichwohl von Android zur Bestimmung der Versionsreihenfolge und vom F-Droid-Client zur Ermittlung der empfohlenen Version verwendet wird."
 
 #. type: Plain text
 #: build/_docs/md/Build_Metadata_Reference.md
 msgid "This field is normally automatically updated - see [Update Check Mode](#Update-Check-Mode)."
-msgstr ""
+msgstr "Dieses Feld wird normalerweise automatisch aktualisiert - siehe [Aktualisierungsprüfmethode](#Update-Check-Mode)."
 
 #. type: Plain text
 #: build/_docs/md/Build_Metadata_Reference.md
 msgid "If not set or set to `0`, clients will recommend the highest version they can, as if the `Current Version Code` was infinite."
-msgstr ""
+msgstr "Wenn nicht angegeben oder auf `0` gesetzt, werden Clients die höchstmögliche Version empfehlen, als ob der `Aktuelle Versionscode` unendlich wäre."
 
 #. type: Plain text
 #: build/_docs/md/Build_Metadata_Reference.md
@@ -2465,7 +2470,7 @@ msgstr "7.36 Keine Quelle seit<a name=\"No-Source-Since\"></a>"
 #. type: Plain text
 #: build/_docs/md/Build_Metadata_Reference.md
 msgid "In case we are missing the source code for the Current Version reported by Upstream, or that non-free elements have been introduced, this defines the first version that began to miss source code. Apps that are missing source code for just one or a few versions, but provide source code for newer ones are not to be considered here - this field is intended to illustrate which apps do not currently distribute source code, and since when have they been doing so."
-msgstr ""
+msgstr "Für den Fall, dass der Quellcode zur vom Upstream gemeldeten Aktuellen Version fehlt, oder dass unfreie Bestandteile eingeführt wurden, wird hiermit die erste Version bestimmt, mit der das Fehlen des Quellcodes begann. Apps, deren Quellcode nur für eine oder einige wenige Versionen fehlt, die aber für neuere einen Quelltext zur Verfügung stellen, werden hier nicht berücksichtigt - dieses Feld dient dazu, aufzuzeigen, welche Apps momentan keinen Quellcode veröffentlichen und seit wann sie das tun."
 
 #. type: Title #
 #: build/_docs/md/Build_Server_Setup.md
@@ -4060,7 +4065,7 @@ msgstr "    android.permission.WRITE_EXTERNAL_STORAGE\n"
 #. type: Plain text
 #: build/_docs/md/FAQ_-_Client.md
 msgid "Use F-Droid Privileged Extension which gives F-Droid system &lt;code&gt;priv-app access. This improves security by allowing automatic app updates as well as letting the user leave the \"Unknown Sources\" setting off:"
-msgstr ""
+msgstr "Die F-Droid-Rechteerweeiterung nutzen, die F-Droid System-&lt;code&gt;-App-Privilegien verschafft, was die Sicherheit erhöht, da sowohl automatische App-Updates als auch das Ausschalten der \"Unbekannten Herkunft\" in den Einstellungen möglich werden:"
 
 #. type: Plain text
 #: build/_docs/md/FAQ_-_Client.md
@@ -4071,7 +4076,7 @@ msgstr "    org.fdroid.fdroid.privileged.USE_SERVICE\n"
 #. type: Plain text
 #: build/_docs/md/FAQ_-_Client.md
 msgid "Use root access to install F-Droid Privileged Extension as a system &lt;code&gt;priv-app:"
-msgstr ""
+msgstr "Verwendung des Root-Zugriffs zur Installation der F-Droid-Rechteerweiterung als priviliegierte System-&lt;code&gt;-App:"
 
 #. type: Plain text
 #: build/_docs/md/FAQ_-_Client.md
@@ -4188,12 +4193,12 @@ msgstr "Ab Version v0.59, unterstützt die F-Droid-App das Versenden einer Paket
 #. type: Bullet: '1.  '
 #: build/_docs/md/FAQ_-_Client.md
 msgid "select **Repositories** in the menu on the main screen"
-msgstr ""
+msgstr "im Hauptmenü der Einstellungen **Paketquellen** wählen"
 
 #. type: Bullet: '2.  '
 #: build/_docs/md/FAQ_-_Client.md
 msgid "click on the repo that you want to send"
-msgstr ""
+msgstr "auf die Paketquelle klicken, die versendet werden soll"
 
 #. type: Bullet: '2.  '
 #: build/_docs/md/FAQ_-_Client.md
@@ -4203,12 +4208,12 @@ msgstr ""
 #. type: Bullet: '4.  '
 #: build/_docs/md/FAQ_-_Client.md
 msgid "touch the screen with the selected repo"
-msgstr ""
+msgstr "den Bildschirm mit der gewählten Paketquelle berühren"
 
 #. type: Bullet: '5.  '
 #: build/_docs/md/FAQ_-_Client.md
 msgid "click **OK** on the receiving device"
-msgstr ""
+msgstr "auf dem Empfangsgerät **OK** anklicken"
 
 #. type: Title ###
 #: build/_docs/md/FAQ_-_Client.md
@@ -8000,7 +8005,7 @@ msgstr "```bash cd ../fdroiddata fdroid lint net.artificialworlds.rabbitescape f
 #. type: Plain text
 #: build/_docs/md/Submitting_to_F-Droid_Quick_Start_Guide.md
 msgid "When I got the version stuff right the checkupdates command printed:"
-msgstr "Wenn ich den Versionskram richtig erfasst habe, der ‘checkupdates‘-Befehl Folgendes ausgibt:"
+msgstr "Wenn ich den Versionskram richtig erfasst habe, gibt der ‘checkupdates‘-Befehl Folgendes aus:"
 
 #. type: Plain text
 #: build/_docs/md/Submitting_to_F-Droid_Quick_Start_Guide.md
@@ -8010,7 +8015,7 @@ msgstr "``` INFO: Processing net.artificialworlds.rabbitescape...  INFO: ...upda
 #. type: Plain text
 #: build/_docs/md/Submitting_to_F-Droid_Quick_Start_Guide.md
 msgid "Then I made sure it built OK:"
-msgstr "Dann vergewissere ich mich, dass das Build in Ordnung geht:"
+msgstr "Dann vergewissere ich mich, dass das Build o.k. ist:"
 
 #. type: Plain text
 #: build/_docs/md/Submitting_to_F-Droid_Quick_Start_Guide.md
@@ -8040,14 +8045,13 @@ msgstr "Übersetzung und Lokalisation"
 
 #. type: Plain text
 #: build/_docs/md/Translation_and_Localization.md
-#, fuzzy
 msgid "Every piece of F-Droid can be localized, including the Android app, the entire website, and the tools.  That means that all of the texts can be translated into any language.  F-Droid will also use localized formats for numbers, currency, dates, etc. which happens automatically based on the language and country specified in the device's settings."
-msgstr "Mit der Version 0.103 der F-Droid-App gibt es eine vollständige Unterstützung zur Lokalisation. Das bedeutet, dass alle Texte in jede Sprache übersetzt werden können. Außerdem wird F-Droid automatisch, nach den Geräteeinstellungen für Sprache und Land, länderspezifische Formate für Zahlen, Geld-, Datumswerte usw. verwenden."
+msgstr "Jedes Bestandteil von F-Droid kann lokalisiert werden, einschließlich der Android-App, der gesamten Internetseite und der Werkzeuge. Das bedeutet, dass alle Texte in alle Sprchen übersetzt werden können. F-Droid wird darüberhinaus lokalisierte Formate für Zahlen, Währungen, Datumsangaben verwenden, was automatisch gemäß den auf dem Gerät festgelegten Sprach- und Landeseinstellungen geschieht."
 
 #. type: Plain text
 #: build/_docs/md/Translation_and_Localization.md
 msgid "All translation work is done in Weblate. We recommend that translators use a https://gitlab.com account for logging into Weblate since that same account can be used on all of the F-Droid projects on GitLab."
-msgstr ""
+msgstr "Die gesamte Übersetzungsarbeit wird in Weblate erledigt. Wir empfehlen den Übersetzern, ein Konto von https://gitlab.com zur Anmeldung bei Weblate zu verwenden, da dasselbe Konto für alle F-Droid-Projekte bei GitLab genutzt werden kann."
 
 #. type: Plain text
 #: build/_docs/md/Translation_and_Localization.md
