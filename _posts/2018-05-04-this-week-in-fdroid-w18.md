@@ -15,7 +15,7 @@ Hi everyone! You have been telling us you liked the first [#twif](https://mastod
 
   As mentioned in the [previous TWIF](https://f-droid.org/en/2018/04/27/this-week-in-fdroid.html), V1.3 no longer supports Android 2.3.3 or 3.x. Android 4.0 is the minimum. That freed us to update tons of things, and ditch our own custom forks.
 
-* [Bubu](https://forum.f-droid.org/u/Bubu) did some work work on bringing the [Rocket.Chat](https://rocket.chat) [app](https://github.com/RocketChat/Rocket.Chat.Android) to F-Droid. The FOSS flavour is currently pending upstream review. It lacks push notifications, but otherwise works fine.
+* [Bubu](https://forum.f-droid.org/u/Bubu) did some work on bringing the [Rocket.Chat](https://rocket.chat) [app](https://github.com/RocketChat/Rocket.Chat.Android) to F-Droid. The FOSS flavour is currently pending upstream review. It lacks push notifications, but otherwise works fine.
 
 * Search page styling broke last Wednesday and got fixed again on Thursday.
 
