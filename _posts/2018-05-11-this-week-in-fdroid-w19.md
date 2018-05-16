@@ -36,7 +36,7 @@ In total, 49 apps were updated this week. Here are the highlights:
 
 * [Fennec F-Droid](https://f-droid.org/app/org.mozilla.fennec_fdroid), which is F-Droid's unbranded Firefox build, updated to v60, [finally bringing all Firefox quantum improvements to android](https://www.androidpolice.com/2018/05/04/firefox-60-now-available-finally-brings-quantum-css-engine-android/).
 
-  By the way, several people told us they find the icon ugly. Think you can do better? Here's your chance! Send us a new design, and we might make it the official new Fennec F-Droid icon!
+  By the way, several people told us they find the icon ugly. Think you can do better? Here's your chance! Send us a new design, and we might make it the official new Fennec F-Droid icon! Submission and discussion will happen in the [Forum](https://forum.f-droid.org/t/new-icon-for-fennec-f-droid/2810).
 
 * [Conversations](https://f-droid.org/app/eu.siacs.conversations) was updated to version 2.2.0 featuring integrated message search, voice recorder and location sharing. Users of the plugins "[Voice Recorder Plugin](https://f-droid.org/app/eu.siacs.conversations.voicerecorder)" from the F-Droid repo and "Open Share Location Plugin" from the F-Droid Archive repo can safely uninstall them after updating.
 
