@@ -129,90 +129,22 @@ the guest would fail.
 
 ### Creating the Debian base box
 
-The output of this step is a minimal Debian VM that has support for
-remote login and provisioning.
+We have created a script for easily bootstrapping vagrant base boxes from
+scratch.
 
-There are two possible ways to get a debian base box for use with
-`./makebuildserver`.
-
-#### Using the Debian provided vagrant boxes
-
-Use the prebuilt vagrant boxes built by the Debian team at
-<https://wiki.debian.org/Teams/Cloud/VagrantBaseBoxes> and adapt them to fit
-F-Droid's requirements.
-
-Install the following vagrant plugins, the first one automatically installs
-the virtualbox guest additions for us, the second one can resize the virtual
-hard disk:
-```bash
-vagrant plugin install vagrant-vbguest
-vagrant plugin install vagrant-disksize
-```
-Then create a file named `Vagrantfile` with the following contents:
-```ruby
-Vagrant.configure("2") do |config|
-  config.vm.box = "debian/jessie64"
-  # Disable default /vagrant folder rsync
-  config.vm.synced_folder ".", "/vagrant", disabled: true
-  config.disksize.size = '60GB'
-
-  config.vm.provision "shell", inline: <<-SHELL
-    sudo apt-get update && sudo apt-get install -y parted
-    sudo swapoff /dev/sda5 # disable swap so we can then remove the partition
-    sudo parted /dev/sda rm 5 rm 2 # remove swap and extended partition
-    # Extend sda1 to the full disk. Yes, this needs three dashes. See
-    # https://unix.stackexchange.com/a/365657/126364.
-    sudo parted ---pretend-input-tty /dev/sda resizepart 1 yes 100%
-    sudo resize2fs /dev/sda1 # enlarge filesystem to fill the whole partition
-    sudo dd if=/dev/zero of=/swap bs=1024K count=500 # create a swapfile
-    sudo chmod 600 /swap
-    sudo mkswap /swap
-    sudo swapon /swap
-    sudo sed -i '/swap/d' /etc/fstab # and update fstab with the swapfile
-    echo "/swap       none    swap    sw   0   0" | sudo tee -a /etc/fstab
-  SHELL
-end
-```
-In the same directory run `vagrant up --provider virtualbox`.
-
-This will download and import the debian/jessie64 base.box. It will then
-bring up the box once and do some initial setup including installing the
-virtualbox guest additions, resizing the hard disk, resizing the partition
-and filesystem and adjusting the fstab.
-
-After that is done we can repackage the box and move it to the expected
-fdroid cache location. We also want to make sure there is no left over
-`jessie64` box known to vagrant.
+Here's how you can get started building our basebox quickly:
 
 ```bash
-vagrant package
-mv package.box ~/.cache/fdroidserver/jessie64.box
-# Remove any previous versions (if one exists) of the 'jessie64' machine
-# created by makebuildserver. Otherwise it will reuse the old version.
-vagrant box remove jessie64
+fdroid:~$ git clone https://gitlab.com/fdroid/basebox.git
+fdroid:~$ cd basebox
+fdroid:~/basebox$ sudo ./makebuildserver_basebox.py --provider virtualbox
+fdroid:~/basebox$ vagrant box add --force jessie64 fdroid-jessie64-virtualbox.box
+fdroid:~/basebox$ rm fdroid-jessie64-virtualbox.box
 ```
 
-#### Building a Debian base box from scratch
+Additional documentation is available in the projects
+[README file](https://gitlab.com/fdroid/basebox#makebuildserver_baseboxpy).
 
-Create one from scratch form verified standard Debian installation media.
-Documentation for creating a base box can be found at
-<https://www.vagrantup.com/docs/boxes/base.html>.
-
-In addition to carefully following the steps described there, you should
-consider the following:
-
-1.  It is advisable to disable udev network device persistence,
-    otherwise any movement of the VM between machines, or
-    reconfiguration, will result in broken networking.
-
-    For a Debian/Ubuntu default install, just
-    `touch /etc/udev/rules.d/75-persistent-net-generator.rules` to turn
-    off rule generation, and at the same time, get rid of any rules it’s
-    already created in `/etc/udev/rules.d/70-persistent-net.rules`.
-
-2.  Unless you want the VM to become totally inaccessible following a
-    failed boot, you need to set `GRUB_RECORDFAIL_TIMEOUT` to a value
-    other than -1 in `/etc/grub/default` and then run `update-grub`.
 
 ### Creating the F-Droid base box
 
