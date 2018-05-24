@@ -247,14 +247,14 @@ Yes, but:
 
 To be FLOSS, your entire app has to be, including dependencies. If you
 use non-free/proprietary libraries, we cannot build your app and thus it
-cannot be included in our mainline repostitory (see "Can I run my own
+cannot be included in our mainline repository (see "Can I run my own
 app repo?" in that case). Unfortunately that rules out any libraries
 that are part of the "Google repository" from the SDK manager (e.g.
 play-services, fabric, firebase) -- only the "Android support
-repostiory" is allowed.
+repository" is allowed.
 
 For external resources, please restrain yourself to "well known
-repositories", e.g. mavenCentral or jCenter (see compelte listing in
+repositories", e.g. mavenCentral or jCenter (see complete listing in
 the "srclib" section of
 [Build Metadata Reference](../Build_Metadata_Reference)). Please note
 that e.g. Bintray does not only offers jCenter, but user-repos as
@@ -264,7 +264,7 @@ If you require dependencies that are not available through those
 repositories, please do not use binary jar files directly, but provide
 an easy way to build them from source: e.g. by providing a "pre-build"
 script, by including them to your actual build process (gradle task) and
-including the library source in oyur project (hard or by submodule).
+including the library source in your project (hard or by submodule).
 
 Replacements for known "usual suspects":
 
