@@ -5,7 +5,7 @@ author: "Coffee"
 authorWebsite: "https://forum.f-droid.org/u/coffee"
 ---
 
-[F-Droid](https://f-droid.org/) is a [repository](https://f-droid.org/en/packages/) of verified [free and open source](https://en.wikipedia.org/wiki/Free_and_open-source_software) Android apps, a [client](https://f-droid.org/app/org.fdroid.fdroid) to access it, as well as a whole "app store kit", providing all the tools needed to set up and run an app store. It is a community-run free software project developed by a wide range of contributors. This is their story this past week.
+[F-Droid](https://f-droid.org/) is a [repository](https://f-droid.org/packages/) of verified [free and open source](https://en.wikipedia.org/wiki/Free_and_open-source_software) Android apps, a [client](https://f-droid.org/app/org.fdroid.fdroid) to access it, as well as a whole "app store kit", providing all the tools needed to set up and run an app store. It is a community-run free software project developed by a wide range of contributors. This is their story this past week.
 
 #### F-Droid core
 
@@ -19,11 +19,11 @@ authorWebsite: "https://forum.f-droid.org/u/coffee"
 
 * [Bubu](https://forum.f-droid.org/u/Bubu) and [Tovok7](https://blog.grobox.de/) have been working on fixing [reproducible builds](https://reproducible-builds.org) for [Briar](https://briarproject.org/fdroid.html) among others. The latest news is that this is now working. Stay tuned.
 
-* **uniq** finished up the [documentation for bootstrapping the buildserver basebox](https://staging.f-droid.org/en/docs/Build_Server_Setup/#creating-the-debian-base-box).
+* **uniq** finished up the [documentation for bootstrapping the buildserver basebox](https://staging.f-droid.org/docs/Build_Server_Setup/#creating-the-debian-base-box).
 
 * **uniq** also laid the groundwork to upgrade our build server to Debian _Stretch_, and we'll be experimenting with that in the next weeks. Once this upgrade is in place, it'll be much easier to build some applications with lots of native dependencies, e.g. [VLC](https://f-droid.org/wiki/page/org.videolan.vlc), [Ring](https://f-droid.org/app/cx.ring), [OsmAnd~](https://f-droid.org/app/net.osmand.plus).
 
-* You may have noticed the total absence of any [GDPR](https://en.wikipedia.org/wiki/General_Data_Protection_Regulation) related work. [We take your privacy seriously](https://f-droid.org/en/about/) and always have.
+* You may have noticed the total absence of any [GDPR](https://en.wikipedia.org/wiki/General_Data_Protection_Regulation) related work. [We take your privacy seriously](https://f-droid.org/about/) and always have.
 
 #### Community News
 
