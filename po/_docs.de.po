@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
 "POT-Creation-Date: 2018-05-26 15:02+0200\n"
-"PO-Revision-Date: 2018-05-20 21:37+0000\n"
+"PO-Revision-Date: 2018-06-02 20:38+0000\n"
 "Last-Translator: ssantos <ssantos@web.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/f-droid/website-docs/de/>\n"
 "Language: de\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.0-dev\n"
+"X-Generator: Weblate 3.0\n"
 
 #. type: Title #
 #: build/_docs/md/All_About_Descriptions_Graphics_and_Screenshots.md
@@ -1932,6 +1932,14 @@ msgid ""
 "    isn’t used nor built will result in an error saying that native\n"
 "    libraries were expected in the resulting package.\n"
 msgstr ""
+"    Die Build- und Scan-Prozesse werde sich beschweren (sie weigern sich zu bauen), wenn\n"
+"    dieser Parameter nicht definiert ist, aber es ist ein `jni` Verzeichnis vorhanden. Wenn\n"
+"    der native Code mit anderen Mitteln wie z.B. eines Gradle-Tasks, gebaut werden,\n"
+"    können Sie hier `nein` angeben, um das zu vermeiden. Wenn jedoch der native Code\n"
+"    nicht benötigt oder verwendet wird, entfernen Sie stattdessen das Verzeichnis\n"
+"    (zum Beispiel mit `rm=jni`). Mit `buildjni=no` wenn der jni-Code nicht\n"
+"    verwendet oder gebaut wird, führt zu einem Fehler, der besagt, dass native\n"
+"    Bibliotheken in dem resultierenden Paket erwartet wurden.\n"
 
 #. type: Plain text
 #: build/_docs/md/Build_Metadata_Reference.md
@@ -1948,6 +1956,10 @@ msgid ""
 "    that require toolchains no longer included in current versions of\n"
 "    the NDK.\n"
 msgstr ""
+":   Version des NDK für diesen Build. Standardmäßig wird das neueste NDK Release\n"
+"    verwendet, das Legacy-Toolchains enthält, um Builds nicht zu brechen,\n"
+"    die Toolchains benötigen, die nicht mehr in aktuellen Versionen des\n"
+"    NDKs enthalten sind.\n"
 
 #. type: Plain text
 #: build/_docs/md/Build_Metadata_Reference.md
@@ -1990,6 +2002,10 @@ msgid ""
 "    least one valid flavour since ’yes’ will build all of\n"
 "    them separately.\n"
 msgstr ""
+"    Wenn nur eine Variante gegeben ist und sie \"ja\" ist, wird keine Variante\n"
+"    verwendet. Beachten Sie, dass Sie bei Projekten mit Varianten \n"
+"    mindestens ein gültiger Geschmack angegeben werden muss, da \"ja\"\n"
+"    alle getrennt erstellt.\n"
 
 #. type: Plain text
 #: build/_docs/md/Build_Metadata_Reference.md
@@ -2065,6 +2081,9 @@ msgid ""
 "    default ’release’. It can’t be given any flags, such as the path to\n"
 "    a build.xml.\n"
 msgstr ""
+":   Geben Sie einen alternativen Satz von Ant-Befehlen (Ziel) an anstelle des\n"
+"    Standard-'release'. Es können keine Flags angegeben werden, wie z.B. der Pfad zu\n"
+"    einer build.xml.\n"
 
 #. type: Plain text
 #: build/_docs/md/Build_Metadata_Reference.md
@@ -2081,6 +2100,11 @@ msgid ""
 "    specified, the build is manual. You should run your build commands,\n"
 "    such as `make`, in `build=`.\n"
 msgstr ""
+":   Geben Sie einen Glob-Pfad an, in dem sich das resultierende unsignierte Release apk\n"
+"    des Builds befinden sollte. Dies kann verwendet werden in Kombination mit Build-\n"
+"    Methoden wie `gradle=yes` oder `maven=yes`, aber wenn keine Build-Methode \n"
+"    angegeben ist, ist das Build manuell. Sie sollten Ihre Build-Befehle ausführen,\n"
+"    z.B. `make` in `build=`.\n"
 
 #. type: Plain text
 #: build/_docs/md/Build_Metadata_Reference.md
@@ -2114,6 +2138,8 @@ msgid ""
 ":   List of Anti-Features for this specific build. They are described\n"
 "    in [AntiFeatures](#AntiFeatures).\n"
 msgstr ""
+":   Liste der Anti-Features für diesen speziellen Build. Sie werden in\n"
+"    [Anti-Features](#AntiFeatures) beschrieben.\n"
 
 #. type: Title ###
 #: build/_docs/md/Build_Metadata_Reference.md
@@ -2169,7 +2195,7 @@ msgstr "‘KnownVuln’ - die Anwendung hat bekannte Sicherheitslücken."
 #. type: Bullet: '-   '
 #: build/_docs/md/Build_Metadata_Reference.md
 msgid "‘ApplicationDebuggable‘ - APK file is compiled for debugging (`application-debuggable`), which normally makes it unsuitable for regular users and use cases."
-msgstr ""
+msgstr "‘ApplicationDebuggable‘ - APK-Datei wird zum Debuggen kompiliert (`application-debuggable`), was sie normalerweise für normale Benutzer und Anwendungsfälle ungeeignet macht."
 
 #. type: Plain text
 #: build/_docs/md/Build_Metadata_Reference.md
@@ -2265,11 +2291,19 @@ msgid ""
 "    been implemented yet in bzr and svn, but RepoManifest may still be\n"
 "    used without it.\n"
 msgstr ""
+"    Es funktioniert derzeit für jeden Repository-Typ in unterschiedlichem Umfang,\n"
+"    mit Ausnahme des srclib-Repo-Typs. Für die Typen git, git-svn und hg repo-Arten, können\n"
+"    Sie \"RepoManifest/IhrBranch\" als UCM verwenden, so dass \"IhrBranch\" in diesem Fall\n"
+"    der Zweig wäre, der anstelle des Standard-Branches verwendet wird. Die Standardwerte\n"
+"    sind \"master\" für git, \"default\" für hg und keines für git-svn (es bleibt\n"
+"    im gleichen Branch). Andererseits ist der Branch-Support noch\n"
+"    nicht in bzr und svn implementiert, aber RepoManifest kann immer noch\n"
+"    ohne sie verwendet werden.\n"
 
 #. type: Bullet: '-   '
 #: build/_docs/md/Build_Metadata_Reference.md
 msgid "`RepoTrunk` - For svn and git-svn repositories, especially those who don’t have a bundled AndroidManifest.xml file, the Tags and RepoManifest checks will not work, since there is no version information to obtain. But, for those apps who automate their build process with the commit ref that HEAD points to, RepoTrunk will set the Current Version and Current Version Code to that number."
-msgstr ""
+msgstr "`RepoTrunk` - Für svn und git-svn Repositories, besonders für diejenigen, die keine mitgelieferte AndroidManifest.xml Datei haben, werden die Tags und RepoManifest Prüfungen nicht funktionieren, da es keine Versionsinformationen gibt, die es holen kann. Aber für die Apps, die ihren Build-Prozess mit dem Commit-Ref, auf den HEAD zeigt, automatisieren, wird RepoTrunk die aktuelle Version und den aktuellen Versionscode auf diese Nummer setzen."
 
 #. type: Bullet: '-   '
 #: build/_docs/md/Build_Metadata_Reference.md
@@ -2400,7 +2434,7 @@ msgstr "7.33 Automatische Aktualisierungsmethode<a name=\"Auto-Update-Mode\"></a
 #. type: Plain text
 #: build/_docs/md/Build_Metadata_Reference.md
 msgid "This determines the method using for auto-generating new builds when new releases are available - in other words, adding a new Build Version line to the metadata. This happens in conjunction with the ’Update Check Mode’ functionality - i.e. when an update is detected by that, it is also processed by this."
-msgstr ""
+msgstr "Dies bestimmt die Methode zur automatischen Erzeugung neuer Builds, wenn neue Releases verfügbar sind, d.h. das Hinzufügen einer neuen Build-Versionszeile zu den Metadaten. Dies geschieht in Verbindung mit der Funktionalität 'Update Check Mode' - d.h. wenn ein Update von diesem erkannt wird, wird es auch von diesem verarbeitet."
 
 #. type: Bullet: '-   '
 #: build/_docs/md/Build_Metadata_Reference.md
@@ -2410,7 +2444,7 @@ msgstr "`None` - Es erfolgt keine automatische Aktualisierung"
 #. type: Bullet: '-   '
 #: build/_docs/md/Build_Metadata_Reference.md
 msgid "`Version` - Identifies the target commit (i.e. tag) for the new build based on the given version specification, which is simply text in which %v and %c are replaced with the required version name and version code respectively."
-msgstr ""
+msgstr "`Version` - Identifiziert den Ziel-Commit (d.h. Tag) für den neuen Build basierend auf der angegebenen Versionsspezifikation, die einfach aus einem Text besteht, in dem %v und %c durch den gewünschten Versionsnamen bzw. Versionscode ersetzt werden."
 
 #. type: Plain text
 #: build/_docs/md/Build_Metadata_Reference.md
@@ -2421,6 +2455,10 @@ msgid ""
 "    always has a tag \"ver\\_1234\" for a version with version code 1234,\n"
 "    you would specify \"Version ver\\_%c\".\n"
 msgstr ""
+"    Zum Beispiel, wenn eine App immer einen Tag \"2.7.2\" hat, der Version 2.7.2\n"
+"    entspricht würden Sie einfach \"Version %v\" angeben. Wenn eine App\n"
+"    immer einen Tag \"ver\\_1234\" für eine Version mit dem Versionscode 1234 hat,\n"
+"    würden Sie \"Version ver\\_%c\" angeben.\n"
 
 #. type: Plain text
 #: build/_docs/md/Build_Metadata_Reference.md
@@ -2431,6 +2469,10 @@ msgid ""
 "    Continuing the first example above, you would specify that as\n"
 "    \"Version +-fdroid %v\" - \"-fdroid\" is the suffix.\n"
 msgstr ""
+"    Zusätzlich kann dem Versionsnamen an dieser Stelle ein Suffix hinzugefügt\n"
+"    werden, um den F-Droid-Build vom Original zu unterscheiden.\n"
+"    Um das erste Beispiel oben anzusetzen, würden Sie als Suffix\n"
+"    \"Version +-fdroid %v\" - \"-fdroid\" angeben.\n"
 
 #. type: Title ###
 #: build/_docs/md/Build_Metadata_Reference.md
@@ -2440,8 +2482,9 @@ msgstr "7.34 Aktuelle Version<a name=\"Current-Version\"></a>"
 
 #. type: Plain text
 #: build/_docs/md/Build_Metadata_Reference.md
+#, fuzzy
 msgid "The [name of the version](https://developer.android.com/guide/topics/manifest/manifest-element.html#vname) that is the recommended release. There may be newer versions of the application than this (e.g. unstable versions), and there will almost certainly be older ones. This should be the one that is recommended for general use. In the event that there is no source code for the current version, or that non-free libraries are being used, this would ideally be the latest version that is still free, though it may still be expedient to retain the automatic update check — see No Source Since."
-msgstr ""
+msgstr "Der [Name der Version](https://developer.android.com/guide/topics/manifest/manifest-element.html#vname), der die empfohlene Version ist. Es kann neuere Versionen der Anwendung geben (z.B. instabile Versionen) und es wird mit ziemlicher Sicherheit ältere Versionen geben. Diese sollte diejenige sein, die für den allgemeinen Gebrauch empfohlen wird. Für den Fall, dass es keinen Quellcode für die aktuelle Version gibt oder dass unfreie Bibliotheken verwendet werden, wäre dies idealerweise die neueste Version, die noch frei ist, obwohl es sinnvoll sein kann, die automatische Update-Prüfung beizubehalten - siehe Bisher keine Quellen."
 
 #. type: Plain text
 #: build/_docs/md/Build_Metadata_Reference.md
@@ -3684,21 +3727,18 @@ msgstr "Welche Bibliotheken und Abhängigkeiten sollten am besten verwendet werd
 
 #. type: Plain text
 #: build/_docs/md/FAQ_-_App_Developers.md
-#, fuzzy
 msgid "To be FLOSS, your entire app has to be, including dependencies. If you use non-free/proprietary libraries, we cannot build your app and thus it cannot be included in our mainline repository (see \"Can I run my own app repo?\" in that case). Unfortunately that rules out any libraries that are part of the \"Google repository\" from the SDK manager (e.g.  play-services, fabric, firebase) -- only the \"Android support repository\" is allowed."
-msgstr "Um FLOSS zu sein, muss es Ihre ganze App sein, einschließlich aller Abhängigkeiten. Wenn Sie unfreie/proprietäre Bibliotheken verwenden, können wir Ihre App nicht herstellen und somit kann sie nicht in das Hauptrepository aufgenommen werden (siehe „Kann ich mein eigenes App-Repo betreiben?“ für diesen Fall). Damit sind leider alle Bibliotheken, die Teil des \"Google Repository\" aus der SDK-Verwaltung sind, ausgeschlossen (z. B.  Play-Services, Fabric, Firebase) -- nur das \"Android Support Repository\" ist zulässig."
+msgstr "Um FLOSS zu sein, muss es Ihre ganze App sein, einschließlich aller Abhängigkeiten. Wenn Sie unfreie/proprietäre Bibliotheken verwenden, können wir Ihre App nicht erstellen und somit kann sie nicht in das Hauptrepository aufgenommen werden (siehe „Kann ich mein eigenes App-Repo betreiben?“ für diesen Fall). Damit sind leider alle Bibliotheken, die Teil des \"Google Repository\" aus der SDK-Verwaltung sind, ausgeschlossen (z. B.  Play-Services, Fabric, Firebase) -- nur das \"Android Support Repository\" ist zulässig."
 
 #. type: Plain text
 #: build/_docs/md/FAQ_-_App_Developers.md
-#, fuzzy
 msgid "For external resources, please restrain yourself to \"well known repositories\", e.g. mavenCentral or jCenter (see complete listing in the \"srclib\" section of [Build Metadata Reference](../Build_Metadata_Reference)). Please note that e.g. Bintray does not only offers jCenter, but user-repos as well.  Those are not part of the trusted repository list."
-msgstr "Bei externen Ressourcen beschränken Sie sich bitte auf \"vertrauenswürdige Repositories\", z. B. mavenCentral oder jCenter (sehen Sie sich hierzu die komplette Liste im Abschnitt \"srclib\" in der [Build-Metadaten-Referenz](../Build_Metadata_Reference) an). Beachten Sie, dass z. B. Bintray nicht nur jCenter sondern auch Anwender-Repos anbietet.  Diese sind nicht Teil der Liste der vertrauenswürdigen Repositories."
+msgstr "Bei externen Ressourcen beschränken Sie sich bitte auf \"bekannte Repositories\", z. B. mavenCentral oder jCenter (sehen Sie sich hierzu die komplette Liste im Abschnitt \"srclib\" in der [Build-Metadaten-Referenz](../Build_Metadata_Reference) an). Beachten Sie, dass z. B. Bintray nicht nur jCenter sondern auch Anwender-Repos anbietet.  Diese sind nicht Teil der Liste der vertrauenswürdigen Repositories."
 
 #. type: Plain text
 #: build/_docs/md/FAQ_-_App_Developers.md
-#, fuzzy
 msgid "If you require dependencies that are not available through those repositories, please do not use binary jar files directly, but provide an easy way to build them from source: e.g. by providing a \"pre-build\" script, by including them to your actual build process (gradle task) and including the library source in your project (hard or by submodule)."
-msgstr "Wenn Sie Abhängigkeiten benötigen, die nicht aus diesen Repositories bezogen werden können, verwenden Sie bitte nicht direkt binäre jar-Dateien, sondern bieten Sie einen einfachen Weg an, um sie aus der Quelle herzustellen, z. B. durch Bereitstellung eines \"pre-build\"-Skripts, durch ihre Integration in Ihren eigentlichen Build-Prozess (Gradle Task) und Aufnahme der Bibliothekquelle in Ihr Projekt (fest oder über ein Submodul)."
+msgstr "Wenn Sie Abhängigkeiten benötigen, die nicht aus diesen Repositories bezogen werden können, verwenden Sie bitte keine binären jar-Dateien direkt, sondern ermöglichen Sie, sie aus der Quelle herzustellen, z. B. durch Bereitstellung eines \"pre-build\"-Skripts durch ihre Integration in Ihren eigentlichen Build-Prozess (Gradle Task) und Aufnahme der Bibliothekquelle in Ihr Projekt (fest oder über ein Submodul)."
 
 #. type: Plain text
 #: build/_docs/md/FAQ_-_App_Developers.md
