@@ -3,7 +3,6 @@ layout: post
 title: "This Week in F-Droid, Week 23"
 author: "Coffee"
 authorWebsite: "https://forum.f-droid.org/u/coffee"
-vim: nocp:noai:noet:nojs:sw=8:sts=2:ts=8:
 ---
 
 [F-Droid](https://f-droid.org/) is a [repository](https://f-droid.org/packages/) of verified [free and open source](https://en.wikipedia.org/wiki/Free_and_open-source_software) Android apps, a [client](https://f-droid.org/app/org.fdroid.fdroid) to access it, as well as a whole "app store kit", providing all the tools needed to set up and run an app store. It is a community-run free software project developed by a wide range of contributors. This is their story this past week.
