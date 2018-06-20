@@ -18,8 +18,9 @@ There are two ways to get a logcat message. The usual way will be to install an 
 
 For those who don't want to install software on their computers in order to get the logcat messages, you can download an app such as:
 
-* [CatLog](https://f-droid.org/repository/browse/?fdfilter=logcat&fdid=com.nolanlawson.logcat)
-* [aLogCat](https://f-droid.org/repository/browse/?fdfilter=logcat&fdid=org.jtb.alogcat)
+* [aLogCat](https://f-droid.org/packages/org.jtb.alogcat/)
+* [Logcat Reader](https://f-droid.org/packages/com.dp.logcatapp/)
+* [Logs](https://f-droid.org/packages/com.tananaev.logcat/)
 
 The general idea is to open the app, ask it to start recording logcat messages, and then try and cause F-Droid to crash. Once it crashes, the logcat app will save the error messages. These messages can then be copied and pasted in the [F-Droid issue tracker](https://gitlab.com/fdroid/fdroidclient/issues).
 
