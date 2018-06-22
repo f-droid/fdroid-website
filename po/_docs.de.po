@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
-"POT-Creation-Date: 2018-05-26 15:02+0200\n"
-"PO-Revision-Date: 2018-06-15 12:20+0000\n"
+"POT-Creation-Date: 2018-06-22 21:42+0200\n"
+"PO-Revision-Date: 2018-06-20 15:15+0000\n"
 "Last-Translator: Claus Rüdinger <Mail-an-CR@web.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/f-droid/website-docs/de/>\n"
 "Language: de\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.0.1\n"
+"X-Generator: Weblate 3.1-dev\n"
 
 #. type: Title #
 #: build/_docs/md/All_About_Descriptions_Graphics_and_Screenshots.md
@@ -522,7 +522,7 @@ msgstr "Eine andere Möglichkeit ist die Verwendung einer Konfiguration wie in [
 #: build/_docs/md/Building_a_Signing_Server.md
 #, no-wrap
 msgid "Basic laptop dedicated to signing"
-msgstr "Basis-Laptop, das fest der Signierung zugeordnet ist"
+msgstr "Basis-Laptop, der fest der Signierung zugeordnet ist"
 
 #. type: Plain text
 #: build/_docs/md/Building_a_Signing_Server.md
@@ -1956,10 +1956,10 @@ msgid ""
 "    that require toolchains no longer included in current versions of\n"
 "    the NDK.\n"
 msgstr ""
-":   Version des NDK für diesen Build. Standardmäßig wird das neueste NDK Release\n"
-"    verwendet, das Legacy-Toolchains enthält, um Builds nicht zu brechen,\n"
-"    die Toolchains benötigen, die nicht mehr in aktuellen Versionen des\n"
-"    NDKs enthalten sind.\n"
+":   Version des NDK für diesen Build. Standardmäßig wird das letzte NDK\n"
+"    verwendet, das Legacy-Toolchains enthält, sodass Builds,\n"
+"    die Toolchains benötigen, die in aktuellen NDK-Versionen nicht mehr \n"
+"    enthalten sind, nicht abbrechen.\n"
 
 #. type: Plain text
 #: build/_docs/md/Build_Metadata_Reference.md
@@ -2715,9 +2715,8 @@ msgstr "So können Sie schnell mit dem Bau unserer Basebox beginnen:"
 
 #. type: Plain text
 #: build/_docs/md/Build_Server_Setup.md
-#, fuzzy
 msgid "```bash fdroid:~$ git clone https://gitlab.com/fdroid/basebox.git fdroid:~$ cd basebox fdroid:~/basebox$ sudo ./makebuildserver_basebox.py --provider virtualbox fdroid:~/basebox$ vagrant box add --force jessie64 fdroid-jessie64-virtualbox.box fdroid:~/basebox$ rm fdroid-jessie64-virtualbox.box ```"
-msgstr "```bash fdroid:~$ cd ~ fdroid:~$ git clone https://gitlab.com/fdroid/fdroidserver.git fdroid:~$ cp fdroidserver/examples/makebuildserver.config.py fdroidserver/ fdroid:~$ sed -i \"s@^baseboxurl.*@baseboxurl = \\\"https://f-droid.org/jessie64.box\\\"@\" fdroidserver/makebuildserver.config.py ```"
+msgstr "```bash fdroid:~$ git clone https://gitlab.com/fdroid/basebox.git fdroid:~$ cd basebox fdroid:~/basebox$ sudo ./makebuildserver_basebox.py --provider virtualbox fdroid:~/basebox$ vagrant box add --force jessie64 fdroid-jessie64-virtualbox.box fdroid:~/basebox$ rm fdroid-jessie64-virtualbox.box ```"
 
 #. type: Plain text
 #: build/_docs/md/Build_Server_Setup.md
@@ -2914,7 +2913,7 @@ msgstr ""
 #. type: Plain text
 #: build/_docs/md/Build_Server_Setup.md
 msgid "First of all you'll have to check if you cpu support the _vmx_ (or _svm_ on amd) instruction set. You can use this command to list details about your cpu:"
-msgstr ""
+msgstr "Zuerst müssen Sie prüfen, ob die CPU den Befehlssatz _vmx_ (oder _svm_ auf amd) unterstützt. Mit diesem Befehl können Sie Details über Ihre CPU auflisten:"
 
 #. type: Plain text
 #: build/_docs/md/Build_Server_Setup.md
@@ -2924,7 +2923,7 @@ msgstr "```bash root:~# cat /proc/cpuinfo ```"
 #. type: Plain text
 #: build/_docs/md/Build_Server_Setup.md
 msgid "On (l0) you have to check that nesting is enabled:"
-msgstr ""
+msgstr "Bei (l0) müssen Sie prüfen, ob die Verschachtelung aktiviert ist:"
 
 #. type: Plain text
 #: build/_docs/md/Build_Server_Setup.md
@@ -2934,7 +2933,7 @@ msgstr "```bash root:~# cat /sys/module/kvm_intel/parameters/nested ```"
 #. type: Plain text
 #: build/_docs/md/Build_Server_Setup.md
 msgid "If it's not enabled you can turn it on by running:"
-msgstr ""
+msgstr "Wenn es nicht aktiviert ist, können Sie es einschalten durch Ausführen von:"
 
 #. type: Plain text
 #: build/_docs/md/Build_Server_Setup.md
@@ -2951,12 +2950,12 @@ msgstr ""
 #. type: Plain text
 #: build/_docs/md/Build_Server_Setup.md
 msgid "You'll need to reboot to for this to take effect."
-msgstr ""
+msgstr "Sie müssen einen Neustart durchführen, damit dies wirksam wird."
 
 #. type: Plain text
 #: build/_docs/md/Build_Server_Setup.md
 msgid "Next you'll need to make sure that your (l1) vm configuration forwards cpu features required for nesting. So open up your configuration for the VM _/etc/libvirt/qemu/my-vm.xml_ and insert a cpu block inside your domain-tag. (_virt-manager_ also provides a user-interface for this operation.)"
-msgstr ""
+msgstr "Als nächstes müssen Sie sicherstellen, dass Ihre (l1) VM-Konfiguration die zum Verschachteln benötigten CPU-Funktionen weiterleitet. Öffnen Sie also Ihre Konfiguration für die VM _/etc/libvirt/qemu/my-vm.xml_ und fügen Sie einen CPU-Block in Ihr Domain-Tag ein. (_virt-manager_ bietet auch eine Benutzeroberfläche für diese Tätigkeit.)"
 
 #. type: Plain text
 #: build/_docs/md/Build_Server_Setup.md
@@ -2981,17 +2980,17 @@ msgstr ""
 #. type: Plain text
 #: build/_docs/md/Build_Server_Setup.md
 msgid "The actually required configuration here depends on your cpu. You can find details in [libvirts manual](https://libvirt.org/formatdomain.html#elementsCPU).  The important part is that you forward _vmx_ (or _svm_ on amd) to the guest system."
-msgstr ""
+msgstr "Die tatsächlich benötigte Konfiguration hängt von Ihrer CPU ab. Details finden Sie im [libvirts Handbuch](https://libvirt.org/formatdomain.html#elementsCPU).  Das wichtigste ist _vmx_ (oder _svm_ auf amd) an das Gastsystem weiterzuleiten."
 
 #. type: Plain text
 #: build/_docs/md/Build_Server_Setup.md
 msgid "This is the setup that is used in the Continuous Integration builds as part of the [reproducible builds](https://reproducible-builds.org) effort.  You can see this in action on the Debian Project's jenkins setup:"
-msgstr ""
+msgstr "Dies ist das Setup, das in den Continuous Integration-Builds als Teil der [reproduzierbaren Builds](https://reproducible-builds.org) verwendet wird.  Sie können dies auf dem Jenkins-Setup des Debian-Projekts in Aktion sehen:"
 
 #. type: Plain text
 #: build/_docs/md/Build_Server_Setup.md
 msgid "- <https://jenkins.debian.net/job/reproducible_setup_fdroid_build_environment_profitbricks7/>"
-msgstr ""
+msgstr "- <https://jenkins.debian.net/job/reproducible_setup_fdroid_build_environment_profitbricks7/>"
 
 #. type: Title #
 #: build/_docs/md/Client_Bug_Reports.md
@@ -3092,48 +3091,48 @@ msgstr "Bei der Erstellung der F-Droid-Internetseite wird [Jekyll](https://jekyl
 #: build/_docs/md/Deploying_the_Website.md
 #, no-wrap
 msgid "Staging on development forks"
-msgstr ""
+msgstr "Staging auf Entwicklungs-Forks"
 
 #. type: Plain text
 #: build/_docs/md/Deploying_the_Website.md
 msgid "All development forks of [fdroid-website](https://gitlab.com/fdroid/fdroid-website)  automatically have a staging server setup and maintained by the _gitlab-ci_ configuration.  This automatically deploys the content of the fork's _master_ branch to [GitLab Pages](https://pages.gitlab.io/).  For example, _nicoalt_'s git fork is at <https://gitlab.com/nicoalt/fdroid-website>, and the _master_ branch from that is automatically deployed to <https://nicoalt.gitlab.io/fdroid-website>."
-msgstr ""
+msgstr "Alle Entwicklungs-Forks der [fdroid-Website](https://gitlab.com/fdroid/fdroid-website) haben automatisch einen Staging-Server eingerichtet und werden von der _gitlab-ci_ Konfiguration gepflegt.  Dadurch wird der Inhalt des Branches _master_ des Forks automatisch nach [GitLab Pages](https://pages.gitlab.io/) verteilt.  Zum Beispiel, _nicoalt_'s git Fork ist auf <https://gitlab.com/nicoalt/fdroid-website> und der _master_ Branch davon wird automatisch auf <https://nicoalt.gitlab.io/fdroid-website> verteilt."
 
 #. type: Title #####
 #: build/_docs/md/Deploying_the_Website.md
 #, no-wrap
 msgid "Deploying merge request branches"
-msgstr ""
+msgstr "Bereitstellung von Merge-Request-Branches"
 
 #. type: Plain text
 #: build/_docs/md/Deploying_the_Website.md
 msgid "The current _gitlab-ci_ setup is optionally capable of pushing the resulting HTML to a live webserver and linking to it automatically from the GitLab merge request, deploying to [surge.sh](https://surge.sh)."
-msgstr ""
+msgstr "Das aktuelle _gitlab-ci_ Setup ist optional in der Lage, das resultierende HTML auf einen Live-Webserver zu übertragen und automatisch aus der GitLab Merge-Anforderung heraus zu verlinken, indem es nach [surge.sh](https://surge.sh) verteilt wird."
 
 #. type: Plain text
 #: build/_docs/md/Deploying_the_Website.md
 msgid "Doing so will allow for easier review of your merge requests, but is not required.  If you don't follow the steps below, your merge requests will still run through the _gitlab-ci_ continuous integration checks, but the resulting HTML will not be accessible online."
-msgstr ""
+msgstr "Dies ermöglicht eine einfachere Überprüfung Ihrer Merge-Anfragen, ist aber nicht erforderlich.  Wenn Sie die folgenden Schritte nicht befolgen, werden Ihre Merge-Anfragen weiterhin die kontinuierlichen Integrationsprüfungen von _gitlab-ci_ durchlaufen, aber das resultierende HTML wird nicht online verfügbar sein."
 
 #. type: Plain text
 #: build/_docs/md/Deploying_the_Website.md
 msgid "To configure this:"
-msgstr ""
+msgstr "Um dies zu konfigurieren:"
 
 #. type: Bullet: ' * '
 #: build/_docs/md/Deploying_the_Website.md
 msgid "Install the [surge.sh](https://surge.sh) CLI: `npm install surge`"
-msgstr ""
+msgstr "Installieren Sie die [surge.sh](https://surge.sh) CLI: `npm install surge`"
 
 #. type: Bullet: ' * '
 #: build/_docs/md/Deploying_the_Website.md
 msgid "Signup for [surge.sh](https://surge.sh): `surge login`"
-msgstr ""
+msgstr "Anmeldung für [surge.sh](https://surge.sh): `surge login`"
 
 #. type: Bullet: ' * '
 #: build/_docs/md/Deploying_the_Website.md
 msgid "Get a \"token\" to allow CI to deploy on your behalf: `surge token`"
-msgstr ""
+msgstr "Holen Sie sich einen \"Token\", damit CI in Ihrem Namen verteilen kann: `surge token`"
 
 #. type: Plain text
 #: build/_docs/md/Deploying_the_Website.md
@@ -3149,24 +3148,24 @@ msgstr ""
 #. type: Plain text
 #: build/_docs/md/Deploying_the_Website.md
 msgid "Now your CI jobs should be authorized to deploy to surge.sh, and the GitLab merge requests screen will automatically link to this deployment."
-msgstr ""
+msgstr "Jetzt sollten Ihre CI-Jobs berechtigt sein, in surge.sh zu verteilen und der GitLab-Bildschirm für Merge-Anfragen wird automatisch mit dieser Bereitstellung verknüpft."
 
 #. type: Title ###
 #: build/_docs/md/Deploying_the_Website.md
 #, no-wrap
 msgid "Staging of the official website"
-msgstr ""
+msgstr "Staging der offiziellen Website"
 
 #. type: Plain text
 #: build/_docs/md/Deploying_the_Website.md
 msgid "Like with forks, the _master_ branch of the main git repo for the website, <https://gitlab.com/fdroid/fdroid-website>, is automatically deployed to <https://fdroid.gitlab.io/fdroid-website>.  That is the place to review the current state of the website before tagging a release."
-msgstr ""
+msgstr "Wie bei Forks wird der _master_-Zweig des Haupt-Git-Repos für die Website, <https://gitlab.com/fdroid/fdroid-website>, automatisch nach <https://fdroid.gitlab.io/fdroid-website> deployed.  Das ist der Ort, um den aktuellen Zustand der Website zu überprüfen, bevor man eine Veröffentlichung markiert."
 
 #. type: Title ###
 #: build/_docs/md/Deploying_the_Website.md
 #, no-wrap
 msgid "Deploying to https://f-droid.org"
-msgstr ""
+msgstr "Auf https://f-droid.org deployen"
 
 #. type: Plain text
 #: build/_docs/md/Deploying_the_Website.md
@@ -4592,13 +4591,20 @@ msgstr "Diejenigen, die keine Software auf ihren Computern installieren wollen, 
 
 #. type: Bullet: '* '
 #: build/_docs/md/Getting_logcat_messages_after_crash.md
-msgid "[CatLog](https://f-droid.org/repository/browse/?fdfilter=logcat&fdid=com.nolanlawson.logcat)"
-msgstr "[CatLog](https://f-droid.org/repository/browse/?fdfilter=logcat&fdid=com.nolanlawson.logcat)"
+#, fuzzy
+msgid "[aLogCat](https://f-droid.org/packages/org.jtb.alogcat/)"
+msgstr "[aLogCat](https://f-droid.org/repository/browse/?fdfilter=logcat&fdid=org.jtb.alogcat)"
 
 #. type: Bullet: '* '
 #: build/_docs/md/Getting_logcat_messages_after_crash.md
-msgid "[aLogCat](https://f-droid.org/repository/browse/?fdfilter=logcat&fdid=org.jtb.alogcat)"
-msgstr "[aLogCat](https://f-droid.org/repository/browse/?fdfilter=logcat&fdid=org.jtb.alogcat)"
+msgid "[Logcat Reader](https://f-droid.org/packages/com.dp.logcatapp/)"
+msgstr ""
+
+#. type: Bullet: '* '
+#: build/_docs/md/Getting_logcat_messages_after_crash.md
+#, fuzzy
+msgid "[Logs](https://f-droid.org/packages/com.tananaev.logcat/)"
+msgstr "[CatLog](https://f-droid.org/repository/browse/?fdfilter=logcat&fdid=com.nolanlawson.logcat)"
 
 #. type: Plain text
 #: build/_docs/md/Getting_logcat_messages_after_crash.md
@@ -4936,7 +4942,7 @@ msgstr ""
 #: build/_docs/md/Importing_Applications.md
 #, no-wrap
 msgid "Importing Applications"
-msgstr ""
+msgstr "Anwendungen importieren"
 
 #. type: Plain text
 #: build/_docs/md/Importing_Applications.md
@@ -4961,7 +4967,7 @@ msgstr "```bash fdroid import --url=http://address.of.project ```"
 #. type: Plain text
 #: build/_docs/md/Importing_Applications.md
 msgid "When a URL is specified using the `--url=` flag, `fdroid import` will use that URL to find out information about the project, and if it finds a git repo, it will also clone that. For this to work, the URL must point to a project format that the script understands. Currently this is limited to one of the following:"
-msgstr "Wenn eine Adresse durch Verwendung des Parameters `--url=` festgelegt ist, wird `fdroid import` diese verwenden, um Informationen zum Projekt herauszufinden, und wenn dabei ein Git-Repo gefunden wird, dieses auch clonen. Damit dies funktioniert, muss die URL auf ein Projektformat verweisen, das das Skript versteht. Momentan ist dies auf eines der Folgenden beschränkt:"
+msgstr "Wenn eine Adresse durch Verwendung des Parameters `--url=` festgelegt ist, wird `fdroid import` diese verwenden, um Informationen zum Projekt herauszufinden, und wenn dabei ein Git-Repo gefunden wird, dieses auch klonen. Damit dies funktioniert, muss die URL auf ein Projektformat verweisen, das das Skript versteht. Momentan ist dies auf eines der Folgenden beschränkt:"
 
 #. type: Bullet: '1.  '
 #: build/_docs/md/Importing_Applications.md
@@ -6762,12 +6768,12 @@ msgstr ""
 #. type: Plain text
 #: build/_docs/md/Repository_Style_Guide.md
 msgid "All apps in the F-Droid repository *must* be FOSS (Free and Open Source software). If the software doesn't clearly state a license that is listed as a Free Software License in the [GNU license list](http://www.gnu.org/licenses/license-list.html#SoftwareLicenses)  then it probably isn't."
-msgstr ""
+msgstr "Alle Apps im F-Droid-Repository *müssen* FOSS (Free and Open Source Software) sein. Wenn die Software nicht eindeutig eine Lizenz benennt, die als eine freie Software-Lizenz in der [GNU Lizenzliste](http://www.gnu.org/licenses/license-list.html#SoftwareLicenses) geführt wird, dann ist es wahrscheinlich keine."
 
 #. type: Plain text
 #: build/_docs/md/Repository_Style_Guide.md
 msgid "If there aren't any `README` or `LICENSE` in the source code of the app it's very difficult for the F-Droid community verify that the entire source code, libraries and artwork each are released under a suitable Free and Open Source license. So, it's a good pratice to verify that the app has headers in every file of the source code, a text file in the library folder and a statement in the source code or on the official website of the app that clearly explain the license about all the stuff that can be find related the app."
-msgstr ""
+msgstr "Wenn im Quelltext der App weder `README` noch `LICENSE` enthalten sind, ist es für die F-Droid-Community sehr schwierig zu überprüfen, dass sowohl der gesamte Quellcode als auch Bibliotheken und Illustrationen unter einer geeigneten Free and Open Source Lizenz veröffentlicht werden. Es empfiehlt sich daher, zu prüfen, dass die App Kopfzeilen in jeder Quellcode-Datei, eine Textdatei im Bibliothekenordner und eine Erklärung im Quellcode oder auf der offiziellen Internetseite der App hat, die eindeutig die Lizenz für alle zur App gehörenden Dinge beschreiben."
 
 #. type: Plain text
 #: build/_docs/md/Repository_Style_Guide.md
@@ -6794,7 +6800,7 @@ msgstr "Zusammenfassungen"
 #. type: Plain text
 #: build/_docs/md/Repository_Style_Guide.md
 msgid "The summary should be the shortest possible thing that describes what the app does or enables the user to do, e.g. instead of \"E-mail client\" use \"Receive and send e-mails\"."
-msgstr ""
+msgstr "Die Zusammenfassung sollte die kürzest mögliche Erklärung sein, was die App macht oder dem Nutzer ermöglicht, z. B. anstelle von \"E-Mail-Client\" besser \"E-Mails empfangen und senden\"."
 
 #. type: Title ###
 #: build/_docs/md/Repository_Style_Guide.md
@@ -6805,37 +6811,37 @@ msgstr "Beschreibungen"
 #. type: Plain text
 #: build/_docs/md/Repository_Style_Guide.md
 msgid "Descriptions should be written in an objective, neutral style, with at least the first paragraph devoted to describing what the application is and what features it has. This can be followed with concise help for specific features/problems, and links to external resources for more information. Additional information such as links to related/compatible/required (but not alternative) applications should also be included where appropriate."
-msgstr ""
+msgstr "Beschreibungen sollten in einen objektiven, neutralen Stil verfasst werden, zumindest der erste Abschnitt sollte der Erklärung gewidmet sein, was die Anwendung ist und welche Eigenschaften sie hat. Ihr kann eine kurzgefasste Hilfe zu speziellen Eigenschaften/Problemen und Verknüpfungen zu externen Ressourcen mit weitergehenden Informationen folgen. Zusätzliche Informationen wie Links zu zugehörigen/kompatiblen/benötigten (aber nicht alternativen) Anwendungen sollten gegebenenfalls auch eingeschlossen werden."
 
 #. type: Plain text
 #: build/_docs/md/Repository_Style_Guide.md
 msgid "Some other notes:"
-msgstr ""
+msgstr "Einige weitere Hinweise:"
 
 #. type: Bullet: '-   '
 #: build/_docs/md/Repository_Style_Guide.md
 msgid "Phrases like \"a note-taking app for Android\" should never appear.  Obviously it's for Android. Obviously it's an app."
-msgstr ""
+msgstr "Sätze wie \"eine bemerkenswerte Android-App\" sollten niemals auftauchen.  Klar ist es für Android. Klar ist es eine App."
 
 #. type: Bullet: '-   '
 #: build/_docs/md/Repository_Style_Guide.md
 msgid "Similary, don't say \"it's free software\" or \"it's open source\" because obviously it is."
-msgstr ""
+msgstr "In ähnlicher Weise, sagen Sie nicht \"es ist freie Software\" oder \"es ist Open Source\", weil das offenkundig ist."
 
 #. type: Bullet: '-   '
 #: build/_docs/md/Repository_Style_Guide.md
 msgid "There shouldn't be any compatiblity-related things in there (e.g.  \"for Android 2.3+\") because this is handled automatically. Only include compatibility notes when the client app doesn't automatically detect them."
-msgstr ""
+msgstr "Es sollten keine Dinge zur Kompatibilität (z. B. \"für Android 2.3+\") darin enthalten sein, da dies automatisch bearbeitet wird. Schließen Sie nur Kompatibilitätshinweise ein, wenn der Client sie nicht automatisch erkennt."
 
 #. type: Bullet: '-   '
 #: build/_docs/md/Repository_Style_Guide.md
 msgid "The summary will always be shown with the description, so avoid repeating it."
-msgstr ""
+msgstr "Die Zusammenfassung wird immer mit der Beschreibung angezeigt, vermeiden Sie also, sie zu wiederholen."
 
 #. type: Bullet: '-   '
 #: build/_docs/md/Repository_Style_Guide.md
 msgid "If there is anything different about the F-Droid build compared to a standard one, it should be described."
-msgstr ""
+msgstr "Wenn es zwischen dem F-Droid-Build verglichen mit einem Standard-Build irgendwelche Unterschiede gibt, sollte das beschrieben werden."
 
 #. type: Bullet: '-   '
 #: build/_docs/md/Repository_Style_Guide.md
@@ -6845,28 +6851,28 @@ msgstr ""
 #. type: Plain text
 #: build/_docs/md/Repository_Style_Guide.md
 msgid "Other information worth mentioning are:"
-msgstr ""
+msgstr "Weitere Informationen, die einer Erwähnung wert sind:"
 
 #. type: Bullet: '-   '
 #: build/_docs/md/Repository_Style_Guide.md
 msgid "Does the app require root permissions?"
-msgstr ""
+msgstr "Benötigt die App Root-Rechte?"
 
 #. type: Bullet: '-   '
 #: build/_docs/md/Repository_Style_Guide.md
 msgid "Can it interact with other apps?"
-msgstr ""
+msgstr "Kann sie mit anderen Apps interagieren?"
 
 #. type: Bullet: '-   '
 #: build/_docs/md/Repository_Style_Guide.md
 msgid "How easy is it to use?"
-msgstr ""
+msgstr "Wie leicht lässt sie sich bedienen?"
 
 #. type: Title ###
 #: build/_docs/md/Repository_Style_Guide.md
 #, no-wrap
 msgid "Donations"
-msgstr ""
+msgstr "Spenden"
 
 #. type: Plain text
 #: build/_docs/md/Repository_Style_Guide.md
