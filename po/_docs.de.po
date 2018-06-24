@@ -3,13 +3,14 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"Report-Msgid-Bugs-To: team@f-droid.org\n"
+"PO-Revision-Date: 2018-06-25 12:54+0200\n"
 "POT-Creation-Date: 2018-06-22 21:42+0200\n"
-"PO-Revision-Date: 2018-06-20 15:15+0000\n"
-"Last-Translator: Claus Rüdinger <Mail-an-CR@web.de>\n"
+"PO-Revision-Date: 2018-06-25 08:59+0000\n"
+"Last-Translator: ssantos <ssantos@web.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/f-droid/website-docs/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
@@ -2908,7 +2909,7 @@ msgstr ""
 #. type: Plain text
 #: build/_docs/md/Build_Server_Setup.md
 msgid "The steps above describe how to setup (l1) and _makebuildserver_ sets up (l2)."
-msgstr ""
+msgstr "Die obigen Schritte beschreiben, wie man (l1) und _makebuildserver_ einrichtet (l2)."
 
 #. type: Plain text
 #: build/_docs/md/Build_Server_Setup.md
@@ -3144,6 +3145,11 @@ msgid ""
 "     * `SURGE_LOGIN`: The email you used to signup with `surge login`.\n"
 "     * `SURGE_TOKEN`: The value given when you ran `surge token`.\n"
 msgstr ""
+" *[Fügen Sie zwei \"Geheime Variablen\"](https://docs.gitlab.com/ce/ci/variables/README.html#secret-variables) zu Ihrem Fork dieses Projekts hinzu:\n"
+"   * Navigieren Sie zu Ihren Projekten Einstellungen -> Pipelines -> Geheime Variablen.\n"
+"   * Fügen Sie die folgenden zwei Variablen hinzu:\n"
+"     * `SURGE_LOGIN`: Die E-Mail, mit der Sie sich bei `surge login` angemeldet haben.\n"
+"     * `SURGE_TOKEN`: Der Wert, der beim Ausführen von `surge token` angegeben wurde.\n"
 
 #. type: Plain text
 #: build/_docs/md/Deploying_the_Website.md
@@ -3170,53 +3176,53 @@ msgstr "Auf https://f-droid.org deployen"
 #. type: Plain text
 #: build/_docs/md/Deploying_the_Website.md
 msgid "When an update to the website is tested and ready to go, a release manager creates a PGP-signed release tag in the main git repo.  The deploy server monitors the main git repo for new tags.  When it sees a new tag, it first checks the PGP signature on the git tag using a manually configured GnuPG keyring that contains only the public keys of the PGP keys that are allowed to tag website releases."
-msgstr ""
+msgstr "Wenn ein Update der Website getestet wurde und bereit ist, erstellt ein Release-Manager ein PGP-signiertes Release-Tag im Haupt-Git-Repo.  Der Deployment-Server überwacht den Haupt-Git-Repo auf neue Tags.  Wenn es ein neues Tag sieht, prüft es zuerst die PGP-Signatur auf dem Git-Tag mit einem manuell konfigurierten GnuPG-Schlüsselring, der nur die öffentlichen Schlüssel der PGP-Schlüssel enthält, die zur Kennzeichnung von Website-Releases berechtigt sind."
 
 #. type: Plain text
 #: build/_docs/md/Deploying_the_Website.md
 msgid "After the git tag is verified, the `f-droid.org` target in [.gitlab-ci.yml](https://gitlab.com/fdroid/fdroid-website/blob/master/.gitlab-ci.yml)  is run to generate the actual files for the site.  Those files are then copied into place on the _f-droid.org_ servers."
-msgstr ""
+msgstr "Nachdem der Git-Tag verifiziert wurde, wird das Ziel `f-droid.org` in [.gitlab-ci.yml](https://gitlab.com/fdroid/fdroid-website/blob/master/.gitlab-ci.yml) ausgeführt, um die eigentlichen Dateien für die Website zu generieren.  Diese Dateien werden dann auf die _f-droid.org_ Server kopiert."
 
 #. type: Plain text
 #: build/_docs/md/Deploying_the_Website.md
 msgid "The deploy tags use a \"semantic versioning\" naming scheme:"
-msgstr ""
+msgstr "Die deploy tags verwenden Sie ein \"semantic versioning\"-Namensschema:"
 
 #. type: Bullet: '* '
 #: build/_docs/md/Deploying_the_Website.md
 msgid "_\\<major>.\\<minor>_"
-msgstr ""
+msgstr "_\\<major>.\\<minor>_"
 
 #. type: Bullet: '* '
 #: build/_docs/md/Deploying_the_Website.md
 msgid "_\\<minor>_ is incremented on each deployment"
-msgstr ""
+msgstr "_\\<minor>_ wird bei jedem Deployment erhöht"
 
 #. type: Bullet: '* '
 #: build/_docs/md/Deploying_the_Website.md
 msgid "_\\<major>_ is only incremented when there are major changes"
-msgstr ""
+msgstr "_\\<major>_ wird nur erhöht, wenn es größere Veränderungen gibt"
 
 #. type: Title ###
 #: build/_docs/md/Deploying_the_Website.md
 #, no-wrap
 msgid "Setting up and running the deploy procedure"
-msgstr ""
+msgstr "Einrichten und Ausführen des Deploy-Verfahrens"
 
 #. type: Plain text
 #: build/_docs/md/Deploying_the_Website.md
 msgid "The deploy procedure was tested on a machine running Debian/stretch.  It should be triggered whenever the repo index is published, so it can rebuild with the latest app information.  This whole procedure can be run as root, or just `gitlab-runner`.  This final procedure is not part of a script committed into the website git repo so that the commands that run outside of docker cannot be modified via git."
-msgstr ""
+msgstr "Das Deploy-Verfahren wurde auf einer Maschine mit Debian/Stretch getestet.  Es sollte immer dann ausgelöst werden, wenn der Repo-Index veröffentlicht wird, damit er mit den neuesten App-Informationen neu aufgebaut werden kann.  Diese ganze Prozedur kann als root oder einfach als `gitlab-runner` ausgeführt werden.  Diese letzte Prozedur ist nicht Teil eines Skripts, das in das git repo der Website commited ist, so dass die Befehle, die außerhalb des Dockers ausgeführt werden, nicht über git geändert werden können."
 
 #. type: Bullet: '1. '
 #: build/_docs/md/Deploying_the_Website.md
 msgid "[setup docker](https://docs.docker.com/engine/installation/linux/debian/)"
-msgstr ""
+msgstr "[setup docker](https://docs.docker.com/engine/installation/linux/debian/)"
 
 #. type: Bullet: '2. '
 #: build/_docs/md/Deploying_the_Website.md
 msgid "[setup gitlab-ci-multi-runner](https://docs.gitlab.com/runner/install/linux-repository.html)"
-msgstr ""
+msgstr "[setup gitlab-ci-multi-runner](https://docs.gitlab.com/runner/install/linux-repository.html)"
 
 #. type: Plain text
 #: build/_docs/md/Deploying_the_Website.md
@@ -3254,106 +3260,106 @@ msgstr ""
 #: build/_docs/md/Deploying_the_Website.md
 #, no-wrap
 msgid "Base Debian/Apache setup"
-msgstr ""
+msgstr "Basis-Debian/Apache-Setup"
 
 #. type: Plain text
 #: build/_docs/md/Deploying_the_Website.md
 msgid "These instructions are based on Debian/stretch, but they should be very similar on both older and newer versions of Debian, as well as any Debian derivatives like Ubuntu, Mint, Elementary, etc."
-msgstr ""
+msgstr "Diese Anweisungen basieren auf Debian/Stretch, aber sie sollten sowohl auf älteren als auch auf neueren Versionen von Debian sowie auf allen Debian-Derivaten wie Ubuntu, Mint, Elementary usw. sehr ähnlich sein."
 
 #. type: Plain text
 #: build/_docs/md/Deploying_the_Website.md
 msgid "```console $ sudo su -"
-msgstr ""
+msgstr "```console $ sudo su -"
 
 #. type: Title #
 #: build/_docs/md/Deploying_the_Website.md
 #, no-wrap
 msgid "apt install apache2 certbot tor ca-certificates geoip-bin libapache2-mod-geoip \\"
-msgstr ""
+msgstr "apt install apache2 certbot tor ca-certificates geoip-bin libapache2-mod-geoip \\"
 
 #. type: Plain text
 #: build/_docs/md/Deploying_the_Website.md
 #, no-wrap
 msgid "  python-certbot-apache rsync unattended-upgrades locales\n"
-msgstr ""
+msgstr "  python-certbot-apache rsync unattended-upgrades locales\n"
 
 #. type: Title #
 #: build/_docs/md/Deploying_the_Website.md
 #, no-wrap
 msgid "dpkg-reconfigure unattended-upgrades  # turn them on!"
-msgstr ""
+msgstr "dpkg-reconfigure unattended-upgrades  # einschalten!"
 
 #. type: Title #
 #: build/_docs/md/Deploying_the_Website.md
 #, no-wrap
 msgid "sed -i 's,^# \\(.* UTF-8\\)$,\\1,' /etc/locale.gen  # enable all UTF-8 locales"
-msgstr ""
+msgstr "sed -i's,^# \\(.* UTF-8\\)$,\\1,' /etc/locale.gen # alle UTF-8-Sprachumgebungen aktivieren"
 
 #. type: Title #
 #: build/_docs/md/Deploying_the_Website.md
 #, no-wrap
 msgid "locale-gen"
-msgstr ""
+msgstr "locale-gen"
 
 #. type: Title #
 #: build/_docs/md/Deploying_the_Website.md
 #, no-wrap
 msgid "a2dismod status"
-msgstr ""
+msgstr "a2dismod status"
 
 #. type: Title #
 #: build/_docs/md/Deploying_the_Website.md
 #, no-wrap
 msgid "a2enmod headers"
-msgstr ""
+msgstr "a2enmod headers"
 
 #. type: Title #
 #: build/_docs/md/Deploying_the_Website.md
 #, no-wrap
 msgid "a2enmod rewrite"
-msgstr ""
+msgstr "a2enmod rewrite"
 
 #. type: Title #
 #: build/_docs/md/Deploying_the_Website.md
 #, no-wrap
 msgid "a2enmod ssl"
-msgstr ""
+msgstr "a2enmod ssl"
 
 #. type: Title #
 #: build/_docs/md/Deploying_the_Website.md
 #, no-wrap
 msgid "a2enconf security"
-msgstr ""
+msgstr "a2enconf security"
 
 #. type: Title #
 #: build/_docs/md/Deploying_the_Website.md
 #, no-wrap
 msgid "apachectl configtest && apachectl restart"
-msgstr ""
+msgstr "apachectl configtest && apachectl restart"
 
 #. type: Title #
 #: build/_docs/md/Deploying_the_Website.md
 #, no-wrap
 msgid "certbot --apache"
-msgstr ""
+msgstr "certbot --apache"
 
 #. type: Plain text
 #: build/_docs/md/Deploying_the_Website.md
 #: build/_docs/md/Setup_an_F-Droid_App_Repo.md
 msgid "```"
-msgstr ""
+msgstr "```"
 
 #. type: Title ###
 #: build/_docs/md/Deploying_the_Website.md
 #, no-wrap
 msgid "Apache2 config"
-msgstr ""
+msgstr "Apache2 config"
 
 #. type: Plain text
 #: build/_docs/md/Deploying_the_Website.md
 msgid "The F-Droid website is translated into several languages.  There are a few things required to ensure this works."
-msgstr ""
+msgstr "Die F-Droid-Website wird in mehrere Sprachen übersetzt.  Es gibt ein paar Dinge, die notwendig sind, um dies zu gewährleisten."
 
 #. type: Plain text
 #: build/_docs/md/Deploying_the_Website.md
@@ -3363,12 +3369,12 @@ msgstr ""
 #. type: Plain text
 #: build/_docs/md/Deploying_the_Website.md
 msgid "The second is to enable _mod_rewrite_, which is used to automatically choose the correct language for browsers that are not using Javascript.  The easiest way to do that is to run `sudo a2enmod rewrite`."
-msgstr ""
+msgstr "Die zweite ist die Aktivierung von _mod_rewrite_, mit der automatisch die richtige Sprache für Browser gewählt wird, die kein Javascript verwenden.  Am einfachsten geht das mit `sudo a2enmod rewrite`."
 
 #. type: Plain text
 #: build/_docs/md/Deploying_the_Website.md
 msgid "The last is to add the following to the Apache2 server or _VirtualHost_ config so that the _TypeMaps_ are used correctly, telling apache where to find the translated version of the file (replace `/var/www/html` with the actual webroot):"
-msgstr ""
+msgstr "Das letzte ist, dem Apache2-Server oder der _VirtualHost_-Konfiguration Folgendes hinzuzufügen, damit die _TypeMaps_ korrekt verwendet werden und dem Apache mitteilen, wo die übersetzte Version der Datei zu finden ist (ersetzen Sie `/var/wwww/html` durch das aktuelle Webroot):"
 
 #. type: Plain text
 #: build/_docs/md/Deploying_the_Website.md
@@ -3380,6 +3386,11 @@ msgid ""
 "    AllowOverride FileInfo\n"
 "</Directory>\n"
 msgstr ""
+"```apache\n"
+"<Directory /var/www/html>\n"
+"    Options FollowSymLinks\n"
+"    AllowOverride FileInfo\n"
+"</Directory>\n"
 
 #. type: Plain text
 #: build/_docs/md/Deploying_the_Website.md
@@ -3397,61 +3408,61 @@ msgstr ""
 #: build/_docs/md/Deploying_the_Website.md
 #, no-wrap
 msgid "Virtualize the language sub\"directories\""
-msgstr ""
+msgstr "Virtualisierung der Sprachunter\"verzeichnisse\""
 
 #. type: Plain text
 #: build/_docs/md/Deploying_the_Website.md
 msgid "AliasMatch ^(?:/(?:ach|af|ak|sq|am|anp|ar|ar_DZ|ar_MA|an|es_AR|hy|as|ast|de_AT|ay|az|ba|eu|bar|be|be_Latn|bn|bn_BD|bn_IN|brx|bs|bs_Cyrl|bs_Latn|br|bg|my|ca|km|ch|chr|hne|cgg|zh|zh_HK|zh_Hans|zh_Hant|ksh|kw|cr|hr|cs|da|doi|nl|nl_BE|dz|en|en_AU|en_CA|en_IE|en_PH|en_ZA|en_GB|en_US|eo|et|fo|fil|fi|frp|fr|fr_CA|fy|fur|ff|gd|gl|ka|de|el|kl|gu|gun|ht|ha|haw|he|hi|hu|is|ig|id|ia|ga|it|ja|jv|kab|kn|ks|csb|kk|rw|tlh|tlh-qaak|kok|ko|ku|ckb|ky|lo|la|lv|li|ln|lt|jbo|nds|lb|mk|mai|mg|ms|ml|mt|mnk|mi|arn|mr|mni|mn|me|mfe|nqo|nah|nap|ne|se|no|nb_NO|nb|nn|ny|oc|or|oj|os|pap|nso|fa|pms|pr|pl|pt|pt_BR|pt_PT|pa|ps|ro|rm|ru|sa|sat|sc|sco|sr|sr_Cyrl|sr_Latn|sh|sn|szl|sd|si|sk|sl|so|son|st|es|es_US|es_MX|es_PR|su|sw|sv|de_CH|tl|tg|ta|tt|te|th|bo|ti|ts|tr|tk|ug|uk|hsb|ur|ur_PK|uz|uz_Latn|ca@valencia|ve|vec|vi|wa|cy|vls|wo|sah|yi|yo|yue|zu)/)?(.*)?$ /var/www/html/$1"
-msgstr ""
+msgstr "AliasMatch ^(?:/(?:ach|af|ak|sq|am|anp|ar|ar_DZ|ar_MA|an|es_AR|hy|as|ast|de_AT|ay|az|ba|eu|bar|be|be_Latn|bn|bn_BD|bn_IN|brx|bs|bs_Cyrl|bs_Latn|br|bg|my|ca|km|ch|chr|hne|cgg|zh|zh_HK|zh_Hans|zh_Hant|ksh|kw|cr|hr|cs|da|doi|nl|nl_BE|dz|en|en_AU|en_CA|en_IE|en_PH|en_ZA|en_GB|en_US|eo|et|fo|fil|fi|frp|fr|fr_CA|fy|fur|ff|gd|gl|ka|de|el|kl|gu|gun|ht|ha|haw|he|hi|hu|is|ig|id|ia|ga|it|ja|jv|kab|kn|ks|csb|kk|rw|tlh|tlh-qaak|kok|ko|ku|ckb|ky|lo|la|lv|li|ln|lt|jbo|nds|lb|mk|mai|mg|ms|ml|mt|mnk|mi|arn|mr|mni|mn|me|mfe|nqo|nah|nap|ne|se|no|nb_NO|nb|nn|ny|oc|or|oj|os|pap|nso|fa|pms|pr|pl|pt|pt_BR|pt_PT|pa|ps|ro|rm|ru|sa|sat|sc|sco|sr|sr_Cyrl|sr_Latn|sh|sn|szl|sd|si|sk|sl|so|son|st|es|es_US|es_MX|es_PR|su|sw|sv|de_CH|tl|tg|ta|tt|te|th|bo|ti|ts|tr|tk|ug|uk|hsb|ur|ur_PK|uz|uz_Latn|ca@valencia|ve|vec|vi|wa|cy|vls|wo|sah|yi|yo|yue|zu)/)?(.*)?$ /var/www/html/$1"
 
 #. type: Title #
 #: build/_docs/md/Deploying_the_Website.md
 #, no-wrap
 msgid "Tell mod_negotiation which language to prefer"
-msgstr ""
+msgstr "Sagen Sie mod_negotiation, welche Sprache zu bevorzugen ist"
 
 #. type: Plain text
 #: build/_docs/md/Deploying_the_Website.md
 msgid "SetEnvIf Request_URI ^/(ach|af|ak|sq|am|anp|ar|an|hy|as|ast|ay|az|ba|eu|bar|be|bn|brx|bs|br|bg|my|ca|km|ch|chr|hne|cgg|zh|ksh|kw|cr|hr|cs|da|doi|nl|dz|en|eo|et|fo|fil|fi|frp|fr|fy|fur|ff|gd|gl|ka|de|el|kl|gu|gun|ht|ha|haw|he|hi|hu|is|ig|id|ia|ga|it|ja|jv|kab|kn|ks|csb|kk|rw|tlh|tlh-qaak|kok|ko|ku|ckb|ky|lo|la|lv|li|ln|lt|jbo|nds|lb|mk|mai|mg|ms|ml|mt|mnk|mi|arn|mr|mni|mn|me|mfe|nqo|nah|nap|ne|se|no|nb|nn|ny|oc|or|oj|os|pap|nso|fa|pms|pr|pl|pt|pa|ps|ro|rm|ru|sa|sat|sc|sco|sr|sh|sn|szl|sd|si|sk|sl|so|son|st|es|su|sw|sv|tl|tg|ta|tt|te|th|bo|ti|ts|tr|tk|ug|uk|hsb|ur|uz|ca@valencia|ve|vec|vi|wa|cy|vls|wo|sah|yi|yo|yue|zu)/ prefer-language=$1"
-msgstr ""
+msgstr "SetEnvIf Request_URI ^/(ach|af|ak|sq|am|anp|ar|an|hy|as|ast|ay|az|ba|eu|bar|be|bn|brx|bs|br|bg|my|ca|km|ch|chr|hne|cgg|zh|ksh|kw|cr|hr|cs|da|doi|nl|dz|en|eo|et|fo|fil|fi|frp|fr|fy|fur|ff|gd|gl|ka|de|el|kl|gu|gun|ht|ha|haw|he|hi|hu|is|ig|id|ia|ga|it|ja|jv|kab|kn|ks|csb|kk|rw|tlh|tlh-qaak|kok|ko|ku|ckb|ky|lo|la|lv|li|ln|lt|jbo|nds|lb|mk|mai|mg|ms|ml|mt|mnk|mi|arn|mr|mni|mn|me|mfe|nqo|nah|nap|ne|se|no|nb|nn|ny|oc|or|oj|os|pap|nso|fa|pms|pr|pl|pt|pa|ps|ro|rm|ru|sa|sat|sc|sco|sr|sh|sn|szl|sd|si|sk|sl|so|son|st|es|su|sw|sv|tl|tg|ta|tt|te|th|bo|ti|ts|tr|tk|ug|uk|hsb|ur|uz|ca@valencia|ve|vec|vi|wa|cy|vls|wo|sah|yi|yo|yue|zu)/ prefer-language=$1"
 
 #. type: Title #
 #: build/_docs/md/Deploying_the_Website.md
 #, no-wrap
 msgid "Language codes from Weblate containing capital letters and underscores need to be treated"
-msgstr ""
+msgstr "Sprachcodes von Weblate, die Großbuchstaben und Unterstriche enthalten, müssen behandelt werden"
 
 #. type: Title #
 #: build/_docs/md/Deploying_the_Website.md
 #, no-wrap
 msgid "differently, namely the language they refer to is lower case with a hyphen"
-msgstr ""
+msgstr "anders, nämlich die Sprache, auf die sie sich beziehen, ist mit einem Bindestrich und klein geschrieben"
 
 #. type: Plain text
 #: build/_docs/md/Deploying_the_Website.md
 msgid "SetEnvIf Request_URI ^/ar_DZ/ prefer-language=ar-dz SetEnvIf Request_URI ^/ar_MA/ prefer-language=ar-ma SetEnvIf Request_URI ^/be_Latn/ prefer-language=be-latn SetEnvIf Request_URI ^/bn_BD/ prefer-language=bn-bd SetEnvIf Request_URI ^/bn_IN/ prefer-language=bn-in SetEnvIf Request_URI ^/bs_Cyrl/ prefer-language=bs-cyrl SetEnvIf Request_URI ^/bs_Latn/ prefer-language=bs-latn SetEnvIf Request_URI ^/de_AT/ prefer-language=de-at SetEnvIf Request_URI ^/de_CH/ prefer-language=de-ch SetEnvIf Request_URI ^/en_AU/ prefer-language=en-au SetEnvIf Request_URI ^/en_CA/ prefer-language=en-ca SetEnvIf Request_URI ^/en_GB/ prefer-language=en-gb SetEnvIf Request_URI ^/en_IE/ prefer-language=en-ie SetEnvIf Request_URI ^/en_PH/ prefer-language=en-ph SetEnvIf Request_URI ^/en_US/ prefer-language=en-us SetEnvIf Request_URI ^/en_ZA/ prefer-language=en-za SetEnvIf Request_URI ^/es_AR/ prefer-language=es-ar SetEnvIf Request_URI ^/es_MX/ prefer-language=es-mx SetEnvIf Request_URI ^/es_PR/ prefer-language=es-pr SetEnvIf Request_URI ^/es_US/ prefer-language=es-us SetEnvIf Request_URI ^/fr_CA/ prefer-language=fr-ca SetEnvIf Request_URI ^/nb_NO/ prefer-language=nb-no SetEnvIf Request_URI ^/nl_BE/ prefer-language=nl-be SetEnvIf Request_URI ^/pt_BR/ prefer-language=pt-br SetEnvIf Request_URI ^/pt_PT/ prefer-language=pt-pt SetEnvIf Request_URI ^/sr_Cyrl/ prefer-language=sr-cyrl SetEnvIf Request_URI ^/sr_Latn/ prefer-language=sr-latn SetEnvIf Request_URI ^/ur_PK/ prefer-language=ur-pk SetEnvIf Request_URI ^/uz_Latn/ prefer-language=uz-latn SetEnvIf Request_URI ^/zh_Hans/ prefer-language=zh-hans SetEnvIf Request_URI ^/zh_Hant/ prefer-language=zh-hant SetEnvIf Request_URI ^/zh_HK/ prefer-language=zh-hk ```"
-msgstr ""
+msgstr "SetEnvIf Request_URI ^/ar_DZ/ prefer-language=ar-dz SetEnvIf Request_URI ^/ar_MA/ prefer-language=ar-ma SetEnvIf Request_URI ^/be_Latn/ prefer-language=be-latn SetEnvIf Request_URI ^/bn_BD/ prefer-language=bn-bd SetEnvIf Request_URI ^/bn_IN/ prefer-language=bn-in SetEnvIf Request_URI ^/bs_Cyrl/ prefer-language=bs-cyrl SetEnvIf Request_URI ^/bs_Latn/ prefer-language=bs-latn SetEnvIf Request_URI ^/de_AT/ prefer-language=de-at SetEnvIf Request_URI ^/de_CH/ prefer-language=de-ch SetEnvIf Request_URI ^/en_AU/ prefer-language=en-au SetEnvIf Request_URI ^/en_CA/ prefer-language=en-ca SetEnvIf Request_URI ^/en_GB/ prefer-language=en-gb SetEnvIf Request_URI ^/en_IE/ prefer-language=en-ie SetEnvIf Request_URI ^/en_PH/ prefer-language=en-ph SetEnvIf Request_URI ^/en_US/ prefer-language=en-us SetEnvIf Request_URI ^/en_ZA/ prefer-language=en-za SetEnvIf Request_URI ^/es_AR/ prefer-language=es-ar SetEnvIf Request_URI ^/es_MX/ prefer-language=es-mx SetEnvIf Request_URI ^/es_PR/ prefer-language=es-pr SetEnvIf Request_URI ^/es_US/ prefer-language=es-us SetEnvIf Request_URI ^/fr_CA/ prefer-language=fr-ca SetEnvIf Request_URI ^/nb_NO/ prefer-language=nb-no SetEnvIf Request_URI ^/nl_BE/ prefer-language=nl-be SetEnvIf Request_URI ^/pt_BR/ prefer-language=pt-br SetEnvIf Request_URI ^/pt_PT/ prefer-language=pt-pt SetEnvIf Request_URI ^/sr_Cyrl/ prefer-language=sr-cyrl SetEnvIf Request_URI ^/sr_Latn/ prefer-language=sr-latn SetEnvIf Request_URI ^/ur_PK/ prefer-language=ur-pk SetEnvIf Request_URI ^/uz_Latn/ prefer-language=uz-latn SetEnvIf Request_URI ^/zh_Hans/ prefer-language=zh-hans SetEnvIf Request_URI ^/zh_Hant/ prefer-language=zh-hant SetEnvIf Request_URI ^/zh_HK/ prefer-language=zh-hk ```"
 
 #. type: Plain text
 #: build/_docs/md/Deploying_the_Website.md
 msgid "If this is not done or done incorrectly, then you will see something like the following when viewing any page:"
-msgstr ""
+msgstr "Wenn dies nicht oder falsch gemacht wird, dann werden Sie beim Betrachten einer Seite etwas wie folgendes sehen:"
 
 #. type: Plain text
 #: build/_docs/md/Deploying_the_Website.md
 #, no-wrap
 msgid "> URI: index.html.en Content-language: en Content-type: text/html URI: index.html.fr Content-language: fr Content-type: text/html \n"
-msgstr ""
+msgstr "> URI: index.html.en Content-language: en Content-type: text/html URI: index.html.fr Content-language: fr Content-type: text/html \n"
 
 #. type: Plain text
 #: build/_docs/md/Deploying_the_Website.md
 msgid "This is the result of the actual TypeMap being returned to the browser, rather than the translated file."
-msgstr ""
+msgstr "Dies ist das Ergebnis der Rückgabe der eigentlichen TypeMap an den Browser und nicht der übersetzten Datei."
 
 #. type: Plain text
 #: build/_docs/md/Deploying_the_Website.md
 msgid "Note that this also depends on `mod_alias` and `mod_negotiation` being enabled, but this happens by default when installing apache2 on Debian."
-msgstr ""
+msgstr "Beachten Sie, dass dies auch davon abhängt, dass `mod_alias` und `mod_negotiation` aktiviert sind, aber dies geschieht standardmäßig bei der Installation von apache2 unter Debian."
 
 #. type: Title #
 #: build/_docs/md/FAQ_-_App_Developers.md
@@ -3578,7 +3589,7 @@ msgstr "Wir versuchen, nur das herzustellen, was Sie als zur Veröffentlichung b
 #. type: Plain text
 #: build/_docs/md/FAQ_-_App_Developers.md
 msgid "We try not to build from a random repository head version."
-msgstr ""
+msgstr "Wir versuchen, nicht aus einer zufälligen Repository-Kopfversion zu bauen."
 
 #. type: Title ###
 #: build/_docs/md/FAQ_-_App_Developers.md
@@ -3832,52 +3843,52 @@ msgstr "Wie ist der Client-Git-Workflow von F-Droid aufgebaut?"
 #. type: Plain text
 #: build/_docs/md/FAQ_-_App_Developers.md
 msgid "`git` allows tons of flexibility in the workflow of how people work together, so it is important to clearly define the workflow of this community so that people know what to expect. The `git` workflow the F-Droid client app uses is relatively simple and based on the very common workflow established by github.com, gitlab.com and others like it.  Here's a break down of what that means:"
-msgstr ""
+msgstr "`git` erlaubt haufenweise Flexibilität in den Arbeitsabläufen, so dass es wichtig ist, den Arbeitsablauf dieser Gemeinschaft klar zu definieren, damit die Leute wissen, was sie zu erwarten haben. Der `git` Workflow, den die F-Droid Client App verwendet, ist relativ einfach und basiert auf dem von github.com, gitlab.com und anderen etablierten Workflow.  Hier ist eine Aufschlüsselung dessen, was das bedeutet:"
 
 #. type: Bullet: '-   '
 #: build/_docs/md/FAQ_-_App_Developers.md
 msgid "all development work happens in the `master` branch"
-msgstr ""
+msgstr "alle Entwicklungsarbeiten finden im \"Master\"-Branch statt"
 
 #. type: Bullet: '-   '
 #: build/_docs/md/FAQ_-_App_Developers.md
 msgid "code is submitted for inclusion via Merge Requests (MRs)"
-msgstr ""
+msgstr "Code wird über Merge Requests (MRs) zur Aufnahme eingereicht"
 
 #. type: Bullet: '-   '
 #: build/_docs/md/FAQ_-_App_Developers.md
 msgid "releases happen in a short-lived, stable release branch per major release (e.g. `stable-0.95`, `stable-0.96`, `stable-0.97`, etc.)"
-msgstr ""
+msgstr "Releases erfolgen in einem kurzlebigen, stabilen Zweig pro Hauptversion (z.B. `stable-0.95`, `stable-0.96`, `stable-0.97`, etc.)"
 
 #. type: Bullet: '-   '
 #: build/_docs/md/FAQ_-_App_Developers.md
 msgid "the work that goes into the stable release branch must be tightly focused and as small as possible to keep the release cycle as short as possible"
-msgstr ""
+msgstr "die Arbeiten, die in die stabilen Release-Zweige einfließen, müssen zielorientiert und so gering wie möglich sein, um den Versionszyklus so kurz wie möglich zu halten"
 
 #. type: Bullet: '-   '
 #: build/_docs/md/FAQ_-_App_Developers.md
 msgid "the `master` branch must never be merged with any stable release branch"
-msgstr ""
+msgstr "der `Master`-Zweig darf niemals mit einem stabilen Release-Zweig zusammengeführt werden"
 
 #. type: Bullet: '-   '
 #: build/_docs/md/FAQ_-_App_Developers.md
 msgid "stable release branches must never be merged with the `master` branch"
-msgstr ""
+msgstr "stabile Release-Zweige dürfen niemals mit dem `Master`-Zweig zusammengeführt werden"
 
 #. type: Bullet: '-   '
 #: build/_docs/md/FAQ_-_App_Developers.md
 msgid "Merge Requests for a stable release branch can include commits from `master`"
-msgstr ""
+msgstr "Merge Requests für einen stabilen Zweig können Commits von `master` enthalten"
 
 #. type: Bullet: '-   '
 #: build/_docs/md/FAQ_-_App_Developers.md
 msgid "not all commits that are included in a stable release branch are required to be in `master`"
-msgstr ""
+msgstr "nicht alle Commits, die ein Release-Zweig enthält, sind zwingend auch im `master`"
 
 #. type: Bullet: '-   '
 #: build/_docs/md/FAQ_-_App_Developers.md
 msgid "what you do in your git forks is up to you, but the final merge request should not include merge commits"
-msgstr ""
+msgstr "was du in deinen Git-Forks machst, liegt an dir, aber der endgültige Merge-Request sollte keine Merge-Commits enthalten"
 
 #. type: Plain text
 #: build/_docs/md/FAQ_-_App_Developers.md
