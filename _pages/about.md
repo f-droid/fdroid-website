@@ -85,6 +85,7 @@ and is brought to you by at least the following people:
 * Michael Pöhn
 * Nicolas Raoul
 * Fabian Rodriguez
+* Pierre Rudloff
 * Florian Schmaus
 * Dominik Schürmann
 * Hans-Emil Skogh
