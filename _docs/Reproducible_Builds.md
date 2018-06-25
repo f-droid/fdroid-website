@@ -212,9 +212,7 @@ process.  But the APK build process can add them.  For example:
 
 - NDK inserts changing _build-id_, probably via `ld`
 - jar sort order for APKs
-- faketime integrated into F-Droid NDK builds?
 - `aapt` versions produce different results (XML and res/ subfolder names)
-- `faketime <timestamp> ant clean release` feasible?
 
 
 #### Sources
@@ -227,3 +225,4 @@ process.  But the APK build process can add them.  For example:
 - <https://gitian.org/>
 - <https://issuetracker.google.com/issues/70292819> (_Google login and Javascript required_)
 - <https://issuetracker.google.com/issues/37132313> (_Google login and Javascript required_)
+- <https://issuetracker.google.com/issues/110237303> (_Google login and Javascript required_)
