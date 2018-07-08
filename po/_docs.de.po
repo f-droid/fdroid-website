@@ -9,7 +9,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
 "POT-Creation-Date: 2018-06-30 12:20+0200\n"
 "PO-Revision-Date: 2018-07-09 11:57+0200\n"
-"Last-Translator: Claus Rüdinger <Mail-an-CR@web.de>\n"
+"Last-Translator: ssantos <ssantos@web.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/f-droid/website-docs/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
@@ -7142,28 +7142,28 @@ msgstr ""
 #. type: Plain text
 #: build/_docs/md/Reproducible_Builds.md
 msgid "Here are two examples where I think all the differences came from just different revisions of the platform:"
-msgstr ""
+msgstr "Hier sind zwei Beispiele, bei denen ich denke, dass alle Unterschiede nur von verschiedenen Revisionen der Plattform herrühren:"
 
 #. type: Bullet: '* '
 #: build/_docs/md/Reproducible_Builds.md
 msgid "https://verification.f-droid.org/de.nico.asura_12.apk.diffoscope.html"
-msgstr ""
+msgstr "https://verification.f-droid.org/de.nico.asura_12.apk.diffoscope.html"
 
 #. type: Bullet: '* '
 #: build/_docs/md/Reproducible_Builds.md
 msgid "https://verification.f-droid.org/de.nico.ha_manager_25.apk.diffoscope.html"
-msgstr ""
+msgstr "https://verification.f-droid.org/de.nico.ha_manager_25.apk.diffoscope.html"
 
 #. type: Title ###
 #: build/_docs/md/Reproducible_Builds.md
 #, no-wrap
 msgid "PNG Crush/Crunch"
-msgstr ""
+msgstr "PNG Crush/Crunch"
 
 #. type: Plain text
 #: build/_docs/md/Reproducible_Builds.md
 msgid "A standard part of the Android build process is to run some kind of PNG optimization tool, like `aapt singleCrunch` or `pngcrush`.  These do not provide deterministic output, it is still an open question as to why.  Since PNGs are normally committed to the source repo, a workaround to this problem is to run the tool of your choice on the PNG files, then commit those changes to the source repo (e.g. `git`).  Then, disable the default PNG optimization process by adding this to _build.gradle_:"
-msgstr ""
+msgstr "Ein Standardbestandteil des Android-Buildprozesses ist es, eine Art PNG-Optimierungswerkzeug wie `aapt singleCrunch` oder `pngcrush` auszuführen.  Diese liefern keine deterministische Ausgabe, es ist immer noch eine offene Frage, warum.  Da PNGs normalerweise in das Quell-Repo committed sind, besteht eine Lösung für dieses Problem darin, das Tool Ihrer Wahl auf den PNG-Dateien auszuführen und diese Änderungen dann in das Quell-Repo zu übertragen (z.B. `git`).  Deaktivieren Sie dann den standardmäßigen PNG-Optimierungsprozess, indem Sie diesen in _build.gradle_ einfügen:"
 
 #. type: Plain text
 #: build/_docs/md/Reproducible_Builds.md
@@ -7177,43 +7177,50 @@ msgid ""
 "}\n"
 "```\n"
 msgstr ""
+"```\n"
+"android {\n"
+"    aaptOptions {\n"
+"        cruncherEnabled = false\n"
+"    }\n"
+"}\n"
+"```\n"
 
 #. type: Title ###
 #: build/_docs/md/Reproducible_Builds.md
 #, no-wrap
 msgid "Build Server IDs"
-msgstr ""
+msgstr "Server-IDs erstellen"
 
 #. type: Plain text
 #: build/_docs/md/Reproducible_Builds.md
 msgid "To describe the build environment used by F-Droid builds, APKs have two files inserted into them:"
-msgstr ""
+msgstr "Um die von F-Droid-Builds verwendete Build-Umgebung zu beschreiben, haben APKs zwei Dateien eingefügt:"
 
 #. type: Bullet: '* '
 #: build/_docs/md/Reproducible_Builds.md
 msgid "_META-INF/fdroidserverid_ - git commit hash of [_fdroidserver_](https://gitlab.com/fdroid/fdroidserver) used for the build"
-msgstr ""
+msgstr "_META-INF/fdroidserverid_ - git commit hash von [_fdroidserver_](https://gitlab.com/fdroid/fdroidserver) für den Build verwendet"
 
 #. type: Bullet: '* '
 #: build/_docs/md/Reproducible_Builds.md
 msgid "_META-INF/buildserverid_ - git commit hash of [_makebuildserver_](https://gitlab.com/fdroid/fdroidserver/blob/master/makebuildserver) used for the build"
-msgstr ""
+msgstr "_META-INF/buildserverid_ - git commit hash von [_makebuildserver_](https://gitlab.com/fdroid/fdroidserver/blob/master/makebuildserver) für den Build verwendet"
 
 #. type: Plain text
 #: build/_docs/md/Reproducible_Builds.md
 msgid "To ensure reproducibility, use the exact same revision of the `./makebuildserver` and `fdroid build`. You can find the commit hash of _fdroidserver_ by going to your git clone and running `git log -n1`.  The build server instance is stamped with the git commit hash on creation, and that ID is included in builds."
-msgstr ""
+msgstr "Um die Reproduzierbarkeit zu gewährleisten, verwenden Sie genau die gleiche Revision von `./makebuildserver` und `fdroid build`. Sie können den Commit-Hash von _fdroidserver_ finden, indem Sie in Ihrem Git-Clone `git log -n1` ausführen.  Die Build-Server-Instanz wird bei der Erstellung mit dem Git-Commit-Hash versehen und die ID ist in den Builds enthalten."
 
 #. type: Title ###
 #: build/_docs/md/Reproducible_Builds.md
 #, no-wrap
 msgid "ZIP entry info"
-msgstr ""
+msgstr "ZIP-Eintrag Info"
 
 #. type: Plain text
 #: build/_docs/md/Reproducible_Builds.md
 msgid "The ZIP format was originally designed around the MSDOS FAT filesystem.  UNIX file permissions were added as an extension.  APKs only need the most basic ZIP format, without any of the extensions.  These extensions are often stripped out in the final release signing process.  But the APK build process can add them.  For example:"
-msgstr ""
+msgstr "Das ZIP-Format wurde ursprünglich für das MSDOS FAT-Dateisystem entwickelt.  UNIX-Dateiberechtigungen wurden als Erweiterung hinzugefügt.  APKs benötigen nur das einfachste ZIP-Format, ohne irgendwelche Erweiterungen.  Diese Erweiterungen werden oft bei der finalen Versionssignierung entfernt.  Aber der APK-Build-Prozess kann sie hinzufügen.  Zum Beispiel:"
 
 #. type: Plain text
 #: build/_docs/md/Reproducible_Builds.md
@@ -7231,23 +7238,34 @@ msgid ""
 "+-rw-rw-rw-  2.3 unx    78984 b- stor 80-000-00 00:00 resources.arsc\n"
 "```\n"
 msgstr ""
+"```diff\n"
+"--- a2dp.Vol_137.apk\n"
+"+++ sigcp_a2dp.Vol_137.apk\n"
+"@@ -1,50 +1,50 @@\n"
+"--rw----     2.0 fat     8976 bX defN 79-Nov-30 00:00 AndroidManifest.xml\n"
+"--rw----     2.0 fat  1958312 bX defN 79-Nov-30 00:00 classes.dex\n"
+"--rw----     1.0 fat    78984 bx stor 79-Nov-30 00:00 resources.arsc\n"
+"+-rw-rw-rw-  2.3 unx     8976 b- defN 80-000-00 00:00 AndroidManifest.xml\n"
+"+-rw----     2.4 fat  1958312 b- defN 80-000-00 00:00 classes.dex\n"
+"+-rw-rw-rw-  2.3 unx    78984 b- stor 80-000-00 00:00 resources.arsc\n"
+"```\n"
 
 #. type: Title ###
 #: build/_docs/md/Reproducible_Builds.md
 #, no-wrap
 msgid "Migration to reproducible builds"
-msgstr ""
+msgstr "Migration auf reproduzierbare Builds"
 
 #. type: Title ####
 #: build/_docs/md/Reproducible_Builds.md
 #, no-wrap
 msgid "TODO"
-msgstr ""
+msgstr "TODO"
 
 #. type: Plain text
 #: build/_docs/md/Reproducible_Builds.md
 msgid "- NDK inserts changing _build-id_, probably via `ld` - jar sort order for APKs - `aapt` versions produce different results (XML and res/ subfolder names)"
-msgstr ""
+msgstr "- NDK fügt wechselnde _build-id_ ein, wahrscheinlich über `ld` - jar sort order für APKs - `aapt` Versionen liefern unterschiedliche Ergebnisse (XML und res/ Unterordnernamen)"
 
 #. type: Title ####
 #: build/_docs/md/Reproducible_Builds.md
@@ -7455,12 +7473,12 @@ msgstr "Übersicht"
 #. type: Plain text
 #: build/_docs/md/Setup_an_F-Droid_App_Repo.md
 msgid "If you want to maintain a simple binary repository of APKs and packages obtained elsewhere, the process is quite simple:"
-msgstr ""
+msgstr "Wenn Sie ein einfaches binäres Repository von APKs und Paketen pflegen wollen, die Sie an anderer Stelle erhalten haben, ist der Prozess recht einfach:"
 
 #. type: Bullet: '1.  '
 #: build/_docs/md/Setup_an_F-Droid_App_Repo.md
 msgid "[Set up the server tools](../Installing_the_Server_and_Repo_Tools)"
-msgstr ""
+msgstr "[Server-Tools einrichten](../Installing_the_Server_and_Repo_Tools)"
 
 #. type: Bullet: '2.  '
 #: build/_docs/md/Setup_an_F-Droid_App_Repo.md
@@ -7500,28 +7518,28 @@ msgstr "Haben Sie die Sachen verändert, wiederholen Sie schließlich `fdroid up
 #. type: Bullet: '9.  '
 #: build/_docs/md/Setup_an_F-Droid_App_Repo.md
 msgid "Running `fdroid update` adds an _icons_ directory into the repo directory, and also creates the repository index files (_index.xml_, _index.jar_, etc) __NOTE: To make this process secure, read [Real World Setup](#real-world-setup) below!__"
-msgstr ""
+msgstr "Das Ausführen von `fdroid update` fügt ein _icons_-Verzeichnis in das Repo-Verzeichnis ein und erstellt auch die Repository-Indexdateien (_index.xml_, _index.jar_, etc.) __HINWEIS: um diesen Prozess sicher zu machen, lesen Sie [Real World Setup](#real-world-setup) unten!__"
 
 #. type: Bullet: '0.  '
 #: build/_docs/md/Setup_an_F-Droid_App_Repo.md
 msgid "Publish the resulting contents of the _repo_ directory to your web server (or set `serverwebroot` in your _config.py_ then use `fdroid server update`)"
-msgstr ""
+msgstr "Veröffentlichen Sie den resultierenden Inhalt des Verzeichnisses _repo_ auf Ihrem Webserver (oder setzen Sie `serverwebroot` in Ihrer _config.py_ und verwenden Sie dann `fdroid server update`)"
 
 #. type: Plain text
 #: build/_docs/md/Setup_an_F-Droid_App_Repo.md
 msgid "Following the above process will result in a _repo_ directory, which you simply need to push to any HTTP (or preferably HTTPS) server to make it accessible."
-msgstr ""
+msgstr "Nach dem obigen Prozess wird ein _repo_-Verzeichnis erstellt, das Sie einfach an einen beliebigen HTTP- (oder vorzugsweise HTTPS-) Server pushen müssen, um es zugänglich zu machen."
 
 #. type: Plain text
 #: build/_docs/md/Setup_an_F-Droid_App_Repo.md
 msgid "While some information about the applications (and versions thereof)  is retrieved directly from the APK files, most comes from the corresponding file in the _metadata/_ directory. The [metadata file](../Build_Metadata_Reference) covering ALL versions of a particular application is named _package.id.txt_ where package.id is the unique identifier for that package.  All build metadata fields are relevant for binary APKs, except for `Build:` entries, which should be omitted."
-msgstr ""
+msgstr "Während einige Informationen über die Anwendungen (und deren Versionen) direkt aus den APK-Dateien abgerufen werden, stammen die meisten aus der entsprechenden Datei im Verzeichnis _metadata/_. Die [Metadaten-Datei](../Build_Metadata_Reference), die ALLE Versionen einer bestimmten Anwendung abdeckt, heißt _package.id.txt_, wobei package.id die eindeutige Kennung für dieses Paket ist.  Alle Build-Metadatenfelder sind für binäre APKs relevant, mit Ausnahme von `Build:`-Einträgen, die weggelassen werden sollten."
 
 #. type: Title ##
 #: build/_docs/md/Setup_an_F-Droid_App_Repo.md
 #, no-wrap
 msgid "Local Demo Repo HOWTO"
-msgstr ""
+msgstr "Lokales Demo Repo HOWTO"
 
 #. type: Plain text
 #: build/_docs/md/Setup_an_F-Droid_App_Repo.md
