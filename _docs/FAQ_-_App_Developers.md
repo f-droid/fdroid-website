@@ -14,6 +14,7 @@ your app is suitable for inclusion in the official F-Droid repo.  The
 quickest way to get an app included is to make a merge request to
 _fdroiddata_, following
 [these instructions](https://gitlab.com/fdroid/fdroiddata/blob/master/CONTRIBUTING.md#merge-requests).
+There's also a [Submitting to F-Droid Quick Start Guide](../Submitting_to_F-Droid_Quick_Start_Guide).
 Requests for packaging can be posted in the
 [Requests for Packaging](https://gitlab.com/fdroid/rfp/issues)
 tracker.
