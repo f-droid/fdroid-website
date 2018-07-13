@@ -33,7 +33,7 @@ for f in sorted(glob.glob('po/*.po*')):
         m = bad_md_link.search(message.string)
         if m:
             errorcount += 1
-            output += 'Space breaks Markdown link: ' + message.id, '\n: ' + m.group()
+            output += 'Space breaks Markdown link: ' + message.id + '\n: ' + m.group()
 
         idlinks = []
         for m in pattern.findall(message.id):
