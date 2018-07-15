@@ -2,7 +2,7 @@
 layout: post
 title: "F-Droid presentation at the Linux.conf.au 2018 conference"
 author: "Licaon_Kter"
-
+authorWebsite: "https://forum.f-droid.org/u/Licaon_Kter"
 ---
 
 In Sydney, New South Wales on Monday 22 January through to Friday 26 January, 

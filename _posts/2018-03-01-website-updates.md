@@ -2,7 +2,6 @@
 layout: post
 title: "Website Updates"
 author: "F-Droid"
-
 ---
 
 There have been a couple of important updates to this website.  First,

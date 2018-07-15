@@ -2,7 +2,7 @@
 layout: post
 title: "This Week in F-Droid, Week 18"
 author: "Coffee"
-
+authorWebsite: "https://forum.f-droid.org/u/coffee"
 ---
 
 Hi everyone! You have been telling us you liked the first [#twif](https://mastodon.technology/tags/twif), so have another! 

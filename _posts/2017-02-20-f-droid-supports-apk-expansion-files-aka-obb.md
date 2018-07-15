@@ -2,6 +2,7 @@
 layout: post
 title: "F-Droid supports APK Expansion Files aka OBB"
 author: "eighthave"
+authorWebsite: "https://forum.f-droid.org/u/hans"
 ---
 
 Many games, mapping, and other apps require a large amount of data to

@@ -2,7 +2,7 @@
 layout: post
 title: "Upcoming Security Audit"
 author: "eighthave"
-
+authorWebsite: "https://forum.f-droid.org/u/hans"
 ---
 
 We have started the process of the second security audit of the

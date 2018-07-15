@@ -1,0 +1,40 @@
+---
+layout: null
+permalink: /feed/
+redirect_from:
+ - /feed.xml
+---
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+	<title>{{ site.title | xml_escape }}</title>
+	<subtitle>{{ site.description | xml_escape }}</subtitle>
+	<link href="{{ "/feed/" | prepend: site.baseurl | prepend: site.url }}" rel="self" />
+	<link href="{{ site.url }}{{ site.baseurl }}/" />
+	<id>{{ site.url }}{{ site.baseurl }}/</id>
+	<updated>{{ site.time | date_to_xmlschema }}</updated>
+    <generator version="{{ jekyll.version }}">Jekyll</generator>
+    <icon>{{ "/assets/favicon.png" | prepend: site.baseurl | prepend: site.url }}</icon>
+    <logo>{{ "/assets/fdroid-logo.svg" | prepend: site.baseurl | prepend: site.url }}</logo>
+
+    {% for post in site.posts limit:20 %}
+	<entry>
+		<title>{{ post.title | xml_escape }}</title>
+		<link href="{{ post.url | prepend: site.baseurl | prepend: site.url }}" />
+		<link rel="alternate" type="text/html" href="{{ post.url | prepend: site.baseurl | prepend: site.url }}"/>
+		<id>{{ post.url | prepend: site.baseurl | prepend: site.url }}</id>
+		<published>{{ post.date | date_to_xmlschema }}</published>
+		<updated>{{ post.date | date_to_xmlschema }}</updated>
+		<content type="html">
+            {{ post.content | xml_escape }}
+        </content>
+        {% if post.author %}
+        <author>
+			<name>{{ post.author }}</name>
+			{% if post.authorWebsite %}
+			<uri>{{ post.authorWebsite }}</uri>
+			{% endif %}
+		</author>
+		{% endif %}
+	</entry>
+    {% endfor %}
+</feed>

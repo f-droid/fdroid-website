@@ -2,7 +2,7 @@
 layout: post
 title: "Liberapay, a fully free Donation Platform"
 author: "Bubu"
-
+authorWebsite: "https://forum.f-droid.org/u/Bubu"
 ---
 
 <p align="center">

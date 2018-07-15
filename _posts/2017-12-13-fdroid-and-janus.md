@@ -2,7 +2,7 @@
 layout: post
 title: "F-Droid and the Janus Vulnerability"
 author: "eighthave"
-
+authorWebsite: "https://forum.f-droid.org/u/hans"
 ---
 
 The

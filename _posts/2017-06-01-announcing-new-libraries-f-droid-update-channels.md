@@ -2,7 +2,7 @@
 layout: post
 title: "Announcing new libraries: F-Droid Update Channels"
 author: "eighthave"
-
+authorWebsite: "https://forum.f-droid.org/u/hans"
 ---
 
 In order to complete the F-Droid distribution ecosystem, we are
