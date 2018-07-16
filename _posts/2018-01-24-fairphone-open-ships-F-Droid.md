@@ -2,7 +2,7 @@
 layout: post
 title: "Fairphone Open ships F-Droid Privileged Extension!"
 author: "eighthave"
-
+authorWebsite: "https://forum.f-droid.org/u/hans"
 ---
 
 Fairphone has taken a

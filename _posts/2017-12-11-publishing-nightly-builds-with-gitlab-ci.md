@@ -2,7 +2,7 @@
 layout: post
 title: "Publishing a nightly builds repo with GitLab or Travis CI"
 author: "eighthave"
-
+authorWebsite: "https://forum.f-droid.org/u/hans"
 ---
 
 Having users run "nightly" builds is a great way to get rapid feedback

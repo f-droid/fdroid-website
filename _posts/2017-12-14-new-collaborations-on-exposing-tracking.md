@@ -2,7 +2,7 @@
 layout: post
 title: "New Collaborations on Exposing Tracking"
 author: "eighthave"
-
+authorWebsite: "https://forum.f-droid.org/u/hans"
 ---
 
 Since 2010, the F-Droid community has been working to provide only
