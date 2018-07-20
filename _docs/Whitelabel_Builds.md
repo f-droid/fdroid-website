@@ -10,13 +10,24 @@ how to do that. For this,
 ["_gradle_ flavors"](https://developer.android.com/studio/build/build-variants.html)
 are used for building rebranded, configured versions of F-Droid.
 
-Starting in *app/build.gradle*, add this:
+Starting in *app/build.gradle*, set the package names and create a
+_flavorDimension_ and _productFlavors_:
 
 ```gradle
+def fullApplicationId = "com.mycompany.full"
+def basicApplicationId = "com.mycompany.basic"
+// yes, this actually needs both quotes https://stackoverflow.com/a/41391841
+def privilegedExtensionApplicationId = '"com.mycompany.privileged"'
+
+
+[snip]
+
+
 android {
+    flavorDimensions "base", "mycompany"
     productFlavors {
        mycompany {
-           applicationId "com.mycompany.appstore"
+           dimension "mycompany"
        }
     }
 }
@@ -69,13 +80,24 @@ request always accepted by the client:
  </item>
 ```
 
+### Basic vs Full Product Flavors
+
+F-Droid itself already has two flavors built-in: _basic_ and _full_.
+_full_ is the app known as _F-Droid_, while _basic_ is the most
+minimal possible version of the app that still provides the core app
+store functionality.  Since those are in a separate _flavorDimension_,
+the added customizations will apply to both.  Choosing which one to
+build is done by specifying the "Build Variant" in Android Studio, and
+the _gradle_ target, .e.g `./gradlew assembleMycompanyFullDebug`.
+
+
 ### Customizations
 
 When using gradle build flavors, it is very easy to customize any of
 the XML files. So this is the recommended way to start with
 customizing your build of F-Droid. Any XML file in _app/src/main/res_
 can be overridden by placing an XML with the same name in
-_app/src/mycompany/res_. Here are some examples
+_app/src/mycompany/res_.
 
 
 #### Removing ActionBar/Menu Items
@@ -92,6 +114,7 @@ For a custom build that enables Automatic Updates by default, override
 _app/src/main/res/xml/preferences.xml_. You can customize the
 preferences and their default values in
 _app/src/mycompany/res/xml/preferences.xml_. The fully automatic
-update requires system/root access. With regular access, the updates
-will only automatically download. The user still needs to click
-install on each one.
+update requires
+[Privileged Extension](https://gitlab.com/fdroid/privileged-extension). With
+regular access, the updates will only automatically download. The user
+still needs to click install on each one.
