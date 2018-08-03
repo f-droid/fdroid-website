@@ -13,7 +13,7 @@ In this edition: Releasing F-Droid 1.3, building Briar reproducibly and F-Droid 
 
 #### F-Droid core
 
-* Version 1.3 of the F-Droid app has been released! [@_hc](https://forum.f-droid.org/u/hans) has done a large code overhaul to make status updates more reliable. This release also fixes many bugs around the wrong button showing. More details [here](https://gitlab.com/fdroid/fdroidclient/blob/master/metadata/en-US/changelogs/1003050.txt).
+* Version 1.3 of the **F-Droid** app has been released! [@_hc](https://forum.f-droid.org/u/hans) has done a large code overhaul to make status updates more reliable. This release also fixes many bugs around the wrong button showing. More details [here](https://gitlab.com/fdroid/fdroidclient/blob/master/metadata/en-US/changelogs/1003050.txt).
 
   Focus is now shifting towards improved offline support, including swapping with SD cards and USB-OTG devices.
 
@@ -21,7 +21,7 @@ In this edition: Releasing F-Droid 1.3, building Briar reproducibly and F-Droid 
 
 #### Community News
 
-* Do you remember how in [TWIF Week 28](https://f-droid.org/2018/07/12/this-week-in-fdroid-w28.html) we vaguely hinted at the possibility of F-Droid T-shirts? As it happens, the designs are finished, and we can now announce that [HELLOTUX](https://www.hellotux.com/) is shipping some [nice F-Droid wear](https://www.hellotux.com/f-droid). Of every item sold, €3 will be donated to F-Droid.
+* Do you remember how in [TWIF Week 28](https://f-droid.org/2018/07/12/this-week-in-fdroid-w28.html) we vaguely hinted at the possibility of F-Droid **T-shirts**? As it happens, the designs are finished, and we can now announce that [HELLOTUX](https://www.hellotux.com/) is shipping some [nice F-Droid wear](https://www.hellotux.com/f-droid). Of every item sold, €3 will be donated to F-Droid.
 
 * [@Grote](https://blog.grobox.de) [writes](https://blog.grobox.de/2018/building-briar-reproducible-and-why-it-matters/) about the process of building [Briar](https://briarproject.org) reproducibly, and why that is important.
 
@@ -44,6 +44,7 @@ In total, 42 apps were updated this week. Here are the highlights:
 * [Gallery](https://f-droid.org/app/com.simplemobiletools.gallery), a photo and video viewer, was updated from 4.3.5 to 4.4.1. This update brings a reworked editor, allows hiding the recycling bin, hides both Play and Pause video buttons after 2 secs, improves Immersive mode fullscreen behaviour, and comes with several other UX and stability improvements.
 * [Ring](https://f-droid.org/app/cx.ring) is a peer-to-peer messenger capable of voice and video calling. In this update from 20180501 to 20180712 push notifications, handling of failed messages, connectivity, IPv6 support, Android TV support, contact management, and performance were improved. You can now send GIFs and images using your keyboard. Support for HD 720p for Android TV was added, as was the possibility to share text and media from other apps. It also has plenty of bug fixes.
 * [Xearth](https://f-droid.org/app/de.drhoffmannsoftware.xearth), a live wallpaper of the Earth, is updating again after a hiatus of nearly 3 years. Unfortunately, the author performed the ill-advised action of setting the version code back, from 2015100901 to 22 to be precise. To update, you may have to uninstall the app first, or install the update via adb. If you have beta updates enabled in the F-Droid app, you'll need to pick version 1.2-22 from the version list manually.
+* [DAVDroid](https://f-droid.org/app/at.bitfire.davdroid) version 2.0 got released. 🎆 DAVDroid is the main way users sync Nextcloud calendar and contacts to their Android phone. We integrated an easy Nextcloud account setup for DAVdroid to make this easier. Version 2.0 comes with a huge performance increase, multi-threaded/parallel processing of resources, better scalability (less memory, battery and network time consumption) and UI improvements! 🎉 Full release notes can be found [here](https://forums.bitfire.at/post/10071).
 
 #### Removed Apps
 
