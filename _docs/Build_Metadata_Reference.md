@@ -799,6 +799,10 @@ description:
 -   ‘ApplicationDebuggable‘ - APK file is compiled for debugging
     (`application-debuggable`), which normally makes it unsuitable
     for regular users and use cases.
+-   ‘NoSourceSince‘ - Upstream source for this app is no longer
+    available. Either the app went commercial, the repo was dropped,
+    or it has moved to a location currently unknown to us. This usual
+    means there won't be further updates unless the source reappears.
 
 This is converted to (`<antifeatures>`) in the XML file (_index.xml_).
 
