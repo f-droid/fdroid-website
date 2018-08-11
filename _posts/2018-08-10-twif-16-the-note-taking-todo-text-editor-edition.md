@@ -14,7 +14,7 @@ In this edition: Fixing nearby swap, download link broken and fixed again, a fla
 
 #### F-Droid core
 
-* If you hadn't noticed yet, version 1.3 broke the "nearby swap" feature. [@\_hc](https://forum.f-droid.org/u/hans) did a big overhaul of the HTTP plumbing of "nearby swap" this week, and queued up a 1.3.1 release with this fix. The release also adds support for TLSv1.3. It has already been built, and _should_ be out with the next index update.
+* If you hadn't noticed yet, version 1.3 broke the "nearby swap" feature. [@\_hc](https://forum.f-droid.org/u/hans) did a big overhaul of the HTTP plumbing of "nearby swap" this week, and queued up a **1.3.1 release** with this fix. The release also adds support for TLSv1.3. It has already been built, and _should_ be out with the next index update. (**Edit:** It's out now!)
 
 * Right now work is ongoing to put [USB OTG](https://en.wikipedia.org/wiki/USB_On-The-Go) and [SD card](https://en.wikipedia.org/wiki/Secure_Digital) support into F-Droid, hopefully in time for the [Mozilla WINS competition](https://wirelesschallenge.mozilla.org) presentation, which will be on the 14th of August.
 
@@ -30,9 +30,9 @@ In this edition: Fixing nearby swap, download link broken and fixed again, a fla
 
 #### Community News
 
-* [Tutanota](https://tutanota.com), an encrypted e-mail service, worked with us to [get their Android app included in F-Droid](https://tutanota.com/blog/posts/release-notes-3-35). It has already been merged, and we hope to be able to announce its actual arrival soon.
+* **[Tutanota](https://tutanota.com)**, an encrypted e-mail service, worked with us to [get their Android app included in F-Droid](https://tutanota.com/blog/posts/release-notes-3-35). It has already been merged, and we hope to be able to announce its actual arrival soon.
 
-* [@Bubu](https://forum.f-droid.org/u/Bubu) reports that Rocket Chat has merged his FOSS build flavour, meaning there's a good chance the next version will be in F-Droid. He also said that working with them has been a very positive experience, with them even taking it over the finish line themselves.
+* [@Bubu](https://chaos.social/@Bubu) reports that **[Rocket.Chat](https://github.com/RocketChat/Rocket.Chat.Android)** has merged his FOSS build flavour, meaning there's a good chance the next version will be in F-Droid. He also said that working with them has been a very positive experience, with them even taking it over the finish line themselves.
 
 #### New apps
 
