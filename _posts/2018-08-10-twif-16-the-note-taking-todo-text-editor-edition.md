@@ -43,6 +43,16 @@ In this edition: Fixing nearby swap, download link broken and fixed again, a fla
 * [Carnet](https://f-droid.org/app/com.spisoft.quicknote): Powerful note taking app with sync capabilities
 * [BwareArea](https://f-droid.org/app/fr.byped.bwarearea): An offline GPS based POI alerter with overlay
 * [Stethox](https://f-droid.org/app/org.schabi.stethox): Xposed module that adds Stetho to every app
+* [DNS Hero](https://f-droid.org/packages/com.gianlu.dnshero): Inspect DNS zones like a superhero
+* [MetalabDoorWidget](https://f-droid.org/packages/com.zoffcc.applications.metalab_open_widget/): Show the Door status of Metalab Vienna
+* [Music](https://f-droid.org/packages/com.maxfour.music/): Lightweight and Material Music Player based on Phonograph
+* [MyMusicQoE](https://f-droid.org/packages/pt.ipleiria.mymusicqoe/): A fork of ultrasonic with QoE evaluation features purposes
+* [PasteBin](https://f-droid.org/packages/com.anoopknr.pastebin/): Client application for Ubuntu pastebin
+* [Rosary](https://f-droid.org/packages/org.example.rosary/): A very simple app helping Christian users to pray the Rosary.
+* [Sun Time](https://f-droid.org/packages/com.gitlab.kreikenbaum.suntime.fdroid/): Align your biorhythm with the sun
+* [Weather Widget](https://f-droid.org/packages/nl.implode.weer/): Add widget to home screen with weather 5 to 7 day weather forecast
+
+(Thanks to [@licaon-kter](https://forum.f-droid.org/u/Licaon_Kter) for incorporating things from the last minute index update here!)
 
 #### Updated apps
 
@@ -71,6 +81,8 @@ In total, 43 apps were updated this week. Here are the highlights:
 * [Loyalty Card Keychain](https://f-droid.org/app/protect.card_locker), a manager for barcode-based store/loyalty cards, released 0.24, adding a setting to control screen brightness when displaying a barcode, and new Greek and Slovenian translations.
 
 * [Meditation Assistant](https://f-droid.org/app/sh.ftp.rocketninelabs.meditationassistant.opensource) was updated from 1.4.7 to 1.5.0, splitting full screen preference into three options, obeying volume preference, and removing the "turn screen off" feature as it requires administrator privileges. **Important**: Several people have reported an instant crash on opening with 1.5.0. This is fixed in 1.5.1, which should be in F-Droid soon if not already by the time you read this.
+
+* [Telegram](https://f-droid.org/packages/org.telegram.messenger/) was updated from 4.6.0 to 4.9.0 as a new source code drop came. It includes Telegram Passport, (open source versions for) suggested locations and search, location sharing fixes, https for map tiles and of course everything from Telegram 4.7 and 4.8.
 
 #### In the next TWIF
 
