@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
-"POT-Creation-Date: 2018-07-13 10:54+0200\n"
+"POT-Creation-Date: 2018-08-17 13:55+0200\n"
 "PO-Revision-Date: 2018-07-16 10:45+0000\n"
 "Last-Translator: Verdulo <tomek@disroot.org>\n"
 "Language-Team: Esperanto <https://hosted.weblate.org/projects/f-droid/website-docs/eo/>\n"
@@ -1999,6 +1999,11 @@ msgstr ""
 #. type: Bullet: '-   '
 #: build/_docs/md/Build_Metadata_Reference.md
 msgid "‘ApplicationDebuggable‘ - APK file is compiled for debugging (`application-debuggable`), which normally makes it unsuitable for regular users and use cases."
+msgstr ""
+
+#. type: Bullet: '-   '
+#: build/_docs/md/Build_Metadata_Reference.md
+msgid "‘NoSourceSince‘ - Upstream source for this app is no longer available. Either the app went commercial, the repo was dropped, or it has moved to a location currently unknown to us. This usual means there won't be further updates unless the source reappears."
 msgstr ""
 
 #. type: Plain text
@@ -8037,18 +8042,28 @@ msgstr ""
 
 #. type: Plain text
 #: build/_docs/md/Whitelabel_Builds.md
-msgid "Starting in *app/build.gradle*, add this:"
+msgid "Starting in *app/build.gradle*, set the package names and create a _flavorDimension_ and _productFlavors_:"
+msgstr ""
+
+#. type: Plain text
+#: build/_docs/md/Whitelabel_Builds.md
+msgid "```gradle def fullApplicationId = \"com.mycompany.full\" def basicApplicationId = \"com.mycompany.basic\" // yes, this actually needs both quotes https://stackoverflow.com/a/41391841 def privilegedExtensionApplicationId = '\"com.mycompany.privileged\"'"
+msgstr ""
+
+#. type: Plain text
+#: build/_docs/md/Whitelabel_Builds.md
+msgid "[snip]"
 msgstr ""
 
 #. type: Plain text
 #: build/_docs/md/Whitelabel_Builds.md
 #, no-wrap
 msgid ""
-"```gradle\n"
 "android {\n"
+"    flavorDimensions \"base\", \"mycompany\"\n"
 "    productFlavors {\n"
 "       mycompany {\n"
-"           applicationId \"com.mycompany.appstore\"\n"
+"           dimension \"mycompany\"\n"
 "       }\n"
 "    }\n"
 "}\n"
@@ -8110,12 +8125,23 @@ msgstr ""
 #. type: Title ###
 #: build/_docs/md/Whitelabel_Builds.md
 #, no-wrap
+msgid "Basic vs Full Product Flavors"
+msgstr ""
+
+#. type: Plain text
+#: build/_docs/md/Whitelabel_Builds.md
+msgid "F-Droid itself already has two flavors built-in: _basic_ and _full_.  _full_ is the app known as _F-Droid_, while _basic_ is the most minimal possible version of the app that still provides the core app store functionality.  Since those are in a separate _flavorDimension_, the added customizations will apply to both.  Choosing which one to build is done by specifying the \"Build Variant\" in Android Studio, and the _gradle_ target, .e.g `./gradlew assembleMycompanyFullDebug`."
+msgstr ""
+
+#. type: Title ###
+#: build/_docs/md/Whitelabel_Builds.md
+#, no-wrap
 msgid "Customizations"
 msgstr ""
 
 #. type: Plain text
 #: build/_docs/md/Whitelabel_Builds.md
-msgid "When using gradle build flavors, it is very easy to customize any of the XML files. So this is the recommended way to start with customizing your build of F-Droid. Any XML file in _app/src/main/res_ can be overridden by placing an XML with the same name in _app/src/mycompany/res_. Here are some examples"
+msgid "When using gradle build flavors, it is very easy to customize any of the XML files. So this is the recommended way to start with customizing your build of F-Droid. Any XML file in _app/src/main/res_ can be overridden by placing an XML with the same name in _app/src/mycompany/res_."
 msgstr ""
 
 #. type: Title ####
@@ -8137,7 +8163,7 @@ msgstr ""
 
 #. type: Plain text
 #: build/_docs/md/Whitelabel_Builds.md
-msgid "For a custom build that enables Automatic Updates by default, override _app/src/main/res/xml/preferences.xml_. You can customize the preferences and their default values in _app/src/mycompany/res/xml/preferences.xml_. The fully automatic update requires system/root access. With regular access, the updates will only automatically download. The user still needs to click install on each one."
+msgid "For a custom build that enables Automatic Updates by default, override _app/src/main/res/xml/preferences.xml_. You can customize the preferences and their default values in _app/src/mycompany/res/xml/preferences.xml_. The fully automatic update requires [Privileged Extension](https://gitlab.com/fdroid/privileged-extension). With regular access, the updates will only automatically download. The user still needs to click install on each one."
 msgstr ""
 
 #~ msgid "403 Forbidden"
