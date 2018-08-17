@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
 "POT-Creation-Date: 2018-07-13 10:54+0200\n"
-"PO-Revision-Date: 2018-07-13 10:15+0200\n"
+"PO-Revision-Date: 2018-08-15 17:39+0000\n"
 "Last-Translator: WaldiS <admin@sto.ugu.pl>\n"
 "Language-Team: Polish <https://hosted.weblate.org/projects/f-droid/website-docs/pl/>\n"
 "Language: pl\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 3.1-dev\n"
+"X-Generator: Weblate 3.2-dev\n"
 
 #. type: Title #
 #: build/_docs/md/All_About_Descriptions_Graphics_and_Screenshots.md
@@ -87,18 +87,18 @@ msgstr "Wszystkie zlokalizowane opisy i grafika pojawią się automatycznie w re
 #. type: Plain text
 #: build/_docs/md/All_About_Descriptions_Graphics_and_Screenshots.md
 msgid "The last important detail is that the texts in the app's metadata file will override all other descriptive texts from _Fastlane_/_Triple-T_. That is specifically [Name](../Build_Metadata_Reference/#Name)/[AutoName](../Build_Metadata_Reference/#AutoName), [Summary](../Build_Metadata_Reference/#Summary), and [Description](../Build_Metadata_Reference/#Description).  Once an app's descriptive texts have been moved into the source repo, then file a [merge request](https://gitlab.com/fdroid/fdroiddata/merge_requests)  or [issue](https://gitlab.com/fdroid/fdroiddata/issues) to remove _Summary_ and _Description_ from the app's metadata file."
-msgstr ""
+msgstr "Ostatnim ważnym szczegółem jest to, że teksty w pliku metadanych aplikacji zastąpią wszystkie inne opisowe teksty z _Fastlane_/_Triple-T_. To jest właśnie [Name](../Build_Metadata_Reference/#Name)/[AutoName](../Build_Metadata_Reference/#AutoName), [Summary](../Build_Metadata_Reference/#Summary), i [Description](../Build_Metadata_Reference/#Description).  Po przeniesieniu opisowych tekstów aplikacji do repozytorium źródłowego zrób plik [merge request](https://gitlab.com/fdroid/fdroiddata/merge_requests)  lub [issue](https://gitlab.com/fdroid/fdroiddata/issues) aby usunąć _Summary_ and _Description_ from plik metadanych aplikacji."
 
 #. type: Title ##
 #: build/_docs/md/All_About_Descriptions_Graphics_and_Screenshots.md
 #, no-wrap
 msgid "In the app's build metadata in an _fdroiddata_ collection"
-msgstr ""
+msgstr "W metadanych kompilacji aplikacji w _fdroiddata_ collection"
 
 #. type: Plain text
 #: build/_docs/md/All_About_Descriptions_Graphics_and_Screenshots.md
 msgid "All the app store materials can also be added to any _fdroiddata_ repository of build metadata.  This follows a file layout modeled after [fastlane supply](https://github.com/fastlane/fastlane/blob/2.28.7/supply/README.md#images-and-screenshots), modified to fit into the _fdroiddata_ workflow.  Any files in this layout will be copied into the repo and added to the repo's index file by `fdroid update`."
-msgstr ""
+msgstr "Wszystkie materiały z magazynu aplikacji można również dodać do dowolnego repozytorium _fdroiddata_ metadanych kompilacji. Jest to zgodne z układem plików wzorowanym na [dostawa szybka](https://github.com/fastlane/fastlane/blob/2.2.7.7/supply/README.mdimages-and-screenshots), zmodyfikowanym tak, aby pasował do przepływu pracy _fdroiddata_. Wszystkie pliki w tym układzie zostaną skopiowane do repozytorium i dodane do pliku indeksu transakcji repo za pomocą `fdroid update`."
 
 #. type: Plain text
 #: build/_docs/md/All_About_Descriptions_Graphics_and_Screenshots.md
@@ -133,11 +133,39 @@ msgid ""
 "                  └── *.png\n"
 "```\n"
 msgstr ""
+"```\n"
+"- <fdroiddata>/\n"
+"  └── metadata/\n"
+"      └── <package-id>/\n"
+"          └── <locale>/\n"
+"              ├── full_description.txt\n"
+"              ├── short_description.txt\n"
+"              ├── title.txt\n"
+"              ├── video.txt\n"
+"              ├── images/\n"
+"              │   ├── featureGraphic.png\n"
+"              │   ├── icon.png\n"
+"              │   ├── promoGraphic.png\n"
+"              │   └── tvBanner.png\n"
+"              ├── changelogs/\n"
+"              │   ├── <version-code>.txt\n"
+"              │   └── <version-code>.txt\n"
+"              ├── phoneScreenshots/\n"
+"              │   └── *.png\n"
+"              ├── sevenInchScreenshots/\n"
+"              │   └── *.png\n"
+"              ├── tenInchScreenshots/\n"
+"              │   └── *.png\n"
+"              ├── tvScreenshots/\n"
+"              │   └── *.png\n"
+"              └── wearScreenshots/\n"
+"                  └── *.png\n"
+"```\n"
 
 #. type: Plain text
 #: build/_docs/md/All_About_Descriptions_Graphics_and_Screenshots.md
 msgid "Example:"
-msgstr ""
+msgstr "Przykład:"
 
 #. type: Plain text
 #: build/_docs/md/All_About_Descriptions_Graphics_and_Screenshots.md
@@ -157,6 +185,19 @@ msgid ""
 "* .../ToGoZip/fastlane/metadata/android/en-US/images/phoneScreenshots/....\n"
 "  * images in this folder will be shown below the fdroid-s app description\n"
 msgstr ""
+"* .../ToGoZip/app/...\n"
+"  * kod źródłowy dla aplikacji Android ToGoZip\n"
+"* [.../ToGoZip/fastlane/metadata/android/en-US/full_description.txt](https://github.com/k3b/ToGoZip/blob/master/fastlane/metadata/android/en-US/full_description.txt)\n"
+"  * zawiera (us-) angielski opis aplikacji ToGoZip.\n"
+"* [.../ToGoZip/fastlane/metadata/android/de-DE/full_description.txt](https://github.com/k3b/ToGoZip/blob/master/fastlane/metadata/android/de-DE/full_description.txt)\n"
+"  * zawiera niemiecki opis aplikacji ToGoZip.\n"
+"* [.../ToGoZip/fastlane/metadata/android/en-US/changelogs/9.txt](https://github.com/k3b/ToGoZip/blob/master/fastlane/metadata/android/en-US/changelogs/9.txt)\n"
+"  * zawiera opis zmian wprowadzonych w versionCode **9**\n"
+"  *w aplikacji fdroid będzie to widoczne nad opisem aplikacji\n"
+"* .../ToGoZip/fastlane/metadata/android/en-US/images/featureGraphic.png \n"
+"  * ten obraz zostanie wyświetlony na górze opisu aplikacji fdroid-a\n"
+"* .../ToGoZip/fastlane/metadata/android/en-US/images/phoneScreenshots/....\n"
+"  * obrazy w tym folderze zostaną wyświetlone poniżej opisu aplikacji fdroid-a\n"
 
 #. type: Title ##
 #: build/_docs/md/All_About_Descriptions_Graphics_and_Screenshots.md
@@ -167,7 +208,7 @@ msgstr "Bezpośrednio w repozytorium F-Droid"
 #. type: Plain text
 #: build/_docs/md/All_About_Descriptions_Graphics_and_Screenshots.md
 msgid "The ultimate destination for files from the app's source repo and _fdroiddata_ metadata sub-directories is in the F-Droid repo.  The text all gets included into the index file (aka _index-v1.json_).  All of the graphics files can be directly included in the repo.  If graphics files are also in the app's source or _fdroiddata_, then the files directly in the repo will be overwritten.  The text files from the _fastlane_ layout are ignored if they are in the repo."
-msgstr ""
+msgstr "Najlepsze miejsce docelowe dla plików z repozytorium źródłowego i  podkatalów _fdroiddata_ metadata znajdujuje się w repozytorium F-Droid. Cały tekst zostanie włączony do pliku indeksu (aka _index-v1.json_). Wszystkie pliki graficzne mogą być bezpośrednio zawarte w repozytorium. Jeśli pliki graficzne znajdują się również w źródle aplikacji lub _fdroiddata_, pliki bezpośrednio w repozytorium zostaną nadpisane. Pliki tekstowe z układu _fastlane_ są ignorowane, jeśli są w repozytorium."
 
 #. type: Plain text
 #: build/_docs/md/All_About_Descriptions_Graphics_and_Screenshots.md
@@ -194,463 +235,483 @@ msgid ""
 "                  └── *.png\n"
 "```\n"
 msgstr ""
+"```\n"
+"- fdroid/\n"
+"  └── repo/\n"
+"      └── <package-id>/\n"
+"          └── <locale>/\n"
+"              ├── featureGraphic.png\n"
+"              ├── icon.png\n"
+"              ├── promoGraphic.png\n"
+"              ├── tvBanner.png\n"
+"              ├── phoneScreenshots/\n"
+"              │   └── *.png\n"
+"              ├── sevenInchScreenshots/\n"
+"              │   └── *.png\n"
+"              ├── tenInchScreenshots/\n"
+"              │   └── *.png\n"
+"              ├── tvScreenshots/\n"
+"              │   └── *.png\n"
+"              └── wearScreenshots/\n"
+"                  └── *.png\n"
+"```\n"
 
 #. type: Plain text
 #: build/_docs/md/All_About_Descriptions_Graphics_and_Screenshots.md
 msgid "`fdroid update` adds all the graphics files it finds in the repo to the index.  `fdroid server update` will sync all of the files in the repo to the various locations where the repo is actually hosted."
-msgstr ""
+msgstr "`fdroid update` dodaje wszystkie pliki graficzne znalezione w repo do indeksu. `fdroid server update` zsynchronizuje wszystkie pliki repo z różnymi lokalizacjami, w których repo jest rzeczywiście hostowane."
 
 #. type: Title #
 #: build/_docs/md/Building_Applications.md
 #, no-wrap
 msgid "Building Applications"
-msgstr ""
+msgstr "Budowanie Aplikacji"
 
 #. type: Plain text
 #: build/_docs/md/Building_Applications.md
 msgid "Instead of (or as well as) including binary APKs from external sources in a repository, you can build them directly from the source code."
-msgstr ""
+msgstr "Zamiast (lub tak samo), w tym binarne pliki APK ze źródeł zewnętrznych w repozytorium, można je budować bezpośrednio z kodu źródłowego."
 
 #. type: Plain text
 #: build/_docs/md/Building_Applications.md
 msgid "Using this method, it is is possible to verify that the application builds correctly, corresponds to the source code, and contains only free software. Unfortunately, in the Android world, it seems to be very common for an application supplied as a binary APK to present itself as Free Software when in fact some if not all of the following is true:"
-msgstr ""
+msgstr "Korzystając z tej metody, można sprawdzić, czy aplikacja jest poprawnie zbudowana, odpowiada kodowi źródłowemu i zawiera tylko wolne oprogramowanie. Niestety, w świecie Androida wydaje się bardzo powszechne, że aplikacja dostarczana jako binarny pakiet APK przedstawia się jako Wolne oprogramowanie, gdy w rzeczywistości niektóre, jeśli nie wszystkie z poniższych, są prawdziwe:"
 
 #. type: Bullet: '1.  '
 #: build/_docs/md/Building_Applications.md
 msgid "The source code (either for a particular version, or even all versions!) is unavailable or incomplete."
-msgstr ""
+msgstr "Kod źródłowy (dla konkretnej wersji lub nawet wszystkich wersji!) Jest niedostępny lub niekompletny."
 
 #. type: Bullet: '2.  '
 #: build/_docs/md/Building_Applications.md
 msgid "The source code is not capable of producing the actual binary supplied."
-msgstr ""
+msgstr "Kod źródłowy nie jest w stanie wytworzyć dostarczonego pliku binarnego."
 
 #. type: Bullet: '3.  '
 #: build/_docs/md/Building_Applications.md
 msgid "The ’source code’ contains binary files of unknown origin, or with proprietary licenses."
-msgstr ""
+msgstr "'Kod źródłowy' zawiera pliki binarne o nieznanym pochodzeniu lub z zastrzeżonymi licencjami."
 
 #. type: Plain text
 #: build/_docs/md/Building_Applications.md
 msgid "For this reason, source-built applications are the preferred method for the main F-Droid repository, although occasionally for technical or historical reasons, exceptions are made to this policy."
-msgstr ""
+msgstr "Z tego powodu aplikacje oparte na źródłach są preferowaną metodą dla głównego repozytorium F-Droid, chociaż czasami z przyczyn technicznych lub historycznych, wyjątki są wprowadzane do tych zasad."
 
 #. type: Plain text
 #: build/_docs/md/Building_Applications.md
 msgid "When building applications from source, it should be noted that you will be signing them (all APK files must be signed to be installable on Android) with your own key. When an application is already installed on a device, it is not possible to upgrade it in place to a new version signed with a different key without first uninstalling the original.  This may present an inconvenience to users, as the process of uninstalling loses any data associated with the previous installation."
-msgstr ""
+msgstr "Budując aplikacje ze źródeł, należy zauważyć, że będziesz je podpisywać (wszystkie pliki APK muszą być podpisane, aby można je było zainstalować na systemie Android) za pomocą własnego klucza. Gdy aplikacja jest już zainstalowana na urządzeniu, nie można jej zaktualizować do nowej wersji podpisanej innym kluczem bez uprzedniego odinstalowania oryginału. Może to stanowić utrudnienie dla użytkowników, ponieważ proces odinstalowywania traci wszystkie dane związane z poprzednią instalacją."
 
 #. type: Plain text
 #: build/_docs/md/Building_Applications.md
 msgid "The process for managing a repository for built-from-source applications is very similar to that described in the Simple Binary Repository chapter, except now you need to:"
-msgstr ""
+msgstr "Proces zarządzania repozytorium dla aplikacji wbudowanych jest bardzo podobny do tego opisanego w rozdziale Proste repozytorium binarne, z wyjątkiem tego, że teraz musisz:"
 
 #. type: Bullet: '1.  '
 #: build/_docs/md/Building_Applications.md
 msgid "Include Build entries in the metadata files."
-msgstr ""
+msgstr "Uwzględnij pozycje kompilacji w plikach metadanych."
 
 #. type: Bullet: '2.  '
 #: build/_docs/md/Building_Applications.md
 msgid "Run `fdroid build` to build any applications that are not already built."
-msgstr ""
+msgstr "Uruchom `fdroid build`, aby zbudować aplikacje, które nie zostały jeszcze zbudowane."
 
 #. type: Bullet: '3.  '
 #: build/_docs/md/Building_Applications.md
 msgid "Run `fdroid publish` to finalise packaging and sign any APKs that have been built."
-msgstr ""
+msgstr "Uruchom `fdroid publish`, aby sfinalizować opakowanie i podpisać wszystkie pliki APK, które zostały zbudowane."
 
 #. type: Title ###
 #: build/_docs/md/Building_Applications.md
 #, no-wrap
 msgid "App data directory aka _fdroiddata_"
-msgstr ""
+msgstr "Katalog danych aplikacji aka _fdroiddata_"
 
 #. type: Plain text
 #: build/_docs/md/Building_Applications.md
 msgid "To do anything, you’ll need at least one repository data directory. It’s from this directory that you run the `fdroid` command to perform all repository management tasks. You can either create a brand new one, or grab a copy of the data used by the main F-Droid repository:"
-msgstr ""
+msgstr "Aby cokolwiek zrobić, potrzebujesz co najmniej jednego katalogu danych repozytorium. Z tego katalogu można uruchomić polecenie `fdroid`, aby wykonać wszystkie zadania zarządzania repozytorium. Możesz utworzyć zupełnie nowy lub pobrać kopię danych używanych przez główne repozytorium F-Droid:"
 
 #. type: Plain text
 #: build/_docs/md/Building_Applications.md
 msgid "```bash git clone https://gitlab.com/fdroid/fdroiddata.git ```"
-msgstr ""
+msgstr "```sklonuj skrypt bash https://gitlab.com/fdroid/fdroiddata.git ```"
 
 #. type: Plain text
 #: build/_docs/md/Building_Applications.md
 msgid "Regardless of the intended usage of the tools, you will always need to set up some basic configuration details. This is done by creating a file called `config.py` in the data directory. You should do this by copying the example file (`./examples/config.py`) from the fdroidserver project to your data directory and then editing according to the instructions within."
-msgstr ""
+msgstr "Bez względu na zamierzone użycie narzędzi, zawsze będziesz musiał skonfigurować podstawowe szczegóły konfiguracji. Odbywa się to poprzez utworzenie w katalogu danych pliku o nazwie `config.py`. Powinieneś to zrobić, kopiując przykładowy plik (`. /examples/config.py`) z projektu fdroidserver do katalogu danych, a następnie edytując zgodnie z instrukcjami wewnątrz."
 
 #. type: Plain text
 #: build/_docs/md/Building_Applications.md
 msgid "Once configured in this way, all the functionality of the tools is accessed by running the `fdroid` command. Run it on its own to get a list of the available sub-commands."
-msgstr ""
+msgstr "Po skonfigurowaniu w ten sposób wszystkie funkcje narzędzi są dostępne po uruchomieniu polecenia `fdroid`. Uruchom go samodzielnie, aby uzyskać listę dostępnych podrzędnych poleceń."
 
 #. type: Plain text
 #: build/_docs/md/Building_Applications.md
 msgid "You can follow any command with `--help` to get a list of additional options available for that command."
-msgstr ""
+msgstr "Możesz wykonać dowolne polecenie za pomocą `--help`, aby uzyskać listę dodatkowych opcji dostępnych dla tego polecenia."
 
 #. type: Plain text
 #: build/_docs/md/Building_Applications.md
 msgid "```bash fdroid update --help ```"
-msgstr ""
+msgstr "```aktualizacja fdroid bash --help ```"
 
 #. type: Title ###
 #: build/_docs/md/Building_Applications.md
 #, no-wrap
 msgid "More about `fdroid build`"
-msgstr ""
+msgstr "Więcej informacji na temat `fdroid build`"
 
 #. type: Plain text
 #: build/_docs/md/Building_Applications.md
 msgid "When run without any parameters, `fdroid build` will build any and all versions of applications that you don’t already have in the `repo` directory (or more accurately, the `unsigned` directory). There are various other things you can do. As with all the tools, the `--help` option is your friend, but a few annotated examples and discussion of the more common usage modes follows:"
-msgstr ""
+msgstr "Po uruchomieniu bez żadnych parametrów, `fdroid build` zbuduje wszystkie wersje aplikacji, których jeszcze nie posiadasz w katalogu `repo` (lub dokładniej, katalogu `unsigned`). Istnieje wiele innych rzeczy, które możesz zrobić. Podobnie jak w przypadku wszystkich narzędzi, opcja '--help' jest Twoim przyjacielem, ale kilka przykładów z komentarzem i omówienie najczęściej używanych trybów jest następujące:"
 
 #. type: Plain text
 #: build/_docs/md/Building_Applications.md
 msgid "To build a single version of a single application, you could run the following:"
-msgstr ""
+msgstr "Aby zbudować pojedynczą wersję pojedynczej aplikacji, możesz uruchomić:"
 
 #. type: Plain text
 #: build/_docs/md/Building_Applications.md
 msgid "```bash fdroid build org.fdroid.fdroid:16 ```"
-msgstr ""
+msgstr "```kompilacja fdroid bash org.fdroid.fdroid:16 ```"
 
 #. type: Plain text
 #: build/_docs/md/Building_Applications.md
 msgid "This attempts to build version code 16 (which is version 0.25) of the F-Droid client. Many of the tools recognise arguments as packages, allowing their activity to be limited to just a limited set of packages."
-msgstr ""
+msgstr "Ta próba zbudowania wersji kodu 16 (która jest wersją 0.25) klienta F-Droid. Wiele narzędzi rozpoznaje argumenty jako pakiety, dzięki czemu ich działanie ogranicza się do ograniczonego zestawu pakietów."
 
 #. type: Plain text
 #: build/_docs/md/Building_Applications.md
 msgid "If the build above was successful, two files will have been placed in the `unsigned` directory:"
-msgstr ""
+msgstr "Jeśli powyższa kompilacja się powiedzie, dwa pliki zostaną umieszczone w katalogu `unsigned`:"
 
 #. type: Plain text
 #: build/_docs/md/Building_Applications.md
 msgid "``` org.fdroid.fdroid_16.apk org.fdroid.fdroid_16_src.tar.gz ```"
-msgstr ""
+msgstr "``` org.fdroid.fdroid_16.apk org.fdroid.fdroid_16_src.tar.gz ```"
 
 #. type: Plain text
 #: build/_docs/md/Building_Applications.md
 msgid "The first is the (unsigned) APK. You could sign this with a debug key and push it direct to your device or an emulator for testing. The second is a source tarball containing exactly the source that was used to generate the binary."
-msgstr ""
+msgstr "Pierwszym z nich jest (niepodpisany) plik APK. Możesz go podpisać za pomocą klucza debugowania i przesłać go bezpośrednio do urządzenia lub emulatora do testowania. Drugim jest archiwum źródłowe zawierające dokładnie źródło, które zostało użyte do wygenerowania pliku binarnego."
 
 #. type: Plain text
 #: build/_docs/md/Building_Applications.md
 msgid "If you were intending to publish these files, you could then run:"
-msgstr ""
+msgstr "Jeśli zamierzałeś opublikować te pliki, możesz uruchomić:"
 
 #. type: Plain text
 #: build/_docs/md/Building_Applications.md
 msgid "```bash fdroid publish ```"
-msgstr ""
+msgstr "```opublikuj bash fdroid ```"
 
 #. type: Plain text
 #: build/_docs/md/Building_Applications.md
 msgid "The source tarball would move to the `repo` directory (which is the directory you would push to your web server). A signed and zipaligned version of the APK would also appear there, and both files would be removed from the `unsigned` directory."
-msgstr ""
+msgstr "Skrypt źródłowy zostanie przeniesiony do katalogu `repo` (który jest katalogiem, który można przesłać do serwera WWW). Zostanie tam również podpisana i zipowa wersja pliku APK, a oba pliki zostaną usunięte z katalogu `unsigned`."
 
 #. type: Plain text
 #: build/_docs/md/Building_Applications.md
 msgid "If you’re building purely for the purposes of testing, and not intending to push the results to a repository, at least yet, the `--test` option can be used to direct output to the `tmp` directory instead of `unsigned`. A similar effect could by achieved by simply deleting the output files from `unsigned` after the build, but with the risk of forgetting to do so!"
-msgstr ""
+msgstr "Jeśli budujesz wyłącznie w celu testowania, a nie zamierzasz przekazywać wyników do repozytorium, to przynajmniej opcja `--test` może być użyta do skierowania wyjścia do katalogu `tmp` zamiast `unsigned`. Podobny efekt można uzyskać, po prostu usuwając pliki wyjściowe z `unsigned` po kompilacji, ale z ryzykiem zapomnienia!"
 
 #. type: Plain text
 #: build/_docs/md/Building_Applications.md
 msgid "Along similar lines (and only in conjunction with `--test`, you can use `--force` to force a build of a Disabled application, where normally it would be completely ignored. Similarly a version that was found to contain ELFs or known non-free libraries can be forced to build. See also — `scanignore=` and `scandelete=` in the `Build:` section."
-msgstr ""
+msgstr "Wzdłuż podobnych linii (i tylko w połączeniu z `--test`, możesz użyć `--force`, aby wymusić kompilację aplikacji Disabled, gdzie normalnie byłoby to całkowicie ignorowane. Podobnie wersja, która zawierała ELF lub znane niewolne biblioteki mogą być zmuszane do budowania Zobacz także - `scanignore =` i `scandelete =` w sekcji `Build:`."
 
 #. type: Plain text
 #: build/_docs/md/Building_Applications.md
 msgid "If the build was unsuccessful, you can find out why by looking at the output in the logs/ directory. If that isn’t illuminating, try building the app the regular way, step by step: android update project, ndk-build, ant debug."
-msgstr ""
+msgstr "Jeśli kompilacja nie powiodła się, możesz dowiedzieć się dlaczego, patrząc na dane wyjściowe w katalogu logs. Jeśli to się nie wyświetla, spróbuj zbudować aplikację w regularny sposób, krok po kroku: projekt aktualizacji Android, ndk-build, mrówka debugowania (ang. ant debug)."
 
 #. type: Plain text
 #: build/_docs/md/Building_Applications.md
 msgid "Note that source code repositories often contain prebuilt libraries. If the app is being considered for the main F-Droid repository, it is important that all such prebuilts are built either via the metadata or by a reputable third party."
-msgstr ""
+msgstr "Zauważ, że repozytoria kodu źródłowego często zawierają wstępnie zbudowane biblioteki. Jeśli aplikacja jest rozpatrywana dla głównego repozytorium F-Droid, ważne jest, aby wszystkie takie prebuilty zostały zbudowane za pośrednictwem metadanych lub przez renomowaną stronę trzecią."
 
 #. type: Title ###
 #: build/_docs/md/Building_Applications.md
 #, no-wrap
 msgid "Running `fdroid build` in your app’s source"
-msgstr ""
+msgstr "Uruchamianie `fdroid build` w źródle twojej aplikacji"
 
 #. type: Plain text
 #: build/_docs/md/Building_Applications.md
 msgid "Another option for using `fdroid build` is to use a metadata file that is included in the app’s source itself, rather than in a `metadata/` folder with lots of other apps. This metadata file should be in the root of your source repo, and be called `.fdroid.json`, `.fdroid.xml`, `.fdroid.yaml`, or `.fdroid.txt`, depending on your preferred data format: JSON, XML, YAML, or F-Droid’s `.txt` format."
-msgstr ""
+msgstr "Inną opcją korzystania z `fdroid build` jest użycie pliku metadanych, który jest zawarty w samym źródle aplikacji, a nie w folderze `metadata/` z wieloma innymi aplikacjami. Ten plik metadanych powinien znajdować się w katalogu głównym repozytorium źródłowego i powinien być nazywany `.fdroid.json`, `.fdroid.xml`, `.fdroid.yaml`, or `.fdroid.txt`, w zależności od preferowanych danych formatu: JSON, XML, YAML,  lub formatu F-Droid `.txt`."
 
 #. type: Plain text
 #: build/_docs/md/Building_Applications.md
 msgid "Once you have that setup, you can build the most recent version of the app using the whole F-Droid stack by running:"
-msgstr ""
+msgstr "Skoro masz tego instalatora, możesz zbudować najnowszą wersję aplikacji, używając całego stosu F-Droid, uruchamiając:"
 
 #. type: Plain text
 #: build/_docs/md/Building_Applications.md
 msgid "```bash fdroid build ```"
-msgstr ""
+msgstr "```kompilacja bash fdroid ```"
 
 #. type: Plain text
 #: build/_docs/md/Building_Applications.md
 msgid "If you want to build every single version, then specify `--all`."
-msgstr ""
+msgstr "Jeśli chcesz zbudować każdą wersję, podaj `--all`."
 
 #. type: Title ###
 #: build/_docs/md/Building_Applications.md
 #, no-wrap
 msgid "Direct Installation"
-msgstr ""
+msgstr "Bezpośrednia instalacja"
 
 #. type: Plain text
 #: build/_docs/md/Building_Applications.md
 msgid "You can also build and install directly to a connected device or emulator using the `fdroid install` command. If you do this without passing packages as arguments then all the latest built and signed version available of each package will be installed . In most cases, this will not be what you want to do, so execution will stop straight away. However, you can override this if you’re sure that’s what you want, by using `--all`. Note that currently, no sanity checks are performed with this mode, so if the files in the signed output directory were modified, you won’t be notified."
-msgstr ""
+msgstr "Możesz także zbudować i zainstalować bezpośrednio na podłączonym urządzeniu lub emulatorze za pomocą polecenia `fdroid install`. Jeśli zrobisz to bez przekazywania pakietów jako argumentów, zostanie zainstalowana cała najnowsza zbudowana i podpisana wersja dostępna dla każdego pakietu. W większości przypadków nie będzie to tym, co chcesz zrobić, więc wykonanie zatrzyma się natychmiast. Możesz jednak to zmienić, jeśli masz pewność, że tego właśnie chcesz, używając `--all`. Zwróć uwagę, że obecnie w tym trybie nie są wykonywane żadne testy poprawności, więc jeśli pliki w podpisanym katalogu wyjściowym zostały zmodyfikowane, nie otrzymasz powiadomienia."
 
 #. type: Title #
 #: build/_docs/md/Building_a_Signing_Server.md
 #, no-wrap
 msgid "Building a Signing Server"
-msgstr ""
+msgstr "Podpisanie Kompilacji Serwera"
 
 #. type: Plain text
 #: build/_docs/md/Building_a_Signing_Server.md
 msgid "The Android APK signing model sets the expectation that the signing key will be the same for the entire lifetime of the app.  That can be seen in the recommended lifetype of an Android signing key: [20+ years](https://developer.android.com/studio/publish/app-signing.html#considerations).  On top of that, it is difficult to [migrate an app to a new key](https://guardianproject.info/2015/12/29/how-to-migrate-your-android-apps-signing-key/).  Since the signing key is an essential part to preventing APKs from impersonating another, Android signing keys must be kept safe for the entire life of the app."
-msgstr ""
+msgstr "Model podpisywania APK systemu Android powoduje oczekiwanie, że klucz podpisu będzie taki sam przez cały czas życia aplikacji. Widać to w zalecanym typie życia klucza podpisu Androida: [20 lat](https://developer.android.com/studio/publish/app-signing.htmlpytania). Poza tym trudno [przenieść aplikację na nowy klucz](https://guardianproject.info/2015/12/29/how-to-migrate-your-android-apps-signing-key/) . Ponieważ klucz podpisujący jest niezbędnym elementem zapobiegającym podszywaniu się plików APK pod inną osobę, klucze do podpisów Androida muszą być przechowywane przez cały okres użytkowania aplikacji."
 
 #. type: Plain text
 #: build/_docs/md/Building_a_Signing_Server.md
 msgid "The F-Droid repo signing keys follow a very similar model: the signing key is the essential way to safely identify an F-Droid repo. So the same considerations apply to F-Droid repo signing keys as to APK signing keys.  This also provides some really useful benefits.  Since the integrity of the repo index file and the APKs are guaranteed by the repo signature, the files can be delivered via whatever method is most convenient, and their integrity will be automatically verified by the F-Droid client app, the _f-droid.org_ deploy process, and Repomaker."
-msgstr ""
+msgstr "Klucze do podpisywania repo F-Droida działają według bardzo podobnego modelu: klucz podpisujący jest podstawowym sposobem bezpiecznego zidentyfikowania repozytorium F-Droid. Tak więc te same uwagi odnoszą się do kluczy podpisywania repo F-Droida, jak do kluczy podpisujących APK. Zapewnia to również kilka naprawdę użytecznych korzyści. Ponieważ integralność pliku indeksu repo i plików APK jest gwarantowana przez sygnaturę repo, pliki mogą być dostarczane za pomocą dowolnej metody, a ich integralność zostanie automatycznie zweryfikowana przez aplikację kliencką F-Droid, _f-droid.org_ wdrożyć proces i Repomaker."
 
 #. type: Plain text
 #: build/_docs/md/Building_a_Signing_Server.md
 msgid "This means the security burden is shifted from the online, public webserver to a private signing machine.  Just keeping that machine out of the public eye goes a long way towards improving security.  There are a number of additional measures that can be taken to further improve the security of the signing process.  Here are some approaches, starting with the easiest and least security, and going on to more secure setups that require more work to setup and run.  Signing is not an resource intensive process, so any machine will work, even a 10 year old, basic laptop.  We recommend using a minimal [Debian](https://www.debian.org) install, and rebuilding the machine from scratch."
-msgstr ""
+msgstr "Oznacza to, że obciążenie związane z bezpieczeństwem zostaje przeniesione z internetowego, publicznego serwera WWW na prywatny komputer podpisujący. Wyłączenie tej maszyny z publicznego punktu widzenia stanowi długą drogę do poprawy bezpieczeństwa. Istnieje szereg dodatkowych środków, które można podjąć w celu dalszej poprawy bezpieczeństwa procesu podpisywania. Oto kilka podejść, poczynając od najłatwiejszego i najmniejszego bezpieczeństwa, a kończąc na bezpieczniejszych konfiguracjach, które wymagają więcej pracy do skonfigurowania i uruchomienia. Podpisywanie nie jest procesem wymagającym dużych zasobów, więc każda maszyna będzie działać, nawet 10-letni, podstawowy laptop. Zalecamy instalację minimalną [Debian](https://www.debian.org) i przebudowanie maszyny od nowa."
 
 #. type: Title ###
 #: build/_docs/md/Building_a_Signing_Server.md
 #, no-wrap
 msgid "Automated Signing Server with with HSM"
-msgstr ""
+msgstr "Automatyczny serwer podpisu z HSM"
 
 #. type: Plain text
 #: build/_docs/md/Building_a_Signing_Server.md
 msgid "For a fully automated signing setup, the machine running the signing needs to be online and running. Ideally this machine would have no remote access, at the very least remote access should be very carefully controlled and monitored.  A laptop makes it easy to work with even when remote access is disabled, since it provides a built-in keyboard and monitor.  If remote access is required, then any basic PC will work fine.  Using a Hardware Security Module (HSM) to store the keys prevents them from being stolen if the server is broken into.  An attacker could only run the signing process on that server."
-msgstr ""
+msgstr "Aby w pełni zautomatyzować konfigurację podpisywania, urządzenie, na którym jest podpisane, musi być w trybie online i działać. Idealnie byłoby, gdyby ten komputer nie miał dostępu zdalnego, a przynajmniej dostęp zdalny powinien być bardzo dokładnie kontrolowany i monitorowany. Laptop ułatwia pracę nawet, gdy zdalny dostęp jest wyłączony, ponieważ zapewnia wbudowaną klawiaturę i monitor. Jeśli wymagany jest dostęp zdalny, wówczas każdy podstawowy komputer będzie działał prawidłowo. Używanie modułu bezpieczeństwa sprzętowego (HSM) do przechowywania kluczy zapobiega ich kradzieży w przypadku włamania do serwera. Osoba atakująca może uruchomić proces podpisywania tylko na tym serwerze."
 
 #. type: Plain text
 #: build/_docs/md/Building_a_Signing_Server.md
 msgid "Ideally, this machine would only be accessible via Tor.  That hides the physical location of the server, and hides the traffic from network.  This makes it much harder attackers to find the actual machine to attack."
-msgstr ""
+msgstr "Idealnie byłoby, gdyby ten komputer był dostępny tylko przez Tora. Ukrywa fizyczną lokalizację serwera i ukrywa ruch sieciowy. To znacznie utrudnia atakującym znalezienie maszyny do ataku."
 
 #. type: Plain text
 #: build/_docs/md/Building_a_Signing_Server.md
 msgid "For the HSM, we recommend using [Nitrokey](https://www.nitrokey.com/)  hardware, since they are free software/hardware, and provide a wide range of options.  Use a separate machine to put the signing keys on HSM.  A good HSM will keep an audit trail of how many signatures have been made, so that information could be used to create an automatic auditing process to raise alarms if too many signatures have been made.  That could mean that this server was breached and used to sign unauthorized packages."
-msgstr ""
+msgstr "W przypadku HSM zalecamy korzystanie ze sprzętu [Nitrokey](https://www.nitrokey.com/), ponieważ są one wolnym oprogramowaniem/sprzętem i oferują szeroki zakres opcji. Użyj osobnego komputera, aby umieścić klucze podpisu w HSM. Dobry HSM będzie utrzymywał dziennik audytu liczby podpisów, tak aby można było wykorzystać informacje do stworzenia automatycznego procesu audytu w celu podniesienia alarmów, gdyby wykonano zbyt wiele podpisów. Może to oznaczać, że serwer został naruszony i używany do podpisywania nieautoryzowanych pakietów."
 
 #. type: Plain text
 #: build/_docs/md/Building_a_Signing_Server.md
 msgid "Other possibility it to use a setup like [Fedora](https://pagure.io/sigul)'s [Sigul](http://www.devops-blog.net/koji/gpg-signing-rpms-with-sigul-signing-server-koji-integration)  that involves three machines."
-msgstr ""
+msgstr "Inna możliwość użycia konfiguracji jak [Fedora](https://pagure.io/sigul)'s [Sigul](http://www.devops-blog.net/koji/gpg-signing-rpms-with-sigul-signing-server-koji-integration)  to obejmuje trzy maszyny."
 
 #. type: Title ###
 #: build/_docs/md/Building_a_Signing_Server.md
 #, no-wrap
 msgid "Basic laptop dedicated to signing"
-msgstr ""
+msgstr "Podstawowy laptop dedykowany do podpisu"
 
 #. type: Plain text
 #: build/_docs/md/Building_a_Signing_Server.md
 msgid "Start with a laptop that can be wiped clean and rebuilt from scratch.  What is most important is that only the essential software is installed on it, and nothing else.  Do not include any browser at all, for example, since that is the most common vector of attack.  No remote access setup (e.g. SSH or VNC) should be installed or configured.  To sign apps and repos, someone would take out this laptop, connect it to the network, and run the signing process.  The signed results can then be published via the network connection.  When the signing is complete, the machine can be turned off and disconnected and kept in a safe place."
-msgstr ""
+msgstr "Zacznij od laptopa, który można wyczyścić i przebudować od zera. Najważniejsze jest to, że zainstalowane jest na nim tylko niezbędne oprogramowanie i nic więcej. W ogóle nie włączaj żadnej przeglądarki, ponieważ jest to najpowszechniejszy wektor ataku. Żadne ustawienia dostępu zdalnego (np. SSH lub VNC) nie powinny być instalowane ani konfigurowane. Aby podpisywać aplikacje i repozytorium, ktoś wyjąłby tego laptopa, podłączył go do sieci i uruchomił proces podpisywania. Podpisane wyniki można następnie opublikować za pośrednictwem połączenia sieciowego. Po zakończeniu podpisywania urządzenie można wyłączyć, odłączyć i przechowywać w bezpiecznym miejscu."
 
 #. type: Plain text
 #: build/_docs/md/Building_a_Signing_Server.md
 msgid "This could be made quite automatic with some custom scripts.  The person running the process would only need to take out the machine, connect it, turn it on, wait until the process completes, then put it all away again."
-msgstr ""
+msgstr "Można to zrobić całkiem automatycznie za pomocą niektórych niestandardowych skryptów. Osoba prowadząca proces musiałaby jedynie wyjąć maszynę, podłączyć ją, włączyć, poczekać, aż proces się zakończy, a następnie odłożyć wszystko ponownie."
 
 #. type: Title ###
 #: build/_docs/md/Building_a_Signing_Server.md
 #, no-wrap
 msgid "Fully offline signing laptop with USB thumb drives"
-msgstr ""
+msgstr "W pełni offline, podpisując laptopa z pamięci USB"
 
 #. type: Plain text
 #: build/_docs/md/Building_a_Signing_Server.md
 msgid "This process is based on the same basic, stripped down laptop as the previous example.  But this time, the networking should be entirely disabled before the install process.  For example, it is easy in many laptops to physically remove the WiFi card.  Therefore, it makes sense to use a laptop that does not include an ethernet jack, which are usually not possible to remove.  Otherwise, blacklisting all kernel modules related to neworking can suffice.  Since this machine is fully offline, the extra work of using an HSM is not as important, but it can't hurt to include it."
-msgstr ""
+msgstr "en proces opiera się na tym samym podstawowym, zdemontowanym laptopie, jak w poprzednim przykładzie. Ale tym razem sieć powinna być całkowicie wyłączona przed procesem instalacji. Na przykład w wielu laptopach łatwo jest fizycznie usunąć kartę WiFi. Dlatego warto używać laptopa, który nie ma gniazda ethernetowego, którego zwykle nie można usunąć. W przeciwnym razie wystarczy czarna lista wszystkich modułów jądra związanych z nowością. Ponieważ to urządzenie jest w pełni niedostępne, dodatkowa praca z wykorzystaniem HSM nie jest tak ważna, ale nie zaszkodzi go uwzględnić."
 
 #. type: Plain text
 #: build/_docs/md/Building_a_Signing_Server.md
 msgid "Download the full \"CD\" or \"DVD\" image of Debian to run the install.  Be sure to [verify](https://www.debian.org/CD/verify) the GPG signatures and the SHA-256 hashes.  One essential utility is _apt-offline_, which automates the process of downloading Debian packages, verifying their signatures, and copying them over to an offline machine."
-msgstr ""
+msgstr "Pobierz pełny obraz Debiana \"CD\" lub \"DVD\", aby uruchomić instalację. Upewnij się, że zweryfikujesz (https://www.debian.org/CD/verify) podpisy GPG i skróty SHA-256. Jednym z podstawowych narzędzi jest _apt-offline_, który automatyzuje proces pobierania pakietów Debiana, weryfikowania ich podpisów i kopiowania ich na komputer offline."
 
 #. type: Plain text
 #: build/_docs/md/Building_a_Signing_Server.md
 msgid "To be extra careful, all of the software used should be verified.  Chromebooks are nice, cheap laptops that run Linux natively.  They also use Coreboot for the BIOS."
-msgstr ""
+msgstr "Aby zachować szczególną ostrożność, całe oprogramowanie powinno zostać zweryfikowane. Chromebooki to ładne, tanie laptopy z systemem Linux. Używają także Coreboot do BIOS-u."
 
 #. type: Bullet: '* '
 #: build/_docs/md/Building_a_Signing_Server.md
 msgid "Buy a computer off the shelf with cash, avoid having it shipped, especially across borders"
-msgstr ""
+msgstr "Kup komputer z półki za gotówkę, unikaj wysyłania go, zwłaszcza za granicę"
 
 #. type: Bullet: '* '
 #: build/_docs/md/Building_a_Signing_Server.md
 msgid "Buy a Debian-supported [Chromebook](https://www.chromium.org/chromium-os/developer-information-for-chrome-os-devices/acer-c720-chromebook) with removeable WiFi hardware, and needs no binary blobs"
-msgstr ""
+msgstr "Kup Chromebooka z obsługą Debiana (https://www.chromium.org/chromium-os/developer-information-for-chrome-os-devices/acer-c720-chromebook) z odłączalnym sprzętem WiFi i nie wymaga binarnej plamki"
 
 #. type: Bullet: '* '
 #: build/_docs/md/Building_a_Signing_Server.md
 msgid "Install a reproducibly built coreboot binary"
-msgstr ""
+msgstr "Zainstaluj odtwarzany plik binarny coreboot"
 
 #. type: Bullet: '* '
 #: build/_docs/md/Building_a_Signing_Server.md
 msgid "Install from a reproducibly built Debian image, wiping out Chrome OS entirely"
-msgstr ""
+msgstr "Zainstaluj z odtwarzanego obrazu Debiana, całkowicie usuwając system operacyjny Chrome"
 
 #. type: Title ##
 #: build/_docs/md/Building_a_Signing_Server.md
 #, no-wrap
 msgid "The Physical Environment"
-msgstr ""
+msgstr "Środowisko fizyczne"
 
 #. type: Plain text
 #: build/_docs/md/Building_a_Signing_Server.md
 msgid "The last thing to consider is the physical location where signatures happen, and where essential equipment is stored.  The signing environment must be physically secure. Otherwise, there is no way to prevent laptops or HSMs from being lost or used to sign inappropriate content.  For the offline machines, keeping them in a locked room is a good start.  For an online machine, forcing all network traffic and remote access over Tor hides the physical location of the machine from network observers."
-msgstr ""
+msgstr "Ostatnią rzeczą do rozważenia jest fizyczna lokalizacja, w której odbywają się podpisy i gdzie przechowywane są niezbędne urządzenia. Warunki podpisywania muszą być fizycznie bezpieczne. W przeciwnym razie nie można zapobiec zgubieniu laptopów lub HSM lub użyć ich do podpisywania nieodpowiednich treści. W przypadku urządzeń pracujących w trybie offline utrzymanie ich w zamkniętym pomieszczeniu to dobry początek. W przypadku komputera online wymuszenie całego ruchu sieciowego i zdalnego dostępu przez Tora powoduje ukrycie fizycznej lokalizacji urządzenia przed obserwatorami sieci."
 
 #. type: Plain text
 #: build/_docs/md/Building_a_Signing_Server.md
 msgid "For high risk signing keys, using multiple layers of defense is important:"
-msgstr ""
+msgstr "W przypadku kluczy podpisywania wysokiego ryzyka ważne jest używanie wielu warstw obrony:"
 
 #. type: Bullet: '* '
 #: build/_docs/md/Building_a_Signing_Server.md
 msgid "Restricted physical access to HSMs or smart cards"
-msgstr ""
+msgstr "Ograniczony fizyczny dostęp do HSM lub kart inteligentnych"
 
 #. type: Bullet: '* '
 #: build/_docs/md/Building_a_Signing_Server.md
 msgid "Security cameras"
-msgstr ""
+msgstr "Kamery bezpieczeństwa"
 
 #. type: Bullet: '* '
 #: build/_docs/md/Building_a_Signing_Server.md
 msgid "Onsite security guards"
-msgstr ""
+msgstr "Ochroniarze na miejscu"
 
 #. type: Bullet: '* '
 #: build/_docs/md/Building_a_Signing_Server.md
 msgid "Visitor logging"
-msgstr ""
+msgstr "Rejestracja odwiedzających"
 
 #. type: Bullet: '* '
 #: build/_docs/md/Building_a_Signing_Server.md
 msgid "A tools-resistant server safe for online code-signing servers"
-msgstr ""
+msgstr "Bezpieczny serwer odporny na ataki dla serwerów podpisujących kody online"
 
 #. type: Plain text
 #: build/_docs/md/Building_a_Signing_Server.md
 msgid "The signing server should be physically separate from the rest of the infrastructure.  And the logs, machine, and network should be periodically audited."
-msgstr ""
+msgstr "Serwer podpisujący powinien być fizycznie oddzielony od reszty infrastruktury. Dzienniki, maszyny i sieć powinny być okresowo kontrolowane."
 
 #. type: Title ##
 #: build/_docs/md/Building_a_Signing_Server.md
 #, no-wrap
 msgid "Difficult decisions"
-msgstr ""
+msgstr "Trudne decyzje"
 
 #. type: Plain text
 #: build/_docs/md/Building_a_Signing_Server.md
 msgid "Ideally all of these practices would be put into place, but each of these security measures comes at a cost of difficulty, expense, and complexity.  They can also delay the process of getting regular updates out.  So there are risks of implementing too strict security policies, much like the risks of not implementing enough."
-msgstr ""
+msgstr "Najlepiej byłoby, gdyby wszystkie te praktyki zostały wprowadzone, ale każdy z tych środków bezpieczeństwa wiąże się z kosztem trudności, kosztów i złożoności. Mogą również opóźnić proces uzyskiwania regularnych aktualizacji. Istnieje ryzyko wprowadzenia zbyt restrykcyjnych polityk bezpieczeństwa, podobnie jak ryzyko niewystarczającego wdrożenia."
 
 #. type: Title #
 #: build/_docs/md/Build_Metadata_Reference.md
 #, no-wrap
 msgid "Build Metadata Reference"
-msgstr ""
+msgstr "Utwórz odwołania do metadanych"
 
 #. type: Plain text
 #: build/_docs/md/Build_Metadata_Reference.md
 msgid "Information used by `fdroid update` to compile the public index comes from several sources:"
-msgstr ""
+msgstr "Informacje wykorzystywane przez 'aktualizacja fdroid' do kompilacji publicznego indeksu pochodzi z kilku źródeł:"
 
 #. type: Bullet: '* '
 #: build/_docs/md/Build_Metadata_Reference.md
 msgid "APK, media, etc files in the _repo_ sub-directory"
-msgstr ""
+msgstr "Pliki APK, media, itp. w podkatalogu _repo_ sub-directory"
 
 #. type: Bullet: '* '
 #: build/_docs/md/Build_Metadata_Reference.md
 msgid "per-package \"metadata\" files in the _metadata_ sub-directory"
-msgstr ""
+msgstr "pakiet \"metadanych\" pliki w podkatalogu the _metadata_ sub-directory"
 
 #. type: Bullet: '* '
 #: build/_docs/md/Build_Metadata_Reference.md
 msgid "[localizable texts and graphics](../All_About_Descriptions_Graphics_and_Screenshots#in-the-apps-build-metadata-in-an-fdroiddata-collection) in the _metadata_ subdirectory"
-msgstr ""
+msgstr "[zlokalizowalne teksty i grafika](../All_About_Descriptions_Graphics_and_Screenshots#in-the-apps-build-metadata-in-an-fdroiddata-collection) w podkatalogu_metadata_ subdirectory"
 
 #. type: Bullet: '* '
 #: build/_docs/md/Build_Metadata_Reference.md
 msgid "localizable texts and graphics [embedded in an app's source code](../All_About_Descriptions_Graphics_and_Screenshots#in-the-apps-source-repository)"
-msgstr ""
+msgstr "zlokalizowane teksty i grafika [osadzone w kodzie źródłowym aplikacji](../All_About_Descriptions_Graphics_and_Screenshots#in-the-apps-source-repository)"
 
 #. type: Plain text
 #: build/_docs/md/Build_Metadata_Reference.md
 msgid "These metadata files are simple, easy to edit text files, always named as the \"package name\" with file type appended.  There are a wide range of available fields for adding information to describe packages and/or apps.  For all of the fields like `AuthorName` that apply to all releases of a package/app, the fields use CamelCase starting with an upper case letter.  All other fields use camelCase starting with a lower case letter, including per-build fields, localized fields, etc."
-msgstr ""
+msgstr "Te pliki metadanych to proste, łatwe do edycji pliki tekstowe, zawsze nazywane \"nazwą pakietu\" z dodanym typem pliku. Istnieje szeroki zakres dostępnych pól do dodawania informacji do opisu pakietów i/lub aplikacji. W przypadku wszystkich pól, takich jak \"AuthorName\", które dotyczą wszystkich wydań pakietu/aplikacji, pola korzystają z CamelCase zaczynając od dużej litery. Wszystkie inne pola korzystają z camelCase zaczynając od małej litery, w tym pól typu per-build, zlokalizowanych pól itp."
 
 #. type: Plain text
 #: build/_docs/md/Build_Metadata_Reference.md
 msgid "There are three supported file types for metadata files:"
-msgstr ""
+msgstr "Istnieją trzy obsługiwane typy plików dla plików metadanych:"
 
 #. type: Bullet: '* '
 #: build/_docs/md/Build_Metadata_Reference.md
 msgid "_.yml_ files in [YAML](http://www.yaml.org/start.html) format, used by f-droid.org"
-msgstr ""
+msgstr "_.yml_ files w [YAML](http://www.yaml.org/start.html) format używany przez f-droid.org"
 
 #. type: Bullet: '* '
 #: build/_docs/md/Build_Metadata_Reference.md
 msgid "_.txt_ files in the old, custom, F-Droid text-based format"
-msgstr ""
+msgstr "_.txt_ files w starym, niestandardowym formacie tekstowym F-Droid"
 
 #. type: Bullet: '* '
 #: build/_docs/md/Build_Metadata_Reference.md
 msgid "_.json_ files in [JSON](http://json.org/) format"
-msgstr ""
+msgstr "_.json_ files format w [JSON](http://json.org/)"
 
 #. type: Plain text
 #: build/_docs/md/Build_Metadata_Reference.md
 msgid "Note that although the metadata files are designed to be easily read and writable by humans, they are also processed and written by various scripts. They can be automatically cleaned up when necessary. The structure and comments will be preserved correctly, although the order of fields will be standardised. (In the event that the original file was in a different order, comments are considered as being attached to the field following them). In fact, you can standardise all packages in a repository using a single command, without changing the functional content, by running:"
-msgstr ""
+msgstr "Zauważ, że chociaż pliki metadanych są zaprojektowane tak, aby były łatwe do odczytania i zapisu przez ludzi, są one również przetwarzane i pisane przez różne skrypty. W razie potrzeby można je automatycznie oczyścić. Struktura i komentarze zostaną zachowane poprawnie, chociaż kolejność pól będzie ustandaryzowana. (W przypadku, gdy oryginalny plik był w innej kolejności, komentarze są traktowane jako dołączone do pola następującego po nich). W rzeczywistości można ujednolicić wszystkie pakiety w repozytorium za pomocą pojedynczego polecenia, bez zmiany zawartości funkcjonalnej, uruchamiając:"
 
 #. type: Plain text
 #: build/_docs/md/Build_Metadata_Reference.md
 msgid "``` fdroid rewritemeta ```"
-msgstr ""
+msgstr "``` fdroid rewritemeta ```"
 
 #. type: Plain text
 #: build/_docs/md/Build_Metadata_Reference.md
 msgid "Or just run it on a specific app:"
-msgstr ""
+msgstr "Lub po prostu uruchom go na konkretnej aplikacji:"
 
 #. type: Plain text
 #: build/_docs/md/Build_Metadata_Reference.md
 msgid "``` fdroid rewritemeta org.adaway ```"
-msgstr ""
+msgstr "``` fdroid rewritemeta org.adaway ```"
 
 #. type: Plain text
 #: build/_docs/md/Build_Metadata_Reference.md
 msgid "The following sections describe the fields recognised within the file."
-msgstr ""
+msgstr "Poniższe sekcje opisują pola rozpoznane w pliku."
 
 #. type: Plain text
 #: build/_docs/md/Build_Metadata_Reference.md
@@ -661,89 +722,89 @@ msgstr ""
 #: build/_docs/md/Build_Metadata_Reference.md
 #, no-wrap
 msgid "7.1 Categories<a name=\"Categories\"></a>"
-msgstr ""
+msgstr "7.1 Kategorie<a name=\"Categories\"></a>"
 
 #. type: Plain text
 #: build/_docs/md/Build_Metadata_Reference.md
 msgid "Any number of categories for the application to be placed in. There is no fixed list of categories - both the client and the web site will automatically show any categories that exist in any applications.  However, if your metadata is intended for the main F-Droid repository, you should use one of the existing categories (look at the site/client), or discuss the proposal to add a new one."
-msgstr ""
+msgstr "Dowolna liczba kategorii dla aplikacji, w której zostanie umieszczony. Nie ma ustalonej listy kategorii - zarówno klient, jak i strona internetowa automatycznie pokażą wszystkie kategorie istniejące w dowolnych aplikacjach. Jeśli jednak twoje metadane są przeznaczone dla głównego repozytorium F-Droid, powinieneś użyć jednej z istniejących kategorii (spójrz na stronę/klienta) lub omów propozycję, aby dodać nową."
 
 #. type: Plain text
 #: build/_docs/md/Build_Metadata_Reference.md
 msgid "Categories must be separated by a single comma character, ’,’. For backwards compatibility, F-Droid will use the first category given as &lt;category&gt; element for older clients to at least see one category."
-msgstr ""
+msgstr "Kategorie muszą być oddzielone pojedynczym znakiem przecinka, ','. W celu zapewnienia kompatybilności wstecznej, F-Droid użyje pierwszej kategorii podanej jako &lt;category&gt; element dla starszych klientów, aby przynajmniej zobaczył jedną kategorię."
 
 #. type: Plain text
 #: build/_docs/md/Build_Metadata_Reference.md
 #, no-wrap
 msgid "This is converted to (`<categories>`) in the XML file (_index.xml_).\n"
-msgstr ""
+msgstr "To jest konwertowane na (`<categories>`) w pliku XML (_index.xml_).\n"
 
 #. type: Title ###
 #: build/_docs/md/Build_Metadata_Reference.md
 #, no-wrap
 msgid "7.2 Author Name<a name=\"Author-Name\"></a>"
-msgstr ""
+msgstr "7.2 Nazwa Autora<a name=\"Author-Name\"></a>"
 
 #. type: Plain text
 #: build/_docs/md/Build_Metadata_Reference.md
 msgid "The name of the author, either full, abbreviated or pseudonym. If present, it should represent the name(s) as published by upstream, e.g.  in their copyright or authors file. This can be omitted (or left blank)."
-msgstr ""
+msgstr "Imię i nazwisko autora, pełne, skrócone lub pseudonim. Jeśli jest obecny, powinien reprezentować nazwę (nazwy) opublikowane w pliku nadrzędnym, np. prawa autorskie lub autorskim pliku. Można to pominąć (lub pozostawić puste)."
 
 #. type: Plain text
 #: build/_docs/md/Build_Metadata_Reference.md
 msgid "__Warning__: this overrides all Author Name entries [set in the app's source code](../All_About_Descriptions_Graphics_and_Screenshots)."
-msgstr ""
+msgstr "__Warning__: to przesłonięcie wszystkich wpisów nazw autorów [ustawionych w kodzie źródłowym aplikacji](../All_About_Descriptions_Graphics_and_Screenshots)."
 
 #. type: Plain text
 #: build/_docs/md/Build_Metadata_Reference.md
 #, no-wrap
 msgid "This is converted to (`<author>`) in the XML file (_index.xml_).\n"
-msgstr ""
+msgstr "To jest konwertowane na (`<author>`) w pliku XML (_index.xml_).\n"
 
 #. type: Title ###
 #: build/_docs/md/Build_Metadata_Reference.md
 #, no-wrap
 msgid "7.3 Author Email<a name=\"Author-Email\"></a>"
-msgstr ""
+msgstr "7.3 Email Autora<a name=\"Author-Email\"></a>"
 
 #. type: Plain text
 #: build/_docs/md/Build_Metadata_Reference.md
 msgid "The e-mail address of the author(s). This can be omitted (or left blank)."
-msgstr ""
+msgstr "Adres e-mail autora (ów). Można to pominąć (lub pozostawić puste)."
 
 #. type: Plain text
 #: build/_docs/md/Build_Metadata_Reference.md
 msgid "__Warning__: this overrides all Author Email entries [set in the app's source code](../All_About_Descriptions_Graphics_and_Screenshots)."
-msgstr ""
+msgstr "__Warning__: powoduje to zastąpienie wszystkich wpisów w e-mailu autora [ustawionych w kodzie źródłowym aplikacji](../All_About_Descriptions_Graphics_and_Screenshots)."
 
 #. type: Plain text
 #: build/_docs/md/Build_Metadata_Reference.md
 #, no-wrap
 msgid "This is converted to (`<email>`) in the XML file (_index.xml_).\n"
-msgstr ""
+msgstr "To jest konwertowane na (`<email>`) w pliku XML (_index.xml_).\n"
 
 #. type: Title ###
 #: build/_docs/md/Build_Metadata_Reference.md
 #, no-wrap
 msgid "7.4 License<a name=\"License\"></a>"
-msgstr ""
+msgstr "7.4 Licencja<a name=\"License\"></a>"
 
 #. type: Plain text
 #: build/_docs/md/Build_Metadata_Reference.md
 msgid "The overall license for the application in terms of the binary that the user can install. Values should correspond to short identifiers of the [SPDX](https://spdx.org/licenses/) license list. There can only be one license listed here. If there are multiple licenses that apply to the source code, then this field should contain the least restrictive license that the whole app can be used under.  When multiple licenses are combined, that usually means the most restrictive wins."
-msgstr ""
+msgstr "Ogólna licencja dla aplikacji pod względem plików binarnych, które użytkownik może zainstalować. Wartości powinny odpowiadać krótkim identyfikacjom na liście licencji [SPDX](https://spdx.org/licenses/). Tutaj może być tylko jedna licencja. Jeśli istnieje wiele licencji, które mają zastosowanie do kodu źródłowego, to pole powinno zawierać najmniej restrykcyjną licencję, na której można używać w całej aplikacji. Gdy połączonych jest wiele licencji, zwykle oznacza to najbardziej restrykcyjne wygrane."
 
 #. type: Plain text
 #: build/_docs/md/Build_Metadata_Reference.md
 msgid "This field cannot represent the complexity of licenses that apply to parts of the app, or apps that have the entire thing released under more than one license."
-msgstr ""
+msgstr "To pole nie może reprezentować złożoności licencji, które dotyczą części aplikacji lub aplikacji, które mają całą wydaną wersję na podstawie więcej niż jednej licencji."
 
 #. type: Plain text
 #: build/_docs/md/Build_Metadata_Reference.md
 #, no-wrap
 msgid "This is converted to (`<license>`) in the XML file (_index.xml_).\n"
-msgstr ""
+msgstr "To jest konwertowane na (`<license>`) w pliku XML (_index.xml_).\n"
 
 #. type: Title ###
 #: build/_docs/md/Build_Metadata_Reference.md
@@ -754,7 +815,7 @@ msgstr ""
 #. type: Plain text
 #: build/_docs/md/Build_Metadata_Reference.md
 msgid "The name of the application as can best be retrieved from the source code. This is done so that the commitupdates script can put a familiar name in the description of commits created when a new update of the application is found. The Auto Name entry is generated automatically when `fdroid checkupdates` is run."
-msgstr ""
+msgstr "Nazwa aplikacji może być najlepiej pobrana z kodu źródłowego. Dzieje się to tak, że skrypt commitupdates może umieścić znaną nazwę w opisie commitów utworzonych po znalezieniu nowej aktualizacji aplikacji. Wpis Auto Name jest generowany automatycznie po uruchomieniu `fdroid checkupdates`."
 
 #. type: Plain text
 #: build/_docs/md/Build_Metadata_Reference.md
@@ -6321,7 +6382,7 @@ msgstr ""
 #: build/_docs/md/Repository_Style_Guide.md
 #, no-wrap
 msgid "License"
-msgstr ""
+msgstr "Licencja"
 
 #. type: Plain text
 #: build/_docs/md/Repository_Style_Guide.md

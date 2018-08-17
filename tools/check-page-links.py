@@ -47,7 +47,7 @@ for f in sorted(glob.glob('po/*.po*')):
         for i in range(len(strlinks)):
             if message.string and idlinks[i] != strlinks[i]:
                 errorcount += 1
-                output += f + '\nmsgstr    ' + idlinks[i] + '\n !=       ' + strlinks[i]
+                output += '\n' + f + '\nmsgstr    ' + idlinks[i] + '\n !=       ' + strlinks[i]
                 # inputf = f + '.orig'
                 # shutil.copy(f, inputf)
                 # cmd = ('msgfilter --input=' + inputf + ' --output-file=' + f
