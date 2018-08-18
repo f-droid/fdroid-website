@@ -181,6 +181,9 @@ $ export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
 $ android update sdk --no-ui --filter platform-tools,tools,build-tools-25.0.2,android-24
 ```
 
+Note: if you have Android Studio installed, you have the Android Sdk installed.
+I should be located at `~/Android/Sdk` instead of `~/android-sdk-linux`.
+
 To add these settings permanently to your shell:
 
 ```bash
