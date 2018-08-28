@@ -477,9 +477,9 @@ configuration to the build. These are (roughly in order of application):
 :   Like ’prebuild’, but runs on the source code BEFORE any other
     processing takes place.
 
-    You can use \$\$SDK\$\$, \$\$NDK\$\$, \$\$MVN3\$\$ and \$\$QT\$\$ to
-    substitute the paths to the android SDK and NDK directories, maven 3
-    executable, and Qt SDK directory respectively. The following
+    You can use \$\$SDK\$\$, \$\$NDK\$\$ and \$\$MVN3\$\$ to
+    substitute the paths to the android SDK and NDK directories and the maven 3
+    executable respectively. The following
     per-build variables are available likewise: \$\$VERSION\$\$,
     \$\$VERCODE\$\$ and \$\$COMMIT\$\$.
 
