@@ -21,50 +21,50 @@ layout: default-package-sidebar
 		</div>
 	</header>
 	{% if page.whats_new and page.suggested_version_name %}
-		<div class="package-whats-new">
-			<div class="new-in-version">{{ strings.new_in_version | replace: '[latest_version]', page.suggested_version_name }}</div>
-			{{ page.whats_new }}
-		</div>
+	<div class="package-whats-new">
+		<div class="new-in-version">{{ strings.new_in_version | replace: '[latest_version]', page.suggested_version_name }}</div>
+		{{ page.whats_new }}
+	</div>
 	{% endif %}
 	<div class="package-description">
 		{{ page.description }}
 	</div>
 	<ul class="package-links">
 		{% if page.author_email != "" and page.author_email != nil %}
-			<div class="package-link">
+		<div class="package-link">
 			{{ strings.author }}:
 			<a href="mailto:{{ page.author_email }}?subject={{ site.title }}%20on%20{{ site.baseurl }}">
-			{% if page.author_name != "" and page.author_name != nil %}
+				{% if page.author_name != "" and page.author_name != nil %}
 				{{ page.author_name }}
-			{% else %}
+				{% else %}
 				{{ page.author_email }}
-			{% endif %}
+				{% endif %}
 			</a>
-			</div>
+		</div>
 		{% endif %}
 		<li class="package-link">
 			{{ strings.license }}:
 			<a href="{{ page.license|get_license_url }}">{{ page.license|get_license_name }}</a>
 		</li>
 		{% if page.website != "" and page.website != nil %}
-			<li class="package-link">
-				<a href="{{ page.website }}">{{ strings.website }}</a>
-			</li>
+		<li class="package-link">
+			<a href="{{ page.website }}">{{ strings.website }}</a>
+		</li>
 		{% endif %}
 		{% if page.issue_tracker != "" and page.issue_tracker != nil %}
-			<li class="package-link">
-				<a href="{{ page.issue_tracker }}">{{ strings.issue_tracker }}</a>
-			</li>
+		<li class="package-link">
+			<a href="{{ page.issue_tracker }}">{{ strings.issue_tracker }}</a>
+		</li>
 		{% endif %}
 		{% if page.source_code != "" and page.source_code != nil %}
-			<li class="package-link">
-				<a href="{{ page.source_code }}">{{ strings.source_code }}</a>
-			</li>
+		<li class="package-link">
+			<a href="{{ page.source_code }}">{{ strings.source_code }}</a>
+		</li>
 		{% endif %}
 		{% if page.changelog != "" and page.changelog != nil %}
-			<li class="package-link">
-				<a href="{{ page.changelog }}">{{ strings.changelog }}</a>
-			</li>
+		<li class="package-link">
+			<a href="{{ page.changelog }}">{{ strings.changelog }}</a>
+		</li>
 		{% endif %}
 		<li class="package-link">
 			<a href="https://gitlab.com/fdroid/fdroiddata/tree/master/metadata/{{ page.package_name }}.txt">{{ strings.build_metadata }}</a>
@@ -78,53 +78,53 @@ layout: default-package-sidebar
 	<h3>{{ strings.donate }}</h3>
 	<ul class="package-links donate-options">
 		{% if page.liberapayID != "" and page.liberapayID != nil %}
-			<li class="package-link">
-				<a href="https://liberapay.com/~{{ page.liberapayID }}"><img src="{{ site.baseurl }}/assets/liberapay_donate_button.svg" alt="{{ strings.liberapay_alt }}"/></a>
-			</li>
+		<li class="package-link">
+			<a href="https://liberapay.com/~{{ page.liberapayID }}"><img src="{{ site.baseurl }}/assets/liberapay_donate_button.svg" alt="{{ strings.liberapay_alt }}"/></a>
+		</li>
 		{% endif %}
 		{% if page.flattrID != "" and page.flattrID != nil %}
-			<li class="package-link">
-				<a href="https://flattr.com/thing/{{ page.flattrID }}"><img src="{{ site.baseurl }}/assets/flattr-badge-large.png" alt="{{ strings.flattr_alt }}"/></a>
-			</li>
+		<li class="package-link">
+			<a href="https://flattr.com/thing/{{ page.flattrID }}"><img src="{{ site.baseurl }}/assets/flattr-badge-large.png" alt="{{ strings.flattr_alt }}"/></a>
+		</li>
 		{% endif %}
 		{% if page.bitcoin != "" and page.bitcoin != nil %}
-			<li class="package-link">
-				<a href="https://live.blockcypher.com/btc/address/{{ page.bitcoin }}" title="{{ page.bitcoin }}" alt="{{ strings.bitcoin_alt }}"><img src="{{ site.baseurl }}/assets/bitcoin.png"/></a>
-			</li>
+		<li class="package-link">
+			<a href="https://live.blockcypher.com/btc/address/{{ page.bitcoin }}" title="{{ page.bitcoin }}" alt="{{ strings.bitcoin_alt }}"><img src="{{ site.baseurl }}/assets/bitcoin.png"/></a>
+		</li>
 		{% endif %}
 		{% if page.litecoin != "" and page.litecoin != nil %}
-			<li class="package-link">
-				<a href="https://live.blockcypher.com/ltc/address/{{ page.litecoin }}" title="{{ page.litecoin }}" alt="{{ strings.litecoin_alt }}"><img src="{{ site.baseurl }}/assets/litecoin.png"/></a>
-			</li>
+		<li class="package-link">
+			<a href="https://live.blockcypher.com/ltc/address/{{ page.litecoin }}" title="{{ page.litecoin }}" alt="{{ strings.litecoin_alt }}"><img src="{{ site.baseurl }}/assets/litecoin.png"/></a>
+		</li>
 		{% endif %}
 		{% if page.donate != "" and page.donate != nil %}
-			<li class="package-link">
-			  {% if page.donate contains "paypal.com" or page.donate contains "paypal.me" %}
-			  <a href="{{ page.donate }}"><img src="{{ site.baseurl }}/assets/paypal_donate_button.gif" alt="{{ strings.paypal_alt }}"/></a>
-			  {% else %}
-			  <a href="{{ page.donate }}">{{ strings.donate }}: {{ page.donate }}</a>
-			  {% endif %}
-			</li>
+		<li class="package-link">
+			{% if page.donate contains "paypal.com" or page.donate contains "paypal.me" %}
+			<a href="{{ page.donate }}"><img src="{{ site.baseurl }}/assets/paypal_donate_button.gif" alt="{{ strings.paypal_alt }}"/></a>
+			{% else %}
+			<a href="{{ page.donate }}">{{ strings.donate }}: {{ page.donate }}</a>
+			{% endif %}
+		</li>
 		{% endif %}
 	</ul>
 	{% endif %}
 
 	{% if page.phone_screenshots %}
-		<div id="screenshots" class="js_slides screenshots">
-			<div class="frame js_frame">
-				<ul class="slides js_slides gallery">
-					{% for screenshot in page.phone_screenshots %}
-						<li class="js_slide screenshot"><img src="{{ site.fdroid-repo}}/{{ page.package_name }}/{{ screenshot }}" /></li>
-					{% endfor %}
-				</ul>
-			</div>
-			<span class="js_prev slider_nav prev" style="display: none">
-				<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 501.5 501.5"><g><path fill="#2E435A" d="M302.67 90.877l55.77 55.508L254.575 250.75 358.44 355.116l-55.77 55.506L143.56 250.75z"/></g></svg>
-			</span>
-			<span class="js_next slider_nav next" style="display: none">
-				<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 501.5 501.5"><g><path fill="#2E435A" d="M199.33 410.622l-55.77-55.508L247.425 250.75 143.56 146.384l55.77-55.507L358.44 250.75z"/></g></svg>
-			</span>
+	<div id="screenshots" class="js_slides screenshots">
+		<div class="frame js_frame">
+			<ul class="slides js_slides gallery">
+				{% for screenshot in page.phone_screenshots %}
+				<li class="js_slide screenshot"><img src="{{ site.fdroid-repo}}/{{ page.package_name }}/{{ screenshot }}" /></li>
+				{% endfor %}
+			</ul>
 		</div>
+		<span class="js_prev slider_nav prev" style="display: none">
+			<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 501.5 501.5"><g><path fill="#2E435A" d="M302.67 90.877l55.77 55.508L254.575 250.75 358.44 355.116l-55.77 55.506L143.56 250.75z"/></g></svg>
+		</span>
+		<span class="js_next slider_nav next" style="display: none">
+			<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 501.5 501.5"><g><path fill="#2E435A" d="M199.33 410.622l-55.77-55.508L247.425 250.75 143.56 146.384l55.77-55.507L358.44 250.75z"/></g></svg>
+		</span>
+	</div>
 	{% endif %}
 
 	<div class="package-versions">
@@ -132,9 +132,9 @@ layout: default-package-sidebar
 		<p>
 			{{ strings.suggest_downloading_via_fdroid }}
 		</p>
-<!-- The FDroid.apk links need the space at the start of the href=""
-to disable the polyglot link "relativization":
-https://github.com/untra/polyglot/issues/79 -->
+		<!-- The FDroid.apk links need the space at the start of the href=""
+				 to disable the polyglot link "relativization":
+				 https://github.com/untra/polyglot/issues/79 -->
 		<a href=" https://f-droid.org/FDroid.apk" class="material-button">{{ site.data.strings.index.download_fdroid }}</a>
 		<ul class="package-versions-list">
 			{% for package in page.packages %}
@@ -144,8 +144,8 @@ https://github.com/untra/polyglot/issues/79 -->
 					Use YYYY-MM-DD format, because it is more internationalizable than versions which include English month names.
 					{% endcomment %}
 					{% assign package_added_date = package.added | date: '%F' %}
-                                        <a name="{{ package.version_name }}"></a>
-                                        <a name="{{ package.version_code }}"></a>
+					<a name="{{ package.version_name }}"></a>
+					<a name="{{ package.version_code }}"></a>
 					{{ strings.version_info | replace: '[package_version]', package.version_name | replace: '[package_version_code]', package.version_code | replace: '[package_added_date]', package_added_date }}
 				</div>
 				<p class="package-version-requirement">
@@ -155,10 +155,10 @@ https://github.com/untra/polyglot/issues/79 -->
 
 				<p class="package-version-source">
 					{% if package.srcname != "" and package.srcname != nil %}
-						{% assign source_code_url = site.fdroid-repo | append: '/' | append: package.srcname %}
-						{{ strings.signed_by_fdroid | replace: '[source_code_url]', source_code_url }}
+					{% assign source_code_url = site.fdroid-repo | append: '/' | append: package.srcname %}
+					{{ strings.signed_by_fdroid | replace: '[source_code_url]', source_code_url }}
 					{% else %}
-						{{ strings.signed_by_developer }}
+					{{ strings.signed_by_developer }}
 					{% endif %}
 				</p>
 
@@ -171,21 +171,21 @@ https://github.com/untra/polyglot/issues/79 -->
 				</p>
 
 				<div class="package-version-permissions">
-                    <details {% if forloop.first %}open{% endif %}>
-                        <summary class="package-version-permissions-summary">
-                            {{ strings.permissions }}
-                        </summary>
-                        <ul class="package-version-permissions-list">
-                            {% for permission in package.uses_permission %}
-                            <li>
-                                {{ permission.permission }}
-                                {% if permission.min_sdk %}
-                                    ({{ permission.min_sdk | android_sdk_level_to_version }})
-                                {% endif %}
-                            </li>
-                            {% endfor %}
-                        </ul>
-                    </details>
+					<details {% if forloop.first %}open{% endif %}>
+						<summary class="package-version-permissions-summary">
+							{{ strings.permissions }}
+						</summary>
+						<ul class="package-version-permissions-list">
+							{% for permission in package.uses_permission %}
+							<li>
+								{{ permission.permission }}
+								{% if permission.min_sdk %}
+								({{ permission.min_sdk | android_sdk_level_to_version }})
+								{% endif %}
+							</li>
+							{% endfor %}
+						</ul>
+					</details>
 				</div>
 
 			</li>
