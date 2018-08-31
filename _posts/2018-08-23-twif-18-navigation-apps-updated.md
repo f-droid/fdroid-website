@@ -66,4 +66,4 @@ Got Feedback? We are very tootable at **[@fdroidorg@mastodon.technology](https:/
 
 #### Postscript
 
-Please everybody give **[Coffee](open.source.coffee)** a round of applause and a thank you for writing the last 17 TWIFs.
+Please everybody give **[Coffee](https://open.source.coffee)** a round of applause and a thank you for writing the last 17 TWIFs.
