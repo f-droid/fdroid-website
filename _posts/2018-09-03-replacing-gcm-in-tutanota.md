@@ -2,6 +2,7 @@
 layout: post
 title: "How Tutanota replaced Google’s FCM with their own notification system"
 author: "Ivan"
+authorWebsite: "https://tutanota.com/blog/posts/welcome-ivan"
 ---
 
 As mentioned in [This Week In F-Droid 17](https://f-droid.org/en/2018/08/16/twif-17-the-reproducible-builds-and-encrypted-e-mail-edition.html), Tutanota is now on F-Droid.
