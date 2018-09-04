@@ -46,7 +46,7 @@ password for the key. They shouldn’t be the same. In between, you’ll
 be asked for some identifying details which will go in the
 certificate.
 
-The two passwords entered go into _config.py*, as `keystorepass` and
+The two passwords entered go into _config.py_, as `keystorepass` and
 `keypass` respectively. The path to the keystore file is set in
 `keystore`, and the alias you chose for the key also go into that file
 is called `repo_keyalias`.
@@ -54,15 +54,36 @@ is called `repo_keyalias`.
 
 ### APK Signing
 
-The F-Droid tools can automatic generate and manage APK signing keys for each app that it maintaines
-With the repo index signing configured, all that remains to be done
-for package signing to work is to set the `keydname` field in _config.py_
-to contain the same identifying details you entered before.
+The F-Droid tools can automatic generate and manage APK signing keys
+for each app that it maintains.  With the repo index signing
+configured, all that remains to be done for package signing to work is
+to set the _keydname_ field in _config.py_ to contain the same
+identifying details you entered before.  A new key will be generated
+using these details, for each application that is built. If a
+specific key is required for a particular application, this system can
+be overridden using the _keyaliases_ config settings.
 
-A new key will be generated using these details, for each application
-that is built. (If a specific key is required for a particular
-application, this system can be overridden using the keyaliases config
-settings.
+To set up `fdroid publish`, do these steps on the same machine where
+you copy APKs to and run `fdroid update`.  First, set _keydname_ in
+_config.py_, it should be something like this:
+
+```python
+keydname = "CN=example.com, O=Example Ltd, C=UK"
+```
+
+Create a dir called _unsigned/_ next to the _metadata/_ and _repo/_
+dirs, and run these commands to move the APK into place with a new
+name based on _Application ID_ and _Version Code_:
+
+```console
+$ cd /path/to/repobasedir
+$ touch metadata/com.example.app.yml
+$ mkdir unsigned
+$ cp /path/to/app-release-unsigned.apk unsigned/com.example.app_1234.apk
+$ fdroid publish --verbose
+$ fdroid update --verbose
+$ fdroid server update --verbose
+```
 
 
 ### Package Signing
