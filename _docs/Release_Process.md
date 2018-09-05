@@ -35,14 +35,22 @@ steps.  The official signing keys are listed in
 
 ### major release
 
-If it is a major release, then a new stable branch (e.g. _stable-v1.0_
-or _stable-v1.1_) should be created first.  The incomplete
-translations should be removed using
-`./tools/trim-incomplete-translations-for-release.py`.  This has to
-happen in the stable branch only, since it will remove the incomplete
-translations.  If the incomplete translations are remove from
-_master_, then Weblate will sync with that, and remove them there as
-well.
+If it is a major release, there are a few more steps.
+
+1. temporarily remove the _iw/in_ links: `find app/src/main/res/ -type l -delete`
+2. In Android Studio, go to _Analyze_ -> _Inspect Code_
+3. After running on the whole project, go to _Android Lint:
+   Performance_, and click on _Unused Resources_, then click the
+   _Remove All Unused Resources_ button.  Only commit changes to
+   _strings.xml_, **not** _styles.xml_ or other files.
+4. Then it is time to create a new stable branch (e.g. _stable-v1.0_
+   or _stable-v1.1_) should be created first.  The incomplete
+   translations should be removed using
+   `./tools/trim-incomplete-translations-for-release.py`.  This has to
+   happen in the stable branch only, since it will remove the
+   incomplete translations.  If the incomplete translations are removed
+   from _master_, then Weblate will sync with that, and remove them
+   there as well.
 
 
 ## fdroidserver

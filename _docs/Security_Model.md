@@ -118,11 +118,36 @@ ROM projects.  It is already included in
 [Fairphone Open](https://code.fairphone.com/projects/fp-osos/).
 
 
+### Protecting against malicious contributor-generated data
+
+The app descriptions are submitted by all sorts of people, and they
+can also be taken from the app's source repository.  This data is
+ultimately delivered to the Android client or the user's browser via
+_f-droid.org_.
+
+* the Android client never runs CSS, Javascript, or dangerous HTML
+tags since it displays HTML via
+[`android.text.Html.fromHtml()`](https://gitlab.com/fdroid/fdroidclient/blob/1.3.1/app/src/main/java/org/fdroid/fdroid/views/AppDetailsRecyclerViewAdapter.java#L441)
+with image loading disabled
+* the _f-droid.org_ website protects against malicious and
+CSS/HTML/Javascript injection with a
+[strict HTTP Content Security Policy](https://observatory.mozilla.org/analyze.html?host=f-droid.org).
+* Repomaker filters the texts through Mozilla's
+[_bleach_](https://github.com/mozilla/bleach) and has a good
+[HTTP Content Security Policy](https://observatory.mozilla.org/analyze.html?host=repomaker.grobox.de).
+
+
 ## Security Audits
 
 1. There was a quick, informal
    [security audit](https://dev.guardianproject.info/projects/bazaar/wiki/Initial_FDroid_Audit_by_pd0x)
+   ([_archived_](https://web.archive.org/web/20170317154208/https://dev.guardianproject.info/projects/bazaar/wiki/Initial_FDroid_Audit_by_pd0x))
    done in 2013 by then graduate student Daniel McCarney aka _pd0x_.
 
-2. The first "Bazaar" project funded by Open Tech Fund included an
+2. The first "Bazaar" project funded by [Open Tech Fund](https://opentech.fund) included an
    [external public audit]({{ site.baseurl }}/2018/01/20/upcoming-security-audit.html)
+   from [Cure53](https://cure53.de)
+
+3. The second "Bazaar2" project funded by Open Tech Fund included an
+   [external public audit]({{ site.baseurl }}/2018/09/04/second-security-audit-results.html)
+   from [Radically Open Security](https://radicallyopensecurity.com/)

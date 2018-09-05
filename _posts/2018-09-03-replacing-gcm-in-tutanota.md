@@ -25,9 +25,10 @@ FCM is quite convenient to use, over the years Google made changes to Android wh
 The Tutanota apps are Libre software, and we wanted to [publish our Android app on F-Droid](https://tutanota.com/blog/posts/open-source-email). We wanted our users to be able to use Tutanota on every ROM and every device, without the control of a third-party like Google. We decided to take on the challenge and to build our own push notification service.
 
 When we started designing our push system, we had several goals in mind:
-    • it must be secure
-    • it must be fast
-    • it must be power-efficient
+
+* it must be secure
+* it must be fast
+* it must be power-efficient
 
 We’ve made a research on how others (Signal, Wire, Conversations, Riot, Facebook, Mastodon) have been solving similar problems. We had several options in mind, including WebSockets, MQTT, Server Sent Events and HTTP/2 Server Push.
 
