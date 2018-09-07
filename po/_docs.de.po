@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
 "POT-Creation-Date: 2018-09-05 14:12+0200\n"
-"PO-Revision-Date: 2018-08-19 08:25+0000\n"
+"PO-Revision-Date: 2018-09-07 09:49+0000\n"
 "Last-Translator: ssantos <ssantos@web.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/f-droid/website-docs/de/>\n"
 "Language: de\n"
@@ -1352,7 +1352,7 @@ msgstr ""
 
 #. type: Plain text
 #: build/_docs/md/Build_Metadata_Reference.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "    You can use \\$\\$SDK\\$\\$, \\$\\$NDK\\$\\$ and \\$\\$MVN3\\$\\$ to\n"
 "    substitute the paths to the android SDK and NDK directories and the maven 3\n"
@@ -5803,7 +5803,7 @@ msgstr "```bash $ sudo apt-get install openjdk-8-jdk lib32stdc++6 lib32gcc1 lib3
 #. type: Plain text
 #: build/_docs/md/Installing_the_Server_and_Repo_Tools.md
 msgid "Note: If you have Android Studio installed, you have the Android SDK installed.  It should be located at `~/Android/Sdk` instead of `~/android-sdk-linux`.  You can find the location in Android Studio when you open the Tools→SDK Manager menu."
-msgstr ""
+msgstr "Hinweis: Wenn Sie Android Studio installiert haben, haben Sie das Android SDK installiert.  Es sollte unter `~/Android/Sdk` statt unter `~/android-sdk-linux` zu finden sein.  Sie finden den Pfad in Android Studio, wenn Sie das Menü Tools→SDK Manager öffnen."
 
 #. type: Plain text
 #: build/_docs/md/Installing_the_Server_and_Repo_Tools.md
@@ -6721,30 +6721,28 @@ msgstr "Hauptausgabe"
 
 #. type: Plain text
 #: build/_docs/md/Release_Process.md
-#, fuzzy
 msgid "If it is a major release, there are a few more steps."
-msgstr "Zur Installation in älteren Versionen, gibt es ein paar einfachere Schritte:"
+msgstr "Wenn es sich um eine Hauptrelease handelt, gibt es noch ein paar weitere Schritte."
 
 #. type: Bullet: '1. '
 #: build/_docs/md/Release_Process.md
 msgid "temporarily remove the _iw/in_ links: `find app/src/main/res/ -type l -delete`"
-msgstr ""
+msgstr "die _iw/in_ Links vorübergehend entfernen: `find app/src/main/res/ -type l -delete`"
 
 #. type: Bullet: '2. '
 #: build/_docs/md/Release_Process.md
 msgid "In Android Studio, go to _Analyze_ -> _Inspect Code_"
-msgstr ""
+msgstr "Gehen Sie in Android Studio zu _Analyze_ -> _Inspect Code_"
 
 #. type: Bullet: '3. '
 #: build/_docs/md/Release_Process.md
 msgid "After running on the whole project, go to _Android Lint: Performance_, and click on _Unused Resources_, then click the _Remove All Unused Resources_ button.  Only commit changes to _strings.xml_, **not** _styles.xml_ or other files."
-msgstr ""
+msgstr "Nachdem Sie das gesamte Projekt ausgeführt haben, gehen Sie zu _Android Lint: Performance_ und klicken Sie auf _Unused Resources_, dann auf die Schaltfläche _Remove All Unused Resources_.  Nur Änderungen an _strings.xml_, **nicht** _styles.xml_ oder anderen Dateien committen."
 
 #. type: Bullet: '4. '
 #: build/_docs/md/Release_Process.md
-#, fuzzy
 msgid "Then it is time to create a new stable branch (e.g. _stable-v1.0_ or _stable-v1.1_) should be created first.  The incomplete translations should be removed using `./tools/trim-incomplete-translations-for-release.py`.  This has to happen in the stable branch only, since it will remove the incomplete translations.  If the incomplete translations are removed from _master_, then Weblate will sync with that, and remove them there as well."
-msgstr "Wenn es sich um ein Hauptrelease handelt, sollte zuerst ein neuer stabiler Branch (z.B. _stable-v1.0_ oder _stable-v1.1_) erstellt werden.  Unvollständige Übersetzungen sollten mit `./tools/trim-incomplete-translations-for-release.py` entfernt werden.  Dies muss nur im stabilen Branch geschehen, da es die unvollständigen Übersetzungen entfernt.  Wenn die unvollständigen Übersetzungen aus _master_ entfernt werden, wird Weblate damit synchronisiert und sie werden auch dort entfernt."
+msgstr "Dann sollte zuerst ein neuer stabiler Branch (z.B. _stable-v1.0_ oder _stable-v1.1_) erstellt werden.  Unvollständige Übersetzungen sollten mit `./tools/trim-incomplete-translations-for-release.py` entfernt werden.  Dies muss nur im stabilen Branch geschehen, da es die unvollständigen Übersetzungen entfernt.  Wenn die unvollständigen Übersetzungen aus _master_ entfernt werden, wird Weblate damit synchronisiert und sie werden auch dort entfernt."
 
 #. type: Bullet: '1. '
 #: build/_docs/md/Release_Process.md
@@ -7525,12 +7523,12 @@ msgstr "Darüberhinaus, macht F-Droid die [Vorinstallation](https://gitlab.com/f
 #: build/_docs/md/Security_Model.md
 #, no-wrap
 msgid "Protecting against malicious contributor-generated data"
-msgstr ""
+msgstr "Schutz vor böswilligen Daten, die von Mitwirkenden erzeugt wurden"
 
 #. type: Plain text
 #: build/_docs/md/Security_Model.md
 msgid "The app descriptions are submitted by all sorts of people, and they can also be taken from the app's source repository.  This data is ultimately delivered to the Android client or the user's browser via _f-droid.org_."
-msgstr ""
+msgstr "Die App-Beschreibungen werden von allen möglichen Personen eingereicht und können auch aus dem Quell-Repository der App entnommen werden.  Diese Daten werden schließlich über _f-droid.org_ an den Android-Client oder den Browser des Benutzers übermittelt."
 
 #. type: Plain text
 #: build/_docs/md/Security_Model.md
@@ -7556,19 +7554,16 @@ msgstr "Sicherheitsaudits"
 
 #. type: Bullet: '1. '
 #: build/_docs/md/Security_Model.md
-#, fuzzy
 msgid "There was a quick, informal [security audit](https://dev.guardianproject.info/projects/bazaar/wiki/Initial_FDroid_Audit_by_pd0x)  ([_archived_](https://web.archive.org/web/20170317154208/https://dev.guardianproject.info/projects/bazaar/wiki/Initial_FDroid_Audit_by_pd0x))  done in 2013 by then graduate student Daniel McCarney aka _pd0x_."
-msgstr "Es wurde ein kurzes, informelles [Sicherheitsaudit](https://dev.guardianproject.info/projects/bazaar/wiki/Initial_FDroid_Audit_by_pd0x) im Jahr 2013 durch den damaligen Hochschulabsolventen Daniel McCarney, auch bekannt unter _pd0x_, durchgeführt."
+msgstr "Es wurde ein kurzes, informelles [Sicherheitsaudit](https://dev.guardianproject.info/projects/bazaar/wiki/Initial_FDroid_Audit_by_pd0x) ([_archiviert_](https://web.archive.org/web/20170317154208/https://dev.guardianproject.info/projects/bazaar/wiki/Initial_FDroid_Audit_by_pd0x))  im Jahr 2013 durch den damaligen Hochschulabsolventen Daniel McCarney, auch bekannt unter _pd0x_, durchgeführt."
 
 #. type: Bullet: '2. '
 #: build/_docs/md/Security_Model.md
-#, fuzzy
 msgid "The first \"Bazaar\" project funded by [Open Tech Fund](https://opentech.fund) included an [external public audit]({{ site.baseurl }}/2018/01/20/upcoming-security-audit.html)  from [Cure53](https://cure53.de)"
 msgstr "Das erste, von [Open Tech Fund](https://opentech.fund) finanzierte \"Bazaar\"-Projekt schloss ein [externes öffentliches Audit]({{ site.baseurl }}/2018/01/20/upcoming-security-audit.html) von [Cure53](https://cure53.de) ein"
 
 #. type: Bullet: '3. '
 #: build/_docs/md/Security_Model.md
-#, fuzzy
 msgid "The second \"Bazaar2\" project funded by Open Tech Fund included an [external public audit]({{ site.baseurl }}/2018/09/04/second-security-audit-results.html)  from [Radically Open Security](https://radicallyopensecurity.com/)"
 msgstr "Das zweite, von Open Tech Fund finanzierte \"Bazaar2\"-Projekt schloss ein [externes öffentliches Audit]({{ site.baseurl }}/2018/09/04/second-security-audit-results.html) von [Radically Open Security](https://radicallyopensecurity.com/) ein"
 
@@ -7833,9 +7828,8 @@ msgstr "Im o. g., ersetzen Sie _my.keystore_ durch den Namen der Schlüsselspeic
 
 #. type: Plain text
 #: build/_docs/md/Signing_Process.md
-#, fuzzy
 msgid "The two passwords entered go into _config.py_, as `keystorepass` and `keypass` respectively. The path to the keystore file is set in `keystore`, and the alias you chose for the key also go into that file is called `repo_keyalias`."
-msgstr "Die beiden eingegebenen Passwörter wandern als `keystorepass` bzw. `keypass` in _config.py*. Der Pfad zur Schlüsselspeicherdatei wird in `keystore` abgelegt werden, und das für den Schlüssel ausgewählte Alias gelangt unter der Bezeichnung `repo_keyalias` ebenfalls in diese Datei."
+msgstr "Die beiden eingegebenen Passwörter wandern als `keystorepass` bzw. `keypass` in _config.py*. Der Pfad zur Schlüsselspeicherdatei wird in `keystore` abgelegt und das für den Schlüssel von Ihnen ausgewählte Alias gelangt unter der Bezeichnung `repo_keyalias` ebenfalls in diese Datei."
 
 #. type: Title ###
 #: build/_docs/md/Signing_Process.md
@@ -7845,29 +7839,28 @@ msgstr "APK-Signatur"
 
 #. type: Plain text
 #: build/_docs/md/Signing_Process.md
-#, fuzzy
 msgid "The F-Droid tools can automatic generate and manage APK signing keys for each app that it maintains.  With the repo index signing configured, all that remains to be done for package signing to work is to set the _keydname_ field in _config.py_ to contain the same identifying details you entered before.  A new key will be generated using these details, for each application that is built. If a specific key is required for a particular application, this system can be overridden using the _keyaliases_ config settings."
-msgstr "Die F-Droid-Werkzeuge können automatisch APK-Signierschlüssel für jede App, die es unterstützt, erzeugen und verwalten. Mit der ausgestellten Repo-Registersignatur, ist alles was zu tun bleibt, damit das Signieren der Pakete funktioniert, das Übertragen der von Ihnen eingegebenen, kennzeichnenden Details in das `keydname`-Feld in _config.py_ ."
+msgstr "Die F-Droid-Tools können automatisch APK-Signierschlüssel für jede von ihnen verwaltete Anwendung erzeugen und verwalten.  Wenn die Repo-Index-Signierung konfiguriert ist, muss nur noch das Feld _keydname_ in _config.py_ so gesetzt werden, dass es die gleichen identifizierenden Details enthält, die Sie zuvor eingegeben haben.  Aus diesen Angaben wird für jede erstellte Anwendung ein neuer Schlüssel generiert. Wenn ein bestimmter Schlüssel für eine bestimmte Anwendung benötigt wird, kann dieses System durch die Konfigurationseinstellungen _keyaliases_ überschrieben werden."
 
 #. type: Plain text
 #: build/_docs/md/Signing_Process.md
 msgid "To set up `fdroid publish`, do these steps on the same machine where you copy APKs to and run `fdroid update`.  First, set _keydname_ in _config.py_, it should be something like this:"
-msgstr ""
+msgstr "Um `fdroid publish` einzurichten, führen Sie diese Schritte auf demselben Rechner aus, auf dem Sie APKs kopieren und `fdroid update` ausführen.  Zuerst setzen Sie _keydname_ in _config.py_, es sollte ungefähr so aussehen:"
 
 #. type: Plain text
 #: build/_docs/md/Signing_Process.md
 msgid "```python keydname = \"CN=example.com, O=Example Ltd, C=UK\" ```"
-msgstr ""
+msgstr "```python keydname = \"CN=beispiel.de, O=Beispiel GmbH, C=DE\" ```"
 
 #. type: Plain text
 #: build/_docs/md/Signing_Process.md
 msgid "Create a dir called _unsigned/_ next to the _metadata/_ and _repo/_ dirs, and run these commands to move the APK into place with a new name based on _Application ID_ and _Version Code_:"
-msgstr ""
+msgstr "Erstellen Sie ein Verzeichnis namens _unsigned/_ neben den Verzeichnissen _metadata/_ und _repo/_, und führen Sie diese Befehle aus, um das APK mit einem neuen Namen basierend auf _Application ID_ und _Version Code_ zu verschieben:"
 
 #. type: Plain text
 #: build/_docs/md/Signing_Process.md
 msgid "```console $ cd /path/to/repobasedir $ touch metadata/com.example.app.yml $ mkdir unsigned $ cp /path/to/app-release-unsigned.apk unsigned/com.example.app_1234.apk $ fdroid publish --verbose $ fdroid update --verbose $ fdroid server update --verbose ```"
-msgstr ""
+msgstr "```console $ cd /pfad/zum/repobasedir $ touch metadata/de.beispiel.app.yml $ mkdir unsigned $ cp /pfad/zum/app-release-unsigned.apk unsigned/de.beispiel.app_1234.apk $ fdroid publish --verbose $ fdroid update --verbose $ fdroid server update --verbose ```"
 
 #. type: Title ###
 #: build/_docs/md/Signing_Process.md
