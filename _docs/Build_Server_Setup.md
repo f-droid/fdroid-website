@@ -137,13 +137,13 @@ Here's how you can get started building our basebox quickly:
 ```bash
 fdroid:~$ git clone https://gitlab.com/fdroid/basebox.git
 fdroid:~$ cd basebox
-fdroid:~/basebox$ sudo ./makebuildserver_basebox.py --provider virtualbox
+fdroid:~/basebox$ sudo ./fdroid_basebox.py --provider virtualbox
 fdroid:~/basebox$ vagrant box add --force jessie64 fdroid-jessie64-virtualbox.box
 fdroid:~/basebox$ rm fdroid-jessie64-virtualbox.box
 ```
 
 Additional documentation is available in the projects
-[README file](https://gitlab.com/fdroid/basebox#makebuildserver_baseboxpy).
+[README file](https://gitlab.com/fdroid/basebox#fdroid_basebox).
 
 
 ### Creating the F-Droid base box
