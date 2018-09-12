@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
 "POT-Creation-Date: 2018-09-05 14:12+0200\n"
-"PO-Revision-Date: 2018-09-05 13:34+0200\n"
+"PO-Revision-Date: 2018-09-10 14:21+0000\n"
 "Last-Translator: WaldiS <admin@sto.ugu.pl>\n"
 "Language-Team: Polish <https://hosted.weblate.org/projects/f-droid/website-docs/pl/>\n"
 "Language: pl\n"
@@ -841,9 +841,9 @@ msgstr "Nazwa aplikacji. Zwykle to pole nie powinno być obecne, ponieważ popra
 
 #. type: Title ###
 #: build/_docs/md/Build_Metadata_Reference.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "7.7 Provides<a name=\"Provides\"></a>"
-msgstr "7.7 Umożliwienie (dostarczanie, wyposażenie) (ang.Provides) <a name=\"Provides\"></a>"
+msgstr "7.7 Udostępnianie<a name=\"Provides\"></a>"
 
 #. type: Plain text
 #: build/_docs/md/Build_Metadata_Reference.md
@@ -1359,7 +1359,7 @@ msgstr ""
 
 #. type: Plain text
 #: build/_docs/md/Build_Metadata_Reference.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "    You can use \\$\\$SDK\\$\\$, \\$\\$NDK\\$\\$ and \\$\\$MVN3\\$\\$ to\n"
 "    substitute the paths to the android SDK and NDK directories and the maven 3\n"
@@ -1935,6 +1935,14 @@ msgid ""
 "    isn’t used nor built will result in an error saying that native\n"
 "    libraries were expected in the resulting package.\n"
 msgstr ""
+"    Proces budowania i skanowania będzie składał zażalenia (nie będzie budować),\n"
+"    jeśli ten parametr nie zostanie zdefiniowany, ale obecny jest katalog `jni`.\n"
+"    Jeśli natywny kod jest budowany za pomocą innych metod, takich jak zadanie Gradle,\n"
+"    możesz podać `no` tutaj, aby tego uniknąć. Jeśli jednak kod natywny nie jest\n"
+"    faktycznie wymagany lub używany, należy zamiast tego usunąć katalog\n"
+"    (na przykład przy użyciu `rm=jni`). Użycie `buildjni=no`, gdy kod jni nie jest używany\n"
+"    ani zbudowany, spowoduje błąd mówiący, że oczekiwane biblioteki były oczekiwane\n"
+"    w wynikowym pakiecie.\n"
 
 #. type: Plain text
 #: build/_docs/md/Build_Metadata_Reference.md
@@ -2017,6 +2025,9 @@ msgid ""
 "    to run Maven inside that relative subdirectory. Sometimes it is\n"
 "    needed to use @.. so that builds happen correctly.\n"
 msgstr ""
+":   Buduj z Maven zamiast Ant. Dodatkowe &lt;dir&gt; mówi F-Droid\n"
+"    aby uruchomić Maven wewnątrz tego relatywnego podkatalogu.\n"
+"   Czasami trzeba użyć @.. aby kompilacja przebiegła poprawnie.\n"
 
 #. type: Plain text
 #: build/_docs/md/Build_Metadata_Reference.md
@@ -2093,6 +2104,11 @@ msgid ""
 "    specified, the build is manual. You should run your build commands,\n"
 "    such as `make`, in `build=`.\n"
 msgstr ""
+":   Określ ścieżkę globu, w której powinien znajdować się wynikowy\n"
+"    niepodpisany pakiet APK. Można go użyć w połączeniu z metodami\n"
+"    kompilacji, takimi jak `gradle=yes` lub `maven=yes`, ale jeśli\n"
+"    nie określono metody kompilacji, kompilacja jest ręczna. Powinieneś\n"
+"    uruchomić polecenia kompilacji, takie jak `make`, in `build=`.\n"
 
 #. type: Plain text
 #: build/_docs/md/Build_Metadata_Reference.md
@@ -2324,11 +2340,16 @@ msgid ""
 "    them out with something like `.*[0-9]$` which requires tag names to\n"
 "    end with a digit.\n"
 msgstr ""
+"    Opcjonalnie dołącz wzór regex na końcu - oddzielony spacją\n"
+"    - aby tylko sprawdzić znaczniki pasujące do tego wzorca. Przydatne,\n"
+"    gdy aplikacje oznaczają wersje inne niż wersja X.X-alpha, dzięki czemu\n"
+"    można je odfiltrować za pomocą czegoś w rodzaju `.*[0-9]$`,\n"
+"    które wymaga, aby nazwy znaczników kończyły się cyfrą.\n"
 
 #. type: Bullet: '-   '
 #: build/_docs/md/Build_Metadata_Reference.md
 msgid "`HTTP` - HTTP requests are used to determine the current version code and version name. This is controlled by the `Update Check Data` field, which is of the form `urlcode|excode|urlver|exver`."
-msgstr ""
+msgstr "`HTTP` - Żądania HTTP są używane do określenia aktualnego kodu wersji i nazwy wersji. Jest to kontrolowane przez pole `Update Check Data`, które ma postać `urlcode|excode|urlver|exver`."
 
 #. type: Plain text
 #: build/_docs/md/Build_Metadata_Reference.md
@@ -2338,6 +2359,9 @@ msgid ""
 "    retrieved, and matched against the regular expression `excode`, with\n"
 "    the first group becoming the version code.\n"
 msgstr ""
+"    Po pierwsze, jeśli `urlcode` nie jest pusty, dokument z tego adresu URL\n"
+"    jest pobierany i porównywany z wyrażeniem regularnym `excode`,\n"
+"    przy czym pierwsza grupa staje się kodem wersji.\n"
 
 #. type: Plain text
 #: build/_docs/md/Build_Metadata_Reference.md
@@ -2349,81 +2373,86 @@ msgid ""
 "    set to simply ’.’ which says to use the same document returned for\n"
 "    the version code again, rather than retrieving a different one.\n"
 msgstr ""
+"    Po drugie, jeśli `urlver` nie jest pusty, dokument z tego adresu URL\n"
+"    jest pobierany i porównywany z wyrażeniem regularnym `exver`,\n"
+"    przy czym pierwsza grupa staje się nazwą wersji. Pole `urlver` może być\n"
+"    ustawione po prostu ’.’ , Które mówi, aby użyć tego samego dokumentu,\n"
+"    który został zwrócony ponownie dla kodu wersji, zamiast pobierać inny.\n"
 
 #. type: Title ###
 #: build/_docs/md/Build_Metadata_Reference.md
 #, no-wrap
 msgid "7.29 Vercode Operation<a name=\"Vercode-Operation\"></a>"
-msgstr ""
+msgstr "7.29 Operacja Vercode<a name=\"Vercode-Operation\"></a>"
 
 #. type: Plain text
 #: build/_docs/md/Build_Metadata_Reference.md
 msgid "Operation to be applied to the vercode obtained by the defined `Update Check Mode`. `%c` will be replaced by the actual vercode, and the whole string will be passed to python’s `eval` function."
-msgstr ""
+msgstr "Operacje mają być stosowane do vercode uzyskane przez zdefiniowane 'Sprawdź tryb aktualizacji'. '%c' zostaną zastąpione przez rzeczywiste vercode, a cały ciąg zostanie przekazany do funkcji 'eval' Pythona."
 
 #. type: Plain text
 #: build/_docs/md/Build_Metadata_Reference.md
 msgid "Especially useful with apps that we want to compile for different ABIs, but whose vercodes don’t always have trailing zeros. For example, with `Vercode Operation` set at something like `%c*10 + 4`, we will be able to track updates and build up to four different versions of every upstream version."
-msgstr ""
+msgstr "Szczególnie przydatna w przypadku aplikacji, które chcemy skompilować dla różnych ABIs, ale których vercodes nie zawsze mają końcowe zera. Na przykład, z 'Operacja Vercode' ustawione na coś w stylu `% c * 10 + 4`, będziemy mogli śledzić aktualizacje i budować do czterech różnych wersji każdej poprzedniej wersji."
 
 #. type: Title ###
 #: build/_docs/md/Build_Metadata_Reference.md
 #, no-wrap
 msgid "7.30 Update Check Ignore<a name=\"Update-Check-Ignore\"></a>"
-msgstr ""
+msgstr "7.30 Aktualizacja Sprawdź Ignoruj<a name=\"Update-Check-Ignore\"></a>"
 
 #. type: Plain text
 #: build/_docs/md/Build_Metadata_Reference.md
 msgid "When checking for updates (via `Update Check Mode`) this can be used to specify a regex which, if matched against the version name, causes that version to be ignored. For example, ’beta’ could be specified to ignore version names that include that text."
-msgstr ""
+msgstr "Podczas sprawdzania aktualizacji (poprzez 'Update Check Mode') można to wykorzystać do określenia wyrażenia regularnego, które w przypadku dopasowania do nazwy wersji powoduje, że ta wersja zostanie zignorowana. Na przykład można podać 'beta', aby zignorować nazwy wersji zawierające ten tekst."
 
 #. type: Title ###
 #: build/_docs/md/Build_Metadata_Reference.md
 #, no-wrap
 msgid "7.31 Update Check Name<a name=\"Update-Check-Name\"></a>"
-msgstr ""
+msgstr "7.31 Aktualizacja Nazwy Wyboru<a name=\"Update-Check-Name\"></a>"
 
 #. type: Plain text
 #: build/_docs/md/Build_Metadata_Reference.md
 msgid "When checking for updates (via `Update Check Mode`) this can be used to specify the package name to search for. Useful when apps have a static package name but change it programmatically in some app flavors, by e.g.  appending \".open\" or \".free\" at the end of the package name."
-msgstr ""
+msgstr "Kiedy sprawdzanie aktualizacji (przez 'Sprawdź tryb aktualizacji') to można określić nazwę pakietu do wyszukiwania. Przydatne, gdy aplikacje mają nazwy pakietów statycznych, ale to programowo zmienić w niektórych aplikacji smaków, przez np. Dołączanie '.otwórz' lub '.free' na końcu nazwy pakietu."
 
 #. type: Plain text
 #: build/_docs/md/Build_Metadata_Reference.md
 msgid "You can also use `Ignore` to ignore package name searching. This should only be used in some specific cases, for example if the app’s build.gradle file does not contain the package name."
-msgstr ""
+msgstr "Umożliwia także 'Ignoruj' zignorować, wyszukiwanie nazwy pakietu. To można używać tylko w niektórych szczególnych przypadkach, na przykład, jeśli aplikacja build.gradle plik nie zawiera nazwę pakietu."
 
 #. type: Title ###
 #: build/_docs/md/Build_Metadata_Reference.md
 #, no-wrap
 msgid "7.32 Update Check Data<a name=\"Update-Check-Data\"></a>"
-msgstr ""
+msgstr "7.32 Aktualizacja Danych Wyboru<a name=\"Update-Check-Data\"></a>"
 
 #. type: Plain text
 #: build/_docs/md/Build_Metadata_Reference.md
 msgid "Used in conjunction with `Update Check Mode` for certain modes."
-msgstr ""
+msgstr "Używany w połączeniu z `Aktualizacja Trybu Sprawdzania` dla niektórych trybów."
 
 #. type: Title ###
 #: build/_docs/md/Build_Metadata_Reference.md
 #, no-wrap
 msgid "7.33 Auto Update Mode<a name=\"Auto-Update-Mode\"></a>"
-msgstr ""
+msgstr "7.33 Tryb Automatycznej Aktualizacji<a name=\"Auto-Update-Mode\"></a>"
 
 #. type: Plain text
 #: build/_docs/md/Build_Metadata_Reference.md
 msgid "This determines the method using for auto-generating new builds when new releases are available - in other words, adding a new Build Version line to the metadata. This happens in conjunction with the ’Update Check Mode’ functionality - i.e. when an update is detected by that, it is also processed by this."
-msgstr ""
+msgstr "Określa metodę używaną do automatycznego generowania nowych kompilacji, gdy są dostępne nowe wydania - innymi słowy, dodawania nowej linii wersji Build do metadanych. Dzieje się tak w połączeniu z funkcjonalnością 'Sprawdź Tryb Sprawdzania' - tj. po wykryciu aktualizacji przez nią jest ona również przetwarzana."
 
 #. type: Bullet: '-   '
 #: build/_docs/md/Build_Metadata_Reference.md
 msgid "`None` - No auto-updating is done"
-msgstr ""
+msgstr "`None` - Nie jest przeprowadzana automatyczna aktualizacja"
 
 #. type: Bullet: '-   '
 #: build/_docs/md/Build_Metadata_Reference.md
 msgid "`Version` - Identifies the target commit (i.e. tag) for the new build based on the given version specification, which is simply text in which %v and %c are replaced with the required version name and version code respectively."
-msgstr ""
+msgstr "`Version` - Identyfikuje docelowe zatwierdzenie (tzn. tag) dla nowej kompilacji na podstawie podanej specyfikacji wersji, która jest po prostu tekstem, w którym %v i %c są zastępowane odpowiednio wymaganą nazwą wersji i wersją."
 
 #. type: Plain text
 #: build/_docs/md/Build_Metadata_Reference.md
@@ -2434,6 +2463,10 @@ msgid ""
 "    always has a tag \"ver\\_1234\" for a version with version code 1234,\n"
 "    you would specify \"Version ver\\_%c\".\n"
 msgstr ""
+"    Na przykład, jeśli aplikacja ma zawsze tag \"2.7.2\" odpowiadający\n"
+"    wersji 2.7.2, wystarczy podać \"Version %v\". Jeśli aplikacja ma\n"
+"    zawsze tag \"ver\\_1234\" dla wersji z kodem wersji 1234,\n"
+"    należy podać \"Version ver\\_%c\".\n"
 
 #. type: Plain text
 #: build/_docs/md/Build_Metadata_Reference.md
@@ -2444,138 +2477,142 @@ msgid ""
 "    Continuing the first example above, you would specify that as\n"
 "    \"Version +-fdroid %v\" - \"-fdroid\" is the suffix.\n"
 msgstr ""
+"    Dodatkowo na tym etapie można dodać przyrostek nazwy wersji,\n"
+"    aby odróżnić kompilację F-Droid od oryginału. Kontynuując pierwszy\n"
+"    przykład powyżej, należy określić, że jako \"Version +-fdroid %v\" - \"-fdroid\"\n"
+"    jest przyrostkiem.\n"
 
 #. type: Title ###
 #: build/_docs/md/Build_Metadata_Reference.md
 #, no-wrap
 msgid "7.34 Current Version<a name=\"Current-Version\"></a>"
-msgstr ""
+msgstr "7.34 Aktualna Wersja<a name=\"Current-Version\"></a>"
 
 #. type: Plain text
 #: build/_docs/md/Build_Metadata_Reference.md
 msgid "The [name of the version](https://developer.android.com/guide/topics/manifest/manifest-element.html#vname) that is the recommended release. There may be newer versions of the application than this (e.g. unstable versions), and there will almost certainly be older ones. This should be the one that is recommended for general use. In the event that there is no source code for the current version, or that non-free libraries are being used, this would ideally be the latest version that is still free, though it may still be expedient to retain the automatic update check — see No Source Since."
-msgstr ""
+msgstr "[Nazwa wersji](https://developer.android.com/guide/topics/manifest/manifest-element.html#vname), która jest zalecaną wersją. Mogą istnieć nowsze wersje aplikacji niż ta (na przykład wersje niestabilne) i prawie na pewno będą starsze. To powinno być zalecane do ogólnego użytku. W przypadku, gdy nie ma kodu źródłowego dla bieżącej wersji lub że używane są niewolne biblioteki, najlepiej byłoby, gdyby była to najnowsza wersja, która jest nadal bezpłatna, chociaż może być wskazane zachowanie automatycznego sprawdzania aktualizacji - Zobacz Brak Kodu Źródłowego (ang. No Source Since)."
 
 #. type: Plain text
 #: build/_docs/md/Build_Metadata_Reference.md
 msgid "This field is normally automatically updated - see Update Check Mode."
-msgstr ""
+msgstr "To pole jest zwykle automatycznie aktualizowane - patrz Aktualizacja trybu sprawdzania."
 
 #. type: Plain text
 #: build/_docs/md/Build_Metadata_Reference.md
 #, no-wrap
 msgid "This is converted to (`<marketversion>`) in the XML file (_index.xml_).\n"
-msgstr ""
+msgstr "To jest konwertowane na (`<marketversion>`) do pliku XML (_index.xml_).\n"
 
 #. type: Title ###
 #: build/_docs/md/Build_Metadata_Reference.md
 #, no-wrap
 msgid "7.35 Current Version Code<a name=\"Current-Version-Code\"></a>"
-msgstr ""
+msgstr "7.35 Aktualny Kod Wersji<a name=\"Current-Version-Code\"></a>"
 
 #. type: Plain text
 #: build/_docs/md/Build_Metadata_Reference.md
 msgid "The [version code](https://developer.android.com/guide/topics/manifest/manifest-element.html#vcode) corresponding to the [Current Version](#Current-Version) field. Both these fields must be correct and matching although it’s the current version code that’s used by Android to determine version order and by F-Droid client to determine which version should be recommended."
-msgstr ""
+msgstr "[Kod wersji(https://developer.android.com/guide/topics/manifest/manifest-element.html#vcode) odpowiadający polu [Aktualna wersja](#Current-Version). Oba te pola muszą być poprawne i pasujące, chociaż jest to obecny kod wersji, który jest używany przez Androida do ustalania kolejności wersji i przez klienta F-Droid, aby określić, która wersja powinna być zalecana."
 
 #. type: Plain text
 #: build/_docs/md/Build_Metadata_Reference.md
 msgid "This field is normally automatically updated - see [Update Check Mode](#Update-Check-Mode)."
-msgstr ""
+msgstr "To pole jest zwykle automatycznie aktualizowane - patrz [Tryb sprawdzania aktualizacji](#Update-Check-Mode)."
 
 #. type: Plain text
 #: build/_docs/md/Build_Metadata_Reference.md
 msgid "If not set or set to `0`, clients will recommend the highest version they can, as if the `Current Version Code` was infinite."
-msgstr ""
+msgstr "Jeśli nie zostanie ustawione lub ustawione na '0', klienci zalecą najwyższą możliwą wersję, tak jakby 'Aktualny kod wersji' był nieskończony."
 
 #. type: Plain text
 #: build/_docs/md/Build_Metadata_Reference.md
 #, no-wrap
 msgid "This is converted to (`<marketvercode>`) in the XML file (_index.xml_).\n"
-msgstr ""
+msgstr "To jest konwertowane na (`<marketvercode>`) do pliku XML (_index.xml_).\n"
 
 #. type: Title ###
 #: build/_docs/md/Build_Metadata_Reference.md
 #, no-wrap
 msgid "7.36 No Source Since<a name=\"No-Source-Since\"></a>"
-msgstr ""
+msgstr "7.36 Brak Kodu Źródłowego (ang. No Source Since)<a name=\"No-Source-Since\"></a>"
 
 #. type: Plain text
 #: build/_docs/md/Build_Metadata_Reference.md
 msgid "In case we are missing the source code for the Current Version reported by Upstream, or that non-free elements have been introduced, this defines the first version that began to miss source code. Apps that are missing source code for just one or a few versions, but provide source code for newer ones are not to be considered here - this field is intended to illustrate which apps do not currently distribute source code, and since when have they been doing so."
-msgstr ""
+msgstr "W przypadku, gdy brakuje kodu źródłowego dla bieżącej wersji zgłoszonej przez Upstream, lub że wprowadzono niewolne elementy, definiuje to pierwszą wersję, która zaczęła omijać kod źródłowy. Aplikacje, które nie mają kodu źródłowego dla jednej lub kilku wersji, ale dostarczają kod źródłowy dla nowszych, nie są tutaj uwzględniane - to pole ma na celu zilustrowanie, które aplikacje obecnie nie rozpowszechniają kodu źródłowego, i od kiedy to robią."
 
 #. type: Title #
 #: build/_docs/md/Build_Server_Setup.md
 #, no-wrap
 msgid "Build Server Setup"
-msgstr ""
+msgstr "Tworzenie konfiguracji serwera"
 
 #. type: Plain text
 #: build/_docs/md/Build_Server_Setup.md
 msgid "The F-Droid build server isolates the builds for each package within a clean, isolated and secure throwaway virtual machine environment. Building thousands of apps, especially with automated and/or unattended processes, could be considered a dangerous pastime from a security perspective. This is even more the case when the products of the build are also distributed widely and in a semi-automated (\"you have updates available\") fashion."
-msgstr ""
+msgstr "Serwer budowania F-Droid izoluje kompilacje dla każdego pakietu w czystym, izolowanym i bezpiecznym środowisku wirtualnej maszyny wyrzucanej. Budowanie tysięcy aplikacji, szczególnie zautomatyzowanych i/lub nienadzorowanych, może być niebezpieczne z perspektywy bezpieczeństwa. Dzieje się tak nawet wtedy, gdy produkty z kompilacji są również szeroko dystrybuowane i w sposób półautomatyczny (\"masz dostępne aktualizacje\")."
 
 #. type: Plain text
 #: build/_docs/md/Build_Server_Setup.md
 msgid "Assume that an upstream source repository is compromised. A small selection of things that an attacker could do in such a situation:"
-msgstr ""
+msgstr "Załóżmy, że zagrożone jest repozytorium źródłowe. Mały wybór rzeczy, które atakujący mógłby zrobić w takiej sytuacji:"
 
 #. type: Bullet: '1.  '
 #: build/_docs/md/Build_Server_Setup.md
 msgid "Use custom build steps to execute virtually anything as the user doing the build."
-msgstr ""
+msgstr "Użyj niestandardowych kroków kompilacji, aby wykonać praktycznie wszystko, co użytkownik robiący kompilację."
 
 #. type: Bullet: '2.  '
 #: build/_docs/md/Build_Server_Setup.md
 msgid "Access the keystore."
-msgstr ""
+msgstr "Uzyskaj dostęp do magazynu kluczy."
 
 #. type: Bullet: '3.  '
 #: build/_docs/md/Build_Server_Setup.md
 msgid "Modify the built APK files or source tarballs for other applications in the repository."
-msgstr ""
+msgstr "Zmodyfikuj utworzone pliki APK lub źródłowe tarballs dla innych aplikacji w repozytorium."
 
 #. type: Bullet: '4.  '
 #: build/_docs/md/Build_Server_Setup.md
 msgid "Modify the metadata (which includes build scripts, which again, also includes the ability to execute anything) for other applications in the repository."
-msgstr ""
+msgstr "Zmodyfikuj metadane (które zawierają skrypty kompilacji, które również zawierają możliwość wykonania czegokolwiek) dla innych aplikacji w repozytorium."
 
 #. type: Plain text
 #: build/_docs/md/Build_Server_Setup.md
 msgid "Through complete isolation, the repurcussions are at least limited to the application in question. Not only is the build environment fresh for each build, and thrown away afterwards, but it is also totally isolated from the signing environment."
-msgstr ""
+msgstr "Przez całkowitą izolację, repurcussions są co najmniej ograniczone do aplikacji, o których mowa. Nie tylko środowisko kompilacji jest świeże dla każdej kompilacji, a następnie wyrzucane, ale jest również całkowicie odizolowane od środowiska podpisywania."
 
 #. type: Plain text
 #: build/_docs/md/Build_Server_Setup.md
 msgid "Aside from security issues, there are some applications which have strange requirements such as old versions of the NDK. It would be impractical (or at least extremely messy) to start modifying and restoring the SDK on a multi-purpose system, but within the confines of a throwaway single-use virtual machine, anything is possible."
-msgstr ""
+msgstr "Oprócz problemów związanych z bezpieczeństwem, istnieją pewne aplikacje, które mają dziwne wymagania, takie jak stare wersje NDK. Byłoby niepraktyczne (lub przynajmniej bardzo niechlujne), aby rozpocząć modyfikowanie i przywracanie zestawu SDK w systemie wielozadaniowym, ale w ramach jednorazowej wirtualnej maszyny jednorazowej wszystko jest możliwe."
 
 #. type: Plain text
 #: build/_docs/md/Build_Server_Setup.md
 msgid "All this is in addition to the obvious advantage of having a standardised and completely reproducible environment in which builds are made. Additionally, it allows for specialised custom build environments for particular applications."
-msgstr ""
+msgstr "Wszystko to oprócz oczywistej korzyści posiadania znormalizowanego i całkowicie odtwarzalnego środowiska, w którym tworzone są kompilacje. Dodatkowo pozwala na wyspecjalizowane niestandardowe środowiska kompilacji dla konkretnych aplikacji."
 
 #. type: Title ##
 #: build/_docs/md/Build_Server_Setup.md
 #, no-wrap
 msgid "Overview of the setup"
-msgstr ""
+msgstr "Omówienie konfiguracji"
 
 #. type: Plain text
 #: build/_docs/md/Build_Server_Setup.md
 msgid "This is how to set up a working build server, starting from a completely clean minimal Debian/stable install.  This HOWTO assumes you have already [setup _fdroidserver_](../Installing_the_Server_and_Repo_Tools). Running the _fdroidserver_ tools directly out of [git](https://gitlab.com/fdroid/fdroidserver)  (e.g. `~/fdroidserver/fdroid build org.adaway`), will likely be the easiest for now since the build server setup scripts are not really ready for proper packaging. Also, it will likely only work on Debian, Ubuntu and other Debian-derivatives since F-Droid only uses Debian in its infrastructure (we welcome porting contributions!)."
-msgstr ""
+msgstr "W ten sposób można skonfigurować działający serwer kompilacji, zaczynając od całkowicie czystej, minimalnej instalacji Debiana/stabilnej. W tym HOWTO założono, że masz już [setup _fdroidserver_](../Installing_the_Server_and_Repo_Tools). Uruchamianie narzędzi _fdroidserver_ bezpośrednio z [git](https://gitlab.com/fdroid/fdroidserver)  (np. `~/fdroidserver/fdroid build org.adaway`), będzie najprawdopodobniej na razie najłatwiejsze od czasu instalacji serwera kompilacji skrypty nie są tak naprawdę gotowe do właściwego pakowania. Poza tym prawdopodobnie będzie działał tylko na Debianie, Ubuntu i innych pochodnych Debiana, ponieważ F-Droid używa tylko Debiana w swojej infrastrukturze (mile widziane składki (ang. contributions)!)."
 
 #. type: Plain text
 #: build/_docs/md/Build_Server_Setup.md
 msgid "The base server needs to be at minimum Debian/jessie, or there will need to be some heavy tweaking. If you run Ubuntu or derivative distro, you can get any packages missing from your version, like _vagrant-cachier_, from this PPA: <https://launchpad.net/~fdroid/+archive/ubuntu/buildserver/>"
-msgstr ""
+msgstr "Podstawowy serwer musi być w minimalnym systemie Debian/jessie, lub będzie musiał zostać wprowadzony jakiś poważny krok. Jeśli używasz Ubuntu lub pochodnej dystrybucji, możesz uzyskać brakujące pakiety z twojej wersji, takie jak_vagrant-cachier_, from this PPA: <https://launchpad.net/~fdroid/+archive/ubuntu/buildserver/>"
 
 #. type: Plain text
 #: build/_docs/md/Build_Server_Setup.md
 msgid "First, install the necessary packages and create a new user to run the whole process here, e.g. _fdroid_. These are only the packages required by all builds, you might need to install additional packages to build apps, for example, _mercurial_ or _subversion_. Once the packages are installed and the _fdroid_ user is created, nothing else in this process should be run using root or _sudo_."
-msgstr ""
+msgstr "Najpierw zainstaluj niezbędne pakiety i utwórz nowego użytkownika, aby uruchomić tutaj cały proces, np. _fdroid_. Są to tylko pakiety wymagane przez wszystkie kompilacje, może być konieczne zainstalowanie dodatkowych pakietów do tworzenia aplikacji, na przykład _curcurial_ lub _subversion_. Po zainstalowaniu pakietów i utworzeniu użytkownika _fdroid_, nic innego w tym procesie nie powinno być uruchamiane przy użyciu root'a lub _sudo_."
 
 #. type: Plain text
 #: build/_docs/md/Build_Server_Setup.md
@@ -2590,11 +2627,19 @@ msgid ""
 "root:~# su fdroid\n"
 "```\n"
 msgstr ""
+"```bash\n"
+"root:~# apt-get install vagrant virtualbox git python3-certifi \\\n"
+"        python3-libvirt python3-requestbuilder python3-yaml \\\n"
+"        python3-clint python3-vagrant python3-paramiko python3-pyasn1 \\\n"
+"        python3-pyasn1-modules\n"
+"root:~# adduser --disabled-password fdroid\n"
+"root:~# su fdroid\n"
+"```\n"
 
 #. type: Plain text
 #: build/_docs/md/Build_Server_Setup.md
 msgid "Clone source code and configure the buildserver settings, running as _fdroid_ user:"
-msgstr ""
+msgstr "Sklonuj kod źródłowy i skonfiguruj ustawienia buildserver, działając jako _fdroid_ user:"
 
 #. type: Plain text
 #: build/_docs/md/Build_Server_Setup.md
@@ -2604,12 +2649,12 @@ msgstr ""
 #. type: Plain text
 #: build/_docs/md/Build_Server_Setup.md
 msgid "You also have to make sure your `ANDROID_HOME` environment variable is [set up](../Installing_the_Server_and_Repo_Tools#building-apps) correctly."
-msgstr ""
+msgstr "Musisz również upewnić się, że twoja zmienna środowiskowa `ANDROID_HOME` jest poprawnie skonfigurowana [set up](../Installing_the_Server_and_Repo_Tools#building-apps)."
 
 #. type: Plain text
 #: build/_docs/md/Build_Server_Setup.md
 msgid "For your convenience you optionally may add the fdroid executable to your path:"
-msgstr ""
+msgstr "Dla Twojej wygody opcjonalnie możesz dodać plik wykonywalny fdroid do swojej ścieżki:"
 
 #. type: Plain text
 #: build/_docs/md/Build_Server_Setup.md
@@ -2619,74 +2664,77 @@ msgid ""
 "fdroid:~$ echo \"PATH=\\$PATH:$HOME/fdroidserver\" >> ~/.bashrc\n"
 "```\n"
 msgstr ""
+"```bash\n"
+"fdroid:~$ echo \"PATH=\\$PATH:$HOME/fdroidserver\" >> ~/.bashrc\n"
+"```\n"
 
 #. type: Plain text
 #: build/_docs/md/Build_Server_Setup.md
 msgid "Create the base buildserver image... (downloading the basebox and all the sdk platforms can take long time)."
-msgstr ""
+msgstr "Utwórz podstawowy obraz instalatora build... (pobieranie basebox i wszystkich platform sdk może zająć dużo czasu)."
 
 #. type: Plain text
 #: build/_docs/md/Build_Server_Setup.md
 msgid "```bash fdroid:~$ cd fdroidserver fdroid:~/fdroidserver$ ./makebuildserver ```"
-msgstr ""
+msgstr "```bash fdroid:~$ cd fdroidserver fdroid:~/fdroidserver$ ./makebuildserver ```"
 
 #. type: Plain text
 #: build/_docs/md/Build_Server_Setup.md
 msgid "Get all of the app build metadata from the fdroiddata repo..."
-msgstr ""
+msgstr "Pobierz wszystkie metadane kompilacji aplikacji z repozytorium fdroiddata..."
 
 #. type: Plain text
 #: build/_docs/md/Build_Server_Setup.md
 msgid "```bash fdroid:~/fdroidserver$ cd ~ fdroid:~$ git clone https://gitlab.com/fdroid/fdroiddata.git fdroid:~$ cp fdroidserver/examples/config.py fdroiddata/ fdroid:~$ sed -i \"s@^[# ]*build_server_always.*@build_server_always = True@\" fdroiddata/config.py ```"
-msgstr ""
+msgstr "```bash fdroid:~/fdroidserver$ cd ~ fdroid:~$ git clone https://gitlab.com/fdroid/fdroiddata.git fdroid:~$ cp fdroidserver/examples/config.py fdroiddata/ fdroid:~$ sed -i \"s@^[# ]*build_server_always.*@build_server_always = True@\" fdroiddata/config.py ```"
 
 #. type: Title ##
 #: build/_docs/md/Build_Server_Setup.md
 #, no-wrap
 msgid "Setting up a build server"
-msgstr ""
+msgstr "Konfigurowanie serwera kompilacji"
 
 #. type: Plain text
 #: build/_docs/md/Build_Server_Setup.md
 msgid "In addition to the basic setup previously described, you will also need a Vagrant-compatible Debian/jessie base box called ’jessie64’."
-msgstr ""
+msgstr "Oprócz podstawowej konfiguracji opisanej poprzednio, będziesz potrzebował także kompatybilnego z Vagrant bazowego systemu Debian/jessie o nazwie 'jessie64'."
 
 #. type: Plain text
 #: build/_docs/md/Build_Server_Setup.md
 msgid "You can use a different version or distro for the base box, so long as you don’t expect any help making it work. One thing to be aware of is that working copies of source trees are moved from the host to the guest, so for example, having subversion v1.6 on the host and v1.7 on the guest would fail."
-msgstr ""
+msgstr "Możesz użyć innej wersji lub dystrybucji dla skrzynki bazowej, o ile nie spodziewasz się pomocy w jej działaniu. Należy pamiętać, że działające kopie drzew źródłowych są przenoszone z hosta do gościa, więc na przykład wywołanie błędu w wersji subversion v1.6 na hoście i wersji v 1.7 na kliencie zakończyłoby się niepowodzeniem."
 
 #. type: Title ###
 #: build/_docs/md/Build_Server_Setup.md
 #, no-wrap
 msgid "Creating the Debian base box"
-msgstr ""
+msgstr "Tworzenie podstawowego okna Debiana"
 
 #. type: Plain text
 #: build/_docs/md/Build_Server_Setup.md
 msgid "We have created a script for easily bootstrapping vagrant base boxes from scratch."
-msgstr ""
+msgstr "Stworzyliśmy skrypt do łatwego ładowania początkowych pudełek od podstaw."
 
 #. type: Plain text
 #: build/_docs/md/Build_Server_Setup.md
 msgid "Here's how you can get started building our basebox quickly:"
-msgstr ""
+msgstr "Oto, jak szybko możesz zacząć budować nasze basebox:"
 
 #. type: Plain text
 #: build/_docs/md/Build_Server_Setup.md
 msgid "```bash fdroid:~$ git clone https://gitlab.com/fdroid/basebox.git fdroid:~$ cd basebox fdroid:~/basebox$ sudo ./makebuildserver_basebox.py --provider virtualbox fdroid:~/basebox$ vagrant box add --force jessie64 fdroid-jessie64-virtualbox.box fdroid:~/basebox$ rm fdroid-jessie64-virtualbox.box ```"
-msgstr ""
+msgstr "```bash fdroid:~$ git clone https://gitlab.com/fdroid/basebox.git fdroid:~$ cd basebox fdroid:~/basebox$ sudo ./makebuildserver_basebox.py --provider virtualbox fdroid:~/basebox$ vagrant box add --force jessie64 fdroid-jessie64-virtualbox.box fdroid:~/basebox$ rm fdroid-jessie64-virtualbox.box ```"
 
 #. type: Plain text
 #: build/_docs/md/Build_Server_Setup.md
 msgid "Additional documentation is available in the projects [README file](https://gitlab.com/fdroid/basebox#makebuildserver_baseboxpy)."
-msgstr ""
+msgstr "Dodatkowa dokumentacja jest dostępna w projektach [plik README](https://gitlab.com/fdroid/basebox#makebuildserver_baseboxpy)."
 
 #. type: Title ###
 #: build/_docs/md/Build_Server_Setup.md
 #, no-wrap
 msgid "Creating the F-Droid base box"
-msgstr ""
+msgstr "Tworzenie skrzynki bazowej F-Droid"
 
 #. type: Plain text
 #: build/_docs/md/Build_Server_Setup.md
@@ -2696,12 +2744,12 @@ msgstr ""
 #. type: Plain text
 #: build/_docs/md/Build_Server_Setup.md
 msgid "```bash ./makebuildserver ```"
-msgstr ""
+msgstr "```bash ./makebuildserver ```"
 
 #. type: Plain text
 #: build/_docs/md/Build_Server_Setup.md
 msgid "This will take a long time, and use a lot of bandwidth - most of it spent installing the necessary parts of the Android SDK for all the various platforms. Luckily you only need to do it occasionally. Once you have a working build server image, if the recipes change (e.g. when packages need to be added) you can just run that script again and the existing one will be updated in place."
-msgstr ""
+msgstr "To zajmie dużo czasu i będzie wymagać dużej przepustowości - większość czasu zajmuje instalowanie niezbędnych części zestawu SDK Androida dla wszystkich różnych platform. Na szczęście musisz to robić tylko od czasu do czasu. Po uzyskaniu działającego obrazu serwera konfiguracji, jeśli receptury ulegną zmianie (np. gdy konieczne będzie dodanie pakietów), możesz ponownie uruchomić ten skrypt, a istniejący zostanie zaktualizowany na miejscu."
 
 #. type: Plain text
 #: build/_docs/md/Build_Server_Setup.md
@@ -2716,7 +2764,7 @@ msgstr ""
 #. type: Plain text
 #: build/_docs/md/Build_Server_Setup.md
 msgid "If you have already built a buildserver it is also possible to get this files directly from the buildserver:"
-msgstr ""
+msgstr "Jeśli już zbudowałeś serwer buildserver, możesz pobrać te pliki bezpośrednio z buildserver:"
 
 #. type: Plain text
 #: build/_docs/md/Build_Server_Setup.md
@@ -2727,6 +2775,10 @@ msgid ""
 "vagrant ssh -- -C 'cat ~/android-sdk/platforms/android-19.tar.gz' > /path/to/fdroidserver/buildserver/cache/platforms/android19.tar.gz\n"
 "```\n"
 msgstr ""
+"```bash\n"
+"vagrant ssh -- -C 'tar -C ~/android-sdk/platforms czf android-19.tar.gz android-19'\n"
+"vagrant ssh -- -C 'cat ~/android-sdk/platforms/android-19.tar.gz' > /path/to/fdroidserver/buildserver/cache/platforms/android19.tar.gz\n"
+"```\n"
 
 #. type: Plain text
 #: build/_docs/md/Build_Server_Setup.md
@@ -2742,7 +2794,7 @@ msgstr ""
 #: build/_docs/md/Build_Server_Setup.md
 #, no-wrap
 msgid "Running builds"
-msgstr ""
+msgstr "ruchamianie kompilacji"
 
 #. type: Plain text
 #: build/_docs/md/Build_Server_Setup.md
@@ -5955,7 +6007,7 @@ msgstr ""
 #. type: Plain text
 #: build/_docs/md/Maintaining_the_Forum.md
 msgid "```bash docker run hello-world ```"
-msgstr ""
+msgstr "```bash docker uruchamia hello-world ```"
 
 #. type: Title ####
 #: build/_docs/md/Maintaining_the_Forum.md
@@ -6326,7 +6378,7 @@ msgstr ""
 #: build/_docs/md/Release_Channels_and_Signing_Keys.md
 #, no-wrap
 msgid "Privileged Extension"
-msgstr ""
+msgstr "Uprzywilejowany dodatek"
 
 #. type: Plain text
 #: build/_docs/md/Release_Channels_and_Signing_Keys.md

@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
 "POT-Creation-Date: 2018-09-05 14:12+0200\n"
-"PO-Revision-Date: 2018-09-07 09:49+0000\n"
+"PO-Revision-Date: 2018-09-10 20:17+0000\n"
 "Last-Translator: ssantos <ssantos@web.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/f-droid/website-docs/de/>\n"
 "Language: de\n"
@@ -7357,9 +7357,8 @@ msgstr "Quellen"
 
 #. type: Plain text
 #: build/_docs/md/Reproducible_Builds.md
-#, fuzzy
 msgid "- <https://gitlab.com/fdroid/fdroidserver/commit/8568805866dadbdcc6c07449ca6b84b80d0ab03c> - [Verification Server](../Verification_Server)  - <https://verification.f-droid.org> - <https://reproducible-builds.org> - <https://wiki.debian.org/ReproducibleBuilds> - <https://gitian.org/> - [Google Issue #70292819 platform-27_r01.zip was overwritten with a new update](https://issuetracker.google.com/issues/70292819) (_Google login and Javascript required_)  - [Google Issue #37132313 platformBuildVersionName makes builds difficult to reproduce, creates unneeded diffs](https://issuetracker.google.com/issues/37132313) (_Google login and Javascript required_)  - [Google Issue #110237303 resources.arsc built with non-determism, prevents reproducible APK builds](https://issuetracker.google.com/issues/110237303) (_Google login and Javascript required_)"
-msgstr "- <https://gitlab.com/fdroid/fdroidserver/commit/8568805866dadbdcc6c07449ca6b84b80d0ab03c> - [Verifikationsserver](../Verification_Server)  - <https://verification.f-droid.org> - <https://reproducible-builds.org> - <https://wiki.debian.org/ReproducibleBuilds> - <https://gitian.org/> - <https://issuetracker.google.com/issues/70292819> (_Google-Konto und Javascript erforderlich_)  - <https://issuetracker.google.com/issues/37132313> (_Google-Konto und Javascript erforderlich_)  - <https://issuetracker.google.com/issues/110237303> (_Google-Konto und Javascript erforderlich_)"
+msgstr "- <https://gitlab.com/fdroid/fdroidserver/commit/8568805866dadbdcc6c07449ca6b84b80d0ab03c> - [Verifikationsserver](../Verification_Server) - <https://verification.f-droid.org> - <https://reproducible-builds.org> - <https://wiki.debian.org/ReproducibleBuilds> - <https://gitian.org/> - [Google Problem #70292819 platform-27_r01.zip wurde mit einem neuen Update überschrieben](https://issuetracker.google.com/issues/70292819) (_Google Anmeldung and Javascript nötig_) - [Google Issue #37132313 platformBuildVersionName macht Builds schwierig wiederholbar, erzeugt nicht benötigte diffs](https://issuetracker.google.com/issues/37132313) (_Google Anmeldung and Javascript nötig_) - [Google Problem #110237303 resources.arsc non-deterministisch erzegt,verhindert nicht wiederholbare APK Builds](https://issuetracker.google.com/issues/110237303) (_Google Anmeldung and Javascript nötig_)"
 
 #. type: Title #
 #: build/_docs/md/Security_Model.md
@@ -7545,6 +7544,16 @@ msgid ""
 "[_bleach_](https://github.com/mozilla/bleach) and has a good\n"
 "[HTTP Content Security Policy](https://observatory.mozilla.org/analyze.html?host=repomaker.grobox.de).\n"
 msgstr ""
+"* der Android-Client führt niemals CSS, Javascript oder gefährliches HTML Tags aus,\n"
+"da es HTML anzeigt via\n"
+"[`android.text.Html.fromHtml()`]](https://gitlab.com/fdroid/fdroidclient/blob/1.3.1/app/src/main/java/org/fdroid/fdroid/views/AppDetailsRecyclerViewAdapter.java#L441)\n"
+"mit deaktiviertem Laden von Bilddern\n"
+"* die _f-droid.org_ Webseite schützt vor bösartiger und\n"
+"CSS/HTML/Javascript-Injektion mit einer\n"
+"[strikten HTTP Inhaltssicherheitsrichtlinie](https://observatory.mozilla.org/analyze.html?host=f-droid.org).\n"
+"* Repomaker filtert die Texte durch Mozillas\n"
+"[_Bleiche_](https://github.com/mozilla/bleach) und hat eine gute\n"
+"[HTTP Inhaltssicherheitsrichtlinie](https://observatory.mozilla.org/analyze.html?host=repomaker.grobox.de).\n"
 
 #. type: Title ##
 #: build/_docs/md/Security_Model.md
