@@ -82,8 +82,6 @@ In total, **61** apps were updated this week. Here are the highlights:
 
   On the heels of that comes the 0.14.1 hotfix, which fixes NewPipe after a change on YouTube's side basically [broke everything](https://forum.f-droid.org/t/help-fail-newspipe-why/3800). Also includes a fix for long links in video descriptions.
 
-* **[Nextcloud Talk](https://f-droid.org/app/com.nextcloud.talk2)** 3.0.0 is out. (Or 4.0. Who even knows anymore?) Now with video verification, ability to share files in a chat, easier chat handling and logging, and just generally a better experience. Read the [official blog post](https://nextcloud.com/blog/nextcloud-talk-4.0-is-out/) for the juicy details.
-
 * We now have **[OsmAnd~](https://f-droid.org/app/net.osmand.plus)** 3.2 beta in the repo which is supposed to fix Android 8 rendering performance issues, and fixes a crash on startup that occurred with non-latin maps. This update won't be automatically suggested to you unless you have "Unstable updates" enabled in the F-Droid app, but you can expand the "Versions" tab and install it manually. Note that this is a beta version: proceed at your own risk.
 
 * **[QKSMS](https://f-droid.org/app/com.moez.QKSMS)**, a material design replacement for the stock AOSP messaging app, was updated from 3.4.5 to 3.5.3, with initial SMS backup and restore, direct share support, smoother scrolling for MMS messages,  and _many_ bug fixes.
