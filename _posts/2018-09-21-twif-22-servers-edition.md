@@ -8,18 +8,18 @@ featured: '<em style="padding: 0.15em 0.5em 0.10em; margin-right: 0.5ex; box-sha
 
 This Week In F-Droid 22, Week 38, 2018 <a href="{{ site.baseurl }}/feed.xml"><img src="{{ site.baseurl }}/assets/Feed-icon-16x16.png" alt="Feed"></a>
 
-In this edition: Buildserver ready to upgrade to Stretch, SET antifeature, hosted basebox images, pretty fdroiddata graphs, Rocket.Chat finally lands, and 68 updated apps including Mastalab.
+In this edition: Buildserver ready to upgrade to Stretch, SET Anti-Feature bug, hosted basebox images, pretty fdroiddata graphs, Rocket.Chat finally lands, and 68 updated apps including Mastalab.
 <!--more-->
 
 **[F-Droid](https://f-droid.org/)** is a [repository](https://f-droid.org/packages/) of verified [free and open source](https://en.wikipedia.org/wiki/Free_and_open-source_software) Android apps, a **[client](https://f-droid.org/app/org.fdroid.fdroid)** to access it, as well as a whole "app store kit", providing all the tools needed to set up and run an app store. It is a community-run free software project developed by a wide range of contributors. This is their story this past week.
 
 #### Buildserver upgrade to _Debian Stretch_ nearing completion
 
-**@uniq**'s big buildserver update to Stretch has been merged, and has been successfully validated on [jenkins.debian.net](https://jenkins.debian.net/userContent/about.html). **[@CiaranG](https://ciarang.com)** has indicated that he is ready to update, so this will go live on our production buildserver very soon! This is a _huge_ upgrade that we've been working towards for a long time. Once it's in, it should be easier for us to add apps (less complicated recipes), and allow us to include more apps that we were previously unable to build.
+**[@uniqx](https://forum.f-droid.org/u/uniqx)**'s big buildserver update to Stretch has been merged, and has been successfully validated on [jenkins.debian.net](https://jenkins.debian.net/job/reproducible_fdroid_build_apps/). **[@CiaranG](https://ciarang.com)** has indicated that he is ready to update, so this will go live on our production buildserver very soon! This is a _huge_ upgrade that we've been working towards for a long time. Once it's in, it should be easier for us to add apps (less complicated recipes), and allow us to include more apps that we were previously unable to build.
 
-#### SET antifeature bug
+#### SET Anti-Feature bug
 
-We've had many reports that random apps started sprouting a mysterious "SET" antifeature, sometimes even more than one! We are well aware of this bug now, so thank you for your all reports. ;) It should be fixed soon. You can read about the gory details in [issue 565](https://gitlab.com/fdroid/fdroidserver/issues/565).
+We've had many reports that random apps started sprouting a mysterious "SET" Anti-Feature, sometimes even more than one! It is a mistake and should not be there.  We are well aware of this bug now, so thank you for your all reports. ;) The fix is tested and just waiting to be deployed. You can read about the gory details in [issue 565](https://gitlab.com/fdroid/fdroidserver/issues/565).
 
 #### Basebox images hosted by Vagrant
 
