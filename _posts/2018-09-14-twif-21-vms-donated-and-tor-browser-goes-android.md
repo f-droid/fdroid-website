@@ -36,7 +36,7 @@ We have a whopping 28 new apps for you to try this week!
 * **[LTE Cleaner (FOSS)](https://f-droid.org/app/theredspy15.ltecleanerfoss)**: System cleaner
 * **[Light Android Launcher](https://f-droid.org/app/com.github.postapczuk.lalauncher)**: Lightweight app launcher
 * **[Mars Live Wallpaper](https://f-droid.org/app/org.covolunablu.marswallpaper)**: Rotating red planet
-* {{ page.featured }} **[miniVector](https://f-droid.org/app/com.lavadip.miniVector)**: is a minified version of **[Riot.im](https://f-droid.org/app/im.vector.alpha)**, which results in a smaller and lighter app which requires less scary permissions. It achieves this by removing Jitsi conferencing support (you can still make direct voice and video calls) and some smaller things.
+* {{ page.featured }} **[miniVector](https://f-droid.org/app/com.lavadip.miniVector)**: is a minified version of **[Riot.im](https://f-droid.org/app/im.vector.alpha)**, which results in a smaller and lighter app which requires less scary permissions. It achieves this by removing Jitsi conferencing support and some smaller things. **Edit:** Note that voice and video calls are not supported in this version. Support _may_ be added back in a future version.
 * **[NotificationLog](https://f-droid.org/app/de.jl.notificationlog)**: Log system notifications locally
 * **[PSLab](https://f-droid.org/app/io.pslab)**: Pocket Science Lab Android interface for PSLab hardware
 * **[Pausing Healthily](https://f-droid.org/app/org.secuso.privacyfriendlypausinghealthily)**: Break reminder with helpful exercises
