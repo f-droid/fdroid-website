@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
 "POT-Creation-Date: 2018-09-12 15:38+0200\n"
-"PO-Revision-Date: 2018-09-06 16:22+0000\n"
+"PO-Revision-Date: 2018-09-25 07:16+0000\n"
 "Last-Translator: mesnevi <shams@airpost.net>\n"
 "Language-Team: Russian <https://hosted.weblate.org/projects/f-droid/website-docs/ru/>\n"
 "Language: ru\n"
@@ -27,7 +27,7 @@ msgstr "Всё, что нужно знать об описаниях, иллюс
 #. type: Plain text
 #: build/_docs/md/All_About_Descriptions_Graphics_and_Screenshots.md
 msgid "Each app can have complete app store content, including localized descriptions, feature graphics, and screenshots (as of v0.103 of the F-Droid client app and v0.8 of _fdroidserver_).  This is possible both when apps are added via [build metadata](../Build_Metadata_Reference) as well as when including pre-built files in a simple repository.  There are three paths to including app store content for apps (in order of preference):"
-msgstr "У каждого приложения есть уникальное содержимое, включающее переведённое на разные языки описание, изобрадения, иллюстрирующее его возможности, и скриншоты (по крайней мере, так дела обстоят в клиентском приложении F-Droid верии 0.103 и сервере _fdroidserver_ версии 0.8).  Это справедливо как для приложений, добавленных с помощью [мета-данных сборки](../Build_Metadata_Reference), так и для предварительно собранных файлов, размещённых в обычном репозитории. Опубликовать файлы приложения можно несколькими способами (они перечислены в порядке предпочтения):"
+msgstr "У каждого приложения есть уникальное содержимое, включающее переведённое на разные языки описание, изображения, иллюстрирующее его возможности, и скриншоты (по крайней мере, так дела обстоят в клиентском приложении F-Droid верии 0.103 и сервере _fdroidserver_ версии 0.8).  Это справедливо как для приложений, добавленных с помощью [метаданных сборки](../Build_Metadata_Reference), так и для предварительно собранных файлов, размещённых в обычном репозитории. Опубликовать файлы приложения можно несколькими способами (они перечислены в порядке предпочтения):"
 
 #. type: Plain text
 #: build/_docs/md/All_About_Descriptions_Graphics_and_Screenshots.md
@@ -73,11 +73,9 @@ msgstr "В репозитории с исходным кодом приложе�
 #: build/_docs/md/All_About_Descriptions_Graphics_and_Screenshots.md
 msgid "There are two options for including the app store materials in an app's source repository: [fastlane supply](https://github.com/fastlane/fastlane/blob/2.28.7/supply/README.md#images-and-screenshots)  and [Triple-T Gradle Play Publisher](https://github.com/Triple-T/gradle-play-publisher#play-store-metadata).  Both of these are free software tools that integrate into an Android developer's workflow.  Once the files are included in the app's source repo, and those files are included in a tagged release of the app, F-Droid will include all those files."
 msgstr ""
-"Существует два способа включить содержимое стороннего репозитория в этот: [инструменты fastlane](https://github.com/fastlane/fastlane/blob/2.28.7/supply/README.md#images-and-screenshots)  и [Triple-T Gradle Play Publisher](https://github.com/Triple-T/gradle-play-publisher#play-store-metadata).  \n"
-"\n"
-"Оба набора инструментов — свободные, с открытым исходным кодом, поэтому отлично подходят для разработки под Android. \n"
-"\n"
-"Как только файлы добавляют в репозиторий с исходным кодом приложения, они попадают в  очередную сборку, помеченную  специальной меткой, а вслед за этим — в репозиторий F-Droid."
+"Существует два способа включить содержимое стороннего репозитория в этот: [инструменты fastlane](https://github.com/fastlane/fastlane/blob/2.28.7/supply/README.md#images-and-screenshots)  и [Triple-T Gradle Play Publisher](https://github.com/Triple-T/gradle-play-publisher#play-store-metadata).\n"
+"Оба набора инструментов — свободные, с открытым исходным кодом, поэтому отлично подходят для разработки под Android.\n"
+"Как только файлы добавляют в репозиторий с исходным кодом приложения, они попадают в очередную сборку, помеченную специальной меткой, а вслед за этим — в репозиторий F-Droid."
 
 #. type: Plain text
 #: build/_docs/md/All_About_Descriptions_Graphics_and_Screenshots.md
@@ -87,23 +85,23 @@ msgstr "На самом деле, даже необязательно устан
 #. type: Plain text
 #: build/_docs/md/All_About_Descriptions_Graphics_and_Screenshots.md
 msgid "All the localized descriptions and graphics will automatically show up in the F-Droid repo once they are available in the source repo of a release that the repo builds.  For example, if these files are included in a _git_ repo's _master_ branch but not yet in a tagged release, they will not be included."
-msgstr ""
+msgstr "Все переводы описаний и подписей к изображениям автоматически попадают в основной репозиторий F-Droid после того, как их добавили в исходный репозиторий, из кода которого собирают очередную версию. Если изменения есть  в git-ветке _master_, но их нет в git-ветке, предназначенной для очередной сборки, они в эту сборку не попадут."
 
 #. type: Plain text
 #: build/_docs/md/All_About_Descriptions_Graphics_and_Screenshots.md
 msgid "The last important detail is that the texts in the app's metadata file will override all other descriptive texts from _Fastlane_/_Triple-T_. That is specifically [Name](../Build_Metadata_Reference/#Name)/[AutoName](../Build_Metadata_Reference/#AutoName), [Summary](../Build_Metadata_Reference/#Summary), and [Description](../Build_Metadata_Reference/#Description).  Once an app's descriptive texts have been moved into the source repo, then file a [merge request](https://gitlab.com/fdroid/fdroiddata/merge_requests)  or [issue](https://gitlab.com/fdroid/fdroiddata/issues) to remove _Summary_ and _Description_ from the app's metadata file."
-msgstr "Напоследок: обратите внимание, что содержимое файла мета-данных переписывает любые другие тексты описаний из _Fastlane_/_Triple-T_. Это касается [имени](../Build_Metadata_Reference/#Name)/[имени приложения из исходного кода](../Build_Metadata_Reference/#AutoName), [обзора приложения](../Build_Metadata_Reference/#Summary) и [его описания](../Build_Metadata_Reference/#Description).  Как только текст описания появляется в репозитории с исходным кодом, можно [создавать запрос на включение](https://gitlab.com/fdroid/fdroiddata/merge_requests)  или [задачу](https://gitlab.com/fdroid/fdroiddata/issues), чтобы удалить секцию _Summary_ and _Description_ из файла мета-данных приложения."
+msgstr "Напоследок: обратите внимание, что содержимое файла метаданных переписывает любые другие тексты описаний из _Fastlane_/_Triple-T_. Это касается [имени](../Build_Metadata_Reference/#Name)/[имени приложения из исходного кода](../Build_Metadata_Reference/#AutoName), [обзора приложения](../Build_Metadata_Reference/#Summary) и [его описания](../Build_Metadata_Reference/#Description).  Как только текст описания появляется в репозитории с исходным кодом, можно [создавать запрос на включение](https://gitlab.com/fdroid/fdroiddata/merge_requests)  или [задачу](https://gitlab.com/fdroid/fdroiddata/issues), чтобы удалить секцию _Summary_ and _Description_ из файла мета-данных приложения."
 
 #. type: Title ##
 #: build/_docs/md/All_About_Descriptions_Graphics_and_Screenshots.md
 #, no-wrap
 msgid "In the app's build metadata in an _fdroiddata_ collection"
-msgstr ""
+msgstr "В метаданных приложения в репозитории _fdroiddata_"
 
 #. type: Plain text
 #: build/_docs/md/All_About_Descriptions_Graphics_and_Screenshots.md
 msgid "All the app store materials can also be added to any _fdroiddata_ repository of build metadata.  This follows a file layout modeled after [fastlane supply](https://github.com/fastlane/fastlane/blob/2.28.7/supply/README.md#images-and-screenshots), modified to fit into the _fdroiddata_ workflow.  Any files in this layout will be copied into the repo and added to the repo's index file by `fdroid update`."
-msgstr ""
+msgstr "Все необходимые данные из магазина приложений можно добавить в любой репозиторий _fdroiddata_ или в метаданные сборки. Схема расположения файлов такая же, как при работе с [fastlane supply](https://github.com/fastlane/fastlane/blob/2.28.7/supply/README.md#images-and-screenshots), немного изменённая, чтобы встроить её в процесс работы с _fdroiddata_. Команда `fdroid update` в точности скопирует все файлы в репозиторий _fdroiddata_ и проиндексирует их."
 
 #. type: Plain text
 #: build/_docs/md/All_About_Descriptions_Graphics_and_Screenshots.md
@@ -138,11 +136,39 @@ msgid ""
 "                  └── *.png\n"
 "```\n"
 msgstr ""
+"```\n"
+"- <fdroiddata>/\n"
+"  └── metadata/\n"
+"      └── <package-id>/\n"
+"          └── <locale>/\n"
+"              ├── full_description.txt\n"
+"              ├── short_description.txt\n"
+"              ├── title.txt\n"
+"              ├── video.txt\n"
+"              ├── images/\n"
+"              │   ├── featureGraphic.png\n"
+"              │   ├── icon.png\n"
+"              │   ├── promoGraphic.png\n"
+"              │   └── tvBanner.png\n"
+"              ├── changelogs/\n"
+"              │   ├── <version-code>.txt\n"
+"              │   └── <version-code>.txt\n"
+"              ├── phoneScreenshots/\n"
+"              │   └── *.png\n"
+"              ├── sevenInchScreenshots/\n"
+"              │   └── *.png\n"
+"              ├── tenInchScreenshots/\n"
+"              │   └── *.png\n"
+"              ├── tvScreenshots/\n"
+"              │   └── *.png\n"
+"              └── wearScreenshots/\n"
+"                  └── *.png\n"
+"```\n"
 
 #. type: Plain text
 #: build/_docs/md/All_About_Descriptions_Graphics_and_Screenshots.md
 msgid "Example:"
-msgstr ""
+msgstr "Пример:"
 
 #. type: Plain text
 #: build/_docs/md/All_About_Descriptions_Graphics_and_Screenshots.md
@@ -162,17 +188,30 @@ msgid ""
 "* .../ToGoZip/fastlane/metadata/android/en-US/images/phoneScreenshots/....\n"
 "  * images in this folder will be shown below the fdroid-s app description\n"
 msgstr ""
+"* .../ToGoZip/app/...\n"
+"  * исходный код приложения ToGoZip\n"
+"* [.../ToGoZip/fastlane/metadata/android/en-US/full_description.txt](https://github.com/k3b/ToGoZip/blob/master/fastlane/metadata/android/en-US/full_description.txt)\n"
+"  * текстовый файл с подробным описанием приложения ToGoZip по-английски\n"
+"* [.../ToGoZip/fastlane/metadata/android/de-DE/full_description.txt](https://github.com/k3b/ToGoZip/blob/master/fastlane/metadata/android/de-DE/full_description.txt)\n"
+"  * текстовый файл с подробным описанием приложения ToGoZip по-немецки\n"
+"* [.../ToGoZip/fastlane/metadata/android/en-US/changelogs/9.txt](https://github.com/k3b/ToGoZip/blob/master/fastlane/metadata/android/en-US/changelogs/9.txt)\n"
+"  * список всех изменений, попавших в версию versionCode **9**\n"
+"  * для приложения fdroid этот список располагается над его описанием\n"
+"* .../ToGoZip/fastlane/metadata/android/en-US/images/featureGraphic.png \n"
+"  * это изображение располагается в самом верху описания приложения\n"
+"* .../ToGoZip/fastlane/metadata/android/en-US/images/phoneScreenshots/....\n"
+"  * изображения из этой папки располагаются ниже описания приложения fdroid\n"
 
 #. type: Title ##
 #: build/_docs/md/All_About_Descriptions_Graphics_and_Screenshots.md
 #, no-wrap
 msgid "Directly in the F-Droid repo"
-msgstr ""
+msgstr "Напрямую в репозиторий F-Droid"
 
 #. type: Plain text
 #: build/_docs/md/All_About_Descriptions_Graphics_and_Screenshots.md
 msgid "The ultimate destination for files from the app's source repo and _fdroiddata_ metadata sub-directories is in the F-Droid repo.  The text all gets included into the index file (aka _index-v1.json_).  All of the graphics files can be directly included in the repo.  If graphics files are also in the app's source or _fdroiddata_, then the files directly in the repo will be overwritten.  The text files from the _fastlane_ layout are ignored if they are in the repo."
-msgstr ""
+msgstr "Желаемый итог всех манипуляций с файлами из репозитория с исходным кодом и папок с метаданными из _fdroiddata_ — переместить их в основной репозиторий F-Droid.  Все тексты попадают в специальный индекс-файл (называемый _index-v1.json_).  Все изображения можно добавлять сразу в репозиторий F-Droid.  Если в исходном коде приложения или в репозитории _fdroiddata_ тоже есть изображения, они перепишут файлы, добавленные напрямую.  В то же время если в основном репозитории уже есть текстовые файлы, то файлы, получившиеся с помощью _fastlane_, не принимаются."
 
 #. type: Plain text
 #: build/_docs/md/All_About_Descriptions_Graphics_and_Screenshots.md
@@ -199,6 +238,26 @@ msgid ""
 "                  └── *.png\n"
 "```\n"
 msgstr ""
+"```\n"
+"- fdroid/\n"
+"  └── repo/\n"
+"      └── <package-id>/\n"
+"          └── <locale>/\n"
+"              ├── featureGraphic.png\n"
+"              ├── icon.png\n"
+"              ├── promoGraphic.png\n"
+"              ├── tvBanner.png\n"
+"              ├── phoneScreenshots/\n"
+"              │   └── *.png\n"
+"              ├── sevenInchScreenshots/\n"
+"              │   └── *.png\n"
+"              ├── tenInchScreenshots/\n"
+"              │   └── *.png\n"
+"              ├── tvScreenshots/\n"
+"              │   └── *.png\n"
+"              └── wearScreenshots/\n"
+"                  └── *.png\n"
+"```\n"
 
 #. type: Plain text
 #: build/_docs/md/All_About_Descriptions_Graphics_and_Screenshots.md
