@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
 "POT-Creation-Date: 2018-09-12 15:38+0200\n"
-"PO-Revision-Date: 2018-09-16 18:24+0000\n"
-"Last-Translator: ssantos <ssantos@web.de>\n"
+"PO-Revision-Date: 2018-10-03 16:27+0000\n"
+"Last-Translator: C. Rüdinger <Mail-an-CR@web.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/f-droid/website-docs/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
@@ -3149,10 +3149,10 @@ msgid ""
 "     * `SURGE_TOKEN`: The value given when you ran `surge token`.\n"
 msgstr ""
 " *[Fügen Sie zwei \"Geheime Variablen\"](https://docs.gitlab.com/ce/ci/variables/README.html#secret-variables) zu Ihrem Fork dieses Projekts hinzu:\n"
-"   * Navigieren Sie zu Ihren Projekten Einstellungen -> Pipelines -> Geheime Variablen.\n"
+"   * Navigieren Sie zu Ihren Projekten (Einstellungen -> Pipelines -> Geheime Variablen).\n"
 "   * Fügen Sie die folgenden zwei Variablen hinzu:\n"
 "     * `SURGE_LOGIN`: Die E-Mail, mit der Sie sich bei `surge login` angemeldet haben.\n"
-"     * `SURGE_TOKEN`: Der Wert, der beim Ausführen von `surge token` angegeben wurde.\n"
+"     * `SURGE_TOKEN`: Der Wert, der nach Ausführung von `surge token` zurückgegeben wurde.\n"
 
 #. type: Plain text
 #: build/_docs/md/Deploying_the_Website.md
@@ -3174,12 +3174,12 @@ msgstr "Wie bei Forks wird der _master_-Zweig des Haupt-Git-Repos für die Websi
 #: build/_docs/md/Deploying_the_Website.md
 #, no-wrap
 msgid "Deploying to https://f-droid.org"
-msgstr "Auf https://f-droid.org deployen"
+msgstr "Bereitstellung auf https://f-droid.org"
 
 #. type: Plain text
 #: build/_docs/md/Deploying_the_Website.md
 msgid "When an update to the website is tested and ready to go, a release manager creates a PGP-signed release tag in the main git repo.  The deploy server monitors the main git repo for new tags.  When it sees a new tag, it first checks the PGP signature on the git tag using a manually configured GnuPG keyring that contains only the public keys of the PGP keys that are allowed to tag website releases."
-msgstr "Wenn ein Update der Website getestet wurde und bereit ist, erstellt ein Release-Manager ein PGP-signiertes Release-Tag im Haupt-Git-Repo.  Der Deployment-Server überwacht den Haupt-Git-Repo auf neue Tags.  Wenn es ein neues Tag sieht, prüft es zuerst die PGP-Signatur auf dem Git-Tag mit einem manuell konfigurierten GnuPG-Schlüsselring, der nur die öffentlichen Schlüssel der PGP-Schlüssel enthält, die zur Kennzeichnung von Website-Releases berechtigt sind."
+msgstr "Wenn ein Update der Website getestet wurde und bereit steht, erstellt ein Release-Manager ein PGP-signiertes Release-Tag im Haupt-Git-Repo.  Der Deployment-Server überwacht das Haupt-Git-Repo auf neue Tags.  Wenn er ein neues Tag sieht, prüft er zuerst die PGP-Signatur auf dem Git-Tag mit einem manuell konfigurierten GnuPG-Schlüsselring, der nur die öffentlichen Schlüssel der PGP-Schlüssel enthält, die zur Kennzeichnung von Website-Releases berechtigt sind."
 
 #. type: Plain text
 #: build/_docs/md/Deploying_the_Website.md
@@ -3189,7 +3189,7 @@ msgstr "Nachdem der Git-Tag verifiziert wurde, wird das Ziel `f-droid.org` in [.
 #. type: Plain text
 #: build/_docs/md/Deploying_the_Website.md
 msgid "The deploy tags use a \"semantic versioning\" naming scheme:"
-msgstr "Die deploy tags verwenden Sie ein \"semantic versioning\"-Namensschema:"
+msgstr "Die Deploy-Tags verwenden ein Namensschema mit \"semantischer Versionierung\":"
 
 #. type: Bullet: '* '
 #: build/_docs/md/Deploying_the_Website.md
@@ -3215,17 +3215,17 @@ msgstr "Einrichten und Ausführen des Deploy-Verfahrens"
 #. type: Plain text
 #: build/_docs/md/Deploying_the_Website.md
 msgid "The deploy procedure was tested on a machine running Debian/stretch.  It should be triggered whenever the repo index is published, so it can rebuild with the latest app information.  This whole procedure can be run as root, or just `gitlab-runner`.  This final procedure is not part of a script committed into the website git repo so that the commands that run outside of docker cannot be modified via git."
-msgstr "Das Deploy-Verfahren wurde auf einer Maschine mit Debian/Stretch getestet.  Es sollte immer dann ausgelöst werden, wenn der Repo-Index veröffentlicht wird, damit er mit den neuesten App-Informationen neu aufgebaut werden kann.  Diese ganze Prozedur kann als root oder einfach als `gitlab-runner` ausgeführt werden.  Diese letzte Prozedur ist nicht Teil eines Skripts, das in das git repo der Website commited ist, so dass die Befehle, die außerhalb des Dockers ausgeführt werden, nicht über git geändert werden können."
+msgstr "Das Bereitstellungsverfahren wurde auf einer Maschine mit Debian/Stretch getestet.  Es sollte immer dann ausgelöst werden, wenn der Repo-Index veröffentlicht wird, damit er mit den neuesten App-Informationen neu aufgebaut werden kann.  Die gesamte Prozedur kann als root oder einfach als `gitlab-runner` ausgeführt werden.  Das letzte Verfahren ist nicht Teil eines Skripts, das in das git-Repo der Website übergeben wird, so dass die Befehle, die außerhalb des Dockers ausgeführt werden, nicht über git geändert werden können."
 
 #. type: Bullet: '1. '
 #: build/_docs/md/Deploying_the_Website.md
 msgid "[setup docker](https://docs.docker.com/engine/installation/linux/debian/)"
-msgstr "[setup docker](https://docs.docker.com/engine/installation/linux/debian/)"
+msgstr "[Docker einrichten](https://docs.docker.com/engine/installation/linux/debian/)"
 
 #. type: Bullet: '2. '
 #: build/_docs/md/Deploying_the_Website.md
 msgid "[setup gitlab-ci-multi-runner](https://docs.gitlab.com/runner/install/linux-repository.html)"
-msgstr "[setup gitlab-ci-multi-runner](https://docs.gitlab.com/runner/install/linux-repository.html)"
+msgstr "[GitLab-CI-Multi-Runner einrichten](https://docs.gitlab.com/runner/install/linux-repository.html)"
 
 #. type: Plain text
 #: build/_docs/md/Deploying_the_Website.md
@@ -3258,18 +3258,18 @@ msgid ""
 "$ rsync -ax --delete --exclude-from=_site/build/.rsync-deploy-exclude-list  _site/build/  f-droid.org:/var/www/\n"
 "```\n"
 msgstr ""
-"3. Erstellen Sie _deploy-whitelist-keyring.gpg_ mit GnuPG:\n"
-"````Konsole\n"
-"$ gpg --recv-Tasten 00aa5556\n"
+"3. _deploy-whitelist-keyring.gpg_ mit GnuPG vorbereiten:\n"
+"```Konsole\n"
+"$ gpg --recv-keys 00aa5556\n"
 "$ gpg --fingerprint 00aa5556 # überprüfen!\n"
 "$ gpg --export 00aa5556 > /path/to/deploy-whitelist-keyring.gpg\n"
 "```\n"
-"4. Holen Sie sich den Quellcode der Website:\n"
-"````Konsole\n"
+"4. Quellcode der Website beziehen:\n"
+"```Konsole\n"
 "$ git clone https://gitlab.com/fdroid/fdroid-website\n"
 "```\n"
-"5. Führen Sie die Erzeugung aus:\n"
-"````Konsole\n"
+"5. Generierung durchführen:\n"
+"```Konsole\n"
 "$ cd fdroid-website\n"
 "$ git fetch --tags\n"
 "$ sudo gitlab-runner exec docker f-droid.org \\\n"
@@ -3278,10 +3278,10 @@ msgstr ""
 "              --docker-volumes `pwd`/_site:/builds/output\n"
 "```\n"
 "6. die Dateien der Website auf dem Webserver bereitstellen und dabei die von\n"
-"   _jekyll_ erzeugten Dateien am Überschreiben schützen\n"
-"   [Teile der Website](https://gitlab.com/fdroid/fdroid-website/blob/master/.rsync-deploy-exclude-list)\n"
-"   die andere Dinge verwalten:\n"
-"````Konsole\n"
+"   _jekyll_ erzeugten Dateien davon abhalten, \n"
+"   [Teile der Website](https://gitlab.com/fdroid/fdroid-website/blob/master/.rsync-deploy-exclude-list).\n"
+"   die andere Dinge verwalten, zu überschreiben:\n"
+"```Konsole\n"
 "$ rsync -ax --delete --exclude-from=_site/build/.rsync-deploy-exclude-list _site/build/ f-droid.org:/var/www/\n"
 "```\n"
 
@@ -3383,27 +3383,27 @@ msgstr "```"
 #: build/_docs/md/Deploying_the_Website.md
 #, no-wrap
 msgid "Apache2 config"
-msgstr "Apache2 config"
+msgstr "Apache2 konfigurieren"
 
 #. type: Plain text
 #: build/_docs/md/Deploying_the_Website.md
 msgid "The F-Droid website is translated into several languages.  There are a few things required to ensure this works."
-msgstr "Die F-Droid-Website wird in mehrere Sprachen übersetzt.  Es gibt ein paar Dinge, die notwendig sind, um dies zu gewährleisten."
+msgstr "Die F-Droid-Website wird in mehrere Sprachen übersetzt.  Es sind ein paar Dinge notwendig, um zu gewährleisten, dass dies funktioniert."
 
 #. type: Plain text
 #: build/_docs/md/Deploying_the_Website.md
 msgid "The first is taken care of by `.gitlab-ci.yml`, which is to run the `./tools/prepare-multi-langs.sh` script _without_ the `--no-type-maps` argument.  This ensures that each `.html` file is replaced with an Apache2 [TypeMap](https://httpd.apache.org/docs/current/mod/mod_negotiation.html#typemaps)."
-msgstr "Das erste wird von `.gitlab-ci.yml` erledigt, das das Skript `./tools/prepare-multi-langs.sh` ohne das Argument `--no-type-maps` ausführen soll.  Dadurch wird sichergestellt, dass jede `.html` Datei durch eine Apache2 [TypeMap](https://httpd.apache.org/docs/current/mod/mod_negotiation.html#typemaps) ersetzt wird."
+msgstr "Das erste wird von `.gitlab-ci.yml` erledigt, das das Skript `./tools/prepare-multi-langs.sh` _ohne_ das Argument `--no-type-maps` ausführen soll.  Dadurch wird sichergestellt, dass jede `.html` Datei durch eine Apache2 [TypeMap](https://httpd.apache.org/docs/current/mod/mod_negotiation.html#typemaps) ersetzt wird."
 
 #. type: Plain text
 #: build/_docs/md/Deploying_the_Website.md
 msgid "The second is to enable _mod_rewrite_, which is used to automatically choose the correct language for browsers that are not using Javascript.  The easiest way to do that is to run `sudo a2enmod rewrite`."
-msgstr "Die zweite ist die Aktivierung von _mod_rewrite_, mit der automatisch die richtige Sprache für Browser gewählt wird, die kein Javascript verwenden.  Am einfachsten geht das mit `sudo a2enmod rewrite`."
+msgstr "Das zweite ist die Aktivierung von _mod_rewrite_, womit automatisch die richtige Sprache für Browser ausgewählt wird, die kein JavaScript verwenden.  Am einfachsten geht das mit `sudo a2enmod rewrite`."
 
 #. type: Plain text
 #: build/_docs/md/Deploying_the_Website.md
 msgid "The last is to add the following to the Apache2 server or _VirtualHost_ config so that the _TypeMaps_ are used correctly, telling apache where to find the translated version of the file (replace `/var/www/html` with the actual webroot):"
-msgstr "Das letzte ist, dem Apache2-Server oder der _VirtualHost_-Konfiguration Folgendes hinzuzufügen, damit die _TypeMaps_ korrekt verwendet werden und dem Apache mitteilen, wo die übersetzte Version der Datei zu finden ist (ersetzen Sie `/var/wwww/html` durch das aktuelle Webroot):"
+msgstr "Das letzte ist, dem Apache2-Server oder der _VirtualHost_-Konfiguration Folgendes hinzuzufügen, damit die _TypeMaps_ korrekt verwendet werden, die Apache mitteilen, wo die übersetzte Version der Datei zu finden ist (ersetzen Sie `/var/wwww/html` durch das tatsächliche Web-Stammverzeichnis):"
 
 #. type: Plain text
 #: build/_docs/md/Deploying_the_Website.md
@@ -3459,13 +3459,13 @@ msgstr "SetEnvIf Request_URI ^/(ach|af|ak|sq|am|anp|ar|an|hy|as|ast|ay|az|ba|eu|
 #: build/_docs/md/Deploying_the_Website.md
 #, no-wrap
 msgid "Language codes from Weblate containing capital letters and underscores need to be treated"
-msgstr "Sprachcodes von Weblate, die Großbuchstaben und Unterstriche enthalten, müssen behandelt werden"
+msgstr "Sprachcodes von Weblate, die Großbuchstaben und Unterstriche enthalten, müssen gesondert behandelt werden"
 
 #. type: Title #
 #: build/_docs/md/Deploying_the_Website.md
 #, no-wrap
 msgid "differently, namely the language they refer to is lower case with a hyphen"
-msgstr "anders, nämlich die Sprache, auf die sie sich beziehen, ist mit einem Bindestrich und klein geschrieben"
+msgstr "und zwar wird die Sprache, auf die sie sich beziehen, mit einem Bindestrich und klein geschrieben"
 
 #. type: Plain text
 #: build/_docs/md/Deploying_the_Website.md
@@ -3475,7 +3475,7 @@ msgstr "SetEnvIf Request_URI ^/ar_DZ/ prefer-language=ar-dz SetEnvIf Request_URI
 #. type: Plain text
 #: build/_docs/md/Deploying_the_Website.md
 msgid "If this is not done or done incorrectly, then you will see something like the following when viewing any page:"
-msgstr "Wenn dies nicht oder falsch gemacht wird, dann werden Sie beim Betrachten einer Seite etwas wie folgendes sehen:"
+msgstr "Wenn dies nicht oder falsch gemacht wird, dann werden Sie beim Betrachten einer Seite in etwa Folgendes sehen:"
 
 #. type: Plain text
 #: build/_docs/md/Deploying_the_Website.md
@@ -3491,7 +3491,7 @@ msgstr "Dies ist das Ergebnis der Rückgabe der eigentlichen TypeMap an den Brow
 #. type: Plain text
 #: build/_docs/md/Deploying_the_Website.md
 msgid "Note that this also depends on `mod_alias` and `mod_negotiation` being enabled, but this happens by default when installing apache2 on Debian."
-msgstr "Beachten Sie, dass dies auch davon abhängt, dass `mod_alias` und `mod_negotiation` aktiviert sind, aber dies geschieht standardmäßig bei der Installation von apache2 unter Debian."
+msgstr "Beachten Sie, dass dies auch von der Aktivierung von `mod_alias` und `mod_negotiation` abhängt, was aber bei der Installation von Apache2 auf Debian standardmäßig geschieht."
 
 #. type: Title #
 #: build/_docs/md/FAQ_-_App_Developers.md

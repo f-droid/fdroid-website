@@ -6,66 +6,69 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: team@f-droid.org\n"
 "POT-Creation-Date: 2018-09-29 23:05-0500\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2018-10-03 10:29+0000\n"
+"Last-Translator: Balázs Meskó <meskobalazs@gmail.com>\n"
+"Language-Team: Hungarian <https://hosted.weblate.org/projects/f-droid/website-posts/hu/>\n"
 "Language: hu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 3.2-dev\n"
 
 #. type: Title #
 #: build/_posts/md/2017-02-20-f-droid-supports-apk-expansion-files-aka-obb.md
 #, no-wrap
 msgid "\"F-Droid supports APK Expansion Files aka OBB\""
-msgstr ""
+msgstr "„Az F-Droid támogatja az APK bővítményfájlokat, más néven OBB-ket”"
 
 #. type: Plain text
 #: build/_posts/md/2017-02-20-f-droid-supports-apk-expansion-files-aka-obb.md
 msgid "Many games, mapping, and other apps require a large amount of data to work.  The APK file of an Android app is limited to 100MB in size, yet it is common for a single country map file to be well over 100MB.  Also, in order to get users running as quickly as possible, they should not have to wait for huge amounts of data to download in order to just start the app for the first time."
-msgstr ""
+msgstr "Számos játék, térképező vagy más alkalmazás nagy mennyiségű adatot igényel. Az Android alkalmazások APK fájlja legfeljebb 100 MB-os lehet, de gyakori hogy egyetlen ország térképe is több mint 100 MB. Ráadásul ahhoz, hogy a felhasználók minél gyorsabban futtathassák, nem érdemes túl sok adat letöltésével váratni őket az alkalmazás első indításakor."
 
 #. type: Plain text
 #: build/_posts/md/2017-02-20-f-droid-supports-apk-expansion-files-aka-obb.md
 msgid "Google created OBB aka \"[APK Expansion](https://developer.android.com/google/play/expansion-files.html)\" files to provide a flexible means of delivering large amounts of data.  This arrangement also saves lots of bandwidth since the APK file and the OBB file can be updated separately.  For example, a game's assets do not need to change often, so they can be shipped as an OBB. Then when the app itself is updated (i.e. the APK), it does not need to include all those assets that are in the OBB file."
-msgstr ""
+msgstr "A Google létrehozta az OBB avagy „[APK bővítmény](https://developer.android.com/google/play/expansion-files.html)” fájlokat, hogy rugalmas módját biztosítsa nagy mennyiségű adat letöltésének. Ez a megoldás sok sávszélességet is spórol, mert az APK és az OBB fájlok külön is frissíthetőek. Például egy játék adatfájljai ritkán változnak, így OBB-ként szállíthatóak. Aztán amikor az alkalmazás (azaz az APK) frissül, akkor nem kell letölteni azokat az adatfájlokat, melyek az OBB fájlban vannak."
 
 #. type: Plain text
 #: build/_posts/md/2017-02-20-f-droid-supports-apk-expansion-files-aka-obb.md
 msgid "OBB files are used by lots of apps like games and MAPS.ME.  F-Droid supports OBB by downloading and installing the OBB before the APK, so that once the APK is installed, the OBB files are already in place and ready to use.  F-Droid also provides an `Intent` method for apps to fetch the OBB download URLs in case the app itself needs to handle the OBB download/update.  That is similar to how it works in Google Play."
-msgstr ""
+msgstr "Az OBB fájlokat sok alkalmazás használja, például játékok és a MAPS.ME. Az F-Droid úgy támogatja az OBB-t, hogy előbb tölti le és telepíti mint az APK-t, így amint az APK telepítésre kerül, az OBB fájlok már a helyükön vannak, és használhatóak. Az F-Droid biztosít egy `Intent` módszert is az alkalmazások számára, hogy lekérjék az OBB letöltési URL-eket, ha az alkalmazásnak OBB letöltést/frissítést kell kezelnie. Ez hasonló ahhoz, ahogy a Google Playben működik."
 
 #. type: Plain text
 #: build/_posts/md/2017-02-20-f-droid-supports-apk-expansion-files-aka-obb.md
 msgid "In order to use the OBB support, users need at least F-Droid v0.102, and the repo must use _fdroidserver_ v0.7.0 or newer.  Adding OBB files to a repo is very easy: just copy them to the same folder where the APKs go, i.e. _/path/to/fdroid/repo/_."
-msgstr ""
+msgstr "Az OBB támogatás használatához legalább F-Droid v0.102 szükséges, és a tárolónak az _fdroidserver_ v0.7.0 vagy újabb verzióját kell futtatnia. Az OBB fájlok hozzáadása a tárolóhoz nagyon egyszerű: csak másolja be ugyanabba a mappába, mint ahol az APK-k is vannak, azaz az _/útvonal/fdroid/repo/_ mappába."
 
 #. type: Title ##
 #: build/_posts/md/2017-02-20-f-droid-supports-apk-expansion-files-aka-obb.md
 #, no-wrap
 msgid "Developer Usage"
-msgstr ""
+msgstr "Használat fejlesztőként"
 
 #. type: Plain text
 #: build/_posts/md/2017-02-20-f-droid-supports-apk-expansion-files-aka-obb.md
 msgid "One of the details about using OBB files in apps is that OBB files are not guaranteed to be installed by the app store.  That means the app could start, and the expected OBB files will not be there.  In that case, the app must download and install the OBB file itself.  Google Play recommends using their proprietary [Application Licensing](https://developer.android.com/google/play/licensing/index.html)  service for this, F-Droid provides a simple method that is all free software."
-msgstr ""
+msgstr "Egy fontos részlete az OBB fájloknak az alkalmazásokban, hogy az OBB fájlok telepítését nem garantálja az alkalmazásbolt. Ez azt jelenti, hogy az alkalmazás indításakor a várt OBB fájlok lehet hogy nem lesznek ott. Ebben az esetben az alkalmazásnak kell letöltenie és telepíteni az OBB fájlt. A Google Play a saját tulajdonosi [Application Licensing](https://developer.android.com/google/play/licensing/index.html) szolgáltatását ajánlja erre, az F-Droid viszont egy egyszerű módszer biztosít, amely teljesen szabad szoftver."
 
 #. type: Plain text
 #: build/_posts/md/2017-02-20-f-droid-supports-apk-expansion-files-aka-obb.md
 msgid "To get the URL for the two possible OBB files, send an `Intent` to F-Droid using these _Actions_:"
-msgstr ""
+msgstr "A két lehetséges OBB fájl URL-ének lekéréséhez, küldjön egy `Intent`-et az F-Droidnak ezekkel az _Action_-ökkel:"
 
 #. type: Bullet: '* '
 #: build/_posts/md/2017-02-20-f-droid-supports-apk-expansion-files-aka-obb.md
 msgid "`org.fdroid.fdroid.action.GET_OBB_MAIN_URL`"
-msgstr ""
+msgstr "`org.fdroid.fdroid.action.GET_OBB_MAIN_URL`"
 
 #. type: Bullet: '* '
 #: build/_posts/md/2017-02-20-f-droid-supports-apk-expansion-files-aka-obb.md
 msgid "`org.fdroid.fdroid.action.GET_OBB_PATCH_URL`"
-msgstr ""
+msgstr "`org.fdroid.fdroid.action.GET_OBB_PATCH_URL`"
 
 #. type: Plain text
 #: build/_posts/md/2017-02-20-f-droid-supports-apk-expansion-files-aka-obb.md
@@ -75,6 +78,9 @@ msgid ""
 "the file ultimately ends up in _Android/obb/<packageName>_ on the\n"
 "device's External Storage.\n"
 msgstr ""
+"Aztán töltse le az URL-t a kedvenc módszerével, és győződjön meg róla,\n"
+"hogy a fájl eljut az _Android/obb/csomagNév_ mappába az eszköz\n"
+"külső tárolóján.\n"
 
 #. type: Title #
 #: build/_posts/md/2017-02-20-new-forum.md
@@ -4652,7 +4658,7 @@ msgstr ""
 #: build/_posts/md/2018-09-04-second-security-audit-results.md
 #, no-wrap
 msgid "Repomaker"
-msgstr ""
+msgstr "Repomaker"
 
 #. type: Plain text
 #: build/_posts/md/2018-09-04-second-security-audit-results.md
