@@ -14,7 +14,7 @@ pattern = re.compile(r'](\([^h][^\)]+\))')
 bad_md_link = re.compile(r'.*\]\s+\(')
 for f in sorted(glob.glob('po/*.po*')):
     output = ''
-    with open(f, 'r') as fp:
+    with open(f) as fp:
         catalog = read_po(fp)
     for message in catalog:
         if 'type: Title #' in message.auto_comments:
@@ -34,6 +34,10 @@ for f in sorted(glob.glob('po/*.po*')):
         if m:
             errorcount += 1
             output += 'Space breaks Markdown link: ' + message.id + '\n: ' + m.group()
+
+        if message.id.startswith('-----BEGIN'):
+            if message.string:
+                output += 'translated a string with -----BEGIN\n'
 
         idlinks = []
         for m in pattern.findall(message.id):
