@@ -91,6 +91,11 @@ unzip -p index.jar META-INF/CIARANG.RSA | openssl pkcs7 -print_certs -inform DER
 keytool -import  -noprompt -trustcacerts -alias index -storepass android -file index.cer -keystore index.jks
 jarsigner -keystore index.jks -storepass android -strict -verify admin@f-droid.org.jar
 
+# verify against the key that is embedded in this page
+wget -O - https://f-droid/docs/Release_Channels_and_Signing_Keys/ | openssl x509 -inform pem -outform der -out docs.der
+keytool -import -noprompt -trustcacerts -alias docs -storepass android -file docs.der -keystore docs.jks
+jarsigner -keystore docs.jks -storepass android -strict -verify admin@f-droid.org.jar
+
 # when satisfied with the verification, import it
 unzip admin@f-droid.org.jar admin@f-droid.org.asc
 gpg --import admin@f-droid.org.asc
