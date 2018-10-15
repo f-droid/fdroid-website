@@ -74,6 +74,8 @@ Tetaneutral is a non-profit ISP based in Toulouse, France. They have offered to 
 
 * {{ page.featured }} **[Manyverse](https://f-droid.org/app/se.manyver)**: At last a mobile client for the _[Secure Scuttlebutt](https://ssbc.github.io/secure-scuttlebutt/)_ protocol lands in F-Droid! SSB is a peer-to-peer protocol and social network optimized for off-line and off-grid use. You can share messages locally using bluetooth or local WiFi, directly with your friends over the internet, or optionally tap into more centralized nodes called "pubs".
 
+    For in-depth details about the developer, André Staltz, and his motivations you can watch the [It's time to build our own Internet](https://www.youtube.com/watch?v=UjfWAbGfPh0) TEDxGeneva talk and the recent [Reinvent the social web](https://www.youtube.com/watch?v=8GE5C9-RUpg). If you're more inclined to read you can see his viral blog posts called [The Web began dying in 2014, here's how](https://staltz.com/the-web-began-dying-in-2014-heres-how.html) and the follow up [A plan to rescue the Web from the Internet](https://staltz.com/a-plan-to-rescue-the-web-from-the-internet.html).
+
 #### Updated apps
 
 In total, **{{ page.number_of_updated_apps }}** apps were updated this week. Here are the highlights:
@@ -110,7 +112,7 @@ In total, **{{ page.number_of_updated_apps }}** apps were updated this week. Her
 
 * **[Tachiyomi](https://f-droid.org/app/eu.kanade.tachiyomi)** is a manga reader. Version 0.8.0 brings quite a few changes, adding a new reader with many fixes, GIF support, showing all entries in the library even if their extensions are not installed, and several bug fixes.
 
-* **[Conversations](https://f-droid.org/app/eu.siacs.conversations)** is an instant messenger with support for group chat, based on the XMPP protocol. Version 2.3.1+fcr brings support for TLSv1.3 and can now disable screen & switch to ear piece in audio player, enable foreground service by default for Android 8 (Oreo), view per-contact media files in contact and conference details screen, preview and ask for confirmation before sending media files, use consistent color generation, fix Quiet Hours on Android 8+, and stronger compression for video files.
+* **[Conversations](https://f-droid.org/app/eu.siacs.conversations)** is an instant messenger with support for group chat, based on the XMPP protocol. Starting with version 2.3.0+fcr it brings support for TLSv1.3 and can now disable screen & switch to ear piece in audio player, enable foreground service by default for Android 8 (Oreo), view per-contact media files in contact and conference details screen, preview and ask for confirmation before sending media files, use consistent color generation, fix Quiet Hours on Android 8+, and addition of a video quality selector.
 
 * {{ page.featured }} **[Mastalab](https://f-droid.org/app/fr.gouv.etalab.mastodon)** is a featureful multi-account client for [Mastodon](https://joinmastodon.org). Lots of new features in this jump from 1.13.6 to 1.15.2, now with video and Peertube support:
   * Long-press on bookmark button to bookmark toots with another account
