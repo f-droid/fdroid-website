@@ -40,7 +40,7 @@ Finally, the room can now be reached at [#fdroid:matrix.org](https://matrix.to/#
 
 #### Compact bottom bar in F-Droid client
 
-**[@Licaon-Kter](https://forum.f-droid.org/u/Licaon_Kter)** is working on a modified bottom bar in the F-Droid client, which has more room for text by collapsing the inactive items. This should fix problems with text getting cut off in languages other than English. You can see it in action [here](https://gitlab.com/fdroid/fdroidclient/merge_requests/756).
+**[@Licaon_Kter](https://forum.f-droid.org/u/Licaon_Kter)** is working on a modified bottom bar in the F-Droid client, which has more room for text by collapsing the inactive items. This should fix problems with text getting cut off in languages other than English. You can see it in action [here](https://gitlab.com/fdroid/fdroidclient/merge_requests/756).
 
 #### Tutanota on F-Droid spotlighted at Linux Journal
 
