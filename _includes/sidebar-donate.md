@@ -15,3 +15,6 @@
    * {{ strings.bank_transfer_name }}: F-Droid Limited
    * IBAN: GB92 BARC 2056 7893 4088 92
    * SWIFT: BARCGB22
+ * {:.donate-option .hellotux} {{ strings.hellotux }}
+   * [![{{ strings.hellotux_alt }}]({{ site.baseurl }}/assets/hellotux_banner.jpg)](https://www.hellotux.com/f-droid)
+   * {{ strings.hellotux_donation }} 
