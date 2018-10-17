@@ -72,6 +72,35 @@ Be8=
 -----END CERTIFICATE-----
 ```
 
+To confirm that the `1DBA2E89 admin@f-droid.org` PGP key is trusted by
+the index JAR signing key that is built into the F-Droid client app,
+run these commands:
+```bash
+sudo apt-get install wget vim-common unzip openjdk-8-jdk-headless
+wget https://f-droid.org/assets/admin@f-droid.org.jar
+
+# verify against the key embedded in fdroidclient
+git clone https://gitlab.com/fdroid/fdroidclient
+grep -m1 -Eo '3082035e[0-9a-f]+' fdroidclient/app/src/main/res/values/default_repos.xml | xxd -r -p - > fdroidclient.der
+keytool -import -noprompt -trustcacerts -alias fdroidclient -storepass android -file fdroidclient.der -keystore fdroidclient.jks
+jarsigner -keystore fdroidclient.jks -storepass android -strict -verify admin@f-droid.org.jar
+
+# verify against the key that signed the index.jar
+wget https://f-droid.org/repo/index.jar
+unzip -p index.jar META-INF/CIARANG.RSA | openssl pkcs7 -print_certs -inform DER -out index.cer
+keytool -import  -noprompt -trustcacerts -alias index -storepass android -file index.cer -keystore index.jks
+jarsigner -keystore index.jks -storepass android -strict -verify admin@f-droid.org.jar
+
+# verify against the key that is embedded in this page
+wget -O - https://f-droid/docs/Release_Channels_and_Signing_Keys/ | openssl x509 -inform pem -outform der -out docs.der
+keytool -import -noprompt -trustcacerts -alias docs -storepass android -file docs.der -keystore docs.jks
+jarsigner -keystore docs.jks -storepass android -strict -verify admin@f-droid.org.jar
+
+# when satisfied with the verification, import it
+unzip admin@f-droid.org.jar admin@f-droid.org.asc
+gpg --import admin@f-droid.org.asc
+```
+
 
 ## fdroidserver
 
