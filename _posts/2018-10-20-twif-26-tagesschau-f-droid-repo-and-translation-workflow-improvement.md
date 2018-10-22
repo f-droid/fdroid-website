@@ -67,7 +67,7 @@ In total, **{{ page.number_of_updated_apps }}** apps were updated this week. Her
 
 * **[Password Store](https://f-droid.org/app/com.zeapo.pwdstore)** stores passwords in simple text files which are encrypted with OpenPGP. This update to 1.3.1 covers a new adaptive icon, ability to install to external [SD card](https://en.wikipedia.org/wiki/Secure_Digital), different password sort order, display of HOTP code if present, secure password entry, and other bug fixes and smaller improvements.
 
-* **[Conversations](https://f-droid.org/app/eu.siacs.conversations)** was updated from 2.3.1+fcr to 2.3.4+fcr, fixing OMEMO on Android 5.1 & 6.0, new settings for video quality, fixing connection issues with user@ip type JIDs, and fixing sending OMEMO files to ChatSecure.
+* **[Conversations](https://f-droid.org/app/eu.siacs.conversations)** was updated from 2.3.2+fcr to 2.3.4+fcr, updating translations, fixing connection issues with user@ip type JIDs and fixing sending OMEMO encrypted files to ChatSecure iOS users.
 
 * {{ page.featured }} Huge updates for **[Mastalab](https://f-droid.org/app/fr.gouv.etalab.mastodon)** yet again! This week it updated from 1.15.2 to 1.17.1, covering:
   - **Full [PeerTube](https://en.wikipedia.org/wiki/PeerTube) support**: Comment/Follow/Boost/Reply/Fav from your own Mastodon account!
@@ -90,11 +90,17 @@ In total, **{{ page.number_of_updated_apps }}** apps were updated this week. Her
 
 * **[Manyverse](https://f-droid.org/app/se.manyver)** was updated from 0.18.10-02.beta to 0.1810.16-beta, and now lets you edit your profile picture, and does the initial sync 5x faster or better.
 
+* **[AnySoftKeyboard](https://f-droid.org/app/com.menny.android.anysoftkeyboard)** was updated from 1.9.2055 to 1.9.2445 bringing:
+  - Power-Saving mode improvements - you can pick which features to include in Power-Saving.
+  - Also, we allow switching to dark, simple theme in Power-Saving mode. But this is optional.
+  - New Workman layout, Terminal generic-top-row and long-press fixes. Done by Alex Griffin.
+  - Updated localization: AR, BE, EU, FR, HU, IT, KA, KN, KU, LT, NB, NL, PT, RO, RU, SC, UK.
+  - Fix for small suggestions text on some devices
+
 #### Beta Updates
 
-The following apps were also updated, but will not be shown as upgradeable unless you enable "Unstable updates" in F-Droid settings:
+The following app was also updated, but will not be shown as upgradeable unless you enable "Unstable updates" in F-Droid settings:
 
-* **[AnySoftKeyboard](https://f-droid.org/app/com.menny.android.anysoftkeyboard)** was updated from 1.9.2055 to 1.9.2445
 * **[ownCloud](https://f-droid.org/app/com.owncloud.android)** was updated from 2.9.0-beta.1 to 2.9.0-beta.2
 
 #### Tips and Feedback
