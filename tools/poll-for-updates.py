@@ -7,9 +7,12 @@
 #
 # * use HTTP HEAD to get the Date of index-v1.jar, then compare that
 #   to the last one used
+#
+# exit(1) means run the update, exit(0) means skip
 
 import datetime
 import email.utils
+import os
 import re
 import requests
 import subprocess
@@ -19,33 +22,42 @@ url = 'https://f-droid.org/repo/index-v1.jar'
 headers = {'User-Agent': 'F-Droid'}
 
 r = requests.head(url, headers=headers)
-if r.status_code == 200:
-    date = '{0}-{1}-{2}'.format(*email.utils.parsedate(r.headers['Date']))
-else:
-    print('ERROR: Failed to fetch', url)
+r.raise_for_status()
+date = '{0}-{1}-{2}'.format(*email.utils.parsedate(r.headers['Date'])).encode()
+
+data = None
+r = requests.get('https://staging.f-droid.org/en/index.html', headers=headers)
+r.raise_for_status()
+for chunk in r.iter_content(chunk_size=1024):
+    if chunk:  # filter out keep-alive new chunks
+        if data is None:
+            data = bytes()
+        data += chunk
+if data is None:
+    print('no data from current deploy')
     sys.exit(1)
 
 last_date = None
-with open('_site/build/index.html') as fp:
-    m = re.search('\(F-Droid (20[0-9][0-9]-[0-9][0-9]-[0-9][0-9])', fp.read())
-    if m:
-        last_date = m.group(1)
-if last_date != date:
-    print('run!', last_date, date)
-    sys.exit(0)
+m = re.search(b'''\(F-Droid (20[0-9][0-9]-[0-9][0-9]-[0-9][0-9])''', data)
+if m:
+    last_date = m.group(1)
 
 last_git_describe = None
-with open('_site/build/index.html') as fp:
-    m = re.search('[0-9]\.[0-9]+-[0-9]+-g[0-9a-f]+', fp.read())
-    if m:
-        last_git_describe = m.group()
+m = re.search(b'''[0-9]\.[0-9]+-[0-9]+-g[0-9a-f]+''', data)
+if m:
+    last_git_describe = m.group()
 
 subprocess.check_call(['git', 'fetch', '--quiet',
                        'https://hosted.weblate.org/git/f-droid/website'])
-git_describe = subprocess.check_output(['git', 'describe', '--always', 'FETCH_HEAD']).decode().strip()
+git_describe = subprocess.check_output(['git', 'describe', '--always', 'FETCH_HEAD']).strip()
 
-if last_git_describe != git_describe:
-    print('run!', last_git_describe, git_describe)
+if last_date == date and last_git_describe == git_describe:
+    print('current, skip update:',
+          last_date.decode(), '==', date.decode(), 'and',
+          last_git_describe.decode(), '==', git_describe.decode())
     sys.exit(0)
-
-sys.exit(1)  # error means run the job
+else:
+    print('update required:',
+          last_date.decode(), '!=', date.decode(), 'or',
+          last_git_describe.decode(), '!=', git_describe.decode())
+    sys.exit(1)  # error means run the job
