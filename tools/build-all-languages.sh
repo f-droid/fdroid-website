@@ -11,7 +11,9 @@ git reset --hard FETCH_HEAD
 languages="en,"
 for f in _data/[a-z][a-z]*/strings.json; do
     locale=`echo $f | sed 's,.*/\([a-z][a-z][a-zA-Z0-9_-]*\)/strings.json,\1,'`
-    languages="$languages $locale,"
+    if [ -e po/_pages.${locale}.po ]; then
+        languages="$languages $locale,"
+    fi
 done
 
 sed -i "s/^languages:.*/languages: [ $languages ]/" _config.yml
