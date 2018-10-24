@@ -26,11 +26,11 @@ In this edition: Tagesschau running an F-Droid repo, starting up translation imp
 
 #### Tagesschau running their own F-Droid repository
 
-We recently learned that [Tagesschau](https://en.wikipedia.org/wiki/Tagesschau_\(German_TV_series\)) distributes their official app through their own F-Droid repository at `https://service.tagesschau.de/app/repo`.
+We recently learned that [Tagesschau](https://en.wikipedia.org/wiki/Tagesschau_(German_TV_series)) distributes their official app through their own F-Droid repository at `https://service.tagesschau.de/app/repo`.
 
 We see this move as a great step towards user rights and freedom. Sadly the app isn't [free and open source software](https://en.wikipedia.org/wiki/Free_and_open-source_software), although it is financed with public money. If it is public money, it should be [public code](https://publiccode.eu) as well.
 
-Background for non-German readers: Tagesschau is essentially the German national TV news, airing every day at 20:00. For a longer and more nuanced description, please [refer to Wikipedia](https://en.wikipedia.org/wiki/Tagesschau_\(German_TV_series\)).
+Background for non-German readers: Tagesschau is essentially the German national TV news, airing every day at 20:00. For a longer and more nuanced description, please [refer to Wikipedia](https://en.wikipedia.org/wiki/Tagesschau_(German_TV_series)).
 
 #### Starting up translation improvements around Weblate
 
