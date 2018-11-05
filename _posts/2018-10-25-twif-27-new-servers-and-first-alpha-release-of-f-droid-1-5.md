@@ -46,7 +46,7 @@ If you follow the "Website" link from an app's description page, it should lead 
 
 #### Progress with automatic buildserver setup
 
-This week we created the new [fdroid-bootstrap-buildserver](https://gitlab.com/fdroid/fdroid-bootstrap-buildserver) project in Gitlab. This project holds the [ansible](https://en.wikipedia.org/wiki/Ansible_%28software%29) script responsible for setting up and configuring a buildserver fully automatically. It has already successfully set up two buildservers. Once the script can do everything, which is quite close, the whole buildserver setup, including host and guest, will be recreatable and thus disposable. This is huge for us, especially in combination with the news above.
+This week we created the new [fdroid-bootstrap-buildserver](https://gitlab.com/fdroid/fdroid-bootstrap-buildserver) project in GitLab. This project holds the [ansible](https://en.wikipedia.org/wiki/Ansible_%28software%29) script responsible for setting up and configuring a buildserver fully automatically. It has already successfully set up two buildservers. Once the script can do everything, which is quite close, the whole buildserver setup, including host and guest, will be recreatable and thus disposable. This is huge for us, especially in combination with the news above.
 
 #### Portuguese Courts rule against Google on behalf of Aptoide
 

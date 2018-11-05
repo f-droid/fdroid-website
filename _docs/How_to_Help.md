@@ -80,7 +80,7 @@ for discussions about translation.
 
 ### Help with development
 
-There are three git repositories hosted at Gitlab, as follows:
+There are three git repositories hosted at GitLab, as follows:
 
 -   Android client application -
     <https://gitlab.com/fdroid/fdroidclient>

@@ -20,7 +20,7 @@ In this edition: Fixing nearby swap, download link broken and fixed again, a fla
 
 * You have all been _very_ good at reporting that the F-Droid app download link was broken this week. ;) Due an archive policy mistake, the build that the website linked to was accidentally moved to the archive. This has been fixed. Thanks to everyone who reported it.
 
-* [@Izzy](https://forum.f-droid.org/u/izzy) and [@licaon-kter](https://forum.f-droid.org/u/Licaon_Kter) have done a ton of work in triaging, testing and merging new apps, with over 500 Gitlab notifications just from them.
+* [@Izzy](https://forum.f-droid.org/u/izzy) and [@licaon-kter](https://forum.f-droid.org/u/Licaon_Kter) have done a ton of work in triaging, testing and merging new apps, with over 500 GitLab notifications just from them.
 
 * Although we had two index updates this week to fix the broken F-Droid link, they contained no new builds. An update just now did, though. Cause, as of yet, unknown. All in all, the build cycle has not been running as well as we'd like.
 

@@ -14,7 +14,7 @@ Find out exactly when apks are available or when descriptions change: <https://f
 
 ### Source Code
 
-If you have an account on Gitlab you can watch the F-Droid repos, or subscribe to atom feeds for them. A feed including actions from all fdroid repositories is available at <https://gitlab.com/fdroid.atom>.
+If you have an account on GitLab you can watch the F-Droid repos, or subscribe to atom feeds for them. A feed including actions from all fdroid repositories is available at <https://gitlab.com/fdroid.atom>.
 
 ### Forums
 
