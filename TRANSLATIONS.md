@@ -4,8 +4,10 @@ There are two different ways in which content on the website is translated.
 
 ### Website
 
-If you are adding content to the home page, sidebars, navigation, or other static parts of the website (i.e. not Jekyll posts/pages)
-then it is done using [localized site data](https://github.com/untra/polyglot#localized-sitedata).
+If you are adding content to the home page, sidebars, navigation, or
+other static parts of the website (i.e. not Jekyll posts/pages) then
+it is done using
+[localised site data](https://github.com/untra/polyglot#localized-sitedata).
 
 Say you want to add a new paragraph to the home page.
 Firstly, add a new entry to the `_data/strings.json` file:
@@ -124,9 +126,10 @@ For development, you can also request all translations be included, regardless o
 
 ### Documentation + Website News
 
-For these two components, all Weblate does is produce translated `.po` file.
-Once you have merged the translations from Weblate, this `.po` file needs to be processed to generate localized versions of each `.md` file.
-This is done by running:
+For these two components, all Weblate does is produce translated `.po`
+file.  Once you have merged the translations from Weblate, this `.po`
+file needs to be processed to generate localised versions of each
+`.md` file.  This is done by running:
 
 ```bash
 ./tools/i18n.sh po2md
