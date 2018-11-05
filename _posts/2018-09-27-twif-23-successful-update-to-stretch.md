@@ -49,7 +49,7 @@ In total, **{{ page.number_of_updated_apps }}** apps were updated this week. Her
 
 * **[Waistline](https://f-droid.org/app/com.waist.line)**, the calorie counter and weight tracker, was updated from 2.2.3 to 2.3.3, adding the ability to enter your own [Open Food Facts](https://world.openfoodfacts.org) credentials, a setting to change the app's home screen, support for the fibre nutriment, saturated fat and fibre goals, under-the-hood changes to improve performance and ease maintenance, and several bug fixes centering around date problems.
 
-* {{ page.major }} **[FOSS Browser](https://f-droid.org/app/de.baumann.browser)** released 6.0. FOSS Browser is a simple browser based on Android's builtin WebView. This release has new translations for Taiwan Traditional Chinese, Italian, Portugese, and the Polish translation was updated. Besides that there are many more fixes and improvements.
+* {{ page.major }} **[FOSS Browser](https://f-droid.org/app/de.baumann.browser)** released 6.0. FOSS Browser is a simple browser based on Android's builtin WebView. This release has new translations for Taiwan Traditional Chinese, Italian, Portuguese, and the Polish translation was updated. Besides that there are many more fixes and improvements.
 
 * **[RasPi Check](https://f-droid.org/app/de.eidottermihi.raspicheck)** was updated from 1.8.0 to 1.8.11, after 2 years of not updating in F-Droid. RasPi Check shows you the current system status of a running Raspberry Pi computer. The minimum version of Android needed to run this is now 5.0 (up from 2.3). Given that this update spans two years, there are numerous changes which are hard to summarize. You can check the [changelog](https://github.com/eidottermihi/rpicheck/releases) for details.
 

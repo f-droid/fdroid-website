@@ -19,7 +19,7 @@ forum: "https://forum.f-droid.org"
 
 This Week In F-Droid {{ page.edition }}, Week {{ page.date | date: "%V, %G" }} <a href="{{ site.baseurl }}/feed.xml"><img src="{{ site.baseurl }}/assets/Feed-icon-16x16.png" alt="Feed"></a>
 
-In this edition: Two new heavy duty servers, first alpha release of F-Droid 1.5, metadata cleanup, automatic buildserver setup, Portugese Courts rule against Google, and F-Droid confirmed malware-free. There are 4 new and {{ page.number_of_updated_apps }} updated apps.
+In this edition: Two new heavy duty servers, first alpha release of F-Droid 1.5, metadata cleanup, automatic buildserver setup, Portuguese Courts rule against Google, and F-Droid confirmed malware-free. There are 4 new and {{ page.number_of_updated_apps }} updated apps.
 <!--more-->
 
 **[F-Droid](https://f-droid.org/)** is a [repository](https://f-droid.org/packages/) of verified [free and open source](https://en.wikipedia.org/wiki/Free_and_open-source_software) Android apps, a **[client](https://f-droid.org/app/org.fdroid.fdroid)** to access it, as well as a whole "app store kit", providing all the tools needed to set up and run an app store. It is a community-run free software project developed by a wide range of contributors. This is their story this past week.
@@ -48,11 +48,11 @@ If you follow the "Website" link from an app's description page, it should lead 
 
 This week we created the new [fdroid-bootstrap-buildserver](https://gitlab.com/fdroid/fdroid-bootstrap-buildserver) project in Gitlab. This project holds the [ansible](https://en.wikipedia.org/wiki/Ansible_%28software%29) script responsible for setting up and configuring a buildserver fully automatically. It has already successfully set up two buildservers. Once the script can do everything, which is quite close, the whole buildserver setup, including host and guest, will be recreatable and thus disposable. This is huge for us, especially in combination with the news above.
 
-#### Portugese Courts rule against Google on behalf of Aptoide
+#### Portuguese Courts rule against Google on behalf of Aptoide
 
 Aptoide is an alternative app store. Incidentally, the one the F-Droid app was originally forked from. Apparently Google have been remotely removing/hiding the Aptoide app store on over 2.2 million devices in the last 60 days.
 
-Fortunately, the Portugese Courts ruled that Google has to stop doing that. This isn't the end of it, as Aptoide will also be filing for damages caused by this. Read the full story [here](https://www.prnewswire.com/news-releases/aptoide-eu-national-court-rules-against-google-in-anti-trust-process-821883497.html).
+Fortunately, the Portuguese Courts ruled that Google has to stop doing that. This isn't the end of it, as Aptoide will also be filing for damages caused by this. Read the full story [here](https://www.prnewswire.com/news-releases/aptoide-eu-national-court-rules-against-google-in-anti-trust-process-821883497.html).
 
 #### Independent academic confirmation that F-Droid is free of malware
 
