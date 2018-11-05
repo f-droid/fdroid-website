@@ -49,7 +49,7 @@ In total, 57 apps were updated this week. Here are the highlights:
 
 * **[LibreTorrent](https://f-droid.org/app/org.proninyaroslav.libretorrent)**, a standalone torrent client for Android, released 1.8, now with RSS manager, Ability to create torrents, scheduling, Android TV support, Android P support, and more.
 
-* {{ page.featured }} **[Tusky](https://f-droid.org/app/com.keylesspalace.tusky)** 3.0 made it to F-Droid at last! Your favorite Mastodon social network client now features:
+* {{ page.featured }} **[Tusky](https://f-droid.org/app/com.keylesspalace.tusky)** 3.0 made it to F-Droid at last! Your favourite Mastodon social network client now features:
   * New elephant art
   * New black/AMOLED theme
   * See which images have a description on the compose page

@@ -81,7 +81,7 @@ In total, 72 apps were updated this week. Here are the highlights:
 
 * **[Vespucci](https://f-droid.org/app/de.blau.android)** is an [OpenStreetMap](https://www.openstreetmap.org) editor. Version 11.0.2.0 updates imagery and translations, adds maxspeeds to geocontext for PT and CZ, updates OH Fragment, protects against crash when layouting empty preset views, fixes regression restoring state in PropertyEditor, tries to avoid crash with null Context in PresetSearch, and adds conveying and priority to direction dependent keys.
 
-* Everybody's favorite app, **[Easy xkcd](https://f-droid.org/app/de.tap.easy_xkcd)**, joins the list of apps sporting an [adaptive icon](https://developer.android.com/guide/practices/ui_guidelines/icon_design_adaptive). Other additions are a simplified Chinese translation, fixed What-if thumbnails, and Chrome Custom Tabs can now be disabled in the settings. 
+* Everybody's favourite app, **[Easy xkcd](https://f-droid.org/app/de.tap.easy_xkcd)**, joins the list of apps sporting an [adaptive icon](https://developer.android.com/guide/practices/ui_guidelines/icon_design_adaptive). Other additions are a simplified Chinese translation, fixed What-if thumbnails, and Chrome Custom Tabs can now be disabled in the settings. 
 
 * **[Commons](https://f-droid.org/app/fr.free.nrw.commons)** is an app to upload images to Wikimedia Commons. It was updated from 2.7.2 to 2.8.1, adding automatic Wikidata p18 edits upon Nearby upload, explore feature to browse other Commons images, Achievements feature to see current level and upload stats, quiz for users with high deletion rates, and more.
 

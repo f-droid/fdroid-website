@@ -47,6 +47,6 @@ F-Droid using these _Actions_:
 * `org.fdroid.fdroid.action.GET_OBB_MAIN_URL`
 * `org.fdroid.fdroid.action.GET_OBB_PATCH_URL`
 
-Then download that URL using your favorite method, and make sure that
+Then download that URL using your favourite method, and make sure that
 the file ultimately ends up in _Android/obb/<packageName>_ on the
 device's External Storage.

@@ -17,7 +17,7 @@ authorWebsite: "https://open.source.coffee"
 
 #### Community News
 
-* [Quaap](http://quaap.com) says: I’ve created a “My favorite apps on F-Droid” article: [http://quaap.com/D/use-fdroid](http://quaap.com/D/use-fdroid). It’s mostly something I use to evangelize F-Droid to non-FOSS people, because sometimes the sheer volume of apps available leads people to wonder where to start.
+* [Quaap](http://quaap.com) says: I’ve created a “My favourite apps on F-Droid” article: [http://quaap.com/D/use-fdroid](http://quaap.com/D/use-fdroid). It’s mostly something I use to evangelize F-Droid to non-FOSS people, because sometimes the sheer volume of apps available leads people to wonder where to start.
 
 * The European Parliament has [voted against the new copyright law proposal](https://blog.mozilla.org/netpolicy/2018/07/05/copyrightplenary/), which would have forced most platforms to add mandatory upload filters, and would have required websites to buy a license to link to news sites. It will be under vote again in September.
 
@@ -40,7 +40,7 @@ In total, 49 apps were updated this week. Here are the highlights:
 
 * [AnySoftKeyboard](https://f-droid.org/app/com.menny.android.anysoftkeyboard) updated (to 1.9.2055) and so did some of its language packs: [Brazilian](https://f-droid.org/app/com.anysoftkeyboard.languagepack.brazilian), [Norwegian](https://f-droid.org/app/com.anysoftkeyboard.languagepack.norwegian) [Spanish](https://f-droid.org/app/com.anysoftkeyboard.languagepack.spain), [Czech](https://f-droid.org/app/org.herrlado.ask.languagepack.czech).
 
-* [twitlatte](https://f-droid.org/app/com.github.moko256.twitlatte) 1.3.0 now supports TLSv1.2 on Android 4.4 devices. If you have one of those and twitlatte was failing to connect to your favorite instance, you might want to give this app another try. Other improvements include the ability to open links in an external browser, highlight of the selected account on the drawer, and bug fixes.
+* [twitlatte](https://f-droid.org/app/com.github.moko256.twitlatte) 1.3.0 now supports TLSv1.2 on Android 4.4 devices. If you have one of those and twitlatte was failing to connect to your favourite instance, you might want to give this app another try. Other improvements include the ability to open links in an external browser, highlight of the selected account on the drawer, and bug fixes.
 
 * [Gallery](https://f-droid.org/app/com.simplemobiletools.gallery) 4.3.1 brings a recycle bin, grouping media thumbnails by different criteria, and assorted UI and stability improvements.
 

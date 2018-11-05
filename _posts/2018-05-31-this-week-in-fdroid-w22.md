@@ -19,7 +19,7 @@ authorWebsite: "https://forum.f-droid.org/u/coffee"
 
 * Perhaps you don't know about this, but half of these points come from our [weekly online contributor meeting](https://gitlab.com/fdroid/fdroidclient#irc) on IRC. If you contribute to F-Droid, you are invited to hop onto #fdroid-dev on [Freenode](https://freenode.net/) and participate! The meetings start every [Thursday at 11:30 UTC](https://www.wolframalpha.com/input/?i=next+thursday+11:30+AM+UTC).
 
-  Everyone else is invited to listen in, either via the their own favorite client or via the [archive](https://botbot.me/freenode/fdroid-dev/) which updates in real time. Please be respectful of the fact that this is a meeting for actual contributors. See the bottom of this post for general questions and feedback.
+  Everyone else is invited to listen in, either via the their own favourite client or via the [archive](https://botbot.me/freenode/fdroid-dev/) which updates in real time. Please be respectful of the fact that this is a meeting for actual contributors. See the bottom of this post for general questions and feedback.
 
   The room is also bridged to Matrix via [#freenode_#fdroid-dev:matrix.org](https://matrix.to/#/#freenode_#fdroid:matrix.org).
 

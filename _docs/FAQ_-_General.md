@@ -25,7 +25,7 @@ F-Droid community:
 -   [issue tracker](https://gitlab.com/fdroid/fdroiddata/issues) for
     issues with published apps
 
-### Why isn't my favorite app included?
+### Why isn't my favourite app included?
 
 Some common reasons:
 

@@ -70,7 +70,7 @@ In total, **68** apps were updated this week. Here are the highlights:
   * Follow instance button can be hidden
   * Improved UX with more text
 
-* **[Markor](https://f-droid.org/app/net.gsantner.markor)**, 1.2.0 is out. Your favorite [markdown](https://commonmark.org) editor and TODO app now has launchers to directly open LinkBox/ToDo/QuickNote, context aware search for projects, preview for ToC and KaTex math, and improved markdown conversion, notably GFM-like table parsing and underlined h1. Read about even more improvements in the [blog post](https://gsantner.net/blog/android/2018/09/18/markor-release-v1.2.html).
+* **[Markor](https://f-droid.org/app/net.gsantner.markor)**, 1.2.0 is out. Your favourite [markdown](https://commonmark.org) editor and TODO app now has launchers to directly open LinkBox/ToDo/QuickNote, context aware search for projects, preview for ToC and KaTex math, and improved markdown conversion, notably GFM-like table parsing and underlined h1. Read about even more improvements in the [blog post](https://gsantner.net/blog/android/2018/09/18/markor-release-v1.2.html).
 
 * **[LTE Cleaner (FOSS)](https://f-droid.org/app/theredspy15.ltecleanerfoss)** had major updates this week, going from 2.3 to 3.1.0 in 5 releases! New features include a "one click clean" option, simplified filter options, an "aggressive filter", Chinese (traditional) language support, and many smaller changes and bug fixes.
 

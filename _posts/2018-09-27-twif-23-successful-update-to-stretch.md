@@ -41,7 +41,7 @@ As of the latest index update, the [SET Anti-Feature](https://f-droid.org/wiki/p
 
 In total, **{{ page.number_of_updated_apps }}** apps were updated this week. Here are the highlights:
 
-* **[ICSdroid](https://f-droid.org/app/at.bitfire.icsdroid)** fetches remote iCalendar files (like your school/university time tables, or events of your favorite sports team) and synchronizes them into local, read-only Android calendars. No other data is transferred; there are no accounts and no logins. This update to 1.6 brings better support for large calendars, and various minor improvements.
+* **[ICSdroid](https://f-droid.org/app/at.bitfire.icsdroid)** fetches remote iCalendar files (like your school/university time tables, or events of your favourite sports team) and synchronizes them into local, read-only Android calendars. No other data is transferred; there are no accounts and no logins. This update to 1.6 brings better support for large calendars, and various minor improvements.
 
 * {{ page.major }} **[Music Player GO](https://f-droid.org/app/com.iven.musicplayergo)** had a major update to 3.0.0 and then some, bringing it up to 3.1.1. [Changes](https://github.com/enricocid/Music-Player-GO/releases) are unclear.
 
