@@ -34,9 +34,9 @@ For people who will be working with them: Remember that these machines have real
 
 #### First alpha of F-Droid client 1.5 released
 
-F-Droid client 1.5-alpha0 is out with a new ROM feature. There is now [a way to preinstall F-Droid with additional repositories](https://gitlab.com/fdroid/fdroidclient/merge_requests/705). These repositories can only be added, and can't override the main f-droid.org repositories. Also, the user is free to disable and delete, so this is only for the initial setup.
+F-Droid client 1.5-alpha0 is out with a new ROM feature. There is now [a way to pre-install F-Droid with additional repositories](https://gitlab.com/fdroid/fdroidclient/merge_requests/705). These repositories can only be added, and can't override the main f-droid.org repositories. Also, the user is free to disable and delete, so this is only for the initial setup.
 
-So for example, Lineage could supply an image with a standard F-Droid APK preinstalled, and have it preconfigured with a specific repository. Or this could be Replicant, Fairphone, etc. This feature was designed in cooperation with Emteria, who largely implemented it, with substantial contributions from F-Droid people.
+So for example, Lineage could supply an image with a standard F-Droid APK pre-installed, and have it preconfigured with a specific repository. Or this could be Replicant, Fairphone, etc. This feature was designed in cooperation with Emteria, who largely implemented it, with substantial contributions from F-Droid people.
 
 #### F-Droid metadata cleanup
 
