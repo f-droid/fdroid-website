@@ -1,7 +1,7 @@
-# Website of F-Droid.org
+# The F-Droid Website
 
-This is the repository for the website at [F-Droid.org](https://f-droid.org).
-It is based on Jekyll and you can find the development version
+This is the repository for the website at <https://f-droid.org>.  It
+is based on Jekyll and you can find the development version
 [here](https://fdroid.gitlab.io/fdroid-website/).
 
 ## Building
@@ -38,7 +38,10 @@ bundle exec jekyll serve
 If you want to use the official Git repository again,
 run `bundle config --delete local.jekyll-fdroid`.
 
-If you want to have another values for `site.url` and `site.baseurl` (default: `localhost:4000` and `fdroid-website`) you can add the from git ignored config file `userconfig.yml` and run all jekyll commands with this additional parameter:
+If you want to have another values for `site.url` and `site.baseurl`
+(default: `localhost:4000` and `fdroid-website`) you can add them in
+`userconfig.yml`, which is ignored by git, then run all Jekyll
+commands with this additional parameter:
 
 ```
 --config _config.yml,userconfig.yml

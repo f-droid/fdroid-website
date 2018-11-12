@@ -92,6 +92,34 @@ pages:
       --ignore-url ".*/packages/[b-z].*" --ignore-url "/F-Droid\.apk(\.asc)?$"
 
 
+spellcheck:
+  except:
+    - tags@fdroid/fdroidserver
+    - branches@fdroid/fdroidserver
+  image: node
+  stage: deploy
+  allow_failure: true
+  variables:
+    DEBIAN_FRONTEND: noninteractive
+    LC_ALL: C.UTF-8
+  script:
+    - apt-get -qy update
+    - apt-get -qy install --no-install-recommends --allow-unauthenticated python3 python3-requests
+    - npm i markdown-spellcheck -g
+    - git fetch https://gitlab.com/fdroid/fdroid-website.git
+    - for f in `git diff --name-only --diff-filter=d FETCH_HEAD...HEAD`; do
+          export CHANGED="$CHANGED `echo $f | grep '\.md$' || true`";
+      done
+    - ./tools/fetch-spelling-words.py >> .spelling
+    - if [ -z "`echo $CHANGED | sed 's,\s*,,g'`" ]; then
+          echo "No markdown files changed"; exit 0;
+      else
+          echo "Spellchecking $CHANGED";
+      fi
+    - mdspell --report --en-gb
+        --ignore-numbers --ignore-acronyms
+        $CHANGED
+
 
 # Download and verify that the FDroid.apk is signed by the right PGP
 # key.  The only time that F-Droid's signed metadata does not verify
