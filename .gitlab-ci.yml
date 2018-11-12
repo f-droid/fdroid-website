@@ -15,10 +15,8 @@ variables:
   ruby -v
   apt-get update
   apt-get install -y locales zlib1g-dev gettext po4a linkchecker bundler unzip python3 rsync python3-babel
-  echo "en_US UTF-8" > /etc/locale.gen
-  locale-gen en_US.UTF-8
-  export LANG=en_US.UTF-8
-  export LANGUAGE=en_US:en
+  grep '^en_US.UTF-8 UTF-8' /etc/locale.gen || echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen
+  locale-gen
   export LC_ALL=en_US.UTF-8
   ./tools/i18n.sh po2md
   bundle install --path vendor
