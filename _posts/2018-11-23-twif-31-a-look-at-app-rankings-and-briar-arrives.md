@@ -28,7 +28,7 @@ There are **{{ page.number_of_added_apps }}** new and **{{ page.number_of_update
 
 #### A look into app rankings
 
-**Mobilsicher** looked into how various app stores rank their apps in search results. F-Droid was mentioned as an option that delibarately uses a very simple ranking algorithm, although it's not very effective. [Article in German](https://mobilsicher.de/hintergrund/kritisch-hinterfragt-app-rankings-auf-android-und-ios).
+**Mobilsicher** looked into how various app stores rank their apps in search results. F-Droid was mentioned as an option that deliberately uses a very simple ranking algorithm, although it's not very effective. [Article in German](https://mobilsicher.de/hintergrund/kritisch-hinterfragt-app-rankings-auf-android-und-ios).
 
 #### New apps
 
@@ -50,7 +50,7 @@ There are **{{ page.number_of_added_apps }}** new and **{{ page.number_of_update
 
 * **[Acastus Photon](https://f-droid.org/app/name.gdr.acastus_photon)**: An online address/poi search for navigation apps.
 
-* {{ page.featured }} **[Briar](https://f-droid.org/app/org.briarproject.briar.android)** has finally landed! This is a messenger and social network app that doesn't depend on the internet (but can take advantage of it when available), exchanging messages between phones directly. It is comparable to **[Manyverse](https://f-droid.org/app/se.manyver)** in that way. Thanks to **[@Tovok7](https://blog.grobox.de)** setting up [disorderfs](https://salsa.debian.org/reproducible-builds/disorderfs), this now builds [reproducibly](https://reproducible-builds.org), which the autor requires for us to be allowed to publish it.
+* {{ page.featured }} **[Briar](https://f-droid.org/app/org.briarproject.briar.android)** has finally landed! This is a messenger and social network app that doesn't depend on the internet (but can take advantage of it when available), exchanging messages between phones directly. It is comparable to **[Manyverse](https://f-droid.org/app/se.manyver)** in that way. Thanks to **[@Tovok7](https://blog.grobox.de)** setting up [disorderfs](https://salsa.debian.org/reproducible-builds/disorderfs), this now builds [reproducibly](https://reproducible-builds.org), which the author requires for us to be allowed to publish it.
 
 * **[XScreenSaver](https://f-droid.org/app/org.jwz.xscreensaver)**: The famous collection of screen savers shipped on most linux and unix systems, now available on your mobile phone!
 
@@ -66,7 +66,7 @@ In total, **{{ page.number_of_updated_apps }}** apps were updated this week. Her
 
 * {{ page.major }} A major update for **[Scarlet FDroid](https://f-droid.org/app/com.bijoysingh.quicknote)**, the rich note-taking app formerly known as **Material Notes**. It was updated from 4.5.4 to 5.9.7 bringing improved search (by tags) with color, improved export features allowing markdown, lots of new features, and new UX for note options and all menus.
 
-* **[Music Player GO](https://f-droid.org/app/com.iven.musicplayergo)** is a very slim mucic player with a colorful and simple "Unified UI". It was updated from 3.1.3.2 to 3.4.2, with UI refinements, adding a stroke to the selected album, theme changes, a search bar, and more.
+* **[Music Player GO](https://f-droid.org/app/com.iven.musicplayergo)** is a very slim music player with a colorful and simple "Unified UI". It was updated from 3.1.3.2 to 3.4.2, with UI refinements, adding a stroke to the selected album, theme changes, a search bar, and more.
 
 * **[aRevelation](https://f-droid.org/app/de.igloffstein.maik.aRevelation)**, a password manager, updated to 1.9 with a fix for Nokia 8 phones and other minor bugfixes.
 
