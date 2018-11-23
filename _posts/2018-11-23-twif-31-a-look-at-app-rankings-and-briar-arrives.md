@@ -44,7 +44,7 @@ There are **{{ page.number_of_added_apps }}** new and **{{ page.number_of_update
 
 * **[Wave Lines Wallpaper](https://f-droid.org/app/de.markusfisch.android.wavelines)**: Wavy wallpaper.
 
-* **[Quicksy](https://f-droid.org/app/im.quicksy.client)**: Jabber/xmpp with easy entry and easy discovery.
+* **[Quicksy](https://f-droid.org/app/im.quicksy.client)**: A spin off of the popular Jabber/XMPP client [Conversations](https://f-droid.org/packages/eu.siacs.conversations/) by the same developer.  It adds automatic contact discovery.  Sign up with your phone number and Quicksy will automatically suggest possible contacts based on phone numbers in the local address book. This solves the "empty contact list" issue that a user faces on a new XMPP account. Unlike other messenger applications that use phone numbers, Quicksy keeps the federated nature of XMPP intact.
 
 * **[Aruba Networks Login](https://f-droid.org/app/io.mkg20001.arubanetworkslogin)**
 
