@@ -37,14 +37,14 @@ publish step, the reproducibility check will follow this logic:
 ![Flow-chart for reproducibility check]({{ site.baseurl }}/assets/docs/reproducible-builds/publish.png)
 
 
-#### Publish both (upstream-)developer singed and F-Droid signed APKs
+#### Publish both (upstream-)developer signed and F-Droid signed APKs
 
 Use this approach for shipping a version of an app, with both
 (upstream-)developer signed and F-Droid signed APKs. This enables us
 to ship updates for users who installed apps from other sources than
-F-Droid (eg. Play Store) which are therefore singed by the
+F-Droid (eg. Play Store) which are therefore signed by the
 app-developers, while also shipping updates for apps which were built
-and singed by F-Droid.
+and signed by F-Droid.
 
 This requires to put (upstream-)developer signatures into fdroiddata.
 We provide a command for easily extracting signatures from APKs:
