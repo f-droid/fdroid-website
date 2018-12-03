@@ -506,7 +506,7 @@ configuration to the build. These are (roughly in order of application):
     android file or doesn’t already exist, but not a good idea if it’s
     heavily customised.
 
-`update=<auto/dirs>`
+`androidupdate=<auto/dirs>`
 
 :   By default, ’android update’ is used in Ant builds to generate or
     update the project and all its referenced projects. Specifying
