@@ -73,6 +73,7 @@ pages:
    - sed -i 's,^gitlab_ci_languages:,languages:,' _config.yml
    - ./tools/check-format-strings.py
    - ./tools/check-page-links.py
+   - ./tools/check-do-not-translate
    - ./tools/i18n.sh md2po
    - git checkout po/*.pot  # ignore the newly generated timestamp
    - git --no-pager diff --ignore-all-space --name-only po/
