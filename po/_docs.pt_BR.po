@@ -8,15 +8,15 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
 "POT-Creation-Date: 2018-11-05 13:01+0100\n"
-"PO-Revision-Date: 2018-09-14 15:08+0000\n"
-"Last-Translator: RD WebDesign <weblate@rdwebdesign.com.br>\n"
+"PO-Revision-Date: 2018-11-26 10:10+0000\n"
+"Last-Translator: Lunovox Heavenfinder <lunovox@disroot.org>\n"
 "Language-Team: Portuguese (Brazil) <https://hosted.weblate.org/projects/f-droid/website-docs/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 3.2-dev\n"
+"X-Generator: Weblate 3.3-dev\n"
 
 #. type: Title #
 #: build/_docs/md/All_About_Descriptions_Graphics_and_Screenshots.md
@@ -81,14 +81,13 @@ msgstr "No final, na verdade não é realmente necessário instalar ou usar o _f
 
 #. type: Plain text
 #: build/_docs/md/All_About_Descriptions_Graphics_and_Screenshots.md
-#, fuzzy
 msgid "All the localized descriptions and graphics will automatically show up in the F-Droid repo once they are available in the source repo of a release that the repo builds.  For example, if these files are included in a _git_ repo's _master_ branch but not yet in a tagged release, they will not be included."
-msgstr "Todas as descrições de idioma e gráficos aparecerão automaticamente no repositório F-Droid, uma vez que eles estão disponíveis no repositório de códigos de um lançamento que o repositório constrói. Por exemplo, se esses arquivos são incluídos numa ramificação principal de um repositório git, mas ainda não estão marcados como uma versão de lançamento, eles não serão incluídos."
+msgstr "Todas as descrições e gráficos localizados aparecerão automaticamente no repositório F-Droid assim que estiverem disponíveis numa versão de repositório de lançamento que o repositor criar. Por exemplo, se esses arquivos forem incluídos em um repositório _git_ de ramificação _master_, mas ainda não houver uma lançamento marcado, eles não serão incluídos no lançamento."
 
 #. type: Plain text
 #: build/_docs/md/All_About_Descriptions_Graphics_and_Screenshots.md
 msgid "The last important detail is that the texts in the app's metadata file will override all other descriptive texts from _Fastlane_/_Triple-T_. That is specifically [Name](../Build_Metadata_Reference/#Name)/[AutoName](../Build_Metadata_Reference/#AutoName), [Summary](../Build_Metadata_Reference/#Summary), and [Description](../Build_Metadata_Reference/#Description).  Once an app's descriptive texts have been moved into the source repo, then file a [merge request](https://gitlab.com/fdroid/fdroiddata/merge_requests)  or [issue](https://gitlab.com/fdroid/fdroiddata/issues) to remove _Summary_ and _Description_ from the app's metadata file."
-msgstr ""
+msgstr "O último detalhe importante é que os textos no arquivo de metadados do aplicativo substituirão todos os outros textos descritivos de _Fastlane_/_Triple-T_. Isso é especificamente [Name](../Build_Metadata_Reference/#Name)/[AutoName](../Build_Metadata_Reference/#AutoName), [Summary](../Build_Metadata_Reference/#Summary), e [Description](../Build_Metadata_Reference/#Description).  Depois que os textos descritivos de um aplicativo forem movidos para o repositório de origem, registre uma [solicitação de mesclagem](https://gitlab.com/fdroid/fdroiddata/merge_requests)  ou [questão](https://gitlab.com/fdroid/fdroiddata/issues) para remover _Summary_ e _Description_ do arquivo de metadados do aplicativo."
 
 #. type: Title ##
 #: build/_docs/md/All_About_Descriptions_Graphics_and_Screenshots.md
@@ -99,11 +98,11 @@ msgstr "Nos metadados de de construção de um app em uma coleção _fdroiddata_
 #. type: Plain text
 #: build/_docs/md/All_About_Descriptions_Graphics_and_Screenshots.md
 msgid "All the app store materials can also be added to any _fdroiddata_ repository of build metadata.  This follows a file layout modeled after [fastlane supply](https://github.com/fastlane/fastlane/blob/2.28.7/supply/README.md#images-and-screenshots), modified to fit into the _fdroiddata_ workflow.  Any files in this layout will be copied into the repo and added to the repo's index file by `fdroid update`."
-msgstr ""
+msgstr "Todos os materiais da loja de aplicativos também podem ser adicionados a qualquer repositório _fdroiddata_ de metadados de construção. Isso segue um layout de arquivo modelado após [fornecimento de fastlane](https://github.com/fastlane/fastlane/blob/2.28.7/supply/README.md#images-and-screenshots), modificado para caber no fluxo de trabalho _fdroiddata_ . Todos os arquivos neste layout serão copiados para o repositório e adicionados ao arquivo de índice do repo por `fdroid update`."
 
 #. type: Plain text
 #: build/_docs/md/All_About_Descriptions_Graphics_and_Screenshots.md
-#, no-wrap
+#, fuzzy, no-wrap
 msgid ""
 "```\n"
 "- <fdroiddata>/\n"
@@ -134,6 +133,34 @@ msgid ""
 "                  └── *.png\n"
 "```\n"
 msgstr ""
+"```\n"
+"- <fdroiddata>/\n"
+"  └── metadata/\n"
+"      └── <package-id>/\n"
+"          └── <locale>/\n"
+"              ├── full_description.txt\n"
+"              ├── short_description.txt\n"
+"              ├── title.txt\n"
+"              ├── video.txt\n"
+"              ├── images/\n"
+"              │   ├── featureGraphic.png\n"
+"              │   ├── icon.png\n"
+"              │   ├── promoGraphic.png\n"
+"              │   └── tvBanner.png\n"
+"              ├── changelogs/\n"
+"              │   ├── <version-code>.txt\n"
+"              │   └── <version-code>.txt\n"
+"              ├── phoneScreenshots/\n"
+"              │   └── *.png\n"
+"              ├── sevenInchScreenshots/\n"
+"              │   └── *.png\n"
+"              ├── tenInchScreenshots/\n"
+"              │   └── *.png\n"
+"              ├── tvScreenshots/\n"
+"              │   └── *.png\n"
+"              └── wearScreenshots/\n"
+"                  └── *.png\n"
+"```\n"
 
 #. type: Plain text
 #: build/_docs/md/All_About_Descriptions_Graphics_and_Screenshots.md
@@ -158,6 +185,32 @@ msgid ""
 "* .../ToGoZip/fastlane/metadata/android/en-US/images/phoneScreenshots/....\n"
 "  * images in this folder will be shown below the fdroid-s app description\n"
 msgstr ""
+"* .../ToGoZip/app/...\\n"
+"\n"
+"  * o código fonte para o aplicativo Android ToGZip\\n"
+"\n"
+"* [.../ToGoZip/fastlane/metadata/android/en-US/full_description.txt](https://github.com/k3b/ToGoZip/blob/master/fastlane/metadata/android/en-US/full_description.txt)\\n"
+"\n"
+"  * contém o (us-) descrito em inglês do aplicativo ToGoZip.\\n"
+"\n"
+"* [.../ToGoZip/fastlane/metadata/android/de-DE/full_description.txt](https://github.com/k3b/ToGoZip/blob/master/fastlane/metadata/android/de-DE/full_description.txt)\\n"
+"\n"
+"  * contém a descrição em alemão do aplicativo ToGoZip.\\n"
+"\n"
+"* [.../ToGoZip/fastlane/metadata/android/en-US/changelogs/9.txt](https://github.com/k3b/ToGoZip/blob/master/fastlane/metadata/android/en-US/changelogs/9.txt)\\n"
+"\n"
+"  * contém descrição das alterações feitas no versionCode **9**\\n"
+"\n"
+"  * no aplicativo fdroid isso será mostrado acima da descrição do aplicativo.\\n"
+"\n"
+"* .../ToGoZip/fastlane/metadata/android/en-US/images/featureGraphic.png \\n"
+"\n"
+"  * esta imagem será mostrada no topo da descrição do aplicativo fdroid-s.\\n"
+"\n"
+"* .../ToGoZip/fastlane/metadata/android/en-US/images/phoneScreenshots/....\\n"
+"\n"
+"  * as imagens nesta pasta serão mostradas abaixo da descrição do aplicativo fdroid-s.\\n"
+"\n"
 
 #. type: Title ##
 #: build/_docs/md/All_About_Descriptions_Graphics_and_Screenshots.md
@@ -168,7 +221,7 @@ msgstr "Diretamente no repositório do F-Droid"
 #. type: Plain text
 #: build/_docs/md/All_About_Descriptions_Graphics_and_Screenshots.md
 msgid "The ultimate destination for files from the app's source repo and _fdroiddata_ metadata sub-directories is in the F-Droid repo.  The text all gets included into the index file (aka _index-v1.json_).  All of the graphics files can be directly included in the repo.  If graphics files are also in the app's source or _fdroiddata_, then the files directly in the repo will be overwritten.  The text files from the _fastlane_ layout are ignored if they are in the repo."
-msgstr ""
+msgstr "O destino final dos arquivos dos repositórios de origem do aplicativo e dos subdiretórios de metadados _fdroiddata_ está no repositório F-Droid. O texto é incluído no arquivo de índice (aka _index-v1.json_). Todos os arquivos gráficos podem ser incluídos diretamente no repositório. Se os arquivos gráficos também estiverem na origem do aplicativo ou _fdroiddata_, os arquivos diretamente no repositório serão sobrescritos. Os arquivos de texto do layout _fastlane_ são ignorados se estiverem no repositório."
 
 #. type: Plain text
 #: build/_docs/md/All_About_Descriptions_Graphics_and_Screenshots.md
@@ -195,22 +248,42 @@ msgid ""
 "                  └── *.png\n"
 "```\n"
 msgstr ""
+"```\n"
+"- fdroid/\n"
+"  └── repo/\n"
+"      └── <package-id>/\n"
+"          └── <locale>/\n"
+"              ├── featureGraphic.png\n"
+"              ├── icon.png\n"
+"              ├── promoGraphic.png\n"
+"              ├── tvBanner.png\n"
+"              ├── phoneScreenshots/\n"
+"              │   └── *.png\n"
+"              ├── sevenInchScreenshots/\n"
+"              │   └── *.png\n"
+"              ├── tenInchScreenshots/\n"
+"              │   └── *.png\n"
+"              ├── tvScreenshots/\n"
+"              │   └── *.png\n"
+"              └── wearScreenshots/\n"
+"                  └── *.png\n"
+"```\n"
 
 #. type: Plain text
 #: build/_docs/md/All_About_Descriptions_Graphics_and_Screenshots.md
 msgid "`fdroid update` adds all the graphics files it finds in the repo to the index.  `fdroid server update` will sync all of the files in the repo to the various locations where the repo is actually hosted."
-msgstr ""
+msgstr "`fdroid update` adiciona todos os arquivos gráficos encontrados no repositório ao índice. A \\\"atualização do servidor fdroid\\\" sincronizará todos os arquivos no repo para os vários locais onde o repo está realmente hospedado."
 
 #. type: Title #
 #: build/_docs/md/Building_Applications.md
 #, no-wrap
 msgid "Building Applications"
-msgstr ""
+msgstr "Construção de Aplicações"
 
 #. type: Plain text
 #: build/_docs/md/Building_Applications.md
 msgid "Instead of (or as well as) including binary APKs from external sources in a repository, you can build them directly from the source code."
-msgstr ""
+msgstr "Em vez de incluir APKs binários de fontes externas em um repositório, você pode criá-los diretamente a partir do código-fonte."
 
 #. type: Plain text
 #: build/_docs/md/Building_Applications.md
@@ -240,17 +313,17 @@ msgstr "Por esse motivo, a geração de aplicações baseadas em código-fonte �
 #. type: Plain text
 #: build/_docs/md/Building_Applications.md
 msgid "When building applications from source, it should be noted that you will be signing them (all APK files must be signed to be installable on Android) with your own key. When an application is already installed on a device, it is not possible to upgrade it in place to a new version signed with a different key without first uninstalling the original.  This may present an inconvenience to users, as the process of uninstalling loses any data associated with the previous installation."
-msgstr ""
+msgstr "Ao criar aplicativos a partir da fonte, deve-se notar que você os assinará (todos os arquivos APK devem ser assinados para instalação no Android) com sua própria chave. Quando um aplicativo já está instalado em um dispositivo, não é possível atualizá-lo para uma nova versão assinada com uma chave diferente sem primeiro desinstalar o original. Isso pode representar um inconveniente para os usuários, pois o processo de desinstalação perde todos os dados associados à instalação anterior."
 
 #. type: Plain text
 #: build/_docs/md/Building_Applications.md
 msgid "The process for managing a repository for built-from-source applications is very similar to that described in the Simple Binary Repository chapter, except now you need to:"
-msgstr ""
+msgstr "O processo para gerenciar um repositório para aplicativos construídos de origem é muito semelhante ao descrito no capítulo Repositório Binário Simples, exceto que agora você precisa:"
 
 #. type: Bullet: '1.  '
 #: build/_docs/md/Building_Applications.md
 msgid "Include Build entries in the metadata files."
-msgstr ""
+msgstr "Incluir entradas de compilação nos arquivos de metadados."
 
 #. type: Bullet: '2.  '
 #: build/_docs/md/Building_Applications.md
@@ -266,88 +339,90 @@ msgstr "Executar `fdroid publish` para finalizar o empacotamento e assinar quais
 #: build/_docs/md/Building_Applications.md
 #, no-wrap
 msgid "App data directory aka _fdroiddata_"
-msgstr ""
+msgstr "Diretório de dados do aplicativo, conhecido como _fdroiddata_"
 
 #. type: Plain text
 #: build/_docs/md/Building_Applications.md
 msgid "To do anything, you’ll need at least one repository data directory. It’s from this directory that you run the `fdroid` command to perform all repository management tasks. You can either create a brand new one, or grab a copy of the data used by the main F-Droid repository:"
-msgstr ""
+msgstr "Para fazer qualquer coisa, você precisará de pelo menos um diretório de dados do repositório. É a partir desse diretório que você executa o comando `fdroid` para executar todas as tarefas de gerenciamento de repositório. Você pode criar um novo, ou pegar uma cópia dos dados usados pelo repositório principal do F-Droid:"
 
 #. type: Plain text
 #: build/_docs/md/Building_Applications.md
+#, fuzzy
 msgid "```bash git clone https://gitlab.com/fdroid/fdroiddata.git ```"
-msgstr ""
+msgstr "```bash git clone https://gitlab.com/fdroid/fdroiddata.git ```"
 
 #. type: Plain text
 #: build/_docs/md/Building_Applications.md
 msgid "Regardless of the intended usage of the tools, you will always need to set up some basic configuration details. This is done by creating a file called `config.py` in the data directory. You should do this by copying the example file (`./examples/config.py`) from the fdroidserver project to your data directory and then editing according to the instructions within."
-msgstr ""
+msgstr "Independentemente do uso pretendido das ferramentas, você sempre precisará configurar alguns detalhes básicos de configuração. Isso é feito criando um arquivo chamado `config.py` no diretório de dados. Você deve fazer isso copiando o arquivo de exemplo (`./examples/config.py`) do projeto fdroidserver para o seu diretório de dados e editando de acordo com as instruções."
 
 #. type: Plain text
 #: build/_docs/md/Building_Applications.md
 msgid "Once configured in this way, all the functionality of the tools is accessed by running the `fdroid` command. Run it on its own to get a list of the available sub-commands."
-msgstr ""
+msgstr "Uma vez configurado desta maneira, toda a funcionalidade das ferramentas é acessada executando o comando `fdroid`. Execute-o sozinho para obter uma lista dos subcomandos disponíveis."
 
 #. type: Plain text
 #: build/_docs/md/Building_Applications.md
 msgid "You can follow any command with `--help` to get a list of additional options available for that command."
-msgstr ""
+msgstr "Você pode seguir qualquer comando com '--help' para obter uma lista de opções adicionais disponíveis para esse comando."
 
 #. type: Plain text
 #: build/_docs/md/Building_Applications.md
 msgid "```bash fdroid update --help ```"
-msgstr ""
+msgstr "```bash fdroid update --help ```"
 
 #. type: Title ###
 #: build/_docs/md/Building_Applications.md
 #, no-wrap
 msgid "More about `fdroid build`"
-msgstr ""
+msgstr "Mais sobre `fdroid build`"
 
 #. type: Plain text
 #: build/_docs/md/Building_Applications.md
 msgid "When run without any parameters, `fdroid build` will build any and all versions of applications that you don’t already have in the `repo` directory (or more accurately, the `unsigned` directory). There are various other things you can do. As with all the tools, the `--help` option is your friend, but a few annotated examples and discussion of the more common usage modes follows:"
-msgstr ""
+msgstr "Quando executado sem nenhum parâmetro, o `fdroid build` criará todas e quaisquer versões de aplicativos que você ainda não tenha no diretório do 'repositório' (ou, mais precisamente, no diretório 'unsigned'). Existem várias outras coisas que você pode fazer. Como com todas as ferramentas, a opção '--help' é sua amiga, mas alguns exemplos anotados e discussões sobre os modos de uso mais comuns são os seguintes:"
 
 #. type: Plain text
 #: build/_docs/md/Building_Applications.md
 msgid "To build a single version of a single application, you could run the following:"
-msgstr ""
+msgstr "Para criar uma única versão de um único aplicativo, você pode executar o seguinte:"
 
 #. type: Plain text
 #: build/_docs/md/Building_Applications.md
 msgid "```bash fdroid build org.fdroid.fdroid:16 ```"
-msgstr ""
+msgstr "```bash fdroid build org.fdroid.fdroid:16 ```"
 
 #. type: Plain text
 #: build/_docs/md/Building_Applications.md
 msgid "This attempts to build version code 16 (which is version 0.25) of the F-Droid client. Many of the tools recognise arguments as packages, allowing their activity to be limited to just a limited set of packages."
-msgstr ""
+msgstr "Isso tenta criar o código de versão 16 (que é a versão 0.25) do cliente F-Droid. Muitas das ferramentas reconhecem argumentos como `packages`, permitindo que sua atividade seja limitada a apenas um conjunto limitado de pacotes."
 
 #. type: Plain text
 #: build/_docs/md/Building_Applications.md
 msgid "If the build above was successful, two files will have been placed in the `unsigned` directory:"
-msgstr ""
+msgstr "Se a construção acima foi bem sucedida, dois arquivos serão colocados no diretório `unsigned`:"
 
 #. type: Plain text
 #: build/_docs/md/Building_Applications.md
 msgid "``` org.fdroid.fdroid_16.apk org.fdroid.fdroid_16_src.tar.gz ```"
-msgstr ""
+msgstr "``` org.fdroid.fdroid_16.apk org.fdroid.fdroid_16_src.tar.gz ```"
 
 #. type: Plain text
 #: build/_docs/md/Building_Applications.md
 msgid "The first is the (unsigned) APK. You could sign this with a debug key and push it direct to your device or an emulator for testing. The second is a source tarball containing exactly the source that was used to generate the binary."
-msgstr ""
+msgstr "O primeiro é o APK (não assinado). Você poderia assinar isso com uma chave de depuração e enviá-la diretamente para o seu dispositivo ou um emulador para teste. O segundo é um tarball de origem que contém exatamente a fonte usada para gerar o binário."
 
 #. type: Plain text
 #: build/_docs/md/Building_Applications.md
 msgid "If you were intending to publish these files, you could then run:"
-msgstr ""
+msgstr "Se você pretendesse publicar esses arquivos, poderia executar:"
 
 #. type: Plain text
 #: build/_docs/md/Building_Applications.md
+#, fuzzy
 msgid "```bash fdroid publish ```"
-msgstr ""
+msgstr "```bash fdroid publish ```"
 
 #. type: Plain text
 #: build/_docs/md/Building_Applications.md
