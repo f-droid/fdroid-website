@@ -90,6 +90,8 @@ The following sections describe the fields recognised within the file.
 ### 7.1 Categories<a name="Categories"></a>
 
 
+Field Name: `Categories`
+
 Any number of categories for the application to be placed in. There is
 no fixed list of categories - both the client and the web site will
 automatically show any categories that exist in any applications.
@@ -107,6 +109,9 @@ This is converted to (`<categories>`) in the XML file (_index.xml_).
 
 ### 7.2 Author Name<a name="Author-Name"></a>
 
+
+Field Name: `Author Name`
+
 The name of the author, either full, abbreviated or pseudonym. If
 present, it should represent the name(s) as published by upstream, e.g.
 in their copyright or authors file. This can be omitted (or left blank).
@@ -120,6 +125,9 @@ This is converted to (`<author>`) in the XML file (_index.xml_).
 
 ### 7.3 Author Email<a name="Author-Email"></a>
 
+
+Field Name: `Author Email`
+
 The e-mail address of the author(s). This can be omitted (or left
 blank).
 
@@ -131,6 +139,9 @@ This is converted to (`<email>`) in the XML file (_index.xml_).
 
 
 ### 7.4 License<a name="License"></a>
+
+
+Field Name: `License`
 
 The overall license for the application in terms of the binary that
 the user can install. Values should correspond to short identifiers of
@@ -150,6 +161,9 @@ This is converted to (`<license>`) in the XML file (_index.xml_).
 
 ### 7.5 Auto Name<a name="Auto-Name"></a>
 
+
+Field Name: `Auto Name`
+
 The name of the application as can best be retrieved from the source
 code. This is done so that the commitupdates script can put a familiar
 name in the description of commits created when a new update of the
@@ -164,6 +178,9 @@ This is converted to (`<name>`) in the XML file (_index.xml_).
 
 
 ### 7.6 Name<a name="Name"></a>
+
+
+Field Name: `Name`
 
 The name of the application. Normally, this field should not be present
 since the application’s correct name is retrieved from the APK file.
@@ -182,6 +199,8 @@ This is converted to (`<name>`) in the XML file (_index.xml_).
 ### 7.7 Provides<a name="Provides"></a>
 
 
+Field Name: `Provides`
+
 Comma-separated list of application IDs that this app provides. In other
 words, if the user has any of these apps installed, F-Droid will show
 this app as installed instead. It will also appear if the user clicks on
@@ -197,6 +216,8 @@ This is converted to (`<provides>`) in the XML file (_index.xml_).
 ### 7.8 Web Site<a name="Web-Site"></a>
 
 
+Field Name: `Web Site`
+
 The URL for the application’s web site. If there is no relevant web
 site, this can be omitted (or left blank).
 
@@ -206,6 +227,8 @@ This is converted to (`<web>`) in the XML file (_index.xml_).
 
 ### 7.9 Source Code<a name="Source-Code"></a>
 
+
+Field Name: `Source Code`
 
 The URL to view or obtain the application’s source code. This should be
 something human-friendly. Machine-readable source-code is covered in the
@@ -218,6 +241,8 @@ This is converted to (`<source>`) in the XML file (_index.xml_).
 ### 7.10 Issue Tracker<a name="Issue-Tracker"></a>
 
 
+Field Name: `Issue Tracker`
+
 The URL for the application’s issue tracker. Optional, since not all
 applications have one.
 
@@ -228,6 +253,8 @@ This is converted to (`<tracker>`) in the XML file (_index.xml_).
 ### 7.11 Changelog<a name="Changelog"></a>
 
 
+Field Name: `Changelog`
+
 The URL for the application’s changelog. Optional, since not all
 applications have one.
 
@@ -237,6 +264,8 @@ This is converted to (`<changelog>`) in the XML file (_index.xml_).
 
 ### 7.12 Donate<a name="Donate"></a>
 
+
+Field Name: `Donate`
 
 The URL to donate to the project. This should be the project’s donate
 page if it has one.
@@ -255,6 +284,8 @@ This is converted to (`<donate>`) in the XML file (_index.xml_).
 ### 7.13 FlattrID<a name="FlattrID"></a>
 
 
+Field Name: `FlattrID`
+
 The project’s Flattr (https://flattr.com) ID, if it has one. This should
 be a numeric ID, such that (for example) https://flattr.com/thing/xxxx
 leads directly to the page to donate to the project.
@@ -265,6 +296,8 @@ This is converted to (`<flattr>`) in the XML file (_index.xml_).
 
 ### 7.14 LiberapayID<a name="LiberapayID"></a>
 
+
+Field Name: `LiberapayID`
 
 The project’s Liberapay (https://liberapay.com) ID, if it has one. This should
 be a numeric ID, such that (for example) https://liberapay.com/~xxxxx
@@ -279,6 +312,8 @@ This is converted to (`<liberapay>`) in the XML file (_index.xml_).
 ### 7.15 Bitcoin<a name="Bitcoin"></a>
 
 
+Field Name: `Bitcoin`
+
 A bitcoin address for donating to the project.
 
 This is converted to (`<bitcoin>`) in the XML file (_index.xml_).
@@ -288,6 +323,8 @@ This is converted to (`<bitcoin>`) in the XML file (_index.xml_).
 ### 7.16 Litecoin<a name="Litecoin"></a>
 
 
+Field Name: `Litecoin`
+
 A litecoin address for donating to the project.
 
 This is converted to (`<litecoin>`) in the XML file (_index.xml_).
@@ -295,6 +332,9 @@ This is converted to (`<litecoin>`) in the XML file (_index.xml_).
 
 
 ### 7.17 Summary<a name="Summary"></a>
+
+
+Field Name: `Summary`
 
 A brief summary of what the application is. Since the summary is only
 allowed one line on the list of the F-Droid client, keeping it to within
@@ -308,6 +348,9 @@ This is converted to (`<summary>`) in the XML file (_index.xml_).
 
 
 ### 7.18 Description<a name="Description"></a>
+
+
+Field Name: `Description`
 
 A full description of the application, relevant to the latest version.
 This can span multiple lines (which should be kept to a maximum of 80
@@ -347,6 +390,8 @@ This is converted to (`<desc>`) in the XML file (_index.xml_).
 ### 7.19 Maintainer Notes<a name="Maintainer-Notes"></a>
 
 
+Field Name: `Maintainer Notes`
+
 This is a multi-line field using the same rules and syntax as the
 description. It’s used to record notes for F-Droid maintainers to assist
 in maintaining and updating the application in the repository.
@@ -357,6 +402,8 @@ This information is also published to the wiki.
 
 ### 7.20 Repo Type<a name="Repo-Type"></a>
 
+
+Field Name: `Repo Type`
 
 The type of repository - for automatic building from source. If this is
 not specified, automatic building is disabled for this application.
@@ -373,6 +420,8 @@ Possible values are:
 
 ### 7.21 Repo<a name="Repo"></a>
 
+
+Field Name: `Repo`
 
 The repository location. Usually a git: or svn: URL, for example.
 
@@ -398,6 +447,8 @@ and you want to use this srclib, then you have to set Repo to `FooBar`.
 ### 7.22 Binaries<a name="Binaries"></a>
 
 
+Field Name: `Binaries`
+
 The location of binaries used in verification process.
 
 If specified, F-Droid will verify the output apk file of a build against
@@ -412,6 +463,8 @@ F-Droid will use upstream binaries if the verification succeeded.
 
 ### 7.23 Build<a name="Build"></a>
 
+
+Field Name: `Build`
 
 Any number of these fields can be present, each specifying a version to
 automatically build from source. The value is a comma-separated list.
@@ -770,6 +823,8 @@ configuration to the build. These are (roughly in order of application):
 ### 7.24 AntiFeatures<a name="AntiFeatures"></a>
 
 
+Field Name: `AntiFeatures`
+
 This is optional - if present, it contains a comma-separated list of any
 of the following values, describing an anti-feature the application has.
 It is a good idea to mention the reasons for the anti-feature(s) in the
@@ -811,6 +866,8 @@ This is converted to (`<antifeatures>`) in the XML file (_index.xml_).
 ### 7.25 Disabled<a name="Disabled"></a>
 
 
+Field Name: `Disabled`
+
 If this field is present, the application does not get put into the
 public index. This allows metadata to be retained while an application
 is temporarily disabled from being published. The value should be a
@@ -825,6 +882,8 @@ retained.
 ### 7.26 Requires Root<a name="Requires-Root"></a>
 
 
+Field Name: `Requires Root`
+
 Set this optional field to "Yes" if the application requires root
 privileges to be usable. This lets the client filter it out if the user
 so desires. Whether root is required or not, it is good to give a
@@ -837,6 +896,8 @@ This is converted to (`<requirements>`) in the XML file (_index.xml_).
 
 ### 7.27 Archive Policy<a name="Archive-Policy"></a>
 
+
+Field Name: `Archive Policy`
 
 This determines the policy for moving old versions of an app to the
 archive repo, if one is configured. The configuration sets a default
@@ -851,6 +912,8 @@ number of versions to keep. Defaults to "3 versions".
 
 ### 7.28 Update Check Mode<a name="Update-Check-Mode"></a>
 
+
+Field Name: `Update Check Mode`
 
 This determines the method using for determining when new releases are
 available - in other words, the updating of the Current Version and
@@ -941,6 +1004,8 @@ Valid modes are:
 ### 7.29 Vercode Operation<a name="Vercode-Operation"></a>
 
 
+Field Name: `Vercode Operation`
+
 Operation to be applied to the vercode obtained by the defined
 `Update Check Mode`. `%c` will be replaced by the actual vercode, and
 the whole string will be passed to python’s `eval` function.
@@ -956,6 +1021,8 @@ upstream version.
 ### 7.30 Update Check Ignore<a name="Update-Check-Ignore"></a>
 
 
+Field Name: `Update Check Ignore`
+
 When checking for updates (via `Update Check Mode`) this can be used to
 specify a regex which, if matched against the version name, causes that
 version to be ignored. For example, ’beta’ could be specified to ignore
@@ -965,6 +1032,8 @@ version names that include that text.
 
 ### 7.31 Update Check Name<a name="Update-Check-Name"></a>
 
+
+Field Name: `Update Check Name`
 
 When checking for updates (via `Update Check Mode`) this can be used to
 specify the package name to search for. Useful when apps have a static
@@ -980,12 +1049,16 @@ build.gradle file does not contain the package name.
 ### 7.32 Update Check Data<a name="Update-Check-Data"></a>
 
 
+Field Name: `Update Check Data`
+
 Used in conjunction with `Update Check Mode` for certain modes.
 
 
 
 ### 7.33 Auto Update Mode<a name="Auto-Update-Mode"></a>
 
+
+Field Name: `Auto Update Mode`
 
 This determines the method using for auto-generating new builds when new
 releases are available - in other words, adding a new Build Version line
@@ -1016,6 +1089,8 @@ Valid modes are:
 ### 7.34 Current Version<a name="Current-Version"></a>
 
 
+Field Name: `Current Version`
+
 The [name of the version](https://developer.android.com/guide/topics/manifest/manifest-element.html#vname) that is the recommended release. There may be newer versions of
 the application than this (e.g. unstable versions), and there will
 almost certainly be older ones. This should be the one that is
@@ -1034,6 +1109,8 @@ This is converted to (`<marketversion>`) in the XML file (_index.xml_).
 ### 7.35 Current Version Code<a name="Current-Version-Code"></a>
 
 
+Field Name: `Current Version Code`
+
 The [version code](https://developer.android.com/guide/topics/manifest/manifest-element.html#vcode) corresponding to the [Current Version](#Current-Version) field. Both these
 fields must be correct and matching although it’s the current version
 code that’s used by Android to determine version order and by F-Droid
@@ -1051,6 +1128,8 @@ This is converted to (`<marketvercode>`) in the XML file (_index.xml_).
 
 ### 7.36 No Source Since<a name="No-Source-Since"></a>
 
+
+Field Name: `No Source Since`
 
 In case we are missing the source code for the Current Version reported
 by Upstream, or that non-free elements have been introduced, this
