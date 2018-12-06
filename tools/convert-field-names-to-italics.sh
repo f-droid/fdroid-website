@@ -40,3 +40,13 @@ for f in androidupdate antcommands antifeatures build buildjni buildozer commit 
         -e "s,^\(\`${f}\)=,\1: ,g" \
         $basedir/*/*.md
 done
+
+# file names
+for f in AndroidManifest.xml build.gradle build.xml config.py custom_rules.xml index.jar index.xml index-v1.jar index-v1.json makebuildserver META-INF/buildserverid META-INF/fdroidserverid ndk-build project.properties .classpath .gitmodules; do
+    backtick='`'$f'`'
+    sed -i \
+        -e "s,${backtick},_${f}_,g" \
+        -e "s, ${f} , _${f}_ ,g" \
+        $basedir/*/*.md
+done
+

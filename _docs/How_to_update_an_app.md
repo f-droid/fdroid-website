@@ -56,9 +56,9 @@ use many branches, I'll often visit the source code site too).
     current version noted earlier
 -   ` hg up "tag"` to switch to the tag or
     revision (to make sure you are auditing exactly what will be built)
--   `hg log -p` e.g. libs | build.xml |
-    AndroidManifest.xml | project.properties | res/raw | assets |
-    .gitmodules | .classpath to take a closer look at the changes in
+-   `hg log -p` e.g. libs | _build.xml_ |
+    _AndroidManifest.xml_ | _project.properties_ | res/raw | assets |
+    _.gitmodules_ | _.classpath_ to take a closer look at the changes in
     some of the important files (as far as updating is concerned). If
     new jars (or new versions of old ones) are found then they must be
     verified to see they were found from canonical sources and are free
@@ -73,7 +73,7 @@ use many branches, I'll often visit the source code site too).
     the description explaining the reason that the app can't be updated
 -   `find . -type f -executable` to locate any
     scripts and things. Note that ant will also execute anything it
-    finds in build.xml and custom_rules.xml!
+    finds in _build.xml_ and custom_rules.xml!
 -   `$find . -name '\*' | xargs file --mime | grep
     executable|shared-lib` to see if any prebuilts
     are around. These would often be detected by fdroid anyway and would

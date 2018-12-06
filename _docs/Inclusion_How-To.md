@@ -106,7 +106,7 @@ This is a nonexhaustive list of what a reviewer would do:
 -   They will try to determine a suitable update process for your
     application (e.g. by looking at how your releases relate to VCS tags
     and/or version information
-    in `AndroidManifest.xml`).
+    in _AndroidManifest.xml_).
 -   They will try writing a suitable metadata file for your application,
     and add it to local F-Droid build server instance.
     (`fdroid rewritemeta`, `fdroid

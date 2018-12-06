@@ -528,9 +528,9 @@ configuration to the build. These are (roughly in order of application):
     the target SDK in the AndroidManifest.xml, which determines the
     level of features that can be included in the build.
 
-    In the case of an Ant project, it modifies project.properties of the
+    In the case of an Ant project, it modifies _project.properties_ of the
     app and possibly sub-projects. This is likely to cause the whole
-    build.xml to be rewritten, which is fine if it’s a ’standard’
+    _build.xml_ to be rewritten, which is fine if it’s a ’standard’
     android file or doesn’t already exist, but not a good idea if it’s
     heavily customised.
 
@@ -542,7 +542,7 @@ configuration to the build. These are (roughly in order of application):
     don’t use Ant.
 
     Default value is ’`auto`’, which recursively uses the paths in
-    project.properties to find all the subprojects to update.
+    _project.properties_ to find all the subprojects to update.
 
     Otherwise, the value can be a comma-separated list of directories in
     which to run ’android update’ relative to the application directory.
@@ -557,7 +557,7 @@ configuration to the build. These are (roughly in order of application):
 
 `forceversion: yes`
 
-:   If specified, the package version in AndroidManifest.xml is replaced
+:   If specified, the package version in _AndroidManifest.xml_ is replaced
     with the version name for the build as specified in the metadata.
 
     This is useful for cases when upstream repo failed to update it for
@@ -568,7 +568,7 @@ configuration to the build. These are (roughly in order of application):
 
 `forcevercode: yes`
 
-:   If specified, the package version code in the AndroidManifest.xml is
+:   If specified, the package version code in the _AndroidManifest.xml_ is
     replaced with the version code for the build. See also forceversion.
 
 `rm: <path1>[,<path2>,...]`
@@ -597,7 +597,7 @@ configuration to the build. These are (roughly in order of application):
 
     For Ant projects, you can optionally append a number with a colon at
     the beginning of a srclib item to automatically place it in
-    project.properties as a library under the specified number. For
+    _project.properties_ as a library under the specified number. For
     example, if you specify `1:somelib@1.0`, F-Droid will automatically
     do the equivalent of the legacy practice
     `prebuild=echo "android.library.reference.1=$$somelib$$" >> project.properties`.
@@ -710,7 +710,7 @@ configuration to the build. These are (roughly in order of application):
 
 `buildjni: [yes|no|<dir list>]`
 
-:   Enables building of native code via the ndk-build script before
+:   Enables building of native code via the _ndk-build_ script before
     doing the main Ant build. The value may be a list of directories
     relative to the main application directory in which to run
     ndk-build, or ’yes’ which corresponds to ’.’ . Using explicit list
@@ -896,7 +896,7 @@ Valid modes are:
     automated way of doing so. Updates should be checked for manually.
     Use this, for example, when deploying unstable or patched versions;
     when builds are done in a directory different to where the
-    AndroidManifest.xml is; if the developers use the Gradle build
+    _AndroidManifest.xml_ is; if the developers use the Gradle build
     system and store version info in a separate file; if the developers
     make a new branch for each release and don’t make tags; or if you’ve
     changed the package name or version code logic.
@@ -904,14 +904,14 @@ Valid modes are:
     new versions are not desired. This method is also used when there is
     no other checking method available and the upstream developer keeps
     us posted on new versions.
--   `RepoManifest` - At the most recent commit, the `AndroidManifest.xml`
-    and `build.gradle` files are looked for in the directory where
+-   `RepoManifest` - At the most recent commit, the _AndroidManifest.xml_
+    and _build.gradle_ files are looked for in the directory where
     they were found in the the most recent build. The appropriateness of
     this method depends on the development process used by the
     application’s developers. You should not specify this method unless
     you’re sure it’s appropriate. For example, some developers bump the
     version when commencing development instead of when publishing. It
-    will return an error if the AndroidManifest.xml has moved to a
+    will return an error if the _AndroidManifest.xml_ has moved to a
     different directory or if the package name has changed. The current
     version that it gives may not be accurate, since not all versions
     are fit to be published.  Therefore, before building, it is often
@@ -929,12 +929,12 @@ Valid modes are:
     used without it.
 
 -   `RepoTrunk` - For svn and git-svn repositories, especially those who
-    don’t have a bundled AndroidManifest.xml file, the Tags and
+    don’t have a bundled _AndroidManifest.xml_ file, the Tags and
     RepoManifest checks will not work, since there is no version
     information to obtain. But, for those apps who automate their build
     process with the commit ref that HEAD points to, RepoTrunk will set
     the _CurrentVersion_ and _CurrentVersionCode_ to that number.
--   `Tags` - The `AndroidManifest.xml` and `build.gradle` files in all
+-   `Tags` - The _AndroidManifest.xml_ and _build.gradle_ files in all
     tagged revisions in the source repository are checked, looking for
     the highest version code.  The appropriateness of this method
     depends on the development process used by the application’s
@@ -942,7 +942,7 @@ Valid modes are:
     it’s appropriate. It shouldn’t be used if the developers like to tag
     unstable versions or are known to forget to tag releases. Like
     RepoManifest, it will not return the correct value if the directory
-    containing the AndroidManifest.xml has moved. Despite these caveats,
+    containing the _AndroidManifest.xml_ has moved. Despite these caveats,
     it is the often the favourite update check mode.
 
     It currently only works for git, hg, bzr and git-svn repositories.
