@@ -156,9 +156,9 @@ donation links, bug tracker, license, home page, etc. See the
 [Build Metadata Reference](../Build_Metadata_Reference) for more info
 on what all the options are.
 
-`Current Version Code` provides a handy way to
+`CurrentVersionCode` provides a handy way to
 deploy beta releases in the same stream as your full releases. You can
-set `Current Version Code` to your current stable
+set `CurrentVersionCode` to your current stable
 release, then add APKs to your repo. Users will only be updated
 automatically to the version code you specify. Any APKs for a given app
 in your repo that have a newer version code will not be automatically

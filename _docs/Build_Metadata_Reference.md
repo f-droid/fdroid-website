@@ -48,47 +48,46 @@ fdroid rewritemeta org.adaway
 
 The following sections describe the fields recognised within the file.
 
-- [Categories](#Categories)
-- [Author Name](#Author-Name)
-- [Author Email](#Author-Email)
-- [License](#License)
-- [Auto Name](#Auto-Name)
-- [Name](#Name)
-- [Provides](#Provides)
-- [Web Site](#Web-Site)
-- [Source Code](#Source-Code)
-- [Issue Tracker](#Issue-Tracker)
-- [Changelog](#Changelog)
-- [Donate](#Donate)
-- [FlattrID](#FlattrID)
-- [LiberapayID](#LiberapayID)
-- [Bitcoin](#Bitcoin)
-- [Litecoin](#Litecoin)
-- [Summary](#Summary)
-- [Description](#Description)
-- [Maintainer Notes](#Maintainer-Notes)
-- [Repo Type](#Repo-Type)
-- [Repo](#Repo)
-- [Binaries](#Binaries)
-- [Build](#Build)
-- [AntiFeatures](#AntiFeatures)
-- [Disabled](#Disabled)
-- [Requires Root](#Requires-Root)
-- [Archive Policy](#Archive-Policy)
-- [Update Check Mode](#Update-Check-Mode)
-- [Update Check Ignore](#Update-Check-Ignore)
-- [Vercode Operation](#Vercode-Operation)
-- [Update Check Name](#Update-Check-Name)
-- [Update Check Data](#Update-Check-Data)
-- [Auto Update Mode](#Auto-Update-Mode)
-- [Current Version](#Current-Version)
-- [Current Version Code](#Current-Version-Code)
-- [No Source Since](#No-Source-Since)
+- [_Categories_](#Categories)
+- [_AuthorName_](#AuthorName)
+- [_AuthorEmail_](#AuthorEmail)
+- [_License_](#License)
+- [_AutoName_](#AutoName)
+- [_Name_](#Name)
+- [_Provides_](#Provides)
+- [_WebSite_](#WebSite)
+- [_SourceCode_](#SourceCode)
+- [_IssueTracker_](#IssueTracker)
+- [_Changelog_](#Changelog)
+- [_Donate_](#Donate)
+- [_FlattrID_](#FlattrID)
+- [_LiberapayID_](#LiberapayID)
+- [_Bitcoin_](#Bitcoin)
+- [_Litecoin_](#Litecoin)
+- [_Summary_](#Summary)
+- [_Description_](#Description)
+- [_MaintainerNotes_](#MaintainerNotes)
+- [_RepoType_](#RepoType)
+- [_Repo_](#Repo)
+- [_Binaries_](#Binaries)
+- [_Build_](#Build)
+- [_AntiFeatures_](#AntiFeatures)
+- [_Disabled_](#Disabled)
+- [_RequiresRoot_](#RequiresRoot)
+- [_ArchivePolicy_](#ArchivePolicy)
+- [_UpdateCheckMode_](#UpdateCheckMode)
+- [_UpdateCheckIgnore_](#UpdateCheckIgnore)
+- [_VercodeOperation_](#VercodeOperation)
+- [_UpdateCheckName_](#UpdateCheckName)
+- [_UpdateCheckData_](#UpdateCheckData)
+- [_AutoUpdateMode_](#AutoUpdateMode)
+- [_CurrentVersion_](#CurrentVersion)
+- [_CurrentVersionCode_](#CurrentVersionCode)
+- [_NoSourceSince_](#NoSourceSince)
 
 
 
 ### 7.1 Categories<a name="Categories"></a>
-
 
 Field Name: `Categories`
 
@@ -107,31 +106,29 @@ This is converted to (`<categories>`) in the XML file (_index.xml_).
 
 
 
-### 7.2 Author Name<a name="Author-Name"></a>
+### 7.2 _AuthorName_<a name="AuthorName"></a>
 
-
-Field Name: `Author Name`
+Field Name: `AuthorName`
 
 The name of the author, either full, abbreviated or pseudonym. If
 present, it should represent the name(s) as published by upstream, e.g.
 in their copyright or authors file. This can be omitted (or left blank).
 
-__Warning__: this overrides all Author Name entries
+__Warning__: this overrides all AuthorName entries
 [set in the app's source code](../All_About_Descriptions_Graphics_and_Screenshots).
 
 This is converted to (`<author>`) in the XML file (_index.xml_).
 
 
 
-### 7.3 Author Email<a name="Author-Email"></a>
+### 7.3 _AuthorEmail_<a name="AuthorEmail"></a>
 
-
-Field Name: `Author Email`
+Field Name: `AuthorEmail`
 
 The e-mail address of the author(s). This can be omitted (or left
 blank).
 
-__Warning__: this overrides all Author Email entries
+__Warning__: this overrides all AuthorEmail entries
 [set in the app's source code](../All_About_Descriptions_Graphics_and_Screenshots).
 
 This is converted to (`<email>`) in the XML file (_index.xml_).
@@ -139,7 +136,6 @@ This is converted to (`<email>`) in the XML file (_index.xml_).
 
 
 ### 7.4 License<a name="License"></a>
-
 
 Field Name: `License`
 
@@ -159,15 +155,14 @@ This is converted to (`<license>`) in the XML file (_index.xml_).
 
 
 
-### 7.5 Auto Name<a name="Auto-Name"></a>
+### 7.5 _AutoName_<a name="AutoName"></a>
 
-
-Field Name: `Auto Name`
+Field Name: `AutoName`
 
 The name of the application as can best be retrieved from the source
 code. This is done so that the commitupdates script can put a familiar
 name in the description of commits created when a new update of the
-application is found. The Auto Name entry is generated automatically
+application is found. The AutoName entry is generated automatically
 when `fdroid checkupdates` is run.
 
 __Warning__: this overrides all Name entries
@@ -178,7 +173,6 @@ This is converted to (`<name>`) in the XML file (_index.xml_).
 
 
 ### 7.6 Name<a name="Name"></a>
-
 
 Field Name: `Name`
 
@@ -198,7 +192,6 @@ This is converted to (`<name>`) in the XML file (_index.xml_).
 
 ### 7.7 Provides<a name="Provides"></a>
 
-
 Field Name: `Provides`
 
 Comma-separated list of application IDs that this app provides. In other
@@ -213,10 +206,9 @@ This is converted to (`<provides>`) in the XML file (_index.xml_).
 
 
 
-### 7.8 Web Site<a name="Web-Site"></a>
+### 7.8 _WebSite_<a name="WebSite"></a>
 
-
-Field Name: `Web Site`
+Field Name: `WebSite`
 
 The URL for the application’s web site. If there is no relevant web
 site, this can be omitted (or left blank).
@@ -225,10 +217,9 @@ This is converted to (`<web>`) in the XML file (_index.xml_).
 
 
 
-### 7.9 Source Code<a name="Source-Code"></a>
+### 7.9 _SourceCode_<a name="SourceCode"></a>
 
-
-Field Name: `Source Code`
+Field Name: `SourceCode`
 
 The URL to view or obtain the application’s source code. This should be
 something human-friendly. Machine-readable source-code is covered in the
@@ -238,10 +229,9 @@ This is converted to (`<source>`) in the XML file (_index.xml_).
 
 
 
-### 7.10 Issue Tracker<a name="Issue-Tracker"></a>
+### 7.10 _IssueTracker_<a name="IssueTracker"></a>
 
-
-Field Name: `Issue Tracker`
+Field Name: `IssueTracker`
 
 The URL for the application’s issue tracker. Optional, since not all
 applications have one.
@@ -251,7 +241,6 @@ This is converted to (`<tracker>`) in the XML file (_index.xml_).
 
 
 ### 7.11 Changelog<a name="Changelog"></a>
-
 
 Field Name: `Changelog`
 
@@ -263,7 +252,6 @@ This is converted to (`<changelog>`) in the XML file (_index.xml_).
 
 
 ### 7.12 Donate<a name="Donate"></a>
-
 
 Field Name: `Donate`
 
@@ -283,7 +271,6 @@ This is converted to (`<donate>`) in the XML file (_index.xml_).
 
 ### 7.13 FlattrID<a name="FlattrID"></a>
 
-
 Field Name: `FlattrID`
 
 The project’s Flattr (https://flattr.com) ID, if it has one. This should
@@ -295,7 +282,6 @@ This is converted to (`<flattr>`) in the XML file (_index.xml_).
 
 
 ### 7.14 LiberapayID<a name="LiberapayID"></a>
-
 
 Field Name: `LiberapayID`
 
@@ -310,7 +296,6 @@ This is converted to (`<liberapay>`) in the XML file (_index.xml_).
 
 
 ### 7.15 Bitcoin<a name="Bitcoin"></a>
-
 
 Field Name: `Bitcoin`
 
@@ -333,7 +318,6 @@ This is converted to (`<litecoin>`) in the XML file (_index.xml_).
 
 ### 7.17 Summary<a name="Summary"></a>
 
-
 Field Name: `Summary`
 
 A brief summary of what the application is. Since the summary is only
@@ -348,7 +332,6 @@ This is converted to (`<summary>`) in the XML file (_index.xml_).
 
 
 ### 7.18 Description<a name="Description"></a>
-
 
 Field Name: `Description`
 
@@ -387,10 +370,9 @@ This is converted to (`<desc>`) in the XML file (_index.xml_).
 
 
 
-### 7.19 Maintainer Notes<a name="Maintainer-Notes"></a>
+### 7.19 _MaintainerNotes_<a name="MaintainerNotes"></a>
 
-
-Field Name: `Maintainer Notes`
+Field Name: `MaintainerNotes`
 
 This is a multi-line field using the same rules and syntax as the
 description. It’s used to record notes for F-Droid maintainers to assist
@@ -400,10 +382,9 @@ This information is also published to the wiki.
 
 
 
-### 7.20 Repo Type<a name="Repo-Type"></a>
+### 7.20 _RepoType_<a name="RepoType"></a>
 
-
-Field Name: `Repo Type`
+Field Name: `RepoType`
 
 The type of repository - for automatic building from source. If this is
 not specified, automatic building is disabled for this application.
@@ -419,7 +400,6 @@ Possible values are:
 
 
 ### 7.21 Repo<a name="Repo"></a>
-
 
 Field Name: `Repo`
 
@@ -438,14 +418,13 @@ relative paths to the svn repo root dir. Here’s an example of a complex
 git-svn Repo URL:
 http://svn.code.sf.net/p/project/code/svn;trunk=trunk;tags=tags;branches=branches
 
-If the Repo Type is `srclib`, then you must specify the name of the
+If the RepoType is `srclib`, then you must specify the name of the
 according srclib .txt file. For example if `scrlibs/FooBar.txt` exist
 and you want to use this srclib, then you have to set Repo to `FooBar`.
 
 
 
 ### 7.22 Binaries<a name="Binaries"></a>
-
 
 Field Name: `Binaries`
 
@@ -462,7 +441,6 @@ F-Droid will use upstream binaries if the verification succeeded.
 
 
 ### 7.23 Build<a name="Build"></a>
-
 
 Field Name: `Build`
 
@@ -822,7 +800,6 @@ configuration to the build. These are (roughly in order of application):
 
 ### 7.24 AntiFeatures<a name="AntiFeatures"></a>
 
-
 Field Name: `AntiFeatures`
 
 This is optional - if present, it contains a comma-separated list of any
@@ -865,7 +842,6 @@ This is converted to (`<antifeatures>`) in the XML file (_index.xml_).
 
 ### 7.25 Disabled<a name="Disabled"></a>
 
-
 Field Name: `Disabled`
 
 If this field is present, the application does not get put into the
@@ -879,10 +855,9 @@ retained.
 
 
 
-### 7.26 Requires Root<a name="Requires-Root"></a>
+### 7.26 _RequiresRoot_<a name="RequiresRoot"></a>
 
-
-Field Name: `Requires Root`
+Field Name: `RequiresRoot`
 
 Set this optional field to "Yes" if the application requires root
 privileges to be usable. This lets the client filter it out if the user
@@ -894,10 +869,9 @@ This is converted to (`<requirements>`) in the XML file (_index.xml_).
 
 
 
-### 7.27 Archive Policy<a name="Archive-Policy"></a>
+### 7.27 _ArchivePolicy_<a name="ArchivePolicy"></a>
 
-
-Field Name: `Archive Policy`
+Field Name: `ArchivePolicy`
 
 This determines the policy for moving old versions of an app to the
 archive repo, if one is configured. The configuration sets a default
@@ -910,14 +884,13 @@ number of versions to keep. Defaults to "3 versions".
 
 
 
-### 7.28 Update Check Mode<a name="Update-Check-Mode"></a>
+### 7.28 _UpdateCheckMode_<a name="UpdateCheckMode"></a>
 
-
-Field Name: `Update Check Mode`
+Field Name: `UpdateCheckMode`
 
 This determines the method using for determining when new releases are
-available - in other words, the updating of the Current Version and
-Current Version Code fields in the metadata by the `fdroid checkupdates`
+available - in other words, the updating of the CurrentVersion and
+CurrentVersionCode fields in the metadata by the `fdroid checkupdates`
 process.
 
 Valid modes are:
@@ -951,7 +924,7 @@ Valid modes are:
 
     It currently works for every repository type to different extents,
     except the srclib repo type. For git, git-svn and hg repo types, you
-    may use "RepoManifest/yourbranch" as UCM so that "yourbranch" would
+    may use "RepoManifest/yourbranch" as UpdateCheckMode so that "yourbranch" would
     be the branch used in place of the default one. The default values
     are "master" for git, "default" for hg and none for git-svn (it
     stays in the same branch). On the other hand, branch support hasn’t
@@ -963,7 +936,7 @@ Valid modes are:
     RepoManifest checks will not work, since there is no version
     information to obtain. But, for those apps who automate their build
     process with the commit ref that HEAD points to, RepoTrunk will set
-    the Current Version and Current Version Code to that number.
+    the CurrentVersion and CurrentVersionCode to that number.
 -   `Tags` - The `AndroidManifest.xml` and `build.gradle` files in all
     tagged revisions in the source repository are checked, looking for
     the highest version code.  The appropriateness of this method
@@ -986,7 +959,7 @@ Valid modes are:
     end with a digit.
 
 -   `HTTP` - HTTP requests are used to determine the current version
-    code and version name. This is controlled by the `Update Check Data`
+    code and version name. This is controlled by the `UpdateCheckData`
     field, which is of the form `urlcode|excode|urlver|exver`.
 
     Firstly, if `urlcode` is non-empty, the document from that URL is
@@ -1001,41 +974,39 @@ Valid modes are:
 
 
 
-### 7.29 Vercode Operation<a name="Vercode-Operation"></a>
 
+### 7.29 _VercodeOperation_<a name="VercodeOperation"></a>
 
-Field Name: `Vercode Operation`
+Field Name: `VercodeOperation`
 
 Operation to be applied to the vercode obtained by the defined
-`Update Check Mode`. `%c` will be replaced by the actual vercode, and
+`UpdateCheckMode`. `%c` will be replaced by the actual vercode, and
 the whole string will be passed to python’s `eval` function.
 
 Especially useful with apps that we want to compile for different ABIs,
 but whose vercodes don’t always have trailing zeros. For example, with
-`Vercode Operation` set at something like `%c*10 + 4`, we will be able
+`VercodeOperation` set at something like `%c*10 + 4`, we will be able
 to track updates and build up to four different versions of every
 upstream version.
 
 
 
-### 7.30 Update Check Ignore<a name="Update-Check-Ignore"></a>
+### 7.30 _UpdateCheckIgnore_<a name="UpdateCheckIgnore"></a>
 
+Field Name: `UpdateCheckIgnore`
 
-Field Name: `Update Check Ignore`
-
-When checking for updates (via `Update Check Mode`) this can be used to
+When checking for updates (via `UpdateCheckMode`) this can be used to
 specify a regex which, if matched against the version name, causes that
 version to be ignored. For example, ’beta’ could be specified to ignore
 version names that include that text.
 
 
 
-### 7.31 Update Check Name<a name="Update-Check-Name"></a>
+### 7.31 _UpdateCheckName_<a name="UpdateCheckName"></a>
 
+Field Name: `UpdateCheckName`
 
-Field Name: `Update Check Name`
-
-When checking for updates (via `Update Check Mode`) this can be used to
+When checking for updates (via `UpdateCheckMode`) this can be used to
 specify the package name to search for. Useful when apps have a static
 package name but change it programmatically in some app flavors, by e.g.
 appending ".open" or ".free" at the end of the package name.
@@ -1046,19 +1017,18 @@ build.gradle file does not contain the package name.
 
 
 
-### 7.32 Update Check Data<a name="Update-Check-Data"></a>
+### 7.32 _UpdateCheckData_<a name="UpdateCheckData"></a>
+
+Field Name: `UpdateCheckData`
+
+Used in conjunction with `UpdateCheckMode` for certain modes.
 
 
-Field Name: `Update Check Data`
 
-Used in conjunction with `Update Check Mode` for certain modes.
-
+### 7.33 _AutoUpdateMode_<a name="AutoUpdateMode"></a>
 
 
-### 7.33 Auto Update Mode<a name="Auto-Update-Mode"></a>
-
-
-Field Name: `Auto Update Mode`
+Field Name: `AutoUpdateMode`
 
 This determines the method using for auto-generating new builds when new
 releases are available - in other words, adding a new Build Version line
@@ -1086,10 +1056,9 @@ Valid modes are:
 
 
 
-### 7.34 Current Version<a name="Current-Version"></a>
+### 7.34 _CurrentVersion_<a name="CurrentVersion"></a>
 
-
-Field Name: `Current Version`
+Field Name: `CurrentVersion`
 
 The [name of the version](https://developer.android.com/guide/topics/manifest/manifest-element.html#vname) that is the recommended release. There may be newer versions of
 the application than this (e.g. unstable versions), and there will
@@ -1100,38 +1069,36 @@ would ideally be the latest version that is still free, though it may
 still be expedient to retain the automatic update check — see No Source
 Since.
 
-This field is normally automatically updated - see Update Check Mode.
+This field is normally automatically updated - see UpdateCheckMode.
 
 This is converted to (`<marketversion>`) in the XML file (_index.xml_).
 
 
 
-### 7.35 Current Version Code<a name="Current-Version-Code"></a>
+### 7.35 _CurrentVersionCode_<a name="CurrentVersionCode"></a>
 
+Field Name: `CurrentVersionCode`
 
-Field Name: `Current Version Code`
-
-The [version code](https://developer.android.com/guide/topics/manifest/manifest-element.html#vcode) corresponding to the [Current Version](#Current-Version) field. Both these
+The [version code](https://developer.android.com/guide/topics/manifest/manifest-element.html#vcode) corresponding to the [CurrentVersion](#CurrentVersion) field. Both these
 fields must be correct and matching although it’s the current version
 code that’s used by Android to determine version order and by F-Droid
 client to determine which version should be recommended.
 
 This field is normally automatically updated - see
-[Update Check Mode](#Update-Check-Mode).
+[UpdateCheckMode](#UpdateCheckMode).
 
 If not set or set to `0`, clients will recommend the highest version
-they can, as if the `Current Version Code` was infinite.
+they can, as if the `CurrentVersionCode` was infinite.
 
 This is converted to (`<marketvercode>`) in the XML file (_index.xml_).
 
 
 
-### 7.36 No Source Since<a name="No-Source-Since"></a>
+### 7.36 _NoSourceSince_<a name="NoSourceSince"></a>
 
+Field Name: `NoSourceSince`
 
-Field Name: `No Source Since`
-
-In case we are missing the source code for the Current Version reported
+In case we are missing the source code for the CurrentVersion reported
 by Upstream, or that non-free elements have been introduced, this
 defines the first version that began to miss source code. Apps that are
 missing source code for just one or a few versions, but provide source

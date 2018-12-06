@@ -10,13 +10,13 @@ and packages.
 ### Detecting<a name="Detecting"></a>
 
 There are various mechanisms in place for automatically detecting that
-updates are available for applications, with the `Update Check Mode`
+updates are available for applications, with the `UpdateCheckMode`
 field in the metadata determining which method is used for a particular
 application.
 
 Running the `fdroid checkupdates` command will apply this method to each
-application in the repository and update the `Current Version` and
-`Current Version Code` fields in the metadata accordingly.
+application in the repository and update the `CurrentVersion` and
+`CurrentVersionCode` fields in the metadata accordingly.
 
 As usual, the `-p` option can be used with this, to restrict processing
 to a particular application.
