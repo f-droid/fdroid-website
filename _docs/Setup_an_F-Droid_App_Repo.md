@@ -51,9 +51,9 @@ While some information about the applications (and versions thereof)
 is retrieved directly from the APK files, most comes from the
 corresponding file in the _metadata/_ directory. The
 [metadata file](../Build_Metadata_Reference) covering ALL versions of
-a particular application is named _package.id.txt_ where package.id is
+a particular application is named _package.id.yml_ where package.id is
 the unique identifier for that package.  All build metadata fields are
-relevant for binary APKs, except for `Build:` entries, which should be
+relevant for binary APKs, except for `Builds:` entries, which should be
 omitted.
 
 

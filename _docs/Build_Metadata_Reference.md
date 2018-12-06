@@ -95,12 +95,9 @@ Any number of categories for the application to be placed in. There is
 no fixed list of categories - both the client and the web site will
 automatically show any categories that exist in any applications.
 However, if your metadata is intended for the main F-Droid repository,
-you should use one of the existing categories (look at the site/client),
-or discuss the proposal to add a new one.
-
-Categories must be separated by a single comma character, ’,’. For
-backwards compatibility, F-Droid will use the first category given as
-&lt;category&gt; element for older clients to at least see one category.
+you should use one of the existing categories (look at the
+site/client), or discuss the proposal to add a new one. _Categories_
+must be a list of items, even if there is just one.
 
 This is converted to (`<categories>`) in the XML file (_index.xml_).
 
@@ -434,7 +431,7 @@ If specified, F-Droid will verify the output apk file of a build against
 the one specified. You can use %v and %c to point to the version name
 and version code of the current build. To verify the F-Droid client
 itself you could use:
-`Binaries:https://f-droid.org/repo/org.fdroid.fdroid_%c.apk`
+`Binaries: https://f-droid.org/repo/org.fdroid.fdroid_%c.apk`
 
 F-Droid will use upstream binaries if the verification succeeded.
 
