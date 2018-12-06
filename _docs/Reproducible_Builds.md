@@ -75,7 +75,7 @@ to verify that a downloaded APK can be built reproducibly, the
 downloaded APK will be published. Otherwise F-Droid will skip
 publishing this version of the app.
 
-Here is an example for a `Binaries` directive:
+Here is an example for a _Binaries_ directive:
 
 ```yaml
 Binaries: https://foo.com/path/to/myapp-%v.apk

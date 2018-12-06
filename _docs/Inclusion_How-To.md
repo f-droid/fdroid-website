@@ -99,7 +99,7 @@ This is a nonexhaustive list of what a reviewer would do:
     uses non-Free dependencies, shows advertisements, tracks users,
     promotes non-Free services/applications, or does anything that is
     harmful or otherwise undesirable for users.
--   They will list a summary of any [AntiFeatures](https://f-droid.org/wiki/page/Antifeatures) in
+-   They will list a summary of any [_AntiFeatures_](https://f-droid.org/wiki/page/Antifeatures) in
     your application.
 -   They will try patching your application to remove usage of
     third-party proprietary software (if there is any).

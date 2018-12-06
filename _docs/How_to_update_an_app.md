@@ -27,16 +27,16 @@ common source code websites. For complicated apps that rebase code and
 use many branches, I'll often visit the source code site too).
 
 -   Take a note of the current version according to the developer
-    &ndash; a clue is often written above the CurrentVersion in
+    &ndash; a clue is often written above the _CurrentVersion_ in
     the metadata. To visit Google Play quickly to get the version name
     there, install w3m and add this function `gplay() { w3m
     play.google.com/store/apps/details/?id="$@" ;}` to
     your bashrc. Then you can just do
     `gplay package-name`. If you find that the
-    version is greater than the CurrentVersion in the metadata, update
+    version is greater than the _CurrentVersion_ in the metadata, update
     it right away (unless there are any beta or test builds
     currently activated)
--   If the CurrentVersion in the metadata (especially in the case of
+-   If the _CurrentVersion_ in the metadata (especially in the case of
     the update check mode RepoManifest) is greater than on Google Play
     or the download page, you may not need to update and can just add a
     dummy build version e.g `Build Version:1.2,34,!not
@@ -68,7 +68,7 @@ use many branches, I'll often visit the source code site too).
     checksums to compare with. Take a note of jars such as bugsense or
     acra which are used for bugreports
 -   If you find proprietary files add a dummy build version to the
-    metadata with a few words about the reason, add NoSourceSince to
+    metadata with a few words about the reason, add _NoSourceSince_ to
     the bottom and a line to the descripion beginning with Status: to
     the description explaining the reason that the app can't be updated
 -   `find . -type f -executable` to locate any

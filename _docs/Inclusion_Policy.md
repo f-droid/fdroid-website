@@ -25,7 +25,7 @@ Notably:
     about an untainted build flavor (either using a FLOSS analytics
     software like ACRA or by removing non-free dependencies completely).
 -   We cannot build apps using proprietary ad libraries. We have nothing
-    against advertisments (see [AntiFeatures](https://f-droid.org/wiki/page/Antifeatures)),
+    against advertisments (see [_AntiFeatures_](https://f-droid.org/wiki/page/Antifeatures)),
     but they must be provided by a FLOSS compatible way.
 -   We cannot build apps requiring non-free buildtools, including
     Oracle's JDK or some pre-release toolchains.
@@ -63,7 +63,7 @@ Ideally:
 Some software, while being Free and Open Source, may engage in practices
 which are undesirable to some or all users. Where possible, we still
 include these applications in the repository, but they are flagged with
-the appropriate [AntiFeatures](https://f-droid.org/wiki/page/Antifeatures). Even though
+the appropriate [_AntiFeatures_](https://f-droid.org/wiki/page/Antifeatures). Even though
 such software can be included, when appropriately flagged, it is
 frequently the case that other "FLOSS" software with these features is
 actually not entirely free. For example, advertising and spying on user
