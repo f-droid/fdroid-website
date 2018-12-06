@@ -448,7 +448,7 @@ For example:
 ‘Build:1.2,12’
 
 The above specifies to build version 1.2, which has a version code of 12.
-The `commit=` parameter specifies the tag, commit or revision number
+The _commit_ parameter specifies the tag, commit or revision number
 from which to build it in the source repository. It is the only
 mandatory flag, which in this case could for example be `commit=v1.2`.
 
@@ -456,7 +456,7 @@ In addition to the three, always required, parameters described above,
 further parameters can be added (in name=value format) to apply further
 configuration to the build. These are (roughly in order of application):
 
-`disable=<message>`
+`disable: <message>`
 
 :   Disables this build, giving a reason why. (For backwards
     compatibility, this can also be achieved by starting the commit ID
@@ -469,19 +469,19 @@ configuration to the build. These are (roughly in order of application):
     disabling causes it to be deleted once `fdroid update` is run; this
     is the procedure if ever a version has to be replaced.
 
-`subdir=<path>`
+`subdir: <path>`
 
 :   Specifies to build from a subdirectory of the checked out source
     code. Normally this directory is changed to before building,
 
-`submodules=yes`
+`submodules: yes`
 
 :   Use if the project (git only) has submodules - causes
     `git submodule update --init --recursive` to be executed after the
     source is cloned. Submodules are reset and cleaned like the main app
     repository itself before each build.
 
-`sudo=xxxx`
+`sudo: xxxx`
 
 :   Specifies a script to be run using `sudo bash -x -c "xxxx"` in the
     buildserver VM guest.  This script is run with full root privileges,
@@ -491,7 +491,7 @@ configuration to the build. These are (roughly in order of application):
     need very specific things that are not appropriate to install for
     all builds, or for things that would conflict with other builds.
 
-`timeout=<seconds>`
+`timeout: <seconds>`
 
 :   Time limit for this build (in seconds).  After time is up,
     buildserver VM is forcefully terminated.  The default is 7200
@@ -500,7 +500,7 @@ configuration to the build. These are (roughly in order of application):
     Limitation is applied only in server mode, i.e. when `fdroid build`
     is invoked with the `--server` option.
 
-`init=xxxx`
+`init: xxxx`
 
 :   Like ’prebuild’, but runs on the source code BEFORE any other
     processing takes place.
@@ -511,7 +511,7 @@ configuration to the build. These are (roughly in order of application):
     per-build variables are available likewise: \$\$VERSION\$\$,
     \$\$VERCODE\$\$ and \$\$COMMIT\$\$.
 
-`oldsdkloc=yes`
+`oldsdkloc: yes`
 
 :   The sdk location in the repo is in an old format, or the build.xml
     is expecting such. The ’new’ format is sdk.dir while the VERY OLD
@@ -519,7 +519,7 @@ configuration to the build. These are (roughly in order of application):
     lines of: "com.android.ant.SetupTask cannot be found" when trying to
     build, then try enabling this option.
 
-`target=<target>`
+`target: <target>`
 
 :   Specifies a particular SDK target for compilation, overriding the
     value defined in the code by upstream. This has different effects
@@ -534,7 +534,7 @@ configuration to the build. These are (roughly in order of application):
     android file or doesn’t already exist, but not a good idea if it’s
     heavily customised.
 
-`androidupdate=<auto/dirs>`
+`androidupdate: <auto/dirs>`
 
 :   By default, ’android update’ is used in Ant builds to generate or
     update the project and all its referenced projects. Specifying
@@ -547,7 +547,7 @@ configuration to the build. These are (roughly in order of application):
     Otherwise, the value can be a comma-separated list of directories in
     which to run ’android update’ relative to the application directory.
 
-`encoding=xxxx`
+`encoding: xxxx`
 
 :   Adds a java.encoding property to local.properties with the
     given value. Generally the value will be ’utf-8’. This is picked up
@@ -555,7 +555,7 @@ configuration to the build. These are (roughly in order of application):
     source files with this encoding. If you receive warnings during the
     compile about character encodings, you probably need this.
 
-`forceversion=yes`
+`forceversion: yes`
 
 :   If specified, the package version in AndroidManifest.xml is replaced
     with the version name for the build as specified in the metadata.
@@ -566,12 +566,12 @@ configuration to the build. These are (roughly in order of application):
     apparent which architecture or platform the apk is designed to
     run on.
 
-`forcevercode=yes`
+`forcevercode: yes`
 
 :   If specified, the package version code in the AndroidManifest.xml is
     replaced with the version code for the build. See also forceversion.
 
-`rm=<path1>[,<path2>,...]`
+`rm: <path1>[,<path2>,...]`
 
 :   Specifies the relative paths of files or directories to delete
     before the build is done. The paths are relative to the base of the
@@ -582,13 +582,13 @@ configuration to the build. These are (roughly in order of application):
     Multiple files/directories can be specified by separating them with
     ’,’. Directories will be recursively deleted.
 
-`extlibs=<lib1>[,<lib2>,...]`
+`extlibs: <lib1>[,<lib2>,...]`
 
 :   Comma-separated list of external libraries (jar files) from the
     `build/extlib` library, which will be placed in the `libs` directory
     of the project.
 
-`srclibs=[n:]a@r,[n:]b@r1,...`
+`srclibs: [n:]a@r,[n:]b@r1,...`
 
 :   Comma-separated list of source libraries or Android projects. Each
     item is of the form name@rev where name is the predefined source
@@ -638,14 +638,14 @@ configuration to the build. These are (roughly in order of application):
     -   ‘Clojars’ - Clojure libraries repo.
     -   ‘CommonsWare’ - repo holding a collection of open-source libs.
 
-`patch=x`
+`patch: x`
 
 :   Apply patch(es). ’x’ names one (or more - comma-seperated) files
     within a directory below the metadata, with the same name as the
     metadata file but without the extension. Each of these patches is
     applied to the code in turn.
 
-`prebuild=xxxx`
+`prebuild: xxxx`
 
 :   Specifies a shell command (or commands - chain with &&) to run
     before the build takes place. Backslash can be used as an escape
@@ -671,7 +671,7 @@ configuration to the build. These are (roughly in order of application):
     variables are available likewise: \$\$VERSION\$\$, \$\$VERCODE\$\$
     and \$\$COMMIT\$\$.
 
-`scanignore=<path1>[,<path2>,...]`
+`scanignore: <path1>[,<path2>,...]`
 
 :   Enables one or more files/paths to be excluded from the scan
     process. This should only be used where there is a very good reason,
@@ -681,26 +681,26 @@ configuration to the build. These are (roughly in order of application):
     When scanning the source tree for problems, matching files whose
     relative paths start with any of the paths given here are ignored.
 
-`scandelete=<path1>[,<path2>,...]`
+`scandelete: <path1>[,<path2>,...]`
 
 :   When running the scan process, any files that trigger errors - like
-    binaries - will be removed. It acts just like scanignore=, but
+    binaries - will be removed. It acts just like _scanignore_, but
     instead of ignoring the files, it removes them.
 
     Useful when a source code repository includes binaries or other
     unwanted files which are not needed for the build. Instead of
-    removing them manually via rm=, using scandelete= is easier.
+    removing them manually via _rm_, using _scandelete_ is easier.
 
-`build=xxxx`
+`build: xxxx`
 
 :   As for ’prebuild’, but runs during the actual build phase (but
     before the main Ant/Maven build). Use this only for actions that do
     actual building. Any prepartion of the source code should be done
     using ’init’ or ’prebuild’.
 
-    Any building that takes place before build= will be ignored, as
+    Any building that takes place before _build_ will be ignored, as
     either Ant, mvn or gradle will be executed to clean the build
-    environment right before build= (or the final build) is run.
+    environment right before _build_ (or the final build) is run.
 
     You can use \$\$SDK\$\$, \$\$NDK\$\$ and \$\$MVN3\$\$ to substitute
     the paths to the android SDK and NDK directories, and maven 3
@@ -708,7 +708,7 @@ configuration to the build. These are (roughly in order of application):
     available likewise: \$\$VERSION\$\$, \$\$VERCODE\$\$
     and \$\$COMMIT\$\$.
 
-`buildjni=[yes|no|<dir list>]`
+`buildjni: [yes|no|<dir list>]`
 
 :   Enables building of native code via the ndk-build script before
     doing the main Ant build. The value may be a list of directories
@@ -725,7 +725,7 @@ configuration to the build. These are (roughly in order of application):
     isn’t used nor built will result in an error saying that native
     libraries were expected in the resulting package.
 
-`ndk=<version>`
+`ndk: <version>`
 
 :   Version of the NDK to use in this build. Defaults to the latest NDK
     release that included legacy toolchains, so as to not break builds
@@ -737,7 +737,7 @@ configuration to the build. These are (roughly in order of application):
     add support for more versions by adding them to ’ndk\_paths’ in your
     config file.
 
-`gradle=<flavour1>[,<flavour2>,...]`
+`gradle: <flavour1>[,<flavour2>,...]`
 
 :   Build with Gradle instead of Ant, specifying what flavours to use.
     Flavours are case sensitive since the path to the output apk is
@@ -748,18 +748,18 @@ configuration to the build. These are (roughly in order of application):
     least one valid flavour since ’yes’ will build all of
     them separately.
 
-`maven=yes[@<dir>]`
+`maven: yes[@<dir>]`
 
 :   Build with Maven instead of Ant. An extra @&lt;dir&gt; tells F-Droid
     to run Maven inside that relative subdirectory. Sometimes it is
     needed to use @.. so that builds happen correctly.
 
-`preassemble=<task1>[,<task2>,...]`
+`preassemble: <task1>[,<task2>,...]`
 
 :   List of Gradle tasks to be run before the assemble task in a Gradle
     project build.
 
-`gradleprops=<prop1>[,<prop2>,...]`
+`gradleprops: <prop1>[,<prop2>,...]`
 
 :   List of Gradle properties to pass via the command line to Gradle. A
     property can be of the form `foo` or of the form `key=value`.
@@ -767,28 +767,28 @@ configuration to the build. These are (roughly in order of application):
     For example: `gradleprops=enableFoo,someSetting=bar` will result in
     `gradle -PenableFoo -PsomeSetting=bar`.
 
-`antcommands=<target1>[,<target2>,...]`
+`antcommands: <target1>[,<target2>,...]`
 
 :   Specify an alternate set of Ant commands (target) instead of the
     default ’release’. It can’t be given any flags, such as the path to
     a build.xml.
 
-`output=glob/to/output.apk`
+`output: glob/to/output.apk`
 
 :   Specify a glob path where the resulting unsigned release apk from
     the build should be. This can be used in combination with build
     methods like `gradle=yes` or `maven=yes`, but if no build method is
     specified, the build is manual. You should run your build commands,
-    such as `make`, in `build=`.
+    such as `make`, in _build_.
 
-`novcheck=yes`
+`novcheck: yes`
 
 :   Don’t check that the version name and code in the resulting apk are
     correct by looking at the build output - assume the metadata
     is correct. This takes away a useful level of sanity checking, and
     should only be used if the values can’t be extracted.
 
-`antifeatures=<antifeature1>[,<antifeature2>,...]`
+`antifeatures: <antifeature1>[,<antifeature2>,...]`
 
 :   List of Anti-Features for this specific build. They are described
     in [_AntiFeatures_](#AntiFeatures).

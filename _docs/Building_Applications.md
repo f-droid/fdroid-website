@@ -128,7 +128,7 @@ Along similar lines (and only in conjunction with `--test`, you can use
 `--force` to force a build of a Disabled application, where normally it
 would be completely ignored. Similarly a version that was found to
 contain ELFs or known non-free libraries can be forced to build. See
-also — `scanignore=` and `scandelete=` in the `Builds:` section.
+also — _scanignore_ and _scandelete_ in the _Builds_ section.
 
 If the build was unsuccessful, you can find out why by looking at the
 output in the logs/ directory. If that isn’t illuminating, try building

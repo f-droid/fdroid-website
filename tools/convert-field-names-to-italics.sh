@@ -8,7 +8,6 @@ for f in 'Web Site' 'Vercode Operation' 'Update Check Name' 'Update Check Mode' 
     aname=`echo $f | sed 's, ,-,g'`
     new=`echo $f | sed 's, ,,g'`
     backtick='`'$new'`'
-    echo "'$f' '$new'"
     sed -i \
         -e "s,$f,$new,g" \
         -e "s,$aname,$new,g" \
@@ -26,4 +25,18 @@ for f in AntiFeatures ArchivePolicy AuthorEmail AuthorName AuthorWebSite AutoNam
         -e "s,${backtick},_${f}_,g" \
         -e "s,\[${f}\],[_${f}_],g" \
         $basedir/*/*.md        
+done
+
+#
+# sed -En "s/^    '([a-z]+)',$/\1/p" ../fdroidserver/fdroidserver/metadata.py |sort -u
+for f in androidupdate antcommands antifeatures build buildjni buildozer commit disable encoding extlibs forcevercode forceversion gradle gradleprops init maven ndk novcheck oldsdkloc output patch preassemble prebuild rm scandelete scanignore srclibs subdir submodules sudo target timeout; do
+    backtick='`'$f'`'
+    backtickequal='`'$f'=`'
+    sed -i \
+        -e "s,${backtick},_${f}_,g" \
+        -e "s,${backtickequal},_${f}_,g" \
+        -e "s,\[${f}\],[_${f}_],g" \
+        -e "s/ ${f}=\([ ,]\)/ _${f}_\1/g" \
+        -e "s,^\(\`${f}\)=,\1: ,g" \
+        $basedir/*/*.md
 done
