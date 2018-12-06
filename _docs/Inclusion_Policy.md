@@ -19,11 +19,11 @@ Notably:
 
 -   We cannot build apps using Google's proprietary "play-services".
     Please talk to upstream about an untainted build flavor (either
-    using microg or removing non-free deps completely).
+    using microg or removing non-free dependencies completely).
 -   We cannot build apps using proprietary tracking/analytic
     dependencies like Crashlytics and Firebase. Please talk to upstream
     about an untainted build flavor (either using a FLOSS analytics
-    software like ACRA or by removing non-free deps completely).
+    software like ACRA or by removing non-free dependencies completely).
 -   We cannot build apps using proprietary ad libraries. We have nothing
     against advertisments (see [AntiFeatures](https://f-droid.org/wiki/page/Antifeatures)),
     but they must be provided by a FLOSS compatible way.
