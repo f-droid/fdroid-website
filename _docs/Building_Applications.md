@@ -131,7 +131,7 @@ contain ELFs or known non-free libraries can be forced to build. See
 also — _scanignore_ and _scandelete_ in the _Builds_ section.
 
 If the build was unsuccessful, you can find out why by looking at the
-output in the logs/ directory. If that isn’t illuminating, try building
+output in the _logs/_ directory. If that isn’t illuminating, try building
 the app the regular way, step by step: android update project,
 ndk-build, ant debug.
 
@@ -144,11 +144,9 @@ by a reputable third party.
 ### Running `fdroid build` in your app’s source
 
 Another option for using `fdroid build` is to use a metadata file that
-is included in the app’s source itself, rather than in a `metadata/`
-folder with lots of other apps. This metadata file should be in the root
-of your source repo, and be called `.fdroid.json`, `.fdroid.xml`,
-`.fdroid.yaml`, or `.fdroid.txt`, depending on your preferred data
-format: JSON, XML, YAML, or F-Droid’s `.txt` format.
+is included in the app’s source itself, rather than in a _metadata/_
+folder with lots of other apps. The _.fdroid.yml_ metadata file should
+be in the root of your source repo.
 
 Once you have that setup, you can build the most recent version of the
 app using the whole F-Droid stack by running:
