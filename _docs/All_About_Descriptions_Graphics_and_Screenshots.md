@@ -108,7 +108,7 @@ Example:
 * .../ToGoZip/app/...
   * the sourcecode for the android app ToGoZip
 * [.../ToGoZip/fastlane/metadata/android/en-US/full_description.txt](https://github.com/k3b/ToGoZip/blob/master/fastlane/metadata/android/en-US/full_description.txt)
-  * contains the (us-) english description of the app ToGoZip.
+  * contains the (us-) English description of the app ToGoZip.
 * [.../ToGoZip/fastlane/metadata/android/de-DE/full_description.txt](https://github.com/k3b/ToGoZip/blob/master/fastlane/metadata/android/de-DE/full_description.txt)
   * contains the German description of the app ToGoZip.
 * [.../ToGoZip/fastlane/metadata/android/en-US/changelogs/9.txt](https://github.com/k3b/ToGoZip/blob/master/fastlane/metadata/android/en-US/changelogs/9.txt)
