@@ -38,7 +38,7 @@ for f in androidupdate antcommands antifeatures build buildjni buildozer commit 
         -e "s,\[${f}\],[_${f}_],g" \
         -e "s/ ${f}=\([ ,]\)/ _${f}_\1/g" \
         -e "s,^\(\`${f}\)=,\1: ,g" \
-        $basedir/*/*.md
+        $basedir/*/*.md $basedir/po/*.po*
 done
 
 # file names
@@ -47,6 +47,6 @@ for f in AndroidManifest.xml build.gradle build.xml config.py custom_rules.xml i
     sed -i \
         -e "s,${backtick},_${f}_,g" \
         -e "s, ${f} , _${f}_ ,g" \
-        $basedir/*/*.md
+        $basedir/*/*.md $basedir/po/*.po*
 done
 
