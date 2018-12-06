@@ -16,7 +16,7 @@ for f in 'Web Site' 'Vercode Operation' 'Update Check Name' 'Update Check Mode' 
         -e "s,^${new} ,_${new}_ ,g" \
         -e "s, ${new}$, _${new}_,g" \
         -e "s,${backtick},_${new}_,g" \
-        $basedir/*/*.md
+        $basedir/*/*.md $basedir/po/*.po*
 done
 
 for f in AntiFeatures ArchivePolicy AuthorEmail AuthorName AuthorWebSite AutoName AutoUpdateMode Binaries Bitcoin Builds Categories Changelog CurrentVersion CurrentVersionCode Description Disabled Donate FlattrID IssueTracker LiberapayID License Litecoin MaintainerNotes Name NoSourceSince Provides Repo RepoType RequiresRoot SourceCode Summary Translation UpdateCheckData UpdateCheckIgnore UpdateCheckMode UpdateCheckName VercodeOperation WebSite; do
@@ -24,8 +24,18 @@ for f in AntiFeatures ArchivePolicy AuthorEmail AuthorName AuthorWebSite AutoNam
     sed -i \
         -e "s,${backtick},_${f}_,g" \
         -e "s,\[${f}\],[_${f}_],g" \
-        $basedir/*/*.md        
+        -e "s, ${f}\., _${f}_.,g" \
+        $basedir/*/*.md $basedir/po/*.po*
 done
+
+# fixup mistakes
+sed -i \
+    -e 's,^### _SourceCode_$,### Source Code,g' \
+    -e 's,^msgid "SourceCode",msgid "Source Code",g' \
+    -e 's,emacs _config.py_ ,emacs config.py ,g' \
+    -e 's,unzip -p _index.jar_,unzip -p index.jar,g' \
+    -e 's,CyanogenMod \[_Changelog_\],CyanogenMod [Changelog],g' \
+    $basedir/*/*.md $basedir/po/*.po*
 
 #
 # sed -En "s/^    '([a-z]+)',$/\1/p" ../fdroidserver/fdroidserver/metadata.py |sort -u
@@ -47,6 +57,7 @@ for f in AndroidManifest.xml build.gradle build.xml config.py custom_rules.xml i
     sed -i \
         -e "s,${backtick},_${f}_,g" \
         -e "s, ${f} , _${f}_ ,g" \
+        -e "s, ${f}\., _${f}_.,g" \
         $basedir/*/*.md $basedir/po/*.po*
 done
 

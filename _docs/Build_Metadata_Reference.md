@@ -577,7 +577,7 @@ configuration to the build. These are (roughly in order of application):
     before the build is done. The paths are relative to the base of the
     build directory - i.e. the root of the directory structure checked
     out from the source respository - not necessarily the directory that
-    contains AndroidManifest.xml.
+    contains _AndroidManifest.xml_.
 
     Multiple files/directories can be specified by separating them with
     ’,’. Directories will be recursively deleted.
@@ -771,7 +771,7 @@ configuration to the build. These are (roughly in order of application):
 
 :   Specify an alternate set of Ant commands (target) instead of the
     default ’release’. It can’t be given any flags, such as the path to
-    a build.xml.
+    a _build.xml_.
 
 `output: glob/to/output.apk`
 
@@ -1066,7 +1066,7 @@ would ideally be the latest version that is still free, though it may
 still be expedient to retain the automatic update check — see No Source
 Since.
 
-This field is normally automatically updated - see UpdateCheckMode.
+This field is normally automatically updated - see _UpdateCheckMode_.
 
 This is converted to (`<marketversion>`) in the XML file (_index.xml_).
 

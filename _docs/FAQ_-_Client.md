@@ -20,7 +20,7 @@ source code repository. There may be newer versions than this in the
 list &ndash; they could be, for example, test or beta versions. You can
 install these, but update notifications are not shown because the
 Version Code (Android's scheme for version numbering) is greater than
-the CurrentVersionCode.
+the _CurrentVersionCode_.
 
 For third-party repositories, it may also be the case that the
 maintainers neglected to update the current version in their
