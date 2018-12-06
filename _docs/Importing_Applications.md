@@ -36,7 +36,7 @@ limited to one of the following:
 Depending on the project type, more or less information may be gathered.
 A bare repo url, such as the git:// one, is the least preferable option
 of all, since you will have to enter much more information manually. While
-`gradle` based builds should be auto-detected for all types, links to issue
+_gradle_ based builds should be auto-detected for all types, links to issue
 trackers can not be set for plain git projects. You can also use one of the
 following arguments to pre-fill your metadata:
 

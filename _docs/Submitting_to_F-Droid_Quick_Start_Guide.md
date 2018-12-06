@@ -104,37 +104,39 @@ metadata/net.artificialworlds.rabbitescape.txt.
 
 I set the following info:
 
-```
-Categories:Games
-License:GPL-2.0-or-later
-Author Name:Andy Balaam and the Rabbit Escape developers
-Author Email:rabbitescape@artificialworlds.net
-Web Site:http://artificialworlds.net/rabbit-escape
-Source Code:https://github.com/andybalaam/rabbit-escape
-Issue Tracker:https://github.com/andybalaam/rabbit-escape/issues
+```yaml
+Categories:
+ - Games
+License: GPL-2.0-or-later
+AuthorName: Andy Balaam and the Rabbit Escape developers
+AuthorEmail: rabbitescape@artificialworlds.net
+WebSite: http://artificialworlds.net/rabbit-escape
+SourceCode: https://github.com/andybalaam/rabbit-escape
+IssueTracker: https://github.com/andybalaam/rabbit-escape/issues
 
-Name:Rabbit Escape
-Summary:Lemmings-like puzzle/action game
-Description:
-140 levels of puzzling action!
+AutoName: Rabbit Escape
+Summary: Lemmings-like puzzle/action game
+Description: |
+ 140 levels of puzzling action!
  ... blah blah ...
-.
 
-Repo Type:git
-Repo:https://github.com/andybalaam/rabbit-escape
-Binaries:https://github.com/andybalaam/rabbit-escape/releases/download/v%v/rabbit-escape-%v.apk
+RepoType: git
+Repo: https://github.com/andybalaam/rabbit-escape
+Binaries: https://github.com/andybalaam/rabbit-escape/releases/download/v%v/rabbit-escape-%v.apk
 
-Build:0.10.2,102
-    commit=v0.10.2
-    subdir=rabbit-escape-ui-android/app
-    gradle=paid
-    build=cd ../.. && \
-        make android-pre-fdroid
+Builds:
+ - versionName: '0.10.2'
+   versionCode: 102
+   commit: v0.10.2
+   subdir: rabbit-escape-ui-android/app
+   gradle:
+    - paid
+   build: cd ../.. && make android-pre-fdroid
 
-Auto Update Mode:Version v%v
-Update Check Mode:Tags v\d+\.\d+(\.\d+)?
-Current Version:0.10.2
-Current Version Code:102
+AutoUpdateMode: Version v%v
+UpdateCheckMode: Tags v\d+\.\d+(\.\d+)?
+CurrentVersion: 0.10.2
+CurrentVersionCode: 102
 ```
 
 For more info, see the F-Droid

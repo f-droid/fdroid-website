@@ -10,13 +10,13 @@ and packages.
 ### Detecting<a name="Detecting"></a>
 
 There are various mechanisms in place for automatically detecting that
-updates are available for applications, with the `Update Check Mode`
+updates are available for applications, with the _UpdateCheckMode_
 field in the metadata determining which method is used for a particular
 application.
 
 Running the `fdroid checkupdates` command will apply this method to each
-application in the repository and update the `Current Version` and
-`Current Version Code` fields in the metadata accordingly.
+application in the repository and update the _CurrentVersion_ and
+_CurrentVersionCode_ fields in the metadata accordingly.
 
 As usual, the `-p` option can be used with this, to restrict processing
 to a particular application.
@@ -32,7 +32,7 @@ Adding updates (i.e. new versions of applications already included in
 the repository) happens in two ways. The simple case is applications
 where the APK files are binaries, retrieved from a developer’s published
 build. In this case, all that’s required is to place the new binary in
-the `Repo` directory, and the next run of `fdroid update` will pick it
+the _Repo_ directory, and the next run of `fdroid update` will pick it
 up.
 
 For applications built from source, it is necessary to add a new

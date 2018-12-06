@@ -108,7 +108,7 @@ We try not to build from a random repository head version.
 
 ### Do I need to tell you when I update?
 
-We will [detect](../Build_Metadata_Reference#Update-Check-Mode) new
+We will [detect](../Build_Metadata_Reference#UpdateCheckMode) new
 releases of your app and update our metadata accordingly, which will
 then cause us to check the code and add new builds to our system. Tags
 help greatly for adding new versions, but do remember to push the tags

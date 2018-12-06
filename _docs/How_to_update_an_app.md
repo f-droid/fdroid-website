@@ -27,16 +27,16 @@ common source code websites. For complicated apps that rebase code and
 use many branches, I'll often visit the source code site too).
 
 -   Take a note of the current version according to the developer
-    &ndash; a clue is often written above the Current Version in
+    &ndash; a clue is often written above the _CurrentVersion_ in
     the metadata. To visit Google Play quickly to get the version name
     there, install w3m and add this function `gplay() { w3m
     play.google.com/store/apps/details/?id="$@" ;}` to
     your bashrc. Then you can just do
     `gplay package-name`. If you find that the
-    version is greater than the Current Version in the metadata, update
+    version is greater than the _CurrentVersion_ in the metadata, update
     it right away (unless there are any beta or test builds
     currently activated)
--   If the Current Version in the metadata (especially in the case of
+-   If the _CurrentVersion_ in the metadata (especially in the case of
     the update check mode RepoManifest) is greater than on Google Play
     or the download page, you may not need to update and can just add a
     dummy build version e.g `Build Version:1.2,34,!not
@@ -56,9 +56,9 @@ use many branches, I'll often visit the source code site too).
     current version noted earlier
 -   ` hg up "tag"` to switch to the tag or
     revision (to make sure you are auditing exactly what will be built)
--   `hg log -p` e.g. libs | build.xml |
-    AndroidManifest.xml | project.properties | res/raw | assets |
-    .gitmodules | .classpath to take a closer look at the changes in
+-   `hg log -p` e.g. libs | _build.xml_ |
+    _AndroidManifest.xml_ | _project.properties_ | res/raw | assets |
+    _.gitmodules_ | _.classpath_ to take a closer look at the changes in
     some of the important files (as far as updating is concerned). If
     new jars (or new versions of old ones) are found then they must be
     verified to see they were found from canonical sources and are free
@@ -68,12 +68,12 @@ use many branches, I'll often visit the source code site too).
     checksums to compare with. Take a note of jars such as bugsense or
     acra which are used for bugreports
 -   If you find proprietary files add a dummy build version to the
-    metadata with a few words about the reason, add No Source Since to
+    metadata with a few words about the reason, add _NoSourceSince_ to
     the bottom and a line to the descripion beginning with Status: to
     the description explaining the reason that the app can't be updated
 -   `find . -type f -executable` to locate any
     scripts and things. Note that ant will also execute anything it
-    finds in build.xml and custom_rules.xml!
+    finds in _build.xml_ and custom_rules.xml!
 -   `$find . -name '\*' | xargs file --mime | grep
     executable|shared-lib` to see if any prebuilts
     are around. These would often be detected by fdroid anyway and would
@@ -108,7 +108,7 @@ use many branches, I'll often visit the source code site too).
     optional (the Android Manifest can help here). If crash reporting is
     on by default the app needs an anti-feature. Same thing applies
     to ads.
--   Add any info for the next time above Auto Update Mode, and see if
+-   Add any info for the next time above AutoUpdateMode, and see if
     the update check mode needs any tweaking.
 -   Have a quick look at the description and urls to see if anything
     needs updating

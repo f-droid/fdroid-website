@@ -23,15 +23,15 @@ source code without any hidden anti-features.
 Because F-Droid builds every app from its source code (via the Android
 SDK with ant, gradle or maven, sometimes with help from the Android NDK,
 standard GNU/Linux programs and a little pre-processing in the BASH
-shell), probably if you can see a file called `AndroidManifest.xml` or
-`build.gradle` in your sources then there are many possibilities that
+shell), probably if you can see a file called _AndroidManifest.xml_ or
+_build.gradle_ in your sources then there are many possibilities that
 F-Droid will be able to build it.
 
 Note that most projects call upon pre-built libraries. The source code
 for these is found elsewhere. For ant, these will be found in the
 `libs/` folder and external ones are mentioned in the
-`project.properties` files; for gradle, these will be mentioned in
-`build.gradle` and are usually pulled from <http://mvnrepository.com>;
+_project.properties_ files; for gradle, these will be mentioned in
+_build.gradle_ and are usually pulled from <http://mvnrepository.com>;
 for maven there will be `pom.xml` files which describe the dependencies.
 If native code pre-built libraries are used, these will often be found
 in `res/raw/` or `assets/`: there should be something said about these
@@ -131,7 +131,7 @@ encourage the developers to create a dedicate page if possible.
 
 In addition some software, even being Free and Open Source software, may
 do practices which can be considered undesirable and that we consider
-[AntiFeatures](https://f-droid.org/wiki/page/Antifeatures)". Where possible the F-Droid
+[_AntiFeatures_](https://f-droid.org/wiki/page/Antifeatures)". Where possible the F-Droid
 community still include these applications in the repository but
 flagging and cataloging these antifeatures in order to warn users (on
 the F-Droid client and on the web repository browser) by any
@@ -152,7 +152,7 @@ keep the versions, descriptions and URLs up-to-date.
 
 The most important is to know when new versions are published. We have
 three automatic methods and one manual: from tags; checking the
-`AndroidManifest.xml` at the most recent revision in the repository; and
+_AndroidManifest.xml_ at the most recent revision in the repository; and
 checking Google Play. If these won't do, we must look at the version of
 the package published by the upstream developers, either by loading the
 Google Play web page or downloading an APK and checking its version.

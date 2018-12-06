@@ -51,9 +51,9 @@ While some information about the applications (and versions thereof)
 is retrieved directly from the APK files, most comes from the
 corresponding file in the _metadata/_ directory. The
 [metadata file](../Build_Metadata_Reference) covering ALL versions of
-a particular application is named _package.id.txt_ where package.id is
+a particular application is named _package.id.yml_ where package.id is
 the unique identifier for that package.  All build metadata fields are
-relevant for binary APKs, except for `Build:` entries, which should be
+relevant for binary APKs, except for `Builds:` entries, which should be
 omitted.
 
 
@@ -156,9 +156,9 @@ donation links, bug tracker, license, home page, etc. See the
 [Build Metadata Reference](../Build_Metadata_Reference) for more info
 on what all the options are.
 
-`Current Version Code` provides a handy way to
+_CurrentVersionCode_ provides a handy way to
 deploy beta releases in the same stream as your full releases. You can
-set `Current Version Code` to your current stable
+set _CurrentVersionCode_ to your current stable
 release, then add APKs to your repo. Users will only be updated
 automatically to the version code you specify. Any APKs for a given app
 in your repo that have a newer version code will not be automatically

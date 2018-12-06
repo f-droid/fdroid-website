@@ -99,14 +99,14 @@ This is a nonexhaustive list of what a reviewer would do:
     uses non-Free dependencies, shows advertisements, tracks users,
     promotes non-Free services/applications, or does anything that is
     harmful or otherwise undesirable for users.
--   They will list a summary of any [AntiFeatures](https://f-droid.org/wiki/page/Antifeatures) in
+-   They will list a summary of any [_AntiFeatures_](https://f-droid.org/wiki/page/Antifeatures) in
     your application.
 -   They will try patching your application to remove usage of
     third-party proprietary software (if there is any).
 -   They will try to determine a suitable update process for your
     application (e.g. by looking at how your releases relate to VCS tags
     and/or version information
-    in `AndroidManifest.xml`).
+    in _AndroidManifest.xml_).
 -   They will try writing a suitable metadata file for your application,
     and add it to local F-Droid build server instance.
     (`fdroid rewritemeta`, `fdroid

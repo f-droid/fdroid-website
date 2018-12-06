@@ -15,7 +15,7 @@ from several sources:
 These metadata files are simple, easy to edit text files, always named
 as the "package name" with file type appended.  There are a wide range
 of available fields for adding information to describe packages and/or
-apps.  For all of the fields like `AuthorName` that apply to all
+apps.  For all of the fields like _AuthorName_ that apply to all
 releases of a package/app, the fields use CamelCase starting with an
 upper case letter.  All other fields use camelCase starting with a
 lower case letter, including per-build fields, localized fields, etc.
@@ -48,90 +48,84 @@ fdroid rewritemeta org.adaway
 
 The following sections describe the fields recognised within the file.
 
-- [Categories](#Categories)
-- [Author Name](#Author-Name)
-- [Author Email](#Author-Email)
-- [License](#License)
-- [Auto Name](#Auto-Name)
-- [Name](#Name)
-- [Provides](#Provides)
-- [Web Site](#Web-Site)
-- [Source Code](#Source-Code)
-- [Issue Tracker](#Issue-Tracker)
-- [Changelog](#Changelog)
-- [Donate](#Donate)
-- [FlattrID](#FlattrID)
-- [LiberapayID](#LiberapayID)
-- [Bitcoin](#Bitcoin)
-- [Litecoin](#Litecoin)
-- [Summary](#Summary)
-- [Description](#Description)
-- [Maintainer Notes](#Maintainer-Notes)
-- [Repo Type](#Repo-Type)
-- [Repo](#Repo)
-- [Binaries](#Binaries)
-- [Build](#Build)
-- [AntiFeatures](#AntiFeatures)
-- [Disabled](#Disabled)
-- [Requires Root](#Requires-Root)
-- [Archive Policy](#Archive-Policy)
-- [Update Check Mode](#Update-Check-Mode)
-- [Update Check Ignore](#Update-Check-Ignore)
-- [Vercode Operation](#Vercode-Operation)
-- [Update Check Name](#Update-Check-Name)
-- [Update Check Data](#Update-Check-Data)
-- [Auto Update Mode](#Auto-Update-Mode)
-- [Current Version](#Current-Version)
-- [Current Version Code](#Current-Version-Code)
-- [No Source Since](#No-Source-Since)
+- [_Categories_](#Categories)
+- [_AuthorName_](#AuthorName)
+- [_AuthorEmail_](#AuthorEmail)
+- [_License_](#License)
+- [_AutoName_](#AutoName)
+- [_Name_](#Name)
+- [_Provides_](#Provides)
+- [_WebSite_](#WebSite)
+- [_SourceCode_](#SourceCode)
+- [_IssueTracker_](#IssueTracker)
+- [_Changelog_](#Changelog)
+- [_Donate_](#Donate)
+- [_FlattrID_](#FlattrID)
+- [_LiberapayID_](#LiberapayID)
+- [_Bitcoin_](#Bitcoin)
+- [_Litecoin_](#Litecoin)
+- [_Summary_](#Summary)
+- [_Description_](#Description)
+- [_MaintainerNotes_](#MaintainerNotes)
+- [_RepoType_](#RepoType)
+- [_Repo_](#Repo)
+- [_Binaries_](#Binaries)
+- [_Build_](#Build)
+- [_AntiFeatures_](#AntiFeatures)
+- [_Disabled_](#Disabled)
+- [_RequiresRoot_](#RequiresRoot)
+- [_ArchivePolicy_](#ArchivePolicy)
+- [_UpdateCheckMode_](#UpdateCheckMode)
+- [_UpdateCheckIgnore_](#UpdateCheckIgnore)
+- [_VercodeOperation_](#VercodeOperation)
+- [_UpdateCheckName_](#UpdateCheckName)
+- [_UpdateCheckData_](#UpdateCheckData)
+- [_AutoUpdateMode_](#AutoUpdateMode)
+- [_CurrentVersion_](#CurrentVersion)
+- [_CurrentVersionCode_](#CurrentVersionCode)
+- [_NoSourceSince_](#NoSourceSince)
 
 
 
 ### 7.1 Categories<a name="Categories"></a>
 
-
-Field Name: `Categories`
+Field Name: _Categories_
 
 Any number of categories for the application to be placed in. There is
 no fixed list of categories - both the client and the web site will
 automatically show any categories that exist in any applications.
 However, if your metadata is intended for the main F-Droid repository,
-you should use one of the existing categories (look at the site/client),
-or discuss the proposal to add a new one.
-
-Categories must be separated by a single comma character, ’,’. For
-backwards compatibility, F-Droid will use the first category given as
-&lt;category&gt; element for older clients to at least see one category.
+you should use one of the existing categories (look at the
+site/client), or discuss the proposal to add a new one. _Categories_
+must be a list of items, even if there is just one.
 
 This is converted to (`<categories>`) in the XML file (_index.xml_).
 
 
 
-### 7.2 Author Name<a name="Author-Name"></a>
+### 7.2 _AuthorName_<a name="AuthorName"></a>
 
-
-Field Name: `Author Name`
+Field Name: _AuthorName_
 
 The name of the author, either full, abbreviated or pseudonym. If
 present, it should represent the name(s) as published by upstream, e.g.
 in their copyright or authors file. This can be omitted (or left blank).
 
-__Warning__: this overrides all Author Name entries
+__Warning__: this overrides all _AuthorName_ entries
 [set in the app's source code](../All_About_Descriptions_Graphics_and_Screenshots).
 
 This is converted to (`<author>`) in the XML file (_index.xml_).
 
 
 
-### 7.3 Author Email<a name="Author-Email"></a>
+### 7.3 _AuthorEmail_<a name="AuthorEmail"></a>
 
-
-Field Name: `Author Email`
+Field Name: _AuthorEmail_
 
 The e-mail address of the author(s). This can be omitted (or left
 blank).
 
-__Warning__: this overrides all Author Email entries
+__Warning__: this overrides all _AuthorEmail_ entries
 [set in the app's source code](../All_About_Descriptions_Graphics_and_Screenshots).
 
 This is converted to (`<email>`) in the XML file (_index.xml_).
@@ -140,8 +134,7 @@ This is converted to (`<email>`) in the XML file (_index.xml_).
 
 ### 7.4 License<a name="License"></a>
 
-
-Field Name: `License`
+Field Name: _License_
 
 The overall license for the application in terms of the binary that
 the user can install. Values should correspond to short identifiers of
@@ -159,15 +152,14 @@ This is converted to (`<license>`) in the XML file (_index.xml_).
 
 
 
-### 7.5 Auto Name<a name="Auto-Name"></a>
+### 7.5 _AutoName_<a name="AutoName"></a>
 
-
-Field Name: `Auto Name`
+Field Name: _AutoName_
 
 The name of the application as can best be retrieved from the source
 code. This is done so that the commitupdates script can put a familiar
 name in the description of commits created when a new update of the
-application is found. The Auto Name entry is generated automatically
+application is found. The _AutoName_ entry is generated automatically
 when `fdroid checkupdates` is run.
 
 __Warning__: this overrides all Name entries
@@ -179,8 +171,7 @@ This is converted to (`<name>`) in the XML file (_index.xml_).
 
 ### 7.6 Name<a name="Name"></a>
 
-
-Field Name: `Name`
+Field Name: _Name_
 
 The name of the application. Normally, this field should not be present
 since the application’s correct name is retrieved from the APK file.
@@ -198,8 +189,7 @@ This is converted to (`<name>`) in the XML file (_index.xml_).
 
 ### 7.7 Provides<a name="Provides"></a>
 
-
-Field Name: `Provides`
+Field Name: _Provides_
 
 Comma-separated list of application IDs that this app provides. In other
 words, if the user has any of these apps installed, F-Droid will show
@@ -213,10 +203,9 @@ This is converted to (`<provides>`) in the XML file (_index.xml_).
 
 
 
-### 7.8 Web Site<a name="Web-Site"></a>
+### 7.8 _WebSite_<a name="WebSite"></a>
 
-
-Field Name: `Web Site`
+Field Name: _WebSite_
 
 The URL for the application’s web site. If there is no relevant web
 site, this can be omitted (or left blank).
@@ -225,10 +214,9 @@ This is converted to (`<web>`) in the XML file (_index.xml_).
 
 
 
-### 7.9 Source Code<a name="Source-Code"></a>
+### 7.9 _SourceCode_<a name="SourceCode"></a>
 
-
-Field Name: `Source Code`
+Field Name: _SourceCode_
 
 The URL to view or obtain the application’s source code. This should be
 something human-friendly. Machine-readable source-code is covered in the
@@ -238,10 +226,9 @@ This is converted to (`<source>`) in the XML file (_index.xml_).
 
 
 
-### 7.10 Issue Tracker<a name="Issue-Tracker"></a>
+### 7.10 _IssueTracker_<a name="IssueTracker"></a>
 
-
-Field Name: `Issue Tracker`
+Field Name: _IssueTracker_
 
 The URL for the application’s issue tracker. Optional, since not all
 applications have one.
@@ -252,8 +239,7 @@ This is converted to (`<tracker>`) in the XML file (_index.xml_).
 
 ### 7.11 Changelog<a name="Changelog"></a>
 
-
-Field Name: `Changelog`
+Field Name: _Changelog_
 
 The URL for the application’s changelog. Optional, since not all
 applications have one.
@@ -264,8 +250,7 @@ This is converted to (`<changelog>`) in the XML file (_index.xml_).
 
 ### 7.12 Donate<a name="Donate"></a>
 
-
-Field Name: `Donate`
+Field Name: _Donate_
 
 The URL to donate to the project. This should be the project’s donate
 page if it has one.
@@ -283,8 +268,7 @@ This is converted to (`<donate>`) in the XML file (_index.xml_).
 
 ### 7.13 FlattrID<a name="FlattrID"></a>
 
-
-Field Name: `FlattrID`
+Field Name: _FlattrID_
 
 The project’s Flattr (https://flattr.com) ID, if it has one. This should
 be a numeric ID, such that (for example) https://flattr.com/thing/xxxx
@@ -296,8 +280,7 @@ This is converted to (`<flattr>`) in the XML file (_index.xml_).
 
 ### 7.14 LiberapayID<a name="LiberapayID"></a>
 
-
-Field Name: `LiberapayID`
+Field Name: _LiberapayID_
 
 The project’s Liberapay (https://liberapay.com) ID, if it has one. This should
 be a numeric ID, such that (for example) https://liberapay.com/~xxxxx
@@ -311,8 +294,7 @@ This is converted to (`<liberapay>`) in the XML file (_index.xml_).
 
 ### 7.15 Bitcoin<a name="Bitcoin"></a>
 
-
-Field Name: `Bitcoin`
+Field Name: _Bitcoin_
 
 A bitcoin address for donating to the project.
 
@@ -323,7 +305,7 @@ This is converted to (`<bitcoin>`) in the XML file (_index.xml_).
 ### 7.16 Litecoin<a name="Litecoin"></a>
 
 
-Field Name: `Litecoin`
+Field Name: _Litecoin_
 
 A litecoin address for donating to the project.
 
@@ -333,8 +315,7 @@ This is converted to (`<litecoin>`) in the XML file (_index.xml_).
 
 ### 7.17 Summary<a name="Summary"></a>
 
-
-Field Name: `Summary`
+Field Name: _Summary_
 
 A brief summary of what the application is. Since the summary is only
 allowed one line on the list of the F-Droid client, keeping it to within
@@ -349,8 +330,7 @@ This is converted to (`<summary>`) in the XML file (_index.xml_).
 
 ### 7.18 Description<a name="Description"></a>
 
-
-Field Name: `Description`
+Field Name: _Description_
 
 A full description of the application, relevant to the latest version.
 This can span multiple lines (which should be kept to a maximum of 80
@@ -387,10 +367,9 @@ This is converted to (`<desc>`) in the XML file (_index.xml_).
 
 
 
-### 7.19 Maintainer Notes<a name="Maintainer-Notes"></a>
+### 7.19 _MaintainerNotes_<a name="MaintainerNotes"></a>
 
-
-Field Name: `Maintainer Notes`
+Field Name: _MaintainerNotes_
 
 This is a multi-line field using the same rules and syntax as the
 description. It’s used to record notes for F-Droid maintainers to assist
@@ -400,10 +379,9 @@ This information is also published to the wiki.
 
 
 
-### 7.20 Repo Type<a name="Repo-Type"></a>
+### 7.20 _RepoType_<a name="RepoType"></a>
 
-
-Field Name: `Repo Type`
+Field Name: _RepoType_
 
 The type of repository - for automatic building from source. If this is
 not specified, automatic building is disabled for this application.
@@ -420,8 +398,7 @@ Possible values are:
 
 ### 7.21 Repo<a name="Repo"></a>
 
-
-Field Name: `Repo`
+Field Name: _Repo_
 
 The repository location. Usually a git: or svn: URL, for example.
 
@@ -438,7 +415,7 @@ relative paths to the svn repo root dir. Here’s an example of a complex
 git-svn Repo URL:
 http://svn.code.sf.net/p/project/code/svn;trunk=trunk;tags=tags;branches=branches
 
-If the Repo Type is `srclib`, then you must specify the name of the
+If the _RepoType_ is `srclib`, then you must specify the name of the
 according srclib .txt file. For example if `scrlibs/FooBar.txt` exist
 and you want to use this srclib, then you have to set Repo to `FooBar`.
 
@@ -446,8 +423,7 @@ and you want to use this srclib, then you have to set Repo to `FooBar`.
 
 ### 7.22 Binaries<a name="Binaries"></a>
 
-
-Field Name: `Binaries`
+Field Name: _Binaries_
 
 The location of binaries used in verification process.
 
@@ -455,14 +431,13 @@ If specified, F-Droid will verify the output apk file of a build against
 the one specified. You can use %v and %c to point to the version name
 and version code of the current build. To verify the F-Droid client
 itself you could use:
-`Binaries:https://f-droid.org/repo/org.fdroid.fdroid_%c.apk`
+`Binaries: https://f-droid.org/repo/org.fdroid.fdroid_%c.apk`
 
 F-Droid will use upstream binaries if the verification succeeded.
 
 
 
 ### 7.23 Build<a name="Build"></a>
-
 
 Field Name: `Build`
 
@@ -473,7 +448,7 @@ For example:
 ‘Build:1.2,12’
 
 The above specifies to build version 1.2, which has a version code of 12.
-The `commit=` parameter specifies the tag, commit or revision number
+The _commit_ parameter specifies the tag, commit or revision number
 from which to build it in the source repository. It is the only
 mandatory flag, which in this case could for example be `commit=v1.2`.
 
@@ -481,7 +456,7 @@ In addition to the three, always required, parameters described above,
 further parameters can be added (in name=value format) to apply further
 configuration to the build. These are (roughly in order of application):
 
-`disable=<message>`
+`disable: <message>`
 
 :   Disables this build, giving a reason why. (For backwards
     compatibility, this can also be achieved by starting the commit ID
@@ -494,19 +469,19 @@ configuration to the build. These are (roughly in order of application):
     disabling causes it to be deleted once `fdroid update` is run; this
     is the procedure if ever a version has to be replaced.
 
-`subdir=<path>`
+`subdir: <path>`
 
 :   Specifies to build from a subdirectory of the checked out source
     code. Normally this directory is changed to before building,
 
-`submodules=yes`
+`submodules: yes`
 
 :   Use if the project (git only) has submodules - causes
     `git submodule update --init --recursive` to be executed after the
     source is cloned. Submodules are reset and cleaned like the main app
     repository itself before each build.
 
-`sudo=xxxx`
+`sudo: xxxx`
 
 :   Specifies a script to be run using `sudo bash -x -c "xxxx"` in the
     buildserver VM guest.  This script is run with full root privileges,
@@ -516,7 +491,7 @@ configuration to the build. These are (roughly in order of application):
     need very specific things that are not appropriate to install for
     all builds, or for things that would conflict with other builds.
 
-`timeout=<seconds>`
+`timeout: <seconds>`
 
 :   Time limit for this build (in seconds).  After time is up,
     buildserver VM is forcefully terminated.  The default is 7200
@@ -525,7 +500,7 @@ configuration to the build. These are (roughly in order of application):
     Limitation is applied only in server mode, i.e. when `fdroid build`
     is invoked with the `--server` option.
 
-`init=xxxx`
+`init: xxxx`
 
 :   Like ’prebuild’, but runs on the source code BEFORE any other
     processing takes place.
@@ -536,7 +511,7 @@ configuration to the build. These are (roughly in order of application):
     per-build variables are available likewise: \$\$VERSION\$\$,
     \$\$VERCODE\$\$ and \$\$COMMIT\$\$.
 
-`oldsdkloc=yes`
+`oldsdkloc: yes`
 
 :   The sdk location in the repo is in an old format, or the build.xml
     is expecting such. The ’new’ format is sdk.dir while the VERY OLD
@@ -544,7 +519,7 @@ configuration to the build. These are (roughly in order of application):
     lines of: "com.android.ant.SetupTask cannot be found" when trying to
     build, then try enabling this option.
 
-`target=<target>`
+`target: <target>`
 
 :   Specifies a particular SDK target for compilation, overriding the
     value defined in the code by upstream. This has different effects
@@ -553,13 +528,13 @@ configuration to the build. These are (roughly in order of application):
     the target SDK in the AndroidManifest.xml, which determines the
     level of features that can be included in the build.
 
-    In the case of an Ant project, it modifies project.properties of the
+    In the case of an Ant project, it modifies _project.properties_ of the
     app and possibly sub-projects. This is likely to cause the whole
-    build.xml to be rewritten, which is fine if it’s a ’standard’
+    _build.xml_ to be rewritten, which is fine if it’s a ’standard’
     android file or doesn’t already exist, but not a good idea if it’s
     heavily customised.
 
-`androidupdate=<auto/dirs>`
+`androidupdate: <auto/dirs>`
 
 :   By default, ’android update’ is used in Ant builds to generate or
     update the project and all its referenced projects. Specifying
@@ -567,12 +542,12 @@ configuration to the build. These are (roughly in order of application):
     don’t use Ant.
 
     Default value is ’`auto`’, which recursively uses the paths in
-    project.properties to find all the subprojects to update.
+    _project.properties_ to find all the subprojects to update.
 
     Otherwise, the value can be a comma-separated list of directories in
     which to run ’android update’ relative to the application directory.
 
-`encoding=xxxx`
+`encoding: xxxx`
 
 :   Adds a java.encoding property to local.properties with the
     given value. Generally the value will be ’utf-8’. This is picked up
@@ -580,9 +555,9 @@ configuration to the build. These are (roughly in order of application):
     source files with this encoding. If you receive warnings during the
     compile about character encodings, you probably need this.
 
-`forceversion=yes`
+`forceversion: yes`
 
-:   If specified, the package version in AndroidManifest.xml is replaced
+:   If specified, the package version in _AndroidManifest.xml_ is replaced
     with the version name for the build as specified in the metadata.
 
     This is useful for cases when upstream repo failed to update it for
@@ -591,29 +566,29 @@ configuration to the build. These are (roughly in order of application):
     apparent which architecture or platform the apk is designed to
     run on.
 
-`forcevercode=yes`
+`forcevercode: yes`
 
-:   If specified, the package version code in the AndroidManifest.xml is
+:   If specified, the package version code in the _AndroidManifest.xml_ is
     replaced with the version code for the build. See also forceversion.
 
-`rm=<path1>[,<path2>,...]`
+`rm: <path1>[,<path2>,...]`
 
 :   Specifies the relative paths of files or directories to delete
     before the build is done. The paths are relative to the base of the
     build directory - i.e. the root of the directory structure checked
     out from the source respository - not necessarily the directory that
-    contains AndroidManifest.xml.
+    contains _AndroidManifest.xml_.
 
     Multiple files/directories can be specified by separating them with
     ’,’. Directories will be recursively deleted.
 
-`extlibs=<lib1>[,<lib2>,...]`
+`extlibs: <lib1>[,<lib2>,...]`
 
 :   Comma-separated list of external libraries (jar files) from the
     `build/extlib` library, which will be placed in the `libs` directory
     of the project.
 
-`srclibs=[n:]a@r,[n:]b@r1,...`
+`srclibs: [n:]a@r,[n:]b@r1,...`
 
 :   Comma-separated list of source libraries or Android projects. Each
     item is of the form name@rev where name is the predefined source
@@ -622,7 +597,7 @@ configuration to the build. These are (roughly in order of application):
 
     For Ant projects, you can optionally append a number with a colon at
     the beginning of a srclib item to automatically place it in
-    project.properties as a library under the specified number. For
+    _project.properties_ as a library under the specified number. For
     example, if you specify `1:somelib@1.0`, F-Droid will automatically
     do the equivalent of the legacy practice
     `prebuild=echo "android.library.reference.1=$$somelib$$" >> project.properties`.
@@ -663,14 +638,14 @@ configuration to the build. These are (roughly in order of application):
     -   ‘Clojars’ - Clojure libraries repo.
     -   ‘CommonsWare’ - repo holding a collection of open-source libs.
 
-`patch=x`
+`patch: x`
 
 :   Apply patch(es). ’x’ names one (or more - comma-seperated) files
     within a directory below the metadata, with the same name as the
     metadata file but without the extension. Each of these patches is
     applied to the code in turn.
 
-`prebuild=xxxx`
+`prebuild: xxxx`
 
 :   Specifies a shell command (or commands - chain with &&) to run
     before the build takes place. Backslash can be used as an escape
@@ -696,7 +671,7 @@ configuration to the build. These are (roughly in order of application):
     variables are available likewise: \$\$VERSION\$\$, \$\$VERCODE\$\$
     and \$\$COMMIT\$\$.
 
-`scanignore=<path1>[,<path2>,...]`
+`scanignore: <path1>[,<path2>,...]`
 
 :   Enables one or more files/paths to be excluded from the scan
     process. This should only be used where there is a very good reason,
@@ -706,26 +681,26 @@ configuration to the build. These are (roughly in order of application):
     When scanning the source tree for problems, matching files whose
     relative paths start with any of the paths given here are ignored.
 
-`scandelete=<path1>[,<path2>,...]`
+`scandelete: <path1>[,<path2>,...]`
 
 :   When running the scan process, any files that trigger errors - like
-    binaries - will be removed. It acts just like scanignore=, but
+    binaries - will be removed. It acts just like _scanignore_, but
     instead of ignoring the files, it removes them.
 
     Useful when a source code repository includes binaries or other
     unwanted files which are not needed for the build. Instead of
-    removing them manually via rm=, using scandelete= is easier.
+    removing them manually via _rm_, using _scandelete_ is easier.
 
-`build=xxxx`
+`build: xxxx`
 
 :   As for ’prebuild’, but runs during the actual build phase (but
     before the main Ant/Maven build). Use this only for actions that do
     actual building. Any prepartion of the source code should be done
     using ’init’ or ’prebuild’.
 
-    Any building that takes place before build= will be ignored, as
+    Any building that takes place before _build_ will be ignored, as
     either Ant, mvn or gradle will be executed to clean the build
-    environment right before build= (or the final build) is run.
+    environment right before _build_ (or the final build) is run.
 
     You can use \$\$SDK\$\$, \$\$NDK\$\$ and \$\$MVN3\$\$ to substitute
     the paths to the android SDK and NDK directories, and maven 3
@@ -733,9 +708,9 @@ configuration to the build. These are (roughly in order of application):
     available likewise: \$\$VERSION\$\$, \$\$VERCODE\$\$
     and \$\$COMMIT\$\$.
 
-`buildjni=[yes|no|<dir list>]`
+`buildjni: [yes|no|<dir list>]`
 
-:   Enables building of native code via the ndk-build script before
+:   Enables building of native code via the _ndk-build_ script before
     doing the main Ant build. The value may be a list of directories
     relative to the main application directory in which to run
     ndk-build, or ’yes’ which corresponds to ’.’ . Using explicit list
@@ -750,7 +725,7 @@ configuration to the build. These are (roughly in order of application):
     isn’t used nor built will result in an error saying that native
     libraries were expected in the resulting package.
 
-`ndk=<version>`
+`ndk: <version>`
 
 :   Version of the NDK to use in this build. Defaults to the latest NDK
     release that included legacy toolchains, so as to not break builds
@@ -762,7 +737,7 @@ configuration to the build. These are (roughly in order of application):
     add support for more versions by adding them to ’ndk\_paths’ in your
     config file.
 
-`gradle=<flavour1>[,<flavour2>,...]`
+`gradle: <flavour1>[,<flavour2>,...]`
 
 :   Build with Gradle instead of Ant, specifying what flavours to use.
     Flavours are case sensitive since the path to the output apk is
@@ -773,18 +748,18 @@ configuration to the build. These are (roughly in order of application):
     least one valid flavour since ’yes’ will build all of
     them separately.
 
-`maven=yes[@<dir>]`
+`maven: yes[@<dir>]`
 
 :   Build with Maven instead of Ant. An extra @&lt;dir&gt; tells F-Droid
     to run Maven inside that relative subdirectory. Sometimes it is
     needed to use @.. so that builds happen correctly.
 
-`preassemble=<task1>[,<task2>,...]`
+`preassemble: <task1>[,<task2>,...]`
 
 :   List of Gradle tasks to be run before the assemble task in a Gradle
     project build.
 
-`gradleprops=<prop1>[,<prop2>,...]`
+`gradleprops: <prop1>[,<prop2>,...]`
 
 :   List of Gradle properties to pass via the command line to Gradle. A
     property can be of the form `foo` or of the form `key=value`.
@@ -792,38 +767,37 @@ configuration to the build. These are (roughly in order of application):
     For example: `gradleprops=enableFoo,someSetting=bar` will result in
     `gradle -PenableFoo -PsomeSetting=bar`.
 
-`antcommands=<target1>[,<target2>,...]`
+`antcommands: <target1>[,<target2>,...]`
 
 :   Specify an alternate set of Ant commands (target) instead of the
     default ’release’. It can’t be given any flags, such as the path to
-    a build.xml.
+    a _build.xml_.
 
-`output=glob/to/output.apk`
+`output: glob/to/output.apk`
 
 :   Specify a glob path where the resulting unsigned release apk from
     the build should be. This can be used in combination with build
     methods like `gradle=yes` or `maven=yes`, but if no build method is
     specified, the build is manual. You should run your build commands,
-    such as `make`, in `build=`.
+    such as `make`, in _build_.
 
-`novcheck=yes`
+`novcheck: yes`
 
 :   Don’t check that the version name and code in the resulting apk are
     correct by looking at the build output - assume the metadata
     is correct. This takes away a useful level of sanity checking, and
     should only be used if the values can’t be extracted.
 
-`antifeatures=<antifeature1>[,<antifeature2>,...]`
+`antifeatures: <antifeature1>[,<antifeature2>,...]`
 
 :   List of Anti-Features for this specific build. They are described
-    in [AntiFeatures](#AntiFeatures).
+    in [_AntiFeatures_](#AntiFeatures).
 
 
 
 ### 7.24 AntiFeatures<a name="AntiFeatures"></a>
 
-
-Field Name: `AntiFeatures`
+Field Name: _AntiFeatures_
 
 This is optional - if present, it contains a comma-separated list of any
 of the following values, describing an anti-feature the application has.
@@ -865,8 +839,7 @@ This is converted to (`<antifeatures>`) in the XML file (_index.xml_).
 
 ### 7.25 Disabled<a name="Disabled"></a>
 
-
-Field Name: `Disabled`
+Field Name: _Disabled_
 
 If this field is present, the application does not get put into the
 public index. This allows metadata to be retained while an application
@@ -879,10 +852,9 @@ retained.
 
 
 
-### 7.26 Requires Root<a name="Requires-Root"></a>
+### 7.26 _RequiresRoot_<a name="RequiresRoot"></a>
 
-
-Field Name: `Requires Root`
+Field Name: _RequiresRoot_
 
 Set this optional field to "Yes" if the application requires root
 privileges to be usable. This lets the client filter it out if the user
@@ -894,10 +866,9 @@ This is converted to (`<requirements>`) in the XML file (_index.xml_).
 
 
 
-### 7.27 Archive Policy<a name="Archive-Policy"></a>
+### 7.27 _ArchivePolicy_<a name="ArchivePolicy"></a>
 
-
-Field Name: `Archive Policy`
+Field Name: _ArchivePolicy_
 
 This determines the policy for moving old versions of an app to the
 archive repo, if one is configured. The configuration sets a default
@@ -910,14 +881,13 @@ number of versions to keep. Defaults to "3 versions".
 
 
 
-### 7.28 Update Check Mode<a name="Update-Check-Mode"></a>
+### 7.28 _UpdateCheckMode_<a name="UpdateCheckMode"></a>
 
-
-Field Name: `Update Check Mode`
+Field Name: _UpdateCheckMode_
 
 This determines the method using for determining when new releases are
-available - in other words, the updating of the Current Version and
-Current Version Code fields in the metadata by the `fdroid checkupdates`
+available - in other words, the updating of the _CurrentVersion_ and
+_CurrentVersionCode_ fields in the metadata by the `fdroid checkupdates`
 process.
 
 Valid modes are:
@@ -926,7 +896,7 @@ Valid modes are:
     automated way of doing so. Updates should be checked for manually.
     Use this, for example, when deploying unstable or patched versions;
     when builds are done in a directory different to where the
-    AndroidManifest.xml is; if the developers use the Gradle build
+    _AndroidManifest.xml_ is; if the developers use the Gradle build
     system and store version info in a separate file; if the developers
     make a new branch for each release and don’t make tags; or if you’ve
     changed the package name or version code logic.
@@ -934,14 +904,14 @@ Valid modes are:
     new versions are not desired. This method is also used when there is
     no other checking method available and the upstream developer keeps
     us posted on new versions.
--   `RepoManifest` - At the most recent commit, the `AndroidManifest.xml`
-    and `build.gradle` files are looked for in the directory where
+-   `RepoManifest` - At the most recent commit, the _AndroidManifest.xml_
+    and _build.gradle_ files are looked for in the directory where
     they were found in the the most recent build. The appropriateness of
     this method depends on the development process used by the
     application’s developers. You should not specify this method unless
     you’re sure it’s appropriate. For example, some developers bump the
     version when commencing development instead of when publishing. It
-    will return an error if the AndroidManifest.xml has moved to a
+    will return an error if the _AndroidManifest.xml_ has moved to a
     different directory or if the package name has changed. The current
     version that it gives may not be accurate, since not all versions
     are fit to be published.  Therefore, before building, it is often
@@ -951,7 +921,7 @@ Valid modes are:
 
     It currently works for every repository type to different extents,
     except the srclib repo type. For git, git-svn and hg repo types, you
-    may use "RepoManifest/yourbranch" as UCM so that "yourbranch" would
+    may use "RepoManifest/yourbranch" as _UpdateCheckMode_ so that "yourbranch" would
     be the branch used in place of the default one. The default values
     are "master" for git, "default" for hg and none for git-svn (it
     stays in the same branch). On the other hand, branch support hasn’t
@@ -959,12 +929,12 @@ Valid modes are:
     used without it.
 
 -   `RepoTrunk` - For svn and git-svn repositories, especially those who
-    don’t have a bundled AndroidManifest.xml file, the Tags and
+    don’t have a bundled _AndroidManifest.xml_ file, the Tags and
     RepoManifest checks will not work, since there is no version
     information to obtain. But, for those apps who automate their build
     process with the commit ref that HEAD points to, RepoTrunk will set
-    the Current Version and Current Version Code to that number.
--   `Tags` - The `AndroidManifest.xml` and `build.gradle` files in all
+    the _CurrentVersion_ and _CurrentVersionCode_ to that number.
+-   `Tags` - The _AndroidManifest.xml_ and _build.gradle_ files in all
     tagged revisions in the source repository are checked, looking for
     the highest version code.  The appropriateness of this method
     depends on the development process used by the application’s
@@ -972,7 +942,7 @@ Valid modes are:
     it’s appropriate. It shouldn’t be used if the developers like to tag
     unstable versions or are known to forget to tag releases. Like
     RepoManifest, it will not return the correct value if the directory
-    containing the AndroidManifest.xml has moved. Despite these caveats,
+    containing the _AndroidManifest.xml_ has moved. Despite these caveats,
     it is the often the favourite update check mode.
 
     It currently only works for git, hg, bzr and git-svn repositories.
@@ -986,7 +956,7 @@ Valid modes are:
     end with a digit.
 
 -   `HTTP` - HTTP requests are used to determine the current version
-    code and version name. This is controlled by the `Update Check Data`
+    code and version name. This is controlled by the _UpdateCheckData_
     field, which is of the form `urlcode|excode|urlver|exver`.
 
     Firstly, if `urlcode` is non-empty, the document from that URL is
@@ -1001,41 +971,39 @@ Valid modes are:
 
 
 
-### 7.29 Vercode Operation<a name="Vercode-Operation"></a>
 
+### 7.29 _VercodeOperation_<a name="VercodeOperation"></a>
 
-Field Name: `Vercode Operation`
+Field Name: _VercodeOperation_
 
 Operation to be applied to the vercode obtained by the defined
-`Update Check Mode`. `%c` will be replaced by the actual vercode, and
+_UpdateCheckMode_. `%c` will be replaced by the actual vercode, and
 the whole string will be passed to python’s `eval` function.
 
 Especially useful with apps that we want to compile for different ABIs,
 but whose vercodes don’t always have trailing zeros. For example, with
-`Vercode Operation` set at something like `%c*10 + 4`, we will be able
+_VercodeOperation_ set at something like `%c*10 + 4`, we will be able
 to track updates and build up to four different versions of every
 upstream version.
 
 
 
-### 7.30 Update Check Ignore<a name="Update-Check-Ignore"></a>
+### 7.30 _UpdateCheckIgnore_<a name="UpdateCheckIgnore"></a>
 
+Field Name: _UpdateCheckIgnore_
 
-Field Name: `Update Check Ignore`
-
-When checking for updates (via `Update Check Mode`) this can be used to
+When checking for updates (via _UpdateCheckMode_) this can be used to
 specify a regex which, if matched against the version name, causes that
 version to be ignored. For example, ’beta’ could be specified to ignore
 version names that include that text.
 
 
 
-### 7.31 Update Check Name<a name="Update-Check-Name"></a>
+### 7.31 _UpdateCheckName_<a name="UpdateCheckName"></a>
 
+Field Name: _UpdateCheckName_
 
-Field Name: `Update Check Name`
-
-When checking for updates (via `Update Check Mode`) this can be used to
+When checking for updates (via _UpdateCheckMode_) this can be used to
 specify the package name to search for. Useful when apps have a static
 package name but change it programmatically in some app flavors, by e.g.
 appending ".open" or ".free" at the end of the package name.
@@ -1046,19 +1014,18 @@ build.gradle file does not contain the package name.
 
 
 
-### 7.32 Update Check Data<a name="Update-Check-Data"></a>
+### 7.32 _UpdateCheckData_<a name="UpdateCheckData"></a>
+
+Field Name: _UpdateCheckData_
+
+Used in conjunction with _UpdateCheckMode_ for certain modes.
 
 
-Field Name: `Update Check Data`
 
-Used in conjunction with `Update Check Mode` for certain modes.
-
+### 7.33 _AutoUpdateMode_<a name="AutoUpdateMode"></a>
 
 
-### 7.33 Auto Update Mode<a name="Auto-Update-Mode"></a>
-
-
-Field Name: `Auto Update Mode`
+Field Name: _AutoUpdateMode_
 
 This determines the method using for auto-generating new builds when new
 releases are available - in other words, adding a new Build Version line
@@ -1086,10 +1053,9 @@ Valid modes are:
 
 
 
-### 7.34 Current Version<a name="Current-Version"></a>
+### 7.34 _CurrentVersion_<a name="CurrentVersion"></a>
 
-
-Field Name: `Current Version`
+Field Name: _CurrentVersion_
 
 The [name of the version](https://developer.android.com/guide/topics/manifest/manifest-element.html#vname) that is the recommended release. There may be newer versions of
 the application than this (e.g. unstable versions), and there will
@@ -1100,38 +1066,36 @@ would ideally be the latest version that is still free, though it may
 still be expedient to retain the automatic update check — see No Source
 Since.
 
-This field is normally automatically updated - see Update Check Mode.
+This field is normally automatically updated - see _UpdateCheckMode_.
 
 This is converted to (`<marketversion>`) in the XML file (_index.xml_).
 
 
 
-### 7.35 Current Version Code<a name="Current-Version-Code"></a>
+### 7.35 _CurrentVersionCode_<a name="CurrentVersionCode"></a>
 
+Field Name: _CurrentVersionCode_
 
-Field Name: `Current Version Code`
-
-The [version code](https://developer.android.com/guide/topics/manifest/manifest-element.html#vcode) corresponding to the [Current Version](#Current-Version) field. Both these
+The [version code](https://developer.android.com/guide/topics/manifest/manifest-element.html#vcode) corresponding to the [_CurrentVersion_](#CurrentVersion) field. Both these
 fields must be correct and matching although it’s the current version
 code that’s used by Android to determine version order and by F-Droid
 client to determine which version should be recommended.
 
 This field is normally automatically updated - see
-[Update Check Mode](#Update-Check-Mode).
+[_UpdateCheckMode_](#UpdateCheckMode).
 
 If not set or set to `0`, clients will recommend the highest version
-they can, as if the `Current Version Code` was infinite.
+they can, as if the _CurrentVersionCode_ was infinite.
 
 This is converted to (`<marketvercode>`) in the XML file (_index.xml_).
 
 
 
-### 7.36 No Source Since<a name="No-Source-Since"></a>
+### 7.36 _NoSourceSince_<a name="NoSourceSince"></a>
 
+Field Name: _NoSourceSince_
 
-Field Name: `No Source Since`
-
-In case we are missing the source code for the Current Version reported
+In case we are missing the source code for the _CurrentVersion_ reported
 by Upstream, or that non-free elements have been introduced, this
 defines the first version that began to miss source code. Apps that are
 missing source code for just one or a few versions, but provide source
