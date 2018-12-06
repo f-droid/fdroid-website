@@ -27,7 +27,7 @@ authorWebsite: "https://open.source.coffee"
 
 * Mats Sjöberg writes about [simplifying his digital life](https://sjoberg.fi/blog/simplify.html), explaining how he makes do without Google and keeps internet distractions at bay. If you'd like to have less stress and more free time, you should definitely give it a read.
 
-* A german public transportation app, Öffi, was removed from Google's Play Store, for unclear reasons. More information in [this article](https://heise.de/-4104626) (in German). The app is now offered on the author's web site as well as through a private F-Droid repository. Please be aware that this repository is not under F-Droid's control, and that Öffi is not open source. There's a push going to get the author to open source it, however. Meanwhile, [Transportr](https://f-droid.org/app/de.grobox.liberario) is a reasonable alternative which _is_ free software.
+* A German public transportation app, Öffi, was removed from Google's Play Store, for unclear reasons. More information in [this article](https://heise.de/-4104626) (in German). The app is now offered on the author's web site as well as through a private F-Droid repository. Please be aware that this repository is not under F-Droid's control, and that Öffi is not open source. There's a push going to get the author to open source it, however. Meanwhile, [Transportr](https://f-droid.org/app/de.grobox.liberario) is a reasonable alternative which _is_ free software.
 
 * There may or may not be a source of F-Droid swag (shirts) soon. Stay tuned!
 

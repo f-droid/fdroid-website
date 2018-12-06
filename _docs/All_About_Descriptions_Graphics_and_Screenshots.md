@@ -110,7 +110,7 @@ Example:
 * [.../ToGoZip/fastlane/metadata/android/en-US/full_description.txt](https://github.com/k3b/ToGoZip/blob/master/fastlane/metadata/android/en-US/full_description.txt)
   * contains the (us-) english description of the app ToGoZip.
 * [.../ToGoZip/fastlane/metadata/android/de-DE/full_description.txt](https://github.com/k3b/ToGoZip/blob/master/fastlane/metadata/android/de-DE/full_description.txt)
-  * contains the german description of the app ToGoZip.
+  * contains the German description of the app ToGoZip.
 * [.../ToGoZip/fastlane/metadata/android/en-US/changelogs/9.txt](https://github.com/k3b/ToGoZip/blob/master/fastlane/metadata/android/en-US/changelogs/9.txt)
   * contains description of the changes made in versionCode **9**
   * in fdroid app this will be shown above the app description
