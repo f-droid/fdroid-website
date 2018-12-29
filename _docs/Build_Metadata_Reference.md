@@ -437,23 +437,38 @@ F-Droid will use upstream binaries if the verification succeeded.
 
 
 
-### 7.23 Build<a name="Build"></a>
+### 7.23 Builds<a name="Builds"></a>
 
-Field Name: `Build`
+Field Name: `Builds`
 
-Any number of these fields can be present, each specifying a version to
-automatically build from source. The value is a comma-separated list.
+Any number of sub-entries can be present, each specifying a version to
+automatically build from source.
 For example:
 
-‘Build:1.2,12’
+```
+Builds:
+  - versionName: 1.2
+    versionCode: 12
+    commit: v1.2
 
-The above specifies to build version 1.2, which has a version code of 12.
-The _commit_ parameter specifies the tag, commit or revision number
-from which to build it in the source repository. It is the only
-mandatory flag, which in this case could for example be `commit=v1.2`.
+  - versionName: 1.3
+    versionCode: 13
+    commit: v1.3-fdroid
+```
+
+`versionName: xxx`
+
+`versionCode: yyy`
+
+:   Specifies to build version xxx, which has a version code of yyy.
+
+`commit: xxx`
+
+:   The _commit_ parameter specifies the tag, commit or revision number
+    from which to build it in the source repository.
 
 In addition to the three, always required, parameters described above,
-further parameters can be added (in name=value format) to apply further
+further parameters can be added (in `name: value` format) to apply further
 configuration to the build. These are (roughly in order of application):
 
 `disable: <message>`
