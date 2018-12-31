@@ -29,6 +29,31 @@ layout: default-package-sidebar
 	<div class="package-description">
 		{{ page.description }}
 	</div>
+	{% if page.anti_features != nil or page.packages.first.anti_features != nil %}
+	<div class="package-anti-features">
+		<details>
+			<summary class="package-anti-features-summary">
+				{{ strings.anti_features_warning }}
+			</summary>
+			<ul class="package-version-anti-features-list">
+				{% for anti_feature in page.anti_features %}
+				<li>
+				  <a href="https://f-droid.org/wiki/page/Antifeature:{{ anti_feature }}">
+				    {{ anti_feature }}
+				  </a>
+				</li>
+				{% endfor %}
+				{% for anti_feature in page.packages.first.anti_features %}
+				<li>
+				  <a href="https://f-droid.org/wiki/page/Antifeature:{{ anti_feature }}">
+				    {{ anti_feature }}
+				  </a>
+				</li>
+				{% endfor %}
+			</ul>
+		</details>
+	</div>
+	{% endif %}
 	<ul class="package-links">
 		{% if page.author_email != "" and page.author_email != nil %}
 		<div class="package-link">
@@ -170,6 +195,26 @@ layout: default-package-sidebar
 					<a href="{{ site.fdroid-repo }}/{{ package.apk_name }}.asc">{{ strings.gpg_signature }}</a>
 				</p>
 
+				{% if package.anti_features != "" and package.anti_features != nil %}
+				<div class="package-version-anti-features">
+					<details {% if forloop.first %}open{% endif %}>
+						<summary class="package-version-anti-features-summary">
+							{{ strings.anti-features }}
+						</summary>
+						<ul class="package-version-anti-features-list">
+							{% for anti_feature in package.anti_features %}
+							<li>
+							  <a href="https://f-droid.org/wiki/page/Antifeature:{{ anti_feature }}">
+							    {{ anti_feature }}
+							  </a>
+							</li>
+							{% endfor %}
+						</ul>
+					</details>
+				</div>
+				{% endif %}
+
+				{% if package.uses_permission != "" and package.uses_permission != nil %}
 				<div class="package-version-permissions">
 					<details {% if forloop.first %}open{% endif %}>
 						<summary class="package-version-permissions-summary">
@@ -187,6 +232,7 @@ layout: default-package-sidebar
 						</ul>
 					</details>
 				</div>
+				{% endif %}
 
 			</li>
 
