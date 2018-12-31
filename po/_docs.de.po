@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
-"POT-Creation-Date: 2018-12-06 17:02+0100\n"
+"POT-Creation-Date: 2018-12-31 13:17+0100\n"
 "PO-Revision-Date: 2018-12-20 20:08+0000\n"
 "Last-Translator: ssantos <ssantos@web.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/f-droid/website-docs/de/>\n"
@@ -1299,33 +1299,79 @@ msgstr "F-Droid verwendet die Original-APKs, wenn die Verifizierung erfolgreich 
 
 #. type: Title ###
 #: build/_docs/md/Build_Metadata_Reference.md
-#, no-wrap
-msgid "7.23 Build<a name=\"Build\"></a>"
+#, fuzzy, no-wrap
+msgid "7.23 Builds<a name=\"Builds\"></a>"
 msgstr "7.23 Build (_Build_)<a name=\"Build\"></a>"
 
 #. type: Plain text
 #: build/_docs/md/Build_Metadata_Reference.md
-msgid "Field Name: `Build`"
+#, fuzzy
+msgid "Field Name: `Builds`"
 msgstr "Feldname: `Build`"
 
 #. type: Plain text
 #: build/_docs/md/Build_Metadata_Reference.md
-msgid "Any number of these fields can be present, each specifying a version to automatically build from source. The value is a comma-separated list.  For example:"
+#, fuzzy
+msgid "Any number of sub-entries can be present, each specifying a version to automatically build from source.  For example:"
 msgstr "Es kann eine beliebige Anzahl dieser Felder vorhanden sein, von denen jedes eine Version angibt, die aus der Quelle automatisch erstellt werden soll. Der Wert entspricht einer durch Kommas getrennten Liste.  Zum Beispiel:"
 
 #. type: Plain text
 #: build/_docs/md/Build_Metadata_Reference.md
-msgid "‘Build:1.2,12’"
-msgstr "‘Build:1.2,12’"
+#, no-wrap
+msgid ""
+"```\n"
+"Builds:\n"
+"  - versionName: 1.2\n"
+"    versionCode: 12\n"
+"    commit: v1.2\n"
+msgstr ""
 
 #. type: Plain text
 #: build/_docs/md/Build_Metadata_Reference.md
-msgid "The above specifies to build version 1.2, which has a version code of 12.  The _commit_ parameter specifies the tag, commit or revision number from which to build it in the source repository. It is the only mandatory flag, which in this case could for example be `commit=v1.2`."
-msgstr "Oben genanntes legt fest, die Version 1.2 zu kompilieren, die den Versionscode 12 besitzt. Der Parameter _commit_ definiert den 'Tag', die ‘Commit‘- oder ‘Revision‘-Nummer vom Originalrepository, aus der die Version erstellt werden soll. Es ist der einzige erforderliche Parameter, der in diesem Fall zum Beispiel `commit=v1.2` sein könnte."
+#, no-wrap
+msgid ""
+"  - versionName: 1.3\n"
+"    versionCode: 13\n"
+"    commit: v1.3-fdroid\n"
+"```\n"
+msgstr ""
 
 #. type: Plain text
 #: build/_docs/md/Build_Metadata_Reference.md
-msgid "In addition to the three, always required, parameters described above, further parameters can be added (in name=value format) to apply further configuration to the build. These are (roughly in order of application):"
+#, fuzzy
+msgid "`versionName: xxx`"
+msgstr "`sudo: xxxx`"
+
+#. type: Plain text
+#: build/_docs/md/Build_Metadata_Reference.md
+#, fuzzy
+msgid "`versionCode: yyy`"
+msgstr "`forceversion: yes`"
+
+#. type: Plain text
+#: build/_docs/md/Build_Metadata_Reference.md
+#, no-wrap
+msgid ":   Specifies to build version xxx, which has a version code of yyy.\n"
+msgstr ""
+
+#. type: Plain text
+#: build/_docs/md/Build_Metadata_Reference.md
+#, fuzzy
+msgid "`commit: xxx`"
+msgstr "`init: xxxx`"
+
+#. type: Plain text
+#: build/_docs/md/Build_Metadata_Reference.md
+#, no-wrap
+msgid ""
+":   The _commit_ parameter specifies the tag, commit or revision number\n"
+"    from which to build it in the source repository.\n"
+msgstr ""
+
+#. type: Plain text
+#: build/_docs/md/Build_Metadata_Reference.md
+#, fuzzy
+msgid "In addition to the three, always required, parameters described above, further parameters can be added (in `name: value` format) to apply further configuration to the build. These are (roughly in order of application):"
 msgstr "Neben den drei oben beschriebenen, immer erforderlichen Parametern, können weitere Parameter (im Format: Name=Wert) hinzugefügt werden, um weitere Build-Konfigurationsmerkmale anzuwenden. Diese sind (grob in der Reihenfolge ihrer Anwendung):"
 
 #. type: Plain text
@@ -9153,6 +9199,12 @@ msgstr "Einstellungen"
 #: build/_docs/md/Whitelabel_Builds.md
 msgid "For a custom build that enables Automatic Updates by default, override _app/src/main/res/xml/preferences.xml_. You can customize the preferences and their default values in _app/src/mycompany/res/xml/preferences.xml_. The fully automatic update requires [Privileged Extension](https://gitlab.com/fdroid/privileged-extension). With regular access, the updates will only automatically download. The user still needs to click install on each one."
 msgstr "Für eine angepasste F-Droid-Variante, die Automatische Aktualisierungen standardmäßig aktiviert, überschreiben Sie _app/src/main/res/xml/preferences.xml_. Sie können die Einstellungen und deren Standardwerte in _app/src/mycompany/res/xml/preferences.xml_ anpassen. Das vollautomatische Update benötigt System-/Root-Zugriff. Mit Standardberechtigungen werden die Updates nur automatisch heruntergeladen. Der Nutzer muss weiterhin jedes Update einzeln, manuell installieren."
+
+#~ msgid "‘Build:1.2,12’"
+#~ msgstr "‘Build:1.2,12’"
+
+#~ msgid "The above specifies to build version 1.2, which has a version code of 12.  The _commit_ parameter specifies the tag, commit or revision number from which to build it in the source repository. It is the only mandatory flag, which in this case could for example be `commit=v1.2`."
+#~ msgstr "Oben genanntes legt fest, die Version 1.2 zu kompilieren, die den Versionscode 12 besitzt. Der Parameter _commit_ definiert den 'Tag', die ‘Commit‘- oder ‘Revision‘-Nummer vom Originalrepository, aus der die Version erstellt werden soll. Es ist der einzige erforderliche Parameter, der in diesem Fall zum Beispiel `commit=v1.2` sein könnte."
 
 #~ msgid "Categories must be separated by a single comma character, ’,’. For backwards compatibility, F-Droid will use the first category given as &lt;category&gt; element for older clients to at least see one category."
 #~ msgstr "Kategorien müssen durch einfache Kommas ’,’ voneinander getrennt werden. Aus Gründen der Rückwärtskompatibilität wird F-Droid die erstgenannte Kategorie als &lt;category&gt;-Element für ältere Clients verwenden, damit wenigstens eine Kategorie zu sehen ist."
