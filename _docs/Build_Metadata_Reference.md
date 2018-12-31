@@ -87,7 +87,7 @@ The following sections describe the fields recognised within the file.
 
 
 
-### 7.1 Categories<a name="Categories"></a>
+### 7.1 _Categories_<a name="Categories"></a>
 
 Field Name: _Categories_
 
@@ -132,7 +132,7 @@ This is converted to (`<email>`) in the XML file (_index.xml_).
 
 
 
-### 7.4 License<a name="License"></a>
+### 7.4 _License_<a name="License"></a>
 
 Field Name: _License_
 
@@ -169,7 +169,7 @@ This is converted to (`<name>`) in the XML file (_index.xml_).
 
 
 
-### 7.6 Name<a name="Name"></a>
+### 7.6 _Name_<a name="Name"></a>
 
 Field Name: _Name_
 
@@ -187,7 +187,7 @@ This is converted to (`<name>`) in the XML file (_index.xml_).
 
 
 
-### 7.7 Provides<a name="Provides"></a>
+### 7.7 _Provides_<a name="Provides"></a>
 
 Field Name: _Provides_
 
@@ -237,7 +237,7 @@ This is converted to (`<tracker>`) in the XML file (_index.xml_).
 
 
 
-### 7.11 Changelog<a name="Changelog"></a>
+### 7.11 _Changelog_<a name="Changelog"></a>
 
 Field Name: _Changelog_
 
@@ -248,7 +248,7 @@ This is converted to (`<changelog>`) in the XML file (_index.xml_).
 
 
 
-### 7.12 Donate<a name="Donate"></a>
+### 7.12 _Donate_<a name="Donate"></a>
 
 Field Name: _Donate_
 
@@ -266,7 +266,7 @@ This is converted to (`<donate>`) in the XML file (_index.xml_).
 
 
 
-### 7.13 FlattrID<a name="FlattrID"></a>
+### 7.13 _FlattrID_<a name="FlattrID"></a>
 
 Field Name: _FlattrID_
 
@@ -278,7 +278,7 @@ This is converted to (`<flattr>`) in the XML file (_index.xml_).
 
 
 
-### 7.14 LiberapayID<a name="LiberapayID"></a>
+### 7.14 _LiberapayID_<a name="LiberapayID"></a>
 
 Field Name: _LiberapayID_
 
@@ -292,7 +292,7 @@ This is converted to (`<liberapay>`) in the XML file (_index.xml_).
 
 
 
-### 7.15 Bitcoin<a name="Bitcoin"></a>
+### 7.15 _Bitcoin_<a name="Bitcoin"></a>
 
 Field Name: _Bitcoin_
 
@@ -302,7 +302,7 @@ This is converted to (`<bitcoin>`) in the XML file (_index.xml_).
 
 
 
-### 7.16 Litecoin<a name="Litecoin"></a>
+### 7.16 _Litecoin_<a name="Litecoin"></a>
 
 
 Field Name: _Litecoin_
@@ -313,7 +313,7 @@ This is converted to (`<litecoin>`) in the XML file (_index.xml_).
 
 
 
-### 7.17 Summary<a name="Summary"></a>
+### 7.17 _Summary_<a name="Summary"></a>
 
 Field Name: _Summary_
 
@@ -328,7 +328,7 @@ This is converted to (`<summary>`) in the XML file (_index.xml_).
 
 
 
-### 7.18 Description<a name="Description"></a>
+### 7.18 _Description_<a name="Description"></a>
 
 Field Name: _Description_
 
@@ -396,7 +396,7 @@ Possible values are:
 
 
 
-### 7.21 Repo<a name="Repo"></a>
+### 7.21 _Repo_<a name="Repo"></a>
 
 Field Name: _Repo_
 
@@ -421,7 +421,7 @@ and you want to use this srclib, then you have to set Repo to `FooBar`.
 
 
 
-### 7.22 Binaries<a name="Binaries"></a>
+### 7.22 _Binaries_<a name="Binaries"></a>
 
 Field Name: _Binaries_
 
@@ -437,7 +437,7 @@ F-Droid will use upstream binaries if the verification succeeded.
 
 
 
-### 7.23 Builds<a name="Builds"></a>
+### 7.23 _Builds_<a name="Builds"></a>
 
 Field Name: `Builds`
 
@@ -810,7 +810,7 @@ configuration to the build. These are (roughly in order of application):
 
 
 
-### 7.24 AntiFeatures<a name="AntiFeatures"></a>
+### 7.24 _AntiFeatures_<a name="AntiFeatures"></a>
 
 Field Name: _AntiFeatures_
 
@@ -852,7 +852,7 @@ This is converted to (`<antifeatures>`) in the XML file (_index.xml_).
 
 
 
-### 7.25 Disabled<a name="Disabled"></a>
+### 7.25 _Disabled_<a name="Disabled"></a>
 
 Field Name: _Disabled_
 
