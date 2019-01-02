@@ -11,7 +11,7 @@ Because of the F-Droid plugin you need to have zlib installed.
 
 ```
 sudo apt-get install ruby-full build-essential zlib1g-dev
-sudo gem install jekyll bundler
+sudo gem install bundler
 bundle install
 ```
 
