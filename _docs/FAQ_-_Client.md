@@ -85,23 +85,6 @@ Use root access to install F-Droid Privileged Extension as a system
     android.permission.ACCESS_SUPERUSER
 
 
-### Why does F-Droid request root access?
-
-There is a feature (still in beta) which allows unattended installs.
-This requires root access, because it bypasses the usual apk install
-process in Android. *We suggest not to use this feature* unless you know
-what you are doing, as it doesn't show you the permissions an app
-requires before you install it. Thise feature must explicitly be enabled
-in the settings, by selecting "Expert Mode" and then "Install using root
-access". In the future, it should become useful for implementing an
-"Update all apps" feature.
-
-For those who are interested in a quick way to see where in the code the
-F-Droid client makes use of root access, you can search
-[gitlab](https://gitlab.com/fdroid/fdroidclient) for
-`eu.chainfire.libsuperuser`.
-
-
 ### What is expert mode?
 
 Enabling the 'Expert Mode' setting in Preferences will make the client
