@@ -8,7 +8,7 @@ F-Droid is a robot with a passion for Free and Open Source (FOSS) software on th
 
 F-Droid is operated by F-Droid Limited, a non-profit organisation registered in England (no. 8420676).
 
-#### Contact
+### Contact
 
 You can discuss F-Droid or get help on the
 [forum](https://forum.f-droid.org) and IRC in the
@@ -20,6 +20,11 @@ more likely to be answered on the forum or #fdroid channel. If you
 want to help, you can [join us]({{ "/contribute/" | prepend:
 site.baseurl }}).
 
+### Consulting / Commercial Support
+
+If you're running an organisation that uses F-Droid or would like to use F-Droid, you will sometimes want to have an expert. For this, we have a list of companies and developers who contributed to F-Droid in one way or another and are available for consulting:
+
+<a href="{{ "/consulting/" | prepend: site.baseurl }}" class="material-button">Find an F-Droid Consultant</a>
 
 ### License
 
