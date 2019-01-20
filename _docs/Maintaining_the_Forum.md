@@ -36,31 +36,26 @@ due to time restrictions of the voluntary administrators.
 * Version: _tests-passed_
 * SSL: Let's Encrypt
 * Login methods: local, GitHub
-* Backup frequency: every day
-* Backups amount: 15
+* Backup frequency: daily
+* Amount of backups stored: Last 15 ones
 
 ### Upgrading
 
 Upgrading the forum is quite simple.
-It is always announced at least 15 minutes beforehand in a dedicated
-[maintenance log topic](https://forum.f-droid.org/t/maintenance-log/775)
-in the forum.
 Upgrades are planned to be done every one to two weeks.
 If you feel like there was an important update to Discourse which should
-get deployed earlier, feel free to suggest that in the topic mentioned
-above.
+get deployed earlier,
+[please reach out to us]({{ "/about/" | prepend: site.baseurl }}).
 
-For administrators, this is the common way on how to upgrade the forum:
+For administrators, this is the common way how to upgrade the forum:
 
-* Announce the update at least 15 minutes beforehand in the
-[maintenance log topic](https://forum.f-droid.org/t/maintenance-log/775)
 * [Make a backup of the forum](https://forum.f-droid.org/admin/backups)
 * Wait until the backup finished and download it (you'll get a link by mail)
 * Go to the [upgrade section](https://forum.f-droid.org/admin/upgrade)
 * Upgrade (the different parts of) the forum, e.g. sometimes
 _docker_manager_ has available updates which need to happen before _discourse_
 * Report that all updates were successful in the
-[maintenance log topic](https://forum.f-droid.org/t/maintenance-log/775)
+[maintenance log](https://forum.f-droid.org/t/maintenance-log/775)
 
 ### Troubleshooting
 
@@ -74,11 +69,37 @@ helpful:
 
 #### Rebuilding the container
 
+This also updates all the parts of Discourse to their newest versions.
+Therefore, it's also of interest if there are many available updates
+in the updates section on the web interface and you want to quickly
+update all of them.
+
+Sometimes you even have to update the forum this way because
+a new version of _Docker manager_ got installed, causing Discourse
+to refuse updates through its web interface.
+
 ```bash
 cd /var/discourse
 git pull
 ./launcher rebuild app
 ```
+
+#### Cleaning up Docker
+
+Docker stores copies of a lot of stuff that _could_ be used in the future,
+but mostly is not. From time to time it's required to clean up that stuff
+which sometimes results in more than 10 GB of freed space.
+
+```bash
+docker system prune -a
+```
+
+With this, the following things get deleted:
+
+* all stopped containers
+* all networks not used by at least one container
+* all images without at least one container associated to them
+* all build cache
 
 ### Installation log
 
