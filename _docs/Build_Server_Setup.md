@@ -87,7 +87,6 @@ as _fdroid_ user:
 fdroid:~$ cd ~
 fdroid:~$ git clone https://gitlab.com/fdroid/fdroidserver.git
 fdroid:~$ cp fdroidserver/examples/makebuildserver.config.py fdroidserver/
-fdroid:~$ sed -i "s@^baseboxurl.*@baseboxurl = \"https://f-droid.org/jessie64.box\"@" fdroidserver/makebuildserver.config.py
 ```
 
 You also have to make sure your `ANDROID_HOME` environment variable is
@@ -117,57 +116,62 @@ fdroid:~$ sed -i "s@^[# ]*build_server_always.*@build_server_always = True@" fdr
 
 ## Setting up a build server
 
-In addition to the basic setup previously described, you will also need
-a Vagrant-compatible Debian/jessie base box called ’jessie64’.
+In addition to the basic setup previously described, we ship
+a Vagrant-compatible Debian/stretch base box called ’fdroid/basebox-stretch64’.
 
-You can use a different version or distro for the base box, so long as
-you don’t expect any help making it work. One thing to be aware of is
-that working copies of source trees are moved from the host to the
-guest, so for example, having subversion v1.6 on the host and v1.7 on
-the guest would fail.
+We are bootstrapping the Debian Vagrant boxes for our buildserver
+from scratch. Fetching and verifying our pre-build Vagrant boxes
+is fully automated. (If you are interested in this process or
+want to bootstrap those by yourself you should look at:
+[F-Droid Base Box](https://gitlab.com/fdroid/basebox#fdroid_basebox))
 
 
-### Creating the Debian base box
+### Creating the F-Droid buildserver box
 
-We have created a script for easily bootstrapping vagrant base boxes from
-scratch.
 
-Here's how you can get started building our basebox quickly:
+Navigate to your clone of
+[F-Droid Server git](https://gitlab.com/fdroid/fdroidserver) and start by
+creating `makebuildserver.config.py`, using
+`./examples/makebuildserver.config.py` as a reference - look at the
+settings and documentation there to decide if any need changing to suit
+your environment. There is a path for retrieving the base box if it
+doesn’t exist, and an apt proxy definition, both of which may need
+customising for your environment. You can then go to the `fdroidserver`
+directory and run `makebuildserver`.
+
 
 ```bash
-fdroid:~$ git clone https://gitlab.com/fdroid/basebox.git
-fdroid:~$ cd basebox
-fdroid:~/basebox$ sudo ./fdroid_basebox.py --provider virtualbox
-fdroid:~/basebox$ vagrant box add --force jessie64 fdroid-jessie64-virtualbox.box
-fdroid:~/basebox$ rm fdroid-jessie64-virtualbox.box
-```
+# navigate to your clone of F-Droid Server
+cd .../fdroidserver
 
-Additional documentation is available in the projects
-[README file](https://gitlab.com/fdroid/basebox#fdroid_basebox).
+# copy example config file
+cp examples/makebuildserver.config.py makebuildserver.config.py
 
-
-### Creating the F-Droid base box
-
-The next step in the process is to create `makebuildserver.config.py`, using
-`./examples/makebuildserver.config.py` as a reference - look at the settings and
-documentation there to decide if any need changing to suit your
-environment. There is a path for retrieving the base box if it doesn’t
-exist, and an apt proxy definition, both of which may need customising
-for your environment. You can then go to the `fdroidserver` directory
-and run this:
-
-```bash
+# start building the your basebox image
 ./makebuildserver
 ```
 
-This will take a long time, and use a lot of bandwidth - most of it
-spent installing the necessary parts of the Android SDK for all the
-various platforms. Luckily you only need to do it occasionally. Once you
-have a working build server image, if the recipes change (e.g. when
-packages need to be added) you can just run that script again and the
-existing one will be updated in place.
+This will take a long time, use a lot of bandwidth and disk space -
+most of it spent installing the necessary parts of the Android SDK
+for all the various platforms. Luckily you only need to do it
+occasionally. Once you have a working build server image, if the
+recipes change (e.g. when packages need to be added) you can just
+run that script again and the existing one will be updated in place.
 
-The main sdk/ndk downloads will automatically be cached to speed things
+Once it’s complete you’ll have a new base box called ’buildserver’ which
+is what’s used for your App build runs. Now you can build packages as
+as you used to, but when you run `fdroid build --server ...` App build
+runs will be isolated inside a virtual machine.
+
+The first time a build is done, a new virtual machine is created using
+the ’buildserver’ box as a base. A snapshot of this clean machine state
+is saved for use in future builds, to improve performance. You can force
+discarding of this snapshot and rebuilding from scratch using a switch:
+`fdroid build --resetserver ...`.
+
+### makebuildserver caching tweaks (optional)
+
+The main SDK/NDK downloads will automatically be cached to speed things
 up the next time, but there’s no easy way of doing this for the longer
 sections which use the SDK’s `android` tool to install platforms,
 add-ons and tools. However, instead of allowing automatic caching, you
@@ -194,18 +198,6 @@ files directly from the buildserver:
 vagrant ssh -- -C 'tar -C ~/android-sdk/platforms czf android-19.tar.gz android-19'
 vagrant ssh -- -C 'cat ~/android-sdk/platforms/android-19.tar.gz' > /path/to/fdroidserver/buildserver/cache/platforms/android19.tar.gz
 ```
-
-Once it’s complete you’ll have a new base box called ’buildserver’ which
-is what’s used for the actual builds. You can then build packages as
-normal, but with the addition of the `--server` flag to `fdroid build`
-to instruct it to do all the hard work within the virtual machine.
-
-The first time a build is done, a new virtual machine is created using
-the ’buildserver’ box as a base. A snapshot of this clean machine state
-is saved for use in future builds, to improve performance. You can force
-discarding of this snapshot and rebuilding from scratch using the
-`--resetserver` switch with `fdroid build`.
-
 
 ## Running builds
 
