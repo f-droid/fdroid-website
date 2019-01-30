@@ -33,7 +33,7 @@ images are recompressed.
 
 There are two options for including the app store materials in an
 app's source repository:
-[fastlane supply](https://docs.fastlane.tools/actions/supply/#images-and-screenshots)
+[fastlane supply](https://github.com/fastlane/fastlane/blob/2.28.7/supply/README.md#images-and-screenshots)
 and
 [Triple-T Gradle Play Publisher](https://github.com/Triple-T/gradle-play-publisher#play-store-metadata).
 Both of these are free software tools that integrate into an Android
@@ -69,7 +69,7 @@ _Summary_ and _Description_ from the app's metadata file.
 All the app store materials can also be added to any _fdroiddata_
 repository of build metadata.  This follows a file layout modeled
 after
-[fastlane supply](https://docs.fastlane.tools/actions/supply/#images-and-screenshots),
+[fastlane supply](https://github.com/fastlane/fastlane/blob/2.28.7/supply/README.md#images-and-screenshots),
 modified to fit into the _fdroiddata_ workflow.  Any files in this
 layout will be copied into the repo and added to the repo's index file
 by `fdroid update`.
