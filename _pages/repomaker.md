@@ -17,8 +17,10 @@ packages' store details and had to paste screenshots in a special system
 of directories to have them served well inside the F-Droid app.
 
 This all got easier now: with Repomaker, you are able to create your own
-repo and do not need to have any special knowledge to do so. More
-information on how to install Repomaker coming soon!
+repo and do not need to have any special knowledge to do so.
+Check out the
+[installation guide](https://gitlab.com/fdroid/repomaker/blob/master/README.md#installation)
+for information on how you can install Repomaker on your device.
 
 [![]({{ site.baseurl }}/assets/repomaker-screenshots/repo-details.png)]({{ site.baseurl }}/assets/repomaker-screenshots/repo-details.png)<br/>
 *Your repo can serve all types of media*
