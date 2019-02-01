@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
-"POT-Creation-Date: 2019-01-08 23:15+0100\n"
+"POT-Creation-Date: 2019-02-01 17:15+0100\n"
 "PO-Revision-Date: 2019-01-15 17:35+0000\n"
 "Last-Translator: C. Rüdinger <Mail-an-CR@web.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/f-droid/website-docs/de/>\n"
@@ -2686,7 +2686,8 @@ msgstr "Klonen Sie den Quellcode und konfigurieren Sie die Buildserver-Einstellu
 
 #. type: Plain text
 #: build/_docs/md/Build_Server_Setup.md
-msgid "```bash fdroid:~$ cd ~ fdroid:~$ git clone https://gitlab.com/fdroid/fdroidserver.git fdroid:~$ cp fdroidserver/examples/makebuildserver.config.py fdroidserver/ fdroid:~$ sed -i \"s@^baseboxurl.*@baseboxurl = \\\"https://f-droid.org/jessie64.box\\\"@\" fdroidserver/makebuildserver.config.py ```"
+#, fuzzy
+msgid "```bash fdroid:~$ cd ~ fdroid:~$ git clone https://gitlab.com/fdroid/fdroidserver.git fdroid:~$ cp fdroidserver/examples/makebuildserver.config.py fdroidserver/ ```"
 msgstr "```bash fdroid:~$ cd ~ fdroid:~$ git clone https://gitlab.com/fdroid/fdroidserver.git fdroid:~$ cp fdroidserver/examples/makebuildserver.config.py fdroidserver/ fdroid:~$ sed -i \"s@^baseboxurl.*@baseboxurl = \\\"https://f-droid.org/jessie64.box\\\"@\" fdroidserver/makebuildserver.config.py ```"
 
 #. type: Plain text
@@ -2739,64 +2740,97 @@ msgstr "Einrichten eines Build-Servers"
 
 #. type: Plain text
 #: build/_docs/md/Build_Server_Setup.md
-msgid "In addition to the basic setup previously described, you will also need a Vagrant-compatible Debian/jessie base box called ’jessie64’."
+#, fuzzy
+msgid "In addition to the basic setup previously described, we ship a Vagrant-compatible Debian/stretch base box called ’fdroid/basebox-stretch64’."
 msgstr "Zusätzlich zum zuvor beschriebenen Basis-Setup benötigen Sie eine Vagrant-kompatible Debian/Jessie-Basis-Box namens 'jessie64'."
 
 #. type: Plain text
 #: build/_docs/md/Build_Server_Setup.md
-msgid "You can use a different version or distro for the base box, so long as you don’t expect any help making it work. One thing to be aware of is that working copies of source trees are moved from the host to the guest, so for example, having subversion v1.6 on the host and v1.7 on the guest would fail."
-msgstr "Sie können eine andere Version oder Distro für die Basisbox verwenden, solange Sie keine Hilfe erwarten, damit sie funktioniert. Zu beachten ist, dass Arbeitskopien von Quellbäumen vom Host zum Gast verschoben werden, so dass z.B. Subversion v1.6 auf dem Host und v1.7 auf dem Gast fehlschlagen würde."
+msgid "We are bootstrapping the Debian Vagrant boxes for our buildserver from scratch. Fetching and verifying our pre-build Vagrant boxes is fully automated. (If you are interested in this process or want to bootstrap those by yourself you should look at: [F-Droid Base Box](https://gitlab.com/fdroid/basebox#fdroid_basebox))"
+msgstr ""
 
 #. type: Title ###
 #: build/_docs/md/Build_Server_Setup.md
-#, no-wrap
-msgid "Creating the Debian base box"
-msgstr "Erstellen der Debian-Basisbox"
-
-#. type: Plain text
-#: build/_docs/md/Build_Server_Setup.md
-msgid "We have created a script for easily bootstrapping vagrant base boxes from scratch."
-msgstr "Wir haben ein Skript erstellt, mit dem sich Vagrant-Basisboxen einfach von Grund auf neu installieren lassen."
-
-#. type: Plain text
-#: build/_docs/md/Build_Server_Setup.md
-msgid "Here's how you can get started building our basebox quickly:"
-msgstr "So können Sie schnell mit dem Bau unserer Basebox beginnen:"
-
-#. type: Plain text
-#: build/_docs/md/Build_Server_Setup.md
-msgid "```bash fdroid:~$ git clone https://gitlab.com/fdroid/basebox.git fdroid:~$ cd basebox fdroid:~/basebox$ sudo ./fdroid_basebox.py --provider virtualbox fdroid:~/basebox$ vagrant box add --force jessie64 fdroid-jessie64-virtualbox.box fdroid:~/basebox$ rm fdroid-jessie64-virtualbox.box ```"
-msgstr "```bash fdroid:~$ git clone https://gitlab.com/fdroid/basebox.git fdroid:~$ cd basebox fdroid:~/basebox$ sudo ./fdroid_basebox.py --provider virtualbox fdroid:~/basebox$ vagrant box add --force jessie64 fdroid-jessie64-virtualbox.box fdroid:~/basebox$ rm fdroid-jessie64-virtualbox.box ```"
-
-#. type: Plain text
-#: build/_docs/md/Build_Server_Setup.md
-msgid "Additional documentation is available in the projects [README file](https://gitlab.com/fdroid/basebox#fdroid_basebox)."
-msgstr "Weitere Dokumentation finden Sie in [README-Dateien](https://gitlab.com/fdroid/basebox#fdroid_basebox) des Projekts."
-
-#. type: Title ###
-#: build/_docs/md/Build_Server_Setup.md
-#, no-wrap
-msgid "Creating the F-Droid base box"
+#, fuzzy, no-wrap
+msgid "Creating the F-Droid buildserver box"
 msgstr "Erstellen der F-Droid-Basisbox"
 
 #. type: Plain text
 #: build/_docs/md/Build_Server_Setup.md
-msgid "The next step in the process is to create `makebuildserver.config.py`, using `./examples/makebuildserver.config.py` as a reference - look at the settings and documentation there to decide if any need changing to suit your environment. There is a path for retrieving the base box if it doesn’t exist, and an apt proxy definition, both of which may need customising for your environment. You can then go to the `fdroidserver` directory and run this:"
+#, fuzzy
+msgid "Navigate to your clone of [F-Droid Server git](https://gitlab.com/fdroid/fdroidserver) and start by creating `makebuildserver.config.py`, using `./examples/makebuildserver.config.py` as a reference - look at the settings and documentation there to decide if any need changing to suit your environment. There is a path for retrieving the base box if it doesn’t exist, and an apt proxy definition, both of which may need customising for your environment. You can then go to the `fdroidserver` directory and run `makebuildserver`."
 msgstr "Der nächste Schritt im Prozess ist die Erstellung von `makebuildserver.config.py` mit `./examples/makebuildserver.config.py` als Referenz - schauen Sie sich die Einstellungen und die Dokumentation dort an, um zu entscheiden, ob etwas an Ihre Umgebung angepasst werden muss. Es gibt einen Pfad zum Abrufen der Basisbox, falls sie nicht existiert sowie eine passende Proxy-Definition, die beide für Ihre Umgebung angepasst werden müssen. Sie können dann in das Verzeichnis `fdroidserver` wechseln und folgendes ausführen:"
 
 #. type: Plain text
+#: build/_docs/md/Build_Server_Setup.md build/_docs/md/Maintaining_the_Forum.md
+#: build/_docs/md/Submitting_to_F-Droid_Quick_Start_Guide.md
+msgid "```bash"
+msgstr "```bash"
+
+#. type: Title #
 #: build/_docs/md/Build_Server_Setup.md
-msgid "```bash ./makebuildserver ```"
+#, no-wrap
+msgid "navigate to your clone of F-Droid Server"
+msgstr ""
+
+#. type: Plain text
+#: build/_docs/md/Build_Server_Setup.md
+#, fuzzy
+msgid "cd .../fdroidserver"
+msgstr "fdroidserver"
+
+#. type: Title #
+#: build/_docs/md/Build_Server_Setup.md
+#, no-wrap
+msgid "copy example config file"
+msgstr ""
+
+#. type: Plain text
+#: build/_docs/md/Build_Server_Setup.md
+#, fuzzy
+msgid "cp examples/makebuildserver.config.py makebuildserver.config.py"
+msgstr "cd ../fdroidserver cp ./examples/makebuildserver.config.py ./ ./makebuildserver"
+
+#. type: Title #
+#: build/_docs/md/Build_Server_Setup.md
+#, no-wrap
+msgid "start building the your basebox image"
+msgstr ""
+
+#. type: Plain text
+#: build/_docs/md/Build_Server_Setup.md
+#, fuzzy
+msgid "./makebuildserver ```"
 msgstr "```bash ./makebuildserver ```"
 
 #. type: Plain text
 #: build/_docs/md/Build_Server_Setup.md
-msgid "This will take a long time, and use a lot of bandwidth - most of it spent installing the necessary parts of the Android SDK for all the various platforms. Luckily you only need to do it occasionally. Once you have a working build server image, if the recipes change (e.g. when packages need to be added) you can just run that script again and the existing one will be updated in place."
+#, fuzzy
+msgid "This will take a long time, use a lot of bandwidth and disk space - most of it spent installing the necessary parts of the Android SDK for all the various platforms. Luckily you only need to do it occasionally. Once you have a working build server image, if the recipes change (e.g. when packages need to be added) you can just run that script again and the existing one will be updated in place."
 msgstr "Dies wird lange dauern und viel Bandbreite beanspruchen - der größte Teil davon wurde für die Installation der notwendigen Teile des Android-SDKs für die verschiedenen Plattformen aufgewendet. Zum Glück müssen Sie das nur gelegentlich tun. Sobald Sie ein funktionierendes Build-Server-Image haben, wenn sich die Rezepte ändern (z.B. wenn Pakete hinzugefügt werden müssen), können Sie dieses Skript einfach erneut ausführen und das vorhandene wird aktualisiert."
 
 #. type: Plain text
 #: build/_docs/md/Build_Server_Setup.md
-msgid "The main sdk/ndk downloads will automatically be cached to speed things up the next time, but there’s no easy way of doing this for the longer sections which use the SDK’s `android` tool to install platforms, add-ons and tools. However, instead of allowing automatic caching, you can supply a pre-populated cache directory which includes not only these downloads, but also .tar.gz files for all the relevant additions. If the provisioning scripts detect these, they will be used in preference to running the android tools. For example, if you have `buildserver/addons/cache/platforms/android-19.tar.gz` that will be used when installing the android-19 platform, instead of re-downloading it using `android update sdk --no-ui -t android-19`. It is possible to create the cache files of this additions from a local installation of the SDK including these:"
+#, fuzzy
+msgid "Once it’s complete you’ll have a new base box called ’buildserver’ which is what’s used for your App build runs. Now you can build packages as as you used to, but when you run `fdroid build --server ...` App build runs will be isolated inside a virtual machine."
+msgstr "Sobald es fertig ist, haben Sie eine neue Basis-Box namens 'buildserver', die für die eigentlichen Builds verwendet wird. Sie können dann Pakete wie gewohnt erstellen, aber des Hinzufügen des Flags `--server` weist `fdroid build` an, die ganze Arbeit innerhalb der virtuellen Maschine zu erledigen."
+
+#. type: Plain text
+#: build/_docs/md/Build_Server_Setup.md
+#, fuzzy
+msgid "The first time a build is done, a new virtual machine is created using the ’buildserver’ box as a base. A snapshot of this clean machine state is saved for use in future builds, to improve performance. You can force discarding of this snapshot and rebuilding from scratch using a switch: `fdroid build --resetserver ...`."
+msgstr "Beim ersten Build wird eine neue virtuelle Maschine erstellt, die die \"Buildserver\"-Box als Basis verwendet. Ein Snapshot dieses sauberen Maschinenzustandes wird für zukünftige Builds gespeichert, um die Leistung zu verbessern. Sie können das Verwerfen dieses Snapshots und den Neuaufbau von Grund auf erzwingen, indem Sie den Schalter `--resetserver` mit `fdroid build` verwenden."
+
+#. type: Title ###
+#: build/_docs/md/Build_Server_Setup.md
+#, no-wrap
+msgid "makebuildserver caching tweaks (optional)"
+msgstr ""
+
+#. type: Plain text
+#: build/_docs/md/Build_Server_Setup.md
+#, fuzzy
+msgid "The main SDK/NDK downloads will automatically be cached to speed things up the next time, but there’s no easy way of doing this for the longer sections which use the SDK’s `android` tool to install platforms, add-ons and tools. However, instead of allowing automatic caching, you can supply a pre-populated cache directory which includes not only these downloads, but also .tar.gz files for all the relevant additions. If the provisioning scripts detect these, they will be used in preference to running the android tools. For example, if you have `buildserver/addons/cache/platforms/android-19.tar.gz` that will be used when installing the android-19 platform, instead of re-downloading it using `android update sdk --no-ui -t android-19`. It is possible to create the cache files of this additions from a local installation of the SDK including these:"
 msgstr "Die wichtigsten sdk/ndk-Downloads werden automatisch zwischengespeichert, um den nächsten Durchgang zu beschleunigen. Aber es gibt keine einfache Möglichkeit, dies für die längeren Abschnitte zu tun, die das `android`-Tool des SDK verwenden, um Plattformen, Add-ons und Tools zu installieren. Anstatt jedoch ein automatisches Caching zu erlauben, können Sie ein vorgefülltes Cache-Verzeichnis angeben, das nicht nur diese Downloads, sondern auch .tar.gz-Dateien für alle relevanten Zusätze enthält. Wenn die Provisionierungsskripte diese erkennen, werden sie anstelle der Android-Tools verwendet. Zum Beispiel, können Sie `buildserver/addons/cache/platforms/android-19.tar.gz` haben, die bei der Installation der android-19-Plattform verwendet wird, anstatt sie mit `android update sdk --no-ui -t android-19` erneut herunterzuladen. Es ist möglich, die Cache-Dateien dieser Zusätze aus einer lokalen Installation des SDK einschließlich dieser zu erstellen:"
 
 #. type: Plain text
@@ -2822,16 +2856,6 @@ msgstr ""
 "vagrant ssh -- -C 'tar -C ~/android-sdk/platforms czf android-19.tar.gz android-19'\n"
 "vagrant ssh -- -C 'cat ~/android-sdk/platforms/android-19.tar.gz' > /path/to/fdroidserver/buildserver/cache/platforms/android19.tar.gz\n"
 "```\n"
-
-#. type: Plain text
-#: build/_docs/md/Build_Server_Setup.md
-msgid "Once it’s complete you’ll have a new base box called ’buildserver’ which is what’s used for the actual builds. You can then build packages as normal, but with the addition of the `--server` flag to `fdroid build` to instruct it to do all the hard work within the virtual machine."
-msgstr "Sobald es fertig ist, haben Sie eine neue Basis-Box namens 'buildserver', die für die eigentlichen Builds verwendet wird. Sie können dann Pakete wie gewohnt erstellen, aber des Hinzufügen des Flags `--server` weist `fdroid build` an, die ganze Arbeit innerhalb der virtuellen Maschine zu erledigen."
-
-#. type: Plain text
-#: build/_docs/md/Build_Server_Setup.md
-msgid "The first time a build is done, a new virtual machine is created using the ’buildserver’ box as a base. A snapshot of this clean machine state is saved for use in future builds, to improve performance. You can force discarding of this snapshot and rebuilding from scratch using the `--resetserver` switch with `fdroid build`."
-msgstr "Beim ersten Build wird eine neue virtuelle Maschine erstellt, die die \"Buildserver\"-Box als Basis verwendet. Ein Snapshot dieses sauberen Maschinenzustandes wird für zukünftige Builds gespeichert, um die Leistung zu verbessern. Sie können das Verwerfen dieses Snapshots und den Neuaufbau von Grund auf erzwingen, indem Sie den Schalter `--resetserver` mit `fdroid build` verwenden."
 
 #. type: Title ##
 #: build/_docs/md/Build_Server_Setup.md
@@ -5997,13 +6021,14 @@ msgstr "Login-Methoden: lokal, GitHub"
 
 #. type: Bullet: '* '
 #: build/_docs/md/Maintaining_the_Forum.md
-msgid "Backup frequency: every day"
+#, fuzzy
+msgid "Backup frequency: daily"
 msgstr "Sicherungsfrequenz: täglich"
 
 #. type: Bullet: '* '
 #: build/_docs/md/Maintaining_the_Forum.md
-msgid "Backups amount: 15"
-msgstr "Anzahl an Sicherungen: 15"
+msgid "Amount of backups stored: Last 15 ones"
+msgstr ""
 
 #. type: Title ###
 #: build/_docs/md/Maintaining_the_Forum.md
@@ -6013,37 +6038,42 @@ msgstr "Upgrades"
 
 #. type: Plain text
 #: build/_docs/md/Maintaining_the_Forum.md
-msgid "Upgrading the forum is quite simple.  It is always announced at least 15 minutes beforehand in a dedicated [maintenance log topic](https://forum.f-droid.org/t/maintenance-log/775)  in the forum.  Upgrades are planned to be done every one to two weeks.  If you feel like there was an important update to Discourse which should get deployed earlier, feel free to suggest that in the topic mentioned above."
+#, fuzzy
+msgid "Upgrading the forum is quite simple.  Upgrades are planned to be done every one to two weeks.  If you feel like there was an important update to Discourse which should get deployed earlier, [please reach out to us]({{ \"/about/\" | prepend: site.baseurl }})."
 msgstr "Ein Upgrade des Forums ist ganz einfach.  Es wird immer mindestens 15 Minuten im Voraus in einem speziellen  [maintenance log topic](https://forum.f-droid.org/t/maintenance-log/775)  im Forum angekündigt.  Durchführungen von Upgrades sind alle ein bis zwei Wochen geplant.  Wenn Sie der Meinung sind, dass es ein wichtiges Update an  Discourse gab, das früher eingestellt werden sollte, können Sie das gerne in oben erwähntem Themenfeld vorschlagen."
 
 #. type: Plain text
 #: build/_docs/md/Maintaining_the_Forum.md
-msgid "For administrators, this is the common way on how to upgrade the forum:"
+#, fuzzy
+msgid "For administrators, this is the common way how to upgrade the forum:"
 msgstr "Für Administratoren ist dies der gebräuchliche Weg für ein Upgrade des Forums:"
+
+#. type: Bullet: '* '
+#: build/_docs/md/Maintaining_the_Forum.md
+#, fuzzy
+msgid "[Make a backup of the forum](https://forum.f-droid.org/admin/backups)"
+msgstr "das [Internetforum](https://forum.f-droid.org/)"
+
+#. type: Bullet: '* '
+#: build/_docs/md/Maintaining_the_Forum.md
+msgid "Wait until the backup finished and download it (you'll get a link by mail)"
+msgstr ""
+
+#. type: Bullet: '* '
+#: build/_docs/md/Maintaining_the_Forum.md
+#, fuzzy
+msgid "Go to the [upgrade section](https://forum.f-droid.org/admin/upgrade)"
+msgstr "das [Internetforum](https://forum.f-droid.org/)"
 
 #. type: Plain text
 #: build/_docs/md/Maintaining_the_Forum.md
 #, no-wrap
 msgid ""
-"* Announce the update at least 15 minutes beforehand in the\n"
-"[maintenance log topic](https://forum.f-droid.org/t/maintenance-log/775)\n"
-"* [Make a backup of the forum](https://forum.f-droid.org/admin/backups)\n"
-"* Wait until the backup finished and download it (you'll get a link by mail)\n"
-"* Go to the [upgrade section](https://forum.f-droid.org/admin/upgrade)\n"
 "* Upgrade (the different parts of) the forum, e.g. sometimes\n"
 "_docker_manager_ has available updates which need to happen before _discourse_\n"
 "* Report that all updates were successful in the\n"
-"[maintenance log topic](https://forum.f-droid.org/t/maintenance-log/775)\n"
+"[maintenance log](https://forum.f-droid.org/t/maintenance-log/775)\n"
 msgstr ""
-"* Ankündigung der Aktualisierung mindestens 15 Minuten im Voraus im \n"
-"[maintenance log topic](https://forum.f-droid.org/t/maintenance-log/775)\n"
-"* [Eine Sicherung des Forums durchführen](https://forum.f-droid.org/admin/backups)\n"
-"* Das Ende der Sicherung abwarten und sie herunterladen (Sie werden einen Link per Mail erhalten)\n"
-"* Zum [Upgrade-Abschnitt](https://forum.f-droid.org/admin/upgrade) wechseln\n"
-"* Upgrade (der verschiedenen Teile) des Forums durchführen, z. B. sind manchmal\n"
-"_docker_manager_ Updates abrufbar, die vor _discourse_ geschehen müssen\n"
-"* Meldung, dass alle Aktualisierungen erfolgreich waren, im\n"
-"[maintenance log topic](https://forum.f-droid.org/t/maintenance-log/775)\n"
 
 #. type: Title ###
 #: build/_docs/md/Maintaining_the_Forum.md
@@ -6064,8 +6094,61 @@ msgstr "Container neu bauen"
 
 #. type: Plain text
 #: build/_docs/md/Maintaining_the_Forum.md
+msgid "This also updates all the parts of Discourse to their newest versions.  Therefore, it's also of interest if there are many available updates in the updates section on the web interface and you want to quickly update all of them."
+msgstr ""
+
+#. type: Plain text
+#: build/_docs/md/Maintaining_the_Forum.md
+msgid "Sometimes you even have to update the forum this way because a new version of _Docker manager_ got installed, causing Discourse to refuse updates through its web interface."
+msgstr ""
+
+#. type: Plain text
+#: build/_docs/md/Maintaining_the_Forum.md
 msgid "```bash cd /var/discourse git pull ./launcher rebuild app ```"
 msgstr "```bash cd /var/discourse git pull ./launcher rebuild app ```"
+
+#. type: Title ####
+#: build/_docs/md/Maintaining_the_Forum.md
+#, fuzzy, no-wrap
+msgid "Cleaning up Docker"
+msgstr "Docker prüfen"
+
+#. type: Plain text
+#: build/_docs/md/Maintaining_the_Forum.md
+msgid "Docker stores copies of a lot of stuff that _could_ be used in the future, but mostly is not. From time to time it's required to clean up that stuff which sometimes results in more than 10 GB of freed space."
+msgstr ""
+
+#. type: Plain text
+#: build/_docs/md/Maintaining_the_Forum.md
+#, fuzzy
+msgid "```bash docker system prune -a ```"
+msgstr "```bash docker run hello-world ```"
+
+#. type: Plain text
+#: build/_docs/md/Maintaining_the_Forum.md
+msgid "With this, the following things get deleted:"
+msgstr ""
+
+#. type: Bullet: '* '
+#: build/_docs/md/Maintaining_the_Forum.md
+#, fuzzy
+msgid "all stopped containers"
+msgstr "Container neu bauen"
+
+#. type: Bullet: '* '
+#: build/_docs/md/Maintaining_the_Forum.md
+msgid "all networks not used by at least one container"
+msgstr ""
+
+#. type: Bullet: '* '
+#: build/_docs/md/Maintaining_the_Forum.md
+msgid "all images without at least one container associated to them"
+msgstr ""
+
+#. type: Bullet: '* '
+#: build/_docs/md/Maintaining_the_Forum.md
+msgid "all build cache"
+msgstr ""
 
 #. type: Title ###
 #: build/_docs/md/Maintaining_the_Forum.md
@@ -6109,12 +6192,6 @@ msgstr "```bash wget -O docker-gpg https://download.docker.com/linux/debian/gpg 
 #: build/_docs/md/Maintaining_the_Forum.md
 msgid "Check PGP key"
 msgstr "PGP-Key prüfen"
-
-#. type: Plain text
-#: build/_docs/md/Maintaining_the_Forum.md
-#: build/_docs/md/Submitting_to_F-Droid_Quick_Start_Guide.md
-msgid "```bash"
-msgstr "```bash"
 
 #. type: Title #
 #: build/_docs/md/Maintaining_the_Forum.md
@@ -6706,6 +6783,41 @@ msgstr ""
 #. type: Title ##
 #: build/_docs/md/Release_Channels_and_Signing_Keys.md
 #, no-wrap
+msgid "Repomaker"
+msgstr "Repomaker"
+
+#. type: Plain text
+#: build/_docs/md/Release_Channels_and_Signing_Keys.md
+#, no-wrap
+msgid ""
+"-   git repo: <https://gitlab.com/fdroid/repomaker>\n"
+"    -   git tags signed by \"Nico Alt <nicoalt@posteo.org>\" aka\n"
+"        \"Nico Alt <nicoalt@posteo.de>\" with fingerprint: <br />\n"
+"        `558B E907 1CA6 CA44 DBF5 576B 95A0 DAF7 DBC7 B548`\n"
+msgstr ""
+
+#. type: Plain text
+#: build/_docs/md/Release_Channels_and_Signing_Keys.md
+#, fuzzy, no-wrap
+msgid ""
+"-   source package: <https://pypi.python.org/pypi/repomaker>\n"
+"    -   package tags signed by \"Nico Alt <nicoalt@posteo.org>\" aka\n"
+"        \"Nico Alt <nicoalt@posteo.de>\" with fingerprint: <br />\n"
+"        `558B E907 1CA6 CA44 DBF5 576B 95A0 DAF7 DBC7 B548`\n"
+"    -   release command: `python3 setup.py sdist upload --sign`\n"
+msgstr ""
+"-   Paketquelle: <https://pypi.python.org/pypi/fdroidserver>\n"
+"    -   Paket-Tags signiert durch \"Hans-Christoph Steiner\n"
+"        \\<hans@guardianproject.info>\", alias \"Hans-Christoph Steiner\n"
+"        \\<hans@eds.org>\", alias \"Hans-Christoph Steiner\n"
+"        \\<hans@at.or.at>\" mit Hashwert: <br />\n"
+"        `EE66 20C7 136B 0D2C 456C 0A4D E9E2 8DEA 00AA 5556`\n"
+"        oder früher <br />`5E61 C878 0F86 295C E17D 8677 9F0F E587 374B BE81`\n"
+"    -   Abrufbefehl: `python3 setup.py sdist upload --sign`\n"
+
+#. type: Title ##
+#: build/_docs/md/Release_Channels_and_Signing_Keys.md
+#, no-wrap
 msgid "Privileged Extension"
 msgstr "Rechteerweiterung"
 
@@ -6724,6 +6836,36 @@ msgstr ""
 "        \\<hans@guardianproject.info>\", alias \"Hans-Christoph Steiner\n"
 "        \\<hans@eds.org>\", alias \"Hans-Christoph Steiner\n"
 "        \\<hans@at.or.at>\" mit Hashwert: <br/>`EE66 20C7 136B 0D2C 456C 0A4D E9E2 8DEA 00AA 5556`\n"
+
+#. type: Title ##
+#: build/_docs/md/Release_Channels_and_Signing_Keys.md
+#, no-wrap
+msgid "F-Droid Jekyll Plugin"
+msgstr ""
+
+#. type: Plain text
+#: build/_docs/md/Release_Channels_and_Signing_Keys.md
+#, fuzzy, no-wrap
+msgid ""
+"-   git repo: <https://gitlab.com/fdroid/jekyll-fdroid>\n"
+"    -   git tags signed by \"Hans-Christoph Steiner\n"
+"        \\<hans@guardianproject.info>\" aka \"Hans-Christoph Steiner\n"
+"        \\<hans@eds.org>\" aka \"Hans-Christoph Steiner\n"
+"        \\<hans@at.or.at>\" with fingerprint: <br />\n"
+"        `EE66 20C7 136B 0D2C 456C 0A4D E9E2 8DEA 00AA 5556`\n"
+"    -   or previously \"Nico Alt <nicoalt@posteo.org>\" aka\n"
+"        \"Nico Alt <nicoalt@posteo.de>\" with fingerprint: <br />\n"
+"        `558B E907 1CA6 CA44 DBF5 576B 95A0 DAF7 DBC7 B548`\n"
+msgstr ""
+"-   Git-Repo: <https://gitlab.com/fdroid/fdroidserver>\n"
+"    -   Git-Tags signiert durch \"Hans-Christoph Steiner\n"
+"        \\<hans@guardianproject.info>\", alias \"Hans-Christoph Steiner\n"
+"        \\<hans@eds.org>\", alias \"Hans-Christoph Steiner\n"
+"        \\<hans@at.or.at>\" mit Hashwert: <br />\n"
+"        `EE66 20C7 136B 0D2C 456C 0A4D E9E2 8DEA 00AA 5556`\n"
+"    -   oder früher durch \"Daniel Martí \\<mvdan@mvdan.cc>\", alias\n"
+"        \"Daniel Martí \\<mvdan@fsfe.org>\" mit Hashwert: <br\n"
+"        />`A9DA 13CD F7A1 4ACD D3DE E530 F4CA FFDB 4348 041C`\n"
 
 #. type: Title #
 #: build/_docs/md/Release_Process.md
@@ -9009,6 +9151,48 @@ msgstr "Einstellungen"
 msgid "For a custom build that enables Automatic Updates by default, override _app/src/main/res/xml/preferences.xml_. You can customize the preferences and their default values in _app/src/mycompany/res/xml/preferences.xml_. The fully automatic update requires [Privileged Extension](https://gitlab.com/fdroid/privileged-extension). With regular access, the updates will only automatically download. The user still needs to click install on each one."
 msgstr "Für eine angepasste F-Droid-Variante, die Automatische Aktualisierungen standardmäßig aktiviert, überschreiben Sie _app/src/main/res/xml/preferences.xml_. Sie können die Einstellungen und deren Standardwerte in _app/src/mycompany/res/xml/preferences.xml_ anpassen. Das vollautomatische Update benötigt System-/Root-Zugriff. Mit Standardberechtigungen werden die Updates nur automatisch heruntergeladen. Der Nutzer muss weiterhin jedes Update einzeln, manuell installieren."
 
+#~ msgid "You can use a different version or distro for the base box, so long as you don’t expect any help making it work. One thing to be aware of is that working copies of source trees are moved from the host to the guest, so for example, having subversion v1.6 on the host and v1.7 on the guest would fail."
+#~ msgstr "Sie können eine andere Version oder Distro für die Basisbox verwenden, solange Sie keine Hilfe erwarten, damit sie funktioniert. Zu beachten ist, dass Arbeitskopien von Quellbäumen vom Host zum Gast verschoben werden, so dass z.B. Subversion v1.6 auf dem Host und v1.7 auf dem Gast fehlschlagen würde."
+
+#~ msgid "Creating the Debian base box"
+#~ msgstr "Erstellen der Debian-Basisbox"
+
+#~ msgid "We have created a script for easily bootstrapping vagrant base boxes from scratch."
+#~ msgstr "Wir haben ein Skript erstellt, mit dem sich Vagrant-Basisboxen einfach von Grund auf neu installieren lassen."
+
+#~ msgid "Here's how you can get started building our basebox quickly:"
+#~ msgstr "So können Sie schnell mit dem Bau unserer Basebox beginnen:"
+
+#~ msgid "```bash fdroid:~$ git clone https://gitlab.com/fdroid/basebox.git fdroid:~$ cd basebox fdroid:~/basebox$ sudo ./fdroid_basebox.py --provider virtualbox fdroid:~/basebox$ vagrant box add --force jessie64 fdroid-jessie64-virtualbox.box fdroid:~/basebox$ rm fdroid-jessie64-virtualbox.box ```"
+#~ msgstr "```bash fdroid:~$ git clone https://gitlab.com/fdroid/basebox.git fdroid:~$ cd basebox fdroid:~/basebox$ sudo ./fdroid_basebox.py --provider virtualbox fdroid:~/basebox$ vagrant box add --force jessie64 fdroid-jessie64-virtualbox.box fdroid:~/basebox$ rm fdroid-jessie64-virtualbox.box ```"
+
+#~ msgid "Additional documentation is available in the projects [README file](https://gitlab.com/fdroid/basebox#fdroid_basebox)."
+#~ msgstr "Weitere Dokumentation finden Sie in [README-Dateien](https://gitlab.com/fdroid/basebox#fdroid_basebox) des Projekts."
+
+#~ msgid "Backups amount: 15"
+#~ msgstr "Anzahl an Sicherungen: 15"
+
+#~ msgid ""
+#~ "* Announce the update at least 15 minutes beforehand in the\n"
+#~ "[maintenance log topic](https://forum.f-droid.org/t/maintenance-log/775)\n"
+#~ "* [Make a backup of the forum](https://forum.f-droid.org/admin/backups)\n"
+#~ "* Wait until the backup finished and download it (you'll get a link by mail)\n"
+#~ "* Go to the [upgrade section](https://forum.f-droid.org/admin/upgrade)\n"
+#~ "* Upgrade (the different parts of) the forum, e.g. sometimes\n"
+#~ "_docker_manager_ has available updates which need to happen before _discourse_\n"
+#~ "* Report that all updates were successful in the\n"
+#~ "[maintenance log topic](https://forum.f-droid.org/t/maintenance-log/775)\n"
+#~ msgstr ""
+#~ "* Ankündigung der Aktualisierung mindestens 15 Minuten im Voraus im \n"
+#~ "[maintenance log topic](https://forum.f-droid.org/t/maintenance-log/775)\n"
+#~ "* [Eine Sicherung des Forums durchführen](https://forum.f-droid.org/admin/backups)\n"
+#~ "* Das Ende der Sicherung abwarten und sie herunterladen (Sie werden einen Link per Mail erhalten)\n"
+#~ "* Zum [Upgrade-Abschnitt](https://forum.f-droid.org/admin/upgrade) wechseln\n"
+#~ "* Upgrade (der verschiedenen Teile) des Forums durchführen, z. B. sind manchmal\n"
+#~ "_docker_manager_ Updates abrufbar, die vor _discourse_ geschehen müssen\n"
+#~ "* Meldung, dass alle Aktualisierungen erfolgreich waren, im\n"
+#~ "[maintenance log topic](https://forum.f-droid.org/t/maintenance-log/775)\n"
+
 #~ msgid "Why does F-Droid request root access?"
 #~ msgstr "Warum fordert F-Droid den Root-Zugriff?"
 
@@ -9570,9 +9754,6 @@ msgstr "Für eine angepasste F-Droid-Variante, die Automatische Aktualisierungen
 #, fuzzy
 #~ msgid "For issues relating to this web site, you can use [this issue tracker](https://gitlab.com/fdroid/fdroid-website/issues)."
 #~ msgstr "Bei Problemen, die sich auf die Repository-Inhalte beziehen, wie fehlende oder veraltete Anwendungen, verwenden Sie [diesen IssueTracker](https://gitlab.com/fdroid/fdroiddata/issues)."
-
-#~ msgid "Repomaker"
-#~ msgstr "Repomaker"
 
 #~ msgid "F-Droid.org is just a repo out of hundreds of repos created by individuals all around the globe. With the tools of F-Droid, everyone can create their own repo. So whether you are a musician who wants to publish their music or a developer who wants to serve nightly builds of their app, you are free to create your own repo and share it with other people independently of F-Droid.org."
 #~ msgstr "F-Droid.org ist gerade einmal ein Repo von hunderten, rund um den Globus von Menschen geschaffenen Repos. Mit den Instrumenten von F-Droid kann jeder sein eigenes Repo anlegen. Egal ob Musiker, der seine Musik veröffentlichen will oder Entwickler, der Nightly Builds seiner App anbieten möchte, es steht jedem frei, sein eigenes Repo zu erzeugen und es unabhängig von F-Droid.org mit anderen Leuten zu teilen."
