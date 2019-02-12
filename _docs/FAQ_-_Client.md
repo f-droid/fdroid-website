@@ -171,6 +171,10 @@ and be running Android 4.1 or newer.
 5.  on the receiving device, click the Android Beam notification and
     install F-Droid
 
+### How can I send apps via Bluetooth or WiFi?
+
+This is done using the 'Neaby' Tab in F-Droid (previously called 'Swap').
+See [here](../../tutorials/swap) for a walkthrough.
 
 ### What is the security model that F-Droid uses?
 
