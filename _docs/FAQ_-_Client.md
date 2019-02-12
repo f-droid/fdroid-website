@@ -49,7 +49,7 @@ Start itself automatically at boot time so that it can receive updates:
     android.permission.RECEIVE_BOOT_COMPLETED
 
 For app swap to get current WiFi status, and prompt the user to enable
-WiFI when swapping:
+WiFi when swapping:
 
     android.permission.ACCESS_NETWORK_STATE
     android.permission.ACCESS_WIFI_STATE
@@ -63,7 +63,7 @@ Bluetooth when swapping:
     android.permission.BLUETOOTH
     android.permission.BLUETOOTH_ADMIN
 
-Read app repostory URLs via NFC, for both swap and regular app
+Read app repository URLs via NFC, for both swap and regular app
 repositories:
 
     android.permission.NFC
@@ -173,7 +173,7 @@ and be running Android 4.1 or newer.
 
 ### How can I send apps via Bluetooth or WiFi?
 
-This is done using the 'Neaby' Tab in F-Droid (previously called 'Swap').
+This is done using the 'Nearby' Tab in F-Droid (previously called 'Swap').
 See [here](../../tutorials/swap) for a walkthrough.
 
 ### What is the security model that F-Droid uses?
