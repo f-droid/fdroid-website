@@ -24,6 +24,7 @@ the main repository.
 * [FAQ - General](FAQ_-_General) Frequently Asked Questions about F-Droid
 * [FAQ - Client](FAQ_-_Client) Frequently Asked Questions about how to use the F-Droid app in Android.
 * [Anti-Features](https://f-droid.org/wiki/page/Antifeatures) What they are, what they mean, and what apps have them.
+* [Tutorials](../tutorials) Step-by-step tutorials on features in F-Droid
 
 
 ### More Information
