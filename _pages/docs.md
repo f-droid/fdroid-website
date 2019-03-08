@@ -24,6 +24,7 @@ the main repository.
 * [FAQ - General](FAQ_-_General) Frequently Asked Questions about F-Droid
 * [FAQ - Client](FAQ_-_Client) Frequently Asked Questions about how to use the F-Droid app in Android.
 * [Anti-Features](https://f-droid.org/wiki/page/Antifeatures) What they are, what they mean, and what apps have them.
+* [Tutorials](../tutorials) Step-by-step tutorials on features in F-Droid
 
 
 ### More Information
@@ -32,6 +33,7 @@ the main repository.
 * [Known Repositories](https://forum.f-droid.org/t/721) A list that tries to keep track of known F-Droid compatible repositories.
 * [Release Channels and Signing Keys](Release_Channels_and_Signing_Keys) These are the various channels that F-Droid software are released on, with info to verify them based on signing keys.
 * [Security Model](Security_Model) A brief explanation of how F-Droid delivers software to users securely.
+* [Repomaker](../repomaker) A user-friendly tool for managing custom repos
 * [Translation and Localization](Translation_and_Localization) How all the parts of F-Droid are localized.
 
 
