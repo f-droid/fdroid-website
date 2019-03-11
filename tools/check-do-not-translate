@@ -3,3 +3,8 @@
 basedir=`cd $(dirname $0)/..; pwd`
 
 sed -i 's/^msgstr "[` ]*-----BEGIN.*"/msgstr ""/' $basedir/po/_*.po*
+
+data=$basedir/_data
+# trim trailing whitespace
+sed -i 's, *$,,' $data/strings.json $data/*/strings.json \
+    $data/tutorials.json $data/*/tutorials.json
