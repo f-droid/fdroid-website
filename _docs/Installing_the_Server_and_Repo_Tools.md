@@ -49,7 +49,7 @@ For installing on older releases, there are a couple more simple steps:
     ```
 
 
-## Apple OSX
+## macOS
 
 You can install `fdroidserver` directly using [MacPorts](https://www.macports.org/ports.php?by=name&substr=fdroidserver), [Homebrew](http://brewformulas.org/Fdroidserver), or `easy_install` as a last resort:
 
@@ -148,7 +148,7 @@ https://gitlab.com/fdroid/fdroidserver/blob/master/.gitlab-ci.yml
 
 To build apps using F-Droid, Java and the whole Android SDK must be
 installed.  This process is currently only developed on GNU/Linux, but
-we'd love patches getting it working on MacOS and Windows. If you only
+we'd love patches getting it working on macOS and Windows. If you only
 want to make F-Droid repositories of APK files that you already have
 or don't know what this means, then you can skip this section.
 
