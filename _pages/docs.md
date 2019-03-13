@@ -35,6 +35,7 @@ the main repository.
 * [Security Model](Security_Model) A brief explanation of how F-Droid delivers software to users securely.
 * [Repomaker](../repomaker) A user-friendly tool for managing custom repos
 * [Translation and Localization](Translation_and_Localization) How all the parts of F-Droid are localized.
+* [Tips & Tricks](https://forum.f-droid.org/c/wiki/tips-and-tricks) A collection of useful tips and tricks that make life around F-Droid easier.
 
 
 ### Developers
