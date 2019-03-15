@@ -11,10 +11,20 @@ The _f-droid.org_ core infrastructure is operated by F-Droid Limited, a UK "priv
 ### Contact
 
 You can discuss F-Droid or get help on the
-[forum](https://forum.f-droid.org) and IRC in the
+[forum](https://forum.f-droid.org) and F-Droid's user chat.
+
+To chat with others about F-Droid, either join via IRC in the
 [#fdroid channel](https://webchat.freenode.net/?channels=%23fdroid) on
-freenode. The discussions on IRC are logged on
-[BotBot.me](https://botbot.me/freenode/fdroid).  You can send email at
+freenode or join [#fdroid:f-droid.org](https://matrix.to/#/#fdroid:f-droid.org) on Matrix.
+The discussions are logged on
+[view.matrix.org](https://view.matrix.org/alias/%23fdroid:f-droid.org).
+
+There also exist bridges to Telegram and Jabber/XMPP (experimental).
+To join via Telegram, click on [this link](https://matrix.f-droid.org/fdroid/telegram/).
+For Jabber/XMPP,
+join [#fdroid#matrix.org@bridge.xmpp.matrix.org](xmpp:#fdroid#matrix.org@bridge.xmpp.matrix.org?join).
+
+You can send email at
 [team@f-droid.org](mailto:team@f-droid.org), but messages are much
 more likely to be answered on the forum or #fdroid channel. If you
 want to help, you can [join us]({{ "/contribute/" | prepend:
