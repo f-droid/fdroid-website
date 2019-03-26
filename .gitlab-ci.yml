@@ -13,6 +13,7 @@ variables:
   set -x
   set -e
   ruby -v
+  sed -i '/jessie-updates/d' /etc/apt/sources.list
   apt-get update
   apt-get install -y locales zlib1g-dev gettext po4a linkchecker bundler unzip python3 rsync python3-babel
   grep '^en_US.UTF-8 UTF-8' /etc/locale.gen || echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen
