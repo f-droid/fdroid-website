@@ -61,5 +61,6 @@ the main repository.
 * [Deploying the Website](Deploying_the_Website) How [fdroid-website.git](https://gitlab.com/fdroid/fdroid-website) becomes [f-droid.org](https://f-droid.org)
 * [Release Process](Release_Process) All the steps needed to make official release of F-Droid projects.
 * [Maintaining the Forum](Maintaining_the_Forum) Useful information for administrators of [F-Droid's forum](https://forum.f-droid.org)
+* [Running a Mirror](Running_a_Mirror) Instructions for setting up a repository mirror
 
 * [Work in Progress](https://f-droid.org/wiki/page/Work_in_Progress) Feel free to add your own topics and link to others.
