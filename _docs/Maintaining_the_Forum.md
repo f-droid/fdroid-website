@@ -153,3 +153,8 @@ you can simply deploy it on the new server and start it by
 
 Follow the
 [official installation guide](https://github.com/discourse/discourse/blob/master/docs/INSTALL-cloud.md).
+
+#### More Info
+
+You can find more info about updating and maintaining the forum as well as other admin tasks in the [F-Droid forum administrator training](https://forum.f-droid.org/t/f-droid-forum-administrator-training/5527?u=paulakreuzer) topic.
+
