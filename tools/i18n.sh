@@ -28,11 +28,6 @@ function md2po {
     generate_pot_file _posts
     generate_pot_file _pages
     rm -r ${DIR_BUILD}
-
-    echo "Syncing .po with new .pot files"
-    update_po_files _docs
-    update_po_files _posts
-    update_po_files _pages
 }
 
 #
@@ -73,25 +68,6 @@ function generate_pot_file {
     echo "Combining .pot files into $OUT_POT_FILE"
     mkdir -p `dirname ${OUT_POT_FILE}`
     msgcat --no-wrap --add-location=file -o ${OUT_POT_FILE} ${DIR_BUILD_PO}/*.pot
-}
-
-#
-# Updates each translated .po file with new/changed strings from the
-# original English .po file.  Uses `msgmerge` and supports fuzzy
-# string matching.
-#
-function update_po_files {
-    SECTION=$1
-    POT=${DIR_PO}/${SECTION}.pot
-
-    if [ `check_for_po ${SECTION}` = true ]; then
-        for I18N_PO in ${DIR_PO}/${SECTION}.*.po; do
-            # The VERSION_CONTROL environment variable prevents a
-            # backup file from being written to ${SECTION}.LOCALE.po~
-            echo "Updating ${I18N_PO} with any changes from main .po file ${POT}."
-            VERSION_CONTROL=none msgmerge --no-wrap --add-location=file -U ${I18N_PO} ${POT}
-        done
-    fi
 }
 
 
