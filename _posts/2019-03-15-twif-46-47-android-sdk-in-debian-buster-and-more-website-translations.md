@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "TWIF 46 & 47: Android SDK in Debian Buster and more website translations"
+title: "TWIF 46 and 47: Android SDK in Debian Buster and more website translations"
 edition: 47
 author: "Coffee"
 authorWebsite: "https://open.source.coffee"
