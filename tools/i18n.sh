@@ -67,7 +67,7 @@ function generate_pot_file {
 
     echo "Combining .pot files into $OUT_POT_FILE"
     mkdir -p `dirname ${OUT_POT_FILE}`
-    msgcat --no-wrap --add-location=file -o ${OUT_POT_FILE} ${DIR_BUILD_PO}/*.pot
+    msgcat --no-wrap --lang=en_US --add-location=file -o ${OUT_POT_FILE} ${DIR_BUILD_PO}/*.pot
 }
 
 
