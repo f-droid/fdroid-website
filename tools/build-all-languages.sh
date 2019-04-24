@@ -1,4 +1,8 @@
 #!/bin/sh
+#
+# This is used to build https://staging.f-droid.org.
+# It downloads the index from a mirror until f-droid.org
+# becomes stable again.
 
 set -e
 
@@ -20,4 +24,7 @@ for f in _data/[a-z][a-z]*/strings.json; do
     fi
 done
 
-sed -i "s/^languages:.*/languages: [ $languages ]/" _config.yml
+sed -i \
+    -e "s/^languages:.*/languages: [ $languages ]/" \
+    -e "s,^fdroid-repo:.*,fdroid-repo: https://ftp.fau.de/fdroid/repo," \
+    _config.yml
