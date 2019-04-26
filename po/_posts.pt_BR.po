@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
-"POT-Creation-Date: 2019-04-11 01:14+0200\n"
+"POT-Creation-Date: 2019-04-22 17:51+0200\n"
 "PO-Revision-Date: 2019-04-16 11:04+0000\n"
 "Last-Translator: Rafael Fontenelle <rafaelff@gnome.org>\n"
 "Language-Team: Portuguese (Brazil) <https://hosted.weblate.org/projects/f-droid/website-posts/pt_BR/>\n"
@@ -10009,7 +10009,7 @@ msgstr ""
 #. type: Title #
 #: build/_posts/md/2019-03-15-twif-46-47-android-sdk-in-debian-buster-and-more-website-translations.md
 #, no-wrap
-msgid "\"TWIF 46 & 47: Android SDK in Debian Buster and more website translations\""
+msgid "\"TWIF 46 and 47: Android SDK in Debian Buster and more website translations\""
 msgstr ""
 
 #. type: Plain text
@@ -10957,4 +10957,147 @@ msgstr ""
 #. type: Bullet: '* '
 #: build/_posts/md/2019-04-04-twif-50-Oeffi-removed-from-play-again-and-first-twitch-app-in-f-droid.md
 msgid "**[Easer](https://f-droid.org/app/ryey.easer)** is an app that can automatically perform a wide range of programmable actions when certain events are detected. It was [updated](https://github.com/renyuneyun/Easer/blob/HEAD/CHANGELOG.md) to 0.7.3, with better welcome pages, a new operation PlayMediaOperationPlugin and other improvements."
+msgstr ""
+
+#. type: Title #
+#: build/_posts/md/2019-04-15-privacy-preserving-analytics.md
+#, no-wrap
+msgid "\"Privacy Preserving Analytics\""
+msgstr ""
+
+#. type: Plain text
+#: build/_posts/md/2019-04-15-privacy-preserving-analytics.md
+msgid "F-Droid always avoids tracking users as much as we can.  We will never require an account, and we have put a lot of [effort]({{ site.baseurl }}/docs/Security_Model) into making it hard for even the _f-droid.org_ server to track users.  We also recognize that usage data has value.  It can be used to help show the level of popularity, and to provide app developers some feedback on what users like."
+msgstr ""
+
+#. type: Plain text
+#: build/_posts/md/2019-04-15-privacy-preserving-analytics.md
+msgid "After years of moving totally away from data, including disabling download counts on _f-droid.org_, we have started an experiment with tracking __usage__ without tracking users.  We are building upon the work of [Tor Project](https://gitweb.torproject.org/webstats.git/tree/src/sanitize.py)  and [Guardian Project](https://guardianproject.info/2017/06/08/tracking-usage-without-tracking-people/).  We have enabled access logging on <https://search.f-droid.org> and <https://mirror.f-droid.org/> for the initial trial.  (_Note: search on f-droid.org [could happen](https://gitlab.com/fdroid/fdroid-website/issues/175)  fully client-side using javascript, in that case, those searches will never hit search.f-droid.org and therefore will not be logged_)."
+msgstr ""
+
+#. type: Plain text
+#: build/_posts/md/2019-04-15-privacy-preserving-analytics.md
+msgid "The one caveat here is that Nginx does not allow custom time formats like Apache does, so the web logs will contain exact date and time of each hit.  The time zone is zeroed out.  The raw logs will not be published, and they will be sanitized before being fed into any analytics system like Matomo/Piwik.  Also, Nginx does not allow custom error log formats, so errors will have complete information.  The error logs will therefore not be used in analytics without full sanitation, and are only kept for a short time period."
+msgstr ""
+
+#. type: Title ##
+#: build/_posts/md/2019-04-15-privacy-preserving-analytics.md
+#, no-wrap
+msgid "Our Setup"
+msgstr ""
+
+#. type: Plain text
+#: build/_posts/md/2019-04-15-privacy-preserving-analytics.md
+msgid "Our servers run Debian, so this gives commands for that context. First, ensure that Nginx is set up with the \"geoip\" extension.  That enables Nginx to convert IP addresses into country codes, so that country codes are logged instead of IP addresses."
+msgstr ""
+
+#. type: Plain text
+#: build/_posts/md/2019-04-15-privacy-preserving-analytics.md
+#, no-wrap
+msgid ""
+"# apt-get install libnginx-mod-http-geoip geoip-database\n"
+"\n"
+msgstr ""
+
+#. type: Plain text
+#: build/_posts/md/2019-04-15-privacy-preserving-analytics.md
+msgid "Then enable the custom logging setup in _/etc/nginx/nginx.conf_:"
+msgstr ""
+
+#. type: Code fence info string
+#: build/_posts/md/2019-04-15-privacy-preserving-analytics.md
+#, no-wrap
+msgid "conf"
+msgstr ""
+
+#. type: Plain text
+#: build/_posts/md/2019-04-15-privacy-preserving-analytics.md
+#, no-wrap
+msgid ""
+"geoip_country /usr/share/GeoIP/GeoIP.dat;\n"
+"\n"
+"log_format privacy '0.0.0.0 - $remote_user [$time_local] \"$request\" $status $body_bytes_sent \"$http_referer\" \"-\" $geoip_country_code';\n"
+"\n"
+"\n"
+"\n"
+"access_log /var/log/nginx/access.log privacy;\n"
+"\n"
+msgstr ""
+
+#. type: Plain text
+#: build/_posts/md/2019-04-15-privacy-preserving-analytics.md
+msgid "This then makes the access log data look like:"
+msgstr ""
+
+#. type: Plain text
+#: build/_posts/md/2019-04-15-privacy-preserving-analytics.md
+#, no-wrap
+msgid ""
+"# tail /var/log/nginx/access.log\n"
+"\n"
+"0.0.0.0 - - [12/Apr/2019:07:01:37 +0000] \"GET /android-free/repository/ HTTP/1.1\" 200 949 \"-\" \"-\" PL\n"
+"\n"
+"0.0.0.0 - - [12/Apr/2019:07:02:27 +0000] \"GET /robots.txt HTTP/1.1\" 200 24 \"-\" \"-\" US\n"
+"\n"
+"0.0.0.0 - - [12/Apr/2019:07:02:27 +0000] \"GET /android-free/repository/ HTTP/1.1\" 200 949 \"-\" \"-\" US\n"
+"\n"
+"0.0.0.0 - - [12/Apr/2019:07:04:08 +0000] \"GET / HTTP/1.1\" 200 278 \"-\" \"-\" BR\n"
+"\n"
+"0.0.0.0 - - [12/Apr/2019:07:06:41 +0000] \"GET /android-free/repository/ HTTP/1.1\" 200 949 \"-\" \"-\" US\n"
+"\n"
+"0.0.0.0 - - [12/Apr/2019:07:11:45 +0000] \"GET /android-free/repository/ HTTP/1.1\" 200 949 \"-\" \"-\" FR\n"
+"\n"
+"0.0.0.0 - - [12/Apr/2019:07:16:32 +0000] \"GET / HTTP/1.1\" 200 278 \"-\" \"-\" CA\n"
+"\n"
+"0.0.0.0 - - [12/Apr/2019:07:16:49 +0000] \"GET /android-free/repository/ HTTP/1.1\" 200 949 \"-\" \"-\" GB\n"
+"\n"
+"0.0.0.0 - - [12/Apr/2019:07:19:42 +0000] \"GET / HTTP/1.1\" 200 278 \"-\" \"-\" VN\n"
+"\n"
+"0.0.0.0 - - [12/Apr/2019:07:20:20 +0000] \"GET /robots.txt HTTP/1.1\" 200 24 \"-\" \"-\" US\n"
+"\n"
+"0.0.0.0 - - [12/Apr/2019:07:21:51 +0000] \"GET /android-free/repository/ HTTP/1.1\" 200 949 \"-\" \"-\" US\n"
+"\n"
+"0.0.0.0 - - [12/Apr/2019:07:26:57 +0000] \"GET /android-free/repository/ HTTP/1.1\" 200 949 \"-\" \"-\" DE\n"
+"\n"
+"0.0.0.0 - - [12/Apr/2019:07:32:01 +0000] \"GET /android-free/repository/ HTTP/1.1\" 200 949 \"-\" \"-\" SE\n"
+"\n"
+"0.0.0.0 - - [12/Apr/2019:07:32:23 +0000] \"GET /android-free/repository/sys-img/android/sys-img-9.0.0_r33-sdk.xml HTTP/1.1\" 200 904 \"-\" \"-\" US\n"
+"\n"
+"0.0.0.0 - - [12/Apr/2019:07:37:04 +0000] \"GET /android-free/repository/ HTTP/1.1\" 200 949 \"-\" \"-\" DE\n"
+"\n"
+"0.0.0.0 - - [12/Apr/2019:07:38:55 +0000] \"\\x03\\x00\\x00/*\\xE0\\x00\\x00\\x00\\x00\\x00Cookie: mstshash=Administr\" 400 173 \"-\" \"-\" RU\n"
+"\n"
+"0.0.0.0 - - [12/Apr/2019:07:39:12 +0000] \"GET / HTTP/1.1\" 200 278 \"-\" \"-\" EC\n"
+"\n"
+msgstr ""
+
+#. type: Title #
+#: build/_posts/md/2019-04-19-decentralizing-localizations.md
+#, no-wrap
+msgid "\"Decentralizing Localizations\""
+msgstr ""
+
+#. type: Plain text
+#: build/_posts/md/2019-04-19-decentralizing-localizations.md
+msgid "App development is already well decentralized, and when F-Droid introduced metadata localization, we also made it possible to manage [translations and graphics]({{ site.baseurl }}/docs/All_About_Descriptions_Graphics_and_Screenshots)  outside of F-Droid itself.  Two tools, Fastlane and Triple-T, even provide a way to sync those between the app source repo, F-Droid, and Google Play."
+msgstr ""
+
+#. type: Plain text
+#: build/_posts/md/2019-04-19-decentralizing-localizations.md
+msgid "Using [Weblate](https://hosted.weblate.org/projects/f-droid/) for handling all [F-Droid localization]({{ site.baseurl }}/docs/Translation_and_Localization)  puts contributors with expertise in specific languages and how they should be translated in control of how everything in translated.  Weblate is the place where translations happen, it is the GitLab of languages for the F-Droid community."
+msgstr ""
+
+#. type: Plain text
+#: build/_posts/md/2019-04-19-decentralizing-localizations.md
+msgid "We as a community need to avoid putting too much maintenance work on a few people so we can keep our \"bus factor\" high enough to survive all things that come our way.  People often request that F-Droid handle the localization of their app, but that would centralize the work in a place where it is much harder to share the workload.  So app graphics or localized texts should be handled by the upstream app developer as much as possible, instead of sticking everything into _fdroiddata_."
+msgstr ""
+
+#. type: Plain text
+#: build/_posts/md/2019-04-19-decentralizing-localizations.md
+msgid "That said, there are some apps with localized metadata in _fdroiddata_.  The graphics and descriptions were added there to get things started when the metadata localization was first rolled out.  Now that we have hundreds of apps that manage their own localization, we can move all that upstream as well."
+msgstr ""
+
+#. type: Plain text
+#: build/_posts/md/2019-04-19-decentralizing-localizations.md
+msgid "We have also started a project to provide a translated 80-character summary for all apps in the archive.  So if upstream developers are not willing to manage the localization, F-Droid can at least have this key piece translated so that users can see screens in only their language when navigating the Android client and website.  That you can see on [fdroiddata-localizations](https://gitlab.com/fdroid/fdroiddata-localizations).  I am currently managing that, but would love to increase our bus factor by getting more maintainers involved there.  At this point, it is mostly a matter of running some syncing scripts, and checking to make sure the scripts did not do anything stupid."
 msgstr ""
