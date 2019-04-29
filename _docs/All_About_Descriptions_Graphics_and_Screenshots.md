@@ -55,7 +55,7 @@ release, they will not be included.
 The last important detail is that the texts in the app's metadata file
 will override all other descriptive texts from
 _Fastlane_/_Triple-T_. That is specifically
-[_Name_](../Build_Metadata_Reference/#Name)/[_AutoName_](../Build_Metadata_Reference/#AutoName),
+[_Name_](../Build_Metadata_Reference/#Name),
 [_Summary_](../Build_Metadata_Reference/#Summary), and
 [_Description_](../Build_Metadata_Reference/#Description).  Once an
 app's descriptive texts have been moved into the source repo, then
