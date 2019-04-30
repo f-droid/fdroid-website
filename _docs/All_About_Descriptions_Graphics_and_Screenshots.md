@@ -64,6 +64,18 @@ file a
 or [issue](https://gitlab.com/fdroid/fdroiddata/issues) to remove
 _Summary_ and _Description_ from the app's metadata file.
 
+Here's the general rule of filling the index from the metadata sources:
+
+```
+metadata file --> fdroiddata localized files --> fastlane/triple-t in app source
+```
+
+For things that can also be scraped from the APK, then we get:
+
+```
+metadata file --> fdroiddata localized files --> fastlane/triple-t in app source --> APK
+```
+
 ## In the app's build metadata in an _fdroiddata_ collection
 
 All the app store materials can also be added to any _fdroiddata_
