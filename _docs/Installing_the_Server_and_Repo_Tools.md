@@ -169,7 +169,7 @@ set. Be sure to verify the file you downloaded, you can double-check
 the SHA-1 Checksum on Google's download page.
 
 ```bash
-$ sudo apt-get install openjdk-8-jdk lib32stdc++6 lib32gcc1 lib32z1 lib32ncurses5 ...
+$ sudo apt-get install apksigner curl lib32gcc1 lib32ncurses5 lib32stdc++6 lib32z1 openjdk-8-jdk python3-pil python3-pyasn1 python3-pyasn1-modules python3-ruamel.yaml python3-yaml ...
 $ cd ~
 $ wget https://dl.google.com/android/repository/tools_r25.2.3-linux.zip
 $ echo "aafe7f28ac51549784efc2f3bdfc620be8a08213  tools_r25.2.3-linux.zip" | sha1sum -c
