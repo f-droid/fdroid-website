@@ -55,7 +55,7 @@ release, they will not be included.
 The last important detail is that the texts in the app's metadata file
 will override all other descriptive texts from
 _Fastlane_/_Triple-T_. That is specifically
-[_Name_](../Build_Metadata_Reference/#Name)/[_AutoName_](../Build_Metadata_Reference/#AutoName),
+[_Name_](../Build_Metadata_Reference/#Name),
 [_Summary_](../Build_Metadata_Reference/#Summary), and
 [_Description_](../Build_Metadata_Reference/#Description).  Once an
 app's descriptive texts have been moved into the source repo, then
@@ -63,6 +63,18 @@ file a
 [merge request](https://gitlab.com/fdroid/fdroiddata/merge_requests)
 or [issue](https://gitlab.com/fdroid/fdroiddata/issues) to remove
 _Summary_ and _Description_ from the app's metadata file.
+
+Here's the general rule of filling the index from the metadata sources:
+
+```
+metadata file --> fdroiddata localized files --> fastlane/triple-t in app source
+```
+
+For things that can also be scraped from the APK, then we get:
+
+```
+metadata file --> fdroiddata localized files --> fastlane/triple-t in app source --> APK
+```
 
 ## In the app's build metadata in an _fdroiddata_ collection
 
