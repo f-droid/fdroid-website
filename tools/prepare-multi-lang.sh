@@ -73,6 +73,9 @@ function convert_weblate_language_code {
     echo ${LANG_CODE} | tr '[:upper:]' '[:lower:]' | tr '_' '-'
 }
 
+# There are only zh-hans (Simplified) and zh-hant (Traditional)
+# translations, but Firefox uses country codes instead of language
+# code.  So tack those on at the end, since we always have both zh.
 function write_typemap {
     OUTPUT_FILE=$1
     LANGS_TO_WRITE=$2
@@ -90,7 +93,20 @@ Content-type: text/html
 
 TXT
     done
+    cat<<TXT >> ${OUTPUT_FILE}
+URI: ${FILE_NAME}.zh_Hans
+Content-language: zh-cn
+Content-type: text/html
 
+URI: ${FILE_NAME}.zh_Hant
+Content-language: zh-hk
+Content-type: text/html
+
+URI: ${FILE_NAME}.zh_Hant
+Content-language: zh-tw
+Content-type: text/html
+
+TXT
 }
 
 if [ ! -f _config.yml ]; then
