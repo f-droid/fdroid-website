@@ -5,6 +5,8 @@
   the incoming "?lang=..." query parameter to the correct translated path.
 {% endcomment %}
 
+{% assign strings = site.data.strings.sidebars.lang %}
+
 <form action="{{site.baseurl}}{{ page.url }}" method="get">
 
   <select id="language-chooser-select" name="lang" autocomplete="off">
@@ -18,7 +20,7 @@
   <script src="{{site.baseurl}}/js/sidebar-lang.js"></script>
 
   <noscript>
-    <input id="language-chooser-submit" type="submit" value="Change" />
+    <input id="language-chooser-submit" type="submit" value="{{ strings.change }}" />
   </noscript>
 
 </form>
