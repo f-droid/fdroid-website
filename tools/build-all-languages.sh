@@ -10,7 +10,7 @@ git checkout master
 git fetch https://hosted.weblate.org/git/f-droid/website
 git reset --hard FETCH_HEAD
 
-minsize=`ls -l _data/strings.json | awk '{ print ($5 * 0.50) }'`
+minsize=`ls -l _data/strings.json | awk '{ print int($5 * 0.50) }'`
 
 # 'en' needs to be manually included in the list since there isn't a
 # translation file for it.
