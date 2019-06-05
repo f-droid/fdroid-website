@@ -36,7 +36,7 @@ Some common reasons:
     [Search](https://f-droid.org/search) the Forum;
 -   We don't know about it. See the [Inclusion Policy](../Inclusion_Policy).
 
-Otherwise it you think that an app respect the Inclusion Policy and
+Otherwise if you think that an app respects the Inclusion Policy and
 actually nobody is talking about it in the forum, you can try to be the
 first to do it: See the [Inclusion How-To](../Inclusion_How-To).
 
