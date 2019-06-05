@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
-"POT-Creation-Date: 2019-03-07 22:33+0100\n"
+"POT-Creation-Date: 2019-05-10 20:06+0200\n"
 "PO-Revision-Date: 2017-10-12 05:41+0000\n"
 "Last-Translator: Xuacu Saturio <xuacusk8@gmail.com>\n"
 "Language-Team: Asturian <https://hosted.weblate.org/projects/f-droid/website-docs/ast/>\n"
@@ -84,7 +84,33 @@ msgstr ""
 
 #. type: Plain text
 #: build/_docs/md/All_About_Descriptions_Graphics_and_Screenshots.md
-msgid "The last important detail is that the texts in the app's metadata file will override all other descriptive texts from _Fastlane_/_Triple-T_. That is specifically [_Name_](../Build_Metadata_Reference/#Name)/[_AutoName_](../Build_Metadata_Reference/#AutoName), [_Summary_](../Build_Metadata_Reference/#Summary), and [_Description_](../Build_Metadata_Reference/#Description).  Once an app's descriptive texts have been moved into the source repo, then file a [merge request](https://gitlab.com/fdroid/fdroiddata/merge_requests)  or [issue](https://gitlab.com/fdroid/fdroiddata/issues) to remove _Summary_ and _Description_ from the app's metadata file."
+msgid "The last important detail is that the texts in the app's metadata file will override all other descriptive texts from _Fastlane_/_Triple-T_. That is specifically [_Name_](../Build_Metadata_Reference/#Name), [_Summary_](../Build_Metadata_Reference/#Summary), and [_Description_](../Build_Metadata_Reference/#Description).  Once an app's descriptive texts have been moved into the source repo, then file a [merge request](https://gitlab.com/fdroid/fdroiddata/merge_requests)  or [issue](https://gitlab.com/fdroid/fdroiddata/issues) to remove _Summary_ and _Description_ from the app's metadata file."
+msgstr ""
+
+#. type: Plain text
+#: build/_docs/md/All_About_Descriptions_Graphics_and_Screenshots.md
+msgid "Here's the general rule of filling the index from the metadata sources:"
+msgstr ""
+
+#. type: Plain text
+#: build/_docs/md/All_About_Descriptions_Graphics_and_Screenshots.md
+#, no-wrap
+msgid ""
+"metadata file --> fdroiddata localized files --> fastlane/triple-t in app source\n"
+"\n"
+msgstr ""
+
+#. type: Plain text
+#: build/_docs/md/All_About_Descriptions_Graphics_and_Screenshots.md
+msgid "For things that can also be scraped from the APK, then we get:"
+msgstr ""
+
+#. type: Plain text
+#: build/_docs/md/All_About_Descriptions_Graphics_and_Screenshots.md
+#, no-wrap
+msgid ""
+"metadata file --> fdroiddata localized files --> fastlane/triple-t in app source --> APK\n"
+"\n"
 msgstr ""
 
 #. type: Title ##
@@ -5254,7 +5280,7 @@ msgstr ""
 #. type: Title ##
 #: build/_docs/md/Installing_the_Server_and_Repo_Tools.md
 #, no-wrap
-msgid "Apple OSX"
+msgid "macOS"
 msgstr ""
 
 #. type: Plain text
@@ -5415,7 +5441,7 @@ msgstr ""
 
 #. type: Plain text
 #: build/_docs/md/Installing_the_Server_and_Repo_Tools.md
-msgid "To build apps using F-Droid, Java and the whole Android SDK must be installed.  This process is currently only developed on GNU/Linux, but we'd love patches getting it working on MacOS and Windows. If you only want to make F-Droid repositories of APK files that you already have or don't know what this means, then you can skip this section."
+msgid "To build apps using F-Droid, Java and the whole Android SDK must be installed.  This process is currently only developed on GNU/Linux, but we'd love patches getting it working on macOS and Windows. If you only want to make F-Droid repositories of APK files that you already have or don't know what this means, then you can skip this section."
 msgstr ""
 
 #. type: Plain text
@@ -6971,6 +6997,225 @@ msgid "- <https://gitlab.com/fdroid/fdroidserver/commit/8568805866dadbdcc6c07449
 msgstr ""
 
 #. type: Title #
+#: build/_docs/md/Running_a_Mirror.md
+#, no-wrap
+msgid "Running a Mirror"
+msgstr ""
+
+#. type: Plain text
+#: build/_docs/md/Running_a_Mirror.md
+msgid "F-Droid receives its database and resources from servers that host specifically-formatted repositories of files. Originally, these repositories were hosted only at [f-droid.org](https://f-droid.org/), but as F-Droid grew [f-droid.org](https://f-droid.org/) alone was unable to handle the entire load. F-droid now supports servers that replicate these repositories. Hosting a mirror involves running an HTTP(S) server hosting a copy of the repository synchronized over `rsync`."
+msgstr ""
+
+#. type: Title ####
+#: build/_docs/md/Running_a_Mirror.md
+#, no-wrap
+msgid "Requirements"
+msgstr ""
+
+#. type: Plain text
+#: build/_docs/md/Running_a_Mirror.md
+msgid "There are two official F-droid repositories, the primary and the archive. It's most valuable to mirror the primary as it's used much more than the archive."
+msgstr ""
+
+#. type: Plain text
+#: build/_docs/md/Running_a_Mirror.md
+msgid "The primary resources required by a mirror are disk space and upload bandwidth. Bandwidth requirements are reduced with each new mirror, but disk requirements are relatively static. At time of writing (Mar 2019), the primary repository requires just over 50GB of disk space in 24K files, and the archive requires 220GB of disk space in 52K files. The amount of disk space required grows with every new app release."
+msgstr ""
+
+#. type: Plain text
+#: build/_docs/md/Running_a_Mirror.md
+msgid "Please note: You will need to seek the password for the originating mirror from an f-droid contributor via any method listed [here](https://f-droid.org/en/about/#contact)."
+msgstr ""
+
+#. type: Plain text
+#: build/_docs/md/Running_a_Mirror.md
+msgid "You can find current information on disk space requirements by running the following in your terminal: ```console $ RSYNC_PASSWORD=[password] rsync -v --list-only fdroid-mirror@mirror.f-droid.org::repo/ $ RSYNC_PASSWORD=[password] rsync -v --list-only fdroid-mirror@mirror.f-droid.org::archive/ ```"
+msgstr ""
+
+#. type: Title ####
+#: build/_docs/md/Running_a_Mirror.md
+#: build/_docs/md/Submitting_to_F-Droid_Quick_Start_Guide.md
+#, no-wrap
+msgid "Setup"
+msgstr ""
+
+#. type: Plain text
+#: build/_docs/md/Running_a_Mirror.md
+msgid "This guide assumes the use of Nginx with a deb-based distribution, and mirroring the primary repository plus the archive. Please adjust accordingly if you're using alternatives or don't intend to mirror the archive. Also substitute the examples paths and domains for your own."
+msgstr ""
+
+#. type: Plain text
+#: build/_docs/md/Running_a_Mirror.md
+msgid "For assistance with this process, [feel free to reach out to us]({{ \"/about/\" | prepend: site.baseurl }})."
+msgstr ""
+
+#. type: Bullet: '1. '
+#: build/_docs/md/Running_a_Mirror.md
+msgid "Create appropriate directories"
+msgstr ""
+
+#. type: Plain text
+#: build/_docs/md/Running_a_Mirror.md
+msgid "```console $ sudo mkdir -p /var/www/fdroid/fdroid/repo $ sudo mkdir -p /var/www/fdroid/fdroid/archive $ sudo chown -R www-data.www-data /var/www/fdroid ```"
+msgstr ""
+
+#. type: Bullet: '1. '
+#: build/_docs/md/Running_a_Mirror.md
+msgid "Synchronize the repositories. These commands are best run in a terminal multiplexer (`screen`, `tmux` etc) as they will take some time to complete."
+msgstr ""
+
+#. type: Plain text
+#: build/_docs/md/Running_a_Mirror.md
+msgid "```console $ RSYNC_PASSWORD=[password] sudo -u www-data -E /usr/bin/rsync --links --delete --times --recursive --permissions --hard-links --sparse --delay-updates --temp-dir /tmp/ fdroid-mirror@mirror.f-droid.org::repo/ /var/www/fdroid/fdroid/repo/ $ RSYNC_PASSWORD=[password] sudo -u www-data -E /usr/bin/rsync --links --delete --times --recursive --permissions --hard-links --sparse --delay-updates --temp-dir /tmp/ fdroid-mirror@mirror.f-droid.org::archive/ /var/www/fdroid/fdroid/archive/ ```"
+msgstr ""
+
+#. type: Bullet: '1. '
+#: build/_docs/md/Running_a_Mirror.md
+msgid "Establish a cronjob to keep the repositories up to date"
+msgstr ""
+
+#. type: Plain text
+#: build/_docs/md/Running_a_Mirror.md
+msgid "Create a cronjob file in `/etc/cron.d`"
+msgstr ""
+
+#. type: Plain text
+#: build/_docs/md/Running_a_Mirror.md
+msgid "```console $ vi /etc/cron.d/fdroid ```"
+msgstr ""
+
+#. type: Plain text
+#: build/_docs/md/Running_a_Mirror.md
+msgid "Fill the file with entries to update the repositories"
+msgstr ""
+
+#. type: Plain text
+#: build/_docs/md/Running_a_Mirror.md
+msgid "``` */5 * * * * www-data RSYNC_PASSWORD=[password] /usr/bin/rsync --links --delete --times --recursive --permissions --hard-links --sparse --delay-updates --temp-dir /tmp/ fdroid-mirror@mirror.f-droid.org::repo/ /var/www/fdroid/fdroid/repo/ */5 * * * * www-data RSYNC_PASSWORD=[password] /usr/bin/rsync --links --delete --times --recursive --permissions --hard-links --sparse --delay-updates --temp-dir /tmp/ fdroid-mirror@mirror.f-droid.org::archive/ /var/www/fdroid/fdroid/archive/ ```"
+msgstr ""
+
+#. type: Bullet: '1. '
+#: build/_docs/md/Running_a_Mirror.md
+msgid "Configure your webserver"
+msgstr ""
+
+#. type: Plain text
+#: build/_docs/md/Running_a_Mirror.md
+msgid "This is an example server block for nginx. If used, it should be copied to _/etc/nginx/sites-available/_ and symlinked to _/etc/nginx/sites-enabled_. Note that it is important that your URI be `/fdroid/repo` so that the app can automatically add your mirror."
+msgstr ""
+
+#. type: Plain text
+#: build/_docs/md/Running_a_Mirror.md
+#, no-wrap
+msgid ""
+"```\n"
+"server {\n"
+"  listen [::]:80 ipv6only=off;\n"
+msgstr ""
+
+#. type: Plain text
+#: build/_docs/md/Running_a_Mirror.md
+#, no-wrap
+msgid "  server_name fdroidmirror.example;\n"
+msgstr ""
+
+#. type: Plain text
+#: build/_docs/md/Running_a_Mirror.md
+#, no-wrap
+msgid ""
+"  rewrite ^ https://fdroidmirror.example$request_uri permanent;\n"
+"}\n"
+msgstr ""
+
+#. type: Plain text
+#: build/_docs/md/Running_a_Mirror.md
+#, no-wrap
+msgid ""
+"server {\n"
+"  listen [::]:443 ssl http2 ipv6only=off;\n"
+msgstr ""
+
+#. type: Plain text
+#: build/_docs/md/Running_a_Mirror.md
+#, no-wrap
+msgid "  root /var/www/fdroid/;\n"
+msgstr ""
+
+#. type: Plain text
+#: build/_docs/md/Running_a_Mirror.md
+#, no-wrap
+msgid ""
+"  # TODO: https://gitlab.com/snippets/1834032\n"
+"  location /health {\n"
+"    proxy_pass http://127.0.0.1:8000/;\n"
+"  }\n"
+msgstr ""
+
+#. type: Plain text
+#: build/_docs/md/Running_a_Mirror.md
+#, no-wrap
+msgid ""
+"  ssl_certificate /etc/letsencrypt/live/fdroidmirror.example/fullchain.pem;\n"
+"  ssl_certificate_key /etc/letsencrypt/live/fdroidmirror.example/privkey.pem;\n"
+msgstr ""
+
+#. type: Plain text
+#: build/_docs/md/Running_a_Mirror.md
+#, no-wrap
+msgid ""
+"  # Insert here a TLS config from Mozilla SSL config generator https://mozilla.github.io/server-side-tls/ssl-config-generator/\n"
+"}\n"
+"```\n"
+msgstr ""
+
+#. type: Bullet: '1. '
+#: build/_docs/md/Running_a_Mirror.md
+msgid "Submit your mirror for inclusion"
+msgstr ""
+
+#. type: Bullet: '* '
+#: build/_docs/md/Running_a_Mirror.md
+msgid "Fork the [mirror monitor repo](https://gitlab.com/fdroid/mirror-monitor), add your mirror to the list in the readme, and open a merge request."
+msgstr ""
+
+#. type: Bullet: '* '
+#: build/_docs/md/Running_a_Mirror.md
+msgid "Open an issue on the [admin repo](https://gitlab.com/fdroid/admin), including any pertinent information, requesting the inclusion of your mirror."
+msgstr ""
+
+#. type: Bullet: '* '
+#: build/_docs/md/Running_a_Mirror.md
+msgid "Once your mirror is provden trustworth and reliable to the core contributor team, it will be accepted into the official list."
+msgstr ""
+
+#. type: Title ####
+#: build/_docs/md/Running_a_Mirror.md
+#, no-wrap
+msgid "Other considerations"
+msgstr ""
+
+#. type: Bullet: '* '
+#: build/_docs/md/Running_a_Mirror.md
+msgid "Forward emails from cronjob failures so you know if the synchronization fails"
+msgstr ""
+
+#. type: Bullet: '* '
+#: build/_docs/md/Running_a_Mirror.md
+msgid "Set up monitoring on your mirror so you know if it goes down (ideally keyword on _/var/www/fdroid/fdroid/repo/index.html_)"
+msgstr ""
+
+#. type: Bullet: '* '
+#: build/_docs/md/Running_a_Mirror.md
+msgid "Harden your SSH server config (disable password authentication, install fail2ban)"
+msgstr ""
+
+#. type: Bullet: '* '
+#: build/_docs/md/Running_a_Mirror.md
+msgid "Enable unattended upgrades"
+msgstr ""
+
+#. type: Title #
 #: build/_docs/md/Security_Model.md
 #, no-wrap
 msgid "Security Model"
@@ -7553,12 +7798,6 @@ msgstr ""
 msgid "[Contribute to F-Droid](https://f-droid.org/contribute/)"
 msgstr ""
 
-#. type: Title ####
-#: build/_docs/md/Submitting_to_F-Droid_Quick_Start_Guide.md
-#, no-wrap
-msgid "Setup"
-msgstr ""
-
 #. type: Plain text
 #: build/_docs/md/Submitting_to_F-Droid_Quick_Start_Guide.md
 msgid "Before you start, manually install the Android SDK at ~/Android/Sdk/ - see [Download Android Studio](https://developer.android.com/studio/index.html#downloads).  I installed version 23.0.2, but you will probably have a later one and may need to adjust the version number below."
@@ -7802,68 +8041,12 @@ msgstr ""
 
 #. type: Plain text
 #: build/_docs/md/Translation_and_Localization.md
-msgid "Every piece of F-Droid can be localized, including the Android app, the entire website, and the tools.  That means that all of the texts can be translated into any language.  F-Droid will also use localized formats for numbers, currency, dates, etc. which happens automatically based on the language and country specified in the device's settings."
+msgid "Every piece of F-Droid can be localized, including the Android app, the entire website, and the tools.  That means that all of the texts can be translated into any language supported by Android.  F-Droid will also use localized formats for numbers, currency, dates, etc. which happens automatically based on the language and country specified in the device's settings.  All of the F-Droid resources area available for translation on [Weblate \"components\"](https://hosted.weblate.org/projects/f-droid/)  that are each managed separately, based on technical requirements."
 msgstr ""
 
 #. type: Plain text
 #: build/_docs/md/Translation_and_Localization.md
-msgid "All translation work is done in Weblate. We recommend that translators use a https://gitlab.com account for logging into Weblate since that same account can be used on all of the F-Droid projects on GitLab."
-msgstr ""
-
-#. type: Plain text
-#: build/_docs/md/Translation_and_Localization.md
-msgid "There are a number of separate sections that are each managed separately, based on technical requirements:"
-msgstr ""
-
-#. type: Bullet: '* '
-#: build/_docs/md/Translation_and_Localization.md
-msgid "[F-Droid Android app strings](https://hosted.weblate.org/projects/f-droid/f-droid)"
-msgstr ""
-
-#. type: Bullet: '* '
-#: build/_docs/md/Translation_and_Localization.md
-msgid "[_fdroidserver_ command line tool](https://hosted.weblate.org/projects/f-droid/fdroidserver)"
-msgstr ""
-
-#. type: Bullet: '* '
-#: build/_docs/md/Translation_and_Localization.md
-msgid "[_Repomaker_ web tool](https://hosted.weblate.org/projects/f-droid/repomaker)"
-msgstr ""
-
-#. type: Bullet: '* '
-#: build/_docs/md/Translation_and_Localization.md
-msgid "[selected app descriptions](https://hosted.weblate.org/projects/f-droid/fdroiddata)"
-msgstr ""
-
-#. type: Bullet: '* '
-#: build/_docs/md/Translation_and_Localization.md
-msgid "[f-droid.org website \"chrome\" strings](https://hosted.weblate.org/projects/f-droid/website)"
-msgstr ""
-
-#. type: Bullet: '* '
-#: build/_docs/md/Translation_and_Localization.md
-msgid "[f-droid.org website blog posts](https://hosted.weblate.org/projects/f-droid/website-posts)"
-msgstr ""
-
-#. type: Bullet: '* '
-#: build/_docs/md/Translation_and_Localization.md
-msgid "[f-droid.org website docs and pages](https://hosted.weblate.org/projects/f-droid/website-docs)"
-msgstr ""
-
-#. type: Plain text
-#: build/_docs/md/Translation_and_Localization.md
-msgid "If the upstream project's source repo includes app descriptions, then those will be automatically included as long as they use the [supported layouts](../All_About_Descriptions_Graphics_and_Screenshots).  If there are any issues with missing translations or broken localized formats, please [file an issue](https://gitlab.com/groups/fdroid/issues) so it can be fixed."
-msgstr ""
-
-#. type: Title ##
-#: build/_docs/md/Translation_and_Localization.md
-#, no-wrap
-msgid "The \"Languages\" preference"
-msgstr ""
-
-#. type: Plain text
-#: build/_docs/md/Translation_and_Localization.md
-msgid "There are cases where having English as the fallback language is not helpful.  For example, much of the world would prefer to fall back to Chinese, Spanish, or Russian instead of English.  On Android 6.0 and older, F-Droid provides a \"Languages\" setting inside the app so that users can switch F-Droid to a different language.  Note that this might not handle localized format properly, just the language. Android 7.0 fixed this by allowing users to specify a list of language+country \"locales\", ordered by importance to the user."
+msgid "If an app's source code repo includes app descriptions, then those will be automatically included as long as they use the [supported layouts](../All_About_Descriptions_Graphics_and_Screenshots).  If there are any issues with missing translations or broken localized formats, please [file an issue](https://gitlab.com/groups/fdroid/issues)  so it can be fixed."
 msgstr ""
 
 #. type: Title ##
@@ -7874,7 +8057,12 @@ msgstr ""
 
 #. type: Plain text
 #: build/_docs/md/Translation_and_Localization.md
-msgid "Is F-Droid not in your language, or the translation is incorrect or incomplete? Get involved in the translations by signing up for [our Weblate](https://hosted.weblate.org/projects/f-droid/).  You can also find other translators on the [F-Droid forum](https://forum.f-droid.org/t/about-the-translation-category/)."
+msgid "Is F-Droid not in your language, or the translation is incorrect or incomplete? Get involved in the translations on [our Weblate](https://hosted.weblate.org/projects/f-droid/)."
+msgstr ""
+
+#. type: Plain text
+#: build/_docs/md/Translation_and_Localization.md
+msgid "All translation work is done in Weblate to keep the workflow easy.  We recommend that translators use a [GitLab](https://gitlab.com) account for logging into Weblate since that same account can be used on all of the F-Droid projects on GitLab. you can find other translators on the [forum](https://forum.f-droid.org/c/translation)."
 msgstr ""
 
 #. type: Title ###
@@ -7885,7 +8073,7 @@ msgstr ""
 
 #. type: Plain text
 #: build/_docs/md/Translation_and_Localization.md
-msgid "First and foremost, Android must already support the specific language and locale you want to add.  We cannot work with languages that Android and the SDK do not support, the tools simply break down.  Next, if you are considering adding a country-specific variant of a language (e.g. _de-AT_), first make sure that the main language is well maintained (e.g. _de_). Your contribution might be useful to more people if you contribute to the main language rather than the country-specific variant."
+msgid "First and foremost, Android must [already support](https://android.googlesource.com/platform/frameworks/base/+/master/core/res/res/values/locale_config.xml)  the specific language and locale you want to add.  We cannot work with languages that Android and the SDK do not support, the tools simply break down.  Next, if you are considering adding a country-specific variant of a language (e.g. _de-AT_), first make sure that the main language is well maintained (e.g. _de_). Your contribution might be useful to more people if you contribute to the existing version of your language rather than the country-specific variant."
 msgstr ""
 
 #. type: Plain text
@@ -7901,7 +8089,35 @@ msgstr ""
 
 #. type: Plain text
 #: build/_docs/md/Translation_and_Localization.md
-msgid "The translation files are included from Weblate before each release.  As a general rule, a translation must be at least 70% complete for it to be included in a final release.  For alpha releases, we try to include all translations, no matter how incomplete."
+msgid "The translation files are included from Weblate before each release.  There are varying conditions for when the translations are included, based on the limitations of each platform."
+msgstr ""
+
+#. type: Title ####
+#: build/_docs/md/Translation_and_Localization.md
+#, no-wrap
+msgid "Android app"
+msgstr ""
+
+#. type: Plain text
+#: build/_docs/md/Translation_and_Localization.md
+msgid "As a general rule, a translation must be at least 70% complete for it to be included in a final release.  For alpha releases, we try to include all translations, no matter how incomplete."
+msgstr ""
+
+#. type: Title ####
+#: build/_docs/md/Translation_and_Localization.md
+#, no-wrap
+msgid "App summaries"
+msgstr ""
+
+#. type: Plain text
+#: build/_docs/md/Translation_and_Localization.md
+msgid "_f-droid.org_ makes the one line summaries for many apps [available for translation](https://hosted.weblate.org/projects/f-droid/fdroiddata/).  The goal is to make it possible to have sections where only a single language is show, like the Latest Tab or the website sidebar.  These are imported on a rolling basis, at least once a month."
+msgstr ""
+
+#. type: Title ####
+#: build/_docs/md/Translation_and_Localization.md
+#, no-wrap
+msgid "f-droid.org website"
 msgstr ""
 
 #. type: Plain text
@@ -7916,7 +8132,7 @@ msgstr ""
 
 #. type: Bullet: '* '
 #: build/_docs/md/Translation_and_Localization.md
-msgid "[Website Pages](https://hosted.weblate.org/projects/f-droid/website-pages/) component: At least \"About\" and \"Contribute\" pages fully translated"
+msgid "[Website Pages](https://hosted.weblate.org/projects/f-droid/website-pages/) component: 100% translated"
 msgstr ""
 
 #. type: Bullet: '* '
@@ -7927,6 +8143,17 @@ msgstr ""
 #. type: Plain text
 #: build/_docs/md/Translation_and_Localization.md
 msgid "There is a [nightly build of the website](https://staging.f-droid.org)  that includes all translations on Weblate, no matter how complete they are. This lets everyone see the progress, and means we can get new languages working well before launching them."
+msgstr ""
+
+#. type: Title ##
+#: build/_docs/md/Translation_and_Localization.md
+#, no-wrap
+msgid "The old \"Languages\" preference"
+msgstr ""
+
+#. type: Plain text
+#: build/_docs/md/Translation_and_Localization.md
+msgid "There are cases where having English as the fallback language is not helpful.  For example, much of the world would prefer to fall back to Chinese, Spanish, or Russian instead of English.  On Android 6.0 and older, F-Droid provides a \"Languages\" setting inside the app so that users can switch F-Droid to a different language.  Note that this might not handle localized format properly, just the language. Android 7.0 fixed this by allowing users to specify a list of language+country \"locales\", ordered by importance to the user."
 msgstr ""
 
 #. type: Title #
