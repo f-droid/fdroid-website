@@ -68,10 +68,10 @@ pages:
     expire_in: 1w
     when: always
   script:
-   - *setup_for_jekyll
    # use the 'gitlab ci' subset of languages
    - sed -i 's,^languages:,ignored_languages:,' _config.yml
    - sed -i 's,^gitlab_ci_languages:,languages:,' _config.yml
+   - *setup_for_jekyll
    - ./tools/check-format-strings.py
    - ./tools/check-page-links.py
    - ./tools/check-do-not-translate

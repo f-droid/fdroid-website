@@ -109,10 +109,15 @@ function generate_md_files {
 
     cp_md_strip_frontmatter_dir ${SRC_SUBDIR} ${BUILD_SUBDIR}/md
 
+    languages=`sed -nE 's,^languages:(.*)\] *, \1 ,p' _config.yml |  sed 's/[^a-zA-Z_ ]/ /g'`
+
     if [ `check_for_po ${SECTION}` = true ]; then
         for PO in ${DIR_PO}/${SECTION}.*.po; do
             PO_FILE=`basename ${PO}`
             LOCALE=`echo ${PO_FILE} | sed -e "s/${SECTION}\.\(.*\)\.po/\1/"`
+
+	    (echo $languages | grep --fixed-strings " $LOCALE ") || continue
+
             OUT_DIR_I18N_MD=${DIR_SRC}/${SECTION}/${LOCALE}
             BUILD_DIR_I18N_MD=${BUILD_SUBDIR}/${LOCALE}
 
