@@ -8,13 +8,13 @@
 #
 # This script assumes two things:
 # 1. the deploy machine includes the public GPG keys for tag verification
-# 2. the 'origin' remote is set to https://gitlab.com/fdroid/fdroid-website
+# 2. the 'origin' remote is set to https://gitlab.com/fdroid/fdroid-website.git
 
 import os
 import subprocess
 import sys
 
-remote_url = 'https://gitlab.com/fdroid/fdroid-website'
+remote_url = 'https://gitlab.com/fdroid/fdroid-website.git'
 
 try:
     import git
