@@ -8,6 +8,9 @@ body {
     max-width: $content-width + $spacing-unit;
     margin: 0 auto;
     padding: 0 $spacing-unit/2;
+    @include media-query($tablet) {
+        padding: 0;
+    }
 }
 
 /**
@@ -78,6 +81,7 @@ body {
 
 .material-button {
     display: inline-block;
+    border: 0;
     text-transform: uppercase;
     @include button-dark($primary-color);
 }
@@ -108,8 +112,10 @@ body {
 
         .sidebar {
             flex-grow: 2;
-            padding-left: $spacing-unit;
-            word-break: break-all;
+            padding: 0 0 0 $spacing-unit;
+            html[dir=rtl] & {
+              padding: 0 $spacing-unit 0 0;
+            }
         }
 
         @include media-query($tablet) {
@@ -132,6 +138,7 @@ body {
     }
 
     @import "sidebar-donate";
+    @import "sidebar-news";
 }
 
 .sidebar-hidden {
@@ -207,6 +214,7 @@ body {
      }
 
      .package-description {
+         padding: .5em 0 1.5em;
          br {
              margin-bottom: 0.5em;
          }
@@ -393,13 +401,24 @@ body {
   }
 }
 
+.search-form {
+  display: flex;
+}
+
+.search-input-wrp {
+  margin: 0 6px 0 0;
+  html[dir=rtl] & {
+    margin: 0 0 0 6px;
+  }
+  display: flex;
+  flex: 1;
+}
+
 .search-input {
   padding: 0.4em;
-  margin: 1px;
   font-size: 1.1em;
   box-sizing: border-box;
-  max-width: 100%;
-  width: 300px;
+  width: 100%;
   padding-left: 40px;
   background: url('../assets/ic_search_black_24px.svg') no-repeat 10px center;
   border-radius: 4px;
@@ -419,6 +438,7 @@ body {
 
 .results {
   @include reset-ul;
+  margin: 1em 0;
 }
 
 
@@ -427,10 +447,19 @@ body {
  */
 .site-description {
     font-size: $small-font-size;
+    @include media-query($tablet) {
+        padding: 0 $spacing-unit/2;
+        text-align: center;
+    }
 }
 
 .edit-this-page-area {
     float: inline-end;
+    @include media-query($tablet) {
+        float: none;
+        display: block;
+        margin-top: .5em;
+    }
 }
 
 /**
