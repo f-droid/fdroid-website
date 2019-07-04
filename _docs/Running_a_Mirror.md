@@ -34,14 +34,14 @@ $ sudo mkdir -p /var/www/fdroid/fdroid/archive
 $ sudo chown -R www-data.www-data /var/www/fdroid
 ```
 
-1. Synchronize the repositories. These commands are best run in a terminal multiplexer (`screen`, `tmux` etc) as they will take some time to complete.
+2. Synchronize the repositories. These commands are best run in a terminal multiplexer (`screen`, `tmux` etc) as they will take some time to complete.
 
 ```console
 $ RSYNC_PASSWORD=[password] sudo -u www-data -E /usr/bin/rsync --links --delete --times --recursive --permissions --hard-links --sparse --delay-updates --temp-dir /tmp/ fdroid-mirror@mirror.f-droid.org::repo/ /var/www/fdroid/fdroid/repo/
 $ RSYNC_PASSWORD=[password] sudo -u www-data -E /usr/bin/rsync --links --delete --times --recursive --permissions --hard-links --sparse --delay-updates --temp-dir /tmp/ fdroid-mirror@mirror.f-droid.org::archive/ /var/www/fdroid/fdroid/archive/
 ```
 
-1. Establish a cronjob to keep the repositories up to date
+3. Establish a cronjob to keep the repositories up to date
 
 Create a cronjob file in `/etc/cron.d`
 
@@ -56,7 +56,7 @@ Fill the file with entries to update the repositories
 */5 * * * * www-data RSYNC_PASSWORD=[password] /usr/bin/rsync --links --delete --times --recursive --permissions --hard-links --sparse --delay-updates --temp-dir /tmp/ fdroid-mirror@mirror.f-droid.org::archive/ /var/www/fdroid/fdroid/archive/
 ```
 
-1. Configure your webserver
+4. Configure your webserver
 
 This is an example server block for nginx. If used, it should be copied to _/etc/nginx/sites-available/_ and symlinked to _/etc/nginx/sites-enabled_. Note that it is important that your URI be `/fdroid/repo` so that the app can automatically add your mirror.
 
@@ -88,7 +88,7 @@ server {
 }
 ```
 
-1. Submit your mirror for inclusion
+5. Submit your mirror for inclusion
 
 * Fork the [mirror monitor repo](https://gitlab.com/fdroid/mirror-monitor), add your mirror to the list in the readme, and open a merge request.
 * Open an issue on the [admin repo](https://gitlab.com/fdroid/admin), including any pertinent information, requesting the inclusion of your mirror.
