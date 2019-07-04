@@ -23,7 +23,7 @@ headers = {'User-Agent': 'F-Droid'}
 
 r = requests.head(url, headers=headers)
 r.raise_for_status()
-date = '{0}-{1}-{2}'.format(*email.utils.parsedate(r.headers['Date'])).encode()
+date = '{:04g}-{:02g}-{:02g}'.format(*email.utils.parsedate(r.headers['Date'])).encode()
 
 data = None
 r = requests.get('https://staging.f-droid.org/en/index.html', headers=headers)
