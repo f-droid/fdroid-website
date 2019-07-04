@@ -49,7 +49,7 @@ for f in sorted(glob.glob('po/*.po*')):
             output += 'ERROR ' + f + ' ' + str(len(idlinks)) + ' != ' + str(len(strlinks)) + ' ' + message.id
             errorcount += 1
         for i in range(len(strlinks)):
-            if message.string and idlinks[i] != strlinks[i]:
+            if message.string and i < len(idlinks) and i < len(strlinks) and idlinks[i] != strlinks[i]:
                 errorcount += 1
                 output += '\n' + f + '\nmsgstr    ' + idlinks[i] + '\n !=       ' + strlinks[i]
                 # inputf = f + '.orig'
