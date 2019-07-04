@@ -1,0 +1,160 @@
+---
+layout: page
+title: Anti-Features
+---
+
+Anti-Features are flags packagers apply to apps, warning of possibly
+undesirable behaviour from the user's perspective, often serving the
+interest of the developer or a third party.
+
+You will see these in the F-Droid client, and/or web repository browser
+when viewing the details of an app containing one or more of these
+Anti-Features.
+
+
+## List of Anti-Features
+
+F-Droid currently uses this list of Anti-Features for labeling apps we
+are shipping:
+
+* [Ads](#ads) - advertising
+* [Tracking](#tracking) - tracks and/or reports your activity to somewhere, even when it can be turned off
+* [Non-free Network Services](#non-free-network-services) - promotes or depends entirely on a non-libre network service
+* [Non free Addons](#non-free-addons) - promotes other non-libre apps or plugins
+* [Non free Dependencies](#non-free-dependencies) - needs a non-libre app to work (e.g. Google Maps, Market)
+* [Upstream Non-free](#upstream-non-free) - upstream source code is not libre, and this version has those parts replaced or rewritten
+* [Non-Free Assets](#non-free-assets) - non libre media in things that are not code (e.g. images, sound, music, 3D-models, or video)
+* [Known Vulnerability](#known-vulnerability) - known security vulnerability
+* [Disabled Algorithm](#disabled-algorithm) - signed using an unsafe algorithm
+* [No Source Since](#no-source-since) - source code no longer available, making new releases impossible
+
+Here's a complete [list of all apps in F-Droid containing Anti-Features](https://f-droid.org/wiki/page/Category:Apps_with_antifeatures).
+
+
+### Ads
+
+This Anti-Feature is applied to an app that contains advertising.
+
+Note that most applications that contain advertising are not Free Software,
+because they use proprietary software (e.g. AdMob) to provide that
+advertising. Those apps will not be found in the repo at all, so the only
+time you would see this Anti-Feature applied would be an app that contains
+advertising without using Non-free Software to do it. No such apps are
+currently known to exist.
+
+Here's the list of [apps with Adds](https://f-droid.org/wiki/page/Category:Apps_with_Ads_antifeature).
+
+
+### Tracking
+
+This Anti-Feature is applied to apps that track you and/or report your
+activity to somewhere, either without your permission or by default
+(i.e. you'd have to actively seek out an option to disable it).
+
+Examples of where this Anti-Feature might be applied:
+
+* Sending crash reports without your knowledge or permission
+* Checking for updates without your knowledge or permission
+
+Examples of where it would not be applied - any of the above,
+if the functionality is opt-in (i.e. you are asked before it happens)
+or disabled by default.
+
+Note that frequently app tracking is implemented using proprietary software,
+e.g. Google Analytics or Flurry. Apps containing these proprietary libraries
+will **not** be found in the F-Droid repo.
+
+Here's the list of [apps with Tracking](https://f-droid.org/wiki/page/Category:Apps_with_Tracking_antifeature).
+
+
+### Non-free Network Services
+
+This Anti-Feature is applied to apps that promote or depend entirely on
+a non-Free network service.
+
+Here's the list of [apps with Non-Free Network Services](https://f-droid.org/wiki/page/Category:Apps_with_NonFreeNet_antifeature).
+
+
+### Non free Addons
+
+This Anti-Feature is applied to apps that, although Free Software themselves,
+promote other non-Free applications or plugins.
+
+Here's the list of [apps with Non free Addons](https://f-droid.org/wiki/page/Category:Apps_with_NonFreeAdd_antifeature).
+
+
+### Non free Dependencies
+
+This Anti-Feature is applied to apps that have dependencies on Non-Free
+Software.
+
+This does not mean that Non-Free Software is included with the app,
+but for example, it may depend on other Non-Free Software already being
+installed on your device. A common example would be an app that doesn't
+run, or is not useful, unless you have Google Maps installed.
+
+Here's the list of [apps with Non free Dependencies](https://f-droid.org/wiki/page/Category:Apps_with_NonFreeDep_antifeature).
+
+
+### Upstream Non-free
+
+This Anti-Feature is applied to apps where the upstream source code
+is Non-Free in some way.
+
+This does not mean that Non-Free Software is included with the app.
+Most likely, the F-Droid build has been patched in some way to remove
+the Non-Free code/libraries, and/or some functionality may be missing.
+The app's description will usually go into more detail about this.
+
+In our experience, where the upstream developer includes Non-Free libraries,
+sooner or later they will include more Non-Free libraries, or other
+Anti-Features. Frequently they become impossible to maintain/update in
+F-Droid. If there is an alternative, it is recommended that you avoid
+applications with this Anti-Feature if future updates are important to you.
+
+Here's the list of [apps with Upstream Non-free](https://f-droid.org/wiki/page/Category:Apps_with_UpstreamNonFree_antifeature).
+
+
+### Non-Free Assets
+
+This Anti-Feature is applied to apps that contain and make use of
+non-free assets. The most common case is apps using artwork -
+images, sounds, music, etc - under a non-commercial license.
+
+Here's the list of [apps with Non-Free Assets](https://f-droid.org/wiki/page/Category:Apps_with_NonFreeAssets_antifeature).
+
+
+### Known Vulnerability
+
+This Anti-Feature is applied to apps with a known security vulnerability,
+found by one of the scanners in _fdroidserver_.
+
+Here's the list of [apps with Known Vulerabilities](https://f-droid.org/wiki/page/Category:Apps_with_KnownVuln_antifeature).
+
+
+### Disabled Algorithm
+
+This Anti-Feature is applied to apps that were signed using a signature
+algorithm that is considered outdated or unsafe.
+
+Here's the list of [apps signed with Disabled Algorithms](https://f-droid.org/wiki/page/Category:Apps_with_DisabledAlgorithm_antifeature).
+
+
+### No Source Since
+
+The upstream source for this app is no longer available. Either the app went
+proprietary, the source repository was dropped, or it has moved to a location
+currently not known to us. This means there will not be further updates unless
+the source reappears.
+
+Here's a list of [apps with No Source](https://f-droid.org/wiki/page/Category:Apps_with_NoSourceSince_antifeature).
+
+
+## Reporting Anti-Features
+
+While our package maintainers are working hard to find all Anti-Features
+and bring them to your attention, some might remain unnoticed or slip in
+with an app update. Should you discover that an app contains an Anti-Feature
+F-Droid is not aware of, please report it. You can submit them by E-Mail to
+[team@f-droid.org](mailto:team@f-droid.org) or open an issue here:
+[gitlab.com/fdroid/fdroiddata/issues](https://gitlab.com/fdroid/fdroiddata/issues).
