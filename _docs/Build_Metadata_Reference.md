@@ -58,6 +58,7 @@ The following sections describe the fields recognised within the file.
 - [_WebSite_](#WebSite)
 - [_SourceCode_](#SourceCode)
 - [_IssueTracker_](#IssueTracker)
+- [_Translation_](#Translation)
 - [_Changelog_](#Changelog)
 - [_Donate_](#Donate)
 - [_FlattrID_](#FlattrID)
@@ -220,7 +221,16 @@ This is converted to (`<tracker>`) in the XML file (_index.xml_).
 
 
 
-### 7.11 _Changelog_<a name="Changelog"></a>
+### 7.11 _Translation_<a name="Translation"></a>
+
+The URL for the application’s translation portal or at least a guide.
+Optional, since not all applications have one.
+
+This is converted to (`translation`) in the JSON file (_index.json_).
+
+
+
+### 7.12 _Changelog_<a name="Changelog"></a>
 
 The URL for the application’s changelog. Optional, since not all
 applications have one.
@@ -229,7 +239,7 @@ This is converted to (`<changelog>`) in the XML file (_index.xml_).
 
 
 
-### 7.12 _Donate_<a name="Donate"></a>
+### 7.13 _Donate_<a name="Donate"></a>
 
 The URL to donate to the project. This should be the project’s donate
 page if it has one.
@@ -245,7 +255,7 @@ This is converted to (`<donate>`) in the XML file (_index.xml_).
 
 
 
-### 7.13 _FlattrID_<a name="FlattrID"></a>
+### 7.14 _FlattrID_<a name="FlattrID"></a>
 
 The project’s Flattr (https://flattr.com) ID, if it has one. This should
 be a numeric ID, such that (for example) https://flattr.com/thing/xxxx
@@ -255,7 +265,7 @@ This is converted to (`<flattr>`) in the XML file (_index.xml_).
 
 
 
-### 7.14 _LiberapayID_<a name="LiberapayID"></a>
+### 7.15 _LiberapayID_<a name="LiberapayID"></a>
 
 The project’s Liberapay (https://liberapay.com) ID, if it has one. This should
 be a numeric ID, such that (for example) https://liberapay.com/~xxxxx
@@ -267,7 +277,7 @@ This is converted to (`<liberapay>`) in the XML file (_index.xml_).
 
 
 
-### 7.15 _Bitcoin_<a name="Bitcoin"></a>
+### 7.16 _Bitcoin_<a name="Bitcoin"></a>
 
 A bitcoin address for donating to the project.
 
@@ -275,7 +285,7 @@ This is converted to (`<bitcoin>`) in the XML file (_index.xml_).
 
 
 
-### 7.16 _Litecoin_<a name="Litecoin"></a>
+### 7.17 _Litecoin_<a name="Litecoin"></a>
 
 A litecoin address for donating to the project.
 
@@ -283,7 +293,7 @@ This is converted to (`<litecoin>`) in the XML file (_index.xml_).
 
 
 
-### 7.17 _Summary_<a name="Summary"></a>
+### 7.18 _Summary_<a name="Summary"></a>
 
 A brief summary of what the application is. Since the summary is only
 allowed one line on the list of the F-Droid client, keeping it to within
@@ -296,7 +306,7 @@ This is converted to (`<summary>`) in the XML file (_index.xml_).
 
 
 
-### 7.18 _Description_<a name="Description"></a>
+### 7.19 _Description_<a name="Description"></a>
 
 A full description of the application, relevant to the latest version.
 This can span multiple lines (which should be kept to a maximum of 80
@@ -333,7 +343,7 @@ This is converted to (`<desc>`) in the XML file (_index.xml_).
 
 
 
-### 7.19 _MaintainerNotes_<a name="MaintainerNotes"></a>
+### 7.20 _MaintainerNotes_<a name="MaintainerNotes"></a>
 
 This is a multi-line field using the same rules and syntax as the
 description. It’s used to record notes for F-Droid maintainers to assist
@@ -343,7 +353,7 @@ This information is also published to the wiki.
 
 
 
-### 7.20 _RepoType_<a name="RepoType"></a>
+### 7.21 _RepoType_<a name="RepoType"></a>
 
 The type of repository - for automatic building from source. If this is
 not specified, automatic building is disabled for this application.
@@ -358,7 +368,7 @@ Possible values are:
 
 
 
-### 7.21 _Repo_<a name="Repo"></a>
+### 7.22 _Repo_<a name="Repo"></a>
 
 The repository location. Usually a git: or svn: URL, for example.
 
@@ -381,7 +391,7 @@ and you want to use this srclib, then you have to set Repo to `FooBar`.
 
 
 
-### 7.22 _Binaries_<a name="Binaries"></a>
+### 7.23 _Binaries_<a name="Binaries"></a>
 
 The location of binaries used in verification process.
 
@@ -395,7 +405,7 @@ F-Droid will use upstream binaries if the verification succeeded.
 
 
 
-### 7.23 _Builds_<a name="Builds"></a>
+### 7.24 _Builds_<a name="Builds"></a>
 
 Any number of sub-entries can be present, each specifying a version to
 automatically build from source.
@@ -766,7 +776,7 @@ configuration to the build. These are (roughly in order of application):
 
 
 
-### 7.24 _AntiFeatures_<a name="AntiFeatures"></a>
+### 7.25 _AntiFeatures_<a name="AntiFeatures"></a>
 
 This is optional - if present, it contains a comma-separated list of any
 of the following values, describing an anti-feature the application has.
@@ -805,7 +815,7 @@ description:
 This is converted to (`<antifeatures>`) in the XML file (_index.xml_).
 
 
-### 7.25 _Disabled_<a name="Disabled"></a>
+### 7.26 _Disabled_<a name="Disabled"></a>
 
 If this field is present, the application does not get put into the
 public index. This allows metadata to be retained while an application
@@ -817,7 +827,7 @@ an app has outlived it’s usefulness, because the source tarball is
 retained.
 
 
-### 7.26 _RequiresRoot_<a name="RequiresRoot"></a>
+### 7.27 _RequiresRoot_<a name="RequiresRoot"></a>
 
 Set this optional field to "Yes" if the application requires root
 privileges to be usable. This lets the client filter it out if the user
@@ -828,7 +838,7 @@ asked for and the reason for it.
 This is converted to (`<requirements>`) in the XML file (_index.xml_).
 
 
-### 7.27 _ArchivePolicy_<a name="ArchivePolicy"></a>
+### 7.28 _ArchivePolicy_<a name="ArchivePolicy"></a>
 
 This determines the policy for moving old versions of an app to the
 archive repo, if one is configured. The configuration sets a default
@@ -840,7 +850,7 @@ Currently the only supported format is "n versions", where n is the
 number of versions to keep. Defaults to "3 versions".
 
 
-### 7.28 _UpdateCheckMode_<a name="UpdateCheckMode"></a>
+### 7.29 _UpdateCheckMode_<a name="UpdateCheckMode"></a>
 
 This determines the method using for determining when new releases are
 available - in other words, the updating of the _CurrentVersion_ and
@@ -928,7 +938,7 @@ Valid modes are:
 
 
 
-### 7.29 _VercodeOperation_<a name="VercodeOperation"></a>
+### 7.30 _VercodeOperation_<a name="VercodeOperation"></a>
 
 Operation to be applied to the vercode obtained by the defined
 _UpdateCheckMode_. `%c` will be replaced by the actual vercode, and
@@ -941,7 +951,7 @@ to track updates and build up to four different versions of every
 upstream version.
 
 
-### 7.30 _UpdateCheckIgnore_<a name="UpdateCheckIgnore"></a>
+### 7.31 _UpdateCheckIgnore_<a name="UpdateCheckIgnore"></a>
 
 When checking for updates (via _UpdateCheckMode_) this can be used to
 specify a regex which, if matched against the version name, causes that
@@ -949,7 +959,7 @@ version to be ignored. For example, ’beta’ could be specified to ignore
 version names that include that text.
 
 
-### 7.31 _UpdateCheckName_<a name="UpdateCheckName"></a>
+### 7.32 _UpdateCheckName_<a name="UpdateCheckName"></a>
 
 When checking for updates (via _UpdateCheckMode_) this can be used to
 specify the package name to search for. Useful when apps have a static
@@ -961,12 +971,12 @@ only be used in some specific cases, for example if the app’s
 build.gradle file does not contain the package name.
 
 
-### 7.32 _UpdateCheckData_<a name="UpdateCheckData"></a>
+### 7.33 _UpdateCheckData_<a name="UpdateCheckData"></a>
 
 Used in conjunction with _UpdateCheckMode_ for certain modes.
 
 
-### 7.33 _AutoUpdateMode_<a name="AutoUpdateMode"></a>
+### 7.34 _AutoUpdateMode_<a name="AutoUpdateMode"></a>
 
 This determines the method using for auto-generating new builds when new
 releases are available - in other words, adding a new Build Version line
@@ -993,7 +1003,7 @@ Valid modes are:
     "Version +-fdroid %v" - "-fdroid" is the suffix.
 
 
-### 7.34 _CurrentVersion_<a name="CurrentVersion"></a>
+### 7.35 _CurrentVersion_<a name="CurrentVersion"></a>
 
 The [name of the version](https://developer.android.com/guide/topics/manifest/manifest-element.html#vname) that is the recommended release. There may be newer versions of
 the application than this (e.g. unstable versions), and there will
@@ -1009,7 +1019,7 @@ This field is normally automatically updated - see _UpdateCheckMode_.
 This is converted to (`<marketversion>`) in the XML file (_index.xml_).
 
 
-### 7.35 _CurrentVersionCode_<a name="CurrentVersionCode"></a>
+### 7.36 _CurrentVersionCode_<a name="CurrentVersionCode"></a>
 
 The [version code](https://developer.android.com/guide/topics/manifest/manifest-element.html#vcode) corresponding to the [_CurrentVersion_](#CurrentVersion) field. Both these
 fields must be correct and matching although it’s the current version
@@ -1025,7 +1035,7 @@ they can, as if the _CurrentVersionCode_ was infinite.
 This is converted to (`<marketvercode>`) in the XML file (_index.xml_).
 
 
-### 7.36 _NoSourceSince_<a name="NoSourceSince"></a>
+### 7.37 _NoSourceSince_<a name="NoSourceSince"></a>
 
 In case we are missing the source code for the _CurrentVersion_ reported
 by Upstream, or that non-free elements have been introduced, this
