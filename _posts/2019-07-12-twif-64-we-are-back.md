@@ -1,4 +1,5 @@
 ---
+layout: post
 title: "TWIF 64: We are back!"
 edition: 64
 author: "Hanna"
