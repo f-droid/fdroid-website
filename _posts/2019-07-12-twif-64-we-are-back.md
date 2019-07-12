@@ -5,6 +5,12 @@ edition: 64
 author: "Hanna"
 authorWebsite: "https://tutanota.com/"
 date: 2019-07-11
+mastodonAccount: "**[@fdroidorg@mastodon.technology](https://mastodon.technology/@fdroidorg)**"
+twifTag: "**[#TWIF](https://mastodon.technology/tags/twif)**"
+twifThread: "[TWIF submission thread](https://forum.f-droid.org/t/twif-submission-thread)"
+matrixRoom: "[#fdroid:f-droid.org](https://matrix.to/#/#fdroid:f-droid.org)"
+telegramRoom: "https://t.me/joinchat/AlRQekvjWDTuQrCgMYSNVA"
+forum: "https://forum.f-droid.org"
 ---
 
 This Week In F-Droid {{ page.edition }}, Week {{ page.date | date: "%V, %G" }} <a href="{{ site.baseurl }}/feed.xml"><img src="{{ site.baseurl }}/assets/Feed-icon-16x16.png" alt="Feed"></a>
@@ -33,7 +39,7 @@ faster, thanks to the new
 
 * Tusky is free software. Following the block of Gab users by Tusky, someone contacted Richard Stallman who [clarified](https://forum.f-droid.org/t/tusky-is-nonfree/6448/48) that Tusky is free software.
 * Nico published a nice blog post about F-Droid [reproducible builds](https://nico.dorfbrunnen.eu/posts/2019/reproducibility-fdroid/).
-* Framapiaf has published a day-by-day report on [localization](https://i18n.lepiller.eu/i18n.html) of F-Droid apps.
+* [roptat](https://framapiaf.org/@roptat) has published a day-by-day report on [localization](https://i18n.lepiller.eu/i18n.html) of F-Droid apps.
 
 There are **98** new and **408** updated apps.
 
