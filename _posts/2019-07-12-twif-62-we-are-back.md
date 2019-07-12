@@ -22,7 +22,7 @@ faster, thanks to the new
 [deploy server]({{ site.baseurl }}/{% post_url 2019-07-06-improving-our-bus-factor %}).
 
 
-#### F-Droid core
+#### F-Droid news
 
 * Released F-Droid [v1.7](https://f-droid.org/2019/06/15/panic-app-uninstall-and-repo-reset.html) which includes new PanicKit responses: uninstall any app on the device, and, reset repos to default.
 * [Secure email provider Tutanota](https://tutanota.com) has added an encrypted [calendar](https://tutanota.com/blog/posts/free-encrypted-calendar) to their app.
@@ -143,7 +143,7 @@ There are **98** new and **408** updated apps.
 
 ### Updated apps
 
-In total, **408** apps were updated this week. Here are the highlights:
+In total, **408** apps were updated since last TWIF!
 
 * **[SUSI.AI](https://f-droid.org/app/ai.susi)** was updated from 1.0.14 to 1.1.0
 * **[Acrylic Paint](https://f-droid.org/app/anupam.acrylic)** was updated from 2.2.1 to 2.3.0
@@ -566,7 +566,6 @@ The following updates won't be automatically suggested to you unless you have "U
 * **[F-Droid](https://f-droid.org/app/org.fdroid.fdroid)** was [updated](https://gitlab.com/fdroid/fdroidclient/raw/HEAD/CHANGELOG.md) from 1.6-alpha2 to 1.7
 * **[FreeOTP+](https://f-droid.org/app/org.liberty.android.freeotpplus)** was updated from 1.2 to 1.4
 
-0 apps had beta upgrades.
 
 ### Removed apps
 
