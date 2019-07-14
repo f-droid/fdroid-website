@@ -192,14 +192,6 @@ layout: default-package-sidebar
 					{% endif %}
 				</p>
 
-				<p class="package-version-download">
-					<a href="{{ site.fdroid-repo }}/{{ package.apk_name }}">
-						{{ strings.download | replace: '[file_extension]', package.file_extension }}
-					</a>
-					{{ package.size|file_size_human_readable }}
-					<a href="{{ site.fdroid-repo }}/{{ package.apk_name }}.asc">{{ strings.gpg_signature }}</a>
-				</p>
-
 				{% if package.anti_features != "" and package.anti_features != nil %}
 				<div class="package-version-anti-features">
 					<details {% if forloop.first %}open{% endif %}>
@@ -248,6 +240,17 @@ layout: default-package-sidebar
 					</details>
 				</div>
 				{% endif %}
+
+				
+				<p class="package-version-download">
+					<b>
+						<a href="{{ site.fdroid-repo }}/{{ package.apk_name }}">
+							{{ strings.download | replace: '[file_extension]', package.file_extension }}
+						</a>
+					</b>
+					{{ package.size|file_size_human_readable }}
+					<a href="{{ site.fdroid-repo }}/{{ package.apk_name }}.asc">{{ strings.gpg_signature }}</a>
+				</p>
 
 			</li>
 
