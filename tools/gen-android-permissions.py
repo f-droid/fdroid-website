@@ -59,5 +59,5 @@ for perm in perms:
         
 # Write JSON to file
 with open('_data/android_permissions.json', 'w') as outfile:  
-    json.dump(permissions, outfile)
+    json.dump(permissions, outfile, indent=4, sort_keys=True, ensure_ascii=False)
 
