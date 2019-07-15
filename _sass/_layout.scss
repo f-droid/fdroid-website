@@ -207,11 +207,18 @@ body {
      }
 
      .package-version {
-        margin-bottom: 20px;
+        margin: 20px 0;
+        padding: 16px;
+        background: #F5F5F5;
+        // border-bottom: 1px solid #eee;
+        p {
+          margin: .4em 0;
+        }
      }
 
      .package-anti-features-summary, .package-version-anti-feature-summary, .package-version-permissions-summary {
         font-weight: bold;
+        cursor: pointer;
      }
 
      .package-links {
@@ -333,6 +340,32 @@ body {
             top: 50%;
             margin-top: -25px;
         }
+    }
+
+    .package-version-permissions-list {
+      list-style-type: none;
+      margin-bottom: .8em;
+      .permission {
+        position: relative;
+        margin-bottom: .2em;
+        &:before {
+          content: "";
+          position: absolute;
+          width: 7px;
+          height: 3px;
+          margin-top: .7em;
+          margin-left: -.9em;
+          background-color: #444;
+        }
+        .permission-label {
+          font-weight: bold;
+        }
+        .permission-description {
+          color: #444;
+          font-size: .9em;
+          line-height: 1.3em;
+        }
+      }
     }
  }
  
