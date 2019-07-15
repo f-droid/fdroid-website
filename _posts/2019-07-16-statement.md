@@ -1,0 +1,18 @@
+---
+layout: post
+title: "Public Statement on Neutrality of Free Software"
+author: "F-Droid"
+authorWebsite: "https://f-droid.org"
+---
+
+In the past week, a controversy around F-Droid took place at its forum and in the [fediverse](https://en.wikipedia.org/wiki/Fediverse). We feel like we have to put out a public statement to clear F-Droid's position on it.
+
+To recap the situation: a website joined the fediverse only half a month ago that is well known to be a "free speech zone", meaning it claims to tolerate all opinions. While in theory this might seem to be a good concept, it has serious consequences: things like racism, sexism, verbal abuse, violent nationalist propaganda, discrimination against gender and sexual minorities, antisemitism and a lot more things become popular on such instances. For good reasons, all these things are prohibited on the clear majority of instances in the fediverse. Because of this, yet even before mentioned website joined the fediverse, most instances already blocked it.
+
+The developers of Tusky, one of the most popular app to access the fediverse on Android devices, decided to go a step further by implementing a mechanism that doesn't allow to log into mentioned website. Fedilab on the other hand decided not to implement such a mechanism, stating that it's ineffective (more on this below) and that a tool's developer should not decide which people are allowed to use it.
+
+F-Droid as a project soon celebrates its 9th birthday. In these 9 years, F-Droid's mission was and is to create a place where people could download software they can trust – meaning only free, libre and open source software is available on its flagship repository. As a project, it tried to stay neutral all the time. But sometimes, staying neutral isn't an option but instead will lead to the uprise of previously mentioned oppression and harassment against marginalized groups. We don't want and won't support that. F-Droid is taking a political stance here.
+
+F-Droid won't tolerate oppression or harassment against marginalized groups. Because of this, it won't package nor distribute apps that promote any of these things. This includes that it won't distribute an app that promotes the usage of previously mentioned website, by either its branding, its pre-filled instance domain or any other direct promotion. This also means F-Droid won't allow oppression or harassment to happen at its communication channels, including its forum. In the past week, we failed to fulfill this goal on the forum, and we want to apologize for that.
+
+We believe platforms like F-Droid's repository or fediverse instances must be moderated in order to prevent oppression and harassment to flourish. We think, however, that one needs to differentiate between platforms and tools. By its very nature, free software [by definition](https://www.gnu.org/philosophy/free-sw.en.html) allows users "to study how the program works, and change it so it does your computing as you wish". Because of this, any restriction implemented in free software is basically ineffective, because people can modify the source code and remove those restrictions. We respect Tusky's decision to block mentioned website; it's their right to introduce restrictions like these into their software. We also respect Fedilab's decision not to hardcode a login block; instead they are actively working on making it easier to block certain domains in the app itself and thus giving users more power to moderate which content they'll see. If people disagree with F-Droid's decision not to flag Fedilab, an idea is to develop a decentralized tag system that based on package IDs allow third-party servers to share their own warnings with their community.
