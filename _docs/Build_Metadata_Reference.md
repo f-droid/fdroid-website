@@ -784,13 +784,18 @@ It is a good idea to mention the reasons for the anti-feature(s) in the
 description:
 
 -   ‘Ads’ - the application contains advertising.
--   ‘Tracking’ - the application tracks and reports your activity to
-    somewhere without your consent. It’s commonly used for when
-    developers obtain crash logs without the user’s consent, or when an
-    app is useless without some kind of authentication.
--   ‘NonFreeNet’ - the application relies on computational services that
-    are impossible to replace or that the replacement cannot be
-    connected to without major changes to the app.
+-   ‘Tracking’ - user or activity data is tracked or leaks, by default.
+    True if the app or a feature can not be used without collecting and sharing
+    such data, or doing requests to a data collecting network service (regard-
+    less if the service is based on free software, or not). For example, 
+    activity-based down-loading of weather data, maps, avatars etc. (data 
+    hosting and delivery services), or uploading of crash logs etc.
+-   ‘NonFreeNet’ - the application contains a feature that uses a non-free
+    network service which is impossible, or not easy to replace. Replacement
+    requires changes to the app or service. This antifeature would not apply, if
+    there is a simple configuration option that allows pointing the app to a 
+    running instance of an alternative, publicly available, self-hostable, free 
+    software server solution.
 -   ‘NonFreeAdd’ - the application promotes non-free add-ons, such that
     the app is effectively an advert for other non-free software.
 -   ‘NonFreeDep’ - the application depends on a non-free application
