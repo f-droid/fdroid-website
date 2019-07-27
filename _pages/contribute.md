@@ -45,3 +45,8 @@ to ensure they fit with the direction of the project,
 and do not clash with or duplicate work already in development.
 
 For working with the server and data projects, it’s a good idea to read [the manual]({{ "/docs/" | prepend: site.baseurl }}).
+
+### Help with Infrastructure
+
+F-Droid provides multiple servers (builders, web portal, download areas...) which need regular maintenance, Ansible-based deployment, and hardware management.
+Further information can be found by asking [on IRC](https://webchat.freenode.net/?channels=%23fdroid-dev) (#fdroid-dev on freenode) or team@f-droid.org.
