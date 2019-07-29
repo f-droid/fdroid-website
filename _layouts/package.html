@@ -233,6 +233,7 @@ layout: default-package-sidebar
 
 				{% if package.uses_permission != "" and package.uses_permission != nil %}
 				<div class="package-version-permissions">
+					{% if package.uses_permission %}
 					<details {% if forloop.first %}open{% endif %}>
 						<summary class="package-version-permissions-summary">
 							{{ strings.permissions }}
@@ -245,8 +246,16 @@ layout: default-package-sidebar
 
 							{% if site.data.android_permissions[permission.permission] != nil %}
 								{% assign perm = site.data.android_permissions[permission.permission] %}
-								<div class="permission-label">{{ site.data.strings.permissions[perm.label] }}</div>
+								<div class="permission-label">
+								{% if perm.label %}
+									{{ site.data.strings.permissions[perm.label] }}
+								{% else %}
+									{{ permission.permission }}
+								{% endif %}
+								</div>
+								{% if perm.description %}
 								<div class="permission-description">{{ site.data.strings.permissions[perm.description] }}</div>
+								{% endif %}								
 							{% else %}
 								<div class="permission-label">{{ permission.permission }}</div>
 							{% endif %}
@@ -259,9 +268,16 @@ layout: default-package-sidebar
 							{% endfor %}
 						</ul>
 					</details>
+					{% else %}
+					<div class="no-permissions">{{ strings.no_permissions }}</div>
+					{% endif %}
 				</div>
 				{% endif %}
 
+				
+
+
+				
 				
 				<p class="package-version-download">
 					<b>
