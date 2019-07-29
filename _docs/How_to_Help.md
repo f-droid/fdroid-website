@@ -102,6 +102,10 @@ For working with the server project, it's a good idea to read
 [the docs](http://f-droid.org/docs/) and learn our
 [git workflow](https://f-droid.org/wiki/page/git_workflow).
 
+### Help with Infrastructure
+
+F-Droid provides multiple servers (builders, web portal, download areas...) which need regular maintenance, Ansible-based deployment, and hardware management.
+Further information can be found by asking [on IRC](https://webchat.freenode.net/?channels=%23fdroid-dev) (#fdroid-dev on freenode) or team@f-droid.org.
 
 ### Design
 
