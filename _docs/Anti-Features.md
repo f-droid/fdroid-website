@@ -42,7 +42,7 @@ time you would see this Anti-Feature applied would be an app that contains
 advertising without using Non-free Software to do it. No such apps are
 currently known to exist.
 
-Here's the list of [apps with Adds](https://f-droid.org/wiki/page/Category:Apps_with_Ads_antifeature).
+Here's the list of [apps with Ads](https://f-droid.org/wiki/page/Category:Apps_with_Ads_antifeature).
 
 
 ### Tracking<a name="Tracking" />
