@@ -41,8 +41,8 @@ Additionally:
 -   The software should use its own unique Android package ID. Where the
     application is a fork of another (even one not included in the
     F-Droid repository) it must have a new ID, different from
-    the original. Please also make sure to rename your fork accordingly
-    (including all active translations).
+    the original. Make sure to rename your fork accordingly (including
+    all active translations).
 -   Although not ideal, "non-functional" assets (e.g. artwork) *may* be
     acceptable under less permissive licenses than functional code - an
     example would be artwork assets that are licensed only for use with
