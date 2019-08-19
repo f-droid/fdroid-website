@@ -112,7 +112,7 @@ for more details.
 ### How do I update all my installed programs at once?
 
 You can't yet. See [Issue 36 - Update
-All](https://f-droid.org/repository/issues/?do=view_issue&issue=36).
+All](https://gitlab.com/fdroid/fdroidclient/issues/16).
 
 
 ### Why doesn't the client show the number of installs/downloads for each app?
