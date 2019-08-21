@@ -16,12 +16,12 @@ Keep in mind that the F-Droid ecosystem consists of several components. Thus, co
 
 Check out the descriptions to find an appropriate consultant for your needs.
 
-### Confidential Technologies GmbH
+### COTECH - Confidential Technologies GmbH
 
 * __Website:__ [https://www.cotech.de/f-droid](https://www.cotech.de/f-droid)
 * __Email:__ [contact@cotech.de](mailto:contact@cotech.de)
-* __Phone:__ +49 531 3913154
-* __Address:__ Confidential Technologies GmbH, c/o Institut für Betriebssysteme, Mühlenpfordtstr. 23, 38106 Braunschweig
+* __Phone:__ +49 531 22435119
+* __Address:__ Confidential Technologies GmbH, Wilhelmsgarten 3, 38100 Braunschweig
 * __Languages:__ English, German
 * __Specializations:__ Custom F-Droid deployments, feature extensions, whitelabel solutions
 
