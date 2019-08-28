@@ -33,14 +33,22 @@ AddOutputFilterByType DEFLATE application/svg+xml
 
 # 12 hours
 <FilesMatch "\.(css|gif|jpg|jpeg|js|json|png|svg|txt|xml)$">
-  Header set Cache-Control "max-age=43200, public"
+  Header set Cache-Control "max-age=43200, public, immutable"
 </FilesMatch>
 
 # 10 minutes
 <FilesMatch "\.html$">
-  Header set Cache-Control "max-age=600, public"
+  Header set Cache-Control "max-age=600, public, immutable"
+</FilesMatch>
+<FilesMatch "\.html\.[a-z][a-z](|_[A-Z][A-Z]|_Han[st])$">
+  Header set Cache-Control "max-age=600, public, immutable"
 </FilesMatch>
 
+# 1 year for filenames with SHA-256 hash in them
+# https://gitlab.com/fdroid/fdroidserver/merge_requests/669
+<FilesMatch "^[a-zA-Z-]{4,}_[a-zA-Z0-9_=-]{44}\.(css|gif|jpg|jpeg|js|json|png|svg|txt|xml)$">
+  Header set Cache-Control "max-age=31536000, public, immutable"
+</FilesMatch>
 
 
 RewriteEngine On
