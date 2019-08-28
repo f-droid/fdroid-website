@@ -24,7 +24,12 @@ for f in _data/[a-z][a-z]*/strings.json; do
     fi
 done
 
+# load from ftp.fau.de mirror to test with a mirror
 sed -i \
     -e "s/^languages:.*/languages: [ $languages ]/" \
     -e "s,^fdroid-repo:.*,fdroid-repo: https://ftp.fau.de/fdroid/repo," \
     _config.yml
+
+sed -i \
+    -e "s,^\( *img-src .*\); \\\\,\1 https://ftp.fau.de; \\\\," \
+    .htaccess
