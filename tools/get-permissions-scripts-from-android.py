@@ -21,6 +21,10 @@ for d in sorted(glob.glob(os.path.join(resdir, 'values*'))):
         locale = ''
     else:
         locale = d.split('/')[-1][7:].replace('-rCN', '_Hans').replace('-rTW', '_Hant').replace('-r', '_')
+        if locale == 'iw':
+            locale = 'he'
+        elif locale == 'in':
+            locale = 'id'
     jsonfile = os.path.join('/home/hans/code/fdroid/website/_data/', locale, 'strings.json')
 
     writechanges = False
