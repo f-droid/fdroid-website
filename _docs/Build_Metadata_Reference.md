@@ -54,7 +54,6 @@ The following sections describe the fields recognised within the file.
 - [_License_](#License)
 - [_AutoName_](#AutoName)
 - [_Name_](#Name)
-- [_Provides_](#Provides)
 - [_WebSite_](#WebSite)
 - [_SourceCode_](#SourceCode)
 - [_IssueTracker_](#IssueTracker)
@@ -176,20 +175,6 @@ __Warning__: this overrides all Name entries
 [set in the app's source code](../All_About_Descriptions_Graphics_and_Screenshots).
 
 This is converted to (`<name>`) in the XML file (_index.xml_).
-
-
-
-### 7.7 _Provides_<a name="Provides"></a>
-
-Comma-separated list of application IDs that this app provides. In other
-words, if the user has any of these apps installed, F-Droid will show
-this app as installed instead. It will also appear if the user clicks on
-urls linking to the other app IDs. Useful when an app switches package
-name, or when you want an app to act as multiple apps.
-
-Currently this functionality is a stub.
-
-This is converted to (`<provides>`) in the XML file (_index.xml_).
 
 
 
@@ -1049,3 +1034,16 @@ missing source code for just one or a few versions, but provide source
 code for newer ones are not to be considered here - this field is
 intended to illustrate which apps do not currently distribute source
 code, and since when have they been doing so.
+
+
+
+
+# Deprecated or Removed Fields
+
+### _Provides_<a name="Provides"></a>
+
+Comma-separated list of application IDs that this app provides. This
+field was only ever a stub and was never used for anything.  It was
+never supported in _index-v1.json nor _.yml_ metadata files.
+
+This is converted to (`<provides>`) in the XML file (_index.xml_).
