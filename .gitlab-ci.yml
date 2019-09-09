@@ -15,7 +15,7 @@ variables:
   ruby -v
   sed -i '/jessie-updates/d' /etc/apt/sources.list
   apt-get update
-  apt-get install -y locales zlib1g-dev gettext po4a linkchecker bundler unzip python3 rsync python3-babel
+  apt-get install -qy locales zlib1g-dev gettext po4a linkchecker bundler unzip python3 rsync python3-babel
   grep '^en_US.UTF-8 UTF-8' /etc/locale.gen || echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen
   locale-gen
   export LC_ALL=en_US.UTF-8
@@ -163,7 +163,7 @@ i18n_sync:
   image: debian:jessie-slim
   script:
     - apt update -y
-    - apt-get install -y --no-install-recommends bash gettext git grep po4a sed
+    - apt-get install -qy --no-install-recommends bash gettext git grep po4a sed
     - for f in po/_posts.*.po; do msgmerge --no-wrap --sort-by-file  --add-location=file --update $f po/_posts.pot; done
     - for f in po/_docs.*.po; do msgmerge --no-wrap --sort-by-file  --add-location=file --update $f po/_docs.pot; done
     - git checkout po/*.pot  # ignore the newly generated timestamp
