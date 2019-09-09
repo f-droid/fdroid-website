@@ -100,10 +100,9 @@ can't hurt to include it.
 
 Download the full "CD" or "DVD" image of Debian to run the install.
 Be sure to [verify](https://www.debian.org/CD/verify) the GPG
-signatures and the SHA-256 hashes.  One essential utility is
-_apt-offline_, which automates the process of downloading Debian
-packages, verifying their signatures, and copying them over to an
-offline machine.
+signatures and the SHA-256 hashes.  In order to update the offline
+machine, an "[apt offline](https://www.debian.org/doc/manuals/apt-offline)"
+setup is required.
 
 To be extra careful, all of the software used should be verified.
 Chromebooks are nice, cheap laptops that run Linux natively.  They
