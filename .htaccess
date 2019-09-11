@@ -261,6 +261,40 @@ RewriteRule ^(.*)$ /%1/$1? [L,R=302]
 # ============================================================================== #
 # HTTP security headers
 
+# This site needs hardly any JS features, so disable them. There is no
+# way to set the default to none yet, once that is available, this
+# should switch to a simple "default 'none';"
+# https://github.com/w3c/webappsec-feature-policy/issues/189
+#
+<FilesMatch "\.(css|js|pdf|svg|html(\.[a-z][a-z](|_[A-Z][A-Z]|_Han[st])))?$">
+Header always set Feature-Policy: "\
+accelerometer 'none'; \
+ambient-light-sensor 'none'; \
+autoplay 'none'; \
+camera 'none'; \
+display-capture 'none'; \
+document-domain 'none'; \
+document-write 'none'; \
+encrypted-media 'none'; \
+fullscreen 'none'; \
+geolocation 'none'; \
+gyroscope 'none'; \
+magnetometer 'none'; \
+microphone 'none'; \
+midi 'none'; \
+payment 'none'; \
+picture-in-picture 'none'; \
+speaker 'none'; \
+sync-xhr 'none'; \
+usb 'none'; \
+wake-lock 'none'; \
+webauthn 'none'; \
+vr 'none'; \
+xr 'none'; \
+"
+</FilesMatch>
+
+
 # Content Security Policy is delivered via a HTTP response header and
 # defines approved sources of content that the browser may load.
 #
