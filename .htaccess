@@ -28,6 +28,13 @@ AddOutputFilterByType DEFLATE image/svg+xml
 AddOutputFilterByType DEFLATE application/svg+xml
 
 
+<IfModule mod_mime.c>
+# remove Perl and set it to Polish
+RemoveType .pl
+RemoveLanguage .po
+AddType text/html .pl
+AddLanguage pl .pl
+
 # cache all files without checking until max-age, after that, the
 # browser check the ETag value to see whether it needs to redownload
 
