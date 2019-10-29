@@ -28,6 +28,20 @@ AddOutputFilterByType DEFLATE image/svg+xml
 AddOutputFilterByType DEFLATE application/svg+xml
 
 
+<IfModule mod_mime.c>
+# remove Perl and set it to Polish
+RemoveType .pl
+RemoveLanguage .po
+AddType text/html .pl
+AddLanguage pl .pl
+
+# the buildserver log files are gzip-compressed, plain text, this
+# allows browsers to decide to show them inline as plain text
+RemoveType .gz
+AddEncoding x-gzip .gz
+</IfModule>
+
+
 # cache all files without checking until max-age, after that, the
 # browser check the ETag value to see whether it needs to redownload
 
