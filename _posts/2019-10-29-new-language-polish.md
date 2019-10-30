@@ -13,10 +13,10 @@ app summaries are in Polish.  If you want to see this reach 100%,
 [contribute on Weblate](https://hosted.weblate.org/projects/f-droid/website/pl/).
 
 This does not mean that every bit of text on the site is in Polish,
-since the app descriptions from the app developers.  To make it easier
-for translators to contribute translations to all the apps in F-Droid,
-you can find the __Translation__ links for apps that have set up a
-translation service.
+since we get the app descriptions from the app developers.  To make it
+easier for translators to contribute translations to all the apps in
+F-Droid, you can find the __Translation__ links for apps that have set
+up a translation service.
 
 ## More languages
 
