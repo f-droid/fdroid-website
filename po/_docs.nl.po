@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Dutch (F-Droid)\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
-"POT-Creation-Date: 2019-08-28 21:26+0200\n"
+"POT-Creation-Date: 2019-09-11 17:20+0200\n"
 "PO-Revision-Date: 2019-09-11 17:12+0200\n"
 "Last-Translator: Nathan Follens <nthn@unseen.is>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/f-droid/website-docs/nl/>\n"
@@ -863,7 +863,7 @@ msgstr ""
 
 #. type: Plain text
 #: build/_docs/md/Building_a_Signing_Server.md
-msgid "Download the full \"CD\" or \"DVD\" image of Debian to run the install.  Be sure to [verify](https://www.debian.org/CD/verify) the GPG signatures and the SHA-256 hashes.  One essential utility is _apt-offline_, which automates the process of downloading Debian packages, verifying their signatures, and copying them over to an offline machine."
+msgid "Download the full \"CD\" or \"DVD\" image of Debian to run the install.  Be sure to [verify](https://www.debian.org/CD/verify) the GPG signatures and the SHA-256 hashes.  In order to update the offline machine, an \"[apt offline](https://www.debian.org/doc/manuals/apt-offline)\" setup is required."
 msgstr ""
 
 #. type: Plain text
@@ -1149,28 +1149,6 @@ msgstr "Naam (_Name_)<a name=\"Name\"></a>"
 #. type: Plain text
 #: build/_docs/md/Build_Metadata_Reference.md
 msgid "The name of the application. Normally, this field should not be present since the application’s correct name is retrieved from the APK file.  However, in a situation where an APK contains a bad or missing application name, it can be overridden using this. Note that this only overrides the name in the list of apps presented in the client; it doesn’t changed the name or application label in the source code."
-msgstr ""
-
-#. type: Title ###
-#: build/_docs/md/Build_Metadata_Reference.md
-#, no-wrap
-msgid "_Provides_<a name=\"Provides\"></a>"
-msgstr "Levert (_Provides_)<a name=\"Provides\"></a>"
-
-#. type: Plain text
-#: build/_docs/md/Build_Metadata_Reference.md
-msgid "Comma-separated list of application IDs that this app provides. In other words, if the user has any of these apps installed, F-Droid will show this app as installed instead. It will also appear if the user clicks on urls linking to the other app IDs. Useful when an app switches package name, or when you want an app to act as multiple apps."
-msgstr ""
-
-#. type: Plain text
-#: build/_docs/md/Build_Metadata_Reference.md
-msgid "Currently this functionality is a stub."
-msgstr ""
-
-#. type: Plain text
-#: build/_docs/md/Build_Metadata_Reference.md
-#, no-wrap
-msgid "This is converted to (`<provides>`) in the XML file (_index.xml_).\n"
 msgstr ""
 
 #. type: Title ###
@@ -2684,6 +2662,29 @@ msgstr "Geen broncode sinds<a name=\"NoSourceSince\"></a>"
 #. type: Plain text
 #: build/_docs/md/Build_Metadata_Reference.md
 msgid "In case we are missing the source code for the _CurrentVersion_ reported by Upstream, or that non-free elements have been introduced, this defines the first version that began to miss source code. Apps that are missing source code for just one or a few versions, but provide source code for newer ones are not to be considered here - this field is intended to illustrate which apps do not currently distribute source code, and since when have they been doing so."
+msgstr ""
+
+#. type: Title #
+#: build/_docs/md/Build_Metadata_Reference.md
+#, no-wrap
+msgid "Deprecated or Removed Fields"
+msgstr ""
+
+#. type: Title ###
+#: build/_docs/md/Build_Metadata_Reference.md
+#, no-wrap
+msgid "_Provides_<a name=\"Provides\"></a>"
+msgstr "Levert (_Provides_)<a name=\"Provides\"></a>"
+
+#. type: Plain text
+#: build/_docs/md/Build_Metadata_Reference.md
+msgid "Comma-separated list of application IDs that this app provides. This field was only ever a stub and was never used for anything.  It was never supported in _index-v1.json nor _.yml_ metadata files."
+msgstr ""
+
+#. type: Plain text
+#: build/_docs/md/Build_Metadata_Reference.md
+#, no-wrap
+msgid "This is converted to (`<provides>`) in the XML file (_index.xml_).\n"
 msgstr ""
 
 #. type: Title #
@@ -4227,7 +4228,9 @@ msgstr "Hoe werk ik tegelijk al mijn geïnstalleerde programma’s bij?"
 
 #. type: Plain text
 #: build/_docs/md/FAQ_-_Client.md
-msgid "You can't yet. See [Issue 36 - Update All](https://f-droid.org/repository/issues/?do=view_issue&issue=36)."
+#, fuzzy
+#| msgid "You can't yet. See [Issue 36 - Update All](https://f-droid.org/repository/issues/?do=view_issue&issue=36)."
+msgid "You can't yet. See [Issue 36 - Update All](https://gitlab.com/fdroid/fdroidclient/issues/16)."
 msgstr "Dit is nog niet mogelijk. Bekijk [probleem 36 - alles bijwerken](https://f-droid.org/repository/issues/?do=view_issue&issue=36) voor meer informatie."
 
 #. type: Title ###
@@ -5578,7 +5581,7 @@ msgstr ""
 
 #. type: Bullet: '-   '
 #: build/_docs/md/Inclusion_Policy.md
-msgid "The software should use its own unique Android package ID. Where the application is a fork of another (even one not included in the F-Droid repository) it must have a new ID, different from the original."
+msgid "The software should use its own unique Android package ID. Where the application is a fork of another (even one not included in the F-Droid repository) it must have a new ID, different from the original. Make sure to rename your fork accordingly (including all active translations)."
 msgstr ""
 
 #. type: Bullet: '-   '

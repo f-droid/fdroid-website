@@ -7,16 +7,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
-"POT-Creation-Date: 2019-08-28 21:26+0200\n"
-"PO-Revision-Date: 2019-09-11 17:11+0200\n"
-"Last-Translator: Thomas johansen <lavahd@protonmail.ch>\n"
+"POT-Creation-Date: 2019-09-11 17:20+0200\n"
+"PO-Revision-Date: 2019-10-08 07:21+0000\n"
+"Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/f-droid/website-docs/nb_NO/>\n"
-"Language: nb_NO\n"
+"Language: nb\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.8-dev\n"
+"X-Generator: Weblate 3.9-dev\n"
 
 #. type: Title #
 #: build/_docs/md/All_About_Descriptions_Graphics_and_Screenshots.md
@@ -879,7 +879,7 @@ msgstr ""
 
 #. type: Plain text
 #: build/_docs/md/Building_a_Signing_Server.md
-msgid "Download the full \"CD\" or \"DVD\" image of Debian to run the install.  Be sure to [verify](https://www.debian.org/CD/verify) the GPG signatures and the SHA-256 hashes.  One essential utility is _apt-offline_, which automates the process of downloading Debian packages, verifying their signatures, and copying them over to an offline machine."
+msgid "Download the full \"CD\" or \"DVD\" image of Debian to run the install.  Be sure to [verify](https://www.debian.org/CD/verify) the GPG signatures and the SHA-256 hashes.  In order to update the offline machine, an \"[apt offline](https://www.debian.org/doc/manuals/apt-offline)\" setup is required."
 msgstr ""
 
 #. type: Plain text
@@ -1179,29 +1179,6 @@ msgstr "Navn<a name=\"Name\"></a>"
 #, fuzzy
 msgid "The name of the application. Normally, this field should not be present since the application’s correct name is retrieved from the APK file.  However, in a situation where an APK contains a bad or missing application name, it can be overridden using this. Note that this only overrides the name in the list of apps presented in the client; it doesn’t changed the name or application label in the source code."
 msgstr "Navnet på programmet.  Normalt bør ikke dette feltet være tilstede siden programmets rette navn hentes inn fra APK-fila. Dog, i en situasjon der APK-fila inneholder et skadet eller manglende programnavn, kan den overskrives ved å bruke dette. Merk at dette bare overskriver navnet i listen over programmer som presenteres i klienten; dette endrer ikke navnet på programmets etikett i kildekoden."
-
-#. type: Title ###
-#: build/_docs/md/Build_Metadata_Reference.md
-#, fuzzy, no-wrap
-msgid "_Provides_<a name=\"Provides\"></a>"
-msgstr "Tilbyr<a name=\"Provides\"></a>"
-
-#. type: Plain text
-#: build/_docs/md/Build_Metadata_Reference.md
-msgid "Comma-separated list of application IDs that this app provides. In other words, if the user has any of these apps installed, F-Droid will show this app as installed instead. It will also appear if the user clicks on urls linking to the other app IDs. Useful when an app switches package name, or when you want an app to act as multiple apps."
-msgstr "Kommainndelt liste over program-ID-er dette programmet tilbyr. Med andre ord, hvis brukeren har noen av disse programmene installert, vil F-Droid vise dette programmet som installert istedenfor. Det vil også vises hvis brukeren klikker på URL-er som lenker til andre program-ID-er. Nyttig når et program bytter pakkenavn, eller når du ønsker at et program skal fungere som flere programmer."
-
-#. type: Plain text
-#: build/_docs/md/Build_Metadata_Reference.md
-#, fuzzy
-msgid "Currently this functionality is a stub."
-msgstr "Denne funksjonaliteten er for øyeblikket en stubbe."
-
-#. type: Plain text
-#: build/_docs/md/Build_Metadata_Reference.md
-#, no-wrap
-msgid "This is converted to (`<provides>`) in the XML file (_index.xml_).\n"
-msgstr "Dette konverteres til (`<provides>`) i XML-fila (_index.xml_).\n"
 
 #. type: Title ###
 #: build/_docs/md/Build_Metadata_Reference.md
@@ -2727,6 +2704,29 @@ msgid "In case we are missing the source code for the _CurrentVersion_ reported 
 msgstr ""
 
 #. type: Title #
+#: build/_docs/md/Build_Metadata_Reference.md
+#, no-wrap
+msgid "Deprecated or Removed Fields"
+msgstr ""
+
+#. type: Title ###
+#: build/_docs/md/Build_Metadata_Reference.md
+#, fuzzy, no-wrap
+msgid "_Provides_<a name=\"Provides\"></a>"
+msgstr "Tilbyr<a name=\"Provides\"></a>"
+
+#. type: Plain text
+#: build/_docs/md/Build_Metadata_Reference.md
+msgid "Comma-separated list of application IDs that this app provides. This field was only ever a stub and was never used for anything.  It was never supported in _index-v1.json nor _.yml_ metadata files."
+msgstr ""
+
+#. type: Plain text
+#: build/_docs/md/Build_Metadata_Reference.md
+#, no-wrap
+msgid "This is converted to (`<provides>`) in the XML file (_index.xml_).\n"
+msgstr "Dette konverteres til (`<provides>`) i XML-fila (_index.xml_).\n"
+
+#. type: Title #
 #: build/_docs/md/Build_Server_Setup.md
 #, no-wrap
 msgid "Build Server Setup"
@@ -4222,8 +4222,10 @@ msgstr ""
 
 #. type: Plain text
 #: build/_docs/md/FAQ_-_Client.md
-msgid "You can't yet. See [Issue 36 - Update All](https://f-droid.org/repository/issues/?do=view_issue&issue=36)."
-msgstr ""
+#, fuzzy
+#| msgid "[F-Droid client app](https://gitlab.com/fdroid/fdroidclient/issues)"
+msgid "You can't yet. See [Issue 36 - Update All](https://gitlab.com/fdroid/fdroidclient/issues/16)."
+msgstr "[F-Droid-klientprogram](https://gitlab.com/fdroid/fdroidclient/issues)"
 
 #. type: Title ###
 #: build/_docs/md/FAQ_-_Client.md
@@ -4911,12 +4913,12 @@ msgstr ""
 #: build/_docs/md/How_to_Help.md
 #, no-wrap
 msgid "Help with Infrastructure"
-msgstr ""
+msgstr "Hjelp med infrastruktur"
 
 #. type: Plain text
 #: build/_docs/md/How_to_Help.md
 msgid "F-Droid provides multiple servers (builders, web portal, download areas...) which need regular maintenance, Ansible-based deployment, and hardware management.  Further information can be found by asking [on IRC](https://webchat.freenode.net/?channels=%23fdroid-dev) (#fdroid-dev on freenode) or team@f-droid.org."
-msgstr ""
+msgstr "F-Droid tilbyr flere tjenere (byggere, vevportal, nedlastingsområder…) som trenger regelmessig vedlikehold, Ansible-basert utrulling, og maskinvarehåndtering. Videre info får du ved å spørre [på IRC](https://webchat.freenode.net/?channels=%23fdroid-dev) (#fdroid-dev on freenode) eller ved å sende en e-post til team@f-droid.org."
 
 #. type: Title ###
 #: build/_docs/md/How_to_Help.md
@@ -5570,7 +5572,7 @@ msgstr ""
 
 #. type: Bullet: '-   '
 #: build/_docs/md/Inclusion_Policy.md
-msgid "The software should use its own unique Android package ID. Where the application is a fork of another (even one not included in the F-Droid repository) it must have a new ID, different from the original."
+msgid "The software should use its own unique Android package ID. Where the application is a fork of another (even one not included in the F-Droid repository) it must have a new ID, different from the original. Make sure to rename your fork accordingly (including all active translations)."
 msgstr ""
 
 #. type: Bullet: '-   '
@@ -9059,6 +9061,13 @@ msgstr ""
 msgid "For a custom build that enables Automatic Updates by default, override _app/src/main/res/xml/preferences.xml_. You can customize the preferences and their default values in _app/src/mycompany/res/xml/preferences.xml_. The fully automatic update requires [Privileged Extension](https://gitlab.com/fdroid/privileged-extension). With regular access, the updates will only automatically download. The user still needs to click install on each one."
 msgstr ""
 
+#~ msgid "Comma-separated list of application IDs that this app provides. In other words, if the user has any of these apps installed, F-Droid will show this app as installed instead. It will also appear if the user clicks on urls linking to the other app IDs. Useful when an app switches package name, or when you want an app to act as multiple apps."
+#~ msgstr "Kommainndelt liste over program-ID-er dette programmet tilbyr. Med andre ord, hvis brukeren har noen av disse programmene installert, vil F-Droid vise dette programmet som installert istedenfor. Det vil også vises hvis brukeren klikker på URL-er som lenker til andre program-ID-er. Nyttig når et program bytter pakkenavn, eller når du ønsker at et program skal fungere som flere programmer."
+
+#, fuzzy
+#~ msgid "Currently this functionality is a stub."
+#~ msgstr "Denne funksjonaliteten er for øyeblikket en stubbe."
+
 #, fuzzy
 #~ msgid "[_fdroidserver_ command line tool](https://hosted.weblate.org/projects/f-droid/fdroidserver)"
 #~ msgstr "[Tjener og byggingsverktøy](https://gitlab.com/fdroid/fdroidserver/issues)"
@@ -9286,9 +9295,6 @@ msgstr ""
 
 #~ msgid "For reporting issues, choose an appropriate tracker from the following:"
 #~ msgstr "For å rapportere feil, velg en sømmelig feilsporer blant følgende:"
-
-#~ msgid "[F-Droid client app](https://gitlab.com/fdroid/fdroidclient/issues)"
-#~ msgstr "[F-Droid-klientprogram](https://gitlab.com/fdroid/fdroidclient/issues)"
 
 #~ msgid "[Server and build tools](https://gitlab.com/fdroid/fdroidserver/issues)"
 #~ msgstr "[Tjener og byggingsverktøy](https://gitlab.com/fdroid/fdroidserver/issues)"
