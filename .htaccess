@@ -64,6 +64,13 @@ AddEncoding x-gzip .gz
   Header set Cache-Control "max-age=31536000, public, immutable"
 </FilesMatch>
 
+# The icons extracted from the APKs won't change, since the filename
+# includes the Application ID and the Version Code. This is <If> to
+# allow full path matches in the .htaccess file.
+<If "%{REQUEST_URI} =~ m#^/repo/icons(-\d+)?/.*\.png$#">
+  Header set Cache-Control "max-age=31536000, public, immutable"
+</If>
+
 
 RewriteEngine On
 
