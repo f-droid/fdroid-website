@@ -46,5 +46,8 @@ for f in glob.glob(os.path.join(datadir, '*', 'strings.json')):
         if k in formats and formats[k] not in v:
             print(os.path.relpath(f) + ':\n\t', k, 'should have', formats[k] + ':\n\t', v)
             exitvalue += 1
+        if not v:
+            print(os.path.relpath(f) + ':\n\t', k, 'should not be blank')
+            exitvalue += 1
 
 sys.exit(exitvalue)
