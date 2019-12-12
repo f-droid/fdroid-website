@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
-"POT-Creation-Date: 2019-07-25 20:05+0200\n"
+"POT-Creation-Date: 2019-12-02 23:39+0100\n"
 "PO-Revision-Date: 2018-01-04 10:02+0000\n"
 "Last-Translator: naofum <naofum@gmail.com>\n"
 "Language-Team: Japanese <https://hosted.weblate.org/projects/f-droid/website-posts/ja/>\n"
@@ -14185,4 +14185,238 @@ msgstr ""
 #. type: Plain text
 #: build/_posts/md/2019-07-16-statement.md
 msgid "We believe platforms like F-Droid's repository or fediverse instances must be moderated in order to prevent oppression and harassment to flourish. We think, however, that one needs to differentiate between platforms and tools. By its very nature, free software [by definition](https://www.gnu.org/philosophy/free-sw.en.html) allows users \"to study how the program works, and change it so it does your computing as you wish\". Because of this, any restriction implemented in free software is basically ineffective, because people can modify the source code and remove those restrictions. We respect Tusky's decision to block mentioned website; it's their right to introduce restrictions like these into their software. We also respect Fedilab's decision not to hardcode a login block; instead they are actively working on making it easier to block certain domains in the app itself and thus giving users more power to moderate which content they'll see. If people disagree with F-Droid's decision not to flag Fedilab, a idea is to develop a decentralized tag system based on package IDs which allow third-party servers to share their own warnings with their community."
+msgstr ""
+
+#. type: Title #
+#: build/_posts/md/2019-09-11-yaml-metadata.md
+#, no-wrap
+msgid "\"We're modernizing our App Database\""
+msgstr ""
+
+#. type: Plain text
+#: build/_posts/md/2019-09-11-yaml-metadata.md
+msgid "We keep a database containing structured information about all apps we're shipping. Architecture-wise, this is a set of plain text files in a version control system. It's the heart of our data-driven app building- and distribution- systems. Maybe you've heard someone mentioning [F-Droid Data](https://gitlab.com/fdroid/fdroiddata) already.  Occasionally we also refer to this as app metadata."
+msgstr ""
+
+#. type: Plain text
+#: build/_posts/md/2019-09-11-yaml-metadata.md
+msgid "We started out with a custom domain specific language (DSL) for storing our metadata files using GIT for version control. Not very surprisingly our custom DSL looks a lot like the popular markup language YAML. That's why we started supporting to store app metadata in `.yml` file format a year ago."
+msgstr ""
+
+#. type: Plain text
+#: build/_posts/md/2019-09-11-yaml-metadata.md
+msgid "We're finally deprecating `.txt` metadata support altogether. Our amazing packaging team is almost done moving our entire database to `.yml`."
+msgstr ""
+
+#. type: Plain text
+#: build/_posts/md/2019-09-11-yaml-metadata.md
+msgid "To keep things easy, we will continue to ship a handy sub-command so everyone can conveniently convert now deprecated `.txt` metadata files to `.yml`:"
+msgstr ""
+
+#. type: Plain text
+#: build/_posts/md/2019-09-11-yaml-metadata.md
+#, no-wrap
+msgid ""
+"$ fdroid rewritemeta --to yml\n"
+"\n"
+msgstr ""
+
+#. type: Plain text
+#: build/_posts/md/2019-09-11-yaml-metadata.md
+msgid "In the long run, removing `.txt` metadata support will allow us to get rid of a substantial amount of source-code. This will make maintenance a lot simpler for us and also lower the learning curve for new contributors.  It will also make adding new features faster and simplify creating tooling, CI, auditing, metrics, etc."
+msgstr ""
+
+#. type: Plain text
+#: build/_posts/md/2019-09-11-yaml-metadata.md
+msgid "Additionally, this will make our database more accessible to everyone. We hope to see developers, enthusiasts and scientists to come up with interesting third party tools, use-cases or studies."
+msgstr ""
+
+#. type: Plain text
+#: build/_posts/md/2019-09-11-yaml-metadata.md
+msgid "Our thanks goes to: [Izzy](https://gitlab.com/IzzySoft) and [Bubu](https://gitlab.com/Bubu) for migrating our database and [Hans](https://gitlab.com/eighthave) and [me (uniqx)](https://gitlab.com/uniqx) for implementing YAML metadata support."
+msgstr ""
+
+#. type: Title #
+#: build/_posts/md/2019-10-02-testing-helps-get-updates-out.md
+#, no-wrap
+msgid "\"Testing helps get updates out\""
+msgstr ""
+
+#. type: Plain text
+#: build/_posts/md/2019-10-02-testing-helps-get-updates-out.md
+msgid "After a few month hiatus, our staging setup for the complete buildserver is again running, thanks to the [Reproducible Builds](https://reproducible-builds.org/)  team who host that infrastructure. These Continuous Integration (CI)  jobs create a [complete buildserver](https://jenkins.debian.net/job/reproducible_setup_fdroid_build_environment/)  from scratch once a week based on the current source code (e.g. _master_).  This buildserver instance is then used to [build all apps](https://jenkins.debian.net/job/reproducible_fdroid_build_apps/)  that have not yet been built on this machine.  Getting these CI jobs running again pointed us to a [key issue](https://jenkins.debian.net/job/reproducible_fdroid_test/259/console)  that was blocking the publishing of updates for over a week."
+msgstr ""
+
+#. type: Plain text
+#: build/_posts/md/2019-10-02-testing-helps-get-updates-out.md
+msgid "We often get questions about how people can contribute to F-Droid.  One less visible but nonetheless important way to contribute is monitoring these CI jobs and then troubleshooting the cause.  All of these server setups are automated, and all of the software that run f-droid.org are free software."
+msgstr ""
+
+#. type: Plain text
+#: build/_posts/md/2019-10-02-testing-helps-get-updates-out.md
+msgid "Anyone can follow the CI tests, the official tests for the build and publish process are all listed on the [fdroidserver project README](https://gitlab.com/fdroid/fdroidserver/#readme).  And then we welcome merge requests to [fix the issue](https://gitlab.com/fdroid/fdroidserver/merge_requests/679), filing an issue to report and track the problem, or even discussion of the problem in our chat room."
+msgstr ""
+
+#. type: Title #
+#: build/_posts/md/2019-10-29-new-language-polish.md
+#, no-wrap
+msgid "\"New language: Polish\""
+msgstr ""
+
+#. type: Plain text
+#: build/_posts/md/2019-10-29-new-language-polish.md
+msgid "We are pleased to announce the launch of the completed Polish translation on this site! The Polish translators have covered almost all the text that can be translated, with 100% of the client, website strings, static pages, and tutorials available in Polish. On top of that, 95% of the documentation, 83% of the blog posts, and 78% of the app summaries are in Polish.  If you want to see this reach 100%, [contribute on Weblate](https://hosted.weblate.org/projects/f-droid/website/pl/)."
+msgstr ""
+
+#. type: Plain text
+#: build/_posts/md/2019-10-29-new-language-polish.md
+msgid "This does not mean that every bit of text on the site is in Polish, since we get the app descriptions from the app developers.  To make it easier for translators to contribute translations to all the apps in F-Droid, you can find the __Translation__ links for apps that have set up a translation service."
+msgstr ""
+
+#. type: Title ##
+#: build/_posts/md/2019-10-29-new-language-polish.md
+#, no-wrap
+msgid "More languages"
+msgstr ""
+
+#. type: Plain text
+#: build/_posts/md/2019-10-29-new-language-polish.md
+msgid "We would love to include all completed languages as they are ready.  Unfortunately, this site is so large that we currently do not have the resources to generate the full website for all languages.  This site currently generates about 43,000 pages.  The test site includes all translations, whether incomplete or not.  It is currently 92,500 pages, and takes more than twice as long to build."
+msgstr ""
+
+#. type: Plain text
+#: build/_posts/md/2019-10-29-new-language-polish.md
+msgid "In order to support more pages, we need help optimizing Jekyll.  No other part of F-Droid uses Ruby, so the contributors are not well equipped to optimize our Jekyll setup.  Another more labor-intensive option might be to port the site to Hugo."
+msgstr ""
+
+#. type: Plain text
+#: build/_posts/md/2019-10-29-new-language-polish.md
+msgid "Follow the full [discussion on our forum](https://forum.f-droid.org/t/next-language-s-to-launch-on-f-droid-org)."
+msgstr ""
+
+#. type: Title #
+#: build/_posts/md/2019-12-02-trusted-update-channels-vs-scratching-your-itch.md
+#, no-wrap
+msgid "\"Trusted Update Channels vs. Scratching Your Itch\""
+msgstr ""
+
+#. type: Plain text
+#: build/_posts/md/2019-12-02-trusted-update-channels-vs-scratching-your-itch.md
+msgid "One of the great things about free software is that people can easily take a functional program or library and customize it as they see fit.  Anyone can come along, submit bug fixes or improvements, and they can be easily shared across many people, projects, and organizations.  With distribution systems like Python's [pypi](https://pypi.python.org), there is an update channel that the trusted maintainers can publish fixes so consumers of the library can easily get updates.  When talking about update channels and code, it is unavoidable to also talk about people and trust.  One key piece is the trust relationship between the consumer and the maintainer.  The ideal software distribution system would be a blind, trustworthy pipe between the software maintainers and each end user."
+msgstr ""
+
+#. type: Plain text
+#: build/_posts/md/2019-12-02-trusted-update-channels-vs-scratching-your-itch.md
+msgid "Since we are talking about libraries of code, the natural relationship turns out to be different than the trust relationship: it is between the consumer and the library itself, not the maintainers.  I use Requests for handling HTTP, not @nateprewitt's fork.  My _setup.py_ includes a reference to `'requests'`, not to the maintainers who I trust to keep the library updated."
+msgstr ""
+
+#. type: Plain text
+#: build/_posts/md/2019-12-02-trusted-update-channels-vs-scratching-your-itch.md
+msgid "There have been cases were libraries were [taken](https://www.zdnet.com/article/backdoor-code-found-in-11-ruby-libraries/) [over](https://www.theregister.co.uk/2018/07/12/npm_eslint/) and used to distribute malware.  Or [another case](https://www.theregister.co.uk/2018/11/26/npm_repo_bitcoin_stealer/) where someone offered to take over a popular library, then inserted malware into it.  If it is really easy for maintainers to hand over a library to someone else, then that will be abused.  If they are too hard to hand over, then many valuable libraries will be abandoned or forked.  Having to check for forks is an added cost for library consumers, so ideally there would always be a trusted maintainer."
+msgstr ""
+
+#. type: Plain text
+#: build/_posts/md/2019-12-02-trusted-update-channels-vs-scratching-your-itch.md
+#, no-wrap
+msgid "For large projects like Requests or distros like Debian, there is a process for ensuring that new maintainers are doing the right thing.  There are also many small libraries that are very valuable.  For example, [apache_log_parser](https://github.com/rory/apache-log-parser) or [pymtp](https://pypi.org/project/PyMTP/).   In these cases, the cost of doing a proper process of handing over to a new maintainer is quite large as compared to the overall effort the library author put into the library.  Or it might be a single maintainer who is now overburdened with other work.\n"
+msgstr ""
+
+#. type: Plain text
+#: build/_posts/md/2019-12-02-trusted-update-channels-vs-scratching-your-itch.md
+msgid "In F-Droid, reviewing app merge requests, aka _fdroiddata_, is also about reviewing whether the trust relationship is changing.  This is on top of making sure the new code works, ensuring its still free software, and that all of the Anti-Features are properly marked.  Getting this review right is important especially when you consider that in F-Droid, many apps are automatically updated without core contributors reviewing it."
+msgstr ""
+
+#. type: Plain text
+#: build/_posts/md/2019-12-02-trusted-update-channels-vs-scratching-your-itch.md
+msgid "All developers must consider these trust issues at a number of key points in the process of developing software, including:"
+msgstr ""
+
+#. type: Bullet: '* '
+#: build/_posts/md/2019-12-02-trusted-update-channels-vs-scratching-your-itch.md
+msgid "when adding a library to any piece of software"
+msgstr ""
+
+#. type: Bullet: '* '
+#: build/_posts/md/2019-12-02-trusted-update-channels-vs-scratching-your-itch.md
+msgid "helping a new maintainer take over existing software"
+msgstr ""
+
+#. type: Bullet: '* '
+#: build/_posts/md/2019-12-02-trusted-update-channels-vs-scratching-your-itch.md
+msgid "reviewing changes to the URL of the source code reposistory"
+msgstr ""
+
+#. type: Plain text
+#: build/_posts/md/2019-12-02-trusted-update-channels-vs-scratching-your-itch.md
+msgid "There are also some ideas about how to better map who we need to trust to the process of including software.  One interesting example is [_cargo-crev_](https://dpc.pw/cargo-crev-and-rust-2019-fearless-code-reuse) for the Rust ecosystem.  It provides a system of describing and cryptographically linking trusted developers and their reviews of software packages."
+msgstr ""
+
+#. type: Plain text
+#: build/_posts/md/2019-12-15-applying-digital-humanism.md
+msgid "F-Droid as a community has always included humanistic ideas in the very technical process of building and distributing software."
+msgstr ""
+
+#. type: Bullet: '* '
+#: build/_posts/md/2019-12-15-applying-digital-humanism.md
+msgid "MA7 Digital Humanismus - link to Loecker OpEd"
+msgstr ""
+
+#. type: Bullet: '* '
+#: build/_posts/md/2019-12-15-applying-digital-humanism.md
+msgid "epicenter.works"
+msgstr ""
+
+#. type: Bullet: '* '
+#: build/_posts/md/2019-12-15-applying-digital-humanism.md
+msgid "tracking clearly has deep problems"
+msgstr ""
+
+#. type: Bullet: '* '
+#: build/_posts/md/2019-12-15-applying-digital-humanism.md
+msgid "tracking mixed with surveillance capitalism produces very harmful effects"
+msgstr ""
+
+#. type: Bullet: '* '
+#: build/_posts/md/2019-12-15-applying-digital-humanism.md
+msgid "these companies are creating software that is in effect a form of addictive drug, the companies involved are the tobacco and opium companies of the current era"
+msgstr ""
+
+#. type: Bullet: '* '
+#: build/_posts/md/2019-12-15-applying-digital-humanism.md
+msgid "tracking can also provide all sorts of fundamentally useful things.  I am not speaking about the Google tricks that tell you various facts about your day.  Somehow we managed for eons without a computer telling us when we need to leave out houses, or making simple phone calls for us."
+msgstr ""
+
+#. type: Bullet: '* '
+#: build/_posts/md/2019-12-15-applying-digital-humanism.md
+msgid "public health"
+msgstr ""
+
+#. type: Bullet: '* '
+#: build/_posts/md/2019-12-15-applying-digital-humanism.md
+msgid "aiding specific diagnoses"
+msgstr ""
+
+#. type: Bullet: '* '
+#: build/_posts/md/2019-12-15-applying-digital-humanism.md
+msgid "what people are actually using to know where to best spend resources"
+msgstr ""
+
+#. type: Bullet: '* '
+#: build/_posts/md/2019-12-15-applying-digital-humanism.md
+msgid "UX problems, crashes, etc."
+msgstr ""
+
+#. type: Bullet: '* '
+#: build/_posts/md/2019-12-15-applying-digital-humanism.md
+msgid "Tor Project, Guardian Project, F-Droid, and others have done some experiments to show that it is possible to collect useful tracking data without collecting anything that would identify a user"
+msgstr ""
+
+#. type: Bullet: '* '
+#: build/_posts/md/2019-12-15-applying-digital-humanism.md
+msgid "the question that lies before us now is whether privacy is the only issue when building systems based on usage data.  Clearly, there are existing motivations that drive people to keep F-Droid going.  Providing and using tracking data, even if it provably contains no identifying informtaion, can totally transform a community.  This could improve things, or it could break the whole F-Droid model that has been working for almost 10 years."
+msgstr ""
+
+#. type: Bullet: '* '
+#: build/_posts/md/2019-12-15-applying-digital-humanism.md
+msgid "This is one central question that we will grapple with when running the Ethics-in-an-App workshops."
 msgstr ""
