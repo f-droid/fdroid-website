@@ -135,7 +135,7 @@ function generate_md_files {
                 # for this file. If none, then don't bother converting
                 # (it will just take up space in our repo and make it
                 # harder to see what is actually translated).  Need to
-                # take the `realpath`, becuase msggrep will fail with
+                # take the `realpath`, because msggrep will fail with
                 # "./build/..." but succeed with "build/..."
                 SRC_MD_FILE=`realpath --relative-to . ${BUILD_SUBDIR}`/md/${MD_FILE}
                 TRANSLATED=`msggrep --location=${SRC_MD_FILE} ${DIR_PO}/${PO_FILE} | msgattrib --translated | wc -l`
