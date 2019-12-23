@@ -53,7 +53,7 @@ Run these commands:
 # Prerequisites
 sudo apt-get install openjdk-8-jdk subversion git git-svn \
     mercurial bzr virtualbox ruby ruby-dev vagrant python3 python3-paramiko \
-    python3-pil python3-pyasn1-modules python3-clint
+    python3-pil python3-pyasn1-modules python3-clint python3-vagrant
 vagrant plugin install vagrant-cachier
 ln -s ~/Android/Sdk/build-tools/23.0.2/aapt ~/Android/Sdk/platform-tools/
 
