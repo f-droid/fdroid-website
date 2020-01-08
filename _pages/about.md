@@ -70,6 +70,7 @@ and is brought to you by at least the following people:
 * Cédric Cabessa
 * Kevin Cernekee
 * Felix Edelmann
+* Oğuz Ersen
 * Kevin Everets
 * Rafael Fontenelle
 * Alberto A. Fuentes
