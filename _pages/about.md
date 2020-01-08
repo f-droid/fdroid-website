@@ -96,6 +96,7 @@ and is brought to you by at least the following people:
 * Nat Meysenburg
 * Steven McDonald
 * Andrew McMillan
+* Balázs Meskó
 * Andrew Nayenko
 * Alex Oberhauser
 * Michael Pöhn
