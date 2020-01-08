@@ -69,6 +69,7 @@ and is brought to you by at least the following people:
 * Dan Bravender
 * Cédric Cabessa
 * Kevin Cernekee
+* Ali Demirtaş
 * Felix Edelmann
 * Oğuz Ersen
 * Kevin Everets
