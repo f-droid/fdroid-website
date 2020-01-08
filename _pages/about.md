@@ -71,6 +71,7 @@ and is brought to you by at least the following people:
 * Kevin Cernekee
 * Felix Edelmann
 * Kevin Everets
+* Rafael Fontenelle
 * Alberto A. Fuentes
 * Torsten Grote
 * Ciaran Gultnieks
