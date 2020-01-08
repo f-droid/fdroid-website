@@ -103,6 +103,7 @@ and is brought to you by at least the following people:
 * Pierre Rudloff
 * Florian Schmaus
 * Dominik Schürmann
+* Takumi Shoji
 * Hans-Emil Skogh
 * Paul Sokolovsky
 * Graziano Sorbaioli
