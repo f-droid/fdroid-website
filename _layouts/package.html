@@ -168,7 +168,8 @@ layout: default-package-sidebar
 		<a href=" https://f-droid.org/FDroid.apk" class="material-button">{{ site.data.strings.index.download_fdroid }}</a>
 		<ul class="package-versions-list">
 			{% for package in page.packages %}
-			<li class="package-version" {% if forloop.first %}id="latest-version"{% endif %}>
+			{% if page.suggested_version_name == package.version_name %}<a name="suggested"></a>{% endif %}
+			<li class="package-version" {% if forloop.first %}id="latest"{% endif %}>
 				<div class="package-version-header">
 					{% comment %}
 					Use YYYY-MM-DD format, because it is more internationalizable than versions which include English month names.
@@ -176,7 +177,9 @@ layout: default-package-sidebar
 					{% assign package_added_date = package.added | date: '%F' %}
 					<a name="{{ package.version_name }}"></a>
 					<a name="{{ package.version_code }}"></a>
-					{{ strings.version_info | replace: '[package_version]', package.version_name | replace: '[package_version_code]', package.version_code | replace: '[package_added_date]', package_added_date }}
+					{{ strings.version_info | replace: '[package_version]', package.version_name | replace: '[package_version_code]', package.version_code }}
+					{% if page.suggested_version_name == package.version_name %}<span class="suggested-badge">{{ strings.suggested }}</span>{% else %} - {% endif %}
+					{{ strings.added_on | replace: '[package_added_date]', package_added_date }}
 				</div>
 				<p class="package-version-requirement">
 					{% assign android_version = package.min_sdk_version | android_sdk_level_to_version %}
