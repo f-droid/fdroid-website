@@ -57,7 +57,7 @@ The F-Droid project was founded in 2010 by Ciaran Gultnieks,
 and is brought to you by at least the following people:
 
 * Nico Alt
-* Laura Arjona
+* Laura Arjona Reina
 * Ben Arnold
 * Michele Azzolari
 * Danial Behzadi
