@@ -168,7 +168,7 @@ layout: default-package-sidebar
 		<a href=" https://f-droid.org/FDroid.apk" class="material-button">{{ site.data.strings.index.download_fdroid }}</a>
 		<ul class="package-versions-list">
 			{% for package in page.packages %}
-			<li class="package-version">
+			<li class="package-version" {% if forloop.first %}id="latest-version"{% endif %}>
 				<div class="package-version-header">
 					{% comment %}
 					Use YYYY-MM-DD format, because it is more internationalizable than versions which include English month names.
