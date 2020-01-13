@@ -56,6 +56,7 @@ F-Droid respects your privacy. We don’t track you, or your device. We don’t 
 The F-Droid project was founded in 2010 by Ciaran Gultnieks,
 and is brought to you by at least the following people:
 
+* Mostafa Ahangarha
 * Nico Alt
 * Laura Arjona Reina
 * Ben Arnold
@@ -73,6 +74,7 @@ and is brought to you by at least the following people:
 * Felix Edelmann
 * Oğuz Ersen
 * Kevin Everets
+* Sveinn í Felli
 * Rafael Fontenelle
 * Alberto A. Fuentes
 * Torsten Grote
@@ -122,8 +124,6 @@ and is brought to you by at least the following people:
 * Matthias Weiler
 * Nutchanon Wetchasit
 * Philipp Wollschlegel
-* Sveinn í Felli
-* Mostafa Ahangarha
 
 If your name is missing, it’s a mistake and you should
 [add yourself to the list](https://gitlab.com/fdroid/fdroid-website/blob/master/_pages/about.md)!
