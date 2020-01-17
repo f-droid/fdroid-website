@@ -7,7 +7,7 @@ title: MIA Process
 
 Maintainers come and go, interests and priorities change and time flies. This
 is true for every project and F-Droid as well. To keep the credentials and
-permissions in F-Droid reasonable, There is a MIA process.
+permissions in F-Droid reasonable, there is this missing in action (MIA) process.
 
 This means we regularly check if F-Droid team members are still active, i.e.
 when they last contributed, and drop those that don't respond to messages after
