@@ -150,15 +150,10 @@ This is converted to (`<license>`) in the XML file (_index.xml_).
 ### _AutoName_<a name="AutoName"></a>
 
 The name of the application as can best be retrieved from the source
-code. This is done so that the commitupdates script can put a familiar
+code. This is done so that `fdroid checkupdates` can put a familiar
 name in the description of commits created when a new update of the
 application is found. The _AutoName_ entry is generated automatically
 when `fdroid checkupdates` is run.
-
-__Warning__: this overrides all Name entries
-[set in the app's source code](../All_About_Descriptions_Graphics_and_Screenshots).
-
-This is converted to (`<name>`) in the XML file (_index.xml_).
 
 
 
