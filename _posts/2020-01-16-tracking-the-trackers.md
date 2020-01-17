@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Tracking the Trackers: using machine learning to aid ethical decisions
+title: "Tracking the Trackers: using machine learning to aid ethical decisions"
 author: "eighthave"
 ---
 
