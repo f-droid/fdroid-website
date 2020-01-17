@@ -72,8 +72,10 @@ pages:
    - sed -i 's,^languages:,ignored_languages:,' _config.yml
    - sed -i 's,^gitlab_ci_languages:,languages:,' _config.yml
    - *setup_for_jekyll
+   - apt-get install python3-yaml
    - ./tools/check-format-strings.py
    - ./tools/check-page-links.py
+   - ./tools/check-yaml-front-matter.py
    - ./tools/check-do-not-translate
    - ./tools/i18n.sh md2po
    - git checkout po/*.pot  # ignore the newly generated timestamp
