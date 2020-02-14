@@ -15,9 +15,9 @@ Decentralized, self-hosted systems like Matrix, Nextcloud or RocketChat currentl
 
 OpenPush was presented at [FOSDEM](https://fosdem.org/). The talk gives a general architecture overview as well as walks through the design and implementation challenges of a push messaging service.
 
-<video preload="none" controls="controls" width="550">
-    <source src="https://video.fosdem.org/2020/UA2.220/dip_openpush.webm" type="video/webm; codecs=&quot;vp9, opus&quot;">
-</video>
+<a class="video-preview" href="https://video.fosdem.org/2020/UA2.220/dip_openpush.webm">
+    <img src="{{ site.baseurl }}/assets/posts/2020-02-03-openpush-talk/video-preview.png" />
+</a>
 
 * Link to FOSDEM [talk page](https://fosdem.org/2020/schedule/event/dip_openpush/)
 * Link to [slides](https://bubu1.eu/openpush/openpush_fosdem20.pdf)
