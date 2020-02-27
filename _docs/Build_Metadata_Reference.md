@@ -689,14 +689,13 @@ configuration to the build. These are (roughly in order of application):
 `ndk: <version>`
 
 :   Version of the NDK to use in this build. Defaults to the latest NDK
-    release that included legacy toolchains, so as to not break builds
+    release that included legacy toolchains (r12b), so as to not break builds
     that require toolchains no longer included in current versions of
     the NDK.
 
-    The buildserver supports r9b with its legacy toolchains, r10e, r11c
-    r12b, and the latest release as of writing this document, r13b. You may
-    add support for more versions by adding them to ’ndk\_paths’ in your
-    config file.
+    The buildserver supports r10e, r11c, r12b, r13b, r14b, r15c, r16b, r17b,
+    r18b, r19c, r20b and r21. You may add support for more versions by adding
+    them to ’ndk\_paths’ in your config file.
 
 `gradle: <flavour1>[,<flavour2>,...]`
 
