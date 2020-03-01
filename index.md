@@ -17,7 +17,7 @@ https://github.com/untra/polyglot/issues/79 -->
 <div class="download-and-screenshot">
     <div class="download">
         <div class="button">
-            <a class="material-button" href=" https://f-droid.org/FDroid.apk">{{ strings.download_fdroid }}</a>
+            <a id="fdroid-download" data-donate-link="{{ site.baseurl }}/donate" class="material-button" href=" https://f-droid.org/FDroid.apk">{{ strings.download_fdroid }}</a>
         </div>
         <div class="gpg">
             <a href=" https://f-droid.org/FDroid.apk.asc">{{ strings.gpg_signature }}</a>
@@ -32,3 +32,5 @@ https://github.com/untra/polyglot/issues/79 -->
             style="background: url('{{ site.baseurl }}/{% fdroid_screenshot %}') center center no-repeat; background-size: 78% auto" />
     </div>
 </div>
+
+<script src="{{ site.baseurl }}/js/donate.js"></script>
