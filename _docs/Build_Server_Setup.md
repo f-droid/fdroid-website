@@ -222,7 +222,8 @@ configured to always set the ownership to `libvirt.libvirt`.
 
 ```console
 root:~# apt-get install vagrant vagrant-mutate vagrant-libvirt ebtables dnsmasq-base \
-        python3-libvirt libvirt-clients libvirt-daemon-system qemu-kvm qemu-utils git
+        python3-libvirt libvirt-clients libvirt-daemon-system qemu-kvm qemu-utils git \
+        python3-yaml python3-clint python3-vagrant python3-pyasn1 python3-pyasn1-modules
 root:~# cat << EOF >> /etc/libvirt/qemu.conf
 user = "libvirt"
 group = "libvirt"
