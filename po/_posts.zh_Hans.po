@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
-"POT-Creation-Date: 2020-01-17 16:12+0100\n"
+"POT-Creation-Date: 2020-02-17 11:14+0100\n"
 "PO-Revision-Date: 2019-04-16 00:48+0000\n"
 "Last-Translator: kak mi <wavelake@outlook.com>\n"
 "Language-Team: Chinese (Simplified) <https://hosted.weblate.org/projects/f-droid/website-posts/zh_Hans/>\n"
@@ -10998,10 +10998,18 @@ msgstr ""
 
 #. type: Plain text
 #: build/_posts/md/2019-04-15-privacy-preserving-analytics.md
+msgid "```console"
+msgstr ""
+
+#. type: Title #
+#: build/_posts/md/2019-04-15-privacy-preserving-analytics.md
 #, no-wrap
-msgid ""
-"# apt-get install libnginx-mod-http-geoip geoip-database\n"
-"\n"
+msgid "apt-get install libnginx-mod-http-geoip geoip-database"
+msgstr ""
+
+#. type: Plain text
+#: build/_posts/md/2019-04-15-privacy-preserving-analytics.md
+msgid "```"
 msgstr ""
 
 #. type: Plain text
@@ -11009,24 +11017,14 @@ msgstr ""
 msgid "Then enable the custom logging setup in _/etc/nginx/nginx.conf_:"
 msgstr ""
 
-#. type: Code fence info string
+#. type: Plain text
 #: build/_posts/md/2019-04-15-privacy-preserving-analytics.md
-#, no-wrap
-msgid "conf"
+msgid "```conf geoip_country /usr/share/GeoIP/GeoIP.dat; log_format privacy '0.0.0.0 - $remote_user [$time_local] \"$request\" $status $body_bytes_sent \"$http_referer\" \"-\" $geoip_country_code';"
 msgstr ""
 
 #. type: Plain text
 #: build/_posts/md/2019-04-15-privacy-preserving-analytics.md
-#, no-wrap
-msgid ""
-"geoip_country /usr/share/GeoIP/GeoIP.dat;\n"
-"\n"
-"log_format privacy '0.0.0.0 - $remote_user [$time_local] \"$request\" $status $body_bytes_sent \"$http_referer\" \"-\" $geoip_country_code';\n"
-"\n"
-"\n"
-"\n"
-"access_log /var/log/nginx/access.log privacy;\n"
-"\n"
+msgid "access_log /var/log/nginx/access.log privacy; ```"
 msgstr ""
 
 #. type: Plain text
@@ -11034,46 +11032,15 @@ msgstr ""
 msgid "This then makes the access log data look like:"
 msgstr ""
 
-#. type: Plain text
+#. type: Title #
 #: build/_posts/md/2019-04-15-privacy-preserving-analytics.md
 #, no-wrap
-msgid ""
-"# tail /var/log/nginx/access.log\n"
-"\n"
-"0.0.0.0 - - [12/Apr/2019:07:01:37 +0000] \"GET /android-free/repository/ HTTP/1.1\" 200 949 \"-\" \"-\" PL\n"
-"\n"
-"0.0.0.0 - - [12/Apr/2019:07:02:27 +0000] \"GET /robots.txt HTTP/1.1\" 200 24 \"-\" \"-\" US\n"
-"\n"
-"0.0.0.0 - - [12/Apr/2019:07:02:27 +0000] \"GET /android-free/repository/ HTTP/1.1\" 200 949 \"-\" \"-\" US\n"
-"\n"
-"0.0.0.0 - - [12/Apr/2019:07:04:08 +0000] \"GET / HTTP/1.1\" 200 278 \"-\" \"-\" BR\n"
-"\n"
-"0.0.0.0 - - [12/Apr/2019:07:06:41 +0000] \"GET /android-free/repository/ HTTP/1.1\" 200 949 \"-\" \"-\" US\n"
-"\n"
-"0.0.0.0 - - [12/Apr/2019:07:11:45 +0000] \"GET /android-free/repository/ HTTP/1.1\" 200 949 \"-\" \"-\" FR\n"
-"\n"
-"0.0.0.0 - - [12/Apr/2019:07:16:32 +0000] \"GET / HTTP/1.1\" 200 278 \"-\" \"-\" CA\n"
-"\n"
-"0.0.0.0 - - [12/Apr/2019:07:16:49 +0000] \"GET /android-free/repository/ HTTP/1.1\" 200 949 \"-\" \"-\" GB\n"
-"\n"
-"0.0.0.0 - - [12/Apr/2019:07:19:42 +0000] \"GET / HTTP/1.1\" 200 278 \"-\" \"-\" VN\n"
-"\n"
-"0.0.0.0 - - [12/Apr/2019:07:20:20 +0000] \"GET /robots.txt HTTP/1.1\" 200 24 \"-\" \"-\" US\n"
-"\n"
-"0.0.0.0 - - [12/Apr/2019:07:21:51 +0000] \"GET /android-free/repository/ HTTP/1.1\" 200 949 \"-\" \"-\" US\n"
-"\n"
-"0.0.0.0 - - [12/Apr/2019:07:26:57 +0000] \"GET /android-free/repository/ HTTP/1.1\" 200 949 \"-\" \"-\" DE\n"
-"\n"
-"0.0.0.0 - - [12/Apr/2019:07:32:01 +0000] \"GET /android-free/repository/ HTTP/1.1\" 200 949 \"-\" \"-\" SE\n"
-"\n"
-"0.0.0.0 - - [12/Apr/2019:07:32:23 +0000] \"GET /android-free/repository/sys-img/android/sys-img-9.0.0_r33-sdk.xml HTTP/1.1\" 200 904 \"-\" \"-\" US\n"
-"\n"
-"0.0.0.0 - - [12/Apr/2019:07:37:04 +0000] \"GET /android-free/repository/ HTTP/1.1\" 200 949 \"-\" \"-\" DE\n"
-"\n"
-"0.0.0.0 - - [12/Apr/2019:07:38:55 +0000] \"\\x03\\x00\\x00/*\\xE0\\x00\\x00\\x00\\x00\\x00Cookie: mstshash=Administr\" 400 173 \"-\" \"-\" RU\n"
-"\n"
-"0.0.0.0 - - [12/Apr/2019:07:39:12 +0000] \"GET / HTTP/1.1\" 200 278 \"-\" \"-\" EC\n"
-"\n"
+msgid "tail /var/log/nginx/access.log"
+msgstr ""
+
+#. type: Plain text
+#: build/_posts/md/2019-04-15-privacy-preserving-analytics.md
+msgid "0.0.0.0 - - [12/Apr/2019:07:01:37 +0000] \"GET /android-free/repository/ HTTP/1.1\" 200 949 \"-\" \"-\" PL 0.0.0.0 - - [12/Apr/2019:07:02:27 +0000] \"GET /robots.txt HTTP/1.1\" 200 24 \"-\" \"-\" US 0.0.0.0 - - [12/Apr/2019:07:02:27 +0000] \"GET /android-free/repository/ HTTP/1.1\" 200 949 \"-\" \"-\" US 0.0.0.0 - - [12/Apr/2019:07:04:08 +0000] \"GET / HTTP/1.1\" 200 278 \"-\" \"-\" BR 0.0.0.0 - - [12/Apr/2019:07:06:41 +0000] \"GET /android-free/repository/ HTTP/1.1\" 200 949 \"-\" \"-\" US 0.0.0.0 - - [12/Apr/2019:07:11:45 +0000] \"GET /android-free/repository/ HTTP/1.1\" 200 949 \"-\" \"-\" FR 0.0.0.0 - - [12/Apr/2019:07:16:32 +0000] \"GET / HTTP/1.1\" 200 278 \"-\" \"-\" CA 0.0.0.0 - - [12/Apr/2019:07:16:49 +0000] \"GET /android-free/repository/ HTTP/1.1\" 200 949 \"-\" \"-\" GB 0.0.0.0 - - [12/Apr/2019:07:19:42 +0000] \"GET / HTTP/1.1\" 200 278 \"-\" \"-\" VN 0.0.0.0 - - [12/Apr/2019:07:20:20 +0000] \"GET /robots.txt HTTP/1.1\" 200 24 \"-\" \"-\" US 0.0.0.0 - - [12/Apr/2019:07:21:51 +0000] \"GET /android-free/repository/ HTTP/1.1\" 200 949 \"-\" \"-\" US 0.0.0.0 - - [12/Apr/2019:07:26:57 +0000] \"GET /android-free/repository/ HTTP/1.1\" 200 949 \"-\" \"-\" DE 0.0.0.0 - - [12/Apr/2019:07:32:01 +0000] \"GET /android-free/repository/ HTTP/1.1\" 200 949 \"-\" \"-\" SE 0.0.0.0 - - [12/Apr/2019:07:32:23 +0000] \"GET /android-free/repository/sys-img/android/sys-img-9.0.0_r33-sdk.xml HTTP/1.1\" 200 904 \"-\" \"-\" US 0.0.0.0 - - [12/Apr/2019:07:37:04 +0000] \"GET /android-free/repository/ HTTP/1.1\" 200 949 \"-\" \"-\" DE 0.0.0.0 - - [12/Apr/2019:07:38:55 +0000] \"\\x03\\x00\\x00/*\\xE0\\x00\\x00\\x00\\x00\\x00Cookie: mstshash=Administr\" 400 173 \"-\" \"-\" RU 0.0.0.0 - - [12/Apr/2019:07:39:12 +0000] \"GET / HTTP/1.1\" 200 278 \"-\" \"-\" EC ```"
 msgstr ""
 
 #. type: Title #
@@ -11392,14 +11359,7 @@ msgstr ""
 
 #. type: Plain text
 #: build/_posts/md/2019-06-20-two-new-ways-to-get-apps-nearby-without-internet.md
-#, no-wrap
-msgid ""
-"```console\n"
-"$ cd /media/user/F-DROIDORG\n"
-"$ fdroid mirror https://guardianproject.info/fdroid\n"
-"$ wget https://guardianproject.info/fdroid/repo/index-v1.jar\n"
-"$ mv index-v1.jar fdroid/repo/\n"
-"```\n"
+msgid "```console $ cd /media/user/F-DROIDORG $ fdroid mirror https://guardianproject.info/fdroid $ wget https://guardianproject.info/fdroid/repo/index-v1.jar $ mv index-v1.jar fdroid/repo/ ```"
 msgstr ""
 
 #. type: Plain text
@@ -14218,10 +14178,7 @@ msgstr ""
 
 #. type: Plain text
 #: build/_posts/md/2019-09-11-yaml-metadata.md
-#, no-wrap
-msgid ""
-"$ fdroid rewritemeta --to yml\n"
-"\n"
+msgid "``` $ fdroid rewritemeta --to yml ```"
 msgstr ""
 
 #. type: Plain text
@@ -14554,4 +14511,262 @@ msgstr ""
 #. type: Plain text
 #: build/_posts/md/2020-01-16-tracking-the-trackers.md
 msgid "In closing, it is important to highlight that it is essential to keep humans always at the center of of these tools.  We are building tooling to augment humans, not replace them. Since the prime motivation of the F-Droid community is to build ethical software distribution, algorithms will never replace humans in making decisions based on ethics.  The tools can automate the technical details, so that contributors do not need to understand them in order to meaningfully help with the process."
+msgstr ""
+
+#. type: Title #
+#: build/_posts/md/2020-02-03-openpush-talk.md
+#, no-wrap
+msgid "\"OpenPush - A Free, Decentralized Push Messaging Framework for Android\""
+msgstr ""
+
+#. type: Plain text
+#: build/_posts/md/2020-02-03-openpush-talk.md
+msgid "Push messages are an essential part of connected mobile devices. They are also one of the critical missing pieces in the open source Android ecosystem. Until now, free Android apps would either need to implement their own push notification system, do without any push messaging or use the proprietary Google Cloud Messaging service."
+msgstr ""
+
+#. type: Plain text
+#: build/_posts/md/2020-02-03-openpush-talk.md
+msgid "We expect both a long battery life and instant notifications from our mobile devices. When implementing your own mobile push functionality you can usually optimize for either of these goals. This is especially true if the user is running multiple applications which each come with their own persistent on-going connection for push notifications. Wanting to combat the battery drain associated with maintaining multiple connections Google introduced the Google Cloud Messaging (GCM) framework which recently has become Firebase Cloud Messaging (FCM). Firebase Cloud Messaging relies on the availability of the proprietary Google Play Services Framework on an Android device. Using FCM also requires the inclusion of the proprietary FCM client library into open source Android apps like Signal, Wire or even Firefox, which makes them effectively non-free software which cannot be distributed via the fully free F-Droid software repository. Additionally all push notifications delivered via FCM need to pass through Google's servers leaving a metadata trace, even if it's an empty wakeup event or if the content of the message is encrypted."
+msgstr ""
+
+#. type: Plain text
+#: build/_posts/md/2020-02-03-openpush-talk.md
+msgid "Decentralized, self-hosted systems like Matrix, Nextcloud or RocketChat currently still have a dependency on Google's infrastructure and Terms of Service for delivering push Notifications. The F-Droid versions of these apps need to fall back on more inefficient polling or even lack any support for notifications."
+msgstr ""
+
+#. type: Plain text
+#: build/_posts/md/2020-02-03-openpush-talk.md
+msgid "[OpenPush](https://bubu1.eu/openpush) is a self-hosted, free alternative push messaging implementation which can either run alongside or as a replacement to FCM."
+msgstr ""
+
+#. type: Plain text
+#: build/_posts/md/2020-02-03-openpush-talk.md
+msgid "OpenPush was presented at [FOSDEM](https://fosdem.org/). The talk gives a general architecture overview as well as walks through the design and implementation challenges of a push messaging service."
+msgstr ""
+
+#. type: Plain text
+#: build/_posts/md/2020-02-03-openpush-talk.md
+#, no-wrap
+msgid ""
+"<a class=\"video-preview\" href=\"https://video.fosdem.org/2020/UA2.220/dip_openpush.webm\">\n"
+"    <img src=\"{{ site.baseurl }}/assets/posts/2020-02-03-openpush-talk/video-preview.png\" />\n"
+"</a>\n"
+msgstr ""
+
+#. type: Bullet: '* '
+#: build/_posts/md/2020-02-03-openpush-talk.md
+msgid "Link to FOSDEM [talk page](https://fosdem.org/2020/schedule/event/dip_openpush/)"
+msgstr ""
+
+#. type: Bullet: '* '
+#: build/_posts/md/2020-02-03-openpush-talk.md
+msgid "Link to [slides](https://bubu1.eu/openpush/openpush_fosdem20.pdf)"
+msgstr ""
+
+#. type: Bullet: '* '
+#: build/_posts/md/2020-02-03-openpush-talk.md
+msgid "[Project Homepage](https://bubu1.eu/openpush)"
+msgstr ""
+
+#. type: Title #
+#: build/_posts/md/2020-02-16-statistics_2019.md
+#, no-wrap
+msgid "\"F-Droid Stats from 2019\""
+msgstr ""
+
+#. type: Title ##
+#: build/_posts/md/2020-02-16-statistics_2019.md
+#, no-wrap
+msgid "Statistics"
+msgstr ""
+
+#. type: Plain text
+#: build/_posts/md/2020-02-16-statistics_2019.md
+msgid "I just gave a small [talk](https://bubu1.eu/fdroid_fsfe_berlin_feb20.pdf) about F-Droid at [FSFE Berlin](https://libranet.de/profile/fsfeberlin).  For this I gathered some stats about what happened in our repo over the last year. I did a similar thing about 1.5 years ago, you can find the numbers on page 9 of the [pdf](https://bubu1.eu/fdroid_lightning_talk_nextcloudconf.pdf)."
+msgstr ""
+
+#. type: Title ###
+#: build/_posts/md/2020-02-16-statistics_2019.md
+#, no-wrap
+msgid "From Jan 2019 to 10th Feb 2020"
+msgstr ""
+
+#. type: Bullet: '* '
+#: build/_posts/md/2020-02-16-statistics_2019.md
+msgid "Repository grew by 316 apps"
+msgstr ""
+
+#. type: Bullet: '* '
+#: build/_posts/md/2020-02-16-statistics_2019.md
+msgid "Published 192 Index updates (avg. ~every 2 days)"
+msgstr ""
+
+#. type: Bullet: '* '
+#: build/_posts/md/2020-02-16-statistics_2019.md
+msgid "Published 5662 apks (~14 apks per day)"
+msgstr ""
+
+#. type: Bullet: '* '
+#: build/_posts/md/2020-02-16-statistics_2019.md
+msgid "Currently 2086 apps are present in the main repository (about 4000 including the archive)"
+msgstr ""
+
+#. type: Title ###
+#: build/_posts/md/2020-02-16-statistics_2019.md
+#, no-wrap
+msgid "F-Droid-Data Commits"
+msgstr ""
+
+#. type: Plain text
+#: build/_posts/md/2020-02-16-statistics_2019.md
+#, no-wrap
+msgid ""
+"| Number of Commits | User                          |\n"
+"|-------------------|-------------------------------|\n"
+"| 5542              | F-Droid Builder (Auto updater)|\n"
+"| 939               | Licaon_Kter                   |\n"
+"| 836               | Izzy                          |\n"
+"| 687               | relan                         |\n"
+"| 449               | Pierre Rudloff                |\n"
+"| 424               | Marcus Hoffmann               |\n"
+"| 351               | Ciaran Gultnieks              |\n"
+"| 237               | Hans-Christoph Steiner        |\n"
+"| 207               | Michael Pöhn                  |\n"
+msgstr ""
+
+#. type: Plain text
+#: build/_posts/md/2020-02-16-statistics_2019.md
+msgid "Plus many, many more contributions from hundreds of others!"
+msgstr ""
+
+#. type: Title ###
+#: build/_posts/md/2020-02-16-statistics_2019.md
+#, no-wrap
+msgid "But also"
+msgstr ""
+
+#. type: Plain text
+#: build/_posts/md/2020-02-16-statistics_2019.md
+msgid "Counted across the whole project:"
+msgstr ""
+
+#. type: Bullet: '* '
+#: build/_posts/md/2020-02-16-statistics_2019.md
+msgid "1258 [open issues](https://gitlab.com/groups/fdroid/-/issues)"
+msgstr ""
+
+#. type: Bullet: '* '
+#: build/_posts/md/2020-02-16-statistics_2019.md
+msgid "198 [open merge requests](https://gitlab.com/groups/fdroid/-/merge_requests)"
+msgstr ""
+
+#. type: Bullet: '* '
+#: build/_posts/md/2020-02-16-statistics_2019.md
+msgid "199 [apps we know need updating](https://f-droid.org/wiki/page/Category:Apps_to_Update)"
+msgstr ""
+
+#. type: Bullet: '* '
+#: build/_posts/md/2020-02-16-statistics_2019.md
+msgid "..."
+msgstr ""
+
+#. type: Title ##
+#: build/_posts/md/2020-02-16-statistics_2019.md
+#, no-wrap
+msgid "Help Wanted!"
+msgstr ""
+
+#. type: Bullet: '* '
+#: build/_posts/md/2020-02-16-statistics_2019.md
+msgid "Become a Maintainer: [Adopt an App!](https://gitlab.com/fdroid/fdroiddata/-/merge_requests?label_name%5B%5D=New+App)"
+msgstr ""
+
+#. type: Bullet: '* '
+#: build/_posts/md/2020-02-16-statistics_2019.md
+msgid "Add [screenshots, localized descriptions, what’s new texts](https://f-droid.org/en/docs/All_About_Descriptions_Graphics_and_Screenshots/) to upstream repos"
+msgstr ""
+
+#. type: Bullet: '* '
+#: build/_posts/md/2020-02-16-statistics_2019.md
+msgid "Help with [translations](https://hosted.weblate.org/projects/f-droid/) (In F-Droid or Upstream)"
+msgstr ""
+
+#. type: Bullet: '* '
+#: build/_posts/md/2020-02-16-statistics_2019.md
+msgid "Help with [client development](https://gitlab.com/fdroid/fdroidclient) (especially UX)"
+msgstr ""
+
+#. type: Bullet: '* '
+#: build/_posts/md/2020-02-16-statistics_2019.md
+msgid "Help with [website dev](https://gitlab.com/fdroid/fdroid-website) (ruby/jekyll)"
+msgstr ""
+
+#. type: Bullet: '* '
+#: build/_posts/md/2020-02-16-statistics_2019.md
+msgid "Help with [Repomaker](https://gitlab.com/fdroid/repomaker) (Python Django App)"
+msgstr ""
+
+#. type: Title ##
+#: build/_posts/md/2020-02-16-statistics_2019.md
+#, no-wrap
+msgid "Support us"
+msgstr ""
+
+#. type: Plain text
+#: build/_posts/md/2020-02-16-statistics_2019.md
+msgid "You can also donate money to us, to help us work on F-Droid not only in our free time.  Consider using one of the free (as in free software) donation platforms like [open collective](https://opencollective.com/f-droid/) or [Liberapay](https://liberapay.com/F-Droid-Data/).  Both of these platforms allow for recurring donations, which is highly desirable for contributors who want make working on F-Droid part of their regular paid work."
+msgstr ""
+
+#. type: Plain text
+#: build/_posts/md/2020-02-16-statistics_2019.md
+#, no-wrap
+msgid ""
+"<a href=\"https://opencollective.com/f-droid\"><img src=\"{{ site.baseurl }}/assets/opencollectivelogo.svg\" height=\"30\" style=\"box-shadow: unset;\" ></a>&nbsp;&nbsp; &nbsp;\n"
+"<a href=\"https://liberapay.com/F-Droid-Data/\"><img src=\"{{ site.baseurl }}/assets/liberapay_donate_button.svg\" height=\"30\" style=\"box-shadow: unset;\" ></a>\n"
+msgstr ""
+
+#. type: Plain text
+#: build/_posts/md/2020-02-16-statistics_2019.md
+msgid "The opencolletive is very new and we'll do a proper announcement soon, after we added proper support for opencollective into the F-Droid client app and website."
+msgstr ""
+
+#. type: Plain text
+#: build/_posts/md/2020-02-16-statistics_2019.md
+msgid "You can find other donation options in the sidebar on [f-droid.org](https://f-droid.org)."
+msgstr ""
+
+#. type: Title ##
+#: build/_posts/md/2020-02-16-statistics_2019.md
+#, no-wrap
+msgid "Talk to us"
+msgstr ""
+
+#. type: Plain text
+#: build/_posts/md/2020-02-16-statistics_2019.md
+#, no-wrap
+msgid "**[Matrix](https://matrix.org):** [#fdroid:f-droid.org](https://riot.im/app/#fdroid:f-droid.org) / [#fdroid-dev:f-droid.org](https://riot.im/app/#fdroid-dev:f-droid.org)\n"
+msgstr ""
+
+#. type: Plain text
+#: build/_posts/md/2020-02-16-statistics_2019.md
+#, no-wrap
+msgid "**IRC:** #fdroid / #fdroid-dev (freenode)\n"
+msgstr ""
+
+#. type: Plain text
+#: build/_posts/md/2020-02-16-statistics_2019.md
+#, no-wrap
+msgid "**Mastodon:** [@fdroidorg@mastoton.technology](https://mastodon.technology/@fdroidorg)\n"
+msgstr ""
+
+#. type: Plain text
+#: build/_posts/md/2020-02-16-statistics_2019.md
+#, no-wrap
+msgid "**Issue Trackers:** [gitlab.com/fdroid](https://gitlab.com/fdroid)\n"
+msgstr ""
+
+#. type: Plain text
+#: build/_posts/md/2020-02-16-statistics_2019.md
+#, no-wrap
+msgid "**Forum:** [forum.f-droid.org](https://forum.f-droid.org)\n"
 msgstr ""
