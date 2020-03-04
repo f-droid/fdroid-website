@@ -7,16 +7,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
-"POT-Creation-Date: 2020-01-17 16:12+0100\n"
-"PO-Revision-Date: 2019-09-11 17:14+0200\n"
-"Last-Translator: playday <titanv3585@gmail.com>\n"
+"POT-Creation-Date: 2020-02-17 11:13+0100\n"
+"PO-Revision-Date: 2020-02-19 17:33+0000\n"
+"Last-Translator: Tymofij Lytvynenko <till.svit@gmail.com>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/f-droid/website-docs/uk/>\n"
 "Language: uk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 3.7-dev\n"
+"X-Generator: Weblate 3.11\n"
 
 #. type: Title #
 #: build/_docs/md/All_About_Descriptions_Graphics_and_Screenshots.md
@@ -98,8 +98,9 @@ msgstr ""
 #: build/_docs/md/All_About_Descriptions_Graphics_and_Screenshots.md
 #, no-wrap
 msgid ""
+"```\n"
 "metadata file --> fdroiddata localized files --> fastlane/triple-t in app source\n"
-"\n"
+"```\n"
 msgstr ""
 
 #. type: Plain text
@@ -111,8 +112,9 @@ msgstr ""
 #: build/_docs/md/All_About_Descriptions_Graphics_and_Screenshots.md
 #, no-wrap
 msgid ""
+"```\n"
 "metadata file --> fdroiddata localized files --> fastlane/triple-t in app source --> APK\n"
-"\n"
+"```\n"
 msgstr ""
 
 #. type: Title ##
@@ -159,6 +161,34 @@ msgid ""
 "                      └── *.png\n"
 "```\n"
 msgstr ""
+"```\n"
+"- <fdroiddata>/\n"
+"  └── metadata/\n"
+"      └── <package-id>/\n"
+"          └── <locale>/\n"
+"              ├── full_description.txt\n"
+"              ├── short_description.txt\n"
+"              ├── title.txt\n"
+"              ├── video.txt\n"
+"              ├── changelogs/\n"
+"              │   ├── <version-code>.txt\n"
+"              │   └── <version-code>.txt\n"
+"              └── images/\n"
+"                  ├── featureGraphic.png\n"
+"                  ├── icon.png\n"
+"                  ├── promoGraphic.png\n"
+"                  ├── tvBanner.png\n"
+"                  ├── phoneScreenshots/\n"
+"                  │   └── *.png\n"
+"                  ├── sevenInchScreenshots/\n"
+"                  │   └── *.png\n"
+"                  ├── tenInchScreenshots/\n"
+"                  │   └── *.png\n"
+"                  ├── tvScreenshots/\n"
+"                  │   └── *.png\n"
+"                  └── wearScreenshots/\n"
+"                      └── *.png\n"
+"```\n"
 
 #. type: Plain text
 #: build/_docs/md/All_About_Descriptions_Graphics_and_Screenshots.md
@@ -225,6 +255,26 @@ msgid ""
 "                  └── *.png\n"
 "```\n"
 msgstr ""
+"```\n"
+"- fdroid/\n"
+"  └── repo/\n"
+"      └── <package-id>/\n"
+"          └── <locale>/\n"
+"              ├── featureGraphic.png\n"
+"              ├── icon.png\n"
+"              ├── promoGraphic.png\n"
+"              ├── tvBanner.png\n"
+"              ├── phoneScreenshots/\n"
+"              │   └── *.png\n"
+"              ├── sevenInchScreenshots/\n"
+"              │   └── *.png\n"
+"              ├── tenInchScreenshots/\n"
+"              │   └── *.png\n"
+"              ├── tvScreenshots/\n"
+"              │   └── *.png\n"
+"              └── wearScreenshots/\n"
+"                  └── *.png\n"
+"```\n"
 
 #. type: Plain text
 #: build/_docs/md/All_About_Descriptions_Graphics_and_Screenshots.md
@@ -1086,17 +1136,6 @@ msgstr "Пожертвування<a name=\"Donate\"></a>"
 msgid "The name of the application as can best be retrieved from the source code. This is done so that `fdroid checkupdates` can put a familiar name in the description of commits created when a new update of the application is found. The _AutoName_ entry is generated automatically when `fdroid checkupdates` is run."
 msgstr ""
 
-#. type: Plain text
-#: build/_docs/md/Build_Metadata_Reference.md
-msgid "__Warning__: this overrides all Name entries [set in the app's source code](../All_About_Descriptions_Graphics_and_Screenshots)."
-msgstr ""
-
-#. type: Plain text
-#: build/_docs/md/Build_Metadata_Reference.md
-#, no-wrap
-msgid "This is converted to (`<name>`) in the XML file (_index.xml_).\n"
-msgstr ""
-
 #. type: Title ###
 #: build/_docs/md/Build_Metadata_Reference.md
 #, fuzzy, no-wrap
@@ -1107,6 +1146,17 @@ msgstr "Пожертвування<a name=\"Donate\"></a>"
 #: build/_docs/md/Build_Metadata_Reference.md
 msgid "The name of the application. Normally, this field should not be present since the application’s correct name is retrieved from the APK file.  However, in a situation where an APK contains a bad or missing application name, it can be overridden using this. Note that this only overrides the name in the list of apps presented in the client; it doesn’t changed the name or application label in the source code."
 msgstr "Назва застосунку. Зазвичай це поле не повинно бути присутнім, оскільки правильне ім'я програми завантажується з файлу APK. Однак у ситуації, коли APK містить погане або відсутнє ім'я програми, його можна скасувати за допомогою цього. Зауважте, що це лише замінює назву в списку застосунків, представлених у клієнті; це не змінює назву або ярлик застосунків у вихідному коді."
+
+#. type: Plain text
+#: build/_docs/md/Build_Metadata_Reference.md
+msgid "__Warning__: this overrides all Name entries [set in the app's source code](../All_About_Descriptions_Graphics_and_Screenshots)."
+msgstr ""
+
+#. type: Plain text
+#: build/_docs/md/Build_Metadata_Reference.md
+#, no-wrap
+msgid "This is converted to (`<name>`) in the XML file (_index.xml_).\n"
+msgstr ""
 
 #. type: Title ###
 #: build/_docs/md/Build_Metadata_Reference.md
@@ -2354,6 +2404,11 @@ msgstr "Вихідний код<a name=\"SourceCode\"></a>"
 #. type: Plain text
 #: build/_docs/md/Build_Metadata_Reference.md
 msgid "This determines the policy for moving old versions of an app to the archive repo, if one is configured. The configuration sets a default maximum number of versions kept in the main repo, after which older ones are moved to the archive. This app-specific policy setting can override that."
+msgstr ""
+
+#. type: Plain text
+#: build/_docs/md/Build_Metadata_Reference.md
+msgid "The version specified via `CurrentVersionCode` is always considered the newest version when deciding which versions to put into the archive.  This means that when `ArchivePolicy` is set to \"1 versions\" only the APK corresponding to CVC is kept, which is not necessarily the one with the highest version code."
 msgstr ""
 
 #. type: Plain text
@@ -4826,12 +4881,12 @@ msgstr ""
 #: build/_docs/md/How_to_Help.md
 #, no-wrap
 msgid "Help with Infrastructure"
-msgstr ""
+msgstr "Допомога з інфраструктурою"
 
 #. type: Plain text
 #: build/_docs/md/How_to_Help.md
 msgid "F-Droid provides multiple servers (builders, web portal, download areas...) which need regular maintenance, Ansible-based deployment, and hardware management.  Further information can be found by asking [on IRC](https://webchat.freenode.net/?channels=%23fdroid-dev) (#fdroid-dev on freenode) or team@f-droid.org."
-msgstr ""
+msgstr "F-Droid надає декілька серверів (збірок, веб-порталів, областей завантаження...), які потребують регулярного обслуговування, розгортання на основі відповідей та керування обладнанням. Додаткові відомості можна знайти, запитавши [на IRC](https://webchat.freenode.net/?channels=%23fdroid-dev) (# fdroid-dev на freenode) або team@f-droid.org."
 
 #. type: Title ###
 #: build/_docs/md/How_to_Help.md
@@ -5110,7 +5165,7 @@ msgstr ""
 #. type: Title -
 #: build/_docs/md/Inclusion_How-To.md
 #, no-wrap
-msgid "Application Inclusion Proposal"
+msgid "Application Inclusion Proposal\n"
 msgstr ""
 
 #. type: Plain text
@@ -5198,7 +5253,7 @@ msgstr ""
 #. type: Title -
 #: build/_docs/md/Inclusion_How-To.md
 #, no-wrap
-msgid "Application Review Process"
+msgid "Application Review Process\n"
 msgstr ""
 
 #. type: Plain text
@@ -5316,7 +5371,7 @@ msgstr ""
 #. type: Title -
 #: build/_docs/md/Inclusion_How-To.md
 #, no-wrap
-msgid "Build Process"
+msgid "Build Process\n"
 msgstr ""
 
 #. type: Plain text
@@ -5383,7 +5438,7 @@ msgstr ""
 #. type: Title -
 #: build/_docs/md/Inclusion_How-To.md
 #, no-wrap
-msgid "What to Expect"
+msgid "What to Expect\n"
 msgstr ""
 
 #. type: Plain text
@@ -5404,7 +5459,7 @@ msgstr ""
 #. type: Title -
 #: build/_docs/md/Inclusion_How-To.md
 #, no-wrap
-msgid "External Links"
+msgid "External Links\n"
 msgstr ""
 
 #. type: Bullet: '-   '
@@ -5797,7 +5852,7 @@ msgstr ""
 
 #. type: Plain text
 #: build/_docs/md/Installing_the_Server_and_Repo_Tools.md
-msgid "```bash $ sudo apt-get install openjdk-8-jdk lib32stdc++6 lib32gcc1 lib32z1 lib32ncurses5 ...  $ cd ~ $ wget https://dl.google.com/android/repository/tools_r25.2.3-linux.zip $ echo \"aafe7f28ac51549784efc2f3bdfc620be8a08213 tools_r25.2.3-linux.zip\" | sha1sum -c tools_r25.2.3-linux.zip: OK $ unzip tools_r25.2.3-linux.zip $ export USE_SDK_WRAPPER=yes $ export ANDROID_HOME=~/android-sdk-linux $ export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools $ android update sdk --no-ui --filter platform-tools,tools,build-tools-25.0.2,android-24 ```"
+msgid "```bash $ sudo apt-get install apksigner curl lib32gcc1 lib32ncurses5 lib32stdc++6 lib32z1 default-jdk-headless python3-pil python3-pyasn1 python3-pyasn1-modules python3-ruamel.yaml python3-yaml ...  $ cd ~ $ wget https://dl.google.com/android/repository/tools_r25.2.3-linux.zip $ echo \"aafe7f28ac51549784efc2f3bdfc620be8a08213 tools_r25.2.3-linux.zip\" | sha1sum -c tools_r25.2.3-linux.zip: OK $ unzip tools_r25.2.3-linux.zip $ export USE_SDK_WRAPPER=yes $ export ANDROID_HOME=~/android-sdk-linux $ export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools $ android update sdk --no-ui --filter platform-tools,tools,build-tools-25.0.2,android-24 ```"
 msgstr ""
 
 #. type: Plain text
@@ -6463,6 +6518,10 @@ msgid ""
 "          SHA1: 05:F2:E6:59:28:08:89:81:B3:17:FC:9A:6D:BF:E0:4B:0F:A1:3B:4E\n"
 "          SHA256: 43:23:8D:51:2C:1E:5E:B2:D6:56:9F:4A:3A:FB:F5:52:34:18:B8:2E:0A:3E:D1:55:27:70:AB:B9:A9:C9:CC:AB\n"
 "        ```\n"
+"    - APK signing certificate fingerprint:\n"
+"      ```\n"
+"      43238d512c1e5eb2d6569f4a3afbf5523418b82e0a3ed1552770abb9a9c9ccab\n"
+"      ```\n"
 msgstr ""
 
 #. type: Plain text
@@ -7392,7 +7451,7 @@ msgstr ""
 #: build/_docs/md/Submitting_to_F-Droid_Quick_Start_Guide.md
 #, no-wrap
 msgid "Setup"
-msgstr ""
+msgstr "Налаштування"
 
 #. type: Plain text
 #: build/_docs/md/Running_a_Mirror.md
@@ -7415,7 +7474,7 @@ msgstr ""
 msgid "```console $ sudo mkdir -p /var/www/fdroid/fdroid/repo $ sudo mkdir -p /var/www/fdroid/fdroid/archive $ sudo chown -R www-data.www-data /var/www/fdroid ```"
 msgstr ""
 
-#. type: Bullet: '1. '
+#. type: Bullet: '2. '
 #: build/_docs/md/Running_a_Mirror.md
 msgid "Synchronize the repositories. These commands are best run in a terminal multiplexer (`screen`, `tmux` etc) as they will take some time to complete."
 msgstr ""
@@ -7425,7 +7484,7 @@ msgstr ""
 msgid "```console $ RSYNC_PASSWORD=[password] sudo -u www-data -E /usr/bin/rsync --links --delete --times --recursive --permissions --hard-links --sparse --delay-updates --temp-dir /tmp/ fdroid-mirror@mirror.f-droid.org::repo/ /var/www/fdroid/fdroid/repo/ $ RSYNC_PASSWORD=[password] sudo -u www-data -E /usr/bin/rsync --links --delete --times --recursive --permissions --hard-links --sparse --delay-updates --temp-dir /tmp/ fdroid-mirror@mirror.f-droid.org::archive/ /var/www/fdroid/fdroid/archive/ ```"
 msgstr ""
 
-#. type: Bullet: '1. '
+#. type: Bullet: '3. '
 #: build/_docs/md/Running_a_Mirror.md
 msgid "Establish a cronjob to keep the repositories up to date"
 msgstr ""
@@ -7450,7 +7509,7 @@ msgstr ""
 msgid "``` */5 * * * * www-data RSYNC_PASSWORD=[password] /usr/bin/rsync --links --delete --times --recursive --permissions --hard-links --sparse --delay-updates --temp-dir /tmp/ fdroid-mirror@mirror.f-droid.org::repo/ /var/www/fdroid/fdroid/repo/ */5 * * * * www-data RSYNC_PASSWORD=[password] /usr/bin/rsync --links --delete --times --recursive --permissions --hard-links --sparse --delay-updates --temp-dir /tmp/ fdroid-mirror@mirror.f-droid.org::archive/ /var/www/fdroid/fdroid/archive/ ```"
 msgstr ""
 
-#. type: Bullet: '1. '
+#. type: Bullet: '4. '
 #: build/_docs/md/Running_a_Mirror.md
 msgid "Configure your webserver"
 msgstr ""
@@ -7524,7 +7583,7 @@ msgid ""
 "```\n"
 msgstr ""
 
-#. type: Bullet: '1. '
+#. type: Bullet: '5. '
 #: build/_docs/md/Running_a_Mirror.md
 msgid "Submit your mirror for inclusion"
 msgstr ""
@@ -8186,7 +8245,7 @@ msgstr ""
 msgid ""
 "sudo apt-get install openjdk-8-jdk subversion git git-svn \\\n"
 "    mercurial bzr virtualbox ruby ruby-dev vagrant python3 python3-paramiko \\\n"
-"    python3-pil python3-pyasn1-modules python3-clint\n"
+"    python3-pil python3-pyasn1-modules python3-clint python3-vagrant\n"
 "vagrant plugin install vagrant-cachier\n"
 "ln -s ~/Android/Sdk/build-tools/23.0.2/aapt ~/Android/Sdk/platform-tools/\n"
 msgstr ""

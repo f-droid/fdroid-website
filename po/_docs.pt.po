@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2020-01-17 16:12+0100\n"
+"POT-Creation-Date: 2020-02-17 11:13+0100\n"
 "PO-Revision-Date: 2020-01-19 13:21+0000\n"
 "Last-Translator: ssantos <ssantos@web.de>\n"
 "Language-Team: Portuguese <https://hosted.weblate.org/projects/f-droid/website-docs/pt/>\n"
@@ -95,10 +95,14 @@ msgstr "Aqui está a regra geral de preenchimento do índice das fontes de metad
 
 #. type: Plain text
 #: build/_docs/md/All_About_Descriptions_Graphics_and_Screenshots.md
-#, no-wrap
+#, fuzzy, no-wrap
+#| msgid ""
+#| "metadata file --> fdroiddata localized files --> fastlane/triple-t in app source\n"
+#| "\n"
 msgid ""
+"```\n"
 "metadata file --> fdroiddata localized files --> fastlane/triple-t in app source\n"
-"\n"
+"```\n"
 msgstr ""
 "ficheiro de metadados --> ficheiros localizados de fdroiddata --> fastlane/triple-t no código-fonte do app\n"
 "\n"
@@ -110,10 +114,14 @@ msgstr "Por coisas que também podem ser removidas da APK, então nós conseguim
 
 #. type: Plain text
 #: build/_docs/md/All_About_Descriptions_Graphics_and_Screenshots.md
-#, no-wrap
+#, fuzzy, no-wrap
+#| msgid ""
+#| "metadata file --> fdroiddata localized files --> fastlane/triple-t in app source --> APK\n"
+#| "\n"
 msgid ""
+"```\n"
 "metadata file --> fdroiddata localized files --> fastlane/triple-t in app source --> APK\n"
-"\n"
+"```\n"
 msgstr ""
 "ficheiro de metadados --> ficheiros localizados de fdroiddata --> fastlane/triple-t no código-fonte do app --> APK\n"
 "\n"
@@ -1144,17 +1152,6 @@ msgstr "_Nome Auto_<a name=\"AutoName\"></a>"
 msgid "The name of the application as can best be retrieved from the source code. This is done so that `fdroid checkupdates` can put a familiar name in the description of commits created when a new update of the application is found. The _AutoName_ entry is generated automatically when `fdroid checkupdates` is run."
 msgstr "O nome da aplicação como melhor pode ser obtido do código-fonte. Isso é feito para que `fdroid checkupdates` possa pôr um nome familiar na descrição das confirmações criadas quando uma nova atualização da aplicação for localizada. A entrada _AutoName_ é gerada automaticamente quando `fdroid checkupdates` é executado."
 
-#. type: Plain text
-#: build/_docs/md/Build_Metadata_Reference.md
-msgid "__Warning__: this overrides all Name entries [set in the app's source code](../All_About_Descriptions_Graphics_and_Screenshots)."
-msgstr "__Aviso__: isso sobrescreve todas as entradas de Name [definidas no código-fonte do app](../All_About_Descriptions_Graphics_and_Screenshots)."
-
-#. type: Plain text
-#: build/_docs/md/Build_Metadata_Reference.md
-#, no-wrap
-msgid "This is converted to (`<name>`) in the XML file (_index.xml_).\n"
-msgstr "Isso é convertido em (`<name>`) no ficheiro XML (_index.xml_).\n"
-
 #. type: Title ###
 #: build/_docs/md/Build_Metadata_Reference.md
 #, no-wrap
@@ -1165,6 +1162,17 @@ msgstr "_Nome_<a name=\"Name\"></a>"
 #: build/_docs/md/Build_Metadata_Reference.md
 msgid "The name of the application. Normally, this field should not be present since the application’s correct name is retrieved from the APK file.  However, in a situation where an APK contains a bad or missing application name, it can be overridden using this. Note that this only overrides the name in the list of apps presented in the client; it doesn’t changed the name or application label in the source code."
 msgstr "O nome da aplicação. Normalmente, esse campo não deve estar presente, pois o nome correto da aplicação é recuperado do ficheiro APK. No entanto, em uma situação em que um APK contenha um nome de aplicação incorreto ou ausente, ele poderá ser substituído usando-o. Observe que isso apenas substitui o nome na lista de apps apresentados no cliente; ele não altera o nome ou o rótulo da aplicação no código-fonte."
+
+#. type: Plain text
+#: build/_docs/md/Build_Metadata_Reference.md
+msgid "__Warning__: this overrides all Name entries [set in the app's source code](../All_About_Descriptions_Graphics_and_Screenshots)."
+msgstr "__Aviso__: isso sobrescreve todas as entradas de Name [definidas no código-fonte do app](../All_About_Descriptions_Graphics_and_Screenshots)."
+
+#. type: Plain text
+#: build/_docs/md/Build_Metadata_Reference.md
+#, no-wrap
+msgid "This is converted to (`<name>`) in the XML file (_index.xml_).\n"
+msgstr "Isso é convertido em (`<name>`) no ficheiro XML (_index.xml_).\n"
 
 #. type: Title ###
 #: build/_docs/md/Build_Metadata_Reference.md
@@ -2643,6 +2651,11 @@ msgstr "_Política de Arquivação_<a name=\"ArchivePolicy\"></a>"
 #: build/_docs/md/Build_Metadata_Reference.md
 msgid "This determines the policy for moving old versions of an app to the archive repo, if one is configured. The configuration sets a default maximum number of versions kept in the main repo, after which older ones are moved to the archive. This app-specific policy setting can override that."
 msgstr "Isso determina a política para mover versões antigas de um app para o repositório de arquivamento, se um estiver configurado. A configuração define um número máximo padrão de versões mantidas no repositório principal, após o qual as versões mais antigas são movidas para o arquivo. Essa configuração de política específica do app pode substituir isso."
+
+#. type: Plain text
+#: build/_docs/md/Build_Metadata_Reference.md
+msgid "The version specified via `CurrentVersionCode` is always considered the newest version when deciding which versions to put into the archive.  This means that when `ArchivePolicy` is set to \"1 versions\" only the APK corresponding to CVC is kept, which is not necessarily the one with the highest version code."
+msgstr ""
 
 #. type: Plain text
 #: build/_docs/md/Build_Metadata_Reference.md
@@ -5548,8 +5561,9 @@ msgstr "Esta página documenta como uma nova aplicação é incluído no reposit
 
 #. type: Title -
 #: build/_docs/md/Inclusion_How-To.md
-#, no-wrap
-msgid "Application Inclusion Proposal"
+#, fuzzy, no-wrap
+#| msgid "Application Inclusion Proposal"
+msgid "Application Inclusion Proposal\n"
 msgstr "Proposta de Inclusão de Aplicações"
 
 #. type: Plain text
@@ -5636,8 +5650,9 @@ msgstr "Os passos recomendados para propor a inclusão desta forma estão escrit
 
 #. type: Title -
 #: build/_docs/md/Inclusion_How-To.md
-#, no-wrap
-msgid "Application Review Process"
+#, fuzzy, no-wrap
+#| msgid "Application Review Process"
+msgid "Application Review Process\n"
 msgstr "Processo de Revisão de Aplicação"
 
 #. type: Plain text
@@ -5753,8 +5768,9 @@ msgstr "Numa tentativa de otimizar o processo, quando você propôs a inclusão 
 
 #. type: Title -
 #: build/_docs/md/Inclusion_How-To.md
-#, no-wrap
-msgid "Build Process"
+#, fuzzy, no-wrap
+#| msgid "Build Process"
+msgid "Build Process\n"
 msgstr "Processo de Compilação"
 
 #. type: Plain text
@@ -5820,8 +5836,9 @@ msgstr "Processo de Publicação de Repositórios"
 
 #. type: Title -
 #: build/_docs/md/Inclusion_How-To.md
-#, no-wrap
-msgid "What to Expect"
+#, fuzzy, no-wrap
+#| msgid "What to Expect"
+msgid "What to Expect\n"
 msgstr "O que Esperar"
 
 #. type: Plain text
@@ -5841,8 +5858,9 @@ msgstr "No entanto, sua aplicação ainda não aparecerá na lista de aplicaçõ
 
 #. type: Title -
 #: build/_docs/md/Inclusion_How-To.md
-#, no-wrap
-msgid "External Links"
+#, fuzzy, no-wrap
+#| msgid "External Links"
+msgid "External Links\n"
 msgstr "Ligações Externas"
 
 #. type: Bullet: '-   '
@@ -6253,7 +6271,9 @@ msgstr "[Instale o SDK do Android](https://developer.android.com/sdk/index.html#
 
 #. type: Plain text
 #: build/_docs/md/Installing_the_Server_and_Repo_Tools.md
-msgid "```bash $ sudo apt-get install openjdk-8-jdk lib32stdc++6 lib32gcc1 lib32z1 lib32ncurses5 ...  $ cd ~ $ wget https://dl.google.com/android/repository/tools_r25.2.3-linux.zip $ echo \"aafe7f28ac51549784efc2f3bdfc620be8a08213 tools_r25.2.3-linux.zip\" | sha1sum -c tools_r25.2.3-linux.zip: OK $ unzip tools_r25.2.3-linux.zip $ export USE_SDK_WRAPPER=yes $ export ANDROID_HOME=~/android-sdk-linux $ export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools $ android update sdk --no-ui --filter platform-tools,tools,build-tools-25.0.2,android-24 ```"
+#, fuzzy
+#| msgid "```bash $ sudo apt-get install openjdk-8-jdk lib32stdc++6 lib32gcc1 lib32z1 lib32ncurses5 ...  $ cd ~ $ wget https://dl.google.com/android/repository/tools_r25.2.3-linux.zip $ echo \"aafe7f28ac51549784efc2f3bdfc620be8a08213 tools_r25.2.3-linux.zip\" | sha1sum -c tools_r25.2.3-linux.zip: OK $ unzip tools_r25.2.3-linux.zip $ export USE_SDK_WRAPPER=yes $ export ANDROID_HOME=~/android-sdk-linux $ export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools $ android update sdk --no-ui --filter platform-tools,tools,build-tools-25.0.2,android-24 ```"
+msgid "```bash $ sudo apt-get install apksigner curl lib32gcc1 lib32ncurses5 lib32stdc++6 lib32z1 default-jdk-headless python3-pil python3-pyasn1 python3-pyasn1-modules python3-ruamel.yaml python3-yaml ...  $ cd ~ $ wget https://dl.google.com/android/repository/tools_r25.2.3-linux.zip $ echo \"aafe7f28ac51549784efc2f3bdfc620be8a08213 tools_r25.2.3-linux.zip\" | sha1sum -c tools_r25.2.3-linux.zip: OK $ unzip tools_r25.2.3-linux.zip $ export USE_SDK_WRAPPER=yes $ export ANDROID_HOME=~/android-sdk-linux $ export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools $ android update sdk --no-ui --filter platform-tools,tools,build-tools-25.0.2,android-24 ```"
 msgstr "```bash $ sudo apt-get install openjdk-8-jdk lib32stdc++6 lib32gcc1 lib32z1 lib32ncurses5 ...  $ cd ~ $ wget https://dl.google.com/android/repository/tools_r25.2.3-linux.zip $ echo \"aafe7f28ac51549784efc2f3bdfc620be8a08213 tools_r25.2.3-linux.zip\" | sha1sum -c tools_r25.2.3-linux.zip: OK $ unzip tools_r25.2.3-linux.zip $ export USE_SDK_WRAPPER=yes $ export ANDROID_HOME=~/android-sdk-linux $ export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools $ android update sdk --no-ui --filter platform-tools,tools,build-tools-25.0.2,android-24 ```"
 
 #. type: Plain text
@@ -7004,12 +7024,21 @@ msgstr ""
 
 #. type: Plain text
 #: build/_docs/md/Release_Channels_and_Signing_Keys.md
-#, no-wrap
+#, fuzzy, no-wrap
+#| msgid ""
+#| "          MD5:  17:C5:5C:62:80:56:E1:93:E9:56:44:E9:89:79:27:86\n"
+#| "          SHA1: 05:F2:E6:59:28:08:89:81:B3:17:FC:9A:6D:BF:E0:4B:0F:A1:3B:4E\n"
+#| "          SHA256: 43:23:8D:51:2C:1E:5E:B2:D6:56:9F:4A:3A:FB:F5:52:34:18:B8:2E:0A:3E:D1:55:27:70:AB:B9:A9:C9:CC:AB\n"
+#| "        ```\n"
 msgid ""
 "          MD5:  17:C5:5C:62:80:56:E1:93:E9:56:44:E9:89:79:27:86\n"
 "          SHA1: 05:F2:E6:59:28:08:89:81:B3:17:FC:9A:6D:BF:E0:4B:0F:A1:3B:4E\n"
 "          SHA256: 43:23:8D:51:2C:1E:5E:B2:D6:56:9F:4A:3A:FB:F5:52:34:18:B8:2E:0A:3E:D1:55:27:70:AB:B9:A9:C9:CC:AB\n"
 "        ```\n"
+"    - APK signing certificate fingerprint:\n"
+"      ```\n"
+"      43238d512c1e5eb2d6569f4a3afbf5523418b82e0a3ed1552770abb9a9c9ccab\n"
+"      ```\n"
 msgstr ""
 "          MD5:  17:C5:5C:62:80:56:E1:93:E9:56:44:E9:89:79:27:86\n"
 "          SHA1: 05:F2:E6:59:28:08:89:81:B3:17:FC:9A:6D:BF:E0:4B:0F:A1:3B:4E\n"
@@ -8065,7 +8094,7 @@ msgstr "Criar diretórios apropriados"
 msgid "```console $ sudo mkdir -p /var/www/fdroid/fdroid/repo $ sudo mkdir -p /var/www/fdroid/fdroid/archive $ sudo chown -R www-data.www-data /var/www/fdroid ```"
 msgstr "```console $ sudo mkdir -p /var/www/fdroid/fdroid/repo $ sudo mkdir -p /var/www/fdroid/fdroid/archive $ sudo chown -R www-data.www-data /var/www/fdroid ```"
 
-#. type: Bullet: '1. '
+#. type: Bullet: '2. '
 #: build/_docs/md/Running_a_Mirror.md
 msgid "Synchronize the repositories. These commands are best run in a terminal multiplexer (`screen`, `tmux` etc) as they will take some time to complete."
 msgstr "Sincronizar os repositórios. Estes comandos são melhor executados num multiplexador de terminal (`screen`, `tmux` etc), porque eles levam algum tempo a serem completados."
@@ -8075,7 +8104,7 @@ msgstr "Sincronizar os repositórios. Estes comandos são melhor executados num 
 msgid "```console $ RSYNC_PASSWORD=[password] sudo -u www-data -E /usr/bin/rsync --links --delete --times --recursive --permissions --hard-links --sparse --delay-updates --temp-dir /tmp/ fdroid-mirror@mirror.f-droid.org::repo/ /var/www/fdroid/fdroid/repo/ $ RSYNC_PASSWORD=[password] sudo -u www-data -E /usr/bin/rsync --links --delete --times --recursive --permissions --hard-links --sparse --delay-updates --temp-dir /tmp/ fdroid-mirror@mirror.f-droid.org::archive/ /var/www/fdroid/fdroid/archive/ ```"
 msgstr "```console $ RSYNC_PASSWORD=[password] sudo -u www-data -E /usr/bin/rsync --links --delete --times --recursive --permissions --hard-links --sparse --delay-updates --temp-dir /tmp/ fdroid-mirror@mirror.f-droid.org::repo/ /var/www/fdroid/fdroid/repo/ $ RSYNC_PASSWORD=[password] sudo -u www-data -E /usr/bin/rsync --links --delete --times --recursive --permissions --hard-links --sparse --delay-updates --temp-dir /tmp/ fdroid-mirror@mirror.f-droid.org::archive/ /var/www/fdroid/fdroid/archive/ ```"
 
-#. type: Bullet: '1. '
+#. type: Bullet: '3. '
 #: build/_docs/md/Running_a_Mirror.md
 msgid "Establish a cronjob to keep the repositories up to date"
 msgstr "Estabelecer um cronjob para manter os repositórios atualizados"
@@ -8100,7 +8129,7 @@ msgstr "Preencher o ficheiro com entradas para atualizar os repositórios"
 msgid "``` */5 * * * * www-data RSYNC_PASSWORD=[password] /usr/bin/rsync --links --delete --times --recursive --permissions --hard-links --sparse --delay-updates --temp-dir /tmp/ fdroid-mirror@mirror.f-droid.org::repo/ /var/www/fdroid/fdroid/repo/ */5 * * * * www-data RSYNC_PASSWORD=[password] /usr/bin/rsync --links --delete --times --recursive --permissions --hard-links --sparse --delay-updates --temp-dir /tmp/ fdroid-mirror@mirror.f-droid.org::archive/ /var/www/fdroid/fdroid/archive/ ```"
 msgstr "``` */5 * * * * www-data RSYNC_PASSWORD=[password] /usr/bin/rsync --links --delete --times --recursive --permissions --hard-links --sparse --delay-updates --temp-dir /tmp/ fdroid-mirror@mirror.f-droid.org::repo/ /var/www/fdroid/fdroid/repo/ */5 * * * * www-data RSYNC_PASSWORD=[password] /usr/bin/rsync --links --delete --times --recursive --permissions --hard-links --sparse --delay-updates --temp-dir /tmp/ fdroid-mirror@mirror.f-droid.org::archive/ /var/www/fdroid/fdroid/archive/ ```"
 
-#. type: Bullet: '1. '
+#. type: Bullet: '4. '
 #: build/_docs/md/Running_a_Mirror.md
 msgid "Configure your webserver"
 msgstr "Configurar seu servidor web"
@@ -8190,7 +8219,7 @@ msgstr ""
 "}\n"
 "```\n"
 
-#. type: Bullet: '1. '
+#. type: Bullet: '5. '
 #: build/_docs/md/Running_a_Mirror.md
 msgid "Submit your mirror for inclusion"
 msgstr "Envie o seu espelho para inclusão"
@@ -8864,11 +8893,17 @@ msgstr "Pré-requisitos"
 
 #. type: Plain text
 #: build/_docs/md/Submitting_to_F-Droid_Quick_Start_Guide.md
-#, no-wrap
+#, fuzzy, no-wrap
+#| msgid ""
+#| "sudo apt-get install openjdk-8-jdk subversion git git-svn \\\n"
+#| "    mercurial bzr virtualbox ruby ruby-dev vagrant python3 python3-paramiko \\\n"
+#| "    python3-pil python3-pyasn1-modules python3-clint\n"
+#| "vagrant plugin install vagrant-cachier\n"
+#| "ln -s ~/Android/Sdk/build-tools/23.0.2/aapt ~/Android/Sdk/platform-tools/\n"
 msgid ""
 "sudo apt-get install openjdk-8-jdk subversion git git-svn \\\n"
 "    mercurial bzr virtualbox ruby ruby-dev vagrant python3 python3-paramiko \\\n"
-"    python3-pil python3-pyasn1-modules python3-clint\n"
+"    python3-pil python3-pyasn1-modules python3-clint python3-vagrant\n"
 "vagrant plugin install vagrant-cachier\n"
 "ln -s ~/Android/Sdk/build-tools/23.0.2/aapt ~/Android/Sdk/platform-tools/\n"
 msgstr ""
