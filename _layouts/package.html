@@ -104,9 +104,14 @@ layout: default-package-sidebar
 		</li>
 	</ul>
 
-	{% if page.liberapayID != nil or page.flattrID != nil or page.bitcoin != nil or page.litecoin != nil or page.donate != nil %}
+	{% if page.openCollective != nil or page.liberapayID != nil or page.flattrID != nil or page.bitcoin != nil or page.litecoin != nil or page.donate != nil %}
 	<h3>{{ strings.donate }}</h3>
 	<ul class="package-links donate-options">
+		{% if page.openCollective != "" and page.openCollective != nil %}
+		<li class="package-link opencollective">
+			<a href="{{ page.openCollective }}"><img src="{{ site.baseurl }}/assets/opencollective_button.png" alt="{{ strings.opencollective_alt }}"/></a>
+		</li>
+		{% endif %}
 		{% if page.liberapayID != "" and page.liberapayID != nil %}
 		<li class="package-link">
 			<a href="https://liberapay.com/~{{ page.liberapayID }}"><img src="{{ site.baseurl }}/assets/liberapay_donate_button.svg" alt="{{ strings.liberapay_alt }}"/></a>
