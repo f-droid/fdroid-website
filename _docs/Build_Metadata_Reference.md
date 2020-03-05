@@ -292,19 +292,13 @@ A full description of the application, relevant to the latest version.
 This can span multiple lines (which should be kept to a maximum of 80
 characters), and is terminated by a line containing a single ’.’.
 
-Basic MediaWiki-style formatting can be used. Leaving a blank line
-starts a new paragraph. Surrounding text with `''` make it italic, and
-with `'''` makes it bold.
+The description formatting follows the established conventions that
+work across many app stores:
 
-You can link to another app in the repo by using `[[app.id]]`. The link
-will be made appropriately whether in the Android client, the web repo
-browser or the wiki. The link text will be the apps name.
-
-Links to web addresses can be done using `[http://example.com Text]`.
-
-Bulletted lists are done by simply starting each item with a `*` on a
-new line, and numbered lists are the same but using `#`. There is
-currently no support for nesting lists - you can have one level only.
+* Basic HTML formatting can be used.
+* Newlines will be preserved.
+* Links to other packages on f-droid.org will show up as clickable on
+the website, other links will show up as plain text.
 
 It can be helpful to note information pertaining to updating from an
 earlier version; whether the app contains any prebuilts built by the
