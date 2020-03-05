@@ -9,7 +9,7 @@ the entire website, and the tools.  That means that all of the texts
 can be translated into any language supported by Android.  F-Droid
 will also use localized formats for numbers, currency, dates,
 etc. which happens automatically based on the language and country
-specified in the device's settings.  All of the F-Droid resources area
+specified in the device's settings.  All of the F-Droid resources are
 available for translation on
 [Weblate "components"](https://hosted.weblate.org/projects/f-droid/)
 that are each managed separately, based on technical requirements.

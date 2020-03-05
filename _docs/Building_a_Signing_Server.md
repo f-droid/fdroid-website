@@ -6,7 +6,7 @@ title: Building a Signing Server
 
 The Android APK signing model sets the expectation that the signing
 key will be the same for the entire lifetime of the app.  That can be
-seen in the recommended lifetype of an Android signing key:
+seen in the recommended lifetime of an Android signing key:
 [20+ years](https://developer.android.com/studio/publish/app-signing.html#considerations).
 On top of that, it is difficult to
 [migrate an app to a new key](https://guardianproject.info/2015/12/29/how-to-migrate-your-android-apps-signing-key/).
@@ -36,7 +36,7 @@ work, even a 10 year old, basic laptop.  We recommend using a minimal
 from scratch.
 
 
-### Automated Signing Server with with HSM
+### Automated Signing Server with HSM
 
 For a fully automated signing setup, the machine running the signing
 needs to be online and running. Ideally this machine would have no
@@ -62,7 +62,7 @@ auditing process to raise alarms if too many signatures have been
 made.  That could mean that this server was breached and used to sign
 unauthorized packages.
 
-Other possibility it to use a setup like [Fedora](https://pagure.io/sigul)'s
+Another possibility is to use a setup like [Fedora](https://pagure.io/sigul)'s
 [Sigul](http://www.devops-blog.net/koji/gpg-signing-rpms-with-sigul-signing-server-koji-integration)
 that involves three machines.
 
@@ -110,7 +110,7 @@ also use Coreboot for the BIOS.
 
 * Buy a computer off the shelf with cash, avoid having it shipped, especially across borders
 * Buy a Debian-supported [Chromebook](https://www.chromium.org/chromium-os/developer-information-for-chrome-os-devices/acer-c720-chromebook) with removeable WiFi hardware, and needs no binary blobs
-* Install a reproducibly built coreboot binary
+* Install a reproducibly built Coreboot binary
 * Install from a reproducibly built Debian image, wiping out Chrome OS entirely
   
 
@@ -130,7 +130,7 @@ important:
 
 * Restricted physical access to HSMs or smart cards
 * Security cameras
-* Onsite security guards
+* On-site security guards
 * Visitor logging
 * A tools-resistant server safe for online code-signing servers
 

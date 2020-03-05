@@ -150,13 +150,13 @@ gpg --import admin@f-droid.org.asc
 ## Repomaker
 
 -   git repo: <https://gitlab.com/fdroid/repomaker>
-    -   git tags signed by "Nico Alt <nicoalt@posteo.org>" aka
-        "Nico Alt <nicoalt@posteo.de>" with fingerprint: <br />
+    -   git tags signed by
+        "Nico Alt \<nicoalt@posteo.de>" with fingerprint: <br />
         `558B E907 1CA6 CA44 DBF5 576B 95A0 DAF7 DBC7 B548`
 
 -   source package: <https://pypi.python.org/pypi/repomaker>
-    -   package tags signed by "Nico Alt <nicoalt@posteo.org>" aka
-        "Nico Alt <nicoalt@posteo.de>" with fingerprint: <br />
+    -   package tags signed by
+        "Nico Alt \<nicoalt@posteo.de>" with fingerprint: <br />
         `558B E907 1CA6 CA44 DBF5 576B 95A0 DAF7 DBC7 B548`
     -   release command: `python3 setup.py sdist upload --sign`
 
@@ -176,6 +176,5 @@ gpg --import admin@f-droid.org.asc
         \<hans@eds.org>" aka "Hans-Christoph Steiner
         \<hans@at.or.at>" with fingerprint: <br />
         `EE66 20C7 136B 0D2C 456C 0A4D E9E2 8DEA 00AA 5556`
-    -   or previously "Nico Alt <nicoalt@posteo.org>" aka
-        "Nico Alt <nicoalt@posteo.de>" with fingerprint: <br />
+        or "Nico Alt \<nicoalt@posteo.de>" with fingerprint: <br />
         `558B E907 1CA6 CA44 DBF5 576B 95A0 DAF7 DBC7 B548`

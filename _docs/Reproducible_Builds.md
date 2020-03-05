@@ -28,7 +28,7 @@ recipe. Publishing only takes place if there is a proper match. (Which
 seems very unlikely to be the case unless the exact same tool-chain is
 used, so I would imagine that unless the person building and signing
 the incoming binaries uses fdroidserver to build them, probably the
-exact same buildserver id, they will not match. But at least we have
+exact same buildserver ID, they will not match. But at least we have
 the functionality to support that.)
 
 This procedures are implemented as part of `fdroid publish`. At the

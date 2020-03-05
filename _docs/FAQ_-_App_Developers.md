@@ -41,16 +41,16 @@ However, we will always keep a minimal, authoritative metadata repo of our own.
 ### How do I license my app?
 
 There are, broadly, two categories: copyleft and permissive, with the
-GPLv3 and the Apachev2 being the most popular respectively. Choose the
+GPLv3 and the Apache 2.0 being the most popular respectively. Choose the
 former if you insist that derivatives have the same licence and the
 latter if you permit any kind of re-use.
 
 The overall licence must be compatible with the licence of the
 components. However we will grant some flexibility when it comes to
 assets and resources; so if you have, for example, some music under a
-Creative Commons non-commercial licence (i.e. a non-free licence), then
+Creative Commons non-commercial licence (i.e. a Non-Free licence), then
 we will accept it. The important thing is to include copyright info for
-assets as well as source code, in the file headers and/or the readme. A
+assets as well as source code, in the file headers and/or the README. A
 copy of the licences in the root of the repo is helpful (LICENSE or
 COPYING files). Also make a note of the copyright and licenses
 pertaining to external resources or programs and if it does connect to a
@@ -175,7 +175,7 @@ that first, and re-import it afterwards.
 
 We also support reproducible builds, so we can build a version from
 source and check against your official release. If they match (ignoring
-the signature) we can then publish your official apk with your signature
+the signature) we can then publish your official APK with your signature
 used. This is a tedious task, since we have to standardize on the build
 parameters and tools, but it should be worth it in the long run. We also
 try to verify our own builds and get a lot of binary differences, see
@@ -247,7 +247,7 @@ Yes, but:
 ### Which libraries and dependencies are good to use?
 
 To be FLOSS, your entire app has to be, including dependencies. If you
-use non-free/proprietary libraries, we cannot build your app and thus it
+use Non-Free/proprietary libraries, we cannot build your app and thus it
 cannot be included in our mainline repository (see "Can I run my own
 app repo?" in that case). Unfortunately that rules out any libraries
 that are part of the "Google repository" from the SDK manager (e.g.
@@ -255,10 +255,10 @@ play-services, fabric, firebase) -- only the "Android support
 repository" is allowed.
 
 For external resources, please restrain yourself to "well known
-repositories", e.g. mavenCentral or jCenter (see complete listing in
+repositories", e.g. mavenCentral or JCenter (see complete listing in
 the "srclib" section of
 [Build Metadata Reference](../Build_Metadata_Reference)). Please note
-that e.g. Bintray does not only offers jCenter, but user-repos as
+that e.g. Bintray does not only offers JCenter, but user-repos as
 well.  Those are not part of the trusted repository list.
 
 If you require dependencies that are not available through those
@@ -341,9 +341,9 @@ proprietary, balance the loss and confusion to the users and maintainers
 of the free app against the feeling of justice that you'll get by seeing
 those illegal clones lose the few cents in ad revenue that they would
 have got. In the longer run we want to improve donations via F-Droid so
-you can be supported financially and we already support Bitecoin, Litecoin,
-Flattr and Liberapay as well as any other payment method that you can suggest
-via a website.
+you can be supported financially and we already support Bitcoin, Litecoin,
+OpenCollective, Flattr and Liberapay as well as any other payment method
+that you can suggest via a website.
 
 
 ### How is the F-Droid client git workflow structured?

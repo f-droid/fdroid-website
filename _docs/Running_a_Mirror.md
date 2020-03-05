@@ -90,9 +90,9 @@ server {
 
 5. Submit your mirror for inclusion
 
-* Fork the [mirror monitor repo](https://gitlab.com/fdroid/mirror-monitor), add your mirror to the list in the readme, and open a merge request.
+* Fork the [mirror monitor repo](https://gitlab.com/fdroid/mirror-monitor), add your mirror to the list in the README, and open a merge request.
 * Open an issue on the [admin repo](https://gitlab.com/fdroid/admin), including any pertinent information, requesting the inclusion of your mirror.
-* Once your mirror is provden trustworth and reliable to the core contributor team, it will be accepted into the official list.
+* Once the core contributor team deems your mirror trustworthy and reliable, it will be accepted into the official list.
 
 #### Other considerations
 

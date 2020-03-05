@@ -19,15 +19,15 @@ Notably:
 
 -   We cannot build apps using Google's proprietary "play-services".
     Please talk to upstream about an untainted build flavor (either
-    using microg or removing non-free dependencies completely).
+    using microg or removing Non-Free dependencies completely).
 -   We cannot build apps using proprietary tracking/analytic
     dependencies like Crashlytics and Firebase. Please talk to upstream
     about an untainted build flavor (either using a FLOSS analytics
-    software like ACRA or by removing non-free dependencies completely).
+    software like ACRA or by removing Non-Free dependencies completely).
 -   We cannot build apps using proprietary ad libraries. We have nothing
     against advertisments (see [_AntiFeatures_](https://f-droid.org/wiki/page/Antifeatures)),
     but they must be provided by a FLOSS compatible way.
--   We cannot build apps requiring non-free buildtools, including
+-   We cannot build apps requiring Non-Free buildtools, including
     Oracle's JDK or some pre-release toolchains.
 
 Additionally:
@@ -37,7 +37,7 @@ Additionally:
     hg, svn, bzr), and the source code needs to be maintained in an up
     to date state.
 -   The software should not download additional executable binary
-    files (e.g. non-free addons, auto-updates, etc).
+    files (e.g. Non-Free addons, auto-updates, etc).
 -   The software should use its own unique Android package ID. Where the
     application is a fork of another (even one not included in the
     F-Droid repository) it must have a new ID, different from
