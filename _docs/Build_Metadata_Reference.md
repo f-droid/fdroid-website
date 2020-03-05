@@ -1019,8 +1019,8 @@ client to determine which version should be recommended.
 This field is normally automatically updated - see
 [_UpdateCheckMode_](#UpdateCheckMode).
 
-If not set or set to `0`, clients will recommend the highest version
-they can, as if the _CurrentVersionCode_ was infinite.
+If not set, clients will recommend the highest version they can, as if
+the _CurrentVersionCode_ was infinite.
 
 This is converted to (`<marketvercode>`) in the XML file (_index.xml_).
 
