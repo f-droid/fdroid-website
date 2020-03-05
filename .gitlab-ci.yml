@@ -73,6 +73,8 @@ f-droid.org:
 
 pages:
   stage: deploy
+  except:
+    - triggers
   cache:
     paths:
       - vendor/ruby
@@ -82,6 +84,7 @@ pages:
     expire_in: 1w
     when: always
   script:
+   - ./tools/trigger-spellcheckbot
    # use the 'gitlab ci' subset of languages
    - sed -i 's,^languages:,ignored_languages:,' _config.yml
    - sed -i 's,^gitlab_ci_languages:,languages:,' _config.yml
@@ -109,16 +112,17 @@ pages:
       --ignore-url ".*/packages/[b-z].*" --ignore-url "/F-Droid\.apk(\.asc)?$"
 
 
-spellcheck:
-  except:
-    - tags@fdroid/fdroidserver
-    - branches@fdroid/fdroidserver
-  image: node
+spellcheckbot:
+  image: node:buster
   stage: deploy
   allow_failure: true
+  only:
+    - triggers
   script:
-    - git fetch https://gitlab.com/fdroid/fdroid-website.git
-    - for f in `git diff --name-only --diff-filter=d FETCH_HEAD...HEAD`; do
+    - test -n ${FROM_CI_PROJECT_URL}
+    - test -n ${FROM_CI_COMMIT_SHA}
+    - git fetch ${FROM_CI_PROJECT_URL} ${FROM_CI_COMMIT_SHA}
+    - for f in `git diff --name-only --diff-filter=d HEAD...${FROM_CI_COMMIT_SHA}`; do
           export CHANGED="$CHANGED `echo $f | grep '\.md$' || true`";
       done
     - if [ -z "`echo $CHANGED | sed 's,\s*,,g'`" ]; then
@@ -127,13 +131,12 @@ spellcheck:
           echo "Spellchecking $CHANGED";
       fi
     - apt-get -qy update
-    - apt-get -qy install --no-install-recommends --allow-unauthenticated python3 python3-requests
+    - apt-get -qy install --no-install-recommends --allow-unauthenticated python3-gitlab python3-requests
     - ./tools/fetch-spelling-words.py >> .spelling
     - npm i markdown-spellcheck -g
-    - mdspell --report --en-gb
-        --ignore-numbers --ignore-acronyms
-        $CHANGED
-        || true
+    - (mdspell --report --en-gb --ignore-numbers --ignore-acronyms $CHANGED > output.txt 2>&1)
+        || ./tools/spellcheckbot.py
+    - cat output.txt
 
 
 # Download and verify that the FDroid.apk is signed by the right PGP
@@ -175,6 +178,8 @@ check_fdroid_apk:
 
 i18n_sync:
   stage: deploy
+  except:
+    - triggers
   image: debian:jessie-slim
   only:
     - tags

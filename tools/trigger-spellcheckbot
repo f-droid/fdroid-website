@@ -1,0 +1,17 @@
+#!/bin/bash -e
+
+# insecure "captcha"
+s=$((6`printf "$CI_COMMIT_SHA" | wc -c`+26))
+e=$((s+`echo "$CI_SERVER_HOST" | wc -c`+18))
+spellcheckbot=`cat .spellcheckbot | cut -b${s}-${e}`
+curl --silent --request POST \
+     --form token=$spellcheckbot \
+     --form ref=master \
+     --form "variables[FROM_CI_COMMIT_REF_NAME]=$CI_COMMIT_REF_NAME" \
+     --form "variables[FROM_CI_COMMIT_REF_SLUG]=$CI_COMMIT_REF_SLUG" \
+     --form "variables[FROM_CI_COMMIT_SHA]=$CI_COMMIT_SHA" \
+     --form "variables[FROM_CI_JOB_ID]=$CI_JOB_ID" \
+     --form "variables[FROM_CI_PIPELINE_ID]=$CI_PIPELINE_ID" \
+     --form "variables[FROM_CI_PROJECT_PATH]=$CI_PROJECT_PATH" \
+     --form "variables[FROM_CI_PROJECT_URL]=$CI_PROJECT_URL" \
+     ${CI_API_V4_URL}/projects/2151437/trigger/pipeline > /dev/null
