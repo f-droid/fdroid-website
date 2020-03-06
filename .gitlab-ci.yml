@@ -147,7 +147,7 @@ spellcheckbot:
 # in this script, so there is a test to check that it is starting with
 # an empty keyring.
 
-check_fdroid_apk:
+check_fdroid_apk_bot:
   stage: deploy
   only:
     - schedules
@@ -156,8 +156,9 @@ check_fdroid_apk:
   variables:
     apk: F-Droid.apk
     asc: F-Droid.apk.asc
-    curl: "curl --silent --user-agent F-Droid --retry 20"
+    curl: "curl --silent --user-agent F-Droid --retry 99"
     fingerprint: 37D2C98789D8311948394E3E41E7044E1DBA2E89
+    pip: pip3 --timeout 100 --retries 10
   artifacts:
     name: "$apk-failed-${CI_JOB_ID}"
     paths:
@@ -174,7 +175,13 @@ check_fdroid_apk:
     - $curl https://f-droid.org/$apk > $apk
     - $curl https://f-droid.org/$asc > $asc
     - sha256sum $apk
-    - gpg --batch --trust-model always --verify $asc $apk
+    - gpg --batch --trust-model always --verify $asc $apk || (
+          apk add --no-cache python3;
+          python3 -m ensurepip;
+          $pip install python-gitlab;
+          ./tools/check-fdroid-apk-bot.py;
+      )
+
 
 i18n_sync:
   stage: deploy
