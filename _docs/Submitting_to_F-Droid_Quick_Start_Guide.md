@@ -182,6 +182,6 @@ ran.
 
 And now I was ready to request my package be included in F-Droid by committing
 and pushing the changes I had made to the fdroiddata project to my forked repo,
-and clicking the Merge Request button in the gitlab UI.  My merge request is
+and clicking the Merge Request button in the GitLab UI.  My merge request is
 here:
 [gitlab.com/fdroid/fdroiddata/merge_requests/1965](https://gitlab.com/fdroid/fdroiddata/merge_requests/1965)

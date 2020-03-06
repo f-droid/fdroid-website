@@ -90,7 +90,7 @@ to make it as hard as possible to exploit this vector.
 * website is
   [statically generated](https://gitlab.com/fdroid/fdroid-website) to
   greatly reduce the attack surface
-* website is fully functional when Javascript is disabled in the
+* website is fully functional when JavaScript is disabled in the
   browser, eliminating all possibility of XSS attacks
 
 
@@ -124,12 +124,12 @@ can also be taken from the app's source repository.  This data is
 ultimately delivered to the Android client or the user's browser via
 _f-droid.org_.
 
-* the Android client never runs CSS, Javascript, or dangerous HTML
+* the Android client never runs CSS, JavaScript, or dangerous HTML
 tags since it displays HTML via
 [`android.text.Html.fromHtml()`](https://gitlab.com/fdroid/fdroidclient/blob/1.3.1/app/src/main/java/org/fdroid/fdroid/views/AppDetailsRecyclerViewAdapter.java#L441)
 with image loading disabled
 * the _f-droid.org_ website protects against malicious and
-CSS/HTML/Javascript injection with a
+CSS/HTML/JavaScript injection with a
 [strict HTTP Content Security Policy](https://observatory.mozilla.org/analyze.html?host=f-droid.org).
 * Repomaker filters the texts through Mozilla's
 [_bleach_](https://github.com/mozilla/bleach) and has a good

@@ -36,4 +36,4 @@ for information on how you can install Repomaker on your device.
 
 Like any other project of F-Droid, Repomaker is free and open source
 software. You can find the source code and its license on
-[GitLab.com](https://gitlab.com/fdroid/repomaker).
+[gitlab.com](https://gitlab.com/fdroid/repomaker).
