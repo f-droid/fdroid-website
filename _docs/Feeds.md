@@ -10,7 +10,7 @@ Sometimes there is a newsworthy item (submissions welcome!) or client release an
 
 ### Builds
 
-Find out exactly when apks are available or when descriptions change: <https://f-droid.org/wiki/api.php?action=feedcontributions&user=Robot>. The status of the most recent build for an app can be obtained by appending /lastbuild to the wiki url of the package. Builds happen a couple of times a day ; a new repo index is only published once all outstanding builds are finished.
+Find out exactly when APKs are available or when descriptions change: <https://f-droid.org/wiki/api.php?action=feedcontributions&user=Robot>. The status of the most recent build for an app can be obtained by appending /lastbuild to the wiki url of the package. Builds happen a couple of times a day ; a new repo index is only published once all outstanding builds are finished.
 
 ### Source Code
 

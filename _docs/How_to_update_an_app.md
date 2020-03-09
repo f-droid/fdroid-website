@@ -78,7 +78,7 @@ use many branches, I'll often visit the source code site too).
     executable|shared-lib` to see if any prebuilts
     are around. These would often be detected by fdroid anyway and would
     usually be located in res/raw/ , assets/ or jni/.
--   Open some files in your editor, like the Readme, licenses, possibly
+-   Open some files in your editor, like the README, licenses, possibly
     files in res/xml that would contain changelogs, project.properties;
     run `git submodule` if applicable. All these
     will give clues about what might need changing from the

@@ -28,7 +28,7 @@ recipe. Publishing only takes place if there is a proper match. (Which
 seems very unlikely to be the case unless the exact same tool-chain is
 used, so I would imagine that unless the person building and signing
 the incoming binaries uses fdroidserver to build them, probably the
-exact same buildserver id, they will not match. But at least we have
+exact same buildserver ID, they will not match. But at least we have
 the functionality to support that.)
 
 This procedures are implemented as part of `fdroid publish`. At the
@@ -223,6 +223,6 @@ process.  But the APK build process can add them.  For example:
 - <https://reproducible-builds.org>
 - <https://wiki.debian.org/ReproducibleBuilds>
 - <https://gitian.org/>
-- [Google Issue #70292819 platform-27\_r01.zip was overwritten with a new update](https://issuetracker.google.com/issues/70292819) (_Google login and Javascript required_)
-- [Google Issue #37132313 platformBuildVersionName makes builds difficult to reproduce, creates unneeded diffs](https://issuetracker.google.com/issues/37132313) (_Google login and Javascript required_)
-- [Google Issue #110237303 resources.arsc built with non-determism, prevents reproducible APK builds](https://issuetracker.google.com/issues/110237303) (_Google login and Javascript required_)
+- [Google Issue #70292819 platform-27\_r01.zip was overwritten with a new update](https://issuetracker.google.com/issues/70292819) (_Google login and JavaScript required_)
+- [Google Issue #37132313 platformBuildVersionName makes builds difficult to reproduce, creates unneeded diffs](https://issuetracker.google.com/issues/37132313) (_Google login and JavaScript required_)
+- [Google Issue #110237303 resources.arsc built with non-determism, prevents reproducible APK builds](https://issuetracker.google.com/issues/110237303) (_Google login and JavaScript required_)

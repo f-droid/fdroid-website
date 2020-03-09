@@ -28,7 +28,7 @@ point to a project format that the script understands. Currently this is
 limited to one of the following:
 
 1.  GitLab - `https://gitlab.com/<PROJECTNAME>/<REPONAME>`
-3.  Github - `https://github.com/<USER>/<PROJECT>`
+3.  GitHub - `https://github.com/<USER>/<PROJECT>`
 4.  Bitbucket - `https://bitbucket.org/<USER>/<PROJECT>/`
 5.  NotABug - `https://notabug.org/<USER>/<PROJECT>`
 6.  Git - `git://<REPO>` or `https://<REPO>`

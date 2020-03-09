@@ -27,7 +27,7 @@ selection of things that an attacker could do in such a situation:
     includes the ability to execute anything) for other applications in
     the repository.
 
-Through complete isolation, the repurcussions are at least limited to
+Through complete isolation, the repercussions are at least limited to
 the application in question. Not only is the build environment fresh
 for each build, and thrown away afterwards, but it is also totally
 isolated from the signing environment.

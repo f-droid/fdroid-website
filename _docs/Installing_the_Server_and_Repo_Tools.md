@@ -215,7 +215,7 @@ then you'll also need to set up the
 [Signing Process](../Signing_Process).
 
 
-## Proprietary, non-free libraries
+## Proprietary, Non-Free libraries
 
 The Android SDK is made available by Google under a proprietary
 license. Within that, the essential build tools, SDK platforms,

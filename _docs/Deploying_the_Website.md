@@ -8,7 +8,7 @@ The F-Droid website is built using [Jekyll](https://jekyllrb.com/) and
 [gitlab-ci](https://about.gitlab.com/features/gitlab-ci-cd/).  The
 whole website now works using a standard git
 ["fork" workflow](https://docs.gitlab.com/ce/workflow/forking_workflow.html)
-that is well supported by gitlab, and well known from services like
+that is well supported by GitLab, and well known from services like
 GitHub.  For all of the pages and information about apps and packages
 distributed by _f-droid.org_, those pages are generated using our
 [jekyll-fdroid](https://gitlab.com/fdroid/jekyll-fdroid) plugin, which

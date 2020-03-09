@@ -164,7 +164,7 @@ since the application’s correct name is retrieved from the APK file.
 However, in a situation where an APK contains a bad or missing
 application name, it can be overridden using this. Note that this only
 overrides the name in the list of apps presented in the client; it
-doesn’t changed the name or application label in the source code.
+doesn’t change the name or application label in the source code.
 
 __Warning__: this overrides all Name entries
 [set in the app's source code](../All_About_Descriptions_Graphics_and_Screenshots).
@@ -186,7 +186,7 @@ This is converted to (`<web>`) in the XML file (_index.xml_).
 
 The URL to view or obtain the application’s source code. This should be
 something human-friendly. Machine-readable source-code is covered in the
-’Repo’ field.
+_Repo_ field.
 
 This is converted to (`<source>`) in the XML file (_index.xml_).
 
@@ -251,7 +251,7 @@ The project’s Liberapay (https://liberapay.com) ID, if it has one. This should
 be a numeric ID, such that (for example) https://liberapay.com/~xxxxx
 which redirects to your account page. Currently the numeric ID is not displayed
 on Liberapay’s site, but you can add /public.json behind your team page and get
-the value of id field in the JSON response.
+the value of ID field in the JSON response.
 
 This is converted to (`<liberapay>`) in the XML file (_index.xml_).
 
@@ -292,23 +292,17 @@ A full description of the application, relevant to the latest version.
 This can span multiple lines (which should be kept to a maximum of 80
 characters), and is terminated by a line containing a single ’.’.
 
-Basic MediaWiki-style formatting can be used. Leaving a blank line
-starts a new paragraph. Surrounding text with `''` make it italic, and
-with `'''` makes it bold.
+The description formatting follows the established conventions that
+work across many app stores:
 
-You can link to another app in the repo by using `[[app.id]]`. The link
-will be made appropriately whether in the Android client, the web repo
-browser or the wiki. The link text will be the apps name.
-
-Links to web addresses can be done using `[http://example.com Text]`.
-
-Bulletted lists are done by simply starting each item with a `*` on a
-new line, and numbered lists are the same but using `#`. There is
-currently no support for nesting lists - you can have one level only.
+* Basic HTML formatting can be used.
+* Newlines will be preserved.
+* Links to other packages on f-droid.org will show up as clickable on
+the website, other links will show up as plain text.
 
 It can be helpful to note information pertaining to updating from an
 earlier version; whether the app contains any prebuilts built by the
-upstream developers or whether non-free elements were removed; whether
+upstream developers or whether Non-Free elements were removed; whether
 the app is in rapid development or whether the latest version lags
 behind the current version; whether the app supports multiple
 architectures or whether there is a maximum SDK specified (such info not
@@ -356,18 +350,18 @@ The git-svn option connects to an SVN repository, and you specify the
 URL in exactly the same way, but git is used as a back-end. This is
 preferable for performance reasons, and also because a local copy of the
 entire history is available in case the upstream repository disappears.
-(It happens!). In order to use Tags as update check mode for this VCS
+(It happens!). In order to use Tags as _UpdateCheckMode_ for this VCS
 type, the URL must have the tags= special argument set. Likewise, if you
 intend to use the RepoManifest/branch scheme, you would want to specify
 branches= as well. Finally, trunk= can also be added. All these special
 arguments will be passed to "git svn" in order, and their values must be
 relative paths to the svn repo root dir. Here’s an example of a complex
-git-svn Repo URL:
+git-svn _Repo_ URL:
 http://svn.code.sf.net/p/project/code/svn;trunk=trunk;tags=tags;branches=branches
 
 If the _RepoType_ is `srclib`, then you must specify the name of the
 according srclib .txt file. For example if `scrlibs/FooBar.txt` exist
-and you want to use this srclib, then you have to set Repo to `FooBar`.
+and you want to use this srclib, then you have to set _Repo_ to `FooBar`.
 
 
 
@@ -375,7 +369,7 @@ and you want to use this srclib, then you have to set Repo to `FooBar`.
 
 The location of binaries used in verification process.
 
-If specified, F-Droid will verify the output apk file of a build against
+If specified, F-Droid will verify the output APK file of a build against
 the one specified. You can use %v and %c to point to the version name
 and version code of the current build. To verify the F-Droid client
 itself you could use:
@@ -426,7 +420,7 @@ configuration to the build. These are (roughly in order of application):
     The purpose of this feature is to allow non-buildable releases (e.g.
     the source is not published) to be flagged, so the scripts don’t
     generate repeated messages about them. (And also to record the
-    information for review later). If an apk has already been built,
+    information for review later). If an APK has already been built,
     disabling causes it to be deleted once `fdroid update` is run; this
     is the procedure if ever a version has to be replaced.
 
@@ -524,7 +518,7 @@ configuration to the build. These are (roughly in order of application):
     This is useful for cases when upstream repo failed to update it for
     specific tag; to build an arbitrary revision; to make it apparent
     that the version differs significantly from upstream; or to make it
-    apparent which architecture or platform the apk is designed to
+    apparent which architecture or platform the APK is designed to
     run on.
 
 `forcevercode: yes`
@@ -564,16 +558,16 @@ configuration to the build. These are (roughly in order of application):
     `prebuild=echo "android.library.reference.1=$$somelib$$" >> project.properties`.
 
     Each srclib has a metadata file under srclibs/ in the repository
-    directory, and the source code is stored in build/srclib/. Repo
-    Type: and Repo: are specified in the same way as for apps; Subdir:
-    can be a comma separated list, for when directories are renamed by
-    upstream; Update Project: updates the projects in the working
-    directory and one level down; Prepare: can be used for any kind of
-    preparation: in particular if you need to update the project with a
-    particular target. You can then also use \$\$name\$\$ in the
-    init/prebuild/build command to substitute the relative path to the
-    library directory, but it could need tweaking if you’ve changed into
-    another directory.
+    directory, and the source code is stored in build/srclib/.
+	_RepoType_ and _Repo_ are specified in the same way
+    as for apps; Subdir: can be a comma separated list, for when
+    directories are renamed by upstream; Update Project: updates the
+    projects in the working directory and one level down; Prepare: can
+    be used for any kind of preparation: in particular if you need to
+    update the project with a particular target. You can then also use
+    \$\$name\$\$ in the init/prebuild/build command to substitute the
+    relative path to the library directory, but it could need tweaking
+    if you’ve changed into another directory.
 
     Currently srclibs are necessary when upstream uses jar files or
     pulls dependencies from non-trusted repositories. While there is no
@@ -592,7 +586,7 @@ configuration to the build. These are (roughly in order of application):
     -   ‘OSS JFrog’ - maintained by the people behind jCenter, this
         repository focuses on hosting services for open source project
         binaries.
-    -   ‘JitPack.io’ - builds directly from Github repositories.
+    -   ‘JitPack.io’ - builds directly from GitHub repositories.
         However, they do not provide any option to reproduce or verify
         the resulting binaries. Builds pre-release versions in
         some cases.
@@ -700,7 +694,7 @@ configuration to the build. These are (roughly in order of application):
 `gradle: <flavour1>[,<flavour2>,...]`
 
 :   Build with Gradle instead of Ant, specifying what flavours to use.
-    Flavours are case sensitive since the path to the output apk is
+    Flavours are case sensitive since the path to the output APK is
     as well.
 
     If only one flavour is given and it is ’yes’, no flavour will be
@@ -735,7 +729,7 @@ configuration to the build. These are (roughly in order of application):
 
 `output: glob/to/output.apk`
 
-:   Specify a glob path where the resulting unsigned release apk from
+:   Specify a glob path where the resulting unsigned release APK from
     the build should be. This can be used in combination with build
     methods like `gradle=yes` or `maven=yes`, but if no build method is
     specified, the build is manual. You should run your build commands,
@@ -743,7 +737,7 @@ configuration to the build. These are (roughly in order of application):
 
 `novcheck: yes`
 
-:   Don’t check that the version name and code in the resulting apk are
+:   Don’t check that the version name and code in the resulting APK are
     correct by looking at the build output - assume the metadata
     is correct. This takes away a useful level of sanity checking, and
     should only be used if the values can’t be extracted.
@@ -769,23 +763,23 @@ description:
     less if the service is based on free software, or not). For example, 
     activity-based down-loading of weather data, maps, avatars etc. (data 
     hosting and delivery services), or uploading of crash logs etc.
--   ‘NonFreeNet’ - the application contains a feature that uses a non-free
+-   ‘NonFreeNet’ - the application contains a feature that uses a Non-Free
     network service which is impossible, or not easy to replace. Replacement
     requires changes to the app or service. This antifeature would not apply, if
     there is a simple configuration option that allows pointing the app to a 
     running instance of an alternative, publicly available, self-hostable, free 
     software server solution.
--   ‘NonFreeAdd’ - the application promotes non-free add-ons, such that
-    the app is effectively an advert for other non-free software.
--   ‘NonFreeDep’ - the application depends on a non-free application
+-   ‘NonFreeAdd’ - the application promotes Non-Free add-ons, such that
+    the app is effectively an advert for other Non-Free Software.
+-   ‘NonFreeDep’ - the application depends on a Non-Free application
     (e.g. Google Maps) - i.e. it requires it to be installed on the
     device, but does not include it.
--   ‘UpstreamNonFree’ - the application is or depends on non-free
-    software. This does not mean that non-free software is included with
+-   ‘UpstreamNonFree’ - the application is or depends on Non-Free
+    software. This does not mean that Non-Free Software is included with
     the app: Most likely, it has been patched in some way to remove the
-    non-free code. However, functionality may be missing.
+    Non-Free code. However, functionality may be missing.
 -   ‘NonFreeAssets’ - the application contains and makes use of
-    non-free assets. The most common case is apps using artwork -
+    Non-Free assets. The most common case is apps using artwork -
     images, sounds, music, etc - under a non-commercial license.
 -   ‘KnownVuln’ - the application has known security vulnerabilities.
 -   ‘ApplicationDebuggable‘ - APK file is compiled for debugging
@@ -804,8 +798,8 @@ This is converted to (`<antifeatures>`) in the XML file (_index.xml_).
 If this field is present, the application does not get put into the
 public index. This allows metadata to be retained while an application
 is temporarily disabled from being published. The value should be a
-description of why the application is disabled. No apks or source code
-archives are deleted: to purge an apk see the Build Version section or
+description of why the application is disabled. No APKs or source code
+archives are deleted: to purge an APK see the Build Version section or
 delete manually for developer builds. The field is therefore used when
 an app has outlived it’s usefulness, because the source tarball is
 retained.
@@ -873,7 +867,7 @@ Valid modes are:
     version that it gives may not be accurate, since not all versions
     are fit to be published.  Therefore, before building, it is often
     necessary to check if the current version has been published
-    somewhere by the upstream developers, either by checking for apks
+    somewhere by the upstream developers, either by checking for APKs
     that they distribute or for tags in the source code repository.
 
     It currently works for every repository type to different extents,
@@ -882,7 +876,7 @@ Valid modes are:
     be the branch used in place of the default one. The default values
     are "master" for git, "default" for hg and none for git-svn (it
     stays in the same branch). On the other hand, branch support hasn’t
-    been implemented yet in bzr and svn, but RepoManifest may still be
+    been implemented yet in bzr and svn, but _RepoManifest_ may still be
     used without it.
 
 -   `RepoTrunk` - For svn and git-svn repositories, especially those who
@@ -900,7 +894,7 @@ Valid modes are:
     unstable versions or are known to forget to tag releases. Like
     RepoManifest, it will not return the correct value if the directory
     containing the _AndroidManifest.xml_ has moved. Despite these caveats,
-    it is the often the favourite update check mode.
+    it is the often the favourite _UpdateCheckMode_.
 
     It currently only works for git, hg, bzr and git-svn repositories.
     In the case of the latter, the repo URL must contain the path to the
@@ -968,11 +962,11 @@ Used in conjunction with _UpdateCheckMode_ for certain modes.
 
 ### _AutoUpdateMode_<a name="AutoUpdateMode"></a>
 
-This determines the method using for auto-generating new builds when new
-releases are available - in other words, adding a new Build Version line
-to the metadata. This happens in conjunction with the ’Update Check
-Mode’ functionality - i.e. when an update is detected by that, it is
-also processed by this.
+This determines the method used for auto-generating new builds when
+new releases are available - in other words, adding a new Build
+Version line to the metadata. This happens in conjunction with the
+_UpdateCheckMode_ functionality - i.e. when an update is detected by
+that, it is also processed by this.
 
 Valid modes are:
 
@@ -999,7 +993,7 @@ The [name of the version](https://developer.android.com/guide/topics/manifest/ma
 the application than this (e.g. unstable versions), and there will
 almost certainly be older ones. This should be the one that is
 recommended for general use. In the event that there is no source code
-for the current version, or that non-free libraries are being used, this
+for the current version, or that Non-Free libraries are being used, this
 would ideally be the latest version that is still free, though it may
 still be expedient to retain the automatic update check — see No Source
 Since.
@@ -1019,8 +1013,8 @@ client to determine which version should be recommended.
 This field is normally automatically updated - see
 [_UpdateCheckMode_](#UpdateCheckMode).
 
-If not set or set to `0`, clients will recommend the highest version
-they can, as if the _CurrentVersionCode_ was infinite.
+If not set, clients will recommend the highest version they can, as if
+the _CurrentVersionCode_ was infinite.
 
 This is converted to (`<marketvercode>`) in the XML file (_index.xml_).
 
@@ -1028,7 +1022,7 @@ This is converted to (`<marketvercode>`) in the XML file (_index.xml_).
 ### _NoSourceSince_<a name="NoSourceSince"></a>
 
 In case we are missing the source code for the _CurrentVersion_ reported
-by Upstream, or that non-free elements have been introduced, this
+by Upstream, or that Non-Free elements have been introduced, this
 defines the first version that began to miss source code. Apps that are
 missing source code for just one or a few versions, but provide source
 code for newer ones are not to be considered here - this field is

@@ -120,14 +120,14 @@ removed from the `unsigned` directory.
 If you’re building purely for the purposes of testing, and not intending
 to push the results to a repository, at least yet, the `--test` option
 can be used to direct output to the `tmp` directory instead of
-`unsigned`. A similar effect could by achieved by simply deleting the
+`unsigned`. A similar effect could be achieved by simply deleting the
 output files from `unsigned` after the build, but with the risk of
 forgetting to do so!
 
 Along similar lines (and only in conjunction with `--test`, you can use
 `--force` to force a build of a Disabled application, where normally it
 would be completely ignored. Similarly a version that was found to
-contain ELFs or known non-free libraries can be forced to build. See
+contain ELFs or known Non-Free libraries can be forced to build. See
 also — _scanignore_ and _scandelete_ in the _Builds_ section.
 
 If the build was unsuccessful, you can find out why by looking at the

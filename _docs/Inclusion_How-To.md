@@ -92,12 +92,12 @@ This is a nonexhaustive list of what a reviewer would do:
     licenses are consistent with corresponding license/README files.
 -   They will check if your application uses any pre-compiled libraries or
     binary blobs.
--   They will look at your non-source code files to identify [non-free
+-   They will look at your non-source code files to identify [Non-Free
     resources](https://f-droid.org/wiki/page/Antifeature:NonFreeAssets) used in
     your application.
 -   They will skim through the source code to see if your application
-    uses non-Free dependencies, shows advertisements, tracks users,
-    promotes non-Free services/applications, or does anything that is
+    uses Non-Free dependencies, shows advertisements, tracks users,
+    promotes Non-Free services/applications, or does anything that is
     harmful or otherwise undesirable for users.
 -   They will list a summary of any [_AntiFeatures_](https://f-droid.org/wiki/page/Antifeatures) in
     your application.

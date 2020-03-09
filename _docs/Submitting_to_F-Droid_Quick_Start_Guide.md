@@ -11,7 +11,7 @@ by Andy Balaam, original at
 
 Here's what I needed to get a dev environment for
 [F-Droid](https://f-droid.org/) up and running on Ubuntu 16.10, using F-Droid
-server version 0.7.0 (commit id 8147f9235), so that I could submit a package
+server version 0.7.0 (commit ID 8147f9235), so that I could submit a package
 for inclusion in the F-Droid repository.
 
 Doing this is apparently the best way to get your own package into the
@@ -182,6 +182,6 @@ ran.
 
 And now I was ready to request my package be included in F-Droid by committing
 and pushing the changes I had made to the fdroiddata project to my forked repo,
-and clicking the Merge Request button in the gitlab UI.  My merge request is
+and clicking the Merge Request button in the GitLab UI.  My merge request is
 here:
 [gitlab.com/fdroid/fdroiddata/merge_requests/1965](https://gitlab.com/fdroid/fdroiddata/merge_requests/1965)

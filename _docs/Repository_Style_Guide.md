@@ -139,7 +139,7 @@ antifeatures present on the app. Even though software can be included in
 the F-Droid even with antifeatures, it is frequently the case that
 software with these antifeatures is actually not entirely FOSS (for
 example advertising and tracking user activity is often enabled via
-non-free binary libraries) compromising in this way the inclusion of the
+Non-Free binary libraries) compromising in this way the inclusion of the
 app in the F-Droid repository.
 
 
