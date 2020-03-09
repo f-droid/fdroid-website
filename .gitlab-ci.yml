@@ -126,9 +126,11 @@ spellcheckbot:
           export CHANGED="$CHANGED `echo $f | grep '\.md$' || true`";
       done
     - if [ -z "`echo $CHANGED | sed 's,\s*,,g'`" ]; then
-          echo "No markdown files changed"; exit 0;
+          echo "No markdown files changed";
+          exit 0;
       else
           echo "Spellchecking $CHANGED";
+          git checkout --force ${FROM_CI_COMMIT_SHA};
       fi
     - apt-get -qy update
     - apt-get -qy install --no-install-recommends --allow-unauthenticated python3-gitlab python3-requests
