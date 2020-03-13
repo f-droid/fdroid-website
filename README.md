@@ -6,10 +6,30 @@ is based on Jekyll and you can find the development version
 
 ## Building
 
+### Using Debian/buster
+
+First, make sure [_buster-backports_ is enabled](https://backports.debian.org/Instructions/).  
+
+```
+sudo apt-get install -t buster-backports \
+  gettext linkchecker po4a python3 python3-babel rsync rubocop ruby-bundler \
+  ruby-git ruby-jekyll-include-cache ruby-jekyll-paginate-v2 \
+  ruby-jekyll-redirect-from ruby-json ruby-loofah ruby-rchardet ruby-rouge \
+  ruby-rspec ruby-zip unzip
+bundle install --local
+jekyll build
+```
+
+Look at the [_.gitlab-ci.yml_](https://gitlab.com/fdroid/fdroid-website/blob/master/.gitlab-ci.yml)
+for more examples of custom setups, like building only a subset of the languages.
+
+
+### Using Ruby Gems
+
 You need to have Jekyll 3.2+ installed what is easily done with Gem which depends on Ruby 2.0+.
 Because of the F-Droid plugin you need to have zlib installed.
 
-```
+```bash
 sudo apt-get install ruby-full build-essential zlib1g-dev
 sudo gem install bundler
 bundle install
