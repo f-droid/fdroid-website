@@ -1,4 +1,4 @@
-image: ruby:2.3-jessie
+image: debian:buster
 
 stages:
  - deploy
@@ -9,31 +9,39 @@ variables:
   DEBIAN_FRONTEND: noninteractive
   OUT_DIR: build
 
-.apt-template: &apt-template |
-  echo Etc/UTC > /etc/timezone
-  echo 'quiet "1";' \
-       'APT::Install-Recommends "0";' \
-       'APT::Install-Suggests "0";' \
-       'APT::Acquire::Retries "20";' \
-       'APT::Get::Assume-Yes "true";' \
-       'Dpkg::Use-Pty "0";' \
+.apt-template: &apt-template
+- echo Etc/UTC > /etc/timezone
+- echo 'quiet "1";'
+       'APT::Install-Recommends "0";'
+       'APT::Install-Suggests "0";'
+       'APT::Acquire::Retries "20";'
+       'APT::Get::Assume-Yes "true";'
+       'Dpkg::Use-Pty "0";'
       > /etc/apt/apt.conf.d/99gitlab
-  apt-get update
-  apt-get dist-upgrade
-
+- apt-get update
+- apt-get dist-upgrade
 
 # Common steps required for each type of "Build" (f-droid.org, GitLab Pages, feature branches)
-.setup_for_jekyll: &setup_for_jekyll |
-  set -x
-  set -e
-  ruby -v
-  sed -i '/jessie-updates/d' /etc/apt/sources.list
-  apt-get install locales zlib1g-dev gettext po4a linkchecker bundler unzip python3 rsync python3-babel
-  grep '^en_US.UTF-8 UTF-8' /etc/locale.gen || echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen
-  locale-gen
-  export LC_ALL=en_US.UTF-8
-  ./tools/i18n.sh po2md
-  bundle install --path vendor
+.setup_for_jekyll: &setup_for_jekyll
+- ruby -v
+- apt-get install
+    gettext
+    linkchecker
+    po4a
+    python3
+    python3-babel
+    rsync
+    rubocop
+    ruby-jekyll-include-cache
+    ruby-jekyll-paginate-v2
+    ruby-json
+    ruby-loofah
+    ruby-rspec
+    ruby-zip
+    unzip
+- ./tools/i18n.sh po2md
+- echo "deb http://deb.debian.org/debian/ testing main" >> /etc/apt/sources.list
+- printf "Package\x3a *\nPin\x3a release a=testing\nPin-Priority\x3a 100\n\nPackage\x3a ruby-jekyll-include-cache ruby-jekyll-paginate-v2\nPin\x3a release a=testing\nPin-Priority\x3a 500\n" > /etc/apt/preferences.d/debian-testing.pref
 
 
 #
@@ -66,7 +74,7 @@ f-droid.org:
    - 'echo "url: https://f-droid.org" > userconfig.yml'
    - 'echo "baseurl: \"\"" >> userconfig.yml'
    - echo "Additional Jekyll config used for CI:" && cat userconfig.yml
-   - bundle exec jekyll build -d $OUT_DIR --config _config.yml,userconfig.yml --trace
+   - jekyll build -d $OUT_DIR --config _config.yml,userconfig.yml --trace
    - ./tools/prepare-multi-lang.sh $OUT_DIR
    - ./tools/deploy-external-assets.sh $OUT_DIR
    - rsync -ax --delete $OUT_DIR /builds/output/
@@ -103,7 +111,7 @@ pages:
    - 'echo url: https://$CI_PROJECT_NAMESPACE.gitlab.io > userconfig.yml'
    - 'echo baseurl: /$CI_PROJECT_NAME >> userconfig.yml'
    - echo "Additional Jekyll config used for CI:" && cat userconfig.yml
-   - bundle exec jekyll build -d public --config _config.yml,userconfig.yml --trace
+   - jekyll build -d public --config _config.yml,userconfig.yml --trace
    - ./tools/prepare-multi-lang.sh public --no-type-maps
    - mkdir linkchecker/
    - ln -s ../public linkchecker/$CI_PROJECT_NAME
@@ -189,7 +197,6 @@ i18n_sync:
   stage: deploy
   except:
     - triggers
-  image: debian:jessie-slim
   only:
     - tags
     - weblate
