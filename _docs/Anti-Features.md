@@ -88,7 +88,7 @@ Here's the list of [apps with Non-Free Addons](https://f-droid.org/wiki/page/Cat
 This Anti-Feature is applied to apps that require things
 that are not Free Software in order to run.
 
-This does not mean that proprietary software is include in the app,
+This does not mean that proprietary software is included in the app,
 but for example, it may depend on other software already being
 installed on your device. A common example would be an app that doesn't
 run, or is not useful, unless you have Google Maps installed.
