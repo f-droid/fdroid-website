@@ -197,6 +197,7 @@ i18n_sync:
   stage: deploy
   except:
     - triggers
+  image: debian:jessie-slim
   script:
     - *apt-template
     - apt-get install bash gettext git grep po4a sed
@@ -214,3 +215,21 @@ i18n_sync:
     - git --no-pager diff --exit-code --ignore-all-space -G'^msg' po/
         || (echo 'This test failed because the localization files were not synced.  To do that, run `./tools/i18n.sh md2po` then commit the changes in po/ and include them in this merge request.'; exit 1)
   allow_failure: true
+  artifacts:
+    paths:
+      - public
+    expire_in: 1w
+    when: always
+
+jessie_po4a:
+  stage: deploy
+  image: debian:jessie-slim
+  script:
+    - *apt-template
+    - apt-get install bash gettext git grep po4a sed
+    - ./tools/i18n.sh md2po
+  artifacts:
+    paths:
+      - public
+    expire_in: 1w
+    when: always
