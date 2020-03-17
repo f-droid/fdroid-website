@@ -49,6 +49,13 @@ For installing on older releases, there are a couple more simple steps:
     ```
 
 
+## Guix
+The tools are also available in the main Guix channel. To install:  
+```
+guix install fdroidserver
+```
+
+
 ## macOS
 
 You can install `fdroidserver` directly using [MacPorts](https://www.macports.org/ports.php?by=name&substr=fdroidserver), [Homebrew](http://brewformulas.org/Fdroidserver), or `easy_install` as a last resort:
