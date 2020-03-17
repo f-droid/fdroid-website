@@ -3,10 +3,13 @@
 # This is used to build https://staging.f-droid.org.
 
 set -e
-
+set -x
+apt-get update
+apt-get -qy install --no-install-recommends ca-certificates git
 git checkout master
 git fetch https://hosted.weblate.org/git/f-droid/website
 git reset --hard FETCH_HEAD
+set +x
 
 minsize=`ls -l _data/strings.json | awk '{ print int($5 * 0.50) }'`
 
