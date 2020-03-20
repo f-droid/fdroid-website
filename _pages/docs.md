@@ -37,6 +37,7 @@ the main repository.
 * [Repomaker](../repomaker) A user-friendly tool for managing custom repos
 * [Translation and Localization](Translation_and_Localization) How all the parts of F-Droid are localized.
 * [Tips & Tricks](https://forum.f-droid.org/c/wiki/tips-and-tricks) A collection of useful tips and tricks that make life around F-Droid easier.
+* [All our APIs](All_our_APIs) Public API endpoints for data about _f-droid.org_, repos, mirrors, Android, Gradle, and more
 
 
 ### Developers
