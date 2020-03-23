@@ -25,6 +25,15 @@ Check out the descriptions to find an appropriate consultant for your needs.
 * __Languages:__ English, German
 * __Specializations:__ Custom F-Droid deployments, feature extensions, whitelabel solutions
 
+### IzzySoft
+
+* __Website:__ [android.izzysoft.de](https://android.izzysoft.de/), [www.izzysoft.de](https://www.izzysoft.de/)
+* __Email:__ [info@izzysoft.de](mailto:info@izzysoft.de)
+* __Phone:__ +49 89 27373746
+* __Address:__ IzzySoft, 80796 München, Germany
+* __Languages:__ English, German
+* __Specialization:__ [Binary Repositories](https://f-droid.org/docs/Setup_an_F-Droid_App_Repo/) & Metadata (creator & operator of the [IzzyOnDroid Repo](https://apt.izzysoft.de/fdroid/))
+
 ---
 
 If you're missing, you can
