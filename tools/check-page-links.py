@@ -17,6 +17,9 @@ for f in sorted(glob.glob('po/*.po*')):
     with open(f) as fp:
         catalog = read_po(fp)
     for message in catalog:
+        if message.fuzzy:
+            continue
+
         if 'type: Title #' in message.auto_comments:
             if ':' in message.string and message.string[0] not in ('"', "'"):
                 errorcount += 1
