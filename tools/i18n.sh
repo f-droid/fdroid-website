@@ -30,6 +30,13 @@ function md2po {
     rm -r ${DIR_BUILD}
 }
 
+function updatepo {
+    echo "Syncing .po with new .pot files"
+    update_po_files _docs
+    update_po_files _posts
+    update_po_files _pages
+}
+
 #
 # Usage: generate_pot_file SECTION
 #
@@ -68,6 +75,25 @@ function generate_pot_file {
     echo "Combining .pot files into $OUT_POT_FILE"
     mkdir -p `dirname ${OUT_POT_FILE}`
     msgcat --no-wrap --lang=en_US --add-location=file -o ${OUT_POT_FILE} ${DIR_BUILD_PO}/*.pot
+}
+
+#
+# Updates each translated .po file with new/changed strings from the
+# original English .po file.  Uses `msgmerge` and supports fuzzy
+# string matching.
+#
+function update_po_files {
+    SECTION=$1
+    POT=${DIR_PO}/${SECTION}.pot
+
+    if [ `check_for_po ${SECTION}` = true ]; then
+        for I18N_PO in ${DIR_PO}/${SECTION}.*.po; do
+            # The VERSION_CONTROL environment variable prevents a
+            # backup file from being written to ${SECTION}.LOCALE.po~
+            echo "Updating ${I18N_PO} with any changes from main .po file ${POT}."
+            VERSION_CONTROL=none msgmerge --no-wrap --add-location=file --update ${I18N_PO} ${POT}
+        done
+    fi
 }
 
 
@@ -257,6 +283,10 @@ Usage:
 
   i18n.sh md2po
     Convert all translated .po files into localized .md files.
+
+  i18n.sh updatepo
+    Sync latest updates in .pot file into all the .po files.
+
 EOT
     cd ${PREVIOUS_CWD}
     exit 0
@@ -270,6 +300,8 @@ else
         md2po) md2po
         ;;
         po2md) po2md
+        ;;
+        updatepo) updatepo
         ;;
         *) print_usage
     esac

@@ -215,16 +215,14 @@ i18n_sync:
   script:
     - *apt-template
     - apt-get install bash gettext git grep po4a sed
-    - for f in po/_posts.*.po; do msgmerge --no-wrap --sort-by-file  --add-location=file --update $f po/_posts.pot; done
-    - for f in po/_docs.*.po; do msgmerge --no-wrap --sort-by-file  --add-location=file --update $f po/_docs.pot; done
+    - ./tools/i18n.sh updatepo
     - git checkout po/*.pot  # ignore the newly generated timestamp
     - git add po/*.po
     - git config user.email "you@example.com"
     - git config user.name "DO NOT MERGE"
-    - git commit po/*.po po/*.pot -m "DO NOT MERGE sort before test"
+    - git --no-pager diff --exit-code || git commit po/*.po -m "DO NOT MERGE sort before test"
     - ./tools/i18n.sh md2po
-    - for f in po/_posts.*.po; do msgmerge --no-wrap --sort-by-file  --add-location=file --update $f po/_posts.pot; done
-    - for f in po/_docs.*.po; do msgmerge --no-wrap --sort-by-file  --add-location=file --update $f po/_docs.pot; done
+    - ./tools/i18n.sh updatepo
     - git checkout po/*.pot  # ignore the newly generated timestamp
     - git --no-pager diff --exit-code --ignore-all-space -G'^msg' po/
         || (echo 'This test failed because the localization files were not synced.  To do that, run `./tools/i18n.sh md2po` then commit the changes in po/ and include them in this merge request.'; exit 1)
