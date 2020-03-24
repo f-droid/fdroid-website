@@ -35,6 +35,11 @@ variables:
 .setup_for_jekyll: &setup_for_jekyll |
   set -x
   set -e
+  apt-get install --install-recommends git libunicode-linebreak-perl po4a
+  apt-get purge po4a
+  git clone https://github.com/mquinson/po4a.git
+  export PERLLIB="`pwd`/po4a/lib"
+  export PATH="`pwd`/po4a:$PATH"
   apt-get install \
     gettext \
     linkchecker \
