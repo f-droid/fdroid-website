@@ -1,4 +1,4 @@
-image: ruby:2.3-jessie
+image: debian:buster
 
 stages:
  - deploy
@@ -9,7 +9,11 @@ variables:
   DEBIAN_FRONTEND: noninteractive
   OUT_DIR: build
 
+# This template needs to be in text block format since gitlab-runner
+# exec cannot handling templates in list format.
 .apt-template: &apt-template |
+  set -x
+  set -e
   echo Etc/UTC > /etc/timezone
   echo 'quiet "1";' \
        'APT::Install-Recommends "0";' \
@@ -18,25 +22,47 @@ variables:
        'APT::Get::Assume-Yes "true";' \
        'Dpkg::Use-Pty "0";' \
       > /etc/apt/apt.conf.d/99gitlab
+  echo "deb http://deb.debian.org/debian/ buster-backports main" >> /etc/apt/sources.list
+  printf "Package\x3a ruby-git ruby-jekyll-include-cache ruby-jekyll-last-modified-at ruby-jekyll-paginate-v2 ruby-jekyll-redirect-from ruby-jekyll-sitemap ruby-loofah ruby-nokogiri ruby-rchardet ruby-rouge ruby-zip\nPin\x3a release a=buster-backports\nPin-Priority\x3a 500\n" > /etc/apt/preferences.d/debian-buster-backports.pref
   apt-get update
   apt-get dist-upgrade
 
 
 # Common steps required for each type of "Build" (f-droid.org, GitLab Pages, feature branches)
+#
+# This template needs to be in text block format since gitlab-runner
+# exec cannot handling templates in list format.
 .setup_for_jekyll: &setup_for_jekyll |
   set -x
   set -e
-  ruby -v
-  sed -i '/jessie-updates/d' /etc/apt/sources.list
-  apt-get install locales zlib1g-dev gettext po4a linkchecker bundler unzip python3 rsync python3-babel
-  grep '^en_US.UTF-8 UTF-8' /etc/locale.gen || echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen
-  locale-gen
-  export LC_ALL=en_US.UTF-8
+  apt-get install --install-recommends git libunicode-linebreak-perl po4a
+  apt-get purge po4a
+  git clone https://github.com/mquinson/po4a.git
+  export PERLLIB="`pwd`/po4a/lib"
+  export PATH="`pwd`/po4a:$PATH"
+  apt-get install \
+    gettext \
+    linkchecker \
+    python3-babel \
+    rsync \
+    rubocop \
+    ruby-bundler \
+    ruby-git \
+    ruby-jekyll-include-cache \
+    ruby-jekyll-paginate-v2 \
+    ruby-jekyll-redirect-from \
+    ruby-json \
+    ruby-loofah \
+    ruby-nokogiri \
+    ruby-rchardet \
+    ruby-rouge \
+    ruby-rspec \
+    ruby-zip \
+    unzip
+  bundle install --local --verbose
   ./tools/i18n.sh po2md
-  bundle install --path vendor
 
 
-#
 # This is a manual task for building in preparation to deploy to
 # https://f-droid.org. The intention is for it to be run locally using
 # `gitlab-runner` each time a tag is found that is signed by a key in
@@ -49,16 +75,12 @@ variables:
 # And when it is finished, you should have a directory in _site/build/
 # which includes the entire static site ready to be deployed to
 # https://f-droid.org.
-#
 f-droid.org:
   stage: production
   only:
     - tags@fdroid/fdroidserver
     - master@fdroid/fdroidserver
   when: manual
-  cache:
-    paths: [ vendor/ruby ]
-
   script:
    - '[ ! -d /builds/output ] && echo "ERROR: /builds/output is not mounted inside docker!" && exit 1'
    - *apt-template
@@ -66,35 +88,34 @@ f-droid.org:
    - 'echo "url: https://f-droid.org" > userconfig.yml'
    - 'echo "baseurl: \"\"" >> userconfig.yml'
    - echo "Additional Jekyll config used for CI:" && cat userconfig.yml
-   - bundle exec jekyll build -d $OUT_DIR --config _config.yml,userconfig.yml --trace
+   - jekyll build -d $OUT_DIR --config _config.yml,userconfig.yml --trace
    - ./tools/prepare-multi-lang.sh $OUT_DIR
    - ./tools/deploy-external-assets.sh $OUT_DIR
    - rsync -ax --delete $OUT_DIR /builds/output/
+
 
 pages:
   stage: deploy
   except:
     - triggers
-  cache:
-    paths:
-      - vendor/ruby
   artifacts:
     paths:
       - public
     expire_in: 1w
     when: always
   script:
+   - *apt-template
+   - apt-get install curl python3-yaml
    - ./tools/trigger-spellcheckbot
    # use the 'gitlab ci' subset of languages
    - sed -i 's,^languages:,ignored_languages:,' _config.yml
    - sed -i 's,^gitlab_ci_languages:,languages:,' _config.yml
-   - *apt-template
    - *setup_for_jekyll
-   - apt-get install python3-yaml
    - ./tools/check-format-strings.py
    - ./tools/check-page-links.py
    - ./tools/check-yaml-front-matter.py
    - ./tools/check-do-not-translate
+   - ./tools/check-markdown-headers-are-localizable.py
    - ./tools/i18n.sh md2po
    - git checkout po/*.pot  # ignore the newly generated timestamp
    - git --no-pager diff --ignore-all-space --name-only po/
@@ -103,13 +124,12 @@ pages:
    - 'echo url: https://$CI_PROJECT_NAMESPACE.gitlab.io > userconfig.yml'
    - 'echo baseurl: /$CI_PROJECT_NAME >> userconfig.yml'
    - echo "Additional Jekyll config used for CI:" && cat userconfig.yml
-   - bundle exec jekyll build -d public --config _config.yml,userconfig.yml --trace
+   - jekyll build -d public --config _config.yml,userconfig.yml --trace
    - ./tools/prepare-multi-lang.sh public --no-type-maps
    - mkdir linkchecker/
    - ln -s ../public linkchecker/$CI_PROJECT_NAME
    - ruby -run -e httpd linkchecker/ -p 4000 > /dev/null 2>&1 &
    - linkchecker http://localhost:4000/$CI_PROJECT_NAME --config=.linkcheckerrc
-      --ignore-url ".*/packages/[b-z].*" --ignore-url "/F-Droid\.apk(\.asc)?$"
 
 
 spellcheckbot:
@@ -189,7 +209,6 @@ i18n_sync:
   stage: deploy
   except:
     - triggers
-  image: debian:jessie-slim
   only:
     - tags
     - weblate

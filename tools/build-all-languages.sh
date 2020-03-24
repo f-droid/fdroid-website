@@ -1,14 +1,15 @@
 #!/bin/sh
 #
 # This is used to build https://staging.f-droid.org.
-# It downloads the index from a mirror until f-droid.org
-# becomes stable again.
 
 set -e
-
+set -x
+apt-get update
+apt-get -qy install --no-install-recommends ca-certificates git
 git checkout master
 git fetch https://hosted.weblate.org/git/f-droid/website
 git reset --hard FETCH_HEAD
+set +x
 
 minsize=`ls -l _data/strings.json | awk '{ print int($5 * 0.50) }'`
 
@@ -24,10 +25,9 @@ for f in _data/[a-z][a-z]*/strings.json; do
     fi
 done
 
-# load from ftp.fau.de mirror to test with a mirror
 sed -i \
     -e "s/^languages:.*/languages: [ $languages ]/" \
-    -e "s,^fdroid-repo:.*,fdroid-repo: https://ftp.fau.de/fdroid/repo," \
+    -e "s,^fdroid-repo:.*,fdroid-repo: https://f-droid.org/repo," \
     _config.yml
 
 sed -i \
