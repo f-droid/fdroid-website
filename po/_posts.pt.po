@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2020-03-17 19:44+0000\n"
+"POT-Creation-Date: 2020-03-24 14:23+0100\n"
 "PO-Revision-Date: 2020-03-23 20:09+0000\n"
 "Last-Translator: ssantos <ssantos@web.de>\n"
 "Language-Team: Portuguese <https://hosted.weblate.org/projects/f-droid/website-posts/pt/>\n"
@@ -592,28 +592,16 @@ msgstr ""
 msgid "_fdroidserver_ tools"
 msgstr "Ferramentas do _fdroidserver_"
 
-#. type: Plain text
+#. type: Fenced code block (console)
 #: build/_posts/md/2017-10-10-fdroid-is-1.0.md
-#, no-wrap
+#, fuzzy, no-wrap
 msgid ""
-"```console\n"
 "$ fdroid update -h\n"
 "usage: fdroid update [-h] [-v] [-q] [--create-key] [-c] [--delete-unknown]\n"
 "                     [-b] [-i] [-I] [-e EDITOR] [-w] [--pretty] [--clean]\n"
 "                     [--nosign] [--use-date-from-apk] [--rename-apks]\n"
 "                     [--allow-disabled-algorithms] [-W W]\n"
-msgstr ""
-"```console\n"
-"$ fdroid update -h\n"
-"usage: fdroid update [-h] [-v] [-q] [--create-key] [-c] [--delete-unknown]\n"
-"                     [-b] [-i] [-I] [-e EDITOR] [-w] [--pretty] [--clean]\n"
-"                     [--nosign] [--use-date-from-apk] [--rename-apks]\n"
-"                     [--allow-disabled-algorithms] [-W W]\n"
-
-#. type: Plain text
-#: build/_posts/md/2017-10-10-fdroid-is-1.0.md
-#, no-wrap
-msgid ""
+"\n"
 "optional arguments:\n"
 "  -h, --help            show this help message and exit\n"
 "  -v, --verbose         比一般情况输出更多的信息\n"
@@ -625,7 +613,6 @@ msgid ""
 "  -b, --buildreport     报告编译数据状态\n"
 "  -i, --interactive     需更新事项的互动提示。\n"
 "  -I, --icons           对超过像素大小上限的全部图标进行尺寸调整，然后退出\n"
-"```\n"
 msgstr ""
 "optional arguments:\n"
 "  -h, --help            show this help message and exit\n"
@@ -11069,20 +11056,10 @@ msgstr ""
 msgid "Our servers run Debian, so this gives commands for that context. First, ensure that Nginx is set up with the \"geoip\" extension.  That enables Nginx to convert IP addresses into country codes, so that country codes are logged instead of IP addresses."
 msgstr ""
 
-#. type: Plain text
-#: build/_posts/md/2019-04-15-privacy-preserving-analytics.md
-msgid "```console"
-msgstr ""
-
-#. type: Title #
+#. type: Fenced code block (console)
 #: build/_posts/md/2019-04-15-privacy-preserving-analytics.md
 #, no-wrap
-msgid "apt-get install libnginx-mod-http-geoip geoip-database"
-msgstr ""
-
-#. type: Plain text
-#: build/_posts/md/2019-04-15-privacy-preserving-analytics.md
-msgid "```"
+msgid "# apt-get install libnginx-mod-http-geoip geoip-database\n"
 msgstr ""
 
 #. type: Plain text
@@ -11090,14 +11067,14 @@ msgstr ""
 msgid "Then enable the custom logging setup in _/etc/nginx/nginx.conf_:"
 msgstr ""
 
-#. type: Plain text
+#. type: Fenced code block (conf)
 #: build/_posts/md/2019-04-15-privacy-preserving-analytics.md
-msgid "```conf geoip_country /usr/share/GeoIP/GeoIP.dat; log_format privacy '0.0.0.0 - $remote_user [$time_local] \"$request\" $status $body_bytes_sent \"$http_referer\" \"-\" $geoip_country_code';"
-msgstr ""
-
-#. type: Plain text
-#: build/_posts/md/2019-04-15-privacy-preserving-analytics.md
-msgid "access_log /var/log/nginx/access.log privacy; ```"
+#, no-wrap
+msgid ""
+"geoip_country /usr/share/GeoIP/GeoIP.dat;\n"
+"log_format privacy '0.0.0.0 - $remote_user [$time_local] \"$request\" $status $body_bytes_sent \"$http_referer\" \"-\" $geoip_country_code';\n"
+"\n"
+"access_log /var/log/nginx/access.log privacy;\n"
 msgstr ""
 
 #. type: Plain text
@@ -11105,15 +11082,28 @@ msgstr ""
 msgid "This then makes the access log data look like:"
 msgstr ""
 
-#. type: Title #
+#. type: Fenced code block (console)
 #: build/_posts/md/2019-04-15-privacy-preserving-analytics.md
 #, no-wrap
-msgid "tail /var/log/nginx/access.log"
-msgstr ""
-
-#. type: Plain text
-#: build/_posts/md/2019-04-15-privacy-preserving-analytics.md
-msgid "0.0.0.0 - - [12/Apr/2019:07:01:37 +0000] \"GET /android-free/repository/ HTTP/1.1\" 200 949 \"-\" \"-\" PL 0.0.0.0 - - [12/Apr/2019:07:02:27 +0000] \"GET /robots.txt HTTP/1.1\" 200 24 \"-\" \"-\" US 0.0.0.0 - - [12/Apr/2019:07:02:27 +0000] \"GET /android-free/repository/ HTTP/1.1\" 200 949 \"-\" \"-\" US 0.0.0.0 - - [12/Apr/2019:07:04:08 +0000] \"GET / HTTP/1.1\" 200 278 \"-\" \"-\" BR 0.0.0.0 - - [12/Apr/2019:07:06:41 +0000] \"GET /android-free/repository/ HTTP/1.1\" 200 949 \"-\" \"-\" US 0.0.0.0 - - [12/Apr/2019:07:11:45 +0000] \"GET /android-free/repository/ HTTP/1.1\" 200 949 \"-\" \"-\" FR 0.0.0.0 - - [12/Apr/2019:07:16:32 +0000] \"GET / HTTP/1.1\" 200 278 \"-\" \"-\" CA 0.0.0.0 - - [12/Apr/2019:07:16:49 +0000] \"GET /android-free/repository/ HTTP/1.1\" 200 949 \"-\" \"-\" GB 0.0.0.0 - - [12/Apr/2019:07:19:42 +0000] \"GET / HTTP/1.1\" 200 278 \"-\" \"-\" VN 0.0.0.0 - - [12/Apr/2019:07:20:20 +0000] \"GET /robots.txt HTTP/1.1\" 200 24 \"-\" \"-\" US 0.0.0.0 - - [12/Apr/2019:07:21:51 +0000] \"GET /android-free/repository/ HTTP/1.1\" 200 949 \"-\" \"-\" US 0.0.0.0 - - [12/Apr/2019:07:26:57 +0000] \"GET /android-free/repository/ HTTP/1.1\" 200 949 \"-\" \"-\" DE 0.0.0.0 - - [12/Apr/2019:07:32:01 +0000] \"GET /android-free/repository/ HTTP/1.1\" 200 949 \"-\" \"-\" SE 0.0.0.0 - - [12/Apr/2019:07:32:23 +0000] \"GET /android-free/repository/sys-img/android/sys-img-9.0.0_r33-sdk.xml HTTP/1.1\" 200 904 \"-\" \"-\" US 0.0.0.0 - - [12/Apr/2019:07:37:04 +0000] \"GET /android-free/repository/ HTTP/1.1\" 200 949 \"-\" \"-\" DE 0.0.0.0 - - [12/Apr/2019:07:38:55 +0000] \"\\x03\\x00\\x00/*\\xE0\\x00\\x00\\x00\\x00\\x00Cookie: mstshash=Administr\" 400 173 \"-\" \"-\" RU 0.0.0.0 - - [12/Apr/2019:07:39:12 +0000] \"GET / HTTP/1.1\" 200 278 \"-\" \"-\" EC ```"
+msgid ""
+"# tail /var/log/nginx/access.log\n"
+"0.0.0.0 - - [12/Apr/2019:07:01:37 +0000] \"GET /android-free/repository/ HTTP/1.1\" 200 949 \"-\" \"-\" PL\n"
+"0.0.0.0 - - [12/Apr/2019:07:02:27 +0000] \"GET /robots.txt HTTP/1.1\" 200 24 \"-\" \"-\" US\n"
+"0.0.0.0 - - [12/Apr/2019:07:02:27 +0000] \"GET /android-free/repository/ HTTP/1.1\" 200 949 \"-\" \"-\" US\n"
+"0.0.0.0 - - [12/Apr/2019:07:04:08 +0000] \"GET / HTTP/1.1\" 200 278 \"-\" \"-\" BR\n"
+"0.0.0.0 - - [12/Apr/2019:07:06:41 +0000] \"GET /android-free/repository/ HTTP/1.1\" 200 949 \"-\" \"-\" US\n"
+"0.0.0.0 - - [12/Apr/2019:07:11:45 +0000] \"GET /android-free/repository/ HTTP/1.1\" 200 949 \"-\" \"-\" FR\n"
+"0.0.0.0 - - [12/Apr/2019:07:16:32 +0000] \"GET / HTTP/1.1\" 200 278 \"-\" \"-\" CA\n"
+"0.0.0.0 - - [12/Apr/2019:07:16:49 +0000] \"GET /android-free/repository/ HTTP/1.1\" 200 949 \"-\" \"-\" GB\n"
+"0.0.0.0 - - [12/Apr/2019:07:19:42 +0000] \"GET / HTTP/1.1\" 200 278 \"-\" \"-\" VN\n"
+"0.0.0.0 - - [12/Apr/2019:07:20:20 +0000] \"GET /robots.txt HTTP/1.1\" 200 24 \"-\" \"-\" US\n"
+"0.0.0.0 - - [12/Apr/2019:07:21:51 +0000] \"GET /android-free/repository/ HTTP/1.1\" 200 949 \"-\" \"-\" US\n"
+"0.0.0.0 - - [12/Apr/2019:07:26:57 +0000] \"GET /android-free/repository/ HTTP/1.1\" 200 949 \"-\" \"-\" DE\n"
+"0.0.0.0 - - [12/Apr/2019:07:32:01 +0000] \"GET /android-free/repository/ HTTP/1.1\" 200 949 \"-\" \"-\" SE\n"
+"0.0.0.0 - - [12/Apr/2019:07:32:23 +0000] \"GET /android-free/repository/sys-img/android/sys-img-9.0.0_r33-sdk.xml HTTP/1.1\" 200 904 \"-\" \"-\" US\n"
+"0.0.0.0 - - [12/Apr/2019:07:37:04 +0000] \"GET /android-free/repository/ HTTP/1.1\" 200 949 \"-\" \"-\" DE\n"
+"0.0.0.0 - - [12/Apr/2019:07:38:55 +0000] \"\\x03\\x00\\x00/*\\xE0\\x00\\x00\\x00\\x00\\x00Cookie: mstshash=Administr\" 400 173 \"-\" \"-\" RU\n"
+"0.0.0.0 - - [12/Apr/2019:07:39:12 +0000] \"GET / HTTP/1.1\" 200 278 \"-\" \"-\" EC\n"
 msgstr ""
 
 #. type: Title #
@@ -11430,9 +11420,14 @@ msgstr ""
 msgid "The second is using SD Cards and USB On-The-Go (OTG) flash drives as a source of F-Droid repos.  Flash drives can provide a very high bandwidth method for transferring files, when they are easy to move from device to device.  Our goal is to make the whole user experience as smooth as possible, so people can regularly move data with these affordable, widespread data buckets.  USB-OTG and SD Cards can host standalone repos as well as mirrors of existing repos.  Those repos need to be copied to the flash drive first, like from a laptop.  That can be done using `fdroid mirror`, for example:"
 msgstr ""
 
-#. type: Plain text
+#. type: Fenced code block (console)
 #: build/_posts/md/2019-06-20-two-new-ways-to-get-apps-nearby-without-internet.md
-msgid "```console $ cd /media/user/F-DROIDORG $ fdroid mirror https://guardianproject.info/fdroid $ wget https://guardianproject.info/fdroid/repo/index-v1.jar $ mv index-v1.jar fdroid/repo/ ```"
+#, no-wrap
+msgid ""
+"$ cd /media/user/F-DROIDORG\n"
+"$ fdroid mirror https://guardianproject.info/fdroid\n"
+"$ wget https://guardianproject.info/fdroid/repo/index-v1.jar\n"
+"$ mv index-v1.jar fdroid/repo/\n"
 msgstr ""
 
 #. type: Plain text
@@ -14249,9 +14244,10 @@ msgstr ""
 msgid "To keep things easy, we will continue to ship a handy sub-command so everyone can conveniently convert now deprecated `.txt` metadata files to `.yml`:"
 msgstr ""
 
-#. type: Plain text
+#. type: Fenced code block
 #: build/_posts/md/2019-09-11-yaml-metadata.md
-msgid "``` $ fdroid rewritemeta --to yml ```"
+#, no-wrap
+msgid "$ fdroid rewritemeta --to yml\n"
 msgstr ""
 
 #. type: Plain text
@@ -14387,7 +14383,6 @@ msgstr ""
 #. type: Title #
 #: build/_posts/md/2020-01-09-f-droid-at-36c3.md
 #, fuzzy, no-wrap
-#| msgid "\"F-Droid at 35c3\""
 msgid "F-Droid at 36c3"
 msgstr "\"F-Droid no 35c3\""
 
@@ -14621,10 +14616,6 @@ msgstr ""
 #. type: Plain text
 #: build/_posts/md/2020-02-03-openpush-talk.md
 #, fuzzy, no-wrap
-#| msgid ""
-#| "<a class=\"youtube\" href=\"https://youtube.com/watch?v=y3zVcYuE-WI\">\n"
-#| "    <img src=\"{{ site.baseurl }}/assets/posts/2018-02-02-linux-conf-au-fdroid-presentation/video-thumbnail.png\" />\n"
-#| "</a>\n"
 msgid ""
 "<a class=\"video-preview\" href=\"https://video.fosdem.org/2020/UA2.220/dip_openpush.webm\">\n"
 "    <img src=\"{{ site.baseurl }}/assets/posts/2020-02-03-openpush-talk/video-preview.png\" />\n"
@@ -14652,7 +14643,6 @@ msgstr ""
 #. type: Title #
 #: build/_posts/md/2020-02-16-statistics_2019.md
 #, fuzzy, no-wrap
-#| msgid "\"F-Droid is 1.0!\""
 msgid "\"F-Droid Stats from 2019\""
 msgstr "\"F-Droid é 1.0!\""
 
@@ -14735,7 +14725,6 @@ msgstr ""
 #. type: Bullet: '* '
 #: build/_posts/md/2020-02-16-statistics_2019.md
 #, fuzzy
-#| msgid "add [missing features](https://gitlab.com/fdroid/fdroidclient/issues) to the Android client"
 msgid "1258 [open issues](https://gitlab.com/groups/fdroid/-/issues)"
 msgstr "adicione [ferramentas em falta](https://gitlab.com/fdroid/fdroidclient/issues) para o cliente Android"
 
@@ -14778,21 +14767,18 @@ msgstr ""
 #. type: Bullet: '* '
 #: build/_posts/md/2020-02-16-statistics_2019.md
 #, fuzzy
-#| msgid "test [nightly builds](https://gitlab.com/fdroid/fdroidclient-nightly)"
 msgid "Help with [client development](https://gitlab.com/fdroid/fdroidclient) (especially UX)"
 msgstr "teste [compilações nightly](https://gitlab.com/fdroid/fdroidclient-nightly)"
 
 #. type: Bullet: '* '
 #: build/_posts/md/2020-02-16-statistics_2019.md
 #, fuzzy
-#| msgid "test [nightly builds](https://gitlab.com/fdroid/fdroidclient-nightly)"
 msgid "Help with [website dev](https://gitlab.com/fdroid/fdroid-website) (ruby/jekyll)"
 msgstr "teste [compilações nightly](https://gitlab.com/fdroid/fdroidclient-nightly)"
 
 #. type: Bullet: '* '
 #: build/_posts/md/2020-02-16-statistics_2019.md
 #, fuzzy
-#| msgid "make [Repomaker](https://gitlab.com/fdroid/repomaker/issues) work well on your platform"
 msgid "Help with [Repomaker](https://gitlab.com/fdroid/repomaker) (Python Django App)"
 msgstr "faça o [Repomaker](https://gitlab.com/fdroid/repomaker/issues) funcionar bem em sua plataforma"
 
@@ -14810,9 +14796,6 @@ msgstr ""
 #. type: Plain text
 #: build/_posts/md/2020-02-16-statistics_2019.md
 #, fuzzy, no-wrap
-#| msgid ""
-#| "You can also fund the further development of Liberapay through Liberapay itself here:\n"
-#| "<a href=\"https://liberapay.com/Liberapay/\"><img src=\"{{ site.baseurl }}/assets/liberapay_donate_button.svg\" style=\"box-shadow: unset;\" /></a>\n"
 msgid ""
 "<a href=\"https://opencollective.com/f-droid\"><img src=\"{{ site.baseurl }}/assets/opencollectivelogo.svg\" height=\"30\" style=\"box-shadow: unset;\" ></a>&nbsp;&nbsp; &nbsp;\n"
 "<a href=\"https://liberapay.com/F-Droid-Data/\"><img src=\"{{ site.baseurl }}/assets/liberapay_donate_button.svg\" height=\"30\" style=\"box-shadow: unset;\" ></a>\n"
@@ -14851,7 +14834,6 @@ msgstr ""
 #. type: Plain text
 #: build/_posts/md/2020-02-16-statistics_2019.md
 #, fuzzy, no-wrap
-#| msgid "We're at almost 1900 followers on [Mastodon](https://mastodon.technology/@fdroidorg)!"
 msgid "**Mastodon:** [@fdroidorg@mastoton.technology](https://mastodon.technology/@fdroidorg)\n"
 msgstr "Estamos a quase 1900 seguidores em [Mastodon](https://mastodon.technology/@fdroidorg)!"
 
@@ -15000,3 +14982,18 @@ msgstr ""
 #: build/_posts/md/2020-03-04-f-droid-is-a-key-source-for-academics-and-researchers.md
 msgid "Lastly, if you are a researcher or academic working with F-Droid data, please come by and say hi! We are always interested to hear about how people are using our work."
 msgstr ""
+
+#~ msgid ""
+#~ "```console\n"
+#~ "$ fdroid update -h\n"
+#~ "usage: fdroid update [-h] [-v] [-q] [--create-key] [-c] [--delete-unknown]\n"
+#~ "                     [-b] [-i] [-I] [-e EDITOR] [-w] [--pretty] [--clean]\n"
+#~ "                     [--nosign] [--use-date-from-apk] [--rename-apks]\n"
+#~ "                     [--allow-disabled-algorithms] [-W W]\n"
+#~ msgstr ""
+#~ "```console\n"
+#~ "$ fdroid update -h\n"
+#~ "usage: fdroid update [-h] [-v] [-q] [--create-key] [-c] [--delete-unknown]\n"
+#~ "                     [-b] [-i] [-I] [-e EDITOR] [-w] [--pretty] [--clean]\n"
+#~ "                     [--nosign] [--use-date-from-apk] [--rename-apks]\n"
+#~ "                     [--allow-disabled-algorithms] [-W W]\n"
