@@ -85,10 +85,10 @@ f-droid.org:
    - '[ ! -d /builds/output ] && echo "ERROR: /builds/output is not mounted inside docker!" && exit 1'
    - *apt-template
    - *setup_for_jekyll
-   - 'echo "url: https://f-droid.org" > userconfig.yml'
-   - 'echo "baseurl: \"\"" >> userconfig.yml'
-   - echo "Additional Jekyll config used for CI:" && cat userconfig.yml
-   - jekyll build -d $OUT_DIR --config _config.yml,userconfig.yml --trace
+   - 'echo "url: https://f-droid.org" > _userconfig.yml'
+   - 'echo "baseurl: \"\"" >> _userconfig.yml'
+   - echo "Additional Jekyll config used for CI:" && cat _userconfig.yml
+   - jekyll build -d $OUT_DIR --config _config.yml,_userconfig.yml --trace
    - ./tools/prepare-multi-lang.sh $OUT_DIR
    - ./tools/deploy-external-assets.sh $OUT_DIR
    - rsync -ax --delete $OUT_DIR /builds/output/
@@ -121,10 +121,10 @@ pages:
    - git --no-pager diff --ignore-all-space --name-only po/
    # This is where GitLab pages will deploy to by default (e.g. "https://fdroid.gitlab.io/fdroid-website")
    # so we need to make sure that the Jekyll configuration understands this.
-   - 'echo url: https://$CI_PROJECT_NAMESPACE.gitlab.io > userconfig.yml'
-   - 'echo baseurl: /$CI_PROJECT_NAME >> userconfig.yml'
-   - echo "Additional Jekyll config used for CI:" && cat userconfig.yml
-   - jekyll build -d public --config _config.yml,userconfig.yml --trace
+   - 'echo url: https://$CI_PROJECT_NAMESPACE.gitlab.io > _userconfig.yml'
+   - 'echo baseurl: /$CI_PROJECT_NAME >> _userconfig.yml'
+   - echo "Additional Jekyll config used for CI:" && cat _userconfig.yml
+   - jekyll build -d public --config _config.yml,_userconfig.yml --trace
    - ./tools/prepare-multi-lang.sh public --no-type-maps
    - mkdir linkchecker/
    - ln -s ../public linkchecker/$CI_PROJECT_NAME
