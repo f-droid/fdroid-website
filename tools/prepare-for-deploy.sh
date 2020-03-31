@@ -14,19 +14,7 @@ set -e
 set -x
 
 apt-get update
-apt-get -qy install --no-install-recommends ca-certificates git
-
+apt-get -qy install --no-install-recommends ca-certificates git python3
 git remote update --prune
 git fetch --tags
-
-for tag in `git tag --sort=-taggerdate`; do
-    if git tag -v $tag; then
-	git clean -fdx
-	git checkout -B master $tag
-        echo "Set up $tag to deploy!"
-	exit
-    fi
-done
-
-echo 'ERROR: could not find any signed release tags!'
-exit(1)
+./tools/prepare-for-deploy.py
