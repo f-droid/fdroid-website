@@ -33,24 +33,16 @@ except ImportError:
     subprocess.check_call(['git', 'remote', 'update', '--prune'])
     subprocess.check_call(['git', 'fetch', '--tags'])
 
-FNULL = open(os.devnull, 'w')
-
-tags = subprocess.check_output(['git', 'tag'])
-current_date = 0
+tags = subprocess.check_output(['git', 'tag', '--sort=-taggerdate'], universal_newlines=True)
 current_tag = None
 for tag in tags.split('\n'):
     if not tag:
         continue
-    result = subprocess.call(['git', 'tag', '-v', tag], stdout=FNULL, stderr=FNULL)
-    if result != 0:
-        continue
-    try:
-        date = int(subprocess.check_output(['git', 'log', '--format=format:%at', '-1', tag]))
-        if date > current_date:
-            current_date = date
-            current_tag = tag
-    except ValueError:
-        continue
+    result = subprocess.call(['git', 'tag', '-v', tag],
+                             stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+    if result == 0:
+        current_tag = tag
+        break
 
 if current_tag:
     subprocess.call(['git', 'tag', '-v', current_tag])  # call again just to get output
