@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/python3
 
 # This script sets up this git repo for the final deploy process to
 # https://f-droid.org.  It will automatically delete changes in this
