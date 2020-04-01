@@ -138,6 +138,8 @@ function generate_md_files {
     languages=(`sed -nE 's,^languages:(.*)\] *, \1 ,p' _config.yml |  sed 's/[^a-zA-Z_ ]/ /g'`)
 
     if [ `check_for_po ${SECTION}` = true ]; then
+        i=0
+        nproc=`nproc`
         for PO in ${DIR_PO}/${SECTION}.*.po; do
             PO_FILE=`basename ${PO}`
             LOCALE=`echo ${PO_FILE} | sed -e "s/${SECTION}\.\(.*\)\.po/\1/"`
@@ -152,10 +154,6 @@ function generate_md_files {
             mkdir -p ${OUT_DIR_I18N_MD} ${BUILD_DIR_I18N_MD}
 
             for MD in ${BUILD_SUBDIR}/md/*.md; do
-                MD_FILE=`basename ${MD}`
-                OUT_TMP_MD_FILE=${BUILD_DIR_I18N_MD}/${MD_FILE}
-                OUT_MD_FILE=${OUT_DIR_I18N_MD}/${MD_FILE}
-
                 # Extract a the .po file for the translated markdown
                 # file. Count up how many translated strings there are
                 # for this file. If none, then don't bother converting
@@ -163,16 +161,7 @@ function generate_md_files {
                 # harder to see what is actually translated).  Need to
                 # take the `realpath`, because msggrep will fail with
                 # "./build/..." but succeed with "build/..."
-                SRC_MD_FILE=`realpath --relative-to . ${BUILD_SUBDIR}`/md/${MD_FILE}
-                TRANSLATED=`msggrep --location=${SRC_MD_FILE} ${DIR_PO}/${PO_FILE} | msgattrib --translated | wc -l`
-                if [ ${TRANSLATED} == "0" ]; then
-                    echo "Ignoring untranslated $OUT_MD_FILE"
-                    continue;
-                fi
-
-                echo "Translating $OUT_MD_FILE"
-                po4a-translate -f text -o markdown -L utf-8 -M utf-8 -m ${MD} -p ${PO} -l ${OUT_TMP_MD_FILE} -k 0
-
+                #
                 # Extract the front matter from the source and add it
                 # to the top of the final i18n .md file (after
                 # stripping the "# [TITLE]" line we added
@@ -180,13 +169,34 @@ function generate_md_files {
                 # the translated .md file and replace it with the i18n
                 # "title:". In the process we ensure that the
                 # frontmatter contains the correct `lang:` attribute.
-                TITLE=`head -n 1 ${OUT_TMP_MD_FILE} | sed 's/^# //'`
-                extract_frontmatter ${SRC_SUBDIR}/${MD_FILE} | sed "s/^title:.*/title: $TITLE\nlang: $LOCALE/" >> ${OUT_MD_FILE}
-
+                #
                 # Finally, copy the translated .md file with no
                 # frontmatter, and without the "# Title" we previously
                 # injected into there either, into the final .md file.
-                tail -n +2 ${OUT_TMP_MD_FILE} >> ${OUT_MD_FILE}
+                (
+                    MD_FILE=`basename ${MD}`
+                    OUT_TMP_MD_FILE=${BUILD_DIR_I18N_MD}/${MD_FILE}
+                    OUT_MD_FILE=${OUT_DIR_I18N_MD}/${MD_FILE}
+
+                    SRC_MD_FILE=`realpath --relative-to . ${BUILD_SUBDIR}`/md/${MD_FILE}
+                    TRANSLATED=`msggrep --location=${SRC_MD_FILE} ${DIR_PO}/${PO_FILE} | msgattrib --translated | wc -l`
+                    if [ ${TRANSLATED} == "0" ]; then
+                        echo "Ignoring untranslated $OUT_MD_FILE"
+		    else
+			echo "Translating $OUT_MD_FILE";
+			po4a-translate -f text -o markdown -L utf-8 -M utf-8 \
+                                       -m ${MD} -p ${PO} -l ${OUT_TMP_MD_FILE} -k 0
+			TITLE=`head -n 1 ${OUT_TMP_MD_FILE} | sed 's/^# //'`
+			extract_frontmatter ${SRC_SUBDIR}/${MD_FILE} \
+                            | sed "s/^title:.*/title: $TITLE\nlang: $LOCALE/" >> ${OUT_MD_FILE}
+			tail -n +2 ${OUT_TMP_MD_FILE} >> ${OUT_MD_FILE}
+                    fi
+                ) &
+                i=$((i+1))
+                if [ $i -gt $nproc ]; then
+                    wait
+                    i=0
+                fi
             done
         done
     fi
