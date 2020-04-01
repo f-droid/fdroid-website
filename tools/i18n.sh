@@ -16,11 +16,8 @@ fi
 PROJECT_ROOT=$(cd `dirname $0`/..; pwd)
 cd ${PROJECT_ROOT}
 
-for f in _userconfig.yml _config.yml; do
-    test -e $f || continue
-    languages=$(ruby -ryaml -e "data = YAML::load(open('$f')); puts data['languages']")
-    test -z "$languages" || break
-done
+languages=$(ruby -ryaml -e "data = YAML::load(open('_config.yml')); puts data['languages']")
+test -n "$languages"
 
 if [ "$1" == "md2po" ]; then
     languages=$(cd _data; find * -type d)

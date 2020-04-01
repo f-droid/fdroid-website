@@ -58,14 +58,6 @@ bundle exec jekyll serve
 If you want to use the official Git repository again,
 run `bundle config --delete local.jekyll-fdroid`.
 
-If you want to have another values for `site.url` and `site.baseurl`
-(default: `localhost:4000` and `fdroid-website`) you can add them in
-`_userconfig.yml`, which is ignored by git, then run all Jekyll
-commands with this additional parameter:
-
-```
---config _config.yml,_userconfig.yml
-```
 
 ## License
 
