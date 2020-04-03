@@ -22,7 +22,7 @@ layout: default-package-sidebar
 	</header>
 	{% if page.whats_new and page.suggested_version_name %}
 	<div class="package-whats-new">
-		<div class="new-in-version">{{ strings.new_in_version | replace: '[latest_version]', page.suggested_version_name }}</div>
+		<div class="new-in-version">{{ strings.new_in_version | replace: '{{latest_version}}', page.suggested_version_name }}</div>
 		{{ page.whats_new }}
 	</div>
 	{% endif %}
@@ -182,19 +182,19 @@ layout: default-package-sidebar
 					{% assign package_added_date = package.added | date: '%F' %}
 					<a name="{{ package.version_name }}"></a>
 					<a name="{{ package.version_code }}"></a>
-					{{ strings.version_info | replace: '[package_version]', package.version_name | replace: '[package_version_code]', package.version_code }}
+					{{ strings.version_info | replace: '{{package_version}}', package.version_name | replace: '{{package_version_code}}', package.version_code }}
 					{% if page.suggested_version_name == package.version_name %}<span class="suggested-badge">{{ strings.suggested }}</span>{% else %} - {% endif %}
-					{{ strings.added_on | replace: '[package_added_date]', package_added_date }}
+					{{ strings.added_on | replace: '{{package_added_date}}', package_added_date }}
 				</div>
 				<p class="package-version-requirement">
 					{% assign android_version = package.min_sdk_version | android_sdk_level_to_version %}
-					{{ strings.minimum_android_version | replace: '[android_version]', android_version }}
+					{{ strings.minimum_android_version | replace: '{{android_version}}', android_version }}
 				</p>
 
 				<p class="package-version-source">
 					{% if package.srcname != "" and package.srcname != nil %}
 					{% assign source_code_url = site.fdroid-repo | append: '/' | append: package.srcname %}
-					{{ strings.signed_by_fdroid | replace: '[source_code_url]', source_code_url }}
+					{{ strings.signed_by_fdroid | replace: '{{source_code_url}}', source_code_url }}
 					{% else %}
 					{{ strings.signed_by_developer }}
 					{% endif %}
@@ -253,7 +253,7 @@ layout: default-package-sidebar
 				<p class="package-version-download">
 					<b>
 						<a href="{{ site.fdroid-repo }}/{{ package.apk_name }}">
-							{{ strings.download | replace: '[file_extension]', package.file_extension }}
+							{{ strings.download | replace: '{{file_extension}}', package.file_extension }}
 						</a>
 					</b>
 					{{ package.size|file_size_human_readable }}
