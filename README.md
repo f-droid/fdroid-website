@@ -30,7 +30,7 @@ You need to have Jekyll 3.2+ installed what is easily done with Gem which depend
 Because of the F-Droid plugin you need to have zlib installed.
 
 ```bash
-sudo apt-get install ruby-full build-essential zlib1g-dev
+sudo apt-get install build-essential git ruby-full zlib1g-dev
 sudo gem install bundler
 bundle install
 ```
