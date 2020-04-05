@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
-"POT-Creation-Date: 2020-03-24 15:12+0100\n"
+"POT-Creation-Date: 2020-03-25 20:35+0100\n"
 "PO-Revision-Date: 2020-03-27 22:46+0000\n"
 "Last-Translator: WaldiS <admin@sto.ugu.pl>\n"
 "Language-Team: Polish <https://hosted.weblate.org/projects/f-droid/website-docs/pl/>\n"
@@ -3551,63 +3551,6 @@ msgstr "Etapowe odgałęzienie rozwojowe"
 #: build/_docs/md/Deploying_the_Website.md
 msgid "All development forks of [fdroid-website](https://gitlab.com/fdroid/fdroid-website)  automatically have a staging server setup and maintained by the _gitlab-ci_ configuration.  This automatically deploys the content of the fork's _master_ branch to [GitLab Pages](https://pages.gitlab.io/).  For example, _nicoalt_'s git fork is at <https://gitlab.com/nicoalt/fdroid-website>, and the _master_ branch from that is automatically deployed to <https://nicoalt.gitlab.io/fdroid-website>."
 msgstr "Wszystkie gałęzie rozwojowe witryny [fdroid-site](https://gitlab.com/fdroid/fdroid-website) automatycznie mają konfigurację serwera pośredniczącego i są utrzymywane przez konfigurację _gitlab-ci_ . Spowoduje to automatyczne rozmieszczenie zawartości gałęzi _master_ na stronie [GitLab Pages](https://pages.gitlab.io/). Na przykład, widżet git _nicoalt_ znajduje się na <https://gitlab.com/nicoalt/fdroid-website>, a gałąź _master_ jest automatycznie umieszczana na <https://nicoalt.gitlab.io/fdroid-website>."
-
-#. type: Title #####
-#: build/_docs/md/Deploying_the_Website.md
-#, no-wrap
-msgid "Deploying merge request branches"
-msgstr "Wdrażanie oddziałów żądań scalania"
-
-#. type: Plain text
-#: build/_docs/md/Deploying_the_Website.md
-msgid "The current _gitlab-ci_ setup is optionally capable of pushing the resulting HTML to a live webserver and linking to it automatically from the GitLab merge request, deploying to [surge.sh](https://surge.sh)."
-msgstr "Obecna konfiguracja _gitlab-ci_ może opcjonalnie przesłać wynikowy kod HTML do aktywnego serwera sieciowego i połączyć się z nim automatycznie z żądania scalenia GitLab, wdrażając do [surge.sh](https://surge.sh)."
-
-#. type: Plain text
-#: build/_docs/md/Deploying_the_Website.md
-msgid "Doing so will allow for easier review of your merge requests, but is not required.  If you don't follow the steps below, your merge requests will still run through the _gitlab-ci_ continuous integration checks, but the resulting HTML will not be accessible online."
-msgstr "Pozwoli to na łatwiejsze przeglądanie żądań scalania, ale nie jest wymagane. Jeśli nie wykonasz poniższych kroków, żądania scalenia będą nadal przeprowadzane przez ciągłe kontrole integracyjne _gitlab-ci_, ale wynikowy kod HTML nie będzie dostępny online."
-
-#. type: Plain text
-#: build/_docs/md/Deploying_the_Website.md
-msgid "To configure this:"
-msgstr "Aby to skonfigurować:"
-
-#. type: Bullet: ' * '
-#: build/_docs/md/Deploying_the_Website.md
-msgid "Install the [surge.sh](https://surge.sh) CLI: `npm install surge`"
-msgstr "Zainstaluj interfejs CLI [surge.sh](https://surge.sh) CLI: `npm install surge`"
-
-#. type: Bullet: ' * '
-#: build/_docs/md/Deploying_the_Website.md
-msgid "Signup for [surge.sh](https://surge.sh): `surge login`"
-msgstr "Zapisz się do [surge.sh](https://surge.sh): `surge login`"
-
-#. type: Bullet: ' * '
-#: build/_docs/md/Deploying_the_Website.md
-msgid "Get a \"token\" to allow CI to deploy on your behalf: `surge token`"
-msgstr "Uzyskaj \"token\", aby umożliwić CI wdrożenie w twoim imieniu: `surge token`"
-
-#. type: Plain text
-#: build/_docs/md/Deploying_the_Website.md
-#, no-wrap
-msgid ""
-" * [Add two \"Secret Variables\"](https://docs.gitlab.com/ce/ci/variables/README.html#secret-variables) to your fork of this project:\n"
-"   * Navigate to your projects Settings -> Pipelines -> Secret Variables.\n"
-"   * Add the following two variables:\n"
-"     * `SURGE_LOGIN`: The email you used to signup with `surge login`.\n"
-"     * `SURGE_TOKEN`: The value given when you ran `surge token`.\n"
-msgstr ""
-" * [Dodaj dwie \"Tajne Zmienne\"]](https://docs.gitlab.com/ce/ci/variables/README.html#secret-variables) do twojego gałęzi tego projektu:\n"
-"   * Przejdź do ustawień swoich projektów -> Strumień (ang. Pipelines) -> Tajne Zmienne.\n"
-"   * Dodaj następujące dwie zmienne:\n"
-"     * `SURGE_LOGIN`: E-mail, którego użyłeś do rejestracji `surge login`.\n"
-"     * `SURGE_TOKEN`: Wartość podana podczas uruchamiania `surge token`.\n"
-
-#. type: Plain text
-#: build/_docs/md/Deploying_the_Website.md
-msgid "Now your CI jobs should be authorized to deploy to surge.sh, and the GitLab merge requests screen will automatically link to this deployment."
-msgstr "Teraz zadania CI powinny być autoryzowane do wdrożenia do usługi surge.sh, a ekran żądań scalania GitLab automatycznie połączy się z tym wdrożeniem."
 
 #. type: Title ###
 #: build/_docs/md/Deploying_the_Website.md
@@ -9237,245 +9180,6 @@ msgid "- <https://gitlab.com/fdroid/fdroidserver/blob/master/jenkins-build-makeb
 msgstr "- <https://gitlab.com/fdroid/fdroidserver/blob/master/jenkins-build-makebuildserver> - <https://jenkins.debian.net/job/reproducible_setup_fdroid_build_environment_profitbricks7/>"
 
 #. type: Title #
-#: build/_docs/md/Vulnerability_Scanning_with_Drozer.md
-#, no-wrap
-msgid "Vulnerability Scanning with Drozer"
-msgstr "Skanowanie luk w oprogramowaniu Drozer"
-
-#. type: Plain text
-#: build/_docs/md/Vulnerability_Scanning_with_Drozer.md
-msgid "F-Droid now includes a means of running automated vulnerability scanning using [Drozer](https://github.com/mwrlabs/drozer). This is achieved by starting a docker container, with the Android SDK and Emulator prepared already, installing drozer into the emulator and scripting the knobs to scan any fully built and signed APKs."
-msgstr "F-Droid zawiera teraz narzędzie do automatycznego skanowania luk w zabezpieczeniach za pomocą [Drozer](https://github.com/mwrlabs/drozer). Osiąga się to, uruchamiając kontener dokera, z przygotowanym już zestawem SDK i emulatorem systemu Android, instalując drozer w emulatorze i skryptując gałki, aby skanować wszystkie w pełni skompilowane i podpisane pliki APK."
-
-#. type: Plain text
-#: build/_docs/md/Vulnerability_Scanning_with_Drozer.md
-msgid "Note: if your application is not intended to run within an Android emulator, please do not continue with these instructions. At this time, the _dscanner_ feature is fully dependent upon your application running properly in an emulated environment."
-msgstr "Uwaga: jeśli twoja aplikacja nie jest przeznaczona do działania w emulatorze Androida, nie kontynuuj tych instrukcji. W tej chwili funkcja _dscanner_ jest w pełni zależna od tego, czy aplikacja działa poprawnie w emulowanym środowisku."
-
-#. type: Title ###
-#: build/_docs/md/Vulnerability_Scanning_with_Drozer.md
-#, no-wrap
-msgid "Quick Start"
-msgstr "Szybki Start"
-
-#. type: Bullet: '1. '
-#: build/_docs/md/Vulnerability_Scanning_with_Drozer.md
-msgid "Ensure that your application is a signed release build"
-msgstr "Upewnij się, że twoja wersja aplikacji jest podpisana"
-
-#. type: Bullet: '1. '
-#: build/_docs/md/Vulnerability_Scanning_with_Drozer.md
-msgid "`fdroid dscanner --init-only` from within the repo"
-msgstr "`fdroid dscanner --init-only` z repozytorium"
-
-#. type: Plain text
-#: build/_docs/md/Vulnerability_Scanning_with_Drozer.md
-#, no-wrap
-msgid ""
-"1. Go for a coffee, this takes a long time and requires approximately\n"
-"6 GB of disk space. Once this is complete, you'll be left with a docker\n"
-"container running and ready to go.\n"
-"1. `fdroid dscanner --latest app.pkg.name` from within the repo\n"
-"to run drozer on the latest build of _app.pkg.name_\n"
-"1. If all went well, there should be an _app.pkg.name_CODE.apk.dscanner_\n"
-"file in the repo (next to the original APK file)\n"
-"1. When you're all done scanning packages, you can cleanup the docker\n"
-"container with: `fdroid dscanner --clean-only`\n"
-msgstr ""
-"1. Idź na kawę, zajmuje to dużo czasu i wymaga\n"
-"około 6 GB miejsca na dysku. Gdy to się zakończy,\n"
-"pozostaniesz z uruchomionym kontenerem docker gotowym do pracy.\n"
-"1. `fdroid dscanner --latest app.pkg.name` z poziomu repo,\n"
-"aby uruchomić drozer na najnowszej wersji z _app.pkg.name_\n"
-"1. Jeśli wszystko poszło dobrze, w repozytorium powinien znajdować się plik\n"
-"_app.pkg.name_CODE.apk.dscanner_ (obok oryginalnego pliku APK)\n"
-"1. Gdy skończysz skanowanie paczek, możesz wyczyścić kontener docker\n"
-"za pomocą: `fdroid dscanner --clean-only`\n"
-
-#. type: Plain text
-#: build/_docs/md/Vulnerability_Scanning_with_Drozer.md
-msgid "You can also run the drozer scan as an optional part of the overall `fdroid build` operation. This option will trigger a drozer scan of all signed APKs found in the repo. See `fdroid build --help` for more information."
-msgstr "Możesz także uruchomić skanowanie drozer jako opcjonalną część ogólnej operacji `fdroid build`. Ta opcja uruchomi skanowanie wszystkich podpisanych plików APK znalezionych w repozytorium. Zobacz `fdroid build --help`, aby uzyskać więcej informacji."
-
-#. type: Title ###
-#: build/_docs/md/Vulnerability_Scanning_with_Drozer.md
-#, no-wrap
-msgid "Command Line Help"
-msgstr "Pomoc Wiersz Poleceń"
-
-#. type: Fenced code block
-#: build/_docs/md/Vulnerability_Scanning_with_Drozer.md
-#, fuzzy, no-wrap
-msgid ""
-"usage: fdroid dscanner [options] [APPID[:VERCODE] [APPID[:VERCODE] ...]]\n"
-"\n"
-"positional arguments:\n"
-"  app_id                app-id with optional versioncode in the form\n"
-"                        APPID[:VERCODE]\n"
-"\n"
-"optional arguments:\n"
-"  -h, --help            show this help message and exit\n"
-"  -v, --verbose         Spew out even more information than normal\n"
-"  -q, --quiet           Restrict output to warnings and errors\n"
-"  -l, --latest          Scan only the latest version of each package\n"
-"  --clean-after         Clean after all scans have finished.\n"
-"  --clean-before        Clean before the scans start and rebuild the\n"
-"                        container.\n"
-"  --clean-only          Clean up all containers and then exit.\n"
-"  --init-only           Prepare drozer to run a scan\n"
-"  --repo-path REPO_PATH\n"
-"                        Override repo path for built APK files.\n"
-msgstr ""
-"opcjonalne argumenty:\n"
-"  -h, --help            pokaż ten komunikat pomocy i zakończ\n"
-"  -v, --verbose         Wypluwaj jeszcze więcej informacji niż zwykle\n"
-"  -q, --quiet           Ogranicz wyjście do ostrzeżeń i błędów\n"
-"  -l, --latest          Skanuj tylko najnowszą wersję każdego pakietu\n"
-"  --clean-after         Wyczyść po zakończeniu wszystkich skanów.\n"
-"  --clean-before        Wyczyść przed rozpoczęciem skanowania i odbuduj\n"
-"                        kontener.\n"
-"  --clean-only          Oczyść wszystkie kontenery, a następnie wyjdź.\n"
-"  --init-only           Przygotuj drozer do uruchomienia skanowania\n"
-"  --repo-path REPO_PATH\n"
-"                        Zastąp ścieżkę repo dla zbudowanych plików APK.\n"
-"```\n"
-
-#. type: Title ###
-#: build/_docs/md/Vulnerability_Scanning_with_Drozer.md
-#, no-wrap
-msgid "From Scratch"
-msgstr "Od podstaw"
-
-#. type: Plain text
-#: build/_docs/md/Vulnerability_Scanning_with_Drozer.md
-msgid "Because the docker image used to do the Android Emulator and all of that takes a considerable amount of time to prepare, one has been uploaded to dockerhub.com for general use. However, the astute researcher will be weary of any black boxes and want to build their own black box. This section elaborates how to build the docker image yourself."
-msgstr "Ponieważ obraz doka używany do zrobienia Emulatora Androida i wszystko to zajmuje dużo czasu na przygotowanie, jeden został przesłany do dockerhub.com do ogólnego użytku. Jednak bystry badacz będzie znudzony czarnymi skrzynkami i chce zbudować własną czarną skrzynkę. W tej sekcji omówiono sposób samodzielnego tworzenia obrazu dokowanego."
-
-#. type: Plain text
-#: build/_docs/md/Vulnerability_Scanning_with_Drozer.md
-msgid "From within the F-Droid Server source code directory, `cd ./docker/` in order to begin."
-msgstr "Z poziomu katalogu kodu źródłowego serwera F-Droid, `cd ./docker/`, aby rozpocząć."
-
-#. type: Plain text
-#: build/_docs/md/Vulnerability_Scanning_with_Drozer.md
-msgid "Within this directory are the custom scripting used within the docker image creation. For conveience, there is a simple Makefile that wraps the process of creating images into convenient pieces."
-msgstr "W tym katalogu znajdują się niestandardowe skrypty używane podczas tworzenia obrazu dokowanego. Dla wygody istnieje prosty plik Makefile, który owija proces tworzenia obrazów w wygodne elementy."
-
-#. type: Title ####
-#: build/_docs/md/Vulnerability_Scanning_with_Drozer.md
-#, no-wrap
-msgid "`make help`"
-msgstr "`udzielanie pomocy`"
-
-#. type: Fenced code block
-#: build/_docs/md/Vulnerability_Scanning_with_Drozer.md
-#, fuzzy, no-wrap
-msgid ""
-"usage: make help|build|clean|kill|info\n"
-"\n"
-"  help    this help screen\n"
-"  build   create docker image\n"
-"  clean   remove images and containers\n"
-"  kill    stop running containers\n"
-"  info    details of running container\n"
-msgstr ""
-"  pomoc    ekran pomocy\n"
-"  build   tworzenie obrazu dokowanego\n"
-"  clean   usuwanie obrazów i kontenerów\n"
-"  kill    zatrzymanie uruchomionych kontenerów\n"
-"  info    szczegóły dotyczące uruchamiania kontenera\n"
-"```\n"
-
-#. type: Title ####
-#: build/_docs/md/Vulnerability_Scanning_with_Drozer.md
-#, no-wrap
-msgid "`make clean`"
-msgstr "`oczyść`"
-
-#. type: Plain text
-#: build/_docs/md/Vulnerability_Scanning_with_Drozer.md
-msgid "Stops any running containers (`make kill`) and then forcully removes them from docker. After that, all images associated are also explicitly removed."
-msgstr "Zatrzymuje wszystkie uruchomione kontenery (`make kill`), a następnie całkowicie je usuwa z dockera. Następnie wszystkie skojarzone obrazy są również usuwane."
-
-#. type: Plain text
-#: build/_docs/md/Vulnerability_Scanning_with_Drozer.md
-msgid "Note: this will destroy docker images!"
-msgstr "Uwaga: spowoduje to zniszczenie obrazów doków!"
-
-#. type: Title ####
-#: build/_docs/md/Vulnerability_Scanning_with_Drozer.md
-#, no-wrap
-msgid "`make build`"
-msgstr "`buduj`"
-
-#. type: Plain text
-#: build/_docs/md/Vulnerability_Scanning_with_Drozer.md
-msgid "Builds the actual docker container, tagged _dscanner/fdroidserver:latest_ from the local directory. Obviously this is operating with the `Dockerfile` to build and tie everything together nicely."
-msgstr "Tworzy rzeczywisty kontener dokowania, otaguje _dscanner/fdroidserver:latest_ z lokalnego katalogu. Oczywiście działa to z `Dockerfile`, aby zbudować i wszystko ładnie połączyć."
-
-#. type: Title ####
-#: build/_docs/md/Vulnerability_Scanning_with_Drozer.md
-#, no-wrap
-msgid "`make kill`"
-msgstr "`make kill`"
-
-#. type: Plain text
-#: build/_docs/md/Vulnerability_Scanning_with_Drozer.md
-msgid "`docker kill` the container tagged _dscanner_."
-msgstr "`docker kill` kontener oznaczony _dscanner_."
-
-#. type: Title ####
-#: build/_docs/md/Vulnerability_Scanning_with_Drozer.md
-#, no-wrap
-msgid "`make info`"
-msgstr "`zrób informacje`"
-
-#. type: Plain text
-#: build/_docs/md/Vulnerability_Scanning_with_Drozer.md
-msgid "Prints some useful information about the currently running dscanner container (if it is even running). The output of this command is confusing and raw but useful none-the-less. See example output below:"
-msgstr "Drukuje użyteczne informacje o aktualnie uruchomionym kontenerze dscanner (jeśli jest uruchomiony). Dane wyjściowe tego polecenia są mylące i surowe, ale nie mniej użyteczne. Zobacz przykładowy wynik poniżej:"
-
-#. type: Fenced code block
-#: build/_docs/md/Vulnerability_Scanning_with_Drozer.md
-#, fuzzy, no-wrap
-msgid ""
-"CONTAINER ID        IMAGE                   COMMAND\n"
-"CREATED             STATUS              PORTS\n"
-"NAMES\n"
-"b90a60afe477        dscanner/fdroidserver   \"/home/drozer/entrypo\"   20\n"
-"minutes ago      Up 20 minutes       0.0.0.0:32779->22/tcp,\n"
-"0.0.0.0:32778->5037/tcp, 0.0.0.0:32777->5554/tcp,\n"
-"0.0.0.0:32776->5555/tcp, 0.0.0.0:32775->5900/tcp,\n"
-"0.0.0.0:32774->5901/tcp   dscanner\n"
-"Use:\n"
-" adb kill-server\n"
-" adb connect 172.17.0.2:32776\n"
-msgstr ""
-"```\n"
-"CONTAINER ID        IMAGE                   COMMAND\n"
-"CREATED             STATUS              PORTS\n"
-"NAMES\n"
-"b90a60afe477        dscanner/fdroidserver   \"/home/drozer/entrypo\"   20\n"
-"minutes ago      Up 20 minutes       0.0.0.0:32779->22/tcp,\n"
-"0.0.0.0:32778->5037/tcp, 0.0.0.0:32777->5554/tcp,\n"
-"0.0.0.0:32776->5555/tcp, 0.0.0.0:32775->5900/tcp,\n"
-"0.0.0.0:32774->5901/tcp   dscanner\n"
-"Use:\n"
-" adb kill-server\n"
-" adb connect 172.17.0.2:32776\n"
-"```\n"
-
-#. type: Plain text
-#: build/_docs/md/Vulnerability_Scanning_with_Drozer.md
-#, no-wrap
-msgid ""
-"Typical usage is for finding the _adb connect_ line or the _ssh_\n"
-"port (32779 from the `0.0.0.0:32779->22/tcp` note).\n"
-msgstr ""
-"Typowym zastosowaniem jest znalezienie linii _adb connect_ lub _ssh_\n"
-"port (32779 from the `0.0.0.0:32779->22/tcp` note).\n"
-
-#. type: Title #
 #: build/_docs/md/Whitelabel_Builds.md
 #, no-wrap
 msgid "Whitelabel Builds"
@@ -9633,6 +9337,217 @@ msgstr "Preferencje"
 #: build/_docs/md/Whitelabel_Builds.md
 msgid "For a custom build that enables Automatic Updates by default, override _app/src/main/res/xml/preferences.xml_. You can customize the preferences and their default values in _app/src/mycompany/res/xml/preferences.xml_. The fully automatic update requires [Privileged Extension](https://gitlab.com/fdroid/privileged-extension). With regular access, the updates will only automatically download. The user still needs to click install on each one."
 msgstr "W przypadku niestandardowej kompilacji, która domyślnie włącza aktualizacje automatyczne, należy zastąpić _app/src/main/res/xml/preferences.xml_. Możesz dostosować preferencje i ich domyślne wartości w _app/src/mycompany/res/xml/preferences.xml_. W pełni automatyczna aktualizacja wymaga rozszerzenia [Privileged Extension](https://gitlab.com/fdroid/privileged-extension). Przy regularnym dostępie aktualizacje będą pobierane automatycznie. Użytkownik musi kliknąć instalację na każdym z nich."
+
+#~ msgid "Deploying merge request branches"
+#~ msgstr "Wdrażanie oddziałów żądań scalania"
+
+#~ msgid "The current _gitlab-ci_ setup is optionally capable of pushing the resulting HTML to a live webserver and linking to it automatically from the GitLab merge request, deploying to [surge.sh](https://surge.sh)."
+#~ msgstr "Obecna konfiguracja _gitlab-ci_ może opcjonalnie przesłać wynikowy kod HTML do aktywnego serwera sieciowego i połączyć się z nim automatycznie z żądania scalenia GitLab, wdrażając do [surge.sh](https://surge.sh)."
+
+#~ msgid "Doing so will allow for easier review of your merge requests, but is not required.  If you don't follow the steps below, your merge requests will still run through the _gitlab-ci_ continuous integration checks, but the resulting HTML will not be accessible online."
+#~ msgstr "Pozwoli to na łatwiejsze przeglądanie żądań scalania, ale nie jest wymagane. Jeśli nie wykonasz poniższych kroków, żądania scalenia będą nadal przeprowadzane przez ciągłe kontrole integracyjne _gitlab-ci_, ale wynikowy kod HTML nie będzie dostępny online."
+
+#~ msgid "To configure this:"
+#~ msgstr "Aby to skonfigurować:"
+
+#~ msgid "Install the [surge.sh](https://surge.sh) CLI: `npm install surge`"
+#~ msgstr "Zainstaluj interfejs CLI [surge.sh](https://surge.sh) CLI: `npm install surge`"
+
+#~ msgid "Signup for [surge.sh](https://surge.sh): `surge login`"
+#~ msgstr "Zapisz się do [surge.sh](https://surge.sh): `surge login`"
+
+#~ msgid "Get a \"token\" to allow CI to deploy on your behalf: `surge token`"
+#~ msgstr "Uzyskaj \"token\", aby umożliwić CI wdrożenie w twoim imieniu: `surge token`"
+
+#~ msgid ""
+#~ " * [Add two \"Secret Variables\"](https://docs.gitlab.com/ce/ci/variables/README.html#secret-variables) to your fork of this project:\n"
+#~ "   * Navigate to your projects Settings -> Pipelines -> Secret Variables.\n"
+#~ "   * Add the following two variables:\n"
+#~ "     * `SURGE_LOGIN`: The email you used to signup with `surge login`.\n"
+#~ "     * `SURGE_TOKEN`: The value given when you ran `surge token`.\n"
+#~ msgstr ""
+#~ " * [Dodaj dwie \"Tajne Zmienne\"]](https://docs.gitlab.com/ce/ci/variables/README.html#secret-variables) do twojego gałęzi tego projektu:\n"
+#~ "   * Przejdź do ustawień swoich projektów -> Strumień (ang. Pipelines) -> Tajne Zmienne.\n"
+#~ "   * Dodaj następujące dwie zmienne:\n"
+#~ "     * `SURGE_LOGIN`: E-mail, którego użyłeś do rejestracji `surge login`.\n"
+#~ "     * `SURGE_TOKEN`: Wartość podana podczas uruchamiania `surge token`.\n"
+
+#~ msgid "Now your CI jobs should be authorized to deploy to surge.sh, and the GitLab merge requests screen will automatically link to this deployment."
+#~ msgstr "Teraz zadania CI powinny być autoryzowane do wdrożenia do usługi surge.sh, a ekran żądań scalania GitLab automatycznie połączy się z tym wdrożeniem."
+
+#~ msgid "Vulnerability Scanning with Drozer"
+#~ msgstr "Skanowanie luk w oprogramowaniu Drozer"
+
+#~ msgid "F-Droid now includes a means of running automated vulnerability scanning using [Drozer](https://github.com/mwrlabs/drozer). This is achieved by starting a docker container, with the Android SDK and Emulator prepared already, installing drozer into the emulator and scripting the knobs to scan any fully built and signed APKs."
+#~ msgstr "F-Droid zawiera teraz narzędzie do automatycznego skanowania luk w zabezpieczeniach za pomocą [Drozer](https://github.com/mwrlabs/drozer). Osiąga się to, uruchamiając kontener dokera, z przygotowanym już zestawem SDK i emulatorem systemu Android, instalując drozer w emulatorze i skryptując gałki, aby skanować wszystkie w pełni skompilowane i podpisane pliki APK."
+
+#~ msgid "Note: if your application is not intended to run within an Android emulator, please do not continue with these instructions. At this time, the _dscanner_ feature is fully dependent upon your application running properly in an emulated environment."
+#~ msgstr "Uwaga: jeśli twoja aplikacja nie jest przeznaczona do działania w emulatorze Androida, nie kontynuuj tych instrukcji. W tej chwili funkcja _dscanner_ jest w pełni zależna od tego, czy aplikacja działa poprawnie w emulowanym środowisku."
+
+#~ msgid "Quick Start"
+#~ msgstr "Szybki Start"
+
+#~ msgid "Ensure that your application is a signed release build"
+#~ msgstr "Upewnij się, że twoja wersja aplikacji jest podpisana"
+
+#~ msgid "`fdroid dscanner --init-only` from within the repo"
+#~ msgstr "`fdroid dscanner --init-only` z repozytorium"
+
+#~ msgid ""
+#~ "1. Go for a coffee, this takes a long time and requires approximately\n"
+#~ "6 GB of disk space. Once this is complete, you'll be left with a docker\n"
+#~ "container running and ready to go.\n"
+#~ "1. `fdroid dscanner --latest app.pkg.name` from within the repo\n"
+#~ "to run drozer on the latest build of _app.pkg.name_\n"
+#~ "1. If all went well, there should be an _app.pkg.name_CODE.apk.dscanner_\n"
+#~ "file in the repo (next to the original APK file)\n"
+#~ "1. When you're all done scanning packages, you can cleanup the docker\n"
+#~ "container with: `fdroid dscanner --clean-only`\n"
+#~ msgstr ""
+#~ "1. Idź na kawę, zajmuje to dużo czasu i wymaga\n"
+#~ "około 6 GB miejsca na dysku. Gdy to się zakończy,\n"
+#~ "pozostaniesz z uruchomionym kontenerem docker gotowym do pracy.\n"
+#~ "1. `fdroid dscanner --latest app.pkg.name` z poziomu repo,\n"
+#~ "aby uruchomić drozer na najnowszej wersji z _app.pkg.name_\n"
+#~ "1. Jeśli wszystko poszło dobrze, w repozytorium powinien znajdować się plik\n"
+#~ "_app.pkg.name_CODE.apk.dscanner_ (obok oryginalnego pliku APK)\n"
+#~ "1. Gdy skończysz skanowanie paczek, możesz wyczyścić kontener docker\n"
+#~ "za pomocą: `fdroid dscanner --clean-only`\n"
+
+#~ msgid "You can also run the drozer scan as an optional part of the overall `fdroid build` operation. This option will trigger a drozer scan of all signed APKs found in the repo. See `fdroid build --help` for more information."
+#~ msgstr "Możesz także uruchomić skanowanie drozer jako opcjonalną część ogólnej operacji `fdroid build`. Ta opcja uruchomi skanowanie wszystkich podpisanych plików APK znalezionych w repozytorium. Zobacz `fdroid build --help`, aby uzyskać więcej informacji."
+
+#~ msgid "Command Line Help"
+#~ msgstr "Pomoc Wiersz Poleceń"
+
+#, fuzzy
+#~ msgid ""
+#~ "usage: fdroid dscanner [options] [APPID[:VERCODE] [APPID[:VERCODE] ...]]\n"
+#~ "\n"
+#~ "positional arguments:\n"
+#~ "  app_id                app-id with optional versioncode in the form\n"
+#~ "                        APPID[:VERCODE]\n"
+#~ "\n"
+#~ "optional arguments:\n"
+#~ "  -h, --help            show this help message and exit\n"
+#~ "  -v, --verbose         Spew out even more information than normal\n"
+#~ "  -q, --quiet           Restrict output to warnings and errors\n"
+#~ "  -l, --latest          Scan only the latest version of each package\n"
+#~ "  --clean-after         Clean after all scans have finished.\n"
+#~ "  --clean-before        Clean before the scans start and rebuild the\n"
+#~ "                        container.\n"
+#~ "  --clean-only          Clean up all containers and then exit.\n"
+#~ "  --init-only           Prepare drozer to run a scan\n"
+#~ "  --repo-path REPO_PATH\n"
+#~ "                        Override repo path for built APK files.\n"
+#~ msgstr ""
+#~ "opcjonalne argumenty:\n"
+#~ "  -h, --help            pokaż ten komunikat pomocy i zakończ\n"
+#~ "  -v, --verbose         Wypluwaj jeszcze więcej informacji niż zwykle\n"
+#~ "  -q, --quiet           Ogranicz wyjście do ostrzeżeń i błędów\n"
+#~ "  -l, --latest          Skanuj tylko najnowszą wersję każdego pakietu\n"
+#~ "  --clean-after         Wyczyść po zakończeniu wszystkich skanów.\n"
+#~ "  --clean-before        Wyczyść przed rozpoczęciem skanowania i odbuduj\n"
+#~ "                        kontener.\n"
+#~ "  --clean-only          Oczyść wszystkie kontenery, a następnie wyjdź.\n"
+#~ "  --init-only           Przygotuj drozer do uruchomienia skanowania\n"
+#~ "  --repo-path REPO_PATH\n"
+#~ "                        Zastąp ścieżkę repo dla zbudowanych plików APK.\n"
+#~ "```\n"
+
+#~ msgid "From Scratch"
+#~ msgstr "Od podstaw"
+
+#~ msgid "Because the docker image used to do the Android Emulator and all of that takes a considerable amount of time to prepare, one has been uploaded to dockerhub.com for general use. However, the astute researcher will be weary of any black boxes and want to build their own black box. This section elaborates how to build the docker image yourself."
+#~ msgstr "Ponieważ obraz doka używany do zrobienia Emulatora Androida i wszystko to zajmuje dużo czasu na przygotowanie, jeden został przesłany do dockerhub.com do ogólnego użytku. Jednak bystry badacz będzie znudzony czarnymi skrzynkami i chce zbudować własną czarną skrzynkę. W tej sekcji omówiono sposób samodzielnego tworzenia obrazu dokowanego."
+
+#~ msgid "From within the F-Droid Server source code directory, `cd ./docker/` in order to begin."
+#~ msgstr "Z poziomu katalogu kodu źródłowego serwera F-Droid, `cd ./docker/`, aby rozpocząć."
+
+#~ msgid "Within this directory are the custom scripting used within the docker image creation. For conveience, there is a simple Makefile that wraps the process of creating images into convenient pieces."
+#~ msgstr "W tym katalogu znajdują się niestandardowe skrypty używane podczas tworzenia obrazu dokowanego. Dla wygody istnieje prosty plik Makefile, który owija proces tworzenia obrazów w wygodne elementy."
+
+#~ msgid "`make help`"
+#~ msgstr "`udzielanie pomocy`"
+
+#, fuzzy
+#~ msgid ""
+#~ "usage: make help|build|clean|kill|info\n"
+#~ "\n"
+#~ "  help    this help screen\n"
+#~ "  build   create docker image\n"
+#~ "  clean   remove images and containers\n"
+#~ "  kill    stop running containers\n"
+#~ "  info    details of running container\n"
+#~ msgstr ""
+#~ "  pomoc    ekran pomocy\n"
+#~ "  build   tworzenie obrazu dokowanego\n"
+#~ "  clean   usuwanie obrazów i kontenerów\n"
+#~ "  kill    zatrzymanie uruchomionych kontenerów\n"
+#~ "  info    szczegóły dotyczące uruchamiania kontenera\n"
+#~ "```\n"
+
+#~ msgid "`make clean`"
+#~ msgstr "`oczyść`"
+
+#~ msgid "Stops any running containers (`make kill`) and then forcully removes them from docker. After that, all images associated are also explicitly removed."
+#~ msgstr "Zatrzymuje wszystkie uruchomione kontenery (`make kill`), a następnie całkowicie je usuwa z dockera. Następnie wszystkie skojarzone obrazy są również usuwane."
+
+#~ msgid "Note: this will destroy docker images!"
+#~ msgstr "Uwaga: spowoduje to zniszczenie obrazów doków!"
+
+#~ msgid "`make build`"
+#~ msgstr "`buduj`"
+
+#~ msgid "Builds the actual docker container, tagged _dscanner/fdroidserver:latest_ from the local directory. Obviously this is operating with the `Dockerfile` to build and tie everything together nicely."
+#~ msgstr "Tworzy rzeczywisty kontener dokowania, otaguje _dscanner/fdroidserver:latest_ z lokalnego katalogu. Oczywiście działa to z `Dockerfile`, aby zbudować i wszystko ładnie połączyć."
+
+#~ msgid "`make kill`"
+#~ msgstr "`make kill`"
+
+#~ msgid "`docker kill` the container tagged _dscanner_."
+#~ msgstr "`docker kill` kontener oznaczony _dscanner_."
+
+#~ msgid "`make info`"
+#~ msgstr "`zrób informacje`"
+
+#~ msgid "Prints some useful information about the currently running dscanner container (if it is even running). The output of this command is confusing and raw but useful none-the-less. See example output below:"
+#~ msgstr "Drukuje użyteczne informacje o aktualnie uruchomionym kontenerze dscanner (jeśli jest uruchomiony). Dane wyjściowe tego polecenia są mylące i surowe, ale nie mniej użyteczne. Zobacz przykładowy wynik poniżej:"
+
+#, fuzzy
+#~ msgid ""
+#~ "CONTAINER ID        IMAGE                   COMMAND\n"
+#~ "CREATED             STATUS              PORTS\n"
+#~ "NAMES\n"
+#~ "b90a60afe477        dscanner/fdroidserver   \"/home/drozer/entrypo\"   20\n"
+#~ "minutes ago      Up 20 minutes       0.0.0.0:32779->22/tcp,\n"
+#~ "0.0.0.0:32778->5037/tcp, 0.0.0.0:32777->5554/tcp,\n"
+#~ "0.0.0.0:32776->5555/tcp, 0.0.0.0:32775->5900/tcp,\n"
+#~ "0.0.0.0:32774->5901/tcp   dscanner\n"
+#~ "Use:\n"
+#~ " adb kill-server\n"
+#~ " adb connect 172.17.0.2:32776\n"
+#~ msgstr ""
+#~ "```\n"
+#~ "CONTAINER ID        IMAGE                   COMMAND\n"
+#~ "CREATED             STATUS              PORTS\n"
+#~ "NAMES\n"
+#~ "b90a60afe477        dscanner/fdroidserver   \"/home/drozer/entrypo\"   20\n"
+#~ "minutes ago      Up 20 minutes       0.0.0.0:32779->22/tcp,\n"
+#~ "0.0.0.0:32778->5037/tcp, 0.0.0.0:32777->5554/tcp,\n"
+#~ "0.0.0.0:32776->5555/tcp, 0.0.0.0:32775->5900/tcp,\n"
+#~ "0.0.0.0:32774->5901/tcp   dscanner\n"
+#~ "Use:\n"
+#~ " adb kill-server\n"
+#~ " adb connect 172.17.0.2:32776\n"
+#~ "```\n"
+
+#~ msgid ""
+#~ "Typical usage is for finding the _adb connect_ line or the _ssh_\n"
+#~ "port (32779 from the `0.0.0.0:32779->22/tcp` note).\n"
+#~ msgstr ""
+#~ "Typowym zastosowaniem jest znalezienie linii _adb connect_ lub _ssh_\n"
+#~ "port (32779 from the `0.0.0.0:32779->22/tcp` note).\n"
 
 #~ msgid ""
 #~ "  - versionName: 1.3\n"
