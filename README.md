@@ -20,6 +20,11 @@ bundle install --local
 jekyll build
 ```
 
+If you experience an error during the build process, try also:
+```
+bundle update
+```
+
 Look at the [_.gitlab-ci.yml_](https://gitlab.com/fdroid/fdroid-website/blob/master/.gitlab-ci.yml)
 for more examples of custom setups, like building only a subset of the languages.
 
