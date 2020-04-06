@@ -22,7 +22,7 @@ layout: default-package-sidebar
 	</header>
 	{% if page.whats_new and page.suggested_version_name %}
 	<div class="package-whats-new">
-		{% assign fmt_latest_version = '{{latest_version}}' %}
+		{% assign fmt_latest_version = '{{ latest_version }}' %}
 		<div class="new-in-version">{{ strings.new_in_version | replace: fmt_latest_version, page.suggested_version_name }}</div>
 		{{ page.whats_new }}
 	</div>
@@ -183,22 +183,22 @@ layout: default-package-sidebar
 					{% assign package_added_date = package.added | date: '%F' %}
 					<a name="{{ package.version_name }}"></a>
 					<a name="{{ package.version_code }}"></a>
-					{% assign fmt_package_version = '{{package_version}}' %}
-					{% assign fmt_package_version_code = '{{package_version_code}}' %}
+					{% assign fmt_package_version = '{{ package_version }}' %}
+					{% assign fmt_package_version_code = '{{ package_version_code }}' %}
 					{{ strings.version_info | replace: fmt_package_version, package.version_name | replace: fmt_package_version_code, package.version_code }}
 					{% if page.suggested_version_name == package.version_name %}<span class="suggested-badge">{{ strings.suggested }}</span>{% else %} - {% endif %}
-					{% assign fmt_package_added_date = '{{package_added_date}}' %}
+					{% assign fmt_package_added_date = '{{ package_added_date }}' %}
 					{{ strings.added_on | replace: fmt_package_added_date, package_added_date }}
 				</div>
 				<p class="package-version-requirement">
-					{% assign fmt_android_version = '{{android_version}}' %}
+					{% assign fmt_android_version = '{{ android_version }}' %}
 					{% assign android_version = package.min_sdk_version | android_sdk_level_to_version %}
 					{{ strings.minimum_android_version | replace: fmt_android_version, android_version }}
 				</p>
 
 				<p class="package-version-source">
 					{% if package.srcname != "" and package.srcname != nil %}
-					{% assign fmt_source_code_url = '{{source_code_url}}' %}
+					{% assign fmt_source_code_url = '{{ source_code_url }}' %}
 					{% assign source_code_url = site.fdroid-repo | append: '/' | append: package.srcname %}
 					{{ strings.signed_by_fdroid | replace: fmt_source_code_url, source_code_url }}
 					{% else %}
@@ -259,7 +259,7 @@ layout: default-package-sidebar
 				<p class="package-version-download">
 					<b>
 						<a href="{{ site.fdroid-repo }}/{{ package.apk_name }}">
-							{% assign fmt_file_extension = '{{file_extension}}' %}
+							{% assign fmt_file_extension = '{{ file_extension }}' %}
 							{{ strings.download | replace: fmt_file_extension, package.file_extension }}
 						</a>
 					</b>
