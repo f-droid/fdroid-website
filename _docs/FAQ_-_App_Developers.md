@@ -142,7 +142,7 @@ to your latest release, we detected it and the APK should be available
 soon. Just give it some time.
 
 Another reason could be that the app failed to build. You can watch the
-build process on <Special:RecentChanges> after clicking 'Show Bots'.
+build process on [Recent changes](https://f-droid.org/wiki/index.php?title=Special:RecentChanges&days=7&from=&hidebots=0&hideanons=1&hideliu=1) after clicking 'Show Bots'.
 
 
 ### What about signing?

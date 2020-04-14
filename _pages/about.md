@@ -34,7 +34,8 @@ site.baseurl }}).
 
 If you're running an organisation that uses F-Droid or would like to use F-Droid, you will sometimes want to have an expert. For this, we have a list of companies and developers who contributed to F-Droid in one way or another and are available for consulting:
 
-<a href="{{ "/consulting/" | prepend: site.baseurl }}" class="material-button">Find an F-Droid Consultant</a>
+[Find an F-Droid Consultant]({{ "/consulting/" | prepend: site.baseurl }})
+
 
 ### License
 

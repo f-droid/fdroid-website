@@ -21,10 +21,6 @@ for f in sorted(glob.glob('po/*.po*')):
             continue
 
         if 'type: Title #' in message.auto_comments:
-            if ':' in message.string and message.string[0] not in ('"', "'"):
-                errorcount += 1
-                output += ('colons not allowed in titles without quotes: %s "%s" "%s"'
-                      % (f, message.id, message.string))
             if message.string:
                 if '"' in (message.string[0], message.string[-1]) and message.string.count('"') % 2:
                     errorcount += 1
@@ -37,10 +33,6 @@ for f in sorted(glob.glob('po/*.po*')):
         if m:
             errorcount += 1
             output += 'Space breaks Markdown link: ' + message.id + '\n: ' + m.group()
-
-        if message.id.startswith('-----BEGIN'):
-            if message.string:
-                output += 'translated a string with -----BEGIN\n'
 
         idlinks = []
         for m in pattern.findall(message.id):
