@@ -85,15 +85,22 @@ Everything on this website can be translated.  See
 for more info.  The [staging site](https://staging.f-droid.org)
 includes all translations, whether they are complete or not.
 
+
 ### chrome strings
 
 [![chrome translation status](https://hosted.weblate.org/widgets/f-droid/-/website/multi-auto.svg)](https://hosted.weblate.org/engage/f-droid/?utm_source=widget)
 
+### pages
 
-### documentation and pages
+[![pages translation status](https://hosted.weblate.org/widgets/f-droid/-/website-pages/multi-auto.svg)](https://hosted.weblate.org/engage/f-droid/?utm_source=widget)
+
+### tutorials
+
+[![tutorials translation status](https://hosted.weblate.org/widgets/f-droid/-/website-tutorials/multi-auto.svg)](https://hosted.weblate.org/engage/f-droid/?utm_source=widget)
+
+### documentation
 
 [![docs translation status](https://hosted.weblate.org/widgets/f-droid/-/website-docs/multi-auto.svg)](https://hosted.weblate.org/engage/f-droid/?utm_source=widget)
-
 
 ### blog posts
 
