@@ -109,12 +109,6 @@ comment](https://plus.google.com/116713673773180618201/posts/UvW3tgSgdUp)
 for more details.
 
 
-### How do I update all my installed programs at once?
-
-You can't yet. See [Issue 36 - Update
-All](https://gitlab.com/fdroid/fdroidclient/issues/16).
-
-
 ### Why doesn't the client show the number of installs/downloads for each app?
 
 To show how many people had installed an app, we would have to be spying
