@@ -34,7 +34,7 @@ the functionality to support that.)
 This procedures are implemented as part of `fdroid publish`. At the
 publish step, the reproducibility check will follow this logic:
 
-![Flow-chart for reproducibility check]({{ site.baseurl }}/assets/docs/reproducible-builds/publish.png)
+![Flow-chart for reproducibility check]({% assets %}/docs/reproducible-builds/publish.png)
 
 
 #### Publish both (upstream-)developer signed and F-Droid signed APKs
