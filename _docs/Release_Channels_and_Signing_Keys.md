@@ -43,6 +43,7 @@ This is a list of all signing keys used for F-Droid releases.
 And here is the whole certificate:
 
 ```
+
 -----BEGIN PUBLIC KEY-----
 MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAltB15HwBTngiyJ/Wf3ld
 IyA+KohD9Tuk5rG/Xy/Q4iWTgmfPyuf79P5ZY0avuvQHD9uR9m+83yNIo9kkMFAo
@@ -96,7 +97,7 @@ keytool -import  -noprompt -trustcacerts -alias index -storepass android -file i
 jarsigner -keystore index.jks -storepass android -strict -verify admin@f-droid.org.jar
 
 # verify against the key that is embedded in this page
-wget -O - https://f-droid/docs/Release_Channels_and_Signing_Keys/ | openssl x509 -inform pem -outform der -out docs.der
+wget -O - https://f-droid.org/docs/Release_Channels_and_Signing_Keys/ | openssl x509 -inform pem -outform der -out docs.der
 keytool -import -noprompt -trustcacerts -alias docs -storepass android -file docs.der -keystore docs.jks
 jarsigner -keystore docs.jks -storepass android -strict -verify admin@f-droid.org.jar
 
