@@ -7,9 +7,9 @@ layout: default-package-sidebar
 <article class="package">
 	<header class="package-header">
 		{% if page.icon != "" and page.icon != nil %}
-		<img class="package-icon" src="{{ site.fdroid-repo }}/{{ page.icon }}" />
+		<img class="package-icon" src="{{ site.fdroid-repo }}/{{ page.icon }}" alt="{{ strings.package_icon_alt }}" />
 		{% else %}
-		<img class="package-icon" src="{{ site.baseurl }}/assets/ic_repo_app_default.png " />
+		<img class="package-icon" src="{{ site.baseurl }}/assets/ic_repo_app_default.png" alt="{{ strings.alt_package_icon }}" />
 		{% endif %}
 		<div class="package-title">
 			<h3 class="package-name">
@@ -125,12 +125,12 @@ layout: default-package-sidebar
 		{% endif %}
 		{% if page.bitcoin != "" and page.bitcoin != nil %}
 		<li class="package-link">
-			<a href="https://live.blockcypher.com/btc/address/{{ page.bitcoin }}" title="{{ page.bitcoin }}" alt="{{ strings.bitcoin_alt }}"><img src="{{ site.baseurl }}/assets/bitcoin.png"/></a>
+			<a href="https://live.blockcypher.com/btc/address/{{ page.bitcoin }}" title="{{ page.bitcoin }}"><img src="{{ site.baseurl }}/assets/bitcoin.png" alt="{{ strings.bitcoin_alt }}"/></a>
 		</li>
 		{% endif %}
 		{% if page.litecoin != "" and page.litecoin != nil %}
 		<li class="package-link">
-			<a href="https://live.blockcypher.com/ltc/address/{{ page.litecoin }}" title="{{ page.litecoin }}" alt="{{ strings.litecoin_alt }}"><img src="{{ site.baseurl }}/assets/litecoin.png"/></a>
+			<a href="https://live.blockcypher.com/ltc/address/{{ page.litecoin }}" title="{{ page.litecoin }}"><img src="{{ site.baseurl }}/assets/litecoin.png" alt="{{ strings.litecoin_alt }}"/></a>
 		</li>
 		{% endif %}
 		{% if page.donate != "" and page.donate != nil %}
@@ -150,7 +150,7 @@ layout: default-package-sidebar
 		<div class="frame js_frame">
 			<ul class="slides js_slides gallery">
 				{% for screenshot in page.phone_screenshots %}
-				<li class="js_slide screenshot"><img src="{{ site.fdroid-repo}}/{{ page.package_name }}/{{ screenshot }}" /></li>
+				<li class="js_slide screenshot"><img src="{{ site.fdroid-repo}}/{{ page.package_name }}/{{ screenshot }}" alt="{{ strings.package_screenshot_alt }}" /></li>
 				{% endfor %}
 			</ul>
 		</div>
