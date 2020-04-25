@@ -64,7 +64,7 @@ Ideally:
 Some software, while being Free and Open Source, may engage in practices
 which are undesirable to some or all users. Where possible, we still
 include these applications in the repository, but they are flagged with
-the appropriate [_AntiFeatures_](https://f-droid.org/wiki/page/Antifeatures). Even though
+the appropriate [_Anti-Features_](../Anti-Features). Even though
 such software can be included, when appropriately flagged, it is
 frequently the case that other "FLOSS" software with these features is
 actually not entirely free. For example, advertising and spying on user
