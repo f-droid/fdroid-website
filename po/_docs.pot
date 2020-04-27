@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2020-04-27 18:07+0200\n"
+"POT-Creation-Date: 2020-04-27 20:02+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -7078,6 +7078,7 @@ msgstr ""
 #: _docs/Release_Channels_and_Signing_Keys.md
 #, no-wrap
 msgid ""
+"\n"
 "-----BEGIN PUBLIC KEY-----\n"
 "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAltB15HwBTngiyJ/Wf3ld\n"
 "IyA+KohD9Tuk5rG/Xy/Q4iWTgmfPyuf79P5ZY0avuvQHD9uR9m+83yNIo9kkMFAo\n"
@@ -7137,7 +7138,7 @@ msgid ""
 "jarsigner -keystore index.jks -storepass android -strict -verify admin@f-droid.org.jar\n"
 "\n"
 "# verify against the key that is embedded in this page\n"
-"wget -O - https://f-droid/docs/Release_Channels_and_Signing_Keys/ | openssl x509 -inform pem -outform der -out docs.der\n"
+"wget -O - https://f-droid.org/docs/Release_Channels_and_Signing_Keys/ | openssl x509 -inform pem -outform der -out docs.der\n"
 "keytool -import -noprompt -trustcacerts -alias docs -storepass android -file docs.der -keystore docs.jks\n"
 "jarsigner -keystore docs.jks -storepass android -strict -verify admin@f-droid.org.jar\n"
 "\n"
@@ -8061,7 +8062,7 @@ msgstr ""
 #. type: Plain text
 #: _docs/Running_a_Mirror.md
 #, markdown-text
-msgid "F-Droid receives its database and resources from servers that host specifically-formatted repositories of files. Originally, these repositories were hosted only at [f-droid.org](https://f-droid.org/), but as F-Droid grew [f-droid.org](https://f-droid.org/) alone was unable to handle the entire load. F-droid now supports servers that replicate these repositories. Hosting a mirror involves running an HTTP(S) server hosting a copy of the repository synchronized over `rsync`."
+msgid "F-Droid's collection of apps and files are run on servers run by the core F-Droid contributors. Originally, this main repository was hosted only on [f-droid.org](https://f-droid.org/), but as F-Droid grew [f-droid.org](https://f-droid.org/) alone was no longer able to handle the entire load. F-Droid now supports \"mirror\" servers that replicate a full copy of the repositories. Hosting a mirror involves running an HTTPS webserver that has a full copy of the repository synchronized using `rsync`."
 msgstr ""
 
 #. type: Title ####
@@ -8073,19 +8074,37 @@ msgstr ""
 #. type: Plain text
 #: _docs/Running_a_Mirror.md
 #, markdown-text
-msgid "There are two official F-droid repositories, the primary and the archive. It's most valuable to mirror the primary as it's used much more than the archive."
+msgid "There are two official F-Droid repository sections, the \"repo\" and the \"archive\". It's most important to mirror the \"repo\" since it is used much more than the \"archive\"."
 msgstr ""
 
 #. type: Plain text
 #: _docs/Running_a_Mirror.md
 #, markdown-text
-msgid "The primary resources required by a mirror are disk space and upload bandwidth. Bandwidth requirements are reduced with each new mirror, but disk requirements are relatively static. At time of writing (Mar 2019), the primary repository requires just over 50GB of disk space in 24K files, and the archive requires 220GB of disk space in 52K files. The amount of disk space required grows with every new app release."
+msgid "The primary resources required by a mirror are disk space and upload bandwidth. Bandwidth requirements are reduced with each new mirror, but disk requirements grow at a [reasonable rate](https://ftp.fau.de/cgi-bin/show-ftp-stats.cgi?statstype=2&what=mirrorsize&mirrorname=fdroid&timespan=-1&graphsize=large&submit=Go%21). At time of writing (Mar 2019), the primary repository requires just over 60GB of disk space in 24K files, and the archive requires 300GB of disk space in 52K files. The amount of disk space required grows with every new app release."
 msgstr ""
 
 #. type: Plain text
 #: _docs/Running_a_Mirror.md
 #, markdown-text
-msgid "Please note: You will need to seek the password for the originating mirror from an f-droid contributor via any method listed [here](https://f-droid.org/en/about/#contact)."
+msgid "There are three mirror servers which offer an _rsync_ connection, make sure to select the mirror closest to your mirror server:"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/Running_a_Mirror.md
+#, markdown-text
+msgid "China: rsync -axv mirrors.tuna.tsinghua.edu.cn::fdroid"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/Running_a_Mirror.md
+#, markdown-text
+msgid "Germany: rsync -axv ftp.fau.de::fdroid"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/Running_a_Mirror.md
+#, markdown-text
+msgid "USA/Indiana: rsync -axv plug-mirror.rcac.purdue.edu::fdroid"
 msgstr ""
 
 #. type: Plain text
@@ -8097,9 +8116,7 @@ msgstr ""
 #. type: Fenced code block (console)
 #: _docs/Running_a_Mirror.md
 #, no-wrap
-msgid ""
-"$ rsync -v --list-only fdroid-mirror@mirror.f-droid.org::repo/\n"
-"$ rsync -v --list-only fdroid-mirror@mirror.f-droid.org::archive/\n"
+msgid "$ rsync -v --list-only ftp.fau.de::fdroid\n"
 msgstr ""
 
 #. type: Title ####
@@ -8145,8 +8162,8 @@ msgstr ""
 #: _docs/Running_a_Mirror.md
 #, no-wrap
 msgid ""
-"$ sudo -u www-data -E /usr/bin/rsync --links --delete --times --recursive --permissions --hard-links --sparse --delay-updates --temp-dir /tmp/ fdroid-mirror@mirror.f-droid.org::repo/ /var/www/fdroid/fdroid/repo/\n"
-"$ sudo -u www-data -E /usr/bin/rsync --links --delete --times --recursive --permissions --hard-links --sparse --delay-updates --temp-dir /tmp/ fdroid-mirror@mirror.f-droid.org::archive/ /var/www/fdroid/fdroid/archive/\n"
+"$ sudo -u www-data -E /usr/bin/rsync --links --delete --times --recursive --permissions --hard-links --sparse --delay-updates --temp-dir /tmp/ ftp.fau.de::fdroid/repo/ /var/www/fdroid/fdroid/repo/\n"
+"$ sudo -u www-data -E /usr/bin/rsync --links --delete --times --recursive --permissions --hard-links --sparse --delay-updates --temp-dir /tmp/ ftp.fau.de::fdroid/archive/ /var/www/fdroid/fdroid/archive/\n"
 msgstr ""
 
 #. type: Bullet: '3. '
@@ -8177,8 +8194,8 @@ msgstr ""
 #: _docs/Running_a_Mirror.md
 #, no-wrap
 msgid ""
-"*/5 * * * * www-data /usr/bin/rsync --links --delete --times --recursive --permissions --hard-links --sparse --delay-updates --temp-dir /tmp/ fdroid-mirror@mirror.f-droid.org::repo/ /var/www/fdroid/fdroid/repo/\n"
-"*/5 * * * * www-data /usr/bin/rsync --links --delete --times --recursive --permissions --hard-links --sparse --delay-updates --temp-dir /tmp/ fdroid-mirror@mirror.f-droid.org::archive/ /var/www/fdroid/fdroid/archive/\n"
+"*/5 * * * * www-data /usr/bin/rsync --links --delete --times --recursive --permissions --hard-links --sparse --delay-updates --temp-dir /tmp/ ftp.fau.de::fdroid/repo/ /var/www/fdroid/fdroid/repo/\n"
+"*/5 * * * * www-data /usr/bin/rsync --links --delete --times --recursive --permissions --hard-links --sparse --delay-updates --temp-dir /tmp/ ftp.fau.de::fdroid/archive/ /var/www/fdroid/fdroid/archive/\n"
 msgstr ""
 
 #. type: Bullet: '4. '
