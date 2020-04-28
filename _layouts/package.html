@@ -70,7 +70,8 @@ layout: default-package-sidebar
 		{% endif %}
 		<li class="package-link">
 			{{ strings.license }}:
-			<a href="{{ page.license|get_license_url }}">{{ page.license|get_license_name }}</a>
+			{%- assign license = site.data.licenses.licenses[page.license] -%}
+			<a href="{{ license.url }}">{{ license.name | default: page.license }}</a>
 		</li>
 		{% if page.website != "" and page.website != nil %}
 		<li class="package-link">
