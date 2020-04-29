@@ -43,8 +43,10 @@ When a new `.md` file is added to the `_docs/` or `_posts/` directory, then you 
 ./tools/i18n.sh md2po
 ```
 
-This will extract the strings from all Markdown files in these two directories and output them to either `po/_docs.po` or `po/_posts.po`.
-These will then subsequently be translated by Weblate into additional files such as `po/_docs.fr.po`.
+This will extract the strings from all Markdown files in these two
+directories and output them to `po/_docs.po`, `po/_posts.po`, and
+`po/_pages.po`.  These will then subsequently be translated by Weblate
+into additional files such as `po/_docs.fr.po`.
 
 In addition, the script will update any already existing translations such as `po/_docs.fr.po`.
 It does so by using the [msgmerge](https://www.gnu.org/software/gettext/manual/html_node/msgmerge-Invocation.html) program from GNU gettext.

@@ -60,7 +60,7 @@ variables:
     ruby-zip \
     unzip
   bundle install --local --verbose
-  ./tools/i18n.sh po2md
+  ./tools/i18n.sh
 
 
 # This is a manual task for building in preparation to deploy to
@@ -118,9 +118,6 @@ pages:
    - ./tools/check-yaml-front-matter.py
    - ./tools/check-do-not-translate
    - ./tools/check-markdown-headers-are-localizable.py
-   - ./tools/i18n.sh md2po
-   - git checkout po/*.pot  # ignore the newly generated timestamp
-   - git --no-pager diff --ignore-all-space --name-only po/
    # This is where GitLab pages will deploy to by default (e.g. "https://fdroid.gitlab.io/fdroid-website")
    # so we need to make sure that the Jekyll configuration understands this.
    - sed -Ei

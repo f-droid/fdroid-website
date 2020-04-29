@@ -16,7 +16,12 @@ fi
 PROJECT_ROOT=$(cd `dirname $0`/..; pwd)
 cd ${PROJECT_ROOT}
 
-languages=$(ruby -ryaml -e "data = YAML::load(open('_config.yml')); puts data['languages']")
+if [ "$1" == "md2po" ]; then
+    # this is for syncing to the .pot and .po files, so do all languages
+    languages=`ls po/_*.*.po | cut -d . -f 2|sort -u`
+else
+    languages=$(ruby -ryaml -e "data = YAML::load(open('_config.yml')); puts data['languages']")
+fi
 test -n "$languages"
 
 if [ "$1" == "md2po" ]; then
