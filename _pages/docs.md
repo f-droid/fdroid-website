@@ -62,5 +62,6 @@ the main repository.
 * [Release Process](Release_Process) All the steps needed to make official release of F-Droid projects.
 * [Maintaining the Forum](Maintaining_the_Forum) Useful information for administrators of [F-Droid's forum](https://forum.f-droid.org)
 * [Running a Mirror](Running_a_Mirror) Instructions for setting up a repository mirror
+* [MIA Process](MIA_Process) MIA (missing in action) maintainer removal process
 
 * [Work in Progress](https://f-droid.org/wiki/page/Work_in_Progress) Feel free to add your own topics and link to others.
