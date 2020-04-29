@@ -14,7 +14,7 @@ set -e
 set -x
 
 apt-get update
-apt-get -qy install --no-install-recommends ca-certificates git
+apt-get -qy install --no-install-recommends ca-certificates git gpg
 
 git remote update --prune
 git fetch --tags
@@ -29,4 +29,4 @@ for tag in `git tag --sort=-taggerdate`; do
 done
 
 echo 'ERROR: could not find any signed release tags!'
-exit(1)
+exit 1
