@@ -7387,9 +7387,7 @@ msgstr ""
 #. type: Fenced code block (console)
 #: _docs/Running_a_Mirror.md
 #, no-wrap
-msgid ""
-"$ rsync -v --list-only fdroid-mirror@mirror.f-droid.org::repo/\n"
-"$ rsync -v --list-only fdroid-mirror@mirror.f-droid.org::archive/\n"
+msgid "$ rsync -v --list-only ftp.fau.de::fdroid\n"
 msgstr ""
 
 #. type: Title ####
@@ -7430,13 +7428,16 @@ msgstr ""
 
 #. type: Fenced code block (console)
 #: _docs/Running_a_Mirror.md
-#, no-wrap
+#, fuzzy, no-wrap
+#| msgid ""
+#| "$ sudo -u www-data -E /usr/bin/rsync --links --delete --times --recursive --permissions --hard-links --sparse --delay-updates --temp-dir /tmp/ ftp.fau.de::repo/ /var/www/fdroid/fdroid/repo/\n"
+#| "$ sudo -u www-data -E /usr/bin/rsync --links --delete --times --recursive --permissions --hard-links --sparse --delay-updates --temp-dir /tmp/ ftp.fau.de::archive/ /var/www/fdroid/fdroid/archive/\n"
 msgid ""
-"$ sudo -u www-data -E /usr/bin/rsync --links --delete --times --recursive --permissions --hard-links --sparse --delay-updates --temp-dir /tmp/ fdroid-mirror@mirror.f-droid.org::repo/ /var/www/fdroid/fdroid/repo/\n"
-"$ sudo -u www-data -E /usr/bin/rsync --links --delete --times --recursive --permissions --hard-links --sparse --delay-updates --temp-dir /tmp/ fdroid-mirror@mirror.f-droid.org::archive/ /var/www/fdroid/fdroid/archive/\n"
+"$ sudo -u www-data -E /usr/bin/rsync --links --delete --times --recursive --permissions --hard-links --sparse --delay-updates --temp-dir /tmp/ ftp.fau.de::fdroid/repo/ /var/www/fdroid/fdroid/repo/\n"
+"$ sudo -u www-data -E /usr/bin/rsync --links --delete --times --recursive --permissions --hard-links --sparse --delay-updates --temp-dir /tmp/ ftp.fau.de::fdroid/archive/ /var/www/fdroid/fdroid/archive/\n"
 msgstr ""
-"$ RSYNC_PASSWORD=[mot de passe] sudo -u www-data -E /usr/bin/rsync --links --delete --times --recursive --permissions --hard-links --sparse --delay-updates --temp-dir /tmp/ fdroid-mirror@mirror.f-droid.org::repo/ /var/www/fdroid/fdroid/repo/\n"
-"$ RSYNC_PASSWORD=[mot de passe] sudo -u www-data -E /usr/bin/rsync --links --delete --times --recursive --permissions --hard-links --sparse --delay-updates --temp-dir /tmp/ fdroid-mirror@mirror.f-droid.org::archive/ /var/www/fdroid/fdroid/archive/\n"
+"$ sudo -u www-data -E /usr/bin/rsync --links --delete --times --recursive --permissions --hard-links --sparse --delay-updates --temp-dir /tmp/ ftp.fau.de::repo/ /var/www/fdroid/fdroid/repo/\n"
+"$ sudo -u www-data -E /usr/bin/rsync --links --delete --times --recursive --permissions --hard-links --sparse --delay-updates --temp-dir /tmp/ ftp.fau.de::archive/ /var/www/fdroid/fdroid/archive/\n"
 
 #. type: Bullet: '3. '
 #: _docs/Running_a_Mirror.md
@@ -7463,8 +7464,8 @@ msgstr ""
 #: _docs/Running_a_Mirror.md
 #, no-wrap
 msgid ""
-"*/5 * * * * www-data /usr/bin/rsync --links --delete --times --recursive --permissions --hard-links --sparse --delay-updates --temp-dir /tmp/ fdroid-mirror@mirror.f-droid.org::repo/ /var/www/fdroid/fdroid/repo/\n"
-"*/5 * * * * www-data /usr/bin/rsync --links --delete --times --recursive --permissions --hard-links --sparse --delay-updates --temp-dir /tmp/ fdroid-mirror@mirror.f-droid.org::archive/ /var/www/fdroid/fdroid/archive/\n"
+"*/5 * * * * www-data /usr/bin/rsync --links --delete --times --recursive --permissions --hard-links --sparse --delay-updates --temp-dir /tmp/ ftp.fau.de::fdroid/repo/ /var/www/fdroid/fdroid/repo/\n"
+"*/5 * * * * www-data /usr/bin/rsync --links --delete --times --recursive --permissions --hard-links --sparse --delay-updates --temp-dir /tmp/ ftp.fau.de::fdroid/archive/ /var/www/fdroid/fdroid/archive/\n"
 msgstr ""
 
 #. type: Bullet: '4. '
@@ -7476,6 +7477,8 @@ msgstr ""
 #: _docs/Running_a_Mirror.md
 msgid "This is an example server block for nginx. If used, it should be copied to _/etc/nginx/sites-available/_ and symlinked to _/etc/nginx/sites-enabled_. Note that it is important that your URI be `/fdroid/repo` so that the app can automatically add your mirror."
 msgstr ""
+"$ sudo -u www-data -E /usr/bin/rsync --links --delete --times --recursive --permissions --hard-links --sparse --delay-updates --temp-dir /tmp/ ftp.fau.de::repo/ /var/www/fdroid/fdroid/repo/\n"
+"$ sudo -u www-data -E /usr/bin/rsync --links --delete --times --recursive --permissions --hard-links --sparse --delay-updates --temp-dir /tmp/ ftp.fau.de::archive/ /var/www/fdroid/fdroid/archive/\n"
 
 #. type: Fenced code block
 #: _docs/Running_a_Mirror.md
