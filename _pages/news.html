@@ -3,42 +3,74 @@ layout: page
 title: News
 permalink: /news/
 redirect_from:
- - /news-and-reviews/
+  - /news-and-reviews/
+pagination:
+  enabled: true
+  collection: posts
+  per_page: 8
+  permalink: '/:num/'
+  limit: 0
+  sort_field: 'date'
+  sort_reverse: true
 ---
 
 <div id="news-content">
-	{% for post in site.posts %}
-		<div id="{{ post.id }}">
-			<h3>
-				<a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-			</h3>
-			<i class="post-meta">
-				Posted on {{ post.date | date: "%b %-d, %Y" }}
-				{% if post.author %}
-					by
-					{% if post.authorWebsite %}
-						<a href="{{ post.authorWebsite }}">
-					{% endif %}
-					<img
-						src="{% assets %}/{{ post.author }}.jpg"
-						alt="{{ post.author }}"
-						width="40"
-					/>
-					<span
-						itemprop="author"
-						itemscope itemtype="http://schema.org/Person">
-						<span
-							itemprop="name">{{ post.author }}
-						</span>
-					</span>
-					{% if post.authorWebsite %}
-						</a>
-					{% endif %}
-				{% endif %}
-			</i>
-			<div>
-				{{ post.excerpt | truncatewords: 50 }}
-			</div>
-		</div>
-	{% endfor %}
+  {% for post in paginator.posts %}
+  <div id="{{ post.id }}">
+    <h3>
+      <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+    </h3>
+    <i class="post-meta">
+      Posted on {{ post.date | date: "%b %-d, %Y" }}
+      {% if post.author %}
+      by
+      {% if post.authorWebsite %}
+      <a href="{{ post.authorWebsite }}">
+        {% endif %}
+        <img
+          src="{% assets %}/{{ post.author }}.jpg"
+          alt="{{ post.author }}"
+          width="40"
+          />
+        <span
+          itemprop="author"
+          itemscope itemtype="http://schema.org/Person">
+          <span
+            itemprop="name">{{ post.author }}
+          </span>
+        </span>
+        {% if post.authorWebsite %}
+      </a>
+      {% endif %}
+      {% endif %}
+    </i>
+    <div>
+      {{ post.excerpt | truncatewords: 50 }}
+    </div>
+  </div>
+  {% endfor %}
+
+
+  <!-- 
+    Showing buttons to move to the next and to the previous list of posts (pager buttons).
+  -->
+  {% if paginator.total_pages > 1 %}
+  <ul style="text-align: center; list-style: none; text-transform: uppercase;">
+      {% if paginator.previous_page %}
+      <li style="display: inline; padding: 10px">
+          <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&larr; Newer Posts</a>
+      </li>
+      {% endif %}
+      {% if paginator.next_page %}
+      <li style="display: inline; padding: 10px">
+          <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Older Posts &rarr;</a>
+      </li>
+      {% endif %}
+  </ul>
+  {% endif %}
+
+  <p class="rss-subscribe"><a href="{{ "/feed.xml" | relative_url }}">
+      <img src="{% assets %}/Feed-icon-16x16.png" alt="RSS"/> RSS
+  </a></p>
+
 </div>
