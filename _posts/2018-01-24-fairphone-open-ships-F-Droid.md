@@ -32,7 +32,7 @@ make that process really easy.
 For now, these are the steps you need to do to have the full F-Droid
 experience with Fairphone Open:
 
-1. download [F-Droid.apk](/F-Droid.apk) and [verify](/F-Droid.apk.asc) it
+1. download [F-Droid.apk](https://f-droid.org/F-Droid.apk) and [verify](https://f-droid.org/F-Droid.apk.asc) it
 2. enable "Unknown Sources" in Settings -> Security
 3. find _FDroid.apk_ in Downloads and click to install it
 4. confirm the install on the system's install screen

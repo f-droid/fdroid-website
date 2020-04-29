@@ -85,10 +85,12 @@ f-droid.org:
    - '[ ! -d /builds/output ] && echo "ERROR: /builds/output is not mounted inside docker!" && exit 1'
    - *apt-template
    - *setup_for_jekyll
-   - 'echo "url: https://f-droid.org" > _userconfig.yml'
-   - 'echo "baseurl: \"\"" >> _userconfig.yml'
-   - echo "Additional Jekyll config used for CI:" && cat _userconfig.yml
-   - jekyll build -d $OUT_DIR --config _config.yml,_userconfig.yml --trace
+   - sed -Ei
+         -e "s,^(url\x3a).*,\1 https://f-droid.org,"
+         -e 's,^(baseurl\x3a).*,\1 "",'
+         _config.yml
+   - echo "Jekyll config used for CI:" && cat _config.yml
+   - jekyll build -d $OUT_DIR --trace
    - ./tools/prepare-multi-lang.sh $OUT_DIR
    - ./tools/deploy-external-assets.sh $OUT_DIR
    - rsync -ax --delete $OUT_DIR /builds/output/
@@ -121,10 +123,12 @@ pages:
    - git --no-pager diff --ignore-all-space --name-only po/
    # This is where GitLab pages will deploy to by default (e.g. "https://fdroid.gitlab.io/fdroid-website")
    # so we need to make sure that the Jekyll configuration understands this.
-   - 'echo url: https://$CI_PROJECT_NAMESPACE.gitlab.io > _userconfig.yml'
-   - 'echo baseurl: /$CI_PROJECT_NAME >> _userconfig.yml'
-   - echo "Additional Jekyll config used for CI:" && cat _userconfig.yml
-   - jekyll build -d public --config _config.yml,_userconfig.yml --trace
+   - sed -Ei
+         -e "s,^(url\x3a).*,\1 'https://$CI_PROJECT_NAMESPACE.gitlab.io',"
+         -e "s,^(baseurl\x3a).*,\1 '/$CI_PROJECT_NAME',"
+         _config.yml
+   - echo "Jekyll config used for CI:" && cat _config.yml
+   - jekyll build -d public --trace
    - ./tools/prepare-multi-lang.sh public --no-type-maps
    - mkdir linkchecker/
    - ln -s ../public linkchecker/$CI_PROJECT_NAME
@@ -214,16 +218,13 @@ i18n_sync:
     - weblate
   script:
     - *apt-template
-    - apt-get install bash gettext git grep po4a sed
-    - ./tools/i18n.sh updatepo
-    - git checkout po/*.pot  # ignore the newly generated timestamp
-    - git add po/*.po
-    - git config user.email "you@example.com"
-    - git config user.name "DO NOT MERGE"
-    - git --no-pager diff --exit-code || git commit po/*.po -m "DO NOT MERGE sort before test"
-    - ./tools/i18n.sh md2po
-    - ./tools/i18n.sh updatepo
+    - apt-get install bash ca-certificates gettext git grep po4a ruby sed
+    - apt-get purge po4a
+    - git -C $HOME clone https://github.com/mquinson/po4a.git
+    - export PERLLIB="$HOME/po4a/lib"
+    - export PATH="$HOME/po4a:$PATH"
+    - ./tools/i18n.sh
     - git checkout po/*.pot  # ignore the newly generated timestamp
     - git --no-pager diff --exit-code --ignore-all-space -G'^msg' po/
-        || (echo 'This test failed because the localization files were not synced.  To do that, run `./tools/i18n.sh md2po` then commit the changes in po/ and include them in this merge request.'; exit 1)
+        || (echo 'This test failed because the localization files were not synced.  To do that, run `./tools/i18n.sh` then commit the changes in po/ and include them in this merge request.'; exit 1)
   allow_failure: true

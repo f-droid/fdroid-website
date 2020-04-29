@@ -126,6 +126,7 @@ and is brought to you by at least the following people:
 * Nutchanon Wetchasit
 * Philipp Wollschlegel
 * Osoitz Elkorobarrutia
+* Wellington Terumi Uemura
 
 If your name is missing, it’s a mistake and you should
 [add yourself to the list](https://gitlab.com/fdroid/fdroid-website/blob/master/_pages/about.md)!

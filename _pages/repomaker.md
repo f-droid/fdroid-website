@@ -22,16 +22,16 @@ Check out the
 [installation guide](https://gitlab.com/fdroid/repomaker/blob/master/README.md#installation)
 for information on how you can install Repomaker on your device.
 
-[![]({{ site.baseurl }}/assets/repomaker-screenshots/repo-details.png)]({{ site.baseurl }}/assets/repomaker-screenshots/repo-details.png)<br/>
+[![]({% assets %}/repomaker-screenshots/repo-details.png)]({% assets %}/repomaker-screenshots/repo-details.png)
 *Your repo can serve all types of media*
 
-[![]({{ site.baseurl }}/assets/repomaker-screenshots/package-details.png)]({{ site.baseurl }}/assets/repomaker-screenshots/package-details.png)<br/>
+[![]({% assets %}/repomaker-screenshots/package-details.png)]({% assets %}/repomaker-screenshots/package-details.png)
 *Editing your package store details never was easier*
 
-[![]({{ site.baseurl }}/assets/repomaker-screenshots/create-repo.png)]({{ site.baseurl }}/assets/repomaker-screenshots/create-repo.png)<br/>
+[![]({% assets %}/repomaker-screenshots/create-repo.png)]({% assets %}/repomaker-screenshots/create-repo.png)
 *Creating a repo just takes you two clicks*
 
-[![]({{ site.baseurl }}/assets/repomaker-screenshots/add-storage.png)]({{ site.baseurl }}/assets/repomaker-screenshots/add-storage.png)<br/>
+[![]({% assets %}/repomaker-screenshots/add-storage.png)]({% assets %}/repomaker-screenshots/add-storage.png)
 *You have many possibilities where to upload your repo*
 
 Like any other project of F-Droid, Repomaker is free and open source

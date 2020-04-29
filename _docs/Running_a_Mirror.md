@@ -4,20 +4,24 @@ title: Running a Mirror
 
 ---
 
-F-Droid receives its database and resources from servers that host specifically-formatted repositories of files. Originally, these repositories were hosted only at [f-droid.org](https://f-droid.org/), but as F-Droid grew [f-droid.org](https://f-droid.org/) alone was unable to handle the entire load. F-droid now supports servers that replicate these repositories. Hosting a mirror involves running an HTTP(S) server hosting a copy of the repository synchronized over `rsync`.
+F-Droid's collection of apps and files are run on servers run by the core F-Droid contributors. Originally, this main repository was hosted only on [f-droid.org](https://f-droid.org/), but as F-Droid grew [f-droid.org](https://f-droid.org/) alone was no longer able to handle the entire load. F-Droid now supports "mirror" servers that replicate a full copy of the repositories. Hosting a mirror involves running an HTTPS webserver that has a full copy of the repository synchronized using `rsync`.
 
 #### Requirements
 
-There are two official F-droid repositories, the primary and the archive. It's most valuable to mirror the primary as it's used much more than the archive.
+There are two official F-Droid repository sections, the "repo" and the "archive". It's most important to mirror the "repo" since it is used much more than the "archive".
 
-The primary resources required by a mirror are disk space and upload bandwidth. Bandwidth requirements are reduced with each new mirror, but disk requirements are relatively static. At time of writing (Mar 2019), the primary repository requires just over 50GB of disk space in 24K files, and the archive requires 220GB of disk space in 52K files. The amount of disk space required grows with every new app release.
+The primary resources required by a mirror are disk space and upload bandwidth. Bandwidth requirements are reduced with each new mirror, but disk requirements grow at a [reasonable rate](https://ftp.fau.de/cgi-bin/show-ftp-stats.cgi?statstype=2&what=mirrorsize&mirrorname=fdroid&timespan=-1&graphsize=large&submit=Go%21). At time of writing (Mar 2019), the primary repository requires just over 60GB of disk space in 24K files, and the archive requires 300GB of disk space in 52K files. The amount of disk space required grows with every new app release.
 
-Please note: You will need to seek the password for the originating mirror from an f-droid contributor via any method listed [here](https://f-droid.org/en/about/#contact).
+There are three mirror servers which offer an _rsync_ connection, make sure to select the mirror closest to your mirror server:
+
+* China: rsync -axv mirrors.tuna.tsinghua.edu.cn::fdroid
+* Germany: rsync -axv ftp.fau.de::fdroid
+* USA/Indiana: rsync -axv plug-mirror.rcac.purdue.edu::fdroid
+
 
 You can find current information on disk space requirements by running the following in your terminal:
 ```console
-$ RSYNC_PASSWORD=[password] rsync -v --list-only fdroid-mirror@mirror.f-droid.org::repo/
-$ RSYNC_PASSWORD=[password] rsync -v --list-only fdroid-mirror@mirror.f-droid.org::archive/
+$ rsync -v --list-only ftp.fau.de::fdroid
 ```
 
 #### Setup
@@ -37,8 +41,8 @@ $ sudo chown -R www-data.www-data /var/www/fdroid
 2. Synchronize the repositories. These commands are best run in a terminal multiplexer (`screen`, `tmux` etc) as they will take some time to complete.
 
 ```console
-$ RSYNC_PASSWORD=[password] sudo -u www-data -E /usr/bin/rsync --links --delete --times --recursive --permissions --hard-links --sparse --delay-updates --temp-dir /tmp/ fdroid-mirror@mirror.f-droid.org::repo/ /var/www/fdroid/fdroid/repo/
-$ RSYNC_PASSWORD=[password] sudo -u www-data -E /usr/bin/rsync --links --delete --times --recursive --permissions --hard-links --sparse --delay-updates --temp-dir /tmp/ fdroid-mirror@mirror.f-droid.org::archive/ /var/www/fdroid/fdroid/archive/
+$ sudo -u www-data -E /usr/bin/rsync --links --delete --times --recursive --permissions --hard-links --sparse --delay-updates --temp-dir /tmp/ ftp.fau.de::fdroid/repo/ /var/www/fdroid/fdroid/repo/
+$ sudo -u www-data -E /usr/bin/rsync --links --delete --times --recursive --permissions --hard-links --sparse --delay-updates --temp-dir /tmp/ ftp.fau.de::fdroid/archive/ /var/www/fdroid/fdroid/archive/
 ```
 
 3. Establish a cronjob to keep the repositories up to date
@@ -52,8 +56,8 @@ $ vi /etc/cron.d/fdroid
 Fill the file with entries to update the repositories
 
 ```
-*/5 * * * * www-data RSYNC_PASSWORD=[password] /usr/bin/rsync --links --delete --times --recursive --permissions --hard-links --sparse --delay-updates --temp-dir /tmp/ fdroid-mirror@mirror.f-droid.org::repo/ /var/www/fdroid/fdroid/repo/
-*/5 * * * * www-data RSYNC_PASSWORD=[password] /usr/bin/rsync --links --delete --times --recursive --permissions --hard-links --sparse --delay-updates --temp-dir /tmp/ fdroid-mirror@mirror.f-droid.org::archive/ /var/www/fdroid/fdroid/archive/
+*/5 * * * * www-data /usr/bin/rsync --links --delete --times --recursive --permissions --hard-links --sparse --delay-updates --temp-dir /tmp/ ftp.fau.de::fdroid/repo/ /var/www/fdroid/fdroid/repo/
+*/5 * * * * www-data /usr/bin/rsync --links --delete --times --recursive --permissions --hard-links --sparse --delay-updates --temp-dir /tmp/ ftp.fau.de::fdroid/archive/ /var/www/fdroid/fdroid/archive/
 ```
 
 4. Configure your webserver

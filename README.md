@@ -58,14 +58,6 @@ bundle exec jekyll serve
 If you want to use the official Git repository again,
 run `bundle config --delete local.jekyll-fdroid`.
 
-If you want to have another values for `site.url` and `site.baseurl`
-(default: `localhost:4000` and `fdroid-website`) you can add them in
-`_userconfig.yml`, which is ignored by git, then run all Jekyll
-commands with this additional parameter:
-
-```
---config _config.yml,_userconfig.yml
-```
 
 ## License
 
@@ -85,15 +77,22 @@ Everything on this website can be translated.  See
 for more info.  The [staging site](https://staging.f-droid.org)
 includes all translations, whether they are complete or not.
 
+
 ### chrome strings
 
 [![chrome translation status](https://hosted.weblate.org/widgets/f-droid/-/website/multi-auto.svg)](https://hosted.weblate.org/engage/f-droid/?utm_source=widget)
 
+### pages
 
-### documentation and pages
+[![pages translation status](https://hosted.weblate.org/widgets/f-droid/-/website-pages/multi-auto.svg)](https://hosted.weblate.org/engage/f-droid/?utm_source=widget)
+
+### tutorials
+
+[![tutorials translation status](https://hosted.weblate.org/widgets/f-droid/-/website-tutorials/multi-auto.svg)](https://hosted.weblate.org/engage/f-droid/?utm_source=widget)
+
+### documentation
 
 [![docs translation status](https://hosted.weblate.org/widgets/f-droid/-/website-docs/multi-auto.svg)](https://hosted.weblate.org/engage/f-droid/?utm_source=widget)
-
 
 ### blog posts
 

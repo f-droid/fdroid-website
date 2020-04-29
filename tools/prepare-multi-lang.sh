@@ -129,8 +129,8 @@ if [ ! -d $1/en ]; then
     exit 1
 fi
 
-# This populates the SUPPORTED_LANGS variable.
 SUPPORTED_LANGS=`ruby -ryaml -e 'puts YAML.load_file("_config.yml")["languages"]'`
+test -n "$SUPPORTED_LANGS"
 
 # This populates the WEBLATE_LANGS variable.
 source tools/weblate-supported-langs.sh

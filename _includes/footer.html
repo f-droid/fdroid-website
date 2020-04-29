@@ -9,9 +9,22 @@
           ({% fdroid_repo_info %}, fdroid-website <a href="https://gitlab.com/fdroid/fdroid-website/tree/{% git_hash %}">{% git_tag %}</a>)
         </span>
 	<span class="edit-this-page-area">
-	  <a href="https://gitlab.com/fdroid/fdroid-website/edit/master/{{page.relative_path}}">
-	    Edit on GitLab
+	  {%- if site.active_lang == site.default_lang or site.active_lang == 'en' -%}
+	  <a href="https://gitlab.com/fdroid/fdroid-website/edit/master/{{ page.relative_path }}" target="_blank">
+	    {{ site.data.strings.navigation.edit_on_gitlab }}
 	  </a>
+	  {%- else -%}
+	  {%- assign section = page.path | split: "/" | first -%}
+	  {%- assign slug = section | replace_first: "_", "" -%}
+	  {%- assign filename = page.path | split: "/" | last -%}
+	  {%- if section == "packages" -%}
+	  <a href="https://hosted.weblate.org/projects/f-droid/fdroiddata/{{ site.active_lang }}/" target="_blank">
+	    {%- else -%}
+	  <a href="https://hosted.weblate.org/translate/f-droid/website-{{ slug }}/{{ site.active_lang }}/?q=+location%3A{{ section }}%2F{{ filename }}+" target="_blank">
+	  {%- endif -%}
+	    {{ site.data.strings.navigation.translate_on_weblate }}
+	  </a>
+	  {%- endif -%}
 	</span>
       </p>
     </div>
