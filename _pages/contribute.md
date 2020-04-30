@@ -7,13 +7,7 @@ The project is entirely developed and maintained by volunteers. You can help:
 
 ### Report Problems
 
-If you experience problems with the site or client software, you can report them in the issue tracker (see below), or discuss them in the [Forum](https://forum.f-droid.org/) or on IRC (#fdroid on freenode).
-
-For reporting issues, choose an appropriate tracker from the following:
-
-* [F-Droid client app](https://gitlab.com/fdroid/fdroidclient/issues)
-* [Server and build tools](https://gitlab.com/fdroid/fdroidserver/issues)
-* [Official F-Droid repository metadata](https://gitlab.com/fdroid/fdroiddata/issues)
+If you experience problems with the site or client software, you can report them in the issue tracker ([find the appropriate tracker on this page]({{ "/issues/" | prepend: site.baseurl }})), or discuss them in the [Forum](https://forum.f-droid.org/) or on IRC (#fdroid on freenode).
 
 ### Submit Applications
 
