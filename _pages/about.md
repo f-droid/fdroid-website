@@ -114,6 +114,7 @@ and is brought to you by at least the following people:
 * Hans-Emil Skogh
 * Paul Sokolovsky
 * Graziano Sorbaioli
+* Jochen Sprickerhof
 * Hans-Christoph Steiner
 * David Sterry
 * Peter Serwylo
