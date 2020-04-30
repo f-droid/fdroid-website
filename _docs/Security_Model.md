@@ -75,13 +75,13 @@ to make it as hard as possible to exploit this vector.
   _f-droid.org_
 * a [strong](https://observatory.mozilla.org/analyze.html?host=f-droid.org#third) TLS/HTTPS configuration
 * a [strong](https://observatory.mozilla.org/analyze.html?host=f-droid.org) HTTP Content Security Policy
-* [PGP-signature](https://f-droid.org/F-Droid.apk.asc) on the initial
-  install [download link](https://f-droid.org/F-Droid.apk)
+* [PGP-signature]({{ site.fdroid_apk_download_url }}.asc) on the initial
+  install [download link]({{ site.fdroid_apk_download_url }})
 * automated
   [regular](https://gitlab.com/fdroid/fdroid-website/-/jobs/47503948)
   and [random](https://verification.f-droid.org/check-fdroid-apk)
   [auditing](https://gitlab.com/fdroid/fdroidserver/blob/dfbe114af3c4cef15ce3aa5e979d9f4684f2acbc/tests/check-fdroid-apk)
-  that [F-Droid.apk](https://f-droid.org/F-Droid.apk) has not been tampered with
+  that [F-Droid.apk]({{ site.fdroid_apk_download_url }}) has not been tampered with
 * F-Droid Limited controls many potential phishing domains like
   [fdroid.org](https://whois.icann.org/lookup?name=fdroid.org),
   [f-droid.com](https://whois.icann.org/lookup?name=f-droid.com), and
