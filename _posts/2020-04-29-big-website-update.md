@@ -1,4 +1,5 @@
 ---
+layout: post
 title: Big Website Update
 author: eighthave
 ---

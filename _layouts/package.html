@@ -169,10 +169,7 @@ layout: default-package-sidebar
 		<p>
 			{{ strings.suggest_downloading_via_fdroid }}
 		</p>
-		<!-- The FDroid.apk links need the space at the start of the href=""
-				 to disable the polyglot link "relativization":
-				 https://github.com/untra/polyglot/issues/79 -->
-		<a href=" https://f-droid.org/FDroid.apk" class="material-button">{{ site.data.strings.index.download_fdroid }}</a>
+		<a href="{{ site.fdroid_apk_download_url }}" class="material-button">{{ site.data.strings.index.download_fdroid }}</a>
 		<ul class="package-versions-list">
 			{% for package in page.packages %}
 			<li class="package-version" {% if forloop.first %}id="latest"{% endif %}>
