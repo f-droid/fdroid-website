@@ -73,6 +73,7 @@ and is brought to you by at least the following people:
 * Kevin Cernekee
 * Ali Demirtaş
 * Felix Edelmann
+* Osoitz Elkorobarrutia
 * Oğuz Ersen
 * Kevin Everets
 * Sveinn í Felli
@@ -98,10 +99,10 @@ and is brought to you by at least the following people:
 * Greg Lyle
 * Daniel Marti
 * Robert Martinez
-* Nat Meysenburg
 * Steven McDonald
 * Andrew McMillan
 * Balázs Meskó
+* Nat Meysenburg
 * Andrew Nayenko
 * Alex Oberhauser
 * Michael Pöhn
@@ -110,23 +111,23 @@ and is brought to you by at least the following people:
 * Pierre Rudloff
 * Florian Schmaus
 * Dominik Schürmann
+* Peter Serwylo
 * Takumi Shoji
 * Hans-Emil Skogh
 * Paul Sokolovsky
 * Graziano Sorbaioli
+* Jochen Sprickerhof
 * Hans-Christoph Steiner
 * David Sterry
-* Peter Serwylo
 * John Sullivan
 * Antonio Tapiador
 * William Theaker
 * Henrik Tunedal
+* Wellington Terumi Uemura
 * Ivo Ugrina
 * Matthias Weiler
 * Nutchanon Wetchasit
 * Philipp Wollschlegel
-* Osoitz Elkorobarrutia
-* Wellington Terumi Uemura
 
 If your name is missing, it’s a mistake and you should
 [add yourself to the list](https://gitlab.com/fdroid/fdroid-website/blob/master/_pages/about.md)!
