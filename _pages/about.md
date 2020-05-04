@@ -57,80 +57,38 @@ F-Droid respects your privacy. We don’t track you, or your device. We don’t 
 The F-Droid project was founded in 2010 by Ciaran Gultnieks,
 and is brought to you by at least the following people:
 
-* Mostafa Ahangarha
-* Nico Alt
-* Laura Arjona Reina
-* Ben Arnold
-* Michele Azzolari
-* Danial Behzadi
-* Jan Berkel
-* David Black
-* Ruslan Boitsov
-* Jan C Borchardt
-* Valerio Bozzolan
-* Dan Bravender
-* Cédric Cabessa
-* Kevin Cernekee
-* Ali Demirtaş
-* Felix Edelmann
-* Osoitz Elkorobarrutia
-* Oğuz Ersen
-* Kevin Everets
-* Sveinn í Felli
-* Rafael Fontenelle
-* Alberto A. Fuentes
-* Torsten Grote
-* Ciaran Gultnieks
-* Tias Guns
-* Michael Haas
-* Stefan Handschuh
-* Marcus Hoffmann
-* Kees Hulberts
-* Ayron Jungren
-* João Fernando C. Júnior
-* Neo Kolokotronis
-* Nikita Kozlov
-* Matt Kraai
-* Daniel Kraft
-* Boris Kraut
-* Tobias Kuban
-* Mariotaku Lee
-* Leonardo De Luca
-* Greg Lyle
-* Daniel Marti
-* Robert Martinez
-* Steven McDonald
-* Andrew McMillan
-* Balázs Meskó
-* Nat Meysenburg
-* Andrew Nayenko
-* Alex Oberhauser
-* Michael Pöhn
-* Nicolas Raoul
-* Fabian Rodriguez
-* Pierre Rudloff
-* Florian Schmaus
-* Dominik Schürmann
-* Peter Serwylo
-* Takumi Shoji
-* Hans-Emil Skogh
-* Paul Sokolovsky
-* Graziano Sorbaioli
-* Jochen Sprickerhof
-* Hans-Christoph Steiner
-* David Sterry
-* John Sullivan
-* Antonio Tapiador
-* William Theaker
-* Henrik Tunedal
-* Wellington Terumi Uemura
-* Ivo Ugrina
-* Matthias Weiler
-* Nutchanon Wetchasit
-* Philipp Wollschlegel
+<ul>
+{%- for contributor in site.data.contributors -%}
+<li>
+{%- if contributor.gitlab -%}
+<a href="https://gitlab.com/{{ contributor.gitlab }}" target="_blank">
+{%- elsif contributor.weblate -%}
+<a href="https://hosted.weblate.org/user/{{ contributor.weblate }}" target="_blank">
+{%- endif -%}
+{%- if contributor.Arab and site.data.scripts[site.active_lang] == "Arab" -%}
+{{ contributor.Arab }}
+{%- elsif contributor.Cyrl and site.data.scripts[site.active_lang] == "Cyrl" -%}
+{{ contributor.Cyrl }}
+{%- elsif contributor.Jpan and site.data.scripts[site.active_lang] == "Jpan" -%}
+{{ contributor.Jpan }}
+{%- elsif contributor.Kore and site.data.scripts[site.active_lang] == "Kore" -%}
+{{ contributor.Kore }}
+{%- elsif contributor.Hans and site.data.scripts[site.active_lang] == "Hans" -%}
+{{ contributor.Hans }}
+{%- elsif contributor.Hant and site.data.scripts[site.active_lang] == "Hant" -%}
+{{ contributor.Hant }}
+{%- else -%}
+{{ contributor.name }}
+{%- endif -%}
+{%- if contributor.gitlab or contributor.weblate -%}
+</a>
+{%- endif -%}
+</li>
+{%- endfor -%}
+</ul>
 
 If your name is missing, it’s a mistake and you should
-[add yourself to the list](https://gitlab.com/fdroid/fdroid-website/blob/master/_pages/about.md)!
+[add yourself to the list](https://gitlab.com/fdroid/fdroid-website/blob/master/_data/contributors.yaml)!
 Keep it sorted by surname, please.
 
 The original F-Droid client app was based on the Aptoide app developed by Roberto Jacinto.
