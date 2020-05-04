@@ -45,8 +45,13 @@ AddEncoding x-gzip .gz
 # cache all files without checking until max-age, after that, the
 # browser check the ETag value to see whether it needs to redownload
 
+# 1 week
+<FilesMatch "\.ttf$">
+  Header set Cache-Control "max-age=604800, public, immutable"
+</FilesMatch>
+
 # 12 hours
-<FilesMatch "\.(css|gif|ico|jpg|jpeg|js|json|png|svg|ttf|txt|xml)$">
+<FilesMatch "\.(css|gif|ico|jpg|jpeg|js|json|png|svg|txt|xml)$">
   Header set Cache-Control "max-age=43200, public, immutable"
 </FilesMatch>
 
