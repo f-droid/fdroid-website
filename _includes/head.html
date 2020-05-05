@@ -6,6 +6,7 @@
   <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
   <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
 
+  <link rel="preload" href="{% assets %}/roboto.ttf" as="font" type="font/ttf"/>
   <link rel="dns-prefetch" href="https://search.f-droid.org"/>
   <link rel="dns-prefetch" href="https://fdroid.gitlab.io"/>
   <link rel="stylesheet" href="{% root %}/css/main.css"/>
@@ -30,7 +31,7 @@
   {% continue %}
 {% endif %}
   {% if site.baseurl == '' %}
-  <link rel="alternate" hreflang="{{ lang }}" href="/{{ lang }}{{ page.permalink }}" />
+  <link rel="alternate" hreflang="{{ lang | replace: '_', '-' }}" href="/{{ lang }}{{ page.permalink }}" />
   {% endif %}
 {% endfor %}
 </head>

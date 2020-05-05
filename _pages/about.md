@@ -87,8 +87,8 @@ and is brought to you by at least the following people:
 {%- endfor -%}
 </ul>
 
-If your name is missing, it’s a mistake and you should
+If you have contributed to F-Droid and your name is missing, it’s a mistake and you should
 [add yourself to the list](https://gitlab.com/fdroid/fdroid-website/blob/master/_data/contributors.yaml)!
-Keep it sorted by surname, please.
+Please include your Weblate username if you are a translator.  Keep it sorted by surname, please.
 
 The original F-Droid client app was based on the Aptoide app developed by Roberto Jacinto.
