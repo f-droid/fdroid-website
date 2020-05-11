@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
 "POT-Creation-Date: 2020-05-05 17:21+0200\n"
-"PO-Revision-Date: 2020-05-02 22:29+0000\n"
+"PO-Revision-Date: 2020-05-11 09:53+0000\n"
 "Last-Translator: C. Rüdinger <Mail-an-CR@web.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/f-droid/website-pages/de/>\n"
 "Language: de\n"
@@ -139,7 +139,7 @@ msgstr "F-Droid respektiert die Privatsphäre. Wir betreiben keine Rückverfolgu
 #: _pages/about.md
 #, no-wrap
 msgid "Contributors"
-msgstr "Mitarbeiter"
+msgstr "Mitwirkende"
 
 #. type: Plain text
 #: _pages/about.md
@@ -180,13 +180,40 @@ msgid ""
 "{%- endfor -%}\n"
 "</ul>\n"
 msgstr ""
+"<ul>\n"
+"{%- for contributor in site.data.contributors -%}\n"
+"<li>\n"
+"{%- if contributor.gitlab -%}\n"
+"<a href=\"https://gitlab.com/{{ contributor.gitlab }}\" target=\"_blank\">\n"
+"{%- elsif contributor.weblate -%}\n"
+"<a href=\"https://hosted.weblate.org/user/{{ contributor.weblate }}\" target=\"_blank\">\n"
+"{%- endif -%}\n"
+"{%- if contributor.Arab and site.data.scripts[site.active_lang] == \"Arab\" -%}\n"
+"{{ contributor.Arab }}\n"
+"{%- elsif contributor.Cyrl and site.data.scripts[site.active_lang] == \"Cyrl\" -%}\n"
+"{{ contributor.Cyrl }}\n"
+"{%- elsif contributor.Jpan and site.data.scripts[site.active_lang] == \"Jpan\" -%}\n"
+"{{ contributor.Jpan }}\n"
+"{%- elsif contributor.Kore and site.data.scripts[site.active_lang] == \"Kore\" -%}\n"
+"{{ contributor.Kore }}\n"
+"{%- elsif contributor.Hans and site.data.scripts[site.active_lang] == \"Hans\" -%}\n"
+"{{ contributor.Hans }}\n"
+"{%- elsif contributor.Hant and site.data.scripts[site.active_lang] == \"Hant\" -%}\n"
+"{{ contributor.Hant }}\n"
+"{%- else -%}\n"
+"{{ contributor.name }}\n"
+"{%- endif -%}\n"
+"{%- if contributor.gitlab or contributor.weblate -%}\n"
+"</a>\n"
+"{%- endif -%}\n"
+"</li>\n"
+"{%- endfor -%}\n"
+"</ul>\n"
 
 #. type: Plain text
 #: _pages/about.md
-#, fuzzy
-#| msgid "If your name is missing, it’s a mistake and you should [add yourself to the list](https://gitlab.com/fdroid/fdroid-website/blob/master/_pages/about.md)! Keep it sorted by surname, please."
 msgid "If you have contributed to F-Droid and your name is missing, it’s a mistake and you should [add yourself to the list](https://gitlab.com/fdroid/fdroid-website/blob/master/_data/contributors.yaml)! Please include your Weblate username if you are a translator.  Keep it sorted by surname, please."
-msgstr "Wenn Ihr Name fehlt, so ist das ein Versehen und Sie sollten [sich selbst in die Liste eintragen](https://gitlab.com/fdroid/fdroid-website/blob/master/_pages/about.md)! Bitte dabei die Sortierung nach Nachnamen beachten."
+msgstr "Wenn Sie sich an F-Droid beteiligt haben und Ihr Name fehlt, so ist das ein Versehen und Sie sollten [sich selbst in die Liste eintragen](https://gitlab.com/fdroid/fdroid-website/blob/master/_data/contributors.yaml)! Bitte fügen Sie Ihren Weblate-Nutzernamen hinzu, wenn Sie sich an der Übersetzung beteiligt haben. Bitte halten Sie die Sortierung nach Nachnamen ein."
 
 #. type: Plain text
 #: _pages/about.md
@@ -320,10 +347,8 @@ msgstr "Probleme melden"
 
 #. type: Plain text
 #: _pages/contribute.md
-#, fuzzy
-#| msgid "If you experience problems with the site or client software, you can report them in the issue tracker (see below), or discuss them in the [Forum](https://forum.f-droid.org/) or on IRC (#fdroid on freenode)."
 msgid "If you experience problems with the site or client software, you can report them in the issue tracker ([find the appropriate tracker on this page]({{ \"/issues/\" | prepend: site.baseurl }})), or discuss them in the [Forum](https://forum.f-droid.org/) or on IRC (#fdroid on freenode)."
-msgstr "Bei Problemen mit der Internetseite oder der Client-Software können diese an das Ticketsystem (siehe unten) gemeldet oder im [Forum](https://forum.f-droid.org/) bzw. im Chat (#fdroid on freenode) erörtert werden."
+msgstr "Bei Problemen mit der Internetseite oder der Client-Software können diese an das Ticketsystem gemeldet ([das geeignete Ticketsystem finden Sie auf dieser Seite]({{ \"/issues/\" | prepend: site.baseurl }})) oder im [Forum](https://forum.f-droid.org/) bzw. im Chat (#fdroid on freenode) erörtert werden."
 
 #. type: Title ###
 #: _pages/contribute.md
@@ -403,7 +428,7 @@ msgstr "Dokumentation"
 #. type: Plain text
 #: _pages/docs.md
 msgid "F-Droid is both a repository of verified free software Android apps as well as a whole \"app store kit\", providing all the tools needed to setup and run an app store. It is a community-run free software project developed by a wide range of contributors. It also includes complete build and release tools for managing the process of turning app source code into published builds."
-msgstr "F-Droid ist zweierlei, sowohl eine Paketquelle (= ein Repository) mit geprüften, auf freier Software basierenden Android-Apps als auch ein vollständiger „App-Store-Baukasten“, der alle Instrumente bereitstellt, die für die Einrichtung und den Betrieb eines App-Stores benötigt werden. Es ist ein gemeinschaftlich betriebenes, freies Software-Projekt, das von einer Vielzahl von Mitarbeitern entwickelt wird. Es beinhaltet darüberhinaus sämtliche Erstellungs- und Versionswerkzeuge, um den Umwandlungsprozess vom App-Quellcode zur veröffentlichten Version zu bewerkstelligen."
+msgstr "F-Droid ist zweierlei, sowohl eine Paketquelle (= ein Repository) mit geprüften, auf freier Software basierenden Android-Apps als auch ein vollständiger „App-Store-Baukasten“, der alle Instrumente bereitstellt, die für die Einrichtung und den Betrieb eines App-Stores benötigt werden. Es ist ein gemeinschaftlich betriebenes, freies Software-Projekt, das von einer Vielzahl von Mitwirkenden entwickelt wird. Es beinhaltet darüberhinaus sämtliche Erstellungs- und Versionswerkzeuge, um den Umwandlungsprozess vom App-Quellcode zur veröffentlichten Version zu bewerkstelligen."
 
 #. type: Plain text
 #: _pages/docs.md

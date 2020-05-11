@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2020-05-05 17:21+0200\n"
-"PO-Revision-Date: 2020-05-02 16:12+0000\n"
+"PO-Revision-Date: 2020-05-07 21:30+0000\n"
 "Last-Translator: ssantos <ssantos@web.de>\n"
 "Language-Team: Portuguese (Portugal) <https://hosted.weblate.org/projects/f-droid/website-pages/pt_PT/>\n"
 "Language: pt_PT\n"
@@ -101,7 +101,7 @@ msgstr "Licença"
 #. type: Bullet: '* '
 #: _pages/about.md
 msgid "The source code for this site and the content produced by the F-Droid community are available under the [GNU Affero General Public License version 3 or later (AGPLv3+)](https://www.gnu.org/licenses/agpl-3.0.html)."
-msgstr "O código fonte deste site e o conteúdo produzido pela comunidade F-Droid estão disponíveis sob a licença GNU  - [Licença Pública Geral Affero, versão 3 ou superior (AGPLv3+)](https://www.gnu.org/licenses/agpl-3.0.html)."
+msgstr "O código-fonte deste site e o conteúdo produzido pela comunidade F-Droid estão disponíveis sob a licença GNU - [Licença Pública Geral Affero, versão 3 ou superior (AGPLv3+)](https://www.gnu.org/licenses/agpl-3.0.html)."
 
 #. type: Bullet: '* '
 #: _pages/about.md
@@ -179,13 +179,40 @@ msgid ""
 "{%- endfor -%}\n"
 "</ul>\n"
 msgstr ""
+"<ul>\n"
+"{%- for contributor in site.data.contributors -%}\n"
+"<li>\n"
+"{%- if contributor.gitlab -%}\n"
+"<a href=\"https://gitlab.com/{{ contributor.gitlab }}\" target=\"_blank\">\n"
+"{%- elsif contributor.weblate -%}\n"
+"<a href=\"https://hosted.weblate.org/user/{{ contributor.weblate }}\" target=\"_blank\">\n"
+"{%- endif -%}\n"
+"{%- if contributor.Arab and site.data.scripts[site.active_lang] == \"Arab\" -%}\n"
+"{{ contributor.Arab }}\n"
+"{%- elsif contributor.Cyrl and site.data.scripts[site.active_lang] == \"Cyrl\" -%}\n"
+"{{ contributor.Cyrl }}\n"
+"{%- elsif contributor.Jpan and site.data.scripts[site.active_lang] == \"Jpan\" -%}\n"
+"{{ contributor.Jpan }}\n"
+"{%- elsif contributor.Kore and site.data.scripts[site.active_lang] == \"Kore\" -%}\n"
+"{{ contributor.Kore }}\n"
+"{%- elsif contributor.Hans and site.data.scripts[site.active_lang] == \"Hans\" -%}\n"
+"{{ contributor.Hans }}\n"
+"{%- elsif contributor.Hant and site.data.scripts[site.active_lang] == \"Hant\" -%}\n"
+"{{ contributor.Hant }}\n"
+"{%- else -%}\n"
+"{{ contributor.name }}\n"
+"{%- endif -%}\n"
+"{%- if contributor.gitlab or contributor.weblate -%}\n"
+"</a>\n"
+"{%- endif -%}\n"
+"</li>\n"
+"{%- endfor -%}\n"
+"</ul>\n"
 
 #. type: Plain text
 #: _pages/about.md
-#, fuzzy
-#| msgid "If your name is missing, it’s a mistake and you should [add yourself to the list](https://gitlab.com/fdroid/fdroid-website/blob/master/_pages/about.md)! Keep it sorted by surname, please."
 msgid "If you have contributed to F-Droid and your name is missing, it’s a mistake and you should [add yourself to the list](https://gitlab.com/fdroid/fdroid-website/blob/master/_data/contributors.yaml)! Please include your Weblate username if you are a translator.  Keep it sorted by surname, please."
-msgstr "Se o seu nome está em falta, trata-se de um erro e deveria [adicionar-se a si mesmo à lista](https://gitlab.com/fdroid/fdroid-website/blob/master/_pages/about.md)! Por favor, mantenha-a ordenada por sobrenome."
+msgstr "Se contribuiu para o F-Droid e o seu nome está a faltar, é um erro e deve [adicionar-se à lista](https://gitlab.com/fdroid/fdroid-website/blob/master/_data/contributors.yaml)! Por favor, inclua o seu nome de utilizador Weblate se for um tradutor.  Mantenha-o ordenado por sobrenome, por favor."
 
 #. type: Plain text
 #: _pages/about.md
@@ -319,10 +346,8 @@ msgstr "Reportar Problemas"
 
 #. type: Plain text
 #: _pages/contribute.md
-#, fuzzy
-#| msgid "If you experience problems with the site or client software, you can report them in the issue tracker (see below), or discuss them in the [Forum](https://forum.f-droid.org/) or on IRC (#fdroid on freenode)."
 msgid "If you experience problems with the site or client software, you can report them in the issue tracker ([find the appropriate tracker on this page]({{ \"/issues/\" | prepend: site.baseurl }})), or discuss them in the [Forum](https://forum.f-droid.org/) or on IRC (#fdroid on freenode)."
-msgstr "Se você experimentar problemas com o site ou o software cliente, você pode reportar eles no issue tracker (veja abaixo), ou falar sobre eles no [Fórum](https://forum.f-droid.org/) ou no IRC (#fdroid no freenode)."
+msgstr "Se tiver problemas com o site ou software cliente, pode relatá-los no rastreador de problemas ([encontre o rastreador apropriado nesta página]({{ \"/issues/\" | prepend: site.baseurl }})), ou discuta-los no [Fórum](https://forum.f-droid.org/) ou no IRC (#fddroid no freenode)."
 
 #. type: Title ###
 #: _pages/contribute.md

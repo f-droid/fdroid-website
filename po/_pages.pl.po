@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
 "POT-Creation-Date: 2020-05-05 17:21+0200\n"
-"PO-Revision-Date: 2020-04-30 10:20+0000\n"
+"PO-Revision-Date: 2020-05-11 09:53+0000\n"
 "Last-Translator: WaldiS <admin@sto.ugu.pl>\n"
 "Language-Team: Polish <https://hosted.weblate.org/projects/f-droid/website-pages/pl/>\n"
 "Language: pl\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 4.0.2\n"
+"X-Generator: Weblate 4.1-dev\n"
 
 #. type: YAML Front Matter: title
 #: _pages/403.md
@@ -180,13 +180,40 @@ msgid ""
 "{%- endfor -%}\n"
 "</ul>\n"
 msgstr ""
+"<ul>\n"
+"{%- for contributor in site.data.contributors -%}\n"
+"<li>\n"
+"{%- if contributor.gitlab -%}\n"
+"<a href=\"https://gitlab.com/{{ contributor.gitlab }}\" target=\"_blank\">\n"
+"{%- elsif contributor.weblate -%}\n"
+"<a href=\"https://hosted.weblate.org/user/{{ contributor.weblate }}\" target=\"_blank\">\n"
+"{%- endif -%}\n"
+"{%- if contributor.Arab and site.data.scripts[site.active_lang] == \"Arab\" -%}\n"
+"{{ contributor.Arab }}\n"
+"{%- elsif contributor.Cyrl and site.data.scripts[site.active_lang] == \"Cyrl\" -%}\n"
+"{{ contributor.Cyrl }}\n"
+"{%- elsif contributor.Jpan and site.data.scripts[site.active_lang] == \"Jpan\" -%}\n"
+"{{ contributor.Jpan }}\n"
+"{%- elsif contributor.Kore and site.data.scripts[site.active_lang] == \"Kore\" -%}\n"
+"{{ contributor.Kore }}\n"
+"{%- elsif contributor.Hans and site.data.scripts[site.active_lang] == \"Hans\" -%}\n"
+"{{ contributor.Hans }}\n"
+"{%- elsif contributor.Hant and site.data.scripts[site.active_lang] == \"Hant\" -%}\n"
+"{{ contributor.Hant }}\n"
+"{%- else -%}\n"
+"{{ contributor.name }}\n"
+"{%- endif -%}\n"
+"{%- if contributor.gitlab or contributor.weblate -%}\n"
+"</a>\n"
+"{%- endif -%}\n"
+"</li>\n"
+"{%- endfor -%}\n"
+"</ul>\n"
 
 #. type: Plain text
 #: _pages/about.md
-#, fuzzy
-#| msgid "If your name is missing, it’s a mistake and you should [add yourself to the list](https://gitlab.com/fdroid/fdroid-website/blob/master/_pages/about.md)! Keep it sorted by surname, please."
 msgid "If you have contributed to F-Droid and your name is missing, it’s a mistake and you should [add yourself to the list](https://gitlab.com/fdroid/fdroid-website/blob/master/_data/contributors.yaml)! Please include your Weblate username if you are a translator.  Keep it sorted by surname, please."
-msgstr "Jeżeli brakuje twojego nazwiska lub jest ono błędne, [dodaj się do listy](https://gitlab.com/fdroid/fdroid-website/blob/master/_pages/about.md)! Prosimy uszeregować ją według nazwisk."
+msgstr "Jeśli wniosłeś wkład w rozwój F-Droid i brakuje twojego nazwiska, to błąd i należy [dodać się do listy](https://gitlab.com/fdroid/fdroid-website/blob/master/_data/contributors.yaml)! Jeśli jesteś tłumaczem, podaj swoją nazwę użytkownika Weblate. Zapisz ją posortowaną według nazwiska."
 
 #. type: Plain text
 #: _pages/about.md
@@ -320,10 +347,8 @@ msgstr "Raportowanie błędów"
 
 #. type: Plain text
 #: _pages/contribute.md
-#, fuzzy
-#| msgid "If you experience problems with the site or client software, you can report them in the issue tracker (see below), or discuss them in the [Forum](https://forum.f-droid.org/) or on IRC (#fdroid on freenode)."
 msgid "If you experience problems with the site or client software, you can report them in the issue tracker ([find the appropriate tracker on this page]({{ \"/issues/\" | prepend: site.baseurl }})), or discuss them in the [Forum](https://forum.f-droid.org/) or on IRC (#fdroid on freenode)."
-msgstr "Jeżeli doświadczasz błędów na stronie lub w oprogramowaniu klienckim, możesz zgłosić je do naszego systemu śledzenia błędów (patrz poniżej) lub przedyskutować je na [forum](https://forum.f-droid.org/) lub na IRC (kanał #fdroid na freenode)."
+msgstr "Jeśli wystąpią problemy z witryną lub oprogramowaniem klienckim, możesz zgłosić je do naszego systemu śledzenia problemów ([znajdź odpowiedni moduł śledzący na stronie]({{ \"/issues/\" | prepend: site.baseurl }})), lub przedyskutuj je na [Forum](https://forum.f-droid.org/) lub na IRC (#fdroid on freenode)."
 
 #. type: Title ###
 #: _pages/contribute.md
@@ -595,9 +620,8 @@ msgstr "[Uruchamianie lustra](Running_a_Mirror) Instrukcje dotyczące konfigurow
 
 #. type: Bullet: '* '
 #: _pages/docs.md
-#, fuzzy
 msgid "[MIA Process](MIA_Process) MIA (missing in action) maintainer removal process"
-msgstr "[Proces MIA] (MIA_Process) Proces usuwania opiekuna MIA (brak w działaniu)"
+msgstr "[Proces MIA](MIA_Process) Proces usuwania nieaktywnych opiekunów (MIA - Missing In Action - zaginiony w akcji)"
 
 #. type: Bullet: '* '
 #: _pages/docs.md

@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
 "POT-Creation-Date: 2020-05-05 17:21+0200\n"
-"PO-Revision-Date: 2020-04-11 17:10+0000\n"
+"PO-Revision-Date: 2020-05-10 12:36+0000\n"
 "Last-Translator: random r <epsilin@yopmail.com>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/f-droid/website-pages/it/>\n"
 "Language: it\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.0-dev\n"
+"X-Generator: Weblate 4.1-dev\n"
 
 #. type: YAML Front Matter: title
 #: _pages/403.md
@@ -91,7 +91,7 @@ msgstr "Se stai gestendo un'organizzazione che usa F-Droid o vorresti usare F-Dr
 #. type: Plain text
 #: _pages/about.md
 msgid "[Find an F-Droid Consultant]({{ \"/consulting/\" | prepend: site.baseurl }})"
-msgstr ""
+msgstr "[Trova un consulente F-Droid]({{ \"/consulting/\" | prepend: site.baseurl }})"
 
 #. type: Title ###
 #: _pages/about.md
@@ -180,13 +180,40 @@ msgid ""
 "{%- endfor -%}\n"
 "</ul>\n"
 msgstr ""
+"<ul>\n"
+"{%- for contributor in site.data.contributors -%}\n"
+"<li>\n"
+"{%- if contributor.gitlab -%}\n"
+"<a href=\"https://gitlab.com/{{ contributor.gitlab }}\" target=\"_blank\">\n"
+"{%- elsif contributor.weblate -%}\n"
+"<a href=\"https://hosted.weblate.org/user/{{ contributor.weblate }}\" target=\"_blank\">\n"
+"{%- endif -%}\n"
+"{%- if contributor.Arab and site.data.scripts[site.active_lang] == \"Arab\" -%}\n"
+"{{ contributor.Arab }}\n"
+"{%- elsif contributor.Cyrl and site.data.scripts[site.active_lang] == \"Cyrl\" -%}\n"
+"{{ contributor.Cyrl }}\n"
+"{%- elsif contributor.Jpan and site.data.scripts[site.active_lang] == \"Jpan\" -%}\n"
+"{{ contributor.Jpan }}\n"
+"{%- elsif contributor.Kore and site.data.scripts[site.active_lang] == \"Kore\" -%}\n"
+"{{ contributor.Kore }}\n"
+"{%- elsif contributor.Hans and site.data.scripts[site.active_lang] == \"Hans\" -%}\n"
+"{{ contributor.Hans }}\n"
+"{%- elsif contributor.Hant and site.data.scripts[site.active_lang] == \"Hant\" -%}\n"
+"{{ contributor.Hant }}\n"
+"{%- else -%}\n"
+"{{ contributor.name }}\n"
+"{%- endif -%}\n"
+"{%- if contributor.gitlab or contributor.weblate -%}\n"
+"</a>\n"
+"{%- endif -%}\n"
+"</li>\n"
+"{%- endfor -%}\n"
+"</ul>\n"
 
 #. type: Plain text
 #: _pages/about.md
-#, fuzzy
-#| msgid "If your name is missing, it’s a mistake and you should [add yourself to the list](https://gitlab.com/fdroid/fdroid-website/blob/master/_pages/about.md)! Keep it sorted by surname, please."
 msgid "If you have contributed to F-Droid and your name is missing, it’s a mistake and you should [add yourself to the list](https://gitlab.com/fdroid/fdroid-website/blob/master/_data/contributors.yaml)! Please include your Weblate username if you are a translator.  Keep it sorted by surname, please."
-msgstr "Se il tuo nome è mancante, è un errore e tu dovresti [aggiungerti alla lista](https://gitlab.com/fdroid/fdroid-website/blob/master/_pages/about.md)! Cortesemente, tienila ordinata per cognome."
+msgstr "Se hai contribuito a F-Droid e il tuo nome è mancante, è un errore e dovresti [aggiungerti alla lista](https://gitlab.com/fdroid/fdroid-website/blob/master/_data/contributors.yaml)! Cortesemente, includi il nome utente Weblate se sei un traduttore. Tienila ordinata per cognome."
 
 #. type: Plain text
 #: _pages/about.md
@@ -320,10 +347,8 @@ msgstr "Segnala problemi"
 
 #. type: Plain text
 #: _pages/contribute.md
-#, fuzzy
-#| msgid "If you experience problems with the site or client software, you can report them in the issue tracker (see below), or discuss them in the [Forum](https://forum.f-droid.org/) or on IRC (#fdroid on freenode)."
 msgid "If you experience problems with the site or client software, you can report them in the issue tracker ([find the appropriate tracker on this page]({{ \"/issues/\" | prepend: site.baseurl }})), or discuss them in the [Forum](https://forum.f-droid.org/) or on IRC (#fdroid on freenode)."
-msgstr "Se riscontri problemi con il sito o il programma client, puoi segnalarli nel tracker dei problemi (vedi sotto), o parlarne nel [Forum](https://forum.f-droid.org/) o su IRC (#fdroid su freenode)."
+msgstr "Se riscontri problemi con il sito o il programma client, puoi segnalarli nel tracker dei problemi ([trova un tracker adatto in questa pagina]({{ \"/issues/\" | prepend: site.baseurl }})), o parlarne nel [Forum](https://forum.f-droid.org/) o su IRC (#fdroid su freenode)."
 
 #. type: Title ###
 #: _pages/contribute.md
@@ -596,7 +621,7 @@ msgstr "[Mantenere un mirror](Running_a_Mirror) Istruzioni per configurare un mi
 #. type: Bullet: '* '
 #: _pages/docs.md
 msgid "[MIA Process](MIA_Process) MIA (missing in action) maintainer removal process"
-msgstr ""
+msgstr "[Processo MIA](MIA_Process) Manutentore del processo di rimozione MIA (missing in action)"
 
 #. type: Bullet: '* '
 #: _pages/docs.md

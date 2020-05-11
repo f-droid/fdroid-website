@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
 "POT-Creation-Date: 2020-05-05 17:21+0200\n"
-"PO-Revision-Date: 2020-05-02 22:29+0000\n"
+"PO-Revision-Date: 2020-05-10 12:36+0000\n"
 "Last-Translator: Verdulo <tomek@disroot.org>\n"
 "Language-Team: Esperanto <https://hosted.weblate.org/projects/f-droid/website-pages/eo/>\n"
 "Language: eo\n"
@@ -180,13 +180,40 @@ msgid ""
 "{%- endfor -%}\n"
 "</ul>\n"
 msgstr ""
+"<ul>\n"
+"{%- for contributor in site.data.contributors -%}\n"
+"<li>\n"
+"{%- if contributor.gitlab -%}\n"
+"<a href=\"https://gitlab.com/{{ contributor.gitlab }}\" target=\"_blank\">\n"
+"{%- elsif contributor.weblate -%}\n"
+"<a href=\"https://hosted.weblate.org/user/{{ contributor.weblate }}\" target=\"_blank\">\n"
+"{%- endif -%}\n"
+"{%- if contributor.Arab and site.data.scripts[site.active_lang] == \"Arab\" -%}\n"
+"{{ contributor.Arab }}\n"
+"{%- elsif contributor.Cyrl and site.data.scripts[site.active_lang] == \"Cyrl\" -%}\n"
+"{{ contributor.Cyrl }}\n"
+"{%- elsif contributor.Jpan and site.data.scripts[site.active_lang] == \"Jpan\" -%}\n"
+"{{ contributor.Jpan }}\n"
+"{%- elsif contributor.Kore and site.data.scripts[site.active_lang] == \"Kore\" -%}\n"
+"{{ contributor.Kore }}\n"
+"{%- elsif contributor.Hans and site.data.scripts[site.active_lang] == \"Hans\" -%}\n"
+"{{ contributor.Hans }}\n"
+"{%- elsif contributor.Hant and site.data.scripts[site.active_lang] == \"Hant\" -%}\n"
+"{{ contributor.Hant }}\n"
+"{%- else -%}\n"
+"{{ contributor.name }}\n"
+"{%- endif -%}\n"
+"{%- if contributor.gitlab or contributor.weblate -%}\n"
+"</a>\n"
+"{%- endif -%}\n"
+"</li>\n"
+"{%- endfor -%}\n"
+"</ul>\n"
 
 #. type: Plain text
 #: _pages/about.md
-#, fuzzy
-#| msgid "If your name is missing, it’s a mistake and you should [add yourself to the list](https://gitlab.com/fdroid/fdroid-website/blob/master/_pages/about.md)! Keep it sorted by surname, please."
 msgid "If you have contributed to F-Droid and your name is missing, it’s a mistake and you should [add yourself to the list](https://gitlab.com/fdroid/fdroid-website/blob/master/_data/contributors.yaml)! Please include your Weblate username if you are a translator.  Keep it sorted by surname, please."
-msgstr "Se via nomo mankas aŭ eraras, [aldonu vin al la listo](https://gitlab.com/fdroid/fdroid-website/blob/master/_pages/about.md)! Bonvolu ordigi ĝin laŭ familinomo."
+msgstr "Se vi kontribuis al F‑Droid kaj via nomo mankas aŭ eraras, [aldonu vin al la listo](https://gitlab.com/fdroid/fdroid-website/blob/master/_data/contributors.yaml)! Se vi estas tradukisto, aldonu vian Weblate-uzantnomon. Bonvolu ordigi la liston laŭ familinomo."
 
 #. type: Plain text
 #: _pages/about.md
@@ -320,10 +347,8 @@ msgstr "Raporti erarojn"
 
 #. type: Plain text
 #: _pages/contribute.md
-#, fuzzy
-#| msgid "If you experience problems with the site or client software, you can report them in the issue tracker (see below), or discuss them in the [Forum](https://forum.f-droid.org/) or on IRC (#fdroid on freenode)."
 msgid "If you experience problems with the site or client software, you can report them in the issue tracker ([find the appropriate tracker on this page]({{ \"/issues/\" | prepend: site.baseurl }})), or discuss them in the [Forum](https://forum.f-droid.org/) or on IRC (#fdroid on freenode)."
-msgstr "Se vi spertas problemon pri retejo aŭ klienta aplikaĵo, vi povas raporti ĝin al la erar-spurilo (rigardu sube) aŭ pridiskuti ĝin en la [forumo](https://forum.f-droid.org/) aŭ en IRC (#fdroid ĉe freenode)."
+msgstr "Se vi spertas problemon pri retejo aŭ klienta aplikaĵo, vi povas raporti ĝin al la rilata [erar‑spurilo]({{ \"/issues/\" | prepend: site.baseurl }}) aŭ pridiskuti ĝin en la [forumo](https://forum.f-droid.org/) aŭ en IRC (#fdroid ĉe freenode)."
 
 #. type: Title ###
 #: _pages/contribute.md
@@ -403,7 +428,7 @@ msgstr "Dokumentaro"
 #. type: Plain text
 #: _pages/docs.md
 msgid "F-Droid is both a repository of verified free software Android apps as well as a whole \"app store kit\", providing all the tools needed to setup and run an app store. It is a community-run free software project developed by a wide range of contributors. It also includes complete build and release tools for managing the process of turning app source code into published builds."
-msgstr "F-Droid estas kaj deponejo de konfidindaj liberaj Androidaj aplikaĵoj kaj “deponej-ilaro” provizanta ilojn por instali kaj administri aplikaĵ-vendejon. Ĝi estas liber-programara komunuma projekto evoluigata de multege da kontribuantoj. Ĝi ankaŭ oferas plenan ilaron por administri operacion de transformi aplikaĵan fontkodon al publikig-pretaj kompilaĵoj."
+msgstr "F-Droid estas kaj deponejo de konfidindaj liberaj aplikaĵoj por Android kaj “deponej-ilaro” provizanta ilojn por instali kaj administri aplikaĵ-vendejon. Ĝi estas liber-programara komunuma projekto evoluigata de multege da kontribuantoj. Ĝi ankaŭ oferas plenan ilaron por administri operacion de transformi aplikaĵan fontkodon al publikig-pretaj kompilaĵoj."
 
 #. type: Plain text
 #: _pages/docs.md
