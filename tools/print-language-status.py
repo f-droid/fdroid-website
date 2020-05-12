@@ -17,8 +17,9 @@ for slug in ('f-droid', 'fdroiddata', 'repomaker', 'repomaker-javascript',
         if item.get('translated_percent', 0) > 99.0:
             output[slug].append(item['code'])
 
-with open('_config.yml') as fp:
-    config = yaml.safe_load(fp)
+r = requests.get('https://gitlab.com/fdroid/fdroid-website/-/raw/master/_config.yml')
+r.raise_for_status()
+config = yaml.safe_load(r.text)
 
 print('Launch on f-droid.org:',
       sorted((set(output['f-droid']) & set(output['website']) & set(output['website-pages']))
