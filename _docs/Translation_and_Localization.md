@@ -85,13 +85,21 @@ are imported on a rolling basis, at least once a month.
 #### f-droid.org website
 
 For the f-droid.org website, it is a much more complicated
-system. Since it cannot (yet?) support lots of languages, we have to
-put stricter requirements on it.  In order for a new language to be
-added to f-droid.org, it must have:
+system. Since it cannot
+([yet?](https://gitlab.com/fdroid/fdroid-website/-/milestones/6))
+support lots of languages, we have to put stricter requirements on it.
+The core strings must be fully translated to be included.  They also
+must be maintained in order to stay included.  The documentation and
+tutorials are very useful to have translated.  The blog posts are the
+least important.  Each page must be fully translated before the
+translated version will be shown, otherwise, the site will show the
+original English.
+
+In order for a new language to be added to f-droid.org, it must have:
 
 * [Website](https://hosted.weblate.org/projects/f-droid/website) component: 100% translated
 * [Website Pages](https://hosted.weblate.org/projects/f-droid/website-pages/) component: 100% translated
-* [Data](https://hosted.weblate.org/projects/f-droid/fdroiddata) component: at least 10 app descriptions fully translated
+* [Data](https://hosted.weblate.org/projects/f-droid/fdroiddata) component: at least 10% translated
 
 There is a [nightly build of the website](https://staging.f-droid.org)
 that includes all translations on Weblate, no matter how complete they
