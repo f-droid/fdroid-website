@@ -197,6 +197,7 @@ check_fdroid_apk_bot:
     - echo "${fingerprint}:6:" | gpg --import-ownertrust
     - $curl https://f-droid.org/$apk > $apk
     - $curl https://f-droid.org/$asc > $asc
+    - ls -l $apk $asc
     - sha256sum $apk
     - gpg --batch --trust-model always --verify $asc $apk || (
           apk add --no-cache python3;
