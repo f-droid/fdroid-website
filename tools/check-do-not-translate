@@ -8,3 +8,5 @@ data=$basedir/_data
 # trim trailing whitespace
 sed -i 's, *$,,' $data/strings.json $data/*/strings.json \
     $data/tutorials.json $data/*/tutorials.json
+
+perl -i -pe 'BEGIN{undef $/;} s/\nmsgid "<!--more-->.n"\nmsgstr ".*?"/\nmsgid "<!--more-->\\n"\nmsgstr "<!--more-->\\n"/smg' po/_posts.*.po
