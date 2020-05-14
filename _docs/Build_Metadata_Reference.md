@@ -51,6 +51,7 @@ The following sections describe the fields recognised within the file.
 - [_Categories_](#Categories)
 - [_AuthorName_](#AuthorName)
 - [_AuthorEmail_](#AuthorEmail)
+- [_AuthorWebSite_](#AuthorWebSite)
 - [_License_](#License)
 - [_AutoName_](#AutoName)
 - [_Name_](#Name)
@@ -126,6 +127,15 @@ __Warning__: this overrides all _AuthorEmail_ entries
 [set in the app's source code](../All_About_Descriptions_Graphics_and_Screenshots).
 
 This is converted to (`<email>`) in the XML file (_index.xml_).
+
+
+
+### _AuthorWebSite_<a name="AuthorWebSite"></a>
+
+The website url of the author(s). This can be omitted (or left blank).
+
+__Warning__: this overrides all _AuthorWebSite_ entries
+[set in the app's source code](../All_About_Descriptions_Graphics_and_Screenshots).
 
 
 
