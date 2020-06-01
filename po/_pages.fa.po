@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
 "POT-Creation-Date: 2020-05-05 17:21+0200\n"
-"PO-Revision-Date: 2020-04-29 12:48+0000\n"
+"PO-Revision-Date: 2020-05-21 22:41+0000\n"
 "Last-Translator: Danial Behzadi <dani.behzi@ubuntu.com>\n"
 "Language-Team: Persian <https://hosted.weblate.org/projects/f-droid/website-pages/fa/>\n"
 "Language: fa\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 4.0.2\n"
+"X-Generator: Weblate 4.1-dev\n"
 
 #. type: YAML Front Matter: title
 #: _pages/403.md
@@ -180,13 +180,40 @@ msgid ""
 "{%- endfor -%}\n"
 "</ul>\n"
 msgstr ""
+"<ul>\n"
+"{%- for contributor in site.data.contributors -%}\n"
+"<li>\n"
+"{%- if contributor.gitlab -%}\n"
+"<a href=\"https://gitlab.com/{{ contributor.gitlab }}\" target=\"_blank\">\n"
+"{%- elsif contributor.weblate -%}\n"
+"<a href=\"https://hosted.weblate.org/user/{{ contributor.weblate }}\" target=\"_blank\">\n"
+"{%- endif -%}\n"
+"{%- if contributor.Arab and site.data.scripts[site.active_lang] == \"Arab\" -%}\n"
+"{{ contributor.Arab }}\n"
+"{%- elsif contributor.Cyrl and site.data.scripts[site.active_lang] == \"Cyrl\" -%}\n"
+"{{ contributor.Cyrl }}\n"
+"{%- elsif contributor.Jpan and site.data.scripts[site.active_lang] == \"Jpan\" -%}\n"
+"{{ contributor.Jpan }}\n"
+"{%- elsif contributor.Kore and site.data.scripts[site.active_lang] == \"Kore\" -%}\n"
+"{{ contributor.Kore }}\n"
+"{%- elsif contributor.Hans and site.data.scripts[site.active_lang] == \"Hans\" -%}\n"
+"{{ contributor.Hans }}\n"
+"{%- elsif contributor.Hant and site.data.scripts[site.active_lang] == \"Hant\" -%}\n"
+"{{ contributor.Hant }}\n"
+"{%- else -%}\n"
+"{{ contributor.name }}\n"
+"{%- endif -%}\n"
+"{%- if contributor.gitlab or contributor.weblate -%}\n"
+"</a>\n"
+"{%- endif -%}\n"
+"</li>\n"
+"{%- endfor -%}\n"
+"</ul>\n"
 
 #. type: Plain text
 #: _pages/about.md
-#, fuzzy
-#| msgid "If your name is missing, it’s a mistake and you should [add yourself to the list](https://gitlab.com/fdroid/fdroid-website/blob/master/_pages/about.md)! Keep it sorted by surname, please."
 msgid "If you have contributed to F-Droid and your name is missing, it’s a mistake and you should [add yourself to the list](https://gitlab.com/fdroid/fdroid-website/blob/master/_data/contributors.yaml)! Please include your Weblate username if you are a translator.  Keep it sorted by surname, please."
-msgstr "اگر نامتان در این‌جا نیست، اشتباهی رخ داده و باید [خودتان را به فهرست بیفزایید](https://gitlab.com/fdroid/fdroid-website/blob/master/_pages/about.md)! لطفاً فهرست را بر اساس نام خانوادگی چیده نگه‌دارید."
+msgstr "اگر در توسعهٔ اف‌دروید مشارکت کرده‌اید نامتان در این‌جا نیست، اشتباهی رخ داده و باید [خودتان را به فهرست بیفزایید](https://gitlab.com/fdroid/fdroid-website/blob/master/_data/contributors.yaml)! اگر مترجمید، نام کاربری وب‌لیتتان را بنویسید. لطفاً فهرست را بر اساس نام خانوادگی چیده نگه‌دارید."
 
 #. type: Plain text
 #: _pages/about.md
@@ -320,10 +347,8 @@ msgstr "گزارش مشکلات"
 
 #. type: Plain text
 #: _pages/contribute.md
-#, fuzzy
-#| msgid "If you experience problems with the site or client software, you can report them in the issue tracker (see below), or discuss them in the [Forum](https://forum.f-droid.org/) or on IRC (#fdroid on freenode)."
 msgid "If you experience problems with the site or client software, you can report them in the issue tracker ([find the appropriate tracker on this page]({{ \"/issues/\" | prepend: site.baseurl }})), or discuss them in the [Forum](https://forum.f-droid.org/) or on IRC (#fdroid on freenode)."
-msgstr "اگر در پایگاه یا نرم‌افزار کارخواه به مشکلی برخوردید، می‌توانید آن‌ها را در ردیاب مشکل (پایین را ببینید) گزارش کرده یا در [انجمن](https://forum.f-droid.org/) یا آی‌آرسی (fdroid# روی فری‌نود) بگویید."
+msgstr "اگر در پایگاه یا نرم‌افزار کارخواه به مشکلی برخوردید، می‌توانید آن‌ها را در ردیاب مشکل گزارش کرده ([ردیاب مورد نظر را در این صفحه بیابید]({{ \"/issues/\" | prepend: site.baseurl }})) یا در [انجمن](https://forum.f-droid.org/) یا آی‌آرسی (fdroid# روی فری‌نود) بگویید."
 
 #. type: Title ###
 #: _pages/contribute.md

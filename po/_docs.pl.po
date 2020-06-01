@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
 "POT-Creation-Date: 2020-05-12 15:05+0200\n"
-"PO-Revision-Date: 2020-05-11 09:53+0000\n"
-"Last-Translator: WaldiS <admin@sto.ugu.pl>\n"
+"PO-Revision-Date: 2020-05-26 06:41+0000\n"
+"Last-Translator: WaldiS <sto@tutanota.de>\n"
 "Language-Team: Polish <https://hosted.weblate.org/projects/f-droid/website-docs/pl/>\n"
 "Language: pl\n"
 "MIME-Version: 1.0\n"
@@ -3658,7 +3658,7 @@ msgstr ""
 #: _docs/Deploying_the_Website.md
 #, no-wrap
 msgid "$ rsync -ax --delete --exclude-from=_site/build/.rsync-deploy-exclude-list  _site/build/  f-droid.org:/var/www/\n"
-msgstr ""
+msgstr "$ rsync -ax --delete --exclude-from=_site/build/.rsync-deploy-exclude-list  _site/build/  f-droid.org:/var/www/\n"
 
 #. type: Title ###
 #: _docs/Deploying_the_Website.md
@@ -3689,6 +3689,19 @@ msgid ""
 "# apachectl configtest && apachectl restart\n"
 "# certbot --apache\n"
 msgstr ""
+"$ sudo su -\n"
+"# apt install apache2 certbot tor ca-certificates geoip-bin libapache2-mod-geoip \\\n"
+"  python-certbot-apache rsync unattended-upgrades locales\n"
+"# dpkg-reconfigure unattended-upgrades  # turn them on!\n"
+"# sed -i 's,^# \\(.* UTF-8\\)$,\\1,' /etc/locale.gen  # enable all UTF-8 locales\n"
+"# locale-gen\n"
+"# a2dismod status\n"
+"# a2enmod headers\n"
+"# a2enmod rewrite\n"
+"# a2enmod ssl\n"
+"# a2enconf security\n"
+"# apachectl configtest && apachectl restart\n"
+"# certbot --apache\n"
 
 #. type: Title ###
 #: _docs/Deploying_the_Website.md
@@ -3858,7 +3871,6 @@ msgstr "Jak mogę licencjonować moją aplikację?"
 
 #. type: Plain text
 #: _docs/FAQ_-_App_Developers.md
-#, fuzzy
 msgid "There are, broadly, two categories: copyleft and permissive, with the GPLv3 and the Apache 2.0 being the most popular respectively. Choose the former if you insist that derivatives have the same licence and the latter if you permit any kind of re-use."
 msgstr "Istnieją ogólnie dwie kategorie: copyleft i permissive, przy czym GPLv3 i Apachev2 są najbardziej popularne. Wybierz pierwsze, jeśli chcesz, aby instrumenty pochodne miały tę samą licencję, a drugie, jeśli pozwolisz na jakiekolwiek ponowne użycie."
 
@@ -3955,14 +3967,10 @@ msgstr "Kiedy wykryjemy nową wersję, może minąć kilka dni, zanim trafi ona 
 
 #. type: Plain text
 #: _docs/FAQ_-_App_Developers.md
-#, fuzzy
-#| msgid ""
-#| "Another reason could be that the app failed to build. You can watch the\n"
-#| "build process on [Recent changes](https://f-droid.org/wiki/index.php?title=Special:RecentChanges&days=7&from=&hidebots=0&hideanons=1&hideliu=1) after clicking 'Show Bots'.\n"
 msgid "Another reason could be that the app failed to build. You can watch the build process on [Recent changes](https://f-droid.org/wiki/index.php?title=Special:RecentChanges&days=7&from=&hidebots=0&hideanons=1&hideliu=1) after clicking 'Show Bots'."
 msgstr ""
-"Innym powodem może być brak aplikacji. Możesz obejrzeć proces budowania na\n"
-"<Special: RecentChanges> po kliknięciu 'Show Bots'.\n"
+"Innym powodem może być brak kompilacji aplikacji. Możesz obejrzeć proces kompilacji na\n"
+"<Special: RecentChanges> po kliknięciu 'Show Bots'."
 
 #. type: Title ###
 #: _docs/FAQ_-_App_Developers.md
@@ -6519,9 +6527,9 @@ msgstr ""
 
 #. type: Fenced code block (bash)
 #: _docs/Maintaining_the_Forum.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "apt install docker-ce\n"
-msgstr "```bash apt install docker-ce ```"
+msgstr "apt install docker-ce\n"
 
 #. type: Plain text
 #: _docs/Maintaining_the_Forum.md
@@ -6575,18 +6583,18 @@ msgstr ""
 #. type: Plain text
 #: _docs/MIA_Process.md
 msgid "This means we regularly check if F-Droid team members are still active, i.e.  when they last contributed, and drop those that don't respond to messages after some time. The idea is to improve F-Droid's quality, not to hunt developers."
-msgstr ""
+msgstr "Oznacza to, że regularnie sprawdzamy, czy członkowie zespołu F-Droid są nadal aktywni, tj. kiedy ostatnio wnieśli swój wkład, i usuwamy tych, którzy nie reagują na wiadomości po pewnym czasie. Chodzi o to, aby poprawić jakość F-Droid, a nie polować na programistów."
 
 #. type: Title ###
 #: _docs/MIA_Process.md
 #, no-wrap
 msgid "What are F-Droid team members"
-msgstr ""
+msgstr "Kim są członkowie zespołu F-Droid"
 
 #. type: Plain text
 #: _docs/MIA_Process.md
 msgid "- [Gitlab](https://gitlab.com/fdroid/admin/-/project_members)  - [Forum](https://forum.f-droid.org/g/contributors)"
-msgstr ""
+msgstr "- [Gitlab](https://gitlab.com/fdroid/admin/-/project_members)  - [Forum](https://forum.f-droid.org/g/contributors)"
 
 #. type: Title ###
 #: _docs/MIA_Process.md
@@ -6597,13 +6605,13 @@ msgstr ""
 #. type: Plain text
 #: _docs/MIA_Process.md
 msgid "- Commits to one of the repos hosted on [Gitlab](https://gitlab.com/fdroid/).  - Contributions to issues on [Gitlab](https://gitlab.com/groups/fdroid/-/issues).  - Activity on the forum."
-msgstr ""
+msgstr "- Zatwierdza do jednego z repozytoriów hostowanych na [Gitlab](https://gitlab.com/fdroid/). - Wkład dotyczący systemu śledzenia problemów [Gitlab](https://gitlab.com/groups/fdroid/-/issues). - Aktywność na forum."
 
 #. type: Title ###
 #: _docs/MIA_Process.md
 #, no-wrap
 msgid "Who is MIA"
-msgstr ""
+msgstr "Czym jest MIA"
 
 #. type: Plain text
 #: _docs/MIA_Process.md
@@ -6614,7 +6622,7 @@ msgstr ""
 #: _docs/MIA_Process.md
 #, no-wrap
 msgid "How are MIAs tracked"
-msgstr ""
+msgstr "W jaki sposób śledzone są MIA"
 
 #. type: Plain text
 #: _docs/MIA_Process.md
@@ -6625,39 +6633,38 @@ msgstr ""
 #: _docs/MIA_Process.md
 #, no-wrap
 msgid "The removal"
-msgstr ""
+msgstr "Usunięcie"
 
 #. type: Bullet: '- '
 #: _docs/MIA_Process.md
 msgid "Status: First warning -> wait 16 weeks."
-msgstr ""
+msgstr "Status: Pierwsze ostrzeżenie -> poczekaj 16 tygodni."
 
 #. type: Bullet: '- '
 #: _docs/MIA_Process.md
 msgid "Status: Second warning -> wait 8 weeks."
-msgstr ""
+msgstr "Stan: Drugie ostrzeżenie -> poczekaj 8 tygodni."
 
 #. type: Bullet: '- '
 #: _docs/MIA_Process.md
 msgid "Status: Final warning -> wait 4 weeks."
-msgstr ""
+msgstr "Status: Ostatnie ostrzeżenie -> poczekaj 4 tygodnie."
 
 #. type: Plain text
 #: _docs/MIA_Process.md
 msgid "Afterwards, MIA accounts are removed from all F-Droid directories (Gitlab) or downgraded to normal user account (forum) and the issue is closed."
-msgstr ""
+msgstr "Następnie konta MIA są usuwane ze wszystkich katalogów F-Droid (Gitlab) lub przywracane do normalnego konta użytkownika (forum) i problem zostaje zamknięty."
 
 #. type: Title ###
 #: _docs/MIA_Process.md
-#, fuzzy, no-wrap
-#| msgid "References:"
+#, no-wrap
 msgid "References"
-msgstr "Referencje:"
+msgstr "Referencje"
 
 #. type: Plain text
 #: _docs/MIA_Process.md
 msgid "- [Debian reference](https://www.debian.org/doc/manuals/developers-reference/beyond-pkging.html#dealing-with-inactive-and-or-unreachable-maintainers)  - [Debian team site](https://wiki.debian.org/Teams/MIA)  - [Debian tools](https://salsa.debian.org/qa/qa/tree/master/mia)"
-msgstr ""
+msgstr "- [Debian Dokumentacja](https://www.debian.org/doc/manuals/developers-reference/beyond-pkging.html#dealing-with-inactive-and-or-unreachable-maintainers) - [Debian Strona zespołu] (https://wiki.debian.org/Teams/MIA) - [Debian Narzędzia](https://salsa.debian.org/qa/qa/tree/master/mia)"
 
 #. type: YAML Front Matter: title
 #: _docs/Publishing_Nightly_Builds.md
@@ -6792,7 +6799,7 @@ msgstr "Konfiguracja dla GitHub i Travis CI"
 #. type: Bullet: '1. '
 #: _docs/Publishing_Nightly_Builds.md
 msgid "Generate a new _debug.keystore_ for each app, since GitHub only allows a deploy key to be used on a single repo.  Keep that file safe, since it is the signing key for your nightly build."
-msgstr ""
+msgstr "Wygeneruj nowy _ debug.keystore _ dla każdej aplikacji, ponieważ GitHub pozwala na użycie klucza wdrażania tylko w jednym repozytorium. Chroń ten plik, ponieważ jest to klucz do podpisywania nocnej kompilacji."
 
 #. type: Fenced code block
 #: _docs/Publishing_Nightly_Builds.md
@@ -6803,6 +6810,10 @@ msgid ""
 "  -alias androiddebugkey -storepass android -keypass android \\\n"
 "  -dname \"CN=Android Debug,O=Android,C=US\"\n"
 msgstr ""
+"keytool -genkey -v -keystore im.zom.messenger-debug.keystore \\\n"
+"  -keyalg RSA -keysize 2048 -validity 10000 \\\n"
+"  -alias androiddebugkey -storepass android -keypass android \\\n"
+"  -dname \"CN=Android Debug,O=Android,C=US\"\n"
 
 #. type: Plain text
 #: _docs/Publishing_Nightly_Builds.md
@@ -7043,9 +7054,8 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/Release_Channels_and_Signing_Keys.md
-#, fuzzy
 msgid "To confirm that the `1DBA2E89 admin@f-droid.org` PGP key is trusted by the index JAR signing key that is built into the F-Droid client app, run these commands:"
-msgstr "Aby potwierdzić, że klucz PGP `1DBA2E89 admin@f-droid.org` jest zaufany przez klucz podpisu indeksu JAR, który jest wbudowany w aplikację klienta F-Droid, uruchom następujące polecenia: ```bash sudo apt-get install wget vim-common unzip openjdk-8-jdk-headless wget https://f-droid.org/assets/admin@f-droid.org.jar"
+msgstr "Aby potwierdzić, że klucz PGP `1DBA2E89 admin @ f-droid.org` jest zaufany przez klucz podpisujący indeks JAR wbudowany w aplikację kliencką F-Droid, uruchom następujące polecenia:"
 
 #. type: Fenced code block (bash)
 #: _docs/Release_Channels_and_Signing_Keys.md
@@ -7762,11 +7772,13 @@ msgstr "Wymaga to umieszczenia (upstream-) podpisów programistów na fdroiddata
 
 #. type: Fenced code block (console)
 #: _docs/Reproducible_Builds.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "$ cd /path/to/fdroiddata\n"
 "$ fdroid signatures F-Droid.apk\n"
-msgstr "```console $ cd /path/to/fdroiddata $ fdroid signatures F-Droid.apk ```"
+msgstr ""
+"$ cd /path/to/fdroiddata\n"
+"$ fdroid signatures F-Droid.apk\n"
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
@@ -7775,11 +7787,13 @@ msgstr "Możesz także podać adresy URL HTTPS bezpośrednio do 'sygnatur fdroid
 
 #. type: Fenced code block (console)
 #: _docs/Reproducible_Builds.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "$ ls metadata/org.fdroid.fdroid/signatures/1000012/\n"
 "CIARANG.RSA  CIARANG.SF  MANIFEST.MF\n"
-msgstr "```console $ ls metadata/org.fdroid.fdroid/signatures/1000012/ CIARANG.RSA CIARANG.SF MANIFEST.MF ```"
+msgstr ""
+"$ ls metadata/org.fdroid.fdroid/signatures/1000012/\n"
+"CIARANG.RSA  CIARANG.SF  MANIFEST.MF\n"
 
 #. type: Title ####
 #: _docs/Reproducible_Builds.md
@@ -7801,7 +7815,7 @@ msgstr "Oto przykład dyrektywy _Binaries_:"
 #: _docs/Reproducible_Builds.md
 #, fuzzy, no-wrap
 msgid "Binaries: https://foo.com/path/to/myapp-%v.apk\n"
-msgstr "```yaml Binaries: https://foo.com/path/to/myapp-%v.apk ```"
+msgstr "Binaries: https://foo.com/path/to/myapp-%v.apk\n"
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
@@ -7938,7 +7952,7 @@ msgstr "Format ZIP został pierwotnie zaprojektowany wokół systemu plików MSD
 
 #. type: Fenced code block (diff)
 #: _docs/Reproducible_Builds.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "--- a2dp.Vol_137.apk\n"
 "+++ sigcp_a2dp.Vol_137.apk\n"
@@ -7950,17 +7964,15 @@ msgid ""
 "+-rw----     2.4 fat  1958312 b- defN 80-000-00 00:00 classes.dex\n"
 "+-rw-rw-rw-  2.3 unx    78984 b- stor 80-000-00 00:00 resources.arsc\n"
 msgstr ""
-"```diff\n"
 "--- a2dp.Vol_137.apk\n"
 "+++ sigcp_a2dp.Vol_137.apk\n"
 "@@ -1,50 +1,50 @@\n"
-"--rw----     2.0 fat     8976 bX defN 79-lis-30 00:00 AndroidManifest.xml\n"
-"--rw----     2.0 fat  1958312 bX defN 79-lis-30 00:00 classes.dex\n"
-"--rw----     1.0 fat    78984 bx duży 79-lis-30 00:00 resources.arsc\n"
-"+-rw-rw-rw-  2.3 unx     8976 b-defN 80-000-00 00:00 AndroidManifest.xml\n"
+"--rw----     2.0 fat     8976 bX defN 79-Nov-30 00:00 AndroidManifest.xml\n"
+"--rw----     2.0 fat  1958312 bX defN 79-Nov-30 00:00 classes.dex\n"
+"--rw----     1.0 fat    78984 bx stor 79-Nov-30 00:00 resources.arsc\n"
+"+-rw-rw-rw-  2.3 unx     8976 b- defN 80-000-00 00:00 AndroidManifest.xml\n"
 "+-rw----     2.4 fat  1958312 b- defN 80-000-00 00:00 classes.dex\n"
-"+-rw-rw-rw-  2.3 unx    78984 b- duży 80-000-00 00:00 resources.arsc\n"
-"```\n"
+"+-rw-rw-rw-  2.3 unx    78984 b- stor 80-000-00 00:00 resources.arsc\n"
 
 #. type: Title ###
 #: _docs/Reproducible_Builds.md
@@ -8896,17 +8908,17 @@ msgstr "Podczas kompilacji zostanie wykorzystane około 124 GB."
 #. type: Bullet: '* '
 #: _docs/Submitting_to_F-Droid_Quick_Start_Guide.md
 msgid "20 GB where the `fdroidserver` git repository is cloned"
-msgstr ""
+msgstr "20 GB, na którym klonowane jest repozytorium git `fdroidserver`"
 
 #. type: Bullet: '* '
 #: _docs/Submitting_to_F-Droid_Quick_Start_Guide.md
 msgid "16 GB in `~/.cache/fdroidserver`, for caching several versions of Android SDK, NDK, Gradle etc"
-msgstr ""
+msgstr "16 GB w `~/.cache/fdroidserver`, do buforowania kilku wersji Android SDK, NDK, Gradle itp"
 
 #. type: Bullet: '* '
 #: _docs/Submitting_to_F-Droid_Quick_Start_Guide.md
 msgid "40 GB in `~/.vagrant.d` while exporting the final VM image"
-msgstr ""
+msgstr "40 GB w pliku `~ / .vagrant.d` podczas eksportowania końcowego obrazu maszyny wirtualnej"
 
 #. type: Bullet: '* '
 #: _docs/Submitting_to_F-Droid_Quick_Start_Guide.md
@@ -9134,7 +9146,7 @@ msgstr "Następnie upewnij się, że wszystko jest w porządku:"
 
 #. type: Fenced code block (bash)
 #: _docs/Submitting_to_F-Droid_Quick_Start_Guide.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "fdroid build --server -v -l net.artificialworlds.rabbitescape\n"
 msgstr "fdroid build --server -v -l net.artificialworlds.rabbitescape\n"
 
@@ -9150,9 +9162,8 @@ msgstr "Uwaga boczna: jeśli w końcu musisz zmodyfikować środowisko kompilacj
 
 #. type: Plain text
 #: _docs/Submitting_to_F-Droid_Quick_Start_Guide.md
-#, fuzzy
 msgid "And now I was ready to request my package be included in F-Droid by committing and pushing the changes I had made to the fdroiddata project to my forked repo, and clicking the Merge Request button in the GitLab UI.  My merge request is here: [gitlab.com/fdroid/fdroiddata/merge_requests/1965](https://gitlab.com/fdroid/fdroiddata/merge_requests/1965)"
-msgstr "A teraz byłem gotowy, aby poprosić o dołączenie mojej paczki do F-Droid poprzez zatwierdzenie i przesunięcie zmian, które wprowadziłem do projektu fdroiddata, do mojego rozwidlonego repo, i kliknięcie przycisku Żądanie scalenia w interfejsie gitlab. Moja prośba o scalenie jest tutaj: [gitlab.com/fdroid/fdroiddata/merge_requests/1965](https://gitlab.com/fdroid/fdroiddata/merge_requests/1965)"
+msgstr "A teraz byłem gotowy, aby poprosić o dołączenie mojej paczki do F-Droid poprzez zatwierdzenie i załączenie zmian, które wprowadziłem do projektu fdroiddata, do mojego rozwidlonego repozytorium, i kliknięcie przycisku Żądanie scalenia w interfejsie gitlab. Moja prośba o scalenie jest tutaj: [gitlab.com/fdroid/fdroiddata/merge_requests/1965](https://gitlab.com/fdroid/fdroiddata/merge_requests/1965)"
 
 #. type: YAML Front Matter: title
 #: _docs/Translation_and_Localization.md
