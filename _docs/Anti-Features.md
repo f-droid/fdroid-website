@@ -39,8 +39,7 @@ Note that most applications that contain advertising are not Free Software,
 because they use proprietary software (e.g. AdMob) to provide that
 advertising. Those apps will not be found in the repo at all, so the only
 time you would see this Anti-Feature applied would be an app that contains
-advertising without using Non-Free Software to do it. No such apps are
-currently known to exist.
+advertising without using Non-Free Software to do it.
 
 Here's the list of [apps with Ads](https://f-droid.org/wiki/page/Category:Apps_with_Ads_antifeature).
 
