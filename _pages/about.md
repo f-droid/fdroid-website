@@ -24,6 +24,9 @@ To join via Telegram, click on [this link](https://matrix.f-droid.org/fdroid/tel
 For Jabber/XMPP,
 join [#fdroid#matrix.org@bridge.xmpp.matrix.org](xmpp:#fdroid#matrix.org@bridge.xmpp.matrix.org?join).
 
+F-Droid contributors also run a social-media account on the Fediverse. You can
+interact with us or follow us on [@fdroidorg@mastodon.technology](https://mastodon.technology/@fdroidorg).
+
 You can send email at
 [team@f-droid.org](mailto:team@f-droid.org), but messages are much
 more likely to be answered on the forum or #fdroid channel. If you
