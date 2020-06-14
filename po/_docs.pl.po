@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
 "POT-Creation-Date: 2020-06-02 13:08+0200\n"
-"PO-Revision-Date: 2020-06-02 13:15+0200\n"
+"PO-Revision-Date: 2020-06-10 10:47+0000\n"
 "Last-Translator: WaldiS <sto@tutanota.de>\n"
 "Language-Team: Polish <https://hosted.weblate.org/projects/f-droid/website-docs/pl/>\n"
 "Language: pl\n"
@@ -3646,13 +3646,13 @@ msgstr ""
 #. type: Bullet: '4. '
 #: _docs/Deploying_the_Website.md
 msgid "get the website source code:"
-msgstr ""
+msgstr "pobierz kod źródłowy strony:"
 
 #. type: Fenced code block (console)
 #: _docs/Deploying_the_Website.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "$ git clone https://gitlab.com/fdroid/fdroid-website\n"
-msgstr "```sklonuj skrypt bash https://gitlab.com/fdroid/fdroiddata.git ```"
+msgstr "$ sklonuj git https://gitlab.com/fdroid/fdroid-website\n"
 
 #. type: Bullet: '5.  '
 #: _docs/Deploying_the_Website.md
@@ -3805,7 +3805,56 @@ msgid ""
 "SetEnvIf Request_URI ^/zh_Hans/ prefer-language=zh-hans\n"
 "SetEnvIf Request_URI ^/zh_Hant/ prefer-language=zh-hant\n"
 "SetEnvIf Request_URI ^/zh_HK/ prefer-language=zh-hk\n"
-msgstr "SetEnvIf Request_URI ^/ar_DZ/ prefer-language=ar-dz SetEnvIf Request_URI ^/ar_MA/ prefer-language=ar-ma SetEnvIf Request_URI ^/be_Latn/ prefer-language=be-latn SetEnvIf Request_URI ^/bn_BD/ prefer-language=bn-bd SetEnvIf Request_URI ^/bn_IN/ prefer-language=bn-in SetEnvIf Request_URI ^/bs_Cyrl/ prefer-language=bs-cyrl SetEnvIf Request_URI ^/bs_Latn/ prefer-language=bs-latn SetEnvIf Request_URI ^/de_AT/ prefer-language=de-at SetEnvIf Request_URI ^/de_CH/ prefer-language=de-ch SetEnvIf Request_URI ^/en_AU/ prefer-language=en-au SetEnvIf Request_URI ^/en_CA/ prefer-language=en-ca SetEnvIf Request_URI ^/en_GB/ prefer-language=en-gb SetEnvIf Request_URI ^/en_IE/ prefer-language=en-ie SetEnvIf Request_URI ^/en_PH/ prefer-language=en-ph SetEnvIf Request_URI ^/en_US/ prefer-language=en-us SetEnvIf Request_URI ^/en_ZA/ prefer-language=en-za SetEnvIf Request_URI ^/es_AR/ prefer-language=es-ar SetEnvIf Request_URI ^/es_MX/ prefer-language=es-mx SetEnvIf Request_URI ^/es_PR/ prefer-language=es-pr SetEnvIf Request_URI ^/es_US/ prefer-language=es-us SetEnvIf Request_URI ^/fr_CA/ prefer-language=fr-ca SetEnvIf Request_URI ^/nb_NO/ prefer-language=nb-no SetEnvIf Request_URI ^/nl_BE/ prefer-language=nl-be SetEnvIf Request_URI ^/pt_BR/ prefer-language=pt-br SetEnvIf Request_URI ^/pt_PT/ prefer-language=pt-pt SetEnvIf Request_URI ^/sr_Cyrl/ prefer-language=sr-cyrl SetEnvIf Request_URI ^/sr_Latn/ prefer-language=sr-latn SetEnvIf Request_URI ^/ur_PK/ prefer-language=ur-pk SetEnvIf Request_URI ^/uz_Latn/ prefer-language=uz-latn SetEnvIf Request_URI ^/zh_Hans/ prefer-language=zh-hans SetEnvIf Request_URI ^/zh_Hant/ prefer-language=zh-hant SetEnvIf Request_URI ^/zh_HK/ prefer-language=zh-hk ```"
+msgstr ""
+"<Katalog / var / www / html>\n"
+"    Opcje FollowSymLinks\n"
+"    AllowOverride FileInfo\n"
+"</Directory>\n"
+"\n"
+"<Pliki * .html>\n"
+"    Mapa typów SetHandler\n"
+"</Files>\n"
+"\n"
+"# Wirtualizacja podkatalogów językowych\n"
+"AliasMatch ^ (?: / (?: ach | af | ak | sq | am | anp | ar | ar_DZ | ar_MA | an | es_AR | hy | as | ast | de_AT | ay | az | ba | eu | bar | be | be_Latn | bn | bn_BD | bn_IN | brx | bs | bs_Cyrl | bs_Latn | br | bg | my | ca | km | ch | chr | hne | cgg | zh | zh_HK | zh_Hans | zh_Hant | ksh | kw | cr | hr | cs | da | doi | nl | nl_BE | dz | en | en_AU | en_CA | en_IE | en_PH | en_ZA | en_GB | en_US | eo | et | fo | fil | fi | frp | fr | fr_CA | fy | fur | ff | gd | gl | ka | de | el | kl | gu | gun | ht | ha | haw | he | hi | hu | is | ig | id | ia | ga | it | ja | jv | kab | kn | ks | csb | kk | rw | tlh | tlh-qaak | kok | ko | ku | ckb | ky | lo | la | lv | li | ln | lt | jbo | nds | lb | mk | mai | mg | ms | ml | mt | mnk | mi | arn | mr | mni | mn | me | mfe | nqo | nah | nap | ne | se | no | nb_NO | nb | nn | ny | oc | or | oj | os | pap | nso | fa | pms | pr | pl | pt | pt_BR | pt_PT | pa | ps | ro | rm | ru | sa | sat | sc | sco | sr | sr_Cyrl | sr_Latn | sh | sn | szl | sd | si | sk | sl | so | son | st | es | es_US | es_MX | es_PR | su | sw | sv | de_CH | tl | tg | ta | tt | te | th | bo | ti | ts | tr | tk | ug | uk | hsb | ur | ur_PK | uz | uz_Latn | ca @ valencia | ve | vec | vi | wa | cy | vls | wo | sah | yi | yo | yue | zu) /)? (. *)? $ / var / www / html / $ 1\n"
+"\n"
+"# Powiedz mod_negotiation, który język preferować\n"
+"SetEnvIf Request_URI ^ / (ach | af | ak | sq | am | anp | ar | an | hy | as | ast | ay | az | ba | eu | bar | be | bn | brx | bs | br | bg | my | ca | km | ch | chr | hne | cgg | zh | ksh | kw | cr | hr | cs | da | doi | nl | dz | en | eo | et | fo | fil | fi | frp | fr | fy | futro | ff | gd | gl | ka | de | el | kl | gu | gun | ht | ha | haw | he | hi | hu | is | ig | id | ia | ga | it | ja | jv | kab | kn | ks | csb | kk | rw | tlh | tlh-qaak | kok | ko | ku | ckb | ky | lo | la | lv | li | ln | lt | jbo | nds | lb | mk | mai | mg | ms | ml | mt | mnk | mi | arn | mr | mni | mn | me | mfe | nqo | nah | nap | ne | se | no | nb | nn | ny | oc | or | oj | os | pap | nso | fa | pms | pr | pl | pt | pa | ps | ro | rm | ru | sa | sat | sc | sco | sr | sh | sn | szl | sd | si | sk | sl | so | son | st | es | su | sw | sv | tl | tg | ta | tt | te | th | bo | ti | ts | tr | tk | ug | uk | hsb | ur | uz | ca @ valencia | ve | vec | vi | wa | cy | vls | wo | sah | yi | yo | yue | zu) / prefer-language = 1 $\n"
+"\n"
+"# Kody językowe z Weblate zawierające wielkie litery i podkreślenia muszą być traktowane\n"
+"# inaczej, mianowicie język, do którego się odnoszą, jest pisany małymi literami z łącznikiem\n"
+"SetEnvIf Request_URI ^ / ar_DZ / prefer-language = ar-dz\n"
+"SetEnvIf Request_URI ^ / ar_MA / prefer-language = ar-ma\n"
+"SetEnvIf Request_URI ^ / be_Latn / prefer-language = be-latn\n"
+"SetEnvIf Request_URI ^ / bn_BD / prefer-language = bn-bd\n"
+"SetEnvIf Request_URI ^ / bn_IN / prefer-language = bn-in\n"
+"SetEnvIf Request_URI ^ / bs_Cyrl / prefer-language = bs-cyrl\n"
+"SetEnvIf Request_URI ^ / bs_Latn / prefer-language = bs-latn\n"
+"SetEnvIf Request_URI ^ / de_AT / prefer-language = de-at\n"
+"SetEnvIf Request_URI ^ / de_CH / prefer-language = de-ch\n"
+"SetEnvIf Request_URI ^ / en_AU / prefer-language = en-au\n"
+"SetEnvIf Request_URI ^ / en_CA / prefer-language = en-ca\n"
+"SetEnvIf Request_URI ^ / en_GB / prefer-language = en-gb\n"
+"SetEnvIf Request_URI ^ / en_IE / prefer-language = en-ie\n"
+"SetEnvIf Request_URI ^ / en_PH / prefer-language = en-ph\n"
+"SetEnvIf Request_URI ^ / en_US / prefer-language = en-us\n"
+"SetEnvIf Request_URI ^ / en_ZA / prefer-language = en-za\n"
+"SetEnvIf Request_URI ^ / es_AR / prefer-language = es-ar\n"
+"SetEnvIf Request_URI ^ / es_MX / prefer-language = es-mx\n"
+"SetEnvIf Request_URI ^ / es_PR / prefer-language = es-pr\n"
+"SetEnvIf Request_URI ^ / es_US / prefer-language = es-us\n"
+"SetEnvIf Request_URI ^ / fr_CA / prefer-language = fr-ca\n"
+"SetEnvIf Request_URI ^ / nb_NO / prefer-language = nb-no\n"
+"SetEnvIf Request_URI ^ / nl_BE / prefer-language = nl-be\n"
+"SetEnvIf Request_URI ^ / pt_BR / prefer-language = pt-br\n"
+"SetEnvIf Request_URI ^ / pt_PT / prefer-language = pt-pt\n"
+"SetEnvIf Request_URI ^ / sr_Cyrl / prefer-language = sr-cyrl\n"
+"SetEnvIf Request_URI ^ / sr_Latn / prefer-language = sr-latn\n"
+"SetEnvIf Request_URI ^ / ur_PK / prefer-language = ur-pk\n"
+"SetEnvIf Request_URI ^ / uz_Latn / prefer-language = uz-latn\n"
+"SetEnvIf Request_URI ^ / zh_Hans / prefer-language = zh-hans\n"
+"SetEnvIf Request_URI ^ / zh_Hant / prefer-language = zh-hant\n"
+"SetEnvIf Request_URI ^ / zh_HK / prefer-language = zh-hk\n"
 
 #. type: Plain text
 #: _docs/Deploying_the_Website.md
@@ -5967,9 +6016,9 @@ msgstr ""
 
 #. type: Fenced code block
 #: _docs/Installing_the_Server_and_Repo_Tools.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "guix install fdroidserver\n"
-msgstr "    sudo apt-get install fdroidserver\n"
+msgstr "sudo apt-get install fdroidserver\n"
 
 #. type: Title ##
 #: _docs/Installing_the_Server_and_Repo_Tools.md
