@@ -54,6 +54,26 @@ use:
 bundle exec jekyll serve
 ```
 
+
+### Using a Vagrant VM
+
+[Vagrant](https://www.vagrantup.com/) makes it easy to setup and
+destroy VMs.  That is handy for making a clean and predictable build
+environment, regardless of the base system.  If used with VirtualBox,
+then the current directory will be shared into the VM, so you can edit
+locally, and have `jekyll serve` running in the VM.
+
+```console
+$ vagrant up
+$ vagrant ssh
+vagrant@buster:~$ cd /vagrant
+vagrant@buster:/vagrant$ bundle install --local
+vagrant@buster:/vagrant$ jekyll serve --host 0.0.0.0
+```
+
+Then connect to http://localhost:4000 to see the generated site.
+
+
 ## Local development
 
 * Clone [F-Droid's Jekyll plugin](https://gitlab.com/fdroid/jekyll-fdroid)

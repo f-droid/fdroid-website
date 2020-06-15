@@ -18,11 +18,12 @@ Both platforms allow for recurrent donations which are highly desirable for maki
 
 You can donate to F-Droid Limited (which runs the core infrastructure) directly via:
 
-[![Donate via PayPal]({% assets %}/paypal_donate_button.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=E2FCXCT6837GL)
+* [![Donate via Bitcoin]({% assets %}/bitcoin.png)](https://blockchain.info/address/15u8aAPK4jJ5N8wpWJ5gutAyyeHtKX5i18): [`15u8aAPK4jJ5N8wpWJ5gutAyyeHtKX5i18`](bitcoin:15u8aAPK4jJ5N8wpWJ5gutAyyeHtKX5i18)
 
-[![Donate via Bitcoin]({% assets %}/bitcoin.png)](https://blockchain.info/address/15u8aAPK4jJ5N8wpWJ5gutAyyeHtKX5i18): [`15u8aAPK4jJ5N8wpWJ5gutAyyeHtKX5i18`](bitcoin:15u8aAPK4jJ5N8wpWJ5gutAyyeHtKX5i18)
+* [Donate via PayPal](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=E2FCXCT6837GL)
 
-[![Donate via Flattr]({% assets %}/flattr-badge-large.png)](https://flattr.com/thing/343053/F-Droid-Repository)
+* [Donate via Flattr](https://flattr.com/thing/343053/F-Droid-Repository)
+
 
 __Bank Transfer__
 

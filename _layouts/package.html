@@ -119,11 +119,6 @@ layout: default-package-sidebar
 			<a href="https://liberapay.com/~{{ page.liberapayID }}"><img src="{% assets %}/liberapay_donate_button.svg" alt="{{ strings.liberapay_alt }}"/></a>
 		</li>
 		{% endif %}
-		{% if page.flattrID != "" and page.flattrID != nil %}
-		<li class="package-link">
-			<a href="https://flattr.com/thing/{{ page.flattrID }}"><img src="{% assets %}/flattr-badge-large.png" alt="{{ strings.flattr_alt }}"/></a>
-		</li>
-		{% endif %}
 		{% if page.bitcoin != "" and page.bitcoin != nil %}
 		<li class="package-link">
 			<a href="https://live.blockcypher.com/btc/address/{{ page.bitcoin }}" title="{{ page.bitcoin }}"><img src="{% assets %}/bitcoin.png" alt="{{ strings.bitcoin_alt }}"/></a>
@@ -134,13 +129,15 @@ layout: default-package-sidebar
 			<a href="https://live.blockcypher.com/ltc/address/{{ page.litecoin }}" title="{{ page.litecoin }}"><img src="{% assets %}/litecoin.png" alt="{{ strings.litecoin_alt }}"/></a>
 		</li>
 		{% endif %}
-		{% if page.donate != "" and page.donate != nil %}
+		{% if page.flattrID != "" and page.flattrID != nil %}
 		<li class="package-link">
-			{% if page.donate contains "paypal.com" or page.donate contains "paypal.me" %}
-			<a href="{{ page.donate }}"><img src="{% assets %}/paypal_donate_button.gif" alt="{{ strings.paypal_alt }}"/></a>
-			{% else %}
-			<a href="{{ page.donate }}">{{ strings.donate }}: {{ page.donate }}</a>
-			{% endif %}
+			<a href="https://flattr.com/thing/{{ page.flattrID }}">flattr.com/thing/{{ page.flattrID }}</a>
+		</li>
+		{% endif %}
+		{%- assign donatetest = page.donate | slice: 0, 8 -%}
+		{% if page.donate != "" and page.donate != nil and donatetest == "https://" %}
+		<li class="package-link">
+			<a href="{{ page.donate }}">{{ page.donate | replace_first: "https://", "" }}</a>
 		</li>
 		{% endif %}
 	</ul>
