@@ -62,7 +62,8 @@ The following sections describe the fields recognised within the file.
 - [_Changelog_](#Changelog)
 - [_Donate_](#Donate)
 - [_FlattrID_](#FlattrID)
-- [_LiberapayID_](#LiberapayID)
+- [_Liberapay_](#Liberapay)
+- [_OpenCollective_](#OpenCollective)
 - [_Bitcoin_](#Bitcoin)
 - [_Litecoin_](#Litecoin)
 - [_Summary_](#Summary)
@@ -254,17 +255,23 @@ leads directly to the page to donate to the project.
 This is converted to (`<flattr>`) in the XML file (_index.xml_).
 
 
+### _Liberapay_<a name="Liberapay"></a><a name="LiberapayID"></a>
 
-### _LiberapayID_<a name="LiberapayID"></a>
-
-The project’s Liberapay (https://liberapay.com) ID, if it has one. This should
-be a numeric ID, such that (for example) https://liberapay.com/~xxxxx
-which redirects to your account page. Currently the numeric ID is not displayed
-on Liberapay’s site, but you can add /public.json behind your team page and get
-the value of ID field in the JSON response.
+The project’s Liberapay (https://liberapay.com) user or group name, if
+it has one. This should be an alphanumeric name, such that (for
+example) https://liberapay.com/xxxxx which redirects to your account
+page. This used to be _LiberapayID_, which was a numeric ID fetched
+from Liberapay’s site by adding /public.json behind your team page.
 
 This is converted to (`<liberapay>`) in the XML file (_index.xml_).
 
+
+### _OpenCollective_<a name="OpenCollective"></a>
+
+The project’s OpenCollective (https://opencollective.com) user or
+group name, if it has one. This should be an alphanumeric name, such
+that (for example) https://opencollective.com/xxxxx redirects to your
+account page.
 
 
 ### _Bitcoin_<a name="Bitcoin"></a>
