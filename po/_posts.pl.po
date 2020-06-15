@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
 "POT-Creation-Date: 2020-06-02 13:08+0200\n"
-"PO-Revision-Date: 2020-06-11 18:41+0000\n"
+"PO-Revision-Date: 2020-06-15 20:47+0000\n"
 "Last-Translator: WaldiS <sto@tutanota.de>\n"
 "Language-Team: Polish <https://hosted.weblate.org/projects/f-droid/website-posts/pl/>\n"
 "Language: pl\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 4.1-dev\n"
+"X-Generator: Weblate 4.1\n"
 
 #. type: YAML Front Matter: title
 #: _posts/2017-02-20-f-droid-supports-apk-expansion-files-aka-obb.md
@@ -15093,8 +15093,9 @@ msgstr ""
 
 #. type: Plain text
 #: _posts/2020-05-29-android-updates-and-tls-connections.md
+#, fuzzy
 msgid "Fortunately, there is a solution for this! The idea is to write an open-source provider application (just like Google's provider) that does nothing but bundling `Conscrypt` and providing a stable API that allows other apps to load it. It can then be updated independently of apps like AntennaPod or F-Droid. The provider app could simply have a class with something like this:"
-msgstr ""
+msgstr "Na szczęście istnieje rozwiązanie tego problemu! Chodzi o to, aby napisać aplikację dostawcy open source (podobnie jak dostawca Google), który nie robi nic, ale łączenie `Conscrypt` i zapewnienie stabilnego interfejsu API, który pozwala innym aplikacjom go załadować. Następnie można go zaktualizować niezależnie od aplikacji, takich jak AntennaPod lub F-Droid. Aplikacja dostawcy może po prostu mieć klasę z czymś takim:"
 
 #. type: Fenced code block (java)
 #: _posts/2020-05-29-android-updates-and-tls-connections.md
@@ -15142,12 +15143,12 @@ msgstr "Niech zaufana aplikacja będzie dostawcą. Sama aplikacja F-Droid mogła
 #. type: Bullet: '* '
 #: _posts/2020-05-29-android-updates-and-tls-connections.md
 msgid "The library could query the Android system for compatible `Conscrypt` provider apps and include one of them. To make sure that this is secure, it would be possible to only include the provider if it is a system app. Then the F-Droid privileged extension could bundle and provide `Conscrypt`. Many F-Droid users probably do not use the privileged extension though, so we could still not reach all users."
-msgstr ""
+msgstr "Biblioteka może wysyłać zapytania do systemu Android w celu uzyskania zgodnych aplikacji dostawcy `Conscrypt` i dołączyć jedną z nich. Aby upewnić się, że jest to bezpieczne, byłoby możliwe uwzględnienie dostawcy tylko wtedy, gdy jest to aplikacja systemowa. Następnie uprzywilejowane rozszerzenie F-Droid może połączyć i dostarczyć `Conscrypt`. Wielu użytkowników F-Droid prawdopodobnie nie korzysta z uprzywilejowanego rozszerzenia, więc nadal nie mogliśmy dotrzeć do wszystkich użytkowników."
 
 #. type: Bullet: '* '
 #: _posts/2020-05-29-android-updates-and-tls-connections.md
 msgid "To me, the best solution seems to have a standalone app (like `org.fdroid.securityprovider`) that provides `Conscrypt`. This was also discussed on the [F-Droid Forum](https://forum.f-droid.org/t/lack-of-tls-1-2-breaking-apps-in-older-androids/9823) and originally suggested by `@bubu`. A trusted entity like F-Droid could build the provider and sign it with their keys. Those could then be verified by the calling apps that want to include `Conscrypt`."
-msgstr ""
+msgstr "Dla mnie najlepszym rozwiązaniem wydaje się mieć samodzielną aplikację (jak `org.fdroid.securityprovider`), która zapewnia `Conscrypt`. Zostało to również omówione na [Forum F-Droid](https://forum.f-droid.org/t/lack-of-tls-1-2-breaking-apps-in-older-androids/9823) i pierwotnie sugerowane przez `@bubu`. Zaufana jednostka, taka jak F-Droid, może utworzyć dostawcę i podpisać go za pomocą kluczy. Te mogą być następnie weryfikowane przez aplikacje wywołujące, które chcą zawierać `Conscrypt`."
 
 #. type: Plain text
 #: _posts/2020-05-29-android-updates-and-tls-connections.md
@@ -15158,17 +15159,17 @@ msgstr "Bardzo chciałbym zobaczyć jakiś ruch w tym kierunku. Zdecydowanie pow
 #. type: Plain text
 #: _posts/2020-05-29-android-updates-and-tls-connections.md
 msgid "Some notes:"
-msgstr ""
+msgstr "Kilka uwag:"
 
 #. type: Bullet: '* '
 #: _posts/2020-05-29-android-updates-and-tls-connections.md
 msgid "This post was written from an app developer's perspective. I try to make AntennaPod work best for all users, including those with Android 4.x. From a user's perspective, you should think about whether you still want to use old Android versions like 4.x. Android 4.4 was released in 2014, which is 6 years ago. Many critical security issues have been fixed since then. Exposing such an old device to the Internet might be a pretty big security risk, independently of the TLS libraries that are included in apps."
-msgstr ""
+msgstr "Ten post został napisany z perspektywy dewelopera aplikacji. Staram się, aby AntenaPod działa najlepiej dla wszystkich użytkowników, w tym tych z Androidem 4.x. Z punktu widzenia użytkownika powinieneś zastanowić się, czy nadal chcesz używać starych wersji systemu Android, takich jak 4.x. Android 4.4 został wydany w 2014, czyli 6 lat temu. Od tego czasu rozwiązano wiele krytycznych problemów z bezpieczeństwem. Wystawienie takiego starego urządzenia w Internecie może stanowić dość duże zagrożenie bezpieczeństwa, niezależnie od bibliotek TLS zawartych w aplikacjach."
 
 #. type: Bullet: '* '
 #: _posts/2020-05-29-android-updates-and-tls-connections.md
 msgid "Before looking into this, I did not know that you can use `ClassLoader` to execute other app's code. This is pretty nice and can be used for things like plugins. I would love to see what other developers build with that."
-msgstr ""
+msgstr "Przed przyjrzeniem się temu nie wiedziałem, że możesz użyć ` ClassLoader ` do wykonania kodu innej aplikacji. Jest to całkiem miłe i może być używane do takich rzeczy jak wtyczki. Chciałbym zobaczyć, co budują inni programiści."
 
 #~ msgid "Statistics"
 #~ msgstr "Statystyki"
