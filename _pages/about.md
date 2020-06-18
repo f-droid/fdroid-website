@@ -17,7 +17,7 @@ To chat with others about F-Droid, either join via IRC in the
 [#fdroid channel](https://webchat.freenode.net/?channels=%23fdroid) on
 freenode or join [#fdroid:f-droid.org](https://matrix.to/#/#fdroid:f-droid.org) on Matrix.
 The discussions are logged on
-[view.matrix.org](https://view.matrix.org/alias/%23fdroid:f-droid.org).
+[matrix.f-droid.org](https://matrix.f-droid.org/alias/%23fdroid:f-droid.org).
 
 There also exist bridges to Telegram and Jabber/XMPP (experimental).
 To join via Telegram, click on [this link](https://matrix.f-droid.org/fdroid/telegram/).
