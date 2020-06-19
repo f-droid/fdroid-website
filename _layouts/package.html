@@ -106,7 +106,7 @@ layout: default-package-sidebar
 		</li>
 	</ul>
 
-	{% if page.openCollective != nil or page.liberapayID != nil or page.flattrID != nil or page.bitcoin != nil or page.litecoin != nil or page.donate != nil %}
+	{% if page.openCollective != nil or page.liberapay != nil or page.flattrID != nil or page.bitcoin != nil or page.litecoin != nil or page.donate != nil %}
 	<h3>{{ strings.donate }}</h3>
 	<ul class="package-links donate-options">
 		{% if page.openCollective != "" and page.openCollective != nil %}
@@ -114,9 +114,9 @@ layout: default-package-sidebar
 			<a href="https://opencollective.com/{{ page.openCollective }}"><img src="{% assets %}/opencollective_button.png" alt="{{ strings.opencollective_alt }}"/></a>
 		</li>
 		{% endif %}
-		{% if page.liberapayID != "" and page.liberapayID != nil %}
+		{% if page.liberapay != "" and page.liberapay != nil %}
 		<li class="package-link">
-			<a href="https://liberapay.com/~{{ page.liberapayID }}"><img src="{% assets %}/liberapay_donate_button.svg" alt="{{ strings.liberapay_alt }}"/></a>
+			<a href="https://liberapay.com/{{ page.liberapay }}"><img src="{% assets %}/liberapay_donate_button.svg" alt="{{ strings.liberapay_alt }}"/></a>
 		</li>
 		{% endif %}
 		{% if page.bitcoin != "" and page.bitcoin != nil %}
