@@ -201,24 +201,3 @@ check_fdroid_apk_bot:
           $pip install python-gitlab;
           ./tools/check-fdroid-apk-bot.py;
       )
-
-
-i18n_sync:
-  stage: deploy
-  except:
-    - triggers
-  only:
-    - tags
-    - weblate
-  script:
-    - *apt-template
-    - apt-get install bash ca-certificates gettext git grep po4a ruby sed
-    - apt-get purge po4a
-    - git -C $HOME clone https://github.com/mquinson/po4a.git
-    - export PERLLIB="$HOME/po4a/lib"
-    - export PATH="$HOME/po4a:$PATH"
-    - ./tools/i18n.sh
-    - git checkout po/*.pot  # ignore the newly generated timestamp
-    - git --no-pager diff --exit-code --ignore-all-space -G'^msg' po/
-        || (echo 'This test failed because the localization files were not synced.  To do that, run `./tools/i18n.sh` then commit the changes in po/ and include them in this merge request.'; exit 1)
-  allow_failure: true
