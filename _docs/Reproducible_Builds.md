@@ -170,6 +170,38 @@ android {
 }
 ```
 
+### R8 Optimizer
+
+It appears that some R8 optimizations done in nondeterministic way,
+producing different bytecode on different build runs.
+
+For instance, R8 tries to optimize ServiceLoader usage making a static
+list of all services in the code. The order of this list may be
+different (or even incomplete) on each build run. The only way to avoid
+this behavior is disabling such optimizations declaring optimized
+classes in _proguard-rules.pro_:
+
+```
+-keep class kotlinx.coroutines.CoroutineExceptionHandler
+-keep class kotlinx.coroutines.internal.MainDispatcherFactory
+```
+
+Be careful with R8. Always test your builds multiple times and disable
+optimizations which produce a nondeterministic output.
+
+### Resource Shrinker
+
+It's possible to reduce the APK file size removing unused resources
+from the package. This is useful when a project depends on some bloat
+libraries such as AppCompat, especially when R8/ProGuard code
+shrinking is used.
+
+However, it might be possible that resource shrinker will increase the
+APK size on different platforms, especially if there is not too many
+resources to shrink, in which case then original APK will be used
+instead of the shrinked one (nondeterministic behavior of Gradle
+plugin). Avoid using resource shrinker unless it decreases the APK file
+size significantly.
 
 ### Build Server IDs
 
