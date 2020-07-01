@@ -42,7 +42,8 @@ Additionally:
     application is a fork of another (even one not included in the
     F-Droid repository) it must have a new ID, different from
     the original. Make sure to rename your fork accordingly (including
-    all active translations).
+    all active translations). Forks which only re-brand an app but do
+    not add value for users might not get accepted.
 -   Although not ideal, "non-functional" assets (e.g. artwork) *may* be
     acceptable under less permissive licenses than functional code - an
     example would be artwork assets that are licensed only for use with
