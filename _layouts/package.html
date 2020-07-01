@@ -32,27 +32,32 @@ layout: default-package-sidebar
 	</div>
 	{% if page.anti_features != nil or page.packages.first.anti_features != nil %}
 	<div class="package-anti-features">
-		<details>
-			<summary class="package-anti-features-summary">
-				{{ strings.anti_features_warning }}
-			</summary>
-			<ul class="package-version-anti-features-list">
-				{% for anti_feature in page.anti_features %}
-				<li>
-				  <a href="https://f-droid.org/wiki/page/Antifeature:{{ anti_feature }}">
-				    {{ anti_feature }}
-				  </a>
-				</li>
-				{% endfor %}
-				{% for anti_feature in page.packages.first.anti_features %}
-				<li>
-				  <a href="https://f-droid.org/wiki/page/Antifeature:{{ anti_feature }}">
-				    {{ anti_feature }}
-				  </a>
-				</li>
-				{% endfor %}
-			</ul>
-		</details>
+		<h3>{{ strings.anti_features }}</h3>
+		<p>{{ strings.anti_features_warning }} <a class="anti-features-more" href="{{ site.baseurl }}/docs/Anti-Features/">Learn more!</a></p>
+		<ul class="package-version-anti-features-list">
+			{% comment %} Display Antifeatures for package {% endcomment %}
+			{% for anti_feature in page.anti_features %}
+			<li class="anti-feature-item">
+			  <a class="anti-feature-link" href="{{ site.baseurl }}/docs/Anti-Features/#{{ anti_feature }}">
+					<img class="anti-feature-icon" src="{{ site.baseurl }}/assets/icons/antifeatures/{{ anti_feature }}.svg" alt=""> 
+					<div class="anti-feature-text">
+						{{ site.data.strings.antifeatures[anti_feature] }}
+					</div>
+			  </a>
+			</li>
+			{% endfor %}
+			{% comment %} Display Antifeatures for most recent app release (Code active?) {% endcomment %}
+			{% for anti_feature in page.packages.first.anti_features %}
+			<li class="anti-feature-item">
+			  <a class="anti-feature-link" href="{{ site.baseurl }}/docs/Anti-Features/#{{ anti_feature }}">
+					<img class="anti-feature-icon" src="{{ site.baseurl }}/assets/icons/antifeatures/{{ anti_feature }}.svg" alt=""> 
+					<div class="anti-feature-text">
+						{{ site.data.strings.antifeatures[anti_feature] }}
+					</div>
+			  </a>
+			</li>
+			{% endfor %}
+		</ul>
 	</div>
 	{% endif %}
 	<ul class="package-links">
