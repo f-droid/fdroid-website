@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2020-06-23 13:51+0200\n"
-"PO-Revision-Date: 2020-05-11 09:53+0000\n"
+"PO-Revision-Date: 2020-06-26 00:45+0000\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: Croatian <https://hosted.weblate.org/projects/f-droid/website-pages/hr/>\n"
 "Language: hr\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 4.1-dev\n"
+"X-Generator: Weblate 4.2-dev\n"
 
 #. type: YAML Front Matter: title
 #: _pages/403.md
@@ -184,16 +184,45 @@ msgid ""
 "{%- endfor -%}\n"
 "</ul>\n"
 msgstr ""
+"<ul>\n"
+"{%- for contributor in site.data.contributors -%}\n"
+"<li>\n"
+"{%- if contributor.gitlab -%}\n"
+"<a href=\"https://gitlab.com/{{ contributor.gitlab }}\" target=\"_blank\">\n"
+"{%- elsif contributor.weblate -%}\n"
+"<a href=\"https://hosted.weblate.org/user/{{ contributor.weblate }}\" target=\"_blank\">\n"
+"{%- endif -%}\n"
+"{%- if contributor.Arab and site.data.scripts[site.active_lang] == \"Arab\" -%}\n"
+"{{ contributor.Arab }}\n"
+"{%- elsif contributor.Cyrl and site.data.scripts[site.active_lang] == \"Cyrl\" -%}\n"
+"{{ contributor.Cyrl }}\n"
+"{%- elsif contributor.Jpan and site.data.scripts[site.active_lang] == \"Jpan\" -%}\n"
+"{{ contributor.Jpan }}\n"
+"{%- elsif contributor.Kore and site.data.scripts[site.active_lang] == \"Kore\" -%}\n"
+"{{ contributor.Kore }}\n"
+"{%- elsif contributor.Hans and site.data.scripts[site.active_lang] == \"Hans\" -%}\n"
+"{{ contributor.Hans }}\n"
+"{%- elsif contributor.Hant and site.data.scripts[site.active_lang] == \"Hant\" -%}\n"
+"{{ contributor.Hant }}\n"
+"{%- else -%}\n"
+"{{ contributor.name }}\n"
+"{%- endif -%}\n"
+"{%- if contributor.gitlab or contributor.weblate -%}\n"
+"</a>\n"
+"{%- endif -%}\n"
+"</li>\n"
+"{%- endfor -%}\n"
+"</ul>\n"
 
 #. type: Plain text
 #: _pages/about.md
 msgid "If you have contributed to F-Droid and your name is missing, it’s a mistake and you should [add yourself to the list](https://gitlab.com/fdroid/fdroid-website/blob/master/_data/contributors.yaml)! Please include your Weblate username if you are a translator.  Keep it sorted by surname, please."
-msgstr "Ako tvoje ime nedostaje, to je pogreška, i slobodno se [dodaj u popis](https://gitlab.com/fdroid/fdroid-website/blob/master/_data/contributors.yaml)! Molimo te, da zadržiš redoslijed imena po prezimenu."
+msgstr "Ako tvoje ime nedostaje, to je pogreška, i slobodno se [dodaj u popis](https://gitlab.com/fdroid/fdroid-website/blob/master/_data/contributors.yaml)! Dodaj tvoje korisničko ime za Weblate. Molimo te, da zadržiš redoslijed imena po prezimenu."
 
 #. type: Plain text
 #: _pages/about.md
 msgid "The original F-Droid client app was based on the Aptoide app developed by Roberto Jacinto."
-msgstr "Izvorna F-Droid aplikacija za klijente temeljila se na aplikaciji Aptoide, koju je razvio Roberto Jacinto."
+msgstr "Izvorna F-Droid aplikacija za klijente, temeljena na aplikaciji Aptoide, koju je razvio Roberto Jacinto."
 
 #. type: YAML Front Matter: title
 #: _pages/consulting.md
@@ -391,7 +420,7 @@ msgstr ""
 #: _pages/docs.md
 #, no-wrap
 msgid "Docs"
-msgstr "Dokumenti"
+msgstr "Dokumentacija"
 
 #. type: Plain text
 #: _pages/docs.md
