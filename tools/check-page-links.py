@@ -15,7 +15,11 @@ bad_md_link = re.compile(r'.*\]\s+\(')
 for f in sorted(glob.glob('po/*.po*')):
     output = ''
     with open(f) as fp:
-        catalog = read_po(fp)
+        try:
+            catalog = read_po(fp)
+        except Exception as e:
+            errorcount += 1
+            output += 'ERROR: %s' % e
     for message in catalog:
         if message.fuzzy:
             continue
