@@ -374,7 +374,7 @@ Here's a break down of what that means:
     request should not include merge commits
 
 Here is the discussion from the meeting where we nailed this down:
-<https://botbot.me/freenode/fdroid-dev/2015-08-04/?msg=46407489&page=1>
+<https://web.archive.org/web/20171220230923/https://botbot.me/freenode/fdroid-dev/2015-08-04/?msg=46407489&page=1>
 
 This article includes a good discussion of "feature branches" versus
 "release branches" and short-lived vs. long-lived branches:
