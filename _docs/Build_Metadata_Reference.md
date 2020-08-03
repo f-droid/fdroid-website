@@ -72,7 +72,7 @@ The following sections describe the fields recognised within the file.
 - [_RepoType_](#RepoType)
 - [_Repo_](#Repo)
 - [_Binaries_](#Binaries)
-- [_Build_](#Build)
+- [_Builds_](#Builds)
 - [_AntiFeatures_](#AntiFeatures)
 - [_Disabled_](#Disabled)
 - [_RequiresRoot_](#RequiresRoot)
