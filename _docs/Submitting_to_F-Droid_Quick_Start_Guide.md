@@ -195,7 +195,7 @@ installed in the build machine environment (in the fdroidserver project).  The
 relevant commit is here:
 [19e372026](https://gitlab.com/andybalaam/fdroidserver/commit/19e372026aaca62349e6f5fd541dc3ba29d94836).
 Actually though, after [discussion with the F-Droid
-devs](https://botbot.me/freenode/fdroid-dev/2017-01-17/?msg=79512863&page=1) we
+devs](https://web.archive.org/web/20171220230923/https://botbot.me/freenode/fdroid-dev/2017-01-17/?msg=79512863&page=1) we
 agreed I'd be better off not using sox during the build, so I didn't need this.
 
 Side note: if you do end up needing to modify the build environment for
