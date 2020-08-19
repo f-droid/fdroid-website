@@ -704,8 +704,8 @@ configuration to the build. These are (roughly in order of application):
     that require toolchains no longer included in current versions of
     the NDK.
 
-    The buildserver supports r10e, r11c, r12b, r13b, r14b, r15c, r16b, r17b,
-    r18b, r19c, r20b and r21. You may add support for more versions by adding
+    The buildserver supports r10e, r11c, r12b, r13b, r14b, r15c, r16b, r17c,
+    r18b, r19c, r20b and r21d. You may add support for more versions by adding
     them to ’ndk\_paths’ in your config file.
 
 `gradle: <flavour1>[,<flavour2>,...]`
