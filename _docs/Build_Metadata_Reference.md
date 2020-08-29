@@ -20,11 +20,7 @@ releases of a package/app, the fields use CamelCase starting with an
 upper case letter.  All other fields use camelCase starting with a
 lower case letter, including per-build fields, localized fields, etc.
 
-There are three supported file types for metadata files:
-
-* _.yml_ files in [YAML](http://www.yaml.org/start.html) format, used by f-droid.org
-* _.txt_ files in the old, custom, F-Droid text-based format
-* _.json_ files in [JSON](http://json.org/) format
+Metadata files are written in [YAML](http://www.yaml.org/start.html) format
 
 Note that although the metadata files are designed to be easily read
 and writable by humans, they are also processed and written by various
