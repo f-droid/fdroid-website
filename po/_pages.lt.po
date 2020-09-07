@@ -8,15 +8,15 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
 "POT-Creation-Date: 2020-07-20 19:42+0200\n"
-"PO-Revision-Date: 2018-03-21 14:38+0000\n"
-"Last-Translator: Kompiuteris meistras +37060040 <mobtechpd@gmail.com>\n"
+"PO-Revision-Date: 2020-07-29 11:17+0000\n"
+"Last-Translator: Tautvydas Zukauskas <tautzuk@tutanota.com>\n"
 "Language-Team: Lithuanian <https://hosted.weblate.org/projects/f-droid/website-pages/lt/>\n"
 "Language: lt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n % 10 == 1 && (n % 100 < 11 || n % 100 > 19)) ? 0 : ((n % 10 >= 2 && n % 10 <= 9 && (n % 100 < 11 || n % 100 > 19)) ? 1 : 2);\n"
-"X-Generator: Weblate 2.20-dev\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Weblate 4.2-dev\n"
 
 #. type: YAML Front Matter: title
 #: _pages/403.md
@@ -79,9 +79,8 @@ msgstr ""
 
 #. type: Plain text
 #: _pages/about.md
-#, fuzzy
 msgid "You can send email at [team@f-droid.org](mailto:team@f-droid.org), but messages are much more likely to be answered on the forum or #fdroid channel. If you want to help, you can [join us]({{ \"/contribute/\" | prepend: site.baseurl }})."
-msgstr "Galite aptarti F-Droid arba gauti pagalbos [forum](https://forum.f-droid.org) ir IRC kanale [#fdroid](https://webchat.freenode.net/?channels= % 23fdroid) freenode. IRC diskusijos yra registruojamos [BotBot.me](https://botbot.me/freenode/fdroid). Galite siųsti el. Laišką adresu [team@f-droid.org](mailto:team@f-droid.org), tačiau daugeliu atvejų į pranešimus bus atsakyta forume ar #fdroid kanale. Jei norite padėti, galite [prisijungti prie mūsų]({{ \"/contribute/\" | prepend: site.baseurl }})."
+msgstr "Galite siųsti el. Laišką adresu [team@f-droid.org](mailto:team@f-droid.org), tačiau daugeliu atvejų į pranešimus bus atsakyta forume ar #fdroid kanale. Jei norite padėti, galite [prisijungti prie mūsų]({{ \"/contribute/\" | prepend: site.baseurl }})."
 
 #. type: Title ###
 #: _pages/about.md
@@ -103,11 +102,10 @@ msgstr ""
 #: _pages/about.md
 #, no-wrap
 msgid "License"
-msgstr "Leidimas"
+msgstr "Licenzija"
 
 #. type: Bullet: '* '
 #: _pages/about.md
-#, fuzzy
 msgid "The source code for this site and the content produced by the F-Droid community are available under the [GNU Affero General Public License version 3 or later (AGPLv3+)](https://www.gnu.org/licenses/agpl-3.0.html)."
 msgstr "Šios svetainės šaltinis ir F-Droid bendruomenės sukurtas turinys yra prieinamas pagal [GNU Affero General Public License 3 ar vėlesnės versijos (AGPLv3 +)](https://www.gnu.org/licenses/agpl- 3.0.html)."
 
@@ -187,6 +185,35 @@ msgid ""
 "{%- endfor -%}\n"
 "</ul>\n"
 msgstr ""
+"<ul>\n"
+"{%- for contributor in site.data.contributors -%}\n"
+"<li>\n"
+"{%- if contributor.gitlab -%}\n"
+"<a href=\"https://gitlab.com/{{ contributor.gitlab }}\" target=\"_blank\">\n"
+"{%- elsif contributor.weblate -%}\n"
+"<a href=\"https://hosted.weblate.org/user/{{ contributor.weblate }}\" target=\"_blank\">\n"
+"{%- endif -%}\n"
+"{%- if contributor.Arab and site.data.scripts[site.active_lang] == \"Arab\" -%}\n"
+"{{ contributor.Arab }}\n"
+"{%- elsif contributor.Cyrl and site.data.scripts[site.active_lang] == \"Cyrl\" -%}\n"
+"{{ contributor.Cyrl }}\n"
+"{%- elsif contributor.Jpan and site.data.scripts[site.active_lang] == \"Jpan\" -%}\n"
+"{{ contributor.Jpan }}\n"
+"{%- elsif contributor.Kore and site.data.scripts[site.active_lang] == \"Kore\" -%}\n"
+"{{ contributor.Kore }}\n"
+"{%- elsif contributor.Hans and site.data.scripts[site.active_lang] == \"Hans\" -%}\n"
+"{{ contributor.Hans }}\n"
+"{%- elsif contributor.Hant and site.data.scripts[site.active_lang] == \"Hant\" -%}\n"
+"{{ contributor.Hant }}\n"
+"{%- else -%}\n"
+"{{ contributor.name }}\n"
+"{%- endif -%}\n"
+"{%- if contributor.gitlab or contributor.weblate -%}\n"
+"</a>\n"
+"{%- endif -%}\n"
+"</li>\n"
+"{%- endfor -%}\n"
+"</ul>\n"
 
 #. type: Plain text
 #: _pages/about.md
