@@ -9,7 +9,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
 "POT-Creation-Date: 2020-07-20 19:42+0200\n"
 "PO-Revision-Date: 2020-08-19 11:36+0000\n"
-"Last-Translator: Nikita Epifanov <nikgreens@protonmail.com>\n"
+"Last-Translator: Дмитрий Ильченко <dmitriy.ilchenko2@gmail.com>\n"
 "Language-Team: Russian <https://hosted.weblate.org/projects/f-droid/website-posts/ru/>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
@@ -258,18 +258,18 @@ msgstr ""
 #. type: Plain text
 #: _posts/2017-06-01-announcing-new-libraries-f-droid-update-channels.md
 msgid "In order to ensure that your app always can find updates, we are introducing two specific libraries:"
-msgstr ""
+msgstr "Чтобы обеспечить получение обновлений вашим приложением, мы предлагаем две библиотеки:"
 
 #. type: Title ###
 #: _posts/2017-06-01-announcing-new-libraries-f-droid-update-channels.md
 #, no-wrap
 msgid "\"Get F-Droid\" aka [org.fdroid.getfdroid](https://gitlab.com/fdroid/update-channels/tree/master/getfdroid#f-droid-installer)"
-msgstr ""
+msgstr "\"Скачать F-Droid\" [org.fdroid.getfdroid](https://gitlab.com/fdroid/update-channels/tree/master/getfdroid#f-droid-installer)"
 
 #. type: Plain text
 #: _posts/2017-06-01-announcing-new-libraries-f-droid-update-channels.md
 msgid "Checks whether F-Droid is installed.  If not, it will help the user to download and install F-Droid in a secure way.  F-Droid then provides the update channel for all apps available in F-Droid."
-msgstr ""
+msgstr "Проверяет, установлен ли  F-Droid. Если нет, поможет безопасно скачать и установить  F-Droid. Затем F-Droid обеспечит канал обновлений для всех приложений, доступных в  F-Droid."
 
 #. type: Title ###
 #: _posts/2017-06-01-announcing-new-libraries-f-droid-update-channels.md
@@ -286,7 +286,7 @@ msgstr ""
 #: _posts/2017-06-01-announcing-new-libraries-f-droid-update-channels.md
 #, no-wrap
 msgid "Compatible with Google Play Terms of Service"
-msgstr ""
+msgstr "Соответствует условиям использования Google Play"
 
 #. type: Plain text
 #: _posts/2017-06-01-announcing-new-libraries-f-droid-update-channels.md
@@ -14689,7 +14689,7 @@ msgstr ""
 #: _posts/2020-05-29-android-updates-and-tls-connections.md
 #, no-wrap
 msgid "Android updates and TLS connections"
-msgstr ""
+msgstr "Обновления Android и TLS соединения"
 
 #. type: Plain text
 #: _posts/2020-05-29-android-updates-and-tls-connections.md
@@ -14745,6 +14745,10 @@ msgid ""
 "    Log.d(TAG, \"Provider installed.\");\n"
 "}\n"
 msgstr ""
+"public static void install() {\n"
+"    Security.insertProviderAt(Conscrypt.newProvider(), 1);\n"
+"    Log.d(TAG, \"Provider installed.\");\n"
+"}\n"
 
 #. type: Plain text
 #: _posts/2020-05-29-android-updates-and-tls-connections.md
@@ -14763,6 +14767,13 @@ msgid ""
 "installMethod.invoke(null);\n"
 "installed = true;\n"
 msgstr ""
+"Context targetContext = context.createPackageContext(\"com.bytehamster.providerinstaller\",\n"
+"        Context.CONTEXT_INCLUDE_CODE | Context.CONTEXT_IGNORE_SECURITY);\n"
+"ClassLoader classLoader = targetContext.getClassLoader();\n"
+"Class installClass = classLoader.loadClass(\"com.bytehamster.providerinstaller.ProviderInstallerImpl\");\n"
+"Method installMethod = installClass.getMethod(\"install\", new Class[]{ });\n"
+"installMethod.invoke(null);\n"
+"installed = true;\n"
 
 #. type: Plain text
 #: _posts/2020-05-29-android-updates-and-tls-connections.md
@@ -14813,22 +14824,22 @@ msgstr ""
 #: _posts/2020-07-02-yml-is-the-only-metadata-format-the-others-will-be-removed.md
 #, no-wrap
 msgid ".yml is the only metadata format, the others will be removed"
-msgstr ""
+msgstr ".yml единственный формат метаданных, остальные будут удалены"
 
 #. type: Plain text
 #: _posts/2020-07-02-yml-is-the-only-metadata-format-the-others-will-be-removed.md
 msgid "Back in September, we [announced]({{ site.baseurl }}/{% post_url 2019-09-11-yaml-metadata %})  that the F-Droid ecosystem is moving fully to YAML formats.  That means the old `.txt` custom metadata format as well as the JSON metadata format will be entirely removed from all the tools, like _fdroidserver_.  The upcoming 2.0 release of _fdroidserver_ will only support `.yml` metadata files."
-msgstr ""
+msgstr "В сентябре, мы [анонсировали]({{ site.baseurl }}/{% post_url 2019-09-11-yaml-metadata %}) что экосистема F-Droid полностью переходит на YAML формат. Это означает, что старый  `.txt` формат метаданных, а также JSON формат метаданных будут полностью удалены из всех утилит, таких как  _fdroidserver_. Будующий релиз 2.0  _fdroidserver_ будет поддерживать только  `.yml` формат метаданных."
 
 #. type: Plain text
 #: _posts/2020-07-02-yml-is-the-only-metadata-format-the-others-will-be-removed.md
 msgid "Now is the time to convert! Thanks to the hard work of [@uniqx](https://chaos.social/@uniq) and others, it is easy:"
-msgstr ""
+msgstr "Настало время конвертировать! Благодаря тяжелой работе [@uniqx](https://chaos.social/@uniq) и других, это легко:"
 
 #. type: Plain text
 #: _posts/2020-07-02-yml-is-the-only-metadata-format-the-others-will-be-removed.md
 msgid "The `.txt.` and `.json` formats will only be available in _fdroidserver_ 1.1.x releases from here on out."
-msgstr ""
+msgstr "Начиная с этого момента, форматы `.txt.` and `.json` будут поддерживаться только в версиях _fdroidserver_ 1.1.x."
 
 #. type: YAML Front Matter: title
 #: _posts/2020-07-20-donations-with-free-software.md
