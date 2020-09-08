@@ -4,166 +4,228 @@ title: All About Descriptions, Graphics, and Screenshots
 
 ---
 
-Each app can have complete app store content, including localized descriptions,
-feature graphics, and screenshots (as of v0.103 of the F-Droid client app and
-v0.8 of _fdroidserver_).  This is possible both when apps are added via
-[build metadata](../Build_Metadata_Reference) as well as when including
-pre-built files in a simple repository.  There are three paths to including app
-store content for apps (in order of preference):
+Applications on F-Droid may provide content for the app store to make their about page more interesting and informative.
 
-
+This is supported from F-Droid version 0.103 and *fdroidserver* version 0.8.
 
 * Do not remove this line (it will not be displayed)
 {:toc}
 
-There are two data formats:
+## Latest tab criteria
 
-* descriptive materials in plain text or HTML
-* graphics and screenshots as PNG or JPEG files
+In F-Droid client, since release 1.6, only applications that have all of the following are shown on the Latest tab: 
 
-One important detail: dangerous and unneeded metadata is stripped from
-image files before they are included in the repo.  For example, JPEG
-EXIF data has
-[security issues](https://threatpost.com/google-shuts-down-potentially-massive-android-bug/120393/),
-and it is not needed to display images.  This can also mean that the
-images are recompressed.
+* Name
+* Summary
+* Description
+* License
+* a What’s New entry for at least one release
+* at least one graphic (screenshot or a feature graphic)
+* at least one of the above translated
 
+Learn more at the [announcement post](https://f-droid.org/en/2019/03/26/the-latest-tab-now-highlights-good-descriptions.html). 
 
-## In the app's source repository
+## Data format
 
-There are two options for including the app store materials in an
-app's source repository:
-[fastlane supply](https://github.com/fastlane/fastlane/blob/2.28.7/supply/README.md#images-and-screenshots)
-and
-[Triple-T Gradle Play Publisher](https://github.com/Triple-T/gradle-play-publisher#play-store-metadata).
-Both of these are free software tools that integrate into an Android
-developer's workflow.  Once the files are included in the app's source
-repo, and those files are included in a tagged release of the app,
-F-Droid will include all those files.
+### Image file formats
 
-In the end, it is not actually necessary to actually install or use
-either _fastlane supply_ nor _Gradle Play Publisher_.  F-Droid
-includes these files purely based on the standard file layout that
-those tools use.
+Images may be provided in PNG or JPEG format. They must have the ending `png`, `jpg` or `jpeg`.
 
-All the localized descriptions and graphics will automatically show up
-in the F-Droid repo once they are available in the source repo of a
-release that the repo builds.  For example, if these files are
-included in a _git_ repo's _master_ branch but not yet in a tagged
-release, they will not be included.
+It is important to note that dangerous and unneeded metadata is stripped from image files before they are included in
+the repo. For example, JPEG EXIF data has
+[security issues](https://threatpost.com/google-shuts-down-potentially-massive-android-bug/120393/), and it is not
+needed to display images. This also means that images may be recompressed.
 
-The last important detail is that the texts in the app's metadata file
-will override all other descriptive texts from
-_Fastlane_/_Triple-T_. That is specifically
-[_Name_](../Build_Metadata_Reference/#Name),
-[_Summary_](../Build_Metadata_Reference/#Summary), and
-[_Description_](../Build_Metadata_Reference/#Description).  Once an
-app's descriptive texts have been moved into the source repo, then
-file a
-[merge request](https://gitlab.com/fdroid/fdroiddata/merge_requests)
-or [issue](https://gitlab.com/fdroid/fdroiddata/issues) to remove
-_Summary_ and _Description_ from the app's metadata file.
+### HTML descriptions
 
-Here's the general rule of filling the index from the metadata sources:
+The detailed app description may use HTML tags. Note that not all tags are supported by the renderer.
 
-```
-metadata file --> fdroiddata localized files --> fastlane/triple-t in app source
-```
+* Common tags like `li`, `a` with `href`, `ul`, `ol`, `li`, `b`, `u` and `i` are supported.
+* Certain tags are explicitly prohibited, namely `applet`, `base`, `body`, `button`, `embed`, `form`, `head`, `html`,
+`iframe`, `img`, `input`, `link`, `object`, `picture`, `script`, `source`, `style`, `svg` and `video`.
+* Note that a linebreak will automatically be converted to a `br` tag.
+* You may not make use of JavaScript.
 
-For things that can also be scraped from the APK, then we get:
+## Ways of providing metadata
 
-```
-metadata file --> fdroiddata localized files --> fastlane/triple-t in app source --> APK
-```
+Adding metadata can be done in the following three ways.
 
-## In the app's build metadata in an _fdroiddata_ collection
+### In the application's source repository
 
-All the app store materials can also be added to any _fdroiddata_
-repository of build metadata.  This follows a file layout modeled
-after
-[fastlane supply](https://github.com/fastlane/fastlane/blob/2.28.7/supply/README.md#images-and-screenshots),
-modified to fit into the _fdroiddata_ workflow.  Any files in this
-layout will be copied into the repo and added to the repo's index file
-by `fdroid update`.
+For the official F-Droid repository, it is **strongly encouraged** to add metadata in the application's source repo for
+for the following reasons:
 
-```
-- <fdroiddata>/
-  └── metadata/
-      └── <package-id>/
-          └── <locale>/
-              ├── full_description.txt
-              ├── short_description.txt
-              ├── title.txt
-              ├── video.txt
-              ├── changelogs/
-              │   ├── <version-code>.txt
-              │   └── <version-code>.txt
-              └── images/
-                  ├── featureGraphic.png
-                  ├── icon.png
-                  ├── promoGraphic.png
-                  ├── tvBanner.png
-                  ├── phoneScreenshots/
-                  │   └── *.png
-                  ├── sevenInchScreenshots/
-                  │   └── *.png
-                  ├── tenInchScreenshots/
-                  │   └── *.png
-                  ├── tvScreenshots/
-                  │   └── *.png
-                  └── wearScreenshots/
-                      └── *.png
-```
+* The application's metadata is under direct control of the repository owners
+* Metadata from the repository is copied to the F-Droid repo automatically (thus no merge requests are needed)
 
-The images must be either JPEGs or PNGs.
+F-Droid supports two distinct file structures. These aim to be compatible with existing free software tools that allow publishing applications to Google Play. It is not required to install any of these
+tools, the file structure can easily be created manually instead.
 
-Example:
+Please be aware that texts in the app’s metadata file will override all other descriptive texts provided through the
+structures explained below. This affects [_Name_](../Build_Metadata_Reference/#Name),
+[_Summary_](../Build_Metadata_Reference/#Summary), and [_Description_](../Build_Metadata_Reference/#Description).
+Once metadata fields that were previously in the metadata file have been moved to the app’s source repo, please file a
+[merge request](https://gitlab.com/fdroid/fdroiddata/merge_requests) or
+[issue](https://gitlab.com/fdroid/fdroiddata/issues) to remove _Summary_ and _Description_ from the app's metadata file.
+ 
+For more details, see the [precedence rules](#precedence) described at the end of this file.
 
-* .../ToGoZip/app/...
-  * the sourcecode for the android app ToGoZip
-* [.../ToGoZip/fastlane/metadata/android/en-US/full_description.txt](https://github.com/k3b/ToGoZip/blob/master/fastlane/metadata/android/en-US/full_description.txt)
-  * contains the (us-) English description of the app ToGoZip.
-* [.../ToGoZip/fastlane/metadata/android/de-DE/full_description.txt](https://github.com/k3b/ToGoZip/blob/master/fastlane/metadata/android/de-DE/full_description.txt)
-  * contains the German description of the app ToGoZip.
-* [.../ToGoZip/fastlane/metadata/android/en-US/changelogs/9.txt](https://github.com/k3b/ToGoZip/blob/master/fastlane/metadata/android/en-US/changelogs/9.txt)
-  * contains description of the changes made in versionCode **9**
-  * in fdroid app this will be shown above the app description
-* .../ToGoZip/fastlane/metadata/android/en-US/images/featureGraphic.png 
-  * this image will be shown on top of the fdroid-s app description
-* .../ToGoZip/fastlane/metadata/android/en-US/images/phoneScreenshots/....
-  * images in this folder will be shown below the fdroid-s app description
+F-Droid will only use metadata files from the latest release. This means that *fdroidserver* will check out the latest
+version it knows and scan the repository at the state of that version for metadata files.
 
-## Directly in the F-Droid repo
+All metadata files are completely optional, except for the short summary description as well as the longer full
+description. However, apps which do not fulfill certain [criteria](#latest-tab-criteria) will not be shown on the Latest tab.
 
-The ultimate destination for files from the app's source repo and
-_fdroiddata_ metadata sub-directories is in the F-Droid repo.  The
-text all gets included into the index file (aka _index-v1.json_).  All
-of the graphics files can be directly included in the repo.  If
-graphics files are also in the app's source or _fdroiddata_, then the
-files directly in the repo will be overwritten.  The text files from
-the _fastlane_ layout are ignored if they are in the repo.
+#### Fastlane structure
+
+The first of the two structures is aiming to be compatible to the
+[fastlane supply](https://github.com/fastlane/fastlane/blob/2.28.7/supply/README.md#images-and-screenshots) tool.
+
+The basic file structure is as follows. Pay attention to the notes at the right. When this structure is created, it
+needs to be place in the correct position as outlined below.
+
 
 ```
-- fdroid/
-  └── repo/
-      └── <package-id>/
-          └── <locale>/
+├── en-US                       (en-US is the F-Droid fallback language)
+│   ├── short_description.txt   (short description, max 80 chars, mandatory)
+│   ├── full_description.txt    (full app description, mandatory)
+│   ├── title.txt               (app name)
+│   ├── video.txt               (URL to a video introducing the app)
+│   ├── images
+│   │   ├── icon.png            (app icon)
+│   │   ├── featureGraphic.png  (promo banner, shown on top of the app desc in F-Droid client; landscape)
+│   │   ├── tvBanner.png        ("icon" for TV devices, currently not used)
+│   │   ├── phoneScreenshots
+│   │   │   ├── 1.png
+│   │   │   ├── 2.png
+│   │   │   ...
+│   │   ├── sevenInchScreenshots/
+│   │   ├── tenInchScreenshots/ (you may add different screenshots for different screen sizes)
+│   │   ├── tvScreenshots/
+│   │   └── wearScreenshots/
+│   └── changelogs
+│       ├── 100000.txt          (must correspond to versionCode, literally, no padding)
+│       ├── 100100.txt          (if the version code was set to 100100)
+│       └── 100101.txt          (maximum size: 500 characters)
+└── ru                          (other locale codes)
+    ...                         (localized metadata is always preferred by the client)
+    └── changelogs
+        └── 100100.txt
+```
+
+This structure must be placed at one of the following locations from **the repository's root**:
+
+* `metadata/`
+* `fastlane/metadata/android/`
+
+An advanced option which supports **build flavors** is the following, again placed in the repository's root:
+
+* `src/<buildFlavor>/fastlane/metadata/android/`
+
+Note that placing the structure anywhere else, like in the gradle module's root, **won't work**.
+
+#### Triple-T structure
+
+The second supported structure is compatible with the tool
+[Triple-T Gradle Play Publisher](https://github.com/Triple-T/gradle-play-publisher/blob/2.8.0/README.md#publishing-listings).
+
+Place the following structure at `<module>/src/main/play/` or, for **build flavor** support, at `<module>/src/<buildFlavor>/play/`, where `<module>` is the gradle module of your app (in many cases, this is just the folder `app`):
+
+
+```
+├── contact-email.txt                   (Developer email / AuthorEmail)
+├── contact-website.txt                 (Developer website / AuthorWebSite)
+├── release-notes
+│   └── en-US
+│       └── default.txt                 (latest changelog)
+└── listings
+    ├── en-US                           (en-US is the default locale in F-Droid)
+    │   ├── title.txt                   (app name)
+    │   ├── short-description.txt       (short description, max 80 chars, mandatory)
+    │   ├── full-description.txt        (full app description, mandatory)
+    │   ├── video-url.txt               (URL to a video introducing the app)
+    │   ├── whatsnew                    (alternative changelog location; single file, no .txt)
+    │   └── graphics
+    │       ├── icon                    (app icon; useful e.g. for "service apps" containing none)
+    │       │   └── *.(png|jpg)         1 image, usually 512x512
+    │       ├── feature-graphic         (promo banner, shown on top of the app desc in F-Droid client)
+    │       │   └── *.(png|jpg)         1 image, usually 1024x500
+    │       ├── phone-screenshots
+    │       │   └── *.(png|jpg)
+    │       ├── tablet-screenshots
+    │       │   └── *.(png|jpg)
+    │       ├── large-tablet-screenshots
+    │       │   └── *.(png|jpg)
+    │       ├── tv-banner               ("icon" for TV devices, currently not used)
+    │       │   └── *.(png|jpg)
+    │       ├── tv-screenshots
+    │       │   └── *.(png|jpg)
+    │       └── wear-screenshots
+    │           └── *.(png|jpg)
+    ├── de                              (other locales)
+        ├── ...
+```
+
+### In the app's build metadata in an *fdroiddata* collection
+
+**Note**: This option is only meant for those who host their own repositories. If you are a developer who wants to get
+an app into the main F-Droid repository, **do not choose this option**. Specifically, screenshots may not be added to
+the *fdroiddata* repository.
+
+Metadata files can also be added to any *fdroiddata* repository of build metadata. The file structure is modelled after
+fastlane as well and it looks the same as shown above, with the following additional notes.
+
+* Place the structure in the following location: `<fdroiddata>/metadata/<packageId>/`
+   * For example, for `en-US`, `title.txt` would reside in this location:
+   `<fdroiddata>/metadata/<packageId>/en-US/title.txt`
+* Instead of `short_description.txt`, the summary file should be named `summary.txt`.
+* Instead of `full_description.txt`, the description file should be named `description.txt`.
+* Not following the above two points causes the linter to fail.
+
+### In the F-Droid repo
+
+**Note**: This option is only available to those who host their own repositories.
+
+The ultimate destination for files from the app’s source repo and *fdroiddata* metadata sub-directories is in the
+F-Droid repo. The text all gets included into the index file (aka *index-v1.json*). All of the graphics files can be
+directly included in the repo.
+
+If graphics files are also in the app’s source or *fdroiddata*, then the files directly in
+the repo will be overwritten.
+
+You may not place text files directly in the repo.
+
+For reference, picture files can be placed in the repo at the following locations:
+
+```
+- fdroid
+  └── repo
+      └── <package-id>
+          └── <locale>
               ├── featureGraphic.png
               ├── icon.png
-              ├── promoGraphic.png
               ├── tvBanner.png
-              ├── phoneScreenshots/
+              ├── phoneScreenshots
               │   └── *.png
-              ├── sevenInchScreenshots/
+              ├── sevenInchScreenshots
               │   └── *.png
-              ├── tenInchScreenshots/
+              ├── tenInchScreenshots
               │   └── *.png
-              ├── tvScreenshots/
+              ├── tvScreenshots
               │   └── *.png
-              └── wearScreenshots/
+              └── wearScreenshots
                   └── *.png
 ```
 
-`fdroid update` adds all the graphics files it finds in the repo to
-the index.  `fdroid server update` will sync all of the files in the
-repo to the various locations where the repo is actually hosted.
+## Precedence
+
+The following general precedence rules are applied when multiple of the above options provide metadata:
+
+* The metadata file (i. e. `<fdroiddata>/metadata/<packageId>.yml`) overwrites *fdroiddata* files, even localized ones.
+* The *fdroiddata* files overwrite metadata from the app source.
+* For data that is also contained in the APK file like the app's name, the previous two options both overwrite the
+data from the APK file.
+
+However, the following more specific rule also applies:
+
+* Graphic files from the app’s source of *fdroiddata* overwrites files in the repo.
