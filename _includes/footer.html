@@ -9,8 +9,12 @@
           ({% fdroid_repo_info %}, fdroid-website <a href="https://gitlab.com/fdroid/fdroid-website/tree/{% git_hash %}">{% git_tag %}</a>)
         </span>
 	<span class="edit-this-page-area">
-	  {%- if site.active_lang == site.default_lang or site.active_lang == 'en' -%}
+	  {%- if site.active_lang == site.default_lang -%}
 	  <a href="https://gitlab.com/fdroid/fdroid-website/edit/master/{{ page.relative_path }}" target="_blank">
+	    {{ site.data.strings.navigation.edit_on_gitlab }}
+	  </a>
+	  {%- elsif site.active_lang == 'en' -%}
+	  <a href="https://gitlab.com/fdroid/fdroid-website/edit/master/{{ page.relative_path | remove_first: "en/" }}" target="_blank">
 	    {{ site.data.strings.navigation.edit_on_gitlab }}
 	  </a>
 	  {%- else -%}
