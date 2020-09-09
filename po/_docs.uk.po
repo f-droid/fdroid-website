@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
-"POT-Creation-Date: 2020-09-09 15:24+0200\n"
+"POT-Creation-Date: 2020-08-13 21:53+0200\n"
 "PO-Revision-Date: 2020-08-01 07:53+0000\n"
 "Last-Translator: ihor_ck <igor_ck@outlook.com>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/f-droid/website-docs/uk/>\n"
@@ -26,12 +26,7 @@ msgstr "Усе про опис, зображення та знімки екра�
 
 #. type: Plain text
 #: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
-msgid "Applications on F-Droid may provide content for the app store to make their about page more interesting and informative."
-msgstr ""
-
-#. type: Plain text
-#: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
-msgid "This is supported from F-Droid version 0.103 and *fdroidserver* version 0.8."
+msgid "Each app can have complete app store content, including localized descriptions, feature graphics, and screenshots (as of v0.103 of the F-Droid client app and v0.8 of _fdroidserver_).  This is possible both when apps are added via [build metadata](../Build_Metadata_Reference) as well as when including pre-built files in a simple repository.  There are three paths to including app store content for apps (in order of preference):"
 msgstr ""
 
 #. type: Plain text
@@ -48,402 +43,204 @@ msgstr ""
 "* Не усувайте цю лінію (вона не відображатиметься)\n"
 "{:toc}\n"
 
-#. type: Title ##
+#. type: Plain text
 #: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
-#, no-wrap
-msgid "Latest tab criteria"
+msgid "There are two data formats:"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
+msgid "descriptive materials in plain text or HTML"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
+msgid "graphics and screenshots as PNG or JPEG files"
 msgstr ""
 
 #. type: Plain text
 #: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
-msgid "In F-Droid client, since release 1.6, only applications that have all of the following are shown on the Latest tab:"
-msgstr ""
-
-#. type: Bullet: '* '
-#: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
-msgid "Name"
-msgstr ""
-
-#. type: Bullet: '* '
-#: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
-msgid "Summary"
-msgstr ""
-
-#. type: Bullet: '* '
-#: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
-msgid "Description"
-msgstr ""
-
-#. type: Title ###
-#: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
-#: _docs/Repository_Style_Guide.md
-#, no-wrap
-msgid "License"
-msgstr "Ліцензія"
-
-#. type: Bullet: '* '
-#: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
-msgid "a What’s New entry for at least one release"
-msgstr ""
-
-#. type: Bullet: '* '
-#: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
-msgid "at least one graphic (screenshot or a feature graphic)"
-msgstr ""
-
-#. type: Bullet: '* '
-#: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
-msgid "at least one of the above translated"
-msgstr ""
-
-#. type: Plain text
-#: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
-msgid "Learn more at the [announcement post](https://f-droid.org/en/2019/03/26/the-latest-tab-now-highlights-good-descriptions.html)."
+msgid "One important detail: dangerous and unneeded metadata is stripped from image files before they are included in the repo.  For example, JPEG EXIF data has [security issues](https://threatpost.com/google-shuts-down-potentially-massive-android-bug/120393/), and it is not needed to display images.  This can also mean that the images are recompressed."
 msgstr ""
 
 #. type: Title ##
 #: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
 #, no-wrap
-msgid "Data format"
+msgid "In the app's source repository"
 msgstr ""
 
-#. type: Title ###
+#. type: Plain text
+#: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
+msgid "There are two options for including the app store materials in an app's source repository: [fastlane supply](https://github.com/fastlane/fastlane/blob/2.28.7/supply/README.md#images-and-screenshots)  and [Triple-T Gradle Play Publisher](https://github.com/Triple-T/gradle-play-publisher#play-store-metadata).  Both of these are free software tools that integrate into an Android developer's workflow.  Once the files are included in the app's source repo, and those files are included in a tagged release of the app, F-Droid will include all those files."
+msgstr ""
+
+#. type: Plain text
+#: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
+msgid "In the end, it is not actually necessary to actually install or use either _fastlane supply_ nor _Gradle Play Publisher_.  F-Droid includes these files purely based on the standard file layout that those tools use."
+msgstr ""
+
+#. type: Plain text
+#: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
+msgid "All the localized descriptions and graphics will automatically show up in the F-Droid repo once they are available in the source repo of a release that the repo builds.  For example, if these files are included in a _git_ repo's _master_ branch but not yet in a tagged release, they will not be included."
+msgstr ""
+
+#. type: Plain text
+#: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
+msgid "The last important detail is that the texts in the app's metadata file will override all other descriptive texts from _Fastlane_/_Triple-T_. That is specifically [_Name_](../Build_Metadata_Reference/#Name), [_Summary_](../Build_Metadata_Reference/#Summary), and [_Description_](../Build_Metadata_Reference/#Description).  Once an app's descriptive texts have been moved into the source repo, then file a [merge request](https://gitlab.com/fdroid/fdroiddata/merge_requests)  or [issue](https://gitlab.com/fdroid/fdroiddata/issues) to remove _Summary_ and _Description_ from the app's metadata file."
+msgstr ""
+
+#. type: Plain text
+#: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
+msgid "Here's the general rule of filling the index from the metadata sources:"
+msgstr ""
+
+#. type: Fenced code block
 #: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
 #, no-wrap
-msgid "Image file formats"
+msgid "metadata file --> fdroiddata localized files --> fastlane/triple-t in app source\n"
 msgstr ""
 
 #. type: Plain text
 #: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
-msgid "Images may be provided in PNG or JPEG format. They must have the ending `png`, `jpg` or `jpeg`."
+msgid "For things that can also be scraped from the APK, then we get:"
 msgstr ""
 
-#. type: Plain text
-#: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
-msgid "It is important to note that dangerous and unneeded metadata is stripped from image files before they are included in the repo. For example, JPEG EXIF data has [security issues](https://threatpost.com/google-shuts-down-potentially-massive-android-bug/120393/), and it is not needed to display images. This also means that images may be recompressed."
-msgstr ""
-
-#. type: Title ###
+#. type: Fenced code block
 #: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
 #, no-wrap
-msgid "HTML descriptions"
-msgstr ""
-
-#. type: Plain text
-#: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
-msgid "The detailed app description may use HTML tags. Note that not all tags are supported by the renderer."
-msgstr ""
-
-#. type: Bullet: '* '
-#: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
-msgid "Common tags like `li`, `a` with `href`, `ul`, `ol`, `li`, `b`, `u` and `i` are supported."
-msgstr ""
-
-#. type: Plain text
-#: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
-#, no-wrap
-msgid ""
-"* Certain tags are explicitly prohibited, namely `applet`, `base`, `body`, `button`, `embed`, `form`, `head`, `html`,\n"
-"`iframe`, `img`, `input`, `link`, `object`, `picture`, `script`, `source`, `style`, `svg` and `video`.\n"
-"* Note that a linebreak will automatically be converted to a `br` tag.\n"
-"* You may not make use of JavaScript.\n"
+msgid "metadata file --> fdroiddata localized files --> fastlane/triple-t in app source --> APK\n"
 msgstr ""
 
 #. type: Title ##
 #: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
 #, no-wrap
-msgid "Ways of providing metadata"
+msgid "In the app's build metadata in an _fdroiddata_ collection"
 msgstr ""
 
 #. type: Plain text
 #: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
-msgid "Adding metadata can be done in the following three ways."
-msgstr ""
-
-#. type: Title ###
-#: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
-#, no-wrap
-msgid "In the application's source repository"
-msgstr ""
-
-#. type: Plain text
-#: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
-msgid "For the official F-Droid repository, it is **strongly encouraged** to add metadata in the application's source repo for for the following reasons:"
-msgstr ""
-
-#. type: Bullet: '* '
-#: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
-msgid "The application's metadata is under direct control of the repository owners"
-msgstr ""
-
-#. type: Bullet: '* '
-#: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
-msgid "Metadata from the repository is copied to the F-Droid repo automatically (thus no merge requests are needed)"
-msgstr ""
-
-#. type: Plain text
-#: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
-msgid "F-Droid supports two distinct file structures. These aim to be compatible with existing free software tools that allow publishing applications to Google Play. It is not required to install any of these tools, the file structure can easily be created manually instead."
-msgstr ""
-
-#. type: Plain text
-#: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
-msgid "Please be aware that texts in the app’s metadata file will override all other descriptive texts provided through the structures explained below. This affects [_Name_](../Build_Metadata_Reference/#Name), [_Summary_](../Build_Metadata_Reference/#Summary), and [_Description_](../Build_Metadata_Reference/#Description).  Once metadata fields that were previously in the metadata file have been moved to the app’s source repo, please file a [merge request](https://gitlab.com/fdroid/fdroiddata/merge_requests) or [issue](https://gitlab.com/fdroid/fdroiddata/issues) to remove _Summary_ and _Description_ from the app's metadata file."
-msgstr ""
-
-#. type: Plain text
-#: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
-msgid "For more details, see the [precedence rules](#precedence) described at the end of this file."
-msgstr ""
-
-#. type: Plain text
-#: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
-msgid "F-Droid will only use metadata files from the latest release. This means that *fdroidserver* will check out the latest version it knows and scan the repository at the state of that version for metadata files."
-msgstr ""
-
-#. type: Plain text
-#: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
-msgid "All metadata files are completely optional, except for the short summary description as well as the longer full description. However, apps which do not fulfill certain [criteria](#latest-tab-criteria) will not be shown on the Latest tab."
-msgstr ""
-
-#. type: Title ####
-#: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
-#, no-wrap
-msgid "Fastlane structure"
-msgstr ""
-
-#. type: Plain text
-#: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
-msgid "The first of the two structures is aiming to be compatible to the [fastlane supply](https://github.com/fastlane/fastlane/blob/2.28.7/supply/README.md#images-and-screenshots) tool."
-msgstr ""
-
-#. type: Plain text
-#: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
-msgid "The basic file structure is as follows. Pay attention to the notes at the right. When this structure is created, it needs to be place in the correct position as outlined below."
+msgid "All the app store materials can also be added to any _fdroiddata_ repository of build metadata.  This follows a file layout modeled after [fastlane supply](https://github.com/fastlane/fastlane/blob/2.28.7/supply/README.md#images-and-screenshots), modified to fit into the _fdroiddata_ workflow.  Any files in this layout will be copied into the repo and added to the repo's index file by `fdroid update`."
 msgstr ""
 
 #. type: Fenced code block
 #: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
 #, no-wrap
 msgid ""
-"├── en-US                       (en-US is the F-Droid fallback language)\n"
-"│   ├── short_description.txt   (short description, max 80 chars, mandatory)\n"
-"│   ├── full_description.txt    (full app description, mandatory)\n"
-"│   ├── title.txt               (app name)\n"
-"│   ├── video.txt               (URL to a video introducing the app)\n"
-"│   ├── images\n"
-"│   │   ├── icon.png            (app icon)\n"
-"│   │   ├── featureGraphic.png  (promo banner, shown on top of the app desc in F-Droid client; landscape)\n"
-"│   │   ├── tvBanner.png        (\"icon\" for TV devices, currently not used)\n"
-"│   │   ├── phoneScreenshots\n"
-"│   │   │   ├── 1.png\n"
-"│   │   │   ├── 2.png\n"
-"│   │   │   ...\n"
-"│   │   ├── sevenInchScreenshots/\n"
-"│   │   ├── tenInchScreenshots/ (you may add different screenshots for different screen sizes)\n"
-"│   │   ├── tvScreenshots/\n"
-"│   │   └── wearScreenshots/\n"
-"│   └── changelogs\n"
-"│       ├── 100000.txt          (must correspond to versionCode, literally, no padding)\n"
-"│       ├── 100100.txt          (if the version code was set to 100100)\n"
-"│       └── 100101.txt          (maximum size: 500 characters)\n"
-"└── ru                          (other locale codes)\n"
-"    ...                         (localized metadata is always preferred by the client)\n"
-"    └── changelogs\n"
-"        └── 100100.txt\n"
+"- <fdroiddata>/\n"
+"  └── metadata/\n"
+"      └── <package-id>/\n"
+"          └── <locale>/\n"
+"              ├── full_description.txt\n"
+"              ├── short_description.txt\n"
+"              ├── title.txt\n"
+"              ├── video.txt\n"
+"              ├── changelogs/\n"
+"              │   ├── <version-code>.txt\n"
+"              │   └── <version-code>.txt\n"
+"              └── images/\n"
+"                  ├── featureGraphic.png\n"
+"                  ├── icon.png\n"
+"                  ├── promoGraphic.png\n"
+"                  ├── tvBanner.png\n"
+"                  ├── phoneScreenshots/\n"
+"                  │   └── *.png\n"
+"                  ├── sevenInchScreenshots/\n"
+"                  │   └── *.png\n"
+"                  ├── tenInchScreenshots/\n"
+"                  │   └── *.png\n"
+"                  ├── tvScreenshots/\n"
+"                  │   └── *.png\n"
+"                  └── wearScreenshots/\n"
+"                      └── *.png\n"
+msgstr ""
+"- <fdroiddata>/\n"
+"  └── metadata/\n"
+"      └── <package-id>/\n"
+"          └── <locale>/\n"
+"              ├── full_description.txt\n"
+"              ├── short_description.txt\n"
+"              ├── title.txt\n"
+"              ├── video.txt\n"
+"              ├── changelogs/\n"
+"              │   ├── <version-code>.txt\n"
+"              │   └── <version-code>.txt\n"
+"              └── images/\n"
+"                  ├── featureGraphic.png\n"
+"                  ├── icon.png\n"
+"                  ├── promoGraphic.png\n"
+"                  ├── tvBanner.png\n"
+"                  ├── phoneScreenshots/\n"
+"                  │   └── *.png\n"
+"                  ├── sevenInchScreenshots/\n"
+"                  │   └── *.png\n"
+"                  ├── tenInchScreenshots/\n"
+"                  │   └── *.png\n"
+"                  ├── tvScreenshots/\n"
+"                  │   └── *.png\n"
+"                  └── wearScreenshots/\n"
+"                      └── *.png\n"
+
+#. type: Plain text
+#: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
+msgid "The images must be either JPEGs or PNGs."
 msgstr ""
 
 #. type: Plain text
 #: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
-msgid "This structure must be placed at one of the following locations from **the repository's root**:"
-msgstr ""
-
-#. type: Bullet: '* '
-#: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
-msgid "`metadata/`"
-msgstr ""
-
-#. type: Bullet: '* '
-#: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
-msgid "`fastlane/metadata/android/`"
-msgstr ""
-
-#. type: Plain text
-#: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
-msgid "An advanced option which supports **build flavors** is the following, again placed in the repository's root:"
-msgstr ""
-
-#. type: Bullet: '* '
-#: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
-msgid "`src/<buildFlavor>/fastlane/metadata/android/`"
-msgstr ""
-
-#. type: Plain text
-#: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
-msgid "Note that placing the structure anywhere else, like in the gradle module's root, **won't work**."
-msgstr ""
-
-#. type: Title ####
-#: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
-#, no-wrap
-msgid "Triple-T structure"
-msgstr ""
-
-#. type: Plain text
-#: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
-msgid "The second supported structure is compatible with the tool [Triple-T Gradle Play Publisher](https://github.com/Triple-T/gradle-play-publisher/blob/2.8.0/README.md#publishing-listings)."
+msgid "Example:"
 msgstr ""
 
 #. type: Plain text
 #: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
 #, no-wrap
-msgid "Place the following structure at `<module>/src/main/play/` or, for **build flavor** support, at `<module>/src/<buildFlavor>/play/`, where `<module>` is the gradle module of your app (in many cases, this is just the folder `app`):\n"
+msgid ""
+"* .../ToGoZip/app/...\n"
+"  * the sourcecode for the android app ToGoZip\n"
+"* [.../ToGoZip/fastlane/metadata/android/en-US/full_description.txt](https://github.com/k3b/ToGoZip/blob/master/fastlane/metadata/android/en-US/full_description.txt)\n"
+"  * contains the (us-) English description of the app ToGoZip.\n"
+"* [.../ToGoZip/fastlane/metadata/android/de-DE/full_description.txt](https://github.com/k3b/ToGoZip/blob/master/fastlane/metadata/android/de-DE/full_description.txt)\n"
+"  * contains the German description of the app ToGoZip.\n"
+"* [.../ToGoZip/fastlane/metadata/android/en-US/changelogs/9.txt](https://github.com/k3b/ToGoZip/blob/master/fastlane/metadata/android/en-US/changelogs/9.txt)\n"
+"  * contains description of the changes made in versionCode **9**\n"
+"  * in fdroid app this will be shown above the app description\n"
+"* .../ToGoZip/fastlane/metadata/android/en-US/images/featureGraphic.png \n"
+"  * this image will be shown on top of the fdroid-s app description\n"
+"* .../ToGoZip/fastlane/metadata/android/en-US/images/phoneScreenshots/....\n"
+"  * images in this folder will be shown below the fdroid-s app description\n"
+msgstr ""
+
+#. type: Title ##
+#: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
+#, no-wrap
+msgid "Directly in the F-Droid repo"
+msgstr ""
+
+#. type: Plain text
+#: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
+msgid "The ultimate destination for files from the app's source repo and _fdroiddata_ metadata sub-directories is in the F-Droid repo.  The text all gets included into the index file (aka _index-v1.json_).  All of the graphics files can be directly included in the repo.  If graphics files are also in the app's source or _fdroiddata_, then the files directly in the repo will be overwritten.  The text files from the _fastlane_ layout are ignored if they are in the repo."
 msgstr ""
 
 #. type: Fenced code block
 #: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
 #, no-wrap
 msgid ""
-"├── contact-email.txt                   (Developer email / AuthorEmail)\n"
-"├── contact-website.txt                 (Developer website / AuthorWebSite)\n"
-"├── release-notes\n"
-"│   └── en-US\n"
-"│       └── default.txt                 (latest changelog)\n"
-"└── listings\n"
-"    ├── en-US                           (en-US is the default locale in F-Droid)\n"
-"    │   ├── title.txt                   (app name)\n"
-"    │   ├── short-description.txt       (short description, max 80 chars, mandatory)\n"
-"    │   ├── full-description.txt        (full app description, mandatory)\n"
-"    │   ├── video-url.txt               (URL to a video introducing the app)\n"
-"    │   ├── whatsnew                    (alternative changelog location; single file, no .txt)\n"
-"    │   └── graphics\n"
-"    │       ├── icon                    (app icon; useful e.g. for \"service apps\" containing none)\n"
-"    │       │   └── *.(png|jpg)         1 image, usually 512x512\n"
-"    │       ├── feature-graphic         (promo banner, shown on top of the app desc in F-Droid client)\n"
-"    │       │   └── *.(png|jpg)         1 image, usually 1024x500\n"
-"    │       ├── phone-screenshots\n"
-"    │       │   └── *.(png|jpg)\n"
-"    │       ├── tablet-screenshots\n"
-"    │       │   └── *.(png|jpg)\n"
-"    │       ├── large-tablet-screenshots\n"
-"    │       │   └── *.(png|jpg)\n"
-"    │       ├── tv-banner               (\"icon\" for TV devices, currently not used)\n"
-"    │       │   └── *.(png|jpg)\n"
-"    │       ├── tv-screenshots\n"
-"    │       │   └── *.(png|jpg)\n"
-"    │       └── wear-screenshots\n"
-"    │           └── *.(png|jpg)\n"
-"    ├── de                              (other locales)\n"
-"        ├── ...\n"
-msgstr ""
-
-#. type: Title ###
-#: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
-#, no-wrap
-msgid "In the app's build metadata in an *fdroiddata* collection"
-msgstr ""
-
-#. type: Plain text
-#: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
-#, no-wrap
-msgid ""
-"**Note**: This option is only meant for those who host their own repositories. If you are a developer who wants to get\n"
-"an app into the main F-Droid repository, **do not choose this option**. Specifically, screenshots may not be added to\n"
-"the *fdroiddata* repository.\n"
-msgstr ""
-
-#. type: Plain text
-#: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
-msgid "Metadata files can also be added to any *fdroiddata* repository of build metadata. The file structure is modelled after fastlane as well and it looks the same as shown above, with the following additional notes."
-msgstr ""
-
-#. type: Bullet: '* '
-#: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
-msgid "Place the structure in the following location: `<fdroiddata>/metadata/<packageId>/`"
-msgstr ""
-
-#. type: Plain text
-#: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
-#, no-wrap
-msgid ""
-"   * For example, for `en-US`, `title.txt` would reside in this location:\n"
-"   `<fdroiddata>/metadata/<packageId>/en-US/title.txt`\n"
-"* Instead of `short_description.txt`, the summary file should be named `summary.txt`.\n"
-"* Instead of `full_description.txt`, the description file should be named `description.txt`.\n"
-"* Not following the above two points causes the linter to fail.\n"
-msgstr ""
-
-#. type: Title ###
-#: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
-#, no-wrap
-msgid "In the F-Droid repo"
-msgstr ""
-
-#. type: Plain text
-#: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
-#, no-wrap
-msgid "**Note**: This option is only available to those who host their own repositories.\n"
-msgstr ""
-
-#. type: Plain text
-#: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
-msgid "The ultimate destination for files from the app’s source repo and *fdroiddata* metadata sub-directories is in the F-Droid repo. The text all gets included into the index file (aka *index-v1.json*). All of the graphics files can be directly included in the repo."
-msgstr ""
-
-#. type: Plain text
-#: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
-msgid "If graphics files are also in the app’s source or *fdroiddata*, then the files directly in the repo will be overwritten."
-msgstr ""
-
-#. type: Plain text
-#: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
-msgid "You may not place text files directly in the repo."
-msgstr ""
-
-#. type: Plain text
-#: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
-msgid "For reference, picture files can be placed in the repo at the following locations:"
-msgstr ""
-
-#. type: Fenced code block
-#: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
-#, fuzzy, no-wrap
-#| msgid ""
-#| "- fdroid/\n"
-#| "  └── repo/\n"
-#| "      └── <package-id>/\n"
-#| "          └── <locale>/\n"
-#| "              ├── featureGraphic.png\n"
-#| "              ├── icon.png\n"
-#| "              ├── promoGraphic.png\n"
-#| "              ├── tvBanner.png\n"
-#| "              ├── phoneScreenshots/\n"
-#| "              │   └── *.png\n"
-#| "              ├── sevenInchScreenshots/\n"
-#| "              │   └── *.png\n"
-#| "              ├── tenInchScreenshots/\n"
-#| "              │   └── *.png\n"
-#| "              ├── tvScreenshots/\n"
-#| "              │   └── *.png\n"
-#| "              └── wearScreenshots/\n"
-#| "                  └── *.png\n"
-msgid ""
-"- fdroid\n"
-"  └── repo\n"
-"      └── <package-id>\n"
-"          └── <locale>\n"
+"- fdroid/\n"
+"  └── repo/\n"
+"      └── <package-id>/\n"
+"          └── <locale>/\n"
 "              ├── featureGraphic.png\n"
 "              ├── icon.png\n"
+"              ├── promoGraphic.png\n"
 "              ├── tvBanner.png\n"
-"              ├── phoneScreenshots\n"
+"              ├── phoneScreenshots/\n"
 "              │   └── *.png\n"
-"              ├── sevenInchScreenshots\n"
+"              ├── sevenInchScreenshots/\n"
 "              │   └── *.png\n"
-"              ├── tenInchScreenshots\n"
+"              ├── tenInchScreenshots/\n"
 "              │   └── *.png\n"
-"              ├── tvScreenshots\n"
+"              ├── tvScreenshots/\n"
 "              │   └── *.png\n"
-"              └── wearScreenshots\n"
+"              └── wearScreenshots/\n"
 "                  └── *.png\n"
 msgstr ""
 "- fdroid/\n"
@@ -465,43 +262,9 @@ msgstr ""
 "              └── wearScreenshots/\n"
 "                  └── *.png\n"
 
-#. type: Title ##
-#: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
-#, no-wrap
-msgid "Precedence"
-msgstr ""
-
 #. type: Plain text
 #: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
-msgid "The following general precedence rules are applied when multiple of the above options provide metadata:"
-msgstr ""
-
-#. type: Bullet: '* '
-#: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
-msgid "The metadata file (i. e. `<fdroiddata>/metadata/<packageId>.yml`) overwrites *fdroiddata* files, even localized ones."
-msgstr ""
-
-#. type: Bullet: '* '
-#: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
-msgid "The *fdroiddata* files overwrite metadata from the app source."
-msgstr ""
-
-#. type: Plain text
-#: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
-#, no-wrap
-msgid ""
-"* For data that is also contained in the APK file like the app's name, the previous two options both overwrite the\n"
-"data from the APK file.\n"
-msgstr ""
-
-#. type: Plain text
-#: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
-msgid "However, the following more specific rule also applies:"
-msgstr ""
-
-#. type: Bullet: '* '
-#: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
-msgid "Graphic files from the app’s source of *fdroiddata* overwrites files in the repo."
+msgid "`fdroid update` adds all the graphics files it finds in the repo to the index.  `fdroid server update` will sync all of the files in the repo to the various locations where the repo is actually hosted."
 msgstr ""
 
 #. type: YAML Front Matter: title
@@ -1219,7 +982,22 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-msgid "Metadata files are written in [YAML](http://www.yaml.org/start.html) format"
+msgid "There are three supported file types for metadata files:"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/Build_Metadata_Reference.md
+msgid "_.yml_ files in [YAML](http://www.yaml.org/start.html) format, used by f-droid.org"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/Build_Metadata_Reference.md
+msgid "_.txt_ files in the old, custom, F-Droid text-based format"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/Build_Metadata_Reference.md
+msgid "_.json_ files in [JSON](http://json.org/) format"
 msgstr ""
 
 #. type: Plain text
@@ -2390,8 +2168,8 @@ msgstr ""
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid ""
-"    The buildserver supports r10e, r11c, r12b, r13b, r14b, r15c, r16b, r17c,\n"
-"    r18b, r19c, r20b and r21d. You may add support for more versions by adding\n"
+"    The buildserver supports r10e, r11c, r12b, r13b, r14b, r15c, r16b, r17b,\n"
+"    r18b, r19c, r20b and r21. You may add support for more versions by adding\n"
 "    them to ’ndk\\_paths’ in your config file.\n"
 msgstr ""
 
@@ -6724,46 +6502,32 @@ msgstr ""
 msgid "F-Droid client app for Android"
 msgstr ""
 
-#. type: Bullet: '-   '
+#. type: Plain text
 #: _docs/Release_Channels_and_Signing_Keys.md
-#, fuzzy
-#| msgid "git clone https://gitlab.com/fdroid/fdroiddata.git\n"
-msgid "git repo: <https://gitlab.com/fdroid/fdroidclient>"
-msgstr "git clone https://gitlab.com/fdroid/fdroiddata.git\n"
-
-#. type: Bullet: '    -   '
-#: _docs/Release_Channels_and_Signing_Keys.md
-msgid "git tags signed by \"Hans-Christoph Steiner \\<hans@guardianproject.info>\" aka \"Hans-Christoph Steiner \\<hans@eds.org>\" aka \"Hans-Christoph Steiner \\<hans@at.or.at>\" with fingerprint: <br /> `EE66 20C7 136B 0D2C 456C 0A4D E9E2 8DEA 00AA 5556`"
-msgstr ""
-
-#. type: Bullet: '    -   '
-#: _docs/Release_Channels_and_Signing_Keys.md
-msgid "or previously signed by \"Daniel Martí \\<mvdan@mvdan.cc>\" aka \"Daniel Martí \\<mvdan@fsfe.org>\" with fingerprint: <br />`A9DA 13CD F7A1 4ACD D3DE E530 F4CA FFDB 4348 041C`"
-msgstr ""
-
-#. type: Bullet: '-   '
-#: _docs/Release_Channels_and_Signing_Keys.md
-msgid "official binary releases: <https://f-droid.org/repository/browse/?fdfilter=f-droid&fdid=org.fdroid.fdroid>"
-msgstr ""
-
-#. type: Bullet: '    -   '
-#: _docs/Release_Channels_and_Signing_Keys.md
-msgid "GPG signing key: \"F-Droid \\<admin@f-droid.org>\""
-msgstr ""
-
-#. type: Bullet: '    -   '
-#: _docs/Release_Channels_and_Signing_Keys.md
-msgid "Primary key fingerprint: `37D2 C987 89D8 3119 4839 4E3E 41E7 044E 1DBA 2E89`"
-msgstr ""
-
-#. type: Bullet: '    -   '
-#: _docs/Release_Channels_and_Signing_Keys.md
-msgid "Subkey fingerprint: `802A 9799 0161 1234 6E1F EFF4 7A02 9E54 DD5D CE7A`"
-msgstr ""
-
-#. type: Bullet: '    -   '
-#: _docs/Release_Channels_and_Signing_Keys.md
-msgid "APK signing key: ``` Owner: CN=Ciaran Gultnieks, OU=Unknown, O=Unknown, L=Wetherby, ST=Unknown, C=UK Issuer: CN=Ciaran Gultnieks, OU=Unknown, O=Unknown, L=Wetherby, ST=Unknown, C=UK Serial number: 4c49cd00 Valid from: Fri Jul 23 13:10:24 EDT 2010 until: Tue Dec 08 12:10:24 EST 2037 Certificate fingerprints:"
+#, no-wrap
+msgid ""
+"-   git repo: <https://gitlab.com/fdroid/fdroidclient>\n"
+"    -   git tags signed by \"Hans-Christoph Steiner\n"
+"        \\<hans@guardianproject.info>\" aka \"Hans-Christoph Steiner\n"
+"        \\<hans@eds.org>\" aka \"Hans-Christoph Steiner\n"
+"        \\<hans@at.or.at>\" with fingerprint: <br />\n"
+"        `EE66 20C7 136B 0D2C 456C 0A4D E9E2 8DEA 00AA 5556`\n"
+"    -   or previously signed by \"Daniel Martí \\<mvdan@mvdan.cc>\" aka\n"
+"        \"Daniel Martí \\<mvdan@fsfe.org>\" with fingerprint: <br\n"
+"        />`A9DA 13CD F7A1 4ACD D3DE E530 F4CA FFDB 4348\n"
+"        041C`\n"
+"-   official binary releases:\n"
+"    <https://f-droid.org/repository/browse/?fdfilter=f-droid&fdid=org.fdroid.fdroid>\n"
+"    -   GPG signing key: \"F-Droid \\<admin@f-droid.org>\"\n"
+"    -   Primary key fingerprint: `37D2 C987 89D8 3119 4839 4E3E 41E7 044E 1DBA 2E89`\n"
+"    -   Subkey fingerprint: `802A 9799 0161 1234 6E1F EFF4 7A02 9E54 DD5D CE7A`\n"
+"    -   APK signing key:\n"
+"        ```\n"
+"        Owner: CN=Ciaran Gultnieks, OU=Unknown, O=Unknown, L=Wetherby, ST=Unknown, C=UK\n"
+"        Issuer: CN=Ciaran Gultnieks, OU=Unknown, O=Unknown, L=Wetherby, ST=Unknown, C=UK\n"
+"        Serial number: 4c49cd00\n"
+"        Valid from: Fri Jul 23 13:10:24 EDT 2010 until: Tue Dec 08 12:10:24 EST 2037\n"
+"        Certificate fingerprints:\n"
 msgstr ""
 
 #. type: Plain text
@@ -6863,62 +6627,57 @@ msgstr ""
 msgid "fdroidserver"
 msgstr ""
 
-#. type: Bullet: '-   '
+#. type: Plain text
 #: _docs/Release_Channels_and_Signing_Keys.md
-#, fuzzy
-#| msgid "$ git clone https://gitlab.com/fdroid/fdroid-website\n"
-msgid "git repo: <https://gitlab.com/fdroid/fdroidserver>"
-msgstr "$ git clone https://gitlab.com/fdroid/fdroid-website\n"
-
-#. type: Bullet: '    -   '
-#: _docs/Release_Channels_and_Signing_Keys.md
-msgid "or previously \"Daniel Martí \\<mvdan@mvdan.cc>\" aka \"Daniel Martí \\<mvdan@fsfe.org>\" with fingerprint: <br />`A9DA 13CD F7A1 4ACD D3DE E530 F4CA FFDB 4348 041C`"
-msgstr ""
-
-#. type: Bullet: '-   '
-#: _docs/Release_Channels_and_Signing_Keys.md
-msgid "source package: <https://pypi.python.org/pypi/fdroidserver>"
-msgstr ""
-
-#. type: Bullet: '    -   '
-#: _docs/Release_Channels_and_Signing_Keys.md
-msgid "package tags signed by \"Hans-Christoph Steiner \\<hans@guardianproject.info>\" aka \"Hans-Christoph Steiner \\<hans@eds.org>\" aka \"Hans-Christoph Steiner \\<hans@at.or.at>\" with fingerprint: <br /> `EE66 20C7 136B 0D2C 456C 0A4D E9E2 8DEA 00AA 5556` or previously <br />`5E61 C878 0F86 295C E17D 8677 9F0F E587 374B BE81`"
-msgstr ""
-
-#. type: Bullet: '    -   '
-#: _docs/Release_Channels_and_Signing_Keys.md
-msgid "release command: `python3 setup.py sdist upload --sign`"
-msgstr ""
-
-#. type: Bullet: '-   '
-#: _docs/Release_Channels_and_Signing_Keys.md
-msgid "official Debian package: <https://packages.debian.org/fdroidserver>"
-msgstr ""
-
-#. type: Bullet: '    -   '
-#: _docs/Release_Channels_and_Signing_Keys.md
-msgid "package source: <https://anonscm.debian.org/git/collab-maint/fdroidserver.git>"
-msgstr ""
-
-#. type: Bullet: '    -   '
-#: _docs/Release_Channels_and_Signing_Keys.md
-msgid "package tags signed by \"Hans-Christoph Steiner \\<hans@guardianproject.info>\" aka \"Hans-Christoph Steiner \\<hans@eds.org>\" aka \"Hans-Christoph Steiner \\<hans@at.or.at>\" with fingerprint: <br/> `EE66 20C7 136B 0D2C 456C 0A4D E9E2 8DEA 00AA 5556` or previously <br /> `5E61 C878 0F86 295C E17D 8677 9F0F E587 374B BE81`"
-msgstr ""
-
-#. type: Bullet: '-   '
-#: _docs/Release_Channels_and_Signing_Keys.md
-msgid "official Ubuntu PPA: <https://launchpad.net/~fdroid/+archive/ubuntu/fdroidserver>"
-msgstr ""
-
-#. type: Bullet: '    - '
-#: _docs/Release_Channels_and_Signing_Keys.md
-msgid "fingerprint: `9AAC 2531 93B6 5D4D F1D0 A13E EC46 32C7 9C5E 0151`"
+#, no-wrap
+msgid ""
+"-   git repo: <https://gitlab.com/fdroid/fdroidserver>\n"
+"    -   git tags signed by \"Hans-Christoph Steiner\n"
+"        \\<hans@guardianproject.info>\" aka \"Hans-Christoph Steiner\n"
+"        \\<hans@eds.org>\" aka \"Hans-Christoph Steiner\n"
+"        \\<hans@at.or.at>\" with fingerprint: <br />\n"
+"        `EE66 20C7 136B 0D2C 456C 0A4D E9E2 8DEA 00AA 5556`\n"
+"    -   or previously \"Daniel Martí \\<mvdan@mvdan.cc>\" aka\n"
+"        \"Daniel Martí \\<mvdan@fsfe.org>\" with fingerprint: <br\n"
+"        />`A9DA 13CD F7A1 4ACD D3DE E530 F4CA FFDB 4348 041C`\n"
 msgstr ""
 
 #. type: Plain text
 #: _docs/Release_Channels_and_Signing_Keys.md
 #, no-wrap
 msgid ""
+"-   source package: <https://pypi.python.org/pypi/fdroidserver>\n"
+"    -   package tags signed by \"Hans-Christoph Steiner\n"
+"        \\<hans@guardianproject.info>\" aka \"Hans-Christoph Steiner\n"
+"        \\<hans@eds.org>\" aka \"Hans-Christoph Steiner\n"
+"        \\<hans@at.or.at>\" with fingerprint: <br />\n"
+"        `EE66 20C7 136B 0D2C 456C 0A4D E9E2 8DEA 00AA 5556`\n"
+"        or previously <br />`5E61 C878 0F86 295C E17D 8677 9F0F E587 374B BE81`\n"
+"    -   release command: `python3 setup.py sdist upload --sign`\n"
+msgstr ""
+
+#. type: Plain text
+#: _docs/Release_Channels_and_Signing_Keys.md
+#, no-wrap
+msgid ""
+"-   official Debian package: <https://packages.debian.org/fdroidserver>\n"
+"    -   package source:\n"
+"        <https://anonscm.debian.org/git/collab-maint/fdroidserver.git>\n"
+"    -   package tags signed by \"Hans-Christoph Steiner\n"
+"        \\<hans@guardianproject.info>\" aka \"Hans-Christoph Steiner\n"
+"        \\<hans@eds.org>\" aka \"Hans-Christoph Steiner\n"
+"        \\<hans@at.or.at>\" with fingerprint: <br/>\n"
+"        `EE66 20C7 136B 0D2C 456C 0A4D E9E2 8DEA 00AA\n"
+"        5556` or previously <br />\n"
+"        `5E61 C878 0F86 295C E17D 8677 9F0F E587 374B BE81`\n"
+msgstr ""
+
+#. type: Plain text
+#: _docs/Release_Channels_and_Signing_Keys.md
+#, no-wrap
+msgid ""
+"-   official Ubuntu PPA: <https://launchpad.net/~fdroid/+archive/ubuntu/fdroidserver>\n"
+"    - fingerprint: `9AAC 2531 93B6 5D4D F1D0 A13E EC46 32C7 9C5E 0151`\n"
 "    - how to setup:\n"
 "    ```bash\n"
 "    sudo add-apt-repository ppa:fdroid/fdroidserver\n"
@@ -6933,26 +6692,25 @@ msgstr ""
 msgid "Repomaker"
 msgstr "Repomaker"
 
-#. type: Bullet: '-   '
+#. type: Plain text
 #: _docs/Release_Channels_and_Signing_Keys.md
-#, fuzzy
-#| msgid "git clone https://gitlab.com/fdroid/fdroiddata.git\n"
-msgid "git repo: <https://gitlab.com/fdroid/repomaker>"
-msgstr "git clone https://gitlab.com/fdroid/fdroiddata.git\n"
-
-#. type: Bullet: '    -   '
-#: _docs/Release_Channels_and_Signing_Keys.md
-msgid "git tags signed by \"Nico Alt \\<nicoalt@posteo.de>\" with fingerprint: <br /> `558B E907 1CA6 CA44 DBF5 576B 95A0 DAF7 DBC7 B548`"
+#, no-wrap
+msgid ""
+"-   git repo: <https://gitlab.com/fdroid/repomaker>\n"
+"    -   git tags signed by\n"
+"        \"Nico Alt \\<nicoalt@posteo.de>\" with fingerprint: <br />\n"
+"        `558B E907 1CA6 CA44 DBF5 576B 95A0 DAF7 DBC7 B548`\n"
 msgstr ""
 
-#. type: Bullet: '-   '
+#. type: Plain text
 #: _docs/Release_Channels_and_Signing_Keys.md
-msgid "source package: <https://pypi.python.org/pypi/repomaker>"
-msgstr ""
-
-#. type: Bullet: '    -   '
-#: _docs/Release_Channels_and_Signing_Keys.md
-msgid "package tags signed by \"Nico Alt \\<nicoalt@posteo.de>\" with fingerprint: <br /> `558B E907 1CA6 CA44 DBF5 576B 95A0 DAF7 DBC7 B548`"
+#, no-wrap
+msgid ""
+"-   source package: <https://pypi.python.org/pypi/repomaker>\n"
+"    -   package tags signed by\n"
+"        \"Nico Alt \\<nicoalt@posteo.de>\" with fingerprint: <br />\n"
+"        `558B E907 1CA6 CA44 DBF5 576B 95A0 DAF7 DBC7 B548`\n"
+"    -   release command: `python3 setup.py sdist upload --sign`\n"
 msgstr ""
 
 #. type: Title ##
@@ -6961,16 +6719,15 @@ msgstr ""
 msgid "Privileged Extension"
 msgstr ""
 
-#. type: Bullet: '-   '
+#. type: Plain text
 #: _docs/Release_Channels_and_Signing_Keys.md
-#, fuzzy
-#| msgid "$ git clone https://gitlab.com/fdroid/fdroid-website\n"
-msgid "git repo: <https://gitlab.com/fdroid/privileged-extension>"
-msgstr "$ git clone https://gitlab.com/fdroid/fdroid-website\n"
-
-#. type: Bullet: '    -   '
-#: _docs/Release_Channels_and_Signing_Keys.md
-msgid "git tags signed by \"Hans-Christoph Steiner \\<hans@guardianproject.info>\" aka \"Hans-Christoph Steiner \\<hans@eds.org>\" aka \"Hans-Christoph Steiner \\<hans@at.or.at>\" with fingerprint: <br/>`EE66 20C7 136B 0D2C 456C 0A4D E9E2 8DEA 00AA 5556`"
+#, no-wrap
+msgid ""
+"-   git repo: <https://gitlab.com/fdroid/privileged-extension>\n"
+"    -   git tags signed by \"Hans-Christoph Steiner\n"
+"        \\<hans@guardianproject.info>\" aka \"Hans-Christoph Steiner\n"
+"        \\<hans@eds.org>\" aka \"Hans-Christoph Steiner\n"
+"        \\<hans@at.or.at>\" with fingerprint: <br/>`EE66 20C7 136B 0D2C 456C 0A4D E9E2 8DEA 00AA 5556`\n"
 msgstr ""
 
 #. type: Title ##
@@ -6979,16 +6736,18 @@ msgstr ""
 msgid "F-Droid Jekyll Plugin"
 msgstr ""
 
-#. type: Bullet: '-   '
+#. type: Plain text
 #: _docs/Release_Channels_and_Signing_Keys.md
-#, fuzzy
-#| msgid "git clone https://gitlab.com/fdroid/fdroiddata.git\n"
-msgid "git repo: <https://gitlab.com/fdroid/jekyll-fdroid>"
-msgstr "git clone https://gitlab.com/fdroid/fdroiddata.git\n"
-
-#. type: Bullet: '    -   '
-#: _docs/Release_Channels_and_Signing_Keys.md
-msgid "git tags signed by \"Hans-Christoph Steiner \\<hans@guardianproject.info>\" aka \"Hans-Christoph Steiner \\<hans@eds.org>\" aka \"Hans-Christoph Steiner \\<hans@at.or.at>\" with fingerprint: <br /> `EE66 20C7 136B 0D2C 456C 0A4D E9E2 8DEA 00AA 5556` or \"Nico Alt \\<nicoalt@posteo.de>\" with fingerprint: <br /> `558B E907 1CA6 CA44 DBF5 576B 95A0 DAF7 DBC7 B548`"
+#, no-wrap
+msgid ""
+"-   git repo: <https://gitlab.com/fdroid/jekyll-fdroid>\n"
+"    -   git tags signed by \"Hans-Christoph Steiner\n"
+"        \\<hans@guardianproject.info>\" aka \"Hans-Christoph Steiner\n"
+"        \\<hans@eds.org>\" aka \"Hans-Christoph Steiner\n"
+"        \\<hans@at.or.at>\" with fingerprint: <br />\n"
+"        `EE66 20C7 136B 0D2C 456C 0A4D E9E2 8DEA 00AA 5556`\n"
+"        or \"Nico Alt \\<nicoalt@posteo.de>\" with fingerprint: <br />\n"
+"        `558B E907 1CA6 CA44 DBF5 576B 95A0 DAF7 DBC7 B548`\n"
 msgstr ""
 
 #. type: YAML Front Matter: title
@@ -7255,6 +7014,12 @@ msgstr ""
 #: _docs/Repository_Style_Guide.md
 msgid "Note that most projects call upon pre-built libraries. The source code for these is found elsewhere. For ant, these will be found in the `libs/` folder and external ones are mentioned in the _project.properties_ files; for gradle, these will be mentioned in _build.gradle_ and are usually pulled from <http://mvnrepository.com>; for maven there will be `pom.xml` files which describe the dependencies.  If native code pre-built libraries are used, these will often be found in `res/raw/` or `assets/`: there should be something said about these in the `README`. The example above has one jar file dependency with a text reference and doesn't use any external libraries, so no extra references are needed."
 msgstr ""
+
+#. type: Title ###
+#: _docs/Repository_Style_Guide.md
+#, no-wrap
+msgid "License"
+msgstr "Ліцензія"
 
 #. type: Plain text
 #: _docs/Repository_Style_Guide.md
@@ -8773,7 +8538,7 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/Submitting_to_F-Droid_Quick_Start_Guide.md
-msgid "Actually, it didn't work, and I decided I had to request a new package (sox) be installed in the build machine environment (in the fdroidserver project).  The relevant commit is here: [19e372026](https://gitlab.com/andybalaam/fdroidserver/commit/19e372026aaca62349e6f5fd541dc3ba29d94836).  Actually though, after [discussion with the F-Droid devs](https://web.archive.org/web/20171220230923/https://botbot.me/freenode/fdroid-dev/2017-01-17/?msg=79512863&page=1) we agreed I'd be better off not using sox during the build, so I didn't need this."
+msgid "Actually, it didn't work, and I decided I had to request a new package (sox) be installed in the build machine environment (in the fdroidserver project).  The relevant commit is here: [19e372026](https://gitlab.com/andybalaam/fdroidserver/commit/19e372026aaca62349e6f5fd541dc3ba29d94836).  Actually though, after [discussion with the F-Droid devs](https://botbot.me/freenode/fdroid-dev/2017-01-17/?msg=79512863&page=1) we agreed I'd be better off not using sox during the build, so I didn't need this."
 msgstr ""
 
 #. type: Plain text
@@ -9157,61 +8922,6 @@ msgstr ""
 #: _docs/Whitelabel_Builds.md
 msgid "For a custom build that enables Automatic Updates by default, override _app/src/main/res/xml/preferences.xml_. You can customize the preferences and their default values in _app/src/mycompany/res/xml/preferences.xml_. The fully automatic update requires [Privileged Extension](https://gitlab.com/fdroid/privileged-extension). With regular access, the updates will only automatically download. The user still needs to click install on each one."
 msgstr ""
-
-#~ msgid ""
-#~ "- <fdroiddata>/\n"
-#~ "  └── metadata/\n"
-#~ "      └── <package-id>/\n"
-#~ "          └── <locale>/\n"
-#~ "              ├── full_description.txt\n"
-#~ "              ├── short_description.txt\n"
-#~ "              ├── title.txt\n"
-#~ "              ├── video.txt\n"
-#~ "              ├── changelogs/\n"
-#~ "              │   ├── <version-code>.txt\n"
-#~ "              │   └── <version-code>.txt\n"
-#~ "              └── images/\n"
-#~ "                  ├── featureGraphic.png\n"
-#~ "                  ├── icon.png\n"
-#~ "                  ├── promoGraphic.png\n"
-#~ "                  ├── tvBanner.png\n"
-#~ "                  ├── phoneScreenshots/\n"
-#~ "                  │   └── *.png\n"
-#~ "                  ├── sevenInchScreenshots/\n"
-#~ "                  │   └── *.png\n"
-#~ "                  ├── tenInchScreenshots/\n"
-#~ "                  │   └── *.png\n"
-#~ "                  ├── tvScreenshots/\n"
-#~ "                  │   └── *.png\n"
-#~ "                  └── wearScreenshots/\n"
-#~ "                      └── *.png\n"
-#~ msgstr ""
-#~ "- <fdroiddata>/\n"
-#~ "  └── metadata/\n"
-#~ "      └── <package-id>/\n"
-#~ "          └── <locale>/\n"
-#~ "              ├── full_description.txt\n"
-#~ "              ├── short_description.txt\n"
-#~ "              ├── title.txt\n"
-#~ "              ├── video.txt\n"
-#~ "              ├── changelogs/\n"
-#~ "              │   ├── <version-code>.txt\n"
-#~ "              │   └── <version-code>.txt\n"
-#~ "              └── images/\n"
-#~ "                  ├── featureGraphic.png\n"
-#~ "                  ├── icon.png\n"
-#~ "                  ├── promoGraphic.png\n"
-#~ "                  ├── tvBanner.png\n"
-#~ "                  ├── phoneScreenshots/\n"
-#~ "                  │   └── *.png\n"
-#~ "                  ├── sevenInchScreenshots/\n"
-#~ "                  │   └── *.png\n"
-#~ "                  ├── tenInchScreenshots/\n"
-#~ "                  │   └── *.png\n"
-#~ "                  ├── tvScreenshots/\n"
-#~ "                  │   └── *.png\n"
-#~ "                  └── wearScreenshots/\n"
-#~ "                      └── *.png\n"
 
 #, fuzzy
 #~ msgid "You can't yet. See [Issue 36 - Update All](https://gitlab.com/fdroid/fdroidclient/issues/16)."
