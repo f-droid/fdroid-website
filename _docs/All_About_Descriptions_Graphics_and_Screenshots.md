@@ -92,7 +92,7 @@ needs to be place in the correct position as outlined below.
 │   ├── title.txt               (app name)
 │   ├── video.txt               (URL to a video introducing the app)
 │   ├── images
-│   │   ├── icon.png            (app icon)
+│   │   ├── icon.png            (app icon, mandatory if your app doesn't include any png icon)
 │   │   ├── featureGraphic.png  (promo banner, shown on top of the app desc in F-Droid client; landscape)
 │   │   ├── tvBanner.png        ("icon" for TV devices, currently not used)
 │   │   ├── phoneScreenshots
@@ -146,7 +146,7 @@ Place the following structure at `<module>/src/main/play/` or, for **build flavo
     │   ├── video-url.txt               (URL to a video introducing the app)
     │   ├── whatsnew                    (alternative changelog location; single file, no .txt)
     │   └── graphics
-    │       ├── icon                    (app icon; useful e.g. for "service apps" containing none)
+    │       ├── icon                    (app icon; mandatory if your app doesn't include any png icon)
     │       │   └── *.(png|jpg)         1 image, usually 512x512
     │       ├── feature-graphic         (promo banner, shown on top of the app desc in F-Droid client)
     │       │   └── *.(png|jpg)         1 image, usually 1024x500
