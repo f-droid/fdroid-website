@@ -102,13 +102,12 @@ If it is a major release, there are a few more steps.
 
 ## fdroid-website
 
-1. pull in latest commits from Weblate into a local branch called
-   _weblate_
-2. run `./tools/check-format-strings.py`,
-   `./tools/check-page-links.py`, and
-   `./tools/remove-unused-strings.py` and commit changes
-3. rebase the _weblate_ branch on the latest commits in _master_ of
-   <https://gitlab.com/fdroid/fdroid-website> and fix any conflicts
+1. Pull in latest commits from Weblate into a local branch called
+   _weblate_.
+2. Run all checker scripts (`./tools/check-*.py`), make sure they all
+   pass, then commit those changes.
+3. merge this new _weblate_ branch into the latest commits in _master_
+   of <https://gitlab.com/fdroid/fdroid-website> and fix any conflicts
 4. push local _weblate_ branch to your fork create a merge request,
    and tag it with the _localization_ label
 5. make sure all tests pass before merging
@@ -116,6 +115,18 @@ If it is a major release, there are a few more steps.
    <https://hosted.weblate.org/projects/f-droid/website/#repository>
 7. add git signed tag named after the exact version name (no
    preceeding __v__), using the exact same string as `version=''`
+8. `git fetch weblate` and check that Weblate rebased on the latest
+   commits, otherwise, there is a merge conflict that needs to be
+   fixed before Weblate will sync again.
+9. Run `./tools/i18n.sh md2po` to make all changes available for
+   translation, and commit to _master_.  Only commit the changed
+   translation files (_po/*.po*_), do not commit new translation files
+   here (new languages are added via Weblate).  The easiest version of
+   this sync is only committing one or more of the _gettext_ template
+   files (_po/*.pot_), since Weblate will sync _.pot_ to all the _.po_
+   files.
+10. Push release tag and new translation commits, ideally with GPG
+    signatures.
 
 
 ## jekyll-fdroid
