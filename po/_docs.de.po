@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
-"POT-Creation-Date: 2020-09-09 15:24+0200\n"
+"POT-Creation-Date: 2020-09-15 22:39+0200\n"
 "PO-Revision-Date: 2020-08-15 10:32+0000\n"
 "Last-Translator: nautilusx <mail.ka@mailbox.org>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/f-droid/website-docs/de/>\n"
@@ -242,7 +242,7 @@ msgid ""
 "│   ├── title.txt               (app name)\n"
 "│   ├── video.txt               (URL to a video introducing the app)\n"
 "│   ├── images\n"
-"│   │   ├── icon.png            (app icon)\n"
+"│   │   ├── icon.png            (app icon, mandatory if your app doesn't include any png icon)\n"
 "│   │   ├── featureGraphic.png  (promo banner, shown on top of the app desc in F-Droid client; landscape)\n"
 "│   │   ├── tvBanner.png        (\"icon\" for TV devices, currently not used)\n"
 "│   │   ├── phoneScreenshots\n"
@@ -329,7 +329,7 @@ msgid ""
 "    │   ├── video-url.txt               (URL to a video introducing the app)\n"
 "    │   ├── whatsnew                    (alternative changelog location; single file, no .txt)\n"
 "    │   └── graphics\n"
-"    │       ├── icon                    (app icon; useful e.g. for \"service apps\" containing none)\n"
+"    │       ├── icon                    (app icon; mandatory if your app doesn't include any png icon)\n"
 "    │       │   └── *.(png|jpg)         1 image, usually 512x512\n"
 "    │       ├── feature-graphic         (promo banner, shown on top of the app desc in F-Droid client)\n"
 "    │       │   └── *.(png|jpg)         1 image, usually 1024x500\n"
@@ -3271,12 +3271,19 @@ msgstr "Installieren Sie zunächst die notwendigen Pakete und legen Sie einen ne
 
 #. type: Fenced code block (bash)
 #: _docs/Build_Server_Setup.md
-#, no-wrap
+#, fuzzy, no-wrap
+#| msgid ""
+#| "root:~# apt-get install vagrant virtualbox git python3-certifi \\\n"
+#| "        python3-libvirt python3-requestbuilder python3-yaml \\\n"
+#| "        python3-clint python3-vagrant python3-paramiko python3-pyasn1 \\\n"
+#| "        python3-pyasn1-modules\n"
+#| "root:~# adduser --disabled-password fdroid\n"
+#| "root:~# su fdroid\n"
 msgid ""
 "root:~# apt-get install vagrant virtualbox git python3-certifi \\\n"
 "        python3-libvirt python3-requestbuilder python3-yaml \\\n"
 "        python3-clint python3-vagrant python3-paramiko python3-pyasn1 \\\n"
-"        python3-pyasn1-modules\n"
+"        python3-pyasn1-modules python3-requests python3-git\n"
 "root:~# adduser --disabled-password fdroid\n"
 "root:~# su fdroid\n"
 msgstr ""
@@ -3495,11 +3502,22 @@ msgstr "Es ist auch möglich, QEMU/KVM-Gast-VMs über libvirt anstelle des stand
 
 #. type: Fenced code block (console)
 #: _docs/Build_Server_Setup.md
-#, no-wrap
+#, fuzzy, no-wrap
+#| msgid ""
+#| "root:~# apt-get install vagrant vagrant-mutate vagrant-libvirt ebtables dnsmasq-base \\\n"
+#| "        python3-libvirt libvirt-clients libvirt-daemon-system qemu-kvm qemu-utils git \\\n"
+#| "        python3-yaml python3-clint python3-vagrant python3-pyasn1 python3-pyasn1-modules\n"
+#| "root:~# cat << EOF >> /etc/libvirt/qemu.conf\n"
+#| "user = \"libvirt\"\n"
+#| "group = \"libvirt\"\n"
+#| "dynamic_ownership = 1\n"
+#| "EOF\n"
+#| "root:~# service libvirtd restart\n"
 msgid ""
 "root:~# apt-get install vagrant vagrant-mutate vagrant-libvirt ebtables dnsmasq-base \\\n"
 "        python3-libvirt libvirt-clients libvirt-daemon-system qemu-kvm qemu-utils git \\\n"
-"        python3-yaml python3-clint python3-vagrant python3-pyasn1 python3-pyasn1-modules\n"
+"        python3-yaml python3-clint python3-vagrant python3-pyasn1 python3-pyasn1-modules \\\n"
+"        python3-requests python3-git\n"
 "root:~# cat << EOF >> /etc/libvirt/qemu.conf\n"
 "user = \"libvirt\"\n"
 "group = \"libvirt\"\n"
@@ -7871,20 +7889,44 @@ msgstr ""
 msgid "fdroid-website"
 msgstr "fdroid-website"
 
+#. type: Bullet: '1. '
+#: _docs/Release_Process.md
+#, fuzzy
+#| msgid "pull in latest commits from Weblate into a local branch called _weblate_"
+msgid "Pull in latest commits from Weblate into a local branch called _weblate_."
+msgstr "neueste Commits von Weblate in einen lokalen Branch namens _weblate_ einbinden"
+
 #. type: Bullet: '2. '
 #: _docs/Release_Process.md
-msgid "run `./tools/check-format-strings.py`, `./tools/check-page-links.py`, and `./tools/remove-unused-strings.py` and commit changes"
-msgstr "führen Sie `./tools/check-format-strings.py`, `./tools/check-page-links.py` und `./tools/remove-unused-strings.py` aus und committen Sie Änderungen"
+msgid "Run all checker scripts (`./tools/check-*.py`), make sure they all pass, then commit those changes."
+msgstr ""
 
 #. type: Bullet: '3. '
 #: _docs/Release_Process.md
-msgid "rebase the _weblate_ branch on the latest commits in _master_ of <https://gitlab.com/fdroid/fdroid-website> and fix any conflicts"
+#, fuzzy
+#| msgid "rebase the _weblate_ branch on the latest commits in _master_ of <https://gitlab.com/fdroid/fdroid-website> and fix any conflicts"
+msgid "merge this new _weblate_ branch into the latest commits in _master_ of <https://gitlab.com/fdroid/fdroid-website> and fix any conflicts"
 msgstr "den _weblate_-Zweig auf den letzten Commit in _master_ von <https://gitlab.com/fdroid/fdroidclient> rebasen und alle Konflikte beheben"
 
 #. type: Bullet: '6. '
 #: _docs/Release_Process.md
 msgid "once the _weblate_ branch is merged, reset the git repo in <https://hosted.weblate.org/projects/f-droid/website/#repository>"
 msgstr "sobald der Zweig _weblate_ zusammengeführt wurde, resetten Sie den git repo in <https://hosted.weblate.org/projects/f-droid/f-droid/#repository>"
+
+#. type: Bullet: '8. '
+#: _docs/Release_Process.md
+msgid "`git fetch weblate` and check that Weblate rebased on the latest commits, otherwise, there is a merge conflict that needs to be fixed before Weblate will sync again."
+msgstr ""
+
+#. type: Bullet: '9. '
+#: _docs/Release_Process.md
+msgid "Run `./tools/i18n.sh md2po` to make all changes available for translation, and commit to _master_.  Only commit the changed translation files (_po/*.po*_), do not commit new translation files here (new languages are added via Weblate).  The easiest version of this sync is only committing one or more of the _gettext_ template files (_po/*.pot_), since Weblate will sync _.pot_ to all the _.po_ files."
+msgstr ""
+
+#. type: Bullet: '10. '
+#: _docs/Release_Process.md
+msgid "Push release tag and new translation commits, ideally with GPG signatures."
+msgstr ""
 
 #. type: Title ##
 #: _docs/Release_Process.md
@@ -10066,6 +10108,9 @@ msgstr "Einstellungen"
 #: _docs/Whitelabel_Builds.md
 msgid "For a custom build that enables Automatic Updates by default, override _app/src/main/res/xml/preferences.xml_. You can customize the preferences and their default values in _app/src/mycompany/res/xml/preferences.xml_. The fully automatic update requires [Privileged Extension](https://gitlab.com/fdroid/privileged-extension). With regular access, the updates will only automatically download. The user still needs to click install on each one."
 msgstr "Für eine angepasste F-Droid-Variante, die Automatische Aktualisierungen standardmäßig aktiviert, überschreiben Sie _app/src/main/res/xml/preferences.xml_. Sie können die Einstellungen und deren Standardwerte in _app/src/mycompany/res/xml/preferences.xml_ anpassen. Das vollautomatische Update benötigt [System-/Root-Zugriff](https://gitlab.com/fdroid/privileged-extension). Mit Standardberechtigungen werden die Updates nur automatisch heruntergeladen. Der Nutzer muss weiterhin jedes Update einzeln installieren."
+
+#~ msgid "run `./tools/check-format-strings.py`, `./tools/check-page-links.py`, and `./tools/remove-unused-strings.py` and commit changes"
+#~ msgstr "führen Sie `./tools/check-format-strings.py`, `./tools/check-page-links.py` und `./tools/remove-unused-strings.py` aus und committen Sie Änderungen"
 
 #~ msgid "Each app can have complete app store content, including localized descriptions, feature graphics, and screenshots (as of v0.103 of the F-Droid client app and v0.8 of _fdroidserver_).  This is possible both when apps are added via [build metadata](../Build_Metadata_Reference) as well as when including pre-built files in a simple repository.  There are three paths to including app store content for apps (in order of preference):"
 #~ msgstr "Jede App kann vollständige App-Store-Inhalte besitzen, einschließlich lokalisierter Beschreibungen, Funktionsgrafiken und Bildschirmfotos (wie bei v0.103 der F-Droid-App und v0.8 von  _fdroidserver_).  Dies ist möglich, sowohl wenn Apps über die [Herstellung aus Metadaten](../Build_Metadata_Reference) hinzugefügt werden, als auch wenn vorgefertigte Dateien in ein einfaches Repository aufgenommen werden.  Um App-Store-Inhalte für Apps einzuschließen, gibt es drei Wege (nach Priorität geordnet):"
