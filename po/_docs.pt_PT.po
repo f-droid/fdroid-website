@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2020-09-09 15:24+0200\n"
-"PO-Revision-Date: 2020-09-14 16:21+0000\n"
+"PO-Revision-Date: 2020-09-15 18:36+0000\n"
 "Last-Translator: ssantos <ssantos@web.de>\n"
 "Language-Team: Portuguese (Portugal) <https://hosted.weblate.org/projects/f-droid/website-docs/pt_PT/>\n"
 "Language: pt_PT\n"
@@ -115,7 +115,7 @@ msgstr "Formatos de ficheiros de imagem"
 #. type: Plain text
 #: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
 msgid "Images may be provided in PNG or JPEG format. They must have the ending `png`, `jpg` or `jpeg`."
-msgstr ""
+msgstr "As imagens podem ser fornecidas no formato PNG ou JPEG. Elas devem ter a terminação `png`, `jpg` ou `jpeg`."
 
 #. type: Plain text
 #: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
@@ -133,7 +133,7 @@ msgstr "Descrições em HTML"
 #. type: Plain text
 #: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
 msgid "The detailed app description may use HTML tags. Note that not all tags are supported by the renderer."
-msgstr ""
+msgstr "A descrição detalhada da aplicação pode usar etiquetas de HTML. Note que nem todas as etiquetas são suportadas pelo renderizador."
 
 #. type: Bullet: '* '
 #: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
@@ -149,6 +149,10 @@ msgid ""
 "* Note that a linebreak will automatically be converted to a `br` tag.\n"
 "* You may not make use of JavaScript.\n"
 msgstr ""
+"* Certas etiquetas são explicitamente proibidas, nomeadamente `applet`, `base`, `body`, `button`, `embed`, `form`, `head`, `html`,\n"
+"`iframe`, `img`, `input`, `link`, `object`, `picture`, `script`, `source`, `style`, `svg` e `video`.\n"
+"* Note que um linebreak será automaticamente convertido para uma etiqueta `br`.\n"
+"* Não pode usar JavaScript.\n"
 
 #. type: Title ##
 #: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
@@ -159,7 +163,7 @@ msgstr "Formas de fornecer metadados"
 #. type: Plain text
 #: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
 msgid "Adding metadata can be done in the following three ways."
-msgstr ""
+msgstr "A adição de metadados pode ser feita das três maneiras a seguir."
 
 #. type: Title ###
 #: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
@@ -170,7 +174,7 @@ msgstr "No repositório de fontes da aplicação"
 #. type: Plain text
 #: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
 msgid "For the official F-Droid repository, it is **strongly encouraged** to add metadata in the application's source repo for for the following reasons:"
-msgstr ""
+msgstr "Para o repositório oficial do F-Droid, é ** fortemente encorajado** a adicionar metadados no repositório fonte da aplicação, pelas razões seguintes:"
 
 #. type: Bullet: '* '
 #: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
@@ -180,7 +184,7 @@ msgstr "Os metadados da aplicação estão sob controlo direto dos proprietário
 #. type: Bullet: '* '
 #: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
 msgid "Metadata from the repository is copied to the F-Droid repo automatically (thus no merge requests are needed)"
-msgstr ""
+msgstr "Os metadados do repositório são copiados automaticamente para o repositório do F-Droid (portanto, pedidos de fusão não são necessários)"
 
 #. type: Plain text
 #: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
@@ -202,28 +206,28 @@ msgstr "Para mais detalhes, veja a [regras de precedência](#precedence) descrit
 #. type: Plain text
 #: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
 msgid "F-Droid will only use metadata files from the latest release. This means that *fdroidserver* will check out the latest version it knows and scan the repository at the state of that version for metadata files."
-msgstr ""
+msgstr "O F-Droid só utilizará ficheiros de metadados da versão mais recente. Isto significa que *fdroidserver* verificará a última versão que conhece e verificará o repositório no estado daquela versão para a procura de ficheiros de metadados."
 
 #. type: Plain text
 #: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
 msgid "All metadata files are completely optional, except for the short summary description as well as the longer full description. However, apps which do not fulfill certain [criteria](#latest-tab-criteria) will not be shown on the Latest tab."
-msgstr ""
+msgstr "Todos os ficheiros de metadados são completamente opcionais, exceto a breve descrição resumida, bem como a descrição completa mais longa. No entanto, as aplicações que não cumprem certos [critérios](#latest-tab-criteria) não serão mostradas na guia Últimos."
 
 #. type: Title ####
 #: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
 #, no-wrap
 msgid "Fastlane structure"
-msgstr ""
+msgstr "Estrutura Fastlane"
 
 #. type: Plain text
 #: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
 msgid "The first of the two structures is aiming to be compatible to the [fastlane supply](https://github.com/fastlane/fastlane/blob/2.28.7/supply/README.md#images-and-screenshots) tool."
-msgstr ""
+msgstr "A primeira das duas estruturas visa ser compatível com a ferramenta [fastlane supply](https://github.com/fastlane/fastlane/blob/2.28.7/supply/README.md#images-and-screenshots)."
 
 #. type: Plain text
 #: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
 msgid "The basic file structure is as follows. Pay attention to the notes at the right. When this structure is created, it needs to be place in the correct position as outlined below."
-msgstr ""
+msgstr "A estrutura básica do ficheiro é a seguinte. Preste atenção às notas à direita. Quando esta estrutura é criada, precisa ser posta na posição correta, conforme descrito abaixo."
 
 #. type: Fenced code block
 #: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
@@ -255,6 +259,31 @@ msgid ""
 "    └── changelogs\n"
 "        └── 100100.txt\n"
 msgstr ""
+"├── en-US (en-US é a linguagem F-Droid fallback)\n"
+"│ ├── short_description.txt (descrição breve, máximo 80 caracteres, obrigatório)\n"
+"│ ├── full_description.txt (descrição completa da aplicação, obrigatório)\n"
+"│ ├── title.txt (nome da aplicação)\n"
+"│ ├── video.txt (URL a um vídeo de apresentação da aplicação)\n"
+"│ ├── images\n"
+"│ │ ─ ├── icon.png (ícone da app)\n"
+"│ │ ─ ├── featureGraphic.png (banner promocional, mostrado no topo da descida da aplicação no cliente F-Droid; landscape)\n"
+"│ │ ─ ├── tvBanner.png (\"ícone\" para aparelhos de TV, atualmente não utilizado)\n"
+"│ │ ─ ├─── phoneScreenshots\n"
+"│ │ │ ─ ├── 1.png\n"
+"│ │ │ ─ ─ ├── 2.png\n"
+"│ │ │ ...\n"
+"│ │ ─ ├── sevenInchScreenshots/\n"
+"│ │ ─ ├── tenInchScreenshots/ (pode adicionar diferentes capturas de ecrã para diferentes tamanhos do ecrã)\n"
+"│ │ ─ ├── tvScreenshots/\n"
+"│ │ └ └── wearScreenshots/\n"
+"│ └ └── changelogs\n"
+"│ ├── 100000.txt (deve corresponder à versãoCode, literalmente, sem estofamento)\n"
+"│ ├── 100100.txt (se o código da versão foi definido como 100100)\n"
+"│ └ └── 100101.txt (tamanho máximo: 500 caracteres)\n"
+"└── ru (outros códigos locais)\n"
+"    ...                         (os metadados localizados são sempre preferidos pelo cliente)\n"
+"    └── changelogs\n"
+"        └── 100100.txt\n"
 
 #. type: Plain text
 #: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
