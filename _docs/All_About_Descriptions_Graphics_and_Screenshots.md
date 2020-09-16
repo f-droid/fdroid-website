@@ -118,11 +118,10 @@ This structure must be placed at one of the following locations from **the repos
 * `metadata/`
 * `fastlane/metadata/android/`
 
-An advanced option which supports **build flavors** is the following, again placed in the repository's root:
-
-* `src/<buildFlavor>/fastlane/metadata/android/`
-
 Note that placing the structure anywhere else, like in the gradle module's root, **won't work**.
+
+**Build flavors** and multiple apps inside one repository are currently not properly supported.
+(Follow [this issue](https://gitlab.com/fdroid/fdroidserver/issues/829) tracking the implementation of this.)
 
 #### Triple-T structure
 
