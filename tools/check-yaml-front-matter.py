@@ -24,7 +24,7 @@ for f in glob.glob('_docs/*.md') + glob.glob('_pages/*.md') + glob.glob('_posts/
         exitvalue += 1
         continue
     try:
-        data = yaml.load(m.group(1))
+        data = yaml.safe_load(m.group(1))
     except yaml.scanner.ScannerError as e:
         print('ERROR:', f, '\n', e)
         exitvalue += 1
