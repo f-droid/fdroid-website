@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
 "POT-Creation-Date: 2020-09-16 17:12+0200\n"
-"PO-Revision-Date: 2020-09-11 20:29+0000\n"
+"PO-Revision-Date: 2020-09-18 13:36+0000\n"
 "Last-Translator: H <joaquinfc@protonmail.com>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/f-droid/website-docs/es/>\n"
 "Language: es\n"
@@ -153,6 +153,10 @@ msgid ""
 "* Note that a linebreak will automatically be converted to a `br` tag.\n"
 "* You may not make use of JavaScript.\n"
 msgstr ""
+"* Ciertas etiquetas están explícitamente prohibidas, a saber, `applet`, `base`, `body`, ` button`, `embed`, ` form`, `head`, `html`,\n"
+"`iframe`, `img`, `input`, `link`, `object`, `picture`, `script`, `source`, `style`, `svg` y `video`.\n"
+"* Tenga en cuenta que un salto de línea se convertirá automáticamente en una etiqueta `br`.\n"
+"* No puede hacer uso de JavaScript.\n"
 
 #. type: Title ##
 #: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
@@ -203,37 +207,38 @@ msgstr "El último detalle importante es que los textos en el archivo de metadat
 #. type: Plain text
 #: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
 msgid "For more details, see the [precedence rules](#precedence) described at the end of this file."
-msgstr ""
+msgstr "Para obtener más información, consulte las [reglas de precedencia](#precedence) descritas al final de este archivo."
 
 #. type: Plain text
 #: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
 msgid "F-Droid will only use metadata files from the latest release. This means that *fdroidserver* will check out the latest version it knows and scan the repository at the state of that version for metadata files."
-msgstr ""
+msgstr "F-Droid solo usará archivos de metadatos de la última versión. Esto significa que *fdroidserver* comprobará la última versión que conoce y escaneará el repositorio en el estado de esa versión en busca de archivos de metadatos."
 
 #. type: Plain text
 #: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
 msgid "All metadata files are completely optional, except for the short summary description as well as the longer full description. However, apps which do not fulfill certain [criteria](#latest-tab-criteria) will not be shown on the Latest tab."
-msgstr ""
+msgstr "Todos los archivos de metadatos son completamente opcionales, excepto la descripción resumida corta y la descripción completa más larga. Sin embargo, las aplicaciones que no cumplan ciertos [criterios](#latest-tab-criteria) no se mostrarán en la pestaña Lo último."
 
 #. type: Title ####
 #: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
 #, no-wrap
 msgid "Fastlane structure"
-msgstr ""
+msgstr "Estructura Fastlane"
 
 #. type: Plain text
 #: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
+#, fuzzy
 msgid "The first of the two structures is aiming to be compatible to the [fastlane supply](https://github.com/fastlane/fastlane/blob/2.28.7/supply/README.md#images-and-screenshots) tool."
-msgstr ""
+msgstr "La primera de las dos estructuras pretende ser compatible con la herramienta [fastlane supply] (https://github.com/fastlane/fastlane/blob/2.28.7/supply/README.md#images-and-screenshots)."
 
 #. type: Plain text
 #: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
 msgid "The basic file structure is as follows. Pay attention to the notes at the right. When this structure is created, it needs to be place in the correct position as outlined below."
-msgstr ""
+msgstr "La estructura básica del archivo es la siguiente. Preste atención a las notas a la derecha. Cuando se crea esta estructura, debe colocarse en la posición correcta como se describe a continuación."
 
 #. type: Fenced code block
 #: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
-#, no-wrap
+#, fuzzy, no-wrap
 msgid ""
 "├── en-US                       (en-US is the F-Droid fallback language)\n"
 "│   ├── short_description.txt   (short description, max 80 chars, mandatory)\n"
@@ -261,26 +266,52 @@ msgid ""
 "    └── changelogs\n"
 "        └── 100100.txt\n"
 msgstr ""
+"├── en-US                       (en-US es el lenguaje de respaldo de F-droid)\n"
+"│   ├── short_description.txt   (descripción corta, max 80 caracteres, mandatoria)\n"
+"│   ├── full_description.txt    (descripción completa de la aplicación, mandatoria)\n"
+"│   ├── title.txt               (nombre de la aplicación)\n"
+"│   ├── video.txt               (URL a un video introduciendo la aplicación)\n"
+"│   ├── images\n"
+"│   │   ├── icon.png            (icono de la app, mandatoria si tu aplicación no tiene ningun icono png)\n"
+"│   │   ├── featureGraphic.png  (banner promocional, que se muestra en la parte superior de la descripción de la │   │   │   aplicación en el cliente F-Droid; paisaje)\n"
+"│   │   ├── tvBanner.png        (\"icono\" para dispositivos TV, actualmente no en uso)\n"
+"│   │   ├── phoneScreenshots\n"
+"│   │   │   ├── 1.png\n"
+"│   │   │   ├── 2.png\n"
+"│   │   │   ...\n"
+"│   │   ├── sevenInchScreenshots/\n"
+"│   │   ├── tenInchScreenshots/ (puede agregar diferentes capturas de pantalla para diferentes tamaños de \n"
+"│   │   │        pantalla)\n"
+"│   │   ├── tvScreenshots/\n"
+"│   │   └── wearScreenshots/\n"
+"│   └── changelogs\n"
+"│       ├── 100000.txt          (debe corresponder a versionCode, literalmente, sin relleno)\n"
+"│       ├── 100100.txt          (si el código de versión se estableció en 100100)\n"
+"│       └── 100101.txt          (tamaño máximo: 500 caracteres)\n"
+"└── ru                          (otros códigos de configuración regional)\n"
+"    ...                         (el cliente siempre prefiere los metadatos localizados)\n"
+"    └── changelogs\n"
+"        └── 100100.txt\n"
 
 #. type: Plain text
 #: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
 msgid "This structure must be placed at one of the following locations from **the repository's root**:"
-msgstr ""
+msgstr "Esta estructura debe colocarse en una de las siguientes ubicaciones de **la raíz del repositorio**:"
 
 #. type: Bullet: '* '
 #: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
 msgid "`metadata/`"
-msgstr ""
+msgstr "`metadata/`"
 
 #. type: Bullet: '* '
 #: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
 msgid "`fastlane/metadata/android/`"
-msgstr ""
+msgstr "`fastlane/metadata/android/`"
 
 #. type: Plain text
 #: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
 msgid "Note that placing the structure anywhere else, like in the gradle module's root, **won't work**."
-msgstr ""
+msgstr "Tenga en cuenta que colocar la estructura en cualquier otro lugar, como en la raíz del módulo gradle, **no funcionará**."
 
 #. type: Plain text
 #: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
@@ -289,27 +320,29 @@ msgid ""
 "**Build flavors** and multiple apps inside one repository are currently not properly supported.\n"
 "(Follow [this issue](https://gitlab.com/fdroid/fdroidserver/issues/829) tracking the implementation of this.)\n"
 msgstr ""
+"**Las versiones de compilación** y varias aplicaciones dentro de un repositorio no son compatibles actualmente.\n"
+"(Siga [este problema](https://gitlab.com/fdroid/fdroidserver/issues/829) rastreando la implementación de esto).\n"
 
 #. type: Title ####
 #: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
 #, no-wrap
 msgid "Triple-T structure"
-msgstr ""
+msgstr "Estructura Triple-T"
 
 #. type: Plain text
 #: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
 msgid "The second supported structure is compatible with the tool [Triple-T Gradle Play Publisher](https://github.com/Triple-T/gradle-play-publisher/blob/2.8.0/README.md#publishing-listings)."
-msgstr ""
+msgstr "La segunda estructura admitida es compatible con la herramienta [Triple-T Gradle Play Publisher](https://github.com/Triple-T/gradle-play-publisher/blob/2.8.0/README.md#publishing-listings) ."
 
 #. type: Plain text
 #: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
 #, no-wrap
 msgid "Place the following structure at `<module>/src/main/play/` or, for **build flavor** support, at `<module>/src/<buildFlavor>/play/`, where `<module>` is the gradle module of your app (in many cases, this is just the folder `app`):\n"
-msgstr ""
+msgstr "Coloque la siguiente estructura en `<module>/src/main/play/ ` o, para soporte de **tipo de construcción**, en `<module>/src/<buildFlavor>/play/`, donde `<module>` es el módulo Gradle de su aplicación (en muchos casos, esta es solo la carpeta `aplicación`):\n"
 
 #. type: Fenced code block
 #: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
-#, no-wrap
+#, fuzzy, no-wrap
 msgid ""
 "├── contact-email.txt                   (Developer email / AuthorEmail)\n"
 "├── contact-website.txt                 (Developer website / AuthorWebSite)\n"
@@ -343,6 +376,38 @@ msgid ""
 "    ├── de                              (other locales)\n"
 "        ├── ...\n"
 msgstr ""
+"├── contact-email.txt                   (Correo del desarrollador/ AutordelCorreo)\n"
+"├── contact-website.txt                 (Pagina del desarrollador / PaginadelAutor)\n"
+"├── release-notes\n"
+"│   └── en-US\n"
+"│       └── default.txt                 (último registro de cambios)\n"
+"└── listings\n"
+"    ├── en-US                           (en-US es el lenguaje predeterminado de F-droid)\n"
+"    │   ├── title.txt                   (nombre de la aplicación)\n"
+"    │   ├── short-description.txt       (descripción corta, máximo 80 caracteres, obligatorio)\n"
+"    │   ├── full-description.txt        (descripción completa de la aplicación, obligatorio)\n"
+"    │   ├── video-url.txt               (URL a un video introduciendo la aplicación)\n"
+"    │   ├── whatsnew                    (ubicación alterna del registro de cambios; archivo único, no .txt)\n"
+"    │   └── graphics\n"
+"    │       ├── icon                    (icono de la aplicación; obligatorio si su aplicación no incluye ningún icono png)\n"
+"    │       │   └── *.(png|jpg)         1 imagen, generalmente 512x512\n"
+"    │       ├── feature-graphic         (banner promocional, que se muestra en la parte superior de la descripción de la \n"
+"    │       │    │                                              aplicación en el cliente F-Droid)\n"
+"    │       │   └── *.(png|jpg)         1 imagen, generalmente 1024x500\n"
+"    │       ├── phone-screenshots\n"
+"    │       │   └── *.(png|jpg)\n"
+"    │       ├── tablet-screenshots\n"
+"    │       │   └── *.(png|jpg)\n"
+"    │       ├── large-tablet-screenshots\n"
+"    │       │   └── *.(png|jpg)\n"
+"    │       ├── tv-banner               (\"icono\" para dispositivos TV, no utilizado actualmente)\n"
+"    │       │   └── *.(png|jpg)\n"
+"    │       ├── tv-screenshots\n"
+"    │       │   └── *.(png|jpg)\n"
+"    │       └── wear-screenshots\n"
+"    │           └── *.(png|jpg)\n"
+"    ├── de                              (other locales)\n"
+"        ├── ...\n"
 
 #. type: Title ###
 #: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
@@ -359,6 +424,9 @@ msgid ""
 "an app into the main F-Droid repository, **do not choose this option**. Specifically, screenshots may not be added to\n"
 "the *fdroiddata* repository.\n"
 msgstr ""
+"**Nota**: Esta opción solo está destinada a quienes alojan sus propios repositorios. Si eres un desarrollador que quiere conseguir\n"
+"una aplicación en el repositorio principal de F-Droid, **no elija esta opción**. Específicamente, es posible que no se agreguen capturas de pantalla a\n"
+"el repositorio * fdroiddata *.\n"
 
 #. type: Plain text
 #: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
