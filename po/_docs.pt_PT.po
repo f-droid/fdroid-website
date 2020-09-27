@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2020-09-16 17:12+0200\n"
+"POT-Creation-Date: 2020-09-27 20:37+0200\n"
 "PO-Revision-Date: 2020-09-21 10:21+0000\n"
 "Last-Translator: ssantos <ssantos@web.de>\n"
 "Language-Team: Portuguese (Portugal) <https://hosted.weblate.org/projects/f-droid/website-docs/pt_PT/>\n"
@@ -8289,8 +8289,26 @@ msgstr "É possível reduzir o tamanho do ficheiro APK a remover recursos não u
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
-msgid "However, it might be possible that resource shrinker will increase the APK size on different platforms, especially if there is not too many resources to shrink, in which case then original APK will be used instead of the shrinked one (nondeterministic behavior of Gradle plugin). Avoid using resource shrinker unless it decreases the APK file size significantly."
+#, fuzzy
+#| msgid "However, it might be possible that resource shrinker will increase the APK size on different platforms, especially if there is not too many resources to shrink, in which case then original APK will be used instead of the shrinked one (nondeterministic behavior of Gradle plugin). Avoid using resource shrinker unless it decreases the APK file size significantly."
+msgid "However, it might be possible that resource shrinker will increase the APK size on different platforms, especially if there is not too many resources to shrink, in which case the original APK will be used instead of the shrinked one (nondeterministic behavior of Gradle plugin). Avoid using resource shrinker unless it decreases the APK file size significantly."
 msgstr "No entanto, pode ser possível que o encolhimento de recursos aumente o tamanho do APK em outras plataformas, especialmente se não houver muitos recursos para encolher, caso em que então o APK original será usado em vez do encolhido (um comportamento não determinístico do plugin Gradle). Evite usar o recurso de encolhimento a menos que ele diminua o tamanho do ficheiro APK significativamente."
+
+#. type: Title ###
+#: _docs/Reproducible_Builds.md
+#, no-wrap
+msgid "NDK _build-id_"
+msgstr ""
+
+#. type: Plain text
+#: _docs/Reproducible_Builds.md
+msgid "On different build machines different NDK paths and different paths to the project (and thus to its _jni_ directory) are used. This leads to different paths to the source files in debug symbols, causing linker to generate different _build-id_, which is preserved after stripping."
+msgstr ""
+
+#. type: Plain text
+#: _docs/Reproducible_Builds.md
+msgid "One possible solution is adding `LOCAL_LDFLAGS += -Wl,--build-id=none` to _Android.mk_ files which will disable _build-id_ generation completely."
+msgstr ""
 
 #. type: Title ###
 #: _docs/Reproducible_Builds.md
@@ -8367,7 +8385,9 @@ msgstr "TODO"
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
-msgid "- NDK inserts changing _build-id_, probably via `ld` - jar sort order for APKs - `aapt` versions produce different results (XML and res/ subfolder names)"
+#, fuzzy
+#| msgid "- NDK inserts changing _build-id_, probably via `ld` - jar sort order for APKs - `aapt` versions produce different results (XML and res/ subfolder names)"
+msgid "- jar sort order for APKs - `aapt` versions produce different results (XML and res/ subfolder names)"
 msgstr "- Inserções no NDK a alterar _build-id_, provavelmente via `ld` - ordem de ordenação jar para APKs - versões `aapt` produzem resultados diferentes (XML e nomes de subpasta res/)"
 
 #. type: Title ####
