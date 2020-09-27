@@ -198,10 +198,20 @@ shrinking is used.
 
 However, it might be possible that resource shrinker will increase the
 APK size on different platforms, especially if there is not too many
-resources to shrink, in which case then original APK will be used
+resources to shrink, in which case the original APK will be used
 instead of the shrinked one (nondeterministic behavior of Gradle
 plugin). Avoid using resource shrinker unless it decreases the APK file
 size significantly.
+
+### NDK _build-id_
+
+On different build machines different NDK paths and different paths to the
+project (and thus to its _jni_ directory) are used. This leads to different
+paths to the source files in debug symbols, causing linker to generate
+different _build-id_, which is preserved after stripping.
+
+One possible solution is adding `LOCAL_LDFLAGS += -Wl,--build-id=none` to
+_Android.mk_ files which will disable _build-id_ generation completely.
 
 ### Build Server IDs
 
@@ -242,7 +252,6 @@ process.  But the APK build process can add them.  For example:
 
 #### TODO
 
-- NDK inserts changing _build-id_, probably via `ld`
 - jar sort order for APKs
 - `aapt` versions produce different results (XML and res/ subfolder names)
 
