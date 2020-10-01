@@ -12,11 +12,12 @@ There are two official F-Droid repository sections, the "repo" and the "archive"
 
 The primary resources required by a mirror are disk space and upload bandwidth. Bandwidth requirements are reduced with each new mirror, but disk requirements grow at a [reasonable rate](https://ftp.fau.de/cgi-bin/show-ftp-stats.cgi?statstype=2&what=mirrorsize&mirrorname=fdroid&timespan=-1&graphsize=large&submit=Go%21). At time of writing (Mar 2019), the primary repository requires just over 60GB of disk space in 24K files, and the archive requires 300GB of disk space in 52K files. The amount of disk space required grows with every new app release.
 
-There are three mirror servers which offer an _rsync_ connection, make sure to select the mirror closest to your mirror server:
+There are four mirror servers which offer an _rsync_ connection, make sure to select the mirror closest to your mirror server:
 
-* China: rsync -axv mirrors.tuna.tsinghua.edu.cn::fdroid
-* Germany: rsync -axv ftp.fau.de::fdroid
-* USA/Indiana: rsync -axv plug-mirror.rcac.purdue.edu::fdroid
+* China: `rsync -axv mirrors.tuna.tsinghua.edu.cn::fdroid`
+* Germany: `rsync -axv ftp.fau.de::fdroid`
+* Sweden: `rsync -axv ftp.lysator.liu.se::pub/fdroid`
+* USA/Indiana: `rsync -axv plug-mirror.rcac.purdue.edu::fdroid`
 
 
 You can find current information on disk space requirements by running the following in your terminal:
@@ -98,9 +99,46 @@ server {
 * Open an issue on the [admin repo](https://gitlab.com/fdroid/admin), including any pertinent information, requesting the inclusion of your mirror.
 * Once the core contributor team deems your mirror trustworthy and reliable, it will be accepted into the official list.
 
+Also, it would be nice to include a privacy policy so users can understand what happens with their metadata when using the mirror. Purdue PLUG https://plug-mirror.rcac.purdue.edu/info.html and FAU https://ftp.fau.de/datenschutz are two examples.
+
+
 #### Other considerations
 
+* Set up a privacy policy that describes what happens to the metadata (for example [FAU](https://ftp.fau.de/datenschutz/), [PLUG](https://plug-mirror.rcac.purdue.edu/info.html), [Lysator](https://ftp.lysator.liu.se/datahanteringspolicy.txt)).
 * Forward emails from cronjob failures so you know if the synchronization fails
-* Set up monitoring on your mirror so you know if it goes down (ideally keyword on _/var/www/fdroid/fdroid/repo/index.html_)
-* Harden your SSH server config (disable password authentication, install fail2ban)
-* Enable unattended upgrades
+* Set up monitoring on your mirror so you know if it goes down (ideally keyword on _/srv/mymirror.org/htdocs/fdroid/repo/index-v1.jar_)
+* Harden your SSH server config (disable password authentication, install _fail2ban_)
+* Enable unattended security upgrades (in Debian, just `apt-get install unattended-upgrades`)
+
+
+## Running a Primary Mirror (receiving syncs via push)
+
+The preferred setup is for the F-Droid updates to be pushed to the primary
+mirror via _rsync_ over _ssh_ with SSH Key authentication.  This is the same as
+[Debian](https://www.debian.org/mirror/push_server#sshtrigger), the key
+difference is that there currently is no script used for the `command=""`, but
+instead, there is a hard-coded _rsync_ command.  This really nicely restricts
+the security interaction to only want needs to happen (Least Authority!).
+
+```
+command="rsync --server -logDtpre.iLsfx --log-format=X --delete --delay-updates . /srv/fdroid-mirror.at.or.at/htdocs/fdroid/"
+```
+
+The only piece of that command that is customizable is the final path.  It can
+be any path but it must point to the `/fdroid/` directory and must have the
+trailing slash.  If any of the _rsync_ options are changed, it will break the
+sync setup.
+
+As an extra precaution, there should be a user account (e.g. `fdroid`)
+dedicated to receiving the _rsync_/_ssh_ connection.  It should have
+as little access as possible.  It should definitely not have write
+access to the _authorized_keys_ file, since that would allow an
+attacker who gains write access to add a separate key configuration
+line which circumvents all the restrictions listed there.  This can be
+done simply by doing:
+
+```console
+$ sudo chown root.root /home/fdroid/.ssh /home/fdroid/.ssh/authorized_keys
+$ sudo chmod 0755 /home/fdroid/.ssh
+$ sudo chmod 0644 /home/fdroid/.ssh/authorized_keys
+```
