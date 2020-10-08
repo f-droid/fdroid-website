@@ -70,7 +70,7 @@ If it is a major release, there are a few more steps.
 8. add git signed tag named after the exact version name (no
    preceeding __v__), using the exact same string as `version=''`
 9. upload to pypi.python.org using `python3 setup.py release`
-10. update [Debian package](https://anonscm.debian.org/git/collab-maint/fdroidserver.git)
+10. update [Debian package](https://salsa.debian.org/python-team/packages/fdroidserver)
 11. upload to [F-Droid PPA](https://launchpad.net/~fdroid/+archive/ubuntu/fdroidserver)
 
 
@@ -137,3 +137,20 @@ If it is a major release, there are a few more steps.
 4. Update _fdroid-website_ to use this release by setting both
    `revision:` and the version number in `specs: jekyll-fdroid
    (1.0.1)` in _Gemfile.lock_
+
+
+## Repomaker
+
+1. Review and merge any merge requests from Weblate on
+   <https://gitlab.com/fdroid/repomaker/merge_requests>.
+2. Pull in latest commits, including any merged Weblate commits
+3. Make sure all tests on GitLab CI pass before merging.
+4. Set `VERSION =''` in _repomaker/__init__.py_.
+5. Add git signed tag named after the exact version name (no
+   preceeding __v__), using the exact same string as `VERSION =''`.
+6. Make sure the local git repo is fully clean, so random files are
+   not included in the release tarball, e.g. `git clean -fdx`.
+7. Make sure all dependencies are installed, like in a _venv_.
+8. Run `./pre-release.sh`
+9. Build a dist tarball using `./setup.py release`.
+10. Upload to pypi.python.org.
