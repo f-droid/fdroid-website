@@ -114,6 +114,14 @@ will be the hostname or IP address of your machine with
 `http://192.168.2.53/fdroid/repo/`. You can temporarily uncheck the
 official repos to easily see what F-Droid found in your new repo.
 
+While you can serve the repository at an arbitrary URL, it is customary
+to make it available at an URL ending with `/fdroid/repo/`.
+A good reason to actually do this is that the F-Droid client sets up an
+intent filter and registers itself for such URLs. As a result, a user
+that has the F-Droid app installed and opens such a well-formed URL
+will have their device open F-Droid and guide them directly to adding
+the repository to it.
+
 ### Customization
 
 You can also customize your repo by editing the config file. Be sure to
