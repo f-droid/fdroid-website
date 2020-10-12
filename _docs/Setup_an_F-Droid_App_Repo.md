@@ -79,7 +79,7 @@ repository" to host a collection of APKs. The repo will be set up in
 the recommended _fdroid/_ subdirectory. This gives the `fdroid` tool
 its own directory to work in, and makes the repo URL clearly marked as
 an F-Droid repo. Also, the F-Droid client will automatically search for
-a repository at the _/fdroid/repo_ path if the user only the server
+a repository at the _/fdroid/repo_ path if the user only enters the server
 (e.g. "https://f-droid.org"). Let's give our normal user control
 over this subdirectory in the web root so that we don't need to run
 the F-Droid tools as root (with _nginx_, the webroot is
