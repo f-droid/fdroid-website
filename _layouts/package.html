@@ -175,7 +175,7 @@ layout: default-package-sidebar
 		<ul class="package-versions-list">
 			{% for package in page.packages %}
 			<li class="package-version" {% if forloop.first %}id="latest"{% endif %}>
-			{% if page.suggested_version_name == package.version_name %}<a name="suggested"></a>{% endif %}
+			{% if page.suggested_version_name == package.version_name and suggestedDisplayed != true %}<a name="suggested"></a>{% endif %}
 				<div class="package-version-header">
 					{% comment %}
 					Use YYYY-MM-DD format, because it is more internationalizable than versions which include English month names.
@@ -186,7 +186,7 @@ layout: default-package-sidebar
 					{% assign fmt_package_version = '{{ package_version }}' %}
 					{% assign fmt_package_version_code = '{{ package_version_code }}' %}
 					{{ strings.version_info | replace: fmt_package_version, package.version_name | replace: fmt_package_version_code, package.version_code }}
-					{% if page.suggested_version_name == package.version_name %}<span class="suggested-badge">{{ strings.suggested }}</span>{% else %} - {% endif %}
+					{% if page.suggested_version_name == package.version_name and suggestedDisplayed != true %}<span class="suggested-badge">{{ strings.suggested }}</span>{% assign suggestedDisplayed = true %}{% else %} - {% endif %}
 					{% assign fmt_package_added_date = '{{ package_added_date }}' %}
 					{{ strings.added_on | replace: fmt_package_added_date, package_added_date }}
 				</div>
