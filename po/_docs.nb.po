@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
-"POT-Creation-Date: 2020-09-27 20:37+0200\n"
+"POT-Creation-Date: 2020-10-14 01:24+0200\n"
 "PO-Revision-Date: 2020-07-20 20:45+0200\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/f-droid/website-docs/nb_NO/>\n"
@@ -6963,7 +6963,7 @@ msgid ""
 msgstr ""
 
 #. type: Title ##
-#: _docs/Release_Channels_and_Signing_Keys.md
+#: _docs/Release_Channels_and_Signing_Keys.md _docs/Release_Process.md
 #, no-wrap
 msgid "Repomaker"
 msgstr "Pakkebrønnsmakeren"
@@ -7163,7 +7163,7 @@ msgstr ""
 
 #. type: Bullet: '10. '
 #: _docs/Release_Process.md
-msgid "update [Debian package](https://anonscm.debian.org/git/collab-maint/fdroidserver.git)"
+msgid "update [Debian package](https://salsa.debian.org/python-team/packages/fdroidserver)"
 msgstr ""
 
 #. type: Bullet: '11. '
@@ -7270,6 +7270,56 @@ msgstr ""
 #. type: Bullet: '4. '
 #: _docs/Release_Process.md
 msgid "Update _fdroid-website_ to use this release by setting both `revision:` and the version number in `specs: jekyll-fdroid (1.0.1)` in _Gemfile.lock_"
+msgstr ""
+
+#. type: Bullet: '1. '
+#: _docs/Release_Process.md
+msgid "Review and merge any merge requests from Weblate on <https://gitlab.com/fdroid/repomaker/merge_requests>."
+msgstr ""
+
+#. type: Bullet: '2. '
+#: _docs/Release_Process.md
+msgid "Pull in latest commits, including any merged Weblate commits"
+msgstr ""
+
+#. type: Bullet: '3. '
+#: _docs/Release_Process.md
+msgid "Make sure all tests on GitLab CI pass before merging."
+msgstr ""
+
+#. type: Bullet: '4. '
+#: _docs/Release_Process.md
+msgid "Set `VERSION =''` in _repomaker/__init__.py_."
+msgstr ""
+
+#. type: Bullet: '5. '
+#: _docs/Release_Process.md
+msgid "Add git signed tag named after the exact version name (no preceeding __v__), using the exact same string as `VERSION =''`."
+msgstr ""
+
+#. type: Bullet: '6. '
+#: _docs/Release_Process.md
+msgid "Make sure the local git repo is fully clean, so random files are not included in the release tarball, e.g. `git clean -fdx`."
+msgstr ""
+
+#. type: Bullet: '7. '
+#: _docs/Release_Process.md
+msgid "Make sure all dependencies are installed, like in a _venv_."
+msgstr ""
+
+#. type: Bullet: '8. '
+#: _docs/Release_Process.md
+msgid "Run `./pre-release.sh`"
+msgstr ""
+
+#. type: Bullet: '9. '
+#: _docs/Release_Process.md
+msgid "Build a dist tarball using `./setup.py release`."
+msgstr ""
+
+#. type: Bullet: '10. '
+#: _docs/Release_Process.md
+msgid "Upload to pypi.python.org."
 msgstr ""
 
 #. type: YAML Front Matter: title
@@ -8316,7 +8366,7 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/Setup_an_F-Droid_App_Repo.md
-msgid "In the case of this HOWTO, we're going to setup a \"simple binary repository\" to host a collection of APKs. The repo will be set up in the recommended _fdroid/_ subdirectory. This gives the `fdroid` tool its own directory to work in, and makes the repo URL clearly marked as an F-Droid repo. Also, the F-Droid client will automatically search for a repository at the _/fdroid/repo_ path if the user only the server (e.g. \"https://f-droid.org\"). Let's give our normal user control over this subdirectory in the web root so that we don't need to run the F-Droid tools as root (with _nginx_, the webroot is _/usr/share/nginx/www_, it is different for other webservers):"
+msgid "In the case of this HOWTO, we're going to setup a \"simple binary repository\" to host a collection of APKs. The repo will be set up in the recommended _fdroid/_ subdirectory. This gives the `fdroid` tool its own directory to work in, and makes the repo URL clearly marked as an F-Droid repo. Also, the F-Droid client will automatically search for a repository at the _/fdroid/repo_ path if the user only enters the server (e.g. \"https://f-droid.org\"). Let's give our normal user control over this subdirectory in the web root so that we don't need to run the F-Droid tools as root (with _nginx_, the webroot is _/usr/share/nginx/www_, it is different for other webservers):"
 msgstr ""
 
 #. type: Fenced code block (bash)
@@ -8346,6 +8396,11 @@ msgstr ""
 #. type: Plain text
 #: _docs/Setup_an_F-Droid_App_Repo.md
 msgid "Voila! Now you have a working F-Droid Repo! Remember, this is __just a test__ setup, remember to move on to the [Real World Setup](#real-world-setup) after this! Add your new repo to an F-Droid client on your Android device to test it out. That is done in the __Manage Repos__ screen available from the menu. Your repo URL will be the hostname or IP address of your machine with `/fdroid/repo/` added to the end of it, i.e.  `https://mysecureserver.com/fdroid/repo/` or `http://192.168.2.53/fdroid/repo/`. You can temporarily uncheck the official repos to easily see what F-Droid found in your new repo."
+msgstr ""
+
+#. type: Plain text
+#: _docs/Setup_an_F-Droid_App_Repo.md
+msgid "While you can serve the repository at an arbitrary URL, it is customary to make it available at an URL ending with `/fdroid/repo/`.  A good reason to actually do this is that the F-Droid client sets up an intent filter and registers itself for such URLs. As a result, a user that has the F-Droid app installed and opens such a well-formed URL will have their device open F-Droid and guide them directly to adding the repository to it."
 msgstr ""
 
 #. type: Title ###
