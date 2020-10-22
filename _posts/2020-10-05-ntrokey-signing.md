@@ -50,4 +50,4 @@ From now on everything should work as usual as long as the Nitrokey is plugged i
 ### What about signing a lot of apps?
 
 The Nitrokey HSM2 has only limited space for signing keys, it can store up to 38 2048 bit RSA keys. There's a [work-in-progress MR](https://gitlab.com/fdroid/fdroidserver/-/merge_requests/783)
-making use of the wrapped key functionality to only load app signing keys onto the HSM on demand. This allows using an unlimited amount of different keys with a single Nitrokey.
+making use of the wrapped key functionality to only load app signing keys onto the HSM on demand. This allows using an unlimited amount of different keys with a single Nitrokey. (Many thanks to [Jason Donenfeld (zx2c4)](https://www.zx2c4.com/) for coming up with this idea!)
