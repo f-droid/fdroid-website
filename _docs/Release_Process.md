@@ -21,13 +21,17 @@ steps.  The official signing keys are listed in
    <https://gitlab.com/fdroid/fdroidclient> and fix any conflicts
 4. push local _weblate_ branch to your fork create a merge request,
    and tag it with the _localization_ label
-5. make sure all tests pass before merging, including all _android-10_
+5. make sure all tests pass before merging, including all _android-22_
    emulator tests
 6. once the _weblate_ branch is merged, reset the git repo in
    <https://hosted.weblate.org/projects/f-droid/f-droid/#repository>
 7. set _versionCode_ in _app/build.gradle_
 8. add new entry in _metadata/en-US/changelogs/_
 9. copy that new entry to _CHANGELOG.md_
+10. make a local branch for the final release, then run
+    `./tools/trim-incomplete-translations-for-release.py`
+	to remove any incomplete translations from the final while leaving
+	them in _master_
 10. add git signed tag named after the exact version name (no
    preceeding __v__)
 11. add new `Build:` entry to
