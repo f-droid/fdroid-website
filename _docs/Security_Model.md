@@ -6,7 +6,7 @@ title: Security Model
 
 The security architecture is based on models proven by
 [Debian](https://wiki.debian.org/SecureApt), [The Update
-Framework](https://github.com/theupdateframework/tuf/blob/develop/docs/tuf-spec.txt)
+Framework](https://github.com/theupdateframework/specification/blob/master/tuf-spec.md)
 , and others:
 
 -   [HTTPS connections by default](https://gitlab.com/fdroid/fdroidclient/blob/v0.100.1/app/src/main/res/values/default_repo.xml#L11)
