@@ -158,3 +158,7 @@ If it is a major release, there are a few more steps.
 8. Run `./pre-release.sh`
 9. Build a dist tarball using `./setup.py release`.
 10. Upload to pypi.python.org.
+11. Update <https://gitlab.com/fdroid/fdroid-repomaker-flatpak>
+    and make sure CI passes.
+12. Push changes to official repo on GitHub:
+	<https://github.com/flathub/org.fdroid.Repomaker>
