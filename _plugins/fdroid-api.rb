@@ -8,6 +8,10 @@ module Jekyll
         FileUtils.mkdir_p(dir)
         site.pages.each do |page|
           if page.data and page.data.key? 'package_name'
+            if /.*\.(coffee|css|html|js|md)$/.match(page.data['package_name'])
+              # TODO temporary hack to stop https://gitlab.com/fdroid/fdroid-website/-/issues/517
+              next
+            end
             site.pages << JsonApi.new(site, dir, page.data)
           end
         end
