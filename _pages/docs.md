@@ -29,6 +29,7 @@ the main repository.
 
 ### More Information
 
+* [Code of Conduct](Code_of_Conduct) how to behave when communicating within F-Droid.
 * [How to Help](How_to_Help) Different ways anyone can contribute to the F-Droid project.
 * [Known Repositories](https://forum.f-droid.org/t/721) A list that tries to keep track of known F-Droid compatible repositories.
 * [Release Channels and Signing Keys](Release_Channels_and_Signing_Keys) These are the various channels that F-Droid software are released on, with info to verify them based on signing keys.
