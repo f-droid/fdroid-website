@@ -21,13 +21,17 @@ steps.  The official signing keys are listed in
    <https://gitlab.com/fdroid/fdroidclient> and fix any conflicts
 4. push local _weblate_ branch to your fork create a merge request,
    and tag it with the _localization_ label
-5. make sure all tests pass before merging, including all _android-10_
+5. make sure all tests pass before merging, including all _android-22_
    emulator tests
 6. once the _weblate_ branch is merged, reset the git repo in
    <https://hosted.weblate.org/projects/f-droid/f-droid/#repository>
 7. set _versionCode_ in _app/build.gradle_
 8. add new entry in _metadata/en-US/changelogs/_
 9. copy that new entry to _CHANGELOG.md_
+10. make a local branch for the final release, then run
+    `./tools/trim-incomplete-translations-for-release.py`
+	to remove any incomplete translations from the final while leaving
+	them in _master_
 10. add git signed tag named after the exact version name (no
    preceeding __v__)
 11. add new `Build:` entry to
@@ -102,17 +106,24 @@ If it is a major release, there are a few more steps.
 
 ## fdroid-website
 
-1. Pull in latest commits from Weblate into a local branch called
-   _weblate_.
-2. Run all checker scripts (`./tools/check-*.py`), make sure they all
-   pass, then commit those changes.
-3. merge this new _weblate_ branch into the latest commits in _master_
-   of <https://gitlab.com/fdroid/fdroid-website> and fix any conflicts
-4. push local _weblate_ branch to your fork create a merge request,
-   and tag it with the _localization_ label
-5. make sure all tests pass before merging
-6. once the _weblate_ branch is merged, reset the git repo in
-   <https://hosted.weblate.org/projects/f-droid/website/#repository>
+1. Review the [failing
+   checks](https://hosted.weblate.org/checks/?project=f-droid&component=website)
+   in Weblate, and try to fix any as possible in the Weblate UI (not
+   locally!).
+2. Commit all work [in Weblate](https://hosted.weblate.org/projects/f-droid/website/#repository)
+   or with `wlc commit`.
+3. Fetch the latest commits from Weblate into a git remote called _weblate_.
+4. Reset your local _master_ branch to the main repo's _master_, e.g.
+   `git checkout -B master upstream/master`
+5. Run `./tools/pick-complete-translations.py`.
+6. Change to new _merge_weblate_ branch and run all checker scripts
+   (`./tools/check-*.py`), make sure they all pass, then commit those
+   changes.
+7. Merge the _merge_weblate_ branch into the local _master_ branch and
+   fix any conflicts.
+8. Push _merge_weblate_ branch to your fork and create a merge request.
+   Tag it with the _localization_ label.
+9. Make sure all tests pass before merging.
 7. add git signed tag named after the exact version name (no
    preceeding __v__), using the exact same string as `version=''`
 8. `git fetch weblate` and check that Weblate rebased on the latest
@@ -154,3 +165,7 @@ If it is a major release, there are a few more steps.
 8. Run `./pre-release.sh`
 9. Build a dist tarball using `./setup.py release`.
 10. Upload to pypi.python.org.
+11. Update <https://gitlab.com/fdroid/fdroid-repomaker-flatpak>
+    and make sure CI passes.
+12. Push changes to official repo on GitHub:
+	<https://github.com/flathub/org.fdroid.Repomaker>
