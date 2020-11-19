@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2020-10-14 01:24+0200\n"
+"POT-Creation-Date: 2020-11-19 14:54+0100\n"
 "PO-Revision-Date: 2020-10-01 16:22+0000\n"
 "Last-Translator: Besnik Bleta <besnik@programeshqip.org>\n"
 "Language-Team: Albanian <https://hosted.weblate.org/projects/f-droid/website-docs/sq/>\n"
@@ -4888,6 +4888,28 @@ msgstr ""
 #. type: Title ###
 #: _docs/How_to_Help.md
 #, no-wrap
+msgid "Add information about no longer maintained apps"
+msgstr ""
+
+#. type: Plain text
+#: _docs/How_to_Help.md
+msgid "At the beginning of the app's description in metadata (provided Description is held on our end), insert a paragraph saying"
+msgstr ""
+
+#. type: Fenced code block
+#: _docs/How_to_Help.md
+#, no-wrap
+msgid "NOTE: This app is no longer maintained.\n"
+msgstr ""
+
+#. type: Plain text
+#: _docs/How_to_Help.md
+msgid "Optionally link \"no longer maintained\" to where that statement is found (if not directly on the app's Readme/Website). Or add \"(its repo has been archived)\" – whichever fits. If the repo is gone altogether, instead remove the entries for `RepoType` and `RepoURL`, and at the very end of the metadata YAML add a line saying `NoSourceSince: 0.1.2` (where 0.1.2 should be the versionName of the last build available) – this will automatically translate into an AntiFeature and thus be displayed prominently.  In the end make that an MR."
+msgstr ""
+
+#. type: Title ###
+#: _docs/How_to_Help.md
+#, no-wrap
 msgid "Translate"
 msgstr "Përktheni"
 
@@ -6976,7 +6998,7 @@ msgstr ""
 
 #. type: Bullet: '5. '
 #: _docs/Release_Process.md
-msgid "make sure all tests pass before merging, including all _android-10_ emulator tests"
+msgid "make sure all tests pass before merging, including all _android-22_ emulator tests"
 msgstr ""
 
 #. type: Bullet: '6. '
@@ -7003,6 +7025,10 @@ msgstr ""
 #: _docs/Release_Process.md
 #, no-wrap
 msgid ""
+"10. make a local branch for the final release, then run\n"
+"    `./tools/trim-incomplete-translations-for-release.py`\n"
+"\tto remove any incomplete translations from the final while leaving\n"
+"\tthem in _master_\n"
 "10. add git signed tag named after the exact version name (no\n"
 "   preceeding __v__)\n"
 "11. add new `Build:` entry to\n"
@@ -7127,22 +7153,47 @@ msgstr ""
 
 #. type: Bullet: '1. '
 #: _docs/Release_Process.md
-msgid "Pull in latest commits from Weblate into a local branch called _weblate_."
+msgid "Review the [failing checks](https://hosted.weblate.org/checks/?project=f-droid&component=website)  in Weblate, and try to fix any as possible in the Weblate UI (not locally!)."
 msgstr ""
 
 #. type: Bullet: '2. '
 #: _docs/Release_Process.md
-msgid "Run all checker scripts (`./tools/check-*.py`), make sure they all pass, then commit those changes."
+msgid "Commit all work [in Weblate](https://hosted.weblate.org/projects/f-droid/website/#repository)  or with `wlc commit`."
 msgstr ""
 
 #. type: Bullet: '3. '
 #: _docs/Release_Process.md
-msgid "merge this new _weblate_ branch into the latest commits in _master_ of <https://gitlab.com/fdroid/fdroid-website> and fix any conflicts"
+msgid "Fetch the latest commits from Weblate into a git remote called _weblate_."
+msgstr ""
+
+#. type: Bullet: '4. '
+#: _docs/Release_Process.md
+msgid "Reset your local _master_ branch to the main repo's _master_, e.g.  `git checkout -B master upstream/master`"
+msgstr ""
+
+#. type: Bullet: '5. '
+#: _docs/Release_Process.md
+msgid "Run `./tools/pick-complete-translations.py`."
 msgstr ""
 
 #. type: Bullet: '6. '
 #: _docs/Release_Process.md
-msgid "once the _weblate_ branch is merged, reset the git repo in <https://hosted.weblate.org/projects/f-droid/website/#repository>"
+msgid "Change to new _merge_weblate_ branch and run all checker scripts (`./tools/check-*.py`), make sure they all pass, then commit those changes."
+msgstr ""
+
+#. type: Bullet: '7. '
+#: _docs/Release_Process.md
+msgid "Merge the _merge_weblate_ branch into the local _master_ branch and fix any conflicts."
+msgstr ""
+
+#. type: Bullet: '8. '
+#: _docs/Release_Process.md
+msgid "Push _merge_weblate_ branch to your fork and create a merge request.  Tag it with the _localization_ label."
+msgstr ""
+
+#. type: Bullet: '9. '
+#: _docs/Release_Process.md
+msgid "Make sure all tests pass before merging."
 msgstr ""
 
 #. type: Bullet: '8. '
@@ -7234,6 +7285,19 @@ msgstr ""
 #. type: Bullet: '10. '
 #: _docs/Release_Process.md
 msgid "Upload to pypi.python.org."
+msgstr ""
+
+#. type: Bullet: '11. '
+#: _docs/Release_Process.md
+msgid "Update <https://gitlab.com/fdroid/fdroid-repomaker-flatpak> and make sure CI passes."
+msgstr ""
+
+#. type: Plain text
+#: _docs/Release_Process.md
+#, no-wrap
+msgid ""
+"12. Push changes to official repo on GitHub:\n"
+"\t<https://github.com/flathub/org.fdroid.Repomaker>\n"
 msgstr ""
 
 #. type: YAML Front Matter: title
@@ -7974,7 +8038,7 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/Security_Model.md
-msgid "The security architecture is based on models proven by [Debian](https://wiki.debian.org/SecureApt), [The Update Framework](https://github.com/theupdateframework/tuf/blob/develop/docs/tuf-spec.txt)  , and others:"
+msgid "The security architecture is based on models proven by [Debian](https://wiki.debian.org/SecureApt), [The Update Framework](https://github.com/theupdateframework/specification/blob/master/tuf-spec.md)  , and others:"
 msgstr ""
 
 #. type: Bullet: '-   '
