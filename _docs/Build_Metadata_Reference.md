@@ -663,7 +663,7 @@ configuration to the build. These are (roughly in order of application):
 
 :   As for ’prebuild’, but runs during the actual build phase (but
     before the main Ant/Maven build). Use this only for actions that do
-    actual building. Any prepartion of the source code should be done
+    actual building. Any preparation of the source code should be done
     using ’init’ or ’prebuild’.
 
     Any building that takes place before _build_ will be ignored, as
