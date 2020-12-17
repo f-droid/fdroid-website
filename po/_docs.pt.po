@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2020-10-14 01:24+0200\n"
+"POT-Creation-Date: 2020-11-19 14:54+0100\n"
 "PO-Revision-Date: 2020-10-17 17:40+0000\n"
 "Last-Translator: ssantos <ssantos@web.de>\n"
 "Language-Team: Portuguese <https://hosted.weblate.org/projects/f-droid/website-docs/pt/>\n"
@@ -5390,6 +5390,28 @@ msgstr "O procedimento para atualizar apps é semelhante à adição de apps nov
 #. type: Title ###
 #: _docs/How_to_Help.md
 #, no-wrap
+msgid "Add information about no longer maintained apps"
+msgstr ""
+
+#. type: Plain text
+#: _docs/How_to_Help.md
+msgid "At the beginning of the app's description in metadata (provided Description is held on our end), insert a paragraph saying"
+msgstr ""
+
+#. type: Fenced code block
+#: _docs/How_to_Help.md
+#, no-wrap
+msgid "NOTE: This app is no longer maintained.\n"
+msgstr ""
+
+#. type: Plain text
+#: _docs/How_to_Help.md
+msgid "Optionally link \"no longer maintained\" to where that statement is found (if not directly on the app's Readme/Website). Or add \"(its repo has been archived)\" – whichever fits. If the repo is gone altogether, instead remove the entries for `RepoType` and `RepoURL`, and at the very end of the metadata YAML add a line saying `NoSourceSince: 0.1.2` (where 0.1.2 should be the versionName of the last build available) – this will automatically translate into an AntiFeature and thus be displayed prominently.  In the end make that an MR."
+msgstr ""
+
+#. type: Title ###
+#: _docs/How_to_Help.md
+#, no-wrap
 msgid "Translate"
 msgstr "Traduzir"
 
@@ -7633,7 +7655,9 @@ msgstr "empurrar o ramo local _ weblate_ para sua bifurcação criar uma solicit
 
 #. type: Bullet: '5. '
 #: _docs/Release_Process.md
-msgid "make sure all tests pass before merging, including all _android-10_ emulator tests"
+#, fuzzy
+#| msgid "make sure all tests pass before merging, including all _android-10_ emulator tests"
+msgid "make sure all tests pass before merging, including all _android-22_ emulator tests"
 msgstr "certifique-se de que todos os testes passam antes da mesclagem, incluindo todos os testes do emulador _android-10_"
 
 #. type: Bullet: '6. '
@@ -7658,8 +7682,17 @@ msgstr "copiar essa nova entrada para _CHANGELOG.md_"
 
 #. type: Plain text
 #: _docs/Release_Process.md
-#, no-wrap
+#, fuzzy, no-wrap
+#| msgid ""
+#| "10. add git signed tag named after the exact version name (no\n"
+#| "   preceeding __v__)\n"
+#| "11. add new `Build:` entry to\n"
+#| "    [metadata file](https://gitlab.com/fdroid/fdroiddata/blob/master/metadata/org.fdroid.fdroid.txt)\n"
 msgid ""
+"10. make a local branch for the final release, then run\n"
+"    `./tools/trim-incomplete-translations-for-release.py`\n"
+"\tto remove any incomplete translations from the final while leaving\n"
+"\tthem in _master_\n"
 "10. add git signed tag named after the exact version name (no\n"
 "   preceeding __v__)\n"
 "11. add new `Build:` entry to\n"
@@ -7795,23 +7828,60 @@ msgstr "Website fdroid"
 
 #. type: Bullet: '1. '
 #: _docs/Release_Process.md
-msgid "Pull in latest commits from Weblate into a local branch called _weblate_."
-msgstr "Puxar os últimos commits do Weblate para um ramo local chamado _weblate_."
+msgid "Review the [failing checks](https://hosted.weblate.org/checks/?project=f-droid&component=website)  in Weblate, and try to fix any as possible in the Weblate UI (not locally!)."
+msgstr ""
 
 #. type: Bullet: '2. '
 #: _docs/Release_Process.md
-msgid "Run all checker scripts (`./tools/check-*.py`), make sure they all pass, then commit those changes."
-msgstr "Execute todos os scripts de verificação (`./tools/check-*.py`), certifique-se de que todos passam e depois submeta essas alterações."
+#, fuzzy
+#| msgid "[f-droid.org website blog posts](https://hosted.weblate.org/projects/f-droid/website-posts)"
+msgid "Commit all work [in Weblate](https://hosted.weblate.org/projects/f-droid/website/#repository)  or with `wlc commit`."
+msgstr "[publicações de blog do site f-droid.org](https://hosted.weblate.org/projects/f-droid/website-posts)"
 
 #. type: Bullet: '3. '
 #: _docs/Release_Process.md
-msgid "merge this new _weblate_ branch into the latest commits in _master_ of <https://gitlab.com/fdroid/fdroid-website> and fix any conflicts"
-msgstr "mesclar o ramo novo _weblate_ nas últimas submissões em _master_ de <https://gitlab.com/fdroid/fdroidclient> e corrigir quaisquer conflitos"
+#, fuzzy
+#| msgid "Pull in latest commits from Weblate into a local branch called _weblate_."
+msgid "Fetch the latest commits from Weblate into a git remote called _weblate_."
+msgstr "Puxar os últimos commits do Weblate para um ramo local chamado _weblate_."
+
+#. type: Bullet: '4. '
+#: _docs/Release_Process.md
+msgid "Reset your local _master_ branch to the main repo's _master_, e.g.  `git checkout -B master upstream/master`"
+msgstr ""
+
+#. type: Bullet: '5. '
+#: _docs/Release_Process.md
+msgid "Run `./tools/pick-complete-translations.py`."
+msgstr ""
 
 #. type: Bullet: '6. '
 #: _docs/Release_Process.md
-msgid "once the _weblate_ branch is merged, reset the git repo in <https://hosted.weblate.org/projects/f-droid/website/#repository>"
-msgstr "uma vez que o ramo _weblate_ é mesclado, reinicie o git repo em <https://hosted.weblate.org/projects/f-droid/f-droid/#repository>"
+#, fuzzy
+#| msgid "Run all checker scripts (`./tools/check-*.py`), make sure they all pass, then commit those changes."
+msgid "Change to new _merge_weblate_ branch and run all checker scripts (`./tools/check-*.py`), make sure they all pass, then commit those changes."
+msgstr "Execute todos os scripts de verificação (`./tools/check-*.py`), certifique-se de que todos passam e depois submeta essas alterações."
+
+#. type: Bullet: '7. '
+#: _docs/Release_Process.md
+#, fuzzy
+#| msgid "merge this new _weblate_ branch into the latest commits in _master_ of <https://gitlab.com/fdroid/fdroid-website> and fix any conflicts"
+msgid "Merge the _merge_weblate_ branch into the local _master_ branch and fix any conflicts."
+msgstr "mesclar o ramo novo _weblate_ nas últimas submissões em _master_ de <https://gitlab.com/fdroid/fdroidclient> e corrigir quaisquer conflitos"
+
+#. type: Bullet: '8. '
+#: _docs/Release_Process.md
+#, fuzzy
+#| msgid "push local _weblate_ branch to your fork create a merge request, and tag it with the _localization_ label"
+msgid "Push _merge_weblate_ branch to your fork and create a merge request.  Tag it with the _localization_ label."
+msgstr "empurrar o ramo local _ weblate_ para sua bifurcação criar uma solicitação de mesclagem e marcá-la com o rótulo _ localization_"
+
+#. type: Bullet: '9. '
+#: _docs/Release_Process.md
+#, fuzzy
+#| msgid "make sure all tests pass before merging"
+msgid "Make sure all tests pass before merging."
+msgstr "certifique-se de que todos os testes passam antes de mesclar"
 
 #. type: Bullet: '8. '
 #: _docs/Release_Process.md
@@ -7903,6 +7973,21 @@ msgstr "Construa uma tarball distante com `./setup.py release`."
 #: _docs/Release_Process.md
 msgid "Upload to pypi.python.org."
 msgstr "Enviar a pypi.python.org."
+
+#. type: Bullet: '11. '
+#: _docs/Release_Process.md
+#, fuzzy
+#| msgid "git repo: <https://gitlab.com/fdroid/repomaker>"
+msgid "Update <https://gitlab.com/fdroid/fdroid-repomaker-flatpak> and make sure CI passes."
+msgstr "repo git: <https://gitlab.com/fdroid/repomaker>"
+
+#. type: Plain text
+#: _docs/Release_Process.md
+#, no-wrap
+msgid ""
+"12. Push changes to official repo on GitHub:\n"
+"\t<https://github.com/flathub/org.fdroid.Repomaker>\n"
+msgstr ""
 
 #. type: YAML Front Matter: title
 #: _docs/Repository_Style_Guide.md
@@ -8704,7 +8789,9 @@ msgstr "Modelo de Segurança"
 
 #. type: Plain text
 #: _docs/Security_Model.md
-msgid "The security architecture is based on models proven by [Debian](https://wiki.debian.org/SecureApt), [The Update Framework](https://github.com/theupdateframework/tuf/blob/develop/docs/tuf-spec.txt)  , and others:"
+#, fuzzy
+#| msgid "The security architecture is based on models proven by [Debian](https://wiki.debian.org/SecureApt), [The Update Framework](https://github.com/theupdateframework/tuf/blob/develop/docs/tuf-spec.txt)  , and others:"
+msgid "The security architecture is based on models proven by [Debian](https://wiki.debian.org/SecureApt), [The Update Framework](https://github.com/theupdateframework/specification/blob/master/tuf-spec.md)  , and others:"
 msgstr "A arquitetura de segurança é baseada em modelos comprovados por [Debian](https://wiki.debian.org/SecureApt), [The Update Framework](https://github.com/theupdateframework/tuf/blob/develop/docs/tuf-spec.txt) , e outros:"
 
 #. type: Bullet: '-   '
@@ -10078,6 +10165,9 @@ msgstr "Preferências"
 msgid "For a custom build that enables Automatic Updates by default, override _app/src/main/res/xml/preferences.xml_. You can customize the preferences and their default values in _app/src/mycompany/res/xml/preferences.xml_. The fully automatic update requires [Privileged Extension](https://gitlab.com/fdroid/privileged-extension). With regular access, the updates will only automatically download. The user still needs to click install on each one."
 msgstr "Para uma compilação personalizada que ativa Atualizações Automáticas por padrão, substitua _app/src/main/res/xml/preferences.xml_. Pode personalizar as preferências e os seus valores padrões em _app/src/minhaempresa/res/xml/preferences.xml_. A atualização totalmente automática requer [Extensões Privilegiadas](https://gitlab.com/fdroid/privileged-extension). Com acesso comum, as atualizações serão baixadas automaticamente. O utilizador ainda precisa clicar em instalar em cada um deles."
 
+#~ msgid "once the _weblate_ branch is merged, reset the git repo in <https://hosted.weblate.org/projects/f-droid/website/#repository>"
+#~ msgstr "uma vez que o ramo _weblate_ é mesclado, reinicie o git repo em <https://hosted.weblate.org/projects/f-droid/f-droid/#repository>"
+
 #~ msgid "run `./tools/check-format-strings.py`, `./tools/check-page-links.py`, and `./tools/remove-unused-strings.py` and commit changes"
 #~ msgstr "executar `./tools/check-format-strings.py`, `./tools/check-page-links.py`, e `./toolss/remove-unused-strings.py` e submeter alterações"
 
@@ -11164,9 +11254,6 @@ msgstr "Para uma compilação personalizada que ativa Atualizações Automática
 
 #~ msgid "[f-droid.org website \"chrome\" strings](https://hosted.weblate.org/projects/f-droid/website)"
 #~ msgstr "[strings \"chrome\" do site f-droid.org](https://hosted.weblate.org/projects/f-droid/website)"
-
-#~ msgid "[f-droid.org website blog posts](https://hosted.weblate.org/projects/f-droid/website-posts)"
-#~ msgstr "[publicações de blog do site f-droid.org](https://hosted.weblate.org/projects/f-droid/website-posts)"
 
 #~ msgid "[f-droid.org website docs and pages](https://hosted.weblate.org/projects/f-droid/website-docs)"
 #~ msgstr "[documentações e páginas do site f-droid.org](https://hosted.weblate.org/projects/f-droid/website-docs)"
