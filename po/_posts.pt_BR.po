@@ -8,15 +8,15 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
 "POT-Creation-Date: 2020-10-14 01:24+0200\n"
-"PO-Revision-Date: 2020-05-28 04:12+0000\n"
-"Last-Translator: André Marcelo Alvarenga <andrealvarenga@gmx.net>\n"
+"PO-Revision-Date: 2020-11-10 08:14+0000\n"
+"Last-Translator: The Cats <philosoph@snopyta.org>\n"
 "Language-Team: Portuguese (Brazil) <https://hosted.weblate.org/projects/f-droid/website-posts/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 4.1-dev\n"
+"X-Generator: Weblate 4.4-dev\n"
 
 #. type: YAML Front Matter: title
 #: _posts/2017-02-20-f-droid-supports-apk-expansion-files-aka-obb.md
@@ -419,9 +419,9 @@ msgstr "É ótimo ver que a tecnologia livre que a comunidade F-Droid trabalhou 
 
 #. type: Plain text
 #: _posts/2017-07-03-cuba.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "<hr />\n"
-msgstr "<hr />\n"
+msgstr "<hr>\n"
 
 #. type: Plain text
 #: _posts/2017-07-03-cuba.md
@@ -15720,32 +15720,32 @@ msgstr ""
 #. type: Bullet: '1. '
 #: _posts/2020-10-14-adding-react-native-app-to-f-droid.md
 msgid "React Native apps have two build and dependency management systems (the React Native one, and the Android one)."
-msgstr ""
+msgstr "Os aplicativos React Native têm dois sistemas de construção e gerenciamento de dependências (o React Native e o Android)."
 
 #. type: Bullet: '2. '
 #: _posts/2020-10-14-adding-react-native-app-to-f-droid.md
 msgid "React Native apps require a more recent NodeJS environment than is available on F-Droid."
-msgstr ""
+msgstr "Os aplicativos React Native requerem um ambiente NodeJS mais recente do que o disponível no F-Droid."
 
 #. type: Bullet: '3. '
 #: _posts/2020-10-14-adding-react-native-app-to-f-droid.md
 msgid "React Native apps have pre-built dependencies that are shipped using the JavaScript dependency management systems, and we need to tell F-Droid these components are actually FLOSS and compatible with F-Droid."
-msgstr ""
+msgstr "Os aplicativos React Native têm dependências pré-construídas que são enviadas usando os sistemas de gerenciamento de dependência JavaScript, e precisamos dizer ao F-Droid que esses componentes são na verdade FLOSS e compatíveis com o F-Droid."
 
 #. type: Plain text
 #: _posts/2020-10-14-adding-react-native-app-to-f-droid.md
 msgid "Before we go on with explaining the important components and how they play together, here is the [working EteSync Notes spec file](https://gitlab.com/fdroid/fdroiddata/-/blob/master/metadata/com.etesync.notes.yml) for your reference."
-msgstr ""
+msgstr "Antes de continuarmos explicando os componentes importantes e como eles funcionam juntos, aqui está o [arquivo de especificação de notas EteSync em funcionamento] (https://gitlab.com/fdroid/fdroiddata/-/blob/master/metadata/com.etesync.notes.yml) para sua referência."
 
 #. type: Plain text
 #: _posts/2020-10-14-adding-react-native-app-to-f-droid.md
 msgid "The first thing you need to take care of is the `subdir` directive. React Native applications have their android build system in a subdirectory of the repo rather than the root. It's usually `android/app`, but it may be different in your setup."
-msgstr ""
+msgstr "A primeira coisa que você precisa cuidar é a diretiva `subdir`. Os aplicativos React Native têm seu sistema de compilação android em um subdiretório do repositório, e não na raiz. Geralmente é `android/app`, mas pode ser diferente na sua configuração."
 
 #. type: Plain text
 #: _posts/2020-10-14-adding-react-native-app-to-f-droid.md
 msgid "The next thing we need, which may not be required in your case, is to get a recent enough version of `node` and `yarn`. F-Droid uses Debian Stretch for the build system, which didn't even have a recent enough `node` version in backports. So the easiest way to get node was using a pre-built binary, and verify its checksum, and then installing `yarn` using `npm`. This is how it looks like:"
-msgstr ""
+msgstr "A próxima coisa que precisamos, que pode não ser necessária no seu caso, é obter uma versão suficientemente recente de `node` e` yarn`. F-Droid usa Debian Stretch para o sistema de construção, que nem mesmo tinha uma versão `node` recente o suficiente nos backports. Portanto, a maneira mais fácil de obter o nó era usando um binário pré-compilado, e verificar sua soma de verificação, e então instalar o `yarn` usando` npm`. É assim que vai parecer:"
 
 #. type: Fenced code block (yaml)
 #: _posts/2020-10-14-adding-react-native-app-to-f-droid.md
@@ -15759,16 +15759,23 @@ msgid ""
 "      - cp -a node-v10.18.1-linux-x64/. /usr/local/\n"
 "      - npm -g install yarn\n"
 msgstr ""
+"    sudo:\n"
+"      - curl -Lo node.tar.xz https://nodejs.org/dist/v10.18.1/node-v10.18.1-linux-x64.tar.xz\n"
+"      - echo \"8cc40f45c2c62529b15e83a6bbe0ac1febf57af3c5720df68067c96c0fddbbdf node.tar.xz\"\n"
+"        | sha256sum -c -\n"
+"      - tar xJf node.tar.xz\n"
+"      - cp -a node-v10.18.1-linux-x64/. /usr/local/\n"
+"      - npm -g install yarn\n"
 
 #. type: Plain text
 #: _posts/2020-10-14-adding-react-native-app-to-f-droid.md
 msgid "The next step is to install all of the JavaScript dependencies, this can be done using the `init` directive, like so: `init: yarn install`."
-msgstr ""
+msgstr "O próximo passo é instalar todas as dependências do JavaScript, isso pode ser feito usando a diretiva `init`, assim: `init: yarn install`."
 
 #. type: Plain text
 #: _posts/2020-10-14-adding-react-native-app-to-f-droid.md
 msgid "Now we should have everything we need to get our React Native app to build, though the builds will still fail. The reason for that is that F-Droid automatically detects potentially non-free dependencies in the build, and won't let the build continue if found. Therefore, the next thing we should do is to tell it to automatically get rid of all of the non-free dependencies pulled by our JavaScript deps, like so:"
-msgstr ""
+msgstr "Agora devemos ter tudo o que precisamos para construir nosso aplicativo React Native, embora as compilações ainda falhem. A razão para isso é que o F-Droid detecta automaticamente dependências potencialmente não livres na compilação e não permite que a compilação continue se encontrada. Portanto, a próxima coisa que devemos fazer é dizer a ele para se livrar automaticamente de todas as dependências não-livres puxadas por nossos departamentos de JavaScript, assim:"
 
 #. type: Fenced code block (yaml)
 #: _posts/2020-10-14-adding-react-native-app-to-f-droid.md
@@ -15777,11 +15784,13 @@ msgid ""
 "    scandelete:\n"
 "      - node_modules/\n"
 msgstr ""
+"    scandelete:\n"
+"      - node_modules/\n"
 
 #. type: Plain text
 #: _posts/2020-10-14-adding-react-native-app-to-f-droid.md
 msgid "Now we are making progress, and all of the potentially non-free dependencies are being removed. Though the build will still fail because some of these dependencies were actually needed! Now, the responsibility is on us to find and make sure the deps that we require and that are indeed FLOSS and F-Droid compatible. The most common error is about an \"unrecognized maven repository\" pointing to `../node_modules/...`. Assuming all of your JavaScript dependencies are indeed FLOSS, these can be safely ignored, as they just mean that the deps come from a JavaScript dependency instead of through Maven (again, very common). We will deal with these in a moment.  The second, more serious issue is about `.jar`, `.aar` and `.so` files being removed. Here you need to take extra care to make sure that these files are indeed FLOSS, come from a trusted source, and are just pre-compiled for ease of distribution. Once you found all of the occurrences of the two issues above, you can tell F-Droid to ignore them. For example, this is what we have in EteSync Notes:"
-msgstr ""
+msgstr "Agora estamos progredindo, e todas as dependências potencialmente não livres estão sendo removidas. Embora a construção ainda falhe porque algumas dessas dependências eram realmente necessárias! Agora, é nossa responsabilidade encontrar e certificar-nos dos recursos de que necessitamos e que são compatíveis com FLOSS e F-Droid. O erro mais comum é sobre um \"repositório maven não reconhecido\" apontando para `../ node_modules / ...`. Assumindo que todas as suas dependências de JavaScript são de fato FLOSS, elas podem ser ignoradas com segurança, pois significam apenas que as dependências vêm de uma dependência de JavaScript em vez de através do Maven (novamente, muito comum). Trataremos disso em um momento. O segundo problema mais sério é sobre a remoção dos arquivos `.jar`,` .aar` e `.so`. Aqui, você precisa tomar cuidado extra para se certificar de que esses arquivos são realmente FLOSS, vêm de uma fonte confiável e são apenas pré-compilados para facilitar a distribuição. Depois de encontrar todas as ocorrências dos dois problemas acima, você pode dizer ao F-Droid para ignorá-los. Por exemplo, isso é o que temos em EteSync Notes:"
 
 #. type: Fenced code block (yaml)
 #: _posts/2020-10-14-adding-react-native-app-to-f-droid.md
@@ -15801,27 +15810,40 @@ msgid ""
 "      - node_modules/@react-native-community/masked-view/android/build.gradle\n"
 "      - node_modules/@react-native-community/netinfo/android/build.gradle\n"
 msgstr ""
+"    scanignore:\n"
+"      - android/build.gradle\n"
+"      - node_modules/jsc-android\n"
+"      - node_modules/react-native/android/com/facebook/react/react-native/*/\n"
+"      - node_modules/react-native-appearance/android/build.gradle\n"
+"      - node_modules/react-native-reanimated/android/build.gradle\n"
+"      - node_modules/react-native-safe-area-context/android/build.gradle\n"
+"      - node_modules/react-native-screens/android/build.gradle\n"
+"      - node_modules/react-native-sodium/libsodium/*/lib/libsodium.so\n"
+"      - node_modules/react-native-vector-icons/android/build.gradle\n"
+"      - node_modules/@react-native-community/async-storage/android/build.gradle\n"
+"      - node_modules/@react-native-community/masked-view/android/build.gradle\n"
+"      - node_modules/@react-native-community/netinfo/android/build.gradle\n"
 
 #. type: Plain text
 #: _posts/2020-10-14-adding-react-native-app-to-f-droid.md
 msgid "The first three lines are required by all React Native applications. They are just the main React Native deps, which are indeed FLOSS. The rest should be added depending on your own dependencies as outlined above. Please note that some [Expo](https://expo.io/) modules depend on non-free components, so they may be incompatible with F-Droid."
-msgstr ""
+msgstr "As três primeiras linhas são exigidas por todos os aplicativos React Native. Elas são apenas as principais dependências do React Native, que são de fato FLOSS. O resto deve ser adicionado dependendo de suas próprias dependências, conforme descrito acima. Observe que alguns módulos [Expo] (https://expo.io/) dependem de componentes não livres, portanto, podem ser incompatíveis com o F-Droid."
 
 #. type: Plain text
 #: _posts/2020-10-14-adding-react-native-app-to-f-droid.md
 msgid "This is it, your app should now build for F-Droid. Just make sure to go through the [contribution guidelines](https://gitlab.com/fdroid/fdroiddata/blob/master/CONTRIBUTING.md) to make sure everything is in order."
-msgstr ""
+msgstr "É isso, seu aplicativo agora deve compilar para o F-Droid. Apenas certifique-se de ler as [diretrizes de contribuição] (https://gitlab.com/fdroid/fdroiddata/blob/master/CONTRIBUTING.md) para ter certeza de que tudo está em ordem."
 
 #. type: Title ##
 #: _posts/2020-10-14-adding-react-native-app-to-f-droid.md
 #, no-wrap
 msgid "Closing notes"
-msgstr ""
+msgstr "Observações finais"
 
 #. type: Plain text
 #: _posts/2020-10-14-adding-react-native-app-to-f-droid.md
 msgid "As you can see, it's quite easy to build React Native applications on F-Droid once you know how. However, there are a few improvements that could go into F-Droid that would make the process easier. It would be great if the F-Droid build machines will include an up-to-date Node, and potentially maybe a directive to include some of the above steps automatically."
-msgstr ""
+msgstr "Como você pode ver, é muito fácil construir aplicativos React Native no F-Droid depois que você entende como. No entanto, existem algumas melhorias que podem entrar no F-Droid e que tornariam o processo mais fácil. Seria ótimo se as máquinas de compilação do F-Droid incluíssem um Nó atualizado e, potencialmente, talvez uma diretiva para incluir algumas das etapas acima automaticamente."
 
 #. type: Plain text
 #: _posts/2020-10-14-adding-react-native-app-to-f-droid.md
