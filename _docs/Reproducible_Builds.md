@@ -252,18 +252,18 @@ process.  But the APK build process can add them.  For example:
 
 #### TODO
 
-- jar sort order for APKs
-- `aapt` versions produce different results (XML and res/ subfolder names)
+* jar sort order for APKs
+* `aapt` versions produce different results (XML and res/ subfolder names)
 
 
 #### Sources
 
-- <https://gitlab.com/fdroid/fdroidserver/commit/8568805866dadbdcc6c07449ca6b84b80d0ab03c>
-- [Verification Server](../Verification_Server)
-- <https://verification.f-droid.org>
-- <https://reproducible-builds.org>
-- <https://wiki.debian.org/ReproducibleBuilds>
-- <https://gitian.org/>
-- [Google Issue #70292819 platform-27\_r01.zip was overwritten with a new update](https://issuetracker.google.com/issues/70292819) (_Google login and JavaScript required_)
-- [Google Issue #37132313 platformBuildVersionName makes builds difficult to reproduce, creates unneeded diffs](https://issuetracker.google.com/issues/37132313) (_Google login and JavaScript required_)
-- [Google Issue #110237303 resources.arsc built with non-determism, prevents reproducible APK builds](https://issuetracker.google.com/issues/110237303) (_Google login and JavaScript required_)
+* <https://gitlab.com/fdroid/fdroidserver/commit/8568805866dadbdcc6c07449ca6b84b80d0ab03c>
+* [Verification Server](../Verification_Server)
+* <https://verification.f-droid.org>
+* <https://reproducible-builds.org>
+* <https://wiki.debian.org/ReproducibleBuilds>
+* <https://gitian.org/>
+* [Google Issue #70292819 platform-27\_r01.zip was overwritten with a new update](https://issuetracker.google.com/issues/70292819) (_Google login and JavaScript required_)
+* [Google Issue #37132313 platformBuildVersionName makes builds difficult to reproduce, creates unneeded diffs](https://issuetracker.google.com/issues/37132313) (_Google login and JavaScript required_)
+* [Google Issue #110237303 resources.arsc built with non-determism, prevents reproducible APK builds](https://issuetracker.google.com/issues/110237303) (_Google login and JavaScript required_)
