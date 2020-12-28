@@ -4,7 +4,7 @@ title: About
 permalink: /about/
 ---
 
-F-Droid is a robot with a passion for Free and Open Source (FOSS) software on the Android platform. On this site you’ll find a repository of FOSS apps, along with an Android client to perform installations and updates, and news, reviews and other features covering all things Android and software-freedom related.
+F-Droid is a robot with a passion for Free and Open Source Software (FOSS) on the Android platform. On this site you’ll find a repository of FOSS apps, along with an Android client to perform installations and updates, news, reviews, and other features covering all things Android and software-freedom related.
 
 Donations for F-Droid development are handled via our [OpenCollective](https://opencollective.com/F-Droid/).  Donations for the _f-droid.org_ core infrastructure are handled by F-Droid Limited, a UK "private company" registered in England (no. [08420676](https://beta.companieshouse.gov.uk/company/08420676)).
 
@@ -19,8 +19,8 @@ freenode or join [#fdroid:f-droid.org](https://matrix.to/#/#fdroid:f-droid.org) 
 The discussions are logged on
 [matrix.f-droid.org](https://matrix.f-droid.org/alias/%23fdroid:f-droid.org).
 
-There also exist bridges to Telegram and Jabber/XMPP (experimental).
-To join via Telegram, click on [this link](https://matrix.f-droid.org/fdroid/telegram/).
+There are also bridges to Telegram and Jabber/XMPP (experimental).
+To join via Telegram, click [this link](https://matrix.f-droid.org/fdroid/telegram/).
 For Jabber/XMPP,
 join [#fdroid#matrix.org@bridge.xmpp.matrix.org](xmpp:#fdroid#matrix.org@bridge.xmpp.matrix.org?join).
 
@@ -35,7 +35,7 @@ site.baseurl }}).
 
 ### Consulting / Commercial Support
 
-If you're running an organisation that uses F-Droid or would like to use F-Droid, you will sometimes want to have an expert. For this, we have a list of companies and developers who contributed to F-Droid in one way or another and are available for consulting:
+If you're running an organisation that uses F-Droid or would like to use F-Droid, you will sometimes want to have an expert. For this, we have a list of companies and developers who have contributed to F-Droid in one way or another and are available for consulting:
 
 [Find an F-Droid Consultant]({{ "/consulting/" | prepend: site.baseurl }})
 
@@ -50,9 +50,9 @@ If you're running an organisation that uses F-Droid or would like to use F-Droid
 
 ### Terms, etc.
 
-F-Droid is a non-profit [volunteer]({{ "/contribute/" | prepend: site.baseurl }}) project. Although every effort is made to ensure that everything in the repository is safe to install, you use it AT YOUR OWN RISK. Wherever possible, applications in the repository are built from source, and that source code is checked for potential security or privacy issues. This checking is far from exhaustive though, and there are no guarantees.
+F-Droid is a non-profit [volunteer]({{ "/contribute/" | prepend: site.baseurl }}) project. Although every effort is made to ensure that everything in the repository is safe to install, you use it AT YOUR OWN RISK. Wherever possible, applications in the repository are built from source, and that source code is checked for potential security or privacy issues. This checking is far from exhaustive and there are no guarantees.
 
-F-Droid respects your privacy. We don’t track you, or your device. We don’t track what you install. You don’t need an account to use the client, and it sends no additional identifying data when talking to our web server other than its version number. We don’t even allow you to install other applications from the repository that track you, unless you first enable ‘Tracking’ in the AntiFeatures section of preferences. Any personal data you decide to give us (e.g. your email address when registering for an account to post on the forum) goes no further than us, and will not be used for anything other than allowing you to maintain your account.
+F-Droid respects your privacy. We don’t track you, or your device. We don’t track what you install. You don’t need an account to use the client, and it sends no additional identifying data when communicating with our web servers, other than its version number. We don’t even allow you to install other applications from the repository that track you, unless you first enable ‘Tracking’ in the `AntiFeatures` section of preferences. Any personal data you decide to give us (e.g. your email address when registering for an account to post on the forum) goes no further than us, and will not be used for anything other than allowing you to maintain your account.
 
 
 ### Contributors
