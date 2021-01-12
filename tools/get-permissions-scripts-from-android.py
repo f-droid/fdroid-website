@@ -14,6 +14,34 @@ skipkeys = (
     'perms_description_app',
 )
 
+# To derive this list, set it to a blank list, and run this script.
+# Then look at the git diff for _data/strings.json to see which
+# strings have changed source strings, e.g.:
+# git diff _data/strings.json|grep '^+' | cut -d : -f 1
+overwritekeys = (
+    "permdesc_accessCoarseLocation",
+    "permdesc_accessFineLocation",
+    "permdesc_bindCellBroadcastService",
+    "permdesc_cameraOpenCloseListener",
+    "permdesc_exemptFromAudioRecordRestrictions",
+    "permdesc_preferredPaymentInfo",
+    "permdesc_readContacts",
+    "permdesc_systemCamera",
+    "permdesc_useFaceAuthentication",
+    "permdesc_vibrator_state",
+    "permdesc_writeContacts",
+    "permgroupdesc_activityRecognition",
+    "permlab_accessBackgroundLocation",
+    "permlab_accessCoarseLocation",
+    "permlab_bindCellBroadcastService",
+    "permlab_cameraOpenCloseListener",
+    "permlab_exemptFromAudioRecordRestrictions",
+    "permlab_manageFace",
+    "permlab_preferredPaymentInfo",
+    "permlab_systemCamera",
+    "permlab_useFaceAuthentication",
+)
+
 resdir = '/home/hans/code/android.googlesource.com/frameworks/base/core/res/res'
 
 for d in sorted(glob.glob(os.path.join(resdir, 'values*'))):
@@ -44,12 +72,15 @@ for d in sorted(glob.glob(os.path.join(resdir, 'values*'))):
     root = tree.getroot()
 
     for e in root.findall('.//string'):
-        if e.text and e.attrib['name'].startswith('perm') and e.attrib['name'] not in skipkeys:
+        key = e.attrib['name']
+        if (e.text and key.startswith('perm') and key not in skipkeys
+            and ((not overwritekeys or key in overwritekeys)
+                 or key not in data.get('permissions', []))):
             writechanges = True
             if 'permissions' not in data:
                 data['permissions'] = dict()
             text = re.sub('\s+', ' ', e.text.strip().strip('"').replace("\\'", "'"))
-            data['permissions'][e.attrib['name']] = text
+            data['permissions'][key] = text
 
     if writechanges:
         with open(jsonfile, 'w') as fp:
