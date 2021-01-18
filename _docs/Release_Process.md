@@ -68,8 +68,8 @@ If it is a major release, there are a few more steps.
 4. push local _weblate_ branch to your fork create a merge request,
    and tag it with the _localization_ label
 5. make sure all tests pass before merging
-6. once the _weblate_ branch is merged, reset the git repo in
-   <https://hosted.weblate.org/projects/f-droid/fdroidserver/#repository>
+6. Update translation template and official, included language list using:
+   `make -C locale compile`. Commit updates and push.
 7. set `version=''` in _setup.py_
 8. add git signed tag named after the exact version name (no
    preceeding __v__), using the exact same string as `version=''`
