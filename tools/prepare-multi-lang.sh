@@ -43,7 +43,7 @@
 #
 
 # Fail on errors.
-set -eu -o pipefail
+set -eu
 
 function assert_file {
     if [[ ! -f ${1} ]]; then
