@@ -57,7 +57,9 @@ Examples of where this Anti-Feature might be applied:
 
 Examples of where it would not be applied - any of the above,
 if the functionality is opt-in (i.e. you are asked before it happens)
-or disabled by default.
+and disabled by default. Enabling it should then also require informed
+consent, i.e. requiring a privacy policy similar to GDPR, and avoid
+collecting personal data (PII) as far as possible.
 
 Note that frequently app tracking is implemented using proprietary software,
 e.g. Google Analytics or Flurry. Apps containing these proprietary libraries
