@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
-"POT-Creation-Date: 2020-12-22 13:22+0100\n"
+"POT-Creation-Date: 2021-01-29 22:27+0100\n"
 "PO-Revision-Date: 2020-11-19 11:58+0000\n"
 "Last-Translator: Hans-Christoph Steiner <hans@guardianproject.info>\n"
 "Language-Team: Korean <https://hosted.weblate.org/projects/f-droid/website-docs/ko/>\n"
@@ -606,7 +606,7 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/Anti-Features.md
-msgid "Examples of where it would not be applied - any of the above, if the functionality is opt-in (i.e. you are asked before it happens)  or disabled by default."
+msgid "Examples of where it would not be applied - any of the above, if the functionality is opt-in (i.e. you are asked before it happens)  and disabled by default. Enabling it should then also require informed consent, i.e. requiring a privacy policy similar to GDPR, and avoid collecting personal data (PII) as far as possible."
 msgstr ""
 
 #. type: Plain text
@@ -3527,6 +3527,68 @@ msgstr ""
 #. type: Plain text
 #: _docs/Code_of_Conduct.md
 msgid "(_Based on the [Debian Code of Conduct](https://www.debian.org/code_of_conduct), Version 1.0 [ratified](https://www.debian.org/vote/2014/vote_002) on April 28th, 2014._)"
+msgstr ""
+
+#. type: YAML Front Matter: title
+#: _docs/Deploying_fdroid-bot.md
+#, fuzzy, no-wrap
+#| msgid "Deploying to https://f-droid.org"
+msgid "Deploying <tt>fdroid-bot</tt>"
+msgstr "https://f-droid.org에 배포하기"
+
+#. type: Plain text
+#: _docs/Deploying_fdroid-bot.md
+#, no-wrap
+msgid ""
+"<tt>fdroid-bot</tt> is the generic term for bots in F-Droid that review projects\n"
+"and make merge requests.  For example,\n"
+"[issuebot](https://gitlab.com/fdroid/issuebot) runs on [RFP\n"
+"issues(https://gitlab.com/fdroid/rfp/issues) and [_fdroiddata_ merge\n"
+"requests](https://gitlab.com/fdroid/fdroiddata/-/merge_requests).\n"
+msgstr ""
+
+#. type: Plain text
+#: _docs/Deploying_fdroid-bot.md
+#, no-wrap
+msgid ""
+"It is important that any <tt>fdroid-bot</tt> setup is limited to only push to\n"
+"GitLab projects under the [fdroid-bot group](https://gitlab.com/fdroid-bot).\n"
+"<tt>fdroid-bot</tt> setups should never have push access to any other git\n"
+"repositories.  This is a hard requirement to keep the security profile\n"
+"manageable.\n"
+msgstr ""
+
+#. type: Plain text
+#: _docs/Deploying_fdroid-bot.md
+#, no-wrap
+msgid ""
+"When <tt>fdroid-bot</tt> needs push access, it should be setup to use [Deploy\n"
+"Key](https://docs.gitlab.com/ee/user/project/deploy_keys/) that is only used in\n"
+"that one repo.  If <tt>fdroid-bot</tt> needs to interact with the GitLab API,\n"
+"like to create merge requests, then it should use a [Personal Access\n"
+"Token](https://docs.gitlab.com/ee/user/profile/personal_access_tokens.html) that\n"
+"is assigned to a single project in GitLab.  This limits the access and makes it\n"
+"easy to revoke specific tokens/keys as needed.\n"
+msgstr ""
+
+#. type: Title ##
+#: _docs/Deploying_fdroid-bot.md
+#, no-wrap
+msgid "Special case: binary transparency logs for external projects"
+msgstr ""
+
+#. type: Plain text
+#: _docs/Deploying_fdroid-bot.md
+#, no-wrap
+msgid ""
+"There are binary transparency logs for the [Android SDK\n"
+"components](https://gitlab.com/fdroid/android-sdk-transparency-log) and the\n"
+"[gradle binaries](https://gitlab.com/fdroid/gradle-transparency-log).  These are\n"
+"also automatic processes that push commits into dedicated git repositories where\n"
+"the automatic process is the only committer.  These are not the same as\n"
+"<tt>fdroid-bot</tt> because they are entirely self-contained in their own GitLab\n"
+"projects.  These scripts are setup using GitLab Deploy Keys so that they only\n"
+"can push commits to the same repository as they are running.\n"
 msgstr ""
 
 #. type: YAML Front Matter: title
@@ -7232,7 +7294,7 @@ msgstr ""
 
 #. type: Bullet: '6. '
 #: _docs/Release_Process.md
-msgid "once the _weblate_ branch is merged, reset the git repo in <https://hosted.weblate.org/projects/f-droid/fdroidserver/#repository>"
+msgid "Update translation template and official, included language list using: `make -C locale compile`. Commit updates and push."
 msgstr ""
 
 #. type: Bullet: '7. '
@@ -8039,22 +8101,27 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/Running_a_Mirror.md
-msgid "There are three mirror servers which offer an _rsync_ connection, make sure to select the mirror closest to your mirror server:"
+msgid "There are four mirror servers which offer an _rsync_ connection, make sure to select the mirror closest to your mirror server:"
 msgstr ""
 
 #. type: Bullet: '* '
 #: _docs/Running_a_Mirror.md
-msgid "China: rsync -axv mirrors.tuna.tsinghua.edu.cn::fdroid"
+msgid "China: `rsync -axv mirrors.tuna.tsinghua.edu.cn::fdroid`"
 msgstr ""
 
 #. type: Bullet: '* '
 #: _docs/Running_a_Mirror.md
-msgid "Germany: rsync -axv ftp.fau.de::fdroid"
+msgid "Germany: `rsync -axv ftp.fau.de::fdroid`"
 msgstr ""
 
 #. type: Bullet: '* '
 #: _docs/Running_a_Mirror.md
-msgid "USA/Indiana: rsync -axv plug-mirror.rcac.purdue.edu::fdroid"
+msgid "Sweden: `rsync -axv ftp.lysator.liu.se::pub/fdroid`"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/Running_a_Mirror.md
+msgid "USA/Indiana: `rsync -axv plug-mirror.rcac.purdue.edu::fdroid`"
 msgstr ""
 
 #. type: Plain text
@@ -8201,10 +8268,20 @@ msgstr ""
 msgid "Once the core contributor team deems your mirror trustworthy and reliable, it will be accepted into the official list."
 msgstr ""
 
+#. type: Plain text
+#: _docs/Running_a_Mirror.md
+msgid "Also, it would be nice to include a privacy policy so users can understand what happens with their metadata when using the mirror. Purdue PLUG https://plug-mirror.rcac.purdue.edu/info.html and FAU https://ftp.fau.de/datenschutz are two examples."
+msgstr ""
+
 #. type: Title ####
 #: _docs/Running_a_Mirror.md
 #, no-wrap
 msgid "Other considerations"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/Running_a_Mirror.md
+msgid "Set up a privacy policy that describes what happens to the metadata (for example [FAU](https://ftp.fau.de/datenschutz/), [PLUG](https://plug-mirror.rcac.purdue.edu/info.html), [Lysator](https://ftp.lysator.liu.se/datahanteringspolicy.txt))."
 msgstr ""
 
 #. type: Bullet: '* '
@@ -8214,17 +8291,53 @@ msgstr ""
 
 #. type: Bullet: '* '
 #: _docs/Running_a_Mirror.md
-msgid "Set up monitoring on your mirror so you know if it goes down (ideally keyword on _/var/www/fdroid/fdroid/repo/index.html_)"
+msgid "Set up monitoring on your mirror so you know if it goes down (ideally keyword on _/srv/mymirror.org/htdocs/fdroid/repo/index-v1.jar_)"
 msgstr ""
 
 #. type: Bullet: '* '
 #: _docs/Running_a_Mirror.md
-msgid "Harden your SSH server config (disable password authentication, install fail2ban)"
+msgid "Harden your SSH server config (disable password authentication, install _fail2ban_)"
 msgstr ""
 
 #. type: Bullet: '* '
 #: _docs/Running_a_Mirror.md
-msgid "Enable unattended upgrades"
+msgid "Enable unattended security upgrades (in Debian, just `apt-get install unattended-upgrades`)"
+msgstr ""
+
+#. type: Title ##
+#: _docs/Running_a_Mirror.md
+#, no-wrap
+msgid "Running a Primary Mirror (receiving syncs via push)"
+msgstr ""
+
+#. type: Plain text
+#: _docs/Running_a_Mirror.md
+msgid "The preferred setup is for the F-Droid updates to be pushed to the primary mirror via _rsync_ over _ssh_ with SSH Key authentication.  This is the same as [Debian](https://www.debian.org/mirror/push_server#sshtrigger), the key difference is that there currently is no script used for the `command=\"\"`, but instead, there is a hard-coded _rsync_ command.  This really nicely restricts the security interaction to only want needs to happen (Least Authority!)."
+msgstr ""
+
+#. type: Fenced code block
+#: _docs/Running_a_Mirror.md
+#, no-wrap
+msgid "command=\"rsync --server -logDtpre.iLsfx --log-format=X --delete --delay-updates . /srv/fdroid-mirror.at.or.at/htdocs/fdroid/\"\n"
+msgstr ""
+
+#. type: Plain text
+#: _docs/Running_a_Mirror.md
+msgid "The only piece of that command that is customizable is the final path.  It can be any path but it must point to the `/fdroid/` directory and must have the trailing slash.  If any of the _rsync_ options are changed, it will break the sync setup."
+msgstr ""
+
+#. type: Plain text
+#: _docs/Running_a_Mirror.md
+msgid "As an extra precaution, there should be a user account (e.g. `fdroid`)  dedicated to receiving the _rsync_/_ssh_ connection.  It should have as little access as possible.  It should definitely not have write access to the _authorized_keys_ file, since that would allow an attacker who gains write access to add a separate key configuration line which circumvents all the restrictions listed there.  This can be done simply by doing:"
+msgstr ""
+
+#. type: Fenced code block (console)
+#: _docs/Running_a_Mirror.md
+#, no-wrap
+msgid ""
+"$ sudo chown root.root /home/fdroid/.ssh /home/fdroid/.ssh/authorized_keys\n"
+"$ sudo chmod 0755 /home/fdroid/.ssh\n"
+"$ sudo chmod 0644 /home/fdroid/.ssh/authorized_keys\n"
 msgstr ""
 
 #. type: YAML Front Matter: title
