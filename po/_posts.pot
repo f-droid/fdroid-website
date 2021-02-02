@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2020-12-22 13:22+0100\n"
+"POT-Creation-Date: 2021-02-01 23:15+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18496,4 +18496,286 @@ msgstr ""
 #: _posts/2020-12-21-announcing-issuebot.md
 #, markdown-text
 msgid "(_This work was supported by NLnet's [NGI Zero PET](https://nlnet.nl/thema/NGIZeroPET.html) fund._)"
+msgstr ""
+
+#. type: YAML Front Matter: title
+#: _posts/2021-01-31-fdroidserver-2.0.md
+#, no-wrap
+msgid "<tt>fdroidserver</tt> 2.0"
+msgstr ""
+
+#. type: Plain text
+#: _posts/2021-01-31-fdroidserver-2.0.md
+#, markdown-text
+msgid "_fdroidserver_ is the core collection of tools for building apps, scanning them for issues or [Anti-Features]({{ site.baseurl }}/docs/Anti-Features), collecting the resulting files into repos, and publishing them to the world. Today, a big update was released which has a large number of changes and updates that have been a long time coming.  First, this release turns our 10 year old collection of tools and tricks for working with Android apps into more of a toolkit with an API, including a core set of [functions declared with a stable interface](https://gitlab.com/fdroid/fdroidserver/blob/master/fdroidserver/__init__.py).  This allows for a wide range of new uses, like [headless, automated repos](https://gitlab.com/guardianproject/wind-repo/-/blob/master/scripts/fdroid-update-ersatz.py)  or [_issuebot_](https://gitlab.com/fdroid/issuebot/-/blob/master/issuebot.py).  It is now also possible to extend the command line interface using the new [plugins](https://gitlab.com/fdroid/fdroidserver/-/blob/master/examples/fdroid_fetchsrclibs.py).  The app metadata files are now purely [YAML]({{ site.baseurl }}/{% post_url 2019-09-11-yaml-metadata %}), so they are an API in themselves, easily parsable and writeable by any standard YAML library.  Also, the preferred format for the repo config file is now YAML (_config.yml_)."
+msgstr ""
+
+#. type: Plain text
+#: _posts/2021-01-31-fdroidserver-2.0.md
+#, markdown-text
+msgid "F-Droid is 10 years old, so this release also focused on modernizing.  Software developed and used over 10 years inevitably builds up cruft and technical debt.  We took this opportunity to remove lots of things that were broken, unused, or unmaintained. So there are some breaking changes, as detailed in the Changelog.  We hope this all makes it a lot easier for new contributors to get involved and make valuable contributions, all while making things work better for existing contributors."
+msgstr ""
+
+#. type: Plain text
+#: _posts/2021-01-31-fdroidserver-2.0.md
+#, markdown-text
+msgid "Last but not least, this is the first _fdroidserver_ release that fully supports [localization](https://hosted.weblate.org/projects/f-droid/fdroidserver/).  2.0 ships with བོད་སྐད་, Deutsch, English, español, français, magyar, italiano, 한국어, norsk bokmål, polski, português do Brasil, português europeu, русский, shqip, Türkçe, українська, 简体中文, and 繁體中文."
+msgstr ""
+
+#. type: Title ##
+#: _posts/2021-01-31-fdroidserver-2.0.md
+#, markdown-text, no-wrap
+msgid "ChangeLog"
+msgstr ""
+
+#. type: Plain text
+#: _posts/2021-01-31-fdroidserver-2.0.md
+#, markdown-text
+msgid "This changelog points to specific highlights and details.  For a more complete overview, see the [2.0 milestone](https://gitlab.com/fdroid/fdroidserver/-/milestones/10)"
+msgstr ""
+
+#. type: Title ###
+#: _posts/2021-01-31-fdroidserver-2.0.md
+#, markdown-text, no-wrap
+msgid "Added"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _posts/2021-01-31-fdroidserver-2.0.md
+#, markdown-text
+msgid "`fdroid update` inserts donation links based on upstream's _FUNDING.yml_ ([!754](https://gitlab.com/fdroid/fdroidserver/merge_requests/754))"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _posts/2021-01-31-fdroidserver-2.0.md
+#, markdown-text
+msgid "Stable, public API for most useful functions ([!798](https://gitlab.com/fdroid/fdroidserver/merge_requests/798))"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _posts/2021-01-31-fdroidserver-2.0.md
+#, markdown-text
+msgid "Load with any YAML lib and use with the API, no more custom parser needed ([!826](https://gitlab.com/fdroid/fdroidserver/merge_requests/826))  ([!838](https://gitlab.com/fdroid/fdroidserver/merge_requests/838))"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _posts/2021-01-31-fdroidserver-2.0.md
+#, markdown-text
+msgid "_config.yml_ for a safe, easy, standard configuration format ([!663](https://gitlab.com/fdroid/fdroidserver/merge_requests/663))"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _posts/2021-01-31-fdroidserver-2.0.md
+#, markdown-text
+msgid "Config options can be set from environment variables using this syntax: `keystorepass: {env: keystorepass}` ([!669](https://gitlab.com/fdroid/fdroidserver/merge_requests/669))"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _posts/2021-01-31-fdroidserver-2.0.md
+#, markdown-text
+msgid "Add SHA256 to filename of repo graphics ([!669](https://gitlab.com/fdroid/fdroidserver/merge_requests/669))"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _posts/2021-01-31-fdroidserver-2.0.md
+#, markdown-text
+msgid "Support for srclibs metadata in YAML format ([!700](https://gitlab.com/fdroid/fdroidserver/merge_requests/700))"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _posts/2021-01-31-fdroidserver-2.0.md
+#, markdown-text
+msgid "Check srclibs and app-metadata files with yamllint ([!721](https://gitlab.com/fdroid/fdroidserver/merge_requests/721))"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _posts/2021-01-31-fdroidserver-2.0.md
+#, markdown-text
+msgid "Added plugin system for adding subcommands to `fdroid` ([!709](https://gitlab.com/fdroid/fdroidserver/merge_requests/709))"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _posts/2021-01-31-fdroidserver-2.0.md
+#, markdown-text
+msgid "`fdroid update`, `fdroid publish`, and `fdroid signindex` now work with SmartCard HSMs, specifically the NitroKey HSM ([!779](https://gitlab.com/fdroid/fdroidserver/merge_requests/779))  ([!782](https://gitlab.com/fdroid/fdroidserver/merge_requests/782))"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _posts/2021-01-31-fdroidserver-2.0.md
+#, markdown-text
+msgid "`fdroid update` support for Triple-T Gradle Play Publisher v2.x ([!683](https://gitlab.com/fdroid/fdroidserver/merge_requests/683))"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _posts/2021-01-31-fdroidserver-2.0.md
+#, markdown-text
+msgid "Translated into: bo de es fr hu it ko nb_NO pl pt pt_BR pt_PT ru sq tr uk zh_Hans zh_Hant"
+msgstr ""
+
+#. type: Title ###
+#: _posts/2021-01-31-fdroidserver-2.0.md
+#, markdown-text, no-wrap
+msgid "Fixed"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _posts/2021-01-31-fdroidserver-2.0.md
+#, markdown-text
+msgid "Smoother process for signing APKs with `apksigner` ([!736](https://gitlab.com/fdroid/fdroidserver/merge_requests/736))  ([!821](https://gitlab.com/fdroid/fdroidserver/merge_requests/821))"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _posts/2021-01-31-fdroidserver-2.0.md
+#, markdown-text
+msgid "`apksigner` is used by default on new repos"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _posts/2021-01-31-fdroidserver-2.0.md
+#, markdown-text
+msgid "All parts except _build_ and _publish_ work without the Android SDK ([!821](https://gitlab.com/fdroid/fdroidserver/merge_requests/821))"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _posts/2021-01-31-fdroidserver-2.0.md
+#, markdown-text
+msgid "Description: is now passed to clients unchanged, no HTML conversion ([!828](https://gitlab.com/fdroid/fdroidserver/merge_requests/828))"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _posts/2021-01-31-fdroidserver-2.0.md
+#, markdown-text
+msgid "Lots of improvements for scanning for proprietary code and trackers ([!748](https://gitlab.com/fdroid/fdroidserver/merge_requests/748))  ([!844](https://gitlab.com/fdroid/fdroidserver/merge_requests/844))"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _posts/2021-01-31-fdroidserver-2.0.md
+#, markdown-text
+msgid "`fdroid mirror` now generates complete, working local mirror repos"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _posts/2021-01-31-fdroidserver-2.0.md
+#, markdown-text
+msgid "fix build-logs dissapearing when deploying ([!685](https://gitlab.com/fdroid/fdroidserver/merge_requests/685))"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _posts/2021-01-31-fdroidserver-2.0.md
+#, markdown-text
+msgid "do not crash when system encoding can not be retrieved ([!671](https://gitlab.com/fdroid/fdroidserver/merge_requests/671))"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _posts/2021-01-31-fdroidserver-2.0.md
+#, markdown-text
+msgid "checkupdates: UpdateCheckIngore gets properly observed now ([!659](https://gitlab.com/fdroid/fdroidserver/merge_requests/659), [!660](https://gitlab.com/fdroid/fdroidserver/merge_requests/660))"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _posts/2021-01-31-fdroidserver-2.0.md
+#, markdown-text
+msgid "keep yaml metadata when rewrite failed ([!658](https://gitlab.com/fdroid/fdroidserver/merge_requests/658))"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _posts/2021-01-31-fdroidserver-2.0.md
+#, markdown-text
+msgid "import: `template.yml` now supports omitting values ([!657](https://gitlab.com/fdroid/fdroidserver/merge_requests/657))"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _posts/2021-01-31-fdroidserver-2.0.md
+#, markdown-text
+msgid "build: deploying buildlogs with rsync ([!651](https://gitlab.com/fdroid/fdroidserver/merge_requests/651))"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _posts/2021-01-31-fdroidserver-2.0.md
+#, markdown-text
+msgid "`fdroid init` generates PKCS12 keystores, drop Java < 8 support ([!801](https://gitlab.com/fdroid/fdroidserver/-/merge_requests/801))"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _posts/2021-01-31-fdroidserver-2.0.md
+#, markdown-text
+msgid "Parse Version Codes specified in hex ([!692](https://gitlab.com/fdroid/fdroidserver/-/merge_requests/692))"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _posts/2021-01-31-fdroidserver-2.0.md
+#, markdown-text
+msgid "Major refactoring on core parts of code to be more Pythonic ([!756](https://gitlab.com/fdroid/fdroidserver/-/merge_requests/756))"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _posts/2021-01-31-fdroidserver-2.0.md
+#, markdown-text
+msgid "`fdroid init` now works when installed with pip"
+msgstr ""
+
+#. type: Title ###
+#: _posts/2021-01-31-fdroidserver-2.0.md
+#, markdown-text, no-wrap
+msgid "Removed"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _posts/2021-01-31-fdroidserver-2.0.md
+#, markdown-text
+msgid "Removed all support for _.txt_ and _.json_ metadata ([!772](https://gitlab.com/fdroid/fdroidserver/-/merge_requests/772))"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _posts/2021-01-31-fdroidserver-2.0.md
+#, markdown-text
+msgid "dropped support for Debian 8 _jessie_ and 9 _stretch_"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _posts/2021-01-31-fdroidserver-2.0.md
+#, markdown-text
+msgid "dropped support for Ubuntu releases older than bionic 18.04"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _posts/2021-01-31-fdroidserver-2.0.md
+#, markdown-text
+msgid "dropped `fdroid server update` and `fdroid server init`, use `fdroid deploy`"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _posts/2021-01-31-fdroidserver-2.0.md
+#, markdown-text
+msgid "`fdroid dscanner` was removed.  ([!711](https://gitlab.com/fdroid/fdroidserver/-/merge_requests/711))"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _posts/2021-01-31-fdroidserver-2.0.md
+#, markdown-text
+msgid "`make_current_version_link` is now off by default"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _posts/2021-01-31-fdroidserver-2.0.md
+#, markdown-text
+msgid "Dropped `force_build_tools` config option ([!797](https://gitlab.com/fdroid/fdroidserver/-/merge_requests/797))"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _posts/2021-01-31-fdroidserver-2.0.md
+#, markdown-text
+msgid "Dropped `accepted_formats` config option, there is only _.yml_ now ([!818](https://gitlab.com/fdroid/fdroidserver/-/merge_requests/818))"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _posts/2021-01-31-fdroidserver-2.0.md
+#, markdown-text
+msgid "`Provides:` was removed as a metadata field ([!654](https://gitlab.com/fdroid/fdroidserver/-/merge_requests/654))"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _posts/2021-01-31-fdroidserver-2.0.md
+#, markdown-text
+msgid "Remove unused `latestapps.dat` ([!794](https://gitlab.com/fdroid/fdroidserver/-/merge_requests/794))"
 msgstr ""
