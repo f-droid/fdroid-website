@@ -19,6 +19,7 @@ verify the JAR signature, then extract _index-v1.json_ if it validates. The
 _fdroidserver_ Python library provides `fdroidserver.download_repo_index()` to
 make this easy to do.  It is also possible to just read _index-v1.json_ using
 any ZIP library.
+
 * <https://f-droid.org/repo/index-v1.jar>
 * <https://f-droid.org/archive/index-v1.jar>
 
