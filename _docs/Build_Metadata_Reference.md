@@ -44,44 +44,77 @@ fdroid rewritemeta org.adaway
 
 The following sections describe the fields recognised within the file.
 
-- [_Categories_](#Categories)
-- [_AuthorName_](#AuthorName)
-- [_AuthorEmail_](#AuthorEmail)
-- [_AuthorWebSite_](#AuthorWebSite)
-- [_License_](#License)
-- [_AutoName_](#AutoName)
-- [_Name_](#Name)
-- [_WebSite_](#WebSite)
-- [_SourceCode_](#SourceCode)
-- [_IssueTracker_](#IssueTracker)
-- [_Translation_](#Translation)
-- [_Changelog_](#Changelog)
-- [_Donate_](#Donate)
-- [_FlattrID_](#FlattrID)
-- [_Liberapay_](#Liberapay)
-- [_OpenCollective_](#OpenCollective)
-- [_Bitcoin_](#Bitcoin)
-- [_Litecoin_](#Litecoin)
-- [_Summary_](#Summary)
-- [_Description_](#Description)
-- [_MaintainerNotes_](#MaintainerNotes)
-- [_RepoType_](#RepoType)
-- [_Repo_](#Repo)
-- [_Binaries_](#Binaries)
-- [_Builds_](#Builds)
-- [_AntiFeatures_](#AntiFeatures)
-- [_Disabled_](#Disabled)
-- [_RequiresRoot_](#RequiresRoot)
-- [_ArchivePolicy_](#ArchivePolicy)
-- [_UpdateCheckMode_](#UpdateCheckMode)
-- [_UpdateCheckIgnore_](#UpdateCheckIgnore)
-- [_VercodeOperation_](#VercodeOperation)
-- [_UpdateCheckName_](#UpdateCheckName)
-- [_UpdateCheckData_](#UpdateCheckData)
-- [_AutoUpdateMode_](#AutoUpdateMode)
-- [_CurrentVersion_](#CurrentVersion)
-- [_CurrentVersionCode_](#CurrentVersionCode)
-- [_NoSourceSince_](#NoSourceSince)
+* [_Categories_](#Categories)
+* [_AuthorName_](#AuthorName)
+* [_AuthorEmail_](#AuthorEmail)
+* [_AuthorWebSite_](#AuthorWebSite)
+* [_License_](#License)
+* [_AutoName_](#AutoName)
+* [_Name_](#Name)
+* [_WebSite_](#WebSite)
+* [_SourceCode_](#SourceCode)
+* [_IssueTracker_](#IssueTracker)
+* [_Translation_](#Translation)
+* [_Changelog_](#Changelog)
+* [_Donate_](#Donate)
+* [_FlattrID_](#FlattrID)
+* [_Liberapay_](#Liberapay)
+* [_OpenCollective_](#OpenCollective)
+* [_Bitcoin_](#Bitcoin)
+* [_Litecoin_](#Litecoin)
+* [_Summary_](#Summary)
+* [_Description_](#Description)
+* [_MaintainerNotes_](#MaintainerNotes)
+* [_RepoType_](#RepoType)
+* [_Repo_](#Repo)
+* [_Binaries_](#Binaries)
+* [_Builds_](#Builds)
+* [_Builds.versionName_](#build_versionName)
+* [_Builds.versionCode_](#build_versionCode)
+* [_Builds.commit_](#build_commit)
+* [_Builds.disable_](#build_disable)
+* [_Builds.subdir_](#build_subdir)
+* [_Builds.submodules_](#build_submodules)
+* [_Builds.sudo_](#build_sudo)
+* [_Builds.timeout_](#build_timeout)
+* [_Builds.init_](#build_init)
+* [_Builds.oldsdkloc_](#build_oldsdkloc)
+* [_Builds.target_](#build_target)
+* [_Builds.androidupdate_](#build_androidupdate)
+* [_Builds.encoding_](#build_encoding)
+* [_Builds.forceversion_](#build_forceversion)
+* [_Builds.forcevercode_](#build_forcevercode)
+* [_Builds.rm_](#build_rm)
+* [_Builds.extlibs_](#build_extlibs)
+* [_Builds.srclibs_](#build_srclibs)
+* [_Builds.patch_](#build_patch)
+* [_Builds.prebuild_](#build_prebuild)
+* [_Builds.scanignore_](#build_scanignore)
+* [_Builds.scandelete_](#build_scandelete)
+* [_Builds.build_](#build_build)
+* [_Builds.buildjni_](#build_buildjni)
+* [_Builds.ndk_](#build_ndk)
+* [_Builds.gradle_](#build_gradle)
+* [_Builds.maven_](#build_maven)
+* [_Builds.preassemble_](#build_preassemble)
+* [_Builds.gradleprops_](#build_gradleprops)
+* [_Builds.antcommands_](#build_antcommands)
+* [_Builds.output_](#build_output)
+* [_Builds.novcheck_](#build_novcheck)
+* [_Builds.antifeatures_](#build_antifeatures)
+* [_AntiFeatures_](#AntiFeatures)
+* [_Disabled_](#Disabled)
+* [_RequiresRoot_](#RequiresRoot)
+* [_ArchivePolicy_](#ArchivePolicy)
+* [_UpdateCheckMode_](#UpdateCheckMode)
+* [_UpdateCheckIgnore_](#UpdateCheckIgnore)
+* [_VercodeOperation_](#VercodeOperation)
+* [_UpdateCheckName_](#UpdateCheckName)
+* [_UpdateCheckData_](#UpdateCheckData)
+* [_AutoUpdateMode_](#AutoUpdateMode)
+* [_CurrentVersion_](#CurrentVersion)
+* [_CurrentVersionCode_](#CurrentVersionCode)
+* [_NoSourceSince_](#NoSourceSince)
 
 
 
@@ -418,13 +451,13 @@ Builds:
     commit: v1.3-fdroid
 ```
 
-`versionName: xxx`
+`versionName: xxx`<a name="build_versionName"></a>
 
-`versionCode: yyy`
+`versionCode: yyy`<a name="build_versionCode"></a>
 
 :   Specifies to build version xxx, which has a version code of yyy.
 
-`commit: xxx`
+`commit: xxx`<a name="build_commit"></a>
 
 :   The _commit_ parameter specifies the tag, commit or revision number
     from which to build it in the source repository.
@@ -433,7 +466,7 @@ In addition to the three, always required, parameters described above,
 further parameters can be added (in `name: value` format) to apply further
 configuration to the build. These are (roughly in order of application):
 
-`disable: <message>`
+`disable: <message>`<a name="build_disable"></a>
 
 :   Disables this build, giving a reason why. (For backwards
     compatibility, this can also be achieved by starting the commit ID
@@ -446,19 +479,19 @@ configuration to the build. These are (roughly in order of application):
     disabling causes it to be deleted once `fdroid update` is run; this
     is the procedure if ever a version has to be replaced.
 
-`subdir: <path>`
+`subdir: <path>`<a name="build_subdir"></a>
 
 :   Specifies to build from a subdirectory of the checked out source
     code. Normally this directory is changed to before building,
 
-`submodules: yes`
+`submodules: yes`<a name="build_submodules"></a>
 
 :   Use if the project (git only) has submodules - causes
     `git submodule update --init --recursive` to be executed after the
     source is cloned. Submodules are reset and cleaned like the main app
     repository itself before each build.
 
-`sudo: xxxx`
+`sudo: xxxx`<a name="build_sudo"></a>
 
 :   Specifies a script to be run using `sudo bash -x -c "xxxx"` in the
     buildserver VM guest.  This script is run with full root privileges,
@@ -468,7 +501,7 @@ configuration to the build. These are (roughly in order of application):
     need very specific things that are not appropriate to install for
     all builds, or for things that would conflict with other builds.
 
-`timeout: <seconds>`
+`timeout: <seconds>`<a name="build_timeout"></a>
 
 :   Time limit for this build (in seconds).  After time is up,
     buildserver VM is forcefully terminated.  The default is 7200
@@ -477,7 +510,7 @@ configuration to the build. These are (roughly in order of application):
     Limitation is applied only in server mode, i.e. when `fdroid build`
     is invoked with the `--server` option.
 
-`init: xxxx`
+`init: xxxx`<a name="build_init"></a>
 
 :   Like ’prebuild’, but runs on the source code BEFORE any other
     processing takes place.
@@ -488,7 +521,7 @@ configuration to the build. These are (roughly in order of application):
     per-build variables are available likewise: \$\$VERSION\$\$,
     \$\$VERCODE\$\$ and \$\$COMMIT\$\$.
 
-`oldsdkloc: yes`
+`oldsdkloc: yes`<a name="build_oldsdkloc"></a>
 
 :   The sdk location in the repo is in an old format, or the build.xml
     is expecting such. The ’new’ format is sdk.dir while the VERY OLD
@@ -496,7 +529,7 @@ configuration to the build. These are (roughly in order of application):
     lines of: "com.android.ant.SetupTask cannot be found" when trying to
     build, then try enabling this option.
 
-`target: <target>`
+`target: <target>`<a name="build_target"></a>
 
 :   Specifies a particular SDK target for compilation, overriding the
     value defined in the code by upstream. This has different effects
@@ -511,7 +544,7 @@ configuration to the build. These are (roughly in order of application):
     android file or doesn’t already exist, but not a good idea if it’s
     heavily customised.
 
-`androidupdate: <auto/dirs>`
+`androidupdate: <auto/dirs>`<a name="build_androidupdate"></a>
 
 :   By default, ’android update’ is used in Ant builds to generate or
     update the project and all its referenced projects. Specifying
@@ -524,7 +557,7 @@ configuration to the build. These are (roughly in order of application):
     Otherwise, the value can be a comma-separated list of directories in
     which to run ’android update’ relative to the application directory.
 
-`encoding: xxxx`
+`encoding: xxxx`<a name="build_encoding"></a>
 
 :   Adds a java.encoding property to local.properties with the
     given value. Generally the value will be ’utf-8’. This is picked up
@@ -532,7 +565,7 @@ configuration to the build. These are (roughly in order of application):
     source files with this encoding. If you receive warnings during the
     compile about character encodings, you probably need this.
 
-`forceversion: yes`
+`forceversion: yes`<a name="build_forceversion"></a>
 
 :   If specified, the package version in _AndroidManifest.xml_ is replaced
     with the version name for the build as specified in the metadata.
@@ -543,12 +576,12 @@ configuration to the build. These are (roughly in order of application):
     apparent which architecture or platform the APK is designed to
     run on.
 
-`forcevercode: yes`
+`forcevercode: yes`<a name="build_forcevercode"></a>
 
 :   If specified, the package version code in the _AndroidManifest.xml_ is
     replaced with the version code for the build. See also forceversion.
 
-`rm: <path1>[,<path2>,...]`
+`rm: <path1>[,<path2>,...]`<a name="build_rm"></a>
 
 :   Specifies the relative paths of files or directories to delete
     before the build is done. The paths are relative to the base of the
@@ -559,13 +592,13 @@ configuration to the build. These are (roughly in order of application):
     Multiple files/directories can be specified by separating them with
     ’,’. Directories will be recursively deleted.
 
-`extlibs: <lib1>[,<lib2>,...]`
+`extlibs: <lib1>[,<lib2>,...]`<a name="build_extlibs"></a>
 
 :   Comma-separated list of external libraries (jar files) from the
     `build/extlib` library, which will be placed in the `libs` directory
     of the project.
 
-`srclibs: [n:]a@r,[n:]b@r1,...`
+`srclibs: [n:]a@r,[n:]b@r1,...`<a name="build_srclibs"></a>
 
 :   Comma-separated list of source libraries or Android projects. Each
     item is of the form name@rev where name is the predefined source
@@ -615,14 +648,14 @@ configuration to the build. These are (roughly in order of application):
     -   ‘Clojars’ - Clojure libraries repo.
     -   ‘CommonsWare’ - repo holding a collection of open-source libs.
 
-`patch: x`
+`patch: x`<a name="build_patch"></a>
 
 :   Apply patch(es). ’x’ names one (or more - comma-seperated) files
     within a directory below the metadata, with the same name as the
     metadata file but without the extension. Each of these patches is
     applied to the code in turn.
 
-`prebuild: xxxx`
+`prebuild: xxxx`<a name="build_prebuild"></a>
 
 :   Specifies a shell command (or commands - chain with &&) to run
     before the build takes place. Backslash can be used as an escape
@@ -648,7 +681,7 @@ configuration to the build. These are (roughly in order of application):
     variables are available likewise: \$\$VERSION\$\$, \$\$VERCODE\$\$
     and \$\$COMMIT\$\$.
 
-`scanignore: <path1>[,<path2>,...]`
+`scanignore: <path1>[,<path2>,...]`<a name="build_scanignore"></a>
 
 :   Enables one or more files/paths to be excluded from the scan
     process. This should only be used where there is a very good reason,
@@ -658,7 +691,7 @@ configuration to the build. These are (roughly in order of application):
     When scanning the source tree for problems, matching files whose
     relative paths start with any of the paths given here are ignored.
 
-`scandelete: <path1>[,<path2>,...]`
+`scandelete: <path1>[,<path2>,...]`<a name="build_scandelete"></a>
 
 :   When running the scan process, any files that trigger errors - like
     binaries - will be removed. It acts just like _scanignore_, but
@@ -668,7 +701,7 @@ configuration to the build. These are (roughly in order of application):
     unwanted files which are not needed for the build. Instead of
     removing them manually via _rm_, using _scandelete_ is easier.
 
-`build: xxxx`
+`build: xxxx`<a name="build_build"></a>
 
 :   As for ’prebuild’, but runs during the actual build phase (but
     before the main Ant/Maven build). Use this only for actions that do
@@ -685,7 +718,7 @@ configuration to the build. These are (roughly in order of application):
     available likewise: \$\$VERSION\$\$, \$\$VERCODE\$\$
     and \$\$COMMIT\$\$.
 
-`buildjni: [yes|no|<dir list>]`
+`buildjni: [yes|no|<dir list>]`<a name="build_buildjni"></a>
 
 :   Enables building of native code via the _ndk-build_ script before
     doing the main Ant build. The value may be a list of directories
@@ -702,7 +735,7 @@ configuration to the build. These are (roughly in order of application):
     isn’t used nor built will result in an error saying that native
     libraries were expected in the resulting package.
 
-`ndk: <version>`
+`ndk: <version>`<a name="build_ndk"></a>
 
 :   Version of the NDK to use in this build. Defaults to the latest NDK
     release that included legacy toolchains (r12b), so as to not break builds
@@ -713,7 +746,7 @@ configuration to the build. These are (roughly in order of application):
     r18b, r19c, r20b and r21d. You may add support for more versions by adding
     them to ’ndk\_paths’ in your config file.
 
-`gradle: <flavour1>[,<flavour2>,...]`
+`gradle: <flavour1>[,<flavour2>,...]`<a name="build_gradle"></a>
 
 :   Build with Gradle instead of Ant, specifying what flavours to use.
     Flavours are case sensitive since the path to the output APK is
@@ -724,18 +757,18 @@ configuration to the build. These are (roughly in order of application):
     least one valid flavour since ’yes’ will build all of
     them separately.
 
-`maven: yes[@<dir>]`
+`maven: yes[@<dir>]`<a name="build_maven"></a>
 
 :   Build with Maven instead of Ant. An extra @&lt;dir&gt; tells F-Droid
     to run Maven inside that relative subdirectory. Sometimes it is
     needed to use @.. so that builds happen correctly.
 
-`preassemble: <task1>[,<task2>,...]`
+`preassemble: <task1>[,<task2>,...]`<a name="build_preassemble"></a>
 
 :   List of Gradle tasks to be run before the assemble task in a Gradle
     project build.
 
-`gradleprops: <prop1>[,<prop2>,...]`
+`gradleprops: <prop1>[,<prop2>,...]`<a name="build_gradleprops"></a>
 
 :   List of Gradle properties to pass via the command line to Gradle. A
     property can be of the form `foo` or of the form `key=value`.
@@ -743,13 +776,13 @@ configuration to the build. These are (roughly in order of application):
     For example: `gradleprops=enableFoo,someSetting=bar` will result in
     `gradle -PenableFoo -PsomeSetting=bar`.
 
-`antcommands: <target1>[,<target2>,...]`
+`antcommands: <target1>[,<target2>,...]`<a name="build_antcommands"></a>
 
 :   Specify an alternate set of Ant commands (target) instead of the
     default ’release’. It can’t be given any flags, such as the path to
     a _build.xml_.
 
-`output: glob/to/output.apk`
+`output: glob/to/output.apk`<a name="build_output"></a>
 
 :   Specify a glob path where the resulting unsigned release APK from
     the build should be. This can be used in combination with build
@@ -757,14 +790,14 @@ configuration to the build. These are (roughly in order of application):
     specified, the build is manual. You should run your build commands,
     such as `make`, in _build_.
 
-`novcheck: yes`
+`novcheck: yes`<a name="build_novcheck"></a>
 
 :   Don’t check that the version name and code in the resulting APK are
     correct by looking at the build output - assume the metadata
     is correct. This takes away a useful level of sanity checking, and
     should only be used if the values can’t be extracted.
 
-`antifeatures: <antifeature1>[,<antifeature2>,...]`
+`antifeatures: <antifeature1>[,<antifeature2>,...]`<a name="build_antifeatures"></a>
 
 :   List of Anti-Features for this specific build. They are described
     in [_AntiFeatures_](#AntiFeatures).
