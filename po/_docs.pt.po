@@ -6,16 +6,16 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2021-01-29 22:27+0100\n"
-"PO-Revision-Date: 2021-01-01 10:12+0000\n"
-"Last-Translator: Eduardo Rodrigues <edu.rodrigues2580@gmail.com>\n"
+"POT-Creation-Date: 2021-02-05 10:13+0100\n"
+"PO-Revision-Date: 2021-01-31 22:05+0000\n"
+"Last-Translator: Peter J. Mello <admin@petermello.net>\n"
 "Language-Team: Portuguese <https://hosted.weblate.org/projects/f-droid/website-docs/pt/>\n"
 "Language: pt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 4.4.1-dev\n"
+"X-Generator: Weblate 4.5-dev\n"
 
 #. type: YAML Front Matter: title
 #: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
@@ -554,6 +554,231 @@ msgid "Graphic files from the app’s source of *fdroiddata* overwrites files in
 msgstr "Ficheiros de gráficos da fonte da aplicação *fdroiddata* sobrescrevem os ficheiros no repo."
 
 #. type: YAML Front Matter: title
+#: _docs/All_our_APIs.md
+#, no-wrap
+msgid "All our APIs"
+msgstr ""
+
+#. type: Plain text
+#: _docs/All_our_APIs.md
+msgid "For F-Droid to be trusted, we need to be transparent.  Making it easy for people to pay attention to all the processes and systems we use helps us stay secure.  These are the APIs with key information about the publishing process."
+msgstr ""
+
+#. type: Title ###
+#: _docs/All_our_APIs.md
+#, no-wrap
+msgid "The repo index"
+msgstr ""
+
+#. type: Plain text
+#: _docs/All_our_APIs.md
+msgid "F-Droid is built around a signed index of all the apps and packages that are available.  This is a JSON file, though more of an index than an API since all the information is distributed via a single file.  The repo index is in the form of a signed JAR file that contains _index-v1.json_.  The best method is to verify the JAR signature, then extract _index-v1.json_ if it validates. The _fdroidserver_ Python library provides `fdroidserver.download_repo_index()` to make this easy to do.  It is also possible to just read _index-v1.json_ using any ZIP library."
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/All_our_APIs.md
+#, fuzzy
+#| msgid "<https://wiki.debian.org/ReproducibleBuilds>"
+msgid "<https://f-droid.org/repo/index-v1.jar>"
+msgstr "<https://wiki.debian.org/ReproducibleBuilds>"
+
+#. type: Bullet: '* '
+#: _docs/All_our_APIs.md
+#, fuzzy
+#| msgid "<https://wiki.debian.org/ReproducibleBuilds>"
+msgid "<https://f-droid.org/archive/index-v1.jar>"
+msgstr "<https://wiki.debian.org/ReproducibleBuilds>"
+
+#. type: Title ###
+#: _docs/All_our_APIs.md
+#, fuzzy, no-wrap
+#| msgid "App Metadata"
+msgid "App build metadata"
+msgstr "Metadados do App"
+
+#. type: Plain text
+#: _docs/All_our_APIs.md
+#, no-wrap
+msgid ""
+"Every app in _f-droid.org_ has a corresponding\n"
+"[build metadata file]({{ site.baseurl }}/docs/Build_Metadata_Reference) in\n"
+"[_fdroiddata_](https://gitlab.com/fdroid/fdroiddata).  In order to encourage\n"
+"more creative reuse, we keep our data in standard formats in easy to find\n"
+"places.  The whole app collection is in [YAML format]({{ site.baseurl }}/{%\n"
+"post_url 2019-09-11-yaml-metadata %}).  The file can either be directly accessed\n"
+"by Application ID using the GitLab Raw URL\n"
+"`https://gitlab.com/fdroid/fdroiddata/-/blob/master/metadata/<ApplicationID>.yml`\n"
+"(e.g. <https://gitlab.com/fdroid/fdroiddata/-/blob/master/metadata/org.fdroid.fdroid.yml>).\n"
+"The repo index and the [GitLab Repository Files\n"
+"API](https://docs.gitlab.com/ee/api/repository_files.html) can be used to query\n"
+"which Application IDs are available.\n"
+msgstr ""
+
+#. type: Title ###
+#: _docs/All_our_APIs.md
+#, fuzzy, no-wrap
+#| msgid "f-droid.org website"
+msgid "f-droid.org build server status"
+msgstr "site f-droid.org"
+
+#. type: Plain text
+#: _docs/All_our_APIs.md
+msgid "The four main steps of the build cycle are: _checkupdates_, _build_, _update_, and _deploy_.  There is a JSON file for each one of those with status information.  It is posted once that step completes running.  The step that is currently running is posted to _running_."
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/All_our_APIs.md
+msgid "<https://f-droid.org/repo/status/running.json>"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/All_our_APIs.md
+msgid "<https://f-droid.org/repo/status/checkupdates.json>"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/All_our_APIs.md
+#, fuzzy
+#| msgid "<https://wiki.debian.org/ReproducibleBuilds>"
+msgid "<https://f-droid.org/repo/status/build.json>"
+msgstr "<https://wiki.debian.org/ReproducibleBuilds>"
+
+#. type: Bullet: '* '
+#: _docs/All_our_APIs.md
+msgid "<https://f-droid.org/repo/status/update.json>"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/All_our_APIs.md
+msgid "<https://f-droid.org/repo/status/deploy.json>"
+msgstr ""
+
+#. type: Plain text
+#: _docs/All_our_APIs.md
+msgid "Two examples of how these JSON APIs can be used are the [F-Droid Monitor](https://monitor.f-droid.org/) website and the [F-Droid Build Status]({{ site.baseurl }}/packages/de.storchp.fdroidbuildstatus/) app."
+msgstr ""
+
+#. type: Title ###
+#: _docs/All_our_APIs.md
+#, no-wrap
+msgid "Mirror and repo monitoring"
+msgstr ""
+
+#. type: Plain text
+#: _docs/All_our_APIs.md
+msgid "[_mirror-monitor_](https://gitlab.com/fdroid/mirror-monitor) and [_repo-monitor_](https://gitlab.com/fdroid/repo-monitor) are automated jobs that check various stats about _f-droid.org_ mirrors and third party repos respectively.  They each provide a single, large JSON log of all the times the checks where run:"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/All_our_APIs.md
+msgid "_f-droid.org_ mirror status: <https://fdroid.gitlab.io/mirror-monitor/report.json>"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/All_our_APIs.md
+#, fuzzy
+#| msgid "git repo: <https://gitlab.com/fdroid/repomaker>"
+msgid "third-party repo status: <https://fdroid.gitlab.io/repo-monitor/report.json>"
+msgstr "repo git: <https://gitlab.com/fdroid/repomaker>"
+
+#. type: Title ###
+#: _docs/All_our_APIs.md
+#, fuzzy, no-wrap
+#| msgid "Reproducible Builds"
+msgid "Reproducible builds"
+msgstr "Compilações reproduzíveis"
+
+#. type: Plain text
+#: _docs/All_our_APIs.md
+#, no-wrap
+msgid ""
+"_verification.f-droid.org_ is a rebuilder that rebuilds the official releases\n"
+"from _f-droid.org_, then checks to see if they were [reproducibly\n"
+"built](https://reproducible-builds.org/). There is a JSON file per APK that has\n"
+"been checked, where the filename follows the pattern\n"
+"`<ApplicationId>_<VersionCode>.apk.json`, for example:\n"
+"<https://verification.f-droid.org/org.fdroid.fdroid_1010050.apk.json>\n"
+msgstr ""
+
+#. type: Title ###
+#: _docs/All_our_APIs.md
+#, no-wrap
+msgid "Binary transparency logs"
+msgstr ""
+
+#. type: Plain text
+#: _docs/All_our_APIs.md
+msgid "[Binary transparency](https://wiki.mozilla.org/Security/Binary_Transparency) is the idea that all released packages should be logged as they are published.  This provides a way to check if a given binary was produced by the publisher, or came from somewhere else, e.g. as an exploit.  _fdroidserver_ has built in tools for managing a binary transparency log of the index files as part of the release process. This has been enabled on the Guardian Project repo: <https://github.com/guardianproject/binary_transparency_log>"
+msgstr ""
+
+#. type: Plain text
+#: _docs/All_our_APIs.md
+msgid "There is also a prototype for running a binary transparency log for _f-droid.org_. <https://gitlab.com/eighthave/f-droid.org-binary-transparency>"
+msgstr ""
+
+#. type: Plain text
+#: _docs/All_our_APIs.md
+msgid "Since Gradle and the Google Android Tools team does not publish one, F-Droid has done it.  The basic API is a JSON file with a listing of all URLs known to have be published.  Each URL then contains a list of SHA-256 checksums that the log process has seen.  There are also other files tracked, based on what the publisher provides."
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/All_our_APIs.md
+#, fuzzy
+#| msgid "*E.g* <https://gitlab.com/fdroid/fdroidclient/tree/master>"
+msgid "<https://gitlab.com/fdroid/gradle-transparency-log/-/raw/master/checksums.json>"
+msgstr "*Por exemplo*<https://gitlab.com/fdroid/fdroidclient/tree/master>"
+
+#. type: Bullet: '* '
+#: _docs/All_our_APIs.md
+#, fuzzy
+#| msgid "*E.g* <https://gitlab.com/fdroid/fdroidclient/tree/master>"
+msgid "<https://gitlab.com/fdroid/android-sdk-transparency-log/-/raw/master/checksums.json>"
+msgstr "*Por exemplo*<https://gitlab.com/fdroid/fdroidclient/tree/master>"
+
+#. type: Title ###
+#: _docs/All_our_APIs.md
+#, no-wrap
+msgid "<tt>issuebot</tt>"
+msgstr ""
+
+#. type: Plain text
+#: _docs/All_our_APIs.md
+msgid "[_issuebot_](https://gitlab.com/fdroid/issuebot#json-rest-api) runs on app merge requests and requests for packaging (RFP) to provide information to reviewers about the app.  Much of that information is also published in JSON format.  Each report is made of data from modules that run on a specific app.  There are two entry points:"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/All_our_APIs.md
+msgid "<https://fdroid.gitlab.io/rfp/issuebot/applicationIds.json>"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/All_our_APIs.md
+msgid "<https://fdroid.gitlab.io/rfp/issuebot/sourceUrls.json>"
+msgstr ""
+
+#. type: Title ###
+#: _docs/All_our_APIs.md
+#, no-wrap
+msgid "Metrics"
+msgstr ""
+
+#. type: Plain text
+#: _docs/All_our_APIs.md
+msgid "[Usage data]({{ site.baseurl }}/{% post_url 2019-04-15-privacy-preserving-analytics %})  is gathered from [various F-Droid websites](https://fdroid.gitlab.io/metrics/)  and published with no personally identifiable information (PII).  It is published with one JSON file per-week, with a JSON index file per website.  For example, here is a week of search metrics: <https://fdroid.gitlab.io/metrics/search.f-droid.org/2021-01-18.json>"
+msgstr ""
+
+#. type: Title ###
+#: _docs/All_our_APIs.md
+#, no-wrap
+msgid "Git stats"
+msgstr ""
+
+#. type: Plain text
+#: _docs/All_our_APIs.md
+msgid "Each _git_ repo has lots of interesting metadata.  The _GitStats_ project generates nice charts from that data.  This is not quite an API, but it is related since it is using public project data.  Pre-generated pages for each of the central git repos are visible here: <https://fdroid.gitlab.io/>."
+msgstr ""
+
+#. type: YAML Front Matter: title
 #: _docs/Anti-Features.md
 #, no-wrap
 msgid "Anti-Features"
@@ -684,10 +909,8 @@ msgstr "Verificação de atualizações sem o seu conhecimento ou permissão"
 
 #. type: Plain text
 #: _docs/Anti-Features.md
-#, fuzzy
-#| msgid "Examples of where it would not be applied - any of the above, if the functionality is opt-in (i.e. you are asked before it happens)  or disabled by default."
 msgid "Examples of where it would not be applied - any of the above, if the functionality is opt-in (i.e. you are asked before it happens)  and disabled by default. Enabling it should then also require informed consent, i.e. requiring a privacy policy similar to GDPR, and avoid collecting personal data (PII) as far as possible."
-msgstr "Exemplos de onde ele não seria aplicado - qualquer um dos exemplos acima, se a funcionalidade é opt-in (ou seja, se é perguntado antes que isso aconteça) ou desativada por padrão."
+msgstr "Exemplos de onde ele não seria aplicado - qualquer um dos exemplos acima, se a funcionalidade é opt-in (ou seja, se é perguntado antes que isso aconteça) e desativada por padrão. A activação deverá então também requerer consentimento informado, ou seja, exigir uma política de privacidade semelhante à GDPR, e evitar, tanto quanto possível, a recolha de dados pessoais (PII)."
 
 #. type: Plain text
 #: _docs/Anti-Features.md
@@ -3920,68 +4143,6 @@ msgstr "Os infractores sérios ou persistentes serão temporária ou permanentem
 #: _docs/Code_of_Conduct.md
 msgid "(_Based on the [Debian Code of Conduct](https://www.debian.org/code_of_conduct), Version 1.0 [ratified](https://www.debian.org/vote/2014/vote_002) on April 28th, 2014._)"
 msgstr "(_Baseado no [Código de Conduta Debian](https://www.debian.org/code_of_conduct), Versão 1.0 [ratificado](https://www.debian.org/vote/2014/vote_002) em 28 de Abril de 2014._)"
-
-#. type: YAML Front Matter: title
-#: _docs/Deploying_fdroid-bot.md
-#, fuzzy, no-wrap
-#| msgid "Deploying to https://f-droid.org"
-msgid "Deploying <tt>fdroid-bot</tt>"
-msgstr "Implantar em https://f-droid.org"
-
-#. type: Plain text
-#: _docs/Deploying_fdroid-bot.md
-#, no-wrap
-msgid ""
-"<tt>fdroid-bot</tt> is the generic term for bots in F-Droid that review projects\n"
-"and make merge requests.  For example,\n"
-"[issuebot](https://gitlab.com/fdroid/issuebot) runs on [RFP\n"
-"issues(https://gitlab.com/fdroid/rfp/issues) and [_fdroiddata_ merge\n"
-"requests](https://gitlab.com/fdroid/fdroiddata/-/merge_requests).\n"
-msgstr ""
-
-#. type: Plain text
-#: _docs/Deploying_fdroid-bot.md
-#, no-wrap
-msgid ""
-"It is important that any <tt>fdroid-bot</tt> setup is limited to only push to\n"
-"GitLab projects under the [fdroid-bot group](https://gitlab.com/fdroid-bot).\n"
-"<tt>fdroid-bot</tt> setups should never have push access to any other git\n"
-"repositories.  This is a hard requirement to keep the security profile\n"
-"manageable.\n"
-msgstr ""
-
-#. type: Plain text
-#: _docs/Deploying_fdroid-bot.md
-#, no-wrap
-msgid ""
-"When <tt>fdroid-bot</tt> needs push access, it should be setup to use [Deploy\n"
-"Key](https://docs.gitlab.com/ee/user/project/deploy_keys/) that is only used in\n"
-"that one repo.  If <tt>fdroid-bot</tt> needs to interact with the GitLab API,\n"
-"like to create merge requests, then it should use a [Personal Access\n"
-"Token](https://docs.gitlab.com/ee/user/profile/personal_access_tokens.html) that\n"
-"is assigned to a single project in GitLab.  This limits the access and makes it\n"
-"easy to revoke specific tokens/keys as needed.\n"
-msgstr ""
-
-#. type: Title ##
-#: _docs/Deploying_fdroid-bot.md
-#, no-wrap
-msgid "Special case: binary transparency logs for external projects"
-msgstr ""
-
-#. type: Plain text
-#: _docs/Deploying_fdroid-bot.md
-#, no-wrap
-msgid ""
-"There are binary transparency logs for the [Android SDK\n"
-"components](https://gitlab.com/fdroid/android-sdk-transparency-log) and the\n"
-"[gradle binaries](https://gitlab.com/fdroid/gradle-transparency-log).  These are\n"
-"also automatic processes that push commits into dedicated git repositories where\n"
-"the automatic process is the only committer.  These are not the same as\n"
-"<tt>fdroid-bot</tt> because they are entirely self-contained in their own GitLab\n"
-"projects.  These scripts are setup using GitLab Deploy Keys so that they only\n"
-"can push commits to the same repository as they are running.\n"
-msgstr ""
 
 #. type: YAML Front Matter: title
 #: _docs/Deploying_the_Website.md
@@ -7671,7 +7832,7 @@ msgstr ""
 "gpg --import admin@f-droid.org.asc\n"
 
 #. type: Title ##
-#: _docs/Release_Channels_and_Signing_Keys.md _docs/Release_Process.md
+#: _docs/Release_Channels_and_Signing_Keys.md
 #, no-wrap
 msgid "fdroidserver"
 msgstr "fdroidserver"
@@ -7745,7 +7906,7 @@ msgstr ""
 "    ```\n"
 
 #. type: Title ##
-#: _docs/Release_Channels_and_Signing_Keys.md _docs/Release_Process.md
+#: _docs/Release_Channels_and_Signing_Keys.md
 #, no-wrap
 msgid "Repomaker"
 msgstr "Representante (Repomaker)"
@@ -7801,364 +7962,6 @@ msgstr "repo git: <https://gitlab.com/fdroid/jekyll-fdroid>"
 #: _docs/Release_Channels_and_Signing_Keys.md
 msgid "git tags signed by \"Hans-Christoph Steiner \\<hans@guardianproject.info>\" aka \"Hans-Christoph Steiner \\<hans@eds.org>\" aka \"Hans-Christoph Steiner \\<hans@at.or.at>\" with fingerprint: <br /> `EE66 20C7 136B 0D2C 456C 0A4D E9E2 8DEA 00AA 5556` or \"Nico Alt \\<nicoalt@posteo.de>\" with fingerprint: <br /> `558B E907 1CA6 CA44 DBF5 576B 95A0 DAF7 DBC7 B548`"
 msgstr "marcações de git assinadas por \"Hans-Christoph Steiner\\<hans@guardianproject.info>\" também conhecido como \"Hans-Christoph Steiner\\<hans@eds.org>\" também conhecido como \"Hans-Christoph Steiner\\<hans@at.or.at>\" com assinatura digital: <br />`EE66 20C7 136B 0D2C 456C 0A4D E9E2 8DEA 00AA 5556`ou antes <br />`5E61 C878 0F86 295C E17D 8677 9F0F E587 374B BE81` ou \"Nico Alt \\<nicoalt@posteo.de>\" com assinatura digital: <br /> `558B E907 1CA6 CA44 DBF5 576B 95A0 DAF7 DBC7 B548`"
-
-#. type: YAML Front Matter: title
-#: _docs/Release_Process.md
-#, no-wrap
-msgid "Release Process"
-msgstr "Processo de lançamento"
-
-#. type: Plain text
-#: _docs/Release_Process.md
-msgid "For each piece of the F-Droid ecosystem, there is a specific release process.  They generally follow the same patterns, but all have unique steps.  The official signing keys are listed in [Release Channels and Signing Keys](../Release_Channels_and_Signing_Keys)."
-msgstr "Para cada peça do ecossistema F-Droid, há um processo de liberação específico.  Eles geralmente seguem os mesmos padrões, mas todos têm passos únicos.  As chaves de assinatura oficiais estão listadas em [Canais de Lançamento e Chaves de Assinatura](../Release_Channels_and_Signing_Keys)."
-
-#. type: Title ##
-#: _docs/Release_Process.md
-#, no-wrap
-msgid "fdroidclient"
-msgstr "fdroidclient"
-
-#. type: Bullet: '1. '
-#: _docs/Release_Process.md
-msgid "pull in latest commits from Weblate into a local branch called _weblate_"
-msgstr "puxar os últimos commits do Weblate para um ramo local chamado _weblate_"
-
-#. type: Bullet: '2. '
-#: _docs/Release_Process.md
-msgid "run `./tools/check-format-strings.py` and `./tools/remove-unused-and-blank-translations.py` and commit changes"
-msgstr "executar `./tools/check-format-strings.py` e `./tools/remove-unused-and-blank-translations.py` e commit alterações"
-
-#. type: Bullet: '3. '
-#: _docs/Release_Process.md
-msgid "rebase the _weblate_ branch on the latest commits in _master_ of <https://gitlab.com/fdroid/fdroidclient> and fix any conflicts"
-msgstr "rebasear o ramo _weblate_ nas últimas submissões em _master_ de <https://gitlab.com/fdroid/fdroidclient> e corrigir quaisquer conflitos"
-
-#. type: Bullet: '4. '
-#: _docs/Release_Process.md
-msgid "push local _weblate_ branch to your fork create a merge request, and tag it with the _localization_ label"
-msgstr "empurrar o ramo local _ weblate_ para sua bifurcação criar uma solicitação de mesclagem e marcá-la com o rótulo _ localization_"
-
-#. type: Bullet: '5. '
-#: _docs/Release_Process.md
-msgid "make sure all tests pass before merging, including all _android-22_ emulator tests"
-msgstr "certifique-se de que todos os testes passam antes da mesclagem, a incluir todos os testes do emulador _android-22_"
-
-#. type: Bullet: '6. '
-#: _docs/Release_Process.md
-msgid "once the _weblate_ branch is merged, reset the git repo in <https://hosted.weblate.org/projects/f-droid/f-droid/#repository>"
-msgstr "uma vez que o ramo _weblate_ é mesclado, reinicie o git repo em <https://hosted.weblate.org/projects/f-droid/f-droid/#repository>"
-
-#. type: Bullet: '7. '
-#: _docs/Release_Process.md
-msgid "set _versionCode_ in _app/build.gradle_"
-msgstr "defina _ versionCode_ em _ app/Build. gradle_"
-
-#. type: Bullet: '8. '
-#: _docs/Release_Process.md
-msgid "add new entry in _metadata/en-US/changelogs/_"
-msgstr "adicionar nova entrada em _metadata/en-US/changelogs/_"
-
-#. type: Bullet: '9. '
-#: _docs/Release_Process.md
-msgid "copy that new entry to _CHANGELOG.md_"
-msgstr "copiar essa nova entrada para _CHANGELOG.md_"
-
-#. type: Plain text
-#: _docs/Release_Process.md
-#, no-wrap
-msgid ""
-"10. make a local branch for the final release, then run\n"
-"    `./tools/trim-incomplete-translations-for-release.py`\n"
-"\tto remove any incomplete translations from the final while leaving\n"
-"\tthem in _master_\n"
-"10. add git signed tag named after the exact version name (no\n"
-"   preceeding __v__)\n"
-"11. add new `Build:` entry to\n"
-"    [metadata file](https://gitlab.com/fdroid/fdroiddata/blob/master/metadata/org.fdroid.fdroid.txt)\n"
-msgstr ""
-"10. faça um ramo local para o lançamento final, depois execute\n"
-"    `./tools/trim-incomplete-translations-for-release.py`\n"
-"\tpara remover qualquer tradução incompleta da final enquanto sair\n"
-"\tdeles em _master_\n"
-"10. adicione uma etiqueta assinada com o nome exato da versão (sem\n"
-"    __v__ antecendente)\n"
-"11. adicione uma nova entrada `Build:` ao\n"
-"    [ficheiro de metadados](https://gitlab.com/fdroid/fdroiddata/blob/master/metadata/org.fdroid.fdroid.txt)\n"
-
-#. type: Title ###
-#: _docs/Release_Process.md
-#, no-wrap
-msgid "major release"
-msgstr "lançamento importante"
-
-#. type: Plain text
-#: _docs/Release_Process.md
-msgid "If it is a major release, there are a few more steps."
-msgstr "Se for um lançamento importante, há mais alguns passos."
-
-#. type: Bullet: '1. '
-#: _docs/Release_Process.md
-msgid "temporarily remove the _iw/in_ links: `find app/src/main/res/ -type l -delete`"
-msgstr "remover temporariamente os links _iw/in_: `find app/src/main/res/ -type l -delete`"
-
-#. type: Bullet: '2. '
-#: _docs/Release_Process.md
-msgid "In Android Studio, go to _Analyze_ -> _Inspect Code_"
-msgstr "No Android Studio, vá para _Analyze_ -> _Inspect Code_"
-
-#. type: Bullet: '3. '
-#: _docs/Release_Process.md
-msgid "After running on the whole project, go to _Android Lint: Performance_, and click on _Unused Resources_, then click the _Remove All Unused Resources_ button.  Only commit changes to _strings.xml_, **not** _styles.xml_ or other files."
-msgstr "Depois de executar em todo o projeto, vá para _Android Lint: Performance_ e clique em _Recursos não Utilizados_ e, em seguida, clique no botão _Remover Todos os Recursos não Utilizados_.  Apenas commit alterações a _strings.xml_, **não*** _styles.xml_ ou outros ficheiros."
-
-#. type: Bullet: '4. '
-#: _docs/Release_Process.md
-msgid "Then it is time to create a new stable branch (e.g. _stable-v1.0_ or _stable-v1.1_) should be created first.  The incomplete translations should be removed using `./tools/trim-incomplete-translations-for-release.py`.  This has to happen in the stable branch only, since it will remove the incomplete translations.  If the incomplete translations are removed from _master_, then Weblate will sync with that, and remove them there as well."
-msgstr "Então é hora de criar um novo ramo estável (e.g. _stable-v1.0_ ou _stable-v1.1_) deve ser criado primeiro.  As traduções incompletas devem ser removidas a executar `./tools/trim-incomplete-translations-for-release.py`.  Isso tem que acontecer somente no ramo estável, já que ele removerá traduções incompletas.  Se as traduções incompletas forem removidas do _master_, o Weblate irá sincronizar com ele e removê-las lá também."
-
-#. type: Bullet: '1. '
-#: _docs/Release_Process.md
-msgid "Make sure its passing the [tests on Ubuntu/trusty and OSX](https://travis-ci.org/f-droid/fdroidserver)"
-msgstr "Certifique-se de que os [testes no Ubuntu/trusty e OSX](https://travis-ci.org/f-droid/fdroidserver) passam"
-
-#. type: Bullet: '3. '
-#: _docs/Release_Process.md
-msgid "rebase the _weblate_ branch on the latest commits in _master_ of <https://gitlab.com/fdroid/fdroidserver> and fix any conflicts"
-msgstr "rebasear o ramo _weblate_ nas últimas submissões em _master_ de <https://gitlab.com/fdroid/fdroidclient> e corrigir quaisquer conflitos"
-
-#. type: Bullet: '5. '
-#: _docs/Release_Process.md
-msgid "make sure all tests pass before merging"
-msgstr "certifique-se de que todos os testes passam antes de mesclar"
-
-#. type: Bullet: '6. '
-#: _docs/Release_Process.md
-msgid "Update translation template and official, included language list using: `make -C locale compile`. Commit updates and push."
-msgstr ""
-
-#. type: Bullet: '7. '
-#: _docs/Release_Process.md
-msgid "set `version=''` in _setup.py_"
-msgstr "definir `version=''` em _setup.py_"
-
-#. type: Bullet: '7. '
-#: _docs/Release_Process.md
-msgid "add git signed tag named after the exact version name (no preceeding __v__), using the exact same string as `version=''`"
-msgstr "adicionar uma marcação git assinada com o nome exato da versão (sem __v__ antecedente), a usar exatamente a mesma cadeia que `version=''`"
-
-#. type: Bullet: '9. '
-#: _docs/Release_Process.md
-msgid "upload to pypi.python.org using `python3 setup.py release`"
-msgstr "enviar para pypi.python.org a usar `python3 setup.python.org release`"
-
-#. type: Bullet: '10. '
-#: _docs/Release_Process.md
-msgid "update [Debian package](https://salsa.debian.org/python-team/packages/fdroidserver)"
-msgstr "atualizar o [pacote Debian](https://salsa.debian.org/python-team/packages/fdroidserver)"
-
-#. type: Bullet: '11. '
-#: _docs/Release_Process.md
-msgid "upload to [F-Droid PPA](https://launchpad.net/~fdroid/+archive/ubuntu/fdroidserver)"
-msgstr "enviar para [PPA F-Droid](https://Launchpad.net/~ fdroid/+ Archive/Ubuntu/fdroidserver)"
-
-#. type: Title ##
-#: _docs/Release_Process.md
-#, no-wrap
-msgid "privileged-extension"
-msgstr "privileged-extension"
-
-#. type: Bullet: '3. '
-#: _docs/Release_Process.md
-msgid "rebase the _weblate_ branch on the latest commits in _master_ of <https://gitlab.com/fdroid/privileged-extension> and fix any conflicts"
-msgstr "rebasear o ramo _weblate_ nas últimas submissões em _master_ de <https://gitlab.com/fdroid/privileged-extension>> e corrigir quaisquer conflitos"
-
-#. type: Bullet: '6. '
-#: _docs/Release_Process.md
-msgid "once the _weblate_ branch is merged, reset the git repo in <https://hosted.weblate.org/projects/f-droid/privileged-extension/#repository>"
-msgstr "uma vez que o ramo _weblate_ é mesclado, reinicie o git repo em <https://hosted.weblate.org/projects/f-droid/privileged-extension/#repository>"
-
-#. type: Bullet: '7. '
-#: _docs/Release_Process.md
-msgid "set _versionCode_ in _app/src/main/AndroidManifest.xml_"
-msgstr "definir _versionCode_ em _app/src/main/AndroidManifest.xml_"
-
-#. type: Plain text
-#: _docs/Release_Process.md
-#, no-wrap
-msgid ""
-"10. add git signed tag named after the exact version name (no\n"
-"   preceeding __v__)\n"
-"11. If the OTA update ZIP should be updated, add new `Build:` entry to\n"
-"    [metadata file](https://gitlab.com/fdroid/fdroiddata/blob/master/metadata/org.fdroid.fdroid.privileged.ota.txt)\n"
-"12. The APK should auto-update based on the signing tag.  Double-check\n"
-"    that in that\n"
-"    [metadata file](https://gitlab.com/fdroid/fdroiddata/blob/master/metadata/org.fdroid.fdroid.privileged.txt)\n"
-msgstr ""
-"10. adicione a marcação git assinada com o nome exato da versão (sem\n"
-"   __v__ precedente)\n"
-"11. Se o ZIP de atualização OTA deve ser atualizado, adicione uma nova entrada `Build:`ao\n"
-"    [ficheiro de metadados](https://gitlab.com/fdroid/fdroiddata/blob/master/metadata/org.fdroid.fdroid.privileged.ota.txt)\n"
-"12. O APK deve ser atualizado automaticamente com base na marcação de assinatura.  Verifique-o\n"
-"    nesse\n"
-"    [ficheiro de metadados](https://gitlab.com/fdroid/fdroiddata/blob/master/metadata/org.fdroid.fdroid.privileged.txt)\n"
-
-#. type: Title ##
-#: _docs/Release_Process.md
-#, no-wrap
-msgid "fdroid-website"
-msgstr "Website fdroid"
-
-#. type: Bullet: '1. '
-#: _docs/Release_Process.md
-msgid "Review the [failing checks](https://hosted.weblate.org/checks/?project=f-droid&component=website)  in Weblate, and try to fix any as possible in the Weblate UI (not locally!)."
-msgstr "Reveja as [verificações com falhsa](https://hosted.weblate.org/checks/?project=f-droid&component=website) em Weblate e tente corrigir todos na interface IU do Weblate (não localmente!)."
-
-#. type: Bullet: '2. '
-#: _docs/Release_Process.md
-msgid "Commit all work [in Weblate](https://hosted.weblate.org/projects/f-droid/website/#repository)  or with `wlc commit`."
-msgstr "Faça um commit de tudo [em Weblate](https://hosted.weblate.org/projects/f-droid/website/#repository) ou através de `wlc commit`."
-
-#. type: Bullet: '3. '
-#: _docs/Release_Process.md
-msgid "Fetch the latest commits from Weblate into a git remote called _weblate_."
-msgstr "Obtenha os últimos commits do Weblate num controle remoto chamado _weblate_."
-
-#. type: Bullet: '4. '
-#: _docs/Release_Process.md
-msgid "Reset your local _master_ branch to the main repo's _master_, e.g.  `git checkout -B master upstream/master`"
-msgstr "Reinicie o seu ramo local _master_ ao ramo principal do repo _master_, por exemplo `git checkout -B master upstream/master`"
-
-#. type: Bullet: '5. '
-#: _docs/Release_Process.md
-msgid "Run `./tools/pick-complete-translations.py`."
-msgstr "Execute `./tools/pick-complete-translations.py`."
-
-#. type: Bullet: '6. '
-#: _docs/Release_Process.md
-msgid "Change to new _merge_weblate_ branch and run all checker scripts (`./tools/check-*.py`), make sure they all pass, then commit those changes."
-msgstr "Mude para o novo ramo _merge_weblate_ e execute todos os scripts de verificação (`./tools/check-*.py`), certifique-se de que todos passam e depois faça um commit de essas alterações."
-
-#. type: Bullet: '7. '
-#: _docs/Release_Process.md
-msgid "Merge the _merge_weblate_ branch into the local _master_ branch and fix any conflicts."
-msgstr "Mescle o ramo _merge_weblate_ ao ramo local _master_ e corrija quaisquer conflitos."
-
-#. type: Bullet: '8. '
-#: _docs/Release_Process.md
-msgid "Push _merge_weblate_ branch to your fork and create a merge request.  Tag it with the _localization_ label."
-msgstr "Empurre o ramo _merge_weblate_ à sua bifurcação e crie uma solicitação de mesclagem.  Marque-o com a etiqueta _localization_."
-
-#. type: Bullet: '9. '
-#: _docs/Release_Process.md
-msgid "Make sure all tests pass before merging."
-msgstr "Certifique-se de que todos os testes passam antes de mesclar."
-
-#. type: Bullet: '8. '
-#: _docs/Release_Process.md
-msgid "`git fetch weblate` and check that Weblate rebased on the latest commits, otherwise, there is a merge conflict that needs to be fixed before Weblate will sync again."
-msgstr "`git fetch weblate` e verifique se o Weblate foi rebaseado nos últimos commits, caso contrário, há um conflito de fusão que precisa ser corrigido antes que o Weblate seja sincronizado novamente."
-
-#. type: Bullet: '9. '
-#: _docs/Release_Process.md
-msgid "Run `./tools/i18n.sh md2po` to make all changes available for translation, and commit to _master_.  Only commit the changed translation files (_po/*.po*_), do not commit new translation files here (new languages are added via Weblate).  The easiest version of this sync is only committing one or more of the _gettext_ template files (_po/*.pot_), since Weblate will sync _.pot_ to all the _.po_ files."
-msgstr "Execute `./tools/i18n.sh md2po` para disponibilizar todas as alterações para tradução e commite ao _master_.  Somente submeta os ficheiros de tradução alterados (_po/*.po*_), não submeta novos ficheiros de tradução aqui (novos idiomas são adicionados via Weblate).  A versão mais fácil desta sincronização é apenas submeter um ou mais dos ficheiros de modelo _gettext_ (_po/*.pot_), já que Weblate irá sincronizar _.pot_ a todos os ficheiros _.po_."
-
-#. type: Bullet: '10. '
-#: _docs/Release_Process.md
-msgid "Push release tag and new translation commits, ideally with GPG signatures."
-msgstr "Push release tag e novos commits de tradução, idealmente com assinaturas GPG."
-
-#. type: Title ##
-#: _docs/Release_Process.md
-#, no-wrap
-msgid "jekyll-fdroid"
-msgstr "jekyll-fdroid"
-
-#. type: Bullet: '1. '
-#: _docs/Release_Process.md
-msgid "Make sure all the tests are passing"
-msgstr "Certifica-te de que todos os testes passam"
-
-#. type: Bullet: '2. '
-#: _docs/Release_Process.md
-msgid "set `s.version` and `s.date` in _jekyll-fdroid.gemspec_"
-msgstr "definir `s.version` e `s.date` em _jekyll-fdroid.gemspec_"
-
-#. type: Bullet: '3. '
-#: _docs/Release_Process.md
-msgid "Make signed tag matching version number (no preceeding __v__)"
-msgstr "Fazer marca assinada correspondente eo número de versão (não __v__ precedente)"
-
-#. type: Bullet: '4. '
-#: _docs/Release_Process.md
-msgid "Update _fdroid-website_ to use this release by setting both `revision:` and the version number in `specs: jekyll-fdroid (1.0.1)` in _Gemfile.lock_"
-msgstr "Atualize _fdroid-website_ para usar este lançamento a definir tanto `revision:` quanto o número da versão em `specs: jekyll-fdroid (1.0.1)` em _Gemfile.lock_"
-
-#. type: Bullet: '1. '
-#: _docs/Release_Process.md
-msgid "Review and merge any merge requests from Weblate on <https://gitlab.com/fdroid/repomaker/merge_requests>."
-msgstr "Rever e fundir todas as solicitações de mesclagem da Weblate em <https://gitlab.com/fdroid/repomaker/merge_requests>."
-
-#. type: Bullet: '2. '
-#: _docs/Release_Process.md
-msgid "Pull in latest commits, including any merged Weblate commits"
-msgstr "Puxar os últimos commits e incluir todos os commits de Weblate"
-
-#. type: Bullet: '3. '
-#: _docs/Release_Process.md
-msgid "Make sure all tests on GitLab CI pass before merging."
-msgstr "Certifique-se de que todos os testes no GitLab CI passam antes de mesclar."
-
-#. type: Bullet: '4. '
-#: _docs/Release_Process.md
-msgid "Set `VERSION =''` in _repomaker/__init__.py_."
-msgstr "Definir `VERSION =''` em _repomaker/__init__.py_."
-
-#. type: Bullet: '5. '
-#: _docs/Release_Process.md
-msgid "Add git signed tag named after the exact version name (no preceeding __v__), using the exact same string as `VERSION =''`."
-msgstr "Adicionar uma marcação git assinada com o nome exato da versão (sem __v__ antecedente), a usar a mesma cadeia como `VERSION=''`."
-
-#. type: Bullet: '6. '
-#: _docs/Release_Process.md
-msgid "Make sure the local git repo is fully clean, so random files are not included in the release tarball, e.g. `git clean -fdx`."
-msgstr "Certifique-se de que o repo local do git está totalmente limpo, para que ficheiros aleatórios não sejam incluídos no tarball de liberação, por exemplo `git clean -fdx`."
-
-#. type: Bullet: '7. '
-#: _docs/Release_Process.md
-msgid "Make sure all dependencies are installed, like in a _venv_."
-msgstr "Certifique-se de que todas as dependências estão instaladas, como em um _venv_."
-
-#. type: Bullet: '8. '
-#: _docs/Release_Process.md
-msgid "Run `./pre-release.sh`"
-msgstr "Execute ` ./ pre-release.sh `"
-
-#. type: Bullet: '9. '
-#: _docs/Release_Process.md
-msgid "Build a dist tarball using `./setup.py release`."
-msgstr "Construa uma tarball distante com `./setup.py release`."
-
-#. type: Bullet: '10. '
-#: _docs/Release_Process.md
-msgid "Upload to pypi.python.org."
-msgstr "Enviar a pypi.python.org."
-
-#. type: Bullet: '11. '
-#: _docs/Release_Process.md
-msgid "Update <https://gitlab.com/fdroid/fdroid-repomaker-flatpak> and make sure CI passes."
-msgstr "Atualize <https://gitlab.com/fdroid/fdroid-repomaker-flatpak> e certifique-se de que a CI passe."
-
-#. type: Plain text
-#: _docs/Release_Process.md
-#, no-wrap
-msgid ""
-"12. Push changes to official repo on GitHub:\n"
-"\t<https://github.com/flathub/org.fdroid.Repomaker>\n"
-msgstr ""
-"12. Empurre as mudanças ao repo oficial no GitHub:\n"
-"\t<https://github.com/flathub/org.fdroid.Repomaker>\n"
 
 #. type: YAML Front Matter: title
 #: _docs/Repository_Style_Guide.md
@@ -9009,10 +8812,8 @@ msgstr "Encaminhar e-mails de falhas do cronjob para que saiba se a sincronizaç
 
 #. type: Bullet: '* '
 #: _docs/Running_a_Mirror.md
-#, fuzzy
-#| msgid "Set up monitoring on your mirror so you know if it goes down (ideally keyword on _/var/www/fdroid/fdroid/repo/index.html_)"
 msgid "Set up monitoring on your mirror so you know if it goes down (ideally keyword on _/srv/mymirror.org/htdocs/fdroid/repo/index-v1.jar_)"
-msgstr "Configurar o monitoramento no seu espelho para que saiba se ele vai abaixo (idealmente palavra-chave em _/var/wwww/fdroid/fdroid/repo/index.html_)"
+msgstr "Configurar o monitoramento no seu espelho para que saiba se ele vai abaixo (idealmente palavra-chave em _/srv/mymirror.org/htdocs/fdroid/repo/index-v1.jar_)"
 
 #. type: Bullet: '* '
 #: _docs/Running_a_Mirror.md
@@ -10443,6 +10244,242 @@ msgstr "Preferências"
 #: _docs/Whitelabel_Builds.md
 msgid "For a custom build that enables Automatic Updates by default, override _app/src/main/res/xml/preferences.xml_. You can customize the preferences and their default values in _app/src/mycompany/res/xml/preferences.xml_. The fully automatic update requires [Privileged Extension](https://gitlab.com/fdroid/privileged-extension). With regular access, the updates will only automatically download. The user still needs to click install on each one."
 msgstr "Para uma compilação personalizada que ativa Atualizações Automáticas por padrão, substitua _app/src/main/res/xml/preferences.xml_. Pode personalizar as preferências e os seus valores padrões em _app/src/minhaempresa/res/xml/preferences.xml_. A atualização totalmente automática requer [Extensões Privilegiadas](https://gitlab.com/fdroid/privileged-extension). Com acesso comum, as atualizações serão baixadas automaticamente. O utilizador ainda precisa clicar em instalar em cada um deles."
+
+#~ msgid "Deploying <tt>fdroid-bot</tt>"
+#~ msgstr "A implantar <tt>fdroid-bot</tt>"
+
+#~ msgid ""
+#~ "<tt>fdroid-bot</tt> is the generic term for bots in F-Droid that review projects\n"
+#~ "and make merge requests.  For example,\n"
+#~ "[issuebot](https://gitlab.com/fdroid/issuebot) runs on [RFP\n"
+#~ "issues(https://gitlab.com/fdroid/rfp/issues) and [_fdroiddata_ merge\n"
+#~ "requests](https://gitlab.com/fdroid/fdroiddata/-/merge_requests).\n"
+#~ msgstr ""
+#~ "<tt>fdroid-bot</tt> é o termo genérico para bots em F-Droid que analisam projectos\n"
+#~ "e fazer solicitações de mesclagem.  Por exemplo,\n"
+#~ "[issuebot](https://gitlab.com/fdroid/issuebot) funciona em [RFP\n"
+#~ "issues](https://gitlab.com/fdroid/rfp/issues) and [_fdroiddata_ solicitações de\n"
+#~ "mesclagem](https://gitlab.com/fdroid/fdroiddata/-/merge_requests).\n"
+
+#~ msgid "Release Process"
+#~ msgstr "Processo de lançamento"
+
+#~ msgid "For each piece of the F-Droid ecosystem, there is a specific release process.  They generally follow the same patterns, but all have unique steps.  The official signing keys are listed in [Release Channels and Signing Keys](../Release_Channels_and_Signing_Keys)."
+#~ msgstr "Para cada peça do ecossistema F-Droid, há um processo de liberação específico.  Eles geralmente seguem os mesmos padrões, mas todos têm passos únicos.  As chaves de assinatura oficiais estão listadas em [Canais de Lançamento e Chaves de Assinatura](../Release_Channels_and_Signing_Keys)."
+
+#~ msgid "fdroidclient"
+#~ msgstr "fdroidclient"
+
+#~ msgid "pull in latest commits from Weblate into a local branch called _weblate_"
+#~ msgstr "puxar os últimos commits do Weblate para um ramo local chamado _weblate_"
+
+#~ msgid "run `./tools/check-format-strings.py` and `./tools/remove-unused-and-blank-translations.py` and commit changes"
+#~ msgstr "executar `./tools/check-format-strings.py` e `./tools/remove-unused-and-blank-translations.py` e commit alterações"
+
+#~ msgid "rebase the _weblate_ branch on the latest commits in _master_ of <https://gitlab.com/fdroid/fdroidclient> and fix any conflicts"
+#~ msgstr "rebasear o ramo _weblate_ nas últimas submissões em _master_ de <https://gitlab.com/fdroid/fdroidclient> e corrigir quaisquer conflitos"
+
+#~ msgid "push local _weblate_ branch to your fork create a merge request, and tag it with the _localization_ label"
+#~ msgstr "empurrar o ramo local _ weblate_ para sua bifurcação criar uma solicitação de mesclagem e marcá-la com o rótulo _ localization_"
+
+#~ msgid "make sure all tests pass before merging, including all _android-22_ emulator tests"
+#~ msgstr "certifique-se de que todos os testes passam antes da mesclagem, a incluir todos os testes do emulador _android-22_"
+
+#~ msgid "once the _weblate_ branch is merged, reset the git repo in <https://hosted.weblate.org/projects/f-droid/f-droid/#repository>"
+#~ msgstr "uma vez que o ramo _weblate_ é mesclado, reinicie o git repo em <https://hosted.weblate.org/projects/f-droid/f-droid/#repository>"
+
+#~ msgid "set _versionCode_ in _app/build.gradle_"
+#~ msgstr "defina _ versionCode_ em _ app/Build. gradle_"
+
+#~ msgid "add new entry in _metadata/en-US/changelogs/_"
+#~ msgstr "adicionar nova entrada em _metadata/en-US/changelogs/_"
+
+#~ msgid "copy that new entry to _CHANGELOG.md_"
+#~ msgstr "copiar essa nova entrada para _CHANGELOG.md_"
+
+#~ msgid ""
+#~ "10. make a local branch for the final release, then run\n"
+#~ "    `./tools/trim-incomplete-translations-for-release.py`\n"
+#~ "\tto remove any incomplete translations from the final while leaving\n"
+#~ "\tthem in _master_\n"
+#~ "10. add git signed tag named after the exact version name (no\n"
+#~ "   preceeding __v__)\n"
+#~ "11. add new `Build:` entry to\n"
+#~ "    [metadata file](https://gitlab.com/fdroid/fdroiddata/blob/master/metadata/org.fdroid.fdroid.txt)\n"
+#~ msgstr ""
+#~ "10. faça um ramo local para o lançamento final, depois execute\n"
+#~ "    `./tools/trim-incomplete-translations-for-release.py`\n"
+#~ "\tpara remover qualquer tradução incompleta da final enquanto sair\n"
+#~ "\tdeles em _master_\n"
+#~ "10. adicione uma etiqueta assinada com o nome exato da versão (sem\n"
+#~ "    __v__ antecendente)\n"
+#~ "11. adicione uma nova entrada `Build:` ao\n"
+#~ "    [ficheiro de metadados](https://gitlab.com/fdroid/fdroiddata/blob/master/metadata/org.fdroid.fdroid.txt)\n"
+
+#~ msgid "major release"
+#~ msgstr "lançamento importante"
+
+#~ msgid "If it is a major release, there are a few more steps."
+#~ msgstr "Se for um lançamento importante, há mais alguns passos."
+
+#~ msgid "temporarily remove the _iw/in_ links: `find app/src/main/res/ -type l -delete`"
+#~ msgstr "remover temporariamente os links _iw/in_: `find app/src/main/res/ -type l -delete`"
+
+#~ msgid "In Android Studio, go to _Analyze_ -> _Inspect Code_"
+#~ msgstr "No Android Studio, vá para _Analyze_ -> _Inspect Code_"
+
+#~ msgid "After running on the whole project, go to _Android Lint: Performance_, and click on _Unused Resources_, then click the _Remove All Unused Resources_ button.  Only commit changes to _strings.xml_, **not** _styles.xml_ or other files."
+#~ msgstr "Depois de executar em todo o projeto, vá para _Android Lint: Performance_ e clique em _Recursos não Utilizados_ e, em seguida, clique no botão _Remover Todos os Recursos não Utilizados_.  Apenas commit alterações a _strings.xml_, **não*** _styles.xml_ ou outros ficheiros."
+
+#~ msgid "Then it is time to create a new stable branch (e.g. _stable-v1.0_ or _stable-v1.1_) should be created first.  The incomplete translations should be removed using `./tools/trim-incomplete-translations-for-release.py`.  This has to happen in the stable branch only, since it will remove the incomplete translations.  If the incomplete translations are removed from _master_, then Weblate will sync with that, and remove them there as well."
+#~ msgstr "Então é hora de criar um novo ramo estável (e.g. _stable-v1.0_ ou _stable-v1.1_) deve ser criado primeiro.  As traduções incompletas devem ser removidas a executar `./tools/trim-incomplete-translations-for-release.py`.  Isso tem que acontecer somente no ramo estável, já que ele removerá traduções incompletas.  Se as traduções incompletas forem removidas do _master_, o Weblate irá sincronizar com ele e removê-las lá também."
+
+#~ msgid "Make sure its passing the [tests on Ubuntu/trusty and OSX](https://travis-ci.org/f-droid/fdroidserver)"
+#~ msgstr "Certifique-se de que os [testes no Ubuntu/trusty e OSX](https://travis-ci.org/f-droid/fdroidserver) passam"
+
+#~ msgid "rebase the _weblate_ branch on the latest commits in _master_ of <https://gitlab.com/fdroid/fdroidserver> and fix any conflicts"
+#~ msgstr "rebasear o ramo _weblate_ nas últimas submissões em _master_ de <https://gitlab.com/fdroid/fdroidclient> e corrigir quaisquer conflitos"
+
+#~ msgid "make sure all tests pass before merging"
+#~ msgstr "certifique-se de que todos os testes passam antes de mesclar"
+
+#~ msgid "set `version=''` in _setup.py_"
+#~ msgstr "definir `version=''` em _setup.py_"
+
+#~ msgid "add git signed tag named after the exact version name (no preceeding __v__), using the exact same string as `version=''`"
+#~ msgstr "adicionar uma marcação git assinada com o nome exato da versão (sem __v__ antecedente), a usar exatamente a mesma cadeia que `version=''`"
+
+#~ msgid "upload to pypi.python.org using `python3 setup.py release`"
+#~ msgstr "enviar para pypi.python.org a usar `python3 setup.python.org release`"
+
+#~ msgid "update [Debian package](https://salsa.debian.org/python-team/packages/fdroidserver)"
+#~ msgstr "atualizar o [pacote Debian](https://salsa.debian.org/python-team/packages/fdroidserver)"
+
+#~ msgid "upload to [F-Droid PPA](https://launchpad.net/~fdroid/+archive/ubuntu/fdroidserver)"
+#~ msgstr "enviar para [PPA F-Droid](https://Launchpad.net/~ fdroid/+ Archive/Ubuntu/fdroidserver)"
+
+#~ msgid "privileged-extension"
+#~ msgstr "privileged-extension"
+
+#~ msgid "rebase the _weblate_ branch on the latest commits in _master_ of <https://gitlab.com/fdroid/privileged-extension> and fix any conflicts"
+#~ msgstr "rebasear o ramo _weblate_ nas últimas submissões em _master_ de <https://gitlab.com/fdroid/privileged-extension>> e corrigir quaisquer conflitos"
+
+#~ msgid "once the _weblate_ branch is merged, reset the git repo in <https://hosted.weblate.org/projects/f-droid/privileged-extension/#repository>"
+#~ msgstr "uma vez que o ramo _weblate_ é mesclado, reinicie o git repo em <https://hosted.weblate.org/projects/f-droid/privileged-extension/#repository>"
+
+#~ msgid "set _versionCode_ in _app/src/main/AndroidManifest.xml_"
+#~ msgstr "definir _versionCode_ em _app/src/main/AndroidManifest.xml_"
+
+#~ msgid ""
+#~ "10. add git signed tag named after the exact version name (no\n"
+#~ "   preceeding __v__)\n"
+#~ "11. If the OTA update ZIP should be updated, add new `Build:` entry to\n"
+#~ "    [metadata file](https://gitlab.com/fdroid/fdroiddata/blob/master/metadata/org.fdroid.fdroid.privileged.ota.txt)\n"
+#~ "12. The APK should auto-update based on the signing tag.  Double-check\n"
+#~ "    that in that\n"
+#~ "    [metadata file](https://gitlab.com/fdroid/fdroiddata/blob/master/metadata/org.fdroid.fdroid.privileged.txt)\n"
+#~ msgstr ""
+#~ "10. adicione a marcação git assinada com o nome exato da versão (sem\n"
+#~ "   __v__ precedente)\n"
+#~ "11. Se o ZIP de atualização OTA deve ser atualizado, adicione uma nova entrada `Build:`ao\n"
+#~ "    [ficheiro de metadados](https://gitlab.com/fdroid/fdroiddata/blob/master/metadata/org.fdroid.fdroid.privileged.ota.txt)\n"
+#~ "12. O APK deve ser atualizado automaticamente com base na marcação de assinatura.  Verifique-o\n"
+#~ "    nesse\n"
+#~ "    [ficheiro de metadados](https://gitlab.com/fdroid/fdroiddata/blob/master/metadata/org.fdroid.fdroid.privileged.txt)\n"
+
+#~ msgid "fdroid-website"
+#~ msgstr "Website fdroid"
+
+#~ msgid "Review the [failing checks](https://hosted.weblate.org/checks/?project=f-droid&component=website)  in Weblate, and try to fix any as possible in the Weblate UI (not locally!)."
+#~ msgstr "Reveja as [verificações com falhsa](https://hosted.weblate.org/checks/?project=f-droid&component=website) em Weblate e tente corrigir todos na interface IU do Weblate (não localmente!)."
+
+#~ msgid "Commit all work [in Weblate](https://hosted.weblate.org/projects/f-droid/website/#repository)  or with `wlc commit`."
+#~ msgstr "Faça um commit de tudo [em Weblate](https://hosted.weblate.org/projects/f-droid/website/#repository) ou através de `wlc commit`."
+
+#~ msgid "Fetch the latest commits from Weblate into a git remote called _weblate_."
+#~ msgstr "Obtenha os últimos commits do Weblate num controle remoto chamado _weblate_."
+
+#~ msgid "Reset your local _master_ branch to the main repo's _master_, e.g.  `git checkout -B master upstream/master`"
+#~ msgstr "Reinicie o seu ramo local _master_ ao ramo principal do repo _master_, por exemplo `git checkout -B master upstream/master`"
+
+#~ msgid "Run `./tools/pick-complete-translations.py`."
+#~ msgstr "Execute `./tools/pick-complete-translations.py`."
+
+#~ msgid "Change to new _merge_weblate_ branch and run all checker scripts (`./tools/check-*.py`), make sure they all pass, then commit those changes."
+#~ msgstr "Mude para o novo ramo _merge_weblate_ e execute todos os scripts de verificação (`./tools/check-*.py`), certifique-se de que todos passam e depois faça um commit de essas alterações."
+
+#~ msgid "Merge the _merge_weblate_ branch into the local _master_ branch and fix any conflicts."
+#~ msgstr "Mescle o ramo _merge_weblate_ ao ramo local _master_ e corrija quaisquer conflitos."
+
+#~ msgid "Push _merge_weblate_ branch to your fork and create a merge request.  Tag it with the _localization_ label."
+#~ msgstr "Empurre o ramo _merge_weblate_ à sua bifurcação e crie uma solicitação de mesclagem.  Marque-o com a etiqueta _localization_."
+
+#~ msgid "Make sure all tests pass before merging."
+#~ msgstr "Certifique-se de que todos os testes passam antes de mesclar."
+
+#~ msgid "`git fetch weblate` and check that Weblate rebased on the latest commits, otherwise, there is a merge conflict that needs to be fixed before Weblate will sync again."
+#~ msgstr "`git fetch weblate` e verifique se o Weblate foi rebaseado nos últimos commits, caso contrário, há um conflito de fusão que precisa ser corrigido antes que o Weblate seja sincronizado novamente."
+
+#~ msgid "Run `./tools/i18n.sh md2po` to make all changes available for translation, and commit to _master_.  Only commit the changed translation files (_po/*.po*_), do not commit new translation files here (new languages are added via Weblate).  The easiest version of this sync is only committing one or more of the _gettext_ template files (_po/*.pot_), since Weblate will sync _.pot_ to all the _.po_ files."
+#~ msgstr "Execute `./tools/i18n.sh md2po` para disponibilizar todas as alterações para tradução e commite ao _master_.  Somente submeta os ficheiros de tradução alterados (_po/*.po*_), não submeta novos ficheiros de tradução aqui (novos idiomas são adicionados via Weblate).  A versão mais fácil desta sincronização é apenas submeter um ou mais dos ficheiros de modelo _gettext_ (_po/*.pot_), já que Weblate irá sincronizar _.pot_ a todos os ficheiros _.po_."
+
+#~ msgid "Push release tag and new translation commits, ideally with GPG signatures."
+#~ msgstr "Push release tag e novos commits de tradução, idealmente com assinaturas GPG."
+
+#~ msgid "jekyll-fdroid"
+#~ msgstr "jekyll-fdroid"
+
+#~ msgid "Make sure all the tests are passing"
+#~ msgstr "Certifica-te de que todos os testes passam"
+
+#~ msgid "set `s.version` and `s.date` in _jekyll-fdroid.gemspec_"
+#~ msgstr "definir `s.version` e `s.date` em _jekyll-fdroid.gemspec_"
+
+#~ msgid "Make signed tag matching version number (no preceeding __v__)"
+#~ msgstr "Fazer marca assinada correspondente eo número de versão (não __v__ precedente)"
+
+#~ msgid "Update _fdroid-website_ to use this release by setting both `revision:` and the version number in `specs: jekyll-fdroid (1.0.1)` in _Gemfile.lock_"
+#~ msgstr "Atualize _fdroid-website_ para usar este lançamento a definir tanto `revision:` quanto o número da versão em `specs: jekyll-fdroid (1.0.1)` em _Gemfile.lock_"
+
+#~ msgid "Review and merge any merge requests from Weblate on <https://gitlab.com/fdroid/repomaker/merge_requests>."
+#~ msgstr "Rever e fundir todas as solicitações de mesclagem da Weblate em <https://gitlab.com/fdroid/repomaker/merge_requests>."
+
+#~ msgid "Pull in latest commits, including any merged Weblate commits"
+#~ msgstr "Puxar os últimos commits e incluir todos os commits de Weblate"
+
+#~ msgid "Make sure all tests on GitLab CI pass before merging."
+#~ msgstr "Certifique-se de que todos os testes no GitLab CI passam antes de mesclar."
+
+#~ msgid "Set `VERSION =''` in _repomaker/__init__.py_."
+#~ msgstr "Definir `VERSION =''` em _repomaker/__init__.py_."
+
+#~ msgid "Add git signed tag named after the exact version name (no preceeding __v__), using the exact same string as `VERSION =''`."
+#~ msgstr "Adicionar uma marcação git assinada com o nome exato da versão (sem __v__ antecedente), a usar a mesma cadeia como `VERSION=''`."
+
+#~ msgid "Make sure the local git repo is fully clean, so random files are not included in the release tarball, e.g. `git clean -fdx`."
+#~ msgstr "Certifique-se de que o repo local do git está totalmente limpo, para que ficheiros aleatórios não sejam incluídos no tarball de liberação, por exemplo `git clean -fdx`."
+
+#~ msgid "Make sure all dependencies are installed, like in a _venv_."
+#~ msgstr "Certifique-se de que todas as dependências estão instaladas, como em um _venv_."
+
+#~ msgid "Run `./pre-release.sh`"
+#~ msgstr "Execute ` ./ pre-release.sh `"
+
+#~ msgid "Build a dist tarball using `./setup.py release`."
+#~ msgstr "Construa uma tarball distante com `./setup.py release`."
+
+#~ msgid "Upload to pypi.python.org."
+#~ msgstr "Enviar a pypi.python.org."
+
+#~ msgid "Update <https://gitlab.com/fdroid/fdroid-repomaker-flatpak> and make sure CI passes."
+#~ msgstr "Atualize <https://gitlab.com/fdroid/fdroid-repomaker-flatpak> e certifique-se de que a CI passe."
+
+#~ msgid ""
+#~ "12. Push changes to official repo on GitHub:\n"
+#~ "\t<https://github.com/flathub/org.fdroid.Repomaker>\n"
+#~ msgstr ""
+#~ "12. Empurre as mudanças ao repo oficial no GitHub:\n"
+#~ "\t<https://github.com/flathub/org.fdroid.Repomaker>\n"
 
 #~ msgid "once the _weblate_ branch is merged, reset the git repo in <https://hosted.weblate.org/projects/f-droid/fdroidserver/#repository>"
 #~ msgstr "uma vez que o ramo _weblate_ é mesclado, reinicie o git repo em <https://hosted.weblate.org/projects/f-droid/fdroidserver/#repository>"
