@@ -124,6 +124,9 @@ published with one JSON file per-week, with a JSON index file per website.  For
 example, here is a week of search metrics:
 <https://fdroid.gitlab.io/metrics/search.f-droid.org/2021-01-18.json>
 
+Though not really an API, the <ftp.fau.de> mirror does provide some metrics:
+https://ftp.fau.de/cgi-bin/show-ftp-stats.cgi
+
 
 ### Git stats
 
