@@ -21,8 +21,33 @@ for f in sorted(glob.glob('po/*.po*')):
             errorcount += 1
             output += 'ERROR: %s' % e
     for message in catalog:
+
         if message.fuzzy:
             continue
+
+        m = re.match(r'\[(_[^\]]+_)]\((#[^ )]+)\)', message.id)
+        if m:
+            if message.string and message.string[0] != '[' and message.string[-1] != ')':
+                newstring = (message.string
+                             .replace('"></a>', '')
+                             .replace('<a name="', '')
+                             .replace(m.group(1), '')
+                             .replace(m.group(1)[1:-1], '')
+                             .replace(m.group(2), '')
+                             .replace('(', '')
+                             .replace(')', '')
+                             .replace('_', ''))
+                if newstring:
+                    outstring = '[%s (%s)](%s)' % (m.group(1), newstring, m.group(2))
+                    errorcount += 1
+                    output += 'Badly formatted metadata link: ' + message.string + '\n'
+                    print(message.string, outstring, sep='\t')
+                    with open(f) as fp:
+                        header = ')"\nmsgstr "'
+                        out = fp.read().replace(header + message.string.replace('"', '\\"'),
+                                                header + outstring)
+                    with open(f, 'w') as fp:
+                        fp.write(out)
 
         if 'type: Title #' in message.auto_comments:
             if message.string:
@@ -45,7 +70,7 @@ for f in sorted(glob.glob('po/*.po*')):
         for m in pattern.findall(message.string):
             strlinks.append(m)
         if len(strlinks) > 0 and len(idlinks) != len(strlinks):
-            output += 'ERROR ' + f + ' ' + str(len(idlinks)) + ' != ' + str(len(strlinks)) + ' ' + message.id
+            output += 'ERROR ' + f + ' ' + str(len(idlinks)) + ' != ' + str(len(strlinks)) + ' ' + message.id + '\n'
             errorcount += 1
         for i in range(len(strlinks)):
             if message.string and i < len(idlinks) and i < len(strlinks) and idlinks[i] != strlinks[i]:
