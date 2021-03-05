@@ -90,9 +90,9 @@ source ~/.profile
 
 # Config
 cd fdroiddata
-cp ../fdroidserver/examples/config.py ./
-chmod 0600 config.py
-echo 'sdk_path = "$HOME/Android/Sdk"' >> config.py
+cp ../fdroidserver/examples/config.yml ./
+chmod 0600 config.yml
+echo 'sdk_path: "$HOME/Android/Sdk"' >> config.yml
 
 # Set up Vagrant build box
 cd ../fdroidserver

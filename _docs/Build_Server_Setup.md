@@ -110,8 +110,8 @@ Get all of the app build metadata from the fdroiddata repo...
 ```bash
 fdroid:~/fdroidserver$ cd ~
 fdroid:~$ git clone https://gitlab.com/fdroid/fdroiddata.git
-fdroid:~$ cp fdroidserver/examples/config.py fdroiddata/
-fdroid:~$ sed -i "s@^[# ]*build_server_always.*@build_server_always = True@" fdroiddata/config.py
+fdroid:~$ cp fdroidserver/examples/config.yml fdroiddata/
+fdroid:~$ sed -i "s@^[# ]*build_server_always.*@build_server_always: true@" fdroiddata/config.yml
 ```
 
 ## Setting up a build server

@@ -46,7 +46,7 @@ password for the key. They shouldn’t be the same. In between, you’ll
 be asked for some identifying details which will go in the
 certificate.
 
-The two passwords entered go into _config.py_, as `keystorepass` and
+The two passwords entered go into _config.yml_, as `keystorepass` and
 `keypass` respectively. The path to the keystore file is set in
 `keystore`, and the alias you chose for the key also go into that file
 is called `repo_keyalias`.
@@ -57,7 +57,7 @@ is called `repo_keyalias`.
 The F-Droid tools can automatic generate and manage APK signing keys
 for each app that it maintains.  With the repo index signing
 configured, all that remains to be done for package signing to work is
-to set the _keydname_ field in _config.py_ to contain the same
+to set the _keydname_ field in _config.yml_ to contain the same
 identifying details you entered before.  A new key will be generated
 using these details, for each application that is built. If a
 specific key is required for a particular application, this system can
@@ -65,7 +65,7 @@ be overridden using the _keyaliases_ config settings.
 
 To set up `fdroid publish`, do these steps on the same machine where
 you copy APKs to and run `fdroid update`.  First, set _keydname_ in
-_config.py_, it should be something like this:
+_config.yml_, it should be something like this:
 
 ```python
 keydname = "CN=example.com, O=Example Ltd, C=UK"
@@ -91,9 +91,9 @@ $ fdroid server update --verbose
 All packages built and/or distributed using F-Droid tools can also be
 signed by PGP using [GnuPG](https://gnupg.org), anything from APKs to
 media files will be signed.  This process is run with `fdroid
-gpgsign`.  Add `gpghome` and `gpgkey` to your _config.py_ to configure
+gpgsign`.  Add `gpghome` and `gpgkey` to your _config.yml_ to configure
 it, there is more information in
-[examples/config.py][examples/config.py].
+[examples/config.yml][examples/config.yml].
 
 
 ### Hardware Security Modules
@@ -105,7 +105,7 @@ to the HSM and never read off of it.  _fdroidserver_ has support for
 using HSMs for repo signing keys.
 
 For information on how to configure an F-Droid repo to use an HSM, see
-the "smartcard" sections of [examples/config.py][examples/config.py],
+the "smartcard" sections of [examples/config.yml][examples/config.yml],
 specifically `keystore` and `smartcardoptions`.  Most likely,
 [OpenSC](https://github.com/OpenSC/OpenSC) will need to be set up as a
 PKCS11 provider for Java.
@@ -114,4 +114,4 @@ For more in-depth information, see
 [Security in a thumb drive: the promise and pain of hardware security modules, take one!](https://guardianproject.info/2014/03/28/security-in-a-thumb-drive-the-promise-and-pain-of-hardware-security-modules-take-one/)
 
 
-[examples/config.py]: https://gitlab.com/fdroid/fdroidserver/blob/0.7.0/examples/config.py "example config file"
+[examples/config.yml]: https://gitlab.com/fdroid/fdroidserver/blob/0.7.0/examples/config.yml "example config file"
