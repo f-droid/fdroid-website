@@ -26,7 +26,7 @@ packages obtained elsewhere, the process is quite simple:
 2.  create a directory called _fdroid_, then run `fdroid init` in that directory
 3.  Optionally edit the _config.yml_ file to your liking, detailed examples
     are in
-    [examples/config.yml](https://gitlab.com/fdroid/fdroidserver/-/blob/HEAD/examples/config.yml)
+    [examples/config.yml](https://gitlab.com/fdroid/fdroidserver/-/blob/master/examples/config.yml)
 4.  Within _fdroid_, make a directory called _repo_ and put APK files in it.
 5.  Run `fdroid update`.
 6.  If it reports that any metadata files are missing, you can create
@@ -195,8 +195,8 @@ cd ~/fdroid
 fdroid init
 cp /path/to/\*.apk ~/fdroid/repo/
 fdroid update --create-metadata
-emacs config.py # add the serverwebroot, etc.
-fdroid deploy
+emacs config.yml # add the serverwebroot, etc.
+fdroid deploy -v
 ```
 
 Now edit _config.yml_ to set `serverwebroot`, it is in the form of a
