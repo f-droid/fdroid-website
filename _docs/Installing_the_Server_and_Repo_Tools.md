@@ -176,16 +176,15 @@ set. Be sure to verify the file you downloaded, you can double-check
 the SHA-1 Checksum on Google's download page.
 
 ```bash
-$ sudo apt-get install apksigner curl lib32gcc1 lib32ncurses5 lib32stdc++6 lib32z1 default-jdk-headless python3-pil python3-pyasn1 python3-pyasn1-modules python3-ruamel.yaml python3-yaml unzip ...
-$ cd ~
-$ wget https://dl.google.com/android/repository/tools_r25.2.3-linux.zip
-$ echo "aafe7f28ac51549784efc2f3bdfc620be8a08213  tools_r25.2.3-linux.zip" | sha1sum -c
-tools_r25.2.3-linux.zip: OK
-$ unzip tools_r25.2.3-linux.zip
-$ export USE_SDK_WRAPPER=yes
-$ export ANDROID_HOME=~/android-sdk-linux
-$ export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
-$ android update sdk --no-ui --filter platform-tools,tools,build-tools-25.0.2,android-24
+$ sudo apt-get install fdroidserver
+$ mkdir ~/android-sdk-linux
+$ cd ~/android-sdk-linux
+$ wget https://dl.google.com/android/repository/commandlinetools-linux-6858069_latest.zip
+$ echo "87f6dcf41d4e642e37ba03cb2e387a542aa0bd73cb689a9e7152aad40a6e7a08  commandlinetools-linux-6858069_latest.zip" | sha256sum -c
+commandlinetools-linux-6858069_latest.zip: OK
+$ unzip commandlinetools-linux-6858069_latest.zip
+$ export ANDROID_HOME="$HOME/android-sdk-linux"
+$ ./cmdline-tools/bin/sdkmanager --sdk_root="$ANDROID_HOME" platform-tools "build-tools;30.0.3"
 ```
 
 Note: If you have Android Studio installed, you have the Android SDK installed.
@@ -197,7 +196,6 @@ To add these settings permanently to your shell:
 
 ```bash
 $ echo export ANDROID_HOME=$ANDROID_HOME >> .bashrc
-$ echo 'export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools' >> .bashrc
 ```
 
 ## Building all apps from f-droid.org
