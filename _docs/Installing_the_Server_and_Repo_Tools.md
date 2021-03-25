@@ -122,7 +122,7 @@ fdroid init   # the keystore gen will fail
 ```
 
 After running `fdroid init`, you need to set the Windows path to your
-keystore in _config.py_.  It is also possible to install
+keystore in _config.yml_.  It is also possible to install
 _fdroidserver_ in a virtual environment using _virtualenv_ and _pip_.
 
 

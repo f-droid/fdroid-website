@@ -56,8 +56,8 @@ git clone https://gitlab.com/fdroid/fdroiddata.git
 
 Regardless of the intended usage of the tools, you will always need to
 set up some basic configuration details. This is done by creating a file
-called _config.py_ in the data directory. You should do this by copying
-the example file (`./examples/config.py`) from the fdroidserver project
+called _config.yml_ in the data directory. You should do this by copying
+the example file (`./examples/config.yml`) from the fdroidserver project
 to your data directory and then editing according to the instructions
 within.
 
