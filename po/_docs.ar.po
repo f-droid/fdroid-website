@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
-"POT-Creation-Date: 2021-03-10 15:45+0100\n"
+"POT-Creation-Date: 2021-03-25 20:17+0100\n"
 "PO-Revision-Date: 2021-02-13 10:50+0000\n"
 "Last-Translator: Ahmed Zahrani <amz.a.zah@gmail.com>\n"
 "Language-Team: Arabic <https://hosted.weblate.org/projects/f-droid/website-docs/ar/>\n"
@@ -6457,7 +6457,7 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/Installing_the_Server_and_Repo_Tools.md
-msgid "The F-Droid tools, also known as _fdroidserver_, are included in recent releases (Debian/jessie, Ubuntu/utopic, and newer).  This should be enough to install the basic F-Droid setup:"
+msgid "The F-Droid tools, also known as _fdroidserver_, may be installed from the standard OS package repository.  On Debian-based OS's, this should be enough to install the basic F-Droid setup:"
 msgstr ""
 
 #. type: Plain text
@@ -6466,15 +6466,20 @@ msgstr ""
 msgid "    sudo apt-get install fdroidserver\n"
 msgstr ""
 
+#. type: Plain text
+#: _docs/Installing_the_Server_and_Repo_Tools.md
+msgid "However, it is common to find that the version of _fdroidserver_ available in the standard OS package repository is out of date."
+msgstr ""
+
 #. type: Title ###
 #: _docs/Installing_the_Server_and_Repo_Tools.md
 #, no-wrap
-msgid "Older releases"
+msgid "Getting a newer version"
 msgstr ""
 
 #. type: Plain text
 #: _docs/Installing_the_Server_and_Repo_Tools.md
-msgid "For installing on older releases, there are a couple more simple steps:"
+msgid "A newer version of _fdroidserver_ may be found in the F-Droid PPA or your OS's _backports_ repository."
 msgstr ""
 
 #. type: Bullet: '-   '
@@ -6495,7 +6500,7 @@ msgstr ""
 
 #. type: Bullet: '-   '
 #: _docs/Installing_the_Server_and_Repo_Tools.md
-msgid "Debian/wheezy: [setup wheezy-backports](http://backports.debian.org/Instructions/#index2h2), then: ```bash apt-get install fdroidserver/wheezy-backports ```"
+msgid "Debian: first [setup backports](http://backports.debian.org/Instructions/#index2h2), then, substituting your Debian release for 'buster': ```bash apt-get install fdroidserver/buster-backports ```"
 msgstr ""
 
 #. type: Title ##
@@ -6524,23 +6529,18 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/Installing_the_Server_and_Repo_Tools.md
-msgid "You can install `fdroidserver` directly using [MacPorts](https://www.macports.org/ports.php?by=name&substr=fdroidserver), [Homebrew](http://brewformulas.org/Fdroidserver), or `easy_install` as a last resort:"
+msgid "You can install `fdroidserver` directly using Homebrew, or `easy_install` as a last resort:"
 msgstr ""
 
-#. type: Plain text
-#: _docs/Installing_the_Server_and_Repo_Tools.md
-msgid "or MacPorts:"
-msgstr ""
-
-#. type: Fenced code block (bash)
+#. type: Title ###
 #: _docs/Installing_the_Server_and_Repo_Tools.md
 #, no-wrap
-msgid "port install fdroidserver\n"
+msgid "Homebrew:"
 msgstr ""
 
-#. type: Plain text
+#. type: Bullet: '1. '
 #: _docs/Installing_the_Server_and_Repo_Tools.md
-msgid "or Homebrew:"
+msgid "Preparation: Check [the Homebrew formula](https://formulae.brew.sh/formula/fdroidserver) for instructions. Example:"
 msgstr ""
 
 #. type: Fenced code block (bash)
@@ -6548,12 +6548,23 @@ msgstr ""
 #, no-wrap
 msgid ""
 "brew install android-sdk\n"
-"android update sdk --no-ui --filter platform-tools,build-tools-22.0.1\n"
-"brew install fdroidserver\n"
+"android update sdk --no-ui --all --filter tools,platform-tools,build-tools-25.0.0\n"
 msgstr ""
 
-#. type: Plain text
+#. type: Bullet: '2. '
 #: _docs/Installing_the_Server_and_Repo_Tools.md
+msgid "Install _fdroidserver_:"
+msgstr ""
+
+#. type: Fenced code block (bash)
+#: _docs/Installing_the_Server_and_Repo_Tools.md
+#, no-wrap
+msgid "brew install fdroidserver\n"
+msgstr ""
+
+#. type: Title ###
+#: _docs/Installing_the_Server_and_Repo_Tools.md
+#, no-wrap
 msgid "With only `easy_install`:"
 msgstr ""
 
@@ -6704,16 +6715,15 @@ msgstr ""
 #: _docs/Installing_the_Server_and_Repo_Tools.md
 #, no-wrap
 msgid ""
-"$ sudo apt-get install apksigner curl lib32gcc1 lib32ncurses5 lib32stdc++6 lib32z1 default-jdk-headless python3-pil python3-pyasn1 python3-pyasn1-modules python3-ruamel.yaml python3-yaml unzip ...\n"
-"$ cd ~\n"
-"$ wget https://dl.google.com/android/repository/tools_r25.2.3-linux.zip\n"
-"$ echo \"aafe7f28ac51549784efc2f3bdfc620be8a08213  tools_r25.2.3-linux.zip\" | sha1sum -c\n"
-"tools_r25.2.3-linux.zip: OK\n"
-"$ unzip tools_r25.2.3-linux.zip\n"
-"$ export USE_SDK_WRAPPER=yes\n"
-"$ export ANDROID_HOME=~/android-sdk-linux\n"
-"$ export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools\n"
-"$ android update sdk --no-ui --filter platform-tools,tools,build-tools-25.0.2,android-24\n"
+"$ sudo apt-get install fdroidserver\n"
+"$ mkdir ~/android-sdk-linux\n"
+"$ cd ~/android-sdk-linux\n"
+"$ wget https://dl.google.com/android/repository/commandlinetools-linux-6858069_latest.zip\n"
+"$ echo \"87f6dcf41d4e642e37ba03cb2e387a542aa0bd73cb689a9e7152aad40a6e7a08  commandlinetools-linux-6858069_latest.zip\" | sha256sum -c\n"
+"commandlinetools-linux-6858069_latest.zip: OK\n"
+"$ unzip commandlinetools-linux-6858069_latest.zip\n"
+"$ export ANDROID_HOME=\"$HOME/android-sdk-linux\"\n"
+"$ ./cmdline-tools/bin/sdkmanager --sdk_root=\"$ANDROID_HOME\" platform-tools \"build-tools;30.0.3\"\n"
 msgstr ""
 
 #. type: Plain text
@@ -6729,9 +6739,7 @@ msgstr ""
 #. type: Fenced code block (bash)
 #: _docs/Installing_the_Server_and_Repo_Tools.md
 #, no-wrap
-msgid ""
-"$ echo export ANDROID_HOME=$ANDROID_HOME >> .bashrc\n"
-"$ echo 'export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools' >> .bashrc\n"
+msgid "$ echo export ANDROID_HOME=$ANDROID_HOME >> .bashrc\n"
 msgstr ""
 
 #. type: Title ##
@@ -8113,6 +8121,17 @@ msgstr ""
 #. type: Title ###
 #: _docs/Reproducible_Builds.md
 #, no-wrap
+msgid "zipflinger"
+msgstr ""
+
+#. type: Plain text
+#: _docs/Reproducible_Builds.md
+msgid "Recent versions of the Android gradle plugin will use *zipflinger* -- which arranges the contents of the APK differently -- making e.g. [apksigcopier](https://github.com/obfusk/apksigcopier) fail to work.  You can tell the plugin not to use *zipflinger* by setting `android.useNewApkCreator=false` in `gradle.properties`."
+msgstr ""
+
+#. type: Title ###
+#: _docs/Reproducible_Builds.md
+#, no-wrap
 msgid "NDK _build-id_"
 msgstr ""
 
@@ -8764,7 +8783,7 @@ msgstr ""
 
 #. type: Bullet: '3.  '
 #: _docs/Setup_an_F-Droid_App_Repo.md
-msgid "Optionally edit the _config.py_ to your liking, details examples are in [`./examples/config.py`](https://gitlab.com/fdroid/fdroidserver/blob/master/examples/config.py)"
+msgid "Optionally edit the _config.yml_ file to your liking, detailed examples are in [examples/config.yml](https://gitlab.com/fdroid/fdroidserver/-/blob/HEAD/examples/config.yml)"
 msgstr ""
 
 #. type: Bullet: '4.  '
@@ -8799,7 +8818,7 @@ msgstr ""
 
 #. type: Bullet: '0.  '
 #: _docs/Setup_an_F-Droid_App_Repo.md
-msgid "Publish the resulting contents of the _repo_ directory to your web server (or set `serverwebroot` in your _config.py_ then use `fdroid server update`)"
+msgid "Publish the resulting contents of the _repo_ directory to your web server (or set `serverwebroot` in your _config.yml_ then use `fdroid deploy`)"
 msgstr ""
 
 #. type: Plain text
@@ -8826,7 +8845,7 @@ msgstr ""
 #. type: Fenced code block (bash)
 #: _docs/Setup_an_F-Droid_App_Repo.md
 #, no-wrap
-msgid "    sudo apt-get install nginx\n"
+msgid "sudo apt-get install nginx\n"
 msgstr ""
 
 #. type: Plain text
@@ -8876,10 +8895,10 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/Setup_an_F-Droid_App_Repo.md
-msgid "You can also customize your repo by editing the config file. Be sure to use a programming text editor, like `editor /usr/share/nginx/www/fdroid/config.py`. In the config file, you can set the name of the repo, the description, the icon, paths to specific versions of the build tools, links to a related wiki, and whether to keep stats. Here's the basic repo description block:"
+msgid "You can also customize your repo by editing the config file. Be sure to use a programming text editor, like `editor /usr/share/nginx/www/fdroid/config.yml`. In the config file, you can set the name of the repo, the description, the icon, paths to specific versions of the build tools, links to a related wiki, and whether to keep stats. Here's the basic repo description block:"
 msgstr ""
 
-#. type: Fenced code block (python)
+#. type: Fenced code block (yaml)
 #: _docs/Setup_an_F-Droid_App_Repo.md
 #, no-wrap
 msgid ""
@@ -8893,12 +8912,12 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/Setup_an_F-Droid_App_Repo.md
-msgid "To put your icon into your repo, choose a PNG image to put in your repo.  The PNG goes in `/usr/share/nginx/www/fdroid/`, the file can be named whatever you want (by default its `fdroid-icon.png`). If you change the name from the default, be sure to update `repo_icon` and `archive_icon` in `/usr/share/nginx/www/fdroid/config.py`."
+msgid "To put your icon into your repo, choose a PNG image to put in your repo.  The PNG goes in `/usr/share/nginx/www/fdroid/`, the file can be named whatever you want (by default its `fdroid-icon.png`). If you change the name from the default, be sure to update `repo_icon` and `archive_icon` in `/usr/share/nginx/www/fdroid/config.yml`."
 msgstr ""
 
 #. type: Plain text
 #: _docs/Setup_an_F-Droid_App_Repo.md
-msgid "A final note about security: this setup is not a good setup for a real public repo, instead it is a quick and easy way to test out F-Droid. At the very least, when generating the repo in place, make sure that _config.py_ is not accessible via the web, since it contains passwords. If the file permissions are correct (e.g.  `chmod 0600 config.py`), then _config.py_ will not be readable by the webserver."
+msgid "A final note about security: this setup is not a good setup for a real public repo, instead it is a quick and easy way to test out F-Droid. At the very least, when generating the repo in place, make sure that _config.yml_ is not accessible via the web, since it contains passwords. If the file permissions are correct (e.g.  `chmod 0600 config.yml`), then _config.yml_ will not be readable by the webserver."
 msgstr ""
 
 #. type: Title ###
@@ -8930,7 +8949,7 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/Setup_an_F-Droid_App_Repo.md
-msgid "To improve this situation, generate the repo on a non-public machine like your laptop, keeping _config.py_ and the keystore only on that machine (remember to make backups!). Then use `fdroid server update` to publish the changes to your repo on a separate server via ssh. So start a new repo from scratch on your non-public machine:"
+msgid "To improve this situation, generate the repo on a non-public machine like your laptop, keeping _config.yml_ and the keystore only on that machine (remember to make backups!). Then use `fdroid deploy` to publish the changes to your repo on a separate server via ssh. So start a new repo from scratch on your non-public machine:"
 msgstr ""
 
 #. type: Fenced code block (bash)
@@ -8943,12 +8962,12 @@ msgid ""
 "cp /path/to/\\*.apk ~/fdroid/repo/\n"
 "fdroid update --create-metadata\n"
 "emacs config.py # add the serverwebroot, etc.\n"
-"fdroid server update -v\n"
+"fdroid deploy\n"
 msgstr ""
 
 #. type: Plain text
 #: _docs/Setup_an_F-Droid_App_Repo.md
-msgid "Now edit _config.py_ to set `serverwebroot`, it is in the form of a standard SCP file destination. Then `fdroid server update` will do the publishing via rsync over ssh. So both computers will have to have ssh and rsync installed and setup. You can also use your own existing signing key rather than the one generated by `fdroid init`, just edit `repo_keyalias`, `keystore`, `keystorepass`, `keypass`, and `keydname` in _~/fdroid/config.py_."
+msgid "Now edit _config.yml_ to set `serverwebroot`, it is in the form of a standard SCP file destination. Then `fdroid deploy` will do the publishing via rsync over ssh. So both computers will have to have ssh and rsync installed and setup. You can also use your own existing signing key rather than the one generated by `fdroid init`, just edit `repo_keyalias`, `keystore`, `keystorepass`, `keypass`, and `keydname` in _~/fdroid/config.yml_."
 msgstr ""
 
 #. type: YAML Front Matter: title
