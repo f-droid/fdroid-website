@@ -203,6 +203,10 @@ instead of the shrinked one (nondeterministic behavior of Gradle
 plugin). Avoid using resource shrinker unless it decreases the APK file
 size significantly.
 
+### zipflinger
+
+Recent versions of the Android gradle plugin will use *zipflinger* -- which arranges the contents of the APK differently -- making e.g. [apksigcopier](https://github.com/obfusk/apksigcopier) fail to work.  You can tell the plugin not to use *zipflinger* by setting `android.useNewApkCreator=false` in `gradle.properties`.
+
 ### NDK _build-id_
 
 On different build machines different NDK paths and different paths to the
