@@ -21,16 +21,18 @@ _fdroidserver_.  To run the full F-Droid build server setup, see
 
 ## Debian/Ubuntu/Mint/etc
 
-The F-Droid tools, also known as _fdroidserver_, are
-included in recent releases (Debian/jessie, Ubuntu/utopic, and newer).
-This should be enough to install the basic F-Droid setup:
+The F-Droid tools, also known as _fdroidserver_, may be installed
+from the standard OS package repository.  On Debian-based OS's,
+this should be enough to install the basic F-Droid setup:
 
     sudo apt-get install fdroidserver
 
+However, it is common to find that the version of _fdroidserver_ available
+in the standard OS package repository is out of date.
 
-### Older releases
+### Getting a newer version
 
-For installing on older releases, there are a couple more simple steps:
+A newer version of _fdroidserver_ may be found in the F-Droid PPA or your OS's _backports_ repository.
 
 -   Ubuntu/Mint: use the
     [F-Droid PPA](https://launchpad.net/~fdroid/+archive/fdroidserver/+packages)
@@ -42,10 +44,10 @@ For installing on older releases, there are a couple more simple steps:
     sudo apt-get install fdroidserver
     ```
 
--   Debian/wheezy: [setup wheezy-backports](http://backports.debian.org/Instructions/#index2h2),
-    then:
+-   Debian: first [setup backports](http://backports.debian.org/Instructions/#index2h2),
+    then, substituting your Debian release for 'buster':
     ```bash
-    apt-get install fdroidserver/wheezy-backports
+    apt-get install fdroidserver/buster-backports
     ```
 
 
@@ -58,23 +60,23 @@ guix install fdroidserver
 
 ## macOS
 
-You can install `fdroidserver` directly using [MacPorts](https://www.macports.org/ports.php?by=name&substr=fdroidserver), [Homebrew](http://brewformulas.org/Fdroidserver), or `easy_install` as a last resort:
+You can install `fdroidserver` directly using Homebrew, or `easy_install` as a last resort:
 
-or MacPorts:
+### Homebrew:
 
-```bash
-port install fdroidserver
-```
-
-or Homebrew:
+1. Preparation: Check [the Homebrew formula](https://formulae.brew.sh/formula/fdroidserver) for instructions. Example:
 
 ```bash
 brew install android-sdk
-android update sdk --no-ui --filter platform-tools,build-tools-22.0.1
+android update sdk --no-ui --all --filter tools,platform-tools,build-tools-25.0.0
+```
+
+2. Install _fdroidserver_:
+```bash
 brew install fdroidserver
 ```
 
-With only `easy_install`:
+### With only `easy_install`:
 
 ```
 sudo easy_install fdroidserver
