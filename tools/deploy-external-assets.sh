@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 # Fail on errors.
 set -eux -o pipefail
@@ -10,18 +10,18 @@ fi
 
 OUTPUT_DIR=$1
 
-echo "Deploying the /badge/ directory..."
-curl https://gitlab.com/fdroid/artwork/repository/archive.tar.gz?ref=master \
-    | gunzip -c \
-    | tar --wildcards -xf - 'artwork-master*/badge'
-rm -rf ${OUTPUT_DIR}/badge
-mv artwork-master-*/badge ${OUTPUT_DIR}/
-rm -r artwork-master-*
+dir=badge
+echo "Deploying the /$dir/ directory..."
+rm -rf ${OUTPUT_DIR}/$dir
+project=artwork
+branch=master
+curl https://gitlab.com/fdroid/$project/-/archive/$branch/$project-$branch.tar.gz \
+          | tar -xz --directory=${OUTPUT_DIR} --strip-components=1 $project-$branch/$dir/
 
-echo "Deploying the /forums/ directory..."
-curl https://gitlab.com/fdroid/fdroid-website-legacy-forum/repository/archive.tar.gz?ref=master \
-    | gunzip -c \
-    | tar --wildcards -xf - 'fdroid-website-legacy-forum-master*/forums'
-rm -rf ${OUTPUT_DIR}/forums
-mv fdroid-website-legacy-forum-master-*/forums ${OUTPUT_DIR}/
-rm -r fdroid-website-legacy-forum-master*
+dir=forums
+echo "Deploying the /$dir/ directory..."
+rm -rf ${OUTPUT_DIR}/$dir
+project=fdroid-website-legacy-forum
+branch=master
+curl https://gitlab.com/fdroid/$project/-/archive/$branch/$project-$branch.tar.gz \
+    | tar -xz --directory=${OUTPUT_DIR} --strip-components=1 $project-$branch/$dir/
