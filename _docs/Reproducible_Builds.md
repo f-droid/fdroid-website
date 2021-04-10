@@ -116,7 +116,17 @@ starting with Gradle Android Plugin v2.2.2, timestamps in the APK
 file's ZIP header are automatically zeroed out.
 
 
-## _platform_ Revisions
+### Reproducible Signatures
+
+F-Droid verifies reproducible builds using the APK signature, which requires [copying](https://github.com/obfusk/apksigcopier) the signature from a signed APK to an unsigned one and then checking if the latter verifies.
+The old v1 (JAR) signatures only cover the *contents* of the APK (ZIP metadata and ordering are irrelevant), but v2/v3 signatures cover *all other bytes in the APK*.
+Thus, the APKs must be completely identical *before* and *after* signing (apart from the signature) in order to verify correctly.
+
+Copying the signature uses the same algorithm that `apksigner` uses when signing an APK.
+It is therefore important that (upstream) developers do the same when signing APKs, ideally by using `apksigner`.
+
+
+### _platform_ Revisions
 
 The Android SDK tools
 [were changed](https://issuetracker.google.com/issues/37132313) in
@@ -205,7 +215,7 @@ size significantly.
 
 ### zipflinger
 
-Recent versions of the Android gradle plugin will use *zipflinger* -- which arranges the contents of the APK differently -- making e.g. [apksigcopier](https://github.com/obfusk/apksigcopier) fail to work in some cases.  You can tell the plugin not to use *zipflinger* by setting `android.useNewApkCreator=false` in `gradle.properties`.
+Recent versions of the Android gradle plugin will use *zipflinger* -- which arranges the contents of the APK differently -- which could result in e.g. [apksigcopier](https://github.com/obfusk/apksigcopier) failing to work in some cases.  You can tell the plugin not to use *zipflinger* by setting `android.useNewApkCreator=false` in `gradle.properties`.
 
 ### NDK _build-id_
 
