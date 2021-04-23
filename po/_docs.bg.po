@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2021-03-25 20:17+0100\n"
+"POT-Creation-Date: 2021-04-23 12:50+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -2302,13 +2302,13 @@ msgstr ""
 #, no-wrap
 msgid ""
 "Builds:\n"
-"  - versionName: 1.2\n"
+"  - versionName: '1.2'\n"
 "    versionCode: 12\n"
-"    commit: v1.2\n"
+"    commit: 'v1.2'\n"
 "\n"
-"  - versionName: 1.3\n"
+"  - versionName: '1.3'\n"
 "    versionCode: 13\n"
-"    commit: v1.3-fdroid\n"
+"    commit: 'v1.3-fdroid'\n"
 msgstr ""
 
 #. type: Plain text
@@ -7995,7 +7995,23 @@ msgstr ""
 msgid "Google is also working towards reproducible builds of Android apps, so using recent versions of the Android SDK helps.  One specific case is starting with Gradle Android Plugin v2.2.2, timestamps in the APK file's ZIP header are automatically zeroed out."
 msgstr ""
 
-#. type: Title ##
+#. type: Title ###
+#: _docs/Reproducible_Builds.md
+#, no-wrap
+msgid "Reproducible Signatures"
+msgstr ""
+
+#. type: Plain text
+#: _docs/Reproducible_Builds.md
+msgid "F-Droid verifies reproducible builds using the APK signature, which requires [copying](https://github.com/obfusk/apksigcopier) the signature from a signed APK to an unsigned one and then checking if the latter verifies.  The old v1 (JAR) signatures only cover the *contents* of the APK (ZIP metadata and ordering are irrelevant), but v2/v3 signatures cover *all other bytes in the APK*.  Thus, the APKs must be completely identical *before* and *after* signing (apart from the signature) in order to verify correctly."
+msgstr ""
+
+#. type: Plain text
+#: _docs/Reproducible_Builds.md
+msgid "Copying the signature uses the same algorithm that `apksigner` uses when signing an APK.  It is therefore important that (upstream) developers do the same when signing APKs, ideally by using `apksigner`."
+msgstr ""
+
+#. type: Title ###
 #: _docs/Reproducible_Builds.md
 #, no-wrap
 msgid "_platform_ Revisions"
@@ -8101,7 +8117,7 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
-msgid "Recent versions of the Android gradle plugin will use *zipflinger* -- which arranges the contents of the APK differently -- making e.g. [apksigcopier](https://github.com/obfusk/apksigcopier) fail to work.  You can tell the plugin not to use *zipflinger* by setting `android.useNewApkCreator=false` in `gradle.properties`."
+msgid "Recent versions of the Android gradle plugin will use *zipflinger* -- which arranges the contents of the APK differently -- which could result in e.g. [apksigcopier](https://github.com/obfusk/apksigcopier) failing to work in some cases.  You can tell the plugin not to use *zipflinger* by setting `android.useNewApkCreator=false` in `gradle.properties`."
 msgstr ""
 
 #. type: Title ###
@@ -8526,6 +8542,11 @@ msgstr ""
 
 #. type: Bullet: '-   '
 #: _docs/Security_Model.md
+msgid "a repo is defined by having unique signing key, first and foremost"
+msgstr ""
+
+#. type: Bullet: '-   '
+#: _docs/Security_Model.md
 msgid "[HTTPS connections by default](https://gitlab.com/fdroid/fdroidclient/blob/v0.100.1/app/src/main/res/values/default_repo.xml#L11)"
 msgstr ""
 
@@ -8753,12 +8774,12 @@ msgstr ""
 
 #. type: Bullet: '2.  '
 #: _docs/Setup_an_F-Droid_App_Repo.md
-msgid "create a directory called _fdroid_, then run `fdroid init` in that directory"
+msgid "Create a directory called _fdroid_, then run `fdroid init` in that directory to generate the signing key that uniquely identifies your repo."
 msgstr ""
 
 #. type: Bullet: '3.  '
 #: _docs/Setup_an_F-Droid_App_Repo.md
-msgid "Optionally edit the _config.yml_ file to your liking, detailed examples are in [examples/config.yml](https://gitlab.com/fdroid/fdroidserver/-/blob/HEAD/examples/config.yml)"
+msgid "Optionally edit the _config.yml_ file to your liking, detailed examples are in [examples/config.yml](https://gitlab.com/fdroid/fdroidserver/-/blob/master/examples/config.yml)"
 msgstr ""
 
 #. type: Bullet: '4.  '
@@ -8937,7 +8958,7 @@ msgid ""
 "cp /path/to/\\*.apk ~/fdroid/repo/\n"
 "fdroid update --create-metadata\n"
 "emacs config.yml # add the serverwebroot, etc.\n"
-"fdroid deploy\n"
+"fdroid deploy -v\n"
 msgstr ""
 
 #. type: Plain text
