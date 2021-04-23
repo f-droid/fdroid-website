@@ -42,8 +42,8 @@ $ sudo chown -R www-data.www-data /var/www/fdroid
 2. Synchronize the repositories. These commands are best run in a terminal multiplexer (`screen`, `tmux` etc) as they will take some time to complete.
 
 ```console
-$ sudo -u www-data -E /usr/bin/rsync --links --delete --times --recursive --permissions --hard-links --sparse --delay-updates --temp-dir /tmp/ ftp.fau.de::fdroid/repo/ /var/www/fdroid/fdroid/repo/
-$ sudo -u www-data -E /usr/bin/rsync --links --delete --times --recursive --permissions --hard-links --sparse --delay-updates --temp-dir /tmp/ ftp.fau.de::fdroid/archive/ /var/www/fdroid/fdroid/archive/
+$ sudo -u www-data -E /usr/bin/rsync --links --delete --times --recursive --perms --hard-links --sparse --delay-updates --temp-dir /tmp/ ftp.fau.de::fdroid/repo/ /var/www/fdroid/fdroid/repo/
+$ sudo -u www-data -E /usr/bin/rsync --links --delete --times --recursive --perms --hard-links --sparse --delay-updates --temp-dir /tmp/ ftp.fau.de::fdroid/archive/ /var/www/fdroid/fdroid/archive/
 ```
 
 3. Establish a cronjob to keep the repositories up to date
@@ -57,8 +57,8 @@ $ vi /etc/cron.d/fdroid
 Fill the file with entries to update the repositories
 
 ```
-*/5 * * * * www-data /usr/bin/rsync --links --delete --times --recursive --permissions --hard-links --sparse --delay-updates --temp-dir /tmp/ ftp.fau.de::fdroid/repo/ /var/www/fdroid/fdroid/repo/
-*/5 * * * * www-data /usr/bin/rsync --links --delete --times --recursive --permissions --hard-links --sparse --delay-updates --temp-dir /tmp/ ftp.fau.de::fdroid/archive/ /var/www/fdroid/fdroid/archive/
+*/5 * * * * www-data /usr/bin/rsync --links --delete --times --recursive --perms --hard-links --sparse --delay-updates --temp-dir /tmp/ ftp.fau.de::fdroid/repo/ /var/www/fdroid/fdroid/repo/
+*/5 * * * * www-data /usr/bin/rsync --links --delete --times --recursive --perms --hard-links --sparse --delay-updates --temp-dir /tmp/ ftp.fau.de::fdroid/archive/ /var/www/fdroid/fdroid/archive/
 ```
 
 4. Configure your webserver
