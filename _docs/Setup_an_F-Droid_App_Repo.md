@@ -23,7 +23,8 @@ If you want to maintain a simple binary repository of APKs and
 packages obtained elsewhere, the process is quite simple:
 
 1.  [Set up the server tools](../Installing_the_Server_and_Repo_Tools)
-2.  create a directory called _fdroid_, then run `fdroid init` in that directory
+2.  Create a directory called _fdroid_, then run `fdroid init` in that directory
+    to generate the signing key that uniquely identifies your repo.
 3.  Optionally edit the _config.yml_ file to your liking, detailed examples
     are in
     [examples/config.yml](https://gitlab.com/fdroid/fdroidserver/-/blob/master/examples/config.yml)

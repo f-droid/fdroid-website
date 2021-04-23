@@ -9,6 +9,7 @@ The security architecture is based on models proven by
 Framework](https://github.com/theupdateframework/specification/blob/master/tuf-spec.md)
 , and others:
 
+-   a repo is defined by having unique signing key, first and foremost
 -   [HTTPS connections by default](https://gitlab.com/fdroid/fdroidclient/blob/v0.100.1/app/src/main/res/values/default_repo.xml#L11)
 -   server only works over HTTPS, [HTTP](http://f-droid.org) is a redirect
 -   [Android enforces](https://developer.android.com/studio/publish/app-signing.html#considerations) that all apps have a valid signature over the entire contents of the APK file 
