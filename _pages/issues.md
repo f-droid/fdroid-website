@@ -6,7 +6,7 @@ permalink: /issues/
 * [Client](https://gitlab.com/fdroid/fdroidclient/issues) issue tracker: If you’re having a problem with the F-Droid client application,
 please check if we already know about it, and/or report it in this issue tracker.
 
-* [RFP](https://gitlab.com/fdroid/rfp/issues/new) tracker: To request a new app be added, submit a "Request For Packaging" on the
+* [RFP](https://gitlab.com/fdroid/rfp/issues/) tracker: To request a new app be added, submit a "Request For Packaging" on the
 rfp tracker.
 
 * [Data](https://gitlab.com/fdroid/fdroiddata/issues) issue tracker: For problems relating to the contents of the repository,
