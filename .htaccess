@@ -349,6 +349,11 @@ style-src 'self' 'unsafe-inline';\
 Header always set Referrer-Policy: "strict-origin"
 
 #
+# Instruct FLoC capable browsers to not profile users on our website
+#
+Header always set Permissions-Policy: "interest-cohort=()"
+
+#
 # Setting this header will prevent MSIE from interpreting files as
 # something else than declared by the content type in the HTTP
 # headers.  Requires mod_headers to be enabled.
