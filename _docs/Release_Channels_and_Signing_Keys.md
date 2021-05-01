@@ -130,7 +130,7 @@ gpg --import admin@f-droid.org.asc
 
 -   official Debian package: <https://packages.debian.org/fdroidserver>
     -   package source:
-        <https://anonscm.debian.org/git/collab-maint/fdroidserver.git>
+        <https://salsa.debian.org/python-team/packages/fdroidserver.git>
     -   package tags signed by "Hans-Christoph Steiner
         \<hans@guardianproject.info>" aka "Hans-Christoph Steiner
         \<hans@eds.org>" aka "Hans-Christoph Steiner
