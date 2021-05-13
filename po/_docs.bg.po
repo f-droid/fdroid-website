@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2021-04-23 12:50+0200\n"
+"POT-Creation-Date: 2021-05-13 15:22+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -8310,6 +8310,11 @@ msgstr ""
 
 #. type: Bullet: '* '
 #: _docs/Running_a_Mirror.md
+msgid "Taiwan: `rsync -axv mirror.ossplanet.net::fdroid`"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/Running_a_Mirror.md
 msgid "USA/Indiana: `rsync -axv plug-mirror.rcac.purdue.edu::fdroid`"
 msgstr ""
 
@@ -8356,15 +8361,15 @@ msgstr ""
 
 #. type: Bullet: '2. '
 #: _docs/Running_a_Mirror.md
-msgid "Synchronize the repositories. These commands are best run in a terminal multiplexer (`screen`, `tmux` etc) as they will take some time to complete."
+msgid "Synchronize the repositories. These commands are best run in a terminal multiplexer (`screen`, `tmux` etc) as they will take some time to complete. With `--info=progress2` you can see the progress."
 msgstr ""
 
 #. type: Fenced code block (console)
 #: _docs/Running_a_Mirror.md
 #, no-wrap
 msgid ""
-"$ sudo -u www-data -E /usr/bin/rsync --links --delete --times --recursive --perms --hard-links --sparse --delay-updates --temp-dir /tmp/ ftp.fau.de::fdroid/repo/ /var/www/fdroid/fdroid/repo/\n"
-"$ sudo -u www-data -E /usr/bin/rsync --links --delete --times --recursive --perms --hard-links --sparse --delay-updates --temp-dir /tmp/ ftp.fau.de::fdroid/archive/ /var/www/fdroid/fdroid/archive/\n"
+"$ sudo -u www-data -E /usr/bin/rsync -aHS  --delete --delete-delay --info=progress2 ftp.fau.de::fdroid/repo/ /var/www/fdroid/fdroid/repo/\n"
+"$ sudo -u www-data -E /usr/bin/rsync -aHS  --delete --delete-delay --info=progress2 ftp.fau.de::fdroid/archive/ /var/www/fdroid/fdroid/archive/\n"
 msgstr ""
 
 #. type: Bullet: '3. '
@@ -8385,15 +8390,15 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/Running_a_Mirror.md
-msgid "Fill the file with entries to update the repositories"
+msgid "Fill the file with entries to update the repositories. These commands will run at minute 35 past every 6th hour, you can change it to fit your needs."
 msgstr ""
 
 #. type: Fenced code block
 #: _docs/Running_a_Mirror.md
 #, no-wrap
 msgid ""
-"*/5 * * * * www-data /usr/bin/rsync --links --delete --times --recursive --perms --hard-links --sparse --delay-updates --temp-dir /tmp/ ftp.fau.de::fdroid/repo/ /var/www/fdroid/fdroid/repo/\n"
-"*/5 * * * * www-data /usr/bin/rsync --links --delete --times --recursive --perms --hard-links --sparse --delay-updates --temp-dir /tmp/ ftp.fau.de::fdroid/archive/ /var/www/fdroid/fdroid/archive/\n"
+"35 */6 * * * www-data /usr/bin/rsync -aHS  --delete --delete-delay ftp.fau.de::fdroid/repo/ /var/www/fdroid/fdroid/repo/\n"
+"35 */6 * * * www-data /usr/bin/rsync -aHS  --delete --delete-delay ftp.fau.de::fdroid/archive/ /var/www/fdroid/fdroid/archive/\n"
 msgstr ""
 
 #. type: Bullet: '4. '
