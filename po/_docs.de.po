@@ -4,20 +4,21 @@
 # Strubbl <github@linux4tw.de>, 2021.
 # Yuriy Putsan <putsan57@gmail.com>, 2021.
 # Hans-Christoph Steiner <hans@guardianproject.info>, 2021.
+# C. Rüdinger <Mail-an-CR@web.de>, 2021.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
 "POT-Creation-Date: 2021-02-16 14:40+0100\n"
-"PO-Revision-Date: 2021-04-07 11:36+0000\n"
-"Last-Translator: Hans-Christoph Steiner <hans@guardianproject.info>\n"
+"PO-Revision-Date: 2021-05-13 13:00+0000\n"
+"Last-Translator: C. Rüdinger <Mail-an-CR@web.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/f-droid/website-docs/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.6-dev\n"
+"X-Generator: Weblate 4.7-dev\n"
 
 #. type: YAML Front Matter: title
 #: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
@@ -122,7 +123,7 @@ msgstr "Bilder können im PNG- oder JPEG-Format bereitgestellt werden. Sie müss
 #. type: Plain text
 #: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
 msgid "It is important to note that dangerous and unneeded metadata is stripped from image files before they are included in the repo. For example, JPEG EXIF data has [security issues](https://threatpost.com/google-shuts-down-potentially-massive-android-bug/120393/), and it is not needed to display images. This also means that images may be recompressed."
-msgstr "Bitte beachten Sie, dass gefährliche und nicht benötigte Metadaten aus Bilddateien entfernt werden, bevor sie in das Repo aufgenommen werden.  Zum Beispiel stellen EXIF-Daten in JPEG-Dateien ein [Sicherheitsrisiko](https://threatpost.com/google-shuts-down-potentially-massive-android-bug/120393/) dar und werden für die Bildanzeige nicht gebraucht.  Das bedeutet, dass Bilder auch neu komprimiert werden können."
+msgstr "Bitte beachten Sie, dass gefährliche und nicht benötigte Metadaten aus Bilddateien entfernt werden, bevor sie in das Repo aufgenommen werden. Zum Beispiel stellen EXIF-Daten in JPEG-Dateien ein [Sicherheitsrisiko](https://threatpost.com/google-shuts-down-potentially-massive-android-bug/120393/) dar und werden für die Bildanzeige nicht gebraucht. Das bedeutet, dass Bilder auch neu komprimiert werden können."
 
 #. type: Title ###
 #: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
@@ -366,13 +367,43 @@ msgid ""
 "    ├── de                              (other locales)\n"
 "        ├── ...\n"
 msgstr ""
+"├── contact-email.txt                   (E-Mail der Entwickler / AuthorEmail)\n"
+"├── contact-website.txt                 (Website der Entwickler / AuthorWebSite)\n"
+"├── release-notes\n"
+"│   └── en-US\n"
+"│       └── default.txt                 (jüngstes Änderungsprotokoll)\n"
+"└── listings\n"
+"    ├── en-US                           (en-US ist Standardsprache in F-Droid)\n"
+"    │   ├── title.txt                   (App-Name)\n"
+"    │   ├── short-description.txt       (Kurzbeschreibung, max. 80 Zeichen, obligatorisch)\n"
+"    │   ├── full-description.txt        (ausführliche App-Beschreibung, obligatorisch)\n"
+"    │   ├── video-url.txt               (URL zu einem Video, das die App vorstellt)\n"
+"    │   ├── whatsnew                    (alternativer Ort für ein Änderungsprotokoll; einfache Datei, kein .txt)\n"
+"    │   └── graphics\n"
+"    │       ├── icon                    (App-Symbol; obligatorisch, wenn die App kein png-Symbol enthält)\n"
+"    │       │   └── *.(png|jpg)         1 Bild, normalerweise 512x512\n"
+"    │       ├── feature-graphic         (Werbebanner, das über der App-Beschreibung im F-Droid-Client angezeigt wird)\n"
+"    │       │   └── *.(png|jpg)         1 Bild, normalerweise 1024x500\n"
+"    │       ├── phone-screenshots\n"
+"    │       │   └── *.(png|jpg)\n"
+"    │       ├── tablet-screenshots\n"
+"    │       │   └── *.(png|jpg)\n"
+"    │       ├── large-tablet-screenshots\n"
+"    │       │   └── *.(png|jpg)\n"
+"    │       ├── tv-banner               („Symbol“ für TV-Geräte, momentan nicht verwendet)\n"
+"    │       │   └── *.(png|jpg)\n"
+"    │       ├── tv-screenshots\n"
+"    │       │   └── *.(png|jpg)\n"
+"    │       └── wear-screenshots\n"
+"    │           └── *.(png|jpg)\n"
+"    ├── de                              (weitere Sprachen)\n"
+"        ├── ...\n"
 
 #. type: Title ###
 #: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
-#, fuzzy, no-wrap
-#| msgid "In the app's build metadata in an _fdroiddata_ collection"
+#, no-wrap
 msgid "In the app's build metadata in an *fdroiddata* collection"
-msgstr "In die Build-Metadaten einer App in einer _fdroiddata_ Sammlung"
+msgstr "In die Build-Metadaten einer App in einer *fdroiddata* Sammlung"
 
 #. type: Plain text
 #: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
@@ -406,6 +437,11 @@ msgid ""
 "* Instead of `full_description.txt`, the description file should be named `description.txt`.\n"
 "* Not following the above two points causes the linter to fail.\n"
 msgstr ""
+"   * Zum Beispiel würde sich, für `en-US`, `title.txt` an dieser Stelle befinden:\n"
+"   `<fdroiddata>/metadata/<packageId>/en-US/title.txt`\n"
+"* Statt `short_description.txt` sollte die Datei mit der Kurzbeschreibung `summary.txt` heißen.\n"
+"* Statt `full_description.txt`, sollte die ausführliche Beschreibung mit `description.txt` benannt werden.\n"
+"* Folgt man den beiden o. g. Punkten nicht, wird das Auslesen scheitern.\n"
 
 #. type: Title ###
 #: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
@@ -422,10 +458,8 @@ msgstr "**Anmerkung**: Diese Option ist nur für diejenigen verfügbar, die ihre
 
 #. type: Plain text
 #: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
-#, fuzzy
-#| msgid "The ultimate destination for files from the app's source repo and _fdroiddata_ metadata sub-directories is in the F-Droid repo.  The text all gets included into the index file (aka _index-v1.json_).  All of the graphics files can be directly included in the repo.  If graphics files are also in the app's source or _fdroiddata_, then the files directly in the repo will be overwritten.  The text files from the _fastlane_ layout are ignored if they are in the repo."
 msgid "The ultimate destination for files from the app’s source repo and *fdroiddata* metadata sub-directories is in the F-Droid repo. The text all gets included into the index file (aka *index-v1.json*). All of the graphics files can be directly included in the repo."
-msgstr "Das Endziel der Dateien aus dem Originalrepo der App und der Metadaten-Unterverzeichnisse von _fdroiddata_ ist im F-Droid-Repo.  Der gesamte Text wird in die Index-Datei (auch bekannt als  _index-v1.json_) übernommen.  Alle Grafikdateien können direkt ins Repo aufgenommen werden.  Wenn Grafikdateien auch in der App-Quelle oder in _fdroiddata_ vorhanden sind, werden die Dateien im Repo überschrieben.  Textdateien aus der Struktur von _fastlane_ werden ignoriert, wenn sie im Repo sind."
+msgstr "Das Endziel der Dateien aus dem Originalrepo der App und der Metadaten-Unterverzeichnisse von *fdroiddata* ist im F-Droid-Repo. Der gesamte Text wird in die Index-Datei (auch bekannt als *index-v1.json*) übernommen. Alle Grafikdateien können direkt ins Repo aufgenommen werden."
 
 #. type: Plain text
 #: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
@@ -444,26 +478,7 @@ msgstr "Zur Referenz können Bilddateien an den folgenden Orten in das Repo gest
 
 #. type: Fenced code block
 #: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
-#, fuzzy, no-wrap
-#| msgid ""
-#| "- fdroid/\n"
-#| "  └── repo/\n"
-#| "      └── <package-id>/\n"
-#| "          └── <locale>/\n"
-#| "              ├── featureGraphic.png\n"
-#| "              ├── icon.png\n"
-#| "              ├── promoGraphic.png\n"
-#| "              ├── tvBanner.png\n"
-#| "              ├── phoneScreenshots/\n"
-#| "              │   └── *.png\n"
-#| "              ├── sevenInchScreenshots/\n"
-#| "              │   └── *.png\n"
-#| "              ├── tenInchScreenshots/\n"
-#| "              │   └── *.png\n"
-#| "              ├── tvScreenshots/\n"
-#| "              │   └── *.png\n"
-#| "              └── wearScreenshots/\n"
-#| "                  └── *.png\n"
+#, no-wrap
 msgid ""
 "- fdroid\n"
 "  └── repo\n"
@@ -483,23 +498,22 @@ msgid ""
 "              └── wearScreenshots\n"
 "                  └── *.png\n"
 msgstr ""
-"- fdroid/\n"
-"  └── repo/\n"
-"      └── <package-id>/\n"
-"          └── <locale>/\n"
+"- fdroid\n"
+"  └── repo\n"
+"      └── <package-id>\n"
+"          └── <locale>\n"
 "              ├── featureGraphic.png\n"
 "              ├── icon.png\n"
-"              ├── promoGraphic.png\n"
 "              ├── tvBanner.png\n"
-"              ├── phoneScreenshots/\n"
+"              ├── phoneScreenshots\n"
 "              │   └── *.png\n"
-"              ├── sevenInchScreenshots/\n"
+"              ├── sevenInchScreenshots\n"
 "              │   └── *.png\n"
-"              ├── tenInchScreenshots/\n"
+"              ├── tenInchScreenshots\n"
 "              │   └── *.png\n"
-"              ├── tvScreenshots/\n"
+"              ├── tvScreenshots\n"
 "              │   └── *.png\n"
-"              └── wearScreenshots/\n"
+"              └── wearScreenshots\n"
 "                  └── *.png\n"
 
 #. type: Title ##
@@ -553,7 +567,7 @@ msgstr "Alle unsere APIs"
 #. type: Plain text
 #: _docs/All_our_APIs.md
 msgid "For F-Droid to be trusted, we need to be transparent.  Making it easy for people to pay attention to all the processes and systems we use helps us stay secure.  These are the APIs with key information about the publishing process."
-msgstr ""
+msgstr "Soll F-Droid vertrauenswürdig sein, müssen wir transparent sein.  Machen wir es den Leuten leicht, in alle Abläufe und Verfahren, die wir verwenden, Einblicke zu gewinnen, dann hilft uns das verlässlich zu bleiben.  Dies sind die APIs mit den Schlüsselinformationen über den Veröffentlichungsprozess."
 
 #. type: Title ###
 #: _docs/All_our_APIs.md
@@ -564,7 +578,7 @@ msgstr "Der Repository-Index"
 #. type: Plain text
 #: _docs/All_our_APIs.md
 msgid "F-Droid is built around a signed index of all the apps and packages that are available.  This is a JSON file, though more of an index than an API since all the information is distributed via a single file.  The repo index is in the form of a signed JAR file that contains _index-v1.json_.  The best method is to verify the JAR signature, then extract _index-v1.json_ if it validates. The _fdroidserver_ Python library provides `fdroidserver.download_repo_index()` to make this easy to do.  It is also possible to just read _index-v1.json_ using any ZIP library."
-msgstr ""
+msgstr "F-Droid ist rund um ein signiertes Verzeichnis (Index) aller erhältlichen Apps und Pakete aufgebaut.  Dies ist eine JSON-Datei, dabei mehr Index als eine API, da sämtliche Informationen über eine einzelne Datei zur Verfügung gestellt werden.  Der Repo-Index liegt in Form einer signierten JAR-Datei vor, die _index-v1.json_ enthält.  Das beste Verfahren ist es, die JAR-Signatur zu überprüfen, dann die _index-v1.json_ zu extrahieren, wenn sie validiert ist. Die Python-Bibliothek von _fdroidserver_ stellt `fdroidserver.download_repo_index()` bereit, um dies leicht zu erledigen.  Es ist auch möglich, _index-v1.json_ einfach mittels jeder ZIP-Library zu lesen."
 
 #. type: Bullet: '* '
 #: _docs/All_our_APIs.md
@@ -578,10 +592,9 @@ msgstr "<https://f-droid.org/archive/index-v1.jar>"
 
 #. type: Title ###
 #: _docs/All_our_APIs.md
-#, fuzzy, no-wrap
-#| msgid "App Metadata"
+#, no-wrap
 msgid "App build metadata"
-msgstr "App-Metadaten"
+msgstr "Build-Metadaten der App"
 
 #. type: Plain text
 #: _docs/All_our_APIs.md
@@ -603,15 +616,14 @@ msgstr ""
 
 #. type: Title ###
 #: _docs/All_our_APIs.md
-#, fuzzy, no-wrap
-#| msgid "f-droid.org website"
+#, no-wrap
 msgid "f-droid.org build server status"
-msgstr "f-droid.org-Internetseite"
+msgstr "Buildserver-Status von f-droid.org"
 
 #. type: Plain text
 #: _docs/All_our_APIs.md
 msgid "The four main steps of the build cycle are: _checkupdates_, _build_, _update_, and _deploy_.  There is a JSON file for each one of those with status information.  It is posted once that step completes running.  The step that is currently running is posted to _running_."
-msgstr ""
+msgstr "Die vier Hauptschritte des Build-Zyklus sind: _checkupdates_, _build_, _update_, und _deploy_.  Es gibt für jeden von ihnen eine JSON-Datei mit Statusinformationen.  Diese werden angezeigt, sobald der Schritt vollständig durchlaufen ist.  Der aktuell laufende Schritt wird als _running_ angezeigt."
 
 #. type: Bullet: '* '
 #: _docs/All_our_APIs.md
@@ -641,7 +653,7 @@ msgstr "<https://f-droid.org/repo/status/deploy.json>"
 #. type: Plain text
 #: _docs/All_our_APIs.md
 msgid "Two examples of how these JSON APIs can be used are the [F-Droid Monitor](https://monitor.f-droid.org/) website and the [F-Droid Build Status]({{ site.baseurl }}/packages/de.storchp.fdroidbuildstatus/) app."
-msgstr ""
+msgstr "Zwei Beispiele, wie diese JSON-APIs genutzt werden können, sind die Website des [F-Droid Monitor](https://monitor.f-droid.org/) und die App [F-Droid Build Status]({{ site.baseurl }}/packages/de.storchp.fdroidbuildstatus/)."
 
 #. type: Title ###
 #: _docs/All_our_APIs.md
@@ -652,7 +664,7 @@ msgstr "Spiegel- und Repository-Überwachung"
 #. type: Plain text
 #: _docs/All_our_APIs.md
 msgid "[_mirror-monitor_](https://gitlab.com/fdroid/mirror-monitor) and [_repo-monitor_](https://gitlab.com/fdroid/repo-monitor) are automated jobs that check various stats about _f-droid.org_ mirrors and third party repos respectively.  They each provide a single, large JSON log of all the times the checks where run:"
-msgstr ""
+msgstr "[_mirror-monitor_](https://gitlab.com/fdroid/mirror-monitor) und [_repo-monitor_](https://gitlab.com/fdroid/repo-monitor) sind automatisierte Aufgaben, die verschiedene Statistiken über Spiegel von _f-droid.org_ bzw. Drittanbieter-Repos kontrollieren.  Jede von ihnen liefert ein einzelnes, großes JSON-Protokoll jedes Mal, wenn die Kontrollen durchgeführt wurden:"
 
 #. type: Bullet: '* '
 #: _docs/All_our_APIs.md
@@ -661,15 +673,12 @@ msgstr "_f-droid.org_ Spiegelungsstatus: <https://fdroid.gitlab.io/mirror-monito
 
 #. type: Bullet: '* '
 #: _docs/All_our_APIs.md
-#, fuzzy
-#| msgid "git clone https://gitlab.com/fdroid/fdroiddata.git\n"
 msgid "third-party repo status: <https://fdroid.gitlab.io/repo-monitor/report.json>"
-msgstr "git clone https://gitlab.com/fdroid/fdroiddata.git\n"
+msgstr "Drittanbieter-Repo-Status: <https://fdroid.gitlab.io/repo-monitor/report.json>"
 
 #. type: Title ###
 #: _docs/All_our_APIs.md
-#, fuzzy, no-wrap
-#| msgid "Reproducible Builds"
+#, no-wrap
 msgid "Reproducible builds"
 msgstr "Reproduzierbare Builds"
 
@@ -1347,7 +1356,7 @@ msgstr "Basis-Laptop, der fest der Signierung zugeordnet ist"
 #. type: Plain text
 #: _docs/Building_a_Signing_Server.md
 msgid "Start with a laptop that can be wiped clean and rebuilt from scratch.  What is most important is that only the essential software is installed on it, and nothing else.  Do not include any browser at all, for example, since that is the most common vector of attack.  No remote access setup (e.g. SSH or VNC) should be installed or configured.  To sign apps and repos, someone would take out this laptop, connect it to the network, and run the signing process.  The signed results can then be published via the network connection.  When the signing is complete, the machine can be turned off and disconnected and kept in a safe place."
-msgstr "Beginnen Sie mit einem Laptop, der komplett gelöscht und neu aufgesetzt wird.  Am wichtigsten ist dabei, dass Sie auf ihm nur die unbedingt notwendige Software und sonst nichts installieren.  Setzen Sie, z.B., keinen Browser ein, da dies der häufigste Angriffsvektor ist.  Es sollte keine Möglichkeit zum Fernzugriff (z. B. SSH oder VNC) installiert oder konfiguriert werden.  Um Apps und Repos zu signieren wird dieser Laptop genommen und mit dem Netz verbunden und den Signiervorgang ausführen.  Die signierten Ergebnisse können dann über die Netzwerkverbindung gesendet werden.  Wenn das Signieren abgeschlossen ist, kann und sollte der Laptop abgeschaltet werden und an einem sicheren Ort aufbewahrt werden."
+msgstr "Beginnen Sie mit einem Laptop, der von Grund auf neu aufgebaut werden kann.  Am wichtigsten ist dabei, dass Sie auf ihm nur die essentielle Software und sonst nichts installieren.  Verwenden Sie keinen Browser, da dies der häufigste Angriffsvektor ist.  Es sollte keine Möglichkeit zum Fernzugriff (z. B. SSH oder VNC) installiert oder konfiguriert werden.  Um Apps und Repos zu signieren, wird jemand diesen Laptop herausholen, mit dem Netz verbinden und den Signiervorgang ausführen.  Die signierten Ergebnisse können dann über die Netzwerkverbindung verteilt werden.  Wenn das Signieren abgeschlossen ist, kann der Laptop abgeschaltet, vom Netz getrennt und an einem sicheren Ort verwahrt werden."
 
 #. type: Plain text
 #: _docs/Building_a_Signing_Server.md
@@ -1358,7 +1367,7 @@ msgstr "Mit einigen angepassten Skripten könnte dies ganz automatisch durchgef�
 #: _docs/Building_a_Signing_Server.md
 #, no-wrap
 msgid "Fully offline signing laptop with USB thumb drives"
-msgstr "Vollständig offline Signaturlaptop mit USB-Sticks"
+msgstr "Signaturlaptop mit USB-Sticks ohne jede Internetanbindung"
 
 #. type: Plain text
 #: _docs/Building_a_Signing_Server.md
@@ -1490,10 +1499,8 @@ msgstr "Diese Metadaten-Dateien sind einfache, leicht zu bearbeitende Textdateie
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-#, fuzzy
-#| msgid "_.yml_ files in [YAML](http://www.yaml.org/start.html) format, used by f-droid.org"
 msgid "Metadata files are written in [YAML](http://www.yaml.org/start.html) format"
-msgstr "_.yml_-Dateien im [YAML](http://www.yaml.org/start.html)-Format, das von f-droid.org verwendet wird"
+msgstr "Metadaten-Dateien sind im [YAML](http://www.yaml.org/start.html)-Format geschrieben"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -1623,10 +1630,8 @@ msgstr ""
 
 #. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
-#, fuzzy
-#| msgid "_OpenCollective_<a name=\"OpenCollective\"></a>"
 msgid "[_OpenCollective_](#OpenCollective)"
-msgstr "_OpenCollective_<a name=\"OpenCollective\"></a>"
+msgstr "[_OpenCollective_](#OpenCollective)"
 
 #. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
@@ -2063,24 +2068,18 @@ msgstr "Name (_Name_)<a name=\"Name\"></a>"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-#, fuzzy
-#| msgid "The name of the application. Normally, this field should not be present since the application’s correct name is retrieved from the APK file.  However, in a situation where an APK contains a bad or missing application name, it can be overridden using this. Note that this only overrides the name in the list of apps presented in the client; it doesn’t change the name or application label in the source code."
 msgid "The title of the application, with optional descriptive phrase. This field will override all other sources of the application name, including scraped from the APK and from [localized metadata](../All_About_Descriptions_Graphics_and_Screenshots).  Setting _Name_ is usually not needed, since the application’s correct name is retrieved from the APK file.  However, in a situation where an APK contains a bad or missing application name, it can be overridden using this. Note that this only overrides the name in the list of apps presented in the client; it doesn’t change the name or application label in the source code."
-msgstr "Der Name der Anwendung. Normalerweise sollte dieses Feld nicht vorhanden sein, da der korrekte Name der Anwendung aus der APK-Datei bezogen wird.  In Situationen, in denen ein APK einen fehlerhaften oder keinen Anwendungsnamen enthält, kann dies jedoch hiermit korrigiert werden. Zu beachten ist, dass damit lediglich der Name in der App-Liste, die im Client erscheint, korrigiert wird; der Name oder die App-Bezeichnung im Quelltext bleibt unverändert."
+msgstr "Die Bezeichnung der Anwendung, wahlweise mit einem beschreibenden Satz. Dieses Feld überschreibt alle anderen Quellen des Anwendungsnamens, einschließlich den aus dem APK und den [lokalisierten Metadaten](../All_About_Descriptions_Graphics_and_Screenshots)gewonnenen. Die Festlegung des _Name_ ist normalerweise nicht nötig, da der korrekte Name der Anwendung aus der APK-Datei bezogen wird.  In Situationen, in denen ein APK einen fehlerhaften oder keinen Anwendungsnamen enthält, kann dies jedoch hiermit korrigiert werden. Zu beachten ist, dass damit lediglich der Name in der App-Liste, die im Client erscheint, korrigiert wird; der Name oder die App-Bezeichnung im Quelltext bleibt unverändert."
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-#, fuzzy
-#| msgid "4000 char limit"
 msgid "__50 character limit__"
-msgstr "Auf 4000 Zeichen begrenzt"
+msgstr "__Auf 50 Zeichen begrenzt__"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-#, fuzzy
-#| msgid "__Warning__: this overrides all Name entries [set in the app's source code](../All_About_Descriptions_Graphics_and_Screenshots)."
 msgid "__Warning__: this overrides all _Name_/_title_ entries [set in the app's source code](../All_About_Descriptions_Graphics_and_Screenshots)."
-msgstr "__Achtung__: Dies ist allen [im App-Quellcode festgelegten](../All_About_Descriptions_Graphics_and_Screenshots) Namenseinträgen übergeordnet."
+msgstr "__Achtung__: Dies ist allen [im App-Quellcode festgelegten](../All_About_Descriptions_Graphics_and_Screenshots) Einträgen zu _Name_/_title_ übergeordnet."
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -2281,24 +2280,18 @@ msgstr "Zusammenfassung (_Summary_)<a name=\"Summary\"></a>"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-#, fuzzy
-#| msgid "A brief summary of what the application is. Since the summary is only allowed one line on the list of the F-Droid client, keeping it to within 80 characters will ensure it fits most screens."
 msgid "A brief summary of what the application is.  The _Summary_ is used in the app list and tile views of the F-Droid client, and as a sub-headline in some other views."
-msgstr "Eine Kurzbeschreibung, um was es bei der Anwendung geht. Da die Zusammenfassung in der Liste des F-Droid-Clients nur eine Zeile lang sein darf, sollten 80 Zeichen nicht überschritten werden, um die Anzeige auf den meisten Bildschirmen zu gewährleisten."
+msgstr "Eine Kurzbeschreibung, um was es bei der Anwendung geht. Die _Zusammenfassung_ wird in der App-Liste und in der Kachelansicht des F-Droid-Clients verwendet sowie als Untertitel in einigen anderen Ansichten."
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-#, fuzzy
-#| msgid "4000 char limit"
 msgid "__80 character limit__"
-msgstr "Auf 4000 Zeichen begrenzt"
+msgstr "__Auf 80 Zeichen begrenzt__"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-#, fuzzy
-#| msgid "__Warning__: this overrides all Description entries [set in the app's source code](../All_About_Descriptions_Graphics_and_Screenshots)."
 msgid "__Warning__: this overrides all _Summary_ aka \"short description\" entries [set in the app's source code](../All_About_Descriptions_Graphics_and_Screenshots)."
-msgstr "__Achtung__: Dies ist allen [im App-Quellcode festgelegten](../All_About_Descriptions_Graphics_and_Screenshots) Beschreibungen übergeordnet."
+msgstr "__Achtung__: Dies ist allen [im App-Quellcode festgelegten](../All_About_Descriptions_Graphics_and_Screenshots), auch als „Kurzbeschreibung“ bekannten, _Summary_-Einträgen übergeordnet."
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -2349,17 +2342,13 @@ msgstr "Es kann hilfreich sein Informationen zu vermerken, die Änderungen gegen
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-#, fuzzy
-#| msgid "4000 char limit"
 msgid "__4000 character limit__"
-msgstr "Auf 4000 Zeichen begrenzt"
+msgstr "__Auf 4000 Zeichen begrenzt__"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-#, fuzzy
-#| msgid "__Warning__: this overrides all Description entries [set in the app's source code](../All_About_Descriptions_Graphics_and_Screenshots)."
 msgid "__Warning__: this overrides all _Description_ aka \"full description\" entries [set in the app's source code](../All_About_Descriptions_Graphics_and_Screenshots)."
-msgstr "__Achtung__: Dies ist allen [im App-Quellcode festgelegten](../All_About_Descriptions_Graphics_and_Screenshots) Beschreibungen übergeordnet."
+msgstr "__Achtung__: Dies ist allen [im App-Quellcode festgelegten](../All_About_Descriptions_Graphics_and_Screenshots) _Description_-Einträgen oder auch „ausführlichen Beschreibungen“ übergeordnet."
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -2501,17 +2490,15 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-#, fuzzy, no-wrap
-#| msgid "_AutoName_<a name=\"AutoName\"></a>"
+#, no-wrap
 msgid "`versionName: xxx`<a name=\"build_versionName\"></a>\n"
-msgstr "Automatischer Name (_AutoName_)<a name=\"AutoName\"></a>"
+msgstr "`versionName: xxx`<a name=\"build_versionName\"></a>\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-#, fuzzy, no-wrap
-#| msgid "_CurrentVersionCode_<a name=\"CurrentVersionCode\"></a>"
+#, no-wrap
 msgid "`versionCode: yyy`<a name=\"build_versionCode\"></a>\n"
-msgstr "Aktueller Versionscode (_CurrentVersionCode_)<a name=\"CurrentVersionCode\"></a>"
+msgstr "`versionCode: yyy`<a name=\"build_versionCode\"></a>\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -2521,10 +2508,9 @@ msgstr ":   Bestimmt die Erstellung der Version xxx, die den Versionscode yyy be
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-#, fuzzy, no-wrap
-#| msgid "_Bitcoin_<a name=\"Bitcoin\"></a>"
+#, no-wrap
 msgid "`commit: xxx`<a name=\"build_commit\"></a>\n"
-msgstr "Bitcoin (_Bitcoin_)<a name=\"Bitcoin\"></a>"
+msgstr "`commit: xxx`<a name=\"build_commit\"></a>\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -2543,10 +2529,9 @@ msgstr "Neben den drei oben beschriebenen, immer erforderlichen Parametern, kön
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-#, fuzzy, no-wrap
-#| msgid "_Disabled_<a name=\"Disabled\"></a>"
+#, no-wrap
 msgid "`disable: <message>`<a name=\"build_disable\"></a>\n"
-msgstr "Deaktiviert (_Disabled_)<a name=\"Disabled\"></a>"
+msgstr "`disable: <Meldung>`<a name=\"build_disable\"></a>\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -2580,10 +2565,9 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-#, fuzzy, no-wrap
-#| msgid "_Builds_<a name=\"Builds\"></a>"
+#, no-wrap
 msgid "`subdir: <path>`<a name=\"build_subdir\"></a>\n"
-msgstr "Builds (_Builds_)<a name=\"Builds\"></a>"
+msgstr "`subdir: <Pfad>`<a name=\"build_subdir\"></a>\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -2617,10 +2601,9 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-#, fuzzy, no-wrap
-#| msgid "_Builds_<a name=\"Builds\"></a>"
+#, no-wrap
 msgid "`sudo: xxxx`<a name=\"build_sudo\"></a>\n"
-msgstr "Builds (_Builds_)<a name=\"Builds\"></a>"
+msgstr "`sudo: xxxx`<a name=\"build_sudo\"></a>\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -2644,10 +2627,9 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-#, fuzzy, no-wrap
-#| msgid "_Litecoin_<a name=\"Litecoin\"></a>"
+#, no-wrap
 msgid "`timeout: <seconds>`<a name=\"build_timeout\"></a>\n"
-msgstr "Litecoin (_Litecoin_)<a name=\"Litecoin\"></a>"
+msgstr "`timeout: <Sekunden>`<a name=\"build_timeout\"></a>\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -2673,10 +2655,9 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-#, fuzzy, no-wrap
-#| msgid "Adding<a name=\"Adding\"></a>"
+#, no-wrap
 msgid "`init: xxxx`<a name=\"build_init\"></a>\n"
-msgstr "Hinzufügen<a name=\"Adding\"></a>"
+msgstr "`init: xxxx`<a name=\"build_init\"></a>\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -2706,10 +2687,9 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-#, fuzzy, no-wrap
-#| msgid "_Builds_<a name=\"Builds\"></a>"
+#, no-wrap
 msgid "`oldsdkloc: yes`<a name=\"build_oldsdkloc\"></a>\n"
-msgstr "Builds (_Builds_)<a name=\"Builds\"></a>"
+msgstr "`oldsdkloc: yes`<a name=\"build_oldsdkloc\"></a>\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -2810,10 +2790,9 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-#, fuzzy, no-wrap
-#| msgid "_Litecoin_<a name=\"Litecoin\"></a>"
+#, no-wrap
 msgid "`encoding: xxxx`<a name=\"build_encoding\"></a>\n"
-msgstr "Litecoin (_Litecoin_)<a name=\"Litecoin\"></a>"
+msgstr "`encoding: xxxx`<a name=\"build_encoding\"></a>\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -2833,10 +2812,9 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-#, fuzzy, no-wrap
-#| msgid "_CurrentVersion_<a name=\"CurrentVersion\"></a>"
+#, no-wrap
 msgid "`forceversion: yes`<a name=\"build_forceversion\"></a>\n"
-msgstr "Aktuelle Version (_CurrentVersion_)<a name=\"CurrentVersion\"></a>"
+msgstr "`forceversion: yes`<a name=\"build_forceversion\"></a>\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -2866,10 +2844,9 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-#, fuzzy, no-wrap
-#| msgid "_SourceCode_<a name=\"SourceCode\"></a>"
+#, no-wrap
 msgid "`forcevercode: yes`<a name=\"build_forcevercode\"></a>\n"
-msgstr "Quelltext (_SourceCode_)<a name=\"SourceCode\"></a>"
+msgstr "`forcevercode: yes`<a name=\"build_forcevercode\"></a>\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -2935,10 +2912,9 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-#, fuzzy, no-wrap
-#| msgid "`srclibs: [n:]a@r,[n:]b@r1,...`"
+#, no-wrap
 msgid "`srclibs: [n:]a@r,[n:]b@r1,...`<a name=\"build_srclibs\"></a>\n"
-msgstr "`srclibs: [n:]a@r,[n:]b@r1,...`"
+msgstr "`srclibs: [n:]a@r,[n:]b@r1,...`<a name=\"build_srclibs\"></a>\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -3073,10 +3049,9 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-#, fuzzy, no-wrap
-#| msgid "_Builds_<a name=\"Builds\"></a>"
+#, no-wrap
 msgid "`prebuild: xxxx`<a name=\"build_prebuild\"></a>\n"
-msgstr "Builds (_Builds_)<a name=\"Builds\"></a>"
+msgstr "`prebuild: xxxx`<a name=\"build_prebuild\"></a>\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -3208,10 +3183,9 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-#, fuzzy, no-wrap
-#| msgid "_Builds_<a name=\"Builds\"></a>"
+#, no-wrap
 msgid "`build: xxxx`<a name=\"build_build\"></a>\n"
-msgstr "Builds (_Builds_)<a name=\"Builds\"></a>"
+msgstr "`build: xxxx`<a name=\"build_build\"></a>\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -3307,10 +3281,9 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-#, fuzzy, no-wrap
-#| msgid "_Builds_<a name=\"Builds\"></a>"
+#, no-wrap
 msgid "`ndk: <version>`<a name=\"build_ndk\"></a>\n"
-msgstr "Builds (_Builds_)<a name=\"Builds\"></a>"
+msgstr "`ndk: <Version>`<a name=\"build_ndk\"></a>\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -3459,10 +3432,9 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-#, fuzzy, no-wrap
-#| msgid "`output: glob/to/output.apk`"
+#, no-wrap
 msgid "`output: glob/to/output.apk`<a name=\"build_output\"></a>\n"
-msgstr "`output: glob/to/output.apk`"
+msgstr "`output: glob/to/output.apk`<a name=\"build_output\"></a>\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -4248,17 +4220,7 @@ msgstr "Es ist auch möglich, QEMU/KVM-Gast-VMs über libvirt anstelle des stand
 
 #. type: Fenced code block (console)
 #: _docs/Build_Server_Setup.md
-#, fuzzy, no-wrap
-#| msgid ""
-#| "root:~# apt-get install vagrant vagrant-mutate vagrant-libvirt ebtables dnsmasq-base \\\n"
-#| "        python3-libvirt libvirt-clients libvirt-daemon-system qemu-kvm qemu-utils git \\\n"
-#| "        python3-yaml python3-clint python3-vagrant python3-pyasn1 python3-pyasn1-modules\n"
-#| "root:~# cat << EOF >> /etc/libvirt/qemu.conf\n"
-#| "user = \"libvirt\"\n"
-#| "group = \"libvirt\"\n"
-#| "dynamic_ownership = 1\n"
-#| "EOF\n"
-#| "root:~# service libvirtd restart\n"
+#, no-wrap
 msgid ""
 "root:~# apt-get install vagrant vagrant-mutate vagrant-libvirt ebtables dnsmasq-base \\\n"
 "        python3-libvirt libvirt-clients libvirt-daemon-system qemu-kvm qemu-utils git \\\n"
@@ -4273,7 +4235,8 @@ msgid ""
 msgstr ""
 "root:~# apt-get install vagrant vagrant-mutate vagrant-libvirt ebtables dnsmasq-base \\\n"
 "        python3-libvirt libvirt-clients libvirt-daemon-system qemu-kvm qemu-utils git \\\n"
-"        python3-yaml python3-clint python3-vagrant python3-pyasn1 python3-pyasn1-modules\n"
+"        python3-yaml python3-clint python3-vagrant python3-pyasn1 python3-pyasn1-modules \\\n"
+"        python3-requests python3-git\n"
 "root:~# cat << EOF >> /etc/libvirt/qemu.conf\n"
 "user = \"libvirt\"\n"
 "group = \"libvirt\"\n"
@@ -7298,7 +7261,7 @@ msgstr ""
 #. type: Plain text
 #: _docs/Installing_the_Server_and_Repo_Tools.md
 msgid "You can find variations on this used in the CI tests: https://gitlab.com/fdroid/fdroidserver/blob/master/.gitlab-ci.yml"
-msgstr "Variationen hierzu finden Sie in den CI-Tests: <https://gitlab.com/fdroid/fdroidserver/blob/master/.gitlab-ci.yml>"
+msgstr "Variationen hierzu finden Sie in den CI-Tests: https://gitlab.com/fdroid/fdroidserver/blob/master/.gitlab-ci.yml"
 
 #. type: Title ##
 #: _docs/Installing_the_Server_and_Repo_Tools.md
@@ -8126,27 +8089,13 @@ msgstr "F-Droid-Client, App für Android"
 
 #. type: Bullet: '-   '
 #: _docs/Release_Channels_and_Signing_Keys.md
-#, fuzzy
-#| msgid "git clone https://gitlab.com/fdroid/fdroiddata.git\n"
 msgid "git repo: <https://gitlab.com/fdroid/fdroidclient>"
-msgstr "git clone https://gitlab.com/fdroid/fdroiddata.git\n"
+msgstr "git repo: <https://gitlab.com/fdroid/fdroidclient>"
 
 #. type: Bullet: '    -   '
 #: _docs/Release_Channels_and_Signing_Keys.md
-#, fuzzy
-#| msgid ""
-#| "-   git repo: <https://gitlab.com/fdroid/privileged-extension>\n"
-#| "    -   git tags signed by \"Hans-Christoph Steiner\n"
-#| "        \\<hans@guardianproject.info>\" aka \"Hans-Christoph Steiner\n"
-#| "        \\<hans@eds.org>\" aka \"Hans-Christoph Steiner\n"
-#| "        \\<hans@at.or.at>\" with fingerprint: <br/>`EE66 20C7 136B 0D2C 456C 0A4D E9E2 8DEA 00AA 5556`\n"
 msgid "git tags signed by \"Hans-Christoph Steiner \\<hans@guardianproject.info>\" aka \"Hans-Christoph Steiner \\<hans@eds.org>\" aka \"Hans-Christoph Steiner \\<hans@at.or.at>\" with fingerprint: <br /> `EE66 20C7 136B 0D2C 456C 0A4D E9E2 8DEA 00AA 5556`"
-msgstr ""
-"-   Git-Repo: <https://gitlab.com/fdroid/privileged-extension>\n"
-"    -   Git-Tags signiert durch „Hans-Christoph Steiner\n"
-"        <hans@guardianproject.info>“, alias „Hans-Christoph Steiner\n"
-"        <hans@eds.org>“, alias „Hans-Christoph Steiner\n"
-"        <hans@at.or.at>“ mit Hashwert: <br/>`EE66 20C7 136B 0D2C 456C 0A4D E9E2 8DEA 00AA 5556`\n"
+msgstr "Git-Tags signiert durch „Hans-Christoph Steiner \\<hans@guardianproject.info>“, alias „Hans-Christoph Steiner \\<hans@eds.org>“, alias „Hans-Christoph Steiner \\<hans@at.or.at>“ mit Hashwert: <br /> `EE66 20C7 136B 0D2C 456C 0A4D E9E2 8DEA 00AA 5556`"
 
 #. type: Bullet: '    -   '
 #: _docs/Release_Channels_and_Signing_Keys.md
@@ -8161,7 +8110,7 @@ msgstr "offizielle binäre Veröffentlichungen: <https://f-droid.org/repository/
 #. type: Bullet: '    -   '
 #: _docs/Release_Channels_and_Signing_Keys.md
 msgid "GPG signing key: \"F-Droid \\<admin@f-droid.org>\""
-msgstr "GPG signing key: \"F-Droid \\<admin@f-droid.org>\""
+msgstr "GPG-Signierschlüssel: „F-Droid \\<admin@f-droid.org>“"
 
 #. type: Bullet: '    -   '
 #: _docs/Release_Channels_and_Signing_Keys.md
@@ -8341,10 +8290,8 @@ msgstr "fdroidserver"
 
 #. type: Bullet: '-   '
 #: _docs/Release_Channels_and_Signing_Keys.md
-#, fuzzy
-#| msgid "$ git clone https://gitlab.com/fdroid/fdroid-website\n"
 msgid "git repo: <https://gitlab.com/fdroid/fdroidserver>"
-msgstr "$ git clone https://gitlab.com/fdroid/fdroid-website\n"
+msgstr "Git-Repo: <https://gitlab.com/fdroid/fdroidserver>"
 
 #. type: Bullet: '    -   '
 #: _docs/Release_Channels_and_Signing_Keys.md
@@ -8358,26 +8305,8 @@ msgstr "Quellpaket: <https://pypi.python.org/pypi/fdroidserver>"
 
 #. type: Bullet: '    -   '
 #: _docs/Release_Channels_and_Signing_Keys.md
-#, fuzzy
-#| msgid ""
-#| "-   source package: <https://pypi.python.org/pypi/fdroidserver>\n"
-#| "    -   package tags signed by \"Hans-Christoph Steiner\n"
-#| "        \\<hans@guardianproject.info>\" aka \"Hans-Christoph Steiner\n"
-#| "        \\<hans@eds.org>\" aka \"Hans-Christoph Steiner\n"
-#| "        \\<hans@at.or.at>\" with fingerprint: <br />\n"
-#| "        `EE66 20C7 136B 0D2C 456C 0A4D E9E2 8DEA 00AA 5556`\n"
-#| "        or previously <br />`5E61 C878 0F86 295C E17D 8677 9F0F E587 374B BE81`\n"
-#| "    -   release command: `python3 setup.py sdist upload --sign`\n"
 msgid "package tags signed by \"Hans-Christoph Steiner \\<hans@guardianproject.info>\" aka \"Hans-Christoph Steiner \\<hans@eds.org>\" aka \"Hans-Christoph Steiner \\<hans@at.or.at>\" with fingerprint: <br /> `EE66 20C7 136B 0D2C 456C 0A4D E9E2 8DEA 00AA 5556` or previously <br />`5E61 C878 0F86 295C E17D 8677 9F0F E587 374B BE81`"
-msgstr ""
-"-   Paketquelle: <https://pypi.python.org/pypi/fdroidserver>\n"
-"    -   Paket-Tags signiert durch „Hans-Christoph Steiner\n"
-"        <hans@guardianproject.info>“, alias „Hans-Christoph Steiner\n"
-"        <hans@eds.org>“, alias „Hans-Christoph Steiner\n"
-"        <hans@at.or.at>“ mit Hashwert: <br />\n"
-"        `EE66 20C7 136B 0D2C 456C 0A4D E9E2 8DEA 00AA 5556`\n"
-"        oder früher <br />`5E61 C878 0F86 295C E17D 8677 9F0F E587 374B BE81`\n"
-"    -   Abrufbefehl: `python3 setup.py sdist upload --sign`\n"
+msgstr "Paket-Tags signiert durch „Hans-Christoph Steiner \\<hans@guardianproject.info>“, alias „Hans-Christoph Steiner \\<hans@eds.org>“, alias „Hans-Christoph Steiner \\<hans@at.or.at>“ mit Hashwert: <br /> `EE66 20C7 136B 0D2C 456C 0A4D E9E2 8DEA 00AA 5556` oder früher <br />`5E61 C878 0F86 295C E17D 8677 9F0F E587 374B BE81`"
 
 #. type: Bullet: '    -   '
 #: _docs/Release_Channels_and_Signing_Keys.md
@@ -8386,47 +8315,23 @@ msgstr ""
 
 #. type: Bullet: '-   '
 #: _docs/Release_Channels_and_Signing_Keys.md
-#, fuzzy
-#| msgid "update [Debian package](https://anonscm.debian.org/git/collab-maint/fdroidserver.git)"
 msgid "official Debian package: <https://packages.debian.org/fdroidserver>"
-msgstr "[Debian Paket](https://anonscm.debian.org/git/collab-maint/fdroidserver.git) aktualisieren"
+msgstr "offizielles Debian-Paket: <https://packages.debian.org/fdroidserver>"
 
 #. type: Bullet: '    -   '
 #: _docs/Release_Channels_and_Signing_Keys.md
-#, fuzzy
-#| msgid "update [Debian package](https://anonscm.debian.org/git/collab-maint/fdroidserver.git)"
 msgid "package source: <https://anonscm.debian.org/git/collab-maint/fdroidserver.git>"
-msgstr "[Debian Paket](https://anonscm.debian.org/git/collab-maint/fdroidserver.git) aktualisieren"
+msgstr "Paketquelle: <https://anonscm.debian.org/git/collab-maint/fdroidserver.git>"
 
 #. type: Bullet: '    -   '
 #: _docs/Release_Channels_and_Signing_Keys.md
-#, fuzzy
-#| msgid ""
-#| "-   source package: <https://pypi.python.org/pypi/fdroidserver>\n"
-#| "    -   package tags signed by \"Hans-Christoph Steiner\n"
-#| "        \\<hans@guardianproject.info>\" aka \"Hans-Christoph Steiner\n"
-#| "        \\<hans@eds.org>\" aka \"Hans-Christoph Steiner\n"
-#| "        \\<hans@at.or.at>\" with fingerprint: <br />\n"
-#| "        `EE66 20C7 136B 0D2C 456C 0A4D E9E2 8DEA 00AA 5556`\n"
-#| "        or previously <br />`5E61 C878 0F86 295C E17D 8677 9F0F E587 374B BE81`\n"
-#| "    -   release command: `python3 setup.py sdist upload --sign`\n"
 msgid "package tags signed by \"Hans-Christoph Steiner \\<hans@guardianproject.info>\" aka \"Hans-Christoph Steiner \\<hans@eds.org>\" aka \"Hans-Christoph Steiner \\<hans@at.or.at>\" with fingerprint: <br/> `EE66 20C7 136B 0D2C 456C 0A4D E9E2 8DEA 00AA 5556` or previously <br /> `5E61 C878 0F86 295C E17D 8677 9F0F E587 374B BE81`"
-msgstr ""
-"-   Paketquelle: <https://pypi.python.org/pypi/fdroidserver>\n"
-"    -   Paket-Tags signiert durch „Hans-Christoph Steiner\n"
-"        <hans@guardianproject.info>“, alias „Hans-Christoph Steiner\n"
-"        <hans@eds.org>“, alias „Hans-Christoph Steiner\n"
-"        <hans@at.or.at>“ mit Hashwert: <br />\n"
-"        `EE66 20C7 136B 0D2C 456C 0A4D E9E2 8DEA 00AA 5556`\n"
-"        oder früher <br />`5E61 C878 0F86 295C E17D 8677 9F0F E587 374B BE81`\n"
-"    -   Abrufbefehl: `python3 setup.py sdist upload --sign`\n"
+msgstr "Paket-Tags signiert durch „Hans-Christoph Steiner \\<hans@guardianproject.info>“, alias „Hans-Christoph Steiner \\<hans@eds.org>“, alias „Hans-Christoph Steiner \\<hans@at.or.at>“ mit Hashwert: <br /> `EE66 20C7 136B 0D2C 456C 0A4D E9E2 8DEA 00AA 5556` oder früher <br />`5E61 C878 0F86 295C E17D 8677 9F0F E587 374B BE81`"
 
 #. type: Bullet: '-   '
 #: _docs/Release_Channels_and_Signing_Keys.md
-#, fuzzy
-#| msgid "upload to [F-Droid PPA](https://launchpad.net/~fdroid/+archive/ubuntu/fdroidserver)"
 msgid "official Ubuntu PPA: <https://launchpad.net/~fdroid/+archive/ubuntu/fdroidserver>"
-msgstr "auf [F-Droid PPA](https://launchpad.net/~fdroid/+archive/ubuntu/fdroidserver) hochladen"
+msgstr "offizielles Ubuntu-PPA: <https://launchpad.net/~fdroid/+archive/ubuntu/fdroidserver>"
 
 #. type: Bullet: '    - '
 #: _docs/Release_Channels_and_Signing_Keys.md
@@ -8435,13 +8340,7 @@ msgstr "Fingerprint: `9AAC 2531 93B6 5D4D F1D0 A13E EC46 32C7 9C5E 0151`"
 
 #. type: Plain text
 #: _docs/Release_Channels_and_Signing_Keys.md
-#, fuzzy, no-wrap
-#| msgid ""
-#| "    ```bash\n"
-#| "    sudo add-apt-repository ppa:fdroid/fdroidserver\n"
-#| "    sudo apt-get update\n"
-#| "    sudo apt-get install fdroidserver\n"
-#| "    ```\n"
+#, no-wrap
 msgid ""
 "    - how to setup:\n"
 "    ```bash\n"
@@ -8450,6 +8349,7 @@ msgid ""
 "    sudo apt-get install fdroidserver\n"
 "    ```\n"
 msgstr ""
+"    - Einrichtung durch:\n"
 "    ```bash\n"
 "    sudo add-apt-repository ppa:fdroid/fdroidserver\n"
 "    sudo apt-get update\n"
@@ -8464,25 +8364,13 @@ msgstr "Repomaker"
 
 #. type: Bullet: '-   '
 #: _docs/Release_Channels_and_Signing_Keys.md
-#, fuzzy
-#| msgid "git clone https://gitlab.com/fdroid/fdroiddata.git\n"
 msgid "git repo: <https://gitlab.com/fdroid/repomaker>"
-msgstr "git clone https://gitlab.com/fdroid/fdroiddata.git\n"
+msgstr "Git-Repo: <https://gitlab.com/fdroid/repomaker>"
 
 #. type: Bullet: '    -   '
 #: _docs/Release_Channels_and_Signing_Keys.md
-#, fuzzy
-#| msgid ""
-#| "-   git repo: <https://gitlab.com/fdroid/repomaker>\n"
-#| "    -   git tags signed by\n"
-#| "        \"Nico Alt \\<nicoalt@posteo.de>\" with fingerprint: <br />\n"
-#| "        `558B E907 1CA6 CA44 DBF5 576B 95A0 DAF7 DBC7 B548`\n"
 msgid "git tags signed by \"Nico Alt \\<nicoalt@posteo.de>\" with fingerprint: <br /> `558B E907 1CA6 CA44 DBF5 576B 95A0 DAF7 DBC7 B548`"
-msgstr ""
-"-   Git-Repo: <https://gitlab.com/fdroid/repomaker>\n"
-"    -   Git-Tags signiert durch\n"
-"        „Nico Alt \\<nicoalt@posteo.de>“ mit Hashwert: <br />\n"
-"        `558B E907 1CA6 CA44 DBF5 576B 95A0 DAF7 DBC7 B548`\n"
+msgstr "Git-Tags signiert durch „Nico Alt \\<nicoalt@posteo.de>“ mit Hashwert: <br /> `558B E907 1CA6 CA44 DBF5 576B 95A0 DAF7 DBC7 B548`"
 
 #. type: Bullet: '-   '
 #: _docs/Release_Channels_and_Signing_Keys.md
@@ -8491,18 +8379,8 @@ msgstr "Quellpaket: <https://pypi.python.org/pypi/repomaker>"
 
 #. type: Bullet: '    -   '
 #: _docs/Release_Channels_and_Signing_Keys.md
-#, fuzzy
-#| msgid ""
-#| "-   git repo: <https://gitlab.com/fdroid/repomaker>\n"
-#| "    -   git tags signed by\n"
-#| "        \"Nico Alt \\<nicoalt@posteo.de>\" with fingerprint: <br />\n"
-#| "        `558B E907 1CA6 CA44 DBF5 576B 95A0 DAF7 DBC7 B548`\n"
 msgid "package tags signed by \"Nico Alt \\<nicoalt@posteo.de>\" with fingerprint: <br /> `558B E907 1CA6 CA44 DBF5 576B 95A0 DAF7 DBC7 B548`"
-msgstr ""
-"-   Git-Repo: <https://gitlab.com/fdroid/repomaker>\n"
-"    -   Git-Tags signiert durch\n"
-"        „Nico Alt \\<nicoalt@posteo.de>“ mit Hashwert: <br />\n"
-"        `558B E907 1CA6 CA44 DBF5 576B 95A0 DAF7 DBC7 B548`\n"
+msgstr "Paket-Tags signiert durch „Nico Alt \\<nicoalt@posteo.de>“ mit Hashwert: <br /> `558B E907 1CA6 CA44 DBF5 576B 95A0 DAF7 DBC7 B548`"
 
 #. type: Title ##
 #: _docs/Release_Channels_and_Signing_Keys.md
@@ -8512,27 +8390,13 @@ msgstr "Rechteerweiterung"
 
 #. type: Bullet: '-   '
 #: _docs/Release_Channels_and_Signing_Keys.md
-#, fuzzy
-#| msgid "$ git clone https://gitlab.com/fdroid/fdroid-website\n"
 msgid "git repo: <https://gitlab.com/fdroid/privileged-extension>"
-msgstr "$ git clone https://gitlab.com/fdroid/fdroid-website\n"
+msgstr "Git-Repo: <https://gitlab.com/fdroid/privileged-extension>"
 
 #. type: Bullet: '    -   '
 #: _docs/Release_Channels_and_Signing_Keys.md
-#, fuzzy
-#| msgid ""
-#| "-   git repo: <https://gitlab.com/fdroid/privileged-extension>\n"
-#| "    -   git tags signed by \"Hans-Christoph Steiner\n"
-#| "        \\<hans@guardianproject.info>\" aka \"Hans-Christoph Steiner\n"
-#| "        \\<hans@eds.org>\" aka \"Hans-Christoph Steiner\n"
-#| "        \\<hans@at.or.at>\" with fingerprint: <br/>`EE66 20C7 136B 0D2C 456C 0A4D E9E2 8DEA 00AA 5556`\n"
 msgid "git tags signed by \"Hans-Christoph Steiner \\<hans@guardianproject.info>\" aka \"Hans-Christoph Steiner \\<hans@eds.org>\" aka \"Hans-Christoph Steiner \\<hans@at.or.at>\" with fingerprint: <br/>`EE66 20C7 136B 0D2C 456C 0A4D E9E2 8DEA 00AA 5556`"
-msgstr ""
-"-   Git-Repo: <https://gitlab.com/fdroid/privileged-extension>\n"
-"    -   Git-Tags signiert durch „Hans-Christoph Steiner\n"
-"        <hans@guardianproject.info>“, alias „Hans-Christoph Steiner\n"
-"        <hans@eds.org>“, alias „Hans-Christoph Steiner\n"
-"        <hans@at.or.at>“ mit Hashwert: <br/>`EE66 20C7 136B 0D2C 456C 0A4D E9E2 8DEA 00AA 5556`\n"
+msgstr "Git-Tags signiert durch „Hans-Christoph Steiner \\<hans@guardianproject.info>“, alias „Hans-Christoph Steiner \\<hans@eds.org>“, alias „Hans-Christoph Steiner \\<hans@at.or.at>“ mit Hashwert: <br /> `EE66 20C7 136B 0D2C 456C 0A4D E9E2 8DEA 00AA 5556`"
 
 #. type: Title ##
 #: _docs/Release_Channels_and_Signing_Keys.md
@@ -8542,33 +8406,13 @@ msgstr "F-Droid Jekyll Plugin"
 
 #. type: Bullet: '-   '
 #: _docs/Release_Channels_and_Signing_Keys.md
-#, fuzzy
-#| msgid "git clone https://gitlab.com/fdroid/fdroiddata.git\n"
 msgid "git repo: <https://gitlab.com/fdroid/jekyll-fdroid>"
-msgstr "git clone https://gitlab.com/fdroid/fdroiddata.git\n"
+msgstr "Git-Repo: <https://gitlab.com/fdroid/jekyll-fdroid>"
 
 #. type: Bullet: '    -   '
 #: _docs/Release_Channels_and_Signing_Keys.md
-#, fuzzy
-#| msgid ""
-#| "-   git repo: <https://gitlab.com/fdroid/jekyll-fdroid>\n"
-#| "    -   git tags signed by \"Hans-Christoph Steiner\n"
-#| "        \\<hans@guardianproject.info>\" aka \"Hans-Christoph Steiner\n"
-#| "        \\<hans@eds.org>\" aka \"Hans-Christoph Steiner\n"
-#| "        \\<hans@at.or.at>\" with fingerprint: <br />\n"
-#| "        `EE66 20C7 136B 0D2C 456C 0A4D E9E2 8DEA 00AA 5556`\n"
-#| "        or \"Nico Alt \\<nicoalt@posteo.de>\" with fingerprint: <br />\n"
-#| "        `558B E907 1CA6 CA44 DBF5 576B 95A0 DAF7 DBC7 B548`\n"
 msgid "git tags signed by \"Hans-Christoph Steiner \\<hans@guardianproject.info>\" aka \"Hans-Christoph Steiner \\<hans@eds.org>\" aka \"Hans-Christoph Steiner \\<hans@at.or.at>\" with fingerprint: <br /> `EE66 20C7 136B 0D2C 456C 0A4D E9E2 8DEA 00AA 5556` or \"Nico Alt \\<nicoalt@posteo.de>\" with fingerprint: <br /> `558B E907 1CA6 CA44 DBF5 576B 95A0 DAF7 DBC7 B548`"
-msgstr ""
-"-   Git-Repo: <https://gitlab.com/fdroid/fdroidserver>\n"
-"    -   Git-Tags signiert durch „Hans-Christoph Steiner \\<hans@guardianproject.info>“,\n"
-"        alias „Hans-Christoph Steiner \\<hans@eds.org>“,\n"
-"        alias „Hans-Christoph Steiner \\<hans@at.or.at>“\n"
-"        mit Hashwert: <br />\n"
-"        `EE66 20C7 136B 0D2C 456C 0A4D E9E2 8DEA 00AA 5556`\n"
-"    -   oder „Nico Alt \\<nicoalt@posteo.org>“ mit Hashwert: <br />\n"
-"        `558B E907 1CA6 CA44 DBF5 576B 95A0 DAF7 DBC7 B548`\n"
+msgstr "Git-Tags signiert durch „Hans-Christoph Steiner \\<hans@guardianproject.info>“, alias „Hans-Christoph Steiner \\<hans@eds.org>“, alias „Hans-Christoph Steiner \\<hans@at.or.at>“ mit Hashwert: <br /> `EE66 20C7 136B 0D2C 456C 0A4D E9E2 8DEA 00AA 5556` oder „Nico Alt \\<nicoalt@posteo.org>“ mit Hashwert: <br /> `558B E907 1CA6 CA44 DBF5 576B 95A0 DAF7 DBC7 B548`"
 
 #. type: YAML Front Matter: title
 #: _docs/Repository_Style_Guide.md
@@ -8927,12 +8771,12 @@ msgstr "Hier sind zwei Beispiele, bei denen ich denke, dass alle Unterschiede nu
 #. type: Bullet: '* '
 #: _docs/Reproducible_Builds.md
 msgid "https://verification.f-droid.org/de.nico.asura_12.apk.diffoscope.html"
-msgstr "<https://verification.f-droid.org/de.nico.asura_12.apk.diffoscope.html>"
+msgstr "https://verification.f-droid.org/de.nico.asura_12.apk.diffoscope.html"
 
 #. type: Bullet: '* '
 #: _docs/Reproducible_Builds.md
 msgid "https://verification.f-droid.org/de.nico.ha_manager_25.apk.diffoscope.html"
-msgstr "<https://verification.f-droid.org/de.nico.ha_manager_25.apk.diffoscope.html>"
+msgstr "https://verification.f-droid.org/de.nico.ha_manager_25.apk.diffoscope.html"
 
 #. type: Title ###
 #: _docs/Reproducible_Builds.md
@@ -9106,10 +8950,8 @@ msgstr ""
 
 #. type: Bullet: '* '
 #: _docs/Reproducible_Builds.md
-#, fuzzy
-#| msgid "- NDK inserts changing _build-id_, probably via `ld` - jar sort order for APKs - `aapt` versions produce different results (XML and res/ subfolder names)"
 msgid "`aapt` versions produce different results (XML and res/ subfolder names)"
-msgstr "- NDK fügt wechselnde _build-id_ ein, wahrscheinlich über `ld` - jar sort order für APKs - `aapt` Versionen liefern unterschiedliche Ergebnisse (XML und res/ Unterordnernamen)"
+msgstr "`aapt` Versionen liefern unterschiedliche Ergebnisse (XML und res/ Unterordnernamen)"
 
 #. type: Title ####
 #: _docs/Reproducible_Builds.md
@@ -9202,31 +9044,23 @@ msgstr "Es gibt drei Spiegelserver, die eine _rsync_-Verbindung anbieten, wähle
 
 #. type: Bullet: '* '
 #: _docs/Running_a_Mirror.md
-#, fuzzy
-#| msgid "China: rsync -axv mirrors.tuna.tsinghua.edu.cn::fdroid"
 msgid "China: `rsync -axv mirrors.tuna.tsinghua.edu.cn::fdroid`"
-msgstr "China: rsync -axv mirrors.tuna.tsinghua.edu.cn::fdroid"
+msgstr "China: `rsync -axv mirrors.tuna.tsinghua.edu.cn::fdroid`"
 
 #. type: Bullet: '* '
 #: _docs/Running_a_Mirror.md
-#, fuzzy
-#| msgid "Germany: rsync -axv ftp.fau.de::fdroid"
 msgid "Germany: `rsync -axv ftp.fau.de::fdroid`"
-msgstr "Deutschland: rsync -axv ftp.fau.de::fdroid"
+msgstr "Deutschland: `rsync -axv ftp.fau.de::fdroid`"
 
 #. type: Bullet: '* '
 #: _docs/Running_a_Mirror.md
-#, fuzzy
-#| msgid "Germany: rsync -axv ftp.fau.de::fdroid"
 msgid "Sweden: `rsync -axv ftp.lysator.liu.se::pub/fdroid`"
-msgstr "Deutschland: rsync -axv ftp.fau.de::fdroid"
+msgstr "Schweden: `rsync -axv ftp.lysator.liu.se::pub/fdroid`"
 
 #. type: Bullet: '* '
 #: _docs/Running_a_Mirror.md
-#, fuzzy
-#| msgid "USA/Indiana: rsync -axv plug-mirror.rcac.purdue.edu::fdroid"
 msgid "USA/Indiana: `rsync -axv plug-mirror.rcac.purdue.edu::fdroid`"
-msgstr "USA/Indiana: rsync -axv plug-mirror.rcac.purdue.edu::fdroid"
+msgstr "USA/Indiana: `rsync -axv plug-mirror.rcac.purdue.edu::fdroid`"
 
 #. type: Plain text
 #: _docs/Running_a_Mirror.md
@@ -9427,17 +9261,13 @@ msgstr "Leiten Sie E-Mails zu Cronjob-Fehlern weiter, damit Sie erfahren, wenn d
 
 #. type: Bullet: '* '
 #: _docs/Running_a_Mirror.md
-#, fuzzy
-#| msgid "Set up monitoring on your mirror so you know if it goes down (ideally keyword on _/var/www/fdroid/fdroid/repo/index.html_)"
 msgid "Set up monitoring on your mirror so you know if it goes down (ideally keyword on _/srv/mymirror.org/htdocs/fdroid/repo/index-v1.jar_)"
-msgstr "Richten Sie eine Überwachung Ihres Mirrors ein, damit Sie wissen, wenn er abstürzt (idealerweise ein Keyword in _/var/www/fdroid/fdroid/repo/index.html_)"
+msgstr "Richten Sie eine Überwachung Ihres Mirrors ein, damit Sie wissen, wenn er abstürzt (idealerweise ein Keyword in _/srv/mymirror.org/htdocs/fdroid/repo/index-v1.jar_)"
 
 #. type: Bullet: '* '
 #: _docs/Running_a_Mirror.md
-#, fuzzy
-#| msgid "Harden your SSH server config (disable password authentication, install fail2ban)"
 msgid "Harden your SSH server config (disable password authentication, install _fail2ban_)"
-msgstr "Härten Sie Ihre SSH-Serverkonfiguration (Passwort-Authentifizierung deaktivieren, fail2ban installieren)"
+msgstr "Härten Sie Ihre SSH-Serverkonfiguration (Passwort-Authentifizierung deaktivieren, _fail2ban_ installieren)"
 
 #. type: Bullet: '* '
 #: _docs/Running_a_Mirror.md
@@ -9571,7 +9401,7 @@ msgstr "[in den Client integriertes, fest verankertes TLS-Zertifikat](https://gi
 #. type: Plain text
 #: _docs/Security_Model.md
 msgid "In order to defend against an attacker that holds the signing keys for the app repository, there must be a trustworthy source of information to compare against. Reproducible builds means that anyone with the same source code will produce the exact same binary. When paired with an auditing system, it is easy to catch malware inserted in the build process, rather than the source code, like XCodeGhost. Reproducible builds also makes it possible to have all builds of a release binary have the exact same hash. Then any app repository can build apps only from source code, and have a source of verification data from any other app repository building the same app. Building software from source has become cheap enough that many companies like gitlab.com and Travis CI are offering free, automated build services in the cloud. Since the whole F-Droid toolset is free software and designed to be easy to setup, the barriers to setting up automatic auditing are quite low. People in separate areas of the world with different risk profiles can run [verification servers](../Verification_Server) to provide more trustworthy information."
-msgstr "Um Angreifer, die im Besitz des Signierschlüssels für das App-Repository sind, abzuwehren, wird eine vertrauenswürdige Informationsquelle zum Gegenabgleich benötigt. Für reproduzierbare Builds gilt, dass jeder mit demselben Quelltext exakt dieselbe Binärdatei erzeugen wird. Bei Anbindung an ein Auditierungssystem ist es leicht in den Build-Prozess eingeschleuste Schadsoftware, wie XCodeGhost, abzufangen, leichter als im Quelltext. Reproduzierbare Builds machen es außerdem möglich, dass alle Builds einer Binärdateiausgabe genau denselben Hashwert besitzen. Jedes App-Repository kann dadurch nur aus dem Quellcode Apps erstellen und besitzt eine Quelle mit Überprüfungsdaten zu allen anderen App-Repositorys, die dieselbe App herstellen. Softwareherstellung aus dem Quellcode ist so preiswert geworden, dass viele Firmen, wie gitlab.com und Travis CI, kostenlose, automatisierte Build-Leistungen in der Cloud anbieten. Nachdem sämtliche F-Droid-Werkzeuge freie Programme sind und auf eine einfache Einrichtung ausgelegt sind, sind die Hürden für eine automatisierte Auditierung ziemlich niedrig. Menschen in verschiedenen Teilen der Welt mit unterschiedlichen Risikoprofilen können so [Prüfserver](../Verification_Server) betreiben, um weitergehende vertrauenswürdige Informationen bereitzustellen."
+msgstr "Um Angreifer, die im Besitz des Signierschlüssels für das App-Repository sind, abzuwehren, wird eine vertrauenswürdige Informationsquelle zum Gegenabgleich benötigt. Für reproduzierbare Builds gilt, dass jeder mit demselben Quelltext exakt dieselbe Binärdatei erzeugen wird. Bei Anbindung an ein Auditierungssystem ist es leicht in den Build-Prozess eingeschleuste Schadsoftware, wie XCodeGhost, abzufangen, leichter als im Quelltext. Reproduzierbare Builds machen es außerdem möglich, dass alle Builds einer Binärdateiausgabe genau denselben Hashwert besitzen. Jedes App-Repository kann dadurch nur aus dem Quellcode Apps erstellen und besitzt eine Quelle mit Überprüfungsdaten zu allen anderen App-Repositorys, die dieselbe App herstellen. Softwareherstellung aus dem Quellcode ist so preiswert geworden, dass viele Firmen, wie gitlab.com und Travis CI, kostenlose, automatisierte Build-Leistungen in der Cloud anbieten. Nachdem sämtliche F-Droid-Werkzeuge freie Programme sind und auf eine einfache Einrichtung ausgelegt, sind die Hürden für eine automatisierte Auditierung ziemlich niedrig. Menschen in verschiedenen Teilen der Welt mit unterschiedlichen Risikoprofilen können so [Prüfserver](../Verification_Server) betreiben, um weitergehende vertrauenswürdige Informationen bereitzustellen."
 
 #. type: Plain text
 #: _docs/Security_Model.md
