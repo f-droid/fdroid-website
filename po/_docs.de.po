@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
 "POT-Creation-Date: 2021-02-16 14:40+0100\n"
-"PO-Revision-Date: 2021-05-13 13:00+0000\n"
+"PO-Revision-Date: 2021-05-14 19:33+0000\n"
 "Last-Translator: C. Rüdinger <Mail-an-CR@web.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/f-droid/website-docs/de/>\n"
 "Language: de\n"
@@ -195,7 +195,7 @@ msgstr "F-Droid unterstützt zwei verschiedene Dateistrukturen. Das Ziel ist es,
 #. type: Plain text
 #: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
 msgid "Please be aware that texts in the app’s metadata file will override all other descriptive texts provided through the structures explained below. This affects [_Name_](../Build_Metadata_Reference/#Name), [_Summary_](../Build_Metadata_Reference/#Summary), and [_Description_](../Build_Metadata_Reference/#Description).  Once metadata fields that were previously in the metadata file have been moved to the app’s source repo, please file a [merge request](https://gitlab.com/fdroid/fdroiddata/merge_requests) or [issue](https://gitlab.com/fdroid/fdroiddata/issues) to remove _Summary_ and _Description_ from the app's metadata file."
-msgstr "Bitte seien Sie sich bewusst, dass die Texte in der Metadaten-Datei der App alle anderen beschreibenden Texte durch die hier erläuterten Strukturen ersetzen. Das gilt insbesondere für [_Name_](../Build_Metadata_Reference/#Name), [_Summary_](../Build_Metadata_Reference/#Summary) und [_Description_](../Build_Metadata_Reference/#Description).  Sobald Metadaten-Felder, die zuvor in der Metadaten-Datei gewesen ist, in das Quellrepository der App verschoben wurden, erstellen Sie bitte einen [Merge Request](https://gitlab.com/fdroid/fdroiddata/merge_requests) oder [Issue](https://gitlab.com/fdroid/fdroiddata/issues), um _Summary_ und _Description_ aus der Metadaten-Datei der App zu entfernen oder entfernen zu lassen."
+msgstr "Bitte seien Sie sich bewusst, dass die Texte in der Metadaten-Datei der App alle anderen beschreibenden Texte durch die hier erläuterten Strukturen ersetzen. Das gilt insbesondere für [_Name_](../Build_Metadata_Reference/#Name), [_Summary_](../Build_Metadata_Reference/#Summary) und [_Description_](../Build_Metadata_Reference/#Description).  Sobald Metadaten-Felder, die zuvor in der Metadaten-Datei gewesen sind, in das Quellrepository der App verschoben wurden, erstellen Sie bitte einen [Merge Request](https://gitlab.com/fdroid/fdroiddata/merge_requests) oder ein [Ticket](https://gitlab.com/fdroid/fdroiddata/issues), um _Summary_ und _Description_ aus der Metadaten-Datei der App zu entfernen oder entfernen zu lassen."
 
 #. type: Plain text
 #: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
@@ -613,6 +613,18 @@ msgid ""
 "API](https://docs.gitlab.com/ee/api/repository_files.html) can be used to query\n"
 "which Application IDs are available.\n"
 msgstr ""
+"Jede App in _f-droid.org_ besitzt eine zugehörige\n"
+"[Build-Metadaten-Datei]({{ site.baseurl }}/docs/Build_Metadata_Reference) in\n"
+"[_fdroiddata_](https://gitlab.com/fdroid/fdroiddata).  Um mehr kreative Wieder-\n"
+"verwendung zu fördern, lassen wir unsere Daten in Standardformaten an leicht zu findenden\n"
+"Plätzen.  Die gesamte App-Sammlung ist im [YAML-Format]({{ site.baseurl }}/{%\n"
+"post_url 2019-09-11-yaml-metadata %}).  Auf die Datei kann direkt zugegriffen werden,\n"
+"über die Application-ID mittels des GitLab Raw URL\n"
+"`https://gitlab.com/fdroid/fdroiddata/-/blob/master/metadata/<ApplicationID>.yml`\n"
+"(e.g. <https://gitlab.com/fdroid/fdroiddata/-/blob/master/metadata/org.fdroid.fdroid.yml>).\n"
+"Der Repo-Index und die [GitLab Repository Files\n"
+"API](https://docs.gitlab.com/ee/api/repository_files.html) können zur Abfrage verwendet\n"
+"werden, welche Application-IDs zur Verfügung stehen.\n"
 
 #. type: Title ###
 #: _docs/All_our_APIs.md
@@ -669,7 +681,7 @@ msgstr "[_mirror-monitor_](https://gitlab.com/fdroid/mirror-monitor) und [_repo-
 #. type: Bullet: '* '
 #: _docs/All_our_APIs.md
 msgid "_f-droid.org_ mirror status: <https://fdroid.gitlab.io/mirror-monitor/report.json>"
-msgstr "_f-droid.org_ Spiegelungsstatus: <https://fdroid.gitlab.io/mirror-monitor/report.json>"
+msgstr "_f-droid.org_ Spiegelstatus: <https://fdroid.gitlab.io/mirror-monitor/report.json>"
 
 #. type: Bullet: '* '
 #: _docs/All_our_APIs.md
@@ -693,39 +705,41 @@ msgid ""
 "`<ApplicationId>_<VersionCode>.apk.json`, for example:\n"
 "<https://verification.f-droid.org/org.fdroid.fdroid_1010050.apk.json>\n"
 msgstr ""
+"_verification.f-droid.org_ ist ein Rebuilder, der die offiziellen Versionen aus\n"
+"_f-droid.org_ erneut herstellt, dann prüft, ob sie [reproduzierbar\n"
+"hergestellt](https://reproducible-builds.org/) wurden. Es gibt pro APK eine\n"
+"JSON-Datei, die kontrolliert werden muss. In ihr folgt der Dateiname dem Muster\n"
+"`<ApplicationId>_<VersionCode>.apk.json`, zum Beispiel:\n"
+"<https://verification.f-droid.org/org.fdroid.fdroid_1010050.apk.json>\n"
 
 #. type: Title ###
 #: _docs/All_our_APIs.md
 #, no-wrap
 msgid "Binary transparency logs"
-msgstr ""
+msgstr "Protokolle zur Binärdateien-Transparenz"
 
 #. type: Plain text
 #: _docs/All_our_APIs.md
 msgid "[Binary transparency](https://wiki.mozilla.org/Security/Binary_Transparency) is the idea that all released packages should be logged as they are published.  This provides a way to check if a given binary was produced by the publisher, or came from somewhere else, e.g. as an exploit.  _fdroidserver_ has built in tools for managing a binary transparency log of the index files as part of the release process. This has been enabled on the Guardian Project repo: <https://github.com/guardianproject/binary_transparency_log>"
-msgstr "[Binärtransparenz](https://wiki.mozilla.org/Security/Binary_Transparency) ist die Idee, dass alle veröffentlichten Pakete protokolliert werden, wenn sie veröffentlicht werden. Dies ermöglicht es zu prüfen, ob ein bestimmtes binäres Paket von dem Publisher erstellt wurde oder ob von jemand anderem, z.B. als ein Exploit. _fdroidserver_ hat eingebaute Tools, um Protokolle für Binärtransparenz der indexierten Dateien als Teil des Veröffentlichungsprozesses zu verwalten. Dies wurde aktiviert in dem Guardian Projekt Repository: <https://github.com/guardianproject/binary_transparency_log>"
+msgstr "[Binärdateien-Transparenz](https://wiki.mozilla.org/Security/Binary_Transparency) folgt der Idee, dass alle freigegebenen Pakete protokolliert werden sollen, wenn sie veröffentlicht werden. Dies bietet die Möglichkeit, zu prüfen, ob ein bestimmtes binäres Paket vom Herausgeber erstellt wurde oder von irgendwoher sonst kommt, z.B. als ein Exploit. _fdroidserver_ bringt Tools zur Handhabung eines Protokolls für die Binärdateien-Transparenz der indexierten Dateien als Teil des Veröffentlichungsprozesses mit. Ermöglicht wird dies im Repo des Guardian Project: <https://github.com/guardianproject/binary_transparency_log>"
 
 #. type: Plain text
 #: _docs/All_our_APIs.md
 msgid "There is also a prototype for running a binary transparency log for _f-droid.org_. <https://gitlab.com/eighthave/f-droid.org-binary-transparency>"
-msgstr ""
+msgstr "Es gibt auch einen Prototyp für den Betrieb eines Binärdateien-Transparenz-Logs für _f-droid.org_. <https://gitlab.com/eighthave/f-droid.org-binary-transparency>"
 
 #. type: Plain text
 #: _docs/All_our_APIs.md
 msgid "Since Gradle and the Google Android Tools team does not publish one, F-Droid has done it.  The basic API is a JSON file with a listing of all URLs known to have be published.  Each URL then contains a list of SHA-256 checksums that the log process has seen.  There are also other files tracked, based on what the publisher provides."
-msgstr ""
+msgstr "Nachdem Gradle und das Team für die Google Android Tools keines veröffentlicht, hat es F-Droid getan.  Die Basis-API ist eine JSON-Datei mit einer Auflistung aller URLs, die als Herausgeber bekannt sind.  Jeder URL enthält dann eine Liste von SHA-256-Checksums, die der Protokollablauf gesehen hat.  Es werden hier auch andere Dateien überwacht, abhängig davon was der Herausgeber bereitstellt."
 
 #. type: Bullet: '* '
 #: _docs/All_our_APIs.md
-#, fuzzy
-#| msgid "*E.g* <https://gitlab.com/fdroid/fdroidclient/tree/master>"
 msgid "<https://gitlab.com/fdroid/gradle-transparency-log/-/raw/master/checksums.json>"
 msgstr "<https://gitlab.com/fdroid/gradle-transparency-log/-/raw/master/checksums.json>"
 
 #. type: Bullet: '* '
 #: _docs/All_our_APIs.md
-#, fuzzy
-#| msgid "*E.g* <https://gitlab.com/fdroid/fdroidclient/tree/master>"
 msgid "<https://gitlab.com/fdroid/android-sdk-transparency-log/-/raw/master/checksums.json>"
 msgstr "<https://gitlab.com/fdroid/android-sdk-transparency-log/-/raw/master/checksums.json>"
 
@@ -733,12 +747,12 @@ msgstr "<https://gitlab.com/fdroid/android-sdk-transparency-log/-/raw/master/che
 #: _docs/All_our_APIs.md
 #, no-wrap
 msgid "<tt>issuebot</tt>"
-msgstr ""
+msgstr "<tt>issuebot</tt>"
 
 #. type: Plain text
 #: _docs/All_our_APIs.md
 msgid "[_issuebot_](https://gitlab.com/fdroid/issuebot#json-rest-api) runs on app merge requests and requests for packaging (RFP) to provide information to reviewers about the app.  Much of that information is also published in JSON format.  Each report is made of data from modules that run on a specific app.  There are two entry points:"
-msgstr ""
+msgstr "[_issuebot_](https://gitlab.com/fdroid/issuebot#json-rest-api) läuft bei Merge Requests einer App und Anträgen auf Packaging (RFP), um Prüfern Informationen zur App bereitzustellen.  Viele dieser Informationen werden ebenfalls im JSON-Format herausgegeben.  Jeder Bericht wird aus Daten erstellt, die aus Modulen stammen, die in einer speziellen App ablaufen.  Es gibt zwei Zugangspunkte:"
 
 #. type: Bullet: '* '
 #: _docs/All_our_APIs.md
@@ -754,12 +768,12 @@ msgstr "<https://fdroid.gitlab.io/rfp/issuebot/sourceUrls.json>"
 #: _docs/All_our_APIs.md
 #, no-wrap
 msgid "Metrics"
-msgstr ""
+msgstr "Kennzahlen"
 
 #. type: Plain text
 #: _docs/All_our_APIs.md
 msgid "[Usage data]({{ site.baseurl }}/{% post_url 2019-04-15-privacy-preserving-analytics %})  is gathered from [various F-Droid websites](https://fdroid.gitlab.io/metrics/)  and published with no personally identifiable information (PII).  It is published with one JSON file per-week, with a JSON index file per website.  For example, here is a week of search metrics: <https://fdroid.gitlab.io/metrics/search.f-droid.org/2021-01-18.json>"
-msgstr ""
+msgstr "[Nutzungsdaten]({{ site.baseurl }}/{% post_url 2019-04-15-privacy-preserving-analytics %})  werden von [verschiedenen Internetseiten von F-Droid](https://fdroid.gitlab.io/metrics/) gesammelt und ohne persönlich identifizierbare Informationen (PII) veröffentlicht.  Sie werden in einer wöchentlichen JSON-Datei in einer JSON-Indexdatei pro Website herausgegeben.  Beispielsweise hier Kennzahlen zur Suche in einer Woche: <https://fdroid.gitlab.io/metrics/search.f-droid.org/2021-01-18.json>"
 
 #. type: Plain text
 #: _docs/All_our_APIs.md
@@ -768,17 +782,19 @@ msgid ""
 "Though not really an API, the <ftp.fau.de> mirror does provide some metrics:\n"
 "https://ftp.fau.de/cgi-bin/show-ftp-stats.cgi\n"
 msgstr ""
+"Obwohl nicht wirklich eine API, liefert der Spiegelserver <ftp.fau.de> einige Kennzahlen:\n"
+"https://ftp.fau.de/cgi-bin/show-ftp-stats.cgi\n"
 
 #. type: Title ###
 #: _docs/All_our_APIs.md
 #, no-wrap
 msgid "Git stats"
-msgstr ""
+msgstr "Git-Statistiken"
 
 #. type: Plain text
 #: _docs/All_our_APIs.md
 msgid "Each _git_ repo has lots of interesting metadata.  The _GitStats_ project generates nice charts from that data.  This is not quite an API, but it is related since it is using public project data.  Pre-generated pages for each of the central git repos are visible here: <https://fdroid.gitlab.io/>."
-msgstr ""
+msgstr "Jedes _git_ Repo hat eine Vielzahl interessanter Metadaten.  Das Projekt _GitStats_ erzeugt nette Charts aus diesen Daten.  Das ist nicht ganz eine API, aber es ist ähnlich, da es öffentliche Projektdaten verwendet.  Vorgefertigte Seiten zu jedem der zentralen Git-Repos sind hier zu sehen: <https://fdroid.gitlab.io/>."
 
 #. type: YAML Front Matter: title
 #: _docs/Anti-Features.md
@@ -1531,102 +1547,78 @@ msgstr "Die folgenden Abschnitte beschreiben die in der Datei erkannten Felder."
 
 #. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
-#, fuzzy
-#| msgid "_Categories_<a name=\"Categories\"></a>"
 msgid "[_Categories_](#Categories)"
 msgstr "[_Categories_ (Kategorien )](#Categories)"
 
 #. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
-#, fuzzy
-#| msgid "_AuthorName_<a name=\"AuthorName\"></a>"
 msgid "[_AuthorName_](#AuthorName)"
 msgstr "[_AuthorName_ (Autorenname )](#AuthorName)"
 
 #. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
-#, fuzzy
-#| msgid "_AuthorEmail_<a name=\"AuthorEmail\"></a>"
 msgid "[_AuthorEmail_](#AuthorEmail)"
 msgstr "[_AuthorEmail_ (Autoren-E-Mail )](#AuthorEmail)"
 
 #. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
-#, fuzzy
-#| msgid "_AuthorWebSite_<a name=\"AuthorWebSite\"></a>"
 msgid "[_AuthorWebSite_](#AuthorWebSite)"
 msgstr "[_AuthorWebSite_ (Internetseite der Autoren )](#AuthorWebSite)"
 
 #. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
-#, fuzzy
-#| msgid "_License_<a name=\"License\"></a>"
 msgid "[_License_](#License)"
 msgstr "[_License_ (Lizenz )](#License)"
 
 #. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
-#, fuzzy
-#| msgid "_AutoName_<a name=\"AutoName\"></a>"
 msgid "[_AutoName_](#AutoName)"
 msgstr "[_AutoName_ (Automatischer Name )](#AutoName)"
 
 #. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
 msgid "[_Name_](#Name)"
-msgstr ""
+msgstr "[_Name_](#Name)"
 
 #. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
-#, fuzzy
-#| msgid "_WebSite_<a name=\"WebSite\"></a>"
 msgid "[_WebSite_](#WebSite)"
 msgstr "[_WebSite_ (Internetseite )](#WebSite)"
 
 #. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
-#, fuzzy
-#| msgid "_SourceCode_<a name=\"SourceCode\"></a>"
 msgid "[_SourceCode_](#SourceCode)"
 msgstr "[_SourceCode_ (Quelltext )](#SourceCode)"
 
 #. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
-#, fuzzy
-#| msgid "_IssueTracker_<a name=\"IssueTracker\"></a>"
 msgid "[_IssueTracker_](#IssueTracker)"
 msgstr "[_IssueTracker_ (Ticketsystem )](#IssueTracker)"
 
 #. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
-#, fuzzy
-#| msgid "_Translation_<a name=\"Translation\"></a>"
 msgid "[_Translation_](#Translation)"
 msgstr "[_Translation_ (Übersetzung )](#Translation)"
 
 #. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
-#, fuzzy
-#| msgid "_Changelog_<a name=\"Changelog\"></a>"
 msgid "[_Changelog_](#Changelog)"
 msgstr "[_Changelog_ (Änderungsprotokoll )](#Changelog)"
 
 #. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
 msgid "[_Donate_](#Donate)"
-msgstr ""
+msgstr "[_Donate_ (Spenden)](#Donate)"
 
 #. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
-#, fuzzy
-#| msgid "_FlattrID_<a name=\"FlattrID\"></a>"
 msgid "[_FlattrID_](#FlattrID)"
 msgstr "[_FlattrID_ (Flattr-ID )](#FlattrID)"
 
 #. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
 msgid "[_Liberapay_](#Liberapay)"
-msgstr ""
+msgstr "[_Liberapay_](#Liberapay)"
 
 #. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
@@ -1635,117 +1627,103 @@ msgstr "[_OpenCollective_](#OpenCollective)"
 
 #. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
-#, fuzzy
-#| msgid "_Bitcoin_<a name=\"Bitcoin\"></a>"
 msgid "[_Bitcoin_](#Bitcoin)"
-msgstr "[_Bitcoin_ ( )](#Bitcoin)"
+msgstr "[_Bitcoin_](#Bitcoin)"
 
 #. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
-#, fuzzy
-#| msgid "_Litecoin_<a name=\"Litecoin\"></a>"
 msgid "[_Litecoin_](#Litecoin)"
-msgstr "[_Litecoin_ ( )](#Litecoin)"
+msgstr "[_Litecoin_](#Litecoin)"
 
 #. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
-#, fuzzy
-#| msgid "_Summary_<a name=\"Summary\"></a>"
 msgid "[_Summary_](#Summary)"
 msgstr "[_Summary_ (Zusammenfassung )](#Summary)"
 
 #. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
-#, fuzzy
-#| msgid "_Description_<a name=\"Description\"></a>"
 msgid "[_Description_](#Description)"
 msgstr "[_Description_ (Beschreibung )](#Description)"
 
 #. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
-#, fuzzy
-#| msgid "_MaintainerNotes_<a name=\"MaintainerNotes\"></a>"
 msgid "[_MaintainerNotes_](#MaintainerNotes)"
 msgstr "[_MaintainerNotes_ (Wartungsnotizen )](#MaintainerNotes)"
 
 #. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
-#, fuzzy
-#| msgid "_RepoType_<a name=\"RepoType\"></a>"
 msgid "[_RepoType_](#RepoType)"
 msgstr "[_RepoType_ (Repo-Typ )](#RepoType)"
 
 #. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
 msgid "[_Repo_](#Repo)"
-msgstr ""
+msgstr "[_Repo_](#Repo)"
 
 #. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
-#, fuzzy
-#| msgid "_Binaries_<a name=\"Binaries\"></a>"
 msgid "[_Binaries_](#Binaries)"
-msgstr "[_Binaries_ (Binärdateien )](#Binaries)"
+msgstr "[_Binaries_ (Binärdateien)](#Binaries)"
 
 #. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
 msgid "[_Builds_](#Builds)"
-msgstr ""
+msgstr "[_Builds_](#Builds)"
 
 #. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
 msgid "[_Builds.versionName_](#build_versionName)"
-msgstr ""
+msgstr "[_Builds.versionName_ (Name der Version)](#build_versionName)"
 
 #. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
 msgid "[_Builds.versionCode_](#build_versionCode)"
-msgstr ""
+msgstr "[_Builds.versionCode_ (Versionscode)](#build_versionCode)"
 
 #. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
 msgid "[_Builds.commit_](#build_commit)"
-msgstr ""
+msgstr "[_Builds.commit_ (Commit für Build)](#build_commit)"
 
 #. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
 msgid "[_Builds.disable_](#build_disable)"
-msgstr ""
+msgstr "[_Builds.disable_ (Build blockieren)](#build_disable)"
 
 #. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
 msgid "[_Builds.subdir_](#build_subdir)"
-msgstr ""
+msgstr "[_Builds.subdir_ (Unterverzeichnis)](#build_subdir)"
 
 #. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
 msgid "[_Builds.submodules_](#build_submodules)"
-msgstr ""
+msgstr "[_Builds.submodules_ (Nebenmodule)](#build_submodules)"
 
 #. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
 msgid "[_Builds.sudo_](#build_sudo)"
-msgstr ""
+msgstr "[_Builds.sudo_ (mit Root-Rechten)](#build_sudo)"
 
 #. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
 msgid "[_Builds.timeout_](#build_timeout)"
-msgstr ""
+msgstr "[_Builds.timeout_ (Zeitlimit)](#build_timeout)"
 
 #. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
 msgid "[_Builds.init_](#build_init)"
-msgstr ""
+msgstr "[_Builds.init_ (Initialisierung)](#build_init)"
 
 #. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
 msgid "[_Builds.oldsdkloc_](#build_oldsdkloc)"
-msgstr ""
+msgstr "[_Builds.oldsdkloc_ (altes Format für SDK-Ort)](#build_oldsdkloc)"
 
 #. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
 msgid "[_Builds.target_](#build_target)"
-msgstr ""
+msgstr "[_Builds.target_ (Ziel-SDK)](#build_target)"
 
 #. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
@@ -1901,50 +1879,36 @@ msgstr "[_UpdateCheckIgnore_ (Aktualisierungsprüfung ignorieren )](#UpdateCheck
 
 #. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
-#, fuzzy
-#| msgid "_VercodeOperation_<a name=\"VercodeOperation\"></a>"
 msgid "[_VercodeOperation_](#VercodeOperation)"
 msgstr "[_VercodeOperation_ (Versionscodeberechnung )](#VercodeOperation)"
 
 #. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
-#, fuzzy
-#| msgid "_UpdateCheckName_<a name=\"UpdateCheckName\"></a>"
 msgid "[_UpdateCheckName_](#UpdateCheckName)"
 msgstr "[_UpdateCheckName_ (Name für Aktualisierungsprüfung )](#UpdateCheckName)"
 
 #. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
-#, fuzzy
-#| msgid "_UpdateCheckData_<a name=\"UpdateCheckData\"></a>"
 msgid "[_UpdateCheckData_](#UpdateCheckData)"
 msgstr "[_UpdateCheckData_ (Daten zur Aktualisierungsprüfung )](#UpdateCheckData)"
 
 #. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
-#, fuzzy
-#| msgid "_AutoUpdateMode_<a name=\"AutoUpdateMode\"></a>"
 msgid "[_AutoUpdateMode_](#AutoUpdateMode)"
 msgstr "[_AutoUpdateMode_ (Automatische Aktualisierungsmethode )](#AutoUpdateMode)"
 
 #. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
-#, fuzzy
-#| msgid "_CurrentVersion_<a name=\"CurrentVersion\"></a>"
 msgid "[_CurrentVersion_](#CurrentVersion)"
 msgstr "[_CurrentVersion_ (Aktuelle Version )](#CurrentVersion)"
 
 #. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
-#, fuzzy
-#| msgid "_CurrentVersionCode_<a name=\"CurrentVersionCode\"></a>"
 msgid "[_CurrentVersionCode_](#CurrentVersionCode)"
 msgstr "[_CurrentVersionCode_ (Aktueller Versionscode )](#CurrentVersionCode)"
 
 #. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
-#, fuzzy
-#| msgid "_NoSourceSince_<a name=\"NoSourceSince\"></a>"
 msgid "[_NoSourceSince_](#NoSourceSince)"
 msgstr "[_NoSourceSince_ (Keine Quelle seit )](#NoSourceSince)"
 
@@ -2055,10 +2019,8 @@ msgstr "Automatischer Name (_AutoName_)<a name=\"AutoName\"></a>"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-#, fuzzy
-#| msgid "The name of the application as can best be retrieved from the source code. This is done so that `fdroid checkupdates` can put a familiar name in the description of commits created when a new update of the application is found. The _AutoName_ entry is generated automatically when `fdroid checkupdates` is run."
 msgid "The name of the application as can best be retrieved from the source code. This is done so that `fdroid checkupdates` can put a familiar name in the description of commits created when a new update of the application is found. The _AutoName_ entry is generated automatically when `fdroid checkupdates` is run, and is only used for the commit messages generated by `fdroid checkupdates`."
-msgstr "Der Name der Anwendung, wie er am besten aus dem Quelltext abgerufen werden kann. Dies erfolgt so, dass `fdroid checkupdates` einen bekannten Namen in die Commits-Beschreibung einsetzt, die erstellt wird, wenn eine aktualisierte Version der Anwendung gefunden wird. Der _AutoName_-Eintrag wird automatisch erzeugt, wenn `fdroid checkupdates` ausgeführt wird."
+msgstr "Der Name der Anwendung, wie er am besten aus dem Quelltext abgerufen werden kann. Dies erfolgt so, dass `fdroid checkupdates` einen bekannten Namen in die Commits-Beschreibung einsetzt, die erstellt wird, wenn eine aktualisierte Version der Anwendung gefunden wird. Der _AutoName_-Eintrag wird automatisch erzeugt, wenn `fdroid checkupdates` ausgeführt wird und wird nur für die Commit-Nachricht verwendet, die von `fdroid checkupdates` erzeugt wird."
 
 #. type: Title ###
 #: _docs/Build_Metadata_Reference.md
@@ -2541,7 +2503,7 @@ msgid ""
 "    compatibility, this can also be achieved by starting the commit ID\n"
 "    with ’!’)\n"
 msgstr ""
-":   Deaktiviert diesen Build und gibt einen Grund dafür an. (Aus Rückwärts-\n"
+":   Blockiert diesen Build und gibt einen Grund dafür an. (Aus Rückwärts-\n"
 "    Kompatibilitätsgründen kann dies auch durch Voranstellen eines ‚!’ vor die Commit-ID\n"
 "    erzielt werden)\n"
 
@@ -2711,7 +2673,7 @@ msgstr ""
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid "`target: <target>`<a name=\"build_target\"></a>\n"
-msgstr ""
+msgstr "`target: <Ziel-SDK>`<a name=\"build_target\"></a>\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -2749,10 +2711,9 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-#, fuzzy, no-wrap
-#| msgid "`androidupdate: <auto/dirs>`\n"
+#, no-wrap
 msgid "`androidupdate: <auto/dirs>`<a name=\"build_androidupdate\"></a>\n"
-msgstr "`androidupdate: <auto/dirs>`\n"
+msgstr "`androidupdate: <auto/dirs>`<a name=\"build_androidupdate\"></a>\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
