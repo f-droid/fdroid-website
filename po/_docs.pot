@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2021-05-13 15:22+0200\n"
+"POT-Creation-Date: 2021-05-19 13:05+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -3713,7 +3713,7 @@ msgstr ""
 #. type: Bullet: '-   '
 #: _docs/Build_Metadata_Reference.md
 #, markdown-text
-msgid "`Version` - Identifies the target commit (i.e. tag) for the new build based on the given version specification, which is simply text in which %v and %c are replaced with the required version name and version code respectively."
+msgid "`Version` - Generates a value (tag name) used for the `commit:` property of new build blocks. It is simply text in which %v and %c are replaced with the required version name and version code respectively. The resulting string must match an existing tag in the app's repo, which then will be used by F-Droid to build the corresponding version."
 msgstr ""
 
 #. type: Plain text
@@ -3730,10 +3730,27 @@ msgstr ""
 #: _docs/Build_Metadata_Reference.md
 #, markdown-text, no-wrap
 msgid ""
+"    Continuing the first example above, you would specify that as \"Version\n"
+"    +-fdroid %v\" - \"-fdroid\" is the suffix F-Droid will then append to the\n"
+"    `versionName` specified in e.g. `build.gradle` when building the APK.\n"
+msgstr ""
+
+#. type: Plain text
+#: _docs/Build_Metadata_Reference.md
+#, markdown-text, no-wrap
+msgid ""
 "    Additionally, a suffix can be added to the version name at this\n"
 "    stage, to differentiate F-Droid’s build from the original.\n"
 "    Continuing the first example above, you would specify that as\n"
 "    \"Version +-fdroid %v\" - \"-fdroid\" is the suffix.\n"
+msgstr ""
+
+#. type: Plain text
+#: _docs/Build_Metadata_Reference.md
+#, markdown-text, no-wrap
+msgid ""
+"    If UpdateCheckMode is set to `Tags` the generator string behind `Version`\n"
+"    is optional and not used for the `commit:` field.\n"
 msgstr ""
 
 #. type: Title ###
