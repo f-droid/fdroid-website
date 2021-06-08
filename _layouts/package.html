@@ -21,13 +21,13 @@ layout: default-package-sidebar
 		</div>
 	</header>
 	{% if page.whats_new and page.suggested_version_name %}
-	<div class="package-whats-new">
+	<div class="package-whats-new" dir="auto">
 		{% assign fmt_latest_version = '{{ latest_version }}' %}
 		<div class="new-in-version">{{ strings.new_in_version | replace: fmt_latest_version, page.suggested_version_name }}</div>
 		{{ page.whats_new }}
 	</div>
 	{% endif %}
-	<div class="package-description">
+	<div class="package-description" dir="auto">
 		{{ page.description }}
 	</div>
 	{% if page.anti_features != nil or page.packages.first.anti_features != nil %}
