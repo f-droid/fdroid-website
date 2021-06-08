@@ -961,6 +961,15 @@ Valid modes are:
     them out with something like `.*[0-9]$` which requires tag names to
     end with a digit.
 
+    Optionally UpdateCheckData can be specified to extract version code and
+    name from repository files you specify (instead of relying on the defaults
+    used to match against otherwise, which in most cases is `build.gradle` or
+    `AndroidManifest.xml`). The format is the same as specified in `HTTP`
+    below, only using files from the repository instead of URLs.
+
+    For example a Flutter app with the `pubspec.yaml` being in the repo root
+    could use: `pubspec.yaml|version:\s.+\+(\d+)|.|version:\s(.+)\+`.
+
 -   `HTTP` - HTTP requests are used to determine the current version
     code and version name. This is controlled by the _UpdateCheckData_
     field, which is of the form `urlcode|excode|urlver|exver`.
