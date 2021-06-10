@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
-"POT-Creation-Date: 2021-05-13 15:22+0200\n"
+"POT-Creation-Date: 2021-06-10 12:16+0200\n"
 "PO-Revision-Date: 2021-02-13 10:50+0000\n"
 "Last-Translator: Ahmed Zahrani <amz.a.zah@gmail.com>\n"
 "Language-Team: Arabic <https://hosted.weblate.org/projects/f-droid/website-docs/ar/>\n"
@@ -2957,19 +2957,12 @@ msgstr ""
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid ""
-":   Version of the NDK to use in this build. Defaults to the latest NDK\n"
-"    release that included legacy toolchains (r12b), so as to not break builds\n"
-"    that require toolchains no longer included in current versions of\n"
-"    the NDK.\n"
-msgstr ""
-
-#. type: Plain text
-#: _docs/Build_Metadata_Reference.md
-#, no-wrap
-msgid ""
-"    The buildserver supports r10e, r11c, r12b, r13b, r14b, r15c, r16b, r17c,\n"
-"    r18b, r19c, r20b and r21d. You may add support for more versions by adding\n"
-"    them to ’ndk\\_paths’ in your config file.\n"
+":   Version of the NDK to use in this build.  The value is the NDK version as a\n"
+"    string in either of the two official version schemes, e.g. _r21e_ or\n"
+"    _21.4.7075529_.  NDK r10e or later is supported.  This can also be a list of\n"
+"    version strings, and all listed versions will be installed.  The\n"
+"    `ANDROID_SDK_ROOT` environment variable will be set to the first version in\n"
+"    the list.\n"
 msgstr ""
 
 #. type: Plain text
@@ -3301,6 +3294,25 @@ msgid ""
 "    end with a digit.\n"
 msgstr ""
 
+#. type: Plain text
+#: _docs/Build_Metadata_Reference.md
+#, no-wrap
+msgid ""
+"    Optionally UpdateCheckData can be specified to extract version code and\n"
+"    name from repository files you specify (instead of relying on the defaults\n"
+"    used to match against otherwise, which in most cases is `build.gradle` or\n"
+"    `AndroidManifest.xml`). The format is the same as specified in `HTTP`\n"
+"    below, only using files from the repository instead of URLs.\n"
+msgstr ""
+
+#. type: Plain text
+#: _docs/Build_Metadata_Reference.md
+#, no-wrap
+msgid ""
+"    For example a Flutter app with the `pubspec.yaml` being in the repo root\n"
+"    could use: `pubspec.yaml|version:\\s.+\\+(\\d+)|.|version:\\s(.+)\\+`.\n"
+msgstr ""
+
 #. type: Bullet: '-   '
 #: _docs/Build_Metadata_Reference.md
 msgid "`HTTP` - HTTP requests are used to determine the current version code and version name. This is controlled by the _UpdateCheckData_ field, which is of the form `urlcode|excode|urlver|exver`."
@@ -3398,7 +3410,7 @@ msgstr ""
 
 #. type: Bullet: '-   '
 #: _docs/Build_Metadata_Reference.md
-msgid "`Version` - Identifies the target commit (i.e. tag) for the new build based on the given version specification, which is simply text in which %v and %c are replaced with the required version name and version code respectively."
+msgid "`Version` - Generates a value (tag name) used for the `commit:` property of new build blocks. It is simply text in which %v and %c are replaced with the required version name and version code respectively. The resulting string must match an existing tag in the app's repo, which then will be used by F-Droid to build the corresponding version."
 msgstr ""
 
 #. type: Plain text
@@ -3415,10 +3427,27 @@ msgstr ""
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid ""
+"    Continuing the first example above, you would specify that as \"Version\n"
+"    +-fdroid %v\" - \"-fdroid\" is the suffix F-Droid will then append to the\n"
+"    `versionName` specified in e.g. `build.gradle` when building the APK.\n"
+msgstr ""
+
+#. type: Plain text
+#: _docs/Build_Metadata_Reference.md
+#, no-wrap
+msgid ""
 "    Additionally, a suffix can be added to the version name at this\n"
 "    stage, to differentiate F-Droid’s build from the original.\n"
 "    Continuing the first example above, you would specify that as\n"
 "    \"Version +-fdroid %v\" - \"-fdroid\" is the suffix.\n"
+msgstr ""
+
+#. type: Plain text
+#: _docs/Build_Metadata_Reference.md
+#, no-wrap
+msgid ""
+"    If UpdateCheckMode is set to `Tags` the generator string behind `Version`\n"
+"    is optional and not used for the `commit:` field.\n"
 msgstr ""
 
 #. type: Title ###
@@ -7573,6 +7602,7 @@ msgid ""
 "# when satisfied with the verification, import it\n"
 "unzip admin@f-droid.org.jar admin@f-droid.org.asc\n"
 "gpg --import admin@f-droid.org.asc\n"
+"gpg --keyserver keyserver.ubuntu.com --recv-key 37D2C98789D8311948394E3E41E7044E1DBA2E89\n"
 msgstr ""
 
 #. type: Title ##
@@ -8148,6 +8178,29 @@ msgstr ""
 #. type: Title ###
 #: _docs/Reproducible_Builds.md
 #, no-wrap
+msgid "Native library stripping"
+msgstr ""
+
+#. type: Plain text
+#: _docs/Reproducible_Builds.md
+msgid "It seems that the stripping of native libraries, e.g. _libfoo.so_, can cause intermittent reproducibility issues.  It is important to use the exact NDK version when rebuilding, e.g. r21e.  Disabling stripping can sometimes help.  Gradle seems to strip shared libraries by default, even the app is receiving the shared libraries via an AAR library.  Here is how to disable it in Gradle:"
+msgstr ""
+
+#. type: Fenced code block (gradle)
+#: _docs/Reproducible_Builds.md
+#, no-wrap
+msgid ""
+"android {\n"
+"\tpackagingOptions {\n"
+"\t\tdoNotStrip '**/*.so'\n"
+"\t}\n"
+"}\n"
+"\n"
+msgstr ""
+
+#. type: Title ###
+#: _docs/Reproducible_Builds.md
+#, no-wrap
 msgid "NDK _build-id_"
 msgstr ""
 
@@ -8284,6 +8337,11 @@ msgstr ""
 #. type: Bullet: '* '
 #: _docs/Reproducible_Builds.md
 msgid "[Google Issue #110237303 resources.arsc built with non-determism, prevents reproducible APK builds](https://issuetracker.google.com/issues/110237303) (_Google login and JavaScript required_)"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/Reproducible_Builds.md
+msgid "[Unreproducible/non-deterministic code generation by navigation.safeargs.kotlin](https://issuetracker.google.com/issues/189498001) (_Google login and JavaScript required_)"
 msgstr ""
 
 #. type: YAML Front Matter: title
