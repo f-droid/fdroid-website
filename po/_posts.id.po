@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2021-03-10 15:45+0100\n"
-"PO-Revision-Date: 2021-05-21 17:33+0000\n"
+"PO-Revision-Date: 2021-05-24 11:22+0000\n"
 "Last-Translator: Jacque Fresco <aidter@use.startmail.com>\n"
 "Language-Team: Indonesian <https://hosted.weblate.org/projects/f-droid/website-posts/id/>\n"
 "Language: id\n"
@@ -4016,7 +4016,7 @@ msgstr ""
 #: _posts/2018-08-23-twif-18-navigation-apps-updated.md
 #, no-wrap
 msgid "Postscript"
-msgstr ""
+msgstr "Postscript"
 
 #. type: Plain text
 #: _posts/2018-08-23-twif-18-navigation-apps-updated.md
@@ -11339,7 +11339,7 @@ msgstr ""
 #: _posts/2019-04-15-privacy-preserving-analytics.md
 #, no-wrap
 msgid "# apt-get install libnginx-mod-http-geoip geoip-database\n"
-msgstr ""
+msgstr "# apt-get install libnginx-mod-http-geoip geoip-database\n"
 
 #. type: Plain text
 #: _posts/2019-04-15-privacy-preserving-analytics.md
@@ -11355,6 +11355,10 @@ msgid ""
 "\n"
 "access_log /var/log/nginx/access.log privacy;\n"
 msgstr ""
+"geoip_country /usr/share/GeoIP/GeoIP.dat;\n"
+"log_format privacy '0.0.0.0 - $remote_user [$time_local] \"$request\" $status $body_bytes_sent \"$http_referer\" \"-\" $geoip_country_code';\n"
+"\n"
+"access_log /var/log/nginx/access.log privacy;\n"
 
 #. type: Plain text
 #: _posts/2019-04-15-privacy-preserving-analytics.md
@@ -11708,6 +11712,10 @@ msgid ""
 "$ wget https://guardianproject.info/fdroid/repo/index-v1.jar\n"
 "$ mv index-v1.jar fdroid/repo/\n"
 msgstr ""
+"$ cd /media/user/F-DROIDORG\n"
+"$ fdroid mirror https://guardianproject.info/fdroid\n"
+"$ wget https://guardianproject.info/fdroid/repo/index-v1.jar\n"
+"$ mv index-v1.jar fdroid/repo/\n"
 
 #. type: Plain text
 #: _posts/2019-06-20-two-new-ways-to-get-apps-nearby-without-internet.md
@@ -14528,7 +14536,7 @@ msgstr ""
 #: _posts/2020-07-02-yml-is-the-only-metadata-format-the-others-will-be-removed.md
 #, no-wrap
 msgid "$ fdroid rewritemeta --to yml\n"
-msgstr ""
+msgstr "$ fdroid rewritemeta --to yml\n"
 
 #. type: Plain text
 #: _posts/2019-09-11-yaml-metadata.md
@@ -15324,6 +15332,10 @@ msgid ""
 "    Log.d(TAG, \"Provider installed.\");\n"
 "}\n"
 msgstr ""
+"public static void install() {\n"
+"    Security.insertProviderAt(Conscrypt.newProvider(), 1);\n"
+"    Log.d(TAG, \"Provider installed.\");\n"
+"}\n"
 
 #. type: Plain text
 #: _posts/2020-05-29-android-updates-and-tls-connections.md
@@ -15342,6 +15354,13 @@ msgid ""
 "installMethod.invoke(null);\n"
 "installed = true;\n"
 msgstr ""
+"Context targetContext = context.createPackageContext(\"com.bytehamster.providerinstaller\",\n"
+"        Context.CONTEXT_INCLUDE_CODE | Context.CONTEXT_IGNORE_SECURITY);\n"
+"ClassLoader classLoader = targetContext.getClassLoader();\n"
+"Class installClass = classLoader.loadClass(\"com.bytehamster.providerinstaller.ProviderInstallerImpl\");\n"
+"Method installMethod = installClass.getMethod(\"install\", new Class[]{ });\n"
+"installMethod.invoke(null);\n"
+"installed = true;\n"
 
 #. type: Plain text
 #: _posts/2020-05-29-android-updates-and-tls-connections.md
@@ -15568,7 +15587,7 @@ msgstr ""
 #: _posts/2020-10-05-ntrokey-signing.md
 #, no-wrap
 msgid "$ fdroid init --keystore NONE  # NONE means using a HSM keystore\n"
-msgstr ""
+msgstr "$ fdroid init --keystore NONE  # NONE means using a HSM keystore\n"
 
 #. type: Plain text
 #: _posts/2020-10-05-ntrokey-signing.md
@@ -15579,7 +15598,7 @@ msgstr ""
 #: _posts/2020-10-05-ntrokey-signing.md
 #, no-wrap
 msgid "$ fdroid update --create-key  # This will take a while...\n"
-msgstr ""
+msgstr "$ fdroid update --create-key  # This will take a while...\n"
 
 #. type: Title ###
 #: _posts/2020-10-05-ntrokey-signing.md
@@ -15676,6 +15695,13 @@ msgid ""
 "      - cp -a node-v10.18.1-linux-x64/. /usr/local/\n"
 "      - npm -g install yarn\n"
 msgstr ""
+"    sudo:\n"
+"      - curl -Lo node.tar.xz https://nodejs.org/dist/v10.18.1/node-v10.18.1-linux-x64.tar.xz\n"
+"      - echo \"8cc40f45c2c62529b15e83a6bbe0ac1febf57af3c5720df68067c96c0fddbbdf node.tar.xz\"\n"
+"        | sha256sum -c -\n"
+"      - tar xJf node.tar.xz\n"
+"      - cp -a node-v10.18.1-linux-x64/. /usr/local/\n"
+"      - npm -g install yarn\n"
 
 #. type: Plain text
 #: _posts/2020-10-14-adding-react-native-app-to-f-droid.md
@@ -15694,6 +15720,8 @@ msgid ""
 "    scandelete:\n"
 "      - node_modules/\n"
 msgstr ""
+"    scandelete:\n"
+"      - node_modules/\n"
 
 #. type: Plain text
 #: _posts/2020-10-14-adding-react-native-app-to-f-droid.md
@@ -15718,6 +15746,19 @@ msgid ""
 "      - node_modules/@react-native-community/masked-view/android/build.gradle\n"
 "      - node_modules/@react-native-community/netinfo/android/build.gradle\n"
 msgstr ""
+"    scanignore:\n"
+"      - android/build.gradle\n"
+"      - node_modules/jsc-android\n"
+"      - node_modules/react-native/android/com/facebook/react/react-native/*/\n"
+"      - node_modules/react-native-appearance/android/build.gradle\n"
+"      - node_modules/react-native-reanimated/android/build.gradle\n"
+"      - node_modules/react-native-safe-area-context/android/build.gradle\n"
+"      - node_modules/react-native-screens/android/build.gradle\n"
+"      - node_modules/react-native-sodium/libsodium/*/lib/libsodium.so\n"
+"      - node_modules/react-native-vector-icons/android/build.gradle\n"
+"      - node_modules/@react-native-community/async-storage/android/build.gradle\n"
+"      - node_modules/@react-native-community/masked-view/android/build.gradle\n"
+"      - node_modules/@react-native-community/netinfo/android/build.gradle\n"
 
 #. type: Plain text
 #: _posts/2020-10-14-adding-react-native-app-to-f-droid.md
@@ -15929,6 +15970,41 @@ msgid ""
 "    }\n"
 "  ],\n"
 msgstr ""
+"  \"at.roteskreuz.stopcorona\": [\n"
+"    {\n"
+"      \"issueId\": 1319,\n"
+"      \"jobId\": \"925261691\",\n"
+"      \"modules\": [\n"
+"        \"925261691/1319/active-hostnames.py.json\",\n"
+"        \"925261691/1319/check-for-translation-service.py.json\",\n"
+"        \"925261691/1319/dependencies-scrape.py.json\",\n"
+"        \"925261691/1319/fastlane.py.json\",\n"
+"        \"925261691/1319/fdroid-scan-apk.py.json\",\n"
+"        \"925261691/1319/fdroid-scanner.py.json\",\n"
+"        \"925261691/1319/gradle-productFlavors.py.json\",\n"
+"        \"925261691/1319/gradle-wrapper.py.json\",\n"
+"        \"925261691/1319/links-to-services.py.json\",\n"
+"        \"925261691/1319/sdk.py.json\",\n"
+"        \"925261691/1319/suspicious-names.py.json\",\n"
+"      ],\n"
+"      \"successfulBuilds\": []\n"
+"    },\n"
+"    {\n"
+"      \"issueId\": 1319,\n"
+"      \"jobId\": \"600681223\",\n"
+"      \"modules\": [\n"
+"        \"600681223/1319/check-for-translation-service.py.json\",\n"
+"        \"600681223/1319/dependencies-scrape.py.json\",\n"
+"        \"600681223/1319/fastlane.py.json\",\n"
+"        \"600681223/1319/fdroid-scan-apk.py.json\",\n"
+"        \"600681223/1319/fdroid-scanner.py.json\",\n"
+"        \"600681223/1319/gradle-productFlavors.py.json\",\n"
+"        \"600681223/1319/gradle-wrapper.py.json\"\n"
+"        \"600681223/1319/sdk.py.json\",\n"
+"        \"600681223/1319/suspicious-names.py.json\",\n"
+"      ]\n"
+"    }\n"
+"  ],\n"
 
 #. type: Plain text
 #: _posts/2020-12-21-announcing-issuebot.md
@@ -16609,6 +16685,12 @@ msgid ""
 "  <<: *test-template\n"
 "  <<: *connected-template\n"
 msgstr ""
+"kvm 29 microg x86_64:\n"
+"  &lt;&lt;: *kvm-template\n"
+"\n"
+"no-accel 29 microg x86_64:\n"
+"  &lt;&lt;: *test-template\n"
+"  &lt;&lt;: *connected-template\n"
 
 #. type: Bullet: '* '
 #: _posts/2021-02-24-running-emulator-tests-on-gitlab-ci.md
