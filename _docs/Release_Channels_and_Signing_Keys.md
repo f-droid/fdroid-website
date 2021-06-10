@@ -104,6 +104,7 @@ jarsigner -keystore docs.jks -storepass android -strict -verify admin@f-droid.or
 # when satisfied with the verification, import it
 unzip admin@f-droid.org.jar admin@f-droid.org.asc
 gpg --import admin@f-droid.org.asc
+gpg --keyserver keyserver.ubuntu.com --recv-key 37D2C98789D8311948394E3E41E7044E1DBA2E89
 ```
 
 

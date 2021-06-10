@@ -217,6 +217,24 @@ size significantly.
 
 Recent versions of the Android gradle plugin will use *zipflinger* -- which arranges the contents of the APK differently -- which could result in e.g. [apksigcopier](https://github.com/obfusk/apksigcopier) failing to work in some cases.  You can tell the plugin not to use *zipflinger* by setting `android.useNewApkCreator=false` in `gradle.properties`.
 
+### Native library stripping
+
+It seems that the stripping of native libraries, e.g. _libfoo.so_, can cause
+intermittent reproducibility issues.  It is important to use the exact NDK
+version when rebuilding, e.g. r21e.  Disabling stripping can sometimes help.
+Gradle seems to strip shared libraries by default, even the app is receiving the
+shared libraries via an AAR library.  Here is how to disable it in Gradle:
+
+```gradle
+android {
+	packagingOptions {
+		doNotStrip '**/*.so'
+	}
+}
+
+```
+
+
 ### NDK _build-id_
 
 On different build machines different NDK paths and different paths to the
@@ -281,3 +299,4 @@ process.  But the APK build process can add them.  For example:
 * [Google Issue #70292819 platform-27\_r01.zip was overwritten with a new update](https://issuetracker.google.com/issues/70292819) (_Google login and JavaScript required_)
 * [Google Issue #37132313 platformBuildVersionName makes builds difficult to reproduce, creates unneeded diffs](https://issuetracker.google.com/issues/37132313) (_Google login and JavaScript required_)
 * [Google Issue #110237303 resources.arsc built with non-determism, prevents reproducible APK builds](https://issuetracker.google.com/issues/110237303) (_Google login and JavaScript required_)
+* [Unreproducible/non-deterministic code generation by navigation.safeargs.kotlin](https://issuetracker.google.com/issues/189498001) (_Google login and JavaScript required_)
