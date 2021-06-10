@@ -18,8 +18,8 @@ on.
 
 If you experience problems with the site or client software, you can
 report them in the [issue tracker](https://gitlab.com/u/fdroid), discuss
-them in the [Forum](https://forum.f-droid.org/) or on IRC
-([#fdroid on freenode](https://webchat.freenode.net/?randomnick=1&channels=%23fdroid&uio=MT1mYWxzZSYyPXRydWUmND10cnVlJjk9dHJ1ZSYxMD10cnVlJjEyPXRydWU84)).
+them in the [Forum](https://forum.f-droid.org/), on [Matrix](https://matrix.to/#/#fdroid:f-droid.org) or on IRC
+([#fdroid on OFTC](https://webchat.oftc.net/?randomnick=1&channels=fdroid&prompt=1)).
 Take a look at the [Repository Maintenance](https://f-droid.org/wiki/page/Repository_Maintenance)
 page to see how you can help keeping apps and their metadata up to
 date.
@@ -117,7 +117,7 @@ For working with the server project, it's a good idea to read
 ### Help with Infrastructure
 
 F-Droid provides multiple servers (builders, web portal, download areas...) which need regular maintenance, Ansible-based deployment, and hardware management.
-Further information can be found by asking [on IRC](https://webchat.freenode.net/?channels=%23fdroid-dev) (#fdroid-dev on freenode) or team@f-droid.org.
+Further information can be found by asking on [Matrix](https://matrix.to/#/#fdroid-dev:f-droid.org), [IRC](https://webchat.oftc.net/?randomnick=1&channels=fdroid&prompt=1) (#fdroid-dev on OFTC) or team@f-droid.org.
 
 ### Design
 

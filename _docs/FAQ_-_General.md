@@ -12,9 +12,9 @@ title: FAQ - General
 We welcome all questions and have a few places to reach out to the
 F-Droid community:
 
--   the IRC chat room: [\#fdroid](irc://irc.freenode.net/fdroid) IRC
-    chatroom on Freenode ([click here to join the
-    webchat](https://webchat.freenode.net/?randomnick=1&channels=%23fdroid&uio=MT1mYWxzZSYyPXRydWUmND10cnVlJjk9dHJ1ZSYxMD10cnVlJjEyPXRydWU84))
+-   the IRC chat room: [\#fdroid](ircs://irc.oftc.net:6697/fdroid) IRC
+    chatroom on OFTC ([click here to join the
+    webchat](https://webchat.oftc.net/?randomnick=1&channels=fdroid&prompt=1))
 -   the [web forum](https://forum.f-droid.org/)
 -   [issue tracker](https://gitlab.com/fdroid/fdroidclient/issues) for
     the Android app itself (aka client)
@@ -111,8 +111,8 @@ Pick your favourite reason (both are true and valid):
 
 Use the [issue tracker](https://gitlab.com/fdroid/fdroidclient/issues)
 or email <team@f-droid.org>. You can also discuss them in the
-[\#fdroid](irc://irc.freenode.net/fdroid) IRC chatroom on Freenode
-([click here to join the webchat](https://webchat.freenode.net/?randomnick=1&channels=%23fdroid&uio=MT1mYWxzZSYyPXRydWUmND10cnVlJjk9dHJ1ZSYxMD10cnVlJjEyPXRydWU84)).
+[\#fdroid](ircs://irc.oftc.net:6697/fdroid) IRC chatroom on OFTC
+([click here to join the webchat](https://webchat.oftc.net/?randomnick=1&channels=fdroid&prompt=1)).
 
 If you do not already have an account, or do not want to create one,
 you can use our reusable account.  The issue tracker works better if
