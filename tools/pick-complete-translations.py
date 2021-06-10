@@ -7,8 +7,12 @@ import json
 import os
 import re
 import requests
-import sys
 import yaml
+
+
+LOCALE_REGEX = re.compile(
+    r'(?:_data/|po/_(?:docs|pages|posts)\.)(.*)(?:/(?:strings|tutorials)\.json|\.po)'
+)
 
 
 def get_paths_tuple(locale):
@@ -19,6 +23,7 @@ def get_paths_tuple(locale):
         'po/_pages.%s.po' % locale,
         'po/_posts.%s.po' % locale,
     )
+
 
 projectbasedir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -53,17 +58,26 @@ for entry in pages:
 for locale in site_languages:
     s = strings_entries.get(locale)
     p = pages_entries.get(locale)
-    if s is not None and s['translated_percent'] == 100 and s['failing'] == 0 \
-       and p is not None and p['translated_percent'] > 98 and p['failing'] == 0:
+    if (
+        s is not None
+        and s['translated_percent'] == 100
+        and s['failing'] == 0
+        and p is not None
+        and p['translated_percent'] > 98
+        and p['failing'] == 0
+    ):
         merge_locales.append(locale)
 
 if not merge_locales:
-    sys.exit()
+    exit()
 
 if 'merge_weblate' in repo.heads:
     merge_weblate = repo.heads['merge_weblate']
-    repo.create_tag('previous_merge_weblate', ref=merge_weblate,
-                    message=('Automatically created by %s' % __file__))
+    repo.create_tag(
+        'previous_merge_weblate',
+        ref=merge_weblate,
+        message=('Automatically created by %s' % __file__),
+    )
 else:
     merge_weblate = repo.create_head('merge_weblate')
 merge_weblate.set_commit(upstream.refs.master)
@@ -71,11 +85,19 @@ merge_weblate.checkout()
 
 email_pattern = re.compile(r'by (.*?) <(.*)>$')
 
-for locale in sorted(merge_locales):
-    commits = list(repo.iter_commits(
-        str(weblate.refs.master) + '...' + str(upstream.refs.master),
-        paths=get_paths_tuple(locale), max_count=10))
-    for commit in reversed(commits):
+for commit in reversed(
+    list(
+        repo.iter_commits(str(weblate.refs.master) + '...' + str(upstream.refs.master))
+    )
+):
+    pick = False
+    for f in commit.stats.files.keys():
+        m = LOCALE_REGEX.match(f)
+        if m and m.group(1) in merge_locales:
+            pick = True
+            break
+    if pick:
+        print('git cherry-pick', commit)
         repo.git.cherry_pick(str(commit))
         m = email_pattern.search(commit.summary)
         if m:
