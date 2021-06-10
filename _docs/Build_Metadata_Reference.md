@@ -737,14 +737,12 @@ configuration to the build. These are (roughly in order of application):
 
 `ndk: <version>`<a name="build_ndk"></a>
 
-:   Version of the NDK to use in this build. Defaults to the latest NDK
-    release that included legacy toolchains (r12b), so as to not break builds
-    that require toolchains no longer included in current versions of
-    the NDK.
-
-    The buildserver supports r10e, r11c, r12b, r13b, r14b, r15c, r16b, r17c,
-    r18b, r19c, r20b and r21d. You may add support for more versions by adding
-    them to ’ndk\_paths’ in your config file.
+:   Version of the NDK to use in this build.  The value is the NDK version as a
+    string in either of the two official version schemes, e.g. _r21e_ or
+    _21.4.7075529_.  NDK r10e or later is supported.  This can also be a list of
+    version strings, and all listed versions will be installed.  The
+    `ANDROID_SDK_ROOT` environment variable will be set to the first version in
+    the list.
 
 `gradle: <flavour1>[,<flavour2>,...]`<a name="build_gradle"></a>
 
