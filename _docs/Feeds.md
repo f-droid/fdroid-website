@@ -31,9 +31,13 @@ The human changes to the wiki: <https://f-droid.org/wiki/index.php?title=Special
 
 <https://gitlab.com/fdroid/fdroidclient/issues>, <https://gitlab.com/fdroid/fdroidserver/issues>, <https://gitlab.com/fdroid/fdroiddata/issues>: All expose RSS feeds, and also email notifications if desired.
 
+### Matrix
+
+The room can be previewed without an account on https://matrix.to/#/#fdroid:f-droid.org or https://matrix.to/#/#fdroid-dev:f-droid.org
+
 ### IRC
 
-chat.freenode.net #fdroid or #fdroid-dev. The channels are logged at <https://botbot.me/freenode/fdroid/> and <https://botbot.me/freenode/fdroid-dev/>.
+Old IRC logs are available at <https://botbot.me/freenode/fdroid/> and <https://botbot.me/freenode/fdroid-dev/>.
 
 ## OPML import to a feed reader
 

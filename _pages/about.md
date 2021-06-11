@@ -14,8 +14,8 @@ You can discuss F-Droid or get help on the
 [forum](https://forum.f-droid.org) and F-Droid's user chat.
 
 To chat with others about F-Droid, either join via IRC in the
-[#fdroid channel](https://webchat.freenode.net/?channels=%23fdroid) on
-freenode or join [#fdroid:f-droid.org](https://matrix.to/#/#fdroid:f-droid.org) on Matrix.
+[#fdroid channel](https://webchat.oftc.net/?randomnick=1&channels=fdroid&prompt=1) on
+OFTC or join [#fdroid:f-droid.org](https://matrix.to/#/#fdroid:f-droid.org) on Matrix.
 The discussions are logged on
 [matrix.f-droid.org](https://matrix.f-droid.org/alias/%23fdroid:f-droid.org).
 
