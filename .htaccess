@@ -47,33 +47,33 @@ AddEncoding x-gzip .gz
 
 # 1 week
 <FilesMatch "\.ttf$">
-  Header set Cache-Control "max-age=604800, public, immutable"
+  Header set Cache-Control "max-age=604800, public, immutable, stale-while-revalidate=300"
 </FilesMatch>
 
 # 12 hours
 <FilesMatch "\.(css|gif|ico|jpg|jpeg|js|json|png|svg|txt|xml)$">
-  Header set Cache-Control "max-age=43200, public, immutable"
+  Header set Cache-Control "max-age=43200, public, immutable, stale-while-revalidate=300"
 </FilesMatch>
 
 # 10 minutes
 <FilesMatch "\.html$">
-  Header set Cache-Control "max-age=600, public, immutable"
+  Header set Cache-Control "max-age=600, public, immutable, stale-while-revalidate=300"
 </FilesMatch>
 <FilesMatch "\.html\.[a-z][a-z](|_[A-Z][A-Z]|_Han[st])$">
-  Header set Cache-Control "max-age=600, public, immutable"
+  Header set Cache-Control "max-age=600, public, immutable, stale-while-revalidate=300"
 </FilesMatch>
 
 # 1 year for filenames with SHA-256 hash in them
 # https://gitlab.com/fdroid/fdroidserver/merge_requests/669
 <FilesMatch "^[a-zA-Z-]{4,}_[a-zA-Z0-9_=-]{44}\.(css|gif|jpg|jpeg|js|json|png|svg|txt|xml)$">
-  Header set Cache-Control "max-age=31536000, public, immutable"
+  Header set Cache-Control "max-age=31536000, public, immutable, stale-while-revalidate=300"
 </FilesMatch>
 
 # The icons extracted from the APKs won't change, since the filename
 # includes the Application ID and the Version Code. This is <If> to
 # allow full path matches in the .htaccess file.
 <If "%{REQUEST_URI} =~ m#^/(repo|archive)/icons(-\d+)?/.*\.png$#">
-  Header set Cache-Control "max-age=31536000, public, immutable"
+  Header set Cache-Control "max-age=31536000, public, immutable, stale-while-revalidate=300"
 </If>
 
 
