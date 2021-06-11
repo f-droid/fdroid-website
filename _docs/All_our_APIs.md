@@ -33,11 +33,13 @@ more creative reuse, we keep our data in standard formats in easy to find
 places.  The whole app collection is in [YAML format]({{ site.baseurl }}/{%
 post_url 2019-09-11-yaml-metadata %}).  The file can either be directly accessed
 by Application ID using the GitLab Raw URL
-`https://gitlab.com/fdroid/fdroiddata/-/blob/master/metadata/<ApplicationID>.yml`
-(e.g. <https://gitlab.com/fdroid/fdroiddata/-/blob/master/metadata/org.fdroid.fdroid.yml>).
+`https://gitlab.com/fdroid/fdroiddata/-/raw/master/metadata/<ApplicationID>.yml`
+(e.g. <https://gitlab.com/fdroid/fdroiddata/-/raw/master/metadata/org.fdroid.fdroid.yml>).
 The repo index and the [GitLab Repository Files
 API](https://docs.gitlab.com/ee/api/repository_files.html) can be used to query
-which Application IDs are available.
+which Application IDs are available.  These files are also available via the
+mirror on GitHub,
+e.g. <https://raw.githubusercontent.com/f-droid/fdroiddata/master/metadata/org.fdroid.fdroid.yml>
 
 
 ### f-droid.org build server status
