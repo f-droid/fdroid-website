@@ -959,14 +959,10 @@ Valid modes are:
     them out with something like `.*[0-9]$` which requires tag names to
     end with a digit.
 
-    Optionally UpdateCheckData can be specified to extract version code and
+    Optionally `UpdateCheckData` can be specified to extract version code and
     name from repository files you specify (instead of relying on the defaults
     used to match against otherwise, which in most cases is `build.gradle` or
-    `AndroidManifest.xml`). The format is the same as specified in `HTTP`
-    below, only using files from the repository instead of URLs.
-
-    For example a Flutter app with the `pubspec.yaml` being in the repo root
-    could use: `pubspec.yaml|version:\s.+\+(\d+)|.|version:\s(.+)\+`.
+    `AndroidManifest.xml`).
 
 -   `HTTP` - HTTP requests are used to determine the current version
     code and version name. This is controlled by the _UpdateCheckData_
@@ -1004,6 +1000,8 @@ specify a regex which, if matched against the version name, causes that
 version to be ignored. For example, ’beta’ could be specified to ignore
 version names that include that text.
 
+Only Available with _UpdateCheckMode_ `HTTP`.
+
 
 ### _UpdateCheckName_<a name="UpdateCheckName"></a>
 
@@ -1019,7 +1017,34 @@ build.gradle file does not contain the package name.
 
 ### _UpdateCheckData_<a name="UpdateCheckData"></a>
 
-Used in conjunction with _UpdateCheckMode_ for certain modes.
+Used in conjunction with _UpdateCheckMode_ `Tag` or `HTTP`.
+
+```
+UpdateCheckData: <vercode-location>|<RegEx-for-versionCode>|<versionName-location>|<RegEx-for-versionName>
+```
+
+-   `vercode-location` - URL (with `UpdateCheckMode: HTTP`) or path/file
+    relative to repo root, leave empty to check the tag name instead (with
+    `UpdateCheckMode: Tags`).
+-   `RegEx-for-versionCode` - RegEx to match versionCode.
+-   `versionName-location` - Same as vercode-location just for versionName. A .
+    means to take vercode-location, leave empty to check the tag name instead
+    (only with `UpdateCheckMode: Tags`).
+-   `RegEx-for-versionName` - Similar to RegEx-for-versionCode, just for versionName.
+
+Examples for `UpdateCheckMode: Tag`:
+-   Flutter app with the `pubspec.yaml` in the repo root:
+    `pubspec.yaml|version:\s.+\+(\d+)|.|version:\s(.+)\+`
+-   Use the git tag as version name:
+    `app/build.gradle|versionCode\s(\d+)||`
+-   Optionally a regex to extract the version name from the tag can be specified:
+    `app/build.gradle|versionCode\s(\d+)||Android-([\d.]+)`
+-   If no file for the version code was specified, code and name can be extracted from the tag:
+    `|\+(\d+)||Android-([\d.]+)`
+
+Examples for `UpdateCheckMode: HTTP`:
+-   `https://foo/version.json|"version_code":.*"(.*)"|.|"version_name":.*\"(.*)\",`
+-   `https://foo/version_fdroid.txt|versionCode=(.*)|.|versionName=(.*)`
 
 
 ### _AutoUpdateMode_<a name="AutoUpdateMode"></a>
