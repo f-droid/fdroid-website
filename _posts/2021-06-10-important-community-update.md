@@ -1,5 +1,5 @@
 ---
-author: Sylvia van Os
+author: "F-Droid"
 layout: post
 title: Important Community Update
 ---
