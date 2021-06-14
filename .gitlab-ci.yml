@@ -102,6 +102,9 @@ pages:
     expire_in: 1w
     when: always
   script:
+   - (find _*/ -type f | grep -Ev '\.(html|json|md|rb|scss|xml|yaml)$')
+         && (echo "ERROR The above files have a bad or missing file extension"; exit 1)
+
    - *apt-template
    - apt-get install curl python3-yaml
    - ./tools/trigger-spellcheckbot
