@@ -10,7 +10,8 @@ from babel.messages.pofile import read_po, write_po
 from babel.messages.catalog import Message
 
 errorcount = 0
-pattern = re.compile(r'](\([^h][^\)]+\))')
+md_link_pattern = re.compile(r'](\([^h][^\)]+\))')
+url_link_pattern = re.compile(r'<(https?://[^>]+)>')
 bad_md_link = re.compile(r'.*\]\s+\(')
 for f in sorted(glob.glob('po/*.po*')):
     output = ''
@@ -63,13 +64,21 @@ for f in sorted(glob.glob('po/*.po*')):
             errorcount += 1
             output += 'Space breaks Markdown link: ' + message.id + '\n: ' + m.group()
 
+        # machine translation messes up links a lot
+        if 'https:>' in message.string.lower():
+            output += 'Malformed link in:\n%s' % message.string
+
         idlinks = []
-        for m in pattern.findall(message.id):
+        for m in url_link_pattern.findall(message.id):
+            idlinks.append(m)
+        for m in md_link_pattern.findall(message.id):
             idlinks.append(m)
         strlinks = []
-        for m in pattern.findall(message.string):
+        for m in url_link_pattern.findall(message.string):
             strlinks.append(m)
-        if len(strlinks) > 0 and len(idlinks) != len(strlinks):
+        for m in md_link_pattern.findall(message.string):
+            strlinks.append(m)
+        if message.id and len(strlinks) > 0 and len(idlinks) != len(strlinks):
             output += 'ERROR ' + f + ' ' + str(len(idlinks)) + ' != ' + str(len(strlinks)) + ' ' + message.id + '\n'
             errorcount += 1
         for i in range(len(strlinks)):
