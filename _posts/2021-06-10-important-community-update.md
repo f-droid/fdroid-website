@@ -14,6 +14,6 @@ If you are currently in #fdroid or #fdroid-dev on freenode, we suggest switching
 
 If you are currently using the #fdroid-official:matrix.org or #fdroid-dev:matrix.org Matrix channels, you do not have to take any further action.
 
-Please note that we are currently working on bridging the Matrix and OFTC channels. While the F-Droid dev chat is already bridged, we are still working with OFTC to be able to bridge the regular F-Droid chat.
+As of 2021-06-13 both #fdroid and #fdroid-dev on OFTC have been bridged to the corresponding Matrix rooms. Many thanks to Half-Shot and matrix.org for making an exception for F-Droid and allowing a large room to be bridged to OFTC!
 
 We hope to see you there and thank you for your patience.
