@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2021-06-12 11:01+0200\n"
+"POT-Creation-Date: 2021-06-14 16:08+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -3605,19 +3605,10 @@ msgstr ""
 #: _docs/Build_Metadata_Reference.md
 #, markdown-text, no-wrap
 msgid ""
-"    Optionally UpdateCheckData can be specified to extract version code and\n"
+"    Optionally `UpdateCheckData` can be specified to extract version code and\n"
 "    name from repository files you specify (instead of relying on the defaults\n"
 "    used to match against otherwise, which in most cases is `build.gradle` or\n"
-"    `AndroidManifest.xml`). The format is the same as specified in `HTTP`\n"
-"    below, only using files from the repository instead of URLs.\n"
-msgstr ""
-
-#. type: Plain text
-#: _docs/Build_Metadata_Reference.md
-#, markdown-text, no-wrap
-msgid ""
-"    For example a Flutter app with the `pubspec.yaml` being in the repo root\n"
-"    could use: `pubspec.yaml|version:\\s.+\\+(\\d+)|.|version:\\s(.+)\\+`.\n"
+"    `AndroidManifest.xml`).\n"
 msgstr ""
 
 #. type: Bullet: '-   '
@@ -3676,6 +3667,12 @@ msgstr ""
 msgid "When checking for updates (via _UpdateCheckMode_) this can be used to specify a regex which, if matched against the version name, causes that version to be ignored. For example, ’beta’ could be specified to ignore version names that include that text."
 msgstr ""
 
+#. type: Plain text
+#: _docs/Build_Metadata_Reference.md
+#, markdown-text
+msgid "Only Available with _UpdateCheckMode_ `HTTP`."
+msgstr ""
+
 #. type: Title ###
 #: _docs/Build_Metadata_Reference.md
 #, markdown-text, no-wrap
@@ -3703,7 +3700,61 @@ msgstr ""
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 #, markdown-text
-msgid "Used in conjunction with _UpdateCheckMode_ for certain modes."
+msgid "Used in conjunction with _UpdateCheckMode_ `Tag` or `HTTP`."
+msgstr ""
+
+#. type: Fenced code block
+#: _docs/Build_Metadata_Reference.md
+#, no-wrap
+msgid "UpdateCheckData: <vercode-location>|<RegEx-for-versionCode>|<versionName-location>|<RegEx-for-versionName>\n"
+msgstr ""
+
+#. type: Bullet: '-   '
+#: _docs/Build_Metadata_Reference.md
+#, markdown-text
+msgid "`vercode-location` - URL (with `UpdateCheckMode: HTTP`) or path/file relative to repo root, leave empty to check the tag name instead (with `UpdateCheckMode: Tags`)."
+msgstr ""
+
+#. type: Bullet: '-   '
+#: _docs/Build_Metadata_Reference.md
+#, markdown-text
+msgid "`RegEx-for-versionCode` - RegEx to match versionCode."
+msgstr ""
+
+#. type: Bullet: '-   '
+#: _docs/Build_Metadata_Reference.md
+#, markdown-text
+msgid "`versionName-location` - Same as vercode-location just for versionName. A .  means to take vercode-location, leave empty to check the tag name instead (only with `UpdateCheckMode: Tags`)."
+msgstr ""
+
+#. type: Bullet: '-   '
+#: _docs/Build_Metadata_Reference.md
+#, markdown-text
+msgid "`RegEx-for-versionName` - Similar to RegEx-for-versionCode, just for versionName."
+msgstr ""
+
+#. type: Plain text
+#: _docs/Build_Metadata_Reference.md
+#, markdown-text, no-wrap
+msgid ""
+"Examples for `UpdateCheckMode: Tag`:\n"
+"-   Flutter app with the `pubspec.yaml` in the repo root:\n"
+"    `pubspec.yaml|version:\\s.+\\+(\\d+)|.|version:\\s(.+)\\+`\n"
+"-   Use the git tag as version name:\n"
+"    `app/build.gradle|versionCode\\s(\\d+)||`\n"
+"-   Optionally a regex to extract the version name from the tag can be specified:\n"
+"    `app/build.gradle|versionCode\\s(\\d+)||Android-([\\d.]+)`\n"
+"-   If no file for the version code was specified, code and name can be extracted from the tag:\n"
+"    `|\\+(\\d+)||Android-([\\d.]+)`\n"
+msgstr ""
+
+#. type: Plain text
+#: _docs/Build_Metadata_Reference.md
+#, markdown-text, no-wrap
+msgid ""
+"Examples for `UpdateCheckMode: HTTP`:\n"
+"-   `https://foo/version.json|\"version_code\":.*\"(.*)\"|.|\"version_name\":.*\\\"(.*)\\\",`\n"
+"-   `https://foo/version_fdroid.txt|versionCode=(.*)|.|versionName=(.*)`\n"
 msgstr ""
 
 #. type: Title ###
