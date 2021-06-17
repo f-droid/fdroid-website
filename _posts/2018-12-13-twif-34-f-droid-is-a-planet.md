@@ -43,7 +43,7 @@ I've just put the first article of my F-Droid series online. "F-Droid: The priva
 
 The German article is also online now at the same location.
 
-![Article Screenshot]({% asset posts/2018-12-13-twif-34-f-droid-is-a-planet/Izzy c't F-Droid article part 1.jpg %})
+![Article Screenshot]({% asset posts/2018-12-13-twif-34-f-droid-is-a-planet/izzy_ct_fdroid_article_part_1.jpg %})
 
 ### New apps
 
