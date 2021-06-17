@@ -28,7 +28,7 @@ pagination:
       <a href="{{ post.authorWebsite }}">
         {% endif %}
         <img
-          src="{% assets %}/{{ post.author }}.jpg"
+          src="{{ post.author | append: '.jpg' | asset }}"
           alt="{{ post.author }}"
           width="40"
           />
@@ -70,7 +70,7 @@ pagination:
   {% endif %}
 
   <p class="rss-subscribe"><a href="{{ "/feed.xml" | relative_url }}">
-      <img src="{% assets %}/Feed-icon-16x16.png" alt="RSS"/> RSS
+      <img src="{% asset Feed-icon-16x16.png %}" alt="RSS"/> RSS
   </a></p>
 
 </div>
