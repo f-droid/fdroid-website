@@ -29,4 +29,4 @@ permalink: /
     </div>
 </div>
 
-<script src="{{ site.baseurl }}/js/donate.js"></script>
+<script src="{% asset donate.js %}"></script>
