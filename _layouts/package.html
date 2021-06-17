@@ -39,7 +39,7 @@ layout: default-package-sidebar
 			{% for anti_feature in page.anti_features %}
 			<li class="anti-feature-item">
 			  <a class="anti-feature-link" href="{{ site.baseurl }}/docs/Anti-Features/#{{ anti_feature }}">
-					<img class="anti-feature-icon" src="{{ site.baseurl }}/assets/icons/antifeatures/{{ anti_feature }}.svg" alt=""> 
+					<img class="anti-feature-icon" src="{{ anti_feature | prepend: 'icons/antifeatures/' | append: '.svg' | asset }}" alt=""> 
 					<div class="anti-feature-text">
 						{{ site.data.strings.antifeatures[anti_feature] }}
 					</div>
@@ -50,7 +50,7 @@ layout: default-package-sidebar
 			{% for anti_feature in page.packages.first.anti_features %}
 			<li class="anti-feature-item">
 			  <a class="anti-feature-link" href="{{ site.baseurl }}/docs/Anti-Features/#{{ anti_feature }}">
-					<img class="anti-feature-icon" src="{{ site.baseurl }}/assets/icons/antifeatures/{{ anti_feature }}.svg" alt=""> 
+					<img class="anti-feature-icon" src="{{ anti_feature | prepend: 'icons/antifeatures/' | append: '.svg' | asset }}" alt=""> 
 					<div class="anti-feature-text">
 						{{ site.data.strings.antifeatures[anti_feature] }}
 					</div>

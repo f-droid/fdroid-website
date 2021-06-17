@@ -6,7 +6,7 @@ authorWebsite: "https://open.source.coffee"
 featured: '<em style="padding: 0.15em 0.5em 0.10em; margin-right: 0.5ex; box-shadow: 0.1em 0.05em 0.1em rgba(0, 0, 0, 0.3); border-radius: 1em; color: black; background: linear-gradient(orange, yellow);">Featured</em>'
 ---
 
-This Week In F-Droid 22, Week 38, 2018 <a href="{{ site.baseurl }}/feed.xml"><img src="{{ site.baseurl }}/assets/Feed-icon-16x16.png" alt="Feed"></a>
+This Week In F-Droid 22, Week 38, 2018 <a href="{{ site.baseurl }}/feed.xml"><img src="{% asset Feed-icon-16x16.png %}" alt="Feed"></a>
 
 In this edition: Buildserver ready to upgrade to Stretch, SET Anti-Feature bug, hosted basebox images, pretty fdroiddata graphs, Rocket.Chat finally lands, and 68 updated apps including Mastalab.
 <!--more-->

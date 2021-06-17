@@ -11,7 +11,7 @@ has sprung forth unto the Android world, and we have sprung into
 action to keep it far away.
 
 <p align="center">
-  <img width="300" height="282" src="{{ site.baseurl }}/assets/posts/2017-12-13-fdroid-and-janus/janus.png" />
+  <img width="300" height="282" src="{% asset posts/2017-12-13-fdroid-and-janus/janus.png %}" />
 </p>
 
 First off, _f-droid.org_, _guardianproject.info/fdroid_ and

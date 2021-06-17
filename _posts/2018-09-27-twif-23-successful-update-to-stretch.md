@@ -11,7 +11,7 @@ major: '<em style="padding: 0.15em 0.5em 0.10em; margin-right: 0.1ex; border-sty
 number_of_updated_apps: 66
 ---
 
-This Week In F-Droid {{ page.edition }}, Week {{ page.date | date: "%V, %G" }} <a href="{{ site.baseurl }}/feed.xml"><img src="{{ site.baseurl }}/assets/Feed-icon-16x16.png" alt="Feed"></a>
+This Week In F-Droid {{ page.edition }}, Week {{ page.date | date: "%V, %G" }} <a href="{{ site.baseurl }}/feed.xml"><img src="{% asset Feed-icon-16x16.png %}" alt="Feed"></a>
 
 In this edition: Buildserver successfully upgraded to Stretch, SET Anti-Feature fixed, new F-Droid sweatshirts, and F-Droid 1.4 marked stable. There are 3 new apps and {{ page.number_of_updated_apps }} updates, including Music Player GO, FOSS Browser, StreetComplete, and Bimba.
 

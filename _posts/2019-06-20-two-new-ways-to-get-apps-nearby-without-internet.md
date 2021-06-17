@@ -25,9 +25,9 @@ always known what the state of the Wi-Fi is.  Thanks to the
 long time F-Droid contributor @mvdan, it can do a lot more.
 
 <p align="center">
-<img width="225" src="{{ site.baseurl }}/assets/posts/2019-06-20-two-new-ways-to-get-apps-nearby-without-internet/0-usb-otg.jpg" />
-<img width="180" src="{{ site.baseurl }}/assets/posts/2019-06-20-two-new-ways-to-get-apps-nearby-without-internet/1-handle-usb.png" />
-<img width="180" src="{{ site.baseurl }}/assets/posts/2019-06-20-two-new-ways-to-get-apps-nearby-without-internet/2-click-to-scan.png" />
+<img width="225" src="{% asset posts/2019-06-20-two-new-ways-to-get-apps-nearby-without-internet/0-usb-otg.jpg %}" />
+<img width="180" src="{% asset posts/2019-06-20-two-new-ways-to-get-apps-nearby-without-internet/1-handle-usb.png %}" />
+<img width="180" src="{% asset posts/2019-06-20-two-new-ways-to-get-apps-nearby-without-internet/2-click-to-scan.png %}" />
 </p>
 
 The second is using SD Cards and USB On-The-Go (OTG) flash drives as a

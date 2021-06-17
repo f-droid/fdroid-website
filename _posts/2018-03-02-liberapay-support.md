@@ -6,7 +6,7 @@ authorWebsite: "https://forum.f-droid.org/u/Bubu"
 ---
 
 <p align="center">
-  <img width="150" src="{{ site.baseurl }}/assets/posts/2018-03-02-liberapay-support/liberapay_icon-v2_yellow-r.svg" style="box-shadow: unset;" />
+  <img width="150" src="{% asset posts/2018-03-02-liberapay-support/liberapay_icon-v2_yellow-r.svg %}" style="box-shadow: unset;" />
 </p>
 
 Recently F-Droid has gained support for [Liberapay](https://liberapay.com/), a
@@ -32,7 +32,7 @@ F-Droid now has full support for projects offering donation via Liberapay:
   will join soon.
 * The android client now shows the Liberapay widget: 
   <p align="center">
-   <img width="400" src="{{ site.baseurl }}/assets/posts/2018-03-02-liberapay-support/liberapay-client-screenshot.png" />
+   <img width="400" src="{% asset posts/2018-03-02-liberapay-support/liberapay-client-screenshot.png %}" />
   </p>
 * The website now includes [all donation options]({{ site.baseurl }}/2018/03/01/website-updates.html).
 * F-Droid itself has a [Liberapay team](https://liberapay.com/F-Droid-Data).
@@ -51,4 +51,4 @@ Do you know any app or developer with a Liberapay account that is not yet shown
 in F-Droid? Help us by adding it to the [apps metadata](https://gitlab.com/fdroid/fdroiddata).
 
 You can also fund the further development of Liberapay through Liberapay itself here:
-<a href="https://liberapay.com/Liberapay/"><img src="{{ site.baseurl }}/assets/liberapay_donate_button.svg" style="box-shadow: unset;" /></a>
+<a href="https://liberapay.com/Liberapay/"><img src="{% asset liberapay_donate_button.svg %}" style="box-shadow: unset;" /></a>

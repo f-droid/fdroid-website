@@ -83,4 +83,4 @@ directly, without resorting to complicated exploits.
 * BZ-01-017 Unauthorized Access to internal Network Resources
 
 The audit report PDF from Cure53 is also cached on this site:
-[pentest-report_fdroid.pdf]({{ site.baseurl }}/assets/posts/2018-01-20-upcoming-security-audit/pentest-report_fdroid.pdf).
+[pentest-report_fdroid.pdf]({% asset posts/2018-01-20-upcoming-security-audit/pentest-report_fdroid.pdf %}).
