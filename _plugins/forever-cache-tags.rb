@@ -1,8 +1,24 @@
 require 'digest'
 
+#
+# Provides a "forever caching" asset tag & filter that outputs e.g.
+# /assets/forever_${SHA256}.png and hard links this to the original file:
+#
+#   {% asset foo.png %}
+#   {{ some_var | append: '.png' | asset }}
+#
+# Hooks into i18n (prepare-multi-lang.rb) to avoid concurrency issues.
+#
+# CAVEATS:
+#
+# * assumes 1 site
+# * assumes all languages have the same assets
+# * assumes assets exists and will be copied unmodified from e.g. assets/ to _site/assets/
+# * hard links .js assets into assets/ (not js/)
+#
+
 module Jekyll
   module ForeverCache
-    # NB: assumes only 1 site
     @@baseurl = Jekyll.sites.first.baseurl
     @@destination = Jekyll.sites.first.dest
     @@assets = {}
@@ -22,8 +38,6 @@ module Jekyll
       File.join @@destination, *path.split('/')
     end
 
-    # FIXME: assumes asset exists and will be copied unmodified from
-    # e.g. assets/ to _site/assets/
     def self.digest(path)
       Digest::SHA256.file(File.join(*path.split('/'))).hexdigest
     end
@@ -47,6 +61,7 @@ module Jekyll
       end
     end
   end
+
   class ForeverCacheTag < Liquid::Tag
     def initialize(tag_name, input, tokens)
       super
@@ -57,6 +72,7 @@ module Jekyll
       Jekyll::ForeverCache.link_to_asset! @input.strip
     end
   end
+
   module ForeverCacheFilter
     def asset(input)
       Jekyll::ForeverCache.link_to_asset! input.strip
@@ -67,7 +83,6 @@ end
 Liquid::Template.register_filter Jekyll::ForeverCacheFilter
 Liquid::Template.register_tag 'asset', Jekyll::ForeverCacheTag
 
-# FIXME: assumes all languages have the same assets
 # after i18n is done
 Jekyll::Hooks.register :i18n, :post_write do
   Jekyll::ForeverCache.link_assets!

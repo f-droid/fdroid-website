@@ -14,18 +14,18 @@ require 'tmpdir'
 #
 
 Jekyll::Hooks.register :site, :pre_render do |site|
-  FileUtils.touch File.join(Dir.tmpdir(), "fdroid-website.#{site.active_lang}.writing.lock")
+  FileUtils.touch File.join(Dir.tmpdir, "fdroid-website.#{site.active_lang}.writing.lock")
 end
 
 Jekyll::Hooks.register :site, :post_write do |site|
-  FileUtils.rm File.join(Dir.tmpdir(), "fdroid-website.#{site.active_lang}.writing.lock")
+  FileUtils.rm File.join(Dir.tmpdir, "fdroid-website.#{site.active_lang}.writing.lock")
 
   # Use dirname, because it has been patched to point at "SITE_DIR/LANG" by
   # polyglot, but we want "SITE_DIR".
   site_dir = File.dirname site.dest
   langs = site.languages + ['_']
 
-  if langs.any? { |l| File.exists? File.join(Dir.tmpdir(), "fdroid-website.#{l}.writing.lock") }
+  if langs.any? { |l| File.exists? File.join(Dir.tmpdir, "fdroid-website.#{l}.writing.lock") }
     Jekyll::logger.debug "i18n:", "Not yet fixing translations, as some are still rendering."
   else
     Jekyll::logger.info "i18n:", "Ensuring default English translation is in webroot."
