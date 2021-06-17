@@ -38,15 +38,12 @@ module Jekyll
     end
 
     def self.link_assets!
+      Jekyll::logger.info 'forever:', 'Linking assets.'
       @@assets.each do |file, asset|
         forever = asset[:file]
         next if File.exist? forever
-        STDERR.puts "linking #{forever} to #{file}..." # FIXME
-        begin
-          File.link file, forever
-        rescue SystemCallError
-          raise unless File.exist? forever
-        end
+        Jekyll::logger.debug 'forever:', "Linking #{forever} to #{file}."
+        File.link file, forever
       end
     end
   end
@@ -70,6 +67,8 @@ end
 Liquid::Template.register_filter Jekyll::ForeverCacheFilter
 Liquid::Template.register_tag 'asset', Jekyll::ForeverCacheTag
 
-Jekyll::Hooks.register :site, :post_write do
+# FIXME: assumes all languages have the same assets
+# after i18n is done
+Jekyll::Hooks.register :i18n, :post_write do
   Jekyll::ForeverCache.link_assets!
 end
