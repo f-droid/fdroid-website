@@ -93,7 +93,7 @@ previous example.  But this time, the networking should be entirely
 disabled before the install process.  For example, it is easy in many
 laptops to physically remove the WiFi card.  Therefore, it makes sense
 to use a laptop that does not include an ethernet jack, which are
-usually not possible to remove.  Otherwise, blacklisting all kernel
+usually not possible to remove.  Otherwise, blocklisting all kernel
 modules related to neworking can suffice.  Since this machine is fully
 offline, the extra work of using an HSM is not as important, but it
 can't hurt to include it.

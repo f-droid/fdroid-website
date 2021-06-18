@@ -1367,7 +1367,7 @@ msgstr "Laptop de assinatura completamente desconectada com pendrives USB"
 
 #. type: Plain text
 #: _docs/Building_a_Signing_Server.md
-msgid "This process is based on the same basic, stripped down laptop as the previous example.  But this time, the networking should be entirely disabled before the install process.  For example, it is easy in many laptops to physically remove the WiFi card.  Therefore, it makes sense to use a laptop that does not include an ethernet jack, which are usually not possible to remove.  Otherwise, blacklisting all kernel modules related to neworking can suffice.  Since this machine is fully offline, the extra work of using an HSM is not as important, but it can't hurt to include it."
+msgid "This process is based on the same basic, stripped down laptop as the previous example.  But this time, the networking should be entirely disabled before the install process.  For example, it is easy in many laptops to physically remove the WiFi card.  Therefore, it makes sense to use a laptop that does not include an ethernet jack, which are usually not possible to remove.  Otherwise, blocklisting all kernel modules related to neworking can suffice.  Since this machine is fully offline, the extra work of using an HSM is not as important, but it can't hurt to include it."
 msgstr "Esse processo é baseado no mesmo portátil básico e despojado do exemplo anterior. Mas desta vez, a rede deve ser totalmente desativada antes do processo de instalação. Por exemplo, é fácil em muitos portáteis remover a placa WiFi fisicamente. Portanto, faz sentido usar um portátil que não inclua um conector Ethernet, que geralmente não é possível remover. Caso contrário, inserir em lista negra todos os módulos do kernel relacionados a conectividade pode ser suficiente. Como este sistema está totalmente desconectado, o trabalho adicional de usar um HSM não é tão importante, mas não faz mal incluí-lo."
 
 #. type: Plain text
@@ -4602,8 +4602,8 @@ msgstr "[instalação gitlab-ci-multi-runner](https://docs.gitlab.com/runner/ins
 
 #. type: Bullet: '3. '
 #: _docs/Deploying_the_Website.md
-msgid "prepare _deploy-whitelist-keyring.gpg_ using GnuPG:"
-msgstr "preparar _deploy-whitelist-keyring.gpg_ a usar GnuPG:"
+msgid "prepare _deploy-allowlist-keyring.gpg_ using GnuPG:"
+msgstr "preparar _deploy-allowlist-keyring.gpg_ a usar GnuPG:"
 
 #. type: Fenced code block (console)
 #: _docs/Deploying_the_Website.md
@@ -4611,11 +4611,11 @@ msgstr "preparar _deploy-whitelist-keyring.gpg_ a usar GnuPG:"
 msgid ""
 "$ gpg --recv-keys 00aa5556\n"
 "$ gpg --fingerprint 00aa5556  # verify it!\n"
-"$ gpg --export 00aa5556 > /path/to/deploy-whitelist-keyring.gpg\n"
+"$ gpg --export 00aa5556 > /path/to/deploy-allowlist-keyring.gpg\n"
 msgstr ""
 "$ gpg --recv-keys 00aa5556\n"
 "$ gpg --fingerprint 00aa5556  # verifique-o!\n"
-"$ gpg --export 00aa5556 > /caminho/para/deploy-whitelist-keyring.gpg\n"
+"$ gpg --export 00aa5556 > /caminho/para/deploy-allowlist-keyring.gpg\n"
 
 #. type: Bullet: '4. '
 #: _docs/Deploying_the_Website.md
@@ -4641,14 +4641,14 @@ msgid ""
 "$ git fetch --tags\n"
 "$ sudo gitlab-runner exec docker f-droid.org \\\n"
 "              --pre-build-script ./tools/prepare-for-deploy.py \\\n"
-"              --docker-volumes \"/path/to/deploy-whitelist-keyring.gpg:/root/.gnupg/pubring.gpg:ro\" \\\n"
+"              --docker-volumes \"/path/to/deploy-allowlist-keyring.gpg:/root/.gnupg/pubring.gpg:ro\" \\\n"
 "              --docker-volumes `pwd`/_site:/builds/output\n"
 msgstr ""
 "$ cd fdroid-website\n"
 "$ git fetch --tags\n"
 "$ sudo gitlab-runner exec docker f-droid.org \\\n"
 "              --pre-build-script ./tools/prepare-for-deploy.py \\\n"
-"              --docker-volumes \"/path/to/deploy-whitelist-keyring.gpg:/root/.gnupg/pubring.gpg:ro\" \\\n"
+"              --docker-volumes \"/path/to/deploy-allowlist-keyring.gpg:/root/.gnupg/pubring.gpg:ro\" \\\n"
 "              --docker-volumes `pwd`/_site:/builds/output\n"
 
 #. type: Bullet: '6. '
