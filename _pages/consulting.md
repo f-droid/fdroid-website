@@ -25,6 +25,14 @@ Check out the descriptions to find an appropriate consultant for your needs.
 * __Languages:__ English, German
 * __Specializations:__ Custom F-Droid deployments, feature extensions, whitelabel solutions
 
+### Hans-Christoph Steiner
+
+* __Website:__ [at.or.at](https://at.or.at)
+* __Email:__ [hans@eds.org](mailto:hans@eds.org)
+* __Address:__ Vienna, Austria
+* __Languages:__ English, German
+* __Specialization:__ Custom F-Droid deployments, reproducible builds, new features, whitelabel app stores, getting things merged.
+
 ### IzzySoft
 
 * __Website:__ [android.izzysoft.de](https://android.izzysoft.de/), [www.izzysoft.de](https://www.izzysoft.de/)
