@@ -62,7 +62,7 @@ Initially we thought that we can solve this by showing a persistent notification
 
 We initially planned to explain users how they can hide these persistent notifications but that wasn’t a great user experience so we had to find a better solution. We leveraged Android Job mechanism to launch our service periodically (at least every 15 minutes), and we also try to keep it alive afterwards. We don’t hold WakeLocks manually – the system does this for us. We were able to ditch persistent notifications altogether. Even if notifications sometimes have a small delay, it will always be received and emails are there instantly.
 
-In the end, we had to do some work but it was totally worth it. Our new app is still in beta but thanks to non-blocking IO, we’ve been able to maintain thousands of simultaneous connections without problems. We freed our users from Google Play Services requirement. Finally, everyone is able to [get the Tutanota app on F-Droid](https://f-droid.org/en/packages/de.tutao.tutanota/). The system now combines both: good power efficiency and speed.
+In the end, we had to do some work but it was totally worth it. Our new app is still in beta but thanks to non-blocking IO, we’ve been able to maintain thousands of simultaneous connections without problems. We freed our users from Google Play Services requirement. Finally, everyone is able to [get the Tutanota app on F-Droid](https://f-droid.org/packages/de.tutao.tutanota/). The system now combines both: good power efficiency and speed.
 
 #### Final thought: Every user should be able to choose a "Notification Provider" for every app
 

@@ -24,7 +24,7 @@ In this edition: Building the Android SDKs as Free Software, F-Droid buildserver
 
 <!--more-->
 
-**[F-Droid](https://f-droid.org/)** is a [repository](https://f-droid.org/packages/) of verified [free and open source](https://en.wikipedia.org/wiki/Free_and_open-source_software) Android apps, a **[client](https://f-droid.org/app/org.fdroid.fdroid)** to access it, as well as a whole "app store kit", providing all the tools needed to set up and run an app store. It is a community-run free software project developed by a wide range of contributors. This is their story this past week.
+**[F-Droid](https://f-droid.org/)** is a [repository](https://f-droid.org/packages/) of verified [free and open source](https://en.wikipedia.org/wiki/Free_and_open-source_software) Android apps, a **[client](https://f-droid.org/packages/org.fdroid.fdroid/)** to access it, as well as a whole "app store kit", providing all the tools needed to set up and run an app store. It is a community-run free software project developed by a wide range of contributors. This is their story this past week.
 
 ### Building the Android SDKs as Free Software
 
@@ -52,7 +52,7 @@ Nevertheless, ongoing help is needed! Please have a look at the [forum thread](h
 
 ### New apps
 
-* **[Frost for Facebook](https://f-droid.org/app/com.pitchedapps.frost)** is a fully functional web wrapper, with many unique and native features: 
+* **[Frost for Facebook](https://f-droid.org/packages/com.pitchedapps.frost/)** is a fully functional web wrapper, with many unique and native features: 
   * True multi user interactions
   * Better multitasking
   * Contextual awareness
@@ -61,29 +61,29 @@ Nevertheless, ongoing help is needed! Please have a look at the [forum thread](h
   * Fully opened
   * Fixes the little things
 
-* **[Arch packages](https://f-droid.org/app/com.rascarlo.arch.packages)** An Arch Linux packages browser, it makes use of the official API to browse the repos.
+* **[Arch packages](https://f-droid.org/packages/com.rascarlo.arch.packages/)** An Arch Linux packages browser, it makes use of the official API to browse the repos.
 
-* Another Pro version of the **Simple Mobile Tools** is landing in F-Droid: **[Simple Calendar Pro](https://f-droid.org/app/com.simplemobiletools.calendar.pro)**. For background, see [this forum thread](https://forum.f-droid.org/t/simple-mobile-tool-are-becoming-paid/4553).
+* Another Pro version of the **Simple Mobile Tools** is landing in F-Droid: **[Simple Calendar Pro](https://f-droid.org/packages/com.simplemobiletools.calendar.pro/)**. For background, see [this forum thread](https://forum.f-droid.org/t/simple-mobile-tool-are-becoming-paid/4553).
 
-* **[PiGrid Companion](https://f-droid.org/app/de.blocklink.pigrid)**: Gridcoin stakebox companion app.
+* **[PiGrid Companion](https://f-droid.org/packages/de.blocklink.pigrid/)**: Gridcoin stakebox companion app.
 
-* **[Yaacc](https://f-droid.org/app/de.yaacc)**: Upnp client and server.
+* **[Yaacc](https://f-droid.org/packages/de.yaacc/)**: Upnp client and server.
 
-* **[Open In WhatsApp](https://f-droid.org/app/io.github.subhamtyagi.openinwhatsapp)**: Open chat in Whatsapp.
+* **[Open In WhatsApp](https://f-droid.org/packages/io.github.subhamtyagi.openinwhatsapp/)**: Open chat in Whatsapp.
 
-* **[FiSSH](https://f-droid.org/app/science.iodev.fissh)**: SSH authentication via fingerprint scanning over the network (SSL sockets). It stores your SSH key phrase and sends it to your PC securely via the LAN when an authorized fingerprint is detected by the fingerprint scanner. Your PC needs to be running the complementary [desktop app](https://git.iodev.science/ioan/FiSSH-Desktop).
+* **[FiSSH](https://f-droid.org/packages/science.iodev.fissh/)**: SSH authentication via fingerprint scanning over the network (SSL sockets). It stores your SSH key phrase and sends it to your PC securely via the LAN when an authorized fingerprint is detected by the fingerprint scanner. Your PC needs to be running the complementary [desktop app](https://git.iodev.science/ioan/FiSSH-Desktop).
 
-* **[Firefly III Mobile](https://f-droid.org/app/xyz.hisname.fireflyiii)**: Unofficial mobile client for Firefly III, a self-hosted financial manager. In order to use this app, you must first setup a [Firefly III instance](https://firefly-iii.org/).
+* **[Firefly III Mobile](https://f-droid.org/packages/xyz.hisname.fireflyiii/)**: Unofficial mobile client for Firefly III, a self-hosted financial manager. In order to use this app, you must first setup a [Firefly III instance](https://firefly-iii.org/).
 
 ### Updated apps
 
 In total, **{{ page.number_of_updated_apps }}** apps were updated this week. Here are the highlights:
 
-* {{ page.major }} **[Tusky](https://f-droid.org/app/com.keylesspalace.tusky)**, a Mastodon client, had a major [update](https://github.com/tuskyapp/Tusky/releases) to 4.0, with redesigned preferences, refactored media detail view with support for sharing media files and copying their links, collapse long statuses, share videos to Tusky, and many more. This update also [removes support for Android 4](https://github.com/tuskyapp/Tusky/issues/476).
+* {{ page.major }} **[Tusky](https://f-droid.org/packages/com.keylesspalace.tusky/)**, a Mastodon client, had a major [update](https://github.com/tuskyapp/Tusky/releases) to 4.0, with redesigned preferences, refactored media detail view with support for sharing media files and copying their links, collapse long statuses, share videos to Tusky, and many more. This update also [removes support for Android 4](https://github.com/tuskyapp/Tusky/issues/476).
 
-* **[Simple Dilbert](https://f-droid.org/app/com.mareksebera.simpledilbert)** [updated](https://github.com/smarek/Simple-Dilbert/blob/HEAD/CHANGELOG.md) to 4.6, with an Android SDK update to v28 and many bug fixes.
+* **[Simple Dilbert](https://f-droid.org/packages/com.mareksebera.simpledilbert/)** [updated](https://github.com/smarek/Simple-Dilbert/blob/HEAD/CHANGELOG.md) to 4.6, with an Android SDK update to v28 and many bug fixes.
 
-* **[Transportr](https://f-droid.org/app/de.grobox.liberario)** [updated](https://github.com/grote/Transportr/releases) to 2.0.3 with the following changes:
+* **[Transportr](https://f-droid.org/packages/de.grobox.liberario/)** [updated](https://github.com/grote/Transportr/releases) to 2.0.3 with the following changes:
   * Add launcher shortcut for directions search
   * Show swap location button in directions search (Thanks ByteHamster!)
   * Don't show search results over lockscreen anymore
@@ -92,11 +92,11 @@ In total, **{{ page.number_of_updated_apps }}** apps were updated this week. Her
   * Fix home and work location input in dark theme
   * Disable Android's auto-fill feature for location views
 
-* **[Offi Directions](https://f-droid.org/app/de.schildbach.oeffi)** was [updated](https://gitlab.com/oeffi/oeffi/raw/HEAD/oeffi/CHANGES) from 10.1.4-aosp to 10.3.4-aosp, with the right half of the screen now based on OpenStreetMap, two new regions, and long-pressing a line label will reveal the full name of the line, if available.
+* **[Offi Directions](https://f-droid.org/packages/de.schildbach.oeffi/)** was [updated](https://gitlab.com/oeffi/oeffi/raw/HEAD/oeffi/CHANGES) from 10.1.4-aosp to 10.3.4-aosp, with the right half of the screen now based on OpenStreetMap, two new regions, and long-pressing a line label will reveal the full name of the line, if available.
 
-* **[Mastalab](https://f-droid.org/app/fr.gouv.etalab.mastodon)** [updated](https://gitlab.com/tom79/mastalab/tags) from 1.30.1 to 1.31.1 with a new battery profile setting, an indicator to highlight the toot is part of a thread, copy Mastodon account to clipboard by long-pressing it, auto-switch to offline mode if Internet is unavailable, several bug fixes, and other smaller UI/UX changes.
+* **[Mastalab](https://f-droid.org/packages/fr.gouv.etalab.mastodon/)** [updated](https://gitlab.com/tom79/mastalab/tags) from 1.30.1 to 1.31.1 with a new battery profile setting, an indicator to highlight the toot is part of a thread, copy Mastodon account to clipboard by long-pressing it, auto-switch to offline mode if Internet is unavailable, several bug fixes, and other smaller UI/UX changes.
 
-* {{ page.major }} **[Tower Collector](https://f-droid.org/app/info.zamojski.soft.towercollector)** collects GPS locations of GSM/UMTS/LTE/CDMA cell towers and sends them to the OpenCellID.org database. It was [updated](https://github.com/zamojski/TowerCollector/releases) from 1.22.2-fdroid to 2.0.0, with the following changes:
+* {{ page.major }} **[Tower Collector](https://f-droid.org/packages/info.zamojski.soft.towercollector/)** collects GPS locations of GSM/UMTS/LTE/CDMA cell towers and sends them to the OpenCellID.org database. It was [updated](https://github.com/zamojski/TowerCollector/releases) from 1.22.2-fdroid to 2.0.0, with the following changes:
   * Added option to contribute to Mozilla Location Services (MLS).
   * Changed upload progress to report in percentage instead of parts.
   * Added new languages: Hungarian, Italian and Spanish :)
@@ -106,21 +106,21 @@ In total, **{{ page.number_of_updated_apps }}** apps were updated this week. Her
   * Fixed folder not created when exporting database or preferences to file.
   * Improved error handling.
 
-* **[G-Droid](https://f-droid.org/app/org.gdroid.gdroid)** was [updated](https://gitlab.com/gdroid/gdroidclient/tags) from 0.2.1 to 0.3.0, with tags for apps that are used for standard tasks, and a new logo with something purple.
+* **[G-Droid](https://f-droid.org/packages/org.gdroid.gdroid/)** was [updated](https://gitlab.com/gdroid/gdroidclient/tags) from 0.2.1 to 0.3.0, with tags for apps that are used for standard tasks, and a new logo with something purple.
 
-* **[OSMBugs](https://f-droid.org/app/org.gittner.osmbugs)** was [updated](https://github.com/ChristopherGittner/OSMBugs/blob/HEAD/CHANGELOG.md) from 1-1-1 to 1-1-4, fixing the "Failed to load from Mapdust" bug, updating the Android annotations library, and fixing a translation error.
+* **[OSMBugs](https://f-droid.org/packages/org.gittner.osmbugs/)** was [updated](https://github.com/ChristopherGittner/OSMBugs/blob/HEAD/CHANGELOG.md) from 1-1-1 to 1-1-4, fixing the "Failed to load from Mapdust" bug, updating the Android annotations library, and fixing a translation error.
 
-* **[OpenTopoMap Viewer](https://f-droid.org/app/org.nitri.opentopo)** was updated from 1.0.2 to 1.0.4. **[@Poussinou](https://forum.f-droid.org/u/poussinou)** writes: It removes a big bug that causes the crash of the app when opening a GPX file. You can now display your tracks easily in the map since it has been corrected! Issue [here](https://github.com/Pygmalion69/OpenTopoMapViewer/issues/2). I don't know if it's worth the price to mention this update, but the author has corrected the bug very quickly and tagged a new release ASAP. It was very impressive. I love developers like that!
+* **[OpenTopoMap Viewer](https://f-droid.org/packages/org.nitri.opentopo/)** was updated from 1.0.2 to 1.0.4. **[@Poussinou](https://forum.f-droid.org/u/poussinou)** writes: It removes a big bug that causes the crash of the app when opening a GPX file. You can now display your tracks easily in the map since it has been corrected! Issue [here](https://github.com/Pygmalion69/OpenTopoMapViewer/issues/2). I don't know if it's worth the price to mention this update, but the author has corrected the bug very quickly and tagged a new release ASAP. It was very impressive. I love developers like that!
 
-* **[Your local weather](https://f-droid.org/app/org.thosp.yourlocalweather)** was [updated](https://raw.githubusercontent.com/thuryn/your-local-weather/HEAD/CHANGELOG) from 4.4.6 to 4.4.10, fixing a crash when the location has not been changed, OpenStreetMap API switched from http to https, and some translation changes.
+* **[Your local weather](https://f-droid.org/packages/org.thosp.yourlocalweather/)** was [updated](https://raw.githubusercontent.com/thuryn/your-local-weather/HEAD/CHANGELOG) from 4.4.6 to 4.4.10, fixing a crash when the location has not been changed, OpenStreetMap API switched from http to https, and some translation changes.
 
-* **[ToGoZip](https://f-droid.org/app/de.k3b.android.toGoZip)** allows to send files (i.e. jpg-photos or mp3-music) or text (i.e. urls) to one predefined zip file by adding “Add To Zip” to Android’s share/send menu. Version 2.0.17 adds send/view/edit/delete of zip file to Settings-Menu and adds optional support for automatic zip-subfolder discovery.
+* **[ToGoZip](https://f-droid.org/packages/de.k3b.android.toGoZip/)** allows to send files (i.e. jpg-photos or mp3-music) or text (i.e. urls) to one predefined zip file by adding “Add To Zip” to Android’s share/send menu. Version 2.0.17 adds send/view/edit/delete of zip file to Settings-Menu and adds optional support for automatic zip-subfolder discovery.
 
 ### Removed apps
 
-* **[Solitaire](https://f-droid.org/wiki/page/com.kmagic.solitaire)** was moved to the archive, as it is abandoned and has been replaced with **[SolitaireCG](https://f-droid.org/app/net.sourceforge.solitaire_cg)**, which in turn has matured a lot, is well maintained and offers additional features and games.
+* **[Solitaire](https://f-droid.org/wiki/page/com.kmagic.solitaire)** was moved to the archive, as it is abandoned and has been replaced with **[SolitaireCG](https://f-droid.org/packages/net.sourceforge.solitaire_cg/)**, which in turn has matured a lot, is well maintained and offers additional features and games.
 
-* **[Omnidroid](https://f-droid.org/wiki/page/edu.nyu.cs.omnidroid.app)** was moved to the archive because it has been abandoned. You should switch to its successor, **[LibreTasks](https://f-droid.org/app/libretasks.app)**.
+* **[Omnidroid](https://f-droid.org/wiki/page/edu.nyu.cs.omnidroid.app)** was moved to the archive because it has been abandoned. You should switch to its successor, **[LibreTasks](https://f-droid.org/packages/libretasks.app/)**.
 
 ### Tips and Feedback
 

@@ -32,7 +32,7 @@ Hi everyone, here's a fresh new TWIF for you! Many thanks to **[@Licaon\_Kter](h
 
 ### NewPipe and broken builds
 
-We've had problems with building most apps, and with **[NewPipe](https://f-droid.org/app/org.schabi.newpipe)** in particular. **[@Bubu](https://forum.f-droid.org/u/Bubu)** reports:
+We've had problems with building most apps, and with **[NewPipe](https://f-droid.org/packages/org.schabi.newpipe/)** in particular. **[@Bubu](https://forum.f-droid.org/u/Bubu)** reports:
 
 1. Google changes some things in Youtube's webinterface --> NewPipe can't play Youtube videos anymore (previous version works though).
 2. The NewPipe team soon releases an update that fixes the problem.
@@ -56,58 +56,58 @@ We surpassed 5000 followers on Mastodon this month. We are happy to see that mor
 
 ### Downgraded apps
 
-* Version 2.1 of the game **[2048](https://f-droid.org/app/com.uberspot.a2048)** was broken, and has been removed from the repository. Version 2.2 is expected to arrive soon.
+* Version 2.1 of the game **[2048](https://f-droid.org/packages/com.uberspot.a2048/)** was broken, and has been removed from the repository. Version 2.2 is expected to arrive soon.
 
 ### New apps
 
 Our volunteers have been busy adding new apps, {{ page.number_of_added_apps }} in total!
 
-* **[YidKey KD](https://f-droid.org/app/click.dummer.yidkey)**: Yiddish keyboard (compatibility decomposition).
-* **[Diceware Password Generator](https://f-droid.org/app/com.aptasystems.dicewarepasswordgenerator)**: Generate diceware passwords.
-* **[Librery](https://f-droid.org/app/com.example.harisont.librery)**: Manage your ebooks.
-* **[NextCompanion](https://f-droid.org/app/com.example.hochi.nextcompanion)**: Rogue client for nextbike (unofficial).
-* **[File Manager](https://f-droid.org/app/com.github.axet.filemanager)**: File manager with root browser.
-* **[Turtl](https://f-droid.org/app/com.lyonbros.turtl)**: A secure, encrypted evernote alternative.
-* **[M-Droid](https://f-droid.org/app/com.mdroid)**: Unofficial material designed client for f-droid.
-* **[Simple Decred Widget](https://f-droid.org/app/com.simpledecredwidget)**: Widget for viewing decred exchange rate.
-* **[NorthDog Audio Compass](https://f-droid.org/app/cz.harvie.northdog)**: 3d audio compass.
-* **[House of Cards](https://f-droid.org/app/eu.veldsoft.house.of.cards)**: Solitaire-like card game.
-* **[Lona](https://f-droid.org/app/io.github.lufte.lona)**: A snake-like html5 game.
-* **[App Lock](https://f-droid.org/app/io.github.subhamtyagi.privacyapplock)**: Privacy app lock.
-* **[HgLauncher](https://f-droid.org/app/mono.hg)**: A launcher for a slow day.
-* **[TpmsMonitor](https://f-droid.org/app/nodomain.freeyourgadget.tpmsmonitor)**: Manage bluetooth tire pressure monitor sensors.
-* **[Flyve MDM Agent](https://f-droid.org/app/org.flyve.mdm.agent.mqtt)**: Manage and secure effectively your mobile devices and applications.
-* **[FASTer App Search Tool](https://f-droid.org/app/org.ligi.faster)**: Find apps just by typing.
-* **[Presence Publisher](https://f-droid.org/app/org.ostrya.presencepublisher)**: Regularly publish to an mqtt topic.
-* **[Tape Measure](https://f-droid.org/app/org.secuso.privacyfriendlytapemeasure)**: Turn your device into a tape measure or ruler.
-* **[News](https://f-droid.org/app/press.condense.www)**: A news recommendation engine with user customizable parameters.
-* **[Pixel Artist](https://f-droid.org/app/rodrigodavy.com.github.pixelartist)**: Make pixel art on android.
+* **[YidKey KD](https://f-droid.org/packages/click.dummer.yidkey/)**: Yiddish keyboard (compatibility decomposition).
+* **[Diceware Password Generator](https://f-droid.org/packages/com.aptasystems.dicewarepasswordgenerator/)**: Generate diceware passwords.
+* **[Librery](https://f-droid.org/packages/com.example.harisont.librery/)**: Manage your ebooks.
+* **[NextCompanion](https://f-droid.org/packages/com.example.hochi.nextcompanion/)**: Rogue client for nextbike (unofficial).
+* **[File Manager](https://f-droid.org/packages/com.github.axet.filemanager/)**: File manager with root browser.
+* **[Turtl](https://f-droid.org/packages/com.lyonbros.turtl/)**: A secure, encrypted evernote alternative.
+* **[M-Droid](https://f-droid.org/packages/com.mdroid/)**: Unofficial material designed client for f-droid.
+* **[Simple Decred Widget](https://f-droid.org/packages/com.simpledecredwidget/)**: Widget for viewing decred exchange rate.
+* **[NorthDog Audio Compass](https://f-droid.org/packages/cz.harvie.northdog/)**: 3d audio compass.
+* **[House of Cards](https://f-droid.org/packages/eu.veldsoft.house.of.cards/)**: Solitaire-like card game.
+* **[Lona](https://f-droid.org/packages/io.github.lufte.lona/)**: A snake-like html5 game.
+* **[App Lock](https://f-droid.org/packages/io.github.subhamtyagi.privacyapplock/)**: Privacy app lock.
+* **[HgLauncher](https://f-droid.org/packages/mono.hg/)**: A launcher for a slow day.
+* **[TpmsMonitor](https://f-droid.org/packages/nodomain.freeyourgadget.tpmsmonitor/)**: Manage bluetooth tire pressure monitor sensors.
+* **[Flyve MDM Agent](https://f-droid.org/packages/org.flyve.mdm.agent.mqtt/)**: Manage and secure effectively your mobile devices and applications.
+* **[FASTer App Search Tool](https://f-droid.org/packages/org.ligi.faster/)**: Find apps just by typing.
+* **[Presence Publisher](https://f-droid.org/packages/org.ostrya.presencepublisher/)**: Regularly publish to an mqtt topic.
+* **[Tape Measure](https://f-droid.org/packages/org.secuso.privacyfriendlytapemeasure/)**: Turn your device into a tape measure or ruler.
+* **[News](https://f-droid.org/packages/press.condense.www/)**: A news recommendation engine with user customizable parameters.
+* **[Pixel Artist](https://f-droid.org/packages/rodrigodavy.com.github.pixelartist/)**: Make pixel art on android.
 
 ### Updated apps
 
 In total, **{{ page.number_of_updated_apps }}** apps were updated this week. Here are the highlights:
 
-* There was a [bug](https://github.com/Telegram-FOSS-Team/Telegram-FOSS/issues/288) in maintenance release 4.9.1a of **[Telegram](https://f-droid.org/app/org.telegram.messenger)**, where it wouldn't sync any messages for some people. We've removed this version from F-Droid. For those who already updated, upstream sources of 5.2 have been published and we are expecting these to land in F-Droid soon.
+* There was a [bug](https://github.com/Telegram-FOSS-Team/Telegram-FOSS/issues/288) in maintenance release 4.9.1a of **[Telegram](https://f-droid.org/packages/org.telegram.messenger/)**, where it wouldn't sync any messages for some people. We've removed this version from F-Droid. For those who already updated, upstream sources of 5.2 have been published and we are expecting these to land in F-Droid soon.
 
-* Some significant updates for **[Rocket.Chat](https://f-droid.org/app/chat.rocket.android)** 3.2.0, with a new user screen and a new room screen, support for muted state in the room, ability to delete the account, take a photo and send directly, and several other improvements.
+* Some significant updates for **[Rocket.Chat](https://f-droid.org/packages/chat.rocket.android/)** 3.2.0, with a new user screen and a new room screen, support for muted state in the room, ability to delete the account, take a photo and send directly, and several other improvements.
 
-* Several months worth of development for **[Waistline](https://f-droid.org/app/com.waist.line)**, a calorie and weight tracker app, which [updated](https://github.com/davidhealey/waistline/releases) from 2.3.7 to 2.4.2. Too many changes to list, but a selection: simplified food filter; filter by country; a new combined foods, meals and recipes page replacing the individual pages; and much more.
+* Several months worth of development for **[Waistline](https://f-droid.org/packages/com.waist.line/)**, a calorie and weight tracker app, which [updated](https://github.com/davidhealey/waistline/releases) from 2.3.7 to 2.4.2. Too many changes to list, but a selection: simplified food filter; filter by country; a new combined foods, meals and recipes page replacing the individual pages; and much more.
 
-* **[SecScanQR](https://f-droid.org/app/de.t_dankworth.secscanqr)** [updated](https://github.com/Fr4gorSoftware/SecScanQR/releases) from 1.1.9 to 1.2.0, adding the search engine Startpage, "are you sure" dialog before deleting history, and round launcher icons. A security fix prevents the OS from taking screenshots, and the "WRITE EXTERNAL STORAGE" permission is now only needed when you want to save the generated QR-code.
+* **[SecScanQR](https://f-droid.org/packages/de.t_dankworth.secscanqr/)** [updated](https://github.com/Fr4gorSoftware/SecScanQR/releases) from 1.1.9 to 1.2.0, adding the search engine Startpage, "are you sure" dialog before deleting history, and round launcher icons. A security fix prevents the OS from taking screenshots, and the "WRITE EXTERNAL STORAGE" permission is now only needed when you want to save the generated QR-code.
 
-* **[Mastalab](https://f-droid.org/app/fr.gouv.etalab.mastodon)** was [updated](https://gitlab.com/tom79/mastalab/tags) from 1.64.1 to 1.65.1, now with support for deleting Peertube videos, NSFW control for Peertube videos, and many bug fixes.
+* **[Mastalab](https://f-droid.org/packages/fr.gouv.etalab.mastodon/)** was [updated](https://gitlab.com/tom79/mastalab/tags) from 1.64.1 to 1.65.1, now with support for deleting Peertube videos, NSFW control for Peertube videos, and many bug fixes.
 
-* **[G-Droid](https://f-droid.org/app/org.gdroid.gdroid)** [updated](https://gitlab.com/gdroid/gdroidclient/tags) from 0.6.2 to 0.7.1, with a new list view, show similar apps ordered by similarity, pull-down to refresh, different sorting methods, show apps the user might also like, uninstall button, and several other improvements and bug fixes.
+* **[G-Droid](https://f-droid.org/packages/org.gdroid.gdroid/)** [updated](https://gitlab.com/gdroid/gdroidclient/tags) from 0.6.2 to 0.7.1, with a new list view, show similar apps ordered by similarity, pull-down to refresh, different sorting methods, show apps the user might also like, uninstall button, and several other improvements and bug fixes.
 
-* **[Sugarizer](https://f-droid.org/app/org.olpc_france.sugarizer)** is an implementation of the [Sugar Learning Platform](https://sugarlabs.org), a learning platform for children. In this [update](https://github.com/llaske/sugarizer/blob/HEAD/CHANGELOG.md) to 1.1.0, the activities Ebook Reader, Exerciser and Sprint Math were added, as well as a sort palette in Journal. It will now allow action on multiple items in Journal, copy from Journal to device and from device to Journal, show help tutorial on initial screen, and show help on activities in list view. This release also contains many bug fixes.
+* **[Sugarizer](https://f-droid.org/packages/org.olpc_france.sugarizer/)** is an implementation of the [Sugar Learning Platform](https://sugarlabs.org), a learning platform for children. In this [update](https://github.com/llaske/sugarizer/blob/HEAD/CHANGELOG.md) to 1.1.0, the activities Ebook Reader, Exerciser and Sprint Math were added, as well as a sort palette in Journal. It will now allow action on multiple items in Journal, copy from Journal to device and from device to Journal, show help tutorial on initial screen, and show help on activities in list view. This release also contains many bug fixes.
 
-* {{ page.major }} **[OONI Probe](https://f-droid.org/app/org.openobservatory.ooniprobe)** released version 2.0.0, with a major UI overhaul. OONI Probe is a tool to measure internet censorship and other forms of interference. It can help to detect things like [this](https://ooni.torproject.org/post/zimbabwe-protests-social-media-blocking-2019/). Highlights of this [update](https://github.com/ooni/probe-android/releases) include an overview screen for all test results, enhanced website testing where you can test a website of your choice, and data usage tracking on a test-by-test basis.
+* {{ page.major }} **[OONI Probe](https://f-droid.org/packages/org.openobservatory.ooniprobe/)** released version 2.0.0, with a major UI overhaul. OONI Probe is a tool to measure internet censorship and other forms of interference. It can help to detect things like [this](https://ooni.torproject.org/post/zimbabwe-protests-social-media-blocking-2019/). Highlights of this [update](https://github.com/ooni/probe-android/releases) include an overview screen for all test results, enhanced website testing where you can test a website of your choice, and data usage tracking on a test-by-test basis.
 
 ### Beta updates
 
 The following updates won't be automatically suggested to you unless you have "Unstable updates" enabled in the F-Droid app settings, but you can expand the "Versions" tab and install them manually. Note that these are marked beta for a reason: proceed at your own risk.
 
-* **[F-Droid Privileged Extension](https://f-droid.org/app/org.fdroid.fdroid.privileged)** was updated from 0.2.8 to 0.2.9
+* **[F-Droid Privileged Extension](https://f-droid.org/packages/org.fdroid.fdroid.privileged/)** was updated from 0.2.8 to 0.2.9
 
 ### Removed apps
 

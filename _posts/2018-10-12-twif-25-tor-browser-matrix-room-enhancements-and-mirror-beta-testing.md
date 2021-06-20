@@ -22,7 +22,7 @@ This Week In F-Droid {{ page.edition }}, Week {{ page.date | date: "%V, %G" }} <
 In this edition: Tor Browser in Guardian Project, Matrix room improved, F-Droid bottom bar improvement, beta mirror up for testing, and 11 new apps and a record-breaking **{{ page.number_of_updated_apps }}** updates.
 <!--more-->
 
-**[F-Droid](https://f-droid.org/)** is a [repository](https://f-droid.org/packages/) of verified [free and open source](https://en.wikipedia.org/wiki/Free_and_open-source_software) Android apps, a **[client](https://f-droid.org/app/org.fdroid.fdroid)** to access it, as well as a whole "app store kit", providing all the tools needed to set up and run an app store. It is a community-run free software project developed by a wide range of contributors. This is their story this past week.
+**[F-Droid](https://f-droid.org/)** is a [repository](https://f-droid.org/packages/) of verified [free and open source](https://en.wikipedia.org/wiki/Free_and_open-source_software) Android apps, a **[client](https://f-droid.org/packages/org.fdroid.fdroid/)** to access it, as well as a whole "app store kit", providing all the tools needed to set up and run an app store. It is a community-run free software project developed by a wide range of contributors. This is their story this past week.
 
 #### Tor Browser available in Guardian Project repository
 
@@ -52,27 +52,27 @@ Tetaneutral is a non-profit ISP based in Toulouse, France. They have offered to 
 
 #### New apps
 
-* **[Cool Mic](https://f-droid.org/app/cc.echonet.coolmicapp)** is an open source Icecast source client. It livestreams audio captured by your Android device’s microphone or mic in / line in jack to any Icecast server.
+* **[Cool Mic](https://f-droid.org/packages/cc.echonet.coolmicapp/)** is an open source Icecast source client. It livestreams audio captured by your Android device’s microphone or mic in / line in jack to any Icecast server.
 
-* Ever wanted to create a fictional setting — for your next novel, comic, screenplay, or what-have-you — but find it difficult to keep everything organized? **[World Scribe](https://f-droid.org/app/com.averi.worldscribe)** eases the creation process by letting you keep track of every important element in your world, including the ways in which they're connected.
+* Ever wanted to create a fictional setting — for your next novel, comic, screenplay, or what-have-you — but find it difficult to keep everything organized? **[World Scribe](https://f-droid.org/packages/com.averi.worldscribe/)** eases the creation process by letting you keep track of every important element in your world, including the ways in which they're connected.
 
-* **[Cryptolitycs](https://f-droid.org/app/com.fproject.cryptolitycs)** gives quick and easy access to cryptocurrency related information and allows the user to follow the cryptocurrency market.
+* **[Cryptolitycs](https://f-droid.org/packages/com.fproject.cryptolitycs/)** gives quick and easy access to cryptocurrency related information and allows the user to follow the cryptocurrency market.
 
-* **[Identify Dog Breeds](https://f-droid.org/app/com.jstappdev.dbclf)**: Identify over one hundred different dog breeds with your smartphone.
+* **[Identify Dog Breeds](https://f-droid.org/packages/com.jstappdev.dbclf/)**: Identify over one hundred different dog breeds with your smartphone.
 
-* **[CPU Info](https://f-droid.org/app/com.kgurgul.cpuinfo)**: Information about device hardware and software.
+* **[CPU Info](https://f-droid.org/packages/com.kgurgul.cpuinfo/)**: Information about device hardware and software.
 
-* **[XOverrideHeadphoneJackDetection](https://f-droid.org/app/de.antonarnold.android.xoverrideheadphonejackdetection)** is an XPosed module that allows you to manually override the headphone jack detection of an Android device.
+* **[XOverrideHeadphoneJackDetection](https://f-droid.org/packages/de.antonarnold.android.xoverrideheadphonejackdetection/)** is an XPosed module that allows you to manually override the headphone jack detection of an Android device.
 
-* **[Calcvac](https://f-droid.org/app/de.drhoffmannsoftware.calcvac)**: Calculate logitudinal one-dimensional pressure profiles in vacuum pipes.
+* **[Calcvac](https://f-droid.org/packages/de.drhoffmannsoftware.calcvac/)**: Calculate logitudinal one-dimensional pressure profiles in vacuum pipes.
 
-* **[SQRL - Main](https://f-droid.org/app/org.ea.sqrl)**: An implementation for SQRL (Secure Quick Reliable Login).
+* **[SQRL - Main](https://f-droid.org/packages/org.ea.sqrl/)**: An implementation for SQRL (Secure Quick Reliable Login).
 
-* **[Flyve MDM Agent](https://f-droid.org/app/org.flyve.mdm.agent)**: Manage and secure effectively your mobile devices and applications.
+* **[Flyve MDM Agent](https://f-droid.org/packages/org.flyve.mdm.agent/)**: Manage and secure effectively your mobile devices and applications.
 
-* **[Quickly quit](https://f-droid.org/app/quickly.quit)**: Quickly quit what you were doing.
+* **[Quickly quit](https://f-droid.org/packages/quickly.quit/)**: Quickly quit what you were doing.
 
-* {{ page.featured }} **[Manyverse](https://f-droid.org/app/se.manyver)**: At last a mobile client for the _[Secure Scuttlebutt](https://ssbc.github.io/secure-scuttlebutt/)_ protocol lands in F-Droid! SSB is a peer-to-peer protocol and social network optimized for off-line and off-grid use. You can share messages locally using bluetooth or local WiFi, directly with your friends over the internet, or optionally tap into more centralized nodes called "pubs".
+* {{ page.featured }} **[Manyverse](https://f-droid.org/packages/se.manyver/)**: At last a mobile client for the _[Secure Scuttlebutt](https://ssbc.github.io/secure-scuttlebutt/)_ protocol lands in F-Droid! SSB is a peer-to-peer protocol and social network optimized for off-line and off-grid use. You can share messages locally using bluetooth or local WiFi, directly with your friends over the internet, or optionally tap into more centralized nodes called "pubs".
 
     For in-depth details about the developer, André Staltz, and his motivations you can watch the [It's time to build our own Internet](https://www.youtube.com/watch?v=UjfWAbGfPh0) TEDxGeneva talk and the recent [Reinvent the social web](https://www.youtube.com/watch?v=8GE5C9-RUpg). If you're more inclined to read you can see his viral blog posts called [The Web began dying in 2014, here's how](https://staltz.com/the-web-began-dying-in-2014-heres-how.html) and the follow up [A plan to rescue the Web from the Internet](https://staltz.com/a-plan-to-rescue-the-web-from-the-internet.html).
 
@@ -80,41 +80,41 @@ Tetaneutral is a non-profit ISP based in Toulouse, France. They have offered to 
 
 In total, **{{ page.number_of_updated_apps }}** apps were updated this week. Here are the highlights:
 
-* {{ page.major }} Lots of changes for **[VPN Hotspot](https://f-droid.org/app/be.mygod.vpnhotspot)**, which updates we haven't been picking up since early June. Updating straight from 1.3.2 to 2.0.3, it has refined masquerading rules, starting on boot, dark theme and Android TV support, identifying and blocking unwanted clients, recording per-client bandwidth, and a ton of UI improvements and fixes. Note that the functionality of this app is limited without root access.
+* {{ page.major }} Lots of changes for **[VPN Hotspot](https://f-droid.org/packages/be.mygod.vpnhotspot/)**, which updates we haven't been picking up since early June. Updating straight from 1.3.2 to 2.0.3, it has refined masquerading rules, starting on boot, dark theme and Android TV support, identifying and blocking unwanted clients, recording per-client bandwidth, and a ton of UI improvements and fixes. Note that the functionality of this app is limited without root access.
 
-* **[PasteBin](https://f-droid.org/app/com.anoopknr.pastebin)** is a client for Ubuntu pastebin. It was updated from 1.0 to 1.5, now with a stable and responsive UI, new recent post and about options, new custom toolbars and menu bars, and the usual bug fixes.
+* **[PasteBin](https://f-droid.org/packages/com.anoopknr.pastebin/)** is a client for Ubuntu pastebin. It was updated from 1.0 to 1.5, now with a stable and responsive UI, new recent post and about options, new custom toolbars and menu bars, and the usual bug fixes.
 
-* **[DuckDuckGo Privacy Browser](https://f-droid.org/app/com.duckduckgo.mobile.android)** updated from 5.10.3 to 5.10.4, adding optimizations to its HTTPS upgrading solution.
+* **[DuckDuckGo Privacy Browser](https://f-droid.org/packages/com.duckduckgo.mobile.android/)** updated from 5.10.3 to 5.10.4, adding optimizations to its HTTPS upgrading solution.
 
-*   **[TrebleShot](https://f-droid.org/app/com.genonbeta.TrebleShot)** allows you to send and receive files over available connections, and pause and resume transfer process even when an error is given. This update from 1.2.7.2 to 1.2.7.5 brings improved support for Android 9 (Pie), a theme update & dark theme, and an improved look for the app and the QR scanner, as well as new and updated translations and bug fixes.
+*   **[TrebleShot](https://f-droid.org/packages/com.genonbeta.TrebleShot/)** allows you to send and receive files over available connections, and pause and resume transfer process even when an error is given. This update from 1.2.7.2 to 1.2.7.5 brings improved support for Android 9 (Pie), a theme update & dark theme, and an improved look for the app and the QR scanner, as well as new and updated translations and bug fixes.
 
-* **[PocketMaps](https://f-droid.org/app/com.junjunguo.pocketmaps)** is a map viewer with navigation system and support for offline use. This update from 2.0 to 2.3 allows to load GPX files to show an analysis and route, mute voice guidance when in a phone call, make downloads visible in the notification bar, now accepts geo: links from other apps, and several UI improvements.
+* **[PocketMaps](https://f-droid.org/packages/com.junjunguo.pocketmaps/)** is a map viewer with navigation system and support for offline use. This update from 2.0 to 2.3 allows to load GPX files to show an analysis and route, mute voice guidance when in a phone call, make downloads visible in the notification bar, now accepts geo: links from other apps, and several UI improvements.
 
-*   **[Calculator](https://f-droid.org/app/com.simplemobiletools.calculator)** 4.2.0 has some updated libraries + translation updates.
+*   **[Calculator](https://f-droid.org/packages/com.simplemobiletools.calculator/)** 4.2.0 has some updated libraries + translation updates.
 
-* **[File Manager](https://f-droid.org/app/com.simplemobiletools.filemanager)** 4.3.1 has some bugfixes and translation improvements.
+* **[File Manager](https://f-droid.org/packages/com.simplemobiletools.filemanager/)** 4.3.1 has some bugfixes and translation improvements.
 
-* **[Gallery](https://f-droid.org/app/com.simplemobiletools.gallery)** 4.6.5 adds notch support for Android 9 (Pie), faster video seeking by dragging a finger at the bottom seekbar, a different way of displaying fullscreen GIFs, a new toggle for trying to show the best possible image quality, keep Favorite items marked after moving, and many smaller improvements and fixes.
+* **[Gallery](https://f-droid.org/packages/com.simplemobiletools.gallery/)** 4.6.5 adds notch support for Android 9 (Pie), faster video seeking by dragging a finger at the bottom seekbar, a different way of displaying fullscreen GIFs, a new toggle for trying to show the best possible image quality, keep Favorite items marked after moving, and many smaller improvements and fixes.
 
-* **[Elementary](https://f-droid.org/app/com.ultramegatech.ey)** is a simple Periodic Table and element reference application. Version 0.9.0 now requires at least Android 4.0 (up from 2.3), and has updated videos for Argon, Tin and Dubnium.
+* **[Elementary](https://f-droid.org/packages/com.ultramegatech.ey/)** is a simple Periodic Table and element reference application. Version 0.9.0 now requires at least Android 4.0 (up from 2.3), and has updated videos for Argon, Tin and Dubnium.
 
-* {{ page.major }} **[Qz](https://f-droid.org/app/com.vonglasow.michael.qz)** (pronounced "queues") connects to an RDS/TMC receiver to receive live traffic messages, helping you avoid congestions. Version 2.0.0 is out, with the ability to send new messages as TraFF feeds to applications supporting it, updates to location tables, and fixing a bug causing the message list UI to miss some updates.
+* {{ page.major }} **[Qz](https://f-droid.org/packages/com.vonglasow.michael.qz/)** (pronounced "queues") connects to an RDS/TMC receiver to receive live traffic messages, helping you avoid congestions. Version 2.0.0 is out, with the ability to send new messages as TraFF feeds to applications supporting it, updates to location tables, and fixing a bug causing the message list UI to miss some updates.
 
-* {{ page.major }} **[Wownerujo](https://f-droid.org/app/com.wownero.wownerujo)** is a fork of the cryptocurrency Monero with primary alterations. Updating from 1.6.4.0 to 2.3.0.1, the app is now based on Wownero v0.3.0.0 Cool Cage.
+* {{ page.major }} **[Wownerujo](https://f-droid.org/packages/com.wownero.wownerujo/)** is a fork of the cryptocurrency Monero with primary alterations. Updating from 1.6.4.0 to 2.3.0.1, the app is now based on Wownero v0.3.0.0 Cool Cage.
 
-* **[Tricky Tripper](https://f-droid.org/app/de.koelle.christian.trickytripper)** is an offline-compatible utility for managing travel expenses. 1.6.0 fixes online retrieval of currencies, but without support for El Salvador Colon and Sambian Kwacha.
+* **[Tricky Tripper](https://f-droid.org/packages/de.koelle.christian.trickytripper/)** is an offline-compatible utility for managing travel expenses. 1.6.0 fixes online retrieval of currencies, but without support for El Salvador Colon and Sambian Kwacha.
 
-* **[Tutanota](https://f-droid.org/app/de.tutao.tutanota)** 3.37.2 contains updated Terms & Conditions.
+* **[Tutanota](https://f-droid.org/packages/de.tutao.tutanota/)** 3.37.2 contains updated Terms & Conditions.
 
-* **[EtchDroid](https://f-droid.org/app/eu.depau.etchdroid)** helps you write images to USB drives. You can use it to make a bootable GNU/Linux USB drive when your laptop is dead and you're in the middle of nowhere. It requires no root. Version 1.3 brings a dark theme, ability to open images from a file manager, and adds a workaround for an Android 9 (Pie) issue.
+* **[EtchDroid](https://f-droid.org/packages/eu.depau.etchdroid/)** helps you write images to USB drives. You can use it to make a bootable GNU/Linux USB drive when your laptop is dead and you're in the middle of nowhere. It requires no root. Version 1.3 brings a dark theme, ability to open images from a file manager, and adds a workaround for an Android 9 (Pie) issue.
 
-* **[NetGuard](https://f-droid.org/app/eu.faircode.netguard)** was updated from 2.207 to 2.212, now checking for always-on VPN, updated translations, and some fixes.
+* **[NetGuard](https://f-droid.org/packages/eu.faircode.netguard/)** was updated from 2.207 to 2.212, now checking for always-on VPN, updated translations, and some fixes.
 
-* **[Tachiyomi](https://f-droid.org/app/eu.kanade.tachiyomi)** is a manga reader. Version 0.8.0 brings quite a few changes, adding a new reader with many fixes, GIF support, showing all entries in the library even if their extensions are not installed, and several bug fixes.
+* **[Tachiyomi](https://f-droid.org/packages/eu.kanade.tachiyomi/)** is a manga reader. Version 0.8.0 brings quite a few changes, adding a new reader with many fixes, GIF support, showing all entries in the library even if their extensions are not installed, and several bug fixes.
 
-* **[Conversations](https://f-droid.org/app/eu.siacs.conversations)** is an instant messenger with support for group chat, based on the XMPP protocol. Starting with version 2.3.0+fcr it brings support for TLSv1.3 and can now disable screen & switch to ear piece in audio player, enable foreground service by default for Android 8 (Oreo), view per-contact media files in contact and conference details screen, preview and ask for confirmation before sending media files, use consistent color generation, fix Quiet Hours on Android 8+, and addition of a video quality selector.
+* **[Conversations](https://f-droid.org/packages/eu.siacs.conversations/)** is an instant messenger with support for group chat, based on the XMPP protocol. Starting with version 2.3.0+fcr it brings support for TLSv1.3 and can now disable screen & switch to ear piece in audio player, enable foreground service by default for Android 8 (Oreo), view per-contact media files in contact and conference details screen, preview and ask for confirmation before sending media files, use consistent color generation, fix Quiet Hours on Android 8+, and addition of a video quality selector.
 
-* {{ page.featured }} **[Mastalab](https://f-droid.org/app/fr.gouv.etalab.mastodon)** is a featureful multi-account client for [Mastodon](https://joinmastodon.org). Lots of new features in this jump from 1.13.6 to 1.15.2, now with video and Peertube support:
+* {{ page.featured }} **[Mastalab](https://f-droid.org/packages/fr.gouv.etalab.mastodon/)** is a featureful multi-account client for [Mastodon](https://joinmastodon.org). Lots of new features in this jump from 1.13.6 to 1.15.2, now with video and Peertube support:
   * Long-press on bookmark button to bookmark toots with another account
   * Verified URL on profiles (currently only available on mastodon.social)
   * Support for blocking whole instances
@@ -127,11 +127,11 @@ In total, **{{ page.number_of_updated_apps }}** apps were updated this week. Her
   * Direct messages in a column (can be hidden in settings)
   * Many other changes, improvements and bug fixes
 
-* **[Markor](https://f-droid.org/app/net.gsantner.markor)** 1.3.0 is out with an "Auto" theme, automatically switching between dark and light theme based on time of day. It also supports Chrome Custom tabs, will now start editing documents at last known cursor position, and enables link highlighting in plaintext format. Long-pressing an image now adds img-src with max-height, long-pressing the "Special key" jumps to top/bottom and long-pressing "Open external" opens context search. On top of that you'll find improvements to TextActions and Representation, and bug fixes.
+* **[Markor](https://f-droid.org/packages/net.gsantner.markor/)** 1.3.0 is out with an "Auto" theme, automatically switching between dark and light theme based on time of day. It also supports Chrome Custom tabs, will now start editing documents at last known cursor position, and enables link highlighting in plaintext format. Long-pressing an image now adds img-src with max-height, long-pressing the "Special key" jumps to top/bottom and long-pressing "Open external" opens context search. On top of that you'll find improvements to TextActions and Representation, and bug fixes.
 
-* **[OsmAnd~](https://f-droid.org/app/net.osmand.plus)** 3.2.2 fixes a crash on startup that occurred with non-latin maps, improves rendering speed on Android 8.0 devices, adds support for the polygon (non-amenity) objects editings, and adds a "Measure" button to Actions in the context menu for the distance measuring plugin.
+* **[OsmAnd~](https://f-droid.org/packages/net.osmand.plus/)** 3.2.2 fixes a crash on startup that occurred with non-latin maps, improves rendering speed on Android 8.0 devices, adds support for the polygon (non-amenity) objects editings, and adds a "Measure" button to Actions in the context menu for the distance measuring plugin.
 
-* **[Open Camera](https://f-droid.org/app/net.sourceforge.opencamera)** 1.44.1 adds a lot of new capabilities:
+* **[Open Camera](https://f-droid.org/packages/net.sourceforge.opencamera/)** 1.44.1 adds a lot of new capabilities:
   * New photo mode "NR" Noise Reduction, takes a burst of photos and aligns and merges to reduce noise (Camera2 API only, only supported on high end devices)
   * New photo mode "Focus {}" to enable Focus Bracketing (Camera2 API only)
   * New option Settings/"Ghost image", to overlay either last photo taken, or a selected image on your device
@@ -149,7 +149,7 @@ In total, **{{ page.number_of_updated_apps }}** apps were updated this week. Her
   * New option to disable ever showing the "What's New" dialog (under Settings/On screen GUI/ "Show What's New dialog")
   * _Many_ other updates and bug fixes
 
-* {{ page.major }} Apparently we haven't been able to update **[PDF Converter](https://f-droid.org/app/swati4star.createpdf)** for 2 years. We now have 8.3.3 in the repository (previously 1.0) with too many changes to list. Of note is that we also picked up some older versions, and version 2.5 is the latest one that will install on Android 4.4. All versions after that require at least Android 5.0.
+* {{ page.major }} Apparently we haven't been able to update **[PDF Converter](https://f-droid.org/packages/swati4star.createpdf/)** for 2 years. We now have 8.3.3 in the repository (previously 1.0) with too many changes to list. Of note is that we also picked up some older versions, and version 2.5 is the latest one that will install on Android 4.4. All versions after that require at least Android 5.0.
 
 #### Tips and Feedback
 

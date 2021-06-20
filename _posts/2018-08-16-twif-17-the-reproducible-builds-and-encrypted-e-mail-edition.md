@@ -11,7 +11,7 @@ This Week In F-Droid 17, Week 33, 2018
 In this edition: Voting on Fennec icon, Mattermost advocacy, USB/SD card swap demonstrated, fixing OsmAnd~, Featured badge, using custom ROMs, and integrating F-Droid with the fediverse. In apps, Tutanota is in and the reproducible builds Öffi and Briar finally dropped.
 <!--more-->
 
-[F-Droid](https://f-droid.org/) is a [repository](https://f-droid.org/packages/) of verified [free and open source](https://en.wikipedia.org/wiki/Free_and_open-source_software) Android apps, a [client](https://f-droid.org/app/org.fdroid.fdroid) to access it, as well as a whole "app store kit", providing all the tools needed to set up and run an app store. It is a community-run free software project developed by a wide range of contributors. This is their story this past week.
+[F-Droid](https://f-droid.org/) is a [repository](https://f-droid.org/packages/) of verified [free and open source](https://en.wikipedia.org/wiki/Free_and_open-source_software) Android apps, a [client](https://f-droid.org/packages/org.fdroid.fdroid/) to access it, as well as a whole "app store kit", providing all the tools needed to set up and run an app store. It is a community-run free software project developed by a wide range of contributors. This is their story this past week.
 
 #### F-Droid core
 
@@ -23,7 +23,7 @@ In this edition: Voting on Fennec icon, Mattermost advocacy, USB/SD card swap de
 
 * Since there are few active contributors to the **F-Droid client** right now, **[@\_hc](https://forum.f-droid.org/u/hans)** has been trying to polish things up so that it'll be stable for a while without regular work. We would definitely prefer to have more people contributing, though!
 
-* **[OsmAnd~](https://f-droid.org/app/net.osmand.plus)** had two build failures this week. **[@hague](https://gitlab.com/Hague)** has hopefully fixed this for 3.1, with assistance from **[@Bubu](https://forum.f-droid.org/u/Bubu)**.
+* **[OsmAnd~](https://f-droid.org/packages/net.osmand.plus/)** had two build failures this week. **[@hague](https://gitlab.com/Hague)** has hopefully fixed this for 3.1, with assistance from **[@Bubu](https://forum.f-droid.org/u/Bubu)**.
 
 * This edition of TWIF has an experimental "Featured" badge in front of some apps. Let us know how you like it, and if there's anything we can do to improve/tweak its appearance.
 
@@ -37,25 +37,25 @@ In this edition: Voting on Fennec icon, Mattermost advocacy, USB/SD card swap de
 
 #### New apps
 
-* **[Simple ToDo](https://f-droid.org/app/apps.jizzu.simpletodo)**: To-Do / Task list with beautiful minimalistic design and reminders
+* **[Simple ToDo](https://f-droid.org/packages/apps.jizzu.simpletodo/)**: To-Do / Task list with beautiful minimalistic design and reminders
 
-* **[Device Locator](https://f-droid.org/app/at.bitfire.devicelocator)**: Android lost/stolen device locator which does not require Internet access
+* **[Device Locator](https://f-droid.org/packages/at.bitfire.devicelocator/)**: Android lost/stolen device locator which does not require Internet access
 
-* **[VlcFreemote](https://f-droid.org/app/com.nicolasbrailo.vlcfreemote)**: Remotely control a VLC server
+* **[VlcFreemote](https://f-droid.org/packages/com.nicolasbrailo.vlcfreemote/)**: Remotely control a VLC server
 
-* **[Event Sync for Facebook](https://f-droid.org/app/cz.dvratil.fbeventsync)**: Sync your Facebook Events into your calendar
+* **[Event Sync for Facebook](https://f-droid.org/packages/cz.dvratil.fbeventsync/)**: Sync your Facebook Events into your calendar
 
-* {{ page.featured }} **[Öffi](https://f-droid.org/app/de.schildbach.oeffi)** made it in [at last]({{ site.baseurl }}{% post_url 2018-07-21-twif-13-public-transport-edition %})! For those who haven't been keeping up, Öffi is an all-in-one app for public transit. Like **[Transportr](https://f-droid.org/app/de.grobox.liberario)**, but completely different. Built [reproducibly](https://reproducible-builds.org) so you can switch seamlessly from Öffi's private repository to F-Droid main without uninstalling!
+* {{ page.featured }} **[Öffi](https://f-droid.org/packages/de.schildbach.oeffi/)** made it in [at last]({{ site.baseurl }}{% post_url 2018-07-21-twif-13-public-transport-edition %})! For those who haven't been keeping up, Öffi is an all-in-one app for public transit. Like **[Transportr](https://f-droid.org/packages/de.grobox.liberario/)**, but completely different. Built [reproducibly](https://reproducible-builds.org) so you can switch seamlessly from Öffi's private repository to F-Droid main without uninstalling!
 
-* {{ page.featured }} **[Tutanota](https://f-droid.org/app/de.tutao.tutanota)** has [dropped on F-Droid](https://tutanota.com/blog/posts/open-source-email)! We are happy to see how enthusiastic Tutao, the company behind Tutanota, is about F-Droid and free software, having [rewritten their app from scratch](https://tutanota.com/blog/posts/secure-mail-open-source) so it could be included in our main repository. Furthermore, they take special measures to avoid tracking you, and end-to-end encryption and two-factor authentication are core features.
+* {{ page.featured }} **[Tutanota](https://f-droid.org/packages/de.tutao.tutanota/)** has [dropped on F-Droid](https://tutanota.com/blog/posts/open-source-email)! We are happy to see how enthusiastic Tutao, the company behind Tutanota, is about F-Droid and free software, having [rewritten their app from scratch](https://tutanota.com/blog/posts/secure-mail-open-source) so it could be included in our main repository. Furthermore, they take special measures to avoid tracking you, and end-to-end encryption and two-factor authentication are core features.
 
   In all fairness, many features work best between Tutanota users, and interoperability with regular e-mail is more limited, as you might expect. If you are looking for a privacy-respecting alternative to gmail with built-in encryption support, this is definitely worth checking out though.
 
   **Important**: Those who want to switch from the Play Store version to the F-Droid version need to uninstall Tutanota before installing it from F-Droid.
 
-* **[GPSd Client](https://f-droid.org/app/io.github.tiagoshibata.gpsdclient)**: Service to forward NMEA messages to a GPSd server
+* **[GPSd Client](https://f-droid.org/packages/io.github.tiagoshibata.gpsdclient/)**: Service to forward NMEA messages to a GPSd server
 
-* **[OSMTracker](https://f-droid.org/app/net.osmtracker)**: GPS Track Recorder
+* **[OSMTracker](https://f-droid.org/packages/net.osmtracker/)**: GPS Track Recorder
 
 * **[Briar](https://f-droid.org/wiki/page/org.briarproject.briar.android)** also finally made it! Unfortunately it was published straight to the archive as we can only build the older version 1.0.1 of this app for now. The solution lies in upgrading the build server to Debian Stretch. If you want to play with it, you'll need to enable the F-Droid archive in your repository settings. Or you can add the [Briar repository](https://briarproject.org/fdroid.html) and get access to the latest version. Oh yeah, Briar is built reproducibly, and [here's the how and why](https://blog.grobox.de/2018/building-briar-reproducible-and-why-it-matters/).
 
@@ -63,37 +63,37 @@ In this edition: Voting on Fennec icon, Mattermost advocacy, USB/SD card swap de
 
 In total, 72 apps were updated this week. Here are the highlights:
 
-* **[Vanilla Music](https://f-droid.org/app/ch.blinkenlights.android.vanilla)** is a music player with a simple interface similar to the stock music player. Version 1.0.70 has an option to synchronize m3u playlists, can read artwork from embedded tags, and now has an option to scroll to the current song in the queue view.
+* **[Vanilla Music](https://f-droid.org/packages/ch.blinkenlights.android.vanilla/)** is a music player with a simple interface similar to the stock music player. Version 1.0.70 has an option to synchronize m3u playlists, can read artwork from embedded tags, and now has an option to scroll to the current song in the queue view.
 
-* **[Delta Chat](https://f-droid.org/app/com.b44t.messenger)** is an instant messenger using e-mail as its transport. Version 0.20.0 improves reliability with size checks before sending videos, files and other attachments, retries an appropriate number of times on sending problems, detects size-related problems and does not retry, shows message errors in the message info, and more.
+* **[Delta Chat](https://f-droid.org/packages/com.b44t.messenger/)** is an instant messenger using e-mail as its transport. Version 0.20.0 improves reliability with size checks before sending videos, files and other attachments, retries an appropriate number of times on sending problems, detects size-related problems and does not retry, shows message errors in the message info, and more.
 
-* Big update from 5.6.0 to 5.8.8 for **[Persian Calendar](https://f-droid.org/app/com.byagowi.persiancalendar)**. The Persian calendar is not supported by Android natively, and that is where this app comes in. It can now show device calendar events and birthdays with search capability, adds an "add an event" button, and will not play Athan when on a phone call, doesn't always need to restart on coming back from preferences, and lots of other improvements and fixes.
+* Big update from 5.6.0 to 5.8.8 for **[Persian Calendar](https://f-droid.org/packages/com.byagowi.persiancalendar/)**. The Persian calendar is not supported by Android natively, and that is where this app comes in. It can now show device calendar events and birthdays with search capability, adds an "add an event" button, and will not play Athan when on a phone call, doesn't always need to restart on coming back from preferences, and lots of other improvements and fixes.
 
-* **[Taskbar](https://f-droid.org/app/com.farmerbb.taskbar)** has a major release out at 4.0. This app puts a start menu and recent apps tray on top of your screen. Freeform now works on Android Pie (9)! There is improved tasker support to show/hide the Taskbar, toggle the start menu and toggle the dashboard. Also includes better handling of options such as default window sizes, faster app switching, a letter popup to fast scrollbar on start menu, and many other small visual tweaks and improvements.
+* **[Taskbar](https://f-droid.org/packages/com.farmerbb.taskbar/)** has a major release out at 4.0. This app puts a start menu and recent apps tray on top of your screen. Freeform now works on Android Pie (9)! There is improved tasker support to show/hide the Taskbar, toggle the start menu and toggle the dashboard. Also includes better handling of options such as default window sizes, faster app switching, a letter popup to fast scrollbar on start menu, and many other small visual tweaks and improvements.
 
-* **[Suntimes](https://f-droid.org/app/com.forrestguice.suntimeswidget)** had a big update to 0.9.0. This update switches to a different data source (by default) which supports altitude-based refinements. Enhancements to the data source selector, data sources (plugins), add elevation to all default locations and an elevation UI, custom action for long-press, tons of new permissions, _world map displaying day/night and moonlight_, and many other improvements, fixes, and translation updates.
+* **[Suntimes](https://f-droid.org/packages/com.forrestguice.suntimeswidget/)** had a big update to 0.9.0. This update switches to a different data source (by default) which supports altitude-based refinements. Enhancements to the data source selector, data sources (plugins), add elevation to all default locations and an elevation UI, custom action for long-press, tons of new permissions, _world map displaying day/night and moonlight_, and many other improvements, fixes, and translation updates.
  
-* **[Cythara](https://f-droid.org/app/com.github.cythara)** is a musical instrument tuner. This update to 2.8 enables installation on external storage. Other recent updates include a new German translation and a new logo.
+* **[Cythara](https://f-droid.org/packages/com.github.cythara/)** is a musical instrument tuner. This update to 2.8 enables installation on external storage. Other recent updates include a new German translation and a new logo.
 
-* **[twitlatte](https://f-droid.org/app/com.github.moko256.twitlatte)** is a client for Twitter, Mastodon and Pleroma. Version 1.5.0 adds configuration switches to show images of quoted tweet on timeline, show tweet count per 24 hour on trends, collapse/expand text of toot having content warning, show custom emojis at user name, and contains many other improvements as well as some bug fixes.
+* **[twitlatte](https://f-droid.org/packages/com.github.moko256.twitlatte/)** is a client for Twitter, Mastodon and Pleroma. Version 1.5.0 adds configuration switches to show images of quoted tweet on timeline, show tweet count per 24 hour on trends, collapse/expand text of toot having content warning, show custom emojis at user name, and contains many other improvements as well as some bug fixes.
 
-* **[QKSMS](https://f-droid.org/app/com.moez.QKSMS)** is the most beautiful replacement for the stock AOSP messaging app you’ve ever used. This update from 3.4.2 to 3.4.5 adds enhanced logging support, customizable swipe conversation actions, invite friends, can delete messages from notification, and several improvements and bug fixes such as better scrolling performance throughout the app.
+* **[QKSMS](https://f-droid.org/packages/com.moez.QKSMS/)** is the most beautiful replacement for the stock AOSP messaging app you’ve ever used. This update from 3.4.2 to 3.4.5 adds enhanced logging support, customizable swipe conversation actions, invite friends, can delete messages from notification, and several improvements and bug fixes such as better scrolling performance throughout the app.
 
-* **[Vespucci](https://f-droid.org/app/de.blau.android)** is an [OpenStreetMap](https://www.openstreetmap.org) editor. Version 11.0.2.0 updates imagery and translations, adds maxspeeds to geocontext for PT and CZ, updates OH Fragment, protects against crash when layouting empty preset views, fixes regression restoring state in PropertyEditor, tries to avoid crash with null Context in PresetSearch, and adds conveying and priority to direction dependent keys.
+* **[Vespucci](https://f-droid.org/packages/de.blau.android/)** is an [OpenStreetMap](https://www.openstreetmap.org) editor. Version 11.0.2.0 updates imagery and translations, adds maxspeeds to geocontext for PT and CZ, updates OH Fragment, protects against crash when layouting empty preset views, fixes regression restoring state in PropertyEditor, tries to avoid crash with null Context in PresetSearch, and adds conveying and priority to direction dependent keys.
 
-* Everybody's favourite app, **[Easy xkcd](https://f-droid.org/app/de.tap.easy_xkcd)**, joins the list of apps sporting an [adaptive icon](https://developer.android.com/guide/practices/ui_guidelines/icon_design_adaptive). Other additions are a simplified Chinese translation, fixed What-if thumbnails, and Chrome Custom Tabs can now be disabled in the settings. 
+* Everybody's favourite app, **[Easy xkcd](https://f-droid.org/packages/de.tap.easy_xkcd/)**, joins the list of apps sporting an [adaptive icon](https://developer.android.com/guide/practices/ui_guidelines/icon_design_adaptive). Other additions are a simplified Chinese translation, fixed What-if thumbnails, and Chrome Custom Tabs can now be disabled in the settings. 
 
-* **[Commons](https://f-droid.org/app/fr.free.nrw.commons)** is an app to upload images to Wikimedia Commons. It was updated from 2.7.2 to 2.8.1, adding automatic Wikidata p18 edits upon Nearby upload, explore feature to browse other Commons images, Achievements feature to see current level and upload stats, quiz for users with high deletion rates, and more.
+* **[Commons](https://f-droid.org/packages/fr.free.nrw.commons/)** is an app to upload images to Wikimedia Commons. It was updated from 2.7.2 to 2.8.1, adding automatic Wikidata p18 edits upon Nearby upload, explore feature to browse other Commons images, Achievements feature to see current level and upload stats, quiz for users with high deletion rates, and more.
 
-* Version 0.8.13 of the group messenger **[Riot.im](https://f-droid.org/app/im.vector.alpha)** is out, adding a previewer to preview media before sending it into a room, _replies_, autocompletion for slash commands, improved external keyboard support for newer Androids, and [many other changes, fixes and improvements](https://github.com/vector-im/riot-android/blob/HEAD/CHANGES.rst#changes-in-riot-0813-2018-08-09).
+* Version 0.8.13 of the group messenger **[Riot.im](https://f-droid.org/packages/im.vector.alpha/)** is out, adding a previewer to preview media before sending it into a room, _replies_, autocompletion for slash commands, improved external keyboard support for newer Androids, and [many other changes, fixes and improvements](https://github.com/vector-im/riot-android/blob/HEAD/CHANGES.rst#changes-in-riot-0813-2018-08-09).
 
-* {{ page.featured }} **[Markor](https://f-droid.org/app/net.gsantner.markor)**, a [markdown](https://commonmark.org) based text editor, released version 1.0.0, with all new description and screenshots in F-Droid! Markor now supports an additional export for calendar appointments, has improved widget and [SD card](https://en.wikipedia.org/wiki/Secure_Digital) handling, and better separator placement in ShareInto, among other things. A blog post detailing the 1.0.0 release should appear on the app's [website](https://gsantner.net/project/markor.html) soon.
+* {{ page.featured }} **[Markor](https://f-droid.org/packages/net.gsantner.markor/)**, a [markdown](https://commonmark.org) based text editor, released version 1.0.0, with all new description and screenshots in F-Droid! Markor now supports an additional export for calendar appointments, has improved widget and [SD card](https://en.wikipedia.org/wiki/Secure_Digital) handling, and better separator placement in ShareInto, among other things. A blog post detailing the 1.0.0 release should appear on the app's [website](https://gsantner.net/project/markor.html) soon.
 
-* **[Gadgetbridge](https://f-droid.org/app/nodomain.freeyourgadget.gadgetbridge)** lets you use your Pebble/Mi Band/Amazfit Bip/Hplus device without the vendor's closed source application and without the need to create an account and transmit any of your data to the vendor's servers. Version 0.29.0 adds initial support for the ID115 and Lenovo Watch9, now shows a splash screen on startup, vertically aligns device icon in main activity, untested support for the google clock application, and improvements for Amazfit Cor and Bip.
+* **[Gadgetbridge](https://f-droid.org/packages/nodomain.freeyourgadget.gadgetbridge/)** lets you use your Pebble/Mi Band/Amazfit Bip/Hplus device without the vendor's closed source application and without the need to create an account and transmit any of your data to the vendor's servers. Version 0.29.0 adds initial support for the ID115 and Lenovo Watch9, now shows a splash screen on startup, vertically aligns device icon in main activity, untested support for the google clock application, and improvements for Amazfit Cor and Bip.
 
-* **[Tremotesf](https://f-droid.org/app/org.equeim.tremotesf)** is a remote control app for the [Transmission](https://transmissionbt.com) BitTorrent client. 1.8.0 adds support for Android 9 (Pie) and the ability to reannounce torrents. Also improved support for self-signed certificates, better behavior when disconnecting from server, and prevents crashing on saving servers.
+* **[Tremotesf](https://f-droid.org/packages/org.equeim.tremotesf/)** is a remote control app for the [Transmission](https://transmissionbt.com) BitTorrent client. 1.8.0 adds support for Android 9 (Pie) and the ability to reannounce torrents. Also improved support for self-signed certificates, better behavior when disconnecting from server, and prevents crashing on saving servers.
 
-* **[Video Transcoder](https://f-droid.org/app/protect.videoeditor)** was updated from 0.11 to 0.12, extending support to Android 4.4! (Previously 5.0+) Video Transcoder lets you encode videos into different formats, trim videos, and extract audio, right on your own phone without connecting to the internet. This update also adds support for custom video resolutions, removes hard-coded video resolutions and only displays the original resolution with 1/2 and 1/4 resolutions.
+* **[Video Transcoder](https://f-droid.org/packages/protect.videoeditor/)** was updated from 0.11 to 0.12, extending support to Android 4.4! (Previously 5.0+) Video Transcoder lets you encode videos into different formats, trim videos, and extract audio, right on your own phone without connecting to the internet. This update also adds support for custom video resolutions, removes hard-coded video resolutions and only displays the original resolution with 1/2 and 1/4 resolutions.
 
 #### In the next TWIF
 

@@ -28,7 +28,7 @@ There are **{{ page.number_of_added_apps }}** new and **{{ page.number_of_update
 
 <!--more-->
 
-**[F-Droid](https://f-droid.org/)** is a [repository](https://f-droid.org/packages/) of verified [free and open source](https://en.wikipedia.org/wiki/Free_and_open-source_software) Android apps, a **[client](https://f-droid.org/app/org.fdroid.fdroid)** to access it, as well as a whole "app store kit", providing all the tools needed to set up and run an app store. It is a community-run free software project developed by a wide range of contributors. This is their story this past week.
+**[F-Droid](https://f-droid.org/)** is a [repository](https://f-droid.org/packages/) of verified [free and open source](https://en.wikipedia.org/wiki/Free_and_open-source_software) Android apps, a **[client](https://f-droid.org/packages/org.fdroid.fdroid/)** to access it, as well as a whole "app store kit", providing all the tools needed to set up and run an app store. It is a community-run free software project developed by a wide range of contributors. This is their story this past week.
 
 ### Localization improvements in the F-Droid repository
 
@@ -51,22 +51,22 @@ The German version of **[@Izzy](https://forum.f-droid.org/u/izzy)**'s third F-Dr
 
 ### Calendar Notifications Plus unpublished from Play Store
 
-The developer of **[Calendar Notifications](https://f-droid.org/app/com.github.quarck.calnotify)** has [pulled their app from Google Play](https://www.reddit.com/comments/auiv3b), while leaving it on FDroid:
+The developer of **[Calendar Notifications](https://f-droid.org/packages/com.github.quarck.calnotify/)** has [pulled their app from Google Play](https://www.reddit.com/comments/auiv3b), while leaving it on FDroid:
 
 > I have realized yesterday that Play Store was a source of a constant stress recently. And for what? For an app that I develop as a fun-time activity and having absolutely zero profit from it. Recent SDK/API changes has forced me to kill/change some functionality that people liked and people were blaming me, not google.
 
 ### New apps
 
-* **[LASKmobile](https://f-droid.org/app/com.rfo.LASKmobile)**: Data entry app for the field record LASK.
-* **[Mozc for Android](https://f-droid.org/app/org.mozc.android.inputmethod.japanese)**: Japanese input method editor.
+* **[LASKmobile](https://f-droid.org/packages/com.rfo.LASKmobile/)**: Data entry app for the field record LASK.
+* **[Mozc for Android](https://f-droid.org/packages/org.mozc.android.inputmethod.japanese/)**: Japanese input method editor.
 
 ### Updated apps
 
 In total, **{{ page.number_of_updated_apps }}** apps were updated this week. Here are the highlights:
 
-* **[EteSync](https://f-droid.org/app/com.etesync.syncadapter)** is a secure and end-to-end encrypted personal information sync for Android, the desktop and the web. (You will either need a paid account, or set up your own server.) It was [updated](https://github.com/etesync/android/blob/HEAD/ChangeLog.md) from 1.2.0 to 1.2.2, fixing the setting controlling change notifications, and fixing a crash during sync for some users.
+* **[EteSync](https://f-droid.org/packages/com.etesync.syncadapter/)** is a secure and end-to-end encrypted personal information sync for Android, the desktop and the web. (You will either need a paid account, or set up your own server.) It was [updated](https://github.com/etesync/android/blob/HEAD/ChangeLog.md) from 1.2.0 to 1.2.2, fixing the setting controlling change notifications, and fixing a crash during sync for some users.
 
-* {{ page.major }} **[openScale](https://f-droid.org/app/com.health.openscale)**, a weight and body metrics tracker with support for Bluetooth scales, was [updated](https://github.com/oliexdev/openScale/releases) from 1.9.3 to 2.0.1:
+* {{ page.major }} **[openScale](https://f-droid.org/packages/com.health.openscale/)**, a weight and body metrics tracker with support for Bluetooth scales, was [updated](https://github.com/oliexdev/openScale/releases) from 1.9.3 to 2.0.1:
   * replaced HelloCharts library with the MPAndroidChart library
   * added option to enable/disable graph legend
   * replaced statistic last week/month table view with radar graph
@@ -81,11 +81,11 @@ In total, **{{ page.number_of_updated_apps }}** apps were updated this week. Her
   * coloured y-axis and table icons correctly
   * fixed widget bug
 
-* **[Indigenous](https://f-droid.org/app/com.indieweb.indigenous)**, an IndieWeb Micropub and Microsub Client, was [updated](https://github.com/swentel/indigenous-android/releases) from 0.31 to 0.33, now with manage channels and feeds, and support for sending location name. The floating action button on manage channel and feeds screen was moved to the action bar.
+* **[Indigenous](https://f-droid.org/packages/com.indieweb.indigenous/)**, an IndieWeb Micropub and Microsub Client, was [updated](https://github.com/swentel/indigenous-android/releases) from 0.31 to 0.33, now with manage channels and feeds, and support for sending location name. The floating action button on manage channel and feeds screen was moved to the action bar.
 
-* {{ page.featured }} **[Tusky](https://f-droid.org/app/com.keylesspalace.tusky)** is a Mastodon client. This is a big [update](https://github.com/tuskyapp/Tusky/releases) from 4.1 to 5.1 with too many changes to list. Please refer to the [release notes](https://github.com/tuskyapp/Tusky/releases/tag/v5.0) for changes and screenshots.
+* {{ page.featured }} **[Tusky](https://f-droid.org/packages/com.keylesspalace.tusky/)** is a Mastodon client. This is a big [update](https://github.com/tuskyapp/Tusky/releases) from 4.1 to 5.1 with too many changes to list. Please refer to the [release notes](https://github.com/tuskyapp/Tusky/releases/tag/v5.0) for changes and screenshots.
 
-* **[miniVector](https://f-droid.org/app/com.lavadip.miniVector)** and **[Riot.im](https://f-droid.org/app/im.vector.alpha)** [both](https://github.com/LiMium/mini-vector-android/blob/HEAD/CHANGES.rst) [updated](https://github.com/vector-im/riot-android/blob/HEAD/CHANGES.rst) to 0.8.23, with a refreshed look and support for key backup! Other improvements include:
+* **[miniVector](https://f-droid.org/packages/com.lavadip.miniVector/)** and **[Riot.im](https://f-droid.org/packages/im.vector.alpha/)** [both](https://github.com/LiMium/mini-vector-android/blob/HEAD/CHANGES.rst) [updated](https://github.com/vector-im/riot-android/blob/HEAD/CHANGES.rst) to 0.8.23, with a refreshed look and support for key backup! Other improvements include:
   * Support Split-screen mode (#1832)
   * Enable auto focus when taking picture with the camera (#2831)
   * Notification settings re-organization, added bing rule troubleshoot
@@ -94,15 +94,15 @@ In total, **{{ page.number_of_updated_apps }}** apps were updated this week. Her
   * Sender name colors in rooms
   * Remove beta e2e warning (#2946)
 
-* **[Vinyl](https://f-droid.org/app/com.poupa.vinylmusicplayer)**, a light and slick material design music player, [updated](https://github.com/AdrienPoupa/VinylMusicPlayer/blob/HEAD/CHANGELOG.md) from 0.19.2 to 0.20.1, now with sort by date for Songs and Albums, song title text in a horizontal scrollview, swipe to remove song from queue, and SD card write access using SAF API.
+* **[Vinyl](https://f-droid.org/packages/com.poupa.vinylmusicplayer/)**, a light and slick material design music player, [updated](https://github.com/AdrienPoupa/VinylMusicPlayer/blob/HEAD/CHANGELOG.md) from 0.19.2 to 0.20.1, now with sort by date for Songs and Albums, song title text in a horizontal scrollview, swipe to remove song from queue, and SD card write access using SAF API.
 
-* **[piggybudget](https://f-droid.org/app/de.php_tech.piggybudget)**, an expense tracker, was [updated](https://github.com/pmiddend/piggybudget/releases) to 2.2, now with support for exporting your entire transaction history to CSV, as well as the inverse, importing CSV files into piggybudget.
+* **[piggybudget](https://f-droid.org/packages/de.php_tech.piggybudget/)**, an expense tracker, was [updated](https://github.com/pmiddend/piggybudget/releases) to 2.2, now with support for exporting your entire transaction history to CSV, as well as the inverse, importing CSV files into piggybudget.
 
-* **[Conversations](https://f-droid.org/app/eu.siacs.conversations)** was [updated](https://github.com/siacs/Conversations/blob/HEAD/CHANGELOG.md) from 2.3.12+fcr to 2.4.1+fcr, bringing a new Backup / Restore feature, clearer distinction between private group chats and public channels, a redesigned participants view for group chats and channels, and a redesigned "create new contact/group chat/channel" flow in the Start Conversation screen.
+* **[Conversations](https://f-droid.org/packages/eu.siacs.conversations/)** was [updated](https://github.com/siacs/Conversations/blob/HEAD/CHANGELOG.md) from 2.3.12+fcr to 2.4.1+fcr, bringing a new Backup / Restore feature, clearer distinction between private group chats and public channels, a redesigned participants view for group chats and channels, and a redesigned "create new contact/group chat/channel" flow in the Start Conversation screen.
 
-* **[Fedilab](https://f-droid.org/app/fr.gouv.etalab.mastodon)**, the swiss army knife of Activitypub-based platforms (Mastodon/Pleroma/Peertube/GNU Social/Friendica) was [updated](https://gitlab.com/tom79/mastalab/tags) to 1.75.0, featuring an ad blocker for its builtin browser, a renewed and simplified login page with auto-detection of the instance type, a "Console mode" layout, copy toot URL to clipboard, and "timed mute" accessible from all menus that have "mute".
+* **[Fedilab](https://f-droid.org/packages/fr.gouv.etalab.mastodon/)**, the swiss army knife of Activitypub-based platforms (Mastodon/Pleroma/Peertube/GNU Social/Friendica) was [updated](https://gitlab.com/tom79/mastalab/tags) to 1.75.0, featuring an ad blocker for its builtin browser, a renewed and simplified login page with auto-detection of the instance type, a "Console mode" layout, copy toot URL to clipboard, and "timed mute" accessible from all menus that have "mute".
 
-* **[UserLAnd](https://f-droid.org/app/tech.ula)** was [updated](https://github.com/CypherpunkArmory/UserLAnd/releases) from 2.3.4 to 2.3.7, adding support for continuous deployment, user review request, and fixing the "getting started" link.
+* **[UserLAnd](https://f-droid.org/packages/tech.ula/)** was [updated](https://github.com/CypherpunkArmory/UserLAnd/releases) from 2.3.4 to 2.3.7, adding support for continuous deployment, user review request, and fixing the "getting started" link.
 
 ### Removed apps
 

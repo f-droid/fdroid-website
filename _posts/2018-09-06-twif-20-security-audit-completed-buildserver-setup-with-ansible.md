@@ -11,7 +11,7 @@ This Week In F-Droid 20, Week 36, 2018
 In this edition: Second security audit completed, automating the buildserver setup with ansible, a light week with updates for Just Notes, Cow's Revenge, Feeel, and others.
 <!--more-->
 
-**[F-Droid](https://f-droid.org/)** is a [repository](https://f-droid.org/packages/) of verified [free and open source](https://en.wikipedia.org/wiki/Free_and_open-source_software) Android apps, a **[client](https://f-droid.org/app/org.fdroid.fdroid)** to access it, as well as a whole "app store kit", providing all the tools needed to set up and run an app store. It is a community-run free software project developed by a wide range of contributors. This is their story this past week.
+**[F-Droid](https://f-droid.org/)** is a [repository](https://f-droid.org/packages/) of verified [free and open source](https://en.wikipedia.org/wiki/Free_and_open-source_software) Android apps, a **[client](https://f-droid.org/packages/org.fdroid.fdroid/)** to access it, as well as a whole "app store kit", providing all the tools needed to set up and run an app store. It is a community-run free software project developed by a wide range of contributors. This is their story this past week.
 
 #### Second security audit completed
 
@@ -31,25 +31,25 @@ For those who are curious about the _first_ security audit, which happened in 20
 
 #### New apps
 
-* **[Fit Notifications](https://f-droid.org/app/com.abhijitvalluri.android.fitnotifications)**: Enable all notifications for compatible Fitbit devices
+* **[Fit Notifications](https://f-droid.org/packages/com.abhijitvalluri.android.fitnotifications/)**: Enable all notifications for compatible Fitbit devices
 
-* **[ADBKeyBoard](https://f-droid.org/app/com.android.adbkeyboard)**: Android Virtual Keyboard Input via ADB
+* **[ADBKeyBoard](https://f-droid.org/packages/com.android.adbkeyboard/)**: Android Virtual Keyboard Input via ADB
 
 #### Updated apps
 
 This week, **24** apps were updated, which is by far the lightest week we've had since the start of TWIF. We are not aware of any technical problems, and the index has been updating regularly. This slowdown appears to be entirely natural.
 
-* **[Just Notes](https://f-droid.org/app/com.alaskalinuxuser.justnotes)** released version 2.0, now with scrolling notes!
+* **[Just Notes](https://f-droid.org/packages/com.alaskalinuxuser.justnotes/)** released version 2.0, now with scrolling notes!
 
-* {{ page.featured }}  **[Cow's Revenge](https://f-droid.org/app/org.pipoypipagames.cowsrevenge)** is an awesome game in which you play a cow that was abducted and genetically enhanced by aliens. Seriously, who doesn't want to be THE COWEST? In version 1.0.5 you can toggle the sound on and off in the settings, enjoy Gamepad improvements, change weapons with shoulder buttons, and more.
+* {{ page.featured }}  **[Cow's Revenge](https://f-droid.org/packages/org.pipoypipagames.cowsrevenge/)** is an awesome game in which you play a cow that was abducted and genetically enhanced by aliens. Seriously, who doesn't want to be THE COWEST? In version 1.0.5 you can toggle the sound on and off in the settings, enjoy Gamepad improvements, change weapons with shoulder buttons, and more.
 
-* **[Feeel](https://f-droid.org/app/com.enjoyingfoss.feeel)** is an app for doing simple at-home exercises. The update from 1.1 to 1.91 adds multiple workouts and fixes a bug that makes it actually work on Android 4.x, as well as SailfishOS.
+* **[Feeel](https://f-droid.org/packages/com.enjoyingfoss.feeel/)** is an app for doing simple at-home exercises. The update from 1.1 to 1.91 adds multiple workouts and fixes a bug that makes it actually work on Android 4.x, as well as SailfishOS.
 
-* **[Draw](https://f-droid.org/app/com.simplemobiletools.draw)** is a dead simple drawing app. Version 4.3.0 adds an initial Zoom implementation, which is disabled by default.
+* **[Draw](https://f-droid.org/packages/com.simplemobiletools.draw/)** is a dead simple drawing app. Version 4.3.0 adds an initial Zoom implementation, which is disabled by default.
 
-* **[Mastalab](https://f-droid.org/app/fr.gouv.etalab.mastodon)** 1.11.0 is out! Links to toots now open the conversation inside the app, detailed bug reports can be sent by email, GIFs can be imported from the Android keyboard, instances can be followed from profiles, markdown is accepted for links in toots, and more. There's also a slew of bug fixes and better Pleroma support.
+* **[Mastalab](https://f-droid.org/packages/fr.gouv.etalab.mastodon/)** 1.11.0 is out! Links to toots now open the conversation inside the app, detailed bug reports can be sent by email, GIFs can be imported from the Android keyboard, instances can be followed from profiles, markdown is accepted for links in toots, and more. There's also a slew of bug fixes and better Pleroma support.
 
-* **[Riot.im](https://f-droid.org/app/im.vector.alpha)** is an instant messenger and team collaboration tool based on the [Matrix](https://matrix.org) protocol/network. It skipped a version on F-Droid, updating straight to 0.8.15. This update has a lot of quality improvements under the hood, an updated settings icon and notification logo, the ability to send messages starting with a slash (`/`) and automatically escapes nickname mentions starting with a slash.
+* **[Riot.im](https://f-droid.org/packages/im.vector.alpha/)** is an instant messenger and team collaboration tool based on the [Matrix](https://matrix.org) protocol/network. It skipped a version on F-Droid, updating straight to 0.8.15. This update has a lot of quality improvements under the hood, an updated settings icon and notification logo, the ability to send messages starting with a slash (`/`) and automatically escapes nickname mentions starting with a slash.
 
 #### Tips and Feedback
 

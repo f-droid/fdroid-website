@@ -22,7 +22,7 @@ This Week In F-Droid {{ page.edition }}, Week {{ page.date | date: "%V, %G" }} <
 In this edition: Lots of F-Droid news. We're looking for Mirror testers, and help with developing an auditing proxy. We are also setting up our own Matrix server, and have some news about Fairphone as a Service. In the app department, we have 12 new and {{ page.number_of_updated_apps }} updated apps.
 <!--more-->
 
-**[F-Droid](https://f-droid.org/)** is a [repository](https://f-droid.org/packages/) of verified [free and open source](https://en.wikipedia.org/wiki/Free_and_open-source_software) Android apps, a **[client](https://f-droid.org/app/org.fdroid.fdroid)** to access it, as well as a whole "app store kit", providing all the tools needed to set up and run an app store. It is a community-run free software project developed by a wide range of contributors. This is their story this past week.
+**[F-Droid](https://f-droid.org/)** is a [repository](https://f-droid.org/packages/) of verified [free and open source](https://en.wikipedia.org/wiki/Free_and_open-source_software) Android apps, a **[client](https://f-droid.org/packages/org.fdroid.fdroid/)** to access it, as well as a whole "app store kit", providing all the tools needed to set up and run an app store. It is a community-run free software project developed by a wide range of contributors. This is their story this past week.
 
 #### Mirror testers wanted
 
@@ -66,18 +66,18 @@ We'd also like to thank **Max Dor** for his very generous offer to host and admi
 
 #### New apps
 
-* **[Keikai Launcher](https://f-droid.org/app/com.anpmech.launcher)**: Fast, minimalistic launcher.
-* **[Aria2App](https://f-droid.org/app/com.gianlu.aria2app)**
-* **[Pretend You're Xyzzy](https://f-droid.org/app/com.gianlu.pretendyourexyzzy)**
-* **[Share my number](https://f-droid.org/app/com.github.characterdog.share_my_number)**
-* **[Gotify](https://f-droid.org/app/com.github.gotify)**: A client for receiving push notifications.
-* **[Drowser](https://f-droid.org/app/com.jarsilio.android.drowser)**: Simple background app killer.
-* **[CineLog](https://f-droid.org/app/com.ulicae.cinelog)**: Save reviews of movies.
-* **[aRevelation](https://f-droid.org/app/de.igloffstein.maik.aRevelation)**: Password manager based on revelation password manager file format.
-* **[Travel Mate](https://f-droid.org/app/io.github.project_travel_mate)**: A complete travel guide.
-* **[wX](https://f-droid.org/app/joshuatee.wx)**: Weather app geared towards storm chasers, meteorologists and weather enthusiasts.
-* **[YouTube Stream](https://f-droid.org/app/org.thiolliere.youtubestream)**: Get youtube stream and open it with local application.
-* **[SuperFreezZ](https://f-droid.org/app/superfreeze.tool.android)**
+* **[Keikai Launcher](https://f-droid.org/packages/com.anpmech.launcher/)**: Fast, minimalistic launcher.
+* **[Aria2App](https://f-droid.org/packages/com.gianlu.aria2app/)**
+* **[Pretend You're Xyzzy](https://f-droid.org/packages/com.gianlu.pretendyourexyzzy/)**
+* **[Share my number](https://f-droid.org/packages/com.github.characterdog.share_my_number/)**
+* **[Gotify](https://f-droid.org/packages/com.github.gotify/)**: A client for receiving push notifications.
+* **[Drowser](https://f-droid.org/packages/com.jarsilio.android.drowser/)**: Simple background app killer.
+* **[CineLog](https://f-droid.org/packages/com.ulicae.cinelog/)**: Save reviews of movies.
+* **[aRevelation](https://f-droid.org/packages/de.igloffstein.maik.aRevelation/)**: Password manager based on revelation password manager file format.
+* **[Travel Mate](https://f-droid.org/packages/io.github.project_travel_mate/)**: A complete travel guide.
+* **[wX](https://f-droid.org/packages/joshuatee.wx/)**: Weather app geared towards storm chasers, meteorologists and weather enthusiasts.
+* **[YouTube Stream](https://f-droid.org/packages/org.thiolliere.youtubestream/)**: Get youtube stream and open it with local application.
+* **[SuperFreezZ](https://f-droid.org/packages/superfreeze.tool.android/)**
 
 #### Updated apps
 
@@ -85,21 +85,21 @@ In total, **{{ page.number_of_updated_apps }}** apps were updated this week. Her
 
 Due to time shortage, apps lacking a changelog URL in their F-Droid metadata were skipped this week.
 
-* **[Cythara](https://f-droid.org/app/com.github.cythara)** is a musical instrument tuner, and was updated from 2.8 to 2.9. This update adds cello tuning, sets chromatic tuning as the default, and fixes a scrolling issue in landscape mode.
+* **[Cythara](https://f-droid.org/packages/com.github.cythara/)** is a musical instrument tuner, and was updated from 2.8 to 2.9. This update adds cello tuning, sets chromatic tuning as the default, and fixes a scrolling issue in landscape mode.
 
-* **[Apple Flinger](https://f-droid.org/app/com.gitlab.ardash.appleflinger.android)** is a funny single- and multiplayer game, where you use a slingshot to shoot with apples. This update from 1.5.3 to 1.5.5 adds 12 more winter levels, more stats on-screen, a list of translators in the credits screen, and several translation updates. Additionally, there is now a wiki page on the website describing how to create new levels.
+* **[Apple Flinger](https://f-droid.org/packages/com.gitlab.ardash.appleflinger.android/)** is a funny single- and multiplayer game, where you use a slingshot to shoot with apples. This update from 1.5.3 to 1.5.5 adds 12 more winter levels, more stats on-screen, a list of translators in the credits screen, and several translation updates. Additionally, there is now a wiki page on the website describing how to create new levels.
 
-* Are you sick of bloated non-free RSS readers that steal your personal information? Tired of convoluted syncing setups? Fed up having to create accounts everywhere? Try **[Feeder](https://f-droid.org/app/com.nononsenseapps.feeder)**! Version 1.8.0 removes the option to sync on Hotspots, fixes automatic synchronization not running on mobile, adds an option to sync when the app is opened, improves caching to reduce data use, improves sync speed, adds Simplified Chinese translation, and some smaller fixes.
+* Are you sick of bloated non-free RSS readers that steal your personal information? Tired of convoluted syncing setups? Fed up having to create accounts everywhere? Try **[Feeder](https://f-droid.org/packages/com.nononsenseapps.feeder/)**! Version 1.8.0 removes the option to sync on Hotspots, fixes automatic synchronization not running on mobile, adds an option to sync when the app is opened, improves caching to reduce data use, improves sync speed, adds Simplified Chinese translation, and some smaller fixes.
 
-* **[Mastalab](https://f-droid.org/app/fr.gouv.etalab.mastodon)**, your full-featured Mastodon (and Peertube) client, was updated to 1.19.2. This update adds the ability to block a domain from a profile, adds support for "Boost to Original Audience". The light theme was reworked, and it also has an improved theme picker. In addition to that, there are many smaller UX improvements (still a work in progress), and a host of bug fixes.
+* **[Mastalab](https://f-droid.org/packages/fr.gouv.etalab.mastodon/)**, your full-featured Mastodon (and Peertube) client, was updated to 1.19.2. This update adds the ability to block a domain from a profile, adds support for "Boost to Original Audience". The light theme was reworked, and it also has an improved theme picker. In addition to that, there are many smaller UX improvements (still a work in progress), and a host of bug fixes.
 
-* **[SolitaireCG](https://f-droid.org/app/net.sourceforge.solitaire_cg)** is an adaptation of Ken Magic's "Solitaire" for devices with few hardware buttons. Version 3.3 makes the upper right hand suit in large card art more visible. Other changes are fixed help file hyperlinks, now with back-to-top links. Under the hood, it now builds using gradle instead of ant. With big thanks to Rudy Sudrich for making this release a reality.
+* **[SolitaireCG](https://f-droid.org/packages/net.sourceforge.solitaire_cg/)** is an adaptation of Ken Magic's "Solitaire" for devices with few hardware buttons. Version 3.3 makes the upper right hand suit in large card art more visible. Other changes are fixed help file hyperlinks, now with back-to-top links. Under the hood, it now builds using gradle instead of ant. With big thanks to Rudy Sudrich for making this release a reality.
 
-* **[Simpletask](https://f-droid.org/app/nl.mpcjanssen.simpletask)** was updated from 10.2.7 to 10.2.9, fixing a crash when (un)completing a task, fixing state of completion checkbox when task list changes, and fixing tags sorting.
+* **[Simpletask](https://f-droid.org/packages/nl.mpcjanssen.simpletask/)** was updated from 10.2.7 to 10.2.9, fixing a crash when (un)completing a task, fixing state of completion checkbox when task list changes, and fixing tags sorting.
 
-* {{ page.featured }} **[Open Contacts](https://f-droid.org/app/opencontacts.open.com.opencontacts)** hides contacts away from apps stealing your contacts information, by keeping contacts safe in a different database. It handles magic like showing the person's name upon receiving a call. Version 5.0 makes call log entries more consistent by placing icons to either side, adds a "help" activity, puts all activities in portrait mode, and the "invalid number" error in Dialer is now shown in-line rather than as an alert.
+* {{ page.featured }} **[Open Contacts](https://f-droid.org/packages/opencontacts.open.com.opencontacts/)** hides contacts away from apps stealing your contacts information, by keeping contacts safe in a different database. It handles magic like showing the person's name upon receiving a call. Version 5.0 makes call log entries more consistent by placing icons to either side, adds a "help" activity, puts all activities in portrait mode, and the "invalid number" error in Dialer is now shown in-line rather than as an alert.
 
-* **[Tasks](https://f-droid.org/app/org.tasks)** was updated from 6.1.3 to 6.3.1, with a new location row in the task edit screen, location departure notifications, set CalDAV completion percentage and status, a new white theme color, new icons, new list and tag chips, and many other UI and UX improvements. Additionally, the minimum required Android version was bumped from 4.0.3 to 4.1.
+* **[Tasks](https://f-droid.org/packages/org.tasks/)** was updated from 6.1.3 to 6.3.1, with a new location row in the task edit screen, location departure notifications, set CalDAV completion percentage and status, a new white theme color, new icons, new list and tag chips, and many other UI and UX improvements. Additionally, the minimum required Android version was bumped from 4.0.3 to 4.1.
 
 #### Tips and Feedback
 

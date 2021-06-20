@@ -28,7 +28,7 @@ There are **{{ page.number_of_added_apps }}** new and **{{ page.number_of_update
 
 <!--more-->
 
-**[F-Droid](https://f-droid.org/)** is a [repository](https://f-droid.org/packages/) of verified [free and open source](https://en.wikipedia.org/wiki/Free_and_open-source_software) Android apps, a **[client](https://f-droid.org/app/org.fdroid.fdroid)** to access it, as well as a whole "app store kit", providing all the tools needed to set up and run an app store. It is a community-run free software project developed by a wide range of contributors. This is their story this past week.
+**[F-Droid](https://f-droid.org/)** is a [repository](https://f-droid.org/packages/) of verified [free and open source](https://en.wikipedia.org/wiki/Free_and_open-source_software) Android apps, a **[client](https://f-droid.org/packages/org.fdroid.fdroid/)** to access it, as well as a whole "app store kit", providing all the tools needed to set up and run an app store. It is a community-run free software project developed by a wide range of contributors. This is their story this past week.
 
 ### Help needed with Debian Android Tools
 
@@ -48,79 +48,79 @@ For more information, including contact information, please see [https://lists.d
 
 ### New apps
 
-* **[Dart Checker](https://f-droid.org/app/com.DartChecker)**: Dart scoreboard/counter for physical dart matches.
-* **[Change Detection](https://f-droid.org/app/com.bernaferrari.changedetection)**: Automatically track website changes in background.
-* **[Space Trader](https://f-droid.org/app/com.brucelet.spacetrader)**: Port of the palm os game of the same name.
-* **[MobilePauker++](https://f-droid.org/app/com.daniel.mobilepauker2)**: Learn intuitively with flash cards and synchronize your lesson with dropbox.
-* **[Monkeyboard Keystone Radio](https://f-droid.org/app/com.freshollie.monkeyboard.keystoneradio)**: Monkeyboard fm & dab/dab+ radio interface.
-* **[Darkness Immunity](https://f-droid.org/app/com.github.axet.darknessimmunity)**: Darkness immunity digital amulet.
-* **[Tinte Webcoms](https://f-droid.org/app/com.halftough.webcomreader)**: Reader for selected webcomics.
-* **[Status](https://f-droid.org/app/com.james.status)**: An overlay-based statusbar replacement.
-* **[AnkiEditor](https://f-droid.org/app/com.jkcarino.ankieditor)**: An advanced note editor plug-in for ankidroid.
-* **[Limbo x86](https://f-droid.org/app/com.limbo.emu.main)**: A qemu-based emulator.
-* **[FlashCards](https://f-droid.org/app/com.quchen.flashcard)**: Simple flash card app with csv files as input.
-* **[Repeat Me](https://f-droid.org/app/com.samarthdesai.repeatme)**: Schedule custom, interval based reminders.
-* **[Slim Launcher](https://f-droid.org/app/com.sduduzog.slimlauncher)**: Minimalistic launcher.
-* **[Calculator Notification](https://f-droid.org/app/com.tananaev.calculator)**: Calculator application in the android notification drawer.
-* **[OpenHub](https://f-droid.org/app/com.thirtydegreesray.openhub)**: A github client app, faster and concise.
-* **[k3pler](https://f-droid.org/app/com.tht.k3pler)**: Network connection blocker and packet analyzer.
-* **[HU Berlin Wi-Fi Installer](https://f-droid.org/app/de.hu_berlin.eduroam)**: Eduroam setup tool for humboldt university of berlin.
-* **[DeuFeiTage](https://f-droid.org/app/de.micmun.android.deufeitage)**: Find the german public holidays per state and year.
-* {{ page.featured }} **[SmsMatrix](https://f-droid.org/app/eu.droogers.smsmatrix)**: This app turns your phone into an SMS <-> Matrix bridge.
-* **[Bhagavad Gita](https://f-droid.org/app/eu.quelltext.gita)**
-* **[Brainstonz](https://f-droid.org/app/eu.veldsoft.brainstonz)**: Brainstonz is a board game for two players.
-* **[Hungarian Rings](https://f-droid.org/app/eu.veldsoft.hungarian.rings)**: Puzzle game.
-* **[Kechi](https://f-droid.org/app/eu.veldsoft.kechi)**: Board game for two players.
-* **[VitoshaPokerOdds](https://f-droid.org/app/eu.veldsoft.vitosha.poker.odds)**: Monte carlo based texas holdem calculator.
-* **[Easy Weather](https://f-droid.org/app/github.vatsal.easyweatherdemo)**: Easy and quick weather app.
-* **[ClipboardCleaner](https://f-droid.org/app/io.github.deweyreed.clipboardcleaner)**: Check and clean your clipboard.
-* **[UnicodePad](https://f-droid.org/app/jp.ddo.hotmist.unicodepad)**: Input every character in unicode.
-* **[GrowTracker](https://f-droid.org/app/me.anon.grow)**: Help record data about growing plants.
-* **[Easy Diary](https://f-droid.org/app/me.blog.korn123.easydiary)**: A diary application optimized for user experience.
-* **[ykDroid](https://f-droid.org/app/net.pp3345.ykdroid)**: Yubikey challenge-response usb and nfc driver.
-* **[Blitzortung Lightning Monitor](https://f-droid.org/app/org.blitzortung.android.app)**: Get an overview of the current thunderstorm situation.
-* **[Wikivoyage European Travels](https://f-droid.org/app/org.kiwix.kiwixcustomwikivoyageeurope)**: Offline version of the wikivoyage travel guide.
-* **[2048](https://f-droid.org/app/org.secuso.privacyfriendly2048)**: Try to reach 2048 in this puzzle game.
-* **[Board Game Clock](https://f-droid.org/app/org.secuso.privacyfriendlyboardgameclock)**: A timer for board games like chess.
-* **[Minesweeper](https://f-droid.org/app/org.secuso.privacyfriendlyminesweeper)**: Find and mark every mine without triggering the mines.
-* **[WiFi Manager](https://f-droid.org/app/org.secuso.privacyfriendlywifimanager)**: Manages your device's wifi based on your location.
-* **[ZimLX](https://f-droid.org/app/org.zimmob.zimlx)**: Powerful launcher with smart features to make your device easy to use.
-* **[Progress Tracker](https://f-droid.org/app/pl.kuben.progressapp)**: Any activity progress tracker.
-* **[Handy News Reader](https://f-droid.org/app/ru.yanus171.feedexfork)**: Rss reader with full offline support fulltext articles with images.
-* **[Riseup VPN](https://f-droid.org/app/se.leap.riseupvpn)**: Secure vpn powered by bitmask.
-* **[Krautschlüssel](https://f-droid.org/app/space.kraut.schluessel)**
-* **[Wifi QR Code Creator](https://f-droid.org/app/tk.superl2.xwifi)**: View wifi credentials and share networks as qr codes.
-* **[FreeDCam](https://f-droid.org/app/troop.com.freedcam)**: Camera app.
-* **[VirtualSoftKeys](https://f-droid.org/app/tw.com.daxia.virtualsoftkeys)**: A simple, safe and easy softkeys (navigation bar).
-* **[eduroamCAT](https://f-droid.org/app/uk.ac.swansea.eduroamcat)**: Eduroam configuration assistant tool.
+* **[Dart Checker](https://f-droid.org/packages/com.DartChecker/)**: Dart scoreboard/counter for physical dart matches.
+* **[Change Detection](https://f-droid.org/packages/com.bernaferrari.changedetection/)**: Automatically track website changes in background.
+* **[Space Trader](https://f-droid.org/packages/com.brucelet.spacetrader/)**: Port of the palm os game of the same name.
+* **[MobilePauker++](https://f-droid.org/packages/com.daniel.mobilepauker2/)**: Learn intuitively with flash cards and synchronize your lesson with dropbox.
+* **[Monkeyboard Keystone Radio](https://f-droid.org/packages/com.freshollie.monkeyboard.keystoneradio/)**: Monkeyboard fm & dab/dab+ radio interface.
+* **[Darkness Immunity](https://f-droid.org/packages/com.github.axet.darknessimmunity/)**: Darkness immunity digital amulet.
+* **[Tinte Webcoms](https://f-droid.org/packages/com.halftough.webcomreader/)**: Reader for selected webcomics.
+* **[Status](https://f-droid.org/packages/com.james.status/)**: An overlay-based statusbar replacement.
+* **[AnkiEditor](https://f-droid.org/packages/com.jkcarino.ankieditor/)**: An advanced note editor plug-in for ankidroid.
+* **[Limbo x86](https://f-droid.org/packages/com.limbo.emu.main/)**: A qemu-based emulator.
+* **[FlashCards](https://f-droid.org/packages/com.quchen.flashcard/)**: Simple flash card app with csv files as input.
+* **[Repeat Me](https://f-droid.org/packages/com.samarthdesai.repeatme/)**: Schedule custom, interval based reminders.
+* **[Slim Launcher](https://f-droid.org/packages/com.sduduzog.slimlauncher/)**: Minimalistic launcher.
+* **[Calculator Notification](https://f-droid.org/packages/com.tananaev.calculator/)**: Calculator application in the android notification drawer.
+* **[OpenHub](https://f-droid.org/packages/com.thirtydegreesray.openhub/)**: A github client app, faster and concise.
+* **[k3pler](https://f-droid.org/packages/com.tht.k3pler/)**: Network connection blocker and packet analyzer.
+* **[HU Berlin Wi-Fi Installer](https://f-droid.org/packages/de.hu_berlin.eduroam/)**: Eduroam setup tool for humboldt university of berlin.
+* **[DeuFeiTage](https://f-droid.org/packages/de.micmun.android.deufeitage/)**: Find the german public holidays per state and year.
+* {{ page.featured }} **[SmsMatrix](https://f-droid.org/packages/eu.droogers.smsmatrix/)**: This app turns your phone into an SMS <-> Matrix bridge.
+* **[Bhagavad Gita](https://f-droid.org/packages/eu.quelltext.gita/)**
+* **[Brainstonz](https://f-droid.org/packages/eu.veldsoft.brainstonz/)**: Brainstonz is a board game for two players.
+* **[Hungarian Rings](https://f-droid.org/packages/eu.veldsoft.hungarian.rings/)**: Puzzle game.
+* **[Kechi](https://f-droid.org/packages/eu.veldsoft.kechi/)**: Board game for two players.
+* **[VitoshaPokerOdds](https://f-droid.org/packages/eu.veldsoft.vitosha.poker.odds/)**: Monte carlo based texas holdem calculator.
+* **[Easy Weather](https://f-droid.org/packages/github.vatsal.easyweatherdemo/)**: Easy and quick weather app.
+* **[ClipboardCleaner](https://f-droid.org/packages/io.github.deweyreed.clipboardcleaner/)**: Check and clean your clipboard.
+* **[UnicodePad](https://f-droid.org/packages/jp.ddo.hotmist.unicodepad/)**: Input every character in unicode.
+* **[GrowTracker](https://f-droid.org/packages/me.anon.grow/)**: Help record data about growing plants.
+* **[Easy Diary](https://f-droid.org/packages/me.blog.korn123.easydiary/)**: A diary application optimized for user experience.
+* **[ykDroid](https://f-droid.org/packages/net.pp3345.ykdroid/)**: Yubikey challenge-response usb and nfc driver.
+* **[Blitzortung Lightning Monitor](https://f-droid.org/packages/org.blitzortung.android.app/)**: Get an overview of the current thunderstorm situation.
+* **[Wikivoyage European Travels](https://f-droid.org/packages/org.kiwix.kiwixcustomwikivoyageeurope/)**: Offline version of the wikivoyage travel guide.
+* **[2048](https://f-droid.org/packages/org.secuso.privacyfriendly2048/)**: Try to reach 2048 in this puzzle game.
+* **[Board Game Clock](https://f-droid.org/packages/org.secuso.privacyfriendlyboardgameclock/)**: A timer for board games like chess.
+* **[Minesweeper](https://f-droid.org/packages/org.secuso.privacyfriendlyminesweeper/)**: Find and mark every mine without triggering the mines.
+* **[WiFi Manager](https://f-droid.org/packages/org.secuso.privacyfriendlywifimanager/)**: Manages your device's wifi based on your location.
+* **[ZimLX](https://f-droid.org/packages/org.zimmob.zimlx/)**: Powerful launcher with smart features to make your device easy to use.
+* **[Progress Tracker](https://f-droid.org/packages/pl.kuben.progressapp/)**: Any activity progress tracker.
+* **[Handy News Reader](https://f-droid.org/packages/ru.yanus171.feedexfork/)**: Rss reader with full offline support fulltext articles with images.
+* **[Riseup VPN](https://f-droid.org/packages/se.leap.riseupvpn/)**: Secure vpn powered by bitmask.
+* **[Krautschlüssel](https://f-droid.org/packages/space.kraut.schluessel/)**
+* **[Wifi QR Code Creator](https://f-droid.org/packages/tk.superl2.xwifi/)**: View wifi credentials and share networks as qr codes.
+* **[FreeDCam](https://f-droid.org/packages/troop.com.freedcam/)**: Camera app.
+* **[VirtualSoftKeys](https://f-droid.org/packages/tw.com.daxia.virtualsoftkeys/)**: A simple, safe and easy softkeys (navigation bar).
+* **[eduroamCAT](https://f-droid.org/packages/uk.ac.swansea.eduroamcat/)**: Eduroam configuration assistant tool.
 
 ### Updated apps
 
 In total, **{{ page.number_of_updated_apps }}** apps were updated this week. Here are the highlights:
 
-* **[Scarlet Notes FD](https://f-droid.org/app/com.bijoysingh.quicknote)** was [updated](https://github.com/BijoySingh/Scarlet-Notes/releases) from 5.9.7 to 6.6.3 with a new UI, a new search bar, the ability to sync externally with folder, and many other changes and stability improvements.
+* **[Scarlet Notes FD](https://f-droid.org/packages/com.bijoysingh.quicknote/)** was [updated](https://github.com/BijoySingh/Scarlet-Notes/releases) from 5.9.7 to 6.6.3 with a new UI, a new search bar, the ability to sync externally with folder, and many other changes and stability improvements.
 
-* **[EteSync](https://f-droid.org/app/com.etesync.syncadapter)** was [updated](https://github.com/etesync/android/blob/HEAD/ChangeLog.md) from 1.0.1 to 1.0.4 with improved import of contact groups, updated event invitation signature, minor UI improvements, some color fixes, and stability improvements.
+* **[EteSync](https://f-droid.org/packages/com.etesync.syncadapter/)** was [updated](https://github.com/etesync/android/blob/HEAD/ChangeLog.md) from 1.0.1 to 1.0.4 with improved import of contact groups, updated event invitation signature, minor UI improvements, some color fixes, and stability improvements.
 
-* **[Red Moon](https://f-droid.org/app/com.jmstudios.redmoon)** was [updated](https://github.com/LibreShift/red-moon/blob/HEAD/app/src/main/assets/changelog.md) from 3.3.2 to 3.4.0, adding preliminary support for Android 8+ devices, _also_ adding support for Android versions going back to 4.0 (previously 4.2), more intuitive behavior when saving filters with the same name, new changelog format, a zillion translation updates, and some bug fixes.
+* **[Red Moon](https://f-droid.org/packages/com.jmstudios.redmoon/)** was [updated](https://github.com/LibreShift/red-moon/blob/HEAD/app/src/main/assets/changelog.md) from 3.3.2 to 3.4.0, adding preliminary support for Android 8+ devices, _also_ adding support for Android versions going back to 4.0 (previously 4.2), more intuitive behavior when saving filters with the same name, new changelog format, a zillion translation updates, and some bug fixes.
 
-* **[miniVector](https://f-droid.org/app/com.lavadip.miniVector)** was [updated](https://github.com/LiMium/mini-vector-android/blob/HEAD/CHANGES.rst) from 0.8.21 to 0.8.22b, with an extra fix for the blank screen bug on Android 4.x devices. For other changes, see **Riot** below.
+* **[miniVector](https://f-droid.org/packages/com.lavadip.miniVector/)** was [updated](https://github.com/LiMium/mini-vector-android/blob/HEAD/CHANGES.rst) from 0.8.21 to 0.8.22b, with an extra fix for the blank screen bug on Android 4.x devices. For other changes, see **Riot** below.
 
-* **[Forecastie](https://f-droid.org/app/cz.martykan.forecastie)** was [updated](https://github.com/martykan/forecastie/releases) from 1.7.2 to 1.9.1, adding an adaptive icon, a dialog when searching for a location when there are multiple results, and changed OWM logic to use cityid instead of city.
+* **[Forecastie](https://f-droid.org/packages/cz.martykan.forecastie/)** was [updated](https://github.com/martykan/forecastie/releases) from 1.7.2 to 1.9.1, adding an adaptive icon, a dialog when searching for a location when there are multiple results, and changed OWM logic to use cityid instead of city.
 
-* **[Easy xkcd](https://f-droid.org/app/de.tap.easy_xkcd)** was [updated](https://github.com/T-Rex96/Easy_xkcd/blob/HEAD/CHANGELOG.md) from 6.1.2 to 7.3, with new transitions when entering and leaving overview mode, an AMOLED night theme, dividers in the overflow menu, complete rewrite of the app's database, a new fullscreen mode that is toggled by tapping a comic, manual download for missing comics, and some smaller UI improvements and bug fixes.
+* **[Easy xkcd](https://f-droid.org/packages/de.tap.easy_xkcd/)** was [updated](https://github.com/T-Rex96/Easy_xkcd/blob/HEAD/CHANGELOG.md) from 6.1.2 to 7.3, with new transitions when entering and leaving overview mode, an AMOLED night theme, dividers in the overflow menu, complete rewrite of the app's database, a new fullscreen mode that is toggled by tapping a comic, manual download for missing comics, and some smaller UI improvements and bug fixes.
 
-* {{ page.major }} **[MusicPiped](https://f-droid.org/app/deep.ryd.rydplayer)** was [updated](https://github.com/deep-gaurav/MusicPiped/releases) from 0.2.3-beta to 1.0.2 and has been completely rewritten in flutter with a completely revamped UI and functionality.
+* {{ page.major }} **[MusicPiped](https://f-droid.org/packages/deep.ryd.rydplayer/)** was [updated](https://github.com/deep-gaurav/MusicPiped/releases) from 0.2.3-beta to 1.0.2 and has been completely rewritten in flutter with a completely revamped UI and functionality.
 
-* **Mastalab** now goes through life as **[Fedilab](https://f-droid.org/app/fr.gouv.etalab.mastodon)** with accompanying new logo! This [update](https://gitlab.com/tom79/mastalab/tags) from 1.70.0 to 1.72.0 adds GNU Social support, a split notification timeline, expand all CW in a thread with a single click, an upload button for Peertube, a quick button to delete toots for Pleroma admins and moderators, and some smaller improvements and bug fixes.
+* **Mastalab** now goes through life as **[Fedilab](https://f-droid.org/packages/fr.gouv.etalab.mastodon/)** with accompanying new logo! This [update](https://gitlab.com/tom79/mastalab/tags) from 1.70.0 to 1.72.0 adds GNU Social support, a split notification timeline, expand all CW in a thread with a single click, an upload button for Peertube, a quick button to delete toots for Pleroma admins and moderators, and some smaller improvements and bug fixes.
 
-* **[Fennec F-Droid](https://f-droid.org/app/org.mozilla.fennec_fdroid)** was [updated](https://www.mozilla.org/en-US/firefox/android/notes/) from 64.0.2 to 65.0, with improved performance, support for the [WebP](https://developers.google.com/speed/webp/) image format, and enhanced security via stronger stack smashing protection. Also, a new icon. (Changed by Mozilla, not us.)
+* **[Fennec F-Droid](https://f-droid.org/packages/org.mozilla.fennec_fdroid/)** was [updated](https://www.mozilla.org/en-US/firefox/android/notes/) from 64.0.2 to 65.0, with improved performance, support for the [WebP](https://developers.google.com/speed/webp/) image format, and enhanced security via stronger stack smashing protection. Also, a new icon. (Changed by Mozilla, not us.)
 
 ### Beta updates
 
 The following updates won't be automatically suggested to you unless you have "Unstable updates" enabled in the F-Droid app settings, but you can expand the "Versions" tab and install them manually. Note that these are marked beta for a reason: proceed at your own risk.
 
-* **[Riot.im](https://f-droid.org/app/im.vector.alpha)** was [updated](https://github.com/vector-im/riot-android/blob/HEAD/CHANGES.rst) from 0.8.21 to 0.8.22. Note that this version was not released to the Play Store, and should be considered beta quality. It has an annoying display bug on Android 4.x devices. This version brings an all-new key backup and recovery UI, refreshed themes and a new icon, support for split-screen, autofocus when taking a picture, reorganized notification settings, and many bug fixes.
+* **[Riot.im](https://f-droid.org/packages/im.vector.alpha/)** was [updated](https://github.com/vector-im/riot-android/blob/HEAD/CHANGES.rst) from 0.8.21 to 0.8.22. Note that this version was not released to the Play Store, and should be considered beta quality. It has an annoying display bug on Android 4.x devices. This version brings an all-new key backup and recovery UI, refreshed themes and a new icon, support for split-screen, autofocus when taking a picture, reorganized notification settings, and many bug fixes.
 
 ### Tips and Feedback
 

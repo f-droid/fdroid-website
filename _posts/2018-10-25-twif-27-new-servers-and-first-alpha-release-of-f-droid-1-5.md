@@ -22,7 +22,7 @@ This Week In F-Droid {{ page.edition }}, Week {{ page.date | date: "%V, %G" }} <
 In this edition: Two new heavy duty servers, first alpha release of F-Droid 1.5, metadata cleanup, automatic buildserver setup, Portuguese Courts rule against Google, and F-Droid confirmed malware-free. There are 4 new and {{ page.number_of_updated_apps }} updated apps.
 <!--more-->
 
-**[F-Droid](https://f-droid.org/)** is a [repository](https://f-droid.org/packages/) of verified [free and open source](https://en.wikipedia.org/wiki/Free_and_open-source_software) Android apps, a **[client](https://f-droid.org/app/org.fdroid.fdroid)** to access it, as well as a whole "app store kit", providing all the tools needed to set up and run an app store. It is a community-run free software project developed by a wide range of contributors. This is their story this past week.
+**[F-Droid](https://f-droid.org/)** is a [repository](https://f-droid.org/packages/) of verified [free and open source](https://en.wikipedia.org/wiki/Free_and_open-source_software) Android apps, a **[client](https://f-droid.org/packages/org.fdroid.fdroid/)** to access it, as well as a whole "app store kit", providing all the tools needed to set up and run an app store. It is a community-run free software project developed by a wide range of contributors. This is their story this past week.
 
 #### Two new servers from the GCC Compile Farm Project
 
@@ -60,28 +60,28 @@ We only just learned of this, although the study was actually conducted in 2017.
 
 #### New apps
 
-* **[Hide "running in the background" Notification](https://f-droid.org/app/com.iboalali.sysnotifsnooze)**: Hide the annoying "running in the background" notification.
-* **[lWS](https://f-droid.org/app/net.basov.lws.fdroid)**: Lightweight web server (lws).
-* **[lWS QR](https://f-droid.org/app/net.basov.lws.qr.fdroid)**: Lightweight web server qr code generator plugin (lws qr).
-* **[Weather Forecast](https://f-droid.org/app/uk.org.boddie.android.weatherforecast)**: View weather forecasts from yr.no.
+* **[Hide "running in the background" Notification](https://f-droid.org/packages/com.iboalali.sysnotifsnooze/)**: Hide the annoying "running in the background" notification.
+* **[lWS](https://f-droid.org/packages/net.basov.lws.fdroid/)**: Lightweight web server (lws).
+* **[lWS QR](https://f-droid.org/packages/net.basov.lws.qr.fdroid/)**: Lightweight web server qr code generator plugin (lws qr).
+* **[Weather Forecast](https://f-droid.org/packages/uk.org.boddie.android.weatherforecast/)**: View weather forecasts from yr.no.
 
 #### Updated apps
 
 In total, **{{ page.number_of_updated_apps }}** apps were updated this week. Here are the highlights:
 
-* {{ page.major }} More updates for the simple mobile tools. This time **[Calculator](https://f-droid.org/app/com.simplemobiletools.calculator)**, **[Music Player](https://f-droid.org/app/com.simplemobiletools.musicplayer)** and **[Notes](https://f-droid.org/app/com.simplemobiletools.notes)** updated to major version 5, again bumping up the minimum required Android from 4.1 to 5.0 and replacing the G+ button with Reddit.
+* {{ page.major }} More updates for the simple mobile tools. This time **[Calculator](https://f-droid.org/packages/com.simplemobiletools.calculator/)**, **[Music Player](https://f-droid.org/packages/com.simplemobiletools.musicplayer/)** and **[Notes](https://f-droid.org/packages/com.simplemobiletools.notes/)** updated to major version 5, again bumping up the minimum required Android from 4.1 to 5.0 and replacing the G+ button with Reddit.
 
-* **[Periodical](https://f-droid.org/app/de.arnowelzel.android.periodical)** was updated from 1.16 to 1.18, bringing updated translations from Crowdin, and reverting language codes back to their generic form to avoid missing translations when a regional language setting is used.
+* **[Periodical](https://f-droid.org/packages/de.arnowelzel.android.periodical/)** was updated from 1.16 to 1.18, bringing updated translations from Crowdin, and reverting language codes back to their generic form to avoid missing translations when a regional language setting is used.
 
-* {{ page.major }} **[Zapp](https://f-droid.org/app/de.christinecoenen.code.zapp)** released version 2.0.0, with background playback of "Mediathek" videos, automatic pausing when a different app plays sound or during a phone call, a lockscreen widget, progress bar only showing when the video really stalls, and minimum Android version increased from 4.4 to 5.0.
+* {{ page.major }} **[Zapp](https://f-droid.org/packages/de.christinecoenen.code.zapp/)** released version 2.0.0, with background playback of "Mediathek" videos, automatic pausing when a different app plays sound or during a phone call, a lockscreen widget, progress bar only showing when the video really stalls, and minimum Android version increased from 4.4 to 5.0.
 
-* **[AntennaPod](https://f-droid.org/app/de.danoeh.antennapod)** was updated from 1.6.5 to 1.7.0, with the new ExoPlayer, a fix for Bluetooth Forward, preferences + search redesign, notification improvements, different screens for feed info and settings, sort queue with Random or Smart Shuffle, true black AMOLED theme, improvements to feed parsing, and a fix for being killed by Android Oreo.
+* **[AntennaPod](https://f-droid.org/packages/de.danoeh.antennapod/)** was updated from 1.6.5 to 1.7.0, with the new ExoPlayer, a fix for Bluetooth Forward, preferences + search redesign, notification improvements, different screens for feed info and settings, sort queue with Random or Smart Shuffle, true black AMOLED theme, improvements to feed parsing, and a fix for being killed by Android Oreo.
 
-* {{ page.major }} **[AFWall+](https://f-droid.org/app/dev.ukanth.ufirewall)** released version 3.0.0 with better support for Android Nougat, Oreo and Pie; a firewall toggle tile; adaptive icons; notifications channel; compatibility with magisk 17.x; better handling of background processes; and updated libraries, translations, and bug fixes. The minimum required Android was bumped from 4.0.3 to 5.0.
+* {{ page.major }} **[AFWall+](https://f-droid.org/packages/dev.ukanth.ufirewall/)** released version 3.0.0 with better support for Android Nougat, Oreo and Pie; a firewall toggle tile; adaptive icons; notifications channel; compatibility with magisk 17.x; better handling of background processes; and updated libraries, translations, and bug fixes. The minimum required Android was bumped from 4.0.3 to 5.0.
 
-* **[SQRL - Main](https://f-droid.org/app/org.ea.sqrl)** updated to version 0.11.0, now handling screen rotations, offering manual language choice, and implementing x=n functionality. It has three new languages: French, Japanese and Spanish.
+* **[SQRL - Main](https://f-droid.org/packages/org.ea.sqrl/)** updated to version 0.11.0, now handling screen rotations, offering manual language choice, and implementing x=n functionality. It has three new languages: French, Japanese and Spanish.
 
-* **[Your local weather](https://f-droid.org/app/org.thosp.yourlocalweather)** updated from 4.2.6 to 4.3.1, with rewritten background services for faster and smoother updates, indication of wind direction in the current weather and forecast, and an option for time format.
+* **[Your local weather](https://f-droid.org/packages/org.thosp.yourlocalweather/)** updated from 4.2.6 to 4.3.1, with rewritten background services for faster and smoother updates, indication of wind direction in the current weather and forecast, and an option for time format.
 
 #### Tips and Feedback
 

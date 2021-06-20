@@ -28,7 +28,7 @@ There are **{{ page.number_of_added_apps }}** new and **{{ page.number_of_update
 
 <!--more-->
 
-**[F-Droid](https://f-droid.org/)** is a [repository](https://f-droid.org/packages/) of verified [free and open source](https://en.wikipedia.org/wiki/Free_and_open-source_software) Android apps, a **[client](https://f-droid.org/app/org.fdroid.fdroid)** to access it, as well as a whole "app store kit", providing all the tools needed to set up and run an app store. It is a community-run free software project developed by a wide range of contributors. This is their story this past week.
+**[F-Droid](https://f-droid.org/)** is a [repository](https://f-droid.org/packages/) of verified [free and open source](https://en.wikipedia.org/wiki/Free_and_open-source_software) Android apps, a **[client](https://f-droid.org/packages/org.fdroid.fdroid/)** to access it, as well as a whole "app store kit", providing all the tools needed to set up and run an app store. It is a community-run free software project developed by a wide range of contributors. This is their story this past week.
 
 ### Mirror work in F-Droid 1.6 alpha 1
 
@@ -54,27 +54,27 @@ The fourth part of **[@Izzy](https://forum.f-droid.org/u/izzy)**'s F-Droid serie
 
 ### New apps
 
-* **[AusweisApp2](https://f-droid.org/app/com.governikus.ausweisapp2)**: Eperso mit dem handy nutzen.
-* **[Indigenous](https://f-droid.org/app/com.indieweb.indigenous)**: Indieweb micropub and microsub client.
-* **[Money Manager Ex](https://f-droid.org/app/com.money.manager.ex)**: Money management and expenses tracking.
-* **[Binary Eye](https://f-droid.org/app/de.markusfisch.android.binaryeye)**: Yet another barcode scanner.
-* **[LDAP Sync](https://f-droid.org/app/de.wikilab.android.ldapsync)**: Sync your contacts with ldap.
-* **[Chord Reader](https://f-droid.org/app/org.handmadeideas.chordreader)**: Search for, display, transpose and save chords on your phone.
-* **[Crazyflie Client](https://f-droid.org/app/se.bitcraze.crazyfliecontrol2)**: Control your crazyflie quadcopter from your mobile device.
+* **[AusweisApp2](https://f-droid.org/packages/com.governikus.ausweisapp2/)**: Eperso mit dem handy nutzen.
+* **[Indigenous](https://f-droid.org/packages/com.indieweb.indigenous/)**: Indieweb micropub and microsub client.
+* **[Money Manager Ex](https://f-droid.org/packages/com.money.manager.ex/)**: Money management and expenses tracking.
+* **[Binary Eye](https://f-droid.org/packages/de.markusfisch.android.binaryeye/)**: Yet another barcode scanner.
+* **[LDAP Sync](https://f-droid.org/packages/de.wikilab.android.ldapsync/)**: Sync your contacts with ldap.
+* **[Chord Reader](https://f-droid.org/packages/org.handmadeideas.chordreader/)**: Search for, display, transpose and save chords on your phone.
+* **[Crazyflie Client](https://f-droid.org/packages/se.bitcraze.crazyfliecontrol2/)**: Control your crazyflie quadcopter from your mobile device.
 
 ### Updated apps
 
 In total, **{{ page.number_of_updated_apps }}** apps were updated this week. Here are the highlights:
 
-* **[DuckDuckGo Privacy Browser](https://f-droid.org/app/com.duckduckgo.mobile.android)** was [updated](https://github.com/duckduckgo/Android/releases) from 5.15.1 to 5.18.0. It fixes a bug that prevents opening homescreen or shared links in the app, adds an information box to let you know how to install the search widget, and improves the data clearing process. The URL bar was also polished and received a few small bugfixes.
+* **[DuckDuckGo Privacy Browser](https://f-droid.org/packages/com.duckduckgo.mobile.android/)** was [updated](https://github.com/duckduckgo/Android/releases) from 5.15.1 to 5.18.0. It fixes a bug that prevents opening homescreen or shared links in the app, adds an information box to let you know how to install the search widget, and improves the data clearing process. The URL bar was also polished and received a few small bugfixes.
 
-* **[EteSync](https://f-droid.org/app/com.etesync.syncadapter)** 1.2.0 [is in](https://github.com/etesync/android/blob/HEAD/ChangeLog.md), adding a button to install OpenTasks if it isn't installed, and warning about clients that don't support email attachments when sending event invites.
+* **[EteSync](https://f-droid.org/packages/com.etesync.syncadapter/)** 1.2.0 [is in](https://github.com/etesync/android/blob/HEAD/ChangeLog.md), adding a button to install OpenTasks if it isn't installed, and warning about clients that don't support email attachments when sending event invites.
 
-* **[PianOli](https://f-droid.org/app/com.nicobrailo.pianoli)** is a baby-game featuring a small piano. This [update](https://github.com/nicolasbrailo/PianOli/releases) from 1.1 to 1.4 brings a new child-lock that blocks any naive attempts at closing the app. It should now be a bit harder for babies to close the app (and unfortunately also for grownups). Also new is the warning sound when quitting the app.
+* **[PianOli](https://f-droid.org/packages/com.nicobrailo.pianoli/)** is a baby-game featuring a small piano. This [update](https://github.com/nicolasbrailo/PianOli/releases) from 1.1 to 1.4 brings a new child-lock that blocks any naive attempts at closing the app. It should now be a bit harder for babies to close the app (and unfortunately also for grownups). Also new is the warning sound when quitting the app.
 
-* **[FairEmail](https://f-droid.org/app/eu.faircode.email)** was [updated](https://github.com/M66B/open-source-email/releases) from 1.333 to 1.338, featuring improved auto-linking, improved inline attachment selection, synchronize-on-demand, support for semi-automatic encryption, and snooze menu on the expanded message view.
+* **[FairEmail](https://f-droid.org/packages/eu.faircode.email/)** was [updated](https://github.com/M66B/open-source-email/releases) from 1.333 to 1.338, featuring improved auto-linking, improved inline attachment selection, synchronize-on-demand, support for semi-automatic encryption, and snooze menu on the expanded message view.
 
-* **[Shelter](https://f-droid.org/app/net.typeblog.shelter)** was [updated](https://git.angry.im/PeterCxy/Shelter/releases) to 1.4, introducing "linked unfreeze" shortcuts, "camera proxy" feature, support for cross-profile widgets, support for viewing and manipulating all installed applications (may break things), and in-app global search.
+* **[Shelter](https://f-droid.org/packages/net.typeblog.shelter/)** was [updated](https://git.angry.im/PeterCxy/Shelter/releases) to 1.4, introducing "linked unfreeze" shortcuts, "camera proxy" feature, support for cross-profile widgets, support for viewing and manipulating all installed applications (may break things), and in-app global search.
 
 ### Tips and Feedback
 
