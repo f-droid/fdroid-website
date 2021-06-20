@@ -67,7 +67,7 @@ HOWTO will walk through setting up a test repo that is not very
 secure. Then it will walk through setting up a repo for real world
 use, with the signing key on a separate machine from the public
 webserver. Before you start, you need to get
-[the `fdroidserver` tools](https://f-droid.org/wiki/page/Installing_the_Server/Repo_Tools)
+[the `fdroidserver` tools](../Installing_the_Server_and_Repo_Tools)
 and a webserver. For the webserver, this HOWTO will use _nginx_ since
 its lightweight, but any will do if you already have one running.
 

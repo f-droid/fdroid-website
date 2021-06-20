@@ -11,7 +11,7 @@ authorWebsite: "https://forum.f-droid.org/u/coffee"
 
 * We broke 2500 followers on [Mastodon](https://mastodon.technology/@fdroidorg)!
 
-* [_hc](https://forum.f-droid.org/u/hans) is working full-time on the [whitelabel](https://f-droid.org/wiki/page/Whitelabel_Builds) support this week, eliminating some technical debt in the process. This work is part of a paid contract.
+* [_hc](https://forum.f-droid.org/u/hans) is working full-time on the [whitelabel]({{ site.baseurl }}/docs/Whitelabel_Builds/) support this week, eliminating some technical debt in the process. This work is part of a paid contract.
 
 #### Community News
 
