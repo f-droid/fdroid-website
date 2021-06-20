@@ -91,13 +91,13 @@ This is a nonexhaustive list of what a reviewer would do:
 -   They will check if your application uses any pre-compiled libraries or
     binary blobs.
 -   They will look at your non-source code files to identify [Non-Free
-    resources](https://f-droid.org/wiki/page/Antifeature:NonFreeAssets) used in
+    resources](https://monitor.f-droid.org/anti-feature/NonFreeAssets) used in
     your application.
 -   They will skim through the source code to see if your application
     uses Non-Free dependencies, shows advertisements, tracks users,
     promotes Non-Free services/applications, or does anything that is
     harmful or otherwise undesirable for users.
--   They will list a summary of any [_AntiFeatures_](https://f-droid.org/wiki/page/Antifeatures) in
+-   They will list a summary of any [_AntiFeatures_](https://monitor.f-droid.org/anti-features) in
     your application.
 -   They will try patching your application to remove usage of
     third-party proprietary software (if there is any).

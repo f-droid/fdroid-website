@@ -8,7 +8,7 @@ authorWebsite: "https://forum.f-droid.org/u/hans"
 Since 2010, the F-Droid community has been working to provide only
 100% verified Free Software, and to make apparent all forms of
 tracking, advertising, and
-"[anti-features](https://f-droid.org/wiki/page/AntiFeatures)" commonly
+"[anti-features](https://monitor.f-droid.org/anti-features)" commonly
 found in apps.  F-Droid provides a complete app ecosystem where users
 are actively notified of tracking and advertising in the apps, and can
 make informed choices.  We have achieved this through the work of many
