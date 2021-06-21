@@ -1,3 +1,4 @@
+require 'base64'
 require 'digest'
 
 #
@@ -40,7 +41,7 @@ module Jekyll
     end
 
     def self.digest(path)
-      Digest::SHA256.file(File.join(*path.split('/'))).hexdigest
+      Base64.urlsafe_encode64 Digest::SHA256.file(File.join(*path.split('/'))).digest
     end
 
     def self.directory(ext)
