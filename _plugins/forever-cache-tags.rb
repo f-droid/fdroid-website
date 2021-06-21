@@ -1,5 +1,7 @@
 require 'base64'
 require 'digest'
+require 'fileutils'
+require 'tmpdir'
 
 #
 # Provides a "forever caching" asset tag & filter that outputs e.g.
@@ -7,8 +9,6 @@ require 'digest'
 #
 #   {% asset foobar.png %}
 #   {{ some_var | append: '.png' | asset }}
-#
-# Hooks into i18n (prepare-multi-lang.rb) to avoid concurrency issues.
 #
 # CAVEATS:
 #
@@ -20,8 +20,6 @@ require 'digest'
 
 module Jekyll
   module ForeverCache
-    @@baseurl = Jekyll.sites.first.baseurl
-    @@destination = Jekyll.sites.first.dest
     @@assets = {}
 
     def self.link_to_asset!(input)
@@ -62,6 +60,33 @@ module Jekyll
         File.link file, forever
       end
     end
+
+    def self.last_process?(site)
+      languages = site.languages + ['_']
+      File.open(@@lockfile, File::RDWR|File::CREAT, 0644) do |f|
+        f.flock File::LOCK_EX
+        value = f.read.to_i + 1
+        f.rewind
+        f.write "#{value}\n"
+        f.flush
+        f.truncate f.pos
+        value == languages.length
+      end
+    end
+
+    def self.after_init_hook(site)
+      @@baseurl = site.baseurl
+      @@destination = site.dest
+      @@lockfile = File.join Dir.tmpdir, 'fdroid-website.lock'  # FIXME
+      FileUtils.rm_f @@lockfile
+    end
+
+    def self.post_write_hook(site)
+      if last_process? site
+        link_assets!
+        FileUtils.rm_f @@lockfile
+      end
+    end
   end
 
   class ForeverCacheTag < Liquid::Tag
@@ -85,7 +110,10 @@ end
 Liquid::Template.register_filter Jekyll::ForeverCacheFilter
 Liquid::Template.register_tag 'asset', Jekyll::ForeverCacheTag
 
-# after i18n is done
-Jekyll::Hooks.register :i18n, :post_write do
-  Jekyll::ForeverCache.link_assets!
+Jekyll::Hooks.register :site, :after_init do |site|
+  Jekyll::ForeverCache.after_init_hook site
+end
+
+Jekyll::Hooks.register :site, :post_write do |site|
+  Jekyll::ForeverCache.post_write_hook site
 end
