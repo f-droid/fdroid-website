@@ -112,8 +112,8 @@ method does not increase the risk profile of those users.
 On top of this, F-Droid makes it as easy as possible to
 [build it into](https://gitlab.com/fdroid/privileged-extension/#how-do-i-build-it-into-my-rom)
 ROM projects.  It is already included in
+[CalyxOS](https://calyxos.org/),
 [Replicant](https://www.replicant.us/),
-[CopperheadOS](https://copperhead.co/android/),
 [LineageOS for microG](https://lineage.microg.org/) and
 [Fairphone Open](https://code.fairphone.com/projects/fp-osos/).
 
