@@ -2,9 +2,9 @@ require 'digest'
 
 #
 # Provides a "forever caching" asset tag & filter that outputs e.g.
-# /assets/forever_${SHA256}.png and hard links this to the original file:
+# /assets/foobar_${SHA256}.png and hard links this to the original file:
 #
-#   {% asset foo.png %}
+#   {% asset foobar.png %}
 #   {{ some_var | append: '.png' | asset }}
 #
 # Hooks into i18n (prepare-multi-lang.rb) to avoid concurrency issues.
@@ -25,10 +25,11 @@ module Jekyll
 
     def self.link_to_asset!(input)
       ext   = File.extname input
+      base  = File.basename input, '.*'
       path  = "#{directory ext}/#{input}"
       file  = destination path
       unless @@assets.has_key? file
-        asset = "/assets/forever_#{digest path}#{ext}"
+        asset = "/assets/#{base}_#{digest path}#{ext}"
         @@assets[file] = { path: asset, file: destination(asset) }
       end
       @@baseurl + @@assets[file][:path]
