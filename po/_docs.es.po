@@ -1396,7 +1396,7 @@ msgstr "Ordenador portátil de firma totalmente fuera de línea con memorias USB
 
 #. type: Plain text
 #: _docs/Building_a_Signing_Server.md
-msgid "This process is based on the same basic, stripped down laptop as the previous example.  But this time, the networking should be entirely disabled before the install process.  For example, it is easy in many laptops to physically remove the WiFi card.  Therefore, it makes sense to use a laptop that does not include an ethernet jack, which are usually not possible to remove.  Otherwise, blacklisting all kernel modules related to neworking can suffice.  Since this machine is fully offline, the extra work of using an HSM is not as important, but it can't hurt to include it."
+msgid "This process is based on the same basic, stripped down laptop as the previous example.  But this time, the networking should be entirely disabled before the install process.  For example, it is easy in many laptops to physically remove the WiFi card.  Therefore, it makes sense to use a laptop that does not include an ethernet jack, which are usually not possible to remove.  Otherwise, blocklisting all kernel modules related to neworking can suffice.  Since this machine is fully offline, the extra work of using an HSM is not as important, but it can't hurt to include it."
 msgstr "Este proceso se basa en la misma computadora portátil básica y sin cables que en el ejemplo anterior. Pero esta vez, la red debe estar completamente inhabilitada antes del proceso de instalación. Por ejemplo, es fácil en muchas computadoras portátiles eliminar físicamente la tarjeta WiFi. Por lo tanto, tiene sentido utilizar una computadora portátil que no incluya una toma de ethernet, que generalmente no es posible eliminar. De lo contrario, la lista negra de todos los módulos del kernel relacionados con neworking puede ser suficiente. Dado que esta máquina está completamente fuera de línea, el trabajo adicional de usar un HSM no es tan importante, pero no está de más incluirlo."
 
 #. type: Plain text
@@ -4394,7 +4394,7 @@ msgstr ""
 
 #. type: Bullet: '3. '
 #: _docs/Deploying_the_Website.md
-msgid "prepare _deploy-whitelist-keyring.gpg_ using GnuPG:"
+msgid "prepare _deploy-allowlist-keyring.gpg_ using GnuPG:"
 msgstr ""
 
 #. type: Fenced code block (console)
@@ -4403,7 +4403,7 @@ msgstr ""
 msgid ""
 "$ gpg --recv-keys 00aa5556\n"
 "$ gpg --fingerprint 00aa5556  # verify it!\n"
-"$ gpg --export 00aa5556 > /path/to/deploy-whitelist-keyring.gpg\n"
+"$ gpg --export 00aa5556 > /path/to/deploy-allowlist-keyring.gpg\n"
 msgstr ""
 
 #. type: Bullet: '4. '
@@ -4430,7 +4430,7 @@ msgid ""
 "$ git fetch --tags\n"
 "$ sudo gitlab-runner exec docker f-droid.org \\\n"
 "              --pre-build-script ./tools/prepare-for-deploy.py \\\n"
-"              --docker-volumes \"/path/to/deploy-whitelist-keyring.gpg:/root/.gnupg/pubring.gpg:ro\" \\\n"
+"              --docker-volumes \"/path/to/deploy-allowlist-keyring.gpg:/root/.gnupg/pubring.gpg:ro\" \\\n"
 "              --docker-volumes `pwd`/_site:/builds/output\n"
 msgstr ""
 

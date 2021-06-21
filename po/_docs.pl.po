@@ -1358,7 +1358,7 @@ msgstr "W pełni offline, podpisując laptopa z pamięci USB"
 
 #. type: Plain text
 #: _docs/Building_a_Signing_Server.md
-msgid "This process is based on the same basic, stripped down laptop as the previous example.  But this time, the networking should be entirely disabled before the install process.  For example, it is easy in many laptops to physically remove the WiFi card.  Therefore, it makes sense to use a laptop that does not include an ethernet jack, which are usually not possible to remove.  Otherwise, blacklisting all kernel modules related to neworking can suffice.  Since this machine is fully offline, the extra work of using an HSM is not as important, but it can't hurt to include it."
+msgid "This process is based on the same basic, stripped down laptop as the previous example.  But this time, the networking should be entirely disabled before the install process.  For example, it is easy in many laptops to physically remove the WiFi card.  Therefore, it makes sense to use a laptop that does not include an ethernet jack, which are usually not possible to remove.  Otherwise, blocklisting all kernel modules related to neworking can suffice.  Since this machine is fully offline, the extra work of using an HSM is not as important, but it can't hurt to include it."
 msgstr "en proces opiera się na tym samym podstawowym, zdemontowanym laptopie, jak w poprzednim przykładzie. Ale tym razem sieć powinna być całkowicie wyłączona przed procesem instalacji. Na przykład w wielu laptopach łatwo jest fizycznie usunąć kartę WiFi. Dlatego warto używać laptopa, który nie ma gniazda ethernetowego, którego zwykle nie można usunąć. W przeciwnym razie wystarczy czarna lista wszystkich modułów jądra związanych z nowością. Ponieważ to urządzenie jest w pełni niedostępne, dodatkowa praca z wykorzystaniem HSM nie jest tak ważna, ale nie zaszkodzi go uwzględnić."
 
 #. type: Plain text
@@ -4692,8 +4692,8 @@ msgstr "[instalacja gitlab-ci-multi-runner](https://docs.gitlab.com/runner/insta
 
 #. type: Bullet: '3. '
 #: _docs/Deploying_the_Website.md
-msgid "prepare _deploy-whitelist-keyring.gpg_ using GnuPG:"
-msgstr "przygotuj _deploy-whitelist-keyring.gpg_ za pomocą GnuPG:"
+msgid "prepare _deploy-allowlist-keyring.gpg_ using GnuPG:"
+msgstr "przygotuj _deploy-allowlist-keyring.gpg_ za pomocą GnuPG:"
 
 #. type: Fenced code block (console)
 #: _docs/Deploying_the_Website.md
@@ -4701,11 +4701,11 @@ msgstr "przygotuj _deploy-whitelist-keyring.gpg_ za pomocą GnuPG:"
 msgid ""
 "$ gpg --recv-keys 00aa5556\n"
 "$ gpg --fingerprint 00aa5556  # verify it!\n"
-"$ gpg --export 00aa5556 > /path/to/deploy-whitelist-keyring.gpg\n"
+"$ gpg --export 00aa5556 > /path/to/deploy-allowlist-keyring.gpg\n"
 msgstr ""
 "$ gpg --recv-keys 00aa5556\n"
 "$ gpg --fingerprint 00aa5556  # zweryfikuj to!\n"
-"$ gpg --export 00aa5556 > /path/to/deploy-whitelist-keyring.gpg\n"
+"$ gpg --export 00aa5556 > /path/to/deploy-allowlist-keyring.gpg\n"
 
 #. type: Bullet: '4. '
 #: _docs/Deploying_the_Website.md
@@ -4731,14 +4731,14 @@ msgid ""
 "$ git fetch --tags\n"
 "$ sudo gitlab-runner exec docker f-droid.org \\\n"
 "              --pre-build-script ./tools/prepare-for-deploy.py \\\n"
-"              --docker-volumes \"/path/to/deploy-whitelist-keyring.gpg:/root/.gnupg/pubring.gpg:ro\" \\\n"
+"              --docker-volumes \"/path/to/deploy-allowlist-keyring.gpg:/root/.gnupg/pubring.gpg:ro\" \\\n"
 "              --docker-volumes `pwd`/_site:/builds/output\n"
 msgstr ""
 "$ cd fdroid-website\n"
 "$ git fetch --tags\n"
 "$ sudo gitlab-runner exec docker f-droid.org \\\n"
 "              --pre-build-script ./tools/prepare-for-deploy.py \\\n"
-"              --docker-volumes \"/path/to/deploy-whitelist-keyring.gpg:/root/.gnupg/pubring.gpg:ro\" \\\n"
+"              --docker-volumes \"/path/to/deploy-allowlist-keyring.gpg:/root/.gnupg/pubring.gpg:ro\" \\\n"
 "              --docker-volumes `pwd`/_site:/builds/output\n"
 
 #. type: Bullet: '6. '

@@ -1295,7 +1295,7 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/Building_a_Signing_Server.md
-msgid "This process is based on the same basic, stripped down laptop as the previous example.  But this time, the networking should be entirely disabled before the install process.  For example, it is easy in many laptops to physically remove the WiFi card.  Therefore, it makes sense to use a laptop that does not include an ethernet jack, which are usually not possible to remove.  Otherwise, blacklisting all kernel modules related to neworking can suffice.  Since this machine is fully offline, the extra work of using an HSM is not as important, but it can't hurt to include it."
+msgid "This process is based on the same basic, stripped down laptop as the previous example.  But this time, the networking should be entirely disabled before the install process.  For example, it is easy in many laptops to physically remove the WiFi card.  Therefore, it makes sense to use a laptop that does not include an ethernet jack, which are usually not possible to remove.  Otherwise, blocklisting all kernel modules related to neworking can suffice.  Since this machine is fully offline, the extra work of using an HSM is not as important, but it can't hurt to include it."
 msgstr ""
 
 #. type: Plain text
@@ -4241,7 +4241,7 @@ msgstr ""
 
 #. type: Bullet: '3. '
 #: _docs/Deploying_the_Website.md
-msgid "prepare _deploy-whitelist-keyring.gpg_ using GnuPG:"
+msgid "prepare _deploy-allowlist-keyring.gpg_ using GnuPG:"
 msgstr ""
 
 #. type: Fenced code block (console)
@@ -4250,7 +4250,7 @@ msgstr ""
 msgid ""
 "$ gpg --recv-keys 00aa5556\n"
 "$ gpg --fingerprint 00aa5556  # verify it!\n"
-"$ gpg --export 00aa5556 > /path/to/deploy-whitelist-keyring.gpg\n"
+"$ gpg --export 00aa5556 > /path/to/deploy-allowlist-keyring.gpg\n"
 msgstr ""
 
 #. type: Bullet: '4. '
@@ -4277,7 +4277,7 @@ msgid ""
 "$ git fetch --tags\n"
 "$ sudo gitlab-runner exec docker f-droid.org \\\n"
 "              --pre-build-script ./tools/prepare-for-deploy.py \\\n"
-"              --docker-volumes \"/path/to/deploy-whitelist-keyring.gpg:/root/.gnupg/pubring.gpg:ro\" \\\n"
+"              --docker-volumes \"/path/to/deploy-allowlist-keyring.gpg:/root/.gnupg/pubring.gpg:ro\" \\\n"
 "              --docker-volumes `pwd`/_site:/builds/output\n"
 msgstr ""
 

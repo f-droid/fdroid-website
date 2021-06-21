@@ -70,11 +70,11 @@ commands that run outside of docker cannot be modified via git.
 
 1. [setup docker](https://docs.docker.com/engine/installation/linux/debian/)
 2. [setup gitlab-ci-multi-runner](https://docs.gitlab.com/runner/install/linux-repository.html)
-3. prepare _deploy-whitelist-keyring.gpg_ using GnuPG:
+3. prepare _deploy-allowlist-keyring.gpg_ using GnuPG:
 ```console
 $ gpg --recv-keys 00aa5556
 $ gpg --fingerprint 00aa5556  # verify it!
-$ gpg --export 00aa5556 > /path/to/deploy-whitelist-keyring.gpg
+$ gpg --export 00aa5556 > /path/to/deploy-allowlist-keyring.gpg
 ```
 4. get the website source code:
 ```console
@@ -86,7 +86,7 @@ $ cd fdroid-website
 $ git fetch --tags
 $ sudo gitlab-runner exec docker f-droid.org \
               --pre-build-script ./tools/prepare-for-deploy.py \
-              --docker-volumes "/path/to/deploy-whitelist-keyring.gpg:/root/.gnupg/pubring.gpg:ro" \
+              --docker-volumes "/path/to/deploy-allowlist-keyring.gpg:/root/.gnupg/pubring.gpg:ro" \
               --docker-volumes `pwd`/_site:/builds/output
 ```
 6. deploy the site's files to the webserver, while preventing the
