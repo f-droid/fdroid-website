@@ -6,24 +6,24 @@
   <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
   <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
 
-  <link rel="preload" href="{% assets %}/roboto.ttf" as="font" type="font/ttf"/>
+  <link rel="preload" href="{% asset roboto.ttf %}" as="font" type="font/ttf"/>
   <link rel="dns-prefetch" href="https://search.f-droid.org"/>
   <link rel="dns-prefetch" href="https://fdroid.gitlab.io"/>
-  <link rel="stylesheet" href="{% root %}/css/main.css"/>
-  <link rel="canonical" href="{% root %}{{ page.url | replace:'index.html','' }}"/>
-  <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{% root %}/feed.xml"/>
+  <link rel="stylesheet" href="{{ site.baseurl }}/css/main.css"/>
+  <link rel="canonical" href="{{ site.baseurl }}{{ page.url | replace:'index.html','' }}"/>
+  <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ site.baseurl }}/feed.xml"/>
 
-  <link href="{% root %}/osd.xml" rel="search" title="F-Droid" type="application/opensearchdescription+xml"/>
+  <link href="{{ site.baseurl }}/osd.xml" rel="search" title="F-Droid" type="application/opensearchdescription+xml"/>
 
-  <link rel="apple-touch-icon" sizes="180x180" href="{% assets %}/apple-touch-icon.png?v=8j6PKzW9Mk"/>
-  <link rel="icon" type="image/png" sizes="48x48" href="{% assets %}/favicon.png?v=8j6PKzW9Mk"/>
-  <link rel="icon" type="image/png" sizes="32x32" href="{% assets %}/favicon-32x32.png?v=8j6PKzW9Mk"/>
-  <link rel="icon" type="image/png" sizes="16x16" href="{% assets %}/favicon-16x16.png?v=8j6PKzW9Mk"/>
-  <link rel="manifest" href="{% assets %}/site.webmanifest?v=8j6PKzW9Mk"/>
-  <link rel="mask-icon" href="{% assets %}/safari-pinned-tab.svg?v=8j6PKzW9Mk" color="#5bbad5"/>
-  <link rel="shortcut icon" href="{% assets %}/favicon.ico?v=8j6PKzW9Mk"/>
+  <link rel="apple-touch-icon" sizes="180x180" href="{% asset apple-touch-icon.png %}"/>
+  <link rel="icon" type="image/png" sizes="48x48" href="{% asset favicon.png %}"/>
+  <link rel="icon" type="image/png" sizes="32x32" href="{% asset favicon-32x32.png %}"/>
+  <link rel="icon" type="image/png" sizes="16x16" href="{% asset favicon-16x16.png %}"/>
+  <link rel="manifest" href="{% asset site.webmanifest %}"/>
+  <link rel="mask-icon" href="{% asset safari-pinned-tab.svg %}" color="#5bbad5"/>
+  <link rel="shortcut icon" href="{% asset favicon.ico %}"/>
   <meta name="msapplication-TileColor" content="#ffffff"/>
-  <meta name="msapplication-config" content="{% assets %}/browserconfig.xml?v=8j6PKzW9Mk"/>
+  <meta name="msapplication-config" content="{% asset browserconfig.xml %}"/>
   <meta name="theme-color" content="#ffffff"/>
 
 {% for lang in site.languages %}

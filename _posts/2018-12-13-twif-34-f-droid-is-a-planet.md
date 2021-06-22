@@ -18,7 +18,7 @@ telegramRoom: "https://t.me/joinchat/AlRQekvjWDTuQrCgMYSNVA"
 forum: "https://forum.f-droid.org"
 ---
 
-This Week In F-Droid {{ page.edition }}, Week {{ page.date | date: "%V, %G" }} <a href="{{ site.baseurl }}/feed.xml"><img src="{{ site.baseurl }}/assets/Feed-icon-16x16.png" alt="Feed"></a>
+This Week In F-Droid {{ page.edition }}, Week {{ page.date | date: "%V, %G" }} <a href="{{ site.baseurl }}/feed.xml"><img src="{% asset Feed-icon-16x16.png %}" alt="Feed"></a>
 
 In this edition: Planet F-Droid now exists, call for submissions for Planet F-Droid and first article of Izzy's F-Droid series available in English.
 There are **{{ page.number_of_added_apps }}** new and **{{ page.number_of_updated_apps }}** updated apps.
@@ -43,7 +43,7 @@ I've just put the first article of my F-Droid series online. "F-Droid: The priva
 
 The German article is also online now at the same location.
 
-![Article Screenshot]({{ site.baseurl }}/assets/posts/2018-12-13-twif-34-f-droid-is-a-planet/Izzy%20c%27t%20F-Droid%20article%20part%201.jpg)
+![Article Screenshot]({% asset posts/2018-12-13-twif-34-f-droid-is-a-planet/izzy_ct_fdroid_article_part_1.jpg %})
 
 ### New apps
 

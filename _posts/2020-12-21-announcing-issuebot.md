@@ -61,7 +61,7 @@ also see whether a submission has clear problems that likely
 disqualify it, like requiring proprietary libraries or known tracking
 services.
 
-<img alt="labels from RFP issuebot" src="{{ site.baseurl }}/assets/posts/2020-12-21-announcing-issuebot/rfp-labels.png" />
+<img alt="labels from RFP issuebot" src="{% asset posts/2020-12-21-announcing-issuebot/rfp-labels.png %}" />
 
 The GitLab issue labels also provide a simple interface for managing
 when _issuebot_ runs on an issue.
@@ -97,7 +97,7 @@ received review and feedback from F-Droid contributors.  The submitter
 made changes, then _issuebot_ kicked in and provided feedback to the
 submitter with each update.
 
-<img alt="issuebot reviews a merge request" src="{{ site.baseurl }}/assets/posts/2020-12-21-announcing-issuebot/merge-request-review.png" />
+<img alt="issuebot reviews a merge request" src="{% asset posts/2020-12-21-announcing-issuebot/merge-request-review.png %}" />
 
 Unfortunately, there are currently no labels on merge requests.
 Technical limitations of the GitLab API mean that adding labels like

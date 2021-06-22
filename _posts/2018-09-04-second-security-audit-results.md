@@ -16,7 +16,7 @@ Android client secure even when connected to a malicious server, for
 example, if an untrusted repository is manually added that was created
 by its operator to exploit.  The full audit report is available:
 [report_otf_fdroid.pdf](https://www.radicallyopensecurity.com/report_otf_fdroid.pdf)
-[_(cached copy)_]({{ site.baseurl }}/assets/posts/2018-09-04-second-security-audit-results/report_otf_fdroid.pdf).
+[_(cached copy)_]({% asset posts/2018-09-04-second-security-audit-results/report_otf_fdroid.pdf %}).
 
 The audit was conducted by
 [Radically Open Security](https://www.radicallyopensecurity.com),

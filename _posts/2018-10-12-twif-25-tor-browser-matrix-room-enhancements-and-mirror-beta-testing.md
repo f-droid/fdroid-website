@@ -17,7 +17,7 @@ telegramRoom: "https://t.me/joinchat/AlRQekvjWDTuQrCgMYSNVA"
 forum: "https://forum.f-droid.org"
 ---
 
-This Week In F-Droid {{ page.edition }}, Week {{ page.date | date: "%V, %G" }} <a href="{{ site.baseurl }}/feed.xml"><img src="{{ site.baseurl }}/assets/Feed-icon-16x16.png" alt="Feed"></a>
+This Week In F-Droid {{ page.edition }}, Week {{ page.date | date: "%V, %G" }} <a href="{{ site.baseurl }}/feed.xml"><img src="{% asset Feed-icon-16x16.png %}" alt="Feed"></a>
 
 In this edition: Tor Browser in Guardian Project, Matrix room improved, F-Droid bottom bar improvement, beta mirror up for testing, and 11 new apps and a record-breaking **{{ page.number_of_updated_apps }}** updates.
 <!--more-->

@@ -9,16 +9,16 @@ If you want to contribute financially, we recommend using a **free (as in free s
 Both platforms allow for recurrent donations which are highly desirable for making F-Droid sustainable.
 
 <p align="center">
-<a href="https://opencollective.com/f-droid"><img src="{% assets %}/opencollective_button.png" height="50" style="box-shadow: unset;" ></a>
+<a href="https://opencollective.com/f-droid"><img src="{% asset opencollective_button.png %}" height="50" style="box-shadow: unset;" ></a>
 &nbsp; &nbsp; &nbsp;
-<a href="https://liberapay.com/F-Droid-Data/"><img src="{% assets %}/liberapay_donate_button.svg" height="50" style="box-shadow: unset;" ></a>
+<a href="https://liberapay.com/F-Droid-Data/"><img src="{% asset liberapay_donate_button.svg %}" height="50" style="box-shadow: unset;" ></a>
 </p>
 
 #### Other options
 
 You can donate to F-Droid Limited (which runs the core infrastructure) directly via:
 
-* [![Donate via Bitcoin]({% assets %}/bitcoin.png)](https://blockchain.info/address/15u8aAPK4jJ5N8wpWJ5gutAyyeHtKX5i18): [`15u8aAPK4jJ5N8wpWJ5gutAyyeHtKX5i18`](bitcoin:15u8aAPK4jJ5N8wpWJ5gutAyyeHtKX5i18)
+* [![Donate via Bitcoin]({% asset bitcoin.png %})](https://blockchain.info/address/15u8aAPK4jJ5N8wpWJ5gutAyyeHtKX5i18): [`15u8aAPK4jJ5N8wpWJ5gutAyyeHtKX5i18`](bitcoin:15u8aAPK4jJ5N8wpWJ5gutAyyeHtKX5i18)
 
 * [Donate via PayPal](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=E2FCXCT6837GL)
 
@@ -34,5 +34,5 @@ SWIFT: BARCGB22
 ```
 
 Or buy a 👕 T-shirt 👕 from <br>
-[![HELLOTUX]({% assets %}/hellotux_banner.jpg)](https://www.hellotux.com/f-droid)<br>
+[![HELLOTUX]({% asset hellotux_banner.jpg %})](https://www.hellotux.com/f-droid)<br>
 (F-Droid will receive 3€ per shirt sold.)

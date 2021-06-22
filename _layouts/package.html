@@ -9,7 +9,7 @@ layout: default-package-sidebar
 		{% if page.icon != "" and page.icon != nil %}
 		<img class="package-icon" src="{{ site.fdroid-repo }}/{{ page.icon }}" alt="{{ strings.package_icon_alt }}" />
 		{% else %}
-		<img class="package-icon" src="{% assets %}/ic_repo_app_default.png" alt="{{ strings.alt_package_icon }}" />
+		<img class="package-icon" src="{% asset ic_repo_app_default.png %}" alt="{{ strings.alt_package_icon }}" />
 		{% endif %}
 		<div class="package-title">
 			<h3 class="package-name">
@@ -39,7 +39,7 @@ layout: default-package-sidebar
 			{% for anti_feature in page.anti_features %}
 			<li class="anti-feature-item">
 			  <a class="anti-feature-link" href="{{ site.baseurl }}/docs/Anti-Features/#{{ anti_feature }}">
-					<img class="anti-feature-icon" src="{{ site.baseurl }}/assets/icons/antifeatures/{{ anti_feature }}.svg" alt=""> 
+					<img class="anti-feature-icon" src="{{ anti_feature | prepend: 'icons/antifeatures/' | append: '.svg' | asset }}" alt=""> 
 					<div class="anti-feature-text">
 						{{ site.data.strings.antifeatures[anti_feature] }}
 					</div>
@@ -50,7 +50,7 @@ layout: default-package-sidebar
 			{% for anti_feature in page.packages.first.anti_features %}
 			<li class="anti-feature-item">
 			  <a class="anti-feature-link" href="{{ site.baseurl }}/docs/Anti-Features/#{{ anti_feature }}">
-					<img class="anti-feature-icon" src="{{ site.baseurl }}/assets/icons/antifeatures/{{ anti_feature }}.svg" alt=""> 
+					<img class="anti-feature-icon" src="{{ anti_feature | prepend: 'icons/antifeatures/' | append: '.svg' | asset }}" alt=""> 
 					<div class="anti-feature-text">
 						{{ site.data.strings.antifeatures[anti_feature] }}
 					</div>
@@ -116,22 +116,22 @@ layout: default-package-sidebar
 	<ul class="package-links donate-options">
 		{% if page.openCollective != "" and page.openCollective != nil %}
 		<li class="package-link opencollective">
-			<a href="https://opencollective.com/{{ page.openCollective }}"><img src="{% assets %}/opencollective_button.png" alt="{{ strings.opencollective_alt }}"/></a>
+			<a href="https://opencollective.com/{{ page.openCollective }}"><img src="{% asset opencollective_button.png %}" alt="{{ strings.opencollective_alt }}"/></a>
 		</li>
 		{% endif %}
 		{% if page.liberapay != "" and page.liberapay != nil %}
 		<li class="package-link">
-			<a href="https://liberapay.com/{{ page.liberapay }}"><img src="{% assets %}/liberapay_donate_button.svg" alt="{{ strings.liberapay_alt }}"/></a>
+			<a href="https://liberapay.com/{{ page.liberapay }}"><img src="{% asset liberapay_donate_button.svg %}" alt="{{ strings.liberapay_alt }}"/></a>
 		</li>
 		{% endif %}
 		{% if page.bitcoin != "" and page.bitcoin != nil %}
 		<li class="package-link">
-			<a href="https://live.blockcypher.com/btc/address/{{ page.bitcoin }}" title="{{ page.bitcoin }}"><img src="{% assets %}/bitcoin.png" alt="{{ strings.bitcoin_alt }}"/></a>
+			<a href="https://live.blockcypher.com/btc/address/{{ page.bitcoin }}" title="{{ page.bitcoin }}"><img src="{% asset bitcoin.png %}" alt="{{ strings.bitcoin_alt }}"/></a>
 		</li>
 		{% endif %}
 		{% if page.litecoin != "" and page.litecoin != nil %}
 		<li class="package-link">
-			<a href="https://live.blockcypher.com/ltc/address/{{ page.litecoin }}" title="{{ page.litecoin }}"><img src="{% assets %}/litecoin.png" alt="{{ strings.litecoin_alt }}"/></a>
+			<a href="https://live.blockcypher.com/ltc/address/{{ page.litecoin }}" title="{{ page.litecoin }}"><img src="{% asset litecoin.png %}" alt="{{ strings.litecoin_alt }}"/></a>
 		</li>
 		{% endif %}
 		{% if page.flattrID != "" and page.flattrID != nil %}
@@ -279,5 +279,5 @@ layout: default-package-sidebar
 
 </article>
 
-<script src="{{ site.baseurl }}/js/lib/lory.min.js"></script>
-<script src="{{ site.baseurl }}/js/package.js"></script>
+<script src="{% asset lib/lory.min.js %}"></script>
+<script src="{% asset package.js %}"></script>

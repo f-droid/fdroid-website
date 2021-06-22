@@ -8,7 +8,7 @@ major: '<em style="padding: 0.15em 0.5em 0.10em; margin-right: 0.1ex; border-sty
 number_of_updated_apps: 25
 ---
 
-This Week In F-Droid {{ page.edition }}, Week {{ page.date | date: "%V, %G" }} <a href="{{ site.baseurl }}/feed.xml"><img src="{{ site.baseurl }}/assets/Feed-icon-16x16.png" alt="Feed"></a>
+This Week In F-Droid {{ page.edition }}, Week {{ page.date | date: "%V, %G" }} <a href="{{ site.baseurl }}/feed.xml"><img src="{% asset Feed-icon-16x16.png %}" alt="Feed"></a>
 
 A light edition this week, due to the update process being stuck since Monday. This week we learn of BotBot.me shutting down, 4 new apps and {{ page.number_of_updated_apps }} updates, with a major update for SnoopSnitch.
 <!--more-->

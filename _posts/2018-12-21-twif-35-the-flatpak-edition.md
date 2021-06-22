@@ -21,7 +21,7 @@ telegramRoom: "https://t.me/joinchat/AlRQekvjWDTuQrCgMYSNVA"
 forum: "https://forum.f-droid.org"
 ---
 
-This Week In F-Droid {{ page.edition }}, Week {{ page.date | date: "%V, %G" }} <a href="{{ site.baseurl }}/feed.xml"><img src="{{ site.baseurl }}/assets/Feed-icon-16x16.png" alt="Feed"></a>
+This Week In F-Droid {{ page.edition }}, Week {{ page.date | date: "%V, %G" }} <a href="{{ site.baseurl }}/feed.xml"><img src="{% asset Feed-icon-16x16.png %}" alt="Feed"></a>
 
 In this edition: New automated mirror monitor, repomaker released to Flathub, unofficial F-Droid meeting at 35C3 and talk about Off-Grid Services by **@\_hc**.
 

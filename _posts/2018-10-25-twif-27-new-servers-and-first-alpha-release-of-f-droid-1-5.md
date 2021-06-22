@@ -17,7 +17,7 @@ telegramRoom: "https://t.me/joinchat/AlRQekvjWDTuQrCgMYSNVA"
 forum: "https://forum.f-droid.org"
 ---
 
-This Week In F-Droid {{ page.edition }}, Week {{ page.date | date: "%V, %G" }} <a href="{{ site.baseurl }}/feed.xml"><img src="{{ site.baseurl }}/assets/Feed-icon-16x16.png" alt="Feed"></a>
+This Week In F-Droid {{ page.edition }}, Week {{ page.date | date: "%V, %G" }} <a href="{{ site.baseurl }}/feed.xml"><img src="{% asset Feed-icon-16x16.png %}" alt="Feed"></a>
 
 In this edition: Two new heavy duty servers, first alpha release of F-Droid 1.5, metadata cleanup, automatic buildserver setup, Portuguese Courts rule against Google, and F-Droid confirmed malware-free. There are 4 new and {{ page.number_of_updated_apps }} updated apps.
 <!--more-->

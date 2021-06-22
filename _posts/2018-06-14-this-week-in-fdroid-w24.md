@@ -17,7 +17,7 @@ authorWebsite: "https://forum.f-droid.org/u/coffee"
 
 * [mvdan](https://forum.f-droid.org/u/mvdan) [released](https://github.com/mvdan/fdroidcl/releases/tag/v0.4.0) fdroidcl 0.4.0. [Fdroidcl](https://github.com/mvdan/fdroidcl) is an F-Droid desktop client which talks to connected devices via [ADB](https://en.wikipedia.org/wiki/Android_Debug_Bridge). If you have any input or suggestions, please open new issues on the [tracker](https://github.com/mvdan/fdroidcl/issues). Pull requests are always welcome.
 
-* The slides to [Bubu](https://forum.f-droid.org/u/Bubu)'s talk which we mentioned last week are now [available]({{ site.baseurl }}/assets/posts/2018-06-14-this-week-in-fdroid-w24/2018-06-08-bubu-fdroid-talk-afra.pdf)!
+* The slides to [Bubu](https://forum.f-droid.org/u/Bubu)'s talk which we mentioned last week are now [available]({% asset posts/2018-06-14-this-week-in-fdroid-w24/2018-06-08-bubu-fdroid-talk-afra.pdf %})!
 
 #### New apps
 

@@ -17,7 +17,7 @@ telegramRoom: "https://t.me/joinchat/AlRQekvjWDTuQrCgMYSNVA"
 forum: "https://forum.f-droid.org"
 ---
 
-This Week In F-Droid {{ page.edition }}, Week {{ page.date | date: "%V, %G" }} <a href="{{ site.baseurl }}/feed.xml"><img src="{{ site.baseurl }}/assets/Feed-icon-16x16.png" alt="Feed"></a>
+This Week In F-Droid {{ page.edition }}, Week {{ page.date | date: "%V, %G" }} <a href="{{ site.baseurl }}/feed.xml"><img src="{% asset Feed-icon-16x16.png %}" alt="Feed"></a>
 
 In this edition: Lots of F-Droid news. We're looking for Mirror testers, and help with developing an auditing proxy. We are also setting up our own Matrix server, and have some news about Fairphone as a Service. In the app department, we have 12 new and {{ page.number_of_updated_apps }} updated apps.
 <!--more-->
@@ -31,11 +31,11 @@ We have everything needed to support mirrors in place and running. Now we just n
 These are the mirrors:
 
 &nbsp;&nbsp;&nbsp;<a href="https://fdroid.tetaneutral.net/fdroid/repo?fingerprint=43238D512C1E5EB2D6569F4A3AFBF5523418B82E0A3ED1552770ABB9A9C9CCAB">
-![fdroid.tetaneutral.net]({{ site.baseurl }}/assets/posts/2018-11-10-twif-29-new-matrix-server-and-mirror-testers-wanted/fdroid.tetaneutral.net.png)</a>
+![fdroid.tetaneutral.net]({% asset posts/2018-11-10-twif-29-new-matrix-server-and-mirror-testers-wanted/fdroid.tetaneutral.net.png %})</a>
 &nbsp;&nbsp;&nbsp;<a href="https://mirror.cyberbits.eu/fdroid/repo?fingerprint=43238D512C1E5EB2D6569F4A3AFBF5523418B82E0A3ED1552770ABB9A9C9CCAB">
-![mirror.cyberbits.eu]({{ site.baseurl }}/assets/posts/2018-11-10-twif-29-new-matrix-server-and-mirror-testers-wanted/mirror.cyberbits.eu.png)</a>
+![mirror.cyberbits.eu]({% asset posts/2018-11-10-twif-29-new-matrix-server-and-mirror-testers-wanted/mirror.cyberbits.eu.png %})</a>
 &nbsp;&nbsp;&nbsp;<a href="https://bubu1.eu/fdroid/repo?fingerprint=43238D512C1E5EB2D6569F4A3AFBF5523418B82E0A3ED1552770ABB9A9C9CCAB">
-![bubu1.eu]({{ site.baseurl }}/assets/posts/2018-11-10-twif-29-new-matrix-server-and-mirror-testers-wanted/bubu1.eu.png)</a>
+![bubu1.eu]({% asset posts/2018-11-10-twif-29-new-matrix-server-and-mirror-testers-wanted/bubu1.eu.png %})</a>
 
 #### Help wanted with auditing proxy
 

@@ -19,14 +19,14 @@ permalink: /
             <a href="{{ site.fdroid_apk_download_url }}.asc">{{ strings.gpg_signature }}</a>
         </div>
         <div class="qr">
-            <img src="{{ site.baseurl }}/assets/download-fdroid-qr.png" />
+            <img src="{% asset download-fdroid-qr.png %}" />
         </div>
     </div>
     <div class="screenshot">
         <img
-            src="{{ site.baseurl }}/assets/phone-frame.png" alt="{{ strings.screenshot }}"
+            src="{% asset phone-frame.png %}" alt="{{ strings.screenshot }}"
             style="background: url('{{ site.baseurl }}/{% fdroid_screenshot %}') center center no-repeat; background-size: 78% auto" />
     </div>
 </div>
 
-<script src="{{ site.baseurl }}/js/donate.js"></script>
+<script src="{% asset donate.js %}"></script>
