@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2021-06-10 12:16+0200\n"
+"POT-Creation-Date: 2021-06-24 23:12+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -513,7 +513,9 @@ msgid ""
 "(e.g. <https://gitlab.com/fdroid/fdroiddata/-/raw/master/metadata/org.fdroid.fdroid.yml>).\n"
 "The repo index and the [GitLab Repository Files\n"
 "API](https://docs.gitlab.com/ee/api/repository_files.html) can be used to query\n"
-"which Application IDs are available.\n"
+"which Application IDs are available.  These files are also available via the\n"
+"mirror on GitHub,\n"
+"e.g. <https://raw.githubusercontent.com/f-droid/fdroiddata/master/metadata/org.fdroid.fdroid.yml>\n"
 msgstr ""
 
 #. type: Title ###
@@ -3273,19 +3275,10 @@ msgstr ""
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid ""
-"    Optionally UpdateCheckData can be specified to extract version code and\n"
+"    Optionally `UpdateCheckData` can be specified to extract version code and\n"
 "    name from repository files you specify (instead of relying on the defaults\n"
 "    used to match against otherwise, which in most cases is `build.gradle` or\n"
-"    `AndroidManifest.xml`). The format is the same as specified in `HTTP`\n"
-"    below, only using files from the repository instead of URLs.\n"
-msgstr ""
-
-#. type: Plain text
-#: _docs/Build_Metadata_Reference.md
-#, no-wrap
-msgid ""
-"    For example a Flutter app with the `pubspec.yaml` being in the repo root\n"
-"    could use: `pubspec.yaml|version:\\s.+\\+(\\d+)|.|version:\\s(.+)\\+`.\n"
+"    `AndroidManifest.xml`).\n"
 msgstr ""
 
 #. type: Bullet: '-   '
@@ -3340,6 +3333,11 @@ msgstr ""
 msgid "When checking for updates (via _UpdateCheckMode_) this can be used to specify a regex which, if matched against the version name, causes that version to be ignored. For example, ’beta’ could be specified to ignore version names that include that text."
 msgstr ""
 
+#. type: Plain text
+#: _docs/Build_Metadata_Reference.md
+msgid "Only Available with _UpdateCheckMode_ `HTTP`."
+msgstr ""
+
 #. type: Title ###
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
@@ -3364,7 +3362,57 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-msgid "Used in conjunction with _UpdateCheckMode_ for certain modes."
+msgid "Used in conjunction with _UpdateCheckMode_ `Tag` or `HTTP`."
+msgstr ""
+
+#. type: Fenced code block
+#: _docs/Build_Metadata_Reference.md
+#, no-wrap
+msgid "UpdateCheckData: <vercode-location>|<RegEx-for-versionCode>|<versionName-location>|<RegEx-for-versionName>\n"
+msgstr ""
+
+#. type: Bullet: '-   '
+#: _docs/Build_Metadata_Reference.md
+msgid "`vercode-location` - URL (with `UpdateCheckMode: HTTP`) or path/file relative to repo root, leave empty to check the tag name instead (with `UpdateCheckMode: Tags`)."
+msgstr ""
+
+#. type: Bullet: '-   '
+#: _docs/Build_Metadata_Reference.md
+msgid "`RegEx-for-versionCode` - RegEx to match versionCode."
+msgstr ""
+
+#. type: Bullet: '-   '
+#: _docs/Build_Metadata_Reference.md
+msgid "`versionName-location` - Same as vercode-location just for versionName. A .  means to take vercode-location, leave empty to check the tag name instead (only with `UpdateCheckMode: Tags`)."
+msgstr ""
+
+#. type: Bullet: '-   '
+#: _docs/Build_Metadata_Reference.md
+msgid "`RegEx-for-versionName` - Similar to RegEx-for-versionCode, just for versionName."
+msgstr ""
+
+#. type: Plain text
+#: _docs/Build_Metadata_Reference.md
+#, no-wrap
+msgid ""
+"Examples for `UpdateCheckMode: Tag`:\n"
+"-   Flutter app with the `pubspec.yaml` in the repo root:\n"
+"    `pubspec.yaml|version:\\s.+\\+(\\d+)|.|version:\\s(.+)\\+`\n"
+"-   Use the git tag as version name:\n"
+"    `app/build.gradle|versionCode\\s(\\d+)||`\n"
+"-   Optionally a regex to extract the version name from the tag can be specified:\n"
+"    `app/build.gradle|versionCode\\s(\\d+)||Android-([\\d.]+)`\n"
+"-   If no file for the version code was specified, code and name can be extracted from the tag:\n"
+"    `|\\+(\\d+)||Android-([\\d.]+)`\n"
+msgstr ""
+
+#. type: Plain text
+#: _docs/Build_Metadata_Reference.md
+#, no-wrap
+msgid ""
+"Examples for `UpdateCheckMode: HTTP`:\n"
+"-   `https://foo/version.json|\"version_code\":.*\"(.*)\"|.|\"version_name\":.*\\\"(.*)\\\",`\n"
+"-   `https://foo/version_fdroid.txt|versionCode=(.*)|.|versionName=(.*)`\n"
 msgstr ""
 
 #. type: Title ###
@@ -5144,7 +5192,7 @@ msgstr ""
 
 #. type: Bullet: '-   '
 #: _docs/FAQ_-_General.md
-msgid "the IRC chat room: [\\#fdroid](irc://irc.freenode.net/fdroid) IRC chatroom on Freenode ([click here to join the webchat](https://webchat.freenode.net/?randomnick=1&channels=%23fdroid&uio=MT1mYWxzZSYyPXRydWUmND10cnVlJjk9dHJ1ZSYxMD10cnVlJjEyPXRydWU84))"
+msgid "the IRC chat room: [\\#fdroid](ircs://irc.oftc.net:6697/fdroid) IRC chatroom on OFTC ([click here to join the webchat](https://webchat.oftc.net/?randomnick=1&channels=fdroid&prompt=1))"
 msgstr ""
 
 #. type: Bullet: '-   '
@@ -5310,7 +5358,7 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/FAQ_-_General.md
-msgid "Use the [issue tracker](https://gitlab.com/fdroid/fdroidclient/issues)  or email <team@f-droid.org>. You can also discuss them in the [\\#fdroid](irc://irc.freenode.net/fdroid) IRC chatroom on Freenode ([click here to join the webchat](https://webchat.freenode.net/?randomnick=1&channels=%23fdroid&uio=MT1mYWxzZSYyPXRydWUmND10cnVlJjk9dHJ1ZSYxMD10cnVlJjEyPXRydWU84))."
+msgid "Use the [issue tracker](https://gitlab.com/fdroid/fdroidclient/issues)  or email <team@f-droid.org>. You can also discuss them in the [\\#fdroid](ircs://irc.oftc.net:6697/fdroid) IRC chatroom on OFTC ([click here to join the webchat](https://webchat.oftc.net/?randomnick=1&channels=fdroid&prompt=1))."
 msgstr ""
 
 #. type: Plain text
@@ -5403,12 +5451,23 @@ msgstr ""
 #. type: Title ###
 #: _docs/Feeds.md
 #, no-wrap
+msgid "Matrix"
+msgstr ""
+
+#. type: Plain text
+#: _docs/Feeds.md
+msgid "The room can be previewed without an account on https://matrix.to/#/#fdroid:f-droid.org or https://matrix.to/#/#fdroid-dev:f-droid.org"
+msgstr ""
+
+#. type: Title ###
+#: _docs/Feeds.md
+#, no-wrap
 msgid "IRC"
 msgstr ""
 
 #. type: Plain text
 #: _docs/Feeds.md
-msgid "chat.freenode.net #fdroid or #fdroid-dev. The channels are logged at <https://botbot.me/freenode/fdroid/> and <https://botbot.me/freenode/fdroid-dev/>."
+msgid "Old IRC logs are available at <https://botbot.me/freenode/fdroid/> and <https://botbot.me/freenode/fdroid-dev/>."
 msgstr ""
 
 #. type: Title ##
@@ -5583,7 +5642,7 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/How_to_Help.md
-msgid "If you experience problems with the site or client software, you can report them in the [issue tracker](https://gitlab.com/u/fdroid), discuss them in the [Forum](https://forum.f-droid.org/) or on IRC ([#fdroid on freenode](https://webchat.freenode.net/?randomnick=1&channels=%23fdroid&uio=MT1mYWxzZSYyPXRydWUmND10cnVlJjk9dHJ1ZSYxMD10cnVlJjEyPXRydWU84)).  Take a look at the [Repository Maintenance](https://monitor.f-droid.org/builds)  page to see how you can help keeping apps and their metadata up to date."
+msgid "If you experience problems with the site or client software, you can report them in the [issue tracker](https://gitlab.com/u/fdroid), discuss them in the [Forum](https://forum.f-droid.org/), on [Matrix](https://matrix.to/#/#fdroid:f-droid.org) or on IRC ([#fdroid on OFTC](https://webchat.oftc.net/?randomnick=1&channels=fdroid&prompt=1)).  Take a look at the [Repository Maintenance](https://monitor.f-droid.org/builds)  page to see how you can help keeping apps and their metadata up to date."
 msgstr ""
 
 #. type: Plain text
@@ -5710,7 +5769,7 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/How_to_Help.md
-msgid "F-Droid provides multiple servers (builders, web portal, download areas...) which need regular maintenance, Ansible-based deployment, and hardware management.  Further information can be found by asking [on IRC](https://webchat.freenode.net/?channels=%23fdroid-dev) (#fdroid-dev on freenode) or team@f-droid.org."
+msgid "F-Droid provides multiple servers (builders, web portal, download areas...) which need regular maintenance, Ansible-based deployment, and hardware management.  Further information can be found by asking on [Matrix](https://matrix.to/#/#fdroid-dev:f-droid.org), [IRC](https://webchat.oftc.net/?randomnick=1&channels=fdroid&prompt=1) (#fdroid-dev on OFTC) or team@f-droid.org."
 msgstr ""
 
 #. type: Title ###
@@ -8757,7 +8816,7 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/Security_Model.md
-msgid "On top of this, F-Droid makes it as easy as possible to [build it into](https://gitlab.com/fdroid/privileged-extension/#how-do-i-build-it-into-my-rom)  ROM projects.  It is already included in [Replicant](https://www.replicant.us/), [CopperheadOS](https://copperhead.co/android/), [LineageOS for microG](https://lineage.microg.org/) and [Fairphone Open](https://code.fairphone.com/projects/fp-osos/)."
+msgid "On top of this, F-Droid makes it as easy as possible to [build it into](https://gitlab.com/fdroid/privileged-extension/#how-do-i-build-it-into-my-rom)  ROM projects.  It is already included in [CalyxOS](https://calyxos.org/), [Replicant](https://www.replicant.us/), [LineageOS for microG](https://lineage.microg.org/) and [Fairphone Open](https://code.fairphone.com/projects/fp-osos/)."
 msgstr ""
 
 #. type: Title ###
