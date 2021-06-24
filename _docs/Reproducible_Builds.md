@@ -213,6 +213,10 @@ instead of the shrinked one (nondeterministic behavior of Gradle
 plugin). Avoid using resource shrinker unless it decreases the APK file
 size significantly.
 
+### coreLibraryDesugaring
+
+In some cases builds are not reproducible due to a bug in `coreLibraryDesugaring`; this [currently affects NewPipe](https://github.com/TeamNewPipe/NewPipe/issues/6486).
+
 ### zipflinger
 
 Recent versions of the Android gradle plugin will use *zipflinger* -- which arranges the contents of the APK differently -- which could result in e.g. [apksigcopier](https://github.com/obfusk/apksigcopier) failing to work in some cases.  You can tell the plugin not to use *zipflinger* by setting `android.useNewApkCreator=false` in `gradle.properties`.
