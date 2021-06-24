@@ -5,7 +5,7 @@ author: "Coffee"
 authorWebsite: "https://forum.f-droid.org/u/coffee"
 ---
 
-[F-Droid](https://f-droid.org/) is a [repository](https://f-droid.org/packages/) of verified [free and open source](https://en.wikipedia.org/wiki/Free_and_open-source_software) Android apps, a [client](https://f-droid.org/app/org.fdroid.fdroid) to access it, as well as a whole "app store kit", providing all the tools needed to set up and run an app store. It is a community-run free software project developed by a wide range of contributors. This is their story this past week.
+[F-Droid](https://f-droid.org/) is a [repository](https://f-droid.org/packages/) of verified [free and open source](https://en.wikipedia.org/wiki/Free_and_open-source_software) Android apps, a [client](https://f-droid.org/packages/org.fdroid.fdroid/) to access it, as well as a whole "app store kit", providing all the tools needed to set up and run an app store. It is a community-run free software project developed by a wide range of contributors. This is their story this past week.
 
 #### F-Droid core
 
@@ -21,7 +21,7 @@ authorWebsite: "https://forum.f-droid.org/u/coffee"
 
 * **uniq** finished up the [documentation for bootstrapping the buildserver basebox](https://staging.f-droid.org/docs/Build_Server_Setup/#creating-the-debian-base-box).
 
-* **uniq** also laid the groundwork to upgrade our build server to Debian _Stretch_, and we'll be experimenting with that in the next weeks. Once this upgrade is in place, it'll be much easier to build some applications with lots of native dependencies, e.g. [VLC](https://f-droid.org/wiki/page/org.videolan.vlc), [Ring](https://f-droid.org/app/cx.ring), [OsmAnd~](https://f-droid.org/app/net.osmand.plus).
+* **uniq** also laid the groundwork to upgrade our build server to Debian _Stretch_, and we'll be experimenting with that in the next weeks. Once this upgrade is in place, it'll be much easier to build some applications with lots of native dependencies, e.g. [VLC](https://f-droid.org/packages/org.videolan.vlc/), [Ring](https://f-droid.org/packages/cx.ring/), [OsmAnd~](https://f-droid.org/packages/net.osmand.plus/).
 
 * You may have noticed the total absence of any [GDPR](https://en.wikipedia.org/wiki/General_Data_Protection_Regulation) related work. [We take your privacy seriously](https://f-droid.org/about/) and always have.
 
@@ -31,31 +31,31 @@ No news from the wider community this week.
 
 #### New apps
 
-* [Notepad](https://f-droid.org/app/com.farmerbb.notepad): A simple, bare-bones, no-frills note taking app
-* [Binaural Beats](https://f-droid.org/app/com.github.axet.binauralbeats): Meditation helper
-* [Batch Uninstaller](https://f-droid.org/app/com.saha.batchuninstaller): Uninstall multiple applications at once
-* [Waistline](https://f-droid.org/app/com.waist.line): Free calorie counter and weight tracker
-* The [Reader for Pepper&Carrot](https://f-droid.org/app/nightlock.peppercarrot) [dropped](https://peppercarrot.com/en/article441/android-e-reader-for-peppercarrot-by-imseaok) on F-Droid this week. It's a multi-language reader for the [CC-BY](https://creativecommons.org/licenses/by/4.0/) licensed [Pepper & Carrot Webcomic](https://peppercarrot.com). You should check it out because it's [cool](https://peppercarrot.com/en/static2/philosophy).
-* [Werewolf](https://f-droid.org/app/org.secuso.privacyfriendlycardgameone): Play Werewolf with your friends
-* [TermBot](https://f-droid.org/app/org.sufficientlysecure.termbot): SSH client for use with smart cards
+* [Notepad](https://f-droid.org/packages/com.farmerbb.notepad/): A simple, bare-bones, no-frills note taking app
+* [Binaural Beats](https://f-droid.org/packages/com.github.axet.binauralbeats/): Meditation helper
+* [Batch Uninstaller](https://f-droid.org/packages/com.saha.batchuninstaller/): Uninstall multiple applications at once
+* [Waistline](https://f-droid.org/packages/com.waist.line/): Free calorie counter and weight tracker
+* The [Reader for Pepper&Carrot](https://f-droid.org/packages/nightlock.peppercarrot/) [dropped](https://peppercarrot.com/en/article441/android-e-reader-for-peppercarrot-by-imseaok) on F-Droid this week. It's a multi-language reader for the [CC-BY](https://creativecommons.org/licenses/by/4.0/) licensed [Pepper & Carrot Webcomic](https://peppercarrot.com). You should check it out because it's [cool](https://peppercarrot.com/en/static2/philosophy).
+* [Werewolf](https://f-droid.org/packages/org.secuso.privacyfriendlycardgameone/): Play Werewolf with your friends
+* [TermBot](https://f-droid.org/packages/org.sufficientlysecure.termbot/): SSH client for use with smart cards
 
 #### Updated apps
 
 In total, 54 apps were updated this week. Here are the highlights:
 
-* **[MuPDF viewer](https://f-droid.org/app/com.artifex.mupdf.viewer.app) 1.13.0 [fixes several security holes](https://mupdf.com/news.html). You should update ASAP.**
+* **[MuPDF viewer](https://f-droid.org/packages/com.artifex.mupdf.viewer.app/) 1.13.0 [fixes several security holes](https://mupdf.com/news.html). You should update ASAP.**
 
-* [NetGuard](https://f-droid.org/app/eu.faircode.netguard) is back! The developer _removed all ads and nonfree dependencies_ as the most hassle-free way to comply with the [GDPR](https://en.wikipedia.org/wiki/General_Data_Protection_Regulation). Way to go! More info [here](http://forum.xda-developers.com/showpost.php?p=76586346&postcount=6915).
+* [NetGuard](https://f-droid.org/packages/eu.faircode.netguard/) is back! The developer _removed all ads and nonfree dependencies_ as the most hassle-free way to comply with the [GDPR](https://en.wikipedia.org/wiki/General_Data_Protection_Regulation). Way to go! More info [here](http://forum.xda-developers.com/showpost.php?p=76586346&postcount=6915).
 
   Version 2.197 is already in the main repository as of now. If you've used the GitHub release (so you can benefit from the hosts blocking feature) you can export your settings, uninstall that version, reinstall from F-Droid, import back the settings and reload your hosts file.
 
   **Important**: If you switch, you will lose any pro features you may have bought.
 
-* [OsmAnd~](https://f-droid.org/app/net.osmand.plus) beta 3.0 is now in the repository, although it won't be installed by default. If you'd like to give it a try, expand the versions tab and install it manually. We haven't had any negative reports so far, but remember this is still beta!
+* [OsmAnd~](https://f-droid.org/packages/net.osmand.plus/) beta 3.0 is now in the repository, although it won't be installed by default. If you'd like to give it a try, expand the versions tab and install it manually. We haven't had any negative reports so far, but remember this is still beta!
 
-* [Yalp Store](https://f-droid.org/app/com.github.yeriomin.yalpstore) was [broken](https://forum.f-droid.org/t/yalp-store-not-able-to-get-apps-from-play-store/2906) by Google. 0.41 is now in the repository and should fix this.
+* [Yalp Store](https://f-droid.org/packages/com.github.yeriomin.yalpstore/) was [broken](https://forum.f-droid.org/t/yalp-store-not-able-to-get-apps-from-play-store/2906) by Google. 0.41 is now in the repository and should fix this.
 
-* [Easer](https://f-droid.org/app/ryey.easer) is a tool to automate many things like switching off WiFi when leaving home, or setting the volume when a headset is connected. The update from 0.6 to 0.6.2 brings some UI changes, a screen unlock event, and a bunch of crash fixes.
+* [Easer](https://f-droid.org/packages/ryey.easer/) is a tool to automate many things like switching off WiFi when leaving home, or setting the volume when a headset is connected. The update from 0.6 to 0.6.2 brings some UI changes, a screen unlock event, and a bunch of crash fixes.
 
 #### Archived and Removed apps
 

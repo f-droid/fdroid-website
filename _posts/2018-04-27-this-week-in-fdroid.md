@@ -7,13 +7,13 @@ authorWebsite: "https://forum.f-droid.org/u/coffee"
 
 Hi everyone! This is a little experiment triggered by the [Matrix Project](https://matrix.org/) starting their own [TWIM](https://matrix.org/blog/2018/04/20/this-week-in-matrix-2018-04-20/) (This Week In Matrix), who in turn stole the idea off [TWIR](https://this-week-in-rust.org/) (This Week In Rust). Therefore, we now give you the first trial TWIF!
 
-[F-Droid](https://f-droid.org/) is an installable [catalogue](https://f-droid.org/en/packages/) of [FOSS](https://en.wikipedia.org/wiki/Free_and_open-source_software) (Free and Open Source Software) applications for the Android platform. The [client](https://f-droid.org/app/org.fdroid.fdroid) makes it easy to browse, install, and keep track of updates on your device. This post lists notable things that happened in and around F-Droid this past week.
+[F-Droid](https://f-droid.org/) is an installable [catalogue](https://f-droid.org/packages/) of [FOSS](https://en.wikipedia.org/wiki/Free_and_open-source_software) (Free and Open Source Software) applications for the Android platform. The [client](https://f-droid.org/packages/org.fdroid.fdroid/) makes it easy to browse, install, and keep track of updates on your device. This post lists notable things that happened in and around F-Droid this past week.
 
 #### What's happening in F-Droid
 
 * If you see "error getting index file", temporarily switching to the old index format in settings will work around the problem. The bugfix for the wrong app titles broke the index generation. Sorry about this!
 * Speaking of, there have been problems with some app titles showing up in Arabic. This should be fixed by androguard (see below).
-* The [F-Droid](https://f-droid.org/app/org.fdroid.fdroid) app saw two new updates this week. 1.2.2 fixes a critical bug on older android phones, where it was instantly crashing and restarting in a loop. It seems to be stable so far.
+* The [F-Droid](https://f-droid.org/packages/org.fdroid.fdroid/) app saw two new updates this week. 1.2.2 fixes a critical bug on older android phones, where it was instantly crashing and restarting in a loop. It seems to be stable so far.
 * Meanwhile, the next alpha (v1.3-alpha0) is tagged and should be built by the time you read this. The minSdk has been upped to 14 (Android 4.0 aka Ice Cream Sandwich), which allows all sorts of new things, and should make things easier to maintain.
 
   There will probably be more unstable v1.3 alphas since there were a lot of library updates, so please test! And don't upgrade unless you're really willing to use an alpha.
@@ -24,7 +24,7 @@ Hi everyone! This is a little experiment triggered by the [Matrix Project](https
 
 #### Other News
 
-* One of the GSOC projects from [Matrix](https://matrix.org/) is building an alternative to [GCM](https://en.wikipedia.org/wiki/Google_Cloud_Messaging) push for matrix. This will directly benefit the fdroid version of [Riot.im](https://f-droid.org/app/im.vector.alpha)!  
+* One of the GSOC projects from [Matrix](https://matrix.org/) is building an alternative to [GCM](https://en.wikipedia.org/wiki/Google_Cloud_Messaging) push for matrix. This will directly benefit the fdroid version of [Riot.im](https://f-droid.org/packages/im.vector.alpha/)!  
 * **_hc**'s work under the [Guardian Project Viento](https://guardianproject.info/wind/) funding is coming to a close, with maybe one or two weeks left.
 
 #### New apps
@@ -33,10 +33,10 @@ No new apps added this week.
 
 #### Updated apps
 
-* [Ring](https://f-droid.org/app/cx.ring) is finally up-to-date again on F-Droid! (And should hopefully not fall behind that much again.) We had to stop accepting updates because Ring introduced the proprietary [GCM](https://en.wikipedia.org/wiki/Google_Cloud_Messaging) push service. Although that was soon made optional, nobody had time to update the build recipe. (Until now.)
-* [Telegram](https://f-droid.org/app/org.telegram.messenger): Russia doesn't like not being able to spy on people, and has been trying to block Telegram. The upcoming version of Telegram-FOSS will have better chances to connect through the Russian Telegram blocks. If you need it right now you can install the beta build from here: https://github.com/Telegram-FOSS-Team/Telegram-FOSS/releases/tag/v4.6b
-* [Yalp Store](https://f-droid.org/app/com.github.yeriomin.yalpstore): There is an update for yalp store not being able to find any app updates.
-* **Misc**: Updates for [Conversations](https://f-droid.org/app/eu.siacs.conversations), [Nextcloud Talk](https://f-droid.org/app/com.nextcloud.talk2), [Telegram](https://f-droid.org/app/org.telegram.messenger), [Duck Duck Go](https://f-droid.org/app/se.johanhil.duckduckgo), [Firefox Klar](https://f-droid.org/app/org.mozilla.klar), [Tusky](https://f-droid.org/app/com.keylesspalace.tusky) 1.6.1, [Mastalab](https://f-droid.org/app/fr.gouv.etalab.mastodon) 1.8.6, [BRouter](https://f-droid.org/app/btools.routingapp) 1.4.11, [Nextcloud](https://f-droid.org/app/com.nextcloud.client) 3.1.0 and many more!
+* [Ring](https://f-droid.org/packages/cx.ring/) is finally up-to-date again on F-Droid! (And should hopefully not fall behind that much again.) We had to stop accepting updates because Ring introduced the proprietary [GCM](https://en.wikipedia.org/wiki/Google_Cloud_Messaging) push service. Although that was soon made optional, nobody had time to update the build recipe. (Until now.)
+* [Telegram](https://f-droid.org/packages/org.telegram.messenger/): Russia doesn't like not being able to spy on people, and has been trying to block Telegram. The upcoming version of Telegram-FOSS will have better chances to connect through the Russian Telegram blocks. If you need it right now you can install the beta build from here: https://github.com/Telegram-FOSS-Team/Telegram-FOSS/releases/tag/v4.6b
+* [Yalp Store](https://f-droid.org/packages/com.github.yeriomin.yalpstore/): There is an update for yalp store not being able to find any app updates.
+* **Misc**: Updates for [Conversations](https://f-droid.org/packages/eu.siacs.conversations/), [Nextcloud Talk](https://f-droid.org/packages/com.nextcloud.talk2/), [Telegram](https://f-droid.org/packages/org.telegram.messenger/), [Duck Duck Go](https://f-droid.org/packages/se.johanhil.duckduckgo/), [Firefox Klar](https://f-droid.org/packages/org.mozilla.klar/), [Tusky](https://f-droid.org/packages/com.keylesspalace.tusky/) 1.6.1, [Mastalab](https://f-droid.org/packages/fr.gouv.etalab.mastodon/) 1.8.6, [BRouter](https://f-droid.org/packages/btools.routingapp/) 1.4.11, [Nextcloud](https://f-droid.org/packages/com.nextcloud.client/) 3.1.0 and many more!
 
 #### Archived apps
 

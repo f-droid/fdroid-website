@@ -24,7 +24,7 @@ In this edition: A look into app rankings and Briar arrives as reproducible buil
 There are **{{ page.number_of_added_apps }}** new and **{{ page.number_of_updated_apps }}** updated apps.
 <!--more-->
 
-**[F-Droid](https://f-droid.org/)** is a [repository](https://f-droid.org/packages/) of verified [free and open source](https://en.wikipedia.org/wiki/Free_and_open-source_software) Android apps, a **[client](https://f-droid.org/app/org.fdroid.fdroid)** to access it, as well as a whole "app store kit", providing all the tools needed to set up and run an app store. It is a community-run free software project developed by a wide range of contributors. This is their story this past week.
+**[F-Droid](https://f-droid.org/)** is a [repository](https://f-droid.org/packages/) of verified [free and open source](https://en.wikipedia.org/wiki/Free_and_open-source_software) Android apps, a **[client](https://f-droid.org/packages/org.fdroid.fdroid/)** to access it, as well as a whole "app store kit", providing all the tools needed to set up and run an app store. It is a community-run free software project developed by a wide range of contributors. This is their story this past week.
 
 #### A look into app rankings
 
@@ -32,57 +32,57 @@ There are **{{ page.number_of_added_apps }}** new and **{{ page.number_of_update
 
 #### New apps
 
-* **[Image SMS](https://f-droid.org/app/click.dummer.imagesms)**: Send very small photos with long text sms and without mms or internet.
+* **[Image SMS](https://f-droid.org/packages/click.dummer.imagesms/)**: Send very small photos with long text sms and without mms or internet.
 
-* **[The Kana Quiz](https://f-droid.org/app/com.noprestige.kanaquiz)**: A simple app to quiz the user on identifying japanese characters.
+* **[The Kana Quiz](https://f-droid.org/packages/com.noprestige.kanaquiz/)**: A simple app to quiz the user on identifying japanese characters.
 
-* The Pro versions of the **Simple Mobile Tools** are landing in F-Droid: **[Simple Contacts Pro](https://f-droid.org/app/com.simplemobiletools.contacts.pro)**, **[Simple File Manager Pro](https://f-droid.org/app/com.simplemobiletools.filemanager.pro)**, **[Simple Gallery Pro](https://f-droid.org/app/com.simplemobiletools.gallery.pro)** and **[Simple Notes Pro](https://f-droid.org/app/com.simplemobiletools.notes.pro)**. For background, see [this forum thread](https://forum.f-droid.org/t/simple-mobile-tool-are-becoming-paid/4553).
+* The Pro versions of the **Simple Mobile Tools** are landing in F-Droid: **[Simple Contacts Pro](https://f-droid.org/packages/com.simplemobiletools.contacts.pro/)**, **[Simple File Manager Pro](https://f-droid.org/packages/com.simplemobiletools.filemanager.pro/)**, **[Simple Gallery Pro](https://f-droid.org/packages/com.simplemobiletools.gallery.pro/)** and **[Simple Notes Pro](https://f-droid.org/packages/com.simplemobiletools.notes.pro/)**. For background, see [this forum thread](https://forum.f-droid.org/t/simple-mobile-tool-are-becoming-paid/4553).
 
-* **[KindMind](https://f-droid.org/app/com.sunyata.kindmind)**: Be aware of sad feelings and unmet needs.
+* **[KindMind](https://f-droid.org/packages/com.sunyata.kindmind/)**: Be aware of sad feelings and unmet needs.
 
-* **[Quoting Stars](https://f-droid.org/app/de.fzi.bettyrieckmann.quotingstars)**: App for silent communications 2017.
+* **[Quoting Stars](https://f-droid.org/packages/de.fzi.bettyrieckmann.quotingstars/)**: App for silent communications 2017.
 
-* **[Wave Lines Wallpaper](https://f-droid.org/app/de.markusfisch.android.wavelines)**: Wavy wallpaper.
+* **[Wave Lines Wallpaper](https://f-droid.org/packages/de.markusfisch.android.wavelines/)**: Wavy wallpaper.
 
-* **[Quicksy](https://f-droid.org/app/im.quicksy.client)**: A spin off of the popular Jabber/XMPP client [Conversations](https://f-droid.org/packages/eu.siacs.conversations/) by the same developer.  It adds automatic contact discovery.  Sign up with your phone number and Quicksy will automatically suggest possible contacts based on phone numbers in the local address book. This solves the "empty contact list" issue that a user faces on a new XMPP account. Unlike other messenger applications that use phone numbers, Quicksy keeps the federated nature of XMPP intact.
+* **[Quicksy](https://f-droid.org/packages/im.quicksy.client/)**: A spin off of the popular Jabber/XMPP client [Conversations](https://f-droid.org/packages/eu.siacs.conversations/) by the same developer.  It adds automatic contact discovery.  Sign up with your phone number and Quicksy will automatically suggest possible contacts based on phone numbers in the local address book. This solves the "empty contact list" issue that a user faces on a new XMPP account. Unlike other messenger applications that use phone numbers, Quicksy keeps the federated nature of XMPP intact.
 
-* **[Aruba Networks Login](https://f-droid.org/app/io.mkg20001.arubanetworkslogin)**
+* **[Aruba Networks Login](https://f-droid.org/packages/io.mkg20001.arubanetworkslogin/)**
 
-* **[Acastus Photon](https://f-droid.org/app/name.gdr.acastus_photon)**: An online address/poi search for navigation apps.
+* **[Acastus Photon](https://f-droid.org/packages/name.gdr.acastus_photon/)**: An online address/poi search for navigation apps.
 
-* {{ page.featured }} **[Briar](https://f-droid.org/app/org.briarproject.briar.android)** has finally landed! This is a messenger and social network app that doesn't depend on the internet (but can take advantage of it when available), exchanging messages between phones directly. It is comparable to **[Manyverse](https://f-droid.org/app/se.manyver)** in that way. Thanks to **[@Tovok7](https://blog.grobox.de)** setting up [disorderfs](https://salsa.debian.org/reproducible-builds/disorderfs), this now builds [reproducibly](https://reproducible-builds.org), which the author requires for us to be allowed to publish it.
+* {{ page.featured }} **[Briar](https://f-droid.org/packages/org.briarproject.briar.android/)** has finally landed! This is a messenger and social network app that doesn't depend on the internet (but can take advantage of it when available), exchanging messages between phones directly. It is comparable to **[Manyverse](https://f-droid.org/packages/se.manyver/)** in that way. Thanks to **[@Tovok7](https://blog.grobox.de)** setting up [disorderfs](https://salsa.debian.org/reproducible-builds/disorderfs), this now builds [reproducibly](https://reproducible-builds.org), which the author requires for us to be allowed to publish it.
 
-* **[XScreenSaver](https://f-droid.org/app/org.jwz.xscreensaver)**: The famous collection of screen savers shipped on most linux and unix systems, now available on your mobile phone!
+* **[XScreenSaver](https://f-droid.org/packages/org.jwz.xscreensaver/)**: The famous collection of screen savers shipped on most linux and unix systems, now available on your mobile phone!
 
-* **[OpenTopoMap Viewer](https://f-droid.org/app/org.nitri.opentopo)**: Opentopomap viewer with gpx import.
+* **[OpenTopoMap Viewer](https://f-droid.org/packages/org.nitri.opentopo/)**: Opentopomap viewer with gpx import.
 
-* **[UserLAnd](https://f-droid.org/app/tech.ula)**: Easiest way to run gnu/linux distros on android - no root required.
+* **[UserLAnd](https://f-droid.org/packages/tech.ula/)**: Easiest way to run gnu/linux distros on android - no root required.
 
 #### Updated apps
 
 In total, **{{ page.number_of_updated_apps }}** apps were updated this week. Here are the highlights:
 
-* {{ page.major }} **[MinCal Widget](https://f-droid.org/app/cat.mvmike.minimalcalendarwidget)** was updated from 0.4.0 to 1.0.0, citing "technical improvements". It now requires at least Android 8.0 to run, which is a _huge_ jump up from 4.4.
+* {{ page.major }} **[MinCal Widget](https://f-droid.org/packages/cat.mvmike.minimalcalendarwidget/)** was updated from 0.4.0 to 1.0.0, citing "technical improvements". It now requires at least Android 8.0 to run, which is a _huge_ jump up from 4.4.
 
-* {{ page.major }} A major update for **[Scarlet FDroid](https://f-droid.org/app/com.bijoysingh.quicknote)**, the rich note-taking app formerly known as **Material Notes**. It was updated from 4.5.4 to 5.9.7 bringing improved search (by tags) with color, improved export features allowing markdown, lots of new features, and new UX for note options and all menus.
+* {{ page.major }} A major update for **[Scarlet FDroid](https://f-droid.org/packages/com.bijoysingh.quicknote/)**, the rich note-taking app formerly known as **Material Notes**. It was updated from 4.5.4 to 5.9.7 bringing improved search (by tags) with color, improved export features allowing markdown, lots of new features, and new UX for note options and all menus.
 
-* **[Music Player GO](https://f-droid.org/app/com.iven.musicplayergo)** is a very slim music player with a colorful and simple "Unified UI". It was updated from 3.1.3.2 to 3.4.2, with UI refinements, adding a stroke to the selected album, theme changes, a search bar, and more.
+* **[Music Player GO](https://f-droid.org/packages/com.iven.musicplayergo/)** is a very slim music player with a colorful and simple "Unified UI". It was updated from 3.1.3.2 to 3.4.2, with UI refinements, adding a stroke to the selected album, theme changes, a search bar, and more.
 
-* **[aRevelation](https://f-droid.org/app/de.igloffstein.maik.aRevelation)**, a password manager, updated to 1.9 with a fix for Nokia 8 phones and other minor bugfixes.
+* **[aRevelation](https://f-droid.org/packages/de.igloffstein.maik.aRevelation/)**, a password manager, updated to 1.9 with a fix for Nokia 8 phones and other minor bugfixes.
 
-* **[Tutanota](https://f-droid.org/app/de.tutao.tutanota)** was updated from 3.37.2 to 3.40.3 with lots of changes. Now with multi-select in search view, storing of IP addresses changed to opt-in, security hardening, cleaning of content pasted to mail/signature editors, and many UI/UX changes and fixes.
+* **[Tutanota](https://f-droid.org/packages/de.tutao.tutanota/)** was updated from 3.37.2 to 3.40.3 with lots of changes. Now with multi-select in search view, storing of IP addresses changed to opt-in, security hardening, cleaning of content pasted to mail/signature editors, and many UI/UX changes and fixes.
 
-* Also a notable update for **[oandbackup](https://f-droid.org/app/dk.jens.backup)**, moving from 0.2.13 (released in March this year) to 0.3.4-universal. This adds a binary written in Rust to handle tasks which can only be done as root, and other improvements to the build.
+* Also a notable update for **[oandbackup](https://f-droid.org/packages/dk.jens.backup/)**, moving from 0.2.13 (released in March this year) to 0.3.4-universal. This adds a binary written in Rust to handle tasks which can only be done as root, and other improvements to the build.
 
-* **[Open Contacts](https://f-droid.org/app/opencontacts.open.com.opencontacts)**, the secure contact list, released 7.0 with a crash fix for lineageos, help text for caller ID, a fix for notifications on missed calls, and a "what's new" item in the main menu.
+* **[Open Contacts](https://f-droid.org/packages/opencontacts.open.com.opencontacts/)**, the secure contact list, released 7.0 with a crash fix for lineageos, help text for caller ID, a fix for notifications on missed calls, and a "what's new" item in the main menu.
 
-* **[G-Droid](https://f-droid.org/app/org.gdroid.gdroid)**, an alternative client for the F-Droid repository, was updated from 0.1.4 to 0.2.1, fixing the layout on very small and very large screens, fixing the update button for installed apps, a loading animation for loading images, 2 new main screen views, and other UI improvements and fixes.
+* **[G-Droid](https://f-droid.org/packages/org.gdroid.gdroid/)**, an alternative client for the F-Droid repository, was updated from 0.1.4 to 0.2.1, fixing the layout on very small and very large screens, fixing the update button for installed apps, a loading animation for loading images, 2 new main screen views, and other UI improvements and fixes.
 
-* **[The Light](https://f-droid.org/app/org.hlwd.bible)**, multi-language bible, was updated to 3.6, adding support for Android 8.0. The widget will be ported to Android 8.0 later, and is disabled for now.
+* **[The Light](https://f-droid.org/packages/org.hlwd.bible/)**, multi-language bible, was updated to 3.6, adding support for Android 8.0. The widget will be ported to Android 8.0 later, and is disabled for now.
 
-* **[AtmosphereLogger](https://f-droid.org/app/org.tamanegi.atmosphere)** is an atmospheric pressure logger using your device's barometer sensor. It came back to life after 2 years, going from 0.1.4 to 0.2.3. Unfortunately it does not have published changelogs, but it appears to have grown an export feature at least.
+* **[AtmosphereLogger](https://f-droid.org/packages/org.tamanegi.atmosphere/)** is an atmospheric pressure logger using your device's barometer sensor. It came back to life after 2 years, going from 0.1.4 to 0.2.3. Unfortunately it does not have published changelogs, but it appears to have grown an export feature at least.
 
-* **[Transistor](https://f-droid.org/app/org.y20k.transistor)**, a bare-bones app for listening to internet radio, released 3.1.0, featuring a new app icon, improved handling of links from radio-browser.info, a new color scheme, and several bug fixes.
+* **[Transistor](https://f-droid.org/packages/org.y20k.transistor/)**, a bare-bones app for listening to internet radio, released 3.1.0, featuring a new app icon, improved handling of links from radio-browser.info, a new color scheme, and several bug fixes.
 
 #### Tips and Feedback
 

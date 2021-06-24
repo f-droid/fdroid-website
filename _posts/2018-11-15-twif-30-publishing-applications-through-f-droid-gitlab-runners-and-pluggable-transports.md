@@ -22,7 +22,7 @@ This Week In F-Droid {{ page.edition }}, Week {{ page.date | date: "%V, %G" }} <
 In this edition: Publishing applications through F-Droid, Private GitLab runners, Pluggable Transports and F-Droid Matrix server up and running. There are 7 new and **{{ page.number_of_updated_apps }}** updated apps.
 <!--more-->
 
-**[F-Droid](https://f-droid.org/)** is a [repository](https://f-droid.org/packages/) of verified [free and open source](https://en.wikipedia.org/wiki/Free_and_open-source_software) Android apps, a **[client](https://f-droid.org/app/org.fdroid.fdroid)** to access it, as well as a whole "app store kit", providing all the tools needed to set up and run an app store. It is a community-run free software project developed by a wide range of contributors. This is their story this past week.
+**[F-Droid](https://f-droid.org/)** is a [repository](https://f-droid.org/packages/) of verified [free and open source](https://en.wikipedia.org/wiki/Free_and_open-source_software) Android apps, a **[client](https://f-droid.org/packages/org.fdroid.fdroid/)** to access it, as well as a whole "app store kit", providing all the tools needed to set up and run an app store. It is a community-run free software project developed by a wide range of contributors. This is their story this past week.
 
 #### Publishing applications through F-Droid
 
@@ -58,35 +58,35 @@ Registration is restricted to F-Droid contributors, so if you are a core F-Droid
 
 #### New apps
 
-* **[DarkCroc Theme](https://f-droid.org/app/de.spiritcroc.darkcroc.substratum)**: A dark substratum theme targeting android 9+.
-* **[Default Dark Theme](https://f-droid.org/app/de.spiritcroc.defaultdarktheme_oms)**: A dark substratum theme targeting android 7 & 8.
-* **[BeamControl for Smart Interface](https://f-droid.org/app/eu.halaser.beamctrl)**: Control / notification application for smart factory/industry 4.0 applications.
-* **[Bits & Bäume 2018](https://f-droid.org/app/info.metadude.android.bitsundbaeume.schedule)**: The schedule for "Bits & Bäume", a German sustainability conference happing on the weekend of 17 & 18 November / Die konferenz für digitalisierung und nachhaltigkeit.
-* **[SimpleEmail](https://f-droid.org/app/org.dystopia.email)**: Simple and minimalistic email app.
-* **[Android XMRig Miner](https://f-droid.org/app/org.elijaxapps.androidxmrigminer)**: Mine cryptocoins with xmrig miner on your smartphone.
-* **[G-Droid](https://f-droid.org/app/org.gdroid.gdroid)**: An alternative client app to browse the F-Droid repository.
+* **[DarkCroc Theme](https://f-droid.org/packages/de.spiritcroc.darkcroc.substratum/)**: A dark substratum theme targeting android 9+.
+* **[Default Dark Theme](https://f-droid.org/packages/de.spiritcroc.defaultdarktheme_oms/)**: A dark substratum theme targeting android 7 & 8.
+* **[BeamControl for Smart Interface](https://f-droid.org/packages/eu.halaser.beamctrl/)**: Control / notification application for smart factory/industry 4.0 applications.
+* **[Bits & Bäume 2018](https://f-droid.org/packages/info.metadude.android.bitsundbaeume.schedule/)**: The schedule for "Bits & Bäume", a German sustainability conference happing on the weekend of 17 & 18 November / Die konferenz für digitalisierung und nachhaltigkeit.
+* **[SimpleEmail](https://f-droid.org/packages/org.dystopia.email/)**: Simple and minimalistic email app.
+* **[Android XMRig Miner](https://f-droid.org/packages/org.elijaxapps.androidxmrigminer/)**: Mine cryptocoins with xmrig miner on your smartphone.
+* **[G-Droid](https://f-droid.org/packages/org.gdroid.gdroid/)**: An alternative client app to browse the F-Droid repository.
 
 #### Updated apps
 
 Lots of very small changes this week, at a total of **{{ page.number_of_updated_apps }}** updates. Here are the highlights:
 
-* **[FairEmail](https://f-droid.org/app/eu.faircode.email)** was updated from 1.143 to 1.153, now with advanced setting to allow editing sender address, delete operation in multiple sections, new provider "dismail.de", two-column view in landscape mode, improved quick settings tiles, colorized notifications (Android 8+) and lots of color-related changes, and several other UI/UX improvements. **Note that you will need to set up your accounts again after updating.**
+* **[FairEmail](https://f-droid.org/packages/eu.faircode.email/)** was updated from 1.143 to 1.153, now with advanced setting to allow editing sender address, delete operation in multiple sections, new provider "dismail.de", two-column view in landscape mode, improved quick settings tiles, colorized notifications (Android 8+) and lots of color-related changes, and several other UI/UX improvements. **Note that you will need to set up your accounts again after updating.**
 
-* **[Mastalab](https://f-droid.org/app/fr.gouv.etalab.mastodon)**, the Mastodon client, released 1.20.0 with the ability to use the direct timeline prior to Mastodon 2.6, see who boosted of favorited a toot, URL previews in toots including direct playing of videos, and several other improvements, changes, and bug fixes.
+* **[Mastalab](https://f-droid.org/packages/fr.gouv.etalab.mastodon/)**, the Mastodon client, released 1.20.0 with the ability to use the direct timeline prior to Mastodon 2.6, see who boosted of favorited a toot, URL previews in toots including direct playing of videos, and several other improvements, changes, and bug fixes.
 
-* **[MemeTastic](https://f-droid.org/app/io.github.gsantner.memetastic)**, an app to create memes also known as "image macros", was updated from 1.4.5 to 1.5.0, going back to its roots with a small amount of templates inside the project, and targeted at user-added templates in a local folder. Internet permission was removed and internet access completely disabled. It will no longer download from the MemeTastic archive.
+* **[MemeTastic](https://f-droid.org/packages/io.github.gsantner.memetastic/)**, an app to create memes also known as "image macros", was updated from 1.4.5 to 1.5.0, going back to its roots with a small amount of templates inside the project, and targeted at user-added templates in a local folder. Internet permission was removed and internet access completely disabled. It will no longer download from the MemeTastic archive.
 
-* **[Markor](https://f-droid.org/app/net.gsantner.markor)**, a full-featured [Markdown](https://commonmark.org) editor, released 1.4.0 with a new color picker and editor color themes. See the full list of changes in its [release blog post](https://gsantner.net/blog/2018/11/12/markor-release-v1.4.html).
+* **[Markor](https://f-droid.org/packages/net.gsantner.markor/)**, a full-featured [Markdown](https://commonmark.org) editor, released 1.4.0 with a new color picker and editor color themes. See the full list of changes in its [release blog post](https://gsantner.net/blog/2018/11/12/markor-release-v1.4.html).
 
-* **[Open Contacts](https://f-droid.org/app/opencontacts.open.com.opencontacts)**, a privacy-friendly contact list that can't be read by other apps, was updated from 5.0 to 6.0, with contact names now a bit bolder, contacts following similar structure to call logs with actions either side of contact, and the call log now updates contact names as soon as a contact is added, rather than ignoring existing calls in the log.
+* **[Open Contacts](https://f-droid.org/packages/opencontacts.open.com.opencontacts/)**, a privacy-friendly contact list that can't be read by other apps, was updated from 5.0 to 6.0, with contact names now a bit bolder, contacts following similar structure to call logs with actions either side of contact, and the call log now updates contact names as soon as a contact is added, rather than ignoring existing calls in the log.
 
-* **[The Light](https://f-droid.org/app/org.hlwd.bible)** released 3.5, now also in Portugese translation, and adding the Portuguese Bible: Almeida Corrigida Fiel.
+* **[The Light](https://f-droid.org/packages/org.hlwd.bible/)** released 3.5, now also in Portugese translation, and adding the Portuguese Bible: Almeida Corrigida Fiel.
 
-* **[Wrong PIN Shutdown](https://f-droid.org/app/org.nuntius35.wrongpinshutdown)** was updated to 7, fixing a bug on devices with a fingerprint reader. Unlocking the phone by fingerprint did not reset the wrong PIN counter, and this bug is now fixed. However, note that attempts to unlock the phone with a wrong fingerprint will not be registered.
+* **[Wrong PIN Shutdown](https://f-droid.org/packages/org.nuntius35.wrongpinshutdown/)** was updated to 7, fixing a bug on devices with a fingerprint reader. Unlocking the phone by fingerprint did not reset the wrong PIN counter, and this bug is now fixed. However, note that attempts to unlock the phone with a wrong fingerprint will not be registered.
 
-* **[Trackbook](https://f-droid.org/app/org.y20k.trackbook)**, a basic GPS logger with map, was updated from 1.1.11 to 1.1.13, fixing a crash and improving location at start of recordings.
+* **[Trackbook](https://f-droid.org/packages/org.y20k.trackbook/)**, a basic GPS logger with map, was updated from 1.1.11 to 1.1.13, fixing a crash and improving location at start of recordings.
 
-* **[Manyverse](https://f-droid.org/app/se.manyver)** updated from 0.1810.24-beta to 0.1811.12-beta. This updates fixes [a crash](https://gitlab.com/staltz/manyverse/issues/260) and improves the looks of the splash screen.
+* **[Manyverse](https://f-droid.org/packages/se.manyver/)** updated from 0.1810.24-beta to 0.1811.12-beta. This updates fixes [a crash](https://gitlab.com/staltz/manyverse/issues/260) and improves the looks of the splash screen.
 
   If you're interested in the off-the-grid social network Scuttlebutt behind this app, there's [a good essay about it](https://staltz.com/early-days-in-the-manyverse.html) by the creator of the app. It is nicely honest about the major difficulties of using the network, as well as suggesting possible solutions. (Credit: [switching.social](https://mastodon.at/users/switchingsocial/statuses/100933499495662465))
 

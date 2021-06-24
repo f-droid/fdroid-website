@@ -22,7 +22,7 @@ This Week In F-Droid {{ page.edition }}, Week {{ page.date | date: "%V, %G" }} <
 In this edition: Tagesschau running an F-Droid repo, starting up translation improvements, finalizing buildserver automation, and 2 new and {{ page.number_of_updated_apps }} updated apps.
 <!--more-->
 
-**[F-Droid](https://f-droid.org/)** is a [repository](https://f-droid.org/packages/) of verified [free and open source](https://en.wikipedia.org/wiki/Free_and_open-source_software) Android apps, a **[client](https://f-droid.org/app/org.fdroid.fdroid)** to access it, as well as a whole "app store kit", providing all the tools needed to set up and run an app store. It is a community-run free software project developed by a wide range of contributors. This is their story this past week.
+**[F-Droid](https://f-droid.org/)** is a [repository](https://f-droid.org/packages/) of verified [free and open source](https://en.wikipedia.org/wiki/Free_and_open-source_software) Android apps, a **[client](https://f-droid.org/packages/org.fdroid.fdroid/)** to access it, as well as a whole "app store kit", providing all the tools needed to set up and run an app store. It is a community-run free software project developed by a wide range of contributors. This is their story this past week.
 
 #### Tagesschau running their own F-Droid repository
 
@@ -42,8 +42,8 @@ Background for non-German readers: Tagesschau is essentially the German national
 
 #### New apps
 
-* **[Adaptive Brightness Tile](https://f-droid.org/app/com.rascarlo.adaptive.brightness.tile)**: Quick settings tile for adaptive brightness.
-* **[BookmarkOS](https://f-droid.org/app/com.weskenyon.bookmarkos)**: This application will allow you to share urls directly from your Android browsers right into BookmarkOS.
+* **[Adaptive Brightness Tile](https://f-droid.org/packages/com.rascarlo.adaptive.brightness.tile/)**: Quick settings tile for adaptive brightness.
+* **[BookmarkOS](https://f-droid.org/packages/com.weskenyon.bookmarkos/)**: This application will allow you to share urls directly from your Android browsers right into BookmarkOS.
 
 #### Updated apps
 
@@ -51,25 +51,25 @@ In total, **{{ page.number_of_updated_apps }}** apps were updated this week. Her
 
 * {{ page.featured }} Did you know that nowadays apps can track where you are and what you're looking at using inaudible (to humans) high-frequency sounds? Listening via your phone's microphone, apps containing certain trackerware pick up tones from TV, radio and web page ads, but also billboards, retail outlets and sports stadiums. See [this SC magazine article](https://www.scmagazineuk.com/invasive-apps-track-ultrasonic-sounds-via-mobile-microphone/article/1474717), for example.
 
-  Enter **[PilferShush Jammer](https://f-droid.org/app/cityfreqs.com.pilfershushjammer)**, both a passive and an active microphone jammer. Its primary mode of operation is to hold an exclusive lock on the microphone, blocking other apps from even opening it. If that doesn't work, or if you suspect system apps are in play, it also has an active jamming mode, emitting its own tones from the phone's speaker, which hopefully interfere with these tracking sounds. Obviously this is less reliable, and of course, it's even better to not install hostile closed-source apps in the first place.
+  Enter **[PilferShush Jammer](https://f-droid.org/packages/cityfreqs.com.pilfershushjammer/)**, both a passive and an active microphone jammer. Its primary mode of operation is to hold an exclusive lock on the microphone, blocking other apps from even opening it. If that doesn't work, or if you suspect system apps are in play, it also has an active jamming mode, emitting its own tones from the phone's speaker, which hopefully interfere with these tracking sounds. Obviously this is less reliable, and of course, it's even better to not install hostile closed-source apps in the first place.
 
   So this week PilferShush Jammer updated from 2.0.13 to 2.2.2, and it can now scan other apps, list their capabilities, and show which ones contain the NUHF beacon SDK. It can also scan a single app and show if it's accessing the microphone, among other things. Finally there are a new notifications channel, and other small improvements and bug fixes.
 
-* **[Yalp Store](https://f-droid.org/app/com.github.yeriomin.yalpstore)** was updated from 0.43 to 0.45-legacy, adding multiple accounts support and properly handling APK splits, and a slew of other bug fixes and improvements.
+* **[Yalp Store](https://f-droid.org/packages/com.github.yeriomin.yalpstore/)** was updated from 0.43 to 0.45-legacy, adding multiple accounts support and properly handling APK splits, and a slew of other bug fixes and improvements.
 
-* **[PocketMaps](https://f-droid.org/app/com.junjunguo.pocketmaps)** is a map viewer with navigation system. It was updated from 2.3 to 2.6, now showing the unzipping process on the status bar, and with a new select-option to enter map on each startup, a help entry in the main menu linking to online documentation, and several crash fixes.
+* **[PocketMaps](https://f-droid.org/packages/com.junjunguo.pocketmaps/)** is a map viewer with navigation system. It was updated from 2.3 to 2.6, now showing the unzipping process on the status bar, and with a new select-option to enter map on each startup, a help entry in the main menu linking to online documentation, and several crash fixes.
 
-* **[MatLog Libre](https://f-droid.org/app/com.pluscubed.matloglibre)** shows a scrolling (tailed) view of the Android "logcat" system log, hence the goofy name. In version 1.2.0 the widget was fixed for Android 8+, and a filtered tags setting, progress bar loading from file and kernel log in shared zip were added. Among other small improvements, several crashes were also fixed.
+* **[MatLog Libre](https://f-droid.org/packages/com.pluscubed.matloglibre/)** shows a scrolling (tailed) view of the Android "logcat" system log, hence the goofy name. In version 1.2.0 the widget was fixed for Android 8+, and a filtered tags setting, progress bar loading from file and kernel log in shared zip were added. Among other small improvements, several crashes were also fixed.
 
-* {{ page.major }} The "simple mobile tools" **[File Manager](https://f-droid.org/app/com.simplemobiletools.filemanager)** and **[Flashlight](https://f-droid.org/app/com.simplemobiletools.flashlight)** were updated to 5.0.1 and 5.0.0 respectively, bumping the minimum required Android version to 5.0 (from 4.1), and replacing the G+ button with Reddit, among some small fixes.
+* {{ page.major }} The "simple mobile tools" **[File Manager](https://f-droid.org/packages/com.simplemobiletools.filemanager/)** and **[Flashlight](https://f-droid.org/packages/com.simplemobiletools.flashlight/)** were updated to 5.0.1 and 5.0.0 respectively, bumping the minimum required Android version to 5.0 (from 4.1), and replacing the G+ button with Reddit, among some small fixes.
 
-* {{ page.major }} **[Open Link With](https://f-droid.org/app/com.tasomaniac.openwith.floss)** was updated from 1.9-floss to 2.3-floss. This app lets you open a link in another native app when you're stuck in the browser. It now supports browser selection, letting you choose between all browsers (previous behavior), one single browser, or to never suggest any browsers at all. Frequently-requested advanced settings were also added, and you can now set OLW itself as a browser, making all link clicks go through OLW automatically instead of having to use "share link".
+* {{ page.major }} **[Open Link With](https://f-droid.org/packages/com.tasomaniac.openwith.floss/)** was updated from 1.9-floss to 2.3-floss. This app lets you open a link in another native app when you're stuck in the browser. It now supports browser selection, letting you choose between all browsers (previous behavior), one single browser, or to never suggest any browsers at all. Frequently-requested advanced settings were also added, and you can now set OLW itself as a browser, making all link clicks go through OLW automatically instead of having to use "share link".
 
-* **[Password Store](https://f-droid.org/app/com.zeapo.pwdstore)** stores passwords in simple text files which are encrypted with OpenPGP. This update to 1.3.1 covers a new adaptive icon, ability to install to external [SD card](https://en.wikipedia.org/wiki/Secure_Digital), different password sort order, display of HOTP code if present, secure password entry, and other bug fixes and smaller improvements.
+* **[Password Store](https://f-droid.org/packages/com.zeapo.pwdstore/)** stores passwords in simple text files which are encrypted with OpenPGP. This update to 1.3.1 covers a new adaptive icon, ability to install to external [SD card](https://en.wikipedia.org/wiki/Secure_Digital), different password sort order, display of HOTP code if present, secure password entry, and other bug fixes and smaller improvements.
 
-* **[Conversations](https://f-droid.org/app/eu.siacs.conversations)** was updated from 2.3.2+fcr to 2.3.4+fcr, updating translations, fixing connection issues with user@ip type JIDs and fixing sending OMEMO encrypted files to ChatSecure iOS users.
+* **[Conversations](https://f-droid.org/packages/eu.siacs.conversations/)** was updated from 2.3.2+fcr to 2.3.4+fcr, updating translations, fixing connection issues with user@ip type JIDs and fixing sending OMEMO encrypted files to ChatSecure iOS users.
 
-* {{ page.featured }} Huge updates for **[Mastalab](https://f-droid.org/app/fr.gouv.etalab.mastodon)** yet again! This week it updated from 1.15.2 to 1.17.1, covering:
+* {{ page.featured }} Huge updates for **[Mastalab](https://f-droid.org/packages/fr.gouv.etalab.mastodon/)** yet again! This week it updated from 1.15.2 to 1.17.1, covering:
   - **Full [PeerTube](https://en.wikipedia.org/wiki/PeerTube) support**: Comment/Follow/Boost/Reply/Fav from your own Mastodon account!
   - New layout for PeerTube instances
   - New video player to make PeerTube compatible with all devices
@@ -78,19 +78,19 @@ In total, **{{ page.number_of_updated_apps }}** apps were updated this week. Her
   - Added a red border to media that don't have a description when composing
   - Several smaller enhancements and bug fixes
 
-* **[Riot.im](https://f-droid.org/app/im.vector.alpha)** and **[miniVector](https://f-droid.org/app/com.lavadip.miniVector)** both updated from 0.8.15 to 0.8.18. Riot is a [Matrix](https://matrix.org) client for (group) chat and VoiP/video, with optional end-to-end encryption. miniVector is a lightweight fork of Riot, dropping some heavy dependencies and needing less permissions, at the cost of lacking VoiP/video support. Changes include improvements to dialogs, video messages, and the previewer activity; a new Status.im theme; and support for "lazy loading", a huge under-the-hood change which reduces startup time, memory, and data consumption. This last feature is still considered unstable, and needs to be enabled via a "labs" setting.
+* **[Riot.im](https://f-droid.org/packages/im.vector.alpha/)** and **[miniVector](https://f-droid.org/packages/com.lavadip.miniVector/)** both updated from 0.8.15 to 0.8.18. Riot is a [Matrix](https://matrix.org) client for (group) chat and VoiP/video, with optional end-to-end encryption. miniVector is a lightweight fork of Riot, dropping some heavy dependencies and needing less permissions, at the cost of lacking VoiP/video support. Changes include improvements to dialogs, video messages, and the previewer activity; a new Status.im theme; and support for "lazy loading", a huge under-the-hood change which reduces startup time, memory, and data consumption. This last feature is still considered unstable, and needs to be enabled via a "labs" setting.
 
-* **[Syncopoli](https://f-droid.org/app/org.amoradi.syncopoli)** is an rsync client for your phone (currently only in the direction from phone to remote). Version v0.5 adds the ability to add multiple source directories, ability to verify ssh host fingerprint, proper space and string handling in rsync options, global configuration to exported config file, and various typo and crash fixes.
+* **[Syncopoli](https://f-droid.org/packages/org.amoradi.syncopoli/)** is an rsync client for your phone (currently only in the direction from phone to remote). Version v0.5 adds the ability to add multiple source directories, ability to verify ssh host fingerprint, proper space and string handling in rsync options, global configuration to exported config file, and various typo and crash fixes.
 
-* **[Blokada v3 (ad blocker)](https://f-droid.org/app/org.blokada.alarm)** was updated from 3.4.100500 to 3.6.101401, with improved general tunnel stability, decreased data usage, new advanced settings screen, a setting to prevent the system from stopping Blokada when power saving, a setting to only update lists on WiFi, other small enhancements, and numerous bug fixes.
+* **[Blokada v3 (ad blocker)](https://f-droid.org/packages/org.blokada.alarm/)** was updated from 3.4.100500 to 3.6.101401, with improved general tunnel stability, decreased data usage, new advanced settings screen, a setting to prevent the system from stopping Blokada when power saving, a setting to only update lists on WiFi, other small enhancements, and numerous bug fixes.
 
-* **[The Light](https://f-droid.org/app/org.hlwd.bible)** has the bible in multiple languages. Version 3.4 is a small maintenance release adding 13 articles and 7 Youtubers.
+* **[The Light](https://f-droid.org/packages/org.hlwd.bible/)** has the bible in multiple languages. Version 3.4 is a small maintenance release adding 13 articles and 7 Youtubers.
 
-* **[Emerald Launcher](https://f-droid.org/app/ru.henridellal.emerald)** is a lightweight customizable launcher which supports icon packs and has a good number of settings for its size. This week it updated from 0.5.6.2 to 0.6.0.2, now with shortcuts, fullscreen mode, "show keyboard on start" option, switch categories with volume buttons, improved tutorial theme, pick custom icon from memory, and several fixes.
+* **[Emerald Launcher](https://f-droid.org/packages/ru.henridellal.emerald/)** is a lightweight customizable launcher which supports icon packs and has a good number of settings for its size. This week it updated from 0.5.6.2 to 0.6.0.2, now with shortcuts, fullscreen mode, "show keyboard on start" option, switch categories with volume buttons, improved tutorial theme, pick custom icon from memory, and several fixes.
 
-* **[Manyverse](https://f-droid.org/app/se.manyver)** was updated from 0.18.10-02.beta to 0.1810.16-beta, and now lets you edit your profile picture, and does the initial sync 5x faster or better.
+* **[Manyverse](https://f-droid.org/packages/se.manyver/)** was updated from 0.18.10-02.beta to 0.1810.16-beta, and now lets you edit your profile picture, and does the initial sync 5x faster or better.
 
-* **[AnySoftKeyboard](https://f-droid.org/app/com.menny.android.anysoftkeyboard)** was updated from 1.9.2055 to 1.9.2445 bringing:
+* **[AnySoftKeyboard](https://f-droid.org/packages/com.menny.android.anysoftkeyboard/)** was updated from 1.9.2055 to 1.9.2445 bringing:
   - Power-Saving mode improvements - you can pick which features to include in Power-Saving.
   - Also, we allow switching to dark, simple theme in Power-Saving mode. But this is optional.
   - New Workman layout, Terminal generic-top-row and long-press fixes. Done by Alex Griffin.
@@ -101,7 +101,7 @@ In total, **{{ page.number_of_updated_apps }}** apps were updated this week. Her
 
 The following app was also updated, but will not be shown as upgradeable unless you enable "Unstable updates" in F-Droid settings:
 
-* **[ownCloud](https://f-droid.org/app/com.owncloud.android)** was updated from 2.9.0-beta.1 to 2.9.0-beta.2
+* **[ownCloud](https://f-droid.org/packages/com.owncloud.android/)** was updated from 2.9.0-beta.1 to 2.9.0-beta.2
 
 #### Tips and Feedback
 

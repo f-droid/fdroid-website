@@ -13,7 +13,7 @@ This Week In F-Droid {{ page.edition }}, Week {{ page.date | date: "%V, %G" }} <
 A light edition this week, due to the update process being stuck since Monday. This week we learn of BotBot.me shutting down, 4 new apps and {{ page.number_of_updated_apps }} updates, with a major update for SnoopSnitch.
 <!--more-->
 
-**[F-Droid](https://f-droid.org/)** is a [repository](https://f-droid.org/packages/) of verified [free and open source](https://en.wikipedia.org/wiki/Free_and_open-source_software) Android apps, a **[client](https://f-droid.org/app/org.fdroid.fdroid)** to access it, as well as a whole "app store kit", providing all the tools needed to set up and run an app store. It is a community-run free software project developed by a wide range of contributors. This is their story this past week.
+**[F-Droid](https://f-droid.org/)** is a [repository](https://f-droid.org/packages/) of verified [free and open source](https://en.wikipedia.org/wiki/Free_and_open-source_software) Android apps, a **[client](https://f-droid.org/packages/org.fdroid.fdroid/)** to access it, as well as a whole "app store kit", providing all the tools needed to set up and run an app store. It is a community-run free software project developed by a wide range of contributors. This is their story this past week.
 
 #### BotBot.me closing its doors
 
@@ -21,26 +21,26 @@ Citing the new [GDPR](https://en.wikipedia.org/wiki/General_Data_Protection_Regu
 
 #### New apps
 
-* **[Nomad](https://f-droid.org/app/com.dfa.hubzilla_android)**: This is an unofficial client for the distributed social network Hubzilla
-* **[X11-Basic](https://f-droid.org/app/net.sourceforge.x11basic)**: X11-Basic is a dialect of the BASIC programming language with graphics capability. It has a very rich command set, though it is still easy to learn.
-* **[Disroot App](https://f-droid.org/app/org.disroot.disrootapp)**: Disroot app is like your Swiss Army knife to the Disroot platform
-* **[AFReplacer](https://f-droid.org/app/ru.ifproject.android.afr)**: Replace Amazfit Bip watchfaces in Mi Fit
+* **[Nomad](https://f-droid.org/packages/com.dfa.hubzilla_android/)**: This is an unofficial client for the distributed social network Hubzilla
+* **[X11-Basic](https://f-droid.org/packages/net.sourceforge.x11basic/)**: X11-Basic is a dialect of the BASIC programming language with graphics capability. It has a very rich command set, though it is still easy to learn.
+* **[Disroot App](https://f-droid.org/packages/org.disroot.disrootapp/)**: Disroot app is like your Swiss Army knife to the Disroot platform
+* **[AFReplacer](https://f-droid.org/packages/ru.ifproject.android.afr/)**: Replace Amazfit Bip watchfaces in Mi Fit
 
 #### Updated apps
 
 In total, **{{ page.number_of_updated_apps }}** apps were updated this week. Here are the highlights:
 
-* **[Apple Flinger](https://f-droid.org/app/com.gitlab.ardash.appleflinger.android)** is a game inspired by Angry Birds. Version 1.5.0 adds achievements, and fixes a scoring bug.
+* **[Apple Flinger](https://f-droid.org/packages/com.gitlab.ardash.appleflinger.android/)** is a game inspired by Angry Birds. Version 1.5.0 adds achievements, and fixes a scoring bug.
 
-* **[WaveUp](https://f-droid.org/app/com.jarsilio.android.waveup)**: Wake up your phone - switch the screen on - when you wave over the proximity sensor. Version 2.3.0 has a new "excluded apps" list. 
+* **[WaveUp](https://f-droid.org/packages/com.jarsilio.android.waveup/)**: Wake up your phone - switch the screen on - when you wave over the proximity sensor. Version 2.3.0 has a new "excluded apps" list. 
 
-* {{ page.major }} **[SnoopSnitch](https://f-droid.org/app/de.srlabs.snoopsnitch)** was updated from 1.0.3 to 2.0.7. SnoopSnitch is a tool to check mobile network security on compatible phones with Root access. This update introduces the Android patch analysis feature, and reduces battery consumption. Also includes various UI/UX improvements, bugfixes and stability improvements.
+* {{ page.major }} **[SnoopSnitch](https://f-droid.org/packages/de.srlabs.snoopsnitch/)** was updated from 1.0.3 to 2.0.7. SnoopSnitch is a tool to check mobile network security on compatible phones with Root access. This update introduces the Android patch analysis feature, and reduces battery consumption. Also includes various UI/UX improvements, bugfixes and stability improvements.
 
-* **[FairEmail](https://f-droid.org/app/eu.faircode.email)** was updated from 0.69 to 0.71, now sending plain text as alternative, and with updated tools and libraries, updated translations, and miscellaneous small improvements and bug fixes.
+* **[FairEmail](https://f-droid.org/packages/eu.faircode.email/)** was updated from 0.69 to 0.71, now sending plain text as alternative, and with updated tools and libraries, updated translations, and miscellaneous small improvements and bug fixes.
 
-* **[Mastalab](https://f-droid.org/app/fr.gouv.etalab.mastodon)**, the Mastodon client, clocks in with 1.13.6 at F-Droid. Conversations can now be opened from remote instances, and fit preview media are displayed in a 2x2 grid. Issues with URLs, filters and notifications were addressed and some crashes were fixed.
+* **[Mastalab](https://f-droid.org/packages/fr.gouv.etalab.mastodon/)**, the Mastodon client, clocks in with 1.13.6 at F-Droid. Conversations can now be opened from remote instances, and fit preview media are displayed in a 2x2 grid. Issues with URLs, filters and notifications were addressed and some crashes were fixed.
 
-* **[Authorizer](https://f-droid.org/app/net.tjado.passwdsafe)** releases its first stable version, 0.3.0, after more than a year of inactivity. Authorizer turns an old smartphone into a hardware password manager, emulating an USB keyboard. This release now requires Android 5.0 to run (up from 4.0) and adds an OTP feature, placeholder feature, asymmetric encrypted backup, privacy policy, and several bug fixes and smaller changes.
+* **[Authorizer](https://f-droid.org/packages/net.tjado.passwdsafe/)** releases its first stable version, 0.3.0, after more than a year of inactivity. Authorizer turns an old smartphone into a hardware password manager, emulating an USB keyboard. This release now requires Android 5.0 to run (up from 4.0) and adds an OTP feature, placeholder feature, asymmetric encrypted backup, privacy policy, and several bug fixes and smaller changes.
 
 #### Tips and Feedback
 

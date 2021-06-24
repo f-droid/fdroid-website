@@ -131,7 +131,7 @@ encourage the developers to create a dedicate page if possible.
 
 In addition some software, even being Free and Open Source software, may
 do practices which can be considered undesirable and that we consider
-[_AntiFeatures_](https://f-droid.org/wiki/page/Antifeatures)". Where possible the F-Droid
+[_AntiFeatures_](https://monitor.f-droid.org/anti-features)". Where possible the F-Droid
 community still include these applications in the repository but
 flagging and cataloging these antifeatures in order to warn users (on
 the F-Droid client and on the web repository browser) by any

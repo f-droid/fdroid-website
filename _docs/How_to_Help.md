@@ -20,7 +20,7 @@ If you experience problems with the site or client software, you can
 report them in the [issue tracker](https://gitlab.com/u/fdroid), discuss
 them in the [Forum](https://forum.f-droid.org/), on [Matrix](https://matrix.to/#/#fdroid:f-droid.org) or on IRC
 ([#fdroid on OFTC](https://webchat.oftc.net/?randomnick=1&channels=fdroid&prompt=1)).
-Take a look at the [Repository Maintenance](https://f-droid.org/wiki/page/Repository_Maintenance)
+Take a look at the [Repository Maintenance](https://monitor.f-droid.org/builds)
 page to see how you can help keeping apps and their metadata up to
 date.
 

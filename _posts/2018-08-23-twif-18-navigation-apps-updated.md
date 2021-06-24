@@ -10,7 +10,7 @@ This Week in F-Droid 18, Week 34, 2018.
 Highlights: 11 newly released apps, OsmAnd and Maps receive major updates, upcoming talks at F/LOSS conferences, and preliminary discussion on efforts to decentralise F-droid index creation.
 <!--more-->
 
-**[F-Droid](https://f-droid.org/)** is a **[repository](https://f-droid.org/packages/)** of verified **[free and open source](https://en.wikipedia.org/wiki/Free_and_open-source_software)** Android apps, a **[client](https://f-droid.org/app/org.fdroid.fdroid)** to access it, as well as a whole "app store kit", providing all the tools needed to set up and run an app store. It is a community-run free software project developed by a wide range of contributors. This is their story this past week.
+**[F-Droid](https://f-droid.org/)** is a **[repository](https://f-droid.org/packages/)** of verified **[free and open source](https://en.wikipedia.org/wiki/Free_and_open-source_software)** Android apps, a **[client](https://f-droid.org/packages/org.fdroid.fdroid/)** to access it, as well as a whole "app store kit", providing all the tools needed to set up and run an app store. It is a community-run free software project developed by a wide range of contributors. This is their story this past week.
 
 
 #### Upcoming Conferences
@@ -22,17 +22,17 @@ Members of the F-Droid community love to get out and spread the word about F-Dro
 
 #### Added Apps
 
-* **[LaaNo](https://f-droid.org/app/com.bytesforge.linkasanote)**: Bind notes to links and sync them with Nextcloud
-* **[IPCam Demo](https://f-droid.org/app/com.github.niqdev.ipcam)**: MJPEG video streaming on Android
-* **[FIND3 Scanner](https://f-droid.org/app/com.internalpositioning.find3.find3app)**: Scan Bluetooth and WiFi for FIND3
-* **[Wanicchou](https://f-droid.org/app/com.waifusims.wanicchou)**: Online Japanese-Japanese Dictionary with Anki support
-* **[wownerujo](https://f-droid.org/app/com.wownero.wownerujo)**: Wownero wallet
-* **[Meshenger](https://f-droid.org/app/d.d.meshenger)**: An Open-Source P2P Messenger
-* **[OpenUntis](https://f-droid.org/app/de.perflyst.untis)**: An alternative FLOSS client for the Untis timetable system
-* **[AnExplorer Pro](https://f-droid.org/app/dev.dworks.apps.anexplorer.pro)**: All-in-one file management tools
-* **[Mundraub](https://f-droid.org/app/eu.quelltext.mundraub)**: Unofficial App for Mundraub.org
-* **[Techahashi](https://f-droid.org/app/negativedensity.techahashi)**: Minimal presentation tool, Takahashi method with technical upgrades
-* **[OpenFool](https://f-droid.org/app/ru.hyst329.openfool)**  OpenFool is a free and open source Fool (Durak)** card game for desktop and Android.
+* **[LaaNo](https://f-droid.org/packages/com.bytesforge.linkasanote/)**: Bind notes to links and sync them with Nextcloud
+* **[IPCam Demo](https://f-droid.org/packages/com.github.niqdev.ipcam/)**: MJPEG video streaming on Android
+* **[FIND3 Scanner](https://f-droid.org/packages/com.internalpositioning.find3.find3app/)**: Scan Bluetooth and WiFi for FIND3
+* **[Wanicchou](https://f-droid.org/packages/com.waifusims.wanicchou/)**: Online Japanese-Japanese Dictionary with Anki support
+* **[wownerujo](https://f-droid.org/packages/com.wownero.wownerujo/)**: Wownero wallet
+* **[Meshenger](https://f-droid.org/packages/d.d.meshenger/)**: An Open-Source P2P Messenger
+* **[OpenUntis](https://f-droid.org/packages/de.perflyst.untis/)**: An alternative FLOSS client for the Untis timetable system
+* **[AnExplorer Pro](https://f-droid.org/packages/dev.dworks.apps.anexplorer.pro/)**: All-in-one file management tools
+* **[Mundraub](https://f-droid.org/packages/eu.quelltext.mundraub/)**: Unofficial App for Mundraub.org
+* **[Techahashi](https://f-droid.org/packages/negativedensity.techahashi/)**: Minimal presentation tool, Takahashi method with technical upgrades
+* **[OpenFool](https://f-droid.org/packages/ru.hyst329.openfool/)**  OpenFool is a free and open source Fool (Durak)** card game for desktop and Android.
 
 11 apps were added
 
@@ -40,17 +40,17 @@ Members of the F-Droid community love to get out and spread the word about F-Dro
 
 In total, 62 apps were updated this week. Here are the highlights.
 
-* {{ page.featured }} **[Maps](https://f-droid.org/app/com.github.axet.maps)** is an offline openstreetmap app. Version 8.3.5-3 finally brings a fix that allows users to log in to OpenStreetMap.org so they can edit the map.
-* Everybody loves the SimpleMobileTools from Tibor Kaputa. **[Gallery](https://f-droid.org/app/com.simplemobiletools.gallery)** version 4.6.1 now supports SVG images making it one of the few Android apps to do so. Further, the fullscreen image support has been improved along with other smaller parts of the UX.
-* {{ page.featured }} **[A Photo Manager](https://f-droid.org/app/de.k3b.android.androFotoFinder)** the gallery app with tag support and powerfull Openstreetmap integration has received a major update to 0.7.0 with new icons. Major improvements include a new search bar for finding photos along with a date-picker to choose "virtual-albums' from folder-picker or any file manager. An upcoming bugfix release to 0.7.1 next week will fix the broken “show in new gallery/map”.
-* The testing only **[Bitcoin Wallet [testnet3]](https://f-droid.org/app/de.schildbach.wallet_test)** was updated from 6.29 to 6.30 and now builds reproducibly.
-* **[Tutanota](https://f-droid.org/app/de.tutao.tutanota)**, an encrypted email client, just came to F-Droid last week and has already received a minor bug fix release. It was updated from 3.35.13 to 3.36.1 fixing a bug with the 2FA dialog and a few other minor stability and performance bugs. 
-* While some users may shy away from YouTube, F-Droid still provides several high quality open-source apps to help you binge on YouTube videos. **[SkyTube](https://f-droid.org/app/free.rm.skytube.oss)** receieved a major update to version 2.9.0 bringing a slough of new features including video blocking, volume and brightness gestures, search history, a new video player, better video and playlist support and a new icon. 
-* {{ page.featured }} **[OsmAnd~](https://f-droid.org/app/net.osmand.plus)** was updated from 3.0.4 to 3.1.6. The most exciting change with this update is improved OSM editing. Users can now modify tags on multinode objects in OSM such as building or roads. Previously only point objects could modified. Other changes include a fix for OSM notes and refactored and improved wikivoyage and wikipedia articles in French and Italian.
-* **[Gadgetbridge](https://f-droid.org/app/nodomain.freeyourgadget.gadgetbridge)** allows you to communicate with many types of devices including Pebble, Mi Band, Amazon Bip, and Hplus.  Version 0.29.1 brings better language and notifcation support to the Mi Band 3 and began implementation of start and end of sleep statistics. 
-* **[OpenFoodFacts](https://f-droid.org/app/openfoodfacts.github.scrachx.openfood)** provides a public database of food ingredients, allergens, and nutrition facts. Version 2.9.0 allows users to edit any product on Open Pet Food Facts. It also brings new translations in Slovak, Hebrew, Spanish, Arabic, Dutch, Hungarian, Vietnamese, and more. OpenBeautyFacts and OpenPetFoodFacts received similar updates.
-* **[Tremotesf](https://f-droid.org/app/org.equeim.tremotesf)**, the remote control for the Transmission BitTorrent client was updated to version 1.8.1. This fixes a crash when disconnecting from a server. 
-* The Android inventory agent, **[Inventory](https://f-droid.org/app/org.flyve.inventory.agent)**, got its 1.0 release. This is major update brings new anonymous voluntary data sharing, a new main app layout, an overhauled interface, and modern Android permission dialogs. 
+* {{ page.featured }} **[Maps](https://f-droid.org/packages/com.github.axet.maps/)** is an offline openstreetmap app. Version 8.3.5-3 finally brings a fix that allows users to log in to OpenStreetMap.org so they can edit the map.
+* Everybody loves the SimpleMobileTools from Tibor Kaputa. **[Gallery](https://f-droid.org/packages/com.simplemobiletools.gallery/)** version 4.6.1 now supports SVG images making it one of the few Android apps to do so. Further, the fullscreen image support has been improved along with other smaller parts of the UX.
+* {{ page.featured }} **[A Photo Manager](https://f-droid.org/packages/de.k3b.android.androFotoFinder/)** the gallery app with tag support and powerfull Openstreetmap integration has received a major update to 0.7.0 with new icons. Major improvements include a new search bar for finding photos along with a date-picker to choose "virtual-albums' from folder-picker or any file manager. An upcoming bugfix release to 0.7.1 next week will fix the broken “show in new gallery/map”.
+* The testing only **[Bitcoin Wallet [testnet3]](https://f-droid.org/packages/de.schildbach.wallet_test/)** was updated from 6.29 to 6.30 and now builds reproducibly.
+* **[Tutanota](https://f-droid.org/packages/de.tutao.tutanota/)**, an encrypted email client, just came to F-Droid last week and has already received a minor bug fix release. It was updated from 3.35.13 to 3.36.1 fixing a bug with the 2FA dialog and a few other minor stability and performance bugs. 
+* While some users may shy away from YouTube, F-Droid still provides several high quality open-source apps to help you binge on YouTube videos. **[SkyTube](https://f-droid.org/packages/free.rm.skytube.oss/)** receieved a major update to version 2.9.0 bringing a slough of new features including video blocking, volume and brightness gestures, search history, a new video player, better video and playlist support and a new icon. 
+* {{ page.featured }} **[OsmAnd~](https://f-droid.org/packages/net.osmand.plus/)** was updated from 3.0.4 to 3.1.6. The most exciting change with this update is improved OSM editing. Users can now modify tags on multinode objects in OSM such as building or roads. Previously only point objects could modified. Other changes include a fix for OSM notes and refactored and improved wikivoyage and wikipedia articles in French and Italian.
+* **[Gadgetbridge](https://f-droid.org/packages/nodomain.freeyourgadget.gadgetbridge/)** allows you to communicate with many types of devices including Pebble, Mi Band, Amazon Bip, and Hplus.  Version 0.29.1 brings better language and notifcation support to the Mi Band 3 and began implementation of start and end of sleep statistics. 
+* **[OpenFoodFacts](https://f-droid.org/packages/openfoodfacts.github.scrachx.openfood/)** provides a public database of food ingredients, allergens, and nutrition facts. Version 2.9.0 allows users to edit any product on Open Pet Food Facts. It also brings new translations in Slovak, Hebrew, Spanish, Arabic, Dutch, Hungarian, Vietnamese, and more. OpenBeautyFacts and OpenPetFoodFacts received similar updates.
+* **[Tremotesf](https://f-droid.org/packages/org.equeim.tremotesf/)**, the remote control for the Transmission BitTorrent client was updated to version 1.8.1. This fixes a crash when disconnecting from a server. 
+* The Android inventory agent, **[Inventory](https://f-droid.org/packages/org.flyve.inventory.agent/)**, got its 1.0 release. This is major update brings new anonymous voluntary data sharing, a new main app layout, an overhauled interface, and modern Android permission dialogs. 
 
 #### In the next TWIF
 

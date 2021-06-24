@@ -28,7 +28,7 @@ There are **{{ page.number_of_added_apps }}** new and **{{ page.number_of_update
 
 <!--more-->
 
-**[F-Droid](https://f-droid.org/)** is a [repository](https://f-droid.org/packages/) of verified [free and open source](https://en.wikipedia.org/wiki/Free_and_open-source_software) Android apps, a **[client](https://f-droid.org/app/org.fdroid.fdroid)** to access it, as well as a whole "app store kit", providing all the tools needed to set up and run an app store. It is a community-run free software project developed by a wide range of contributors. This is their story this past week.
+**[F-Droid](https://f-droid.org/)** is a [repository](https://f-droid.org/packages/) of verified [free and open source](https://en.wikipedia.org/wiki/Free_and_open-source_software) Android apps, a **[client](https://f-droid.org/packages/org.fdroid.fdroid/)** to access it, as well as a whole "app store kit", providing all the tools needed to set up and run an app store. It is a community-run free software project developed by a wide range of contributors. This is their story this past week.
 
 ### F-Droid work
 
@@ -40,43 +40,43 @@ In other news, the translation work with Weblate is starting to pay off for smoo
 
 ### New apps
 
-* **[Working Time Alert](https://f-droid.org/app/com.androidfromfrankfurt.workingtimealert)**: Never miss the time to go home.
-* **[Aegis](https://f-droid.org/app/com.beemdevelopment.aegis)**
-* **[HeaterRC](https://f-droid.org/app/com.dynamite.heaterrc)**: Remote control heater via sms.
-* **[Ghost Commander - SFTP plugin](https://f-droid.org/app/com.ghostsq.commander.sftp)**: Access files over sftp.
-* **[VirtualXposed](https://f-droid.org/app/io.va.exposed)**: Use xposed without root, unlock the bootloader or modify system image.
-* **[Aard 2](https://f-droid.org/app/itkach.aard2)**: Offline dictionary.
-* **[Firefox Lite](https://f-droid.org/app/org.mozilla.rocket)**: Fast and lightweight web browser.
+* **[Working Time Alert](https://f-droid.org/packages/com.androidfromfrankfurt.workingtimealert/)**: Never miss the time to go home.
+* **[Aegis](https://f-droid.org/packages/com.beemdevelopment.aegis/)**
+* **[HeaterRC](https://f-droid.org/packages/com.dynamite.heaterrc/)**: Remote control heater via sms.
+* **[Ghost Commander - SFTP plugin](https://f-droid.org/packages/com.ghostsq.commander.sftp/)**: Access files over sftp.
+* **[VirtualXposed](https://f-droid.org/packages/io.va.exposed/)**: Use xposed without root, unlock the bootloader or modify system image.
+* **[Aard 2](https://f-droid.org/packages/itkach.aard2/)**: Offline dictionary.
+* **[Firefox Lite](https://f-droid.org/packages/org.mozilla.rocket/)**: Fast and lightweight web browser.
 
 ### Updated apps
 
 In total, **{{ page.number_of_updated_apps }}** apps were updated this week. Here are the highlights:
 
-* **[EteSync](https://f-droid.org/app/com.etesync.syncadapter)** was [updated](https://github.com/etesync/android/blob/HEAD/ChangeLog.md) to 1.4.0, changing the sync to also do the initial preparation in chunks, which should help with massive syncs.
+* **[EteSync](https://f-droid.org/packages/com.etesync.syncadapter/)** was [updated](https://github.com/etesync/android/blob/HEAD/ChangeLog.md) to 1.4.0, changing the sync to also do the initial preparation in chunks, which should help with massive syncs.
 
-* **[Cythara](https://f-droid.org/app/com.github.cythara)** 3.1 [adds](https://github.com/gstraube/cythara/releases) viola tuning.
+* **[Cythara](https://f-droid.org/packages/com.github.cythara/)** 3.1 [adds](https://github.com/gstraube/cythara/releases) viola tuning.
 
-* {{ page.featured }} **[AnySoftKeyboard](https://f-droid.org/app/com.menny.android.anysoftkeyboard)** was [updated](https://github.com/AnySoftKeyboard/AnySoftKeyboard/releases) to 1.10.364, adding adaptive colors, which will match the keyboard colors to the current app. Also new is the Night Mode, which will switch the keyboard and app to a dark theme. There are also power saving tweaks, an updated build process yielding a smaller binary, Halmak keyboard layout for English, and your usual translation updates and bug fixes.
+* {{ page.featured }} **[AnySoftKeyboard](https://f-droid.org/packages/com.menny.android.anysoftkeyboard/)** was [updated](https://github.com/AnySoftKeyboard/AnySoftKeyboard/releases) to 1.10.364, adding adaptive colors, which will match the keyboard colors to the current app. Also new is the Night Mode, which will switch the keyboard and app to a dark theme. There are also power saving tweaks, an updated build process yielding a smaller binary, Halmak keyboard layout for English, and your usual translation updates and bug fixes.
 
-* **[Simple Calendar Pro](https://f-droid.org/app/com.simplemobiletools.calendar.pro)** was [updated](https://github.com/SimpleMobileTools/Simple-Calendar/blob/HEAD/CHANGELOG.md) from 6.3.2 to 6.4.1, now with email reminders and improved CalDAV event syncing in the background.
+* **[Simple Calendar Pro](https://f-droid.org/packages/com.simplemobiletools.calendar.pro/)** was [updated](https://github.com/SimpleMobileTools/Simple-Calendar/blob/HEAD/CHANGELOG.md) from 6.3.2 to 6.4.1, now with email reminders and improved CalDAV event syncing in the background.
 
-* **[OpenUntis](https://f-droid.org/app/de.perflyst.untis)** is an alternative FLOSS Android client for the Untis timetable system. The [update](https://github.com/Perflyst/OpenUntis/releases) to 2.2.0 now mutes the phone on lesson begin, and focuses the login button after scanning the QR code or restoring from prefs.
+* **[OpenUntis](https://f-droid.org/packages/de.perflyst.untis/)** is an alternative FLOSS Android client for the Untis timetable system. The [update](https://github.com/Perflyst/OpenUntis/releases) to 2.2.0 now mutes the phone on lesson begin, and focuses the login button after scanning the QR code or restoring from prefs.
 
-* **[DarkCroc Theme](https://f-droid.org/app/de.spiritcroc.darkcroc.substratum)** was [updated](https://github.com/SpiritCroc/DarkCroc-Android-theme/releases) to 1.4, adding a rounded corner option and removing the aggressive system theming option.
+* **[DarkCroc Theme](https://f-droid.org/packages/de.spiritcroc.darkcroc.substratum/)** was [updated](https://github.com/SpiritCroc/DarkCroc-Android-theme/releases) to 1.4, adding a rounded corner option and removing the aggressive system theming option.
 
-* **[Fedilab](https://f-droid.org/app/fr.gouv.etalab.mastodon)** was [updated](https://gitlab.com/tom79/mastalab/tags) from 1.76.0 to 1.77.1, adding support for polls on Mastodon, a setting to remove the picture when sharing an URL, and a setting to hide the 'delete' button in notifications.
+* **[Fedilab](https://f-droid.org/packages/fr.gouv.etalab.mastodon/)** was [updated](https://gitlab.com/tom79/mastalab/tags) from 1.76.0 to 1.77.1, adding support for polls on Mastodon, a setting to remove the picture when sharing an URL, and a setting to hide the 'delete' button in notifications.
 
-* **[ClipboardCleaner](https://f-droid.org/app/io.github.deweyreed.clipboardcleaner)** [updated](https://github.com/DeweyReed/ClipboardCleaner/releases) to 1.3.0 bringing a timeout option for the service, and a help icon to explain why this app may not work.
+* **[ClipboardCleaner](https://f-droid.org/packages/io.github.deweyreed.clipboardcleaner/)** [updated](https://github.com/DeweyReed/ClipboardCleaner/releases) to 1.3.0 bringing a timeout option for the service, and a help icon to explain why this app may not work.
 
-* **[DroidShows](https://f-droid.org/app/nl.asymmetrics.droidshows)** is a reboot of the DroidSeries Offline TV Shows Tracker with many extra features and an improved interface. After a hiatus of almost 1.5 years, a new [update](https://github.com/ltGuillaume/DroidShows/releases) has landed, bringing it up to 7.8.0. This update brings proper support for Android Pie, and you can now change the synopsis language per show, and set the folder for daily backups via the Backup button. You'll also find various smaller UI/UX improvements and fixes.
+* **[DroidShows](https://f-droid.org/packages/nl.asymmetrics.droidshows/)** is a reboot of the DroidSeries Offline TV Shows Tracker with many extra features and an improved interface. After a hiatus of almost 1.5 years, a new [update](https://github.com/ltGuillaume/DroidShows/releases) has landed, bringing it up to 7.8.0. This update brings proper support for Android Pie, and you can now change the synopsis language per show, and set the folder for daily backups via the Backup button. You'll also find various smaller UI/UX improvements and fixes.
 
-* **[Telegram](https://f-droid.org/app/org.telegram.messenger)** [updated](https://github.com/Telegram-FOSS-Team/Telegram-FOSS/blob/HEAD/Changelog.md) to 5.4.0, now with autoplaying videos, new settings for automatic media download, and logout alternatives. This update also includes fixes for OpenStreetMap and an option to switch between three tileservers.
+* **[Telegram](https://f-droid.org/packages/org.telegram.messenger/)** [updated](https://github.com/Telegram-FOSS-Team/Telegram-FOSS/blob/HEAD/Changelog.md) to 5.4.0, now with autoplaying videos, new settings for automatic media download, and logout alternatives. This update also includes fixes for OpenStreetMap and an option to switch between three tileservers.
 
-* {{ page.major }} **[Transdroid Torrent Search](https://f-droid.org/app/org.transdroid.search)** [updated](https://github.com/erickok/transdroid-search/releases) from 3.12 to 4.0. This update increases the minimum supported Android version to 4.0, and adds support for custom RSS search feeds.
+* {{ page.major }} **[Transdroid Torrent Search](https://f-droid.org/packages/org.transdroid.search/)** [updated](https://github.com/erickok/transdroid-search/releases) from 3.12 to 4.0. This update increases the minimum supported Android version to 4.0, and adds support for custom RSS search feeds.
 
-* **[VLC](https://f-droid.org/app/org.videolan.vlc)** jumped many [updates](https://code.videolan.org/videolan/vlc-android/blob/HEAD/NEWS) from 3.0.13 to 3.1.0, and now requires at least Android 4.2. Notable new features include an onboarding screen for new users, A-B repeat, a manual orientation lock in video player, an option to group videos by folder, and compact audio lists on small screens.
+* **[VLC](https://f-droid.org/packages/org.videolan.vlc/)** jumped many [updates](https://code.videolan.org/videolan/vlc-android/blob/HEAD/NEWS) from 3.0.13 to 3.1.0, and now requires at least Android 4.2. Notable new features include an onboarding screen for new users, A-B repeat, a manual orientation lock in video player, an option to group videos by folder, and compact audio lists on small screens.
 
-* **[Simple sms remote](https://f-droid.org/app/tranquvis.simplesmsremote)** lets you remotely control a phone through sms messages. The [update](https://github.com/tranquvis/SimpleSmsRemote/releases) to 1.3.0 adds a new module for audio recording, a new logo, and improved notifications.
+* **[Simple sms remote](https://f-droid.org/packages/tranquvis.simplesmsremote/)** lets you remotely control a phone through sms messages. The [update](https://github.com/tranquvis/SimpleSmsRemote/releases) to 1.3.0 adds a new module for audio recording, a new logo, and improved notifications.
 
 ### Tips and Feedback
 

@@ -11,7 +11,7 @@ This Week In F-Droid 22, Week 38, 2018 <a href="{{ site.baseurl }}/feed.xml"><im
 In this edition: Buildserver ready to upgrade to Stretch, SET Anti-Feature bug, hosted basebox images, pretty fdroiddata graphs, Rocket.Chat finally lands, and 68 updated apps including Mastalab.
 <!--more-->
 
-**[F-Droid](https://f-droid.org/)** is a [repository](https://f-droid.org/packages/) of verified [free and open source](https://en.wikipedia.org/wiki/Free_and_open-source_software) Android apps, a **[client](https://f-droid.org/app/org.fdroid.fdroid)** to access it, as well as a whole "app store kit", providing all the tools needed to set up and run an app store. It is a community-run free software project developed by a wide range of contributors. This is their story this past week.
+**[F-Droid](https://f-droid.org/)** is a [repository](https://f-droid.org/packages/) of verified [free and open source](https://en.wikipedia.org/wiki/Free_and_open-source_software) Android apps, a **[client](https://f-droid.org/packages/org.fdroid.fdroid/)** to access it, as well as a whole "app store kit", providing all the tools needed to set up and run an app store. It is a community-run free software project developed by a wide range of contributors. This is their story this past week.
 
 #### Buildserver upgrade to _Debian Stretch_ nearing completion
 
@@ -33,35 +33,35 @@ It is scheduled to update once a week.
 
 #### New apps
 
-* **[Rocket.Chat](https://f-droid.org/app/chat.rocket.android)** is in! We've mentioned this briefly in [TWIF 16]({{ site.baseurl }}{% post_url 2018-08-10-twif-16-the-note-taking-todo-text-editor-edition %}#community-news), and now **[@Bubu](https://forum.f-droid.org/u/Bubu)**'s work is paying off even as he is on vacation.
+* **[Rocket.Chat](https://f-droid.org/packages/chat.rocket.android/)** is in! We've mentioned this briefly in [TWIF 16]({{ site.baseurl }}{% post_url 2018-08-10-twif-16-the-note-taking-todo-text-editor-edition %}#community-news), and now **[@Bubu](https://forum.f-droid.org/u/Bubu)**'s work is paying off even as he is on vacation.
 
   Note that the app is without push notifications right now, so you'll have to enter the app to see if there's anything new. The developers seem to be interested in exploring non-[FCM](https://en.wikipedia.org/wiki/Firebase_Cloud_Messaging) push though. Maybe they can take inspiration from [Tutanota's solution]({{ site.baseurl }}{% post_url 2018-09-03-replacing-gcm-in-tutanota %}).
 
-* **[Neural Network Simulator](https://f-droid.org/app/com.EthanHeming.NeuralNetworkSimulator)**: Educational tool to learn about computational neuroscience and electrophysology
+* **[Neural Network Simulator](https://f-droid.org/packages/com.EthanHeming.NeuralNetworkSimulator/)**: Educational tool to learn about computational neuroscience and electrophysology
 
-* **[Aria2Android](https://f-droid.org/app/com.gianlu.aria2android)**: With Aria2Android you can run a real aria2, an open source download manager, executable on your device.
+* **[Aria2Android](https://f-droid.org/packages/com.gianlu.aria2android/)**: With Aria2Android you can run a real aria2, an open source download manager, executable on your device.
 
-* **[Syncthing-Fork](https://f-droid.org/app/com.github.catfriend1.syncthingandroid)**: File synchronization
+* **[Syncthing-Fork](https://f-droid.org/packages/com.github.catfriend1.syncthingandroid/)**: File synchronization
 
-* **[BMI Calculator](https://f-droid.org/app/com.github.characterdog.bmicalculator)**: Simple BMI calculator
+* **[BMI Calculator](https://f-droid.org/packages/com.github.characterdog.bmicalculator/)**: Simple BMI calculator
 
-* **[Lobsters App](https://f-droid.org/app/com.nikhiljha.lobstersapp)**: An app for lobste.rs
+* **[Lobsters App](https://f-droid.org/packages/com.nikhiljha.lobstersapp/)**: An app for lobste.rs
 
-* **[Checkup](https://f-droid.org/app/community.fairphone.checkup)**: A fork of the Fairphone 2 checkup app that has been modified in order to work on other devices as well. It allows you to test various components of your phone.
+* **[Checkup](https://f-droid.org/packages/community.fairphone.checkup/)**: A fork of the Fairphone 2 checkup app that has been modified in order to work on other devices as well. It allows you to test various components of your phone.
 
-* **[DroidTR keyboard](https://f-droid.org/app/org.droidtr.keyboard)**: DroidTR IME (Turkish F/Q keyboard)
+* **[DroidTR keyboard](https://f-droid.org/packages/org.droidtr.keyboard/)**: DroidTR IME (Turkish F/Q keyboard)
 
-* **[Soft Sound](https://f-droid.org/app/org.mcxa.softsound)**: Play relaxing sounds to help you sleep, concentrate or stay calm.
+* **[Soft Sound](https://f-droid.org/packages/org.mcxa.softsound/)**: Play relaxing sounds to help you sleep, concentrate or stay calm.
 
 #### Updated apps
 
 In total, **68** apps were updated this week. Here are the highlights:
 
-* **[Activity Diary](https://f-droid.org/app/de.rampro.activitydiary)** lets you log and plan your recurring activities. In version 1.3.1 tracking of position was added (needs activation in settings and is not yet used for proposing next activities). Also added was a pie chart for statistics, simplified pausing: last finished activities get a higher priority, improved searching, and several bugfixes.
+* **[Activity Diary](https://f-droid.org/packages/de.rampro.activitydiary/)** lets you log and plan your recurring activities. In version 1.3.1 tracking of position was added (needs activation in settings and is not yet used for proposing next activities). Also added was a pie chart for statistics, simplified pausing: last finished activities get a higher priority, improved searching, and several bugfixes.
 
-* **[Tutanota](https://f-droid.org/app/de.tutao.tutanota)** enables you to send end-to-end encrypted emails to anybody with a tip of your finger. Version 3.37.1 will remember your language choice for external recipients, supports "cancel" and "confirm" hotkeys in dialogs, and has lots of bug fixes.
+* **[Tutanota](https://f-droid.org/packages/de.tutao.tutanota/)** enables you to send end-to-end encrypted emails to anybody with a tip of your finger. Version 3.37.1 will remember your language choice for external recipients, supports "cancel" and "confirm" hotkeys in dialogs, and has lots of bug fixes.
 
-* {{ page.featured }} **[Mastalab](https://f-droid.org/app/fr.gouv.etalab.mastodon)** is on fire this week with 4 releases! Version 1.13.3 supports the [Trunk](https://communitywiki.org/trunk) API, which lets you mass-follow users by category, with just a few simple taps. Ideal for newcomers. Other new features:
+* {{ page.featured }} **[Mastalab](https://f-droid.org/packages/fr.gouv.etalab.mastodon/)** is on fire this week with 4 releases! Version 1.13.3 supports the [Trunk](https://communitywiki.org/trunk) API, which lets you mass-follow users by category, with just a few simple taps. Ideal for newcomers. Other new features:
   * Customize notification sound
   * Custom emoji in the main menu
   * Automatically expand hidden media (default no)
@@ -70,17 +70,17 @@ In total, **68** apps were updated this week. Here are the highlights:
   * Follow instance button can be hidden
   * Improved UX with more text
 
-* **[Markor](https://f-droid.org/app/net.gsantner.markor)**, 1.2.0 is out. Your favourite [markdown](https://commonmark.org) editor and TODO app now has launchers to directly open LinkBox/ToDo/QuickNote, context aware search for projects, preview for ToC and KaTex math, and improved markdown conversion, notably GFM-like table parsing and underlined h1. Read about even more improvements in the [blog post](https://gsantner.net/blog/android/2018/09/18/markor-release-v1.2.html).
+* **[Markor](https://f-droid.org/packages/net.gsantner.markor/)**, 1.2.0 is out. Your favourite [markdown](https://commonmark.org) editor and TODO app now has launchers to directly open LinkBox/ToDo/QuickNote, context aware search for projects, preview for ToC and KaTex math, and improved markdown conversion, notably GFM-like table parsing and underlined h1. Read about even more improvements in the [blog post](https://gsantner.net/blog/android/2018/09/18/markor-release-v1.2.html).
 
-* **[LTE Cleaner (FOSS)](https://f-droid.org/app/theredspy15.ltecleanerfoss)** had major updates this week, going from 2.3 to 3.1.0 in 5 releases! New features include a "one click clean" option, simplified filter options, an "aggressive filter", Chinese (traditional) language support, and many smaller changes and bug fixes.
+* **[LTE Cleaner (FOSS)](https://f-droid.org/packages/theredspy15.ltecleanerfoss/)** had major updates this week, going from 2.3 to 3.1.0 in 5 releases! New features include a "one click clean" option, simplified filter options, an "aggressive filter", Chinese (traditional) language support, and many smaller changes and bug fixes.
 
-* **[WaveUp](https://f-droid.org/app/com.jarsilio.android.waveup)**: "Just wave your hand over the proximity sensor of your phone to turn the screen on." Version 2.2.0 contains under-the-hood changes, converting the code base to Kotlin, and updating some dependencies.
+* **[WaveUp](https://f-droid.org/packages/com.jarsilio.android.waveup/)**: "Just wave your hand over the proximity sensor of your phone to turn the screen on." Version 2.2.0 contains under-the-hood changes, converting the code base to Kotlin, and updating some dependencies.
 
 #### Removed Apps
 
 * **[Dental Sounds](https://f-droid.org/wiki/page/de.naturalnet.zahnarztgeraeusche)** was moved to the archive [at the request of its author](https://gitlab.com/fdroid/fdroiddata/merge_requests/3668), as the app is unmaintained.
 
-* **[PSLab](https://f-droid.org/wiki/page/org.fossasia.pslab)** was moved to the archive because it has been replaced with **[PSLab](https://f-droid.org/app/io.pslab)**.
+* **[PSLab](https://f-droid.org/wiki/page/org.fossasia.pslab)** was moved to the archive because it has been replaced with **[PSLab](https://f-droid.org/packages/io.pslab/)**.
 
 #### Tips and Feedback
 

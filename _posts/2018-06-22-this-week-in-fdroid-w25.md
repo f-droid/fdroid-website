@@ -7,7 +7,7 @@ authorWebsite: "https://forum.f-droid.org/u/Bubu"
 
 This week hastily compiled by Bubu. I probably missed things.
 
-[F-Droid](https://f-droid.org/) is a [repository](https://f-droid.org/packages/) of verified [free and open source](https://en.wikipedia.org/wiki/Free_and_open-source_software) Android apps, a [client](https://f-droid.org/app/org.fdroid.fdroid) to access it, as well as a whole "app store kit", providing all the tools needed to set up and run an app store. It is a community-run free software project developed by a wide range of contributors. This is their story this past week.
+[F-Droid](https://f-droid.org/) is a [repository](https://f-droid.org/packages/) of verified [free and open source](https://en.wikipedia.org/wiki/Free_and_open-source_software) Android apps, a [client](https://f-droid.org/packages/org.fdroid.fdroid/) to access it, as well as a whole "app store kit", providing all the tools needed to set up and run an app store. It is a community-run free software project developed by a wide range of contributors. This is their story this past week.
 
 #### F-Droid core
 
@@ -19,20 +19,20 @@ This week hastily compiled by Bubu. I probably missed things.
 
 #### New apps
 
-* [Keyboard Switcher](https://f-droid.org/en/packages/com.kunzisoft.keyboard.switcher/) by Kunzisoft: Simple keyboard switcher with a floating button
-* [p≡p](https://f-droid.org/en/packages/security.pEp/): Read and write encrypted e-mails, more info [here](https://pep.foundation/index.html)
-* [PSLab](https://f-droid.org/en/packages/org.fossasia.pslab/): Pocket Science Lab Android interface for PSLab hardware
-* [Aurora Store](https://f-droid.org/en/packages/com.dragons.aurora/) by Rahul Patel: Download apks from Google Play Store, Aurora Store provides a Material UI to [Yalp Store](https://f-droid.org/en/packages/com.github.yeriomin.yalpstore/). It's been called a better interface to the play store than the play store. :-)
-* [PaperCraft](https://f-droid.org/en/packages/pro.rudloff.papercraft/): A Material Design inspired space shooter
+* [Keyboard Switcher](https://f-droid.org/packages/com.kunzisoft.keyboard.switcher/) by Kunzisoft: Simple keyboard switcher with a floating button
+* [p≡p](https://f-droid.org/packages/security.pEp/): Read and write encrypted e-mails, more info [here](https://pep.foundation/index.html)
+* [PSLab](https://f-droid.org/packages/org.fossasia.pslab/): Pocket Science Lab Android interface for PSLab hardware
+* [Aurora Store](https://f-droid.org/packages/com.dragons.aurora/) by Rahul Patel: Download apks from Google Play Store, Aurora Store provides a Material UI to [Yalp Store](https://f-droid.org/packages/com.github.yeriomin.yalpstore/). It's been called a better interface to the play store than the play store. :-)
+* [PaperCraft](https://f-droid.org/packages/pro.rudloff.papercraft/): A Material Design inspired space shooter
 
 #### Updated apps
 
 As usual more updates than we can list here, some highlights include:
 
-* Huge [DeltaChat](https://f-droid.org/en/packages/com.b44t.messenger/) update to [v0.18.0](https://github.com/deltachat/deltachat-android/blob/HEAD/CHANGELOG.md#delta-chat-changelog)
+* Huge [DeltaChat](https://f-droid.org/packages/com.b44t.messenger/) update to [v0.18.0](https://github.com/deltachat/deltachat-android/blob/HEAD/CHANGELOG.md#delta-chat-changelog)
 * [Telegram-FOSS](https://f-droid.org/packages/org.telegram.messenger/) **security** [update](https://github.com/Telegram-FOSS-Team/Telegram-FOSS/blob/master/Changelog.md) due to lots of ffmpeg vulnerabilities.
-* The [Déjá Vu](https://f-droid.org/en/packages/org.fitchfamily.android.dejavu/) Location Service has been updated to v1.1.7, fixing a rare crash.
-* [Kontalk](https://f-droid.org/en/packages/org.kontalk/) got updated to [v4.1.5](https://github.com/kontalk/androidclient/blob/HEAD/CHANGELOG.md) with major performance improvements and some crash and other fixes.
+* The [Déjá Vu](https://f-droid.org/packages/org.fitchfamily.android.dejavu/) Location Service has been updated to v1.1.7, fixing a rare crash.
+* [Kontalk](https://f-droid.org/packages/org.kontalk/) got updated to [v4.1.5](https://github.com/kontalk/androidclient/blob/HEAD/CHANGELOG.md) with major performance improvements and some crash and other fixes.
 
 
 #### In the next TWIF
