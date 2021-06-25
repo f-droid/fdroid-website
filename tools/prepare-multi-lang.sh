@@ -178,7 +178,7 @@ find en/ -type f -print0 | while IFS= read -r -d '' FILE_PATH; do
 	write_typemap ${DIR}/${FILE} "$SUPPORTED_LANGS"
     ) &
     i=$((i+1))
-    if [ $i -gt $nproc ]; then
+    if [ $i -ge $nproc ]; then
         wait
         i=0
     fi
