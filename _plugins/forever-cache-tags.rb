@@ -27,10 +27,10 @@ require 'tmpdir'
 #
 # CAVEATS:
 #
-# * assumes 1 site
 # * assumes all languages have the same assets
 # * assumes assets exists and will be copied unmodified from e.g. assets/ to _site/assets/
 # * hard links .js assets into assets/ (not js/)
+# * handles polyglot's multiple processes using flock
 #
 
 module Jekyll
@@ -77,8 +77,9 @@ module Jekyll
     end
 
     def self.last_process?(site)
+      return @@last unless @@last.nil?
       languages = site.languages + ['_']
-      File.open(@@lockfile, File::RDWR|File::CREAT, 0644) do |f|
+      @@last = File.open(@@lockfile, File::RDWR|File::CREAT, 0644) do |f|
         f.flock File::LOCK_EX
         value = f.read.to_i + 1
         f.rewind
@@ -92,6 +93,7 @@ module Jekyll
     def self.after_init_hook(site)
       @@baseurl = site.baseurl
       @@destination = site.dest
+      @@last = nil
       @@lockfile = File.join Dir.tmpdir, 'fdroid-website.lock'  # FIXME
       FileUtils.rm_f @@lockfile
     end

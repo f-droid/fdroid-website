@@ -1,19 +1,17 @@
+require 'fileutils'
 require 'json'
 
 module Jekyll
   class JsonApiGenerator < Generator
     def generate(site)
-      if site.active_lang == site.default_lang
-        dir = File.join(site.dest, 'api', 'v1', 'packages')
-        FileUtils.mkdir_p(dir)
-        site.pages.each do |page|
-          if page.data and page.data.key? 'package_name'
-            if /.*\.(coffee|css|html|js|md)$/.match(page.data['package_name'])
-              # TODO temporary hack to stop https://gitlab.com/fdroid/fdroid-website/-/issues/517
-              next
-            end
-            site.pages << JsonApi.new(site, dir, page.data)
-          end
+      return if site.active_lang != site.default_lang
+      dir = File.join site.dest, 'api', 'v1', 'packages'
+      FileUtils.mkdir_p dir
+      site.pages.each do |page|
+        if page.data && page.data.key?('package_name')
+          # TODO temporary hack to stop https://gitlab.com/fdroid/fdroid-website/-/issues/517
+          next if /\.(coffee|css|html|js|md)$/ =~ page.data['package_name']
+          site.pages << JsonApi.new(site, dir, page.data)
         end
       end
     end
@@ -33,9 +31,9 @@ module Jekyll
         end
       }
       File.open(File.join(dir, name), 'w') do |file|
-        file.write(json.to_json)
+        file.write json.to_json
       end
-      super(site, site.source, dir, name)
+      super site, site.source, dir, name
     end
   end
 end

@@ -22,12 +22,7 @@ module Jekyll::FDroidFilters
   #
   # Returns the Android version.
   def android_sdk_level_to_version(input)
-    sdkLevel = @@AndroidSdkLevelToVersionRelation[input]
-    if not sdkLevel.nil?
-      return sdkLevel
-    end
-
-    return '?'
+    @@AndroidSdkLevelToVersionRelation[input] || '?'
   end
 
   # Hash with relation between Android SDK Level and Android version
@@ -62,6 +57,7 @@ module Jekyll::FDroidFilters
     27 => '8.1',
     28 => '9.0',
     29 => '10.0',
+    30 => '11.0',
   }
 
   # Convert a file size to a human-readable String.
@@ -72,15 +68,15 @@ module Jekyll::FDroidFilters
   # Returns human-readable String.
   def file_size_human_readable(input)
     input = input.to_f
-    i = PREFIX.length - 1
+    i = SUFFIX.length - 1
     while input > 512 && i > 0
       i -= 1
       input /= 1024
     end
-    return ((input > 9 || input.modulo(1) < 0.1 ? '%d' : '%.1f') % input) + ' ' + PREFIX[i]
+    ((input > 9 || input.modulo(1) < 0.1 ? '%d' : '%.1f') % input) + ' ' + SUFFIX[i]
   end
-  PREFIX = %W(TiB GiB MiB KiB B).freeze
 
+  SUFFIX = %w(TiB GiB MiB KiB B).freeze
 end
 
-Liquid::Template.register_filter(Jekyll::FDroidFilters)
+Liquid::Template.register_filter Jekyll::FDroidFilters
