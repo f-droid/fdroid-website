@@ -78,7 +78,7 @@ module Jekyll
 
     def self.last_process?(site)
       return @@last unless @@last.nil?
-      languages = site.languages + ['_']
+      languages = (site.languages + [site.default_lang]).uniq
       @@last = File.open(@@lockfile, File::RDWR|File::CREAT, 0644) do |f|
         f.flock File::LOCK_EX
         value = f.read.to_i + 1
