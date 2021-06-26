@@ -4,7 +4,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
   <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
+  <meta property="og:title" content="{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}" />
   <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+  <meta property="og:description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}" />
   <meta property="og:image" content="https://f-droid.org{% asset fdroid-logo.png %}" />
 
   <link rel="preload" href="{% asset roboto.ttf %}" as="font" type="font/ttf"/>
