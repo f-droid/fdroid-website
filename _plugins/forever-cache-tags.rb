@@ -38,23 +38,23 @@ module Jekyll
     @@assets = {}
 
     def self.link_to_asset!(input)
-      ext   = File.extname input
-      base  = File.basename input, '.*'
-      path  = "#{directory ext}/#{input}"
-      file  = destination path
-      unless @@assets.has_key? file
-        asset = "/assets/#{base}_#{digest path}#{ext}"
+      ext   = File.extname(input)
+      base  = File.basename(input, '.*')
+      path  = "#{directory(ext)}/#{input}"
+      file  = destination(path)
+      unless @@assets.has_key?(file)
+        asset = "/assets/#{base}_#{digest(path)}#{ext}"
         @@assets[file] = { path: asset, file: destination(asset) }
       end
       @@baseurl + @@assets[file][:path]
     end
 
     def self.destination(path)
-      File.join @@destination, *path.split('/')
+      File.join(@@destination, *path.split('/'))
     end
 
     def self.digest(path)
-      Base64.urlsafe_encode64 Digest::SHA256.file(File.join(*path.split('/'))).digest
+      Base64.urlsafe_encode64(Digest::SHA256.file(File.join(*path.split('/'))).digest)
     end
 
     def self.directory(ext)
@@ -67,12 +67,12 @@ module Jekyll
     end
 
     def self.link_assets!
-      Jekyll::logger.info 'forever:', 'Linking assets.'
+      Jekyll::logger.info('forever:', 'Linking assets.')
       @@assets.each do |file, asset|
         forever = asset[:file]
-        next if File.exist? forever
-        Jekyll::logger.debug 'forever:', "Linking #{forever} to #{file}."
-        File.link file, forever
+        next if File.exist?(forever)
+        Jekyll::logger.debug('forever:', "Linking #{forever} to #{file}.")
+        File.link(file, forever)
       end
     end
 
@@ -80,12 +80,12 @@ module Jekyll
       return @@last unless @@last.nil?
       languages = (site.languages + [site.default_lang]).uniq
       @@last = File.open(@@lockfile, File::RDWR|File::CREAT, 0644) do |f|
-        f.flock File::LOCK_EX
+        f.flock(File::LOCK_EX)
         value = f.read.to_i + 1
         f.rewind
-        f.write "#{value}\n"
+        f.write("#{value}\n")
         f.flush
-        f.truncate f.pos
+        f.truncate(f.pos)
         value == languages.length
       end
     end
@@ -94,14 +94,14 @@ module Jekyll
       @@baseurl = site.baseurl
       @@destination = site.dest
       @@last = nil
-      @@lockfile = File.join Dir.tmpdir, 'fdroid-website.lock'  # FIXME
-      FileUtils.rm_f @@lockfile
+      @@lockfile = File.join(Dir.tmpdir, 'fdroid-website.lock') # FIXME
+      FileUtils.rm_f(@@lockfile)
     end
 
     def self.post_write_hook(site)
-      if last_process? site
+      if last_process?(site)
         link_assets!
-        FileUtils.rm_f @@lockfile
+        FileUtils.rm_f(@@lockfile)
       end
     end
   end
@@ -113,24 +113,24 @@ module Jekyll
     end
 
     def render(context)
-      Jekyll::ForeverCache.link_to_asset! @input.strip
+      Jekyll::ForeverCache.link_to_asset!(@input.strip)
     end
   end
 
   module ForeverCacheFilter
     def asset(input)
-      Jekyll::ForeverCache.link_to_asset! input.strip
+      Jekyll::ForeverCache.link_to_asset!(input.strip)
     end
   end
 end
 
-Liquid::Template.register_filter Jekyll::ForeverCacheFilter
-Liquid::Template.register_tag 'asset', Jekyll::ForeverCacheTag
+Liquid::Template.register_filter(Jekyll::ForeverCacheFilter)
+Liquid::Template.register_tag('asset', Jekyll::ForeverCacheTag)
 
 Jekyll::Hooks.register :site, :after_init do |site|
-  Jekyll::ForeverCache.after_init_hook site
+  Jekyll::ForeverCache.after_init_hook(site)
 end
 
 Jekyll::Hooks.register :site, :post_write do |site|
-  Jekyll::ForeverCache.post_write_hook site
+  Jekyll::ForeverCache.post_write_hook(site)
 end

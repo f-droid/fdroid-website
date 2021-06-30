@@ -5,8 +5,8 @@ module Jekyll
   class JsonApiGenerator < Generator
     def generate(site)
       return if site.active_lang != site.default_lang
-      dir = File.join site.dest, 'api', 'v1', 'packages'
-      FileUtils.mkdir_p dir
+      dir = File.join(site.dest, 'api', 'v1', 'packages')
+      FileUtils.mkdir_p(dir)
       site.pages.each do |page|
         if page.data && page.data.key?('package_name')
           # TODO temporary hack to stop https://gitlab.com/fdroid/fdroid-website/-/issues/517
@@ -23,7 +23,7 @@ module Jekyll
       json = {
         'packageName' => data['package_name'],
         'suggestedVersionCode' => data['suggested_version_code'],
-        'packages' => (data['packages'] || []).map do |package|
+        'packages' => data.fetch('packages', []).map do |package|
           {
             'versionName' => package['version_name'],
             'versionCode' => package['version_code']
@@ -31,9 +31,9 @@ module Jekyll
         end
       }
       File.open(File.join(dir, name), 'w') do |file|
-        file.write json.to_json
+        file.write(json.to_json)
       end
-      super site, site.source, dir, name
+      super(site, site.source, dir, name)
     end
   end
 end

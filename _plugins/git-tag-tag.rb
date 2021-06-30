@@ -3,8 +3,8 @@ require 'git'
 module Jekyll
   class GitInfoTag < Liquid::Tag
     def git
-      git_dir = File.expand_path File.dirname(File.dirname(__FILE__))
-      Git.open git_dir
+      git_dir = File.expand_path(File.dirname(File.dirname(__FILE__)))
+      Git.open(git_dir)
     end
   end
 
@@ -35,5 +35,5 @@ module Jekyll
   end
 end
 
-Liquid::Template.register_tag 'git_tag', Jekyll::GitTag
-Liquid::Template.register_tag 'git_hash', Jekyll::GitHash
+Liquid::Template.register_tag('git_tag', Jekyll::GitTag)
+Liquid::Template.register_tag('git_hash', Jekyll::GitHash)

@@ -22,7 +22,7 @@ module Jekyll::FDroidFilters
   #
   # Returns the Android version.
   def android_sdk_level_to_version(input)
-    @@AndroidSdkLevelToVersionRelation[input] || '?'
+    @@AndroidSdkLevelToVersionRelation.fetch(input, '?')
   end
 
   # Hash with relation between Android SDK Level and Android version
@@ -79,4 +79,4 @@ module Jekyll::FDroidFilters
   SUFFIX = %w(TiB GiB MiB KiB B).freeze
 end
 
-Liquid::Template.register_filter Jekyll::FDroidFilters
+Liquid::Template.register_filter(Jekyll::FDroidFilters)

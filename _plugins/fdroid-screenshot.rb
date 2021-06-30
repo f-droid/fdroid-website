@@ -10,14 +10,14 @@ module Jekyll
       site = context.registers[:site]
       site_source = site.config['source']
       active_lang = site.active_lang
-      lang_without_region = just_lang active_lang
+      lang_without_region = just_lang(active_lang)
 
       preferred_path = "assets/fdroid-screenshot-#{active_lang}.png"
       acceptable_path = lang_without_region &&
         "assets/fdroid-screenshot-#{lang_without_region}.png"
       default_path = "assets/fdroid-screenshot-en.png"
 
-      if File::exist? "#{site_source}/#{preferred_path}"
+      if File::exist?("#{site_source}/#{preferred_path}")
         preferred_path
       elsif acceptable_path && File::exist?("#{site_source}/#{acceptable_path}")
         acceptable_path
@@ -28,7 +28,7 @@ module Jekyll
     end
 
     def just_lang(locale)
-      (result = locale.match /(?<lang>[a-zA-Z]+)(?:_.*)?/) ? result[:lang] : nil
+      locale.match(/(?<lang>[a-zA-Z]+)(?:_.*)?/)&.named_captures&.fetch('lang')
     end
   end
 end

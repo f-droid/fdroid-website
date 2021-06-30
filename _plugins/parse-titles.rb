@@ -5,7 +5,7 @@
 Jekyll::Hooks.register :site, :post_read do |site|
   site.documents.each do |document|
     document.data.each do |key, value|
-      Jekyll::ParseTitles.parse_frontmatter document, key
+      Jekyll::ParseTitles.parse_frontmatter(document, key)
     end
   end
 end
@@ -19,8 +19,8 @@ module Jekyll
       # Value has at least one word, followed by a dot, followed by more words and dots.
       return if value !~ /^[\w\-]+\.[\w\-.]+$/
 
-      value_parts = value.split /\./
-      new_value = recursively_get_value site.data, value_parts
+      value_parts = value.split(/\./)
+      new_value = recursively_get_value(site.data, value_parts)
 
       if new_value && new_value.length > 0
         Jekyll::logger.debug "i18n", "Translating document frontmatter [#{frontmatter_key}: #{value}] to #{site.active_lang}: \"#{new_value}\""
