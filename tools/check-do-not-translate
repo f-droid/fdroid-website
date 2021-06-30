@@ -14,3 +14,7 @@ perl -i -pe 'BEGIN{undef $/;} s/\nmsgid "<!--more-->.n"\nmsgstr ".*?"/\nmsgid "<
 perl -i -pe 'BEGIN{undef $/;} s/\nmsgid "<hr \/>.n"\nmsgstr ".*?"/\nmsgid "<hr \/>\\n"\nmsgstr "<hr \/>\\n"/smg' po/_posts.*.po
 
 perl -i -pe 'BEGIN{undef $/;} s@\nmsgid "(<https://[A-Z0-9a-z/.?=_-]+>)"\nmsgstr ".*?"@\nmsgid "\1"\nmsgstr "\1"@smg' po/_*.*.po
+
+perl -i -pe 'BEGIN{undef $/;} s@\nmsgid ("<tt>issuebot</tt>")\nmsgstr ".*?"@\nmsgid \1\nmsgstr \1@smg' po/_docs.*.po
+perl -i -pe 'BEGIN{undef $/;} s@\nmsgid ("`metadata/`")\nmsgstr ".*?"@\nmsgid \1\nmsgstr \1@smg' po/_docs.*.po
+perl -i -pe 'BEGIN{undef $/;} s@\nmsgid ("`fastlane/metadata/android/`")\nmsgstr ".*?"@\nmsgid \1\nmsgstr \1@smg' po/_docs.*.po
