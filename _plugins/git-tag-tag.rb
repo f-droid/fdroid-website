@@ -1,10 +1,9 @@
 require 'git'
 
 module Jekyll
-
   class GitInfoTag < Liquid::Tag
-    def git()
-      git_dir = File.expand_path File.dirname(File.dirname(__FILE__))
+    def git
+      git_dir = File.expand_path(File.dirname(File.dirname(__FILE__)))
       Git.open(git_dir)
     end
   end
@@ -16,12 +15,10 @@ module Jekyll
   #
   class GitTag < GitInfoTag
     include Jekyll::LiquidExtensions
-    @@descr = ''
+    @@descr = nil
     def render(context)
-      if @@descr == ''
-        @@descr = git().describe('HEAD', :always => true)
-      end
-      return @@descr
+      @@descr = git.describe('HEAD', always: true) if @@descr.nil?
+      @@descr
     end
   end
 
@@ -30,12 +27,10 @@ module Jekyll
   #
   class GitHash < GitInfoTag
     include Jekyll::LiquidExtensions
-    @@sha = ''
+    @@sha = nil
     def render(context)
-      if @@sha == ''
-        @@sha = git().object('HEAD').sha[0..9]
-      end
-      return @@sha
+      @@sha = git.object('HEAD').sha[0..9] if @@sha.nil?
+      @@sha
     end
   end
 end
