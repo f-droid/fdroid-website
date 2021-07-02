@@ -46,8 +46,11 @@ EOF
 	echo "[type: markdown] $f \$lang:$section/\$lang/$(basename $f)" >> $po4a_conf
     done
     po4a --verbose $po4a_conf &
+    eval pid${section}=$!
 done
-wait
+wait $pid_docs
+wait $pid_pages
+wait $pid_posts
 
 # no need to keep these around
 rm -f po/*.en.po

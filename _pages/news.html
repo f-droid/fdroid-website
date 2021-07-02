@@ -22,7 +22,7 @@ pagination:
     </h3>
     <i class="post-meta">
       {% assign fmt_posted_on = '{{ post_date }}' %}
-      {% assign formatted_post_date = post.date | date: "%b %-d, %Y" %}
+      {% assign formatted_post_date = post.date | date: "%F" %}
       {{ site.data.strings.news.posted_on | replace: fmt_posted_on, formatted_post_date }}
 
       {% if post.author %}
@@ -61,12 +61,12 @@ pagination:
   <ul style="text-align: center; list-style: none; text-transform: uppercase;">
       {% if paginator.previous_page %}
       <li style="display: inline; padding: 10px">
-          <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&larr; Newer Posts</a>
+          <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">{{ site.data.strings.news.older_posts | xml_escape }}</a>
       </li>
       {% endif %}
       {% if paginator.next_page %}
       <li style="display: inline; padding: 10px">
-          <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Older Posts &rarr;</a>
+          <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">{{ site.data.strings.news.older_posts | xml_escape }}</a>
       </li>
       {% endif %}
   </ul>
