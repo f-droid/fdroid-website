@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2021-02-16 14:40+0100\n"
+"POT-Creation-Date: 2021-07-02 16:56+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -513,7 +513,9 @@ msgid ""
 "(e.g. <https://gitlab.com/fdroid/fdroiddata/-/raw/master/metadata/org.fdroid.fdroid.yml>).\n"
 "The repo index and the [GitLab Repository Files\n"
 "API](https://docs.gitlab.com/ee/api/repository_files.html) can be used to query\n"
-"which Application IDs are available.\n"
+"which Application IDs are available.  These files are also available via the\n"
+"mirror on GitHub,\n"
+"e.g. <https://raw.githubusercontent.com/f-droid/fdroiddata/master/metadata/org.fdroid.fdroid.yml>\n"
 msgstr ""
 
 #. type: Title ###
@@ -594,6 +596,11 @@ msgid ""
 "been checked, where the filename follows the pattern\n"
 "`<ApplicationId>_<VersionCode>.apk.json`, for example:\n"
 "<https://verification.f-droid.org/org.fdroid.fdroid_1010050.apk.json>\n"
+msgstr ""
+
+#. type: Plain text
+#: _docs/All_our_APIs.md
+msgid "There is also a listing of all the successfully verified APKs: <https://verification.f-droid.org/verified.json>"
 msgstr ""
 
 #. type: Title ###
@@ -2297,13 +2304,13 @@ msgstr ""
 #, no-wrap
 msgid ""
 "Builds:\n"
-"  - versionName: 1.2\n"
+"  - versionName: '1.2'\n"
 "    versionCode: 12\n"
-"    commit: v1.2\n"
+"    commit: 'v1.2'\n"
 "\n"
-"  - versionName: 1.3\n"
+"  - versionName: '1.3'\n"
 "    versionCode: 13\n"
-"    commit: v1.3-fdroid\n"
+"    commit: 'v1.3-fdroid'\n"
 msgstr ""
 
 #. type: Plain text
@@ -2927,19 +2934,12 @@ msgstr ""
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid ""
-":   Version of the NDK to use in this build. Defaults to the latest NDK\n"
-"    release that included legacy toolchains (r12b), so as to not break builds\n"
-"    that require toolchains no longer included in current versions of\n"
-"    the NDK.\n"
-msgstr ""
-
-#. type: Plain text
-#: _docs/Build_Metadata_Reference.md
-#, no-wrap
-msgid ""
-"    The buildserver supports r10e, r11c, r12b, r13b, r14b, r15c, r16b, r17c,\n"
-"    r18b, r19c, r20b and r21d. You may add support for more versions by adding\n"
-"    them to ’ndk\\_paths’ in your config file.\n"
+":   Version of the NDK to use in this build.  The value is the NDK version as a\n"
+"    string in either of the two official version schemes, e.g. _r21e_ or\n"
+"    _21.4.7075529_.  NDK r10e or later is supported.  This can also be a list of\n"
+"    version strings, and all listed versions will be installed.  The\n"
+"    `ANDROID_SDK_ROOT` environment variable will be set to the first version in\n"
+"    the list.\n"
 msgstr ""
 
 #. type: Plain text
@@ -3271,6 +3271,16 @@ msgid ""
 "    end with a digit.\n"
 msgstr ""
 
+#. type: Plain text
+#: _docs/Build_Metadata_Reference.md
+#, no-wrap
+msgid ""
+"    Optionally `UpdateCheckData` can be specified to extract version code and\n"
+"    name from repository files you specify (instead of relying on the defaults\n"
+"    used to match against otherwise, which in most cases is `build.gradle` or\n"
+"    `AndroidManifest.xml`).\n"
+msgstr ""
+
 #. type: Bullet: '-   '
 #: _docs/Build_Metadata_Reference.md
 msgid "`HTTP` - HTTP requests are used to determine the current version code and version name. This is controlled by the _UpdateCheckData_ field, which is of the form `urlcode|excode|urlver|exver`."
@@ -3323,6 +3333,11 @@ msgstr ""
 msgid "When checking for updates (via _UpdateCheckMode_) this can be used to specify a regex which, if matched against the version name, causes that version to be ignored. For example, ’beta’ could be specified to ignore version names that include that text."
 msgstr ""
 
+#. type: Plain text
+#: _docs/Build_Metadata_Reference.md
+msgid "Only Available with _UpdateCheckMode_ `HTTP`."
+msgstr ""
+
 #. type: Title ###
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
@@ -3347,7 +3362,57 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-msgid "Used in conjunction with _UpdateCheckMode_ for certain modes."
+msgid "Used in conjunction with _UpdateCheckMode_ `Tag` or `HTTP`."
+msgstr ""
+
+#. type: Fenced code block
+#: _docs/Build_Metadata_Reference.md
+#, no-wrap
+msgid "UpdateCheckData: <vercode-location>|<RegEx-for-versionCode>|<versionName-location>|<RegEx-for-versionName>\n"
+msgstr ""
+
+#. type: Bullet: '-   '
+#: _docs/Build_Metadata_Reference.md
+msgid "`vercode-location` - URL (with `UpdateCheckMode: HTTP`) or path/file relative to repo root, leave empty to check the tag name instead (with `UpdateCheckMode: Tags`)."
+msgstr ""
+
+#. type: Bullet: '-   '
+#: _docs/Build_Metadata_Reference.md
+msgid "`RegEx-for-versionCode` - RegEx to match versionCode."
+msgstr ""
+
+#. type: Bullet: '-   '
+#: _docs/Build_Metadata_Reference.md
+msgid "`versionName-location` - Same as vercode-location just for versionName. A .  means to take vercode-location, leave empty to check the tag name instead (only with `UpdateCheckMode: Tags`)."
+msgstr ""
+
+#. type: Bullet: '-   '
+#: _docs/Build_Metadata_Reference.md
+msgid "`RegEx-for-versionName` - Similar to RegEx-for-versionCode, just for versionName."
+msgstr ""
+
+#. type: Plain text
+#: _docs/Build_Metadata_Reference.md
+#, no-wrap
+msgid ""
+"Examples for `UpdateCheckMode: Tag`:\n"
+"-   Flutter app with the `pubspec.yaml` in the repo root:\n"
+"    `pubspec.yaml|version:\\s.+\\+(\\d+)|.|version:\\s(.+)\\+`\n"
+"-   Use the git tag as version name:\n"
+"    `app/build.gradle|versionCode\\s(\\d+)||`\n"
+"-   Optionally a regex to extract the version name from the tag can be specified:\n"
+"    `app/build.gradle|versionCode\\s(\\d+)||Android-([\\d.]+)`\n"
+"-   If no file for the version code was specified, code and name can be extracted from the tag:\n"
+"    `|\\+(\\d+)||Android-([\\d.]+)`\n"
+msgstr ""
+
+#. type: Plain text
+#: _docs/Build_Metadata_Reference.md
+#, no-wrap
+msgid ""
+"Examples for `UpdateCheckMode: HTTP`:\n"
+"-   `https://foo/version.json|\"version_code\":.*\"(.*)\"|.|\"version_name\":.*\\\"(.*)\\\",`\n"
+"-   `https://foo/version_fdroid.txt|versionCode=(.*)|.|versionName=(.*)`\n"
 msgstr ""
 
 #. type: Title ###
@@ -3368,7 +3433,7 @@ msgstr ""
 
 #. type: Bullet: '-   '
 #: _docs/Build_Metadata_Reference.md
-msgid "`Version` - Identifies the target commit (i.e. tag) for the new build based on the given version specification, which is simply text in which %v and %c are replaced with the required version name and version code respectively."
+msgid "`Version` - Generates a value (tag name) used for the `commit:` property of new build blocks. It is simply text in which %v and %c are replaced with the required version name and version code respectively. The resulting string must match an existing tag in the app's repo, which then will be used by F-Droid to build the corresponding version."
 msgstr ""
 
 #. type: Plain text
@@ -3385,10 +3450,27 @@ msgstr ""
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid ""
+"    Continuing the first example above, you would specify that as \"Version\n"
+"    +-fdroid %v\" - \"-fdroid\" is the suffix F-Droid will then append to the\n"
+"    `versionName` specified in e.g. `build.gradle` when building the APK.\n"
+msgstr ""
+
+#. type: Plain text
+#: _docs/Build_Metadata_Reference.md
+#, no-wrap
+msgid ""
 "    Additionally, a suffix can be added to the version name at this\n"
 "    stage, to differentiate F-Droid’s build from the original.\n"
 "    Continuing the first example above, you would specify that as\n"
 "    \"Version +-fdroid %v\" - \"-fdroid\" is the suffix.\n"
+msgstr ""
+
+#. type: Plain text
+#: _docs/Build_Metadata_Reference.md
+#, no-wrap
+msgid ""
+"    If UpdateCheckMode is set to `Tags` the generator string behind `Version`\n"
+"    is optional and not used for the `commit:` field.\n"
 msgstr ""
 
 #. type: Title ###
@@ -5110,7 +5192,7 @@ msgstr ""
 
 #. type: Bullet: '-   '
 #: _docs/FAQ_-_General.md
-msgid "the IRC chat room: [\\#fdroid](ircs://irc.oftc.net:6697/fdroid) IRC chatroom on Freenode ([click here to join the webchat](https://webchat.oftc.net/?randomnick=1&channels=%23fdroid&uio=MT1mYWxzZSYyPXRydWUmND10cnVlJjk9dHJ1ZSYxMD10cnVlJjEyPXRydWU84))"
+msgid "the IRC chat room: [\\#fdroid](ircs://irc.oftc.net:6697/fdroid) IRC chatroom on OFTC ([click here to join the webchat](https://webchat.oftc.net/?randomnick=1&channels=fdroid&prompt=1))"
 msgstr ""
 
 #. type: Bullet: '-   '
@@ -5276,7 +5358,7 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/FAQ_-_General.md
-msgid "Use the [issue tracker](https://gitlab.com/fdroid/fdroidclient/issues)  or email <team@f-droid.org>. You can also discuss them in the [\\#fdroid](ircs://irc.oftc.net:6697/fdroid) IRC chatroom on Freenode ([click here to join the webchat](https://webchat.oftc.net/?randomnick=1&channels=%23fdroid&uio=MT1mYWxzZSYyPXRydWUmND10cnVlJjk9dHJ1ZSYxMD10cnVlJjEyPXRydWU84))."
+msgid "Use the [issue tracker](https://gitlab.com/fdroid/fdroidclient/issues)  or email <team@f-droid.org>. You can also discuss them in the [\\#fdroid](ircs://irc.oftc.net:6697/fdroid) IRC chatroom on OFTC ([click here to join the webchat](https://webchat.oftc.net/?randomnick=1&channels=fdroid&prompt=1))."
 msgstr ""
 
 #. type: Plain text
@@ -5369,12 +5451,23 @@ msgstr ""
 #. type: Title ###
 #: _docs/Feeds.md
 #, no-wrap
+msgid "Matrix"
+msgstr ""
+
+#. type: Plain text
+#: _docs/Feeds.md
+msgid "The room can be previewed without an account on https://matrix.to/#/#fdroid:f-droid.org or https://matrix.to/#/#fdroid-dev:f-droid.org"
+msgstr ""
+
+#. type: Title ###
+#: _docs/Feeds.md
+#, no-wrap
 msgid "IRC"
 msgstr ""
 
 #. type: Plain text
 #: _docs/Feeds.md
-msgid "chat.freenode.net #fdroid or #fdroid-dev. The channels are logged at <https://botbot.me/freenode/fdroid/> and <https://botbot.me/freenode/fdroid-dev/>."
+msgid "Old IRC logs are available at <https://botbot.me/freenode/fdroid/> and <https://botbot.me/freenode/fdroid-dev/>."
 msgstr ""
 
 #. type: Title ##
@@ -5549,7 +5642,7 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/How_to_Help.md
-msgid "If you experience problems with the site or client software, you can report them in the [issue tracker](https://gitlab.com/u/fdroid), discuss them in the [Forum](https://forum.f-droid.org/) or on IRC ([#fdroid on freenode](https://webchat.oftc.net/?randomnick=1&channels=%23fdroid&uio=MT1mYWxzZSYyPXRydWUmND10cnVlJjk9dHJ1ZSYxMD10cnVlJjEyPXRydWU84)).  Take a look at the [Repository Maintenance](https://monitor.f-droid.org/builds)  page to see how you can help keeping apps and their metadata up to date."
+msgid "If you experience problems with the site or client software, you can report them in the [issue tracker](https://gitlab.com/u/fdroid), discuss them in the [Forum](https://forum.f-droid.org/), on [Matrix](https://matrix.to/#/#fdroid:f-droid.org) or on IRC ([#fdroid on OFTC](https://webchat.oftc.net/?randomnick=1&channels=fdroid&prompt=1)).  Take a look at the [Repository Maintenance](https://monitor.f-droid.org/builds)  page to see how you can help keeping apps and their metadata up to date."
 msgstr ""
 
 #. type: Plain text
@@ -5676,7 +5769,7 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/How_to_Help.md
-msgid "F-Droid provides multiple servers (builders, web portal, download areas...) which need regular maintenance, Ansible-based deployment, and hardware management.  Further information can be found by asking [on IRC](https://webchat.oftc.net/?channels=%23fdroid-dev) (#fdroid-dev on freenode) or team@f-droid.org."
+msgid "F-Droid provides multiple servers (builders, web portal, download areas...) which need regular maintenance, Ansible-based deployment, and hardware management.  Further information can be found by asking on [Matrix](https://matrix.to/#/#fdroid-dev:f-droid.org), [IRC](https://webchat.oftc.net/?randomnick=1&channels=fdroid&prompt=1) (#fdroid-dev on OFTC) or team@f-droid.org."
 msgstr ""
 
 #. type: Title ###
@@ -6427,7 +6520,7 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/Installing_the_Server_and_Repo_Tools.md
-msgid "The F-Droid tools, also known as _fdroidserver_, are included in recent releases (Debian/jessie, Ubuntu/utopic, and newer).  This should be enough to install the basic F-Droid setup:"
+msgid "The F-Droid tools, also known as _fdroidserver_, may be installed from the standard OS package repository.  On Debian-based OS's, this should be enough to install the basic F-Droid setup:"
 msgstr ""
 
 #. type: Plain text
@@ -6436,15 +6529,20 @@ msgstr ""
 msgid "    sudo apt-get install fdroidserver\n"
 msgstr ""
 
+#. type: Plain text
+#: _docs/Installing_the_Server_and_Repo_Tools.md
+msgid "However, it is common to find that the version of _fdroidserver_ available in the standard OS package repository is out of date."
+msgstr ""
+
 #. type: Title ###
 #: _docs/Installing_the_Server_and_Repo_Tools.md
 #, no-wrap
-msgid "Older releases"
+msgid "Getting a newer version"
 msgstr ""
 
 #. type: Plain text
 #: _docs/Installing_the_Server_and_Repo_Tools.md
-msgid "For installing on older releases, there are a couple more simple steps:"
+msgid "A newer version of _fdroidserver_ may be found in the F-Droid PPA or your OS's _backports_ repository."
 msgstr ""
 
 #. type: Bullet: '-   '
@@ -6465,7 +6563,7 @@ msgstr ""
 
 #. type: Bullet: '-   '
 #: _docs/Installing_the_Server_and_Repo_Tools.md
-msgid "Debian/wheezy: [setup wheezy-backports](http://backports.debian.org/Instructions/#index2h2), then: ```bash apt-get install fdroidserver/wheezy-backports ```"
+msgid "Debian: first [setup backports](http://backports.debian.org/Instructions/#index2h2), then, substituting your Debian release for 'buster': ```bash apt-get install fdroidserver/buster-backports ```"
 msgstr ""
 
 #. type: Title ##
@@ -6494,23 +6592,18 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/Installing_the_Server_and_Repo_Tools.md
-msgid "You can install `fdroidserver` directly using [MacPorts](https://www.macports.org/ports.php?by=name&substr=fdroidserver), [Homebrew](http://brewformulas.org/Fdroidserver), or `easy_install` as a last resort:"
+msgid "You can install `fdroidserver` directly using Homebrew, or `easy_install` as a last resort:"
 msgstr ""
 
-#. type: Plain text
-#: _docs/Installing_the_Server_and_Repo_Tools.md
-msgid "or MacPorts:"
-msgstr ""
-
-#. type: Fenced code block (bash)
+#. type: Title ###
 #: _docs/Installing_the_Server_and_Repo_Tools.md
 #, no-wrap
-msgid "port install fdroidserver\n"
+msgid "Homebrew:"
 msgstr ""
 
-#. type: Plain text
+#. type: Bullet: '1. '
 #: _docs/Installing_the_Server_and_Repo_Tools.md
-msgid "or Homebrew:"
+msgid "Preparation: Check [the Homebrew formula](https://formulae.brew.sh/formula/fdroidserver) for instructions. Example:"
 msgstr ""
 
 #. type: Fenced code block (bash)
@@ -6518,12 +6611,23 @@ msgstr ""
 #, no-wrap
 msgid ""
 "brew install android-sdk\n"
-"android update sdk --no-ui --filter platform-tools,build-tools-22.0.1\n"
-"brew install fdroidserver\n"
+"android update sdk --no-ui --all --filter tools,platform-tools,build-tools-25.0.0\n"
 msgstr ""
 
-#. type: Plain text
+#. type: Bullet: '2. '
 #: _docs/Installing_the_Server_and_Repo_Tools.md
+msgid "Install _fdroidserver_:"
+msgstr ""
+
+#. type: Fenced code block (bash)
+#: _docs/Installing_the_Server_and_Repo_Tools.md
+#, no-wrap
+msgid "brew install fdroidserver\n"
+msgstr ""
+
+#. type: Title ###
+#: _docs/Installing_the_Server_and_Repo_Tools.md
+#, no-wrap
 msgid "With only `easy_install`:"
 msgstr ""
 
@@ -6674,16 +6778,15 @@ msgstr ""
 #: _docs/Installing_the_Server_and_Repo_Tools.md
 #, no-wrap
 msgid ""
-"$ sudo apt-get install apksigner curl lib32gcc1 lib32ncurses5 lib32stdc++6 lib32z1 default-jdk-headless python3-pil python3-pyasn1 python3-pyasn1-modules python3-ruamel.yaml python3-yaml unzip ...\n"
-"$ cd ~\n"
-"$ wget https://dl.google.com/android/repository/tools_r25.2.3-linux.zip\n"
-"$ echo \"aafe7f28ac51549784efc2f3bdfc620be8a08213  tools_r25.2.3-linux.zip\" | sha1sum -c\n"
-"tools_r25.2.3-linux.zip: OK\n"
-"$ unzip tools_r25.2.3-linux.zip\n"
-"$ export USE_SDK_WRAPPER=yes\n"
-"$ export ANDROID_HOME=~/android-sdk-linux\n"
-"$ export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools\n"
-"$ android update sdk --no-ui --filter platform-tools,tools,build-tools-25.0.2,android-24\n"
+"$ sudo apt-get install fdroidserver\n"
+"$ mkdir ~/android-sdk-linux\n"
+"$ cd ~/android-sdk-linux\n"
+"$ wget https://dl.google.com/android/repository/commandlinetools-linux-6858069_latest.zip\n"
+"$ echo \"87f6dcf41d4e642e37ba03cb2e387a542aa0bd73cb689a9e7152aad40a6e7a08  commandlinetools-linux-6858069_latest.zip\" | sha256sum -c\n"
+"commandlinetools-linux-6858069_latest.zip: OK\n"
+"$ unzip commandlinetools-linux-6858069_latest.zip\n"
+"$ export ANDROID_HOME=\"$HOME/android-sdk-linux\"\n"
+"$ ./cmdline-tools/bin/sdkmanager --sdk_root=\"$ANDROID_HOME\" platform-tools \"build-tools;30.0.3\"\n"
 msgstr ""
 
 #. type: Plain text
@@ -6699,9 +6802,7 @@ msgstr ""
 #. type: Fenced code block (bash)
 #: _docs/Installing_the_Server_and_Repo_Tools.md
 #, no-wrap
-msgid ""
-"$ echo export ANDROID_HOME=$ANDROID_HOME >> .bashrc\n"
-"$ echo 'export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools' >> .bashrc\n"
+msgid "$ echo export ANDROID_HOME=$ANDROID_HOME >> .bashrc\n"
 msgstr ""
 
 #. type: Title ##
@@ -7535,6 +7636,7 @@ msgid ""
 "# when satisfied with the verification, import it\n"
 "unzip admin@f-droid.org.jar admin@f-droid.org.asc\n"
 "gpg --import admin@f-droid.org.asc\n"
+"gpg --keyserver keyserver.ubuntu.com --recv-key 37D2C98789D8311948394E3E41E7044E1DBA2E89\n"
 msgstr ""
 
 #. type: Title ##
@@ -7913,15 +8015,32 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
-msgid "You may also supply HTTPS-URLs directly to `fdroid signatures` instead of local files. The signature files are extracted to the according metadata directory ready to be used with `fdroid publish`. A signature consists of 3 files and the result of extracting one will resemble this file listing:"
+msgid "You may also supply HTTPS-URLs directly to `fdroid signatures` instead of local files. The signature files are extracted to the according metadata directory ready to be used with `fdroid publish`. A signature consists of 3-5 files and the result of extracting one will resemble these file listings:"
 msgstr ""
 
 #. type: Fenced code block (console)
 #: _docs/Reproducible_Builds.md
 #, no-wrap
 msgid ""
-"$ ls metadata/org.fdroid.fdroid/signatures/1000012/\n"
+"$ ls metadata/org.fdroid.fdroid/signatures/1000012/  # v1 signature only\n"
 "CIARANG.RSA  CIARANG.SF  MANIFEST.MF\n"
+"$ ls metadata/your.app/signatures/42/                # v1 + v2/v3 signature\n"
+"APKSigningBlock  APKSigningBlockOffset  MANIFEST.MF  YOURKEY.RSA  YOURKEY.SF\n"
+msgstr ""
+
+#. type: Plain text
+#: _docs/Reproducible_Builds.md
+msgid "If you don't want to install `fdroidserver` or have an older version that doesn't support extracting v2/v3 signatures yet, you can also use [`apksigcopier`](https://github.com/obfusk/apksigcopier) (available in e.g. Debian unstable) instead of `fdroid signatures`:"
+msgstr ""
+
+#. type: Fenced code block (console)
+#: _docs/Reproducible_Builds.md
+#, no-wrap
+msgid ""
+"$ cd /path/to/fdroiddata\n"
+"$ APPID=your.app VERSIONCODE=42\n"
+"$ mkdir metadata/$APPID/signatures/$VERSIONCODE\n"
+"$ apksigcopier extract --v1-only=auto Your.apk metadata/$APPID/signatures/$VERSIONCODE\n"
 msgstr ""
 
 #. type: Title ####
@@ -7982,7 +8101,23 @@ msgstr ""
 msgid "Google is also working towards reproducible builds of Android apps, so using recent versions of the Android SDK helps.  One specific case is starting with Gradle Android Plugin v2.2.2, timestamps in the APK file's ZIP header are automatically zeroed out."
 msgstr ""
 
-#. type: Title ##
+#. type: Title ###
+#: _docs/Reproducible_Builds.md
+#, no-wrap
+msgid "Reproducible Signatures"
+msgstr ""
+
+#. type: Plain text
+#: _docs/Reproducible_Builds.md
+msgid "F-Droid verifies reproducible builds using the APK signature, which requires [copying](https://github.com/obfusk/apksigcopier) the signature from a signed APK to an unsigned one and then checking if the latter verifies.  The old v1 (JAR) signatures only cover the *contents* of the APK (ZIP metadata and ordering are irrelevant), but v2/v3 signatures cover *all other bytes in the APK*.  Thus, the APKs must be completely identical *before* and *after* signing (apart from the signature) in order to verify correctly."
+msgstr ""
+
+#. type: Plain text
+#: _docs/Reproducible_Builds.md
+msgid "Copying the signature uses the same algorithm that `apksigner` uses when signing an APK.  It is therefore important that (upstream) developers do the same when signing APKs, ideally by using `apksigner`."
+msgstr ""
+
+#. type: Title ###
 #: _docs/Reproducible_Builds.md
 #, no-wrap
 msgid "_platform_ Revisions"
@@ -8078,6 +8213,51 @@ msgstr ""
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
 msgid "However, it might be possible that resource shrinker will increase the APK size on different platforms, especially if there is not too many resources to shrink, in which case the original APK will be used instead of the shrinked one (nondeterministic behavior of Gradle plugin). Avoid using resource shrinker unless it decreases the APK file size significantly."
+msgstr ""
+
+#. type: Title ###
+#: _docs/Reproducible_Builds.md
+#, no-wrap
+msgid "coreLibraryDesugaring"
+msgstr ""
+
+#. type: Plain text
+#: _docs/Reproducible_Builds.md
+msgid "In some cases builds are not reproducible due to a bug in `coreLibraryDesugaring`; this [currently affects NewPipe](https://github.com/TeamNewPipe/NewPipe/issues/6486)."
+msgstr ""
+
+#. type: Title ###
+#: _docs/Reproducible_Builds.md
+#, no-wrap
+msgid "zipflinger"
+msgstr ""
+
+#. type: Plain text
+#: _docs/Reproducible_Builds.md
+msgid "Recent versions of the Android gradle plugin will use *zipflinger* -- which arranges the contents of the APK differently -- which could result in e.g. [apksigcopier](https://github.com/obfusk/apksigcopier) failing to work in some cases.  You can tell the plugin not to use *zipflinger* by setting `android.useNewApkCreator=false` in `gradle.properties`."
+msgstr ""
+
+#. type: Title ###
+#: _docs/Reproducible_Builds.md
+#, no-wrap
+msgid "Native library stripping"
+msgstr ""
+
+#. type: Plain text
+#: _docs/Reproducible_Builds.md
+msgid "It seems that the stripping of native libraries, e.g. _libfoo.so_, can cause intermittent reproducibility issues.  It is important to use the exact NDK version when rebuilding, e.g. r21e.  Disabling stripping can sometimes help.  Gradle seems to strip shared libraries by default, even the app is receiving the shared libraries via an AAR library.  Here is how to disable it in Gradle:"
+msgstr ""
+
+#. type: Fenced code block (gradle)
+#: _docs/Reproducible_Builds.md
+#, no-wrap
+msgid ""
+"android {\n"
+"\tpackagingOptions {\n"
+"\t\tdoNotStrip '**/*.so'\n"
+"\t}\n"
+"}\n"
+"\n"
 msgstr ""
 
 #. type: Title ###
@@ -8221,6 +8401,11 @@ msgstr ""
 msgid "[Google Issue #110237303 resources.arsc built with non-determism, prevents reproducible APK builds](https://issuetracker.google.com/issues/110237303) (_Google login and JavaScript required_)"
 msgstr ""
 
+#. type: Bullet: '* '
+#: _docs/Reproducible_Builds.md
+msgid "[Unreproducible/non-deterministic code generation by navigation.safeargs.kotlin](https://issuetracker.google.com/issues/189498001) (_Google login and JavaScript required_)"
+msgstr ""
+
 #. type: YAML Front Matter: title
 #: _docs/Running_a_Mirror.md
 #, no-wrap
@@ -8266,6 +8451,11 @@ msgstr ""
 #. type: Bullet: '* '
 #: _docs/Running_a_Mirror.md
 msgid "Sweden: `rsync -axv ftp.lysator.liu.se::pub/fdroid`"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/Running_a_Mirror.md
+msgid "Taiwan: `rsync -axv mirror.ossplanet.net::fdroid`"
 msgstr ""
 
 #. type: Bullet: '* '
@@ -8316,15 +8506,15 @@ msgstr ""
 
 #. type: Bullet: '2. '
 #: _docs/Running_a_Mirror.md
-msgid "Synchronize the repositories. These commands are best run in a terminal multiplexer (`screen`, `tmux` etc) as they will take some time to complete."
+msgid "Synchronize the repositories. These commands are best run in a terminal multiplexer (`screen`, `tmux` etc) as they will take some time to complete. With `--info=progress2` you can see the progress."
 msgstr ""
 
 #. type: Fenced code block (console)
 #: _docs/Running_a_Mirror.md
 #, no-wrap
 msgid ""
-"$ sudo -u www-data -E /usr/bin/rsync --links --delete --times --recursive --perms --hard-links --sparse --delay-updates --temp-dir /tmp/ ftp.fau.de::fdroid/repo/ /var/www/fdroid/fdroid/repo/\n"
-"$ sudo -u www-data -E /usr/bin/rsync --links --delete --times --recursive --perms --hard-links --sparse --delay-updates --temp-dir /tmp/ ftp.fau.de::fdroid/archive/ /var/www/fdroid/fdroid/archive/\n"
+"$ sudo -u www-data -E /usr/bin/rsync -aHS  --delete --delete-delay --info=progress2 ftp.fau.de::fdroid/repo/ /var/www/fdroid/fdroid/repo/\n"
+"$ sudo -u www-data -E /usr/bin/rsync -aHS  --delete --delete-delay --info=progress2 ftp.fau.de::fdroid/archive/ /var/www/fdroid/fdroid/archive/\n"
 msgstr ""
 
 #. type: Bullet: '3. '
@@ -8345,15 +8535,15 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/Running_a_Mirror.md
-msgid "Fill the file with entries to update the repositories"
+msgid "Fill the file with entries to update the repositories. These commands will run at minute 35 past every 6th hour, you can change it to fit your needs."
 msgstr ""
 
 #. type: Fenced code block
 #: _docs/Running_a_Mirror.md
 #, no-wrap
 msgid ""
-"*/5 * * * * www-data /usr/bin/rsync --links --delete --times --recursive --perms --hard-links --sparse --delay-updates --temp-dir /tmp/ ftp.fau.de::fdroid/repo/ /var/www/fdroid/fdroid/repo/\n"
-"*/5 * * * * www-data /usr/bin/rsync --links --delete --times --recursive --perms --hard-links --sparse --delay-updates --temp-dir /tmp/ ftp.fau.de::fdroid/archive/ /var/www/fdroid/fdroid/archive/\n"
+"35 */6 * * * www-data /usr/bin/rsync -aHS  --delete --delete-delay ftp.fau.de::fdroid/repo/ /var/www/fdroid/fdroid/repo/\n"
+"35 */6 * * * www-data /usr/bin/rsync -aHS  --delete --delete-delay ftp.fau.de::fdroid/archive/ /var/www/fdroid/fdroid/archive/\n"
 msgstr ""
 
 #. type: Bullet: '4. '
@@ -8498,6 +8688,11 @@ msgstr ""
 #. type: Plain text
 #: _docs/Security_Model.md
 msgid "The security architecture is based on models proven by [Debian](https://wiki.debian.org/SecureApt), [The Update Framework](https://github.com/theupdateframework/specification/blob/master/tuf-spec.md)  , and others:"
+msgstr ""
+
+#. type: Bullet: '-   '
+#: _docs/Security_Model.md
+msgid "a repo is defined by having unique signing key, first and foremost"
 msgstr ""
 
 #. type: Bullet: '-   '
@@ -8649,7 +8844,7 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/Security_Model.md
-msgid "On top of this, F-Droid makes it as easy as possible to [build it into](https://gitlab.com/fdroid/privileged-extension/#how-do-i-build-it-into-my-rom)  ROM projects.  It is already included in [Replicant](https://www.replicant.us/), [CopperheadOS](https://copperhead.co/android/), [LineageOS for microG](https://lineage.microg.org/) and [Fairphone Open](https://code.fairphone.com/projects/fp-osos/)."
+msgid "On top of this, F-Droid makes it as easy as possible to [build it into](https://gitlab.com/fdroid/privileged-extension/#how-do-i-build-it-into-my-rom)  ROM projects.  It is already included in [CalyxOS](https://calyxos.org/), [Replicant](https://www.replicant.us/), [LineageOS for microG](https://lineage.microg.org/) and [Fairphone Open](https://code.fairphone.com/projects/fp-osos/)."
 msgstr ""
 
 #. type: Title ###
@@ -8729,12 +8924,12 @@ msgstr ""
 
 #. type: Bullet: '2.  '
 #: _docs/Setup_an_F-Droid_App_Repo.md
-msgid "create a directory called _fdroid_, then run `fdroid init` in that directory"
+msgid "Create a directory called _fdroid_, then run `fdroid init` in that directory to generate the signing key that uniquely identifies your repo."
 msgstr ""
 
 #. type: Bullet: '3.  '
 #: _docs/Setup_an_F-Droid_App_Repo.md
-msgid "Optionally edit the _config.yml_ to your liking, details examples are in [`./examples/config.yml`](https://gitlab.com/fdroid/fdroidserver/blob/master/examples/config.yml)"
+msgid "Optionally edit the _config.yml_ file to your liking, detailed examples are in [examples/config.yml](https://gitlab.com/fdroid/fdroidserver/-/blob/master/examples/config.yml)"
 msgstr ""
 
 #. type: Bullet: '4.  '
@@ -8769,7 +8964,7 @@ msgstr ""
 
 #. type: Bullet: '0.  '
 #: _docs/Setup_an_F-Droid_App_Repo.md
-msgid "Publish the resulting contents of the _repo_ directory to your web server (or set `serverwebroot` in your _config.yml_ then use `fdroid server update`)"
+msgid "Publish the resulting contents of the _repo_ directory to your web server (or set `serverwebroot` in your _config.yml_ then use `fdroid deploy`)"
 msgstr ""
 
 #. type: Plain text
@@ -8796,7 +8991,7 @@ msgstr ""
 #. type: Fenced code block (bash)
 #: _docs/Setup_an_F-Droid_App_Repo.md
 #, no-wrap
-msgid "    sudo apt-get install nginx\n"
+msgid "sudo apt-get install nginx\n"
 msgstr ""
 
 #. type: Plain text
@@ -8849,7 +9044,7 @@ msgstr ""
 msgid "You can also customize your repo by editing the config file. Be sure to use a programming text editor, like `editor /usr/share/nginx/www/fdroid/config.yml`. In the config file, you can set the name of the repo, the description, the icon, paths to specific versions of the build tools, links to a related wiki, and whether to keep stats. Here's the basic repo description block:"
 msgstr ""
 
-#. type: Fenced code block (python)
+#. type: Fenced code block (yaml)
 #: _docs/Setup_an_F-Droid_App_Repo.md
 #, no-wrap
 msgid ""
@@ -8900,7 +9095,7 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/Setup_an_F-Droid_App_Repo.md
-msgid "To improve this situation, generate the repo on a non-public machine like your laptop, keeping _config.yml_ and the keystore only on that machine (remember to make backups!). Then use `fdroid server update` to publish the changes to your repo on a separate server via ssh. So start a new repo from scratch on your non-public machine:"
+msgid "To improve this situation, generate the repo on a non-public machine like your laptop, keeping _config.yml_ and the keystore only on that machine (remember to make backups!). Then use `fdroid deploy` to publish the changes to your repo on a separate server via ssh. So start a new repo from scratch on your non-public machine:"
 msgstr ""
 
 #. type: Fenced code block (bash)
@@ -8913,12 +9108,12 @@ msgid ""
 "cp /path/to/\\*.apk ~/fdroid/repo/\n"
 "fdroid update --create-metadata\n"
 "emacs config.yml # add the serverwebroot, etc.\n"
-"fdroid server update -v\n"
+"fdroid deploy -v\n"
 msgstr ""
 
 #. type: Plain text
 #: _docs/Setup_an_F-Droid_App_Repo.md
-msgid "Now edit _config.yml_ to set `serverwebroot`, it is in the form of a standard SCP file destination. Then `fdroid server update` will do the publishing via rsync over ssh. So both computers will have to have ssh and rsync installed and setup. You can also use your own existing signing key rather than the one generated by `fdroid init`, just edit `repo_keyalias`, `keystore`, `keystorepass`, `keypass`, and `keydname` in _~/fdroid/config.yml_."
+msgid "Now edit _config.yml_ to set `serverwebroot`, it is in the form of a standard SCP file destination. Then `fdroid deploy` will do the publishing via rsync over ssh. So both computers will have to have ssh and rsync installed and setup. You can also use your own existing signing key rather than the one generated by `fdroid init`, just edit `repo_keyalias`, `keystore`, `keystorepass`, `keypass`, and `keydname` in _~/fdroid/config.yml_."
 msgstr ""
 
 #. type: YAML Front Matter: title
