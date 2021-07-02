@@ -39,7 +39,7 @@ Any app that F-Droid can uninstall can be included, including
 [Ripple]({{  site.baseurl }}/packages/info.guardianproject.ripple)
 and F-Droid itself.  So the whole panic setup could be wiped as part
 of the response.  This requires [F-Droid Privileged
-Extension](https://f-droid.org/packages/org.fdroid.fdroid.privileged.ota)
+Extension](https://f-droid.org/packages/org.fdroid.fdroid.privileged.ota/)
 be installed on the device, in order to uninstall apps without a
 prompt for each app.  Android ROMs like
 [CalyxOS](https://calyxos.org/), CopperheadOS,

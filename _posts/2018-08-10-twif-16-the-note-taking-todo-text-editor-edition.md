@@ -43,7 +43,7 @@ In this edition: Fixing nearby swap, download link broken and fixed again, a fla
 * [Carnet](https://f-droid.org/packages/com.spisoft.quicknote/): Powerful note taking app with sync capabilities
 * [BwareArea](https://f-droid.org/packages/fr.byped.bwarearea/): An offline GPS based POI alerter with overlay
 * [Stethox](https://f-droid.org/packages/org.schabi.stethox/): Xposed module that adds Stetho to every app
-* [DNS Hero](https://f-droid.org/packages/com.gianlu.dnshero): Inspect DNS zones like a superhero
+* [DNS Hero](https://f-droid.org/packages/com.gianlu.dnshero/): Inspect DNS zones like a superhero
 * [MetalabDoorWidget](https://f-droid.org/packages/com.zoffcc.applications.metalab_open_widget/): Show the Door status of Metalab Vienna
 * [Music](https://f-droid.org/packages/com.maxfour.music/): Lightweight and Material Music Player based on Phonograph
 * [MyMusicQoE](https://f-droid.org/packages/pt.ipleiria.mymusicqoe/): A fork of ultrasonic with QoE evaluation features purposes
