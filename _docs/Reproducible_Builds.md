@@ -57,12 +57,23 @@ $ fdroid signatures F-Droid.apk
 You may also supply HTTPS-URLs directly to `fdroid signatures` instead
 of local files. The signature files are extracted to the according
 metadata directory ready to be used with `fdroid publish`. A signature
-consists of 3 files and the result of extracting one will resemble this
-file listing:
+consists of 3-5 files and the result of extracting one will resemble these
+file listings:
 
 ```console
-$ ls metadata/org.fdroid.fdroid/signatures/1000012/
+$ ls metadata/org.fdroid.fdroid/signatures/1000012/  # v1 signature only
 CIARANG.RSA  CIARANG.SF  MANIFEST.MF
+$ ls metadata/your.app/signatures/42/                # v1 + v2/v3 signature
+APKSigningBlock  APKSigningBlockOffset  MANIFEST.MF  YOURKEY.RSA  YOURKEY.SF
+```
+
+If you don't want to install `fdroidserver` or have an older version that doesn't support extracting v2/v3 signatures yet, you can also use [`apksigcopier`](https://github.com/obfusk/apksigcopier) (available in e.g. Debian unstable) instead of `fdroid signatures`:
+
+```console
+$ cd /path/to/fdroiddata
+$ APPID=your.app VERSIONCODE=42
+$ mkdir metadata/$APPID/signatures/$VERSIONCODE
+$ apksigcopier extract --v1-only=auto Your.apk metadata/$APPID/signatures/$VERSIONCODE
 ```
 
 #### Exclusively publishing (upstream-)developer signed APKs
