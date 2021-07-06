@@ -484,7 +484,7 @@ configuration to the build. These are (roughly in order of application):
 :   Specifies to build from a subdirectory of the checked out source
     code. Normally this directory is changed to before building,
 
-`submodules: yes`<a name="build_submodules"></a>
+`submodules: true`<a name="build_submodules"></a>
 
 :   Use if the project (git only) has submodules - causes
     `git submodule update --init --recursive` to be executed after the
