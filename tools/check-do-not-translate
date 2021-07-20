@@ -10,8 +10,10 @@ sed -i 's, *$,,' $data/strings.json $data/*/strings.json \
     $data/tutorials.json $data/*/tutorials.json
 
 perl -i -pe 'BEGIN{undef $/;} s/\nmsgid "<!--more-->.n"\nmsgstr ".*?"/\nmsgid "<!--more-->\\n"\nmsgstr "<!--more-->\\n"/smg' po/_posts.*.po
-
 perl -i -pe 'BEGIN{undef $/;} s/\nmsgid "<hr \/>.n"\nmsgstr ".*?"/\nmsgid "<hr \/>\\n"\nmsgstr "<hr \/>\\n"/smg' po/_posts.*.po
+perl -i -pe 'BEGIN{undef $/;} s/\nmsgid ("`system-images;android-29;microg;x86_64`")\nmsgstr ".*?"/\nmsgid \1\nmsgstr \1/smg' po/_posts.*.po
+perl -i -pe 'BEGIN{undef $/;} s@\nmsgid ("!\[\]\(\{% asset posts/2017-07-03-cuba/fdroid-logo\.png %\}\)")\nmsgstr ".*?"@\nmsgid \1\nmsgstr \1@smg' po/_posts.*.po
+perl -i -pe 'BEGIN{undef $/;} s@\nmsgid ("!\[\]\(\{% asset posts/2017-07-03-cuba/be_update1.jpg %\}\)")\nmsgstr ".*?"@\nmsgid \1\nmsgstr \1@smg' po/_posts.*.po
 
 perl -i -pe 'BEGIN{undef $/;} s@\nmsgid "(<https://[A-Z0-9a-z/.?=_-]+>)"\nmsgstr ".*?"@\nmsgid "\1"\nmsgstr "\1"@smg' po/_*.*.po
 
