@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2021-07-02 16:56+0200\n"
+"POT-Creation-Date: 2021-08-05 18:52+0200\n"
 "PO-Revision-Date: 2021-05-25 12:33+0000\n"
 "Last-Translator: Слободан Симић(Slobodan Simić) <slsimic@gmail.com>\n"
 "Language-Team: Serbian <https://hosted.weblate.org/projects/f-droid/website-docs/sr/>\n"
@@ -1723,6 +1723,11 @@ msgstr ""
 
 #. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
+msgid "[_AllowedAPKSigningKeys_](#AllowedAPKSigningKeys)"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/Build_Metadata_Reference.md
 msgid "[_AntiFeatures_](#AntiFeatures)"
 msgstr ""
 
@@ -2395,7 +2400,7 @@ msgstr ""
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
-msgid "`submodules: yes`<a name=\"build_submodules\"></a>\n"
+msgid "`submodules: true`<a name=\"build_submodules\"></a>\n"
 msgstr ""
 
 #. type: Plain text
@@ -3079,6 +3084,23 @@ msgstr ""
 msgid ""
 ":   List of Anti-Features for this specific build. They are described\n"
 "    in [_AntiFeatures_](#AntiFeatures).\n"
+msgstr ""
+
+#. type: Title ###
+#: _docs/Build_Metadata_Reference.md
+#, no-wrap
+msgid "_AllowedAPKSigningKeys_<a name=\"AllowedAPKSigningKeys\"></a>"
+msgstr ""
+
+#. type: Plain text
+#: _docs/Build_Metadata_Reference.md
+msgid "When making automated binary repositories with `fdroid update`, it is generally easy to find out the expected signing key for the APKs that are gathered.  `AllowedAPKSigningKeys` lets the repo operator set the expected signing keys, then `fdroid update` will check that the APKs are signed by one of those keys.  If not, the mismatched APKs will not be included in the repo.  If `fdroid update --delete-unknown` is specified, the mismatched APKs will be deleted.  Then an automated process can be used to download newer APKs to the repo, and they will only be included if they have a known good signature.  The value is a lowercase hex value of the SHA-256 fingerprint of the signing certificate.  This can be fetched using:"
+msgstr ""
+
+#. type: Fenced code block
+#: _docs/Build_Metadata_Reference.md
+#, no-wrap
+msgid "    apksigner verify --print-certs /path/to/the.apk | grep SHA-256\n"
 msgstr ""
 
 #. type: Title ###
