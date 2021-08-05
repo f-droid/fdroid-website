@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2021-02-16 14:40+0100\n"
-"PO-Revision-Date: 2021-07-05 11:21+0200\n"
+"PO-Revision-Date: 2021-07-06 13:27+0000\n"
 "Last-Translator: Simona Iacob <s@zp1.net>\n"
 "Language-Team: Romanian <https://hosted.weblate.org/projects/f-droid/website-docs/ro/>\n"
 "Language: ro\n"
@@ -8803,10 +8803,9 @@ msgstr "Google lucrează, de asemenea, la crearea de versiuni reproductibile ale
 
 #. type: Title ###
 #: _docs/Reproducible_Builds.md
-#, fuzzy, no-wrap
-#| msgid "Reproducible builds"
+#, no-wrap
 msgid "Reproducible Signatures"
-msgstr "Construcții reproductibile"
+msgstr "Semnături reproductibile"
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
@@ -8858,7 +8857,7 @@ msgstr "PNG Crush/Crunch"
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
 msgid "A standard part of the Android build process is to run some kind of PNG optimization tool, like `aapt singleCrunch` or `pngcrush`.  These do not provide deterministic output, it is still an open question as to why.  Since PNGs are normally committed to the source repo, a workaround to this problem is to run the tool of your choice on the PNG files, then commit those changes to the source repo (e.g. `git`).  Then, disable the default PNG optimization process by adding this to _build.gradle_:"
-msgstr ""
+msgstr "O parte standard a procesului de compilare Android este de a rula un fel de instrument de optimizare PNG, cum ar fi `aapt singleCrunch` sau `pngcrush`.  Acestea nu oferă o ieșire deterministă, este încă o întrebare deschisă de ce.  Deoarece PNG-urile sunt în mod normal confirmate în repo-ul sursă, o soluție la această problemă este să rulați instrumentul ales de dvs. pe fișierele PNG, apoi să confirmați aceste modificări în repo-ul sursă (de exemplu, `git`).  Apoi, dezactivați procesul implicit de optimizare PNG adăugând acest lucru la _build.gradle_:"
 
 #. type: Fenced code block
 #: _docs/Reproducible_Builds.md
@@ -8870,22 +8869,27 @@ msgid ""
 "    }\n"
 "}\n"
 msgstr ""
+"android {\n"
+"    aaptOptions {\n"
+"        cruncherEnabled = false\n"
+"    }\n"
+"}\n"
 
 #. type: Title ###
 #: _docs/Reproducible_Builds.md
 #, no-wrap
 msgid "R8 Optimizer"
-msgstr ""
+msgstr "Optimizator R8"
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
 msgid "It appears that some R8 optimizations done in nondeterministic way, producing different bytecode on different build runs."
-msgstr ""
+msgstr "Se pare că unele optimizări R8 au fost efectuate în mod nedeterminist, producând coduri de bytes diferite la diferite execuții de compilare."
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
 msgid "For instance, R8 tries to optimize ServiceLoader usage making a static list of all services in the code. The order of this list may be different (or even incomplete) on each build run. The only way to avoid this behavior is disabling such optimizations declaring optimized classes in _proguard-rules.pro_:"
-msgstr ""
+msgstr "De exemplu, R8 încearcă să optimizeze utilizarea ServiceLoader făcând o listă statică a tuturor serviciilor din cod. Ordinea acestei liste poate fi diferită (sau chiar incompletă) la fiecare execuție de compilare. Singura modalitate de a evita acest comportament este dezactivarea acestor optimizări prin declararea claselor optimizate în _proguard-rules.pro_:"
 
 #. type: Fenced code block
 #: _docs/Reproducible_Builds.md
@@ -8894,60 +8898,62 @@ msgid ""
 "-keep class kotlinx.coroutines.CoroutineExceptionHandler\n"
 "-keep class kotlinx.coroutines.internal.MainDispatcherFactory\n"
 msgstr ""
+"-keep class kotlinx.coroutines.CoroutineExceptionHandler\n"
+"-keep class kotlinx.coroutines.internal.MainDispatcherFactory\n"
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
 msgid "Be careful with R8. Always test your builds multiple times and disable optimizations which produce a nondeterministic output."
-msgstr ""
+msgstr "Aveți grijă cu R8. Testați-vă întotdeauna compilările de mai multe ori și dezactivați optimizările care produc un rezultat nedeterminist."
 
 #. type: Title ###
 #: _docs/Reproducible_Builds.md
 #, no-wrap
 msgid "Resource Shrinker"
-msgstr ""
+msgstr "Resurse Shrinker"
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
 msgid "It's possible to reduce the APK file size removing unused resources from the package. This is useful when a project depends on some bloat libraries such as AppCompat, especially when R8/ProGuard code shrinking is used."
-msgstr ""
+msgstr "Este posibil să se reducă dimensiunea fișierului APK prin eliminarea resurselor neutilizate din pachet. Acest lucru este util atunci când un proiect depinde de unele biblioteci de tip bloat, cum ar fi AppCompat, în special atunci când se utilizează micșorarea codului R8/ProGuard."
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
 msgid "However, it might be possible that resource shrinker will increase the APK size on different platforms, especially if there is not too many resources to shrink, in which case the original APK will be used instead of the shrinked one (nondeterministic behavior of Gradle plugin). Avoid using resource shrinker unless it decreases the APK file size significantly."
-msgstr ""
+msgstr "Cu toate acestea, ar putea fi posibil ca resource shrinker să mărească dimensiunea APK pe diferite platforme, mai ales dacă nu există prea multe resurse de micșorat, caz în care APK-ul original va fi utilizat în locul celui micșorat (comportament nedeterminist al plugin-ului Gradle). Evitați să folosiți resource shrinker dacă nu scade semnificativ dimensiunea fișierului APK."
 
 #. type: Title ###
 #: _docs/Reproducible_Builds.md
 #, no-wrap
 msgid "coreLibraryDesugaring"
-msgstr ""
+msgstr "Biblioteca de bază pentru dezarhivare"
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
 msgid "In some cases builds are not reproducible due to a bug in `coreLibraryDesugaring`; this [currently affects NewPipe](https://github.com/TeamNewPipe/NewPipe/issues/6486)."
-msgstr ""
+msgstr "În unele cazuri, compilările nu pot fi reproduse din cauza unei erori în `coreLibraryDesugaring`; aceasta [currently affects NewPipe](https://github.com/TeamNewPipe/NewPipe/issues/6486)."
 
 #. type: Title ###
 #: _docs/Reproducible_Builds.md
 #, no-wrap
 msgid "zipflinger"
-msgstr ""
+msgstr "zipflinger"
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
 msgid "Recent versions of the Android gradle plugin will use *zipflinger* -- which arranges the contents of the APK differently -- which could result in e.g. [apksigcopier](https://github.com/obfusk/apksigcopier) failing to work in some cases.  You can tell the plugin not to use *zipflinger* by setting `android.useNewApkCreator=false` in `gradle.properties`."
-msgstr ""
+msgstr "Versiunile recente ale plugin-ului Gradle pentru Android vor folosi *zipflinger* - care aranjează conținutul APK-ului în mod diferit - ceea ce ar putea face ca, de exemplu, [apksigcopier](https://github.com/obfusk/apksigcopier) să nu funcționeze în unele cazuri.  Puteți spune plugin-ului să nu folosească *zipflinger* prin setarea `android.useNewApkCreator=false` în `gradle.properties`."
 
 #. type: Title ###
 #: _docs/Reproducible_Builds.md
 #, no-wrap
 msgid "Native library stripping"
-msgstr ""
+msgstr "Extragerea bibliotecii native"
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
 msgid "It seems that the stripping of native libraries, e.g. _libfoo.so_, can cause intermittent reproducibility issues.  It is important to use the exact NDK version when rebuilding, e.g. r21e.  Disabling stripping can sometimes help.  Gradle seems to strip shared libraries by default, even the app is receiving the shared libraries via an AAR library.  Here is how to disable it in Gradle:"
-msgstr ""
+msgstr "Se pare că eliminarea bibliotecilor native, de exemplu _libfoo.so_, poate cauza probleme intermitente de reproductibilitate.  Este important să folosiți versiunea exactă a NDK atunci când reconstruiți, de exemplu r21e.  Uneori, dezactivarea decupării poate fi de ajutor.  Gradle pare să dezlipească bibliotecile partajate în mod implicit, chiar dacă aplicația primește bibliotecile partajate prin intermediul unei biblioteci AAR.  Iată cum să o dezactivați în Gradle:"
 
 #. type: Fenced code block (gradle)
 #: _docs/Reproducible_Builds.md
@@ -8960,59 +8966,65 @@ msgid ""
 "}\n"
 "\n"
 msgstr ""
+"android {\n"
+"\tpackagingOptions {\n"
+"\t\tdoNotStrip '**/*.so'\n"
+"\t}\n"
+"}\n"
+"\n"
 
 #. type: Title ###
 #: _docs/Reproducible_Builds.md
 #, no-wrap
 msgid "NDK _build-id_"
-msgstr ""
+msgstr "NDK _build-id_"
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
 msgid "On different build machines different NDK paths and different paths to the project (and thus to its _jni_ directory) are used. This leads to different paths to the source files in debug symbols, causing linker to generate different _build-id_, which is preserved after stripping."
-msgstr ""
+msgstr "Pe diferite mașini de compilare sunt utilizate diferite căi de acces la NDK și diferite căi de acces la proiect (și, prin urmare, la directorul _jni_). Acest lucru duce la căi diferite de acces la fișierele sursă în simbolurile de depanare, ceea ce face ca linkerul să genereze _build-id_ diferite, care sunt păstrate după decupare."
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
 msgid "One possible solution is adding `LOCAL_LDFLAGS += -Wl,--build-id=none` to _Android.mk_ files which will disable _build-id_ generation completely."
-msgstr ""
+msgstr "O posibilă soluție este adăugarea de `LOCAL_LDFLAGS += -Wl,---build-id=none` în fișierele _Android.mk_, ceea ce va dezactiva complet generarea _build-id_."
 
 #. type: Title ###
 #: _docs/Reproducible_Builds.md
 #, no-wrap
 msgid "Build Server IDs"
-msgstr ""
+msgstr "Construiți ID-uri de server"
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
 msgid "To describe the build environment used by F-Droid builds, APKs have two files inserted into them:"
-msgstr ""
+msgstr "Pentru a descrie mediul de compilare utilizat de F-Droid, APK-urile au două fișiere inserate în ele:"
 
 #. type: Bullet: '* '
 #: _docs/Reproducible_Builds.md
 msgid "_META-INF/fdroidserverid_ - git commit hash of [_fdroidserver_](https://gitlab.com/fdroid/fdroidserver) used for the build"
-msgstr ""
+msgstr "_META-INF/fdroidserverid_ - hash-ul de comitere git al [_fdroidserver_](https://gitlab.com/fdroid/fdroidserver) folosit pentru construire"
 
 #. type: Bullet: '* '
 #: _docs/Reproducible_Builds.md
 msgid "_META-INF/buildserverid_ - git commit hash of [_makebuildserver_](https://gitlab.com/fdroid/fdroidserver/blob/master/makebuildserver) used for the build"
-msgstr ""
+msgstr "_META-INF/buildserverid_ - hash-ul de comitere git al [_makebuildserver_](https://gitlab.com/fdroid/fdroidserver/blob/master/makebuildserver) folosit pentru construire"
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
 msgid "To ensure reproducibility, use the exact same revision of the `./makebuildserver` and `fdroid build`. You can find the commit hash of _fdroidserver_ by going to your git clone and running `git log -n1`.  The build server instance is stamped with the git commit hash on creation, and that ID is included in builds."
-msgstr ""
+msgstr "Pentru a asigura reproductibilitatea, utilizați exact aceeași revizuire a `./makebuildserver` și `fdroid build`. Puteți găsi hash-ul de confirmare al _fdroidserver_ mergând la clona dvs. git și rulând `git log -n1`.  Instanța serverului de compilare este ștampilată cu hash-ul de comitere git la creare, iar acel ID este inclus în compilări."
 
 #. type: Title ###
 #: _docs/Reproducible_Builds.md
 #, no-wrap
 msgid "ZIP entry info"
-msgstr ""
+msgstr "Informații de intrare ZIP"
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
 msgid "The ZIP format was originally designed around the MSDOS FAT filesystem.  UNIX file permissions were added as an extension.  APKs only need the most basic ZIP format, without any of the extensions.  These extensions are often stripped out in the final release signing process.  But the APK build process can add them.  For example:"
-msgstr ""
+msgstr "Formatul ZIP a fost conceput inițial în jurul sistemului de fișiere MSDOS FAT.  Permisiunile de fișier UNIX au fost adăugate ca o extensie.  APK-urile au nevoie doar de cel mai simplu format ZIP, fără niciuna dintre extensii.  Aceste extensii sunt adesea eliminate în procesul de semnare a versiunii finale.  Dar procesul de construire a APK-ului le poate adăuga.  De exemplu:"
 
 #. type: Fenced code block (diff)
 #: _docs/Reproducible_Builds.md
@@ -9028,34 +9040,43 @@ msgid ""
 "+-rw----     2.4 fat  1958312 b- defN 80-000-00 00:00 classes.dex\n"
 "+-rw-rw-rw-  2.3 unx    78984 b- stor 80-000-00 00:00 resources.arsc\n"
 msgstr ""
+"--- a2dp.Vol_137.apk\n"
+"+++ sigcp_a2dp.Vol_137.apk\n"
+"@@ -1,50 +1,50 @@\n"
+"--rw----     2.0 fat     8976 bX defN 79-Nov-30 00:00 AndroidManifest.xml\n"
+"--rw----     2.0 fat  1958312 bX defN 79-Nov-30 00:00 classes.dex\n"
+"--rw----     1.0 fat    78984 bx stor 79-Nov-30 00:00 resources.arsc\n"
+"+-rw-rw-rw-  2.3 unx     8976 b- defN 80-000-00 00:00 AndroidManifest.xml\n"
+"+-rw----     2.4 fat  1958312 b- defN 80-000-00 00:00 classes.dex\n"
+"+-rw-rw-rw-  2.3 unx    78984 b- stor 80-000-00 00:00 resources.arsc\n"
 
 #. type: Title ###
 #: _docs/Reproducible_Builds.md
 #, no-wrap
 msgid "Migration to reproducible builds"
-msgstr ""
+msgstr "Migrarea la construcțiile reproductibile"
 
 #. type: Title ####
 #: _docs/Reproducible_Builds.md
 #, no-wrap
 msgid "TODO"
-msgstr ""
+msgstr "DE FĂCUT"
 
 #. type: Bullet: '* '
 #: _docs/Reproducible_Builds.md
 msgid "jar sort order for APKs"
-msgstr ""
+msgstr "ordinea de sortare a recipientului pentru APK-uri"
 
 #. type: Bullet: '* '
 #: _docs/Reproducible_Builds.md
 msgid "`aapt` versions produce different results (XML and res/ subfolder names)"
-msgstr ""
+msgstr "versiunile `aapt` produc rezultate diferite (XML și res/ nume de subfoldere)"
 
 #. type: Title ####
 #: _docs/Reproducible_Builds.md
 #, no-wrap
 msgid "Sources"
-msgstr ""
+msgstr "Surse"
 
 #. type: Bullet: '* '
 #: _docs/Reproducible_Builds.md
@@ -9065,7 +9086,7 @@ msgstr "<https://gitlab.com/fdroid/fdroidserver/commit/8568805866dadbdcc6c07449c
 #. type: Bullet: '* '
 #: _docs/Reproducible_Builds.md
 msgid "[Verification Server](../Verification_Server)"
-msgstr ""
+msgstr "[Verification Server](../Verification_Server)"
 
 #. type: Bullet: '* '
 #: _docs/Reproducible_Builds.md
@@ -9090,111 +9111,111 @@ msgstr "<https://gitian.org/>"
 #. type: Bullet: '* '
 #: _docs/Reproducible_Builds.md
 msgid "[Google Issue #70292819 platform-27\\_r01.zip was overwritten with a new update](https://issuetracker.google.com/issues/70292819) (_Google login and JavaScript required_)"
-msgstr ""
+msgstr "[Google Issue #70292819 platform-27\\_r01.zip was overwritten with a new update](https://issuetracker.google.com/issues/70292819) (_Google login and JavaScript required_)"
 
 #. type: Bullet: '* '
 #: _docs/Reproducible_Builds.md
 msgid "[Google Issue #37132313 platformBuildVersionName makes builds difficult to reproduce, creates unneeded diffs](https://issuetracker.google.com/issues/37132313) (_Google login and JavaScript required_)"
-msgstr ""
+msgstr "[Google Issue #37132313 platformBuildVersionName makes builds difficult to reproduce, creates unneeded diffs](https://issuetracker.google.com/issues/37132313) (_Google login and JavaScript required_)"
 
 #. type: Bullet: '* '
 #: _docs/Reproducible_Builds.md
 msgid "[Google Issue #110237303 resources.arsc built with non-determism, prevents reproducible APK builds](https://issuetracker.google.com/issues/110237303) (_Google login and JavaScript required_)"
-msgstr ""
+msgstr "[Google Issue #110237303 resources.arsc built with non-determism, prevents reproducible APK builds](https://issuetracker.google.com/issues/110237303) (_Google login and JavaScript required_)"
 
 #. type: Bullet: '* '
 #: _docs/Reproducible_Builds.md
 msgid "[Unreproducible/non-deterministic code generation by navigation.safeargs.kotlin](https://issuetracker.google.com/issues/189498001) (_Google login and JavaScript required_)"
-msgstr ""
+msgstr "[Unreproducible/non-deterministic code generation by navigation.safeargs.kotlin](https://issuetracker.google.com/issues/189498001) (_Google login and JavaScript required_)"
 
 #. type: YAML Front Matter: title
 #: _docs/Running_a_Mirror.md
 #, no-wrap
 msgid "Running a Mirror"
-msgstr ""
+msgstr "Rulează o Mirror"
 
 #. type: Plain text
 #: _docs/Running_a_Mirror.md
 msgid "F-Droid's collection of apps and files are run on servers run by the core F-Droid contributors. Originally, this main repository was hosted only on [f-droid.org](https://f-droid.org/), but as F-Droid grew [f-droid.org](https://f-droid.org/) alone was no longer able to handle the entire load. F-Droid now supports \"mirror\" servers that replicate a full copy of the repositories. Hosting a mirror involves running an HTTPS webserver that has a full copy of the repository synchronized using `rsync`."
-msgstr ""
+msgstr "Colecția de aplicații și fișiere F-Droid este rulată pe serverele administrate de principalii colaboratori F-Droid. Inițial, acest depozit principal a fost găzduit doar pe [f-droid.org](https://f-droid.org/), dar, pe măsură ce F-Droid a crescut, [f-droid.org](https://f-droid.org/) nu a mai fost capabil să facă față singur întregii sarcini. F-Droid suportă acum servere \"oglindă\" care replică o copie completă a depozitelor. Găzduirea unei oglinzi presupune rularea unui server web HTTPS care are o copie completă a depozitului sincronizată cu ajutorul `rsync`."
 
 #. type: Title ####
 #: _docs/Running_a_Mirror.md
 #, no-wrap
 msgid "Requirements"
-msgstr ""
+msgstr "Cerințe"
 
 #. type: Plain text
 #: _docs/Running_a_Mirror.md
 msgid "There are two official F-Droid repository sections, the \"repo\" and the \"archive\". It's most important to mirror the \"repo\" since it is used much more than the \"archive\"."
-msgstr ""
+msgstr "Există două secțiuni oficiale ale depozitului F-Droid, \"repo\" și \"archive\". Cel mai important este să oglindiți \"repo\", deoarece este folosită mult mai mult decât \"arhiva\"."
 
 #. type: Plain text
 #: _docs/Running_a_Mirror.md
 msgid "The primary resources required by a mirror are disk space and upload bandwidth. Bandwidth requirements are reduced with each new mirror, but disk requirements grow at a [reasonable rate](https://ftp.fau.de/cgi-bin/show-ftp-stats.cgi?statstype=2&what=mirrorsize&mirrorname=fdroid&timespan=-1&graphsize=large&submit=Go%21). At time of writing (Mar 2019), the primary repository requires just over 60GB of disk space in 24K files, and the archive requires 300GB of disk space in 52K files. The amount of disk space required grows with every new app release."
-msgstr ""
+msgstr "Principalele resurse necesare pentru o oglindă sunt spațiul pe disc și lățimea de bandă de încărcare. Cerințele de lățime de bandă sunt reduse cu fiecare nouă oglindă, dar cerințele de spațiu pe disc cresc la o [reasonable rate](https://ftp.fau.de/cgi-bin/show-ftp-stats.cgi?statstype=2&what=mirrorsize&mirrorname=fdroid&timespan=-1&graphsize=large&submit=Go%21). La momentul scrierii acestui articol (martie 2019), depozitul primar necesită puțin peste 60 GB de spațiu pe disc în 24 000 de fișiere, iar arhiva necesită 300 GB de spațiu pe disc în 52 000 de fișiere. Cantitatea de spațiu pe disc necesar crește cu fiecare nouă versiune a aplicației."
 
 #. type: Plain text
 #: _docs/Running_a_Mirror.md
 msgid "There are four mirror servers which offer an _rsync_ connection, make sure to select the mirror closest to your mirror server:"
-msgstr ""
+msgstr "Există patru servere în oglindă care oferă o conexiune _rsync_, asigurați-vă că selectați cea mai apropiată de serverul dvs. de oglindă:"
 
 #. type: Bullet: '* '
 #: _docs/Running_a_Mirror.md
 msgid "China: `rsync -axv mirrors.tuna.tsinghua.edu.cn::fdroid`"
-msgstr ""
+msgstr "în China: `rsync -axv mirrors.tuna.tsinghua.edu.cn::fdroid`"
 
 #. type: Bullet: '* '
 #: _docs/Running_a_Mirror.md
 msgid "Germany: `rsync -axv ftp.fau.de::fdroid`"
-msgstr ""
+msgstr "în Germania: `rsync -axv ftp.fau.de::fdroid`"
 
 #. type: Bullet: '* '
 #: _docs/Running_a_Mirror.md
 msgid "Sweden: `rsync -axv ftp.lysator.liu.se::pub/fdroid`"
-msgstr ""
+msgstr "Suedia: `rsync -axv ftp.lysator.liu.se::pub/fdroid`"
 
 #. type: Bullet: '* '
 #: _docs/Running_a_Mirror.md
 msgid "Taiwan: `rsync -axv mirror.ossplanet.net::fdroid`"
-msgstr ""
+msgstr "în Taiwan: `rsync -axv mirror.ossplanet.net::fdroid`"
 
 #. type: Bullet: '* '
 #: _docs/Running_a_Mirror.md
 msgid "USA/Indiana: `rsync -axv plug-mirror.rcac.purdue.edu::fdroid`"
-msgstr ""
+msgstr "în USA/Indiana: `rsync -axv plug-mirror.rcac.purdue.edu::fdroid`"
 
 #. type: Plain text
 #: _docs/Running_a_Mirror.md
 msgid "You can find current information on disk space requirements by running the following in your terminal:"
-msgstr ""
+msgstr "Puteți găsi informații actuale despre cerințele de spațiu pe disc rulând următoarele în terminalul dumneavoastră:"
 
 #. type: Fenced code block (console)
 #: _docs/Running_a_Mirror.md
 #, no-wrap
 msgid "$ rsync -v --list-only ftp.fau.de::fdroid\n"
-msgstr ""
+msgstr "$ rsync -v --list-only ftp.fau.de::fdroid\n"
 
 #. type: Title ####
 #: _docs/Running_a_Mirror.md _docs/Submitting_to_F-Droid_Quick_Start_Guide.md
 #, no-wrap
 msgid "Setup"
-msgstr ""
+msgstr "Configurare"
 
 #. type: Plain text
 #: _docs/Running_a_Mirror.md
 msgid "This guide assumes the use of Nginx with a deb-based distribution, and mirroring the primary repository plus the archive. Please adjust accordingly if you're using alternatives or don't intend to mirror the archive. Also substitute the examples paths and domains for your own."
-msgstr ""
+msgstr "Acest ghid presupune utilizarea Nginx cu o distribuție bazată pe deb și oglindirea depozitului principal și a arhivei. Vă rugăm să vă adaptați în consecință dacă folosiți alternative sau dacă nu intenționați să oglindiți arhiva. De asemenea, înlocuiți căile de acces și domeniile din exemple cu cele proprii."
 
 #. type: Plain text
 #: _docs/Running_a_Mirror.md
 msgid "For assistance with this process, [feel free to reach out to us]({{ \"/about/\" | prepend: site.baseurl }})."
-msgstr ""
+msgstr "Pentru asistență în acest proces, [feel free to reach out to us]({{ \"/about/\" | prepend: site.baseurl }})."
 
 #. type: Bullet: '1. '
 #: _docs/Running_a_Mirror.md
 msgid "Create appropriate directories"
-msgstr ""
+msgstr "Creați directoarele adecvate"
 
 #. type: Fenced code block (console)
 #: _docs/Running_a_Mirror.md
@@ -9204,11 +9225,14 @@ msgid ""
 "$ sudo mkdir -p /var/www/fdroid/fdroid/archive\n"
 "$ sudo chown -R www-data.www-data /var/www/fdroid\n"
 msgstr ""
+"$ sudo mkdir -p /var/www/fdroid/fdroid/repo\n"
+"$ sudo mkdir -p /var/www/fdroid/fdroid/archive\n"
+"$ sudo chown -R www-data.www-data /var/www/fdroid\n"
 
 #. type: Bullet: '2. '
 #: _docs/Running_a_Mirror.md
 msgid "Synchronize the repositories. These commands are best run in a terminal multiplexer (`screen`, `tmux` etc) as they will take some time to complete. With `--info=progress2` you can see the progress."
-msgstr ""
+msgstr "Sincronizați depozitele. Aceste comenzi se execută cel mai bine într-un multiplexor de terminale (`screen`, `tmux` etc.), deoarece vor dura ceva timp până la finalizare. Cu `--info=progress2` puteți vedea progresul."
 
 #. type: Fenced code block (console)
 #: _docs/Running_a_Mirror.md
@@ -9217,27 +9241,29 @@ msgid ""
 "$ sudo -u www-data -E /usr/bin/rsync -aHS  --delete --delete-delay --info=progress2 ftp.fau.de::fdroid/repo/ /var/www/fdroid/fdroid/repo/\n"
 "$ sudo -u www-data -E /usr/bin/rsync -aHS  --delete --delete-delay --info=progress2 ftp.fau.de::fdroid/archive/ /var/www/fdroid/fdroid/archive/\n"
 msgstr ""
+"$ sudo -u www-data -E /usr/bin/rsync -aHS  --delete --delete-delay --info=progress2 ftp.fau.de::fdroid/repo/ /var/www/fdroid/fdroid/repo/\n"
+"$ sudo -u www-data -E /usr/bin/rsync -aHS  --delete --delete-delay --info=progress2 ftp.fau.de::fdroid/archive/ /var/www/fdroid/fdroid/archive/\n"
 
 #. type: Bullet: '3. '
 #: _docs/Running_a_Mirror.md
 msgid "Establish a cronjob to keep the repositories up to date"
-msgstr ""
+msgstr "Stabiliți un cronjob pentru a menține depozitele la zi"
 
 #. type: Plain text
 #: _docs/Running_a_Mirror.md
 msgid "Create a cronjob file in `/etc/cron.d`"
-msgstr ""
+msgstr "Creați un fișier cronjob în `/etc/cron.d`"
 
 #. type: Fenced code block (console)
 #: _docs/Running_a_Mirror.md
 #, no-wrap
 msgid "$ vi /etc/cron.d/fdroid\n"
-msgstr ""
+msgstr "$ vi /etc/cron.d/fdroid\n"
 
 #. type: Plain text
 #: _docs/Running_a_Mirror.md
 msgid "Fill the file with entries to update the repositories. These commands will run at minute 35 past every 6th hour, you can change it to fit your needs."
-msgstr ""
+msgstr "Completați fișierul cu intrări pentru a actualiza depozitele. Aceste comenzi vor fi executate la minutul 35 la fiecare a 6-a oră, dar puteți modifica acest lucru pentru a se potrivi nevoilor dumneavoastră."
 
 #. type: Fenced code block
 #: _docs/Running_a_Mirror.md
@@ -9246,16 +9272,18 @@ msgid ""
 "35 */6 * * * www-data /usr/bin/rsync -aHS  --delete --delete-delay ftp.fau.de::fdroid/repo/ /var/www/fdroid/fdroid/repo/\n"
 "35 */6 * * * www-data /usr/bin/rsync -aHS  --delete --delete-delay ftp.fau.de::fdroid/archive/ /var/www/fdroid/fdroid/archive/\n"
 msgstr ""
+"35 */6 * * * www-data /usr/bin/rsync -aHS  --delete --delete-delay ftp.fau.de::fdroid/repo/ /var/www/fdroid/fdroid/repo/\n"
+"35 */6 * * * www-data /usr/bin/rsync -aHS  --delete --delete-delay ftp.fau.de::fdroid/archive/ /var/www/fdroid/fdroid/archive/\n"
 
 #. type: Bullet: '4. '
 #: _docs/Running_a_Mirror.md
 msgid "Configure your webserver"
-msgstr ""
+msgstr "Configurați serverul dvs. web"
 
 #. type: Plain text
 #: _docs/Running_a_Mirror.md
 msgid "This is an example server block for nginx. If used, it should be copied to _/etc/nginx/sites-available/_ and symlinked to _/etc/nginx/sites-enabled_. Note that it is important that your URI be `/fdroid/repo` so that the app can automatically add your mirror."
-msgstr ""
+msgstr "Acesta este un exemplu de bloc de server pentru nginx. Dacă este utilizat, trebuie copiat în _/etc/nginx/sites-available/_ și legat simbolic de _/etc/nginx/sites-enabled_. Rețineți că este important ca URI-ul dvs. să fie `/fdroid/repo` pentru ca aplicația să poată adăuga automat oglinda dumneavoastră"
 
 #. type: Fenced code block
 #: _docs/Running_a_Mirror.md
@@ -9287,89 +9315,114 @@ msgid ""
 "  # Insert here a TLS config from Mozilla SSL config generator https://mozilla.github.io/server-side-tls/ssl-config-generator/\n"
 "}\n"
 msgstr ""
+"server {\n"
+"  listen [::]:80 ipv6only=off;\n"
+"\n"
+"  server_name fdroidmirror.example;\n"
+"\n"
+"  rewrite ^ https://fdroidmirror.example$request_uri permanent;\n"
+"}\n"
+"\n"
+"server {\n"
+"  listen [::]:443 ssl http2 ipv6only=off;\n"
+"\n"
+"  server_name fdroidmirror.example;\n"
+"\n"
+"  root /var/www/fdroid/;\n"
+"\n"
+"  # TODO: https://gitlab.com/snippets/1834032\n"
+"  location /health {\n"
+"    proxy_pass http://127.0.0.1:8000/;\n"
+"  }\n"
+"\n"
+"  ssl_certificate /etc/letsencrypt/live/fdroidmirror.example/fullchain.pem;\n"
+"  ssl_certificate_key /etc/letsencrypt/live/fdroidmirror.example/privkey.pem;\n"
+"\n"
+"  # Insert here a TLS config from Mozilla SSL config generator https://mozilla.github.io/server-side-tls/ssl-config-generator/\n"
+"}\n"
 
 #. type: Bullet: '5. '
 #: _docs/Running_a_Mirror.md
 msgid "Submit your mirror for inclusion"
-msgstr ""
+msgstr "Trimiteți oglinda dvs. pentru a fi inclusă"
 
 #. type: Bullet: '* '
 #: _docs/Running_a_Mirror.md
 msgid "Fork the [mirror monitor repo](https://gitlab.com/fdroid/mirror-monitor), add your mirror to the list in the README, and open a merge request."
-msgstr ""
+msgstr "Derivați [mirror monitor repo](https://gitlab.com/fdroid/mirror-monitor), adăugați oglinda dvs. la lista din README și deschideți o cerere de fuziune."
 
 #. type: Bullet: '* '
 #: _docs/Running_a_Mirror.md
 msgid "Open an issue on the [admin repo](https://gitlab.com/fdroid/admin), including any pertinent information, requesting the inclusion of your mirror."
-msgstr ""
+msgstr "Deschideți o problemă pe [admin repo](https://gitlab.com/fdroid/admin), incluzând orice informații relevante, solicitând includerea oglinzii dumneavoastră."
 
 #. type: Bullet: '* '
 #: _docs/Running_a_Mirror.md
 msgid "Once the core contributor team deems your mirror trustworthy and reliable, it will be accepted into the official list."
-msgstr ""
+msgstr "Odată ce echipa de colaboratori de bază consideră că oglinda dvs. este demnă de încredere și fiabilă, aceasta va fi acceptată în lista oficială."
 
 #. type: Plain text
 #: _docs/Running_a_Mirror.md
 msgid "Also, it would be nice to include a privacy policy so users can understand what happens with their metadata when using the mirror. Purdue PLUG https://plug-mirror.rcac.purdue.edu/info.html and FAU https://ftp.fau.de/datenschutz are two examples."
-msgstr ""
+msgstr "De asemenea, ar fi bine să fie inclusă o politică de confidențialitate pentru ca utilizatorii să înțeleagă ce se întâmplă cu metadatele lor atunci când folosesc oglinda. Purdue PLUG https://plug-mirror.rcac.purdue.edu/info.html și FAU https://ftp.fau.de/datenschutz sunt două exemple."
 
 #. type: Title ####
 #: _docs/Running_a_Mirror.md
 #, no-wrap
 msgid "Other considerations"
-msgstr ""
+msgstr "Alte considerente"
 
 #. type: Bullet: '* '
 #: _docs/Running_a_Mirror.md
 msgid "Set up a privacy policy that describes what happens to the metadata (for example [FAU](https://ftp.fau.de/datenschutz/), [PLUG](https://plug-mirror.rcac.purdue.edu/info.html), [Lysator](https://ftp.lysator.liu.se/datahanteringspolicy.txt))."
-msgstr ""
+msgstr "Stabiliți o politică de confidențialitate care să descrie ce se întâmplă cu metadatele (for example [FAU](https://ftp.fau.de/datenschutz/), [PLUG](https://plug-mirror.rcac.purdue.edu/info.html), [Lysator](https://ftp.lysator.liu.se/datahanteringspolicy.txt))."
 
 #. type: Bullet: '* '
 #: _docs/Running_a_Mirror.md
 msgid "Forward emails from cronjob failures so you know if the synchronization fails"
-msgstr ""
+msgstr "Redirecționați e-mailurile de la eșecurile cronjob, astfel încât să știți dacă sincronizarea eșuează"
 
 #. type: Bullet: '* '
 #: _docs/Running_a_Mirror.md
 msgid "Set up monitoring on your mirror so you know if it goes down (ideally keyword on _/srv/mymirror.org/htdocs/fdroid/repo/index-v1.jar_)"
-msgstr ""
+msgstr "Configurați monitorizarea oglinzii dvs. astfel încât să știți dacă aceasta cade (ideally keyword on _/srv/mymirror.org/htdocs/fdroid/repo/index-v1.jar_)"
 
 #. type: Bullet: '* '
 #: _docs/Running_a_Mirror.md
 msgid "Harden your SSH server config (disable password authentication, install _fail2ban_)"
-msgstr ""
+msgstr "Întărește-ți configurația serverului SSH (dezactivează autentificarea prin parolă, instalează _fail2ban_)"
 
 #. type: Bullet: '* '
 #: _docs/Running_a_Mirror.md
 msgid "Enable unattended security upgrades (in Debian, just `apt-get install unattended-upgrades`)"
-msgstr ""
+msgstr "Activați actualizările de securitate nesupravegheate (în Debian, doar `apt-get install unattended-upgrades`)"
 
 #. type: Title ##
 #: _docs/Running_a_Mirror.md
 #, no-wrap
 msgid "Running a Primary Mirror (receiving syncs via push)"
-msgstr ""
+msgstr "Rularea unei oglinzi primare (care primește sincronizări prin push)"
 
 #. type: Plain text
 #: _docs/Running_a_Mirror.md
 msgid "The preferred setup is for the F-Droid updates to be pushed to the primary mirror via _rsync_ over _ssh_ with SSH Key authentication.  This is the same as [Debian](https://www.debian.org/mirror/push_server#sshtrigger), the key difference is that there currently is no script used for the `command=\"\"`, but instead, there is a hard-coded _rsync_ command.  This really nicely restricts the security interaction to only want needs to happen (Least Authority!)."
-msgstr ""
+msgstr "Configurația preferată este ca actualizările F-Droid să fie trimise către oglinda primară prin _rsync_ prin _ssh_ cu autentificare SSH Key.  Aceasta este aceeași ca și în [Debian](https://www.debian.org/mirror/push_server#sshtrigger), diferența esențială este că în prezent nu există un script folosit pentru `command=\"\"`, dar în schimb există o comandă _rsync_ codificată în mod greșit.  Acest lucru restrânge foarte bine interacțiunea de securitate doar la ceea ce trebuie să se întâmple (Least Authority!)."
 
 #. type: Fenced code block
 #: _docs/Running_a_Mirror.md
 #, no-wrap
 msgid "command=\"rsync --server -logDtpre.iLsfx --log-format=X --delete --delay-updates . /srv/fdroid-mirror.at.or.at/htdocs/fdroid/\"\n"
-msgstr ""
+msgstr "command=\"rsync --server -logDtpre.iLsfx --log-format=X --delete --delay-updates . /srv/fdroid-mirror.at.or.at/htdocs/fdroid/\"\n"
 
 #. type: Plain text
 #: _docs/Running_a_Mirror.md
 msgid "The only piece of that command that is customizable is the final path.  It can be any path but it must point to the `/fdroid/` directory and must have the trailing slash.  If any of the _rsync_ options are changed, it will break the sync setup."
-msgstr ""
+msgstr "Singura parte a acestei comenzi care poate fi personalizată este calea finală.  Aceasta poate fi orice cale, dar trebuie să arate spre directorul `/fdroid/` și trebuie să aibă o bară oblică finală.  Dacă oricare dintre opțiunile _rsync_ sunt modificate, se va întrerupe configurarea sincronizării."
 
 #. type: Plain text
 #: _docs/Running_a_Mirror.md
 msgid "As an extra precaution, there should be a user account (e.g. `fdroid`)  dedicated to receiving the _rsync_/_ssh_ connection.  It should have as little access as possible.  It should definitely not have write access to the _authorized_keys_ file, since that would allow an attacker who gains write access to add a separate key configuration line which circumvents all the restrictions listed there.  This can be done simply by doing:"
-msgstr ""
+msgstr "Ca măsură de precauție suplimentară, ar trebui să existe un cont de utilizator (de exemplu, `fdroid`) dedicat primirii conexiunii _rsync_/_ssh_.  Acesta ar trebui să aibă un acces cât mai redus posibil.  Cu siguranță nu ar trebui să aibă acces de scriere la fișierul _authorized_keys_, deoarece acest lucru ar permite unui atacator care obține acces de scriere să adauge o linie separată de configurare a cheilor care să ocolească toate restricțiile enumerate acolo.  Acest lucru se poate face pur și simplu făcând:"
 
 #. type: Fenced code block (console)
 #: _docs/Running_a_Mirror.md
@@ -9379,185 +9432,188 @@ msgid ""
 "$ sudo chmod 0755 /home/fdroid/.ssh\n"
 "$ sudo chmod 0644 /home/fdroid/.ssh/authorized_keys\n"
 msgstr ""
+"$ sudo chown root.root /home/fdroid/.ssh /home/fdroid/.ssh/authorized_keys\n"
+"$ sudo chmod 0755 /home/fdroid/.ssh\n"
+"$ sudo chmod 0644 /home/fdroid/.ssh/authorized_keys\n"
 
 #. type: YAML Front Matter: title
 #: _docs/Security_Model.md
 #, no-wrap
 msgid "Security Model"
-msgstr ""
+msgstr "Model de securitate"
 
 #. type: Plain text
 #: _docs/Security_Model.md
 msgid "The security architecture is based on models proven by [Debian](https://wiki.debian.org/SecureApt), [The Update Framework](https://github.com/theupdateframework/specification/blob/master/tuf-spec.md)  , and others:"
-msgstr ""
+msgstr "Arhitectura de securitate se bazează pe modele dovedite de [Debian](https://wiki.debian.org/SecureApt), [The Update Framework](https://github.com/theupdateframework/specification/blob/master/tuf-spec.md) și alții:"
 
 #. type: Bullet: '-   '
 #: _docs/Security_Model.md
 msgid "a repo is defined by having unique signing key, first and foremost"
-msgstr ""
+msgstr "un repo se definește prin faptul că are o cheie de semnare unică, în primul și în primul rând"
 
 #. type: Bullet: '-   '
 #: _docs/Security_Model.md
 msgid "[HTTPS connections by default](https://gitlab.com/fdroid/fdroidclient/blob/v0.100.1/app/src/main/res/values/default_repo.xml#L11)"
-msgstr ""
+msgstr "[HTTPS connections by default](https://gitlab.com/fdroid/fdroidclient/blob/v0.100.1/app/src/main/res/values/default_repo.xml#L11)"
 
 #. type: Bullet: '-   '
 #: _docs/Security_Model.md
 msgid "server only works over HTTPS, [HTTP](http://f-droid.org) is a redirect"
-msgstr ""
+msgstr "funcționează numai pe HTTPS, [HTTP](http://f-droid.org) este o redirecționare"
 
 #. type: Bullet: '-   '
 #: _docs/Security_Model.md
 msgid "[Android enforces](https://developer.android.com/studio/publish/app-signing.html#considerations) that all apps have a valid signature over the entire contents of the APK file"
-msgstr ""
+msgstr "[Android enforces](https://developer.android.com/studio/publish/app-signing.html#considerations) ca toate aplicațiile să aibă o semnătură validă pentru întregul conținut al fișierului APK"
 
 #. type: Bullet: '-   '
 #: _docs/Security_Model.md
 msgid "[Android verifies updates](https://developer.android.com/studio/publish/app-signing.html#considerations) based on the signature of the installed app"
-msgstr ""
+msgstr "[Android verifies updates](https://developer.android.com/studio/publish/app-signing.html#considerations) pe baza semnăturii aplicației instalate"
 
 #. type: Bullet: '-   '
 #: _docs/Security_Model.md
 msgid "[file integrity](https://gitlab.com/fdroid/fdroidclient/blob/v0.101-alpha2/app/src/main/java/org/fdroid/fdroid/installer/ApkCache.java#L57) protected by [signed metadata](https://gitlab.com/fdroid/fdroidclient/blob/v0.101-alpha2/app/src/main/java/org/fdroid/fdroid/RepoUpdater.java#L212)"
-msgstr ""
+msgstr "[file integrity](https://gitlab.com/fdroid/fdroidclient/blob/v0.101-alpha2/app/src/main/java/org/fdroid/fdroid/installer/ApkCache.java#L57) protejat de [signed metadata](https://gitlab.com/fdroid/fdroidclient/blob/v0.101-alpha2/app/src/main/java/org/fdroid/fdroid/RepoUpdater.java#L212)"
 
 #. type: Bullet: '-   '
 #: _docs/Security_Model.md
 msgid "signed metadata includes hashes of [the app](https://gitlab.com/fdroid/fdroidserver/blob/0.6.0/fdroidserver/update.py#L460) and its [signing key](https://gitlab.com/fdroid/fdroidserver/blob/0.6.0/fdroidserver/update.py#L558)"
-msgstr ""
+msgstr "metadatele semnate includ hashes ale [the app](https://gitlab.com/fdroid/fdroidserver/blob/0.6.0/fdroidserver/update.py#L460) și ale [signing key](https://gitlab.com/fdroid/fdroidserver/blob/0.6.0/fdroidserver/update.py#L558)"
 
 #. type: Bullet: '-   '
 #: _docs/Security_Model.md
 msgid "[signed metadata generated on a separate machine](https://gitlab.com/fdroid/fdroidserver/blob/0.6.0/fdroidserver/update.py#L989) (which is fully offline for f-droid.org and guardianproject.info)"
-msgstr ""
+msgstr "[signed metadata generated on a separate machine](https://gitlab.com/fdroid/fdroidserver/blob/0.6.0/fdroidserver/update.py#L989) (care este complet offline pentru f-droid.org și guardianproject.info)"
 
 #. type: Bullet: '-   '
 #: _docs/Security_Model.md
 msgid "[public key for verifying metadata signatures built into F-Droid client app](https://gitlab.com/fdroid/fdroidclient/blob/v0.100.1/app/src/main/res/values/default_repo.xml#L13)"
-msgstr ""
+msgstr "[public key for verifying metadata signatures built into F-Droid client app](https://gitlab.com/fdroid/fdroidclient/blob/v0.100.1/app/src/main/res/values/default_repo.xml#L13)"
 
 #. type: Bullet: '-   '
 #: _docs/Security_Model.md
 msgid "signed metadata includes [timestamp](https://gitlab.com/fdroid/fdroidclient/commit/02b2090e530ab5d22b522d978728f34bb332b390)  and [expiry](https://gitlab.com/fdroid/fdroidserver/blob/0.6.0/fdroidserver/update.py#L775)"
-msgstr ""
+msgstr "metadatele semnate includ[timestamp](https://gitlab.com/fdroid/fdroidclient/commit/02b2090e530ab5d22b522d978728f34bb332b390)  and [expiry](https://gitlab.com/fdroid/fdroidserver/blob/0.6.0/fdroidserver/update.py#L775)"
 
 #. type: Bullet: '-   '
 #: _docs/Security_Model.md
 msgid "easy Tor support via Settings"
-msgstr ""
+msgstr "suport ușor pentru Tor prin Setări"
 
 #. type: Bullet: '-   '
 #: _docs/Security_Model.md
 msgid "[client-side HTTP “etag” cache check](https://gitlab.com/fdroid/fdroidclient/issues/562)  so the ETag cannot be abused to track users"
-msgstr ""
+msgstr "[client-side HTTP “etag” cache check](https://gitlab.com/fdroid/fdroidclient/issues/562)  astfel încât ETag-ul să nu poată fi folosit în mod abuziv pentru a urmări utilizatorii"
 
 #. type: Bullet: '-   '
 #: _docs/Security_Model.md
 msgid "list of official mirrors included in signed metadata, then the client [chooses mirrors](https://gitlab.com/fdroid/fdroidclient/issues/35)  based on availability and freshness based on local criteria like whether Tor is in use"
-msgstr ""
+msgstr "lista de oglinzi oficiale inclusă în metadatele semnate, apoi clientul [chooses mirrors](https://gitlab.com/fdroid/fdroidclient/issues/35)   pe baza disponibilității și prospețimii pe baza unor criterii locale, cum ar fi dacă Tor este utilizat sau nu"
 
 #. type: Plain text
 #: _docs/Security_Model.md
 msgid "While the current setup is already a solid platform, there are a number of improvements that make sense to implement:"
-msgstr ""
+msgstr "Deși configurația actuală este deja o platformă solidă, există o serie de îmbunătățiri care ar trebui implementate:"
 
 #. type: Bullet: '-   '
 #: _docs/Security_Model.md
 msgid "better handling of index expiry aka \"max age\""
-msgstr ""
+msgstr "o mai bună gestionare a expirării indicilor, alias \"vârsta maximă\""
 
 #. type: Bullet: '-   '
 #: _docs/Security_Model.md
 msgid "[pinned TLS certificate built into the client app](https://gitlab.com/fdroid/fdroidclient/commit/0429b3f7dd4a6037fa11df64bfdd176ea378e6bf)"
-msgstr ""
+msgstr "[pinned TLS certificate built into the client app](https://gitlab.com/fdroid/fdroidclient/commit/0429b3f7dd4a6037fa11df64bfdd176ea378e6bf)"
 
 #. type: Plain text
 #: _docs/Security_Model.md
 msgid "In order to defend against an attacker that holds the signing keys for the app repository, there must be a trustworthy source of information to compare against. Reproducible builds means that anyone with the same source code will produce the exact same binary. When paired with an auditing system, it is easy to catch malware inserted in the build process, rather than the source code, like XCodeGhost. Reproducible builds also makes it possible to have all builds of a release binary have the exact same hash. Then any app repository can build apps only from source code, and have a source of verification data from any other app repository building the same app. Building software from source has become cheap enough that many companies like gitlab.com and Travis CI are offering free, automated build services in the cloud. Since the whole F-Droid toolset is free software and designed to be easy to setup, the barriers to setting up automatic auditing are quite low. People in separate areas of the world with different risk profiles can run [verification servers](../Verification_Server) to provide more trustworthy information."
-msgstr ""
+msgstr "Pentru a ne apăra împotriva unui atacator care deține cheile de semnare pentru depozitul de aplicații, trebuie să existe o sursă de informații de încredere cu care să se compare. Construcțiile reproductibile înseamnă că oricine are același cod sursă va produce exact același binar. Atunci când este asociat cu un sistem de audit, este ușor de prins malware-ul inserat în procesul de compilare, mai degrabă decât în codul sursă, precum XCodeGhost. Construirea reproductibilă face, de asemenea, posibil ca toate construcțiile unui binar de lansare să aibă exact același hash. Astfel, orice depozit de aplicații poate construi aplicații numai din codul sursă și poate avea o sursă de date de verificare de la orice alt depozit de aplicații care construiește aceeași aplicație. Construirea de software din sursă a devenit suficient de ieftină pentru ca multe companii precum gitlab.com și Travis CI să ofere servicii gratuite de construire automată în cloud. Deoarece întregul set de instrumente F-Droid este software gratuit și a fost conceput pentru a fi ușor de configurat, barierele pentru configurarea verificării automate sunt destul de reduse. Persoanele din zone separate ale lumii cu profiluri de risc diferite pot rula [[verification servers](../Verification_Server) pentru a furniza informații mai fiabile."
 
 #. type: Plain text
 #: _docs/Security_Model.md
 msgid "The security model of the [Build Server Setup](../Build_Server_Setup)  and the [Signing Process](../Signing_Process) are documented separately."
-msgstr ""
+msgstr "Modelul de securitate al [Build Server Setup](../Build_Server_Setup) și [Signing Process] (../Signing_Process) sunt documentate separat."
 
 #. type: Title ##
 #: _docs/Security_Model.md
 #, no-wrap
 msgid "Initial Installs"
-msgstr ""
+msgstr "Instalări inițiale"
 
 #. type: Plain text
 #: _docs/Security_Model.md
 msgid "Most users of F-Droid download the APK from _f-droid.org_ and install it.  This is a potential vector of attack that built-in app stores do not have.  Therefore, many additional security precautions are taken to make it as hard as possible to exploit this vector."
-msgstr ""
+msgstr "Majoritatea utilizatorilor de F-Droid descarcă APK-ul de pe _f-droid.org_ și îl instalează.  Acesta este un potențial vector de atac pe care magazinele de aplicații integrate nu îl au.  Prin urmare, sunt luate multe măsuri suplimentare de securitate pentru a face cât mai dificilă exploatarea acestui vector."
 
 #. type: Bullet: '* '
 #: _docs/Security_Model.md
 msgid "included on the [HSTS preload list](https://hstspreload.org/?domain=f-droid.org), so major browsers will only ever use HTTPS for all connections to _f-droid.org_"
-msgstr ""
+msgstr "inclusă pe [HSTS preload list](https://hstspreload.org/?domain=f-droid.org), astfel încât browserele majore vor folosi doar HTTPS pentru toate conexiunile către _f-droid.org_"
 
 #. type: Bullet: '* '
 #: _docs/Security_Model.md
 msgid "a [strong](https://observatory.mozilla.org/analyze.html?host=f-droid.org#third) TLS/HTTPS configuration"
-msgstr ""
+msgstr "o [strong](https://observatory.mozilla.org/analyze.html?host=f-droid.org#third) configurație TLS/HTTPS"
 
 #. type: Bullet: '* '
 #: _docs/Security_Model.md
 msgid "a [strong](https://observatory.mozilla.org/analyze.html?host=f-droid.org) HTTP Content Security Policy"
-msgstr ""
+msgstr "o [strong](https://observatory.mozilla.org/analyze.html?host=f-droid.org) Politică de securitate a conținutului HTTP"
 
 #. type: Bullet: '* '
 #: _docs/Security_Model.md
 msgid "[PGP-signature]({{ site.fdroid_apk_download_url }}.asc) on the initial install [download link]({{ site.fdroid_apk_download_url }})"
-msgstr ""
+msgstr "[PGP-signature]({{ site.fdroid_apk_download_url }}.asc) la instalarea inițială [download link]({{ site.fdroid_apk_download_url }})"
 
 #. type: Bullet: '* '
 #: _docs/Security_Model.md
 msgid "automated [regular](https://gitlab.com/fdroid/fdroid-website/-/jobs/47503948)  and [random](https://verification.f-droid.org/check-fdroid-apk)  [auditing](https://gitlab.com/fdroid/fdroidserver/blob/dfbe114af3c4cef15ce3aa5e979d9f4684f2acbc/tests/check-fdroid-apk)  that [F-Droid.apk]({{ site.fdroid_apk_download_url }}) has not been tampered with"
-msgstr ""
+msgstr "automatizat[regular](https://gitlab.com/fdroid/fdroid-website/-/jobs/47503948)  și [random](https://verification.f-droid.org/check-fdroid-apk)  [auditing](https://gitlab.com/fdroid/fdroidserver/blob/dfbe114af3c4cef15ce3aa5e979d9f4684f2acbc/tests/check-fdroid-apk)  că [F-Droid.apk]({{ site.fdroid_apk_download_url }}) nu a fost alterat"
 
 #. type: Bullet: '* '
 #: _docs/Security_Model.md
 msgid "F-Droid Limited controls many potential phishing domains like [fdroid.org](https://whois.icann.org/lookup?name=fdroid.org), [f-droid.com](https://whois.icann.org/lookup?name=f-droid.com), and [f-dro1d.org](https://whois.icann.org/lookup?name=f-dro1d.org). (donations of more are welcome!)"
-msgstr ""
+msgstr "F-Droid Limited controlează multe domenii potențiale de phishing, cum ar fi[fdroid.org](https://whois.icann.org/lookup?name=fdroid.org), [f-droid.com](https://whois.icann.org/lookup?name=f-droid.com), și [f-dro1d.org](https://whois.icann.org/lookup?name=f-dro1d.org). (mai multe donații sant binevenite!)"
 
 #. type: Bullet: '* '
 #: _docs/Security_Model.md
 msgid "website is [statically generated](https://gitlab.com/fdroid/fdroid-website) to greatly reduce the attack surface"
-msgstr ""
+msgstr "site-ul web este [statically generated](https://gitlab.com/fdroid/fdroid-website) pentru a reduce foarte mult suprafața de atac"
 
 #. type: Bullet: '* '
 #: _docs/Security_Model.md
 msgid "website is fully functional when JavaScript is disabled in the browser, eliminating all possibility of XSS attacks"
-msgstr ""
+msgstr "site-ul este complet funcțional atunci când JavaScript este dezactivat în browser, eliminând orice posibilitate de atacuri XSS"
 
 #. type: Title ###
 #: _docs/Security_Model.md
 #, no-wrap
 msgid "F-Droid as built-in app store"
-msgstr ""
+msgstr "F-Droid ca magazin de aplicații încorporat"
 
 #. type: Plain text
 #: _docs/Security_Model.md
 msgid "When F-Droid is built into Android, either as part of the ROM or by flashing an [OTA update]({{ site.baseurl }}/packages/org.fdroid.fdroid.privileged.ota/), it no longer needs \"Unknown Sources\" enabled to function.  This is the preferred method of operation, so we aim to make it as easy as possible for users to run F-Droid this way.  Flashing the OTA package for F-Droid [Privileged Extension](https://gitlab.com/fdroid/privileged-extension/#how-do-i-install-it-on-my-device)  has the same or lower risk profile as installing the standard \"gapps\" package that many people flash onto custom ROMs. So this delivery method does not increase the risk profile of those users."
-msgstr ""
+msgstr "Când F-Droid este integrat în Android, fie ca parte a ROM-ului, fie prin lansarea unei [OTA update]({{ site.baseurl }}}/packages/org.fdroid.fdroid.privileged.ota/), nu mai are nevoie de activarea \"Surse necunoscute\" pentru a funcționa.  Aceasta este metoda preferată de funcționare, așa că ne propunem să facem cât mai ușor posibil pentru utilizatori să ruleze F-Droid în acest mod.  Fluturarea pachetului OTA pentru F-Droid [Privileged Extension](https://gitlab.com/fdroid/privileged-extension/#how-do-i-install-it-on-my-device) are același profil de risc sau unul mai mic decât instalarea pachetului standard \"gapps\" pe care mulți oameni îl introduc în ROM-urile personalizate. Așadar, această metodă de livrare nu crește profilul de risc al acestor utilizatori."
 
 #. type: Plain text
 #: _docs/Security_Model.md
 msgid "On top of this, F-Droid makes it as easy as possible to [build it into](https://gitlab.com/fdroid/privileged-extension/#how-do-i-build-it-into-my-rom)  ROM projects.  It is already included in [CalyxOS](https://calyxos.org/), [Replicant](https://www.replicant.us/), [LineageOS for microG](https://lineage.microg.org/) and [Fairphone Open](https://code.fairphone.com/projects/fp-osos/)."
-msgstr ""
+msgstr "În plus, F-Droid facilitează cât se poate de mult [build it into](https://gitlab.com/fdroid/privileged-extension/#how-do-i-build-it-into-my-rom)  proiectele ROM .  Acesta este deja inclus în [CalyxOS](https://calyxos.org/), [Replicant](https://www.replicant.us/), [LineageOS for microG](https://lineage.microg.org/) și [Fairphone Open](https://code.fairphone.com/projects/fp-osos/)."
 
 #. type: Title ###
 #: _docs/Security_Model.md
 #, no-wrap
 msgid "Protecting against malicious contributor-generated data"
-msgstr ""
+msgstr "Protecția împotriva datelor generate de contribuabilii rău intenționați"
 
 #. type: Plain text
 #: _docs/Security_Model.md
 msgid "The app descriptions are submitted by all sorts of people, and they can also be taken from the app's source repository.  This data is ultimately delivered to the Android client or the user's browser via _f-droid.org_."
-msgstr ""
+msgstr "Descrierile aplicațiilor sunt trimise de tot felul de persoane și pot fi preluate și din depozitul de surse al aplicației.  În cele din urmă, aceste date sunt furnizate clientului Android sau browserului utilizatorului prin intermediul _f-droid.org_."
 
 #. type: Plain text
 #: _docs/Security_Model.md
@@ -9574,115 +9630,125 @@ msgid ""
 "[_bleach_](https://github.com/mozilla/bleach) and has a good\n"
 "[HTTP Content Security Policy](https://observatory.mozilla.org/analyze.html?host=repomaker.grobox.de).\n"
 msgstr ""
+"* clientul Android nu rulează niciodată CSS, JavaScript sau HTML periculos\n"
+"periculoase, deoarece afișează HTML prin\n"
+"[`android.text.Html.fromHtml()`](https://gitlab.com/fdroid/fdroidclient/blob/1.3.1/app/src/main/java/org/fdroid/fdroid/views/AppDetailsRecyclerViewAdapter.java#L441)\n"
+"cu încărcarea imaginilor dezactivată\n"
+"* _f-droid.org_ website protejează împotriva programelor malițioase și\n"
+"injectarea de CSS/HTML/JavaScript cu ajutorul unui\n"
+"[strict HTTP Content Security Policy](https://observatory.mozilla.org/analyze.html?host=f-droid.org).\n"
+"* Repomaker filtrează textele prin Mozilla's\n"
+"[_bleach_](https://github.com/mozilla/bleach) și are o bună\n"
+"[HTTP Content Security Policy](https://observatory.mozilla.org/analyze.html?host=repomaker.grobox.de).\n"
 
 #. type: Title ##
 #: _docs/Security_Model.md
 #, no-wrap
 msgid "Security Audits"
-msgstr ""
+msgstr "Audituri de securitate"
 
 #. type: Bullet: '1. '
 #: _docs/Security_Model.md
 msgid "There was a quick, informal [security audit](https://dev.guardianproject.info/projects/bazaar/wiki/Initial_FDroid_Audit_by_pd0x)  ([_archived_](https://web.archive.org/web/20170317154208/https://dev.guardianproject.info/projects/bazaar/wiki/Initial_FDroid_Audit_by_pd0x))  done in 2013 by then graduate student Daniel McCarney aka _pd0x_."
-msgstr ""
+msgstr "A existat un rapid și informal [security audit](https://dev.guardianproject.info/projects/bazaar/wiki/Initial_FDroid_Audit_by_pd0x)  ([_archived_](https://web.archive.org/web/20170317154208/https://dev.guardianproject.info/projects/bazaar/wiki/Initial_FDroid_Audit_by_pd0x))   realizat în 2013 de către Daniel McCarney, pe atunci student absolvent, alias _pd0x_."
 
 #. type: Bullet: '2. '
 #: _docs/Security_Model.md
 msgid "The first \"Bazaar\" project funded by [Open Tech Fund](https://opentech.fund) included an [external public audit]({{ site.baseurl }}/2018/01/20/upcoming-security-audit.html)  from [Cure53](https://cure53.de)"
-msgstr ""
+msgstr "Primul proiect \"Bazaar\" finanțat de [Open Tech Fund](https://opentech.fund) a inclus un [external public audit]({{ site.baseurl }}/2018/01/20/upcoming-security-audit.html)  de la [Cure53](https://cure53.de)"
 
 #. type: Bullet: '3. '
 #: _docs/Security_Model.md
 msgid "The second \"Bazaar2\" project funded by Open Tech Fund included an [external public audit]({{ site.baseurl }}/2018/09/04/second-security-audit-results.html)  from [Radically Open Security](https://radicallyopensecurity.com/)"
-msgstr ""
+msgstr "Cel de-al doilea proiect \"Bazaar2\" finanțat de Open Tech Fund a inclus un [external public audit]({{ site.baseurl }}/2018/09/04/second-security-audit-results.html)  de la [Radically Open Security](https://radicallyopensecurity.com/)"
 
 #. type: YAML Front Matter: title
 #: _docs/Setup_an_F-Droid_App_Repo.md
 #, no-wrap
 msgid "Setup an F-Droid App Repo"
-msgstr ""
+msgstr "Configurați o aplicație F-Droid App Repo"
 
 #. type: Plain text
 #: _docs/Setup_an_F-Droid_App_Repo.md
 msgid "F-Droid.org is the default package repository (repo) in the F-Droid client, but it is not the only possibility. Anyone can create their own repo, and users can control which repos their client is using, including even disabling the default f-droid.org repo. This model is modeled somewhat after the [Debian GNU/Linux](https://www.debian.org)  distro.  Like Debian and Ubuntu, you can also setup your own repos for anyone to use.  Custom repos do not even need to build the APKs, they can just be \"simple binary repos\" of any APKs."
-msgstr ""
+msgstr "F-Droid.org este depozitul de pachete (repo) implicit în clientul F-Droid, dar nu este singura posibilitate. Oricine își poate crea propriul repo, iar utilizatorii pot controla ce repo-uri utilizează clientul lor, inclusiv dezactivând chiar repo-ul implicit f-droid.org. Acest model este modelat oarecum după distribuția [Debian GNU/Linux](https://www.debian.org).  La fel ca Debian și Ubuntu, puteți, de asemenea, să vă configurați propriile depozite pentru a fi folosite de oricine.  Depozitele personalizate nici măcar nu trebuie să construiască APK-urile, ele pot fi doar \"simple depozite binare\" ale oricărui APK."
 
 #. type: Title ##
 #: _docs/Setup_an_F-Droid_App_Repo.md
 #, no-wrap
 msgid "Overview"
-msgstr ""
+msgstr "Prezentare generală"
 
 #. type: Plain text
 #: _docs/Setup_an_F-Droid_App_Repo.md
 msgid "If you want to maintain a simple binary repository of APKs and packages obtained elsewhere, the process is quite simple:"
-msgstr ""
+msgstr "Dacă doriți să mențineți un simplu depozit binar de APK-uri și pachete obținute din altă parte, procesul este destul de simplu:"
 
 #. type: Bullet: '1.  '
 #: _docs/Setup_an_F-Droid_App_Repo.md
 msgid "[Set up the server tools](../Installing_the_Server_and_Repo_Tools)"
-msgstr ""
+msgstr "[Set up the server tools](../Installing_the_Server_and_Repo_Tools)"
 
 #. type: Bullet: '2.  '
 #: _docs/Setup_an_F-Droid_App_Repo.md
 msgid "Create a directory called _fdroid_, then run `fdroid init` in that directory to generate the signing key that uniquely identifies your repo."
-msgstr ""
+msgstr "Creați un director numit _fdroid_, apoi rulați `fdroid init` în acel director pentru a genera cheia de semnare care identifică în mod unic repo-ul dumneavoastră."
 
 #. type: Bullet: '3.  '
 #: _docs/Setup_an_F-Droid_App_Repo.md
 msgid "Optionally edit the _config.yml_ file to your liking, detailed examples are in [examples/config.yml](https://gitlab.com/fdroid/fdroidserver/-/blob/master/examples/config.yml)"
-msgstr ""
+msgstr "Opțional, editați fișierul _config.yml_ după bunul plac, exemple detaliate sunt în [examples/config.yml](https://gitlab.com/fdroid/fdroidserver/-/blob/master/examples/config.yml)"
 
 #. type: Bullet: '4.  '
 #: _docs/Setup_an_F-Droid_App_Repo.md
 msgid "Within _fdroid_, make a directory called _repo_ and put APK files in it."
-msgstr ""
+msgstr "În _fdroid_, creați un director numit _repo_ și puneți fișierele APK în el."
 
 #. type: Bullet: '5.  '
 #: _docs/Setup_an_F-Droid_App_Repo.md
 msgid "Run `fdroid update`."
-msgstr ""
+msgstr "Rulați `fdroid update`."
 
 #. type: Bullet: '6.  '
 #: _docs/Setup_an_F-Droid_App_Repo.md
 msgid "If it reports that any metadata files are missing, you can create them in the `metadata` directory and run it again."
-msgstr ""
+msgstr "Dacă raportează că lipsesc fișiere de metadate, puteți să le creați în directorul `metadata` și să îl rulați din nou."
 
 #. type: Bullet: '7.  '
 #: _docs/Setup_an_F-Droid_App_Repo.md
 msgid "To ease creation of metadata files, run `fdroid update` with the `-c` option. It will create ’skeleton’ metadata files that are missing, and you can then just edit them and fill in the details."
-msgstr ""
+msgstr "Pentru a facilita crearea fișierelor de metadate, rulați `fdroid update` cu opțiunea `-c`. Aceasta va crea fișiere de metadate \"schelet\" care lipsesc, iar dumneavoastră puteți apoi doar să le editați și să completați detaliile."
 
 #. type: Bullet: '8.  '
 #: _docs/Setup_an_F-Droid_App_Repo.md
 msgid "Then, if you’ve changed things, run `fdroid update` again."
-msgstr ""
+msgstr "Apoi, dacă ați schimbat ceva, rulați din nou `fdroid update`."
 
 #. type: Bullet: '9.  '
 #: _docs/Setup_an_F-Droid_App_Repo.md
 msgid "Running `fdroid update` adds an _icons_ directory into the repo directory, and also creates the repository index files (_index.xml_, _index.jar_, etc) __NOTE: To make this process secure, read [Real World Setup](#real-world-setup) below!__"
-msgstr ""
+msgstr "Rularea `fdroid update` adaugă un director _icons_ în directorul repo și, de asemenea, creează fișierele de indexare a depozitului (_index.xml_, _index.jar_, etc.) NOTĂ: Pentru a face acest proces sigur, citiți [Real World Setup](#real-world-setup) de mai jos!__"
 
 #. type: Bullet: '0.  '
 #: _docs/Setup_an_F-Droid_App_Repo.md
 msgid "Publish the resulting contents of the _repo_ directory to your web server (or set `serverwebroot` in your _config.yml_ then use `fdroid deploy`)"
-msgstr ""
+msgstr "Publicați conținutul rezultat al directorului _repo_ pe serverul dvs. web (sau setați `serverwebroot` în _config.yml_ și apoi folosiți `fdroid deploy`)"
 
 #. type: Plain text
 #: _docs/Setup_an_F-Droid_App_Repo.md
 msgid "Following the above process will result in a _repo_ directory, which you simply need to push to any HTTP (or preferably HTTPS) server to make it accessible."
-msgstr ""
+msgstr "Urmând procesul de mai sus, veți obține un director _repo_, pe care trebuie pur și simplu să îl împingeți pe orice server HTTP (sau, de preferință, HTTPS) pentru a-l face accesibil."
 
 #. type: Plain text
 #: _docs/Setup_an_F-Droid_App_Repo.md
 msgid "While some information about the applications (and versions thereof)  is retrieved directly from the APK files, most comes from the corresponding file in the _metadata/_ directory. The [metadata file](../Build_Metadata_Reference) covering ALL versions of a particular application is named _package.id.yml_ where package.id is the unique identifier for that package.  All build metadata fields are relevant for binary APKs, except for `Builds:` entries, which should be omitted."
-msgstr ""
+msgstr "În timp ce unele informații despre aplicații (și versiunile acestora) sunt preluate direct din fișierele APK, majoritatea provin din fișierul corespunzător din_metadata/_ directory. [metadata file](../Build_Metadata_Reference)care acoperă TOATE versiunile unei anumite aplicații se numește _package.id.yml_, unde package.id este identificatorul unic pentru pachetul respectiv.  Toate câmpurile de metadate de construcție sunt relevante pentru APK-urile binare, cu excepția intrărilor `Builds:`, care trebuie omise."
 
 #. type: Title ##
 #: _docs/Setup_an_F-Droid_App_Repo.md
 #, no-wrap
 msgid "Local Demo Repo HOWTO"
-msgstr ""
+msgstr "Demo Repo HOWTO local"
 
 #. type: Plain text
 #: _docs/Setup_an_F-Droid_App_Repo.md
