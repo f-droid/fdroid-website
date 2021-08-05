@@ -102,6 +102,7 @@ The following sections describe the fields recognised within the file.
 * [_Builds.output_](#build_output)
 * [_Builds.novcheck_](#build_novcheck)
 * [_Builds.antifeatures_](#build_antifeatures)
+* [_AllowedAPKSigningKeys_](#AllowedAPKSigningKeys)
 * [_AntiFeatures_](#AntiFeatures)
 * [_Disabled_](#Disabled)
 * [_RequiresRoot_](#RequiresRoot)
@@ -800,6 +801,24 @@ configuration to the build. These are (roughly in order of application):
 :   List of Anti-Features for this specific build. They are described
     in [_AntiFeatures_](#AntiFeatures).
 
+
+
+### _AllowedAPKSigningKeys_<a name="AllowedAPKSigningKeys"></a>
+
+When making automated binary repositories with `fdroid update`, it is generally
+easy to find out the expected signing key for the APKs that are gathered.
+`AllowedAPKSigningKeys` lets the repo operator set the expected signing keys, then
+`fdroid update` will check that the APKs are signed by one of those keys.  If
+not, the mismatched APKs will not be included in the repo.  If `fdroid update
+--delete-unknown` is specified, the mismatched APKs will be deleted.  Then an
+automated process can be used to download newer APKs to the repo, and they will
+only be included if they have a known good signature.  The value is a lowercase
+hex value of the SHA-256 fingerprint of the signing certificate.  This can be
+fetched using:
+
+```
+    apksigner verify --print-certs /path/to/the.apk | grep SHA-256
+```
 
 
 ### _AntiFeatures_<a name="AntiFeatures"></a>
