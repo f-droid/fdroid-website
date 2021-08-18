@@ -829,6 +829,7 @@ It is a good idea to mention the reasons for the anti-feature(s) in the
 description:
 
 -   ‘Ads’ - the application contains advertising.
+-   ‘AdultContent’ - the app contains content not suitable for minors.
 -   ‘Tracking’ - user or activity data is tracked or leaks, by default.
     True if the app or a feature can not be used without collecting and sharing
     such data, or doing requests to a data collecting network service (regard-
