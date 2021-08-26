@@ -18,11 +18,11 @@ F-Droid currently uses this list of Anti-Features for labeling apps we
 are shipping:
 
 * [Ads](#Ads) - advertising
-* [AdultContent](#AdultContent) - contains adult content
 * [Tracking](#Tracking) - tracks and/or reports your activity to somewhere, even when it can be turned off
 * [Non-Free Network Services](#NonFreeNet) - promotes or depends entirely on a non-libre network service
 * [Non-Free Addons](#NonFreeAdd) - promotes other non-libre apps or plugins
 * [Non-Free Dependencies](#NonFreeDep) - needs a non-libre app to work (e.g. Google Maps, Market)
+* [NSFW](#NSFW) - contains content not safe for work
 * [Upstream Non-Free](#UpstreamNonFree) - upstream source code is not libre, and this version has those parts replaced or rewritten
 * [Non-Free Assets](#NonFreeAssets) - non-libre media in things that are not code (e.g. images, sound, music, 3D-models, or video)
 * [Known Vulnerability](#KnownVuln) - known security vulnerability
@@ -45,12 +45,11 @@ advertising without using Non-Free Software to do it.
 Here's the list of [apps with Ads](https://monitor.f-droid.org/anti-feature/Ads).
 
 
-### Adult Content<a name="AdultContent" />
+### NSFW<a name="NSFW" />
 
-This Anti-Feature is applied to an app that contains content not
-suitable for minors.
+This Anti-Feature is applied to an app that contains content which is not safe for work.
 
-Here's the list of [apps with Adult Content](https://monitor.f-droid.org/anti-feature/AdultContent).
+Here's the list of [apps with NSFW](https://monitor.f-droid.org/anti-feature/NSFW).
 
 ### Tracking<a name="Tracking" />
 

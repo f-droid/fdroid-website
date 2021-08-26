@@ -829,7 +829,6 @@ It is a good idea to mention the reasons for the anti-feature(s) in the
 description:
 
 -   ‘Ads’ - the application contains advertising.
--   ‘AdultContent’ - the app contains content not suitable for minors.
 -   ‘Tracking’ - user or activity data is tracked or leaks, by default.
     True if the app or a feature can not be used without collecting and sharing
     such data, or doing requests to a data collecting network service (regard-
@@ -847,6 +846,7 @@ description:
 -   ‘NonFreeDep’ - the application depends on a Non-Free application
     (e.g. Google Maps) - i.e. it requires it to be installed on the
     device, but does not include it.
+-   ‘NSFW’ - the app contains content which is not safe for work.
 -   ‘UpstreamNonFree’ - the application is or depends on Non-Free
     software. This does not mean that Non-Free Software is included with
     the app: Most likely, it has been patched in some way to remove the
