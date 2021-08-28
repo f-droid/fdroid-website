@@ -12,18 +12,19 @@ This is supported from F-Droid version 0.103 and *fdroidserver* version 0.8.
 {:toc}
 
 ## Latest tab criteria
+The F-Droid client features a "Latest" tab – and there's always confusion about what shows up there and in which order. So let's sum that up:
 
-In F-Droid client, since release 1.6, only applications that have all of the following are shown on the Latest tab: 
+The sorting logic [can be found here](https://gitlab.com/fdroid/fdroidclient/-/merge_requests/971/diffs#fbc34fe643b953bd45f1cc19fc874453c683b074_854_865). Don't let yourself be misled by the name "Latest" – it's not really meant as "Newest", but rather like "latest fashion"; though some of us argued `last_updated` should have a much higher weight, it in fact has not. The sorting algorithm from above linked code, put in easy words, is rather:
 
-* Name
-* Summary
-* Description
-* License
-* a What’s New entry for at least one release
-* at least one graphic (screenshot or a feature graphic)
-* at least one of the above translated
-
-Learn more at the [announcement post](https://f-droid.org/en/2019/03/26/the-latest-tab-now-highlights-good-descriptions.html). 
+* pick all apps which are localized to what the user has set as their device locale
+* order that by name (nulls last; i.e. "make sure it has a name")
+* then by icon (i.e. "has an icon")
+* then by summary, description (i.e. has summary, has description)
+* then by "has any graphic" (screenshot, featureGraphic etc – one of them suffices)
+* then by "was just added now or updated in the last 7 days" (ahem, this should rather compare to the index date but does not)
+* then by whether it has a "whatsNew" (i.e. per-release changelogs in Fastlane)
+* **only then by when it was last updated** (descending, so newest first)
+* then by when it was added (oldest first – meaning, "this app already is with us for a long time and still well maintained")
 
 ## Data format
 
