@@ -522,7 +522,7 @@ configuration to the build. These are (roughly in order of application):
     per-build variables are available likewise: \$\$VERSION\$\$,
     \$\$VERCODE\$\$ and \$\$COMMIT\$\$.
 
-`oldsdkloc: yes`<a name="build_oldsdkloc"></a>
+`oldsdkloc: true`<a name="build_oldsdkloc"></a>
 
 :   The sdk location in the repo is in an old format, or the build.xml
     is expecting such. The ’new’ format is sdk.dir while the VERY OLD
@@ -566,7 +566,7 @@ configuration to the build. These are (roughly in order of application):
     source files with this encoding. If you receive warnings during the
     compile about character encodings, you probably need this.
 
-`forceversion: yes`<a name="build_forceversion"></a>
+`forceversion: true`<a name="build_forceversion"></a>
 
 :   If specified, the package version in _AndroidManifest.xml_ is replaced
     with the version name for the build as specified in the metadata.
@@ -577,7 +577,7 @@ configuration to the build. These are (roughly in order of application):
     apparent which architecture or platform the APK is designed to
     run on.
 
-`forcevercode: yes`<a name="build_forcevercode"></a>
+`forcevercode: true`<a name="build_forcevercode"></a>
 
 :   If specified, the package version code in the _AndroidManifest.xml_ is
     replaced with the version code for the build. See also forceversion.
@@ -789,7 +789,7 @@ configuration to the build. These are (roughly in order of application):
     specified, the build is manual. You should run your build commands,
     such as `make`, in _build_.
 
-`novcheck: yes`<a name="build_novcheck"></a>
+`novcheck: true`<a name="build_novcheck"></a>
 
 :   Don’t check that the version name and code in the resulting APK are
     correct by looking at the build output - assume the metadata
@@ -879,7 +879,7 @@ retained.
 
 ### _RequiresRoot_<a name="RequiresRoot"></a>
 
-Set this optional field to "Yes" if the application requires root
+Set this optional field to 'True' if the application requires root
 privileges to be usable. This lets the client filter it out if the user
 so desires. Whether root is required or not, it is good to give a
 paragraph in the description to the conditions on which root may be
