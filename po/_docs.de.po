@@ -12,8 +12,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
 "POT-Creation-Date: 2021-08-05 18:52+0200\n"
-"PO-Revision-Date: 2021-09-01 15:35+0000\n"
-"Last-Translator: C. Rüdinger <Mail-an-CR@web.de>\n"
+"PO-Revision-Date: 2021-09-02 20:50+0000\n"
+"Last-Translator: VfBFan <drop0815@posteo.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/f-droid/website-docs/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
@@ -3426,7 +3426,7 @@ msgstr ""
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid "_AllowedAPKSigningKeys_<a name=\"AllowedAPKSigningKeys\"></a>"
-msgstr ""
+msgstr "_AllowedAPKSigningKeys_<a name=\"AllowedAPKSigningKeys\"></a>"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -3437,7 +3437,7 @@ msgstr ""
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid "    apksigner verify --print-certs /path/to/the.apk | grep SHA-256\n"
-msgstr ""
+msgstr "    apksigner verify --print-certs /path/to/the.apk | grep SHA-256\n"
 
 #. type: Title ###
 #: _docs/Build_Metadata_Reference.md
@@ -3719,7 +3719,7 @@ msgstr "Kann bei der Prüfung auf Aktualisierungen (über _UpdateCheckMode_) ver
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 msgid "Only Available with _UpdateCheckMode_ `HTTP`."
-msgstr ""
+msgstr "Only Available with _UpdateCheckMode_ `HTTP`."
 
 #. type: Title ###
 #: _docs/Build_Metadata_Reference.md
@@ -3752,7 +3752,7 @@ msgstr "Wird in Verbindung mit _UpdateCheckMode_ `Tag` oder `HTTP` verwendet."
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid "UpdateCheckData: <vercode-location>|<RegEx-for-versionCode>|<versionName-location>|<RegEx-for-versionName>\n"
-msgstr ""
+msgstr "UpdateCheckData: <vercode-location>|<RegEx-for-versionCode>|<versionName-location>|<RegEx-for-versionName>\n"
 
 #. type: Bullet: '-   '
 #: _docs/Build_Metadata_Reference.md
@@ -7340,6 +7340,15 @@ msgid ""
 "$ export ANDROID_HOME=\"$HOME/android-sdk-linux\"\n"
 "$ ./cmdline-tools/bin/sdkmanager --sdk_root=\"$ANDROID_HOME\" platform-tools \"build-tools;30.0.3\"\n"
 msgstr ""
+"$ sudo apt-get install fdroidserver\n"
+"$ mkdir ~/android-sdk-linux\n"
+"$ cd ~/android-sdk-linux\n"
+"$ wget https://dl.google.com/android/repository/commandlinetools-linux-6858069_latest.zip\n"
+"$ echo \"87f6dcf41d4e642e37ba03cb2e387a542aa0bd73cb689a9e7152aad40a6e7a08  commandlinetools-linux-6858069_latest.zip\" | sha256sum -c\n"
+"commandlinetools-linux-6858069_latest.zip: OK\n"
+"$ unzip commandlinetools-linux-6858069_latest.zip\n"
+"$ export ANDROID_HOME=\"$HOME/android-sdk-linux\"\n"
+"$ ./cmdline-tools/bin/sdkmanager --sdk_root=\"$ANDROID_HOME\" platform-tools \"build-tools;30.0.3\"\n"
 
 #. type: Plain text
 #: _docs/Installing_the_Server_and_Repo_Tools.md
@@ -7355,7 +7364,7 @@ msgstr "Um diese Einstellungen dauerhaft der Shell hinzuzufügen:"
 #: _docs/Installing_the_Server_and_Repo_Tools.md
 #, no-wrap
 msgid "$ echo export ANDROID_HOME=$ANDROID_HOME >> .bashrc\n"
-msgstr ""
+msgstr "$ echo export ANDROID_HOME=$ANDROID_HOME >> .bashrc\n"
 
 #. type: Title ##
 #: _docs/Installing_the_Server_and_Repo_Tools.md
@@ -8717,6 +8726,10 @@ msgid ""
 "$ ls metadata/your.app/signatures/42/                # v1 + v2/v3 signature\n"
 "APKSigningBlock  APKSigningBlockOffset  MANIFEST.MF  YOURKEY.RSA  YOURKEY.SF\n"
 msgstr ""
+"$ ls metadata/org.fdroid.fdroid/signatures/1000012/  # v1 signature only\n"
+"CIARANG.RSA  CIARANG.SF  MANIFEST.MF\n"
+"$ ls metadata/your.app/signatures/42/                # v1 + v2/v3 signature\n"
+"APKSigningBlock  APKSigningBlockOffset  MANIFEST.MF  YOURKEY.RSA  YOURKEY.SF\n"
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
@@ -8732,6 +8745,10 @@ msgid ""
 "$ mkdir metadata/$APPID/signatures/$VERSIONCODE\n"
 "$ apksigcopier extract --v1-only=auto Your.apk metadata/$APPID/signatures/$VERSIONCODE\n"
 msgstr ""
+"$ cd /path/to/fdroiddata\n"
+"$ APPID=your.app VERSIONCODE=42\n"
+"$ mkdir metadata/$APPID/signatures/$VERSIONCODE\n"
+"$ apksigcopier extract --v1-only=auto Your.apk metadata/$APPID/signatures/$VERSIONCODE\n"
 
 #. type: Title ####
 #: _docs/Reproducible_Builds.md
@@ -8956,6 +8973,12 @@ msgid ""
 "}\n"
 "\n"
 msgstr ""
+"android {\n"
+"\tpackagingOptions {\n"
+"\t\tdoNotStrip '**/*.so'\n"
+"\t}\n"
+"}\n"
+"\n"
 
 #. type: Title ###
 #: _docs/Reproducible_Builds.md
@@ -9434,7 +9457,7 @@ msgstr "Die Sicherheitsarchitektur beruht auf Modellen, die bei [Debian](https:/
 #. type: Bullet: '-   '
 #: _docs/Security_Model.md
 msgid "a repo is defined by having unique signing key, first and foremost"
-msgstr "EIn Repo ist, zuerst und vor allen Dingen, dadurch bestimmt, einen einzigartigen Signierschlüssel zu besitzen."
+msgstr "Ein Repo ist, zuerst und vor allen Dingen, dadurch bestimmt, einen einzigartigen Signierschlüssel zu besitzen"
 
 #. type: Bullet: '-   '
 #: _docs/Security_Model.md
