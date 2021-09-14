@@ -184,8 +184,6 @@ preprocessing process, followed by the build process for each of them.
 
 ### APK Signing Process
 
-### Wiki Page Generation Process
-
 ### Repository Publishing Process
 
 ## What to Expect

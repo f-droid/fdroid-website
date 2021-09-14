@@ -23,10 +23,6 @@ You can subscribe to new [forum](https://forum.f-droid.org/) posts and threads v
 - <https://forum.f-droid.org/posts.rss>
 - <https://forum.f-droid.org/latest.rss>
 
-### Wiki
-
-The human changes to the wiki: <https://f-droid.org/wiki/index.php?title=Special:RecentChanges>
-
 ### Bugs and Suggestions
 
 <https://gitlab.com/fdroid/fdroidclient/issues>, <https://gitlab.com/fdroid/fdroidserver/issues>, <https://gitlab.com/fdroid/fdroiddata/issues>: All expose RSS feeds, and also email notifications if desired.
@@ -54,7 +50,6 @@ On Android we have [de.shandschuh.sparserss](https://f-droid.org/repository/brow
   <body>
     <outline title="F-Droid">
       <outline type="rss" title="News and Reviews" xmlUrl="https://f-droid.org/feed" htmlUrl="https://f-droid.org/news-and-reviews/"/>
-      <outline type="rss" title="Wiki Changes by Humans" xmlUrl="https://f-droid.org/wiki/index.php?title=Special:RecentChanges&amp;feed=atom" htmlUrl="https://f-droid.org/wiki/page/Special:RecentChanges"/>
       <outline type="rss" title="Latest Builds" xmlUrl="https://f-droid.org/wiki/api.php?action=feedcontributions&amp;user=Robot&amp;feedformat=atom" htmlUrl="https://f-droid.org/wiki/page/Special:Contributions/Robot"/>
     </outline>
   </body>
