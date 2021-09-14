@@ -226,7 +226,7 @@ size significantly.
 
 ### coreLibraryDesugaring
 
-In some cases builds are not reproducible due to a bug in `coreLibraryDesugaring`; this [currently affects NewPipe](https://github.com/TeamNewPipe/NewPipe/issues/6486).
+In some cases builds are not reproducible due to a [bug in `coreLibraryDesugaring`](https://issuetracker.google.com/issues/195968520) (requires a google account to view); this [currently affects NewPipe](https://github.com/TeamNewPipe/NewPipe/issues/6486).
 
 ### zipflinger
 
