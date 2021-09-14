@@ -64,7 +64,7 @@ layout: default-package-sidebar
 	{% endif %}
 	<ul class="package-links">
 		{% if page.author_email != "" and page.author_email != nil %}
-		<div class="package-link">
+		<li class="package-link">
 			{{ strings.author }}:
 			<a href="mailto:{{ page.author_email }}?subject={{ site.title }}%20on%20{{ site.baseurl }}">
 				{% if page.author_name != "" and page.author_name != nil %}
@@ -73,11 +73,11 @@ layout: default-package-sidebar
 				{{ page.author_email }}
 				{% endif %}
 			</a>
-		</div>
+		</li>
 		{% endif %}
 		<li class="package-link">
 			{{ strings.license }}:
-			{%- assign license = site.data.licenses.licenses[page.license] -%}
+			{% assign license = site.data.licenses.licenses[page.license] %}
 			<a href="{{ license.url }}">{{ license.name | default: page.license }}</a>
 		</li>
 		{% if page.website != "" and page.website != nil %}
