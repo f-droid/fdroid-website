@@ -5,9 +5,23 @@
 
   <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
   <meta property="og:title" content="{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}" />
-  <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.data.strings.index.introduction }}{% endif %}">
-  <meta property="og:description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.data.strings.index.introduction }}{% endif %}" />
-  <meta property="og:image" content="https://f-droid.org{% asset fdroid-logo.png %}" />
+
+  {% if page.excerpt and page.excerpt != blank %}
+    {% assign page_description = page.excerpt | strip_html | strip_newlines | truncate: 160 %}
+  {% elsif page.summary and page.summary != blank %}
+    {% assign page_description = page.summary | strip_html | strip_newlines | truncate: 160 %}
+  {% else %}
+    {% assign page_description = site.data.strings.index.introduction %}
+  {% endif %}
+
+  <meta name="description" content="{{ page_description }}">
+  <meta property="og:description" content="{{ page_description }}" />
+
+  {% if page.icon and page.icon != blank %}
+    <meta property="og:image" content="{{ site.fdroid-repo }}/{{ page.icon }}" />
+  {% else %}
+    <meta property="og:image" content="{{ site.url }}{% asset fdroid-logo.png %}" />
+  {% endif %}
 
   <link rel="preload" href="{% asset roboto.ttf %}" as="font" type="font/ttf"/>
   <link rel="dns-prefetch" href="https://search.f-droid.org"/>
