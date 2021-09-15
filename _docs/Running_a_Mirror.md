@@ -18,6 +18,7 @@ There are four mirror servers which offer an _rsync_ connection, make sure to se
 * Germany: `rsync -axv ftp.fau.de::fdroid`
 * Sweden: `rsync -axv ftp.lysator.liu.se::pub/fdroid`
 * Taiwan: `rsync -axv mirror.ossplanet.net::fdroid`
+* Ukraine: `rsync -axv fdroid.astra.in.ua::fdroid`
 * USA/Indiana: `rsync -axv plug-mirror.rcac.purdue.edu::fdroid`
 
 
