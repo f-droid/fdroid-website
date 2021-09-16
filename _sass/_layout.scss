@@ -325,6 +325,9 @@ body {
       */
      .screenshot img {
         max-width: 250px;
+        /* Screenshots slider won't work fine without disabling image selection and dragging */
+        user-select: none;
+        pointer-events: none;
 
         @include media-query($phone) {
             width: 100%;
@@ -345,6 +348,7 @@ body {
       */
     .slider {
         position: relative;
+        direction: ltr; /* lory.js doesn't support rtl: https://github.com/loryjs/lory/issues/714 */
 
         .frame {
             position: relative;
