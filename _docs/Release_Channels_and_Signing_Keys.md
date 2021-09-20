@@ -19,7 +19,7 @@ This is a list of all signing keys used for F-Droid releases.
         />`A9DA 13CD F7A1 4ACD D3DE E530 F4CA FFDB 4348
         041C`
 -   official binary releases:
-    <https://f-droid.org/repository/browse/?fdfilter=f-droid&fdid=org.fdroid.fdroid>
+    <https://f-droid.org/packages/org.fdroid.fdroid>
     -   GPG signing key: "F-Droid \<admin@f-droid.org>"
     -   Primary key fingerprint: `37D2 C987 89D8 3119 4839 4E3E 41E7 044E 1DBA 2E89`
     -   Subkey fingerprint: `802A 9799 0161 1234 6E1F EFF4 7A02 9E54 DD5D CE7A`

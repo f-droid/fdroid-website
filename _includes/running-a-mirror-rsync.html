@@ -1,0 +1,7 @@
+{% assign strings = site.data.strings.mirrors %}
+<table><tbody>
+  {%- for mirror in site.data.rsync_mirrors -%}
+  {% assign key = mirror[0] %}
+  <tr><td>{{ strings[key] | default: key }}</td><td><code class="highlighter-rouge">{{ mirror[1] }}</code></td></tr>
+  {%- endfor -%}
+</tbody></table>

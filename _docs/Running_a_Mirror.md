@@ -12,14 +12,9 @@ There are two official F-Droid repository sections, the "repo" and the "archive"
 
 The primary resources required by a mirror are disk space and upload bandwidth. Bandwidth requirements are reduced with each new mirror, but disk requirements grow at a [reasonable rate](https://ftp.fau.de/cgi-bin/show-ftp-stats.cgi?statstype=2&what=mirrorsize&mirrorname=fdroid&timespan=-1&graphsize=large&submit=Go%21). At time of writing (Mar 2019), the primary repository requires just over 60GB of disk space in 24K files, and the archive requires 300GB of disk space in 52K files. The amount of disk space required grows with every new app release.
 
-There are four mirror servers which offer an _rsync_ connection, make sure to select the mirror closest to your mirror server:
+There are many mirror servers which offer an _rsync_ connection, make sure to select the mirror closest to your mirror server:
 
-* China: `rsync -axv mirrors.tuna.tsinghua.edu.cn::fdroid`
-* Germany: `rsync -axv ftp.fau.de::fdroid`
-* Sweden: `rsync -axv ftp.lysator.liu.se::pub/fdroid`
-* Taiwan: `rsync -axv mirror.ossplanet.net::fdroid`
-* USA/Indiana: `rsync -axv plug-mirror.rcac.purdue.edu::fdroid`
-
+{% include running-a-mirror-rsync.html %}
 
 You can find current information on disk space requirements by running the following in your terminal:
 ```console
