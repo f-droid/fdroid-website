@@ -35,3 +35,10 @@ perl -i -pe 'BEGIN{undef $/;} s@\nmsgid ("fdroid update --help\\n")\nmsgstr ".*?
 perl -i -pe 'BEGIN{undef $/;} s@\nmsgid ("sudo apt-get install nginx\\n")\nmsgstr ".*?"@\nmsgid \1\nmsgstr \1@smg' po/_docs.*.po
 perl -i -pe 'BEGIN{undef $/;} s@\nmsgid ("\{% include running-a-mirror-rsync.html %\}")\nmsgstr ".*?"@\nmsgid \1\nmsgstr \1@smg' po/_docs.*.po
 
+
+SAVEIFS=$IFS
+IFS=$(echo -en "\n\b")
+for name in $(sed -En 's,.*name:\s+(.+\S),\1,p' _data/contributors.yaml); do
+    perl -i -pe "BEGIN{undef $/;} s@\nmsgid (\"${name}\")\nmsgstr \".*?\"@\nmsgid \1\nmsgstr \1@smg" po/_pages.*.po
+done
+IFS=$SAVEIFS
