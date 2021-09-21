@@ -1,5 +1,6 @@
 //@license magnet:?xt=urn:btih:0b31508aeb0634b347b8270c7bee4d411b5d4109&dn=agpl-3.0.txt AGPL-v3
-document.addEventListener('DOMContentLoaded', function () {
+// The code for the screenshots slider should be executed after screenshot images are loaded. so don't use this -> document.addEventListener('DOMContentLoaded',
+window.addEventListener('load', function () {
     var slider = document.getElementById('screenshots');
     if (slider == null) {
         return;
@@ -16,6 +17,6 @@ document.addEventListener('DOMContentLoaded', function () {
         toShow[i].style.display = 'block';
     }
 
-    lory(slider, {rewind: true});
+    lory(slider, {rewind: true, enableMouseEvents: true});
 });
 // @license-end
