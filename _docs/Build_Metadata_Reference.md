@@ -445,11 +445,11 @@ For example:
 Builds:
   - versionName: '1.2'
     versionCode: 12
-    commit: 'v1.2'
+    commit: v1.2
 
   - versionName: '1.3'
     versionCode: 13
-    commit: 'v1.3-fdroid'
+    commit: v1.3-fdroid
 ```
 
 `versionName: xxx`<a name="build_versionName"></a>

@@ -22,6 +22,7 @@ perl -i -pe 'BEGIN{undef $/;} s@\nmsgid ("<tt>issuebot</tt>")\nmsgstr ".*?"@\nms
 perl -i -pe 'BEGIN{undef $/;} s@\nmsgid ("`metadata/`")\nmsgstr ".*?"@\nmsgid \1\nmsgstr \1@smg' po/_docs.*.po
 perl -i -pe 'BEGIN{undef $/;} s@\nmsgid ("`fastlane/metadata/android/`")\nmsgstr ".*?"@\nmsgid \1\nmsgstr \1@smg' po/_docs.*.po
 perl -i -pe 'BEGIN{undef $/;} s@\nmsgid ""\n("\* Do not remove this line \(it will not be displayed\)\\n"\n"\{:toc\}\\n"\n)msgstr "[^"]*"\n"[^"]*"\n"[^"]*"\n@\nmsgid ""\n\1msgstr ""\n\1@smg' po/_docs.*.po
+perl -i -pe 'BEGIN{undef $/;} s@\nmsgid ""\n("Builds:\\n"\n"  - versionName:.*?1\.3-fdroid\\n"\n)msgstr ".*?"\n\n@\nmsgid ""\n\1msgstr ""\n\1\n@smg' po/_docs.*.po
 
 perl -i -pe 'BEGIN{undef $/;} s@\nmsgid ("fdroid build --server -v -l net.artificialworlds.rabbitescape\\n")\nmsgstr ".*?"@\nmsgid \1\nmsgstr \1@smg' po/_docs.*.po
 perl -i -pe 'BEGIN{undef $/;} s@\nmsgid ("fdroid build org.fdroid.fdroid:16\\n")\nmsgstr ".*?"@\nmsgid \1\nmsgstr \1@smg' po/_docs.*.po
