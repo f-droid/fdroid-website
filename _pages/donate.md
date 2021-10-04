@@ -78,3 +78,10 @@ Or buy a 👕 T-shirt 👕 from <br>
 [![HELLOTUX]({% asset hellotux_banner.jpg %})](https://www.hellotux.com/f-droid)<br>
 (F-Droid will receive 3€ per shirt sold.)
 
+
+## Previous Setup
+
+Donations for F-Droid were previously handled by F-Droid Limited, a UK "private
+company" registered in England
+(no. [08420676](https://beta.companieshouse.gov.uk/company/08420676)).  It has
+been out of use since 2021.
