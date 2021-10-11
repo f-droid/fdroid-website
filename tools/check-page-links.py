@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 import glob
+import io
 import os
 import re
 import shutil
@@ -13,14 +14,17 @@ errorcount = 0
 md_link_pattern = re.compile(r'](\([^h][^\)]+\))')
 url_link_pattern = re.compile(r'<(https?://[^>]+)>')
 bad_md_link = re.compile(r'.*\]\s+\(')
+safe_html_pattern = re.compile(r'<https?://[^>]+>')
 for f in sorted(glob.glob('po/*.po*')):
     output = ''
+    rewrite = False
     with open(f) as fp:
-        try:
-            catalog = read_po(fp)
-        except Exception as e:
-            errorcount += 1
-            output += 'ERROR: %s' % e
+        contents = fp.read()
+    try:
+        catalog = read_po(io.StringIO(contents))
+    except Exception as e:
+        errorcount += 1
+        output += 'ERROR: %s' % e
     for message in catalog:
 
         if message.fuzzy:
@@ -64,9 +68,13 @@ for f in sorted(glob.glob('po/*.po*')):
             errorcount += 1
             output += 'Space breaks Markdown link: ' + message.id + '\n: ' + m.group()
 
-        # machine translation messes up links a lot
+        # bleach/safe_html plugin messes up Markdown links
         if 'https:>' in message.string.lower():
-            output += 'Malformed link in:\n%s' % message.string
+            output += ('\nMalformed link in: %s\n' % message.string)
+            rewrite = True
+            url = safe_html_pattern.findall(message.id)[0]
+            print('URL', url)
+            contents = contents.replace('</https:>', '').replace('<https:>', url)
 
         idlinks = []
         for m in url_link_pattern.findall(message.id):
@@ -93,6 +101,10 @@ for f in sorted(glob.glob('po/*.po*')):
                 # output += (cmd)
                 # os.system(cmd)
                 # os.remove(inputf)
+    if rewrite:
+        print('Rewriting', f, flush=True)
+        with open(f, 'w') as fp:
+            fp.write(contents)
     if output:
         print('\n', f, '==================================================================\n', output)
 
