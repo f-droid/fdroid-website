@@ -3147,7 +3147,7 @@ msgstr ""
 #. type: Fenced code block
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
-msgid "    apksigner verify --print-certs /path/to/the.apk | grep SHA-256\n"
+msgid "apksigner verify --print-certs example.apk | grep SHA-256\n"
 msgstr ""
 
 #. type: Title ###
@@ -6592,10 +6592,10 @@ msgstr ""
 msgid "The F-Droid tools, also known as _fdroidserver_, may be installed from the standard OS package repository.  On Debian-based OS's, this should be enough to install the basic F-Droid setup:"
 msgstr ""
 
-#. type: Plain text
+#. type: Fenced code block (bash)
 #: _docs/Installing_the_Server_and_Repo_Tools.md
 #, no-wrap
-msgid "    sudo apt-get install fdroidserver\n"
+msgid "sudo apt-get install fdroidserver\n"
 msgstr ""
 
 #. type: Plain text
@@ -6682,6 +6682,8 @@ msgid ""
 "brew install android-sdk\n"
 "android update sdk --no-ui --all --filter tools,platform-tools,build-tools-25.0.0\n"
 msgstr ""
+"brew install android-sdk\n"
+"android update sdk --no-ui --all --filter tools,platform-tools,build-tools-25.0.0\n"
 
 #. type: Bullet: '2. '
 #: _docs/Installing_the_Server_and_Repo_Tools.md
@@ -6741,6 +6743,9 @@ msgid ""
 "sudo apt-get update\n"
 "sudo apt-get install fdroidserver\n"
 msgstr ""
+"sudo add-apt-repository ppa:fdroid/fdroidserver\n"
+"sudo apt-get update\n"
+"sudo apt-get install fdroidserver\n"
 
 #. type: Title ###
 #: _docs/Installing_the_Server_and_Repo_Tools.md
@@ -6816,6 +6821,9 @@ msgid ""
 ". fdroidserver-env/bin/activate\n"
 "pip3 install fdroidserver\n"
 msgstr ""
+"pyvenv fdroidserver-env\n"
+". fdroidserver-env/bin/activate\n"
+"pip3 install fdroidserver\n"
 
 #. type: Plain text
 #: _docs/Installing_the_Server_and_Repo_Tools.md
@@ -6857,6 +6865,15 @@ msgid ""
 "$ export ANDROID_HOME=\"$HOME/android-sdk-linux\"\n"
 "$ ./cmdline-tools/bin/sdkmanager --sdk_root=\"$ANDROID_HOME\" platform-tools \"build-tools;30.0.3\"\n"
 msgstr ""
+"$ sudo apt-get install fdroidserver\n"
+"$ mkdir ~/android-sdk-linux\n"
+"$ cd ~/android-sdk-linux\n"
+"$ wget https://dl.google.com/android/repository/commandlinetools-linux-6858069_latest.zip\n"
+"$ echo \"87f6dcf41d4e642e37ba03cb2e387a542aa0bd73cb689a9e7152aad40a6e7a08  commandlinetools-linux-6858069_latest.zip\" | sha256sum -c\n"
+"commandlinetools-linux-6858069_latest.zip: OK\n"
+"$ unzip commandlinetools-linux-6858069_latest.zip\n"
+"$ export ANDROID_HOME=\"$HOME/android-sdk-linux\"\n"
+"$ ./cmdline-tools/bin/sdkmanager --sdk_root=\"$ANDROID_HOME\" platform-tools \"build-tools;30.0.3\"\n"
 
 #. type: Plain text
 #: _docs/Installing_the_Server_and_Repo_Tools.md
@@ -6914,16 +6931,6 @@ msgstr ""
 #. type: Plain text
 #: _docs/Installing_the_Server_and_Repo_Tools.md
 msgid "Google APIs, used for building apps using Google Maps, are free to the extent that the library comes pre-installed on the device.  Google Play Services, Google Admob, GCM, and many other third party libraries are proprietary and cannot be included in the main F-Droid repository.  The [MicroG project](https://microg.org) is developing free software replacements for some of the most used proprietary Google libraries"
-msgstr ""
-
-#. type: Plain text
-#: _docs/Installing_the_Server_and_Repo_Tools.md
-msgid "__TODO__"
-msgstr ""
-
-#. type: Bullet: '-   '
-#: _docs/Installing_the_Server_and_Repo_Tools.md
-msgid "fix `fdroid init --keystore` with Microsoft Windows paths..."
 msgstr ""
 
 #. type: YAML Front Matter: title
@@ -7487,6 +7494,10 @@ msgid ""
 "  -alias androiddebugkey -storepass android -keypass android \\\n"
 "  -dname \"CN=Android Debug,O=Android,C=US\"\n"
 msgstr ""
+"keytool -genkey -v -keystore im.zom.messenger-debug.keystore \\\n"
+"  -keyalg RSA -keysize 2048 -validity 10000 \\\n"
+"  -alias androiddebugkey -storepass android -keypass android \\\n"
+"  -dname \"CN=Android Debug,O=Android,C=US\"\n"
 
 #. type: Plain text
 #: _docs/Publishing_Nightly_Builds.md
@@ -7555,6 +7566,31 @@ msgid ""
 "after_success:\n"
 "  - fdroid nightly -v\n"
 msgstr ""
+"sudo: required\n"
+"language: android\n"
+"\n"
+"addons:\n"
+"  apt:\n"
+"    sources:\n"
+"      - sourceline: 'ppa:fdroid/fdroidserver'\n"
+"    packages:\n"
+"      - fdroidserver\n"
+"      - openssh-client\n"
+"\n"
+"android:\n"
+"  components:\n"
+"    - tools\n"
+"    - platform-tools\n"
+"    - build-tools-26.0.2\n"
+"    - android-25\n"
+"  licenses:\n"
+"    - 'android-sdk-license-.+'\n"
+"\n"
+"script:\n"
+"  - ./gradlew test\n"
+"\n"
+"after_success:\n"
+"  - fdroid nightly -v\n"
 
 #. type: Plain text
 #: _docs/Publishing_Nightly_Builds.md

@@ -25,7 +25,9 @@ The F-Droid tools, also known as _fdroidserver_, may be installed
 from the standard OS package repository.  On Debian-based OS's,
 this should be enough to install the basic F-Droid setup:
 
-    sudo apt-get install fdroidserver
+```bash
+sudo apt-get install fdroidserver
+```
 
 However, it is common to find that the version of _fdroidserver_ available
 in the standard OS package repository is out of date.
@@ -235,8 +237,3 @@ Play Services, Google Admob, GCM, and many other third party libraries
 are proprietary and cannot be included in the main F-Droid repository.
 The [MicroG project](https://microg.org) is developing free software
 replacements for some of the most used proprietary Google libraries
-
-
-__TODO__
-
--   fix `fdroid init --keystore` with Microsoft Windows paths...

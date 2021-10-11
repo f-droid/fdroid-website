@@ -6447,7 +6447,7 @@ msgstr ""
 #. type: Plain text
 #: _docs/Installing_the_Server_and_Repo_Tools.md
 #, no-wrap
-msgid "    sudo apt-get install fdroidserver\n"
+msgid "sudo apt-get install fdroidserver\n"
 msgstr ""
 
 #. type: Title ###
@@ -6535,6 +6535,9 @@ msgid ""
 "android update sdk --no-ui --filter platform-tools,build-tools-22.0.1\n"
 "brew install fdroidserver\n"
 msgstr ""
+"brew install android-sdk\n"
+"android update sdk --no-ui --filter platform-tools,build-tools-22.0.1\n"
+"brew install fdroidserver\n"
 
 #. type: Plain text
 #: _docs/Installing_the_Server_and_Repo_Tools.md
@@ -6582,6 +6585,9 @@ msgid ""
 "sudo apt-get update\n"
 "sudo apt-get install fdroidserver\n"
 msgstr ""
+"sudo add-apt-repository ppa:fdroid/fdroidserver\n"
+"sudo apt-get update\n"
+"sudo apt-get install fdroidserver\n"
 
 #. type: Title ###
 #: _docs/Installing_the_Server_and_Repo_Tools.md
@@ -6657,6 +6663,9 @@ msgid ""
 ". fdroidserver-env/bin/activate\n"
 "pip3 install fdroidserver\n"
 msgstr ""
+"pyvenv fdroidserver-env\n"
+". fdroidserver-env/bin/activate\n"
+"pip3 install fdroidserver\n"
 
 #. type: Plain text
 #: _docs/Installing_the_Server_and_Repo_Tools.md
@@ -7329,6 +7338,10 @@ msgid ""
 "  -alias androiddebugkey -storepass android -keypass android \\\n"
 "  -dname \"CN=Android Debug,O=Android,C=US\"\n"
 msgstr ""
+"keytool -genkey -v -keystore im.zom.messenger-debug.keystore \\\n"
+"  -keyalg RSA -keysize 2048 -validity 10000 \\\n"
+"  -alias androiddebugkey -storepass android -keypass android \\\n"
+"  -dname \"CN=Android Debug,O=Android,C=US\"\n"
 
 #. type: Plain text
 #: _docs/Publishing_Nightly_Builds.md
@@ -7397,6 +7410,31 @@ msgid ""
 "after_success:\n"
 "  - fdroid nightly -v\n"
 msgstr ""
+"sudo: required\n"
+"language: android\n"
+"\n"
+"addons:\n"
+"  apt:\n"
+"    sources:\n"
+"      - sourceline: 'ppa:fdroid/fdroidserver'\n"
+"    packages:\n"
+"      - fdroidserver\n"
+"      - openssh-client\n"
+"\n"
+"android:\n"
+"  components:\n"
+"    - tools\n"
+"    - platform-tools\n"
+"    - build-tools-26.0.2\n"
+"    - android-25\n"
+"  licenses:\n"
+"    - 'android-sdk-license-.+'\n"
+"\n"
+"script:\n"
+"  - ./gradlew test\n"
+"\n"
+"after_success:\n"
+"  - fdroid nightly -v\n"
 
 #. type: Plain text
 #: _docs/Publishing_Nightly_Builds.md

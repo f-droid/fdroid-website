@@ -4,6 +4,8 @@ title: Donations
 permalink: /donate/
 ---
 
+{% assign strings = site.data.strings.sidebars.donate %}
+
 F-Droid is powered by your donations!
 
 If you want to contribute financially, we recommend using a **free (as in free software) donation platform** like **[Liberapay](https://liberapay.com/F-Droid-Data/)** or **[Open Collective](https://opencollective.com/f-droid/)**. **Liberapay** has lower fees but **Open Collective** allows more flexibility and transparency on how the funds are used.
@@ -23,13 +25,12 @@ Right now, we only support the payment methods that our fiscal hosts offer.  The
 
 <div class="payment-methods"></div>
 
-|      | Currency | Credit Card  | Bank Transfer | PayPal | Crypto |
+|      | {{ strings.currency }} | {{ strings.credit_card }}  | {{ strings.via_bank_transfer }} | {{ strings.paypal }} | {{ strings.crypto }} |
 |------|----------|--------------|---------------|--------|--------|
-| [<img src="{% asset liberapay_donate_button.svg %}" alt="Liberapay" height="24" />](https://liberapay.com/F-Droid-Data/)           | | Yes | No | Yes | No |
-| [<img src="{% asset opencollectivelogo.svg %}" height="20" alt="OpenCollective" /> <small>F-Droid-Euro</small>](https://opencollective.com/f-droid-euro) | EUR (€) | Yes | Yes | No  | No |
-| [<img src="{% asset opencollectivelogo.svg %}" height="20" alt="OpenCollective" /> <small>F-Droid</small>](https://opencollective.com/f-droid)   | USD ($) | Yes | Yes | Yes | Yes |
-| [<img src="{% asset github-sponsors.svg %}" height="20" alt="GitHub Sponsors" />](https://github.com/sponsors/f-droid) |  | Yes | No | Yes | No |
-
+| [<img src="{% asset liberapay_donate_button.svg %}" alt="{{ strings.liberapay_alt }}" height="24" />](https://liberapay.com/F-Droid-Data/)           | | ✓ | | ✓ | |
+| [<img src="{% asset opencollectivelogo.svg %}" height="20" alt="{{ strings.opencollective_alt }}" /> <small>F-Droid-Euro</small>](https://opencollective.com/f-droid-euro) | EUR (€) | ✓ | ✓ |  | |
+| [<img src="{% asset opencollectivelogo.svg %}" height="20" alt="{{ strings.opencollective_alt }}" /> <small>F-Droid</small>](https://opencollective.com/f-droid)   | USD ($) | ✓ | ✓ | ✓ | ✓ |
+| [<img src="{% asset github-sponsors.svg %}" height="20" alt="GitHub Sponsors" />](https://github.com/sponsors/f-droid) |  | ✓ | | ✓ | |
 
 Visit the info pages of our fiscal hosts to get more details on their fees:
 
@@ -44,7 +45,7 @@ Visit the info pages of our fiscal hosts to get more details on their fees:
 If you would like to donate via a direct IBAN bank transfer, then donate via [F-Droid (€)](https://opencollective.com/f-droid-euro) on OpenCollective:
 
 <p align="center">
-<a href="https://opencollective.com/f-droid-euro"><img src="{% asset opencollective_button.png %}" height="40" ></a>
+<a href="https://opencollective.com/f-droid-euro"><img src="{% asset opencollective_button.png %}" height="40" alt="{{ strings.opencollective_alt }}"></a>
 &nbsp; &nbsp; &nbsp;
 </p>
 

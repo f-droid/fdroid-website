@@ -817,7 +817,7 @@ hex value of the SHA-256 fingerprint of the signing certificate.  This can be
 fetched using:
 
 ```
-    apksigner verify --print-certs /path/to/the.apk | grep SHA-256
+apksigner verify --print-certs example.apk | grep SHA-256
 ```
 
 
