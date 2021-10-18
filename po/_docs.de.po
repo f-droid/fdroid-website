@@ -7,13 +7,14 @@
 # C. Rüdinger <Mail-an-CR@web.de>, 2021.
 # VfBFan <drop0815@posteo.de>, 2021.
 # Jacque Fresco <aidter@use.startmail.com>, 2021.
+# Roman Leo <roman.leo@gmx.de>, 2021.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
 "POT-Creation-Date: 2021-09-20 23:12+0200\n"
-"PO-Revision-Date: 2021-09-22 12:20+0000\n"
-"Last-Translator: VfBFan <drop0815@posteo.de>\n"
+"PO-Revision-Date: 2021-10-19 10:54+0000\n"
+"Last-Translator: Roman Leo <roman.leo@gmx.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/f-droid/website-docs/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
@@ -3655,6 +3656,10 @@ msgid ""
 "    used to match against otherwise, which in most cases is `build.gradle` or\n"
 "    `AndroidManifest.xml`).\n"
 msgstr ""
+"    Optional kann `UpdateCheckData` angegeben werden, um den Versionscode und\n"
+"    Namen aus den angegebenen Repository-Dateien zu extrahieren (anstatt sich auf die Standardwerte zu verlassen\n"
+"    abzugleichen, was in den meisten Fällen `build.gradle` oder\n"
+"    `AndroidManifest.xml`) ist.\n"
 
 #. type: Bullet: '-   '
 #: _docs/Build_Metadata_Reference.md
@@ -3757,22 +3762,22 @@ msgstr "UpdateCheckData: <vercode-location>|<RegEx-for-versionCode>|<versionName
 #. type: Bullet: '-   '
 #: _docs/Build_Metadata_Reference.md
 msgid "`vercode-location` - URL (with `UpdateCheckMode: HTTP`) or path/file relative to repo root, leave empty to check the tag name instead (with `UpdateCheckMode: Tags`)."
-msgstr ""
+msgstr "`vercode-location` - URL (mit `UpdateCheckMode: HTTP`) oder Pfad/Datei relativ zur Repo-Root, leer lassen, um stattdessen den Tag-Namen zu prüfen (mit `UpdateCheckMode: Tags`)."
 
 #. type: Bullet: '-   '
 #: _docs/Build_Metadata_Reference.md
 msgid "`RegEx-for-versionCode` - RegEx to match versionCode."
-msgstr ""
+msgstr "`RegEx-for-versionCode` - RegEx zum Abgleich mit versionCode."
 
 #. type: Bullet: '-   '
 #: _docs/Build_Metadata_Reference.md
 msgid "`versionName-location` - Same as vercode-location just for versionName. A .  means to take vercode-location, leave empty to check the tag name instead (only with `UpdateCheckMode: Tags`)."
-msgstr ""
+msgstr "`versionName-location` - Dasselbe wie vercode-location, nur für versionName. A . bedeutet, vercode-location zu nehmen, leer zu lassen, um stattdessen den Tag-Namen zu prüfen (nur mit `UpdateCheckMode: Tags`)."
 
 #. type: Bullet: '-   '
 #: _docs/Build_Metadata_Reference.md
 msgid "`RegEx-for-versionName` - Similar to RegEx-for-versionCode, just for versionName."
-msgstr ""
+msgstr "`RegEx-for-versionName` - Ähnlich wie RegEx-for-versionCode, nur für versionName."
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -3788,6 +3793,15 @@ msgid ""
 "-   If no file for the version code was specified, code and name can be extracted from the tag:\n"
 "    `|\\+(\\d+)||Android-([\\d.]+)`\n"
 msgstr ""
+"Beispiele für `UpdateCheckMode: Tag`:\n"
+"- Flutter-App mit der `pubspec.yaml` in dem Repo-Root:\n"
+"    `pubspec.yaml|version:\\s.+\\+(\\d+)|.|version:\\s(.+)\\+`\n"
+"- Verwenden Sie das Git-Tag als Versionsname:\n"
+"    `app/build.gradle|versionCode\\s(\\d+)||`\n"
+"- Optional kann ein Regex zum Extrahieren des Versionsnamens aus dem Tag angegeben werden:\n"
+"    `app/build.gradle|versionCode\\s(\\d+)||Android-([\\d.]+)`\n"
+"- Wenn keine Datei für den Versionscode angegeben wurde, können Code und Name aus dem Tag extrahiert werden:\n"
+"    `|\\+(\\d+)||Android-([\\d.]+)`\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -3797,6 +3811,9 @@ msgid ""
 "-   `https://foo/version.json|\"version_code\":.*\"(.*)\"|.|\"version_name\":.*\\\"(.*)\\\",`\n"
 "-   `https://foo/version_fdroid.txt|versionCode=(.*)|.|versionName=(.*)`\n"
 msgstr ""
+"Beispiele für `UpdateCheckMode: HTTP`:\n"
+"- `https://foo/version.json|\"version_code\":.*\"(.*)\"|.|\"version_name\":.*\\\"(.*)\\\",`\n"
+"- `https://foo/version_fdroid.txt|versionCode=(.*)|.|versionName=(.*)`\n"
 
 #. type: Title ###
 #: _docs/Build_Metadata_Reference.md
@@ -3817,7 +3834,7 @@ msgstr "`None` - Es erfolgt keine automatische Aktualisierung"
 #. type: Bullet: '-   '
 #: _docs/Build_Metadata_Reference.md
 msgid "`Version` - Generates a value (tag name) used for the `commit:` property of new build blocks. It is simply text in which %v and %c are replaced with the required version name and version code respectively. The resulting string must match an existing tag in the app's repo, which then will be used by F-Droid to build the corresponding version."
-msgstr ""
+msgstr "`Version` - Erzeugt einen Wert (Tag-Name), der für die Eigenschaft `commit:` neuer Bausteine verwendet wird. Es handelt sich um einen einfachen Text, in dem %v und %c durch den erforderlichen Versionsnamen bzw. Versionscode ersetzt werden. Die resultierende Zeichenkette muss mit einem bestehenden Tag in der App-Repository übereinstimmen, das dann von F-Droid verwendet wird, um die entsprechende Version zu erstellen."
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -3841,6 +3858,9 @@ msgid ""
 "    +-fdroid %v\" - \"-fdroid\" is the suffix F-Droid will then append to the\n"
 "    `versionName` specified in e.g. `build.gradle` when building the APK.\n"
 msgstr ""
+"    In Fortsetzung des ersten Beispiels oben würden Sie das als \"Version\n"
+"    +-fdroid %v\" - \"-fdroid\" ist das Suffix, das F-Droid dann an den\n"
+"    `versionName` an, die z.B. in `build.gradle` angegeben wird, wenn das APK erstellt wird.\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -3863,6 +3883,8 @@ msgid ""
 "    If UpdateCheckMode is set to `Tags` the generator string behind `Version`\n"
 "    is optional and not used for the `commit:` field.\n"
 msgstr ""
+"    Wenn UpdateCheckMode auf `Tags` gesetzt ist, ist der Generatorstring hinter `Version`\n"
+"    optional und wird nicht für das Feld `commit:` verwendet.\n"
 
 #. type: Title ###
 #: _docs/Build_Metadata_Reference.md
@@ -4518,97 +4540,97 @@ msgstr "Das F-Droid-Projekt, die Hersteller der F-Droid-Software und des f-droid
 #: _docs/Code_of_Conduct.md
 #, no-wrap
 msgid "1. Be respectful"
-msgstr ""
+msgstr "1. Respektvoll sein"
 
 #. type: Plain text
 #: _docs/Code_of_Conduct.md
 msgid "In a project the size of F-Droid, inevitably there will be people with whom you may disagree, or find it difficult to cooperate. Accept that, but even so, remain respectful. Disagreement is no excuse for poor behaviour or personal attacks, and a community in which people feel threatened is not a healthy community."
-msgstr ""
+msgstr "Bei einem Projekt von der Größe von F-Droid wird es zwangsläufig Leute geben, mit denen Sie nicht einverstanden sind oder mit denen es schwierig ist, zusammenzuarbeiten. Akzeptieren Sie das, aber bleiben Sie trotzdem respektvoll. Meinungsverschiedenheiten sind keine Entschuldigung für schlechtes Benehmen oder persönliche Angriffe, und eine Gemeinschaft, in der sich Menschen bedroht fühlen, ist keine gesunde Gemeinschaft."
 
 #. type: Title ##
 #: _docs/Code_of_Conduct.md
 #, no-wrap
 msgid "2. Assume good faith"
-msgstr ""
+msgstr "2. Gehe von guten Absichten aus"
 
 #. type: Plain text
 #: _docs/Code_of_Conduct.md
 msgid "F-Droid Contributors have many ways of reaching our common goal of distributing free software which may differ from your ways. Assume that other people are working towards this goal."
-msgstr ""
+msgstr "F-Droid-Mitwirkende haben viele Wege, unser gemeinsames Ziel der Verbreitung freier Software zu erreichen, die sich von Ihren Wegen unterscheiden können. Gehen Sie davon aus, dass auch andere Menschen auf dieses Ziel hinarbeiten."
 
 #. type: Plain text
 #: _docs/Code_of_Conduct.md
 msgid "Note that many of our Contributors are not native English speakers or may have different cultural backgrounds."
-msgstr ""
+msgstr "Bitte beachten Sie, dass viele unserer Mitwirkenden keine englischen Muttersprachler sind oder einen anderen kulturellen Hintergrund haben."
 
 #. type: Title ##
 #: _docs/Code_of_Conduct.md
 #, no-wrap
 msgid "3. Be collaborative"
-msgstr ""
+msgstr "3. Kooperativ sein"
 
 #. type: Plain text
 #: _docs/Code_of_Conduct.md
 msgid "F-Droid is a large and complex project; there is always more to learn within F-Droid. It's good to ask for help when you need it. Similarly, offers for help should be seen in the context of our shared goal of improving F-Droid."
-msgstr ""
+msgstr "F-Droid ist ein großes und komplexes Projekt; es gibt immer mehr in F-Droid zu lernen. Es ist gut, um Hilfe zu bitten, wenn man sie braucht. Ebenso sollten Hilfsangebote im Kontext unseres gemeinsamen Ziels, F-Droid zu verbessern, gesehen werden."
 
 #. type: Plain text
 #: _docs/Code_of_Conduct.md
 msgid "When you make something for the benefit of the project, be willing to explain to others how it works, so that they can build on your work to make it even better."
-msgstr ""
+msgstr "Wenn Sie etwas zum Nutzen des Projekts herstellen, sollten Sie bereit sein, anderen zu erklären, wie es funktioniert, damit sie auf Ihrer Arbeit aufbauen und sie noch besser machen können."
 
 #. type: Title ##
 #: _docs/Code_of_Conduct.md
 #, no-wrap
 msgid "4. Try to be concise"
-msgstr ""
+msgstr "4. Versuchen Sie sich kurz zu fassen"
 
 #. type: Plain text
 #: _docs/Code_of_Conduct.md
 msgid "Keep in mind that what you write once will be read by hundreds of persons. Writing a short message means people can understand the conversation as efficiently as possible. When a long explanation is necessary, consider adding a summary."
-msgstr ""
+msgstr "Denken Sie daran, dass das, was Sie einmal schreiben, von Hunderten von Personen gelesen wird. Wenn Sie eine kurze Nachricht schreiben, können die Leute das Gespräch so effizient wie möglich verstehen. Wenn eine lange Erklärung erforderlich ist, sollten Sie eine Zusammenfassung hinzufügen."
 
 #. type: Plain text
 #: _docs/Code_of_Conduct.md
 msgid "Try to bring new arguments to a conversation so that each post adds something unique to the thread, keeping in mind that the rest of the thread still contains the other messages with arguments that have already been made."
-msgstr ""
+msgstr "Versuchen Sie, neue Argumente in ein Gespräch einzubringen, so dass jeder Beitrag etwas Einzigartiges zum Thema beiträgt, ohne dabei zu vergessen, dass der Rest des Themas immer noch die anderen Beiträge mit bereits vorgebrachten Argumenten enthält."
 
 #. type: Plain text
 #: _docs/Code_of_Conduct.md
 msgid "Try to stay on topic, especially in discussions that are already fairly large."
-msgstr ""
+msgstr "Versuchen Sie, beim Thema zu bleiben, vor allem in Diskussionen, die bereits recht umfangreich sind."
 
 #. type: Title ##
 #: _docs/Code_of_Conduct.md
 #, no-wrap
 msgid "5. Be open"
-msgstr ""
+msgstr "5. Offen sein"
 
 #. type: Plain text
 #: _docs/Code_of_Conduct.md
 msgid "Most ways of communication used within F-Droid allow for public and private communication. As per paragraph three of the social contract, you should preferably use public methods of communication for F-Droid-related messages, unless posting something sensitive."
-msgstr ""
+msgstr "Die meisten Kommunikationsmittel, die in F-Droid verwendet werden, erlauben sowohl öffentliche als auch private Kommunikation. Gemäß Absatz drei des Gesellschaftsvertrags sollten Sie vorzugsweise öffentliche Kommunikationswege für F-Droid-bezogene Nachrichten verwenden, es sei denn, Sie posten etwas Sensibles."
 
 #. type: Plain text
 #: _docs/Code_of_Conduct.md
 msgid "This applies to messages for help or F-Droid-related support, too; not only is a public support request much more likely to result in an answer to your question, it also makes sure that any inadvertent mistakes made by people answering your question will be more easily detected and corrected."
-msgstr ""
+msgstr "Dies gilt auch für Hilfe- oder F-Droid-bezogene Supportnachrichten. Bei einer öffentlichen Supportanfrage ist es nicht nur viel wahrscheinlicher, dass Sie eine Antwort auf Ihre Frage erhalten, sondern es wird auch sichergestellt, dass versehentliche Fehler von Personen, die Ihre Frage beantworten, leichter entdeckt und korrigiert werden."
 
 #. type: Title ##
 #: _docs/Code_of_Conduct.md
 #, no-wrap
 msgid "6. In case of problems"
-msgstr ""
+msgstr "6. Im Falle von Problemen"
 
 #. type: Plain text
 #: _docs/Code_of_Conduct.md
 msgid "While this code of conduct should be adhered to by participants, we recognize that sometimes people may have a bad day, or be unaware of some of the guidelines in this code of conduct. When that happens, you may reply to them and point out this code of conduct. Such messages may be in public or in private, whatever is most appropriate. However, regardless of whether the message is public or not, it should still adhere to the relevant parts of this code of conduct; in particular, it should not be abusive or disrespectful. Assume good faith; it is more likely that participants are unaware of their bad behaviour than that they intentionally try to degrade the quality of the discussion."
-msgstr ""
+msgstr "Obwohl dieser Verhaltenskodex von den Teilnehmern eingehalten werden sollte, sind wir uns darüber im Klaren, dass manche Leute einen schlechten Tag haben oder sich einiger der Richtlinien dieses Verhaltenskodexes nicht bewusst sind. Wenn dies der Fall ist, können Sie ihnen antworten und auf diesen Verhaltenskodex hinweisen. Solche Mitteilungen können öffentlich oder privat erfolgen, je nachdem, was am angemessensten ist. Unabhängig davon, ob die Nachricht öffentlich ist oder nicht, sollte sie dennoch die relevanten Teile dieses Verhaltenskodex einhalten; insbesondere sollte sie nicht beleidigend oder respektlos sein. Gehen Sie davon aus, dass die Teilnehmer gutgläubig sind; es ist wahrscheinlicher, dass sie sich ihres schlechten Verhaltens nicht bewusst sind, als dass sie absichtlich versuchen, die Qualität der Diskussion zu verschlechtern."
 
 #. type: Plain text
 #: _docs/Code_of_Conduct.md
 msgid "Serious or persistent offenders will be temporarily or permanently banned from communicating through F-Droid's systems. Complaints should be made (in private) to the administrators of the F-Droid communication forum in question.  It is also possible to report issues on our [admin issue tracker](https://gitlab.com/fdroid/admin/issues/)."
-msgstr ""
+msgstr "Schwere oder hartnäckige Verstöße werden vorübergehend oder dauerhaft von der Kommunikation über die Systeme von F-Droid ausgeschlossen. Beschwerden sollten (privat) an die Administratoren des betreffenden F-Droid Kommunikationsforums gerichtet werden.  Es ist auch möglich, Probleme in unserem [admin issue tracker] (https://gitlab.com/fdroid/admin/issues/) zu melden."
 
 #. type: Plain text
 #: _docs/Code_of_Conduct.md
@@ -5962,12 +5984,12 @@ msgstr "<https://gitlab.com/fdroid/fdroidclient/issues>, <https://gitlab.com/fdr
 #: _docs/Feeds.md
 #, no-wrap
 msgid "Matrix"
-msgstr ""
+msgstr "Matrix"
 
 #. type: Plain text
 #: _docs/Feeds.md
 msgid "The room can be previewed without an account on https://matrix.to/#/#fdroid:f-droid.org or https://matrix.to/#/#fdroid-dev:f-droid.org"
-msgstr ""
+msgstr "Der Raum kann ohne ein Konto auf https://matrix.to/#/#fdroid:f-droid.org oder https://matrix.to/#/#fdroid-dev:f-droid.org angesehen werden."
 
 #. type: Title ###
 #: _docs/Feeds.md
@@ -5998,21 +6020,7 @@ msgstr "In Android gibt es: [de.shandschuh.sparserss](https://f-droid.org/reposi
 
 #. type: Fenced code block (xml)
 #: _docs/Feeds.md
-#, fuzzy, no-wrap
-#| msgid ""
-#| "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n"
-#| "<opml version=\"1.0\">\n"
-#| "  <head>\n"
-#| "    <title>F-Droid related feeds</title>\n"
-#| "  </head>\n"
-#| "  <body>\n"
-#| "    <outline title=\"F-Droid\">\n"
-#| "      <outline type=\"rss\" title=\"News and Reviews\" xmlUrl=\"https://f-droid.org/feed\" htmlUrl=\"https://f-droid.org/news-and-reviews/\"/>\n"
-#| "      <outline type=\"rss\" title=\"Wiki Changes by Humans\" xmlUrl=\"https://f-droid.org/wiki/index.php?title=Special:RecentChanges&amp;feed=atom\" htmlUrl=\"https://f-droid.org/wiki/page/Special:RecentChanges\"/>\n"
-#| "      <outline type=\"rss\" title=\"Latest Builds\" xmlUrl=\"https://f-droid.org/wiki/api.php?action=feedcontributions&amp;user=Robot&amp;feedformat=atom\" htmlUrl=\"https://f-droid.org/wiki/page/Special:Contributions/Robot\"/>\n"
-#| "    </outline>\n"
-#| "  </body>\n"
-#| "</opml>\n"
+#, no-wrap
 msgid ""
 "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n"
 "<opml version=\"1.0\">\n"
@@ -6030,13 +6038,12 @@ msgstr ""
 "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n"
 "<opml version=\"1.0\">\n"
 "  <head>\n"
-"    <title>F-Droid related feeds</title>\n"
+"    <title>F-Droid bezogene Feeds</title>\n"
 "  </head>\n"
 "  <body>\n"
 "    <outline title=\"F-Droid\">\n"
-"      <outline type=\"rss\" title=\"News and Reviews\" xmlUrl=\"https://f-droid.org/feed\" htmlUrl=\"https://f-droid.org/news-and-reviews/\"/>\n"
-"      <outline type=\"rss\" title=\"Wiki Changes by Humans\" xmlUrl=\"https://f-droid.org/wiki/index.php?title=Special:RecentChanges&amp;feed=atom\" htmlUrl=\"https://f-droid.org/wiki/page/Special:RecentChanges\"/>\n"
-"      <outline type=\"rss\" title=\"Latest Builds\" xmlUrl=\"https://f-droid.org/wiki/api.php?action=feedcontributions&amp;user=Robot&amp;feedformat=atom\" htmlUrl=\"https://f-droid.org/wiki/page/Special:Contributions/Robot\"/>\n"
+"      <outline type=\"rss\" title=\"Nachrichten und Bewertungen\" xmlUrl=\"https://f-droid.org/feed\" htmlUrl=\"https://f-droid.org/news-and-reviews/\"/>\n"
+"      <outline type=\"rss\" title=\"Letzte Builds\" xmlUrl=\"https://f-droid.org/wiki/api.php?action=feedcontributions&amp;user=Robot&amp;feedformat=atom\" htmlUrl=\"https://f-droid.org/wiki/page/Special:Contributions/Robot\"/>\n"
 "    </outline>\n"
 "  </body>\n"
 "</opml>\n"
@@ -7065,18 +7072,18 @@ msgstr "sudo apt-get install fdroidserver\n"
 #. type: Plain text
 #: _docs/Installing_the_Server_and_Repo_Tools.md
 msgid "However, it is common to find that the version of _fdroidserver_ available in the standard OS package repository is out of date."
-msgstr ""
+msgstr "Es kommt jedoch häufig vor, dass die Version von _fdroidserver_, die im Standardpaket-Repository des Betriebssystems verfügbar ist, nicht mehr aktuell ist."
 
 #. type: Title ###
 #: _docs/Installing_the_Server_and_Repo_Tools.md
 #, no-wrap
 msgid "Getting a newer version"
-msgstr ""
+msgstr "Eine neuere Version erhalten"
 
 #. type: Plain text
 #: _docs/Installing_the_Server_and_Repo_Tools.md
 msgid "A newer version of _fdroidserver_ may be found in the F-Droid PPA or your OS's _backports_ repository."
-msgstr ""
+msgstr "Eine neuere Version von _fdroidserver_ finden Sie möglicherweise im F-Droid PPA oder im _backports_-Repository Ihres Betriebssystems."
 
 #. type: Bullet: '-   '
 #: _docs/Installing_the_Server_and_Repo_Tools.md
@@ -7142,7 +7149,7 @@ msgstr "Homebrew:"
 #. type: Bullet: '1. '
 #: _docs/Installing_the_Server_and_Repo_Tools.md
 msgid "Preparation: Check [the Homebrew formula](https://formulae.brew.sh/formula/fdroidserver) for instructions. Example:"
-msgstr ""
+msgstr "Vorbereitung: Siehe [die Homebrew-Formel] (https://formulae.brew.sh/formula/fdroidserver) für Anweisungen. Beispiel:"
 
 #. type: Fenced code block (bash)
 #: _docs/Installing_the_Server_and_Repo_Tools.md
@@ -8720,7 +8727,7 @@ msgstr ""
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
 msgid "If you don't want to install `fdroidserver` or have an older version that doesn't support extracting v2/v3 signatures yet, you can also use [`apksigcopier`](https://github.com/obfusk/apksigcopier) (available in e.g. Debian unstable) instead of `fdroid signatures`:"
-msgstr ""
+msgstr "Wenn Sie `fdroidserver` nicht installieren wollen oder eine ältere Version haben, die das Extrahieren von v2/v3-Signaturen noch nicht unterstützt, können Sie auch [`apksigcopier`](https://github.com/obfusk/apksigcopier) (verfügbar z.B. in Debian unstable) anstelle von `fdroid signatures` verwenden:"
 
 #. type: Fenced code block (console)
 #: _docs/Reproducible_Builds.md
@@ -8803,12 +8810,12 @@ msgstr "Reproduzierbare Signaturen"
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
 msgid "F-Droid verifies reproducible builds using the APK signature, which requires [copying](https://github.com/obfusk/apksigcopier) the signature from a signed APK to an unsigned one and then checking if the latter verifies.  The old v1 (JAR) signatures only cover the *contents* of the APK (ZIP metadata and ordering are irrelevant), but v2/v3 signatures cover *all other bytes in the APK*.  Thus, the APKs must be completely identical *before* and *after* signing (apart from the signature) in order to verify correctly."
-msgstr ""
+msgstr "F-Droid verifiziert reproduzierbare Builds anhand der APK-Signatur, was das [Kopieren](https://github.com/obfusk/apksigcopier) der Signatur von einer signierten APK auf eine unsignierte APK erfordert, um dann zu prüfen, ob letztere verifiziert werden kann.  Die alten v1 (JAR)-Signaturen decken nur den *Inhalt* der APK ab (ZIP-Metadaten und Reihenfolge sind irrelevant), aber v2/v3-Signaturen decken *alle anderen Bytes in der APK* ab.  Die APKs müssen also *vor* und *nach* dem Signieren völlig identisch sein (abgesehen von der Signatur), um korrekt verifiziert werden zu können."
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
 msgid "Copying the signature uses the same algorithm that `apksigner` uses when signing an APK.  It is therefore important that (upstream) developers do the same when signing APKs, ideally by using `apksigner`."
-msgstr ""
+msgstr "Das Kopieren der Signatur verwendet denselben Algorithmus, den `apksigner` beim Signieren einer APK verwendet.  Es ist daher wichtig, dass (Upstream-)Entwickler beim Signieren von APKs dasselbe tun, idealerweise mit `apksigner`."
 
 #. type: Title ###
 #: _docs/Reproducible_Builds.md
@@ -8919,34 +8926,34 @@ msgstr "Allerdings kann es geschehen, dass der Ressourcen-Schrumpfer die APK-Gr�
 #: _docs/Reproducible_Builds.md
 #, no-wrap
 msgid "coreLibraryDesugaring"
-msgstr ""
+msgstr "coreLibraryDesugaring"
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
 msgid "In some cases builds are not reproducible due to a [bug in `coreLibraryDesugaring`](https://issuetracker.google.com/issues/195968520) (requires a google account to view); this [currently affects NewPipe](https://github.com/TeamNewPipe/NewPipe/issues/6486)."
-msgstr ""
+msgstr "In einigen Fällen sind Builds nicht reproduzierbar aufgrund eines [Fehlers in `coreLibraryDesugaring`](https://issuetracker.google.com/issues/195968520) (erfordert ein Google-Konto zur Ansicht); dies [betrifft derzeit NewPipe](https://github.com/TeamNewPipe/NewPipe/issues/6486)."
 
 #. type: Title ###
 #: _docs/Reproducible_Builds.md
 #, no-wrap
 msgid "zipflinger"
-msgstr ""
+msgstr "zipflinger"
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
 msgid "Recent versions of the Android gradle plugin will use *zipflinger* -- which arranges the contents of the APK differently -- which could result in e.g. [apksigcopier](https://github.com/obfusk/apksigcopier) failing to work in some cases.  You can tell the plugin not to use *zipflinger* by setting `android.useNewApkCreator=false` in `gradle.properties`."
-msgstr ""
+msgstr "Neuere Versionen des Android-Gradle-Plugins verwenden *zipflinger* -- das den Inhalt der APK anders anordnet -- was dazu führen kann, dass z.B. [apksigcopier](https://github.com/obfusk/apksigcopier) in manchen Fällen nicht funktioniert.  Sie können das Plugin anweisen, *zipflinger* nicht zu verwenden, indem Sie `android.useNewApkCreator=false` in `gradle.properties` setzen."
 
 #. type: Title ###
 #: _docs/Reproducible_Builds.md
 #, no-wrap
 msgid "Native library stripping"
-msgstr ""
+msgstr "Native Bibliothek strippen"
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
 msgid "It seems that the stripping of native libraries, e.g. _libfoo.so_, can cause intermittent reproducibility issues.  It is important to use the exact NDK version when rebuilding, e.g. r21e.  Disabling stripping can sometimes help.  Gradle seems to strip shared libraries by default, even the app is receiving the shared libraries via an AAR library.  Here is how to disable it in Gradle:"
-msgstr ""
+msgstr "Es scheint, dass das Strippen von nativen Bibliotheken, z.B. _libfoo.so_, zeitweise Reproduzierbarkeitsprobleme verursachen kann.  Es ist wichtig, beim Neuaufbau die genaue NDK-Version zu verwenden, z. B. r21e.  Das Deaktivieren von Stripping kann manchmal helfen.  Gradle scheint freigegebene Bibliotheken standardmäßig zu strippen, auch wenn die App die freigegebenen Bibliotheken über eine AAR-Bibliothek erhält.  Hier erfahren Sie, wie Sie es in Gradle deaktivieren können:"
 
 #. type: Fenced code block (gradle)
 #: _docs/Reproducible_Builds.md
@@ -9150,10 +9157,8 @@ msgstr "Ein Mirror benötigt in erster Linie Festplattenspeicher und Upload-Band
 
 #. type: Plain text
 #: _docs/Running_a_Mirror.md
-#, fuzzy
-#| msgid "There are four mirror servers which offer an _rsync_ connection, make sure to select the mirror closest to your mirror server:"
 msgid "There are many mirror servers which offer an _rsync_ connection, make sure to select the mirror closest to your mirror server:"
-msgstr "Es gibt vier Spiegelserver, die eine _rsync_-Verbindung anbieten, wählen Sie den, der Ihrem Spiegelserver am nächsten liegt:"
+msgstr "Es gibt viele Spiegelserver, die eine _rsync_-Verbindung anbieten, wählen Sie den, der Ihrem Spiegelserver am nächsten liegt:"
 
 #. type: Plain text
 #: _docs/Running_a_Mirror.md
@@ -9238,7 +9243,7 @@ msgstr "$ vi /etc/cron.d/fdroid\n"
 #. type: Plain text
 #: _docs/Running_a_Mirror.md
 msgid "Fill the file with entries to update the repositories. These commands will run at minute 35 past every 6th hour, you can change it to fit your needs."
-msgstr ""
+msgstr "Füllen Sie die Datei mit Einträgen zur Aktualisierung der Repositories. Diese Befehle werden zur Minute 35 nach jeder 6. Stunde ausgeführt, Sie können diesen Zeitpunkt nach Ihren Bedürfnissen ändern."
 
 #. type: Fenced code block
 #: _docs/Running_a_Mirror.md
@@ -10140,40 +10145,7 @@ msgstr "Führen Sie diese Befehle aus:"
 
 #. type: Fenced code block (bash)
 #: _docs/Submitting_to_F-Droid_Quick_Start_Guide.md
-#, fuzzy, no-wrap
-#| msgid ""
-#| "# Prerequisites\n"
-#| "sudo apt-get install openjdk-8-jdk subversion git git-svn \\\n"
-#| "    mercurial bzr virtualbox ruby ruby-dev vagrant python3 python3-paramiko \\\n"
-#| "    python3-pil python3-pyasn1-modules python3-clint python3-vagrant\n"
-#| "vagrant plugin install vagrant-cachier\n"
-#| "ln -s ~/Android/Sdk/build-tools/23.0.2/aapt ~/Android/Sdk/platform-tools/\n"
-#| "\n"
-#| "# Get the code\n"
-#| "cd ~/code\n"
-#| "git clone https://gitlab.com/fdroid/fdroidserver.git\n"
-#| "git clone https://gitlab.com/fdroid/fdroiddata.git\n"
-#| "echo 'export PATH=\"~/code/fdroidserver:$PATH\"' >> ~/.profile\n"
-#| "source ~/.profile\n"
-#| "\n"
-#| "# Config\n"
-#| "cd fdroiddata\n"
-#| "cp ../fdroidserver/examples/config.yml ./\n"
-#| "chmod 0600 config.yml\n"
-#| "echo 'sdk_path: \"$HOME/Android/Sdk\"' >> config.yml\n"
-#| "\n"
-#| "# Set up Vagrant build box\n"
-#| "cd ../fdroidserver\n"
-#| "cp ./examples/makebuildserver.config.py ./\n"
-#| "./makebuildserver\n"
-#| "# Now wait several hours for this to finish\n"
-#| "\n"
-#| "# Build a package (the F-Droid client) just to check it works\n"
-#| "cd ../fdroiddata\n"
-#| "mkdir repo\n"
-#| "fdroid update --create-key\n"
-#| "fdroid readmeta  # Should give no output if it worked\n"
-#| "fdroid build --server org.fdroid.fdroid\n"
+#, no-wrap
 msgid ""
 "# Prerequisites\n"
 "sudo apt-get install openjdk-8-jdk subversion git git-svn \\\n"
@@ -10212,7 +10184,8 @@ msgstr ""
 "# Vorbereitungen\n"
 "sudo apt-get install openjdk-8-jdk subversion git git-svn \\\n"
 "    mercurial bzr virtualbox ruby ruby-dev vagrant python3 python3-paramiko \\\n"
-"    python3-pil python3-pyasn1-modules python3-clint python3-vagrant\n"
+"    python3-pil python3-pyasn1-modules python3-clint python3-vagrant \\\n"
+"    python3-git python3-qrcode python3-ruamel.yaml\n"
 "vagrant plugin install vagrant-cachier\n"
 "ln -s ~/Android/Sdk/build-tools/23.0.2/aapt ~/Android/Sdk/platform-tools/\n"
 "\n"
