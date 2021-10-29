@@ -52,6 +52,15 @@ A newer version of _fdroidserver_ may be found in the F-Droid PPA or your OS's _
     apt-get install fdroidserver/buster-backports
     ```
 
+## Fedora/Archlinux
+
+Since packages in these distros could be newer than the official ones on pypi, installing the dependencies in a separate virtual environment workarounds dependency resolving failures:
+
+```bash
+python3 -m venv env
+source env/bin/activate
+pip install -e .
+```
 
 ## Guix
 The tools are also available in the main Guix channel. To install:  
