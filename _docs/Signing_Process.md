@@ -19,8 +19,8 @@ provides only the minimal steps to take to safeguard the keys.
 
 There are two kinds of signing involved in running a repository:
 
-- the signing of the repo index itself
-- the standard Android APK signing process
+-   the signing of the repo index itself
+-   the standard Android APK signing process
 
 ### Repo Index Signing
 
