@@ -1050,6 +1050,7 @@ UpdateCheckData: <vercode-location>|<RegEx-for-versionCode>|<versionName-locatio
     means to take vercode-location, leave empty to check the tag name instead
     (only with `UpdateCheckMode: Tags`).
 -   `RegEx-for-versionName` - Similar to RegEx-for-versionCode, just for versionName.
+-   RegEx pipe operators are not supported at this time.
 
 Examples for `UpdateCheckMode: Tag`:
 -   Flutter app with the `pubspec.yaml` in the repo root:
@@ -1059,7 +1060,9 @@ Examples for `UpdateCheckMode: Tag`:
 -   Optionally a regex to extract the version name from the tag can be specified:
     `app/build.gradle|versionCode\s(\d+)||Android-([\d.]+)`
 -   If no file for the version code was specified, code and name can be extracted from the tag:
-    `|\+(\d+)||Android-([\d.]+)`
+    `'|\+(\d+)||Android-([\d.]+)'`
+-   Note: Be sure to use *single* quotes around the entire value if you leave `vercode-location` empty:
+    `UpdateCheckData: '|\+(\d+)||Android-([\d.]+)'`
 
 Examples for `UpdateCheckMode: HTTP`:
 -   `https://foo/version.json|"version_code":.*"(.*)"|.|"version_name":.*\"(.*)\",`
