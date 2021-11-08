@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
-"POT-Creation-Date: 2021-09-20 23:12+0200\n"
+"POT-Creation-Date: 2021-11-08 14:58+0100\n"
 "PO-Revision-Date: 2020-04-30 19:47+0000\n"
 "Last-Translator: Osoitz <oelkoro@gmail.com>\n"
 "Language-Team: Basque <https://hosted.weblate.org/projects/f-droid/website-docs/eu/>\n"
@@ -3460,6 +3460,11 @@ msgstr ""
 msgid "`RegEx-for-versionName` - Similar to RegEx-for-versionCode, just for versionName."
 msgstr ""
 
+#. type: Bullet: '-   '
+#: _docs/Build_Metadata_Reference.md
+msgid "RegEx pipe operators are not supported at this time."
+msgstr ""
+
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
@@ -3472,7 +3477,9 @@ msgid ""
 "-   Optionally a regex to extract the version name from the tag can be specified:\n"
 "    `app/build.gradle|versionCode\\s(\\d+)||Android-([\\d.]+)`\n"
 "-   If no file for the version code was specified, code and name can be extracted from the tag:\n"
-"    `|\\+(\\d+)||Android-([\\d.]+)`\n"
+"    `'|\\+(\\d+)||Android-([\\d.]+)'`\n"
+"-   Note: Be sure to use *single* quotes around the entire value if you leave `vercode-location` empty:\n"
+"    `UpdateCheckData: '|\\+(\\d+)||Android-([\\d.]+)'`\n"
 msgstr ""
 
 #. type: Plain text
@@ -6626,6 +6633,33 @@ msgstr ""
 #. type: Title ##
 #: _docs/Installing_the_Server_and_Repo_Tools.md
 #, no-wrap
+msgid "Fedora/Archlinux"
+msgstr ""
+
+#. type: Plain text
+#: _docs/Installing_the_Server_and_Repo_Tools.md
+msgid "Since packages in these distros could be newer than the official ones on pypi, installing the dependencies in a separate virtual environment workarounds dependency resolving failures:"
+msgstr ""
+
+#. type: Fenced code block (bash)
+#: _docs/Installing_the_Server_and_Repo_Tools.md
+#, fuzzy, no-wrap
+#| msgid ""
+#| "pyvenv fdroidserver-env\n"
+#| ". fdroidserver-env/bin/activate\n"
+#| "pip3 install fdroidserver\n"
+msgid ""
+"python3 -m venv env\n"
+"source env/bin/activate\n"
+"pip install -e .\n"
+msgstr ""
+"python3 -m venv env\n"
+"source env/bin/activate\n"
+"pip install -e .\n"
+
+#. type: Title ##
+#: _docs/Installing_the_Server_and_Repo_Tools.md
+#, no-wrap
 msgid "Guix"
 msgstr "Guix"
 
@@ -9212,9 +9246,14 @@ msgstr ""
 msgid "There are two kinds of signing involved in running a repository:"
 msgstr ""
 
-#. type: Plain text
+#. type: Bullet: '-   '
 #: _docs/Signing_Process.md
-msgid "- the signing of the repo index itself - the standard Android APK signing process"
+msgid "the signing of the repo index itself"
+msgstr ""
+
+#. type: Bullet: '-   '
+#: _docs/Signing_Process.md
+msgid "the standard Android APK signing process"
 msgstr ""
 
 #. type: Title ###

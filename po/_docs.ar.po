@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
-"POT-Creation-Date: 2021-08-05 18:52+0200\n"
+"POT-Creation-Date: 2021-11-08 14:58+0100\n"
 "PO-Revision-Date: 2021-07-05 09:03+0000\n"
 "Last-Translator: Rex_sa <rex.sa@pm.me>\n"
 "Language-Team: Arabic <https://hosted.weblate.org/projects/f-droid/website-docs/ar/>\n"
@@ -2516,7 +2516,7 @@ msgstr ""
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
-msgid "`oldsdkloc: yes`<a name=\"build_oldsdkloc\"></a>\n"
+msgid "`oldsdkloc: true`<a name=\"build_oldsdkloc\"></a>\n"
 msgstr ""
 
 #. type: Plain text
@@ -2611,7 +2611,7 @@ msgstr ""
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
-msgid "`forceversion: yes`<a name=\"build_forceversion\"></a>\n"
+msgid "`forceversion: true`<a name=\"build_forceversion\"></a>\n"
 msgstr ""
 
 #. type: Plain text
@@ -2636,7 +2636,7 @@ msgstr ""
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
-msgid "`forcevercode: yes`<a name=\"build_forcevercode\"></a>\n"
+msgid "`forcevercode: true`<a name=\"build_forcevercode\"></a>\n"
 msgstr ""
 
 #. type: Plain text
@@ -3092,7 +3092,7 @@ msgstr ""
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
-msgid "`novcheck: yes`<a name=\"build_novcheck\"></a>\n"
+msgid "`novcheck: true`<a name=\"build_novcheck\"></a>\n"
 msgstr ""
 
 #. type: Plain text
@@ -3222,7 +3222,7 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-msgid "Set this optional field to \"Yes\" if the application requires root privileges to be usable. This lets the client filter it out if the user so desires. Whether root is required or not, it is good to give a paragraph in the description to the conditions on which root may be asked for and the reason for it."
+msgid "Set this optional field to 'True' if the application requires root privileges to be usable. This lets the client filter it out if the user so desires. Whether root is required or not, it is good to give a paragraph in the description to the conditions on which root may be asked for and the reason for it."
 msgstr ""
 
 #. type: Plain text
@@ -3447,6 +3447,11 @@ msgstr ""
 msgid "`RegEx-for-versionName` - Similar to RegEx-for-versionCode, just for versionName."
 msgstr ""
 
+#. type: Bullet: '-   '
+#: _docs/Build_Metadata_Reference.md
+msgid "RegEx pipe operators are not supported at this time."
+msgstr ""
+
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
@@ -3459,7 +3464,9 @@ msgid ""
 "-   Optionally a regex to extract the version name from the tag can be specified:\n"
 "    `app/build.gradle|versionCode\\s(\\d+)||Android-([\\d.]+)`\n"
 "-   If no file for the version code was specified, code and name can be extracted from the tag:\n"
-"    `|\\+(\\d+)||Android-([\\d.]+)`\n"
+"    `'|\\+(\\d+)||Android-([\\d.]+)'`\n"
+"-   Note: Be sure to use *single* quotes around the entire value if you leave `vercode-location` empty:\n"
+"    `UpdateCheckData: '|\\+(\\d+)||Android-([\\d.]+)'`\n"
 msgstr ""
 
 #. type: Plain text
@@ -5485,17 +5492,6 @@ msgstr ""
 #. type: Title ###
 #: _docs/Feeds.md
 #, no-wrap
-msgid "Wiki"
-msgstr ""
-
-#. type: Plain text
-#: _docs/Feeds.md
-msgid "The human changes to the wiki: <https://f-droid.org/wiki/index.php?title=Special:RecentChanges>"
-msgstr ""
-
-#. type: Title ###
-#: _docs/Feeds.md
-#, no-wrap
 msgid "Bugs and Suggestions"
 msgstr ""
 
@@ -5554,7 +5550,6 @@ msgid ""
 "  <body>\n"
 "    <outline title=\"F-Droid\">\n"
 "      <outline type=\"rss\" title=\"News and Reviews\" xmlUrl=\"https://f-droid.org/feed\" htmlUrl=\"https://f-droid.org/news-and-reviews/\"/>\n"
-"      <outline type=\"rss\" title=\"Wiki Changes by Humans\" xmlUrl=\"https://f-droid.org/wiki/index.php?title=Special:RecentChanges&amp;feed=atom\" htmlUrl=\"https://f-droid.org/wiki/page/Special:RecentChanges\"/>\n"
 "      <outline type=\"rss\" title=\"Latest Builds\" xmlUrl=\"https://f-droid.org/wiki/api.php?action=feedcontributions&amp;user=Robot&amp;feedformat=atom\" htmlUrl=\"https://f-droid.org/wiki/page/Special:Contributions/Robot\"/>\n"
 "    </outline>\n"
 "  </body>\n"
@@ -6370,12 +6365,6 @@ msgstr ""
 #. type: Title ###
 #: _docs/Inclusion_How-To.md
 #, no-wrap
-msgid "Wiki Page Generation Process"
-msgstr ""
-
-#. type: Title ###
-#: _docs/Inclusion_How-To.md
-#, no-wrap
 msgid "Repository Publishing Process"
 msgstr ""
 
@@ -6579,7 +6568,7 @@ msgstr ""
 msgid "The F-Droid tools, also known as _fdroidserver_, may be installed from the standard OS package repository.  On Debian-based OS's, this should be enough to install the basic F-Droid setup:"
 msgstr ""
 
-#. type: Plain text
+#. type: Fenced code block (bash)
 #: _docs/Installing_the_Server_and_Repo_Tools.md
 #, no-wrap
 msgid "sudo apt-get install fdroidserver\n"
@@ -6621,6 +6610,33 @@ msgstr ""
 #: _docs/Installing_the_Server_and_Repo_Tools.md
 msgid "Debian: first [setup backports](http://backports.debian.org/Instructions/#index2h2), then, substituting your Debian release for 'buster': ```bash apt-get install fdroidserver/buster-backports ```"
 msgstr ""
+
+#. type: Title ##
+#: _docs/Installing_the_Server_and_Repo_Tools.md
+#, no-wrap
+msgid "Fedora/Archlinux"
+msgstr ""
+
+#. type: Plain text
+#: _docs/Installing_the_Server_and_Repo_Tools.md
+msgid "Since packages in these distros could be newer than the official ones on pypi, installing the dependencies in a separate virtual environment workarounds dependency resolving failures:"
+msgstr ""
+
+#. type: Fenced code block (bash)
+#: _docs/Installing_the_Server_and_Repo_Tools.md
+#, fuzzy, no-wrap
+#| msgid ""
+#| "pyvenv fdroidserver-env\n"
+#| ". fdroidserver-env/bin/activate\n"
+#| "pip3 install fdroidserver\n"
+msgid ""
+"python3 -m venv env\n"
+"source env/bin/activate\n"
+"pip install -e .\n"
+msgstr ""
+"python3 -m venv env\n"
+"source env/bin/activate\n"
+"pip install -e .\n"
 
 #. type: Title ##
 #: _docs/Installing_the_Server_and_Repo_Tools.md
@@ -6918,16 +6934,6 @@ msgstr ""
 #. type: Plain text
 #: _docs/Installing_the_Server_and_Repo_Tools.md
 msgid "Google APIs, used for building apps using Google Maps, are free to the extent that the library comes pre-installed on the device.  Google Play Services, Google Admob, GCM, and many other third party libraries are proprietary and cannot be included in the main F-Droid repository.  The [MicroG project](https://microg.org) is developing free software replacements for some of the most used proprietary Google libraries"
-msgstr ""
-
-#. type: Plain text
-#: _docs/Installing_the_Server_and_Repo_Tools.md
-msgid "__TODO__"
-msgstr ""
-
-#. type: Bullet: '-   '
-#: _docs/Installing_the_Server_and_Repo_Tools.md
-msgid "fix `fdroid init --keystore` with Microsoft Windows paths..."
 msgstr ""
 
 #. type: YAML Front Matter: title
@@ -8325,7 +8331,7 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
-msgid "In some cases builds are not reproducible due to a bug in `coreLibraryDesugaring`; this [currently affects NewPipe](https://github.com/TeamNewPipe/NewPipe/issues/6486)."
+msgid "In some cases builds are not reproducible due to a [bug in `coreLibraryDesugaring`](https://issuetracker.google.com/issues/195968520) (requires a google account to view); this [currently affects NewPipe](https://github.com/TeamNewPipe/NewPipe/issues/6486)."
 msgstr ""
 
 #. type: Title ###
@@ -8537,33 +8543,13 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/Running_a_Mirror.md
-msgid "There are four mirror servers which offer an _rsync_ connection, make sure to select the mirror closest to your mirror server:"
+msgid "There are many mirror servers which offer an _rsync_ connection, make sure to select the mirror closest to your mirror server:"
 msgstr ""
 
-#. type: Bullet: '* '
+#. type: Plain text
 #: _docs/Running_a_Mirror.md
-msgid "China: `rsync -axv mirrors.tuna.tsinghua.edu.cn::fdroid`"
-msgstr ""
-
-#. type: Bullet: '* '
-#: _docs/Running_a_Mirror.md
-msgid "Germany: `rsync -axv ftp.fau.de::fdroid`"
-msgstr ""
-
-#. type: Bullet: '* '
-#: _docs/Running_a_Mirror.md
-msgid "Sweden: `rsync -axv ftp.lysator.liu.se::pub/fdroid`"
-msgstr ""
-
-#. type: Bullet: '* '
-#: _docs/Running_a_Mirror.md
-msgid "Taiwan: `rsync -axv mirror.ossplanet.net::fdroid`"
-msgstr ""
-
-#. type: Bullet: '* '
-#: _docs/Running_a_Mirror.md
-msgid "USA/Indiana: `rsync -axv plug-mirror.rcac.purdue.edu::fdroid`"
-msgstr ""
+msgid "{% include running-a-mirror-rsync.html %}"
+msgstr "{% include running-a-mirror-rsync.html %}"
 
 #. type: Plain text
 #: _docs/Running_a_Mirror.md
@@ -9234,9 +9220,14 @@ msgstr ""
 msgid "There are two kinds of signing involved in running a repository:"
 msgstr ""
 
-#. type: Plain text
+#. type: Bullet: '-   '
 #: _docs/Signing_Process.md
-msgid "- the signing of the repo index itself - the standard Android APK signing process"
+msgid "the signing of the repo index itself"
+msgstr ""
+
+#. type: Bullet: '-   '
+#: _docs/Signing_Process.md
+msgid "the standard Android APK signing process"
 msgstr ""
 
 #. type: Title ###
@@ -9476,7 +9467,8 @@ msgid ""
 "# Prerequisites\n"
 "sudo apt-get install openjdk-8-jdk subversion git git-svn \\\n"
 "    mercurial bzr virtualbox ruby ruby-dev vagrant python3 python3-paramiko \\\n"
-"    python3-pil python3-pyasn1-modules python3-clint python3-vagrant\n"
+"    python3-pil python3-pyasn1-modules python3-clint python3-vagrant \\\n"
+"    python3-git python3-qrcode python3-ruamel.yaml\n"
 "vagrant plugin install vagrant-cachier\n"
 "ln -s ~/Android/Sdk/build-tools/23.0.2/aapt ~/Android/Sdk/platform-tools/\n"
 "\n"
