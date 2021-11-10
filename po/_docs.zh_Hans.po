@@ -9,13 +9,14 @@
 # w568w <1278297578@qq.com>, 2021.
 # ygsk10 <yogaskung@protonmail.ch>, 2021.
 # JY3 <GeeyunJY3@gmail.com>, 2021.
+# kak mi <wavelake@outlook.com>, 2021.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
 "POT-Creation-Date: 2021-11-08 14:58+0100\n"
-"PO-Revision-Date: 2021-10-16 13:26+0000\n"
-"Last-Translator: JY3 <GeeyunJY3@gmail.com>\n"
+"PO-Revision-Date: 2021-11-09 17:28+0000\n"
+"Last-Translator: kak mi <wavelake@outlook.com>\n"
 "Language-Team: Chinese (Simplified) <https://hosted.weblate.org/projects/f-droid/website-docs/zh_Hans/>\n"
 "Language: zh_Hans\n"
 "MIME-Version: 1.0\n"
@@ -262,6 +263,31 @@ msgid ""
 "    └── changelogs\n"
 "        └── 100100.txt\n"
 msgstr ""
+"├── en-US                       （en-US 为 F-Droid 回退语言）\n"
+"│   ├── short_description.txt   （简介，最大长度 80 字符，必需项）\n"
+"│   ├── full_description.txt    （完整的应用描述，必需项）\n"
+"│   ├── title.txt               （应用名称）\n"
+"│   ├── video.txt               （链接到应用介绍视频的地址）\n"
+"│   ├── images\n"
+"│   │   ├── icon.png            （应用图标，如果你的应用没有 png 图标则必需）\n"
+"│   │   ├── featureGraphic.png  （宣传横幅，显示在 F-Droid 客户端应用描述顶部；横向）\n"
+"│   │   ├── tvBanner.png        （TV 设备的图标，当前未使用）\n"
+"│   │   ├── phoneScreenshots\n"
+"│   │   │   ├── 1.png\n"
+"│   │   │   ├── 2.png\n"
+"│   │   │   ...\n"
+"│   │   ├── sevenInchScreenshots/\n"
+"│   │   ├── tenInchScreenshots/ （你可以为不同屏幕尺寸添加不同屏幕截图）\n"
+"│   │   ├── tvScreenshots/\n"
+"│   │   └── wearScreenshots/\n"
+"│   └── changelogs\n"
+"│       ├── 100000.txt          （必须完全对应于 versionCode，无填充）\n"
+"│       ├── 100100.txt          （如果 versionCode 为 100100）\n"
+"│       └── 100101.txt          （最多 500 字符）\n"
+"└── ru                          （其他区域代码）\n"
+"    ...                         （客户端始终优先使用本地化的元数据）\n"
+"    └── changelogs\n"
+"        └── 100100.txt\n"
 
 #. type: Plain text
 #: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
@@ -346,6 +372,37 @@ msgid ""
 "    ├── de                              (other locales)\n"
 "        ├── ...\n"
 msgstr ""
+"├── contact-email.txt                   (开发者电子邮件 / AuthorEmail)\n"
+"├── contact-website.txt                 (开发者网站 / AuthorWebSite)\n"
+"├── release-notes\n"
+"│   └── en-US\n"
+"│       └── default.txt                 （最新更新日志）\n"
+"└── listings\n"
+"    ├── en-US                           （en-US 为 F-Droid 默认地区代码）\n"
+"    │   ├── title.txt                   （应用名称）\n"
+"    │   ├── short-description.txt       （简介，最大长度 80 字符，必需项）\n"
+"    │   ├── full-description.txt        （完整的应用描述，必需项）\n"
+"    │   ├── video-url.txt               （链接到应用介绍视频的地址）\n"
+"    │   ├── whatsnew                    （替代的更新日志位置；单文件，无 .txt）\n"
+"    │   └── graphics\n"
+"    │       ├── icon                    （应用图标，如果你的应用没有 png 图标则必需）\n"
+"    │       │   └── *.(png|jpg)         （一张图片，通常为 512x512）\n"
+"    │       ├── feature-graphic         （宣传横幅，显示在 F-Droid 客户端应用描述顶部；横向）\n"
+"    │       │   └── *.(png|jpg)         （一张图片，通常为 1024x500）\n"
+"    │       ├── phone-screenshots\n"
+"    │       │   └── *.(png|jpg)\n"
+"    │       ├── tablet-screenshots\n"
+"    │       │   └── *.(png|jpg)\n"
+"    │       ├── large-tablet-screenshots\n"
+"    │       │   └── *.(png|jpg)\n"
+"    │       ├── tv-banner               （TV 设备的图标，当前未使用）\n"
+"    │       │   └── *.(png|jpg)\n"
+"    │       ├── tv-screenshots\n"
+"    │       │   └── *.(png|jpg)\n"
+"    │       └── wear-screenshots\n"
+"    │           └── *.(png|jpg)\n"
+"    ├── de                              （其他地区代码）\n"
+"        ├── ...\n"
 
 #. type: Title ###
 #: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
@@ -373,7 +430,7 @@ msgstr "元数据文件也可以被添加到任何构建元数据的*fdroiddata*
 #. type: Bullet: '* '
 #: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
 msgid "Place the structure in the following location: `<fdroiddata>/metadata/<packageId>/`"
-msgstr ""
+msgstr "将文件结构放在以下位置：`<fdroiddata>/metadata/<packageId>/`"
 
 #. type: Plain text
 #: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
@@ -385,6 +442,11 @@ msgid ""
 "* Instead of `full_description.txt`, the description file should be named `description.txt`.\n"
 "* Not following the above two points causes the linter to fail.\n"
 msgstr ""
+"   * 例如，对于 `en-US`， `title.txt` 应位于此位置：\n"
+"   `<fdroiddata>/metadata/<packageId>/en-US/title.txt`\n"
+"* 简介文件应命名为 `summary.txt` 而不是 `short_description.txt`。\n"
+"* 描述文件应命名为 `description.txt` 而不是 `full_description.txt`。\n"
+"* 不遵循以上两点将导致 linter 失败。\n"
 
 #. type: Title ###
 #: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
@@ -396,7 +458,7 @@ msgstr "位于 F-Droid 存储库中"
 #: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
 #, no-wrap
 msgid "**Note**: This option is only available to those who host their own repositories.\n"
-msgstr ""
+msgstr "**注意**：此选项仅对自托管存储库生效。\n"
 
 #. type: Plain text
 #: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
@@ -406,12 +468,12 @@ msgstr "来自应用源存储库和*fdroiddata*元数据子目录文件的最终
 #. type: Plain text
 #: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
 msgid "If graphics files are also in the app’s source or *fdroiddata*, then the files directly in the repo will be overwritten."
-msgstr ""
+msgstr "如果图形文件也在应用源代码或 *fdroiddata* 中，则直接位于存储库中的文件将被覆盖。"
 
 #. type: Plain text
 #: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
 msgid "You may not place text files directly in the repo."
-msgstr ""
+msgstr "你不应将文本文件直接置于存储库中。"
 
 #. type: Plain text
 #: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
