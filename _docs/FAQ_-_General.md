@@ -104,7 +104,7 @@ Pick your favourite reason (both are true and valid):
 -   We don't use proprietary software: Google Play is proprietary
     software;
 -   F-Droid, as an app that "competes" with Google Play, is against
-    their [Terms of Service](http://play.google.com/about/developer-distribution-agreement.html#non-compete).
+    their [Terms of Service (paragraph 4.5)](https://play.google.com/about/developer-distribution-agreement.html).
 
 
 ### How can I report bugs or request features?
