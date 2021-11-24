@@ -1,18 +1,13 @@
 # using BREACH, CRIME, and other attacks, network observers can tell
 # what pages people are looking at, and even the contents.  Since this
 # site mostly includes public content and no CSRF strings, our
-# concerns are much more limited:
-#
-#  * wiki username/password and related cookies
-#  * which app someone is looking at
+# concerns are basically limited to which app someone is looking at.
 #
 # https://blog.qualys.com/ssllabs/2013/08/07/defending-against-the-breach-attack
 # https://security.stackexchange.com/questions/102013/is-gzipping-content-via-tls-allowed
 
 AddOutputFilterByType DEFLATE text/css
-
-# DO NOT enable this until all logins are removed, e.g. https://f-droid.org/wiki
-# AddOutputFilterByType DEFLATE text/html
+AddOutputFilterByType DEFLATE text/html
 
 AddOutputFilterByType DEFLATE text/xml
 AddOutputFilterByType DEFLATE application/xml
