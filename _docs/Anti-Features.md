@@ -22,6 +22,7 @@ are shipping:
 * [Non-Free Network Services](#NonFreeNet) - promotes or depends entirely on a non-libre network service
 * [Non-Free Addons](#NonFreeAdd) - promotes other non-libre apps or plugins
 * [Non-Free Dependencies](#NonFreeDep) - needs a non-libre app to work (e.g. Google Maps, Market)
+* [NSFW](#NSFW) - contains content that the user may not want to be publicized or visible everywhere
 * [Upstream Non-Free](#UpstreamNonFree) - upstream source code is not libre, and this version has those parts replaced or rewritten
 * [Non-Free Assets](#NonFreeAssets) - non-libre media in things that are not code (e.g. images, sound, music, 3D-models, or video)
 * [Known Vulnerability](#KnownVuln) - known security vulnerability
@@ -43,6 +44,12 @@ advertising without using Non-Free Software to do it.
 
 Here's the list of [apps with Ads](https://monitor.f-droid.org/anti-feature/Ads).
 
+
+### NSFW<a name="NSFW" />
+
+This Anti-Feature is applied to an app that contains content that the user may not want to be publicized or visible everywhere. The marked app may contain nudity, profanity, slurs, violence, intense sexuality, political incorrectness, or other potentially disturbing subject matter.  This is especially relevant in environments like workplaces, schools, religious and family settings. The name comes from the Internet term "Not safe for work".
+
+Here's the list of [apps with NSFW](https://monitor.f-droid.org/anti-feature/NSFW).
 
 ### Tracking<a name="Tracking" />
 
