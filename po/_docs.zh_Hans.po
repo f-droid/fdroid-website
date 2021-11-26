@@ -18,7 +18,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
 "POT-Creation-Date: 2021-11-08 14:58+0100\n"
-"PO-Revision-Date: 2021-11-25 12:06+0000\n"
+"PO-Revision-Date: 2021-11-26 12:39+0000\n"
 "Last-Translator: kak mi <wavelake@outlook.com>\n"
 "Language-Team: Chinese (Simplified) <https://hosted.weblate.org/projects/f-droid/website-docs/zh_Hans/>\n"
 "Language: zh_Hans\n"
@@ -2606,7 +2606,7 @@ msgstr "    你可以用 \\$\\$SDK\\$\\$，\\$\\$NDK\\$\\$ 和 \\$\\$MVN3\\$\\$ 
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid "`oldsdkloc: true`<a name=\"build_oldsdkloc\"></a>\n"
-msgstr "`旧sdk位置: yes`<a name=\"build_oldsdkloc\"></a>\n"
+msgstr "`oldsdkloc: true`<a name=\"build_oldsdkloc\"></a>\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -2617,13 +2617,13 @@ msgid ""
 "    format is sdk-location. Typically, if you get a message along the\n"
 "    lines of: \"com.android.ant.SetupTask cannot be found\" when trying to\n"
 "    build, then try enabling this option.\n"
-msgstr ""
+msgstr "：存储库中的 sdk 位置是旧格式的，或者 build.xml 希望是这样。新的 格式是 sdk.dir 而非常老的格式是 sdk-location。通常情况下，如果当你试图构建时得到一个这样的信息：\"com.android.ant.SetupTask cannot be found \"，尝试启用这个选项。\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid "`target: <target>`<a name=\"build_target\"></a>\n"
-msgstr ""
+msgstr "`target: <target>`<a name=\"build_target\"></a>\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -2635,7 +2635,7 @@ msgid ""
 "    Ant, Maven and Gradle projects only. Note that this does not change\n"
 "    the target SDK in the AndroidManifest.xml, which determines the\n"
 "    level of features that can be included in the build.\n"
-msgstr ""
+msgstr "：指定一个特定的 SDK 目标进行编译，覆盖代码中由上游定义的值。取决于所使用的构建系统具有不同的作用 - 这个标志目前只影响 Ant，Maven 和 Gradle 项目。请注意，这并不改变 AndroidManifest.xml 中的目标 SDK，它决定了可以包含在构建中的功能的级别。\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -2646,13 +2646,13 @@ msgid ""
 "    _build.xml_ to be rewritten, which is fine if it’s a ’standard’\n"
 "    android file or doesn’t already exist, but not a good idea if it’s\n"
 "    heavily customised.\n"
-msgstr ""
+msgstr "    在 Ant 项目的情况下，它修改应用和可能的子项目的 _project.properties_。这可能会导致整个 _build.xml_ 被重写，如果它是一个“标准”的 android 文件或不存在就没有问题，但如果它是高度自定义的文件就会导致问题。\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid "`androidupdate: <auto/dirs>`<a name=\"build_androidupdate\"></a>\n"
-msgstr ""
+msgstr "`androidupdate: <auto/dirs>`<a name=\"build_androidupdate\"></a>\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -2662,7 +2662,7 @@ msgid ""
 "    update the project and all its referenced projects. Specifying\n"
 "    update=no bypasses that. Note that this is useless in builds that\n"
 "    don’t use Ant.\n"
-msgstr ""
+msgstr "：默认情况下，'android update' 在 Ant 构建中被用来生成或更新该项目及其所有引用的项目。指定 update=no 可以跳过此步骤。请注意，这在不使用 Ant 的构建中不起作用。\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -2670,7 +2670,7 @@ msgstr ""
 msgid ""
 "    Default value is ’`auto`’, which recursively uses the paths in\n"
 "    _project.properties_ to find all the subprojects to update.\n"
-msgstr ""
+msgstr "    默认值是 '`auto`'，它递归地使用 _project.properties_ 中的路径找到所有要更新的子项目。\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -2678,13 +2678,13 @@ msgstr ""
 msgid ""
 "    Otherwise, the value can be a comma-separated list of directories in\n"
 "    which to run ’android update’ relative to the application directory.\n"
-msgstr ""
+msgstr "    否则，该值可以是一个以逗号分隔的相对于应用文件夹的文件夹列表，在其中运行 'android update'。\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid "`encoding: xxxx`<a name=\"build_encoding\"></a>\n"
-msgstr "编码 `encoding: xxxx`<a name=\"build_encoding\"></a>\n"
+msgstr "`encoding: xxxx`<a name=\"build_encoding\"></a>\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -2695,13 +2695,13 @@ msgid ""
 "    by the SDK’s ant rules, and forces the Java compiler to interpret\n"
 "    source files with this encoding. If you receive warnings during the\n"
 "    compile about character encodings, you probably need this.\n"
-msgstr ""
+msgstr "：在 local.properties 中添加一个 java.encoding 属性，其值为给定的值。一般来说，这个值是 'utf-8'。这将被 SDK 的 ant 规则接收，并强制 Java 编译器使用这个编码解释源文件。如果你在编译过程中收到关于字符编码的警告，你可能需要这个。\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid "`forceversion: true`<a name=\"build_forceversion\"></a>\n"
-msgstr "强制版本 `forceversion: true`<a name=\"build_forceversion\"></a>\n"
+msgstr "`forceversion: true`<a name=\"build_forceversion\"></a>\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -2709,7 +2709,7 @@ msgstr "强制版本 `forceversion: true`<a name=\"build_forceversion\"></a>\n"
 msgid ""
 ":   If specified, the package version in _AndroidManifest.xml_ is replaced\n"
 "    with the version name for the build as specified in the metadata.\n"
-msgstr ""
+msgstr "：如果指定，_AndroidManifest.xml_ 中的软件包版本将被替换为元数据中指定的构建版本名称。\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -2720,13 +2720,13 @@ msgid ""
 "    that the version differs significantly from upstream; or to make it\n"
 "    apparent which architecture or platform the APK is designed to\n"
 "    run on.\n"
-msgstr ""
+msgstr "    这在一些情况下有用：上游存储库未更新其特定 tag 中的版本；建立一个任意的修订版；构建一个任意的 revision；明显地显示出此版本与上游版本有很大的不同；或者明确表示 APK 被设计用于哪个架构或平台上运行。\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid "`forcevercode: true`<a name=\"build_forcevercode\"></a>\n"
-msgstr "强制版本代码 `forcevercode: true`<a name=\"build_forcevercode\"></a>\n"
+msgstr "`forcevercode: true`<a name=\"build_forcevercode\"></a>\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -2734,13 +2734,13 @@ msgstr "强制版本代码 `forcevercode: true`<a name=\"build_forcevercode\"></
 msgid ""
 ":   If specified, the package version code in the _AndroidManifest.xml_ is\n"
 "    replaced with the version code for the build. See also forceversion.\n"
-msgstr ""
+msgstr "：如果指定，_AndroidManifest.xml_ 中的软件包版本代码将被替换为构建的版本代码。另参见 forceversion。\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid "`rm: <path1>[,<path2>,...]`<a name=\"build_rm\"></a>\n"
-msgstr ""
+msgstr "`rm: <path1>[,<path2>,...]`<a name=\"build_rm\"></a>\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -2751,7 +2751,7 @@ msgid ""
 "    build directory - i.e. the root of the directory structure checked\n"
 "    out from the source respository - not necessarily the directory that\n"
 "    contains _AndroidManifest.xml_.\n"
-msgstr ""
+msgstr "：指定构建之前删除的文件或文件夹的相对路径。这些路径相对于基础-构建目录 - 即从源码库中检出的文件结构的根目录 - 不一定是包含 _AndroidManifest.xml_ 的目录。\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -2759,13 +2759,13 @@ msgstr ""
 msgid ""
 "    Multiple files/directories can be specified by separating them with\n"
 "    ’,’. Directories will be recursively deleted.\n"
-msgstr ""
+msgstr "    可以用 ',' 分隔指定多个文件/文件夹。文件夹将被递归删除。\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid "`extlibs: <lib1>[,<lib2>,...]`<a name=\"build_extlibs\"></a>\n"
-msgstr ""
+msgstr "`extlibs: <lib1>[,<lib2>,...]`<a name=\"build_extlibs\"></a>\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -2774,13 +2774,13 @@ msgid ""
 ":   Comma-separated list of external libraries (jar files) from the\n"
 "    `build/extlib` library, which will be placed in the `libs` directory\n"
 "    of the project.\n"
-msgstr ""
+msgstr "：逗号分隔的 `build/extlib` 中外部库（jar 文件）的列表，将被放置在项目的 `libs` 文件夹下。\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid "`srclibs: [n:]a@r,[n:]b@r1,...`<a name=\"build_srclibs\"></a>\n"
-msgstr ""
+msgstr "`srclibs: [n:]a@r,[n:]b@r1,...`<a name=\"build_srclibs\"></a>\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -2790,7 +2790,7 @@ msgid ""
 "    item is of the form name@rev where name is the predefined source\n"
 "    library name and rev is the revision or tag to use in the respective\n"
 "    source control.\n"
-msgstr ""
+msgstr "：逗号分隔的源代码库或 Android 项目列表。每个条目为 name@rev 的形式，其中 name 是预定义的源码库名称，rev 是在各自版本控制中使用的 revision 或标签。\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -2802,7 +2802,7 @@ msgid ""
 "    example, if you specify `1:somelib@1.0`, F-Droid will automatically\n"
 "    do the equivalent of the legacy practice\n"
 "    `prebuild=echo \"android.library.reference.1=$$somelib$$\" >> project.properties`.\n"
-msgstr ""
+msgstr "    对于 Ant 项目，你可以选择在一个 srclib 项目的开头加上一个带冒号的数字，以自动将其放在 _project.properties_ 中作为指定编号下的一个库。例如，如果你指定 `1:somelib@1.0`，F-Droid 会自动地执行等同于传统的做法 `prebuild=echo \"android.library.reference.1=$$somelib$$\">> project.properties`。\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -2819,7 +2819,7 @@ msgid ""
 "    \\$\\$name\\$\\$ in the init/prebuild/build command to substitute the\n"
 "    relative path to the library directory, but it could need tweaking\n"
 "    if you’ve changed into another directory.\n"
-msgstr ""
+msgstr "    每个 srclib 都有一个元数据文件，在版本库的 srclibs/ 文件夹下，源代码存储在 build/srclib/ 文件夹下。_RepoType_ 和 _Repo_ 的指以与应用相同的方式指定；Subdir：可以是一个逗号分隔的列表，用于当文件夹被上游重命名的时候；Update Project：更新工作文件夹和下一级文件夹的项目；Prepare：可以用于任何形式的准备工作：特别是如果你需要用一个特定的目标来更新项目。然后你还可以在 init/prebuild/build 命令中使用 \\$\\$name\\$\\$ 来替换到库文件夹的相对路径，但如果你移动到另一个目录可能需要调整一下。\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -2830,48 +2830,48 @@ msgid ""
 "    guarantee that those binaries are free and correspondent to the\n"
 "    source code, F-Droid allows the following known repositories until a\n"
 "    source-built alternative is available:\n"
-msgstr ""
+msgstr "    目前，当上游使用 jar 文件或从非信任的仓库拉取依赖时，srclibs 是必要的。尽管我们不能保证这些二进制文件是自由的并且与源代码相对应，F-Droid 允许以下已知的仓库，直到有一个从源构建的替代品可用。\n"
 
 #. type: Bullet: '    -   '
 #: _docs/Build_Metadata_Reference.md
 msgid "‘mavenCentral’ - the original repo, hardcoded in Maven and Gradle."
-msgstr ""
+msgstr "'mavenCentral' - 最初的仓库，硬编码在 Maven 和 Gradle 中。"
 
 #. type: Bullet: '    -   '
 #: _docs/Build_Metadata_Reference.md
 msgid "‘jCenter’ - hardcoded in Gradle, this repo by Bintray tries to provide easier handling. It should sync with mavenCentral from time to time."
-msgstr ""
+msgstr "'jCenter' - 硬编码在 Gradle 中,Bintray 的这个仓库试图提供更简单的处理。它应该不时地与 mavenCentral 同步。"
 
 #. type: Bullet: '    -   '
 #: _docs/Build_Metadata_Reference.md
 msgid "‘OSS Sonatype’ - maintained by the people behind mavenCentral, this repository focuses on hosting services for open source project binaries."
-msgstr ""
+msgstr "'OSS Sonatype' - 由 mavenCentral 背后的人维护，这个仓库专注于为开源项目二进制文件提供托管服务。"
 
 #. type: Bullet: '    -   '
 #: _docs/Build_Metadata_Reference.md
 msgid "‘OSS JFrog’ - maintained by the people behind jCenter, this repository focuses on hosting services for open source project binaries."
-msgstr ""
+msgstr "'OSS JFrog' - 由 jCenter 背后的人维护，这个仓库专注于为开源项目二进制文件提供托管服务。"
 
 #. type: Bullet: '    -   '
 #: _docs/Build_Metadata_Reference.md
 msgid "‘JitPack.io’ - builds directly from GitHub repositories.  However, they do not provide any option to reproduce or verify the resulting binaries. Builds pre-release versions in some cases."
-msgstr ""
+msgstr "'JitPack.io' - 直接从 GitHub 仓库构建。然而，他们不提供任何选项来复现或验证所产生的二进制文件。在某些情况下会构建预发布版本。"
 
 #. type: Bullet: '    -   '
 #: _docs/Build_Metadata_Reference.md
 msgid "‘Clojars’ - Clojure libraries repo."
-msgstr ""
+msgstr "'Clojars' - Clojure 库仓库。"
 
 #. type: Bullet: '    -   '
 #: _docs/Build_Metadata_Reference.md
 msgid "‘CommonsWare’ - repo holding a collection of open-source libs."
-msgstr ""
+msgstr "'CommonsWare' - 托管一系列开源库的仓库。"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-#, no-wrap
+#, fuzzy, no-wrap
 msgid "`patch: x`<a name=\"build_patch\"></a>\n"
-msgstr ""
+msgstr "`patch: x`<a name=\"build_patch\"></a>\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -2881,13 +2881,13 @@ msgid ""
 "    within a directory below the metadata, with the same name as the\n"
 "    metadata file but without the extension. Each of these patches is\n"
 "    applied to the code in turn.\n"
-msgstr ""
+msgstr "：应用补丁。'x' 命名一个（或多个 - 以逗号分隔的）在 metadata 下面的一个与元数据文件同名但没有扩展名的文件夹中的文件。每个补丁中的每一个都被依次应用到代码中。\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid "`prebuild: xxxx`<a name=\"build_prebuild\"></a>\n"
-msgstr "预构建 `prebuild: xxxx`<a name=\"build_prebuild\"></a>\n"
+msgstr "`prebuild: xxxx`<a name=\"build_prebuild\"></a>\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
