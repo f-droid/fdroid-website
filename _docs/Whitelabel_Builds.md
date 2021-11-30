@@ -36,10 +36,10 @@ android {
 Then *gradle* will automatically look at whole set of folders for custom
 versions of files:
 
-- Java sources: _app/src/mycompany/java_
-- Manifest file: _app/src/mycompany/AndroidManifest.xml_
-- Android resources: _app/src/mycompany/res_
-- Assets: _app/src/mycompany/assets_
+* Java sources: _app/src/mycompany/java_
+* Manifest file: _app/src/mycompany/AndroidManifest.xml_
+* Android resources: _app/src/mycompany/res_
+* Assets: _app/src/mycompany/assets_
 
 There cannot be duplicate Java classes, but any extensions can be
 managed there. For anything in _res/_, i.e. _strings.xml_ or drawable
