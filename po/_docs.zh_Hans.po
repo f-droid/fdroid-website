@@ -18,7 +18,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
 "POT-Creation-Date: 2021-11-08 14:58+0100\n"
-"PO-Revision-Date: 2021-11-26 12:39+0000\n"
+"PO-Revision-Date: 2021-11-30 04:53+0000\n"
 "Last-Translator: kak mi <wavelake@outlook.com>\n"
 "Language-Team: Chinese (Simplified) <https://hosted.weblate.org/projects/f-droid/website-docs/zh_Hans/>\n"
 "Language: zh_Hans\n"
@@ -2869,7 +2869,7 @@ msgstr "'CommonsWare' - 托管一系列开源库的仓库。"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "`patch: x`<a name=\"build_patch\"></a>\n"
 msgstr "`patch: x`<a name=\"build_patch\"></a>\n"
 
@@ -2899,13 +2899,13 @@ msgid ""
 "    line to join that line with the next. It has no special meaning in\n"
 "    other contexts; in particular, literal backslashes should not\n"
 "    be escaped.\n"
-msgstr ""
+msgstr "：指定一个 shell 命令（或几个命令 - 用 && 连接）在构建前运行。反斜线可以作为转义字符来插入逗号，或者在行尾连接该行和下一行。在其他情况下，它没有特殊含义；特别是，字面的反斜线不应该被转义。\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid "    The command runs using bash.\n"
-msgstr ""
+msgstr "    该命令使用 bash 运行。\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -2915,7 +2915,7 @@ msgid ""
 "    scanning of the code and building of the source tarball, for\n"
 "    example, take place after this. For custom actions that actually\n"
 "    build things or produce binaries, use ’build’ instead.\n"
-msgstr ""
+msgstr "    请注意，在此预构建阶段不应构建任何内容 - 例如，代码扫描和源代码包构建在此之后发生。对于实际执行构建或生成二进制文件的自定义操作，请使用 'build'。\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -2923,7 +2923,7 @@ msgstr ""
 msgid ""
 "    You can use \\$\\$name\\$\\$ to substitute the path to a referenced\n"
 "    srclib - see the `srclib` directory for details of this.\n"
-msgstr ""
+msgstr "    可以使用 \\$\\$name\\$\\$ 将路径替换为引用的 srclib - 有关详细信息，请参阅 `srclib` 目录。\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -2935,13 +2935,13 @@ msgid ""
 "    `android update project` explicitly. The following per-build\n"
 "    variables are available likewise: \\$\\$VERSION\\$\\$, \\$\\$VERCODE\\$\\$\n"
 "    and \\$\\$COMMIT\\$\\$.\n"
-msgstr ""
+msgstr "    您可以使用 \\$\\$SDK\\$\\$、\\$\\$NDK\\$\\$ 和 \\$\\$MVN3\\$\\$ 来分别代替 android SDK 和 NDK 文件夹以及 Maven 3 可执行文件的路径，例如当你需要显式执行 `android update project` 时。以下每个预构建变量同样可用：\\$\\$VERSION\\$\\$，\\$\\$VERCODE\\$\\$ 和 \\$\\$COMMIT\\$\\$。\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid "`scanignore: <path1>[,<path2>,...]`<a name=\"build_scanignore\"></a>\n"
-msgstr ""
+msgstr "`scanignore: <path1>[,<path2>,...]`<a name=\"build_scanignore\"></a>\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -2951,7 +2951,7 @@ msgid ""
 "    process. This should only be used where there is a very good reason,\n"
 "    and probably accompanied by a comment explaining why it\n"
 "    is necessary.\n"
-msgstr ""
+msgstr "：允许从扫描过程中排除一个或多个文件/路径。这应该只在有很好的理由的情况下使用，并且或许可以附加一条评论，解释为什么这是必要的。\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -2959,13 +2959,13 @@ msgstr ""
 msgid ""
 "    When scanning the source tree for problems, matching files whose\n"
 "    relative paths start with any of the paths given here are ignored.\n"
-msgstr ""
+msgstr "    扫描源代码树中的问题时，相对路径以此处给出的任何路径开始的相应文件将被忽略。\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid "`scandelete: <path1>[,<path2>,...]`<a name=\"build_scandelete\"></a>\n"
-msgstr ""
+msgstr "`scandelete: <path1>[,<path2>,...]`<a name=\"build_scandelete\"></a>\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -2974,7 +2974,7 @@ msgid ""
 ":   When running the scan process, any files that trigger errors - like\n"
 "    binaries - will be removed. It acts just like _scanignore_, but\n"
 "    instead of ignoring the files, it removes them.\n"
-msgstr ""
+msgstr "：运行扫描过程时，任何触发错误的文件 - 如二进制文件 - 将被删除。它与 _scanignore_ 行为一样，但是它不会忽略这些文件，而是删除它们。\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -2983,13 +2983,13 @@ msgid ""
 "    Useful when a source code repository includes binaries or other\n"
 "    unwanted files which are not needed for the build. Instead of\n"
 "    removing them manually via _rm_, using _scandelete_ is easier.\n"
-msgstr ""
+msgstr "    用于当源代码存储库包含二进制文件或其他构建不需要的文件。相比于通过 _rm_ 手动删除它们，使用 _scandelete_ 更容易。\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid "`build: xxxx`<a name=\"build_build\"></a>\n"
-msgstr "构建 `build: xxxx`<a name=\"build_build\"></a>\n"
+msgstr "`build: xxxx`<a name=\"build_build\"></a>\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -2999,7 +2999,7 @@ msgid ""
 "    before the main Ant/Maven build). Use this only for actions that do\n"
 "    actual building. Any preparation of the source code should be done\n"
 "    using ’init’ or ’prebuild’.\n"
-msgstr ""
+msgstr "：类似于 'prebuild'，但在实际构建阶段（但在主要的 Ant/Maven 构建之前）运行。仅将其用于执行实际构建的操作。任何源代码的准备工作都应该使用 'init' 或 'prebuild' 完成。\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -3008,7 +3008,7 @@ msgid ""
 "    Any building that takes place before _build_ will be ignored, as\n"
 "    either Ant, mvn or gradle will be executed to clean the build\n"
 "    environment right before _build_ (or the final build) is run.\n"
-msgstr ""
+msgstr "    在 _build_ 之前发生的任何构建都将被忽略，因为在运行 _build_（或最终构建）之前 Ant、mvn 或 gradle 将被执行以清理构建环境。\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -3019,13 +3019,13 @@ msgid ""
 "    executable respectively. The following per-build variables are\n"
 "    available likewise: \\$\\$VERSION\\$\\$, \\$\\$VERCODE\\$\\$\n"
 "    and \\$\\$COMMIT\\$\\$.\n"
-msgstr ""
+msgstr "    你可以用 \\$\\$SDK\\$\\$，\\$\\$NDK\\$\\$ 和 \\$\\$MVN3\\$\\$ 来分别代替 android SDK 和 NDK 目录以及 maven 3 可执行文件的路径。同样，也可以使用以下预构建的变量：\\$\\$VERSION\\$\\$，\\$\\$VERCODE\\$\\$ 和 \\$\\$COMMIT\\$\\$。\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid "`buildjni: [yes|no|<dir list>]`<a name=\"build_buildjni\"></a>\n"
-msgstr ""
+msgstr "`buildjni: [yes|no|<dir list>]`<a name=\"build_buildjni\"></a>\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -3036,7 +3036,7 @@ msgid ""
 "    relative to the main application directory in which to run\n"
 "    ndk-build, or ’yes’ which corresponds to ’.’ . Using explicit list\n"
 "    may be useful to build multi-component projects.\n"
-msgstr ""
+msgstr "：在进行主 Ant 构建之前，通过 _ndk-build_ 脚本启用本地代码的构建。该值可以是一个用于运行 ndk-build 的相对于主应用文件夹的文件夹列表，或者是对应于 '.' 的 'yes'。使用明确的列表对构建多组件项目很有用。\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -3050,7 +3050,7 @@ msgid ""
 "    (using `rm=jni` for example). Using `buildjni=no` when the jni code\n"
 "    isn’t used nor built will result in an error saying that native\n"
 "    libraries were expected in the resulting package.\n"
-msgstr ""
+msgstr "    如果这个参数没有被定义，但是有一个`jni`目录存在，构建和扫描过程将报错（拒绝构建）。如果本机代码是通过其他方式（如 Gradle 任务）构建的。你可以在这里指定 `no` 来避免这种情况。然而，如果本机代码实际上是不需要或不使用的，请删除该目录（例如，使用`rm=jni`）。当 jni 代码不被使用也不被构建时使用 `buildjni=no` 将会导致一个错误，即在生成的包中预期有本地库。\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
