@@ -18,7 +18,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
 "POT-Creation-Date: 2021-11-08 14:58+0100\n"
-"PO-Revision-Date: 2021-12-02 06:40+0000\n"
+"PO-Revision-Date: 2021-12-03 15:53+0000\n"
 "Last-Translator: kak mi <wavelake@outlook.com>\n"
 "Language-Team: Chinese (Simplified) <https://hosted.weblate.org/projects/f-droid/website-docs/zh_Hans/>\n"
 "Language: zh_Hans\n"
@@ -3072,7 +3072,7 @@ msgstr "：在本次构建中使用的 NDK 版本。该值是 NDK 的版本，�
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "`gradle: <flavour1>[,<flavour2>,...]`<a name=\"build_gradle\"></a>\n"
 msgstr "`gradle: <flavour1>[,<flavour2>,...]`<a name=\"build_gradle\"></a>\n"
 
@@ -3384,17 +3384,17 @@ msgid ""
 "    stays in the same branch). On the other hand, branch support hasn’t\n"
 "    been implemented yet in bzr and svn, but _RepoManifest_ may still be\n"
 "    used without it.\n"
-msgstr ""
+msgstr "    目前，它在不同程度上适用于除了 srclib 存储库类型以外的每种存储库类型。对于 git，git-svn 和 hg 存储库类型，你可以用 \"RepoManifest/yourbranch\" 作为 _UpdateCheckMode_，这样 \"yourbranch\" 就会被用来代替默认分支。git 的默认值是 \"master\"，hg 的默认值是 \"default\"，git-svn 的默认值是 none（它保持在同一分支）。另一方面，分支支持还没有对 bzr 和 svn 实现，但_RepoManifest_ 仍然可以在没有它的情况下使用。\n"
 
 #. type: Bullet: '-   '
 #: _docs/Build_Metadata_Reference.md
 msgid "`RepoTrunk` - For svn and git-svn repositories, especially those who don’t have a bundled _AndroidManifest.xml_ file, the Tags and RepoManifest checks will not work, since there is no version information to obtain. But, for those apps who automate their build process with the commit ref that HEAD points to, RepoTrunk will set the _CurrentVersion_ and _CurrentVersionCode_ to that number."
-msgstr ""
+msgstr "`RepoTrunk` - 对于 svn 和 git-svn 仓库，特别是那些没有附带 _AndroidManifest.xml_ 文件的仓库，Tags 和 RepoManifest 检查将无法工作，因为没有版本信息可以获取。但是，对于那些用 HEAD 指向的提交注释自动化构建过程的应用，RepoTrunk 将把 _CurrentVersion_ 和 _CurrentVersionCode_ 设为该数字。"
 
 #. type: Bullet: '-   '
 #: _docs/Build_Metadata_Reference.md
 msgid "`Tags` - The _AndroidManifest.xml_ and _build.gradle_ files in all tagged revisions in the source repository are checked, looking for the highest version code.  The appropriateness of this method depends on the development process used by the application’s developers. You should not specify this method unless you’re sure it’s appropriate. It shouldn’t be used if the developers like to tag unstable versions or are known to forget to tag releases. Like RepoManifest, it will not return the correct value if the directory containing the _AndroidManifest.xml_ has moved. Despite these caveats, it is the often the favourite _UpdateCheckMode_."
-msgstr ""
+msgstr "`Tags` - 检查源代码存储库中所有被标记的 revision 中的 _AndroidManifest.xml_ 和 _build.gradle_ 文件，寻找最高版本代码。这种方法是否合适，取决于应用的开发者所使用的开发过程。你不应该指定这种方法，除非你确定它是合适的。如果开发者喜欢标记不稳定的版本，或已知忘记标记发布版本，就不应该使用这种方法。像 RepoManifest 一样，如果包含 _AndroidManifest.xml_ 的目录已经移动，它将不会返回正确的值。尽管有这些注意事项，它往往是最受欢迎的 _UpdateCheckMode_。"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -3403,7 +3403,7 @@ msgid ""
 "    It currently only works for git, hg, bzr and git-svn repositories.\n"
 "    In the case of the latter, the repo URL must contain the path to the\n"
 "    trunk and tags or else no tags will be found.\n"
-msgstr ""
+msgstr "    目前它只适用于 git，hg，bzr 和 git-svn 存储库。在后者的情况下，存储库的 URL 必须包含通往 trunk 和标签的路径，否则将找不到标签。\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -3414,7 +3414,7 @@ msgid ""
 "    apps tag non-release versions such as X.X-alpha, so you can filter\n"
 "    them out with something like `.*[0-9]$` which requires tag names to\n"
 "    end with a digit.\n"
-msgstr ""
+msgstr "    可选择在末尾添加一个正则模式 - 用一个空格隔开 - 以只检查与该模式相匹配的标签。当应用标记非发布版本（如 X.X-alpha）时非常有用，因此你可以用 `.*[0-9]$` 这样需要标签名称以数字结尾的模式过滤掉它们。\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -3424,12 +3424,12 @@ msgid ""
 "    name from repository files you specify (instead of relying on the defaults\n"
 "    used to match against otherwise, which in most cases is `build.gradle` or\n"
 "    `AndroidManifest.xml`).\n"
-msgstr ""
+msgstr "    可以指定 `UpdateCheckData` 以从你指定的存储库文件（而不是依靠默认值，在大多数情况下是 `build.gradle` 或 `AndroidManifest.xml`）中提取版本代码和名称。\n"
 
 #. type: Bullet: '-   '
 #: _docs/Build_Metadata_Reference.md
 msgid "`HTTP` - HTTP requests are used to determine the current version code and version name. This is controlled by the _UpdateCheckData_ field, which is of the form `urlcode|excode|urlver|exver`."
-msgstr ""
+msgstr "`HTTP` - HTTP 请求被用来确定当前的版本代码和版本名称。这由 _UpdateCheckData_ 字段控制，它的形式是 `urlcode|excode|urlver|exver`。"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -3438,7 +3438,7 @@ msgid ""
 "    Firstly, if `urlcode` is non-empty, the document from that URL is\n"
 "    retrieved, and matched against the regular expression `excode`, with\n"
 "    the first group becoming the version code.\n"
-msgstr ""
+msgstr "    首先，如果 `urlcode` 不为空，则获取该 URL 中的文档，并与正则表达式 `excode` 匹配，以其中第一个匹配组作为版本代码。\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -3449,97 +3449,97 @@ msgid ""
 "    the first group becoming the version name. The `urlver` field can be\n"
 "    set to simply ’.’ which says to use the same document returned for\n"
 "    the version code again, rather than retrieving a different one.\n"
-msgstr ""
+msgstr "    其次，如果 `urlver` 不是空的，则获取该 URL 中的文件，并与正则表达式 `exver` 相匹配，其中第一个匹配组为版本名称。`urlver` 字段可以被设置为简单的 '.'，这表示和版本代码使用同一文件而不是获取另一个。\n"
 
 #. type: Title ###
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid "_VercodeOperation_<a name=\"VercodeOperation\"></a>"
-msgstr "_VercodeOperation_ (版本代码操作)<a name=\"VercodeOperation\"></a>"
+msgstr "_VercodeOperation_（版本代码操作）<a name=\"VercodeOperation\"></a>"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 msgid "Operation to be applied to the vercode obtained by the defined _UpdateCheckMode_. `%c` will be replaced by the actual vercode, and the whole string will be passed to python’s `eval` function."
-msgstr ""
+msgstr "对通过定义的 _UpdateCheckMode_ 获得的版本代码进行操作。`%c` 将被实际的版本代码替换，整个字符串将被传递给 python 的 `eval` 函数。"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 msgid "Especially useful with apps that we want to compile for different ABIs, but whose vercodes don’t always have trailing zeros. For example, with _VercodeOperation_ set at something like `%c*10 + 4`, we will be able to track updates and build up to four different versions of every upstream version."
-msgstr ""
+msgstr "对于我们想为不同的 ABI 编译，但其代码并不总是有尾部零的应用特别有用。例如，将 _VercodeOperation_ 设置为 `%c*10+4`，我们将能够跟踪更新，并为每个上游版本构建最多四个不同的版本。"
 
 #. type: Title ###
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid "_UpdateCheckIgnore_<a name=\"UpdateCheckIgnore\"></a>"
-msgstr "_UpdateCheckIgnore_ (更新检查忽略)<a name=\"UpdateCheckIgnore\"></a>"
+msgstr "_UpdateCheckIgnore_（更新检查忽略）<a name=\"UpdateCheckIgnore\"></a>"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 msgid "When checking for updates (via _UpdateCheckMode_) this can be used to specify a regex which, if matched against the version name, causes that version to be ignored. For example, ’beta’ could be specified to ignore version names that include that text."
-msgstr ""
+msgstr "当检查更新时（通过 _UpdateCheckMode_），这可以用来指定一个正则表达式，如果与版本名称相匹配，将导致该版本被忽略。例如，可以指定 \"beta\" 以忽略包含该文本的版本名称。"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 msgid "Only Available with _UpdateCheckMode_ `HTTP`."
-msgstr ""
+msgstr "只在 _UpdateCheckMode_ `HTTP` 中可用。"
 
 #. type: Title ###
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid "_UpdateCheckName_<a name=\"UpdateCheckName\"></a>"
-msgstr "_UpdateCheckName_ (更新检查名称)<a name=\"UpdateCheckName\"></a>"
+msgstr "_UpdateCheckName_<a name=\"UpdateCheckName\"></a>"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 msgid "When checking for updates (via _UpdateCheckMode_) this can be used to specify the package name to search for. Useful when apps have a static package name but change it programmatically in some app flavors, by e.g.  appending \".open\" or \".free\" at the end of the package name."
-msgstr ""
+msgstr "当检查更新时（通过 _UpdateCheckMode_），这可以用来指定要搜索的软件包名称。当应用有一个静态的包名但在某些 flavor 中以编程方式改变它，例如在包名的末尾加上 \".open\" 或 \".free\" 时很有用。"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 msgid "You can also use `Ignore` to ignore package name searching. This should only be used in some specific cases, for example if the app’s build.gradle file does not contain the package name."
-msgstr ""
+msgstr "你也可以使用 `Ignore` 来忽略包名搜索。这只应在某些特殊情况下使用，例如，应用的 build.gradle 文件不包含包名。"
 
 #. type: Title ###
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid "_UpdateCheckData_<a name=\"UpdateCheckData\"></a>"
-msgstr "_UpdateCheckData_ (更新检查数据)<a name=\"UpdateCheckData\"></a>"
+msgstr "_UpdateCheckData_（更新检查数据）<a name=\"UpdateCheckData\"></a>"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 msgid "Used in conjunction with _UpdateCheckMode_ `Tag` or `HTTP`."
-msgstr ""
+msgstr "与 _UpdateCheckMode_ `Tag` 或 `HTTP` 一起使用。"
 
 #. type: Fenced code block
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid "UpdateCheckData: <vercode-location>|<RegEx-for-versionCode>|<versionName-location>|<RegEx-for-versionName>\n"
-msgstr ""
+msgstr "UpdateCheckData: <vercode-location>|<RegEx-for-versionCode>|<versionName-location>|<RegEx-for-versionName>\n"
 
 #. type: Bullet: '-   '
 #: _docs/Build_Metadata_Reference.md
 msgid "`vercode-location` - URL (with `UpdateCheckMode: HTTP`) or path/file relative to repo root, leave empty to check the tag name instead (with `UpdateCheckMode: Tags`)."
-msgstr ""
+msgstr "`vercode-location` - URL（使用 `UpdateCheckMode: HTTP` 时）或相对于存储库根的路径/文件，留空则检查标签名称（使用`UpdateCheckMode: Tags` 时）。"
 
 #. type: Bullet: '-   '
 #: _docs/Build_Metadata_Reference.md
 msgid "`RegEx-for-versionCode` - RegEx to match versionCode."
-msgstr ""
+msgstr "`RegEx-for-versionCode` - 匹配 versionCode 的正则表达式。"
 
 #. type: Bullet: '-   '
 #: _docs/Build_Metadata_Reference.md
 msgid "`versionName-location` - Same as vercode-location just for versionName. A .  means to take vercode-location, leave empty to check the tag name instead (only with `UpdateCheckMode: Tags`)."
-msgstr ""
+msgstr "`versionName-location` - 与 vercode-location 相同，只是针对 versionName。一个 . 表示使用 vercode-location，留空则检查标签名称（仅适用于 `UpdateCheckMode: Tags`）。"
 
 #. type: Bullet: '-   '
 #: _docs/Build_Metadata_Reference.md
 msgid "`RegEx-for-versionName` - Similar to RegEx-for-versionCode, just for versionName."
-msgstr ""
+msgstr "`RegEx-for-versionName` - 与 RegEx-for-versionCode 类似，只是针对 versionName。"
 
 #. type: Bullet: '-   '
 #: _docs/Build_Metadata_Reference.md
 msgid "RegEx pipe operators are not supported at this time."
-msgstr ""
+msgstr "目前还不支持正则表达式管道操作符。"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -3557,6 +3557,12 @@ msgid ""
 "-   Note: Be sure to use *single* quotes around the entire value if you leave `vercode-location` empty:\n"
 "    `UpdateCheckData: '|\\+(\\d+)||Android-([\\d.]+)'`\n"
 msgstr ""
+"`UpdateCheckMode: Tag` 实例：\n"
+"- 存储库根中有 `pubspec.yaml` 的 Flutter 应用：`pubspec.yaml|version:\\s.+\\+(\\d+)|.|version:\\s(.+)\\+`\n"
+"- 使用 git 标签作为版本名：`app/build.gradle|versionCode\\s(\\d+)||`\n"
+"- 可以选择指定一个从标签中提取版本名称的正则表达式：`app/build.gradle|versionCode\\s(\\d+)||Android-([\\d.]+)`\n"
+"- 如果没有指定版本代码的文件，可以从标签中提取代码和名称：`'|\\+(\\d+)||Android-([\\d.]+)'`\n"
+"- 注意：如果你把 `vercode-location` 留空，一定要在整个值周围使用*单引号*：`UpdateCheckData: '|\\+(\\d+)||Android-([\\d.]+)'`\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -3566,27 +3572,30 @@ msgid ""
 "-   `https://foo/version.json|\"version_code\":.*\"(.*)\"|.|\"version_name\":.*\\\"(.*)\\\",`\n"
 "-   `https://foo/version_fdroid.txt|versionCode=(.*)|.|versionName=(.*)`\n"
 msgstr ""
+"`UpdateCheckMode: HTTP` 示例：\n"
+"- `https://foo/version.json|\"version_code\":.*\"(.*)\"|.|\"version_name\":.*\\\"(.*)\\\",`\n"
+"- `https://foo/version_fdroid.txt|versionCode=(.*)|.|versionName=(.*)`\n"
 
 #. type: Title ###
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid "_AutoUpdateMode_<a name=\"AutoUpdateMode\"></a>"
-msgstr "_AutoUpdateMode_ (自动更新模式)<a name=\"AutoUpdateMode\"></a>"
+msgstr "_AutoUpdateMode_（自动更新模式）<a name=\"AutoUpdateMode\"></a>"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 msgid "This determines the method used for auto-generating new builds when new releases are available - in other words, adding a new Build Version line to the metadata. This happens in conjunction with the _UpdateCheckMode_ functionality - i.e. when an update is detected by that, it is also processed by this."
-msgstr ""
+msgstr "这决定了在有新版本时自动生成新构建的方法 - 换句话说，在元数据中添加新的构建版本行。这与 _UpdateCheckMode_ 功能共同进行 - 也就是说，当一个更新被检测到时，它也会被此功能处理。"
 
 #. type: Bullet: '-   '
 #: _docs/Build_Metadata_Reference.md
 msgid "`None` - No auto-updating is done"
-msgstr ""
+msgstr "`None` - 不进行自动更新"
 
 #. type: Bullet: '-   '
 #: _docs/Build_Metadata_Reference.md
 msgid "`Version` - Generates a value (tag name) used for the `commit:` property of new build blocks. It is simply text in which %v and %c are replaced with the required version name and version code respectively. The resulting string must match an existing tag in the app's repo, which then will be used by F-Droid to build the corresponding version."
-msgstr ""
+msgstr "`Version` - 产生一个用于新构建块的 `commit:` 属性的值（标签名）。它是简单的文本，其中 %v 和 %c 分别被替换成所需的版本名称和版本代码。产生的字符串必须与应用存储库中的现有标签相匹配，然后 F-Droid 将使用该标签来构建相应的版本。"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -3596,7 +3605,7 @@ msgid ""
 "    version 2.7.2, you would simply specify \"Version %v\". If an app\n"
 "    always has a tag \"ver\\_1234\" for a version with version code 1234,\n"
 "    you would specify \"Version ver\\_%c\".\n"
-msgstr ""
+msgstr "    例如，如果一个应用总是有一个标签 \"2.7.2\" 对应于 2.7.2 版本，你可以简单地指定 \"Version %v\"。如果一个应用总是有一个标签 \"ver\\_1234\" 表示版本代码为 1234 的版本，你可以指定 \"Version ver\\_%c\"。\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -3605,7 +3614,7 @@ msgid ""
 "    Continuing the first example above, you would specify that as \"Version\n"
 "    +-fdroid %v\" - \"-fdroid\" is the suffix F-Droid will then append to the\n"
 "    `versionName` specified in e.g. `build.gradle` when building the APK.\n"
-msgstr ""
+msgstr "    继续上面的第一个例子，你可以将其指定为 \"Version +-fdroid %v\" - \"-fdroid\" 是 F-Droid 将在构建 APK 时附加到例如在 `build.gradle`中指定的 `versionName` 的后缀。\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -3615,7 +3624,7 @@ msgid ""
 "    stage, to differentiate F-Droid’s build from the original.\n"
 "    Continuing the first example above, you would specify that as\n"
 "    \"Version +-fdroid %v\" - \"-fdroid\" is the suffix.\n"
-msgstr ""
+msgstr "    此外，在这个阶段，可以在版本名称中添加一个后缀，以区分 F-Droid 的构建和原始版本。继续上面的第一个例子，你可以将其指定为 \"Version +-fdroid %v\" - \"-fdroid\" 为后缀。\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -3623,45 +3632,45 @@ msgstr ""
 msgid ""
 "    If UpdateCheckMode is set to `Tags` the generator string behind `Version`\n"
 "    is optional and not used for the `commit:` field.\n"
-msgstr ""
+msgstr "    如果 UpdateCheckMode 被设置为 `Tags`，那么 `Version` 后面的生成器字符串是可选的，并且不用于 `commit:` 字段。\n"
 
 #. type: Title ###
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid "_CurrentVersion_<a name=\"CurrentVersion\"></a>"
-msgstr "_CurrentVersion_ (当前版本)<a name=\"CurrentVersion\"></a>"
+msgstr "_CurrentVersion_（当前版本）<a name=\"CurrentVersion\"></a>"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 msgid "The [name of the version](https://developer.android.com/guide/topics/manifest/manifest-element.html#vname) that is the recommended release. There may be newer versions of the application than this (e.g. unstable versions), and there will almost certainly be older ones. This should be the one that is recommended for general use. In the event that there is no source code for the current version, or that Non-Free libraries are being used, this would ideally be the latest version that is still free, though it may still be expedient to retain the automatic update check — see No Source Since."
-msgstr ""
+msgstr "推荐的[版本的名称](https://developer.android.com/guide/topics/manifest/manifest-element.html#vname)。应用可能会有更新的版本（例如不稳定的版本），而且几乎肯定会有更老的版本。这应该是被推荐用于一般用途的版本。如果当前版本没有源代码，或者使用的是非自由库，那么最好是仍然自由的最新版本，尽管保留自动更新检查可能仍是权宜之计 - 参见 No Source Since。"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 msgid "This field is normally automatically updated - see _UpdateCheckMode_."
-msgstr ""
+msgstr "这个字段通常会自动更新 - 参见 _UpdateCheckMode_。"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid "This is converted to (`<marketversion>`) in the XML file (_index.xml_).\n"
-msgstr ""
+msgstr "在 XML 文件 (_index.xml_) 中这被转换为 (`<marketversion>`)。\n"
 
 #. type: Title ###
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid "_CurrentVersionCode_<a name=\"CurrentVersionCode\"></a>"
-msgstr "_CurrentVersion_ (当前版本代码)<a name=\"CurrentVersionCode\"></a>"
+msgstr "_CurrentVersion_（当前版本代码）<a name=\"CurrentVersionCode\"></a>"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 msgid "The [version code](https://developer.android.com/guide/topics/manifest/manifest-element.html#vcode) corresponding to the [_CurrentVersion_](#CurrentVersion) field. Both these fields must be correct and matching although it’s the current version code that’s used by Android to determine version order and by F-Droid client to determine which version should be recommended."
-msgstr ""
+msgstr "与 [_CurrentVersion_](#CurrentVersion) 字段相对应的[版本代码](https://developer.android.com/guide/topics/manifest/manifest-element.html#vcode)。这两个字段都必须是正确和匹配的，尽管只有当前版本代码被 Android 用来确定版本顺序以及被 F-Droid 客户端用来确定应该推荐哪个版本。"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 msgid "This field is normally automatically updated - see [_UpdateCheckMode_](#UpdateCheckMode)."
-msgstr ""
+msgstr "这个字段通常是自动更新的 - 见 [_UpdateCheckMode_](#UpdateCheckMode)。"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
