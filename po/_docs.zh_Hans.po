@@ -18,7 +18,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
 "POT-Creation-Date: 2021-11-08 14:58+0100\n"
-"PO-Revision-Date: 2021-12-05 10:29+0000\n"
+"PO-Revision-Date: 2021-12-05 15:52+0000\n"
 "Last-Translator: kak mi <wavelake@outlook.com>\n"
 "Language-Team: Chinese (Simplified) <https://hosted.weblate.org/projects/f-droid/website-docs/zh_Hans/>\n"
 "Language: zh_Hans\n"
@@ -3936,18 +3936,18 @@ msgstr "一旦完成，你就会有一个新的基础系统叫做 'buildserver'�
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
 msgid "The first time a build is done, a new virtual machine is created using the ’buildserver’ box as a base. A snapshot of this clean machine state is saved for use in future builds, to improve performance. You can force discarding of this snapshot and rebuilding from scratch using a switch: `fdroid build --resetserver ...`."
-msgstr ""
+msgstr "第一次构建时，会以“构建服务器”系统为基础创建一个新的虚拟机。这个干净的机器状态的快照被保存下来，以便在未来的构建中使用，从而提高性能。你可以使用选项强制丢弃该快照并从头开始重建：`fdroid build --resetserver ...`。"
 
 #. type: Title ###
 #: _docs/Build_Server_Setup.md
 #, no-wrap
 msgid "makebuildserver caching tweaks (optional)"
-msgstr ""
+msgstr "makebuildserver 缓存的调整（可选）"
 
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
 msgid "The main SDK/NDK downloads will automatically be cached to speed things up the next time, but there’s no easy way of doing this for the longer sections which use the SDK’s `android` tool to install platforms, add-ons and tools. However, instead of allowing automatic caching, you can supply a pre-populated cache directory which includes not only these downloads, but also .tar.gz files for all the relevant additions. If the provisioning scripts detect these, they will be used in preference to running the android tools. For example, if you have `buildserver/addons/cache/platforms/android-19.tar.gz` that will be used when installing the android-19 platform, instead of re-downloading it using `android update sdk --no-ui -t android-19`. It is possible to create the cache files of this additions from a local installation of the SDK including these:"
-msgstr ""
+msgstr "主要的 SDK/NDK 下载将被自动缓存，以加快下一次的速度，但对于使用 SDK 的 `android` 工具来安装平台、附加组件和工具的较长部分，则没有简单的方法。然而，你可以提供一个预先填充的缓存目录，其中不仅包括这些下载，还包括所有相关附加组件的 .tar.gz 文件，而不是允许自动缓存。如果配置脚本检测到这些，它们将被优先使用，而不是运行 android 工具。例如，如果你有 `buildserver/addons/cache/platforms/android-19.tar.gz`，那么在安装 android-19 平台时将会使用，而不是使用 `android update sdk --no-ui -t android-19` 重新下载。可以从本地安装的 SDK 中创建该添加物的缓存文件，包括这些："
 
 #. type: Fenced code block (bash)
 #: _docs/Build_Server_Setup.md
@@ -3957,11 +3957,14 @@ msgid ""
 "tar czf android-19.tar.gz android-19\n"
 "mv android-19.tar.gz /path/to/buildserver/addons/cache/platforms/\n"
 msgstr ""
+"cd /path/to/android-sdk/platforms\n"
+"tar czf android-19.tar.gz android-19\n"
+"mv android-19.tar.gz /path/to/buildserver/addons/cache/platforms/\n"
 
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
 msgid "If you have already built a buildserver it is also possible to get this files directly from the buildserver:"
-msgstr ""
+msgstr "如果你已经建立了一个构建服务器，也可以直接从构建服务器中获取这些文件："
 
 #. type: Fenced code block (bash)
 #: _docs/Build_Server_Setup.md
@@ -3970,22 +3973,24 @@ msgid ""
 "vagrant ssh -- -C 'tar -C ~/android-sdk/platforms czf android-19.tar.gz android-19'\n"
 "vagrant ssh -- -C 'cat ~/android-sdk/platforms/android-19.tar.gz' > /path/to/fdroidserver/buildserver/cache/platforms/android19.tar.gz\n"
 msgstr ""
+"vagrant ssh -- -C 'tar -C ~/android-sdk/platforms czf android-19.tar.gz android-19'\n"
+"vagrant ssh -- -C 'cat ~/android-sdk/platforms/android-19.tar.gz' > /path/to/fdroidserver/buildserver/cache/platforms/android19.tar.gz\n"
 
 #. type: Title ##
 #: _docs/Build_Server_Setup.md
 #, no-wrap
 msgid "Running builds"
-msgstr ""
+msgstr "运行构建"
 
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
 msgid "When using the buildserver, running `fdroid` directly from a git checkout of _fdroidserver_ will be the easiest.  If you don't already have the _fdroidserver_ tools installed and setup, you will need to do that next: [Installing the Server and Repo Tools](../Installing_the_Server_and_Repo_Tools).  That provides all of the dependencies needed to run _fdroidserver_ from git."
-msgstr ""
+msgstr "当使用构建服务器时，直接从 _fdroidserver_ 的 git 签出运行 `fdroid` 将是最容易的。如果你还没有安装和设置 _fdroidserver_ 工具，接下来你将需要做这个：[安装服务器和存储库工具](.../Installing_the_Server_and_Repo_Tools)。这提供了从 git 运行 _fdroidserver_ 所需的所有依赖项。"
 
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
 msgid "Now you are ready to run builds. Test by building the latest fdroid version:"
-msgstr ""
+msgstr "现在你已经准备好运行构建了。通过构建最新的 fdroid 版本进行测试："
 
 #. type: Fenced code block (bash)
 #: _docs/Build_Server_Setup.md
@@ -3994,17 +3999,19 @@ msgid ""
 "fdroid:~/fdroidserver$ cd ~/fdroiddata\n"
 "fdroid:~/fdroiddata$ ~/fdroidserver/fdroid build org.fdroid.fdroid -l --server\n"
 msgstr ""
+"fdroid:~/fdroidserver$ cd ~/fdroiddata\n"
+"fdroid:~/fdroiddata$ ~/fdroidserver/fdroid build org.fdroid.fdroid -l --server\n"
 
 #. type: Title ##
 #: _docs/Build_Server_Setup.md
 #, no-wrap
 msgid "Optionally using QEMU/KVM/libvirt instead of VirtualBox"
-msgstr ""
+msgstr "可选择使用 QEMU/KVM/libvirt 而不是 VirtualBox"
 
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
 msgid "It is also possible to QEMU/KVM guest VMs via libvirt instead of the default VirtualBox.  VirtualBox is still the recommended setup since that is what is used by f-droid.org, but there are cases where it is not possible to run VirtualBox, like on a machine that is already running QEMU/KVM guests.  In order to make the libvirt image files directly readable by `vagrant package`, _libvirt_'s QEMU needs to be configured to always set the ownership to `libvirt.libvirt`."
-msgstr ""
+msgstr "它也可以通过 libvirt 使用 QEMU/KVM 客户虚拟机代替默认的 VirtualBox。VirtualBox 仍然是推荐的设置，因为 f-droid.org 使用的是 VirtualBox，但有些情况下不可能运行 VirtualBox，比如在已经运行 QEMU/KVM 客户机的机器上。为了使 libvirt 映像文件能被 `vagrant package` 直接读取，_libvirt_ 的 QEMU 需要被配置为始终将所有权设置为 `libvirt.libvirt` 。"
 
 #. type: Fenced code block (console)
 #: _docs/Build_Server_Setup.md
@@ -4021,23 +4028,33 @@ msgid ""
 "EOF\n"
 "root:~# service libvirtd restart\n"
 msgstr ""
+"root:~# apt-get install vagrant vagrant-mutate vagrant-libvirt ebtables dnsmasq-base \\\n"
+"        python3-libvirt libvirt-clients libvirt-daemon-system qemu-kvm qemu-utils git \\\n"
+"        python3-yaml python3-clint python3-vagrant python3-pyasn1 python3-pyasn1-modules \\\n"
+"        python3-requests python3-git\n"
+"root:~# cat << EOF >> /etc/libvirt/qemu.conf\n"
+"user = \"libvirt\"\n"
+"group = \"libvirt\"\n"
+"dynamic_ownership = 1\n"
+"EOF\n"
+"root:~# service libvirtd restart\n"
 
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
 msgid "Then create a _makebuildserver.config.py_ next to _makebuildserver_ and add:"
-msgstr ""
+msgstr "然后在 _makebuildserver_ 旁边创建一个 _makebuildserver.config.py_ 并添加："
 
 #. type: Fenced code block (python)
 #: _docs/Build_Server_Setup.md
 #, no-wrap
 msgid "vm_provider = 'libvirt'\n"
-msgstr ""
+msgstr "vm_provider = 'libvirt'\n"
 
 #. type: Title #####
 #: _docs/Build_Server_Setup.md
 #, no-wrap
 msgid "Debian/stretch and Ubuntu/xenial"
-msgstr ""
+msgstr "Debian/stretch 和 Ubuntu/xenial"
 
 #. type: Fenced code block (console)
 #: _docs/Build_Server_Setup.md
@@ -4046,12 +4063,14 @@ msgid ""
 "root:~# adduser fdroid libvirt\n"
 "root:~# adduser fdroid libvirt-qemu\n"
 msgstr ""
+"root:~# adduser fdroid libvirt\n"
+"root:~# adduser fdroid libvirt-qemu\n"
 
 #. type: Title #####
 #: _docs/Build_Server_Setup.md
 #, no-wrap
 msgid "older Debian and Ubuntu"
-msgstr ""
+msgstr "更旧版本的 Debian 和 Ubuntu"
 
 #. type: Fenced code block (console)
 #: _docs/Build_Server_Setup.md
@@ -4060,22 +4079,24 @@ msgid ""
 "root:~# adduser fdroid libvirtd\n"
 "root:~# adduser fdroid kvm\n"
 msgstr ""
+"root:~# adduser fdroid libvirtd\n"
+"root:~# adduser fdroid kvm\n"
 
 #. type: Title ###
 #: _docs/Build_Server_Setup.md
 #, no-wrap
 msgid "Advanced nested KVM Setup:"
-msgstr ""
+msgstr "高级嵌套 KVM 设置："
 
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
 msgid "This section is not relevant for using F-Droid in a normal setup. If you want to run `fdroid build --server` flag inside a KVM, this chaper will help you getting started."
-msgstr ""
+msgstr "本节与在正常设置中使用 F-Droid 无关。如果你想在 KVM 中运行 `fdroid build --server` 标志，本章将帮助你开始使用。"
 
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
 msgid "Consider following basic nesting setup:"
-msgstr ""
+msgstr "请考虑以下基本嵌套设置："
 
 #. type: Fenced code block
 #: _docs/Build_Server_Setup.md
@@ -4085,54 +4106,57 @@ msgid ""
 "\\- F-Droid VM (l1)\n"
 "   \\- F-Droid builder VM (l2)\n"
 msgstr ""
+"bare metal host (l0)\n"
+"\\- F-Droid VM (l1)\n"
+"   \\- F-Droid builder VM (l2)\n"
 
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
 msgid "The steps above describe how to setup (l1) and _makebuildserver_ sets up (l2)."
-msgstr ""
+msgstr "上面的步骤描述了如何设置 (l1) 和 _makebuildserver_ 设置 (l2)。"
 
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
 msgid "First of all you'll have to check if you cpu support the _vmx_ (or _svm_ on amd) instruction set. You can use this command to list details about your cpu:"
-msgstr ""
+msgstr "首先，你必须检查你的 cpu 是否支持 _vmx_（或 _svm_amd）指令集。你可以使用这个命令来列出关于你的 cpu 的细节："
 
 #. type: Fenced code block (bash)
 #: _docs/Build_Server_Setup.md
 #, no-wrap
 msgid "root:~# cat /proc/cpuinfo\n"
-msgstr ""
+msgstr "root:~# cat /proc/cpuinfo\n"
 
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
 msgid "On (l0) you have to check that nesting is enabled:"
-msgstr ""
+msgstr "在 (l0) 上，你必须检查是否启用了嵌套功能："
 
 #. type: Fenced code block (bash)
 #: _docs/Build_Server_Setup.md
 #, no-wrap
 msgid "root:~# cat /sys/module/kvm_intel/parameters/nested\n"
-msgstr ""
+msgstr "root:~# cat /sys/module/kvm_intel/parameters/nested\n"
 
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
 msgid "If it's not enabled you can turn it on by running:"
-msgstr ""
+msgstr "如果它没有被启用，你可以通过运行此命令打开它："
 
 #. type: Fenced code block (bash)
 #: _docs/Build_Server_Setup.md
 #, no-wrap
 msgid "echo \"options kvm-intel nested=Y\" > /etc/modprobe.d/kvm-intel.conf\n"
-msgstr ""
+msgstr "echo \"options kvm-intel nested=Y\" > /etc/modprobe.d/kvm-intel.conf\n"
 
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
 msgid "You'll need to reboot to for this to take effect."
-msgstr ""
+msgstr "你需要重新启动以使之生效。"
 
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
 msgid "Next you'll need to make sure that your (l1) vm configuration forwards cpu features required for nesting. So open up your configuration for the VM _/etc/libvirt/qemu/my-vm.xml_ and insert a cpu block inside your domain-tag. (_virt-manager_ also provides a user-interface for this operation.)"
-msgstr ""
+msgstr "接下来，你需要确保你的 (l1) 虚拟机配置转发嵌套所需的 cpu 功能。所以打开你的虚拟机配置 _/etc/libvirt/qemu/my-vm.xml_，在你的 domain-tag 里面插入一个 cpu 块。（_virt-manager_ 也为这个操作提供了一个用户接口。）"
 
 #. type: Fenced code block (xml)
 #: _docs/Build_Server_Setup.md
@@ -4144,16 +4168,21 @@ msgid ""
 "    <feature policy='require' name='vmx'/>\n"
 "</cpu>\n"
 msgstr ""
+"<cpu mode='custom' match='exact'>\n"
+"    <model fallback='allow'>SandyBridge</model>\n"
+"    <vendor>Intel</vendor>\n"
+"    <feature policy='require' name='vmx'/>\n"
+"</cpu>\n"
 
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
 msgid "The actually required configuration here depends on your cpu. You can find details in [libvirts manual](https://libvirt.org/formatdomain.html#elementsCPU).  The important part is that you forward _vmx_ (or _svm_ on amd) to the guest system."
-msgstr ""
+msgstr "这里实际需要的配置取决于你的 cpu。你可以在 [libvirts 手册](https://libvirt.org/formatdomain.html#elementsCPU)中找到细节。重要的部分是你把 _vmx_（或 _svm_ 在 amd 上）转发给客户系统。"
 
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
 msgid "This is the setup that is used in the Continuous Integration builds as part of the [reproducible builds](https://reproducible-builds.org) effort.  You can see this in action on the Debian Project's jenkins setup:"
-msgstr ""
+msgstr "这是持续集成构建中使用的设置，是[可重复构建](https://reproducible-builds.org)工作的一部分。你可以在 Debian 项目的 jenkins 设置中看到它的作用："
 
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
@@ -4164,59 +4193,59 @@ msgstr "- <https://jenkins.debian.net/job/reproducible_setup_fdroid_build_enviro
 #: _docs/Client_Bug_Reports.md
 #, no-wrap
 msgid "Client Bug Reports"
-msgstr ""
+msgstr "客户端错误报告"
 
 #. type: Title ###
 #: _docs/Client_Bug_Reports.md
 #, no-wrap
 msgid "What to include in a bug report"
-msgstr ""
+msgstr "错误报告中应包括哪些内容"
 
 #. type: Plain text
 #: _docs/Client_Bug_Reports.md
 msgid "In order to ensure that the F-Droid developers have the best chance of reproducing your issue and thus fixing it, please include as much of the following information as possible in your bug reports:"
-msgstr ""
+msgstr "为了确保 F-Droid 开发者有最大可能重现你的问题从而修复它，请在你的错误报告中尽可能多地包含以下信息："
 
 #. type: Bullet: '* '
 #: _docs/Client_Bug_Reports.md
 msgid "F-Droid version (e.g. \"0.88\" or \"0.89-test\")"
-msgstr ""
+msgstr "F-Droid 版本（如 \"0.88\" 或 \"0.89-test\"）"
 
 #. type: Bullet: '* '
 #: _docs/Client_Bug_Reports.md
 msgid "Android version (e.g. \"Lollipop\" or \"Android 5.0\")"
-msgstr ""
+msgstr "Android 版本（例如 \"Lollipop\" 或 \"Android 5.0\"）"
 
 #. type: Bullet: '* '
 #: _docs/Client_Bug_Reports.md
 msgid "Device (e.g. \"Nexus 4\")"
-msgstr ""
+msgstr "设备（例如：\"Nexus 4\"）"
 
 #. type: Bullet: '* '
 #: _docs/Client_Bug_Reports.md
 msgid "Steps to reproduce the bug"
-msgstr ""
+msgstr "重现该错误的步骤"
 
 #. type: Bullet: '* '
 #: _docs/Client_Bug_Reports.md
 msgid "A logcat from when the crash occured ([Getting logcat messages after crash](../Getting_logcat_messages_after_crash))"
-msgstr ""
+msgstr "崩溃发生时的 logcat（[获取崩溃后的 logcat 信息](../Getting_logcat_messages_after_crash)）"
 
 #. type: Bullet: '* '
 #: _docs/Client_Bug_Reports.md
 msgid "Whether the bug happens on the previous stable version of F-Droid"
-msgstr ""
+msgstr "该错误是否发生在 F-Droid 之前的稳定版本上"
 
 #. type: Title ###
 #: _docs/Client_Bug_Reports.md
 #, no-wrap
 msgid "Why does an issue say \"waiting on response\" next to it?"
-msgstr ""
+msgstr "为什么一个问题旁边会写着 \"waiting on response\"？"
 
 #. type: Plain text
 #: _docs/Client_Bug_Reports.md
 msgid "The development team of F-Droid will do their best to reproduce and fix any bugs that are reported. Also, if feature requests are posted, then we will try to engage with the person who requested the feature to see if it is in the best interests of F-Droid as a whole."
-msgstr ""
+msgstr "F-Droid 的开发团队将尽力重现和修复任何被报告的错误。同时，如果功能请求被发布，那么我们将尝试与请求该功能的人接触，看看它是否符合 F-Droid 整体的最佳利益。"
 
 #. type: Plain text
 #: _docs/Client_Bug_Reports.md
