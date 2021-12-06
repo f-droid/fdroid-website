@@ -56,31 +56,6 @@ We don't yet have a dedicated and user-friendly feed you can subscribe
 to for new additions, but we welcome contributions to make this work better.
 
 
-### What's the difference between source and binary builds?
-
-In the client, each package for an app is labelled either 'source' or
-'bin'. These correspond to two different messages you'll see for the
-same package when browsing the repository on the web site, either "This
-version is built and signed by F-Droid, and guaranteed to correspond to
-the source tarball below" or "This version is built and signed by the
-original developer."
-
-Most packages are source builds. Those that are binaries are usually
-that way for technical or historical reasons. Ideally everything in the
-F-Droid repo would be a source build.
-
-Source builds are built and signed securely by F-Droid, and are
-accompanied on the web site by a complete and corresponding copy of the
-exact source code we built it with. It may include some prebuilt
-libraries and you may need to download some external libraries, but as
-long as those libraries are still on the internet, you should be able to
-build an exact copy.
-
-Binary packages are built and signed by the developer. We get them from
-public sources that the developer makes available directly, and never
-from third party sources.
-
-
 ### Is your building and signing process secure?
 
 The building and signing is done in an secure **offline** (i.e.
