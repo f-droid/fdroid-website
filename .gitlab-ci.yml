@@ -134,9 +134,10 @@ pages:
 
 # check rsync mirrors still available
 rsync mirrors:
+  image: debian:bullseye-slim
+  stage: deploy
   only:
     - master@fdroid/fdroidserver
-  image: debian:bullseye-slim
   script:
     - apt-get update
     - apt-get -qy install rsync
