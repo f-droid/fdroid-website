@@ -9,6 +9,44 @@ to pay attention to all the processes and systems we use helps us stay secure.
 These are the APIs with key information about the publishing process.
 
 
+## Active packages
+
+There is a per-app API accessible via `https://f-droid.org/api/v1/packages`,
+which can be used to query information about the applications in the main
+repository. The JSON API currently lists the published and suggested
+versions. Archived applications and packages are not available in this API.
+
+Example request:
+
+```
+GET https://f-droid.org/api/v1/packages/org.fdroid.fdroid HTTP/1.1
+```
+
+Example response:
+```
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=utf-8
+```
+```json
+{
+  "packageName": "org.fdroid.fdroid",
+  "suggestedVersionCode": 1009000,
+  "packages": [
+    {
+      "versionName": "1.10-alpha0",
+      "versionCode": 1010000
+    },
+    {
+      "versionName": "1.9",
+      "versionCode": 1009000
+    }
+  ]
+}
+```
+
+This API is already used by shields.io project to provide F-Droid badges, [like this](https://img.shields.io/f-droid/v/org.fdroid.fdroid).
+
+
 ### The repo index
 
 F-Droid is built around a signed index of all the apps and packages that are
@@ -57,13 +95,6 @@ currently running is posted to _running_.
 Two examples of how these JSON APIs can be used are the [F-Droid
 Monitor](https://monitor.f-droid.org/) website and the [F-Droid Build Status]({{
 site.baseurl }}/packages/de.storchp.fdroidbuildstatus/) app.
-
-
-### latest version metadata
-
-The _f-droid.org_ website provides a JSON API to get the published and suggested versions of an app.
-The base URL is `https://f-droid.org/api/v1/packages/<ApplicationId>`.
-For example <https://f-droid.org/api/v1/packages/org.fdroid.fdroid>.
 
 
 ### Mirror and repo monitoring
