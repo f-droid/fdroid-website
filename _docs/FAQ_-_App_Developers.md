@@ -310,20 +310,29 @@ in the source repository.
 
 ### How do I get my app removed?
 
-Ok, this isn't a frequently asked question, but: To get your app
-removed, you could use a license for future versions that prohibits
-anyone from distributing it, or you could introduce proprietary binaries
-into your source code. Both of those things will ensure that those
-future versions do not appear in our repository, but you would have to
-go a lot further (e.g. serious security flaws in the previous versions,
-combined with unpublished source code and an uncooperative attitude) for
-us to actually remove the whole application.
+Ok, this isn't a frequently asked question, but: If, for whatever reason, you
+would simply prefer us not to distribute the app then we can only apologise.
+You deserve respect for your work which you've released under a Free Software
+license, and it wouldn't be pleasant for us to have to go against your wishes.
+However, the alternative is for us to deny use of the software to all our
+users.
 
-If, for whatever reason, you would simply prefer us not to distribute
-the app then we can only apologise. You deserve respect for your work
-which you've released under a Free Software license, and it wouldn't be
-pleasant for us to have to go against your wishes. However, the
-alternative is for us to deny use of the software to all our users.
+
+### How can my app get removed?
+
+Any changes to your app that result in a violation of our [inclusion
+policy](../Inclusion_Policy) will get your app removed or archived.  E.g. you
+could use a license for future versions that prohibits anyone from distributing
+it, or you could introduce proprietary binaries into your source code. Both of
+those things will ensure that those future versions do not appear in our
+repository, but you would have to go a lot further (e.g.  serious security
+flaws in the previous versions, combined with unpublished source code and an
+uncooperative attitude) for us to actually remove the whole application.
+
+In some rare cases we also have to comply with [take-down
+requests](../Take-Down_Requests) in accordance with our other policies.
+Generally speaking we recommend steering clear of trademark and copyright
+infringements.
 
 
 ### I see apps on the big stores that are blatant copies. Wouldn't it be better if I made my app closed source?
