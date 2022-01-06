@@ -20,7 +20,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
 "POT-Creation-Date: 2021-11-08 14:58+0100\n"
-"PO-Revision-Date: 2022-01-05 11:17+0000\n"
+"PO-Revision-Date: 2022-01-06 21:56+0000\n"
 "Last-Translator: kak mi <wavelake@outlook.com>\n"
 "Language-Team: Chinese (Simplified) <https://hosted.weblate.org/projects/f-droid/website-docs/zh_Hans/>\n"
 "Language: zh_Hans\n"
@@ -1182,7 +1182,7 @@ msgstr "无论如何使用这些工具，总是需要设置一些基本的配置
 #. type: Plain text
 #: _docs/Building_Applications.md
 msgid "Once configured in this way, all the functionality of the tools is accessed by running the `fdroid` command. Run it on its own to get a list of the available sub-commands."
-msgstr "按照这种方式设置之后，即可通过 `fdroid` 命令访问这些工具的所有功能。运行该命令可显示一个可用的子命令的列表。"
+msgstr "按照这种方式设置之后，即可通过 `fdroid` 命令访问这些工具的所有功能。不加参数运行该命令可显示一个可用的子命令的列表。"
 
 #. type: Plain text
 #: _docs/Building_Applications.md
@@ -1204,12 +1204,12 @@ msgstr "有关 `fdroid build` 的更多信息"
 #. type: Plain text
 #: _docs/Building_Applications.md
 msgid "When run without any parameters, `fdroid build` will build any and all versions of applications that you don’t already have in the `repo` directory (or more accurately, the `unsigned` directory). There are various other things you can do. As with all the tools, the `--help` option is your friend, but a few annotated examples and discussion of the more common usage modes follows:"
-msgstr "在不加任何参数的情况下运行时，`fdroid build` 将生成你在 `repo` 目录（具体为 `unsigned` 目录）中还没有的任何和所有版本的应用。还有其他各种你可以做的事情。就像和所有工具一样，`--help` 选项很有帮助，以下为一些常见用途的示例和说明："
+msgstr "在不加任何参数的情况下运行时，`fdroid build` 将构建所有不在 `repo` 目录（准确地说，`unsigned` 目录）中的应用版本。你还可以做其他各种事情。和所有工具一样，`--help` 选项很有帮助，以下为一些常见用途的附有注释的示例和说明："
 
 #. type: Plain text
 #: _docs/Building_Applications.md
 msgid "To build a single version of a single application, you could run the following:"
-msgstr "针对一个应用编译一个版本，命令如下："
+msgstr "为构建单一应用的单一版本，你可以运行如下命令："
 
 #. type: Fenced code block (bash)
 #: _docs/Building_Applications.md
@@ -1220,12 +1220,12 @@ msgstr "fdroid build org.fdroid.fdroid:16\n"
 #. type: Plain text
 #: _docs/Building_Applications.md
 msgid "This attempts to build version code 16 (which is version 0.25) of the F-Droid client. Many of the tools recognise arguments as packages, allowing their activity to be limited to just a limited set of packages."
-msgstr "该命令用于编译版本代码 16（即 0.25 版本）的 F-Droid 客户端。这些工具中许多命令可将参数识别为包，以便其活动仅限于特定一组包。"
+msgstr "该命令用于编译版本代码 16（即 0.25 版本）的 F-Droid 客户端。这些工具中许多可将参数识别为包，以便其活动仅限于特定一组包。"
 
 #. type: Plain text
 #: _docs/Building_Applications.md
 msgid "If the build above was successful, two files will have been placed in the `unsigned` directory:"
-msgstr "编译成功后， `unsigned` 目录将生成两个文件："
+msgstr "编译成功后，`unsigned` 目录将生成两个文件："
 
 #. type: Fenced code block
 #: _docs/Building_Applications.md
@@ -1240,12 +1240,12 @@ msgstr ""
 #. type: Plain text
 #: _docs/Building_Applications.md
 msgid "The first is the (unsigned) APK. You could sign this with a debug key and push it direct to your device or an emulator for testing. The second is a source tarball containing exactly the source that was used to generate the binary."
-msgstr "第一个文件是（未签名的）APK。可使用调试密钥签名，然后直接在设备或模拟器中进行测试。第二个为源代码 tarball，其中包含生成二进制所用的源代码。"
+msgstr "第一个文件是（未签名的）APK。你可以使用调试密钥签名，然后直接在设备或模拟器中进行测试。第二个文件是源代码 tarball，其中包含生成二进制所用的源代码。"
 
 #. type: Plain text
 #: _docs/Building_Applications.md
 msgid "If you were intending to publish these files, you could then run:"
-msgstr "如果想要发布这些文件，请运行："
+msgstr "如果你想要发布这些文件，请运行："
 
 #. type: Fenced code block (bash)
 #: _docs/Building_Applications.md
@@ -1256,7 +1256,7 @@ msgstr "fdroid publish\n"
 #. type: Plain text
 #: _docs/Building_Applications.md
 msgid "The source tarball would move to the `repo` directory (which is the directory you would push to your web server). A signed and zipaligned version of the APK would also appear there, and both files would be removed from the `unsigned` directory."
-msgstr "源代码 tarball 将移动到`repo`目录(这是你将要推送到你的 Web 服务器的目录)。APK 的已签名和压缩对齐版本也将出现在那里，并且这两个文件将从 `unsigned` 目录中被删除。"
+msgstr "源代码 tarball 将移动到 `repo` 目录（这是你将要推送到你的 Web 服务器的目录）。APK 的已签名和压缩对齐版本也将出现在那里，并且这两个文件将从 `unsigned` 目录中被删除。"
 
 #. type: Plain text
 #: _docs/Building_Applications.md
@@ -1271,12 +1271,12 @@ msgstr "与此相似（并仅在与 `--test` 同时使用时，你可以使用 `
 #. type: Plain text
 #: _docs/Building_Applications.md
 msgid "If the build was unsuccessful, you can find out why by looking at the output in the _logs/_ directory. If that isn’t illuminating, try building the app the regular way, step by step: android update project, ndk-build, ant debug."
-msgstr "如果编译未成功，你可查看输出寻找原因，输出位于 _logs/ _ 目录。如果这样仍未找到原因，试着用常规的方法一步一步地构建应用：android update project, ndk-build, ant debug。"
+msgstr "如果构建未成功，你可以查看 _logs/ _ 文件夹中的输出寻找原因。如果这样仍未找到原因，尝试用常规的方法逐步构建应用：android update project, ndk-build, ant debug。"
 
 #. type: Plain text
 #: _docs/Building_Applications.md
 msgid "Note that source code repositories often contain prebuilt libraries. If the app is being considered for the main F-Droid repository, it is important that all such prebuilts are built either via the metadata or by a reputable third party."
-msgstr "请注意，源代码存储库通常包含预编译库。如果该应用被考虑收录纳入 F-Droid 主存储库，那么所有这些预编译库都必须通过元数据或由可信的第三方进行编构建，这点非常重要。"
+msgstr "请注意，源代码存储库通常包含预构建库。如果想要在 F-Droid 主存储库发布该应用，那么所有这些预构建库都必须通过元数据或由可信的第三方构建，这点非常重要。"
 
 #. type: Title ###
 #: _docs/Building_Applications.md
@@ -1287,12 +1287,12 @@ msgstr "在应用源代码中运行 `fdroid build`"
 #. type: Plain text
 #: _docs/Building_Applications.md
 msgid "Another option for using `fdroid build` is to use a metadata file that is included in the app’s source itself, rather than in a _metadata/_ folder with lots of other apps. The _.fdroid.yml_ metadata file should be in the root of your source repo."
-msgstr "使用 `fdroid build` 的另一种选择是使用一个元数据文件，该文件包含在应用的源代码中，而不是在一个有很多其他应用的 _metadata/_目录中。_.fdroid.yml_ 元数据文件应当位于源代码存储库的根目录下。"
+msgstr "使用 `fdroid build` 的另一种选择是使用一个元数据文件，该文件包含在应用的源代码中，而不是在一个有很多其他应用的 _metadata/_ 目录中。_.fdroid.yml_ 元数据文件应当位于代码库的根目录下。"
 
 #. type: Plain text
 #: _docs/Building_Applications.md
 msgid "Once you have that setup, you can build the most recent version of the app using the whole F-Droid stack by running:"
-msgstr "设置完成之后，使用整个 F-Droid 栈构建最新版本应用，运行："
+msgstr "设置完成之后，你可以通过运行以下命令使用整个 F-Droid 技术栈构建最新版本应用："
 
 #. type: Fenced code block (bash)
 #: _docs/Building_Applications.md
@@ -1314,7 +1314,7 @@ msgstr "直接安装"
 #. type: Plain text
 #: _docs/Building_Applications.md
 msgid "You can also build and install directly to a connected device or emulator using the `fdroid install` command. If you do this without passing packages as arguments then all the latest built and signed version available of each package will be installed . In most cases, this will not be what you want to do, so execution will stop straight away. However, you can override this if you’re sure that’s what you want, by using `--all`. Note that currently, no sanity checks are performed with this mode, so if the files in the signed output directory were modified, you won’t be notified."
-msgstr "你还可以使用 `fdroid install` 命令构建并直接安装到所连接的设备或模拟器上。如果在不将包作为参数传递的情况下执行此操作，则将安装每个包的所有最新构建和签名版本。在大多数情况下，这不是你想要做的，因此将直接终止该命令执行。但是，如果你确定这是你想要的，你可以通过使用 `---all` 来覆盖这一规则。请注意，当前，该模式不执行严格的检查，因此，如果已签名输出目录中的文件被修改，则不会提示。"
+msgstr "你还可以使用 `fdroid install` 命令构建并直接安装到所连接的设备或模拟器上。如果在不将包作为参数传递的情况下执行此操作，则将安装每个包的所有最新构建和签名版本。在大多数情况下，这不是你想要做的，因此将直接终止该命令执行。但是，如果你确定这是你想要的，你可以通过使用 `---all` 来覆盖这一规则。请注意，当前该模式不执行完整性检查，因此，如果已签名输出目录中的文件被修改，你不会被提示。"
 
 #. type: YAML Front Matter: title
 #: _docs/Building_a_Signing_Server.md
@@ -1325,7 +1325,7 @@ msgstr "构建签名服务器"
 #. type: Plain text
 #: _docs/Building_a_Signing_Server.md
 msgid "The Android APK signing model sets the expectation that the signing key will be the same for the entire lifetime of the app.  That can be seen in the recommended lifetime of an Android signing key: [20+ years](https://developer.android.com/studio/publish/app-signing.html#considerations).  On top of that, it is difficult to [migrate an app to a new key](https://guardianproject.info/2015/12/29/how-to-migrate-your-android-apps-signing-key/).  Since the signing key is an essential part to preventing APKs from impersonating another, Android signing keys must be kept safe for the entire life of the app."
-msgstr "Android APK 签名模型期望签名密钥在应用的整个生命周期中保持不变。Android 签名密钥的推荐使用期限为[20 年以上](https://developer.android.com/studio/publish/app-signing.html#considerations)可以体现这一点 。基于此，很难[将应用迁移到新密钥](https://guardianproject.info/2015/12/29/how-to-migrate-your-android-apps-signing-key/)。因为签名密钥是防止 APK 冒充其他人的重要部分，所以 Android 签名密钥必须在应用的整个生命周期中保证安全。"
+msgstr "Android APK 签名模型期望签名密钥在应用的整个生命周期中保持不变。这体现在 Android 签名密钥的推荐使用期限上：[20 年以上](https://developer.android.com/studio/publish/app-signing.html#considerations) 。基于此，很难[将应用迁移到新密钥](https://guardianproject.info/2015/12/29/how-to-migrate-your-android-apps-signing-key/)。因为签名密钥是防止 APK 冒充其他人的重要部分，所以 Android 签名密钥必须在应用的整个生命周期中保证安全。"
 
 #. type: Plain text
 #: _docs/Building_a_Signing_Server.md
@@ -1481,7 +1481,7 @@ msgstr "理想情况下，所有这些做法都会落实到位，但这些安全
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid "Build Metadata Reference"
-msgstr "编译元数据引用"
+msgstr "构建元数据参考"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
