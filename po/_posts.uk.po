@@ -5,13 +5,14 @@
 # Tymofij Lytvynenko <till.svit@gmail.com>, 2021.
 # Yuriy Putsan <putsan57@gmail.com>, 2021.
 # Tymofii Lytvynenko <till.svit@gmail.com>, 2021.
+# Denys Nykula <nykula@ukr.net>, 2022.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
 "POT-Creation-Date: 2021-11-08 14:58+0100\n"
-"PO-Revision-Date: 2021-12-27 02:53+0000\n"
-"Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
+"PO-Revision-Date: 2022-01-14 05:05+0000\n"
+"Last-Translator: Denys Nykula <nykula@ukr.net>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/f-droid/website-posts/uk/>\n"
 "Language: uk\n"
 "MIME-Version: 1.0\n"
@@ -17110,14 +17111,14 @@ msgstr "Закріплення пакунків: керування залежн
 #. type: Plain text
 #: _posts/2021-10-15-pining-for-packages-android-dependency-management-and-f-droid-push-requests.md
 msgid "One thing that made GNU/Linux distros so popular is that dependency management was built into the operating system.  In Debian, all software installed is packaged as a _.deb_, and its all installed from the Debian repositories.  Android has always lacked this kind dependency management, and many of us sorely miss it.  Android's model is that all dependencies should be included in the app's APK file, while the operating system only provides the most basic APIs.  Many apps depend on other apps being installed.  Neither Android nor Google Play has a way to represent that."
-msgstr ""
+msgstr "Дистрибутиви GNU/Linux поширились зокрема завдяки вирішенню залежностей, вбудованому в операційну систему. У Debian, все програмне забезпечення пакується в формат _.deb_ і встановлюється (разом із залежностями) з Debian-репозиторіїв. Android ніколи не мав подібної системи залежностей і багатьом із нас її бракує. За моделлю Android, усі залежності мають бути вкладені до APK-файлу застосунку, тоді як операційна система надає лише найбазовіші API. Багато застосунків потребують встановлення інших застосунків. Ні Android, ні Google Play не надають шляху зобразити це."
 
 #. type: Plain text
 #: _posts/2021-10-15-pining-for-packages-android-dependency-management-and-f-droid-push-requests.md
 msgid "Over the years there have been [various](https://guardianproject.info/2011/06/18/lil-debi-easy-installer-for-debian-on-android/) [experiments](https://sven-ola.commando.de/repo/debian-kit-en.html) in how to implement good dependency management for Android. The most recent dependency management experiment in F-Droid was \"[Push Requests](https://gitlab.com/fdroid/fdroidclient/-/merge_requests/707)\".  The core idea was to have a per-repo dependency list.  For example, since all Guardian Project apps support Tor, it could make sense that using the Guardian Project repo means that Tor would be automatically installed.  Based on the past years experience, it has become clear that this is better handled in other ways.  Apps can check whether required apps are installed.  The app should ask users if they want Tor, then walk them through the install process.  When push requests was implemented, there were not ROM projects that were embedding F-Droid.  Now its clearly better to include Tor as part of the ROM rather than via push requests.  CalyxOS's [Setup Wizard](https://gitlab.com/CalyxOS/platform_packages_apps_SetupWizard) provides a great Android-native user experience for setting up the core dependencies."
-msgstr ""
+msgstr "Проводилися [різні](https://guardianproject.info/2011/06/18/lil-debi-easy-installer-for-debian-on-android/) [досліди](https://sven-ola.commando.de/repo/debian-kit-en.html) з якісного додання механізму залежностей в Android. Наприклад, в F-Droid додавалися \"[push-запити](https://gitlab.com/fdroid/fdroidclient/-/merge_requests/707)\". Ідея зводилась до переліку залежностей кожного репозиторію. Наприклад, оскільки всі застосунки Guardian Project підтримують Tor, він би автоматично встановлювався при використанні репозиторію Guardian Project. Роки досвіду показали, що це краще вирішувати іншими шляхами. Застосунки можуть перевіряти, чи їхні залежності встановлені. Застосунок може запитувати користувачів, чи потрібен їм Tor, та радити їм, як його встановити. Коли втілювалися push-запити, ще не було проєктів прошивок, у яких F-Droid був би системним компонентом. Як зараз очевидно, Tor краще збирати як частину прошивки, ніж довантажувати push-запитами. [Майстер налаштування](https://gitlab.com/CalyxOS/platform_packages_apps_SetupWizard) CalyxOS надає зручний шлях налаштувати залежності інструментами Android."
 
 #. type: Plain text
 #: _posts/2021-10-15-pining-for-packages-android-dependency-management-and-f-droid-push-requests.md
 msgid "We are now [removing support](https://gitlab.com/fdroid/fdroidclient/-/merge_requests/1063) for push requests from the official F-Droid client.  It is clear that other approaches fit into Android better, so it is better to remove the small but present security risks related to this feature.  The \"plumbing\" for push requests will remain available in the code base, so that [whitelabeled]({{ site.baseurl }}/docs/Whitelabel_Builds/) forks can still use it.  It is still useful for things like fully automated, headless app stores or automatic installs as part of a standard setup."
-msgstr ""
+msgstr "Ми [вилучаємо підтримку](https://gitlab.com/fdroid/fdroidclient/-/merge_requests/1063) push-запитів із офіційного клієнту F-Droid. Інші шляхи більше підходять Android, тож краще позбутися малих, але таки властивих цьому фукціоналу ризиків для безпеки. Реалізація push-запитів лишатиметься доступною в кодовій базі, щоб [whitelabeled]({{ site.baseurl }}/docs/Whitelabel_Builds/)-форки могли її вмикати й надалі. Вона корисна в певних сценаріях, наприклад при автоматизованих встановленнях у межах типового налаштування без втручання користувача."
