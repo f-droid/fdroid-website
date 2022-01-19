@@ -94,5 +94,8 @@ you can use our reusable account.  The issue tracker works better if
 reporters use an account that will receive notifications.  Issue
 reports are usually a conversation, not just a single report.
 
-That said, the account username is _fdroid-bug-reporter_ and the
-password is _repository-collection_.
+That said, the account username is _fdroid-anyone_ and the
+password is _fdroid does not track_.
+
+Please note that we will have to remove this account, in case it gets abused.
+
