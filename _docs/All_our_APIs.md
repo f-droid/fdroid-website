@@ -50,7 +50,6 @@ information.  It is posted once that step completes running.  The step that is
 currently running is posted to _running_.
 
 * <https://f-droid.org/repo/status/running.json>
-* <https://f-droid.org/repo/status/checkupdates.json>
 * <https://f-droid.org/repo/status/build.json>
 * <https://f-droid.org/repo/status/update.json>
 * <https://f-droid.org/repo/status/deploy.json>
