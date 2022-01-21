@@ -59,6 +59,13 @@ Monitor](https://monitor.f-droid.org/) website and the [F-Droid Build Status]({{
 site.baseurl }}/packages/de.storchp.fdroidbuildstatus/) app.
 
 
+### latest version metadata
+
+The _f-droid.org_ website provides a JSON API to get the published and suggested versions of an app.
+The base URL is `https://f-droid.org/api/v1/packages/<ApplicationId>`.
+For example <https://f-droid.org/api/v1/packages/org.fdroid.fdroid>.
+
+
 ### Mirror and repo monitoring
 
 [_mirror-monitor_](https://gitlab.com/fdroid/mirror-monitor) and
