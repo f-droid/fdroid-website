@@ -3,7 +3,7 @@
 # This file is distributed under the same license as the PACKAGE package.
 # Strubbl <github@linux4tw.de>, 2021.
 # Christian Eichert <c@zp1.net>, 2021.
-# C. Rüdinger <Mail-an-CR@web.de>, 2021.
+# C. Rüdinger <Mail-an-CR@web.de>, 2021, 2022.
 # VfBFan <drop0815@posteo.de>, 2021.
 # Florian Schaupp <fschaupp@hotmail.com>, 2021.
 # GithubUser699 <Thesmallest@protonmail.com>, 2021.
@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
 "POT-Creation-Date: 2021-11-08 14:58+0100\n"
-"PO-Revision-Date: 2021-12-14 16:53+0000\n"
+"PO-Revision-Date: 2022-01-23 06:54+0000\n"
 "Last-Translator: C. Rüdinger <Mail-an-CR@web.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/f-droid/website-posts/de/>\n"
 "Language: de\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.10-dev\n"
+"X-Generator: Weblate 4.11-dev\n"
 
 #. type: YAML Front Matter: title
 #: _posts/2017-02-20-f-droid-supports-apk-expansion-files-aka-obb.md
@@ -16413,7 +16413,7 @@ msgstr "Entfall der Konfigurationsoption `force_build_tools` ([!797](https://git
 #. type: Bullet: '* '
 #: _posts/2021-01-31-fdroidserver-2.0.md
 msgid "Dropped `accepted_formats` config option, there is only _.yml_ now ([!818](https://gitlab.com/fdroid/fdroidserver/-/merge_requests/818))"
-msgstr ""
+msgstr "Wegfall der Konfigurationsoption `accepted_formats`, es gibt jetzt nur noch _.yml_ ([!818](https://gitlab.com/fdroid/fdroidserver/-/merge_requests/818))"
 
 #. type: Bullet: '* '
 #: _posts/2021-01-31-fdroidserver-2.0.md
@@ -16445,12 +16445,12 @@ msgstr "Der Repository-Index"
 #. type: Plain text
 #: _posts/2021-02-05-apis-for-all-the-things.md
 msgid "F-Droid is built around a signed index of all the apps and packages that are available.  This is a JSON file, though more of an index than an API since all the information is in a single file.  It is available for any use, and there are some project that take advantage of that. [fossdroid.com](https://fossdroid.com/) is an alternate web view on all the apps available in _f-droid.org_.  Aurora, [F-Droid Classic]({{ site.baseurl }}/packages/eu.bubu1.fdroidclassic/), G-Droid, and M-Droid are alternate Android client apps."
-msgstr ""
+msgstr "F-Droid baut sich rund um einen signierten Index aller zur Verfügung stehenden Apps und Pakete auf.  Der ist eine JSON-Datei, somit mehr als nur ein Verzeichnis sondern eine API, da alle Informationen sich in einer einzigen Datei befinden.  Sie steht zur freien Nutzung bereit und es gibt einige Projekte, die ihren Vorteil daraus ziehen. [fossdroid.com](https://fossdroid.com/) ist eine alternative Internetseite mit allen auf _f-droid.org_ erhältlichen Apps.  Aurora, [F-Droid Classic]({{ site.baseurl }}/packages/eu.bubu1.fdroidclassic/), G-Droid und M-Droid sind alternative Android-Client-Apps."
 
 #. type: Plain text
 #: _posts/2021-02-05-apis-for-all-the-things.md
 msgid "The repo index is in the form of a signed JAR file that contains _index-v1.json_.  The best method is to verify the JAR signature, then extract _index-v1.json_ if it validates. The _fdroidserver_ Python library provides `fdroidserver.download_repo_index()` to make this easy to do.  It is also possible to just read _index-v1.json_ using any ZIP library."
-msgstr ""
+msgstr "Der Repo-Index liegt in Form einer signierten JAR-Datei vor, die _index-v1.json_ enthält.  Die beste Methode ist es, die JAR-Signatur zu verifizieren und bei ihrer Validierung _index-v1.json_ zu extrahieren. Die Python-Bibliothek von _fdroidserver_ stellt `fdroidserver.download_repo_index()` bereit, um dies einfach zu erledigen.  Es ist auch möglich mittels jeder ZIP-Library _index-v1.json_ zu lesen."
 
 #. type: Bullet: '* '
 #: _posts/2021-02-05-apis-for-all-the-things.md
@@ -16485,6 +16485,19 @@ msgid ""
 "API](https://docs.gitlab.com/ee/api/repository_files.html) can be used to query\n"
 "which Application IDs are available.\n"
 msgstr ""
+"Jede App in _f-droid.org_ besitzt eine zugehörige \n"
+"[Build-Metadaten-Datei]({{ site.baseurl }}/docs/Build_Metadata_Reference) in\n"
+"[_fdroiddata_](https://gitlab.com/fdroid/fdroiddata).  Zur Förderung \n"
+"einer kreativen Wiederverwendung, bewahren wir unsere Daten in Standardformaten an leicht zu findenden\n"
+"Orten auf.  Die gesamte App-Sammlung ist im [YAML-Format]({{ site.baseurl }}/{%\n"
+"post_url 2019-09-11-yaml-metadata %}).  Der Zugriff auf die Datei kann in jedem Fall direkt  \n"
+"über die Anwendungs-ID mittels der GitLab Raw URL  \n"
+"`https://gitlab.com/fdroid/fdroiddata/-/raw/master/metadata/<applicationid>.yml`\n"
+"(z. B. <https://gitlab.com/fdroid/fdroiddata/-/raw/master/metadata/org.fdroid.fdroid.yml>) erfolgen.\n"
+"Der Repo-Index und die [GitLab Repository Files\n"
+"API](https://docs.gitlab.com/ee/api/repository_files.html) können für eine Suchanfrage verwendet werden,\n"
+"welche Anwendungs-IDs verfügbar sind.\n"
+"</applicationid>"
 
 #. type: Title ###
 #: _posts/2021-02-05-apis-for-all-the-things.md
@@ -16655,7 +16668,7 @@ msgstr "Neue Sprache: Japanisch"
 #. type: Plain text
 #: _posts/2021-02-21-new-language-japanese.md
 msgid "Thanks to the efforts of many volunteer contributors, the F-Droid website is now available in Japanese. While the main pages and tutorials have been completed, the FAQs and app descriptions are still in progress. Those interested in adding to these translations, or improving existing translations, are encouraged to contribute via F-Droid's Weblate (<https://hosted.weblate.org/languages/ja/f-droid/>)."
-msgstr ""
+msgstr "Dank der Bemühungen vieler freiwilliger Mitwirkender ist die F-Droid-Website jetzt in Japanisch abrufbar. Während die Hauptseiten und die Anleitungen abgeschlossen sind, werden die FAQs und App-Beschreibungen noch bearbeitet. Interessierte, die diese Übersetzungen ergänzen oder vorhandene Übersetzungen verbessern möchten, werden ermuntert, sich über F-Droid's Weblate (<https://hosted.weblate.org/languages/ja/f-droid/>) daran zu beteiligen."
 
 #. type: YAML Front Matter: title
 #: _posts/2021-02-22-android-broadcast-data-leakage.md
@@ -16682,17 +16695,17 @@ msgstr "Uns ist keine Datenschutzforschung über das Android-Broadcast-System be
 #: _posts/2021-02-22-exodus-etip-canonical-database-for-tracking-trackers.md
 #, no-wrap
 msgid "εxodus ETIP: The Canonical Database for Tracking Trackers"
-msgstr "εxodus ETIP: Anerkannte Datenbank zur Verfolgung von Tracker"
+msgstr "εxodus ETIP: Autorisierte Datenbank zur Verfolgung von Tracker"
 
 #. type: Plain text
 #: _posts/2021-02-22-exodus-etip-canonical-database-for-tracking-trackers.md
 msgid "There is a new story to add to the list of horrors of [Surveillance Capitalism](https://en.wikipedia.org/wiki/Surveillance_capitalism): the United States' Military is [purchasing tracking and location data](https://www.vice.com/en/article/jgqm5x/us-military-location-data-xmode-locate-x) from companies that track many millions of people.  Users must have real options for stepping out of \"big tech\", [where tracking dominates](https://www.theguardian.com/technology/2017/nov/28/android-apps-third-party-tracker-google-privacy-security-yale-university).  We review all apps submitted to [_fdroiddata_](https://gitlab.com/fdroid/fdroiddata/merge_requests) for tracking and other \"[anti-features](https://f-droid.org/en/docs/Anti-Features/)\". F-Droid is built into mobile platforms like [CalyxOS](https://calyxos.org/) that are free of proprietary, big tech software.  Since we only distribute free software, that means we have the complete source code to review.  This makes it much easier to find tracking activity, even when it slips in accidentally without the app developer knowing it, like when one free library pulls in other dependencies."
-msgstr "Der Schreckensliste des [Überwachungskapitalismus](https://en.wikipedia.org/wiki/Surveillance_capitalism) ist eine weitere Story hinzuzufügen: das Militär der Vereinigten Staaten [verkauft Tracking- und Standortdaten](https://www.vice.com/en/article/jgqm5x/us-military-location-data-xmode-locate-x) von Firmen, die viele Millionen Leute tracken.  Nutzer müssen reelle Möglichkeiten haben, aus \"Big Tech\" auszusteigen, [wo Überwachung vorherrscht](https://www.theguardian.com/technology/2017/nov/28/android-apps-third-party-tracker-google-privacy-security-yale-university).  Wir prüfen alle Apps, die bei [_fdroiddata_](https://gitlab.com/fdroid/fdroiddata/merge_requests) eingereicht werden, auf Tracking und andere \"[Anti-Features](https://f-droid.org/en/docs/Anti-Features/)\". F-Droid ist in mobile Plattformen wie [CalyxOS](https://calyxos.org/) integriert, die frei von proprietärer Big-Tech-Software sind.  Nachdem wir nur freie Software herausgeben, bedeutet das, dass wir den kompletten Quellcode überprüfen müssen.  Das macht es sehr viel einfacher Tracking-Aktivitäten herauszufinden, selbst wenn sie versehentlich hineingerutscht sind, ohne dass die App-Entwickler davon wissen, zum Beispiel wenn eine freie Bibliothek andere Abhängigkeiten nachsichzieht."
+msgstr "Der Schreckensliste des [Überwachungskapitalismus](https://en.wikipedia.org/wiki/Surveillance_capitalism) ist eine weitere Story hinzuzufügen: das Militär der Vereinigten Staaten [verkauft Tracking- und Standortdaten](https://www.vice.com/en/article/jgqm5x/us-military-location-data-xmode-locate-x) von Firmen, die viele Millionen Leute tracken.  Nutzer müssen reelle Möglichkeiten haben, aus „Big Tech“ auszusteigen, [wo Überwachung vorherrscht](https://www.theguardian.com/technology/2017/nov/28/android-apps-third-party-tracker-google-privacy-security-yale-university).  Wir prüfen alle Apps, die bei [_fdroiddata_](https://gitlab.com/fdroid/fdroiddata/merge_requests) eingereicht werden, auf Tracking und andere „[Anti-Features](https://f-droid.org/en/docs/Anti-Features/)“. F-Droid ist in mobile Plattformen wie [CalyxOS](https://calyxos.org/) integriert, die frei von proprietärer Big-Tech-Software sind.  Nachdem wir nur freie Software herausgeben, bedeutet das, dass wir den kompletten Quellcode überprüfen müssen.  Das macht es sehr viel einfacher Tracking-Aktivitäten herauszufinden, selbst wenn sie versehentlich hineingerutscht sind, ohne dass die App-Entwickler davon wissen, zum Beispiel wenn eine freie Bibliothek andere Abhängigkeiten nachsichzieht."
 
 #. type: Plain text
 #: _posts/2021-02-22-exodus-etip-canonical-database-for-tracking-trackers.md
 msgid "Right now, the most effective method for automatically finding trackers is to search for well known strings in the extracted contents of the APK.  Domain names are one example, like if an app is sending data to `google-analytics.com` or `facebook.com`, then it is clear that it is doing some kind of tracking.  These lists of well known strings must be created and managed by people, then gathered and reviewed.  [Exodus Privacy](https://exodus-privacy.eu.org/) created their [Exodus Tracker Investigation Platform (ETIP)](https://etip.exodus-privacy.eu.org/) for exactly this purpose.  F-Droid, [Yale Privacy Lab](https://github.com/YalePrivacyLab/tracker-profiles), [_jawz101_](https://github.com/jawz101/potentialTrackers), Guardian Project, and others have centralized their efforts on εxodus ETIP as the canonical database for these strings."
-msgstr ""
+msgstr "Bis jetzt ist die wirkungsvollste Methode, automatisch Tracker zu finden, eine Suche nach bekannten Zeichenketten in den aus dem APK extrahierten Inhalten.  Domain-Namen sind ein Beispiel, also wenn eine App zu `google-analytics.com` oder `facebook.com` Daten sendet, dann ist klar, dass sie eine Form von Tracking durchführt.  Diese Listen gut bekannter Strings muss von Menschen erstellt und gepflegt, dann gesammelt und geprüft werden.  [Exodus Privacy](https://exodus-privacy.eu.org/) schufen ihre [Exodus Tracker Investigation Platform (ETIP)](https://etip.exodus-privacy.eu.org/) für genau diesen Zweck.  F-Droid, [Yale Privacy Lab](https://github.com/YalePrivacyLab/tracker-profiles), [_jawz101_](https://github.com/jawz101/potentialTrackers), Guardian Project und weitere haben ihre Anstrengungen auf εxodus ETIP als die autorisierte Datenbank für diese Strings zusammengefasst."
 
 #. type: Title ##
 #: _posts/2021-02-22-exodus-etip-canonical-database-for-tracking-trackers.md
@@ -16703,68 +16716,68 @@ msgstr ""
 #. type: Plain text
 #: _posts/2021-02-22-exodus-etip-canonical-database-for-tracking-trackers.md
 msgid "Since tracking is mostly done by companies trying to get customers, they advertise and document their services on the web.  We spent some time searching for that information to see what we could find.  We mostly searched using two bits of information: the API Key Identifiers that we [extracted](https://gitlab.com/trackingthetrackers/extracted-features/-/blob/master/axml-meta-data-run)  and \"top 10\" lists of companies that provide tracking and related services.  From this, we added over 50 new service profiles to the εxodus ETIP database.  We also added upwards of 100 pieces of additional information to existing entries like SDK identity strings, links to documentation, privacy policies, and information on the company's tracking methods."
-msgstr ""
+msgstr "Nachdem Tracking meistens durch Firmen erfolgt, die versuchen Kunden zu gewinnen, bewerben und dokumentieren sie ihre Dienste im Netz.  Wir verbrachten einige Zeit mit der Suche nach diesen Informationen, um zu sehen, was wir heraufinden können.  Wir suchten hauptsächlich mittels zweier Informationshappen: die API Key Identifiers, die wir [extrahierten](https://gitlab.com/trackingthetrackers/extracted-features/-/blob/master/axml-meta-data-run)  und „Top 10“-Listen der Firmen, die Tracking und verwandte Dienste anbieten.  Dabei fügten wir der Datenbank von εxodus ETIP über 50 neue Dienstprofile hinzu.  Wir ergänzten auch mehr als 100 zusätzliche Informationsteile zu bereits bestehenden Einträgen wie Strings zur SDK-Identität, Verknüpfungen zu Dokumentationen, Datenschutzrichlinien und Informationen über die Tracking-Methoden der Firmen."
 
 #. type: Plain text
 #: _posts/2021-02-22-exodus-etip-canonical-database-for-tracking-trackers.md
 msgid "From that research, we saved some choice promises from selected tracking companies:"
-msgstr ""
+msgstr "Aus dieser Recherche bewahrten wir eine Auswahl an Versprechungen ausgewählter Tracking-Firmen auf:"
 
 #. type: Bullet: '* '
 #: _posts/2021-02-22-exodus-etip-canonical-database-for-tracking-trackers.md
 msgid "\"Glassbox offers customer experience analytics solutions that doesn’t just tell you what a customer is doing. It tells you why.\""
-msgstr ""
+msgstr "„Glassbox bietet Lösungen zur Kundenverhaltensanalyse, die Ihnen nicht nur sagen, was ein Kunde tut. Sie erklären Ihnen warum.“"
 
 #. type: Bullet: '* '
 #: _posts/2021-02-22-exodus-etip-canonical-database-for-tracking-trackers.md
 msgid "\"Target traffic from all sources, including the 50% from the hidden web where third-party cookies are blocked, to increase targetable inventory.\""
-msgstr ""
+msgstr "„Geplanter Traffic aus allen Quellen, einschließlich der 50% aus dem verborgenen Netz, in dem Drittanbieter-Cookies blockiert werden, zur Erhöhung zielorientierter Datenbestände.“"
 
 #. type: Bullet: '* '
 #: _posts/2021-02-22-exodus-etip-canonical-database-for-tracking-trackers.md
 msgid "\"Collect customer and product data in real time, from anywhere\""
-msgstr ""
+msgstr "„Kunden- und Produktdaten in Echtzeit sammeln, von überall“"
 
 #. type: Bullet: '* '
 #: _posts/2021-02-22-exodus-etip-canonical-database-for-tracking-trackers.md
 msgid "\"PlaytestCloud will capture the whole gameplay experience, turning you into a spectator with super powers.\""
-msgstr ""
+msgstr "„PlaytestCloud fängt das gesamte Gameplay-Erlebnis ein, verwandelt Sie in einen Zuschauer mit Superkräften.“"
 
 #. type: Bullet: '* '
 #: _posts/2021-02-22-exodus-etip-canonical-database-for-tracking-trackers.md
 msgid "\"We record the players’ screen, their touches and what they have to say at all times.\""
-msgstr ""
+msgstr "„Wir zeichnen den Bildschirm der Spieler auf, ihre Kontakte und was sie zu sagen haben, zu jeder Zeit.“"
 
 #. type: Bullet: '* '
 #: _posts/2021-02-22-exodus-etip-canonical-database-for-tracking-trackers.md
 msgid "\"We curate geospatial ground truth data sets on a global scale\""
-msgstr ""
+msgstr "„Wir kuratieren Geospatial Ground Truth Datensets in einem globalen Umfang“"
 
 #. type: Bullet: '* '
 #: _posts/2021-02-22-exodus-etip-canonical-database-for-tracking-trackers.md
 msgid "\"Take segmentation and analysis from overnight to real-time. Our DMP works in-session for perfect match rates even on passerby traffic.\""
-msgstr ""
+msgstr "„Segmentierung und Analyse statt von heute auf morgen in Echtzeit vornehmen. Unser DMP arbeitet während der Sitzung für perfekte Übereinstimmungsquoten selbst bei Passerby Traffic"
 
 #. type: Title ##
 #: _posts/2021-02-22-exodus-etip-canonical-database-for-tracking-trackers.md
 #, no-wrap
 msgid "Crowdsourcing the hunt for trackers"
-msgstr ""
+msgstr "Crowdsourcing für die Jagd nach Tracker"
 
 #. type: Plain text
 #: _posts/2021-02-22-exodus-etip-canonical-database-for-tracking-trackers.md
 msgid "Tracking the trackers is the kind of work that fits in very well with crowdsourcing.  Tracking companies are disappearing and renaming themselves all the time, in order to avoid too much scrutiny.  But they still must reach out to developers in order to find customers.  That means we can find them.  Join in the search! Non-technical people can also contribute, for example, when you read news about a tracking company, [search](https://etip.exodus-privacy.eu.org/trackers/all) to see if it is already in ETIP.  If not, [file an issue](https://github.com/Exodus-Privacy/etip/issues) to request it is added. Android developers with little bits of spare time can add code signatures, domain names, and other key technical details to ETIP.  Or even [code up quick scripts](https://gitlab.com/trackingthetrackers/scripts/-/blob/master/find-ga_trackingId.py)  with new ideas for detecting tracking."
-msgstr ""
+msgstr "Tracker verfolgen ist die Sorte Arbeit, die sehr gut zu Crowdsourcing passt.  Tracking-Firmen verschwinden und benennen sich ständig um, um zu genaue Untersuchungen zu vermeiden.  Aber sie müssen für Entwickler immer noch erreichbar bleiben, um Kunden zu finden.  Das bedeutet, wir können sie finden.  Nehmt an der Suche teil! Auch Nicht-Techniker können sich daran beteiligen, zum Beispiel, wenn ihr Nachrichten über eine Tracking Company lest, [durchsucht](https://etip.exodus-privacy.eu.org/trackers/all), um herauszufinden, ob sie schon in ETIP ist.  Wenn nicht, [eröffnet ein Ticket](https://github.com/Exodus-Privacy/etip/issues) mit der Bitte sie hinzuzufügen. Android-Entwickler, die nur wenig Zeit haben, können Code-Signaturen, Domain-Namen und weitere technische Schlüsselteile auf ETIP ergänzen.  Oder auch [programmiert schnelle Skripte](https://gitlab.com/trackingthetrackers/scripts/-/blob/master/find-ga_trackingId.py)  mit neuen Ideen zur Bestimmung von Tracking."
 
 #. type: Plain text
 #: _posts/2021-02-22-exodus-etip-canonical-database-for-tracking-trackers.md
 msgid "There are a number of forums where you can ask for assistance in getting started.  Hope to hear from you soon!"
-msgstr ""
+msgstr "Es gibt eine Reihe von Foren, wo ihr um Unterstützung beim Einstieg nachfragen könnt.  Wir hoffen bald von euch zu hören!"
 
 #. type: Bullet: '* '
 #: _posts/2021-02-22-exodus-etip-canonical-database-for-tracking-trackers.md
 msgid "[Contributing to Exodus Privacy](https://exodus-privacy.eu.org/en/page/contribute/)"
-msgstr ""
+msgstr "[Beteiligung an Exodus Privacy](https://exodus-privacy.eu.org/en/page/contribute/)"
 
 #. type: Bullet: '* '
 #: _posts/2021-02-22-exodus-etip-canonical-database-for-tracking-trackers.md
@@ -17132,33 +17145,32 @@ msgstr "Wir hoffen, Sie dort zu sehen und danken Ihnen für Ihre Geduld."
 
 #. type: YAML Front Matter: title
 #: _posts/2021-06-30-new-language-romanian.md
-#, fuzzy, no-wrap
-#| msgid "New language: Polish"
+#, no-wrap
 msgid "New language: Romanian"
-msgstr "Neue Sprache: Polnisch"
+msgstr "Neue Sprache: Rumänisch"
 
 #. type: Plain text
 #: _posts/2021-06-30-new-language-romanian.md
 msgid "The F-Droid website is now available in Romanian too, thanks to the efforts of the few volunteer contributors. While the main pages have been completed, the Docs and app descriptions are still in progress. Those interested in lending a hand for their completion or for improving existing translations, are encouraged to contribute via F-Droid's Weblate (<https://hosted.weblate.org/languages/ro/f-droid/>)."
-msgstr ""
+msgstr "Die F-Droid-Webseite steht nun auch in Rumänisch zur Verfügung, dank der Bemühungen einiger Freiwilliger. Während die Hauptseiten fertig sind, sind die Dokumentation und die App-Beschreibungen noch in Arbeit. All jene, die interessiert sind, an ihrer Fertigstellung oder an der Verbesserung vorhandener Übersetzungen mitzuhelfen, werden darin bestärkt sich über F-Droid's Weblate (<https://hosted.weblate.org/languages/ro/f-droid/>) daran zu beteiligen."
 
 #. type: YAML Front Matter: title
 #: _posts/2021-10-15-pining-for-packages-android-dependency-management-and-f-droid-push-requests.md
 #, no-wrap
 msgid "Pining for packages: Android dependency management and F-Droid Push Requests"
-msgstr ""
+msgstr "Sehnsucht nach Paketen: Dependency-Management in Android und Push Requests in F-Droid"
 
 #. type: Plain text
 #: _posts/2021-10-15-pining-for-packages-android-dependency-management-and-f-droid-push-requests.md
 msgid "One thing that made GNU/Linux distros so popular is that dependency management was built into the operating system.  In Debian, all software installed is packaged as a _.deb_, and its all installed from the Debian repositories.  Android has always lacked this kind dependency management, and many of us sorely miss it.  Android's model is that all dependencies should be included in the app's APK file, while the operating system only provides the most basic APIs.  Many apps depend on other apps being installed.  Neither Android nor Google Play has a way to represent that."
-msgstr ""
+msgstr "Eine Sache, die GNU/Linux-Distributionen so beliebt machte, ist, dass die Verwaltung von Abhängigkeiten im Betriebssystem eingebaut wurde.  In Debian ist sämtliche installierte Software in eine _.deb_ gepackt und sie wird komplett aus Debian-Repositorys installiert.  Android fehlte diese Art des Dependency-Managements immer und viele von uns vermissen es schmerzlich.  Das Modell von Android geht davon aus, dass alle Abhängigkeiten in der APK-Datei der App enthalten sein sollten, während das Betriebssystem nur die grundlegendsten APIs bereitstellt.  Viele Apps hängen von der Installation weiterer Apps ab.  Weder Android noch Google Play bieten einen Weg, das darzustellen."
 
 #. type: Plain text
 #: _posts/2021-10-15-pining-for-packages-android-dependency-management-and-f-droid-push-requests.md
 msgid "Over the years there have been [various](https://guardianproject.info/2011/06/18/lil-debi-easy-installer-for-debian-on-android/) [experiments](https://sven-ola.commando.de/repo/debian-kit-en.html) in how to implement good dependency management for Android. The most recent dependency management experiment in F-Droid was \"[Push Requests](https://gitlab.com/fdroid/fdroidclient/-/merge_requests/707)\".  The core idea was to have a per-repo dependency list.  For example, since all Guardian Project apps support Tor, it could make sense that using the Guardian Project repo means that Tor would be automatically installed.  Based on the past years experience, it has become clear that this is better handled in other ways.  Apps can check whether required apps are installed.  The app should ask users if they want Tor, then walk them through the install process.  When push requests was implemented, there were not ROM projects that were embedding F-Droid.  Now its clearly better to include Tor as part of the ROM rather than via push requests.  CalyxOS's [Setup Wizard](https://gitlab.com/CalyxOS/platform_packages_apps_SetupWizard) provides a great Android-native user experience for setting up the core dependencies."
-msgstr ""
+msgstr "Über die Jahre gab es [verschiedene](https://guardianproject.info/2011/06/18/lil-debi-easy-installer-for-debian-on-android/) [Versuche](https://sven-ola.commando.de/repo/debian-kit-en.html) dazu, wie ein gutes Dependency-Management in Android zu implementieren sei. Das letzte Dependency-Management-Experiment in F-Droid war \"[Push Requests](https://gitlab.com/fdroid/fdroidclient/-/merge_requests/707)\".  Die Grundidee war, eine Liste für Abhängigkeiten pro Repo zu haben.  Zum Beispiel, da alle Apps des Guardian Project Tor unterstützen, könnte es sinnvoll sein, dass bei Verwendung des Repos von Guardian Project, Tor automatisch mitinstalliert wird.  Auf der Grundlage der Erfahrungen aus den letzten Jahren ist klar geworden, dass so etwas besser auf andere Weise geregelt wird.   Apps können prüfen, ob andere benötigte Apps installiert sind.  Die App sollte Nutzer fragen, ob sie Tor möchten und sie dann durch den Installationsvorgang führen.  Als Push Requests eingeführt wurden, gab es keine ROM-Projekte, die F-Droid beinhalteten.  Mittlerweile ist es eindeutig besser, Tor als Teil des ROM einzuschließen als über Push Requests.  Der [Einrichtungsassistent](https://gitlab.com/CalyxOS/platform_packages_apps_SetupWizard) von CalyxOS liefert ein großartiges, Android-spezifisches Benutzererlebnis zur Einrichtung der Kernabhängigkeiten."
 
 #. type: Plain text
 #: _posts/2021-10-15-pining-for-packages-android-dependency-management-and-f-droid-push-requests.md
 msgid "We are now [removing support](https://gitlab.com/fdroid/fdroidclient/-/merge_requests/1063) for push requests from the official F-Droid client.  It is clear that other approaches fit into Android better, so it is better to remove the small but present security risks related to this feature.  The \"plumbing\" for push requests will remain available in the code base, so that [whitelabeled]({{ site.baseurl }}/docs/Whitelabel_Builds/) forks can still use it.  It is still useful for things like fully automated, headless app stores or automatic installs as part of a standard setup."
-msgstr ""
+msgstr "Wir führen nun die [Entfernung der Unterstützung](https://gitlab.com/fdroid/fdroidclient/-/merge_requests/1063) von Push Requests aus dem offiziellen F-Droid-Client durch.  Es ist klar, dass andere Vorgehensweisen besser zu Android passen, somit ist es besser, die kleinen aber vorhandenen Sicherheitsrisiken, die mit dieser Funktion verbunden sind, zu entfernen.  Das \"Rüstzeug\" für Push Requests wird in den Grundlagen des Codes erhalten bleiben, sodass sogenannte [whitelabeled]({{ site.baseurl }}/docs/Whitelabel_Builds/) Forks sie immer noch verwenden können.  Sie sind immer noch praktisch bei Dingen wie voll automatisierte, führerlose App Stores oder automatische Installationen als Teil einer Standardkonfiguration."
