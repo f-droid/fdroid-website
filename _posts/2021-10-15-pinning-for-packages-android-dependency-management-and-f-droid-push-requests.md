@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Pining for packages: Android dependency management and F-Droid Push Requests"
+title: "Pinning for packages: Android dependency management and F-Droid Push Requests"
 author: eighthave
 ---
 
