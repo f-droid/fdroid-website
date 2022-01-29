@@ -23,7 +23,7 @@ The discussions are logged on
 There are also bridges to Telegram and Jabber/XMPP (experimental).
 To join via Telegram, click [this link](https://matrix.f-droid.org/fdroid/telegram/).
 For Jabber/XMPP,
-join [#fdroid#matrix.org@bridge.xmpp.matrix.org](xmpp:#fdroid#matrix.org@bridge.xmpp.matrix.org?join).
+join [#fdroid#matrix.org@matrix.org](xmpp:#fdroid#matrix.org@matrix.org?join).
 
 F-Droid contributors also run a social-media account on the Fediverse. You can
 interact with us or follow us on [@fdroidorg@mastodon.technology](https://mastodon.technology/@fdroidorg).
