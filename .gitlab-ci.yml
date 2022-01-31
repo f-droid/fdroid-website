@@ -132,6 +132,19 @@ pages:
    - linkchecker http://localhost:4000/$CI_PROJECT_NAME --config=.linkcheckerrc
 
 
+# check rsync mirrors still available
+rsync mirrors:
+  only:
+    - master@fdroid/fdroidserver
+  image: debian:bullseye-slim
+  script:
+    - apt-get update
+    - apt-get -qy install rsync
+    - for f in `sed -En 's,^\S+\x3a rsync -axv (.*),\1,p' _data/rsync_mirrors.yaml`; do
+          rsync --list-only $f || rsync --list-only $f || rsync --list-only $f;
+      done
+
+
 spellcheckbot:
   image: node:buster
   stage: deploy
