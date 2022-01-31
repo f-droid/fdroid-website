@@ -80,7 +80,9 @@ for f in sorted(glob.glob('po/*.po*')):
         if '</applicationid>' in message.string.lower():
             output += ('\nMessed up example URL </applicationid> in: %s\n' % message.string)
             rewrite = True
-            contents = contents.replace('</applicationid>', '')
+
+        if (message.id and message.id[-1] == '\n') and (message.string and message.string[-1] != '\n'):
+            output += ("\n'msgid' and 'msgstr' entries do not both end with '\\n': %s\n" % message.string)
 
         idlinks = []
         for m in url_link_pattern.findall(message.id):
