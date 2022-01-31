@@ -110,8 +110,7 @@ specifically `keystore` and `smartcardoptions`.  Most likely,
 [OpenSC](https://github.com/OpenSC/OpenSC) will need to be set up as a
 PKCS11 provider for Java.
 
-For more in-depth information, see
-[Security in a thumb drive: the promise and pain of hardware security modules, take one!](https://guardianproject.info/2014/03/28/security-in-a-thumb-drive-the-promise-and-pain-of-hardware-security-modules-take-one/)
-
-
-[examples/config.yml]: https://gitlab.com/fdroid/fdroidserver/blob/0.7.0/examples/config.yml "example config file"
+For more in-depth information, see:
+* _fdroidserver_ example config file: [examples/config.yml](https://gitlab.com/fdroid/fdroidserver/-/blob/2.1a0/examples/config.yml#L125)
+* [Publishing an F-Droid Repo using a Hardware Security Module]({{ site.baseurl }}/{% post_url 2020-10-05-ntrokey-signing %})
+* [Security in a thumb drive: the promise and pain of hardware security modules, take one!](https://guardianproject.info/2014/03/28/security-in-a-thumb-drive-the-promise-and-pain-of-hardware-security-modules-take-one/)
