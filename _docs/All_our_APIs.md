@@ -50,7 +50,6 @@ information.  It is posted once that step completes running.  The step that is
 currently running is posted to _running_.
 
 * <https://f-droid.org/repo/status/running.json>
-* <https://f-droid.org/repo/status/checkupdates.json>
 * <https://f-droid.org/repo/status/build.json>
 * <https://f-droid.org/repo/status/update.json>
 * <https://f-droid.org/repo/status/deploy.json>
@@ -58,6 +57,13 @@ currently running is posted to _running_.
 Two examples of how these JSON APIs can be used are the [F-Droid
 Monitor](https://monitor.f-droid.org/) website and the [F-Droid Build Status]({{
 site.baseurl }}/packages/de.storchp.fdroidbuildstatus/) app.
+
+
+### latest version metadata
+
+The _f-droid.org_ website provides a JSON API to get the published and suggested versions of an app.
+The base URL is `https://f-droid.org/api/v1/packages/<ApplicationId>`.
+For example <https://f-droid.org/api/v1/packages/org.fdroid.fdroid>.
 
 
 ### Mirror and repo monitoring
