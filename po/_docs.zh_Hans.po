@@ -19,7 +19,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
-"POT-Creation-Date: 2021-11-08 14:58+0100\n"
+"POT-Creation-Date: 2022-01-31 14:39+0100\n"
 "PO-Revision-Date: 2022-01-28 09:56+0000\n"
 "Last-Translator: kak mi <wavelake@outlook.com>\n"
 "Language-Team: Chinese (Simplified) <https://hosted.weblate.org/projects/f-droid/website-docs/zh_Hans/>\n"
@@ -571,6 +571,67 @@ msgstr "我们的全部 API"
 msgid "For F-Droid to be trusted, we need to be transparent.  Making it easy for people to pay attention to all the processes and systems we use helps us stay secure.  These are the APIs with key information about the publishing process."
 msgstr "为了使 F-Droid 值得信赖，我们需要透明。让人们可以轻易关注我们使用的所有流程和系统帮助我们保持安全。这些是关于发布流程的关键信息的 API。"
 
+#. type: Title ##
+#: _docs/All_our_APIs.md
+#, no-wrap
+msgid "Active packages"
+msgstr ""
+
+#. type: Plain text
+#: _docs/All_our_APIs.md
+msgid "There is a per-app API accessible via `https://f-droid.org/api/v1/packages`, which can be used to query information about the applications in the main repository. The JSON API currently lists the published and suggested versions. Archived applications and packages are not available in this API."
+msgstr ""
+
+#. type: Plain text
+#: _docs/All_our_APIs.md
+msgid "Example request:"
+msgstr ""
+
+#. type: Fenced code block
+#: _docs/All_our_APIs.md
+#, fuzzy, no-wrap
+#| msgid "official binary releases: <https://f-droid.org/packages/org.fdroid.fdroid>"
+msgid "GET https://f-droid.org/api/v1/packages/org.fdroid.fdroid HTTP/1.1\n"
+msgstr "official binary releases: <https://f-droid.org/packages/org.fdroid.fdroid>"
+
+#. type: Plain text
+#: _docs/All_our_APIs.md
+msgid "Example response:"
+msgstr ""
+
+#. type: Fenced code block
+#: _docs/All_our_APIs.md
+#, no-wrap
+msgid ""
+"HTTP/1.1 200 OK\n"
+"Content-Type: application/json; charset=utf-8\n"
+msgstr ""
+
+#. type: Fenced code block (json)
+#: _docs/All_our_APIs.md
+#, no-wrap
+msgid ""
+"{\n"
+"  \"packageName\": \"org.fdroid.fdroid\",\n"
+"  \"suggestedVersionCode\": 1009000,\n"
+"  \"packages\": [\n"
+"    {\n"
+"      \"versionName\": \"1.10-alpha0\",\n"
+"      \"versionCode\": 1010000\n"
+"    },\n"
+"    {\n"
+"      \"versionName\": \"1.9\",\n"
+"      \"versionCode\": 1009000\n"
+"    }\n"
+"  ]\n"
+"}\n"
+msgstr ""
+
+#. type: Plain text
+#: _docs/All_our_APIs.md
+msgid "This API is already used by shields.io project to provide F-Droid badges, [like this](https://img.shields.io/f-droid/v/org.fdroid.fdroid)."
+msgstr ""
+
 #. type: Title ###
 #: _docs/All_our_APIs.md
 #, no-wrap
@@ -641,11 +702,6 @@ msgstr "构建循环的四个主要步骤为：_checkupdates_，_build_，_updat
 #: _docs/All_our_APIs.md
 msgid "<https://f-droid.org/repo/status/running.json>"
 msgstr "<https://f-droid.org/repo/status/running.json>"
-
-#. type: Bullet: '* '
-#: _docs/All_our_APIs.md
-msgid "<https://f-droid.org/repo/status/checkupdates.json>"
-msgstr "<https://f-droid.org/repo/status/checkupdates.json>"
 
 #. type: Bullet: '* '
 #: _docs/All_our_APIs.md
@@ -852,6 +908,11 @@ msgstr "[非自由依赖项](#NonFreeDep) - 需要一个非自由应用才能工
 
 #. type: Bullet: '* '
 #: _docs/Anti-Features.md
+msgid "[NSFW](#NSFW) - contains content that the user may not want to be publicized or visible everywhere"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/Anti-Features.md
 msgid "[Upstream Non-Free](#UpstreamNonFree) - upstream source code is not libre, and this version has those parts replaced or rewritten"
 msgstr "[上游代码非自由](#UpstreamNonFree) - 上游源代码不是自由的，此版本已替换或重写了这些部分"
 
@@ -899,6 +960,25 @@ msgstr "请注意，大多数包含广告的应用都不是自由软件，因为
 #. type: Plain text
 #: _docs/Anti-Features.md
 msgid "Here's the list of [apps with Ads](https://monitor.f-droid.org/anti-feature/Ads)."
+msgstr "这是[带有广告负特征的应用](https://monitor.f-droid.org/anti-feature/Ads)的列表。"
+
+#. type: Title ###
+#: _docs/Anti-Features.md
+#, fuzzy, no-wrap
+#| msgid "Ads<a name=\"Ads\" />"
+msgid "NSFW<a name=\"NSFW\" />"
+msgstr "广告<a name=\"Ads\" />"
+
+#. type: Plain text
+#: _docs/Anti-Features.md
+msgid "This Anti-Feature is applied to an app that contains content that the user may not want to be publicized or visible everywhere. The marked app may contain nudity, profanity, slurs, violence, intense sexuality, political incorrectness, or other potentially disturbing subject matter.  This is especially relevant in environments like workplaces, schools, religious and family settings. The name comes from the Internet term \"Not safe for work\"."
+msgstr ""
+
+#. type: Plain text
+#: _docs/Anti-Features.md
+#, fuzzy
+#| msgid "Here's the list of [apps with Ads](https://monitor.f-droid.org/anti-feature/Ads)."
+msgid "Here's the list of [apps with NSFW](https://monitor.f-droid.org/anti-feature/NSFW)."
 msgstr "这是[带有广告负特征的应用](https://monitor.f-droid.org/anti-feature/Ads)的列表。"
 
 #. type: Title ###
@@ -3263,6 +3343,11 @@ msgstr "'NonFreeDep' - 应用依赖于一个非自由应用（例如谷歌地图
 
 #. type: Bullet: '-   '
 #: _docs/Build_Metadata_Reference.md
+msgid "‘NSFW’ - the app contains content that the user may not want to be publicized or visible everywhere, comes from \"Not Safe For Work\"."
+msgstr ""
+
+#. type: Bullet: '-   '
+#: _docs/Build_Metadata_Reference.md
 msgid "‘UpstreamNonFree’ - the application is or depends on Non-Free software. This does not mean that Non-Free Software is included with the app: Most likely, it has been patched in some way to remove the Non-Free code. However, functionality may be missing."
 msgstr "'UpstreamNonFree' - 该应用是或依赖于非自由软件。这并不意味着非自由软件包含在该应用程序中：最有可能的是，它已经以某种方式打了补丁以移除非自由代码。然而，部分功能可能会缺失。"
 
@@ -5581,32 +5666,6 @@ msgstr "我们还没有一个专门的和用户友好的源，你可以订阅新
 #. type: Title ###
 #: _docs/FAQ_-_General.md
 #, no-wrap
-msgid "What's the difference between source and binary builds?"
-msgstr "源代码构建和二进制构建有什么区别？"
-
-#. type: Plain text
-#: _docs/FAQ_-_General.md
-msgid "In the client, each package for an app is labelled either 'source' or 'bin'. These correspond to two different messages you'll see for the same package when browsing the repository on the web site, either \"This version is built and signed by F-Droid, and guaranteed to correspond to the source tarball below\" or \"This version is built and signed by the original developer.\""
-msgstr "在客户端，每个应用的包都被标记为'source'或'bin'。这与你在网站上浏览资源库时看到的同一软件包的两种不同信息相对应，要么是\"该版本由 F-Droid 构建并签名，保证与下面的源代码压缩包相对应，要么是\"该版本由原始开发者构建并签名\""
-
-#. type: Plain text
-#: _docs/FAQ_-_General.md
-msgid "Most packages are source builds. Those that are binaries are usually that way for technical or historical reasons. Ideally everything in the F-Droid repo would be a source build."
-msgstr "大多数软件包是源代码构建的。那些二进制文件通常是由于技术或历史原因。理想情况下，F-Droid 存储库中的所有东西都是源代码构建。"
-
-#. type: Plain text
-#: _docs/FAQ_-_General.md
-msgid "Source builds are built and signed securely by F-Droid, and are accompanied on the web site by a complete and corresponding copy of the exact source code we built it with. It may include some prebuilt libraries and you may need to download some external libraries, but as long as those libraries are still on the internet, you should be able to build an exact copy."
-msgstr "源代码构建是由 F-Droid 安全地构建和签署的，并在网站上附有我们构建的完整和相应的确切的源代码副本。它可能包括一些预构建的库，你可能需要下载一些外部库，但只要这些库还在网络上，你就应该能够建立一个精确的副本。"
-
-#. type: Plain text
-#: _docs/FAQ_-_General.md
-msgid "Binary packages are built and signed by the developer. We get them from public sources that the developer makes available directly, and never from third party sources."
-msgstr "二进制包是由开发者建立和签署的。我们从开发者直接提供的公共资源中获取它们，而不是从第三方来源获取。"
-
-#. type: Title ###
-#: _docs/FAQ_-_General.md
-#, no-wrap
 msgid "Is your building and signing process secure?"
 msgstr "你的构建和签名过程是否安全？"
 
@@ -5638,7 +5697,9 @@ msgstr "我们不使用私有软件。而 Google Play 为私有软件;"
 
 #. type: Bullet: '-   '
 #: _docs/FAQ_-_General.md
-msgid "F-Droid, as an app that \"competes\" with Google Play, is against their [Terms of Service](http://play.google.com/about/developer-distribution-agreement.html#non-compete)."
+#, fuzzy
+#| msgid "F-Droid, as an app that \"competes\" with Google Play, is against their [Terms of Service](http://play.google.com/about/developer-distribution-agreement.html#non-compete)."
+msgid "F-Droid, as an app that \"competes\" with Google Play, is against their [Terms of Service (paragraph 4.5)](https://play.google.com/about/developer-distribution-agreement.html)."
 msgstr "F-Droid 作为与 Google Play “竞争”的应用，违反了他们的 [服务条款](http://play.google.com/about/developer-distribution-agreement.html#non-compete)。"
 
 #. type: Title ###
@@ -5659,8 +5720,15 @@ msgstr "如果你还没有账户，或者不想创建一个账户，你可以使
 
 #. type: Plain text
 #: _docs/FAQ_-_General.md
-msgid "That said, the account username is _fdroid-bug-reporter_ and the password is _repository-collection_."
+#, fuzzy
+#| msgid "That said, the account username is _fdroid-bug-reporter_ and the password is _repository-collection_."
+msgid "That said, the account username is _fdroid-anyone_ and the password is _fdroid does not track_."
 msgstr "亦即，帐户用户名是 _fdroid-bug-reporter_，密码是 _repository-collection_。"
+
+#. type: Plain text
+#: _docs/FAQ_-_General.md
+msgid "Please note that we will have to remove this account, in case it gets abused."
+msgstr ""
 
 #. type: YAML Front Matter: title
 #: _docs/Feeds.md
@@ -9791,13 +9859,10 @@ msgstr "有关如何配置 F-Droid 存储库以使用 HSM 的信息，请参阅 
 
 #. type: Plain text
 #: _docs/Signing_Process.md
-msgid "For more in-depth information, see [Security in a thumb drive: the promise and pain of hardware security modules, take one!](https://guardianproject.info/2014/03/28/security-in-a-thumb-drive-the-promise-and-pain-of-hardware-security-modules-take-one/)"
+#, fuzzy
+#| msgid "For more in-depth information, see [Security in a thumb drive: the promise and pain of hardware security modules, take one!](https://guardianproject.info/2014/03/28/security-in-a-thumb-drive-the-promise-and-pain-of-hardware-security-modules-take-one/)"
+msgid "For more in-depth information, see: * _fdroidserver_ example config file: [examples/config.yml](https://gitlab.com/fdroid/fdroidserver/-/blob/2.1a0/examples/config.yml#L125)  * [Publishing an F-Droid Repo using a Hardware Security Module]({{ site.baseurl }}/{% post_url 2020-10-05-ntrokey-signing %})  * [Security in a thumb drive: the promise and pain of hardware security modules, take one!](https://guardianproject.info/2014/03/28/security-in-a-thumb-drive-the-promise-and-pain-of-hardware-security-modules-take-one/)"
 msgstr "更深入的信息，请参见 [U盘中的安全：硬件安全模块的承诺和痛苦，一起来看看！](https://guardianproject.info/2014/03/28/security-in-a-thumb-drive-the-promise-and-pain-of-hardware-security-modules-take-one/)"
-
-#. type: Plain text
-#: _docs/Signing_Process.md
-msgid "[examples/config.yml]: https://gitlab.com/fdroid/fdroidserver/blob/0.7.0/examples/config.yml \"example config file\""
-msgstr "[examples/config.yml]：https://gitlab.com/fdroid/fdroidserver/blob/0.7.0/examples/config.yml “示例配置文件”"
 
 #. type: YAML Front Matter: title
 #: _docs/Submitting_to_F-Droid_Quick_Start_Guide.md
@@ -10467,10 +10532,25 @@ msgstr ""
 msgid "Then *gradle* will automatically look at whole set of folders for custom versions of files:"
 msgstr "然后 *gradle* 将自动查看整套文件夹中的自定义版本的文件："
 
-#. type: Plain text
+#. type: Bullet: '* '
 #: _docs/Whitelabel_Builds.md
-msgid "- Java sources: _app/src/mycompany/java_ - Manifest file: _app/src/mycompany/AndroidManifest.xml_ - Android resources: _app/src/mycompany/res_ - Assets: _app/src/mycompany/assets_"
-msgstr "- Java sources: _app/src/mycompany/java_ - Manifest file: _app/src/mycompany/AndroidManifest.xml_ - Android resources: _app/src/mycompany/res_ - Assets: _app/src/mycompany/assets_"
+msgid "Java sources: _app/src/mycompany/java_"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/Whitelabel_Builds.md
+msgid "Manifest file: _app/src/mycompany/AndroidManifest.xml_"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/Whitelabel_Builds.md
+msgid "Android resources: _app/src/mycompany/res_"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/Whitelabel_Builds.md
+msgid "Assets: _app/src/mycompany/assets_"
+msgstr ""
 
 #. type: Plain text
 #: _docs/Whitelabel_Builds.md
@@ -10579,3 +10659,27 @@ msgstr "首选项"
 #: _docs/Whitelabel_Builds.md
 msgid "For a custom build that enables Automatic Updates by default, override _app/src/main/res/xml/preferences.xml_. You can customize the preferences and their default values in _app/src/mycompany/res/xml/preferences.xml_. The fully automatic update requires [Privileged Extension](https://gitlab.com/fdroid/privileged-extension). With regular access, the updates will only automatically download. The user still needs to click install on each one."
 msgstr "对于默认启用自动更新的自定义构建，覆盖 _app/src/main/res/xml/preferences.xml_。你可以在 _app/src/mycompany/res/xml/preferences.xml_ 中自定义首选项及其默认值。全自动更新需要 [特权扩展](https://gitlab.com/fdroid/privileged-extension)。通过定期访问，更新只会自动下载。用户仍然需要在每一个上点击安装。"
+
+#~ msgid "<https://f-droid.org/repo/status/checkupdates.json>"
+#~ msgstr "<https://f-droid.org/repo/status/checkupdates.json>"
+
+#~ msgid "What's the difference between source and binary builds?"
+#~ msgstr "源代码构建和二进制构建有什么区别？"
+
+#~ msgid "In the client, each package for an app is labelled either 'source' or 'bin'. These correspond to two different messages you'll see for the same package when browsing the repository on the web site, either \"This version is built and signed by F-Droid, and guaranteed to correspond to the source tarball below\" or \"This version is built and signed by the original developer.\""
+#~ msgstr "在客户端，每个应用的包都被标记为'source'或'bin'。这与你在网站上浏览资源库时看到的同一软件包的两种不同信息相对应，要么是\"该版本由 F-Droid 构建并签名，保证与下面的源代码压缩包相对应，要么是\"该版本由原始开发者构建并签名\""
+
+#~ msgid "Most packages are source builds. Those that are binaries are usually that way for technical or historical reasons. Ideally everything in the F-Droid repo would be a source build."
+#~ msgstr "大多数软件包是源代码构建的。那些二进制文件通常是由于技术或历史原因。理想情况下，F-Droid 存储库中的所有东西都是源代码构建。"
+
+#~ msgid "Source builds are built and signed securely by F-Droid, and are accompanied on the web site by a complete and corresponding copy of the exact source code we built it with. It may include some prebuilt libraries and you may need to download some external libraries, but as long as those libraries are still on the internet, you should be able to build an exact copy."
+#~ msgstr "源代码构建是由 F-Droid 安全地构建和签署的，并在网站上附有我们构建的完整和相应的确切的源代码副本。它可能包括一些预构建的库，你可能需要下载一些外部库，但只要这些库还在网络上，你就应该能够建立一个精确的副本。"
+
+#~ msgid "Binary packages are built and signed by the developer. We get them from public sources that the developer makes available directly, and never from third party sources."
+#~ msgstr "二进制包是由开发者建立和签署的。我们从开发者直接提供的公共资源中获取它们，而不是从第三方来源获取。"
+
+#~ msgid "[examples/config.yml]: https://gitlab.com/fdroid/fdroidserver/blob/0.7.0/examples/config.yml \"example config file\""
+#~ msgstr "[examples/config.yml]：https://gitlab.com/fdroid/fdroidserver/blob/0.7.0/examples/config.yml “示例配置文件”"
+
+#~ msgid "- Java sources: _app/src/mycompany/java_ - Manifest file: _app/src/mycompany/AndroidManifest.xml_ - Android resources: _app/src/mycompany/res_ - Assets: _app/src/mycompany/assets_"
+#~ msgstr "- Java sources: _app/src/mycompany/java_ - Manifest file: _app/src/mycompany/AndroidManifest.xml_ - Android resources: _app/src/mycompany/res_ - Assets: _app/src/mycompany/assets_"
