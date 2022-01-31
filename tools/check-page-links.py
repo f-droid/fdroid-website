@@ -76,6 +76,12 @@ for f in sorted(glob.glob('po/*.po*')):
             print('URL', url)
             contents = contents.replace('</https:>', '').replace('<https:>', url)
 
+        # bleach/safe_html plugin messes up <> examples
+        if '</applicationid>' in message.string.lower():
+            output += ('\nMessed up example URL </applicationid> in: %s\n' % message.string)
+            rewrite = True
+            contents = contents.replace('</applicationid>', '')
+
         idlinks = []
         for m in url_link_pattern.findall(message.id):
             idlinks.append(m)
