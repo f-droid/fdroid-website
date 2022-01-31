@@ -27,7 +27,7 @@ The F-Droid ecosystem now provides the pieces necessary for trusted, verifiable 
     
 All of the above pieces have been applied and proven in multiple apps, some already include multiple techniques.  In order for an app to provide trustworthy privacy, all must be applied.
 
-* 100% Free Software: Briar, Bitcoin Wallet, [Die Tageszeitung (TAZ)]({{  site.baseurl}}/packages/de.thecode.android.tazreader), Tutanota
+* 100% Free Software: Briar, Bitcoin Wallet, [Die Tageszeitung (TAZ)]({{  site.baseurl }}/packages/de.thecode.android.tazreader), Tutanota
 * Open, audited crypto entirely in the client software: Briar, Bitcoin Wallet, Tutanota
 * Reproducible builds: Briar, Bitcoin Wallet, F-Droid, [F-Droid Privileged Extension](https://verification.f-droid.org/org.fdroid.fdroid.privileged_2080.apk.json), [Nextcloud](https://verification.f-droid.org/com.nextcloud.client_10040299.apk.json), Öffi, and [more](https://verification.f-droid.org/verified.html).
 * Code signing and distribution based on reproducing the developer's build: Briar, Bitcoin Wallet
