@@ -79,7 +79,14 @@ for dnt in default_dnt:
 
 os.chdir(os.path.join(os.path.dirname(__file__), '..'))
 
-for f in sorted(glob.glob('po/*.po')):
+filelist = []
+with open('_config.yml') as fp:
+    config = yaml.safe_load(fp)
+    for locale in config['languages']:
+        for f in glob.glob('po/_*.%s.po' % locale):
+            filelist.append(f)
+
+for f in sorted(filelist):
     with open(f) as fp:
         source = fp.read()
     for p in patterns:
