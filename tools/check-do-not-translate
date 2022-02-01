@@ -26,10 +26,10 @@ force_dnt = [
     r'''"<hr \/>\\n"''',
     r'''"<https://[A-Z0-9a-z/.?=_-]+>"''',
     r'''"<tt>issuebot</tt>"''',
-    r'''"[GitHub Sponsors](https://docs.github.com/en/billing/managing-billing-for-github-sponsors/about-billing-for-github-sponsors)"''',
-    r'''"[Liberapay](https://liberapay.com/about/faq#fees)"''',
-    r'''"[Open Collective Europe ASBL](https://opencollective.com/europe)"''',
-    r'''"[Open Source Collective 501(c)(6)](https://opencollective.com/opensource)"''',
+    r'''"\[GitHub Sponsors\]\(https://docs.github.com/en/billing/managing-billing-for-github-sponsors/about-billing-for-github-sponsors\)"''',
+    r'''"\[Liberapay\]\(https://liberapay.com/about/faq#fees\)"''',
+    r'''"\[Open Collective Europe ASBL\]\(https://opencollective.com/europe\)"''',
+    r'''"\[Open Source Collective 501\(c\)\(6\)\]\(https://opencollective.com/opensource\)"''',
     r'''"\$ fdroid rewritemeta --to yml\\n"''',
     r'''"\{% include running-a-mirror-rsync.html %\}"''',
     r'''"`fastlane/metadata/android/`"''',
@@ -50,12 +50,14 @@ force_dnt = [
     r'''"sudo apt-get install nginx\\n"''',
     r'''"sudo easy_install fdroidserver\\n"''',
     r'''"{% assign strings = site.data.strings.sidebars.donate %}"''',
-    r''''"apksigner verify --print-certs example.apk | grep SHA-256"''',
-    r'''\$ echo export ANDROID_HOME=\$ANDROID_HOME >> \.bashrc\\n''',
+    r'''"apksigner verify --print-certs example.apk | grep SHA-256"''',
+    r'''"\$ echo export ANDROID_HOME=\$ANDROID_HOME >> \.bashrc\\n"''',
 ]
 
 # these are allowed to be translated, but default to being copied
 default_dnt = [
+    r'''"!\[Article Screenshot\]\({% asset posts/2018-12-13-twif-34-f-droid-is-a-planet/izzy_ct_fdroid_article_part_1.jpg %}\)"''',
+    r'''" *\*\* *\[[^\(]+\]\([^)]+\) *\*\* *"''',
     r'''"Cygwin"''',
     r'''"Fedora/Archlinux"''',
     r'''"Guix"''',
@@ -73,12 +75,19 @@ with open('_data/contributors.yaml') as fp:
     for c in yaml.safe_load(fp):
         default_dnt.append(c['name'])
 
-for d in default_dnt:
-    patterns.append(re.compile(r'\nmsgid ("' + d + '")\nmsgstr ""\n\n'))
+for dnt in default_dnt:
+    patterns.append(re.compile(r'\nmsgid (' + dnt + ')\nmsgstr ""\n\n'))
 
 os.chdir(os.path.join(os.path.dirname(__file__), '..'))
 
-for f in sorted(glob.glob('po/*.po')):
+filelist = []
+with open('_config.yml') as fp:
+    config = yaml.safe_load(fp)
+    for locale in config['languages']:
+        for f in glob.glob('po/_*.%s.po' % locale):
+            filelist.append(f)
+
+for f in sorted(filelist):
     with open(f) as fp:
         source = fp.read()
     for p in patterns:
