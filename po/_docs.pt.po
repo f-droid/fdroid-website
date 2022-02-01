@@ -9,7 +9,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2021-11-08 14:58+0100\n"
+"POT-Creation-Date: 2022-01-31 14:39+0100\n"
 "PO-Revision-Date: 2021-11-13 10:04+0000\n"
 "Last-Translator: SC <lalocas@protonmail.com>\n"
 "Language-Team: Portuguese <https://hosted.weblate.org/projects/f-droid/website-docs/pt/>\n"
@@ -567,6 +567,67 @@ msgstr "Todas as nossas APIs"
 msgid "For F-Droid to be trusted, we need to be transparent.  Making it easy for people to pay attention to all the processes and systems we use helps us stay secure.  These are the APIs with key information about the publishing process."
 msgstr "Para que o F-Droid seja confiável, precisamos de ser transparentes.  Facilitar a atenção das pessoas a todos os processos e sistemas que usamos nos ajuda a ficarmos seguros.  Estas são as APIs com informações chave sobre o processo de publicação."
 
+#. type: Title ##
+#: _docs/All_our_APIs.md
+#, no-wrap
+msgid "Active packages"
+msgstr ""
+
+#. type: Plain text
+#: _docs/All_our_APIs.md
+msgid "There is a per-app API accessible via `https://f-droid.org/api/v1/packages`, which can be used to query information about the applications in the main repository. The JSON API currently lists the published and suggested versions. Archived applications and packages are not available in this API."
+msgstr ""
+
+#. type: Plain text
+#: _docs/All_our_APIs.md
+msgid "Example request:"
+msgstr ""
+
+#. type: Fenced code block
+#: _docs/All_our_APIs.md
+#, fuzzy, no-wrap
+#| msgid "official binary releases: <https://f-droid.org/packages/org.fdroid.fdroid>"
+msgid "GET https://f-droid.org/api/v1/packages/org.fdroid.fdroid HTTP/1.1\n"
+msgstr "lançamentos binários oficiais: <https://f-droid.org/packages/org.fdroid.fdroid>"
+
+#. type: Plain text
+#: _docs/All_our_APIs.md
+msgid "Example response:"
+msgstr ""
+
+#. type: Fenced code block
+#: _docs/All_our_APIs.md
+#, no-wrap
+msgid ""
+"HTTP/1.1 200 OK\n"
+"Content-Type: application/json; charset=utf-8\n"
+msgstr ""
+
+#. type: Fenced code block (json)
+#: _docs/All_our_APIs.md
+#, no-wrap
+msgid ""
+"{\n"
+"  \"packageName\": \"org.fdroid.fdroid\",\n"
+"  \"suggestedVersionCode\": 1009000,\n"
+"  \"packages\": [\n"
+"    {\n"
+"      \"versionName\": \"1.10-alpha0\",\n"
+"      \"versionCode\": 1010000\n"
+"    },\n"
+"    {\n"
+"      \"versionName\": \"1.9\",\n"
+"      \"versionCode\": 1009000\n"
+"    }\n"
+"  ]\n"
+"}\n"
+msgstr ""
+
+#. type: Plain text
+#: _docs/All_our_APIs.md
+msgid "This API is already used by shields.io project to provide F-Droid badges, [like this](https://img.shields.io/f-droid/v/org.fdroid.fdroid)."
+msgstr ""
+
 #. type: Title ###
 #: _docs/All_our_APIs.md
 #, no-wrap
@@ -643,11 +704,6 @@ msgstr "Os quatro passos principais do ciclo de construção são: _checkupdates
 #: _docs/All_our_APIs.md
 msgid "<https://f-droid.org/repo/status/running.json>"
 msgstr "<https://f-droid.org/repo/status/running.json>"
-
-#. type: Bullet: '* '
-#: _docs/All_our_APIs.md
-msgid "<https://f-droid.org/repo/status/checkupdates.json>"
-msgstr "<https://f-droid.org/repo/status/checkupdates.json>"
 
 #. type: Bullet: '* '
 #: _docs/All_our_APIs.md
@@ -857,6 +913,11 @@ msgstr "[Dependências não livres](#NonFreeDep) - precisa de uma app não livre
 
 #. type: Bullet: '* '
 #: _docs/Anti-Features.md
+msgid "[NSFW](#NSFW) - contains content that the user may not want to be publicized or visible everywhere"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/Anti-Features.md
 msgid "[Upstream Non-Free](#UpstreamNonFree) - upstream source code is not libre, and this version has those parts replaced or rewritten"
 msgstr "[Upstream não livre](#UpstreamNonFree) - o código fonte de upstream não é livre, e esta versão tem essas partes substituídas ou reescritas"
 
@@ -904,6 +965,25 @@ msgstr "Observe que a maioria das aplicações que contém publicidade não são
 #. type: Plain text
 #: _docs/Anti-Features.md
 msgid "Here's the list of [apps with Ads](https://monitor.f-droid.org/anti-feature/Ads)."
+msgstr "Aqui está a lista de [apps com publicidade](https://monitor.f-droid.org/anti-feature/Ads)."
+
+#. type: Title ###
+#: _docs/Anti-Features.md
+#, fuzzy, no-wrap
+#| msgid "Ads<a name=\"Ads\" />"
+msgid "NSFW<a name=\"NSFW\" />"
+msgstr "Anúncios<a name = \"Ads\"/>"
+
+#. type: Plain text
+#: _docs/Anti-Features.md
+msgid "This Anti-Feature is applied to an app that contains content that the user may not want to be publicized or visible everywhere. The marked app may contain nudity, profanity, slurs, violence, intense sexuality, political incorrectness, or other potentially disturbing subject matter.  This is especially relevant in environments like workplaces, schools, religious and family settings. The name comes from the Internet term \"Not safe for work\"."
+msgstr ""
+
+#. type: Plain text
+#: _docs/Anti-Features.md
+#, fuzzy
+#| msgid "Here's the list of [apps with Ads](https://monitor.f-droid.org/anti-feature/Ads)."
+msgid "Here's the list of [apps with NSFW](https://monitor.f-droid.org/anti-feature/NSFW)."
 msgstr "Aqui está a lista de [apps com publicidade](https://monitor.f-droid.org/anti-feature/Ads)."
 
 #. type: Title ###
@@ -3490,6 +3570,11 @@ msgstr "‘NonFreeDep’ - a aplicação depende de uma aplicação não livre (
 
 #. type: Bullet: '-   '
 #: _docs/Build_Metadata_Reference.md
+msgid "‘NSFW’ - the app contains content that the user may not want to be publicized or visible everywhere, comes from \"Not Safe For Work\"."
+msgstr ""
+
+#. type: Bullet: '-   '
+#: _docs/Build_Metadata_Reference.md
 msgid "‘UpstreamNonFree’ - the application is or depends on Non-Free software. This does not mean that Non-Free Software is included with the app: Most likely, it has been patched in some way to remove the Non-Free code. However, functionality may be missing."
 msgstr "‘UpstreamNonFree’ - a aplicação é ou depende de software não livre. Isso não significa que o software não livre esteja incluído na aplicação: muito provavelmente foi corrigido de alguma forma para remover o código não livre. No entanto, a funcionalidade pode estar a faltar."
 
@@ -5857,32 +5942,6 @@ msgstr "Ainda não temos um feed dedicado e amigável que possa assinar para nov
 #. type: Title ###
 #: _docs/FAQ_-_General.md
 #, no-wrap
-msgid "What's the difference between source and binary builds?"
-msgstr "Qual é a diferença entre a fonte e compilações binárias?"
-
-#. type: Plain text
-#: _docs/FAQ_-_General.md
-msgid "In the client, each package for an app is labelled either 'source' or 'bin'. These correspond to two different messages you'll see for the same package when browsing the repository on the web site, either \"This version is built and signed by F-Droid, and guaranteed to correspond to the source tarball below\" or \"This version is built and signed by the original developer.\""
-msgstr "No cliente, cada pacote de uma app é rotulado como 'source' ou 'bin'. Estes correspondem a duas mensagens diferentes que verá para o mesmo pacote ao navegar pelo repositório no site ou \"Esta versão é construída e assinada pelo F-Droid e garantidamente corresponde ao tarball de origem abaixo\" ou \"Esta versão é construída e assinada pelo programador original.\""
-
-#. type: Plain text
-#: _docs/FAQ_-_General.md
-msgid "Most packages are source builds. Those that are binaries are usually that way for technical or historical reasons. Ideally everything in the F-Droid repo would be a source build."
-msgstr "A maioria dos pacotes são compilações de código fonte. Os que são binários são o geralmente por razões técnicas ou históricas. Idealmente, tudo no repo F-Droid seria uma fonte de construção."
-
-#. type: Plain text
-#: _docs/FAQ_-_General.md
-msgid "Source builds are built and signed securely by F-Droid, and are accompanied on the web site by a complete and corresponding copy of the exact source code we built it with. It may include some prebuilt libraries and you may need to download some external libraries, but as long as those libraries are still on the internet, you should be able to build an exact copy."
-msgstr "As compilações de código-fonte são construídas e assinadas com segurança pelo F-Droid e são acompanhadas no site por uma cópia completa e correspondente do código-fonte exato com o qual o construímos. Ele pode incluir algumas bibliotecas pré-construídas e podia ter de descarregar algumas bibliotecas externas, mas enquanto essas bibliotecas ainda estão na Internet, Deve ser capaz de construir uma cópia exata."
-
-#. type: Plain text
-#: _docs/FAQ_-_General.md
-msgid "Binary packages are built and signed by the developer. We get them from public sources that the developer makes available directly, and never from third party sources."
-msgstr "Os pacotes binários são construídos e assinados pelo programador. Os obtemos de fontes públicas que o programador disponibiliza diretamente e nunca de fontes de terceiros."
-
-#. type: Title ###
-#: _docs/FAQ_-_General.md
-#, no-wrap
 msgid "Is your building and signing process secure?"
 msgstr "O seu processo de construção e assinatura é seguro?"
 
@@ -5914,7 +5973,9 @@ msgstr "Não usamos software proprietário: O Google Play é um software proprie
 
 #. type: Bullet: '-   '
 #: _docs/FAQ_-_General.md
-msgid "F-Droid, as an app that \"competes\" with Google Play, is against their [Terms of Service](http://play.google.com/about/developer-distribution-agreement.html#non-compete)."
+#, fuzzy
+#| msgid "F-Droid, as an app that \"competes\" with Google Play, is against their [Terms of Service](http://play.google.com/about/developer-distribution-agreement.html#non-compete)."
+msgid "F-Droid, as an app that \"competes\" with Google Play, is against their [Terms of Service (paragraph 4.5)](https://play.google.com/about/developer-distribution-agreement.html)."
 msgstr "F-Droid, uma app que \"compete\" com o Google Play, é contra os [Termos de Serviço](http://play.google.com/about/developer-distribution-agreement.html#non-compete) deles."
 
 #. type: Title ###
@@ -5935,8 +5996,15 @@ msgstr "Se ainda não tiver uma conta ou não quiser criar uma, pode usar nossa 
 
 #. type: Plain text
 #: _docs/FAQ_-_General.md
-msgid "That said, the account username is _fdroid-bug-reporter_ and the password is _repository-collection_."
+#, fuzzy
+#| msgid "That said, the account username is _fdroid-bug-reporter_ and the password is _repository-collection_."
+msgid "That said, the account username is _fdroid-anyone_ and the password is _fdroid does not track_."
 msgstr "Dito isto, o nome de utilizador da conta é _fdroid-bug-reporter_ e a palavra-passe é _repository-collection_."
+
+#. type: Plain text
+#: _docs/FAQ_-_General.md
+msgid "Please note that we will have to remove this account, in case it gets abused."
+msgstr ""
 
 #. type: YAML Front Matter: title
 #: _docs/Feeds.md
@@ -10067,13 +10135,10 @@ msgstr "Para informações sobre como configurar um repositório F-Droid para us
 
 #. type: Plain text
 #: _docs/Signing_Process.md
-msgid "For more in-depth information, see [Security in a thumb drive: the promise and pain of hardware security modules, take one!](https://guardianproject.info/2014/03/28/security-in-a-thumb-drive-the-promise-and-pain-of-hardware-security-modules-take-one/)"
+#, fuzzy
+#| msgid "For more in-depth information, see [Security in a thumb drive: the promise and pain of hardware security modules, take one!](https://guardianproject.info/2014/03/28/security-in-a-thumb-drive-the-promise-and-pain-of-hardware-security-modules-take-one/)"
+msgid "For more in-depth information, see: * _fdroidserver_ example config file: [examples/config.yml](https://gitlab.com/fdroid/fdroidserver/-/blob/2.1a0/examples/config.yml#L125)  * [Publishing an F-Droid Repo using a Hardware Security Module]({{ site.baseurl }}/{% post_url 2020-10-05-ntrokey-signing %})  * [Security in a thumb drive: the promise and pain of hardware security modules, take one!](https://guardianproject.info/2014/03/28/security-in-a-thumb-drive-the-promise-and-pain-of-hardware-security-modules-take-one/)"
 msgstr "Para informações mais detalhadas, veja [Segurança num drive de polegar: a promessa e a dor dos módulos de segurança de hardware, escolha um!](https://guardianproject.info/2014/03/28/security-in-a-thumb-drive-the-promise-and-pain-of-hardware-security-modules-take-one/)"
-
-#. type: Plain text
-#: _docs/Signing_Process.md
-msgid "[examples/config.yml]: https://gitlab.com/fdroid/fdroidserver/blob/0.7.0/examples/config.yml \"example config file\""
-msgstr "[examples/config.yml]: https://gitlab.com/fdroid/fdroidserver/blob/0.7.0/examples/config.yml \"ficheiro de configuração de exemplo\""
 
 #. type: YAML Front Matter: title
 #: _docs/Submitting_to_F-Droid_Quick_Start_Guide.md
@@ -10743,10 +10808,25 @@ msgstr ""
 msgid "Then *gradle* will automatically look at whole set of folders for custom versions of files:"
 msgstr "Então *gradle* irá automaticamente olhar todo o conjunto de pastas para versões personalizadas de ficheiros:"
 
-#. type: Plain text
+#. type: Bullet: '* '
 #: _docs/Whitelabel_Builds.md
-msgid "- Java sources: _app/src/mycompany/java_ - Manifest file: _app/src/mycompany/AndroidManifest.xml_ - Android resources: _app/src/mycompany/res_ - Assets: _app/src/mycompany/assets_"
-msgstr "- Fontes Java: _app/src/mycompany/java_ - ficheiro Manifest: _app/src/mycompany/AndroidManifest.xml_ - Recursos Android: _app/src/mycompany/res_ - Assets: _app/src/mycompany/assets_"
+msgid "Java sources: _app/src/mycompany/java_"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/Whitelabel_Builds.md
+msgid "Manifest file: _app/src/mycompany/AndroidManifest.xml_"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/Whitelabel_Builds.md
+msgid "Android resources: _app/src/mycompany/res_"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/Whitelabel_Builds.md
+msgid "Assets: _app/src/mycompany/assets_"
+msgstr ""
 
 #. type: Plain text
 #: _docs/Whitelabel_Builds.md
