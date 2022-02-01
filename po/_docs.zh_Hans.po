@@ -21,7 +21,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
 "POT-Creation-Date: 2022-01-31 14:39+0100\n"
-"PO-Revision-Date: 2022-01-31 21:11+0000\n"
+"PO-Revision-Date: 2022-02-01 07:12+0000\n"
 "Last-Translator: Eric <alchemillatruth@purelymail.com>\n"
 "Language-Team: Chinese (Simplified) <https://hosted.weblate.org/projects/f-droid/website-docs/zh_Hans/>\n"
 "Language: zh_Hans\n"
@@ -576,17 +576,17 @@ msgstr "为了使 F-Droid 值得信赖，我们需要透明。让人们可以轻
 #: _docs/All_our_APIs.md
 #, no-wrap
 msgid "Active packages"
-msgstr ""
+msgstr "活跃包"
 
 #. type: Plain text
 #: _docs/All_our_APIs.md
 msgid "There is a per-app API accessible via `https://f-droid.org/api/v1/packages`, which can be used to query information about the applications in the main repository. The JSON API currently lists the published and suggested versions. Archived applications and packages are not available in this API."
-msgstr ""
+msgstr "通过 `https://f-droid.org/api/v1/packages`可访问一个每应用 API, 它可用来查询主存储库中应用的信息。JSON API 目前列出了已发布和建议的版本。存档的应用和包在此 API 中不可用。"
 
 #. type: Plain text
 #: _docs/All_our_APIs.md
 msgid "Example request:"
-msgstr ""
+msgstr "实例请求："
 
 #. type: Fenced code block
 #: _docs/All_our_APIs.md
@@ -597,7 +597,7 @@ msgstr "GET https://f-droid.org/api/v1/packages/org.fdroid.fdroid HTTP/1.1\n"
 #. type: Plain text
 #: _docs/All_our_APIs.md
 msgid "Example response:"
-msgstr ""
+msgstr "示例响应："
 
 #. type: Fenced code block
 #: _docs/All_our_APIs.md
@@ -606,6 +606,8 @@ msgid ""
 "HTTP/1.1 200 OK\n"
 "Content-Type: application/json; charset=utf-8\n"
 msgstr ""
+"HTTP/1.1 200 OK\n"
+"Content-Type: application/json; charset=utf-8\n"
 
 #. type: Fenced code block (json)
 #: _docs/All_our_APIs.md
@@ -626,11 +628,25 @@ msgid ""
 "  ]\n"
 "}\n"
 msgstr ""
+"{\n"
+"  \"packageName\": \"org.fdroid.fdroid\",\n"
+"  \"suggestedVersionCode\": 1009000,\n"
+"  \"packages\": [\n"
+"    {\n"
+"      \"versionName\": \"1.10-alpha0\",\n"
+"      \"versionCode\": 1010000\n"
+"    },\n"
+"    {\n"
+"      \"versionName\": \"1.9\",\n"
+"      \"versionCode\": 1009000\n"
+"    }\n"
+"  ]\n"
+"}\n"
 
 #. type: Plain text
 #: _docs/All_our_APIs.md
 msgid "This API is already used by shields.io project to provide F-Droid badges, [like this](https://img.shields.io/f-droid/v/org.fdroid.fdroid)."
-msgstr ""
+msgstr "shields.io 已经使用这个 API 来提供 F-Droid 徽章，[像这样](https://img.shields.io/f-droid/v/org.fdroid.fdroid)。"
 
 #. type: Title ###
 #: _docs/All_our_APIs.md
@@ -909,7 +925,7 @@ msgstr "[非自由依赖项](#NonFreeDep) - 需要一个非自由应用才能工
 #. type: Bullet: '* '
 #: _docs/Anti-Features.md
 msgid "[NSFW](#NSFW) - contains content that the user may not want to be publicized or visible everywhere"
-msgstr ""
+msgstr "[NSFW](#NSFW) - 包含用户可能不希望到处宣传或可见的内容"
 
 #. type: Bullet: '* '
 #: _docs/Anti-Features.md
@@ -971,7 +987,7 @@ msgstr "NSFW<a name=\"NSFW\" />"
 #. type: Plain text
 #: _docs/Anti-Features.md
 msgid "This Anti-Feature is applied to an app that contains content that the user may not want to be publicized or visible everywhere. The marked app may contain nudity, profanity, slurs, violence, intense sexuality, political incorrectness, or other potentially disturbing subject matter.  This is especially relevant in environments like workplaces, schools, religious and family settings. The name comes from the Internet term \"Not safe for work\"."
-msgstr ""
+msgstr "这个负特性应用于一个应用，其中包含的内容，用户可能不希望到处展示或可见。被标记的应用可能包含裸体、亵渎、侮辱、暴力、强烈的性、政治不正确，或其他潜在的令人不安的主题。 这在工作场所、学校、宗教和家庭环境中尤为重要。NSFW 这个名称来自网络术语“Not safe for work”。"
 
 #. type: Plain text
 #: _docs/Anti-Features.md
@@ -3341,7 +3357,7 @@ msgstr "'NonFreeDep' - 应用依赖于一个非自由应用（例如谷歌地图
 #. type: Bullet: '-   '
 #: _docs/Build_Metadata_Reference.md
 msgid "‘NSFW’ - the app contains content that the user may not want to be publicized or visible everywhere, comes from \"Not Safe For Work\"."
-msgstr ""
+msgstr "‘NSFW’ - 应用包含的内容，用户可能不希望到处展示或可见，来自网络术语“Not safe for work”。"
 
 #. type: Bullet: '-   '
 #: _docs/Build_Metadata_Reference.md
@@ -5721,7 +5737,7 @@ msgstr "亦即，帐户用户名是 _fdroid-anyone_，密码是 _fdroid does not
 #. type: Plain text
 #: _docs/FAQ_-_General.md
 msgid "Please note that we will have to remove this account, in case it gets abused."
-msgstr ""
+msgstr "请注意，如账户被滥用，我们将不得不删除它。"
 
 #. type: YAML Front Matter: title
 #: _docs/Feeds.md
@@ -10526,22 +10542,22 @@ msgstr "然后 *gradle* 将自动查看整套文件夹中的自定义版本的�
 #. type: Bullet: '* '
 #: _docs/Whitelabel_Builds.md
 msgid "Java sources: _app/src/mycompany/java_"
-msgstr ""
+msgstr "Java 源：_app/src/mycompany/java_"
 
 #. type: Bullet: '* '
 #: _docs/Whitelabel_Builds.md
 msgid "Manifest file: _app/src/mycompany/AndroidManifest.xml_"
-msgstr ""
+msgstr "Manifest 文件：_app/src/mycompany/AndroidManifest.xml_"
 
 #. type: Bullet: '* '
 #: _docs/Whitelabel_Builds.md
 msgid "Android resources: _app/src/mycompany/res_"
-msgstr ""
+msgstr "Android 资源：_app/src/mycompany/res_"
 
 #. type: Bullet: '* '
 #: _docs/Whitelabel_Builds.md
 msgid "Assets: _app/src/mycompany/assets_"
-msgstr ""
+msgstr "资产：_app/src/mycompany/assets_"
 
 #. type: Plain text
 #: _docs/Whitelabel_Builds.md
