@@ -92,6 +92,9 @@ for commit in reversed(
 ):
     pick = False
     for f in commit.stats.files.keys():
+        if f == '_data/zh_Hans/strings.json':  # ignore edit war
+            continue
+
         m = LOCALE_REGEX.match(f)
         if m and m.group(1) in merge_locales:
             pick = True
