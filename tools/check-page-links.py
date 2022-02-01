@@ -54,6 +54,9 @@ for f in sorted(glob.glob('po/*.po*')):
                     with open(f, 'w') as fp:
                         fp.write(out)
 
+        if re.match(r'.*{ +{', message.string) or re.match(r'.*} +}', message.string):
+            output += 'Broken Liquid tag:' + message.string
+
         if 'type: Title #' in message.auto_comments:
             if message.string:
                 if '"' in (message.string[0], message.string[-1]) and message.string.count('"') % 2:
@@ -95,7 +98,7 @@ for f in sorted(glob.glob('po/*.po*')):
         for m in md_link_pattern.findall(message.string):
             strlinks.append(m)
         if message.id and message.string and len(idlinks) != len(strlinks):
-            output += 'ERROR ' + f + ' ' + str(len(idlinks)) + ' != ' + str(len(strlinks)) + ' ' + message.id + '\n'
+            output += "URL counts don't match: " + f + ' ' + str(len(idlinks)) + ' != ' + str(len(strlinks)) + ' ' + message.id + '\n'
             errorcount += 1
         for i in range(len(strlinks)):
             if message.string and i < len(idlinks) and i < len(strlinks) and strlinks[i] not in idlinks:
