@@ -94,7 +94,7 @@ for f in sorted(glob.glob('po/*.po*')):
             strlinks.append(m)
         for m in md_link_pattern.findall(message.string):
             strlinks.append(m)
-        if message.id and len(strlinks) > 0 and len(idlinks) != len(strlinks):
+        if message.id and message.string and len(idlinks) != len(strlinks):
             output += 'ERROR ' + f + ' ' + str(len(idlinks)) + ' != ' + str(len(strlinks)) + ' ' + message.id + '\n'
             errorcount += 1
         for i in range(len(strlinks)):
