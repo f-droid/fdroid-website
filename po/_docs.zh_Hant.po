@@ -4,17 +4,16 @@
 # Hans-Christoph Steiner <hans@guardianproject.info>, 2021.
 # ifurther <i.further.5.4@gmail.com>, 2021.
 # Ko Sam <sam930903@gmail.com>, 2021, 2022.
-# Calcitem <calcitem@outlook.com>, 2021.
+# Calcitem <calcitem@outlook.com>, 2021, 2022.
 # 謝宗儒 <zongruxie4@gmail.com>, 2022.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
 "POT-Creation-Date: 2022-01-31 14:39+0100\n"
-"PO-Revision-Date: 2022-01-30 14:37+0000\n"
-"Last-Translator: Ko Sam <sam930903@gmail.com>\n"
-"Language-Team: Chinese (Traditional) <https://hosted.weblate.org/projects/f-"
-"droid/website-docs/zh_Hant/>\n"
+"PO-Revision-Date: 2022-02-02 07:30+0000\n"
+"Last-Translator: Calcitem <calcitem@outlook.com>\n"
+"Language-Team: Chinese (Traditional) <https://hosted.weblate.org/projects/f-droid/website-docs/zh_Hant/>\n"
 "Language: zh_Hant\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -1639,13 +1638,13 @@ msgstr "執行 `fdroid build` 來構建任何尚未構建的應用程式。"
 msgid ""
 "Run `fdroid publish` to finalise packaging and sign any APKs that have been "
 "built."
-msgstr ""
+msgstr "執行`fdroid publish`完成封裝，並對所有已構建的 APK 進行簽名。"
 
 #. type: Title ###
 #: _docs/Building_Applications.md
 #, no-wrap
 msgid "App data directory aka _fdroiddata_"
-msgstr ""
+msgstr "應用程式的資料目錄，即 _fdroiddata_"
 
 #. type: Plain text
 #: _docs/Building_Applications.md
@@ -1654,7 +1653,7 @@ msgid ""
 "from this directory that you run the `fdroid` command to perform all "
 "repository management tasks. You can either create a brand new one, or grab "
 "a copy of the data used by the main F-Droid repository:"
-msgstr ""
+msgstr "開始之前，你需要至少一個軟體庫資料目錄。在這個目錄下，可執行 `fdroid` 指令執行所有軟體庫管理任務。可以建立全新的資料，或者復制 F-Droid 主軟體庫使用的資料："
 
 #. type: Fenced code block (bash)
 #: _docs/Building_Applications.md
@@ -1670,7 +1669,7 @@ msgid ""
 "_config.yml_ in the data directory. You should do this by copying the "
 "example file (`./examples/config.yml`) from the fdroidserver project to your "
 "data directory and then editing according to the instructions within."
-msgstr ""
+msgstr "無論如何使用這些工具，總是需要設定一些基本的配置細節：這可透過在資料目錄中建立名一個為 _config.yml_ 的檔案來完成。你應該從 fdroidserver 專案中復制示例檔案 (`./examples/config.yml`) 至你的資料目錄，然後根據其中的說明進行編輯。"
 
 #. type: Plain text
 #: _docs/Building_Applications.md
@@ -1678,14 +1677,14 @@ msgid ""
 "Once configured in this way, all the functionality of the tools is accessed "
 "by running the `fdroid` command. Run it on its own to get a list of the "
 "available sub-commands."
-msgstr ""
+msgstr "按照這種方式設定之後，即可透過 `fdroid` 指令存取這些工具的所有功能。不加參數執行該指令可顯示一個可用的子指令的清單。"
 
 #. type: Plain text
 #: _docs/Building_Applications.md
 msgid ""
 "You can follow any command with `--help` to get a list of additional options "
 "available for that command."
-msgstr ""
+msgstr "任何指令後加上 `--help` 可獲取該指令可用的附加選項清單。"
 
 #. type: Fenced code block (bash)
 #: _docs/Building_Applications.md
@@ -1697,7 +1696,7 @@ msgstr "fdroid update --help\n"
 #: _docs/Building_Applications.md
 #, no-wrap
 msgid "More about `fdroid build`"
-msgstr ""
+msgstr "有關 `fdroid build` 的更多資訊"
 
 #. type: Plain text
 #: _docs/Building_Applications.md
@@ -1708,14 +1707,14 @@ msgid ""
 "things you can do. As with all the tools, the `--help` option is your "
 "friend, but a few annotated examples and discussion of the more common usage "
 "modes follows:"
-msgstr ""
+msgstr "在不加任何參數的情況下執行時，`fdroid build` 將構建所有不在 `repo` 目錄（準確地說，`unsigned` 目錄）中的應用程式版本。你還可以做其他各種事情。和所有工具一樣，`--help` 選項很有幫助，以下為一些常見用途的附有註釋的示例和說明："
 
 #. type: Plain text
 #: _docs/Building_Applications.md
 msgid ""
 "To build a single version of a single application, you could run the "
 "following:"
-msgstr ""
+msgstr "為構建單一應用程式的單一版本，你可以執行如下指令："
 
 #. type: Fenced code block (bash)
 #: _docs/Building_Applications.md
@@ -1729,22 +1728,24 @@ msgid ""
 "This attempts to build version code 16 (which is version 0.25) of the F-"
 "Droid client. Many of the tools recognise arguments as packages, allowing "
 "their activity to be limited to just a limited set of packages."
-msgstr ""
+msgstr "該指令用於編譯版本代碼 16（即 0.25 版本）的 F-Droid 客戶端。這些工具中許多可將參數識別為包，以便其活動僅限於特定一組包。"
 
 #. type: Plain text
 #: _docs/Building_Applications.md
 msgid ""
 "If the build above was successful, two files will have been placed in the "
 "`unsigned` directory:"
-msgstr ""
+msgstr "編譯成功後，`unsigned` 目錄將生成兩個檔案："
 
 #. type: Fenced code block
 #: _docs/Building_Applications.md
-#, no-wrap
+#, fuzzy, no-wrap
 msgid ""
 "org.fdroid.fdroid_16.apk\n"
 "org.fdroid.fdroid_16_src.tar.gz\n"
 msgstr ""
+"org.fdroid.fdroid_16.apk\n"
+"org.fdroid.fdroid_16_src.tar.gz\n"
 
 #. type: Plain text
 #: _docs/Building_Applications.md
@@ -1753,12 +1754,12 @@ msgid ""
 "push it direct to your device or an emulator for testing. The second is a "
 "source tarball containing exactly the source that was used to generate the "
 "binary."
-msgstr ""
+msgstr "第一個檔案是（未簽名的）APK。你可以使用除錯密鑰簽名，然後直接在裝置或模擬器中進行測試。第二個檔案是原始碼 tarball，其中包含生成二進制所用的原始碼。"
 
 #. type: Plain text
 #: _docs/Building_Applications.md
 msgid "If you were intending to publish these files, you could then run:"
-msgstr ""
+msgstr "如果你想要發布這些檔案，請執行："
 
 #. type: Fenced code block (bash)
 #: _docs/Building_Applications.md
@@ -1773,7 +1774,7 @@ msgid ""
 "directory you would push to your web server). A signed and zipaligned "
 "version of the APK would also appear there, and both files would be removed "
 "from the `unsigned` directory."
-msgstr ""
+msgstr "原始碼 tarball 將移動到 `repo` 目錄（這是你將要推送到你的 Web 伺服器的目錄）。 APK 的已簽名和壓縮對齊版本也將出現在那裡，並且這兩個檔案將從 `unsigned` 目錄中被刪除。"
 
 #. type: Plain text
 #: _docs/Building_Applications.md
@@ -1783,7 +1784,7 @@ msgid ""
 "used to direct output to the `tmp` directory instead of `unsigned`. A "
 "similar effect could be achieved by simply deleting the output files from "
 "`unsigned` after the build, but with the risk of forgetting to do so!"
-msgstr ""
+msgstr "如果你純粹是為了測試而構建，並且不打算將結果推送到軟體庫中，至少現在還不打算推送，那麼可以使用 `--test` 選項將輸出指向到 `tmp` 目錄，而不是 `unsigned` 目錄。類似的效果可以透過在構建後簡單地刪除 `unsigned` 目錄中的輸出檔案來實現，但你可能會忘記這麼做！"
 
 #. type: Plain text
 #: _docs/Building_Applications.md
@@ -1793,7 +1794,7 @@ msgid ""
 "be completely ignored. Similarly a version that was found to contain ELFs or "
 "known Non-Free libraries can be forced to build. See also — _scanignore_ and "
 "_scandelete_ in the _Builds_ section."
-msgstr ""
+msgstr "與此相似（並僅在與 `--test` 同時使用時，你可以使用 `--force` 強制構建 Disabled 的應用程式，一般它會被直接忽略。被發現包含 ELF 或已知非自由庫的版本也可以被強制構建。參見 — _構建_章節中的 _scanignore_ 和 _scandelete_。"
 
 #. type: Plain text
 #: _docs/Building_Applications.md
@@ -1801,7 +1802,7 @@ msgid ""
 "If the build was unsuccessful, you can find out why by looking at the output "
 "in the _logs/_ directory. If that isn’t illuminating, try building the app "
 "the regular way, step by step: android update project, ndk-build, ant debug."
-msgstr ""
+msgstr "_如果構建未成功，你可以檢視 _logs/_ 檔案夾中的輸出回饋原因。如果這樣仍未找到原因，嘗試用常規的方法逐步構建應用程式：android update project, ndk-build, ant debug。"
 
 #. type: Plain text
 #: _docs/Building_Applications.md
@@ -1810,13 +1811,13 @@ msgid ""
 "app is being considered for the main F-Droid repository, it is important "
 "that all such prebuilts are built either via the metadata or by a reputable "
 "third party."
-msgstr ""
+msgstr "請注意，原始碼軟體庫通常包含預構建庫。如果想要在 F-Droid 主軟體庫發布該應用程式，那麼所有這些預構建庫都必須透過中介資料或由可信的第三方構建，這點非常重要。"
 
 #. type: Title ###
 #: _docs/Building_Applications.md
 #, no-wrap
 msgid "Running `fdroid build` in your app’s source"
-msgstr ""
+msgstr "在應用程式原始碼中執行 `fdroid build`"
 
 #. type: Plain text
 #: _docs/Building_Applications.md
@@ -1825,14 +1826,14 @@ msgid ""
 "included in the app’s source itself, rather than in a _metadata/_ folder "
 "with lots of other apps. The _.fdroid.yml_ metadata file should be in the "
 "root of your source repo."
-msgstr ""
+msgstr "使用 `fdroid build` 的另一種選擇是使用一個中介資料檔案，該檔案包含在應用程式的原始碼中，而不是在一個有很多其他應用程式的 _metadata/_ 目錄中。 _.fdroid.yml_ 中介資料檔案應當位於軟體庫的根目錄下。"
 
 #. type: Plain text
 #: _docs/Building_Applications.md
 msgid ""
 "Once you have that setup, you can build the most recent version of the app "
 "using the whole F-Droid stack by running:"
-msgstr ""
+msgstr "設定完成之後，你可以透過執行以下指令使用整個 F-Droid 技術棧構建最新版本應用程式："
 
 #. type: Fenced code block (bash)
 #: _docs/Building_Applications.md
@@ -1843,13 +1844,13 @@ msgstr "fdroid build\n"
 #. type: Plain text
 #: _docs/Building_Applications.md
 msgid "If you want to build every single version, then specify `--all`."
-msgstr ""
+msgstr "如需構建每一個版本，可指定 `--all` 選項。"
 
 #. type: Title ###
 #: _docs/Building_Applications.md
 #, no-wrap
 msgid "Direct Installation"
-msgstr ""
+msgstr "直接安裝"
 
 #. type: Plain text
 #: _docs/Building_Applications.md
@@ -1862,13 +1863,13 @@ msgid ""
 "you’re sure that’s what you want, by using `--all`. Note that currently, no "
 "sanity checks are performed with this mode, so if the files in the signed "
 "output directory were modified, you won’t be notified."
-msgstr ""
+msgstr "你還可以使用 `fdroid install` 指令構建並直接安裝到所連接的裝置或模擬器上。如果在不將包作為參數傳遞的情況下執行此操作，則將安裝每個包的所有最新構建和簽名版本。在大多數情況下，這不是你想要做的，因此將直接終止該指令執行。但是，如果你確定這是你想要的，你可以透過使用 `---all` 來覆蓋這一規則。請注意，當前該模式不執行完整性檢查，因此，如果已簽名輸出目錄中的檔案被修改，你不會被提示。"
 
 #. type: YAML Front Matter: title
 #: _docs/Building_a_Signing_Server.md
 #, no-wrap
 msgid "Building a Signing Server"
-msgstr ""
+msgstr "構建簽名伺服器"
 
 #. type: Plain text
 #: _docs/Building_a_Signing_Server.md
@@ -1882,7 +1883,7 @@ msgid ""
 "key/).  Since the signing key is an essential part to preventing APKs from "
 "impersonating another, Android signing keys must be kept safe for the entire "
 "life of the app."
-msgstr ""
+msgstr "Android APK 簽名模型期望簽名密鑰在應用程式的整個生命週期中保持不變。這體現在 Android 簽名密鑰的推薦使用期限上：[20 年以上](https://developer.android.com/studio/publish/app-signing.html#considerations) 。基於此，很難[將應用程式遷移到新密鑰](https://guardianproject.info/2015/12/29/how-to-migrate-your-android-apps-signing-key/)。因為簽名密鑰是防止 APK 冒充其他人的重要部分，所以 Android 簽名密鑰必須在應用程式的整個生命週期中保證安全。"
 
 #. type: Plain text
 #: _docs/Building_a_Signing_Server.md
@@ -1895,7 +1896,7 @@ msgid ""
 "can be delivered via whatever method is most convenient, and their integrity "
 "will be automatically verified by the F-Droid client app, the _f-droid.org_ "
 "deploy process, and Repomaker."
-msgstr ""
+msgstr "F-Droid 軟體庫的簽名密鑰遵循一個非常相似的模型：簽名密鑰是安全識別 F-Droid 軟體庫的重要方式。因此，同樣的考慮適用於F-Droid 軟體庫簽名密鑰和APK簽名密鑰。這也提供了一些真正有用的好處。由於軟體庫索引檔案和 APK 的完整性由軟體庫簽名保證，檔案可以透過任何最方便的方法交付，它們的完整性將被 F-Droid 客戶端應用程式，_f-droid.org_ 部署過程和 Repomaker 自動驗證。"
 
 #. type: Plain text
 #: _docs/Building_a_Signing_Server.md
@@ -1910,13 +1911,13 @@ msgid ""
 "will work, even a 10 year old, basic laptop.  We recommend using a minimal "
 "[Debian](https://www.debian.org) install, and rebuilding the machine from "
 "scratch."
-msgstr ""
+msgstr "這意味著安全負擔從在線的公開的網路伺服器轉移到了私密的簽名機器上。只要讓這台機器遠離公眾的視線，就能在很大程度上提高安全性。可以採取一些額外的措施來進一步提高簽名過程的安全性。這裡有一些方法，從最簡單和最不安全的開始，然後是更安全的設定，但需要更多的工作來設定和執行。簽名不是一個資源密集型的過程，所以任何機器都可以工作，甚至是一台 10 年前的基本的筆記本電腦。我們建議使用一個最小的 [Debian](https://www.debian.org) 安裝，並從頭構建機器。"
 
 #. type: Title ###
 #: _docs/Building_a_Signing_Server.md
 #, no-wrap
 msgid "Automated Signing Server with HSM"
-msgstr ""
+msgstr "帶有 HSM 的自動簽名伺服器"
 
 #. type: Plain text
 #: _docs/Building_a_Signing_Server.md
@@ -1930,7 +1931,7 @@ msgid ""
 "Security Module (HSM) to store the keys prevents them from being stolen if "
 "the server is broken into.  An attacker could only run the signing process "
 "on that server."
-msgstr ""
+msgstr "對於一個完全自動化的簽名設定，執行簽名的機器需要在線並持續執行。理想情況下，這台機器不能有遠程存取，至少遠程存取應該被非常仔細地控制和監控。膝上型電腦即使在禁用遠程存取的情況下，也能很容易地工作，因為它提供了一個內置的鍵盤和顯示器。如果需要遠程存取，那麼任何基本的個人電腦都可以工作。使用硬體安全模組 (HSM) 來存儲密鑰可以防止在伺服器被攻破時密鑰被盜。攻擊者只能在該伺服器上執行簽名過程。"
 
 #. type: Plain text
 #: _docs/Building_a_Signing_Server.md
@@ -1938,7 +1939,7 @@ msgid ""
 "Ideally, this machine would only be accessible via Tor.  That hides the "
 "physical location of the server, and hides the traffic from network.  This "
 "makes it much harder attackers to find the actual machine to attack."
-msgstr ""
+msgstr "理想情況下，這台機器只能透過 Tor 存取。這隱藏了伺服器的物理位置，並隱藏了來自網路的流量。這使得攻擊者更難找到實際的機器進行攻擊。"
 
 #. type: Plain text
 #: _docs/Building_a_Signing_Server.md
@@ -1950,7 +1951,7 @@ msgid ""
 "information could be used to create an automatic auditing process to raise "
 "alarms if too many signatures have been made.  That could mean that this "
 "server was breached and used to sign unauthorized packages."
-msgstr ""
+msgstr "對於HSM，我們推薦使用 [Nitrokey](https://www.nitrokey.com/) 硬體，因為它們是自由軟體/硬體，並提供廣泛的選擇。使用一台單獨的機器將簽名密鑰放在 HSM 上。一個好的 HSM 會儲存一個審計跟踪，記錄簽發了多少個簽名，所以這些資訊可以用來建立一個自動審計程式並在簽名過多的時候發出警報。這可能意味著這台伺服器被攻破並被用來簽署未經授權的軟體包。"
 
 #. type: Plain text
 #: _docs/Building_a_Signing_Server.md
@@ -1958,13 +1959,13 @@ msgid ""
 "Another possibility is to use a setup like [Fedora](https://pagure.io/"
 "sigul)'s [Sigul](http://www.devops-blog.net/koji/gpg-signing-rpms-with-sigul-"
 "signing-server-koji-integration)  that involves three machines."
-msgstr ""
+msgstr "另一種可能是使用類似 [Fedora](https://pagure.io/sigul) 的 [Sigul](http://www.devops-blog.net/koji/gpg-signing-rpms-with-sigul-signing-server-koji-integration) 這樣的涉及三台機器的設定。"
 
 #. type: Title ###
 #: _docs/Building_a_Signing_Server.md
 #, no-wrap
 msgid "Basic laptop dedicated to signing"
-msgstr ""
+msgstr "專門用於簽名的基本膝上型電腦"
 
 #. type: Plain text
 #: _docs/Building_a_Signing_Server.md
@@ -1978,7 +1979,7 @@ msgid ""
 "process.  The signed results can then be published via the network "
 "connection.  When the signing is complete, the machine can be turned off and "
 "disconnected and kept in a safe place."
-msgstr ""
+msgstr "從一台可以完全清除並從頭構建的膝上型電腦開始。最重要的是，只在上面安裝必要的軟體。例如，不要安裝任何瀏覽器，因為這是最常見的攻擊向量。不應安裝或配置遠程存取設定（如 SSH 或 VNC）。為了簽名應用程式和軟體庫，有人會拿出這台膝上型電腦，將其連接到網路，並執行簽名過程。然後，簽名的結果可以透過網路連接發布。當簽名完成後，可以關閉機器，斷開連接，並儲存在一個安全的地方。"
 
 #. type: Plain text
 #: _docs/Building_a_Signing_Server.md
@@ -1986,13 +1987,13 @@ msgid ""
 "This could be made quite automatic with some custom scripts.  The person "
 "running the process would only need to take out the machine, connect it, "
 "turn it on, wait until the process completes, then put it all away again."
-msgstr ""
+msgstr "這可以透過一些定制的腳本使之相當自動化。執行該程式的人只需要拿出機器，連接它，打開它，等待程式完成，然後再把它收起來。"
 
 #. type: Title ###
 #: _docs/Building_a_Signing_Server.md
 #, no-wrap
 msgid "Fully offline signing laptop with USB thumb drives"
-msgstr ""
+msgstr "使用 U 盤的完全離線簽名膝上型電腦"
 
 #. type: Plain text
 #: _docs/Building_a_Signing_Server.md
@@ -2005,7 +2006,7 @@ msgid ""
 "remove.  Otherwise, blocklisting all kernel modules related to neworking can "
 "suffice.  Since this machine is fully offline, the extra work of using an "
 "HSM is not as important, but it can't hurt to include it."
-msgstr ""
+msgstr "這個過程是基於與前一個例子相同的基本的經過裁剪的膝上型電腦。但是這一次，在安裝過程中應該完全禁用網路。例如，在許多膝上型電腦中，很容易從物理上拆除 WiFi 卡。因此，使用不包括以太網插口的膝上型電腦是有意義的，這些插口通常無法移除。否則，可以將所有與網路有關的內核模組列入封鎖名單。由於這台機器是完全離線的，額外使用 HSM 的額外工作並不那麼重要但也無妨。"
 
 #. type: Plain text
 #: _docs/Building_a_Signing_Server.md
@@ -2014,7 +2015,7 @@ msgid ""
 "sure to [verify](https://www.debian.org/CD/verify) the GPG signatures and "
 "the SHA-256 hashes.  In order to update the offline machine, an \"[apt "
 "offline](https://www.debian.org/doc/manuals/apt-offline)\" setup is required."
-msgstr ""
+msgstr "下載完整的 Debian CD 或 DVD 鏡像來執行安裝。請務必[驗證](https://www.debian.org/CD/verify) GPG 簽名和 SHA-256 哈希值。為了更新離線機器，需要進行 [apt 離線](https://www.debian.org/doc/manuals/apt-offline) 設定。"
 
 #. type: Plain text
 #: _docs/Building_a_Signing_Server.md
@@ -2022,14 +2023,14 @@ msgid ""
 "To be extra careful, all of the software used should be verified.  "
 "Chromebooks are nice, cheap laptops that run Linux natively.  They also use "
 "Coreboot for the BIOS."
-msgstr ""
+msgstr "為了格外小心，所有使用的軟體都應經過驗證。 Chromebook 是物美價廉的膝上型電腦，可以原生執行 Linux。它們也可以使用 Coreboot 作為 BIOS。"
 
 #. type: Bullet: '* '
 #: _docs/Building_a_Signing_Server.md
 msgid ""
 "Buy a computer off the shelf with cash, avoid having it shipped, especially "
 "across borders"
-msgstr ""
+msgstr "用現金購買現成的電腦，避免運輸，尤其是跨境運輸"
 
 #. type: Bullet: '* '
 #: _docs/Building_a_Signing_Server.md
@@ -2037,24 +2038,24 @@ msgid ""
 "Buy a Debian-supported [Chromebook](https://www.chromium.org/chromium-os/"
 "developer-information-for-chrome-os-devices/acer-c720-chromebook) with "
 "removeable WiFi hardware, and needs no binary blobs"
-msgstr ""
+msgstr "購買一個支援 Debian 的 [Chromebook](https://www.chromium.org/chromium-os/developer-information-for-chrome-os-devices/acer-c720-chromebook)，帶有可移動的 Wi-Fi 硬體，不需要二進制 blob"
 
 #. type: Bullet: '* '
 #: _docs/Building_a_Signing_Server.md
 msgid "Install a reproducibly built Coreboot binary"
-msgstr ""
+msgstr "安裝一個可重複構建的 Coreboot 二進製檔案"
 
 #. type: Bullet: '* '
 #: _docs/Building_a_Signing_Server.md
 msgid ""
 "Install from a reproducibly built Debian image, wiping out Chrome OS entirely"
-msgstr ""
+msgstr "從一個可重複構建的 Debian 鏡像中安裝，完全清除Chrome OS"
 
 #. type: Title ##
 #: _docs/Building_a_Signing_Server.md
 #, no-wrap
 msgid "The Physical Environment"
-msgstr ""
+msgstr "物理環境"
 
 #. type: Plain text
 #: _docs/Building_a_Signing_Server.md
@@ -2066,38 +2067,38 @@ msgid ""
 "machines, keeping them in a locked room is a good start.  For an online "
 "machine, forcing all network traffic and remote access over Tor hides the "
 "physical location of the machine from network observers."
-msgstr ""
+msgstr "最後要考慮的是簽名發生的物理地點，以及重要裝置的存放地點。簽署環境必須在物理上是安全的。否則，沒有辦法防止膝上型電腦或 HSM 丟失或被用於簽名不適當的內容。對於離線機器，把它們放在一個上鎖的房間裡是一個好的開始。對於在線機器，強制所有的網路流量和遠程存取透過 Tor 進行可以向網路觀察者隱藏機器的物理位置。"
 
 #. type: Plain text
 #: _docs/Building_a_Signing_Server.md
 msgid ""
 "For high risk signing keys, using multiple layers of defense is important:"
-msgstr ""
+msgstr "對於高風險的簽名密鑰，使用多層防護很重要："
 
 #. type: Bullet: '* '
 #: _docs/Building_a_Signing_Server.md
 msgid "Restricted physical access to HSMs or smart cards"
-msgstr ""
+msgstr "限制對 HSM 或智慧卡的物理存取"
 
 #. type: Bullet: '* '
 #: _docs/Building_a_Signing_Server.md
 msgid "Security cameras"
-msgstr ""
+msgstr "安全攝像機"
 
 #. type: Bullet: '* '
 #: _docs/Building_a_Signing_Server.md
 msgid "On-site security guards"
-msgstr ""
+msgstr "現場安保人員"
 
 #. type: Bullet: '* '
 #: _docs/Building_a_Signing_Server.md
 msgid "Visitor logging"
-msgstr ""
+msgstr "訪客記錄"
 
 #. type: Bullet: '* '
 #: _docs/Building_a_Signing_Server.md
 msgid "A tools-resistant server safe for online code-signing servers"
-msgstr ""
+msgstr "一款可安全使用工具的伺服器，適用於在線代碼簽名伺服器"
 
 #. type: Plain text
 #: _docs/Building_a_Signing_Server.md
@@ -2105,13 +2106,13 @@ msgid ""
 "The signing server should be physically separate from the rest of the "
 "infrastructure.  And the logs, machine, and network should be periodically "
 "audited."
-msgstr ""
+msgstr "簽署伺服器應與基礎設施的其他部分在物理上分開。日誌，機器和網路應定期進行審計。"
 
 #. type: Title ##
 #: _docs/Building_a_Signing_Server.md
 #, no-wrap
 msgid "Difficult decisions"
-msgstr ""
+msgstr "困難的決定"
 
 #. type: Plain text
 #: _docs/Building_a_Signing_Server.md
@@ -2121,30 +2122,30 @@ msgid ""
 "They can also delay the process of getting regular updates out.  So there "
 "are risks of implementing too strict security policies, much like the risks "
 "of not implementing enough."
-msgstr ""
+msgstr "理想情況下，所有這些做法都會落實到位，但這些安全措施中的每一項都要付出困難，費用和復雜性的代價。它們也會推遲定期更新的程式。因此，實施太嚴格的安全政策有風險，就像實施不夠的風險一樣。"
 
 #. type: YAML Front Matter: title
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid "Build Metadata Reference"
-msgstr ""
+msgstr "構建中介資料參考"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 msgid ""
 "Information used by `fdroid update` to compile the public index comes from "
 "several sources:"
-msgstr ""
+msgstr "`fdroid update` 用於編譯公共索引的資訊來自多個來源："
 
 #. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
 msgid "APK, media, etc files in the _repo_ sub-directory"
-msgstr ""
+msgstr "_repo_ 子目錄中的 APK、媒體等檔案"
 
 #. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
 msgid "per-package \"metadata\" files in the _metadata_ sub-directory"
-msgstr ""
+msgstr "_metadata_ 子目錄中每個包的“中介資料”檔案"
 
 #. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
@@ -2177,13 +2178,13 @@ msgid ""
 "package/app, the fields use CamelCase starting with an upper case letter.  "
 "All other fields use camelCase starting with a lower case letter, including "
 "per-build fields, localized fields, etc."
-msgstr ""
+msgstr "這些中介資料檔案是簡單且易於編輯的文本檔案，檔案名通常為“包名稱”加檔案類型。有大量可用字段可用於加入資訊以描述包和/或應用程式。對於適用於包或應用程式的所有發布版本的所有字段，如 _AuthorName_，這些字段都使用以一個大寫字母開頭的大駝峰式，形如 CamelCase。所有其他字段都使用一個小寫字母開頭的小駝峰式，形如 camelCase，包括每個構建字段，在地化字段等。"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 msgid ""
 "Metadata files are written in [YAML](http://www.yaml.org/start.html) format"
-msgstr ""
+msgstr "中介資料檔案是用[YAML](http://www.yaml.org/start.html)格式編寫的"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -2196,7 +2197,7 @@ msgid ""
 "comments are considered as being attached to the field following them). In "
 "fact, you can standardise all packages in a repository using a single "
 "command, without changing the functional content, by running:"
-msgstr ""
+msgstr "請注意，儘管中介資料檔案被設計為便於人類讀取和寫入，但它們也可以透過各種腳本進行處理和寫入。必要時可自動清理。結構和註釋將正確保留，但字段順序將標準化。 （如果原始檔案的順序不同，則註釋被視為附加到其後面的字段中）。事實上，你可以透過執行以下指令，在不更改功能內容的情況下，使用單個指令標準化軟體庫中的所有包："
 
 #. type: Fenced code block
 #: _docs/Build_Metadata_Reference.md
@@ -2207,7 +2208,7 @@ msgstr "fdroid rewritemeta\n"
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 msgid "Or just run it on a specific app:"
-msgstr ""
+msgstr "或對特定應用程式，執行："
 
 #. type: Fenced code block
 #: _docs/Build_Metadata_Reference.md
@@ -2218,7 +2219,7 @@ msgstr "fdroid rewritemeta org.adaway\n"
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 msgid "The following sections describe the fields recognised within the file."
-msgstr ""
+msgstr "以下部分描述了檔案中可識別的字段。"
 
 #. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
@@ -2258,7 +2259,7 @@ msgstr "[_AutoName_ (自動名稱  )](#AutoName)"
 #. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
 msgid "[_Name_](#Name)"
-msgstr ""
+msgstr "[_Name_ (應用程式名稱)](#Name)"
 
 #. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
@@ -2275,7 +2276,7 @@ msgstr "[_SourceCode_ (原始碼 )](#SourceCode)"
 #. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
 msgid "[_IssueTracker_](#IssueTracker)"
-msgstr ""
+msgstr "[_IssueTracker_ (問題跟踪器)](#IssueTracker)"
 
 #. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
@@ -2292,7 +2293,7 @@ msgstr "[_Translation_ (更新日誌 Changelog)](#Translation)"
 #. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
 msgid "[_Donate_](#Donate)"
-msgstr ""
+msgstr "[_Donate_ (捐贈)](#Donate)"
 
 #. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
@@ -2349,7 +2350,7 @@ msgstr "[_RepoType_ (軟體庫類型 )](#RepoType)"
 #. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
 msgid "[_Repo_](#Repo)"
-msgstr ""
+msgstr "[_Repo_ (軟體庫)](#Repo)"
 
 #. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
@@ -2360,37 +2361,37 @@ msgstr "[_Binaries_ (二進制 )](#Binaries)"
 #. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
 msgid "[_Builds_](#Builds)"
-msgstr ""
+msgstr "[_Builds_ (構建)](#Builds)"
 
 #. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
 msgid "[_Builds.versionName_](#build_versionName)"
-msgstr ""
+msgstr "[_Builds.versionName_ (版本名)](#build_versionName)"
 
 #. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
 msgid "[_Builds.versionCode_](#build_versionCode)"
-msgstr ""
+msgstr "[_Builds.versionCode_ (版本代碼)](#build_versionCode)"
 
 #. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
 msgid "[_Builds.commit_](#build_commit)"
-msgstr ""
+msgstr "[_Builds.commit_(提交)](#build_commit)"
 
 #. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
 msgid "[_Builds.disable_](#build_disable)"
-msgstr ""
+msgstr "[_Builds.disable_ (禁用)](#build_disable)"
 
 #. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
 msgid "[_Builds.subdir_](#build_subdir)"
-msgstr ""
+msgstr "[_Builds.subdir_ (子檔案夾)](#build_subdir)"
 
 #. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
 msgid "[_Builds.submodules_](#build_submodules)"
-msgstr ""
+msgstr "[_Builds.submodules_ (子模組)](#build_submodules)"
 
 #. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
@@ -2400,12 +2401,12 @@ msgstr ""
 #. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
 msgid "[_Builds.timeout_](#build_timeout)"
-msgstr ""
+msgstr "[_Builds.timeout_ (超時)](#build_timeout)"
 
 #. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
 msgid "[_Builds.init_](#build_init)"
-msgstr ""
+msgstr "[_Builds.init_](#build_init)"
 
 #. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
@@ -2525,12 +2526,12 @@ msgstr ""
 #. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
 msgid "[_Builds.antifeatures_](#build_antifeatures)"
-msgstr ""
+msgstr "[_Builds.antifeatures_ (反特徵)](#build_antifeatures)"
 
 #. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
 msgid "[_AllowedAPKSigningKeys_](#AllowedAPKSigningKeys)"
-msgstr ""
+msgstr "[_AllowedAPKSigningKeys_(允許的 APK 簽名密鑰](#AllowedAPKSigningKeys)"
 
 #. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
@@ -2627,13 +2628,13 @@ msgid ""
 "`Reading`,`Science & Education`,`Security`,`Sports & Health`,`System`,"
 "`Theming`, `Time`,`Writing`), or discuss the proposal to add a new one. "
 "_Categories_ must be a list of items, even if there is just one."
-msgstr ""
+msgstr "要將應用程式置入的任意數量的類別。沒有固定的類別清單 - 客戶端和網站都會自動顯示任何應用程式中存在的任何類別。但是，如果中介資料用於 F-Droid 主軟體庫，則應該使用現有的類別之一（`連接`、`開發`、`遊戲`、`圖像`、`網際網路`、`金融`、`多媒體`、`導覽`、`手機 & 短信`、`閱讀`、`科學&教育`、`安全`、`體育&健康`、`系統`、`主題`、`時間`、`寫作`）或討論提案以增加一個新類別。 _Categories_ 必須是一個專案清單，即使只有一個專案。"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid "This is converted to (`<categories>`) in the XML file (_index.xml_).\n"
-msgstr ""
+msgstr "在 XML 檔案(_index.xml_)中，該字段將被轉換為 (`<categories>`)。\n"
 
 #. type: Title ###
 #: _docs/Build_Metadata_Reference.md
@@ -2647,7 +2648,7 @@ msgid ""
 "The name of the author, either full, abbreviated or pseudonym. If present, "
 "it should represent the name(s) as published by upstream, e.g.  in their "
 "copyright or authors file. This can be omitted (or left blank)."
-msgstr ""
+msgstr "作者名字可為全名、縮寫或別名。如果存在，它應該等同於上游發布的名稱，例如在其版權或作者檔案中。該部分可省略（或留空）。"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -2662,7 +2663,7 @@ msgstr ""
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid "This is converted to (`<author>`) in the XML file (_index.xml_).\n"
-msgstr ""
+msgstr "在 XML 檔案 (_index.xml_) 中，該字段將被轉換為 (`<author>`)。\n"
 
 #. type: Title ###
 #: _docs/Build_Metadata_Reference.md
@@ -2674,7 +2675,7 @@ msgstr "作者電子郵件<a name=\"AuthorEmail\"></a>"
 #: _docs/Build_Metadata_Reference.md
 msgid ""
 "The e-mail address of the author(s). This can be omitted (or left blank)."
-msgstr ""
+msgstr "作者的電子郵箱地址。可省略（或留白）。"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -2689,7 +2690,7 @@ msgstr ""
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid "This is converted to (`<email>`) in the XML file (_index.xml_).\n"
-msgstr ""
+msgstr "在 XML 檔案 (_index.xml_) 中，該字段將被轉換為 (`<email>`)。\n"
 
 #. type: Title ###
 #: _docs/Build_Metadata_Reference.md
@@ -2700,7 +2701,7 @@ msgstr "網站 <a name=\"WebSite\"></a>"
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 msgid "The website url of the author(s). This can be omitted (or left blank)."
-msgstr ""
+msgstr "作者網站的連結。可省略（或留空）。"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -2728,7 +2729,7 @@ msgid ""
 "then this field should contain the least restrictive license that the whole "
 "app can be used under.  When multiple licenses are combined, that usually "
 "means the most restrictive wins."
-msgstr ""
+msgstr "在用戶可以安裝的二進製檔案意義上的應用程式的總體授權條款。值應對應於 [SPDX](https://spdx.org/licenses/) 授權條款清單的短標識符。這裡只能列出一個授權條款。如果有多個適用於原始碼的授權條款，那麼這個字段應該包含整個應用程式程式可以使用的限制性最小的授權條款。當多個授權條款結合時，通常意味著限制性最強的授權條款獲勝。"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -2736,13 +2737,13 @@ msgid ""
 "This field cannot represent the complexity of licenses that apply to parts "
 "of the app, or apps that have the entire thing released under more than one "
 "license."
-msgstr ""
+msgstr "這個字段不能表示適用於部分應用程式的授權條款的複雜性，或者整體在一個以上的授權條款下發布的應用程式。"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid "This is converted to (`<license>`) in the XML file (_index.xml_).\n"
-msgstr ""
+msgstr "在 XML 檔案 (_index.xml_) 中，該字段將被轉換為 (`<license>`) 。\n"
 
 #. type: Title ###
 #: _docs/Build_Metadata_Reference.md
@@ -2759,7 +2760,7 @@ msgid ""
 "found. The _AutoName_ entry is generated automatically when `fdroid "
 "checkupdates` is run, and is only used for the commit messages generated by "
 "`fdroid checkupdates`."
-msgstr ""
+msgstr "應用程式的名稱可以最好地從原始碼中檢索出來。這樣做是為了讓 `fdroid checkupdates` 能夠在發現應用程式的新更新時，在建立的提交描述中放入一個熟悉的名字。 _AutoName_ 條目在 `fdroid checkupdates` 執行時自動生成，並且只用於 `fdroid checkupdates` 生成的提交訊息。"
 
 #. type: Title ###
 #: _docs/Build_Metadata_Reference.md
@@ -2779,12 +2780,12 @@ msgid ""
 "application name, it can be overridden using this. Note that this only "
 "overrides the name in the list of apps presented in the client; it doesn’t "
 "change the name or application label in the source code."
-msgstr ""
+msgstr "應用程式的標題，可選描述性短語。這個字段將覆蓋所有其他來源的應用程式名稱，包括從 APK 和[在地化中介資料](../All_About_Descriptions_Graphics_and_Screenshots)中抓取的名稱。一般不需要設定 _Name_，因為應用程式的正確名稱是從 APK 檔案中檢索出來的。然而，在 APK 包含一個壞的或缺失的應用程式名稱的情況下，可以用這個來覆蓋它。請注意，這只覆蓋客戶端顯示的應用程式清單中的名稱；它並不改變原始碼中的名稱或應用程式標籤。"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 msgid "__50 character limit__"
-msgstr ""
+msgstr "__50 個字元限制__"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -2800,7 +2801,7 @@ msgstr ""
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid "This is converted to (`<name>`) in the XML file (_index.xml_).\n"
-msgstr ""
+msgstr "在 XML 檔案 (_index.xml_) 中，該字段將被轉換為 (`<name>`)。\n"
 
 #. type: Title ###
 #: _docs/Build_Metadata_Reference.md
@@ -2813,13 +2814,13 @@ msgstr "網站 <a name=\"WebSite\"></a>"
 msgid ""
 "The URL for the application’s web site. If there is no relevant web site, "
 "this can be omitted (or left blank)."
-msgstr ""
+msgstr "該應用程式的網站 URL。如果沒有相關的網站，可以省略（或留空）。"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid "This is converted to (`<web>`) in the XML file (_index.xml_).\n"
-msgstr ""
+msgstr "在 XML 檔案 (_index.xml_) 中，該字段將被轉換為 (`<web>`)。\n"
 
 #. type: Title ###
 #: _docs/Build_Metadata_Reference.md
@@ -2833,32 +2834,32 @@ msgid ""
 "The URL to view or obtain the application’s source code. This should be "
 "something human-friendly. Machine-readable source-code is covered in the "
 "_Repo_ field."
-msgstr ""
+msgstr "用於檢視或獲取應用程式原始碼的 URL。這應該是人類友好的頁面。機器可讀的原始碼在由 _Repo_ 字段涵蓋。"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid "This is converted to (`<source>`) in the XML file (_index.xml_).\n"
-msgstr ""
+msgstr "在 XML 檔案 (_index.xml_) 中，該字段將被轉換為 (`<source>`)。\n"
 
 #. type: Title ###
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid "_IssueTracker_<a name=\"IssueTracker\"></a>"
-msgstr ""
+msgstr "_IssueTracker_ (問題追踪器)<a name=\"IssueTracker\\\"></a>"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 msgid ""
 "The URL for the application’s issue tracker. Optional, since not all "
 "applications have one."
-msgstr ""
+msgstr "應用程式的問題跟踪器 URL。可選，因為不是所有的應用程式都有。"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid "This is converted to (`<tracker>`) in the XML file (_index.xml_).\n"
-msgstr ""
+msgstr "在 XML 檔案 (_index.xml_) 中，該字段將被轉換為 (`<tracker>`)。\n"
 
 #. type: Title ###
 #: _docs/Build_Metadata_Reference.md
@@ -2871,7 +2872,7 @@ msgstr "更新日誌 <a name=\"Changelog\"></a>"
 msgid ""
 "The URL for the application’s translation portal or at least a guide.  "
 "Optional, since not all applications have one."
-msgstr ""
+msgstr "應用程式的翻譯門戶或至少是一個指南的 URL。可選，因為不是所有的應用程式都有。"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -2890,13 +2891,13 @@ msgstr "更新日誌 <a name=\"Changelog\"></a>"
 msgid ""
 "The URL for the application’s changelog. Optional, since not all "
 "applications have one."
-msgstr ""
+msgstr "應用程式的更新日誌 URL。可選，因為不是所有的應用程式都有。"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid "This is converted to (`<changelog>`) in the XML file (_index.xml_).\n"
-msgstr ""
+msgstr "在 XML 檔案 (_index.xml_) 中，該字段將被轉換為 (`<changelog>`)。\n"
 
 #. type: Title ###
 #: _docs/Build_Metadata_Reference.md
@@ -2909,7 +2910,7 @@ msgstr "贊助 <a name=\"Donate\"></a>"
 msgid ""
 "The URL to donate to the project. This should be the project’s donate page "
 "if it has one."
-msgstr ""
+msgstr "用於捐贈專案的 URL。這應該是專案的捐贈頁面，如果有的話。"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -2920,13 +2921,13 @@ msgid ""
 "PayPal link format changed, things could go wrong. It is always best to use "
 "a link that the developer explicitly makes public, rather than something "
 "that is auto-generated ’button code’."
-msgstr ""
+msgstr "在這裡使用直接的 PayPal 連結是可能的，如果這是僅有的。然而，請記住，開發者可能不知道這個直接連結，如果他們後來改用了一個不同的 PayPal 賬戶，或者 PayPal 連結的格式改變了，就可能出錯。最好是使用開發者明確公開的連結，而不是使用自動生成的“按鈕代碼”。"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid "This is converted to (`<donate>`) in the XML file (_index.xml_).\n"
-msgstr ""
+msgstr "在 XML 檔案 (_index.xml_) 中，該字段將被轉換為 (`<donate>`)。\n"
 
 #. type: Title ###
 #: _docs/Build_Metadata_Reference.md
@@ -2940,13 +2941,13 @@ msgid ""
 "The project’s Flattr (https://flattr.com) ID, if it has one. This should be "
 "a numeric ID, such that (for example) https://flattr.com/thing/xxxx leads "
 "directly to the page to donate to the project."
-msgstr ""
+msgstr "專案的 Flattr (https://flattr.com) ID，如果有的話。這應該是一個數位 ID，使（例如）https://flattr.com/thing/xxxx 直接指向為該專案捐款的頁面。"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid "This is converted to (`<flattr>`) in the XML file (_index.xml_).\n"
-msgstr ""
+msgstr "在 XML 檔案 (_index.xml_) 中，該字段將被轉換為 (`<flattr>`)。\n"
 
 #. type: Title ###
 #: _docs/Build_Metadata_Reference.md
@@ -2956,13 +2957,14 @@ msgstr "_Liberapay_<a name=\"Liberapay\"></a><a name=\"LiberapayID\"></a>"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
+#, fuzzy
 msgid ""
 "The project’s Liberapay (https://liberapay.com) user or group name, if it "
 "has one. This should be an alphanumeric name, such that (for example) "
 "https://liberapay.com/xxxxx which redirects to your account page. This used "
 "to be _LiberapayID_, which was a numeric ID fetched from Liberapay’s site by "
 "adding /public.json behind your team page."
-msgstr ""
+msgstr "專案的 Liberapay (https://liberapay.com) 用戶或組名，如果有的話。這應該是一個由字母數位組成的名字，使（例如）https://liberapay.com/xxxxx 可以重定向到你的賬戶頁面。這曾經是_LiberapayID_，透過在你的團隊頁面後面加入 /public.json 從 Liberapay 的網站獲取的一個數位 ID。"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -2982,7 +2984,7 @@ msgid ""
 "The project’s OpenCollective (https://opencollective.com) user or group "
 "name, if it has one. This should be an alphanumeric name, such that (for "
 "example) https://opencollective.com/xxxxx redirects to your account page."
-msgstr ""
+msgstr "專案的 OpenCollective (https://opencollective.com) 用戶或組名，如果有的話。這應該是一個字母數位組成的名稱，使（例如）https://opencollective.com/xxxxx 指向你的賬戶頁面。"
 
 #. type: Title ###
 #: _docs/Build_Metadata_Reference.md
@@ -2993,13 +2995,13 @@ msgstr "Bitcoin <a name=\"Bitcoin\"></a>"
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 msgid "A bitcoin address for donating to the project."
-msgstr ""
+msgstr "一個用於捐贈專案的比特幣地址。"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid "This is converted to (`<bitcoin>`) in the XML file (_index.xml_).\n"
-msgstr ""
+msgstr "在 XML 檔案 (_index.xml_) 中，該字段將被轉換為 (`<bitcoin>`) 。\n"
 
 #. type: Title ###
 #: _docs/Build_Metadata_Reference.md
@@ -3010,13 +3012,13 @@ msgstr "Litecoin <a name=\"Litecoin\"></a>"
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 msgid "A litecoin address for donating to the project."
-msgstr ""
+msgstr "一個用於捐贈給專案的萊特幣地址。"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid "This is converted to (`<litecoin>`) in the XML file (_index.xml_).\n"
-msgstr ""
+msgstr "在 XML 檔案 (_index.xml_) 中，該字段將被轉換為 (`<litecoin>`)。\n"
 
 #. type: Title ###
 #: _docs/Build_Metadata_Reference.md
@@ -3030,12 +3032,12 @@ msgid ""
 "A brief summary of what the application is.  The _Summary_ is used in the "
 "app list and tile views of the F-Droid client, and as a sub-headline in some "
 "other views."
-msgstr ""
+msgstr "關於該應用程式是什麼的簡介。 _Summary_ 用於 F-Droid 客戶端的應用程式清單和磁貼視圖中，並作為其他一些視圖的副標題。"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 msgid "__80 character limit__"
-msgstr ""
+msgstr "__80 個字元限制__"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -3052,7 +3054,7 @@ msgstr ""
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid "This is converted to (`<summary>`) in the XML file (_index.xml_).\n"
-msgstr ""
+msgstr "在 XML 檔案(_index.xml_) 中，該字段將被轉換為 (`<summary>`)。\n"
 
 #. type: Title ###
 #: _docs/Build_Metadata_Reference.md
@@ -3066,24 +3068,24 @@ msgid ""
 "A full description of the application, relevant to the latest version.  This "
 "can span multiple lines (which should be kept to a maximum of 80 "
 "characters), and is terminated by a line containing a single ’.’."
-msgstr ""
+msgstr "對應用程式最新版本的完整描述。這可以跨越多行（每行應保持在 80 個字元以內），並以包含一個單 ‘.’ 的行作為結束。"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 msgid ""
 "The description formatting follows the established conventions that work "
 "across many app stores:"
-msgstr ""
+msgstr "描述的格式遵循許多應用程式商店的既定慣例："
 
 #. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
 msgid "Basic HTML formatting can be used."
-msgstr ""
+msgstr "可以使用基本的 HTML 格式化。"
 
 #. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
 msgid "Newlines will be preserved."
-msgstr ""
+msgstr "換行將被保留。"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -3091,7 +3093,7 @@ msgstr ""
 msgid ""
 "* Links to other packages on f-droid.org will show up as clickable on\n"
 "the website, other links will show up as plain text.\n"
-msgstr ""
+msgstr "* f-droid.org 上的其他軟體包的連結將在網站上顯示為可點擊連結，其他連結將顯示為純文本。\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -3102,12 +3104,12 @@ msgid ""
 "rapid development or whether the latest version lags behind the current "
 "version; whether the app supports multiple architectures or whether there is "
 "a maximum SDK specified (such info not being recorded in the index)."
-msgstr ""
+msgstr "與從更早版本更新有關的註釋資訊是很有幫助的；應用程式是否包含任何由上游開發者預構建內容，或者是否移除了非自由元素；應用程式是否處於快速開發階段，或者最新版本是否落後於當前版本；應用程式是否支援多種架構，或者是否有指定的最大 SDK（此類資訊未被記錄在索引中）。"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 msgid "__4000 character limit__"
-msgstr ""
+msgstr "__4000 個字元限制__"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -3124,7 +3126,7 @@ msgstr ""
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid "This is converted to (`<desc>`) in the XML file (_index.xml_).\n"
-msgstr ""
+msgstr "在 XML 檔案 (_index.xml_) 中，該字段將被轉換為 (`<desc>`)。\n"
 
 #. type: Title ###
 #: _docs/Build_Metadata_Reference.md
@@ -3138,12 +3140,12 @@ msgid ""
 "This is a multi-line field using the same rules and syntax as the "
 "description. It’s used to record notes for F-Droid maintainers to assist in "
 "maintaining and updating the application in the repository."
-msgstr ""
+msgstr "這是一個多行字段，使用與描述相同的規則和語法。它用於記錄 F-Droid 維護者的注意事項，以協助維護和更新倉庫中的應用程式。"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 msgid "This information is also published to the wiki."
-msgstr ""
+msgstr "這些資訊也會發佈到維基上。"
 
 #. type: Title ###
 #: _docs/Build_Metadata_Reference.md
@@ -3157,7 +3159,7 @@ msgid ""
 "The type of repository - for automatic building from source. If this is not "
 "specified, automatic building is disabled for this application.  Possible "
 "values are:"
-msgstr ""
+msgstr "軟體庫類型 - 用於從原始碼自動構建。如果不指定這個，這個應用程式的自動構建將被禁用。可能的值為："
 
 #. type: Bullet: '-   '
 #: _docs/Build_Metadata_Reference.md
@@ -3198,7 +3200,7 @@ msgstr "軟體庫 <a name=\"Repo\"></a>"
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 msgid "The repository location. Usually a git: or svn: URL, for example."
-msgstr ""
+msgstr "軟體庫的位置。通常是 git: 或 svn: URL。"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -3215,7 +3217,7 @@ msgid ""
 "the svn repo root dir. Here’s an example of a complex git-svn _Repo_ URL: "
 "http://svn.code.sf.net/p/project/code/svn;trunk=trunk;tags=tags;"
 "branches=branches"
-msgstr ""
+msgstr "git-svn 選項連接到一個 SVN 倉庫，你以完全相同的方式指定 URL，但 git 被用作後端。出於性能方面的考慮，這樣做比較好，而且還因為在上游倉庫消失的情況下，可以在本地拷貝整個歷史。 （這種情況時有發生！）為了將 Tags 作為 _UpdateCheckMode_ 用於該 VCS 類型，URL 必須設定 tags= 特殊參數。同樣，如果你打算使用 RepoManifest/branch 方案，你也要指定 branch=。最後，還可以加上 trunk=。所有這些特殊參數將依次傳遞給 \\\"git svn\\\"，其值必須是 svn repo 根目錄的相對路徑。下面是一個複雜的 git-svn _Repo_ URL 的例子：http://svn.code.sf.net/p/project/code/svn;trunk=trunk;tags=tags;branch=branches"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -3223,7 +3225,7 @@ msgid ""
 "If the _RepoType_ is `srclib`, then you must specify the name of the "
 "according srclib .txt file. For example if `scrlibs/FooBar.txt` exist and "
 "you want to use this srclib, then you have to set _Repo_ to `FooBar`."
-msgstr ""
+msgstr "如果 _RepoType_ 是 `srclib`，那麼你必須指定相應的 srclib .txt 檔案的名稱。例如，如果存在 `scrlibs/FooBar.txt` 並且你想使用這個 srclib，那麼你必須將 _Repo_ 設定為 `FooBar`。"
 
 #. type: Title ###
 #: _docs/Build_Metadata_Reference.md
@@ -3234,7 +3236,7 @@ msgstr "二進制 <a name=\"Binaries\"></a>"
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 msgid "The location of binaries used in verification process."
-msgstr ""
+msgstr "驗證過程中使用的二進製檔案的位置。"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -3243,12 +3245,12 @@ msgid ""
 "one specified. You can use %v and %c to point to the version name and "
 "version code of the current build. To verify the F-Droid client itself you "
 "could use: `Binaries: https://f-droid.org/repo/org.fdroid.fdroid_%c.apk`"
-msgstr ""
+msgstr "如果指定了，F-Droid 將驗證輸出的 APK 檔案和指定的檔案。你可以使用 %v 和 %c 來指向當前構建的版本名稱和版本代碼。為了驗證 F-Droid 客戶端本身，你可以使用：`Binaries: https://f-droid.org/repo/org.fdroid.fdroid_%c.apk`"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 msgid "F-Droid will use upstream binaries if the verification succeeded."
-msgstr ""
+msgstr "如果驗證成功，F-Droid 將使用上游的二進製檔案。"
 
 #. type: Title ###
 #: _docs/Build_Metadata_Reference.md
@@ -3261,7 +3263,7 @@ msgstr "構建 <a name=\"Build\"></a>"
 msgid ""
 "Any number of sub-entries can be present, each specifying a version to "
 "automatically build from source.  For example:"
-msgstr ""
+msgstr "可以有任何數量的子條目，每個條目都指定了一個從原始碼自動構建的版本。例如："
 
 #. type: Fenced code block
 #: _docs/Build_Metadata_Reference.md
@@ -3301,7 +3303,7 @@ msgstr "當前版本代碼 <a name=\"CurrentVersionCode\"></a>"
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid ":   Specifies to build version xxx, which has a version code of yyy.\n"
-msgstr ""
+msgstr "：指定構建版本 xxx，該版本的代碼為 yyy。\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -3311,11 +3313,11 @@ msgstr "Bitcoin <a name=\"Bitcoin\"></a>"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-#, no-wrap
+#, fuzzy, no-wrap
 msgid ""
 ":   The _commit_ parameter specifies the tag, commit or revision number\n"
 "    from which to build it in the source repository.\n"
-msgstr ""
+msgstr "：_commit_ 參數指定了在源軟體庫中構建它的標籤、提交或修訂號。\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -3323,7 +3325,7 @@ msgid ""
 "In addition to the three, always required, parameters described above, "
 "further parameters can be added (in `name: value` format) to apply further "
 "configuration to the build. These are (roughly in order of application):"
-msgstr ""
+msgstr "除了上述三個始終需要的參數外，還可以加入更多的參數（以 `name: value` 的格式）來對構建進行進一步配置。這些參數是（大致按應用程式順序排列）："
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -3338,11 +3340,11 @@ msgid ""
 ":   Disables this build, giving a reason why. (For backwards\n"
 "    compatibility, this can also be achieved by starting the commit ID\n"
 "    with ’!’)\n"
-msgstr ""
+msgstr "：禁用此構建，並給出原因。 (為了向後相容，這也可以透過以 '!' 開頭的提交 ID來實現）。\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-#, no-wrap
+#, fuzzy, no-wrap
 msgid ""
 "    The purpose of this feature is to allow non-buildable releases (e.g.\n"
 "    the source is not published) to be flagged, so the scripts don’t\n"
@@ -3350,7 +3352,7 @@ msgid ""
 "    information for review later). If an APK has already been built,\n"
 "    disabling causes it to be deleted once `fdroid update` is run; this\n"
 "    is the procedure if ever a version has to be replaced.\n"
-msgstr ""
+msgstr "    這個功能的目的是讓不可編譯的版本（比如說原始碼沒有發布）被旗標出來，這樣腳本就不會產生關於它們的重複資訊。 (同時也是為了記錄這些資訊以便日後審查）。如果一個 APK 已經被構建了，禁用會導致它在 `fdroid update` 執行後被刪除；這是如果有一個版本需要被替換時所需的步驟。\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -3360,11 +3362,11 @@ msgstr "構建 <a name=\"Build\"></a>"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-#, no-wrap
+#, fuzzy, no-wrap
 msgid ""
 ":   Specifies to build from a subdirectory of the checked out source\n"
 "    code. Normally this directory is changed to before building,\n"
-msgstr ""
+msgstr "：指定從檢出的原始碼的一個子目錄中構建。通常情況下在構建前移至此目錄。\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -3374,13 +3376,13 @@ msgstr "構建 <a name=\"Build\"></a>"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-#, no-wrap
+#, fuzzy, no-wrap
 msgid ""
 ":   Use if the project (git only) has submodules - causes\n"
 "    `git submodule update --init --recursive` to be executed after the\n"
 "    source is cloned. Submodules are reset and cleaned like the main app\n"
 "    repository itself before each build.\n"
-msgstr ""
+msgstr "：如果專案（僅 git）有子模組，則使用 - 使得 `git submodule update --init --recursive` 將在原始碼被複製後執行。子模組在構建前和主應用程式軟體庫本身一樣被重置和清理。\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -3390,7 +3392,7 @@ msgstr "構建 <a name=\"Build\"></a>"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-#, no-wrap
+#, fuzzy, no-wrap
 msgid ""
 ":   Specifies a script to be run using `sudo bash -x -c \"xxxx\"` in the\n"
 "    buildserver VM guest.  This script is run with full root privileges,\n"
@@ -3399,7 +3401,7 @@ msgid ""
 "    is useful for setting up the buildserver for complex builds that\n"
 "    need very specific things that are not appropriate to install for\n"
 "    all builds, or for things that would conflict with other builds.\n"
-msgstr ""
+msgstr "：指定一個使用 `sudo bash -x -c \\\"xxxx\\\"` 在 buildserver VM guest 中執行的腳本。這個腳本是以完全的 root 權限執行的，但在每次構建後，其狀態將被重置。絕大多數的應用程式都是使用標準的 Debian/stable 基本環境來構建的。這對於設定需要非常特殊東西的複雜的構建伺服器是很有用的。而這些東西不適合在所有的構建中安裝或者與其他構建衝突。\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -3414,7 +3416,7 @@ msgid ""
 ":   Time limit for this build (in seconds).  After time is up,\n"
 "    buildserver VM is forcefully terminated.  The default is 7200\n"
 "    (2 hours); 0 means no limit.\n"
-msgstr ""
+msgstr "：該構建的時間限制（以秒為單位）。到時間之後，buildserver VM 會被強制終止。預設是 7200（2小時）；0 表示沒有限制。\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -3422,7 +3424,7 @@ msgstr ""
 msgid ""
 "    Limitation is applied only in server mode, i.e. when `fdroid build`\n"
 "    is invoked with the `--server` option.\n"
-msgstr ""
+msgstr "    限制只適用於伺服器模式，即當 `fdroid build` 被使用 `--server` 選項呼叫時。\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -3436,7 +3438,7 @@ msgstr ""
 msgid ""
 ":   Like ’prebuild’, but runs on the source code BEFORE any other\n"
 "    processing takes place.\n"
-msgstr ""
+msgstr "：與 'prebuild' 類似，但在任何其他處理髮生之前在原始碼上執行。\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -3447,7 +3449,7 @@ msgid ""
 "    executable respectively. The following\n"
 "    per-build variables are available likewise: \\$\\$VERSION\\$\\$,\n"
 "    \\$\\$VERCODE\\$\\$ and \\$\\$COMMIT\\$\\$.\n"
-msgstr ""
+msgstr "    你可以用 \\\\$\\\\$SDK\\\\$\\\\$，\\\\$\\\\$NDK\\\\$\\\\$ 和 \\\\$\\\\$MVN3\\\\$\\\\$ 來分別代替 android SDK 和 NDK 目錄以及 maven 3 可執行檔案的路徑。同樣，也可以使用以下預構建的變量：\\\\$\\\\$VERSION\\\\$\\\\$，\\\\$\\\\$VERCODE\\\\$\\\\$ 和 \\\\$\\\\$COMMIT\\\\$\\\\$。\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -3464,7 +3466,7 @@ msgid ""
 "    format is sdk-location. Typically, if you get a message along the\n"
 "    lines of: \"com.android.ant.SetupTask cannot be found\" when trying to\n"
 "    build, then try enabling this option.\n"
-msgstr ""
+msgstr "：軟體庫中的 sdk 位置是舊格式的，或者 build.xml 希望是這樣。新的 格式是 sdk.dir 而非常老的格式是 sdk-location。通常情況下，如果當你試圖構建時得到一個這樣的資訊：\\\"com.android.ant.SetupTask cannot be found \\\"，嘗試啟用這個選項。\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -3482,7 +3484,7 @@ msgid ""
 "    Ant, Maven and Gradle projects only. Note that this does not change\n"
 "    the target SDK in the AndroidManifest.xml, which determines the\n"
 "    level of features that can be included in the build.\n"
-msgstr ""
+msgstr "：指定一個特定的 SDK 目標進行編譯，覆蓋代碼中由上游定義的值。取決於所使用的構建系統具有不同的作用 - 這個標誌目前只影響 Ant，Maven 和 Gradle 專案。請注意，這並不改變 AndroidManifest.xml 中的目標 SDK，它決定了可以包含在構建中的功能的級別。\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -3493,7 +3495,7 @@ msgid ""
 "    _build.xml_ to be rewritten, which is fine if it’s a ’standard’\n"
 "    android file or doesn’t already exist, but not a good idea if it’s\n"
 "    heavily customised.\n"
-msgstr ""
+msgstr "    在 Ant 專案的情況下，它修改應用程式和可能的子專案的 _project.properties_。這可能會導致整個 _build.xml_ 被重寫，如果它是一個“標準”的 android 檔案或不存在就沒有問題，但如果它是高度自訂的檔案就會導致問題。\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -3509,7 +3511,7 @@ msgid ""
 "    update the project and all its referenced projects. Specifying\n"
 "    update=no bypasses that. Note that this is useless in builds that\n"
 "    don’t use Ant.\n"
-msgstr ""
+msgstr "：預設情況下，'android update' 在 Ant 構建中被用來生成或更新該專案及其所有引用的專案。指定 update=no 可以跳過此步驟。請注意，這在不使用 Ant 的構建中不起作用。\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -3517,7 +3519,7 @@ msgstr ""
 msgid ""
 "    Default value is ’`auto`’, which recursively uses the paths in\n"
 "    _project.properties_ to find all the subprojects to update.\n"
-msgstr ""
+msgstr "    預設值是 '`auto`'，它遞歸地使用 _project.properties_ 中的路徑找到所有要更新的子專案。\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -3525,7 +3527,7 @@ msgstr ""
 msgid ""
 "    Otherwise, the value can be a comma-separated list of directories in\n"
 "    which to run ’android update’ relative to the application directory.\n"
-msgstr ""
+msgstr "    否則，該值可以是一個以逗號分隔的相對於應用程式檔案夾的檔案夾清單，在其中執行 'android update'。\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -3542,7 +3544,7 @@ msgid ""
 "    by the SDK’s ant rules, and forces the Java compiler to interpret\n"
 "    source files with this encoding. If you receive warnings during the\n"
 "    compile about character encodings, you probably need this.\n"
-msgstr ""
+msgstr "：在 local.properties 中加入一個 java.encoding 屬性，其值為給定的值。一般來說，這個值是 'utf-8'。這將被 SDK 的 ant 規則接收，並強制 Java 編譯器使用這個編碼解釋源檔案。如果你在編譯過程中收到關於字元編碼的警告，你可能需要這個。\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -3556,7 +3558,7 @@ msgstr "目前版本 <a name=\"CurrentVersion\"></a>"
 msgid ""
 ":   If specified, the package version in _AndroidManifest.xml_ is replaced\n"
 "    with the version name for the build as specified in the metadata.\n"
-msgstr ""
+msgstr "：如果指定，_AndroidManifest.xml_ 中的軟體包版本將被替換為中介資料中指定的構建版本名稱。\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -3567,7 +3569,7 @@ msgid ""
 "    that the version differs significantly from upstream; or to make it\n"
 "    apparent which architecture or platform the APK is designed to\n"
 "    run on.\n"
-msgstr ""
+msgstr "    這在一些情況下有用：上游軟體庫未更新其特定 tag 中的版本；建立一個任意的修訂版；構建一個任意的 revision；明顯地顯示出此版本與上游版本有很大的不同；或者明確表示 APK 被設計用於哪個架構或平台上執行。\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -3581,13 +3583,13 @@ msgstr "原始碼 <a name=\"SourceCode\"></a>"
 msgid ""
 ":   If specified, the package version code in the _AndroidManifest.xml_ is\n"
 "    replaced with the version code for the build. See also forceversion.\n"
-msgstr ""
+msgstr "：如果指定，_AndroidManifest.xml_ 中的軟體包版本代碼將被替換為構建的版本代碼。另參見 forceversion。\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid "`rm: <path1>[,<path2>,...]`<a name=\"build_rm\"></a>\n"
-msgstr ""
+msgstr "`rm: <path1>[,<path2>,...]`<a name=\"build_rm\"></a>\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -3598,7 +3600,7 @@ msgid ""
 "    build directory - i.e. the root of the directory structure checked\n"
 "    out from the source respository - not necessarily the directory that\n"
 "    contains _AndroidManifest.xml_.\n"
-msgstr ""
+msgstr "：指定構建之前刪除的檔案或檔案夾的相對路徑。這些路徑相對於基礎-構建目錄 - 即從源軟體庫中檢出的檔案結構的根目錄 - 不一定是包含 _AndroidManifest.xml_ 的目錄。\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -3606,13 +3608,13 @@ msgstr ""
 msgid ""
 "    Multiple files/directories can be specified by separating them with\n"
 "    ’,’. Directories will be recursively deleted.\n"
-msgstr ""
+msgstr "    可以用 ',' 分隔指定多個檔案/檔案夾。檔案夾將被遞歸刪除。\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid "`extlibs: <lib1>[,<lib2>,...]`<a name=\"build_extlibs\"></a>\n"
-msgstr ""
+msgstr "`extlibs: <lib1>[,<lib2>,...]`<a name=\"build_extlibs\"></a>\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -3621,13 +3623,13 @@ msgid ""
 ":   Comma-separated list of external libraries (jar files) from the\n"
 "    `build/extlib` library, which will be placed in the `libs` directory\n"
 "    of the project.\n"
-msgstr ""
+msgstr "：逗號分隔的 `build/extlib` 中外部庫（jar 檔案）的清單，將被放置在專案的 `libs` 檔案夾下。\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid "`srclibs: [n:]a@r,[n:]b@r1,...`<a name=\"build_srclibs\"></a>\n"
-msgstr ""
+msgstr "`srclibs: [n:]a@r,[n:]b@r1,...`<a name=\"build_srclibs\"></a>\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -3637,7 +3639,7 @@ msgid ""
 "    item is of the form name@rev where name is the predefined source\n"
 "    library name and rev is the revision or tag to use in the respective\n"
 "    source control.\n"
-msgstr ""
+msgstr "：逗號分隔的源軟體庫或 Android 專案清單。每個條目為 name@rev 的形式，其中 name 是預定義的源軟體庫名稱，rev 是在各自版本控制中使用的 revision 或標籤。\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -3649,7 +3651,7 @@ msgid ""
 "    example, if you specify `1:somelib@1.0`, F-Droid will automatically\n"
 "    do the equivalent of the legacy practice\n"
 "    `prebuild=echo \"android.library.reference.1=$$somelib$$\" >> project.properties`.\n"
-msgstr ""
+msgstr "    對於 Ant 專案，你可以選擇在一個 srclib 專案的開頭加上一個帶冒號的數位，以自動將其放在 _project.properties_ 中作為指定編號下的一個庫。例如，如果你指定 `1:somelib@1.0`，F-Droid 會自動地執行等同於傳統的做法 `prebuild=echo \\\"android.library.reference.1=$$somelib$$\\\">> project.properties`。\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -3666,7 +3668,7 @@ msgid ""
 "    \\$\\$name\\$\\$ in the init/prebuild/build command to substitute the\n"
 "    relative path to the library directory, but it could need tweaking\n"
 "    if you’ve changed into another directory.\n"
-msgstr ""
+msgstr "    每個 srclib 都有一個中介資料檔案，在版本庫的 srclibs/ 檔案夾下，原始碼存儲在 build/srclib/ 檔案夾下。 _RepoType_ 和 _Repo_ 的指以與應用程式相同的方式指定；Subdir：可以是一個逗號分隔的清單，用於當檔案夾被上游重命名的時候；Update Project：更新工作檔案夾和下一級檔案夾的專案；Prepare：可以用於任何形式的準備工作：特別是如果你需要用一個特定的目標來更新專案。然後你還可以在 init/prebuild/build 指令中使用 \\\\$\\\\$name\\\\$\\\\$ 來替換到庫檔案夾的相對路徑，但如果你移動到另一個目錄可能需要調整一下。\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -3677,33 +3679,33 @@ msgid ""
 "    guarantee that those binaries are free and correspondent to the\n"
 "    source code, F-Droid allows the following known repositories until a\n"
 "    source-built alternative is available:\n"
-msgstr ""
+msgstr "    目前，當上游使用 jar 檔案或從非信任的倉庫拉取依賴時，srclibs 是必要的。儘管我們不能保證這些二進製檔案是自由的並且與原始碼相對應，F-Droid 允許以下已知的倉庫，直到有一個從源構建的替代品可用。\n"
 
 #. type: Bullet: '    -   '
 #: _docs/Build_Metadata_Reference.md
 msgid "‘mavenCentral’ - the original repo, hardcoded in Maven and Gradle."
-msgstr ""
+msgstr "'mavenCentral' - 最初的倉庫，硬編碼在 Maven 和 Gradle 中。"
 
 #. type: Bullet: '    -   '
 #: _docs/Build_Metadata_Reference.md
 msgid ""
 "‘jCenter’ - hardcoded in Gradle, this repo by Bintray tries to provide "
 "easier handling. It should sync with mavenCentral from time to time."
-msgstr ""
+msgstr "'jCenter' - 硬編碼在 Gradle 中,Bintray 的這個倉庫試圖提供更簡單的處理。它應該不時地與 mavenCentral 同步。"
 
 #. type: Bullet: '    -   '
 #: _docs/Build_Metadata_Reference.md
 msgid ""
 "‘OSS Sonatype’ - maintained by the people behind mavenCentral, this "
 "repository focuses on hosting services for open source project binaries."
-msgstr ""
+msgstr "'OSS Sonatype' - 由 mavenCentral 背後的人維護，這個倉庫專注於為開源專案二進製檔案提供託管服務。"
 
 #. type: Bullet: '    -   '
 #: _docs/Build_Metadata_Reference.md
 msgid ""
 "‘OSS JFrog’ - maintained by the people behind jCenter, this repository "
 "focuses on hosting services for open source project binaries."
-msgstr ""
+msgstr "'OSS JFrog' - 由 jCenter 背後的人維護，這個倉庫專注於為開源專案二進製檔案提供託管服務。"
 
 #. type: Bullet: '    -   '
 #: _docs/Build_Metadata_Reference.md
@@ -3711,23 +3713,23 @@ msgid ""
 "‘JitPack.io’ - builds directly from GitHub repositories.  However, they do "
 "not provide any option to reproduce or verify the resulting binaries. Builds "
 "pre-release versions in some cases."
-msgstr ""
+msgstr "'JitPack.io' - 直接從 GitHub 倉庫構建。然而，他們不提供任何選項來復現或驗證所產生的二進製檔案。在某些情況下會構建預發布版本。"
 
 #. type: Bullet: '    -   '
 #: _docs/Build_Metadata_Reference.md
 msgid "‘Clojars’ - Clojure libraries repo."
-msgstr ""
+msgstr "'Clojars' - Clojure 庫倉庫。"
 
 #. type: Bullet: '    -   '
 #: _docs/Build_Metadata_Reference.md
 msgid "‘CommonsWare’ - repo holding a collection of open-source libs."
-msgstr ""
+msgstr "'CommonsWare' - 託管一系列開源庫的倉庫。"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid "`patch: x`<a name=\"build_patch\"></a>\n"
-msgstr ""
+msgstr "`patch: x`<a name=\"build_patch\"></a>\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -3737,7 +3739,7 @@ msgid ""
 "    within a directory below the metadata, with the same name as the\n"
 "    metadata file but without the extension. Each of these patches is\n"
 "    applied to the code in turn.\n"
-msgstr ""
+msgstr "：應用程式補丁。 'x' 命名一個（或多個 - 以逗號分隔的）在 metadata 下面的一個與中介資料檔案同名但沒有擴充名的檔案夾中的檔案。每個補丁中的每一個都被依次應用程式到代碼中。\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -3755,13 +3757,13 @@ msgid ""
 "    line to join that line with the next. It has no special meaning in\n"
 "    other contexts; in particular, literal backslashes should not\n"
 "    be escaped.\n"
-msgstr ""
+msgstr "：指定一個 shell 指令（或幾個指令 - 用 && 連接）在構建前執行。反斜線可以作為轉義字元來插入逗號，或者在行尾連接該行和下一行。在其他情況下，它沒有特殊含義；特別是，字面的反斜線不應該被轉義。\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid "    The command runs using bash.\n"
-msgstr ""
+msgstr "    該指令使用 bash 執行。\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -3771,7 +3773,7 @@ msgid ""
 "    scanning of the code and building of the source tarball, for\n"
 "    example, take place after this. For custom actions that actually\n"
 "    build things or produce binaries, use ’build’ instead.\n"
-msgstr ""
+msgstr "    請注意，在此預構建階段不應構建任何內容 - 例如，代碼掃描和原始碼包構建在此之後發生。對於實際執行構建或生成二進製檔案的自訂操作，請使用 'build'。\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -3779,7 +3781,7 @@ msgstr ""
 msgid ""
 "    You can use \\$\\$name\\$\\$ to substitute the path to a referenced\n"
 "    srclib - see the `srclib` directory for details of this.\n"
-msgstr ""
+msgstr "    可以使用 \\\\$\\\\$name\\\\$\\\\$ 將路徑替換為引用的 srclib - 有關詳細資訊，請參閱 `srclib` 目錄。\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -3791,13 +3793,13 @@ msgid ""
 "    `android update project` explicitly. The following per-build\n"
 "    variables are available likewise: \\$\\$VERSION\\$\\$, \\$\\$VERCODE\\$\\$\n"
 "    and \\$\\$COMMIT\\$\\$.\n"
-msgstr ""
+msgstr "    你可以使用 \\\\$\\\\$SDK\\\\$\\\\$、\\\\$\\\\$NDK\\\\$\\\\$ 和 \\\\$\\\\$MVN3\\\\$\\\\$ 來分別代替 android SDK 和 NDK 檔案夾以及 Maven 3 可執行檔案的路徑，例如當你需要顯式執行 `android update project` 時。以下每個預構建變量同樣可用：\\\\$\\\\$VERSION\\\\$\\\\$，\\\\$\\\\$VERCODE\\\\$\\\\$ 和 \\\\$\\\\$COMMIT\\\\$\\\\$。\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid "`scanignore: <path1>[,<path2>,...]`<a name=\"build_scanignore\"></a>\n"
-msgstr ""
+msgstr "`scanignore: <path1>[,<path2>,...]`<a name=\"build_scanignore\"></a>\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -3807,7 +3809,7 @@ msgid ""
 "    process. This should only be used where there is a very good reason,\n"
 "    and probably accompanied by a comment explaining why it\n"
 "    is necessary.\n"
-msgstr ""
+msgstr "：允許從掃描過程中排除一個或多個檔案/路徑。這應該只在有很好的理由的情況下使用，並且或許可以附加一條評論，解釋為什麼這是必要的。\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -3815,13 +3817,13 @@ msgstr ""
 msgid ""
 "    When scanning the source tree for problems, matching files whose\n"
 "    relative paths start with any of the paths given here are ignored.\n"
-msgstr ""
+msgstr "    掃描原始碼樹中的問題時，相對路徑以此處給出的任何路徑開始的相應檔案將被忽略。\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid "`scandelete: <path1>[,<path2>,...]`<a name=\"build_scandelete\"></a>\n"
-msgstr ""
+msgstr "`scandelete: <path1>[,<path2>,...]`<a name=\"build_scandelete\"></a>\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -3830,7 +3832,7 @@ msgid ""
 ":   When running the scan process, any files that trigger errors - like\n"
 "    binaries - will be removed. It acts just like _scanignore_, but\n"
 "    instead of ignoring the files, it removes them.\n"
-msgstr ""
+msgstr "：執行掃描過程時，任何觸發錯誤的檔案 - 如二進製檔案 - 將被刪除。它與 _scanignore_ 行為一樣，但是它不會忽略這些檔案，而是刪除它們。\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -3839,7 +3841,7 @@ msgid ""
 "    Useful when a source code repository includes binaries or other\n"
 "    unwanted files which are not needed for the build. Instead of\n"
 "    removing them manually via _rm_, using _scandelete_ is easier.\n"
-msgstr ""
+msgstr "    用於當原始碼軟體庫包含二進製檔案或其他構建不需要的檔案。相比於透過 _rm_ 手動刪除它們，使用 _scandelete_ 更容易。\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -3855,7 +3857,7 @@ msgid ""
 "    before the main Ant/Maven build). Use this only for actions that do\n"
 "    actual building. Any preparation of the source code should be done\n"
 "    using ’init’ or ’prebuild’.\n"
-msgstr ""
+msgstr "：類似於 'prebuild'，但在實際構建階段（但在主要的 Ant/Maven 構建之前）執行。僅將其用於執行實際構建的操作。任何原始碼的準備工作都應該使用 'init' 或 'prebuild' 完成。\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -3864,7 +3866,7 @@ msgid ""
 "    Any building that takes place before _build_ will be ignored, as\n"
 "    either Ant, mvn or gradle will be executed to clean the build\n"
 "    environment right before _build_ (or the final build) is run.\n"
-msgstr ""
+msgstr "    在 _build_ 之前發生的任何構建都將被忽略，因為在執行 _build_（或最終構建）之前 Ant、mvn 或 gradle 將被執行以清理構建環境。\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -3875,13 +3877,13 @@ msgid ""
 "    executable respectively. The following per-build variables are\n"
 "    available likewise: \\$\\$VERSION\\$\\$, \\$\\$VERCODE\\$\\$\n"
 "    and \\$\\$COMMIT\\$\\$.\n"
-msgstr ""
+msgstr "    你可以用 \\\\$\\\\$SDK\\\\$\\\\$，\\\\$\\\\$NDK\\\\$\\\\$ 和 \\\\$\\\\$MVN3\\\\$\\\\$ 來分別代替 android SDK 和 NDK 目錄以及 maven 3 可執行檔案的路徑。同樣，也可以使用以下預構建的變量：\\\\$\\\\$VERSION\\\\$\\\\$，\\\\$\\\\$VERCODE\\\\$\\\\$ 和 \\\\$\\\\$COMMIT\\\\$\\\\$。\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid "`buildjni: [yes|no|<dir list>]`<a name=\"build_buildjni\"></a>\n"
-msgstr ""
+msgstr "`buildjni: [yes|no|<dir list>]`<a name=\"build_buildjni\"></a>\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -3892,7 +3894,7 @@ msgid ""
 "    relative to the main application directory in which to run\n"
 "    ndk-build, or ’yes’ which corresponds to ’.’ . Using explicit list\n"
 "    may be useful to build multi-component projects.\n"
-msgstr ""
+msgstr "：在進行主 Ant 構建之前，透過 _ndk-build_ 腳本啟用本地代碼的構建。該值可以是一個用於執行 ndk-build 的相對於主應用程式檔案夾的檔案夾清單，或者是對應於 '.' 的 'yes'。使用明確的清單對構建多組件專案很有用。\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -3906,7 +3908,7 @@ msgid ""
 "    (using `rm=jni` for example). Using `buildjni=no` when the jni code\n"
 "    isn’t used nor built will result in an error saying that native\n"
 "    libraries were expected in the resulting package.\n"
-msgstr ""
+msgstr "    如果這個參數沒有被定義，但是有一個`jni`目錄存在，構建和掃描過程將報錯（拒絕構建）。如果本機代碼是透過其他方式（如 Gradle 任務）構建的。你可以在這裡指定 `no` 來避免這種情況。然而，如果本機代碼實際上是不需要或不使用的，請刪除該目錄（例如，使用`rm=jni`）。當 jni 代碼不被使用也不被構建時使用 `buildjni=no` 將會導致一個錯誤，即在生成的包中預期有本地庫。\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -3924,13 +3926,13 @@ msgid ""
 "    version strings, and all listed versions will be installed.  The\n"
 "    `ANDROID_SDK_ROOT` environment variable will be set to the first version in\n"
 "    the list.\n"
-msgstr ""
+msgstr "：在本次構建中使用的 NDK 版本。該值是 NDK 的版本，是一個字元串，支援兩種官方版本方案，例如 _r21e_ 或 _21.4.7075529_ 。支援 NDK r10e 或更高版本。這也可以是一個版本字元串清單，所有列出的版本都會被安裝。 `ANDROID_SDK_ROOT` 環境變量將被設定為清單中的第一個版本。\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid "`gradle: <flavour1>[,<flavour2>,...]`<a name=\"build_gradle\"></a>\n"
-msgstr ""
+msgstr "`gradle: <flavour1>[,<flavour2>,...]`<a name=\"build_gradle\"></a>\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -3939,7 +3941,7 @@ msgid ""
 ":   Build with Gradle instead of Ant, specifying what flavours to use.\n"
 "    Flavours are case sensitive since the path to the output APK is\n"
 "    as well.\n"
-msgstr ""
+msgstr "：用 Gradle 而不是 Ant 進行構建，指定要使用的 flavour。 Flavour 是區分大小寫的，因為輸出 APK 的路徑是也是如此。\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -3949,13 +3951,13 @@ msgid ""
 "    used. Note that for projects with flavours, you must specify at\n"
 "    least one valid flavour since ’yes’ will build all of\n"
 "    them separately.\n"
-msgstr ""
+msgstr "    如果只給了一種 flavour，而且是 'yes'，則不使用任何 flavour。請注意，對於有 flavour 的專案，你必須指定至少一個有效的 flavour，因為 'yes' 將分別構建所有的 flavour。\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid "`maven: yes[@<dir>]`<a name=\"build_maven\"></a>\n"
-msgstr ""
+msgstr "`maven: yes[@<dir>]`<a name=\"build_maven\"></a>\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -3964,13 +3966,13 @@ msgid ""
 ":   Build with Maven instead of Ant. An extra @&lt;dir&gt; tells F-Droid\n"
 "    to run Maven inside that relative subdirectory. Sometimes it is\n"
 "    needed to use @.. so that builds happen correctly.\n"
-msgstr ""
+msgstr "：用 Maven 而不是 Ant 構建。一個額外的 @&lt;dir&gt; 告訴 F-Droid 在該相對子檔案夾下執行 Maven。有時需要使用 @... 才能正確地進行構建。\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid "`preassemble: <task1>[,<task2>,...]`<a name=\"build_preassemble\"></a>\n"
-msgstr ""
+msgstr "`preassemble: <task1>[,<task2>,...]`<a name=\"build_preassemble\"></a>\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -3978,13 +3980,13 @@ msgstr ""
 msgid ""
 ":   List of Gradle tasks to be run before the assemble task in a Gradle\n"
 "    project build.\n"
-msgstr ""
+msgstr "：在 Gradle 專案構建中，在 assemble 任務之前要執行的 Gradle 任務清單。\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid "`gradleprops: <prop1>[,<prop2>,...]`<a name=\"build_gradleprops\"></a>\n"
-msgstr ""
+msgstr "`gradleprops: <prop1>[,<prop2>,...]`<a name=\"build_gradleprops\"></a>\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -3992,7 +3994,7 @@ msgstr ""
 msgid ""
 ":   List of Gradle properties to pass via the command line to Gradle. A\n"
 "    property can be of the form `foo` or of the form `key=value`.\n"
-msgstr ""
+msgstr "：要透過指令列傳遞給 Gradle 的 Gradle 屬性清單。屬性可以是 `foo` 的形式或 `key=value` 的形式。\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -4000,7 +4002,7 @@ msgstr ""
 msgid ""
 "    For example: `gradleprops=enableFoo,someSetting=bar` will result in\n"
 "    `gradle -PenableFoo -PsomeSetting=bar`.\n"
-msgstr ""
+msgstr "    比如說：`gradleprops=enableFoo,someSetting=bar` 將產生 `gradle -PenableFoo -PsomeSetting=bar`。\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -4015,13 +4017,13 @@ msgid ""
 ":   Specify an alternate set of Ant commands (target) instead of the\n"
 "    default ’release’. It can’t be given any flags, such as the path to\n"
 "    a _build.xml_.\n"
-msgstr ""
+msgstr "：指定另一套 Ant 指令 (target)，而不是預設的 'release'。它不能被賦予任何標誌，比如 _build.xml_ 的路徑。\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid "`output: glob/to/output.apk`<a name=\"build_output\"></a>\n"
-msgstr ""
+msgstr "`output: glob/to/output.apk`<a name=\"build_output\"></a>\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -4032,13 +4034,13 @@ msgid ""
 "    methods like `gradle=yes` or `maven=yes`, but if no build method is\n"
 "    specified, the build is manual. You should run your build commands,\n"
 "    such as `make`, in _build_.\n"
-msgstr ""
+msgstr "：指定構建的未簽名版本 APK 的 glob 路徑。這可以 `gradle=yes` 或 `maven=yes` 這樣的構建方法結合使用，但是如果沒有指定構建方法，構建是手動的。你應該在 _build_ 中執行構建指令，例如 `make`。\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid "`novcheck: true`<a name=\"build_novcheck\"></a>\n"
-msgstr ""
+msgstr "`novcheck: true`<a name=\"build_novcheck\"></a>\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -4048,7 +4050,7 @@ msgid ""
 "    correct by looking at the build output - assume the metadata\n"
 "    is correct. This takes away a useful level of sanity checking, and\n"
 "    should only be used if the values can’t be extracted.\n"
-msgstr ""
+msgstr "：不要檢查生成的 APK 中的版本名稱和代碼是否正確 - 假設中介資料是正確的。這取消了一個有用的合理檢查，並且只有在無法提取數值的情況下才應使用。\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -4085,13 +4087,13 @@ msgid ""
 "APKs to the repo, and they will only be included if they have a known good "
 "signature.  The value is a lowercase hex value of the SHA-256 fingerprint of "
 "the signing certificate.  This can be fetched using:"
-msgstr ""
+msgstr "當用 `fdroid update` 生成自動二進制軟體庫時，通常很容易找出所收集的 APK 的預期簽名密鑰。 `AllowedAPKSigningKeys` 讓倉庫管理員設定預期的簽名密鑰，然後 `fdroid update` 將檢查 APK 是否由這些密鑰之一簽署。如果不是，不匹配的 APK 將不被包含在軟體庫中。如果 `fdroid update --delete-unknown` 被指定，不匹配的 APK 將被刪除。然後，可以使用一個自動程式將較新的 APK 下載到軟體庫中，只有當它們有一個已知的良好簽名時才會被包含在內。該值是簽名憑證的 SHA-256 指紋的小寫十六進制值。這可以透過以下方式獲取："
 
 #. type: Fenced code block
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid "apksigner verify --print-certs example.apk | grep SHA-256\n"
-msgstr ""
+msgstr "apksigner verify --print-certs example.apk | grep SHA-256\n"
 
 #. type: Title ###
 #: _docs/Build_Metadata_Reference.md
@@ -4106,12 +4108,12 @@ msgid ""
 "the following values, describing an anti-feature the application has.  It is "
 "a good idea to mention the reasons for the anti-feature(s) in the "
 "description:"
-msgstr ""
+msgstr "這是可選的 - 如果存在，它包含一個以逗號分隔的清單，其中包括以下任何一個值，描述應用程式的反特徵。建議在描述中說明具有反特徵的原因："
 
 #. type: Bullet: '-   '
 #: _docs/Build_Metadata_Reference.md
 msgid "‘Ads’ - the application contains advertising."
-msgstr ""
+msgstr "'Ads' - 該應用程式包含廣告。"
 
 #. type: Bullet: '-   '
 #: _docs/Build_Metadata_Reference.md
@@ -4122,7 +4124,7 @@ msgid ""
 "if the service is based on free software, or not). For example, activity-"
 "based down-loading of weather data, maps, avatars etc. (data hosting and "
 "delivery services), or uploading of crash logs etc."
-msgstr ""
+msgstr "'Tracking' - 預設情況下，用戶或活動資料被追踪或洩露。如果應用程式或某一功能在不收集和分享這些資料或向資料收集網路服務（不管該服務是否基於免費軟體）提出請求的情況下無法使用，則為真。例如，基於活動的天氣資料、地圖、頭像等的下載（資料託管和交付服務），或上傳崩潰日誌等。"
 
 #. type: Bullet: '-   '
 #: _docs/Build_Metadata_Reference.md
@@ -4133,14 +4135,14 @@ msgid ""
 "there is a simple configuration option that allows pointing the app to a "
 "running instance of an alternative, publicly available, self-hostable, free "
 "software server solution."
-msgstr ""
+msgstr "'NonFreeNet' - 應用程式包含一個使用不可能或不容易替換的非自由網路服務的功能。替換需要對應用程式或服務進行修改。如果有一個簡單的配置選項，允許將應用程式指向另一個公開可用的、可自我託管的、自由軟體服務解決方案的執行實體，那麼這個反特徵就不適用。"
 
 #. type: Bullet: '-   '
 #: _docs/Build_Metadata_Reference.md
 msgid ""
 "‘NonFreeAdd’ - the application promotes Non-Free add-ons, such that the app "
 "is effectively an advert for other Non-Free Software."
-msgstr ""
+msgstr "'NonFreeAdd' - 該應用程式推廣非自由外掛程式，因此該應用程式實際上是其他非自由軟體的廣告。"
 
 #. type: Bullet: '-   '
 #: _docs/Build_Metadata_Reference.md
@@ -4148,14 +4150,14 @@ msgid ""
 "‘NonFreeDep’ - the application depends on a Non-Free application (e.g. "
 "Google Maps) - i.e. it requires it to be installed on the device, but does "
 "not include it."
-msgstr ""
+msgstr "'NonFreeDep' - 應用程式依賴於一個非自由應用程式（例如穀歌地圖）- 也就是說，它需要在裝置上安裝它，但不包含它。"
 
 #. type: Bullet: '-   '
 #: _docs/Build_Metadata_Reference.md
 msgid ""
 "‘NSFW’ - the app contains content that the user may not want to be "
 "publicized or visible everywhere, comes from \"Not Safe For Work\"."
-msgstr ""
+msgstr "‘NSFW’ - 應用程式包含的內容，用戶可能不希望到處展示或可見，來自網路術語“Not safe for work”。"
 
 #. type: Bullet: '-   '
 #: _docs/Build_Metadata_Reference.md
@@ -4164,7 +4166,7 @@ msgid ""
 "does not mean that Non-Free Software is included with the app: Most likely, "
 "it has been patched in some way to remove the Non-Free code. However, "
 "functionality may be missing."
-msgstr ""
+msgstr "'UpstreamNonFree' - 該應用程式是或依賴於非自由軟體。這並不意味著非自由軟體包含在該應用程式程式中：最有可能的是，它已經以某種方式打了補丁以移除非自由代碼。然而，部分功能可能會缺失。"
 
 #. type: Bullet: '-   '
 #: _docs/Build_Metadata_Reference.md
@@ -4172,12 +4174,12 @@ msgid ""
 "‘NonFreeAssets’ - the application contains and makes use of Non-Free assets. "
 "The most common case is apps using artwork - images, sounds, music, etc - "
 "under a non-commercial license."
-msgstr ""
+msgstr "'NonFreeAssets' - 應用程式包含並使用非自由資產。最常見的例子是應用程式使用了非商業授權條款授權的作品，如圖像，聲音，音樂等。"
 
 #. type: Bullet: '-   '
 #: _docs/Build_Metadata_Reference.md
 msgid "‘KnownVuln’ - the application has known security vulnerabilities."
-msgstr ""
+msgstr "'KnownVuln' - 該應用程式具有已知的安全漏洞。"
 
 #. type: Bullet: '-   '
 #: _docs/Build_Metadata_Reference.md
@@ -4185,7 +4187,7 @@ msgid ""
 "‘ApplicationDebuggable‘ - APK file is compiled for debugging (`application-"
 "debuggable`), which normally makes it unsuitable for regular users and use "
 "cases."
-msgstr ""
+msgstr "'ApplicationDebuggable' - APK 檔案是為除錯 (`application-debuggable`) 而編譯的，這通常使得它不適合普一般戶和用例。"
 
 #. type: Bullet: '-   '
 #: _docs/Build_Metadata_Reference.md
@@ -4194,7 +4196,7 @@ msgid ""
 "Either the app went commercial, the repo was dropped, or it has moved to a "
 "location currently unknown to us. This usually means there won't be further "
 "updates unless the source reappears."
-msgstr ""
+msgstr "'NoSourceSince' - 這個應用程式的上游原始碼不再可用。要么是該應用程式已經商業化，要么是軟體庫被放棄，要么是它已經移到了一個我們目前不知道的地方。這通常意味著不會有進一步的更新，除非原始碼重新出現。"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -4218,7 +4220,7 @@ msgid ""
 "deleted: to purge an APK see the Build Version section or delete manually "
 "for developer builds. The field is therefore used when an app has outlived "
 "it’s usefulness, because the source tarball is retained."
-msgstr ""
+msgstr "如果這個字段存在，該應用程式不會被放入公開索引。這允許在一個應用程式被暫時禁止發佈時保留中介資料。該值應該是對應用程式被禁用原因的描述。沒有 APK 或原始碼檔案會被刪除：要清除APK，請參見 Build Version 部分，或者對開發者構建的 APK 進行手動刪除。因此，這個字段是在一個應用程式已經過期的情況下使用的，因為原始碼壓縮包被保留。"
 
 #. type: Title ###
 #: _docs/Build_Metadata_Reference.md
@@ -4234,13 +4236,13 @@ msgid ""
 "desires. Whether root is required or not, it is good to give a paragraph in "
 "the description to the conditions on which root may be asked for and the "
 "reason for it."
-msgstr ""
+msgstr "如果應用程式需要 root 權限才能使用，請將此可選字段設定為 'True'。如果用戶願意，可以讓客戶端過濾掉它。無論是否需要 root 權限，最好在描述中給出一段可能要求 root 權限的條件及其原因。"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid "This is converted to (`<requirements>`) in the XML file (_index.xml_).\n"
-msgstr ""
+msgstr "在 XML 檔案 (_index.xml_)中，該字段將被轉換為 (`<requirements>`)。\n"
 
 #. type: Title ###
 #: _docs/Build_Metadata_Reference.md
@@ -4255,7 +4257,7 @@ msgid ""
 "repo, if one is configured. The configuration sets a default maximum number "
 "of versions kept in the main repo, after which older ones are moved to the "
 "archive. This app-specific policy setting can override that."
-msgstr ""
+msgstr "如果配置了一個歸檔軟體庫的話，這決定了將應用程式的舊版本轉移到歸檔軟體庫的策略。配置設定了一個預設的在主軟體庫中保留的最大版本數，之後舊版本會被移到歸檔軟體庫中。這個特定於應用程式的策略設定可以覆蓋它。"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -4265,14 +4267,14 @@ msgid ""
 "means that when `ArchivePolicy` is set to \"1 versions\" only the APK "
 "corresponding to CVC is kept, which is not necessarily the one with the "
 "highest version code."
-msgstr ""
+msgstr "在決定將哪些版本放入存檔時，透過 `CurrentVersionCode` 指定的版本始終被視為最新版本。這意味著當 `ArchivePolicy` 設定為 \\\"1 versions\\\" 時，只保留 CVC 對應的 APK，而不一定是版本號最高的那個。"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 msgid ""
 "Currently the only supported format is \"n versions\", where n is the number "
 "of versions to keep. Defaults to \"3 versions\"."
-msgstr ""
+msgstr "目前唯一支援的格式是 \\\"n versions\\\"，其中 n 是要保留的版本數。預設為 \\\"3 versions\\\"。"
 
 #. type: Title ###
 #: _docs/Build_Metadata_Reference.md
@@ -4287,12 +4289,12 @@ msgid ""
 "available - in other words, the updating of the _CurrentVersion_ and "
 "_CurrentVersionCode_ fields in the metadata by the `fdroid checkupdates` "
 "process."
-msgstr ""
+msgstr "這決定了用於確定何時有新版本 - 換句話說，由 `fdroid checkupdates` 程式更新中介資料中 _CurrentVersion_ 和 _CurrentVersionCode_ 字段 - 的方法。"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 msgid "Valid modes are:"
-msgstr ""
+msgstr "有效模式是："
 
 #. type: Bullet: '-   '
 #: _docs/Build_Metadata_Reference.md
@@ -4304,7 +4306,7 @@ msgid ""
 "use the Gradle build system and store version info in a separate file; if "
 "the developers make a new branch for each release and don’t make tags; or if "
 "you’ve changed the package name or version code logic."
-msgstr ""
+msgstr "`None` - 不進行檢查，因為沒有適當的自動化方法。應手動檢查更新。例如，在部署不穩定或打補丁的版本時；當構建在與 _AndroidManifest.xml_ 不同的目錄中完成時；如果開發人員使用 Gradle 構建系統並將版本資訊存儲在單獨的檔案中；如果開發人員為每個版本建立一個新分支並且不加入 tag；或者，如果你已更改包名稱或版本代碼邏輯，請使用此選項。"
 
 #. type: Bullet: '-   '
 #: _docs/Build_Metadata_Reference.md
@@ -4313,7 +4315,7 @@ msgid ""
 "versions are not desired. This method is also used when there is no other "
 "checking method available and the upstream developer keeps us posted on new "
 "versions."
-msgstr ""
+msgstr "`Static` - 不做任何檢查 - 要么開發已經停止，要么不需要新版本。這種方法也用於沒有其他檢查方法的情況下，並且上游的開發者會向我們發布新的版本。"
 
 #. type: Bullet: '-   '
 #: _docs/Build_Metadata_Reference.md
@@ -4331,7 +4333,7 @@ msgid ""
 "the current version has been published somewhere by the upstream developers, "
 "either by checking for APKs that they distribute or for tags in the source "
 "code repository."
-msgstr ""
+msgstr "`RepoManifest` - 在最近一次提交中，在最近一次構建時發現的目錄中回饋 _AndroidManifest.xml_ 和 _build.gradle_ 檔案。這種方法是否合適，取決於應用程式的開發者所使用的開發過程。你不應該指定這種方法除非你確定它是合適的。例如，有些開發者在開始開發時而不是在發佈時提高版本。如果 _AndroidManifest.xml_ 被移到了不同的目錄，或者包的名稱發生了變化，它將傳回一個錯誤。它給出的當前版本可能不准確，因為不是所有的版本都適合發布。因此，在構建之前，通常有必要檢查當前版本是否已經被上游開發者發佈在某個地方，可以透過檢查他們發布的 APK 或者原始碼軟體庫中的標籤。"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -4345,7 +4347,7 @@ msgid ""
 "    stays in the same branch). On the other hand, branch support hasn’t\n"
 "    been implemented yet in bzr and svn, but _RepoManifest_ may still be\n"
 "    used without it.\n"
-msgstr ""
+msgstr "    目前，它在不同程度上適用於除了 srclib 軟體庫類型以外的每種軟體庫類型。對於 git，git-svn 和 hg 軟體庫類型，你可以用 \\\"RepoManifest/yourbranch\\\" 作為 _UpdateCheckMode_，這樣 \\\"yourbranch\\\" 就會被用來代替預設分支。 git 的預設值是 \\\"master\\\"，hg 的預設值是 \\\"default\\\"，git-svn 的預設值是 none（它保持在同一分支）。另一方面，分支支援還沒有對 bzr 和 svn 實現，但_RepoManifest_ 仍然可以在沒有它的情況下使用。\n"
 
 #. type: Bullet: '-   '
 #: _docs/Build_Metadata_Reference.md
@@ -4356,7 +4358,7 @@ msgid ""
 "those apps who automate their build process with the commit ref that HEAD "
 "points to, RepoTrunk will set the _CurrentVersion_ and _CurrentVersionCode_ "
 "to that number."
-msgstr ""
+msgstr "`RepoTrunk` - 對於 svn 和 git-svn 倉庫，特別是那些沒有附帶 _AndroidManifest.xml_ 檔案的倉庫，Tags 和 RepoManifest 檢查將無法工作，因為沒有版本資訊可以獲取。但是，對於那些用 HEAD 指向的提交註釋自動化構建過程的應用程式，RepoTrunk 將把 _CurrentVersion_ 和 _CurrentVersionCode_ 設為該數位。"
 
 #. type: Bullet: '-   '
 #: _docs/Build_Metadata_Reference.md
@@ -4370,7 +4372,7 @@ msgid ""
 "releases. Like RepoManifest, it will not return the correct value if the "
 "directory containing the _AndroidManifest.xml_ has moved. Despite these "
 "caveats, it is the often the favourite _UpdateCheckMode_."
-msgstr ""
+msgstr "`Tags` - 檢查原始碼軟體庫中所有被旗標的 revision 中的 _AndroidManifest.xml_ 和 _build.gradle_ 檔案，回饋最高版本代碼。這種方法是否合適，取決於應用程式的開發者所使用的開發過程。你不應該指定這種方法，除非你確定它是合適的。如果開發者喜歡旗標不穩定的版本，或已知忘記旗標發布版本，就不應該使用這種方法。像 RepoManifest 一樣，如果包含 _AndroidManifest.xml_ 的目錄已經移動，它將不會傳回正確的值。儘管有這些注意事項，它往往是最受歡迎的 _UpdateCheckMode_。"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -4379,7 +4381,7 @@ msgid ""
 "    It currently only works for git, hg, bzr and git-svn repositories.\n"
 "    In the case of the latter, the repo URL must contain the path to the\n"
 "    trunk and tags or else no tags will be found.\n"
-msgstr ""
+msgstr "    目前它只適用於 git，hg，bzr 和 git-svn 軟體庫。在後者的情況下，軟體庫的 URL 必須包含通往 trunk 和標籤的路徑，否則將找不到標籤。\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -4390,7 +4392,7 @@ msgid ""
 "    apps tag non-release versions such as X.X-alpha, so you can filter\n"
 "    them out with something like `.*[0-9]$` which requires tag names to\n"
 "    end with a digit.\n"
-msgstr ""
+msgstr "    可選擇在末尾加入一個正則模式 - 用一個空格隔開 - 以只檢查與該模式相匹配的標籤。當應用程式旗標非發布版本（如 X.X-alpha）時非常有用，因此你可以用 `.*[0-9]$` 這樣需要標籤名稱以數位結尾的模式過濾掉它們。\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -4400,7 +4402,7 @@ msgid ""
 "    name from repository files you specify (instead of relying on the defaults\n"
 "    used to match against otherwise, which in most cases is `build.gradle` or\n"
 "    `AndroidManifest.xml`).\n"
-msgstr ""
+msgstr "    可以指定 `UpdateCheckData` 以從你指定的軟體庫檔案（而不是依靠預設值，在大多數情況下是 `build.gradle` 或 `AndroidManifest.xml`）中提取版本代碼和名稱。\n"
 
 #. type: Bullet: '-   '
 #: _docs/Build_Metadata_Reference.md
@@ -4408,7 +4410,7 @@ msgid ""
 "`HTTP` - HTTP requests are used to determine the current version code and "
 "version name. This is controlled by the _UpdateCheckData_ field, which is of "
 "the form `urlcode|excode|urlver|exver`."
-msgstr ""
+msgstr "`HTTP` - HTTP 請求被用來確定當前的版本代碼和版本名稱。這由 _UpdateCheckData_ 字段控制，它的形式是 `urlcode|excode|urlver|exver`。"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -4417,7 +4419,7 @@ msgid ""
 "    Firstly, if `urlcode` is non-empty, the document from that URL is\n"
 "    retrieved, and matched against the regular expression `excode`, with\n"
 "    the first group becoming the version code.\n"
-msgstr ""
+msgstr "    首先，如果 `urlcode` 不為空，則獲取該 URL 中的文檔，並與正則表達式 `excode` 匹配，以其中第一個匹配組作為版本代碼。\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -4428,7 +4430,7 @@ msgid ""
 "    the first group becoming the version name. The `urlver` field can be\n"
 "    set to simply ’.’ which says to use the same document returned for\n"
 "    the version code again, rather than retrieving a different one.\n"
-msgstr ""
+msgstr "    其次，如果 `urlver` 不是空的，則獲取該 URL 中的檔案，並與正則表達式 `exver` 相匹配，其中第一個匹配組為版本名稱。 `urlver` 字段可以被設定為簡單的 '.'，這表示和版本代碼使用同一檔案而不是獲取另一個。\n"
 
 #. type: Title ###
 #: _docs/Build_Metadata_Reference.md
@@ -4442,7 +4444,7 @@ msgid ""
 "Operation to be applied to the vercode obtained by the defined "
 "_UpdateCheckMode_. `%c` will be replaced by the actual vercode, and the "
 "whole string will be passed to python’s `eval` function."
-msgstr ""
+msgstr "對透過定義的 _UpdateCheckMode_ 獲得的版本代碼進行操作。 `%c` 將被實際的版本代碼替換，整個字元串將被傳遞給 python 的 `eval` 函式。"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -4452,7 +4454,7 @@ msgid ""
 "_VercodeOperation_ set at something like `%c*10 + 4`, we will be able to "
 "track updates and build up to four different versions of every upstream "
 "version."
-msgstr ""
+msgstr "對於我們想為不同的 ABI 編譯，但其代碼並不總是有尾部零的應用程式特別有用。例如，將 _VercodeOperation_ 設定為 `%c*10+4`，我們將能夠跟踪更新，並為每個上游版本構建最多四個不同的版本。"
 
 #. type: Title ###
 #: _docs/Build_Metadata_Reference.md
@@ -4467,12 +4469,12 @@ msgid ""
 "specify a regex which, if matched against the version name, causes that "
 "version to be ignored. For example, ’beta’ could be specified to ignore "
 "version names that include that text."
-msgstr ""
+msgstr "當檢查更新時（透過 _UpdateCheckMode_），這可以用來指定一個正則表達式，如果與版本名稱相匹配，將導致該版本被忽略。例如，可以指定 \\\"beta\\\" 以忽略包含該文本的版本名稱。"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 msgid "Only Available with _UpdateCheckMode_ `HTTP`."
-msgstr ""
+msgstr "只在 _UpdateCheckMode_ `HTTP` 中可用。"
 
 #. type: Title ###
 #: _docs/Build_Metadata_Reference.md
@@ -4487,7 +4489,7 @@ msgid ""
 "specify the package name to search for. Useful when apps have a static "
 "package name but change it programmatically in some app flavors, by e.g.  "
 "appending \".open\" or \".free\" at the end of the package name."
-msgstr ""
+msgstr "當檢查更新時（透過 _UpdateCheckMode_），這可以用來指定要搜尋的軟體包名稱。當應用程式有一個靜態的包名但在某些 flavor 中以編程方式改變它，例如在包名的末尾加上 \\\".open\\\" 或 \\\".free\\\" 時很有用。"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -4495,7 +4497,7 @@ msgid ""
 "You can also use `Ignore` to ignore package name searching. This should only "
 "be used in some specific cases, for example if the app’s build.gradle file "
 "does not contain the package name."
-msgstr ""
+msgstr "你也可以使用 `Ignore` 來忽略包名搜尋。這只應在某些特殊情況下使用，例如，應用程式的 build.gradle 檔案不包含包名。"
 
 #. type: Title ###
 #: _docs/Build_Metadata_Reference.md
@@ -4506,13 +4508,13 @@ msgstr "更新檢查資料 <a name=\"UpdateCheckData\"></a>"
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 msgid "Used in conjunction with _UpdateCheckMode_ `Tag` or `HTTP`."
-msgstr ""
+msgstr "與 _UpdateCheckMode_ `Tag` 或 `HTTP` 一起使用。"
 
 #. type: Fenced code block
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid "UpdateCheckData: <vercode-location>|<RegEx-for-versionCode>|<versionName-location>|<RegEx-for-versionName>\n"
-msgstr ""
+msgstr "UpdateCheckData: <vercode-location>|<RegEx-for-versionCode>|<versionName-location>|<RegEx-for-versionName>\n"
 
 #. type: Bullet: '-   '
 #: _docs/Build_Metadata_Reference.md
@@ -4520,12 +4522,12 @@ msgid ""
 "`vercode-location` - URL (with `UpdateCheckMode: HTTP`) or path/file "
 "relative to repo root, leave empty to check the tag name instead (with "
 "`UpdateCheckMode: Tags`)."
-msgstr ""
+msgstr "`vercode-location` - URL（使用 `UpdateCheckMode: HTTP` 時）或相對於軟體庫根的路徑/檔案，留空則檢查標籤名稱（使用`UpdateCheckMode: Tags` 時）。"
 
 #. type: Bullet: '-   '
 #: _docs/Build_Metadata_Reference.md
 msgid "`RegEx-for-versionCode` - RegEx to match versionCode."
-msgstr ""
+msgstr "`RegEx-for-versionCode` - 匹配 versionCode 的正則表達式。"
 
 #. type: Bullet: '-   '
 #: _docs/Build_Metadata_Reference.md
@@ -4533,19 +4535,19 @@ msgid ""
 "`versionName-location` - Same as vercode-location just for versionName. A .  "
 "means to take vercode-location, leave empty to check the tag name instead "
 "(only with `UpdateCheckMode: Tags`)."
-msgstr ""
+msgstr "`versionName-location` - 與 vercode-location 相同，只是針對 versionName。一個 . 表示使用 vercode-location，留空則檢查標籤名稱（僅適用於 `UpdateCheckMode: Tags`）。"
 
 #. type: Bullet: '-   '
 #: _docs/Build_Metadata_Reference.md
 msgid ""
 "`RegEx-for-versionName` - Similar to RegEx-for-versionCode, just for "
 "versionName."
-msgstr ""
+msgstr "`RegEx-for-versionName` - 與 RegEx-for-versionCode 類似，只是針對 versionName。"
 
 #. type: Bullet: '-   '
 #: _docs/Build_Metadata_Reference.md
 msgid "RegEx pipe operators are not supported at this time."
-msgstr ""
+msgstr "目前還不支援正則表達式管道操作符。"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -4587,12 +4589,12 @@ msgid ""
 "the metadata. This happens in conjunction with the _UpdateCheckMode_ "
 "functionality - i.e. when an update is detected by that, it is also "
 "processed by this."
-msgstr ""
+msgstr "這決定了在有新版本時自動生成新構建的方法 - 換句話說，在中介資料中加入新的構建版本行。這與 _UpdateCheckMode_ 功能共同進行 - 也就是說，當一個更新被檢測到時，它也會被此功能處理。"
 
 #. type: Bullet: '-   '
 #: _docs/Build_Metadata_Reference.md
 msgid "`None` - No auto-updating is done"
-msgstr ""
+msgstr "`None` - 不進行自動更新"
 
 #. type: Bullet: '-   '
 #: _docs/Build_Metadata_Reference.md
@@ -4602,7 +4604,7 @@ msgid ""
 "required version name and version code respectively. The resulting string "
 "must match an existing tag in the app's repo, which then will be used by F-"
 "Droid to build the corresponding version."
-msgstr ""
+msgstr "`Version` - 產生一個用於新構建塊的 `commit:` 屬性的值（標籤名）。它是簡單的文本，其中 %v 和 %c 分別被替換成所需的版本名稱和版本代碼。產生的字元串必須與應用程式軟體庫中的現有標籤相匹配，然後 F-Droid 將使用該標籤來構建相應的版本。"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -4612,7 +4614,7 @@ msgid ""
 "    version 2.7.2, you would simply specify \"Version %v\". If an app\n"
 "    always has a tag \"ver\\_1234\" for a version with version code 1234,\n"
 "    you would specify \"Version ver\\_%c\".\n"
-msgstr ""
+msgstr "    例如，如果一個應用程式總是有一個標籤 \\\"2.7.2\\\" 對應於 2.7.2 版本，你可以簡單地指定 \\\"Version %v\\\"。如果一個應用程式總是有一個標籤 \\\"ver\\\\_1234\\\" 表示版本代碼為 1234 的版本，你可以指定 \\\"Version ver\\\\_%c\\\"。\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -4621,7 +4623,7 @@ msgid ""
 "    Continuing the first example above, you would specify that as \"Version\n"
 "    +-fdroid %v\" - \"-fdroid\" is the suffix F-Droid will then append to the\n"
 "    `versionName` specified in e.g. `build.gradle` when building the APK.\n"
-msgstr ""
+msgstr "    繼續上面的第一個例子，你可以將其指定為 \\\"Version +-fdroid %v\\\" - \\\"-fdroid\\\" 是 F-Droid 將在構建 APK 時附加到例如在 `build.gradle`中指定的 `versionName` 的後綴。\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -4631,7 +4633,7 @@ msgid ""
 "    stage, to differentiate F-Droid’s build from the original.\n"
 "    Continuing the first example above, you would specify that as\n"
 "    \"Version +-fdroid %v\" - \"-fdroid\" is the suffix.\n"
-msgstr ""
+msgstr "    此外，在這個階段，可以在版本名稱中加入一個後綴，以區分 F-Droid 的構建和原始版本。繼續上面的第一個例子，你可以將其指定為 \\\"Version +-fdroid %v\\\" - \\\"-fdroid\\\" 為後綴。\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -4639,7 +4641,7 @@ msgstr ""
 msgid ""
 "    If UpdateCheckMode is set to `Tags` the generator string behind `Version`\n"
 "    is optional and not used for the `commit:` field.\n"
-msgstr ""
+msgstr "    如果 UpdateCheckMode 被設定為 `Tags`，那麼 `Version` 後面的生成器字元串是可選的，並且不用於 `commit:` 字段。\n"
 
 #. type: Title ###
 #: _docs/Build_Metadata_Reference.md
@@ -4658,18 +4660,18 @@ msgid ""
 "for the current version, or that Non-Free libraries are being used, this "
 "would ideally be the latest version that is still free, though it may still "
 "be expedient to retain the automatic update check — see No Source Since."
-msgstr ""
+msgstr "推薦的[版本的名稱](https://developer.android.com/guide/topics/manifest/manifest-element.html#vname)。應用程式可能會有更新的版本（例如不穩定的版本），而且幾乎肯定會有更老的版本。這應該是被推薦用於一般用途的版本。如果當前版本沒有原始碼，或者使用的是非自由庫，那麼最好是仍然自由的最新版本，儘管保留自動更新檢查可能仍是權宜之計 - 參見 No Source Since。"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 msgid "This field is normally automatically updated - see _UpdateCheckMode_."
-msgstr ""
+msgstr "這個字段通常會自動更新 - 參見 _UpdateCheckMode_。"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid "This is converted to (`<marketversion>`) in the XML file (_index.xml_).\n"
-msgstr ""
+msgstr "在 XML 檔案 (_index.xml_) 中，該字段將被轉換為 (`<marketversion>`)。\n"
 
 #. type: Title ###
 #: _docs/Build_Metadata_Reference.md
@@ -4686,27 +4688,27 @@ msgid ""
 "although it’s the current version code that’s used by Android to determine "
 "version order and by F-Droid client to determine which version should be "
 "recommended."
-msgstr ""
+msgstr "與 [_CurrentVersion_](#CurrentVersion) 字段相對應的[版本代碼](https://developer.android.com/guide/topics/manifest/manifest-element.html#vcode)。這兩個字段都必須是正確和匹配的，儘管只有當前版本代碼被 Android 用來確定版本順序以及被 F-Droid 客戶端用來確定應該推薦哪個版本。"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 msgid ""
 "This field is normally automatically updated - see [_UpdateCheckMode_]"
 "(#UpdateCheckMode)."
-msgstr ""
+msgstr "這個字段通常是自動更新的 - 見 [_UpdateCheckMode_](#UpdateCheckMode)。"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 msgid ""
 "If not set, clients will recommend the highest version they can, as if the "
 "_CurrentVersionCode_ was infinite."
-msgstr ""
+msgstr "如果未設定，客戶端將推薦它們能推薦的最高版本，如同 _CurrentVersionCode_ 是無限的。"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid "This is converted to (`<marketvercode>`) in the XML file (_index.xml_).\n"
-msgstr ""
+msgstr "在 XML 檔案 (_index.xml_) 中，該字段將被轉換為 (`<marketversion>`)。\n"
 
 #. type: Title ###
 #: _docs/Build_Metadata_Reference.md
@@ -4724,13 +4726,13 @@ msgid ""
 "are not to be considered here - this field is intended to illustrate which "
 "apps do not currently distribute source code, and since when have they been "
 "doing so."
-msgstr ""
+msgstr "如果我們缺少上游報告的 _CurrentVersion_ 的原始碼，或者非自由元素已經被引入，這裡定義了開始缺少原始碼的第一個版本。這裡不考慮那些只缺少一個或幾個版本的原始碼，但提供較新版本的原始碼的應用程式 - 這個字段旨在說明哪些應用程式目前沒有分發原始碼，以及它們從什麼時候開始這樣做。"
 
 #. type: Title #
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid "Deprecated or Removed Fields"
-msgstr ""
+msgstr "已廢棄或刪除的字段"
 
 #. type: Title ###
 #: _docs/Build_Metadata_Reference.md
@@ -4744,19 +4746,19 @@ msgid ""
 "Comma-separated list of application IDs that this app provides. This field "
 "was only ever a stub and was never used for anything.  It was never "
 "supported in _index-v1.json nor _.yml_ metadata files."
-msgstr ""
+msgstr "此應用程式提供的應用程式的 ID 的逗號分隔清單。這個字段只是一個存根，從未用於任何事情。 _index-v1.json 和 _ .yml_ 中介資料檔案中從未支援過它。"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid "This is converted to (`<provides>`) in the XML file (_index.xml_).\n"
-msgstr ""
+msgstr "在 XML 檔案 (_index.xml_) 中，該字段將被轉換為 (`<provides>`)。\n"
 
 #. type: YAML Front Matter: title
 #: _docs/Build_Server_Setup.md
 #, no-wrap
 msgid "Build Server Setup"
-msgstr ""
+msgstr "構建伺服器設定"
 
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
@@ -4767,33 +4769,33 @@ msgid ""
 "could be considered a dangerous pastime from a security perspective. This is "
 "even more the case when the products of the build are also distributed "
 "widely and in a semi-automated (\"you have updates available\") fashion."
-msgstr ""
+msgstr "F-Droid 構建伺服器將每個軟體包的構建隔離在一個乾淨、隔離和安全的一次性虛擬機環境中。構建數以千計的應用程式，特別是使用自動化和/或無人值守的流程，從安全角度來看，可以被認為是一種危險遊戲。當構建的產物也是以半自動化（\\\"你有更新可用\\\"）的方式廣泛傳播時，情況就更糟糕了。"
 
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
 msgid ""
 "Assume that an upstream source repository is compromised. A small selection "
 "of things that an attacker could do in such a situation:"
-msgstr ""
+msgstr "假定上游原始碼軟體庫已被攻擊。攻擊者在這種情況下可以執行的一小部分操作："
 
 #. type: Bullet: '1.  '
 #: _docs/Build_Server_Setup.md
 msgid ""
 "Use custom build steps to execute virtually anything as the user doing the "
 "build."
-msgstr ""
+msgstr "使用自訂的構建步驟，作為進行構建的用戶執行幾乎任何東西。"
 
 #. type: Bullet: '2.  '
 #: _docs/Build_Server_Setup.md
 msgid "Access the keystore."
-msgstr ""
+msgstr "存取密鑰庫。"
 
 #. type: Bullet: '3.  '
 #: _docs/Build_Server_Setup.md
 msgid ""
 "Modify the built APK files or source tarballs for other applications in the "
 "repository."
-msgstr ""
+msgstr "修改軟體庫中其他應用程式構建的 APK 檔案或原始碼包。"
 
 #. type: Bullet: '4.  '
 #: _docs/Build_Server_Setup.md
@@ -4801,7 +4803,7 @@ msgid ""
 "Modify the metadata (which includes build scripts, which again, also "
 "includes the ability to execute anything) for other applications in the "
 "repository."
-msgstr ""
+msgstr "修改軟體庫中其他應用程式的中介資料（包括構建腳本，其中還包括執行任何內容的功能）。"
 
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
@@ -4810,7 +4812,7 @@ msgid ""
 "application in question. Not only is the build environment fresh for each "
 "build, and thrown away afterwards, but it is also totally isolated from the "
 "signing environment."
-msgstr ""
+msgstr "透過完全隔離，影響至少局限於有關的應用程式。構建環境不僅在每次構建時是新鮮的，之後就會被扔掉，而且它也與簽名環境完全隔離。"
 
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
@@ -4820,7 +4822,7 @@ msgid ""
 "least extremely messy) to start modifying and restoring the SDK on a multi-"
 "purpose system, but within the confines of a throwaway single-use virtual "
 "machine, anything is possible."
-msgstr ""
+msgstr "除了安全問題，還有一些應用程式有奇怪的要求，比如舊版本的 NDK。在一個多用途系統上開始修改和恢復 SDK 是不切實際的（或者至少是極其混亂的），但是在一個一次性虛擬機的範圍內，一切都有可能。"
 
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
@@ -4829,13 +4831,13 @@ msgid ""
 "and completely reproducible environment in which builds are made. "
 "Additionally, it allows for specialised custom build environments for "
 "particular applications."
-msgstr ""
+msgstr "除此以外，還有一個明顯的優勢，那就是有一個標準化的、完全可重複的環境來進行構建。此外，它還允許為特定的應用程式提供專門的定制構建環境。"
 
 #. type: Title ##
 #: _docs/Build_Server_Setup.md
 #, no-wrap
 msgid "Overview of the setup"
-msgstr ""
+msgstr "設定概述"
 
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
@@ -4849,7 +4851,7 @@ msgid ""
 "ready for proper packaging. Also, it will likely only work on Debian, Ubuntu "
 "and other Debian-derivatives since F-Droid only uses Debian in its "
 "infrastructure (we welcome porting contributions!)."
-msgstr ""
+msgstr "這是從完全乾淨的最小 Debian/stable 安裝開始如何設定一個有效的構建伺服器的方法。本指南假設你已經[設定了 _fdroidserver_](../Installing_the_Server_and_Repo_Tools)。直接從 [git](https://gitlab.com/fdroid/fdroidserver) 執行 _fdroidserver_ 工具（例如 `~/fdroidserver/fdroid build org.adaway`）可能是目前最容易，因為構建伺服器設定腳本尚未真正準備好進行正確的封裝。此外，它可能只適用於 Debian、Ubuntu 和其他 Debian 衍生產品，因為 F-Droid 只在其基礎設施中使用 Debian（我們歡迎移植貢獻！）。"
 
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
@@ -4858,7 +4860,7 @@ msgid ""
 "be some heavy tweaking. If you run Ubuntu or derivative distro, you can get "
 "any packages missing from your version, like _vagrant-cachier_, from this "
 "PPA: <https://launchpad.net/~fdroid/+archive/ubuntu/buildserver/>"
-msgstr ""
+msgstr "基礎伺服器至少需要 Debian/jessie，否則需要進行一些繁重的調整。如果你執行 Ubuntu 或衍生髮行版，你可以從這個 PPA 中獲得任何缺少的軟體包，比如 _vagrant-cachier_：<https://launchpad.net/~fdroid/+archive/ubuntu/buildserver/>"
 
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
@@ -4869,7 +4871,7 @@ msgid ""
 "example, _mercurial_ or _subversion_. Once the packages are installed and "
 "the _fdroid_ user is created, nothing else in this process should be run "
 "using root or _sudo_."
-msgstr ""
+msgstr "首先，安裝必要的軟體包，並建立一個新的用戶執行這裡的整個過程，例如，_fdroid_。這些只是所有構建所需的包，你可能需要安裝額外的包來構建應用程式，例如，_mercurial_ 或 _subversion_。一旦軟體包被安裝，並且 _fdroid_ 用戶被建立，這個過程中的任何其他東西都不應該用 root 或 _sudo_ 執行。"
 
 #. type: Fenced code block (bash)
 #: _docs/Build_Server_Setup.md
@@ -4888,7 +4890,7 @@ msgstr ""
 msgid ""
 "Clone source code and configure the buildserver settings, running as "
 "_fdroid_ user:"
-msgstr ""
+msgstr "複製原始碼並配置 builderver 設定，以 _fdroid_ 用戶身份執行："
 
 #. type: Fenced code block (bash)
 #: _docs/Build_Server_Setup.md
@@ -4898,33 +4900,36 @@ msgid ""
 "fdroid:~$ git clone https://gitlab.com/fdroid/fdroidserver.git\n"
 "fdroid:~$ cp fdroidserver/examples/makebuildserver.config.py fdroidserver/\n"
 msgstr ""
+"fdroid:~$ cd ~\n"
+"fdroid:~$ git clone https://gitlab.com/fdroid/fdroidserver.git\n"
+"fdroid:~$ cp fdroidserver/examples/makebuildserver.config.py fdroidserver/\n"
 
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
 msgid ""
 "You also have to make sure your `ANDROID_HOME` environment variable is [set "
 "up](../Installing_the_Server_and_Repo_Tools#building-apps) correctly."
-msgstr ""
+msgstr "你還必須確保你的 `ANDROID_HOME` 環境變量[設定](../Installing_the_Server_and_Repo_Tools#building-apps)正確。"
 
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
 msgid ""
 "For your convenience you optionally may add the fdroid executable to your "
 "path:"
-msgstr ""
+msgstr "為了方便，你可以選擇將 fdroid 可執行檔案加入到你的路徑中："
 
 #. type: Fenced code block (bash)
 #: _docs/Build_Server_Setup.md
 #, no-wrap
 msgid "fdroid:~$ echo \"PATH=\\$PATH:$HOME/fdroidserver\" >> ~/.bashrc\n"
-msgstr ""
+msgstr "fdroid:~$ echo \"PATH=\\$PATH:$HOME/fdroidserver\" >> ~/.bashrc\n"
 
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
 msgid ""
 "Create the base buildserver image... (downloading the basebox and all the "
 "sdk platforms can take long time)."
-msgstr ""
+msgstr "建立基本的構建伺服器鏡像...（下載 basebox 和所有 sdk platforms 可能需要很長的時間）。"
 
 #. type: Fenced code block (bash)
 #: _docs/Build_Server_Setup.md
@@ -4933,11 +4938,13 @@ msgid ""
 "fdroid:~$ cd fdroidserver\n"
 "fdroid:~/fdroidserver$ ./makebuildserver\n"
 msgstr ""
+"fdroid:~$ cd fdroidserver\n"
+"fdroid:~/fdroidserver$ ./makebuildserver\n"
 
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
 msgid "Get all of the app build metadata from the fdroiddata repo..."
-msgstr ""
+msgstr "從 fdroiddata repo 中獲取所有的應用程式構建中介資料..."
 
 #. type: Fenced code block (bash)
 #: _docs/Build_Server_Setup.md
@@ -4948,6 +4955,10 @@ msgid ""
 "fdroid:~$ cp fdroidserver/examples/config.yml fdroiddata/\n"
 "fdroid:~$ sed -i \"s@^[# ]*build_server_always.*@build_server_always: true@\" fdroiddata/config.yml\n"
 msgstr ""
+"fdroid:~/fdroidserver$ cd ~\n"
+"fdroid:~$ git clone https://gitlab.com/fdroid/fdroiddata.git\n"
+"fdroid:~$ cp fdroidserver/examples/config.yml fdroiddata/\n"
+"fdroid:~$ sed -i \"s@^[# ]*build_server_always.*@build_server_always: true@\" fdroiddata/config.yml\n"
 
 #. type: Title ##
 #: _docs/Build_Server_Setup.md
@@ -4960,7 +4971,7 @@ msgstr "設定構建伺服器"
 msgid ""
 "In addition to the basic setup previously described, we ship a Vagrant-"
 "compatible Debian/stretch base box called ’fdroid/basebox-stretch64’."
-msgstr ""
+msgstr "除了前面描述的基本設定之外，我們還提供了一個與 Vagrant 相容的 Debian/stretch 基礎系統，稱為 ‘fdroid/basebox-stretch64‘。"
 
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
@@ -4970,7 +4981,7 @@ msgid ""
 "automated. (If you are interested in this process or want to bootstrap those "
 "by yourself you should look at: [F-Droid Base Box](https://gitlab.com/fdroid/"
 "basebox#fdroid_basebox))"
-msgstr ""
+msgstr "我們正在為我們的構建伺服器從頭引導 Debian Vagrant 盒子。獲取和驗證我們預先構建的 Vagrant 盒子是完全自動化的。 （如果你對這個過程感興趣或者想自己引導這些盒子，你應該看看：[F-Droid Base Box](https://gitlab.com/fdroid/basebox#fdroid_basebox)）"
 
 #. type: Title ###
 #: _docs/Build_Server_Setup.md
@@ -4989,7 +5000,7 @@ msgid ""
 "exist, and an apt proxy definition, both of which may need customising for "
 "your environment. You can then go to the `fdroidserver` directory and run "
 "`makebuildserver`."
-msgstr ""
+msgstr "導覽到你的 [F-Droid Server git](https://gitlab.com/fdroid/fdroidserver) 複製，從建立 `makebuildserver.config.py` 開始，以 `./examples/makebuildserver.config.py` 作為參考 - 檢視其中的設定和文檔，以確定是否需要進行更改以適應你的環境。如果基礎系統不存在，則有一個用於獲取它的路徑，以及一個 apt 代理定義，這兩者都可能需要針對你的環境進行自訂。然後，你可以轉到 `fdroidserver` 檔案夾並執行 `makebuildserver`。"
 
 #. type: Fenced code block (bash)
 #: _docs/Build_Server_Setup.md
@@ -5014,7 +5025,7 @@ msgid ""
 "have a working build server image, if the recipes change (e.g. when packages "
 "need to be added) you can just run that script again and the existing one "
 "will be updated in place."
-msgstr ""
+msgstr "這將需要很長的時間，使用大量的頻寬和磁盤空間 - 其中大部分用於安裝所有不同平台的 Android SDK 的必要部分。幸運的是，你只需要偶爾這麼做。一旦你有了一個工作的構建伺服器鏡像，如果配方發生變化（例如需要加入軟體包時），你只需再次執行該腳本，現有鏡像將原地更新。"
 
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
@@ -5023,7 +5034,7 @@ msgid ""
 "what’s used for your App build runs. Now you can build packages as as you "
 "used to, but when you run `fdroid build --server ...` App build runs will be "
 "isolated inside a virtual machine."
-msgstr ""
+msgstr "一旦完成，你就會有一個新的基礎系統叫做 'buildserver'，用於你的應用程式構建執行。現在你可以像以前一樣構建軟體包，但是當你執行 `fdroid build --server ...` 時應用程式構建執行將被隔離在一個虛擬機內。"
 
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
@@ -5033,13 +5044,13 @@ msgid ""
 "for use in future builds, to improve performance. You can force discarding "
 "of this snapshot and rebuilding from scratch using a switch: `fdroid build --"
 "resetserver ...`."
-msgstr ""
+msgstr "第一次構建時，會以“構建伺服器”系統為基礎建立一個新的虛擬機。這個乾淨的機器狀態的快照被儲存下來，以便在未來的構建中使用，從而提高性能。你可以使用選項強制丟棄該快照並從頭開始重建：`fdroid build --resetserver ...`。"
 
 #. type: Title ###
 #: _docs/Build_Server_Setup.md
 #, no-wrap
 msgid "makebuildserver caching tweaks (optional)"
-msgstr ""
+msgstr "makebuildserver 快取的調整（可選）"
 
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
@@ -5056,7 +5067,7 @@ msgid ""
 "downloading it using `android update sdk --no-ui -t android-19`. It is "
 "possible to create the cache files of this additions from a local "
 "installation of the SDK including these:"
-msgstr ""
+msgstr "主要的 SDK/NDK 下載將被自動快取，以加快下一次的速度，但對於使用 SDK 的 `android` 工具來安裝平台、附加組件和工具的較長部分，則沒有簡單的方法。然而，你可以提供一個預先填充的快取目錄，其中不僅包括這些下載，還包括所有相關附加組件的 .tar.gz 檔案，而不是允許自動快取。如果配置腳本檢測到這些，它們將被優先使用，而不是執行 android 工具。例如，如果你有 `buildserver/addons/cache/platforms/android-19.tar.gz`，那麼在安裝 android-19 平台時將會使用，而不是使用 `android update sdk --no-ui -t android-19` 重新下載。可以從本地安裝的 SDK 中建立該加入物的快取檔案，包括這些："
 
 #. type: Fenced code block (bash)
 #: _docs/Build_Server_Setup.md
@@ -5066,13 +5077,16 @@ msgid ""
 "tar czf android-19.tar.gz android-19\n"
 "mv android-19.tar.gz /path/to/buildserver/addons/cache/platforms/\n"
 msgstr ""
+"cd /path/to/android-sdk/platforms\n"
+"tar czf android-19.tar.gz android-19\n"
+"mv android-19.tar.gz /path/to/buildserver/addons/cache/platforms/\n"
 
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
 msgid ""
 "If you have already built a buildserver it is also possible to get this "
 "files directly from the buildserver:"
-msgstr ""
+msgstr "如果你已經建立了一個構建伺服器，也可以直接從構建伺服器中獲取這些檔案："
 
 #. type: Fenced code block (bash)
 #: _docs/Build_Server_Setup.md
@@ -5081,12 +5095,14 @@ msgid ""
 "vagrant ssh -- -C 'tar -C ~/android-sdk/platforms czf android-19.tar.gz android-19'\n"
 "vagrant ssh -- -C 'cat ~/android-sdk/platforms/android-19.tar.gz' > /path/to/fdroidserver/buildserver/cache/platforms/android19.tar.gz\n"
 msgstr ""
+"vagrant ssh -- -C 'tar -C ~/android-sdk/platforms czf android-19.tar.gz android-19'\n"
+"vagrant ssh -- -C 'cat ~/android-sdk/platforms/android-19.tar.gz' > /path/to/fdroidserver/buildserver/cache/platforms/android19.tar.gz\n"
 
 #. type: Title ##
 #: _docs/Build_Server_Setup.md
 #, no-wrap
 msgid "Running builds"
-msgstr ""
+msgstr "執行構建"
 
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
@@ -5097,13 +5113,13 @@ msgid ""
 "[Installing the Server and Repo Tools](../"
 "Installing_the_Server_and_Repo_Tools).  That provides all of the "
 "dependencies needed to run _fdroidserver_ from git."
-msgstr ""
+msgstr "當使用構建伺服器時，直接從 _fdroidserver_ 的 git 簽出執行 `fdroid` 將是最容易的。如果你還沒有安裝和設定 _fdroidserver_ 工具，接下來你將需要做這個：[安裝伺服器和軟體庫工具](../Installing_the_Server_and_Repo_Tools)。這提供了從 git 執行 _fdroidserver_ 所需的所有依賴項。"
 
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
 msgid ""
 "Now you are ready to run builds. Test by building the latest fdroid version:"
-msgstr ""
+msgstr "現在你已經準備好執行構建了。透過構建最新的 fdroid 版本進行測試："
 
 #. type: Fenced code block (bash)
 #: _docs/Build_Server_Setup.md
@@ -5112,12 +5128,14 @@ msgid ""
 "fdroid:~/fdroidserver$ cd ~/fdroiddata\n"
 "fdroid:~/fdroiddata$ ~/fdroidserver/fdroid build org.fdroid.fdroid -l --server\n"
 msgstr ""
+"fdroid:~/fdroidserver$ cd ~/fdroiddata\n"
+"fdroid:~/fdroiddata$ ~/fdroidserver/fdroid build org.fdroid.fdroid -l --server\n"
 
 #. type: Title ##
 #: _docs/Build_Server_Setup.md
 #, no-wrap
 msgid "Optionally using QEMU/KVM/libvirt instead of VirtualBox"
-msgstr ""
+msgstr "可選擇使用 QEMU/KVM/libvirt 而不是 VirtualBox"
 
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
@@ -5129,7 +5147,7 @@ msgid ""
 "order to make the libvirt image files directly readable by `vagrant "
 "package`, _libvirt_'s QEMU needs to be configured to always set the "
 "ownership to `libvirt.libvirt`."
-msgstr ""
+msgstr "它也可以透過 libvirt 使用 QEMU/KVM 客戶虛擬機代替預設的 VirtualBox。 VirtualBox 仍然是推薦的設定，因為 f-droid.org 使用的是 VirtualBox，但有些情況下不可能執行 VirtualBox，比如在已經執行 QEMU/KVM 客戶機的機器上。為了使 libvirt 映像檔案能被 `vagrant package` 直接讀取，_libvirt_ 的 QEMU 需要被配置為始終將所有權設定為 `libvirt.libvirt` 。"
 
 #. type: Fenced code block (console)
 #: _docs/Build_Server_Setup.md
@@ -5146,18 +5164,28 @@ msgid ""
 "EOF\n"
 "root:~# service libvirtd restart\n"
 msgstr ""
+"root:~# apt-get install vagrant vagrant-mutate vagrant-libvirt ebtables dnsmasq-base \\\n"
+"        python3-libvirt libvirt-clients libvirt-daemon-system qemu-kvm qemu-utils git \\\n"
+"        python3-yaml python3-clint python3-vagrant python3-pyasn1 python3-pyasn1-modules \\\n"
+"        python3-requests python3-git\n"
+"root:~# cat << EOF >> /etc/libvirt/qemu.conf\n"
+"user = \"libvirt\"\n"
+"group = \"libvirt\"\n"
+"dynamic_ownership = 1\n"
+"EOF\n"
+"root:~# service libvirtd restart\n"
 
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
 msgid ""
 "Then create a _makebuildserver.config.py_ next to _makebuildserver_ and add:"
-msgstr ""
+msgstr "然後在 _makebuildserver_ 旁邊建立一個 _makebuildserver.config.py_ 並加入："
 
 #. type: Fenced code block (python)
 #: _docs/Build_Server_Setup.md
 #, no-wrap
 msgid "vm_provider = 'libvirt'\n"
-msgstr ""
+msgstr "vm_provider = 'libvirt'\n"
 
 #. type: Title #####
 #: _docs/Build_Server_Setup.md
@@ -5172,12 +5200,14 @@ msgid ""
 "root:~# adduser fdroid libvirt\n"
 "root:~# adduser fdroid libvirt-qemu\n"
 msgstr ""
+"root:~# adduser fdroid libvirt\n"
+"root:~# adduser fdroid libvirt-qemu\n"
 
 #. type: Title #####
 #: _docs/Build_Server_Setup.md
 #, no-wrap
 msgid "older Debian and Ubuntu"
-msgstr ""
+msgstr "更舊版本的 Debian 和 Ubuntu"
 
 #. type: Fenced code block (console)
 #: _docs/Build_Server_Setup.md
@@ -5186,12 +5216,14 @@ msgid ""
 "root:~# adduser fdroid libvirtd\n"
 "root:~# adduser fdroid kvm\n"
 msgstr ""
+"root:~# adduser fdroid libvirtd\n"
+"root:~# adduser fdroid kvm\n"
 
 #. type: Title ###
 #: _docs/Build_Server_Setup.md
 #, no-wrap
 msgid "Advanced nested KVM Setup:"
-msgstr ""
+msgstr "高級嵌套 KVM 設定："
 
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
@@ -5199,12 +5231,12 @@ msgid ""
 "This section is not relevant for using F-Droid in a normal setup. If you "
 "want to run `fdroid build --server` flag inside a KVM, this chaper will help "
 "you getting started."
-msgstr ""
+msgstr "本節與在正常設定中使用 F-Droid 無關。如果你想在 KVM 中執行 `fdroid build --server` 標誌，本章將幫助你開始使用。"
 
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
 msgid "Consider following basic nesting setup:"
-msgstr ""
+msgstr "請考慮以下基本嵌套設定："
 
 #. type: Fenced code block
 #: _docs/Build_Server_Setup.md
@@ -5220,7 +5252,7 @@ msgstr ""
 msgid ""
 "The steps above describe how to setup (l1) and _makebuildserver_ sets up "
 "(l2)."
-msgstr ""
+msgstr "上面的步驟描述瞭如何設定 (l1) 和 _makebuildserver_ 設定 (l2)。"
 
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
@@ -5228,7 +5260,7 @@ msgid ""
 "First of all you'll have to check if you cpu support the _vmx_ (or _svm_ on "
 "amd) instruction set. You can use this command to list details about your "
 "cpu:"
-msgstr ""
+msgstr "首先，你必須檢查你的 cpu 是否支援 _vmx_（或 _svm_amd）指令集。你可以使用這個指令來列出關於你的 cpu 的細節："
 
 #. type: Fenced code block (bash)
 #: _docs/Build_Server_Setup.md
@@ -5239,29 +5271,29 @@ msgstr ""
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
 msgid "On (l0) you have to check that nesting is enabled:"
-msgstr ""
+msgstr "在 (l0) 上，你必須檢查是否啟用了嵌套功能："
 
 #. type: Fenced code block (bash)
 #: _docs/Build_Server_Setup.md
 #, no-wrap
 msgid "root:~# cat /sys/module/kvm_intel/parameters/nested\n"
-msgstr ""
+msgstr "root:~# cat /sys/module/kvm_intel/parameters/nested\n"
 
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
 msgid "If it's not enabled you can turn it on by running:"
-msgstr ""
+msgstr "如果它沒有被啟用，你可以透過執行此指令打開它："
 
 #. type: Fenced code block (bash)
 #: _docs/Build_Server_Setup.md
 #, no-wrap
 msgid "echo \"options kvm-intel nested=Y\" > /etc/modprobe.d/kvm-intel.conf\n"
-msgstr ""
+msgstr "echo \"options kvm-intel nested=Y\" > /etc/modprobe.d/kvm-intel.conf\n"
 
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
 msgid "You'll need to reboot to for this to take effect."
-msgstr ""
+msgstr "你需要重新啟動以使之生效。"
 
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
@@ -5270,7 +5302,7 @@ msgid ""
 "features required for nesting. So open up your configuration for the VM _/"
 "etc/libvirt/qemu/my-vm.xml_ and insert a cpu block inside your domain-tag. "
 "(_virt-manager_ also provides a user-interface for this operation.)"
-msgstr ""
+msgstr "接下來，你需要確保你的 (l1) 虛擬機配置轉發嵌套所需的 cpu 功能。所以打開你的虛擬機配置 _/etc/libvirt/qemu/my-vm.xml_，在你的 domain-tag 裡面插入一個 cpu 塊。 （_virt-manager_ 也為這個操作提供了一個用戶介面。）"
 
 #. type: Fenced code block (xml)
 #: _docs/Build_Server_Setup.md
@@ -5290,7 +5322,7 @@ msgid ""
 "details in [libvirts manual](https://libvirt.org/formatdomain."
 "html#elementsCPU).  The important part is that you forward _vmx_ (or _svm_ "
 "on amd) to the guest system."
-msgstr ""
+msgstr "這裡實際需要的配置取決於你的 cpu。你可以在 [libvirts 手冊](https://libvirt.org/formatdomain.html#elementsCPU)中找到細節。重要的部分是你把 _vmx_（或 _svm_ 在 amd 上）轉發給客戶系統。"
 
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
@@ -5298,7 +5330,7 @@ msgid ""
 "This is the setup that is used in the Continuous Integration builds as part "
 "of the [reproducible builds](https://reproducible-builds.org) effort.  You "
 "can see this in action on the Debian Project's jenkins setup:"
-msgstr ""
+msgstr "這是持續整合構建中使用的設定，是[可重複構建](https://reproducible-builds.org)工作的一部分。你可以在 Debian 專案的 jenkins 設定中看到它的作用："
 
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
@@ -5311,13 +5343,13 @@ msgstr ""
 #: _docs/Client_Bug_Reports.md
 #, no-wrap
 msgid "Client Bug Reports"
-msgstr ""
+msgstr "客戶端錯誤報告"
 
 #. type: Title ###
 #: _docs/Client_Bug_Reports.md
 #, no-wrap
 msgid "What to include in a bug report"
-msgstr ""
+msgstr "錯誤報告中應包括哪些內容"
 
 #. type: Plain text
 #: _docs/Client_Bug_Reports.md
@@ -5325,7 +5357,7 @@ msgid ""
 "In order to ensure that the F-Droid developers have the best chance of "
 "reproducing your issue and thus fixing it, please include as much of the "
 "following information as possible in your bug reports:"
-msgstr ""
+msgstr "為了確保 F-Droid 開發者有最大可能重現你的問題從而修復它，請在你的錯誤報告中盡可能多地包含以下資訊："
 
 #. type: Bullet: '* '
 #: _docs/Client_Bug_Reports.md
@@ -5340,30 +5372,30 @@ msgstr ""
 #. type: Bullet: '* '
 #: _docs/Client_Bug_Reports.md
 msgid "Device (e.g. \"Nexus 4\")"
-msgstr ""
+msgstr "裝置（例如：\\\"Nexus 4\\\"）"
 
 #. type: Bullet: '* '
 #: _docs/Client_Bug_Reports.md
 msgid "Steps to reproduce the bug"
-msgstr ""
+msgstr "重現該錯誤的步驟"
 
 #. type: Bullet: '* '
 #: _docs/Client_Bug_Reports.md
 msgid ""
 "A logcat from when the crash occured ([Getting logcat messages after crash]"
 "(../Getting_logcat_messages_after_crash))"
-msgstr ""
+msgstr "崩潰發生時的 logcat（[獲取崩潰後的 logcat 資訊](../Getting_logcat_messages_after_crash)）"
 
 #. type: Bullet: '* '
 #: _docs/Client_Bug_Reports.md
 msgid "Whether the bug happens on the previous stable version of F-Droid"
-msgstr ""
+msgstr "該錯誤是否發生在 F-Droid 之前的穩定版本上"
 
 #. type: Title ###
 #: _docs/Client_Bug_Reports.md
 #, no-wrap
 msgid "Why does an issue say \"waiting on response\" next to it?"
-msgstr ""
+msgstr "為什麼一個問題旁邊會寫著 \\\"waiting on response\\\"？"
 
 #. type: Plain text
 #: _docs/Client_Bug_Reports.md
@@ -5372,7 +5404,7 @@ msgid ""
 "bugs that are reported. Also, if feature requests are posted, then we will "
 "try to engage with the person who requested the feature to see if it is in "
 "the best interests of F-Droid as a whole."
-msgstr ""
+msgstr "F-Droid 的開發團隊將盡力重現和修復任何被報告的錯誤。同時，如果功能請求被發布，那麼我們將嘗試與請求該功能的人接觸，看看它是否符合 F-Droid 整體的最佳利益。"
 
 #. type: Plain text
 #: _docs/Client_Bug_Reports.md
@@ -5382,7 +5414,7 @@ msgid ""
 "experiencing the problem). Other times, feature requests do not provide "
 "enough detail for us to respond appropriately. In these situations, we will "
 "apply the \"waiting-on-response\" label to the issue."
-msgstr ""
+msgstr "有時，我們無法重現一個特定的錯誤，因此需要從最初的錯誤報告者（或其他也在經歷這個問題的人）那裡得到更多的回饋。其他時候，功能請求沒有提供足夠的細節讓我們做出適當的回應。在這種情況下，我們會對該問題貼上 \\\"waiting-on-response\" 的標籤。"
 
 #. type: Plain text
 #: _docs/Client_Bug_Reports.md
@@ -5391,7 +5423,7 @@ msgid ""
 "be closed, and probably labelled with a \"cant-reproduce\" label. If this "
 "happens to an issue of yours, feel free to re-open it if you come back and "
 "have more information which may help resolve the issue properly."
-msgstr ""
+msgstr "如果在相當長的時間後，沒有任何回應，這個問題將被關閉，並可能被貼上 \"cant-reproduce\" 的標籤。如果你的問題發生了這種情況，如果你回來並且有更多的資訊可以幫助正確解決這個問題，請隨時重新打開它。"
 
 #. type: Plain text
 #: _docs/Client_Bug_Reports.md
@@ -5401,26 +5433,26 @@ msgid ""
 "to do this. The reason is that as the bug list grows, it becomes harder for "
 "us to manage, and harder for new contributors to decide what they could work "
 "on."
-msgstr ""
+msgstr "目前，沒有一個固定的時間框架，這些問題將被關閉（即 4 週內沒有回應），但在未來，我們可能決定這樣做。原因是，隨著錯誤清單的增長，它對我們來說變得更難管理，對新的貢獻者來說，也更難決定他們可以做什麼工作。"
 
 #. type: Title ###
 #: _docs/Client_Bug_Reports.md
 #, no-wrap
 msgid "Where to file bug report"
-msgstr ""
+msgstr "在哪裡提交錯誤報告"
 
 #. type: Plain text
 #: _docs/Client_Bug_Reports.md
 msgid ""
 "[F-droid issue tracker](https://f-droid.org/issues/) specifically [F-droid "
 "client section](https://gitlab.com/fdroid/fdroidclient/issues)"
-msgstr ""
+msgstr "[F-droid 問題跟踪器](https://f-droid.org/issues/)特別是 [F-droid 客戶端部分](https://gitlab.com/fdroid/fdroidclient/issues)"
 
 #. type: YAML Front Matter: title
 #: _docs/Code_of_Conduct.md
 #, no-wrap
 msgid "Code of Conduct"
-msgstr ""
+msgstr "行為準則"
 
 #. type: Plain text
 #: _docs/Code_of_Conduct.md
@@ -5429,13 +5461,13 @@ msgid ""
 "repository, have adopted a code of conduct for participants to its issue "
 "trackers, forum, IRC channels and other modes of communication within the "
 "project."
-msgstr ""
+msgstr "F-Droid 專案，F-Droid 軟體和 f-droid.org 軟體庫的製作方，已採納以下的行為準則來對其問題跟踪器、論壇、IRC 頻道和專案內使用其他交流途徑的參與人員進行約束。"
 
 #. type: Title ##
 #: _docs/Code_of_Conduct.md
 #, no-wrap
 msgid "1. Be respectful"
-msgstr ""
+msgstr "1. 要有禮貌"
 
 #. type: Plain text
 #: _docs/Code_of_Conduct.md
@@ -5445,13 +5477,13 @@ msgid ""
 "so, remain respectful. Disagreement is no excuse for poor behaviour or "
 "personal attacks, and a community in which people feel threatened is not a "
 "healthy community."
-msgstr ""
+msgstr "這種規模的專案中，很難避免遇到與你意見不合，或者難以合作的人。請接受這一事實，並保持禮貌。意見不一致並不是糟糕舉止或者人身攻擊的藉口，而且讓人感覺受到威脅顯然不是健康的社群氛圍。"
 
 #. type: Title ##
 #: _docs/Code_of_Conduct.md
 #, no-wrap
 msgid "2. Assume good faith"
-msgstr ""
+msgstr "2. 善意推定"
 
 #. type: Plain text
 #: _docs/Code_of_Conduct.md
@@ -5459,20 +5491,20 @@ msgid ""
 "F-Droid Contributors have many ways of reaching our common goal of "
 "distributing free software which may differ from your ways. Assume that "
 "other people are working towards this goal."
-msgstr ""
+msgstr "F-Droid 貢獻者有很多方法來達到我們發布自由軟體的共同目標，這可能與你的方法不同。請始終假設其他人都在為這一目標而付諸努力。"
 
 #. type: Plain text
 #: _docs/Code_of_Conduct.md
 msgid ""
 "Note that many of our Contributors are not native English speakers or may "
 "have different cultural backgrounds."
-msgstr ""
+msgstr "請注意，我們的許多貢獻者不是以英語為母語的人，或者可能有不同的文化背景。"
 
 #. type: Title ##
 #: _docs/Code_of_Conduct.md
 #, no-wrap
 msgid "3. Be collaborative"
-msgstr ""
+msgstr "3. 保持合作"
 
 #. type: Plain text
 #: _docs/Code_of_Conduct.md
@@ -5480,7 +5512,7 @@ msgid ""
 "F-Droid is a large and complex project; there is always more to learn within "
 "F-Droid. It's good to ask for help when you need it. Similarly, offers for "
 "help should be seen in the context of our shared goal of improving F-Droid."
-msgstr ""
+msgstr "F-Droid 是一個龐大而復雜的專案，這里永遠會有需要學習的新知識。當你需要幫助的時候，主動向他人求助是一個好的選擇。類似地，他人所提供的幫助應該放在改進 F-Droid 這一共同目標的背景關係中理解。"
 
 #. type: Plain text
 #: _docs/Code_of_Conduct.md
@@ -5488,13 +5520,13 @@ msgid ""
 "When you make something for the benefit of the project, be willing to "
 "explain to others how it works, so that they can build on your work to make "
 "it even better."
-msgstr ""
+msgstr "當你做了有益於專案的事情時，也請不要吝嗇向他人解釋其原理，這樣他人才能夠基於你的工作做出進一步的改進。"
 
 #. type: Title ##
 #: _docs/Code_of_Conduct.md
 #, no-wrap
 msgid "4. Try to be concise"
-msgstr ""
+msgstr "4. 言簡意賅"
 
 #. type: Plain text
 #: _docs/Code_of_Conduct.md
@@ -5503,7 +5535,7 @@ msgid ""
 "Writing a short message means people can understand the conversation as "
 "efficiently as possible. When a long explanation is necessary, consider "
 "adding a summary."
-msgstr ""
+msgstr "請時刻留心你所寫的內容，它會被成百上千的人閱讀。書寫簡短的郵件意味著人們可以盡可能高效地理解一次對話。如果必須寫出詳細的解釋，那麼請嘗試增加一些總結。"
 
 #. type: Plain text
 #: _docs/Code_of_Conduct.md
@@ -5511,20 +5543,20 @@ msgid ""
 "Try to bring new arguments to a conversation so that each post adds "
 "something unique to the thread, keeping in mind that the rest of the thread "
 "still contains the other messages with arguments that have already been made."
-msgstr ""
+msgstr "盡量為對話帶來新的論點，使每個帖子都能為主題增加一些獨特的內容，同時要記住，主題的其餘部分仍然包含其他已經提出論點的資訊。"
 
 #. type: Plain text
 #: _docs/Code_of_Conduct.md
 msgid ""
 "Try to stay on topic, especially in discussions that are already fairly "
 "large."
-msgstr ""
+msgstr "請盡量扣緊主題，尤其是在討論寬泛話題的情況下更需注意。"
 
 #. type: Title ##
 #: _docs/Code_of_Conduct.md
 #, no-wrap
 msgid "5. Be open"
-msgstr ""
+msgstr "5. 保持開放"
 
 #. type: Plain text
 #: _docs/Code_of_Conduct.md
@@ -5533,7 +5565,7 @@ msgid ""
 "communication. As per paragraph three of the social contract, you should "
 "preferably use public methods of communication for F-Droid-related messages, "
 "unless posting something sensitive."
-msgstr ""
+msgstr "F-Droid 中使用的大多數通訊方式都允許公共和私人通訊。根據社會契約的第三段，除非發布敏感資訊，否則你最好對 F-Droid 相關的資訊使用公開的交流方式。"
 
 #. type: Plain text
 #: _docs/Code_of_Conduct.md
@@ -5542,13 +5574,13 @@ msgid ""
 "is a public support request much more likely to result in an answer to your "
 "question, it also makes sure that any inadvertent mistakes made by people "
 "answering your question will be more easily detected and corrected."
-msgstr ""
+msgstr "這也適用於尋求幫助或 F-Droid 相關支援的資訊；不僅公開的支援請求更有可能導致對你的問題的回答，它還能確保回答你問題的人所犯的任何不經意的錯誤將更容易被發現和糾正。"
 
 #. type: Title ##
 #: _docs/Code_of_Conduct.md
 #, no-wrap
 msgid "6. In case of problems"
-msgstr ""
+msgstr "6. 遇到問題"
 
 #. type: Plain text
 #: _docs/Code_of_Conduct.md
@@ -5563,7 +5595,7 @@ msgid ""
 "disrespectful. Assume good faith; it is more likely that participants are "
 "unaware of their bad behaviour than that they intentionally try to degrade "
 "the quality of the discussion."
-msgstr ""
+msgstr "雖然參與者們都應該遵守這一份行為準則，但我們承認人們有時候會遭遇不順，或者對這份準則中的某一部分不清楚。如果遇到這種情況，你可以嘗試回复他們並向其指出這份行為準則。只要符合時宜，這樣的交流無論透過公共或者私人渠道均可。然而，不論是透過公共還是私人渠道，訊息的內容應當緊扣行為準則中的相關部分。特別地，侮辱和不尊重的言辭應當杜絕。時刻假設別人心懷善意；參與者更有可能並未意識到自己的失當行為，而不是故意降低討論質量。"
 
 #. type: Plain text
 #: _docs/Code_of_Conduct.md
@@ -5573,7 +5605,7 @@ msgid ""
 "private) to the administrators of the F-Droid communication forum in "
 "question.  It is also possible to report issues on our [admin issue tracker]"
 "(https://gitlab.com/fdroid/admin/issues/)."
-msgstr ""
+msgstr "嚴重冒犯他人或屢教不改者，會視情況被 F-Droid 的通訊系統臨時或者永久封禁。相關的控訴應當（私下）發送給相應的 F-Droid 交流論壇管理員。也可以在我們的[管理問題追踪器](https://gitlab.com/fdroid/admin/issues/)上報告問題。"
 
 #. type: Plain text
 #: _docs/Code_of_Conduct.md
@@ -5581,13 +5613,13 @@ msgid ""
 "(_Based on the [Debian Code of Conduct](https://www.debian.org/"
 "code_of_conduct), Version 1.0 [ratified](https://www.debian.org/vote/2014/"
 "vote_002) on April 28th, 2014._)"
-msgstr ""
+msgstr "（_基於[ Debian 行為準則](https://www.debian.org/code_of_conduct)，1.0 版[批准](https://www.debian.org/vote/2014/vote_002)於 2014 年 4 月 28 日。_）"
 
 #. type: YAML Front Matter: title
 #: _docs/Deploying_the_Website.md
 #, no-wrap
 msgid "Deploying the Website"
-msgstr ""
+msgstr "部署網站"
 
 #. type: Plain text
 #: _docs/Deploying_the_Website.md
@@ -5601,13 +5633,13 @@ msgid ""
 "pages are generated using our [jekyll-fdroid](https://gitlab.com/fdroid/"
 "jekyll-fdroid) plugin, which takes the content from the [_f-droid.org_ index "
 "file](https://f-droid.org/repo/index-v1.jar)."
-msgstr ""
+msgstr "F-Droid 網站是使用 [Jekyll](https://jekyllrb.com/)和 [gitlab-ci](https://about.gitlab.com/features/gitlab-ci-cd/)構建的。整個網站現在使用標準的 git[“復刻”工作流程](https://docs.gitlab.com/ce/workflow/forking_workflow.html)工作，GitLab 很好地支援該工作流程，並且由 GitHub 等服務眾所周知。對於 _f-droid.org_ 分發的所有頁面和有關應用程式和軟體包的資訊，這些頁面是使用我們的 [jekyll-fdroid](https://gitlab.com/fdroid/jekyll-fdroid) 外掛程式生成的，該外掛程式從 [_f-droid.org_ 索引檔案](https://f-droid.org/repo/index-v1.jar)獲取內容。"
 
 #. type: Title ###
 #: _docs/Deploying_the_Website.md
 #, no-wrap
 msgid "Staging on development forks"
-msgstr ""
+msgstr "開發復刻上的暫存"
 
 #. type: Plain text
 #: _docs/Deploying_the_Website.md
@@ -5619,13 +5651,13 @@ msgid ""
 "example, _nicoalt_'s git fork is at <https://gitlab.com/nicoalt/fdroid-"
 "website>, and the _master_ branch from that is automatically deployed to "
 "<https://nicoalt.gitlab.io/fdroid-website>."
-msgstr ""
+msgstr "[fdroid-website](https://gitlab.com/fdroid/fdroid-website) 的所有開發分支都會自動設定一個臨時伺服器，並由 _gitlab-ci_ 配置維護。這會自動將分支的 _master_ 分支的內容部署到 [GitLab Pages](https://pages.gitlab.io/)。例如，_nicoalt_ 的 git 分支是在 <https://gitlab.com/nicoalt/fdroid-website>，並且 _master_ 分支自動的部署到 <https://nicoalt.gitlab.io/fdroid-website>。"
 
 #. type: Title ###
 #: _docs/Deploying_the_Website.md
 #, no-wrap
 msgid "Staging of the official website"
-msgstr ""
+msgstr "官方網站的暫存"
 
 #. type: Plain text
 #: _docs/Deploying_the_Website.md
@@ -5634,13 +5666,13 @@ msgid ""
 "<https://gitlab.com/fdroid/fdroid-website>, is automatically deployed to "
 "<https://fdroid.gitlab.io/fdroid-website>.  That is the place to review the "
 "current state of the website before tagging a release."
-msgstr ""
+msgstr "和復刻一樣，網站主 git 軟體庫的 _master_ 分支，<https://gitlab.com/fdroid/fdroid-website>，會自動部署到 <https://fdroid.gitlab.io/fdroid-website>。這是一個在旗標發布前檢視網站當前狀態的地方。"
 
 #. type: Title ###
 #: _docs/Deploying_the_Website.md
 #, no-wrap
 msgid "Deploying to https://f-droid.org"
-msgstr ""
+msgstr "部署到 https://f-droid.org"
 
 #. type: Plain text
 #: _docs/Deploying_the_Website.md
@@ -5651,7 +5683,7 @@ msgid ""
 "checks the PGP signature on the git tag using a manually configured GnuPG "
 "keyring that contains only the public keys of the PGP keys that are allowed "
 "to tag website releases."
-msgstr ""
+msgstr "當網站的更新經過測試並準備就緒時，發布管理員會在主 git 軟體庫中建立一個有 PGP 簽名的發布標籤。部署伺服器監控主 git 軟體庫中的新標籤。當它看到一個新標籤時，它首先使用手動配置的 GnuPG 密鑰環檢查 git 標籤上的 PGP 簽名，該密鑰環只包含允許旗標網站發布的PGP 密鑰的公鑰。"
 
 #. type: Plain text
 #: _docs/Deploying_the_Website.md
@@ -5660,12 +5692,12 @@ msgid ""
 "(https://gitlab.com/fdroid/fdroid-website/blob/master/.gitlab-ci.yml)  is "
 "run to generate the actual files for the site.  Those files are then copied "
 "into place on the _f-droid.org_ servers."
-msgstr ""
+msgstr "git 標籤驗證後，執行 [.gitlab-ci.yml](https://gitlab.com/fdroid/fdroid-website/blob/master/.gitlab-ci.yml) 中的 `f-droid.org` 目標以生成站點的實際檔案。然後將這些檔案複製到 _f-droid.org_ 伺服器上。"
 
 #. type: Plain text
 #: _docs/Deploying_the_Website.md
 msgid "The deploy tags use a \"semantic versioning\" naming scheme:"
-msgstr ""
+msgstr "部署標籤使用了一個“語義版本”命名方案："
 
 #. type: Bullet: '* '
 #: _docs/Deploying_the_Website.md
@@ -5675,18 +5707,18 @@ msgstr ""
 #. type: Bullet: '* '
 #: _docs/Deploying_the_Website.md
 msgid "_\\<minor>_ is incremented on each deployment"
-msgstr ""
+msgstr "_\\\\<minor>_ 在每次部署時都會遞增"
 
 #. type: Bullet: '* '
 #: _docs/Deploying_the_Website.md
 msgid "_\\<major>_ is only incremented when there are major changes"
-msgstr ""
+msgstr "_\\\\<major>_ 只在有重大變化時遞增"
 
 #. type: Title ###
 #: _docs/Deploying_the_Website.md
 #, no-wrap
 msgid "Setting up and running the deploy procedure"
-msgstr ""
+msgstr "設定和執行部署程式"
 
 #. type: Plain text
 #: _docs/Deploying_the_Website.md
@@ -5697,25 +5729,25 @@ msgid ""
 "or just `gitlab-runner`.  This final procedure is not part of a script "
 "committed into the website git repo so that the commands that run outside of "
 "docker cannot be modified via git."
-msgstr ""
+msgstr "部署程式在一台執行 Debian/stretch 的機器上進行了測試。它應該在軟體庫索引發佈時被觸發，所以它可以用最新的應用程式資訊進行重建。整個過程可以以 root 身份執行，也可以只執行 `gitlab-runner`。這個最後的程式不是提交到網站 git 軟體庫中的腳本的一部分，所以在 docker 之外執行的指令不能透過git修改。"
 
 #. type: Bullet: '1. '
 #: _docs/Deploying_the_Website.md
 msgid ""
 "[setup docker](https://docs.docker.com/engine/installation/linux/debian/)"
-msgstr ""
+msgstr "[設定 docker](https://docs.docker.com/engine/installation/linux/debian/)"
 
 #. type: Bullet: '2. '
 #: _docs/Deploying_the_Website.md
 msgid ""
 "[setup gitlab-ci-multi-runner](https://docs.gitlab.com/runner/install/linux-"
 "repository.html)"
-msgstr ""
+msgstr "[設定 gitlab-ci-multi-runner](https://docs.gitlab.com/runner/install/linux-repository.html)"
 
 #. type: Bullet: '3. '
 #: _docs/Deploying_the_Website.md
 msgid "prepare _deploy-allowlist-keyring.gpg_ using GnuPG:"
-msgstr ""
+msgstr "使用 GnuPG 準備 _deploy-allowlist-keyring.gpg_："
 
 #. type: Fenced code block (console)
 #: _docs/Deploying_the_Website.md
@@ -5725,11 +5757,14 @@ msgid ""
 "$ gpg --fingerprint 00aa5556  # verify it!\n"
 "$ gpg --export 00aa5556 > /path/to/deploy-allowlist-keyring.gpg\n"
 msgstr ""
+"$ gpg --recv-keys 00aa5556\n"
+"$ gpg --fingerprint 00aa5556  # 验证它！\n"
+"$ gpg --export 00aa5556 > /path/to/deploy-allowlist-keyring.gpg\n"
 
 #. type: Bullet: '4. '
 #: _docs/Deploying_the_Website.md
 msgid "get the website source code:"
-msgstr ""
+msgstr "獲得網站的原始碼："
 
 #. type: Fenced code block (console)
 #: _docs/Deploying_the_Website.md
@@ -5740,7 +5775,7 @@ msgstr "*例如* <https://gitlab.com/fdroid/fdroidclient/tree/master>"
 #. type: Bullet: '5.  '
 #: _docs/Deploying_the_Website.md
 msgid "run the generation:"
-msgstr ""
+msgstr "執行生成："
 
 #. type: Fenced code block (console)
 #: _docs/Deploying_the_Website.md
@@ -5753,6 +5788,12 @@ msgid ""
 "              --docker-volumes \"/path/to/deploy-allowlist-keyring.gpg:/root/.gnupg/pubring.gpg:ro\" \\\n"
 "              --docker-volumes `pwd`/_site:/builds/output\n"
 msgstr ""
+"$ cd fdroid-website\n"
+"$ git fetch --tags\n"
+"$ sudo gitlab-runner exec docker f-droid.org \\\n"
+"              --pre-build-script ./tools/prepare-for-deploy.py \\\n"
+"              --docker-volumes \"/path/to/deploy-allowlist-keyring.gpg:/root/.gnupg/pubring.gpg:ro\" \\\n"
+"              --docker-volumes `pwd`/_site:/builds/output\n"
 
 #. type: Bullet: '6. '
 #: _docs/Deploying_the_Website.md
@@ -5761,7 +5802,7 @@ msgid ""
 "generated files from overwriting [parts of the website](https://gitlab.com/"
 "fdroid/fdroid-website/blob/master/.rsync-deploy-exclude-list)  that other "
 "things manage:"
-msgstr ""
+msgstr "將網站的檔案部署到網路伺服器上，同時防止 _jekyll_ 生成的檔案覆蓋其他東西管理的[網站的部分](https://gitlab.com/fdroid/fdroid-website/blob/master/.rsync-deploy-exclude-list)："
 
 #. type: Fenced code block (console)
 #: _docs/Deploying_the_Website.md
