@@ -39,6 +39,7 @@ the main repository.
 * [Tips & Tricks](https://forum.f-droid.org/c/wiki/tips-and-tricks) A collection of useful tips and tricks that make life around F-Droid easier.
 * [All our APIs](All_our_APIs) Public API endpoints for data about _f-droid.org_, repos, mirrors, Android, Gradle, and more
 * [Wiki](https://gitlab.com/fdroid/wiki/-/wikis/home) For everything else that people want to document.
+* [Take-Down Requests](Take-Down_Requests) Our policy about requesting the removal of apps or content from _f-droid.org_.
 
 
 ### Developers
