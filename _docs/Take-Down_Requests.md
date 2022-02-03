@@ -38,7 +38,7 @@ trademark registrations, etc.
 
 Please note that downstream has and will never agree to 3rd party Terms of
 Service, Terms of Use or similar agreements for services not utilized by
-downstream.  Therefore such agreements usually to not provide an enforcible
+downstream.  Therefore such agreements usually do not provide an enforceable
 basis for take-down requests.
 
 Also please note that we are an volunteer driven organization.  We prioritize
@@ -70,5 +70,5 @@ under the `Takedown Request` label.
 
 Third party repositories are not under our control what so ever. If you think a
 3rd party repository is violating your rights you will have to get in contact
-with their respective operators. Procedure described here applies the official
-f-droid.org repository.
+with their respective operators. Procedures described here apply exclusively to
+f-droid.org.

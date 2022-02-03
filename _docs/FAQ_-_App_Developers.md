@@ -318,7 +318,7 @@ However, the alternative is for us to deny use of the software to all our
 users.
 
 
-### How can my app get removed?
+### How could my app be removed?
 
 Any changes to your app that result in a violation of our [inclusion
 policy](../Inclusion_Policy) will get your app removed or archived.  E.g. you
