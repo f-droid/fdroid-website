@@ -22,7 +22,7 @@ buildable with only FLOSS tools.
 
 Notably:
 
--   We cannot build apps using Google's proprietary "play-services".
+-   We cannot build apps using Google's proprietary "Play Services".
     Please talk to upstream about an untainted build flavor (either
     using microg or removing Non-Free dependencies completely).
 -   We cannot build apps using proprietary tracking/analytic
@@ -30,9 +30,9 @@ Notably:
     about an untainted build flavor (either using a FLOSS analytics
     software like ACRA or by removing Non-Free dependencies completely).
 -   We cannot build apps using proprietary ad libraries. We have nothing
-    against advertisments (see [_AntiFeatures_](https://monitor.f-droid.org/anti-features)),
-    but they must be provided by a FLOSS compatible way.
--   We cannot build apps requiring Non-Free buildtools, including
+    against advertisments (see [_Anti-Features_](../Anti-Features)),
+    but they must be provided by a FLOSS-compatible way.
+-   We cannot build apps requiring Non-Free build tools, including
     Oracle's JDK or some pre-release toolchains.
 
 Additionally:
@@ -43,7 +43,11 @@ Additionally:
     to date state.
 -   The software should not download additional executable binary
     files (e.g. Non-Free addons, auto-updates, etc).
--   The software should use its own unique Android package ID. Where the
+-   The software should use its own unique Android
+    "[Application ID](https://developer.android.com/studio/build/configure-app-module)"
+    based on a domain name under the developer's control.  It should not
+    be based on someone's domain name, (e.g. `com.google.foo`).
+-   Where the
     application is a fork of another (even one not included in the
     F-Droid repository) it must have a new ID, different from
     the original. Make sure to rename your fork accordingly (including
@@ -60,8 +64,8 @@ Additionally:
     third party, we include them in both, binary and
     sourcecode releases.
 -   Binary dependencies such as JAR files have to be replaced by
-    source-built versions or used from a trusted repository
-    (see manual).
+    source-built versions or used from a trusted repository like
+    Maven Central OSSRH (see manual).
 
 Ideally:
 
@@ -73,14 +77,15 @@ include these applications in the repository, but they are flagged with
 the appropriate [_Anti-Features_](../Anti-Features). Even though
 such software can be included, when appropriately flagged, it is
 frequently the case that other "FLOSS" software with these features is
-actually not entirely free. For example, advertising and spying on user
+actually not entirely free. For example, advertising and tracking users
 is often enabled via proprietary binary libraries which we cannot
 include.
 
-When including donation information, the relevant donation links (e.g. Bitcoin/
-PayPal/Flattr/etc) must also be available either:
+When including donation information, the relevant donation links (e.g.
+Liberapay/OpenCollective/Bitcoin/etc) must also be available either:
 
--   In a README or similar file in the projects source code.
+-   In a README or similar file in the project's source code.
+-   In a [_FUNDING.yml_](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/displaying-a-sponsor-button-in-your-repository#about-funding-files) file included in the project's source code.
 -   On the applications main website.
 -   If the software is hosted on GitLab, then it is sufficient that the
     person requesting donation info to be added to the fdroiddata repository
