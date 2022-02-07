@@ -86,7 +86,7 @@ are imported on a rolling basis, at least once a month.
 
 For the f-droid.org website, it is a much more complicated
 system. Since it cannot
-([yet?](https://gitlab.com/fdroid/fdroid-website/-/milestones/6))
+([yet?](https://gitlab.com/fdroid/fdroid-website/-/milestones/4))
 support lots of languages, we have to put stricter requirements on it.
 The core strings must be fully translated to be included.  They also
 must be maintained in order to stay included.  The documentation and
