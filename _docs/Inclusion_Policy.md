@@ -5,11 +5,16 @@ title: Inclusion Policy
 ---
 
 All applications in the repository must be Free, Libre and Open Source
-software – for example, released under a GPL or Apache license. Every
-effort is made to verify that this is actually the case, both by visual
-inspection of the source, and by building the application from the
-published source. If in doubt about a license, please refer to the [GNU
-license list](https://www.gnu.org/licenses/license-list.html).
+Software (FLOSS) – for example, released under a GPL or Apache
+license. Every effort is made to verify that this is actually the
+case, both by visual inspection of the source, and by building the
+application from the published source.  To determine which licenses
+are FLOSS, We defer to widely trusted organizations that have a proven
+track record.  Specifically, we aknowledge these standards:
+[DFSG](https://wiki.debian.org/DFSGLicenses),
+[FSF](https://www.fsf.org/licensing),
+[GNU](https://www.gnu.org/licenses/license-list.html), and
+[OSI](https://opensource.org/licenses).
 
 For software to be FLOSS, the software in its entirety must be so -
 including all libraries and dependencies used. Additionally, it must be
