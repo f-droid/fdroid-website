@@ -18,7 +18,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
 "POT-Creation-Date: 2022-02-03 21:41+0100\n"
-"PO-Revision-Date: 2022-02-08 09:09+0000\n"
+"PO-Revision-Date: 2022-02-09 04:37+0000\n"
 "Last-Translator: kak mi <wavelake@outlook.com>\n"
 "Language-Team: Chinese (Simplified) <https://hosted.weblate.org/projects/f-droid/website-posts/zh_Hans/>\n"
 "Language: zh_Hans\n"
@@ -16535,150 +16535,151 @@ msgstr ""
 #: _posts/2021-02-22-exodus-etip-canonical-database-for-tracking-trackers.md
 #, no-wrap
 msgid "εxodus ETIP: The Canonical Database for Tracking Trackers"
-msgstr ""
+msgstr "εxodus ETIP：用于跟踪器的标准数据库"
 
 #. type: Plain text
 #: _posts/2021-02-22-exodus-etip-canonical-database-for-tracking-trackers.md
 msgid "There is a new story to add to the list of horrors of [Surveillance Capitalism](https://en.wikipedia.org/wiki/Surveillance_capitalism): the United States' Military is [purchasing tracking and location data](https://www.vice.com/en/article/jgqm5x/us-military-location-data-xmode-locate-x) from companies that track many millions of people.  Users must have real options for stepping out of \"big tech\", [where tracking dominates](https://www.theguardian.com/technology/2017/nov/28/android-apps-third-party-tracker-google-privacy-security-yale-university).  We review all apps submitted to [_fdroiddata_](https://gitlab.com/fdroid/fdroiddata/merge_requests) for tracking and other \"[anti-features](https://f-droid.org/en/docs/Anti-Features/)\". F-Droid is built into mobile platforms like [CalyxOS](https://calyxos.org/) that are free of proprietary, big tech software.  Since we only distribute free software, that means we have the complete source code to review.  This makes it much easier to find tracking activity, even when it slips in accidentally without the app developer knowing it, like when one free library pulls in other dependencies."
-msgstr ""
+msgstr "[监视资本主义](https://en.wikipedia.org/wiki/Surveillance_capitalism)的恐怖清单中添加了一个新故事：美国军方正在从跟踪数百万人的公司[购买跟踪和位置数据](https:// /www.vice.com/en/article/jgqm5x/us-military-location-data-xmode-locate-x)。用户必须有真正的选择退出[以跟踪为主](https://www.theguardian.com/technology/2017/nov/28/android-apps-third-party-tracker-google-privacy-security-yale-university)的“科技巨头”。我们审查提交给 [_fdroiddata_](https://gitlab.com/fdroid/fdroiddata/merge_requests) 的所有应用以标记跟踪和其他“[负特征](https://f-droid.org/en/docs/Anti-Features/)”。 F-Droid 内置于 [CalyxOS](https://calyxos.org/) 等不包含专有的来自技术巨头的软件的移动平台中。由于我们只分发自由软件，这意味着我们有完整的源代码可供审查。这使得查找跟踪活动变得更加容易，即使它在应用开发人员不知情的情况下意外溜入，例如当一个自由库引入其他依赖项时。"
 
 #. type: Plain text
 #: _posts/2021-02-22-exodus-etip-canonical-database-for-tracking-trackers.md
 msgid "Right now, the most effective method for automatically finding trackers is to search for well known strings in the extracted contents of the APK.  Domain names are one example, like if an app is sending data to `google-analytics.com` or `facebook.com`, then it is clear that it is doing some kind of tracking.  These lists of well known strings must be created and managed by people, then gathered and reviewed.  [Exodus Privacy](https://exodus-privacy.eu.org/) created their [Exodus Tracker Investigation Platform (ETIP)](https://etip.exodus-privacy.eu.org/) for exactly this purpose.  F-Droid, [Yale Privacy Lab](https://github.com/YalePrivacyLab/tracker-profiles), [_jawz101_](https://github.com/jawz101/potentialTrackers), Guardian Project, and others have centralized their efforts on εxodus ETIP as the canonical database for these strings."
-msgstr ""
+msgstr "目前，自动查找跟踪器最有效的方法是在提取的 APK 内容中搜索众所周知的字符串。域名就是一个例子，如果一个应用正在向 `google-analytics.com` 或 `facebook.com` 发送数据，那么很明显它正在执行某种跟踪。这些众所周知的字符串列表必须由人们创建和管理，然后收集和审查。[Exodus Privacy](https://exodus-privacy.eu.org/) 正是为此而创建了他们的 [Exodus Tracker Investigation Platform (ETIP)](https://etip.exodus-privacy.eu.org/)。 F-Droid, [耶鲁隐私实验室](https://github.com/YalePrivacyLab/tracker-profiles), [_jawz101_](https://github.com/jawz101/potentialTrackers), Guardian Project ，和其他人则将 εxodus ETIP 作为这些字符串的标准数据库共同努力。"
 
 #. type: Title ##
 #: _posts/2021-02-22-exodus-etip-canonical-database-for-tracking-trackers.md
 #, no-wrap
 msgid "Searching the open web for key bits"
-msgstr ""
+msgstr "在开放网络中搜索关键比特位"
 
 #. type: Plain text
 #: _posts/2021-02-22-exodus-etip-canonical-database-for-tracking-trackers.md
 msgid "Since tracking is mostly done by companies trying to get customers, they advertise and document their services on the web.  We spent some time searching for that information to see what we could find.  We mostly searched using two bits of information: the API Key Identifiers that we [extracted](https://gitlab.com/trackingthetrackers/extracted-features/-/blob/master/axml-meta-data-run)  and \"top 10\" lists of companies that provide tracking and related services.  From this, we added over 50 new service profiles to the εxodus ETIP database.  We also added upwards of 100 pieces of additional information to existing entries like SDK identity strings, links to documentation, privacy policies, and information on the company's tracking methods."
-msgstr ""
+msgstr "由于跟踪主要由试图获取客户的公司完成，因此他们在网络上宣传和记录他们的服务。我们花了一些时间搜索这些信息，看看我们能找到什么。我们主要使用两个信息进行搜索：我们[提取](https://gitlab.com/trackingthetrackers/extracted-features/-/blob/master/axml-meta-data-run) 的 API Key 标识符和提供跟踪和相关服务的公司的 top 10 名单。由此，我们向 εxodus ETIP 数据库添加了 50 多个新的服务配置文件。我们还在现有条目中添加了超过 100 条附加信息，例如 SDK 标识字符串、文档链接、隐私政策以及有关公司跟踪方法的信息。"
 
 #. type: Plain text
 #: _posts/2021-02-22-exodus-etip-canonical-database-for-tracking-trackers.md
 msgid "From that research, we saved some choice promises from selected tracking companies:"
-msgstr ""
+msgstr "从那项研究中，我们保存了一些选定跟踪公司的选择承诺："
 
 #. type: Bullet: '* '
 #: _posts/2021-02-22-exodus-etip-canonical-database-for-tracking-trackers.md
 msgid "\"Glassbox offers customer experience analytics solutions that doesn’t just tell you what a customer is doing. It tells you why.\""
-msgstr ""
+msgstr "“Glassbox 提供的客户体验分析解决方案不仅仅告诉你客户在做什么。它告诉你为什么。”"
 
 #. type: Bullet: '* '
 #: _posts/2021-02-22-exodus-etip-canonical-database-for-tracking-trackers.md
 msgid "\"Target traffic from all sources, including the 50% from the hidden web where third-party cookies are blocked, to increase targetable inventory.\""
-msgstr ""
+msgstr "“定位来自所有来源的流量，包括来自第三方 cookie 被阻止的隐藏网络的 50% 流量，以增加可定位的库存。”"
 
 #. type: Bullet: '* '
 #: _posts/2021-02-22-exodus-etip-canonical-database-for-tracking-trackers.md
+#, fuzzy
 msgid "\"Collect customer and product data in real time, from anywhere\""
-msgstr ""
+msgstr "“从任何地方实时收集客户和产品数据”"
 
 #. type: Bullet: '* '
 #: _posts/2021-02-22-exodus-etip-canonical-database-for-tracking-trackers.md
 msgid "\"PlaytestCloud will capture the whole gameplay experience, turning you into a spectator with super powers.\""
-msgstr ""
+msgstr "“PlaytestCloud 将捕捉整个游戏体验，将你变成一个拥有超能力的观众。”"
 
 #. type: Bullet: '* '
 #: _posts/2021-02-22-exodus-etip-canonical-database-for-tracking-trackers.md
 msgid "\"We record the players’ screen, their touches and what they have to say at all times.\""
-msgstr ""
+msgstr "“我们随时记录玩家的屏幕、他们的触摸以及他们要说的话。”"
 
 #. type: Bullet: '* '
 #: _posts/2021-02-22-exodus-etip-canonical-database-for-tracking-trackers.md
 msgid "\"We curate geospatial ground truth data sets on a global scale\""
-msgstr ""
+msgstr "“我们管理全球范围内的地理空间地面实况数据集”"
 
 #. type: Bullet: '* '
 #: _posts/2021-02-22-exodus-etip-canonical-database-for-tracking-trackers.md
 msgid "\"Take segmentation and analysis from overnight to real-time. Our DMP works in-session for perfect match rates even on passerby traffic.\""
-msgstr ""
+msgstr "“从隔夜到实时进行细分和分析。我们的 DMP 在会话中工作，即使在游客流量上也能实现完美匹配率。”"
 
 #. type: Title ##
 #: _posts/2021-02-22-exodus-etip-canonical-database-for-tracking-trackers.md
 #, no-wrap
 msgid "Crowdsourcing the hunt for trackers"
-msgstr ""
+msgstr "众包寻找追踪器"
 
 #. type: Plain text
 #: _posts/2021-02-22-exodus-etip-canonical-database-for-tracking-trackers.md
 msgid "Tracking the trackers is the kind of work that fits in very well with crowdsourcing.  Tracking companies are disappearing and renaming themselves all the time, in order to avoid too much scrutiny.  But they still must reach out to developers in order to find customers.  That means we can find them.  Join in the search! Non-technical people can also contribute, for example, when you read news about a tracking company, [search](https://etip.exodus-privacy.eu.org/trackers/all) to see if it is already in ETIP.  If not, [file an issue](https://github.com/Exodus-Privacy/etip/issues) to request it is added. Android developers with little bits of spare time can add code signatures, domain names, and other key technical details to ETIP.  Or even [code up quick scripts](https://gitlab.com/trackingthetrackers/scripts/-/blob/master/find-ga_trackingId.py)  with new ideas for detecting tracking."
-msgstr ""
+msgstr "跟踪跟踪器是一种非常适合众包的工作。跟踪公司一直在消失并重新命名，以避免过多的审查。但他们仍然必须联系开发人员才能找到客户。这意味着我们可以找到它们。加入搜索！非技术人员也可以做出贡献，例如，当你读到有关跟踪公司的新闻时，[搜索](https://etip.exodus-privacy.eu.org/trackers/all)以查看它是否已经在 ETIP 中。如果没有，[提交一个 issue](https://github.com/Exodus-Privacy/etip/issues) 要求添加它。空闲时间很少的 Android 开发人员可以将代码签名、域名和其他关键技术细节添加到 ETIP。甚至可以[编写快速脚本](https://gitlab.com/trackingthetrackers/scripts/-/blob/master/find-ga_trackingId.py)实现检测跟踪的新想法。"
 
 #. type: Plain text
 #: _posts/2021-02-22-exodus-etip-canonical-database-for-tracking-trackers.md
 msgid "There are a number of forums where you can ask for assistance in getting started.  Hope to hear from you soon!"
-msgstr ""
+msgstr "你可以在许多论坛中寻求入门帮助。希望早日收到你的消息！"
 
 #. type: Bullet: '* '
 #: _posts/2021-02-22-exodus-etip-canonical-database-for-tracking-trackers.md
 msgid "[Contributing to Exodus Privacy](https://exodus-privacy.eu.org/en/page/contribute/)"
-msgstr ""
+msgstr "[为 Exodus Privacy 做贡献](https://exodus-privacy.eu.org/en/page/contribute/)"
 
 #. type: Bullet: '* '
 #: _posts/2021-02-22-exodus-etip-canonical-database-for-tracking-trackers.md
 msgid "[F-Droid Forum](https://forum.f-droid.org)"
-msgstr ""
+msgstr "[F-Droid 论坛](https://forum.f-droid.org)"
 
 #. type: Bullet: '* '
 #: _posts/2021-02-22-exodus-etip-canonical-database-for-tracking-trackers.md
 msgid "[F-Droid chat rooms](https://f-droid.org/about/#contact)"
-msgstr ""
+msgstr "[F-Droid 聊天室](https://f-droid.org/about/#contact)"
 
 #. type: Bullet: '* '
 #: _posts/2021-02-22-exodus-etip-canonical-database-for-tracking-trackers.md
 msgid "[Guardian Project channels](https://guardianproject.info/contact/)"
-msgstr ""
+msgstr "[Guardian Project 频道](https://guardianproject.info/contact/)"
 
 #. type: YAML Front Matter: title
 #: _posts/2021-02-24-running-emulator-tests-on-gitlab-ci.md
 #, no-wrap
 msgid "Running emulator tests on GitLab CI"
-msgstr ""
+msgstr "在 GitLab CI 上运行模拟器测试"
 
 #. type: Plain text
 #: _posts/2021-02-24-running-emulator-tests-on-gitlab-ci.md
 msgid "GitLab CI (Continuous Integration) has become an essential part of the F-Droid community processes.  It is free software, built on open standards, and works well.  The last piece that is missing from our testing ecosystem is a reliable way to run tests in actual Android emulators.  Thanks to pushes from a number of people, Google now actually tests running the [Android emulators in Docker](https://github.com/google/android-emulator-container-scripts).  And recent releases of the _emulator_ SDK package actually works without [immediately crashing](https://github.com/google/android-emulator-container-scripts/issues/21)! This is the most promising news regarding using free software emulators for Android testing in a long time.  Unfortunately, it is not smooth sailing yet, and getting the emulators to run in GitLab CI still requires some dancing around with magic incantations.  Our requirements are:"
-msgstr ""
+msgstr "GitLab CI（持续集成）已成为 F-Droid 社区流程的重要组成部分。它是自由软件，建立在开放标准之上，运行良好。我们的测试生态系统中缺少的最后一点是在实际 Android 模拟器中运行测试的可靠方法。得益于很多人的推动，Google 现在实际测试了[在 Docker 中运行 Android 模拟器](https://github.com/google/android-emulator-container-scripts)。最近发布的 _emulator_ SDK 包可以运行而没有[立即崩溃](https://github.com/google/android-emulator-container-scripts/issues/21)！这是长期以来关于使用自由软件模拟器进行 Android 测试的最有希望的消息。不幸的是，它还不是一帆风顺的，让模拟器在 GitLab CI 中运行仍然需要一些魔法咒语。我们的要求是："
 
 #. type: Bullet: '* '
 #: _posts/2021-02-24-running-emulator-tests-on-gitlab-ci.md
 msgid "Works on the default gitlab.com shared runners."
-msgstr ""
+msgstr "适用于默认的 gitlab.com 共享 runner。"
 
 #. type: Bullet: '* '
 #: _posts/2021-02-24-running-emulator-tests-on-gitlab-ci.md
 msgid "Works without KVM or any extra privileges."
-msgstr ""
+msgstr "无需 KVM 或任何额外权限即可工作。"
 
 #. type: Bullet: '* '
 #: _posts/2021-02-24-running-emulator-tests-on-gitlab-ci.md
 msgid "Uses KVM when available."
-msgstr ""
+msgstr "KVM 可用时使用 KVM。"
 
 #. type: Plain text
 #: _posts/2021-02-24-running-emulator-tests-on-gitlab-ci.md
 msgid "What we have now gives us the foundation to build our standard [_fdroidclient_ CI setup](https://gitlab.com/fdroid/ci-images-client) upon. Before, we were limited to using old _armeabi-v7a_ emulators, which are run almost unimaginably slow.  Those were the only emulator system images that would run in Docker without KVM support.  Even with KVM support, the emulator seems to be quite flaky.  This has gotten better, but is still not where it should be."
-msgstr ""
+msgstr "我们现在拥有的为我们构建标准 [_fdroidclient_ CI 设置](https://gitlab.com/fdroid/ci-images-client) 奠定了基础。以前，我们仅能使用旧的 _armeabi-v7a_ 模拟器，它们慢得几乎无法想象。这些是唯一可以在没有 KVM 支持的情况下在 Docker 中运行的模拟器系统映像。即使有 KVM 支持，模拟器似乎也很不稳定。这已经变得更好了，但仍然无法令人满意。"
 
 #. type: Plain text
 #: _posts/2021-02-24-running-emulator-tests-on-gitlab-ci.md
 msgid "The good news is that running the emulator in Docker is now stable enough that people are actually building things around it, like running emulators in [GitHub Actions](https://github.com/marketplace/actions/android-emulator-runner/).  As much people use the Google emulators, that should keep Google taking care of them.  The F-Droid emulator setup is free software: Debian base image running on GNU/Linux runners.  Any project using GitLab CI can use this setup to run emulators on merge request, etc."
-msgstr ""
+msgstr "好消息是，在 Docker 中运行模拟器现在足够稳定，使人们可以真正围绕它构建东西，比如在 [GitHub Actions](https://github.com/marketplace/actions/android-emulator-runner/) 中运行模拟器。因为很多人使用 Google 模拟器，这应该可以让 Google 维护它们。 F-Droid 模拟器设置是自由软件：在 GNU/Linux runner 上运行的 Debian 基础映像。任何使用 GitLab CI 的项目都可以使用此设置在合并请求等上运行模拟器。"
 
 #. type: Plain text
 #: _posts/2021-02-24-running-emulator-tests-on-gitlab-ci.md
 msgid "It is important to use the `default` rather than `google_apis` system-images they do not contain the Google Play and apps binary blobs, and because the Google apps seem to slow down the boot process a lot.  Also, it seems the `android-22` through `android-27` system images seem to require less resources than the newer ones, so much so that they are unlikely to work at all for some projects."
-msgstr ""
+msgstr "使用 `default` 而不是 `google_apis` 系统映像很重要，它们不包含 Google Play 和应用二进制 blob，并且 Google 应用似乎会减慢启动过程很多。此外，似乎 `android-22` 到 `android-27` 的系统映像似乎比较新的系统映像需要更少的资源，新的映像要求的资源太多以至于它们根本不可能在某些项目中工作."
 
 #. type: Plain text
 #: _posts/2021-02-24-running-emulator-tests-on-gitlab-ci.md
 msgid "The [microg system-image repository](https://github.com/microg/GmsCore/wiki/Development-Tools) is also [included](https://gitlab.com/fdroid/ci-images-client/-/commit/85ed9490) in the F-Droid setup.  There are currently two images:"
-msgstr ""
+msgstr "[microg 系统映像存储库](https://github.com/microg/GmsCore/wiki/Development-Tools)也[包含](https://gitlab.com/fdroid/ci-images-client/-/commit/85ed9490)在 F-Droid 设置中。目前有两个映像："
 
 #. type: Bullet: '* '
 #: _posts/2021-02-24-running-emulator-tests-on-gitlab-ci.md
@@ -16688,7 +16689,7 @@ msgstr "`system-images;android-29;microg;x86_64`"
 #. type: Bullet: '* '
 #: _posts/2021-02-24-running-emulator-tests-on-gitlab-ci.md
 msgid "`system-images;android-23;microg;x86` - requires emulator v28 or older because it lacks a \"ranchu\" kernel."
-msgstr ""
+msgstr "`system-images;android-23;microg;x86` - 需要模拟器 v28 或更早版本，因为它缺少 \"ranchu\" 内核。"
 
 #. type: Title ##
 #: _posts/2021-02-24-running-emulator-tests-on-gitlab-ci.md
@@ -16699,12 +16700,12 @@ msgstr "使用"
 #. type: Plain text
 #: _posts/2021-02-24-running-emulator-tests-on-gitlab-ci.md
 msgid "The [_fdroiclient_ setup](https://gitlab.com/fdroid/fdroidclient/-/blob/8c2fa955/.gitlab-ci.yml) uses YAML templates to make it easy to choose specific emulator setups, specifically, the [`test-template`](https://gitlab.com/fdroid/fdroidclient/-/blob/8c2fa955/.gitlab-ci.yml#L24), the [`connected-template`](https://gitlab.com/fdroid/fdroidclient/-/blob/8c2fa955/.gitlab-ci.yml#L80), and the [`kvm-template`](https://gitlab.com/fdroid/fdroidclient/-/blob/8c2fa955/.gitlab-ci.yml#L109)."
-msgstr ""
+msgstr "[_fdroiclient_ 设置](https://gitlab.com/fdroid/fdroidclient/-/blob/8c2fa955/.gitlab-ci.yml)使用 YAML 模板以便轻松选择特定的模拟器设置，具体来说，分别是 [`test-template`](https://gitlab.com/fdroid/fdroidclient/-/blob/8c2fa955/.gitlab-ci.yml#L24)，[`connected-template`](https://gitlab.com/fdroid/fdroidclient/-/blob/8c2fa955/.gitlab-ci.yml#L80) 和 [`kvm-template`](https://gitlab.com/fdroid/fdroidclient/-/blob/8c2fa955/.gitlab-ci.yml#L109)。"
 
 #. type: Plain text
 #: _posts/2021-02-24-running-emulator-tests-on-gitlab-ci.md
 msgid "We use the microg image in _fdroidclient_ like this:"
-msgstr ""
+msgstr "我们在 _fdroidclient_ 中使用 microg 映像，如下所示："
 
 #. type: Fenced code block (yaml)
 #: _posts/2021-02-24-running-emulator-tests-on-gitlab-ci.md
@@ -16717,21 +16718,27 @@ msgid ""
 "  <<: *test-template\n"
 "  <<: *connected-template\n"
 msgstr ""
+"kvm 29 microg x86_64:\n"
+"  &lt;&lt;: *kvm-template\n"
+"\n"
+"no-accel 29 microg x86_64:\n"
+"  &lt;&lt;: *test-template\n"
+"  &lt;&lt;: *connected-template\n"
 
 #. type: Bullet: '* '
 #: _posts/2021-02-24-running-emulator-tests-on-gitlab-ci.md
 msgid "To help debugging, the emulator kernel startup log can be found in the root of the project in _kernel.log_, and the full logcat output in _logcat.txt_.  These can be included in `artifacts:` for easy access."
-msgstr ""
+msgstr "为了帮助调试，模拟器内核启动日志保存在在项目根目录的 _kernel.log_ 中，完整的 logcat 输出保存在 _logcat.txt_ 中。这些可以包含在 `artifacts:` 中以便于访问。"
 
 #. type: Bullet: '* '
 #: _posts/2021-02-24-running-emulator-tests-on-gitlab-ci.md
 msgid "In order to run the jobs that use KVM, first you have to have a GitLab CI runner that supports KVM and is tagged with `fdroid` and `kvm`.  Then you need to set the variable `RUN_KVM_JOBS` in the CI/CD Settings to `true`."
-msgstr ""
+msgstr "为了运行使用 KVM 的作业，首先你必须有一个支持 KVM 并带有 `fdroid` 和 `kvm` 标记的 GitLab CI runner。然后需要将 CI/CD 设置中的变量 `RUN_KVM_JOBS` 设置为 `true`。"
 
 #. type: Plain text
 #: _posts/2021-02-24-running-emulator-tests-on-gitlab-ci.md
 msgid "To keep development on using emulator images in GitLab CI moving forward, there is a wiki page to document tips and tricks, gotchas, and new developments:"
-msgstr ""
+msgstr "为了继续在 GitLab CI 中使用模拟器映像进行开发，有一个 wiki 页面来记录提示和技巧、陷阱和新开发："
 
 #. type: Bullet: '* '
 #: _posts/2021-02-24-running-emulator-tests-on-gitlab-ci.md
@@ -16742,22 +16749,22 @@ msgstr "<https://gitlab.com/fdroid/wiki/-/wikis/Running-emulators-in-GitLab-CI>"
 #: _posts/2021-03-01-fdroid-metrics-and-clean-insights.md
 #, no-wrap
 msgid "F-Droid Metrics and Clean Insights"
-msgstr ""
+msgstr "F-Droid 指标和干净的数据分析"
 
 #. type: Plain text
 #: _posts/2021-03-01-fdroid-metrics-and-clean-insights.md
 msgid "The F-Droid community has been discussing how to measure what apps are popular for a long time.  From [2012 through 2015](https://gitlab.com/fdroid/fdroiddata/-/commits/078f32f6/stats/total_downloads_app.txt), some simple download counts were maintained in _fdroiddata_.  We also sketched out an idea based on Debian's \"[Popularity Contest](https://gitlab.com/fdroid/fdroidclient/-/issues/396)\".  Then we determined a safe way to [gather logs]({{ site.baseurl }}{% post_url 2019-04-15-privacy-preserving-analytics %}) from our webservers."
-msgstr ""
+msgstr "F-Droid 社区一直在讨论如何测量哪些应用受欢迎。从 [2012 年到 2015 年](https://gitlab.com/fdroid/fdroiddata/-/commits/078f32f6/stats/total_downloads_app.txt)，在 _fdroiddata_ 中维护了一些简单的下载计数。我们还根据 Debian 的“[流行度测试](https://gitlab.com/fdroid/fdroidclient/-/issues/396)”勾勒出了一个想法。然后我们确定了一种从我们的网络服务器[收集日志]({{ site.baseurl }}{% post_url 2019-04-15-privacy-preserving-analytics %})的安全方法。"
 
 #. type: Plain text
 #: _posts/2021-03-01-fdroid-metrics-and-clean-insights.md
 msgid "One central idea has always been that a good metrics system for F-Droid would **never** include any Personally Identifiable Information (PII) like telephone numbers, IP Addresses, MAC, SSID, IMSI, IMEI, user accounts, etc.  Also, any additional data gathering must opt-in, for example, anything that would be reported by client software."
-msgstr ""
+msgstr "一个中心思想始终是，一个好的 F-Droid 测量系统**永远不会**包括任何个人身份信息 (PII)，如电话号码、IP 地址、MAC、SSID、IMSI、IMEI、用户帐户等。此外，任何额外的数据收集都必须是选择加入的，例如，客户端软件报告的任何内容。"
 
 #. type: Plain text
 #: _posts/2021-03-01-fdroid-metrics-and-clean-insights.md
 msgid "I had some time recently to devote to exploring actual metrics, thanks to Guardian Project's [Clean Insights](https://cleaninsights.org) project for private, [ethical](https://guardianproject.info/2021/02/18/usability-the-wonderful-powerful-idea-that-betrayed-us/) metrics.  Now, there are some actual numbers for people to work with!"
-msgstr ""
+msgstr "感谢 Guardian Project 的致力于隐私[道德](https://guardianproject.info/2021/02/18/usability-the-wonderful-powerful-idea-that-betrayed-us/)的测量的 [Clean Insights 数据分析](https://cleaninsights.org)项目 ，我最近有一些时间致力于探索实际的测量。现在，有一些实际的数字可供人们使用！"
 
 #. type: Title ##
 #: _posts/2021-03-01-fdroid-metrics-and-clean-insights.md
@@ -16768,43 +16775,43 @@ msgstr "F-Droid 网站"
 #. type: Plain text
 #: _posts/2021-03-01-fdroid-metrics-and-clean-insights.md
 msgid "We have added new privacy-preserving logging setups to all our webservers except _f-droid.org_.  [Apache configurations](https://guardianproject.info/2017/06/08/tracking-usage-without-tracking-people/) use the \"`privacy+geo`\" format that strips the date/time/time zone to only the date, removes the IP address, user agent, and referer.  The [nginx configurations]({{ site.baseurl }}{% post_url 2019-04-15-privacy-preserving-analytics %}) use \"`privacy+geo`\" log format that also strips IP address, user agent, and referer.  The key difference is that it is not possible with _nginx_ log configs to normalize the date, so they are stored intact.  The logs are then stored not longer than two weeks, after which they are deleted.  The [metrics](https://gitlab.com/fdroid/metrics) process runs on the server itself, then pushes only the sanitized data to [private, per-site git repos](https://gitlab.com/fdroid/metrics-data).  These are kept private to core contributors in case private data is leaked.  It can then be manually removed before going public."
-msgstr ""
+msgstr "我们已为除 _f-droid.org_ 之外我们的所有网络服务器添加了新的保护隐私的日志记录设置。[Apache 配置](https://guardianproject.info/2017/06/08/tracking-usage-without-tracking-people/) 使用 \"`privacy+geo`\" 格式，并将日期/时间/时区减少为仅包含日期，删除 IP 地址、用户代理和 referer。[nginx 配置]({{ site.baseurl }}{% post_url 2019-04-15-privacy-preserving-analytics %}) 使用 \"`privacy+geo`\" 日志格式，并且也去除了 IP 地址，用户代理和 referer。主要区别在于 _nginx_ 日志配置无法标准化日期，因此它们被完整地存储。然后，这些日志将被存储不超过两周，之后将被删除。[测量](https://gitlab.com/fdroid/metrics)进程在服务器本身上运行，然后仅将经过清理过的数据推送到[私有的, 每个站点的 git 存储库](https://gitlab.com/fdroid/metrics-data)。这些仅对核心贡献者可见，以防私人数据泄露。然后可以在公开之前手动删除私人数据。"
 
 #. type: Plain text
 #: _posts/2021-03-01-fdroid-metrics-and-clean-insights.md
 msgid "The stricter Apache log format will eventually come to _f-droid.org_.  For now we are sticking with its existing setup of keeping the default Apache logs.  It is a large site and we are a small team, so we need to be very conservative about changes there.  The metrics coming from _f-droid.org_ are currently manually processed and reviewed.  The public, sanitized data for _f-droid.org_ is generated using the same strict process as the rest of the sites."
-msgstr ""
+msgstr "更严格的 Apache 日志格式最终会出现在 _f-droid.org_。目前，我们仍使用保留默认 Apache 日志的现有设置。这是一个大网站而我们是一个小团队，所以我们需要对那里的变化非常保守。来自 _f-droid.org_ 的指标目前是手动处理和审查的。_f-droid.org_ 的公开、清理过的数据是使用与其他网站相同的严格流程生成的。"
 
 #. type: Plain text
 #: _posts/2021-03-01-fdroid-metrics-and-clean-insights.md
 msgid "All that data is then assembled and published for public consumption at <https://fdroid.gitlab.io/metrics>.  This is currently just JSON data files: _index.json_ lists the available per-week reports, then each report is named after the first day of the report, e.g. _2021-02-15.json_.  The reporting period is Monday 0:00:00 til Sunday 23:59:59."
-msgstr ""
+msgstr "然后将所有这些数据汇总并在 <https://fdroid.gitlab.io/metrics> 上发布以供公众使用。目前这些只是 JSON 数据文件：_index.json_ 列出可用的每周报告，然后每个报告以报告的第一天命名，例如 _2021-02-15.json_。报告周期为周一 0:00:00 至周日 23:59:59。"
 
 #. type: Plain text
 #: _posts/2021-03-01-fdroid-metrics-and-clean-insights.md
 msgid "This sanitized JSON data is also uploaded to the [Clean Insights Matomo](https://metrics.cleaninsights.org/) analytics instance (run by Guardian Project) to experiment whether Matomo is a useful analytics tool for data with no PII.  Even though, the [submission script](https://gitlab.com/fdroid/metrics/-/blob/22b56074/submit-to-cimp.py) only works with sanitized data, the reports are submitted to the [Clean Insights Matomo Proxy (CIMP)](https://gitlab.com/cleaninsights/clean-insights-matomo-proxy/), which strips out unnecessary information, including the IP address, before it is submitted to Matomo.  The CIMP then submits the sanitized data to Matomo, which generates views on the data."
-msgstr ""
+msgstr "这些经过清理的 JSON 数据也被上传到 [Clean Insights Matomo](https://metrics.cleaninsights.org/) 分析实例（由 Guardian Project 运行），以试验 Matomo 对于没有 PII 的数据是否是一个有用的分析工具。尽管[提交脚本](https://gitlab.com/fdroid/metrics/-/blob/22b56074/submit-to-cimp.py)仅适用于经过清理的数据，但报告会提交给 [Clean Insights Matomo Proxy (CIMP)](https://gitlab.com/cleaninsights/clean-insights-matomo-proxy/)，在提交给 Matomo 之前去除不必要的信息，包括 IP 地址。然后 CIMP 将清理过的数据提交给 Matomo，由 Matomo 生成数据视图。"
 
 #. type: Title ###
 #: _posts/2021-03-01-fdroid-metrics-and-clean-insights.md
 #, no-wrap
 msgid "Interpreting the data"
-msgstr ""
+msgstr "解释数据"
 
 #. type: Plain text
 #: _posts/2021-03-01-fdroid-metrics-and-clean-insights.md
 msgid "For all the web servers except _f-droid.org_, they are a simple, one server setup.  That means the web server logs will include all hits to the website For _f-droid.org_, it is more [complicated](https://gitlab.com/fdroid/wiki/-/wikis/Internal/Servers#f-droidorg).  The current metrics are from the canonical web server.  That means most hits are stopping at the caching servers and never show up in the canonical web server's logs.  The logs from the caching servers are currently not processed or published anywhere."
-msgstr ""
+msgstr "除 _f-droid.org_ 之外的所有 Web 服务器都是一个简单的服务器设置。 这意味着 Web 服务器日志将包括对网站的所有点击。对于_f-droid.org_，它更[复杂](https://gitlab.com/fdroid/wiki/-/wikis/Internal/Servers#f-droidorg)。 当前测量指标来自规范 Web 服务器。 这意味着大多数点击都会停留在缓存服务器上，并且永远不会显示在规范 Web 服务器的日志中。 缓存服务器中的日志当前未在任何位置进行处理或发布。"
 
 #. type: Plain text
 #: _posts/2021-03-01-fdroid-metrics-and-clean-insights.md
 msgid "There is also [metrics submission](https://gitlab.com/fdroid/fdroidclient/-/merge_requests/985) for the official F-Droid Android client. At its core, it gathers information from the previous week (e.g. the most recent completed week), and puts that into a JSON report.  That JSON is then submitted to <https://metrics.cleaninsights.org>, respecting network preferences like requiring Tor.  It must be first enabled by switching \"Expert Mode\" on, then \"Keep Install History\", then \"Send to F-Droid Metrics\".  There is a report viewer in the \"Install History\" viewer.  If this proves useful and there are no privacy leaks or other ethical concerns, it can be expanded.  That said, it will always be opt-in.  Right now, that is a global toggle.  We are exploring per-report opt-in and other ideas for ensuring that metrics always respects the user's wishes first and foremost."
-msgstr ""
+msgstr "官方 F-Droid Android 客户端也可以进行[指标提交](https://gitlab.com/fdroid/fdroidclient/-/merge_requests/985)。它的核心是收集前一周的信息（例如最近完成的一周），并将其放入 JSON 报告中。然后将该 JSON 提交到 <https://metrics.cleaninsights.org>，并尊重网络偏好，例如通过 Tor。必须先打开“专家模式”，然后打开“保留安装历史记录”，再打开“发送到 F-Droid Metrics”。 “安装历史”查看器中有一个报告查看器。如果这被证明是有用的并且没有出现隐私泄露或其他道德问题，则可以对它进行扩展。尽管如此，它将始终是选择加入的。当前有一个全局开关。我们正在探索每个报告的选择加入和其他想法，以确保指标始终首先尊重用户的意愿。"
 
 #. type: Plain text
 #: _posts/2021-03-01-fdroid-metrics-and-clean-insights.md
 msgid "Here's an actual, but relatively simple, report as an example:"
-msgstr ""
+msgstr "作为示例，这是一个真实但相对简单的报告："
 
 #. type: Fenced code block (json)
 #: _posts/2021-03-01-fdroid-metrics-and-clean-insights.md
@@ -16873,6 +16880,68 @@ msgid ""
 "}\n"
 "\n"
 msgstr ""
+"{\n"
+"  \"events\" : [ {\n"
+"    \"action\" : \"isPrivilegedInstallerEnabled\",\n"
+"    \"category\" : \"device\",\n"
+"    \"name\" : \"true\",\n"
+"    \"period_end\" : 1613606400,\n"
+"    \"period_start\" : 1613001600,\n"
+"    \"times\" : 1\n"
+"  }, {\n"
+"    \"action\" : \"Build.VERSION.SDK_INT\",\n"
+"    \"category\" : \"device\",\n"
+"    \"name\" : \"25\",\n"
+"    \"period_end\" : 1613606400,\n"
+"    \"period_start\" : 1613001600,\n"
+"    \"times\" : 1\n"
+"  }, {\n"
+"    \"action\" : \"Build.SUPPORTED_ABIS\",\n"
+"    \"category\" : \"device\",\n"
+"    \"name\" : \"[armeabi-v7a, armeabi]\",\n"
+"    \"period_end\" : 1613606400,\n"
+"    \"period_start\" : 1613001600,\n"
+"    \"times\" : 1\n"
+"  }, {\n"
+"    \"action\" : \"PackageInfo.firstInstall\",\n"
+"    \"category\" : \"APK\",\n"
+"    \"period_end\" : 1614211200,\n"
+"    \"period_start\" : 1613606400,\n"
+"    \"times\" : 1\n"
+"  }, {\n"
+"    \"action\" : \"PackageInfo.firstInstall\",\n"
+"    \"category\" : \"APK\",\n"
+"    \"name\" : \"org.fdroid.fdroid.privileged\",\n"
+"    \"period_end\" : 1614211200,\n"
+"    \"period_start\" : 1613606400,\n"
+"    \"times\" : 1\n"
+"  }, {\n"
+"    \"action\" : \"PackageInfo.lastUpdateTime\",\n"
+"    \"category\" : \"APK\",\n"
+"    \"name\" : \"org.fdroid.fdroid.privileged\",\n"
+"    \"period_end\" : 1614211200,\n"
+"    \"period_start\" : 1613606400,\n"
+"    \"times\" : 1\n"
+"  }, {\n"
+"    \"action\" : \"org.fdroid.fdroid.installer.Installer.action.INSTALL_STARTED\",\n"
+"    \"category\" : \"package\",\n"
+"    \"name\" : \"ryey.easer.beta\",\n"
+"    \"period_end\" : 1614211200,\n"
+"    \"period_start\" : 1613606400,\n"
+"    \"times\" : 1\n"
+"  }, {\n"
+"    \"action\" : \"org.fdroid.fdroid.installer.Installer.action.INSTALL_COMPLETE\",\n"
+"    \"category\" : \"package\",\n"
+"    \"name\" : \"ryey.easer.beta\",\n"
+"    \"period_end\" : 1614211200,\n"
+"    \"period_start\" : 1613606400,\n"
+"    \"times\" : 1\n"
+"  } ],\n"
+"  \"idsite\" : 3,\n"
+"  \"lang\" : \"en\",\n"
+"  \"ua\" : \"F-Droid 1.12-alpha1-4-gbc8ae2144-debug\"\n"
+"}\n"
+"\n"
 
 #. type: YAML Front Matter: title
 #: _posts/2021-06-10-important-community-update.md
