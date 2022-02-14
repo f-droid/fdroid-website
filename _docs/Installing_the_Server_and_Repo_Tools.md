@@ -157,7 +157,7 @@ env":
 ```bash
 pyvenv fdroidserver-env
 . fdroidserver-env/bin/activate
-pip3 install fdroidserver
+pip install git+https://gitlab.com/fdroid/fdroidserver.git
 ```
 
 You can find variations on this used in the CI tests:
