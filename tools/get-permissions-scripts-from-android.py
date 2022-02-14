@@ -7,6 +7,7 @@ import sys
 import re
 from xml.etree import ElementTree
 
+# these are not permissions, but have keys that match the pattern
 skipkeys = (
     'perm_costs_money',
     'permission_request_notification_title',
@@ -14,32 +15,41 @@ skipkeys = (
     'perms_description_app',
 )
 
+# Our community has contributed a lot of translations and corrections.  Do
+# not overwrite them unless the source string has changed.
+#
 # To derive this list, set it to a blank list, and run this script.
 # Then look at the git diff for _data/strings.json to see which
 # strings have changed source strings, e.g.:
 # git diff _data/strings.json|grep '^+' | cut -d : -f 1
 overwritekeys = (
-    "permdesc_accessCoarseLocation",
-    "permdesc_accessFineLocation",
-    "permdesc_bindCellBroadcastService",
-    "permdesc_cameraOpenCloseListener",
-    "permdesc_exemptFromAudioRecordRestrictions",
-    "permdesc_preferredPaymentInfo",
-    "permdesc_readContacts",
-    "permdesc_systemCamera",
-    "permdesc_useFaceAuthentication",
-    "permdesc_vibrator_state",
-    "permdesc_writeContacts",
-    "permgroupdesc_activityRecognition",
-    "permlab_accessBackgroundLocation",
-    "permlab_accessCoarseLocation",
-    "permlab_bindCellBroadcastService",
-    "permlab_cameraOpenCloseListener",
-    "permlab_exemptFromAudioRecordRestrictions",
-    "permlab_manageFace",
-    "permlab_preferredPaymentInfo",
-    "permlab_systemCamera",
-    "permlab_useFaceAuthentication",
+    "permdesc_accessBackgroundLocation",
+    "permdesc_backgroundCamera",
+    "permdesc_bluetooth_advertise",
+    "permdesc_bluetooth_connect",
+    "permdesc_bluetooth_scan",
+    "permdesc_camera",
+    "permdesc_fullScreenIntent",
+    "permdesc_highSamplingRateSensors",
+    "permdesc_manageOngoingCalls",
+    "permdesc_queryAllPackages",
+    "permdesc_recordAudio",
+    "permdesc_recordBackgroundAudio",
+    "permdesc_uwb_ranging",
+    "permgroupdesc_nearby_devices",
+    "permgrouplab_nearby_devices",
+    "permgrouplab_storage",
+    "permission_request_notification_for_app_with_subtitle",
+    "permlab_backgroundCamera",
+    "permlab_bluetooth_advertise",
+    "permlab_bluetooth_connect",
+    "permlab_bluetooth_scan",
+    "permlab_fullScreenIntent",
+    "permlab_highSamplingRateSensors",
+    "permlab_manageOngoingCalls",
+    "permlab_queryAllPackages",
+    "permlab_recordBackgroundAudio",
+    "permlab_uwb_ranging"
 )
 
 resdir = '/home/hans/code/android.googlesource.com/frameworks/base/core/res/res'
@@ -77,9 +87,11 @@ for d in sorted(glob.glob(os.path.join(resdir, 'values*'))):
             and ((not overwritekeys or key in overwritekeys)
                  or key not in data.get('permissions', []))):
             writechanges = True
+            text = re.sub('\s+', ' ', e.text.strip().strip('"').replace("\\'", "'"))
+            if not text:
+                continue
             if 'permissions' not in data:
                 data['permissions'] = dict()
-            text = re.sub('\s+', ' ', e.text.strip().strip('"').replace("\\'", "'"))
             data['permissions'][key] = text
 
     if writechanges:

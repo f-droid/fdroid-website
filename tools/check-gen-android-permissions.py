@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+import os
 import requests
 import base64
 from lxml import etree
@@ -12,7 +13,9 @@ xml = base64.b64decode(r.text)
 
 
 # This will be our permissions json object
-permissions = {}
+os.chdir(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+with open('_data/android_permissions.json') as fp:
+    permissions = json.load(fp)
 
 # collect data form XML
 tree = etree.fromstring(xml)
