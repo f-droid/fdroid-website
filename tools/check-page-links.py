@@ -89,14 +89,14 @@ for f in sorted(glob.glob('po/*.po*')):
 
         idlinks = []
         for m in url_link_pattern.findall(message.id):
-            idlinks.append(m)
+            idlinks.append(m.replace('\n', ' '))
         for m in md_link_pattern.findall(message.id):
-            idlinks.append(m)
+            idlinks.append(m.replace('\n', ' '))
         strlinks = []
         for m in url_link_pattern.findall(message.string):
-            strlinks.append(m)
+            strlinks.append(m.replace('\n', ' '))
         for m in md_link_pattern.findall(message.string):
-            strlinks.append(m)
+            strlinks.append(m.replace('\n', ' '))
         if message.id and message.string and len(idlinks) != len(strlinks):
             output += "URL counts don't match: " + f + ' ' + str(len(idlinks)) + ' != ' + str(len(strlinks)) + ' ' + message.id + '\n'
             errorcount += 1
