@@ -310,14 +310,14 @@ in the source repository.
 
 ### How do I get my app removed?
 
-As a best practice our packaing team usually makes sure we have consent from
+As a best practice our packaging team usually makes sure we have consent from
 upstream developers, before adding apps to the official f-droid.org repository.
 Should you for whatever reason want us to remove your app from the official
-f-droid.org repository, please ask our packaing team to do so.  The probably
+f-droid.org repository, please ask our packaging team to do so.  The probably
 fastest way to get your request processed is to open an issue on our data
 [issue tracker](https://gitlab.com/fdroid/fdroiddata/-/issues).  You can also
 get in contact with our team on our [other communication
-channels](https://f-droid.org/about/#contact).
+channels]({{ "/about/" | prepend: site.baseurl }}#contact).
 
 
 ### How could my app be removed?
