@@ -84,9 +84,9 @@ are imported on a rolling basis, at least once a month.
 
 #### f-droid.org website
 
-For the f-droid.org website, it is a much more complicated
-system. Since it cannot
-([yet?](https://gitlab.com/fdroid/fdroid-website/-/milestones/4))
+For the f-droid.org website, it is a much more complicated system.  Each time
+the website is updated, thousands of pages must be regenerated per-locale.
+Since this setup [cannot](https://gitlab.com/groups/fdroid/-/milestones/6)
 support lots of languages, we have to put stricter requirements on it.
 The core strings must be fully translated to be included.  They also
 must be maintained in order to stay included.  The documentation and
