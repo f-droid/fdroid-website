@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
-"POT-Creation-Date: 2022-02-03 21:41+0100\n"
+"POT-Creation-Date: 2022-02-14 14:12+0100\n"
 "PO-Revision-Date: 2022-01-30 14:37+0000\n"
 "Last-Translator: Ko Sam <sam930903@gmail.com>\n"
 "Language-Team: Chinese (Traditional) <https://hosted.weblate.org/projects/f-droid/website-posts/zh_Hant/>\n"
@@ -17372,9 +17372,29 @@ msgstr ""
 msgid "Among other smaller topics, we talked about the following:"
 msgstr ""
 
-#. type: Plain text
+#. type: Bullet: '* '
 #: _posts/2022-01-03-f-droid-meeting-at-the-rc3-congress.md
-msgid "- Most open-source apps are developed by volunteers in their free time. In order to spend time on open-source app development as an actual part-time job, developers need a source of income. Only a tiny fraction of developers can actually live off the donations they receive. We discussed everyone's experiences with receiving donations. An important aspect is that recurring (small) donations are a lot more helpful than infrequent (large) donations because it makes it easier to plan. We talked about how it would be possible to ask users for donations without getting annoying. F-Droid already stores donation links in the app metadata and displays them on the client's app details page. The problem with this is that after downloading, the app details page is no longer actively used. We agreed that it would be great to ask for donations on the \"updates\" tab of the F-Droid client: when an app has been installed for a long time, the client could ask if you want to donate to keep the app development sustainable. The \"updates\" tab has already been prepared for this kind of messages, but it still needs a developer to implement the last pieces.  - Many F-Droid users run rather old Android devices. A possible reason is that they care about the environment and do not want to throw away working devices. In order to still support old Android versions, app developers have to invest a significant amount of work. One example is that [supporting HTTPS connections on old Android versions is hard](https://f-droid.org/2020/05/29/android-updates-and-tls-connections.html). HTTPS connections not only affect Browser applications, but also apps like weather forecast apps or podcast players. While it would be possible that each app shipped the necessary code to connect to modern HTTPS servers, that would increase the size of each app by about 4 MB. There have already been ideas on how to only have one app ship the HTTPS code and have it loaded from there into other apps. The main missing point was which app would be trustworthy enough to ship such security critical code. We discussed that including it in the F-Droid client is not a good idea because the app is already rather complex. Given that both devices running Google Services and devices running [microG](https://microg.org/) already have a provider for that code, we decided that we should just write an open-source library that talks to that system component. Therefore, the library would basically be an open-source re-implementation of Google's ProviderInstaller, calling the [same system APIs](https://github.com/microg/GmsCore/blob/cb3592688b098e5a1870006797be665e3b083f3e/play-services-conscrypt-provider-core/src/main/java/com/google/android/gms/common/security/ProviderInstallerImpl.java#L72).  - Seldom, there are takedown requests for apps on F-Droid, for example because of copyright claims. Often it is then hard to contact the app authors. Some apps use git repositories without an issue tracker and the contact email address is not actively requested when adding a new app to the F-Droid repo. We discussed having a custom field in the apps' metadata that could store a contact email address.  - Some apps make strong use of different build flavors. Build flavors are different versions of the same app, sharing most of the source code. F-Droid supports specifying the build flavor to use when publishing an app, but it has trouble with the metadata like screenshots and app description. We discussed ways how to deal with that problem.  - An issue that frequently affects app developers is that updating apps on F-Droid takes pretty much time. The build server first has to compile the apps' source code. Then, the apps are manually signed on a computer that is not connected to the internet. A method that app developers can use to deal with that is to use reproducible builds. With reproducible builds, F-Droid distributes the apps with the original developer's signature. That way, users can switch between F-Droid's version of an app and the developer's version of an app without having to re-install. App developers can then publish critical updates on their website, from inside the app or in their own F-Droid repository and users can still update the app directly -- even if they originally installed it from F-Droid."
+msgid "Most open-source apps are developed by volunteers in their free time. In order to spend time on open-source app development as an actual part-time job, developers need a source of income. Only a tiny fraction of developers can actually live off the donations they receive. We discussed everyone's experiences with receiving donations. An important aspect is that recurring (small) donations are a lot more helpful than infrequent (large) donations because it makes it easier to plan. We talked about how it would be possible to ask users for donations without getting annoying. F-Droid already stores donation links in the app metadata and displays them on the client's app details page. The problem with this is that after downloading, the app details page is no longer actively used. We agreed that it would be great to ask for donations on the \"updates\" tab of the F-Droid client: when an app has been installed for a long time, the client could ask if you want to donate to keep the app development sustainable. The \"updates\" tab has already been prepared for this kind of messages, but it still needs a developer to implement the last pieces."
+msgstr ""
+
+#. type: Bullet: '* '
+#: _posts/2022-01-03-f-droid-meeting-at-the-rc3-congress.md
+msgid "Many F-Droid users run rather old Android devices. A possible reason is that they care about the environment and do not want to throw away working devices. In order to still support old Android versions, app developers have to invest a significant amount of work. One example is that [supporting HTTPS connections on old Android versions is hard](https://f-droid.org/2020/05/29/android-updates-and-tls-connections.html). HTTPS connections not only affect Browser applications, but also apps like weather forecast apps or podcast players. While it would be possible that each app shipped the necessary code to connect to modern HTTPS servers, that would increase the size of each app by about 4 MB. There have already been ideas on how to only have one app ship the HTTPS code and have it loaded from there into other apps. The main missing point was which app would be trustworthy enough to ship such security critical code. We discussed that including it in the F-Droid client is not a good idea because the app is already rather complex. Given that both devices running Google Services and devices running [microG](https://microg.org/) already have a provider for that code, we decided that we should just write an open-source library that talks to that system component. Therefore, the library would basically be an open-source re-implementation of Google's ProviderInstaller, calling the [same system APIs](https://github.com/microg/GmsCore/blob/cb3592688b098e5a1870006797be665e3b083f3e/play-services-conscrypt-provider-core/src/main/java/com/google/android/gms/common/security/ProviderInstallerImpl.java#L72)."
+msgstr ""
+
+#. type: Bullet: '* '
+#: _posts/2022-01-03-f-droid-meeting-at-the-rc3-congress.md
+msgid "Seldom, there are takedown requests for apps on F-Droid, for example because of copyright claims. Often it is then hard to contact the app authors. Some apps use git repositories without an issue tracker and the contact email address is not actively requested when adding a new app to the F-Droid repo. We discussed having a custom field in the apps' metadata that could store a contact email address."
+msgstr ""
+
+#. type: Bullet: '* '
+#: _posts/2022-01-03-f-droid-meeting-at-the-rc3-congress.md
+msgid "Some apps make strong use of different build flavors. Build flavors are different versions of the same app, sharing most of the source code. F-Droid supports specifying the build flavor to use when publishing an app, but it has trouble with the metadata like screenshots and app description. We discussed ways how to deal with that problem."
+msgstr ""
+
+#. type: Bullet: '* '
+#: _posts/2022-01-03-f-droid-meeting-at-the-rc3-congress.md
+msgid "An issue that frequently affects app developers is that updating apps on F-Droid takes pretty much time. The build server first has to compile the apps' source code. Then, the apps are manually signed on a computer that is not connected to the internet. A method that app developers can use to deal with that is to use reproducible builds. With reproducible builds, F-Droid distributes the apps with the original developer's signature. That way, users can switch between F-Droid's version of an app and the developer's version of an app without having to re-install. App developers can then publish critical updates on their website, from inside the app or in their own F-Droid repository and users can still update the app directly -- even if they originally installed it from F-Droid."
 msgstr ""
 
 #. type: Plain text
@@ -17391,4 +17411,116 @@ msgstr ""
 #. type: Plain text
 #: _posts/2022-02-02-new-language-portuguese.md
 msgid "The F-Droid website is now also available in the Portuguese language (until now it was available only in Brazilian Portuguese variant), thanks to the efforts of the few volunteer contributors. The translation efforts are still in the works. People interested in giving a helping hand to complete them or to improve existing translations are encouraged to contribute through the Weblate F-Droid portal (<https://hosted.weblate.org/languages/pt/f-droid/>)."
+msgstr ""
+
+#. type: YAML Front Matter: title
+#: _posts/2022-02-05-decentralizing-distribution.md
+#, no-wrap
+msgid "Decentralizing Distribution"
+msgstr ""
+
+#. type: Plain text
+#: _posts/2022-02-05-decentralizing-distribution.md
+msgid "Guardian Project has been awarded a grant from the [Filecoin Foundation for the Decentralized Web (FFDW)](https://www.ffdweb.org/guardian-project-annoucement) to work on decentralizing veracity and distribution (DVD).  FFDW’s Mission is to “ensure the permanent preservation of humanity’s most important information by stewarding the development of open source software and open protocols for decentralized data storage and retrieval networks.” Filecoin is built on top of IPFS, which is \"[a distributed system for storing and accessing files](https://docs.ipfs.io/concepts/what-is-ipfs/)\".  The distribution component of the FFTW-DVD project is focused on improving F-Droid's free, open, and decentralized mobile app ecosystem.  On top of the flagship unified experience offered by this website and the F-Droid official app, F-Droid provides all the pieces for anyone to create, build, remix, publish, reproduce, redistribute and review mobile apps."
+msgstr ""
+
+#. type: Plain text
+#: _posts/2022-02-05-decentralizing-distribution.md
+msgid "This is important to F-Droid users because it means that they are not locked into F-Droid as the monopoly app provider.  The F-Droid community needs to stay responsive to its users because it is possible to fork all of F-Droid (okay, except for the signing keys 🚫Ψ📝🔑😉).  Decentralization is also important because each user has specific needs and wishes that potentially conflict with other users.  Many want only free software, but others are willing to compromise in key places, and still others have strong privacy needs that conflict with other users' favorite features.  Decentralized app repositories provide users that flexibility without having to move away from the main F-Droid infrastructure."
+msgstr ""
+
+#. type: Plain text
+#: _posts/2022-02-05-decentralizing-distribution.md
+msgid "We share the concerns about the walled garden approach to app stores. While their design may have been driven out of concern for security and simplicity, they have become a source of unbridled control, censorship and surveillance.  Smartphones are the primary computer for most and apps are the central mobile tool.  Centralized, locked down phones keep the real power of modern computing needlessly out of reach of most of the world's population.  The FFDW-DVD project will push F-Droid forward towards realizing full support for customization, curation, mirroring, censorship circumvention, and peer-to-peer sharing.  We can provide a more free and less fragile solution for the sharing of capability and knowledge to all.  On top of that, this project will give us focused time to work on making our processes run more efficiently and reliably."
+msgstr ""
+
+#. type: Plain text
+#: _posts/2022-02-05-decentralizing-distribution.md
+msgid "IPFS and Filecoin are central to this mission.  IPFS has the potential to provide the plumbing for the entire F-Droid ecosystem.  It is a decentralized filesystem where files are accessible by their [hash](https://docs.ipfs.io/concepts/hashing/) compiled into a [Content Identifier (CID)](https://docs.ipfs.io/concepts/content-addressing/).  That means the unique signature of each file can be used to fetch that file from IPFS, no matter where it is actually stored.  It can be stored on some server farm or the other smartphone next to you when on a mountain top.  If the IPFS storage is reachable and contains the CID you need, it can be retrieved.  Internet is not required.  Additionally, if a file is important to you, you can \"[pin](https://docs.ipfs.io/how-to/pin-files/)\" it in your own IPFS storage or pay someone else to do it using Filecoin.  As long as someone is interested in having a file publicly available, it can be maintained in IPFS, even if the original creator has taken it down."
+msgstr ""
+
+#. type: Plain text
+#: _posts/2022-02-05-decentralizing-distribution.md
+msgid "IPFS is working now, and services are using it, including [archive.org](https://blog.archive.org/2021/04/01/filecoin-foundation-grants-50000-fil-to-the-internet-archive/).  But there is much work to be done before it really can replace current web hosting and file distribution methods.  That means we will integrate IPFS in a hybrid approach, and we are already reporting our experiences upstream to help improve IPFS.  F-Droid already supports repositories and mirrors, and IPFS will plug right into those channels.  This gives the F-Droid ecosystem another layer of resiliency and flexibility."
+msgstr ""
+
+#. type: Plain text
+#: _posts/2022-02-05-decentralizing-distribution.md
+msgid "Since the \"decentralized web\" includes all sorts of things, it is important to also mention things that we will [not](https://www.theregister.com/2021/12/06/the_dark_equation_of_harm/) be doing with this grant.  We are not looking at NFTs, blockchain, DAOs, smart contracts or related aspects of \"[Web3](https://en.wikipedia.org/wiki/Web3)\"."
+msgstr ""
+
+#. type: Title ##
+#: _posts/2022-02-05-decentralizing-distribution.md
+#, fuzzy, no-wrap
+msgid "Funded work"
+msgstr "F-Droid 核心"
+
+#. type: Plain text
+#: _posts/2022-02-05-decentralizing-distribution.md
+msgid "This work is focused on strengthening F-Droid foundations while enabling repositories to be hosted on decentralized storage, while spreading our platform as a viable alternative for all kinds of users and organizations."
+msgstr ""
+
+#. type: Bullet: '* '
+#: _posts/2022-02-05-decentralizing-distribution.md
+msgid "Break out and overhaul core client logic around publishing and consuming repositories."
+msgstr ""
+
+#. type: Bullet: '* '
+#: _posts/2022-02-05-decentralizing-distribution.md
+msgid "Make client logic into libraries to make it easy to embed repositories in any app that needs it."
+msgstr ""
+
+#. type: Bullet: '* '
+#: _posts/2022-02-05-decentralizing-distribution.md
+msgid "Add support for mirroring repositories onto both IPFS and Filecoin."
+msgstr ""
+
+#. type: Bullet: '* '
+#: _posts/2022-02-05-decentralizing-distribution.md
+msgid "Add support in F-Droid client to use mirrors and repositories hosted on IPFS and Filecoin."
+msgstr ""
+
+#. type: Bullet: '* '
+#: _posts/2022-02-05-decentralizing-distribution.md
+msgid "Improve F-Droid “white labeling”."
+msgstr ""
+
+#. type: Bullet: '* '
+#: _posts/2022-02-05-decentralizing-distribution.md
+msgid "Enhance F-Droid client’s existing “nearby” and “app swap” capabilities, including utilizing libp2p-based communication."
+msgstr ""
+
+#. type: Bullet: '* '
+#: _posts/2022-02-05-decentralizing-distribution.md
+msgid "Improve the capability and usability of publishing and distributing multimedia content (documents, presentations, photos, videos, map files, and more)."
+msgstr ""
+
+#. type: Bullet: '* '
+#: _posts/2022-02-05-decentralizing-distribution.md
+msgid "Update F-Droid’s RepoMaker tool (for easy “point and click” curation and publishing of app repos) and add support for IPFS publishing."
+msgstr ""
+
+#. type: Bullet: '* '
+#: _posts/2022-02-05-decentralizing-distribution.md
+msgid "Expand access to F-Droid repositories to non-Android devices and the mobile web (progressive web apps, content)."
+msgstr ""
+
+#. type: Bullet: '* '
+#: _posts/2022-02-05-decentralizing-distribution.md
+msgid "Set up a full archive of the f-droid.org repository on IPFS."
+msgstr ""
+
+#. type: Bullet: '* '
+#: _posts/2022-02-05-decentralizing-distribution.md
+msgid "Expand outreach and assistance to software developers, media organization, tech companies and more to promote adoption of the F-Droid platform for their software, content and devices (example: Mozilla could easily run a Mozilla app store that includes all the Mozilla channels: releases, nightlies, etc.  They could also include a curated collection of reproducibly built apps that Mozilla approves of.  Someone who trusts Mozilla can then easily choose to only have access to the Mozilla-curated app store)"
+msgstr ""
+
+#. type: Plain text
+#: _posts/2022-02-05-decentralizing-distribution.md
+msgid "You can follow the work funded under this grant by checking the `FFDW-DVD` label on [issues](https://gitlab.com/groups/fdroid/-/issues?scope=all&state=opened&label_name[]=FFDW-DVD) and [merge requests](https://gitlab.com/groups/fdroid/-/merge_requests?scope=all&state=opened&label_name[]=FFDW-DVD) in GitLab."
+msgstr ""
+
+#. type: Plain text
+#: _posts/2022-02-05-decentralizing-distribution.md
+msgid "Our first priority is splitting out the core client pieces as standalone libraries. We will take this opportunity to modernize the index format and ensure it works well with IPFS.  That effort is tracked using the `index-v2` label on [issues](https://gitlab.com/groups/fdroid/-/issues?scope=all&state=opened&label_name[]=index-v2) and [merge requests](https://gitlab.com/groups/fdroid/-/merge_requests?scope=all&state=opened&label_name[]=index-v2)."
 msgstr ""
