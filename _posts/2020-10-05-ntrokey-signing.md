@@ -23,7 +23,7 @@ A step-by-step guide on how to set this up and the possible options for managing
 
 Needless to say that you should keep the DKEK stored at a very secure place.
 
-### (optional) Step 1: Import Existing Singing Keys into the HSM
+### (optional) Step 1: Import Existing Signing Keys into the HSM
 
 The Nitrokey HSM2 can only import keys that are "wrapped" (encrypted) with the correct DKEK, so to import a plain key from a java keystore this key has to be manually wrapped with the DKEK first. The manufacturer of the SmartCard inside the Nitrokey HSMs ([CardContact](http://www.cardcontact.de/)) has a tool called smartcard-shell which can do this. The tools isn't that great to use (it's a java GUI tool scripted with javascript). I ported this process to a small command-line python tool, which can be found [here](https://git.bubu1.eu/Bubu/nitrokeywrapper).
 
