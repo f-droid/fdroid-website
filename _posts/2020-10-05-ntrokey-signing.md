@@ -37,7 +37,7 @@ Initialize a new repo as follows, this will setup the necessary config files for
 $ fdroid init --keystore NONE  # NONE means using a HSM keystore
 ```
 
-You'll need to then at least change `keystorepass` in *config.py* which needs to be set to the Nitrokeys smartcard pin. If you have imported an existing repository signing key, this needs to be set as `repo_keyalias`. Otherwise you can create a new key directly on the HSM (change `keydname` to what the certificate details should look like for you repo.)
+You'll need to then at least change `keystorepass` in *config.py* which needs to be set to the Nitrokeys smartcard pin. If you have imported an existing repository signing key, this needs to be set as `repo_keyalias`. Otherwise you can create a new key directly on the HSM (change `keydname` to what the certificate details should look like for your repo.)
 
 ```bash
 $ fdroid update --create-key  # This will take a while...
