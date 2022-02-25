@@ -18,7 +18,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
 "POT-Creation-Date: 2022-02-14 14:12+0100\n"
-"PO-Revision-Date: 2022-02-23 17:58+0000\n"
+"PO-Revision-Date: 2022-02-25 10:14+0000\n"
 "Last-Translator: kak mi <wavelake@outlook.com>\n"
 "Language-Team: Chinese (Simplified) <https://hosted.weblate.org/projects/f-droid/website-posts/zh_Hans/>\n"
 "Language: zh_Hans\n"
@@ -15694,57 +15694,57 @@ msgstr "将 React Native 应用添加到 F-Droid"
 #. type: Plain text
 #: _posts/2020-10-14-adding-react-native-app-to-f-droid.md
 msgid "[React Native](https://reactnative.dev/) is a popular open-source app development framework that makes it easy to build cross-platform applications using the platform's native UI components. This makes it an ideal choice for developers building apps for all platforms."
-msgstr ""
+msgstr "[React Native](https://reactnative.dev/) 是一个流行的开源应用开发框架，可以使用平台的原生 UI 组件轻松构建跨平台应用。这使其成为为所有平台构建应用的开发人员的理想选择。"
 
 #. type: Plain text
 #: _posts/2020-10-14-adding-react-native-app-to-f-droid.md
 msgid "That's why we chose it when we started working on the new [EteSync Notes](https://github.com/etesync/etesync-notes/) app. It enabled us to build an app in a very short time reusing 100% of the code on Android, iOS, the web, and once we release the desktop clients, the desktop too."
-msgstr ""
+msgstr "这就是我们在开始开发新的 [EteSync Notes](https://github.com/etesync/etesync-notes/) 应用时选择它的原因。它使我们能够在很短的时间内构建一个应用，100% 重用 Android、iOS、Web 上的代码，一旦我们发布桌面客户端，也是如此。"
 
 #. type: Plain text
 #: _posts/2020-10-14-adding-react-native-app-to-f-droid.md
 msgid "Being an open-source project ourselves, and long-time (very happy) users of F-Droid, one of our main concerns before building the app was: can react-native applications be built on F-Droid? Looking online we couldn't find a clear answer. We then looked at the [fdroiddata repository](https://gitlab.com/fdroid/fdroiddata/) we saw some mentions of react-native, which led us to react native apps that are available on F-Droid. So we know it can be done, we were just missing the how."
-msgstr ""
+msgstr "作为一个开源项目，以及 F-Droid 的长期（非常快乐的）用户，我们在构建应用之前的主要关注点之一是：react-native 应用可以在 F-Droid 上构建吗？我们上网查了一下，但没找到明确的答案。然后，我们查看了 [fdroiddata 存储库](https://gitlab.com/fdroid/fdroiddata/)，我们看到了一些地方提到了 react-native，将我们引向 F-Droid 上可用的 react native 应用。所以我们知道了这是可以做到的，我们只是不知道该如何做。"
 
 #. type: Plain text
 #: _posts/2020-10-14-adding-react-native-app-to-f-droid.md
 msgid "The rest of this post assumes you are familiar with the F-Droid metadata files and [how to build normal Android applications](https://gitlab.com/fdroid/fdroiddata/blob/master/CONTRIBUTING.md)."
-msgstr ""
+msgstr "本文的其余部分假设你熟悉 F-Droid 元数据文件以及[如何构建普通的 Android 应用](https://gitlab.com/fdroid/fdroiddata/blob/master/CONTRIBUTING.md)。"
 
 #. type: Plain text
 #: _posts/2020-10-14-adding-react-native-app-to-f-droid.md
 msgid "There are a few main challenges with building React Native applications on F-Droid:"
-msgstr ""
+msgstr "在 F-Droid 上构建 React Native 应用存在一些主要挑战："
 
 #. type: Bullet: '1. '
 #: _posts/2020-10-14-adding-react-native-app-to-f-droid.md
 msgid "React Native apps have two build and dependency management systems (the React Native one, and the Android one)."
-msgstr ""
+msgstr "React Native 应用有两个构建和依赖管理系统（React Native 的和 Android 的）。"
 
 #. type: Bullet: '2. '
 #: _posts/2020-10-14-adding-react-native-app-to-f-droid.md
 msgid "React Native apps require a more recent NodeJS environment than is available on F-Droid."
-msgstr ""
+msgstr "React Native 应用需要比 F-Droid 上可用的 NodeJS 环境版本更新的版本。"
 
 #. type: Bullet: '3. '
 #: _posts/2020-10-14-adding-react-native-app-to-f-droid.md
 msgid "React Native apps have pre-built dependencies that are shipped using the JavaScript dependency management systems, and we need to tell F-Droid these components are actually FLOSS and compatible with F-Droid."
-msgstr ""
+msgstr "React Native 应用具有使用 JavaScript 依赖管理系统交付的预构建依赖项，我们需要告诉 F-Droid 这些组件实际上是 FLOSS 并且与 F-Droid 兼容。"
 
 #. type: Plain text
 #: _posts/2020-10-14-adding-react-native-app-to-f-droid.md
 msgid "Before we go on with explaining the important components and how they play together, here is the [working EteSync Notes spec file](https://gitlab.com/fdroid/fdroiddata/-/blob/master/metadata/com.etesync.notes.yml) for your reference."
-msgstr ""
+msgstr "在我们继续解释重要的组件以及它们如何协同工作之前，这里是[有效的 EteSync Notes 规范文件](https://gitlab.com/fdroid/fdroiddata/-/blob/master/metadata/com.etesync.notes.yml)供你参考。"
 
 #. type: Plain text
 #: _posts/2020-10-14-adding-react-native-app-to-f-droid.md
 msgid "The first thing you need to take care of is the `subdir` directive. React Native applications have their android build system in a subdirectory of the repo rather than the root. It's usually `android/app`, but it may be different in your setup."
-msgstr ""
+msgstr "你需要注意的第一件事是 `subdir` 指令。 React Native 应用的 android 构建系统位于 repo 的子目录中，而不是根目录中。通常是 `android/app`，但在你的设置中可能会有所不同。"
 
 #. type: Plain text
 #: _posts/2020-10-14-adding-react-native-app-to-f-droid.md
 msgid "The next thing we need, which may not be required in your case, is to get a recent enough version of `node` and `yarn`. F-Droid uses Debian Stretch for the build system, which didn't even have a recent enough `node` version in backports. So the easiest way to get node was using a pre-built binary, and verify its checksum, and then installing `yarn` using `npm`. This is how it looks like:"
-msgstr ""
+msgstr "我们需要的下一件事（在你的情况下可能不需要）是获得足够新的 `node` 和 `yarn` 版本。 F-Droid 使用 Debian Stretch 构建系统，它甚至在 backports 中都没有足够新的 `node` 版本。因此，获取节点的最简单方法是使用预构建的二进制文件，并验证其校验和，然后使用 `npm` 安装 `yarn`。具体如下："
 
 #. type: Fenced code block (yaml)
 #: _posts/2020-10-14-adding-react-native-app-to-f-droid.md
@@ -15762,12 +15762,12 @@ msgstr ""
 #. type: Plain text
 #: _posts/2020-10-14-adding-react-native-app-to-f-droid.md
 msgid "The next step is to install all of the JavaScript dependencies, this can be done using the `init` directive, like so: `init: yarn install`."
-msgstr ""
+msgstr "下一步是安装所有 JavaScript 依赖项，这可以使用 `init` 指令完成，如下所示：`init: yarn install`。"
 
 #. type: Plain text
 #: _posts/2020-10-14-adding-react-native-app-to-f-droid.md
 msgid "Now we should have everything we need to get our React Native app to build, though the builds will still fail. The reason for that is that F-Droid automatically detects potentially non-free dependencies in the build, and won't let the build continue if found. Therefore, the next thing we should do is to tell it to automatically get rid of all of the non-free dependencies pulled by our JavaScript deps, like so:"
-msgstr ""
+msgstr "现在，我们应该有了构建 React Native 应用所需的一切，然而构建仍然会失败。这是因为 F-Droid 会自动检测构建中潜在的非自由依赖项，并且如果找到，则不会让构建继续进行。因此，我们应该做的下一件事是告诉它自动去除由我们的JavaScript 依赖引入的所有非自由依赖关系，如下所示："
 
 #. type: Fenced code block (yaml)
 #: _posts/2020-10-14-adding-react-native-app-to-f-droid.md
@@ -15776,11 +15776,13 @@ msgid ""
 "    scandelete:\n"
 "      - node_modules/\n"
 msgstr ""
+"    scandelete:\n"
+"      - node_modules/\n"
 
 #. type: Plain text
 #: _posts/2020-10-14-adding-react-native-app-to-f-droid.md
 msgid "Now we are making progress, and all of the potentially non-free dependencies are being removed. Though the build will still fail because some of these dependencies were actually needed! Now, the responsibility is on us to find and make sure the deps that we require and that are indeed FLOSS and F-Droid compatible. The most common error is about an \"unrecognized maven repository\" pointing to `../node_modules/...`. Assuming all of your JavaScript dependencies are indeed FLOSS, these can be safely ignored, as they just mean that the deps come from a JavaScript dependency instead of through Maven (again, very common). We will deal with these in a moment.  The second, more serious issue is about `.jar`, `.aar` and `.so` files being removed. Here you need to take extra care to make sure that these files are indeed FLOSS, come from a trusted source, and are just pre-compiled for ease of distribution. Once you found all of the occurrences of the two issues above, you can tell F-Droid to ignore them. For example, this is what we have in EteSync Notes:"
-msgstr ""
+msgstr "现在我们正在取得进展，所有潜在的非自由依赖项都被删除了。然而构建仍然会失败，因为实际上我们需要其中一些依赖项！现在，我们需要找到这些依赖并确认我们需要它们并且它们确实是 FLOSS 并且和 F-Droid 兼容。最常见的错误是关于指向 `../node_modules/...` 的“无法识别的 maven 存储库”。假设你的所有 JavaScript 依赖项确实都是 FLOSS，这些可以安全地忽略，因为它们只是意味着依赖项来自 JavaScript 依赖项而不是通过 Maven（再次，非常常见）。我们稍后会处理这些。第二个更严重的问题是 `.jar`、`.aar` 和 `.so` 文件被删除。在这里，您需要格外小心，以确保这些文件确实是 FLOSS，来自受信任的来源，并且只是为了便于分发而进行了预编译。一旦你找出了所有上述两种错误，你可以告诉 F-Droid 忽略它们。例如，这是我们在 EteSync Notes 中的内容："
 
 #. type: Fenced code block (yaml)
 #: _posts/2020-10-14-adding-react-native-app-to-f-droid.md
