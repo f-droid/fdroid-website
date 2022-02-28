@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
-"POT-Creation-Date: 2022-02-14 14:12+0100\n"
+"POT-Creation-Date: 2022-02-28 10:31+0100\n"
 "PO-Revision-Date: 2022-02-12 21:49+0000\n"
 "Last-Translator: Agnieszka C <aga_04@o2.pl>\n"
 "Language-Team: Polish <https://hosted.weblate.org/projects/f-droid/website-docs/pl/>\n"
@@ -822,13 +822,18 @@ msgstr "Niepożądane funkcje"
 
 #. type: Plain text
 #: _docs/Anti-Features.md
-msgid "Anti-Features are flags packagers apply to apps, warning of possibly undesirable behaviour from the user's perspective, often serving the interest of the developer or a third party."
-msgstr "Niepożądane funkcje to programy pakujące flagi do aplikacji, ostrzegające przed potencjalnie niepożądanym zachowaniem z perspektywy użytkownika, często służące interesom programisty lub strony trzeciej."
+msgid "When reviewing apps to accept, F-Droid takes the user's point of view, first and foremost.  We start with [strict acceptance criteria](../Inclusion_Policy) based on the principles of free software and user control.  There are some things about an app that might not block it from inclusion, but many users might not want to accept them.  For these kinds of things, F-Droid has a defined set of Anti-Features.  Apps can then be marked with these Anti-Features so users can clearly choose whether the app is still acceptable."
+msgstr ""
 
 #. type: Plain text
 #: _docs/Anti-Features.md
-msgid "You will see these in the F-Droid client, and/or web repository browser when viewing the details of an app containing one or more of these Anti-Features."
-msgstr "Zobaczysz je w kliencie F-Droid, i/lub przeglądarce internetowej podczas przeglądania szczegółów aplikacji zawierającej jedną lub więcej z tych niepożądanych funkcji."
+msgid "Anti-Features are organized into \"flags\" that packagers can use to mark apps, warning of possibly undesirable behaviour from the user's perspective, often serving the interest of the developer or a third party.  Free software packages do not exist in a bubble.  For one piece of software to be useful, it usually has to integrate with some other software.  Therefore, users that want free software also want to know if an app depends on or promotes any proprietary software.  Sometimes, there are concepts in Anti-Features that overlap with tactics used by third parties against users.  F-Droid always marks Anti-Features from the user's point of view.  For example, [NSFW](#NSFW) might be construed as similar to a censor's blocklists, but in our case, the focus is on the user's context and keeping the user in control."
+msgstr ""
+
+#. type: Plain text
+#: _docs/Anti-Features.md
+msgid "You will see our Anti-Features in action when viewing the details of any app containing one or more Anti-Features, whether in the F-Droid client or on this website.  The F-Droid client also provides settings to hide apps with certain Anti-Features."
+msgstr ""
 
 #. type: Title ##
 #: _docs/Anti-Features.md
@@ -1131,6 +1136,17 @@ msgstr "Raportowanie niepożądanych funkcji"
 #. type: Plain text
 #: _docs/Anti-Features.md
 msgid "While our package maintainers are working hard to find all Anti-Features and bring them to your attention, some might remain unnoticed or slip in with an app update. Should you discover that an app contains an Anti-Feature F-Droid is not aware of, please report it. You can submit them by E-Mail to [team@f-droid.org](mailto:team@f-droid.org) or open an issue here: [gitlab.com/fdroid/fdroiddata/issues](https://gitlab.com/fdroid/fdroiddata/issues)."
+msgstr ""
+
+#. type: Title ##
+#: _docs/Anti-Features.md
+#, no-wrap
+msgid "Origins of the F-Droid definition of Anti-Features"
+msgstr ""
+
+#. type: Plain text
+#: _docs/Anti-Features.md
+msgid "The Free Software Foundation (FSF) also has a similar idea, and it is also known as \"anti-features\".  [\"Anti-features are sold to customers as features but are fundamental or unavoidable aspects of systems that can only be removed or withheld through technological effort\"](https://www.fsf.org/blogs/community/antifeatures).  Another way of thinking about Anti-Features is that they are [\"functionality that a technology developer will charge users to not include\"](https://www.fsf.org/bulletin/2007/fall/antifeatures/).  The F-Droid definition was initially inspired by FSF's, but our definition has evolved over the years into something different."
 msgstr ""
 
 #. type: YAML Front Matter: title
@@ -6920,7 +6936,9 @@ msgstr "Polityka włączenia"
 
 #. type: Plain text
 #: _docs/Inclusion_Policy.md
-msgid "All applications in the repository must be Free, Libre and Open Source software – for example, released under a GPL or Apache license. Every effort is made to verify that this is actually the case, both by visual inspection of the source, and by building the application from the published source. If in doubt about a license, please refer to the [GNU license list](https://www.gnu.org/licenses/license-list.html)."
+#, fuzzy
+#| msgid "All applications in the repository must be Free, Libre and Open Source software – for example, released under a GPL or Apache license. Every effort is made to verify that this is actually the case, both by visual inspection of the source, and by building the application from the published source. If in doubt about a license, please refer to the [GNU license list](https://www.gnu.org/licenses/license-list.html)."
+msgid "All applications in the repository must be Free, Libre and Open Source Software (FLOSS) – for example, released under a GPL or Apache license. Every effort is made to verify that this is actually the case, both by visual inspection of the source, and by building the application from the published source.  To determine which licenses are FLOSS, We defer to widely trusted organizations that have a proven track record.  Specifically, we aknowledge these standards: [DFSG](https://wiki.debian.org/DFSGLicenses), [FSF](https://www.fsf.org/licensing), [GNU](https://www.gnu.org/licenses/license-list.html), and [OSI](https://opensource.org/licenses)."
 msgstr "Wszystkie aplikacje w repozytorium muszą być wolne, darmowe i otwarte oprogramowanie - na przykład wydane na licencji GPL lub Apache. Dokładamy wszelkich starań, aby sprawdzić, czy tak właśnie jest, zarówno poprzez wizualną inspekcję źródła, jak i poprzez budowanie aplikacji z opublikowanego źródła. W razie wątpliwości co do licencji, należy zapoznać się z [Lista licencji GNU](https://www.gnu.org/licenses/license-list.html)."
 
 #. type: Plain text
@@ -6935,7 +6953,9 @@ msgstr "Przede wszystkim:"
 
 #. type: Bullet: '-   '
 #: _docs/Inclusion_Policy.md
-msgid "We cannot build apps using Google's proprietary \"play-services\".  Please talk to upstream about an untainted build flavor (either using microg or removing Non-Free dependencies completely)."
+#, fuzzy
+#| msgid "We cannot build apps using Google's proprietary \"play-services\".  Please talk to upstream about an untainted build flavor (either using microg or removing Non-Free dependencies completely)."
+msgid "We cannot build apps using Google's proprietary \"Play Services\".  Please talk to upstream about an untainted build flavor (either using microg or removing Non-Free dependencies completely)."
 msgstr "Nie możemy budować aplikacji używających własnościowych Usług Google Play. Proszę porozmawiać z autorem o czystym wariancie kompilacji (albo użyć microg lub całkowicie usunąć niewolne zależności)."
 
 #. type: Bullet: '-   '
@@ -6945,12 +6965,16 @@ msgstr "Nie możemy budować aplikacji używających własnościowych zależnoś
 
 #. type: Bullet: '-   '
 #: _docs/Inclusion_Policy.md
-msgid "We cannot build apps using proprietary ad libraries. We have nothing against advertisments (see [_AntiFeatures_](https://monitor.f-droid.org/anti-features)), but they must be provided by a FLOSS compatible way."
+#, fuzzy
+#| msgid "We cannot build apps using proprietary ad libraries. We have nothing against advertisments (see [_AntiFeatures_](https://monitor.f-droid.org/anti-features)), but they must be provided by a FLOSS compatible way."
+msgid "We cannot build apps using proprietary ad libraries. We have nothing against advertisments (see [_Anti-Features_](../Anti-Features)), but they must be provided by a FLOSS-compatible way."
 msgstr "Nie możemy tworzyć aplikacji przy użyciu zastrzeżonych bibliotek reklam. Nie mamy nic przeciwko reklamie (zobacz [_Niepożądane funkcje_](https://monitor.f-droid.org/anti-features)), ale muszą one być dostarczone w sposób kompatybilny z FLOSS."
 
 #. type: Bullet: '-   '
 #: _docs/Inclusion_Policy.md
-msgid "We cannot build apps requiring Non-Free buildtools, including Oracle's JDK or some pre-release toolchains."
+#, fuzzy
+#| msgid "We cannot build apps requiring Non-Free buildtools, including Oracle's JDK or some pre-release toolchains."
+msgid "We cannot build apps requiring Non-Free build tools, including Oracle's JDK or some pre-release toolchains."
 msgstr "Nie możemy kompilować aplikacji wymagających niewolnych narzędzi kompilacji, w tym JDK Oracle lub niektórych przedpremierowych narzędzi toolchains."
 
 #. type: Plain text
@@ -6970,7 +6994,14 @@ msgstr "Oprogramowanie nie powinno pobierać dodatkowych wykonywalnych plików b
 
 #. type: Bullet: '-   '
 #: _docs/Inclusion_Policy.md
-msgid "The software should use its own unique Android package ID. Where the application is a fork of another (even one not included in the F-Droid repository) it must have a new ID, different from the original. Make sure to rename your fork accordingly (including all active translations). Forks which only re-brand an app but do not add value for users might not get accepted."
+msgid "The software should use its own unique Android \"[Application ID](https://developer.android.com/studio/build/configure-app-module)\" based on a domain name under the developer's control.  For example, if the app is in a group called \"foo\" on <gitlab.com>, then the domain name could be `io.gitlab.foo`.  It should not be based on someone's domain name, (e.g. `com.google.foo`).  Maven Central OSSRH provides [good guidance](https://central.sonatype.org/publish/requirements/coordinates/)."
+msgstr ""
+
+#. type: Bullet: '-   '
+#: _docs/Inclusion_Policy.md
+#, fuzzy
+#| msgid "The software should use its own unique Android package ID. Where the application is a fork of another (even one not included in the F-Droid repository) it must have a new ID, different from the original. Make sure to rename your fork accordingly (including all active translations). Forks which only re-brand an app but do not add value for users might not get accepted."
+msgid "Where the application is a fork of another (even one not included in the F-Droid repository) it must have a new ID, different from the original. Make sure to rename your fork accordingly (including all active translations). Forks which only re-brand an app but do not add value for users might not get accepted."
 msgstr "Oprogramowanie powinno używać własnego unikatowego identyfikatora pakietu Android. Jeśli aplikacja jest forkiem innego (nawet nieuwzględnionego w repozytorium F-Droid), musi mieć nowy identyfikator, inny niż oryginalny. Pamiętaj, aby odpowiednio zmienić nazwę swojego forka (w tym wszystkie aktywne tłumaczenia). Forki, które tylko zmieniają markę aplikacji, ale nie dodają wartości dla użytkowników, mogą nie zostać zaakceptowane."
 
 #. type: Bullet: '-   '
@@ -6990,7 +7021,9 @@ msgstr "F-Droid nie rejestruje żadnych kluczy API. Nawet jeśli są dostarczane
 
 #. type: Bullet: '-   '
 #: _docs/Inclusion_Policy.md
-msgid "Binary dependencies such as JAR files have to be replaced by source-built versions or used from a trusted repository (see manual)."
+#, fuzzy
+#| msgid "Binary dependencies such as JAR files have to be replaced by source-built versions or used from a trusted repository (see manual)."
+msgid "Binary dependencies such as JAR files have to be replaced by source-built versions or used from a trusted repository like Maven Central OSSRH (see manual)."
 msgstr "Zależności binarne, takie jak pliki JAR, muszą być zastępowane przez wersje źródłowe lub używane z zaufanego repozytorium (patrz instrukcja)."
 
 #. type: Plain text
@@ -7005,18 +7038,29 @@ msgstr "Wydania powinny być wyraźnie oznaczone (lub oznaczone w inny sposób).
 
 #. type: Plain text
 #: _docs/Inclusion_Policy.md
-msgid "Some software, while being Free and Open Source, may engage in practices which are undesirable to some or all users. Where possible, we still include these applications in the repository, but they are flagged with the appropriate [_Anti-Features_](../Anti-Features). Even though such software can be included, when appropriately flagged, it is frequently the case that other \"FLOSS\" software with these features is actually not entirely free. For example, advertising and spying on user is often enabled via proprietary binary libraries which we cannot include."
+#, fuzzy
+#| msgid "Some software, while being Free and Open Source, may engage in practices which are undesirable to some or all users. Where possible, we still include these applications in the repository, but they are flagged with the appropriate [_Anti-Features_](../Anti-Features). Even though such software can be included, when appropriately flagged, it is frequently the case that other \"FLOSS\" software with these features is actually not entirely free. For example, advertising and spying on user is often enabled via proprietary binary libraries which we cannot include."
+msgid "Some software, while being Free and Open Source, may engage in practices which are undesirable to some or all users. Where possible, we still include these applications in the repository, but they are flagged with the appropriate [_Anti-Features_](../Anti-Features). Even though such software can be included, when appropriately flagged, it is frequently the case that other \"FLOSS\" software with these features is actually not entirely free. For example, advertising and tracking users is often enabled via proprietary binary libraries which we cannot include."
 msgstr "Niektóre programy, będąc wolnymi i otwartymi, mogą angażować się w praktyki niepożądane dla niektórych lub wszystkich użytkowników. Tam, gdzie to możliwe, nadal dodajemy te aplikacje do repozytorium, ale są one oznaczane odpowiednimi [_Niepożądanymi funkcjami_](../Anti-Features).. Mimo że takie oprogramowanie może być zawarte, gdy odpowiednio oznaczone, często jest tak, że inne oprogramowanie \"FLOSS\" z tymi funkcjami nie jest w rzeczywistości całkowicie bezpłatne. Na przykład reklamy i szpiegowanie użytkownika są często włączane za pomocą zastrzeżonych bibliotek binarnych, których nie możemy uwzględnić."
 
 #. type: Plain text
 #: _docs/Inclusion_Policy.md
-msgid "When including donation information, the relevant donation links (e.g. Bitcoin/ PayPal/Flattr/etc) must also be available either:"
+#, fuzzy
+#| msgid "When including donation information, the relevant donation links (e.g. Bitcoin/ PayPal/Flattr/etc) must also be available either:"
+msgid "When including donation information, the relevant donation links (e.g.  Liberapay/OpenCollective/Bitcoin/etc) must also be available either:"
 msgstr "Podczas umieszczania informacji o darowiznach odpowiednie linki darowizn (np. Bitcoin/ PayPal/Flattr/etc) muszą być również dostępne:"
 
 #. type: Bullet: '-   '
 #: _docs/Inclusion_Policy.md
-msgid "In a README or similar file in the projects source code."
+#, fuzzy
+#| msgid "In a README or similar file in the projects source code."
+msgid "In a README or similar file in the project's source code."
 msgstr "W pliku README lub podobnych plikach projektów kodu źródłowego."
+
+#. type: Bullet: '-   '
+#: _docs/Inclusion_Policy.md
+msgid "In a [_FUNDING.yml_](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/displaying-a-sponsor-button-in-your-repository#about-funding-files) file included in the project's source code."
+msgstr ""
 
 #. type: Bullet: '-   '
 #: _docs/Inclusion_Policy.md
@@ -10547,7 +10591,7 @@ msgstr "strona internetowa f-droid.org"
 
 #. type: Plain text
 #: _docs/Translation_and_Localization.md
-msgid "For the f-droid.org website, it is a much more complicated system. Since it cannot ([yet?](https://gitlab.com/fdroid/fdroid-website/-/milestones/4))  support lots of languages, we have to put stricter requirements on it.  The core strings must be fully translated to be included.  They also must be maintained in order to stay included.  The documentation and tutorials are very useful to have translated.  The blog posts are the least important.  Each page must be fully translated before the translated version will be shown, otherwise, the site will show the original English."
+msgid "For the f-droid.org website, it is a much more complicated system.  Each time the website is updated, thousands of pages must be regenerated per-locale.  Since this setup [cannot](https://gitlab.com/groups/fdroid/-/milestones/6)  support lots of languages, we have to put stricter requirements on it.  The core strings must be fully translated to be included.  They also must be maintained in order to stay included.  The documentation and tutorials are very useful to have translated.  The blog posts are the least important.  Each page must be fully translated before the translated version will be shown, otherwise, the site will show the original English."
 msgstr ""
 
 #. type: Plain text
@@ -10885,6 +10929,12 @@ msgstr "Preferencje"
 #: _docs/Whitelabel_Builds.md
 msgid "For a custom build that enables Automatic Updates by default, override _app/src/main/res/xml/preferences.xml_. You can customize the preferences and their default values in _app/src/mycompany/res/xml/preferences.xml_. The fully automatic update requires [Privileged Extension](https://gitlab.com/fdroid/privileged-extension). With regular access, the updates will only automatically download. The user still needs to click install on each one."
 msgstr "W przypadku niestandardowej kompilacji, która domyślnie włącza aktualizacje automatyczne, należy zastąpić _app/src/main/res/xml/preferences.xml_. Możesz dostosować preferencje i ich domyślne wartości w _app/src/mycompany/res/xml/preferences.xml_. W pełni automatyczna aktualizacja wymaga rozszerzenia [Uprzywilejowane rozszerzenie](https://gitlab.com/fdroid/privileged-extension). Przy regularnym dostępie aktualizacje będą pobierane automatycznie. Użytkownik musi kliknąć instalację na każdym z nich."
+
+#~ msgid "Anti-Features are flags packagers apply to apps, warning of possibly undesirable behaviour from the user's perspective, often serving the interest of the developer or a third party."
+#~ msgstr "Niepożądane funkcje to programy pakujące flagi do aplikacji, ostrzegające przed potencjalnie niepożądanym zachowaniem z perspektywy użytkownika, często służące interesom programisty lub strony trzeciej."
+
+#~ msgid "You will see these in the F-Droid client, and/or web repository browser when viewing the details of an app containing one or more of these Anti-Features."
+#~ msgstr "Zobaczysz je w kliencie F-Droid, i/lub przeglądarce internetowej podczas przeglądania szczegółów aplikacji zawierającej jedną lub więcej z tych niepożądanych funkcji."
 
 #~ msgid "Ok, this isn't a frequently asked question, but: If, for whatever reason, you would simply prefer us not to distribute the app then we can only apologise.  You deserve respect for your work which you've released under a Free Software license, and it wouldn't be pleasant for us to have to go against your wishes.  However, the alternative is for us to deny use of the software to all our users."
 #~ msgstr "Ok, to nie jest często zadawane pytanie, ale: jeśli z jakiegokolwiek powodu wolałbyś, abyśmy nie rozpowszechniali aplikacji, możemy tylko przeprosić. Zasługujesz na szacunek dla swojej pracy, którą wydałeś na podstawie licencji wolnego oprogramowania, i nie byłoby przyjemnie, gdybyśmy musieli postąpić wbrew Twojemu życzeniu. Alternatywą jest jednak odmowa korzystania z oprogramowania wszystkim naszym użytkownikom."
