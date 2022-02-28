@@ -3,12 +3,29 @@ layout: page
 title: Anti-Features
 ---
 
-Anti-Features are flags packagers apply to apps, warning of possibly
-undesirable behaviour from the user's perspective, often serving the
-interest of the developer or a third party.
+When reviewing apps to accept, F-Droid takes the user's point of view, first and
+foremost.  We start with [strict acceptance criteria](../Inclusion_Policy) based
+on the principles of free software and user control.  There are some things
+about an app that might not block it from inclusion, but many users might not
+want to accept them.  For these kinds of things, F-Droid has a defined set of
+Anti-Features.  Apps can then be marked with these Anti-Features so users can
+clearly choose whether the app is still acceptable.
 
-You will see these in the F-Droid client, and/or web repository browser
-when viewing the details of an app containing one or more of these
+Anti-Features are organized into "flags" that packagers can use to mark apps,
+warning of possibly undesirable behaviour from the user's perspective, often
+serving the interest of the developer or a third party.  Free software packages
+do not exist in a bubble.  For one piece of software to be useful, it usually
+has to integrate with some other software.  Therefore, users that want free
+software also want to know if an app depends on or promotes any proprietary
+software.  Sometimes, there are concepts in Anti-Features that overlap with
+tactics used by third parties against users.  F-Droid always marks Anti-Features
+from the user's point of view.  For example, [NSFW](#NSFW) might be construed as
+similar to a censor's blocklists, but in our case, the focus is on the user's
+context and keeping the user in control.
+
+You will see our Anti-Features in action when viewing the details of any app
+containing one or more Anti-Features, whether in the F-Droid client or on this
+website.  The F-Droid client also provides settings to hide apps with certain
 Anti-Features.
 
 
@@ -166,3 +183,18 @@ with an app update. Should you discover that an app contains an Anti-Feature
 F-Droid is not aware of, please report it. You can submit them by E-Mail to
 [team@f-droid.org](mailto:team@f-droid.org) or open an issue here:
 [gitlab.com/fdroid/fdroiddata/issues](https://gitlab.com/fdroid/fdroiddata/issues).
+
+
+
+## Origins of the F-Droid definition of Anti-Features
+
+The Free Software Foundation (FSF) also has a similar idea, and it is also known
+as "anti-features".  ["Anti-features are sold to customers as features but are
+fundamental or unavoidable aspects of systems that can only be removed or
+withheld through technological
+effort"](https://www.fsf.org/blogs/community/antifeatures).  Another way of
+thinking about Anti-Features is that they are ["functionality that a technology
+developer will charge users to not
+include"](https://www.fsf.org/bulletin/2007/fall/antifeatures/).  The F-Droid
+definition was initially inspired by FSF's, but our definition has evolved over
+the years into something different.
