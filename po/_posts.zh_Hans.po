@@ -20,7 +20,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
 "POT-Creation-Date: 2022-02-14 14:12+0100\n"
 "PO-Revision-Date: 2022-02-28 13:13+0000\n"
-"Last-Translator: kak mi <wavelake@outlook.com>\n"
+"Last-Translator: linsui <linsui@inbox.lv>\n"
 "Language-Team: Chinese (Simplified) <https://hosted.weblate.org/projects/f-droid/website-posts/zh_Hans/>\n"
 "Language: zh_Hans\n"
 "MIME-Version: 1.0\n"
@@ -15407,6 +15407,10 @@ msgid ""
 "    Log.d(TAG, \"Provider installed.\");\n"
 "}\n"
 msgstr ""
+"public static void install() {\n"
+"    Security.insertProviderAt(Conscrypt.newProvider(), 1);\n"
+"    Log.d(TAG, \"Provider installed.\");\n"
+"}\n"
 
 #. type: Plain text
 #: _posts/2020-05-29-android-updates-and-tls-connections.md
@@ -15425,6 +15429,13 @@ msgid ""
 "installMethod.invoke(null);\n"
 "installed = true;\n"
 msgstr ""
+"Context targetContext = context.createPackageContext(\"com.bytehamster.providerinstaller\",\n"
+"        Context.CONTEXT_INCLUDE_CODE | Context.CONTEXT_IGNORE_SECURITY);\n"
+"ClassLoader classLoader = targetContext.getClassLoader();\n"
+"Class installClass = classLoader.loadClass(\"com.bytehamster.providerinstaller.ProviderInstallerImpl\");\n"
+"Method installMethod = installClass.getMethod(\"install\", new Class[]{ });\n"
+"installMethod.invoke(null);\n"
+"installed = true;\n"
 
 #. type: Plain text
 #: _posts/2020-05-29-android-updates-and-tls-connections.md
