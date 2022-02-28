@@ -118,8 +118,8 @@ Focus on my phone because I specifically want to avoid thinking about managing
 accounts, cookie preference screens, history, etc.  I just use it to look up
 information, and when I'm done and click the notification, its all wiped clean.
 (_Unfortunately, Focus and Klar both contain Google Play Services proprietary
-libraries, e.g. _com.google.android.gms_, so they are not currently distributed
-on <f-droid.org>. We welcome contributions to remove the proprietary bits so we
+libraries, e.g. com.google.android.gms, so they are not currently distributed
+on f-droid.org. We welcome contributions to remove the proprietary bits so we
 can distribute them again_).
 
 Guardian Project is developing [Clean Insights](https://cleaninsights.org/) to
