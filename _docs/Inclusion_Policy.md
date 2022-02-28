@@ -45,8 +45,11 @@ Additionally:
     files (e.g. Non-Free addons, auto-updates, etc).
 -   The software should use its own unique Android
     "[Application ID](https://developer.android.com/studio/build/configure-app-module)"
-    based on a domain name under the developer's control.  It should not
-    be based on someone's domain name, (e.g. `com.google.foo`).
+    based on a domain name under the developer's control.  For example, if the
+    app is in a group called "foo" on <gitlab.com>, then the domain name could
+    be `io.gitlab.foo`.  It should not be based on someone's domain name,
+    (e.g. `com.google.foo`).  Maven Central OSSRH provides [good
+    guidance](https://central.sonatype.org/publish/requirements/coordinates/).
 -   Where the
     application is a fork of another (even one not included in the
     F-Droid repository) it must have a new ID, different from
