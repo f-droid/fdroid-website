@@ -149,16 +149,16 @@ using [IPFS](https://en.wikipedia.org/wiki/InterPlanetary_File_System).
 
 We can also announce that the _f-droid.org_ website has no user accounts at all
 in any part of it.  The final piece was the old MediaWiki instance that was at
-<https://f-droid.org/wiki>.  This has been replaced by
-<https://monitor.f-droid.org> and https://gitlab.com/fdroid/wiki.  The
+_https://f-droid.org/wiki_.  This has been replaced by
+<https://monitor.f-droid.org> and <https://gitlab.com/fdroid/wiki>.  The
 [forum](https://forum.f-droid.org) is built with Discourse, which is built
 around user accounts.  Still, our forum can be read without logging in or using
 Javascript.  User accounts are a well known tool for managing spam and abusive
 behavior on public forums, and that is how they are used in our forum.  We are
 open to proven alternatives that can operate more privately.
 
-With the right setup, it is possible to send contributions via git without minimal
-trace of the original author.  This now also applies to our wiki.  Where
+With the right setup, it is possible to send contributions via git with only minimal
+traces of the original author.  This now also applies to our wiki.  Where
 appropriate, we also allow contributions to come in via the `@fdroid-anyone`
 account, which anyone can use by finding the password on the wiki.
 
