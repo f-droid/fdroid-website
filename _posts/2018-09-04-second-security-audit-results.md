@@ -228,7 +228,7 @@ Javascript could be injected into descriptions, both the _f-droid.org_
 website and Android client do not let Javascript run from the
 descriptions.  The _f-droid.org_ website protects against malicious
 Javascript injection with a
-[strict HTTP Content Security Policy](https://observatory.mozilla.org/analyze.html?host=f-droid.org).
+[strict HTTP Content Security Policy](https://observatory.mozilla.org/analyze/f-droid.org).
 F-Droid client never runs CSS, Javascript, or dangerous HTML tags
 since it displays the HTML via
 [`Html.fromHtml()`](https://gitlab.com/fdroid/fdroidclient/blob/1.3.1/app/src/main/java/org/fdroid/fdroid/views/AppDetailsRecyclerViewAdapter.java#L441)

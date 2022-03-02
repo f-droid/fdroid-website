@@ -74,8 +74,8 @@ to make it as hard as possible to exploit this vector.
   [HSTS preload list](https://hstspreload.org/?domain=f-droid.org), so
   major browsers will only ever use HTTPS for all connections to
   _f-droid.org_
-* a [strong](https://observatory.mozilla.org/analyze.html?host=f-droid.org#third) TLS/HTTPS configuration
-* a [strong](https://observatory.mozilla.org/analyze.html?host=f-droid.org) HTTP Content Security Policy
+* a [strong](https://observatory.mozilla.org/analyze/f-droid.org#third-party) TLS/HTTPS configuration
+* a [strong](https://observatory.mozilla.org/analyze/f-droid.org) HTTP Content Security Policy
 * [PGP-signature]({{ site.fdroid_apk_download_url }}.asc) on the initial
   install [download link]({{ site.fdroid_apk_download_url }})
 * automated
@@ -131,7 +131,7 @@ tags since it displays HTML via
 with image loading disabled
 * the _f-droid.org_ website protects against malicious and
 CSS/HTML/JavaScript injection with a
-[strict HTTP Content Security Policy](https://observatory.mozilla.org/analyze.html?host=f-droid.org).
+[strict HTTP Content Security Policy](https://observatory.mozilla.org/analyze/f-droid.org).
 * Repomaker filters the texts through Mozilla's
 [_bleach_](https://github.com/mozilla/bleach) and has a good
 [HTTP Content Security Policy](https://observatory.mozilla.org/analyze.html?host=repomaker.grobox.de).
