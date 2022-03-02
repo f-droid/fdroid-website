@@ -4,8 +4,8 @@ title: Announcing <tt>issuebot</tt>
 author: eighthave
 ---
 
-F-Droid is a robot with a passion for Free and Open Source (FOSS)
-software, and now F-Droid has a new helper: _issuebot_!  It started
+F-Droid is a robot with a passion for Free and Open Source
+Software (FOSS), and now F-Droid has a new helper: _issuebot_!  It started
 life as a hacked together
 [script](https://gitlab.com/fdroid/rfp/blob/69a9e2b7a11dfbc492dbdd334f426bcbec257880/.issuebot.py)
 running on the [RFP](https://gitlab.com/fdroid/rfp/issues) tracker,
