@@ -82,8 +82,7 @@ The client application is available in many languages, but if yours is
 not included, or if it needs updating or improving, follow
 [these instructions](https://hosted.weblate.org/engage/f-droid/).
 
-The web site, this wiki , and app descriptions are not covered yet, but
-will be included in the same system at a later date.
+The web site and some app descriptions (if the original developer does not supply their own description) can also be translated through Weblate.
 
 There's a
 [dedicated forum section](https://forum.f-droid.org/c/translation)
