@@ -19,7 +19,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
 "POT-Creation-Date: 2022-02-28 14:09+0100\n"
-"PO-Revision-Date: 2022-03-08 00:59+0000\n"
+"PO-Revision-Date: 2022-03-10 09:13+0000\n"
 "Last-Translator: kak mi <wavelake@outlook.com>\n"
 "Language-Team: Chinese (Simplified) <https://hosted.weblate.org/projects/f-droid/website-posts/zh_Hans/>\n"
 "Language: zh_Hans\n"
@@ -11395,28 +11395,28 @@ msgstr ""
 #. type: Plain text
 #: _posts/2019-04-15-privacy-preserving-analytics.md
 msgid "F-Droid always avoids tracking users as much as we can.  We will never require an account, and we have put a lot of [effort]({{ site.baseurl }}/docs/Security_Model) into making it hard for even the _f-droid.org_ server to track users.  We also recognize that usage data has value.  It can be used to help show the level of popularity, and to provide app developers some feedback on what users like."
-msgstr ""
+msgstr "F-Droid 总是尽可能地避免跟踪用户。我们永远不需要帐户，并且我们投入了很多[努力]({{ site.baseurl }}/docs/Security_Model)使 _f-droid.org_ 服务器也很难跟踪用户。我们也认识到使用数据具有价值。它可以用来帮助显示受欢迎程度，并为应用开发者提供一些用户喜欢的反馈。"
 
 #. type: Plain text
 #: _posts/2019-04-15-privacy-preserving-analytics.md
 msgid "After years of moving totally away from data, including disabling download counts on _f-droid.org_, we have started an experiment with tracking __usage__ without tracking users.  We are building upon the work of [Tor Project](https://gitweb.torproject.org/webstats.git/tree/src/sanitize.py)  and [Guardian Project](https://guardianproject.info/2017/06/08/tracking-usage-without-tracking-people/).  We have enabled access logging on <https://search.f-droid.org> and <https://mirror.f-droid.org/> for the initial trial.  (_Note: search on f-droid.org [could happen](https://gitlab.com/fdroid/fdroid-website/issues/175)  fully client-side using javascript, in that case, those searches will never hit search.f-droid.org and therefore will not be logged_)."
-msgstr ""
+msgstr "经过多年完全远离数据，包括禁用 _f-droid.org_ 上的下载计数，我们开始了一项在不跟踪用户的情况下跟踪__使用__的实验。我们基于 [Tor 项目](https://gitweb.torproject.org/webstats.git/tree/src/sanitize.py)和 [Guardian Project](https://guardianproject.info/2017/06/08/tracking-usage-without-tracking-people/) 构建我们的工作。我们已在 <https://search.f-droid.org> 和 <https://mirror.f-droid.org/> 上启用访问日志以进行初始试用。（_注意：在 f-droid.org 上[可能](https://gitlab.com/fdroid/fdroid-website/issues/175)完全在客户端使用 javascript 进行搜索，在这种情况下，这些搜索将永远不会命中 search.f-droid.org，因此不会被记录 _）。"
 
 #. type: Plain text
 #: _posts/2019-04-15-privacy-preserving-analytics.md
 msgid "The one caveat here is that Nginx does not allow custom time formats like Apache does, so the web logs will contain exact date and time of each hit.  The time zone is zeroed out.  The raw logs will not be published, and they will be sanitized before being fed into any analytics system like Matomo/Piwik.  Also, Nginx does not allow custom error log formats, so errors will have complete information.  The error logs will therefore not be used in analytics without full sanitation, and are only kept for a short time period."
-msgstr ""
+msgstr "这里需要注意的是，Nginx 不允许像 Apache 那样的自定义时间格式，因此 Web 日志将包含每次点击的确切日期和时间。时区已归零。原始日志不会被发布，它们会在被输入任何分析系统（如 Matomo/Piwik）之前进行清理。此外，Nginx 不允许自定义错误日志格式，因此错误将具有完整的信息。因此，错误日志不会在没有完全清理的情况下用于分析，并且只会保留很短的时间。"
 
 #. type: Title ##
 #: _posts/2019-04-15-privacy-preserving-analytics.md
 #, no-wrap
 msgid "Our Setup"
-msgstr ""
+msgstr "我们的设置"
 
 #. type: Plain text
 #: _posts/2019-04-15-privacy-preserving-analytics.md
 msgid "Our servers run Debian, so this gives commands for that context. First, ensure that Nginx is set up with the \"geoip\" extension.  That enables Nginx to convert IP addresses into country codes, so that country codes are logged instead of IP addresses."
-msgstr ""
+msgstr "我们的服务器运行 Debian，因此我们将会为该环境提供命令。首先，确保 Nginx 设置了 \"geoip\" 扩展。这使 Nginx 能够将 IP 地址转换为国家代码，以便记录国家代码而不是 IP 地址。"
 
 #. type: Fenced code block (console)
 #: _posts/2019-04-15-privacy-preserving-analytics.md
@@ -11427,7 +11427,7 @@ msgstr ""
 #. type: Plain text
 #: _posts/2019-04-15-privacy-preserving-analytics.md
 msgid "Then enable the custom logging setup in _/etc/nginx/nginx.conf_:"
-msgstr ""
+msgstr "然后在 _/etc/nginx/nginx.conf_ 中启用自定义日志记录设置："
 
 #. type: Fenced code block (conf)
 #: _posts/2019-04-15-privacy-preserving-analytics.md
@@ -11442,7 +11442,7 @@ msgstr ""
 #. type: Plain text
 #: _posts/2019-04-15-privacy-preserving-analytics.md
 msgid "This then makes the access log data look like:"
-msgstr ""
+msgstr "这使得访问日志数据看起来是这样："
 
 #. type: Fenced code block (console)
 #: _posts/2019-04-15-privacy-preserving-analytics.md
@@ -11477,27 +11477,27 @@ msgstr ""
 #. type: Plain text
 #: _posts/2019-04-19-decentralizing-localizations.md
 msgid "App development is already well decentralized, and when F-Droid introduced metadata localization, we also made it possible to manage [translations and graphics]({{ site.baseurl }}/docs/All_About_Descriptions_Graphics_and_Screenshots)  outside of F-Droid itself.  Two tools, Fastlane and Triple-T, even provide a way to sync those between the app source repo, F-Droid, and Google Play."
-msgstr ""
+msgstr "应用开发已经很去中心化了，当 F-Droid 引入元数据本地化时，我们还可以在 F-Droid 本身之外管理[翻译和图形]({{ site.baseurl }}/docs/All_About_Descriptions_Graphics_and_Screenshots)。 Fastlane 和 Triple-T 这两个工具甚至提供了一种在应用源代码库、F-Droid 和 Google Play 之间同步它们的方法。"
 
 #. type: Plain text
 #: _posts/2019-04-19-decentralizing-localizations.md
 msgid "Using [Weblate](https://hosted.weblate.org/projects/f-droid/) for handling all [F-Droid localization]({{ site.baseurl }}/docs/Translation_and_Localization)  puts contributors with expertise in specific languages and how they should be translated in control of how everything in translated.  Weblate is the place where translations happen, it is the GitLab of languages for the F-Droid community."
-msgstr ""
+msgstr "使用 [Weblate](https://hosted.weblate.org/projects/f-droid/) 来处理所有的 [F-Droid 本地化]({{ site.baseurl }}/docs/Translation_and_Localization)，使得精通特定语言及其翻译的贡献者能够掌控所有翻译的内容。Weblate 是翻译发生的地方，它是 F-Droid 社区语言方面的 GitLab。"
 
 #. type: Plain text
 #: _posts/2019-04-19-decentralizing-localizations.md
 msgid "We as a community need to avoid putting too much maintenance work on a few people so we can keep our \"bus factor\" high enough to survive all things that come our way.  People often request that F-Droid handle the localization of their app, but that would centralize the work in a place where it is much harder to share the workload.  So app graphics or localized texts should be handled by the upstream app developer as much as possible, instead of sticking everything into _fdroiddata_."
-msgstr ""
+msgstr "作为一个社区，我们需要避免让少数人进行过多的维护工作，这样我们才能将我们的“公共汽车系数”保持在足够高的水平，以便在我们遇到的所有事情中生存下来。人们经常要求 F-Droid 处理他们的应用的本地化，但这会将工作集中在一个更难分担工作量的地方。所以应用图形或本地化文本应尽可能由上游应用开发者处理，而不是将所有内容都粘贴到 _fdroiddata_ 中。"
 
 #. type: Plain text
 #: _posts/2019-04-19-decentralizing-localizations.md
 msgid "That said, there are some apps with localized metadata in _fdroiddata_.  The graphics and descriptions were added there to get things started when the metadata localization was first rolled out.  Now that we have hundreds of apps that manage their own localization, we can move all that upstream as well."
-msgstr ""
+msgstr "尽管如此，在 _fdroiddata_ 中有一些具有本地化元数据的应用。这些图形和描述是在元数据本地化首次推出时添加的，以使其开始工作。现在我们有数百个应用管理自己的本地化，我们也可以将所有这些都移动到上游。"
 
 #. type: Plain text
 #: _posts/2019-04-19-decentralizing-localizations.md
 msgid "We have also started a project to provide a translated 80-character summary for all apps in the archive.  So if upstream developers are not willing to manage the localization, F-Droid can at least have this key piece translated so that users can see screens in only their language when navigating the Android client and website.  That you can see on [fdroiddata-localizations](https://gitlab.com/fdroid/fdroiddata-localizations).  I am currently managing that, but would love to increase our bus factor by getting more maintainers involved there.  At this point, it is mostly a matter of running some syncing scripts, and checking to make sure the scripts did not do anything stupid."
-msgstr ""
+msgstr "我们还启动了一个项目，为存档中的所有应用提供翻译后的 80 个字符的摘要。因此，如果上游开发者不愿意管理本地化，F-Droid 至少可以翻译这个关键部分，以便用户在浏览 Android 客户端和网站时能看到只包含他们语言的屏幕。你可以在 [fdroiddata-localizations](https://gitlab.com/fdroid/fdroiddata-localizations) 上看到此项工作。我目前正在管理它，但希望通过让更多的维护人员参与进来增加我们的公共汽车因数。目前，主要是运行一些同步脚本，并检查以确保脚本没有做任何愚蠢的事情。"
 
 #. type: YAML Front Matter: title
 #: _posts/2019-05-05-trust-privacy-and-free-software.md
@@ -11508,48 +11508,52 @@ msgstr ""
 #. type: Plain text
 #: _posts/2019-05-05-trust-privacy-and-free-software.md
 msgid "We all put a lot of trust into our devices, more and more of our lives are run out of our phones and laptops.  The communications we send to each other contain the most sensitive bits that we convey with our devices.  The experience we all have when using these devices feels private: if no one is looking at our screen, it seems that no one else could be watching.  Sadly, the reality is quite the opposite.  Our mobile devices are full of trackers and spyware, whether we notice them or not.  There are ever increasing pressures for inserting backdoors.  And most people still rely on proprietary software for their most sensitive things."
-msgstr ""
+msgstr "我们都非常信任我们的设备，我们的生活中越来越多的时间花在了我们的手机和笔记本电脑上。我们相互发送的通信包含我们用我们的设备传送的最敏感的数据。我们在使用这些设备时所拥有的体验都是私密的：如果没有人在看我们的屏幕，似乎也没有人在监控。可悲的是，现实恰恰相反。我们的移动设备充满了跟踪器和间谍软件，无论我们是否注意到它们。植入后门愈发猖獗。但大多数人仍然依赖专有软件来处理他们最敏感的事情。"
 
 #. type: Plain text
 #: _posts/2019-05-05-trust-privacy-and-free-software.md
 msgid "Over the last ten years, there have been huge strides in the development of usable techniques for strongly protecting privacy.  End-to-end encryption used to require deep technical skills to use (think PGP email), now over a billion people are using it daily.  Open platforms and free software give us control over what happens on our computing devices, as well as the ability to check what exactly software does with our private information.  [Reproducible builds](https://reproducible-builds.org) seemed like waste of time some years ago, now it is an essential building block for trustworthy systems.  The F-Droid community has put all those pieces together to create a complete distribution system where the source code is the only piece that needs to be trusted."
-msgstr ""
+msgstr "在过去的十年中，在开发用于强力保护隐私的可用技术方面取得了巨大进步。端到端加密过去需要深厚的技术技能才能使用（想想 PGP 电子邮件），现在每天有超过 10 亿人在使用它。开放平台和自由软件使我们能够控制在我们的计算设备上发生的事情，以及检查软件对我们的私人信息究竟做了什么。[可重复构建](https://reproducible-builds.org)在几年前似乎是浪费时间，现在它已成为可信赖系统的重要组成部分。F-Droid 社区将所有这些部分组合在一起，创建了一个完整的分发系统，其中源代码是唯一需要信任的部分。"
 
 #. type: Plain text
 #: _posts/2019-05-05-trust-privacy-and-free-software.md
 msgid "To make this a bit clearer, we can use the analogy of buying prepared food.  The ingredients must be listed on the box.  We trust that the ingredients list matches what is actually in the box.  Open source software is very similar to this.  The source code is a very elaborate recipe that produces the executable binary that the computer chips actually run.  Now imagine there is a robot kitchen than perfectly executes recipes, producing the exact same result every time, and a simple chemistry set that tell if two bites are exactly the same.  Anyone who reads the recipe will know what is in the food.  The robot kitchen can be inspected to ensure it strictly follows the recipe.  The resulting food can be tested over time to make sure that the robot kitchen is actually making the same exact food each time.  Then the combination of the recipe and robot kitchen can be trusted to only use what is listed on the ingredient list.  And anyone can use the chemistry kit to check that what is in their box matches what is in anyone else's box."
-msgstr ""
+msgstr "为了更清楚地说明这一点，我们可以类比购买预制食品。成分必须列在盒子上。我们相信成分表与包装盒中的实际成分相符。开源软件与此非常相似。源代码是一个非常精细的配方，可以生成计算机芯片实际运行的可执行二进制文件。现在想象一下，有一个机器人厨房可以完美地执行食谱，每次都产生完全相同的结果，还有一个简单的化学装置可以判断两口食物是否完全相同。任何读过食谱的人都会知道食物里有什么。可以检查机器人厨房以确保其严格遵循食谱。生成的食物可以随着时间的推移进行测试，以确保机器人厨房每次实际上都在制作完全相同的食物。然后可以相信食谱和机器人厨房的组合只使用配料表上列出的东西。任何人都可以使用化学试剂盒来检查他们盒子里的东西是否与其他人盒子里的东西相匹配。"
 
 #. type: Plain text
 #: _posts/2019-05-05-trust-privacy-and-free-software.md
 msgid "This is what F-Droid can now do, only for software instead of food.  It does it in a way that the chemistry kit is run every time to you install an app, and it is compared to what the F-Droid build machine saw when it created the binary app.  So in fact, it is much easier to verify than the above example."
-msgstr ""
+msgstr "这就是 F-Droid 现在可以做的，只不过面向的是软件而不是食物。它的方式是每次安装应用时都会运行化学工具包，并将其与 F-Droid 构建机器在创建二进制应用时看到的内容进行比较。所以其实比上面的例子验证起来要容易得多。"
 
 #. type: Title ##
 #: _posts/2019-05-05-trust-privacy-and-free-software.md
 #, no-wrap
 msgid "Digging into the details"
-msgstr ""
+msgstr "深入了解细节"
 
 #. type: Plain text
 #: _posts/2019-05-05-trust-privacy-and-free-software.md
 msgid "Free Software, Vetted Protocols, Code Audits, Reproducible Builds, and the Right Hardware: these are the required ingredients for a truly trustworthy system."
-msgstr ""
+msgstr "自由软件、经过审查的协议、代码审计、可重复构建和正确的硬件：这些是真正值得信赖的系统所必需的要素。"
 
 #. type: Plain text
 #: _posts/2019-05-05-trust-privacy-and-free-software.md
 msgid "The complete picture for trustworthy computing is now within reach. Free Software has long been a requirement for trusted software.  There are trusted methods of end-to-end encryption, from [Briar Protocol](https://code.briarproject.org/briar/briar/wikis/A-Quick-Overview-of-the-Protocol-Stack) to [Signal Protocol](https://en.wikipedia.org/wiki/Signal_Protocol).  Reproducible builds means that binaries can be definitively linked to the source code.  Real off switches gives the user full control over when features are enabled.  Free hardware designs let us inspect the recipes used to build our devices."
-msgstr ""
+msgstr "可信计算的全貌现在触手可及。长期以来，自由软件一直是受信任软件的要求。从 [Briar 协议](https://code.briarproject.org/briar/briar/wikis/A-Quick-Overview-of-the-Protocol-Stack)到 [Signal 协议](https://en.wikipedia.org/wiki/Signal_Protocol)。可重复构建意味着二进制文件可以明确地链接到源代码。真正的关闭开关让用户可以完全控制何时启用功能。自由硬件设计让我们可以检查用于构建我们的设备的配方。"
 
 #. type: Plain text
 #: _posts/2019-05-05-trust-privacy-and-free-software.md
 msgid "The F-Droid ecosystem now provides the pieces necessary for trusted, verifiable software: * Free Software * Reproducible builds * Open, audited cryptography"
 msgstr ""
+"F-Droid 生态系统现在为可信、可验证的软件提供了必要的部分：\n"
+"* 自由软件\n"
+"* 可重复构建\n"
+"* 开放、经审计的密码学"
 
 #. type: Plain text
 #: _posts/2019-05-05-trust-privacy-and-free-software.md
 msgid "All of the above pieces have been applied and proven in multiple apps, some already include multiple techniques.  In order for an app to provide trustworthy privacy, all must be applied."
-msgstr ""
+msgstr "以上所有内容都已在多个应用中得到应用和验证，其中一些已经包含多种技术。为了让应用提供可信赖的隐私，必须具备所有这些。"
 
 #. type: Bullet: '* '
 #: _posts/2019-05-05-trust-privacy-and-free-software.md
@@ -11559,95 +11563,95 @@ msgstr ""
 #. type: Bullet: '* '
 #: _posts/2019-05-05-trust-privacy-and-free-software.md
 msgid "Open, audited crypto entirely in the client software: Briar, Bitcoin Wallet, Tutanota"
-msgstr ""
+msgstr "完全在客户端软件中开放、经过审计的加密：Briar、Bitcoin Wallet、Tutanota"
 
 #. type: Bullet: '* '
 #: _posts/2019-05-05-trust-privacy-and-free-software.md
 msgid "Reproducible builds: Briar, Bitcoin Wallet, F-Droid, [F-Droid Privileged Extension](https://verification.f-droid.org/org.fdroid.fdroid.privileged_2080.apk.json), [Nextcloud](https://verification.f-droid.org/com.nextcloud.client_10040299.apk.json), Öffi, and [more](https://verification.f-droid.org/verified.html)."
-msgstr ""
+msgstr "可重复构建：Briar、Bitcoin Wallet、F-Droid、[F-Droid Privileged Extension](https://verification.f-droid.org/org.fdroid.fdroid.privileged_2080.apk.json)、[Nextcloud](https://verification.f-droid.org/com.nextcloud.client_10040299.apk.json)、Öffi 和 [更多](https://verification.f-droid.org/verified.html)。"
 
 #. type: Bullet: '* '
 #: _posts/2019-05-05-trust-privacy-and-free-software.md
 msgid "Code signing and distribution based on reproducing the developer's build: Briar, Bitcoin Wallet"
-msgstr ""
+msgstr "基于复现开发者的构建的代码签名和分发：Briar，Bitcoin Wallet"
 
 #. type: Plain text
 #: _posts/2019-05-05-trust-privacy-and-free-software.md
 msgid "Tor Browser for Android will [soon be released](https://trac.torproject.org/projects/tor/ticket/27539)  using the F-Droid [reproducible process]({{ site.baseurl }}/docs/Reproducible_Builds).  That means the app is submitted to F-Droid by sending only the source code and the developer's own signature from their APKs.  That means that F-Droid will only publish APKs that are built from source on the _f-droid.org_ infrastructure, yet match the signature produced for the APK that was built by the developer on their infrastructure."
-msgstr ""
+msgstr "适用于 Android 的 Tor 浏览器[即将](https://trac.torproject.org/projects/tor/ticket/27539)使用 F-Droid [可重复过程]({{ site.baseurl }}/docs/Reproducible_Builds)发布。这意味着应用通过仅发送源代码和开发者自己的 APK 签名来提交给 F-Droid。这意味着 F-Droid 将仅发布从 _f-droid.org_ 基础架构上的源代码构建的 APK，但与开发者在其基础架构上构建的 APK 生成的签名相匹配。"
 
 #. type: Plain text
 #: _posts/2019-05-05-trust-privacy-and-free-software.md
 msgid "Other projects like Signal agree that [reproducible builds are important](https://signal.org/blog/reproducible-android/), but the Signal APKs are not reproducible.  Only the Java part is reproducible.  That means the C/C++ code is not reproducible, and that's the place where it is easiest and most effective to insert exploits."
-msgstr ""
+msgstr "Signal 等其他项目同意[可重复构建很重要](https://signal.org/blog/reproducible-android/)，但 Signal APK 不可重复。只有 Java 部分是可重复的。这意味着 C/C++ 代码是不可重复的，而这是最容易和最有效地插入漏洞利用的地方。"
 
 #. type: Plain text
 #: _posts/2019-05-05-trust-privacy-and-free-software.md
 #, no-wrap
 msgid "There are also other concerns that affect a much broader swath of Android apps: the tools and plugins used to build the apps, as well as third party libraries, which these days basically every app includes.  _gradle_ is the official build system, and many project use _gradle_ plugins as part of their build process.  _gradle_ is free software, but many of the plugins are not.  \n"
-msgstr ""
+msgstr "还有其他一些问题会影响更广泛的 Android 应用：用于构建应用的工具和插件，以及第三方库，如今基本上每个应用都包含这些库。_gradle_ 是官方的构建系统，许多项目使用 _gradle_ 插件作为其构建过程的一部分。 _gradle_ 是自由软件，但很多插件不是。  \n"
 
 #. type: Plain text
 #: _posts/2019-05-05-trust-privacy-and-free-software.md
 msgid "F-Droid has been working with the Debian [Android Tools](https://wiki.debian.org/AndroidTools) and [Java](https://wiki.debian.org/Teams/JavaPackaging) teams to get as many of the essential build tools packaged and [building reproducibly](https://tests.reproducible-builds.org/debian/unstable/amd64/pkg_set_maint_pkg-android-tools-devel.html) as part of Debian.  F-Droid Privileged Extension takes reproducible builds this extra step further: it is built by the Debian Android Tools packages with no outside dependencies."
-msgstr ""
+msgstr "F-Droid 一直在与 Debian [Android 工具](https://wiki.debian.org/AndroidTools) 和 [Java](https://wiki.debian.org/Teams/JavaPackaging) 团队合作，以使尽可能多的基本构建工具作为 Debian 的一部分打包并[可重复地构建](https://tests.reproducible-builds.org/debian/unstable/amd64/pkg_set_maint_pkg-android-tools-devel.html) 。 F-Droid Privileged Extension 使可重复构建更进一步：它由 Debian Android 工具包构建，没有外部依赖项。"
 
 #. type: Plain text
 #: _posts/2019-05-05-trust-privacy-and-free-software.md
 msgid "The last big piece are the third party libraries that _gradle_ makes it so easy to include.  The _JCenter_ and _Maven Central_ library repositories require that a matching source JAR is uploaded for each release, but nothing verifies that the source JAR matches the binary JAR in any way.  Then Android AARs libraries are quite common, and there is no such requirement for matching source code."
-msgstr ""
+msgstr "最后一个重要的部分是 _gradle_ 使其易于包含的第三方库。_JCenter_ 和 _Maven Central_ 库存储库要求为每个版本上传匹配的源 JAR，但没有任何东西可以验证源 JAR 是否以任何方式与二进制 JAR 匹配。而且 Android AAR 库很常见，但对匹配源码没有这个要求。"
 
 #. type: Title ##
 #: _posts/2019-05-05-trust-privacy-and-free-software.md
 #, no-wrap
 msgid "Consider hardware"
-msgstr ""
+msgstr "考虑硬件"
 
 #. type: Plain text
 #: _posts/2019-05-05-trust-privacy-and-free-software.md
 msgid "The right hardware platform is also essential."
-msgstr ""
+msgstr "合适的硬件平台也是必不可少的。"
 
 #. type: Plain text
 #: _posts/2019-05-05-trust-privacy-and-free-software.md
 msgid "The possibility of inserting backdoors into hardware means we need all the same things for hardware as well as software: free and open sources, reproducibility, public audits, and trusted designs.  Unfortunately, hardware is much further behind than software in these regards.  But there is lots of very promising work:"
-msgstr ""
+msgstr "将后门插入硬件的可能性意味着我们对硬件和软件都需要同样的东西：自由和开源、可重复性、公共审计和可信设计。不幸的是，在这些方面，硬件比软件落后得多。但是有很多非常有前途的工作："
 
 #. type: Bullet: '* '
 #: _posts/2019-05-05-trust-privacy-and-free-software.md
 msgid "[a mobile device that requires no proprietary software at all](https://puri.sm/posts/librem5-solving-the-first-fsf-ryf-hurdle/)"
-msgstr ""
+msgstr "[完全不需要专有软件的移动设备](https://puri.sm/posts/librem5-solving-the-first-fsf-ryf-hurdle/)"
 
 #. type: Bullet: '* '
 #: _posts/2019-05-05-trust-privacy-and-free-software.md
 msgid "[open source chip fabrication](https://libresilicon.com/)"
-msgstr ""
+msgstr "[开源芯片制造](https://libresilicon.com/)"
 
 #. type: Bullet: '* '
 #: _posts/2019-05-05-trust-privacy-and-free-software.md
 msgid "[free CPU designs in free hardware](https://riscv.org/2018/05/microsemi-and-sifive-launch-hifive-unleashed-expansion-board-enabling-linux-software-and-firmware-developers-to-build-risc-v-pcs-for-the-first-time/)"
-msgstr ""
+msgstr "[自由硬件中的自由 CPU 设计](https://riscv.org/2018/05/microsemi-and-sifive-launch-hifive-unleashed-expansion-board-enabling-linux-software-and-firmware-developers-to-build-risc-v-pcs-for-the-first-time/)"
 
 #. type: Bullet: '* '
 #: _posts/2019-05-05-trust-privacy-and-free-software.md
 msgid "[free laptop designs](https://spectrum.ieee.org/consumer-electronics/portable-devices/novena-a-laptop-with-no-secrets)"
-msgstr ""
+msgstr "[自由笔记本电脑设计](https://spectrum.ieee.org/consumer-electronics/portable-devices/novena-a-laptop-with-no-secrets)"
 
 #. type: Title ##
 #: _posts/2019-05-05-trust-privacy-and-free-software.md
 #, no-wrap
 msgid "Stepping stones you can reach right now"
-msgstr ""
+msgstr "你现在可以到达的垫脚石"
 
 #. type: Plain text
 #: _posts/2019-05-05-trust-privacy-and-free-software.md
 msgid "[Fairphone Open](https://code.fairphone.com/projects/fp-osos/user/fairphone-open-source-os-installation-instructions.html) provides free software Android with built-in F-Droid that is fully supported by the hardware manufacturer.  Hardware security can be achieved with baseband-free tablets and hacked Moto Gs.  Purism [Librem 5](https://puri.sm/products/librem-5/) with an isolated and hardware-switched GSM baseband is coming soon."
-msgstr ""
+msgstr "[Fairphone Open](https://code.fairphone.com/projects/fp-osos/user/fairphone-open-source-os-installation-instructions.html) 提供内置 F-Droid 的自由软件 Android，具有硬件制造商的完全支持。硬件安全可以通过无基带平板电脑和破解的 Moto Gs 来实现。带有隔离和硬件开关的 GSM 基带的 Purism [Librem 5](https://puri.sm/products/librem-5/) 即将推出。"
 
 #. type: Plain text
 #: _posts/2019-05-05-trust-privacy-and-free-software.md
 msgid "The tools are in place in F-Droid for any app developer to provide fully trusted binaries to their users.  [Briar](https://blog.grobox.de/2018/building-briar-reproducible-and-why-it-matters/), and Bitcoin Wallet were the first to meet all criteria, now that they are reproducibly built in F-Droid.  [Tutanota](https://f-droid.org/2018/09/03/replacing-gcm-in-tutanota.html), Conversations, Die Tageszeitung (TAZ), Nextcloud, Riot, Kontalk, and many others are 100% free software and built from source by F-Droid.  Others like Firefox, Wire, and Zom are close, and hopefully the more complete examples will inspire them to move in the right direction.  And F-Droid is glue that holds these pieces together.  The F-Droid community is ready to help all projects move on to the next step in trustworthy computing."
-msgstr ""
+msgstr "这些工具已在 F-Droid 中准备就绪，任何应用开发者都可以为其用户提供完全受信任的二进制文件。 [Briar](https://blog.grobox.de/2018/building-briar-reproducible-and-why-it-matters/) 和 Bitcoin Wallet 是首先满足所有标准的，因为它们已经可以在 F-Droid 中可重复构建了。[Tutanota](https://f-droid.org/2018/09/03/replacing-gcm-in-tutanota.html)、Conversations、Die Tageszeitung (TAZ)、Nextcloud、Riot、Kontalk 和许多其他都是 100 % 自由软件，由 F-Droid 从源代码构建。 Firefox、Wire 和 Zom 等其他软件也很接近，希望更完整的示例能够激励他们朝着正确的方向前进。F-Droid 是将这些部件粘合在一起的胶水。F-Droid 社区已准备好帮助所有项目进入可信赖计算的下一步。"
 
 #. type: YAML Front Matter: title
 #: _posts/2019-06-11-public-money-public-code.md
@@ -11658,38 +11662,38 @@ msgstr ""
 #. type: Plain text
 #: _posts/2019-06-11-public-money-public-code.md
 msgid "Our everyday lives depend on public infrastructure. Roads, bridges, water supplies, schools, hospitals, etc. enable modern civilization.  Most European countries have a long and successful history of funding public infrastructure with public money."
-msgstr ""
+msgstr "我们的日常生活依赖于公共基础设施。道路、桥梁、供水、学校、医院等使现代文明成为可能。大多数欧洲国家在用公共资金资助公共基础设施方面有着悠久而成功的历史。"
 
 #. type: Plain text
 #: _posts/2019-06-11-public-money-public-code.md
 msgid "Governments are spending vast amounts of money on software, but they hardly contribute any public digital infrastructure.  All their software and source code is locked away from the public by proprietary licenses. Even worse, government institutions often don't have access to the source code of their own critical applications. This can change."
-msgstr ""
+msgstr "政府在软件上花费了大量资金，但他们几乎没有贡献任何公共数字基础设施。他们所有的软件和源代码都通过专有许可证对公众保密。更糟糕的是，政府机构通常无法访问他们自己的关键应用的源代码。这可以改变。"
 
 #. type: Plain text
 #: _posts/2019-06-11-public-money-public-code.md
 msgid "Digital transformation heavily relies on a vast base of public digital infrastructure built and maintained by the free and open source community. It's time for governments to join us and start contributing.  Their mobile Apps should certainly respect users demand for freedom and privacy respecting software."
-msgstr ""
+msgstr "数字化转型在很大程度上依赖于由自由开源社区构建和维护的大量公共数字基础设施。现在是各国政府加入我们并开始做出贡献的时候了。他们的移动应用当然应该尊重用户对自由和尊重软件的隐私的需求。"
 
 #. type: Plain text
 #: _posts/2019-06-11-public-money-public-code.md
 msgid "Free Software Foundation Europe started an amazing campaign for making this shift happen: \"Public Money? Public Code!\". We're happy to announce that we have signed their open letter and hope you're considering to spread the word and sign too."
-msgstr ""
+msgstr "欧洲自由软件基金会发起了一项令人惊叹的活动来实现这一转变：“公共资金？公共代码！”。我们很高兴地宣布，我们已经签署了他们的公开信，并希望你也考虑宣传并签署。"
 
 #. type: Plain text
 #: _posts/2019-06-11-public-money-public-code.md
 msgid "All the details about this campaign are available on: [publiccode.eu](https://publiccode.eu)"
-msgstr ""
+msgstr "有关此运动的所有详细信息，请访问：[publiccode.eu](https://publiccode.eu)"
 
 #. type: YAML Front Matter: title
 #: _posts/2019-06-15-panic-app-uninstall-and-repo-reset.md
 #, no-wrap
 msgid "Panic app uninstall and repo reset"
-msgstr ""
+msgstr "紧急应用卸载和存储库重置"
 
 #. type: Plain text
 #: _posts/2019-06-15-panic-app-uninstall-and-repo-reset.md
 msgid "Sometimes we have things on our devices that are very sensitive, so much so that we need to completely hide or delete them in emergencies.  F-Droid already supports receiving [PanicKit](https://guardianproject.info/code/panickit) triggers to make F-Droid hide itself.  F-Droid v1.7 adds more alpha features to expand the range of options of what F-Droid can do in response to panic situations.  We think these can be very valuable for many users, but keep in mind, these features are alpha.  They are functionally complete, but they need to be widely tested before we can call them stable.  Specifically, the user experience should clearly communicate what kinds of data will be permanently deleted, and what kinds of data might still be left around afterwards."
-msgstr ""
+msgstr "有时我们的设备上有一些非常敏感的东西，以至于我们需要在紧急情况下完全隐藏或删除它们。 F-Droid 已经支持接收 [PanicKit](https://guardianproject.info/code/panickit) 触发器来让 F-Droid 隐藏自己。 F-Droid v1.7 添加了更多 alpha 功能，以扩大 F-Droid 应对紧急情况的选项范围。我们认为这些对许多用户来说可能非常有价值，但请记住，这些功能是 Alpha 版。它们在功能上是完整的，但在我们称它们为稳定之前，它们需要进行广泛的测试。具体来说，用户体验应该清楚地传达哪些类型的数据将被永久删除，哪些类型的数据可能在之后仍然存在。"
 
 #. type: Plain text
 #: _posts/2019-06-15-panic-app-uninstall-and-repo-reset.md
@@ -11706,12 +11710,12 @@ msgstr ""
 #: _posts/2019-06-15-panic-app-uninstall-and-repo-reset.md
 #, no-wrap
 msgid "Full wipes of selected apps"
-msgstr ""
+msgstr "完全擦除选定的应用"
 
 #. type: Plain text
 #: _posts/2019-06-15-panic-app-uninstall-and-repo-reset.md
 msgid "F-Droid now allows the user to choose any installed app to be uninstalled in response to a panic trigger.  Uninstalling will wipe that app's internal data, permanently deleting it.  It might not wipe data that apps store on external storage, like images, videos, downloaded documents, etc.  To ensure those are wiped, a separate panic response app is required. It is essential to have a complete, tested backup before trying this new feature."
-msgstr ""
+msgstr "F-Droid 现在允许用户选择卸载任何已安装的应用以响应紧急触发。卸载将擦除该应用的内部数据，将其永久删除。它可能不会擦除应用存储在外部存储上的数据，例如图像、视频、下载的文档等。为了确保这些数据被擦除，需要一个单独的紧急响应应用。在尝试此新功能之前，必须有一个完整的、经过测试的备份。"
 
 #. type: Plain text
 #: _posts/2019-06-15-panic-app-uninstall-and-repo-reset.md
@@ -11722,18 +11726,18 @@ msgstr ""
 #: _posts/2019-06-15-panic-app-uninstall-and-repo-reset.md
 #, no-wrap
 msgid "Reset repos to default"
-msgstr ""
+msgstr "将存储库重置为默认值"
 
 #. type: Plain text
 #: _posts/2019-06-15-panic-app-uninstall-and-repo-reset.md
 msgid "The repo configuration can also contain sensitive information.  For example, there might be a custom repo on a private server, or a specific app repo, like Briar or Tor, that is included to ensure the quickest updates.  Therefore, there is now also an option to reset the repo configuration to defaults.  Remember to backup your repo configuration before trying this.  The repo URLs can be individually shared from the \"Repo Details\" view, or they are included if you share the install history, after enabling that option in \"Expert Mode\" in Settings."
-msgstr ""
+msgstr "存储库配置也可能包含敏感信息。例如，私人服务器上可能有一个自定义存储库，或者包含一个特定的应用存储库，如 Briar 或 Tor，以确保最快的更新。因此，现在还有一个选项可以将存储库配置重置为默认值。请记住在尝试此操作之前备份你的存储库配置。存储库 URL 可以从“存储库详细信息”视图中单独分享，或者如果你在“设置”中的“专家模式”中启用该选项后分享安装历史记录，则可以将它们包括在内。"
 
 #. type: Title ##
 #: _posts/2019-06-15-panic-app-uninstall-and-repo-reset.md
 #, no-wrap
 msgid "Built-in panic button"
-msgstr ""
+msgstr "内置紧急按钮"
 
 #. type: Plain text
 #: _posts/2019-06-15-panic-app-uninstall-and-repo-reset.md
@@ -14808,7 +14812,7 @@ msgstr "大会结束后，@Bubu 遇到了一些 [Timeless](https://github.com/po
 #: _posts/2020-01-16-tracking-the-trackers.md
 #, no-wrap
 msgid "Tracking the Trackers: using machine learning to aid ethical decisions"
-msgstr ""
+msgstr "追踪追踪器：使用机器学习辅助道德决策"
 
 #. type: Plain text
 #: _posts/2020-01-16-tracking-the-trackers.md
@@ -15087,7 +15091,7 @@ msgstr ""
 #. type: Bullet: '* '
 #: _posts/2020-02-16-statistics_2019.md
 msgid "198 [open merge requests](https://gitlab.com/groups/fdroid/-/merge_requests)"
-msgstr ""
+msgstr "198 个[开放合并请求](https://gitlab.com/groups/fdroid/-/merge_requests)"
 
 #. type: Bullet: '* '
 #: _posts/2020-02-16-statistics_2019.md
@@ -15103,48 +15107,48 @@ msgstr "..."
 #: _posts/2020-02-16-statistics_2019.md
 #, no-wrap
 msgid "Help Wanted!"
-msgstr ""
+msgstr "需要帮助！"
 
 #. type: Bullet: '* '
 #: _posts/2020-02-16-statistics_2019.md
 msgid "Become a Maintainer: [Adopt an App!](https://gitlab.com/fdroid/fdroiddata/-/merge_requests?label_name%5B%5D=New+App)"
-msgstr ""
+msgstr "成为维护者：[选一个应用吧！](https://gitlab.com/fdroid/fdroiddata/-/merge_requests?label_name%5B%5D=New+App)"
 
 #. type: Bullet: '* '
 #: _posts/2020-02-16-statistics_2019.md
 msgid "Add [screenshots, localized descriptions, what’s new texts](https://f-droid.org/en/docs/All_About_Descriptions_Graphics_and_Screenshots/) to upstream repos"
-msgstr ""
+msgstr "将[屏幕截图、本地化描述、新增内容](https://f-droid.org/en/docs/All_About_Descriptions_Graphics_and_Screenshots/)添加到上游存储库"
 
 #. type: Bullet: '* '
 #: _posts/2020-02-16-statistics_2019.md
 msgid "Help with [translations](https://hosted.weblate.org/projects/f-droid/) (In F-Droid or Upstream)"
-msgstr ""
+msgstr "帮助[翻译](https://hosted.weblate.org/projects/f-droid/)（在 F-Droid 或上游）"
 
 #. type: Bullet: '* '
 #: _posts/2020-02-16-statistics_2019.md
 msgid "Help with [client development](https://gitlab.com/fdroid/fdroidclient) (especially UX)"
-msgstr ""
+msgstr "帮助[客户端开发](https://gitlab.com/fdroid/fdroidclient) （尤其是用户体验）"
 
 #. type: Bullet: '* '
 #: _posts/2020-02-16-statistics_2019.md
 msgid "Help with [website dev](https://gitlab.com/fdroid/fdroid-website) (ruby/jekyll)"
-msgstr ""
+msgstr "帮助[网站开发](https://gitlab.com/fdroid/fdroid-website) (ruby/jekyll)"
 
 #. type: Bullet: '* '
 #: _posts/2020-02-16-statistics_2019.md
 msgid "Help with [Repomaker](https://gitlab.com/fdroid/repomaker) (Python Django App)"
-msgstr ""
+msgstr "帮助 [Repomaker](https://gitlab.com/fdroid/repomaker) (Python Django 应用)"
 
 #. type: Title ##
 #: _posts/2020-02-16-statistics_2019.md
 #, no-wrap
 msgid "Support us"
-msgstr ""
+msgstr "支持我们"
 
 #. type: Plain text
 #: _posts/2020-02-16-statistics_2019.md
 msgid "You can also donate money to us, to help us work on F-Droid not only in our free time.  Consider using one of the free (as in free software) donation platforms like [open collective](https://opencollective.com/f-droid/) or [Liberapay](https://liberapay.com/F-Droid-Data/).  Both of these platforms allow for recurring donations, which is highly desirable for contributors who want make working on F-Droid part of their regular paid work."
-msgstr ""
+msgstr "你也可以向我们捐款，帮助我们不仅在免费时间开发 F-Droid。考虑使用自由（如自由软件中的自由）捐赠平台之一，如 [opencollective](https://opencollective.com/f-droid/) 或 [Liberapay](https://liberapay.com/F-Droid-Data/)。这两个平台都允许定期捐款，这对于希望将 F-Droid 工作作为其常规有偿工作的一部分的贡献者来说是非常理想的。"
 
 #. type: Plain text
 #: _posts/2020-02-16-statistics_2019.md
@@ -15159,48 +15163,48 @@ msgstr ""
 #. type: Plain text
 #: _posts/2020-02-16-statistics_2019.md
 msgid "The opencolletive is very new and we'll do a proper announcement soon, after we added proper support for opencollective into the F-Droid client app and website."
-msgstr ""
+msgstr "opencollective 非常新，我们在 F-Droid 客户端应用和网站中添加对 opencollective 的适当支持后，很快就会发布适当的公告。"
 
 #. type: Plain text
 #: _posts/2020-02-16-statistics_2019.md
 msgid "You can find other donation options in the sidebar on [f-droid.org](https://f-droid.org)."
-msgstr ""
+msgstr "你可以在 [f-droid.org](https://f-droid.org) 的侧边栏中找到其他捐赠选项。"
 
 #. type: Title ##
 #: _posts/2020-02-16-statistics_2019.md
 #, no-wrap
 msgid "Talk to us"
-msgstr ""
+msgstr "联系我们"
 
 #. type: Plain text
 #: _posts/2020-02-16-statistics_2019.md
 #, no-wrap
 msgid "**[Matrix](https://matrix.org):** [#fdroid:f-droid.org](https://riot.im/app/#fdroid:f-droid.org) / [#fdroid-dev:f-droid.org](https://riot.im/app/#fdroid-dev:f-droid.org)\n"
-msgstr ""
+msgstr "**[Matrix](https://matrix.org):** [#fdroid:f-droid.org](https://riot.im/app/#fdroid:f-droid.org) / [#fdroid-dev:f-droid.org](https://riot.im/app/#fdroid-dev:f-droid.org)\n"
 
 #. type: Plain text
 #: _posts/2020-02-16-statistics_2019.md
 #, no-wrap
 msgid "**IRC:** #fdroid / #fdroid-dev (freenode)\n"
-msgstr ""
+msgstr "**IRC:** #fdroid / #fdroid-dev (freenode)\n"
 
 #. type: Plain text
 #: _posts/2020-02-16-statistics_2019.md
 #, no-wrap
 msgid "**Mastodon:** [@fdroidorg@mastoton.technology](https://mastodon.technology/@fdroidorg)\n"
-msgstr ""
+msgstr "**Mastodon:** [@fdroidorg@mastoton.technology](https://mastodon.technology/@fdroidorg)\n"
 
 #. type: Plain text
 #: _posts/2020-02-16-statistics_2019.md
 #, no-wrap
 msgid "**Issue Trackers:** [gitlab.com/fdroid](https://gitlab.com/fdroid)\n"
-msgstr ""
+msgstr "**问题跟踪器：**[gitlab.com/fdroid](https://gitlab.com/fdroid)\n"
 
 #. type: Plain text
 #: _posts/2020-02-16-statistics_2019.md
 #, no-wrap
 msgid "**Forum:** [forum.f-droid.org](https://forum.f-droid.org)\n"
-msgstr ""
+msgstr "**论坛：**[forum.f-droid.org](https://forum.f-droid.org)\n"
 
 #. type: YAML Front Matter: title
 #: _posts/2020-03-04-f-droid-is-a-key-source-for-academics-and-researchers.md
