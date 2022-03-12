@@ -6,20 +6,21 @@
 # Oğuz Ersen <oguzersen@protonmail.com>, 2021.
 # Tur <tur+translate@simplelogin.fr>, 2021.
 # Mehmet Ali <2045uuttb@relay.firefox.com>, 2021.
+# Oğuz Ersen <oguz@ersen.moe>, 2022.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
 "POT-Creation-Date: 2022-02-28 10:31+0100\n"
-"PO-Revision-Date: 2021-11-07 21:10+0000\n"
-"Last-Translator: Mehmet Ali <2045uuttb@relay.firefox.com>\n"
+"PO-Revision-Date: 2022-03-12 16:30+0000\n"
+"Last-Translator: Oğuz Ersen <oguz@ersen.moe>\n"
 "Language-Team: Turkish <https://hosted.weblate.org/projects/f-droid/website-docs/tr/>\n"
 "Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.9-dev\n"
+"X-Generator: Weblate 4.12-dev\n"
 
 #. type: YAML Front Matter: title
 #: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
@@ -211,23 +212,23 @@ msgstr "F-Droid sadece en son yayımlamadaki üst veriyi kullanacaktır. Yani: *
 #. type: Plain text
 #: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
 msgid "All metadata files are completely optional, except for the short summary description as well as the longer full description. However, apps which do not fulfill certain [criteria](#latest-tab-criteria) will not be shown on the Latest tab."
-msgstr ""
+msgstr "Kısa özet açıklaması ve uzun tam açıklama haricindeki tüm üst veri dosyaları tamamen isteğe bağlıdır. Ancak, belirli [ölçütleri](#latest-tab-criteria) sağlamayan uygulamalar En yeniler sekmesinde görüntülenmeyecektir."
 
 #. type: Title ####
 #: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
 #, no-wrap
 msgid "Fastlane structure"
-msgstr ""
+msgstr "Fastlane yapısı"
 
 #. type: Plain text
 #: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
 msgid "The first of the two structures is aiming to be compatible to the [fastlane supply](https://github.com/fastlane/fastlane/blob/2.28.7/supply/README.md#images-and-screenshots) tool."
-msgstr ""
+msgstr "İki yapıdan ilki, [fastlane kaynağı](https://github.com/fastlane/fastlane/blob/2.28.7/supply/README.md#images-and-screenshots) aracıyla uyumlu olmayı hedeflemektedir."
 
 #. type: Plain text
 #: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
 msgid "The basic file structure is as follows. Pay attention to the notes at the right. When this structure is created, it needs to be place in the correct position as outlined below."
-msgstr ""
+msgstr "Temel dosya yapısı aşağıdaki gibidir. Sağdaki notlara dikkat edin. Bu yapı oluşturulduğunda aşağıda belirtildiği gibi doğru konumda olması gereklidir."
 
 #. type: Fenced code block
 #: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
@@ -259,6 +260,31 @@ msgid ""
 "    └── changelogs\n"
 "        └── 100100.txt\n"
 msgstr ""
+"├── en-US                       (en-US is the F-Droid yedek dilidir)\n"
+"│   ├── short_description.txt   (kısa açıklama, en fazla 80 karakter, zorunlu)\n"
+"│   ├── full_description.txt    (tam uygulama açıklaması, zorunlu)\n"
+"│   ├── title.txt               (uygulama adı)\n"
+"│   ├── video.txt               (uygulamayı tanıtan bir videonun URL'si)\n"
+"│   ├── images\n"
+"│   │   ├── icon.png            (uygulama simgesi, uygulamanız herhangi bir png simgesi içermiyorsa zorunludur)\n"
+"│   │   ├── featureGraphic.png  (F-Droid istemcisinde uygulama açıklamasının üstünde gösterilen tanıtım başlığı; yatay)\n"
+"│   │   ├── tvBanner.png        (TV aygıtları için \"simge\", şu anda kullanılmıyor)\n"
+"│   │   ├── phoneScreenshots\n"
+"│   │   │   ├── 1.png\n"
+"│   │   │   ├── 2.png\n"
+"│   │   │   ...\n"
+"│   │   ├── sevenInchScreenshots/\n"
+"│   │   ├── tenInchScreenshots/ (farklı ekran boyutları için farklı ekran görüntüleri ekleyebilirsiniz)\n"
+"│   │   ├── tvScreenshots/\n"
+"│   │   └── wearScreenshots/\n"
+"│   └── changelogs\n"
+"│       ├── 100000.txt          (versionCode ile tam olarak aynı olmalıdır, dolgu yok)\n"
+"│       ├── 100100.txt          (sürüm kodu 100100 olarak ayarlandıysa)\n"
+"│       └── 100101.txt          (azami boyut: 500 karakter)\n"
+"└── tr                          (diğer yerel ayar kodları)\n"
+"    ...                         (yerelleştirilen üst  veriler her zaman istemci tarafından tercih edilir)\n"
+"    └── changelogs\n"
+"        └── 100100.txt\n"
 
 #. type: Plain text
 #: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
@@ -278,7 +304,7 @@ msgstr "`fastlane/metadata/android/`"
 #. type: Plain text
 #: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
 msgid "Note that placing the structure anywhere else, like in the gradle module's root, **won't work**."
-msgstr ""
+msgstr "Yapıyı başka bir yere, örneğin gradle modülünün kök dizinine, yerleştirmenin **çalışmayacağını** unutmayın."
 
 #. type: Plain text
 #: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
@@ -287,6 +313,8 @@ msgid ""
 "**Build flavors** and multiple apps inside one repository are currently not properly supported.\n"
 "(Follow [this issue](https://gitlab.com/fdroid/fdroidserver/issues/829) tracking the implementation of this.)\n"
 msgstr ""
+"**Derleme çeşitleri** ve bir depoda birden çok uygulama şu anda gerektiği gibi desteklenmemektedir.\n"
+"(Bunun yapılmasını izleyen [bu sorunu](https://gitlab.com/fdroid/fdroidserver/issues/829) takip edin.)\n"
 
 #. type: Title ####
 #: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
