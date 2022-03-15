@@ -1,0 +1,26 @@
+---
+layout: null
+permalink: /sitemap.xml
+---
+
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+{% for node in site.pages -%}
+    {% comment %} we assume pages marked exclude_from_localization are't something we want to index {% endcomment -%}
+    {% unless site.exclude_from_localization contains node.path or node.url == '/403.html' or node.url == '/404.html' -%}
+        {%- if node.layout -%}
+  <url><loc>{{ node.url | replace:'index.html','' | absolute_url }}</loc></url>
+        {% endif -%}
+    {% endunless -%}
+{% endfor -%}
+{% comment %}Just loop over docs, tutorials, and posts, apps appear in site.pages and multiple other collections{% endcomment -%}
+{% for node in site.docs -%}
+  <url><loc>{{ node.url | replace:'index.html','' | absolute_url }}</loc></url>
+{% endfor -%}
+{% for node in site.tutorials -%}
+  <url><loc>{{ node.url | replace:'index.html','' | absolute_url }}</loc></url>
+{% endfor -%}
+{% for node in site.posts -%}
+  <url><loc>{{ node.url | replace:'index.html','' | absolute_url }}</loc></url>
+{% endfor -%}
+</urlset>

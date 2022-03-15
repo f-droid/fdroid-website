@@ -27,7 +27,7 @@
   <link rel="dns-prefetch" href="https://search.f-droid.org"/>
   <link rel="dns-prefetch" href="https://fdroid.gitlab.io"/>
   <link rel="stylesheet" href="{{ site.baseurl }}/css/main.css"/>
-  <link rel="canonical" href="{{ site.url }}{{ site.baseurl }}{{ page.url | replace:'index.html','' }}"/>
+  <link rel="canonical" href="https://f-droid.org{{ page.url | replace:'index.html','' }}"/>
   <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ site.baseurl }}/feed.xml"/>
 
   <link href="{{ site.baseurl }}/osd.xml" rel="search" title="F-Droid" type="application/opensearchdescription+xml"/>
@@ -44,12 +44,12 @@
   <meta name="theme-color" content="#ffffff"/>
 
 {% for lang in site.languages -%}
-{% if lang == site.default_lang -%}
-  {% continue -%}
-{% endif -%}
+  {% if lang == site.default_lang -%}
+    {% continue -%}
+  {% endif -%}
   {%- if site.baseurl == '' %}
-  <link rel="alternate" hreflang="{{ lang | replace: '_', '-' }}" href="{{ site.url }}/{{ lang }}{{ page.permalink }}" />
+  <link rel="alternate" hreflang="{{ lang | replace: '_', '-' }}" href="https://f-droid.org{{ page.url | replace:'index.html','' }}" />
   {% endif -%}
 {% endfor -%}
-  <link rel="alternate" hreflang="x-default" href="{{ site.url }}/en{{ page.permalink }}" />
+  <link rel="alternate" hreflang="x-default" href="https://f-droid.org{{ page.url | replace:'index.html','' }}" />
 </head>
