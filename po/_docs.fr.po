@@ -14,20 +14,21 @@
 # Emmanuel DEWAELE <emmanuel.dewaele@gmail.com>, 2021.
 # translator <kvb@tuta.io>, 2021, 2022.
 # MeblIkea <salulespotos@gmail.com>, 2022.
+# Sean Zeng <dogeystamp@disroot.org>, 2022.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
 "POT-Creation-Date: 2022-02-28 10:31+0100\n"
-"PO-Revision-Date: 2022-02-14 14:56+0000\n"
-"Last-Translator: Hans-Christoph Steiner <hans@guardianproject.info>\n"
+"PO-Revision-Date: 2022-03-14 14:50+0000\n"
+"Last-Translator: Sean Zeng <dogeystamp@disroot.org>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/f-droid/website-docs/fr/>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 4.11-dev\n"
+"X-Generator: Weblate 4.12-dev\n"
 
 #. type: YAML Front Matter: title
 #: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
@@ -596,12 +597,12 @@ msgstr "Exemple de demande :"
 #: _docs/All_our_APIs.md
 #, no-wrap
 msgid "GET https://f-droid.org/api/v1/packages/org.fdroid.fdroid HTTP/1.1\n"
-msgstr ""
+msgstr "GET https://f-droid.org/api/v1/packages/org.fdroid.fdroid HTTP/1.1\n"
 
 #. type: Plain text
 #: _docs/All_our_APIs.md
 msgid "Example response:"
-msgstr ""
+msgstr "Exemple de réponse :"
 
 #. type: Fenced code block
 #: _docs/All_our_APIs.md
@@ -632,11 +633,25 @@ msgid ""
 "  ]\n"
 "}\n"
 msgstr ""
+"{\n"
+"  \"packageName\": \"org.fdroid.fdroid\",\n"
+"  \"suggestedVersionCode\": 1009000,\n"
+"  \"packages\": [\n"
+"    {\n"
+"      \"versionName\": \"1.10-alpha0\",\n"
+"      \"versionCode\": 1010000\n"
+"    },\n"
+"    {\n"
+"      \"versionName\": \"1.9\",\n"
+"      \"versionCode\": 1009000\n"
+"    }\n"
+"  ]\n"
+"}\n"
 
 #. type: Plain text
 #: _docs/All_our_APIs.md
 msgid "This API is already used by shields.io project to provide F-Droid badges, [like this](https://img.shields.io/f-droid/v/org.fdroid.fdroid)."
-msgstr ""
+msgstr "Cette API est déjà utilisée par le projet shields.io pour fournir les badges de F-Droid, [comme ceux-ci](https://img.shields.io/f-droid/v/org.fdroid.fdroid)."
 
 #. type: Title ###
 #: _docs/All_our_APIs.md
@@ -647,7 +662,7 @@ msgstr "L'index du dépôt"
 #. type: Plain text
 #: _docs/All_our_APIs.md
 msgid "F-Droid is built around a signed index of all the apps and packages that are available.  This is a JSON file, though more of an index than an API since all the information is distributed via a single file.  The repo index is in the form of a signed JAR file that contains _index-v1.json_.  The best method is to verify the JAR signature, then extract _index-v1.json_ if it validates. The _fdroidserver_ Python library provides `fdroidserver.download_repo_index()` to make this easy to do.  It is also possible to just read _index-v1.json_ using any ZIP library."
-msgstr ""
+msgstr "F-Droid est construit autour d'un index signé de toutes les applications et paquets qui sont disponibles. Ceci est un fichier JSON, mais plus un index qu'une interface de programmation car toutes les informations sont distribuées par un seul fichier. L'index du dépôt est sous la forme d'un fichier JAR signé qui contient _index-v1.json_. La meilleure façon est de vérifier la signature JAR, puis ensuite extraire _index-v1.json_ si elle est valide. La bibliothèque _fdroidserver_ de Python fournit `fdroidserver.download_repo_index()` pour faciliter cela. Il est aussi possible de tout simplement lire _index-v1.json sans utiliser une bibliothèque pour ZIP."
 
 #. type: Bullet: '* '
 #: _docs/All_our_APIs.md
@@ -684,17 +699,31 @@ msgid ""
 "mirror on GitHub,\n"
 "e.g. <https://raw.githubusercontent.com/f-droid/fdroiddata/master/metadata/org.fdroid.fdroid.yml>\n"
 msgstr ""
+"Chaque application dans _f-droid.org_ a un\n"
+"[fichier de métadonnées de compilation]({{ site.baseurl }}/docs/Build_Metadata_Reference) \n"
+"qui lui y correspond dans [_fdroiddata_](https://gitlab.com/fdroid/fdroiddata). Pour encourager \n"
+"la réutilisation créative, nous gardons nos données dans des formats standards dans des endroits faciles à trouver. \n"
+"La collection entière des applications est en [format YAML]({{ site.baseurl }}/{%\n"
+"post_url 2019-09-11-yaml-metadata %}). Le fichier peut être directement accessible\n"
+"par ID d'application en utilisant l'URL de GitLab Raw\n"
+"`https://gitlab.com/fdroid/fdroiddata/-/raw/master/metadata/<ApplicationID>.yml`\n"
+"(p. ex. <https://gitlab.com/fdroid/fdroiddata/-/raw/master/metadata/org.fdroid.fdroid.yml>).\n"
+"L'index de dépôt et l'[interface de programmation de GitLab\n"
+"pour les fichiers de dépôt](https://docs.gitlab.com/ee/api/repository_files.html) peuvent être utilisés pour faire une requête\n"
+"pour connaître les ID d'application disponibles. Ces fichiers sont aussis disponibles dans le\n"
+"miroir sur GitHub,\n"
+"p. ex. <https://raw.githubusercontent.com/f-droid/fdroiddata/master/metadata/org.fdroid.fdroid.yml>\n"
 
 #. type: Title ###
 #: _docs/All_our_APIs.md
 #, no-wrap
 msgid "f-droid.org build server status"
-msgstr "Status du serveur de compilation de f-droid.org"
+msgstr "État du serveur de compilation f-droid.org"
 
 #. type: Plain text
 #: _docs/All_our_APIs.md
 msgid "The four main steps of the build cycle are: _checkupdates_, _build_, _update_, and _deploy_.  There is a JSON file for each one of those with status information.  It is posted once that step completes running.  The step that is currently running is posted to _running_."
-msgstr "Les quatre principales étapes de compilation sont :  _checkupdates_, _build_, _update_, et _deploy_. Il y a un fichier JSON pour chaque étape avec les informations sur l'état actuel.  Chacun est publié une fois l'étape terminée.  L'étape qui est train d'être exécutée est publié dans _running_."
+msgstr "Les quatre étapes principales du cycle de compilation sont: _checkupdates_, _build_, _update_ et _deploy_. Il y a un fichier JSON pour chacun avec de l'information sur leur état. Il est publié quand cet étape se termine. L'étape qui est en traîn d'être exécuté est publié à _running_."
 
 #. type: Bullet: '* '
 #: _docs/All_our_APIs.md
@@ -719,7 +748,7 @@ msgstr "<https://f-droid.org/repo/status/deploy.json>"
 #. type: Plain text
 #: _docs/All_our_APIs.md
 msgid "Two examples of how these JSON APIs can be used are the [F-Droid Monitor](https://monitor.f-droid.org/) website and the [F-Droid Build Status]({{ site.baseurl }}/packages/de.storchp.fdroidbuildstatus/) app."
-msgstr ""
+msgstr "Deux exemples de comment ces interfaces de programmation JSON peuvent être utilisées sont le site [F-Droid Monitor](https://monitor.f-droid.org/) et l'application [F-Droid Build Status]({{ site.baseurl }}/packages/de.storchp.fdroidbuildstatus/)."
 
 #. type: Title ###
 #: _docs/All_our_APIs.md
@@ -730,23 +759,23 @@ msgstr "Surveillance du dépôt et des miroirs"
 #. type: Plain text
 #: _docs/All_our_APIs.md
 msgid "[_mirror-monitor_](https://gitlab.com/fdroid/mirror-monitor) and [_repo-monitor_](https://gitlab.com/fdroid/repo-monitor) are automated jobs that check various stats about _f-droid.org_ mirrors and third party repos respectively.  They each provide a single, large JSON log of all the times the checks where run:"
-msgstr ""
+msgstr "[_mirror-monitor_](https://gitlab.com/fdroid/mirror-monitor) et [_repo-monitor_](https://gitlab.com/fdroid/repo-monitor) sont des travaux automatiques qui contrôlent plusieurs statistiques à propos des miroirs de _f-droid.org_ et les dépôts de tierce partie respectivement. Chacun fournit un seul large journal en JSON de tous les fois que les contrôles sont exécutés :"
 
 #. type: Bullet: '* '
 #: _docs/All_our_APIs.md
 msgid "_f-droid.org_ mirror status: <https://fdroid.gitlab.io/mirror-monitor/report.json>"
-msgstr ""
+msgstr "État des miroirs _f-droid.org_ : <https://fdroid.gitlab.io/mirror-monitor/report.json>"
 
 #. type: Bullet: '* '
 #: _docs/All_our_APIs.md
 msgid "third-party repo status: <https://fdroid.gitlab.io/repo-monitor/report.json>"
-msgstr ""
+msgstr "état des dépots de tierce partie : <https://fdroid.gitlab.io/repo-monitor/report.json>"
 
 #. type: Title ###
 #: _docs/All_our_APIs.md
 #, no-wrap
 msgid "Reproducible builds"
-msgstr "Versions reproductibles"
+msgstr "Compilations reproductibles"
 
 #. type: Plain text
 #: _docs/All_our_APIs.md
@@ -759,32 +788,38 @@ msgid ""
 "`<ApplicationId>_<VersionCode>.apk.json`, for example:\n"
 "<https://verification.f-droid.org/org.fdroid.fdroid_1010050.apk.json>\n"
 msgstr ""
+"_verification.f-droid.org_ est un recompileur qui recompile les publications officielles\n"
+"provenant de _f-droid.org_, puis qui vérifie qu'elles sont [compilées\n"
+"de manière reproductible](https ://reproducible-builds.org/). Il y a un fichier JSON par APK qui\n"
+"a été vérifié, avec un nom qui suit le schéma\n"
+"`<ApplicationId>_<VersionCode>.apk.json`, par exemple :\n"
+"<https://verification.f-droid.org/org.fdroid.fdroid_1010050.apk.json>\n"
 
 #. type: Plain text
 #: _docs/All_our_APIs.md
 msgid "There is also a listing of all the successfully verified APKs: <https://verification.f-droid.org/verified.json>"
-msgstr ""
+msgstr "Il y aussi une liste de tous les APK vérifiés avec succès : <https://verification.f-droid.org/verified.json>"
 
 #. type: Title ###
 #: _docs/All_our_APIs.md
 #, no-wrap
 msgid "Binary transparency logs"
-msgstr ""
+msgstr "Journaux de transparence des fichier binaires"
 
 #. type: Plain text
 #: _docs/All_our_APIs.md
 msgid "[Binary transparency](https://wiki.mozilla.org/Security/Binary_Transparency) is the idea that all released packages should be logged as they are published.  This provides a way to check if a given binary was produced by the publisher, or came from somewhere else, e.g. as an exploit.  _fdroidserver_ has built in tools for managing a binary transparency log of the index files as part of the release process. This has been enabled on the Guardian Project repo: <https://github.com/guardianproject/binary_transparency_log>"
-msgstr ""
+msgstr "[La transparence des fichiers binaires](https://wiki.mozilla.org/Security/Binary_Transparency) est l'idée que tous les paquets publiés devraient être enregistrés lorsqu'ils sont publiés. Ceci fournit une façon de vérifier si un fichier binaire a été produit par l'éditeur, où s'il provient d'ailleurs, p. ex. en tant qu'un exploit.  _fdroidserver_ a des outils intégrés pour gérer un registre de transparence des fichiers binaires comme partie du processus de publication. Ceci a été activé sur le dépôt du Guardian Project : <https://github.com/guardianproject/binary_transparency_log>"
 
 #. type: Plain text
 #: _docs/All_our_APIs.md
 msgid "There is also a prototype for running a binary transparency log for _f-droid.org_. <https://gitlab.com/eighthave/f-droid.org-binary-transparency>"
-msgstr ""
+msgstr "Il y a aussi un prototype pour exécuter un registre de transparence des fichiers binaires pour _f-droid.org_. <https://gitlab.com/eighthave/f-droid.org-binary-transparency>"
 
 #. type: Plain text
 #: _docs/All_our_APIs.md
 msgid "Since Gradle and the Google Android Tools team does not publish one, F-Droid has done it.  The basic API is a JSON file with a listing of all URLs known to have be published.  Each URL then contains a list of SHA-256 checksums that the log process has seen.  There are also other files tracked, based on what the publisher provides."
-msgstr ""
+msgstr "Puisque Gradle et l'équipe de Google Android Tools n'en publie pas, F-Droid l'a fait. L'interface de programmation basique est un fichier JSON avec une liste de toutes les URL qui sont publiés de manière connue. Chaque URL contient une liste de sommes de contrôle SHA-256 que le processus de journal a vu. Il y aussi d'autres fichiers qui sont suivis, dépendant de ce que fournit l'éditeur."
 
 #. type: Bullet: '* '
 #: _docs/All_our_APIs.md
@@ -805,7 +840,7 @@ msgstr "<tt>issuebot</tt>"
 #. type: Plain text
 #: _docs/All_our_APIs.md
 msgid "[_issuebot_](https://gitlab.com/fdroid/issuebot#json-rest-api) runs on app merge requests and requests for packaging (RFP) to provide information to reviewers about the app.  Much of that information is also published in JSON format.  Each report is made of data from modules that run on a specific app.  There are two entry points:"
-msgstr ""
+msgstr "[_issuebot_](https ://gitlab.com/fdroid/issuebot#json-rest-api) s'exécute sur des requêtes de fusion d'applications et les requêtes de paquetage (RFP) pour fournir des informations aux examinateurs à propos de l'application. La plupart de cette information est aussi publié en format JSON. Chaque rapport est fait de données provenant des modules qui s'exécutent sur une application spécifique. Il y a deux points d'entrée :"
 
 #. type: Bullet: '* '
 #: _docs/All_our_APIs.md
@@ -821,12 +856,12 @@ msgstr "<https://fdroid.gitlab.io/rfp/issuebot/sourceUrls.json>"
 #: _docs/All_our_APIs.md
 #, no-wrap
 msgid "Metrics"
-msgstr ""
+msgstr "Mesures"
 
 #. type: Plain text
 #: _docs/All_our_APIs.md
 msgid "[Usage data]({{ site.baseurl }}/{% post_url 2019-04-15-privacy-preserving-analytics %})  is gathered from [various F-Droid websites](https://fdroid.gitlab.io/metrics/)  and published with no personally identifiable information (PII).  It is published with one JSON file per-week, with a JSON index file per website.  For example, here is a week of search metrics: <https://fdroid.gitlab.io/metrics/search.f-droid.org/2021-01-18.json>"
-msgstr ""
+msgstr "[Les données d'usage]({{ site.baseurl }}/{% post_url 2019-04-15-privacy-preserving-analytics %})  proviennent de [plusieurs sites Web F-Droid](https ://fdroid.gitlab.io/metrics/)  et sont publiés avec aucune information identifiable personellement (PII). Il est publié avec un seul fichier JSON par semaine, avec un fichier d'index JSON par site. Par exemple, voici une semaine de statistiques : <https://fdroid.gitlab.io/metrics/search.f-droid.org/2021-01-18.json>"
 
 #. type: Plain text
 #: _docs/All_our_APIs.md
@@ -835,17 +870,19 @@ msgid ""
 "Though not really an API, the <ftp.fau.de> mirror does provide some metrics:\n"
 "https://ftp.fau.de/cgi-bin/show-ftp-stats.cgi\n"
 msgstr ""
+"Même si ce n'est pas vraiment une interface de programmation, le miroir <ftp.fau.de> fournit quelques statistiques :\n"
+"https ://ftp.fau.de/cgi-bin/show-ftp-stats.cgi\n"
 
 #. type: Title ###
 #: _docs/All_our_APIs.md
 #, no-wrap
 msgid "Git stats"
-msgstr ""
+msgstr "Statistiques Git"
 
 #. type: Plain text
 #: _docs/All_our_APIs.md
 msgid "Each _git_ repo has lots of interesting metadata.  The _GitStats_ project generates nice charts from that data.  This is not quite an API, but it is related since it is using public project data.  Pre-generated pages for each of the central git repos are visible here: <https://fdroid.gitlab.io/>."
-msgstr ""
+msgstr "Chaque dépôt _git_ a beaucoup de métadonnées intéressantes. Le projet _GitStats_ génère des graphiques agréables à partir de ces données. Ce n'est pas tellement une interface de programmation, mais ça a un rapport car elle utilise des données publique du projet. Des pages pré-générées pour chaque dépôt git central sont visibles ici : <https://fdroid.gitlab.io/>."
 
 #. type: YAML Front Matter: title
 #: _docs/Anti-Features.md
@@ -856,17 +893,17 @@ msgstr "Antifonctions"
 #. type: Plain text
 #: _docs/Anti-Features.md
 msgid "When reviewing apps to accept, F-Droid takes the user's point of view, first and foremost.  We start with [strict acceptance criteria](../Inclusion_Policy) based on the principles of free software and user control.  There are some things about an app that might not block it from inclusion, but many users might not want to accept them.  For these kinds of things, F-Droid has a defined set of Anti-Features.  Apps can then be marked with these Anti-Features so users can clearly choose whether the app is still acceptable."
-msgstr ""
+msgstr "Lors de l'évaluation d'applications, F-Droid prend tout d'abord le point de vue de l'utilisateur. Nous commençons avec [des critères d'acceptation stricts](../Inclusion_Policy) basés sur les principes des logiciels libres et du contrôle par l'utilisateur. Il y a des choses à propos d'une application qui pourrait ne pas bloquer son inclusion, mais beaucoup d'utilisateurs pourraient ne pas vouloir l'accepter. Pour ce genre de choses, F-Droid a une collection définie d'Anti-Fonctions. Les applis peuvent ensuite être marquées de ces Anti-Fonctions pour que les utilisateurs puissent clairement choisir si l'appli est encore acceptable."
 
 #. type: Plain text
 #: _docs/Anti-Features.md
 msgid "Anti-Features are organized into \"flags\" that packagers can use to mark apps, warning of possibly undesirable behaviour from the user's perspective, often serving the interest of the developer or a third party.  Free software packages do not exist in a bubble.  For one piece of software to be useful, it usually has to integrate with some other software.  Therefore, users that want free software also want to know if an app depends on or promotes any proprietary software.  Sometimes, there are concepts in Anti-Features that overlap with tactics used by third parties against users.  F-Droid always marks Anti-Features from the user's point of view.  For example, [NSFW](#NSFW) might be construed as similar to a censor's blocklists, but in our case, the focus is on the user's context and keeping the user in control."
-msgstr ""
+msgstr "Les Anti-Fonctions sont organisés en des \"drapeaux\" que les emballeurs peuvent utiliser pour marquer les applications, avertissant des comportements possiblement non-désirés de la perspective de l'utilisateur, qui servent souvent les intérêts du développeur ou une tierce partie. Les paquets de logiciels libres n'existent pas dans une bulle. Pour qu'un logiciel soit utile, il faut généralement intégrer avec d'autres. Alors, les utilisateurs qui veulent des logiciels libres veulent aussi savoir si une application dépend sur ou fait la promotion des logiciels propriétaires. Parfois, il y a des concepts dans Anti-Fonctions qui se chevauchent avec les stratégies utilisées par les tierces parties contre les utilisateurs. F-Droid marque toujours les Anti-Fonctions du point de vue de l'utilisateur. Par exemple, [NSFW](#NSFW) peut être interprété à être similaire aux listes de blocage de censure, mais dans notre cas, l'accent est mis sur le contexte de l'utilisateur et le garder en contrôle."
 
 #. type: Plain text
 #: _docs/Anti-Features.md
 msgid "You will see our Anti-Features in action when viewing the details of any app containing one or more Anti-Features, whether in the F-Droid client or on this website.  The F-Droid client also provides settings to hide apps with certain Anti-Features."
-msgstr ""
+msgstr "Vous allez voir nos Anti-Fonctions agir quand vous regardez les détails de n'importe quelle application qui en contient un ou plus, que ce soit dans le client F-Droid ou sur ce site Web. Le client F-Droid fournit aussi des options pour cacher des applications avec certaines Anti-Fonctions."
 
 #. type: Title ##
 #: _docs/Anti-Features.md
@@ -904,37 +941,37 @@ msgstr "[Extensions non-gratuites](#NonFreeAdd) - promouvoit d'autres applicatio
 #. type: Bullet: '* '
 #: _docs/Anti-Features.md
 msgid "[Non-Free Dependencies](#NonFreeDep) - needs a non-libre app to work (e.g. Google Maps, Market)"
-msgstr ""
+msgstr "[Dépendances non-libres](#NonFreeDep) - a besoin d'une application non-libre pour fonctionner (p. ex. Google Maps, Market)"
 
 #. type: Bullet: '* '
 #: _docs/Anti-Features.md
 msgid "[NSFW](#NSFW) - contains content that the user may not want to be publicized or visible everywhere"
-msgstr ""
+msgstr "[NSFW](#NSFW) - contient des contenus que l'utilisateur ne voudrait peut-être pas rendre publique ou visible partout"
 
 #. type: Bullet: '* '
 #: _docs/Anti-Features.md
 msgid "[Upstream Non-Free](#UpstreamNonFree) - upstream source code is not libre, and this version has those parts replaced or rewritten"
-msgstr ""
+msgstr "[Non-libre en amont](#UpstreamNonFree) - le code source en amont n'est pas libre et cette version les a remplacé ou réécrit"
 
 #. type: Bullet: '* '
 #: _docs/Anti-Features.md
 msgid "[Non-Free Assets](#NonFreeAssets) - non-libre media in things that are not code (e.g. images, sound, music, 3D-models, or video)"
-msgstr ""
+msgstr "[Ressources non-libre](#NonFreeAssets) - médias non-libres dans des parties qui ne sont pas du code (p. ex. images, son, musique, modèles 3D, ou vidéo)"
 
 #. type: Bullet: '* '
 #: _docs/Anti-Features.md
 msgid "[Known Vulnerability](#KnownVuln) - known security vulnerability"
-msgstr ""
+msgstr "[Vulnérabilité connue](#KnownVuln) - vulnérabilité de sécurité connue"
 
 #. type: Bullet: '* '
 #: _docs/Anti-Features.md
 msgid "[Disabled Algorithm](#DisabledAlgorithm) - signed using an unsafe algorithm"
-msgstr ""
+msgstr "[Algorithme désactivé](#DisabledAlgorithm) - signé avec un algorithme non-sécuritaire"
 
 #. type: Bullet: '* '
 #: _docs/Anti-Features.md
 msgid "[No Source Since](#NoSourceSince) - source code no longer available, making new releases impossible"
-msgstr ""
+msgstr "[Aucune Source Depuis](#NoSourceSince) - code source non disponible maintenant, rendant les nouvelles publications impossibles"
 
 #. type: Plain text
 #: _docs/Anti-Features.md
@@ -955,7 +992,7 @@ msgstr "Cette antifonction est appliquée à une appli qui comporte des publicit
 #. type: Plain text
 #: _docs/Anti-Features.md
 msgid "Note that most applications that contain advertising are not Free Software, because they use proprietary software (e.g. AdMob) to provide that advertising. Those apps will not be found in the repo at all, so the only time you would see this Anti-Feature applied would be an app that contains advertising without using Non-Free Software to do it."
-msgstr ""
+msgstr "Notez que la plupart des applications contenant des publicités ne sont pas des logiciels libres, car ills utilisent des logiciels propriétaires (p. ex. AdMob) pour fournir ces publicités. La plupart de ces applicatoins ne seront pas dans le dépôt du tout, alors le seul temps que vous verrrez cette Anti-Fonction appliquée sera quand vous voyez une application qui contient des publicités qui n'utilisent pas des logiciels propriétaires."
 
 #. type: Plain text
 #: _docs/Anti-Features.md
@@ -972,7 +1009,7 @@ msgstr "Publicités<a name=\"Ads\" />"
 #. type: Plain text
 #: _docs/Anti-Features.md
 msgid "This Anti-Feature is applied to an app that contains content that the user may not want to be publicized or visible everywhere. The marked app may contain nudity, profanity, slurs, violence, intense sexuality, political incorrectness, or other potentially disturbing subject matter.  This is especially relevant in environments like workplaces, schools, religious and family settings. The name comes from the Internet term \"Not safe for work\"."
-msgstr ""
+msgstr "Cette Anti-Fonction est appliquée aux applications qui contiennent des contenus que l'utilisateur ne voudrait pas avoir rendu public ou visible partout. L'application marquée peut contenir la nudité, la profanité, des insultes, la violence, la sexualité intense, l'inexactitude politique, ou d'autres sujets potentiellement perturbants. Ceci est surtout important dans des environnements comme les lieus de travail, les écoles ou des lieus religieux et familial. Le nom vient du terme Internet \"Not safe for work\"."
 
 #. type: Plain text
 #: _docs/Anti-Features.md
@@ -989,12 +1026,12 @@ msgstr "Pister<a name=\"Tracking\" />"
 #. type: Plain text
 #: _docs/Anti-Features.md
 msgid "This Anti-Feature is applied to apps that track you and/or report your activity to somewhere, either without your permission or by default (i.e. you'd have to actively seek out an option to disable it)."
-msgstr ""
+msgstr "Cette Anti-Fonction est appliqué aux applications qui vous traquent et/ou signalent vos activités à quelque part, soit sans votre permission ou par défaut (c.-à-d. vous devez activement le désactiver)."
 
 #. type: Plain text
 #: _docs/Anti-Features.md
 msgid "Examples of where this Anti-Feature might be applied:"
-msgstr ""
+msgstr "Exemples d'où cette Anti-Fonction pourrait être appliquée :"
 
 #. type: Bullet: '* '
 #: _docs/Anti-Features.md
@@ -1009,23 +1046,23 @@ msgstr "Vérifier la présence de mises à jour sans avertissement ou permission
 #. type: Plain text
 #: _docs/Anti-Features.md
 msgid "Examples of where it would not be applied - any of the above, if the functionality is opt-in (i.e. you are asked before it happens)  and disabled by default. Enabling it should then also require informed consent, i.e. requiring a privacy policy similar to GDPR, and avoid collecting personal data (PII) as far as possible."
-msgstr ""
+msgstr "Exemples d'où elle ne serait pas appliquée - tous ceux en haut, si la fonction est volontaire (c.-à-d. vous êtes demandés avant qu'elle s'active) et désactivé par défaut. L'activer devrait alors exiger le consentement informé, c.-à-d. exiger une politique de confidentialité similaire à RGPD et éviter de collecter les données personnelles (PII) le plus possible."
 
 #. type: Plain text
 #: _docs/Anti-Features.md
 msgid "Note that frequently app tracking is implemented using proprietary software, e.g. Google Analytics or Flurry. Apps containing these proprietary libraries will **not** be found in the F-Droid repo."
-msgstr ""
+msgstr "Notez que souvent, le traçage dans l'application est fourni par des logiciels propriétaires, p. ex. Google Analytics ou Flurry. Les applications qui contiennent ces bibliothèques propriétaires ne se retrouveront **pas** dans le dépôt F-Droid."
 
 #. type: Plain text
 #: _docs/Anti-Features.md
 msgid "Here's the list of [apps with Tracking](https://monitor.f-droid.org/anti-feature/Tracking)."
-msgstr ""
+msgstr "Voici la liste d'[applications avec Traçage](https://monitor.f-droid.org/anti-feature/Tracking)."
 
 #. type: Title ###
 #: _docs/Anti-Features.md
 #, no-wrap
 msgid "Non-Free Network Services<a name=\"NonFreeNet\" />"
-msgstr ""
+msgstr "Services de réseau non-libres<a name=\"NonFreeNet\" />"
 
 #. type: Plain text
 #: _docs/Anti-Features.md
@@ -1036,7 +1073,7 @@ msgstr "Cette antifonction est appliquée à une appli qui comporte des publicit
 #. type: Plain text
 #: _docs/Anti-Features.md
 msgid "Here's the list of [apps with Non-Free Network Services](https://monitor.f-droid.org/anti-feature/NonFreeNet)."
-msgstr ""
+msgstr "Voici la liste [d'applications avec Services de réseau non-libres](https://monitor.f-droid.org/anti-feature/NonFreeNet)."
 
 #. type: Title ###
 #: _docs/Anti-Features.md
@@ -1047,7 +1084,7 @@ msgstr "Publicités<a name=\"Ads\" />"
 #. type: Plain text
 #: _docs/Anti-Features.md
 msgid "This Anti-Feature is applied to apps that, although Free Software themselves, promote other Non-Free applications or plugins."
-msgstr ""
+msgstr "Cette Anti-Fonction est appliquée aux applications qui, même s'ils sont libres eux-mêmes, font la promotion d'autres applications ou plugiciels non-libres."
 
 #. type: Plain text
 #: _docs/Anti-Features.md
@@ -1059,7 +1096,7 @@ msgstr "[Anti-Fonctionalités](https://monitor.f-droid.org/anti-features) Ce qu'
 #: _docs/Anti-Features.md
 #, no-wrap
 msgid "Non-Free Dependencies<a name=\"NonFreeDep\" />"
-msgstr ""
+msgstr "Dépendances non-libres<a name=\"NonFreeDep\" />"
 
 #. type: Plain text
 #: _docs/Anti-Features.md
@@ -1070,7 +1107,7 @@ msgstr "Cette antifonction est appliquée à une appli qui comporte des publicit
 #. type: Plain text
 #: _docs/Anti-Features.md
 msgid "This does not mean that proprietary software is included in the app, but for example, it may depend on other software already being installed on your device. A common example would be an app that doesn't run, or is not useful, unless you have Google Maps installed."
-msgstr ""
+msgstr "Ceci ne veut pas dire que des logiciels propriétaires sont inclus dans l'application, mais, par exemple, elle peut dépendre sur l'installation préalable d'autres logiciels sur votre appareil. Un exemple commun serait qu'une application ne se démarre pas, ou est inutile, si vous n'avez pas installé Google Maps."
 
 #. type: Plain text
 #: _docs/Anti-Features.md
@@ -1082,22 +1119,22 @@ msgstr "[Anti-Fonctionalités](https://monitor.f-droid.org/anti-features) Ce qu'
 #: _docs/Anti-Features.md
 #, no-wrap
 msgid "Upstream Non-Free<a name=\"UpstreamNonFree\" />"
-msgstr ""
+msgstr "Non-libre en amont<a name=\"UpstreamNonFree\" />"
 
 #. type: Plain text
 #: _docs/Anti-Features.md
 msgid "This Anti-Feature is applied to apps where the upstream source code includes proprietary software by default in their own releases."
-msgstr ""
+msgstr "Cette Anti-Fonction est appliquée aux applications pour lesquelles le code source inclut des logiciels propriétaires par défaut dans leur propres publications."
 
 #. type: Plain text
 #: _docs/Anti-Features.md
 msgid "This does not mean that proprietary software is included in the app.  Most likely, the F-Droid build has been patched in some way to remove the Non-Free code/libraries, and/or some functionality may be missing.  The app's description will usually go into more detail about this."
-msgstr ""
+msgstr "Cela ne veut pas dire que l'application inclut des logiciels propriétaires. La version F-Droid a probablement été modifié d'une façon qui enlève le code ou les bibliothèques non-libres et/ou il peut y manquer des fonctions. La description de l'application va normalement parler plus en détail de cela."
 
 #. type: Plain text
 #: _docs/Anti-Features.md
 msgid "In our experience, where the upstream developer includes Non-Free libraries, sooner or later they will include more Non-Free libraries, or other Anti-Features. Frequently they become impossible to maintain/update in F-Droid. If there is an alternative, it is recommended that you avoid applications with this Anti-Feature if future updates are important to you."
-msgstr ""
+msgstr "Dans notre expérience, quand le développeur inclut des bibliothèques non-libres, plus tard il va inclure plus de bibliothèques non-libres, ou d'autres Anti-Fonctions. Fréquemment, elle vont devenir impossibles à maintenir/mettre à jour dans F-Droid. S'il y a une alternative, il est recommandé que vous évitez les applications avec cette Anti-Fonction si les mises à jour futures sont importantes pour vous."
 
 #. type: Plain text
 #: _docs/Anti-Features.md
@@ -1109,28 +1146,28 @@ msgstr "[Anti-Fonctionalités](https://monitor.f-droid.org/anti-features) Ce qu'
 #: _docs/Anti-Features.md
 #, no-wrap
 msgid "Non-Free Assets<a name=\"NonFreeAssets\" />"
-msgstr ""
+msgstr "Ressources non-libres<a name=\"NonFreeAssets\" />"
 
 #. type: Plain text
 #: _docs/Anti-Features.md
 msgid "This Anti-Feature is applied to apps that contain and make use of Non-Free assets. The most common case is apps using artwork - images, sounds, music, etc. - under a non-commercial license."
-msgstr ""
+msgstr "Cette anti-fonction est appliquée aux applications qui contiennent et qui utilisent des ressources non-libres. Normalement, c'est des applications qui utilisent de l'art, des images, des sons, de la musique, etc. sous une license non-commerciale."
 
 #. type: Plain text
 #: _docs/Anti-Features.md
 msgid "Here's the list of [apps with Non-Free Assets](https://monitor.f-droid.org/anti-feature/NonFreeAssets)."
-msgstr ""
+msgstr "Voici la liste d'[applications avec des Ressources non-libres](https://monitor.f-droid.org/anti-feature/NonFreeAssets)."
 
 #. type: Title ###
 #: _docs/Anti-Features.md
 #, no-wrap
 msgid "Known Vulnerability<a name=\"KnownVuln\" />"
-msgstr ""
+msgstr "Vulnérabilité connue <a name=\"KnownVuln\" />"
 
 #. type: Plain text
 #: _docs/Anti-Features.md
 msgid "This Anti-Feature is applied to apps with a known security vulnerability, found by one of the scanners in _fdroidserver_."
-msgstr ""
+msgstr "Cette Anti-Fonction est appliquée aux applications avec une vulnérabilité de sécurité connue, trouvée par une des scanners dans _fdroidserver_."
 
 #. type: Plain text
 #: _docs/Anti-Features.md
@@ -1142,55 +1179,55 @@ msgstr "[Anti-Fonctionalités](https://monitor.f-droid.org/anti-features) Ce qu'
 #: _docs/Anti-Features.md
 #, no-wrap
 msgid "Disabled Algorithm<a name=\"DisabledAlgorithm\" />"
-msgstr ""
+msgstr "Algorithme désactivé<a name=\"DisabledAlgorithm\" />"
 
 #. type: Plain text
 #: _docs/Anti-Features.md
 msgid "This Anti-Feature is applied to apps that were signed using a signature algorithm that is considered outdated or unsafe."
-msgstr ""
+msgstr "Cette anti-fonction est appliquée aux applications qui ont été signées avec un algorithme de signature considéré obsolète ou non-sécuritaire."
 
 #. type: Plain text
 #: _docs/Anti-Features.md
 msgid "Here's the list of [apps signed with Disabled Algorithms](https://monitor.f-droid.org/anti-feature/DisabledAlgorithm)."
-msgstr ""
+msgstr "Voici la liste d'[applications signées avec des Algorithms désactivés](https://monitor.f-droid.org/anti-feature/DisabledAlgorithm)."
 
 #. type: Title ###
 #: _docs/Anti-Features.md
 #, no-wrap
 msgid "No Source Since<a name=\"NoSourceSince\" />"
-msgstr ""
+msgstr "Aucun code source depuis<a name=\"NoSourceSince\" />"
 
 #. type: Plain text
 #: _docs/Anti-Features.md
 msgid "The upstream source for this app is no longer available. Either the app went proprietary, the source repository was dropped, or it has moved to a location currently not known to us. This means there will not be further updates unless the source reappears."
-msgstr ""
+msgstr "Le code source en amont pour cette application n'est plus disponible. Soit l'application est devenu propriétaire, le dépôt pour le code source a été désactivé, ou il a été déplacé à un endroit que nous ne connaissons pas en ce moment. Cela veut dire qu'il n'y aura plus de mises à jour jusqu'au moment ou le code source réapparait."
 
 #. type: Plain text
 #: _docs/Anti-Features.md
 msgid "Here's a list of [apps with No Source](https://monitor.f-droid.org/anti-feature/NoSourceSince)."
-msgstr ""
+msgstr "Voici une liste [d'applications Sans source](https://monitor.f-droid.org/anti-feature/NoSourceSince)."
 
 #. type: Title ##
 #: _docs/Anti-Features.md
 #, no-wrap
 msgid "Reporting Anti-Features"
-msgstr ""
+msgstr "Signaler les Anti-Fonctions"
 
 #. type: Plain text
 #: _docs/Anti-Features.md
 msgid "While our package maintainers are working hard to find all Anti-Features and bring them to your attention, some might remain unnoticed or slip in with an app update. Should you discover that an app contains an Anti-Feature F-Droid is not aware of, please report it. You can submit them by E-Mail to [team@f-droid.org](mailto:team@f-droid.org) or open an issue here: [gitlab.com/fdroid/fdroiddata/issues](https://gitlab.com/fdroid/fdroiddata/issues)."
-msgstr ""
+msgstr "En dépit du fait que nos mainteneurs de paquetage travaillent fort pour trouver toutes les Anti-Fonctions et les porter à votre attention, quelques-unes resteront peut-être inaperçues ou entrer avec une mise à jour. Si vous découvrez une application qui contient une Anti-Fonction duquelle F-Droid est inconscient, veuillez la signaler. Vous pouvez la soumettre via courriel à [team@f-droid.org](mailto:team@f-droid.org) ou ouvrir un ticket ici : [gitlab.com/fdroid/fdroiddata/issues](https://gitlab.com/fdroid/fdroiddata/issues)."
 
 #. type: Title ##
 #: _docs/Anti-Features.md
 #, no-wrap
 msgid "Origins of the F-Droid definition of Anti-Features"
-msgstr ""
+msgstr "Origines de la définition de F-Droid des Anti-Fonctions"
 
 #. type: Plain text
 #: _docs/Anti-Features.md
 msgid "The Free Software Foundation (FSF) also has a similar idea, and it is also known as \"anti-features\".  [\"Anti-features are sold to customers as features but are fundamental or unavoidable aspects of systems that can only be removed or withheld through technological effort\"](https://www.fsf.org/blogs/community/antifeatures).  Another way of thinking about Anti-Features is that they are [\"functionality that a technology developer will charge users to not include\"](https://www.fsf.org/bulletin/2007/fall/antifeatures/).  The F-Droid definition was initially inspired by FSF's, but our definition has evolved over the years into something different."
-msgstr ""
+msgstr "La Fondation de Logiciels Libres (FSF) a aussi une idée similaire et elle est aussi connue sous le nom «anti-fonctions». [\"Les Anti-Fonctions sont vendues aux clients comme des fonctions mais sont des aspects fondamentaux ou inévitables des systèmes qui peuvent seulement être enlevés avec de l'effort technologique\"](https://www.fsf.org/blogs/community/antifeatures). Une autre façon de penser aux Anti-Fonctions est qu'elles sont [\"des fonctions qu'un développeur de technologie facturera les clients pour ne pas inclure\"](https://www.fsf.org/bulletin/2007/fall/antifeatures/). La définition de F-Droid a été initialement inspirée par celui de la FSF, mais notre définition a évolué au fil des années en quelque chose de différent."
 
 #. type: YAML Front Matter: title
 #: _docs/Building_Applications.md
@@ -1597,32 +1634,32 @@ msgstr "Les fichiers APK et média dans le sous-répertoire du _dépôt_"
 #. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
 msgid "per-package \"metadata\" files in the _metadata_ sub-directory"
-msgstr ""
+msgstr "fichiers de «métadonnées» par paquet dans le sous-dossier _metadata_"
 
 #. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
 msgid "[localizable texts and graphics](../All_About_Descriptions_Graphics_and_Screenshots#in-the-apps-build-metadata-in-an-fdroiddata-collection) in the _metadata_ subdirectory"
-msgstr ""
+msgstr "[textes et graphiques localisables](../All_About_Descriptions_Graphics_and_Screenshots#in-the-apps-build-metadata-in-an-fdroiddata-collection) dans le sous-dossier _metadata_"
 
 #. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
 msgid "localizable texts and graphics [embedded in an app's source code](../All_About_Descriptions_Graphics_and_Screenshots#in-the-apps-source-repository)"
-msgstr ""
+msgstr "textes et graphiques localisables [intégrés dans le code source d'une application](../All_About_Descriptions_Graphics_and_Screenshots#in-the-apps-source-repository)"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 msgid "These metadata files are simple, easy to edit text files, always named as the \"package name\" with file type appended.  There are a wide range of available fields for adding information to describe packages and/or apps.  For all of the fields like _AuthorName_ that apply to all releases of a package/app, the fields use CamelCase starting with an upper case letter.  All other fields use camelCase starting with a lower case letter, including per-build fields, localized fields, etc."
-msgstr ""
+msgstr "Ces fichiers de métadonnées sont des fichiers de texte simples et faciles à modifier, toujours nommées le même que le paquet, avec le type de fichier joint. Il y a beaucoup de champs disponibles pour ajouter de informations pour décrire les paquets et/ou les applications. Pour tous les champs comme _AuthorName_ qui s'appliquent à toutes les publications d'un paquet/application, les champs utilisent CamelCase commenceant avec une lettre majuscule. Tous les autres champs utilisent camelCase avec une lettre minuscule, incluant les champs par-compilation, les champs localisés, etc."
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 msgid "Metadata files are written in [YAML](http://www.yaml.org/start.html) format"
-msgstr ""
+msgstr "Les fichiers de métadonnées sont écrits en format [YAML](http://www.yaml.org/start.html)"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 msgid "Note that although the metadata files are designed to be easily read and writable by humans, they are also processed and written by various scripts. They can be automatically cleaned up when necessary. The structure and comments will be preserved correctly, although the order of fields will be standardised. (In the event that the original file was in a different order, comments are considered as being attached to the field following them). In fact, you can standardise all packages in a repository using a single command, without changing the functional content, by running:"
-msgstr ""
+msgstr "Notez qu'en dépit du fait que les fichiers de métadonnées sont conçus pour être facilement lus et modifiés par les humains, ils sont aussi traités et écrits par plusieurs scriptes. Ils peuvent être automatiquement nettoyés quand nécessaire. La structure et les commentaires seront préservés correctement, mais l'ordre des champs sera normalisé. (Dans le cas où le fichier original était dans un ordre différent, les commentaires sont considérés à être liés au champ les suivant directement). En fait, vous pouvez normaliser tous les paquets dans un dépôt en utilisant une seule commande, sans changer le contenu fonctionnel, en exécutant :"
 
 #. type: Fenced code block
 #: _docs/Build_Metadata_Reference.md
@@ -1659,27 +1696,27 @@ msgstr "[_Nomdel'auteur_](#AuthorName)"
 #. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
 msgid "[_AuthorEmail_](#AuthorEmail)"
-msgstr ""
+msgstr "[_AuthorEmail_ (Courriel de l'auteur)](#AuthorEmail)"
 
 #. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
 msgid "[_AuthorWebSite_](#AuthorWebSite)"
-msgstr ""
+msgstr "[_AuthorWebSite_ (Site Web de l'auteur)](#AuthorWebSite)"
 
 #. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
 msgid "[_License_](#License)"
-msgstr ""
+msgstr "[_License_](#License)"
 
 #. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
 msgid "[_AutoName_](#AutoName)"
-msgstr ""
+msgstr "[_AutoName_ (Nom automatique)](#AutoName)"
 
 #. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
 msgid "[_Name_](#Name)"
-msgstr ""
+msgstr "[_Name_ (Nom)](#Name)"
 
 #. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
@@ -1689,12 +1726,12 @@ msgstr "[_WebSite_ (Site Web)](#WebSite)"
 #. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
 msgid "[_SourceCode_](#SourceCode)"
-msgstr ""
+msgstr "[_SourceCode_ (Code source)](#SourceCode)"
 
 #. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
 msgid "[_IssueTracker_](#IssueTracker)"
-msgstr ""
+msgstr "[_IssueTracker_ (Traqueur de problèmes)](#IssueTracker)"
 
 #. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
@@ -1704,12 +1741,12 @@ msgstr "[_Translation_ (Traduction)](#Translation)"
 #. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
 msgid "[_Changelog_](#Changelog)"
-msgstr ""
+msgstr "[_Changelog_ (Journal des changements)](#Changelog)"
 
 #. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
 msgid "[_Donate_](#Donate)"
-msgstr ""
+msgstr "[_Donate_ (don)](#Donate)"
 
 #. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
@@ -1814,7 +1851,7 @@ msgstr "[_Builds.timeout_ (Délai d'expiration)](#build_timeout)"
 #. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
 msgid "[_Builds.init_](#build_init)"
-msgstr ""
+msgstr "[_Builds.init_ (Initialisation de compilation)](#build_init)"
 
 #. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
@@ -2015,57 +2052,57 @@ msgstr "_Catégories_<a name=\"Categories\"></a>"
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 msgid "Any number of categories for the application to be placed in. There is no fixed list of categories - both the client and the web site will automatically show any categories that exist in any applications.  However, if your metadata is intended for the main F-Droid repository, you should use one of the existing categories (`Connectivity`,`Development`, `Games`,`Graphics`,`Internet`,`Money`,`Multimedia`,`Navigation`,`Phone & SMS`, `Reading`,`Science & Education`,`Security`,`Sports & Health`,`System`,`Theming`, `Time`,`Writing`), or discuss the proposal to add a new one. _Categories_ must be a list of items, even if there is just one."
-msgstr ""
+msgstr "N'importe quel nombre de catégories pour y placer l'application. Il n'y a pas de liste fixe de catégories - le client et le site vont automatiquement montrer toutes les catégories qui existent dans n'importe quelle application. Cependant, si vos métadonnées sont destinées au dépôt principal de F-Droid, vous devrez utiliser une des catégories actuelles (`Connectivité`,`Développement`, `Jeux`,`Graphiques`,`Internet`,`Monnaie`,`Multimédia`,`Navigation`,`Téléphone & SMS`, `Lecture`,`Science & Éducation`,`Sécurité`,`Sports & Santé`,`Système`,`Thèmes`, `Temps`,`Écriture`), ou discuter d'une proposition pour en ajouter une nouvelle. _Categories_ doit être une liste d'items, même s'il n'y en a qu'un."
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid "This is converted to (`<categories>`) in the XML file (_index.xml_).\n"
-msgstr ""
+msgstr "Ceci est converti à (`<categories>`) dans le fichier XML (_index.xml_).\n"
 
 #. type: Title ###
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid "_AuthorName_<a name=\"AuthorName\"></a>"
-msgstr ""
+msgstr "_AuthorName_ (Nom de l'auteur)<a name=\"AuthorName\"></a>"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 msgid "The name of the author, either full, abbreviated or pseudonym. If present, it should represent the name(s) as published by upstream, e.g.  in their copyright or authors file. This can be omitted (or left blank)."
-msgstr ""
+msgstr "Le nom de l'auteur, soit plein, abbrévié, ou pseudonyme. Si présent, il doit représenter le(s) nom(s) comme publiés par avec le code original, p. ex. dans leur fichier d'auteurs ou de copyright. Ceci peut être omis (ou laissé vide)."
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 msgid "__Warning__: this overrides all _AuthorName_ entries [set in the app's source code](../All_About_Descriptions_Graphics_and_Screenshots)."
-msgstr ""
+msgstr "__Avertissement__ : Ceci annule toute entrée _AuthorName_ [réglée dans le code source de l'application](../All_About_Descriptions_Graphics_and_Screenshots)."
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid "This is converted to (`<author>`) in the XML file (_index.xml_).\n"
-msgstr ""
+msgstr "Ceci est converti à (`<author>`) dans le fichier XML (_index.xml_).\n"
 
 #. type: Title ###
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid "_AuthorEmail_<a name=\"AuthorEmail\"></a>"
-msgstr ""
+msgstr "_AuthorEmail_ (Courriel de l'auteur)<a name=\"AuthorEmail\"></a>"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 msgid "The e-mail address of the author(s). This can be omitted (or left blank)."
-msgstr ""
+msgstr "L'adresse courriel de/des auteur(s). Ceci peut être omis (ou laissé vide)."
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 msgid "__Warning__: this overrides all _AuthorEmail_ entries [set in the app's source code](../All_About_Descriptions_Graphics_and_Screenshots)."
-msgstr ""
+msgstr "__Avertissement__ : Ceci annule tous les entrées _AuthorEmail_ [réglées dans le code source de l'application](../All_About_Descriptions_Graphics_and_Screenshots)."
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid "This is converted to (`<email>`) in the XML file (_index.xml_).\n"
-msgstr ""
+msgstr "Ceci est converti à (`<email>`) dans le fichier XML (_index.xml_).\n"
 
 #. type: Title ###
 #: _docs/Build_Metadata_Reference.md
@@ -2081,56 +2118,56 @@ msgstr "L'adresse du site internet de le(s) auteur(s). Peut être omis (ou laiss
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 msgid "__Warning__: this overrides all _AuthorWebSite_ entries [set in the app's source code](../All_About_Descriptions_Graphics_and_Screenshots)."
-msgstr ""
+msgstr "__Avertissement__ : ceci annule toute les entrées _AuthorWebSite_ [réglées dans le code source de l'application](../All_About_Descriptions_Graphics_and_Screenshots)."
 
 #. type: Title ###
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid "_License_<a name=\"License\"></a>"
-msgstr ""
+msgstr "_License_ (Licence)<a name=\"License\"></a>"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 msgid "The overall license for the application in terms of the binary that the user can install. Values should correspond to short identifiers of the [SPDX](https://spdx.org/licenses/) license list. There can only be one license listed here. If there are multiple licenses that apply to the source code, then this field should contain the least restrictive license that the whole app can be used under.  When multiple licenses are combined, that usually means the most restrictive wins."
-msgstr ""
+msgstr "La licence en général pour l'application pour le fichier binaire que l'utilisateur peut installer. Les valeurs devraient correspondre aux identifiants courtes de la liste [SPDX](https://spdx.org/licenses/). Il peut y avoir seulement une des licences listées ici. S'il y en a plusieurs qui s'appliquent au code source, ce champ doit alors contenir la licence la moins restrictive sous lequel l'application entière peut être utilisé. Quand plusieurs licences sont combinées, cela veut normalement dire que la plus restrictive l'emporte."
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 msgid "This field cannot represent the complexity of licenses that apply to parts of the app, or apps that have the entire thing released under more than one license."
-msgstr ""
+msgstr "Ce champ ne peut pas représenter la complexité des licences qui s'appliquent aux parties de l'application, ou les applications qui publient l'entièreté sous plus d'une license."
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid "This is converted to (`<license>`) in the XML file (_index.xml_).\n"
-msgstr ""
+msgstr "Ceci est converti à (`<license>`) dans le fichier XML (_index.xml_).\n"
 
 #. type: Title ###
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid "_AutoName_<a name=\"AutoName\"></a>"
-msgstr ""
+msgstr "_AutoName_ (Nom automatique)<a name=\"AutoName\"></a>"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 msgid "The name of the application as can best be retrieved from the source code. This is done so that `fdroid checkupdates` can put a familiar name in the description of commits created when a new update of the application is found. The _AutoName_ entry is generated automatically when `fdroid checkupdates` is run, and is only used for the commit messages generated by `fdroid checkupdates`."
-msgstr ""
+msgstr "Le nom de l'application retrouvé automatiquement dans le code source. Ceci est fait pour que `fdroid checkupdates` puisse mettre un nom familier dans la description dans les archivages créées quand une nouvelle mise à jour de l'application est trouvée. L'entrée _AutoName_ est générée automatiquement quand `fdroid checkupdates` est executé et c'est seulement utilisé pour ces messages d'archivages."
 
 #. type: Title ###
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid "_Name_<a name=\"Name\"></a>"
-msgstr ""
+msgstr "_Name_ (Nom)<a name=\"Name\"></a>"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 msgid "The title of the application, with optional descriptive phrase. This field will override all other sources of the application name, including scraped from the APK and from [localized metadata](../All_About_Descriptions_Graphics_and_Screenshots).  Setting _Name_ is usually not needed, since the application’s correct name is retrieved from the APK file.  However, in a situation where an APK contains a bad or missing application name, it can be overridden using this. Note that this only overrides the name in the list of apps presented in the client; it doesn’t change the name or application label in the source code."
-msgstr ""
+msgstr "Le titre de l'application, avec une phrase descriptive facultative. Ce champ annule toute les autres sources du nom de l'application, incluant de l'APK et des [métadonnées localisées](../All_About_Descriptions_Graphics_and_Screenshots). Le paramètre _Name_ est souvent non-nécessaire, puisque le nom correct de l'application est pris du fichier APK. Cependant, dans une situation où un APK contient un nom manquant ou mauvais, il peut être annulé avec cela. Notez que cela annule seulement le nom dans la liste d'applications présentée dans le client ; il ne change pas le nom ou l'étiquette de l'application dans le code source."
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 msgid "__50 character limit__"
-msgstr ""
+msgstr "__Limite de 50 caractères__"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -2142,7 +2179,7 @@ msgstr "__Warning__ : cela remplace toutes les entrées de Description [définie
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid "This is converted to (`<name>`) in the XML file (_index.xml_).\n"
-msgstr ""
+msgstr "Ceci est converti à (`<name>`) dans le fichier XML (_index.xml_).\n"
 
 #. type: Title ###
 #: _docs/Build_Metadata_Reference.md
@@ -2153,102 +2190,102 @@ msgstr "_Site Web_<a name=\"WebSite\"></a>"
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 msgid "The URL for the application’s web site. If there is no relevant web site, this can be omitted (or left blank)."
-msgstr ""
+msgstr "L'URL pour le site Web de l'application. S'il n'y en a pas, ceci peut être omis (ou laissé vide)."
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid "This is converted to (`<web>`) in the XML file (_index.xml_).\n"
-msgstr ""
+msgstr "Ceci est converti à (`<web>`) dans le fichier XML (_index.xml_).\n"
 
 #. type: Title ###
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid "_SourceCode_<a name=\"SourceCode\"></a>"
-msgstr ""
+msgstr "_SourceCode_ (Code source)<a name=\"SourceCode\"></a>"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 msgid "The URL to view or obtain the application’s source code. This should be something human-friendly. Machine-readable source-code is covered in the _Repo_ field."
-msgstr ""
+msgstr "L'URL pour voir ou obtenir le code source de l'application. Ceci devrait être lisible par les humains. Le code source lisible par les machines est dans le champ _Repo_."
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid "This is converted to (`<source>`) in the XML file (_index.xml_).\n"
-msgstr ""
+msgstr "Ceci est converti à (`<source>`) dans le fichier XML (_index.xml_).\n"
 
 #. type: Title ###
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid "_IssueTracker_<a name=\"IssueTracker\"></a>"
-msgstr ""
+msgstr "_IssueTracker_ (Traqueur de problèmes)<a name=\"IssueTracker\"></a>"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 msgid "The URL for the application’s issue tracker. Optional, since not all applications have one."
-msgstr ""
+msgstr "L'URL pour le traqueur de problèmes de l'application. Facultatif, puisque certaines applications n'en ont pas."
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid "This is converted to (`<tracker>`) in the XML file (_index.xml_).\n"
-msgstr ""
+msgstr "Ceci est converti à (`<tracker>`) dans le fichier XML (_index.xml_).\n"
 
 #. type: Title ###
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid "_Translation_<a name=\"Translation\"></a>"
-msgstr ""
+msgstr "_Translation_ (Traduction)<a name=\"Translation\"></a>"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 msgid "The URL for the application’s translation portal or at least a guide.  Optional, since not all applications have one."
-msgstr ""
+msgstr "L'URL pour le portail de traduction de l'application, ou du moins un guide. Facultatif, puisque certaines applications n'en ont pas."
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 msgid "This is converted to (`translation`) in the JSON file (_index.json_)."
-msgstr ""
+msgstr "Ceci est converti à (`translation`) dans le fichier JSON (_index.json_)."
 
 #. type: Title ###
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid "_Changelog_<a name=\"Changelog\"></a>"
-msgstr ""
+msgstr "_Changelog_ (Journal des changements)<a name=\"Changelog\"></a>"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 msgid "The URL for the application’s changelog. Optional, since not all applications have one."
-msgstr ""
+msgstr "L'URL pour le journal des changements de l'application. Facultatif, puisque certaines applications n'en ont pas."
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid "This is converted to (`<changelog>`) in the XML file (_index.xml_).\n"
-msgstr ""
+msgstr "Ceci est converti à (`<changelog>`) dans le fichier XML (_index.xml_).\n"
 
 #. type: Title ###
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid "_Donate_<a name=\"Donate\"></a>"
-msgstr ""
+msgstr "_Donate_ (Faire un don)<a name=\"Donate\"></a>"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 msgid "The URL to donate to the project. This should be the project’s donate page if it has one."
-msgstr ""
+msgstr "L'URL pour faire un don au projet. Ceci devrait être la page de donation du projet s'il y en a un."
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 msgid "It is possible to use a direct PayPal link here, if that is all that is available. However, bear in mind that the developer may not be aware of that direct link, and if they later changed to a different PayPal account, or the PayPal link format changed, things could go wrong. It is always best to use a link that the developer explicitly makes public, rather than something that is auto-generated ’button code’."
-msgstr ""
+msgstr "Il est possible d'utiliser un lien direct à PayPal ici, si c'est tout ce qui est disponible. Cependant, il est possible que le développeur ne soit pas au courant de ce lien et s'il change plus tard à un autre compte PayPal, ou le format de lien PayPal change, ça pourrait ne pas fonctionner. Il est toujours meilleur d'utiliser un lien que le développeur rend explicitement public, plutôt que quelque chose qui est généré automatiquement."
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid "This is converted to (`<donate>`) in the XML file (_index.xml_).\n"
-msgstr ""
+msgstr "Ceci est converti à (`<donate>`) dans le fichier XML (_index.xml_).\n"
 
 #. type: Title ###
 #: _docs/Build_Metadata_Reference.md
@@ -2259,30 +2296,30 @@ msgstr "_FlattrID_<a name=\"FlattrID\"></a>"
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 msgid "The project’s Flattr (https://flattr.com) ID, if it has one. This should be a numeric ID, such that (for example) https://flattr.com/thing/xxxx leads directly to the page to donate to the project."
-msgstr ""
+msgstr "L'identifiant Flattr (https://flattr.com), s'il y en a un. Ceci devrait être un identifiant numérique, pour que (par exemple) https://flattr.com/thing/xxxx mène directement à la page de donation du projet."
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid "This is converted to (`<flattr>`) in the XML file (_index.xml_).\n"
-msgstr ""
+msgstr "Ceci est converti à (`<flattr>`) dans le fichier XML (_index.xml_).\n"
 
 #. type: Title ###
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid "_Liberapay_<a name=\"Liberapay\"></a><a name=\"LiberapayID\"></a>"
-msgstr ""
+msgstr "_Liberapay_<a name=\"Liberapay\"></a><a name=\"LiberapayID\"></a>"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 msgid "The project’s Liberapay (https://liberapay.com) user or group name, if it has one. This should be an alphanumeric name, such that (for example) https://liberapay.com/xxxxx which redirects to your account page. This used to be _LiberapayID_, which was a numeric ID fetched from Liberapay’s site by adding /public.json behind your team page."
-msgstr ""
+msgstr "Le nom d'utilisateur ou nom de groupe Liberapay (https://liberapay.com), s'il en a un. Ceci devrait être alphanumérique, pour que (par exemple) https://liberapay.com/xxxxx dirige vers votre page de compte. Ceci était _LiberapayID_ auparavant, qui était un identifiant numérique trouvé du site Liberapay en ajoutant /public.json derrière votre page d'équipe."
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid "This is converted to (`<liberapay>`) in the XML file (_index.xml_).\n"
-msgstr ""
+msgstr "Ceci est converti à (`<liberapay>`) dans le fichier XML (_index.xml_).\n"
 
 #. type: Title ###
 #: _docs/Build_Metadata_Reference.md
@@ -2293,7 +2330,7 @@ msgstr "_Site Web_<a name=\"WebSite\"></a>"
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 msgid "The project’s OpenCollective (https://opencollective.com) user or group name, if it has one. This should be an alphanumeric name, such that (for example) https://opencollective.com/xxxxx redirects to your account page."
-msgstr ""
+msgstr "Le nom d'utilisateur ou nom de groupe OpenCollective (https://opencollective.com), s'il en a un. Ceci devrait être un nom alphanumérique, pour que (par exemple) https://opencollective.com/xxxxx mène à votre page de compte."
 
 #. type: Title ###
 #: _docs/Build_Metadata_Reference.md
@@ -2304,13 +2341,13 @@ msgstr "_Bitcoin_<a name=\"Bitcoin\"></a>"
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 msgid "A bitcoin address for donating to the project."
-msgstr ""
+msgstr "Une adresse bitcoin pour faire un don au projet."
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid "This is converted to (`<bitcoin>`) in the XML file (_index.xml_).\n"
-msgstr ""
+msgstr "Ceci est converti à (`<bitcoin>`) dans le fichier XML (_index.xml_).\n"
 
 #. type: Title ###
 #: _docs/Build_Metadata_Reference.md
@@ -2321,19 +2358,19 @@ msgstr "_Litecoin_<a name=\"Litecoin\"></a>"
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 msgid "A litecoin address for donating to the project."
-msgstr ""
+msgstr "Une adresse litecoin pour faire un don au projet."
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid "This is converted to (`<litecoin>`) in the XML file (_index.xml_).\n"
-msgstr ""
+msgstr "Ceci est converti à (`<litecoin>`) dans le fichier XML (_index.xml_).\n"
 
 #. type: Title ###
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid "_Summary_<a name=\"Summary\"></a>"
-msgstr ""
+msgstr "_Summary_ (Résumé)<a name=\"Summary\"></a>"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -2344,7 +2381,7 @@ msgstr "Un bref résumé de ce qu'est l'application. Étant donné qu'une seule 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 msgid "__80 character limit__"
-msgstr ""
+msgstr "__Limite de 80 caractères__"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -2362,27 +2399,27 @@ msgstr "Cela est converti en (`<summary>`) dans le fichier XML (_index.xml_).\n"
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid "_Description_<a name=\"Description\"></a>"
-msgstr ""
+msgstr "_Description_<a name=\"Description\"></a>"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 msgid "A full description of the application, relevant to the latest version.  This can span multiple lines (which should be kept to a maximum of 80 characters), and is terminated by a line containing a single ’.’."
-msgstr ""
+msgstr "Une description complète de l'application, pertinente à la version actuelle. Ceci peut être sur plusieurs lignes (qui ont un maximum de 80 caractères) et elle est terminée par une ligne contenant un seul .’."
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 msgid "The description formatting follows the established conventions that work across many app stores:"
-msgstr ""
+msgstr "Le format de la description suit les conventions établies qui fonctionnent sur plusieurs magasins d'applications :"
 
 #. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
 msgid "Basic HTML formatting can be used."
-msgstr ""
+msgstr "Les formats de base HTML peuvent être utilisés."
 
 #. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
 msgid "Newlines will be preserved."
-msgstr ""
+msgstr "Les retours à la ligne seront préservés."
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -2391,6 +2428,8 @@ msgid ""
 "* Links to other packages on f-droid.org will show up as clickable on\n"
 "the website, other links will show up as plain text.\n"
 msgstr ""
+"* Les liens à d'autres paquets sur f-droid.org seront cliquables sur\n"
+"le site, d'autres liens seront du texte ordinaire.\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -2401,7 +2440,7 @@ msgstr "Il peut être utile de noter les informations relatives à la mise à jo
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 msgid "__4000 character limit__"
-msgstr ""
+msgstr "__Limite de 4000 caractères__"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -2486,44 +2525,44 @@ msgstr "L'emplacement du dépôt. Souvent un URL git : ou svn : par exemple."
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 msgid "The git-svn option connects to an SVN repository, and you specify the URL in exactly the same way, but git is used as a back-end. This is preferable for performance reasons, and also because a local copy of the entire history is available in case the upstream repository disappears.  (It happens!). In order to use Tags as _UpdateCheckMode_ for this VCS type, the URL must have the tags= special argument set. Likewise, if you intend to use the RepoManifest/branch scheme, you would want to specify branches= as well. Finally, trunk= can also be added. All these special arguments will be passed to \"git svn\" in order, and their values must be relative paths to the svn repo root dir. Here’s an example of a complex git-svn _Repo_ URL: http://svn.code.sf.net/p/project/code/svn;trunk=trunk;tags=tags;branches=branches"
-msgstr ""
+msgstr "L'option git-svn connecte à un dépôt SVN et vous spécifiez l'URL de la même façon, mais git est utilisé en backend. Ceci est préférable pour des raisons de performance, mais aussi car une copie locale de toute l'historique est  disponible dans le cas ou un dépôt avec le code source original disparait. (Ça arrive !). Pour utiliser Tags en tant que _UpdateCheckMode_ pour ce type de VCS, l'URL doit avoir l'ensemble d'arguments spécial tags=. De même, si vous voulez utiliser le schéma RepoManifest/branche, vous voudriez spécifier branches= aussi. Finalement, trunk= peut aussi être ajouté. Tous ces arguments spéciaux seront passés au « git svn » en ordre et leurs valeurs doivent être des chemins relatives au dossier racine du dépôt svn. Voici un exmple d'un URL complexe de _Repo_ git-svn : http ://svn.code.sf.net/p/project/code/svn ;trunk=trunk ;tags=tags ;branches=branches"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 msgid "If the _RepoType_ is `srclib`, then you must specify the name of the according srclib .txt file. For example if `scrlibs/FooBar.txt` exist and you want to use this srclib, then you have to set _Repo_ to `FooBar`."
-msgstr ""
+msgstr "Si le _RepoType_ est `srclib`, vous devez alors spécifier le nom du fichier .txt lui correspondant. Par exemple, si `scrlibs/FooBar.txt` existe et vous voulez utiliser ce srclib, vous devez alors régler _Repo_ à `FooBar`."
 
 #. type: Title ###
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid "_Binaries_<a name=\"Binaries\"></a>"
-msgstr ""
+msgstr "_Binaries_ (Fichiers binaires)<a name=\"Binaries\"></a>"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 msgid "The location of binaries used in verification process."
-msgstr ""
+msgstr "L'emplacement des fichiers binaires utilisés dans le procédé de vérification."
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 msgid "If specified, F-Droid will verify the output APK file of a build against the one specified. You can use %v and %c to point to the version name and version code of the current build. To verify the F-Droid client itself you could use: `Binaries: https://f-droid.org/repo/org.fdroid.fdroid_%c.apk`"
-msgstr ""
+msgstr "­Si spécifié, F-Droid vérifiera les données de sortie d'un fichier APK d'une compilation contre celui spécifié, Vous pouvez utiliser %v et %c pour remplacer le nom de version et le code de version. Pour verifier le client F-Droid lui-même vous pouvez utiliser : `Binaries : https ://f-droid.org/repo/org.fdroid.fdroid_%c.apk`"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 msgid "F-Droid will use upstream binaries if the verification succeeded."
-msgstr ""
+msgstr "F-Droid utilisera les fichiers binaires d'en amont si la vérification réussit."
 
 #. type: Title ###
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid "_Builds_<a name=\"Builds\"></a>"
-msgstr ""
+msgstr "_Builds_ (Compilations)<a name=\"Builds\"></a>"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 msgid "Any number of sub-entries can be present, each specifying a version to automatically build from source.  For example:"
-msgstr ""
+msgstr "N'importe quel nombre de sous-entrées peuvent être présentes, chacun specifiant une version à compiler automatiquement à partir du code source. Par exemple :"
 
 #. type: Fenced code block
 #: _docs/Build_Metadata_Reference.md
@@ -2551,25 +2590,25 @@ msgstr ""
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid "`versionName: xxx`<a name=\"build_versionName\"></a>\n"
-msgstr ""
+msgstr "`versionName : xxx` (Nom de version)<a name=\"build_versionName\"></a>\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid "`versionCode: yyy`<a name=\"build_versionCode\"></a>\n"
-msgstr ""
+msgstr "`versionCode : yyy` (code de version)<a name=\"build_versionCode\"></a>\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid ":   Specifies to build version xxx, which has a version code of yyy.\n"
-msgstr ""
+msgstr ":   Specifie à la version de compilation xxx, qui a un code de version yyy.\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid "`commit: xxx`<a name=\"build_commit\"></a>\n"
-msgstr ""
+msgstr "`commit: xxx`<a name=\"build_commit\"></a>\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -2578,17 +2617,19 @@ msgid ""
 ":   The _commit_ parameter specifies the tag, commit or revision number\n"
 "    from which to build it in the source repository.\n"
 msgstr ""
+"­:   Le paramètre _commit_ spécifie le tag, l'archivage ou le nombre de révision\n"
+"    duquel on peut le compiler dans le dépôt de code source.\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 msgid "In addition to the three, always required, parameters described above, further parameters can be added (in `name: value` format) to apply further configuration to the build. These are (roughly in order of application):"
-msgstr ""
+msgstr "En plus des trois paramètres obligatoires décrits au-dessus, plus de paramètres peuvent être ajoutés (en format `nom : valeur`) pour appliquer plus de configuration à la compilation. Ceux-ci sont (à peu près en ordre d'application) :"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid "`disable: <message>`<a name=\"build_disable\"></a>\n"
-msgstr ""
+msgstr "`disable: <message>`<a name=\"build_disable\"></a>\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -2598,6 +2639,9 @@ msgid ""
 "    compatibility, this can also be achieved by starting the commit ID\n"
 "    with ’!’)\n"
 msgstr ""
+":   Désactive cette compilation, en donnant une raison pourquoi. (pour la compatibilité\n"
+"    vers l'arrière, ceci peut aussi être fait en commenceant l'identifiant d'archivage\n"
+"    avec ’!’)\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -2610,12 +2654,18 @@ msgid ""
 "    disabling causes it to be deleted once `fdroid update` is run; this\n"
 "    is the procedure if ever a version has to be replaced.\n"
 msgstr ""
+"    L'utilité de cette fonction est de permettre des publications non-compilables (p. ex.\n"
+"    la source n'est pas publiée) d'être marquées, pour que les scriptes ne\n"
+"    génèrent pas des messages répétés à propos d'eux. (Et aussi pour enregistrer\n"
+"    l'information pour la revue plus tard). Si un APK a déjà été compilé,\n"
+"    le désactiver fait qu'il est supprimé quand `fdroid update` est exécuté ; cela\n"
+"    est la procédure si jamais une version doit être remplacée.\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid "`subdir: <path>`<a name=\"build_subdir\"></a>\n"
-msgstr ""
+msgstr "`subdir: <chemin>`<a name=\"build_subdir\"></a>\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -2624,12 +2674,14 @@ msgid ""
 ":   Specifies to build from a subdirectory of the checked out source\n"
 "    code. Normally this directory is changed to before building,\n"
 msgstr ""
+":   Spécifie qu'on doit compiler d'un sous-dossier du code\n"
+"    source. Normalement, ce dossier est changer à avant la compilation,\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid "`submodules: true`<a name=\"build_submodules\"></a>\n"
-msgstr ""
+msgstr "`submodules: true`<a name=\"build_submodules\"></a>\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -2640,12 +2692,16 @@ msgid ""
 "    source is cloned. Submodules are reset and cleaned like the main app\n"
 "    repository itself before each build.\n"
 msgstr ""
+":   Utiliser seulement si le projet (git seulement) a des sous-modules - cause\n"
+"    l'exécution de `git submodule update --init --recursive`  après le\n"
+"    clonage du code source. Les sous-modules sont réinitialisés et nettoyés comme le dépôt\n"
+"    d'applications principal lui-même avant chaque compilation.\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid "`sudo: xxxx`<a name=\"build_sudo\"></a>\n"
-msgstr ""
+msgstr "`sudo: xxxx`<a name=\"build_sudo\"></a>\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -2659,12 +2715,19 @@ msgid ""
 "    need very specific things that are not appropriate to install for\n"
 "    all builds, or for things that would conflict with other builds.\n"
 msgstr ""
+":   Spécifie un scripte qui est executé avec `sudo bash -x -c \"xxxx\"` dans le\n"
+"    l'invité de VM buildserver. Ce scripte est executé avec les privilèges de racine,\n"
+"    mais l'état sera réinitialisé après chaque compilation. La vaste majorité\n"
+"    d'applications est compilé avec l'environnement de base standard Debian/stable. Ceci\n"
+"    est utile pour configuret le buildserver pour les compilations complexes qui\n"
+"    ont besoin de choses très spécifiques qui ne sont pas appropriés à installer pour\n"
+"    toutes les compilations, ou qui auront un conflit avec d'autres compilations.\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid "`timeout: <seconds>`<a name=\"build_timeout\"></a>\n"
-msgstr ""
+msgstr "`timeout: <secondes>`<a name=\"build_timeout\"></a>\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -2674,6 +2737,9 @@ msgid ""
 "    buildserver VM is forcefully terminated.  The default is 7200\n"
 "    (2 hours); 0 means no limit.\n"
 msgstr ""
+":   Limite de temps pour cette compilation (en secondes). Après ce temps,\n"
+"    la VM buildserver est arrêté par force. Le defaut est de 7200 secondes\n"
+"    (2 heures) ; 0 signifie aucune limite.\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -2682,12 +2748,14 @@ msgid ""
 "    Limitation is applied only in server mode, i.e. when `fdroid build`\n"
 "    is invoked with the `--server` option.\n"
 msgstr ""
+"    Limitation est appliqué seulement en mode serveur, p. ex. quand `fdroid build`\n"
+"    est exécuté avec l'option `--server`.\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid "`init: xxxx`<a name=\"build_init\"></a>\n"
-msgstr ""
+msgstr "`init: xxxx`<a name=\"build_init\"></a>\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -2696,6 +2764,8 @@ msgid ""
 ":   Like ’prebuild’, but runs on the source code BEFORE any other\n"
 "    processing takes place.\n"
 msgstr ""
+":   Comme ’prebuild’, mais ça exécute sur le code source AVANT le déroulement de n'importe\n"
+"    quel autre traitement.\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -2707,12 +2777,17 @@ msgid ""
 "    per-build variables are available likewise: \\$\\$VERSION\\$\\$,\n"
 "    \\$\\$VERCODE\\$\\$ and \\$\\$COMMIT\\$\\$.\n"
 msgstr ""
+"    Vous pouvez utiliser \\$\\$SDK\\$\\$, \\$\\$NDK\\$\\$ et \\$\\$MVN3\\$\\$ pour\n"
+"    substitutuer les chemins aux dossiers du SDK et NDK Android et l'exécutable\n"
+"    maven 3 respectivement Les variables par compilation\n"
+"    sont disponibles de cette façon : \\$\\$VERSION\\$\\$,\n"
+"    \\$\\$VERCODE\\$\\$ et \\$\\$COMMIT\\$\\$.\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid "`oldsdkloc: true`<a name=\"build_oldsdkloc\"></a>\n"
-msgstr ""
+msgstr "`oldsdkloc: true`<a name=\"build_oldsdkloc\"></a>\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -2724,12 +2799,17 @@ msgid ""
 "    lines of: \"com.android.ant.SetupTask cannot be found\" when trying to\n"
 "    build, then try enabling this option.\n"
 msgstr ""
+":   L'emplacement du SDK dans le dépôt est en un vieil format, ou build.xml\n"
+"    s'attend à cela. Le « nouveau » format est sdk.dir tandis que le TRÈS VIEUX\n"
+"    format est sdk-location. Typiquement, si vous avez un message qui ressemble\n"
+"    à : \"com.android.ant.SetupTask cannot be found\" quand vous essayez de\n"
+"    compiler, activez cette option.\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid "`target: <target>`<a name=\"build_target\"></a>\n"
-msgstr ""
+msgstr "`target: <cible>`<a name=\"build_target\"></a>\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -2742,6 +2822,12 @@ msgid ""
 "    the target SDK in the AndroidManifest.xml, which determines the\n"
 "    level of features that can be included in the build.\n"
 msgstr ""
+":   Spécifie un SDK cible particulier de compilation, ce qui annule la\n"
+"    valeur défininie dans le code source d'origine. Ceci a des effets différents\n"
+"    dépendant de quelle système de compilation est utilisée - cette option affecte en ce moment\n"
+"    les projets Ant, Maven et Gradle. Notez que cela ne change pas\n"
+"    le SDK cible dans AndroidManifest.xml, ce qui détermine le\n"
+"    niveau des fonctions qui peuvent être incluses dans la compilation.\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -2753,12 +2839,17 @@ msgid ""
 "    android file or doesn’t already exist, but not a good idea if it’s\n"
 "    heavily customised.\n"
 msgstr ""
+"    Dans le cas d'un projet Ant, il modifie _project.properties_ de\n"
+"    l'application et possiblement les sous-projets. Ceci causera probablement\n"
+"    la réécriture complete de _build.xml_, ce qui est correct si c'est un fichier Android « standard »\n"
+"    ou si elle n'existe pas, mais ce n'est pas une bonne idée si c'est\n"
+"    personalisé en profondeur.\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid "`androidupdate: <auto/dirs>`<a name=\"build_androidupdate\"></a>\n"
-msgstr ""
+msgstr "`androidupdate: <auto/dirs>`<a name=\"build_androidupdate\"></a>\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -2769,6 +2860,10 @@ msgid ""
 "    update=no bypasses that. Note that this is useless in builds that\n"
 "    don’t use Ant.\n"
 msgstr ""
+":   Par défaut, ’android update’ est utilisé dans les compilations Ant pour générer ou\n"
+"    mettre à jour le projet et tous les projets référencés. Spécifier\n"
+"    update=no annule cela. Notez que cela n'est pas utile dans les compilations qui\n"
+"    n'utilisent pas Ant.\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -2777,6 +2872,8 @@ msgid ""
 "    Default value is ’`auto`’, which recursively uses the paths in\n"
 "    _project.properties_ to find all the subprojects to update.\n"
 msgstr ""
+"    La valeur par défaut est ’`auto`’, qui utilise récursivement les chemins dans\n"
+"    _project.properties_ pour trouver tous les sous-projets à mettre à jour.\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -2785,12 +2882,14 @@ msgid ""
 "    Otherwise, the value can be a comma-separated list of directories in\n"
 "    which to run ’android update’ relative to the application directory.\n"
 msgstr ""
+"    Sinon, la valeur peut être une liste séparée par des virgules de dossiers dans\n"
+"    lequel on exécute 'android update' relativement au dossier d'application.\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid "`encoding: xxxx`<a name=\"build_encoding\"></a>\n"
-msgstr ""
+msgstr "`encoding: xxxx`<a name=\"build_encoding\"></a>\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -2802,12 +2901,17 @@ msgid ""
 "    source files with this encoding. If you receive warnings during the\n"
 "    compile about character encodings, you probably need this.\n"
 msgstr ""
+":   Ajoute une propriété java.encoding à local.properties avec la\n"
+"    valeur donnée. Généralement la valeur sera 'utf-8'. Ceci est vu\n"
+"    par les règles ant du SDK, puis ça force le compilateur Java à interpréter\n"
+"    les fichiers de code source avec cet encodage. Si vous avez des avertissement lors de la\n"
+"    compilation à propos des encodages de caractères, vous avez probablement besoin de cela.\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid "`forceversion: true`<a name=\"build_forceversion\"></a>\n"
-msgstr ""
+msgstr "`forceversion: true`<a name=\"build_forceversion\"></a>\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -2816,6 +2920,8 @@ msgid ""
 ":   If specified, the package version in _AndroidManifest.xml_ is replaced\n"
 "    with the version name for the build as specified in the metadata.\n"
 msgstr ""
+":   Si spécifié, la version de paquet dans _AndroidManifest.xml_ est remplacé\n"
+"    avec le nom de version pour la compilation comme spécifié dans les métadonnées.\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -2827,12 +2933,17 @@ msgid ""
 "    apparent which architecture or platform the APK is designed to\n"
 "    run on.\n"
 msgstr ""
+"    Ceci est utile pour les cas où un dépôt d'en amont ne le met pas à jour pour\n"
+"    un tag spécifique ; pour compiler une révision quelconque ; pour rendre apparent\n"
+"    que la version diffère significativement d'en amont ; ou pour rendre\n"
+"    apparent quelle architecture ou platforme sur lequel l'APK est fait pour\n"
+"    exécuter.\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid "`forcevercode: true`<a name=\"build_forcevercode\"></a>\n"
-msgstr ""
+msgstr "`forcevercode: true`<a name=\"build_forcevercode\"></a>\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -2841,12 +2952,14 @@ msgid ""
 ":   If specified, the package version code in the _AndroidManifest.xml_ is\n"
 "    replaced with the version code for the build. See also forceversion.\n"
 msgstr ""
+":   Si spécifié, le code de version de paquet dans _AndroidManifest.xml_ est\n"
+"    remplacé avec le code de version pour la compilation. Voir aussi forceversion.\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid "`rm: <path1>[,<path2>,...]`<a name=\"build_rm\"></a>\n"
-msgstr ""
+msgstr "`rm : <chemin1>[,<chemin2>,...]`<a name=\"build_rm\"></a>\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -2858,6 +2971,11 @@ msgid ""
 "    out from the source respository - not necessarily the directory that\n"
 "    contains _AndroidManifest.xml_.\n"
 msgstr ""
+":   Spécifie les chemins relatives des fichiers ou dossiers à supprimer\n"
+"    avant la finition de la compilation. Les chemins sont relatives à la base du\n"
+"    dossier de compilation - p. ex. la racine de la structure de dossier pris\n"
+"    du dépôt d'origine - pas nécessairement le dossier qui\n"
+"    contient _AndroidManifest.xml_.\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -2866,12 +2984,14 @@ msgid ""
 "    Multiple files/directories can be specified by separating them with\n"
 "    ’,’. Directories will be recursively deleted.\n"
 msgstr ""
+"    Plusieurs fichiers/dossiers peuvent être spécifiés en les séparant avec\n"
+"    ’,’. Les dossiers seront supprimés récursivement.\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid "`extlibs: <lib1>[,<lib2>,...]`<a name=\"build_extlibs\"></a>\n"
-msgstr ""
+msgstr "`extlibs: <lib1>[,<lib2>,...]`<a name=\"build_extlibs\"></a>\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -2881,12 +3001,15 @@ msgid ""
 "    `build/extlib` library, which will be placed in the `libs` directory\n"
 "    of the project.\n"
 msgstr ""
+":   Liste séparée avec des virgules de bibliothèques extérieures (fichiers jar) du\n"
+"    bibliothèque `build/extlib`, qui sera placé dans le dossier `libs`\n"
+"    du projet.\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid "`srclibs: [n:]a@r,[n:]b@r1,...`<a name=\"build_srclibs\"></a>\n"
-msgstr ""
+msgstr "`srclibs : [n :]a@r,[n :]b@r1,...`<a name=\"build_srclibs\"></a>\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -2897,6 +3020,10 @@ msgid ""
 "    library name and rev is the revision or tag to use in the respective\n"
 "    source control.\n"
 msgstr ""
+":   Liste séparée de virgules de bibliothèques de source ou de projets Android. Chaque\n"
+"    item est sous la forme nom@rév où nom est la source de bibliothèque\n"
+"    prédéfinie et rév est la révision ou tag à utiliser dans le système de contrôle\n"
+"    de source respective.\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -2909,6 +3036,12 @@ msgid ""
 "    do the equivalent of the legacy practice\n"
 "    `prebuild=echo \"android.library.reference.1=$$somelib$$\" >> project.properties`.\n"
 msgstr ""
+"    Pour les projets Ant, vous pouvez facultativement ajouter un nombre avec un deux-points au\n"
+"    début d'un item srclib pour le placer automatiquement dans\n"
+"    _project.properties_ en tant qu'un bibliothèque sous le numéro spécifié. Par\n"
+"    exemple, si vous spécifiez `1:libquelconque@1.0`, F-Droid va automatiquement\n"
+"    faire l'équivalent de l'ancien procédé\n"
+"    `prebuild=echo \"android.library.reference.1=$$libquelconque$$\" >> project.properties`.\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -2926,6 +3059,17 @@ msgid ""
 "    relative path to the library directory, but it could need tweaking\n"
 "    if you’ve changed into another directory.\n"
 msgstr ""
+"    Chaque srclib a un fichier de métadonnées sous srclibs/ dans le dossier\n"
+"    de dépôt et le code source est entreposé dans build/srclib/.\n"
+"\t_RepoType_ et _Repo_ sont spécifiés dans la même façon que\n"
+"    pour les applications ; Subdir : peut être une liste séparée de virgules, pour quand\n"
+"    les dossiers sont renommés d'en amont ; Update Projet : met à jour les\n"
+"    projets dans le dossier de travail et un niveau dessous ; Prepare : peut être\n"
+"    utilisé pour n'importe quel type de préparation : en particulier si vous avez besoin de\n"
+"    mettre à jour le projet avec une cible particulière. Vous pouvez alors utiliser\n"
+"    \\$\\$name\\$\\$ dans la commande init/prebuild/build pour substituer le\n"
+"    chemin relatif au dossier de bibliothèque, mais ça peut prendre de l'ajustement\n"
+"    si vous avez changé en un autre dossier.\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
