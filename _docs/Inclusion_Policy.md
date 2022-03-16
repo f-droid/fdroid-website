@@ -10,7 +10,7 @@ license. Every effort is made to verify that this is actually the
 case, both by visual inspection of the source, and by building the
 application from the published source.  To determine which licenses
 are FLOSS, We defer to widely trusted organizations that have a proven
-track record.  Specifically, we aknowledge these standards:
+track record.  Specifically, we acknowledge these standards:
 [DFSG](https://wiki.debian.org/DFSGLicenses),
 [FSF](https://www.fsf.org/licensing),
 [GNU](https://www.gnu.org/licenses/license-list.html), and
@@ -46,7 +46,7 @@ Additionally:
 -   The software should use its own unique Android
     "[Application ID](https://developer.android.com/studio/build/configure-app-module)"
     based on a domain name under the developer's control.  For example, if the
-    app is in a group called "foo" on <gitlab.com>, then the domain name could
+    app is in a group called "foo" on [gitlab.com](https://gitlab.com), then the domain name could
     be `io.gitlab.foo`.  It should not be based on someone's domain name,
     (e.g. `com.google.foo`).  Maven Central OSSRH provides [good
     guidance](https://central.sonatype.org/publish/requirements/coordinates/).
