@@ -31,9 +31,10 @@ Some common reasons:
 
 -   It's not [Free Software](https://www.gnu.org/philosophy/free-sw.html);
 -   We're trying to include it, but there's a problem with it that we're
-    trying to resolve. Check the Submissions Held section of the Forum;
--   It's on our radar, but we haven't got to it yet.
-    [Search](https://f-droid.org/search) the Forum;
+    trying to resolve. Check the open [merge
+    requests](https://gitlab.com/fdroid/fdroiddata/-/merge_requests);
+-   It's on our radar, but we haven't got to it yet. Search the
+    [issues](https://gitlab.com/fdroid/fdroiddata/-/issues);
 -   We don't know about it. See the [Inclusion Policy](../Inclusion_Policy).
 
 Otherwise if you think that an app respects the Inclusion Policy and
@@ -45,9 +46,11 @@ first to do it: See the [Inclusion How-To](../Inclusion_How-To).
 
 There are several ways of keeping up with new apps that are added:
 
--   In the sidebar on the web site, the 10 most recent apps are shown
--   In the client, the "What's New" category shows all apps added in the
-    last 14 days (the number can be changed in settings)
+-   The website sidebar shows the three most recent updates,
+    as well as the three most recent additions
+-   In the client, the "Latest" tab shows all the apps updated
+    during the last two months that have good [descriptions and
+    graphics](../All_About_Descriptions_Graphics_and_Screenshots)
 -   If you don't mind a detailed and potentially noisy stream of
     information that also includes updates and other changes, you could
     subscribe to [this feed](https://gitlab.com/fdroid/fdroiddata/commits/master.atom)
