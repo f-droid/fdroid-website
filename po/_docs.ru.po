@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
-"POT-Creation-Date: 2022-02-28 10:31+0100\n"
+"POT-Creation-Date: 2022-03-16 12:17+0100\n"
 "PO-Revision-Date: 2022-03-03 15:42+0000\n"
 "Last-Translator: Viktor <xasertop@gmail.com>\n"
 "Language-Team: Russian <https://hosted.weblate.org/projects/f-droid/website-docs/ru/>\n"
@@ -5852,12 +5852,16 @@ msgstr "Это не [Свободное программное обеспече�
 
 #. type: Bullet: '-   '
 #: _docs/FAQ_-_General.md
-msgid "We're trying to include it, but there's a problem with it that we're trying to resolve. Check the Submissions Held section of the Forum;"
+#, fuzzy
+#| msgid "We're trying to include it, but there's a problem with it that we're trying to resolve. Check the Submissions Held section of the Forum;"
+msgid "We're trying to include it, but there's a problem with it that we're trying to resolve. Check the open [merge requests](https://gitlab.com/fdroid/fdroiddata/-/merge_requests);"
 msgstr "Мы пытаемся включить его, но с ним возникла проблема, которую мы пытаемся решить. Проверьте раздел форума \"Принятые заявки\";"
 
 #. type: Bullet: '-   '
 #: _docs/FAQ_-_General.md
-msgid "It's on our radar, but we haven't got to it yet.  [Search](https://f-droid.org/search) the Forum;"
+#, fuzzy
+#| msgid "It's on our radar, but we haven't got to it yet.  [Search](https://f-droid.org/search) the Forum;"
+msgid "It's on our radar, but we haven't got to it yet. Search the [issues](https://gitlab.com/fdroid/fdroiddata/-/issues);"
 msgstr "Он у нас на радаре, но мы еще не добрались до него.  [Поиск](https://f-droid.org/search) Форум;"
 
 #. type: Bullet: '-   '
@@ -5883,13 +5887,13 @@ msgstr "Существует несколько способов следить 
 
 #. type: Bullet: '-   '
 #: _docs/FAQ_-_General.md
-msgid "In the sidebar on the web site, the 10 most recent apps are shown"
-msgstr "В боковой панели на веб-сайте отображаются 10 последних приложений"
+msgid "The website sidebar shows the three most recent updates, as well as the three most recent additions"
+msgstr ""
 
 #. type: Bullet: '-   '
 #: _docs/FAQ_-_General.md
-msgid "In the client, the \"What's New\" category shows all apps added in the last 14 days (the number can be changed in settings)"
-msgstr "В клиенте в категории \"Что нового\" отображаются все приложения, добавленные за последние 14 дней (это число можно изменить в настройках)"
+msgid "In the client, the \"Latest\" tab shows all the apps updated during the last two months that have good [descriptions and graphics](../All_About_Descriptions_Graphics_and_Screenshots)"
+msgstr ""
 
 #. type: Bullet: '-   '
 #: _docs/FAQ_-_General.md
@@ -6335,8 +6339,8 @@ msgstr "Клиентское приложение доступно на мног
 
 #. type: Plain text
 #: _docs/How_to_Help.md
-msgid "The web site, this wiki , and app descriptions are not covered yet, but will be included in the same system at a later date."
-msgstr "Веб-сайт, эта вики и описания приложений пока не охвачены, но будут включены в эту систему позднее."
+msgid "The web site and some app descriptions (if the original developer does not supply their own description) can also be translated through Weblate."
+msgstr ""
 
 #. type: Plain text
 #: _docs/How_to_Help.md
@@ -7683,8 +7687,9 @@ msgstr ""
 "* Сообщить, что все обновления прошли успешно в\n"
 "[журнал обслуживания](https://forum.f-droid.org/t/maintenance-log/775)\n"
 
-#. type: Title ###
+#. type: Title ##
 #: _docs/Maintaining_the_Forum.md
+#: _docs/Submitting_to_F-Droid_Quick_Start_Guide.md
 #, no-wrap
 msgid "Troubleshooting"
 msgstr "Устранение неполадок"
@@ -7780,7 +7785,6 @@ msgstr "Установите Docker"
 
 #. type: Plain text
 #: _docs/Maintaining_the_Forum.md
-#: _docs/Submitting_to_F-Droid_Quick_Start_Guide.md
 msgid "References:"
 msgstr "Ссылки:"
 
@@ -9254,7 +9258,7 @@ msgid "$ rsync -v --list-only ftp.fau.de::fdroid\n"
 msgstr ""
 
 #. type: Title ####
-#: _docs/Running_a_Mirror.md _docs/Submitting_to_F-Droid_Quick_Start_Guide.md
+#: _docs/Running_a_Mirror.md
 #, no-wrap
 msgid "Setup"
 msgstr "Настройка"
@@ -10107,391 +10111,277 @@ msgstr ""
 msgid "Submitting to F-Droid Quick Start Guide"
 msgstr "Краткое руководство пользователя F-Droid"
 
-#. type: Title ###
-#: _docs/Submitting_to_F-Droid_Quick_Start_Guide.md
-#, no-wrap
-msgid "Submitting to F-Droid: Quick Start Guide"
-msgstr "Подача материалов в F-Droid: Краткое руководство пользователя"
-
-#. type: Plain text
-#: _docs/Submitting_to_F-Droid_Quick_Start_Guide.md
-msgid "by Andy Balaam, original at [artificialworlds.net](http://www.artificialworlds.net/blog/2017/01/17/submitting-a-package-to-f-droid/)"
-msgstr "автор Энди Балаам, оригинал на [artificialworlds.net](http://www.artificialworlds.net/blog/2017/01/17/submitting-a-package-to-f-droid/)"
-
-#. type: Plain text
-#: _docs/Submitting_to_F-Droid_Quick_Start_Guide.md
-msgid "Here's what I needed to get a dev environment for [F-Droid](https://f-droid.org/) up and running on Ubuntu 16.10, using F-Droid server version 0.7.0 (commit ID 8147f9235), so that I could submit a package for inclusion in the F-Droid repository."
-msgstr "Вот что мне понадобилось, чтобы создать среду разработки для [F-Droid](https://f-droid.org/) на Ubuntu 16.10, используя сервер F-Droid версии 0.7.0 (commit ID 8147f9235), чтобы я мог отправить пакет для включения в репозиторий F-Droid."
-
 #. type: Plain text
 #: _docs/Submitting_to_F-Droid_Quick_Start_Guide.md
 msgid "Doing this is apparently the best way to get your own package into the repository, since you can provide a direct merge request for the metadata about your package, making it easy for the maintainers."
 msgstr "По-видимому, это лучший способ внести свой пакет в репозиторий, поскольку вы можете предоставить прямой запрос на слияние метаданных о вашем пакете, что облегчает работу сопровождающих."
 
-#. type: Bullet: '* '
+#. type: Plain text
 #: _docs/Submitting_to_F-Droid_Quick_Start_Guide.md
-msgid "[F-Droid documentation](https://f-droid.org/docs)"
-msgstr "[документация по F-Droid](https://f-droid.org/docs)"
-
-#. type: Bullet: '* '
-#: _docs/Submitting_to_F-Droid_Quick_Start_Guide.md
-msgid "[F-Droid's CONTRIBUTING.md](https://gitlab.com/fdroid/fdroiddata/blob/master/CONTRIBUTING.md)"
+msgid "To understand the overview of the process, read the *Proposal by Metadata Merge Request* section of the [Inclusion How-To](../Inclusion_How-To/)."
 msgstr ""
 
-#. type: Bullet: '* '
-#: _docs/Submitting_to_F-Droid_Quick_Start_Guide.md
-msgid "[F-Droid Quickstart](https://gitlab.com/fdroid/fdroiddata/blob/master/README.md#quickstart)"
-msgstr "[F-Droid быстрый старт](https://gitlab.com/fdroid/fdroiddata/blob/master/README.md#quickstart)"
-
-#. type: Bullet: '* '
-#: _docs/Submitting_to_F-Droid_Quick_Start_Guide.md
-msgid "[Contribute to F-Droid](https://f-droid.org/contribute/)"
-msgstr "[Внести вклад в F-Droid](https://f-droid.org/contribute/)"
-
-#. type: Title ####
-#: _docs/Submitting_to_F-Droid_Quick_Start_Guide.md
-#, no-wrap
-msgid "Storage requirements"
-msgstr "Требования к хранилищу"
-
-#. type: Plain text
-#: _docs/Submitting_to_F-Droid_Quick_Start_Guide.md
-msgid "Building the F-Droid build server requires a fair amount of storage space."
-msgstr "Для создания сервера сборки F-Droid требуется достаточно много места для хранения данных."
-
-#. type: Plain text
-#: _docs/Submitting_to_F-Droid_Quick_Start_Guide.md
-msgid "As of April 2020, if you have 150 GB free in your `$HOME` (`~`), then you should be good to go (this includes cloning the F-Droid git repositories there as well)."
-msgstr "По состоянию на апрель 2020 года, если у вас есть 150 ГБ свободного места в `$HOME` (`~`), то вы можете приступать (это включает клонирование туда git-репозиториев F-Droid)."
-
-#. type: Title #####
-#: _docs/Submitting_to_F-Droid_Quick_Start_Guide.md
-#, no-wrap
-msgid "Details"
-msgstr "Подробности"
-
-#. type: Plain text
-#: _docs/Submitting_to_F-Droid_Quick_Start_Guide.md
-msgid "During the build, approximately 124 GB will be used."
-msgstr "Во время сборки будет использовано около 124 ГБ."
-
-#. type: Bullet: '* '
-#: _docs/Submitting_to_F-Droid_Quick_Start_Guide.md
-msgid "20 GB where the `fdroidserver` git repository is cloned"
-msgstr "20 ГБ, куда клонируется git-репозиторий `fdroidserver`"
-
-#. type: Bullet: '* '
-#: _docs/Submitting_to_F-Droid_Quick_Start_Guide.md
-msgid "16 GB in `~/.cache/fdroidserver`, for caching several versions of Android SDK, NDK, Gradle etc"
-msgstr "16 ГБ в `~/.cache/fdroidserver`, для кэширования нескольких версий Android SDK, NDK, Gradle и так далее"
-
-#. type: Bullet: '* '
-#: _docs/Submitting_to_F-Droid_Quick_Start_Guide.md
-msgid "40 GB in `~/.vagrant.d` while exporting the final VM image"
-msgstr "40 ГБ в `~/.vagrant.d` при экспорте окончательного образа ВМ"
-
-#. type: Bullet: '* '
-#: _docs/Submitting_to_F-Droid_Quick_Start_Guide.md
-msgid "48 GB in `~/VirtualBox VM`, for the VM storage (VirtualBox default location)"
-msgstr "48 ГБ в `~/VirtualBox VM`, для хранения виртуальной машины (расположение VirtualBox по умолчанию)"
-
-#. type: Plain text
-#: _docs/Submitting_to_F-Droid_Quick_Start_Guide.md
-msgid "After building the server, 85 GB are still in use. When running the server to build an actual Android APK, at least 48 GB more will be used for the build VM instance. And then of course even more for the data generated by the builds.  The virtual size of the build server is over 930 GB, so that would be its maximum."
-msgstr "После создания сервера все еще используется 85 ГБ. При запуске сервера для сборки реального Android APK еще как минимум 48 ГБ будет использоваться для экземпляра виртуальной машины сборки. И, конечно, еще больше для данных, генерируемых сборками.  Виртуальный размер сервера сборки составляет более 930 ГБ, так что это будет его максимум."
-
-#. type: Plain text
-#: _docs/Submitting_to_F-Droid_Quick_Start_Guide.md
-msgid "Before you start, manually install the Android SDK at ~/Android/Sdk/ - see [Download Android Studio](https://developer.android.com/studio/index.html#downloads).  I installed version 23.0.2, but you will probably have a later one and may need to adjust the version number below."
-msgstr "Перед началом работы вручную установите Android SDK по адресу ~/Android/Sdk/ - смотрите [Download Android Studio](https://developer.android.com/studio/index.html#downloads).  Я установил версию 23.0.2, но у вас, вероятно, будет более поздняя версия, и, возможно, потребуется скорректировать номер версии, указанный ниже."
-
-#. type: Plain text
-#: _docs/Submitting_to_F-Droid_Quick_Start_Guide.md
-msgid "Note: If you're only planning to contribute a package I'm fairly certain you don't need to install the Android SDK at all - you can just use the build server by running ./makebuildserver as I outline below."
-msgstr "Примечание: Если вы планируете внести только пакет, я уверен, что вам не нужно устанавливать Android SDK вообще - вы можете просто использовать сервер сборки, запустив ./makebuildserver, как я описал ниже."
-
-#. type: Plain text
-#: _docs/Submitting_to_F-Droid_Quick_Start_Guide.md
-msgid "Also before you start, if you want to contribute to the server project you should fork the F-Droid server project by going to [gitlab.com/fdroid/fdroidserver](https://gitlab.com/fdroid/fdroidserver) and clicking Fork.  When you've done that, the git clone command below will need to change to clone your own fork via SSH, instead of the HTTPS one cloning the main repo that is shown below.  Do the same for the [F-Droid data project](https://gitlab.com/fdroid/fdroiddata), which holds the information about the packages in F-Droid.  It's the data project where you will want to make changes if you are submitting a package."
-msgstr "Также перед началом работы, если вы хотите внести свой вклад в проект сервера, вам следует форкнуть проект сервера F-Droid, перейдя по адресу [gitlab.com/fdroid/fdroidserver](https://gitlab.com/fdroid/fdroidserver) и нажав кнопку Fork.  После этого команда git clone, приведенная ниже, должна быть изменена на клонирование вашего собственного форка через SSH, а не HTTPS для клонирования основного репозитория, как показано ниже.  Сделайте то же самое для [F-Droid data project](https://gitlab.com/fdroid/fdroiddata), в котором хранится информация о пакетах F-Droid.  Именно в проект данных вы захотите внести изменения, если будете представлять пакет."
-
-#. type: Plain text
-#: _docs/Submitting_to_F-Droid_Quick_Start_Guide.md
-msgid "Run these commands:"
-msgstr "Выполните эти команды:"
-
-#. type: Fenced code block (bash)
+#. type: Title ##
 #: _docs/Submitting_to_F-Droid_Quick_Start_Guide.md
 #, fuzzy, no-wrap
-#| msgid ""
-#| "# Prerequisites\n"
-#| "sudo apt-get install openjdk-8-jdk subversion git git-svn \\\n"
-#| "    mercurial bzr virtualbox ruby ruby-dev vagrant python3 python3-paramiko \\\n"
-#| "    python3-pil python3-pyasn1-modules python3-clint python3-vagrant\n"
-#| "vagrant plugin install vagrant-cachier\n"
-#| "ln -s ~/Android/Sdk/build-tools/23.0.2/aapt ~/Android/Sdk/platform-tools/\n"
-#| "\n"
-#| "# Get the code\n"
-#| "cd ~/code\n"
-#| "git clone https://gitlab.com/fdroid/fdroidserver.git\n"
-#| "git clone https://gitlab.com/fdroid/fdroiddata.git\n"
-#| "echo 'export PATH=\"~/code/fdroidserver:$PATH\"' >> ~/.profile\n"
-#| "source ~/.profile\n"
-#| "\n"
-#| "# Config\n"
-#| "cd fdroiddata\n"
-#| "cp ../fdroidserver/examples/config.yml ./\n"
-#| "chmod 0600 config.yml\n"
-#| "echo 'sdk_path: \"$HOME/Android/Sdk\"' >> config.yml\n"
-#| "\n"
-#| "# Set up Vagrant build box\n"
-#| "cd ../fdroidserver\n"
-#| "cp ./examples/makebuildserver.config.py ./\n"
-#| "./makebuildserver\n"
-#| "# Now wait several hours for this to finish\n"
-#| "\n"
-#| "# Build a package (the F-Droid client) just to check it works\n"
-#| "cd ../fdroiddata\n"
-#| "mkdir repo\n"
-#| "fdroid update --create-key\n"
-#| "fdroid readmeta  # Should give no output if it worked\n"
-#| "fdroid build --server org.fdroid.fdroid\n"
-msgid ""
-"# Prerequisites\n"
-"sudo apt-get install openjdk-8-jdk subversion git git-svn \\\n"
-"    mercurial bzr virtualbox ruby ruby-dev vagrant python3 python3-paramiko \\\n"
-"    python3-pil python3-pyasn1-modules python3-clint python3-vagrant \\\n"
-"    python3-git python3-qrcode python3-ruamel.yaml\n"
-"vagrant plugin install vagrant-cachier\n"
-"ln -s ~/Android/Sdk/build-tools/23.0.2/aapt ~/Android/Sdk/platform-tools/\n"
-"\n"
-"# Get the code\n"
-"cd ~/code\n"
-"git clone https://gitlab.com/fdroid/fdroidserver.git\n"
-"git clone https://gitlab.com/fdroid/fdroiddata.git\n"
-"echo 'export PATH=\"~/code/fdroidserver:$PATH\"' >> ~/.profile\n"
-"source ~/.profile\n"
-"\n"
-"# Config\n"
-"cd fdroiddata\n"
-"cp ../fdroidserver/examples/config.yml ./\n"
-"chmod 0600 config.yml\n"
-"echo 'sdk_path: \"$HOME/Android/Sdk\"' >> config.yml\n"
-"\n"
-"# Set up Vagrant build box\n"
-"cd ../fdroidserver\n"
-"cp ./examples/makebuildserver.config.py ./\n"
-"./makebuildserver\n"
-"# Now wait several hours for this to finish\n"
-"\n"
-"# Build a package (the F-Droid client) just to check it works\n"
-"cd ../fdroiddata\n"
-"mkdir repo\n"
-"fdroid update --create-key\n"
-"fdroid readmeta  # Should give no output if it worked\n"
-"fdroid build --server org.fdroid.fdroid\n"
-msgstr ""
-"# Предварительные условия\n"
-"sudo apt-get install openjdk-8-jdk subversion git git-svn \\\n"
-"    mercurial bzr virtualbox ruby ruby-dev vagrant python3 python3-paramiko \\\n"
-"    python3-pil python3-pyasn1-modules python3-clint python3-vagrant\n"
-"vagrant plugin install vagrant-cachier\n"
-"ln -s ~/Android/Sdk/build-tools/23.0.2/aapt ~/Android/Sdk/platform-tools/\n"
-"\n"
-"# Получить код\n"
-"cd ~/code\n"
-"git clone https://gitlab.com/fdroid/fdroidserver.git\n"
-"git clone https://gitlab.com/fdroid/fdroiddata.git\n"
-"echo 'export PATH=\"~/code/fdroidserver:$PATH\"' >> ~/.profile\n"
-"source ~/.profile\n"
-"\n"
-"# Конфигурация\n"
-"cd fdroiddata\n"
-"cp ../fdroidserver/examples/config.yml ./\n"
-"chmod 0600 config.yml\n"
-"echo 'sdk_path: \"$HOME/Android/Sdk\"' >> config.yml\n"
-"\n"
-"# Настройте блок сборки Vagrant\n"
-"cd ../fdroidserver\n"
-"cp ./examples/makebuildserver.config.py ./\n"
-"./makebuildserver\n"
-"# Теперь подождите несколько часов, пока все закончится\n"
-"\n"
-"# Соберите пакет (клиент F-Droid), чтобы проверить его работоспособность\n"
-"cd ../fdroiddata\n"
-"mkdir repo\n"
-"fdroid update --create-key\n"
-"fdroid readmeta # Не должно выдать никаких результатов, если все работает\n"
-"fdroid build --server org.fdroid.fdroid\n"
-
-#. type: Title ####
-#: _docs/Submitting_to_F-Droid_Quick_Start_Guide.md
-#, no-wrap
-msgid "Make your own package"
-msgstr "Создайте свой собственный пакет"
+#| msgid "Git stats"
+msgid "First steps"
+msgstr "Статистика Git"
 
 #. type: Plain text
 #: _docs/Submitting_to_F-Droid_Quick_Start_Guide.md
-msgid "Below I'm using my own package, Rabbit Escape, as an example.  Its Android code is inside rabbit-escape-ui-android/app, whereas many programs will just have it directly in a directory called \"app\"."
-msgstr "Ниже я использую в качестве примера свой собственный пакет Rabbit Escape.  Его код для Android находится внутри rabbit-escape-ui-android/app, тогда как во многих программах он будет находиться непосредственно в каталоге под названием \"app\"."
-
-#. type: Plain text
-#: _docs/Submitting_to_F-Droid_Quick_Start_Guide.md
-msgid "Rabbit Escape also builds non-Android-specific Java and other things during its build, so your package may be simpler."
-msgstr "Rabbit Escape также собирает не специфичные для Android Java и другие вещи во время сборки, поэтому ваш пакет может быть более простым."
-
-#. type: Fenced code block (bash)
-#: _docs/Submitting_to_F-Droid_Quick_Start_Guide.md
-#, no-wrap
-msgid ""
-"cd ../fdroiddata\n"
-"fdroid import --url https://github.com/andybalaam/rabbit-escape \\\n"
-"    --subdir rabbit-escape-ui-android/app\n"
+msgid "In the source of the application you want to include, find all the _AndroidManifest.xml_ and _build.gradle_ files, and write down in which subdir the most detailed of them happen to be."
 msgstr ""
 
 #. type: Plain text
 #: _docs/Submitting_to_F-Droid_Quick_Start_Guide.md
-msgid "Now edit the new file that was created - in my case it was called metadata/net.artificialworlds.rabbitescape.txt."
-msgstr "Теперь отредактируйте новый созданный файл - в моем случае он назывался metadata/net.artificialworlds.rabbitescape.txt."
+msgid "Register on [GitLab](https://gitlab.com/) and fork the [fdroiddata](https://gitlab.com/fdroid/fdroiddata) repository."
+msgstr ""
+
+#. type: Title ##
+#: _docs/Submitting_to_F-Droid_Quick_Start_Guide.md
+#, fuzzy, no-wrap
+#| msgid "App Metadata"
+msgid "Upstream metadata"
+msgstr "Метаданные приложения"
 
 #. type: Plain text
 #: _docs/Submitting_to_F-Droid_Quick_Start_Guide.md
-msgid "I set the following info:"
-msgstr "Я установил следующую информацию:"
+msgid "Each official release commit in the application's upstream Git repository should have a tag. For example, if its AndroidManifest contains `versionName: '1.0'`, the commit needs a `v1.0` tag. It is strongly encouraged to add metadata in the application's source repo, too:"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/Submitting_to_F-Droid_Quick_Start_Guide.md
+msgid "_metadata/en-US/short_description.txt_ (30-50 chars, no trailing dot)"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/Submitting_to_F-Droid_Quick_Start_Guide.md
+msgid "_metadata/en-US/full_description.txt_"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/Submitting_to_F-Droid_Quick_Start_Guide.md
+msgid "_metadata/en-US/images/icon.png_"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/Submitting_to_F-Droid_Quick_Start_Guide.md
+msgid "_metadata/en-US/images/phoneScreenshots/screenshot.png_"
+msgstr ""
+
+#. type: Plain text
+#: _docs/Submitting_to_F-Droid_Quick_Start_Guide.md
+msgid "If the AndroidManifest contains `versionCode: 123`, there should be a corresponding explanation of what's new in this version:"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/Submitting_to_F-Droid_Quick_Start_Guide.md
+msgid "_metadata/en-US/changelogs/123.txt_ (max 500 characters)"
+msgstr ""
+
+#. type: Plain text
+#: _docs/Submitting_to_F-Droid_Quick_Start_Guide.md
+msgid "Browse the [F-Droid client metadata](https://gitlab.com/fdroid/fdroidclient/-/tree/master/metadata/en-US)  directory to see a real-world example."
+msgstr ""
+
+#. type: Plain text
+#: _docs/Submitting_to_F-Droid_Quick_Start_Guide.md
+msgid "Other formats and locations of the [description, graphics, and screenshots](../All_About_Descriptions_Graphics_and_Screenshots/) are supported, too. For example, the _metadata/en-US_ directory can instead be _fastlane/metadata/android/en-US_."
+msgstr ""
+
+#. type: Plain text
+#: _docs/Submitting_to_F-Droid_Quick_Start_Guide.md
+msgid "Send the application's development team a merge request if the repository doesn't have those files, and open an issue if it has no version tags. Having this metadata in place lets it be under direct control of the developer, and their updates and future translations will be pulled automatically."
+msgstr ""
+
+#. type: Title ##
+#: _docs/Submitting_to_F-Droid_Quick_Start_Guide.md
+#, fuzzy, no-wrap
+#| msgid "The Physical Environment"
+msgid "Build environment"
+msgstr "Физическая среда"
+
+#. type: Plain text
+#: _docs/Submitting_to_F-Droid_Quick_Start_Guide.md
+msgid "On a laptop with Ubuntu 21.10 in February 2022, it took 2 GB of traffic and 5 GB of disk space to set up an F-Droid build environment."
+msgstr ""
+
+#. type: Plain text
+#: _docs/Submitting_to_F-Droid_Quick_Start_Guide.md
+#, fuzzy
+#| msgid "Storage requirements"
+msgid "Network requirements:"
+msgstr "Требования к хранилищу"
+
+#. type: Bullet: '* '
+#: _docs/Submitting_to_F-Droid_Quick_Start_Guide.md
+msgid "60 MB: shallow-clone _fdroiddata_ and _fdroidserver_"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/Submitting_to_F-Droid_Quick_Start_Guide.md
+#, fuzzy
+#| msgid "Install Docker"
+msgid "75 MB: install _docker.io_"
+msgstr "Установите Docker"
+
+#. type: Bullet: '* '
+#: _docs/Submitting_to_F-Droid_Quick_Start_Guide.md
+#, fuzzy
+#| msgid "Rebuilding the container"
+msgid "1000 MB: load the container"
+msgstr "Восстановление контейнера"
+
+#. type: Bullet: '* '
+#: _docs/Submitting_to_F-Droid_Quick_Start_Guide.md
+msgid "800 MB: build"
+msgstr ""
+
+#. type: Plain text
+#: _docs/Submitting_to_F-Droid_Quick_Start_Guide.md
+#, fuzzy
+#| msgid "Storage requirements"
+msgid "Storage requirements:"
+msgstr "Требования к хранилищу"
+
+#. type: Bullet: '* '
+#: _docs/Submitting_to_F-Droid_Quick_Start_Guide.md
+msgid "1000 MB: clone the repos and install _docker.io_"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/Submitting_to_F-Droid_Quick_Start_Guide.md
+msgid "4000 MB: load the container and build"
+msgstr ""
+
+#. type: Plain text
+#: _docs/Submitting_to_F-Droid_Quick_Start_Guide.md
+msgid "Download your fork, then create a new branch and a metadata file. For example, if the application's _build.gradle_ says `applicationId \"com.example\"`:"
+msgstr ""
+
+#. type: Fenced code block (sh)
+#: _docs/Submitting_to_F-Droid_Quick_Start_Guide.md
+#, no-wrap
+msgid ""
+"git clone --depth=1 https://gitlab.com/YOUR_ACCOUNT/fdroiddata ~/fdroiddata\n"
+"cd ~/fdroiddata\n"
+"git checkout -b com.example\n"
+"cp templates/app-full metadata/com.example.yml\n"
+msgstr ""
+
+#. type: Plain text
+#: _docs/Submitting_to_F-Droid_Quick_Start_Guide.md
+msgid "Fill _~/fdroiddata/metadata/com.example.yml_ according to the [build metadata reference](../Build_Metadata_Reference/). If you have convinced the application's development team to include the descriptions and use version tags in their repository as explained above, the file will be very concise:"
+msgstr ""
 
 #. type: Fenced code block (yaml)
 #: _docs/Submitting_to_F-Droid_Quick_Start_Guide.md
 #, no-wrap
 msgid ""
 "Categories:\n"
-" - Games\n"
-"License: GPL-2.0-or-later\n"
-"AuthorName: Andy Balaam and the Rabbit Escape developers\n"
-"AuthorEmail: rabbitescape@artificialworlds.net\n"
-"WebSite: http://artificialworlds.net/rabbit-escape\n"
-"SourceCode: https://github.com/andybalaam/rabbit-escape\n"
-"IssueTracker: https://github.com/andybalaam/rabbit-escape/issues\n"
-"\n"
-"AutoName: Rabbit Escape\n"
-"Summary: Lemmings-like puzzle/action game\n"
-"Description: |\n"
-" 140 levels of puzzling action!\n"
-" ... blah blah ...\n"
+"  - Internet\n"
+"  - Navigation\n"
+"License: GPL-3.0-or-later\n"
 "\n"
 "RepoType: git\n"
-"Repo: https://github.com/andybalaam/rabbit-escape\n"
-"Binaries: https://github.com/andybalaam/rabbit-escape/releases/download/v%v/rabbit-escape-%v.apk\n"
+"Repo: https://gitlab.com/APPLICATION_UPSTREAM/ExampleCom\n"
 "\n"
 "Builds:\n"
-" - versionName: '0.10.2'\n"
-"   versionCode: 102\n"
-"   commit: v0.10.2\n"
-"   subdir: rabbit-escape-ui-android/app\n"
-"   gradle:\n"
-"    - paid\n"
-"   build: cd ../.. && make android-pre-fdroid\n"
+"  - versionName: '1.0'\n"
+"    versionCode: 123\n"
+"    commit: v1.0\n"
+"    # Where build.gradle is:\n"
+"    subdir: app\n"
+"    sudo:\n"
+"      - apt-get update || apt-get update\n"
+"      - apt-get install -y librsvg2-bin openjdk-11-jdk-headless\n"
+"      - update-alternatives --auto java\n"
+"    gradle:\n"
+"      - yes\n"
 "\n"
-"AutoUpdateMode: Version v%v\n"
-"UpdateCheckMode: Tags v\\d+\\.\\d+(\\.\\d+)?\n"
-"CurrentVersion: 0.10.2\n"
-"CurrentVersionCode: 102\n"
+"AutoUpdateMode: Version\n"
+"UpdateCheckMode: Tags\n"
 msgstr ""
-"Категории:\n"
-" - Игры\n"
-"Лицензия: GPL-2.0-or-later\n"
-"AuthorName: Andy Balaam and the Rabbit Escape developers\n"
-"AuthorEmail: rabbitescape@artificialworlds.net\n"
-"WebSite: http://artificialworlds.net/rabbit-escape\n"
-"SourceCode: https://github.com/andybalaam/rabbit-escape\n"
-"IssueTracker: https://github.com/andybalaam/rabbit-escape/issues\n"
-"\n"
-"AutoName: Rabbit Escape\n"
-"Краткое описание: Игра-головоломка/экшн в стиле Lemmings\n"
-"Описание: |\n"
-" 140 уровней головоломки!\n"
-" ... бла-бла...\n"
-"\n"
-"RepoType: git\n"
-"Repo: https://github.com/andybalaam/rabbit-escape\n"
-"Бинарные файлы: https://github.com/andybalaam/rabbit-escape/releases/download/v%v/rabbit-escape-%v.apk\n"
-"\n"
-"Сборки:\n"
-" - versionName: '0.10.2'\n"
-"   versionCode: 102\n"
-"   commit: v0.10.2\n"
-"   subdir: rabbit-escape-ui-android/app\n"
-"   gradle:\n"
-"    - paid\n"
-"   build: cd ../.. && make android-pre-fdroid\n"
-"\n"
-"AutoUpdateMode: Версия v%v\n"
-"UpdateCheckMode: Теги v\\d+\\.\\d+(\\.\\d+)?\n"
-"CurrentVersion: 0.10.2\n"
-"CurrentVersionCode: 102\n"
 
 #. type: Plain text
 #: _docs/Submitting_to_F-Droid_Quick_Start_Guide.md
-msgid "For more info, see the F-Droid [Build Metadata Reference](../Build_Metadata_Reference)."
-msgstr "Для получения дополнительной информации смотрите F-Droid [Build Metadata Reference](../Build_Metadata_Reference)."
+msgid "Adjust or remove the relevant _sudo_ lines if needed:"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/Submitting_to_F-Droid_Quick_Start_Guide.md
+msgid "The example application's _build.gradle_ executes _rsvg-convert_ to rasterize its vector icons, so we install _librsvg2-bin_ from the official Debian repositories. All such dependencies should be specified in the app's _README_."
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/Submitting_to_F-Droid_Quick_Start_Guide.md
+msgid "_build.gradle_ mentions `com.android.tools.build:gradle:7.1.0`, and the Gradle Android plugin version 7 is known to depend on Java 11. So we install _openjdk-11-jdk-headless_ and select it as the _java_ alternative."
+msgstr ""
 
 #. type: Plain text
 #: _docs/Submitting_to_F-Droid_Quick_Start_Guide.md
-msgid "And then checked it all worked with:"
-msgstr "А затем проверили, что все работает:"
+msgid "Download and launch the latest version of the server tools container:"
+msgstr ""
 
-#. type: Fenced code block (bash)
+#. type: Fenced code block (sh)
 #: _docs/Submitting_to_F-Droid_Quick_Start_Guide.md
 #, no-wrap
 msgid ""
-"cd ../fdroiddata\n"
-"fdroid lint net.artificialworlds.rabbitescape\n"
+"git clone --depth=1 https://gitlab.com/fdroid/fdroidserver ~/fdroidserver\n"
+"sudo sh -c 'apt-get update &&apt-get install -y docker.io'\n"
+"sudo docker run --rm -itu vagrant --entrypoint /bin/bash \\\n"
+"  -v ~/fdroiddata:/build:z \\\n"
+"  -v ~/fdroidserver:/home/vagrant/fdroidserver:Z \\\n"
+"  registry.gitlab.com/fdroid/fdroidserver:buildserver\n"
+msgstr ""
+
+#. type: Plain text
+#: _docs/Submitting_to_F-Droid_Quick_Start_Guide.md
+#, fuzzy
+#| msgid "Rebuilding the container"
+msgid "In the container:"
+msgstr "Восстановление контейнера"
+
+#. type: Fenced code block (sh)
+#: _docs/Submitting_to_F-Droid_Quick_Start_Guide.md
+#, no-wrap
+msgid ""
+". /etc/profile\n"
+"export PATH=\"$fdroidserver:$PATH\" PYTHONPATH=\"$fdroidserver\"\n"
+"cd /build\n"
 "fdroid readmeta\n"
-"fdroid checkupdates net.artificialworlds.rabbitescape\n"
-"fdroid rewritemeta net.artificialworlds.rabbitescape\n"
+"fdroid rewritemeta com.example\n"
+"fdroid checkupdates com.example\n"
+"fdroid lint com.example\n"
+"fdroid build --on-server com.example\n"
 msgstr ""
 
 #. type: Plain text
 #: _docs/Submitting_to_F-Droid_Quick_Start_Guide.md
-msgid "When I got the version stuff right the checkupdates command printed:"
-msgstr "Когда я правильно указал версию, команда checkupdates распечаталась:"
+msgid "If any command, such as `fdroid readmeta`, returns an error, edit _~/fdroiddata/metadata/com.example.yml_ accordingly and try running the command again. After a successful build, exit the container, commit your metadata file with a `New App` label, and push it to your fork:"
+msgstr ""
 
-#. type: Fenced code block
+#. type: Fenced code block (sh)
 #: _docs/Submitting_to_F-Droid_Quick_Start_Guide.md
 #, no-wrap
 msgid ""
-"INFO: Processing net.artificialworlds.rabbitescape...\n"
-"INFO: ...updating to version 0.10.1 (101)\n"
-"INFO: Finished.\n"
+"exit\n"
+"cd ~/fdroiddata\n"
+"git add metadata/com.example.yml\n"
+"git commit -m \"New App: com.example\"\n"
+"git push origin com.example\n"
 msgstr ""
-"INFO: Обработка net.artificialworlds.rabbitescape...\n"
-"INFO: ...обновление до версии 0.10.1 (101)\n"
-"INFO: Завершено.\n"
 
 #. type: Plain text
 #: _docs/Submitting_to_F-Droid_Quick_Start_Guide.md
-msgid "Then I made sure it built OK:"
-msgstr "Затем я убедился, что все в порядке:"
-
-#. type: Fenced code block (bash)
-#: _docs/Submitting_to_F-Droid_Quick_Start_Guide.md
-#, no-wrap
-msgid "fdroid build --server -v -l net.artificialworlds.rabbitescape\n"
-msgstr "fdroid build --server -v -l net.artificialworlds.rabbitescape\n"
+msgid "Create a [merge request](https://gitlab.com/fdroid/fdroiddata/-/merge_requests)  at the fdroiddata repository, selecting your _com.example_ source branch. Wait for the packagers to pick up your merge request. Please keep track if they asked any questions and reply to them as soon as possible."
+msgstr ""
 
 #. type: Plain text
 #: _docs/Submitting_to_F-Droid_Quick_Start_Guide.md
-msgid "Actually, it didn't work, and I decided I had to request a new package (sox) be installed in the build machine environment (in the fdroidserver project).  The relevant commit is here: [19e372026](https://gitlab.com/andybalaam/fdroidserver/commit/19e372026aaca62349e6f5fd541dc3ba29d94836).  Actually though, after [discussion with the F-Droid devs](https://web.archive.org/web/20171220230923/https://botbot.me/freenode/fdroid-dev/2017-01-17/?msg=79512863&page=1) we agreed I'd be better off not using sox during the build, so I didn't need this."
-msgstr "На самом деле, это не сработало, и я решил, что мне нужно запросить установку нового пакета (sox) в среду машины сборки (в проекте fdroidserver).  Соответствующий коммит находится здесь: [19e372026](https://gitlab.com/andybalaam/fdroidserver/commit/19e372026aaca62349e6f5fd541dc3ba29d94836).  На самом деле, после [обсуждения с разработчиками F-Droid](https://web.archive.org/web/20171220230923/https://botbot.me/freenode/fdroid-dev/2017-01-17/?msg=79512863&page=1) мы решили, что лучше не использовать sox во время сборки, так что мне это не нужно."
-
-#. type: Plain text
-#: _docs/Submitting_to_F-Droid_Quick_Start_Guide.md
-msgid "Side note: if you do end up needing to modify the build environment for F-Droid, make sure you delete the fdroiddata/buildserver directory when you re-try your build.  That one had me stuck for a few days, with the old environment being used no matter what caches I cleared and vagrant commands I ran."
-msgstr "Примечание: если вам понадобится изменить среду сборки для F-Droid, убедитесь, что вы удалили каталог fdroiddata/buildserver при повторной попытке сборки.  Из-за этого я застрял на несколько дней, старая среда использовалась независимо от того, какие кэши я очищал и какие команды vagrant выполнял."
-
-#. type: Plain text
-#: _docs/Submitting_to_F-Droid_Quick_Start_Guide.md
-msgid "And now I was ready to request my package be included in F-Droid by committing and pushing the changes I had made to the fdroiddata project to my forked repo, and clicking the Merge Request button in the GitLab UI.  My merge request is here: [gitlab.com/fdroid/fdroiddata/merge_requests/1965](https://gitlab.com/fdroid/fdroiddata/merge_requests/1965)"
-msgstr "И теперь я был готов запросить включение моего пакета в F-Droid, зафиксировав и переместив изменения, внесенные в проект fdroiddata, в мой форкнутый репозиторий, и нажав кнопку Merge Request в пользовательском интерфейсе GitLab.  Мой запрос на слияние находится здесь: [gitlab.com/fdroid/fdroiddata/merge_requests/1965](https://gitlab.com/fdroid/fdroiddata/merge_requests/1965)"
+msgid "You can [get help with F-Droid](../../about/#contact) via IRC, Matrix, XMPP, e-mail and some other channels."
+msgstr ""
 
 #. type: YAML Front Matter: title
 #: _docs/Take-Down_Requests.md
@@ -11019,6 +10909,289 @@ msgstr "Предпочтения"
 #: _docs/Whitelabel_Builds.md
 msgid "For a custom build that enables Automatic Updates by default, override _app/src/main/res/xml/preferences.xml_. You can customize the preferences and their default values in _app/src/mycompany/res/xml/preferences.xml_. The fully automatic update requires [Privileged Extension](https://gitlab.com/fdroid/privileged-extension). With regular access, the updates will only automatically download. The user still needs to click install on each one."
 msgstr "Для пользовательской сборки, которая включает автоматические обновления по умолчанию, переопределите _app/src/main/res/xml/preferences.xml_. Вы можете настроить предпочтения и их значения по умолчанию в _app/src/mycompany/res/xml/preferences.xml_. Для полностью автоматического обновления требуется [Privileged Extension](https://gitlab.com/fdroid/privileged-extension). При обычном доступе обновления будут только автоматически загружаться. Пользователю по-прежнему необходимо нажимать кнопку установки на каждом из них."
+
+#~ msgid "In the sidebar on the web site, the 10 most recent apps are shown"
+#~ msgstr "В боковой панели на веб-сайте отображаются 10 последних приложений"
+
+#~ msgid "In the client, the \"What's New\" category shows all apps added in the last 14 days (the number can be changed in settings)"
+#~ msgstr "В клиенте в категории \"Что нового\" отображаются все приложения, добавленные за последние 14 дней (это число можно изменить в настройках)"
+
+#~ msgid "The web site, this wiki , and app descriptions are not covered yet, but will be included in the same system at a later date."
+#~ msgstr "Веб-сайт, эта вики и описания приложений пока не охвачены, но будут включены в эту систему позднее."
+
+#~ msgid "Submitting to F-Droid: Quick Start Guide"
+#~ msgstr "Подача материалов в F-Droid: Краткое руководство пользователя"
+
+#~ msgid "by Andy Balaam, original at [artificialworlds.net](http://www.artificialworlds.net/blog/2017/01/17/submitting-a-package-to-f-droid/)"
+#~ msgstr "автор Энди Балаам, оригинал на [artificialworlds.net](http://www.artificialworlds.net/blog/2017/01/17/submitting-a-package-to-f-droid/)"
+
+#~ msgid "Here's what I needed to get a dev environment for [F-Droid](https://f-droid.org/) up and running on Ubuntu 16.10, using F-Droid server version 0.7.0 (commit ID 8147f9235), so that I could submit a package for inclusion in the F-Droid repository."
+#~ msgstr "Вот что мне понадобилось, чтобы создать среду разработки для [F-Droid](https://f-droid.org/) на Ubuntu 16.10, используя сервер F-Droid версии 0.7.0 (commit ID 8147f9235), чтобы я мог отправить пакет для включения в репозиторий F-Droid."
+
+#~ msgid "[F-Droid documentation](https://f-droid.org/docs)"
+#~ msgstr "[документация по F-Droid](https://f-droid.org/docs)"
+
+#~ msgid "[F-Droid Quickstart](https://gitlab.com/fdroid/fdroiddata/blob/master/README.md#quickstart)"
+#~ msgstr "[F-Droid быстрый старт](https://gitlab.com/fdroid/fdroiddata/blob/master/README.md#quickstart)"
+
+#~ msgid "[Contribute to F-Droid](https://f-droid.org/contribute/)"
+#~ msgstr "[Внести вклад в F-Droid](https://f-droid.org/contribute/)"
+
+#~ msgid "Building the F-Droid build server requires a fair amount of storage space."
+#~ msgstr "Для создания сервера сборки F-Droid требуется достаточно много места для хранения данных."
+
+#~ msgid "As of April 2020, if you have 150 GB free in your `$HOME` (`~`), then you should be good to go (this includes cloning the F-Droid git repositories there as well)."
+#~ msgstr "По состоянию на апрель 2020 года, если у вас есть 150 ГБ свободного места в `$HOME` (`~`), то вы можете приступать (это включает клонирование туда git-репозиториев F-Droid)."
+
+#~ msgid "Details"
+#~ msgstr "Подробности"
+
+#~ msgid "During the build, approximately 124 GB will be used."
+#~ msgstr "Во время сборки будет использовано около 124 ГБ."
+
+#~ msgid "20 GB where the `fdroidserver` git repository is cloned"
+#~ msgstr "20 ГБ, куда клонируется git-репозиторий `fdroidserver`"
+
+#~ msgid "16 GB in `~/.cache/fdroidserver`, for caching several versions of Android SDK, NDK, Gradle etc"
+#~ msgstr "16 ГБ в `~/.cache/fdroidserver`, для кэширования нескольких версий Android SDK, NDK, Gradle и так далее"
+
+#~ msgid "40 GB in `~/.vagrant.d` while exporting the final VM image"
+#~ msgstr "40 ГБ в `~/.vagrant.d` при экспорте окончательного образа ВМ"
+
+#~ msgid "48 GB in `~/VirtualBox VM`, for the VM storage (VirtualBox default location)"
+#~ msgstr "48 ГБ в `~/VirtualBox VM`, для хранения виртуальной машины (расположение VirtualBox по умолчанию)"
+
+#~ msgid "After building the server, 85 GB are still in use. When running the server to build an actual Android APK, at least 48 GB more will be used for the build VM instance. And then of course even more for the data generated by the builds.  The virtual size of the build server is over 930 GB, so that would be its maximum."
+#~ msgstr "После создания сервера все еще используется 85 ГБ. При запуске сервера для сборки реального Android APK еще как минимум 48 ГБ будет использоваться для экземпляра виртуальной машины сборки. И, конечно, еще больше для данных, генерируемых сборками.  Виртуальный размер сервера сборки составляет более 930 ГБ, так что это будет его максимум."
+
+#~ msgid "Before you start, manually install the Android SDK at ~/Android/Sdk/ - see [Download Android Studio](https://developer.android.com/studio/index.html#downloads).  I installed version 23.0.2, but you will probably have a later one and may need to adjust the version number below."
+#~ msgstr "Перед началом работы вручную установите Android SDK по адресу ~/Android/Sdk/ - смотрите [Download Android Studio](https://developer.android.com/studio/index.html#downloads).  Я установил версию 23.0.2, но у вас, вероятно, будет более поздняя версия, и, возможно, потребуется скорректировать номер версии, указанный ниже."
+
+#~ msgid "Note: If you're only planning to contribute a package I'm fairly certain you don't need to install the Android SDK at all - you can just use the build server by running ./makebuildserver as I outline below."
+#~ msgstr "Примечание: Если вы планируете внести только пакет, я уверен, что вам не нужно устанавливать Android SDK вообще - вы можете просто использовать сервер сборки, запустив ./makebuildserver, как я описал ниже."
+
+#~ msgid "Also before you start, if you want to contribute to the server project you should fork the F-Droid server project by going to [gitlab.com/fdroid/fdroidserver](https://gitlab.com/fdroid/fdroidserver) and clicking Fork.  When you've done that, the git clone command below will need to change to clone your own fork via SSH, instead of the HTTPS one cloning the main repo that is shown below.  Do the same for the [F-Droid data project](https://gitlab.com/fdroid/fdroiddata), which holds the information about the packages in F-Droid.  It's the data project where you will want to make changes if you are submitting a package."
+#~ msgstr "Также перед началом работы, если вы хотите внести свой вклад в проект сервера, вам следует форкнуть проект сервера F-Droid, перейдя по адресу [gitlab.com/fdroid/fdroidserver](https://gitlab.com/fdroid/fdroidserver) и нажав кнопку Fork.  После этого команда git clone, приведенная ниже, должна быть изменена на клонирование вашего собственного форка через SSH, а не HTTPS для клонирования основного репозитория, как показано ниже.  Сделайте то же самое для [F-Droid data project](https://gitlab.com/fdroid/fdroiddata), в котором хранится информация о пакетах F-Droid.  Именно в проект данных вы захотите внести изменения, если будете представлять пакет."
+
+#~ msgid "Run these commands:"
+#~ msgstr "Выполните эти команды:"
+
+#, fuzzy
+#~| msgid ""
+#~| "# Prerequisites\n"
+#~| "sudo apt-get install openjdk-8-jdk subversion git git-svn \\\n"
+#~| "    mercurial bzr virtualbox ruby ruby-dev vagrant python3 python3-paramiko \\\n"
+#~| "    python3-pil python3-pyasn1-modules python3-clint python3-vagrant\n"
+#~| "vagrant plugin install vagrant-cachier\n"
+#~| "ln -s ~/Android/Sdk/build-tools/23.0.2/aapt ~/Android/Sdk/platform-tools/\n"
+#~| "\n"
+#~| "# Get the code\n"
+#~| "cd ~/code\n"
+#~| "git clone https://gitlab.com/fdroid/fdroidserver.git\n"
+#~| "git clone https://gitlab.com/fdroid/fdroiddata.git\n"
+#~| "echo 'export PATH=\"~/code/fdroidserver:$PATH\"' >> ~/.profile\n"
+#~| "source ~/.profile\n"
+#~| "\n"
+#~| "# Config\n"
+#~| "cd fdroiddata\n"
+#~| "cp ../fdroidserver/examples/config.yml ./\n"
+#~| "chmod 0600 config.yml\n"
+#~| "echo 'sdk_path: \"$HOME/Android/Sdk\"' >> config.yml\n"
+#~| "\n"
+#~| "# Set up Vagrant build box\n"
+#~| "cd ../fdroidserver\n"
+#~| "cp ./examples/makebuildserver.config.py ./\n"
+#~| "./makebuildserver\n"
+#~| "# Now wait several hours for this to finish\n"
+#~| "\n"
+#~| "# Build a package (the F-Droid client) just to check it works\n"
+#~| "cd ../fdroiddata\n"
+#~| "mkdir repo\n"
+#~| "fdroid update --create-key\n"
+#~| "fdroid readmeta  # Should give no output if it worked\n"
+#~| "fdroid build --server org.fdroid.fdroid\n"
+#~ msgid ""
+#~ "# Prerequisites\n"
+#~ "sudo apt-get install openjdk-8-jdk subversion git git-svn \\\n"
+#~ "    mercurial bzr virtualbox ruby ruby-dev vagrant python3 python3-paramiko \\\n"
+#~ "    python3-pil python3-pyasn1-modules python3-clint python3-vagrant \\\n"
+#~ "    python3-git python3-qrcode python3-ruamel.yaml\n"
+#~ "vagrant plugin install vagrant-cachier\n"
+#~ "ln -s ~/Android/Sdk/build-tools/23.0.2/aapt ~/Android/Sdk/platform-tools/\n"
+#~ "\n"
+#~ "# Get the code\n"
+#~ "cd ~/code\n"
+#~ "git clone https://gitlab.com/fdroid/fdroidserver.git\n"
+#~ "git clone https://gitlab.com/fdroid/fdroiddata.git\n"
+#~ "echo 'export PATH=\"~/code/fdroidserver:$PATH\"' >> ~/.profile\n"
+#~ "source ~/.profile\n"
+#~ "\n"
+#~ "# Config\n"
+#~ "cd fdroiddata\n"
+#~ "cp ../fdroidserver/examples/config.yml ./\n"
+#~ "chmod 0600 config.yml\n"
+#~ "echo 'sdk_path: \"$HOME/Android/Sdk\"' >> config.yml\n"
+#~ "\n"
+#~ "# Set up Vagrant build box\n"
+#~ "cd ../fdroidserver\n"
+#~ "cp ./examples/makebuildserver.config.py ./\n"
+#~ "./makebuildserver\n"
+#~ "# Now wait several hours for this to finish\n"
+#~ "\n"
+#~ "# Build a package (the F-Droid client) just to check it works\n"
+#~ "cd ../fdroiddata\n"
+#~ "mkdir repo\n"
+#~ "fdroid update --create-key\n"
+#~ "fdroid readmeta  # Should give no output if it worked\n"
+#~ "fdroid build --server org.fdroid.fdroid\n"
+#~ msgstr ""
+#~ "# Предварительные условия\n"
+#~ "sudo apt-get install openjdk-8-jdk subversion git git-svn \\\n"
+#~ "    mercurial bzr virtualbox ruby ruby-dev vagrant python3 python3-paramiko \\\n"
+#~ "    python3-pil python3-pyasn1-modules python3-clint python3-vagrant\n"
+#~ "vagrant plugin install vagrant-cachier\n"
+#~ "ln -s ~/Android/Sdk/build-tools/23.0.2/aapt ~/Android/Sdk/platform-tools/\n"
+#~ "\n"
+#~ "# Получить код\n"
+#~ "cd ~/code\n"
+#~ "git clone https://gitlab.com/fdroid/fdroidserver.git\n"
+#~ "git clone https://gitlab.com/fdroid/fdroiddata.git\n"
+#~ "echo 'export PATH=\"~/code/fdroidserver:$PATH\"' >> ~/.profile\n"
+#~ "source ~/.profile\n"
+#~ "\n"
+#~ "# Конфигурация\n"
+#~ "cd fdroiddata\n"
+#~ "cp ../fdroidserver/examples/config.yml ./\n"
+#~ "chmod 0600 config.yml\n"
+#~ "echo 'sdk_path: \"$HOME/Android/Sdk\"' >> config.yml\n"
+#~ "\n"
+#~ "# Настройте блок сборки Vagrant\n"
+#~ "cd ../fdroidserver\n"
+#~ "cp ./examples/makebuildserver.config.py ./\n"
+#~ "./makebuildserver\n"
+#~ "# Теперь подождите несколько часов, пока все закончится\n"
+#~ "\n"
+#~ "# Соберите пакет (клиент F-Droid), чтобы проверить его работоспособность\n"
+#~ "cd ../fdroiddata\n"
+#~ "mkdir repo\n"
+#~ "fdroid update --create-key\n"
+#~ "fdroid readmeta # Не должно выдать никаких результатов, если все работает\n"
+#~ "fdroid build --server org.fdroid.fdroid\n"
+
+#~ msgid "Make your own package"
+#~ msgstr "Создайте свой собственный пакет"
+
+#~ msgid "Below I'm using my own package, Rabbit Escape, as an example.  Its Android code is inside rabbit-escape-ui-android/app, whereas many programs will just have it directly in a directory called \"app\"."
+#~ msgstr "Ниже я использую в качестве примера свой собственный пакет Rabbit Escape.  Его код для Android находится внутри rabbit-escape-ui-android/app, тогда как во многих программах он будет находиться непосредственно в каталоге под названием \"app\"."
+
+#~ msgid "Rabbit Escape also builds non-Android-specific Java and other things during its build, so your package may be simpler."
+#~ msgstr "Rabbit Escape также собирает не специфичные для Android Java и другие вещи во время сборки, поэтому ваш пакет может быть более простым."
+
+#~ msgid "Now edit the new file that was created - in my case it was called metadata/net.artificialworlds.rabbitescape.txt."
+#~ msgstr "Теперь отредактируйте новый созданный файл - в моем случае он назывался metadata/net.artificialworlds.rabbitescape.txt."
+
+#~ msgid "I set the following info:"
+#~ msgstr "Я установил следующую информацию:"
+
+#~ msgid ""
+#~ "Categories:\n"
+#~ " - Games\n"
+#~ "License: GPL-2.0-or-later\n"
+#~ "AuthorName: Andy Balaam and the Rabbit Escape developers\n"
+#~ "AuthorEmail: rabbitescape@artificialworlds.net\n"
+#~ "WebSite: http://artificialworlds.net/rabbit-escape\n"
+#~ "SourceCode: https://github.com/andybalaam/rabbit-escape\n"
+#~ "IssueTracker: https://github.com/andybalaam/rabbit-escape/issues\n"
+#~ "\n"
+#~ "AutoName: Rabbit Escape\n"
+#~ "Summary: Lemmings-like puzzle/action game\n"
+#~ "Description: |\n"
+#~ " 140 levels of puzzling action!\n"
+#~ " ... blah blah ...\n"
+#~ "\n"
+#~ "RepoType: git\n"
+#~ "Repo: https://github.com/andybalaam/rabbit-escape\n"
+#~ "Binaries: https://github.com/andybalaam/rabbit-escape/releases/download/v%v/rabbit-escape-%v.apk\n"
+#~ "\n"
+#~ "Builds:\n"
+#~ " - versionName: '0.10.2'\n"
+#~ "   versionCode: 102\n"
+#~ "   commit: v0.10.2\n"
+#~ "   subdir: rabbit-escape-ui-android/app\n"
+#~ "   gradle:\n"
+#~ "    - paid\n"
+#~ "   build: cd ../.. && make android-pre-fdroid\n"
+#~ "\n"
+#~ "AutoUpdateMode: Version v%v\n"
+#~ "UpdateCheckMode: Tags v\\d+\\.\\d+(\\.\\d+)?\n"
+#~ "CurrentVersion: 0.10.2\n"
+#~ "CurrentVersionCode: 102\n"
+#~ msgstr ""
+#~ "Категории:\n"
+#~ " - Игры\n"
+#~ "Лицензия: GPL-2.0-or-later\n"
+#~ "AuthorName: Andy Balaam and the Rabbit Escape developers\n"
+#~ "AuthorEmail: rabbitescape@artificialworlds.net\n"
+#~ "WebSite: http://artificialworlds.net/rabbit-escape\n"
+#~ "SourceCode: https://github.com/andybalaam/rabbit-escape\n"
+#~ "IssueTracker: https://github.com/andybalaam/rabbit-escape/issues\n"
+#~ "\n"
+#~ "AutoName: Rabbit Escape\n"
+#~ "Краткое описание: Игра-головоломка/экшн в стиле Lemmings\n"
+#~ "Описание: |\n"
+#~ " 140 уровней головоломки!\n"
+#~ " ... бла-бла...\n"
+#~ "\n"
+#~ "RepoType: git\n"
+#~ "Repo: https://github.com/andybalaam/rabbit-escape\n"
+#~ "Бинарные файлы: https://github.com/andybalaam/rabbit-escape/releases/download/v%v/rabbit-escape-%v.apk\n"
+#~ "\n"
+#~ "Сборки:\n"
+#~ " - versionName: '0.10.2'\n"
+#~ "   versionCode: 102\n"
+#~ "   commit: v0.10.2\n"
+#~ "   subdir: rabbit-escape-ui-android/app\n"
+#~ "   gradle:\n"
+#~ "    - paid\n"
+#~ "   build: cd ../.. && make android-pre-fdroid\n"
+#~ "\n"
+#~ "AutoUpdateMode: Версия v%v\n"
+#~ "UpdateCheckMode: Теги v\\d+\\.\\d+(\\.\\d+)?\n"
+#~ "CurrentVersion: 0.10.2\n"
+#~ "CurrentVersionCode: 102\n"
+
+#~ msgid "For more info, see the F-Droid [Build Metadata Reference](../Build_Metadata_Reference)."
+#~ msgstr "Для получения дополнительной информации смотрите F-Droid [Build Metadata Reference](../Build_Metadata_Reference)."
+
+#~ msgid "And then checked it all worked with:"
+#~ msgstr "А затем проверили, что все работает:"
+
+#~ msgid "When I got the version stuff right the checkupdates command printed:"
+#~ msgstr "Когда я правильно указал версию, команда checkupdates распечаталась:"
+
+#~ msgid ""
+#~ "INFO: Processing net.artificialworlds.rabbitescape...\n"
+#~ "INFO: ...updating to version 0.10.1 (101)\n"
+#~ "INFO: Finished.\n"
+#~ msgstr ""
+#~ "INFO: Обработка net.artificialworlds.rabbitescape...\n"
+#~ "INFO: ...обновление до версии 0.10.1 (101)\n"
+#~ "INFO: Завершено.\n"
+
+#~ msgid "Then I made sure it built OK:"
+#~ msgstr "Затем я убедился, что все в порядке:"
+
+#~ msgid "fdroid build --server -v -l net.artificialworlds.rabbitescape\n"
+#~ msgstr "fdroid build --server -v -l net.artificialworlds.rabbitescape\n"
+
+#~ msgid "Actually, it didn't work, and I decided I had to request a new package (sox) be installed in the build machine environment (in the fdroidserver project).  The relevant commit is here: [19e372026](https://gitlab.com/andybalaam/fdroidserver/commit/19e372026aaca62349e6f5fd541dc3ba29d94836).  Actually though, after [discussion with the F-Droid devs](https://web.archive.org/web/20171220230923/https://botbot.me/freenode/fdroid-dev/2017-01-17/?msg=79512863&page=1) we agreed I'd be better off not using sox during the build, so I didn't need this."
+#~ msgstr "На самом деле, это не сработало, и я решил, что мне нужно запросить установку нового пакета (sox) в среду машины сборки (в проекте fdroidserver).  Соответствующий коммит находится здесь: [19e372026](https://gitlab.com/andybalaam/fdroidserver/commit/19e372026aaca62349e6f5fd541dc3ba29d94836).  На самом деле, после [обсуждения с разработчиками F-Droid](https://web.archive.org/web/20171220230923/https://botbot.me/freenode/fdroid-dev/2017-01-17/?msg=79512863&page=1) мы решили, что лучше не использовать sox во время сборки, так что мне это не нужно."
+
+#~ msgid "Side note: if you do end up needing to modify the build environment for F-Droid, make sure you delete the fdroiddata/buildserver directory when you re-try your build.  That one had me stuck for a few days, with the old environment being used no matter what caches I cleared and vagrant commands I ran."
+#~ msgstr "Примечание: если вам понадобится изменить среду сборки для F-Droid, убедитесь, что вы удалили каталог fdroiddata/buildserver при повторной попытке сборки.  Из-за этого я застрял на несколько дней, старая среда использовалась независимо от того, какие кэши я очищал и какие команды vagrant выполнял."
+
+#~ msgid "And now I was ready to request my package be included in F-Droid by committing and pushing the changes I had made to the fdroiddata project to my forked repo, and clicking the Merge Request button in the GitLab UI.  My merge request is here: [gitlab.com/fdroid/fdroiddata/merge_requests/1965](https://gitlab.com/fdroid/fdroiddata/merge_requests/1965)"
+#~ msgstr "И теперь я был готов запросить включение моего пакета в F-Droid, зафиксировав и переместив изменения, внесенные в проект fdroiddata, в мой форкнутый репозиторий, и нажав кнопку Merge Request в пользовательском интерфейсе GitLab.  Мой запрос на слияние находится здесь: [gitlab.com/fdroid/fdroiddata/merge_requests/1965](https://gitlab.com/fdroid/fdroiddata/merge_requests/1965)"
 
 #~ msgid "Anti-Features are flags packagers apply to apps, warning of possibly undesirable behaviour from the user's perspective, often serving the interest of the developer or a third party."
 #~ msgstr "Антифичи — это флаги, которыми упаковщики помечают приложения. Это предупреждает о возможно нежелательном поведении приложения для конечного пользователя, чаще всего в интересах разработчиков или третьей стороны."
