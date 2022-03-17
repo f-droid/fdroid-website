@@ -19,7 +19,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
 "POT-Creation-Date: 2022-02-28 14:09+0100\n"
-"PO-Revision-Date: 2022-03-13 12:41+0000\n"
+"PO-Revision-Date: 2022-03-17 21:40+0000\n"
 "Last-Translator: kak mi <wavelake@outlook.com>\n"
 "Language-Team: Chinese (Simplified) <https://hosted.weblate.org/projects/f-droid/website-posts/zh_Hans/>\n"
 "Language: zh_Hans\n"
@@ -11787,7 +11787,7 @@ msgstr ""
 #. type: Plain text
 #: _posts/2019-06-20-two-new-ways-to-get-apps-nearby-without-internet.md
 msgid "The second is using SD Cards and USB On-The-Go (OTG) flash drives as a source of F-Droid repos.  Flash drives can provide a very high bandwidth method for transferring files, when they are easy to move from device to device.  Our goal is to make the whole user experience as smooth as possible, so people can regularly move data with these affordable, widespread data buckets.  USB-OTG and SD Cards can host standalone repos as well as mirrors of existing repos.  Those repos need to be copied to the flash drive first, like from a laptop.  That can be done using `fdroid mirror`, for example:"
-msgstr ""
+msgstr "第二个是使用 SD 卡和 USB On-The-Go (OTG) 闪存驱动器作为 F-Droid 存储库的来源。闪存驱动器可以为传输文件提供非常高的带宽方法，因为它们很容易在设备之间移动。我们的目标是让整个用户体验尽可能流畅，这样人们就可以使用这些负担得起的、广泛使用的数据存储定期移动数据。 USB-OTG 和 SD 卡可以托管独立的存储库以及现有存储库的镜像。需要先将这些存储库复制到闪存驱动器，例如从笔记本电脑复制。这可以使用 `fdroid mirror` 来完成，例如："
 
 #. type: Fenced code block (console)
 #: _posts/2019-06-20-two-new-ways-to-get-apps-nearby-without-internet.md
@@ -11802,7 +11802,7 @@ msgstr ""
 #. type: Plain text
 #: _posts/2019-06-20-two-new-ways-to-get-apps-nearby-without-internet.md
 msgid "USB OTG support is new and alpha.  It works, but needs a lot of polish on the user experience.  For example, it should show the scanning progress.  Also, Bluetooth is still flaky on many devices, some of that comes from the devices poor support for generic data service over Bluetooth."
-msgstr ""
+msgstr "USB OTG 支持还很新且不成熟。它可以工作，但需要对用户体验进行大量改进。例如，它应该显示扫描进度。此外，蓝牙在许多设备上仍然不稳定，其中一些由于设备对蓝牙通用数据服务的支持不佳。"
 
 #. type: YAML Front Matter: title
 #: _posts/2019-07-01-dropping-old-tls-on-android.md
@@ -11813,75 +11813,76 @@ msgstr ""
 #. type: Plain text
 #: _posts/2019-07-01-dropping-old-tls-on-android.md
 msgid "Transport Layer Security (TLS) is the protocol that powers most of the internet these days.  It gives HTTPS the S for \"Secure\".  F-Droid uses it to keep the connection to repos private.  After many years of slow updates and an increasing number of vulnerabilities, there is finally critical mass to stop using the old, broken versions.  TLS version 1.2 is not vulnerable and is supported basically everywhere.  TLSv1.2 was finalized in 2008, so this is very far from the bleeding edge.  TLSv1.0 and TLSv1.1 are due to be officially deprecated by the IETF, the standards body that actually creates the TLS standard.  The major browser vendors have all promised to drop them in 2020."
-msgstr ""
+msgstr "传输层安全性 (TLS) 是当今为大多数互联网提供支持的协议。它为 HTTPS 提供了“安全”的 S。 F-Droid 使用它来保持与存储库的连接私有。经过多年缓慢的更新和越来越多的漏洞，促使停止使用旧的、损坏的版本的最后一根稻草终于落下了。TLS 1.2 版不易受到攻击，基本上在所有地方都受支持。 TLSv1.2 于 2008 年完成，因此离最前沿还很远。 TLSv1.0 和 TLSv1.1 将被 IETF（实际创建 TLS 标准的标准机构）正式弃用。主要的浏览器供应商都承诺在 2020 年放弃它们。"
 
 #. type: Plain text
 #: _posts/2019-07-01-dropping-old-tls-on-android.md
 msgid "Since F-Droid uses [NetCipher](https://guardianproject.info/code/netcipher), TLSv1.2 is supported all the way back to [Android 4.1](https://developer.android.com/reference/javax/net/ssl/SSLSocket#protocols)"
-msgstr ""
+msgstr "由于 F-Droid 使用 [NetCipher](https://guardianproject.info/code/netcipher)，TLSv1.2 一直向后支持到 [Android 4.1](https://developer.android.com/reference/javax/net/ssl/SSLSocket#protocols)"
 
 #. type: Plain text
 #: _posts/2019-07-01-dropping-old-tls-on-android.md
 msgid "One way to enforce TLSv1.2 support would be to configure the f-droid.org webserver to stop supporting TLSv1.0 and TLSv1.1, like we have with SSLv2 and SSLv3.  We prefer to do this on the client side instead, so that old versions of F-Droid and old devices without TLSv1.2 (added in Android 4.1) will continue to work with f-droid.org.  Also, doing it client-side means that connections to all repos will gain this protection without changing the repos server setups."
-msgstr ""
+msgstr "强制执行 TLSv1.2 支持的一种方法是配置 f-droid.org 网络服务器以停止支持 TLSv1.0 和 TLSv1.1，就像我们对 SSLv2 和 SSLv3 做的一样。我们更喜欢在客户端执行此操作，以便旧版本的 F-Droid 和没有 TLSv1.2（在 Android 4.1 中添加）的旧设备可以继续使用 f-droid.org。此外，在客户端执行此操作意味着与所有存储库的连接将获得这种保护，而无需更改存储库服务器设置。"
 
 #. type: Plain text
 #: _posts/2019-07-01-dropping-old-tls-on-android.md
 msgid "With the _NetCipher_ approach, the latest versions of F-Droid will never use TLS older than v1.2 since they will refuse to connect unless TLSv1.2 is available.  Since _f-droid.org_ can still safely support TLSv1.0 and TLSv1.1, older clients and Android devices will still be able to connect, even if they do not support TLSv1.2.  It is win-win for everyone."
-msgstr ""
+msgstr "使用 _NetCipher_ 的方法，最新版本的 F-Droid 永远不会使用早于 v1.2 的 TLS，因为除非 TLSv1.2 可用，否则它们将拒绝连接。由于 _f-droid.org_ 仍然可以安全地支持 TLSv1.0 和 TLSv1.1，因此旧客户端和 Android 设备仍然能够连接，即使它们不支持 TLSv1.2。这对每个人来说都是双赢的。"
 
 #. type: Plain text
 #: _posts/2019-07-01-dropping-old-tls-on-android.md
 msgid "This will mean that any repo will need to support TLSv1.2 to work with F-Droid client from here on out. If a webserver does not support TLSv1.2, it is really too old to be used safely anyway.  Even the oldest supported Red Hat Enterprise Linux release (6) supports TLSv1.2, and that was released in 2010."
-msgstr ""
+msgstr "这意味着从现在开始，任何存储库都需要支持 TLSv1.2 才能与 F-Droid 客户端一起使用。如果网络服务器不支持 TLSv1.2，那么它确实太旧了，无论如何都不能安全使用。即使是最古老的受支持的 Red Hat Enterprise Linux 版本 (6) 也支持 TLSv1.2，该版本于 2010 年发布。"
 
 #. type: YAML Front Matter: title
 #: _posts/2019-07-06-improving-our-bus-factor.md
 #, no-wrap
 msgid "Improving our \"bus factor\""
-msgstr ""
+msgstr "改善我们的“公共汽车系数”"
 
 #. type: Plain text
 #: _posts/2019-07-06-improving-our-bus-factor.md
 msgid "\"Bus factor\" is an important measure of the health of a free software project, even though the idea is quite morbid.  As F-Droid has expanded from a project of one to a whole community effort. And there is much more work than one person can do.  Essential infrastructure needs to be maintained by separate people to make the whole project resilient and owned by the community."
-msgstr ""
+msgstr "“公共汽车系数”是衡量一个自由软件项目是否健康的一个重要指标，尽管这个想法是相当可怕的。随着 F-Droid 从一个项目扩展到整个社区的努力。而且还有很多工作不是一个人能做的。基本基础设施需要由不同的人维护，以使整个项目具有弹性并由社区拥有。"
 
 #. type: Plain text
 #: _posts/2019-07-06-improving-our-bus-factor.md
 msgid "Towards that end, we have a new host for a key piece of infrastructure.  The website build and deploy process is now hosted by [Nick Merrill](https://en.wikipedia.org/wiki/Nicholas_Merrill) of [Calyx Institute](https://www.calyxinstitute.org/) in Iceland.  It is hard to find a better combination for a project that is concerned with privacy.  Nick is an F-Droid user, and Calyx Institute is building the most private internet services possible, with F-Droid as a key piece.  Nick also fought a secret order from the US government and [won in US Federal Court](https://en.wikipedia.org/wiki/Doe_v._Ashcroft) after 11 years of arduous legal proceedings. Lastly, Iceland is one of the best locations for hosting internet services that need strong privacy."
-msgstr ""
+msgstr "为此，我们为关键基础设施提供了一个新主机。网站构建和部署过程现在由 [Calyx Institute](https://www.calyxinstitute.org/) 的 [Nick Merrill](https://en.wikipedia.org/wiki/Nicholas_Merrill) 在冰岛托管。对于涉及隐私的项目，很难找到更好的组合。 Nick 是 F-Droid 用户，Calyx Institute 正在构建尽可能私密的互联网服务，其中 F-Droid 是关键部分。尼克还与美国政府的秘密命令作斗争并在经过 11 年的艰苦法律诉讼后[在美国联邦法院获胜](https://en.wikipedia.org/wiki/Doe_v._Ashcroft)。最后，冰岛是托管需要强大隐私的互联网服务的最佳地点之一。"
 
 #. type: Title ##
 #: _posts/2019-07-06-improving-our-bus-factor.md
 #, no-wrap
 msgid "Technical Details"
-msgstr ""
+msgstr "技术细节"
 
 #. type: Plain text
 #: _posts/2019-07-06-improving-our-bus-factor.md
 msgid "A couple of years ago, we overhauled this website to let it be translated into any language by F-Droid contributors. We now have 15 languages live and many more [in progress](https://hosted.weblate.org/projects/f-droid/website/)."
-msgstr ""
+msgstr "几年前，我们对这个网站进行了大修，让它可以由 F-Droid 贡献者翻译成任何语言。我们现在有 15 种语言，还有更多[正在进行中](https://hosted.weblate.org/projects/f-droid/website/)。"
 
 #. type: Plain text
 #: _posts/2019-07-06-improving-our-bus-factor.md
 msgid "Though we did not realize it at the time, it looks like we have created the largest website that is generated using a static site generator (SSG).  There is currently about 30,000 pages, ([staging.f-droid.org](https://staging.f-droid.org) has 75,000 pages!), and we have not found a Jekyll website with more pages. All this means the build and deploy process is resource intensive and can take a while.  It has also proven a bit brittle, largely because the process uses so much RAM and CPU."
-msgstr ""
+msgstr "虽然我们当时没有意识到，但看起来我们已经创建了使用静态站点生成器 (SSG) 生成的最大网站。目前大约有 30,000 个页面，（[staging.f-droid.org](https://staging.f-droid.org) 有 75,000 个页面！），我们还没有找到更多页面的 Jekyll 网站。所有这些都意味着构建和部署过程是资源密集型的，并且可能需要一段时间。它也被证明有点脆弱，主要是因为该过程使用了太多的内存和 CPU。"
 
 #. type: Plain text
 #: _posts/2019-07-06-improving-our-bus-factor.md
+#, fuzzy
 msgid "The new deploy server setup is entirely scripted with Ansible, running on a plain Debian box.  So if the current server fails for whatever reason, we can easily recreate a new server.  This also is great for bus factor since anyone can recreate the whole deploy setup if the existing maintainers vanish entirely."
-msgstr ""
+msgstr "新的部署服务器设置完全使用 Ansible 编写脚本，在普通的 Debian 机器上运行。因此，如果当前服务器由于某种原因出现故障，我们可以轻松地重新创建一个新服务器。这对于公共汽车系数也很有用，因为如果现有维护者完全消失，任何人都可以重新创建整个部署设置。"
 
 #. type: Title ##
 #: _posts/2019-07-06-improving-our-bus-factor.md
 #, no-wrap
 msgid "Contributions Welcome!"
-msgstr ""
+msgstr "欢迎贡献！"
 
 #. type: Plain text
 #: _posts/2019-07-06-improving-our-bus-factor.md
 msgid "One last thing: if you have ever asked why some aspect of F-Droid does not work as well as it should, then the answer most likely is: F-Droid needs more contributors! This new deploy server is the perfect example of something that anyone could have developed independently from the current contributors.  The whole website is free software and publicly available, so anyone can access all the pieces to build an complete, working copy of the real site."
-msgstr ""
+msgstr "最后一件事：如果你曾经问过为什么 F-Droid 的某些方面不能正常工作，那么答案很可能是：F-Droid 需要更多的贡献者！这个新的部署服务器是任何人都可以独立于当前贡献者开发的完美示例。整个网站是自由软件并且是公开可用的，因此任何人都可以访问所有部分以构建真实网站的完整工作副本。"
 
 #. type: YAML Front Matter: title
 #: _posts/2019-07-12-twif-64-we-are-back.md
@@ -14560,32 +14561,32 @@ msgstr ""
 #. type: Plain text
 #: _posts/2019-07-16-statement.md
 msgid "In the past week, a controversy around F-Droid took place at its forum and in the [fediverse](https://en.wikipedia.org/wiki/Fediverse). We feel like we have to put out a public statement to clear F-Droid's position on it."
-msgstr ""
+msgstr "在过去的一周里，在论坛和 [fediverse](https://en.wikipedia.org/wiki/Fediverse) 中发生了一场围绕 F-Droid 的争论。我们觉得我们必须发表一份公开声明来明确 F-Droid 对此的立场。"
 
 #. type: Plain text
 #: _posts/2019-07-16-statement.md
 msgid "To recap the situation: a website joined the fediverse only half a month ago that is well known to be a \"free speech zone\", meaning it claims to tolerate all opinions. While in theory this might seem to be a good concept, it has serious consequences: things like racism, sexism, verbal abuse, violent nationalist propaganda, discrimination against gender and sexual minorities, antisemitism and a lot more things become popular on such instances. For good reasons, all these things are prohibited on the clear majority of instances in the fediverse. Because of this, yet even before mentioned website joined the fediverse, most instances already blocked it."
-msgstr ""
+msgstr "回顾一下情况：一个网站，作为众所周知的“言论自由区”意味着它声称可以容忍所有意见，半个月前才加入联邦宇宙。虽然从理论上讲，这似乎是一个很好的概念，但它会产生严重的后果：种族主义、性别歧视、辱骂、暴力民族主义宣传、对性少数群体的歧视、反犹太主义等等在这种情况下变得流行起来。出于充分的理由，在联邦宇宙中的绝大多数情况下，所有这些事情都是被禁止的。因此，即使在提到的网站加入联邦宇宙之前，大多数实例已经将其屏蔽。"
 
 #. type: Plain text
 #: _posts/2019-07-16-statement.md
 msgid "The developers of Tusky, one of the most popular app to access the fediverse on Android devices, decided to go a step further by implementing a mechanism that doesn't allow to log into mentioned website. Fedilab on the other hand decided not to implement such a mechanism, stating that it's ineffective (more on this below) and that a tool's developer should not decide which people are allowed to use it."
-msgstr ""
+msgstr "Tusky 是在 Android 设备上访问 fediverse 的最受欢迎的应用之一，其开发者决定更进一步，实施一种不允许登录上述网站的机制。另一方面，Fedilab 决定不实施这样的机制，指出它是无效的（下面将详细介绍），并且工具的开发者不应该决定允许哪些人使用它。"
 
 #. type: Plain text
 #: _posts/2019-07-16-statement.md
 msgid "F-Droid as a project soon celebrates its 9th birthday. In these 9 years, F-Droid's mission was and is to create a place where people could download software they can trust – meaning only free, libre and open source software is available on its flagship repository. As a project, it tried to stay neutral all the time. But sometimes, staying neutral isn't an option but instead will lead to the uprise of previously mentioned oppression and harassment against marginalized groups. We don't want and won't support that. F-Droid is taking a political stance here."
-msgstr ""
+msgstr "F-Droid 作为一个项目很快迎来了它的 9 岁生日。在这 9 年中，F-Droid 的使命过去和现在都是创建一个人们可以下载他们可以信任的软件的地方——这意味着其旗舰存储库中只提供自由开源的软件。作为一个项目，它一直试图保持中立。但有时，保持中立不是一种选择，反而会导致前面提到的对边缘化群体的压迫和骚扰的兴起。我们不希望也不会支持。 F-Droid 在这里采取了政治立场。"
 
 #. type: Plain text
 #: _posts/2019-07-16-statement.md
 msgid "F-Droid won't tolerate oppression or harassment against marginalized groups. Because of this, it won't package nor distribute apps that promote any of these things. This includes that it won't distribute an app that promotes the usage of previously mentioned website, by either its branding, its pre-filled instance domain or any other direct promotion. This also means F-Droid won't allow oppression or harassment to happen at its communication channels, including its forum. In the past week, we failed to fulfill this goal on the forum, and we want to apologize for that."
-msgstr ""
+msgstr "F-Droid 不会容忍对边缘化群体的压迫或骚扰。因此，它不会打包或分发推广这些内容的应用。这包括它不会分发通过其品牌、其默认实例域或任何其他直接推广来促进前述网站使用的应用。这也意味着 F-Droid 不会允许在其通讯渠道（包括其论坛）上发生压迫或骚扰。在过去的一周里，我们未能在论坛上实现这一目标，我们对此表示歉意。"
 
 #. type: Plain text
 #: _posts/2019-07-16-statement.md
 msgid "We believe platforms like F-Droid's repository or fediverse instances must be moderated in order to prevent oppression and harassment to flourish. We think, however, that one needs to differentiate between platforms and tools. By its very nature, free software [by definition](https://www.gnu.org/philosophy/free-sw.en.html) allows users \"to study how the program works, and change it so it does your computing as you wish\". Because of this, any restriction implemented in free software is basically ineffective, because people can modify the source code and remove those restrictions. We respect Tusky's decision to block mentioned website; it's their right to introduce restrictions like these into their software. We also respect Fedilab's decision not to hardcode a login block; instead they are actively working on making it easier to block certain domains in the app itself and thus giving users more power to moderate which content they'll see. If people disagree with F-Droid's decision not to flag Fedilab, a idea is to develop a decentralized tag system based on package IDs which allow third-party servers to share their own warnings with their community."
-msgstr ""
+msgstr "我们认为，必须对 F-Droid 的存储库或 fediverse 实例等平台进行审核，以防止压迫和骚扰猖獗。然而，我们认为需要区分平台和工具。就其本质而言，自由软件[按定义](https://www.gnu.org/philosophy/free-sw.en.html)允许用户“研究程序的工作原理，并对其进行更改，以便进行计算如你所愿”。正因为如此，在自由软件中实现的任何限制基本上都是无效的，因为人们可以修改源代码并消除这些限制。我们尊重 Tusky 屏蔽上述网站的决定；在他们的软件中引入此类限制是他们的权利。我们也尊重 Fedilab 不对登录屏蔽进行硬编码的决定；相反，他们正在积极努力使在应用本身中阻止某些域更容易，从而赋予用户更多权力来调节他们将看到的内容。如果人们不同意 F-Droid 不标记 Fedilab 的决定，一个想法是开发一个基于包 ID 的去中心化标签系统，允许第三方服务器与他们的社区分享他们自己的警告。"
 
 #. type: YAML Front Matter: title
 #: _posts/2019-09-11-yaml-metadata.md
@@ -14596,22 +14597,22 @@ msgstr ""
 #. type: Plain text
 #: _posts/2019-09-11-yaml-metadata.md
 msgid "We keep a database containing structured information about all apps we're shipping. Architecture-wise, this is a set of plain text files in a version control system. It's the heart of our data-driven app building- and distribution- systems. Maybe you've heard someone mentioning [F-Droid Data](https://gitlab.com/fdroid/fdroiddata) already.  Occasionally we also refer to this as app metadata."
-msgstr ""
+msgstr "我们保留了一个数据库，其中包含有关我们正在发布的所有应用的结构化信息。在架构方面，这是版本控制系统中的一组纯文本文件。它是我们数据驱动的应用构建和分发系统的核心。也许你已经听说有人提到 [F-Droid Data](https://gitlab.com/fdroid/fdroiddata)。有时我们也将其称为应用元数据。"
 
 #. type: Plain text
 #: _posts/2019-09-11-yaml-metadata.md
 msgid "We started out with a custom domain specific language (DSL) for storing our metadata files using GIT for version control. Not very surprisingly our custom DSL looks a lot like the popular markup language YAML. That's why we started supporting to store app metadata in `.yml` file format a year ago."
-msgstr ""
+msgstr "我们开始使用自定义域特定语言 (DSL) 来存储我们的元数据文件，使用 GIT 进行版本控制。毫不奇怪，我们的自定义 DSL 看起来很像流行的标记语言 YAML。这就是我们在一年前开始支持以 `.yml` 文件格式存储应用元数据的原因。"
 
 #. type: Plain text
 #: _posts/2019-09-11-yaml-metadata.md
 msgid "We're finally deprecating `.txt` metadata support altogether. Our amazing packaging team is almost done moving our entire database to `.yml`."
-msgstr ""
+msgstr "我们最终完全弃用 `.txt` 元数据支持。我们出色的打包团队几乎完成了将整个数据库迁移到 `.yml` 的工作。"
 
 #. type: Plain text
 #: _posts/2019-09-11-yaml-metadata.md
 msgid "To keep things easy, we will continue to ship a handy sub-command so everyone can conveniently convert now deprecated `.txt` metadata files to `.yml`:"
-msgstr ""
+msgstr "为了简单起见，我们将继续提供一个方便的子命令，以便每个人都可以方便地将现在已弃用的 `.txt` 元数据文件转换为 `.yml`："
 
 #. type: Fenced code block (console)
 #: _posts/2019-09-11-yaml-metadata.md
@@ -14623,17 +14624,17 @@ msgstr "$ fdroid rewritemeta --to yml\n"
 #. type: Plain text
 #: _posts/2019-09-11-yaml-metadata.md
 msgid "In the long run, removing `.txt` metadata support will allow us to get rid of a substantial amount of source-code. This will make maintenance a lot simpler for us and also lower the learning curve for new contributors.  It will also make adding new features faster and simplify creating tooling, CI, auditing, metrics, etc."
-msgstr ""
+msgstr "从长远来看，删除 `.txt` 元数据支持将使我们摆脱大量的源代码。这将使我们的维护变得更加简单，同时也降低了新贡献者的学习曲线。它还将更快地添加新功能并简化创建工具、CI、审计、指标等。"
 
 #. type: Plain text
 #: _posts/2019-09-11-yaml-metadata.md
 msgid "Additionally, this will make our database more accessible to everyone. We hope to see developers, enthusiasts and scientists to come up with interesting third party tools, use-cases or studies."
-msgstr ""
+msgstr "此外，这将使每个人都更容易访问我们的数据库。我们希望看到开发者、爱好者和科研人员提出有趣的第三方工具、用例或研究。"
 
 #. type: Plain text
 #: _posts/2019-09-11-yaml-metadata.md
 msgid "Our thanks goes to: [Izzy](https://gitlab.com/IzzySoft) and [Bubu](https://gitlab.com/Bubu) for migrating our database and [Hans](https://gitlab.com/eighthave) and [me (uniqx)](https://gitlab.com/uniqx) for implementing YAML metadata support."
-msgstr ""
+msgstr "我们感谢：[Izzy](https://gitlab.com/IzzySoft) 和 [Bubu](https://gitlab.com/Bubu) 迁移我们的数据库以及 [Hans](https://gitlab.com/eighthave) 和 [me (uniqx)](https://gitlab.com/uniqx) 实现 YAML 元数据支持。"
 
 #. type: YAML Front Matter: title
 #: _posts/2019-10-02-testing-helps-get-updates-out.md
@@ -14644,17 +14645,17 @@ msgstr ""
 #. type: Plain text
 #: _posts/2019-10-02-testing-helps-get-updates-out.md
 msgid "After a few month hiatus, our staging setup for the complete buildserver is again running, thanks to the [Reproducible Builds](https://reproducible-builds.org/)  team who host that infrastructure. These Continuous Integration (CI)  jobs create a [complete buildserver](https://jenkins.debian.net/job/reproducible_setup_fdroid_build_environment/)  from scratch once a week based on the current source code (e.g. _master_).  This buildserver instance is then used to [build all apps](https://jenkins.debian.net/job/reproducible_fdroid_build_apps/)  that have not yet been built on this machine.  Getting these CI jobs running again pointed us to a [key issue](https://jenkins.debian.net/job/reproducible_fdroid_test/259/console)  that was blocking the publishing of updates for over a week."
-msgstr ""
+msgstr "经过几个月的中断，我们的完整构建服务器的暂存设置再次运行，这要感谢托管该基础架构的[可重复构建](https://reproducible-builds.org/)团队。这些持续集成 (CI) 作业基于当前源代码（例如 _master_）每周一次从头开始创建一个[完整的构建服务器](https://jenkins.debian.net/job/reproducible_setup_fdroid_build_environment/)。然后使用此构建服务器实例[构建所有尚未在这台机器上构建的应用](https://jenkins.debian.net/job/reproducible_fdroid_build_apps/)。让这些 CI 作业再次运行向我们指出了一个阻止更新发布超过一周的[关键问题](https://jenkins.debian.net/job/reproducible_fdroid_test/259/console)。"
 
 #. type: Plain text
 #: _posts/2019-10-02-testing-helps-get-updates-out.md
 msgid "We often get questions about how people can contribute to F-Droid.  One less visible but nonetheless important way to contribute is monitoring these CI jobs and then troubleshooting the cause.  All of these server setups are automated, and all of the software that run f-droid.org are free software."
-msgstr ""
+msgstr "我们经常收到有关人们如何为 F-Droid 做出贡献的问题。一种不太明显但仍然很重要的贡献方式是监控这些 CI 作业，然后排除故障原因。所有这些服务器设置都是自动化的，所有运行 f-droid.org 的软件都是自由软件。"
 
 #. type: Plain text
 #: _posts/2019-10-02-testing-helps-get-updates-out.md
 msgid "Anyone can follow the CI tests, the official tests for the build and publish process are all listed on the [fdroidserver project README](https://gitlab.com/fdroid/fdroidserver/#readme).  And then we welcome merge requests to [fix the issue](https://gitlab.com/fdroid/fdroidserver/merge_requests/679), filing an issue to report and track the problem, or even discussion of the problem in our chat room."
-msgstr ""
+msgstr "任何人都可以关注 CI 测试，构建和发布过程的官方测试都列在 [fdroidserver 项目 README](https://gitlab.com/fdroid/fdroidserver/#readme) 中。然后我们欢迎合并请求[修复问题](https://gitlab.com/fdroid/fdroidserver/merge_requests/679)，提交问题以报告和跟踪问题，甚至在我们的聊天室中讨论问题."
 
 #. type: YAML Front Matter: title
 #: _posts/2019-10-29-new-language-polish.md
@@ -14665,33 +14666,33 @@ msgstr ""
 #. type: Plain text
 #: _posts/2019-10-29-new-language-polish.md
 msgid "We are pleased to announce the launch of the completed Polish translation on this site! The Polish translators have covered almost all the text that can be translated, with 100% of the client, website strings, static pages, and tutorials available in Polish. On top of that, 95% of the documentation, 83% of the blog posts, and 78% of the app summaries are in Polish.  If you want to see this reach 100%, [contribute on Weblate](https://hosted.weblate.org/projects/f-droid/website/pl/)."
-msgstr ""
+msgstr "我们很高兴地宣布在这个网站上发布完成的波兰语翻译！波兰语翻译者几乎涵盖了所有可以翻译的文本，100% 的客户端、网站字符串、静态页面和教程都提供波兰语。最重要的是，95% 的文档、83% 的博客文章和 78% 的应用摘要都是波兰语。如果你想看到这达到 100%，[请在 Weblate 上进行贡献](https://hosted.weblate.org/projects/f-droid/website/pl/)。"
 
 #. type: Plain text
 #: _posts/2019-10-29-new-language-polish.md
 msgid "This does not mean that every bit of text on the site is in Polish, since we get the app descriptions from the app developers.  To make it easier for translators to contribute translations to all the apps in F-Droid, you can find the __Translation__ links for apps that have set up a translation service."
-msgstr ""
+msgstr "这并不意味着网站上的每一个文本都是波兰语，因为我们从应用开发者那里获取应用描述。为了方便翻译人员为 F-Droid 中的所有应用贡献翻译，你可以找到已设置翻译服务的应用的 __翻译__ 链接。"
 
 #. type: Title ##
 #: _posts/2019-10-29-new-language-polish.md
 #, no-wrap
 msgid "More languages"
-msgstr ""
+msgstr "更多语言"
 
 #. type: Plain text
 #: _posts/2019-10-29-new-language-polish.md
 msgid "We would love to include all completed languages as they are ready.  Unfortunately, this site is so large that we currently do not have the resources to generate the full website for all languages.  This site currently generates about 43,000 pages.  The test site includes all translations, whether incomplete or not.  It is currently 92,500 pages, and takes more than twice as long to build."
-msgstr ""
+msgstr "我们希望包括所有已完成的语言，因为它们已准备就绪。不幸的是，这个网站太大了，我们目前没有资源来生成所有语言的完整网站。该站点目前生成大约 43,000 个页面。测试站点包括所有翻译，无论是否完整。它目前有 92,500 个页面，构建时间是原来的两倍多。"
 
 #. type: Plain text
 #: _posts/2019-10-29-new-language-polish.md
 msgid "In order to support more pages, we need help optimizing Jekyll.  No other part of F-Droid uses Ruby, so the contributors are not well equipped to optimize our Jekyll setup.  Another more labor-intensive option might be to port the site to Hugo."
-msgstr ""
+msgstr "为了支持更多页面，我们需要帮助优化 Jekyll。 F-Droid 的其他部分没有使用 Ruby，因此贡献者难以很好地优化我们的 Jekyll 设置。另一个需要大量工作的选择可能是将站点移植到 Hugo。"
 
 #. type: Plain text
 #: _posts/2019-10-29-new-language-polish.md
 msgid "Follow the full [discussion on our forum](https://forum.f-droid.org/t/next-language-s-to-launch-on-f-droid-org)."
-msgstr ""
+msgstr "在我们的论坛上关注完整的[讨论](https://forum.f-droid.org/t/next-language-s-to-launch-on-f-droid-org)。"
 
 #. type: YAML Front Matter: title
 #: _posts/2019-12-02-trusted-update-channels-vs-scratching-your-itch.md
@@ -14702,12 +14703,12 @@ msgstr ""
 #. type: Plain text
 #: _posts/2019-12-02-trusted-update-channels-vs-scratching-your-itch.md
 msgid "One of the great things about free software is that people can easily take a functional program or library and customize it as they see fit.  Anyone can come along, submit bug fixes or improvements, and they can be easily shared across many people, projects, and organizations.  With distribution systems like Python's [pypi](https://pypi.python.org), there is an update channel that the trusted maintainers can publish fixes so consumers of the library can easily get updates.  When talking about update channels and code, it is unavoidable to also talk about people and trust.  One key piece is the trust relationship between the consumer and the maintainer.  The ideal software distribution system would be a blind, trustworthy pipe between the software maintainers and each end user."
-msgstr ""
+msgstr "自由软件的一大优点是人们可以轻松地获取实用程序或库，并按照他们认为合适的方式对其进行定制。任何人都可以提交错误修复或改进，并且可以在许多人、项目和组织之间轻松共享。对于像 Python 的 [pypi](https://pypi.python.org) 这样的分发系统，有一个更新通道，受信任的维护者可以发布修复程序，以便库的使用者可以轻松获得更新。在谈到更新渠道和代码时，不可避免地还要谈到人和信任。一个关键部分是使用者和维护者之间的信任关系。理想的软件分发系统将是软件维护人员和每个最终用户之间的盲目、可信赖的管道。"
 
 #. type: Plain text
 #: _posts/2019-12-02-trusted-update-channels-vs-scratching-your-itch.md
 msgid "Since we are talking about libraries of code, the natural relationship turns out to be different than the trust relationship: it is between the consumer and the library itself, not the maintainers.  I use Requests for handling HTTP, not @nateprewitt's fork.  My _setup.py_ includes a reference to `'requests'`, not to the maintainers who I trust to keep the library updated."
-msgstr ""
+msgstr "由于我们讨论的是代码库，因此自然关系与信任关系不同：它是在消费者和库本身之间，而不是维护者之间。我使用 Requests 来处理 HTTP，而不是 @nateprewitt 的复刻。我的 _setup.py_ 包含对 `'requests'` 的引用，而不是对我信任的保持库更新的维护者的引用。"
 
 #. type: Plain text
 #: _posts/2019-12-02-trusted-update-channels-vs-scratching-your-itch.md
