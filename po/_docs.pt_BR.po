@@ -19,7 +19,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
 "POT-Creation-Date: 2022-03-16 12:17+0100\n"
-"PO-Revision-Date: 2022-03-19 17:21+0000\n"
+"PO-Revision-Date: 2022-03-20 12:22+0000\n"
 "Last-Translator: Flavio F. M. <flavius_androiduser@protonmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://hosted.weblate.org/projects/f-droid/website-docs/pt_BR/>\n"
 "Language: pt_BR\n"
@@ -580,28 +580,28 @@ msgstr "Para que o F-Droid seja confiável, nos precisamos ser transparentes. Fa
 #: _docs/All_our_APIs.md
 #, no-wrap
 msgid "Active packages"
-msgstr ""
+msgstr "Pacotes ativados"
 
 #. type: Plain text
 #: _docs/All_our_APIs.md
 msgid "There is a per-app API accessible via `https://f-droid.org/api/v1/packages`, which can be used to query information about the applications in the main repository. The JSON API currently lists the published and suggested versions. Archived applications and packages are not available in this API."
-msgstr ""
+msgstr "Há uma API por aplicativo acessível via `https://f-droid.org/api/v1/packages`, que pode ser usada para consultar informações sobre os aplicativos no repositório principal. A API JSON lista atualmente as versões publicadas e sugeridas. Aplicativos e pacotes arquivados não estão disponíveis nesta API."
 
 #. type: Plain text
 #: _docs/All_our_APIs.md
 msgid "Example request:"
-msgstr ""
+msgstr "Solicitação de exemplo:"
 
 #. type: Fenced code block
 #: _docs/All_our_APIs.md
 #, no-wrap
 msgid "GET https://f-droid.org/api/v1/packages/org.fdroid.fdroid HTTP/1.1\n"
-msgstr ""
+msgstr "OBTER https://f-droid.org/api/v1/packages/org.fdroid.fdroid HTTP/1.1\n"
 
 #. type: Plain text
 #: _docs/All_our_APIs.md
 msgid "Example response:"
-msgstr ""
+msgstr "Resposta de exemplo:"
 
 #. type: Fenced code block
 #: _docs/All_our_APIs.md
@@ -632,22 +632,36 @@ msgid ""
 "  ]\n"
 "}\n"
 msgstr ""
+"{\n"
+"  \"packageName\": \"org.fdroid.fdroid\",\n"
+"  \"suggestedVersionCode\": 1009000,\n"
+"  \"packages\": [\n"
+"    {\n"
+"      \"versionName\": \"1.10-alpha0\",\n"
+"      \"versionCode\": 1010000\n"
+"    },\n"
+"    {\n"
+"      \"versionName\": \"1.9\",\n"
+"      \"versionCode\": 1009000\n"
+"    }\n"
+"  ]\n"
+"}\n"
 
 #. type: Plain text
 #: _docs/All_our_APIs.md
 msgid "This API is already used by shields.io project to provide F-Droid badges, [like this](https://img.shields.io/f-droid/v/org.fdroid.fdroid)."
-msgstr ""
+msgstr "Esta API já é usada por shields.io projeto para fornecer emblemas F-Droid, [como este](https://img.shields.io/f-droid/v/org.fdroid.fdroid)."
 
 #. type: Title ###
 #: _docs/All_our_APIs.md
 #, no-wrap
 msgid "The repo index"
-msgstr ""
+msgstr "O índice do repositório"
 
 #. type: Plain text
 #: _docs/All_our_APIs.md
 msgid "F-Droid is built around a signed index of all the apps and packages that are available.  This is a JSON file, though more of an index than an API since all the information is distributed via a single file.  The repo index is in the form of a signed JAR file that contains _index-v1.json_.  The best method is to verify the JAR signature, then extract _index-v1.json_ if it validates. The _fdroidserver_ Python library provides `fdroidserver.download_repo_index()` to make this easy to do.  It is also possible to just read _index-v1.json_ using any ZIP library."
-msgstr ""
+msgstr "F-Droid é construído em torno de um índice assinado de todos os aplicativos e pacotes disponíveis.   Este é um arquivo JSON, embora mais de um índice do que uma API, uma vez que todas as informações são distribuídas através de um único arquivo.   O índice de repo é na forma de um arquivo JAR assinado que contém _index-v1.json_.   O melhor método é verificar a assinatura jar e, em seguida, extrair _index-v1.json_ se validar. A biblioteca _fdroidserver_ Python fornece 'fdroidserver.download_repo_index()' para facilitar o uso.   Também é possível ler _index v1.json_ usando qualquer biblioteca ZIP."
 
 #. type: Bullet: '* '
 #: _docs/All_our_APIs.md
@@ -684,6 +698,9 @@ msgid ""
 "mirror on GitHub,\n"
 "e.g. <https://raw.githubusercontent.com/f-droid/fdroiddata/master/metadata/org.fdroid.fdroid.yml>\n"
 msgstr ""
+"Cada aplicativo em _f-droid.org_ tem um correspondente \n"
+"[construir arquivo de metadados] ({{ site.baseurl }}/docs/Build_Metadata_Reference) \n"
+"em [_fdroiddata_] (https://gitlab.com/fdroid/fdroiddata). A fim de incentivar reutilização mais criativa, mantemos nossos dados em formatos padrão de fácil encontrar Lugares. Toda a coleção de aplicativos está em [formato YAML]({{ site.baseurl }}/{% post_url 2019-09-11-yaml-metadados %}). O arquivo pode ser acessado diretamente por ID de aplicativo usando a URL Raw do GitLab 'https://gitlab.com/fdroid/fdroiddata/-/raw/master/metadata/.yml' (por exemplo,). O índice de repo e os arquivos do repositório [GitLab API](https://docs.gitlab.com/ee/api/repository_files.html) pode ser usada para consultar quais IDs de aplicativo estão disponíveis. Esses arquivos também estão disponíveis através do espelho no GitHub, por exemplo,\n"
 
 #. type: Title ###
 #: _docs/All_our_APIs.md
