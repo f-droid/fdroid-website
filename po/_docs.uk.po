@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
 "POT-Creation-Date: 2022-03-16 12:17+0100\n"
-"PO-Revision-Date: 2022-03-23 08:13+0000\n"
+"PO-Revision-Date: 2022-03-23 21:41+0000\n"
 "Last-Translator: Denys Nykula <nykula@ukr.net>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/f-droid/website-docs/uk/>\n"
 "Language: uk\n"
@@ -2534,7 +2534,7 @@ msgstr "_Builds_(збірки)<a name=\"Builds\"></a>"
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 msgid "Any number of sub-entries can be present, each specifying a version to automatically build from source.  For example:"
-msgstr ""
+msgstr "Підпунктів може бути скільки завгодно. Кожен зазначає версію, яка збереться автоматично з вихідного коду. Наприклад:"
 
 #. type: Fenced code block
 #: _docs/Build_Metadata_Reference.md
@@ -2574,7 +2574,7 @@ msgstr "`versionCode: yyy`<a name=\"build_versionCode\"></a>\n"
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid ":   Specifies to build version xxx, which has a version code of yyy.\n"
-msgstr ""
+msgstr ":   Буде зібрано версію, що називається xxx і має код yyy.\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -2589,11 +2589,13 @@ msgid ""
 ":   The _commit_ parameter specifies the tag, commit or revision number\n"
 "    from which to build it in the source repository.\n"
 msgstr ""
+":   Параметр _commit_ вказує, який тег, коміт чи номер ревізії\n"
+"    слід обрати в репозиторії вихідного коду для збірки.\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 msgid "In addition to the three, always required, parameters described above, further parameters can be added (in `name: value` format) to apply further configuration to the build. These are (roughly in order of application):"
-msgstr ""
+msgstr "До трьох завжди обов'язкових параметрів, описаних вище, можна додавати уточнювальні параметри (в форматі `назва: значення`), щоб застосувати додаткові налаштування збірки. Їх перелік (у порядку застосування):"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -2609,6 +2611,9 @@ msgid ""
 "    compatibility, this can also be achieved by starting the commit ID\n"
 "    with ’!’)\n"
 msgstr ""
+":   Вимикає цю збірку, зазначаючи причину. (Для зворотної\n"
+"    сумісності, замість цього можна додати на початок ID коміту\n"
+"    символ «!»)\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -2621,6 +2626,12 @@ msgid ""
 "    disabling causes it to be deleted once `fdroid update` is run; this\n"
 "    is the procedure if ever a version has to be replaced.\n"
 msgstr ""
+"    Мета цієї функції — позначити випуски, які неможливо зібрати\n"
+"    (наприклад, втрачено код), щоб скрипти не генерували\n"
+"    про них повторних повідомлень. (Також ця нотатка допомагає\n"
+"    повернутись пізніше). Якщо APK вже зібрано, вимкнення\n"
+"    спричинить його видалення при запуску `fdroid update`; саме\n"
+"    так діємо, коли доводиться замінювати версію.\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -2635,6 +2646,8 @@ msgid ""
 ":   Specifies to build from a subdirectory of the checked out source\n"
 "    code. Normally this directory is changed to before building,\n"
 msgstr ""
+":   Вказує, що зібрати слід лише підкаталог отриманого вихідного\n"
+"    коду. Тобто це каталог, до якого переходимо перед збіркою.\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -2651,6 +2664,10 @@ msgid ""
 "    source is cloned. Submodules are reset and cleaned like the main app\n"
 "    repository itself before each build.\n"
 msgstr ""
+":   Використайте, якщо git-проєкт має підмодулі:\n"
+"    `git submodule update --init --recursive` буде викликано після\n"
+"    клонування джерела. Підмодулі стираються при очищенні\n"
+"    головного репозиторію застосунку перед кожною збіркою.\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -2670,6 +2687,13 @@ msgid ""
 "    need very specific things that are not appropriate to install for\n"
 "    all builds, or for things that would conflict with other builds.\n"
 msgstr ""
+":   Зазначає, який скрипт слід виконати як `sudo bash -x -c \"xxxx\"`\n"
+"    у гостьовій віртуальній машині сервера збірки. Скрипт отримує\n"
+"    повні root-права, але після кожної збірки стан стирається. Майже\n"
+"    всім застосункам достатньо стандартного початкового середовища\n"
+"    Debian/stable. Опція дає змогу налаштувати складні збірки, яким\n"
+"    потрібні виняткові залежності, встановлення яких недоречне в\n"
+"    типовому випадку чи конфліктує з іншими збірками.\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -2685,6 +2709,9 @@ msgid ""
 "    buildserver VM is forcefully terminated.  The default is 7200\n"
 "    (2 hours); 0 means no limit.\n"
 msgstr ""
+":   Межа тривалості збірки (в секундах). Щойно час спливе,\n"
+"    віртуальна машина сервера збірки примусово вимкнеться.\n"
+"    Усталено це 7200 (2 години); 0 знімає обмеження.\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -2693,6 +2720,8 @@ msgid ""
 "    Limitation is applied only in server mode, i.e. when `fdroid build`\n"
 "    is invoked with the `--server` option.\n"
 msgstr ""
+"    Обмеження діє лише в режимі сервера, тобто коли `fdroid build`\n"
+"    викликано з опцією `--server`.\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -2707,6 +2736,8 @@ msgid ""
 ":   Like ’prebuild’, but runs on the source code BEFORE any other\n"
 "    processing takes place.\n"
 msgstr ""
+":   Як «prebuild», але застосовується до вихідного коду ПЕРЕД\n"
+"    будь-якою іншою обробкою.\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -2718,6 +2749,11 @@ msgid ""
 "    per-build variables are available likewise: \\$\\$VERSION\\$\\$,\n"
 "    \\$\\$VERCODE\\$\\$ and \\$\\$COMMIT\\$\\$.\n"
 msgstr ""
+"    Можете використати \\$\\$SDK\\$\\$, \\$\\$NDK\\$\\$ та \\$\\$MVN3\\$\\$, щоб\n"
+"    підставити шляхи до каталогів Android SDK та NDK й до виконуваного\n"
+"    файлу Maven 3 відповідно. Наступні змінні стають аналогічно\n"
+"    доступними для кожної збірки: \\$\\$VERSION\\$\\$,\n"
+"    \\$\\$VERCODE\\$\\$ and \\$\\$COMMIT\\$\\$.\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -5216,12 +5252,12 @@ msgstr "Передусім це залежить від ліцензії: якщ
 #: _docs/FAQ_-_App_Developers.md
 #, no-wrap
 msgid "How is the F-Droid client git workflow structured?"
-msgstr ""
+msgstr "Як виглядає git-процес розробки клієнта F-Droid?"
 
 #. type: Plain text
 #: _docs/FAQ_-_App_Developers.md
 msgid "`git` allows tons of flexibility in the workflow of how people work together, so it is important to clearly define the workflow of this community so that people know what to expect. The `git` workflow the F-Droid client app uses is relatively simple and based on the very common workflow established by github.com, gitlab.com and others like it.  Here's a break down of what that means:"
-msgstr ""
+msgstr "`git` підтримує дуже різні підходи до спільної роботи, тож важливо чітко прописати робочий процес нашої спільноти, щоб люди розуміли, чого очікувати. Для розробки клієнтського застосунку F-Droid використовує досить простий `git`-підхід, близький до поширеного робочого процесу github.com, gitlab.com тощо. Конкретизуємо, що це означає:"
 
 #. type: Bullet: '-   '
 #: _docs/FAQ_-_App_Developers.md
@@ -5236,53 +5272,53 @@ msgstr "код подається для включення через запи�
 #. type: Bullet: '-   '
 #: _docs/FAQ_-_App_Developers.md
 msgid "releases happen in a short-lived, stable release branch per major release (e.g. `stable-0.95`, `stable-0.96`, `stable-0.97`, etc.)"
-msgstr ""
+msgstr "над випусками працюємо в короткострокових гілках стабільних випусків — по одній на кожен великий випуск (наприклад, `stable-0.95`, `stable-0.96`, `stable-0.97` тощо)"
 
 #. type: Bullet: '-   '
 #: _docs/FAQ_-_App_Developers.md
 msgid "the work that goes into the stable release branch must be tightly focused and as small as possible to keep the release cycle as short as possible"
-msgstr ""
+msgstr "робота, що потрапляє до гілки стабільного випуску, мусить мати вузьке спрямування та якомога менший обсяг, щоб не затримувати цикл випуску"
 
 #. type: Bullet: '-   '
 #: _docs/FAQ_-_App_Developers.md
 msgid "the `master` branch must never be merged with any stable release branch"
-msgstr ""
+msgstr "гілку `master` у жодному разі не зливаємо в жодну гілку стабільного випуску"
 
 #. type: Bullet: '-   '
 #: _docs/FAQ_-_App_Developers.md
 msgid "stable release branches must never be merged with the `master` branch"
-msgstr ""
+msgstr "гілки стабільних випусків у жодному разі не зливаємо в гілку `master`"
 
 #. type: Bullet: '-   '
 #: _docs/FAQ_-_App_Developers.md
 msgid "Merge Requests for a stable release branch can include commits from `master`"
-msgstr ""
+msgstr "запити на злиття до гілки стабільного випуску можуть містити окремі коміти з `master`"
 
 #. type: Bullet: '-   '
 #: _docs/FAQ_-_App_Developers.md
 msgid "not all commits that are included in a stable release branch are required to be in `master`"
-msgstr ""
+msgstr "не всі коміти, додані в гілку стабільного випуску, зрештою опиняються в `master`"
 
 #. type: Bullet: '-   '
 #: _docs/FAQ_-_App_Developers.md
 msgid "what you do in your git forks is up to you, but the final merge request should not include merge commits"
-msgstr ""
+msgstr "що ви робите у власних git-форках, залишається на ваш розсуд, але остаточний запит на злиття має не містити merge-комітів"
 
 #. type: Plain text
 #: _docs/FAQ_-_App_Developers.md
 msgid "Here is the discussion from the meeting where we nailed this down: <https://web.archive.org/web/20171220230923/https://botbot.me/freenode/fdroid-dev/2015-08-04/?msg=46407489&page=1>"
-msgstr ""
+msgstr "Ось обговорення з тої зустрічі, на якій ми це узгодили: <https://web.archive.org/web/20171220230923/https://botbot.me/freenode/fdroid-dev/2015-08-04/?msg=46407489&page=1>"
 
 #. type: Plain text
 #: _docs/FAQ_-_App_Developers.md
 msgid "This article includes a good discussion of \"feature branches\" versus \"release branches\" and short-lived vs. long-lived branches: <http://blogs.atlassian.com/2013/11/the-essence-of-branch-based-workflows/>"
-msgstr ""
+msgstr "Ця стаття гарно порівнює «гілки функцій» із «гілками випусків», а також короткострокові гілки з довгостроковими: <http://blogs.atlassian.com/2013/11/the-essence-of-branch-based-workflows/>"
 
 #. type: YAML Front Matter: title
 #: _docs/FAQ_-_Client.md
 #, no-wrap
 msgid "FAQ - Client"
-msgstr ""
+msgstr "ЧаП — Клієнт"
 
 #. type: Title ###
 #: _docs/FAQ_-_Client.md
@@ -8266,17 +8302,17 @@ msgstr ""
 #: _docs/Repository_Style_Guide.md
 #, no-wrap
 msgid "Repository Style Guide"
-msgstr ""
+msgstr "Стилістика репозиторію"
 
 #. type: Plain text
 #: _docs/Repository_Style_Guide.md
 msgid "This page is a __work in progress__, and needs attention from experts on the subject, especially on fact checking."
-msgstr ""
+msgstr "Ця сторінка __в розробці__ й потребує експертної уваги по темі, особливо перевірки фактів."
 
 #. type: Plain text
 #: _docs/Repository_Style_Guide.md
 msgid "This guide gives some more detailed information on what to store in metadata fields. Most items are outdated and will be merge with the manual over time."
-msgstr ""
+msgstr "Цей посібник надає докладні дані про те, що варто розміщувати в полях метаданих. Більшість пунктів застаріли, а їхній актуальний вміст колись буде додано прямо в інструкцію."
 
 #. type: Bullet: '* '
 #: _docs/Repository_Style_Guide.md
