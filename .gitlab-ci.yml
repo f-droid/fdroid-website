@@ -91,12 +91,6 @@ f-droid.org:
    - ./tools/deploy-external-assets.sh $OUT_DIR
    - rsync -ax --delete $OUT_DIR /builds/output/
 
-   # ping search engines to announce site changes
-   - apt-get -qy install curl
-   - curl https://www.google.com/ping?sitemap=https://f-droid.org/sitemap.xml
-   # this covers Bing, Yandex, and Seznam, see https://www.indexnow.org/searchengines.json
-   # via Bing, this also covers DuckDuckGo and Yahoo search
-   - curl https://api.indexnow.org/indexnow?url=https://f-droid.org/sitemap.xml&key=ael2ahshu7ohGhu9iey4aizaebahph3m
 
 pages:
   stage: deploy
