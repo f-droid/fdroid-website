@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
 "POT-Creation-Date: 2022-03-16 12:17+0100\n"
-"PO-Revision-Date: 2022-03-23 21:41+0000\n"
+"PO-Revision-Date: 2022-03-24 16:47+0000\n"
 "Last-Translator: Denys Nykula <nykula@ukr.net>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/f-droid/website-docs/uk/>\n"
 "Language: uk\n"
@@ -2771,12 +2771,17 @@ msgid ""
 "    lines of: \"com.android.ant.SetupTask cannot be found\" when trying to\n"
 "    build, then try enabling this option.\n"
 msgstr ""
+":   Зазначає, що репозиторій або build.xml очікують адресу SDK\n"
+"    не в «новому» форматі sdk.dir, а в дуже застарілому —\n"
+"    sdk-location. Якщо ви отримуєте повідомлення на зразок\n"
+"    «com.android.ant.SetupTask cannot be found» при\n"
+"    збірці, спробуйте ввімкнути цю опцію.\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid "`target: <target>`<a name=\"build_target\"></a>\n"
-msgstr "`target: <target>`<a name=\"build_target\"></a>\n"
+msgstr "`target: <ціль>`<a name=\"build_target\"></a>\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -2789,6 +2794,12 @@ msgid ""
 "    the target SDK in the AndroidManifest.xml, which determines the\n"
 "    level of features that can be included in the build.\n"
 msgstr ""
+":   Зазначає конкретний цільовий SDK-компілятор, замінюючи\n"
+"    значення, взяте з коду оригіналу. Це працює по-різному,\n"
+"    залежно від системи збірки: наразі підтримуються лише\n"
+"    проєкти з Ant, Maven та Gradle. Зауважте, це не впливає на\n"
+"    цільовий SDK в AndroidManifest.xml, який визначає,\n"
+"    наскільки нові функції може бути додано в збірку.\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -2800,12 +2811,17 @@ msgid ""
 "    android file or doesn’t already exist, but not a good idea if it’s\n"
 "    heavily customised.\n"
 msgstr ""
+"    У випадку Ant-проєкту, зміниться _project.properties_ застосунку\n"
+"    й, можливо, підпроєктів. Ймовірно, перепишеться весь\n"
+"    _build.xml_, що прийнятно, якщо це «стандартний»\n"
+"    файл Android або його взагалі нема, проте небажано, якщо\n"
+"    цей файл суттєво доповнено вручну.\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid "`androidupdate: <auto/dirs>`<a name=\"build_androidupdate\"></a>\n"
-msgstr "`androidupdate: <auto/dirs>`<a name=\"build_androidupdate\"></a>\n"
+msgstr "`androidupdate: <auto/каталоги>`<a name=\"build_androidupdate\"></a>\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -2816,6 +2832,10 @@ msgid ""
 "    update=no bypasses that. Note that this is useless in builds that\n"
 "    don’t use Ant.\n"
 msgstr ""
+":   Усталено, Ant-збірки використовують ’android update’ для\n"
+"    створення чи оновлення проєкту та всіх його посилань. Вкажіть\n"
+"    update=no, щоб це обійти. Зауважте, це не має сенсу в збірках,\n"
+"    які не використовують Ant.\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -2824,6 +2844,8 @@ msgid ""
 "    Default value is ’`auto`’, which recursively uses the paths in\n"
 "    _project.properties_ to find all the subprojects to update.\n"
 msgstr ""
+"    Типове значення `auto` рекурсивно проходить шляхи в\n"
+"    _project.properties_, щоб знайти й оновити всі підпроєкти.\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -2832,6 +2854,8 @@ msgid ""
 "    Otherwise, the value can be a comma-separated list of directories in\n"
 "    which to run ’android update’ relative to the application directory.\n"
 msgstr ""
+"    Або можете перелічити через кому шляхи, в яких слід запустити\n"
+"    «android update», відносно каталогу застосунку.\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -2849,6 +2873,11 @@ msgid ""
 "    source files with this encoding. If you receive warnings during the\n"
 "    compile about character encodings, you probably need this.\n"
 msgstr ""
+":   Додає local.properties властивість java.encoding зі вказаним\n"
+"    значенням — зазвичай «utf-8». Ant-правила SDK виявляють\n"
+"    це й змушують компілятор Java розпізнавати джерело\n"
+"    як файли з цим кодуванням. Якщо отримуєте попередження\n"
+"    при збірці про кодування символів, імовірно це вам потрібно.\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -2863,6 +2892,8 @@ msgid ""
 ":   If specified, the package version in _AndroidManifest.xml_ is replaced\n"
 "    with the version name for the build as specified in the metadata.\n"
 msgstr ""
+":   Якщо зазначено, версію пакунку в _AndroidManifest.xml_ буде\n"
+"    замінено на ту назву версії, яку вказано в метаданих збірки.\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -2874,6 +2905,11 @@ msgid ""
 "    apparent which architecture or platform the APK is designed to\n"
 "    run on.\n"
 msgstr ""
+"    Це корисно, якщо певний тег репозиторію оригіналу не\n"
+"    оновив версію; або якщо треба зібрати конкретний коміт; або\n"
+"    щоб підкреслити відмінність версії від оригіналу; або щоб\n"
+"    вказати, на якій архітектурі чи платформі APK може\n"
+"    виконуватись.\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -2888,12 +2924,14 @@ msgid ""
 ":   If specified, the package version code in the _AndroidManifest.xml_ is\n"
 "    replaced with the version code for the build. See also forceversion.\n"
 msgstr ""
+":   Якщо зазначено, код версії пакунку в _AndroidManifest.xml_ буде\n"
+"    замінено на той код версії, який вказано в метаданих збірки.\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid "`rm: <path1>[,<path2>,...]`<a name=\"build_rm\"></a>\n"
-msgstr "`rm: <path1>[,<path2>,...]`<a name=\"build_rm\"></a>\n"
+msgstr "`rm: <шлях1>[,<шлях2>,...]`<a name=\"build_rm\"></a>\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -2905,6 +2943,11 @@ msgid ""
 "    out from the source respository - not necessarily the directory that\n"
 "    contains _AndroidManifest.xml_.\n"
 msgstr ""
+":   Зазначає, які відносні шляхи файлів чи каталогів слід видалити\n"
+"    перед завершенням збірки. Шляхи є відносними до основного\n"
+"    каталогу збірки — до кореня структури каталогів, завантаженої\n"
+"    з репозиторію вихідного коду; це може бути інший каталог, ніж\n"
+"    той, що містить _AndroidManifest.xml_.\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -2913,12 +2956,14 @@ msgid ""
 "    Multiple files/directories can be specified by separating them with\n"
 "    ’,’. Directories will be recursively deleted.\n"
 msgstr ""
+"    Якщо файлів чи каталогів декілька, перелічіть їх через кому.\n"
+"    Каталоги видалятимуться рекурсивно.\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid "`extlibs: <lib1>[,<lib2>,...]`<a name=\"build_extlibs\"></a>\n"
-msgstr "`extlibs: <lib1>[,<lib2>,...]`<a name=\"build_extlibs\"></a>\n"
+msgstr "`extlibs: <бібліотека1>[,<бібліотека2>,...]`<a name=\"build_extlibs\"></a>\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -2928,6 +2973,9 @@ msgid ""
 "    `build/extlib` library, which will be placed in the `libs` directory\n"
 "    of the project.\n"
 msgstr ""
+":   Розділений комами перелік зовнішніх бібліотек (jar-файлів)\n"
+"    із `build/extlib`, які буде розміщено в каталозі `libs`\n"
+"    проєкту.\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -2944,6 +2992,10 @@ msgid ""
 "    library name and rev is the revision or tag to use in the respective\n"
 "    source control.\n"
 msgstr ""
+":   Розділений комами перелік вихідного коду бібліотек чи Android-проєктів.\n"
+"    Кожен пункт має вигляд name@rev, де name — це наперед визначена\n"
+"    назва вихідного коду бібліотеки, а rev — це ревізія чи тег, який слід\n"
+"    обрати у відповідній системі керування версіями вихідного коду.\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -2956,6 +3008,12 @@ msgid ""
 "    do the equivalent of the legacy practice\n"
 "    `prebuild=echo \"android.library.reference.1=$$somelib$$\" >> project.properties`.\n"
 msgstr ""
+"    Для проєкту Ant, можете необов'язково додати номер із двокрапкою\n"
+"    на початок пункту srclib, щоб автоматично додати його до\n"
+"    _project.properties_ як бібліотеку зі вказаним номером. Наприклад,\n"
+"    якщо зазначите `1:somelib@1.0`, то F-Droid автоматично\n"
+"    виконає щось на зразок застарілої практики\n"
+"    `prebuild=echo \"android.library.reference.1=$$somelib$$\" >> project.properties`.\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -2973,6 +3031,17 @@ msgid ""
 "    relative path to the library directory, but it could need tweaking\n"
 "    if you’ve changed into another directory.\n"
 msgstr ""
+"    Кожна srclib має файл метаданих у каталозі srclibs/\n"
+"    репозиторію, а вихідний код зберігається в build/srclib/.\n"
+"\t_RepoType_ і _Repo_ зазначаються таким же чином, як і\n"
+"    для застосунків; Subdir: може бути розділеним комами списком\n"
+"    перейменувань каталогів оригіналу; Update Project: оновлює\n"
+"    проєкти в робочому каталозі й на один рівень нижче; Prepare:\n"
+"    виконує довільну підготовку: наприклад, ви можете змінити\n"
+"    цільовий SDK проєкту. Тоді ви також можете використати\n"
+"    \\$\\$name\\$\\$ у команді init/prebuild/build, щоб замістити\n"
+"    відносний шлях до каталогу бібліотеки, але може довестися\n"
+"    змінити ще щось, якщо ви перейшли до іншого каталогу.\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -2984,47 +3053,52 @@ msgid ""
 "    source code, F-Droid allows the following known repositories until a\n"
 "    source-built alternative is available:\n"
 msgstr ""
+"    Наразі srclibs потрібні, якщо оригінал використовує jar-файли чи\n"
+"    завантажує залежності з недовірених репозиторіїв. Оскільки нема\n"
+"    гарантії, що ці двійкові файли вільні й відповідні вихідному\n"
+"    коду, F-Droid дозволяє наступні відомі репозиторії, поки\n"
+"    не стане доступна збирана з вихідного коду альтернатива:\n"
 
 #. type: Bullet: '    -   '
 #: _docs/Build_Metadata_Reference.md
 msgid "‘mavenCentral’ - the original repo, hardcoded in Maven and Gradle."
-msgstr ""
+msgstr "«mavenCentral» — перший репозиторій, доданий хардкодом у Maven і Gradle."
 
 #. type: Bullet: '    -   '
 #: _docs/Build_Metadata_Reference.md
 msgid "‘jCenter’ - hardcoded in Gradle, this repo by Bintray tries to provide easier handling. It should sync with mavenCentral from time to time."
-msgstr ""
+msgstr "«jCenter» — хардкод у Gradle, репозиторій від Bintray із простішим інтерфейсом. Має періодично синхронізуватися з mavenCentral."
 
 #. type: Bullet: '    -   '
 #: _docs/Build_Metadata_Reference.md
 msgid "‘OSS Sonatype’ - maintained by the people behind mavenCentral, this repository focuses on hosting services for open source project binaries."
-msgstr ""
+msgstr "«OSS Sonatype» — супроводжуваний командою mavenCentral репозиторій, зосереджений на розміщенні двійкових файлів проєктів із відкритим кодом."
 
 #. type: Bullet: '    -   '
 #: _docs/Build_Metadata_Reference.md
 msgid "‘OSS JFrog’ - maintained by the people behind jCenter, this repository focuses on hosting services for open source project binaries."
-msgstr ""
+msgstr "«OSS JFrog» — супроводжуваний командою jCenter репозиторій, зосереджений на розміщенні двійкових файлів проєктів із відкритим кодом."
 
 #. type: Bullet: '    -   '
 #: _docs/Build_Metadata_Reference.md
 msgid "‘JitPack.io’ - builds directly from GitHub repositories.  However, they do not provide any option to reproduce or verify the resulting binaries. Builds pre-release versions in some cases."
-msgstr ""
+msgstr "«JitPack.io» — збирає прямо з GitHub-репозиторіїв. Проте не надає жодного способу відтворити чи перевірити двійкові файли результату. В деяких випадках збирає версії ще до випуску."
 
 #. type: Bullet: '    -   '
 #: _docs/Build_Metadata_Reference.md
 msgid "‘Clojars’ - Clojure libraries repo."
-msgstr ""
+msgstr "«Clojars» — репозиторій бібліотек Clojure."
 
 #. type: Bullet: '    -   '
 #: _docs/Build_Metadata_Reference.md
 msgid "‘CommonsWare’ - repo holding a collection of open-source libs."
-msgstr ""
+msgstr "«CommonsWare» — репозиторій із добіркою відкритих бібліотек."
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid "`patch: x`<a name=\"build_patch\"></a>\n"
-msgstr ""
+msgstr "`patch: x`<a name=\"build_patch\"></a>\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -3035,6 +3109,10 @@ msgid ""
 "    metadata file but without the extension. Each of these patches is\n"
 "    applied to the code in turn.\n"
 msgstr ""
+":   Застосовує патчі. «x» — файл (або кілька, розділені\n"
+"    комою) у підкаталозі metadata з такою ж назвою, як файл\n"
+"    метаданих, але без суфіксу. Кожен із цих патчів\n"
+"    застосовується до коду по черзі.\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -3053,12 +3131,18 @@ msgid ""
 "    other contexts; in particular, literal backslashes should not\n"
 "    be escaped.\n"
 msgstr ""
+":   Зазначає команду оболонки (чи кілька, розділені &&) для\n"
+"    виконання перед збіркою. Послідовність «\\\\,» вводить\n"
+"    кому, а рядок із «\\\\» в кінці приєднується до наступного.\n"
+"    В інших контекстах цей символ не має особливого\n"
+"    значення, зокрема перед самостійною оберненою\n"
+"    косою рискою не потрібно ставити ще одну.\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid "    The command runs using bash.\n"
-msgstr ""
+msgstr "    Команду виконує bash.\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -3069,6 +3153,10 @@ msgid ""
 "    example, take place after this. For custom actions that actually\n"
 "    build things or produce binaries, use ’build’ instead.\n"
 msgstr ""
+"    Зауважте, під час «prebuild» не має відбуватися жодної збірки:\n"
+"    сканування коду й збірка архіву джерела, наприклад,\n"
+"    відбуваються потім. Нетипові дії, які справді збирають щось\n"
+"    чи створюють двійкові файли, слід винести в «build».\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -3077,6 +3165,8 @@ msgid ""
 "    You can use \\$\\$name\\$\\$ to substitute the path to a referenced\n"
 "    srclib - see the `srclib` directory for details of this.\n"
 msgstr ""
+"    Замість \\$\\$name\\$\\$ буде підставлено шлях відповідної\n"
+"    srclib, докладніше про це — в каталозі `srclib`.\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -3089,12 +3179,18 @@ msgid ""
 "    variables are available likewise: \\$\\$VERSION\\$\\$, \\$\\$VERCODE\\$\\$\n"
 "    and \\$\\$COMMIT\\$\\$.\n"
 msgstr ""
+"    Замість \\$\\$SDK\\$\\$, \\$\\$NDK\\$\\$ і \\$\\$MVN3\\$\\$ буде підставлено\n"
+"    шляхи до каталогів Android SDK та NDK й до виконуваного файлу\n"
+"    Maven 3 відповідно. Це допоможе вам, наприклад, явно\n"
+"    виконувати `android update project`. Наступні змінні також\n"
+"    доступні для кожної збірки: \\$\\$VERSION\\$\\$, \\$\\$VERCODE\\$\\$\n"
+"    and \\$\\$COMMIT\\$\\$.\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid "`scanignore: <path1>[,<path2>,...]`<a name=\"build_scanignore\"></a>\n"
-msgstr "`scanignore: <path1>[,<path2>,...]`<a name=\"build_scanignore\"></a>\n"
+msgstr "`scanignore: <шлях1>[,<шлях2>,...]`<a name=\"build_scanignore\"></a>\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -3105,6 +3201,10 @@ msgid ""
 "    and probably accompanied by a comment explaining why it\n"
 "    is necessary.\n"
 msgstr ""
+":   Дає змогу нехтувати одним чи кількома файлами чи шляхами при\n"
+"    скануванні. Використовуйте лише в крайніх випадках,\n"
+"    бажано супроводжуючи коментарем із поясненням, чому\n"
+"    це знадобилося.\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -3113,12 +3213,14 @@ msgid ""
 "    When scanning the source tree for problems, matching files whose\n"
 "    relative paths start with any of the paths given here are ignored.\n"
 msgstr ""
+"    Виявлення проблем у вихідному коді пропускатиме файли, чиї\n"
+"    відносні шляхи починаються з будь-якого зазначеного тут шляху.\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid "`scandelete: <path1>[,<path2>,...]`<a name=\"build_scandelete\"></a>\n"
-msgstr "`scandelete: <path1>[,<path2>,...]`<a name=\"build_scandelete\"></a>\n"
+msgstr "`scandelete: <шлях1>[,<шлях2>,...]`<a name=\"build_scandelete\"></a>\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -3128,6 +3230,9 @@ msgid ""
 "    binaries - will be removed. It acts just like _scanignore_, but\n"
 "    instead of ignoring the files, it removes them.\n"
 msgstr ""
+":   Будь-які файли, що викличуть помилки при скануванні, як-от\n"
+"    двійкові файли, буде вилучено. Аналогічно _scanignore_, але\n"
+"    не пропускає файли, а вилучає.\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -3137,6 +3242,9 @@ msgid ""
 "    unwanted files which are not needed for the build. Instead of\n"
 "    removing them manually via _rm_, using _scandelete_ is easier.\n"
 msgstr ""
+"    Корисно, якщо репозиторій вихідного коду містить двійкові чи\n"
+"    інші небажані файли, непотрібні для збірки. Їх можна вилучити\n"
+"    вручну за допомогою _rm_, але _scandelete_ простіше.\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -3153,6 +3261,10 @@ msgid ""
 "    actual building. Any preparation of the source code should be done\n"
 "    using ’init’ or ’prebuild’.\n"
 msgstr ""
+":   Як «prebuild», але спрацьовує під час власне збірки (проте до\n"
+"    запуску основної збірки Ant/Maven). Використовуйте це лише для\n"
+"    дій, що справді щось збирають. Будь-яку підготовку вихідного коду\n"
+"    слід виконувати в «init» чи «prebuild».\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
