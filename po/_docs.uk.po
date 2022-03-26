@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
 "POT-Creation-Date: 2022-03-16 12:17+0100\n"
-"PO-Revision-Date: 2022-03-26 14:11+0000\n"
+"PO-Revision-Date: 2022-03-26 16:14+0000\n"
 "Last-Translator: Denys Nykula <nykula@ukr.net>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/f-droid/website-docs/uk/>\n"
 "Language: uk\n"
@@ -9954,39 +9954,39 @@ msgstr ""
 #. type: Plain text
 #: _docs/Signing_Process.md
 msgid "In the above, replace _my.keystore_ with the name of the keystore file to be created, and ’repokey’ with a name to identify the repo index key by.  You’ll be asked for a password for the keystore, AND a password for the key. They shouldn’t be the same. In between, you’ll be asked for some identifying details which will go in the certificate."
-msgstr ""
+msgstr "Замість _моє.keystore_ угорі введіть назву файлу сховища ключів, яке ви бажаєте створити, а замість «назва» — ту назву, що ідентифікуватиме індекс репозиторію. Ви отримаєте прохання вказати пароль до сховища ключів, А ТАКОЖ пароль до ключа. Паролі мусять відрізнятися. Також вам буде треба вказати додаткові ідентифікаційні дані, що стануть частиною сертифікату."
 
 #. type: Plain text
 #: _docs/Signing_Process.md
 msgid "The two passwords entered go into _config.yml_, as `keystorepass` and `keypass` respectively. The path to the keystore file is set in `keystore`, and the alias you chose for the key also go into that file is called `repo_keyalias`."
-msgstr ""
+msgstr "Обидва введені паролі опиняться в _config.yml_ як `keystorepass` і `keypass` відповідно. Шлях до файлу сховища ключів запишеться в `keystore`, а обрана вами назва ключа потрапить у файл `repo_keyalias`."
 
 #. type: Title ###
 #: _docs/Signing_Process.md
 #, no-wrap
 msgid "APK Signing"
-msgstr ""
+msgstr "Підпис APK"
 
 #. type: Plain text
 #: _docs/Signing_Process.md
 msgid "The F-Droid tools can automatic generate and manage APK signing keys for each app that it maintains.  With the repo index signing configured, all that remains to be done for package signing to work is to set the _keydname_ field in _config.yml_ to contain the same identifying details you entered before.  A new key will be generated using these details, for each application that is built. If a specific key is required for a particular application, this system can be overridden using the _keyaliases_ config settings."
-msgstr ""
+msgstr "Засоби F-Droid можуть автоматично генерувати ключі підпису APK для кожного супроводжуваного застосунку й дають змогу керувати ними. Після налаштування підпису індексу репозиторію, залишається тільки вказати в _config.yml_ поле _keydname_ із тими ж ідентифікаційними даними, які ви ввели раніше. З цими деталями буде згенеровано нові ключі для кожного збираного застосунку. Якщо для певного застосунку потрібен конкретний ключ, використайте замість усталеної системи параметр _keyaliases_ у файлі конфігурації."
 
 #. type: Plain text
 #: _docs/Signing_Process.md
 msgid "To set up `fdroid publish`, do these steps on the same machine where you copy APKs to and run `fdroid update`.  First, set _keydname_ in _config.yml_, it should be something like this:"
-msgstr ""
+msgstr "Щоб налаштувати `fdroid publish`, виконайте наступні кроки на тому комп'ютері, куди ви копіюєте APK й на якому запускаєте `fdroid update`. Спершу вкажіть _keydname_ у _config.yml_:"
 
 #. type: Fenced code block (python)
 #: _docs/Signing_Process.md
 #, no-wrap
 msgid "keydname = \"CN=example.com, O=Example Ltd, C=UK\"\n"
-msgstr ""
+msgstr "keydname = \"CN=example.com, O=ТОВ Зразок, C=UA\"\n"
 
 #. type: Plain text
 #: _docs/Signing_Process.md
 msgid "Create a dir called _unsigned/_ next to the _metadata/_ and _repo/_ dirs, and run these commands to move the APK into place with a new name based on _Application ID_ and _Version Code_:"
-msgstr ""
+msgstr "Створіть каталог _unsigned/_ поруч із каталогами _metadata/_ й _repo/_ — й запустіть такі команди, щоб розмістити APK з новою назвою, складеною з _applicationId_ та _versionCode_:"
 
 #. type: Fenced code block (console)
 #: _docs/Signing_Process.md
@@ -10000,38 +10000,45 @@ msgid ""
 "$ fdroid update --verbose\n"
 "$ fdroid server update --verbose\n"
 msgstr ""
+"$ cd /шлях/до/репозиторію\n"
+"$ touch metadata/com.example.app.yml\n"
+"$ mkdir unsigned\n"
+"$ cp /шлях/до/app-release-unsigned.apk unsigned/com.example.app_1234.apk\n"
+"$ fdroid publish --verbose\n"
+"$ fdroid update --verbose\n"
+"$ fdroid server update --verbose\n"
 
 #. type: Title ###
 #: _docs/Signing_Process.md
 #, no-wrap
 msgid "Package Signing"
-msgstr ""
+msgstr "Підпис пакунків"
 
 #. type: Plain text
 #: _docs/Signing_Process.md
 msgid "All packages built and/or distributed using F-Droid tools can also be signed by PGP using [GnuPG](https://gnupg.org), anything from APKs to media files will be signed.  This process is run with `fdroid gpgsign`.  Add `gpghome` and `gpgkey` to your _config.yml_ to configure it, there is more information in [examples/config.yml][examples/config.yml]."
-msgstr ""
+msgstr "Усі пакунки, що збираються чи поширюються засобами F-Droid, можна також підписувати за допомогою PGP, використовуючи [GnuPG](https://gnupg.org). Підписано буде все: від APK-файлів до медіафайлів. Процес запускається командою `fdroid gpgsign`. Щоб її налаштувати, додайте `gpghome` та `gpgkey` до свого _config.yml_. Докладніше про це — в [examples/config.yml][examples/config.yml]."
 
 #. type: Title ###
 #: _docs/Signing_Process.md
 #, no-wrap
 msgid "Hardware Security Modules"
-msgstr ""
+msgstr "Апаратні модулі захисту"
 
 #. type: Plain text
 #: _docs/Signing_Process.md
 msgid "Hardware Security Modules (HSMs) are specially designed pieces of hardware for securely storing and using cryptographic keys.  They provide write-only storage, so that a private key can only be written to the HSM and never read off of it.  _fdroidserver_ has support for using HSMs for repo signing keys."
-msgstr ""
+msgstr "Апаратні модулі захисту (hardware security modules, HSM) — це апаратне забезпечення, спеціально розроблене для безпечного зберігання й використання криптографічних ключів. Вони працюють лише на запис, тобто закритий ключ можна лише записати на HSM, але зчитати його звідти буде неможливо. _fdroidserver_ підтримує використання HSM для ключів підпису репозиторію."
 
 #. type: Plain text
 #: _docs/Signing_Process.md
 msgid "For information on how to configure an F-Droid repo to use an HSM, see the \"smartcard\" sections of [examples/config.yml][examples/config.yml], specifically `keystore` and `smartcardoptions`.  Most likely, [OpenSC](https://github.com/OpenSC/OpenSC) will need to be set up as a PKCS11 provider for Java."
-msgstr ""
+msgstr "Докладніше налаштування репозиторію F-Droid для використання HSM описано в розділах «smartcard» файлу [examples/config.yml][examples/config.yml], зокрема `keystore` та `smartcardoptions`. Швидше за все, вам знадобиться встановити [OpenSC](https://github.com/OpenSC/OpenSC) як провайдер PKCS11 для Java."
 
 #. type: Plain text
 #: _docs/Signing_Process.md
 msgid "For more in-depth information, see: * _fdroidserver_ example config file: [examples/config.yml](https://gitlab.com/fdroid/fdroidserver/-/blob/2.1a0/examples/config.yml#L125)  * [Publishing an F-Droid Repo using a Hardware Security Module]({{ site.baseurl }}/{% post_url 2020-10-05-ntrokey-signing %})  * [Security in a thumb drive: the promise and pain of hardware security modules, take one!](https://guardianproject.info/2014/03/28/security-in-a-thumb-drive-the-promise-and-pain-of-hardware-security-modules-take-one/)"
-msgstr ""
+msgstr "Ще докладніше:  * зразок файлу налаштувань _fdroidserver_: [examples/config.yml](https://gitlab.com/fdroid/fdroidserver/-/blob/2.1a0/examples/config.yml#L125)  * [Оприлюднення репозиторію F-Droid з апаратним модулем безпеки]({{ site.baseurl }}/{% post_url 2020-10-05-ntrokey-signing %})  * [Безпека на флешці, або Апаратні модулі захисту — надія чи біль? Обирати вам!](https://guardianproject.info/2014/03/28/security-in-a-thumb-drive-the-promise-and-pain-of-hardware-security-modules-take-one/)"
 
 #. type: YAML Front Matter: title
 #: _docs/Submitting_to_F-Droid_Quick_Start_Guide.md
