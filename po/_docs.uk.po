@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
 "POT-Creation-Date: 2022-03-16 12:17+0100\n"
-"PO-Revision-Date: 2022-03-26 16:14+0000\n"
+"PO-Revision-Date: 2022-03-27 20:17+0000\n"
 "Last-Translator: Denys Nykula <nykula@ukr.net>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/f-droid/website-docs/uk/>\n"
 "Language: uk\n"
@@ -8723,54 +8723,54 @@ msgstr "Найважливіше — дізнаватися про оприлю�
 #: _docs/Reproducible_Builds.md
 #, no-wrap
 msgid "Reproducible Builds"
-msgstr ""
+msgstr "Відтворювані збірки"
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
 msgid "F-Droid supports [reproducible builds](https://reproducible-builds.org)  of apps, so that anyone can run the build process again and reproduce the same APK as the original release.  This means that F-Droid can verify that an app is 100% free software while still using the original developer's APK signatures.  Ideally, all of the built APKs will have the exact same hash, but that is a more difficult standard with less payoff. Right now, F-Droid verifies reproducible builds using the APK signature."
-msgstr ""
+msgstr "F-Droid підтримує [відтворювані збірки](https://reproducible-builds.org) застосунків. Будь-хто має змогу запустити процес збірки самостійно й отримати такий самий APK, як оригінальний випуск. Тобто F-Droid може довести, що застосунок на 100% вільний і відкритий, і при цьому поширювати оригінальний APK команди розробки з їхнім підписом. В ідеалі повинен збігатися ще й хеш APK, але це складніший стандарт із меншою віддачею. Наразі F-Droid перевіряє відтворюваність збірки за допомогою підпису APK."
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
 msgid "This concept is occasionally called \"deterministic builds\".  That is a much stricter standard: that means that the whole process runs with the same ordering each time.  The most important thing is that anyone can run the process and end up with the exact same result."
-msgstr ""
+msgstr "Цей концепт іноді називають «детерміністичними збірками». Їхній стандарт значно більш строгий: всі кроки мусять виконуватися щоразу в одному й тому ж порядку. Головне — щоб результат був однаковий незалежно від того, хто запускає процес."
 
 #. type: Title ###
 #: _docs/Reproducible_Builds.md
 #, no-wrap
 msgid "How it is implemented as of now"
-msgstr ""
+msgstr "Як це втілено зараз"
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
 msgid "Publishing signed binaries from elsewhere (e.g. the upstream developer)  is now possible after verifying that they match ones built using a recipe. Publishing only takes place if there is a proper match. (Which seems very unlikely to be the case unless the exact same tool-chain is used, so I would imagine that unless the person building and signing the incoming binaries uses fdroidserver to build them, probably the exact same buildserver ID, they will not match. But at least we have the functionality to support that.)"
-msgstr ""
+msgstr "Оприлюднення підписаних двійкових збірок з інших джерел (наприклад, від команди розробки оригіналу) зараз стає можливим після перевірки, що вони збіжні з зібраними відповідно до інструкцій. Збірка стає загальнодоступною лише за умови такої збіжності. (Це вкрай малоймовірно, якщо збірку складено не таким же інструментарієм. Тобто якщо відповідальна за збірку й підпис двійкового оригіналу особа не використовує fdroidserver для цієї збірки, чи навіть має інший ідентифікатор сервера збірки, збігу не буде. Але функціонал для підтримки принаймні цього в нас уже є.)"
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
 msgid "This procedures are implemented as part of `fdroid publish`. At the publish step, the reproducibility check will follow this logic:"
-msgstr ""
+msgstr "Процес втілено як складову `fdroid publish`. На етапі оприлюднення, перевірка відтворюваності діє за такою логікою:"
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
 msgid "![Flow-chart for reproducibility check]({% asset docs/reproducible-builds/publish.png %})"
-msgstr ""
+msgstr "![Схема перевірки відтворюваності]({% asset docs/reproducible-builds/publish.png %})"
 
 #. type: Title ####
 #: _docs/Reproducible_Builds.md
 #, no-wrap
 msgid "Publish both (upstream-)developer signed and F-Droid signed APKs"
-msgstr ""
+msgstr "Оприлюднення як оригіналу з розробницьким підписом, так і APK з підписом F-Droid"
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
 msgid "Use this approach for shipping a version of an app, with both (upstream-)developer signed and F-Droid signed APKs. This enables us to ship updates for users who installed apps from other sources than F-Droid (eg. Play Store) which are therefore signed by the app-developers, while also shipping updates for apps which were built and signed by F-Droid."
-msgstr ""
+msgstr "Використайте цей підхід, щоб оприлюднити два варіанти версії застосунку: як оригінал з розробницьким підписом, так і APK з підписом F-Droid. Це дає змогу поширювати оновлення як для авдиторії, яка встановлює застосунки не з F-Droid, а з інших джерел (як-от Play Store), а тому потребує підпису команди розробки; так і для авдиторії застосунків, зібраних і підписаних F-Droid."
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
 msgid "This requires to put (upstream-)developer signatures into fdroiddata.  We provide a command for easily extracting signatures from APKs:"
-msgstr ""
+msgstr "Для цього потрібно розмістити в fdroiddata підписи команди розробки оригіналу. Надаємо засіб простого отримання підписів з APK:"
 
 #. type: Fenced code block (console)
 #: _docs/Reproducible_Builds.md
@@ -8779,11 +8779,13 @@ msgid ""
 "$ cd /path/to/fdroiddata\n"
 "$ fdroid signatures F-Droid.apk\n"
 msgstr ""
+"$ cd /шлях/до/fdroiddata\n"
+"$ fdroid signatures F-Droid.apk\n"
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
 msgid "You may also supply HTTPS-URLs directly to `fdroid signatures` instead of local files. The signature files are extracted to the according metadata directory ready to be used with `fdroid publish`. A signature consists of 3-5 files and the result of extracting one will resemble these file listings:"
-msgstr ""
+msgstr "Можете також спрямувати `fdroid signatures` не на локальні файли, а прямо на URL-адреси з HTTPS. Файли підпису буде видобуто до відповідного каталогу метаданих, у готовому до використання з `fdroid publish` вигляді. Підпис складається з 3-5 файлів, результат видобування одного з яких буде подібним до такого переліку файлів:"
 
 #. type: Fenced code block (console)
 #: _docs/Reproducible_Builds.md
@@ -8794,11 +8796,15 @@ msgid ""
 "$ ls metadata/your.app/signatures/42/                # v1 + v2/v3 signature\n"
 "APKSigningBlock  APKSigningBlockOffset  MANIFEST.MF  YOURKEY.RSA  YOURKEY.SF\n"
 msgstr ""
+"$ ls metadata/org.fdroid.fdroid/signatures/1000012/  # лише v1-підпис\n"
+"CIARANG.RSA  CIARANG.SF  MANIFEST.MF\n"
+"$ ls metadata/your.app/signatures/42/                # підписи v1 + v2/v3\n"
+"APKSigningBlock  APKSigningBlockOffset  MANIFEST.MF  YOURKEY.RSA  YOURKEY.SF\n"
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
 msgid "If you don't want to install `fdroidserver` or have an older version that doesn't support extracting v2/v3 signatures yet, you can also use [`apksigcopier`](https://github.com/obfusk/apksigcopier) (available in e.g. Debian unstable) instead of `fdroid signatures`:"
-msgstr ""
+msgstr "Якщо не бажаєте встановлювати `fdroidserver` чи маєте старішу версію, яка не підтримує видобування підписів v2/v3, то можете також використати [`apksigcopier`](https://github.com/obfusk/apksigcopier) (наявний у Debian Unstable) замість `fdroid signatures`:"
 
 #. type: Fenced code block (console)
 #: _docs/Reproducible_Builds.md
@@ -8809,28 +8815,32 @@ msgid ""
 "$ mkdir metadata/$APPID/signatures/$VERSIONCODE\n"
 "$ apksigcopier extract --v1-only=auto Your.apk metadata/$APPID/signatures/$VERSIONCODE\n"
 msgstr ""
+"$ cd /шлях/до/fdroiddata\n"
+"$ APPID=your.app VERSIONCODE=42\n"
+"$ mkdir metadata/$APPID/signatures/$VERSIONCODE\n"
+"$ apksigcopier extract --v1-only=auto Your.apk metadata/$APPID/signatures/$VERSIONCODE\n"
 
 #. type: Title ####
 #: _docs/Reproducible_Builds.md
 #, no-wrap
 msgid "Exclusively publishing (upstream-)developer signed APKs"
-msgstr ""
+msgstr "Оприлюднення винятково APK з розробницьким підписом"
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
 msgid "For using this older approach, everything in the metadata should be the same as normal, with the addition of the `Binaries:` directive to specify where to get the binaries from. In this case F-Droid will never attempt to ship APKs signed by F-Droid. Should `fdroid publish` manage to verify that a downloaded APK can be built reproducibly, the downloaded APK will be published. Otherwise F-Droid will skip publishing this version of the app."
-msgstr ""
+msgstr "При застосуванні цього старішого підходу, все в метаданих залишається звичним, проте додається вказівка `Binaries:`, що зазначає, звідки отримувати двійкові файли. В такому разі F-Droid ніколи не намагатиметься оприлюднювати APK з підписом F-Droid. Якщо `fdroid publish` зможе підтвердити, що завантажений APK можливо зібрати відтворювано, буде оприлюднено завантажений APK. Інакше F-Droid зовсім пропустить оприлюднення цієї версії застосунку."
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
 msgid "Here is an example for a _Binaries_ directive:"
-msgstr ""
+msgstr "Ось приклад вказівки _Binaries_:"
 
 #. type: Fenced code block (yaml)
 #: _docs/Reproducible_Builds.md
 #, no-wrap
 msgid "Binaries: https://foo.com/path/to/myapp-%v.apk\n"
-msgstr ""
+msgstr "Binaries: https://певний.сайт/шлях/до/застосунку-%v.apk\n"
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
@@ -8841,90 +8851,90 @@ msgstr "Також перегляньте [розділ Binaries довідки 
 #: _docs/Reproducible_Builds.md
 #, no-wrap
 msgid "Verification builds"
-msgstr ""
+msgstr "Збірки для перевірки"
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
 msgid "Many people or organizations will only be interested in reproducing builds to make sure that the f-droid.org builds match the original source and nothing has been inserted in.  In that case, the resulting APKs are not published for installation.  The [Verification Server](../Verification_Server) automates this process."
-msgstr ""
+msgstr "Багатьох людей відтворювані збірки цікавлять саме наданням змоги доводити, що збірки f-droid.org збіжні з оригінальним вихідним кодом і більше нічого не додають. У такому разі, APK результату не буде оприлюднено для встановлення. [Сервер перевірки](../Verification_Server) автоматизує цей процес."
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
 msgid "An awful lot of builds already verify with no extra effort since Java code is often compiled into the same bytecode by a wide range of Java versions.  The Android SDK's _build-tools_ will create differences in the resulting XML, PNG, etc. files, but this is usually not a problem since the _build.gradle_ includes the exact version of _build-tools_ to use."
-msgstr ""
+msgstr "Безліч уже наявних збірок проходять перевірки без додаткових зусиль, бо з Java-коду компілятор часто робить однаковий байткод незалежно від версії Java. Різні версії _build-tools_ із Android SDK створюють різні варіанти файлів XML, PNG тощо, але це зазвичай не проблема, бо _build.gradle_ зазначає точну версію _build-tools_, яку слід використати."
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
 msgid "Anything built with the NDK will be much more sensitive.  For example, even for builds that use the exact same version of the NDK (e.g. _r13b_) but on different platforms (.e.g OSX version Ubuntu), the resulting binaries will have differences."
-msgstr ""
+msgstr "Все, що збирає NDK, значно чутливіше. Наприклад, відрізнятимуться навіть збірки з використанням одної й тої ж версії NDK (наприклад, _r13b_) на різних платформах (наприклад, macOS та Ubuntu)."
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
 msgid "Additionally, we'll have to look out for anything that includes timestamping information, is sensitive to sort order, etc."
-msgstr ""
+msgstr "Також збіркам потрібно уникати даних, похідних від дати й часу, чутливих до порядку сортування тощо."
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
 msgid "Google is also working towards reproducible builds of Android apps, so using recent versions of the Android SDK helps.  One specific case is starting with Gradle Android Plugin v2.2.2, timestamps in the APK file's ZIP header are automatically zeroed out."
-msgstr ""
+msgstr "Google також працює над відтворюваними збірками Android-застосунків, тож корисно використовувати нові версії Android SDK. Наприклад, плагін Gradle Android версії 2.2.2 й новіше автоматично замінює часові відмітки в ZIP-шапці APK-файлу на нулі."
 
 #. type: Title ###
 #: _docs/Reproducible_Builds.md
 #, no-wrap
 msgid "Reproducible Signatures"
-msgstr ""
+msgstr "Відтворювані підписи"
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
 msgid "F-Droid verifies reproducible builds using the APK signature, which requires [copying](https://github.com/obfusk/apksigcopier) the signature from a signed APK to an unsigned one and then checking if the latter verifies.  The old v1 (JAR) signatures only cover the *contents* of the APK (ZIP metadata and ordering are irrelevant), but v2/v3 signatures cover *all other bytes in the APK*.  Thus, the APKs must be completely identical *before* and *after* signing (apart from the signature) in order to verify correctly."
-msgstr ""
+msgstr "F-Droid звіряє відтворювані збірки за підписом APK, [копіюючи](https://github.com/obfusk/apksigcopier) для цього підпис із підписаного APK в непідписаний і перевіряючи результат на цілісність. Старі підписи v1 (JAR) охоплюють лише *вміст* APK (без огляду на метадані ZIP і сортування), але підписи v2/v3 охоплюють *усі байти APK.* Тож APK *до* й *після* підпису мусять повністю збігатися (за винятком самого підпису), щоб коректно пройти перевірку."
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
 msgid "Copying the signature uses the same algorithm that `apksigner` uses when signing an APK.  It is therefore important that (upstream) developers do the same when signing APKs, ideally by using `apksigner`."
-msgstr ""
+msgstr "Копіювання підпису використовує той же алгоритм, що й `apksigner` під час підпису APK. Тож важливо, щоб команда розробки оригіналу підписувала APK так само, в ідеалі за допомогою `apksigner`."
 
 #. type: Title ###
 #: _docs/Reproducible_Builds.md
 #, no-wrap
 msgid "_platform_ Revisions"
-msgstr ""
+msgstr "Ревізії _platform_"
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
 msgid "The Android SDK tools [were changed](https://issuetracker.google.com/issues/37132313) in 2014 to [stick two](https://android.googlesource.com/platform/frameworks/base/+/ad2d07d%5E!/)  [data elements](https://android.googlesource.com/platform/frameworks/base/+/5283fab%5E!/)  in _AndroidManifest.xml_ as part of the build process: `platformBuildVersionName` and `platformBuildVersionCode`.  `platformBuildVersionName` includes the \"revision\" of the _platforms_ package built against (e.g. _android-23_), however different \"revisions\" of the same _platforms_ package cannot be installed in parallel.  Plus the SDK tools do not support specifying the required revision as part of the build process.  This often results in an otherwise reproducible build where the only difference is the `platformBuildVersionName` attribute."
-msgstr ""
+msgstr "У 2014, засоби Android [почали додавати](https://issuetracker.google.com/issues/37132313) [два нові](https://android.googlesource.com/platform/frameworks/base/+/ad2d07d%5E!/) [пункти даних](https://android.googlesource.com/platform/frameworks/base/+/5283fab%5E!/) до _AndroidManifest.xml_ у ході збірки: `platformBuildVersionName` і `platformBuildVersionCode`.  `platformBuildVersionName` містить «ревізію» (як-от _android-23_) пакунку _platforms_, яку слід застосувати для збірки, проте різні «ревізії» пакунку _platforms_ неможливо встановити паралельно. До того ж, засоби SDK не підтримують явного зазначення ревізії, яка потрібна збірці. Через це часто отримуємо збірки, відтворити які не вдається лише через різницю в атрибуті `platformBuildVersionName`."
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
 msgid "The \"_platform_\" is part of the Android SDK that represents the standard library that is installed on the phone. They have two parts to their version: \"version code\", which is an integer that represents the SDK release, and the \"revision\", which represents bugfix versions to each platform. These versions can be seen in the included _build.prop_ file. Each revision has a different number in _ro.build.version.incremental_.  Gradle has no way to specify the revision in _compileSdkVersion_ or _targetSdkVersion_. Only one \"_platform-23_\" can be installed at a time, unlike _build-tools_, where every release can be installed in parallel."
-msgstr ""
+msgstr "«Платформа», або _platform_, — це складова Android SDK, що дає змогу зібраним за його допомогою застосункам використовувати стандартну бібліотеку, встановлену на телефоні. Версія платформи складається з двох частин: «коду версії», тобто числового позначення випуску SDK, й «ревізії», тобто позначення версії виправлень платформи. Ці версії можна побачити в доданому файлі _build.prop_. Кожна версія має унікальне число _ro.build.version.incremental_. Gradle не дає змоги вказати ревізію в _compileSdkVersion_ чи _targetSdkVersion_. Можливо встановити лише одну ревізію _platform-23_, на відміну від _build-tools_, усі випуски яких можливо встановити паралельно."
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
 msgid "Here are two examples where I think all the differences came from just different revisions of the platform:"
-msgstr ""
+msgstr "Ось два приклади розбіжності, яка ймовірно виникає саме через відмінність ревізій платформи:"
 
 #. type: Bullet: '* '
 #: _docs/Reproducible_Builds.md
 msgid "https://verification.f-droid.org/de.nico.asura_12.apk.diffoscope.html"
-msgstr ""
+msgstr "https://verification.f-droid.org/de.nico.asura_12.apk.diffoscope.html"
 
 #. type: Bullet: '* '
 #: _docs/Reproducible_Builds.md
 msgid "https://verification.f-droid.org/de.nico.ha_manager_25.apk.diffoscope.html"
-msgstr ""
+msgstr "https://verification.f-droid.org/de.nico.ha_manager_25.apk.diffoscope.html"
 
 #. type: Title ###
 #: _docs/Reproducible_Builds.md
 #, no-wrap
 msgid "PNG Crush/Crunch"
-msgstr ""
+msgstr "Стиснення PNG"
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
 msgid "A standard part of the Android build process is to run some kind of PNG optimization tool, like `aapt singleCrunch` or `pngcrush`.  These do not provide deterministic output, it is still an open question as to why.  Since PNGs are normally committed to the source repo, a workaround to this problem is to run the tool of your choice on the PNG files, then commit those changes to the source repo (e.g. `git`).  Then, disable the default PNG optimization process by adding this to _build.gradle_:"
-msgstr ""
+msgstr "У ході стандартної Android-збірки запускається певний засіб оптимізації PNG, наприклад `aapt singleCrunch` або `pngcrush`. Від запуску до запуску їхній вивід змінюється, чому — досі відкрите питання. Оскільки PNG зазвичай зберігаються в репозиторії вихідного коду, ви можете обійти цю проблему, обробивши PNG-файли вручну засобом на ваш вибір і зберігши ці зміни в репозиторії вихідного коду (як-от `git`). Тоді вимкніть автоматичну оптимізацію PNG, додавши наступне в _build.gradle_:"
 
 #. type: Fenced code block
 #: _docs/Reproducible_Builds.md
@@ -8936,22 +8946,27 @@ msgid ""
 "    }\n"
 "}\n"
 msgstr ""
+"android {\n"
+"    aaptOptions {\n"
+"        cruncherEnabled = false\n"
+"    }\n"
+"}\n"
 
 #. type: Title ###
 #: _docs/Reproducible_Builds.md
 #, no-wrap
 msgid "R8 Optimizer"
-msgstr ""
+msgstr "Оптимізатор R8"
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
 msgid "It appears that some R8 optimizations done in nondeterministic way, producing different bytecode on different build runs."
-msgstr ""
+msgstr "Схоже, R8 виконує деякі оптимізації недетерміністично, тобто різні його запуски створюють різний байткод."
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
 msgid "For instance, R8 tries to optimize ServiceLoader usage making a static list of all services in the code. The order of this list may be different (or even incomplete) on each build run. The only way to avoid this behavior is disabling such optimizations declaring optimized classes in _proguard-rules.pro_:"
-msgstr ""
+msgstr "Наприклад, R8 намагається оптимізувати використання ServiceLoader, створюючи статичний перелік усіх служб у коді. Цей перелік може щоразу по-різному впорядковуватись (чи навіть бути неповним). Уникнути цієї поведінки дає змогу лише вимкнення таких оптимізацій за допомогою оголошення оптимізованих класів у _proguard-rules.pro_:"
 
 #. type: Fenced code block
 #: _docs/Reproducible_Builds.md
@@ -8960,27 +8975,29 @@ msgid ""
 "-keep class kotlinx.coroutines.CoroutineExceptionHandler\n"
 "-keep class kotlinx.coroutines.internal.MainDispatcherFactory\n"
 msgstr ""
+"-keep class kotlinx.coroutines.CoroutineExceptionHandler\n"
+"-keep class kotlinx.coroutines.internal.MainDispatcherFactory\n"
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
 msgid "Be careful with R8. Always test your builds multiple times and disable optimizations which produce a nondeterministic output."
-msgstr ""
+msgstr "Будьте обачні з R8. Завжди випробовуйте свої збірки по кілька разів і вимикайте оптимізації, які мають недетерміністичний вивід."
 
 #. type: Title ###
 #: _docs/Reproducible_Builds.md
 #, no-wrap
 msgid "Resource Shrinker"
-msgstr ""
+msgstr "Зрізання ресурсів"
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
 msgid "It's possible to reduce the APK file size removing unused resources from the package. This is useful when a project depends on some bloat libraries such as AppCompat, especially when R8/ProGuard code shrinking is used."
-msgstr ""
+msgstr "Можливо зменшити розмір APK-файлу, вилучивши невикористані ресурси з пакунку. Це корисно, коли проєкт залежить від деяких надміру важких бібліотек, таких як AppCompat, особливо при використанні R8 чи ProGuard, які зрізають невикористаний код."
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
 msgid "However, it might be possible that resource shrinker will increase the APK size on different platforms, especially if there is not too many resources to shrink, in which case the original APK will be used instead of the shrinked one (nondeterministic behavior of Gradle plugin). Avoid using resource shrinker unless it decreases the APK file size significantly."
-msgstr ""
+msgstr "Проте плагін Gradle поводиться недетерміністично: спроби зрізати ресурси можуть навіть збільшити розмір APK на деяких платформах, а якщо особливо нема чого зрізати, початковий APK буде використано замість зменшеного. Не використовуйте зрізання ресурсів, якщо воно не робить APK-файл набагато меншим."
 
 #. type: Title ###
 #: _docs/Reproducible_Builds.md
@@ -8991,7 +9008,7 @@ msgstr "coreLibraryDesugaring"
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
 msgid "In some cases builds are not reproducible due to a [bug in `coreLibraryDesugaring`](https://issuetracker.google.com/issues/195968520) (requires a google account to view); this [currently affects NewPipe](https://github.com/TeamNewPipe/NewPipe/issues/6486)."
-msgstr ""
+msgstr "У деяких випадках, збірки не відтворюються через [ваду в `coreLibraryDesugaring`](https://issuetracker.google.com/issues/195968520) (для перегляду потрібен обліковий запис Google); це [досі зачіпає NewPipe](https://github.com/TeamNewPipe/NewPipe/issues/6486)."
 
 #. type: Title ###
 #: _docs/Reproducible_Builds.md
@@ -9002,18 +9019,18 @@ msgstr "zipflinger"
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
 msgid "Recent versions of the Android gradle plugin will use *zipflinger* -- which arranges the contents of the APK differently -- which could result in e.g. [apksigcopier](https://github.com/obfusk/apksigcopier) failing to work in some cases.  You can tell the plugin not to use *zipflinger* by setting `android.useNewApkCreator=false` in `gradle.properties`."
-msgstr ""
+msgstr "Недавні версії плагіну Android Gradle використовують *zipflinger*, який перевпорядковує вміст APK, через що можуть виникати помилки, наприклад в [apksigcopier](https://github.com/obfusk/apksigcopier). Щоб вимкнути використання *zipflinger*, зазначте `android.useNewApkCreator=false` у `gradle.properties`."
 
 #. type: Title ###
 #: _docs/Reproducible_Builds.md
 #, no-wrap
 msgid "Native library stripping"
-msgstr ""
+msgstr "Зрізання native-бібліотек"
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
 msgid "It seems that the stripping of native libraries, e.g. _libfoo.so_, can cause intermittent reproducibility issues.  It is important to use the exact NDK version when rebuilding, e.g. r21e.  Disabling stripping can sometimes help.  Gradle seems to strip shared libraries by default, even the app is receiving the shared libraries via an AAR library.  Here is how to disable it in Gradle:"
-msgstr ""
+msgstr "Схоже, зрізання native-бібліотек — застосування _strip_ до, наприклад, _libfoo.so_ — може порушувати відтворення. При відтворенні збірок важливий точний збіг версії NDK, наприклад r21e. Вимкнення зрізання теж іноді допомагає. Gradle усталено намагається зрізати спільні бібліотеки, навіть якщо застосунок отримує їх із AAR-файлу. Ось як вимкнути це в Gradle:"
 
 #. type: Fenced code block (gradle)
 #: _docs/Reproducible_Builds.md
@@ -9042,49 +9059,49 @@ msgstr "NDK _build-id_"
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
 msgid "On different build machines different NDK paths and different paths to the project (and thus to its _jni_ directory) are used. This leads to different paths to the source files in debug symbols, causing linker to generate different _build-id_, which is preserved after stripping."
-msgstr ""
+msgstr "На різних комп'ютерах використовуються різні шляхи до NDK й проєкту, зокрема до його каталогу _jni_. До зневаджувальних символів потрапляють різні шляхи до файлів вихідного коду, через що лінкер генерує різні ідентифікатори збірки (_build-id_), які зберігаються навіть після зрізання."
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
 msgid "One possible solution is adding `LOCAL_LDFLAGS += -Wl,--build-id=none` to _Android.mk_ files which will disable _build-id_ generation completely."
-msgstr ""
+msgstr "Вирішити це можна, додавши наприклад `LOCAL_LDFLAGS += -Wl,--build-id=none` до файлів _Android.mk_, тобто зовсім вимкнувши генератор _build-id_."
 
 #. type: Title ###
 #: _docs/Reproducible_Builds.md
 #, no-wrap
 msgid "Build Server IDs"
-msgstr ""
+msgstr "Ідентифікатори серверів збірки"
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
 msgid "To describe the build environment used by F-Droid builds, APKs have two files inserted into them:"
-msgstr ""
+msgstr "APK, зібрані F-Droid, описують середовище збірки двома файлами:"
 
 #. type: Bullet: '* '
 #: _docs/Reproducible_Builds.md
 msgid "_META-INF/fdroidserverid_ - git commit hash of [_fdroidserver_](https://gitlab.com/fdroid/fdroidserver) used for the build"
-msgstr ""
+msgstr "_META-INF/fdroidserverid_ — хеш git-коміту [_fdroidserver_](https://gitlab.com/fdroid/fdroidserver), використаного для збірки"
 
 #. type: Bullet: '* '
 #: _docs/Reproducible_Builds.md
 msgid "_META-INF/buildserverid_ - git commit hash of [_makebuildserver_](https://gitlab.com/fdroid/fdroidserver/blob/master/makebuildserver) used for the build"
-msgstr ""
+msgstr "_META-INF/buildserverid_ — хеш git-коміту [_makebuildserver_](https://gitlab.com/fdroid/fdroidserver/blob/master/makebuildserver), використаного для збірки"
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
 msgid "To ensure reproducibility, use the exact same revision of the `./makebuildserver` and `fdroid build`. You can find the commit hash of _fdroidserver_ by going to your git clone and running `git log -n1`.  The build server instance is stamped with the git commit hash on creation, and that ID is included in builds."
-msgstr ""
+msgstr "Щоб забезпечити відтворюваність, використовуйте ту ж ревізію `./makebuildserver` та `fdroid build`. Знайдіть хеш коміту _fdroidserver_, перейшовши до свого git-клону й виконавши `git log -n1`. Екземпляр сервера збірки позначається хешем git-коміту при створенні, й цей ідентифікатор додається до збірок."
 
 #. type: Title ###
 #: _docs/Reproducible_Builds.md
 #, no-wrap
 msgid "ZIP entry info"
-msgstr ""
+msgstr "Метадані файлів у ZIP-архіві"
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
 msgid "The ZIP format was originally designed around the MSDOS FAT filesystem.  UNIX file permissions were added as an extension.  APKs only need the most basic ZIP format, without any of the extensions.  These extensions are often stripped out in the final release signing process.  But the APK build process can add them.  For example:"
-msgstr ""
+msgstr "Формат ZIP початково розроблено для файлової системи MSDOS FAT. Дозволи файлів UNIX додано як розширення. APK потребують лише найпростішого ZIP-формату, без жодних розширень. Ці розширення часто зрізаються під час остаточного підписання випуску. Проте в ході збірки APK їх може бути додано. Наприклад:"
 
 #. type: Fenced code block (diff)
 #: _docs/Reproducible_Builds.md
@@ -9100,34 +9117,43 @@ msgid ""
 "+-rw----     2.4 fat  1958312 b- defN 80-000-00 00:00 classes.dex\n"
 "+-rw-rw-rw-  2.3 unx    78984 b- stor 80-000-00 00:00 resources.arsc\n"
 msgstr ""
+"--- a2dp.Vol_137.apk\n"
+"+++ sigcp_a2dp.Vol_137.apk\n"
+"@@ -1,50 +1,50 @@\n"
+"--rw----     2.0 fat     8976 bX defN 79-Nov-30 00:00 AndroidManifest.xml\n"
+"--rw----     2.0 fat  1958312 bX defN 79-Nov-30 00:00 classes.dex\n"
+"--rw----     1.0 fat    78984 bx stor 79-Nov-30 00:00 resources.arsc\n"
+"+-rw-rw-rw-  2.3 unx     8976 b- defN 80-000-00 00:00 AndroidManifest.xml\n"
+"+-rw----     2.4 fat  1958312 b- defN 80-000-00 00:00 classes.dex\n"
+"+-rw-rw-rw-  2.3 unx    78984 b- stor 80-000-00 00:00 resources.arsc\n"
 
 #. type: Title ###
 #: _docs/Reproducible_Builds.md
 #, no-wrap
 msgid "Migration to reproducible builds"
-msgstr ""
+msgstr "Перехід до відтворюваних збірок"
 
 #. type: Title ####
 #: _docs/Reproducible_Builds.md
 #, no-wrap
 msgid "TODO"
-msgstr ""
+msgstr "Майбутні завдання"
 
 #. type: Bullet: '* '
 #: _docs/Reproducible_Builds.md
 msgid "jar sort order for APKs"
-msgstr ""
+msgstr "порядок сортування JAR в APK"
 
 #. type: Bullet: '* '
 #: _docs/Reproducible_Builds.md
 msgid "`aapt` versions produce different results (XML and res/ subfolder names)"
-msgstr ""
+msgstr "різні версії `aapt` повертають різні результати (XML і назви підкаталогів res/)"
 
 #. type: Title ####
 #: _docs/Reproducible_Builds.md
 #, no-wrap
 msgid "Sources"
-msgstr ""
+msgstr "Джерела"
 
 #. type: Bullet: '* '
 #: _docs/Reproducible_Builds.md
@@ -9137,7 +9163,7 @@ msgstr "<https://gitlab.com/fdroid/fdroidserver/commit/8568805866dadbdcc6c07449c
 #. type: Bullet: '* '
 #: _docs/Reproducible_Builds.md
 msgid "[Verification Server](../Verification_Server)"
-msgstr ""
+msgstr "[Сервер перевірки](../Verification_Server)"
 
 #. type: Bullet: '* '
 #: _docs/Reproducible_Builds.md
@@ -9162,44 +9188,44 @@ msgstr "<https://gitian.org/>"
 #. type: Bullet: '* '
 #: _docs/Reproducible_Builds.md
 msgid "[Google Issue #70292819 platform-27\\_r01.zip was overwritten with a new update](https://issuetracker.google.com/issues/70292819) (_Google login and JavaScript required_)"
-msgstr ""
+msgstr "[Google-обговорення #70292819: оновлення перезаписало platform-27\\_r01.zip](https://issuetracker.google.com/issues/70292819) (_потрібні JavaScript та обліковий запис Google_)"
 
 #. type: Bullet: '* '
 #: _docs/Reproducible_Builds.md
 msgid "[Google Issue #37132313 platformBuildVersionName makes builds difficult to reproduce, creates unneeded diffs](https://issuetracker.google.com/issues/37132313) (_Google login and JavaScript required_)"
-msgstr ""
+msgstr "[Google-обговорення #37132313: platformBuildVersionName ускладнює відтворення збірок, додає зайві відмінності](https://issuetracker.google.com/issues/37132313) (_потрібні JavaScript та обліковий запис Google_)"
 
 #. type: Bullet: '* '
 #: _docs/Reproducible_Builds.md
 msgid "[Google Issue #110237303 resources.arsc built with non-determism, prevents reproducible APK builds](https://issuetracker.google.com/issues/110237303) (_Google login and JavaScript required_)"
-msgstr ""
+msgstr "[Google-обговорення #110237303: resources.arsc збирається недетерміністично, порушує відтворення збірки APK](https://issuetracker.google.com/issues/110237303) (_потрібні JavaScript та обліковий запис Google_)"
 
 #. type: Bullet: '* '
 #: _docs/Reproducible_Builds.md
 msgid "[Unreproducible/non-deterministic code generation by navigation.safeargs.kotlin](https://issuetracker.google.com/issues/189498001) (_Google login and JavaScript required_)"
-msgstr ""
+msgstr "[Генерація коду navigation.safeargs.kotlin недетерміністична й невідтворювана](https://issuetracker.google.com/issues/189498001) (_потрібні JavaScript та обліковий запис Google_)"
 
 #. type: YAML Front Matter: title
 #: _docs/Running_a_Mirror.md
 #, no-wrap
 msgid "Running a Mirror"
-msgstr ""
+msgstr "Ведення дзеркала"
 
 #. type: Plain text
 #: _docs/Running_a_Mirror.md
 msgid "F-Droid's collection of apps and files are run on servers run by the core F-Droid contributors. Originally, this main repository was hosted only on [f-droid.org](https://f-droid.org/), but as F-Droid grew [f-droid.org](https://f-droid.org/) alone was no longer able to handle the entire load. F-Droid now supports \"mirror\" servers that replicate a full copy of the repositories. Hosting a mirror involves running an HTTPS webserver that has a full copy of the repository synchronized using `rsync`."
-msgstr ""
+msgstr "Колекцію застосунків і файлів F-Droid розміщено на серверах, супроводжуваних командою F-Droid. Спершу головний репозиторій було розміщено лише на [f-droid.org](https://f-droid.org/), але F-Droid виріс, і [f-droid.org](https://f-droid.org/) більше не міг впоратися з усім навантаженням. Наразі F-Droid підтримує «дзеркала» — сервери з повною копією репозиторіїв. Для розміщення дзеркала потрібен HTTPS-вебсервер із повною копією репозиторію, синхронізованою за допомогою `rsync`."
 
 #. type: Title ####
 #: _docs/Running_a_Mirror.md
 #, no-wrap
 msgid "Requirements"
-msgstr ""
+msgstr "Вимоги"
 
 #. type: Plain text
 #: _docs/Running_a_Mirror.md
 msgid "There are two official F-Droid repository sections, the \"repo\" and the \"archive\". It's most important to mirror the \"repo\" since it is used much more than the \"archive\"."
-msgstr ""
+msgstr "Репозиторій F-Droid має два офіційні розділи: «repo» та «archive». Дзеркала «repo» важливіші, бо використовуються значно більше, ніж «archive»."
 
 #. type: Plain text
 #: _docs/Running_a_Mirror.md
