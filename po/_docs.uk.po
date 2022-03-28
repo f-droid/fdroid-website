@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
 "POT-Creation-Date: 2022-03-16 12:17+0100\n"
-"PO-Revision-Date: 2022-03-27 20:17+0000\n"
+"PO-Revision-Date: 2022-03-29 07:06+0000\n"
 "Last-Translator: Denys Nykula <nykula@ukr.net>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/f-droid/website-docs/uk/>\n"
 "Language: uk\n"
@@ -7983,79 +7983,79 @@ msgstr "- [Довідка Debian](https://www.debian.org/doc/manuals/developers-
 #: _docs/Publishing_Nightly_Builds.md
 #, no-wrap
 msgid "Publishing Nightly Builds"
-msgstr ""
+msgstr "Оприлюднення нічних збірок"
 
 #. type: Plain text
 #: _docs/Publishing_Nightly_Builds.md
 msgid "Having users run \"nightly\" builds is a great way to get rapid feedback on current development activities.  One key way to get this kind of feedback is to make it as easy as possible for people to install the nightly builds, and to keep updated.  The F-Droid tools now let you automate this whole process for apps that are setup on GitLab CI."
-msgstr ""
+msgstr "Вивантаження «нічних» збірок для авдиторії — чудовий спосіб отримувати негайні відгуки прямо в ході розробки. Щоб успішно збирати такий зворотний зв'язок, слід максимально спростити для авдиторії встановлення й оновлення нічних збірок. Засоби F-Droid дають змогу автоматизувати весь цей процес для застосунків, у яких налаштовано GitLab CI."
 
 #. type: Plain text
 #: _docs/Publishing_Nightly_Builds.md
 msgid "The F-Droid nightly repos are built on top of the standard Android _~/.android/debug.keystore_ that the Android tools automatically generate.  That signing key is used to sign the nightly builds as well as the repo index.  This is meant to be easy to setup and manage, but it does __not__ provide the same level of security as a standard F-Droid repo!"
-msgstr ""
+msgstr "Нічні репозиторії F-Droid побудовано на основі стандартного файлу _~/.android/debug.keystore_, автоматично генерованого засобами Android. Цей ключ використовується для підпису нічних збірок та індексу репозиторію. Його легко встановити й супроводжувати, але він __не__ надає такого ж рівня безпеки, як звичайний репозиторій F-Droid!"
 
 #. type: Plain text
 #: _docs/Publishing_Nightly_Builds.md
 msgid "Since this is about smoothing the development process, it also makes sense to reuse a shared _debug.keystore_ among your team.  That way, all debug builds are interchangeable.  This makes debugging certain problems a lot easier since you can keep the app state when installing your own debug builds, for example, to add logging."
-msgstr ""
+msgstr "Оскільки суть цього полягає в спрощенні процесу розробки, є сенс перевикористовувати _debug.keystore_, спільний для всієї вашої команди. Тоді всі зневаджувальні збірки будуть взаємозамінними. Це суттєво спрощує розв'язання деяких проблем, оскільки дані застосунку зберігатимуться при встановленні власних зневаджувальних збірок — наприклад, для додання журналювання."
 
 #. type: Title ##
 #: _docs/Publishing_Nightly_Builds.md
 #, no-wrap
 msgid "Automatic Version Codes"
-msgstr ""
+msgstr "Автоматичні коди версій"
 
 #. type: Plain text
 #: _docs/Publishing_Nightly_Builds.md
 msgid "With nightly builds, the normal logic for setting `versionCode` in git for each release no longer makes sense.  In order for Android to treat each new build as a possible update, the `versionCode` must increase, but that does not make sense to commit to git each time.  So there needs to be some automatic logic for setting `versionCode`:"
-msgstr ""
+msgstr "У контексті нічних збірок, звична логіка вказання `versionCode` у git для кожного релізу не має сенсу. Щоб Android вважав кожну збірку можливим оновленням, `versionCode` мусить постійно зростати, але додатково вивантажувати щось у git при кожній збірці було б зайвим. Тож потрібна певна логіка для автоматичного вказання `versionCode`:"
 
 #. type: Bullet: '* '
 #: _docs/Publishing_Nightly_Builds.md
 msgid "timestamp in seconds (`date +%s`) will always increase"
-msgstr ""
+msgstr "часова відмітка в UNIX-секундах (`date +%s`) завжди зростає"
 
 #. type: Bullet: '* '
 #: _docs/Publishing_Nightly_Builds.md
 msgid "incrementing the last release's `versionCode` (e.g. 104030034, 104030035, 104030036)"
-msgstr ""
+msgstr "можна щоразу збільшувати на 1 `versionCode` останнього випуску (наприклад, 104030034, 104030035, 104030036)"
 
 #. type: Bullet: '* '
 #: _docs/Publishing_Nightly_Builds.md
 msgid "git commit count (`git rev-list --first-parent --count HEAD`)  provides some hints of where in the code the build was made from"
-msgstr ""
+msgstr "кількість git-комітів (`git rev-list --first-parent --count HEAD`) підказує, до якого коміту в історії ця збірка найближча"
 
 #. type: Plain text
 #: _docs/Publishing_Nightly_Builds.md
 msgid "For many apps, some combo will make the most sense. For F-Droid, we have a variable `DB_VERSION` for the internal database.  We only handle upgrading the database, never downgrading.  So that needs to be the most important part of the versionCode.  Any build with `DB_VERSION = 77` should not be upgraded by any build with `DB_VERSION = 75`.  Then the minor part is the commit count, so it looks like (7502543, 7502544, 7702601, etc). with `DB_VERSION` as the first two digits, then a 0-padded commit count as the last 5 digits."
-msgstr ""
+msgstr "Багатьом застосункам краще за все підійде певна комбінація. В клієнті F-Droid ми маємо змінну `DB_VERSION`, яка позначає формат внутрішньої бази даних. Ми завжди мігруємо базу даних у бік новішого формату, а в бік старішого — ніколи. Тож ця змінна становить головну частину нашого versionCode. Збірку з `DB_VERSION = 77` не має оновлювати жодна збірка з `DB_VERSION = 75`. Другорядну частину становить кількість комітів. Таким чином, перші дві цифри — це `DB_VERSION`, а останні 5 цифр — це кількість комітів із 0 на початку: 7502543, 7502544, 7702601 тощо."
 
 #. type: Title ##
 #: _docs/Publishing_Nightly_Builds.md
 #, no-wrap
 msgid "Configuring GitLab CI"
-msgstr ""
+msgstr "Налаштування GitLab CI"
 
 #. type: Plain text
 #: _docs/Publishing_Nightly_Builds.md
 msgid "This assumes that the app is already setup with _.gitlab-ci.yml_ and builds are running on GitLab CI.  This also works for forks of the main project that has the _.gitlab-ci-yml_."
-msgstr ""
+msgstr "Спираємось на припущення, що для застосунку вже налаштовано _.gitlab-ci.yml_ і його збірка відбувається на GitLab CI. Це також працює для форків основного проєкту, який містить _.gitlab-ci-yml_."
 
 #. type: Bullet: '1. '
 #: _docs/Publishing_Nightly_Builds.md
 msgid "Run `fdroid nightly --show-secret-var` in the local git repo that is being setup, e.g. _fdroid/fdroidclient_.  It will print out the SSH Public Key.  Using `--show-secret-var` will make it print out base 64 text to be pasted into secret variable called `DEBUG_KEYSTORE`.  Careful! That text is the entire _debug.keystore_, so protect it accordingly!"
-msgstr ""
+msgstr "Виконайте `fdroid nightly --show-secret-var` у локальному git-репозиторії, який ви налаштовуєте, наприклад у _fdroid/fdroidclient_. Це повідомить вам відкритий ключ SSH. Використання `--show-secret-var` виведе також Base64 для вставлення в таємну змінну `DEBUG_KEYSTORE`. Обережно! Цей текст — увесь вміст _debug.keystore_, тож не допускайте його оприлюднення!"
 
 #. type: Bullet: '2. '
 #: _docs/Publishing_Nightly_Builds.md
 msgid "Create a new GitLab \"project\" by appending _-nightly_ to the name. For example, <https://gitlab.com/fdroid/fdroidclient> becomes <https://gitlab.com/fdroid/fdroidclient-nightly> and <https://gitlab.com/eighthave/fdroidclient> becomes <https://gitlab.com/eighthave/fdroidclient-nightly>"
-msgstr ""
+msgstr "Створіть окремий GitLab-проєкт, додавши _-nightly_ до назви. Наприклад, нічна збірка <https://gitlab.com/fdroid/fdroidclient> — <https://gitlab.com/fdroid/fdroidclient-nightly>, а <https://gitlab.com/eighthave/fdroidclient> — <https://gitlab.com/eighthave/fdroidclient-nightly>"
 
 #. type: Bullet: '3. '
 #: _docs/Publishing_Nightly_Builds.md
 msgid "In that new project, add the SSH Public Key derived from your _debug.keystore_ as a Deploy Key in your Repository Settings, e.g.  `https://gitlab.com/eighthave/fdroidclient-nightly/settings/repository`"
-msgstr ""
+msgstr "Перейдіть до цього нового проєкту й додайте відкритий ключ SSH, отриманий із вашого _debug.keystore_, як ключ вивантаження (Deploy Key) у налаштування вашого репозиторію, наприклад  `https://gitlab.com/eighthave/fdroidclient-nightly/settings/repository`"
 
 #. type: Bullet: '4. '
 #: _docs/Publishing_Nightly_Builds.md
@@ -9230,12 +9230,12 @@ msgstr "Репозиторій F-Droid має два офіційні розді
 #. type: Plain text
 #: _docs/Running_a_Mirror.md
 msgid "The primary resources required by a mirror are disk space and upload bandwidth. Bandwidth requirements are reduced with each new mirror, but disk requirements grow at a [reasonable rate](https://ftp.fau.de/cgi-bin/show-ftp-stats.cgi?statstype=2&what=mirrorsize&mirrorname=fdroid&timespan=-1&graphsize=large&submit=Go%21). At time of writing (Mar 2019), the primary repository requires just over 60GB of disk space in 24K files, and the archive requires 300GB of disk space in 52K files. The amount of disk space required grows with every new app release."
-msgstr ""
+msgstr "Передусім дзеркалу потрібні дисковий простір і широкий канал. Чим більше дзеркал, тим вужчого каналу достатньо кожному з них, але просторові вимоги [постійно зростають](https://ftp.fau.de/cgi-bin/show-ftp-stats.cgi?statstype=2&what=mirrorsize&mirrorname=fdroid&timespan=-1&graphsize=large&submit=Go%21). На момент написання (березень 2019), 24 000 файлів головного репозиторію потребують понад 60 ГБ простору, тоді як 52 000 файлів архіву важать 300 ГБ. Кожен випуск оновлення будь-якого застосунку збільшує вимоги до дискового простору."
 
 #. type: Plain text
 #: _docs/Running_a_Mirror.md
 msgid "There are many mirror servers which offer an _rsync_ connection, make sure to select the mirror closest to your mirror server:"
-msgstr ""
+msgstr "Чимало серверів дзеркал пропонують _rsync_-з'єднання. Візьміть за основу дзеркало, найближче до вашого сервера:"
 
 #. type: Plain text
 #: _docs/Running_a_Mirror.md
@@ -9245,13 +9245,13 @@ msgstr "{% include running-a-mirror-rsync.html %}"
 #. type: Plain text
 #: _docs/Running_a_Mirror.md
 msgid "You can find current information on disk space requirements by running the following in your terminal:"
-msgstr ""
+msgstr "Перегляньте актуальні вимоги до дискового простору, запустивши в терміналі:"
 
 #. type: Fenced code block (console)
 #: _docs/Running_a_Mirror.md
 #, no-wrap
 msgid "$ rsync -v --list-only ftp.fau.de::fdroid\n"
-msgstr ""
+msgstr "$ rsync -v --list-only fdroid.astra.in.ua::fdroid\n"
 
 #. type: Title ####
 #: _docs/Running_a_Mirror.md
@@ -9262,7 +9262,7 @@ msgstr "Налаштування"
 #. type: Plain text
 #: _docs/Running_a_Mirror.md
 msgid "This guide assumes the use of Nginx with a deb-based distribution, and mirroring the primary repository plus the archive. Please adjust accordingly if you're using alternatives or don't intend to mirror the archive. Also substitute the examples paths and domains for your own."
-msgstr ""
+msgstr "Інструкція вважає, що ви використовуєте Nginx із дистрибутиву на основі Debian і віддзеркалюєте як головний репозиторій, так і архів. Внесіть відповідні зміни, якщо використовуєте альтернативи чи не бажаєте створювати дзеркало архіву. Також підставте свої шляхи й домени замість зразків."
 
 #. type: Plain text
 #: _docs/Running_a_Mirror.md
@@ -9272,7 +9272,7 @@ msgstr "Щоб отримати підтримку щодо цього проц�
 #. type: Bullet: '1. '
 #: _docs/Running_a_Mirror.md
 msgid "Create appropriate directories"
-msgstr ""
+msgstr "Створіть відповідні каталоги"
 
 #. type: Fenced code block (console)
 #: _docs/Running_a_Mirror.md
@@ -9282,11 +9282,14 @@ msgid ""
 "$ sudo mkdir -p /var/www/fdroid/fdroid/archive\n"
 "$ sudo chown -R www-data.www-data /var/www/fdroid\n"
 msgstr ""
+"$ sudo mkdir -p /var/www/fdroid/fdroid/repo\n"
+"$ sudo mkdir -p /var/www/fdroid/fdroid/archive\n"
+"$ sudo chown -R www-data:www-data /var/www/fdroid\n"
 
 #. type: Bullet: '2. '
 #: _docs/Running_a_Mirror.md
 msgid "Synchronize the repositories. These commands are best run in a terminal multiplexer (`screen`, `tmux` etc) as they will take some time to complete. With `--info=progress2` you can see the progress."
-msgstr ""
+msgstr "Синхронізуйте репозиторії. Ці команди краще за все запускати в мультиплексорі терміналів (`screen`, `tmux` тощо), бо вони виконуються тривалий час; `--info=progress2` показує хід виконання."
 
 #. type: Fenced code block (console)
 #: _docs/Running_a_Mirror.md
@@ -9295,27 +9298,29 @@ msgid ""
 "$ sudo -u www-data -E /usr/bin/rsync -aHS  --delete --delete-delay --info=progress2 ftp.fau.de::fdroid/repo/ /var/www/fdroid/fdroid/repo/\n"
 "$ sudo -u www-data -E /usr/bin/rsync -aHS  --delete --delete-delay --info=progress2 ftp.fau.de::fdroid/archive/ /var/www/fdroid/fdroid/archive/\n"
 msgstr ""
+"$ sudo -u www-data -E /usr/bin/rsync -aHS  --delete --delete-delay --info=progress2 fdroid.astra.in.ua::fdroid/repo/ /var/www/fdroid/fdroid/repo/\n"
+"$ sudo -u www-data -E /usr/bin/rsync -aHS  --delete --delete-delay --info=progress2 fdroid.astra.in.ua::fdroid/archive/ /var/www/fdroid/fdroid/archive/\n"
 
 #. type: Bullet: '3. '
 #: _docs/Running_a_Mirror.md
 msgid "Establish a cronjob to keep the repositories up to date"
-msgstr ""
+msgstr "Налаштуйте cron-завдання, щоб репозиторії вчасно оновлювались"
 
 #. type: Plain text
 #: _docs/Running_a_Mirror.md
 msgid "Create a cronjob file in `/etc/cron.d`"
-msgstr ""
+msgstr "Створіть файл cron-завдання в `/etc/cron.d`"
 
 #. type: Fenced code block (console)
 #: _docs/Running_a_Mirror.md
 #, no-wrap
 msgid "$ vi /etc/cron.d/fdroid\n"
-msgstr ""
+msgstr "$ vi /etc/cron.d/fdroid\n"
 
 #. type: Plain text
 #: _docs/Running_a_Mirror.md
 msgid "Fill the file with entries to update the repositories. These commands will run at minute 35 past every 6th hour, you can change it to fit your needs."
-msgstr ""
+msgstr "Заповніть файл командами оновлення репозиторію. Ці команди запускатимуться о 35 хвилині кожної 6-ї години, можете це змінити відповідно до своїх потреб."
 
 #. type: Fenced code block
 #: _docs/Running_a_Mirror.md
@@ -9324,16 +9329,18 @@ msgid ""
 "35 */6 * * * www-data /usr/bin/rsync -aHS  --delete --delete-delay ftp.fau.de::fdroid/repo/ /var/www/fdroid/fdroid/repo/\n"
 "35 */6 * * * www-data /usr/bin/rsync -aHS  --delete --delete-delay ftp.fau.de::fdroid/archive/ /var/www/fdroid/fdroid/archive/\n"
 msgstr ""
+"35 */6 * * * www-data /usr/bin/rsync -aHS  --delete --delete-delay fdroid.astra.in.ua::fdroid/repo/ /var/www/fdroid/fdroid/repo/\n"
+"35 */6 * * * www-data /usr/bin/rsync -aHS  --delete --delete-delay fdroid.astra.in.ua::fdroid/archive/ /var/www/fdroid/fdroid/archive/\n"
 
 #. type: Bullet: '4. '
 #: _docs/Running_a_Mirror.md
 msgid "Configure your webserver"
-msgstr ""
+msgstr "Налаштуйте свій вебсервер"
 
 #. type: Plain text
 #: _docs/Running_a_Mirror.md
 msgid "This is an example server block for nginx. If used, it should be copied to _/etc/nginx/sites-available/_ and symlinked to _/etc/nginx/sites-enabled_. Note that it is important that your URI be `/fdroid/repo` so that the app can automatically add your mirror."
-msgstr ""
+msgstr "Ось зразок серверного блоку nginx. Для використання, скопіюйте його до _/etc/nginx/sites-available/_ і створіть символічне посилання в _/etc/nginx/sites-enabled_. Важливо зберегти в URL-адресі `/fdroid/repo`, щоб застосунок міг автоматично додавати ваше дзеркало."
 
 #. type: Fenced code block
 #: _docs/Running_a_Mirror.md
@@ -9365,89 +9372,114 @@ msgid ""
 "  # Insert here a TLS config from Mozilla SSL config generator https://mozilla.github.io/server-side-tls/ssl-config-generator/\n"
 "}\n"
 msgstr ""
+"server {\n"
+"  listen [::]:80 ipv6only=off;\n"
+"\n"
+"  server_name fdroidmirror.example;\n"
+"\n"
+"  rewrite ^ https://fdroidmirror.example$request_uri permanent;\n"
+"}\n"
+"\n"
+"server {\n"
+"  listen [::]:443 ssl http2 ipv6only=off;\n"
+"\n"
+"  server_name fdroidmirror.example;\n"
+"\n"
+"  root /var/www/fdroid/;\n"
+"\n"
+"  # TODO: https://gitlab.com/snippets/1834032\n"
+"  location /health {\n"
+"    proxy_pass http://127.0.0.1:8000/;\n"
+"  }\n"
+"\n"
+"  ssl_certificate /etc/letsencrypt/live/fdroidmirror.example/fullchain.pem;\n"
+"  ssl_certificate_key /etc/letsencrypt/live/fdroidmirror.example/privkey.pem;\n"
+"\n"
+"  # Вставте сюди TLS-конфігурацію з генератора https://ssl-config.mozilla.org/\n"
+"}\n"
 
 #. type: Bullet: '5. '
 #: _docs/Running_a_Mirror.md
 msgid "Submit your mirror for inclusion"
-msgstr ""
+msgstr "Запропонуйте нам додати ваше дзеркало"
 
 #. type: Bullet: '* '
 #: _docs/Running_a_Mirror.md
 msgid "Fork the [mirror monitor repo](https://gitlab.com/fdroid/mirror-monitor), add your mirror to the list in the README, and open a merge request."
-msgstr ""
+msgstr "Створіть форк [репозиторію відстеження дзеркал](https://gitlab.com/fdroid/mirror-monitor), додайте своє дзеркало в README й подайте запит на злиття."
 
 #. type: Bullet: '* '
 #: _docs/Running_a_Mirror.md
 msgid "Open an issue on the [admin repo](https://gitlab.com/fdroid/admin), including any pertinent information, requesting the inclusion of your mirror."
-msgstr ""
+msgstr "Відкрийте обговорення в [адміністраційному репозиторії](https://gitlab.com/fdroid/admin), вказавши всі важливі дані, з проханням додати ваше дзеркало."
 
 #. type: Bullet: '* '
 #: _docs/Running_a_Mirror.md
 msgid "Once the core contributor team deems your mirror trustworthy and reliable, it will be accepted into the official list."
-msgstr ""
+msgstr "Щойно команда F-Droid визнає ваше дзеркало довіреним і надійним, його буде додано в офіційний перелік."
 
 #. type: Plain text
 #: _docs/Running_a_Mirror.md
 msgid "Also, it would be nice to include a privacy policy so users can understand what happens with their metadata when using the mirror. Purdue PLUG https://plug-mirror.rcac.purdue.edu/info.html and FAU https://ftp.fau.de/datenschutz are two examples."
-msgstr ""
+msgstr "Також варто додати політику приватності, щоб авдиторія розуміла, що відбувається з їхніми даними при використанні дзеркала. Зразки: Purdue PLUG https://plug-mirror.rcac.purdue.edu/info.html і FAU https://ftp.fau.de/datenschutz."
 
 #. type: Title ####
 #: _docs/Running_a_Mirror.md
 #, no-wrap
 msgid "Other considerations"
-msgstr ""
+msgstr "Що ще варто зробити"
 
 #. type: Bullet: '* '
 #: _docs/Running_a_Mirror.md
 msgid "Set up a privacy policy that describes what happens to the metadata (for example [FAU](https://ftp.fau.de/datenschutz/), [PLUG](https://plug-mirror.rcac.purdue.edu/info.html), [Lysator](https://ftp.lysator.liu.se/datahanteringspolicy.txt))."
-msgstr ""
+msgstr "Додайте політику приватності з описом того, що відбувається з метаданими (зразки: [FAU](https://ftp.fau.de/datenschutz/), [PLUG](https://plug-mirror.rcac.purdue.edu/info.html), [Lysator](https://ftp.lysator.liu.se/datahanteringspolicy.txt))."
 
 #. type: Bullet: '* '
 #: _docs/Running_a_Mirror.md
 msgid "Forward emails from cronjob failures so you know if the synchronization fails"
-msgstr ""
+msgstr "Налаштуйте cron таким чином, щоб отримувати листи про збої завдань синхронізації"
 
 #. type: Bullet: '* '
 #: _docs/Running_a_Mirror.md
 msgid "Set up monitoring on your mirror so you know if it goes down (ideally keyword on _/srv/mymirror.org/htdocs/fdroid/repo/index-v1.jar_)"
-msgstr ""
+msgstr "Автоматизуйте перевірки свого дзеркала, щоб одразу дізнаватись, коли воно стає недоступним (перевіряйте доступність файлу _/srv/mymirror.org/htdocs/fdroid/repo/index-v1.jar_)"
 
 #. type: Bullet: '* '
 #: _docs/Running_a_Mirror.md
 msgid "Harden your SSH server config (disable password authentication, install _fail2ban_)"
-msgstr ""
+msgstr "Зміцніть конфігурацію SSH-сервера (вимкніть вхід за паролем і встановіть _fail2ban_)"
 
 #. type: Bullet: '* '
 #: _docs/Running_a_Mirror.md
 msgid "Enable unattended security upgrades (in Debian, just `apt-get install unattended-upgrades`)"
-msgstr ""
+msgstr "Ввімкніть автоматичні оновлення захисту (в Debian це просто `apt-get install unattended-upgrades`)"
 
 #. type: Title ##
 #: _docs/Running_a_Mirror.md
 #, no-wrap
 msgid "Running a Primary Mirror (receiving syncs via push)"
-msgstr ""
+msgstr "Супровід головного дзеркала (push-синхронізація)"
 
 #. type: Plain text
 #: _docs/Running_a_Mirror.md
 msgid "The preferred setup is for the F-Droid updates to be pushed to the primary mirror via _rsync_ over _ssh_ with SSH Key authentication.  This is the same as [Debian](https://www.debian.org/mirror/push_server#sshtrigger), the key difference is that there currently is no script used for the `command=\"\"`, but instead, there is a hard-coded _rsync_ command.  This really nicely restricts the security interaction to only want needs to happen (Least Authority!)."
-msgstr ""
+msgstr "Оновлення F-Droid бажано вивантажувати на головне дзеркало за допомогою _rsync_ через _ssh_ із автентифікацією за SSH-ключем. [Debian](https://www.debian.org/mirror/push_server#sshtrigger) має схожий процес, але є відмінність: жоден скрипт не використовується як `command=\"\"`, а натомість спрацьовує вказана прямо в коді команда _rsync_. Це безпечніше, оскільки дозволяє виконувати лише те, що потрібно (мінімум повноважень!)."
 
 #. type: Fenced code block
 #: _docs/Running_a_Mirror.md
 #, no-wrap
 msgid "command=\"rsync --server -logDtpre.iLsfx --log-format=X --delete --delay-updates . /srv/fdroid-mirror.at.or.at/htdocs/fdroid/\"\n"
-msgstr ""
+msgstr "command=\"rsync --server -logDtpre.iLsfx --log-format=X --delete --delay-updates . /srv/fdroid-mirror.at.or.at/htdocs/fdroid/\"\n"
 
 #. type: Plain text
 #: _docs/Running_a_Mirror.md
 msgid "The only piece of that command that is customizable is the final path.  It can be any path but it must point to the `/fdroid/` directory and must have the trailing slash.  If any of the _rsync_ options are changed, it will break the sync setup."
-msgstr ""
+msgstr "Єдина налаштовувана частина команди — це остаточний шлях. Він може бути довільним, але мусить вказувати на каталог `/fdroid/` і закінчуватись рискою. Будь-які зміни опцій _rsync_ поламають синхронізацію."
 
 #. type: Plain text
 #: _docs/Running_a_Mirror.md
 msgid "As an extra precaution, there should be a user account (e.g. `fdroid`)  dedicated to receiving the _rsync_/_ssh_ connection.  It should have as little access as possible.  It should definitely not have write access to the _authorized_keys_ file, since that would allow an attacker who gains write access to add a separate key configuration line which circumvents all the restrictions listed there.  This can be done simply by doing:"
-msgstr ""
+msgstr "Для додаткового захисту, створіть обліковий запис (як-от `fdroid`), виділений під обробку з'єднань _rsync_/_ssh_. Йому слід мати якнайменше доступів до будь-чого. Йому однозначно не слід мати доступу на запис файлу _authorized_keys_ file, оскільки тоді було б можливо при зловмисному проникненні додати в файл окремий рядок налаштування ключів і обійти всі перелічені в файлі обмеження. Налаштувати такий захист нескладно:"
 
 #. type: Fenced code block (console)
 #: _docs/Running_a_Mirror.md
@@ -9457,6 +9489,9 @@ msgid ""
 "$ sudo chmod 0755 /home/fdroid/.ssh\n"
 "$ sudo chmod 0644 /home/fdroid/.ssh/authorized_keys\n"
 msgstr ""
+"$ sudo chown root:root /home/fdroid/.ssh /home/fdroid/.ssh/authorized_keys\n"
+"$ sudo chmod 0755 /home/fdroid/.ssh\n"
+"$ sudo chmod 0644 /home/fdroid/.ssh/authorized_keys\n"
 
 #. type: YAML Front Matter: title
 #: _docs/Security_Model.md
