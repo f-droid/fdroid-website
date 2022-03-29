@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
 "POT-Creation-Date: 2022-03-16 12:17+0100\n"
-"PO-Revision-Date: 2022-03-29 07:06+0000\n"
+"PO-Revision-Date: 2022-03-29 19:38+0000\n"
 "Last-Translator: Denys Nykula <nykula@ukr.net>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/f-droid/website-docs/uk/>\n"
 "Language: uk\n"
@@ -8060,17 +8060,17 @@ msgstr "Перейдіть до цього нового проєкту й дод
 #. type: Bullet: '4. '
 #: _docs/Publishing_Nightly_Builds.md
 msgid "In the CI/CD Settings of the project being built, paste that into GitLab CI Secret Variable called `DEBUG_KEYSTORE`, e.g.  `https://gitlab.com/eighthave/fdroidclient/settings/ci_cd`"
-msgstr ""
+msgstr "В налаштуваннях CI/CD проєкту, який збираєте, вставте отримане раніше значення таємної змінної GitLab CI `DEBUG_KEYSTORE`, наприклад  `https://gitlab.com/eighthave/fdroidclient/settings/ci_cd`"
 
 #. type: Bullet: '5. '
 #: _docs/Publishing_Nightly_Builds.md
 msgid "Then in that same page, in the Protected section, set up your _master_ branch to limit the possibility of leaking the _debug.keystore_.  If _master_ cannot be force-pushed, then any attempts to get the stored secrets are permanently written to the git history.  Without that protection, someone with push access could push a commit in a branch to print out the secrets, then remove that commit to hide their actions."
-msgstr ""
+msgstr "Налаштуйте там же для своєї гілки _master_ статус «protected», щоб обмежити можливість витоку _debug.keystore_. Це заборонить `push --force` для _master_, тож усі спроби отримати збережені таємниці записуватимуться в історію git без можливості видалення. Без такого захисту, хтось із push-доступом може вивантажити в гілку коміт із кодом виводу таємниць і згодом вилучити цей коміт, щоб сховати сліди."
 
 #. type: Bullet: '6. '
 #: _docs/Publishing_Nightly_Builds.md
 msgid "Add a _deploy_ stage to your _.gitlab-ci.yml_ that produces only the build to publish to the nightly, then runs `fdroid nightly`. For example:"
-msgstr ""
+msgstr "Додайте в свій _.gitlab-ci.yml_ етап _deploy_, який створюватиме лише збірку для оприлюднення в nightly-репозиторії й запускатиме для неї `fdroid nightly`. Наприклад:"
 
 #. type: Fenced code block (yaml)
 #: _docs/Publishing_Nightly_Builds.md
@@ -8086,22 +8086,31 @@ msgid ""
 "    - export PATH=~/.local/bin:$PATH\n"
 "    - fdroid nightly\n"
 msgstr ""
+"deploy_nightly:\n"
+"  stage: deploy\n"
+"  only:\n"
+"    - master\n"
+"  script:\n"
+"    - ./gradlew assembleDebug\n"
+"    - pip3 install fdroidserver\n"
+"    - export PATH=~/.local/bin:$PATH\n"
+"    - fdroid nightly\n"
 
 #. type: Plain text
 #: _docs/Publishing_Nightly_Builds.md
 msgid "For a real world example using _gitlab-ci_, see _fdroidclient_: * <https://gitlab.com/fdroid/fdroidclient-nightly> * <https://gitlab.com/fdroid/fdroidclient/blob/master/.gitlab-ci.yml>"
-msgstr ""
+msgstr "Перегляньте зразок польового застосування _gitlab-ci_ — _fdroidclient_: * <https://gitlab.com/fdroid/fdroidclient-nightly> * <https://gitlab.com/fdroid/fdroidclient/blob/master/.gitlab-ci.yml>"
 
 #. type: Title ##
 #: _docs/Publishing_Nightly_Builds.md
 #, no-wrap
 msgid "Configuring for GitHub and Travis CI"
-msgstr ""
+msgstr "Налаштування для GitHub і Travis CI"
 
 #. type: Bullet: '1. '
 #: _docs/Publishing_Nightly_Builds.md
 msgid "Generate a new _debug.keystore_ for each app, since GitHub only allows a deploy key to be used on a single repo.  Keep that file safe, since it is the signing key for your nightly build."
-msgstr ""
+msgstr "Створіть окремі _debug.keystore_ для кожного застосунку, бо GitHub дає змогу використовувати кожен ключ вивантаження лише з одним репозиторієм. Зберігайте цей файл у безпечному місці: він буде ключем підпису ваших нічних збірок."
 
 #. type: Fenced code block
 #: _docs/Publishing_Nightly_Builds.md
@@ -8126,6 +8135,10 @@ msgid ""
 "  `https://github.com/zom/zom-android-nightly/settings/keys`.  The\n"
 "  public SSH key is printed out by running:\n"
 msgstr ""
+"2. Налаштуйте ключ вивантаження GitHub для\n"
+"  `https://github.com/zom/zom-android-nightly` на сторінці\n"
+"  `https://github.com/zom/zom-android-nightly/settings/keys`.\n"
+"  Перегляньте відкритий ключ SSH, виконавши:\n"
 
 #. type: Fenced code block
 #: _docs/Publishing_Nightly_Builds.md
@@ -8136,12 +8149,12 @@ msgstr "fdroid nightly --keystore im.zom.messenger-debug.keystore\n"
 #. type: Bullet: '3. '
 #: _docs/Publishing_Nightly_Builds.md
 msgid "check _Allow write access_ in the GitHub Deploy Key settings"
-msgstr ""
+msgstr "Дозвольте запис, поставивши пташку _Allow write access_ у налаштуваннях ключа вивантаження GitHub"
 
 #. type: Bullet: '4. '
 #: _docs/Publishing_Nightly_Builds.md
 msgid "To print out the secret variable contents, use `--show-secret-var`.  Careful! That text is the entire _debug.keystore_, so protect it accordingly! This prints out base64 text to be pasted into a Travis CI \"Environment Variable\" in `https://travis-ci.org/zom/Zom-Android/settings`. Call the variable `DEBUG_KEYSTORE` and make sure \"Display value in build log\" is __OFF__."
-msgstr ""
+msgstr "Виведіть вміст таємної змінної за допомогою `--show-secret-var`. Обережно! Цей текст — увесь вміст _debug.keystore_, тож не допускайте його оприлюднення! Буде виведено Base64 для вставлення в «змінну середовища» (environment variable) Travis CI на сторінці `https://travis-ci.org/zom/Zom-Android/settings`. Назвіть змінну `DEBUG_KEYSTORE` й переконайтесь, що журналювання значень (Display value in build log) __ВИМКНЕНО__."
 
 #. type: Fenced code block
 #: _docs/Publishing_Nightly_Builds.md
@@ -8152,7 +8165,7 @@ msgstr "fdroid nightly --keystore im.zom.messenger-debug.keystore --show-secret-
 #. type: Plain text
 #: _docs/Publishing_Nightly_Builds.md
 msgid "And here's a simple example of how to add _fdroidserver_ to your Travis CI setup to make it deploy the APK after a successful test:"
-msgstr ""
+msgstr "А ось простий приклад того, як додати _fdroidserver_ до вашої конфігурації Travis CI, щоб після успішного випробування автоматично вивантажувати APK:"
 
 #. type: Fenced code block (yaml)
 #: _docs/Publishing_Nightly_Builds.md
@@ -8213,64 +8226,64 @@ msgstr ""
 #. type: Plain text
 #: _docs/Publishing_Nightly_Builds.md
 msgid "For a real world example, see _Zom_: * <https://github.com/zom/Zom-Android-nightly> * <https://github.com/zom/Zom-Android/blob/master/.travis.yml> * <https://travis-ci.org/zom/Zom-Android>"
-msgstr ""
+msgstr "Перегляньте зразок польового застосування — _Zom_: * <https://github.com/zom/Zom-Android-nightly> * <https://github.com/zom/Zom-Android/blob/master/.travis.yml> * <https://travis-ci.org/zom/Zom-Android>"
 
 #. type: YAML Front Matter: title
 #: _docs/Release_Channels_and_Signing_Keys.md
 #, no-wrap
 msgid "Release Channels and Signing Keys"
-msgstr ""
+msgstr "Канали випусків і ключі підпису"
 
 #. type: Plain text
 #: _docs/Release_Channels_and_Signing_Keys.md
 msgid "This is a list of all signing keys used for F-Droid releases."
-msgstr ""
+msgstr "Ось перелік усіх ключів, якими підписуються випуски F-Droid."
 
 #. type: Title ##
 #: _docs/Release_Channels_and_Signing_Keys.md
 #, no-wrap
 msgid "F-Droid client app for Android"
-msgstr ""
+msgstr "Клієнтський застосунок F-Droid для Android"
 
 #. type: Bullet: '-   '
 #: _docs/Release_Channels_and_Signing_Keys.md
 msgid "git repo: <https://gitlab.com/fdroid/fdroidclient>"
-msgstr "git repo: <https://gitlab.com/fdroid/fdroidclient>"
+msgstr "git-репозиторій: <https://gitlab.com/fdroid/fdroidclient>"
 
 #. type: Bullet: '    -   '
 #: _docs/Release_Channels_and_Signing_Keys.md
 msgid "git tags signed by \"Hans-Christoph Steiner \\<hans@guardianproject.info>\" aka \"Hans-Christoph Steiner \\<hans@eds.org>\" aka \"Hans-Christoph Steiner \\<hans@at.or.at>\" with fingerprint: <br /> `EE66 20C7 136B 0D2C 456C 0A4D E9E2 8DEA 00AA 5556`"
-msgstr ""
+msgstr "git-теги підписує «Hans-Christoph Steiner \\<hans@guardianproject.info>», також відомий як «Hans-Christoph Steiner \\<hans@eds.org>» або «Hans-Christoph Steiner \\<hans@at.or.at>», чий відбиток: <br /> `EE66 20C7 136B 0D2C 456C 0A4D E9E2 8DEA 00AA 5556`"
 
 #. type: Bullet: '    -   '
 #: _docs/Release_Channels_and_Signing_Keys.md
 msgid "or previously signed by \"Daniel Martí \\<mvdan@mvdan.cc>\" aka \"Daniel Martí \\<mvdan@fsfe.org>\" with fingerprint: <br />`A9DA 13CD F7A1 4ACD D3DE E530 F4CA FFDB 4348 041C`"
-msgstr ""
+msgstr "раніше їх підписував «Daniel Martí \\<mvdan@mvdan.cc>», також відомий як «Daniel Martí \\<mvdan@fsfe.org>», чий відбиток: <br />`A9DA 13CD F7A1 4ACD D3DE E530 F4CA FFDB 4348 041C`"
 
 #. type: Bullet: '-   '
 #: _docs/Release_Channels_and_Signing_Keys.md
 msgid "official binary releases: <https://f-droid.org/packages/org.fdroid.fdroid>"
-msgstr ""
+msgstr "офіційні двійкові випуски: <https://f-droid.org/packages/org.fdroid.fdroid>"
 
 #. type: Bullet: '    -   '
 #: _docs/Release_Channels_and_Signing_Keys.md
 msgid "GPG signing key: \"F-Droid \\<admin@f-droid.org>\""
-msgstr ""
+msgstr "Ключ GPG-підпису: «F-Droid \\<admin@f-droid.org>»"
 
 #. type: Bullet: '    -   '
 #: _docs/Release_Channels_and_Signing_Keys.md
 msgid "Primary key fingerprint: `37D2 C987 89D8 3119 4839 4E3E 41E7 044E 1DBA 2E89`"
-msgstr ""
+msgstr "Відбиток головного ключа: `37D2 C987 89D8 3119 4839 4E3E 41E7 044E 1DBA 2E89`"
 
 #. type: Bullet: '    -   '
 #: _docs/Release_Channels_and_Signing_Keys.md
 msgid "Subkey fingerprint: `802A 9799 0161 1234 6E1F EFF4 7A02 9E54 DD5D CE7A`"
-msgstr ""
+msgstr "Відбиток вкладеного ключа: `802A 9799 0161 1234 6E1F EFF4 7A02 9E54 DD5D CE7A`"
 
 #. type: Bullet: '    -   '
 #: _docs/Release_Channels_and_Signing_Keys.md
 msgid "APK signing key: ``` Owner: CN=Ciaran Gultnieks, OU=Unknown, O=Unknown, L=Wetherby, ST=Unknown, C=UK Issuer: CN=Ciaran Gultnieks, OU=Unknown, O=Unknown, L=Wetherby, ST=Unknown, C=UK Serial number: 4c49cd00 Valid from: Fri Jul 23 13:10:24 EDT 2010 until: Tue Dec 08 12:10:24 EST 2037 Certificate fingerprints:"
-msgstr ""
+msgstr "Ключ підпису APK: ``` Owner: CN=Ciaran Gultnieks, OU=Unknown, O=Unknown, L=Wetherby, ST=Unknown, C=UK Issuer: CN=Ciaran Gultnieks, OU=Unknown, O=Unknown, L=Wetherby, ST=Unknown, C=UK Serial number: 4c49cd00 Valid from: Fri Jul 23 13:10:24 EDT 2010 until: Tue Dec 08 12:10:24 EST 2037 Certificate fingerprints:"
 
 #. type: Plain text
 #: _docs/Release_Channels_and_Signing_Keys.md
@@ -8285,11 +8298,19 @@ msgid ""
 "      43238d512c1e5eb2d6569f4a3afbf5523418b82e0a3ed1552770abb9a9c9ccab\n"
 "      ```\n"
 msgstr ""
+"          MD5:  17:C5:5C:62:80:56:E1:93:E9:56:44:E9:89:79:27:86\n"
+"          SHA1: 05:F2:E6:59:28:08:89:81:B3:17:FC:9A:6D:BF:E0:4B:0F:A1:3B:4E\n"
+"          SHA256: 43:23:8D:51:2C:1E:5E:B2:D6:56:9F:4A:3A:FB:F5:52:34:18:B8:2E:0A:3E:D1:55:27:70:AB:B9:A9:C9:CC:AB\n"
+"        ```\n"
+"    - Відбиток сертифікату підпису APK:\n"
+"      ```\n"
+"      43238d512c1e5eb2d6569f4a3afbf5523418b82e0a3ed1552770abb9a9c9ccab\n"
+"      ```\n"
 
 #. type: Plain text
 #: _docs/Release_Channels_and_Signing_Keys.md
 msgid "And here is the whole certificate:"
-msgstr ""
+msgstr "А ось весь сертифікат:"
 
 #. type: Fenced code block
 #: _docs/Release_Channels_and_Signing_Keys.md
@@ -8364,7 +8385,7 @@ msgstr ""
 #. type: Plain text
 #: _docs/Release_Channels_and_Signing_Keys.md
 msgid "To confirm that the `1DBA2E89 admin@f-droid.org` PGP key is trusted by the index JAR signing key that is built into the F-Droid client app, run these commands:"
-msgstr ""
+msgstr "Щоб підтвердити, що PGP-ключ `1DBA2E89 admin@f-droid.org` довірено ключем підпису JAR-індексу, вбудованого в клієнтський застосунок F-Droid, виконайте такі команди:"
 
 #. type: Fenced code block (bash)
 #: _docs/Release_Channels_and_Signing_Keys.md
@@ -8395,6 +8416,30 @@ msgid ""
 "gpg --import admin@f-droid.org.asc\n"
 "gpg --keyserver keyserver.ubuntu.com --recv-key 37D2C98789D8311948394E3E41E7044E1DBA2E89\n"
 msgstr ""
+"sudo apt-get install wget vim-common unzip openjdk-8-jdk-headless\n"
+"wget https://f-droid.org/assets/admin@f-droid.org.jar\n"
+"\n"
+"# перевірте ключем, вбудованим до fdroidclient\n"
+"git clone https://gitlab.com/fdroid/fdroidclient\n"
+"grep -m1 -Eo '3082035e[0-9a-f]+' fdroidclient/app/src/main/res/values/default_repos.xml | xxd -r -p - > fdroidclient.der\n"
+"keytool -import -noprompt -trustcacerts -alias fdroidclient -storepass android -file fdroidclient.der -keystore fdroidclient.jks\n"
+"jarsigner -keystore fdroidclient.jks -storepass android -strict -verify admin@f-droid.org.jar\n"
+"\n"
+"# перевірте ключем, яким було підписано index.jar\n"
+"wget https://f-droid.org/repo/index.jar\n"
+"unzip -p index.jar META-INF/CIARANG.RSA | openssl pkcs7 -print_certs -inform DER -out index.cer\n"
+"keytool -import  -noprompt -trustcacerts -alias index -storepass android -file index.cer -keystore index.jks\n"
+"jarsigner -keystore index.jks -storepass android -strict -verify admin@f-droid.org.jar\n"
+"\n"
+"# перевірте ключем, вбудованим у цю сторінку\n"
+"wget -O - https://f-droid.org/docs/Release_Channels_and_Signing_Keys/ | openssl x509 -inform pem -outform der -out docs.der\n"
+"keytool -import -noprompt -trustcacerts -alias docs -storepass android -file docs.der -keystore docs.jks\n"
+"jarsigner -keystore docs.jks -storepass android -strict -verify admin@f-droid.org.jar\n"
+"\n"
+"# якщо перевірка вас задовольняє, імпортуйте\n"
+"unzip admin@f-droid.org.jar admin@f-droid.org.asc\n"
+"gpg --import admin@f-droid.org.asc\n"
+"gpg --keyserver keyserver.ubuntu.com --recv-key 37D2C98789D8311948394E3E41E7044E1DBA2E89\n"
 
 #. type: Title ##
 #: _docs/Release_Channels_and_Signing_Keys.md
@@ -8405,52 +8450,52 @@ msgstr "fdroidserver"
 #. type: Bullet: '-   '
 #: _docs/Release_Channels_and_Signing_Keys.md
 msgid "git repo: <https://gitlab.com/fdroid/fdroidserver>"
-msgstr "git repo: <https://gitlab.com/fdroid/fdroidserver>"
+msgstr "git-репозиторій: <https://gitlab.com/fdroid/fdroidserver>"
 
 #. type: Bullet: '    -   '
 #: _docs/Release_Channels_and_Signing_Keys.md
 msgid "or previously \"Daniel Martí \\<mvdan@mvdan.cc>\" aka \"Daniel Martí \\<mvdan@fsfe.org>\" with fingerprint: <br />`A9DA 13CD F7A1 4ACD D3DE E530 F4CA FFDB 4348 041C`"
-msgstr ""
+msgstr "раніше їх підписував «Daniel Martí \\<mvdan@mvdan.cc>», також відомий як «Daniel Martí \\<mvdan@fsfe.org>», чий відбиток: <br />`A9DA 13CD F7A1 4ACD D3DE E530 F4CA FFDB 4348 041C`"
 
 #. type: Bullet: '-   '
 #: _docs/Release_Channels_and_Signing_Keys.md
 msgid "source package: <https://pypi.python.org/pypi/fdroidserver>"
-msgstr ""
+msgstr "вихідний пакунок: <https://pypi.python.org/pypi/fdroidserver>"
 
 #. type: Bullet: '    -   '
 #: _docs/Release_Channels_and_Signing_Keys.md
 msgid "package tags signed by \"Hans-Christoph Steiner \\<hans@guardianproject.info>\" aka \"Hans-Christoph Steiner \\<hans@eds.org>\" aka \"Hans-Christoph Steiner \\<hans@at.or.at>\" with fingerprint: <br /> `EE66 20C7 136B 0D2C 456C 0A4D E9E2 8DEA 00AA 5556` or previously <br />`5E61 C878 0F86 295C E17D 8677 9F0F E587 374B BE81`"
-msgstr ""
+msgstr "теги пакунків підписує «Hans-Christoph Steiner \\<hans@guardianproject.info>», також відомий як «Hans-Christoph Steiner \\<hans@eds.org>» або «Hans-Christoph Steiner \\<hans@at.or.at>», чий відбиток: <br /> `EE66 20C7 136B 0D2C 456C 0A4D E9E2 8DEA 00AA 5556` або (раніше) <br />`5E61 C878 0F86 295C E17D 8677 9F0F E587 374B BE81`"
 
 #. type: Bullet: '    -   '
 #: _docs/Release_Channels_and_Signing_Keys.md
 msgid "release command: `python3 setup.py sdist upload --sign`"
-msgstr ""
+msgstr "команда випуску: `python3 setup.py sdist upload --sign`"
 
 #. type: Bullet: '-   '
 #: _docs/Release_Channels_and_Signing_Keys.md
 msgid "official Debian package: <https://packages.debian.org/fdroidserver>"
-msgstr ""
+msgstr "офіційний Debian-пакунок: <https://packages.debian.org/fdroidserver>"
 
 #. type: Bullet: '    -   '
 #: _docs/Release_Channels_and_Signing_Keys.md
 msgid "package source: <https://salsa.debian.org/python-team/packages/fdroidserver.git>"
-msgstr ""
+msgstr "вихідний код пакунку: <https://salsa.debian.org/python-team/packages/fdroidserver.git>"
 
 #. type: Bullet: '    -   '
 #: _docs/Release_Channels_and_Signing_Keys.md
 msgid "package tags signed by \"Hans-Christoph Steiner \\<hans@guardianproject.info>\" aka \"Hans-Christoph Steiner \\<hans@eds.org>\" aka \"Hans-Christoph Steiner \\<hans@at.or.at>\" with fingerprint: <br/> `EE66 20C7 136B 0D2C 456C 0A4D E9E2 8DEA 00AA 5556` or previously <br /> `5E61 C878 0F86 295C E17D 8677 9F0F E587 374B BE81`"
-msgstr ""
+msgstr "теги пакунків підписує «Hans-Christoph Steiner \\<hans@guardianproject.info>», також відомий як «Hans-Christoph Steiner \\<hans@eds.org>» або «Hans-Christoph Steiner \\<hans@at.or.at>», чий відбиток: <br /> `EE66 20C7 136B 0D2C 456C 0A4D E9E2 8DEA 00AA 5556` або (раніше) <br />`5E61 C878 0F86 295C E17D 8677 9F0F E587 374B BE81`"
 
 #. type: Bullet: '-   '
 #: _docs/Release_Channels_and_Signing_Keys.md
 msgid "official Ubuntu PPA: <https://launchpad.net/~fdroid/+archive/ubuntu/fdroidserver>"
-msgstr ""
+msgstr "офіційний PPA Ubuntu: <https://launchpad.net/~fdroid/+archive/ubuntu/fdroidserver>"
 
 #. type: Bullet: '    - '
 #: _docs/Release_Channels_and_Signing_Keys.md
 msgid "fingerprint: `9AAC 2531 93B6 5D4D F1D0 A13E EC46 32C7 9C5E 0151`"
-msgstr ""
+msgstr "відбиток: `9AAC 2531 93B6 5D4D F1D0 A13E EC46 32C7 9C5E 0151`"
 
 #. type: Plain text
 #: _docs/Release_Channels_and_Signing_Keys.md
@@ -8463,6 +8508,12 @@ msgid ""
 "    sudo apt-get install fdroidserver\n"
 "    ```\n"
 msgstr ""
+"    - як встановити:\n"
+"    ```bash\n"
+"    sudo add-apt-repository ppa:fdroid/fdroidserver\n"
+"    sudo apt-get update\n"
+"    sudo apt-get install fdroidserver\n"
+"    ```\n"
 
 #. type: Title ##
 #: _docs/Release_Channels_and_Signing_Keys.md
@@ -8473,22 +8524,22 @@ msgstr "Repomaker"
 #. type: Bullet: '-   '
 #: _docs/Release_Channels_and_Signing_Keys.md
 msgid "git repo: <https://gitlab.com/fdroid/repomaker>"
-msgstr "git repo: <https://gitlab.com/fdroid/repomaker>"
+msgstr "git-репозиторій: <https://gitlab.com/fdroid/repomaker>"
 
 #. type: Bullet: '    -   '
 #: _docs/Release_Channels_and_Signing_Keys.md
 msgid "git tags signed by \"Nico Alt \\<nicoalt@posteo.de>\" with fingerprint: <br /> `558B E907 1CA6 CA44 DBF5 576B 95A0 DAF7 DBC7 B548`"
-msgstr ""
+msgstr "git-теги підписує «Nico Alt \\<nicoalt@posteo.de>», чий відбиток: <br /> `558B E907 1CA6 CA44 DBF5 576B 95A0 DAF7 DBC7 B548`"
 
 #. type: Bullet: '-   '
 #: _docs/Release_Channels_and_Signing_Keys.md
 msgid "source package: <https://pypi.python.org/pypi/repomaker>"
-msgstr ""
+msgstr "вихідний пакунок: <https://pypi.python.org/pypi/repomaker>"
 
 #. type: Bullet: '    -   '
 #: _docs/Release_Channels_and_Signing_Keys.md
 msgid "package tags signed by \"Nico Alt \\<nicoalt@posteo.de>\" with fingerprint: <br /> `558B E907 1CA6 CA44 DBF5 576B 95A0 DAF7 DBC7 B548`"
-msgstr ""
+msgstr "теги пакунків підписує «Nico Alt \\<nicoalt@posteo.de>», чий відбиток: <br /> `558B E907 1CA6 CA44 DBF5 576B 95A0 DAF7 DBC7 B548`"
 
 #. type: Title ##
 #: _docs/Release_Channels_and_Signing_Keys.md
@@ -8499,28 +8550,28 @@ msgstr "Привілейоване розширення"
 #. type: Bullet: '-   '
 #: _docs/Release_Channels_and_Signing_Keys.md
 msgid "git repo: <https://gitlab.com/fdroid/privileged-extension>"
-msgstr "git repo: <https://gitlab.com/fdroid/privileged-extension>"
+msgstr "git-репозиторій: <https://gitlab.com/fdroid/privileged-extension>"
 
 #. type: Bullet: '    -   '
 #: _docs/Release_Channels_and_Signing_Keys.md
 msgid "git tags signed by \"Hans-Christoph Steiner \\<hans@guardianproject.info>\" aka \"Hans-Christoph Steiner \\<hans@eds.org>\" aka \"Hans-Christoph Steiner \\<hans@at.or.at>\" with fingerprint: <br/>`EE66 20C7 136B 0D2C 456C 0A4D E9E2 8DEA 00AA 5556`"
-msgstr ""
+msgstr "git-теги підписує «Hans-Christoph Steiner \\<hans@guardianproject.info>», також відомий як «Hans-Christoph Steiner \\<hans@eds.org>» або «Hans-Christoph Steiner \\<hans@at.or.at>», чий відбиток: <br /> `EE66 20C7 136B 0D2C 456C 0A4D E9E2 8DEA 00AA 5556`"
 
 #. type: Title ##
 #: _docs/Release_Channels_and_Signing_Keys.md
 #, no-wrap
 msgid "F-Droid Jekyll Plugin"
-msgstr ""
+msgstr "Jekyll-плагін F-Droid"
 
 #. type: Bullet: '-   '
 #: _docs/Release_Channels_and_Signing_Keys.md
 msgid "git repo: <https://gitlab.com/fdroid/jekyll-fdroid>"
-msgstr "git repo: <https://gitlab.com/fdroid/jekyll-fdroid>"
+msgstr "git-репозиторій: <https://gitlab.com/fdroid/jekyll-fdroid>"
 
 #. type: Bullet: '    -   '
 #: _docs/Release_Channels_and_Signing_Keys.md
 msgid "git tags signed by \"Hans-Christoph Steiner \\<hans@guardianproject.info>\" aka \"Hans-Christoph Steiner \\<hans@eds.org>\" aka \"Hans-Christoph Steiner \\<hans@at.or.at>\" with fingerprint: <br /> `EE66 20C7 136B 0D2C 456C 0A4D E9E2 8DEA 00AA 5556` or \"Nico Alt \\<nicoalt@posteo.de>\" with fingerprint: <br /> `558B E907 1CA6 CA44 DBF5 576B 95A0 DAF7 DBC7 B548`"
-msgstr ""
+msgstr "git-теги підписує «Hans-Christoph Steiner \\<hans@guardianproject.info>», також відомий як «Hans-Christoph Steiner \\<hans@eds.org>» або «Hans-Christoph Steiner \\<hans@at.or.at>», чий відбиток: <br /> `EE66 20C7 136B 0D2C 456C 0A4D E9E2 8DEA 00AA 5556`; або «Nico Alt \\<nicoalt@posteo.de>», чий відбиток: <br /> `558B E907 1CA6 CA44 DBF5 576B 95A0 DAF7 DBC7 B548`"
 
 #. type: YAML Front Matter: title
 #: _docs/Repository_Style_Guide.md
