@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
 "POT-Creation-Date: 2022-03-16 12:17+0100\n"
-"PO-Revision-Date: 2022-03-29 19:38+0000\n"
+"PO-Revision-Date: 2022-04-01 05:11+0000\n"
 "Last-Translator: Denys Nykula <nykula@ukr.net>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/f-droid/website-docs/uk/>\n"
 "Language: uk\n"
@@ -1440,157 +1440,157 @@ msgstr "Збірка сервера підпису"
 #. type: Plain text
 #: _docs/Building_a_Signing_Server.md
 msgid "The Android APK signing model sets the expectation that the signing key will be the same for the entire lifetime of the app.  That can be seen in the recommended lifetime of an Android signing key: [20+ years](https://developer.android.com/studio/publish/app-signing.html#considerations).  On top of that, it is difficult to [migrate an app to a new key](https://guardianproject.info/2015/12/29/how-to-migrate-your-android-apps-signing-key/).  Since the signing key is an essential part to preventing APKs from impersonating another, Android signing keys must be kept safe for the entire life of the app."
-msgstr ""
+msgstr "Модель підпису APK Android спирається на незмінність ключа підпису протягом усього існування застосунку: рекомендований строк дії ключа підпису Android — [20+ років](https://developer.android.com/studio/publish/app-signing.html#considerations).  Крім цього, застосунок складно [мігрувати на новий ключ](https://guardianproject.info/2015/12/29/how-to-migrate-your-android-apps-signing-key/). Оскільки ключ підпису — важливий складник унеможливлення підміни APK, ключі підпису Android мусять зберігатись у безпеці протягом усього існування застосунку."
 
 #. type: Plain text
 #: _docs/Building_a_Signing_Server.md
 msgid "The F-Droid repo signing keys follow a very similar model: the signing key is the essential way to safely identify an F-Droid repo. So the same considerations apply to F-Droid repo signing keys as to APK signing keys.  This also provides some really useful benefits.  Since the integrity of the repo index file and the APKs are guaranteed by the repo signature, the files can be delivered via whatever method is most convenient, and their integrity will be automatically verified by the F-Droid client app, the _f-droid.org_ deploy process, and Repomaker."
-msgstr ""
+msgstr "Підпис репозиторію F-Droid використовує дуже схожу модель: ключ підпису — основний спосіб безпечно ідентифікувати репозиторій F-Droid. Тож застереження щодо ключів підпису APK стосуються й ключів підпису репозиторію F-Droid. Це також має деякі вкрай суттєві переваги. Оскільки підпис репозиторію гарантує цілісність файлу індексу репозиторію та APK, файли можна передавати будь-яким зручним способом: клієнтський застосунок F-Droid, процес вивантаження _f-droid.org_ та Repomaker автоматично перевіряють їхню цілісність."
 
 #. type: Plain text
 #: _docs/Building_a_Signing_Server.md
 msgid "This means the security burden is shifted from the online, public webserver to a private signing machine.  Just keeping that machine out of the public eye goes a long way towards improving security.  There are a number of additional measures that can be taken to further improve the security of the signing process.  Here are some approaches, starting with the easiest and least security, and going on to more secure setups that require more work to setup and run.  Signing is not an resource intensive process, so any machine will work, even a 10 year old, basic laptop.  We recommend using a minimal [Debian](https://www.debian.org) install, and rebuilding the machine from scratch."
-msgstr ""
+msgstr "Це означає, що тягар захисту лежить не на загальнодоступному сервері в мережі, а на приватному комп'ютері для підпису. Саме лише утримання цього комп'ютера за межами загального доступу вже надає суттєвий захист. Додатково можливо вжити й чимало інших заходів, щоб удосконалити захист процесу підпису. Ось кілька підходів, від найпростішого й лише мінімально захищеного — до все безпечніших конфігурацій, які складніше налаштувати й супроводжувати. Підпис не потребує багатьох ресурсів, тож підійде будь-який комп'ютер, навіть 10-річний недорогий ноутбук. Радимо встановити мінімальний варіант [Debian](https://www.debian.org) і переналаштувати комп'ютер з нуля."
 
 #. type: Title ###
 #: _docs/Building_a_Signing_Server.md
 #, no-wrap
 msgid "Automated Signing Server with HSM"
-msgstr ""
+msgstr "Сервер автоматизованого підпису з HSM"
 
 #. type: Plain text
 #: _docs/Building_a_Signing_Server.md
 msgid "For a fully automated signing setup, the machine running the signing needs to be online and running. Ideally this machine would have no remote access, at the very least remote access should be very carefully controlled and monitored.  A laptop makes it easy to work with even when remote access is disabled, since it provides a built-in keyboard and monitor.  If remote access is required, then any basic PC will work fine.  Using a Hardware Security Module (HSM) to store the keys prevents them from being stolen if the server is broken into.  An attacker could only run the signing process on that server."
-msgstr ""
+msgstr "Щоб налаштувати повністю автоматизований підпис, комп'ютер підпису потрібно з'єднати з мережею й увімкнути. В ідеалі, до цього комп'ютера не має бути жодного віддаленого доступу; як мінімум, віддалений доступ слід якнайуважніше контролювати й відстежувати. З ноутбуком працювати без віддаленого доступу простіше, оскільки клавіатуру й монітор вбудовано в нього. Якщо без віддаленого доступу ніяк, то підійде будь-який звичайний ПК. Використання апаратного модуля захисту (HSM) для збереження ключів унеможливлює їхнє викрадення при зламі сервера: нападник зможе запускати процес підпису лише на цьому сервері."
 
 #. type: Plain text
 #: _docs/Building_a_Signing_Server.md
 msgid "Ideally, this machine would only be accessible via Tor.  That hides the physical location of the server, and hides the traffic from network.  This makes it much harder attackers to find the actual machine to attack."
-msgstr ""
+msgstr "В ідеалі, цей комп'ютер доступний лише через Tor. Це приховує фізичне місцеперебування сервера й мережний маршрут трафіку. Нападникам тоді значно складніше визначити, який саме комп'ютер атакувати."
 
 #. type: Plain text
 #: _docs/Building_a_Signing_Server.md
 msgid "For the HSM, we recommend using [Nitrokey](https://www.nitrokey.com/)  hardware, since they are free software/hardware, and provide a wide range of options.  Use a separate machine to put the signing keys on HSM.  A good HSM will keep an audit trail of how many signatures have been made, so that information could be used to create an automatic auditing process to raise alarms if too many signatures have been made.  That could mean that this server was breached and used to sign unauthorized packages."
-msgstr ""
+msgstr "Радимо використовувати HSM-обладнання [Nitrokey](https://www.nitrokey.com/), оскільки їхнє програмне й апаратне забезпечення вільне та має багато варіантів. Використайте ще один окремий комп'ютер, щоб помістити ключі підпису на HSM. Хороший HSM зберігатиме журнал кількості здійснених підписів, щоб автоматизований аудит цих даних міг виявити надмірно велику кількість підписів — ознаку того, що сервер було зламано й використано для підпису неавторизованих пакунків."
 
 #. type: Plain text
 #: _docs/Building_a_Signing_Server.md
 msgid "Another possibility is to use a setup like [Fedora](https://pagure.io/sigul)'s [Sigul](http://www.devops-blog.net/koji/gpg-signing-rpms-with-sigul-signing-server-koji-integration)  that involves three machines."
-msgstr ""
+msgstr "Або, маючи три окремі комп'ютери, можете використати таку конфігурацію, як [Fedora](https://pagure.io/sigul) [Sigul](http://www.devops-blog.net/koji/gpg-signing-rpms-with-sigul-signing-server-koji-integration)."
 
 #. type: Title ###
 #: _docs/Building_a_Signing_Server.md
 #, no-wrap
 msgid "Basic laptop dedicated to signing"
-msgstr ""
+msgstr "Виділений ноутбук — основа підпису"
 
 #. type: Plain text
 #: _docs/Building_a_Signing_Server.md
 msgid "Start with a laptop that can be wiped clean and rebuilt from scratch.  What is most important is that only the essential software is installed on it, and nothing else.  Do not include any browser at all, for example, since that is the most common vector of attack.  No remote access setup (e.g. SSH or VNC) should be installed or configured.  To sign apps and repos, someone would take out this laptop, connect it to the network, and run the signing process.  The signed results can then be published via the network connection.  When the signing is complete, the machine can be turned off and disconnected and kept in a safe place."
-msgstr ""
+msgstr "Повністю зітріть вміст ноутбука й переналаштуйте його з нуля. Важливо, щоб встановлено було лише найнеобхідніше програмне забезпечення — й більше нічого. Зокрема не додавайте жодного вебпереглядача, бо це найпоширеніший вектор атаки. Не встановлюйте й не налаштовуйте жодних програм для віддаленого доступу, як-от SSH чи VNC. Особі, що підписує застосунки й репозиторії, слід щоразу брати ноутбук, з'єднувати його з мережею й запускати процес підпису. Результати підпису можна оприлюднити через тимчасове мережне з'єднання. Щойно підпис завершено, комп'ютер слід вимкнути, від'єднати й помістити в безпечне місце."
 
 #. type: Plain text
 #: _docs/Building_a_Signing_Server.md
 msgid "This could be made quite automatic with some custom scripts.  The person running the process would only need to take out the machine, connect it, turn it on, wait until the process completes, then put it all away again."
-msgstr ""
+msgstr "Можете автоматизувати цей процес власними скриптами. Тоді особі, що запускає процес, достатньо буде взяти комп'ютер, під'єднати й увімкнути його, дочекатися завершення процесу та знову все вимкнути й відкласти."
 
 #. type: Title ###
 #: _docs/Building_a_Signing_Server.md
 #, no-wrap
 msgid "Fully offline signing laptop with USB thumb drives"
-msgstr ""
+msgstr "Повністю автономний ноутбук підпису з USB-флешками"
 
 #. type: Plain text
 #: _docs/Building_a_Signing_Server.md
 msgid "This process is based on the same basic, stripped down laptop as the previous example.  But this time, the networking should be entirely disabled before the install process.  For example, it is easy in many laptops to physically remove the WiFi card.  Therefore, it makes sense to use a laptop that does not include an ethernet jack, which are usually not possible to remove.  Otherwise, blocklisting all kernel modules related to neworking can suffice.  Since this machine is fully offline, the extra work of using an HSM is not as important, but it can't hurt to include it."
-msgstr ""
+msgstr "В основі процесу — такий же простий, перелаштований з нуля ноутбук, як у попередньому прикладі. Проте в цьому випадку, мережу слід повністю вимкнути ще до процесу встановлення. Наприклад, у багатьох ноутбуків нескладно фізично вилучити WiFi-картку. Є сенс використати ноутбук одразу без Ethernet-порту, бо такі порти зазвичай неможливо вилучити. Хоча може бути достатньо внести в список блокування всі модулі ядра, що стосуються мережі. Оскільки комп'ютер повністю автономний, доповнювати це використанням HSM не так важливо. Втім, HSM усе одно не завадить."
 
 #. type: Plain text
 #: _docs/Building_a_Signing_Server.md
 msgid "Download the full \"CD\" or \"DVD\" image of Debian to run the install.  Be sure to [verify](https://www.debian.org/CD/verify) the GPG signatures and the SHA-256 hashes.  In order to update the offline machine, an \"[apt offline](https://www.debian.org/doc/manuals/apt-offline)\" setup is required."
-msgstr ""
+msgstr "Завантажте повний встановлювальний CD- чи DVD-образ Debian. Обов'язково [звірте](https://www.debian.org/CD/verify) GPG-підписи й хеші SHA-256. Щоб оновлювати автономний комп'ютер, налаштуйте [apt для роботи без мережі](https://www.debian.org/doc/manuals/apt-offline)."
 
 #. type: Plain text
 #: _docs/Building_a_Signing_Server.md
 msgid "To be extra careful, all of the software used should be verified.  Chromebooks are nice, cheap laptops that run Linux natively.  They also use Coreboot for the BIOS."
-msgstr ""
+msgstr "Захистіться додатково, звіряючи все використовуване програмне забезпечення. Chromebook — недорогі ноутбуки з хорошою підтримкою Linux, що використовують Coreboot як BIOS."
 
 #. type: Bullet: '* '
 #: _docs/Building_a_Signing_Server.md
 msgid "Buy a computer off the shelf with cash, avoid having it shipped, especially across borders"
-msgstr ""
+msgstr "Придбайте комп'ютер у фізичному магазині за готівку. Не замовляйте доставку, особливо через кордони"
 
 #. type: Bullet: '* '
 #: _docs/Building_a_Signing_Server.md
 msgid "Buy a Debian-supported [Chromebook](https://www.chromium.org/chromium-os/developer-information-for-chrome-os-devices/acer-c720-chromebook) with removeable WiFi hardware, and needs no binary blobs"
-msgstr ""
+msgstr "Придбайте [Chromebook](https://www.chromium.org/chromium-os/developer-information-for-chrome-os-devices/acer-c720-chromebook) із підтримкою Debian, знімною WiFi-карткою й відсутністю потреби в двійкових блобах"
 
 #. type: Bullet: '* '
 #: _docs/Building_a_Signing_Server.md
 msgid "Install a reproducibly built Coreboot binary"
-msgstr ""
+msgstr "Встановіть відтворювану збірку Coreboot"
 
 #. type: Bullet: '* '
 #: _docs/Building_a_Signing_Server.md
 msgid "Install from a reproducibly built Debian image, wiping out Chrome OS entirely"
-msgstr ""
+msgstr "Встановіть відтворювану збірку Debian, повністю стерши Chrome OS"
 
 #. type: Title ##
 #: _docs/Building_a_Signing_Server.md
 #, no-wrap
 msgid "The Physical Environment"
-msgstr ""
+msgstr "Фізичне середовище"
 
 #. type: Plain text
 #: _docs/Building_a_Signing_Server.md
 msgid "The last thing to consider is the physical location where signatures happen, and where essential equipment is stored.  The signing environment must be physically secure. Otherwise, there is no way to prevent laptops or HSMs from being lost or used to sign inappropriate content.  For the offline machines, keeping them in a locked room is a good start.  For an online machine, forcing all network traffic and remote access over Tor hides the physical location of the machine from network observers."
-msgstr ""
+msgstr "Зважайте на фізичне середовище, де застосовуєте підпис і зберігаєте необхідне обладнання. Середовище підпису мусить бути фізично захищеним. Інакше неможливо запобігти втраті ноутбука чи HSM і використанню їх для підпису недоречного вмісту. Як мінімум, зберігайте автономні комп'ютери в замкненому приміщенні. Спрямуйте через Tor увесь мережний трафік неавтономних комп'ютерів, зокрема віддалений доступ, щоб приховати фізичне місцеперебування комп'ютера від мережного спостереження."
 
 #. type: Plain text
 #: _docs/Building_a_Signing_Server.md
 msgid "For high risk signing keys, using multiple layers of defense is important:"
-msgstr ""
+msgstr "Застосуйте кілька шарів захисту для особливо ризикових ключів підпису:"
 
 #. type: Bullet: '* '
 #: _docs/Building_a_Signing_Server.md
 msgid "Restricted physical access to HSMs or smart cards"
-msgstr ""
+msgstr "Обмеження фізичного доступу до HSM чи смарткарток"
 
 #. type: Bullet: '* '
 #: _docs/Building_a_Signing_Server.md
 msgid "Security cameras"
-msgstr ""
+msgstr "Камери безпеки"
 
 #. type: Bullet: '* '
 #: _docs/Building_a_Signing_Server.md
 msgid "On-site security guards"
-msgstr ""
+msgstr "Охорона на об'єкті"
 
 #. type: Bullet: '* '
 #: _docs/Building_a_Signing_Server.md
 msgid "Visitor logging"
-msgstr ""
+msgstr "Журналювання відвідин"
 
 #. type: Bullet: '* '
 #: _docs/Building_a_Signing_Server.md
 msgid "A tools-resistant server safe for online code-signing servers"
-msgstr ""
+msgstr "Невразливий до інструментів серверний сейф для неавтономних серверів підпису коду"
 
 #. type: Plain text
 #: _docs/Building_a_Signing_Server.md
 msgid "The signing server should be physically separate from the rest of the infrastructure.  And the logs, machine, and network should be periodically audited."
-msgstr ""
+msgstr "Фізично відокремте сервер підпису від решти інфраструктури. Регулярно проводьте аудит журналів, комп'ютерів і мережі."
 
 #. type: Title ##
 #: _docs/Building_a_Signing_Server.md
 #, no-wrap
 msgid "Difficult decisions"
-msgstr ""
+msgstr "Складні рішення"
 
 #. type: Plain text
 #: _docs/Building_a_Signing_Server.md
 msgid "Ideally all of these practices would be put into place, but each of these security measures comes at a cost of difficulty, expense, and complexity.  They can also delay the process of getting regular updates out.  So there are risks of implementing too strict security policies, much like the risks of not implementing enough."
-msgstr ""
+msgstr "В ідеалі, слід застосувати всі ці практики одразу, але кожен захід безпеки має свою ціну: обсяг праці, витрати, складність системи, затримка отримання регулярних оновлень. Тож ризики становить як недостатній захист, так і надмірно строгий."
 
 #. type: YAML Front Matter: title
 #: _docs/Build_Metadata_Reference.md
