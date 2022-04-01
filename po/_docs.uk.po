@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
 "POT-Creation-Date: 2022-03-16 12:17+0100\n"
-"PO-Revision-Date: 2022-04-01 05:11+0000\n"
+"PO-Revision-Date: 2022-04-04 11:13+0000\n"
 "Last-Translator: Denys Nykula <nykula@ukr.net>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/f-droid/website-docs/uk/>\n"
 "Language: uk\n"
@@ -2451,7 +2451,7 @@ msgstr "_Тип репозиторію_<a name=\"RepoType\"></a>"
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 msgid "The type of repository - for automatic building from source. If this is not specified, automatic building is disabled for this application.  Possible values are:"
-msgstr ""
+msgstr "Тип репозиторію — для автоматичної збірки з вихідного коду. Якщо цього не вказати, автоматичні збірки буде вимкнено для цього застосунку. Можливі значення:"
 
 #. type: Bullet: '-   '
 #: _docs/Build_Metadata_Reference.md
@@ -4094,73 +4094,73 @@ msgstr "Це перетворюється на (`<provides>`) у файлі XML 
 #: _docs/Build_Server_Setup.md
 #, no-wrap
 msgid "Build Server Setup"
-msgstr ""
+msgstr "Налаштування сервера збірки"
 
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
 msgid "The F-Droid build server isolates the builds for each package within a clean, isolated and secure throwaway virtual machine environment. Building thousands of apps, especially with automated and/or unattended processes, could be considered a dangerous pastime from a security perspective. This is even more the case when the products of the build are also distributed widely and in a semi-automated (\"you have updates available\") fashion."
-msgstr ""
+msgstr "Сервер збірки F-Droid збирає кожен пакунок у чистому, окремому й безпечному середовищі одноразової віртуальної машини. Збірка тисяч застосунків, особливо з автоматизованими (частково чи повністю) процесами, — ризиковане заняття з точки зору безпеки. Тим більше тоді, коли результати збірки розповсюджуються широко й, у вигляді оновлень, напів-автоматично."
 
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
 msgid "Assume that an upstream source repository is compromised. A small selection of things that an attacker could do in such a situation:"
-msgstr ""
+msgstr "Уявіть, що оригінальний репозиторій вихідного коду скомпрометовано. Ось частковий перелік тих можливостей, які це може надати нападнику:"
 
 #. type: Bullet: '1.  '
 #: _docs/Build_Server_Setup.md
 msgid "Use custom build steps to execute virtually anything as the user doing the build."
-msgstr ""
+msgstr "Підмінити кроки збірки, тобто виконати по суті будь-що від імені облікового запису, виділеного для збірки."
 
 #. type: Bullet: '2.  '
 #: _docs/Build_Server_Setup.md
 msgid "Access the keystore."
-msgstr ""
+msgstr "Доступитися сховища ключів."
 
 #. type: Bullet: '3.  '
 #: _docs/Build_Server_Setup.md
 msgid "Modify the built APK files or source tarballs for other applications in the repository."
-msgstr ""
+msgstr "Змінити зібрані APK-файли чи архіви вихідного коду інших застосунків у репозиторії."
 
 #. type: Bullet: '4.  '
 #: _docs/Build_Server_Setup.md
 msgid "Modify the metadata (which includes build scripts, which again, also includes the ability to execute anything) for other applications in the repository."
-msgstr ""
+msgstr "Змінити метадані (зокрема скрипти збірки, тобто надати собі, знову ж таки, можливість виконати будь-що) інших застосунків у репозиторії."
 
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
 msgid "Through complete isolation, the repercussions are at least limited to the application in question. Not only is the build environment fresh for each build, and thrown away afterwards, but it is also totally isolated from the signing environment."
-msgstr ""
+msgstr "Окремість середовищ обмежує простір атаки одним конкретним застосунком. Середовище збірки буде не лише щоразу заново створено й потім видалено, але й повністю ізольовано від середовища підпису."
 
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
 msgid "Aside from security issues, there are some applications which have strange requirements such as old versions of the NDK. It would be impractical (or at least extremely messy) to start modifying and restoring the SDK on a multi-purpose system, but within the confines of a throwaway single-use virtual machine, anything is possible."
-msgstr ""
+msgstr "Крім проблем захисту, деякі застосунки мають специфічні вимоги, такі як старі версії NDK. Було б непрактично (широкий потенціал для помилок) змінювати й відкочувати SDK на багатозадачній системі, але в межах одноразових віртуальних машин можна робити що завгодно."
 
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
 msgid "All this is in addition to the obvious advantage of having a standardised and completely reproducible environment in which builds are made. Additionally, it allows for specialised custom build environments for particular applications."
-msgstr ""
+msgstr "Ще одна очевидна перевага — стандартизованість і повна відтворюваність середовища збірки. До того ж, окреме середовище можна довільним чином адаптувати до потреб окремих застосунків."
 
 #. type: Title ##
 #: _docs/Build_Server_Setup.md
 #, no-wrap
 msgid "Overview of the setup"
-msgstr ""
+msgstr "Огляд налаштування"
 
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
 msgid "This is how to set up a working build server, starting from a completely clean minimal Debian/stable install.  This HOWTO assumes you have already [setup _fdroidserver_](../Installing_the_Server_and_Repo_Tools). Running the _fdroidserver_ tools directly out of [git](https://gitlab.com/fdroid/fdroidserver)  (e.g. `~/fdroidserver/fdroid build org.adaway`), will likely be the easiest for now since the build server setup scripts are not really ready for proper packaging. Also, it will likely only work on Debian, Ubuntu and other Debian-derivatives since F-Droid only uses Debian in its infrastructure (we welcome porting contributions!)."
-msgstr ""
+msgstr "Налаштуємо працездатний сервер збірки, почавши з повністю чистого мінімального встановлення Debian/stable. В межах інструкції вважатимемо, що ви вже [встановили _fdroidserver_](../Installing_the_Server_and_Repo_Tools). Запускати засоби _fdroidserver_ прямо з [git](https://gitlab.com/fdroid/fdroidserver) (наприклад, `~/fdroidserver/fdroid build org.adaway`) буде поки що простіше за все, бо скрипти налаштування сервера збірки, чесно кажучи, не готові до охайного пакування. Також це ймовірно працюватиме лише на Debian, Ubuntu та похідних від них системах, бо інфраструктура F-Droid використовує саме Debian (будемо раді внескам, що вдосконалять портування!)."
 
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
 msgid "The base server needs to be at minimum Debian/jessie, or there will need to be some heavy tweaking. If you run Ubuntu or derivative distro, you can get any packages missing from your version, like _vagrant-cachier_, from this PPA: <https://launchpad.net/~fdroid/+archive/ubuntu/buildserver/>"
-msgstr ""
+msgstr "Основою сервера має бути як мінімум Debian/jessie, інакше багато чого доведеться змінити. Якщо у вас Ubuntu чи похідний дистрибутив, завантажте відсутні у вашій версії пакунки, як-от _vagrant-cachier_, із цього PPA: <https://launchpad.net/~fdroid/+archive/ubuntu/buildserver/>"
 
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
 msgid "First, install the necessary packages and create a new user to run the whole process here, e.g. _fdroid_. These are only the packages required by all builds, you might need to install additional packages to build apps, for example, _mercurial_ or _subversion_. Once the packages are installed and the _fdroid_ user is created, nothing else in this process should be run using root or _sudo_."
-msgstr ""
+msgstr "Насамперед встановіть необхідні пакунки й створіть обліковий запис для всього цього процесу, наприклад _fdroid_. Перелічимо лише ті пакунки, що обов'язкові для всіх збірок; вам також можуть знадобитися додаткові пакунки для збірки застосунків, наприклад _mercurial_ чи _subversion_. Встановивши пакунки й створивши обліковий запис _fdroid_, не виконуйте більше жодних кроків із root-правами чи за допомогою _sudo_."
 
 #. type: Fenced code block (bash)
 #: _docs/Build_Server_Setup.md
@@ -4200,12 +4200,12 @@ msgstr ""
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
 msgid "You also have to make sure your `ANDROID_HOME` environment variable is [set up](../Installing_the_Server_and_Repo_Tools#building-apps) correctly."
-msgstr ""
+msgstr "Також переконайтесь, що вашу змінну середовища `ANDROID_HOME` [налаштовано](../Installing_the_Server_and_Repo_Tools#building-apps) як слід."
 
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
 msgid "For your convenience you optionally may add the fdroid executable to your path:"
-msgstr ""
+msgstr "Для зручності, можете додати виконуваний файл fdroid у свій шлях:"
 
 #. type: Fenced code block (bash)
 #: _docs/Build_Server_Setup.md
@@ -4216,7 +4216,7 @@ msgstr "fdroid:~$ echo \"PATH=\\$PATH:$HOME/fdroidserver\" >> ~/.bashrc\n"
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
 msgid "Create the base buildserver image... (downloading the basebox and all the sdk platforms can take long time)."
-msgstr ""
+msgstr "Створіть основу — образ buildserver… (на завантаження basebox та всіх sdk-платформ може знадобитись чимало часу)."
 
 #. type: Fenced code block (bash)
 #: _docs/Build_Server_Setup.md
@@ -4231,7 +4231,7 @@ msgstr ""
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
 msgid "Get all of the app build metadata from the fdroiddata repo..."
-msgstr ""
+msgstr "Завантажте всі метадані збірки застосунків із репозиторію fdroiddata…"
 
 #. type: Fenced code block (bash)
 #: _docs/Build_Server_Setup.md
@@ -4251,28 +4251,28 @@ msgstr ""
 #: _docs/Build_Server_Setup.md
 #, no-wrap
 msgid "Setting up a build server"
-msgstr ""
+msgstr "Налаштування сервера збірки"
 
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
 msgid "In addition to the basic setup previously described, we ship a Vagrant-compatible Debian/stretch base box called ’fdroid/basebox-stretch64’."
-msgstr ""
+msgstr "Крім описаних угорі кроків налаштування, ми надаємо «fdroid/basebox-stretch64» — basebox, сумісний із Vagrant, на основі Debian/stretch."
 
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
 msgid "We are bootstrapping the Debian Vagrant boxes for our buildserver from scratch. Fetching and verifying our pre-build Vagrant boxes is fully automated. (If you are interested in this process or want to bootstrap those by yourself you should look at: [F-Droid Base Box](https://gitlab.com/fdroid/basebox#fdroid_basebox))"
-msgstr ""
+msgstr "Vagrant-образи Debian для сервера збірки ми збираємо з нуля. Завантаження й перевірку наших заздалегідь зібраних Vagrant-образів повністю автоматизовано. (Якщо ви зацікавились процесом чи бажаєте самостійно зібрати образ, перегляньте [F-Droid Basebox](https://gitlab.com/fdroid/basebox#fdroid_basebox))"
 
 #. type: Title ###
 #: _docs/Build_Server_Setup.md
 #, no-wrap
 msgid "Creating the F-Droid buildserver box"
-msgstr ""
+msgstr "Створення образу сервера збірки F-Droid"
 
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
 msgid "Navigate to your clone of [F-Droid Server git](https://gitlab.com/fdroid/fdroidserver) and start by creating `makebuildserver.config.py`, using `./examples/makebuildserver.config.py` as a reference - look at the settings and documentation there to decide if any need changing to suit your environment. There is a path for retrieving the base box if it doesn’t exist, and an apt proxy definition, both of which may need customising for your environment. You can then go to the `fdroidserver` directory and run `makebuildserver`."
-msgstr ""
+msgstr "Перейдіть до свого клону [git-репозиторію сервера F-Droid](https://gitlab.com/fdroid/fdroidserver) й створіть для початку `makebuildserver.config.py`, використавши `./examples/makebuildserver.config.py` як зразок: прогляньте параметри й документацію, щоб визначити, чи потрібні якісь зміни для вашого середовища. Там є шлях для завантаження образу basebox, якщо його ще нема, й налаштування проксі для apt — обидві ці речі, залежно від особливостей вашого середовища, може бути потрібно змінити. Тоді можете перейти до каталогу `fdroidserver` і запустити `makebuildserver`."
 
 #. type: Fenced code block (bash)
 #: _docs/Build_Server_Setup.md
@@ -4287,32 +4287,40 @@ msgid ""
 "# start building the your basebox image\n"
 "./makebuildserver\n"
 msgstr ""
+"# перейдіть до свого клону сервера F-Droid\n"
+"cd .../fdroidserver\n"
+"\n"
+"# скопіюйте файл зразка конфігурації\n"
+"cp examples/makebuildserver.config.py makebuildserver.config.py\n"
+"\n"
+"# почніть збирати образ basebox\n"
+"./makebuildserver\n"
 
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
 msgid "This will take a long time, use a lot of bandwidth and disk space - most of it spent installing the necessary parts of the Android SDK for all the various platforms. Luckily you only need to do it occasionally. Once you have a working build server image, if the recipes change (e.g. when packages need to be added) you can just run that script again and the existing one will be updated in place."
-msgstr ""
+msgstr "Це може зайняти тривалий час і використати багато трафіку та простору, особливо для встановлення необхідних складників Android SDK для всіх різноманітних платформ. На щастя, це доводиться робити лише час від часу. Щойно матимете працездатний образ сервера збірки, при зміні метаданих (наприклад, для додання пакунків) буде достатньо запустити скрипт іще раз — і оновлення застосуються до вже наявного образу."
 
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
 msgid "Once it’s complete you’ll have a new base box called ’buildserver’ which is what’s used for your App build runs. Now you can build packages as as you used to, but when you run `fdroid build --server ...` App build runs will be isolated inside a virtual machine."
-msgstr ""
+msgstr "По завершенню, у вас буде новий basebox-образ «buildserver», який слід використовувати для запуску збірки ваших застосунків. Можете збирати пакунки, як і раніше, але при запуску `fdroid build --server ...` збірки відбуватимуться в окремих віртуальних машинах."
 
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
 msgid "The first time a build is done, a new virtual machine is created using the ’buildserver’ box as a base. A snapshot of this clean machine state is saved for use in future builds, to improve performance. You can force discarding of this snapshot and rebuilding from scratch using a switch: `fdroid build --resetserver ...`."
-msgstr ""
+msgstr "Перший запуск збірки створить віртуальну машину на основі образу «buildserver». Копію цього чистого стану машини буде збережено, щоб майбутні збірки займали менше часу. Можете примусово стерти цей образ і запустити збірку з нуля: `fdroid build --resetserver ...`."
 
 #. type: Title ###
 #: _docs/Build_Server_Setup.md
 #, no-wrap
 msgid "makebuildserver caching tweaks (optional)"
-msgstr ""
+msgstr "Кешування makebuildserver (необов'язково)"
 
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
 msgid "The main SDK/NDK downloads will automatically be cached to speed things up the next time, but there’s no easy way of doing this for the longer sections which use the SDK’s `android` tool to install platforms, add-ons and tools. However, instead of allowing automatic caching, you can supply a pre-populated cache directory which includes not only these downloads, but also .tar.gz files for all the relevant additions. If the provisioning scripts detect these, they will be used in preference to running the android tools. For example, if you have `buildserver/addons/cache/platforms/android-19.tar.gz` that will be used when installing the android-19 platform, instead of re-downloading it using `android update sdk --no-ui -t android-19`. It is possible to create the cache files of this additions from a local installation of the SDK including these:"
-msgstr ""
+msgstr "Завантаження основних SDK й NDK автоматично кешуватимуться, щоб заощадити час при наступних запусках; але не існує простого способу кешувати артефакти спеціалізованих збірок, що встановлюють платформи, додатки й засоби, запускаючи `android` із SDK. Проте ви можете не дозволяти автоматичне кешування, а надавати заздалегідь наповнений каталог кешу, в якому будуть не лише ці завантаження, а й усі додатково потрібні файли .tar.gz. Якщо скрипти встановлення виявлять їх, то використають їх замість запуску android. Наприклад, якщо у вас є `buildserver/addons/cache/platforms/android-19.tar.gz`, то цей файл буде використано для встановлення платформи android-19 замість перезавантаження її за допомогою `android update sdk --no-ui -t android-19`. Такі файли кешу можна створити з локально встановленого SDK:"
 
 #. type: Fenced code block (bash)
 #: _docs/Build_Server_Setup.md
@@ -4322,14 +4330,14 @@ msgid ""
 "tar czf android-19.tar.gz android-19\n"
 "mv android-19.tar.gz /path/to/buildserver/addons/cache/platforms/\n"
 msgstr ""
-"cd /path/to/android-sdk/platforms\n"
+"cd /шлях/до/android-sdk/platforms\n"
 "tar czf android-19.tar.gz android-19\n"
-"mv android-19.tar.gz /path/to/buildserver/addons/cache/platforms/\n"
+"mv android-19.tar.gz /шлях/до/buildserver/addons/cache/platforms/\n"
 
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
 msgid "If you have already built a buildserver it is also possible to get this files directly from the buildserver:"
-msgstr ""
+msgstr "Якщо ви раніше збирали сервер збірки, то ці файли можна також отримати прямо з нього:"
 
 #. type: Fenced code block (bash)
 #: _docs/Build_Server_Setup.md
@@ -4339,18 +4347,18 @@ msgid ""
 "vagrant ssh -- -C 'cat ~/android-sdk/platforms/android-19.tar.gz' > /path/to/fdroidserver/buildserver/cache/platforms/android19.tar.gz\n"
 msgstr ""
 "vagrant ssh -- -C 'tar -C ~/android-sdk/platforms czf android-19.tar.gz android-19'\n"
-"vagrant ssh -- -C 'cat ~/android-sdk/platforms/android-19.tar.gz' > /path/to/fdroidserver/buildserver/cache/platforms/android19.tar.gz\n"
+"vagrant ssh -- -C 'cat ~/android-sdk/platforms/android-19.tar.gz' > /шлях/до/fdroidserver/buildserver/cache/platforms/android19.tar.gz\n"
 
 #. type: Title ##
 #: _docs/Build_Server_Setup.md
 #, no-wrap
 msgid "Running builds"
-msgstr ""
+msgstr "Запуск збірок"
 
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
 msgid "When using the buildserver, running `fdroid` directly from a git checkout of _fdroidserver_ will be the easiest.  If you don't already have the _fdroidserver_ tools installed and setup, you will need to do that next: [Installing the Server and Repo Tools](../Installing_the_Server_and_Repo_Tools).  That provides all of the dependencies needed to run _fdroidserver_ from git."
-msgstr ""
+msgstr "При використанні сервера збірки, найпростіше запускати `fdroid` прямо в каталозі git-репозиторію _fdroidserver_. Якщо ви ще не встановили чи не налаштували засобів _fdroidserver_, зробіть це зараз: [Installing the Server and Repo Tools](../Installing_the_Server_and_Repo_Tools). Це надасть усі залежності, потрібні для запуску _fdroidserver_ із git."
 
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
@@ -4371,12 +4379,12 @@ msgstr ""
 #: _docs/Build_Server_Setup.md
 #, no-wrap
 msgid "Optionally using QEMU/KVM/libvirt instead of VirtualBox"
-msgstr ""
+msgstr "QEMU/KVM/libvirt замість VirtualBox (необов'язково)"
 
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
 msgid "It is also possible to QEMU/KVM guest VMs via libvirt instead of the default VirtualBox.  VirtualBox is still the recommended setup since that is what is used by f-droid.org, but there are cases where it is not possible to run VirtualBox, like on a machine that is already running QEMU/KVM guests.  In order to make the libvirt image files directly readable by `vagrant package`, _libvirt_'s QEMU needs to be configured to always set the ownership to `libvirt.libvirt`."
-msgstr ""
+msgstr "Можливо також використовувати гостьові віртуальні машини QEMU/KVM через libvirt замість усталеного VirtualBox. Радимо налаштувати VirtualBox, бо саме його використовує f-droid.org; але розуміємо, що використати VirtualBox може бути неможливо: наприклад, на сервері з уже наявними гостьовими машинами QEMU/KVM. Щоб `vagrant package` міг безпосередньо читати файли libvirt-образів, QEMU _libvirt_ має завжди надавати права `libvirt:libvirt`."
 
 #. type: Fenced code block (console)
 #: _docs/Build_Server_Setup.md
@@ -4407,7 +4415,7 @@ msgstr ""
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
 msgid "Then create a _makebuildserver.config.py_ next to _makebuildserver_ and add:"
-msgstr ""
+msgstr "Тоді створіть _makebuildserver.config.py_ поруч із _makebuildserver_ і додайте:"
 
 #. type: Fenced code block (python)
 #: _docs/Build_Server_Setup.md
@@ -4451,17 +4459,17 @@ msgstr ""
 #: _docs/Build_Server_Setup.md
 #, no-wrap
 msgid "Advanced nested KVM Setup:"
-msgstr ""
+msgstr "Налаштування KVM усередині KVM:"
 
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
 msgid "This section is not relevant for using F-Droid in a normal setup. If you want to run `fdroid build --server` flag inside a KVM, this chaper will help you getting started."
-msgstr ""
+msgstr "Цей розділ не стосується звичного використання F-Droid. Він містить заготовку інструкцій для запуску `fdroid build --server` усередині іншого віртуального сервера KVM."
 
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
 msgid "Consider following basic nesting setup:"
-msgstr ""
+msgstr "Розгляньмо просту вкладену конфігурацію:"
 
 #. type: Fenced code block
 #: _docs/Build_Server_Setup.md
@@ -4471,19 +4479,19 @@ msgid ""
 "\\- F-Droid VM (l1)\n"
 "   \\- F-Droid builder VM (l2)\n"
 msgstr ""
-"bare metal host (l0)\n"
-"\\- F-Droid VM (l1)\n"
-"   \\- F-Droid builder VM (l2)\n"
+"фізичний виділений сервер (рівень 0)\n"
+"\\- віртуальна машина F-Droid (рівень 1)\n"
+"   \\- віртуальна підмашина збірки F-Droid (рівень 2)\n"
 
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
 msgid "The steps above describe how to setup (l1) and _makebuildserver_ sets up (l2)."
-msgstr ""
+msgstr "Кроки вгорі описують, як налаштувати рівень 1, а _makebuildserver_ розгортає рівень 2."
 
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
 msgid "First of all you'll have to check if you cpu support the _vmx_ (or _svm_ on amd) instruction set. You can use this command to list details about your cpu:"
-msgstr ""
+msgstr "Насамперед перевірте, чи підтримує ваш процесор набір інструкцій _vmx_ (чи _svm_ на amd). Використайте цю команду, щоб перелічити відомості про свій процесор:"
 
 #. type: Fenced code block (bash)
 #: _docs/Build_Server_Setup.md
@@ -4494,7 +4502,7 @@ msgstr "root:~# cat /proc/cpuinfo\n"
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
 msgid "On (l0) you have to check that nesting is enabled:"
-msgstr ""
+msgstr "На рівні 0 перевірте, чи дозволено вкладення:"
 
 #. type: Fenced code block (bash)
 #: _docs/Build_Server_Setup.md
@@ -4505,7 +4513,7 @@ msgstr "root:~# cat /sys/module/kvm_intel/parameters/nested\n"
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
 msgid "If it's not enabled you can turn it on by running:"
-msgstr ""
+msgstr "Якщо не дозволено, то ввімкніть його:"
 
 #. type: Fenced code block (bash)
 #: _docs/Build_Server_Setup.md
@@ -4516,12 +4524,12 @@ msgstr "echo \"options kvm-intel nested=Y\" > /etc/modprobe.d/kvm-intel.conf\n"
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
 msgid "You'll need to reboot to for this to take effect."
-msgstr ""
+msgstr "Перезапустіть сервер, щоб застосувати зміни."
 
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
 msgid "Next you'll need to make sure that your (l1) vm configuration forwards cpu features required for nesting. So open up your configuration for the VM _/etc/libvirt/qemu/my-vm.xml_ and insert a cpu block inside your domain-tag. (_virt-manager_ also provides a user-interface for this operation.)"
-msgstr ""
+msgstr "Тоді переконайтесь, що конфігурація віртуальної машини на рівні 1 переспрямовує функції процесора, необхідні для вкладення. Відкрийте конфігурацію віртуальної машини _/etc/libvirt/qemu/ваша-машина.xml_ й додайте блок процесора в domain-tag. (_virt-manager_ також надає користувацький інтерфейс для таких дій.)"
 
 #. type: Fenced code block (xml)
 #: _docs/Build_Server_Setup.md
@@ -4542,12 +4550,12 @@ msgstr ""
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
 msgid "The actually required configuration here depends on your cpu. You can find details in [libvirts manual](https://libvirt.org/formatdomain.html#elementsCPU).  The important part is that you forward _vmx_ (or _svm_ on amd) to the guest system."
-msgstr ""
+msgstr "Як саме потрібно змінити цю конфігурацію, залежить від моделі вашого процесора. Докладніше це описує [інструкція libvirt](https://libvirt.org/formatdomain.html#elementsCPU). Важливо переспрямувати _vmx_ (чи _svm_ на amd) до гостьової системи."
 
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
 msgid "This is the setup that is used in the Continuous Integration builds as part of the [reproducible builds](https://reproducible-builds.org) effort.  You can see this in action on the Debian Project's jenkins setup:"
-msgstr ""
+msgstr "Саме таким чином налаштовано безперервну інтеграцію [відтворюваних збірок](https://reproducible-builds.org). Перегляньте, як це працює в jenkins-проєкті Debian:"
 
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
@@ -5253,12 +5261,12 @@ msgstr "Чому мій новий випуск досі не в репозит�
 #. type: Plain text
 #: _docs/FAQ_-_App_Developers.md
 msgid "When we detect a new release, it may take a few days to make it into the repository as the build process runs only once a day. Before the build has completed, the wiki page for your app will list it in [:Category:Apps to Update](https://f-droid.org/wiki/page/:Category:Apps_to_Update). As long as the text under *Versions* stating \"The current (recommended) version is *xxx* (version code *yyy*)\" shows the version numbers corresponding to your latest release, we detected it and the APK should be available soon. Just give it some time."
-msgstr ""
+msgstr "Новий випуск може потрапити в репозиторій за кілька днів після виявлення, бо процес збірки запускається лише раз на день. Список застосунків, нові випуски яких виявлено, але [ще не зібрано](https://f-droid.org/wiki/page/:Category:Apps_to_Update), поки що недоступний. Якщо в переліку *версій* вказано, що поточна (рекомендована) версія — *xxx* (код версії *yyy*), й ці значення збігаються з вашим найновішим випуском, то ми знаємо про цей випуск і скоро зберемо APK. Будь ласка, зачекайте."
 
 #. type: Plain text
 #: _docs/FAQ_-_App_Developers.md
 msgid "Another reason could be that the app failed to build. You can watch the build process on [Recent changes](https://f-droid.org/wiki/index.php?title=Special:RecentChanges&days=7&from=&hidebots=0&hideanons=1&hideliu=1) after clicking 'Show Bots'."
-msgstr ""
+msgstr "Можливо, при збірці застосунку виникає помилка. [Перелік останніх збірок](https://f-droid.org/wiki/index.php?title=Special:RecentChanges&days=7&from=&hidebots=0&hideanons=1&hideliu=1) поки що недоступний."
 
 #. type: Title ###
 #: _docs/FAQ_-_App_Developers.md
@@ -5548,33 +5556,33 @@ msgstr "ЧаП — Клієнт"
 #: _docs/FAQ_-_Client.md
 #, no-wrap
 msgid "The client shows a newer version. Why didn't it notify me of an update?"
-msgstr ""
+msgstr "Клієнт показує нову версію. Чому не було сповіщення про оновлення?"
 
 #. type: Plain text
 #: _docs/FAQ_-_Client.md
 msgid "Assuming you have update notifications switched on (in Preferences) this probably means the newer version is not *recommended* for your device."
-msgstr ""
+msgstr "Якщо сповіщення про оновлення ввімкнено в налаштуваннях, то швидше за все, новішу версію *не рекомендовано* для вашого пристрою."
 
 #. type: Plain text
 #: _docs/FAQ_-_Client.md
 msgid "In the list of versions in the client, the *recommended version* is identified by a '\\*'. This is the version which is closest to the *current version* &ndash; the version that the developers of the application publish to Google Play or their website, or tag in their source code repository. There may be newer versions than this in the list &ndash; they could be, for example, test or beta versions. You can install these, but update notifications are not shown because the Version Code (Android's scheme for version numbering) is greater than the _CurrentVersionCode_."
-msgstr ""
+msgstr "У переліку версій, клієнт позначає *рекомендовану версію* знаком «\\*». Ця версія найближча до *поточної версії* — оприлюдненої командою розробки застосунку на Google Play, вебсайті чи (як тег) у репозиторії вихідного коду. В переліку можуть бути новіші за неї випуски, наприклад випробувальні чи бетаверсії. Можете встановити таку версію вручну, але сповіщень не буде показано, бо код версії (за схемою нумерування версій Android-застосунків) більший, ніж значення _CurrentVersionCode_ — рекомендованого коду поточної версії."
 
 #. type: Plain text
 #: _docs/FAQ_-_Client.md
 msgid "For third-party repositories, it may also be the case that the maintainers neglected to update the current version in their repository's metadata."
-msgstr ""
+msgstr "Якщо ви користуєтесь сторонніми репозиторіями, то можливо, команда супроводу репозиторію ще не оновила версію в своїх метаданих до поточної."
 
 #. type: Title ###
 #: _docs/FAQ_-_Client.md
 #, no-wrap
 msgid "Why does F-Droid need these permissions?"
-msgstr ""
+msgstr "Навіщо F-Droid ці дозволи?"
 
 #. type: Plain text
 #: _docs/FAQ_-_Client.md
 msgid "F-Droid is an app store, that means it is already entirely responsible for finding, downloading and installing apps. That means it already has all permissions, in effect. For example, a malicious app store with no permissions could modify every app as it installs it, granting itself all permissions via those modified apps. This is why it is so important that an app store is Free Software and publicly audited. F-Droid is both. That said, F-Droid declares the permissions it actually uses so that it is honest and transparent about what it is doing."
-msgstr ""
+msgstr "F-Droid — це сховище застосунків, тобто застосунок, відповідальний за пошук, завантаження й встановлення інших застосунків. По суті, він уже має всі дозволи. Наприклад, зловмисне сховище без жодних дозволів може змінювати всі встановлювані через нього застосунки, надаючи собі через них будь-які дозволи. Саме тому так важливо, щоб сховище застосунків було вільним програмним забезпеченням і регулярно проходило аудит. F-Droid як сховище задовольняє обидві вимоги. F-Droid як клієнт оголошує, які дозволи він насправді використовує, задля чесності й прозорості в своїх діях."
 
 #. type: Plain text
 #: _docs/FAQ_-_Client.md
@@ -5584,7 +5592,7 @@ msgstr "Ось дозволи, які на тепер використовує F
 #. type: Plain text
 #: _docs/FAQ_-_Client.md
 msgid "Download apps from f-droid.org and other app repositories"
-msgstr ""
+msgstr "Завантажувати застосунки з f-droid.org та інших репозиторіїв застосунків"
 
 #. type: Plain text
 #: _docs/FAQ_-_Client.md
@@ -5595,7 +5603,7 @@ msgstr "    android.permission.INTERNET\n"
 #. type: Plain text
 #: _docs/FAQ_-_Client.md
 msgid "Start itself automatically at boot time so that it can receive updates:"
-msgstr ""
+msgstr "Запускатись автоматично при ввімкненні пристрою, щоб отримувати оновлення:"
 
 #. type: Plain text
 #: _docs/FAQ_-_Client.md
@@ -5606,7 +5614,7 @@ msgstr "    android.permission.RECEIVE_BOOT_COMPLETED\n"
 #. type: Plain text
 #: _docs/FAQ_-_Client.md
 msgid "For app swap to get current WiFi status, and prompt the user to enable WiFi when swapping:"
-msgstr ""
+msgstr "Для обміну застосунками, отримувати поточний стан Wi-Fi та запитувати вашої згоди на ввімкнення Wi-Fi:"
 
 #. type: Plain text
 #: _docs/FAQ_-_Client.md
@@ -5627,7 +5635,7 @@ msgstr ""
 #. type: Plain text
 #: _docs/FAQ_-_Client.md
 msgid "For app swap to see the Bluetooth state, and prompt the user to enable Bluetooth when swapping:"
-msgstr ""
+msgstr "Для обміну застосунками, отримувати поточний стан Bluetooth та запитувати вашої згоди на ввімкнення Bluetooth:"
 
 #. type: Plain text
 #: _docs/FAQ_-_Client.md
@@ -5642,7 +5650,7 @@ msgstr ""
 #. type: Plain text
 #: _docs/FAQ_-_Client.md
 msgid "Read app repository URLs via NFC, for both swap and regular app repositories:"
-msgstr ""
+msgstr "Зчитувати URL-адреси репозиторіїв застосунків через NFC — як для обміну, так і для звичайних репозиторіїв застосунків:"
 
 #. type: Plain text
 #: _docs/FAQ_-_Client.md
@@ -5653,7 +5661,7 @@ msgstr "    android.permission.NFC\n"
 #. type: Plain text
 #: _docs/FAQ_-_Client.md
 msgid "Temporarily store downloaded files on the SD Card:"
-msgstr ""
+msgstr "Тимчасово зберігати завантажені файли на SD-картці:"
 
 #. type: Plain text
 #: _docs/FAQ_-_Client.md
@@ -5664,7 +5672,7 @@ msgstr "    android.permission.WRITE_EXTERNAL_STORAGE\n"
 #. type: Plain text
 #: _docs/FAQ_-_Client.md
 msgid "Use F-Droid Privileged Extension which gives F-Droid system &lt;code&gt;priv-app access. This improves security by allowing automatic app updates as well as letting the user leave the \"Unknown Sources\" setting off:"
-msgstr ""
+msgstr "Використовувати привілейоване розширення F-Droid для автоматичного оновлення застосунків, не зобов'язуючи вас дозволяти «невідомі джерела». Це безпечніше, ніж робити цілий клієнт F-Droid системним «priv-app»:"
 
 #. type: Plain text
 #: _docs/FAQ_-_Client.md
@@ -5675,7 +5683,7 @@ msgstr "    org.fdroid.fdroid.privileged.USE_SERVICE\n"
 #. type: Plain text
 #: _docs/FAQ_-_Client.md
 msgid "Use root access to install F-Droid Privileged Extension as a system &lt;code&gt;priv-app:"
-msgstr ""
+msgstr "Використовувати root-права для встановлення привілейованого розширення F-Droid як системного «priv-app»:"
 
 #. type: Plain text
 #: _docs/FAQ_-_Client.md
@@ -5692,142 +5700,142 @@ msgstr "Що таке експертний режим?"
 #. type: Plain text
 #: _docs/FAQ_-_Client.md
 msgid "Enabling the 'Expert Mode' setting in Preferences will make the client display additional information which is probably not useful to most people. This includes things like package IDs and signature hashes. Some extra configuration options also appear."
-msgstr ""
+msgstr "При ввімкненому «експертному режимі» в налаштуваннях, клієнт показуватиме додаткові дані, які навряд чи корисні більшості людей. Зокрема це ідентифікатори пакунків і хеші підписів. Також з'являться кілька додаткових опцій налаштувань."
 
 #. type: Title ###
 #: _docs/FAQ_-_Client.md
 #, no-wrap
 msgid "I can download apps, but then \"Install\" is disabled. Why?"
-msgstr ""
+msgstr "Чому після завантаження застосунку вимкнено кнопку «Встановити»?"
 
 #. type: Plain text
 #: _docs/FAQ_-_Client.md
 msgid "Some users have apps such as Twilight installed, which draw directly to the screen regardless of what app is shown. For security reasons, Android wisely doesn't allow apps to be installed when such apps are running. If it did, then people could create apps that draw a fake \"Install\" button over the top of the real one, resulting in users installing unwanted apps. The solution is to disable such apps before installing via F-Droid."
-msgstr ""
+msgstr "Ймовірно, у вас встановлено Twilight чи інший подібний застосунок, що має прямий доступ на запис до екрану незалежно від того, який застосунок показано. З міркувань безпеки, Android не дозволяє встановлювати застосунки, коли запущено щось подібне. Інакше можливо було б створити застосунок, який малював би підробну кнопку «Встановити» над справжньою, що призвело б до зловмисних встановлень. Вимикайте такі застосунки, перш ніж встановлювати щось із F-Droid."
 
 #. type: Plain text
 #: _docs/FAQ_-_Client.md
 msgid "See [Issue 151](https://gitlab.com/fdroid/fdroidclient/issues/151) or [this Google+ comment](https://plus.google.com/116713673773180618201/posts/UvW3tgSgdUp)  for more details."
-msgstr ""
+msgstr "Перегляньте [обговорення 151](https://gitlab.com/fdroid/fdroidclient/issues/151) чи [коментар Google+](https://plus.google.com/116713673773180618201/posts/UvW3tgSgdUp), щоб дізнатися більше."
 
 #. type: Title ###
 #: _docs/FAQ_-_Client.md
 #, no-wrap
 msgid "Why doesn't the client show the number of installs/downloads for each app?"
-msgstr ""
+msgstr "Чому клієнт не показує кількості встановлень і завантажень кожного застосунку?"
 
 #. type: Plain text
 #: _docs/FAQ_-_Client.md
 msgid "To show how many people had installed an app, we would have to be spying on them - in other words, keeping track of what apps people install and uninstall on their devices, and sending that data back to ourselves. We don't do that, and we're not going to do it."
-msgstr ""
+msgstr "Щоб показувати, скільки людей встановили застосунок, нам довелося б їх відстежувати, тобто записувати, які застосунки ви встановлюєте чи видаляєте, й надсилати ці дані на свої сервери. Ми такого не робимо й не робитимемо."
 
 #. type: Plain text
 #: _docs/FAQ_-_Client.md
 msgid "Theoretically, the number of downloads is available via our web server logs. However, this would be a meaningless figure because:"
-msgstr ""
+msgstr "Теоретично, кількість завантажень можна порахувати за журналами наших вебсерверів. Проте це число не мало б сенсу:"
 
 #. type: Bullet: '1.  '
 #: _docs/FAQ_-_Client.md
 msgid "I might download an app, and decide not to install it"
-msgstr ""
+msgstr "Я можу завантажити застосунок, не встановлюючи його"
 
 #. type: Bullet: '2.  '
 #: _docs/FAQ_-_Client.md
 msgid "I might download and install it, then uninstall it immediately because I don't like it"
-msgstr ""
+msgstr "Я можу завантажити й встановити застосунок, а тоді одразу його видалити, бо він мені не подобається"
 
 #. type: Bullet: '3.  '
 #: _docs/FAQ_-_Client.md
 msgid "I might download my app 1,000,000 times to make it look popular"
-msgstr ""
+msgstr "Я можу завантажити застосунок мільйон разів, щоб він здавався популярним"
 
 #. type: Plain text
 #: _docs/FAQ_-_Client.md
 msgid "Additionally, on a technical level, we don't even track that information. While the back-end server does track hits on each APK, these are actually served up by multiple front-end servers that cache.  This means one counted hit could represent one download, or a million.  Theoretically we could resolve this, but we are not interested enough to do so."
-msgstr ""
+msgstr "На технічному рівні, ми не записуємо навіть таких даних. Сервер бекенду справді фіксує, скільки разів кожен файл було з нього отримано, але ви отримуєте APK з кількох серверів фронтенду, які їх кешують. Тобто одне отримання може означати як одне завантаження, так і мільйон. Теоретично, це можливо допрацювати, але нас такі речі не надто цікавлять."
 
 #. type: Plain text
 #: _docs/FAQ_-_Client.md
 msgid "Finally, even assuming any of this information were available, what does it actually mean? Are you going to use an app just because lots of others do, or ignore it because few others have discovered it yet? Is this a sensible way to decide whether something is useful to you or not? Perhaps you should just try it."
-msgstr ""
+msgstr "Навіть якби ці дані були доступні, що б вони насправді означали? Ви справді встановите застосунок просто через те, що його багато хто встановлює; або знехтуєте ним, бо мало хто досі про нього знає? Невже це логічний шлях визначати, буде щось для вас корисно чи ні? Просто спробуйте застосунок, який вас цікавить."
 
 #. type: Title ###
 #: _docs/FAQ_-_Client.md
 #, no-wrap
 msgid "How do I send a Repo configuration using NFC?"
-msgstr ""
+msgstr "Як надіслати конфігурацію репозиторію через NFC?"
 
 #. type: Plain text
 #: _docs/FAQ_-_Client.md
 msgid "Starting in v0.59, the F-Droid client supports sending repo configurations via NFC. For this to work, both the sending and receiving device must have NFC and be running Android 4.0 or newer."
-msgstr ""
+msgstr "Починаючи з версії 0.59, клієнт F-Droid підтримує поширення налаштувань репозиторіїв через NFC. Пристрій-адресант і пристрій-адресат мусять підтримувати NFC й працювати на Android 4.0 чи новішій версії."
 
 #. type: Bullet: '1.  '
 #: _docs/FAQ_-_Client.md
 msgid "select **Repositories** in the menu on the main screen"
-msgstr ""
+msgstr "оберіть **Репозиторії** в меню налаштувань"
 
 #. type: Bullet: '2.  '
 #: _docs/FAQ_-_Client.md
 msgid "click on the repo that you want to send"
-msgstr ""
+msgstr "торкніть репозиторій, який слід надіслати"
 
 #. type: Bullet: '2.  '
 #: _docs/FAQ_-_Client.md
 msgid "put the devices together until you get the NFC zoom prompt"
-msgstr ""
+msgstr "прикладіть пристрої, доки не з'явиться NFC-запит"
 
 #. type: Bullet: '4.  '
 #: _docs/FAQ_-_Client.md
 msgid "touch the screen with the selected repo"
-msgstr ""
+msgstr "торкніть екран, на якому обрано репозиторій"
 
 #. type: Bullet: '5.  '
 #: _docs/FAQ_-_Client.md
 msgid "click **OK** on the receiving device"
-msgstr ""
+msgstr "торкніть **OK** на пристрої-отримувачі"
 
 #. type: Title ###
 #: _docs/FAQ_-_Client.md
 #, no-wrap
 msgid "How can I send the F-Droid app using NFC or Android Beam?"
-msgstr ""
+msgstr "Як надіслати застосунок F-Droid через NFC чи Android Beam?"
 
 #. type: Plain text
 #: _docs/FAQ_-_Client.md
 msgid "Starting in v0.59, the F-Droid client supports sending the F-Droid app itself to another device to set it up for the first time. For this to work, both the sending and receiving device must have NFC, Android Beam, and be running Android 4.1 or newer."
-msgstr ""
+msgstr "Починаючи з версії 0.59, клієнт F-Droid підтримує надсилання самого застосунку F-Droid на інший пристрій, щоб спростити встановлення. Пристрій-адресант і пристрій-адресат мусять підтримувати NFC та Android Beam і працювати на Android 4.1 чи новішій версії."
 
 #. type: Bullet: '1.  '
 #: _docs/FAQ_-_Client.md
 msgid "go to the F-Droid main screen"
-msgstr ""
+msgstr "перейдіть на головний екран F-Droid"
 
 #. type: Bullet: '3.  '
 #: _docs/FAQ_-_Client.md
 msgid "touch the screen with F-Droid installed"
-msgstr ""
+msgstr "торкніть екран, на якому запущено F-Droid"
 
 #. type: Bullet: '4.  '
 #: _docs/FAQ_-_Client.md
 msgid "keep the devices near each other until the beam completes"
-msgstr ""
+msgstr "прикладіть пристрої, доки Beam не завершить роботу"
 
 #. type: Bullet: '5.  '
 #: _docs/FAQ_-_Client.md
 msgid "on the receiving device, click the Android Beam notification and install F-Droid"
-msgstr ""
+msgstr "на пристрої-отримувачі, торкніть сповіщення Android Beam і встановіть F-Droid"
 
 #. type: Title ###
 #: _docs/FAQ_-_Client.md
 #, no-wrap
 msgid "How can I send apps via Bluetooth or WiFi?"
-msgstr ""
+msgstr "Як надіслати застосунки через Bluetooth чи Wi-Fi?"
 
 #. type: Plain text
 #: _docs/FAQ_-_Client.md
 msgid "This is done using the 'Nearby' Tab in F-Droid (previously called 'Swap').  See [here](../../tutorials/swap) for a walkthrough."
-msgstr ""
+msgstr "Скористайтеся вкладкою «Поруч» у клієнті F-Droid (раніше — «Обмін»): [покроковий посібник](../../tutorials/swap)."
 
 #. type: Title ###
 #: _docs/FAQ_-_Client.md
@@ -6043,7 +6051,7 @@ msgstr "Збірки"
 #. type: Plain text
 #: _docs/Feeds.md
 msgid "Find out exactly when APKs are available or when descriptions change: <https://f-droid.org/wiki/api.php?action=feedcontributions&user=Robot>. The status of the most recent build for an app can be obtained by appending /lastbuild to the wiki url of the package. Builds happen a couple of times a day ; a new repo index is only published once all outstanding builds are finished."
-msgstr ""
+msgstr "Стрічки появи нових APK чи змін описів поки що недоступні: <https://f-droid.org/wiki/api.php?action=feedcontributions&user=Robot> Збірка відбувається раз на день. Індекс оприлюднюється, коли всі заплановані збірки завершено."
 
 #. type: Title ###
 #: _docs/Feeds.md _docs/Repository_Style_Guide.md
@@ -6092,7 +6100,7 @@ msgstr "Matrix"
 #. type: Plain text
 #: _docs/Feeds.md
 msgid "The room can be previewed without an account on https://matrix.to/#/#fdroid:f-droid.org or https://matrix.to/#/#fdroid-dev:f-droid.org"
-msgstr ""
+msgstr "Кімнату можна переглянути на https://matrix.to/#/#fdroid:f-droid.org чи https://matrix.to/#/#fdroid-dev:f-droid.org без облікового запису"
 
 #. type: Title ###
 #: _docs/Feeds.md
@@ -6103,23 +6111,23 @@ msgstr "IRC"
 #. type: Plain text
 #: _docs/Feeds.md
 msgid "Old IRC logs are available at <https://botbot.me/freenode/fdroid/> and <https://botbot.me/freenode/fdroid-dev/>."
-msgstr ""
+msgstr "Старі журнали IRC: <https://botbot.me/freenode/fdroid/> і <https://botbot.me/freenode/fdroid-dev/>."
 
 #. type: Title ##
 #: _docs/Feeds.md
 #, no-wrap
 msgid "OPML import to a feed reader"
-msgstr ""
+msgstr "Імпорт OPML до читача стрічок"
 
 #. type: Plain text
 #: _docs/Feeds.md
 msgid "For importing into your favourite news reader, save the following text as feeds.opml and add/remove feeds your are interested in."
-msgstr ""
+msgstr "Для імпорту до вашого улюбленого застосунку читання, збережіть наступний текст як feeds.opml, додайте стрічки, які вас цікавлять, і вилучіть зайві."
 
 #. type: Plain text
 #: _docs/Feeds.md
 msgid "On Android we have [de.shandschuh.sparserss](https://f-droid.org/repository/browse/?fdfilter=de.shandschuh.sparserss&fdid=de.shandschuh.sparserss), [net.fred.feedex](https://f-droid.org/repository/browse/?fdfilter=net.fred.feedex&fdid=net.fred.feedex), [de.danoeh.antennapod](https://f-droid.org/repository/browse/?fdfilter=de.danoeh.antennapod&fdid=de.danoeh.antennapod), [org.ttrssreader](https://f-droid.org/repository/browse/?fdfilter=org.ttrssreader&fdid=org.ttrssreader) (requires a tt-rss server to connect to) and [com.newsblur](https://f-droid.org/repository/browse/?fdfilter=com.newsblur&fdid=com.newsblur) (via newsblur.com). On the desktop you could use the Akregator for KDE, Liferea for Gnome or [http://newsbeuter.org newsbeuter] which is nice if you like working in a terminal."
-msgstr ""
+msgstr "Для Android у нас є [spaRSS](https://f-droid.org/uk/packages/net.etuldan.sparss.floss/), [AntennaPod](https://f-droid.org/uk/packages/de.danoeh.antennapod/), [TTRSS-Reader](https://f-droid.org/uk/packages/org.ttrssreader/) (потребує зв'язку з сервером tt-rss) і [NewsBlur](https://f-droid.org/uk/packages/com.newsblur/) (використовує newsblur.com). На стільниці можете використовувати Akregator у KDE, Liferea в Gnome чи Newsboat у терміналі."
 
 #. type: Fenced code block (xml)
 #: _docs/Feeds.md
@@ -6586,12 +6594,12 @@ msgstr "Це чимало роботи, але досвід показує, що
 #: _docs/Importing_Applications.md
 #, no-wrap
 msgid "Importing Applications"
-msgstr ""
+msgstr "Імпорт застосунків"
 
 #. type: Plain text
 #: _docs/Importing_Applications.md
 msgid "To help with starting work on including a new application, use `fdroid import` to set up a new template project. It has two modes of operation, starting with a cloned git repo:"
-msgstr ""
+msgstr "Додати застосунок може бути простіше, якщо згенерувати шаблон за допомогою `fdroid import`. Це можна зробити двома способами, наприклад почавши з клонування git-репозиторію застосунку:"
 
 #. type: Fenced code block (bash)
 #: _docs/Importing_Applications.md
@@ -6608,7 +6616,7 @@ msgstr ""
 #. type: Plain text
 #: _docs/Importing_Applications.md
 msgid "Or starting with a URL to a project page:"
-msgstr ""
+msgstr "Або одразу зазначивши URL-адресу сторінки проєкту:"
 
 #. type: Fenced code block (bash)
 #: _docs/Importing_Applications.md
@@ -6619,77 +6627,77 @@ msgstr "fdroid import --url=http://address.of.project\n"
 #. type: Plain text
 #: _docs/Importing_Applications.md
 msgid "When a URL is specified using the `--url=` flag, `fdroid import` will use that URL to find out information about the project, and if it finds a git repo, it will also clone that. For this to work, the URL must point to a project format that the script understands. Currently this is limited to one of the following:"
-msgstr ""
+msgstr "За URL-адресою, зазначеною прапором `--url=`, `fdroid import` спробує виявити дані про проєкт. У разі виявлення git-репозиторію, його буде автоматично клоновано. Щоб це спрацювало, адреса має вказувати на підтримуваний формат проєкту. Наразі підтримуються такі формати:"
 
 #. type: Bullet: '1.  '
 #: _docs/Importing_Applications.md
 msgid "GitLab - `https://gitlab.com/<PROJECTNAME>/<REPONAME>`"
-msgstr "GitLab - `https://gitlab.com/<PROJECTNAME>/<REPONAME>`"
+msgstr "GitLab — `https://gitlab.com/<ПРОЄКТ>/<РЕПОЗИТОРІЙ>`"
 
 #. type: Bullet: '3.  '
 #: _docs/Importing_Applications.md
 msgid "GitHub - `https://github.com/<USER>/<PROJECT>`"
-msgstr ""
+msgstr "GitHub — `https://github.com/<КОМАНДА>/<ПРОЄКТ>`"
 
 #. type: Bullet: '4.  '
 #: _docs/Importing_Applications.md
 msgid "Bitbucket - `https://bitbucket.org/<USER>/<PROJECT>/`"
-msgstr "Bitbucket - `https://bitbucket.org/<USER>/<PROJECT>/`"
+msgstr "Bitbucket — `https://bitbucket.org/<КОМАНДА>/<ПРОЄКТ>/`"
 
 #. type: Bullet: '5.  '
 #: _docs/Importing_Applications.md
 msgid "NotABug - `https://notabug.org/<USER>/<PROJECT>`"
-msgstr "NotABug - `https://notabug.org/<USER>/<PROJECT>`"
+msgstr "NotABug — `https://notabug.org/<КОМАНДА>/<ПРОЄКТ>`"
 
 #. type: Bullet: '6.  '
 #: _docs/Importing_Applications.md
 msgid "Git - `git://<REPO>` or `https://<REPO>`"
-msgstr ""
+msgstr "Git — `git://<РЕПОЗИТОРІЙ>` чи `https://<РЕПОЗИТОРІЙ>`"
 
 #. type: Plain text
 #: _docs/Importing_Applications.md
 msgid "Depending on the project type, more or less information may be gathered.  A bare repo url, such as the git:// one, is the least preferable option of all, since you will have to enter much more information manually. While _gradle_ based builds should be auto-detected for all types, links to issue trackers can not be set for plain git projects. You can also use one of the following arguments to pre-fill your metadata:"
-msgstr ""
+msgstr "Залежно від типу проєкту, вдаватиметься зібрати різну кількість даних. Адреса простого репозиторію, як-от git://, — найменш бажаний варіант, бо більшість даних доведеться ввести вручну. Збірка на основі _gradle_ зазвичай автоматично виявляється незалежно від типу репозиторію, але прості git-проєкти не дають змоги виявити посилання на трекери обговорень. Можете заздалегідь вказати певні метадані такими аргументами:"
 
 #. type: Bullet: '* '
 #: _docs/Importing_Applications.md
 msgid "`-u <URL>`, `--url=<URL>`: Project URL to import from."
-msgstr ""
+msgstr "`-u <URL>`, `--url=<URL>`: Адреса проєкту, який слід імпортувати."
 
 #. type: Bullet: '* '
 #: _docs/Importing_Applications.md
 msgid "`-s <DIR>`, `--subdir=<DIR>`: Path to main android project subdirectory, if not in root."
-msgstr ""
+msgstr "`-s <КАТАЛОГ>`, `--subdir=<КАТАЛОГ>`: Шлях до підкаталога головного Android-проєкту, якщо цей проєкт не в корені."
 
 #. type: Bullet: '* '
 #: _docs/Importing_Applications.md
 msgid "`-c <CATEGORIES>`, `--categories=<CATEGORIES>`: Comma separated list of categories."
-msgstr ""
+msgstr "`-c <КАТЕГОРІЇ>`, `--categories=<КАТЕГОРІЇ>`: Розділений комами перелік категорій."
 
 #. type: Bullet: '* '
 #: _docs/Importing_Applications.md
 msgid "`-l <LICENSE>`, `--license=<LICENSE>`: Overall license of the project."
-msgstr ""
+msgstr "`-l <ЛІЦЕНЗІЯ>`, `--license=<ЛІЦЕНЗІЯ>`: Загальна ліцензія проєкту."
 
 #. type: Bullet: '* '
 #: _docs/Importing_Applications.md
 msgid "`--revision <REV>`: Allows a different revision (or git branch) to be specified for the initial import"
-msgstr ""
+msgstr "`--revision <РЕВІЗІЯ>`: Дає змогу вказати нетипову ревізію (чи git-гілку) для початкового імпорту"
 
 #. type: Plain text
 #: _docs/Importing_Applications.md
 msgid "If the import is successful, a metadata file will be created. You will need to edit this further to check the information, and fill in the blanks."
-msgstr ""
+msgstr "Якщо імпорт вдасться, буде створено файл метаданих. Відредагуйте його: перевірте виявлені дані й заповніть пропуски."
 
 #. type: Plain text
 #: _docs/Importing_Applications.md
 msgid "If it fails, you’ll be told why. If it got as far as retrieving the source code, you can inspect it further by looking in `tmp/importer` where a full checkout will exist."
-msgstr ""
+msgstr "В разі помилки, вам буде повідомлено її причину. Якщо вдасться принаймні завантажити вихідний код, повна його копія буде в каталозі `tmp/importer`."
 
 #. type: Plain text
 #: _docs/Importing_Applications.md
 msgid "A frequent cause of initial failure is that the project directory is actually a subdirectory in the repository. In this case, run the importer again using the `--subdir` option to tell it where. It will not attempt to determine this automatically, since there may be several options."
-msgstr ""
+msgstr "Часто збій трапляється на самому початку, бо каталог проєкту — це насправді один із підкаталогів репозиторію. В такому разі повторіть спробу імпорту, вказавши каталог опцією `--subdir`. Каталог не визначається автоматично, бо варіантів може бути декілька."
 
 #. type: YAML Front Matter: title
 #: _docs/Inclusion_How-To.md
@@ -7155,28 +7163,28 @@ msgstr "Додання застосунків до репозиторію F-Droi
 #: _docs/Installing_the_Server_and_Repo_Tools.md
 #, no-wrap
 msgid "Installing the Server and Repo Tools"
-msgstr ""
+msgstr "Встановлення засобів для сервера й репозиторію"
 
 #. type: Plain text
 #: _docs/Installing_the_Server_and_Repo_Tools.md
 msgid "The [fdroidserver](https://gitlab.com/fdroid/fdroidserver) tools provide everything you need to set up and maintain your own repos, run an fdroid build server, and even host your own website like f-droid.org. The F-Droid developers mostly work on Debian, Arch, and Ubuntu, so those are currently the best supported platforms."
-msgstr ""
+msgstr "Засоби [fdroidserver](https://gitlab.com/fdroid/fdroidserver) надають усе, що вам знадобиться для налаштування й супроводу власних репозиторіїв, розгортання сервера збірки F-Droid і навіть розміщення власного вебсайту по аналогії з f-droid.org. Команда розробки F-Droid працює переважно на Debian, Arch та Ubuntu, тож ці платформи наразі підтримуються найкраще."
 
 #. type: Plain text
 #: _docs/Installing_the_Server_and_Repo_Tools.md
 msgid "To setup and maintain your own collection of apps and media from the command line, setup an F-Droid repository using the tools from _fdroidserver_.  To run the full F-Droid build server setup, see [Build Server Setup](../Build_Server_Setup)."
-msgstr ""
+msgstr "Щоб налаштувати й супроводжувати власну колекцію застосунків, встановіть репозиторій F-Droid засобами командного рядка _fdroidserver_. Щоб збирати застосунки на сервері F-Droid, прочитайте про [налаштування сервера збірки](../Build_Server_Setup)."
 
 #. type: Title ##
 #: _docs/Installing_the_Server_and_Repo_Tools.md
 #, no-wrap
 msgid "Debian/Ubuntu/Mint/etc"
-msgstr ""
+msgstr "Debian, Ubuntu, Mint тощо"
 
 #. type: Plain text
 #: _docs/Installing_the_Server_and_Repo_Tools.md
 msgid "The F-Droid tools, also known as _fdroidserver_, may be installed from the standard OS package repository.  On Debian-based OS's, this should be enough to install the basic F-Droid setup:"
-msgstr ""
+msgstr "Засоби F-Droid, також відомі як _fdroidserver_, можна встановити зі стандартного репозиторію пакунків операційної системи. На ОС, похідних від Debian, цього має бути достатньо для встановлення основи F-Droid:"
 
 #. type: Fenced code block (bash)
 #: _docs/Installing_the_Server_and_Repo_Tools.md
@@ -7187,7 +7195,7 @@ msgstr "sudo apt-get install fdroidserver\n"
 #. type: Plain text
 #: _docs/Installing_the_Server_and_Repo_Tools.md
 msgid "However, it is common to find that the version of _fdroidserver_ available in the standard OS package repository is out of date."
-msgstr ""
+msgstr "Проте нерідко в стандартному репозиторії пакунків ОС розміщено застарілу версію _fdroidserver_."
 
 #. type: Title ###
 #: _docs/Installing_the_Server_and_Repo_Tools.md
@@ -7224,18 +7232,18 @@ msgstr ""
 #. type: Bullet: '-   '
 #: _docs/Installing_the_Server_and_Repo_Tools.md
 msgid "Debian: first [setup backports](http://backports.debian.org/Instructions/#index2h2), then, substituting your Debian release for 'buster': ```bash apt-get install fdroidserver/buster-backports ```"
-msgstr "Debian: спочатку [встановіть backports](http://backports.debian.org/Instructions/#index2h2), потім, замініть випуск Debian на 'buster': ```bash apt-get install fdroidserver/buster-backports ```"
+msgstr "Debian: [налаштуйте backports](https://backports.debian.org/Instructions/#index2h2) і виконайте наступне, замінивши «buster» на свій випуск Debian: ```bash apt-get install fdroidserver/buster-backports ```"
 
 #. type: Title ##
 #: _docs/Installing_the_Server_and_Repo_Tools.md
 #, no-wrap
 msgid "Fedora/Archlinux"
-msgstr "Fedora/Archlinux"
+msgstr "Fedora чи Arch"
 
 #. type: Plain text
 #: _docs/Installing_the_Server_and_Repo_Tools.md
 msgid "Since packages in these distros could be newer than the official ones on pypi, installing the dependencies in a separate virtual environment workarounds dependency resolving failures:"
-msgstr ""
+msgstr "Оскільки пакунки в цих дистрибутивах можуть бути новішими, ніж офіційні версії в індексі пакунків Python, встановіть залежності в окреме віртуальне середовище, щоб уникнути збоїв розв'язання залежностей:"
 
 #. type: Fenced code block (bash)
 #: _docs/Installing_the_Server_and_Repo_Tools.md
@@ -7390,7 +7398,7 @@ msgstr "відкрийте оболонку bash у Cygwin і запустіть
 #. type: Plain text
 #: _docs/Installing_the_Server_and_Repo_Tools.md
 msgid "Then here's the repo setup:"
-msgstr ""
+msgstr "Нарешті створіть репозиторій:"
 
 #. type: Fenced code block (bash)
 #: _docs/Installing_the_Server_and_Repo_Tools.md
@@ -7399,33 +7407,35 @@ msgid ""
 "export ANDROID_HOME=/cygdrive/c/path/to/android-sdk\n"
 "fdroid init   # the keystore gen will fail\n"
 msgstr ""
+"export ANDROID_HOME=/cygdrive/c/шлях/до/android-sdk\n"
+"fdroid init   # виникне помилка генерації сховища ключів\n"
 
 #. type: Plain text
 #: _docs/Installing_the_Server_and_Repo_Tools.md
 msgid "After running `fdroid init`, you need to set the Windows path to your keystore in _config.yml_.  It is also possible to install _fdroidserver_ in a virtual environment using _virtualenv_ and _pip_."
-msgstr ""
+msgstr "Запустивши `fdroid init`, вкажіть Windows-шлях до сховища ключів у _config.yml_. Також можливо встановити _fdroidserver_ у віртуальне середовище за допомогою _virtualenv_ і _pip_."
 
 #. type: Title ##
 #: _docs/Installing_the_Server_and_Repo_Tools.md
 #, no-wrap
 msgid "Docker Executable Image (any platform)"
-msgstr ""
+msgstr "Виконуваний Docker-образ (будь-яка платформа)"
 
 #. type: Plain text
 #: _docs/Installing_the_Server_and_Repo_Tools.md
 msgid "If you are already running Docker \"Executable Images\", then the easiest way to run _fdroidserver_ is to use our [executable image](https://gitlab.com/fdroid/docker-executable-fdroidserver)"
-msgstr ""
+msgstr "Якщо у вас уже налаштовано Docker Executable Images, запустити _fdroidserver_ буде найпростіше за допомогою нашого [виконуваного образу](https://gitlab.com/fdroid/docker-executable-fdroidserver)"
 
 #. type: Title ##
 #: _docs/Installing_the_Server_and_Repo_Tools.md
 #, no-wrap
 msgid "Installing the latest code (any platform)"
-msgstr ""
+msgstr "Встановлення найновішого коду (будь-яка платформа)"
 
 #. type: Plain text
 #: _docs/Installing_the_Server_and_Repo_Tools.md
 msgid "The easiest way to install the fdroidserver tools from source is to use virtualenv and pip. First, make sure you have the Python3 version of _virtualenv_ or _pyvenv_ installed, it should be included in your OS's Python distribution or via other mechanisms like dnf/yum/pacman/emerge/Fink/MacPorts/Brew. Then here's how to install _fdroidserver_ into a Python \"virtual env\":"
-msgstr ""
+msgstr "Встановити засоби fdroidserver із вихідного коду найпростіше за допомогою virtualenv і pip. Переконайтесь, що маєте саме Python3-версію _virtualenv_ чи _pyvenv_; отримайте її з Python-пакунків вашої ОС чи іншого механізму: наприклад, dnf, yum, pacman, emerge, Fink, MacPorts чи Brew. Тоді встановіть _fdroidserver_ у «віртуальне середовище» Python:"
 
 #. type: Fenced code block (bash)
 #: _docs/Installing_the_Server_and_Repo_Tools.md
@@ -7442,28 +7452,28 @@ msgstr ""
 #. type: Plain text
 #: _docs/Installing_the_Server_and_Repo_Tools.md
 msgid "You can find variations on this used in the CI tests: https://gitlab.com/fdroid/fdroidserver/blob/master/.gitlab-ci.yml"
-msgstr ""
+msgstr "Перегляньте варіанти застосування цього в тестах безперервної інтеграції: https://gitlab.com/fdroid/fdroidserver/blob/master/.gitlab-ci.yml"
 
 #. type: Title ##
 #: _docs/Installing_the_Server_and_Repo_Tools.md
 #, no-wrap
 msgid "Building apps"
-msgstr ""
+msgstr "Збірка застосунків"
 
 #. type: Plain text
 #: _docs/Installing_the_Server_and_Repo_Tools.md
 msgid "To build apps using F-Droid, Java and the whole Android SDK must be installed.  This process is currently only developed on GNU/Linux, but we'd love patches getting it working on macOS and Windows. If you only want to make F-Droid repositories of APK files that you already have or don't know what this means, then you can skip this section."
-msgstr ""
+msgstr "Щоб збирати застосунки за допомогою F-Droid, потрібно встановити Java й увесь Android SDK. Цей процес підтримується лише на GNU/Linux, але будемо раді патчам, що зроблять його доступним на macOS та Windows. Якщо ви бажаєте розміщувати в репозиторії F-Droid лише вже готові APK-файли, або якщо не знаєте, що це все означає, можете пропустити цей розділ."
 
 #. type: Plain text
 #: _docs/Installing_the_Server_and_Repo_Tools.md
 msgid "In order to build Android apps with the _fdroidserver_ toolchain, Java, the Android SDK, and some other essential tools must be installed.  Only [parts of the Android SDK](https://qa.debian.org/developer.php?email=android-tools-devel%40lists.alioth.debian.org)  are available in Debian, so the Android SDK must be installed manually, as well as the packages that it requires (_the Android SDK tools include some 32-bit binaries, so even 64-bit systems need these i386 library packages_). The F-Droid tools use the Android SDK to build and inspect apps, so you must have the Android SDK installed and setup before using _fdroidserver_."
-msgstr ""
+msgstr "Для збірки Android-застосунків інструментарієм _fdroidserver_, встановіть Java, Android SDK та інші необхідні засоби. Лише [частина Android SDK](https://qa.debian.org/developer.php?email=android-tools-devel%40lists.alioth.debian.org) доступна в Debian, тож Android SDK потрібно встановити вручну, як і додаткові необхідні йому пакунки (_засоби Android SDK містять деякі 32-бітні виконувані файли, тож навіть на 64-бітних системах вам будуть потрібні пакунки бібліотек для i386_). Засоби F-Droid викликають Android SDK для збірки й перевірки застосунків, тож встановити й налаштувати Android SDK потрібно ще до використання _fdroidserver_."
 
 #. type: Plain text
 #: _docs/Installing_the_Server_and_Repo_Tools.md
 msgid "[Install the Android SDK](https://developer.android.com/sdk/index.html#downloads)  and make sure the `ANDROID_HOME` environment variable is properly set. Be sure to verify the file you downloaded, you can double-check the SHA-1 Checksum on Google's download page."
-msgstr ""
+msgstr "[Встановіть Android SDK](https://developer.android.com/sdk/index.html#downloads) й переконайтесь, що змінну середовища `ANDROID_HOME` вказано коректно. Обов'язково звірте завантажений файл із контрольною сумою SHA-256 на сторінці завантажень Google."
 
 #. type: Fenced code block (bash)
 #: _docs/Installing_the_Server_and_Repo_Tools.md
@@ -7492,12 +7502,12 @@ msgstr ""
 #. type: Plain text
 #: _docs/Installing_the_Server_and_Repo_Tools.md
 msgid "Note: If you have Android Studio installed, you have the Android SDK installed.  It should be located at `~/Android/Sdk` instead of `~/android-sdk-linux`.  You can find the location in Android Studio when you open the Tools→SDK Manager menu."
-msgstr ""
+msgstr "Примітка: якщо у вас встановлено Android Studio, то Android SDK у вас уже є. Ймовірно він знаходиться в `~/Android/Sdk`, а не в `~/android-sdk-linux`. Знайдіть адресу в Android Studio, відкривши меню Tools→SDK Manager."
 
 #. type: Plain text
 #: _docs/Installing_the_Server_and_Repo_Tools.md
 msgid "To add these settings permanently to your shell:"
-msgstr "Щоб остаточно додати ці параметри до оболонки:"
+msgstr "Щоб зробити ці параметри оболонки постійними:"
 
 #. type: Fenced code block (bash)
 #: _docs/Installing_the_Server_and_Repo_Tools.md
@@ -7509,59 +7519,59 @@ msgstr "$ echo export ANDROID_HOME=$ANDROID_HOME >> .bashrc\n"
 #: _docs/Installing_the_Server_and_Repo_Tools.md
 #, no-wrap
 msgid "Building all apps from f-droid.org"
-msgstr ""
+msgstr "Збірка всіх застосунків із f-droid.org"
 
 #. type: Plain text
 #: _docs/Installing_the_Server_and_Repo_Tools.md
 msgid "In order to build all apps that are included in f-droid.org, then a lot more software packages are required:"
-msgstr ""
+msgstr "Для збірки всіх застосунків, наявних на f-droid.org, потрібно значно більше пакунків програмного забезпечення:"
 
 #. type: Plain text
 #: _docs/Installing_the_Server_and_Repo_Tools.md
 msgid "- all SDK platforms requested by the apps you want to build - all Debian packages required by every app build process (maven, ant, etc)  - every source code management tool (git, subversion, mercurial, etc)  - every version of the Android NDK that apps use"
-msgstr ""
+msgstr "- всі SDK-платформи, потрібні застосункам, які ви бажаєте зібрати - всі Debian-пакунки, використовувані процесом збірки кожного застосунку (maven, ant тощо)  - всі засоби керування вихідним кодом (git, subversion, mercurial, тощо)  - всі версії Android NDK, використовувані застосунками"
 
 #. type: Plain text
 #: _docs/Installing_the_Server_and_Repo_Tools.md
 msgid "On top of that, to build apps like they are built on f-droid.org, then the whole [Build Server Setup](../Build_Server_Setup) is required.  That is a more secure, production-ready setup that requires quite a bit more setup and resources.  The [build server provisioning scripts](https://gitlab.com/fdroid/fdroidserver/tree/master/buildserver/)  provide a useful reference for all the needed bits."
-msgstr ""
+msgstr "Крім цього, щоб збирати застосунки так, як це робить f-droid.org, потрібно виконати всі [налаштування сервера збірки](../Build_Server_Setup). Це значно безпечніша, промислово застосовувана конфігурація, що потребує чимало роботи й ресурсів. [Скрипти розгортання сервера збірки](https://gitlab.com/fdroid/fdroidserver/tree/master/buildserver/) — корисна довідка про всі потрібні складники."
 
 #. type: Plain text
 #: _docs/Installing_the_Server_and_Repo_Tools.md
 msgid "If you want to make your own official releases with the F-Droid tools, then you'll also need to set up the [Signing Process](../Signing_Process)."
-msgstr ""
+msgstr "Якщо бажаєте збирати власні офіційні випуски засобами F-Droid, вам також знадобиться налаштувати [процес підпису](../Signing_Process)."
 
 #. type: Title ##
 #: _docs/Installing_the_Server_and_Repo_Tools.md
 #, no-wrap
 msgid "Proprietary, Non-Free libraries"
-msgstr ""
+msgstr "Пропрієтарні й невільні бібліотеки"
 
 #. type: Plain text
 #: _docs/Installing_the_Server_and_Repo_Tools.md
 msgid "The Android SDK is made available by Google under a proprietary license. Within that, the essential build tools, SDK platforms, support library and some other components are under the Apache license and source code is provided."
-msgstr ""
+msgstr "Google оприлюднює Android SDK на умовах пропрієтарної ліцензії. Складники SDK: основні засоби збірки, SDK-платформи, бібліотека підтримки тощо — доступні під ліцензією Apache, і їхній вихідний код загальнодоступний."
 
 #. type: Plain text
 #: _docs/Installing_the_Server_and_Repo_Tools.md
 msgid "Google APIs, used for building apps using Google Maps, are free to the extent that the library comes pre-installed on the device.  Google Play Services, Google Admob, GCM, and many other third party libraries are proprietary and cannot be included in the main F-Droid repository.  The [MicroG project](https://microg.org) is developing free software replacements for some of the most used proprietary Google libraries"
-msgstr ""
+msgstr "API Google, потрібні для збірки застосунків, що використовують Google Maps, частково вільні: їх можна використовувати, коли пропрієтарну бібліотеку вже встановлено на пристрій. Служби Google Play, AdMob, GCM та багато інших сторонніх бібліотек — пропрієтарні й тому непридатні для додання в головний репозиторії F-Droid. [Проєкт MicroG](https://microg.org) веде розробку вільних замін для деяких із найпоширеніших пропрієтарних бібліотек Google"
 
 #. type: YAML Front Matter: title
 #: _docs/Maintaining_the_Forum.md
 #, no-wrap
 msgid "Maintaining the forum"
-msgstr ""
+msgstr "Супровід форуму"
 
 #. type: Plain text
 #: _docs/Maintaining_the_Forum.md
 msgid "[F-Droid's forum](https://forum.f-droid.org) is powered by [Discourse](https://www.discourse.org/) and [maintained by volunteers](https://forum.f-droid.org/about)."
-msgstr ""
+msgstr "[Форум F-Droid](https://forum.f-droid.org) використовує [Discourse](https://www.discourse.org/) і [супроводжується волонтерською командою](https://forum.f-droid.org/about)."
 
 #. type: Plain text
 #: _docs/Maintaining_the_Forum.md
 msgid "This page is the central place where all information needed to maintain the forum are stored."
-msgstr ""
+msgstr "Ця сторінка зосереджує всі дані, необхідні для супроводу форуму."
 
 #. type: Title ###
 #: _docs/Maintaining_the_Forum.md
@@ -7572,48 +7582,48 @@ msgstr "Загальна інформація"
 #. type: Plain text
 #: _docs/Maintaining_the_Forum.md
 msgid "Here is some general, non-sensitive information about our instance.  When setting up the forum, we followed [Docker's](https://docs.docker.com/engine/installation/linux/docker-ce/debian)  and [Dicourse's](https://github.com/discourse/discourse/blob/master/docs/INSTALL-cloud.md)  official installation guides.  Posts from the old forum were not imported due to time restrictions of the voluntary administrators."
-msgstr ""
+msgstr "Ось деякі загальні, нечутливі дані про нашу копію. Налаштовуючи форум, ми керувались офіційними посібниками зі встановлення [Docker](https://docs.docker.com/engine/installation/linux/docker-ce/debian) і [Discourse](https://github.com/discourse/discourse/blob/master/docs/INSTALL-cloud.md). Дописи зі старого форуму не було імпортовано через часові обмеження волонтерської адміністрації."
 
 #. type: Bullet: '* '
 #: _docs/Maintaining_the_Forum.md
 msgid "Installation type: [docker-ce](https://github.com/discourse/discourse_docker)"
-msgstr ""
+msgstr "Тип встановлення: [docker-ce](https://github.com/discourse/discourse_docker)"
 
 #. type: Bullet: '* '
 #: _docs/Maintaining_the_Forum.md
 msgid "Storage driver: [AUFS](https://docs.docker.com/engine/userguide/storagedriver/aufs-driver/)"
-msgstr ""
+msgstr "Драйвер сховища: [AUFS](https://docs.docker.com/engine/userguide/storagedriver/aufs-driver/)"
 
 #. type: Bullet: '* '
 #: _docs/Maintaining_the_Forum.md
 msgid "Sever's specifications: 2 cores, 4GB RAM, 30GB SSD"
-msgstr ""
+msgstr "Специфікація сервера: 2 ядра, 4 ГБ RAM, 30 ГБ SSD"
 
 #. type: Bullet: '* '
 #: _docs/Maintaining_the_Forum.md
 msgid "Server's location: Amsterdam"
-msgstr ""
+msgstr "Розміщення сервера: Амстердам"
 
 #. type: Title ####
 #: _docs/Maintaining_the_Forum.md
 #, no-wrap
 msgid "Paths"
-msgstr ""
+msgstr "Шляхи"
 
 #. type: Bullet: '* '
 #: _docs/Maintaining_the_Forum.md
 msgid "Installation directory: _/var/discourse_"
-msgstr ""
+msgstr "Каталог встановлення: _/var/discourse_"
 
 #. type: Bullet: '* '
 #: _docs/Maintaining_the_Forum.md
 msgid "App configuration: _/var/discourse/containers/app.yml_"
-msgstr ""
+msgstr "Параметри застосунку: _/var/discourse/containers/app.yml_"
 
 #. type: Bullet: '* '
 #: _docs/Maintaining_the_Forum.md
 msgid "Backups: _/var/discourse/shared/standalone/backups/default_"
-msgstr ""
+msgstr "Резервні копії: _/var/discourse/shared/standalone/backups/default_"
 
 #. type: Title ####
 #: _docs/Maintaining_the_Forum.md
@@ -7624,7 +7634,7 @@ msgstr "Discourse"
 #. type: Bullet: '* '
 #: _docs/Maintaining_the_Forum.md
 msgid "Version: _tests-passed_"
-msgstr ""
+msgstr "Версія: _tests-passed_"
 
 #. type: Bullet: '* '
 #: _docs/Maintaining_the_Forum.md
@@ -7634,48 +7644,48 @@ msgstr "SSL: Let's Encrypt"
 #. type: Bullet: '* '
 #: _docs/Maintaining_the_Forum.md
 msgid "Login methods: local, GitHub"
-msgstr ""
+msgstr "Способи входу: локально або GitHub"
 
 #. type: Bullet: '* '
 #: _docs/Maintaining_the_Forum.md
 msgid "Backup frequency: daily"
-msgstr ""
+msgstr "Резервне копіювання: щодня"
 
 #. type: Bullet: '* '
 #: _docs/Maintaining_the_Forum.md
 msgid "Amount of backups stored: Last 15 ones"
-msgstr ""
+msgstr "Кількість збережених копій: останні 15"
 
 #. type: Title ###
 #: _docs/Maintaining_the_Forum.md
 #, no-wrap
 msgid "Upgrading"
-msgstr ""
+msgstr "Оновлення"
 
 #. type: Plain text
 #: _docs/Maintaining_the_Forum.md
 msgid "Upgrading the forum is quite simple.  Upgrades are planned to be done every one to two weeks.  If you feel like there was an important update to Discourse which should get deployed earlier, [please reach out to us]({{ \"/about/\" | prepend: site.baseurl }})."
-msgstr ""
+msgstr "Оновлювати форум досить просто. За планом, оновлення здійснюються щотижня чи через тиждень. Якщо вважаєте, що певне важливе оновлення Discourse слід вивантажити раніше, [просимо нас повідомити]({{ \"/about/\" | prepend: site.baseurl }})."
 
 #. type: Plain text
 #: _docs/Maintaining_the_Forum.md
 msgid "For administrators, this is the common way how to upgrade the forum:"
-msgstr ""
+msgstr "Усталений спосіб оновлення форуму адміністрацією:"
 
 #. type: Bullet: '* '
 #: _docs/Maintaining_the_Forum.md
 msgid "[Make a backup of the forum](https://forum.f-droid.org/admin/backups)"
-msgstr ""
+msgstr "[Зробити резервну копію форуму](https://forum.f-droid.org/admin/backups)"
 
 #. type: Bullet: '* '
 #: _docs/Maintaining_the_Forum.md
 msgid "Wait until the backup finished and download it (you'll get a link by mail)"
-msgstr ""
+msgstr "Дочекатись завершення й завантажити копію (отримаєте посилання е-поштою)"
 
 #. type: Bullet: '* '
 #: _docs/Maintaining_the_Forum.md
 msgid "Go to the [upgrade section](https://forum.f-droid.org/admin/upgrade)"
-msgstr ""
+msgstr "Перейти до [розділу оновлення](https://forum.f-droid.org/admin/upgrade)"
 
 #. type: Plain text
 #: _docs/Maintaining_the_Forum.md
@@ -7686,34 +7696,38 @@ msgid ""
 "* Report that all updates were successful in the\n"
 "[maintenance log](https://forum.f-droid.org/t/maintenance-log/775)\n"
 msgstr ""
+"* Оновити всі складники форуму, наприклад іноді\n"
+"слід застосувати оновлення _docker_manager_ перед оновленням _discourse_\n"
+"* Записати все, що було оновлено, в\n"
+"[журнал супроводу](https://forum.f-droid.org/t/maintenance-log/775)\n"
 
 #. type: Title ##
 #: _docs/Maintaining_the_Forum.md
 #: _docs/Submitting_to_F-Droid_Quick_Start_Guide.md
 #, no-wrap
 msgid "Troubleshooting"
-msgstr ""
+msgstr "Зневадження"
 
 #. type: Plain text
 #: _docs/Maintaining_the_Forum.md
 msgid "In case something goes wrong with the forum, stay calm, you're likely not the first to be affected by this. Mostly a quick internet search gives you detailed instructions on how to fix a problem.  There is also a really good guide called [Advanced Troubleshooting with Docker](https://meta.discourse.org/t/advanced-troubleshooting-with-docker/15927)  on Discourse's forum. In the past, the following instructions were helpful:"
-msgstr ""
+msgstr "Коли щось із форумом іде не так, зберігайте спокій: імовірно, проблема вже відома. Часто швидкий інтернет-пошук надає докладні інструкції з розв'язання проблеми. Є також чудовий [посібник зі зневадження Docker](https://meta.discourse.org/t/advanced-troubleshooting-with-docker/15927) на форумі Discourse. Корисними досі виявлялись наступні дії:"
 
 #. type: Title ####
 #: _docs/Maintaining_the_Forum.md
 #, no-wrap
 msgid "Rebuilding the container"
-msgstr ""
+msgstr "Перезбірка контейнера"
 
 #. type: Plain text
 #: _docs/Maintaining_the_Forum.md
 msgid "This also updates all the parts of Discourse to their newest versions.  Therefore, it's also of interest if there are many available updates in the updates section on the web interface and you want to quickly update all of them."
-msgstr ""
+msgstr "Всі складники Discourse буде оновлено до найновіших версій. Тож це може бути корисно ще й тоді, коли відповідний розділ вебінтерфейсу показує багато доступних оновлень і ви бажаєте застосувати всі одразу."
 
 #. type: Plain text
 #: _docs/Maintaining_the_Forum.md
 msgid "Sometimes you even have to update the forum this way because a new version of _Docker manager_ got installed, causing Discourse to refuse updates through its web interface."
-msgstr ""
+msgstr "Іноді доводиться оновлювати форум таким чином через встановлення нової версії _менеджера Docker_, що може внеможливити оновлення Discourse через вебінтерфейс."
 
 #. type: Fenced code block (bash)
 #: _docs/Maintaining_the_Forum.md
@@ -7723,17 +7737,20 @@ msgid ""
 "git pull\n"
 "./launcher rebuild app\n"
 msgstr ""
+"cd /var/discourse\n"
+"git pull\n"
+"./launcher rebuild app\n"
 
 #. type: Title ####
 #: _docs/Maintaining_the_Forum.md
 #, no-wrap
 msgid "Cleaning up Docker"
-msgstr ""
+msgstr "Очищення Docker"
 
 #. type: Plain text
 #: _docs/Maintaining_the_Forum.md
 msgid "Docker stores copies of a lot of stuff that _could_ be used in the future, but mostly is not. From time to time it's required to clean up that stuff which sometimes results in more than 10 GB of freed space."
-msgstr ""
+msgstr "Docker зберігає копії багатьох речей, які _можуть_ знадобитися в майбутньому, але зазвичай просто займають простір. Час від часу доводиться їх видаляти, й іноді це звільняє понад 10 ГБ простору."
 
 #. type: Fenced code block (bash)
 #: _docs/Maintaining_the_Forum.md
@@ -7744,38 +7761,38 @@ msgstr "docker system prune -a\n"
 #. type: Plain text
 #: _docs/Maintaining_the_Forum.md
 msgid "With this, the following things get deleted:"
-msgstr ""
+msgstr "Це видалить наступне:"
 
 #. type: Bullet: '* '
 #: _docs/Maintaining_the_Forum.md
 msgid "all stopped containers"
-msgstr ""
+msgstr "всі зупинені контейнери"
 
 #. type: Bullet: '* '
 #: _docs/Maintaining_the_Forum.md
 msgid "all networks not used by at least one container"
-msgstr ""
+msgstr "всі мережі, не використані жодним контейнером"
 
 #. type: Bullet: '* '
 #: _docs/Maintaining_the_Forum.md
 msgid "all images without at least one container associated to them"
-msgstr ""
+msgstr "всі образи, не пов'язані з жодним контейнером"
 
 #. type: Bullet: '* '
 #: _docs/Maintaining_the_Forum.md
 msgid "all build cache"
-msgstr ""
+msgstr "кеш усіх збірок"
 
 #. type: Title ###
 #: _docs/Maintaining_the_Forum.md
 #, no-wrap
 msgid "Installation log"
-msgstr ""
+msgstr "Журнал встановлення"
 
 #. type: Plain text
 #: _docs/Maintaining_the_Forum.md
 msgid "In case we need to set up the virtual machine because of some problem, you can use this instruction to do so quickly."
-msgstr ""
+msgstr "Якщо для розв'язання певної проблеми знадобиться встановити віртуальну машину, ось кроки того, як це швидко зробити."
 
 #. type: Plain text
 #: _docs/Maintaining_the_Forum.md
@@ -7864,12 +7881,12 @@ msgstr "Встановити Discourse"
 #. type: Plain text
 #: _docs/Maintaining_the_Forum.md
 msgid "If you still have the old _/var/discourse_ directory available, you can simply deploy it on the new server and start it by `./launcher rebuild app`."
-msgstr ""
+msgstr "Якщо у вас досі є старий каталог _/var/discourse_, просто вивантажте його на новий сервер і запустіть його: `./launcher rebuild app`."
 
 #. type: Plain text
 #: _docs/Maintaining_the_Forum.md
 msgid "Follow the [official installation guide](https://github.com/discourse/discourse/blob/master/docs/INSTALL-cloud.md)."
-msgstr ""
+msgstr "Дотримуйтесь [офіційного посібника зі встановлення](https://github.com/discourse/discourse/blob/master/docs/INSTALL-cloud.md)."
 
 #. type: Title ####
 #: _docs/Maintaining_the_Forum.md
@@ -7880,7 +7897,7 @@ msgstr "Більше інформації"
 #. type: Plain text
 #: _docs/Maintaining_the_Forum.md
 msgid "You can find more info about updating and maintaining the forum as well as other admin tasks in the [F-Droid forum administrator training](https://forum.f-droid.org/t/f-droid-forum-administrator-training/5527?u=paulakreuzer) topic."
-msgstr ""
+msgstr "Докладніше про оновлення й супровід форуму, а також про інші адміністративні задачі — в темі про [тренування адміністрації форуму F-Droid](https://forum.f-droid.org/t/f-droid-forum-administrator-training/5527?u=paulakreuzer)."
 
 #. type: YAML Front Matter: title
 #: _docs/MIA_Process.md
@@ -10752,70 +10769,70 @@ msgstr "Для одночасної обробки декількох оновл
 #: _docs/Verification_Server.md
 #, no-wrap
 msgid "Verification Server"
-msgstr ""
+msgstr "Сервер перевірки"
 
 #. type: Plain text
 #: _docs/Verification_Server.md
 msgid "The idea of a [verification server](https://verification.f-droid.org)  is to automatically reproduce official releases published by f-droid.org (or any other server).  This ensures that everything in the release APK came from the source code, and nothing was inserted or included during the build process.  This is also useful for verifying that the build process is not including proprietary libraries."
-msgstr ""
+msgstr "Суть [сервера перевірки](https://verification.f-droid.org) — автоматично відтворювати офіційні випуски, які оприлюднює f-droid.org (чи будь-який інший сервер). Це доводить, що випущений APK повністю відповідає вихідному коду й що нічого не було вкладено чи додано під час збірки. Це також допомагає довести, що процес збірки не додає пропрієтарних бібліотек."
 
 #. type: Plain text
 #: _docs/Verification_Server.md
 msgid "The ultimate goal is a simple installation that any third party can make, that will continuously check for new published packages, make its own builds, and confirm that the binaries match exactly. There are many issues to resolve to get to this final destination, but the basic concept is already tested and working. (see the 'fdroid verify' command)."
-msgstr ""
+msgstr "Загальна мета — просте для виконання будь-якою сторонньою особою встановлення, що надасть їй змогу безперервно перевіряти нові оприлюднені пакунки, виконувати власні збірки й підтверджувати, що двійкові файли точно збігаються. Ще чимало проблем слід розв'язати, перш ніж ми дістанемося цього пункту призначення, але основний концепт уже випробувано й він працює: перегляньте команду «fdroid verify»."
 
 #. type: Plain text
 #: _docs/Verification_Server.md
 msgid "The output of multiple verification servers would then be available to the F-Droid client. The idea would be to configure the client such that it does not trust a binary until multiple verification servers are in agreement that it correct."
-msgstr ""
+msgstr "Вивід кількох серверів перевірки ставатиме доступний клієнту F-Droid. Клієнт не довірятиме жодному двійковому файлу, поки декілька серверів перевірки не доведуть, що з цим файлом усе гаразд."
 
 #. type: Title ##
 #: _docs/Verification_Server.md
 #, no-wrap
 msgid "Verification based on APK signature"
-msgstr ""
+msgstr "Звірка на основі підпису APK"
 
 #. type: Plain text
 #: _docs/Verification_Server.md
 msgid "The verification process currently works by building a new unsigned APK, then copying the APK signature from the existing APK into the newly built unsigned APK.  If the APK signature verifies, then the APK has been reproduced, and is marked as verified.  If not, a [diffoscope](https://diffoscope.org) log is generated to show what the differences are between the two builds. The verification server needs no signing capability, just building."
-msgstr ""
+msgstr "Процес перевірки наразі працює так: збирається новий непідписаний APK, й на нього копіюється APK-підпис уже наявного APK. Якщо підписи APK збігаються, то APK успішно відтворено й він позначається як перевірений. Інакше генерується журнал [diffoscope](https://diffoscope.org), що показує відмінності між збірками. Сервер перевірки не потребує можливості підпису, йому достатньо збирати."
 
 #. type: Title ##
 #: _docs/Verification_Server.md
 #, no-wrap
 msgid "Setting one up"
-msgstr ""
+msgstr "Налаштування сервера перевірки"
 
 #. type: Plain text
 #: _docs/Verification_Server.md
 msgid "This is still pretty raw, so expect some tinkering.  It also will likely only work on Debian, Ubuntu and other Debian-derivatives. The first step is getting the [_fdroidserver_ tools setup](../Installing_the_Server_and_Repo_Tools) and working. Run the _fdroidserver_ tools directly out of git (e.g. `~/code/fdroidserver/fdroid build org.adaway`), that's going to be the easiest for now since the verification server stuff is a moving target. The base server needs to be at minimum Debian/jessie, or there will need to be some heavy tweaking. If you run Ubuntu or derivative distro, you can get any packages missing from your version, like _vagrant-cachier_, from this PPA: <https://launchpad.net/~fdroid/+archive/ubuntu/buildserver/>"
-msgstr ""
+msgstr "Це досі в активній розробці, тож будьте готові, що доведеться самостійно щось допрацьовувати. Ймовірна сумісність лише з Debian, Ubuntu та іншими похідними від Debian. Перший крок — [встановити засоби _fdroidserver_](../Installing_the_Server_and_Repo_Tools) і впевнитись, що вони працююють. Запускайте засоби _fdroidserver_ прямо з каталогу git (наприклад, `~/code/fdroidserver/fdroid build org.adaway`): так буде простіше, поки деталі сервера перевірки постійно змінюються. Основою сервера має бути як мінімум Debian/jessie, інакше доведеться внести чимало змін. Якщо у вас Ubuntu чи похідний дистрибутив, завантажте всі відсутні у вашій версії пакунки, як-от _vagrant-cachier_, із цього PPA: <https://launchpad.net/~fdroid/+archive/ubuntu/buildserver/>"
 
 #. type: Plain text
 #: _docs/Verification_Server.md
 msgid "Then you can find more on the process by reading [Build Server Setup](../Build_Server_Setup). You can also see the Continuous Integration scripts for this process to see how the whole thing can work:"
-msgstr ""
+msgstr "Тоді прочитайте докладніше про [налаштування сервера збірки](../Build_Server_Setup). Можете також переглянути скрипти безперервної інтеграції, щоб наочно зрозуміти, як працює весь цей процес:"
 
 #. type: Plain text
 #: _docs/Verification_Server.md
 msgid "- <https://gitlab.com/fdroid/fdroidserver/blob/master/jenkins-build-makebuildserver> - <https://jenkins.debian.net/job/reproducible_setup_fdroid_build_environment_profitbricks7/>"
-msgstr ""
+msgstr "- <https://gitlab.com/fdroid/fdroidserver/blob/master/jenkins-build-makebuildserver> - <https://jenkins.debian.net/job/reproducible_setup_fdroid_build_environment_profitbricks7/>"
 
 #. type: YAML Front Matter: title
 #: _docs/Whitelabel_Builds.md
 #, no-wrap
 msgid "Whitelabel Builds"
-msgstr ""
+msgstr "Ребрендинг збірок"
 
 #. type: Plain text
 #: _docs/Whitelabel_Builds.md
 msgid "F-Droid can be rebranded and embedded in Android ROMs, building upon F-Droid as the \"white-label\" version. This is a basic introduction for how to do that. For this, [\"_gradle_ flavors\"](https://developer.android.com/studio/build/build-variants.html)  are used for building rebranded, configured versions of F-Droid."
-msgstr ""
+msgstr "Клієнт F-Droid можливо випускати під іншою назвою в складі Android-прошивок. Ось коротка інструкція про те, як використати «[_gradle_-різновиди](https://developer.android.com/studio/build/build-variants.html)» (flavors), щоб зібрати версію F-Droid зі власними назвою й конфігурацією."
 
 #. type: Plain text
 #: _docs/Whitelabel_Builds.md
 msgid "Starting in *app/build.gradle*, set the package names and create a _flavorDimension_ and _productFlavors_:"
-msgstr ""
+msgstr "Почніть з *app/build.gradle*, вказавши назви пакунків і створивши _flavorDimension_ (групу різновиду) та _productFlavors_ (різновиди виробу):"
 
 #. type: Fenced code block (gradle)
 #: _docs/Whitelabel_Builds.md
@@ -10839,41 +10856,58 @@ msgid ""
 "    }\n"
 "}\n"
 msgstr ""
+"def fullApplicationId = \"com.mycompany.full\"\n"
+"def basicApplicationId = \"com.mycompany.basic\"\n"
+"// так, потрібні лапки обох видів https://stackoverflow.com/a/41391841\n"
+"def privilegedExtensionApplicationId = '\"com.mycompany.privileged\"'\n"
+"\n"
+"\n"
+"[…]\n"
+"\n"
+"\n"
+"android {\n"
+"    flavorDimensions \"base\", \"mycompany\"\n"
+"    productFlavors {\n"
+"       mycompany {\n"
+"           dimension \"mycompany\"\n"
+"       }\n"
+"    }\n"
+"}\n"
 
 #. type: Plain text
 #: _docs/Whitelabel_Builds.md
 msgid "Then *gradle* will automatically look at whole set of folders for custom versions of files:"
-msgstr ""
+msgstr "Тоді *gradle* автоматично шукатиме ваші версії файлів у цілому наборі тек:"
 
 #. type: Bullet: '* '
 #: _docs/Whitelabel_Builds.md
 msgid "Java sources: _app/src/mycompany/java_"
-msgstr ""
+msgstr "Вихідний код Java: _app/src/mycompany/java_"
 
 #. type: Bullet: '* '
 #: _docs/Whitelabel_Builds.md
 msgid "Manifest file: _app/src/mycompany/AndroidManifest.xml_"
-msgstr ""
+msgstr "Файл маніфесту: _app/src/mycompany/AndroidManifest.xml_"
 
 #. type: Bullet: '* '
 #: _docs/Whitelabel_Builds.md
 msgid "Android resources: _app/src/mycompany/res_"
-msgstr ""
+msgstr "Ресурси Android: _app/src/mycompany/res_"
 
 #. type: Bullet: '* '
 #: _docs/Whitelabel_Builds.md
 msgid "Assets: _app/src/mycompany/assets_"
-msgstr ""
+msgstr "Інші ресурси: _app/src/mycompany/assets_"
 
 #. type: Plain text
 #: _docs/Whitelabel_Builds.md
 msgid "There cannot be duplicate Java classes, but any extensions can be managed there. For anything in _res/_, i.e. _strings.xml_ or drawable resources, the files in _app/src/mycompany/res_ will take precedence over the default F-Droid ones. For example, override the app icon by providing _app/src/mycompany/res/drawable/ic\\_launcher.xml_."
-msgstr ""
+msgstr "Дублювати Java-класи неможливо, але ви можете розмістити там свої розширення. Для будь-чого в _res/_, тобто для _strings.xml_ чи зображень, файли в _app/src/mycompany/res_ матимуть пріоритет над відповідними файлами з F-Droid. Наприклад, додайте _app/src/mycompany/res/drawable/ic\\_launcher.xml_, щоб замінити піктограму застосунку."
 
 #. type: Plain text
 #: _docs/Whitelabel_Builds.md
 msgid "To specify a custom set of app repositories, provide _app/src/mycompany/res/values/default\\_repos.xml_. The format of that file is a String array, with sets of 8 elements per repo. For example, here's the Guardian Project repo config enabled by default with push request always accepted by the client:"
-msgstr ""
+msgstr "Надайте _app/src/mycompany/res/values/default\\_repos.xml_, щоб вказати власний набір репозиторіїв. Формат цього файлу — масив рядків, по 8 елементів на кожен репозиторій. Наприклад, ось конфігурація, що усталено вмикає Guardian Project з автоматичним прийняттям запитів на оновлення:"
 
 #. type: Fenced code block (xml)
 #: _docs/Whitelabel_Builds.md
@@ -10904,39 +10938,63 @@ msgid ""
 "   308205d8308203c0020900a397b4da7ecda034300d06092a864886f70d01010505003081ad310b30090603550406130255533111300f06035504080c084e657720596f726b3111300f06035504070c084e657720596f726b31143012060355040b0c0b4644726f6964205265706f31193017060355040a0c10477561726469616e2050726f6a656374311d301b06035504030c14677561726469616e70726f6a6563742e696e666f3128302606092a864886f70d0109011619726f6f7440677561726469616e70726f6a6563742e696e666f301e170d3134303632363139333931385a170d3431313131303139333931385a3081ad310b30090603550406130255533111300f06035504080c084e657720596f726b3111300f06035504070c084e657720596f726b31143012060355040b0c0b4644726f6964205265706f31193017060355040a0c10477561726469616e2050726f6a656374311d301b06035504030c14677561726469616e70726f6a6563742e696e666f3128302606092a864886f70d0109011619726f6f7440677561726469616e70726f6a6563742e696e666f30820222300d06092a864886f70d01010105000382020f003082020a0282020100b3cd79121b9b883843be3c4482e320809106b0a23755f1dd3c7f46f7d315d7bb2e943486d61fc7c811b9294dcc6b5baac4340f8db2b0d5e14749e7f35e1fc211fdbc1071b38b4753db201c314811bef885bd8921ad86facd6cc3b8f74d30a0b6e2e6e576f906e9581ef23d9c03e926e06d1f033f28bd1e21cfa6a0e3ff5c9d8246cf108d82b488b9fdd55d7de7ebb6a7f64b19e0d6b2ab1380a6f9d42361770d1956701a7f80e2de568acd0bb4527324b1e0973e89595d91c8cc102d9248525ae092e2c9b69f7414f724195b81427f28b1d3d09a51acfe354387915fd9521e8c890c125fc41a12bf34d2a1b304067ab7251e0e9ef41833ce109e76963b0b256395b16b886bca21b831f1408f836146019e7908829e716e72b81006610a2af08301de5d067c9e114a1e5759db8a6be6a3cc2806bcfe6fafd41b5bc9ddddb3dc33d6f605b1ca7d8a9e0ecdd6390d38906649e68a90a717bea80fa220170eea0c86fc78a7e10dac7b74b8e62045a3ecca54e035281fdc9fe5920a855fde3c0be522e3aef0c087524f13d973dff3768158b01a5800a060c06b451ec98d627dd052eda804d0556f60dbc490d94e6e9dea62ffcafb5beffbd9fc38fb2f0d7050004fe56b4dda0a27bc47554e1e0a7d764e17622e71f83a475db286bc7862deee1327e2028955d978272ea76bf0b88e70a18621aba59ff0c5993ef5f0e5d6b6b98e68b70203010001300d06092a864886f70d0101050500038202010079c79c8ef408a20d243d8bd8249fb9a48350dc19663b5e0fce67a8dbcb7de296c5ae7bbf72e98a2020fb78f2db29b54b0e24b181aa1c1d333cc0303685d6120b03216a913f96b96eb838f9bff125306ae3120af838c9fc07ebb5100125436bd24ec6d994d0bff5d065221871f8410daf536766757239bf594e61c5432c9817281b985263bada8381292e543a49814061ae11c92a316e7dc100327b59e3da90302c5ada68c6a50201bda1fcce800b53f381059665dbabeeb0b50eb22b2d7d2d9b0aa7488ca70e67ac6c518adb8e78454a466501e89d81a45bf1ebc350896f2c3ae4b6679ecfbf9d32960d4f5b493125c7876ef36158562371193f600bc511000a67bdb7c664d018f99d9e589868d103d7e0994f166b2ba18ff7e67d8c4da749e44dfae1d930ae5397083a51675c409049dfb626a96246c0015ca696e94ebb767a20147834bf78b07fece3f0872b057c1c519ff882501995237d8206b0b3832f78753ebd8dcbd1d3d9f5ba733538113af6b407d960ec4353c50eb38ab29888238da843cd404ed8f4952f59e4bbc0035fc77a54846a9d419179c46af1b4a3b7fc98e4d312aaa29b9b7d79e739703dc0fa41c7280d5587709277ffa11c3620f5fba985b82c238ba19b17ebd027af9424be0941719919f620dd3bb3c3f11638363708aa11f858e153cf3a69bce69978b90e4a273836100aa1e617ba455cd00426847f\n"
 " </item>\n"
 msgstr ""
+" <!-- назва -->\n"
+" <item>Guardian Project</item>\n"
+" <!-- адреса -->\n"
+" <item>https://guardianproject.info/fdroid/repo</item>\n"
+" <!-- опис -->\n"
+" <item>\n"
+"   Офіційний репозиторій застосунків The Guardian\n"
+"   Project. Застосунки в цьому репозиторії — це офіційні\n"
+"   двійкові збірки від оригінальної команди розробки,\n"
+"   підписані тим же ключем, що й APK, які випускаються до\n"
+"   сховища Google Play.\n"
+" </item>\n"
+" <!-- версія -->\n"
+" <item>13</item>\n"
+" <!-- увімкнено -->\n"
+" <item>1</item>\n"
+" <!-- пріоритет -->\n"
+" <item>10</item>\n"
+" <!-- автооновлення: ні (ignore), запит (prompt), так (always) -->\n"
+" <item>always</item>\n"
+" <!-- відкритий ключ -->\n"
+" <item>\n"
+"   308205d8308203c0020900a397b4da7ecda034300d06092a864886f70d01010505003081ad310b30090603550406130255533111300f06035504080c084e657720596f726b3111300f06035504070c084e657720596f726b31143012060355040b0c0b4644726f6964205265706f31193017060355040a0c10477561726469616e2050726f6a656374311d301b06035504030c14677561726469616e70726f6a6563742e696e666f3128302606092a864886f70d0109011619726f6f7440677561726469616e70726f6a6563742e696e666f301e170d3134303632363139333931385a170d3431313131303139333931385a3081ad310b30090603550406130255533111300f06035504080c084e657720596f726b3111300f06035504070c084e657720596f726b31143012060355040b0c0b4644726f6964205265706f31193017060355040a0c10477561726469616e2050726f6a656374311d301b06035504030c14677561726469616e70726f6a6563742e696e666f3128302606092a864886f70d0109011619726f6f7440677561726469616e70726f6a6563742e696e666f30820222300d06092a864886f70d01010105000382020f003082020a0282020100b3cd79121b9b883843be3c4482e320809106b0a23755f1dd3c7f46f7d315d7bb2e943486d61fc7c811b9294dcc6b5baac4340f8db2b0d5e14749e7f35e1fc211fdbc1071b38b4753db201c314811bef885bd8921ad86facd6cc3b8f74d30a0b6e2e6e576f906e9581ef23d9c03e926e06d1f033f28bd1e21cfa6a0e3ff5c9d8246cf108d82b488b9fdd55d7de7ebb6a7f64b19e0d6b2ab1380a6f9d42361770d1956701a7f80e2de568acd0bb4527324b1e0973e89595d91c8cc102d9248525ae092e2c9b69f7414f724195b81427f28b1d3d09a51acfe354387915fd9521e8c890c125fc41a12bf34d2a1b304067ab7251e0e9ef41833ce109e76963b0b256395b16b886bca21b831f1408f836146019e7908829e716e72b81006610a2af08301de5d067c9e114a1e5759db8a6be6a3cc2806bcfe6fafd41b5bc9ddddb3dc33d6f605b1ca7d8a9e0ecdd6390d38906649e68a90a717bea80fa220170eea0c86fc78a7e10dac7b74b8e62045a3ecca54e035281fdc9fe5920a855fde3c0be522e3aef0c087524f13d973dff3768158b01a5800a060c06b451ec98d627dd052eda804d0556f60dbc490d94e6e9dea62ffcafb5beffbd9fc38fb2f0d7050004fe56b4dda0a27bc47554e1e0a7d764e17622e71f83a475db286bc7862deee1327e2028955d978272ea76bf0b88e70a18621aba59ff0c5993ef5f0e5d6b6b98e68b70203010001300d06092a864886f70d0101050500038202010079c79c8ef408a20d243d8bd8249fb9a48350dc19663b5e0fce67a8dbcb7de296c5ae7bbf72e98a2020fb78f2db29b54b0e24b181aa1c1d333cc0303685d6120b03216a913f96b96eb838f9bff125306ae3120af838c9fc07ebb5100125436bd24ec6d994d0bff5d065221871f8410daf536766757239bf594e61c5432c9817281b985263bada8381292e543a49814061ae11c92a316e7dc100327b59e3da90302c5ada68c6a50201bda1fcce800b53f381059665dbabeeb0b50eb22b2d7d2d9b0aa7488ca70e67ac6c518adb8e78454a466501e89d81a45bf1ebc350896f2c3ae4b6679ecfbf9d32960d4f5b493125c7876ef36158562371193f600bc511000a67bdb7c664d018f99d9e589868d103d7e0994f166b2ba18ff7e67d8c4da749e44dfae1d930ae5397083a51675c409049dfb626a96246c0015ca696e94ebb767a20147834bf78b07fece3f0872b057c1c519ff882501995237d8206b0b3832f78753ebd8dcbd1d3d9f5ba733538113af6b407d960ec4353c50eb38ab29888238da843cd404ed8f4952f59e4bbc0035fc77a54846a9d419179c46af1b4a3b7fc98e4d312aaa29b9b7d79e739703dc0fa41c7280d5587709277ffa11c3620f5fba985b82c238ba19b17ebd027af9424be0941719919f620dd3bb3c3f11638363708aa11f858e153cf3a69bce69978b90e4a273836100aa1e617ba455cd00426847f\n"
+" </item>\n"
 
 #. type: Title ###
 #: _docs/Whitelabel_Builds.md
 #, no-wrap
 msgid "Basic vs Full Product Flavors"
-msgstr ""
+msgstr "Основний чи повний різновид виробу"
 
 #. type: Plain text
 #: _docs/Whitelabel_Builds.md
 msgid "F-Droid itself already has two flavors built-in: _basic_ and _full_.  _full_ is the app known as _F-Droid_, while _basic_ is the most minimal possible version of the app that still provides the core app store functionality.  Since those are in a separate _flavorDimension_, the added customizations will apply to both.  Choosing which one to build is done by specifying the \"Build Variant\" in Android Studio, and the _gradle_ target, .e.g `./gradlew assembleMycompanyFullDebug`."
-msgstr ""
+msgstr "F-Droid уже має два вбудовані різновиди: _basic_ (основний) і _full_ (повний). _full_ — це власне застосунок _F-Droid_, а _basic_ — це найменша можлива версія застосунку, яка все ще надає ядро функціоналу сховища застосунків. Оскільки їх виділено в окремий _flavorDimension_, додані зміни буде застосовано до обох. Щоб обрати, який із них зібрати, потрібно вказати в Android Studio «варіант збірки» (Build Variant) і ціль _gradle_, наприклад `./gradlew assembleMycompanyFullDebug`."
 
 #. type: Title ###
 #: _docs/Whitelabel_Builds.md
 #, no-wrap
 msgid "Customizations"
-msgstr ""
+msgstr "Допрацювання"
 
 #. type: Plain text
 #: _docs/Whitelabel_Builds.md
 msgid "When using gradle build flavors, it is very easy to customize any of the XML files. So this is the recommended way to start with customizing your build of F-Droid. Any XML file in _app/src/main/res_ can be overridden by placing an XML with the same name in _app/src/mycompany/res_."
-msgstr ""
+msgstr "При використанні різновидів збірки gradle, досить легко допрацювати під себе будь-які XML-файли. Тож радимо почати допрацювання своєї збірки F-Droid саме з цього. Будь-який XML-файл в _app/src/main/res_ можна замінити, помістивши XML-файл із такою ж назвою в _app/src/mycompany/res_."
 
 #. type: Title ####
 #: _docs/Whitelabel_Builds.md
 #, no-wrap
 msgid "Removing ActionBar/Menu Items"
-msgstr ""
+msgstr "Вилучення пунктів панелі чи меню"
 
 #. type: Plain text
 #: _docs/Whitelabel_Builds.md
 msgid "To hide things like \"Swap Apps\" or \"Repositories\", override _app/src/main/res/menu/main.xml_ by copying it into _app/src/mycompany/res/menu/main.xml_, and removing and/or customizing the items there."
-msgstr ""
+msgstr "Щоб сховати такі речі, як «Поруч» чи «Репозиторії», замініть _app/src/main/res/menu/main.xml_, скопіювавши його в _app/src/mycompany/res/menu/main.xml_ і вилучивши з нього відповідні пункти чи змінивши їх так, як вам потрібно."
 
 #. type: Title ####
 #: _docs/Whitelabel_Builds.md
@@ -10947,7 +11005,7 @@ msgstr "Параметри"
 #. type: Plain text
 #: _docs/Whitelabel_Builds.md
 msgid "For a custom build that enables Automatic Updates by default, override _app/src/main/res/xml/preferences.xml_. You can customize the preferences and their default values in _app/src/mycompany/res/xml/preferences.xml_. The fully automatic update requires [Privileged Extension](https://gitlab.com/fdroid/privileged-extension). With regular access, the updates will only automatically download. The user still needs to click install on each one."
-msgstr ""
+msgstr "Щоб усталено вимкнути автоматичні оновлення в своїй збірці, замініть _app/src/main/res/xml/preferences.xml_. Можете допрацювати параметри та їхні усталені значення в _app/src/mycompany/res/xml/preferences.xml_. Для повністю автоматичного оновлення потрібне [привілейоване розширення](https://gitlab.com/fdroid/privileged-extension). Без нього, оновлення будуть лише автоматично завантажуватись — і користувачці чи користувачу все ще доводитиметься торкати «Встановити» для кожного з них."
 
 #~ msgid "In the sidebar on the web site, the 10 most recent apps are shown"
 #~ msgstr "Бічна панель сайту показує 10 недавніх застосунків"
