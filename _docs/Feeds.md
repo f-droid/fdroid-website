@@ -4,9 +4,9 @@ title: Feeds
 
 ---
 
-### News & Reviews
+### News
 
-Sometimes there is a newsworthy item (submissions welcome!) or client release and details get posted on the blog: <https://f-droid.org/news-and-reviews>. In the past we had reviews of apps with screenshots and it would be great to have more; and who knows they might make their way into the client some day!
+Sometimes there is a newsworthy item (submissions welcome!) or client release and details get posted on the blog: <https://f-droid.org/news/>.
 
 ### Builds
 
