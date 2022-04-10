@@ -13,10 +13,9 @@ title: Take-Down Requests
 
 This document covers how you may send a request to remove content or apps from
 the official f-droid.org repository.  Our team checks all app submissions we
-receive for for compliance with our [inclusion policy](../Inclusion_Policy) to
-the best of their abilities.  Please let us know if an app the official
-f-droid.org repository infringes on your rights by submitting a take-down
-request.
+receive for compliance with our [inclusion policy](../Inclusion_Policy) to the
+best of their abilities.  Please let us know if an app the official f-droid.org
+repository infringes on your rights by submitting a take-down request.
 
 The official f-droid.org repository is a distribution service for FOSS apps and
 will be called downstream in the remainder of this document.  F-Droid does not
