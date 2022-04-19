@@ -4,13 +4,13 @@ title: Feeds
 
 ---
 
-### News & Reviews
+### News
 
-Sometimes there is a newsworthy item (submissions welcome!) or client release and details get posted on the blog: <https://f-droid.org/news-and-reviews>. In the past we had reviews of apps with screenshots and it would be great to have more; and who knows they might make their way into the client some day!
+Sometimes there is a newsworthy item (submissions welcome!) or client release and details get posted on the blog: <https://f-droid.org/news/>.
 
 ### Builds
 
-Find out exactly when APKs are available or when descriptions change: <https://f-droid.org/wiki/api.php?action=feedcontributions&user=Robot>. The status of the most recent build for an app can be obtained by appending /lastbuild to the wiki url of the package. Builds happen a couple of times a day ; a new repo index is only published once all outstanding builds are finished.
+Find out the build status of the APKs on: <https://monitor.f-droid.org/builds>.
 
 ### Source Code
 
@@ -39,7 +39,7 @@ Old IRC logs are available at <https://botbot.me/freenode/fdroid/> and <https://
 
 For importing into your favourite news reader, save the following text as feeds.opml and add/remove feeds your are interested in.
 
-On Android we have [de.shandschuh.sparserss](https://f-droid.org/repository/browse/?fdfilter=de.shandschuh.sparserss&fdid=de.shandschuh.sparserss), [net.fred.feedex](https://f-droid.org/repository/browse/?fdfilter=net.fred.feedex&fdid=net.fred.feedex), [de.danoeh.antennapod](https://f-droid.org/repository/browse/?fdfilter=de.danoeh.antennapod&fdid=de.danoeh.antennapod), [org.ttrssreader](https://f-droid.org/repository/browse/?fdfilter=org.ttrssreader&fdid=org.ttrssreader) (requires a tt-rss server to connect to) and [com.newsblur](https://f-droid.org/repository/browse/?fdfilter=com.newsblur&fdid=com.newsblur) (via newsblur.com). On the desktop you could use the Akregator for KDE, Liferea for Gnome or [http://newsbeuter.org newsbeuter] which is nice if you like working in a terminal.
+On Android we have [Feeder](https://f-droid.org/en/packages/com.nononsenseapps.feeder/), [Handy News Reader](https://f-droid.org/en/packages/ru.yanus171.feedexfork/), [Antennapod](https://f-droid.org/repository/browse/?fdfilter=de.danoeh.antennapod&fdid=de.danoeh.antennapod), [FreshRSS](https://f-droid.org/en/packages/fr.chenry.android.freshrss/), [Flym DecSync](https://f-droid.org/en/packages/org.decsync.flym/) and many more. On the desktop you could use the Akregator for KDE, Liferea for Gnome or [http://newsbeuter.org newsbeuter] which is nice if you like working in a terminal.
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
