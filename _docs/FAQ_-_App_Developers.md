@@ -134,15 +134,16 @@ function calls to do this).
 
 When we detect a new release, it may take a few days to make it into the
 repository as the build process runs only once a day. Before the build
-has completed, the wiki page for your app will list it in
-[:Category:Apps to Update](https://f-droid.org/wiki/page/:Category:Apps_to_Update). As long
+has completed, the monitor page for your app will list it in
+[F-Droid Monitor - Need updating](https://monitor.f-droid.org/builds/needsupdate). As long
 as the text under *Versions* stating "The current (recommended) version
 is *xxx* (version code *yyy*)" shows the version numbers corresponding
 to your latest release, we detected it and the APK should be available
 soon. Just give it some time.
 
 Another reason could be that the app failed to build. You can watch the
-build process on [Recent changes](https://f-droid.org/wiki/index.php?title=Special:RecentChanges&days=7&from=&hidebots=0&hideanons=1&hideliu=1) after clicking 'Show Bots'.
+build process on [F-Droid Monitor - Running](https://monitor.f-droid.org/builds/running) and
+the previous cycle in [Build](https://monitor.f-droid.org/builds/build).
 
 
 ### What about signing?
