@@ -87,6 +87,7 @@ Categories:
   - Internet
   - Navigation
 License: GPL-3.0-or-later
+SourceCode: https://gitlab.com/APPLICATION_UPSTREAM/ExampleCom
 
 RepoType: git
 Repo: https://gitlab.com/APPLICATION_UPSTREAM/ExampleCom
@@ -106,6 +107,8 @@ Builds:
 
 AutoUpdateMode: Version
 UpdateCheckMode: Tags
+CurrentVersion: '1.0'
+CurrentVersionCode: 123
 ```
 
 Adjust or remove the relevant _sudo_ lines if needed:
@@ -138,7 +141,7 @@ export PATH="$fdroidserver:$PATH" PYTHONPATH="$fdroidserver"
 cd /build
 fdroid readmeta
 fdroid rewritemeta com.example
-fdroid checkupdates com.example
+fdroid checkupdates --allow-dirty com.example
 fdroid lint com.example
 fdroid build --on-server com.example
 ```
