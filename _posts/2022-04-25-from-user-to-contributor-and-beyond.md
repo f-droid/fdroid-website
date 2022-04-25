@@ -14,7 +14,7 @@ XDA had mentions of "alternative app stores" but those usually just gather apps 
 
 ## Becomes a contributor
 
-Up until F-Droid I wasn't contributing back to FOSS, and I didn't bother with mailing lists, mostly because I felt that I might look foolish reporting small issues there. F-Droid has app details and those cover links to the app website, source, issues trackers and more. I took a look at those and saw that other n00bs were reporting nonetheless and so I started doing the same.
+Up until F-Droid I wasn't contributing back to FOSS, and I didn't bother with mailing lists, mostly because I felt that I might look foolish reporting small issues there. F-Droid has app details and those cover links to the app website, source, issues trackers and more. I took a look at those and saw that other "n00bs" were reporting nonetheless and so I started doing the same.
 
 My contribution started with basic complaints. We all have our preferences on how we like things to work: small typos fixes, translations to my niche locale _(I maintain about a dozen now)_ and even some timid code changes. And that got me into F-Droid Data as the apps that I used got updated and their metadata needed to keep up, or maybe the build failed for some easy to fix reason. Commit by commit I ended up gathering more than 2,500 [^1] of them!
 
