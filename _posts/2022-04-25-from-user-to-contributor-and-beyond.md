@@ -4,6 +4,8 @@ layout: post
 title: "From user to contributor and beyond"
 ---
 
+_This blog post was written by Licaon_Kter, one of F-Droid's contributors. To help support the work of Licaon_Kter and other contributors, please consider [donating to F-Droid](https://f-droid.org/en/donate/). We're looking to raise €1,200 per week so Licaon_Kter can keep contributing full-time._
+
 ## An user
 
 I've been using free and open source software for over 20 years now. I started with dual-booting for testing GNU/Linux distros and decided on Slackware for some years. As WINE was always getting better there were few and few reasons to dual-boot and I've switched to Debian and removed the Windows partition altogether. Since I was always 15 minutes or less away from an Internet connected PC, I didn't care about smartphones. Sure, I've setup a couple of devices for the family, but until I've got an old device of my own I was blissfully unaware of why Android is free or why iOS is closed.
