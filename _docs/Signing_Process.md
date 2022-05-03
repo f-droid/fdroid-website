@@ -93,7 +93,7 @@ signed by PGP using [GnuPG](https://gnupg.org), anything from APKs to
 media files will be signed.  This process is run with `fdroid
 gpgsign`.  Add `gpghome` and `gpgkey` to your _config.yml_ to configure
 it, there is more information in
-[examples/config.yml][examples/config.yml].
+_examples/config.yml_.
 
 
 ### Hardware Security Modules
@@ -105,7 +105,7 @@ to the HSM and never read off of it.  _fdroidserver_ has support for
 using HSMs for repo signing keys.
 
 For information on how to configure an F-Droid repo to use an HSM, see
-the "smartcard" sections of `examples/config.yml`,
+the "smartcard" sections of _examples/config.yml_,
 specifically `keystore` and `smartcardoptions`.  Most likely,
 [OpenSC](https://github.com/OpenSC/OpenSC) will need to be set up as a
 PKCS11 provider for Java.
