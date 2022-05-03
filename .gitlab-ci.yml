@@ -91,12 +91,6 @@ f-droid.org:
    - ./tools/deploy-external-assets.sh $OUT_DIR
    - rsync -ax --delete $OUT_DIR /builds/output/
 
-   # ping search engines to announce site changes
-   - apt-get -qy install curl
-   - curl https://www.google.com/ping?sitemap=https://f-droid.org/sitemap.xml
-   # this covers Bing, Yandex, and Seznam, see https://www.indexnow.org/searchengines.json
-   # via Bing, this also covers DuckDuckGo and Yahoo search
-   - curl https://api.indexnow.org/indexnow?url=https://f-droid.org/sitemap.xml&key=ael2ahshu7ohGhu9iey4aizaebahph3m
 
 pages:
   stage: deploy
@@ -212,8 +206,10 @@ check_fdroid_apk_bot:
   script:
     - apk add --no-cache gnupg curl
     - "! (gpg --list-keys | grep pub)"
-    - while ! gpg --keyserver pgp.mit.edu --recv-key $fingerprint; do sleep 10; done
-    - gpg --list-key --fingerprint | tr -d '[:space:]' | grep $fingerprint
+    - $curl https://f-droid.org/admin@f-droid.org.gpg | gpg --import || true
+    - gpg --recv-key $fingerprint || true
+    - gpg --keyserver https://keyserver.ubuntu.com --recv-key $fingerprint || true
+    - gpg --list-key $fingerprint
     - echo "${fingerprint}:6:" | gpg --import-ownertrust
     - $curl https://f-droid.org/$apk > $apk
     - $curl https://f-droid.org/$asc > $asc
