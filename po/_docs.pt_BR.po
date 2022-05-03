@@ -9,24 +9,25 @@
 # Lucas <lucasferreira@onmail.com>, 2021.
 # Felipe Bertola <eduardodelphinodepaula@gmail.com>, 2021.
 # William Weber Berrutti <wwberrutti@protonmail.ch>, 2021.
-# The Cats <philosoph@snopyta.org>, 2021.
+# The Cats <philosoph@snopyta.org>, 2021, 2022.
 # David <deehzi@pm.me>, 2021.
 # Vitor Henrique <vitorhcl00@gmail.com>, 2021.
 # Venilson Carneiro <venilsoncarneiro@pm.me>, 2021.
+# Flavio F. M. <flavius_androiduser@protonmail.com>, 2022.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
 "POT-Creation-Date: 2022-03-16 12:17+0100\n"
-"PO-Revision-Date: 2021-12-02 06:40+0000\n"
-"Last-Translator: Venilson Carneiro <venilsoncarneiro@pm.me>\n"
+"PO-Revision-Date: 2022-03-27 20:17+0000\n"
+"Last-Translator: The Cats <philosoph@snopyta.org>\n"
 "Language-Team: Portuguese (Brazil) <https://hosted.weblate.org/projects/f-droid/website-docs/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 4.10-dev\n"
+"X-Generator: Weblate 4.12-dev\n"
 
 #. type: YAML Front Matter: title
 #: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
@@ -579,28 +580,28 @@ msgstr "Para que o F-Droid seja confiável, nos precisamos ser transparentes. Fa
 #: _docs/All_our_APIs.md
 #, no-wrap
 msgid "Active packages"
-msgstr ""
+msgstr "Pacotes ativados"
 
 #. type: Plain text
 #: _docs/All_our_APIs.md
 msgid "There is a per-app API accessible via `https://f-droid.org/api/v1/packages`, which can be used to query information about the applications in the main repository. The JSON API currently lists the published and suggested versions. Archived applications and packages are not available in this API."
-msgstr ""
+msgstr "Há uma API por aplicativo acessível via `https://f-droid.org/api/v1/packages`, que pode ser usada para consultar informações sobre os aplicativos no repositório principal. A API JSON lista atualmente as versões publicadas e sugeridas. Aplicativos e pacotes arquivados não estão disponíveis nesta API."
 
 #. type: Plain text
 #: _docs/All_our_APIs.md
 msgid "Example request:"
-msgstr ""
+msgstr "Solicitação de exemplo:"
 
 #. type: Fenced code block
 #: _docs/All_our_APIs.md
 #, no-wrap
 msgid "GET https://f-droid.org/api/v1/packages/org.fdroid.fdroid HTTP/1.1\n"
-msgstr ""
+msgstr "OBTER https://f-droid.org/api/v1/packages/org.fdroid.fdroid HTTP/1.1\n"
 
 #. type: Plain text
 #: _docs/All_our_APIs.md
 msgid "Example response:"
-msgstr ""
+msgstr "Resposta de exemplo:"
 
 #. type: Fenced code block
 #: _docs/All_our_APIs.md
@@ -631,22 +632,36 @@ msgid ""
 "  ]\n"
 "}\n"
 msgstr ""
+"{\n"
+"  \"packageName\": \"org.fdroid.fdroid\",\n"
+"  \"suggestedVersionCode\": 1009000,\n"
+"  \"packages\": [\n"
+"    {\n"
+"      \"versionName\": \"1.10-alpha0\",\n"
+"      \"versionCode\": 1010000\n"
+"    },\n"
+"    {\n"
+"      \"versionName\": \"1.9\",\n"
+"      \"versionCode\": 1009000\n"
+"    }\n"
+"  ]\n"
+"}\n"
 
 #. type: Plain text
 #: _docs/All_our_APIs.md
 msgid "This API is already used by shields.io project to provide F-Droid badges, [like this](https://img.shields.io/f-droid/v/org.fdroid.fdroid)."
-msgstr ""
+msgstr "Esta API já é usada por shields.io projeto para fornecer emblemas F-Droid, [como este](https://img.shields.io/f-droid/v/org.fdroid.fdroid)."
 
 #. type: Title ###
 #: _docs/All_our_APIs.md
 #, no-wrap
 msgid "The repo index"
-msgstr ""
+msgstr "O índice do repositório"
 
 #. type: Plain text
 #: _docs/All_our_APIs.md
 msgid "F-Droid is built around a signed index of all the apps and packages that are available.  This is a JSON file, though more of an index than an API since all the information is distributed via a single file.  The repo index is in the form of a signed JAR file that contains _index-v1.json_.  The best method is to verify the JAR signature, then extract _index-v1.json_ if it validates. The _fdroidserver_ Python library provides `fdroidserver.download_repo_index()` to make this easy to do.  It is also possible to just read _index-v1.json_ using any ZIP library."
-msgstr ""
+msgstr "F-Droid é construído em torno de um índice assinado de todos os aplicativos e pacotes disponíveis.   Este é um arquivo JSON, embora mais de um índice do que uma API, uma vez que todas as informações são distribuídas através de um único arquivo.   O índice de repo é na forma de um arquivo JAR assinado que contém _index-v1.json_.   O melhor método é verificar a assinatura jar e, em seguida, extrair _index-v1.json_ se validar. A biblioteca _fdroidserver_ Python fornece 'fdroidserver.download_repo_index()' para facilitar o uso.   Também é possível ler _index v1.json_ usando qualquer biblioteca ZIP."
 
 #. type: Bullet: '* '
 #: _docs/All_our_APIs.md
@@ -683,6 +698,9 @@ msgid ""
 "mirror on GitHub,\n"
 "e.g. <https://raw.githubusercontent.com/f-droid/fdroiddata/master/metadata/org.fdroid.fdroid.yml>\n"
 msgstr ""
+"Cada aplicativo em _f-droid.org_ tem um correspondente \n"
+"[construir arquivo de metadados]({{ site.baseurl }}/docs/Build_Metadata_Reference) \n"
+"em [_fdroiddata_](https://gitlab.com/fdroid/fdroiddata). A fim de incentivar reutilização mais criativa, mantemos nossos dados em formatos padrão de fácil encontrar Lugares. Toda a coleção de aplicativos está em [formato YAML]({{ site.baseurl }}/{% post_url 2019-09-11-yaml-metadata %}). O arquivo pode ser acessado diretamente por ID de aplicativo usando a URL Raw do GitLab `https://gitlab.com/fdroid/fdroiddata/-/raw/master/metadata/<ApplicationID>.yml` (por exemplo, <https://gitlab.com/fdroid/fdroiddata/-/raw/master/metadata/org.fdroid.fdroid.yml>). O índice de repo e os arquivos do repositório [GitLab API](https://docs.gitlab.com/ee/api/repository_files.html) pode ser usada para consultar quais IDs de aplicativo estão disponíveis. Esses arquivos também estão disponíveis através do espelho no GitHub, por exemplo, <https://raw.githubusercontent.com/f-droid/fdroiddata/master/metadata/org.fdroid.fdroid.yml>\n"
 
 #. type: Title ###
 #: _docs/All_our_APIs.md
@@ -693,7 +711,7 @@ msgstr "Estado do servidor de compilação f-droid.org"
 #. type: Plain text
 #: _docs/All_our_APIs.md
 msgid "The four main steps of the build cycle are: _checkupdates_, _build_, _update_, and _deploy_.  There is a JSON file for each one of those with status information.  It is posted once that step completes running.  The step that is currently running is posted to _running_."
-msgstr ""
+msgstr "As quatro etapas principais do ciclo de compilação são: _checkupdates_, _build_, _update_, e _deploy_.  Há um arquivo JSON para cada um daqueles com informações de status.  Ele é postado assim que a execução for completada.  O passo que está sendo executado atualmente é postado em _running_."
 
 #. type: Bullet: '* '
 #: _docs/All_our_APIs.md
@@ -718,7 +736,7 @@ msgstr "<https://f-droid.org/repo/status/deploy.json>"
 #. type: Plain text
 #: _docs/All_our_APIs.md
 msgid "Two examples of how these JSON APIs can be used are the [F-Droid Monitor](https://monitor.f-droid.org/) website and the [F-Droid Build Status]({{ site.baseurl }}/packages/de.storchp.fdroidbuildstatus/) app."
-msgstr ""
+msgstr "Dois exemplos de como essas APIs JSON podem ser usadas são o site [F-Droid Monitor](https://monitor.f-droid.org/) e o aplicativo [F-Droid Build Status]({{ site.baseurl }}/packages/de.storchp.fdroidbuildstatus/)."
 
 #. type: Title ###
 #: _docs/All_our_APIs.md
@@ -728,13 +746,15 @@ msgstr "Monitoramento de espelhos e repos"
 
 #. type: Plain text
 #: _docs/All_our_APIs.md
+#, fuzzy
 msgid "[_mirror-monitor_](https://gitlab.com/fdroid/mirror-monitor) and [_repo-monitor_](https://gitlab.com/fdroid/repo-monitor) are automated jobs that check various stats about _f-droid.org_ mirrors and third party repos respectively.  They each provide a single, large JSON log of all the times the checks where run:"
-msgstr ""
+msgstr "[_mirror-monitor_](https://gitlab.com/fdroid/mirror-monitor) e [_repo-monitor_](https://gitlab.com/fdroid/repo-monitor) são trabalhos automatizados que verificam várias estatísticas sobre _f -droid.org_ mirrors e repositórios de terceiros, respectivamente.  Cada um deles fornece um único e grande log JSON de todas as vezes que as verificações foram executadas:"
 
 #. type: Bullet: '* '
 #: _docs/All_our_APIs.md
+#, fuzzy
 msgid "_f-droid.org_ mirror status: <https://fdroid.gitlab.io/mirror-monitor/report.json>"
-msgstr ""
+msgstr "_f-droid.org_ status do espelho: <https://fdroid.gitlab.io/mirror-monitor/report.json>"
 
 #. type: Bullet: '* '
 #: _docs/All_our_APIs.md
@@ -749,7 +769,7 @@ msgstr "Construções reproduzíveis"
 
 #. type: Plain text
 #: _docs/All_our_APIs.md
-#, no-wrap
+#, fuzzy, no-wrap
 msgid ""
 "_verification.f-droid.org_ is a rebuilder that rebuilds the official releases\n"
 "from _f-droid.org_, then checks to see if they were [reproducibly\n"
@@ -758,32 +778,41 @@ msgid ""
 "`<ApplicationId>_<VersionCode>.apk.json`, for example:\n"
 "<https://verification.f-droid.org/org.fdroid.fdroid_1010050.apk.json>\n"
 msgstr ""
+"_verification.f-droid.org_ é um reconstrutor que reconstrói os lançamentos oficiais\n"
+"de _f-droid.org_, em seguida, verifica se eles foram [reprodutivelmente\n"
+"construído](https://reproducible-builds.org/). Há um arquivo JSON por APK que tem\n"
+"foi verificado, onde o nome do arquivo segue o padrão\n"
+"`<ApplicationId>_<VersionCode>.apk.json`, por exemplo:\n"
+"<https://verification.f-droid.org/org.fdroid.fdroid_1010050.apk.json>\n"
 
 #. type: Plain text
 #: _docs/All_our_APIs.md
 msgid "There is also a listing of all the successfully verified APKs: <https://verification.f-droid.org/verified.json>"
-msgstr ""
+msgstr "Há também uma lista de todos os APKs verificados com sucesso: <https://verification.f-droid.org/verified.json>"
 
 #. type: Title ###
 #: _docs/All_our_APIs.md
 #, no-wrap
 msgid "Binary transparency logs"
-msgstr ""
+msgstr "Registros de transparência binária"
 
 #. type: Plain text
 #: _docs/All_our_APIs.md
+#, fuzzy
 msgid "[Binary transparency](https://wiki.mozilla.org/Security/Binary_Transparency) is the idea that all released packages should be logged as they are published.  This provides a way to check if a given binary was produced by the publisher, or came from somewhere else, e.g. as an exploit.  _fdroidserver_ has built in tools for managing a binary transparency log of the index files as part of the release process. This has been enabled on the Guardian Project repo: <https://github.com/guardianproject/binary_transparency_log>"
-msgstr ""
+msgstr "[Transparência binária](https://wiki.mozilla.org/Security/Binary_Transparency) é a ideia de que todos os pacotes lançados devem ser registrados à medida que são publicados.  Isso fornece uma maneira de verificar se um determinado binário foi produzido pelo editor ou veio de outro lugar, por exemplo, como uma exploração.  _fdroidserver_ tem ferramentas integradas para gerenciar um log de transparência binário dos arquivos de índice como parte do processo de lançamento. Isso foi ativado no repositório do Projeto Guardian: <https://github.com/guardianproject/binary_transparency_log>"
 
 #. type: Plain text
 #: _docs/All_our_APIs.md
+#, fuzzy
 msgid "There is also a prototype for running a binary transparency log for _f-droid.org_. <https://gitlab.com/eighthave/f-droid.org-binary-transparency>"
-msgstr ""
+msgstr "Há também um protótipo para executar um registro de transparência binária para _f-droid.org_. <https://gitlab.com/eighthave/f-droid.org-binary-transparency>"
 
 #. type: Plain text
 #: _docs/All_our_APIs.md
+#, fuzzy
 msgid "Since Gradle and the Google Android Tools team does not publish one, F-Droid has done it.  The basic API is a JSON file with a listing of all URLs known to have be published.  Each URL then contains a list of SHA-256 checksums that the log process has seen.  There are also other files tracked, based on what the publisher provides."
-msgstr ""
+msgstr "Como Gradle e a equipe do Google Android Tools não publicam um, o F-Droid tem feito isso.  A API básica é um arquivo JSON com uma listagem de todas as URLs conhecidas por terem sido publicadas.  Cada URL contém então uma lista de cheques SHA-256 que o processo de log viu.  Há também outros arquivos rastreados, com base no que o editor fornece."
 
 #. type: Bullet: '* '
 #: _docs/All_our_APIs.md
@@ -803,8 +832,9 @@ msgstr "<tt>issuebot</tt>"
 
 #. type: Plain text
 #: _docs/All_our_APIs.md
+#, fuzzy
 msgid "[_issuebot_](https://gitlab.com/fdroid/issuebot#json-rest-api) runs on app merge requests and requests for packaging (RFP) to provide information to reviewers about the app.  Much of that information is also published in JSON format.  Each report is made of data from modules that run on a specific app.  There are two entry points:"
-msgstr ""
+msgstr "O [_issuebot_](https://gitlab.com/fdroid/issuebot#json-rest-api) é executado em solicitações de mesclagem de aplicativos e solicitações de embalagem (RFP) para fornecer informações aos revisores sobre o aplicativo.  Grande parte dessas informações também é publicada no formato JSON.  Cada relatório é feito de dados de módulos que são executados em um aplicativo específico.  Há dois pontos de entrada:"
 
 #. type: Bullet: '* '
 #: _docs/All_our_APIs.md
@@ -820,26 +850,29 @@ msgstr "<https://fdroid.gitlab.io/rfp/issuebot/sourceUrls.json>"
 #: _docs/All_our_APIs.md
 #, no-wrap
 msgid "Metrics"
-msgstr ""
+msgstr "Métricas"
 
 #. type: Plain text
 #: _docs/All_our_APIs.md
+#, fuzzy
 msgid "[Usage data]({{ site.baseurl }}/{% post_url 2019-04-15-privacy-preserving-analytics %})  is gathered from [various F-Droid websites](https://fdroid.gitlab.io/metrics/)  and published with no personally identifiable information (PII).  It is published with one JSON file per-week, with a JSON index file per website.  For example, here is a week of search metrics: <https://fdroid.gitlab.io/metrics/search.f-droid.org/2021-01-18.json>"
-msgstr ""
+msgstr "[Dados de uso]({{ site.baseurl }}/{% post_url 2019-04-15-privacy-preserving-analytics %})  é coletado de [vários sites F-Droid](https://fdroid.gitlab.io/metrics/)  e publicado sem informações pessoalmente identificáveis (PII).  É publicado com um arquivo JSON por semana, com um arquivo de índice JSON por site.  Por exemplo, aqui está uma semana de métricas de pesquisa:"
 
 #. type: Plain text
 #: _docs/All_our_APIs.md
-#, no-wrap
+#, fuzzy, no-wrap
 msgid ""
 "Though not really an API, the <ftp.fau.de> mirror does provide some metrics:\n"
 "https://ftp.fau.de/cgi-bin/show-ftp-stats.cgi\n"
 msgstr ""
+"Embora não seja realmente uma API, o espelho <ftp.fau.de> fornece algumas métricas:\n"
+"https://ftp.fau.de/cgi-bin/show-ftp-stats.cgi\n"
 
 #. type: Title ###
 #: _docs/All_our_APIs.md
 #, no-wrap
 msgid "Git stats"
-msgstr ""
+msgstr "Estatísticas do Git"
 
 #. type: Plain text
 #: _docs/All_our_APIs.md
@@ -865,7 +898,7 @@ msgstr ""
 #. type: Plain text
 #: _docs/Anti-Features.md
 msgid "You will see our Anti-Features in action when viewing the details of any app containing one or more Anti-Features, whether in the F-Droid client or on this website.  The F-Droid client also provides settings to hide apps with certain Anti-Features."
-msgstr ""
+msgstr "Você verá nossas Anti-Características em ação ao visualizar os detalhes de qualquer aplicativo que contenha uma ou mais característica(s) indesejada(s), seja no cliente F-Droid ou neste site. O cliente F-Droid também fornece configurações para ocultar aplicativos com determinadas característica(s) indesejada(s)."
 
 #. type: Title ##
 #: _docs/Anti-Features.md
@@ -885,38 +918,45 @@ msgstr "[Ads](#Ads) - publicidade"
 
 #. type: Bullet: '* '
 #: _docs/Anti-Features.md
+#, fuzzy
 msgid "[Tracking](#Tracking) - tracks and/or reports your activity to somewhere, even when it can be turned off"
-msgstr ""
+msgstr "[Rastreamento](#Tracking) - rastreia e/ou relata sua atividade para algum lugar, mesmo quando pode ser desligado"
 
 #. type: Bullet: '* '
 #: _docs/Anti-Features.md
+#, fuzzy
 msgid "[Non-Free Network Services](#NonFreeNet) - promotes or depends entirely on a non-libre network service"
-msgstr ""
+msgstr "[Serviços de rede não-livres](#NonFreeNet) - promove ou depende inteiramente de um serviço de rede não-libre"
 
 #. type: Bullet: '* '
 #: _docs/Anti-Features.md
+#, fuzzy
 msgid "[Non-Free Addons](#NonFreeAdd) - promotes other non-libre apps or plugins"
-msgstr ""
+msgstr "[Complementos não livres](#NonFreeAdd) - promove outros aplicativos ou plugins não-libre"
 
 #. type: Bullet: '* '
 #: _docs/Anti-Features.md
+#, fuzzy
 msgid "[Non-Free Dependencies](#NonFreeDep) - needs a non-libre app to work (e.g. Google Maps, Market)"
-msgstr ""
+msgstr "[Dependências não livres](#NonFreeDep) - precisa de um aplicativo não-libre para funcionar (por exemplo, Google Maps, Market)"
 
 #. type: Bullet: '* '
 #: _docs/Anti-Features.md
+#, fuzzy
 msgid "[NSFW](#NSFW) - contains content that the user may not want to be publicized or visible everywhere"
-msgstr ""
+msgstr "NSFW](#NSFW) - contém conteúdo que o usuário pode não querer que seja divulgado ou visível em todos os lugares"
 
 #. type: Bullet: '* '
 #: _docs/Anti-Features.md
+#, fuzzy
 msgid "[Upstream Non-Free](#UpstreamNonFree) - upstream source code is not libre, and this version has those parts replaced or rewritten"
-msgstr ""
+msgstr "[Upstream Não-Livre](#UpstreamNonFree) - o código-fonte upstream não é livre, e esta versão tem essas partes substituídas ou reescritas"
 
 #. type: Bullet: '* '
 #: _docs/Anti-Features.md
+#, fuzzy
 msgid "[Non-Free Assets](#NonFreeAssets) - non-libre media in things that are not code (e.g. images, sound, music, 3D-models, or video)"
-msgstr ""
+msgstr "[Conteúdos não livres](#NonFreeAssets) - mídia não-libre em coisas que não são código (por exemplo, imagens, som, música, modelos 3D ou vídeo)"
 
 #. type: Bullet: '* '
 #: _docs/Anti-Features.md
@@ -926,55 +966,59 @@ msgstr "[Vulnerabilidade conhecida](#KnownVuln) - vulnerabilidade de segurança 
 #. type: Bullet: '* '
 #: _docs/Anti-Features.md
 msgid "[Disabled Algorithm](#DisabledAlgorithm) - signed using an unsafe algorithm"
-msgstr ""
+msgstr "[Algoritmo desativado](#DisabledAlgorithm) - assinado usando um algoritmo inseguro"
 
 #. type: Bullet: '* '
 #: _docs/Anti-Features.md
+#, fuzzy
 msgid "[No Source Since](#NoSourceSince) - source code no longer available, making new releases impossible"
-msgstr ""
+msgstr "[Nenhuma Fonte Desde Então](#NoSourceSince) - o código-fonte não está mais disponível, impossibilitando novos lançamentos"
 
 #. type: Plain text
 #: _docs/Anti-Features.md
+#, fuzzy
 msgid "Here's a complete [list of all apps in F-Droid containing Anti-Features](https://monitor.f-droid.org/anti-features)."
-msgstr ""
+msgstr "Aqui está uma completa [lista de todos os aplicativos no F-Droid contendo Anti-Características](https://monitor.f-droid.org/anti-features)."
 
 #. type: Title ###
 #: _docs/Anti-Features.md
 #, fuzzy, no-wrap
 msgid "Ads<a name=\"Ads\" />"
-msgstr "Adição<a name=\"Adding\"></a>"
+msgstr "Ads<a name=\"Anúncios\"></a>"
 
 #. type: Plain text
 #: _docs/Anti-Features.md
 #, fuzzy
 msgid "This Anti-Feature is applied to an app that contains advertising."
-msgstr "‘Ads’ - o aplicativo contém propaganda."
+msgstr "Este Anti-Recurso é aplicado a um aplicativo que contém publicidade."
 
 #. type: Plain text
 #: _docs/Anti-Features.md
+#, fuzzy
 msgid "Note that most applications that contain advertising are not Free Software, because they use proprietary software (e.g. AdMob) to provide that advertising. Those apps will not be found in the repo at all, so the only time you would see this Anti-Feature applied would be an app that contains advertising without using Non-Free Software to do it."
-msgstr ""
+msgstr "Observe que a maioria dos aplicativos que contêm publicidade não são Software Livre, pois usam software proprietário (por exemplo, AdMob) para fornecer essa publicidade. Esses aplicativos não serão encontrados no repositório, portanto, a única vez que você veria esse Anti-Recurso aplicado seria um aplicativo que contém publicidade sem usar Software Não-Livre para fazê-lo."
 
 #. type: Plain text
 #: _docs/Anti-Features.md
 msgid "Here's the list of [apps with Ads](https://monitor.f-droid.org/anti-feature/Ads)."
-msgstr ""
+msgstr "Aqui está a lista de [aplicativos com anúncios](https://monitor.f-droid.org/anti-feature/Ads)."
 
 #. type: Title ###
 #: _docs/Anti-Features.md
 #, fuzzy, no-wrap
 msgid "NSFW<a name=\"NSFW\" />"
-msgstr "Adição<a name=\"Adding\"></a>"
+msgstr "NSFW<a name=\"Conteúdo Adulto\"></a>"
 
 #. type: Plain text
 #: _docs/Anti-Features.md
+#, fuzzy
 msgid "This Anti-Feature is applied to an app that contains content that the user may not want to be publicized or visible everywhere. The marked app may contain nudity, profanity, slurs, violence, intense sexuality, political incorrectness, or other potentially disturbing subject matter.  This is especially relevant in environments like workplaces, schools, religious and family settings. The name comes from the Internet term \"Not safe for work\"."
-msgstr ""
+msgstr "Esse Anti-Recurso é aplicado a um aplicativo que contém conteúdo que o usuário pode não querer que seja divulgado ou visível em todos os lugares. O aplicativo marcado pode conter nudez, palavrões, insultos, violência, sexualidade intensa, incorreção política ou outro assunto potencialmente perturbador. Isso é especialmente relevante em ambientes como locais de trabalho, escolas, ambientes religiosos e familiares. O nome vem do termo da Internet \"Não é Seguro Para o Trabalho\"."
 
 #. type: Plain text
 #: _docs/Anti-Features.md
 msgid "Here's the list of [apps with NSFW](https://monitor.f-droid.org/anti-feature/NSFW)."
-msgstr ""
+msgstr "Aqui está a lista de [aplicativos com NSFW](https://monitor.f-droid.org/anti-feature/NSFW)."
 
 #. type: Title ###
 #: _docs/Anti-Features.md
@@ -984,38 +1028,41 @@ msgstr "Rastreamento<a name=\"Tracking\" />"
 
 #. type: Plain text
 #: _docs/Anti-Features.md
+#, fuzzy
 msgid "This Anti-Feature is applied to apps that track you and/or report your activity to somewhere, either without your permission or by default (i.e. you'd have to actively seek out an option to disable it)."
-msgstr ""
+msgstr "Esse Anti-Recurso é aplicado a aplicativos que rastreiam você e/ou relatam sua atividade para algum lugar, sem sua permissão ou por padrão (ou seja, você teria que procurar ativamente uma opção para desativá-lo)."
 
 #. type: Plain text
 #: _docs/Anti-Features.md
+#, fuzzy
 msgid "Examples of where this Anti-Feature might be applied:"
-msgstr ""
+msgstr "Exemplos de onde esse Anti-Recurso pode ser aplicado:"
 
 #. type: Bullet: '* '
 #: _docs/Anti-Features.md
 msgid "Sending crash reports without your knowledge or permission"
-msgstr ""
+msgstr "Enviando relatórios de falhas sem seu conhecimento ou permissão"
 
 #. type: Bullet: '* '
 #: _docs/Anti-Features.md
 msgid "Checking for updates without your knowledge or permission"
-msgstr ""
+msgstr "Verificando atualizações sem seu conhecimento ou permissão"
 
 #. type: Plain text
 #: _docs/Anti-Features.md
+#, fuzzy
 msgid "Examples of where it would not be applied - any of the above, if the functionality is opt-in (i.e. you are asked before it happens)  and disabled by default. Enabling it should then also require informed consent, i.e. requiring a privacy policy similar to GDPR, and avoid collecting personal data (PII) as far as possible."
-msgstr ""
+msgstr "Exemplos de onde não seria aplicado - qualquer uma das opções acima, se a funcionalidade for opt-in (ou seja, você é solicitado antes que ela aconteça) e desabilitada por padrão. Habilitá-lo também deverá exigir informação de consentimento, ou seja, exigir uma política de privacidade semelhante ao GDPR e evitar a coleta de dados pessoais (PII) na medida do possível."
 
 #. type: Plain text
 #: _docs/Anti-Features.md
 msgid "Note that frequently app tracking is implemented using proprietary software, e.g. Google Analytics or Flurry. Apps containing these proprietary libraries will **not** be found in the F-Droid repo."
-msgstr ""
+msgstr "Observe que o rastreamento de aplicativos frequentemente é implementado usando software proprietário, por exemplo, Google Analytics ou Flurry. Os aplicativos que contêm essas bibliotecas proprietárias **não** serão encontrados no repositório F-Droid."
 
 #. type: Plain text
 #: _docs/Anti-Features.md
 msgid "Here's the list of [apps with Tracking](https://monitor.f-droid.org/anti-feature/Tracking)."
-msgstr ""
+msgstr "Aqui está a lista de [aplicativos com Rastreamento](https://monitor.f-droid.org/anti-feature/Tracking)."
 
 #. type: Title ###
 #: _docs/Anti-Features.md
@@ -1025,30 +1072,30 @@ msgstr "Serviços de Rede Não-Livre<a name=\"NonFreeNet\" />"
 
 #. type: Plain text
 #: _docs/Anti-Features.md
-#, fuzzy
 msgid "This Anti-Feature is applied to apps that promote or depend entirely on a Non-Free network service."
-msgstr "‘Ads’ - o aplicativo contém propaganda."
+msgstr "Este Anti-Recurso é aplicado a aplicativos que promovem ou dependem inteiramente de um serviço de rede Não-Livre."
 
 #. type: Plain text
 #: _docs/Anti-Features.md
 msgid "Here's the list of [apps with Non-Free Network Services](https://monitor.f-droid.org/anti-feature/NonFreeNet)."
-msgstr ""
+msgstr "Aqui está a lista de [aplicativos com Serviços de Rede Não-Livres](https://monitor.f-droid.org/anti-feature/NonFreeNet)."
 
 #. type: Title ###
 #: _docs/Anti-Features.md
 #, fuzzy, no-wrap
 msgid "Non-Free Addons<a name=\"NonFreeAdd\" />"
-msgstr "Adição<a name=\"Adding\"></a>"
+msgstr "Non-Free Addons<a name=\"Complementos Não-Livres\"></a>"
 
 #. type: Plain text
 #: _docs/Anti-Features.md
+#, fuzzy
 msgid "This Anti-Feature is applied to apps that, although Free Software themselves, promote other Non-Free applications or plugins."
-msgstr ""
+msgstr "Esse Anti-Recurso é aplicado a aplicativos que, embora sejam Software Livre, promovem outros aplicativos ou plugins Não-Livres."
 
 #. type: Plain text
 #: _docs/Anti-Features.md
 msgid "Here's the list of [apps with Non-Free Addons](https://monitor.f-droid.org/anti-feature/NonFreeAdd)."
-msgstr ""
+msgstr "Aqui está a lista de [aplicativos com complementos Não-Livres](https://monitor.f-droid.org/anti-feature/NonFreeAdd)."
 
 #. type: Title ###
 #: _docs/Anti-Features.md
@@ -1058,74 +1105,74 @@ msgstr "Dependências Não-Livres<a name=\"NonFreeDep\" />"
 
 #. type: Plain text
 #: _docs/Anti-Features.md
-#, fuzzy
 msgid "This Anti-Feature is applied to apps that require things that are not Free Software in order to run."
-msgstr "‘Ads’ - o aplicativo contém propaganda."
+msgstr "Este Anti-Recurso é aplicado a aplicativos que requerem coisas que não são Software Livre para serem executados."
 
 #. type: Plain text
 #: _docs/Anti-Features.md
+#, fuzzy
 msgid "This does not mean that proprietary software is included in the app, but for example, it may depend on other software already being installed on your device. A common example would be an app that doesn't run, or is not useful, unless you have Google Maps installed."
-msgstr ""
+msgstr "Isso não significa que o software proprietário esteja incluído no aplicativo, mas, por exemplo, pode depender de outro software já instalado em seu dispositivo. Um exemplo comum seria um aplicativo que não funciona ou não é útil, a menos que você tenha o Google Maps instalado."
 
 #. type: Plain text
 #: _docs/Anti-Features.md
 msgid "Here's the list of [apps with Non-Free Dependencies](https://monitor.f-droid.org/anti-feature/NonFreeDep)."
-msgstr ""
+msgstr "Aqui está a lista de [aplicativos com Dependências Não-Livres](https://monitor.f-droid.org/anti-feature/NonFreeDep)."
 
 #. type: Title ###
 #: _docs/Anti-Features.md
-#, no-wrap
+#, fuzzy, no-wrap
 msgid "Upstream Non-Free<a name=\"UpstreamNonFree\" />"
-msgstr ""
+msgstr "Upstream Non-Free<a name=\"UpstreamNonFree\" />"
 
 #. type: Plain text
 #: _docs/Anti-Features.md
 msgid "This Anti-Feature is applied to apps where the upstream source code includes proprietary software by default in their own releases."
-msgstr ""
+msgstr "Esse Anti-Recurso é aplicado em aplicativos onde o código-fonte upstream inclui software proprietário por padrão em suas próprias versões."
+
+#. type: Plain text
+#: _docs/Anti-Features.md
+msgid "This does not mean that proprietary software is included in the app.  Most likely, the F-Droid build has been patched in some way to remove the Non-Free code/libraries, and/or some functionality may be missing.  The app's description will usually go into more detail about this."
+msgstr "Isso não significa que o software proprietário esteja incluído no aplicativo.  Muito provavelmente, a compilação do F-Droid foi corrigida de alguma forma para remover o código/bibliotecas Não-Livres e/ou algumas funcionalidades podem estar faltando.  A descrição do aplicativo geralmente entrará em mais detalhes sobre isso."
 
 #. type: Plain text
 #: _docs/Anti-Features.md
 #, fuzzy
-msgid "This does not mean that proprietary software is included in the app.  Most likely, the F-Droid build has been patched in some way to remove the Non-Free code/libraries, and/or some functionality may be missing.  The app's description will usually go into more detail about this."
-msgstr "‘UpstreamNonFree’ - o aplicativoé ou depende de software não livre. Isso não significa que o software não livre esteja incluído no aplicativo: muito provavelmente, ele foi corrigido de alguma forma para remover o código não livre. No entanto, a funcionalidade pode estar faltando."
-
-#. type: Plain text
-#: _docs/Anti-Features.md
 msgid "In our experience, where the upstream developer includes Non-Free libraries, sooner or later they will include more Non-Free libraries, or other Anti-Features. Frequently they become impossible to maintain/update in F-Droid. If there is an alternative, it is recommended that you avoid applications with this Anti-Feature if future updates are important to you."
-msgstr ""
+msgstr "Em nossa experiência, onde o desenvolvedor upstream inclui bibliotecas Não-Livres, mais cedo ou mais tarde eles incluirão mais bibliotecas Não-Livres ou outros anti-recursos. Frequentemente tornam-se impossíveis de manter/atualizar no F-Droid. Se houver uma alternativa, é recomendável evitar aplicativos com esse Anti-Recurso se atualizações futuras forem importantes para você."
 
 #. type: Plain text
 #: _docs/Anti-Features.md
 msgid "Here's the list of [apps with Upstream Non-Free](https://monitor.f-droid.org/anti-feature/UpstreamNonFree)."
-msgstr ""
+msgstr "Aqui está a lista de [aplicativos com Upstream Não-Livre](https://monitor.f-droid.org/anti-feature/UpstreamNonFree)."
 
 #. type: Title ###
 #: _docs/Anti-Features.md
-#, no-wrap
+#, fuzzy, no-wrap
 msgid "Non-Free Assets<a name=\"NonFreeAssets\" />"
-msgstr ""
+msgstr "Non-Free Assets<a name=\"Conteúdos Não-Livres\" />"
 
 #. type: Plain text
 #: _docs/Anti-Features.md
-#, fuzzy
 msgid "This Anti-Feature is applied to apps that contain and make use of Non-Free assets. The most common case is apps using artwork - images, sounds, music, etc. - under a non-commercial license."
-msgstr "‘NonFreeAssets’ - o aplicativo contém e faz uso de ativos não livres. O caso mais comum é o uso de aplicativos - imagens, sons, músicas, etc. - sob uma licença não comercial."
+msgstr "Este Anti-Recurso é aplicado a aplicativos que contêm e fazem uso de Conteúdos Não-Livres. O caso mais comum são aplicativos usando obras de arte - imagens, sons, música, etc. - sob uma licença não-comercial."
 
 #. type: Plain text
 #: _docs/Anti-Features.md
 msgid "Here's the list of [apps with Non-Free Assets](https://monitor.f-droid.org/anti-feature/NonFreeAssets)."
-msgstr ""
+msgstr "Aqui está a lista de [aplicativos com Conteúdos Não-Livres](https://monitor.f-droid.org/anti-feature/NonFreeAssets)."
 
 #. type: Title ###
 #: _docs/Anti-Features.md
-#, no-wrap
+#, fuzzy, no-wrap
 msgid "Known Vulnerability<a name=\"KnownVuln\" />"
-msgstr ""
+msgstr "Known Vulnerability<a name=\"KnownVuln\" />"
 
 #. type: Plain text
 #: _docs/Anti-Features.md
+#, fuzzy
 msgid "This Anti-Feature is applied to apps with a known security vulnerability, found by one of the scanners in _fdroidserver_."
-msgstr ""
+msgstr "Esse Anti-Recurso é aplicado em aplicativos com uma vulnerabilidade de segurança conhecida, encontrada por um dos escaneadores em _fdroidserver_."
 
 #. type: Plain text
 #: _docs/Anti-Features.md
@@ -1650,7 +1697,7 @@ msgstr "[_Categories_ (Categorias)](#Categories)"
 #. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
 msgid "[_AuthorName_](#AuthorName)"
-msgstr "[_AuthorName_ ((Nome do autor)](#AuthorName)"
+msgstr "[_NomeDoAutor_ (Nome do autor)](#AuthorName)"
 
 #. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
@@ -1940,7 +1987,7 @@ msgstr ""
 #. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
 msgid "[_AntiFeatures_](#AntiFeatures)"
-msgstr "[_AntiFeatures_ (Recursos não desejados)](#AntiFeatures)"
+msgstr "[_AntiFeatures_ (Características indesejadas)](#AntiFeatures)"
 
 #. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
@@ -6153,7 +6200,7 @@ msgstr ""
 #. type: Plain text
 #: _docs/How_to_Help.md
 msgid "The project is entirely developed and maintained by volunteers. You can help in the following ways:"
-msgstr ""
+msgstr "O projeto é inteiramente desenvolvido e mantido por voluntários. Você pode ajudar das seguintes maneiras:"
 
 #. type: Title ###
 #: _docs/How_to_Help.md
@@ -6301,10 +6348,8 @@ msgstr "Ajude com infraestrutura"
 
 #. type: Plain text
 #: _docs/How_to_Help.md
-#, fuzzy
-#| msgid "F-Droid provides multiple servers (builders, web portal, download areas...) which need regular maintenance, Ansible-based deployment, and hardware management.  Further information can be found by asking [on IRC](https://webchat.oftc.net/?channels=%23fdroid-dev) (#fdroid-dev on freenode) or team@f-droid.org."
 msgid "F-Droid provides multiple servers (builders, web portal, download areas...) which need regular maintenance, Ansible-based deployment, and hardware management.  Further information can be found by asking on [Matrix](https://matrix.to/#/#fdroid-dev:f-droid.org), [IRC](https://webchat.oftc.net/?randomnick=1&channels=fdroid&prompt=1) (#fdroid-dev on OFTC) or team@f-droid.org."
-msgstr "O F-Droid fornece vários servidores (compiladores, portal web, áreas de download...) que precisam de manutenção regular, implantação baseada em Ansible e gerenciamento de hardware.  Mais informações podem ser encontradas pedindo [no IRC](https://webchat.oftc.net/?channels=%23fdroid-dev) (#fdroid-dev on freenode) ou em team@f-droid.org."
+msgstr "O F-Droid fornece vários servidores (construtores, portal web, áreas de download...) que precisam de manutenção regular, implantação baseada em Ansible e gerenciamento de hardware.  Mais informações podem ser encontradas perguntando em [Matrix](https://matrix.to/#/#fdroid-dev:f-droid.org), [IRC](https://webchat.oftc.net/?randomnick=1&channels=fdroid&prompt=1) (#fdroid-dev on OFTC) ou em team@f-droid.org."
 
 #. type: Title ###
 #: _docs/How_to_Help.md
@@ -8525,7 +8570,7 @@ msgstr ""
 #: _docs/Repository_Style_Guide.md
 #, no-wrap
 msgid "AntiFeatures"
-msgstr "Recursos não desejados"
+msgstr "Características indesejadas"
 
 #. type: Plain text
 #: _docs/Repository_Style_Guide.md
@@ -9805,7 +9850,7 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/Signing_Process.md
-msgid "All packages built and/or distributed using F-Droid tools can also be signed by PGP using [GnuPG](https://gnupg.org), anything from APKs to media files will be signed.  This process is run with `fdroid gpgsign`.  Add `gpghome` and `gpgkey` to your _config.yml_ to configure it, there is more information in [examples/config.yml][examples/config.yml]."
+msgid "All packages built and/or distributed using F-Droid tools can also be signed by PGP using [GnuPG](https://gnupg.org), anything from APKs to media files will be signed.  This process is run with `fdroid gpgsign`.  Add `gpghome` and `gpgkey` to your _config.yml_ to configure it, there is more information in _examples/config.yml_."
 msgstr ""
 
 #. type: Title ###
@@ -9821,7 +9866,7 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/Signing_Process.md
-msgid "For information on how to configure an F-Droid repo to use an HSM, see the \"smartcard\" sections of [examples/config.yml][examples/config.yml], specifically `keystore` and `smartcardoptions`.  Most likely, [OpenSC](https://github.com/OpenSC/OpenSC) will need to be set up as a PKCS11 provider for Java."
+msgid "For information on how to configure an F-Droid repo to use an HSM, see the \"smartcard\" sections of _examples/config.yml_, specifically `keystore` and `smartcardoptions`.  Most likely, [OpenSC](https://github.com/OpenSC/OpenSC) will need to be set up as a PKCS11 provider for Java."
 msgstr ""
 
 #. type: Plain text
@@ -9843,136 +9888,135 @@ msgstr ""
 #. type: Plain text
 #: _docs/Submitting_to_F-Droid_Quick_Start_Guide.md
 msgid "To understand the overview of the process, read the *Proposal by Metadata Merge Request* section of the [Inclusion How-To](../Inclusion_How-To/)."
-msgstr ""
+msgstr "Para entender a visão geral do processo, leia a seção *Proposta por solicitação de fusão de metadados* do [Instruções de inclusão](../Inclusion_How-To/)."
 
 #. type: Title ##
 #: _docs/Submitting_to_F-Droid_Quick_Start_Guide.md
 #, no-wrap
 msgid "First steps"
-msgstr ""
+msgstr "Primeiros passos"
 
 #. type: Plain text
 #: _docs/Submitting_to_F-Droid_Quick_Start_Guide.md
 msgid "In the source of the application you want to include, find all the _AndroidManifest.xml_ and _build.gradle_ files, and write down in which subdir the most detailed of them happen to be."
-msgstr ""
+msgstr "Na fonte do aplicativo que você deseja incluir, encontre todos os arquivos _AndroidManifest.xml_ e _build.gradle_, e anote em qual subdiretório está o mais detalhado deles."
 
 #. type: Plain text
 #: _docs/Submitting_to_F-Droid_Quick_Start_Guide.md
 msgid "Register on [GitLab](https://gitlab.com/) and fork the [fdroiddata](https://gitlab.com/fdroid/fdroiddata) repository."
-msgstr ""
+msgstr "Registre-se no [GitLab](https://gitlab.com/) e bifurque o repositório [fdroiddata](https://gitlab.com/fdroid/fdroiddata)."
 
 #. type: Title ##
 #: _docs/Submitting_to_F-Droid_Quick_Start_Guide.md
 #, no-wrap
 msgid "Upstream metadata"
-msgstr ""
+msgstr "Metadados a montante"
 
 #. type: Plain text
 #: _docs/Submitting_to_F-Droid_Quick_Start_Guide.md
 msgid "Each official release commit in the application's upstream Git repository should have a tag. For example, if its AndroidManifest contains `versionName: '1.0'`, the commit needs a `v1.0` tag. It is strongly encouraged to add metadata in the application's source repo, too:"
-msgstr ""
+msgstr "Cada confirmação de lançamento oficial no repositório Git upstream do aplicativo deve ter uma tag. Por exemplo, se o AndroidManifest contiver `versionName: '1.0'`, o commit precisa de uma tag `v1.0`. É altamente recomendável adicionar metadados no repositório de origem do aplicativo também:"
 
 #. type: Bullet: '* '
 #: _docs/Submitting_to_F-Droid_Quick_Start_Guide.md
 msgid "_metadata/en-US/short_description.txt_ (30-50 chars, no trailing dot)"
-msgstr ""
+msgstr "_metadata/en-US/short_description.txt_ (30-50 caracteres, sem ponto final)"
 
 #. type: Bullet: '* '
 #: _docs/Submitting_to_F-Droid_Quick_Start_Guide.md
 msgid "_metadata/en-US/full_description.txt_"
-msgstr ""
+msgstr "_metadata/en-US/full_description.txt_"
 
 #. type: Bullet: '* '
 #: _docs/Submitting_to_F-Droid_Quick_Start_Guide.md
 msgid "_metadata/en-US/images/icon.png_"
-msgstr ""
+msgstr "_metadata/en-US/images/icon.png_"
 
 #. type: Bullet: '* '
 #: _docs/Submitting_to_F-Droid_Quick_Start_Guide.md
 msgid "_metadata/en-US/images/phoneScreenshots/screenshot.png_"
-msgstr ""
+msgstr "_metadata/en-US/images/phoneScreenshots/screenshot.png_"
 
 #. type: Plain text
 #: _docs/Submitting_to_F-Droid_Quick_Start_Guide.md
 msgid "If the AndroidManifest contains `versionCode: 123`, there should be a corresponding explanation of what's new in this version:"
-msgstr ""
+msgstr "Se o AndroidManifest contiver `versionCode: 123`, deve haver uma explicação correspondente do que há de novo nesta versão:"
 
 #. type: Bullet: '* '
 #: _docs/Submitting_to_F-Droid_Quick_Start_Guide.md
 msgid "_metadata/en-US/changelogs/123.txt_ (max 500 characters)"
-msgstr ""
+msgstr "_metadata/en-US/changelogs/123.txt_ (máximo de 500 caracteres)"
 
 #. type: Plain text
 #: _docs/Submitting_to_F-Droid_Quick_Start_Guide.md
 msgid "Browse the [F-Droid client metadata](https://gitlab.com/fdroid/fdroidclient/-/tree/master/metadata/en-US)  directory to see a real-world example."
-msgstr ""
+msgstr "Navegue no diretório [F-Droid metadados do cliente](https://gitlab.com/fdroid/fdroidclient/-/tree/master/metadata/en-US) para ver um exemplo real."
 
 #. type: Plain text
 #: _docs/Submitting_to_F-Droid_Quick_Start_Guide.md
 msgid "Other formats and locations of the [description, graphics, and screenshots](../All_About_Descriptions_Graphics_and_Screenshots/) are supported, too. For example, the _metadata/en-US_ directory can instead be _fastlane/metadata/android/en-US_."
-msgstr ""
+msgstr "Outros formatos e locais da [descrição, gráficos e capturas de tela](../All_About_Descriptions_Graphics_and_Screenshots/) também são suportados. Por exemplo, o diretório _metadata/en-US_ pode ser _fastlane/metadata/android/en-US_."
 
 #. type: Plain text
 #: _docs/Submitting_to_F-Droid_Quick_Start_Guide.md
 msgid "Send the application's development team a merge request if the repository doesn't have those files, and open an issue if it has no version tags. Having this metadata in place lets it be under direct control of the developer, and their updates and future translations will be pulled automatically."
-msgstr ""
+msgstr "Envie à equipe de desenvolvimento do aplicativo uma solicitação de fusão se o repositório não tiver esses arquivos e abra um problema se ele não tiver tags de versão. Ter este metadados no lugar permite que ele esteja sob controle direto do desenvolvedor, e suas atualizações e traduções futuras serão puxadas automaticamente."
 
 #. type: Title ##
 #: _docs/Submitting_to_F-Droid_Quick_Start_Guide.md
-#, fuzzy, no-wrap
-#| msgid "The Physical Environment"
+#, no-wrap
 msgid "Build environment"
-msgstr "O Ambiente Físico"
+msgstr "Ambiente de construção"
 
 #. type: Plain text
 #: _docs/Submitting_to_F-Droid_Quick_Start_Guide.md
 msgid "On a laptop with Ubuntu 21.10 in February 2022, it took 2 GB of traffic and 5 GB of disk space to set up an F-Droid build environment."
-msgstr ""
+msgstr "Em um laptop com Ubuntu 21.10 em fevereiro de 2022, foram necessários 2 GB de tráfego e 5 GB de espaço em disco para configurar um ambiente de construção do F-Droid."
 
 #. type: Plain text
 #: _docs/Submitting_to_F-Droid_Quick_Start_Guide.md
 msgid "Network requirements:"
-msgstr ""
+msgstr "Requisitos de rede:"
 
 #. type: Bullet: '* '
 #: _docs/Submitting_to_F-Droid_Quick_Start_Guide.md
 msgid "60 MB: shallow-clone _fdroiddata_ and _fdroidserver_"
-msgstr ""
+msgstr "60 MB: clone _fdroiddata_ and _fdroidserver_"
 
 #. type: Bullet: '* '
 #: _docs/Submitting_to_F-Droid_Quick_Start_Guide.md
 msgid "75 MB: install _docker.io_"
-msgstr ""
+msgstr "75 MB: instale _docker.io_"
 
 #. type: Bullet: '* '
 #: _docs/Submitting_to_F-Droid_Quick_Start_Guide.md
 msgid "1000 MB: load the container"
-msgstr ""
+msgstr "1000 MB: carregar o contêiner"
 
 #. type: Bullet: '* '
 #: _docs/Submitting_to_F-Droid_Quick_Start_Guide.md
 msgid "800 MB: build"
-msgstr ""
+msgstr "800 MB: construir"
 
 #. type: Plain text
 #: _docs/Submitting_to_F-Droid_Quick_Start_Guide.md
 msgid "Storage requirements:"
-msgstr ""
+msgstr "Requisitos de armazenamento:"
 
 #. type: Bullet: '* '
 #: _docs/Submitting_to_F-Droid_Quick_Start_Guide.md
 msgid "1000 MB: clone the repos and install _docker.io_"
-msgstr ""
+msgstr "1000 MB: clone os repositórios e instale _docker.io_"
 
 #. type: Bullet: '* '
 #: _docs/Submitting_to_F-Droid_Quick_Start_Guide.md
 msgid "4000 MB: load the container and build"
-msgstr ""
+msgstr "4000 MB: carregar o contêiner e construir"
 
 #. type: Plain text
 #: _docs/Submitting_to_F-Droid_Quick_Start_Guide.md
 msgid "Download your fork, then create a new branch and a metadata file. For example, if the application's _build.gradle_ says `applicationId \"com.example\"`:"
-msgstr ""
+msgstr "Baixe seu fork e crie uma novo ramo e um arquivo de metadados. Por exemplo, se o aplicativo _build.gradle_ diz `applicationId \"com.example\"`:"
 
 #. type: Fenced code block (sh)
 #: _docs/Submitting_to_F-Droid_Quick_Start_Guide.md
@@ -9983,11 +10027,15 @@ msgid ""
 "git checkout -b com.example\n"
 "cp templates/app-full metadata/com.example.yml\n"
 msgstr ""
+"git clone --depth=1 https://gitlab.com/YOUR_ACCOUNT/fdroiddata ~/fdroiddata\n"
+"cd ~/fdroiddata\n"
+"git checkout -b com.example\n"
+"cp templates/app-full metadata/com.example.yml\n"
 
 #. type: Plain text
 #: _docs/Submitting_to_F-Droid_Quick_Start_Guide.md
 msgid "Fill _~/fdroiddata/metadata/com.example.yml_ according to the [build metadata reference](../Build_Metadata_Reference/). If you have convinced the application's development team to include the descriptions and use version tags in their repository as explained above, the file will be very concise:"
-msgstr ""
+msgstr "Preencha _~/fdroiddata/metadata/com.example.yml_ de acordo com a referência [build metadata reference](../Build_Metadata_Reference/). Se você convenceu a equipe de desenvolvimento do aplicativo a incluir as descrições e usar as tags de versão em seu repositório como explicado acima, o arquivo será muito conciso:"
 
 #. type: Fenced code block (yaml)
 #: _docs/Submitting_to_F-Droid_Quick_Start_Guide.md
@@ -10017,26 +10065,49 @@ msgid ""
 "AutoUpdateMode: Version\n"
 "UpdateCheckMode: Tags\n"
 msgstr ""
+"Categorias:\n"
+"  - Internet\n"
+"  - Navegação\n"
+"Licença: GPL-3.0-ou-later\n"
+"\n"
+"RepoType: git\n"
+"Repo: https://gitlab.com/APPLICATION_UPSTREAM/ExampleCom\n"
+"\n"
+"Constrói:\n"
+"  - versionName: '1.0'\n"
+"    versionCode: 123\n"
+"    cometer: v1.0\n"
+"    # Where build.gradle is:\n"
+"    subdir: app\n"
+"    sudo:\n"
+"      - apt-get update || apt-get update\n"
+"      - apt-get install -y librsvg2-bin openjdk-11-jdk-headless\n"
+"      - update-alternatives --auto java\n"
+"    Gradle:\n"
+"      - sim\n"
+"\n"
+"AutoUpdateMode: Versão\n"
+"UpdateCheckMode: Etiquetas\n"
 
 #. type: Plain text
 #: _docs/Submitting_to_F-Droid_Quick_Start_Guide.md
 msgid "Adjust or remove the relevant _sudo_ lines if needed:"
-msgstr ""
+msgstr "Ajuste ou remova as linhas relevantes _sudo_ se necessário:"
 
 #. type: Bullet: '* '
 #: _docs/Submitting_to_F-Droid_Quick_Start_Guide.md
 msgid "The example application's _build.gradle_ executes _rsvg-convert_ to rasterize its vector icons, so we install _librsvg2-bin_ from the official Debian repositories. All such dependencies should be specified in the app's _README_."
-msgstr ""
+msgstr "O aplicativo de exemplo _build.gradle_ executa _rsvg-convert_ para rasterizar seus ícones vetoriais, por isso instalamos _librsvg2-bin_ a partir dos repositórios oficiais do Debian. Todas essas dependências devem ser especificadas no aplicativo _README_."
 
 #. type: Bullet: '* '
 #: _docs/Submitting_to_F-Droid_Quick_Start_Guide.md
 msgid "_build.gradle_ mentions `com.android.tools.build:gradle:7.1.0`, and the Gradle Android plugin version 7 is known to depend on Java 11. So we install _openjdk-11-jdk-headless_ and select it as the _java_ alternative."
-msgstr ""
+msgstr "_build.gradle_ menciona `com.android.tools.build:gradle:7.1.0`, e o plugin Gradle Android versão 7 é conhecido por depender do Java 11. Então nós instalamos _openjdk-11-jdk-headless_ e o selecionamos como a alternativa _java_."
 
 #. type: Plain text
 #: _docs/Submitting_to_F-Droid_Quick_Start_Guide.md
 msgid "Download and launch the latest version of the server tools container:"
-msgstr ""
+msgstr "Baixe e inicie a versão mais recente do contêiner de ferramentas do servidor:"
 
 #. type: Fenced code block (sh)
 #: _docs/Submitting_to_F-Droid_Quick_Start_Guide.md
@@ -10049,11 +10120,17 @@ msgid ""
 "  -v ~/fdroidserver:/home/vagrant/fdroidserver:Z \\\n"
 "  registry.gitlab.com/fdroid/fdroidserver:buildserver\n"
 msgstr ""
+"git clone --depth=1 https://gitlab.com/fdroid/fdroidserver ~/fdroidserver\n"
+"sudo sh -c 'apt-get update &&apt-get install -y docker.io'\n"
+"sudo docker run --rm -itu vagrant --entrypoint /bin/bash \\ \\ \\\n"
+"  -v ~/fdroiddata:/build:z {\\i1}\n"
+"  -v ~/fdroidserver:/home/vagrant/fdroidserver:Z {\\i1}\n"
+"  registry.gitlab.com/fdroid/fdroidserver:buildserver\n"
 
 #. type: Plain text
 #: _docs/Submitting_to_F-Droid_Quick_Start_Guide.md
 msgid "In the container:"
-msgstr ""
+msgstr "No contêiner:"
 
 #. type: Fenced code block (sh)
 #: _docs/Submitting_to_F-Droid_Quick_Start_Guide.md
@@ -10068,11 +10145,19 @@ msgid ""
 "fdroid lint com.example\n"
 "fdroid build --on-server com.example\n"
 msgstr ""
+". /etc/profile\n"
+"export PATH=\"$fdroidserver:$PATH\" PYTHONPATH=\"$fdroidserver\"\n"
+"cd /build\n"
+"readmeta fdroide\n"
+"fdroid rewritemeta com.example\n"
+"fdroid checkupdates com.example\n"
+"fdroid lint com.exemplo\n"
+"fdroid build --on-server com.example\n"
 
 #. type: Plain text
 #: _docs/Submitting_to_F-Droid_Quick_Start_Guide.md
 msgid "If any command, such as `fdroid readmeta`, returns an error, edit _~/fdroiddata/metadata/com.example.yml_ accordingly and try running the command again. After a successful build, exit the container, commit your metadata file with a `New App` label, and push it to your fork:"
-msgstr ""
+msgstr "Se algum comando, tal como `fdroid readmeta`, retornar um erro, edite _~/fdroiddata/metadata/com.example.yml_ em conformidade e tente executar o comando novamente. Após uma compilação bem sucedida, saia do container, submeta seu arquivo de metadados com um `New App` label, e empurre-o para o seu fork:"
 
 #. type: Fenced code block (sh)
 #: _docs/Submitting_to_F-Droid_Quick_Start_Guide.md
@@ -10084,11 +10169,16 @@ msgid ""
 "git commit -m \"New App: com.example\"\n"
 "git push origin com.example\n"
 msgstr ""
+"saída\n"
+"cd ~/fdroiddata\n"
+"git adicionar metadados/com.example.yml\n"
+"git commit -m \"Nova aplicação: com.example\"\n"
+"git push origin com.example\n"
 
 #. type: Plain text
 #: _docs/Submitting_to_F-Droid_Quick_Start_Guide.md
 msgid "Create a [merge request](https://gitlab.com/fdroid/fdroiddata/-/merge_requests)  at the fdroiddata repository, selecting your _com.example_ source branch. Wait for the packagers to pick up your merge request. Please keep track if they asked any questions and reply to them as soon as possible."
-msgstr ""
+msgstr "Crie uma [solicitação de fusão](https://gitlab.com/fdroid/fdroiddata/-/merge_requests) no repositório fdroiddata, selecionando sua ramificação de origem _com.example_. Aguarde os empacotadores pegarem sua solicitação de fusão. Por favor, acompanhe se eles fizeram alguma pergunta e responda o mais rápido possível."
 
 #. type: Plain text
 #: _docs/Submitting_to_F-Droid_Quick_Start_Guide.md
