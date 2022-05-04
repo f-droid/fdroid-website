@@ -25,7 +25,7 @@ $ rsync -v --list-only ftp.fau.de::fdroid
 
 This guide assumes the use of Nginx with a deb-based distribution, and mirroring the primary repository plus the archive. Please adjust accordingly if you're using alternatives or don't intend to mirror the archive. Also substitute the examples paths and domains for your own.
 
-For assistance with this process, [feel free to reach out to us]({{ "/about/" | prepend: site.baseurl }}).
+For assistance with this process, [feel free to reach out to us]({{ site.baseurl }}/about/).
 
 1. Create appropriate directories
 

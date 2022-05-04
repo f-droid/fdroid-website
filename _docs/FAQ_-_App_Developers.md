@@ -318,7 +318,7 @@ f-droid.org repository, please ask our packaging team to do so.  The probably
 fastest way to get your request processed is to open an issue on our data
 [issue tracker](https://gitlab.com/fdroid/fdroiddata/-/issues).  You can also
 get in contact with our team on our [other communication
-channels]({{ "/about/" | prepend: site.baseurl }}#contact).
+channels]({{ site.baseurl }}/about/#contact).
 
 
 ### How could my app be removed?

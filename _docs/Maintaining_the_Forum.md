@@ -45,7 +45,7 @@ Upgrading the forum is quite simple.
 Upgrades are planned to be done every one to two weeks.
 If you feel like there was an important update to Discourse which should
 get deployed earlier,
-[please reach out to us]({{ "/about/" | prepend: site.baseurl }}).
+[please reach out to us]({{ site.baseurl }}/about/).
 
 For administrators, this is the common way how to upgrade the forum:
 
