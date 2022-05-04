@@ -34,7 +34,7 @@ Background for non-German readers: Tagesschau is essentially the German national
 
 #### Starting up translation improvements around Weblate
 
-**[@\_hc](https://forum.f-droid.org/u/hans)** and **[@uniq](https://chaos.social/@uniq)** will be working together to improve the Weblate workflow as part of a funded effort. The work is specifically targeted at Markdown, like we use on this website. Effort will also be going towards app store translations like [Fastlane](https://fastlane.tools) and [Triple-T](https://github.com/Triple-T). In addition, there is a little bit of time to work on stabilizing [Jekyll](https://jekyllrb.com), so that it can support more than 9 languages on our site. If you are a Ruby developer who likes to help with the latter, please [get in touch](https://f-droid.org/en/about/#contact).
+**[@\_hc](https://forum.f-droid.org/u/hans)** and **[@uniq](https://chaos.social/@uniq)** will be working together to improve the Weblate workflow as part of a funded effort. The work is specifically targeted at Markdown, like we use on this website. Effort will also be going towards app store translations like [Fastlane](https://fastlane.tools) and [Triple-T](https://github.com/Triple-T). In addition, there is a little bit of time to work on stabilizing [Jekyll](https://jekyllrb.com), so that it can support more than 9 languages on our site. If you are a Ruby developer who likes to help with the latter, please [get in touch]({{ site.baseurl }}/about/#contact).
 
 #### Buildserver automation
 

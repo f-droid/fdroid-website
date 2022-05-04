@@ -27,7 +27,7 @@ but not anymore!
 F-Droid now has full support for projects offering donation via Liberapay:
 
 * The Liberapay ID of a person or team can be entered into a dedicated
-  [metadata field](https://f-droid.org/en/docs/Build_Metadata_Reference/#LiberapayID). 
+  [metadata field]({{ site.baseurl }}/docs/Build_Metadata_Reference/#LiberapayID). 
   10 apps in F-Droid already offer this as a donation option. Hopefully more
   will join soon.
 * The android client now shows the Liberapay widget: 

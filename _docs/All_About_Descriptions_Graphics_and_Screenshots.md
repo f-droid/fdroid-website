@@ -23,7 +23,7 @@ In F-Droid client, since release 1.6, only applications that have all of the fol
 * at least one graphic (screenshot or a feature graphic)
 * at least one of the above translated
 
-Learn more at the [announcement post](https://f-droid.org/en/2019/03/26/the-latest-tab-now-highlights-good-descriptions.html). 
+Learn more at the [announcement post]({{ site.baseurl }}/2019/03/26/the-latest-tab-now-highlights-good-descriptions.html). 
 
 ## Data format
 

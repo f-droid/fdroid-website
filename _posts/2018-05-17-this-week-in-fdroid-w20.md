@@ -11,7 +11,7 @@ authorWebsite: "https://forum.f-droid.org/u/coffee"
 
 * [Rudloff](https://social.rudloff.pro/profile/rudloff) has been very active again, and is responsible for most of the record-breaking 12 new apps!
 
-* [_hc](https://forum.f-droid.org/u/hans) has tagged and released [fdroidserver](https://f-droid.org/en/docs/Installing_the_Server_and_Repo_Tools/) v1.0.4. This release finally fixes the problems mentioned [two weeks ago](https://f-droid.org/en/2018/05/04/this-week-in-fdroid-w18.html). So if users of your repository are complaining that they [can't update](https://forum.f-droid.org/t/unable-to-get-apps-and-update-f-droid), please update ASAP!
+* [_hc](https://forum.f-droid.org/u/hans) has tagged and released [fdroidserver]({{ site.baseurl }}/docs/Installing_the_Server_and_Repo_Tools/) v1.0.4. This release finally fixes the problems mentioned [two weeks ago]({{ site.baseurl }}/2018/05/04/this-week-in-fdroid-w18.html). So if users of your repository are complaining that they [can't update](https://forum.f-droid.org/t/unable-to-get-apps-and-update-f-droid), please update ASAP!
 
   Under the hood, fdroidserver can now accomplish most tasks without the Android SDK, relying on [androguard](https://pypi.org/project/androguard/) instead.
 

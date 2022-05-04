@@ -39,7 +39,7 @@ Old IRC logs are available at <https://botbot.me/freenode/fdroid/> and <https://
 
 For importing into your favourite news reader, save the following text as feeds.opml and add/remove feeds your are interested in.
 
-On Android we have [Feeder](https://f-droid.org/en/packages/com.nononsenseapps.feeder/), [Handy News Reader](https://f-droid.org/en/packages/ru.yanus171.feedexfork/), [Antennapod](https://f-droid.org/repository/browse/?fdfilter=de.danoeh.antennapod&fdid=de.danoeh.antennapod), [FreshRSS](https://f-droid.org/en/packages/fr.chenry.android.freshrss/), [Flym DecSync](https://f-droid.org/en/packages/org.decsync.flym/) and many more. On the desktop you could use the Akregator for KDE, Liferea for Gnome or [http://newsbeuter.org newsbeuter] which is nice if you like working in a terminal.
+On Android we have [Feeder]({{ site.baseurl }}/packages/com.nononsenseapps.feeder/), [Handy News Reader]({{ site.baseurl }}/packages/ru.yanus171.feedexfork/), [Antennapod](https://f-droid.org/repository/browse/?fdfilter=de.danoeh.antennapod&fdid=de.danoeh.antennapod), [FreshRSS]({{ site.baseurl }}/packages/fr.chenry.android.freshrss/), [Flym DecSync]({{ site.baseurl }}/packages/org.decsync.flym/) and many more. On the desktop you could use the Akregator for KDE, Liferea for Gnome or [http://newsbeuter.org newsbeuter] which is nice if you like working in a terminal.
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>

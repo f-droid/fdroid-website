@@ -42,7 +42,7 @@ Our own **[@Izzy](https://forum.f-droid.org/u/izzy)** is writing a 3-part series
 
 ### Repomaker Flatpak
 
-**[@nicoalt](https://forum.f-droid.org/u/nicoalt)** is making good progress on packaging [Repomaker](https://f-droid.org/en/repomaker/) as a flatpak. It's not finished yet, but he's getting close. We are also happy to report that we had good response to our call for help on Mastodon, and now have **[@Persival](https://gitlab.com/Persival)** working on the flatpak continuously!
+**[@nicoalt](https://forum.f-droid.org/u/nicoalt)** is making good progress on packaging [Repomaker]({{ site.baseurl }}/repomaker/) as a flatpak. It's not finished yet, but he's getting close. We are also happy to report that we had good response to our call for help on Mastodon, and now have **[@Persival](https://gitlab.com/Persival)** working on the flatpak continuously!
 
 ### TWIF Call for Help
 

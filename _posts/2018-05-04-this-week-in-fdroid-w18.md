@@ -13,7 +13,7 @@ Hi everyone! You have been telling us you liked the first [#twif](https://mastod
 
 * F-Droid client v1.3-alpha0 is available. It has the new wifi/data preferences, which was one of the priorities of the [Viento](https://guardianproject.info/wind/) funding: making F-Droid work better on cheap devices, low/expensive bandwidth, and small storage.
 
-  As mentioned in the [previous TWIF](https://f-droid.org/en/2018/04/27/this-week-in-fdroid.html), V1.3 no longer supports Android 2.3.3 or 3.x. Android 4.0 is the minimum. That freed us to update tons of things, and ditch our own custom forks.
+  As mentioned in the [previous TWIF]({{ site.baseurl }}/2018/04/27/this-week-in-fdroid.html), V1.3 no longer supports Android 2.3.3 or 3.x. Android 4.0 is the minimum. That freed us to update tons of things, and ditch our own custom forks.
 
 * [Bubu](https://forum.f-droid.org/u/Bubu) did some work on bringing the [Rocket.Chat](https://rocket.chat) [app](https://github.com/RocketChat/Rocket.Chat.Android) to F-Droid. The FOSS flavour is currently pending upstream review. It lacks push notifications, but otherwise works fine.
 
