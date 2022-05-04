@@ -15,10 +15,11 @@ force_dnt = [
     r'''""\n"HTTP/1\.1 200 OK\\n"\n"Content-Type: application/json; charset=utf-8\\n"''',
     r'''""\n"\$ sudo apt-get install fdroidserver\\n.*?\\n"''',
     r'''""\n"\* Do not remove this line \(it will not be displayed\)\\n"\n"\{:toc\}\\n"''',
+    r'''""\n"\. /etc/profile\\n".*?fdroid build --on-server com\.example\\n"''',
     r'''""\n"\|      \| {{ strings.currency }} \| {{ strings.credit_card }}.*?\|\\n"''',
     r'''""\n"brew install android-sdk.*?platform-tools.*?\\n"''',
     r'''""\n"keytool -genkey.*?-storepass.*?\\n"''',
-    r'''""\n"python3 -m venv env\\n"\n"source env/bin/activate\\n"\n"pip install -e .\\n"''',
+    r'''""\n"python3 -m venv env\\n"\n"source env/bin/activate\\n"\n"pip install -e \.\\n"''',
     r'''""\n"pyvenv fdroidserver-env.*?gitlab\.com/fdroid/fdroidserver\.git\\n"''',
     r'''""\n"pyvenv fdroidserver-env\\n"\n". fdroidserver-env/bin/activate\\n"\n"pip install git+https://gitlab.com/fdroid/fdroidserver.git\\n"''',
     r'''""\n"sudo add-apt-repository.*?fdroidserver\\n"''',
@@ -92,7 +93,9 @@ default_dnt = [
 
 patterns = []
 for dnt in force_dnt:
-    patterns.append(re.compile(r'\nmsgid (' + dnt + ')\nmsgstr ".*?"\n\n', flags=re.DOTALL))
+    patterns.append(
+        re.compile(r'\nmsgid (' + dnt + ')\nmsgstr ".*?"\n\n', flags=re.DOTALL)
+    )
 
 # contributor names default to DNT, but won't override translations
 with open('_data/contributors.yaml') as fp:
