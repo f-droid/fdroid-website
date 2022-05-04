@@ -53,7 +53,7 @@ As part of this grant, I've been becoming a sort of "Maintainer-in-Residence" [^
  * Reviewing news posts
  * Ținerea la zi a traducerii în limba Română!
 
-It took some time to organize being able to work full-time on F-droid as well as getting past the initial feelings of amazement that doing this work full-time is possible.
+It took some time to organize being able to work full-time on F-Droid as well as getting past the initial feelings of amazement that doing this work full-time is possible.
 
 ## Next steps
 
