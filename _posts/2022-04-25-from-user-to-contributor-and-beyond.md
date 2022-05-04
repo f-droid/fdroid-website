@@ -4,7 +4,7 @@ layout: post
 title: "From user to contributor and beyond"
 ---
 
-_This blog post was written by Licaon_Kter, one of F-Droid's contributors. To help support the work of Licaon_Kter and other contributors, please consider [donating to F-Droid](https://f-droid.org/en/donate/). We're looking to raise €1,200 per week so Licaon_Kter can keep contributing full-time._
+_This blog post was written by Licaon_Kter, one of F-Droid's contributors. To help support the work of Licaon_Kter and other contributors, please consider [donating to F-Droid]({{ site.baseurl }}/donate/). We're looking to raise €1,200 per week so Licaon_Kter can keep contributing full-time._
 
 ## An user
 
@@ -63,9 +63,9 @@ The F-Droid Donations [^15] page lists all the ways that one can contribute: be 
 
 Adding up the weekly donations to F-Droid from all sources, we are receiving about €460 per week. To allow me to sustain my work here, the goal is to raise about €1,200 per week. We have _"no user accounts, by design"_ [^16] so we can't count how many of you are using F-Droid, but by interacting with some users and developers we know there are many out there. If users donate just a small bit, this goal will be reached quite quickly.
 
-[Click here to Donate to F-Droid!](https://f-droid.org/en/donate/)
+[Click here to Donate to F-Droid!]({{ site.baseurl }}/donate/)
 
-We also appreciate you spreading the word about F-Droid, so feel free to mention us on the [Fediverse](https://mastodon.technology/@fdroidorg), talk with us in the [Forums](https://forum.f-droid.org/) or [join the discussions](https://f-droid.org/en/about/#contact) via your protocol of choice.
+We also appreciate you spreading the word about F-Droid, so feel free to mention us on the [Fediverse](https://mastodon.technology/@fdroidorg), talk with us in the [Forums](https://forum.f-droid.org/) or [join the discussions]({{ "/about/" | prepend: site.baseurl }}#contact) via your protocol of choice.
 
 ___
 
@@ -79,7 +79,7 @@ ___
 
 [^5]: https://github.com/search?o=desc&q=%22f-droid+can%27t+build%22&s=created&type=Issues
 
-[^6]: https://f-droid.org/en/2020/09/29/happy-10-years-of-f-droid.html
+[^6]: {{ site.baseurl }}{% post_url 2020-09-29-happy-10-years-of-f-droid %}
 
 [^7]: https://savannah.gnu.org/forum/forum.php?forum_id=9846
 
@@ -89,7 +89,7 @@ ___
 
 [^10]: https://web.archive.org/web/20220312175753/https://www.nytimes.com/2021/04/21/technology/welcome-to-the-yolo-economy.html
 
-[^11]: https://f-droid.org/en/2022/02/05/decentralizing-distribution.html
+[^11]: {{ site.baseurl }}{% post_url 2022-02-05-decentralizing-distribution %}
 
 [^12]: https://lwn.net/Articles/864472/
 
@@ -97,6 +97,6 @@ ___
 
 [^14]: https://www.commitstrip.com/en/2014/05/07/the-truth-behind-open-source-apps/
 
-[^15]: https://f-droid.org/en/donate/
+[^15]: {{ site.baseurl }}/donate/
 
-[^16]: https://f-droid.org/en/2022/02/28/no-user-accounts-by-design.html
+[^16]: {{ site.baseurl }}{% post_url 2022-02-28-no-user-accounts-by-design %}
