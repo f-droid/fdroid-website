@@ -29,4 +29,4 @@ Currently, there is not a set timeframe for which these issues will be closed (i
 
 ### Where to file bug report
 
-[F-droid issue tracker](https://f-droid.org/issues/) specifically [F-droid client section](https://gitlab.com/fdroid/fdroidclient/issues)
+[F-Droid issue tracker](https://f-droid.org/issues/) specifically [F-Droid client section](https://gitlab.com/fdroid/fdroidclient/issues)

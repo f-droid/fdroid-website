@@ -7,14 +7,14 @@ featured: '<em style="padding: 0.15em 0.5em 0.10em; margin-right: 0.5ex; box-sha
 
 This Week in F-Droid 18, Week 34, 2018.
 
-Highlights: 11 newly released apps, OsmAnd and Maps receive major updates, upcoming talks at F/LOSS conferences, and preliminary discussion on efforts to decentralise F-droid index creation.
+Highlights: 11 newly released apps, OsmAnd and Maps receive major updates, upcoming talks at F/LOSS conferences, and preliminary discussion on efforts to decentralise F-Droid index creation.
 <!--more-->
 
 **[F-Droid](https://f-droid.org/)** is a **[repository](https://f-droid.org/packages/)** of verified **[free and open source](https://en.wikipedia.org/wiki/Free_and_open-source_software)** Android apps, a **[client](https://f-droid.org/packages/org.fdroid.fdroid/)** to access it, as well as a whole "app store kit", providing all the tools needed to set up and run an app store. It is a community-run free software project developed by a wide range of contributors. This is their story this past week.
 
 
 #### Upcoming Conferences
-Members of the F-Droid community love to get out and spread the word about F-Droid. The Nextcloud Conference in Berlin began today and **[@Bubu](https://chaos.social/@Bubu)** will be giving a talk on Nextcloud on Saturday. After the talk, the slides will be available at this **[link](https://bubu1.eu/fdroid_lightning_talk_nextcloudconf.pdf)**. Before the talk that link will lead you to a 404 so be patient. Two years ago, **[@_hc](https://forum.f-droid.org/u/hans)** gave a talk at FOSDEM 2016 showcasing how F-droid can protect users privacy and help users to evade censorship. @Bubu hopes that F-droid can return to FOSDEM in 2019; he is hoping to present a talk and possibly have a dedicated F-Droid stand. @Bubu has started a **[thread](https://forum.f-droid.org/t/fosdem-2019/3652)** on the forum to discuss plans for FOSDEM 2019. 
+Members of the F-Droid community love to get out and spread the word about F-Droid. The Nextcloud Conference in Berlin began today and **[@Bubu](https://chaos.social/@Bubu)** will be giving a talk on Nextcloud on Saturday. After the talk, the slides will be available at this **[link](https://bubu1.eu/fdroid_lightning_talk_nextcloudconf.pdf)**. Before the talk that link will lead you to a 404 so be patient. Two years ago, **[@_hc](https://forum.f-droid.org/u/hans)** gave a talk at FOSDEM 2016 showcasing how F-Droid can protect users privacy and help users to evade censorship. @Bubu hopes that F-Droid can return to FOSDEM in 2019; he is hoping to present a talk and possibly have a dedicated F-Droid stand. @Bubu has started a **[thread](https://forum.f-droid.org/t/fosdem-2019/3652)** on the forum to discuss plans for FOSDEM 2019. 
 
 #### Decentralized Index Generation
 **[@Tovok](https://blog.grobox.de/)** from the #fdroid-dev IRC channel has begun brainstorming ways to decentralize the index creation for the F-Droid main repository. As this seems to be a new problem, a new protocol will be needed. The goal of this new protocol will be to reproducibly build the repository index in a decenralized manner without relying on any trusted parties. Given sufficient interest, @Tovok may write up the ideas for decentralised index creation in a blog post. 
