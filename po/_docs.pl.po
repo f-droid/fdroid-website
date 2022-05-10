@@ -5,13 +5,14 @@
 # Hans-Christoph Steiner <hans@guardianproject.info>, 2021.
 # Agnieszka C <aga_04@o2.pl>, 2021, 2022.
 # WaldiS <sto@tutanota.de>, 2021, 2022.
+# rehork <cooky@e.email>, 2022.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
 "POT-Creation-Date: 2022-05-03 21:56+0200\n"
-"PO-Revision-Date: 2022-05-04 08:20+0000\n"
-"Last-Translator: Agnieszka C <aga_04@o2.pl>\n"
+"PO-Revision-Date: 2022-05-07 22:14+0000\n"
+"Last-Translator: rehork <cooky@e.email>\n"
 "Language-Team: Polish <https://hosted.weblate.org/projects/f-droid/website-docs/pl/>\n"
 "Language: pl\n"
 "MIME-Version: 1.0\n"
@@ -412,6 +413,11 @@ msgid ""
 "* Instead of `full_description.txt`, the description file should be named `description.txt`.\n"
 "* Not following the above two points causes the linter to fail.\n"
 msgstr ""
+"   * Na przykład, dla `en-US`, `title.txt` znajdowałby się w tej lokalizacji:\n"
+"   `<fdroiddata>/metadata/<packageId>/en-US/title.txt`.\n"
+"* Zamiast `short_description.txt`, plik podsumowania powinien mieć nazwę `summary.txt`.\n"
+"* Zamiast `full_description.txt`, plik z opisem powinien mieć nazwę `description.txt`.\n"
+"* Nieprzestrzeganie powyższych dwóch punktów powoduje niepowodzenie lintera.\n"
 
 #. type: Title ###
 #: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
@@ -535,7 +541,7 @@ msgstr "Wszystkie nasze API"
 #. type: Plain text
 #: _docs/All_our_APIs.md
 msgid "For F-Droid to be trusted, we need to be transparent.  Making it easy for people to pay attention to all the processes and systems we use helps us stay secure.  These are the APIs with key information about the publishing process."
-msgstr ""
+msgstr "Aby F-Droid cieszył się zaufaniem, musimy być transparentni.  Ułatwienie ludziom zwrócenia uwagi na wszystkie procesy i systemy, których używamy, pomaga nam zachować bezpieczeństwo.  Oto interfejsy API zawierające kluczowe informacje na temat procesu publikowania."
 
 #. type: Title ##
 #: _docs/All_our_APIs.md
@@ -546,7 +552,7 @@ msgstr "Aktywne pakiety"
 #. type: Plain text
 #: _docs/All_our_APIs.md
 msgid "There is a per-app API accessible via `https://f-droid.org/api/v1/packages`, which can be used to query information about the applications in the main repository. The JSON API currently lists the published and suggested versions. Archived applications and packages are not available in this API."
-msgstr ""
+msgstr "Istnieje interfejs API dla poszczególnych aplikacji dostępny na `https://f-droid.org/api/v1/packages`, którego można użyć do wyszukiwania informacji o aplikacjach w głównym repozytorium. Interfejs API JSON zawiera obecnie listę opublikowanych i sugerowanych wersji. Zarchiwizowane aplikacje i pakiety nie są dostępne w tym interfejsie API."
 
 #. type: Plain text
 #: _docs/All_our_APIs.md
@@ -593,11 +599,25 @@ msgid ""
 "  ]\n"
 "}\n"
 msgstr ""
+"{\n"
+"  \"packageName\": \"org.fdroid.fdroid\",\n"
+"  \"suggestedVersionCode\": 1009000,\n"
+"  \"packages\": [\n"
+"    {\n"
+"      \"versionName\": \"1.10-alpha0\",\n"
+"      \"versionCode\": 1010000\n"
+"    },\n"
+"    {\n"
+"      \"versionName\": \"1.9\",\n"
+"      \"versionCode\": 1009000\n"
+"    }\n"
+"  ]\n"
+"}\n"
 
 #. type: Plain text
 #: _docs/All_our_APIs.md
 msgid "This API is already used by shields.io project to provide F-Droid badges, [like this](https://img.shields.io/f-droid/v/org.fdroid.fdroid)."
-msgstr ""
+msgstr "Ten interfejs API jest już wykorzystywany przez projekt shields.io do dostarczania odznak F-Droid, [takich jak ta](https://img.shields.io/f-droid/v/org.fdroid.fdroid)."
 
 #. type: Title ###
 #: _docs/All_our_APIs.md
@@ -608,7 +628,7 @@ msgstr "Index repozytorium"
 #. type: Plain text
 #: _docs/All_our_APIs.md
 msgid "F-Droid is built around a signed index of all the apps and packages that are available.  This is a JSON file, though more of an index than an API since all the information is distributed via a single file.  The repo index is in the form of a signed JAR file that contains _index-v1.json_.  The best method is to verify the JAR signature, then extract _index-v1.json_ if it validates. The _fdroidserver_ Python library provides `fdroidserver.download_repo_index()` to make this easy to do.  It is also possible to just read _index-v1.json_ using any ZIP library."
-msgstr ""
+msgstr "F-Droid jest zbudowany wokół podpisanego indeksu wszystkich dostępnych aplikacji i pakietów.  Jest to plik JSON, choć jest to bardziej indeks niż API, ponieważ wszystkie informacje są dystrybuowane za pomocą jednego pliku.  Indeks repo jest w postaci podpisanego pliku JAR, który zawiera _index-v1.json_.  Najlepszą metodą jest sprawdzenie podpisu JAR, a następnie wyodrębnienie pliku _index-v1.json_, jeśli zostanie on sprawdzony. Biblioteka _fdroidserver_ Pythona udostępnia `fdroidserver.download_repo_index()`, aby ułatwić to zadanie.  Można też po prostu odczytać _index-v1.json_ za pomocą dowolnej biblioteki ZIP."
 
 #. type: Bullet: '* '
 #: _docs/All_our_APIs.md
@@ -645,6 +665,20 @@ msgid ""
 "mirror on GitHub,\n"
 "e.g. <https://raw.githubusercontent.com/f-droid/fdroiddata/master/metadata/org.fdroid.fdroid.yml>\n"
 msgstr ""
+"Każda aplikacja w _f-droid.org_ ma odpowiedni\n"
+"plik metadanych [build metadata file]({{ site.baseurl }}/docs/Build_Metadata_Reference) w\n"
+"[_fdroiddata_](https://gitlab.com/fdroid/fdroiddata).  Aby zachęcić\n"
+"bardziej kreatywne ponowne wykorzystanie, przechowujemy nasze dane w standardowych formatach w łatwych do znalezienia\n"
+"miejscach.  Cała kolekcja aplikacji jest w formacie [YAML]({{ site.baseurl }}/{%\n"
+"post_url 2019-09-11-yaml-metadata %}).  Dostęp do tego pliku można uzyskać bezpośrednio\n"
+"przez identyfikator aplikacji za pomocą surowego adresu URL GitLab\n"
+"`https://gitlab.com/fdroid/fdroiddata/-/raw/master/metadata/<ApplicationID>.yml`.\n"
+"(np. <https://gitlab.com/fdroid/fdroiddata/-/raw/master/metadata/org.fdroid.fdroid.yml>).\n"
+"Indeks repo i interfejs [GitLab Repository Files\n"
+"API](https://docs.gitlab.com/ee/api/repository_files.html) mogą być używane do sprawdzania\n"
+"które identyfikatory aplikacji są dostępne.  Pliki te są również dostępne za pośrednictwem\n"
+"mirror na GitHubie,\n"
+"np. <https://raw.githubusercontent.com/f-droid/fdroiddata/master/metadata/org.fdroid.fdroid.yml>.\n"
 
 #. type: Title ###
 #: _docs/All_our_APIs.md
@@ -730,7 +764,7 @@ msgstr ""
 #. type: Plain text
 #: _docs/All_our_APIs.md
 msgid "There is also a listing of all the successfully verified APKs: <https://verification.f-droid.org/verified.json>"
-msgstr ""
+msgstr "Znajduje się tam również lista wszystkich pomyślnie zweryfikowanych pakietów APK: <https://verification.f-droid.org/verified.json>"
 
 #. type: Title ###
 #: _docs/All_our_APIs.md
@@ -802,6 +836,8 @@ msgid ""
 "Though not really an API, the <ftp.fau.de> mirror does provide some metrics:\n"
 "https://ftp.fau.de/cgi-bin/show-ftp-stats.cgi\n"
 msgstr ""
+"Chociaż nie jest to API, serwer lustrzany <ftp.fau.de> udostępnia pewne metryki:\n"
+"https://ftp.fau.de/cgi-bin/show-ftp-stats.cgi\n"
 
 #. type: Title ###
 #: _docs/All_our_APIs.md
@@ -823,17 +859,17 @@ msgstr "Niepożądane funkcje"
 #. type: Plain text
 #: _docs/Anti-Features.md
 msgid "When reviewing apps to accept, F-Droid takes the user's point of view, first and foremost.  We start with [strict acceptance criteria](../Inclusion_Policy) based on the principles of free software and user control.  There are some things about an app that might not block it from inclusion, but many users might not want to accept them.  For these kinds of things, F-Droid has a defined set of Anti-Features.  Apps can then be marked with these Anti-Features so users can clearly choose whether the app is still acceptable."
-msgstr ""
+msgstr "Podczas przeglądu aplikacji do zaakceptowania, F-Droid bierze przede wszystkim punkt widzenia użytkownika.  Zaczynamy od [ścisłych kryteriów akceptacji](../Inclusion_Policy) opartych na zasadach wolnego oprogramowania i kontroli użytkownika.  Istnieją pewne rzeczy w aplikacji, które mogą nie blokować jej włączenia, ale wielu użytkowników może nie chcieć ich zaakceptować.  W tym przypadku F-Droid ma zdefiniowany zestaw funkcji niepożądanych.  Aplikacje mogą być oznaczone tymi cechami, aby użytkownicy mogli jednoznacznie zdecydować, czy dana aplikacja jest nadal akceptowalna."
 
 #. type: Plain text
 #: _docs/Anti-Features.md
 msgid "Anti-Features are organized into \"flags\" that packagers can use to mark apps, warning of possibly undesirable behaviour from the user's perspective, often serving the interest of the developer or a third party.  Free software packages do not exist in a bubble.  For one piece of software to be useful, it usually has to integrate with some other software.  Therefore, users that want free software also want to know if an app depends on or promotes any proprietary software.  Sometimes, there are concepts in Anti-Features that overlap with tactics used by third parties against users.  F-Droid always marks Anti-Features from the user's point of view.  For example, [NSFW](#NSFW) might be construed as similar to a censor's blocklists, but in our case, the focus is on the user's context and keeping the user in control."
-msgstr ""
+msgstr "Funkcje niepożądane są zorganizowane w \"flagi\", których twórcy pakietów mogą używać do oznaczania aplikacji, ostrzegając przed potencjalnie niepożądanym zachowaniem z punktu widzenia użytkownika, często służącym interesom twórcy lub strony trzeciej.  Pakiety wolnego oprogramowania nie istnieją w bańce.  Aby jeden element oprogramowania był użyteczny, zazwyczaj musi być zintegrowany z innym oprogramowaniem.  Dlatego użytkownicy, którzy chcą mieć wolne oprogramowanie, chcą też wiedzieć, czy dana aplikacja zależy od oprogramowania prawnie zastrzeżonego lub je promuje.  Czasami w funkcjach niepożądanych pojawiają się pojęcia, które pokrywają się z taktykami stosowanymi przez strony trzecie przeciwko użytkownikom.  F-Droid zawsze oznacza funkcje niepożądane z punktu widzenia użytkownika'.  Na przykład, [NSFW](#NSFW) może być interpretowane jako podobne do cenzury, ale w naszym przypadku skupiamy się na kontekście użytkownika i utrzymaniu go pod kontrolą."
 
 #. type: Plain text
 #: _docs/Anti-Features.md
 msgid "You will see our Anti-Features in action when viewing the details of any app containing one or more Anti-Features, whether in the F-Droid client or on this website.  The F-Droid client also provides settings to hide apps with certain Anti-Features."
-msgstr ""
+msgstr "Możesz zobaczyć nasze funkcje niepożądane w akcji podczas przeglądania szczegółów każdej aplikacji zawierającej jeden lub więcej funkcji niepożądanych, czy w kliencie F-Droid lub na tej stronie.  Klient F-Droid udostępnia również ustawienia pozwalające ukryć aplikacje z niektórymi funkcjami niepożądanymi."
 
 #. type: Title ##
 #: _docs/Anti-Features.md
