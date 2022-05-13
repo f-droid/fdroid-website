@@ -32,7 +32,7 @@ layout: default-package-sidebar
 	<div class="package-description" dir="auto">
 		{{ page.description }}
 	</div>
-	{% if page.anti_features != nil or page.packages.first.anti_features != nil %}
+	{% if page.anti_features != nil or page.versions.first.anti_features != nil %}
 	<div class="package-anti-features">
 		<h3>{{ strings.anti_features }}</h3>
 		<p>{{ strings.anti_features_warning }} <a class="anti-features-more" href="{{ site.baseurl }}/docs/Anti-Features/">Learn more!</a></p>
@@ -49,7 +49,7 @@ layout: default-package-sidebar
 			</li>
 			{% endfor %}
 			{% comment %} Display Antifeatures for most recent app release (Code active?) {% endcomment %}
-			{% for anti_feature in page.packages.first.anti_features %}
+			{% for anti_feature in page.versions.first.anti_features %}
 			<li class="anti-feature-item">
 			  <a class="anti-feature-link" href="{{ site.baseurl }}/docs/Anti-Features/#{{ anti_feature }}">
 					<img class="anti-feature-icon" src="{{ anti_feature | prepend: 'icons/antifeatures/' | append: '.svg' | asset }}" alt=""> 
@@ -166,13 +166,13 @@ layout: default-package-sidebar
 	{% endif %}
 
 	<div class="package-versions">
-		<h3>{{ strings.packages }}</h3>
+		<h3>{{ strings.versions }}</h3>
 		<p>
 			{{ strings.suggest_downloading_via_fdroid }}
 		</p>
 		<a href="{{ site.fdroid_apk_download_url }}" class="material-button">{{ site.data.strings.index.download_fdroid }}</a>
 		<ul class="package-versions-list">
-			{% for package in page.packages %}
+			{% for package in page.versions %}
 			<li class="package-version" {% if forloop.first %}id="latest"{% endif %}>
 			{% if page.suggested_version_name == package.version_name and suggestedDisplayed != true %}<a name="suggested"></a>{% endif %}
 				<div class="package-version-header">
