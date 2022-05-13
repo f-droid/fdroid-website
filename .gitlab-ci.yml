@@ -142,8 +142,10 @@ rsync mirrors:
   script:
     - apt-get update
     - apt-get -qy install rsync
-    - for f in `sed -En 's,^\S+\x3a rsync -axv (.*),\1,p' _data/rsync_mirrors.yaml`; do
-          rsync --list-only $f || rsync --list-only $f || rsync --list-only $f;
+    - for f in `sed 's,[^:]*:,,' _data/rsync_mirrors.yaml`; do
+          rsync --list-only rsync -axv ${f}::fdroid \
+          || rsync --list-only rsync -axv ${f}::fdroid \
+          || rsync --list-only rsync -axv ${f}::fdroid;
       done
 
 

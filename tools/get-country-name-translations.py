@@ -11,7 +11,12 @@ os.chdir(os.path.join(os.path.dirname(__file__), '..'))
 baseurl = 'https://raw.githubusercontent.com/umpirsky/country-list/master/data'
 
 with open('_data/rsync_mirrors.yaml') as fp:
-    codes = sorted(yaml.safe_load(fp).keys())
+    data = yaml.safe_load(fp)
+
+s = set()
+for i in data:
+    s.update(i.keys())
+codes = sorted(s)
 
 for f in sorted(glob.glob('_data/*/strings.json')):
     target = os.path.basename(os.path.dirname(f))
