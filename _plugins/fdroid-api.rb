@@ -23,11 +23,10 @@ module Jekyll
       json = {
         'packageName' => data['package_name'],
         'suggestedVersionCode' => data['suggested_version_code'],
-        # TODO for index-v2, 'packages' needs to become 'versions'
-        'packages' => data.fetch('packages', []).map do |package|
+        'versions' => data.fetch('versions', []).map do |versions|
           {
-            'versionName' => package['version_name'],
-            'versionCode' => package['version_code']
+            'versionName' => versions['version_name'],
+            'versionCode' => versions['version_code']
           }
         end
       }
