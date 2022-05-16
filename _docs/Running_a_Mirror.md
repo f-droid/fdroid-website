@@ -18,7 +18,7 @@ There are many mirror servers which offer an _rsync_ connection, make sure to se
 
 You can find current information on disk space requirements by running the following in your terminal:
 ```console
-$ rsync -v --list-only ftp.fau.de::fdroid
+$ rsync --dry-run --recursive --stats --human-readable ftp.fau.de::fdroid .
 ```
 
 #### Setup
