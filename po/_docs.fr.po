@@ -19,7 +19,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
-"POT-Creation-Date: 2022-05-03 21:56+0200\n"
+"POT-Creation-Date: 2022-05-16 21:26+0200\n"
 "PO-Revision-Date: 2022-03-14 14:50+0000\n"
 "Last-Translator: Sean Zeng <dogeystamp@disroot.org>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/f-droid/website-docs/fr/>\n"
@@ -7821,6 +7821,83 @@ msgstr ""
 #. type: Plain text
 #: _docs/Publishing_Nightly_Builds.md
 msgid "For a real world example using _gitlab-ci_, see _fdroidclient_: * <https://gitlab.com/fdroid/fdroidclient-nightly> * <https://gitlab.com/fdroid/fdroidclient/blob/master/.gitlab-ci.yml>"
+msgstr ""
+
+#. type: Title ##
+#: _docs/Publishing_Nightly_Builds.md
+#, no-wrap
+msgid "Configuring for GitHub Actions"
+msgstr ""
+
+#. type: Plain text
+#: _docs/Publishing_Nightly_Builds.md
+msgid "GitHub and GitHub Actions are both proprietary platforms that are widely used to develop free software.  Since F-Droid does not promote proprietary software, there is no official support for GitHub Actions.  All of the F-Droid tooling is free software, so contributors have made a GitHub Action based on the F-Droid tools."
+msgstr ""
+
+#. type: Bullet: '2. '
+#: _docs/Publishing_Nightly_Builds.md
+msgid "Create a new GitHub \"project\" by appending _-nightly_ to the name. For example, <https://github.com/f-droid/fdroidclient> becomes <https://github.com/f-droid/fdroidclient-nightly> and <https://github.com/eighthave/fdroidclient> becomes <https://github.com/eighthave/fdroidclient-nightly>"
+msgstr ""
+
+#. type: Bullet: '3. '
+#: _docs/Publishing_Nightly_Builds.md
+msgid "In that new project, add the SSH Public Key derived from your _debug.keystore_ as a Deploy Key in your Security settings, e.g.  `https://github.com/eighthave/fdroidclient-nightly/settings/keys`"
+msgstr ""
+
+#. type: Bullet: '4. '
+#: _docs/Publishing_Nightly_Builds.md
+msgid "In the Settings of the project being built, find \"Actions\" under \"Secrets\" in the \"Security\" section.  Paste the whole `DEBUG_KEYSTORE` output line into a new repository secret called `DEBUG_KEYSTORE`, e.g.  `https://github.com/eighthave/fdroidclient/settings/secrets/actions`."
+msgstr ""
+
+#. type: Bullet: '5. '
+#: _docs/Publishing_Nightly_Builds.md
+msgid "Add a _nightly_ stage to your _.github/workflows/_ that produces only the build to publish to the nightly, then runs `fdroid nightly`. For example:"
+msgstr ""
+
+#. type: Fenced code block (yaml)
+#: _docs/Publishing_Nightly_Builds.md
+#, no-wrap
+msgid ""
+"name: Publish nightly build\n"
+"\n"
+"on:\n"
+"  push:\n"
+"    branches:\n"
+"      - main\n"
+"\n"
+"jobs:\n"
+"  nightly:\n"
+"    name: Publish nightly build\n"
+"    runs-on: ubuntu-latest\n"
+"    environment: nightly\n"
+"    steps:\n"
+"      - name: Checkout\n"
+"        uses: actions/checkout@v2\n"
+"      - name: Gradle Wrapper Validation\n"
+"        uses: gradle/wrapper-validation-action@v1\n"
+"      - name: Set up JDK 11\n"
+"        uses: actions/setup-java@v2\n"
+"        with:\n"
+"          distribution: 'adopt'\n"
+"          java-version: 11\n"
+"      - name: Build\n"
+"        run: |\n"
+"          # use timestamp as Version Code\n"
+"          export versionCode=$(date '+%s')\n"
+"          sed -i \"s,^\\(\\s*versionCode\\)  *[0-9].*,\\1 $versionCode,\" app/build.gradle\n"
+"          ./gradlew assembleDebug\n"
+"      - name: fdroid nightly\n"
+"        run: |\n"
+"          sudo add-apt-repository ppa:fdroid/fdroidserver\n"
+"          sudo apt-get update\n"
+"          sudo apt-get install apksigner fdroidserver --no-install-recommends\n"
+"          export DEBUG_KEYSTORE=${{ secrets.DEBUG_KEYSTORE }}\n"
+"          fdroid nightly --archive-older 10\n"
+msgstr ""
+
+#. type: Plain text
+#: _docs/Publishing_Nightly_Builds.md
+msgid "There is an alternate approach based on Docker maintained by @wardvl: [wardvl/f-droid-nightly-action](https://github.com/wardvl/f-droid-nightly-action/)"
 msgstr ""
 
 #. type: Title ##
