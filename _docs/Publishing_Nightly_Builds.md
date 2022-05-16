@@ -104,6 +104,81 @@ For a real world example using _gitlab-ci_, see _fdroidclient_:
 * <https://gitlab.com/fdroid/fdroidclient/blob/master/.gitlab-ci.yml>
 
 
+## Configuring for GitHub Actions
+
+GitHub and GitHub Actions are both proprietary platforms that are widely used to
+develop free software.  Since F-Droid does not promote proprietary software,
+there is no official support for GitHub Actions.  All of the F-Droid tooling is
+free software, so contributors have made a GitHub Action based on the F-Droid
+tools.
+
+1. Run `fdroid nightly --show-secret-var` in the local git repo that is being
+   setup, e.g. _fdroid/fdroidclient_.  It will print out the SSH Public Key.
+   Using `--show-secret-var` will make it print out base 64 text to be pasted
+   into secret variable called `DEBUG_KEYSTORE`.  Careful!  That text is the
+   entire _debug.keystore_, so protect it accordingly!
+
+2. Create a new GitHub "project" by appending _-nightly_ to the
+   name. For example, <https://github.com/f-droid/fdroidclient> becomes
+   <https://github.com/f-droid/fdroidclient-nightly> and
+   <https://github.com/eighthave/fdroidclient> becomes
+   <https://github.com/eighthave/fdroidclient-nightly>
+
+3. In that new project, add the SSH Public Key derived from your
+   _debug.keystore_ as a Deploy Key in your Security settings, e.g.
+   `https://github.com/eighthave/fdroidclient-nightly/settings/keys`
+
+4. In the Settings of the project being built, find "Actions" under "Secrets" in
+   the "Security" section.  Paste the whole `DEBUG_KEYSTORE` output line into a
+   new repository secret called `DEBUG_KEYSTORE`, e.g.
+   `https://github.com/eighthave/fdroidclient/settings/secrets/actions`.
+
+5. Add a _nightly_ stage to your _.github/workflows/_ that produces only
+   the build to publish to the nightly, then runs `fdroid
+   nightly`. For example:
+
+```yaml
+name: Publish nightly build
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  nightly:
+    name: Publish nightly build
+    runs-on: ubuntu-latest
+    environment: nightly
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Gradle Wrapper Validation
+        uses: gradle/wrapper-validation-action@v1
+      - name: Set up JDK 11
+        uses: actions/setup-java@v2
+        with:
+          distribution: 'adopt'
+          java-version: 11
+      - name: Build
+        run: |
+          # use timestamp as Version Code
+          export versionCode=$(date '+%s')
+          sed -i "s,^\(\s*versionCode\)  *[0-9].*,\1 $versionCode," app/build.gradle
+          ./gradlew assembleDebug
+      - name: fdroid nightly
+        run: |
+          sudo add-apt-repository ppa:fdroid/fdroidserver
+          sudo apt-get update
+          sudo apt-get install apksigner fdroidserver --no-install-recommends
+          export DEBUG_KEYSTORE=${{ secrets.DEBUG_KEYSTORE }}
+          fdroid nightly --archive-older 10
+```
+
+There is an alternate approach based on Docker maintained by @wardvl:
+[wardvl/f-droid-nightly-action](https://github.com/wardvl/f-droid-nightly-action/)
+
+
 ## Configuring for GitHub and Travis CI
 
 1. Generate a new _debug.keystore_ for each app, since GitHub only
