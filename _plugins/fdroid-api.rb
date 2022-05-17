@@ -23,7 +23,7 @@ module Jekyll
       json = {
         'packageName' => data['package_name'],
         'suggestedVersionCode' => data['suggested_version_code'],
-        'versions' => data.fetch('versions', []).map do |versions|
+        'packages' => data.fetch('versions', []).map do |versions|
           {
             'versionName' => versions['version_name'],
             'versionCode' => versions['version_code']
