@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+#
+# For rapid development:
+#  while inotifywait -e CLOSE_NOWRITE tools/check-do-not-translate ; do git checkout -- po/*.po*; black --skip-string-normalization tools/check-do-not-translate && tools/check-do-not-translate ; git --no-pager diff -- po/; done
 
 import glob
 import os
@@ -32,6 +35,7 @@ force_dnt = [
     r'''"<tt>issuebot</tt>"''',
     r'''"\$ echo export ANDROID_HOME=\$ANDROID_HOME >> \.bashrc\\n"''',
     r'''"\$ fdroid rewritemeta --to yml\\n"''',
+    r'''"\$ rsync -.+?\\n"''',
     r'''"\[GitHub Sponsors\]\(https://docs.github.com/en/billing/managing-billing-for-github-sponsors/about-billing-for-github-sponsors\)"''',
     r'''"\[Liberapay\]\(https://liberapay.com/about/faq#fees\)"''',
     r'''"\[Open Collective Europe ASBL\]\(https://opencollective.com/europe\)"''',
