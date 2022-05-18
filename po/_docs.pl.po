@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
 "POT-Creation-Date: 2022-05-16 21:26+0200\n"
-"PO-Revision-Date: 2022-05-11 21:55+0000\n"
+"PO-Revision-Date: 2022-05-19 17:17+0000\n"
 "Last-Translator: rehork <cooky@e.email>\n"
 "Language-Team: Polish <https://hosted.weblate.org/projects/f-droid/website-docs/pl/>\n"
 "Language: pl\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 4.12.1\n"
+"X-Generator: Weblate 4.13-dev\n"
 
 #. type: YAML Front Matter: title
 #: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
@@ -8116,43 +8116,34 @@ msgstr "Na przykład w realu za pomocą _gitlab-ci_, see _fdroidclient_: * <http
 
 #. type: Title ##
 #: _docs/Publishing_Nightly_Builds.md
-#, fuzzy, no-wrap
-#| msgid "Configuring for GitHub and Travis CI"
+#, no-wrap
 msgid "Configuring for GitHub Actions"
-msgstr "Konfiguracja dla GitHub i Travis CI"
+msgstr "Konfiguracja dla GitHub Actions"
 
 #. type: Plain text
 #: _docs/Publishing_Nightly_Builds.md
 msgid "GitHub and GitHub Actions are both proprietary platforms that are widely used to develop free software.  Since F-Droid does not promote proprietary software, there is no official support for GitHub Actions.  All of the F-Droid tooling is free software, so contributors have made a GitHub Action based on the F-Droid tools."
-msgstr ""
+msgstr "GitHub i AGitHub Actions są prawnie zastrzeżonymi platformami, które są powszechnie używane do tworzenia wolnego oprogramowania.  Ponieważ F-Droid nie promuje prawnie zastrzeżonego oprogramowania, nie ma oficjalnego wsparcia dla GitHub Actions.  Wszystkie narzędzia F-Droid są wolnym oprogramowaniem, więc współtwórcy stworzyli GitHub Action oparty na narzędziach F-Droid."
 
 #. type: Bullet: '2. '
 #: _docs/Publishing_Nightly_Builds.md
-#, fuzzy
-#| msgid "Create a new GitLab \"project\" by appending _-nightly_ to the name. For example, <https://gitlab.com/fdroid/fdroidclient> becomes <https://gitlab.com/fdroid/fdroidclient-nightly> and <https://gitlab.com/eighthave/fdroidclient> becomes <https://gitlab.com/eighthave/fdroidclient-nightly>"
 msgid "Create a new GitHub \"project\" by appending _-nightly_ to the name. For example, <https://github.com/f-droid/fdroidclient> becomes <https://github.com/f-droid/fdroidclient-nightly> and <https://github.com/eighthave/fdroidclient> becomes <https://github.com/eighthave/fdroidclient-nightly>"
-msgstr "Utwórz nowy \"projekt\" GitLab, dołączając _-nightly_ do nazwy. Na przykład <https://gitlab.com/fdroid/fdroidclient> staje się <https://gitlab.com/fdroid/fdroidclient-nightly> i <https://gitlab.com/eighthave/fdroidclient> staje się <https://gitlab.com/eighthave/fdroidclient-nightly>"
+msgstr "Utwórz nowy \"projekt\" GitHub, dołączając _-nightly_ do nazwy. Na przykład <https://github.com/f-droid/fdroidclient> staje się <https://github.com/f-droid/fdroidclient-nightl> i <https://github.com/eighthave/fdroidclient> staje się <https://github.com/eighthave/fdroidclient-nightly>"
 
 #. type: Bullet: '3. '
 #: _docs/Publishing_Nightly_Builds.md
-#, fuzzy
-#| msgid "In that new project, add the SSH Public Key derived from your _debug.keystore_ as a Deploy Key in your Repository Settings, e.g.  `https://gitlab.com/eighthave/fdroidclient-nightly/settings/repository`"
 msgid "In that new project, add the SSH Public Key derived from your _debug.keystore_ as a Deploy Key in your Security settings, e.g.  `https://github.com/eighthave/fdroidclient-nightly/settings/keys`"
-msgstr "W tym nowym projekcie dodaj klucz publiczny SSH uzyskany z pliku _debug.keystore_ jako klucz wdrożenia w ustawieniach repozytorium, np. `https://gitlab.com/eighthave/fdroidclient-nightly/settings/repository`"
+msgstr "W tym nowym projekcie dodaj klucz publiczny SSH uzyskany z pliku _debug.keystore_ jako klucz wdrożenia w ustawieniach bezpieczeństwa, np. `https://github.com/eighthave/fdroidclient-nightly/settings/keys`"
 
 #. type: Bullet: '4. '
 #: _docs/Publishing_Nightly_Builds.md
-#, fuzzy
-#| msgid "In the CI/CD Settings of the project being built, paste that into GitLab CI Secret Variable called `DEBUG_KEYSTORE`, e.g.  `https://gitlab.com/eighthave/fdroidclient/settings/ci_cd`"
 msgid "In the Settings of the project being built, find \"Actions\" under \"Secrets\" in the \"Security\" section.  Paste the whole `DEBUG_KEYSTORE` output line into a new repository secret called `DEBUG_KEYSTORE`, e.g.  `https://github.com/eighthave/fdroidclient/settings/secrets/actions`."
-msgstr "W ustawieniach CI/CD tworzonego projektu wklej go do tajnej zmiennej GitLab CI o nazwie 'DEBUG_KEYSTORE', np.  `https://gitlab.com/eighthave/fdroidclient/settings/ci_cd`"
+msgstr "W Ustawieniach budowanego projektu, znajdź \"Actions\" pod \"Secrets\" w sekcji \"Security\".  Wklej całą linię wyjściową `DEBUG_KEYSTORE` do nowego sekretu repozytorium o nazwie `DEBUG_KEYSTORE`, np. `https://github.com/eighthave/fdroidclient/settings/secrets/actions`."
 
 #. type: Bullet: '5. '
 #: _docs/Publishing_Nightly_Builds.md
-#, fuzzy
-#| msgid "Add a _deploy_ stage to your _.gitlab-ci.yml_ that produces only the build to publish to the nightly, then runs `fdroid nightly`. For example:"
 msgid "Add a _nightly_ stage to your _.github/workflows/_ that produces only the build to publish to the nightly, then runs `fdroid nightly`. For example:"
-msgstr "Dodaj _deploy_ stage do twojego _.gitlab-ci.yml_, który produkuje tylko kompilację do publikowania w nocy, a następnie uruchamia `fdroid nightly`. Na przykład:"
+msgstr "Dodaj etap _nightly_ do twojego_.github/workflows/_, który produkuje tylko kompilację do publikowania w nocy, a następnie uruchamia `fdroid nightly`. Na przykład:"
 
 #. type: Fenced code block (yaml)
 #: _docs/Publishing_Nightly_Builds.md
@@ -8194,11 +8185,46 @@ msgid ""
 "          export DEBUG_KEYSTORE=${{ secrets.DEBUG_KEYSTORE }}\n"
 "          fdroid nightly --archive-older 10\n"
 msgstr ""
+"name: Publish nightly build\n"
+"\n"
+"on:\n"
+"  push:\n"
+"    branches:\n"
+"      - main\n"
+"\n"
+"jobs:\n"
+"  nightly:\n"
+"    name: Publish nightly build\n"
+"    runs-on: ubuntu-latest\n"
+"    environment: nightly\n"
+"    steps:\n"
+"      - name: Checkout\n"
+"        uses: actions/checkout@v2\n"
+"      - name: Gradle Wrapper Validation\n"
+"        uses: gradle/wrapper-validation-action@v1\n"
+"      - name: Set up JDK 11\n"
+"        uses: actions/setup-java@v2\n"
+"        with:\n"
+"          distribution: 'adopt'\n"
+"          java-version: 11\n"
+"      - name: Build\n"
+"        run: |\n"
+"          # use timestamp as Version Code\n"
+"          export versionCode=$(date '+%s')\n"
+"          sed -i \"s,^\\(\\s*versionCode\\)  *[0-9].*,\\1 $versionCode,\" app/build.gradle\n"
+"          ./gradlew assembleDebug\n"
+"      - name: fdroid nightly\n"
+"        run: |\n"
+"          sudo add-apt-repository ppa:fdroid/fdroidserver\n"
+"          sudo apt-get update\n"
+"          sudo apt-get install apksigner fdroidserver --no-install-recommends\n"
+"          export DEBUG_KEYSTORE=${{ secrets.DEBUG_KEYSTORE }}\n"
+"          fdroid nightly --archive-older 10\n"
 
 #. type: Plain text
 #: _docs/Publishing_Nightly_Builds.md
 msgid "There is an alternate approach based on Docker maintained by @wardvl: [wardvl/f-droid-nightly-action](https://github.com/wardvl/f-droid-nightly-action/)"
-msgstr ""
+msgstr "Istnieje alternatywne podejście oparte na Dockerze utrzymywane przez @wardvl: [wardvl/f-droid-nightly-action](https://github.com/wardvl/f-droid-nightly-action/)"
 
 #. type: Title ##
 #: _docs/Publishing_Nightly_Builds.md
