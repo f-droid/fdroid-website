@@ -223,3 +223,21 @@ check_fdroid_apk_bot:
           $pip install python-gitlab;
           ./tools/run-check-fdroid-apk-bot.py;
       )
+
+
+# basic checks for dev setup
+Vagrantfile:
+  stage: deploy
+  image: debian:bullseye-slim
+  only:
+    changes:
+      - .gitlab-ci.yml
+      - Vagrantfile
+  script:
+    - apt-get update
+    - apt-get -qy install --no-install-recommends kmod procps ruby vagrant vagrant-libvirt
+    - export EXITVALUE=0
+    - function set_error() { export EXITVALUE=1; printf "\x1b[31mERROR `history|tail -2|head -1|cut -b 6-500`\x1b[0m\n"; }
+    - ruby -c Vagrantfile || set_error
+    - vagrant validate || set_error;
+    - exit $EXITVALUE
