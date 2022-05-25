@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
 "POT-Creation-Date: 2022-05-23 21:51+0200\n"
-"PO-Revision-Date: 2022-05-11 21:55+0000\n"
+"PO-Revision-Date: 2022-05-26 11:11+0000\n"
 "Last-Translator: rehork <cooky@e.email>\n"
 "Language-Team: Polish <https://hosted.weblate.org/projects/f-droid/website-posts/pl/>\n"
 "Language: pl\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 4.12.1\n"
+"X-Generator: Weblate 4.13-dev\n"
 
 #. type: YAML Front Matter: title
 #: _posts/2017-02-20-f-droid-supports-apk-expansion-files-aka-obb.md
@@ -17652,32 +17652,32 @@ msgstr "Doceniamy również rozpowszechnianie informacji o F-Droid, więc nie kr
 #: _posts/2022-05-24-buildserver-overhaul-sponsored-by-calyx-institute.md
 #, no-wrap
 msgid "Our build and release infrastructure, and upcoming updates"
-msgstr ""
+msgstr "Nasza infrastruktura budowania i wydawania oraz nadchodzące aktualizacje"
 
 #. type: Plain text
 #: _posts/2022-05-24-buildserver-overhaul-sponsored-by-calyx-institute.md
 msgid "Behind the scenes of F-Droid is a giant pile of automation to manage the process of building thousands of apps from source.  This means checking out thousands of source repos, checking them all for updates, building and new releases, and securely signing them en masse.  All builds are run in a fresh virtual machine guest instance known as the [_buildserver_](https://gitlab.com/fdroid/fdroidserver/-/tree/master/buildserver).  All Gradle binaries and Android SDK packages are verified against our [public](https://gitlab.com/fdroid/android-sdk-transparency-log) [logs](https://gitlab.com/fdroid/gradle-transparency-log) of observed SHA-256 checksums.  The transparency log processes also verify against upstream's [public checksums](https://gradle.org/release-checksums/)."
-msgstr ""
+msgstr "Za kulisami F-Droid stoi ogromny stos automatyzacji do zarządzania procesem budowania tysięcy aplikacji ze źródeł.  Oznacza to sprawdzanie tysięcy repozytoriów źródłowych, sprawdzanie ich wszystkich pod kątem aktualizacji, budowanie i nowe wydania oraz bezpieczne podpisywanie ich masowo.  Wszystkie kompilacje są uruchamiane w świeżej instancji gościa maszyny wirtualnej, znanej jako [_buildserver_](https://gitlab.com/fdroid/fdroidserver/-/tree/master/buildserver).  Wszystkie binarki Gradle i pakiety SDK Androida są weryfikowane na podstawie naszych [publicznych](https://gitlab.com/fdroid/android-sdk-transparency-log) [logów](https://gitlab.com/fdroid/gradle-transparency-log) obserwowanych sum kontrolnych SHA-256.  Procesy dziennika przezroczystości są również weryfikowane na podstawie [publicznych sum kontrolnych](https://gradle.org/release-checksums/)."
 
 #. type: Plain text
 #: _posts/2022-05-24-buildserver-overhaul-sponsored-by-calyx-institute.md
 msgid "Our setup runs on Debian almost exclusively.  Debian is a leader in free software, rock solid servers, and reproducible builds.  That makes it a natural home for F-Droid.  We also work to ensure we maintain the packages we use, and build our processes on top of Debian packages.  That means we share the maintenance with anything that uses Debian.  It may seem like more work to give back, but our experience is that it pays off in the long run.  The F-Droid community is able to maintain many things with a small team.  Another example of this is this website itself: it is built using Jekyll packages that are all in Debian."
-msgstr ""
+msgstr "Nasza konfiguracja działa prawie wyłącznie na Debianie.  Debian jest liderem w dziedzinie wolnego oprogramowania, solidnych serwerów i powtarzalnych kompilacji.  To czyni go naturalnym domem dla F-Droida.  Staramy się również dbać o pakiety, z których korzystamy, a także budować nasze procesy na pakietach Debiana.  Oznacza to, że dzielimy się opieką nad wszystkim, co używa Debiana.  Może się wydawać, że to więcej pracy, ale z naszego doświadczenia wynika, że to się opłaca na dłuższą metę.  Społeczność F-Droid jest w stanie utrzymać wiele rzeczy przy pomocy małego zespołu.  Kolejnym tego przykładem jest ta strona: jest zbudowana przy użyciu pakietów Jekyll, które są w całości Debianowe."
 
 #. type: Plain text
 #: _posts/2022-05-24-buildserver-overhaul-sponsored-by-calyx-institute.md
 msgid "If you have an app on f-droid.org, you might have noticed that all builds happen on a 5 year old Debian release: _stretch_.  We are in the midst of a [big effort](https://gitlab.com/groups/fdroid/-/milestones/5) to upgrade to the latest _bullseye_ release right now.  This is not just a simple `apt-get upgrade`, we are also taking this opportunity to overhaul the build process so that app builds work with a relatively plain Debian install as the base OS.  We have to provide a platform to build thousands of apps, so we cannot just upgrade the base image as often as we like.  Some apps need the latest, greatest.  Other apps need the ancient, stable base OS.  This change means that the [metadata]({{ site.baseurl }}/docs/Build_Metadata_Reference) contains as much of the build logic as possible, so that the app maintainer has control over all the steps.  To achieve this, as much as possible is being stripped out of the from the _buildserver_ base image."
-msgstr ""
+msgstr "Jeśli masz aplikację na f-droid.org, mogłeś zauważyć, że wszystkie kompilacje odbywają się na 5-letnim wydaniu Debiana: _stretch_.  Obecnie jesteśmy w trakcie [wielkiego wysiłku](https://gitlab.com/groups/fdroid/-/milestones/5), aby zaktualizować system do najnowszej wersji _bullseye_.  Nie jest to tylko prosta `aktualizacja doapt-get`, korzystamy również z okazji, aby przerobić proces kompilacji, tak aby kompilacje aplikacji działały na stosunkowo prostej instalacji Debiana, jako bazowego systemu operacyjnego.  Musimy zapewnić platformę do budowania tysięcy aplikacji, więc nie możemy po prostu aktualizować bazowego obrazu systemu tak często, jak nam się podoba.  Niektóre aplikacje potrzebują najnowszego, najwspanialszego.  Inne aplikacje potrzebują starego, stabilnego systemu bazowego.  Ta zmiana oznacza, że [metadane]({{ site.baseurl }}/docs/Build_Metadata_Reference) zawierają jak najwięcej logiki budowania, tak aby opiekun aplikacji miał kontrolę nad wszystkimi krokami.  Aby to osiągnąć, z obrazu bazowego _buildserver_ usuwamy tak wiele, jak to tylko możliwe."
 
 #. type: Plain text
 #: _posts/2022-05-24-buildserver-overhaul-sponsored-by-calyx-institute.md
 msgid "We have considered offering a selection of base images.  This is a possible solution, but it is not easy as just using any available Docker image.  Only base images that are guaranteed to be free software are appropriate.  Just pointing to any Docker image would open up the possibility of proprietary build dependencies, since it is not possible to automatically check whether any Docker image is 100% free software.  Using a selection of pre-approved base boxes could solve that.  Keep in mind, this is more complex than with GNU/Linux distros since Android apps are cross-compiled.  GNU/Linux distros build their packages on their own OS.  During builds, Debian does not even allow network access since all dependencies need to come from Debian packages.  That level of verification is a goal of F-Droid, and [Maven](https://maven.apache.org/guides/mini/guide-reproducible-builds.html)'s work towards a reproducible [Maven Central](https://reproducible-builds.org/docs/jvm/) ecosystem helps a lot."
-msgstr ""
+msgstr "Rozważaliśmy zaoferowanie wyboru obrazów bazowych.  Jest to możliwe rozwiązanie, ale nie jest ono proste, ponieważ wystarczy użyć dowolnego dostępnego obrazu Dockera.  Odpowiednie są tylko obrazy bazowe, które mają gwarancję, że są wolnym oprogramowaniem.  Wskazanie dowolnego obrazu Dockera otworzyłoby możliwość wystąpienia własnościowych zależności kompilacji, ponieważ nie jest możliwe automatyczne sprawdzenie, czy obraz Dockera jest w 100% wolnym oprogramowaniem.  Rozwiązaniem tego problemu może być użycie wybranych, wstępnie zatwierdzonych kontenerów bazowych.  Pamiętajcie, że jest to bardziej skomplikowane niż w przypadku dystrybucji GNU/Linuksa, ponieważ aplikacje na Androida są kompilowane krzyżowo.  Dystrybucje GNU/Linux budują swoje pakiety na własnym systemie operacyjnym.  Podczas budowania Debian nie pozwala nawet na dostęp do sieci, ponieważ wszystkie zależności muszą pochodzić z pakietów Debiana.  Taki poziom weryfikacji jest celem F-Droid, a praca [Maven](https://maven.apache.org/guides/mini/guide-reproducible-builds.html)'nad odtwarzalnym ekosystemem [Maven Central](https://reproducible-builds.org/docs/jvm/) bardzo w tym pomaga."
 
 #. type: Plain text
 #: _posts/2022-05-24-buildserver-overhaul-sponsored-by-calyx-institute.md
 msgid "Since [CalyxOS](https://calyxos.org/) builds in F-Droid by default, [Calyx Institute](https://calyxinstitute.org/) also want to ensure that F-Droid is running smoothly, and that app developers are happy.  I would like to thank Calyx Institute for sponsoring 42 hours a month of my time to work on making our build infrastructure run smoothly.  Additionally, I will be working on improving the automation of the signing process.  Our signing process is currently 100% offline.  While this is nice for security, it does slow down the release process.  With modern hardware security modules and server setups, it is possible to have good security without being 100% offline.  Having signing automation then opens up possibilities for parallelizing the whole process, including running multiple app builds, and also, running the main steps of building, index generating, and signing all in parallel.  This work will be incrementally deployed as each bit is finished. So be patient, and you will notice releases happening faster and faster!"
-msgstr ""
+msgstr "Ponieważ [CalyxOS](https://calyxos.org/) domyślnie buduje się w F-Droid, [Instytut Calyx](https://calyxinstitute.org/) chce również zapewnić, że F-Droid działa płynnie, a twórcy aplikacji są zadowoleni.  Chciałbym podziękować Instytutowi Calyx za sponsorowanie 42 godzin miesięcznie mojego czasu na pracę nad sprawnym działaniem naszej infrastruktury budowania.  Dodatkowo będę pracował nad poprawą automatyzacji procesu podpisywania.  Obecnie nasz proces podpisywania jest w 100% offline.  Jest to dobre rozwiązanie z punktu widzenia bezpieczeństwa, ale spowalnia proces wydawania.  Dzięki nowoczesnym modułom bezpieczeństwa sprzętu i konfiguracjom serwerów możliwe jest zapewnienie dobrego bezpieczeństwa bez bycia w 100% offline.  Automatyzacja podpisywania otwiera możliwości pracy równoległej całego procesu, w tym uruchamiania wielu buildów aplikacji, a także równoległego wykonywania głównych etapów budowania, generowania indeksów i podpisywania.  Praca ta będzie wdrażana stopniowo, w miarę jak każdy jej fragment będzie kończony. Bądźcie więc cierpliwi, a zauważycie, że wydania będą pojawiać się coraz szybciej!"
 
 #~ msgid "[^1]: I guess they're even more by now: `git clone https://gitlab.com/fdroid/fdroiddata;cd fdroiddata;git shortlog -s -n`"
 #~ msgstr "[^1]: Domyślam się, że teraz jest ich jeszcze więcej: `git clone https://gitlab.com/fdroid/fdroiddata;cd fdroiddata;git shortlog -s -n`"
