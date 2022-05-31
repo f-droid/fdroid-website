@@ -95,8 +95,8 @@ This is a nonexhaustive list of what a reviewer would do:
     your application.
 -   They will skim through the source code to see if your application
     uses Non-Free dependencies, shows advertisements, tracks users,
-    promotes Non-Free services/applications, or does anything that is
-    harmful or otherwise undesirable for users.
+    promotes or depends on Non-Free services/applications, or does
+    anything that is harmful or otherwise undesirable for users.
 -   They will list a summary of any [_AntiFeatures_](https://monitor.f-droid.org/anti-features) in
     your application.
 -   They will try patching your application to remove usage of
