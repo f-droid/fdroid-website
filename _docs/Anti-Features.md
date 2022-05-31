@@ -36,7 +36,7 @@ are shipping:
 
 * [Ads](#Ads) - advertising
 * [Tracking](#Tracking) - tracks and/or reports your activity to somewhere, even when it can be turned off
-* [Non-Free Network Services](#NonFreeNet) - promotes or depends entirely on a non-libre network service
+* [Non-Free Network Services](#NonFreeNet) - promotes or depends entirely on a non-free network service
 * [Non-Free Addons](#NonFreeAdd) - promotes other non-libre apps or plugins
 * [Non-Free Dependencies](#NonFreeDep) - needs a non-libre app to work (e.g. Google Maps, Market)
 * [NSFW](#NSFW) - contains content that the user may not want to be publicized or visible everywhere
