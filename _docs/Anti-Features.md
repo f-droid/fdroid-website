@@ -95,7 +95,11 @@ Here's the list of [apps with Tracking](https://monitor.f-droid.org/anti-feature
 ### Non-Free Network Services<a name="NonFreeNet" />
 
 This Anti-Feature is applied to apps that promote or depend entirely on
-a Non-Free network service.
+a Non-Free network service which is impossible, or not easy to replace.
+Replacement requires changes to the app or service. This antifeature would
+not apply, if there is a simple configuration option that allows pointing the
+app to a running instance of an alternative, publicly available, self-hostable,
+free software server solution.
 
 Here's the list of [apps with Non-Free Network Services](https://monitor.f-droid.org/anti-feature/NonFreeNet).
 
