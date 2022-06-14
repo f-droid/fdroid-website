@@ -143,7 +143,7 @@ fdroid readmeta
 fdroid rewritemeta com.example
 fdroid checkupdates --allow-dirty com.example
 fdroid lint com.example
-fdroid build --on-server com.example
+fdroid build com.example
 ```
 
 If any command, such as `fdroid readmeta`, returns an error, edit
