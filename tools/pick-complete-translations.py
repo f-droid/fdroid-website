@@ -44,7 +44,7 @@ r.raise_for_status()
 pages = r.json()
 
 with open(os.path.join(projectbasedir, '_config.yml')) as fp:
-    site_languages = yaml.load(fp)['languages']
+    site_languages = yaml.safe_load(fp)['languages']
 
 strings_entries = dict()
 pages_entries = dict()
