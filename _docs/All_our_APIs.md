@@ -51,15 +51,34 @@ This API is already used by shields.io project to provide F-Droid badges, [like 
 
 F-Droid is built around a signed index of all the apps and packages that are
 available.  This is a JSON file, though more of an index than an API since all
-the information is distributed via a single file.  The repo index is in the form
-of a signed JAR file that contains _index-v1.json_.  The best method is to
-verify the JAR signature, then extract _index-v1.json_ if it validates. The
-_fdroidserver_ Python library provides `fdroidserver.download_repo_index()` to
-make this easy to do.  It is also possible to just read _index-v1.json_ using
-any ZIP library.
+the information is distributed via a single file.
+* <https://f-droid.org/repo/index-v2.json>
+* <https://f-droid.org/repo/index-v1.json>
+* <https://f-droid.org/archive/index-v2.json>
+* <https://f-droid.org/archive/index-v1.json>
+
+As of index-v2, there is support for files that only contain the changes, known
+as "diff" files.  There is also a separate entry point, which is signed by a JAR
+and a GPG signature and lists the available index and diff files.
+
+* <https://f-droid.org/repo/entry.jar>
+* <https://f-droid.org/repo/entry.json>
+* <https://f-droid.org/repo/entry.json.asc>
+
+The v1 repo index formats come in the form of a signed JAR file that
+contains _index-v1.json_.  The best method is to verify the JAR signature, then
+extract _index-v1.json_ if it validates. The _fdroidserver_ Python library
+provides `fdroidserver.download_repo_index()` to make this easy to do.
 
 * <https://f-droid.org/repo/index-v1.jar>
 * <https://f-droid.org/archive/index-v1.jar>
+
+There are also GPG signatures for verifying the JSON files:
+
+* <https://f-droid.org/repo/index-v2.json.asc>
+* <https://f-droid.org/repo/index-v1.json.asc>
+* <https://f-droid.org/archive/index-v2.json.asc>
+* <https://f-droid.org/archive/index-v1.json.asc>
 
 
 ###  App build metadata
