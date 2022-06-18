@@ -382,6 +382,15 @@ Header always set X-Frame-Options: "sameorigin"
 #
 Header always set X-Xss-Protection: "1; mode=block"
 
+#
+# Publish official F-Droid onion adress. This header will make the
+# ".onion-available" button in Tor Browser show up. It's also good practice to
+# help users discover/verify our official onion adress this way.
+# also see:
+# https://community.torproject.org/onion-services/advanced/onion-location/
+#
+Header always set Onion-Location: "http://fdroidorg6cooksyluodepej4erfctzk7rrjpjbbr6wx24jh3lqyfwyd.onion%{REQUEST_URI}s"
+
 </FilesMatch>
 
 # make admin@f-droid.org PGP key available via Web Key Directory
