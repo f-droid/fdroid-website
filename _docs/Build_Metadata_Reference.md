@@ -1038,7 +1038,7 @@ build.gradle file does not contain the package name.
 
 ### _UpdateCheckData_<a name="UpdateCheckData"></a>
 
-Used in conjunction with _UpdateCheckMode_ `Tag` or `HTTP`.
+Used in conjunction with _UpdateCheckMode_ `Tags` or `HTTP`.
 
 ```
 UpdateCheckData: <vercode-location>|<RegEx-for-versionCode>|<versionName-location>|<RegEx-for-versionName>
@@ -1048,13 +1048,13 @@ UpdateCheckData: <vercode-location>|<RegEx-for-versionCode>|<versionName-locatio
     relative to repo root, leave empty to check the tag name instead (with
     `UpdateCheckMode: Tags`).
 -   `RegEx-for-versionCode` - RegEx to match versionCode.
--   `versionName-location` - Same as vercode-location just for versionName. A .
+-   `versionName-location` - Same as vercode-location just for versionName. A `.`
     means to take vercode-location, leave empty to check the tag name instead
     (only with `UpdateCheckMode: Tags`).
 -   `RegEx-for-versionName` - Similar to RegEx-for-versionCode, just for versionName.
 -   RegEx pipe operators are not supported at this time.
 
-Examples for `UpdateCheckMode: Tag`:
+Examples for `UpdateCheckMode: Tags`:
 -   Flutter app with the `pubspec.yaml` in the repo root:
     `pubspec.yaml|version:\s.+\+(\d+)|.|version:\s(.+)\+`
 -   Use the git tag as version name:
