@@ -512,6 +512,8 @@ msgid ""
 "HTTP/1.1 200 OK\n"
 "Content-Type: application/json; charset=utf-8\n"
 msgstr ""
+"HTTP/1.1 200 OK\n"
+"Content-Type: application/json; charset=utf-8\n"
 
 #. type: Fenced code block (json)
 #: _docs/All_our_APIs.md
@@ -7008,7 +7010,7 @@ msgid ""
 msgstr ""
 "pyvenv fdroidserver-env\n"
 ". fdroidserver-env/bin/activate\n"
-"pip3 install fdroidserver\n"
+"pip install git+https://gitlab.com/fdroid/fdroidserver.git\n"
 
 #. type: Plain text
 #: _docs/Installing_the_Server_and_Repo_Tools.md
@@ -9920,6 +9922,14 @@ msgid ""
 "fdroid lint com.example\n"
 "fdroid build com.example\n"
 msgstr ""
+". /etc/profile\n"
+"export PATH=\"$fdroidserver:$PATH\" PYTHONPATH=\"$fdroidserver\"\n"
+"cd /build\n"
+"fdroid readmeta\n"
+"fdroid rewritemeta com.example\n"
+"fdroid checkupdates --allow-dirty com.example\n"
+"fdroid lint com.example\n"
+"fdroid build com.example\n"
 
 #. type: Plain text
 #: _docs/Submitting_to_F-Droid_Quick_Start_Guide.md
