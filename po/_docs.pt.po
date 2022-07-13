@@ -9,7 +9,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2022-06-17 10:53+0200\n"
+"POT-Creation-Date: 2022-07-13 09:57-0700\n"
 "PO-Revision-Date: 2022-06-25 12:19+0000\n"
 "Last-Translator: SC <lalocas@protonmail.com>\n"
 "Language-Team: Portuguese <https://hosted.weblate.org/projects/f-droid/website-docs/pt/>\n"
@@ -3884,8 +3884,8 @@ msgstr "_Dados de Verificação de Atualização_<a name=\"UpdateCheckData\"></a
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-msgid "Used in conjunction with _UpdateCheckMode_ `Tag` or `HTTP`."
-msgstr "Usado em conjunto com _UpdateCheckMode_ `Tag` ou `HTTP`."
+msgid "Used in conjunction with _UpdateCheckMode_ `Tags` or `HTTP`."
+msgstr "Usado em conjunto com _UpdateCheckMode_ `Tags` ou `HTTP`."
 
 #. type: Fenced code block
 #: _docs/Build_Metadata_Reference.md
@@ -3905,7 +3905,9 @@ msgstr "`RegEx-for-versionCode` - RegEx para corresponder ao versionCode."
 
 #. type: Bullet: '-   '
 #: _docs/Build_Metadata_Reference.md
-msgid "`versionName-location` - Same as vercode-location just for versionName. A .  means to take vercode-location, leave empty to check the tag name instead (only with `UpdateCheckMode: Tags`)."
+#, fuzzy
+#| msgid "`versionName-location` - Same as vercode-location just for versionName. A .  means to take vercode-location, leave empty to check the tag name instead (only with `UpdateCheckMode: Tags`)."
+msgid "`versionName-location` - Same as vercode-location just for versionName. A `.` means to take vercode-location, leave empty to check the tag name instead (only with `UpdateCheckMode: Tags`)."
 msgstr "`versionName-location` - O mesmo que vercode-location só para versionName. A . significa tomar vercode-location, deixar em branco para verificar o nome da tag (apenas com `UpdateCheckMode: Tags`)."
 
 #. type: Bullet: '-   '
@@ -3922,7 +3924,7 @@ msgstr "Os operadores pipe RegEx não são suportados atualmente."
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid ""
-"Examples for `UpdateCheckMode: Tag`:\n"
+"Examples for `UpdateCheckMode: Tags`:\n"
 "-   Flutter app with the `pubspec.yaml` in the repo root:\n"
 "    `pubspec.yaml|version:\\s.+\\+(\\d+)|.|version:\\s(.+)\\+`\n"
 "-   Use the git tag as version name:\n"
@@ -3934,7 +3936,7 @@ msgid ""
 "-   Note: Be sure to use *single* quotes around the entire value if you leave `vercode-location` empty:\n"
 "    `UpdateCheckData: '|\\+(\\d+)||Android-([\\d.]+)'`\n"
 msgstr ""
-"Exemplos para `UpdateCheckMode: Tag`:\n"
+"Exemplos para `UpdateCheckMode: Tags`:\n"
 "- Flutter app com o `pubspec.yaml` na raiz do repo:\n"
 "    `pubspec.yaml|version:\\s.+\\+(\\d+)|.|version:\\s(.+)\\+`\n"
 "- Use a tag git como nome da versão:\n"
@@ -7166,6 +7168,56 @@ msgstr "Idealmente:"
 #: _docs/Inclusion_Policy.md
 msgid "Releases should be clearly tagged (or otherwise marked)."
 msgstr "Lançamentos devem ser claramente marcados (ou de outra forma marcados)."
+
+#. type: Plain text
+#: _docs/Inclusion_Policy.md
+msgid "Though we tried to build everyting from source, we still need some prebuild binaries. Therefore we have some exceptions:"
+msgstr ""
+
+#. type: Bullet: '-   '
+#: _docs/Inclusion_Policy.md
+msgid "Android SDK/NDK. They are released as proprietary binaries but we don't have an alternative currently. There is in-progress work to package recent Android SDK versions in Debian."
+msgstr ""
+
+#. type: Bullet: '-   '
+#: _docs/Inclusion_Policy.md
+msgid "Gradle. Only some old versions of Gradle are packaged in Debian. Currently we download them from the developer website."
+msgstr ""
+
+#. type: Bullet: '-   '
+#: _docs/Inclusion_Policy.md
+msgid "Flutter SDK. They are FOSS but not packaged in Debian and we are not able to built it from source. Currently we download them from the developer website with the Flutter srclib scripts."
+msgstr ""
+
+#. type: Bullet: '-   '
+#: _docs/Inclusion_Policy.md
+msgid "JSC/Hermers. They can be built from source which takes hours. Currently we downloaded them from npm and scanignore them."
+msgstr ""
+
+#. type: Bullet: '-   '
+#: _docs/Inclusion_Policy.md
+msgid "Binaries from pip wheels. Some apps install deps with pip and we just trust the untrustworthy Pypi."
+msgstr ""
+
+#. type: Bullet: '-   '
+#: _docs/Inclusion_Policy.md
+msgid "Binaries from Nix cache. These binaries are mostly reproducible."
+msgstr ""
+
+#. type: Bullet: '-   '
+#: _docs/Inclusion_Policy.md
+msgid "Rust/Rustup. Currently we download them from the developer website with the scripts in the rustup srclib. We may be able to use the Debian packages."
+msgstr ""
+
+#. type: Bullet: '-   '
+#: _docs/Inclusion_Policy.md
+msgid "Golang & Nodejs. They are available in Debian but we are using a very old Debian version so recent versions are not available. Currently we download them from the developer website."
+msgstr ""
+
+#. type: Bullet: '-   '
+#: _docs/Inclusion_Policy.md
+msgid "Some other compilers/build tools not packaged in our very old Debian version."
+msgstr ""
 
 #. type: Plain text
 #: _docs/Inclusion_Policy.md

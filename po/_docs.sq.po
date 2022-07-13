@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2022-06-17 10:53+0200\n"
+"POT-Creation-Date: 2022-07-13 09:57-0700\n"
 "PO-Revision-Date: 2022-02-04 22:01+0000\n"
 "Last-Translator: Besnik Bleta <besnik@programeshqip.org>\n"
 "Language-Team: Albanian <https://hosted.weblate.org/projects/f-droid/website-docs/sq/>\n"
@@ -3496,7 +3496,7 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-msgid "Used in conjunction with _UpdateCheckMode_ `Tag` or `HTTP`."
+msgid "Used in conjunction with _UpdateCheckMode_ `Tags` or `HTTP`."
 msgstr ""
 
 #. type: Fenced code block
@@ -3517,7 +3517,7 @@ msgstr ""
 
 #. type: Bullet: '-   '
 #: _docs/Build_Metadata_Reference.md
-msgid "`versionName-location` - Same as vercode-location just for versionName. A .  means to take vercode-location, leave empty to check the tag name instead (only with `UpdateCheckMode: Tags`)."
+msgid "`versionName-location` - Same as vercode-location just for versionName. A `.` means to take vercode-location, leave empty to check the tag name instead (only with `UpdateCheckMode: Tags`)."
 msgstr ""
 
 #. type: Bullet: '-   '
@@ -3534,7 +3534,7 @@ msgstr ""
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid ""
-"Examples for `UpdateCheckMode: Tag`:\n"
+"Examples for `UpdateCheckMode: Tags`:\n"
 "-   Flutter app with the `pubspec.yaml` in the repo root:\n"
 "    `pubspec.yaml|version:\\s.+\\+(\\d+)|.|version:\\s(.+)\\+`\n"
 "-   Use the git tag as version name:\n"
@@ -6577,6 +6577,56 @@ msgstr ""
 #. type: Bullet: '-   '
 #: _docs/Inclusion_Policy.md
 msgid "Releases should be clearly tagged (or otherwise marked)."
+msgstr ""
+
+#. type: Plain text
+#: _docs/Inclusion_Policy.md
+msgid "Though we tried to build everyting from source, we still need some prebuild binaries. Therefore we have some exceptions:"
+msgstr ""
+
+#. type: Bullet: '-   '
+#: _docs/Inclusion_Policy.md
+msgid "Android SDK/NDK. They are released as proprietary binaries but we don't have an alternative currently. There is in-progress work to package recent Android SDK versions in Debian."
+msgstr ""
+
+#. type: Bullet: '-   '
+#: _docs/Inclusion_Policy.md
+msgid "Gradle. Only some old versions of Gradle are packaged in Debian. Currently we download them from the developer website."
+msgstr ""
+
+#. type: Bullet: '-   '
+#: _docs/Inclusion_Policy.md
+msgid "Flutter SDK. They are FOSS but not packaged in Debian and we are not able to built it from source. Currently we download them from the developer website with the Flutter srclib scripts."
+msgstr ""
+
+#. type: Bullet: '-   '
+#: _docs/Inclusion_Policy.md
+msgid "JSC/Hermers. They can be built from source which takes hours. Currently we downloaded them from npm and scanignore them."
+msgstr ""
+
+#. type: Bullet: '-   '
+#: _docs/Inclusion_Policy.md
+msgid "Binaries from pip wheels. Some apps install deps with pip and we just trust the untrustworthy Pypi."
+msgstr ""
+
+#. type: Bullet: '-   '
+#: _docs/Inclusion_Policy.md
+msgid "Binaries from Nix cache. These binaries are mostly reproducible."
+msgstr ""
+
+#. type: Bullet: '-   '
+#: _docs/Inclusion_Policy.md
+msgid "Rust/Rustup. Currently we download them from the developer website with the scripts in the rustup srclib. We may be able to use the Debian packages."
+msgstr ""
+
+#. type: Bullet: '-   '
+#: _docs/Inclusion_Policy.md
+msgid "Golang & Nodejs. They are available in Debian but we are using a very old Debian version so recent versions are not available. Currently we download them from the developer website."
+msgstr ""
+
+#. type: Bullet: '-   '
+#: _docs/Inclusion_Policy.md
+msgid "Some other compilers/build tools not packaged in our very old Debian version."
 msgstr ""
 
 #. type: Plain text
