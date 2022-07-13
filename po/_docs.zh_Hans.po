@@ -22,15 +22,15 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
 "POT-Creation-Date: 2022-07-13 09:57-0700\n"
-"PO-Revision-Date: 2022-07-04 12:23+0000\n"
-"Last-Translator: kak mi <wavelake@outlook.com>\n"
+"PO-Revision-Date: 2022-07-15 00:11+0000\n"
+"Last-Translator: Eric <alchemillatruth@purelymail.com>\n"
 "Language-Team: Chinese (Simplified) <https://hosted.weblate.org/projects/f-droid/website-docs/zh_Hans/>\n"
 "Language: zh_Hans\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 4.13.1-dev\n"
+"X-Generator: Weblate 4.14-dev\n"
 
 #. type: YAML Front Matter: title
 #: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
@@ -3640,10 +3640,8 @@ msgstr "`RegEx-for-versionCode` - 匹配 versionCode 的正则表达式。"
 
 #. type: Bullet: '-   '
 #: _docs/Build_Metadata_Reference.md
-#, fuzzy
-#| msgid "`versionName-location` - Same as vercode-location just for versionName. A .  means to take vercode-location, leave empty to check the tag name instead (only with `UpdateCheckMode: Tags`)."
 msgid "`versionName-location` - Same as vercode-location just for versionName. A `.` means to take vercode-location, leave empty to check the tag name instead (only with `UpdateCheckMode: Tags`)."
-msgstr "`versionName-location` - 与 vercode-location 相同，只是针对 versionName。一个 . 表示使用 vercode-location，留空则检查标签名称（仅适用于 `UpdateCheckMode: Tags`）。"
+msgstr "`versionName-location` - 与 vercode-location 相同，只是针对 versionName。`.`表示使用 vercode-location，留空则检查标签名称（仅适用于 `UpdateCheckMode: Tags`）。"
 
 #. type: Bullet: '-   '
 #: _docs/Build_Metadata_Reference.md
@@ -3671,12 +3669,17 @@ msgid ""
 "-   Note: Be sure to use *single* quotes around the entire value if you leave `vercode-location` empty:\n"
 "    `UpdateCheckData: '|\\+(\\d+)||Android-([\\d.]+)'`\n"
 msgstr ""
-"`UpdateCheckMode: Tags` 实例：\n"
-"- 存储库根中有 `pubspec.yaml` 的 Flutter 应用：`pubspec.yaml|version:\\s.+\\+(\\d+)|.|version:\\s(.+)\\+`\n"
-"- 使用 git 标签作为版本名：`app/build.gradle|versionCode\\s(\\d+)||`\n"
-"- 可以选择指定一个从标签中提取版本名称的正则表达式：`app/build.gradle|versionCode\\s(\\d+)||Android-([\\d.]+)`\n"
-"- 如果没有指定版本代码的文件，可以从标签中提取代码和名称：`'|\\+(\\d+)||Android-([\\d.]+)'`\n"
-"- 注意：如果你把 `vercode-location` 留空，一定要在整个值周围使用*单引号*：`UpdateCheckData: '|\\+(\\d+)||Android-([\\d.]+)'`\n"
+"`UpdateCheckMode: Tags` 例子：\n"
+"-   代码库根目录中带`pubspec.yaml`的 Flutter 应用:\n"
+"    `pubspec.yaml|version:\\s.+\\+(\\d+)|.|version:\\s(.+)\\+`\n"
+"-   使用 git 标签作为版本名:\n"
+"    `app/build.gradle|versionCode\\s(\\d+)||`\n"
+"-   可指定从标签中提取版本名的正则表达式（可选）:\n"
+"    `app/build.gradle|versionCode\\s(\\d+)||Android-([\\d.]+)`\n"
+"-   如未指定版本代码文件，可从标签中提取代码和名称:\n"
+"    `'|\\+(\\d+)||Android-([\\d.]+)'`\n"
+"-   注意：如果你把 `vercode-location` 留空，一定要在整个值周围使用*单*引号:\n"
+"    `UpdateCheckData: '|\\+(\\d+)||Android-([\\d.]+)'`\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -6861,52 +6864,52 @@ msgstr "应该使用 tag 或其他方式注明版本。"
 #. type: Plain text
 #: _docs/Inclusion_Policy.md
 msgid "Though we tried to build everyting from source, we still need some prebuild binaries. Therefore we have some exceptions:"
-msgstr ""
+msgstr "尽管我们尝试从源代码构建每样东西，但我们仍然需要一些预构建的二进制文件。 因此我们有一些例外："
 
 #. type: Bullet: '-   '
 #: _docs/Inclusion_Policy.md
 msgid "Android SDK/NDK. They are released as proprietary binaries but we don't have an alternative currently. There is in-progress work to package recent Android SDK versions in Debian."
-msgstr ""
+msgstr "Android SDK/NDK。 它们作为专有二进制文件发布，但我们目前没有替代方案。 在 Debian 中打包最新的 Android SDK 版本的工作正在进行中。"
 
 #. type: Bullet: '-   '
 #: _docs/Inclusion_Policy.md
 msgid "Gradle. Only some old versions of Gradle are packaged in Debian. Currently we download them from the developer website."
-msgstr ""
+msgstr "Grandle。 只有一些旧版本的 Gradle 被打包在 Debian 中。 我们目前从开发者网站下载它们。"
 
 #. type: Bullet: '-   '
 #: _docs/Inclusion_Policy.md
 msgid "Flutter SDK. They are FOSS but not packaged in Debian and we are not able to built it from source. Currently we download them from the developer website with the Flutter srclib scripts."
-msgstr ""
+msgstr "Flutter SDK。 它们是自由开源软件但未打包在 Debian 中，我们无法从源代码构建它。 目前我们使用 Flutter srclib 脚本从开发者网站下载它们。"
 
 #. type: Bullet: '-   '
 #: _docs/Inclusion_Policy.md
 msgid "JSC/Hermers. They can be built from source which takes hours. Currently we downloaded them from npm and scanignore them."
-msgstr ""
+msgstr "JSC/Hermers。 可以从源代码进行构建，但这需要几个小时。 我们目前从 npm 下载它们并 scanignore 它们。"
 
 #. type: Bullet: '-   '
 #: _docs/Inclusion_Policy.md
 msgid "Binaries from pip wheels. Some apps install deps with pip and we just trust the untrustworthy Pypi."
-msgstr ""
+msgstr "来自 pip wheels 的二进制文件。 一些应用使用 pip 安装依赖项，我们只好信任不可信的 Pypi。"
 
 #. type: Bullet: '-   '
 #: _docs/Inclusion_Policy.md
 msgid "Binaries from Nix cache. These binaries are mostly reproducible."
-msgstr ""
+msgstr "来自 Nix 缓存的二进制文件。 这些二进制文件大多是可重构的。"
 
 #. type: Bullet: '-   '
 #: _docs/Inclusion_Policy.md
 msgid "Rust/Rustup. Currently we download them from the developer website with the scripts in the rustup srclib. We may be able to use the Debian packages."
-msgstr ""
+msgstr "Rust/Rustup。 目前我们使用 rustup srclib 中的脚本从开发者网站下载它们。 我们也许可以使用 Debian 软件包。"
 
 #. type: Bullet: '-   '
 #: _docs/Inclusion_Policy.md
 msgid "Golang & Nodejs. They are available in Debian but we are using a very old Debian version so recent versions are not available. Currently we download them from the developer website."
-msgstr ""
+msgstr "Golang 和 Nodejs。 它们在 Debian 中可用，但我们使用的是一个非常旧的 Debian 版本，因此最近的版本不可用。 目前我们从开发者网站下载它们。"
 
 #. type: Bullet: '-   '
 #: _docs/Inclusion_Policy.md
 msgid "Some other compilers/build tools not packaged in our very old Debian version."
-msgstr ""
+msgstr "一些没有打包在我们非常旧的 Debian 版本中的其他编译器/构建工具。"
 
 #. type: Plain text
 #: _docs/Inclusion_Policy.md
@@ -8694,7 +8697,7 @@ msgstr "最重要的是要知道何时发布新版本。我们有三种自动方
 #: _docs/Reproducible_Builds.md
 #, no-wrap
 msgid "Reproducible Builds"
-msgstr "可重现的构建"
+msgstr "可重构的构建"
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
@@ -9102,7 +9105,7 @@ msgstr ""
 #: _docs/Reproducible_Builds.md
 #, no-wrap
 msgid "Migration to reproducible builds"
-msgstr "迁移到可重现的构建中"
+msgstr "迁移到可重构的构建中"
 
 #. type: Title ####
 #: _docs/Reproducible_Builds.md
@@ -9174,7 +9177,7 @@ msgstr "[Google Issue #110237303 使用非确定性构建的 resources.arsc，�
 #. type: Bullet: '* '
 #: _docs/Reproducible_Builds.md
 msgid "[Unreproducible/non-deterministic code generation by navigation.safeargs.kotlin](https://issuetracker.google.com/issues/189498001) (_Google login and JavaScript required_)"
-msgstr "[由 navigation.safeargs.kotlin 生成的不可重现/不确定的代码](https://issuetracker.google.com/issues/189498001) （_需要 Google 账号登录以及 JavaScript_）"
+msgstr "[由 navigation.safeargs.kotlin 生成的不可重构/不确定的代码](https://issuetracker.google.com/issues/189498001) （_需要 Google 账号登录以及 JavaScript_）"
 
 #. type: YAML Front Matter: title
 #: _docs/Running_a_Mirror.md
@@ -9558,7 +9561,7 @@ msgstr "[客户端应用内置的固定 TLS 证书](https://gitlab.com/fdroid/fd
 #. type: Plain text
 #: _docs/Security_Model.md
 msgid "In order to defend against an attacker that holds the signing keys for the app repository, there must be a trustworthy source of information to compare against. Reproducible builds means that anyone with the same source code will produce the exact same binary. When paired with an auditing system, it is easy to catch malware inserted in the build process, rather than the source code, like XCodeGhost. Reproducible builds also makes it possible to have all builds of a release binary have the exact same hash. Then any app repository can build apps only from source code, and have a source of verification data from any other app repository building the same app. Building software from source has become cheap enough that many companies like gitlab.com and Travis CI are offering free, automated build services in the cloud. Since the whole F-Droid toolset is free software and designed to be easy to setup, the barriers to setting up automatic auditing are quite low. People in separate areas of the world with different risk profiles can run [verification servers](../Verification_Server) to provide more trustworthy information."
-msgstr "为了防御持有应用存储库签名密钥的攻击者，必须有一个值得信赖的信息源进行比较。可重现的构建意味着具有相同源代码的任何人都将生成完全相同的二进制文件。与审计系统配合使用时，很容易捕获插入构建过程中的恶意软件，而不是源代码，如 XCodeGhost。可重现的构建还可以让发布二进制文件的所有构建具有完全相同的哈希值。然后，任何应用程序存储库都只能从源代码构建应用，并拥有来自构建相同应用的任何其他应用程序存储库的验证数据源。从源代码构建软件已经变得足够便宜，以至于 gitlab.com 和 Travis CI 等许多公司都在云中提供免费的自动化构建服务。由于整个 F-Droid 工具集是免费软件并且易于设置，因此设置自动审计的障碍非常低。世界上不同地区具有不同风险状况的人们可以运行 [验证服务器](../Verification_Server) 以提供更可靠的信息。"
+msgstr "为了防御持有应用存储库签名密钥的攻击者，必须有一个值得信赖的信息源进行比较。可重构的构建意味着具有相同源代码的任何人都将生成完全相同的二进制文件。与审计系统配合使用时，很容易捕获插入构建过程中的恶意软件，而不是源代码，如 XCodeGhost。可重构的构建还可以让发布二进制文件的所有构建具有完全相同的哈希值。然后，任何应用程序存储库都只能从源代码构建应用，并拥有来自构建相同应用的任何其他应用程序存储库的验证数据源。从源代码构建软件已经变得足够便宜，以至于 gitlab.com 和 Travis CI 等许多公司都在云中提供免费的自动化构建服务。由于整个 F-Droid 工具集是免费软件并且易于设置，因此设置自动审计的障碍非常低。世界上不同地区具有不同风险状况的人们可以运行 [验证服务器](../Verification_Server) 以提供更可靠的信息。"
 
 #. type: Plain text
 #: _docs/Security_Model.md
