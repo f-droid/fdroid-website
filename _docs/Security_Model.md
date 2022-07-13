@@ -66,6 +66,17 @@ and the [Signing Process](../Signing_Process) are documented
 separately.
 
 
+## App signing
+
+* Apps can be distributed using the [developer's own](TODO) signatures when the builds are fully reproducible.
+* By default, <f-droid.org> will generate and manage
+* All app signing is done on a dedicated, air-gapped, offline machine.
+* At any time, an app may add the developer's own signatures once reproducible builds has been achieved.  Additionally, releases signed by the <f-droid.org> key will continue to be shipped.
+* The developer's own signature is the default for fresh installs.
+* TODO packageName rules
+* All apps are signed by [a key devoted to that app](TODO) (unless the upstream specifically requests multiple apps be signed by the same key.
+
+
 ## Initial Installs
 
 Most users of F-Droid download the APK from _f-droid.org_ and install
