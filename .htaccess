@@ -55,12 +55,12 @@ AddEncoding x-gzip .gz
 </FilesMatch>
 
 # 12 hours
-<FilesMatch "\.(css|gif|ico|jpg|jpeg|js|json|png|svg|txt|xml)$">
+<FilesMatch "\.(css|gif|ico|jpg|jpeg|js|png|svg|txt|xml)$">
   Header set Cache-Control "max-age=43200, public, immutable, stale-while-revalidate=300"
 </FilesMatch>
 
 # 10 minutes
-<FilesMatch "\.html$">
+<FilesMatch "\.(html|json)$">
   Header set Cache-Control "max-age=600, public, immutable, stale-while-revalidate=300"
 </FilesMatch>
 <FilesMatch "\.html\.[a-z][a-z](|_[A-Z][A-Z]|_Han[st])$">
