@@ -23,7 +23,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
 "POT-Creation-Date: 2022-07-19 17:15-0700\n"
-"PO-Revision-Date: 2022-08-23 15:21+0000\n"
+"PO-Revision-Date: 2022-08-24 01:58+0000\n"
 "Last-Translator: Translator <kvb@tuta.io>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/f-droid/website-docs/fr/>\n"
 "Language: fr\n"
@@ -1413,7 +1413,7 @@ msgstr "Exécution de `fdroid build` dans les sources de votre application"
 #. type: Plain text
 #: _docs/Building_Applications.md
 msgid "Another option for using `fdroid build` is to use a metadata file that is included in the app’s source itself, rather than in a _metadata/_ folder with lots of other apps. The _.fdroid.yml_ metadata file should be in the root of your source repo."
-msgstr "Une autre option pour utiliser `fdroid build` est d'utiliser un fichier de métadonnées qui est inclus dans la source de l'application elle-même, plutôt que dans un dossier `metadata/` avec beaucoup d'autres applications. Ce fichier de métadonnées devrait se trouver à la racine de votre dépôt source et s'appeler `.fdroid.json`, `.fdroid.xml`, `.fdroid.yaml`, ou `.fdroid.txt`, selon le format de données que vous préférez : JSON, XML, YAML, ou le format `.txt' de F-Droid."
+msgstr "Une autre option pour utiliser `fdroid build` est d'utiliser un fichier de métadonnées qui est inclus dans la source de l'application elle-même, plutôt que dans un dossier _metadata/_ avec beaucoup d'autres applications. Le fichier de métadonnées _.fdroid.yml_ devrait se trouver à la racine de votre dépôt source."
 
 #. type: Plain text
 #: _docs/Building_Applications.md
@@ -1679,7 +1679,7 @@ msgstr "[_Categories_ (Catégories)](#Categories)"
 #. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
 msgid "[_AuthorName_](#AuthorName)"
-msgstr "[_Nomdel'auteur_](#AuthorName)"
+msgstr "[_AuthorName_(Nom de l'auteur)](#AuthorName)"
 
 #. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
@@ -3129,7 +3129,7 @@ msgstr ""
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid "`prebuild: xxxx`<a name=\"build_prebuild\"></a>\n"
-msgstr ""
+msgstr "`prebuild: xxxx`<a name=\"build_prebuild\"></a>\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -3142,12 +3142,18 @@ msgid ""
 "    other contexts; in particular, literal backslashes should not\n"
 "    be escaped.\n"
 msgstr ""
+":   Spécifie une commande shell (ou des commandes – séparés par &&) à exécuter\n"
+"    avant la compilation. Une barre oblique inversée (antislash) peut être utilisée comme caractère\n"
+"    d'échappement pour insérer des virgules littérales, ou comme dernier caractère d'une ligne\n"
+"    pour joindre cette ligne avec la suite. Elle n'a pas de signification particulière dans d'autres contextes,\n"
+"     en particulié les barres obliques inversées littérales ne doivent pas\n"
+"    être des caractères d'échappements.\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid "    The command runs using bash.\n"
-msgstr ""
+msgstr "    La commande exécutée en utilisant bash.\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -3158,6 +3164,10 @@ msgid ""
 "    example, take place after this. For custom actions that actually\n"
 "    build things or produce binaries, use ’build’ instead.\n"
 msgstr ""
+"    Notez que rien ne doit être compilé pendant cette étape de précompilation,\n"
+"    l'analyse du code et la compilation de l'archive tar source, par exemple,\n"
+"    se déroule après cette étape. Pour des actions personnalisées qui\n"
+"    compilent des éléments ou produisent des fichiers binaires, utilisez plutôt « compilation ».\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -3166,6 +3176,8 @@ msgid ""
 "    You can use \\$\\$name\\$\\$ to substitute the path to a referenced\n"
 "    srclib - see the `srclib` directory for details of this.\n"
 msgstr ""
+"    Vous pouvez utiliser \\$\\$name\\$\\$ pour remplacer le chemin d'accès vers un srclib\n"
+"    référencé — regardez le répertoire `srclib` pour plus de détails.\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -3178,12 +3190,18 @@ msgid ""
 "    variables are available likewise: \\$\\$VERSION\\$\\$, \\$\\$VERCODE\\$\\$\n"
 "    and \\$\\$COMMIT\\$\\$.\n"
 msgstr ""
+"    Vous pouvez utiliser \\$\\$SDK\\$\\$, \\$\\$NDK\\$\\$ et \\$\\$MVN3\\$\\$ pour remplacer\n"
+"    respectivement les chemins d'accès vers les dossiers du SDK et du NDK d'andoid,\n"
+"    et vers l'exécutable de Maven 3 par exemple, quand vous avez besoin d'exécuter\n"
+"    `android update project` explicitement. Ces variables sont aussi disponible\n"
+"    par compilation : \\$\\$VERSION\\$\\$, \\$\\$VERCODE\\$\\$\n"
+"    et \\$\\$COMMIT\\$\\$.\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid "`scanignore: <path1>[,<path2>,...]`<a name=\"build_scanignore\"></a>\n"
-msgstr ""
+msgstr "`scanignore: <chemin1>[,<chemin2>,…]`<a name=\"build_scanignore\"></a>\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -4947,7 +4965,7 @@ msgstr ""
 #: _docs/FAQ_-_App_Developers.md
 #, no-wrap
 msgid "Will my app be built from source?"
-msgstr "Mon application pourra-t-elle être compilée à partir des sources?"
+msgstr "Mon application sera-t-elle compilée à partir des sources ?"
 
 #. type: Plain text
 #: _docs/FAQ_-_App_Developers.md
@@ -5745,9 +5763,8 @@ msgstr "Comment puis-je signaler des bogues ou demander des fonctions ?"
 
 #. type: Plain text
 #: _docs/FAQ_-_General.md
-#, fuzzy
 msgid "Use the [issue tracker](https://gitlab.com/fdroid/fdroidclient/issues)  or email <team@f-droid.org>. You can also discuss them in the [\\#fdroid](ircs://irc.oftc.net:6697/fdroid) IRC chatroom on OFTC ([click here to join the webchat](https://webchat.oftc.net/?randomnick=1&channels=fdroid&prompt=1))."
-msgstr "le salon de discussion sur IRC : [\\#fdroid](ircs://irc.oftc.net:6697/fdroid) Salon de discussion IRC sur Freenode ([cliquez ici pour vous joindre à la conversation Web](https://webchat.oftc.net/?randomnick=1&channels=fdroid&prompt=1))."
+msgstr "Utilisez le [système de suivi des problèmes](https://gitlab.com/fdroid/fdroidclient/issues) ou le courriel <team@f-droid.org>. Vous pouvez également en parler dans le salon de discussion IRC [\\#fdroid](ircs://irc.oftc.net:6697/fdroid) sur OFTC ([cliquez ici pour rejoindre la conversation Web](https://webchat.oftc.net/?randomnick=1&channels=fdroid&prompt=1))."
 
 #. type: Plain text
 #: _docs/FAQ_-_General.md
@@ -5789,9 +5806,8 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/Feeds.md
-#, fuzzy
 msgid "Find out the build status of the APKs on: <https://monitor.f-droid.org/builds>."
-msgstr "[Anti-Fonctionalités](https://monitor.f-droid.org/anti-features) Ce qu'elles sont, ce qu'elles signifient, et quelles applications en possèdent."
+msgstr "Découvrez l'état de la compilation des APK sur <https://monitor.f-droid.org/builds>."
 
 #. type: Title ###
 #: _docs/Feeds.md _docs/Repository_Style_Guide.md
@@ -9168,13 +9184,13 @@ msgstr ""
 
 #. type: Fenced code block
 #: _docs/Running_a_Mirror.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "35 */6 * * * www-data /usr/bin/rsync -aHS  --delete --delete-delay ftp.fau.de::fdroid/repo/ /var/www/fdroid/fdroid/repo/\n"
 "35 */6 * * * www-data /usr/bin/rsync -aHS  --delete --delete-delay ftp.fau.de::fdroid/archive/ /var/www/fdroid/fdroid/archive/\n"
 msgstr ""
-"$ sudo -u www-data -E /usr/bin/rsync --links --delete --times --recursive --perms --hard-links --sparse --delay-updates --temp-dir /tmp/ ftp.fau.de::repo/ /var/www/fdroid/fdroid/repo/\n"
-"$ sudo -u www-data -E /usr/bin/rsync --links --delete --times --recursive --perms --hard-links --sparse --delay-updates --temp-dir /tmp/ ftp.fau.de::archive/ /var/www/fdroid/fdroid/archive/\n"
+"35 */6 * * * www-data /usr/bin/rsync -aHS  --delete --delete-delay ftp.fau.de::fdroid/repo/ /var/www/fdroid/fdroid/repo/\n"
+"35 */6 * * * www-data /usr/bin/rsync -aHS  --delete --delete-delay ftp.fau.de::fdroid/archive/ /var/www/fdroid/fdroid/archive/\n"
 
 #. type: Bullet: '4. '
 #: _docs/Running_a_Mirror.md
@@ -10025,9 +10041,8 @@ msgstr ""
 
 #. type: Bullet: '* '
 #: _docs/Submitting_to_F-Droid_Quick_Start_Guide.md
-#, fuzzy
 msgid "75 MB: install _docker.io_"
-msgstr "Installer Docker"
+msgstr "75 MB : Installer _docker.io_"
 
 #. type: Bullet: '* '
 #: _docs/Submitting_to_F-Droid_Quick_Start_Guide.md
