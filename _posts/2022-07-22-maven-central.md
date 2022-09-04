@@ -8,15 +8,15 @@ F-Droid is always commited to distribute FOSS Android apps. Building free softwa
 
 F-Droid forbids unknown Maven repos and trusts only some well-known Maven repos [since 2015](https://gitlab.com/fdroid/fdroidserver/-/commit/21117b77d228458b4d3b003c4af19a2ac236b784). From then on, [some](https://gitlab.com/fdroid/fdroidserver/-/commit/d17da074e92e59bd543c362aff1bde3f087a0220) [more](https://gitlab.com/fdroid/fdroidserver/-/commit/a92f9a3a4c26e6b0b66f711891d342813d58cf48) [repos](https://gitlab.com/fdroid/fdroidserver/-/commit/1ff4f63de348ccca80dc3e773fcd2da58ffd07b2) [are](https://gitlab.com/fdroid/fdroidserver/-/commit/c87cdb91db3e731384d67045563d056b03858728) [added](https://gitlab.com/fdroid/fdroidserver/-/commit/c056b95fd5db81484d9e2b21d71975b12ffa9ac3) [to](https://gitlab.com/fdroid/fdroidserver/-/merge_requests/102) the list. Currently there are 8 Maven repos we trust:
 
-- Maven Central
-- Google Maven Repo
-- JCenter
-- OSS Sonatype
-- OSS JFrog
-- JitPack.io
-- Clojars
-- CommonsWare
-- Gradle plugin repo
+ * Maven Central
+ * Google Maven Repo
+ * JCenter
+ * OSS Sonatype
+ * OSS JFrog
+ * JitPack.io
+ * Clojars
+ * CommonsWare
+ * Gradle plugin repo
 
 In 2020, JAR and AAR files embeded in the source code were [forbidden](https://gitlab.com/fdroid/fdroidserver/-/merge_requests/325) and these trusted repos became the last weak point. We rely on them to provide only FOSS libs. However, none of them are guaranteed to do so and they have been a big source of non-free libs sneaking into the APKs. 
 
