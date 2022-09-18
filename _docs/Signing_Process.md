@@ -105,12 +105,16 @@ to the HSM and never read off of it.  _fdroidserver_ has support for
 using HSMs for repo signing keys.
 
 For information on how to configure an F-Droid repo to use an HSM, see
-the "smartcard" sections of _examples/config.yml_,
-specifically `keystore` and `smartcardoptions`.  Most likely,
+the "smartcard" sections of _examples/config.yml_, specifically
+`keystore` and `smartcardoptions`.  Most likely,
 [OpenSC](https://github.com/OpenSC/OpenSC) will need to be set up as a
 PKCS11 provider for Java.
+[_hsmwiz_](https://github.com/johndoe31415/hsmwiz) is a simpler way to
+work with smart card HSMs like the Nitrokey HSM.  Both OpenSC and
+_hsmwiz_ are available in Debian.
 
 For more in-depth information, see:
+
 * _fdroidserver_ example config file: [examples/config.yml](https://gitlab.com/fdroid/fdroidserver/-/blob/2.1a0/examples/config.yml#L125)
 * [Publishing an F-Droid Repo using a Hardware Security Module]({{ site.baseurl }}/{% post_url 2020-10-05-ntrokey-signing %})
 * [Security in a thumb drive: the promise and pain of hardware security modules, take one!](https://guardianproject.info/2014/03/28/security-in-a-thumb-drive-the-promise-and-pain-of-hardware-security-modules-take-one/)
