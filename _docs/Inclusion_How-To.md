@@ -157,12 +157,12 @@ This build process is done **daily**, and applications are processed
 in batch. As steps are done behind the scene and are mostly automatic;
 all the submitter needs to do is to wait for it to finish.
 
-A record of the build process for each application is provided on the F-Droid wiki, as a
-subpage `lastbuild` of the applications information
-page (e.g. [here is the lastbuild page for the F-Droid
-Client](https://f-droid.org/wiki/page/org.fdroid.fdroid/lastbuild)).
-This is useful to aid in diagnosing problems when the build unexpectedly
-failed.
+A record of a successful build process for one application is provided on the
+F-Droid's website page for that specific app (e.g. [see the Build Log for the F-Droid
+Client](https://f-droid.org/en/packages/org.fdroid.fdroid/#latest)).
+
+Apps that fail will have the log available during the build cycle on the [F-Droid Monitor - Running](https://monitor.f-droid.org/builds/running) page or, if in the previous cycle, on the [Build](https://monitor.f-droid.org/builds/build) page.
+This is useful to aid in diagnosing problems when the build unexpectedly failed.
 
 ### Metadata Refreshing Process
 
