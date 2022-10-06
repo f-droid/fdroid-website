@@ -143,7 +143,7 @@ Since this only uses regexs, this test suite doesn't need any _fdroidserver_ cod
 
 ## Applying signatures
 
-The _issuebot_ that runs on [fdroid/rfp](https://gitlab.com/fdroid/rfp/-/issues) and [_fdroiddata_](https://gitlab.com/fdroid/fdroiddata/-/merge_requests) now uses signatures from Exodus Privacy ETIP, `fdroid scanner`, and Plexus.  It is now easy to use ETIP signatures in _issuebot_ modules, to enable experimentation in how things should be scanned.  Here are some snipped of _issuebot_ flagging things based on these signatures.
+The _issuebot_ that runs on [fdroid/rfp](https://gitlab.com/fdroid/rfp/-/issues) and [_fdroiddata_](https://gitlab.com/fdroid/fdroiddata/-/merge_requests) now uses signatures from Exodus Privacy ETIP, `fdroid scanner`, and Plexus.  It is now easy to use ETIP signatures in _issuebot_ modules, to enable experimentation in how things should be scanned.  Here are some snippets of _issuebot_ flagging things based on these signatures.
 
 ![gradle-dependencies-1]({% asset posts/2022-09-30-free-software-and-inspection-are-key-to-software-we-can-trust/gradle-dependencies-1.png %})<br/>
 _This is clearly a non-free dependency, it is required for all builds of this app._
