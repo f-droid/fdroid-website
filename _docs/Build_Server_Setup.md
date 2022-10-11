@@ -178,7 +178,7 @@ add-ons and tools. However, instead of allowing automatic caching, you
 can supply a pre-populated cache directory which includes not only these
 downloads, but also .tar.gz files for all the relevant additions. If the
 provisioning scripts detect these, they will be used in preference to
-running the android tools. For example, if you have
+running the Android tools. For example, if you have
 `buildserver/addons/cache/platforms/android-19.tar.gz` that will be used
 when installing the android-19 platform, instead of re-downloading it
 using `android update sdk --no-ui -t android-19`. It is possible to

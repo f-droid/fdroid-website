@@ -516,9 +516,8 @@ configuration to the build. These are (roughly in order of application):
 :   Like ’prebuild’, but runs on the source code BEFORE any other
     processing takes place.
 
-    You can use \$\$SDK\$\$, \$\$NDK\$\$ and \$\$MVN3\$\$ to
-    substitute the paths to the android SDK and NDK directories and the maven 3
-    executable respectively. The following
+    You can use \$\$SDK\$\$ and \$\$NDK\$\$ to substitute the paths to the
+    Android SDK and NDK directories respectively. The following
     per-build variables are available likewise: \$\$VERSION\$\$,
     \$\$VERCODE\$\$ and \$\$COMMIT\$\$.
 
@@ -542,7 +541,7 @@ configuration to the build. These are (roughly in order of application):
     In the case of an Ant project, it modifies _project.properties_ of the
     app and possibly sub-projects. This is likely to cause the whole
     _build.xml_ to be rewritten, which is fine if it’s a ’standard’
-    android file or doesn’t already exist, but not a good idea if it’s
+    Android file or doesn’t already exist, but not a good idea if it’s
     heavily customised.
 
 `androidupdate: <auto/dirs>`<a name="build_androidupdate"></a>
@@ -675,12 +674,11 @@ configuration to the build. These are (roughly in order of application):
     You can use \$\$name\$\$ to substitute the path to a referenced
     srclib - see the `srclib` directory for details of this.
 
-    You can use \$\$SDK\$\$, \$\$NDK\$\$ and \$\$MVN3\$\$ to substitute
-    the paths to the android SDK and NDK directories, and Maven 3
-    executable respectively e.g. for when you need to run
-    `android update project` explicitly. The following per-build
-    variables are available likewise: \$\$VERSION\$\$, \$\$VERCODE\$\$
-    and \$\$COMMIT\$\$.
+    You can use \$\$SDK\$\$ and \$\$NDK\$\$ to substitute the paths to
+    the Android SDK and NDK directories respectively e.g. for when you
+    need to run `android update project` explicitly. The following
+    per-build variables are available likewise: \$\$VERSION\$\$,
+    \$\$VERCODE\$\$ and \$\$COMMIT\$\$.
 
 `scanignore: <path1>[,<path2>,...]`<a name="build_scanignore"></a>
 
@@ -713,10 +711,9 @@ configuration to the build. These are (roughly in order of application):
     either Ant, mvn or gradle will be executed to clean the build
     environment right before _build_ (or the final build) is run.
 
-    You can use \$\$SDK\$\$, \$\$NDK\$\$ and \$\$MVN3\$\$ to substitute
-    the paths to the android SDK and NDK directories, and maven 3
-    executable respectively. The following per-build variables are
-    available likewise: \$\$VERSION\$\$, \$\$VERCODE\$\$
+    You can use \$\$SDK\$\$ and \$\$NDK\$\$ to substitute the paths to the
+    Android SDK and NDK directories respectively. The following per-build
+    variables are available likewise: \$\$VERSION\$\$, \$\$VERCODE\$\$
     and \$\$COMMIT\$\$.
 
 `buildjni: [yes|no|<dir list>]`<a name="build_buildjni"></a>
