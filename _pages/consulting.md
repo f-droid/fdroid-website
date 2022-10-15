@@ -25,14 +25,6 @@ Check out the descriptions to find an appropriate consultant for your needs.
 * __Languages:__ English, German
 * __Specializations:__ Custom F-Droid deployments, feature extensions, whitelabel solutions
 
-### Felix C. Stegerman
-
-* __Website:__ [obfusk.ch](https://obfusk.ch)
-* __Email:__ [flx@obfusk.net](mailto:flx@obfusk.net)
-* __Address:__ Nijmegen, Netherlands
-* __Languages:__ English, Dutch (Nederlands), German (Deutsch), Japanese (日本語)
-* __Specialization:__ Diagnosing & fixing bugs/problems, [Reproducible Builds](https://f-droid.org/docs/Reproducible_Builds/), getting builds working, removing/replacing non-free components of apps to make them compliant.
-
 ### Hans-Christoph Steiner
 
 * __Website:__ [at.or.at](https://at.or.at)

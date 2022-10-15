@@ -1,4 +1,4 @@
-# Copyright (C) 2021, Felix C. Stegerman <flx@obfusk.net>
+# Copyright (C) 2021, FC Stegerman <flx@obfusk.net>
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU Affero General Public License as published by
