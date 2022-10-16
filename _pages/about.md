@@ -26,7 +26,7 @@ For Jabber/XMPP,
 join [#fdroid#matrix.org@matrix.org](xmpp:#fdroid#matrix.org@matrix.org?join).
 
 F-Droid contributors also run a social-media account on the Fediverse. You can
-interact with us or follow us on [@fdroidorg@mastodon.technology](https://mastodon.technology/@fdroidorg).
+interact with us or follow us on [@fdroidorg@floss.social](https://floss.social/@fdroidorg).
 
 You can send email at
 [team@f-droid.org](mailto:team@f-droid.org), but messages are much
