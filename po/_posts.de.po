@@ -15,7 +15,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
 "POT-Creation-Date: 2022-10-05 09:31+0200\n"
-"PO-Revision-Date: 2022-10-23 16:09+0000\n"
+"PO-Revision-Date: 2022-10-26 02:16+0000\n"
 "Last-Translator: C. Rüdinger <Mail-an-CR@web.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/f-droid/website-posts/de/>\n"
 "Language: de\n"
@@ -18065,43 +18065,43 @@ msgstr ""
 #. type: Plain text
 #: _posts/2022-09-30-free-software-and-inspection-are-key-to-software-we-can-trust.md
 msgid "In SUSS, we can now represent the `fdroid scanner` signatures with the flexibility of Exodus Privacy signatures.  This adds additional scans, including domain names and the names used to declare [API](https://gitlab.com/trackingthetrackers/wiki/-/issues/6) [keys](https://gitlab.com/fdroid/fdroidserver/-/issues/852).  `fdroid scanner` had an additional allowlist, in case some signatures produced false positives.  The allowlist has been removed in favor of pure regexs (regular expressions).  The allowlist makes the F-Droid implementation quite a bit more complicated, and ties our signature profiles to the _fdroidserver_ tools.  The other data sets we looked at all used just simple entries, mostly using regexs, so it is important to explore if that can cover all the scanning cases needed.  If it works out, then the path to standardization is clear.  Yes, regexs are complicated and can be painful, but they are also widely used, implemented, documented, and understood."
-msgstr ""
+msgstr "In SUSS können wir nun die `fdroid scanner`-Signaturen mit der Flexibilität von Exodus Privacy darstellen.  Dies ergänzt zusätzliche Scans, einschließlich nach Domain-Namen und den zur Deklaration von [API](https://gitlab.com/trackingthetrackers/wiki/-/issues/6) [Keys](https://gitlab.com/fdroid/fdroidserver/-/issues/852) verwendeten Namen.  `fdroid scanner` besaß eine zusätzliche Liste mit zulässigen Signaturen, für den Fall, dass eine falsch positiv gewertet wurde.  Die Zugelassenen-Liste wurde zugunsten reiner regulärer Ausdrücke (Regex) entfernt.  Die Zugelassenen-Liste macht die Implementierung von F-Droid einfach ein Bisschen komplizierter und fesselt unsere Signatur-Profile an die _fdroidserver_-Tools.  Andere Datensätze, die wir irgendwie betrachteten, verwendeten einfach schlichte Einträge, meistens mittels regulärer Ausdrücke, somit ist es wichtig, herauszufinden, ob das alle für den Scan erforderlichen Fälle abdecken kann.  Wenn es gut läuft, dann ist der Weg zur Standardisierung klar.  Ja, Regex sind kompliziert und können mühsam sein aber sie sind auch weitreichend genutzt, eingebunden, dokumentiert und verstanden."
 
 #. type: Plain text
 #: _posts/2022-09-30-free-software-and-inspection-are-key-to-software-we-can-trust.md
 msgid "One big upside of only regexs is that SUSS has a super fast, simple test suite.  Here's one way to work with it:"
-msgstr ""
+msgstr "Ein großer Vorteil von ausschließlich regulären Ausdrücken führt dazu, dass SUSS eine superschnelle, einfache Testsuite besitzt.  Hier ein Weg um mit ihr zu arbeiten:"
 
 #. type: Bullet: '* '
 #: _posts/2022-09-30-free-software-and-inspection-are-key-to-software-we-can-trust.md
 msgid "Find the Gradle coordinates that are relevant and add them to the matches and exceptions lists in _tests/test_suss.py_"
-msgstr ""
+msgstr "Die Gradle-Koordinaten, die relevant sind, finden und den Listen mit Übereinstimmungen und Ausnahmen in _tests/test_suss.py_ hinzufügen"
 
 #. type: Bullet: '* '
 #: _posts/2022-09-30-free-software-and-inspection-are-key-to-software-we-can-trust.md
 msgid "Make the tests run once a second (with color!): <br/>`watch --color -n1 pytest-3 --color=yes`"
-msgstr ""
+msgstr "Die Tests einmal pro Sekunde laufen lassen (in Farbe!): <br>`watch --color -n1 pytest-3 --color=yes`"
 
 #. type: Bullet: '* '
 #: _posts/2022-09-30-free-software-and-inspection-are-key-to-software-we-can-trust.md
 msgid "Edit the regex, for example, in _suss/com.mapbox.yml_"
-msgstr ""
+msgstr "Die Regex bearbeiten, beispielsweise in _suss/com.mapbox.yml_"
 
 #. type: Plain text
 #: _posts/2022-09-30-free-software-and-inspection-are-key-to-software-we-can-trust.md
 msgid "Since this only uses regexs, this test suite doesn't need any _fdroidserver_ code.  This all would also be trivial to use in Javascript, Ruby, Rust, Java, Kotlin, etc. since the profiles are YAML and the signatures are regex."
-msgstr ""
+msgstr "Da nur Regex verwendet wird, braucht diese Testsuite keinen _fdroidserver_-Code.  Genauso trivial würde es in Javascript, Ruby, Rust, Java, Kotlin, etc. verwendet werden, solange die Profile YAML und die Signaturen Regex sind."
 
 #. type: Title ##
 #: _posts/2022-09-30-free-software-and-inspection-are-key-to-software-we-can-trust.md
 #, no-wrap
 msgid "Applying signatures"
-msgstr ""
+msgstr "Anwendung von Signaturen"
 
 #. type: Plain text
 #: _posts/2022-09-30-free-software-and-inspection-are-key-to-software-we-can-trust.md
 msgid "The _issuebot_ that runs on [fdroid/rfp](https://gitlab.com/fdroid/rfp/-/issues) and [_fdroiddata_](https://gitlab.com/fdroid/fdroiddata/-/merge_requests) now uses signatures from Exodus Privacy ETIP, `fdroid scanner`, and Plexus.  It is now easy to use ETIP signatures in _issuebot_ modules, to enable experimentation in how things should be scanned.  Here are some snipped of _issuebot_ flagging things based on these signatures."
-msgstr ""
+msgstr "Der _issuebot_, der auf [fdroid/rfp](https://gitlab.com/fdroid/rfp/-/issues) und [_fdroiddata_](https://gitlab.com/fdroid/fdroiddata/-/merge_requests) läuft, verwendet nun Signaturen aus Exodus Privacy ETIP, `fdroid scanner` und Plexus.  Es ist jetzt einfach, ETIP-Signaturen in Modulen des _issuebot_ zu nutzen, um experimentieren zu können, wie die Dinge durchsucht werden sollten.  Hier einige Ausschnitte mit markierten Sachen aus _issuebot_, die auf diesen Signaturen beruhen."
 
 #. type: Plain text
 #: _posts/2022-09-30-free-software-and-inspection-are-key-to-software-we-can-trust.md
@@ -18110,6 +18110,8 @@ msgid ""
 "![gradle-dependencies-1]({% asset posts/2022-09-30-free-software-and-inspection-are-key-to-software-we-can-trust/gradle-dependencies-1.png %})<br/>\n"
 "_This is clearly a non-free dependency, it is required for all builds of this app._\n"
 msgstr ""
+"![gradle-dependencies-1]({% asset posts/2022-09-30-free-software-and-inspection-are-key-to-software-we-can-trust/gradle-dependencies-1.png %})<br>\n"
+"_Dies ist eindeutig eine proprietäre Abhängigkeit, sie wird für alle Builds dieser App benötigt._\n"
 
 #. type: Plain text
 #: _posts/2022-09-30-free-software-and-inspection-are-key-to-software-we-can-trust.md
@@ -18118,6 +18120,8 @@ msgid ""
 "![gradle-dependencies]({% asset posts/2022-09-30-free-software-and-inspection-are-key-to-software-we-can-trust/gradle-dependencies.png %})<br/>\n"
 "_This is a double whammy: non-free library that is used for tracking!_\n"
 msgstr ""
+"![gradle-dependencies]({% asset posts/2022-09-30-free-software-and-inspection-are-key-to-software-we-can-trust/gradle-dependencies.png %})<br>\n"
+"_Dies ist ein Doppelschlag: proprietäre Bibliothek, die für das Tracking genutzt wird!_\n"
 
 #. type: Plain text
 #: _posts/2022-09-30-free-software-and-inspection-are-key-to-software-we-can-trust.md
@@ -18126,6 +18130,8 @@ msgid ""
 "![source-scan-0]({% asset posts/2022-09-30-free-software-and-inspection-are-key-to-software-we-can-trust/source-scan-0.png %})<br/>\n"
 "_It is a match, but is the \"test\" flavor relevant?_\n"
 msgstr ""
+"![source-scan-0]({% asset posts/2022-09-30-free-software-and-inspection-are-key-to-software-we-can-trust/source-scan-0.png %})<br>\n"
+"_Es ist ein Treffer, aber ist das „Test“-Flavor relevant?_\n"
 
 #. type: Plain text
 #: _posts/2022-09-30-free-software-and-inspection-are-key-to-software-we-can-trust.md
@@ -18134,6 +18140,8 @@ msgid ""
 "![source-scan-1]({% asset posts/2022-09-30-free-software-and-inspection-are-key-to-software-we-can-trust/source-scan-1.png %})<br/>\n"
 "_There is a good match, but the library is included in the \"play\" flavor, and that flavor is obviously not meant for f-droid.org._\n"
 msgstr ""
+"![source-scan-1]({% asset posts/2022-09-30-free-software-and-inspection-are-key-to-software-we-can-trust/source-scan-1.png %})<br>\n"
+"_Es gibt eine passende Übereinstimmung, aber die Bibliothek ist ins „Play“-Flavor eingeschlossen und diese Variante ist offenkundig nicht für f-droid.org bestimmt._\n"
 
 #. type: Plain text
 #: _posts/2022-09-30-free-software-and-inspection-are-key-to-software-we-can-trust.md
