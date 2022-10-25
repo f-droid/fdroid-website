@@ -22,5 +22,5 @@ group :jekyll_plugins do
         :ref => 'a6b4e861ff1de24551f8747a76411eccc34b27ca'
     gem 'git'
     gem 'jekyll-loading-lazy', :git => 'https://github.com/gildesmarais/jekyll-loading-lazy.git',
-    :ref => '778dbfb15cf64e0bc7f950997ced0b902b4940a2'
+        :ref => '778dbfb15cf64e0bc7f950997ced0b902b4940a2'
 end
