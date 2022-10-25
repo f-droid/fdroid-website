@@ -21,4 +21,5 @@ group :jekyll_plugins do
     gem 'jekyll-fdroid', :git => 'https://gitlab.com/fdroid/jekyll-fdroid.git',
         :ref => 'a6b4e861ff1de24551f8747a76411eccc34b27ca'
     gem 'git'
+    gem 'jekyll-loading-lazy'
 end
