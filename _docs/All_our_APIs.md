@@ -132,9 +132,11 @@ checks where run:
 
 _verification.f-droid.org_ is a rebuilder that rebuilds the official releases
 from _f-droid.org_, then checks to see if they were [reproducibly
-built](https://reproducible-builds.org/). There is a JSON file per APK that has
-been checked, where the filename follows the pattern
-`<ApplicationId>_<VersionCode>.apk.json`, for example:
+built](https://reproducible-builds.org/). There is an entry point for each package based on the package name:
+<https://verification.f-droid.org/org.fdroid.fdroid.json>
+
+Then there is a JSON file per APK that has been checked, where the filename
+follows the pattern `<ApplicationId>_<VersionCode>.apk.json`, for example:
 <https://verification.f-droid.org/org.fdroid.fdroid_1010050.apk.json>
 
 There is also a listing of all the successfully verified APKs:
@@ -148,11 +150,8 @@ the idea that all released packages should be logged as they are published.
 This provides a way to check if a given binary was produced by the publisher, or
 came from somewhere else, e.g. as an exploit.  _fdroidserver_ has built in tools
 for managing a binary transparency log of the index files as part of the release
-process. This has been enabled on the Guardian Project repo:
-<https://github.com/guardianproject/binary_transparency_log>
-
-There is also a prototype for running a binary transparency log for
-_f-droid.org_. <https://gitlab.com/eighthave/f-droid.org-binary-transparency>
+process. This has been enabled on _f-droid.org_:
+<https://gitlab.com/fdroid/f-droid.org-transparency-log>
 
 Since Gradle and the Google Android Tools team does not publish one, F-Droid has
 done it.  The basic API is a JSON file with a listing of all URLs known to have
