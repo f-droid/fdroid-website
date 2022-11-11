@@ -16,6 +16,7 @@ This is supported from F-Droid version 0.103 and *fdroidserver* version 0.8.
 In F-Droid client, since release 1.6, only applications that have all of the following are shown on the Latest tab: 
 
 * Name
+* Icon
 * Summary
 * Description
 * License
