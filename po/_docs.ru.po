@@ -24,7 +24,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
-"POT-Creation-Date: 2022-11-17 22:17+0100\n"
+"POT-Creation-Date: 2022-11-18 00:29+0100\n"
 "PO-Revision-Date: 2022-09-29 13:55+0000\n"
 "Last-Translator: Vik <k3kelm4vw@mozmail.com>\n"
 "Language-Team: Russian <https://hosted.weblate.org/projects/f-droid/website-docs/ru/>\n"
@@ -671,7 +671,42 @@ msgstr "Индекс репозитория"
 
 #. type: Plain text
 #: _docs/All_our_APIs.md
-msgid "F-Droid is built around a signed index of all the apps and packages that are available.  This is a JSON file, though more of an index than an API since all the information is distributed via a single file.  The repo index is in the form of a signed JAR file that contains _index-v1.json_.  The best method is to verify the JAR signature, then extract _index-v1.json_ if it validates. The _fdroidserver_ Python library provides `fdroidserver.download_repo_index()` to make this easy to do.  It is also possible to just read _index-v1.json_ using any ZIP library."
+#, fuzzy
+#| msgid "F-Droid is built around a signed index of all the apps and packages that are available.  This is a JSON file, though more of an index than an API since all the information is distributed via a single file.  The repo index is in the form of a signed JAR file that contains _index-v1.json_.  The best method is to verify the JAR signature, then extract _index-v1.json_ if it validates. The _fdroidserver_ Python library provides `fdroidserver.download_repo_index()` to make this easy to do.  It is also possible to just read _index-v1.json_ using any ZIP library."
+msgid "F-Droid is built around a signed index of all the apps and packages that are available.  This is a JSON file, though more of an index than an API since all the information is distributed via a single file.  * <https://f-droid.org/repo/index-v2.json> * <https://f-droid.org/repo/index-v1.json> * <https://f-droid.org/archive/index-v2.json> * <https://f-droid.org/archive/index-v1.json>"
+msgstr "F-Droid построен на основе подписанного индекса всех доступных приложений и пакетов.  Это JSON-файл, хотя это скорее индекс, чем API, поскольку вся информация распространяется через один файл.  Индекс репозитория находится в виде подписанного JAR-файла, который содержит _index-v1.json_.  Лучший метод - проверить подпись JAR, затем извлечь _index-v1.json_, если она подтвердится. Библиотека _fdroidserver_ Python предоставляет `fdroidserver.download_repo_index()`, чтобы облегчить эту задачу.  Также можно просто прочитать _index-v1.json_ с помощью любой библиотеки ZIP."
+
+#. type: Plain text
+#: _docs/All_our_APIs.md
+msgid "As of index-v2, there is support for files that only contain the changes, known as \"diff\" files.  There is also a separate entry point, which is signed by a JAR and a GPG signature and lists the available index and diff files."
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/All_our_APIs.md
+#, fuzzy
+#| msgid "<https://f-droid.org/repo/index-v1.jar>"
+msgid "<https://f-droid.org/repo/entry.jar>"
+msgstr "<https://f-droid.org/repo/index-v1.jar>"
+
+#. type: Bullet: '* '
+#: _docs/All_our_APIs.md
+#, fuzzy
+#| msgid "<https://f-droid.org/repo/status/deploy.json>"
+msgid "<https://f-droid.org/repo/entry.json>"
+msgstr "<https://f-droid.org/repo/status/deploy.json>"
+
+#. type: Bullet: '* '
+#: _docs/All_our_APIs.md
+#, fuzzy
+#| msgid "<https://f-droid.org/repo/status/deploy.json>"
+msgid "<https://f-droid.org/repo/entry.json.asc>"
+msgstr "<https://f-droid.org/repo/status/deploy.json>"
+
+#. type: Plain text
+#: _docs/All_our_APIs.md
+#, fuzzy
+#| msgid "F-Droid is built around a signed index of all the apps and packages that are available.  This is a JSON file, though more of an index than an API since all the information is distributed via a single file.  The repo index is in the form of a signed JAR file that contains _index-v1.json_.  The best method is to verify the JAR signature, then extract _index-v1.json_ if it validates. The _fdroidserver_ Python library provides `fdroidserver.download_repo_index()` to make this easy to do.  It is also possible to just read _index-v1.json_ using any ZIP library."
+msgid "The v1 repo index formats come in the form of a signed JAR file that contains _index-v1.json_.  The best method is to verify the JAR signature, then extract _index-v1.json_ if it validates. The _fdroidserver_ Python library provides `fdroidserver.download_repo_index()` to make this easy to do."
 msgstr "F-Droid построен на основе подписанного индекса всех доступных приложений и пакетов.  Это JSON-файл, хотя это скорее индекс, чем API, поскольку вся информация распространяется через один файл.  Индекс репозитория находится в виде подписанного JAR-файла, который содержит _index-v1.json_.  Лучший метод - проверить подпись JAR, затем извлечь _index-v1.json_, если она подтвердится. Библиотека _fdroidserver_ Python предоставляет `fdroidserver.download_repo_index()`, чтобы облегчить эту задачу.  Также можно просто прочитать _index-v1.json_ с помощью любой библиотеки ZIP."
 
 #. type: Bullet: '* '
@@ -682,6 +717,39 @@ msgstr "<https://f-droid.org/repo/index-v1.jar>"
 #. type: Bullet: '* '
 #: _docs/All_our_APIs.md
 msgid "<https://f-droid.org/archive/index-v1.jar>"
+msgstr "<https://f-droid.org/archive/index-v1.jar>"
+
+#. type: Plain text
+#: _docs/All_our_APIs.md
+msgid "There are also GPG signatures for verifying the JSON files:"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/All_our_APIs.md
+#, fuzzy
+#| msgid "<https://f-droid.org/repo/index-v1.jar>"
+msgid "<https://f-droid.org/repo/index-v2.json.asc>"
+msgstr "<https://f-droid.org/repo/index-v1.jar>"
+
+#. type: Bullet: '* '
+#: _docs/All_our_APIs.md
+#, fuzzy
+#| msgid "<https://f-droid.org/repo/index-v1.jar>"
+msgid "<https://f-droid.org/repo/index-v1.json.asc>"
+msgstr "<https://f-droid.org/repo/index-v1.jar>"
+
+#. type: Bullet: '* '
+#: _docs/All_our_APIs.md
+#, fuzzy
+#| msgid "<https://f-droid.org/archive/index-v1.jar>"
+msgid "<https://f-droid.org/archive/index-v2.json.asc>"
+msgstr "<https://f-droid.org/archive/index-v1.jar>"
+
+#. type: Bullet: '* '
+#: _docs/All_our_APIs.md
+#, fuzzy
+#| msgid "<https://f-droid.org/archive/index-v1.jar>"
+msgid "<https://f-droid.org/archive/index-v1.json.asc>"
 msgstr "<https://f-droid.org/archive/index-v1.jar>"
 
 #. type: Title ###
@@ -7991,7 +8059,9 @@ msgstr "Статус: Окончательное предупреждение ->
 
 #. type: Plain text
 #: _docs/MIA_Process.md
-msgid "Afterwards, MIA accounts are removed from all F-Droid directories (Gitlab) or downgraded to normal user account (forum) and the issue is closed."
+#, fuzzy
+#| msgid "Afterwards, MIA accounts are removed from all F-Droid directories (Gitlab) or downgraded to normal user account (forum) and the issue is closed."
+msgid "Afterwards, MIA accounts are removed from all F-Droid directories (Gitlab) or downgraded to normal user account (forum) and the issue is closed and made public if it was set to confidential."
 msgstr "После этого аккаунты со статусом MIA удаляются из всех каталогов F-Droid (Gitlab) или понижаются до обычных пользовательских аккаунтов (форум) и сообщение о проблеме закрывается."
 
 #. type: Title ###
@@ -9646,7 +9716,13 @@ msgstr "Модель безопасности"
 
 #. type: Plain text
 #: _docs/Security_Model.md
-msgid "The security architecture is based on models proven by [Debian](https://wiki.debian.org/SecureApt), [The Update Framework](https://github.com/theupdateframework/specification/blob/master/tuf-spec.md)  , and others:"
+#, fuzzy, no-wrap
+#| msgid "The security architecture is based on models proven by [Debian](https://wiki.debian.org/SecureApt), [The Update Framework](https://github.com/theupdateframework/specification/blob/master/tuf-spec.md)  , and others:"
+msgid ""
+"The security architecture is based on integrating models proven by\n"
+"[Debian](https://wiki.debian.org/SecureApt) and [The Update\n"
+"Framework](https://github.com/theupdateframework/specification/blob/master/tuf-spec.md)\n"
+" into what the Android OS already provides.\n"
 msgstr "Архитектура безопасности основана на моделях, проверенных [Debian](https://wiki.debian.org/SecureApt), [The Update Framework](https://github.com/theupdateframework/specification/blob/master/tuf-spec.md), и других:"
 
 #. type: Bullet: '-   '
@@ -9678,6 +9754,21 @@ msgstr "[Android проверяет обновления](https://developer.andr
 #: _docs/Security_Model.md
 msgid "[file integrity](https://gitlab.com/fdroid/fdroidclient/blob/v0.101-alpha2/app/src/main/java/org/fdroid/fdroid/installer/ApkCache.java#L57) protected by [signed metadata](https://gitlab.com/fdroid/fdroidclient/blob/v0.101-alpha2/app/src/main/java/org/fdroid/fdroid/RepoUpdater.java#L212)"
 msgstr "[целостность файла](https://gitlab.com/fdroid/fdroidclient/blob/v0.101-alpha2/app/src/main/java/org/fdroid/fdroid/installer/ApkCache.java#L57) защищена [подписанными метаданными](https://gitlab.com/fdroid/fdroidclient/blob/v0.101-alpha2/app/src/main/java/org/fdroid/fdroid/RepoUpdater.java#L212)"
+
+#. type: Bullet: '-   '
+#: _docs/Security_Model.md
+msgid "As of [_index-v2_](https://gitlab.com/fdroid/fdroidserver/-/merge_requests/1092), files from the repo are verified based on SHA-256, including icons, screenshots, etc."
+msgstr ""
+
+#. type: Bullet: '-   '
+#: _docs/Security_Model.md
+msgid "_index-v2_ uses any algorithm supported by [_apksigner_](https://gitlab.com/fdroid/fdroidserver/-/merge_requests/1134) and [_android-23_](https://developer.android.com/reference/java/security/Signature) and newer, and relies on OpenJDK's and Google's maintenance of the currently valid signing algorithms.  When _index-v2_ was launched, the signature algorithm in use was `SHA256withRSA` and the digest algorithm was `SHA-256`.  _index-v1_ is signed by `SHA1withRSA`.  As of this writing, SHA1 are still considered strong against [second preimage attacks](https://crypto.stackexchange.com/a/48291), which is what is relevant for index JARs."
+msgstr ""
+
+#. type: Bullet: '-   '
+#: _docs/Security_Model.md
+msgid "Production signing is handled by [reproducible builds](https://tests.reproducible-builds.org/debian/rb-pkg/unstable/amd64/android-platform-tools-apksig.html) of _apksigner_ from Debian."
+msgstr ""
 
 #. type: Bullet: '-   '
 #: _docs/Security_Model.md
@@ -9738,6 +9829,48 @@ msgstr "Для защиты от злоумышленника, владеюще�
 #: _docs/Security_Model.md
 msgid "The security model of the [Build Server Setup](../Build_Server_Setup)  and the [Signing Process](../Signing_Process) are documented separately."
 msgstr "Модель безопасности [Build Server Setup](../Build_Server_Setup) и [Signing Process](../Signing_Process) документированы отдельно."
+
+#. type: Title ##
+#: _docs/Security_Model.md
+#, fuzzy, no-wrap
+#| msgid "APK Signing"
+msgid "App signing"
+msgstr "Подписание APK"
+
+#. type: Bullet: '* '
+#: _docs/Security_Model.md
+msgid "Apps can be distributed using the [developer's own](TODO) signatures when the builds are fully reproducible."
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/Security_Model.md
+msgid "By default, <f-droid.org> will generate and manage"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/Security_Model.md
+msgid "All app signing is done on a dedicated, air-gapped, offline machine."
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/Security_Model.md
+msgid "At any time, an app may add the developer's own signatures once reproducible builds has been achieved.  Additionally, releases signed by the <f-droid.org> key will continue to be shipped."
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/Security_Model.md
+msgid "The developer's own signature is the default for fresh installs."
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/Security_Model.md
+msgid "TODO packageName rules"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/Security_Model.md
+msgid "All apps are signed by [a key devoted to that app](TODO) (unless the upstream specifically requests multiple apps be signed by the same key."
+msgstr ""
 
 #. type: Title ##
 #: _docs/Security_Model.md
