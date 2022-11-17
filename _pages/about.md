@@ -20,6 +20,8 @@ OFTC or join [#fdroid:f-droid.org](https://matrix.to/#/#fdroid:f-droid.org) on M
 The discussions are logged on
 [matrix.f-droid.org](https://matrix.f-droid.org/alias/%23fdroid:f-droid.org).
 
+An F-Droid matrix space grouping together all F-Droid related rooms exists at [#fdroid-space:f-droid.org](https://matrix.to/#/#fdroid-space:f-droid.org), and can be joined by anyone.
+
 There are also bridges to Telegram and Jabber/XMPP (experimental).
 To join via Telegram, click [this link](https://matrix.f-droid.org/fdroid/telegram/).
 For Jabber/XMPP,
