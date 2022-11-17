@@ -33,6 +33,14 @@ Check out the descriptions to find an appropriate consultant for your needs.
 * __Languages:__ English, German
 * __Specialization:__ Custom F-Droid deployments, reproducible builds, new features, whitelabel app stores, getting things merged.
 
+### Hellebaard
+
+* __Website:__ [hellebaard.nl](http://hellebaard.nl)
+* __Email:__ [contact@hellebaard.nl](mailto:contact@hellebaard.nl)
+* __Address:__ Utrecht, the Netherlands
+* __Languages:__ English, Dutch
+* __Specialization:__ Translations English ⟷ Dutch, descriptions, metadata, graphics and screenshots.
+
 ### IzzySoft
 
 * __Website:__ [android.izzysoft.de](https://android.izzysoft.de/), [www.izzysoft.de](https://www.izzysoft.de/)
