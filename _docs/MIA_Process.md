@@ -43,7 +43,8 @@ person.
 - Status: Final warning -> wait 4 weeks.
 
 Afterwards, MIA accounts are removed from all F-Droid directories (Gitlab) or
-downgraded to normal user account (forum) and the issue is closed.
+downgraded to normal user account (forum) and the issue is closed and made
+public if it was set to confidential.
 
 ### References
 
