@@ -68,13 +68,13 @@ separately.
 
 ## App signing
 
-* Apps can be distributed using the [developer's own](TODO) signatures when the builds are fully reproducible.
-* By default, <f-droid.org> will generate and manage
-* All app signing is done on a dedicated, air-gapped, offline machine.
-* At any time, an app may add the developer's own signatures once reproducible builds has been achieved.  Additionally, releases signed by the <f-droid.org> key will continue to be shipped.
-* The developer's own signature is the default for fresh installs.
-* TODO packageName rules
-* All apps are signed by [a key devoted to that app](TODO) (unless the upstream specifically requests multiple apps be signed by the same key.
+* Apps can be distributed using the [developer's own](../Reproducible_Builds) signatures when the builds are fully reproducible.
+* By default, the "publish" server will generate and manage a signing key for each individual app.  These signing keys are only shared between apps when specifically configured to do so using the [_keyaliases_](https://gitlab.com/fdroid/fdroidserver/-/blob/886394c9a4909/examples/config.yml#L156) mechanism in _config.yml_.
+* All apps are signed by [the key devoted to that app](https://gitlab.com/fdroid/fdroidserver/-/blob/2.1.2/fdroidserver/publish.py#L420) unless the upstream [specifically](https://gitlab.com/fdroid/fdroiddata/-/merge_requests/10240) requests multiple apps be signed by the same key, and the _fdroiddata_ maintainers approve it.
+* For _f-droid.org_, all app signing is done on a dedicated, air-gapped, offline machine.
+* At any time, the developer's own signatures maybe be added to _f-droid.org_ once reproducible builds has been achieved.  Additionally, releases signed by the _f-droid.org_ key will continue to be shipped.
+* In the official F-Droid client app, the developer's own signature is the default for fresh installs.
+* We encourage app developers and maintainers to think about whether they want to use a special Application ID for the app when published in _f-droid.org_ to avoid conflicts with other versions.  One common pattern is to add `.fdroid` to the end of the Application ID via a Gradle Build Flavor.
 
 
 ## Initial Installs
