@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Icelandic (F-Droid)\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
-"POT-Creation-Date: 2022-11-18 00:29+0100\n"
+"POT-Creation-Date: 2022-11-18 13:55+0100\n"
 "PO-Revision-Date: 2022-09-18 04:43+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic <https://hosted.weblate.org/projects/f-droid/website-docs/is/>\n"
@@ -8617,7 +8617,7 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
-msgid "A standard part of the Android build process is to run some kind of PNG optimization tool, like `aapt singleCrunch` or `pngcrush`.  These do not provide deterministic output, it is still an open question as to why.  Since PNGs are normally committed to the source repo, a workaround to this problem is to run the tool of your choice on the PNG files, then commit those changes to the source repo (e.g. `git`).  Then, disable the default PNG optimization process by adding this to _build.gradle_:"
+msgid "A standard part of the Android build process is to run some kind of PNG optimization tool, like `aapt singleCrunch`, `pngcrush`, `zopflipng` or `optipng`.  These do not provide deterministic output, it is still an open question as to why.  Since PNGs are normally committed to the source repo, a workaround to this problem is to run the tool of your choice on the PNG files, then commit those changes to the source repo (e.g. `git`).  Then, disable the default PNG optimization process by adding this to _build.gradle_:"
 msgstr ""
 
 #. type: Fenced code block
@@ -8629,6 +8629,11 @@ msgid ""
 "        cruncherEnabled = false\n"
 "    }\n"
 "}\n"
+msgstr ""
+
+#. type: Plain text
+#: _docs/Reproducible_Builds.md
+msgid "Note that tools such as `svgo` can do similar optimization to SVG files."
 msgstr ""
 
 #. type: Title ###
@@ -9310,37 +9315,37 @@ msgstr ""
 
 #. type: Bullet: '* '
 #: _docs/Security_Model.md
-msgid "Apps can be distributed using the [developer's own](TODO) signatures when the builds are fully reproducible."
+msgid "Apps can be distributed using the [developer's own](../Reproducible_Builds) signatures when the builds are fully reproducible."
 msgstr ""
 
 #. type: Bullet: '* '
 #: _docs/Security_Model.md
-msgid "By default, <f-droid.org> will generate and manage"
+msgid "By default, the \"publish\" server will generate and manage a signing key for each individual app.  These signing keys are only shared between apps when specifically configured to do so using the [_keyaliases_](https://gitlab.com/fdroid/fdroidserver/-/blob/886394c9a4909/examples/config.yml#L156) mechanism in _config.yml_."
 msgstr ""
 
 #. type: Bullet: '* '
 #: _docs/Security_Model.md
-msgid "All app signing is done on a dedicated, air-gapped, offline machine."
+msgid "All apps are signed by [the key devoted to that app](https://gitlab.com/fdroid/fdroidserver/-/blob/2.1.2/fdroidserver/publish.py#L420) unless the upstream [specifically](https://gitlab.com/fdroid/fdroiddata/-/merge_requests/10240) requests multiple apps be signed by the same key, and the _fdroiddata_ maintainers approve it."
 msgstr ""
 
 #. type: Bullet: '* '
 #: _docs/Security_Model.md
-msgid "At any time, an app may add the developer's own signatures once reproducible builds has been achieved.  Additionally, releases signed by the <f-droid.org> key will continue to be shipped."
+msgid "For _f-droid.org_, all app signing is done on a dedicated, air-gapped, offline machine."
 msgstr ""
 
 #. type: Bullet: '* '
 #: _docs/Security_Model.md
-msgid "The developer's own signature is the default for fresh installs."
+msgid "At any time, the developer's own signatures maybe be added to _f-droid.org_ once reproducible builds has been achieved.  Additionally, releases signed by the _f-droid.org_ key will continue to be shipped."
 msgstr ""
 
 #. type: Bullet: '* '
 #: _docs/Security_Model.md
-msgid "TODO packageName rules"
+msgid "In the official F-Droid client app, the developer's own signature is the default for fresh installs."
 msgstr ""
 
 #. type: Bullet: '* '
 #: _docs/Security_Model.md
-msgid "All apps are signed by [a key devoted to that app](TODO) (unless the upstream specifically requests multiple apps be signed by the same key."
+msgid "We encourage app developers and maintainers to think about whether they want to use a special Application ID for the app when published in _f-droid.org_ to avoid conflicts with other versions.  One common pattern is to add `.fdroid` to the end of the Application ID via a Gradle Build Flavor."
 msgstr ""
 
 #. type: Title ##
