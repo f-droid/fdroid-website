@@ -37,10 +37,10 @@ If you need to reference many strings in a single `.md` file, then it may be mor
 
 ### Documentation + Website News
 
-When a new `.md` file is added to the `_docs/` or `_posts/` directory, then you need to run:
+When a new `.md` file is added to the `_docs/`, `_pages/`, or `_posts/` directory, then you need to run:
 
 ```bash
-./tools/i18n.sh md2po
+./tools/i18n.sh
 ```
 
 This will extract the strings from all Markdown files in these two

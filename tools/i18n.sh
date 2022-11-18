@@ -16,17 +16,13 @@ fi
 PROJECT_ROOT=$(cd `dirname $0`/..; pwd)
 cd ${PROJECT_ROOT}
 
-if [ "$1" == "md2po" ]; then
+if [ "$1" == "--all" ]; then
     # this is for syncing to the .pot and .po files, so do all languages
-    languages=`ls po/_*.*.po | cut -d . -f 2|sort -u`
+    languages=`sort -u  <(ls po/_*.*.po | cut -d . -f 2)  <(cd _data; find * -type d)`
 else
     languages=$(ruby -ryaml -e "data = YAML::load(open('_config.yml')); puts data['languages']")
 fi
 test -n "$languages"
-
-if [ "$1" == "md2po" ]; then
-    languages=$(cd _data; find * -type d)
-fi
 
 # convert newlines to spaces
 languages=`echo $languages`

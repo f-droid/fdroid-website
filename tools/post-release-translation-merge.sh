@@ -8,7 +8,7 @@
 basedir=$(cd $(dirname $0)/..; pwd)
 cd $basedir
 
-./tools/i18n.sh md2po
+./tools/i18n.sh --all
 
 wlc commit
 git remote update -p weblate upstream
