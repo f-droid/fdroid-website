@@ -175,9 +175,9 @@ different revisions of the platform:
 ### PNG Crush/Crunch
 
 A standard part of the Android build process is to run some kind of
-PNG optimization tool, like `aapt singleCrunch` or `pngcrush`.  These
-do not provide deterministic output, it is still an open question as
-to why.  Since PNGs are normally committed to the source repo, a
+PNG optimization tool, like `aapt singleCrunch`, `pngcrush`, `zopflipng` or
+`optipng`.  These do not provide deterministic output, it is still an open
+question as to why.  Since PNGs are normally committed to the source repo, a
 workaround to this problem is to run the tool of your choice on the
 PNG files, then commit those changes to the source repo (e.g. `git`).
 Then, disable the default PNG optimization process by adding this to
@@ -190,6 +190,8 @@ android {
     }
 }
 ```
+
+Note that tools such as `svgo` can do similar optimization to SVG files.
 
 ### R8 Optimizer
 
