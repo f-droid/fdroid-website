@@ -14,7 +14,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
 "POT-Creation-Date: 2022-11-18 13:55+0100\n"
-"PO-Revision-Date: 2022-11-18 07:08+0000\n"
+"PO-Revision-Date: 2022-11-19 17:47+0000\n"
 "Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/f-droid/website-docs/uk/>\n"
 "Language: uk\n"
@@ -6984,17 +6984,13 @@ msgstr "Процес збірки запускається **раз на ден�
 
 #. type: Plain text
 #: _docs/Inclusion_How-To.md
-#, fuzzy
-#| msgid "A record of the build process for each application is provided on the F-Droid wiki, as a subpage `lastbuild` of the applications information page (e.g. [here is the lastbuild page for the F-Droid Client](https://f-droid.org/wiki/page/org.fdroid.fdroid/lastbuild)).  This is useful to aid in diagnosing problems when the build unexpectedly failed."
 msgid "A record of a successful build process for one application is provided on the F-Droid's website page for that specific app (e.g. [see the Build Log for the F-Droid Client](https://f-droid.org/en/packages/org.fdroid.fdroid/#latest))."
-msgstr "Запис процесу збірки кожного застосунку потрапляє на вікі F-Droid, а саме на дочірню сторінку `lastbuild` сторінки даних про застосунок (наприклад, [ось сторінка lastbuild клієнта F-Droid](https://f-droid.org/wiki/page/org.fdroid.fdroid/lastbuild)). Це допомагає виявляти причини несподіваних збоїв збірки."
+msgstr "Запис про успішний процес збірки для одного застосунку надається на сторінці вебсайту F-Droid для цього конкретного застосунку (наприклад, [перегляньте журнал збірки для клієнта F-Droid](https://f-droid.org/en/packages/org.fdroid.fdroid/#latest))."
 
 #. type: Plain text
 #: _docs/Inclusion_How-To.md
-#, fuzzy
-#| msgid "Another reason could be that the app failed to build. You can watch the build process on [F-Droid Monitor - Running](https://monitor.f-droid.org/builds/running) and the previous cycle in [Build](https://monitor.f-droid.org/builds/build)."
 msgid "Apps that fail will have the log available during the build cycle on the [F-Droid Monitor - Running](https://monitor.f-droid.org/builds/running) page or, if in the previous cycle, on the [Build](https://monitor.f-droid.org/builds/build) page.  This is useful to aid in diagnosing problems when the build unexpectedly failed."
-msgstr "Можливо, при збірці застосунку виникає помилка. [F-Droid Monitor — Збирається](https://monitor.f-droid.org/builds/running) показує хід збірок, а [Зібрано](https://monitor.f-droid.org/builds/build) — попередній цикл."
+msgstr "Застосунки, в яких стався збій, матимуть журнал, доступний під час циклу збірки на сторінці [F-Droid Monitor - Running](https://monitor.f-droid.org/builds/running) або, якщо в попередньому циклі, на сторінці [Build](https://monitor.f-droid.org/builds/build).  Це корисно для визначення проблем, коли збирання несподівано завершилося невдало."
 
 #. type: Title ###
 #: _docs/Inclusion_How-To.md
@@ -9223,10 +9219,8 @@ msgstr "Стиснення PNG"
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
-#, fuzzy
-#| msgid "A standard part of the Android build process is to run some kind of PNG optimization tool, like `aapt singleCrunch` or `pngcrush`.  These do not provide deterministic output, it is still an open question as to why.  Since PNGs are normally committed to the source repo, a workaround to this problem is to run the tool of your choice on the PNG files, then commit those changes to the source repo (e.g. `git`).  Then, disable the default PNG optimization process by adding this to _build.gradle_:"
 msgid "A standard part of the Android build process is to run some kind of PNG optimization tool, like `aapt singleCrunch`, `pngcrush`, `zopflipng` or `optipng`.  These do not provide deterministic output, it is still an open question as to why.  Since PNGs are normally committed to the source repo, a workaround to this problem is to run the tool of your choice on the PNG files, then commit those changes to the source repo (e.g. `git`).  Then, disable the default PNG optimization process by adding this to _build.gradle_:"
-msgstr "У ході стандартної Android-збірки запускається певний засіб оптимізації PNG, наприклад `aapt singleCrunch` або `pngcrush`. Від запуску до запуску їхній вивід змінюється, чому — досі відкрите питання. Оскільки PNG зазвичай зберігаються в репозиторії вихідного коду, ви можете обійти цю проблему, обробивши PNG-файли вручну засобом на ваш вибір і зберігши ці зміни в репозиторії вихідного коду (як-от `git`). Тоді вимкніть автоматичну оптимізацію PNG, додавши наступне в _build.gradle_:"
+msgstr "У ході стандартної Android-збірки запускається певний засіб оптимізації PNG, наприклад, `aapt singleCrunch`, `pngcrush`, `zopflipng` або `optipng`. Від запуску до запуску їхній вивід змінюється, чому — досі відкрите питання. Оскільки PNG зазвичай зберігаються в репозиторії джерельного коду, ви можете обійти цю проблему, обробивши PNG-файли вручну засобом на ваш вибір і зберігши ці зміни в репозиторії вихідного коду (як-от `git`). Тоді вимкніть автоматичну оптимізацію PNG, додавши це в _build.gradle_:"
 
 #. type: Fenced code block
 #: _docs/Reproducible_Builds.md
@@ -9247,7 +9241,7 @@ msgstr ""
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
 msgid "Note that tools such as `svgo` can do similar optimization to SVG files."
-msgstr ""
+msgstr "Зауважте, що такі інструменти, як `svgo` можуть виконувати аналогічну оптимізацію SVG-файлів."
 
 #. type: Title ###
 #: _docs/Reproducible_Builds.md
@@ -9834,14 +9828,17 @@ msgstr "Модель безпеки"
 
 #. type: Plain text
 #: _docs/Security_Model.md
-#, fuzzy, no-wrap
-#| msgid "The security architecture is based on models proven by [Debian](https://wiki.debian.org/SecureApt), [The Update Framework](https://github.com/theupdateframework/specification/blob/master/tuf-spec.md)  , and others:"
+#, no-wrap
 msgid ""
 "The security architecture is based on integrating models proven by\n"
 "[Debian](https://wiki.debian.org/SecureApt) and [The Update\n"
 "Framework](https://github.com/theupdateframework/specification/blob/master/tuf-spec.md)\n"
 " into what the Android OS already provides.\n"
-msgstr "Архітектура безпеки втілена по аналогії з моделями [Debian](https://wiki.debian.org/SecureApt), [The Update Framework](https://github.com/theupdateframework/specification/blob/master/tuf-spec.md) та інших:"
+msgstr ""
+"Архітектура безпеки базується на інтеграції моделей, перевірених\n"
+"[Debian](https://wiki.debian.org/SecureApt) і [The Update\n"
+"Framework](https://github.com/theupdateframework/specification/blob/master/tuf-spec.md)\n"
+" у те, що вже надається ОС Android.\n"
 
 #. type: Bullet: '-   '
 #: _docs/Security_Model.md
@@ -9881,12 +9878,12 @@ msgstr "Починаючи з [_index-v2_](https://gitlab.com/fdroid/fdroidserve
 #. type: Bullet: '-   '
 #: _docs/Security_Model.md
 msgid "_index-v2_ uses any algorithm supported by [_apksigner_](https://gitlab.com/fdroid/fdroidserver/-/merge_requests/1134) and [_android-23_](https://developer.android.com/reference/java/security/Signature) and newer, and relies on OpenJDK's and Google's maintenance of the currently valid signing algorithms.  When _index-v2_ was launched, the signature algorithm in use was `SHA256withRSA` and the digest algorithm was `SHA-256`.  _index-v1_ is signed by `SHA1withRSA`.  As of this writing, SHA1 are still considered strong against [second preimage attacks](https://crypto.stackexchange.com/a/48291), which is what is relevant for index JARs."
-msgstr ""
+msgstr "_index-v2_ використовує будь-який алгоритм, що підтримується [_apksigner_](https://gitlab.com/fdroid/fdroidserver/-/merge_requests/1134) і [_android-23_](https://developer.android.com/reference/java/security/Signature) та новішими версіями, і спирається на підтримку OpenJDK та актуальних алгоритмів підпису Google.  На момент запуску _index-v2_ використовувався алгоритм підпису `SHA256withRSA` та алгоритм дайджесту `SHA-256`.  _index-v1_ підписується `SHA1withRSA`.  На момент написання статті SHA1 досі вважаються стійкими до [атак знаходження першовзору](https://crypto.stackexchange.com/a/48291), що актуально для індексних JAR-файлів."
 
 #. type: Bullet: '-   '
 #: _docs/Security_Model.md
 msgid "Production signing is handled by [reproducible builds](https://tests.reproducible-builds.org/debian/rb-pkg/unstable/amd64/android-platform-tools-apksig.html) of _apksigner_ from Debian."
-msgstr ""
+msgstr "Підписання у робочому середовищі здійснюється за допомогою [відтворюваних збірок](https://tests.reproducible-builds.org/debian/rb-pkg/unstable/amd64/android-platform-tools-apksig.html) _apksigner_ з Debian."
 
 #. type: Bullet: '-   '
 #: _docs/Security_Model.md
@@ -9956,40 +9953,38 @@ msgstr "Підпис застосунку"
 
 #. type: Bullet: '* '
 #: _docs/Security_Model.md
-#, fuzzy
-#| msgid "Apps can be distributed using the [developer's own](TODO) signatures when the builds are fully reproducible."
 msgid "Apps can be distributed using the [developer's own](../Reproducible_Builds) signatures when the builds are fully reproducible."
-msgstr "Застосунки можуть поширюватися з використанням підписів [розробника](TODO), коли збірки повністю відтворювані."
+msgstr "Застосунки можуть поширюватися з використанням підписів [розробника](../Reproducible_Builds), коли збірки повністю відтворювані."
 
 #. type: Bullet: '* '
 #: _docs/Security_Model.md
 msgid "By default, the \"publish\" server will generate and manage a signing key for each individual app.  These signing keys are only shared between apps when specifically configured to do so using the [_keyaliases_](https://gitlab.com/fdroid/fdroidserver/-/blob/886394c9a4909/examples/config.yml#L156) mechanism in _config.yml_."
-msgstr ""
+msgstr "Усталено, сервер «публікації» генерує та керує ключами підпису для кожного окремого застосунку.  Ці ключі підпису передаються між додатками лише тоді, коли вони спеціально налаштовані для цього за допомогою механізму [_keyaliases_](https://gitlab.com/fdroid/fdroidserver/-/blob/886394c9a4909/examples/config.yml#L156) у файлі _config.yml_."
 
 #. type: Bullet: '* '
 #: _docs/Security_Model.md
 msgid "All apps are signed by [the key devoted to that app](https://gitlab.com/fdroid/fdroidserver/-/blob/2.1.2/fdroidserver/publish.py#L420) unless the upstream [specifically](https://gitlab.com/fdroid/fdroiddata/-/merge_requests/10240) requests multiple apps be signed by the same key, and the _fdroiddata_ maintainers approve it."
-msgstr ""
+msgstr "Усі застосунки підписуються [ключем, призначеним для цього застосунку](https://gitlab.com/fdroid/fdroidserver/-/blob/2.1.2/fdroidserver/publish.py#L420), за винятком випадків, коли вхідний канал [зокрема](https://gitlab.com/fdroid/fdroiddata/-/merge_requests/10240) вимагає підписання кількох застосунків одним і тим же ключем, і розробники _fdroiddata_ це схвалюють."
 
 #. type: Bullet: '* '
 #: _docs/Security_Model.md
 msgid "For _f-droid.org_, all app signing is done on a dedicated, air-gapped, offline machine."
-msgstr ""
+msgstr "Для _f-droid.org_, усі підписання застосунків здійснюється на спеціальному ізольованому офлайн-комп'ютері."
 
 #. type: Bullet: '* '
 #: _docs/Security_Model.md
 msgid "At any time, the developer's own signatures maybe be added to _f-droid.org_ once reproducible builds has been achieved.  Additionally, releases signed by the _f-droid.org_ key will continue to be shipped."
-msgstr ""
+msgstr "У будь-який час власні підписи розробника можуть бути додані на _f-droid.org_ після досягнення відтворюваності збірок.  Крім того, продовжуватимуть постачатися випуски, підписані ключем _f-droid.org_."
 
 #. type: Bullet: '* '
 #: _docs/Security_Model.md
 msgid "In the official F-Droid client app, the developer's own signature is the default for fresh installs."
-msgstr ""
+msgstr "В офіційному клієнтському застосунку F-Droid власний підпис розробника типовий для нових встановлень."
 
 #. type: Bullet: '* '
 #: _docs/Security_Model.md
 msgid "We encourage app developers and maintainers to think about whether they want to use a special Application ID for the app when published in _f-droid.org_ to avoid conflicts with other versions.  One common pattern is to add `.fdroid` to the end of the Application ID via a Gradle Build Flavor."
-msgstr ""
+msgstr "Ми радимо розробникам і супровідникам застосунків подумати про те, чи хочуть вони використовувати спеціальний Application ID для застосунку під час публікації на _f-droid.org_, щоб уникнути конфліктів з іншими версіями.  Одна з поширених моделей — додавання `.fdroid` в кінець Application ID через Gradle Build Flavor."
 
 #. type: Title ##
 #: _docs/Security_Model.md
