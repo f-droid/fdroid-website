@@ -94,17 +94,6 @@ ErrorDocument 403 /403.html
 ErrorDocument 404 /404.html
 
 ##
-## REDIRECT TO GITLAB FOR BADGES
-##
-## Temporary work around while we figure out why the /badges directory
-## isn't getting deployed correctly.  Forwards all requests for files
-## in the /badge directory to GitLab Pages.
-##
-
-RewriteCond %{REQUEST_URI} ^/badge/(.*)$  [NC]
-RewriteRule ^.*$ https://fdroid.gitlab.io/artwork/badge/%1 [L,R=302]
-
-##
 ## CURRENT FDROID APK
 ##
 ## Point the big download button to the latest stable F-droid APK.
