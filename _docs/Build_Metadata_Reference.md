@@ -483,7 +483,7 @@ configuration to the build. These are (roughly in order of application):
 `subdir: <path>`<a name="build_subdir"></a>
 
 :   Specifies to build from a subdirectory of the checked out source
-    code. Normally this directory is changed to before building,
+    code. This is the directory where the build scripts are run.
 
 `submodules: true`<a name="build_submodules"></a>
 
@@ -520,6 +520,8 @@ configuration to the build. These are (roughly in order of application):
     Android SDK and NDK directories respectively. The following
     per-build variables are available likewise: \$\$VERSION\$\$,
     \$\$VERCODE\$\$ and \$\$COMMIT\$\$.
+
+    This runs in [`subdir:`](#build_subdir) if set.
 
 `oldsdkloc: true`<a name="build_oldsdkloc"></a>
 
@@ -680,6 +682,8 @@ configuration to the build. These are (roughly in order of application):
     per-build variables are available likewise: \$\$VERSION\$\$,
     \$\$VERCODE\$\$ and \$\$COMMIT\$\$.
 
+    This runs in [`subdir:`](#build_subdir) if set.
+
 `scanignore: <path1>[,<path2>,...]`<a name="build_scanignore"></a>
 
 :   Enables one or more files/paths to be excluded from the scan
@@ -715,6 +719,8 @@ configuration to the build. These are (roughly in order of application):
     Android SDK and NDK directories respectively. The following per-build
     variables are available likewise: \$\$VERSION\$\$, \$\$VERCODE\$\$
     and \$\$COMMIT\$\$.
+
+    This runs in [`subdir:`](#build_subdir) if set.
 
 `buildjni: [yes|no|<dir list>]`<a name="build_buildjni"></a>
 
@@ -785,6 +791,8 @@ configuration to the build. These are (roughly in order of application):
     methods like `gradle=yes` or `maven=yes`, but if no build method is
     specified, the build is manual. You should run your build commands,
     such as `make`, in _build_.
+
+    This runs in [`subdir:`](#build_subdir) if set.
 
 `novcheck: true`<a name="build_novcheck"></a>
 
