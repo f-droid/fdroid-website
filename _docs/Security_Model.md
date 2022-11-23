@@ -7,7 +7,7 @@ title: Security Model
 The security architecture is based on integrating models proven by
 [Debian](https://wiki.debian.org/SecureApt) and [The Update
 Framework](https://github.com/theupdateframework/specification/blob/master/tuf-spec.md)
- into what the Android OS already provides.
+ into what the Android OS already provides.  The way F-Droid operates is greatly inspired by de facto security model of how reputable GNU/Linux distros like Debian, Fedora, Ubuntu, etc. operate.  There is a big emphasis on operating in the public and making everything publicly available. We include source tarballs and build logs when we publish binaries.  These are archived as long as possible, for retroactive review.  And all of this is mirrored in many places across the internet by many different parties.
 
 -   a repo is defined by having unique signing key, first and foremost
 -   [HTTPS connections by default](https://gitlab.com/fdroid/fdroidclient/blob/v0.100.1/app/src/main/res/values/default_repo.xml#L11)
