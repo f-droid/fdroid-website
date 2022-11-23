@@ -22,7 +22,10 @@ variables:
        'Acquire::Retries "20";' \
        'Dpkg::Use-Pty "0";' \
       > /etc/apt/apt.conf.d/99gitlab
-  echo "deb http://deb.debian.org/debian/ buster-backports main" >> /etc/apt/sources.list
+  apt-get update
+  apt-get install ca-certificates
+  sed -i 's,http:,https:,g' /etc/apt/sources.list
+  echo "deb https://deb.debian.org/debian/ buster-backports main" >> /etc/apt/sources.list
   printf "Package\x3a po4a ruby-git ruby-jekyll-include-cache ruby-jekyll-last-modified-at ruby-jekyll-paginate-v2 ruby-jekyll-redirect-from ruby-jekyll-sitemap ruby-loofah ruby-nokogiri ruby-rchardet ruby-rouge ruby-zip\nPin\x3a release a=buster-backports\nPin-Priority\x3a 500\n" > /etc/apt/preferences.d/debian-buster-backports.pref
   apt-get update
   apt-get dist-upgrade
@@ -192,7 +195,7 @@ check_fdroid_apk_bot:
   only:
     - schedules
     - master@fdroid/fdroidserver
-  image: alpine:3.13
+  image: alpine:3.16
   variables:
     apk: F-Droid.apk
     asc: F-Droid.apk.asc
