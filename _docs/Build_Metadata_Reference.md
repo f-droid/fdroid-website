@@ -616,7 +616,7 @@ configuration to the build. These are (roughly in order of application):
 
     Each srclib has a metadata file under srclibs/ in the repository
     directory, and the source code is stored in build/srclib/.
-	_RepoType_ and _Repo_ are specified in the same way
+    _RepoType_ and _Repo_ are specified in the same way
     as for apps; Subdir: can be a comma separated list, for when
     directories are renamed by upstream; Update Project: updates the
     projects in the working directory and one level down; Prepare: can
