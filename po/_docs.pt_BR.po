@@ -19,7 +19,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
-"POT-Creation-Date: 2022-11-18 13:55+0100\n"
+"POT-Creation-Date: 2022-11-25 21:19+0100\n"
 "PO-Revision-Date: 2022-06-26 21:22+0000\n"
 "Last-Translator: Leonardo Colman <leonardo.dev@colman.com.br>\n"
 "Language-Team: Portuguese (Brazil) <https://hosted.weblate.org/projects/f-droid/website-docs/pt_BR/>\n"
@@ -842,13 +842,22 @@ msgstr "Construções reproduzíveis"
 
 #. type: Plain text
 #: _docs/All_our_APIs.md
+#, fuzzy
+msgid "_verification.f-droid.org_ is a rebuilder that rebuilds the official releases from _f-droid.org_, then checks to see if they were [reproducibly built](https://reproducible-builds.org/). There is an entry point for each package based on the package name: <https://verification.f-droid.org/org.fdroid.fdroid.json>"
+msgstr ""
+"_verification.f-droid.org_ é um reconstrutor que reconstrói os lançamentos oficiais\n"
+"de _f-droid.org_, em seguida, verifica se eles foram [reprodutivelmente\n"
+"construído](https://reproducible-builds.org/). Há um arquivo JSON por APK que tem\n"
+"foi verificado, onde o nome do arquivo segue o padrão\n"
+"`<ApplicationId>_<VersionCode>.apk.json`, por exemplo:\n"
+"<https://verification.f-droid.org/org.fdroid.fdroid_1010050.apk.json>\n"
+
+#. type: Plain text
+#: _docs/All_our_APIs.md
 #, fuzzy, no-wrap
 msgid ""
-"_verification.f-droid.org_ is a rebuilder that rebuilds the official releases\n"
-"from _f-droid.org_, then checks to see if they were [reproducibly\n"
-"built](https://reproducible-builds.org/). There is a JSON file per APK that has\n"
-"been checked, where the filename follows the pattern\n"
-"`<ApplicationId>_<VersionCode>.apk.json`, for example:\n"
+"Then there is a JSON file per APK that has been checked, where the filename\n"
+"follows the pattern `<ApplicationId>_<VersionCode>.apk.json`, for example:\n"
 "<https://verification.f-droid.org/org.fdroid.fdroid_1010050.apk.json>\n"
 msgstr ""
 "_verification.f-droid.org_ é um reconstrutor que reconstrói os lançamentos oficiais\n"
@@ -872,14 +881,8 @@ msgstr "Registros de transparência binária"
 #. type: Plain text
 #: _docs/All_our_APIs.md
 #, fuzzy
-msgid "[Binary transparency](https://wiki.mozilla.org/Security/Binary_Transparency) is the idea that all released packages should be logged as they are published.  This provides a way to check if a given binary was produced by the publisher, or came from somewhere else, e.g. as an exploit.  _fdroidserver_ has built in tools for managing a binary transparency log of the index files as part of the release process. This has been enabled on the Guardian Project repo: <https://github.com/guardianproject/binary_transparency_log>"
+msgid "[Binary transparency](https://wiki.mozilla.org/Security/Binary_Transparency) is the idea that all released packages should be logged as they are published.  This provides a way to check if a given binary was produced by the publisher, or came from somewhere else, e.g. as an exploit.  _fdroidserver_ has built in tools for managing a binary transparency log of the index files as part of the release process. This has been enabled on _f-droid.org_: <https://gitlab.com/fdroid/f-droid.org-transparency-log>"
 msgstr "[Transparência binária](https://wiki.mozilla.org/Security/Binary_Transparency) é a ideia de que todos os pacotes lançados devem ser registrados à medida que são publicados.  Isso fornece uma maneira de verificar se um determinado binário foi produzido pelo editor ou veio de outro lugar, por exemplo, como uma exploração.  _fdroidserver_ tem ferramentas integradas para gerenciar um log de transparência binário dos arquivos de índice como parte do processo de lançamento. Isso foi ativado no repositório do Projeto Guardian: <https://github.com/guardianproject/binary_transparency_log>"
-
-#. type: Plain text
-#: _docs/All_our_APIs.md
-#, fuzzy
-msgid "There is also a prototype for running a binary transparency log for _f-droid.org_. <https://gitlab.com/eighthave/f-droid.org-binary-transparency>"
-msgstr "Há também um protótipo para executar um registro de transparência binária para _f-droid.org_. <https://gitlab.com/eighthave/f-droid.org-binary-transparency>"
 
 #. type: Plain text
 #: _docs/All_our_APIs.md
@@ -2763,10 +2766,13 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-#, no-wrap
+#, fuzzy, no-wrap
+#| msgid ""
+#| ":   Specifies to build from a subdirectory of the checked out source\n"
+#| "    code. Normally this directory is changed to before building,\n"
 msgid ""
 ":   Specifies to build from a subdirectory of the checked out source\n"
-"    code. Normally this directory is changed to before building,\n"
+"    code. This is the directory where the build scripts are run.\n"
 msgstr ""
 ":   Especifica a compilação de um subdiretório do código-fonte retirado.\n"
 "    Normalmente este diretório é alterado para antes de compilar,\n"
@@ -2882,6 +2888,12 @@ msgstr ""
 "    do executável do maven 3, respectivamente. As seguintes variáveis\n"
 "    por compilação também estão disponíveis: \\$\\$VERSION\\$\\$,\n"
 "    \\$\\$VERCODE\\$\\$ e \\$\\$COMMIT\\$\\$.\n"
+
+#. type: Plain text
+#: _docs/Build_Metadata_Reference.md
+#, no-wrap
+msgid "    This runs in [`subdir:`](#build_subdir) if set.\n"
+msgstr ""
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -9588,7 +9600,7 @@ msgid ""
 "The security architecture is based on integrating models proven by\n"
 "[Debian](https://wiki.debian.org/SecureApt) and [The Update\n"
 "Framework](https://github.com/theupdateframework/specification/blob/master/tuf-spec.md)\n"
-" into what the Android OS already provides.\n"
+" into what the Android OS already provides.  The way F-Droid operates is greatly inspired by de facto security model of how reputable GNU/Linux distros like Debian, Fedora, Ubuntu, etc. operate.  There is a big emphasis on operating in the public and making everything publicly available. We include source tarballs and build logs when we publish binaries.  These are archived as long as possible, for retroactive review.  And all of this is mirrored in many places across the internet by many different parties.\n"
 msgstr ""
 
 #. type: Bullet: '-   '
@@ -9724,7 +9736,7 @@ msgstr ""
 
 #. type: Bullet: '* '
 #: _docs/Security_Model.md
-msgid "At any time, the developer's own signatures maybe be added to _f-droid.org_ once reproducible builds has been achieved.  Additionally, releases signed by the _f-droid.org_ key will continue to be shipped."
+msgid "At any time, the developer's own signatures may be added their app(s) in _f-droid.org_ once reproducible builds have been achieved.  Additionally, releases signed by the _f-droid.org_ key will continue to be shipped."
 msgstr ""
 
 #. type: Bullet: '* '
@@ -11071,6 +11083,10 @@ msgstr "Preferências"
 #: _docs/Whitelabel_Builds.md
 msgid "For a custom build that enables Automatic Updates by default, override _app/src/main/res/xml/preferences.xml_. You can customize the preferences and their default values in _app/src/mycompany/res/xml/preferences.xml_. The fully automatic update requires [Privileged Extension](https://gitlab.com/fdroid/privileged-extension). With regular access, the updates will only automatically download. The user still needs to click install on each one."
 msgstr "Para uma compilação personalizada que habilita Atualizações Automáticas por padrão, substitua _app/src/main/res/xml/preferences.xml_. Você pode personalizar as preferências e seus valores padrão em _app/src/minhaempresa/res/xml/preferences.xml_. A atualização totalmente automática requer [Extensões Privilegiadas](https://gitlab.com/fdroid/privileged-extension). Com acesso comum, as atualizações serão baixadas automaticamente. O usuário ainda precisa clicar em instalar em cada um deles."
+
+#, fuzzy
+#~ msgid "There is also a prototype for running a binary transparency log for _f-droid.org_. <https://gitlab.com/eighthave/f-droid.org-binary-transparency>"
+#~ msgstr "Há também um protótipo para executar um registro de transparência binária para _f-droid.org_. <https://gitlab.com/eighthave/f-droid.org-binary-transparency>"
 
 #~ msgid "This Anti-Feature is applied to apps that promote or depend entirely on a Non-Free network service."
 #~ msgstr "Este Anti-Recurso é aplicado a aplicativos que promovem ou dependem inteiramente de um serviço de rede Não-Livre."
