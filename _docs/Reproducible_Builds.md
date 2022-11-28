@@ -54,11 +54,13 @@ $ cd /path/to/fdroiddata
 $ fdroid signatures F-Droid.apk
 ```
 
-You may also supply HTTPS-URLs directly to `fdroid signatures` instead
-of local files. The signature files are extracted to the according
-metadata directory ready to be used with `fdroid publish`. A signature
-consists of 3-5 files and the result of extracting one will resemble these
-file listings:
+You may also supply HTTPS-URLs directly to `fdroid signatures` instead of local
+files. The signature files are extracted to the according metadata directory
+ready to be used with `fdroid publish`. A signature consists of 2-6 files: a v1
+signature (manifest, signature file, and signature block file) and/or a v2/v3
+signature (APK Signing Block and offset); if the APK was v1-signed with e.g.
+`signflinger` instead of `apksigner` there will also be a `differences.json`.
+The result of extracting one will resemble these file listings:
 
 ```console
 $ ls metadata/org.fdroid.fdroid/signatures/1000012/  # v1 signature only
@@ -229,10 +231,6 @@ size significantly.
 ### coreLibraryDesugaring
 
 In some cases builds are not reproducible due to a [bug in `coreLibraryDesugaring`](https://issuetracker.google.com/issues/195968520) (requires a google account to view); this [currently affects NewPipe](https://github.com/TeamNewPipe/NewPipe/issues/6486).
-
-### zipflinger
-
-Recent versions of the Android gradle plugin will use *zipflinger* -- which arranges the contents of the APK differently -- which could result in e.g. [apksigcopier](https://github.com/obfusk/apksigcopier) failing to work in some cases.  You can tell the plugin not to use *zipflinger* by setting `android.useNewApkCreator=false` in `gradle.properties`.
 
 ### Native library stripping
 
