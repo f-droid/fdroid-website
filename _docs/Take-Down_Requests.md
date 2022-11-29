@@ -44,7 +44,7 @@ Also please note that we are an volunteer driven organization.  We prioritize
 take-down requests, but we can't guarantee instant responses.
 
 You can submit take-down requests [by starting a new issue on our issue
-tracker](https://gitlab.com/fdroid/fdroiddata/-/issues/new).  (This requires
+tracker](https://gitlab.com/fdroid/fdroiddata/-/issues/new).  (This requires a
 gitlab.com account.)
 
 Alternatively if you prefer you can send your request to our team E-Mail
@@ -53,7 +53,7 @@ a public issue on our issue trackers and quote your entire request there.)
 
 Take-down requests can not be confidential.  By submitting a take-down request
 you automatically grant us permission to publish your entire request on our
-web-sites and or issue trackers. We need this because all of our processes are
+web-sites and our issue trackers. We need this because all of our processes are
 worked on in public and for keeping accountable to our users.
 
 ## Transparency reporting
