@@ -16,7 +16,9 @@ with zipfile.ZipFile(io.BytesIO(r.content)) as thezip:
         data = json.loads(fp.read().decode())
         for app in data['apps']:
             fields.update(app.keys())
-            print(app['name'])
+            name = app.get('name')
+            if name:
+                print(name)
         for packageName, packages in data['packages'].items():
             for package in packages:
                 fields.update(package.keys())
