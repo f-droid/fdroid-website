@@ -79,7 +79,7 @@ Though we tried to build everyting from source, we still need some prebuild bina
 -   Android SDK/NDK. They are released as proprietary binaries but we don't have an alternative currently. There is in-progress work to package recent Android SDK versions in Debian.
 -   Gradle. Only some old versions of Gradle are packaged in Debian. Currently we download them from the developer website.
 -   Flutter SDK. They are FOSS but not packaged in Debian and we are not able to built it from source. Currently we download them from the developer website with the Flutter srclib scripts.
--   JSC/Hermers. They can be built from source which takes hours. Currently we downloaded them from npm and scanignore them.
+-   JSC/Hermes. They can be built from source which takes hours. Currently we downloaded them from npm and scanignore them.
 -   Binaries from pip wheels. Some apps install deps with pip and we just trust the untrustworthy Pypi.
 -   Binaries from Nix cache. These binaries are mostly reproducible.
 -   Rust/Rustup. Currently we download them from the developer website with the scripts in the rustup srclib. We may be able to use the Debian packages.
