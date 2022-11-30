@@ -20,9 +20,9 @@ up with the exact same result.
 ### How it is implemented as of now
 
 Publishing signed binaries (APKs) from elsewhere (e.g. the upstream developer)
-is now possible after verifying that they match ones built using a recipe.
-Publishing only takes place if there is a proper match.  This procedures are
-implemented as part of `fdroid publish`.  The reproducibility check at the
+is now possible after verifying that they match ones built using an fdroiddata
+recipe.  Publishing only takes place if there is a proper match.  This procedure
+is implemented as part of `fdroid publish`.  The reproducibility check at the
 publishing step follows this logic:
 
 ![Flow-chart for reproducibility check]({% asset docs/reproducible-builds/publish.png %})
