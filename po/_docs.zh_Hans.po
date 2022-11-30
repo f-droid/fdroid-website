@@ -24,7 +24,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
-"POT-Creation-Date: 2022-11-25 21:19+0100\n"
+"POT-Creation-Date: 2022-11-30 14:54+0100\n"
 "PO-Revision-Date: 2022-11-27 01:50+0000\n"
 "Last-Translator: Eric <hamburger1024@duck.com>\n"
 "Language-Team: Chinese (Simplified) <https://hosted.weblate.org/projects/f-droid/website-docs/zh_Hans/>\n"
@@ -3531,8 +3531,8 @@ msgstr "在决定将哪些版本放入存档时，通过 `CurrentVersionCode` �
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-msgid "Currently the only supported format is \"n versions\", where n is the number of versions to keep. Defaults to \"3 versions\"."
-msgstr "目前唯一支持的格式是 \"n versions\"，其中 n 是要保留的版本数。默认为 \"3 versions\"。"
+msgid "Currently the only supported format is \"n versions\", where \"n\" is the number of versions to keep. Defaults to \"3 versions\". For apps with a list of [_VercodeOperation_](#VercodeOperation) the default is calculated as \"3 x number of operations\", eg. for an app with two operations, for two ABIs, 6 versions will be kept."
+msgstr ""
 
 #. type: Title ###
 #: _docs/Build_Metadata_Reference.md
@@ -8844,7 +8844,9 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
-msgid "You may also supply HTTPS-URLs directly to `fdroid signatures` instead of local files. The signature files are extracted to the according metadata directory ready to be used with `fdroid publish`. A signature consists of 3-5 files and the result of extracting one will resemble these file listings:"
+#, fuzzy
+#| msgid "You may also supply HTTPS-URLs directly to `fdroid signatures` instead of local files. The signature files are extracted to the according metadata directory ready to be used with `fdroid publish`. A signature consists of 3-5 files and the result of extracting one will resemble these file listings:"
+msgid "You may also supply HTTPS-URLs directly to `fdroid signatures` instead of local files. The signature files are extracted to the according metadata directory ready to be used with `fdroid publish`. A signature consists of 2-6 files: a v1 signature (manifest, signature file, and signature block file) and/or a v2/v3 signature (APK Signing Block and offset); if the APK was v1-signed with e.g.  `signflinger` instead of `apksigner` there will also be a `differences.json`.  The result of extracting one will resemble these file listings:"
 msgstr "你也可以直接向 `fdroid signatures` 提供 HTTPS-URL，而不是本地文件。签名文件会被提取到相应的元数据目录中，准备用 `fdroid publish` 使用。一个签名由3-5个文件组成，提取签名的结果将类似于这些文件列表："
 
 #. type: Fenced code block (console)
@@ -9074,17 +9076,6 @@ msgstr "coreLibraryDesugaring"
 #: _docs/Reproducible_Builds.md
 msgid "In some cases builds are not reproducible due to a [bug in `coreLibraryDesugaring`](https://issuetracker.google.com/issues/195968520) (requires a google account to view); this [currently affects NewPipe](https://github.com/TeamNewPipe/NewPipe/issues/6486)."
 msgstr "在某些情况下，由于[ `coreLibraryDesugaring` 中的错误](https://issuetracker.google.com/issues/195968520)，构建无法重现（需要 Google 帐号才能查看）；这 [当前影响 NewPipe](https://github.com/TeamNewPipe/NewPipe/issues/6486)。"
-
-#. type: Title ###
-#: _docs/Reproducible_Builds.md
-#, no-wrap
-msgid "zipflinger"
-msgstr "zipflinger"
-
-#. type: Plain text
-#: _docs/Reproducible_Builds.md
-msgid "Recent versions of the Android gradle plugin will use *zipflinger* -- which arranges the contents of the APK differently -- which could result in e.g. [apksigcopier](https://github.com/obfusk/apksigcopier) failing to work in some cases.  You can tell the plugin not to use *zipflinger* by setting `android.useNewApkCreator=false` in `gradle.properties`."
-msgstr "最新版本的 Android gradle 插件将使用 *zipflinger*——它以不同的方式排列 APK 的内容——这可能导致例如 [apksigcopier](https://github.com/obfusk/apksigcopier) 在某些情况下无法工作。你可以通过在 `gradle.properties` 中设置 `android.useNewApkCreator=false` 来告诉插件不要使用 *zipflinger*。"
 
 #. type: Title ###
 #: _docs/Reproducible_Builds.md
@@ -10257,13 +10248,32 @@ msgstr "硬件安全模块 （HSM） 是专门设计的硬件，用于安全地�
 
 #. type: Plain text
 #: _docs/Signing_Process.md
-msgid "For information on how to configure an F-Droid repo to use an HSM, see the \"smartcard\" sections of _examples/config.yml_, specifically `keystore` and `smartcardoptions`.  Most likely, [OpenSC](https://github.com/OpenSC/OpenSC) will need to be set up as a PKCS11 provider for Java."
+#, fuzzy
+#| msgid "For information on how to configure an F-Droid repo to use an HSM, see the \"smartcard\" sections of _examples/config.yml_, specifically `keystore` and `smartcardoptions`.  Most likely, [OpenSC](https://github.com/OpenSC/OpenSC) will need to be set up as a PKCS11 provider for Java."
+msgid "For information on how to configure an F-Droid repo to use an HSM, see the \"smartcard\" sections of _examples/config.yml_, specifically `keystore` and `smartcardoptions`.  Most likely, [OpenSC](https://github.com/OpenSC/OpenSC) will need to be set up as a PKCS11 provider for Java.  [_hsmwiz_](https://github.com/johndoe31415/hsmwiz) is a simpler way to work with smart card HSMs like the Nitrokey HSM.  Both OpenSC and _hsmwiz_ are available in Debian."
 msgstr "有关如何配置 F-Droid 存储库以使用 HSM 的信息，请参阅 _examples/config.yml_ 的\"智能卡\"部分，特别是 `密钥库` 和 `智能卡选项 `。 最有可能的是， [OpenSC](https://github.com/OpenSC/OpenSC) 将需要设置为 Java 的 PKCS11 提供程序。"
 
 #. type: Plain text
 #: _docs/Signing_Process.md
-msgid "For more in-depth information, see: * _fdroidserver_ example config file: [examples/config.yml](https://gitlab.com/fdroid/fdroidserver/-/blob/2.1a0/examples/config.yml#L125)  * [Publishing an F-Droid Repo using a Hardware Security Module]({{ site.baseurl }}/{% post_url 2020-10-05-ntrokey-signing %})  * [Security in a thumb drive: the promise and pain of hardware security modules, take one!](https://guardianproject.info/2014/03/28/security-in-a-thumb-drive-the-promise-and-pain-of-hardware-security-modules-take-one/)"
-msgstr "更深入的信息，请参见 : * _fdroidserver_ example config file: [examples/config.yml](https://gitlab.com/fdroid/fdroidserver/-/blob/2.1a0/examples/config.yml#L125)  * [使用硬件安全模块发布 F-Droid 存储库]({{ site.baseurl }}/{% post_url 2020-10-05-ntrokey-signing %})   *[U盘中的安全：硬件安全模块的承诺和痛苦，一起来看看！](https://guardianproject.info/2014/03/28/security-in-a-thumb-drive-the-promise-and-pain-of-hardware-security-modules-take-one/)"
+msgid "For more in-depth information, see:"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/Signing_Process.md
+#, fuzzy
+#| msgid "Optionally edit the _config.yml_ file to your liking, detailed examples are in [examples/config.yml](https://gitlab.com/fdroid/fdroidserver/-/blob/master/examples/config.yml)"
+msgid "_fdroidserver_ example config file: [examples/config.yml](https://gitlab.com/fdroid/fdroidserver/-/blob/2.1a0/examples/config.yml#L125)"
+msgstr "可选择编辑 _config.yml_ 文件以满足你的需要，详细例子见 [examples/config.yml](https://gitlab.com/fdroid/fdroidserver/-/blob/master/examples/config.yml)"
+
+#. type: Bullet: '* '
+#: _docs/Signing_Process.md
+msgid "[Publishing an F-Droid Repo using a Hardware Security Module]({{ site.baseurl }}/{% post_url 2020-10-05-ntrokey-signing %})"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/Signing_Process.md
+msgid "[Security in a thumb drive: the promise and pain of hardware security modules, take one!](https://guardianproject.info/2014/03/28/security-in-a-thumb-drive-the-promise-and-pain-of-hardware-security-modules-take-one/)"
+msgstr ""
 
 #. type: YAML Front Matter: title
 #: _docs/Submitting_to_F-Droid_Quick_Start_Guide.md
@@ -11108,6 +11118,19 @@ msgstr "首选项"
 #: _docs/Whitelabel_Builds.md
 msgid "For a custom build that enables Automatic Updates by default, override _app/src/main/res/xml/preferences.xml_. You can customize the preferences and their default values in _app/src/mycompany/res/xml/preferences.xml_. The fully automatic update requires [Privileged Extension](https://gitlab.com/fdroid/privileged-extension). With regular access, the updates will only automatically download. The user still needs to click install on each one."
 msgstr "对于默认启用自动更新的自定义构建，覆盖 _app/src/main/res/xml/preferences.xml_。你可以在 _app/src/mycompany/res/xml/preferences.xml_ 中自定义首选项及其默认值。全自动更新需要 [特权扩展](https://gitlab.com/fdroid/privileged-extension)。通过定期访问，更新只会自动下载。用户仍然需要在每一个上点击安装。"
+
+#~ msgid "Currently the only supported format is \"n versions\", where n is the number of versions to keep. Defaults to \"3 versions\"."
+#~ msgstr "目前唯一支持的格式是 \"n versions\"，其中 n 是要保留的版本数。默认为 \"3 versions\"。"
+
+#, no-wrap
+#~ msgid "zipflinger"
+#~ msgstr "zipflinger"
+
+#~ msgid "Recent versions of the Android gradle plugin will use *zipflinger* -- which arranges the contents of the APK differently -- which could result in e.g. [apksigcopier](https://github.com/obfusk/apksigcopier) failing to work in some cases.  You can tell the plugin not to use *zipflinger* by setting `android.useNewApkCreator=false` in `gradle.properties`."
+#~ msgstr "最新版本的 Android gradle 插件将使用 *zipflinger*——它以不同的方式排列 APK 的内容——这可能导致例如 [apksigcopier](https://github.com/obfusk/apksigcopier) 在某些情况下无法工作。你可以通过在 `gradle.properties` 中设置 `android.useNewApkCreator=false` 来告诉插件不要使用 *zipflinger*。"
+
+#~ msgid "For more in-depth information, see: * _fdroidserver_ example config file: [examples/config.yml](https://gitlab.com/fdroid/fdroidserver/-/blob/2.1a0/examples/config.yml#L125)  * [Publishing an F-Droid Repo using a Hardware Security Module]({{ site.baseurl }}/{% post_url 2020-10-05-ntrokey-signing %})  * [Security in a thumb drive: the promise and pain of hardware security modules, take one!](https://guardianproject.info/2014/03/28/security-in-a-thumb-drive-the-promise-and-pain-of-hardware-security-modules-take-one/)"
+#~ msgstr "更深入的信息，请参见 : * _fdroidserver_ example config file: [examples/config.yml](https://gitlab.com/fdroid/fdroidserver/-/blob/2.1a0/examples/config.yml#L125)  * [使用硬件安全模块发布 F-Droid 存储库]({{ site.baseurl }}/{% post_url 2020-10-05-ntrokey-signing %})   *[U盘中的安全：硬件安全模块的承诺和痛苦，一起来看看！](https://guardianproject.info/2014/03/28/security-in-a-thumb-drive-the-promise-and-pain-of-hardware-security-modules-take-one/)"
 
 #~ msgid "There is also a prototype for running a binary transparency log for _f-droid.org_. <https://gitlab.com/eighthave/f-droid.org-binary-transparency>"
 #~ msgstr "也有一个对 _f-droid.org_ 运行二进制透明度日志的原型。<https://gitlab.com/eighthave/f-droid.org-binary-transparency>"

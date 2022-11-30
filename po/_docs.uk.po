@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
-"POT-Creation-Date: 2022-11-25 21:19+0100\n"
+"POT-Creation-Date: 2022-11-30 14:54+0100\n"
 "PO-Revision-Date: 2022-11-27 01:50+0000\n"
 "Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/f-droid/website-docs/uk/>\n"
@@ -3716,8 +3716,8 @@ msgstr "Версія, зазначена як `CurrentVersionCode` (CVC), зав
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-msgid "Currently the only supported format is \"n versions\", where n is the number of versions to keep. Defaults to \"3 versions\"."
-msgstr "Наразі підтримується лише формат «n versions», де n — кількість версій, які слід зберегти. Усталено це «3 versions»."
+msgid "Currently the only supported format is \"n versions\", where \"n\" is the number of versions to keep. Defaults to \"3 versions\". For apps with a list of [_VercodeOperation_](#VercodeOperation) the default is calculated as \"3 x number of operations\", eg. for an app with two operations, for two ABIs, 6 versions will be kept."
+msgstr ""
 
 #. type: Title ###
 #: _docs/Build_Metadata_Reference.md
@@ -9070,7 +9070,9 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
-msgid "You may also supply HTTPS-URLs directly to `fdroid signatures` instead of local files. The signature files are extracted to the according metadata directory ready to be used with `fdroid publish`. A signature consists of 3-5 files and the result of extracting one will resemble these file listings:"
+#, fuzzy
+#| msgid "You may also supply HTTPS-URLs directly to `fdroid signatures` instead of local files. The signature files are extracted to the according metadata directory ready to be used with `fdroid publish`. A signature consists of 3-5 files and the result of extracting one will resemble these file listings:"
+msgid "You may also supply HTTPS-URLs directly to `fdroid signatures` instead of local files. The signature files are extracted to the according metadata directory ready to be used with `fdroid publish`. A signature consists of 2-6 files: a v1 signature (manifest, signature file, and signature block file) and/or a v2/v3 signature (APK Signing Block and offset); if the APK was v1-signed with e.g.  `signflinger` instead of `apksigner` there will also be a `differences.json`.  The result of extracting one will resemble these file listings:"
 msgstr "Можете також спрямувати `fdroid signatures` не на локальні файли, а прямо на URL-адреси з HTTPS. Файли підпису буде видобуто до відповідного каталогу метаданих, у готовому до використання з `fdroid publish` вигляді. Підпис складається з 3-5 файлів, результат видобування одного з яких буде подібним до такого переліку файлів:"
 
 #. type: Fenced code block (console)
@@ -9300,17 +9302,6 @@ msgstr "coreLibraryDesugaring"
 #: _docs/Reproducible_Builds.md
 msgid "In some cases builds are not reproducible due to a [bug in `coreLibraryDesugaring`](https://issuetracker.google.com/issues/195968520) (requires a google account to view); this [currently affects NewPipe](https://github.com/TeamNewPipe/NewPipe/issues/6486)."
 msgstr "У деяких випадках, збірки не відтворюються через [ваду в `coreLibraryDesugaring`](https://issuetracker.google.com/issues/195968520) (для перегляду потрібен обліковий запис Google); це [досі зачіпає NewPipe](https://github.com/TeamNewPipe/NewPipe/issues/6486)."
-
-#. type: Title ###
-#: _docs/Reproducible_Builds.md
-#, no-wrap
-msgid "zipflinger"
-msgstr "zipflinger"
-
-#. type: Plain text
-#: _docs/Reproducible_Builds.md
-msgid "Recent versions of the Android gradle plugin will use *zipflinger* -- which arranges the contents of the APK differently -- which could result in e.g. [apksigcopier](https://github.com/obfusk/apksigcopier) failing to work in some cases.  You can tell the plugin not to use *zipflinger* by setting `android.useNewApkCreator=false` in `gradle.properties`."
-msgstr "Недавні версії плагіну Android Gradle використовують *zipflinger*, який перевпорядковує вміст APK, через що можуть виникати помилки, наприклад в [apksigcopier](https://github.com/obfusk/apksigcopier). Щоб вимкнути використання *zipflinger*, зазначте `android.useNewApkCreator=false` у `gradle.properties`."
 
 #. type: Title ###
 #: _docs/Reproducible_Builds.md
@@ -10483,13 +10474,32 @@ msgstr "Апаратні модулі захисту (hardware security modules,
 
 #. type: Plain text
 #: _docs/Signing_Process.md
-msgid "For information on how to configure an F-Droid repo to use an HSM, see the \"smartcard\" sections of _examples/config.yml_, specifically `keystore` and `smartcardoptions`.  Most likely, [OpenSC](https://github.com/OpenSC/OpenSC) will need to be set up as a PKCS11 provider for Java."
+#, fuzzy
+#| msgid "For information on how to configure an F-Droid repo to use an HSM, see the \"smartcard\" sections of _examples/config.yml_, specifically `keystore` and `smartcardoptions`.  Most likely, [OpenSC](https://github.com/OpenSC/OpenSC) will need to be set up as a PKCS11 provider for Java."
+msgid "For information on how to configure an F-Droid repo to use an HSM, see the \"smartcard\" sections of _examples/config.yml_, specifically `keystore` and `smartcardoptions`.  Most likely, [OpenSC](https://github.com/OpenSC/OpenSC) will need to be set up as a PKCS11 provider for Java.  [_hsmwiz_](https://github.com/johndoe31415/hsmwiz) is a simpler way to work with smart card HSMs like the Nitrokey HSM.  Both OpenSC and _hsmwiz_ are available in Debian."
 msgstr "Докладніше налаштування репозиторію F-Droid для використання HSM описано в розділах «smartcard» файлу _examples/config.yml_, зокрема `keystore` та `smartcardoptions`. Швидше за все, вам знадобиться встановити [OpenSC](https://github.com/OpenSC/OpenSC) як провайдер PKCS11 для Java."
 
 #. type: Plain text
 #: _docs/Signing_Process.md
-msgid "For more in-depth information, see: * _fdroidserver_ example config file: [examples/config.yml](https://gitlab.com/fdroid/fdroidserver/-/blob/2.1a0/examples/config.yml#L125)  * [Publishing an F-Droid Repo using a Hardware Security Module]({{ site.baseurl }}/{% post_url 2020-10-05-ntrokey-signing %})  * [Security in a thumb drive: the promise and pain of hardware security modules, take one!](https://guardianproject.info/2014/03/28/security-in-a-thumb-drive-the-promise-and-pain-of-hardware-security-modules-take-one/)"
-msgstr "Ще докладніше:  * зразок файлу налаштувань _fdroidserver_: [examples/config.yml](https://gitlab.com/fdroid/fdroidserver/-/blob/2.1a0/examples/config.yml#L125)  * [Оприлюднення репозиторію F-Droid з апаратним модулем безпеки]({{ site.baseurl }}/{% post_url 2020-10-05-ntrokey-signing %})  * [Безпека на флешці, або Апаратні модулі захисту — надія чи біль? Обирати вам!](https://guardianproject.info/2014/03/28/security-in-a-thumb-drive-the-promise-and-pain-of-hardware-security-modules-take-one/)"
+msgid "For more in-depth information, see:"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/Signing_Process.md
+#, fuzzy
+#| msgid "Optionally edit the _config.yml_ file to your liking, detailed examples are in [examples/config.yml](https://gitlab.com/fdroid/fdroidserver/-/blob/master/examples/config.yml)"
+msgid "_fdroidserver_ example config file: [examples/config.yml](https://gitlab.com/fdroid/fdroidserver/-/blob/2.1a0/examples/config.yml#L125)"
+msgstr "Необов'язково: відредагуйте файл _config.yml_, як вважаєте за потрібне; докладні приклади знайдете в [examples/config.yml](https://gitlab.com/fdroid/fdroidserver/-/blob/master/examples/config.yml)"
+
+#. type: Bullet: '* '
+#: _docs/Signing_Process.md
+msgid "[Publishing an F-Droid Repo using a Hardware Security Module]({{ site.baseurl }}/{% post_url 2020-10-05-ntrokey-signing %})"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/Signing_Process.md
+msgid "[Security in a thumb drive: the promise and pain of hardware security modules, take one!](https://guardianproject.info/2014/03/28/security-in-a-thumb-drive-the-promise-and-pain-of-hardware-security-modules-take-one/)"
+msgstr ""
 
 #. type: YAML Front Matter: title
 #: _docs/Submitting_to_F-Droid_Quick_Start_Guide.md
@@ -11334,6 +11344,19 @@ msgstr "Параметри"
 #: _docs/Whitelabel_Builds.md
 msgid "For a custom build that enables Automatic Updates by default, override _app/src/main/res/xml/preferences.xml_. You can customize the preferences and their default values in _app/src/mycompany/res/xml/preferences.xml_. The fully automatic update requires [Privileged Extension](https://gitlab.com/fdroid/privileged-extension). With regular access, the updates will only automatically download. The user still needs to click install on each one."
 msgstr "Щоб усталено вимкнути автоматичні оновлення в своїй збірці, замініть _app/src/main/res/xml/preferences.xml_. Можете допрацювати параметри та їхні усталені значення в _app/src/mycompany/res/xml/preferences.xml_. Для повністю автоматичного оновлення потрібне [привілейоване розширення](https://gitlab.com/fdroid/privileged-extension). Без нього, оновлення будуть лише автоматично завантажуватись — і користувачці чи користувачу все ще доводитиметься торкати «Встановити» для кожного з них."
+
+#~ msgid "Currently the only supported format is \"n versions\", where n is the number of versions to keep. Defaults to \"3 versions\"."
+#~ msgstr "Наразі підтримується лише формат «n versions», де n — кількість версій, які слід зберегти. Усталено це «3 versions»."
+
+#, no-wrap
+#~ msgid "zipflinger"
+#~ msgstr "zipflinger"
+
+#~ msgid "Recent versions of the Android gradle plugin will use *zipflinger* -- which arranges the contents of the APK differently -- which could result in e.g. [apksigcopier](https://github.com/obfusk/apksigcopier) failing to work in some cases.  You can tell the plugin not to use *zipflinger* by setting `android.useNewApkCreator=false` in `gradle.properties`."
+#~ msgstr "Недавні версії плагіну Android Gradle використовують *zipflinger*, який перевпорядковує вміст APK, через що можуть виникати помилки, наприклад в [apksigcopier](https://github.com/obfusk/apksigcopier). Щоб вимкнути використання *zipflinger*, зазначте `android.useNewApkCreator=false` у `gradle.properties`."
+
+#~ msgid "For more in-depth information, see: * _fdroidserver_ example config file: [examples/config.yml](https://gitlab.com/fdroid/fdroidserver/-/blob/2.1a0/examples/config.yml#L125)  * [Publishing an F-Droid Repo using a Hardware Security Module]({{ site.baseurl }}/{% post_url 2020-10-05-ntrokey-signing %})  * [Security in a thumb drive: the promise and pain of hardware security modules, take one!](https://guardianproject.info/2014/03/28/security-in-a-thumb-drive-the-promise-and-pain-of-hardware-security-modules-take-one/)"
+#~ msgstr "Ще докладніше:  * зразок файлу налаштувань _fdroidserver_: [examples/config.yml](https://gitlab.com/fdroid/fdroidserver/-/blob/2.1a0/examples/config.yml#L125)  * [Оприлюднення репозиторію F-Droid з апаратним модулем безпеки]({{ site.baseurl }}/{% post_url 2020-10-05-ntrokey-signing %})  * [Безпека на флешці, або Апаратні модулі захисту — надія чи біль? Обирати вам!](https://guardianproject.info/2014/03/28/security-in-a-thumb-drive-the-promise-and-pain-of-hardware-security-modules-take-one/)"
 
 #~ msgid "There is also a prototype for running a binary transparency log for _f-droid.org_. <https://gitlab.com/eighthave/f-droid.org-binary-transparency>"
 #~ msgstr "Існує також прототип для ведення журналу прозорості двійкових файлів для _f-droid.org_. <https://gitlab.com/eighthave/f-droid.org-binary-transparency>"

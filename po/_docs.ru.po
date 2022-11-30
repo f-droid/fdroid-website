@@ -24,7 +24,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
-"POT-Creation-Date: 2022-11-28 08:27+0100\n"
+"POT-Creation-Date: 2022-11-30 14:54+0100\n"
 "PO-Revision-Date: 2022-09-29 13:55+0000\n"
 "Last-Translator: Vik <k3kelm4vw@mozmail.com>\n"
 "Language-Team: Russian <https://hosted.weblate.org/projects/f-droid/website-docs/ru/>\n"
@@ -3796,8 +3796,8 @@ msgstr "Версия, указанная через `CurrentVersionCode`, все
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-msgid "Currently the only supported format is \"n versions\", where n is the number of versions to keep. Defaults to \"3 versions\"."
-msgstr "В настоящее время поддерживается только формат \"n версий\", где n - количество версий, которые необходимо сохранить. По умолчанию установлено значение \"3 версии\"."
+msgid "Currently the only supported format is \"n versions\", where \"n\" is the number of versions to keep. Defaults to \"3 versions\". For apps with a list of [_VercodeOperation_](#VercodeOperation) the default is calculated as \"3 x number of operations\", eg. for an app with two operations, for two ABIs, 6 versions will be kept."
+msgstr ""
 
 #. type: Title ###
 #: _docs/Build_Metadata_Reference.md
@@ -10383,12 +10383,31 @@ msgstr "Аппаратные модули безопасности (HSM) - эт�
 
 #. type: Plain text
 #: _docs/Signing_Process.md
-msgid "For information on how to configure an F-Droid repo to use an HSM, see the \"smartcard\" sections of _examples/config.yml_, specifically `keystore` and `smartcardoptions`.  Most likely, [OpenSC](https://github.com/OpenSC/OpenSC) will need to be set up as a PKCS11 provider for Java."
+#, fuzzy
+#| msgid "For information on how to configure an F-Droid repo to use an HSM, see the \"smartcard\" sections of _examples/config.yml_, specifically `keystore` and `smartcardoptions`.  Most likely, [OpenSC](https://github.com/OpenSC/OpenSC) will need to be set up as a PKCS11 provider for Java."
+msgid "For information on how to configure an F-Droid repo to use an HSM, see the \"smartcard\" sections of _examples/config.yml_, specifically `keystore` and `smartcardoptions`.  Most likely, [OpenSC](https://github.com/OpenSC/OpenSC) will need to be set up as a PKCS11 provider for Java.  [_hsmwiz_](https://github.com/johndoe31415/hsmwiz) is a simpler way to work with smart card HSMs like the Nitrokey HSM.  Both OpenSC and _hsmwiz_ are available in Debian."
 msgstr "Информацию о том, как настроить репозиторий F-Droid на использование HSM, смотрите в разделах \"smartcard\" в _examples/config.yml_, а именно `keystore` и `smartcardoptions`.  Скорее всего, [OpenSC](https://github.com/OpenSC/OpenSC) нужно будет настроить как провайдер PKCS11 для Java."
 
 #. type: Plain text
 #: _docs/Signing_Process.md
-msgid "For more in-depth information, see: * _fdroidserver_ example config file: [examples/config.yml](https://gitlab.com/fdroid/fdroidserver/-/blob/2.1a0/examples/config.yml#L125)  * [Publishing an F-Droid Repo using a Hardware Security Module]({{ site.baseurl }}/{% post_url 2020-10-05-ntrokey-signing %})  * [Security in a thumb drive: the promise and pain of hardware security modules, take one!](https://guardianproject.info/2014/03/28/security-in-a-thumb-drive-the-promise-and-pain-of-hardware-security-modules-take-one/)"
+msgid "For more in-depth information, see:"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/Signing_Process.md
+#, fuzzy
+#| msgid "Optionally edit the _config.yml_ file to your liking, detailed examples are in [examples/config.yml](https://gitlab.com/fdroid/fdroidserver/-/blob/master/examples/config.yml)"
+msgid "_fdroidserver_ example config file: [examples/config.yml](https://gitlab.com/fdroid/fdroidserver/-/blob/2.1a0/examples/config.yml#L125)"
+msgstr "По желанию отредактируйте файл _config.yml_ по своему вкусу, подробные примеры находятся в [examples/config.yml](https://gitlab.com/fdroid/fdroidserver/-/blob/master/examples/config.yml)"
+
+#. type: Bullet: '* '
+#: _docs/Signing_Process.md
+msgid "[Publishing an F-Droid Repo using a Hardware Security Module]({{ site.baseurl }}/{% post_url 2020-10-05-ntrokey-signing %})"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/Signing_Process.md
+msgid "[Security in a thumb drive: the promise and pain of hardware security modules, take one!](https://guardianproject.info/2014/03/28/security-in-a-thumb-drive-the-promise-and-pain-of-hardware-security-modules-take-one/)"
 msgstr ""
 
 #. type: YAML Front Matter: title
@@ -11195,3 +11214,6 @@ msgstr "Предпочтения"
 #: _docs/Whitelabel_Builds.md
 msgid "For a custom build that enables Automatic Updates by default, override _app/src/main/res/xml/preferences.xml_. You can customize the preferences and their default values in _app/src/mycompany/res/xml/preferences.xml_. The fully automatic update requires [Privileged Extension](https://gitlab.com/fdroid/privileged-extension). With regular access, the updates will only automatically download. The user still needs to click install on each one."
 msgstr "Для пользовательской сборки, которая включает автоматические обновления по умолчанию, переопределите _app/src/main/res/xml/preferences.xml_. Вы можете настроить предпочтения и их значения по умолчанию в _app/src/mycompany/res/xml/preferences.xml_. Для полностью автоматического обновления требуется [Privileged Extension](https://gitlab.com/fdroid/privileged-extension). При обычном доступе обновления будут только автоматически загружаться. Пользователю по-прежнему необходимо нажимать кнопку установки на каждом из них."
+
+#~ msgid "Currently the only supported format is \"n versions\", where n is the number of versions to keep. Defaults to \"3 versions\"."
+#~ msgstr "В настоящее время поддерживается только формат \"n версий\", где n - количество версий, которые необходимо сохранить. По умолчанию установлено значение \"3 версии\"."
