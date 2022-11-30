@@ -14,7 +14,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
 "POT-Creation-Date: 2022-11-30 14:54+0100\n"
-"PO-Revision-Date: 2022-11-27 01:50+0000\n"
+"PO-Revision-Date: 2022-12-02 06:23+0000\n"
 "Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/f-droid/website-docs/uk/>\n"
 "Language: uk\n"
@@ -3717,7 +3717,7 @@ msgstr "Версія, зазначена як `CurrentVersionCode` (CVC), зав
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 msgid "Currently the only supported format is \"n versions\", where \"n\" is the number of versions to keep. Defaults to \"3 versions\". For apps with a list of [_VercodeOperation_](#VercodeOperation) the default is calculated as \"3 x number of operations\", eg. for an app with two operations, for two ABIs, 6 versions will be kept."
-msgstr ""
+msgstr "Наразі єдиним підтримуваний формат — «n версій», де «n» — це кількість версій, які потрібно зберігати. Усталено — «3 версії». Для застосунків зі списком [_VercodeOperation_](#VercodeOperation) усталене значення обчислюється як «3 x кількість операцій», наприклад, для застосунку з двома операціями, для двох ABI, буде збережено 6 версій."
 
 #. type: Title ###
 #: _docs/Build_Metadata_Reference.md
@@ -9070,10 +9070,8 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
-#, fuzzy
-#| msgid "You may also supply HTTPS-URLs directly to `fdroid signatures` instead of local files. The signature files are extracted to the according metadata directory ready to be used with `fdroid publish`. A signature consists of 3-5 files and the result of extracting one will resemble these file listings:"
 msgid "You may also supply HTTPS-URLs directly to `fdroid signatures` instead of local files. The signature files are extracted to the according metadata directory ready to be used with `fdroid publish`. A signature consists of 2-6 files: a v1 signature (manifest, signature file, and signature block file) and/or a v2/v3 signature (APK Signing Block and offset); if the APK was v1-signed with e.g.  `signflinger` instead of `apksigner` there will also be a `differences.json`.  The result of extracting one will resemble these file listings:"
-msgstr "Можете також спрямувати `fdroid signatures` не на локальні файли, а прямо на URL-адреси з HTTPS. Файли підпису буде видобуто до відповідного каталогу метаданих, у готовому до використання з `fdroid publish` вигляді. Підпис складається з 3-5 файлів, результат видобування одного з яких буде подібним до такого переліку файлів:"
+msgstr "Можете також спрямувати `fdroid signatures` не в локальні файли, а прямо на URL-адреси з HTTPS. Файли підпису буде видобуто до відповідного каталогу метаданих, у готовому до користування з `fdroid publish` вигляді. Підпис складається з 2-6: підпис v1 (маніфест, файл підпису та файл блоку підпису) та/або підпис v2/v3 (блок підпису APK та зміщення); якщо APK був підписаний v1 за допомогою, наприклад, `signflinger` замість `apksigner`, буде також `differences.json`. Результат розпакування буде схожий на ці списки файлів:"
 
 #. type: Fenced code block (console)
 #: _docs/Reproducible_Builds.md
@@ -10474,32 +10472,28 @@ msgstr "Апаратні модулі захисту (hardware security modules,
 
 #. type: Plain text
 #: _docs/Signing_Process.md
-#, fuzzy
-#| msgid "For information on how to configure an F-Droid repo to use an HSM, see the \"smartcard\" sections of _examples/config.yml_, specifically `keystore` and `smartcardoptions`.  Most likely, [OpenSC](https://github.com/OpenSC/OpenSC) will need to be set up as a PKCS11 provider for Java."
 msgid "For information on how to configure an F-Droid repo to use an HSM, see the \"smartcard\" sections of _examples/config.yml_, specifically `keystore` and `smartcardoptions`.  Most likely, [OpenSC](https://github.com/OpenSC/OpenSC) will need to be set up as a PKCS11 provider for Java.  [_hsmwiz_](https://github.com/johndoe31415/hsmwiz) is a simpler way to work with smart card HSMs like the Nitrokey HSM.  Both OpenSC and _hsmwiz_ are available in Debian."
-msgstr "Докладніше налаштування репозиторію F-Droid для використання HSM описано в розділах «smartcard» файлу _examples/config.yml_, зокрема `keystore` та `smartcardoptions`. Швидше за все, вам знадобиться встановити [OpenSC](https://github.com/OpenSC/OpenSC) як провайдер PKCS11 для Java."
+msgstr "Докладніше налаштування репозиторію F-Droid для використання HSM описано в розділах «smartcard» файлу _examples/config.yml_, зокрема `keystore` та `smartcardoptions`. Швидше за все, вам знадобиться встановити [OpenSC](https://github.com/OpenSC/OpenSC) як провайдер PKCS11 для Java. [_hsmwiz_](https://github.com/johndoe31415/hsmwiz) — простіший спосіб роботи з HSM смарткартками, такими як Nitrokey HSM. У Debian доступні як OpenSC, так і _hsmwiz_."
 
 #. type: Plain text
 #: _docs/Signing_Process.md
 msgid "For more in-depth information, see:"
-msgstr ""
+msgstr "Докладніше:"
 
 #. type: Bullet: '* '
 #: _docs/Signing_Process.md
-#, fuzzy
-#| msgid "Optionally edit the _config.yml_ file to your liking, detailed examples are in [examples/config.yml](https://gitlab.com/fdroid/fdroidserver/-/blob/master/examples/config.yml)"
 msgid "_fdroidserver_ example config file: [examples/config.yml](https://gitlab.com/fdroid/fdroidserver/-/blob/2.1a0/examples/config.yml#L125)"
-msgstr "Необов'язково: відредагуйте файл _config.yml_, як вважаєте за потрібне; докладні приклади знайдете в [examples/config.yml](https://gitlab.com/fdroid/fdroidserver/-/blob/master/examples/config.yml)"
+msgstr "Приклад файлу конфігурації _fdroidserver_: [examples/config.yml](https://gitlab.com/fdroid/fdroidserver/-/blob/2.1a0/examples/config.yml#L125)"
 
 #. type: Bullet: '* '
 #: _docs/Signing_Process.md
 msgid "[Publishing an F-Droid Repo using a Hardware Security Module]({{ site.baseurl }}/{% post_url 2020-10-05-ntrokey-signing %})"
-msgstr ""
+msgstr "[Публікування репозиторію F-Droid з використанням апаратного модуля безпеки]({{ site.baseurl }}/{% post_url 2020-10-05-ntrokey-signing %})"
 
 #. type: Bullet: '* '
 #: _docs/Signing_Process.md
 msgid "[Security in a thumb drive: the promise and pain of hardware security modules, take one!](https://guardianproject.info/2014/03/28/security-in-a-thumb-drive-the-promise-and-pain-of-hardware-security-modules-take-one/)"
-msgstr ""
+msgstr "[Безпека у флешці: обіцянки та проблеми апаратних модулів безпеки, якусь!!](https://guardianproject.info/2014/03/28/security-in-a-thumb-drive-the-promise-and-pain-of-hardware-security-modules-take-one/)"
 
 #. type: YAML Front Matter: title
 #: _docs/Submitting_to_F-Droid_Quick_Start_Guide.md
