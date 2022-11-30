@@ -242,11 +242,10 @@ shared libraries via an AAR library.  Here is how to disable it in Gradle:
 
 ```gradle
 android {
-	packagingOptions {
-		doNotStrip '**/*.so'
-	}
+    packagingOptions {
+        doNotStrip '**/*.so'
+    }
 }
-
 ```
 
 
