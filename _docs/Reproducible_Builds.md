@@ -140,11 +140,23 @@ automatically zeroed out.
 ### Reproducible APK tools
 
 The scripts from
-[reproducible-apk-tools](https://github.com/obfusk/reproducible-apk-tools) may
-help to make builds reproducible, e.g. by fixing newlines (CRLF vs LF) or making
-ZIP ordering deterministic.  Depending on specifics, these scripts need to be
-used by upstream developers before signing their APKs, by the fdroiddata recipe,
-or both.  It is available in fdroiddata as a `srclib`.
+[reproducible-apk-tools](https://github.com/obfusk/reproducible-apk-tools)
+(available in fdroiddata as a `srclib`) may help to make builds reproducible,
+e.g. by fixing newlines (CRLF vs LF) or making ZIP ordering deterministic, if
+removing the cause of the differences is not a realistic option.  Depending on
+specifics, these scripts need to be used by upstream developers before signing
+their APKs, by the fdroiddata recipe, or both.
+
+Originally created to inject non-determinism in build processes,
+[disorderfs](https://salsa.debian.org/reproducible-builds/disorderfs) can also
+do the opposite: make reading from the filesystem deterministic.  In some cases
+this can make e.g. `resources.arsc` reproducible.  Here is an example from an
+existing recipe:
+
+```console
+$ mv my.app my.app_underlying
+$ disorderfs --sort-dirents=yes --reverse-dirents=no my.app_underlying my.app
+```
 
 
 ### Potential sources of unreproducible builds
