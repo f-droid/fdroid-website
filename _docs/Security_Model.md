@@ -165,3 +165,5 @@ CSS/HTML/JavaScript injection with a
 3. The second "Bazaar2" project funded by Open Tech Fund included an
    [external public audit]({{ site.baseurl }}/2018/09/04/second-security-audit-results.html)
    from [Radically Open Security](https://radicallyopensecurity.com/)
+
+4. The NLnet-funded projects "Tracking the Trackers" and "The Search for Ethical Apps" provided an [audit]({{ site.baseurl }}{% post_url 2022-12-22-third-audit-results %}) performed by [Radically Open Security](https://radicallyopensecurity.com/)
