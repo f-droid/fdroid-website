@@ -168,7 +168,13 @@ below.
 See also [this gitlab issue](https://gitlab.com/fdroid/fdroiddata/-/issues/2816).
 
 
-#### coreLibraryDesugaring
+#### Bug: baseline.profm not deterministic
+
+[Non-stable `assets/dexopt/baseline.profm`](https://issuetracker.google.com/issues/231837768)
+(requires a google account to view).
+
+
+#### Bug: coreLibraryDesugaring not deterministic
 
 In some cases builds are not reproducible due to a
 [bug in `coreLibraryDesugaring`](https://issuetracker.google.com/issues/195968520)
