@@ -189,6 +189,11 @@ layout: default-package-sidebar
 					{% assign fmt_package_added_date = '{{ package_added_date }}' %}
 					{{ strings.added_on | replace: fmt_package_added_date, package_added_date }}
 				</div>
+				<p>
+					{% for abi in package.nativecode %}
+					<span class="package-nativecode">{{ abi }}</span>
+					{% endfor %}
+				</p>
 				<p class="package-version-requirement">
 					{% assign fmt_android_version = '{{ android_version }}' %}
 					{% assign android_version = package.min_sdk_version | android_sdk_level_to_version %}
