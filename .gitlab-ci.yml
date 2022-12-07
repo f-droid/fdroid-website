@@ -154,12 +154,13 @@ rsync mirrors:
 
 
 spellcheckbot:
-  image: node:buster
+  image: debian:bullseye
   stage: deploy
   allow_failure: true
   only:
     - triggers
   script:
+    - *apt-template
     - test -n ${FROM_CI_PROJECT_URL}
     - test -n ${FROM_CI_COMMIT_SHA}
     - git fetch ${FROM_CI_PROJECT_URL} ${FROM_CI_COMMIT_SHA}
@@ -173,8 +174,8 @@ spellcheckbot:
           echo "Spellchecking $CHANGED";
           git checkout --force ${FROM_CI_COMMIT_SHA};
       fi
-    - apt-get -qy update
-    - apt-get -qy install --no-install-recommends --allow-unauthenticated python3-gitlab python3-requests
+    - apt-get update
+    - apt-get install hunspell-en-us nodejs npm python3-gitlab python3-requests
     - ./tools/fetch-spelling-words.py >> .spelling
     - npm i markdown-spellcheck -g
     - (mdspell --report --en-gb --ignore-numbers --ignore-acronyms $CHANGED > output.txt 2>&1)
