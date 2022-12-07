@@ -30,6 +30,10 @@ script_file.write(header)
 configfile['pages']['script'].flatten.each do |line|
     script_file.write(line.sub!('./tools/i18n.sh', ''))
     script_file.write("\n")
+    # necessary so that the vagrant user can run `bundle install --local`
+    script_file.write("rm -rf /var/lib/gems/*/bundler/gems/jekyll-*\n")
+    script_file.write("chown -R vagrant:vagrant /home/vagrant/\n")
+    script_file.write("\n")
 end
 script_file.rewind
 

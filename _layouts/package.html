@@ -189,9 +189,9 @@ layout: default-package-sidebar
 					{% assign fmt_package_added_date = '{{ package_added_date }}' %}
 					{{ strings.added_on | replace: fmt_package_added_date, package_added_date }}
 				</div>
-				<p>
+				<p class="package-version-nativecode">
 					{% for abi in package.nativecode %}
-					<span class="package-nativecode">{{ abi }}</span>
+					<code class="package-nativecode">{{ abi }}</code>
 					{% endfor %}
 				</p>
 				<p class="package-version-requirement">
@@ -214,7 +214,7 @@ layout: default-package-sidebar
 				<div class="package-version-anti-features">
 					<details {% if forloop.first %}open{% endif %}>
 						<summary class="package-version-anti-features-summary">
-							{{ strings.anti-features }}
+							{{ strings.anti_features }}
 						</summary>
 						<ul class="package-version-anti-features-list">
 							{% for anti_feature in package.anti_features %}
