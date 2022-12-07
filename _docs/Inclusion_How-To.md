@@ -174,7 +174,7 @@ updated and committed to the repository by the author `F-Droid
 Builder <admin@f-droid.org>`.
 
 Once metadata files are updated, the F-Droid Server will check them against a
-list of released APKs to constuct a list of new applications and/or
+list of released APKs to construct a list of new applications and/or
 versions that need to be built. It will then enter the application
 preprocessing process, followed by the build process for each of them.
 

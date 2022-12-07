@@ -132,7 +132,7 @@ Apache2
 
 The second is to enable _mod_rewrite_, which is used to automatically
 choose the correct language for browsers that are not using
-Javascript.  The easiest way to do that is to run `sudo a2enmod
+JavaScript.  The easiest way to do that is to run `sudo a2enmod
 rewrite`.
 
 The last is to add the following to the Apache2 server or

@@ -18,7 +18,7 @@ to see what the new layout looks like.
 The search field has changed to now be run by our own custom
 [search service](https://gitlab.com/fdroid/fdroid-website-search).
 This allows all aspects of the website to work with or without
-Javascript to support as wide a range of devices and browsers as
+JavaScript to support as wide a range of devices and browsers as
 possible, including Tor Browser and browsers on cheap mobile devices.
 This new search service also includes a much more complete index, so
 it is now possible to search based on all of the metadata, for example

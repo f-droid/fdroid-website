@@ -72,7 +72,7 @@ At the beginning of the app's description in metadata (provided Description is h
 NOTE: This app is no longer maintained.
 ```
 
-Optionally link "no longer maintained" to where that statement is found (if not directly on the app's Readme/Website). Or add "(its repo has been archived)" – whichever fits. If the repo is gone altogether, instead remove the entries for `RepoType` and `RepoURL`, and at the very end of the metadata YAML add a line saying `NoSourceSince: 0.1.2` (where 0.1.2 should be the versionName of the last build available) – this will automatically translate into an AntiFeature and thus be displayed prominently.
+Optionally link "no longer maintained" to where that statement is found (if not directly on the app's Readme/Website). Or add "(its repo has been archived)" – whichever fits. If the repo is gone altogether, instead remove the entries for `RepoType` and `RepoURL`, and at the very end of the metadata YAML add a line saying `NoSourceSince: 0.1.2` (where 0.1.2 should be the versionName of the last build available) – this will automatically translate into an Anti-Feature and thus be displayed prominently.
 In the end make that an MR.
 
 

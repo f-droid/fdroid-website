@@ -225,7 +225,7 @@ application (even sending crash reports) this must be something that the
 user explicitly opts **in** to - i.e. you ask them on first run, before
 sending anything anywhere, or there's a preference that defaults to OFF.
 In all other cases, we may still include the app, but it will be flagged
-with our 'Tracking' AntiFeature, which means users will only ever see
+with our 'Tracking' Anti-Feature, which means users will only ever see
 the app if they choose to view such apps.
 
 Additionally, note that third party analytics libraries that come in the
