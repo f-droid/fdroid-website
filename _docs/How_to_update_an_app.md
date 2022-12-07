@@ -66,10 +66,10 @@ use many branches, I'll often visit the source code site too).
     the class names (`unzip -l`) and visit e.g.
     <http://central.maven.org/maven2/io/netty/> where you will find
     checksums to compare with. Take a note of jars such as bugsense or
-    acra which are used for bugreports
+    ACRA which are used for bug reports
 -   If you find proprietary files add a dummy build version to the
     metadata with a few words about the reason, add _NoSourceSince_ to
-    the bottom and a line to the descripion beginning with Status: to
+    the bottom and a line to the description beginning with Status: to
     the description explaining the reason that the app can't be updated
 -   `find . -type f -executable` to locate any
     scripts and things. Note that ant will also execute anything it
@@ -110,7 +110,7 @@ use many branches, I'll often visit the source code site too).
     to ads.
 -   Add any info for the next time above AutoUpdateMode, and see if
     the update check mode needs any tweaking.
--   Have a quick look at the description and urls to see if anything
+-   Have a quick look at the description and URLs to see if anything
     needs updating
 -   Commit new srclibs and extlibs `git commit build/extlibs/volley/\*` and include a source.txt if a
     jar is from a new location

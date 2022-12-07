@@ -110,12 +110,13 @@ pages:
          && (echo "ERROR The above files have a bad or missing file extension"; exit 1)
 
    - *apt-template
-   - apt-get install curl python3-yaml
+   - apt-get install curl python3-colorama python3-yaml
    - ./tools/trigger-spellcheckbot
    # use the 'gitlab ci' subset of languages
    - sed -i 's,^languages:,ignored_languages:,' _config.yml
    - sed -i 's,^gitlab_ci_languages:,languages:,' _config.yml
    - *setup_for_jekyll
+   - ./tools/check-liquid-strings-var-names.py
    - ./tools/check-format-strings.py
    - ./tools/check-page-links.py
    - ./tools/check-yaml-front-matter.py
@@ -154,12 +155,13 @@ rsync mirrors:
 
 
 spellcheckbot:
-  image: node:buster
+  image: debian:bullseye
   stage: deploy
   allow_failure: true
   only:
     - triggers
   script:
+    - *apt-template
     - test -n ${FROM_CI_PROJECT_URL}
     - test -n ${FROM_CI_COMMIT_SHA}
     - git fetch ${FROM_CI_PROJECT_URL} ${FROM_CI_COMMIT_SHA}
@@ -173,8 +175,8 @@ spellcheckbot:
           echo "Spellchecking $CHANGED";
           git checkout --force ${FROM_CI_COMMIT_SHA};
       fi
-    - apt-get -qy update
-    - apt-get -qy install --no-install-recommends --allow-unauthenticated python3-gitlab python3-requests
+    - apt-get update
+    - apt-get install hunspell-en-us nodejs npm python3-gitlab python3-requests
     - ./tools/fetch-spelling-words.py >> .spelling
     - npm i markdown-spellcheck -g
     - (mdspell --report --en-gb --ignore-numbers --ignore-acronyms $CHANGED > output.txt 2>&1)
