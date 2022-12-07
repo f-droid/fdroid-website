@@ -110,12 +110,13 @@ pages:
          && (echo "ERROR The above files have a bad or missing file extension"; exit 1)
 
    - *apt-template
-   - apt-get install curl python3-yaml
+   - apt-get install curl python3-colorama python3-yaml
    - ./tools/trigger-spellcheckbot
    # use the 'gitlab ci' subset of languages
    - sed -i 's,^languages:,ignored_languages:,' _config.yml
    - sed -i 's,^gitlab_ci_languages:,languages:,' _config.yml
    - *setup_for_jekyll
+   - ./tools/check-liquid-strings-var-names.py
    - ./tools/check-format-strings.py
    - ./tools/check-page-links.py
    - ./tools/check-yaml-front-matter.py

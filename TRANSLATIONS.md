@@ -14,8 +14,8 @@ Firstly, add a new entry to the `_data/strings.json` file:
 
 ```json
 {
-  "home": {
-    "my_new_paragraph": "Here is the paragraph to be added (and also translated)",
+  "index": {
+    "introduction": "Here is the paragraph to be added (and also translated)",
     ...
   },
   ...
@@ -25,14 +25,14 @@ Firstly, add a new entry to the `_data/strings.json` file:
 Then, reference this from the `index.md` file:
 
 ```markdown
-{{ site.data.strings.home.my_new_paragraph }}
+{{ site.data.strings.index.introduction }}
 ```
 
 If you need to reference many strings in a single `.md` file, then it may be more concise to first assign a variable:
 
 ```markdown
-{% assign strings = site.data.strings.home %}
-{{ strings.my_new_paragraph }}
+{% assign strings = site.data.strings.index %}
+{{ strings.introduction }}
 ```
 
 ### Documentation + Website News
