@@ -176,7 +176,7 @@ spellcheckbot:
           git checkout --force ${FROM_CI_COMMIT_SHA};
       fi
     - apt-get update
-    - apt-get install hunspell-en-us nodejs npm python3-gitlab python3-requests
+    - apt-get install git hunspell-en-us nodejs npm python3-gitlab python3-requests
     - ./tools/fetch-spelling-words.py >> .spelling
     - npm i markdown-spellcheck -g
     - (mdspell --report --en-gb --ignore-numbers --ignore-acronyms $CHANGED > output.txt 2>&1)
