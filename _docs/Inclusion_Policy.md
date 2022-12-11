@@ -66,9 +66,8 @@ Additionally:
 -   F-Droid does not sign up for any API keys. Even if provided by a
     third party, we include them in both, binary and
     sourcecode releases.
--   Binary dependencies such as JAR files have to be replaced by
-    source-built versions or used from a trusted repository like
-    Maven Central OSSRH (see manual).
+-   Binary dependencies such as JAR files have to be built from source
+    or installed from Debian repos.
 
 Ideally:
 
@@ -76,6 +75,26 @@ Ideally:
 
 Though we tried to build everyting from source, we still need some prebuild binaries. Therefore we have some exceptions:
 
+-   Trusted maven repository. While there is no guarantee that those binaries are
+    free and correspondent to the source code, F-Droid allows the following known
+    repositories currently:
+    -   Maven Central - the original repo, hardcoded in Maven and Gradle.
+    -   Google Maven Repo - hardcoded in Gradle, this repo hosts Google's own libs.
+    -   JCenter - hardcoded in Gradle, this repo by Bintray tries to provide easier
+        handling. It's synced with Maven Central, and include some extra libs. It's shutting down so please avoid this repo.
+    -   OSS Sonatype - maintained by the people behind mavenCentral,
+        this repository focuses on hosting services for open source
+        project binaries. It's synced with Maven Central, and include some extra libs
+    -   OSS JFrog - maintained by the people behind jCenter, this
+        repository focuses on hosting services for open source project
+        binaries.
+    -   JitPack.io - builds directly from GitHub repositories.
+        However, they do not provide any option to reproduce or verify
+        the resulting binaries. Builds pre-release versions in
+        some cases.
+    -   Clojars - Clojure libraries repo.
+    -   CommonsWare - repo holding a collection of open-source libs.
+    -   Gradle plugin repo - hardcoded in Gradle, this repo hosts Gradle plugins.
 -   Android SDK/NDK. They are released as proprietary binaries but we don't have an alternative currently. There is in-progress work to package recent Android SDK versions in Debian.
 -   Gradle. Only some old versions of Gradle are packaged in Debian. Currently we download them from the developer website.
 -   Flutter SDK. They are FOSS but not packaged in Debian and we are not able to built it from source. Currently we download them from the developer website with the Flutter srclib scripts.
