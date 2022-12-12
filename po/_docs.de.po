@@ -16,8 +16,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
 "POT-Creation-Date: 2022-12-08 11:05+0100\n"
-"PO-Revision-Date: 2022-12-11 16:50+0000\n"
-"Last-Translator: VfBFan <drop0815@posteo.de>\n"
+"PO-Revision-Date: 2022-12-12 14:30+0000\n"
+"Last-Translator: C. Rüdinger <Mail-an-CR@web.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/f-droid/website-docs/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
@@ -9032,10 +9032,8 @@ msgstr "Wie es ab sofort umgesetzt wird"
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
-#, fuzzy
-#| msgid "Publishing signed binaries from elsewhere (e.g. the upstream developer)  is now possible after verifying that they match ones built using a recipe. Publishing only takes place if there is a proper match. (Which seems very unlikely to be the case unless the exact same tool-chain is used, so I would imagine that unless the person building and signing the incoming binaries uses fdroidserver to build them, probably the exact same buildserver ID, they will not match. But at least we have the functionality to support that.)"
 msgid "Publishing signed binaries (APKs) from elsewhere (e.g. the upstream developer)  is now possible after verifying that they match ones built using an fdroiddata recipe.  Publishing only takes place if there is a proper match.  This procedure is implemented as part of `fdroid publish`.  The reproducibility check at the publishing step follows this logic:"
-msgstr "Das Veröffentlichen von signierten Binärdateien von anderswo (z.B. vom Upstream-Entwickler) ist, nach Überprüfung, dass sie, sobald sie einem Rezept folgend hergestellt wurden, miteinander übereinstimmen, nun möglich. Die Veröffentlichung erfolgt nur, wenn eine exakte Übereinstimmung vorliegt. (Was sehr unwahrscheinlich ist, sofern nicht genau die gleiche Tool-Chain verwendet wird. So könnte ich mir vorstellen, dass sie nicht übereinstimmen werden, wenn die Person, die die eingehenden Binärdateien herstellt und signiert, nicht fdroidserver zu ihrer Herstellung nutzt und mutmaßlich genau dieselbe Buildserver-ID verwendet. Immerhin besitzen wir aber die Funktionalität, um das zu belegen.)"
+msgstr "Die Veröffentlichung signierter Binärdateien (APKs) von anderswo (z. B. vom Upstream-Entwickler)  ist nun möglich, wenn die Überprüfung zeigt, dass sie nach Herstellung mittels eines fdroiddata-Rezeptes exakt übereinstimmen. Dieser Vorgang ist als Teil von `fdroid publish` implementiert.  Die Prüfung der Reproduzierbarkeit im Veröffentlichungsschritt folgt dieser Logik:"
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
@@ -9044,24 +9042,19 @@ msgstr "![Flussdiagramm zur Reproduzierbarkeitsprüfung]({% asset docs/reproduci
 
 #. type: Title ####
 #: _docs/Reproducible_Builds.md
-#, fuzzy, no-wrap
-#| msgid "Publish both (upstream-)developer signed and F-Droid signed APKs"
+#, no-wrap
 msgid "Publish both (upstream) developer-signed and F-Droid-signed APKs"
 msgstr "Veröffentlichung von APKs, die sowohl von (Upstream-)Entwicklern als auch von F-Droid signiert sind"
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
-#, fuzzy
-#| msgid "Use this approach for shipping a version of an app, with both (upstream-)developer signed and F-Droid signed APKs. This enables us to ship updates for users who installed apps from other sources than F-Droid (eg. Play Store) which are therefore signed by the app-developers, while also shipping updates for apps which were built and signed by F-Droid."
 msgid "This approach allows publishing both APKs signed by the (upstream) developer and APKs signed by F-Droid.  This enables us to ship updates for users who installed apps from other sources than F-Droid (e.g. Play Store), while also shipping updates for apps which were built and signed by F-Droid."
-msgstr "Nutzen Sie diese Vorgehensweise zur Auslieferung einer App-Version mit APKs, die sowohl vom (Upstream-)Entwickler als auch von F-Droid signiert sind. Dies ermöglicht es uns, Aktualisierungen an Benutzer auszuliefern, die Apps aus anderen Quellen als F-Droid (z. B. aus dem Play Store) installiert haben, die deshalb durch die App-Entwickler signiert sind, und gleichzeitig Aktualisierungen für Apps zu verschicken, die von F-Droid erstellt und signiert wurden."
+msgstr "Diese Vorgehensweise ermöglicht eine Veröffentlichung sowohl von APKs, die vom (Upstream-)Entwickler signiert sind, als auch solchen, die von F-Droid signiert sind.  Dies versetzt uns in die Lage, Aktualisierungen an Benutzer auszuliefern, die Apps aus anderen Quellen als F-Droid (z. B. aus dem Play Store) installiert haben, und gleichzeitig Aktualisierungen für Apps zu verschicken, die von F-Droid erstellt und signiert wurden."
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
-#, fuzzy
-#| msgid "This requires to put (upstream-)developer signatures into fdroiddata.  We provide a command for easily extracting signatures from APKs:"
 msgid "This requires extracting and adding (upstream) developer signatures to fdroiddata.  These signatures are then later copied to the unsigned APK built from the fdroiddata recipe.  We provide a command for easily extracting signatures from APKs:"
-msgstr "Dazu müssen (Upstream-)Entwicklersignaturen in fdroiddata eingefügt werden.  Wir bieten einen Befehl zum einfachen Extrahieren von Signaturen aus APKs:"
+msgstr "Dazu müssen (Upstream-)Entwicklersignaturen extrahiert und in fdroiddata eingefügt werden.  Diese Signaturen werden dann später aus dem fdroiddata-Rezept in die unsignierte APK kopiert.  Wir bieten einen Befehl zum einfachen Extrahieren von Signaturen aus APKs:"
 
 #. type: Fenced code block (console)
 #: _docs/Reproducible_Builds.md
@@ -9124,10 +9117,8 @@ msgstr "Veröffentlichung von ausschließlich Entwickler-signierten APKs (Upstre
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
-#, fuzzy
-#| msgid "For using this older approach, everything in the metadata should be the same as normal, with the addition of the `Binaries:` directive to specify where to get the binaries from. In this case F-Droid will never attempt to ship APKs signed by F-Droid. Should `fdroid publish` manage to verify that a downloaded APK can be built reproducibly, the downloaded APK will be published. Otherwise F-Droid will skip publishing this version of the app."
 msgid "For this approach, everything in the metadata should be the same as normal, with the addition of the `Binaries:` directive to specify where to get the binaries (APKs) from.  In this case, F-Droid will never attempt to publish APKs signed by F-Droid.  If `fdroid publish` can verify that the downloaded APK matches the one built from the fdroiddata recipe, the downloaded APK will be published.  Otherwise F-Droid will skip publishing this version of the app."
-msgstr "Um diesen älteren Ansatz zu verwenden, sollte alles in den Metadaten wie üblich sein plus der Anweisung `Binaries:`, um festzulegen, woher die Binärdateien kommen sollen. In diesem Fall wird F-Droid niemals versuchen, von F-Droid signierte APKs zu versenden. Sollte es `fdroid publish` gelingen, nachzuweisen, dass ein heruntergeladenes APK reproduzierbar erstellt werden kann, wird das heruntergeladene APK veröffentlicht. Andernfalls überspringt F-Droid die Veröffentlichung dieser Version der App."
+msgstr "Um diesen älteren Ansatz zu verwenden, sollte alles in den Metadaten wie üblich sein plus der Anweisung `Binaries:`, um festzulegen, woher die Binärdateien (APKs) kommen sollen.  In diesem Fall wird F-Droid niemals versuchen, von F-Droid signierte APKs zu veröffentlichen.  Wenn `fdroid publish` verifizieren kann, dass das heruntergeladene APK mit dem nach dem fdroiddata-Rezept hergestellten übereinstimmt, wird das heruntergeladene APK veröffentlicht.  Andernfalls überspringt F-Droid die Veröffentlichung dieser Version der App."
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
@@ -9201,12 +9192,12 @@ msgstr "Reproduzierbare APK-Tools"
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
 msgid "The scripts from [reproducible-apk-tools](https://github.com/obfusk/reproducible-apk-tools)  (available in fdroiddata as a `srclib`) may help to make builds reproducible, e.g. by fixing newlines (CRLF vs LF) or making ZIP ordering deterministic, if removing the cause of the differences is not a realistic option.  Depending on specifics, these scripts need to be used by upstream developers before signing their APKs, by the fdroiddata recipe, or both."
-msgstr ""
+msgstr "Die Skripte aus [reproducible-apk-tools](https://github.com/obfusk/reproducible-apk-tools)  (als `srclib` in fdroiddata enthalten) können dabei helfen, Builds reproduzierbar zu gestalten, z. B. durch Korrektur von Zeilenvorschüben (CRLF gegen LF) oder Schaffung einer deterministischen ZIP-Ordnung, wenn die Entfernung der für die Unterschiede verantwortlichen Ursachen keine realistische Option bietet.  Abhängig von speziellen Details, müssen diese Skripte von Upstream-Entwicklern vor dem Signieren ihrer APKs durch sie selbst und/oder durch das fdroiddata-Rezept angewandt werden."
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
 msgid "Originally created to inject non-determinism in build processes, [disorderfs](https://salsa.debian.org/reproducible-builds/disorderfs) can also do the opposite: make reading from the filesystem deterministic.  In some cases this can make e.g. `resources.arsc` reproducible.  Here is an example from an existing recipe:"
-msgstr ""
+msgstr "Ursprünglich geschaffen, um Non-Determinismus in den Build-Vorgang einzuführen, kann [disorderfs](https://salsa.debian.org/reproducible-builds/disorderfs) auch das Gegenteil ausführen: das Auslesen des Dateisystems deterministisch vornehmen.  In einigen Fällen kann dies z. B. `resources.arsc` reproduzierbar machen.  Hier ein Beispiel eines bestehenden Rezepts:"
 
 #. type: Fenced code block (console)
 #: _docs/Reproducible_Builds.md
