@@ -626,29 +626,9 @@ configuration to the build. These are (roughly in order of application):
     relative path to the library directory, but it could need tweaking
     if you’ve changed into another directory.
 
-    Currently srclibs are necessary when upstream uses jar files or
-    pulls dependencies from non-trusted repositories. While there is no
-    guarantee that those binaries are free and correspondent to the
-    source code, F-Droid allows the following known repositories until a
-    source-built alternative is available:
-
-    -   ‘mavenCentral’ - the original repo, hardcoded in Maven
-        and Gradle.
-    -   ‘jCenter’ - hardcoded in Gradle, this repo by Bintray tries to
-        provide easier handling. It should sync with mavenCentral from
-        time to time.
-    -   ‘OSS Sonatype’ - maintained by the people behind mavenCentral,
-        this repository focuses on hosting services for open source
-        project binaries.
-    -   ‘OSS JFrog’ - maintained by the people behind jCenter, this
-        repository focuses on hosting services for open source project
-        binaries.
-    -   ‘JitPack.io’ - builds directly from GitHub repositories.
-        However, they do not provide any option to reproduce or verify
-        the resulting binaries. Builds pre-release versions in
-        some cases.
-    -   ‘Clojars’ - Clojure libraries repo.
-    -   ‘CommonsWare’ - repo holding a collection of open-source libs.
+    Currently srclibs are used when upstream uses jar files or
+    pulls dependencies from non-trusted repositories. Because srclibs
+    can't be updated automatically, git submodule is a better choice.
 
 `patch: x`<a name="build_patch"></a>
 
