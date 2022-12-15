@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
-"POT-Creation-Date: 2022-12-08 11:05+0100\n"
+"POT-Creation-Date: 2022-12-15 17:21+0100\n"
 "PO-Revision-Date: 2022-12-09 16:51+0000\n"
 "Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/f-droid/website-docs/uk/>\n"
@@ -147,8 +147,13 @@ msgstr "Докладний опис застосунку може викорис
 
 #. type: Bullet: '* '
 #: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
-msgid "Common tags like `li`, `a` with `href`, `ul`, `ol`, `li`, `b`, `u` and `i` are supported."
-msgstr "Загальні теги, такі як `li`, `a` з `href`, `ul`, `ol`, `li`, `b`, `u` та `i` підтримуються."
+msgid "These simple layout tags are [supported](https://gitlab.com/fdroid/jekyll-fdroid/-/blob/master/lib/fdroid/Package.rb#L21): `b`, `big`, `blockquote`, `br`, `cite`, `em`, `i`, `li`, `ol`, `small`, `strike`, `strong`, `sub`, `sup`, `tt`, `u`, `ul`."
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
+msgid "`a` with `href` is currently allowed, but might be removed without notice."
+msgstr ""
 
 #. type: Plain text
 #: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
@@ -3100,54 +3105,23 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-#, no-wrap
+#, fuzzy, no-wrap
+#| msgid ""
+#| "    Currently srclibs are necessary when upstream uses jar files or\n"
+#| "    pulls dependencies from non-trusted repositories. While there is no\n"
+#| "    guarantee that those binaries are free and correspondent to the\n"
+#| "    source code, F-Droid allows the following known repositories until a\n"
+#| "    source-built alternative is available:\n"
 msgid ""
-"    Currently srclibs are necessary when upstream uses jar files or\n"
-"    pulls dependencies from non-trusted repositories. While there is no\n"
-"    guarantee that those binaries are free and correspondent to the\n"
-"    source code, F-Droid allows the following known repositories until a\n"
-"    source-built alternative is available:\n"
+"    Currently srclibs are used when upstream uses jar files or\n"
+"    pulls dependencies from non-trusted repositories. Because srclibs\n"
+"    can't be updated automatically, git submodule is a better choice.\n"
 msgstr ""
 "    Наразі srclibs потрібні, якщо оригінал використовує jar-файли чи\n"
 "    завантажує залежності з недовірених репозиторіїв. Оскільки нема\n"
 "    гарантії, що ці двійкові файли вільні й відповідні вихідному\n"
 "    коду, F-Droid дозволяє наступні відомі репозиторії, поки\n"
 "    не стане доступна збирана з вихідного коду альтернатива:\n"
-
-#. type: Bullet: '    -   '
-#: _docs/Build_Metadata_Reference.md
-msgid "‘mavenCentral’ - the original repo, hardcoded in Maven and Gradle."
-msgstr "«mavenCentral» — перший репозиторій, доданий хардкодом у Maven і Gradle."
-
-#. type: Bullet: '    -   '
-#: _docs/Build_Metadata_Reference.md
-msgid "‘jCenter’ - hardcoded in Gradle, this repo by Bintray tries to provide easier handling. It should sync with mavenCentral from time to time."
-msgstr "«jCenter» — хардкод у Gradle, репозиторій від Bintray із простішим інтерфейсом. Має періодично синхронізуватися з mavenCentral."
-
-#. type: Bullet: '    -   '
-#: _docs/Build_Metadata_Reference.md
-msgid "‘OSS Sonatype’ - maintained by the people behind mavenCentral, this repository focuses on hosting services for open source project binaries."
-msgstr "«OSS Sonatype» — супроводжуваний командою mavenCentral репозиторій, зосереджений на розміщенні двійкових файлів проєктів із відкритим кодом."
-
-#. type: Bullet: '    -   '
-#: _docs/Build_Metadata_Reference.md
-msgid "‘OSS JFrog’ - maintained by the people behind jCenter, this repository focuses on hosting services for open source project binaries."
-msgstr "«OSS JFrog» — супроводжуваний командою jCenter репозиторій, зосереджений на розміщенні двійкових файлів проєктів із відкритим кодом."
-
-#. type: Bullet: '    -   '
-#: _docs/Build_Metadata_Reference.md
-msgid "‘JitPack.io’ - builds directly from GitHub repositories.  However, they do not provide any option to reproduce or verify the resulting binaries. Builds pre-release versions in some cases."
-msgstr "«JitPack.io» — збирає прямо з GitHub-репозиторіїв. Проте не надає жодного способу відтворити чи перевірити двійкові файли результату. В деяких випадках збирає версії ще до випуску."
-
-#. type: Bullet: '    -   '
-#: _docs/Build_Metadata_Reference.md
-msgid "‘Clojars’ - Clojure libraries repo."
-msgstr "«Clojars» — репозиторій бібліотек Clojure."
-
-#. type: Bullet: '    -   '
-#: _docs/Build_Metadata_Reference.md
-msgid "‘CommonsWare’ - repo holding a collection of open-source libs."
-msgstr "«CommonsWare» — репозиторій із добіркою відкритих бібліотек."
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -7162,7 +7136,9 @@ msgstr "F-Droid не подає заявок на жодні ключі API. Н�
 
 #. type: Bullet: '-   '
 #: _docs/Inclusion_Policy.md
-msgid "Binary dependencies such as JAR files have to be replaced by source-built versions or used from a trusted repository like Maven Central OSSRH (see manual)."
+#, fuzzy
+#| msgid "Binary dependencies such as JAR files have to be replaced by source-built versions or used from a trusted repository like Maven Central OSSRH (see manual)."
+msgid "Binary dependencies such as JAR files have to be built from source or installed from Debian repos."
 msgstr "Двійкові залежності, як-от JAR-файли, має бути замінено версіями, збираними з вихідного коду чи завантажуваними з довіреного репозиторію (як-от Maven Central OSSRH; дивіться відповідний розділ документації)."
 
 #. type: Plain text
@@ -7179,6 +7155,82 @@ msgstr "Явно позначати публічні версії: наприк�
 #: _docs/Inclusion_Policy.md
 msgid "Though we tried to build everyting from source, we still need some prebuild binaries. Therefore we have some exceptions:"
 msgstr "Хоч ми намагалися зібрати все з джерельного коду, нам усе одно потрібні деякі двійкові файли попередньої збірки. Тому у нас є деякі винятки:"
+
+#. type: Bullet: '-   '
+#: _docs/Inclusion_Policy.md
+#, fuzzy
+#| msgid ""
+#| "    Currently srclibs are necessary when upstream uses jar files or\n"
+#| "    pulls dependencies from non-trusted repositories. While there is no\n"
+#| "    guarantee that those binaries are free and correspondent to the\n"
+#| "    source code, F-Droid allows the following known repositories until a\n"
+#| "    source-built alternative is available:\n"
+msgid "Trusted maven repository. While there is no guarantee that those binaries are free and correspondent to the source code, F-Droid allows the following known repositories currently:"
+msgstr ""
+"    Наразі srclibs потрібні, якщо оригінал використовує jar-файли чи\n"
+"    завантажує залежності з недовірених репозиторіїв. Оскільки нема\n"
+"    гарантії, що ці двійкові файли вільні й відповідні вихідному\n"
+"    коду, F-Droid дозволяє наступні відомі репозиторії, поки\n"
+"    не стане доступна збирана з вихідного коду альтернатива:\n"
+
+#. type: Bullet: '    -   '
+#: _docs/Inclusion_Policy.md
+#, fuzzy
+#| msgid "‘mavenCentral’ - the original repo, hardcoded in Maven and Gradle."
+msgid "Maven Central - the original repo, hardcoded in Maven and Gradle."
+msgstr "«mavenCentral» — перший репозиторій, доданий хардкодом у Maven і Gradle."
+
+#. type: Bullet: '    -   '
+#: _docs/Inclusion_Policy.md
+msgid "Google Maven Repo - hardcoded in Gradle, this repo hosts Google's own libs."
+msgstr ""
+
+#. type: Bullet: '    -   '
+#: _docs/Inclusion_Policy.md
+#, fuzzy
+#| msgid "‘jCenter’ - hardcoded in Gradle, this repo by Bintray tries to provide easier handling. It should sync with mavenCentral from time to time."
+msgid "JCenter - hardcoded in Gradle, this repo by Bintray tries to provide easier handling. It's synced with Maven Central, and include some extra libs. It's shutting down so please avoid this repo."
+msgstr "«jCenter» — хардкод у Gradle, репозиторій від Bintray із простішим інтерфейсом. Має періодично синхронізуватися з mavenCentral."
+
+#. type: Bullet: '    -   '
+#: _docs/Inclusion_Policy.md
+#, fuzzy
+#| msgid "‘OSS Sonatype’ - maintained by the people behind mavenCentral, this repository focuses on hosting services for open source project binaries."
+msgid "OSS Sonatype - maintained by the people behind mavenCentral, this repository focuses on hosting services for open source project binaries. It's synced with Maven Central, and include some extra libs"
+msgstr "«OSS Sonatype» — супроводжуваний командою mavenCentral репозиторій, зосереджений на розміщенні двійкових файлів проєктів із відкритим кодом."
+
+#. type: Bullet: '    -   '
+#: _docs/Inclusion_Policy.md
+#, fuzzy
+#| msgid "‘OSS JFrog’ - maintained by the people behind jCenter, this repository focuses on hosting services for open source project binaries."
+msgid "OSS JFrog - maintained by the people behind jCenter, this repository focuses on hosting services for open source project binaries."
+msgstr "«OSS JFrog» — супроводжуваний командою jCenter репозиторій, зосереджений на розміщенні двійкових файлів проєктів із відкритим кодом."
+
+#. type: Bullet: '    -   '
+#: _docs/Inclusion_Policy.md
+#, fuzzy
+#| msgid "‘JitPack.io’ - builds directly from GitHub repositories.  However, they do not provide any option to reproduce or verify the resulting binaries. Builds pre-release versions in some cases."
+msgid "JitPack.io - builds directly from GitHub repositories.  However, they do not provide any option to reproduce or verify the resulting binaries. Builds pre-release versions in some cases."
+msgstr "«JitPack.io» — збирає прямо з GitHub-репозиторіїв. Проте не надає жодного способу відтворити чи перевірити двійкові файли результату. В деяких випадках збирає версії ще до випуску."
+
+#. type: Bullet: '    -   '
+#: _docs/Inclusion_Policy.md
+#, fuzzy
+#| msgid "‘Clojars’ - Clojure libraries repo."
+msgid "Clojars - Clojure libraries repo."
+msgstr "«Clojars» — репозиторій бібліотек Clojure."
+
+#. type: Bullet: '    -   '
+#: _docs/Inclusion_Policy.md
+#, fuzzy
+#| msgid "‘CommonsWare’ - repo holding a collection of open-source libs."
+msgid "CommonsWare - repo holding a collection of open-source libs."
+msgstr "«CommonsWare» — репозиторій із добіркою відкритих бібліотек."
+
+#. type: Bullet: '    -   '
+#: _docs/Inclusion_Policy.md
+msgid "Gradle plugin repo - hardcoded in Gradle, this repo hosts Gradle plugins."
+msgstr ""
 
 #. type: Bullet: '-   '
 #: _docs/Inclusion_Policy.md
@@ -11365,6 +11417,9 @@ msgstr "Параметри"
 #: _docs/Whitelabel_Builds.md
 msgid "For a custom build that enables Automatic Updates by default, override _app/src/main/res/xml/preferences.xml_. You can customize the preferences and their default values in _app/src/mycompany/res/xml/preferences.xml_. The fully automatic update requires [Privileged Extension](https://gitlab.com/fdroid/privileged-extension). With regular access, the updates will only automatically download. The user still needs to click install on each one."
 msgstr "Щоб усталено вимкнути автоматичні оновлення в своїй збірці, замініть _app/src/main/res/xml/preferences.xml_. Можете допрацювати параметри та їхні усталені значення в _app/src/mycompany/res/xml/preferences.xml_. Для повністю автоматичного оновлення потрібне [привілейоване розширення](https://gitlab.com/fdroid/privileged-extension). Без нього, оновлення будуть лише автоматично завантажуватись — і користувачці чи користувачу все ще доводитиметься торкати «Встановити» для кожного з них."
+
+#~ msgid "Common tags like `li`, `a` with `href`, `ul`, `ol`, `li`, `b`, `u` and `i` are supported."
+#~ msgstr "Загальні теги, такі як `li`, `a` з `href`, `ul`, `ol`, `li`, `b`, `u` та `i` підтримуються."
 
 #~ msgid "This procedures are implemented as part of `fdroid publish`. At the publish step, the reproducibility check will follow this logic:"
 #~ msgstr "Процес втілено як складову `fdroid publish`. На етапі оприлюднення, перевірка відтворюваності діє за такою логікою:"

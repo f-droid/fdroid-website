@@ -41,7 +41,8 @@ needed to display images. This also means that images may be recompressed.
 
 The detailed app description may use HTML tags. Note that not all tags are supported by the renderer.
 
-* Common tags like `li`, `a` with `href`, `ul`, `ol`, `li`, `b`, `u` and `i` are supported.
+* These simple layout tags are [supported](https://gitlab.com/fdroid/jekyll-fdroid/-/blob/master/lib/fdroid/Package.rb#L21): `b`, `big`, `blockquote`, `br`, `cite`, `em`, `i`, `li`, `ol`, `small`, `strike`, `strong`, `sub`, `sup`, `tt`, `u`, `ul`.
+* `a` with `href` is currently allowed, but might be removed without notice.
 * Certain tags are explicitly prohibited, namely `applet`, `base`, `body`, `button`, `embed`, `form`, `head`, `html`,
 `iframe`, `img`, `input`, `link`, `object`, `picture`, `script`, `source`, `style`, `svg` and `video`.
 * Note that a line break will automatically be converted to a `br` tag.
