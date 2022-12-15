@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
-"POT-Creation-Date: 2022-12-08 11:05+0100\n"
+"POT-Creation-Date: 2022-12-15 17:21+0100\n"
 "PO-Revision-Date: 2022-12-04 01:24+0000\n"
 "Last-Translator: rehork <cooky@e.email>\n"
 "Language-Team: Polish <https://hosted.weblate.org/projects/f-droid/website-docs/pl/>\n"
@@ -144,8 +144,13 @@ msgstr "Szczegółowy opis aplikacji może zawierać tagi HTML. Pamiętaj, że n
 
 #. type: Bullet: '* '
 #: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
-msgid "Common tags like `li`, `a` with `href`, `ul`, `ol`, `li`, `b`, `u` and `i` are supported."
-msgstr "Typowe tagi, takie jak `li`, `a` z `href`, `ul`, `ol`, `li`, `b`, `u` i `i` są obsługiwane."
+msgid "These simple layout tags are [supported](https://gitlab.com/fdroid/jekyll-fdroid/-/blob/master/lib/fdroid/Package.rb#L21): `b`, `big`, `blockquote`, `br`, `cite`, `em`, `i`, `li`, `ol`, `small`, `strike`, `strong`, `sub`, `sup`, `tt`, `u`, `ul`."
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
+msgid "`a` with `href` is currently allowed, but might be removed without notice."
+msgstr ""
 
 #. type: Plain text
 #: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
@@ -3157,54 +3162,23 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-#, no-wrap
+#, fuzzy, no-wrap
+#| msgid ""
+#| "    Currently srclibs are necessary when upstream uses jar files or\n"
+#| "    pulls dependencies from non-trusted repositories. While there is no\n"
+#| "    guarantee that those binaries are free and correspondent to the\n"
+#| "    source code, F-Droid allows the following known repositories until a\n"
+#| "    source-built alternative is available:\n"
 msgid ""
-"    Currently srclibs are necessary when upstream uses jar files or\n"
-"    pulls dependencies from non-trusted repositories. While there is no\n"
-"    guarantee that those binaries are free and correspondent to the\n"
-"    source code, F-Droid allows the following known repositories until a\n"
-"    source-built alternative is available:\n"
+"    Currently srclibs are used when upstream uses jar files or\n"
+"    pulls dependencies from non-trusted repositories. Because srclibs\n"
+"    can't be updated automatically, git submodule is a better choice.\n"
 msgstr ""
 "    Obecnie srclibs są niezbędne, gdy strona źródłowa używa plików jar\n"
 "    lub pobiera zależności z niezaufanych repozytoriów. Chociaż nie ma\n"
 "    gwarancji, że pliki binarne są bezpłatne i odpowiadają kodowi źródłowemu,\n"
 "    F-Droid zezwala na używanie następujących znanych repozytoriów,\n"
 "    dopóki nie zostanie udostępniona alternatywa źródłowa:\n"
-
-#. type: Bullet: '    -   '
-#: _docs/Build_Metadata_Reference.md
-msgid "‘mavenCentral’ - the original repo, hardcoded in Maven and Gradle."
-msgstr "‘mavenCentral’ - oryginalne repozytorium, zakodowane na stałe w Maven i Gradle."
-
-#. type: Bullet: '    -   '
-#: _docs/Build_Metadata_Reference.md
-msgid "‘jCenter’ - hardcoded in Gradle, this repo by Bintray tries to provide easier handling. It should sync with mavenCentral from time to time."
-msgstr "'JCenter' - zakodowane na stałe w Gradle, to repozytorium Bintray próbuje zapewnić łatwiejszą obsługę. Powinien od czasu do czasu synchronizować się z mavenCentral."
-
-#. type: Bullet: '    -   '
-#: _docs/Build_Metadata_Reference.md
-msgid "‘OSS Sonatype’ - maintained by the people behind mavenCentral, this repository focuses on hosting services for open source project binaries."
-msgstr "‘OSS Sonatype’ - utrzymywane przez ludzi stojących za mavenCentral, to repozytorium koncentruje się na usługach hostingowych dla binariów projektu open source."
-
-#. type: Bullet: '    -   '
-#: _docs/Build_Metadata_Reference.md
-msgid "‘OSS JFrog’ - maintained by the people behind jCenter, this repository focuses on hosting services for open source project binaries."
-msgstr "‘OSS JFrog’ - to repozytorium koncentruje się na usługach hostingowych dla plików binarnych open source."
-
-#. type: Bullet: '    -   '
-#: _docs/Build_Metadata_Reference.md
-msgid "‘JitPack.io’ - builds directly from GitHub repositories.  However, they do not provide any option to reproduce or verify the resulting binaries. Builds pre-release versions in some cases."
-msgstr "‘JitPack.io’ - kompiluje się bezpośrednio z repozytoriów GitHub. Jednak nie zapewniają one żadnej opcji reprodukowania ani weryfikowania wynikowych plików binarnych. W niektórych przypadkach tworzy wersje przedpremierowe."
-
-#. type: Bullet: '    -   '
-#: _docs/Build_Metadata_Reference.md
-msgid "‘Clojars’ - Clojure libraries repo."
-msgstr "‘Clojars’ - Clojure repozytorium bibliotek."
-
-#. type: Bullet: '    -   '
-#: _docs/Build_Metadata_Reference.md
-msgid "‘CommonsWare’ - repo holding a collection of open-source libs."
-msgstr "‘CommonsWare’ - repo z kolekcją bibliotek open-source."
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -7241,7 +7215,9 @@ msgstr "F-Droid nie rejestruje żadnych kluczy API. Nawet jeśli są dostarczane
 
 #. type: Bullet: '-   '
 #: _docs/Inclusion_Policy.md
-msgid "Binary dependencies such as JAR files have to be replaced by source-built versions or used from a trusted repository like Maven Central OSSRH (see manual)."
+#, fuzzy
+#| msgid "Binary dependencies such as JAR files have to be replaced by source-built versions or used from a trusted repository like Maven Central OSSRH (see manual)."
+msgid "Binary dependencies such as JAR files have to be built from source or installed from Debian repos."
 msgstr "Zależności binarne, takie jak pliki JAR, muszą być zastępowane przez wersje źródłowe lub używane z zaufanego repozytorium jak Maven Central OSSRH (patrz instrukcja)."
 
 #. type: Plain text
@@ -7258,6 +7234,82 @@ msgstr "Wydania powinny być wyraźnie oznaczone (lub oznaczone w inny sposób).
 #: _docs/Inclusion_Policy.md
 msgid "Though we tried to build everyting from source, we still need some prebuild binaries. Therefore we have some exceptions:"
 msgstr "Chociaż staraliśmy się budować wszystko ze źródeł, nadal potrzebujemy kilku gotowych plików binarnych. Dlatego mamy kilka wyjątków:"
+
+#. type: Bullet: '-   '
+#: _docs/Inclusion_Policy.md
+#, fuzzy
+#| msgid ""
+#| "    Currently srclibs are necessary when upstream uses jar files or\n"
+#| "    pulls dependencies from non-trusted repositories. While there is no\n"
+#| "    guarantee that those binaries are free and correspondent to the\n"
+#| "    source code, F-Droid allows the following known repositories until a\n"
+#| "    source-built alternative is available:\n"
+msgid "Trusted maven repository. While there is no guarantee that those binaries are free and correspondent to the source code, F-Droid allows the following known repositories currently:"
+msgstr ""
+"    Obecnie srclibs są niezbędne, gdy strona źródłowa używa plików jar\n"
+"    lub pobiera zależności z niezaufanych repozytoriów. Chociaż nie ma\n"
+"    gwarancji, że pliki binarne są bezpłatne i odpowiadają kodowi źródłowemu,\n"
+"    F-Droid zezwala na używanie następujących znanych repozytoriów,\n"
+"    dopóki nie zostanie udostępniona alternatywa źródłowa:\n"
+
+#. type: Bullet: '    -   '
+#: _docs/Inclusion_Policy.md
+#, fuzzy
+#| msgid "‘mavenCentral’ - the original repo, hardcoded in Maven and Gradle."
+msgid "Maven Central - the original repo, hardcoded in Maven and Gradle."
+msgstr "‘mavenCentral’ - oryginalne repozytorium, zakodowane na stałe w Maven i Gradle."
+
+#. type: Bullet: '    -   '
+#: _docs/Inclusion_Policy.md
+msgid "Google Maven Repo - hardcoded in Gradle, this repo hosts Google's own libs."
+msgstr ""
+
+#. type: Bullet: '    -   '
+#: _docs/Inclusion_Policy.md
+#, fuzzy
+#| msgid "‘jCenter’ - hardcoded in Gradle, this repo by Bintray tries to provide easier handling. It should sync with mavenCentral from time to time."
+msgid "JCenter - hardcoded in Gradle, this repo by Bintray tries to provide easier handling. It's synced with Maven Central, and include some extra libs. It's shutting down so please avoid this repo."
+msgstr "'JCenter' - zakodowane na stałe w Gradle, to repozytorium Bintray próbuje zapewnić łatwiejszą obsługę. Powinien od czasu do czasu synchronizować się z mavenCentral."
+
+#. type: Bullet: '    -   '
+#: _docs/Inclusion_Policy.md
+#, fuzzy
+#| msgid "‘OSS Sonatype’ - maintained by the people behind mavenCentral, this repository focuses on hosting services for open source project binaries."
+msgid "OSS Sonatype - maintained by the people behind mavenCentral, this repository focuses on hosting services for open source project binaries. It's synced with Maven Central, and include some extra libs"
+msgstr "‘OSS Sonatype’ - utrzymywane przez ludzi stojących za mavenCentral, to repozytorium koncentruje się na usługach hostingowych dla binariów projektu open source."
+
+#. type: Bullet: '    -   '
+#: _docs/Inclusion_Policy.md
+#, fuzzy
+#| msgid "‘OSS JFrog’ - maintained by the people behind jCenter, this repository focuses on hosting services for open source project binaries."
+msgid "OSS JFrog - maintained by the people behind jCenter, this repository focuses on hosting services for open source project binaries."
+msgstr "‘OSS JFrog’ - to repozytorium koncentruje się na usługach hostingowych dla plików binarnych open source."
+
+#. type: Bullet: '    -   '
+#: _docs/Inclusion_Policy.md
+#, fuzzy
+#| msgid "‘JitPack.io’ - builds directly from GitHub repositories.  However, they do not provide any option to reproduce or verify the resulting binaries. Builds pre-release versions in some cases."
+msgid "JitPack.io - builds directly from GitHub repositories.  However, they do not provide any option to reproduce or verify the resulting binaries. Builds pre-release versions in some cases."
+msgstr "‘JitPack.io’ - kompiluje się bezpośrednio z repozytoriów GitHub. Jednak nie zapewniają one żadnej opcji reprodukowania ani weryfikowania wynikowych plików binarnych. W niektórych przypadkach tworzy wersje przedpremierowe."
+
+#. type: Bullet: '    -   '
+#: _docs/Inclusion_Policy.md
+#, fuzzy
+#| msgid "‘Clojars’ - Clojure libraries repo."
+msgid "Clojars - Clojure libraries repo."
+msgstr "‘Clojars’ - Clojure repozytorium bibliotek."
+
+#. type: Bullet: '    -   '
+#: _docs/Inclusion_Policy.md
+#, fuzzy
+#| msgid "‘CommonsWare’ - repo holding a collection of open-source libs."
+msgid "CommonsWare - repo holding a collection of open-source libs."
+msgstr "‘CommonsWare’ - repo z kolekcją bibliotek open-source."
+
+#. type: Bullet: '    -   '
+#: _docs/Inclusion_Policy.md
+msgid "Gradle plugin repo - hardcoded in Gradle, this repo hosts Gradle plugins."
+msgstr ""
 
 #. type: Bullet: '-   '
 #: _docs/Inclusion_Policy.md
@@ -11512,6 +11564,9 @@ msgstr "Preferencje"
 #: _docs/Whitelabel_Builds.md
 msgid "For a custom build that enables Automatic Updates by default, override _app/src/main/res/xml/preferences.xml_. You can customize the preferences and their default values in _app/src/mycompany/res/xml/preferences.xml_. The fully automatic update requires [Privileged Extension](https://gitlab.com/fdroid/privileged-extension). With regular access, the updates will only automatically download. The user still needs to click install on each one."
 msgstr "W przypadku niestandardowej kompilacji, która domyślnie włącza aktualizacje automatyczne, należy zastąpić _app/src/main/res/xml/preferences.xml_. Możesz dostosować preferencje i ich domyślne wartości w _app/src/mycompany/res/xml/preferences.xml_. W pełni automatyczna aktualizacja wymaga rozszerzenia [Uprzywilejowane rozszerzenie](https://gitlab.com/fdroid/privileged-extension). Przy regularnym dostępie aktualizacje będą pobierane automatycznie. Użytkownik musi kliknąć instalację na każdym z nich."
+
+#~ msgid "Common tags like `li`, `a` with `href`, `ul`, `ol`, `li`, `b`, `u` and `i` are supported."
+#~ msgstr "Typowe tagi, takie jak `li`, `a` z `href`, `ul`, `ol`, `li`, `b`, `u` i `i` są obsługiwane."
 
 #~ msgid "This procedures are implemented as part of `fdroid publish`. At the publish step, the reproducibility check will follow this logic:"
 #~ msgstr "Te procedury są implementowane jako część `fdroid publish`. Na etapie publikowania kontrola odtwarzalności będzie następować zgodnie z tą logiką:"
