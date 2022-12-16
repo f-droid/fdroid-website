@@ -16,15 +16,15 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
 "POT-Creation-Date: 2022-12-15 17:21+0100\n"
-"PO-Revision-Date: 2022-12-15 13:16+0000\n"
-"Last-Translator: VfBFan <drop0815@posteo.de>\n"
+"PO-Revision-Date: 2022-12-17 16:50+0000\n"
+"Last-Translator: C. Rüdinger <Mail-an-CR@web.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/f-droid/website-posts/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.15-dev\n"
+"X-Generator: Weblate 4.15.1-dev\n"
 
 #. type: YAML Front Matter: title
 #: _posts/2017-02-20-f-droid-supports-apk-expansion-files-aka-obb.md
@@ -18325,34 +18325,32 @@ msgstr "_Diese Arbeit wurde durch einen [FFDW-DVD-Zuschuss]({{ site.baseurl }}{%
 #: _posts/2022-12-15-update-to-app-descriptions.md
 #, no-wrap
 msgid "Update to app descriptions"
-msgstr ""
+msgstr "Update bei den App-Beschreibungen"
 
 #. type: Plain text
 #: _posts/2022-12-15-update-to-app-descriptions.md
 msgid "F-Droid aims to give app developers a nice way to present their apps to users.  Each app can include descriptions, related metadata, and [translations](https://docs.weblate.org/en/latest/formats.html#appstore).  We have just updated the list of HTML formatting tags that are allowed in app descriptions to make it clearer what works and what does not.  This should make it easier to sync the description texts with other app stores that also allow some HTML.  There are two key [changes](https://gitlab.com/fdroid/jekyll-fdroid/-/merge_requests/77) to the website generation:"
-msgstr ""
+msgstr "F-Droid ist bestrebt, den App-Entwickler*innen eine angenehme Möglichkeit zu bieten, ihre Apps den Nutzern zu präsentieren.  Jede App kann Beschreibungen, dazugehörige Metadaten und [Übersetzungen](https://docs.weblate.org/en/latest/formats.html#appstore) enthalten.  Wir haben gerade die Liste der in App-Beschreibungen zulässigen HTML-Formatierungattribute aktualisiert, um deutlicher zu machen, was funktioniert und was nicht.  Dies sollte es einfacher machen, die Beschreibungen mit anderen App-Stores, die ebenfalls bestimmtes HTML erlauben, zu synchronisieren.  Es gibt zwei [Hauptänderungen](https://gitlab.com/fdroid/jekyll-fdroid/-/merge_requests/77) bei der Website-Erzeugung:"
 
 #. type: Bullet: '* '
 #: _posts/2022-12-15-update-to-app-descriptions.md
 msgid "Disallowed HTML tags are now automatically removed (\"stripped\"), whereas before they were escaped (e.g. `&lt;script&gt;`)."
-msgstr ""
+msgstr "Nicht zulässige HTML-Tags werden jetzt automatisch entfernt („herausgetrennt“), wohingegen sie zuvor maskiert wurden (z. B. `&lt;script&gt;`)."
 
 #. type: Bullet: '* '
 #: _posts/2022-12-15-update-to-app-descriptions.md
-#, fuzzy
-#| msgid "Add [screenshots, localized descriptions, what’s new texts]({{ site.baseurl }}/docs/All_About_Descriptions_Graphics_and_Screenshots/) to upstream repos"
 msgid "The list of [allowed tags]({{ site.baseurl }}/docs/All_About_Descriptions_Graphics_and_Screenshots#html-descriptions) is now strictly enforced."
-msgstr "Ergänzt [Screenshots, übersetzte Beschreibungen, Texte zu Neuerungen]({{ site.baseurl }}/docs/All_About_Descriptions_Graphics_and_Screenshots/) in den Upstream-Repos"
+msgstr "Die Liste [zulässiger Attribute/Tags]({{ site.baseurl }}/docs/All_About_Descriptions_Graphics_and_Screenshots#html-descriptions) wird nun streng durchgesetzt."
 
 #. type: Plain text
 #: _posts/2022-12-15-update-to-app-descriptions.md
 msgid "This change was prompted by some security [issues](https://rubysec.com/advisories/CVE-2022-23515/) in Loofah, the tool we rely on to strip dangerous HTML from the app descriptions.  f-droid.org uses multiple layers of defense, that greatly limits the scope of security vulnerabilities.  For example, this site includes a [Content Security Policy](https://gitlab.com/fdroid/fdroid-website/-/blob/dee66df9ba5c9bc5608d2292a456615e005c33c9/.htaccess#L321) that disables the most dangerous features, and [limits](https://observatory.mozilla.org/analyze/f-droid.org) the rest to URLs that are part of this site."
-msgstr ""
+msgstr "Diese Änderung wurde durch einige [Sicherheitsprobleme](https://rubysec.com/advisories/CVE-2022-23515/) in Loofah veranlasst, das Tool, dem wir beim Herausschneiden von gefährlichem HTML aus den App-Beschreibungen vertrauen.  f-droid.org nutzt mehrere Verteidigungsebenen, die den Umfang der Sicherheitsrisiken weitestgehend einschränkt.  Zum Beispiel enthält diese Internetseite eine [Content Security Policy](https://gitlab.com/fdroid/fdroid-website/-/blob/dee66df9ba5c9bc5608d2292a456615e005c33c9/.htaccess#L321), welche die meisten gefährlichen Eigenschaften deaktiviert und den Rest der URLs, die Teil dieser Seite sind, [abgrenzt](https://observatory.mozilla.org/analyze/f-droid.org)."
 
 #. type: Plain text
 #: _posts/2022-12-15-update-to-app-descriptions.md
 msgid "For those interested in the technical details: HTML allows data blobs to be included inline via the `data:` scheme.  That can then be abused to load malicious things.  Loofah was not properly handling those.  This site's Content Security Policy already disallows all uses of `data:`, so it was not an issue here.  The `self` keyword means \"[only allow resources from the current origin](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy#self)\", and that is `https://f-droid.org`."
-msgstr ""
+msgstr "Für diejenigen, die an den technischen Einzelheiten interessiert sind: HTML macht es möglich Daten-Blobs über das `data:`-Schema inline einzuschleußen.  Dies kann dazu missbraucht werden, schädliche Dinge zu laden.  Loofah ging damit nicht sauber um.  Die Content Security Policy dieser Website verbietet bereits jede Verwendung von `data:`, sodass das hier kein Problem war.  Das Schlüsselwort `self` bedeutet \"[erlaube ausschließlich Ressourcen aus der aktuellen Quelle](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy#self)\" und die ist `https://f-droid.org`."
 
 #~ msgid "* Maven Central * Google Maven Repo * JCenter * OSS Sonatype * OSS JFrog * JitPack.io * Clojars * CommonsWare * Gradle plugin repo"
 #~ msgstr "* Maven Central * Google Maven Repo * JCenter * OSS Sonatype * OSS JFrog * JitPack.io * Clojars * CommonsWare * Gradle plugin repo"
