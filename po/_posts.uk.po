@@ -14,7 +14,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
 "POT-Creation-Date: 2022-12-22 13:41+0100\n"
-"PO-Revision-Date: 2022-12-16 10:50+0000\n"
+"PO-Revision-Date: 2022-12-25 18:50+0000\n"
 "Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/f-droid/website-posts/uk/>\n"
 "Language: uk\n"
@@ -22,7 +22,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 4.15\n"
+"X-Generator: Weblate 4.15.1-dev\n"
 
 #. type: YAML Front Matter: title
 #: _posts/2017-02-20-f-droid-supports-apk-expansion-files-aka-obb.md
@@ -18356,187 +18356,186 @@ msgstr "Для тих, хто цікавиться технічними подр
 #: _posts/2022-12-18-unifiedpush.md
 #, no-wrap
 msgid "UnifiedPush: a decentralized, open-source push notification protocol"
-msgstr ""
+msgstr "UnifiedPush: децентралізований протокол push-сповіщень з відкритим кодом"
 
 #. type: Plain text
 #: _posts/2022-12-18-unifiedpush.md
 msgid "A modern Android smartphone relies on a lot of services, from app stores and calendars to messaging and push notifications. Most of them have open alternatives, but until now, the only option for push notifications was Google's proprietary service, *Firebase Cloud Messaging* (FCM). **UnifiedPush is a new alternative that allows you to get push notifications without being tied to a single company**."
-msgstr ""
+msgstr "Сучасний смартфон на платформі Android покладається на безліч служб, від магазинів застосунків і календарів до обміну повідомленнями та push-сповіщень. Більшість з них мають відкриті альтернативи, але до цього часу єдиним варіантом для отримання push-сповіщень була власницька служба Google *Firebase Cloud Messaging* (FCM). **UnifiedPush — це нова альтернатива, яка уможливлює отримання push-сповіщень без прив'язки до однієї компанії**."
 
 #. type: Plain text
 #: _posts/2022-12-18-unifiedpush.md
 msgid "Push notifications are essential to the modern mobile experience because they allow apps to communicate with users in real-time, even when not actively in use.  Relying on Google-provided push notifications is a concern for both privacy and independence. The proprietary FCM library cannot be included in F-Droid apps and relies on having Google services. As a result, it is common to see FOSS applications adopt a persistent direct connection between the application and the server as an alternative."
-msgstr ""
+msgstr "Push-сповіщення мають важливе значення для роботи сучасного мобільного, оскільки вони дають змогу застосункам взаємодіяти з користувачами в режимі реального часу, навіть якщо вони не активно використовуються.  Покладатися на push-сповіщення, надані Google — загроза і приватності, і незалежності. Запатентована власницька FCM не може бути включена в застосунки F-Droid і покладається на наявність служб Google. Як наслідок, часто можна побачити, як вільні застосунки тримають постійний прямий зв'язок між застосунком і сервером як альтернативу."
 
 #. type: Title ##
 #: _posts/2022-12-18-unifiedpush.md
 #, no-wrap
 msgid "The limitations of direct app-server connections"
-msgstr ""
+msgstr "Обмеження прямих з'єднань застосунок-сервер"
 
 #. type: Plain text
 #: _posts/2022-12-18-unifiedpush.md
 msgid "While it is technically possible for each application to connect to its own server and receive notifications directly, there are several reasons why this approach may not be practical or effective."
-msgstr ""
+msgstr "Хоча технічно можливо, щоб кожен застосунок під'єднувався до власного сервера та отримував сповіщення безпосередньо, є кілька причин, чому такий підхід може бути непрактичним або неефективним."
 
 #. type: Plain text
 #: _posts/2022-12-18-unifiedpush.md
 msgid "Establishing and maintaining a direct connection between an app and a server can be resource-intensive, which can strain the device's battery, CPU, and network resources."
-msgstr ""
+msgstr "Встановлення та підтримка прямого з'єднання між застосунком і сервером може бути ресурсомістким, що може призвести до виснаження акумулятора, процесора та мережевих ресурсів пристрою."
 
 #. type: Bullet: '* '
 #: _posts/2022-12-18-unifiedpush.md
 msgid "To minimize resource load, the operating system (OS) tries to suspend applications that are not actively in use. However, if each app actively maintains a server connection, the OS cannot suspend them."
-msgstr ""
+msgstr "Щоб мінімізувати навантаження на ресурси, операційна система (ОС) намагається призупинити роботу застосунків, які активно не використовуються. Однак, якщо кожен застосунок активно підтримує з'єднання з сервером, ОС не може їх призупинити."
 
 #. type: Bullet: '* '
 #: _posts/2022-12-18-unifiedpush.md
 msgid "Multiple apps pinging their own servers at variable intervals can prevent the device from going into a low-power sleep mode, which can drain the device's battery faster."
-msgstr ""
+msgstr "Кілька застосунків, що зв'язуються з власними серверами через різні проміжки часу, можуть перешкоджати переходу пристрою у режим сну з низьким енергоспоживанням, що може призвести до швидшого розрядження акумулятора пристрою."
 
 #. type: Bullet: '* '
 #: _posts/2022-12-18-unifiedpush.md
 msgid "Giving one special app the ability to make priority connections minimizes these problems and allows for the OS to efficiently suspend other applications and go to sleep, saving resources and reducing battery consumption."
-msgstr ""
+msgstr "Надання одному спеціальному застосунку можливості встановлювати пріоритетні з'єднання мінімізує ці проблеми та дає ОС змогу ефективно призупиняти роботу інших застосунків і переходити в режим сну, заощаджуючи ресурси та знижуючи споживання заряду батареї."
 
 #. type: Bullet: '* '
 #: _posts/2022-12-18-unifiedpush.md
 msgid "As a developer, managing background services and optimizing connections can be complex and time-consuming. By using a push notification service, you can offload this responsibility to a dedicated app, allowing you to focus on other aspects of your app."
-msgstr ""
+msgstr "Для розробника керування фоновими службами та оптимізація з'єднань може бути складним і трудомістким. Використовуючи службу push-сповіщень, ви можете перекласти цю відповідальність на спеціальний застосунок, що дасть вам змогу зосередитися на інших аспектах вашого застосунку."
 
 #. type: Title ##
 #: _posts/2022-12-18-unifiedpush.md
 #, no-wrap
 msgid "How do I start with UnifiedPush, as a user?"
-msgstr ""
+msgstr "Як почати роботу з UnifiedPush, як користувач?"
 
 #. type: Plain text
 #: _posts/2022-12-18-unifiedpush.md
 msgid "Applications that support UnifiedPush can receive notifications via a dedicated UnifiedPush application that maintains a single server connection to receive all notifications. We call this \"UnifiedPush application\" a *distributor*; it distributes push notifications to other apps on the device. You can choose which distributor you want to use, self-host the server part, or even create your own. For more information on distributors, check out the [full list](https://unifiedpush.org/users/distributors/)."
-msgstr ""
+msgstr "Застосунки, що підтримують UnifiedPush, можуть отримувати сповіщення через виділений застосунок UnifiedPush, що підтримує єдине серверне з'єднання для отримання всіх сповіщень. Ми називаємо це «застосунком UnifiedPush» *дистриб'ютором*; він надає push-сповіщення іншим застосункам на пристрої. Ви можете вибрати, якого дистриб'ютора ви хочете використовувати, самостійно розмістити серверну частину або навіть створити власну. Для отримання додаткової інформації про дистриб'юторів перегляньте [весь список](https://unifiedpush.org/users/distributors/)."
 
 #. type: Plain text
 #: _posts/2022-12-18-unifiedpush.md
 msgid "To use UnifiedPush on an application that supports it, you have to install and configure your distributor. You can use [UP-Example](https://f-droid.org/en/packages/org.unifiedpush.example/) as a simple test app."
-msgstr ""
+msgstr "Щоб використовувати UnifiedPush у застосунку, який його підтримує, необхідно встановити та налаштувати дистриб'ютор. Ви можете використовувати [UP-Example](https://f-droid.org/en/packages/org.unifiedpush.example/) простим тестовим застосунком."
 
 #. type: Plain text
 #: _posts/2022-12-18-unifiedpush.md
 #, no-wrap
 msgid "![An animated SVG that shows how all distributors and apps are interchangeable and still work together through the UnifiedPush protocol]({% asset posts/2022-12-18-unifiedpush/animation-options.svg %})  \n"
-msgstr ""
+msgstr "![Анімований SVG, який показує, яким чином усі дистриб'ютори та застосунки взаємозамінні та працюють разом через протокол UnifiedPush]({% asset posts/2022-12-18-unifiedpush/animation-options.svg %})  \n"
 
 #. type: Plain text
 #: _posts/2022-12-18-unifiedpush.md
 #, no-wrap
 msgid "*All distributors are compatible with all apps*\n"
-msgstr ""
+msgstr "* Усі дистриб'ютори сумісні з усіма застосунками*\n"
 
 #. type: Title ###
 #: _posts/2022-12-18-unifiedpush.md
-#, fuzzy, no-wrap
-#| msgid "Dropping old TLS on Android"
+#, no-wrap
 msgid "TL;DR on Android"
-msgstr "Видалення старого TLS на Android"
+msgstr "На Android"
 
 #. type: Plain text
 #: _posts/2022-12-18-unifiedpush.md
 msgid "The easiest way to set UnifiedPush up with an [application that supports it](https://unifiedpush.org/users/apps/) is to:"
-msgstr ""
+msgstr "Найпростіший спосіб налаштувати UnifiedPush за допомогою [застосунку, який його підтримує](https://unifiedpush.org/users/apps/) — це:"
 
 #. type: Bullet: '1. '
 #: _posts/2022-12-18-unifiedpush.md
 msgid "Install the [ntfy](https://ntfy.sh/#subscribe-phone) Android application; this is your distributor"
-msgstr ""
+msgstr "Установіть застосунок [ntfy](https://ntfy.sh/#subscribe-phone) для Android, це ваш дистриб'ютор"
 
 #. type: Bullet: '2. '
 #: _posts/2022-12-18-unifiedpush.md
 msgid "Open it, and disable battery optimization for it"
-msgstr ""
+msgstr "Відкрийте його та вимкніть для нього оптимізацію батареї"
 
 #. type: Bullet: '3. '
 #: _posts/2022-12-18-unifiedpush.md
 msgid "Turn on UnifiedPush in the application; it will detect ntfy automatically. (This step depends on the app's UX)"
-msgstr ""
+msgstr "Увімкніть UnifiedPush у застосунку; він визначить ntfy автоматично. (Цей крок залежить від UX застосунку)"
 
 #. type: Plain text
 #: _posts/2022-12-18-unifiedpush.md
 #, no-wrap
 msgid "![A screenshot of the distributor selection screen showing Gotify-UP, Google Services, ntfy, UP-FCM Distributor, NextPush, NoProvider2Push]({% asset posts/2022-12-18-unifiedpush/distributor-selection.png %}){: style=\"max-height:50%;\" }  \n"
-msgstr ""
+msgstr "![Знімок екрана вибору дистриб’ютора, на якому показано Gotify-UP, Google Services, ntfy, UP-FCM Distributor, NextPush, NoProvider2Push]({% asset posts/2022-12-18-unifiedpush/distributor-selection.png %}){: style=\"max-height:50%;\" }  \n"
 
 #. type: Plain text
 #: _posts/2022-12-18-unifiedpush.md
 msgid "_When there are multiple distributors available (yes, I know I have too many :P), you can pick between them. When there's just one, it is automatically selected._"
-msgstr ""
+msgstr "_Коли доступно кілька дистриб'юторів (так, я знаю, що у мене їх забагато :P), ви можете вибрати одного з них. Коли є лише один, він обирається автоматично._"
 
 #. type: Title ##
 #: _posts/2022-12-18-unifiedpush.md
 #, no-wrap
 msgid "How to add UnifiedPush support to my app, as a developer?"
-msgstr ""
+msgstr "Як мені, як розробнику, додати підтримку UnifiedPush до мого застосунку?"
 
 #. type: Plain text
 #: _posts/2022-12-18-unifiedpush.md
 msgid "To add UnifiedPush support to your application, you first need to ensure that your server is UnifiedPush compatible: it must be able to send notifications to different endpoints, which are URLs pointing to various servers used by users. If your application uses a gateway to work with Google push notifications, modifying the gateway can make it compatible with UnifiedPush."
-msgstr ""
+msgstr "Щоб додати підтримку UnifiedPush у свій застосунок, спочатку потрібно переконатися, що ваш сервер сумісний з UnifiedPush: він повинен мати можливість надсилати сповіщення на різні кінцеві точки, які є URL-адресами, що вказують на різні сервери, використовувані користувачами. Якщо ваш застосунок використовує шлюз для роботи з push-сповіщеннями Google, модифікація шлюзу може зробити його сумісним з UnifiedPush."
 
 #. type: Plain text
 #: _posts/2022-12-18-unifiedpush.md
 msgid "On the mobile app side, once the user enables UnifiedPush, you have to check for installed distributors on the user's device. The app should then prompt the user to select the distributor they want to use. Afterward, you can register with it."
-msgstr ""
+msgstr "На стороні мобільного застосунку, після того, як користувач увімкне UnifiedPush, необхідно перевірити наявність встановлених дистриб'юторів на пристрої користувача. Після цього застосунок повинен запропонувати користувачеві вибрати дистриб'ютора, якого він хоче використовувати. Після цього можна зареєструватися за допомогою нього."
 
 #. type: Plain text
 #: _posts/2022-12-18-unifiedpush.md
 msgid "The selected distributor will then send a new endpoint, which the application should forward to its server. Then, the app prepares to receive data sent to that endpoint by registering an Android BroadcastReceiver. This BroadcastReceiver handles the messages coming from your server (often a ping to fetch the notifications)."
-msgstr ""
+msgstr "Потім обраний дистриб'ютор надішле нову кінцеву точку, яку застосунок повинен перенаправити на свій сервер. Потім застосунок готується до отримання даних, надісланих на цю кінцеву точку, зареєструвавши Android BroadcastReceiver. Цей BroadcastReceiver обробляє повідомлення, що надходять з вашого сервера (часто пінг для отримання сповіщень)."
 
 #. type: Plain text
 #: _posts/2022-12-18-unifiedpush.md
 msgid "It is important to register the application with the selected distributor every time the application starts, in case they get out of sync. If the application receives the same endpoint again, it does not need to re-register it."
-msgstr ""
+msgstr "Важливо реєструвати застосунок в обраного дистриб'ютора за кожного запуску застосунку, на випадок, якщо вони розійдуться в часі. Якщо застосунок знову отримує ту ж саму кінцеву точку, то повторно реєструвати його не потрібно."
 
 #. type: Plain text
 #: _posts/2022-12-18-unifiedpush.md
 msgid "Most of this is handled by the UnifiedPush library. You can find more detailed instructions on [our documentation website](https://unifiedpush.org/developers/android/)."
-msgstr ""
+msgstr "Більшість з цього обробляється бібліотекою UnifiedPush. Ви можете знайти докладніші інструкції на [нашому вебсайті з документацією](https://unifiedpush.org/developers/android/)."
 
 #. type: Plain text
 #: _posts/2022-12-18-unifiedpush.md
 msgid "If you need help with implementing UnifiedPush in your app, we are happy to answer any questions you have on our [Matrix chat](https://matrix.to/#/#unifiedpush:matrix.org)."
-msgstr ""
+msgstr "Якщо вам потрібна допомога з впровадженням UnifiedPush у вашому застосунку, ми будемо раді відповісти на будь-які ваші запитання в нашій [бесіді Matrix](https://matrix.to/#/#unifiedpush:matrix.org)."
 
 #. type: Plain text
 #: _posts/2022-12-18-unifiedpush.md
 #, no-wrap
 msgid "*Note: This blog post focuses on Android; instructions to add UnifiedPush support on a Linux application can be found [on our website](https://unifiedpush.org/developers/go_c/).*\n"
-msgstr ""
+msgstr "*Примітка: Цей допис у блозі присвячена Android; інструкції щодо додавання підтримки UnifiedPush в застосунки для Linux можна знайти [на нашому сайті](https://unifiedpush.org/developers/go_c/).*\n"
 
 #. type: Title ##
 #: _posts/2022-12-18-unifiedpush.md
 #, no-wrap
 msgid "How does UnifiedPush work under the hood?"
-msgstr ""
+msgstr "Як UnifiedPush працює під капотом?"
 
 #. type: Plain text
 #: _posts/2022-12-18-unifiedpush.md
 msgid "At its core, UnifiedPush is a specification. That specification is split into two halves:"
-msgstr ""
+msgstr "За своєю суттю UnifiedPush — це специфікація. Вона розділена на дві половини:"
 
 #. type: Bullet: '* '
 #: _posts/2022-12-18-unifiedpush.md
 msgid "On the device (client) side, it defines an Application Programming Interface (API) to allow **any end-user application** (ex. your messaging app) to communicate with **any distributor application** (ntfy, NextPush, etc.)"
-msgstr ""
+msgstr "На стороні пристрою (клієнта) він визначає програмний інтерфейс (API), щоб дозволити **будь-якому застосунку кінцевого користувача** (наприклад, вашому застосунку для обміну повідомленнями) спілкуватися з **будь-яким застосунком-дистриб'ютором** (ntfy, NextPush тощо)"
 
 #. type: Bullet: '* '
 #: _posts/2022-12-18-unifiedpush.md
 msgid "On the server side, the API describes how the **application server** (Matrix homeserver, Mastodon instance, etc.) sends messages to the **push server** (ntfy server, Nextcloud server, etc.)."
-msgstr ""
+msgstr "На стороні сервера API описує, як **сервер застосунків** (домашній сервер Matrix, екземпляр Mastodon тощо) надсилає повідомлення на **push-сервер** (сервер ntfy, сервер Nextcloud тощо)."
 
 #. type: Plain text
 #: _posts/2022-12-18-unifiedpush.md
 msgid "Our client libraries and the reference proxies assist in implementing both sides of the specification, respectively."
-msgstr ""
+msgstr "Наші клієнтські бібліотеки та довідкові проксі-сервери допомагають реалізувати обидві частини специфікації відповідно."
 
 #. type: Plain text
 #: _posts/2022-12-18-unifiedpush.md
@@ -18591,10 +18590,9 @@ msgstr ""
 
 #. type: Title ##
 #: _posts/2022-12-18-unifiedpush.md
-#, fuzzy, no-wrap
-#| msgid "Future Work"
+#, no-wrap
 msgid "Future plans"
-msgstr "Подальша робота"
+msgstr "Плани на майбутнє"
 
 #. type: Bullet: '* '
 #: _posts/2022-12-18-unifiedpush.md
