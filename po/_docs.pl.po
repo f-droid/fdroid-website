@@ -11,15 +11,15 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
 "POT-Creation-Date: 2022-12-15 17:21+0100\n"
-"PO-Revision-Date: 2022-12-04 01:24+0000\n"
-"Last-Translator: rehork <cooky@e.email>\n"
+"PO-Revision-Date: 2022-12-25 18:50+0000\n"
+"Last-Translator: WaldiS <sto@tutanota.de>\n"
 "Language-Team: Polish <https://hosted.weblate.org/projects/f-droid/website-docs/pl/>\n"
 "Language: pl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 4.15-dev\n"
+"X-Generator: Weblate 4.15.1-dev\n"
 
 #. type: YAML Front Matter: title
 #: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
@@ -670,7 +670,7 @@ msgstr "F-Droid jest zbudowany wokół podpisanego indeksu wszystkich dostępnyc
 #. type: Plain text
 #: _docs/All_our_APIs.md
 msgid "As of index-v2, there is support for files that only contain the changes, known as \"diff\" files.  There is also a separate entry point, which is signed by a JAR and a GPG signature and lists the available index and diff files."
-msgstr ""
+msgstr "Wersja index-v2 wprowadziła wsparcie dla plików, które zawierają tylko zmiany, znane również jako pliki \"diff\".  Wprowadzono również oddzielny punkt wejścia, który jest podpisany kluczem JAR i GPG. Zawiera on listę dostępnych indeksów i plików \"diff\"."
 
 #. type: Bullet: '* '
 #: _docs/All_our_APIs.md
@@ -695,10 +695,8 @@ msgstr "<https://f-droid.org/repo/entry.json.asc>"
 
 #. type: Plain text
 #: _docs/All_our_APIs.md
-#, fuzzy
-#| msgid "F-Droid is built around a signed index of all the apps and packages that are available.  This is a JSON file, though more of an index than an API since all the information is distributed via a single file.  The repo index is in the form of a signed JAR file that contains _index-v1.json_.  The best method is to verify the JAR signature, then extract _index-v1.json_ if it validates. The _fdroidserver_ Python library provides `fdroidserver.download_repo_index()` to make this easy to do.  It is also possible to just read _index-v1.json_ using any ZIP library."
 msgid "The v1 repo index formats come in the form of a signed JAR file that contains _index-v1.json_.  The best method is to verify the JAR signature, then extract _index-v1.json_ if it validates. The _fdroidserver_ Python library provides `fdroidserver.download_repo_index()` to make this easy to do."
-msgstr "F-Droid jest zbudowany wokół podpisanego indeksu wszystkich dostępnych aplikacji i pakietów.  Jest to plik JSON, choć jest to bardziej indeks niż API, ponieważ wszystkie informacje są dystrybuowane za pomocą jednego pliku.  Indeks repo jest w postaci podpisanego pliku JAR, który zawiera _index-v1.json_.  Najlepszą metodą jest sprawdzenie podpisu JAR, a następnie wyodrębnienie pliku _index-v1.json_, jeśli zostanie on sprawdzony. Biblioteka _fdroidserver_ Pythona udostępnia `fdroidserver.download_repo_index()`, aby ułatwić to zadanie.  Można też po prostu odczytać _index-v1.json_ za pomocą dowolnej biblioteki ZIP."
+msgstr "Repozytoria index-v1 mają postać podpisanego archiwum JAR zawierającego plik _index-v1.json_.  Najlepszym sposobem jest zweryfikowanie podpisu JAR i wypakowanie _index-v1.json_, jeżeli podpis jest prawidłowy. Biblioteka Python _fdroidserver_ udostępnia metodę `fdroidserver.download_repo_index()`, która ułatwia ten proces."
 
 #. type: Bullet: '* '
 #: _docs/All_our_APIs.md
@@ -713,7 +711,7 @@ msgstr "<https://f-droid.org/archive/index-v1.jar>"
 #. type: Plain text
 #: _docs/All_our_APIs.md
 msgid "There are also GPG signatures for verifying the JSON files:"
-msgstr ""
+msgstr "Są również podpisy GPG służące do weryfikowania plików JSON:"
 
 #. type: Bullet: '* '
 #: _docs/All_our_APIs.md
@@ -848,43 +846,19 @@ msgstr "Powtarzalne kompilacje"
 
 #. type: Plain text
 #: _docs/All_our_APIs.md
-#, fuzzy
-#| msgid ""
-#| "_verification.f-droid.org_ is a rebuilder that rebuilds the official releases\n"
-#| "from _f-droid.org_, then checks to see if they were [reproducibly\n"
-#| "built](https://reproducible-builds.org/). There is a JSON file per APK that has\n"
-#| "been checked, where the filename follows the pattern\n"
-#| "`<ApplicationId>_<VersionCode>.apk.json`, for example:\n"
-#| "<https://verification.f-droid.org/org.fdroid.fdroid_1010050.apk.json>\n"
 msgid "_verification.f-droid.org_ is a rebuilder that rebuilds the official releases from _f-droid.org_, then checks to see if they were [reproducibly built](https://reproducible-builds.org/). There is an entry point for each package based on the package name: <https://verification.f-droid.org/org.fdroid.fdroid.json>"
-msgstr ""
-"_verification.f-droid.org_ to rebuilder, który odbudowuje oficjalne wydania\n"
-"z _f-droid.org_, a następnie sprawdza, czy były [odtwarzalnie\n"
-"zbudowane](https://reproducible-builds.org/). Na każdy pakiet APK przypada plik JSON, który zawiera\n"
-"zaznaczone, gdzie nazwa pliku jest zgodna ze wzorcem\n"
-"`<ApplicationId>_<VersionCode>.apk.json`, na przykład:\n"
-"<https://verification.f-droid.org/org.fdroid.fdroid_1010050.apk.json>\n"
+msgstr "_verification.f-droid.org_ to usługa kompilująca oficjalne wydania aplikacji z _f-droid.org_ ponownie, w celu sprawdzenia czy jest to [kompilacja odtwarzalna](https://reproducible-builds.org/). Punkt wejścia to nazwa danego pakietu: <https://verification.f-droid.org/org.fdroid.fdroid.json>"
 
 #. type: Plain text
 #: _docs/All_our_APIs.md
-#, fuzzy, no-wrap
-#| msgid ""
-#| "_verification.f-droid.org_ is a rebuilder that rebuilds the official releases\n"
-#| "from _f-droid.org_, then checks to see if they were [reproducibly\n"
-#| "built](https://reproducible-builds.org/). There is a JSON file per APK that has\n"
-#| "been checked, where the filename follows the pattern\n"
-#| "`<ApplicationId>_<VersionCode>.apk.json`, for example:\n"
-#| "<https://verification.f-droid.org/org.fdroid.fdroid_1010050.apk.json>\n"
+#, no-wrap
 msgid ""
 "Then there is a JSON file per APK that has been checked, where the filename\n"
 "follows the pattern `<ApplicationId>_<VersionCode>.apk.json`, for example:\n"
 "<https://verification.f-droid.org/org.fdroid.fdroid_1010050.apk.json>\n"
 msgstr ""
-"_verification.f-droid.org_ to rebuilder, który odbudowuje oficjalne wydania\n"
-"z _f-droid.org_, a następnie sprawdza, czy były [odtwarzalnie\n"
-"zbudowane](https://reproducible-builds.org/). Na każdy pakiet APK przypada plik JSON, który zawiera\n"
-"zaznaczone, gdzie nazwa pliku jest zgodna ze wzorcem\n"
-"`<ApplicationId>_<VersionCode>.apk.json`, na przykład:\n"
+"Dla każdego sprawdzonego pliku APK istnieje plik JSON , którego nazwa\n"
+"jest generowana według wzoru `<NazwaPakietu>_<KodWersji>.apk.json`, np.:\n"
 "<https://verification.f-droid.org/org.fdroid.fdroid_1010050.apk.json>\n"
 
 #. type: Plain text
@@ -900,10 +874,8 @@ msgstr "Dziennik przejrzystości plików binarnych"
 
 #. type: Plain text
 #: _docs/All_our_APIs.md
-#, fuzzy
-#| msgid "[Binary transparency](https://wiki.mozilla.org/Security/Binary_Transparency) is the idea that all released packages should be logged as they are published.  This provides a way to check if a given binary was produced by the publisher, or came from somewhere else, e.g. as an exploit.  _fdroidserver_ has built in tools for managing a binary transparency log of the index files as part of the release process. This has been enabled on the Guardian Project repo: <https://github.com/guardianproject/binary_transparency_log>"
 msgid "[Binary transparency](https://wiki.mozilla.org/Security/Binary_Transparency) is the idea that all released packages should be logged as they are published.  This provides a way to check if a given binary was produced by the publisher, or came from somewhere else, e.g. as an exploit.  _fdroidserver_ has built in tools for managing a binary transparency log of the index files as part of the release process. This has been enabled on _f-droid.org_: <https://gitlab.com/fdroid/f-droid.org-transparency-log>"
-msgstr "[Przejrzystość binarna](https://wiki.mozilla.org/Security/Binary_Transparency) to pomysł, że wszystkie wydane pakiety powinny być rejestrowane w miarę ich publikowania. W ten sposób można sprawdzić, czy dany plik binarny został wyprodukowany przez wydawcę, czy też pochodzi z innego źródła, np. jako exploit. _fdroidserver_ ma wbudowane narzędzia do zarządzania binarnym dziennikiem przejrzystości plików indeksu w ramach procesu wydania. Zostało to włączone w repozytorium Guardian Project: <https://github.com/guardianproject/binary_transparency_log>"
+msgstr "[Przejrzystość binarna](https://wiki.mozilla.org/Security/Binary_Transparency) to pomysł, że wszystkie wydane pakiety powinny być rejestrowane w miarę ich publikowania. W ten sposób można sprawdzić, czy dany plik binarny został wyprodukowany przez wydawcę, czy też pochodzi z innego źródła, np. jako exploit. _fdroidserver_ ma wbudowane narzędzia do zarządzania binarnym dziennikiem przejrzystości plików indeksu w ramach procesu wydania. Zostało to włączone w repozytorium f-droid.org: <https://gitlab.com/fdroid/f-droid.org-transparency-log>"
 
 #. type: Plain text
 #: _docs/All_our_APIs.md
@@ -2738,16 +2710,13 @@ msgstr "`subdir: <ścieżka>`<a name=\"build_subdir\"></a>\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-#, fuzzy, no-wrap
-#| msgid ""
-#| ":   Specifies to build from a subdirectory of the checked out source\n"
-#| "    code. Normally this directory is changed to before building,\n"
+#, no-wrap
 msgid ""
 ":   Specifies to build from a subdirectory of the checked out source\n"
 "    code. This is the directory where the build scripts are run.\n"
 msgstr ""
 ":   Określa kompilację z podkatalogu wypakowanego źródła\n"
-"    kod. Zwykle katalog ten zmienia się na przed budową,\n"
+"    kod. Jest to katalog, gdzie są wykonywane skrypty kompilacji.\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -2914,13 +2883,7 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-#, fuzzy, no-wrap
-#| msgid ""
-#| "    In the case of an Ant project, it modifies _project.properties_ of the\n"
-#| "    app and possibly sub-projects. This is likely to cause the whole\n"
-#| "    _build.xml_ to be rewritten, which is fine if it’s a ’standard’\n"
-#| "    android file or doesn’t already exist, but not a good idea if it’s\n"
-#| "    heavily customised.\n"
+#, no-wrap
 msgid ""
 "    In the case of an Ant project, it modifies _project.properties_ of the\n"
 "    app and possibly sub-projects. This is likely to cause the whole\n"
@@ -2931,7 +2894,7 @@ msgstr ""
 "    W przypadku projektu Ant modyfikuje on właściwość project.properties\n"
 "    aplikacja i ewentualnie podprojekty. Prawdopodobnie spowoduje to całość\n"
 "    plik _build.xml_ zostanie przepisany, co jest w porządku, jeśli jest to 'standard'\n"
-"    plik android lub jeszcze nie istnieje, ale nie jest to dobry pomysł, jeśli tak jest\n"
+"    plik Android lub jeszcze nie istnieje, ale nie jest to dobry pomysł, jeśli tak jest\n"
 "    mocno dostosowany.\n"
 
 #. type: Plain text
@@ -3761,8 +3724,9 @@ msgstr "Wersja określona za pomocą `CurrentVersionCode` jest zawsze uważana z
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
+#, fuzzy
 msgid "Currently the only supported format is \"n versions\", where \"n\" is the number of versions to keep. Defaults to \"3 versions\". For apps with a list of [_VercodeOperation_](#VercodeOperation) the default is calculated as \"3 x number of operations\", eg. for an app with two operations, for two ABIs, 6 versions will be kept."
-msgstr ""
+msgstr "Obecnie, jedynym obsługiwanym formatem jest \"n versions\", gdzie \"n\" jest ilością przechowywanych wersji. Domyślnie jest to \"3 versions\". Dla aplikacji z listą [_VercodeOperation_](#VercodeOperation), domyślna wartość to \"3 x liczba operacji\", np. kiedy aplikacja ma dwie operacje, dla dwóch ABI, będą przechowywane 6 wersji."
 
 #. type: Title ###
 #: _docs/Build_Metadata_Reference.md
@@ -7033,10 +6997,8 @@ msgstr "Ten proces kompilacji jest wykonywany **codziennie**, a aplikacje są pr
 
 #. type: Plain text
 #: _docs/Inclusion_How-To.md
-#, fuzzy
-#| msgid "A record of the build process for each application is provided on the F-Droid wiki, as a subpage `lastbuild` of the applications information page (e.g. [here is the lastbuild page for the F-Droid Client](https://f-droid.org/wiki/page/org.fdroid.fdroid/lastbuild)).  This is useful to aid in diagnosing problems when the build unexpectedly failed."
 msgid "A record of a successful build process for one application is provided on the F-Droid's website page for that specific app (e.g. [see the Build Log for the F-Droid Client](https://f-droid.org/en/packages/org.fdroid.fdroid/#latest))."
-msgstr "Zapis procesu kompilacji dla każdej aplikacji znajduje się na wiki F-Droid, jako podstrona `lastbuild` na stronie informacji o aplikacjach (np. [tutaj jest strona ostatniej wersji dla klienta F-Droid](https://f-droid.org/wiki/page/org.fdroid.fdroid/lastbuild)). Jest to przydatne, aby pomóc w diagnozowaniu problemów, gdy kompilacja nieoczekiwanie zawiodła."
+msgstr "Zapis pomyślnego procesu kompilacji danej aplikacji znajduje się w szczegółach wersji na stronie F-Droid (np. [zobacz dziennik kompilacji klienta F-Droid](https://f-droid.org/pl/packages/org.fdroid.fdroid/#latest))."
 
 #. type: Plain text
 #: _docs/Inclusion_How-To.md
