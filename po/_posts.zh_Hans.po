@@ -22,7 +22,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
 "POT-Creation-Date: 2022-12-22 13:41+0100\n"
-"PO-Revision-Date: 2022-12-20 09:51+0000\n"
+"PO-Revision-Date: 2022-12-25 18:50+0000\n"
 "Last-Translator: linsui <linsui@inbox.lv>\n"
 "Language-Team: Chinese (Simplified) <https://hosted.weblate.org/projects/f-droid/website-posts/zh_Hans/>\n"
 "Language: zh_Hans\n"
@@ -18341,81 +18341,81 @@ msgstr "对于那些对技术细节感兴趣的人：HTML 允许通过 `data:` �
 #: _posts/2022-12-18-unifiedpush.md
 #, no-wrap
 msgid "UnifiedPush: a decentralized, open-source push notification protocol"
-msgstr ""
+msgstr "UnifiedPush：一种去中心化的开源推送通知协议"
 
 #. type: Plain text
 #: _posts/2022-12-18-unifiedpush.md
 msgid "A modern Android smartphone relies on a lot of services, from app stores and calendars to messaging and push notifications. Most of them have open alternatives, but until now, the only option for push notifications was Google's proprietary service, *Firebase Cloud Messaging* (FCM). **UnifiedPush is a new alternative that allows you to get push notifications without being tied to a single company**."
-msgstr ""
+msgstr "现代 Android 智能手机依赖于大量服务，从应用商店和日历到消息传递和推送通知。他们中的大多数都有开放的替代方案，但直到现在，推送通知的唯一选择是 Google 的专有服务，*Firebase Cloud Messaging* (FCM)。 **UnifiedPush 是一种新的替代方案，它允许您在不依赖于单个公司的情况下获得推送通知**。"
 
 #. type: Plain text
 #: _posts/2022-12-18-unifiedpush.md
 msgid "Push notifications are essential to the modern mobile experience because they allow apps to communicate with users in real-time, even when not actively in use.  Relying on Google-provided push notifications is a concern for both privacy and independence. The proprietary FCM library cannot be included in F-Droid apps and relies on having Google services. As a result, it is common to see FOSS applications adopt a persistent direct connection between the application and the server as an alternative."
-msgstr ""
+msgstr "推送通知对于现代移动体验至关重要，因为它们允许应用与用户实时通信，即使未在主动使用时。依赖 Google 提供的推送通知导致了对隐私和独立性的担忧。专有的 FCM 库不能包含在 F-Droid 应用中，并且依赖于 Google 服务。因此，通常会看到 FOSS 应用采用应用和服务器之间的持久直接连接作为替代方案。"
 
 #. type: Title ##
 #: _posts/2022-12-18-unifiedpush.md
 #, no-wrap
 msgid "The limitations of direct app-server connections"
-msgstr ""
+msgstr "应用-服务器直接连接的局限性"
 
 #. type: Plain text
 #: _posts/2022-12-18-unifiedpush.md
 msgid "While it is technically possible for each application to connect to its own server and receive notifications directly, there are several reasons why this approach may not be practical or effective."
-msgstr ""
+msgstr "虽然从技术上讲每个应用都可以连接到自己的服务器并直接接收通知，但有多种原因导致这种方法可能并不实用或有效。"
 
 #. type: Plain text
 #: _posts/2022-12-18-unifiedpush.md
 msgid "Establishing and maintaining a direct connection between an app and a server can be resource-intensive, which can strain the device's battery, CPU, and network resources."
-msgstr ""
+msgstr "在应用和服务器之间建立和维护直接连接可能会占用大量资源，影响设备的电池、CPU 和网络资源。"
 
 #. type: Bullet: '* '
 #: _posts/2022-12-18-unifiedpush.md
 msgid "To minimize resource load, the operating system (OS) tries to suspend applications that are not actively in use. However, if each app actively maintains a server connection, the OS cannot suspend them."
-msgstr ""
+msgstr "为了最大限度地减少资源负载，操作系统 (OS) 会尝试挂起未被主动使用的应用。但是，如果每个应用都主动维护服务器连接，则操作系统无法暂停它们。"
 
 #. type: Bullet: '* '
 #: _posts/2022-12-18-unifiedpush.md
 msgid "Multiple apps pinging their own servers at variable intervals can prevent the device from going into a low-power sleep mode, which can drain the device's battery faster."
-msgstr ""
+msgstr "多个应用以可变的时间间隔 ping 自己的服务器会阻止设备进入低功耗睡眠模式，这会更快地耗尽设备的电池。"
 
 #. type: Bullet: '* '
 #: _posts/2022-12-18-unifiedpush.md
 msgid "Giving one special app the ability to make priority connections minimizes these problems and allows for the OS to efficiently suspend other applications and go to sleep, saving resources and reducing battery consumption."
-msgstr ""
+msgstr "让一个特殊的应用能够建立优先连接可以最大限度地减少这些问题，并允许操作系统有效地挂起其他应用并进入睡眠状态，从而节省资源并减少电池消耗。"
 
 #. type: Bullet: '* '
 #: _posts/2022-12-18-unifiedpush.md
 msgid "As a developer, managing background services and optimizing connections can be complex and time-consuming. By using a push notification service, you can offload this responsibility to a dedicated app, allowing you to focus on other aspects of your app."
-msgstr ""
+msgstr "作为开发者，管理后台服务和优化连接可能既复杂又耗时。通过使用推送通知服务，您可以将此责任转移到专门的应用，让您专注于应用的其他方面。"
 
 #. type: Title ##
 #: _posts/2022-12-18-unifiedpush.md
 #, no-wrap
 msgid "How do I start with UnifiedPush, as a user?"
-msgstr ""
+msgstr "作为用户，我要如何开始使用 UnifiedPush？"
 
 #. type: Plain text
 #: _posts/2022-12-18-unifiedpush.md
 msgid "Applications that support UnifiedPush can receive notifications via a dedicated UnifiedPush application that maintains a single server connection to receive all notifications. We call this \"UnifiedPush application\" a *distributor*; it distributes push notifications to other apps on the device. You can choose which distributor you want to use, self-host the server part, or even create your own. For more information on distributors, check out the [full list](https://unifiedpush.org/users/distributors/)."
-msgstr ""
+msgstr "支持 UnifiedPush 的应用可以通过专用的 UnifiedPush 应用接收通知，该应用维护单个服务器连接以接收所有通知。我们将此“UnifiedPush 应用”称为 *分发器*；它将推送通知分发到设备上的其他应用。您可以选择要使用的分发器，自行托管服务器部分，甚至创建自己的分发器。有关分发器的更多信息，请查看[完整列表](https://unifiedpush.org/users/distributors/)。"
 
 #. type: Plain text
 #: _posts/2022-12-18-unifiedpush.md
 msgid "To use UnifiedPush on an application that supports it, you have to install and configure your distributor. You can use [UP-Example](https://f-droid.org/en/packages/org.unifiedpush.example/) as a simple test app."
-msgstr ""
+msgstr "要在支持它的应用上使用 UnifiedPush，您必须安装和配置您的分发器。您可以使用 [UP-Example](https://f-droid.org/en/packages/org.unifiedpush.example/) 作为简单的测试应用。"
 
 #. type: Plain text
 #: _posts/2022-12-18-unifiedpush.md
 #, no-wrap
 msgid "![An animated SVG that shows how all distributors and apps are interchangeable and still work together through the UnifiedPush protocol]({% asset posts/2022-12-18-unifiedpush/animation-options.svg %})  \n"
-msgstr ""
+msgstr "![一个动画 SVG，显示所有分发器和应用如何可互换并仍然通过 UnifiedPush 协议协同工作]({% asset posts/2022-12-18-unifiedpush/animation-options.svg %})  \n"
 
 #. type: Plain text
 #: _posts/2022-12-18-unifiedpush.md
 #, no-wrap
 msgid "*All distributors are compatible with all apps*\n"
-msgstr ""
+msgstr "*所有分发器与应用都兼容*\n"
 
 #. type: Title ###
 #: _posts/2022-12-18-unifiedpush.md
@@ -18427,152 +18427,152 @@ msgstr "在 Android 上删除旧的 TLS"
 #. type: Plain text
 #: _posts/2022-12-18-unifiedpush.md
 msgid "The easiest way to set UnifiedPush up with an [application that supports it](https://unifiedpush.org/users/apps/) is to:"
-msgstr ""
+msgstr "设置 UnifiedPush 并使用[支持它的应用](https://unifiedpush.org/users/apps/)的最简单方法是："
 
 #. type: Bullet: '1. '
 #: _posts/2022-12-18-unifiedpush.md
 msgid "Install the [ntfy](https://ntfy.sh/#subscribe-phone) Android application; this is your distributor"
-msgstr ""
+msgstr "安装 [ntfy](https://ntfy.sh/#subscribe-phone) Android 应用；这是你的分发器"
 
 #. type: Bullet: '2. '
 #: _posts/2022-12-18-unifiedpush.md
 msgid "Open it, and disable battery optimization for it"
-msgstr ""
+msgstr "打开它，并为其禁用电池优化"
 
 #. type: Bullet: '3. '
 #: _posts/2022-12-18-unifiedpush.md
 msgid "Turn on UnifiedPush in the application; it will detect ntfy automatically. (This step depends on the app's UX)"
-msgstr ""
+msgstr "在应用中开启UnifiedPush；它会自动检测 ntfy。 （此步骤取决于应用程序的用户体验）"
 
 #. type: Plain text
 #: _posts/2022-12-18-unifiedpush.md
 #, no-wrap
 msgid "![A screenshot of the distributor selection screen showing Gotify-UP, Google Services, ntfy, UP-FCM Distributor, NextPush, NoProvider2Push]({% asset posts/2022-12-18-unifiedpush/distributor-selection.png %}){: style=\"max-height:50%;\" }  \n"
-msgstr ""
+msgstr "![分发器选择屏幕截图，显示 Gotify-UP、Google Services、ntfy、UP-FCM 分发器、NextPush、NoProvider2Push]({% asset posts/2022-12-18-unifiedpush/distributor-selection.png %}){: style=\"max-height:50%;\" }  \n"
 
 #. type: Plain text
 #: _posts/2022-12-18-unifiedpush.md
 msgid "_When there are multiple distributors available (yes, I know I have too many :P), you can pick between them. When there's just one, it is automatically selected._"
-msgstr ""
+msgstr "_当有多个分发器可用时（是的，我知道我有太多分发器了 :P），您可以在它们之间进行选择。只有一个时，它将自动被选择_"
 
 #. type: Title ##
 #: _posts/2022-12-18-unifiedpush.md
 #, no-wrap
 msgid "How to add UnifiedPush support to my app, as a developer?"
-msgstr ""
+msgstr "作为开发者，如何向我的应用添加 UnifiedPush 支持？"
 
 #. type: Plain text
 #: _posts/2022-12-18-unifiedpush.md
 msgid "To add UnifiedPush support to your application, you first need to ensure that your server is UnifiedPush compatible: it must be able to send notifications to different endpoints, which are URLs pointing to various servers used by users. If your application uses a gateway to work with Google push notifications, modifying the gateway can make it compatible with UnifiedPush."
-msgstr ""
+msgstr "要为您的应用添加 UnifiedPush 支持，您首先需要确保您的服务器与 UnifiedPush 兼容：它必须能够将通知发送到不同的端点，这些端点是指向用户使用的各种服务器的 URL。如果您的应用使用网关来处理 Google 推送通知，则修改网关可以使其与 UnifiedPush 兼容。"
 
 #. type: Plain text
 #: _posts/2022-12-18-unifiedpush.md
 msgid "On the mobile app side, once the user enables UnifiedPush, you have to check for installed distributors on the user's device. The app should then prompt the user to select the distributor they want to use. Afterward, you can register with it."
-msgstr ""
+msgstr "在移动应用端，一旦用户启用 UnifiedPush，您必须检查用户设备上是否安装了分发器。然后，该应用应提示用户选择他们想要使用的分发器。之后，您可以注册它。"
 
 #. type: Plain text
 #: _posts/2022-12-18-unifiedpush.md
 msgid "The selected distributor will then send a new endpoint, which the application should forward to its server. Then, the app prepares to receive data sent to that endpoint by registering an Android BroadcastReceiver. This BroadcastReceiver handles the messages coming from your server (often a ping to fetch the notifications)."
-msgstr ""
+msgstr "选定的分发器将发送一个新的端点，应用应将其转发到其服务器。然后，应用准备通过注册 Android BroadcastReceiver 来接收发送到该端点的数据。此 BroadcastReceiver 处理来自您的服务器的消息（通常是 ping 以获取通知）。"
 
 #. type: Plain text
 #: _posts/2022-12-18-unifiedpush.md
 msgid "It is important to register the application with the selected distributor every time the application starts, in case they get out of sync. If the application receives the same endpoint again, it does not need to re-register it."
-msgstr ""
+msgstr "每次应用启动时向选定的分发器注册应用很重要，以防它们不同步。如果应用再次收到相同的端点，则不需要重新注册端点。"
 
 #. type: Plain text
 #: _posts/2022-12-18-unifiedpush.md
 msgid "Most of this is handled by the UnifiedPush library. You can find more detailed instructions on [our documentation website](https://unifiedpush.org/developers/android/)."
-msgstr ""
+msgstr "其中大部分由 UnifiedPush 库处理。您可以在[我们的文档网站](https://unifiedpush.org/developers/android/)上找到更详细的说明。"
 
 #. type: Plain text
 #: _posts/2022-12-18-unifiedpush.md
 msgid "If you need help with implementing UnifiedPush in your app, we are happy to answer any questions you have on our [Matrix chat](https://matrix.to/#/#unifiedpush:matrix.org)."
-msgstr ""
+msgstr "如果您在应用中实现 UnifiedPush 时需要帮助，我们很乐意回答您在我们的 [Matrix 聊天室](https://matrix.to/#/#unifiedpush:matrix.org)中提出的任何问题。"
 
 #. type: Plain text
 #: _posts/2022-12-18-unifiedpush.md
 #, no-wrap
 msgid "*Note: This blog post focuses on Android; instructions to add UnifiedPush support on a Linux application can be found [on our website](https://unifiedpush.org/developers/go_c/).*\n"
-msgstr ""
+msgstr "*注意：这篇博文主要针对 Android；[在我们的网站上](https://unifiedpush.org/developers/go_c/)可以找到在 Linux 应用上添加 UnifiedPush 支持的说明。*\n"
 
 #. type: Title ##
 #: _posts/2022-12-18-unifiedpush.md
 #, no-wrap
 msgid "How does UnifiedPush work under the hood?"
-msgstr ""
+msgstr "UnifiedPush 底层是如何工作的？"
 
 #. type: Plain text
 #: _posts/2022-12-18-unifiedpush.md
 msgid "At its core, UnifiedPush is a specification. That specification is split into two halves:"
-msgstr ""
+msgstr "UnifiedPush 的核心是一个规范。该规范分为两半："
 
 #. type: Bullet: '* '
 #: _posts/2022-12-18-unifiedpush.md
 msgid "On the device (client) side, it defines an Application Programming Interface (API) to allow **any end-user application** (ex. your messaging app) to communicate with **any distributor application** (ntfy, NextPush, etc.)"
-msgstr ""
+msgstr "在设备（客户）端，它定义了一个应用编程接口 (API) 以允许**任何最终用户应用**（例如您的消息应用）与**任何分发器应用**（ ntfy、NextPush 等）"
 
 #. type: Bullet: '* '
 #: _posts/2022-12-18-unifiedpush.md
 msgid "On the server side, the API describes how the **application server** (Matrix homeserver, Mastodon instance, etc.) sends messages to the **push server** (ntfy server, Nextcloud server, etc.)."
-msgstr ""
+msgstr "在服务器端，API 描述了**应用服务器**（Matrix homeserver、Mastodon 实例等）如何向**推送服务器**（ntfy 服务器、Nextcloud 服务器等）发送消息."
 
 #. type: Plain text
 #: _posts/2022-12-18-unifiedpush.md
 msgid "Our client libraries and the reference proxies assist in implementing both sides of the specification, respectively."
-msgstr ""
+msgstr "我们的客户端库和参考代理分别协助实施规范的两端。"
 
 #. type: Plain text
 #: _posts/2022-12-18-unifiedpush.md
 msgid "To obtain a UnifiedPush endpoint (capability URL to send notifications to), the end-user application registers with the UnifiedPush distributor, which maintains a constant connection with the push server. Upon registration, the distributor provides the application with a unique URL pointing to the push server. This endpoint URL is then transmitted by the application client to the application server."
-msgstr ""
+msgstr "为获得 UnifiedPush 端点（向其发送通知的功能 URL），最终用户应用向 UnifiedPush 分发器注册，该分发器与推送服务器保持持续连接。注册后，分发者向应用提供指向推送服务器的唯一 URL。该端点 URL 然后由应用客户端传输到应用服务器。"
 
 #. type: Plain text
 #: _posts/2022-12-18-unifiedpush.md
 msgid "When the application server needs to send a push message to the end-user application, it sends the message to the push server with a simple HTTP POST request. The push server then forwards the push message to the distributor, which delivers it to the end-user application."
-msgstr ""
+msgstr "当应用服务器需要向最终用户应用发送推送消息时，它会使用简单的 HTTP POST 请求将消息发送到推送服务器。推送服务器然后将推送消息转发给分发器，分发器将其传递给最终用户应用。"
 
 #. type: Plain text
 #: _posts/2022-12-18-unifiedpush.md
 msgid "One key feature of UnifiedPush is that the communication between the push server and the distributor is not specified. This means that a variety of technologies can be employed, such as WebSockets, Server-Sent Events, XMPP, raw TCP, or even SMS, whatever works best for the user."
-msgstr ""
+msgstr "UnifiedPush 的一个关键特性是不指定推送服务器和分发器之间的通信。这意味着可以采用多种技术，例如 WebSocket、服务器发送事件、XMPP、原始 TCP 甚至 SMS，只要最适合用户即可。"
 
 #. type: Plain text
 #: _posts/2022-12-18-unifiedpush.md
 msgid "![An animated SVG showing a message moving through all the steps of UnifiedPush from the Application Server to the Push Server to (on the phone) Distributor app and the end-user application, which then wakes up and emits an Android notification]({% asset posts/2022-12-18-unifiedpush/animation-flow.svg %})"
-msgstr ""
+msgstr "![动画 SVG，显示一条消息通过 UnifiedPush 的所有步骤从应用服务器发送到推送服务器再到（手机上的）分发器应用和最终用户应用，然后唤醒并发出 Android 通知]({% asset posts/2022-12-18-unifiedpush/animation-flow.svg %})"
 
 #. type: Plain text
 #: _posts/2022-12-18-unifiedpush.md
 msgid "The distributor uses platform-specific IPC mechanisms, such as Broadcast Intents on Android or D-Bus on Linux, to wake the app and allow it to handle the push message. The app can then process the data and decide whether to show a notification based on the content. It is important to note that UnifiedPush does not handle the display of user-visible notifications; it only delivers data to the app. Consequently, apps can support notification features in various platforms without involvement from UnifiedPush or the server."
-msgstr ""
+msgstr "分发器使用平台特定的 IPC 机制（例如 Android 上的 Broadcast Intents 或 Linux 上的 D-Bus）来唤醒应用并允许它处理推送消息。然后应用可以处理数据并根据内容决定是否显示通知。重要的是要注意 UnifiedPush 不处理用户可见通知的显示；它只向应用程序提供数据。因此，应用可以支持各种平台的通知功能，而无需 UnifiedPush 或服务器的参与。"
 
 #. type: Plain text
 #: _posts/2022-12-18-unifiedpush.md
 msgid "In cases where the application server does not natively support UnifiedPush, a Push Gateway can convert application-specific notifications to the UnifiedPush server protocol. Some popular Push Gateways, such as the one for Matrix, are integrated directly into push servers for self-hosting convenience. In addition, Rewrite Proxies are used in rare cases where the push server does not support UnifiedPush, such as the FCM distributor sending UnifiedPush-over-FCM."
-msgstr ""
+msgstr "在应用服务器本身不支持 UnifiedPush 的情况下，推送网关可以将特定于应用的通知转换为 UnifiedPush 服务器协议。一些流行的推送网关，例如用于 Matrix 的推送网关，被直接集成到推送服务器中以方便自托管。此外，Rewrite Proxies 用于推送服务器不支持 UnifiedPush 的极少数情况，例如 FCM 分发器发送 UnifiedPush-over-FCM。"
 
 #. type: Plain text
 #: _posts/2022-12-18-unifiedpush.md
 msgid "![A static image showing all the components described above linking to one another]({% asset posts/2022-12-18-unifiedpush/detailed-component-diagram.png %})  _Push Provider = Push Server_"
-msgstr ""
+msgstr "![显示上述所有组件相互链接的静态图像]({% asset posts/2022-12-18-unifiedpush/detailed-component-diagram.png %}) _Push Provider = Push Server_"
 
 #. type: Title ##
 #: _posts/2022-12-18-unifiedpush.md
 #, no-wrap
 msgid "Compatibility between UnifiedPush and WebPush"
-msgstr ""
+msgstr "UnifiedPush 与 WebPush 的兼容性"
 
 #. type: Plain text
 #: _posts/2022-12-18-unifiedpush.md
 msgid "Now, you might be looking at the elephant in the room: WebPush (RFC8030). WebPush is the open standard that browsers use for their push notifications. And the good news is that UnifiedPush is WebPush compatible ... mostly."
-msgstr ""
+msgstr "现在，您可能正在关注房间里的大象：WebPush (RFC8030)。 WebPush 是浏览器用于推送通知的开放标准。好消息是 UnifiedPush 与 WebPush 兼容……很大程度上。"
 
 #. type: Plain text
 #: _posts/2022-12-18-unifiedpush.md
 msgid "Basically, application servers that support WebPush but *do not need its advanced features* and *do not restrict push to only popular WebPush servers* (those from browser vendors) should work without problems with UnifiedPush providers. We are working on solutions to ensure better and more stable WebPush support."
-msgstr ""
+msgstr "基本上，支持 WebPush 但*不需要其高级功能*且*不会将推送限制为仅流行的 WebPush 服务器*（来自浏览器供应商的服务器）的应用程序服务器应该可以毫无问题地使用 UnifiedPush 提供程序。我们正在研究解决方案，以确保更好、更稳定的 WebPush 支持。"
 
 #. type: Title ##
 #: _posts/2022-12-18-unifiedpush.md
@@ -18584,37 +18584,37 @@ msgstr "未来的工作"
 #. type: Bullet: '* '
 #: _posts/2022-12-18-unifiedpush.md
 msgid "The more apps that adopt UnifiedPush, the more useful it becomes. Currently, UnifiedPush is supported by many Matrix and Mastodon apps. We are also working on getting open-source versions of popular apps such as Telegram and Signal to support UnifiedPush."
-msgstr ""
+msgstr "采用 UnifiedPush 的应用越多，它就越有用。目前，许多 Matrix 和 Mastodon 应用都支持 UnifiedPush。我们还致力于让 Telegram 和 Signal 等流行应用的开源版本支持 UnifiedPush。"
 
 #. type: Bullet: '* '
 #: _posts/2022-12-18-unifiedpush.md
 msgid "Improving WebPush support will also help to increase the number of apps that can use UnifiedPush. We are working towards better WebPush compatibility with UnifiedPush."
-msgstr ""
+msgstr "改进 WebPush 支持也将有助于增加可以使用 UnifiedPush 的应用数量。我们正在努力使 WebPush 与 UnifiedPush 更好地兼容。"
 
 #. type: Bullet: '* '
 #: _posts/2022-12-18-unifiedpush.md
 msgid "What about built-in distributors in custom Android ROMs like Lineage OS or /e/OS (murena)? Their support could hugely accelerate UnifiedPush-support in the De-Googled community."
-msgstr ""
+msgstr "Lineage OS 或 /e/OS (murena) 等自定义 Android ROM 中的内置分发器呢？他们的支持可以极大地加速 De-Googled 社区中的 UnifiedPush 支持。"
 
 #. type: Bullet: '* '
 #: _posts/2022-12-18-unifiedpush.md
 msgid "Linux platforms can also benefit from UnifiedPush. Improving the Linux specification and increasing its adoption will help improve battery life and reactivity."
-msgstr ""
+msgstr "Linux 平台也可以从 UnifiedPush 中受益。改进 Linux 规范并提高其采用率将有助于提高电池寿命和响应性。"
 
 #. type: Bullet: '* '
 #: _posts/2022-12-18-unifiedpush.md
 msgid "As UnifiedPush is very flexible, some platforms could achieve even greater efficiency gains by using low-power hardware for the distributor: keeping it on the modem or a low-power core while the phone is asleep."
-msgstr ""
+msgstr "由于 UnifiedPush 非常灵活，一些平台可以通过为分发器使用低功耗硬件来实现更大的效率提升：在手机休眠时将其保持在调制解调器或低功耗核心上。"
 
 #. type: Plain text
 #: _posts/2022-12-18-unifiedpush.md
 msgid "At the end of the day, if you use a Matrix or Mastodon app or one of the other [supported apps](https://unifiedpush.org/users/apps/) on Android, there's a good chance that you can use UnifiedPush to get your push notifications without relying on Google. You can start using UnifiedPush today by just installing [ntfy](https://ntfy.sh/#subscribe-phone) or [choosing another distributor](https://unifiedpush.org/users/distributors/)."
-msgstr ""
+msgstr "归根结底，如果您在 Android 上使用 Matrix 或 Mastodon 应用或其他[支持的应用](https://unifiedpush.org/users/apps/)之一，您很有可能可以使用 UnifiedPush 无需依赖 Google 即可获取推送通知。您现在可以通过安装 [ntfy](https://ntfy.sh/#subscribe-phone) 或[选择其他分发器](https://unifiedpush.org/users/distributors/)开始使用 UnifiedPush。"
 
 #. type: Plain text
 #: _posts/2022-12-18-unifiedpush.md
 msgid "If you are an app developer interested in your app receiving push notifications when installed from F-Droid and allowing your users to have independent, self-hosted infrastructure, check out UnifiedPush and feel free to [talk to us](https://matrix.to/#/#unifiedpush:matrix.org) if you have any questions!"
-msgstr ""
+msgstr "如果您是应用开发者，对您的应用在从 F-Droid 安装时接收推送通知感兴趣，并允许您的用户拥有独立、自托管的基础设施，请查看 UnifiedPush，如果您有任何问题随时[与我们交谈](https://matrix.to/#/#unifiedpush:matrix.org)！"
 
 #~ msgid "* Maven Central * Google Maven Repo * JCenter * OSS Sonatype * OSS JFrog * JitPack.io * Clojars * CommonsWare * Gradle plugin repo"
 #~ msgstr "* Maven Central * Google Maven Repo * JCenter * OSS Sonatype * OSS JFrog * JitPack.io * Clojars * CommonsWare * Gradle plugin repo"
