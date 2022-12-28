@@ -1,0 +1,498 @@
+---
+layout: page
+title: Third Audit Report
+---
+
+<div class="section"><div class="container"><div class="row"><div class="offset-by-two columns"></div></div><div class="row"><div class="u-full-width"><div class="title-client">Tracking the Trackers</div></div></div></div></div><div class="section"><div class="container"><div class="row"><div class="two columns"><strong>Client</strong></div><div class="ten columns">Tracking the Trackers</div></div><div class="row"><div class="two columns"><strong>Title</strong></div><div class="ten columns">Penetration Test Report</div></div><div class="row"><div class="two columns"><strong>Targets</strong></div><div class="ten columns"><ul><li>Deployment scripts</li><li>F-droid client</li></ul></div></div><div class="row"><div class="two columns"><strong>Version</strong></div><div class="ten columns">1.0</div></div><div class="row"><div class="two columns"><strong>Pentester</strong></div><div class="ten columns">Abhinav Mishra</div></div><div class="row"><div class="two columns"><strong>Authors</strong></div><div class="ten columns">Abhinav Mishra, Marcus Bointon</div></div><div class="row"><div class="two columns"><strong>Reviewed by</strong></div><div class="ten columns"><div>Marcus Bointon</div></div></div><div class="row"><div class="two columns"><strong>Approved by</strong></div><div class="ten columns">Melanie Rieback</div></div></div></div><div class="section"><div class="container"><h4>Contact</h4><p>For more information about this document and its contents please contact
+                    Radically Open Security B.V.</p><div class="row"><div class="two columns"><strong>Name</strong></div><div class="ten columns">Melanie Rieback</div></div><div class="row"><div class="two columns"><strong>Address</strong></div><div class="ten columns"><div>Science Park 608</div><div>1098 XH&nbsp;Amsterdam</div><div>The Netherlands</div></div></div><div class="row"><div class="two columns"><strong>Phone</strong></div><div class="ten columns">+31 (0)20 2621 255</div></div><div class="row"><div class="two columns"><strong>Email</strong></div><div class="ten columns">info@radicallyopensecurity.com</div></div><div class="coc">Radically Open Security B.V. is registered at the trade register of
+                the Dutch chamber of commerce under number 60628081.
+            </div></div></div><div class="section"><div class="container"><h4>Version control</h4><table class="borders u-full-width"><thead><tr><th>Version </th><th>Date </th><th>Author </th><th>Description </th></tr></thead><tbody><tr class="light-grey"><td> 0.1</td><td>September 19th, 2022</td><td>Abhinav Mishra</td><td>Initial draft</td></tr><tr><td> 0.2</td><td>September 28th, 2022</td><td>Marcus Bointon</td><td>Review</td></tr><tr class="light-grey"><td>1.0</td><td>September 28th, 2022</td><td>Marcus Bointon</td><td>1.0</td></tr></tbody></table></div></div><div class="section"><div class="container"><h2>Table of Contents</h2>
+   
+   
+   <div class="row"><div class="one column"><a class="topLevelToCEntry" href="#executiveSummary"><span>1</span></a></div><div class="eleven columns"><a class="topLevelToCEntry" href="#executiveSummary">Executive Summary</a></div></div><div class="row"><div class="one column"><a href="#introduction"><span>1.1</span></a></div><div class="eleven columns"><a href="#introduction">Introduction</a></div></div><div class="row"><div class="one column"><a href="#scope"><span>1.2</span></a></div><div class="eleven columns"><a href="#scope">Scope of work</a></div></div><div class="row"><div class="one column"><a href="#objectives"><span>1.3</span></a></div><div class="eleven columns"><a href="#objectives">Project objectives</a></div></div><div class="row"><div class="one column"><a href="#timeline"><span>1.4</span></a></div><div class="eleven columns"><a href="#timeline">Timeline</a></div></div><div class="row"><div class="one column"><a href="#resultsinanutshell"><span>1.5</span></a></div><div class="eleven columns"><a href="#resultsinanutshell">Results In A Nutshell</a></div></div><div class="row"><div class="one column"><a href="#findingSummary"><span>1.6</span></a></div><div class="eleven columns"><a href="#findingSummary">Summary of Findings</a></div></div><div class="row"><div class="one column"><a href="#threatlevelpie"><span>1.6.1</span></a></div><div class="eleven columns"><a href="#threatlevelpie">Findings by Threat Level</a></div></div><div class="row"><div class="one column"><a href="#typepie"><span>1.6.2</span></a></div><div class="eleven columns"><a href="#typepie">Findings by Type</a></div></div><div class="row"><div class="one column"><a href="#recommendationSummary"><span>1.7</span></a></div><div class="eleven columns"><a href="#recommendationSummary">Summary of Recommendations</a></div></div>
+   <div class="row"><div class="one column"><a class="topLevelToCEntry" href="#methodology"><span>2</span></a></div><div class="eleven columns"><a class="topLevelToCEntry" href="#methodology">Methodology</a></div></div><div class="row"><div class="one column"><a href="#planning"><span>2.1</span></a></div><div class="eleven columns"><a href="#planning">Planning</a></div></div><div class="row"><div class="one column"><a href="#riskClassification"><span>2.2</span></a></div><div class="eleven columns"><a href="#riskClassification">Risk Classification</a></div></div>
+   <div class="row"><div class="one column"><a class="topLevelToCEntry" href="#recon"><span>3</span></a></div><div class="eleven columns"><a class="topLevelToCEntry" href="#recon">Reconnaissance and Fingerprinting</a></div></div>
+   <div class="row"><div class="one column"><a class="topLevelToCEntry" href="#findings"><span>4</span></a></div><div class="eleven columns"><a class="topLevelToCEntry" href="#findings">Findings</a></div></div><div class="row"><div class="one column"><a href="#f2-xml-parsers-might-be-vulnerable-to-xxe-attacks"><span>4.1</span></a></div><div class="eleven columns"><a href="#f2-xml-parsers-might-be-vulnerable-to-xxe-attacks">CLN-001 — XML parsers might be vulnerable to XXE attacks</a></div></div><div class="row"><div class="one column"><a href="#f5-vulnerable-tls-versions-accepted"><span>4.2</span></a></div><div class="eleven columns"><a href="#f5-vulnerable-tls-versions-accepted">CLN-002 — Vulnerable TLS versions accepted</a></div></div><div class="row"><div class="one column"><a href="#f1-encryption-algorithms-to-be-used-with-secure-mode-and-padding-scheme"><span>4.3</span></a></div><div class="eleven columns"><a href="#f1-encryption-algorithms-to-be-used-with-secure-mode-and-padding-scheme">CLN-003 — Encryption algorithms using insecure mode and padding scheme</a></div></div><div class="row"><div class="one column"><a href="#f3-clear-text-traffic-is-enabled-in-the-application"><span>4.4</span></a></div><div class="eleven columns"><a href="#f3-clear-text-traffic-is-enabled-in-the-application">CLN-004 — Clear text traffic is enabled in the application</a></div></div><div class="row"><div class="one column"><a href="#f4-http-request-urls-being-logged"><span>4.5</span></a></div><div class="eleven columns"><a href="#f4-http-request-urls-being-logged">CLN-005 — HTTP Request URLs are logged</a></div></div>
+   <div class="row"><div class="one column"><a class="topLevelToCEntry" href="#nonFindings"><span>5</span></a></div><div class="eleven columns"><a class="topLevelToCEntry" href="#nonFindings">Non-Findings</a></div></div><div class="row"><div class="one column"><a href="#f7-review-of-nearby-swap"><span>5.1</span></a></div><div class="eleven columns"><a href="#f7-review-of-nearby-swap">NF-001 — Review of Nearby Swap Feature</a></div></div><div class="row"><div class="one column"><a href="#f6-review-of-deployment-scripts"><span>5.2</span></a></div><div class="eleven columns"><a href="#f6-review-of-deployment-scripts">NF-002 — Review of Deployment Scripts</a></div></div>
+   <div class="row"><div class="one column"><a class="topLevelToCEntry" href="#futurework"><span>6</span></a></div><div class="eleven columns"><a class="topLevelToCEntry" href="#futurework">Future Work</a></div></div>
+   <div class="row"><div class="one column"><a class="topLevelToCEntry" href="#conclusion"><span>7</span></a></div><div class="eleven columns"><a class="topLevelToCEntry" href="#conclusion">Conclusion</a></div></div>
+   <div class="row"><div class="one column"><a class="topLevelToCEntry" href="#testteam"><span> Appendix&nbsp;1</span></a></div><div class="eleven columns"><a class="topLevelToCEntry" href="#testteam">Testing team</a></div></div>
+</div></div><div class="container contents"><div class="section" id="executiveSummary">
+      <h2><span class="title"><span class="titlenumber">1</span>&nbsp;Executive Summary</span></h2>
+      <div class="section" id="introduction">
+         <h3><span class="title"><span class="titlenumber">1.1</span>&nbsp;Introduction</span></h3>
+         <p>Between September 5, 2022 and September 19, 2022, Radically Open Security B.V. carried out a
+                        penetration test for Tracking the Trackers
+         </p>
+         <p>This report contains our findings as well as detailed explanations of exactly
+                        how ROS performed the penetration test.</p>
+      </div>
+      <div class="section" id="scope">
+         <h3><span class="title"><span class="titlenumber">1.2</span>&nbsp;Scope of work</span></h3>
+         <p>The scope of the penetration test was limited to the following targets:</p>
+         <ul class="list"><li class="li">Deployment scripts</li><li class="li">F-droid client</li></ul>
+         <p>The scoped services are broken down as follows: </p>
+         <ul><li>Review of deployment scripts: 1 days</li><li>F-droid client review: 3 days</li><li>Reporting: 1 days</li><li><b>Total effort: 5 days</b></li></ul>
+      </div>
+      <div class="section" id="objectives">
+         <h3><span class="title"><span class="titlenumber">1.3</span>&nbsp;Project objectives</span></h3>
+         <p>
+            ROS will perform a penetration test of the
+                        F-droid client and review the deployment scripts with Tracking the Trackers in order to assess their security.
+            To do so ROS will access the
+                        F-droid client app and the deployment scripts, and guide Tracking the Trackers in attempting to find
+                        vulnerabilities, exploiting any such found to try and gain further access and elevated privileges.</p>
+      </div>
+      <div class="section" id="timeline">
+         <h3><span class="title"><span class="titlenumber">1.4</span>&nbsp;Timeline</span></h3>
+         <p>The Security Audit took place between September 5, 2022 and September 19, 2022.</p>
+      </div>
+      <div class="section" id="resultsinanutshell">
+  <h3><span class="title"><span class="titlenumber">1.5</span>&nbsp;Results In A Nutshell</span></h3>
+  <p>During this crystal-box penetration test we found 2 Elevated and 3 Low-severity
+    issues.</p>
+  <p>
+    The review of the deployment scripts did not uncover any security issues. However, the F-droid client application had
+    some misconfiguration. The elevated severity issues are about insecure configuration of TLS, where the application backend accepts TLS version 1.0 and 1.1.
+    The other elevated severity issue is about a possible issue with the XML parser in the application.
+    </p>
+    <p>
+      Three low-severity issues were also discovered related to the Android app leaking
+       URLs in the Android log, an insecure base network config, and the cryptography implementation in the app.
+    </p>
+
+  <p>By exploiting these issues, an attacker might be able to capture the traffic between the Android client and the server, leak information from the device,
+  perform XXE attacks etc.</p>
+</div>
+      <div class="section" id="findingSummary">
+         <h3><span class="title"><span class="titlenumber">1.6</span>&nbsp;Summary of Findings</span></h3>
+         <table class="fwtable table borders u-full-width"><colgroup><col style="width:10%"><col style="width:15%"><col style="width:65%"><col style="width:10%"></colgroup><thead><tr><th><div>ID</div></th><th><div>Type</div></th><th><div>Description</div></th><th><div>Threat level</div></th></tr></thead><tbody><tr class="TableFont"><td><div id="summaryTableThreatLevelElevated"><a class="link" href="#f2-xml-parsers-might-be-vulnerable-to-xxe-attacks">CLN-001</a></div></td><td><div>Input validation</div></td><td><div>
+		The application's XML parser implementation might be vulnerable to XML External entity (XXE) attacks.
+	</div></td><td><div>Elevated</div></td></tr><tr class="TableFont"><td><div><a class="link" href="#f5-vulnerable-tls-versions-accepted">CLN-002</a></div></td><td><div>Insecure configuration</div></td><td><div>
+		The backend domains used by the application accept obsolete TLS 1.0 and TLS 1.1 protocols.
+	</div></td><td><div>Elevated</div></td></tr><tr class="TableFont"><td><div id="summaryTableThreatLevelLow"><a class="link" href="#f1-encryption-algorithms-to-be-used-with-secure-mode-and-padding-scheme">CLN-003</a></div></td><td><div>Weak Cryptography</div></td><td><div>
+		The encryption algorithms used in the app use an insecure mode and padding scheme.
+	</div></td><td><div>Low</div></td></tr><tr class="TableFont"><td><div><a class="link" href="#f3-clear-text-traffic-is-enabled-in-the-application">CLN-004</a></div></td><td><div>Insecure configuration</div></td><td><div>
+		The base network config of the application allows clear-text traffic.
+	</div></td><td><div>Low</div></td></tr><tr class="TableFont"><td><div><a class="link" href="#f4-http-request-urls-being-logged">CLN-005</a></div></td><td><div>Information leakage</div></td><td><div>
+		The Android app (org.fdroid.fdroid.debug ver.
+1.14-alpha3-505-gc8514adb9-debug) logs URLs.
+	</div></td><td><div>Low</div></td></tr></tbody></table>
+         
+         <div class="section" id="threatlevelpie">
+            <h4><span class="title"><span class="titlenumber">1.6.1</span>&nbsp;Findings by Threat Level</span></h4>
+            <div xmlns:my="http://www.radical.sexy" class="row"><div class="five columns"><svg xmlns="http://www.w3.org/2000/svg" xmlns:fo="http://www.w3.org/1999/XSL/Format" width="300" height="225" viewBox="-40 -20 300 250"><path stroke="white" stroke-width="1" stroke-linejoin="round" fill="#F7D4C4" d="M 100,100 l 0,-85 a 85,85 0 1,1 -0.010787110235910552,6.844808666528479E-7 z"/><text style="font-family: 'Open Sans'; font-size: 11pt; color: black;" x="15.03690928628805" y="131.21466969791592" text-anchor="end">60.0%</text><path stroke="white" stroke-width="1" stroke-linejoin="round" fill="#E2632A" d="M 100,100 l 0,-85 a 85,85 0 0,1 49.965237162696056,153.76390823153915 z"/><text style="font-family: 'Open Sans'; font-size: 11pt; color: black;" x="184.9650077558161" y="71.79122920473174" text-anchor="start">40.0%</text></svg></div><div class="seven columns"><div><svg xmlns="http://www.w3.org/2000/svg" height="16" width="16"><rect stroke="#706f6f" stroke-width="1" stroke-linejoin="round" height="16" width="16" fill="#E2632A"/></svg><span class="pieLegendText">Elevated (<a href="#summaryTableThreatLevelElevated">2</a>)</span></div><div><svg xmlns="http://www.w3.org/2000/svg" height="16" width="16"><rect stroke="#706f6f" stroke-width="1" stroke-linejoin="round" height="16" width="16" fill="#F7D4C4"/></svg><span class="pieLegendText">Low (<a href="#summaryTableThreatLevelLow">3</a>)</span></div></div></div>
+         </div>
+         <div class="section" id="typepie">
+            <h4><span class="title"><span class="titlenumber">1.6.2</span>&nbsp;Findings by Type</span></h4>
+            <div xmlns:my="http://www.radical.sexy" class="row"><div class="five columns"><svg xmlns="http://www.w3.org/2000/svg" xmlns:fo="http://www.w3.org/1999/XSL/Format" width="300" height="225" viewBox="-40 -20 300 250"><path stroke="white" stroke-width="1" stroke-linejoin="round" fill="#7CA982" d="M 100,100 l 0,-85 a 85,85 0 1,1 -0.010787110235910552,6.844808666528479E-7 z"/><text style="font-family: 'Open Sans'; font-size: 11pt; color: black;" x="42.53495956423092" y="24.92515173763897" text-anchor="middle">20.0%</text><path stroke="white" stroke-width="1" stroke-linejoin="round" fill="#BEC5AD" d="M 100,100 l 0,-85 a 85,85 0 1,1 -80.84247018876991,58.741762934693256 z"/><text style="font-family: 'Open Sans'; font-size: 11pt; color: black;" x="15.03690928628805" y="131.21466969791592" text-anchor="end">20.0%</text><path stroke="white" stroke-width="1" stroke-linejoin="round" fill="#B9A44C" d="M 100,100 l 0,-85 a 85,85 0 1,1 -49.956510126712594,153.7702486251116 z"/><text style="font-family: 'Open Sans'; font-size: 11pt; color: black;" x="100.00620258839814" y="197.74999980321172" text-anchor="middle">20.0%</text><path stroke="white" stroke-width="1" stroke-linejoin="round" fill="#D9D375" d="M 100,100 l 0,-85 a 85,85 0 0,1 49.965237162696056,153.76390823153915 z"/><text style="font-family: 'Open Sans'; font-size: 11pt; color: black;" x="184.9650077558161" y="71.79122920473174" text-anchor="start">40.0%</text></svg></div><div class="seven columns"><div><svg xmlns="http://www.w3.org/2000/svg" height="16" width="16"><rect stroke="#706f6f" stroke-width="1" stroke-linejoin="round" height="16" width="16" fill="#D9D375"/></svg><span class="pieLegendText">Insecure configuration (2)</span></div><div><svg xmlns="http://www.w3.org/2000/svg" height="16" width="16"><rect stroke="#706f6f" stroke-width="1" stroke-linejoin="round" height="16" width="16" fill="#B9A44C"/></svg><span class="pieLegendText">Input validation (1)</span></div><div><svg xmlns="http://www.w3.org/2000/svg" height="16" width="16"><rect stroke="#706f6f" stroke-width="1" stroke-linejoin="round" height="16" width="16" fill="#BEC5AD"/></svg><span class="pieLegendText">Weak cryptography (1)</span></div><div><svg xmlns="http://www.w3.org/2000/svg" height="16" width="16"><rect stroke="#706f6f" stroke-width="1" stroke-linejoin="round" height="16" width="16" fill="#7CA982"/></svg><span class="pieLegendText">Information leakage (1)</span></div></div></div>
+         </div>
+      </div>
+      <div class="section" id="recommendationSummary">
+         <h3><span class="title"><span class="titlenumber">1.7</span>&nbsp;Summary of Recommendations</span></h3>
+         <table class="fwtable table borders u-full-width"><colgroup><col style="width:10%"><col style="width:15%"><col style="width:75%"></colgroup><thead><tr><th><div>ID</div></th><th><div>Type</div></th><th><div>Recommendation</div></th></tr></thead><tbody><tr class="TableFont"><td><div><a class="link" href="#f2-xml-parsers-might-be-vulnerable-to-xxe-attacks">CLN-001</a></div></td><td><div>Input validation</div></td><td><div>
+		
+			Limit resolution of external entities when XML input is parsed.
+		
+	</div></td></tr><tr class="TableFont"><td><div><a class="link" href="#f5-vulnerable-tls-versions-accepted">CLN-002</a></div></td><td><div>Insecure configuration</div></td><td><div>
+		
+			Unless support for legacy browsers/devices is needed, disable TLS 1.0 and TLS 1.1.
+			
+			If TLS 1.0 support is required, disable TLS 1.0 compression to avoid CRIME attacks.
+		
+	</div></td></tr><tr class="TableFont"><td><div><a class="link" href="#f1-encryption-algorithms-to-be-used-with-secure-mode-and-padding-scheme">CLN-003</a></div></td><td><div>Weak Cryptography</div></td><td><div>
+		
+			Replace all uses of RSA/ECB/PKCS1Padding and
+				SHA1 with more secure alternatives.
+		
+	</div></td></tr><tr class="TableFont"><td><div><a class="link" href="#f3-clear-text-traffic-is-enabled-in-the-application">CLN-004</a></div></td><td><div>Insecure configuration</div></td><td><div>
+		
+			Unless it is very explicitly needed for the app to work, do not allow or use unencrypted, clear-text traffic.
+			
+			If it is needed, only allow it to explicitly permitted, trusted domains.
+		
+	</div></td></tr><tr class="TableFont"><td><div><a class="link" href="#f4-http-request-urls-being-logged">CLN-005</a></div></td><td><div>Information leakage</div></td><td><div>
+		
+			Avoid logging any sensitive information like
+				usernames, passwords, URLs, tokens etc in the Android log.
+			
+		
+	</div></td></tr></tbody></table>
+         
+      </div>
+   </div><div class="section" id="methodology">
+  <h2><span class="title"><span class="titlenumber">2</span>&nbsp;Methodology</span></h2>
+  <div class="section" id="planning">
+    <h3><span class="title"><span class="titlenumber">2.1</span>&nbsp;Planning</span></h3>
+    <p>Our general approach during penetration tests is as follows:</p>
+    <ol>
+      <li>
+        <strong>Reconnaissance</strong>
+        <br>
+        We attempt to gather as much information as possible about the target.
+        Reconnaissance can take two forms: active and passive. A passive attack
+        is always the best starting point as this would normally defeat
+        intrusion detection systems and other forms of protection
+        afforded to the app or network. This usually involves trying to discover
+        publicly available information by visiting websites, 
+        newsgroups, etc. An active form would be more intrusive, could possibly show up
+        in audit logs and might take the form of a social engineering type of
+        attack.
+      </li>
+      <li>
+        <strong>Enumeration</strong>
+        <br>
+        We use various fingerprinting tools to determine what hosts are visible
+        on the target network and, more importantly, try to ascertain what
+        services and operating systems they are running. Visible services are
+        researched further to tailor subsequent tests to match.
+      </li>
+      <li>
+        <strong>Scanning</strong>
+        <br>
+        Vulnerability scanners are used to scan all discovered hosts for known
+        vulnerabilities or weaknesses. The results are analyzed to determine if
+        there are any vulnerabilities that could be exploited to gain access or
+        enhance privileges to target hosts.
+      </li>
+      <li>
+        <strong>Obtaining Access</strong>
+        <br>
+        We use the results of the scans to assist in attempting to obtain access
+        to target systems and services, or to escalate privileges where access
+        has been obtained (either legitimately though provided credentials, or
+        via vulnerabilities). This may be done surreptitiously (for example to
+        try to evade intrusion detection systems or rate limits) or by more
+        aggressive brute-force methods. This step also consist of manually testing the
+        application against the latest (2017) list of OWASP Top 10 risks. The discovered 
+        vulnerabilities from scanning and manual testing are moreover used to further elevate
+        access on the application. 
+      </li>
+    </ol>
+  </div>
+  <div class="section" id="riskClassification">
+    <h3><span class="title"><span class="titlenumber">2.2</span>&nbsp;Risk Classification</span></h3>
+    <p>Throughout the report, vulnerabilities or risks are labeled and
+      categorized according to the Penetration Testing Execution Standard
+      (PTES). For more information, see:
+      <a class="link" href="http://www.pentest-standard.org/index.php/Reporting">
+        http://www.pentest-standard.org/index.php/Reporting
+      </a>
+    </p>
+    <p>These categories are:</p>
+    <ul>
+      <li>
+        <strong>Extreme</strong>
+        <br>Extreme risk of security controls being compromised with the
+        possibility of catastrophic financial/reputational losses occurring as a
+        result.
+      </li>
+      <li>
+        <strong>High</strong>
+        <br>High risk of security controls being compromised with the potential
+        for significant financial/reputational losses occurring as a result.
+      </li>
+      <li>
+        <strong>Elevated</strong>
+        <br>Elevated risk of security controls being compromised with the
+        potential for material financial/reputational losses occurring as a
+        result.
+      </li>
+      <li>
+        <strong>Moderate</strong>
+        <br>Moderate risk of security controls being compromised with the
+        potential for limited financial/reputational losses occurring as a
+        result.
+      </li>
+      <li>
+        <strong>Low</strong>
+        <br>Low risk of security controls being compromised with measurable
+        negative impacts as a result.
+      </li>
+    </ul>
+  </div>
+</div><div class="section" id="recon">
+      <h2><span class="title"><span class="titlenumber">3</span>&nbsp;Reconnaissance and Fingerprinting</span></h2>
+      <p>We were able to gain information about the software and infrastructure through the following automated
+         scans. Any relevant scan output will be referred to in the findings.</p>
+      <ul>
+         <li>Mobexler – <a class="link" href="https://mobexler.com/">https://mobexler.com/</a>
+         </li>
+         <li>Frida – <a class="link" href="https://github.com/frida/frida">https://github.com/frida/frida</a>
+         </li>
+         <li>Nuclei – <a class="link" href="https://github.com/projectdiscovery/nuclei">https://github.com/projectdiscovery/nuclei</a>
+         </li>
+         <li>Sonarqube – <a class="link" href="https://www.sonarqube.org/">https://www.sonarqube.org/</a>
+         </li>
+         
+      </ul>
+   </div><div class="section" id="findings">
+      <h2><span class="title"><span class="titlenumber">4</span>&nbsp;Findings</span></h2>
+      <p>We have identified the following issues:</p>
+      
+      
+      
+      
+      <div class="section" id="f2-xml-parsers-might-be-vulnerable-to-xxe-attacks">
+	<h3><span class="title"><span class="titlenumber">4.1</span>&nbsp;CLN-001 — XML parsers might be vulnerable to XXE attacks</span></h3><div class="findingMetaBox" style="border-top: 4px solid #E2632A;"><div class="row"><div class="six columns"><span class="findingMetaBoxLabel">Vulnerability ID: </span>CLN-001</div><div class="six columns"><span class="findingMetaBoxLabel">Retest status: </span></div></div><div class="row"><div><span class="findingMetaBoxLabel">Vulnerability type: </span>Input validation</div></div><div class="row"><div><span class="findingMetaBoxLabel">Threat level: </span>Elevated</div></div></div>
+	<h5 class="title-findingsection">Description:</h5><div class="finding-content">
+		<p>The application's XML parser implementation might be vulnerable to XML External entity (XXE) attacks.</p>
+	</div>
+	<h5 class="title-findingsection">Technical description:</h5><div class="finding-content">
+		<p>The XML standard allows the use of external and internal entities. These
+are declared in the DOCTYPE of the document. When parsing an XML file or
+input, the content of the external entities is retrieved from an
+external storage such as the file system or network.</p>
+		<p>The following parts of the application implement an XML parser,
+which might be susceptible to XXE attacks.</p>
+		Affected Instances:
+		<ul>
+			<li>src/test/java/org/fdroid/fdroid/data/RepoXMLHandlerTest.java</li>
+			<li>src/main/java/org/fdroid/fdroid/IndexUpdater.java</li>
+			<li>src/testShared/java/org/fdroid/fdroid/mock/RepoDetails.java</li>
+		</ul>
+		Code snippet:
+		<pre>SAXParserFactory factory = SAXParserFactory.newInstance();</pre>
+	</div>
+	<h5 class="title-findingsection">Impact:</h5><div class="finding-content">
+		<p>If the XML parser has no restrictions for external and internal
+entities, then this might lead to arbitrary file disclosures or
+server-side request forgery (SSRF) vulnerabilities when XML input
+is parsed.</p>
+	</div>
+	<h5 class="title-findingsection">Recommendation:</h5><div class="finding-content">
+		<p>Limit resolution of external entities when XML
+input is parsed. This can be done by:</p>
+		<ul>
+			<li>If it is not needed, disable external entity support altogether.</li>
+			<li>If <code>DOCTYPE</code> handling is not necessary, disable support for all
+				<code>DOCTYPE</code> declarations</li>
+			<li>If external entities are required, then use only required protocols
+				(eg: https) and use an entity resolver to resolve only trusted entities.</li>
+		</ul>
+		<p>
+			In this case, we can use <code>setFeature</code> for the SAX parser
+to disable the DOCTYPE declaration completely:
+		</p>
+		<pre>try {
+      factory.setFeature("http://apache.org/xml/features/disallow-doctype-decl", true);
+
+      SAXParser saxParser = factory.newSAXParser();
+
+      PrintAllHandlerSax handler = new PrintAllHandlerSax();
+
+      saxParser.parse(FILENAME, handler);
+
+  } catch (ParserConfigurationException | SAXException | IOException e) {
+      e.printStackTrace();
+  }</pre>
+		<p>In this code, if the SAX parser parses any external entities, it will throw an error.</p>
+	</div>
+	
+
+</div>
+      <div class="section" id="f5-vulnerable-tls-versions-accepted">
+	<h3><span class="title"><span class="titlenumber">4.2</span>&nbsp;CLN-002 — Vulnerable TLS versions accepted</span></h3><div class="findingMetaBox" style="border-top: 4px solid #E2632A;"><div class="row"><div class="six columns"><span class="findingMetaBoxLabel">Vulnerability ID: </span>CLN-002</div><div class="six columns"><span class="findingMetaBoxLabel">Retest status: </span></div></div><div class="row"><div><span class="findingMetaBoxLabel">Vulnerability type: </span>Insecure configuration</div></div><div class="row"><div><span class="findingMetaBoxLabel">Threat level: </span>Elevated</div></div></div>
+	<h5 class="title-findingsection">Description:</h5><div class="finding-content">
+		<p>The backend domains used by the application accept obsolete TLS 1.0 and TLS 1.1 protocols.</p>
+	</div>
+	<h5 class="title-findingsection">Technical description:</h5><div class="finding-content">
+		<p>The Android app communicates with multiple domains. The TLS
+implementations on these domains accepts weaker TLS versions, specifically 1.0 and 1.1.</p>
+		Affected Instances
+		<ul>
+			<li>f-droid.org (TLS 1.0, 1.1, 1.2 and 1.3 enabled)</li>
+			<li>fdroid.tetaneutral.net (TLS 1.0, 1.1 and 1.2 enabled)</li>
+		</ul>
+		<p>These obsolete protocols may be affected by well-known vulnerabilities such as FREAK,
+			POODLE, BEAST, and CRIME.</p>
+		<p>As TLS 1.2 (on fdroid.tetaneutral.net) and 1.3 (on
+fdroid.tetaneutral.net) is also accepted, any communication using
+these later versions does not present a risk.</p>
+		<p>Android has provided support for TLS 1.2 since platform version 16, released in 2012 in Android 4.1 "Jelly Bean",
+			so the term "legacy" would apply to devices older than that.</p>
+	</div>
+	<h5 class="title-findingsection">Impact:</h5><div class="finding-content">
+		<p>Use of TLS 1.0 and 1.1 make the communication susceptible to
+downgrade attacks, as they work on SHA-1 hash for the integrity of
+exchanged messages. The handshake authentication is also done on SHA-1,
+which makes it easier for an attacker to impersonate a server for MITM
+attacks. The PCI DSS (Payment Card
+			Industry Data Security Standard) specifies that TLS 1.0 may no longer be
+			used as of June 30, 2018, and also strongly recommends disabling 1.1, so this may impact compliance with regulations.</p>
+	</div>
+	<h5 class="title-findingsection">Recommendation:</h5><div class="finding-content">
+		<ul>
+			<li>Unless support for legacy browsers/devices is needed, disable TLS 1.0 and TLS 1.1.
+			</li>
+			<li>If TLS 1.0 support is required, disable TLS 1.0 compression to avoid CRIME attacks.</li>
+		</ul>
+	</div>
+</div>
+      
+      
+      <div class="section" id="f1-encryption-algorithms-to-be-used-with-secure-mode-and-padding-scheme">
+	<h3><span class="title"><span class="titlenumber">4.3</span>&nbsp;CLN-003 — Encryption algorithms using insecure mode and padding scheme</span></h3><div class="findingMetaBox" style="border-top: 4px solid #F7D4C4;"><div class="row"><div class="six columns"><span class="findingMetaBoxLabel">Vulnerability ID: </span>CLN-003</div><div class="six columns"><span class="findingMetaBoxLabel">Retest status: </span></div></div><div class="row"><div><span class="findingMetaBoxLabel">Vulnerability type: </span>Weak Cryptography</div></div><div class="row"><div><span class="findingMetaBoxLabel">Threat level: </span>Low</div></div></div>
+	<h5 class="title-findingsection">Description:</h5><div class="finding-content">
+		<p>The encryption algorithms used in the app use an insecure mode and padding scheme.</p>
+	</div>
+	<h5 class="title-findingsection">Technical description:</h5><div class="finding-content">
+		<p>The following sections of the application code contain cryptographically weak implementations:</p>
+		Affected Instances:
+		<ul>
+			<li>src/full/java/kellinwood/security/zipsigner/ZipSignature.java</li>
+			<li>src/full/java/kellinwood/security/zipsigner/optional/PasswordObfuscator.java</li>
+		</ul>
+		Affected code snippet:
+		<pre>public ZipSignature() throws IOException, GeneralSecurityException {
+md = MessageDigest.getInstance("SHA1");
+cipher = Cipher.getInstance("RSA/ECB/PKCS1Padding");</pre>
+		<pre>getLogger().debug("Sig File SHA1: \n" + HexDumpEncoder.encode(sfDigest));
+getLogger().debug("Signature: \n" + HexDumpEncoder.encode(signatureBytes));
+Cipher cipher = Cipher.getInstance("RSA/ECB/PKCS1Padding");</pre>
+		<pre>getLogger().debug("Sig File SHA1: \n" + HexDumpEncoder.encode(sfDigest));
+getLogger().debug("Signature: \n" + HexDumpEncoder.encode(signatureBytes));
+Cipher cipher = Cipher.getInstance("RSA/ECB/PKCS1Padding");</pre>
+		<p>It is important to analyse the whole code base to see whether any other
+code is affected, and implement fixes there too, if needed.</p>
+		<p>
+			Encryption operations should use a secure mode and padding scheme so
+			that confidentiality and integrity can be guaranteed. In this case, check the code to find
+			all instances where <code>RSA/ECB/PKCS1Padding</code> and <code>SHA1</code> are being used.
+			If sensitive data is being encrypted, then consider improving the
+			encryption mode and padding.
+		</p>
+	</div>
+	<h5 class="title-findingsection">Impact:</h5><div class="finding-content">
+		<p>If sensitive data is being encrypted using an insecure mode
+and padding, it might lead to data being stolen or recovered from the
+encrypted data.</p>
+	</div>
+	<h5 class="title-findingsection">Recommendation:</h5><div class="finding-content">
+		<ul>
+			<li>Replace all uses of <code>RSA/ECB/PKCS1Padding</code> and
+				<code>SHA1</code> with more secure alternatives.</li>
+		</ul>
+	</div>
+</div>
+      <div class="section" id="f3-clear-text-traffic-is-enabled-in-the-application">
+	<h3><span class="title"><span class="titlenumber">4.4</span>&nbsp;CLN-004 — Clear text traffic is enabled in the application</span></h3><div class="findingMetaBox" style="border-top: 4px solid #F7D4C4;"><div class="row"><div class="six columns"><span class="findingMetaBoxLabel">Vulnerability ID: </span>CLN-004</div><div class="six columns"><span class="findingMetaBoxLabel">Retest status: </span></div></div><div class="row"><div><span class="findingMetaBoxLabel">Vulnerability type: </span>Insecure configuration</div></div><div class="row"><div><span class="findingMetaBoxLabel">Threat level: </span>Low</div></div></div>
+	<h5 class="title-findingsection">Description:</h5><div class="finding-content">
+		<p>The base network config of the application allows clear-text traffic.</p>
+	</div>
+	<h5 class="title-findingsection">Technical description:</h5><div class="finding-content">
+		<p>The Network Security Configuration allows apps to customize their
+network security settings. These settings can be configured for specific
+domains and for a specific app, for example; customize which certificate
+authorities (CA) are trusted for an app's secure connections, protect
+apps from accidental usage of cleartext traffic etc.</p>
+		<p>
+			The Android application
+			(<code>org.fdroid.fdroid.debug ver.1.14-alpha3-505-gc8514adb9-debug</code>)
+			contains <code>network_security_config.xml</code> with the following configuration:
+		</p>
+		<pre>&lt;base-config cleartextTrafficPermitted="true"/&gt;</pre>
+		<p>This configuration allows the app to make connections to unencrypted resources.</p>
+	</div>
+	<h5 class="title-findingsection">Impact:</h5><div class="finding-content">
+		<p>Allowing clear-text traffic impacts confidentiality, authenticity, and protection against tampering. An
+attacker performing a machine-in-the-middle attack can eavesdrop on transmitted data and modify it without being detected.</p>
+	</div>
+	<h5 class="title-findingsection">Recommendation:</h5><div class="finding-content">
+		<ul>
+			<li>Unless it is very explicitly needed for the app to work, do not allow or use unencrypted, clear-text traffic.
+			</li>
+			<li>If it is needed, only allow it to explicitly permitted, trusted domains.</li>
+		</ul>
+	</div>
+</div>
+      <div class="section" id="f4-http-request-urls-being-logged">
+	<h3><span class="title"><span class="titlenumber">4.5</span>&nbsp;CLN-005 — HTTP Request URLs are logged</span></h3><div class="findingMetaBox" style="border-top: 4px solid #F7D4C4;"><div class="row"><div class="six columns"><span class="findingMetaBoxLabel">Vulnerability ID: </span>CLN-005</div><div class="six columns"><span class="findingMetaBoxLabel">Retest status: </span></div></div><div class="row"><div><span class="findingMetaBoxLabel">Vulnerability type: </span>Information leakage</div></div><div class="row"><div><span class="findingMetaBoxLabel">Threat level: </span>Low</div></div></div>
+	<h5 class="title-findingsection">Description:</h5><div class="finding-content">
+		<p>The Android app (org.fdroid.fdroid.debug ver.
+1.14-alpha3-505-gc8514adb9-debug) logs URLs.</p>
+	</div>
+	<h5 class="title-findingsection">Technical description:</h5><div class="finding-content">
+		<p>We noticed that the application logs URLs in the Android log.</p>
+		<img src="{% asset posts/2022-12-22-third-audit-results/logs.png %}" alt="logs">
+		<p><em>Note</em>: This also applies to the production
+application version (org.fdroid.fdroid ver. 1.15.2).
+		</p>
+	</div>
+	<h5 class="title-findingsection">Impact:</h5><div class="finding-content">
+		<p>Logging sensitive information in the Android log is not a
+recommended practice as this information can (in some scenarios) be accessed by other
+applications on the same device. URLs can contain tokens or other sensitive data which might be logged, leading to the disclosure of that data to other apps.</p>
+	</div>
+	<h5 class="title-findingsection">Recommendation:</h5><div class="finding-content">
+		<ul>
+			<li>Avoid logging any sensitive information like
+				usernames, passwords, URLs, tokens etc in the Android log.
+			</li>
+		</ul>
+	</div>
+</div>
+   </div><div class="section" id="nonFindings">
+      <h2><span class="title"><span class="titlenumber">5</span>&nbsp;Non-Findings</span></h2>
+      <p>In this section we list some of the things that were tried but turned out to be
+                    dead ends.</p>
+      
+      <div class="section" id="f7-review-of-nearby-swap">
+	<h3><span class="title"><span class="titlenumber">5.1</span>&nbsp;Review of Nearby Swap Feature</span></h3>
+	<p>During the pentest, we analysed the Nearby Swap feature of the
+application closely. This feature allows people to share installed apps
+with others, even without internet access (but both the parties must have the
+F-droid app). The F-droid app enables user to start a local web
+server, and host a page with links providing direct download of selected
+apps.</p>
+	<p>This feature was tested for multiple cases like exploiting the web
+server to access local device files, tricking the users into sharing
+additional apps, the download process, etc. No security issues were discovered
+during the test.</p>
+</div>
+      <div class="section" id="f6-review-of-deployment-scripts">
+	<h3><span class="title"><span class="titlenumber">5.2</span>&nbsp;Review of Deployment Scripts</span></h3>
+	<p>
+		The deployment scripts at <code>https://gitlab.com/fdroid/fdroid-http-fronters/</code>
+		were reviewed for security issues; none were discovered.
+	</p>
+</div>
+   </div><div class="section" id="futurework">
+  <h2><span class="title"><span class="titlenumber">6</span>&nbsp;Future Work</span></h2>
+  <ul>
+    <li>
+      <strong>Retest of findings</strong>
+      <br>When mitigations for the vulnerabilities described in this report have been deployed, a
+      repeat test should be performed to ensure that they are effective and have not introduced
+      other security problems.</li>
+    <li>
+      <strong>Regular security assessments</strong>
+      <br>Security is an ongoing process and not a product, so we advise undertaking regular
+      security assessments and penetration tests, ideally prior to every major release or every
+      quarter.</li>
+  </ul>
+</div><div class="section" id="conclusion">
+  <h2><span class="title"><span class="titlenumber">7</span>&nbsp;Conclusion</span></h2>
+  <p>We discovered 2 Elevated and 3 Low-severity issues during this penetration test.</p>
+  <p>The main purpose of this pentest was to determine the security issues in deployment scripts and the F-droid Android client app.
+    No major security issues were discovered during the deployment script review, in the time available. However, the
+    F-droid client app has some weaknesses that, when resolved, would give the application better defences against attacks,
+    and would correspondingly improve protection of the app's users.
+  </p>
+  <p>We recommend fixing all of the issues found and then performing a retest in order to ensure
+    that mitigations are effective and that no new vulnerabilities have been introduced. </p>
+  <p> Finally, we want to emphasize that security is a process – this penetration test is just a
+    one-time snapshot. Security posture must be continuously evaluated and improved. Regular audits
+    and ongoing improvements are essential in order to maintain control of your corporate
+    information security. We hope that this pentest report (and the detailed explanations of our
+    findings) will contribute meaningfully towards that end. </p>
+  <p> Please don't hesitate to let us know if you have any further questions, or need further
+    clarification on anything in this report. </p>
+
+</div><div class="section" id="testteam">
+      <h2><span class="title"><span class="titlenumber"> Appendix&nbsp;1</span>&nbsp;Testing team</span></h2>
+      <div class="row"><div class="two columns">Abhinav Mishra</div><div class="ten columns">Abhinav has 10+ years of experience in the penetration testing of web, mobile and infrastructure.
+               He has received numerous accolades from multiple organisations for responsible disclosure of vulnerabilities.
+               He is also known for providing trainings on web, mobile and infrastructure security.</div></div><div class="row"><div class="two columns">Melanie Rieback</div><div class="ten columns">Melanie Rieback is a former Asst. Prof. of Computer Science from the
+                            VU, who is also the co-founder/CEO of Radically Open Security.</div></div>
+   </div></div>
