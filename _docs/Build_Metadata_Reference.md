@@ -967,6 +967,7 @@ Valid modes are:
     apps tag non-release versions such as X.X-alpha, so you can filter
     them out with something like `.*[0-9]$` which requires tag names to
     end with a digit.
+    Example: `UpdateCheckMode: Tags .*[0-9]$`
 
     Optionally `UpdateCheckData` can be specified to extract version code and
     name from repository files you specify (instead of relying on the defaults
