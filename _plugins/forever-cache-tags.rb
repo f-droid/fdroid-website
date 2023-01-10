@@ -44,7 +44,7 @@ module Jekyll
       file  = destination(path)
       unless @@assets.has_key?(file)
         asset = "/assets/#{base}_#{digest(path)}#{ext}"
-        @@assets[file] = { path: asset, file: destination(asset) }
+        @@assets[file] = { path: URL.escape_path(asset), file: destination(asset) }
       end
       @@baseurl + @@assets[file][:path]
     end
