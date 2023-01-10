@@ -168,10 +168,31 @@ below.
 See also [this gitlab issue](https://gitlab.com/fdroid/fdroiddata/-/issues/2816).
 
 
+### Bug: Android Studio builds have non-deterministic ZIP ordering
+
+When building APKs with Android Studio, the ordering of the ZIP entries in the
+APK can be different from that of APKs built by invoking `gradle` directly,
+affecting reproducibility; the ordering can be completely non-deterministic,
+even differing between different builds of the same source code.
+
+A workaround is to invoke `gradle` directly (as during F-Droid or CI builds),
+bypassing Android Studio:
+
+```console
+$ ./gradlew assembleRelease
+```
+
+NB: depending on your signing configuration, this may require signing the APK
+with `apksigner` afterwards, since signing is not performed by Android Studio in
+this case.
+
+
 #### Bug: baseline.profm not deterministic
 
 [Non-stable `assets/dexopt/baseline.profm`](https://issuetracker.google.com/issues/231837768)
 (requires a google account to view).
+
+See also [this writeup of a potential workaround being investigated](https://gist.github.com/obfusk/61046e09cee352ae6dd109911534b12e).
 
 
 #### Bug: coreLibraryDesugaring not deterministic
@@ -180,6 +201,27 @@ In some cases builds are not reproducible due to a
 [bug in `coreLibraryDesugaring`](https://issuetracker.google.com/issues/195968520)
 (requires a google account to view); this
 [currently affects NewPipe](https://github.com/TeamNewPipe/NewPipe/issues/6486).
+
+
+#### Concurrency: reproducibility can depend on the number of CPUs/cores
+
+This can affect `.dex` files (though that seems to be rare) or native code (e.g.
+Rust).
+
+Using only 1 CPU/core as a workaround:
+
+```console
+export CPUS_MAX=1
+export CPUS=$(getconf _NPROCESSORS_ONLN)
+for (( c=$CPUS_MAX; c<$CPUS; c++ )) ; do echo 0 > /sys/devices/system/cpu/cpu$c/online; done
+```
+
+NB: this workaround affects the entire machine, so using it in a non-persistent
+virtual machine or container is recommended.
+
+For Rust code, you can set [`codegen-units = 1`](https://doc.rust-lang.org/rustc/codegen-options/index.html#codegen-units).
+
+See also [this gitlab issue](https://gitlab.com/fdroid/rfp/-/issues/1519#note_1226216164).
 
 
 #### Native library stripping
@@ -261,6 +303,22 @@ android {
 ```
 
 Note that tools such as `svgo` can do similar optimization to SVG files.
+
+
+#### PNGs generated from vector drawables
+
+[Android Gradle plugin generates PNG resources from vector drawables for old Android versions](https://developer.android.com/reference/tools/gradle-api/7.3/com/android/build/api/dsl/VectorDrawables#generateddensities).
+Unfortunately, the generated PNG files are not reproducible.
+
+You can disable generating the PNGs by adding this to `build.gradle`:
+
+```gradle
+android {
+    defaultConfig {
+        vectorDrawables.generatedDensities = []
+    }
+}
+```
 
 
 #### R8 Optimizer
