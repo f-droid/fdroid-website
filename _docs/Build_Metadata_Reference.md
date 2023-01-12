@@ -1070,29 +1070,33 @@ that, it is also processed by this.
 
 Valid modes are:
 
--   `None` - No auto-updating is done
--   `Version` - Generates a value (tag name) used for the `commit:` property of
-    new build blocks. It is simply text in which %v and %c are replaced with
-    the required version name and version code respectively. The resulting
+-   `None` - Auto-updating is disabled
+-   `Version` - Auto-updating is enabled.
+
+    If `UpdateCheckMode` is set to `Tags`, this should be set to
+    `Version` without any pattern. The checked tag is used directly.
+
+    If `UpdateCheckMode` is set to `HTTP`, a pattern should be added
+    after the `Version`. The pattern is used to generate a value
+    (tag name) used for the `commit:` property of new build blocks.
+    It is simply text in which `%v` and `%c` are replaced with the required
+    version name and version code respectively. The resulting
     string must match an existing tag in the app's repo, which then will be
     used by F-Droid to build the corresponding version.
 
-    For example, if an app always has a tag "2.7.2" corresponding to
-    version 2.7.2, you would simply specify "Version %v". If an app
-    always has a tag "ver\_1234" for a version with version code 1234,
-    you would specify "Version ver\_%c".
+    For example, if an app always has a tag `2.7.2` corresponding to
+    version 2.7.2, you would simply specify `Version %v`. If an app
+    always has a tag `ver_1234` for a version with version code 1234,
+    you would specify `Version ver_%c`.
 
-    Continuing the first example above, you would specify that as "Version
-    +-fdroid %v" - "-fdroid" is the suffix F-Droid will then append to the
+    Continuing the first example above, you would specify that as
+    `Version +-fdroid %v` - `-fdroid` is the suffix F-Droid will then append to the
     `versionName` specified in e.g. `build.gradle` when building the APK.
 
     Additionally, a suffix can be added to the version name at this
-    stage, to differentiate F-Droid’s build from the original.
+    stage, to differentiate F-Droid's build from the original.
     Continuing the first example above, you would specify that as
-    "Version +-fdroid %v" - "-fdroid" is the suffix.
-
-    If UpdateCheckMode is set to `Tags` the generator string behind `Version`
-    is optional and not used for the `commit:` field.
+    `Version +-fdroid %v` - `-fdroid` is the suffix.
 
 
 ### _CurrentVersion_<a name="CurrentVersion"></a>
