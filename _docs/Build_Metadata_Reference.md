@@ -205,11 +205,11 @@ The title of the application, with optional descriptive phrase. This
 field will override all other sources of the application name,
 including scraped from the APK and from [localized
 metadata](../All_About_Descriptions_Graphics_and_Screenshots).
-Setting _Name_ is usually not needed, since the application’s correct
+Setting _Name_ is usually not needed, since the application's correct
 name is retrieved from the APK file.  However, in a situation where an
 APK contains a bad or missing application name, it can be overridden
 using this. Note that this only overrides the name in the list of apps
-presented in the client; it doesn’t change the name or application
+presented in the client; it doesn't change the name or application
 label in the source code.
 
 __50 character limit__
@@ -223,7 +223,7 @@ This is converted to (`<name>`) in the XML file (_index.xml_).
 
 ### _WebSite_<a name="WebSite"></a>
 
-The URL for the application’s web site. If there is no relevant web
+The URL for the application's web site. If there is no relevant web
 site, this can be omitted (or left blank).
 
 This is converted to (`<web>`) in the XML file (_index.xml_).
@@ -232,7 +232,7 @@ This is converted to (`<web>`) in the XML file (_index.xml_).
 
 ### _SourceCode_<a name="SourceCode"></a>
 
-The URL to view or obtain the application’s source code. This should be
+The URL to view or obtain the application's source code. This should be
 something human-friendly. Machine-readable source-code is covered in the
 _Repo_ field.
 
@@ -242,7 +242,7 @@ This is converted to (`<source>`) in the XML file (_index.xml_).
 
 ### _IssueTracker_<a name="IssueTracker"></a>
 
-The URL for the application’s issue tracker. Optional, since not all
+The URL for the application's issue tracker. Optional, since not all
 applications have one.
 
 This is converted to (`<tracker>`) in the XML file (_index.xml_).
@@ -251,7 +251,7 @@ This is converted to (`<tracker>`) in the XML file (_index.xml_).
 
 ### _Translation_<a name="Translation"></a>
 
-The URL for the application’s translation portal or at least a guide.
+The URL for the application's translation portal or at least a guide.
 Optional, since not all applications have one.
 
 This is converted to (`translation`) in the JSON file (_index.json_).
@@ -260,7 +260,7 @@ This is converted to (`translation`) in the JSON file (_index.json_).
 
 ### _Changelog_<a name="Changelog"></a>
 
-The URL for the application’s changelog. Optional, since not all
+The URL for the application's changelog. Optional, since not all
 applications have one.
 
 This is converted to (`<changelog>`) in the XML file (_index.xml_).
@@ -269,7 +269,7 @@ This is converted to (`<changelog>`) in the XML file (_index.xml_).
 
 ### _Donate_<a name="Donate"></a>
 
-The URL to donate to the project. This should be the project’s donate
+The URL to donate to the project. This should be the project's donate
 page if it has one.
 
 It is possible to use a direct PayPal link here, if that is all that is
@@ -277,7 +277,7 @@ available. However, bear in mind that the developer may not be aware of
 that direct link, and if they later changed to a different PayPal
 account, or the PayPal link format changed, things could go wrong. It is
 always best to use a link that the developer explicitly makes public,
-rather than something that is auto-generated ’button code’.
+rather than something that is auto-generated 'button code'.
 
 This is converted to (`<donate>`) in the XML file (_index.xml_).
 
@@ -285,7 +285,7 @@ This is converted to (`<donate>`) in the XML file (_index.xml_).
 
 ### _FlattrID_<a name="FlattrID"></a>
 
-The project’s Flattr (https://flattr.com) ID, if it has one. This should
+The project's Flattr (https://flattr.com) ID, if it has one. This should
 be a numeric ID, such that (for example) https://flattr.com/thing/xxxx
 leads directly to the page to donate to the project.
 
@@ -294,18 +294,18 @@ This is converted to (`<flattr>`) in the XML file (_index.xml_).
 
 ### _Liberapay_<a name="Liberapay"></a><a name="LiberapayID"></a>
 
-The project’s Liberapay (https://liberapay.com) user or group name, if
+The project's Liberapay (https://liberapay.com) user or group name, if
 it has one. This should be an alphanumeric name, such that (for
 example) https://liberapay.com/xxxxx which redirects to your account
 page. This used to be _LiberapayID_, which was a numeric ID fetched
-from Liberapay’s site by adding /public.json behind your team page.
+from Liberapay's site by adding /public.json behind your team page.
 
 This is converted to (`<liberapay>`) in the XML file (_index.xml_).
 
 
 ### _OpenCollective_<a name="OpenCollective"></a>
 
-The project’s OpenCollective (https://opencollective.com) user or
+The project's OpenCollective (https://opencollective.com) user or
 group name, if it has one. This should be an alphanumeric name, such
 that (for example) https://opencollective.com/xxxxx redirects to your
 account page.
@@ -346,7 +346,7 @@ This is converted to (`<summary>`) in the XML file (_index.xml_).
 
 A full description of the application, relevant to the latest version.
 This can span multiple lines (which should be kept to a maximum of 80
-characters), and is terminated by a line containing a single ’.’.
+characters), and is terminated by a line containing a single '.'.
 
 The description formatting follows the established conventions that
 work across many app stores:
@@ -376,7 +376,7 @@ This is converted to (`<desc>`) in the XML file (_index.xml_).
 ### _MaintainerNotes_<a name="MaintainerNotes"></a>
 
 This is a multi-line field using the same rules and syntax as the
-description. It’s used to record notes for F-Droid maintainers to assist
+description. It's used to record notes for F-Droid maintainers to assist
 in maintaining and updating the application in the repository.
 
 This information is also published to the wiki.
@@ -389,12 +389,12 @@ The type of repository - for automatic building from source. If this is
 not specified, automatic building is disabled for this application.
 Possible values are:
 
--   ‘git’
--   ‘svn’
--   ‘git-svn’
--   ‘hg’
--   ‘bzr’
--   ‘srclib’
+-   'git'
+-   'svn'
+-   'git-svn'
+-   'hg'
+-   'bzr'
+-   'srclib'
 
 
 
@@ -411,7 +411,7 @@ type, the URL must have the tags= special argument set. Likewise, if you
 intend to use the RepoManifest/branch scheme, you would want to specify
 branches= as well. Finally, trunk= can also be added. All these special
 arguments will be passed to "git svn" in order, and their values must be
-relative paths to the svn repo root dir. Here’s an example of a complex
+relative paths to the svn repo root dir. Here's an example of a complex
 git-svn _Repo_ URL:
 http://svn.code.sf.net/p/project/code/svn;trunk=trunk;tags=tags;branches=branches
 
@@ -471,10 +471,10 @@ configuration to the build. These are (roughly in order of application):
 
 :   Disables this build, giving a reason why. (For backwards
     compatibility, this can also be achieved by starting the commit ID
-    with ’!’)
+    with '!')
 
     The purpose of this feature is to allow non-buildable releases (e.g.
-    the source is not published) to be flagged, so the scripts don’t
+    the source is not published) to be flagged, so the scripts don't
     generate repeated messages about them. (And also to record the
     information for review later). If an APK has already been built,
     disabling causes it to be deleted once `fdroid update` is run; this
@@ -513,7 +513,7 @@ configuration to the build. These are (roughly in order of application):
 
 `init: xxxx`<a name="build_init"></a>
 
-:   Like ’prebuild’, but runs on the source code BEFORE any other
+:   Like 'prebuild', but runs on the source code BEFORE any other
     processing takes place.
 
     You can use \$\$SDK\$\$ and \$\$NDK\$\$ to substitute the paths to the
@@ -526,7 +526,7 @@ configuration to the build. These are (roughly in order of application):
 `oldsdkloc: true`<a name="build_oldsdkloc"></a>
 
 :   The sdk location in the repo is in an old format, or the build.xml
-    is expecting such. The ’new’ format is sdk.dir while the VERY OLD
+    is expecting such. The 'new' format is sdk.dir while the VERY OLD
     format is sdk-location. Typically, if you get a message along the
     lines of: "com.android.ant.SetupTask cannot be found" when trying to
     build, then try enabling this option.
@@ -542,28 +542,28 @@ configuration to the build. These are (roughly in order of application):
 
     In the case of an Ant project, it modifies _project.properties_ of the
     app and possibly sub-projects. This is likely to cause the whole
-    _build.xml_ to be rewritten, which is fine if it’s a ’standard’
-    Android file or doesn’t already exist, but not a good idea if it’s
+    _build.xml_ to be rewritten, which is fine if it's a 'standard'
+    Android file or doesn't already exist, but not a good idea if it's
     heavily customised.
 
 `androidupdate: <auto/dirs>`<a name="build_androidupdate"></a>
 
-:   By default, ’android update’ is used in Ant builds to generate or
+:   By default, 'android update' is used in Ant builds to generate or
     update the project and all its referenced projects. Specifying
     update=no bypasses that. Note that this is useless in builds that
-    don’t use Ant.
+    don't use Ant.
 
-    Default value is ’`auto`’, which recursively uses the paths in
+    Default value is '`auto`', which recursively uses the paths in
     _project.properties_ to find all the subprojects to update.
 
     Otherwise, the value can be a comma-separated list of directories in
-    which to run ’android update’ relative to the application directory.
+    which to run 'android update' relative to the application directory.
 
 `encoding: xxxx`<a name="build_encoding"></a>
 
 :   Adds a java.encoding property to local.properties with the
-    given value. Generally the value will be ’utf-8’. This is picked up
-    by the SDK’s ant rules, and forces the Java compiler to interpret
+    given value. Generally the value will be 'utf-8'. This is picked up
+    by the SDK's ant rules, and forces the Java compiler to interpret
     source files with this encoding. If you receive warnings during the
     compile about character encodings, you probably need this.
 
@@ -592,7 +592,7 @@ configuration to the build. These are (roughly in order of application):
     contains _AndroidManifest.xml_.
 
     Multiple files/directories can be specified by separating them with
-    ’,’. Directories will be recursively deleted.
+    ','. Directories will be recursively deleted.
 
 `extlibs: <lib1>[,<lib2>,...]`<a name="build_extlibs"></a>
 
@@ -624,7 +624,7 @@ configuration to the build. These are (roughly in order of application):
     update the project with a particular target. You can then also use
     \$\$name\$\$ in the init/prebuild/build command to substitute the
     relative path to the library directory, but it could need tweaking
-    if you’ve changed into another directory.
+    if you've changed into another directory.
 
     Currently srclibs are used when upstream uses jar files or
     pulls dependencies from non-trusted repositories. Because srclibs
@@ -632,7 +632,7 @@ configuration to the build. These are (roughly in order of application):
 
 `patch: x`<a name="build_patch"></a>
 
-:   Apply patch(es). ’x’ names one (or more - comma-seperated) files
+:   Apply patch(es). 'x' names one (or more - comma-seperated) files
     within a directory below the metadata, with the same name as the
     metadata file but without the extension. Each of these patches is
     applied to the code in turn.
@@ -651,7 +651,7 @@ configuration to the build. These are (roughly in order of application):
     Note that nothing should be built during this prebuild phase -
     scanning of the code and building of the source tarball, for
     example, take place after this. For custom actions that actually
-    build things or produce binaries, use ’build’ instead.
+    build things or produce binaries, use 'build' instead.
 
     You can use \$\$name\$\$ to substitute the path to a referenced
     srclib - see the `srclib` directory for details of this.
@@ -686,10 +686,10 @@ configuration to the build. These are (roughly in order of application):
 
 `build: xxxx`<a name="build_build"></a>
 
-:   As for ’prebuild’, but runs during the actual build phase (but
+:   As for 'prebuild', but runs during the actual build phase (but
     before the main Ant/Maven build). Use this only for actions that do
     actual building. Any preparation of the source code should be done
-    using ’init’ or ’prebuild’.
+    using 'init' or 'prebuild'.
 
     Any building that takes place before _build_ will be ignored, as
     either Ant, mvn or gradle will be executed to clean the build
@@ -707,7 +707,7 @@ configuration to the build. These are (roughly in order of application):
 :   Enables building of native code via the _ndk-build_ script before
     doing the main Ant build. The value may be a list of directories
     relative to the main application directory in which to run
-    ndk-build, or ’yes’ which corresponds to ’.’ . Using explicit list
+    ndk-build, or 'yes' which corresponds to '.' . Using explicit list
     may be useful to build multi-component projects.
 
     The build and scan processes will complain (refuse to build) if this
@@ -716,7 +716,7 @@ configuration to the build. These are (roughly in order of application):
     you can specify `no` here to avoid that. However, if the native code
     is actually not required or used, remove the directory instead
     (using `rm=jni` for example). Using `buildjni=no` when the jni code
-    isn’t used nor built will result in an error saying that native
+    isn't used nor built will result in an error saying that native
     libraries were expected in the resulting package.
 
 `ndk: <version>`<a name="build_ndk"></a>
@@ -734,9 +734,9 @@ configuration to the build. These are (roughly in order of application):
     Flavours are case sensitive since the path to the output APK is
     as well.
 
-    If only one flavour is given and it is ’yes’, no flavour will be
+    If only one flavour is given and it is 'yes', no flavour will be
     used. Note that for projects with flavours, you must specify at
-    least one valid flavour since ’yes’ will build all of
+    least one valid flavour since 'yes' will build all of
     them separately.
 
 `maven: yes[@<dir>]`<a name="build_maven"></a>
@@ -761,7 +761,7 @@ configuration to the build. These are (roughly in order of application):
 `antcommands: <target1>[,<target2>,...]`<a name="build_antcommands"></a>
 
 :   Specify an alternate set of Ant commands (target) instead of the
-    default ’release’. It can’t be given any flags, such as the path to
+    default 'release'. It can't be given any flags, such as the path to
     a _build.xml_.
 
 `output: glob/to/output.apk`<a name="build_output"></a>
@@ -776,10 +776,10 @@ configuration to the build. These are (roughly in order of application):
 
 `novcheck: true`<a name="build_novcheck"></a>
 
-:   Don’t check that the version name and code in the resulting APK are
+:   Don't check that the version name and code in the resulting APK are
     correct by looking at the build output - assume the metadata
     is correct. This takes away a useful level of sanity checking, and
-    should only be used if the values can’t be extracted.
+    should only be used if the values can't be extracted.
 
 `antifeatures: <antifeature1>[,<antifeature2>,...]`<a name="build_antifeatures"></a>
 
@@ -813,38 +813,38 @@ of the following values, describing an anti-feature the application has.
 It is a good idea to mention the reasons for the anti-feature(s) in the
 description:
 
--   ‘Ads’ - the application contains advertising.
--   ‘Tracking’ - user or activity data is tracked or leaks, by default.
+-   'Ads' - the application contains advertising.
+-   'Tracking' - user or activity data is tracked or leaks, by default.
     True if the app or a feature can not be used without collecting and sharing
     such data, or doing requests to a data collecting network service (regard-
     less if the service is based on free software, or not). For example, 
     activity-based down-loading of weather data, maps, avatars etc. (data 
     hosting and delivery services), or uploading of crash logs etc.
--   ‘NonFreeNet’ - the application contains a feature that promotes or depends 
+-   'NonFreeNet' - the application contains a feature that promotes or depends 
     on a  Non-Free network service which is impossible, or not easy to replace.
     Replacement requires changes to the app or service. This antifeature would
     not apply, if there is a simple configuration option that allows pointing
     the app to a running instance of an alternative, publicly available,
     self-hostable, free software server solution.
--   ‘NonFreeAdd’ - the application promotes Non-Free add-ons, such that
+-   'NonFreeAdd' - the application promotes Non-Free add-ons, such that
     the app is effectively an advert for other Non-Free Software.
--   ‘NonFreeDep’ - the application depends on a Non-Free application
+-   'NonFreeDep' - the application depends on a Non-Free application
     (e.g. Google Maps) - i.e. it requires it to be installed on the
     device, but does not include it.
--   ‘NSFW’ - the app contains content that the user may not want to be
+-   'NSFW' - the app contains content that the user may not want to be
     publicized or visible everywhere, comes from "Not Safe For Work".
--   ‘UpstreamNonFree’ - the application is or depends on Non-Free
+-   'UpstreamNonFree' - the application is or depends on Non-Free
     software. This does not mean that Non-Free Software is included with
     the app: Most likely, it has been patched in some way to remove the
     Non-Free code. However, functionality may be missing.
--   ‘NonFreeAssets’ - the application contains and makes use of
+-   'NonFreeAssets' - the application contains and makes use of
     Non-Free assets. The most common case is apps using artwork -
     images, sounds, music, etc - under a non-commercial license.
--   ‘KnownVuln’ - the application has known security vulnerabilities.
--   ‘ApplicationDebuggable‘ - APK file is compiled for debugging
+-   'KnownVuln' - the application has known security vulnerabilities.
+-   'ApplicationDebuggable' - APK file is compiled for debugging
     (`application-debuggable`), which normally makes it unsuitable
     for regular users and use cases.
--   ‘NoSourceSince‘ - Upstream source for this app is no longer
+-   'NoSourceSince' - Upstream source for this app is no longer
     available. Either the app went commercial, the repo was dropped,
     or it has moved to a location currently unknown to us. This usually
     means there won't be further updates unless the source reappears.
@@ -860,7 +860,7 @@ is temporarily disabled from being published. The value should be a
 description of why the application is disabled. No APKs or source code
 archives are deleted: to purge an APK see the Build Version section or
 delete manually for developer builds. The field is therefore used when
-an app has outlived it’s usefulness, because the source tarball is
+an app has outlived it's usefulness, because the source tarball is
 retained.
 
 
@@ -905,13 +905,13 @@ process.
 
 Valid modes are:
 
--   `None` - No checking is done because there’s no appropriate
+-   `None` - No checking is done because there's no appropriate
     automated way of doing so. Updates should be checked for manually.
     Use this, for example, when deploying unstable or patched versions;
     when builds are done in a directory different to where the
     _AndroidManifest.xml_ is; if the developers use the Gradle build
     system and store version info in a separate file; if the developers
-    make a new branch for each release and don’t make tags; or if you’ve
+    make a new branch for each release and don't make tags; or if you've
     changed the package name or version code logic.
 -   `Static` - No checking is done - either development has ceased or
     new versions are not desired. This method is also used when there is
@@ -921,8 +921,8 @@ Valid modes are:
     and _build.gradle_ files are looked for in the directory where
     they were found in the the most recent build. The appropriateness of
     this method depends on the development process used by the
-    application’s developers. You should not specify this method unless
-    you’re sure it’s appropriate. For example, some developers bump the
+    application's developers. You should not specify this method unless
+    you're sure it's appropriate. For example, some developers bump the
     version when commencing development instead of when publishing. It
     will return an error if the _AndroidManifest.xml_ has moved to a
     different directory or if the package name has changed. The current
@@ -937,12 +937,12 @@ Valid modes are:
     may use "RepoManifest/yourbranch" as _UpdateCheckMode_ so that "yourbranch" would
     be the branch used in place of the default one. The default values
     are "master" for git, "default" for hg and none for git-svn (it
-    stays in the same branch). On the other hand, branch support hasn’t
+    stays in the same branch). On the other hand, branch support hasn't
     been implemented yet in bzr and svn, but _RepoManifest_ may still be
     used without it.
 
 -   `RepoTrunk` - For svn and git-svn repositories, especially those who
-    don’t have a bundled _AndroidManifest.xml_ file, the Tags and
+    don't have a bundled _AndroidManifest.xml_ file, the Tags and
     RepoManifest checks will not work, since there is no version
     information to obtain. But, for those apps who automate their build
     process with the commit ref that HEAD points to, RepoTrunk will set
@@ -950,9 +950,9 @@ Valid modes are:
 -   `Tags` - The _AndroidManifest.xml_ and _build.gradle_ files in all
     tagged revisions in the source repository are checked, looking for
     the highest version code.  The appropriateness of this method
-    depends on the development process used by the application’s
-    developers. You should not specify this method unless you’re sure
-    it’s appropriate. It shouldn’t be used if the developers like to tag
+    depends on the development process used by the application's
+    developers. You should not specify this method unless you're sure
+    it's appropriate. It shouldn't be used if the developers like to tag
     unstable versions or are known to forget to tag releases. Like
     RepoManifest, it will not return the correct value if the directory
     containing the _AndroidManifest.xml_ has moved. Despite these caveats,
@@ -985,7 +985,7 @@ Valid modes are:
     Secondly, if `urlver` is non-empty, the document from that URL is
     retrieved, and matched against the regular expression `exver`, with
     the first group becoming the version name. The `urlver` field can be
-    set to simply ’.’ which says to use the same document returned for
+    set to simply '.' which says to use the same document returned for
     the version code again, rather than retrieving a different one.
 
 
@@ -994,10 +994,10 @@ Valid modes are:
 
 Operation to be applied to the vercode obtained by the defined
 _UpdateCheckMode_. `%c` will be replaced by the actual vercode, and
-the whole string will be passed to python’s `eval` function.
+the whole string will be passed to python's `eval` function.
 
 Especially useful with apps that we want to compile for different ABIs,
-but whose vercodes don’t always have trailing zeros. For example, with
+but whose vercodes don't always have trailing zeros. For example, with
 _VercodeOperation_ set at something like `%c*10 + 4`, we will be able
 to track updates and build up to four different versions of every
 upstream version.
@@ -1007,7 +1007,7 @@ upstream version.
 
 When checking for updates (via _UpdateCheckMode_) this can be used to
 specify a regex which, if matched against the version name, causes that
-version to be ignored. For example, ’beta’ could be specified to ignore
+version to be ignored. For example, 'beta' could be specified to ignore
 version names that include that text.
 
 Only Available with _UpdateCheckMode_ `HTTP`.
@@ -1021,7 +1021,7 @@ package name but change it programmatically in some app flavors, by e.g.
 appending ".open" or ".free" at the end of the package name.
 
 You can also use `Ignore` to ignore package name searching. This should
-only be used in some specific cases, for example if the app’s
+only be used in some specific cases, for example if the app's
 build.gradle file does not contain the package name.
 
 
@@ -1118,8 +1118,8 @@ This is converted to (`<marketversion>`) in the XML file (_index.xml_).
 ### _CurrentVersionCode_<a name="CurrentVersionCode"></a>
 
 The [version code](https://developer.android.com/guide/topics/manifest/manifest-element.html#vcode) corresponding to the [_CurrentVersion_](#CurrentVersion) field. Both these
-fields must be correct and matching although it’s the current version
-code that’s used by Android to determine version order and by F-Droid
+fields must be correct and matching although it's the current version
+code that's used by Android to determine version order and by F-Droid
 client to determine which version should be recommended.
 
 This field is normally automatically updated - see
@@ -1150,6 +1150,6 @@ code, and since when have they been doing so.
 
 Comma-separated list of application IDs that this app provides. This
 field was only ever a stub and was never used for anything.  It was
-never supported in _index-v1.json nor _.yml_ metadata files.
+never supported in _index-v1.json_ nor _.yml_ metadata files.
 
 This is converted to (`<provides>`) in the XML file (_index.xml_).
