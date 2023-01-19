@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
-"POT-Creation-Date: 2022-12-08 11:05+0100\n"
+"POT-Creation-Date: 2023-01-19 22:17+0100\n"
 "PO-Revision-Date: 2022-12-25 18:50+0000\n"
 "Last-Translator: gallegonovato <fran-carro@hotmail.es>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/f-droid/website-docs/es/>\n"
@@ -149,8 +149,13 @@ msgstr "La descripción detallada de la aplicación puede utilizar etiquetas HTM
 
 #. type: Bullet: '* '
 #: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
-msgid "Common tags like `li`, `a` with `href`, `ul`, `ol`, `li`, `b`, `u` and `i` are supported."
-msgstr "Etiquetas comunes como `li`, `a` with `href`, `ul`, `ol`, `li`, `b`, `u` y `i` son compatibles."
+msgid "These simple layout tags are [supported](https://gitlab.com/fdroid/jekyll-fdroid/-/blob/master/lib/fdroid/Package.rb#L21): `b`, `big`, `blockquote`, `br`, `cite`, `em`, `i`, `li`, `ol`, `small`, `strike`, `strong`, `sub`, `sup`, `tt`, `u`, `ul`."
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
+msgid "`a` with `href` is currently allowed, but might be removed without notice."
+msgstr ""
 
 #. type: Plain text
 #: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
@@ -3114,47 +3119,10 @@ msgstr ""
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid ""
-"    Currently srclibs are necessary when upstream uses jar files or\n"
-"    pulls dependencies from non-trusted repositories. While there is no\n"
-"    guarantee that those binaries are free and correspondent to the\n"
-"    source code, F-Droid allows the following known repositories until a\n"
-"    source-built alternative is available:\n"
+"    Currently srclibs are used when upstream uses jar files or\n"
+"    pulls dependencies from non-trusted repositories. Because srclibs\n"
+"    can't be updated automatically, git submodule is a better choice.\n"
 msgstr ""
-
-#. type: Bullet: '    -   '
-#: _docs/Build_Metadata_Reference.md
-msgid "'mavenCentral' - the original repo, hardcoded in Maven and Gradle."
-msgstr ""
-
-#. type: Bullet: '    -   '
-#: _docs/Build_Metadata_Reference.md
-msgid "'jCenter' - hardcoded in Gradle, this repo by Bintray tries to provide easier handling. It should sync with mavenCentral from time to time."
-msgstr ""
-
-#. type: Bullet: '    -   '
-#: _docs/Build_Metadata_Reference.md
-msgid "'OSS Sonatype' - maintained by the people behind mavenCentral, this repository focuses on hosting services for open source project binaries."
-msgstr "'OSS Sonatype' - mantenido poe la gente detrás de mavenCentral, este repositorio se centra en servicios de alojamiento para binarios de proyectos abiertos."
-
-#. type: Bullet: '    -   '
-#: _docs/Build_Metadata_Reference.md
-msgid "'OSS JFrog' - maintained by the people behind jCenter, this repository focuses on hosting services for open source project binaries."
-msgstr "'OSS JFrog' - mantenido por la gente detrás de jCenter, este repositorio se centra en servicios de alojamiento para binarios de proyectos abiertos."
-
-#. type: Bullet: '    -   '
-#: _docs/Build_Metadata_Reference.md
-msgid "'JitPack.io' - builds directly from GitHub repositories.  However, they do not provide any option to reproduce or verify the resulting binaries. Builds pre-release versions in some cases."
-msgstr ""
-
-#. type: Bullet: '    -   '
-#: _docs/Build_Metadata_Reference.md
-msgid "'Clojars' - Clojure libraries repo."
-msgstr ""
-
-#. type: Bullet: '    -   '
-#: _docs/Build_Metadata_Reference.md
-msgid "'CommonsWare' - repo holding a collection of open-source libs."
-msgstr "'CommonsWare' - repositorio que alberga una colección de librerías abiertas."
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -3711,6 +3679,7 @@ msgid ""
 "    apps tag non-release versions such as X.X-alpha, so you can filter\n"
 "    them out with something like `.*[0-9]$` which requires tag names to\n"
 "    end with a digit.\n"
+"    Example: `UpdateCheckMode: Tags .*[0-9]$`\n"
 msgstr ""
 
 #. type: Plain text
@@ -3877,30 +3846,51 @@ msgstr ""
 
 #. type: Bullet: '-   '
 #: _docs/Build_Metadata_Reference.md
-msgid "`None` - No auto-updating is done"
+msgid "`None` - Auto-updating is disabled"
 msgstr ""
 
 #. type: Bullet: '-   '
 #: _docs/Build_Metadata_Reference.md
-msgid "`Version` - Generates a value (tag name) used for the `commit:` property of new build blocks. It is simply text in which %v and %c are replaced with the required version name and version code respectively. The resulting string must match an existing tag in the app's repo, which then will be used by F-Droid to build the corresponding version."
+msgid "`Version` - Auto-updating is enabled."
 msgstr ""
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid ""
-"    For example, if an app always has a tag \"2.7.2\" corresponding to\n"
-"    version 2.7.2, you would simply specify \"Version %v\". If an app\n"
-"    always has a tag \"ver\\_1234\" for a version with version code 1234,\n"
-"    you would specify \"Version ver\\_%c\".\n"
+"    If `UpdateCheckMode` is set to `Tags`, this should be set to\n"
+"    `Version` without any pattern. The checked tag is used directly.\n"
 msgstr ""
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid ""
-"    Continuing the first example above, you would specify that as \"Version\n"
-"    +-fdroid %v\" - \"-fdroid\" is the suffix F-Droid will then append to the\n"
+"    If `UpdateCheckMode` is set to `HTTP`, a pattern should be added\n"
+"    after the `Version`. The pattern is used to generate a value\n"
+"    (tag name) used for the `commit:` property of new build blocks.\n"
+"    It is simply text in which `%v` and `%c` are replaced with the required\n"
+"    version name and version code respectively. The resulting\n"
+"    string must match an existing tag in the app's repo, which then will be\n"
+"    used by F-Droid to build the corresponding version.\n"
+msgstr ""
+
+#. type: Plain text
+#: _docs/Build_Metadata_Reference.md
+#, no-wrap
+msgid ""
+"    For example, if an app always has a tag `2.7.2` corresponding to\n"
+"    version 2.7.2, you would simply specify `Version %v`. If an app\n"
+"    always has a tag `ver_1234` for a version with version code 1234,\n"
+"    you would specify `Version ver_%c`.\n"
+msgstr ""
+
+#. type: Plain text
+#: _docs/Build_Metadata_Reference.md
+#, no-wrap
+msgid ""
+"    Continuing the first example above, you would specify that as\n"
+"    `Version +-fdroid %v` - `-fdroid` is the suffix F-Droid will then append to the\n"
 "    `versionName` specified in e.g. `build.gradle` when building the APK.\n"
 msgstr ""
 
@@ -3911,15 +3901,7 @@ msgid ""
 "    Additionally, a suffix can be added to the version name at this\n"
 "    stage, to differentiate F-Droid's build from the original.\n"
 "    Continuing the first example above, you would specify that as\n"
-"    \"Version +-fdroid %v\" - \"-fdroid\" is the suffix.\n"
-msgstr ""
-
-#. type: Plain text
-#: _docs/Build_Metadata_Reference.md
-#, no-wrap
-msgid ""
-"    If UpdateCheckMode is set to `Tags` the generator string behind `Version`\n"
-"    is optional and not used for the `commit:` field.\n"
+"    `Version +-fdroid %v` - `-fdroid` is the suffix.\n"
 msgstr ""
 
 #. type: Title ###
@@ -6900,7 +6882,7 @@ msgstr ""
 
 #. type: Bullet: '-   '
 #: _docs/Inclusion_Policy.md
-msgid "Binary dependencies such as JAR files have to be replaced by source-built versions or used from a trusted repository like Maven Central OSSRH (see manual)."
+msgid "Binary dependencies such as JAR files have to be built from source or installed from Debian repos."
 msgstr ""
 
 #. type: Plain text
@@ -6916,6 +6898,62 @@ msgstr ""
 #. type: Plain text
 #: _docs/Inclusion_Policy.md
 msgid "Though we tried to build everyting from source, we still need some prebuild binaries. Therefore we have some exceptions:"
+msgstr ""
+
+#. type: Bullet: '-   '
+#: _docs/Inclusion_Policy.md
+msgid "Trusted maven repository. While there is no guarantee that those binaries are free and correspondent to the source code, F-Droid allows the following known repositories currently:"
+msgstr ""
+
+#. type: Bullet: '    -   '
+#: _docs/Inclusion_Policy.md
+msgid "Maven Central - the original repo, hardcoded in Maven and Gradle."
+msgstr ""
+
+#. type: Bullet: '    -   '
+#: _docs/Inclusion_Policy.md
+msgid "Google Maven Repo - hardcoded in Gradle, this repo hosts Google's own libs."
+msgstr ""
+
+#. type: Bullet: '    -   '
+#: _docs/Inclusion_Policy.md
+msgid "JCenter - hardcoded in Gradle, this repo by Bintray tries to provide easier handling. It's synced with Maven Central, and include some extra libs. It's shutting down so please avoid this repo."
+msgstr ""
+
+#. type: Bullet: '    -   '
+#: _docs/Inclusion_Policy.md
+#, fuzzy
+#| msgid "'OSS Sonatype' - maintained by the people behind mavenCentral, this repository focuses on hosting services for open source project binaries."
+msgid "OSS Sonatype - maintained by the people behind mavenCentral, this repository focuses on hosting services for open source project binaries. It's synced with Maven Central, and include some extra libs"
+msgstr "'OSS Sonatype' - mantenido poe la gente detrás de mavenCentral, este repositorio se centra en servicios de alojamiento para binarios de proyectos abiertos."
+
+#. type: Bullet: '    -   '
+#: _docs/Inclusion_Policy.md
+#, fuzzy
+#| msgid "'OSS JFrog' - maintained by the people behind jCenter, this repository focuses on hosting services for open source project binaries."
+msgid "OSS JFrog - maintained by the people behind jCenter, this repository focuses on hosting services for open source project binaries."
+msgstr "'OSS JFrog' - mantenido por la gente detrás de jCenter, este repositorio se centra en servicios de alojamiento para binarios de proyectos abiertos."
+
+#. type: Bullet: '    -   '
+#: _docs/Inclusion_Policy.md
+msgid "JitPack.io - builds directly from GitHub repositories.  However, they do not provide any option to reproduce or verify the resulting binaries. Builds pre-release versions in some cases."
+msgstr ""
+
+#. type: Bullet: '    -   '
+#: _docs/Inclusion_Policy.md
+msgid "Clojars - Clojure libraries repo."
+msgstr ""
+
+#. type: Bullet: '    -   '
+#: _docs/Inclusion_Policy.md
+#, fuzzy
+#| msgid "'CommonsWare' - repo holding a collection of open-source libs."
+msgid "CommonsWare - repo holding a collection of open-source libs."
+msgstr "'CommonsWare' - repositorio que alberga una colección de librerías abiertas."
+
+#. type: Bullet: '    -   '
+#: _docs/Inclusion_Policy.md
+msgid "Gradle plugin repo - hardcoded in Gradle, this repo hosts Gradle plugins."
 msgstr ""
 
 #. type: Bullet: '-   '
@@ -8831,6 +8869,33 @@ msgstr ""
 msgid "See also [this gitlab issue](https://gitlab.com/fdroid/fdroiddata/-/issues/2816)."
 msgstr "git clone https://gitlab.com/fdroid/fdroiddata.git\n"
 
+#. type: Title ###
+#: _docs/Reproducible_Builds.md
+#, no-wrap
+msgid "Bug: Android Studio builds have non-deterministic ZIP ordering"
+msgstr ""
+
+#. type: Plain text
+#: _docs/Reproducible_Builds.md
+msgid "When building APKs with Android Studio, the ordering of the ZIP entries in the APK can be different from that of APKs built by invoking `gradle` directly, affecting reproducibility; the ordering can be completely non-deterministic, even differing between different builds of the same source code."
+msgstr ""
+
+#. type: Plain text
+#: _docs/Reproducible_Builds.md
+msgid "A workaround is to invoke `gradle` directly (as during F-Droid or CI builds), bypassing Android Studio:"
+msgstr ""
+
+#. type: Fenced code block (console)
+#: _docs/Reproducible_Builds.md
+#, no-wrap
+msgid "$ ./gradlew assembleRelease\n"
+msgstr ""
+
+#. type: Plain text
+#: _docs/Reproducible_Builds.md
+msgid "NB: depending on your signing configuration, this may require signing the APK with `apksigner` afterwards, since signing is not performed by Android Studio in this case."
+msgstr ""
+
 #. type: Title ####
 #: _docs/Reproducible_Builds.md
 #, no-wrap
@@ -8840,6 +8905,11 @@ msgstr ""
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
 msgid "[Non-stable `assets/dexopt/baseline.profm`](https://issuetracker.google.com/issues/231837768)  (requires a google account to view)."
+msgstr ""
+
+#. type: Plain text
+#: _docs/Reproducible_Builds.md
+msgid "See also [this writeup of a potential workaround being investigated](https://gist.github.com/obfusk/61046e09cee352ae6dd109911534b12e)."
 msgstr ""
 
 #. type: Title ####
@@ -8852,6 +8922,47 @@ msgstr ""
 #: _docs/Reproducible_Builds.md
 msgid "In some cases builds are not reproducible due to a [bug in `coreLibraryDesugaring`](https://issuetracker.google.com/issues/195968520)  (requires a google account to view); this [currently affects NewPipe](https://github.com/TeamNewPipe/NewPipe/issues/6486)."
 msgstr ""
+
+#. type: Title ####
+#: _docs/Reproducible_Builds.md
+#, no-wrap
+msgid "Concurrency: reproducibility can depend on the number of CPUs/cores"
+msgstr ""
+
+#. type: Plain text
+#: _docs/Reproducible_Builds.md
+msgid "This can affect `.dex` files (though that seems to be rare) or native code (e.g.  Rust)."
+msgstr ""
+
+#. type: Plain text
+#: _docs/Reproducible_Builds.md
+msgid "Using only 1 CPU/core as a workaround:"
+msgstr ""
+
+#. type: Fenced code block (console)
+#: _docs/Reproducible_Builds.md
+#, no-wrap
+msgid ""
+"export CPUS_MAX=1\n"
+"export CPUS=$(getconf _NPROCESSORS_ONLN)\n"
+"for (( c=$CPUS_MAX; c<$CPUS; c++ )) ; do echo 0 > /sys/devices/system/cpu/cpu$c/online; done\n"
+msgstr ""
+
+#. type: Plain text
+#: _docs/Reproducible_Builds.md
+msgid "NB: this workaround affects the entire machine, so using it in a non-persistent virtual machine or container is recommended."
+msgstr ""
+
+#. type: Plain text
+#: _docs/Reproducible_Builds.md
+msgid "For Rust code, you can set [`codegen-units = 1`](https://doc.rust-lang.org/rustc/codegen-options/index.html#codegen-units)."
+msgstr ""
+
+#. type: Plain text
+#: _docs/Reproducible_Builds.md
+#, fuzzy
+msgid "See also [this gitlab issue](https://gitlab.com/fdroid/rfp/-/issues/1519#note_1226216164)."
+msgstr "git clone https://gitlab.com/fdroid/fdroiddata.git\n"
 
 #. type: Title ####
 #: _docs/Reproducible_Builds.md
@@ -8958,6 +9069,44 @@ msgstr ""
 #: _docs/Reproducible_Builds.md
 msgid "Note that tools such as `svgo` can do similar optimization to SVG files."
 msgstr ""
+
+#. type: Title ####
+#: _docs/Reproducible_Builds.md
+#, no-wrap
+msgid "PNGs generated from vector drawables"
+msgstr ""
+
+#. type: Plain text
+#: _docs/Reproducible_Builds.md
+msgid "[Android Gradle plugin generates PNG resources from vector drawables for old Android versions](https://developer.android.com/reference/tools/gradle-api/7.3/com/android/build/api/dsl/VectorDrawables#generateddensities).  Unfortunately, the generated PNG files are not reproducible."
+msgstr ""
+
+#. type: Plain text
+#: _docs/Reproducible_Builds.md
+msgid "You can disable generating the PNGs by adding this to `build.gradle`:"
+msgstr ""
+
+#. type: Fenced code block (gradle)
+#: _docs/Reproducible_Builds.md
+#, fuzzy, no-wrap
+#| msgid ""
+#| "android {\n"
+#| "    aaptOptions {\n"
+#| "        cruncherEnabled = false\n"
+#| "    }\n"
+#| "}\n"
+msgid ""
+"android {\n"
+"    defaultConfig {\n"
+"        vectorDrawables.generatedDensities = []\n"
+"    }\n"
+"}\n"
+msgstr ""
+"android {\n"
+"    aaptOptions {\n"
+"        cruncherEnabled = false\n"
+"    }\n"
+"}\n"
 
 #. type: Title ####
 #: _docs/Reproducible_Builds.md
@@ -9677,6 +9826,11 @@ msgstr ""
 #. type: Bullet: '3. '
 #: _docs/Security_Model.md
 msgid "The second \"Bazaar2\" project funded by Open Tech Fund included an [external public audit]({{ site.baseurl }}/2018/09/04/second-security-audit-results.html)  from [Radically Open Security](https://radicallyopensecurity.com/)"
+msgstr ""
+
+#. type: Bullet: '4. '
+#: _docs/Security_Model.md
+msgid "The NLnet-funded projects \"Tracking the Trackers\" and \"The Search for Ethical Apps\" provided an [audit]({{ site.baseurl }}{% post_url 2022-12-22-third-audit-results %}) performed by [Radically Open Security](https://radicallyopensecurity.com/)"
 msgstr ""
 
 #. type: YAML Front Matter: title
@@ -10828,6 +10982,9 @@ msgstr "Preferencias"
 #: _docs/Whitelabel_Builds.md
 msgid "For a custom build that enables Automatic Updates by default, override _app/src/main/res/xml/preferences.xml_. You can customize the preferences and their default values in _app/src/mycompany/res/xml/preferences.xml_. The fully automatic update requires [Privileged Extension](https://gitlab.com/fdroid/privileged-extension). With regular access, the updates will only automatically download. The user still needs to click install on each one."
 msgstr ""
+
+#~ msgid "Common tags like `li`, `a` with `href`, `ul`, `ol`, `li`, `b`, `u` and `i` are supported."
+#~ msgstr "Etiquetas comunes como `li`, `a` with `href`, `ul`, `ol`, `li`, `b`, `u` y `i` son compatibles."
 
 #~ msgid "There is also a prototype for running a binary transparency log for _f-droid.org_. <https://gitlab.com/eighthave/f-droid.org-binary-transparency>"
 #~ msgstr "También hay un prototipo para ejecutar un registro de transparencia binaria para _f-droid.org_. <https://gitlab.com/eighthave/f-droid.org-binary-transparency>"

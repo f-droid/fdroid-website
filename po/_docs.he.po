@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2022-12-28 12:53-0800\n"
+"POT-Creation-Date: 2023-01-19 22:17+0100\n"
 "PO-Revision-Date: 2022-04-26 23:25+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/f-droid/website-docs/he/>\n"
@@ -3443,6 +3443,7 @@ msgid ""
 "    apps tag non-release versions such as X.X-alpha, so you can filter\n"
 "    them out with something like `.*[0-9]$` which requires tag names to\n"
 "    end with a digit.\n"
+"    Example: `UpdateCheckMode: Tags .*[0-9]$`\n"
 msgstr ""
 
 #. type: Plain text
@@ -3609,30 +3610,51 @@ msgstr ""
 
 #. type: Bullet: '-   '
 #: _docs/Build_Metadata_Reference.md
-msgid "`None` - No auto-updating is done"
+msgid "`None` - Auto-updating is disabled"
 msgstr ""
 
 #. type: Bullet: '-   '
 #: _docs/Build_Metadata_Reference.md
-msgid "`Version` - Generates a value (tag name) used for the `commit:` property of new build blocks. It is simply text in which %v and %c are replaced with the required version name and version code respectively. The resulting string must match an existing tag in the app's repo, which then will be used by F-Droid to build the corresponding version."
+msgid "`Version` - Auto-updating is enabled."
 msgstr ""
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid ""
-"    For example, if an app always has a tag \"2.7.2\" corresponding to\n"
-"    version 2.7.2, you would simply specify \"Version %v\". If an app\n"
-"    always has a tag \"ver\\_1234\" for a version with version code 1234,\n"
-"    you would specify \"Version ver\\_%c\".\n"
+"    If `UpdateCheckMode` is set to `Tags`, this should be set to\n"
+"    `Version` without any pattern. The checked tag is used directly.\n"
 msgstr ""
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid ""
-"    Continuing the first example above, you would specify that as \"Version\n"
-"    +-fdroid %v\" - \"-fdroid\" is the suffix F-Droid will then append to the\n"
+"    If `UpdateCheckMode` is set to `HTTP`, a pattern should be added\n"
+"    after the `Version`. The pattern is used to generate a value\n"
+"    (tag name) used for the `commit:` property of new build blocks.\n"
+"    It is simply text in which `%v` and `%c` are replaced with the required\n"
+"    version name and version code respectively. The resulting\n"
+"    string must match an existing tag in the app's repo, which then will be\n"
+"    used by F-Droid to build the corresponding version.\n"
+msgstr ""
+
+#. type: Plain text
+#: _docs/Build_Metadata_Reference.md
+#, no-wrap
+msgid ""
+"    For example, if an app always has a tag `2.7.2` corresponding to\n"
+"    version 2.7.2, you would simply specify `Version %v`. If an app\n"
+"    always has a tag `ver_1234` for a version with version code 1234,\n"
+"    you would specify `Version ver_%c`.\n"
+msgstr ""
+
+#. type: Plain text
+#: _docs/Build_Metadata_Reference.md
+#, no-wrap
+msgid ""
+"    Continuing the first example above, you would specify that as\n"
+"    `Version +-fdroid %v` - `-fdroid` is the suffix F-Droid will then append to the\n"
 "    `versionName` specified in e.g. `build.gradle` when building the APK.\n"
 msgstr ""
 
@@ -3643,15 +3665,7 @@ msgid ""
 "    Additionally, a suffix can be added to the version name at this\n"
 "    stage, to differentiate F-Droid's build from the original.\n"
 "    Continuing the first example above, you would specify that as\n"
-"    \"Version +-fdroid %v\" - \"-fdroid\" is the suffix.\n"
-msgstr ""
-
-#. type: Plain text
-#: _docs/Build_Metadata_Reference.md
-#, no-wrap
-msgid ""
-"    If UpdateCheckMode is set to `Tags` the generator string behind `Version`\n"
-"    is optional and not used for the `commit:` field.\n"
+"    `Version +-fdroid %v` - `-fdroid` is the suffix.\n"
 msgstr ""
 
 #. type: Title ###
@@ -8563,6 +8577,33 @@ msgstr ""
 msgid "See also [this gitlab issue](https://gitlab.com/fdroid/fdroiddata/-/issues/2816)."
 msgstr "git clone https://gitlab.com/fdroid/fdroiddata.git\n"
 
+#. type: Title ###
+#: _docs/Reproducible_Builds.md
+#, no-wrap
+msgid "Bug: Android Studio builds have non-deterministic ZIP ordering"
+msgstr ""
+
+#. type: Plain text
+#: _docs/Reproducible_Builds.md
+msgid "When building APKs with Android Studio, the ordering of the ZIP entries in the APK can be different from that of APKs built by invoking `gradle` directly, affecting reproducibility; the ordering can be completely non-deterministic, even differing between different builds of the same source code."
+msgstr ""
+
+#. type: Plain text
+#: _docs/Reproducible_Builds.md
+msgid "A workaround is to invoke `gradle` directly (as during F-Droid or CI builds), bypassing Android Studio:"
+msgstr ""
+
+#. type: Fenced code block (console)
+#: _docs/Reproducible_Builds.md
+#, no-wrap
+msgid "$ ./gradlew assembleRelease\n"
+msgstr ""
+
+#. type: Plain text
+#: _docs/Reproducible_Builds.md
+msgid "NB: depending on your signing configuration, this may require signing the APK with `apksigner` afterwards, since signing is not performed by Android Studio in this case."
+msgstr ""
+
 #. type: Title ####
 #: _docs/Reproducible_Builds.md
 #, no-wrap
@@ -8572,6 +8613,11 @@ msgstr ""
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
 msgid "[Non-stable `assets/dexopt/baseline.profm`](https://issuetracker.google.com/issues/231837768)  (requires a google account to view)."
+msgstr ""
+
+#. type: Plain text
+#: _docs/Reproducible_Builds.md
+msgid "See also [this writeup of a potential workaround being investigated](https://gist.github.com/obfusk/61046e09cee352ae6dd109911534b12e)."
 msgstr ""
 
 #. type: Title ####
@@ -8584,6 +8630,48 @@ msgstr ""
 #: _docs/Reproducible_Builds.md
 msgid "In some cases builds are not reproducible due to a [bug in `coreLibraryDesugaring`](https://issuetracker.google.com/issues/195968520)  (requires a google account to view); this [currently affects NewPipe](https://github.com/TeamNewPipe/NewPipe/issues/6486)."
 msgstr ""
+
+#. type: Title ####
+#: _docs/Reproducible_Builds.md
+#, no-wrap
+msgid "Concurrency: reproducibility can depend on the number of CPUs/cores"
+msgstr ""
+
+#. type: Plain text
+#: _docs/Reproducible_Builds.md
+msgid "This can affect `.dex` files (though that seems to be rare) or native code (e.g.  Rust)."
+msgstr ""
+
+#. type: Plain text
+#: _docs/Reproducible_Builds.md
+msgid "Using only 1 CPU/core as a workaround:"
+msgstr ""
+
+#. type: Fenced code block (console)
+#: _docs/Reproducible_Builds.md
+#, no-wrap
+msgid ""
+"export CPUS_MAX=1\n"
+"export CPUS=$(getconf _NPROCESSORS_ONLN)\n"
+"for (( c=$CPUS_MAX; c<$CPUS; c++ )) ; do echo 0 > /sys/devices/system/cpu/cpu$c/online; done\n"
+msgstr ""
+
+#. type: Plain text
+#: _docs/Reproducible_Builds.md
+msgid "NB: this workaround affects the entire machine, so using it in a non-persistent virtual machine or container is recommended."
+msgstr ""
+
+#. type: Plain text
+#: _docs/Reproducible_Builds.md
+msgid "For Rust code, you can set [`codegen-units = 1`](https://doc.rust-lang.org/rustc/codegen-options/index.html#codegen-units)."
+msgstr ""
+
+#. type: Plain text
+#: _docs/Reproducible_Builds.md
+#, fuzzy
+#| msgid "git clone https://gitlab.com/fdroid/fdroiddata.git\n"
+msgid "See also [this gitlab issue](https://gitlab.com/fdroid/rfp/-/issues/1519#note_1226216164)."
+msgstr "git clone https://gitlab.com/fdroid/fdroiddata.git\n"
 
 #. type: Title ####
 #: _docs/Reproducible_Builds.md
@@ -8690,6 +8778,44 @@ msgstr ""
 #: _docs/Reproducible_Builds.md
 msgid "Note that tools such as `svgo` can do similar optimization to SVG files."
 msgstr ""
+
+#. type: Title ####
+#: _docs/Reproducible_Builds.md
+#, no-wrap
+msgid "PNGs generated from vector drawables"
+msgstr ""
+
+#. type: Plain text
+#: _docs/Reproducible_Builds.md
+msgid "[Android Gradle plugin generates PNG resources from vector drawables for old Android versions](https://developer.android.com/reference/tools/gradle-api/7.3/com/android/build/api/dsl/VectorDrawables#generateddensities).  Unfortunately, the generated PNG files are not reproducible."
+msgstr ""
+
+#. type: Plain text
+#: _docs/Reproducible_Builds.md
+msgid "You can disable generating the PNGs by adding this to `build.gradle`:"
+msgstr ""
+
+#. type: Fenced code block (gradle)
+#: _docs/Reproducible_Builds.md
+#, fuzzy, no-wrap
+#| msgid ""
+#| "android {\n"
+#| "    aaptOptions {\n"
+#| "        cruncherEnabled = false\n"
+#| "    }\n"
+#| "}\n"
+msgid ""
+"android {\n"
+"    defaultConfig {\n"
+"        vectorDrawables.generatedDensities = []\n"
+"    }\n"
+"}\n"
+msgstr ""
+"android {\n"
+"    aaptOptions {\n"
+"        cruncherEnabled = false\n"
+"    }\n"
+"}\n"
 
 #. type: Title ####
 #: _docs/Reproducible_Builds.md

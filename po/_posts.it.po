@@ -11,7 +11,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2022-12-28 12:53-0800\n"
+"POT-Creation-Date: 2023-01-19 22:17+0100\n"
 "PO-Revision-Date: 2022-10-14 00:27+0000\n"
 "Last-Translator: random r <epsilin@yopmail.com>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/f-droid/website-posts/it/>\n"
@@ -18539,3 +18539,39 @@ msgstr ""
 #| msgid "add [missing features](https://gitlab.com/fdroid/fdroidclient/issues) to the Android client"
 msgid "This [will be fixed](https://gitlab.com/fdroid/fdroidclient/-/issues/2500) in the final v1.16 release."
 msgstr "aggiungi [funzionalità mancanti](https://gitlab.com/fdroid/fdroidclient/issues) al client Android"
+
+#. type: YAML Front Matter: title
+#: _posts/2023-01-15-towards-a-reproducible-fdroid.md
+#, no-wrap
+msgid "Towards a reproducible F-Droid"
+msgstr ""
+
+#. type: Plain text
+#: _posts/2023-01-15-towards-a-reproducible-fdroid.md
+msgid "A common criticism directed at F-Droid is that F-Droid signs published APKs with its own keys. Using our own keys doesn't mean insecure — we have a good track record (and [keep the keys on a dedicated, air-gapped, offline machine](https://f-droid.org/docs/Security_Model/#app-signing)) whilst others may not — but this does mean that our users need to trust a third party other than the upstream developers."
+msgstr ""
+
+#. type: Plain text
+#: _posts/2023-01-15-towards-a-reproducible-fdroid.md
+msgid "Having a different signature can also inconvenience users by making it impossible to install updates from other channels; this can be especially inconvenient when we have difficulty providing an update for an app. Developers also sometimes need to tweak their setup for F-Droid, e.g. disabling an in-app updater or adding the F-Droid signature for verification."
+msgstr ""
+
+#. type: Plain text
+#: _posts/2023-01-15-towards-a-reproducible-fdroid.md
+msgid "F-Droid is not the only app store publishing APKs signed with its own key — Google Play does the same now. With [\"code transparency for app bundles\"](https://developer.android.com/guide/app-bundle/code-transparency), Google provides a means to verify that the DEX files and native libraries in an APK are identical to those the developer provided. This does address some of these concerns, but code transparency does not protect many other important files in the APK, like interpreted code or assets. And unlike APK signatures, it is entirely optional (and an extra burden for developers) and verification must be performed manually. It also does not solve the inconvenience of being unable to install an APK with a different signature."
+msgstr ""
+
+#. type: Plain text
+#: _posts/2023-01-15-towards-a-reproducible-fdroid.md
+msgid "F-Droid has had a better solution for these problems for [quite a while](https://gitlab.com/fdroid/fdroidserver/-/commit/8568805866dadbdcc6c07449ca6b84b80d0ab03c): [reproducible builds](https://f-droid.org/docs/Reproducible_Builds/). However, it was never widely used. One of the reasons is that it *sounds* difficult to achieve. We had few reproducible apps (to be precise: only 6) and some of them suffered from problems because of the use of reproducible builds. Basically, we didn't bother to mention reproducible builds unless the upstream developers showed an interest. As a result, many developers never even heard of reproducible builds, let alone that F-Droid supports them, or attempted to use them for their own apps."
+msgstr ""
+
+#. type: Plain text
+#: _posts/2023-01-15-towards-a-reproducible-fdroid.md
+msgid "In response to some of those criticisms, we started [encouraging new apps to enable reproducible builds](https://gitlab.com/fdroid/fdroiddata/-/issues/2816). It turns out that reproducible builds are not so difficult to achieve for many apps. [In the past few months we've gotten many more reproducible apps in F-Droid than before.](https://gitlab.com/fdroid/fdroiddata/-/issues/2844) Currently we can't highlight which apps are reproducible in the client, so maybe you haven't noticed that there are many new apps signed with upstream developers' keys. If you have some third-party repositories enabled, e.g. the IzzySoft one, you may find that sometimes you can update the app from the main repository even if you installed it from another one."
+msgstr ""
+
+#. type: Plain text
+#: _posts/2023-01-15-towards-a-reproducible-fdroid.md
+msgid "Meanwhile, now that we've encountered many more test cases than before, we also found many [new](https://gitlab.com/fdroid/fdroiddata/-/issues/2816#note_1152793493) [problems](https://gitlab.com/fdroid/fdroid-website/-/merge_requests/895) that affect reproducibility. Fortunately we also found workarounds for most of them and developed [some tools to make APKs reproducible](https://github.com/obfusk/reproducible-apk-tools), mainly thanks to @obfusk's contributions. There are still some open issues and we are still working hard to solve them. If you are interested in reproducible builds, contributions are always welcome."
+msgstr ""
