@@ -28,7 +28,11 @@
   <link rel="dns-prefetch" href="https://search.f-droid.org"/>
   <link rel="stylesheet" href="{{ site.baseurl }}/css/main.css"/>
   {% comment %} the line below uses single quotes to prevet jekyll-polyglot from adding a language to the url {% endcomment -%}
+  {% if page.package_name %}
+  <link rel="canonical" href='{{ "/packages/" | append: page.package_name | append: "/" | absolute_url }}'/>
+  {% else %}
   <link rel="canonical" href='{{ page.permalink | replace:'index.html','' | absolute_url }}'/>
+  {% endif %}
   <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ site.baseurl }}/feed.xml"/>
 
   <link href="{{ site.baseurl }}/osd.xml" rel="search" title="F-Droid" type="application/opensearchdescription+xml">
@@ -50,8 +54,8 @@
     {% continue -%}
   {% endif -%}
   {%- if site.baseurl == '' %}
-  <link rel="alternate" hreflang="{{ lang | replace: '_', '-' }}" href="{{ page.permalink | replace:'index.html','' | absolute_url }}">
+  <link rel="alternate" hreflang="{{ lang | replace: '_', '-' }}" href="{{ "/" | append: lang | replace: '_', '-' | append: page.permalink | replace:'index.html','' | absolute_url }}">
   {% endif -%}
 {% endfor -%}
-  <link rel="alternate" hreflang="x-default" href="{{ page.permalink | replace:'index.html','' | absolute_url }}">
+  <link rel="alternate" hreflang="x-default" href='{{ page.permalink | replace:'index.html','' | absolute_url }}'>
 </head>
