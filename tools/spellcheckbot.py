@@ -27,7 +27,9 @@ with open('output.txt') as fp:
 if output:
     merge_request.notes.create(
         {
-            'body': 'Here are some potential spelling errors (near the center of each line):\n```\n'
+            'body': 'Some potential spelling errors (near the center of each line):\n'
+            + '```\n'
+            + '                                          ↧\n'
             + output
             + '```'
         }
