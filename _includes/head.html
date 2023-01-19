@@ -54,8 +54,8 @@
     {% continue -%}
   {% endif -%}
   {%- if site.baseurl == '' %}
-  <link rel="alternate" hreflang="{{ lang | replace: '_', '-' }}" href="{{ page.permalink | replace:'index.html','' | absolute_url }}">
+  <link rel="alternate" hreflang="{{ lang | replace: '_', '-' }}" href="{{ "/" | append: lang | replace: '_', '-' | append: page.permalink | replace:'index.html','' | absolute_url }}">
   {% endif -%}
 {% endfor -%}
-  <link rel="alternate" hreflang="x-default" href="{{ page.permalink | replace:'index.html','' | absolute_url }}">
+  <link rel="alternate" hreflang="x-default" href='{{ page.permalink | replace:'index.html','' | absolute_url }}'>
 </head>
