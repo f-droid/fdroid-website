@@ -33,9 +33,9 @@ packages obtained elsewhere, the process is quite simple:
 6.  If it reports that any metadata files are missing, you can create
     them in the `metadata` directory and run it again.
 7.  To ease creation of metadata files, run `fdroid update` with the
-    `-c` option. It will create ’skeleton’ metadata files that are
+    `-c` option. It will create 'skeleton' metadata files that are
     missing, and you can then just edit them and fill in the details.
-8.  Then, if you’ve changed things, run `fdroid update` again.
+8.  Then, if you've changed things, run `fdroid update` again.
 9.  Running `fdroid update` adds an _icons_ directory into the repo
     directory, and also creates the repository index files
     (_index.xml_, _index.jar_, etc) __NOTE: To make this process

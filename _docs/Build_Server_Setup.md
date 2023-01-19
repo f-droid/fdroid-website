@@ -117,7 +117,7 @@ fdroid:~$ sed -i "s@^[# ]*build_server_always.*@build_server_always: true@" fdro
 ## Setting up a build server
 
 In addition to the basic setup previously described, we ship
-a Vagrant-compatible Debian/stretch base box called ’fdroid/basebox-stretch64’.
+a Vagrant-compatible Debian/stretch base box called 'fdroid/basebox-stretch64'.
 
 We are bootstrapping the Debian Vagrant boxes for our buildserver
 from scratch. Fetching and verifying our pre-build Vagrant boxes
@@ -135,7 +135,7 @@ creating `makebuildserver.config.py`, using
 `./examples/makebuildserver.config.py` as a reference - look at the
 settings and documentation there to decide if any need changing to suit
 your environment. There is a path for retrieving the base box if it
-doesn’t exist, and an apt proxy definition, both of which may need
+doesn't exist, and an apt proxy definition, both of which may need
 customising for your environment. You can then go to the `fdroidserver`
 directory and run `makebuildserver`.
 
@@ -158,13 +158,13 @@ occasionally. Once you have a working build server image, if the
 recipes change (e.g. when packages need to be added) you can just
 run that script again and the existing one will be updated in place.
 
-Once it’s complete you’ll have a new base box called ’buildserver’ which
-is what’s used for your App build runs. Now you can build packages as
+Once it's complete you'll have a new base box called 'buildserver' which
+is what's used for your App build runs. Now you can build packages as
 as you used to, but when you run `fdroid build --server ...` App build
 runs will be isolated inside a virtual machine.
 
 The first time a build is done, a new virtual machine is created using
-the ’buildserver’ box as a base. A snapshot of this clean machine state
+the 'buildserver' box as a base. A snapshot of this clean machine state
 is saved for use in future builds, to improve performance. You can force
 discarding of this snapshot and rebuilding from scratch using a switch:
 `fdroid build --resetserver ...`.
@@ -172,8 +172,8 @@ discarding of this snapshot and rebuilding from scratch using a switch:
 ### makebuildserver caching tweaks (optional)
 
 The main SDK/NDK downloads will automatically be cached to speed things
-up the next time, but there’s no easy way of doing this for the longer
-sections which use the SDK’s `android` tool to install platforms,
+up the next time, but there's no easy way of doing this for the longer
+sections which use the SDK's `android` tool to install platforms,
 add-ons and tools. However, instead of allowing automatic caching, you
 can supply a pre-populated cache directory which includes not only these
 downloads, but also .tar.gz files for all the relevant additions. If the

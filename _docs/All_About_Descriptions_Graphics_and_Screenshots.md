@@ -20,7 +20,7 @@ In F-Droid client, since release 1.6, only applications that have all of the fol
 * Summary
 * Description
 * License
-* a What’s New entry for at least one release
+* a What's New entry for at least one release
 * at least one graphic (screenshot or a feature graphic)
 * at least one of the above translated
 
@@ -63,10 +63,10 @@ for the following reasons:
 F-Droid supports two distinct file structures. These aim to be compatible with existing free software tools that allow publishing applications to Google Play. It is not required to install any of these
 tools, the file structure can easily be created manually instead.
 
-Please be aware that texts in the app’s metadata file will override all other descriptive texts provided through the
+Please be aware that texts in the app's metadata file will override all other descriptive texts provided through the
 structures explained below. This affects [_Name_](../Build_Metadata_Reference/#Name),
 [_Summary_](../Build_Metadata_Reference/#Summary), and [_Description_](../Build_Metadata_Reference/#Description).
-Once metadata fields that were previously in the metadata file have been moved to the app’s source repo, please file a
+Once metadata fields that were previously in the metadata file have been moved to the app's source repo, please file a
 [merge request](https://gitlab.com/fdroid/fdroiddata/merge_requests) or
 [issue](https://gitlab.com/fdroid/fdroiddata/issues) to remove _Summary_ and _Description_ from the app's metadata file.
  
@@ -187,11 +187,11 @@ fastlane as well and it looks the same as shown above, with the following additi
 
 **Note**: This option is only available to those who host their own repositories.
 
-The ultimate destination for files from the app’s source repo and *fdroiddata* metadata sub-directories is in the
+The ultimate destination for files from the app's source repo and *fdroiddata* metadata sub-directories is in the
 F-Droid repo. The text all gets included into the index file (aka *index-v1.json*). All of the graphics files can be
 directly included in the repo.
 
-If graphics files are also in the app’s source or *fdroiddata*, then the files directly in
+If graphics files are also in the app's source or *fdroiddata*, then the files directly in
 the repo will be overwritten.
 
 You may not place text files directly in the repo.
@@ -229,4 +229,4 @@ data from the APK file.
 
 However, the following more specific rule also applies:
 
-* Graphic files from the app’s source of *fdroiddata* overwrites files in the repo.
+* Graphic files from the app's source of *fdroiddata* overwrites files in the repo.

@@ -22,7 +22,7 @@ As usual, the `-p` option can be used with this, to restrict processing
 to a particular application.
 
 Note that this only updates the metadata such that we know what the
-current published/recommended version is. It doesn’t make that version
+current published/recommended version is. It doesn't make that version
 available in the repository - for that, see the next section.
 
 
@@ -30,8 +30,8 @@ available in the repository - for that, see the next section.
 
 Adding updates (i.e. new versions of applications already included in
 the repository) happens in two ways. The simple case is applications
-where the APK files are binaries, retrieved from a developer’s published
-build. In this case, all that’s required is to place the new binary in
+where the APK files are binaries, retrieved from a developer's published
+build. In this case, all that's required is to place the new binary in
 the _Repo_ directory, and the next run of `fdroid update` will pick it
 up.
 

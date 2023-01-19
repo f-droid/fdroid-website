@@ -17,7 +17,7 @@ Software when in fact some if not all of the following is true:
     all versions!) is unavailable or incomplete.
 2.  The source code is not capable of producing the actual
     binary supplied.
-3.  The ’source code’ contains binary files of unknown origin, or with
+3.  The 'source code' contains binary files of unknown origin, or with
     proprietary licenses.
 
 For this reason, source-built applications are the preferred method for
@@ -45,7 +45,7 @@ chapter, except now you need to:
 
 ### App data directory aka _fdroiddata_
 
-To do anything, you’ll need at least one repository data directory. It’s
+To do anything, you'll need at least one repository data directory. It's
 from this directory that you run the `fdroid` command to perform all
 repository management tasks. You can either create a brand new one, or
 grab a copy of the data used by the main F-Droid repository:
@@ -76,7 +76,7 @@ fdroid update --help
 ### More about `fdroid build`
 
 When run without any parameters, `fdroid build` will build any and all
-versions of applications that you don’t already have in the `repo`
+versions of applications that you don't already have in the `repo`
 directory (or more accurately, the `unsigned` directory). There are
 various other things you can do. As with all the tools, the `--help`
 option is your friend, but a few annotated examples and discussion of
@@ -117,7 +117,7 @@ directory you would push to your web server). A signed and zipaligned
 version of the APK would also appear there, and both files would be
 removed from the `unsigned` directory.
 
-If you’re building purely for the purposes of testing, and not intending
+If you're building purely for the purposes of testing, and not intending
 to push the results to a repository, at least yet, the `--test` option
 can be used to direct output to the `tmp` directory instead of
 `unsigned`. A similar effect could be achieved by simply deleting the
@@ -131,7 +131,7 @@ contain ELFs or known Non-Free libraries can be forced to build. See
 also — _scanignore_ and _scandelete_ in the _Builds_ section.
 
 If the build was unsuccessful, you can find out why by looking at the
-output in the _logs/_ directory. If that isn’t illuminating, try building
+output in the _logs/_ directory. If that isn't illuminating, try building
 the app the regular way, step by step: android update project,
 ndk-build, ant debug.
 
@@ -141,10 +141,10 @@ important that all such prebuilts are built either via the metadata or
 by a reputable third party.
 
 
-### Running `fdroid build` in your app’s source
+### Running `fdroid build` in your app's source
 
 Another option for using `fdroid build` is to use a metadata file that
-is included in the app’s source itself, rather than in a _metadata/_
+is included in the app's source itself, rather than in a _metadata/_
 folder with lots of other apps. The _.fdroid.yml_ metadata file should
 be in the root of your source repo.
 
@@ -165,7 +165,7 @@ emulator using the `fdroid install` command. If you do this without
 passing packages as arguments then all the latest built and signed
 version available of each package will be installed . In most cases,
 this will not be what you want to do, so execution will stop straight
-away. However, you can override this if you’re sure that’s what you
+away. However, you can override this if you're sure that's what you
 want, by using `--all`. Note that currently, no sanity checks are
 performed with this mode, so if the files in the signed output directory
-were modified, you won’t be notified.
+were modified, you won't be notified.

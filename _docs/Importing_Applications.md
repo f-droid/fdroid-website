@@ -50,7 +50,7 @@ If the import is successful, a metadata file will be created. You will
 need to edit this further to check the information, and fill in the
 blanks.
 
-If it fails, you’ll be told why. If it got as far as retrieving the
+If it fails, you'll be told why. If it got as far as retrieving the
 source code, you can inspect it further by looking in `tmp/importer`
 where a full checkout will exist.
 

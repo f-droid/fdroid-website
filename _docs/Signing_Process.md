@@ -40,9 +40,9 @@ keytool -genkey -v -keystore my.keystore -alias repokey \
 ```
 
 In the above, replace _my.keystore_ with the name of the keystore file
-to be created, and ’repokey’ with a name to identify the repo index
-key by.  You’ll be asked for a password for the keystore, AND a
-password for the key. They shouldn’t be the same. In between, you’ll
+to be created, and 'repokey' with a name to identify the repo index
+key by.  You'll be asked for a password for the keystore, AND a
+password for the key. They shouldn't be the same. In between, you'll
 be asked for some identifying details which will go in the
 certificate.
 
