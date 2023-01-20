@@ -9,22 +9,22 @@
 # Jacque Fresco <aidter@use.startmail.com>, 2021.
 # Roman Leo <roman.leo@gmx.de>, 2021, 2022.
 # FW <weblate.scordium@slmail.me>, 2022.
-# ssantos <ssantos@web.de>, 2022.
+# ssantos <ssantos@web.de>, 2022, 2023.
 # Christian Eichert <c@zp1.net>, 2022.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
 "POT-Creation-Date: 2023-01-19 22:17+0100\n"
-"PO-Revision-Date: 2022-12-30 00:29+0000\n"
-"Last-Translator: VfBFan <drop0815@posteo.de>\n"
+"PO-Revision-Date: 2023-01-21 13:59+0000\n"
+"Last-Translator: ssantos <ssantos@web.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/f-droid/website-docs/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.15.1-dev\n"
+"X-Generator: Weblate 4.15.1\n"
 
 #. type: YAML Front Matter: title
 #: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
@@ -9287,28 +9287,28 @@ msgstr "Siehe auch [dieses GitLab-Ticket](https://gitlab.com/fdroid/fdroiddata/-
 #: _docs/Reproducible_Builds.md
 #, no-wrap
 msgid "Bug: Android Studio builds have non-deterministic ZIP ordering"
-msgstr ""
+msgstr "Fehler: Android Studio-Builds haben eine nicht-deterministische ZIP-Reihenfolge"
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
 msgid "When building APKs with Android Studio, the ordering of the ZIP entries in the APK can be different from that of APKs built by invoking `gradle` directly, affecting reproducibility; the ordering can be completely non-deterministic, even differing between different builds of the same source code."
-msgstr ""
+msgstr "Bei der Erstellung von APKs mit Android Studio kann die Reihenfolge der ZIP-Einträge in der APK anders sein als bei APKs, die durch den direkten Aufruf von `gradle` erstellt wurden, was die Reproduzierbarkeit beeinträchtigt; die Reihenfolge kann völlig unbestimmt sein und sich sogar zwischen verschiedenen Builds desselben Quellcodes unterscheiden."
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
 msgid "A workaround is to invoke `gradle` directly (as during F-Droid or CI builds), bypassing Android Studio:"
-msgstr ""
+msgstr "Ein Workaround ist der direkte Aufruf von `gradle` (wie bei F-Droid oder CI-Builds) unter Umgehung von Android Studio:"
 
 #. type: Fenced code block (console)
 #: _docs/Reproducible_Builds.md
 #, no-wrap
 msgid "$ ./gradlew assembleRelease\n"
-msgstr ""
+msgstr "$ ./gradlew assembleRelease\n"
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
 msgid "NB: depending on your signing configuration, this may require signing the APK with `apksigner` afterwards, since signing is not performed by Android Studio in this case."
-msgstr ""
+msgstr "NB: Je nach Ihrer Signierkonfiguration kann es erforderlich sein, die APK anschließend mit `apksigner` zu signieren, da die Signierung in diesem Fall nicht von Android Studio durchgeführt wird."
 
 #. type: Title ####
 #: _docs/Reproducible_Builds.md
@@ -9324,7 +9324,7 @@ msgstr "[Non-stable `assets/dexopt/baseline.profm`](https://issuetracker.google.
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
 msgid "See also [this writeup of a potential workaround being investigated](https://gist.github.com/obfusk/61046e09cee352ae6dd109911534b12e)."
-msgstr ""
+msgstr "Siehe auch [diesen Bericht über eine mögliche Abhilfe, die derzeit untersucht wird](https://gist.github.com/obfusk/61046e09cee352ae6dd109911534b12e)."
 
 #. type: Title ####
 #: _docs/Reproducible_Builds.md
@@ -9341,17 +9341,17 @@ msgstr "In einigen Fällen sind Builds nicht reproduzierbar aufgrund eines [Fehl
 #: _docs/Reproducible_Builds.md
 #, no-wrap
 msgid "Concurrency: reproducibility can depend on the number of CPUs/cores"
-msgstr ""
+msgstr "Parallelität: Die Reproduzierbarkeit kann von der Anzahl der CPUs/Kerne abhängen"
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
 msgid "This can affect `.dex` files (though that seems to be rare) or native code (e.g.  Rust)."
-msgstr ""
+msgstr "Dies kann `.dex` Dateien (obwohl dies selten zu sein scheint) oder nativen Code (z.B. Rust) betreffen."
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
 msgid "Using only 1 CPU/core as a workaround:"
-msgstr ""
+msgstr "Verwendung von nur 1 CPU/Kern als Workaround:"
 
 #. type: Fenced code block (console)
 #: _docs/Reproducible_Builds.md
@@ -9361,16 +9361,19 @@ msgid ""
 "export CPUS=$(getconf _NPROCESSORS_ONLN)\n"
 "for (( c=$CPUS_MAX; c<$CPUS; c++ )) ; do echo 0 > /sys/devices/system/cpu/cpu$c/online; done\n"
 msgstr ""
+"export CPUS_MAX=1\n"
+"export CPUS=$(getconf _NPROCESSORS_ONLN)\n"
+"for (( c=$CPUS_MAX; c<$CPUS; c++ )) ; do echo 0 > /sys/devices/system/cpu/cpu$c/online; done\n"
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
 msgid "NB: this workaround affects the entire machine, so using it in a non-persistent virtual machine or container is recommended."
-msgstr ""
+msgstr "Hinweis: Diese Umgehung wirkt sich auf die gesamte Maschine aus, daher wird empfohlen, sie in einer nicht-persistenten virtuellen Maschine oder einem Container zu verwenden."
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
 msgid "For Rust code, you can set [`codegen-units = 1`](https://doc.rust-lang.org/rustc/codegen-options/index.html#codegen-units)."
-msgstr ""
+msgstr "Für Rust-Code können Sie [`codegen-units = 1`](https://doc.rust-lang.org/rustc/codegen-options/index.html#codegen-units) einstellen."
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
@@ -9489,17 +9492,17 @@ msgstr "Zu beachten ist, dass Werkzeuge wie `svgo` ähnliche Optimierungen an SV
 #: _docs/Reproducible_Builds.md
 #, no-wrap
 msgid "PNGs generated from vector drawables"
-msgstr ""
+msgstr "PNGs, die aus Vektorgrafiken erzeugt wurden"
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
 msgid "[Android Gradle plugin generates PNG resources from vector drawables for old Android versions](https://developer.android.com/reference/tools/gradle-api/7.3/com/android/build/api/dsl/VectorDrawables#generateddensities).  Unfortunately, the generated PNG files are not reproducible."
-msgstr ""
+msgstr "[Android Gradle Plugin generiert PNG-Ressourcen aus Vektor-Drawables für alte Android-Versionen](https://developer.android.com/reference/tools/gradle-api/7.3/com/android/build/api/dsl/VectorDrawables#generateddensities).  Leider sind die generierten PNG-Dateien nicht reproduzierbar."
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
 msgid "You can disable generating the PNGs by adding this to `build.gradle`:"
-msgstr ""
+msgstr "Sie können die Generierung der PNGs deaktivieren, indem Sie dies zu `build.gradle` hinzufügen:"
 
 #. type: Fenced code block (gradle)
 #: _docs/Reproducible_Builds.md
