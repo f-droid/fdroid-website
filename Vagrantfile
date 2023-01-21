@@ -44,6 +44,10 @@ Vagrant.configure("2") do |config|
   config.vm.provision :shell, inline: <<-SHELL
     set -ex
 
+    # make sure jekyll doesn't crash when it tries to register a ton of inotfy watches
+    echo fs.inotify.max_user_watches=524288 >> /etc/sysctl.conf
+    sysctl -p
+
     apt-get --allow-releaseinfo-change-suite update  # buster went from stable to oldstable
     apt-get -qy remove grub-pc  # updating grub requires human interaction
     apt-get -qy install git
