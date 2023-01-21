@@ -83,6 +83,8 @@ Then connect to http://localhost:4000 to see the generated site.
 If you want to use the official Git repository again,
 run `bundle config --delete local.jekyll-fdroid`.
 
+Alternatively you may also set the `jekyll-fdroid` dependeny line in Gemfile to
+your local clone, e.g.: `gem 'jekyll-fdroid', :path => './jekyll-fdroid'`
 
 ## License
 
