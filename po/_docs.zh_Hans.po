@@ -26,15 +26,15 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
 "POT-Creation-Date: 2023-01-19 22:17+0100\n"
-"PO-Revision-Date: 2023-01-16 20:59+0000\n"
-"Last-Translator: JY3 <GeeyunJY3@gmail.com>\n"
+"PO-Revision-Date: 2023-01-21 13:59+0000\n"
+"Last-Translator: Eric <hamburger2048@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Chinese (Simplified) <https://hosted.weblate.org/projects/f-droid/website-docs/zh_Hans/>\n"
 "Language: zh_Hans\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 4.15.1-dev\n"
+"X-Generator: Weblate 4.15.1\n"
 
 #. type: YAML Front Matter: title
 #: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
@@ -107,7 +107,7 @@ msgstr "许可"
 #. type: Bullet: '* '
 #: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
 msgid "a What's New entry for at least one release"
-msgstr "至少有一个版本的更新内容"
+msgstr "至少一个版本的更新内容条目"
 
 #. type: Bullet: '* '
 #: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
@@ -2345,7 +2345,7 @@ msgstr "_Liberapay_<a name=\"Liberapay\"></a><a name=\"LiberapayID\"></a>"
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 msgid "The project's Liberapay (https://liberapay.com) user or group name, if it has one. This should be an alphanumeric name, such that (for example) https://liberapay.com/xxxxx which redirects to your account page. This used to be _LiberapayID_, which was a numeric ID fetched from Liberapay's site by adding /public.json behind your team page."
-msgstr "项目的 Liberapay (https://liberapay.com) 用户或组名，如果有的话。这应该是一个由字母数字组成的名字，使（例如）https://liberapay.com/xxxxx 可以重定向到你的账户页面。这曾经是_LiberapayID_，通过在你的团队页面后面添加 /public.json 从 Liberapay 的网站获取的一个数字 ID。"
+msgstr "项目的 Liberapay (https://liberapay.com) 用户或组名，如果有的话。这应该是一个由字母数字组成的名字，使（例如）https://liberapay.com/xxxxx 可以重定向到你的账户页面。这曾经是 _LiberapayID_，通过在你的团队页面后面添加 /public.json 从 Liberapay 网站获取的一个数字 ID。"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -2662,7 +2662,10 @@ msgid ""
 ":   Disables this build, giving a reason why. (For backwards\n"
 "    compatibility, this can also be achieved by starting the commit ID\n"
 "    with '!')\n"
-msgstr "：禁用此构建，并给出原因。(为了向后兼容，这也可以通过以 '!' 开头的提交 ID来实现）。\n"
+msgstr ""
+":      禁用此构建，并给出原因。\n"
+"        (如果是为了向后兼容，\n"
+"        也可以通过以 '!' 开头启动 commit ID来实现）\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -3583,13 +3586,7 @@ msgstr "    目前它只适用于 git，hg，bzr 和 git-svn 存储库。在后�
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-#, fuzzy, no-wrap
-#| msgid ""
-#| "    Optionally append a regex pattern at the end - separated with a\n"
-#| "    space - to only check the tags matching said pattern. Useful when\n"
-#| "    apps tag non-release versions such as X.X-alpha, so you can filter\n"
-#| "    them out with something like `.*[0-9]$` which requires tag names to\n"
-#| "    end with a digit.\n"
+#, no-wrap
 msgid ""
 "    Optionally append a regex pattern at the end - separated with a\n"
 "    space - to only check the tags matching said pattern. Useful when\n"
@@ -3597,7 +3594,13 @@ msgid ""
 "    them out with something like `.*[0-9]$` which requires tag names to\n"
 "    end with a digit.\n"
 "    Example: `UpdateCheckMode: Tags .*[0-9]$`\n"
-msgstr "    可选择在末尾添加一个正则模式 - 用一个空格隔开 - 以只检查与该模式相匹配的标签。当应用标记非发布版本（如 X.X-alpha）时非常有用，因此你可以用 `.*[0-9]$` 这样需要标签名称以数字结尾的模式过滤掉它们。\n"
+msgstr ""
+"    要只检查匹配特定正则表达式的标签，\n"
+"        只需在末尾添加相应的正则模式即可，\n"
+"        不同模式间用空格隔开 。\n"
+"        这在应用标签为非发布版本（如 X.X-alpha）时非常有用，\n"
+"        你可以用 `.*[0-9]$` 这样的正则表达式来筛掉不是以数字结尾的标签名。\n"
+"        示例：`UpdateCheckMode: Tags .*[0-9]$`\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -3777,33 +3780,27 @@ msgstr "这决定了在有新版本时自动生成新构建的方法 - 换句话
 
 #. type: Bullet: '-   '
 #: _docs/Build_Metadata_Reference.md
-#, fuzzy
-#| msgid "`None` - No auto-updating is done"
 msgid "`None` - Auto-updating is disabled"
-msgstr "`None` - 不进行自动更新"
+msgstr "`None` - 自动更新被禁用"
 
 #. type: Bullet: '-   '
 #: _docs/Build_Metadata_Reference.md
-#, fuzzy
-#| msgid "`None` - No auto-updating is done"
 msgid "`Version` - Auto-updating is enabled."
-msgstr "`None` - 不进行自动更新"
+msgstr "`Version` - 已启用自动更新。"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-#, fuzzy, no-wrap
-#| msgid ""
-#| "    If UpdateCheckMode is set to `Tags` the generator string behind `Version`\n"
-#| "    is optional and not used for the `commit:` field.\n"
+#, no-wrap
 msgid ""
 "    If `UpdateCheckMode` is set to `Tags`, this should be set to\n"
 "    `Version` without any pattern. The checked tag is used directly.\n"
-msgstr "    如果 UpdateCheckMode 被设置为 `Tags`，那么 `Version` 后面的生成器字符串是可选的，并且不用于 `commit:` 字段。\n"
+msgstr ""
+"    如 `UpdateCheckMode` 设为 `Tags`，那么这个应设为\n"
+"    `Version`，不带任何正则模式。 勾选的标签被直接使用。\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-#, fuzzy, no-wrap
-#| msgid "`Version` - Generates a value (tag name) used for the `commit:` property of new build blocks. It is simply text in which %v and %c are replaced with the required version name and version code respectively. The resulting string must match an existing tag in the app's repo, which then will be used by F-Droid to build the corresponding version."
+#, no-wrap
 msgid ""
 "    If `UpdateCheckMode` is set to `HTTP`, a pattern should be added\n"
 "    after the `Version`. The pattern is used to generate a value\n"
@@ -3812,50 +3809,54 @@ msgid ""
 "    version name and version code respectively. The resulting\n"
 "    string must match an existing tag in the app's repo, which then will be\n"
 "    used by F-Droid to build the corresponding version.\n"
-msgstr "`Version` - 产生一个用于新构建块的 `commit:` 属性的值（标签名）。它是简单的文本，其中 %v 和 %c 分别被替换成所需的版本名称和版本代码。产生的字符串必须与应用存储库中的现有标签相匹配，然后 F-Droid 将使用该标签来构建相应的版本。"
+msgstr ""
+"    如 `UpdateCheckMode` 设为 `HTTP`，\n"
+"        那么应在 `Version` 之后添加一个模式。\n"
+"        该模式用来生成一个用于新构建块的 `commit:` 属性的值（标签名）。\n"
+"        它是简单的文本，\n"
+"        其中 `%v` 和 `%c` 分别被替换成所需的版本名称和版本代码。\n"
+"        产生的字符串必须与应用存储库中的现有标签相匹配，\n"
+"        然后 F-Droid 将使用该标签来构建相应的版本。\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-#, fuzzy, no-wrap
-#| msgid ""
-#| "    For example, if an app always has a tag \"2.7.2\" corresponding to\n"
-#| "    version 2.7.2, you would simply specify \"Version %v\". If an app\n"
-#| "    always has a tag \"ver\\_1234\" for a version with version code 1234,\n"
-#| "    you would specify \"Version ver\\_%c\".\n"
+#, no-wrap
 msgid ""
 "    For example, if an app always has a tag `2.7.2` corresponding to\n"
 "    version 2.7.2, you would simply specify `Version %v`. If an app\n"
 "    always has a tag `ver_1234` for a version with version code 1234,\n"
 "    you would specify `Version ver_%c`.\n"
-msgstr "    例如，如果一个应用总是有一个标签 \"2.7.2\" 对应于 2.7.2 版本，你可以简单地指定 \"Version %v\"。如果一个应用总是有一个标签 \"ver\\_1234\" 表示版本代码为 1234 的版本，你可以指定 \"Version ver\\_%c\"。\n"
+msgstr ""
+"    例如，如果一个应用总是有一个标签 `2.7.2` 对应于 2.7.2 版本，\n"
+"        你可以简单地指定 `Version %v`。\n"
+"        如果一个应用总是有一个标签 `ver_1234` 表示版本代码为 1234 的版本，\n"
+"        你可以指定 `Version ver_%c`。\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-#, fuzzy, no-wrap
-#| msgid ""
-#| "    Continuing the first example above, you would specify that as \"Version\n"
-#| "    +-fdroid %v\" - \"-fdroid\" is the suffix F-Droid will then append to the\n"
-#| "    `versionName` specified in e.g. `build.gradle` when building the APK.\n"
+#, no-wrap
 msgid ""
 "    Continuing the first example above, you would specify that as\n"
 "    `Version +-fdroid %v` - `-fdroid` is the suffix F-Droid will then append to the\n"
 "    `versionName` specified in e.g. `build.gradle` when building the APK.\n"
-msgstr "    继续上面的第一个例子，你可以将其指定为 \"Version +-fdroid %v\" - \"-fdroid\" 是 F-Droid 将在构建 APK 时附加到例如在 `build.gradle`中指定的 `versionName` 的后缀。\n"
+msgstr ""
+"    继续上面的第一个例子，\n"
+"        你可以将其指定为 `Version +-fdroid %v` - `-fdroid` 是 F-Droid 将在构建 APK 时\n"
+"        附加到例如在 `build.gradle`中指定的 `versionName` 的后缀。\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-#, fuzzy, no-wrap
-#| msgid ""
-#| "    Additionally, a suffix can be added to the version name at this\n"
-#| "    stage, to differentiate F-Droid's build from the original.\n"
-#| "    Continuing the first example above, you would specify that as\n"
-#| "    \"Version +-fdroid %v\" - \"-fdroid\" is the suffix.\n"
+#, no-wrap
 msgid ""
 "    Additionally, a suffix can be added to the version name at this\n"
 "    stage, to differentiate F-Droid's build from the original.\n"
 "    Continuing the first example above, you would specify that as\n"
 "    `Version +-fdroid %v` - `-fdroid` is the suffix.\n"
-msgstr "    此外，在这个阶段，可以在版本名称中添加一个后缀，以区分 F-Droid 的构建和原始版本。继续上面的第一个例子，你可以将其指定为 \"Version +-fdroid %v\" - \"-fdroid\" 为后缀。\n"
+msgstr ""
+"    此外，在这个阶段，\n"
+"        可以在版本名称中添加一个后缀，\n"
+"        以区分 F-Droid 的构建和原始版本。\n"
+"        继续上面的第一个例子，你可以将其指定为 `Version +-fdroid %v` - `-fdroid` 为后缀。\n"
 
 #. type: Title ###
 #: _docs/Build_Metadata_Reference.md
@@ -9162,10 +9163,8 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
-#, fuzzy
-#| msgid "See also [this gitlab issue](https://gitlab.com/fdroid/fdroiddata/-/issues/2816)."
 msgid "See also [this gitlab issue](https://gitlab.com/fdroid/rfp/-/issues/1519#note_1226216164)."
-msgstr "另见 [这个 gitlab issue](https://gitlab.com/fdroid/fdroiddata/-/issues/2816)。"
+msgstr "另见 [这个 gitlab issue](https://gitlab.com/fdroid/rfp/-/issues/1519#note_1226216164)。"
 
 #. type: Title ####
 #: _docs/Reproducible_Builds.md
@@ -9291,13 +9290,7 @@ msgstr ""
 
 #. type: Fenced code block (gradle)
 #: _docs/Reproducible_Builds.md
-#, fuzzy, no-wrap
-#| msgid ""
-#| "android {\n"
-#| "    aaptOptions {\n"
-#| "        cruncherEnabled = false\n"
-#| "    }\n"
-#| "}\n"
+#, no-wrap
 msgid ""
 "android {\n"
 "    defaultConfig {\n"
