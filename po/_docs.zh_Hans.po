@@ -26,7 +26,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
 "POT-Creation-Date: 2023-01-19 22:17+0100\n"
-"PO-Revision-Date: 2023-01-21 13:59+0000\n"
+"PO-Revision-Date: 2023-01-22 12:53+0000\n"
 "Last-Translator: Eric <hamburger2048@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Chinese (Simplified) <https://hosted.weblate.org/projects/f-droid/website-docs/zh_Hans/>\n"
 "Language: zh_Hans\n"
@@ -2664,8 +2664,8 @@ msgid ""
 "    with '!')\n"
 msgstr ""
 ":      禁用此构建，并给出原因。\n"
-"        (如果是为了向后兼容，\n"
-"        也可以通过以 '!' 开头启动 commit ID来实现）\n"
+"        (如果出于向后兼容目的，\n"
+"        也可以通过以 '!' 开头的 commit ID 实现）\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -2677,7 +2677,13 @@ msgid ""
 "    information for review later). If an APK has already been built,\n"
 "    disabling causes it to be deleted once `fdroid update` is run; this\n"
 "    is the procedure if ever a version has to be replaced.\n"
-msgstr "    这个功能的目的是让不可编译的版本（比如说源代码没有发布）被标记出来，这样脚本就不会产生关于它们的重复信息。(同时也是为了记录这些信息以便日后审查）。如果一个 APK 已经被构建了，禁用会导致它在 `fdroid update` 运行后被删除；这是如果有一个版本需要被替换时所需的步骤。\n"
+msgstr ""
+"    这个功能的目的是让不可编译的版本（比如说源代码没有发布）被标记出来，\n"
+"        这样脚本就不会产生关于它们的重复信息。\n"
+"        (同时也是为了记录这些信息以便日后查阅）。\n"
+"        如果一个 APK 已经被构建了，\n"
+"        禁用会导致它在 `fdroid update` 运行后被删除；\n"
+"        这是的确需要替换一个版本时所需的步骤。\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -2765,7 +2771,9 @@ msgstr "`init: xxxx`<a name=\"build_init\"></a>\n"
 msgid ""
 ":   Like 'prebuild', but runs on the source code BEFORE any other\n"
 "    processing takes place.\n"
-msgstr "：与 'prebuild' 类似，但在任何其他处理发生之前在源代码上运行。\n"
+msgstr ""
+":   与 'prebuild' 类似，但在任何其他处理发生之前\n"
+"    在源代码上运行。\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -2802,7 +2810,12 @@ msgid ""
 "    format is sdk-location. Typically, if you get a message along the\n"
 "    lines of: \"com.android.ant.SetupTask cannot be found\" when trying to\n"
 "    build, then try enabling this option.\n"
-msgstr "：存储库中的 sdk 位置是旧格式的，或者 build.xml 希望是这样。新的 格式是 sdk.dir 而非常老的格式是 sdk-location。通常情况下，如果当你试图构建时得到一个这样的信息：\"com.android.ant.SetupTask cannot be found \"，尝试启用这个选项。\n"
+msgstr ""
+":  存储库中的 sdk 位置是旧格式，或者 build.xml\n"
+"    期望如此。 新格式是 sdk.dir ，而非常旧的\n"
+"    格式是 sdk-location。通常而言，如果当你试图\n"
+"    构建时，得到 \"com.android.ant.SetupTask cannot be found\"\n"
+"    消息，请尝试启用此选项。\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -2852,7 +2865,11 @@ msgid ""
 "    update the project and all its referenced projects. Specifying\n"
 "    update=no bypasses that. Note that this is useless in builds that\n"
 "    don't use Ant.\n"
-msgstr "：默认情况下，'android update' 在 Ant 构建中被用来生成或更新该项目及其所有引用的项目。指定 update=no 可以跳过此步骤。请注意，这在不使用 Ant 的构建中不起作用。\n"
+msgstr ""
+":   默认情况下， 'android update' 在 Ant 构建中用来生成或\n"
+"    更新项目及其所有引用的项目。 指定\n"
+"    update=no 可以绕过这个。 请注意，在不使用\n"
+"    Ant 的构建中，这不起作用。\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -2860,7 +2877,9 @@ msgstr "：默认情况下，'android update' 在 Ant 构建中被用来生成�
 msgid ""
 "    Default value is '`auto`', which recursively uses the paths in\n"
 "    _project.properties_ to find all the subprojects to update.\n"
-msgstr "    默认值是 '`auto`'，它递归地使用 _project.properties_ 中的路径找到所有要更新的子项目。\n"
+msgstr ""
+"    默认值是 '`auto`'，\n"
+"    它以递归的方式地使用 _project.properties_ 中的路径找到所有要更新的子项目。\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -2868,7 +2887,9 @@ msgstr "    默认值是 '`auto`'，它递归地使用 _project.properties_ 中�
 msgid ""
 "    Otherwise, the value can be a comma-separated list of directories in\n"
 "    which to run 'android update' relative to the application directory.\n"
-msgstr "    否则，该值可以是一个以逗号分隔的相对于应用文件夹的文件夹列表，在其中运行 'android update'。\n"
+msgstr ""
+"    除此之外，这个值可以是目录组成的列表，目录名之间用英文逗号隔开。\n"
+"    在这些目录中相对于应用程序目录运行 'android update'。\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -2885,7 +2906,12 @@ msgid ""
 "    by the SDK's ant rules, and forces the Java compiler to interpret\n"
 "    source files with this encoding. If you receive warnings during the\n"
 "    compile about character encodings, you probably need this.\n"
-msgstr "：在 local.properties 中添加一个 java.encoding 属性，其值为给定的值。一般来说，这个值是 'utf-8'。这将被 SDK 的 ant 规则接收，并强制 Java 编译器使用这个编码解释源文件。如果你在编译过程中收到关于字符编码的警告，你可能需要这个。\n"
+msgstr ""
+":   用给定的值添加一个 java.encoding 属性到 local.properties\n"
+"   。这个值的编码通常会是 'utf-8'。这是由\n"
+"    SDK 的 ant 规则挑选的，并强迫 Java 编译器用这个编码\n"
+"    解释源文本。如果你在编译期间收到\n"
+"    有关字符编码的警告，你可能需要这个。\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -2949,7 +2975,9 @@ msgstr "：指定构建之前删除的文件或文件夹的相对路径。这些
 msgid ""
 "    Multiple files/directories can be specified by separating them with\n"
 "    ','. Directories will be recursively deleted.\n"
-msgstr "    可以用 ',' 分隔指定多个文件/文件夹。文件夹将被递归删除。\n"
+msgstr ""
+"    可以指定多个文件/目录，方法是用\n"
+"    ',' 分隔它们。目录将以递归的方式被删除。\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -3048,7 +3076,11 @@ msgid ""
 "    within a directory below the metadata, with the same name as the\n"
 "    metadata file but without the extension. Each of these patches is\n"
 "    applied to the code in turn.\n"
-msgstr "：应用补丁。'x' 命名一个（或多个 - 以逗号分隔的）在 metadata 下面的一个与元数据文件同名但没有扩展名的文件夹中的文件。每个补丁中的每一个都被依次应用到代码中。\n"
+msgstr ""
+":   应用一个或多个补丁。 'x' 指定一个 (或多个 - 用英文逗号分隔) metadata\n"
+"    下方目录中的文件，文件名与 metadata 文件相同，区别是没有\n"
+"    扩展名。这些补丁中的每一个\n"
+"    都被依次应用到代码中。\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -3082,7 +3114,11 @@ msgid ""
 "    scanning of the code and building of the source tarball, for\n"
 "    example, take place after this. For custom actions that actually\n"
 "    build things or produce binaries, use 'build' instead.\n"
-msgstr "    请注意，在此预构建阶段不应构建任何内容 - 例如，代码扫描和源代码包构建在此之后发生。对于实际执行构建或生成二进制文件的自定义操作，请使用 'build'。\n"
+msgstr ""
+"    请注意，在此预构建阶段不应构建任何内容 -\n"
+"    比如，扫描代码和构建 source tarball 在\n"
+"    这之后发生。对于实际执行构建或生成二进制文件的自定义操作，\n"
+"    请使用 'build'。\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -3170,7 +3206,11 @@ msgid ""
 "    before the main Ant/Maven build). Use this only for actions that do\n"
 "    actual building. Any preparation of the source code should be done\n"
 "    using 'init' or 'prebuild'.\n"
-msgstr "：类似于 'prebuild'，但在实际构建阶段（但在主要的 Ant/Maven 构建之前）运行。仅将其用于执行实际构建的操作。任何源代码的准备工作都应该使用 'init' 或 'prebuild' 完成。\n"
+msgstr ""
+":   类似 'prebuild'，但在实际构建阶段期间运行 (不过在主 Ant/Maven 构建前)。 \n"
+"    请只对进行实际构建的操作使用它。\n"
+"    任何的源码准备都应使用\n"
+"    'init' 或 'prebuild' 来完成。\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -3210,7 +3250,12 @@ msgid ""
 "    relative to the main application directory in which to run\n"
 "    ndk-build, or 'yes' which corresponds to '.' . Using explicit list\n"
 "    may be useful to build multi-component projects.\n"
-msgstr "：在进行主 Ant 构建之前，通过 _ndk-build_ 脚本启用本地代码的构建。该值可以是一个用于运行 ndk-build 的相对于主应用文件夹的文件夹列表，或者是对应于 '.' 的 'yes'。使用明确的列表对构建多组件项目很有用。\n"
+msgstr ""
+":   执行主 Ant 构建前，通过 _ndk-build_ 脚本启用本地代码的构建。\n"
+"    值可以是由相对于主应用程序的多个目录组成的列表，\n"
+"    在这些目录中运行 ndk-build 命令，或者是\n"
+"    对应于 '.' 的 'yes'。\n"
+"    使用明确的列表对构建多组件项目很有用。\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -3224,7 +3269,15 @@ msgid ""
 "    (using `rm=jni` for example). Using `buildjni=no` when the jni code\n"
 "    isn't used nor built will result in an error saying that native\n"
 "    libraries were expected in the resulting package.\n"
-msgstr "    如果这个参数没有被定义，但是有一个`jni`目录存在，构建和扫描过程将报错（拒绝构建）。如果本机代码是通过其他方式（如 Gradle 任务）构建的。你可以在这里指定 `no` 来避免这种情况。然而，如果本机代码实际上是不需要或不使用的，请删除该目录（例如，使用`rm=jni`）。当 jni 代码不被使用也不被构建时使用 `buildjni=no` 将会导致一个错误，即在生成的包中预期有本地库。\n"
+msgstr ""
+"    如果此参数未定义，却存在一个 `jni` 目录的话，\n"
+"    构建和扫描过程会抱怨 (拒绝进行构建) 。如果\n"
+"    本机代码正由 Gradle 任务等其他方式构建，\n"
+"    你可以在此处指定 `no` 来避免这种情况。不过，如果实际上本机代码\n"
+"    不是必需的或不被使用，那么请删除该目录\n"
+"    (比如使用 `rm=jni`)。当 jni 代码既未被使用也未被\n"
+"    构建时使用 `buildjni=no` 会导致一条错误信息，表示\n"
+"    生成的包中预期有本地库。\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -3267,7 +3320,11 @@ msgid ""
 "    used. Note that for projects with flavours, you must specify at\n"
 "    least one valid flavour since 'yes' will build all of\n"
 "    them separately.\n"
-msgstr "    如果只给了一种 flavour，而且是 'yes'，则不使用任何 flavour。请注意，对于有 flavour 的项目，你必须指定至少一个有效的 flavour，因为 'yes' 将分别构建所有的 flavour。\n"
+msgstr ""
+"    如果只给定一种 flavour 而且是 'yes' 的话，则没有 flavour 会被\n"
+"    使用。请注意，对于有 flavours 的项目，你必须指定至少\n"
+"    一种有效的 flavour， 因为 'yes' 会分别\n"
+"    构建所有的 flavor。\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -3333,7 +3390,10 @@ msgid ""
 ":   Specify an alternate set of Ant commands (target) instead of the\n"
 "    default 'release'. It can't be given any flags, such as the path to\n"
 "    a _build.xml_.\n"
-msgstr "：指定另一套 Ant 命令 (target)，而不是默认的 'release'。它不能被赋予任何标志，比如 _build.xml_ 的路径。\n"
+msgstr ""
+":   指定另一套 Ant 命令 (target) 而非\n"
+"    默认的 'release'。它不能被赋予任何标记， 比如\n"
+"    _build.xml_ 的路径。\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -3366,7 +3426,11 @@ msgid ""
 "    correct by looking at the build output - assume the metadata\n"
 "    is correct. This takes away a useful level of sanity checking, and\n"
 "    should only be used if the values can't be extracted.\n"
-msgstr "：不要检查生成的 APK 中的版本名称和代码是否正确 - 假设元数据是正确的。这取消了一个有用的合理检查，并且只有在无法提取数值的情况下才应使用。\n"
+msgstr ""
+":   不要通过查看构建输出来检查生成的 APK 的版本名和代码是否正确\n"
+"    - 假设元数据是正确的\n"
+"    。这样的做法剥夺了有用级别的 sanity 检查，\n"
+"    应该只有在无法提取数值的情况下才这么做。\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -3563,7 +3627,15 @@ msgid ""
 "    stays in the same branch). On the other hand, branch support hasn't\n"
 "    been implemented yet in bzr and svn, but _RepoManifest_ may still be\n"
 "    used without it.\n"
-msgstr "    目前，它在不同程度上适用于除了 srclib 存储库类型以外的每种存储库类型。对于 git，git-svn 和 hg 存储库类型，你可以用 \"RepoManifest/yourbranch\" 作为 _UpdateCheckMode_，这样 \"yourbranch\" 就会被用来代替默认分支。git 的默认值是 \"master\"，hg 的默认值是 \"default\"，git-svn 的默认值是 none（它保持在同一分支）。另一方面，分支支持还没有对 bzr 和 svn 实现，但_RepoManifest_ 仍然可以在没有它的情况下使用。\n"
+msgstr ""
+"    目前，它在不同程度上适用于除了 srclib 存储库类型以外的每种存储库类型。\n"
+"    对于 git，git-svn 和 hg 存储库类型，\n"
+"    你可以用 \"RepoManifest/yourbranch\" 作为 _UpdateCheckMode_，\n"
+"    这样 \"yourbranch\" 就会被用来代替默认分支。\n"
+"    git 的默认值是 \"master\"，hg 的默认值是 \"default\"，\n"
+"    git-svn 的默认值是 none（它保持在同一分支）。\n"
+"    另一方面，分支支持还没有在 bzr 和 svn 中实现，\n"
+"    但_RepoManifest_ 仍然可以在没有它的情况下使用。\n"
 
 #. type: Bullet: '-   '
 #: _docs/Build_Metadata_Reference.md
@@ -3635,7 +3707,12 @@ msgid ""
 "    the first group becoming the version name. The `urlver` field can be\n"
 "    set to simply '.' which says to use the same document returned for\n"
 "    the version code again, rather than retrieving a different one.\n"
-msgstr "    其次，如果 `urlver` 不是空的，则获取该 URL 中的文件，并与正则表达式 `exver` 相匹配，其中第一个匹配组为版本名称。`urlver` 字段可以被设置为简单的 '.'，这表示和版本代码使用同一文件而不是获取另一个。\n"
+msgstr ""
+"    其次，如果 `urlver` 不是空的，\n"
+"    则获取该 URL 中的文档，\n"
+"    并与正则表达式 `exver` 进行匹配，其中第一组成为版本名。\n"
+"    `urlver` 字段可以简单设置为 '.'，\n"
+"    表示和版本代码使用同一文件而不是获取另一个。\n"
 
 #. type: Title ###
 #: _docs/Build_Metadata_Reference.md
