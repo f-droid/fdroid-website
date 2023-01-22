@@ -13,7 +13,7 @@
 # Calcitem <calcitem@outlook.com>, 2021, 2022.
 # Eric <alchemillatruth@purelymail.com>, 2022.
 # Hans-Christoph Steiner <hans@guardianproject.info>, 2022.
-# linsui <linsui@inbox.lv>, 2022.
+# linsui <linsui@inbox.lv>, 2022, 2023.
 # yangyangdaji <1504305527@qq.com>, 2022.
 # Xu ZhuoHan <yylteam@hotmail.com>, 2022.
 # Eric <hamburger1024@duck.com>, 2022.
@@ -24,15 +24,15 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
 "POT-Creation-Date: 2023-01-19 22:17+0100\n"
-"PO-Revision-Date: 2023-01-21 13:59+0000\n"
-"Last-Translator: Eric <hamburger2048@users.noreply.hosted.weblate.org>\n"
+"PO-Revision-Date: 2023-01-24 21:16+0000\n"
+"Last-Translator: linsui <linsui@inbox.lv>\n"
 "Language-Team: Chinese (Simplified) <https://hosted.weblate.org/projects/f-droid/website-posts/zh_Hans/>\n"
 "Language: zh_Hans\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 4.15.1\n"
+"X-Generator: Weblate 4.16-dev\n"
 
 #. type: YAML Front Matter: title
 #: _posts/2017-02-20-f-droid-supports-apk-expansion-files-aka-obb.md
@@ -18626,7 +18626,7 @@ msgstr "第三次审计结果"
 #. type: Plain text
 #: _posts/2022-12-22-third-audit-results.md
 msgid "We received an audit on the new \"index-v2\" work in official Android client app + API (3 days) and the new front end webserver setup (1 day).  There were no findings for the webserver setup, so the analysis in this post deals with the F-Droid client app.  The audit was conducted by [Radically Open Security](https://www.radicallyopensecurity.com), which is a natural partner for F-Droid since they share a focus on free software and open processes.  Thanks to [NLnet](https://nlnet.nl) for finding the auditor and covering the costs of hiring them.  We are making the original report available for [download]({% asset posts/2022-12-22-third-audit-results/report_nlnet-ngip-trackingthetrackers.pdf %})."
-msgstr ""
+msgstr "我们收到了对官方 Android 客户端应用 + API（3 天）和新前端网络服务器设置（1 天）中新 \"index-v2\" 工作的审计。在网络服务器设置中没有发现问题，因此本文中的分析涉及 F-Droid 客户端应用。审计由 [Radically Open Security](https://www.radicallyopensecurity.com) 进行，它是 F-Droid 的天然合作伙伴，因为他们同样关注自由软件和开放流程。感谢 [NLnet](https://nlnet.nl) 找到审计员并支付雇用他们的费用。我们提供原始报告以供[下载]({% asset posts/2022-12-22-third-audit-results/report_nlnet-ngip-trackingthetrackers.pdf %})。"
 
 #. type: Plain text
 #: _posts/2022-12-22-third-audit-results.md
@@ -18637,44 +18637,44 @@ msgstr "这篇文章是本着以开诚布公的精神对待每个漏洞风险的
 #: _posts/2022-12-22-third-audit-results.md
 #, no-wrap
 msgid "CLN-002 -- XML parsers might be vulnerable to XXE attacks"
-msgstr ""
+msgstr "CLN-002 -- XML 解析器可能容易受到 XXE 攻击"
 
 #. type: Bullet: '* '
 #: _posts/2022-12-22-third-audit-results.md
 msgid "Vulnerability type: Input validation"
-msgstr ""
+msgstr "漏洞类型：输入验证"
 
 #. type: Bullet: '* '
 #: _posts/2022-12-22-third-audit-results.md
 msgid "Threat level: Elevated"
-msgstr ""
+msgstr "威胁等级：高"
 
 #. type: Plain text
 #: _posts/2022-12-22-third-audit-results.md
 msgid "The application's XML parser implementation might be vulnerable to XML External Entity (XXE) attacks."
-msgstr ""
+msgstr "应用的 XML 解析器实现可能容易受到 XML 外部实体 (XXE) 攻击。"
 
 #. type: Title ####
 #: _posts/2022-12-22-third-audit-results.md
 #, no-wrap
 msgid "Impact"
-msgstr ""
+msgstr "影响"
 
 #. type: Plain text
 #: _posts/2022-12-22-third-audit-results.md
 msgid "If the XML parser has no restrictions for external and internal entities, then this might lead to arbitrary file disclosures or server-side request forgery (SSRF) vulnerabilities when XML input is parsed."
-msgstr ""
+msgstr "如果 XML 解析器对外部和内部实体没有限制，那么在解析 XML 输入时，这可能会导致任意文件泄露或服务器端请求伪造 (SSRF) 漏洞。"
 
 #. type: Title ###
 #: _posts/2022-12-22-third-audit-results.md
 #, no-wrap
 msgid "Our Response"
-msgstr ""
+msgstr "我们的回应"
 
 #. type: Plain text
 #: _posts/2022-12-22-third-audit-results.md
 msgid "The original index file, the version 0 format, is an XML file generated as part of any repo.  It is available at either _index.xml_ or the more recent signed version at _index.jar_.  Recent versions of the client will always try _index-v1.jar_ first, which is a signed JSON format.  If that is not available, the client will fallback to _index.jar_.  _index.jar_ is also used for the \"nearby\" app swapping functionality.  All of these _index.jar_ files must pass the signature verification before the XML is parsed."
-msgstr ""
+msgstr "原始索引文件，版本 0 格式，是作为任何存储库的一部分生成的 XML 文件。它可以在 _index.xml_ 或 _index.jar_ 的最新签名版本中获得。最新版本的客户端总是会首先尝试 _index-v1.jar_，这是一种签名的 JSON 格式。如果不可用，客户端将回退到 _index.jar_。 _index.jar_ 也用于“附近”应用交换功能。所有这些 _index.jar_ 文件都必须在解析 XML 之前通过签名验证。"
 
 #. type: Plain text
 #: _posts/2022-12-22-third-audit-results.md
