@@ -54,9 +54,9 @@
     {% continue -%}
   {% endif -%}
   {%- if site.baseurl == '' and page.package_name %}
-  <link rel="alternate" hreflang="{{ lang | replace: '_', '-' }}" href='{{ "/" | append: lang | replace: '_', '-' | append: "/packages/" | append: page.package_name | append: "/" | absolute_url }}'>
+  <link rel="alternate" hreflang="{{ lang | replace: '_', '-' }}" href='{{ "/" | append: lang | append: "/packages/" | append: page.package_name | append: "/" | absolute_url }}'>
   {%- elsif site.baseurl == '' %}
-  <link rel="alternate" hreflang="{{ lang | replace: '_', '-' }}" href='{{ "/" | append: lang | replace: '_', '-' | append: page.permalink | replace:'index.html','' | absolute_url }}'>
+  <link rel="alternate" hreflang="{{ lang | replace: '_', '-' }}" href='{{ "/" | append: lang | append: page.permalink | replace:'index.html','' | absolute_url }}'>
   {% endif -%}
 {% endfor -%}
   {%- if page.package_name %}
