@@ -26,7 +26,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
 "POT-Creation-Date: 2023-01-19 22:17+0100\n"
-"PO-Revision-Date: 2023-01-22 12:53+0000\n"
+"PO-Revision-Date: 2023-01-24 21:16+0000\n"
 "Last-Translator: Eric <hamburger2048@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Chinese (Simplified) <https://hosted.weblate.org/projects/f-droid/website-docs/zh_Hans/>\n"
 "Language: zh_Hans\n"
@@ -34,7 +34,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 4.15.1\n"
+"X-Generator: Weblate 4.16-dev\n"
 
 #. type: YAML Front Matter: title
 #: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
@@ -9153,28 +9153,28 @@ msgstr "另见 [这个 gitlab issue](https://gitlab.com/fdroid/fdroiddata/-/issu
 #: _docs/Reproducible_Builds.md
 #, no-wrap
 msgid "Bug: Android Studio builds have non-deterministic ZIP ordering"
-msgstr ""
+msgstr "Bug: Android Studio 构建有非确定性 ZIP 顺序"
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
 msgid "When building APKs with Android Studio, the ordering of the ZIP entries in the APK can be different from that of APKs built by invoking `gradle` directly, affecting reproducibility; the ordering can be completely non-deterministic, even differing between different builds of the same source code."
-msgstr ""
+msgstr "在用 Android Studio 构建 APK 文件时，APK 中 ZIP 项目的顺序可能不同于直接调用 `gradle` 进行构建的 APK，这会影响可重现性；顺序可能是完全非确定性的，甚至在相同源码的不同构建之间也不一样。"
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
 msgid "A workaround is to invoke `gradle` directly (as during F-Droid or CI builds), bypassing Android Studio:"
-msgstr ""
+msgstr "一个变通办法是直接调用 `gradle` （像在 F-Droid 或 CI 构建期间一样），来绕过 Android Studio："
 
 #. type: Fenced code block (console)
 #: _docs/Reproducible_Builds.md
 #, no-wrap
 msgid "$ ./gradlew assembleRelease\n"
-msgstr ""
+msgstr "$ ./gradlew assembleRelease\n"
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
 msgid "NB: depending on your signing configuration, this may require signing the APK with `apksigner` afterwards, since signing is not performed by Android Studio in this case."
-msgstr ""
+msgstr "请注意：取决于你的签名配置，可能需要之后用 `apksigner` 对 APK 进行签名，因为在这种情况下 APK 签名不是由 Android Studio 执行的。"
 
 #. type: Title ####
 #: _docs/Reproducible_Builds.md
@@ -9190,7 +9190,7 @@ msgstr "[Non-stable `assets/dexopt/baseline.profm`](https://issuetracker.google.
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
 msgid "See also [this writeup of a potential workaround being investigated](https://gist.github.com/obfusk/61046e09cee352ae6dd109911534b12e)."
-msgstr ""
+msgstr "另见 [这篇关于一个正被调查的潜在变通方法的文章](https://gist.github.com/obfusk/61046e09cee352ae6dd109911534b12e)。"
 
 #. type: Title ####
 #: _docs/Reproducible_Builds.md
@@ -9207,17 +9207,17 @@ msgstr "在某些情况下，由于[ `coreLibraryDesugaring` 中的错误](https
 #: _docs/Reproducible_Builds.md
 #, no-wrap
 msgid "Concurrency: reproducibility can depend on the number of CPUs/cores"
-msgstr ""
+msgstr "并发：可重现性可以取决于CPU/核心的数目"
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
 msgid "This can affect `.dex` files (though that seems to be rare) or native code (e.g.  Rust)."
-msgstr ""
+msgstr "这可能影响 `.dex` 文件（虽然这似乎比较少见）或本机代码（如  Rust）。"
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
 msgid "Using only 1 CPU/core as a workaround:"
-msgstr ""
+msgstr "只使用 1 个 CPU/核心作为变通办法："
 
 #. type: Fenced code block (console)
 #: _docs/Reproducible_Builds.md
@@ -9227,16 +9227,19 @@ msgid ""
 "export CPUS=$(getconf _NPROCESSORS_ONLN)\n"
 "for (( c=$CPUS_MAX; c<$CPUS; c++ )) ; do echo 0 > /sys/devices/system/cpu/cpu$c/online; done\n"
 msgstr ""
+"export CPUS_MAX=1\n"
+"export CPUS=$(getconf _NPROCESSORS_ONLN)\n"
+"for (( c=$CPUS_MAX; c<$CPUS; c++ )) ; do echo 0 > /sys/devices/system/cpu/cpu$c/online; done\n"
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
 msgid "NB: this workaround affects the entire machine, so using it in a non-persistent virtual machine or container is recommended."
-msgstr ""
+msgstr "请注意：这种变通方法影响整台机器，因此推荐在非持久性的虚拟机或容器中使用它。"
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
 msgid "For Rust code, you can set [`codegen-units = 1`](https://doc.rust-lang.org/rustc/codegen-options/index.html#codegen-units)."
-msgstr ""
+msgstr "对于 Rust 代码，你可以设置 [`codegen-units = 1`](https://doc.rust-lang.org/rustc/codegen-options/index.html#codegen-units)。"
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
@@ -9353,17 +9356,17 @@ msgstr "请注意，`svgo` 等工具可以对 SVG 文件进行类似的优化。
 #: _docs/Reproducible_Builds.md
 #, no-wrap
 msgid "PNGs generated from vector drawables"
-msgstr ""
+msgstr "生成自矢量可绘制对象的 PNG 图片"
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
 msgid "[Android Gradle plugin generates PNG resources from vector drawables for old Android versions](https://developer.android.com/reference/tools/gradle-api/7.3/com/android/build/api/dsl/VectorDrawables#generateddensities).  Unfortunately, the generated PNG files are not reproducible."
-msgstr ""
+msgstr "[Android Gradle 插件为旧 Android 版本从矢量可绘制图形生成 PNG 资源](https://developer.android.com/reference/tools/gradle-api/7.3/com/android/build/api/dsl/VectorDrawables#generateddensities)。  不幸的是，生成的 PNG 文件不可重现。"
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
 msgid "You can disable generating the PNGs by adding this to `build.gradle`:"
-msgstr ""
+msgstr "你可以通过添加这个到 `build.gradle` 来禁止生成 PNG："
 
 #. type: Fenced code block (gradle)
 #: _docs/Reproducible_Builds.md
