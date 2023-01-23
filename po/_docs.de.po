@@ -4,7 +4,7 @@
 # Strubbl <github@linux4tw.de>, 2021.
 # Yuriy Putsan <putsan57@gmail.com>, 2021.
 # Hans-Christoph Steiner <hans@guardianproject.info>, 2021.
-# C. Rüdinger <Mail-an-CR@web.de>, 2021, 2022.
+# C. Rüdinger <Mail-an-CR@web.de>, 2021, 2022, 2023.
 # VfBFan <drop0815@posteo.de>, 2021, 2022, 2023.
 # Jacque Fresco <aidter@use.startmail.com>, 2021.
 # Roman Leo <roman.leo@gmx.de>, 2021, 2022.
@@ -16,15 +16,15 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
 "POT-Creation-Date: 2023-01-19 22:17+0100\n"
-"PO-Revision-Date: 2023-01-21 13:59+0000\n"
-"Last-Translator: VfBFan <drop0815@posteo.de>\n"
+"PO-Revision-Date: 2023-01-24 21:16+0000\n"
+"Last-Translator: C. Rüdinger <Mail-an-CR@web.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/f-droid/website-docs/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.15.1\n"
+"X-Generator: Weblate 4.16-dev\n"
 
 #. type: YAML Front Matter: title
 #: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
@@ -97,7 +97,7 @@ msgstr "Lizenz"
 #. type: Bullet: '* '
 #: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
 msgid "a What's New entry for at least one release"
-msgstr "ein Changelog für wenigstens eine Version"
+msgstr "ein Eintrag über Änderungen für wenigstens eine Version"
 
 #. type: Bullet: '* '
 #: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
@@ -3972,35 +3972,27 @@ msgstr "Dies bestimmt die Methode zur automatischen Erzeugung neuer Builds, wenn
 
 #. type: Bullet: '-   '
 #: _docs/Build_Metadata_Reference.md
-#, fuzzy
-#| msgid "`None` - No auto-updating is done"
 msgid "`None` - Auto-updating is disabled"
-msgstr "`None` - Es erfolgt keine automatische Aktualisierung"
+msgstr "`None` - Automatische Aktualisierung deaktiviert"
 
 #. type: Bullet: '-   '
 #: _docs/Build_Metadata_Reference.md
-#, fuzzy
-#| msgid "`None` - No auto-updating is done"
 msgid "`Version` - Auto-updating is enabled."
-msgstr "`None` - Es erfolgt keine automatische Aktualisierung"
+msgstr "`Version` - Automatische Aktualisierung deaktiviert."
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-#, fuzzy, no-wrap
-#| msgid ""
-#| "    If UpdateCheckMode is set to `Tags` the generator string behind `Version`\n"
-#| "    is optional and not used for the `commit:` field.\n"
+#, no-wrap
 msgid ""
 "    If `UpdateCheckMode` is set to `Tags`, this should be set to\n"
 "    `Version` without any pattern. The checked tag is used directly.\n"
 msgstr ""
-"    Wenn UpdateCheckMode auf `Tags` gesetzt ist, ist der Generatorstring hinter `Version`\n"
-"    optional und wird nicht für das Feld `commit:` verwendet.\n"
+"    Wenn `UpdateCheckMode` auf `Tags` gesetzt ist, sollte dies auf\n"
+"     `Version` ohne Muster gesetzt werden. Das markierte Tag wird direkt verwendet.\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-#, fuzzy, no-wrap
-#| msgid "`Version` - Generates a value (tag name) used for the `commit:` property of new build blocks. It is simply text in which %v and %c are replaced with the required version name and version code respectively. The resulting string must match an existing tag in the app's repo, which then will be used by F-Droid to build the corresponding version."
+#, no-wrap
 msgid ""
 "    If `UpdateCheckMode` is set to `HTTP`, a pattern should be added\n"
 "    after the `Version`. The pattern is used to generate a value\n"
@@ -4009,51 +4001,44 @@ msgid ""
 "    version name and version code respectively. The resulting\n"
 "    string must match an existing tag in the app's repo, which then will be\n"
 "    used by F-Droid to build the corresponding version.\n"
-msgstr "`Version` - Erzeugt einen Wert (Tag-Name), der für die Eigenschaft `commit:` neuer Bausteine verwendet wird. Es handelt sich um einen einfachen Text, in dem %v und %c durch den erforderlichen Versionsnamen bzw. Versionscode ersetzt werden. Die resultierende Zeichenkette muss mit einem bestehenden Tag in der App-Repository übereinstimmen, das dann von F-Droid verwendet wird, um die entsprechende Version zu erstellen."
+msgstr ""
+"    Wenn `UpdateCheckMode` auf `HTTP` eingestellt ist, sollte nach der `Version` \n"
+"    ein Muster ergänzt werden. Das Muster wird dazu verwendet, einen Wert (tag name)\n"
+"    zu erzeugen, zur Anwendung im `commit:` Eigenschaften der neu gebauten Blocks.\n"
+"    Es ist einfacher Text, in dem `%v` und `%c` durch den benötigten Versionsnamen\n"
+"    bzw. Versionscode ersetzt werden. Die resultierende Zeichenkette\n"
+"    muss einem bestehenden Tag im Repo der App entsprechen, der dann\n"
+"    von F-Droid verwendet wird, um die entsprechende Version herzustellen.\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-#, fuzzy, no-wrap
-#| msgid ""
-#| "    For example, if an app always has a tag \"2.7.2\" corresponding to\n"
-#| "    version 2.7.2, you would simply specify \"Version %v\". If an app\n"
-#| "    always has a tag \"ver\\_1234\" for a version with version code 1234,\n"
-#| "    you would specify \"Version ver\\_%c\".\n"
+#, no-wrap
 msgid ""
 "    For example, if an app always has a tag `2.7.2` corresponding to\n"
 "    version 2.7.2, you would simply specify `Version %v`. If an app\n"
 "    always has a tag `ver_1234` for a version with version code 1234,\n"
 "    you would specify `Version ver_%c`.\n"
 msgstr ""
-"    Zum Beispiel, wenn eine App immer einen Tag „2.7.2“ hat, der Version 2.7.2\n"
-"    entspricht würden Sie einfach „Version %v“ angeben. Wenn eine App\n"
-"    immer einen Tag „ver\\_1234“ für eine Version mit dem Versionscode 1234 hat,\n"
-"    würden Sie „Version ver\\_%c“ angeben.\n"
+"    Zum Beispiel, wenn eine App immer einen Tag `2.7.2` hat, der Version 2.7.2\n"
+"    entspricht, würde man einfach `Version %v` angeben. Wenn eine App\n"
+"    immer einen Tag `ver\\_1234` für eine Version mit dem Versionscode 1234 hat,\n"
+"    würde man `Version ver\\_%c` angeben.\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-#, fuzzy, no-wrap
-#| msgid ""
-#| "    Continuing the first example above, you would specify that as \"Version\n"
-#| "    +-fdroid %v\" - \"-fdroid\" is the suffix F-Droid will then append to the\n"
-#| "    `versionName` specified in e.g. `build.gradle` when building the APK.\n"
+#, no-wrap
 msgid ""
 "    Continuing the first example above, you would specify that as\n"
 "    `Version +-fdroid %v` - `-fdroid` is the suffix F-Droid will then append to the\n"
 "    `versionName` specified in e.g. `build.gradle` when building the APK.\n"
 msgstr ""
-"    In Fortsetzung des ersten Beispiels oben würden Sie das als \"Version\n"
-"    +-fdroid %v\" - \"-fdroid\" ist das Suffix, das F-Droid dann an den\n"
-"    `versionName` an, die z.B. in `build.gradle` angegeben wird, wenn das APK erstellt wird.\n"
+"    In Fortsetzung des ersten Beispiels oben würde man das als\n"
+"    `Version+-fdroid %v` angeben - `-fdroid` ist das Suffix, das F-Droid dann auf den\n"
+"    `versionName` anwendet, der z.B. in `build.gradle` angegeben wird, wenn das APK erstellt wird.\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-#, fuzzy, no-wrap
-#| msgid ""
-#| "    Additionally, a suffix can be added to the version name at this\n"
-#| "    stage, to differentiate F-Droid's build from the original.\n"
-#| "    Continuing the first example above, you would specify that as\n"
-#| "    \"Version +-fdroid %v\" - \"-fdroid\" is the suffix.\n"
+#, no-wrap
 msgid ""
 "    Additionally, a suffix can be added to the version name at this\n"
 "    stage, to differentiate F-Droid's build from the original.\n"
@@ -4062,8 +4047,8 @@ msgid ""
 msgstr ""
 "    Zusätzlich kann dem Versionsnamen an dieser Stelle ein Suffix hinzugefügt\n"
 "    werden, um den F-Droid-Build vom Original zu unterscheiden.\n"
-"    Um das erste Beispiel oben anzusetzen, würden Sie als Suffix\n"
-"    „Version +-fdroid %v“ - „-fdroid“ angeben.\n"
+"    Um das erste Beispiel oben anzusetzen, würde man als Suffix\n"
+"    `Version +-fdroid %v` - `-fdroid` angeben.\n"
 
 #. type: Title ###
 #: _docs/Build_Metadata_Reference.md
@@ -9372,10 +9357,8 @@ msgstr "Für Rust-Code können Sie [`codegen-units = 1`](https://doc.rust-lang.o
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
-#, fuzzy
-#| msgid "See also [this gitlab issue](https://gitlab.com/fdroid/fdroiddata/-/issues/2816)."
 msgid "See also [this gitlab issue](https://gitlab.com/fdroid/rfp/-/issues/1519#note_1226216164)."
-msgstr "Siehe auch [dieses GitLab-Ticket](https://gitlab.com/fdroid/fdroiddata/-/issues/2816)."
+msgstr "Siehe auch [dieses GitLab-Ticket](https://gitlab.com/fdroid/rfp/-/issues/1519#note_1226216164)."
 
 #. type: Title ####
 #: _docs/Reproducible_Builds.md
@@ -9501,13 +9484,7 @@ msgstr "Sie können die Generierung der PNGs deaktivieren, indem Sie dies zu `bu
 
 #. type: Fenced code block (gradle)
 #: _docs/Reproducible_Builds.md
-#, fuzzy, no-wrap
-#| msgid ""
-#| "android {\n"
-#| "    aaptOptions {\n"
-#| "        cruncherEnabled = false\n"
-#| "    }\n"
-#| "}\n"
+#, no-wrap
 msgid ""
 "android {\n"
 "    defaultConfig {\n"
