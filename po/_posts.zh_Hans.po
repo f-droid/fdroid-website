@@ -24,7 +24,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
 "POT-Creation-Date: 2023-01-19 22:17+0100\n"
-"PO-Revision-Date: 2023-01-24 21:16+0000\n"
+"PO-Revision-Date: 2023-01-26 13:36+0000\n"
 "Last-Translator: linsui <linsui@inbox.lv>\n"
 "Language-Team: Chinese (Simplified) <https://hosted.weblate.org/projects/f-droid/website-posts/zh_Hans/>\n"
 "Language: zh_Hans\n"
@@ -18679,166 +18679,166 @@ msgstr "原始索引文件，版本 0 格式，是作为任何存储库的一部
 #. type: Plain text
 #: _posts/2022-12-22-third-audit-results.md
 msgid "Successful exploitation of this would require either a) the attacker was able to get the target to add a malicious repo, or b) the attacker was able to get the repo signing keys and then break into an existing repo's server and replace the index files.  For example, a malicious actor could try to exploit someone via Nearby app swapping, so only get apps from people you trust.  The way that the client is set up to parse the XML was vulnerable, and would allow a successful attacker to read files that the F-Droid app can read"
-msgstr ""
+msgstr "成功利用它需要 a) 攻击者能够让目标添加恶意存储库，或者 b) 攻击者能够获得存储库签名密钥，然后闯入现有存储库的服务器并替换索引文件。例如，恶意行为者可能会尝试通过附近应用交换来攻击某人，因此只能从您信任的人那里获取应用。客户端设置为解析 XML 的方式很容易受到攻击，并且允许成功的攻击者读取 F-Droid 应用可以读取的文件"
 
 #. type: Plain text
 #: _posts/2022-12-22-third-audit-results.md
 msgid "For f-droid.org and the Guardian Project repo, the index files are monitored, and changes to them are logged. So we can say with high confidence that _index-v1.jar_ was never removed, which is a prerequisite for exploiting this vulnerability."
-msgstr ""
+msgstr "对于 f-droid.org 和 Guardian Project 存储库，索引文件受到监控，并记录对它们的更改。因此我们可以非常肯定地说，_index-v1.jar_ 从未被删除，而这是利用此漏洞的先决条件。"
 
 #. type: Plain text
 #: _posts/2022-12-22-third-audit-results.md
 msgid "F-Droid client v1.15.4 disables all support for XML External Entities. The v1.16-alpha0 no longer supports XML indexes at all, and all code related to the XML index parsing and generation was removed.  We will also be working on improving the security of adding repos as part of the [FFDW-DVD]({{ site.baseurl }}{% post_url 2022-02-05-decentralizing-distribution %}) funding."
-msgstr ""
+msgstr "F-Droid 客户端 v1.15.4 禁用了对 XML 外部实体的所有支持。v1.16-alpha0 完全移除了对 XML 索引的支持，所有与 XML 索引解析和生成相关的代码都被删除了。作为 [FFDW-DVD]({{ site.baseurl }}{% post_url 2022-02-05-decentralizing-distribution %}) 资助的一部分，我们还将致力于提高添加存储库的安全性。"
 
 #. type: Title ##
 #: _posts/2022-12-22-third-audit-results.md
 #, no-wrap
 msgid "CLN-005 -- Vulnerable TLS versions accepted"
-msgstr ""
+msgstr "CLN-005 -- 接受易受攻击的 TLS 版本"
 
 #. type: Bullet: '* '
 #: _posts/2022-12-22-third-audit-results.md
 msgid "Vulnerability type: Insecure configuration"
-msgstr ""
+msgstr "漏洞类型：不安全配置"
 
 #. type: Plain text
 #: _posts/2022-12-22-third-audit-results.md
 msgid "The backend domains used by the application accept obsolete TLS 1.0 and TLS 1.1 protocols."
-msgstr ""
+msgstr "应用使用的后端域接受过时的 TLS 1.0 和 TLS 1.1 协议。"
 
 #. type: Plain text
 #: _posts/2022-12-22-third-audit-results.md
 msgid "Use of TLS 1.0 and 1.1 make the communication susceptible to downgrade attacks, as they work on SHA-1 hash for the integrity of exchanged messages. The handshake authentication is also done on SHA-1, which makes it easier for an attacker to impersonate a server for MITM attacks. The PCI DSS (Payment Card Industry Data Security Standard) specifies that TLS 1.0 may no longer be used as of June 30, 2018, and also strongly recommends disabling 1.1, so this may impact compliance with regulations."
-msgstr ""
+msgstr "使用 TLS 1.0 和 1.1 使通信容易受到降级攻击，因为它们使用 SHA-1 哈希来确保交换消息的完整性。握手身份验证也是在 SHA-1 上完成的，这使得攻击者更容易冒充服务器进行中间人攻击。 PCI DSS（支付卡行业数据安全标准）规定自 2018 年 6 月 30 日起不允许再使用 TLS 1.0，并且还强烈建议禁用 1.1，因此这可能会影响合规性。"
 
 #. type: Plain text
 #: _posts/2022-12-22-third-audit-results.md
 msgid "F-Droid places a high importance on maintaining compatibility as long as possible.  This is why we leave TLS 1.0 and TLS 1.1 enabled on our websites.  We believe there is no added risk for people who keep their software updated.  The F-Droid Client app does not allow TLS 1.1 or 1.0 connections.  TLS 1.3 provides good downgrade protection, TLS 1.2 less. Any reputable TLS implementation from the past years make it quite difficult to force a connection to use TLS 1.0 or 1.1.  [Recent browser releases](https://knowledge.broadcom.com/external/article/195935/major-web-browsers-removing-support-for.html) are entirely removing support for TLS 1.0 and 1.1 anyway.  That means that any browser or client version that connects over TLS 1.0 or 1.1 actually needs that to function.  A device running Android 1.6 should be able to install an old version of F-Droid, and have a working app store."
-msgstr ""
+msgstr "F-Droid 非常重视尽可能长时间地保持兼容性。这就是我们在网站上启用 TLS 1.0 和 TLS 1.1 的原因。我们相信保持软件更新的人不会增加风险。F-Droid 客户端应用不允许 TLS 1.1 或 1.0 连接。TLS 1.3 提供了良好的降级保护，TLS 1.2 提供的保护较少。过去几年中任何信誉良好的 TLS 实施都很难强制连接使用 TLS 1.0 或 1.1。[最近的浏览器版本](https://knowledge.broadcom.com/external/article/195935/major-web-browsers-removing-support-for.html)完全取消了对 TLS 1.0 和 1.1 的支持。这意味着任何通过 TLS 1.0 或 1.1 连接的浏览器或客户端版本实际上都需要它才能运行。运行 Android 1.6 的设备应该能够安装旧版本的 F-Droid，并有一个可用的应用商店。"
 
 #. type: Plain text
 #: _posts/2022-12-22-third-audit-results.md
 msgid "If you are on a device that still needs to use TLS 1.0 or 1.1, then there are already so many well known security vulnerabilities that this one is not particularly interesting.  If you would like to test whether your browser still supports TLS 1.0 or 1.1, click on the links below and see if they give you an error message."
-msgstr ""
+msgstr "如果您使用的设备仍然需要使用 TLS 1.0 或 1.1，那么已经有很多众所周知的安全漏洞，因此这个漏洞并不是特别有趣。如果您想测试您的浏览器是否仍然支持 TLS 1.0 或 1.1，请单击下面的链接，看看它们是否给您一条错误消息。"
 
 #. type: Bullet: '* '
 #: _posts/2022-12-22-third-audit-results.md
 msgid "<a href=\"https://tls-v1-0.badssl.com:1010/\" target=\"_blank\">https://tls-v1-0.badssl.com:1010/</a>"
-msgstr ""
+msgstr "<a href=\"https://tls-v1-0.badssl.com:1010/\" target=\"_blank\">https://tls-v1-0.badssl.com:1010/</a>"
 
 #. type: Bullet: '* '
 #: _posts/2022-12-22-third-audit-results.md
 msgid "<a href=\"https://tls-v1-1.badssl.com:1011/\" target=\"_blank\">https://tls-v1-1.badssl.com:1011/</a>"
-msgstr ""
+msgstr "<a href=\"https://tls-v1-1.badssl.com:1011/\" target=\"_blank\">https://tls-v1-1.badssl.com:1011/</a>"
 
 #. type: Title ##
 #: _posts/2022-12-22-third-audit-results.md
 #, no-wrap
 msgid "CLN-001 -- Encryption algorithms using insecure mode and padding scheme"
-msgstr ""
+msgstr "CLN-001 -- 使用不安全模式和填充方案的加密算法"
 
 #. type: Bullet: '* '
 #: _posts/2022-12-22-third-audit-results.md
 msgid "Vulnerability type: Weak Cryptography"
-msgstr ""
+msgstr "漏洞类型：弱密码"
 
 #. type: Bullet: '* '
 #: _posts/2022-12-22-third-audit-results.md
 msgid "Threat level: Low"
-msgstr ""
+msgstr "威胁等级：低"
 
 #. type: Plain text
 #: _posts/2022-12-22-third-audit-results.md
 msgid "The encryption algorithms used in the app use an insecure mode and padding scheme."
-msgstr ""
+msgstr "应用中使用的加密算法使用不安全的模式和填充方案。"
 
 #. type: Plain text
 #: _posts/2022-12-22-third-audit-results.md
 msgid "If sensitive data is being encrypted using an insecure mode and padding, it might lead to data being stolen or recovered from the encrypted data."
-msgstr ""
+msgstr "如果使用不安全的模式和填充对敏感数据进行加密，可能会导致数据被盗或从加密数据中恢复。"
 
 #. type: Plain text
 #: _posts/2022-12-22-third-audit-results.md
 msgid "This was only ever used to sign the app index file used in the Nearby app swapping, which only works over the local network.  The signature is on a short-lived file that is generated on the fly, and is almost always used in a one-to-one interaction.  A lot of other pieces would have to be in place for this to be exploited.  Plus it would require a fair amount of expense to crack the cryptography on the file that was signed seconds or minutes before, and probably will only be in use for around 10 minutes.  Any app updates received via Nearby swapping will still have the full protection of the APK signature.  For these reasons, it is also still safe to use the SHA1 algorithm, which is necessary here for compatibility.  This use case falls under the \"[second preimage attack](https://crypto.stackexchange.com/questions/48289/how-secure-is-sha1-what-are-the-chances-of-a-real-exploit/48291#48291)\" case, meaning that the attacker cannot affect the data before it is signed. Git can also still rely on SHA1 for this reason."
-msgstr ""
+msgstr "这仅用于签署附近应用交换中使用的应用索引文件，该文件仅适用于本地网络。签名位于动态生成的短期文件中，几乎总是在一对一交互中使用。要利用这一点，必须准备好许多其他部分。此外，破解几秒钟或几分钟前签署的文件的密码需要大量费用，而且可能只会使用大约 10 分钟。通过附近交换收到的任何应用更新仍将受到 APK 签名的全面保护。由于这些原因，使用 SHA1 算法仍然是安全的，这是兼容性所必需的。此用例属于“[第二原像攻击](https://crypto.stackexchange.com/questions/48289/how-secure-is-sha1-what-are-the-chances-of-a-real-exploit/48291#48291)\" 的情况，这意味着攻击者无法在数据签名之前影响数据。Git 仍然可以依赖 SHA1 基于相同理由。"
 
 #. type: Plain text
 #: _posts/2022-12-22-third-audit-results.md
 msgid "F-Droid client v1.15.4 and v1.16-alpha1 switched from `RSA/ECB/PKCS1Padding` to the standard `SHA1withRSA` algorithm for signing the Nearby _index.jar_.  The new \"index-v2\" for repositories added in v1.16-alpha0 uses `SHA256withRSA` as the signing algorithm.  The official client always starts by trying the latest index version in each repository, and v1.16 added downgrade protection so a repo that already offers index-v2 can't be downgraded to index-v1."
-msgstr ""
+msgstr "F-Droid 客户端 v1.15.4 和 v1.16-alpha1 从 `RSA/ECB/PKCS1Padding` 切换到标准 `SHA1withRSA` 算法来签署附近 _index.jar_。在 v1.16-alpha0 中添加的存储库的新 \"index-v2\" 使用 `SHA256withRSA` 作为签名算法。官方客户端总是从尝试每个存储库中的最新索引版本开始，v1.16 添加了降级保护，因此已经提供 index-v2 的存储库不能降级到 index-v1。"
 
 #. type: Title ##
 #: _posts/2022-12-22-third-audit-results.md
 #, no-wrap
 msgid "CLN-003 -- Clear text traffic is enabled in the application"
-msgstr ""
+msgstr "CLN-003 -- 应用中启用了明文流量"
 
 #. type: Plain text
 #: _posts/2022-12-22-third-audit-results.md
 msgid "The base network config of the application allows clear-text traffic."
-msgstr ""
+msgstr "应用的基本网络配置允许明文流量。"
 
 #. type: Plain text
 #: _posts/2022-12-22-third-audit-results.md
 msgid "Allowing clear-text traffic impacts confidentiality, authenticity, and protection against tampering. An attacker performing a machine-in-the-middle attack can eavesdrop on transmitted data and modify it without being detected."
-msgstr ""
+msgstr "允许明文流量会影响机密性、真实性和防止篡改。执行中间机器攻击的攻击者可以窃听传输的数据并在不被发现的情况下对其进行修改。"
 
 #. type: Plain text
 #: _posts/2022-12-22-third-audit-results.md
 msgid "This Android feature for blocking clear text HTTP connections is a good feature that apps should use.  Having this disabled is obviously not ideal, but it is something we had to do to support the local HTTP swap functionality, and also HTTP .onion addresses in the past (there is another workaround possible these days). So we have taken extra measures to enforce HTTPS:"
-msgstr ""
+msgstr "这个用于阻止明文 HTTP 连接的 Android 功能是应用应该使用的一个很好的功能。禁用此功能显然并不理想，但我们不得不这么做以支持本地 HTTP 交换功能，以及过去的 HTTP .onion 地址（现在可能有另一种解决方法）。所以我们采取了额外的措施来强制执行 HTTPS："
 
 #. type: Bullet: '* '
 #: _posts/2022-12-22-third-audit-results.md
 msgid "[All built-in repository URLs are hardcoded to HTTPS](https://gitlab.com/fdroid/fdroidclient/-/blob/audit-2022-09-05/app/src/main/res/values/default_repos.xml)"
-msgstr ""
+msgstr "[所有内置存储库 URL 都硬编码为 HTTPS](https://gitlab.com/fdroid/fdroidclient/-/blob/audit-2022-09-05/app/src/main/res/values/default_repos.xml)"
 
 #. type: Bullet: '* '
 #: _posts/2022-12-22-third-audit-results.md
 msgid "[Popular cloud hosting for repos is forced to HTTPS](https://gitlab.com/fdroid/fdroidclient/-/blob/audit-2022-09-05/app/src/main/java/org/fdroid/fdroid/data/NewRepoConfig.java#L193)"
-msgstr ""
+msgstr "[存储库使用的流行云托管服务强制使用 HTTPS](https://gitlab.com/fdroid/fdroidclient/-/blob/audit-2022-09-05/app/src/main/java/org/fdroid/fdroid/data/NewRepoConfig.java#L193)"
 
 #. type: Bullet: '* '
 #: _posts/2022-12-22-third-audit-results.md
 msgid "[The default user prompt for adding repos includes `https://`](https://gitlab.com/fdroid/fdroidclient/-/blob/audit-2022-09-05/app/src/main/java/org/fdroid/fdroid/views/ManageReposActivity.java#L101)"
-msgstr ""
+msgstr "[添加存储库的默认用户提示包括 `https://`](https://gitlab.com/fdroid/fdroidclient/-/blob/audit-2022-09-05/app/src/main/java/org/fdroid/fdroid/views/ManageReposActivity.java#L101)"
 
 #. type: Plain text
 #: _posts/2022-12-22-third-audit-results.md
 msgid "This vulnerability applies to the exact same context as CLN-001: Nearby app swapping.  So it is already a quite limited environment for malicious actors to operate in. This does not affect built-in repos at all, since they are hard-coded to HTTPS.  Plus good webserver setups like f-droid.org do not allow data to be sent over plain HTTP."
-msgstr ""
+msgstr "此漏洞适用于与 CLN-001 完全相同的上下文：附近应用交换。因此，对于恶意行为者来说，这已经是一个相当有限的环境。这完全不会影响内置的存储库，因为它们被硬编码为 HTTPS。再加上像 f-droid.org 这样良好的网络服务器设置不允许通过纯 HTTP 发送数据。"
 
 #. type: Title ##
 #: _posts/2022-12-22-third-audit-results.md
 #, no-wrap
 msgid "CLN-004 -- HTTP Request URLs are logged"
-msgstr ""
+msgstr "CLN-004 -- 记录了 HTTP 请求 URL"
 
 #. type: Bullet: '* '
 #: _posts/2022-12-22-third-audit-results.md
 msgid "Vulnerability type: Information leakage"
-msgstr ""
+msgstr "漏洞类型：信息泄露"
 
 #. type: Plain text
 #: _posts/2022-12-22-third-audit-results.md
 msgid "The Android app (org.fdroid.fdroid.debug ver. 1.14-alpha3-505-gc8514adb9-debug) logs URLs."
-msgstr ""
+msgstr "Android 应用 (org.fdroid.fdroid.debug ver. 1.14-alpha3-505-gc8514adb9-debug) 记录 URL。"
 
 #. type: Plain text
 #: _posts/2022-12-22-third-audit-results.md
 msgid "Logging sensitive information in the Android log is not a recommended practice as this information can (in some scenarios) be accessed by other applications on the same device. URLs can contain tokens or other sensitive data which might be logged, leading to the disclosure of that data to other apps."
-msgstr ""
+msgstr "不建议在 Android 日志中记录敏感信息，因为同一设备上的其他应用可以（在某些情况下）访问此信息。URL 可能包含令牌或其他可能被记录的敏感数据，从而导致该数据泄露给其他应用。"
 
 #. type: Plain text
 #: _posts/2022-12-22-third-audit-results.md
 msgid "Privacy is important, and we want to ensure that any potentially private information is not leaked, even at the cost of easier debugging or service analytics.  So we appreciate the auditor's level of attention in reporting this issue and have removed the URLs from the logging on release builds."
-msgstr ""
+msgstr "隐私很重要，我们希望确保任何潜在的私人信息不被泄露，即使以更容易调试或服务分析为代价。因此，我们感谢审计员在报告此问题时的关注程度，并已从发布版本的日志记录中删除了这些 URL。"
 
 #. type: Plain text
 #: _posts/2022-12-22-third-audit-results.md
 msgid "This vulnerability does not affect the security of operations.  Many web services put private tokens in URLs, and logging those would be like leaking clear text passwords.  All the well known repositories including f-droid.org are run as a static website, so there are [no user accounts]({{ site.baseurl }}{% post_url 2022-02-28-no-user-accounts-by-design %}).  The issue here is if someone got the \"logcat\" text, which is generally protected in Android, and apps cannot simply read the text anymore.  One potential leak scenario would be if someone installed a sensitive app, then uninstalled it.  That app install and uninstall would be listed in the log, available if the user was compelled to provide that log, or if the device was exploited to get access to protected data."
-msgstr ""
+msgstr "此漏洞不影响操作的安全性。许多 Web 服务将私有标记放在 URL 中，记录这些标记就像泄露明文密码一样。包括 f-droid.org 在内的所有知名存储库都是作为静态网站运行的，因此[没有用户帐户]({{ site.baseurl }}{% post_url 2022-02-28-no-user-accounts-by-design %})。这里的问题是，如果有人得到了“日志”文本，而 Android 中通常是受保护的，并且应用不能再简单地读取文本。一种潜在的泄漏情况是，如果有人安装了敏感应用，然后将其卸载。该应用安装和卸载将列在日志中，如果用户被迫提供该日志或者如果设备被攻击以访问受保护的数据，则这些信息将被获取。"
 
 #. type: Plain text
 #: _posts/2022-12-22-third-audit-results.md
@@ -18849,37 +18849,37 @@ msgstr "在 v1.16 最终版中 [将修复](https://gitlab.com/fdroid/fdroidclien
 #: _posts/2023-01-15-towards-a-reproducible-fdroid.md
 #, no-wrap
 msgid "Towards a reproducible F-Droid"
-msgstr ""
+msgstr "向可重现的 F-Droid 前进"
 
 #. type: Plain text
 #: _posts/2023-01-15-towards-a-reproducible-fdroid.md
 msgid "A common criticism directed at F-Droid is that F-Droid signs published APKs with its own keys. Using our own keys doesn't mean insecure — we have a good track record (and [keep the keys on a dedicated, air-gapped, offline machine](https://f-droid.org/docs/Security_Model/#app-signing)) whilst others may not — but this does mean that our users need to trust a third party other than the upstream developers."
-msgstr ""
+msgstr "针对 F-Droid 的一个常见批评是，F-Droid 使用自己的密钥对已发布的 APK 进行签名。使用我们自己的密钥并不意味着不安全—我们有良好的记录（并且[将密钥保存在专用、气隙、离线的机器上](https://f-droid.org/docs/Security_Model/#app-signing)） 而其他人可能并非如此—但这确实意味着我们的用户需要信任上游开发者以外的第三方。"
 
 #. type: Plain text
 #: _posts/2023-01-15-towards-a-reproducible-fdroid.md
 msgid "Having a different signature can also inconvenience users by making it impossible to install updates from other channels; this can be especially inconvenient when we have difficulty providing an update for an app. Developers also sometimes need to tweak their setup for F-Droid, e.g. disabling an in-app updater or adding the F-Droid signature for verification."
-msgstr ""
+msgstr "拥有不同的签名也会使用户无法从其他渠道安装更新，从而给用户带来不便；当我们难以为应用提供更新时，这尤其麻烦。开发者有时还需要为了 F-Droid 调整设置，例如禁用应用内更新器或添加 F-Droid 签名以进行验证。"
 
 #. type: Plain text
 #: _posts/2023-01-15-towards-a-reproducible-fdroid.md
 msgid "F-Droid is not the only app store publishing APKs signed with its own key — Google Play does the same now. With [\"code transparency for app bundles\"](https://developer.android.com/guide/app-bundle/code-transparency), Google provides a means to verify that the DEX files and native libraries in an APK are identical to those the developer provided. This does address some of these concerns, but code transparency does not protect many other important files in the APK, like interpreted code or assets. And unlike APK signatures, it is entirely optional (and an extra burden for developers) and verification must be performed manually. It also does not solve the inconvenience of being unable to install an APK with a different signature."
-msgstr ""
+msgstr "F-Droid 并不是唯一发布使用自己的密钥签名的 APK 的应用商店—Google Play 现在也这样做。通过[“app bundle 的代码透明性机制”](https://developer.android.com/guide/app-bundle/code-transparency)，Google 提供了一种方法来验证 APK 中的 DEX 文件和本机库是否与开发者提供的那些相同。这确实解决了其中的一些问题，但代码透明性机制并不能保护 APK 中的许多其他重要文件，例如解释性代码或资产。而且与 APK 签名不同，它完全是可选的（对开发者来说是一个额外的负担）并且必须手动执行验证。它也没有解决无法安装具有不同签名的 APK 的不便。"
 
 #. type: Plain text
 #: _posts/2023-01-15-towards-a-reproducible-fdroid.md
 msgid "F-Droid has had a better solution for these problems for [quite a while](https://gitlab.com/fdroid/fdroidserver/-/commit/8568805866dadbdcc6c07449ca6b84b80d0ab03c): [reproducible builds](https://f-droid.org/docs/Reproducible_Builds/). However, it was never widely used. One of the reasons is that it *sounds* difficult to achieve. We had few reproducible apps (to be precise: only 6) and some of them suffered from problems because of the use of reproducible builds. Basically, we didn't bother to mention reproducible builds unless the upstream developers showed an interest. As a result, many developers never even heard of reproducible builds, let alone that F-Droid supports them, or attempted to use them for their own apps."
-msgstr ""
+msgstr "对于这些问题，F-Droid [很早以前](https://gitlab.com/fdroid/fdroidserver/-/commit/8568805866dadbdcc6c07449ca6b84b80d0ab03c)就有更好的解决方案了：[可重复构建](https://f-droid.org/docs/Reproducible_Builds/)。然而，它从未被广泛使用。原因之一是它*听起来*很难实现。我们几乎没有可重复的应用（准确地说：只有 6 个），并且其中一些因为使用可重复构建而遇到了问题。基本上，除非上游开发者有兴趣，否则我们懒得提及可重复构建。因此，许多开发者甚至从未听说过可重复构建，更不用说知道 F-Droid 支持它们了，也不会尝试将它们用于自己的应用。"
 
 #. type: Plain text
 #: _posts/2023-01-15-towards-a-reproducible-fdroid.md
 msgid "In response to some of those criticisms, we started [encouraging new apps to enable reproducible builds](https://gitlab.com/fdroid/fdroiddata/-/issues/2816). It turns out that reproducible builds are not so difficult to achieve for many apps. [In the past few months we've gotten many more reproducible apps in F-Droid than before.](https://gitlab.com/fdroid/fdroiddata/-/issues/2844) Currently we can't highlight which apps are reproducible in the client, so maybe you haven't noticed that there are many new apps signed with upstream developers' keys. If you have some third-party repositories enabled, e.g. the IzzySoft one, you may find that sometimes you can update the app from the main repository even if you installed it from another one."
-msgstr ""
+msgstr "为了回应其中的一些批评，我们开始[鼓励新应用使用可重复构建](https://gitlab.com/fdroid/fdroiddata/-/issues/2816)。事实证明，对于许多应用来说，可重复构建并不难实现。[在过去的几个月里，我们在 F-Droid 中获得了比以前更多的可重复应用。](https://gitlab.com/fdroid/fdroiddata/-/issues/2844)目前我们无法在客户端突出显示哪些应用是可重复的，因此您可能没有注意到有许多使用上游开发者密钥签名的新应用。如果您启用了一些第三方存储库，例如 IzzySoft，您可能会发现有时您可以从主存储库更新应用，即使您是从另一个存储库安装的。"
 
 #. type: Plain text
 #: _posts/2023-01-15-towards-a-reproducible-fdroid.md
 msgid "Meanwhile, now that we've encountered many more test cases than before, we also found many [new](https://gitlab.com/fdroid/fdroiddata/-/issues/2816#note_1152793493) [problems](https://gitlab.com/fdroid/fdroid-website/-/merge_requests/895) that affect reproducibility. Fortunately we also found workarounds for most of them and developed [some tools to make APKs reproducible](https://github.com/obfusk/reproducible-apk-tools), mainly thanks to @obfusk's contributions. There are still some open issues and we are still working hard to solve them. If you are interested in reproducible builds, contributions are always welcome."
-msgstr ""
+msgstr "同时，既然我们遇到了比以前多得多的测试用例，我们也发现了许多影响可重复性的[新](https://gitlab.com/fdroid/fdroiddata/-/issues/2816#note_1152793493)[问题](https://gitlab.com/fdroid/fdroid-website/-/merge_requests/895)。幸运的是，我们还为其中的大多数找到了解决方法，并开发了[一些使 APK 可重复的工具](https://github.com/obfusk/reproducible-apk-tools)，这主要归功于@obfusk 的贡献。还有一些悬而未决的问题，我们仍在努力解决它们。如果您对可重复构建感兴趣，欢迎贡献。"
 
 #~ msgid "* Maven Central * Google Maven Repo * JCenter * OSS Sonatype * OSS JFrog * JitPack.io * Clojars * CommonsWare * Gradle plugin repo"
 #~ msgstr "* Maven Central * Google Maven Repo * JCenter * OSS Sonatype * OSS JFrog * JitPack.io * Clojars * CommonsWare * Gradle plugin repo"
