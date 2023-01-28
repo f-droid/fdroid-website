@@ -94,13 +94,15 @@ See also: [Build Metadata Reference - Binaries](../Build_Metadata_Reference/#Bin
 
 ### Reproducible signatures
 
-F-Droid verifies reproducible builds using the APK signature, which requires
-[copying](https://github.com/obfusk/apksigcopier) the signature from a signed
-APK to an unsigned one and then checking if the latter verifies.  The old v1
-(JAR) signatures only cover the *contents* of the APK (e.g. ZIP metadata and
-ordering are irrelevant), but v2/v3 signatures cover *all other bytes in the
-APK*.  Thus, the APKs must be completely identical *before* and *after* signing
-(apart from the signature) in order to verify correctly.
+F-Droid verifies reproducible builds using the
+[APK signature](https://source.android.com/docs/security/features/apksigning)
+(a form of [embedded signature](https://reproducible-builds.org/docs/embedded-signatures/)),
+which requires [copying](https://github.com/obfusk/apksigcopier) the signature
+from a signed APK to an unsigned one and then checking if the latter verifies.
+The old v1 (JAR) signatures only cover the *contents* of the APK (e.g. ZIP
+metadata and ordering are irrelevant), but v2/v3 signatures cover *all other
+bytes in the APK*.  Thus, the APKs must be completely identical *before* and
+*after* signing (apart from the signature) in order to verify correctly.
 
 Copying the signature uses the same algorithm that `apksigner` uses when signing
 an APK.  It is therefore important that (upstream) developers do the same when
@@ -168,15 +170,22 @@ below.
 See also [this gitlab issue](https://gitlab.com/fdroid/fdroiddata/-/issues/2816).
 
 
-### Bug: Android Studio builds have non-deterministic ZIP ordering
+#### Bug: Android Studio builds have non-deterministic ZIP ordering
+
+[Non-deterministic order of ZIP entries in APK makes builds not reproducible](https://issuetracker.google.com/issues/265653160)
+(may require a Google account to view).
+
+NB: this should be fixed in Android Gradle plugin
+(`com.android.tools.build:gradle` / `com.android.application`) `7.1.X` and
+later.
 
 When building APKs with Android Studio, the ordering of the ZIP entries in the
 APK can be different from that of APKs built by invoking `gradle` directly,
 affecting reproducibility; the ordering can be completely non-deterministic,
 even differing between different builds of the same source code.
 
-A workaround is to invoke `gradle` directly (as during F-Droid or CI builds),
-bypassing Android Studio:
+A workaround for older versions is to invoke `gradle` directly (as during
+F-Droid or CI builds), bypassing Android Studio:
 
 ```console
 $ ./gradlew assembleRelease
@@ -190,17 +199,30 @@ this case.
 #### Bug: baseline.profm not deterministic
 
 [Non-stable `assets/dexopt/baseline.profm`](https://issuetracker.google.com/issues/231837768)
-(requires a google account to view).
+(may require a Google account to view).
 
-See also [this writeup of a potential workaround being investigated](https://gist.github.com/obfusk/61046e09cee352ae6dd109911534b12e).
+See also [this writeup of workarounds](https://gist.github.com/obfusk/61046e09cee352ae6dd109911534b12e).
 
 
 #### Bug: coreLibraryDesugaring not deterministic
 
+NB: this should be fixed in R8 (`com.android.tools:r8`) `3.0.69` and later.
+
 In some cases builds are not reproducible due to a
 [bug in `coreLibraryDesugaring`](https://issuetracker.google.com/issues/195968520)
-(requires a google account to view); this
-[currently affects NewPipe](https://github.com/TeamNewPipe/NewPipe/issues/6486).
+(may require a Google account to view); this
+[affected NewPipe](https://github.com/TeamNewPipe/NewPipe/issues/6486).
+
+
+#### Bug: line ending differences between Windows and Linux builds
+
+[Newline differences between building on Windows vs Linux make builds not reproducible](https://issuetracker.google.com/issues/266109851)
+(may require a Google account to view).
+
+A workaround is to run
+[`fix-newlines.py`](https://github.com/obfusk/reproducible-apk-tools#fix-newlinespy)
+on the *unsigned* APK with the "wrong" line endings to change them from LF to
+CRLF (or vice versa w/ `--from-crlf`) and `zipalign` it again afterwards.
 
 
 #### Concurrency: reproducibility can depend on the number of CPUs/cores
@@ -222,6 +244,49 @@ virtual machine or container is recommended.
 For Rust code, you can set [`codegen-units = 1`](https://doc.rust-lang.org/rustc/codegen-options/index.html#codegen-units).
 
 See also [this gitlab issue](https://gitlab.com/fdroid/rfp/-/issues/1519#note_1226216164).
+
+
+#### Embedded build paths
+
+Embedded [build paths](https://reproducible-builds.org/docs/build-path/) are a
+source of reproducibility issues affecting apps built with e.g. Flutter,
+python-for-android, or using native code (e.g. Rust, C/C++, any kind of
+`libfoo.so`).  Apps completely written in Java and/or Kotlin tend to be
+unaffected.
+
+Often, the easiest solution is to always use the same working directory when
+building; e.g. `/builds/fdroid/fdroiddata/build/your.app.id` (F-Droid CI),
+`/home/vagrant/build/your.app.id` (F-Droid build server), or `/tmp/build`.
+
+NB: using a subdirectory of the world-writeable `/tmp` can have security
+implications (on multi-user systems).
+
+
+#### Embedded timestamps
+
+Embedded [timestamps](https://reproducible-builds.org/docs/timestamps/) are the
+most common source of reproducibility issues and are best avoided.
+
+##### AboutLibraries Gradle plugin
+
+You can prevent this plugin (`com.mikepenz.aboutlibraries.plugin`) from adding a
+timestamp to the JSON file it generates by adding this to `build.gradle`:
+
+```gradle
+aboutLibraries {
+    // Remove the "generated" timestamp to allow for reproducible builds
+    excludeFields = ["generated"]
+}
+```
+
+For `build.gradle.kts`, add this instead:
+
+```kts
+aboutLibraries {
+    // Remove the "generated" timestamp to allow for reproducible builds
+    excludeFields = arrayOf("generated")
+}
+```
 
 
 #### Native library stripping
