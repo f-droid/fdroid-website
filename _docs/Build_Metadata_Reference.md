@@ -416,7 +416,7 @@ git-svn _Repo_ URL:
 http://svn.code.sf.net/p/project/code/svn;trunk=trunk;tags=tags;branches=branches
 
 If the _RepoType_ is `srclib`, then you must specify the name of the
-according srclib .txt file. For example if `scrlibs/FooBar.txt` exist
+according srclib .yml file. For example if `srclibs/FooBar.yml` exist
 and you want to use this srclib, then you have to set _Repo_ to `FooBar`.
 
 
@@ -622,9 +622,8 @@ configuration to the build. These are (roughly in order of application):
     projects in the working directory and one level down; Prepare: can
     be used for any kind of preparation: in particular if you need to
     update the project with a particular target. You can then also use
-    \$\$name\$\$ in the init/prebuild/build command to substitute the
-    relative path to the library directory, but it could need tweaking
-    if you've changed into another directory.
+    `$$name$$` in the init/prebuild/build command to substitute the
+    absolute path to the library directory.
 
     Currently srclibs are used when upstream uses jar files or
     pulls dependencies from non-trusted repositories. Because srclibs
