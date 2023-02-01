@@ -313,8 +313,12 @@ project (and thus to its `jni` directory) are used.  This leads to different
 paths to the source files in debug symbols, causing the linker to generate a
 different _build-id_, which is preserved after stripping.
 
-One possible solution is adding `LOCAL_LDFLAGS += -Wl,--build-id=none` to
-`Android.mk` files which will disable _build-id_ generation completely.
+One possible solution is adding `-Wl,--build-id=none` to link options which
+will disable _build-id_ generation completely. For `ndk-build`, `LOCAL_LDFLAGS += -Wl,--build-id=none`
+can be added to `Android.mk` files. For cmake versions since 3.13, `add_link_options(-Wl,--build-id=none)`
+can be added to `CMakeLists.txt` globally. For cmake versions before 3.13,
+`target_link_libraries(<target> -Wl,--build-id=none)` can be used instead for
+every target.
 
 
 #### _platform_ Revisions
