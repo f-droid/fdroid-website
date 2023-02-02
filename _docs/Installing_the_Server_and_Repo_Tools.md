@@ -216,10 +216,10 @@ $ echo export ANDROID_HOME=$ANDROID_HOME >> .bashrc
 In order to build all apps that are included in f-droid.org, then a
 lot more software packages are required:
 
-- all SDK platforms requested by the apps you want to build
-- all Debian packages required by every app build process (maven, ant, etc)
-- every source code management tool (git, subversion, mercurial, etc)
-- every version of the Android NDK that apps use
+* all SDK platforms requested by the apps you want to build
+* all Debian packages required by every app build process (maven, ant, etc)
+* every source code management tool (git, subversion, mercurial, etc)
+* every version of the Android NDK that apps use
 
 On top of that, to build apps like they are built on f-droid.org, then
 the whole [Build Server Setup](../Build_Server_Setup) is required.

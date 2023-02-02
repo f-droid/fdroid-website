@@ -145,7 +145,9 @@ app in the F-Droid repository.
 
 ### Updating
 
-- *E.g.* <https://gitlab.com/fdroid/fdroidclient/graphs/master> & <https://gitlab.com/fdroid/fdroidclient/network/master> & <http://f-droid.org/news-and-reviews>
+* <https://gitlab.com/fdroid/fdroidclient/graphs/master>
+* <https://gitlab.com/fdroid/fdroidclient/network/master>
+* <https://f-droid.org/news-and-reviews>
 
 Getting the app in the repository isn't the end of the story: we have to
 keep the versions, descriptions and URLs up-to-date.

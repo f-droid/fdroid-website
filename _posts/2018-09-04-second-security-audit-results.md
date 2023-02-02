@@ -78,7 +78,7 @@ interaction between F-Droid client and Privileged Extension.
 * [4.1.19 OTF-019 — Potential SQL Injection]({{ site.baseurl }}/docs/Second_Audit_Report/#f35-potential-sql-injection)
 * [4.1.24 OTF-024 — (fdroidclient) Raw SQL Query Executions]({{ site.baseurl }}/docs/Second_Audit_Report/#f47--fdroidclient-raw-sql-query-executions)
 
-- right now, repos are trusted inputs verified by signatures.  This kind of finding helps us make it so less trust is required when using third party repos
+* right now, repos are trusted inputs verified by signatures.  This kind of finding helps us make it so less trust is required when using third party repos
 
 
 * [4.1.26 OTF-026 — (fdroid Client) Insecure Implementation of SSL]({{ site.baseurl }}/docs/Second_Audit_Report/#f52--fdroid-client-insecure-implementation-of-ssl)

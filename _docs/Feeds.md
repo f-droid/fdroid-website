@@ -20,8 +20,8 @@ If you have an account on GitLab you can watch the F-Droid repos, or subscribe t
 
 You can subscribe to new [forum](https://forum.f-droid.org/) posts and threads via the following URLs:
 
-- <https://forum.f-droid.org/posts.rss>
-- <https://forum.f-droid.org/latest.rss>
+* <https://forum.f-droid.org/posts.rss>
+* <https://forum.f-droid.org/latest.rss>
 
 ### Bugs and Suggestions
 
