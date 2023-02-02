@@ -55,5 +55,4 @@ Then you can find more on the process by reading
 Continuous Integration scripts for this process to see how the whole
 thing can work:
 
-- <https://gitlab.com/fdroid/fdroidserver/blob/master/jenkins-build-makebuildserver>
-- <https://jenkins.debian.net/job/reproducible_setup_fdroid_build_environment_profitbricks7/>
+* <https://gitlab.com/fdroid/fdroidserver/blob/master/jenkins-build-makebuildserver>

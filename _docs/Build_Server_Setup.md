@@ -308,9 +308,3 @@ The actually required configuration here depends on your cpu. You
 can find details in [libvirts manual](https://libvirt.org/formatdomain.html#elementsCPU).
 The important part is that you forward _vmx_ (or _svm_ on amd) to
 the guest system.
-
-
-
-This is the setup that is used in the Continuous Integration builds as part of the [reproducible builds](https://reproducible-builds.org) effort.  You can see this in action on the Debian Project's jenkins setup:
-
-- <https://jenkins.debian.net/job/reproducible_setup_fdroid_build_environment_profitbricks7/>
