@@ -315,10 +315,16 @@ different _build-id_, which is preserved after stripping.
 
 One possible solution is adding `-Wl,--build-id=none` to link options which
 will disable _build-id_ generation completely. For `ndk-build`, `LOCAL_LDFLAGS += -Wl,--build-id=none`
-can be added to `Android.mk` files. For cmake versions since 3.13, `add_link_options(-Wl,--build-id=none)`
+can be added to `Android.mk` files. For cmake versions since 3.13, `add_link_options(LINKER:--build-id=none)`
 can be added to `CMakeLists.txt` globally. For cmake versions before 3.13,
 `target_link_libraries(<target> -Wl,--build-id=none)` can be used instead for
 every target.
+
+
+#### NDK hash style
+
+On different build machines, NDK may use different hash style. Setting the hash style explicitly can fix this problem. For cmake versions since 3.13, `add_link_options(LINKER:--hash-style=gnu)`
+can be added to `CMakeLists.txt` globally.
 
 
 #### _platform_ Revisions
