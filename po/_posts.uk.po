@@ -14,7 +14,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
 "POT-Creation-Date: 2023-02-02 11:50+0100\n"
-"PO-Revision-Date: 2023-01-24 21:16+0000\n"
+"PO-Revision-Date: 2023-02-14 00:19+0000\n"
 "Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/f-droid/website-posts/uk/>\n"
 "Language: uk\n"
@@ -18687,89 +18687,89 @@ msgstr "Наша відповідь"
 #. type: Plain text
 #: _posts/2022-12-22-third-audit-results.md
 msgid "The original index file, the version 0 format, is an XML file generated as part of any repo.  It is available at either _index.xml_ or the more recent signed version at _index.jar_.  Recent versions of the client will always try _index-v1.jar_ first, which is a signed JSON format.  If that is not available, the client will fallback to _index.jar_.  _index.jar_ is also used for the \"nearby\" app swapping functionality.  All of these _index.jar_ files must pass the signature verification before the XML is parsed."
-msgstr ""
+msgstr "Оригінальний файл індексу версії 0 — це XML-файл, який генерується частиною будь-якої операції репозиторію.  Він доступний за адресою _index.xml_ або за адресою _index.jar_ або новішої підписаної версії index.jar .  Останні версії клієнта завжди спочатку намагаються отримати _index-v1.jar_, який є підписаним форматом JSON.  Якщо він недоступний, клієнт перейде до _index.jar_. _index.jar_ також використовується для функції заміни застосунків «поруч».  Усі ці файли _index.jar_ повинні пройти перевірку підпису перед тим, як XML буде проаналізовано."
 
 #. type: Plain text
 #: _posts/2022-12-22-third-audit-results.md
 msgid "Successful exploitation of this would require either a) the attacker was able to get the target to add a malicious repo, or b) the attacker was able to get the repo signing keys and then break into an existing repo's server and replace the index files.  For example, a malicious actor could try to exploit someone via Nearby app swapping, so only get apps from people you trust.  The way that the client is set up to parse the XML was vulnerable, and would allow a successful attacker to read files that the F-Droid app can read"
-msgstr ""
+msgstr "Для успішного використання цього потрібно, щоб: а) зловмисник зміг змусити жертву додати шкідливий репозиторій, або б) зловмисник зміг отримати ключі підпису репозиторію, а потім зламати наявний сервер репозиторію і замінити індексні файли.  Наприклад, зловмисник може спробувати використати когось через підміну застосунків Поруч, тому отримуйте застосунки лише від людей, яким довіряєте.  Спосіб, у який клієнт налаштований на аналіз XML, був вразливим і дозволив би успішному зловмиснику прочитати файли, які може читати застосунок F-Droid"
 
 #. type: Plain text
 #: _posts/2022-12-22-third-audit-results.md
 msgid "For f-droid.org and the Guardian Project repo, the index files are monitored, and changes to them are logged. So we can say with high confidence that _index-v1.jar_ was never removed, which is a prerequisite for exploiting this vulnerability."
-msgstr ""
+msgstr "Для f-droid.org та репозиторію проєкту Guardian ведеться моніторинг індексних файлів, а зміни в них фіксуються в журналах. Тому можна з високою ймовірністю стверджувати, що _index-v1.jar_ ніколи не вилучався, що є передумовою для використання цієї вразливості."
 
 #. type: Plain text
 #: _posts/2022-12-22-third-audit-results.md
 msgid "F-Droid client v1.15.4 disables all support for XML External Entities. The v1.16-alpha0 no longer supports XML indexes at all, and all code related to the XML index parsing and generation was removed.  We will also be working on improving the security of adding repos as part of the [FFDW-DVD]({{ site.baseurl }}{% post_url 2022-02-05-decentralizing-distribution %}) funding."
-msgstr ""
+msgstr "У клієнті F-Droid v1.15.4 вимкнено підтримку зовнішніх об'єктів XML. У версії v1.16-alpha0 більше не підтримуються XML-індекси, а весь код, пов'язаний з аналізом і генеруванням XML-індексів, було вилучено.  Ми також працюватимемо над покращенням безпеки додавання репозиторіїв в рамках фінансування [FFDW-DVD]({{ site.baseurl }}{% post_url 2022-02-05-decentralizing-distribution %})."
 
 #. type: Title ##
 #: _posts/2022-12-22-third-audit-results.md
 #, no-wrap
 msgid "CLN-005 -- Vulnerable TLS versions accepted"
-msgstr ""
+msgstr "CLN-005 -- Прийнято вразливі версії TLS"
 
 #. type: Bullet: '* '
 #: _posts/2022-12-22-third-audit-results.md
 msgid "Vulnerability type: Insecure configuration"
-msgstr ""
+msgstr "Тип уразливості: Небезпечна конфігурація"
 
 #. type: Plain text
 #: _posts/2022-12-22-third-audit-results.md
 msgid "The backend domains used by the application accept obsolete TLS 1.0 and TLS 1.1 protocols."
-msgstr ""
+msgstr "Внутрішні домени, що використовуються застосунком, підтримують застарілі протоколи TLS 1.0 і TLS 1.1."
 
 #. type: Plain text
 #: _posts/2022-12-22-third-audit-results.md
 msgid "Use of TLS 1.0 and 1.1 make the communication susceptible to downgrade attacks, as they work on SHA-1 hash for the integrity of exchanged messages. The handshake authentication is also done on SHA-1, which makes it easier for an attacker to impersonate a server for MITM attacks. The PCI DSS (Payment Card Industry Data Security Standard) specifies that TLS 1.0 may no longer be used as of June 30, 2018, and also strongly recommends disabling 1.1, so this may impact compliance with regulations."
-msgstr ""
+msgstr "Використання TLS 1.0 і 1.1 робить комунікацію вразливою до атак на зниження рівня захисту, оскільки вони працюють з хешем SHA-1 для забезпечення цілісності повідомлень, що обмінюються. Автентифікація за допомогою рукостискання також здійснюється на основі SHA-1, що полегшує зловмиснику видавати себе за сервер для проведення MITM-атак. Стандарт PCI DSS (Стандарт безпеки даних індустрії платіжних карток) визначає, що TLS 1.0 більше не може використовуватися з 30 червня 2018 року, а також наполегливо радить вимкнути 1.1, тому це може вплинути на відповідність нормативним вимогам."
 
 #. type: Plain text
 #: _posts/2022-12-22-third-audit-results.md
 msgid "F-Droid places a high importance on maintaining compatibility as long as possible.  This is why we leave TLS 1.0 and TLS 1.1 enabled on our websites.  We believe there is no added risk for people who keep their software updated.  The F-Droid Client app does not allow TLS 1.1 or 1.0 connections.  TLS 1.3 provides good downgrade protection, TLS 1.2 less. Any reputable TLS implementation from the past years make it quite difficult to force a connection to use TLS 1.0 or 1.1.  [Recent browser releases](https://knowledge.broadcom.com/external/article/195935/major-web-browsers-removing-support-for.html) are entirely removing support for TLS 1.0 and 1.1 anyway.  That means that any browser or client version that connects over TLS 1.0 or 1.1 actually needs that to function.  A device running Android 1.6 should be able to install an old version of F-Droid, and have a working app store."
-msgstr ""
+msgstr "F-Droid надає великого значення підтримці сумісності якомога довше.  Ось чому ми залишаємо TLS 1.0 і TLS 1.1 увімкненими на наших вебсайтах.  Ми вважаємо, що немає ніякого додаткового ризику для людей, які постійно оновлюють своє програмне забезпечення.  Клієнтський застосунок F-Droid не дозволяє з'єднання TLS 1.1 або 1.0.  TLS 1.3 забезпечує хороший захист від пониження версії, TLS 1.2 — менший. Будь-яка авторитетна реалізація TLS за останні роки робить досить складним примусити з'єднання використовувати TLS 1.0 або 1.1.  [Останні випуски браузерів](https://knowledge.broadcom.com/external/article/195935/major-web-browsers-removing-support-for.html) повністю вилучають підтримку TLS 1.0 і 1.1 в будь-якому випадку.  Це означає, що будь-яка версія браузера або клієнта, що з'єднується за допомогою TLS 1.0 або 1.1, фактично потребує цієї версії для роботи.  Пристрій під керуванням Android 1.6 повинен мати можливість установити стару версію F-Droid і мати робочий магазин застосунків."
 
 #. type: Plain text
 #: _posts/2022-12-22-third-audit-results.md
 msgid "If you are on a device that still needs to use TLS 1.0 or 1.1, then there are already so many well known security vulnerabilities that this one is not particularly interesting.  If you would like to test whether your browser still supports TLS 1.0 or 1.1, click on the links below and see if they give you an error message."
-msgstr ""
+msgstr "Якщо ви використовуєте пристрій, який досі потребує використання TLS 1.0 або 1.1, то вже існує так багато відомих уразливостей безпеки, що ця вразливість не дуже цікава.  Якщо ви хочете перевірити, чи підтримує ваш браузер TLS 1.0 або 1.1, перейдіть за посиланнями нижче і подивіться, чи не видасть він повідомлення про помилку."
 
 #. type: Bullet: '* '
 #: _posts/2022-12-22-third-audit-results.md
 msgid "<a href=\"https://tls-v1-0.badssl.com:1010/\" target=\"_blank\">https://tls-v1-0.badssl.com:1010/</a>"
-msgstr ""
+msgstr "<a href=\"https://tls-v1-0.badssl.com:1010/\" target=\"_blank\">https://tls-v1-0.badssl.com:1010/</a>"
 
 #. type: Bullet: '* '
 #: _posts/2022-12-22-third-audit-results.md
 msgid "<a href=\"https://tls-v1-1.badssl.com:1011/\" target=\"_blank\">https://tls-v1-1.badssl.com:1011/</a>"
-msgstr ""
+msgstr "<a href=\"https://tls-v1-1.badssl.com:1011/\" target=\"_blank\">https://tls-v1-1.badssl.com:1011/</a>"
 
 #. type: Title ##
 #: _posts/2022-12-22-third-audit-results.md
 #, no-wrap
 msgid "CLN-001 -- Encryption algorithms using insecure mode and padding scheme"
-msgstr ""
+msgstr "CLN-001 -- Алгоритми шифрування з використанням незахищеного режиму та схеми підставлення"
 
 #. type: Bullet: '* '
 #: _posts/2022-12-22-third-audit-results.md
 msgid "Vulnerability type: Weak Cryptography"
-msgstr ""
+msgstr "Тип уразливості: Слабка криптографія"
 
 #. type: Bullet: '* '
 #: _posts/2022-12-22-third-audit-results.md
 msgid "Threat level: Low"
-msgstr ""
+msgstr "Рівень загрози: Низький"
 
 #. type: Plain text
 #: _posts/2022-12-22-third-audit-results.md
 msgid "The encryption algorithms used in the app use an insecure mode and padding scheme."
-msgstr ""
+msgstr "Алгоритми шифрування, що використовуються в застосунку, використовують незахищений режим і схему підставлення."
 
 #. type: Plain text
 #: _posts/2022-12-22-third-audit-results.md
 msgid "If sensitive data is being encrypted using an insecure mode and padding, it might lead to data being stolen or recovered from the encrypted data."
-msgstr ""
+msgstr "Якщо конфіденційні дані шифруються з використанням незахищеного режиму та підставлення, це може призвести до викрадення даних або їх відновлення із зашифрованих даних."
 
 #. type: Plain text
 #: _posts/2022-12-22-third-audit-results.md
@@ -18785,12 +18785,12 @@ msgstr ""
 #: _posts/2022-12-22-third-audit-results.md
 #, no-wrap
 msgid "CLN-003 -- Clear text traffic is enabled in the application"
-msgstr ""
+msgstr "CLN-003 -- У застосунку ввімкнено трафік звичайного тексту"
 
 #. type: Plain text
 #: _posts/2022-12-22-third-audit-results.md
 msgid "The base network config of the application allows clear-text traffic."
-msgstr ""
+msgstr "Базова мережева конфігурація застосунку дозволяє передавати трафік звичайним текстом."
 
 #. type: Plain text
 #: _posts/2022-12-22-third-audit-results.md
@@ -18855,10 +18855,8 @@ msgstr ""
 
 #. type: Plain text
 #: _posts/2022-12-22-third-audit-results.md
-#, fuzzy
-#| msgid "add [missing features](https://gitlab.com/fdroid/fdroidclient/issues) to the Android client"
 msgid "This [will be fixed](https://gitlab.com/fdroid/fdroidclient/-/issues/2500) in the final v1.16 release."
-msgstr "додати [функції, яких бракує](https://gitlab.com/fdroid/fdroidclient/issues) to the Android client"
+msgstr "Це [буде виправлено](https://gitlab.com/fdroid/fdroidclient/-/issues/2500) у фінальній версії 1.16."
 
 #. type: Yaml Front Matter Hash Value: title
 #: _posts/2023-01-15-towards-a-reproducible-fdroid.md
