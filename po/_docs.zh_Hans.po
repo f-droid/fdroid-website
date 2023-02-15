@@ -28,7 +28,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
 "POT-Creation-Date: 2023-02-02 11:50+0100\n"
 "PO-Revision-Date: 2023-02-16 01:47+0000\n"
-"Last-Translator: JY3 <GeeyunJY3@gmail.com>\n"
+"Last-Translator: linsui <linsui@inbox.lv>\n"
 "Language-Team: Chinese (Simplified) <https://hosted.weblate.org/projects/f-droid/website-docs/zh_Hans/>\n"
 "Language: zh_Hans\n"
 "MIME-Version: 1.0\n"
@@ -5209,7 +5209,7 @@ msgstr "这种情况会给想要从一方签名的版本切换到另一方签名
 #. type: Plain text
 #: _docs/FAQ_-_App_Developers.md
 msgid "We also support reproducible builds, so we can build a version from source and check against your official release. If they match (ignoring the signature) we can then publish your official APK with your signature used. This is a tedious task, since we have to standardize on the build parameters and tools, but it should be worth it in the long run. We also try to verify our own builds and get a lot of binary differences, see [our verification server results](https://verification.f-droid.org/).  However, things will improve over time."
-msgstr "我们还支持可复现的版本，因此我们可以从源代码构建版本，并对比你的官方版本进行检查。如果它们匹配（忽略签名），我们可以发布你的官方 APK，并使用你的签名。这是一项繁琐的任务，因为我们必须对构建参数和工具进行标准化，但从长远来看，这应该是值得的。我们还尝试验证我们自己的构建并得到了很多二进制差异，请参阅[我们的验证服务器结果](https://verification.f-droid.org/)。 但是，随着时间的推移，情况会有所改善。"
+msgstr "我们还支持可重复构建，因此我们可以从源代码构建版本，并对比你的官方版本进行检查。如果它们匹配（忽略签名），我们可以发布你的官方 APK，并使用你的签名。这是一项繁琐的任务，因为我们必须对构建参数和工具进行标准化，但从长远来看，这应该是值得的。我们还尝试验证我们自己的构建并得到了很多二进制差异，请参阅[我们的验证服务器结果](https://verification.f-droid.org/)。 但是，随着时间的推移，情况会有所改善。"
 
 #. type: Title ###
 #: _docs/FAQ_-_App_Developers.md
@@ -7127,7 +7127,7 @@ msgstr "来自 pip wheels 的二进制文件。 一些应用使用 pip 安装依
 #. type: Bullet: '-   '
 #: _docs/Inclusion_Policy.md
 msgid "Binaries from Nix cache. These binaries are mostly reproducible."
-msgstr "来自 Nix 缓存的二进制文件。 这些二进制文件大多是可重构的。"
+msgstr "来自 Nix 缓存的二进制文件。 这些二进制文件大多是可重复的。"
 
 #. type: Bullet: '-   '
 #: _docs/Inclusion_Policy.md
@@ -8976,12 +8976,12 @@ msgstr "最重要的是要知道何时发布新版本。我们有三种自动方
 #: _docs/Reproducible_Builds.md
 #, no-wrap
 msgid "Reproducible Builds"
-msgstr "可重构的构建"
+msgstr "可重复构建"
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
 msgid "F-Droid supports [reproducible builds](https://reproducible-builds.org) of apps, so that anyone can run the build process again and reproduce the same APK as the original release.  This means that F-Droid can verify that an app is 100% free software while still using the original developer's APK signatures.  F-Droid verifies reproducible builds using APK [signature copying](#reproducible-signatures)."
-msgstr "F-Droid 支持应用的[可重复构建](https://reproducible-builds.org)，因此任何人都可以再次运行构建过程，并再现与原始版本相同的 APK。 这意味着 F-Droid 可以验证一个应用程序是100%的自由软件，同时仍然使用原始开发者的 APK 签名。 F-Droid 使用 APK [签名复制](#reproducible-signatures) 来验证可重复的构建。"
+msgstr "F-Droid 支持应用的[可重复构建](https://reproducible-builds.org)，因此任何人都可以再次运行构建过程，并再现与原始版本相同的 APK。 这意味着 F-Droid 可以验证一个应用是 100% 的自由软件，同时仍然使用原始开发者的 APK 签名。 F-Droid 使用 APK [签名复制](#reproducible-signatures)来验证可重复构建。"
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
@@ -9002,7 +9002,7 @@ msgstr "在验证它们与使用 fdroiddata 配方构建的二进制文件匹配
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
 msgid "![Flow-chart for reproducibility check]({% asset docs/reproducible-builds/publish.png %})"
-msgstr "![再现性检查流程图]({% asset docs/reproducible-builds/publish.png %})"
+msgstr "![可重复性检查流程图]({% asset docs/reproducible-builds/publish.png %})"
 
 #. type: Title ####
 #: _docs/Reproducible_Builds.md
@@ -9109,7 +9109,7 @@ msgstr "可重复的签名"
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
 msgid "F-Droid verifies reproducible builds using the [APK signature](https://source.android.com/docs/security/features/apksigning)  (a form of [embedded signature](https://reproducible-builds.org/docs/embedded-signatures/)), which requires [copying](https://github.com/obfusk/apksigcopier) the signature from a signed APK to an unsigned one and then checking if the latter verifies.  The old v1 (JAR) signatures only cover the *contents* of the APK (e.g. ZIP metadata and ordering are irrelevant), but v2/v3 signatures cover *all other bytes in the APK*.  Thus, the APKs must be completely identical *before* and *after* signing (apart from the signature) in order to verify correctly."
-msgstr "F-Droid 使用 [APK 签名](https://source.android.com/docs/security/features/apksigning)  ( [嵌入式签名](https://reproducible-builds.org/docs/embedded-signatures/) 的一种形式) 来验证可重复的构建，这需要 [复制](https://github.com/obfusk/apksigcopier) 签名从一个有签名的 APK 到一个无签名的 APK，然后检查后者是否验证。 旧的 V1（JAR）签名只包括APK的 *内容*（如 ZIP 元数据和排序无关），但 V2/V3 签名包括 *APK 中所有其他字节*。 因此，APK 必须在 *之前* 和 *之后* 完全相同的签名（除了签名之外）才能正确验证。"
+msgstr "F-Droid 使用 [APK 签名](https://source.android.com/docs/security/features/apksigning)（[嵌入式签名](https://reproducible-builds.org/docs/embedded-signatures/)的一种形式）来验证可重复构建，这需要将签名从一个已签名的 APK [复制](https://github.com/obfusk/apksigcopier)到一个未签名的 APK，然后检查后者是否验证。 旧的 v1 (JAR) 签名只包括 APK 的 *内容*（例如，与 ZIP 元数据和排序无关），但 V2/V3 签名包括 *APK 中所有其他字节*。 因此，APK 必须在签名 *之前* 和 *之后* 完全相同（除了签名之外）才能正确验证。"
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
@@ -9145,23 +9145,23 @@ msgstr "此外，我们还必须注意任何对排序敏感的东西，包括时
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
 msgid "Google is also working towards reproducible builds of Android apps, so using recent versions of the Android SDK helps.  One specific case is starting with Gradle Android Plugin v2.2.2, timestamps in the APK file's ZIP metadata are automatically zeroed out."
-msgstr "Google 也在努力实现 Android 应用的可重复构建，所以使用最新版本的 Android SDK 是有帮助的。 一个具体情况是，从 Gradle Android 插件 v2.2.2 开始，APK 文件的 ZIP 元数据中的时间戳被自动清零了。"
+msgstr "Google 也在努力实现 Android 应用的可重复构建，所以使用最新版本的 Android SDK 是有帮助的。 一个具体情况是，从 Gradle Android 插件 v2.2.2 开始，APK 文件的 ZIP 元数据中的时间戳被自动置零了。"
 
 #. type: Title ###
 #: _docs/Reproducible_Builds.md
 #, no-wrap
 msgid "Reproducible APK tools"
-msgstr "可重构 APK 工具"
+msgstr "可重复 APK 工具"
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
 msgid "The scripts from [reproducible-apk-tools](https://github.com/obfusk/reproducible-apk-tools)  (available in fdroiddata as a `srclib`) may help to make builds reproducible, e.g. by fixing newlines (CRLF vs LF) or making ZIP ordering deterministic, if removing the cause of the differences is not a realistic option.  Depending on specifics, these scripts need to be used by upstream developers before signing their APKs, by the fdroiddata recipe, or both."
-msgstr "来自 [reproducible-apk-tools](https://github.com/obfusk/reproducible-apk-tools) 的脚本  （在 fdroiddata 中作为 `srclib`可用）可能有助于使构建可重现，例如，通过固定换行(CRLF vs LF)或使ZIP顺序确定，如果消除差异的原因不是一个现实的选择。  根据具体情况，上游开发人员需要在签署 APK 之前使用这些脚本，或者根据 fdroiddata 配方使用，或者两者同时使用。"
+msgstr "如果消除造成差异的原因难以实现，来自 [reproducible-apk-tools](https://github.com/obfusk/reproducible-apk-tools) 的脚本（在 fdroiddata 中作为 `srclib` 可用）可能有助于使构建可重复，例如，通过固定换行 (CRLF vs LF) 或使 ZIP 顺序确定。根据具体情况，上游开发者需要在签署 APK 之前使用这些脚本，或者根据 fdroiddata 配方使用，或者两者同时使用。"
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
 msgid "Originally created to inject non-determinism in build processes, [disorderfs](https://salsa.debian.org/reproducible-builds/disorderfs) can also do the opposite: make reading from the filesystem deterministic.  In some cases this can make e.g. `resources.arsc` reproducible.  Here is an example from an existing recipe:"
-msgstr "最初创建 [disorderfs](https://salsa.debian.org/reproducible-builds/disorderfs) 的目的是在构建过程中插入非确定性，但也可以出于相反目的使用它：使得从文件系统的读取具有确定性。  在某些情况下，这可以使 `resources.arsc`可重现。  下面是一个来自现有配方的例子："
+msgstr "最初创建 [disorderfs](https://salsa.debian.org/reproducible-builds/disorderfs) 的目的是在构建过程中插入非确定性，但也可以出于相反目的使用它：使得从文件系统的读取具有确定性。在某些情况下，这可以使 `resources.arsc` 可重复。下面是一个来自现有配方的例子："
 
 #. type: Fenced code block (console)
 #: _docs/Reproducible_Builds.md
@@ -9177,12 +9177,12 @@ msgstr ""
 #: _docs/Reproducible_Builds.md
 #, no-wrap
 msgid "Potential sources of unreproducible builds"
-msgstr "不可重构版本的潜在源"
+msgstr "不可重复构建的可能原因"
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
 msgid "There are various ways builds can be unreproducible.  Some are relatively easy to avoid, others are hard to fix.  We've tried to list some common sources below."
-msgstr "构建不可重现的方式有很多种。有些问题相对容易避免，有些很难解决。我们试图在下面列出一些常见的来源。"
+msgstr "构建不可重复的方式有很多种。有些问题相对容易避免，有些很难解决。我们试图在下面列出一些常见的原因。"
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
@@ -9198,7 +9198,7 @@ msgstr "Bug: Android Studio 构建有非确定性 ZIP 顺序"
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
 msgid "[Non-deterministic order of ZIP entries in APK makes builds not reproducible](https://issuetracker.google.com/issues/265653160)  (may require a Google account to view)."
-msgstr "[APK 文件中非决定性的 ZIP 项顺序造成无法重现构建](https://issuetracker.google.com/issues/265653160)  (可能需要 Google 账户方可查看)。"
+msgstr "[APK 文件中非决定性的 ZIP 项顺序造成构建不可重复](https://issuetracker.google.com/issues/265653160)（可能需要 Google 账户方可查看）。"
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
@@ -9256,7 +9256,7 @@ msgstr "注：该问题在 `3.0.69`及更新版本的 R8 (`com.android.tools:r8`
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
 msgid "In some cases builds are not reproducible due to a [bug in `coreLibraryDesugaring`](https://issuetracker.google.com/issues/195968520)  (may require a Google account to view); this [affected NewPipe](https://github.com/TeamNewPipe/NewPipe/issues/6486)."
-msgstr "在某些情况下，由于[ `coreLibraryDesugaring` 中的错误](https://issuetracker.google.com/issues/195968520)，构建无法重现（可能需要 Google 帐号才能查看）；这 [曾影响 NewPipe](https://github.com/TeamNewPipe/NewPipe/issues/6486)。"
+msgstr "在某些情况下，由于 [ `coreLibraryDesugaring` 中的错误](https://issuetracker.google.com/issues/195968520)，构建不可重复（可能需要 Google 帐号才能查看）；这[曾影响 NewPipe](https://github.com/TeamNewPipe/NewPipe/issues/6486)。"
 
 #. type: Title ####
 #: _docs/Reproducible_Builds.md
@@ -9267,12 +9267,12 @@ msgstr "Bug：Windows 和 Linux 版本间的行结束符差异"
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
 msgid "[Newline differences between building on Windows vs Linux make builds not reproducible](https://issuetracker.google.com/issues/266109851)  (may require a Google account to view)."
-msgstr "[Windows 和 Linux 系统上进行构建的换行符差异造成构建不可重现](https://issuetracker.google.com/issues/266109851)  (可能需要 Google 账户才能查看)。"
+msgstr "[Windows 和 Linux 系统上进行构建的换行符差异造成构建不可重复](https://issuetracker.google.com/issues/266109851)（可能需要 Google 账户才能查看）。"
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
 msgid "A workaround is to run [`fix-newlines.py`](https://github.com/obfusk/reproducible-apk-tools#fix-newlinespy)  on the *unsigned* APK with the \"wrong\" line endings to change them from LF to CRLF (or vice versa w/ `--from-crlf`) and `zipalign` it again afterwards."
-msgstr "一个变通方法是在行结束符“错误”的*未签名* APK 文件上  运行 [`fix-newlines.py`](https://github.com/obfusk/reproducible-apk-tools#fix-newlinespy) 来更将他们呢从 LF 更改为 CRLF （或者反向操作 w/ `--from-crlf`）并在之后再次对它进行 `zipalign`。"
+msgstr "一个变通方法是在行结束符“错误”的*未签名* APK 文件上运行 [`fix-newlines.py`](https://github.com/obfusk/reproducible-apk-tools#fix-newlinespy) 将他们从 LF 更改为 CRLF （或者使用 `--from-crlf`反向操作）并在之后再次对它进行 `zipalign`。"
 
 #. type: Title ####
 #: _docs/Reproducible_Builds.md
@@ -9326,7 +9326,7 @@ msgstr "嵌入的构建路径"
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
 msgid "Embedded [build paths](https://reproducible-builds.org/docs/build-path/) are a source of reproducibility issues affecting apps built with e.g. Flutter, python-for-android, or using native code (e.g. Rust, C/C++, any kind of `libfoo.so`).  Apps completely written in Java and/or Kotlin tend to be unaffected."
-msgstr "嵌入的 [构建路径](https://reproducible-builds.org/docs/build-path/) 是造成重现性问题的一个来源，影响使用 Flutter、python-for-android, 或本地代码 (如 Rust、C/C++、任意种类的 `libfoo.so`) 构建的应用。  完全用 Java 和/或 Kotlin 编写的应用不太可能受影响。"
+msgstr "嵌入的[构建路径](https://reproducible-builds.org/docs/build-path/)是可重复性问题的一个来源，影响使用 Flutter、python-for-android 或原生代码（如 Rust、C/C++、各种 `libfoo.so`）构建的应用。完全用 Java 和/或 Kotlin 编写的应用一般不会受影响。"
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
@@ -9347,7 +9347,7 @@ msgstr "内嵌的时间戳"
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
 msgid "Embedded [timestamps](https://reproducible-builds.org/docs/timestamps/) are the most common source of reproducibility issues and are best avoided."
-msgstr "内嵌的[时间戳](https://reproducible-builds.org/docs/timestamps/)是可重现问题最常见的来源，最好避免使用。"
+msgstr "内嵌的[时间戳](https://reproducible-builds.org/docs/timestamps/)是可重复性问题最常见的来源，最好避免。"
 
 #. type: Title #####
 #: _docs/Reproducible_Builds.md
@@ -9389,7 +9389,7 @@ msgid ""
 "}\n"
 msgstr ""
 "aboutLibraries {\n"
-"    // Remove the \"generated\" timestamp to allow for reproducible builds\n"
+"    // 移除 \"generated\" 时间戳以允许可重复构建\n"
 "    excludeFields = arrayOf(\"generated\")\n"
 "}\n"
 
@@ -9458,7 +9458,7 @@ msgstr "_platform_ 修订版"
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
 msgid "In 2014, the Android SDK tools [were changed](https://issuetracker.google.com/issues/37132313) to [stick two](https://android.googlesource.com/platform/frameworks/base/+/ad2d07d%5E!/)  [data elements](https://android.googlesource.com/platform/frameworks/base/+/5283fab%5E!/)  in `AndroidManifest.xml` as part of the build process: `platformBuildVersionName` and `platformBuildVersionCode`.  `platformBuildVersionName` includes the \"revision\" of the _platform_ package built against (e.g. `android-23`), however different \"revisions\" of the same _platform_ package cannot be installed in parallel.  Plus the SDK tools do not support specifying the required revision as part of the build process.  This often results in an otherwise reproducible build where the only difference is the `platformBuildVersionName` attribute."
-msgstr "Android SDK 工具在2014年 [被改变为](https://issuetracker.google.com/issues/37132313)，在 `AndroidManifest.xml` 中 [粘贴两个](https://android.googlesource.com/platform/frameworks/base/+/ad2d07d%5E/) [数据元素](https://android.googlesource.com/platform/frameworks/base/+/5283fab%5E/)，作为构建过程的一部分。`platformBuildVersionName` 和 `platformBuildVersionCode`。   `platformBuildVersionName` 包括_platforms_ 包的\"修订版\"，根据该包构建（例如：`android-23`），然而同一_platforms_ 包的不同\"修订版\"不能并行安装。  另外，SDK 工具不支持指定所需的修订作为构建过程的一部分。 这往往会导致另一种可重复构建，它和真正可重现构建之间唯一的区别是 `platformsBuildVersionName` 属性。"
+msgstr "Android SDK 工具在2014年[改为](https://issuetracker.google.com/issues/37132313)在构建过程中在 `AndroidManifest.xml` 中 [添加两个](https://android.googlesource.com/platform/frameworks/base/+/ad2d07d%5E/)[数据元素](https://android.googlesource.com/platform/frameworks/base/+/5283fab%5E/)：`platformBuildVersionName` 和 `platformBuildVersionCode`。`platformBuildVersionName` 包括 _platforms_ 包的\"修订版\"，根据该包构建（例如：`android-23`），然而同一 _platforms_ 包的不同\"修订版\"不能并行安装。  另外，SDK 工具不支持指定所需的修订作为构建过程的一部分。 这往往会导致另一种可重复构建，它和真正可重复构建之间唯一的区别是 `platformsBuildVersionName` 属性。"
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
@@ -9521,7 +9521,7 @@ msgstr "生成自矢量可绘制对象的 PNG 图片"
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
 msgid "[Android Gradle plugin generates PNG resources from vector drawables for old Android versions](https://developer.android.com/reference/tools/gradle-api/7.3/com/android/build/api/dsl/VectorDrawables#generateddensities).  Unfortunately, the generated PNG files are not reproducible."
-msgstr "[Android Gradle 插件为旧 Android 版本从矢量可绘制图形生成 PNG 资源](https://developer.android.com/reference/tools/gradle-api/7.3/com/android/build/api/dsl/VectorDrawables#generateddensities)。  不幸的是，生成的 PNG 文件不可重现。"
+msgstr "[Android Gradle 插件为旧 Android 版本从矢量可绘制图形生成 PNG 资源](https://developer.android.com/reference/tools/gradle-api/7.3/com/android/build/api/dsl/VectorDrawables#generateddensities)。不幸的是，生成的 PNG 文件不可重复。"
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
@@ -9630,7 +9630,7 @@ msgstr ""
 #: _docs/Reproducible_Builds.md
 #, no-wrap
 msgid "Migration to reproducible builds"
-msgstr "迁移到可重构的构建中"
+msgstr "迁移到可重复构建"
 
 #. type: Title ####
 #: _docs/Reproducible_Builds.md
@@ -9697,12 +9697,12 @@ msgstr "[Google Issue #37132313 platformBuildVersionName 使构建难以重现�
 #. type: Bullet: '* '
 #: _docs/Reproducible_Builds.md
 msgid "[Google Issue #110237303 resources.arsc built with non-determism, prevents reproducible APK builds](https://issuetracker.google.com/issues/110237303) (_Google login and JavaScript required_)"
-msgstr "[Google Issue #110237303 使用非确定性构建的 resources.arsc，可防止可重复的 APK 构建](https://issuetracker.google.com/issues/110237303)（_需要 Google 账号登录以及 JavaScript_）"
+msgstr "[Google Issue #110237303 使用非确定性构建的 resources.arsc，阻止了可重复的 APK 构建](https://issuetracker.google.com/issues/110237303)（_需要 Google 账号登录以及 JavaScript_）"
 
 #. type: Bullet: '* '
 #: _docs/Reproducible_Builds.md
 msgid "[Unreproducible/non-deterministic code generation by navigation.safeargs.kotlin](https://issuetracker.google.com/issues/189498001) (_Google login and JavaScript required_)"
-msgstr "[由 navigation.safeargs.kotlin 生成的不可重构/不确定的代码](https://issuetracker.google.com/issues/189498001) （_需要 Google 账号登录以及 JavaScript_）"
+msgstr "[由 navigation.safeargs.kotlin 生成的不可重复/不确定的代码](https://issuetracker.google.com/issues/189498001) （_需要 Google 账号登录以及 JavaScript_）"
 
 #. type: Yaml Front Matter Hash Value: title
 #: _docs/Running_a_Mirror.md
@@ -10091,7 +10091,7 @@ msgstr "_index-v2_ 使用任何受 [_apksigner_](https://gitlab.com/fdroid/fdroi
 #. type: Bullet: '-   '
 #: _docs/Security_Model.md
 msgid "Production signing is handled by [reproducible builds](https://tests.reproducible-builds.org/debian/rb-pkg/unstable/amd64/android-platform-tools-apksig.html) of _apksigner_ from Debian."
-msgstr "生产签名处理方是 Debian _apksigner_ 的 [可重复构建](https://tests.reproducible-builds.org/debian/rb-pkg/unstable/amd64/android-platform-tools-apksig.html) 。"
+msgstr "产品签名使用 Debian 的[可重复构建](https://tests.reproducible-builds.org/debian/rb-pkg/unstable/amd64/android-platform-tools-apksig.html)的 _apksigner_。"
 
 #. type: Bullet: '-   '
 #: _docs/Security_Model.md
@@ -10146,7 +10146,7 @@ msgstr "[客户端应用内置的固定 TLS 证书](https://gitlab.com/fdroid/fd
 #. type: Plain text
 #: _docs/Security_Model.md
 msgid "In order to defend against an attacker that holds the signing keys for the app repository, there must be a trustworthy source of information to compare against. Reproducible builds means that anyone with the same source code will produce the exact same binary. When paired with an auditing system, it is easy to catch malware inserted in the build process, rather than the source code, like XCodeGhost. Reproducible builds also makes it possible to have all builds of a release binary have the exact same hash. Then any app repository can build apps only from source code, and have a source of verification data from any other app repository building the same app. Building software from source has become cheap enough that many companies like gitlab.com and Travis CI are offering free, automated build services in the cloud. Since the whole F-Droid toolset is free software and designed to be easy to setup, the barriers to setting up automatic auditing are quite low. People in separate areas of the world with different risk profiles can run [verification servers](../Verification_Server) to provide more trustworthy information."
-msgstr "为了防御持有应用存储库签名密钥的攻击者，必须有一个值得信赖的信息源进行比较。可重构的构建意味着具有相同源代码的任何人都将生成完全相同的二进制文件。与审计系统配合使用时，很容易捕获插入构建过程中的恶意软件，而不是源代码，如 XCodeGhost。可重构的构建还可以让发布二进制文件的所有构建具有完全相同的哈希值。然后，任何应用程序存储库都只能从源代码构建应用，并拥有来自构建相同应用的任何其他应用程序存储库的验证数据源。从源代码构建软件已经变得足够便宜，以至于 gitlab.com 和 Travis CI 等许多公司都在云中提供免费的自动化构建服务。由于整个 F-Droid 工具集是免费软件并且易于设置，因此设置自动审计的障碍非常低。世界上不同地区具有不同风险状况的人们可以运行 [验证服务器](../Verification_Server) 以提供更可靠的信息。"
+msgstr "为了防御持有应用存储库签名密钥的攻击者，必须有一个值得信赖的信息源进行比较。可重复构建意味着具有相同源代码的任何人都将生成完全相同的二进制文件。与审计系统配合使用时，很容易捕获插入构建过程中而不是源代码的恶意软件，如 XCodeGhost。可重复构建还可以让发布二进制文件的所有构建具有完全相同的哈希值。然后，任何应用存储库都可以只从源代码构建应用，并拥有来自构建相同应用的任何其他应用存储库的验证数据源。从源代码构建软件已经变得足够便宜，以至于 gitlab.com 和 Travis CI 等许多公司都在云中提供免费的自动化构建服务。由于整个 F-Droid 工具集是自由软件并且易于设置，因此设置自动审计的障碍非常低。世界上不同地区具有不同风险状况的人们可以运行[验证服务器](../Verification_Server)以提供更可靠的信息。"
 
 #. type: Plain text
 #: _docs/Security_Model.md
@@ -10162,7 +10162,7 @@ msgstr "应用签名"
 #. type: Bullet: '* '
 #: _docs/Security_Model.md
 msgid "Apps can be distributed using the [developer's own](../Reproducible_Builds) signatures when the builds are fully reproducible."
-msgstr "当构建完全可重现时，可以使用 [开发者自己的](../Reproducible_Builds)签名分发应用。"
+msgstr "当构建完全可重复时，可以使用[开发者自己的](../Reproducible_Builds)签名分发应用。"
 
 #. type: Bullet: '* '
 #: _docs/Security_Model.md
@@ -10182,7 +10182,7 @@ msgstr "对 _f-droid.org_，所有的应用签名均在专用的、气隙隔离�
 #. type: Bullet: '* '
 #: _docs/Security_Model.md
 msgid "At any time, the developer's own signatures may be added their app(s) in _f-droid.org_ once reproducible builds have been achieved.  Additionally, releases signed by the _f-droid.org_ key will continue to be shipped."
-msgstr "任何时候，一旦实现了可重复构建，就可以将开发者自己的签名添加到开发者发布于 _f-droid.org_ 的应用。  另外，由 _f-droid.org_ 密钥签署的版本将继续分发。"
+msgstr "任何时候，一旦实现了可重复构建，就可以将开发者自己的签名添加到开发者发布于 _f-droid.org_ 的应用。另外，由 _f-droid.org_ 密钥签署的版本将继续分发。"
 
 #. type: Bullet: '* '
 #: _docs/Security_Model.md
