@@ -100,6 +100,7 @@ The following sections describe the fields recognised within the file.
 * [_Builds.gradleprops_](#build_gradleprops)
 * [_Builds.antcommands_](#build_antcommands)
 * [_Builds.output_](#build_output)
+* [_Builds.postbuild_](#build_postbuild)
 * [_Builds.novcheck_](#build_novcheck)
 * [_Builds.antifeatures_](#build_antifeatures)
 * [_AllowedAPKSigningKeys_](#AllowedAPKSigningKeys)
@@ -770,6 +771,23 @@ configuration to the build. These are (roughly in order of application):
     methods like `gradle=yes` or `maven=yes`, but if no build method is
     specified, the build is manual. You should run your build commands,
     such as `make`, in _build_.
+
+    This runs in [`subdir:`](#build_subdir) if set.
+
+`postbuild: xxxx`<a name="build_postbuild"></a>
+
+:   As for 'prebuild', but runs after the actual build phase (the main Ant/Maven build).
+    Use this only for actions that perform some post-processing on the build outputs.
+
+    You can use `$$name$$` to substitute the path to a referenced
+    srclib - see the `srclib` directory for details of this.
+
+    You can use `$$SDK$$` and `$$NDK$$` to substitute the paths to
+    the Android SDK and NDK directories respectively. The following
+    per-build variables are available likewise: `$$VERSION$$`,
+    `$$VERCODE$$` and `$$COMMIT$$`.
+
+    The path to the output APK is available with `$$OUT$$`.
 
     This runs in [`subdir:`](#build_subdir) if set.
 
