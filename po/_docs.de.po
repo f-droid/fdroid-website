@@ -17,7 +17,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
 "POT-Creation-Date: 2023-02-02 11:50+0100\n"
-"PO-Revision-Date: 2023-02-18 17:20+0000\n"
+"PO-Revision-Date: 2023-02-18 23:21+0000\n"
 "Last-Translator: ssantos <ssantos@web.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/f-droid/website-docs/de/>\n"
 "Language: de\n"
@@ -8094,24 +8094,18 @@ msgstr "Was sind Beiträge"
 
 #. type: Bullet: '- '
 #: _docs/MIA_Process.md
-#, fuzzy
-#| msgid "You have an account on [GitLab](https://gitlab.com/)."
 msgid "Commits to one of the repos hosted on [Gitlab](https://gitlab.com/fdroid/)."
-msgstr "Sie ein Konto bei [GitLab](https://gitlab.com/) haben."
+msgstr "Commits an eines der Repos, die auf [Gitlab](https://gitlab.com/fdroid/) gehostet werden."
 
 #. type: Bullet: '- '
 #: _docs/MIA_Process.md
-#, fuzzy
-#| msgid "See also [this gitlab issue](https://gitlab.com/fdroid/fdroiddata/-/issues/2816)."
 msgid "Contributions to issues on [Gitlab](https://gitlab.com/groups/fdroid/-/issues)."
-msgstr "Siehe auch [dieses GitLab-Ticket](https://gitlab.com/fdroid/fdroiddata/-/issues/2816)."
+msgstr "Beiträge zu Tickets auf [Gitlab](https://gitlab.com/groups/fdroid/-/issues)."
 
 #. type: Bullet: '- '
 #: _docs/MIA_Process.md
-#, fuzzy
-#| msgid "Maintaining the forum"
 msgid "Activity on the forum."
-msgstr "Forumpflege"
+msgstr "Aktivität im Forum."
 
 #. type: Title ###
 #: _docs/MIA_Process.md
@@ -9321,10 +9315,8 @@ msgstr "Fehler: Android Studio-Builds haben eine nicht-deterministische ZIP-Reih
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
-#, fuzzy
-#| msgid "[Non-stable `assets/dexopt/baseline.profm`](https://issuetracker.google.com/issues/231837768)  (requires a google account to view)."
 msgid "[Non-deterministic order of ZIP entries in APK makes builds not reproducible](https://issuetracker.google.com/issues/265653160)  (may require a Google account to view)."
-msgstr "[Non-stable `assets/dexopt/baseline.profm`](https://issuetracker.google.com/issues/231837768)  (erfordert ein Google-Konto zur Ansicht)."
+msgstr "[Nicht vorhersehbare Reihenfolge der ZIP-Einträge in APK macht Builds unreproduzierbar](https://issuetracker.google.com/issues/265653160)  (erfordert möglicherweise ein Google-Konto zur Ansicht)."
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
@@ -9392,10 +9384,8 @@ msgstr "Bug: Unterschiede in den Zeilenendungen zwischen Windows- und Linux-Buil
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
-#, fuzzy
-#| msgid "[Non-stable `assets/dexopt/baseline.profm`](https://issuetracker.google.com/issues/231837768)  (requires a google account to view)."
 msgid "[Newline differences between building on Windows vs Linux make builds not reproducible](https://issuetracker.google.com/issues/266109851)  (may require a Google account to view)."
-msgstr "[Non-stable `assets/dexopt/baseline.profm`](https://issuetracker.google.com/issues/231837768)  (erfordert ein Google-Konto zur Ansicht)."
+msgstr "[Unterschiede am Zeilenende zwischen Builds unter Windows und Linux machen sie unreproduzierbar](https://issuetracker.google.com/issues/266109851)  (erfordert möglicherweise ein Google-Konto, um angezeigt zu werden)."
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
@@ -9486,7 +9476,7 @@ msgstr "Gradle-Plugin AboutLibraries"
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
 msgid "You can prevent this plugin (`com.mikepenz.aboutlibraries.plugin`) from adding a timestamp to the JSON file it generates by adding this to `build.gradle`:"
-msgstr ""
+msgstr "Sie können verhindern, dass dieses Plugin (`com.mikepenz.aboutlibraries.plugin`) einen Zeitstempel zu der JSON-Datei hinzufügt, die es erzeugt, indem Sie dies zu `build.gradle` hinzufügen:"
 
 #. type: Fenced code block (gradle)
 #: _docs/Reproducible_Builds.md
@@ -9497,11 +9487,15 @@ msgid ""
 "    excludeFields = [\"generated\"]\n"
 "}\n"
 msgstr ""
+"aboutLibraries {\n"
+"    // Entfernen Sie den Zeitstempel \"generated\", um reproduzierbare Builds zu ermöglichen\n"
+"    excludeFields = [\"generated\"]\n"
+"}\n"
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
 msgid "For `build.gradle.kts`, add this instead:"
-msgstr ""
+msgstr "Fügen Sie für `build.gradle.kts` stattdessen Folgendes hinzu:"
 
 #. type: Fenced code block (kts)
 #: _docs/Reproducible_Builds.md
@@ -9512,6 +9506,10 @@ msgid ""
 "    excludeFields = arrayOf(\"generated\")\n"
 "}\n"
 msgstr ""
+"aboutLibraries {\n"
+"    // Entfernen Sie den \"generated\" Zeitstempel, um reproduzierbare Builds zu ermöglichen\n"
+"    excludeFields = arrayOf(\"generiert\")\n"
+"}\n"
 
 #. type: Title ####
 #: _docs/Reproducible_Builds.md
@@ -9562,6 +9560,12 @@ msgid ""
 "`target_link_libraries(<target> -Wl,--build-id=none)` can be used instead for\n"
 "every target.\n"
 msgstr ""
+"Eine mögliche Lösung ist das Hinzufügen von `-Wl,--build-id=none` zu den Link-Optionen,\n"
+"das die _build-id_-Erzeugung komplett deaktiviert. Für `ndk-build` kann `LOCAL_LDFLAGS += -Wl,--build-id=none`\n"
+"zu den `Android.mk`-Dateien hinzugefügt werden. Für cmake-Versionen ab 3.13 kann `add_link_options(-Wl,--build-id=none)`\n"
+"global zu `CMakeLists.txt` hinzugefügt werden. Für cmake-Versionen vor 3.13\n"
+"kann stattdessen `target_link_libraries(<target> -Wl,--build-id=none)` für jedes\n"
+"Target verwendet werden.\n"
 
 #. type: Title ####
 #: _docs/Reproducible_Builds.md
