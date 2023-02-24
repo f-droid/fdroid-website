@@ -41,8 +41,12 @@ Additionally:
     accessible Version Control System which we have support for (git,
     hg, svn, bzr), and the source code needs to be maintained in an up
     to date state.
--   The software should not download additional executable binary
-    files (e.g. Non-Free addons, auto-updates, etc).
+-   The software must not download additional executable binary files (e.g.
+    addons, auto-updates, etc.) without explicit user consent. Consent means it
+    needs to be opt-in (it must not be harder to decline than to accept or
+    presented in a way users are likely to press accept without reading) and
+    structured in a way that clearly explains to users that they're choosing to
+    bypass F-Droid's checks if they activate it.
 -   The software should use its own unique Android
     "[Application ID](https://developer.android.com/studio/build/configure-app-module)"
     based on a domain name under the developer's control.  For example, if the
