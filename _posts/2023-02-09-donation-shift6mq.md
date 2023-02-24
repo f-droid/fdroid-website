@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Donation SHIFT6mq"
-author: "F-Droid"
+author: "Pander"
 ---
 
 In 2022, the German company SHIFT donated three smartphones of their model [SHIFT6mq](https://www.shiftphones.com/en/shift6mq/) as a *loan for life* to F-Droid team members. This was done without asking for anything in return. However, we do want to share our experiences with the devices.
