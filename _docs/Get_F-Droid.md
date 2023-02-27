@@ -12,11 +12,6 @@ official endorsement of any products, vendors, etc.
   their [membership
   plans](https://members.calyxinstitute.org/enroll/membership/phone) come with
   a phone where F-Droid is pre-installed.
-<!--  hiding iodé for now because: https://gitlab.com/fdroid/admin/-/issues/353
-* __iodéOS__ - IodéOS is a privacy focused version of Android which comes with
-  preinstalled F-Droid.  Iodé operate a web-shop in France, where they sell [new
-  and refurbished phones](https://iode.tech) ready to use with F-Droid on IodéOS.
--->
 * __ShiftOS-Light__ - Shift Phone is a German phone vendor specializing
   in sustainable electronics.  With some [manual
   steps](https://www.shiftphones.com/hilfe_faqs/was-ist-shiftos-l/) their
