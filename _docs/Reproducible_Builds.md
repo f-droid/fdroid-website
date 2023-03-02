@@ -167,7 +167,7 @@ There are various ways builds can be unreproducible.  Some are relatively easy
 to avoid, others are hard to fix.  We've tried to list some common sources
 below.
 
-See also [this gitlab issue](https://gitlab.com/fdroid/fdroiddata/-/issues/2816).
+See also [this GitLab issue](https://gitlab.com/fdroid/fdroiddata/-/issues/2816).
 
 
 #### Bug: Android Studio builds have non-deterministic ZIP ordering
@@ -201,7 +201,7 @@ this case.
 [Non-stable `assets/dexopt/baseline.profm`](https://issuetracker.google.com/issues/231837768)
 (may require a Google account to view).
 
-See also [this writeup of workarounds](https://gist.github.com/obfusk/61046e09cee352ae6dd109911534b12e).
+See also [this write-up of workarounds](https://gist.github.com/obfusk/61046e09cee352ae6dd109911534b12e).
 
 
 #### Bug: coreLibraryDesugaring not deterministic
@@ -243,7 +243,7 @@ virtual machine or container is recommended.
 
 For Rust code, you can set [`codegen-units = 1`](https://doc.rust-lang.org/rustc/codegen-options/index.html#codegen-units).
 
-See also [this gitlab issue](https://gitlab.com/fdroid/rfp/-/issues/1519#note_1226216164).
+See also [this GitLab issue](https://gitlab.com/fdroid/rfp/-/issues/1519#note_1226216164).
 
 
 #### Embedded build paths
@@ -315,15 +315,15 @@ different _build-id_, which is preserved after stripping.
 
 One possible solution is adding `-Wl,--build-id=none` to link options which
 will disable _build-id_ generation completely. For `ndk-build`, `LOCAL_LDFLAGS += -Wl,--build-id=none`
-can be added to `Android.mk` files. For cmake versions since 3.13, `add_link_options(LINKER:--build-id=none)`
-can be added to `CMakeLists.txt` globally. For cmake versions before 3.13,
+can be added to `Android.mk` files. For CMake versions since 3.13, `add_link_options(LINKER:--build-id=none)`
+can be added to `CMakeLists.txt` globally. For CMake versions before 3.13,
 `target_link_libraries(<target> -Wl,--build-id=none)` can be used instead for
 every target.
 
 
 #### NDK hash style
 
-On different build machines, NDK may use different hash style. Setting the hash style explicitly can fix this problem. For cmake versions since 3.13, `add_link_options(LINKER:--hash-style=gnu)`
+On different build machines, NDK may use different hash style. Setting the hash style explicitly can fix this problem. For CMake versions since 3.13, `add_link_options(LINKER:--hash-style=gnu)`
 can be added to `CMakeLists.txt` globally.
 
 
@@ -454,7 +454,7 @@ process can add them.  For example:
 #### TODO
 
 * jar sort order for APKs
-* `aapt` versions produce different results (XML and res/ subfolder names)
+* `aapt` versions produce different results (XML and _res/_ subfolder names)
 
 
 #### Sources
@@ -469,3 +469,4 @@ process can add them.  For example:
 * [Google Issue #37132313 platformBuildVersionName makes builds difficult to reproduce, creates unneeded diffs](https://issuetracker.google.com/issues/37132313) (_Google login and JavaScript required_)
 * [Google Issue #110237303 resources.arsc built with non-determism, prevents reproducible APK builds](https://issuetracker.google.com/issues/110237303) (_Google login and JavaScript required_)
 * [Unreproducible/non-deterministic code generation by navigation.safeargs.kotlin](https://issuetracker.google.com/issues/189498001) (_Google login and JavaScript required_)
+* [unneeded DEX code differences based on number of CPUs used in build process](https://issuetracker.google.com/issues/269181868)  (_Google login and JavaScript required_)
