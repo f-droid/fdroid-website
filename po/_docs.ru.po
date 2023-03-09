@@ -25,7 +25,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
-"POT-Creation-Date: 2023-02-02 11:50+0100\n"
+"POT-Creation-Date: 2023-03-09 17:37+0100\n"
 "PO-Revision-Date: 2023-02-23 18:23+0000\n"
 "Last-Translator: Andrey <andrey@mailbox.org>\n"
 "Language-Team: Russian <https://hosted.weblate.org/projects/f-droid/website-docs/ru/>\n"
@@ -2026,6 +2026,13 @@ msgstr "[_Builds.output_ (Вывод)](#build_output)"
 
 #. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
+#, fuzzy
+#| msgid "[_Builds.build_](#build_build)"
+msgid "[_Builds.postbuild_](#build_postbuild)"
+msgstr "[_Builds.build_ (Сборка)](#build_build)"
+
+#. type: Bullet: '* '
+#: _docs/Build_Metadata_Reference.md
 msgid "[_Builds.novcheck_](#build_novcheck)"
 msgstr "[_Builds.novcheck_](#build_novcheck)"
 
@@ -3584,6 +3591,70 @@ msgstr ""
 "    как `gradle=yes` или `maven=yes`, но если метод сборки не указан,\n"
 "    сборка будет ручной. Вам следует запустить свои команды сборки,\n"
 "    такие как `make`, в _build_.\n"
+
+#. type: Plain text
+#: _docs/Build_Metadata_Reference.md
+#, fuzzy, no-wrap
+#| msgid "_Builds_<a name=\"Builds\"></a>"
+msgid "`postbuild: xxxx`<a name=\"build_postbuild\"></a>\n"
+msgstr "_Сборки_<a name=\"Builds\"></a>"
+
+#. type: Plain text
+#: _docs/Build_Metadata_Reference.md
+#, fuzzy, no-wrap
+#| msgid ""
+#| ":   As for 'prebuild', but runs during the actual build phase (but\n"
+#| "    before the main Ant/Maven build). Use this only for actions that do\n"
+#| "    actual building. Any preparation of the source code should be done\n"
+#| "    using 'init' or 'prebuild'.\n"
+msgid ""
+":   As for 'prebuild', but runs after the actual build phase (the main Ant/Maven build).\n"
+"    Use this only for actions that perform some post-processing on the build outputs.\n"
+msgstr ""
+":   Как и в случае с 'prebuild', но запускается во время фактической фазы сборки (но\n"
+"    перед основной сборкой Ant/Maven). Используйте это только для действий, которые выполняют\n"
+"    фактическую сборку. Любая подготовка исходного кода должна быть выполнена\n"
+"    с помощью 'init' или 'prebuild'.\n"
+
+#. type: Plain text
+#: _docs/Build_Metadata_Reference.md
+#, fuzzy, no-wrap
+#| msgid ""
+#| "    You can use \\$\\$name\\$\\$ to substitute the path to a referenced\n"
+#| "    srclib - see the `srclib` directory for details of this.\n"
+msgid ""
+"    You can use `$$name$$` to substitute the path to a referenced\n"
+"    srclib - see the `srclib` directory for details of this.\n"
+msgstr ""
+"    Вы можете использовать \\$\\$\\$name\\$\\$ для подстановки пути к ссылаемому файлу.\n"
+"    srclib - подробности см. в каталоге `srclib`.\n"
+
+#. type: Plain text
+#: _docs/Build_Metadata_Reference.md
+#, fuzzy, no-wrap
+#| msgid ""
+#| "    You can use \\$\\$SDK\\$\\$, \\$\\$NDK\\$\\$ and \\$\\$MVN3\\$\\$ to\n"
+#| "    substitute the paths to the android SDK and NDK directories and the maven 3\n"
+#| "    executable respectively. The following\n"
+#| "    per-build variables are available likewise: \\$\\$VERSION\\$\\$,\n"
+#| "    \\$\\$VERCODE\\$\\$ and \\$\\$COMMIT\\$\\$.\n"
+msgid ""
+"    You can use `$$SDK$$` and `$$NDK$$` to substitute the paths to\n"
+"    the Android SDK and NDK directories respectively. The following\n"
+"    per-build variables are available likewise: `$$VERSION$$`,\n"
+"    `$$VERCODE$$` and `$$COMMIT$$`.\n"
+msgstr ""
+"    Вы можете использовать \\$\\$SDK\\$\\$\\$, \\$\\$NDK\\$\\$\\$ и \\$\\$MVN3\\$\\$\\$, чтобы\n"
+"    подставить пути к каталогам android SDK и NDK и исполняемому файлу maven 3\n"
+"    соответственно. Следующие\n"
+"    переменные для каждой сборки также доступны: \\$\\$\\$VERSION\\$\\$\\$,\n"
+"    \\$\\$\\$VERCODE\\$\\$\\$ и \\$\\$\\$COMMIT\\$\\$\\$.\n"
+
+#. type: Plain text
+#: _docs/Build_Metadata_Reference.md
+#, no-wrap
+msgid "    The path to the output APK is available with `$$OUT$$`.\n"
+msgstr ""
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -6207,6 +6278,124 @@ msgstr ""
 "</opml>\n"
 
 #. type: Yaml Front Matter Hash Value: title
+#: _docs/Get_F-Droid.md
+#, fuzzy, no-wrap
+#| msgid "In the F-Droid repo"
+msgid "Get F-Droid"
+msgstr "В репозитории F-Droid"
+
+#. type: Plain text
+#: _docs/Get_F-Droid.md
+msgid "Here's a list of ways to getting setup to use F-Droid. Please note that this document just tries to help users getting kick-started, but not an official endorsement of any products, vendors, etc."
+msgstr ""
+
+#. type: Title ###
+#: _docs/Get_F-Droid.md
+#, no-wrap
+msgid "Buy a phone with pre-installed F-Droid"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/Get_F-Droid.md
+msgid "__CalyxOS__ - Calyx Institute is an privacy research NGO in the USA.  Some of their [membership plans](https://members.calyxinstitute.org/enroll/membership/phone) come with a phone where F-Droid is pre-installed."
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/Get_F-Droid.md
+msgid "__ShiftOS-Light__ - Shift Phone is a German phone vendor specializing in sustainable electronics.  With some [manual steps](https://www.shiftphones.com/hilfe_faqs/was-ist-shiftos-l/) their [SHIFT5mq](https://shop.shiftphones.com/shift5me.html) and [SHIFT6mq model](https://shop.shiftphones.com/shift6mq.htm) can be updated to ShiftOS-Light.  F-Droid is pre-installed on ShiftOS-Light."
+msgstr ""
+
+#. type: Title ###
+#: _docs/Get_F-Droid.md
+#, no-wrap
+msgid "Side-load F-Droid"
+msgstr ""
+
+#. type: Plain text
+#: _docs/Get_F-Droid.md
+msgid "Mind: Side-loading F-Droid has some limitations. Most notably Android will prompt users for confirmation for each and every individual update."
+msgstr ""
+
+#. type: Plain text
+#: _docs/Get_F-Droid.md
+msgid "To side-load our app store you may simply have to download the [official F-Droid APK](https://f-droid.org/F-Droid.apk) and install it."
+msgstr ""
+
+#. type: Title ###
+#: _docs/Get_F-Droid.md
+#, no-wrap
+msgid "Advanced ways to install F-Droid"
+msgstr ""
+
+#. type: Plain text
+#: _docs/Get_F-Droid.md
+msgid "For users with technical background or interest, there are also other ways to get F-Droid."
+msgstr ""
+
+#. type: Title ####
+#: _docs/Get_F-Droid.md
+#, no-wrap
+msgid "Install an Android ROM with built-in F-Droid"
+msgstr ""
+
+#. type: Plain text
+#: _docs/Get_F-Droid.md
+msgid "If you're planning on flashing a custom ROM, these ROMs might be interesting for you because the come with F-Droid built-in and ready to use:"
+msgstr ""
+
+#. type: Bullet: '- '
+#: _docs/Get_F-Droid.md
+msgid "__CalyxOS__ - https://calyxos.org"
+msgstr ""
+
+#. type: Bullet: '- '
+#: _docs/Get_F-Droid.md
+msgid "__DivestOS__ - https://divestos.org"
+msgstr ""
+
+#. type: Bullet: '- '
+#: _docs/Get_F-Droid.md
+msgid "__LineageOS for MicroG__ - https://lineage.microg.org"
+msgstr ""
+
+#. type: Title ####
+#: _docs/Get_F-Droid.md
+#, no-wrap
+msgid "Flash F-Droid OTA"
+msgstr ""
+
+#. type: Plain text
+#: _docs/Get_F-Droid.md
+msgid "When you intend on flashing a ROM which doesn-t come preloaded with F-Droid we recommend to flash F-Droid privileged extension OTA. This option works great with [LineageOS](https://lineageos.org/) for example."
+msgstr ""
+
+#. type: Bullet: '- '
+#: _docs/Get_F-Droid.md
+msgid "download the latest [F-Droid privileged extension OTA](https://f-droid.org/en/packages/org.fdroid.fdroid.privileged.ota/#suggested)."
+msgstr ""
+
+#. type: Bullet: '- '
+#: _docs/Get_F-Droid.md
+msgid "boot your phone into recovery mode"
+msgstr ""
+
+#. type: Bullet: '- '
+#: _docs/Get_F-Droid.md
+msgid "side-load / install the OTA zip file to your phone, the same way you would install a custom ROM. (eg. with `adb`, `heimdall`, etc.)"
+msgstr ""
+
+#. type: Title ##
+#: _docs/Get_F-Droid.md
+#, no-wrap
+msgid "Disclaimer"
+msgstr ""
+
+#. type: Plain text
+#: _docs/Get_F-Droid.md
+msgid "F-Droid and it's contributors might or might not be affiliated with any of the ROMs, Device Vendors, etc. listed above. The listing is neither complete nor are any of the linked projects officially endorsed by F-Droid. We reserve the right to change the listing above as our team sees fit. An official policy on criteria to get listed here is still in the works, see [admin#352](https://gitlab.com/fdroid/admin/-/issues/352) for more information.  If you think something on this listing is incorrect or missing please let us know: [team@f-droid.org](mailto:team@f-droid.org)"
+msgstr ""
+
+#. type: Yaml Front Matter Hash Value: title
 #: _docs/Getting_logcat_messages_after_crash.md
 #, no-wrap
 msgid "Getting _logcat_ messages after crash"
@@ -7132,8 +7321,8 @@ msgstr "Исходный код приложения должен хранить
 
 #. type: Bullet: '-   '
 #: _docs/Inclusion_Policy.md
-msgid "The software should not download additional executable binary files (e.g. Non-Free addons, auto-updates, etc)."
-msgstr "Программное обеспечение не должно загружать дополнительные исполняемые двоичные файлы (например, несвободные аддоны, автообновления и т.д.)."
+msgid "The software must not download additional executable binary files (e.g.  addons, auto-updates, etc.) without explicit user consent. Consent means it needs to be opt-in (it must not be harder to decline than to accept or presented in a way users are likely to press accept without reading) and structured in a way that clearly explains to users that they're choosing to bypass F-Droid's checks if they activate it."
+msgstr ""
 
 #. type: Bullet: '-   '
 #: _docs/Inclusion_Policy.md
@@ -9568,10 +9757,21 @@ msgstr "На разных машинах для сборки использую�
 msgid ""
 "One possible solution is adding `-Wl,--build-id=none` to link options which\n"
 "will disable _build-id_ generation completely. For `ndk-build`, `LOCAL_LDFLAGS += -Wl,--build-id=none`\n"
-"can be added to `Android.mk` files. For CMake versions since 3.13, `add_link_options(-Wl,--build-id=none)`\n"
+"can be added to `Android.mk` files. For CMake versions since 3.13, `add_link_options(LINKER:--build-id=none)`\n"
 "can be added to `CMakeLists.txt` globally. For CMake versions before 3.13,\n"
 "`target_link_libraries(<target> -Wl,--build-id=none)` can be used instead for\n"
 "every target.\n"
+msgstr ""
+
+#. type: Title ####
+#: _docs/Reproducible_Builds.md
+#, no-wrap
+msgid "NDK hash style"
+msgstr ""
+
+#. type: Plain text
+#: _docs/Reproducible_Builds.md
+msgid "On different build machines, NDK may use different hash style. Setting the hash style explicitly can fix this problem. For CMake versions since 3.13, `add_link_options(LINKER:--hash-style=gnu)` can be added to `CMakeLists.txt` globally."
 msgstr ""
 
 #. type: Title ####
@@ -9844,6 +10044,12 @@ msgstr "[Google Issue #110237303 resources.arsc собран с неопреде
 #: _docs/Reproducible_Builds.md
 #, fuzzy
 msgid "[Unreproducible/non-deterministic code generation by navigation.safeargs.kotlin](https://issuetracker.google.com/issues/189498001) (_Google login and JavaScript required_)"
+msgstr "[Google Issue #110237303 resources.arsc собран с неопределенностью, что препятствует воспроизводимым сборкам APK](https://issuetracker.google.com/issues/110237303) (_требуется вход в Google и JavaScript_)"
+
+#. type: Bullet: '* '
+#: _docs/Reproducible_Builds.md
+#, fuzzy
+msgid "[unneeded DEX code differences based on number of CPUs used in build process](https://issuetracker.google.com/issues/269181868)  (_Google login and JavaScript required_)"
 msgstr "[Google Issue #110237303 resources.arsc собран с неопределенностью, что препятствует воспроизводимым сборкам APK](https://issuetracker.google.com/issues/110237303) (_требуется вход в Google и JavaScript_)"
 
 #. type: Yaml Front Matter Hash Value: title
@@ -11652,3 +11858,6 @@ msgstr "Предпочтения"
 #: _docs/Whitelabel_Builds.md
 msgid "For a custom build that enables Automatic Updates by default, override _app/src/main/res/xml/preferences.xml_. You can customize the preferences and their default values in _app/src/mycompany/res/xml/preferences.xml_. The fully automatic update requires [Privileged Extension](https://gitlab.com/fdroid/privileged-extension). With regular access, the updates will only automatically download. The user still needs to click install on each one."
 msgstr "Для пользовательской сборки, которая включает автоматические обновления по умолчанию, переопределите _app/src/main/res/xml/preferences.xml_. Вы можете настроить предпочтения и их значения по умолчанию в _app/src/mycompany/res/xml/preferences.xml_. Для полностью автоматического обновления требуется [Privileged Extension](https://gitlab.com/fdroid/privileged-extension). При обычном доступе обновления будут только автоматически загружаться. Пользователю по-прежнему необходимо нажимать кнопку установки на каждом из них."
+
+#~ msgid "The software should not download additional executable binary files (e.g. Non-Free addons, auto-updates, etc)."
+#~ msgstr "Программное обеспечение не должно загружать дополнительные исполняемые двоичные файлы (например, несвободные аддоны, автообновления и т.д.)."
