@@ -24,7 +24,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
 "POT-Creation-Date: 2023-03-09 17:37+0100\n"
-"PO-Revision-Date: 2023-03-10 04:57+0000\n"
+"PO-Revision-Date: 2023-03-10 05:15+0000\n"
 "Last-Translator: linsui <linsui@inbox.lv>\n"
 "Language-Team: Chinese (Simplified) <https://hosted.weblate.org/projects/f-droid/website-posts/zh_Hans/>\n"
 "Language: zh_Hans\n"
@@ -18942,29 +18942,29 @@ msgstr "新的存储库格式实现更快和更小的更新"
 #. type: Plain text
 #: _posts/2023-03-01-new-repo-format-faster-smaller-updates.md
 msgid "We just released version `1.16` of the official F-Droid client app for Android which includes many radical changes under the hood as well as many bug fixes for long standing issue.  Read on for more details."
-msgstr ""
+msgstr "我们刚刚发布了适用于 Android 的官方 F-Droid 客户端应用 `1.16` 版本，其中包括许多底层的彻底改变以及针对长期存在的问题的许多错误修复。请继续阅读以了解详情。"
 
 #. type: Title ##
 #: _posts/2023-03-01-new-repo-format-faster-smaller-updates.md
 #, no-wrap
 msgid "Growing repository size"
-msgstr ""
+msgstr "不断增长的存储库大小"
 
 #. type: Plain text
 #: _posts/2023-03-01-new-repo-format-faster-smaller-updates.md
 msgid "As more and more apps make their way into F-Droid, the official repository index that includes all apps and their metadata also keeps growing.  Currently, the size of the compressed index is `8 MB` which is `33 MB` uncompressed.  When updating the repository index, each F-Droid client app has to download and process those `8MB` again and again.  This problematic trend became apparent [a long time ago](https://gitlab.com/fdroid/fdroidclient/-/issues/649)."
-msgstr ""
+msgstr "随着越来越多的应用进入 F-Droid，包含所有应用及其元数据的官方存储库索引也在不断增长。目前，压缩后索引的大小为 `8 MB`，未压缩时为 `33 MB`。更新存储库索引时，每个 F-Droid 客户端应用都必须一次又一次地下载和处理那些 `8MB`。这种有问题的趋势[很久以前](https://gitlab.com/fdroid/fdroidclient/-/issues/649)就已经变得很明显了。"
 
 #. type: Title ##
 #: _posts/2023-03-01-new-repo-format-faster-smaller-updates.md
 #, no-wrap
 msgid "Updating only what has changed"
-msgstr ""
+msgstr "仅更新有变化的内容"
 
 #. type: Plain text
 #: _posts/2023-03-01-new-repo-format-faster-smaller-updates.md
 msgid "Our repository index is in JSON format and we decided to make use of [RFC 7396 JSON Merge Patch](https://datatracker.ietf.org/doc/html/rfc7396)  to create much smaller JSON files that only contain the changes since your F-Droid app last updated.  Technically, this works by downloading a new [`entry.json`](https://f-droid.org/repo/entry.json) file instead of the full index.  This entry file points to the full index in case the app had never updated before and needs all app metadata anyway.  But the entry also contains pointers to various smaller *diff*erence files.  The app automatically picks the right diff and only downloads that much smaller file instead of the full index.  This not only saves bandwidth, it also makes updating the index much faster as only the minimum amount of data needs to be downloaded, processed and stored.  As of writing, the latest diff is `80 KB` compressed which is `241 KB` uncompressed which is only `1%` of the full index.  Version `1.16` of the official F-Droid client app for Android supports this new repository format."
-msgstr ""
+msgstr "我们的存储库索引采用 JSON 格式，我们决定使用 [RFC 7396 JSON Merge Patch](https://datatracker.ietf.org/doc/html/rfc7396) 创建更小的 JSON 文件，其中仅包含自你的 F-Droid 应用上次更新以来的变化。从技术上讲，这是通过下载新的 [`entry.json`](https://f-droid.org/repo/entry.json) 文件而不是完整索引来实现的。这个入口文件指向完整的索引，以防应用以前从未更新过并且无论如何都需要所有应用元数据。但该条目还包含指向各种较小的 *差异* 文件的指针。应用会自动选择正确的差异，并且只下载那个小得多的文件而不是完整的索引。这不仅可以节省带宽，还可以更快地更新索引，因为只需要下载、处理和存储最少量的数据。在撰写本文时，最新的差异压缩后 `80 KB`，未压缩时为 `241 KB`，仅是完整索引的 `1%`。官方 F-Droid Android 客户端应用 `1.16` 版本支持这种新的存储库格式。"
 
 #. type: Title ##
 #: _posts/2023-03-01-new-repo-format-faster-smaller-updates.md
@@ -18975,12 +18975,12 @@ msgstr "其他改进"
 #. type: Plain text
 #: _posts/2023-03-01-new-repo-format-faster-smaller-updates.md
 msgid "The new version has a large number of radical changes under the hood.  For example, the entire database had to be replaced to support the new difference based repository format.  We also used the opportunity to improve various bit and pieces along the way:"
-msgstr ""
+msgstr "新版本在底层进行了大量彻底的更改。例如，必须替换整个数据库以支持新的基于差异的存储库格式。我们还借此机会改进了各种边边角角："
 
 #. type: Bullet: '  * '
 #: _posts/2023-03-01-new-repo-format-faster-smaller-updates.md
 msgid "improved mirror support: all files (e.g. images) now get loaded from mirrors reducing the load on the main server"
-msgstr ""
+msgstr "改进的镜像支持：所有文件（例如图像）现在都从镜像加载，减少了主服务器上的负载"
 
 #. type: Bullet: '  * '
 #: _posts/2023-03-01-new-repo-format-faster-smaller-updates.md
