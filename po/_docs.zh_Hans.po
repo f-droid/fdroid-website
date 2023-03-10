@@ -27,15 +27,15 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
 "POT-Creation-Date: 2023-03-09 17:37+0100\n"
-"PO-Revision-Date: 2023-02-17 14:40+0000\n"
-"Last-Translator: linsui <linsui@inbox.lv>\n"
+"PO-Revision-Date: 2023-03-10 03:17+0000\n"
+"Last-Translator: Eric <hamburger2048@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Chinese (Simplified) <https://hosted.weblate.org/projects/f-droid/website-docs/zh_Hans/>\n"
 "Language: zh_Hans\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 4.16-dev\n"
+"X-Generator: Weblate 4.16.2-dev\n"
 
 #. type: Yaml Front Matter Hash Value: title
 #: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
@@ -1999,10 +1999,8 @@ msgstr "[_Builds.output_ (输出)](#build_output)"
 
 #. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
-#, fuzzy
-#| msgid "[_Builds.build_](#build_build)"
 msgid "[_Builds.postbuild_](#build_postbuild)"
-msgstr "[_Builds.build_](#build_build)"
+msgstr "[_Builds.postbuild_](#build_postbuild)"
 
 #. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
@@ -3420,63 +3418,49 @@ msgstr "：指定构建的未签名版本 APK 的 glob 路径。这可以 `gradl
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-#, fuzzy, no-wrap
-#| msgid "`build: xxxx`<a name=\"build_build\"></a>\n"
+#, no-wrap
 msgid "`postbuild: xxxx`<a name=\"build_postbuild\"></a>\n"
-msgstr "`build: xxxx`<a name=\"build_build\"></a>\n"
+msgstr "`postbuild: xxxx`<a name=\"build_postbuild\"></a>\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-#, fuzzy, no-wrap
-#| msgid ""
-#| ":   As for 'prebuild', but runs during the actual build phase (but\n"
-#| "    before the main Ant/Maven build). Use this only for actions that do\n"
-#| "    actual building. Any preparation of the source code should be done\n"
-#| "    using 'init' or 'prebuild'.\n"
+#, no-wrap
 msgid ""
 ":   As for 'prebuild', but runs after the actual build phase (the main Ant/Maven build).\n"
 "    Use this only for actions that perform some post-processing on the build outputs.\n"
 msgstr ""
-":   类似 'prebuild'，但在实际构建阶段期间运行 (不过在主 Ant/Maven 构建前)。 \n"
-"    请只对进行实际构建的操作使用它。\n"
-"    任何的源码准备都应使用\n"
-"    'init' 或 'prebuild' 来完成。\n"
+":   类似 'prebuild'，但在实际构建阶段之后运行 （主 Ant/Maven 构建）。\n"
+"    仅将此用于对构建输出执行某些后处理的操作。\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-#, fuzzy, no-wrap
-#| msgid ""
-#| "    You can use \\$\\$name\\$\\$ to substitute the path to a referenced\n"
-#| "    srclib - see the `srclib` directory for details of this.\n"
+#, no-wrap
 msgid ""
 "    You can use `$$name$$` to substitute the path to a referenced\n"
 "    srclib - see the `srclib` directory for details of this.\n"
-msgstr "    可以使用 \\$\\$name\\$\\$ 将路径替换为引用的 srclib - 有关详细信息，请参阅 `srclib` 目录。\n"
+msgstr ""
+"    可以使用 `$$name$$` 将路径替换为引用的 srclib - \n"
+"    有关详细信息，请参阅 `srclib` 目录。\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-#, fuzzy, no-wrap
-#| msgid ""
-#| "    You can use \\$\\$SDK\\$\\$ and \\$\\$NDK\\$\\$ to substitute the paths to the\n"
-#| "    Android SDK and NDK directories respectively. The following\n"
-#| "    per-build variables are available likewise: \\$\\$VERSION\\$\\$,\n"
-#| "    \\$\\$VERCODE\\$\\$ and \\$\\$COMMIT\\$\\$.\n"
+#, no-wrap
 msgid ""
 "    You can use `$$SDK$$` and `$$NDK$$` to substitute the paths to\n"
 "    the Android SDK and NDK directories respectively. The following\n"
 "    per-build variables are available likewise: `$$VERSION$$`,\n"
 "    `$$VERCODE$$` and `$$COMMIT$$`.\n"
 msgstr ""
-"    你可以使用 \\$\\$SDK\\$\\$ 和 \\$\\$NDK\\$\\$ 分别替换\n"
+"    你可以使用 `SDK` 和 `$$NDK$$` 分别替换\n"
 "    Android SDK 和 NDK 目录路径。以下\n"
-"    不同构建的变量同样可用：\\$\\$VERSION\\$\\$、\n"
-"    \\$\\$VERCODE\\$\\$ 和 \\$\\$COMMIT\\$\\$。\n"
+"    不同构建的变量同样可用：`$$VERSION$$`、\n"
+"    `$$VERCODE$$` 和 `$$COMMIT$$`。\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid "    The path to the output APK is available with `$$OUT$$`.\n"
-msgstr ""
+msgstr "    使用 `$$OUT$$` 设置输出 APK 文件的路径。\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -6150,10 +6134,9 @@ msgstr ""
 
 #. type: Yaml Front Matter Hash Value: title
 #: _docs/Get_F-Droid.md
-#, fuzzy, no-wrap
-#| msgid "In the F-Droid repo"
+#, no-wrap
 msgid "Get F-Droid"
-msgstr "位于 F-Droid 存储库中"
+msgstr "获取 F-Droid"
 
 #. type: Plain text
 #: _docs/Get_F-Droid.md
