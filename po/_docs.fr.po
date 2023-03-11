@@ -25,7 +25,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
 "POT-Creation-Date: 2023-03-09 17:37+0100\n"
-"PO-Revision-Date: 2023-02-23 12:46+0000\n"
+"PO-Revision-Date: 2023-03-12 14:41+0000\n"
 "Last-Translator: Translator <kvb@tuta.io>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/f-droid/website-docs/fr/>\n"
 "Language: fr\n"
@@ -33,7 +33,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 4.16-dev\n"
+"X-Generator: Weblate 4.16.2-dev\n"
 
 #. type: Yaml Front Matter Hash Value: title
 #: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
@@ -2008,10 +2008,8 @@ msgstr "[_Builds.output_ (Sortie)](#build_output)"
 
 #. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
-#, fuzzy
-#| msgid "[_Builds.build_](#build_build)"
 msgid "[_Builds.postbuild_](#build_postbuild)"
-msgstr "[_Builds.build_ (Version)](#build_build)"
+msgstr "[_Builds.postbuild_](#build_postbuild)"
 
 #. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
@@ -3463,7 +3461,7 @@ msgstr ""
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid "`gradleprops: <prop1>[,<prop2>,...]`<a name=\"build_gradleprops\"></a>\n"
-msgstr ""
+msgstr "`gradleprops: <proposition1>[,<proposition2>, …]`<a name=\"build_gradleprops\"></a>\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -3472,6 +3470,8 @@ msgid ""
 ":   List of Gradle properties to pass via the command line to Gradle. A\n"
 "    property can be of the form `foo` or of the form `key=value`.\n"
 msgstr ""
+":   Liste des propriétés Gradle à lui faire passer via la ligne de commande.\n"
+"    Une propriété peut être de l'une des formes suivantes, `foo` ou `key=value`.\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -3480,12 +3480,14 @@ msgid ""
 "    For example: `gradleprops=enableFoo,someSetting=bar` will result in\n"
 "    `gradle -PenableFoo -PsomeSetting=bar`.\n"
 msgstr ""
+"    Par exemple : `gradleprops=enableFoo,someSetting=bar` va aboutir à\n"
+"    `gradle -PenableFoo -PsomeSetting=bar`.\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid "`antcommands: <target1>[,<target2>,...]`<a name=\"build_antcommands\"></a>\n"
-msgstr ""
+msgstr "`antcommands: <cible1>[, <cible2>, …]`<a name=\"build_antcommands\"></a>\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -3495,12 +3497,15 @@ msgid ""
 "    default 'release'. It can't be given any flags, such as the path to\n"
 "    a _build.xml_.\n"
 msgstr ""
+":   Spécifie un ensemble de commandes Ant (cible) de substitution\n"
+"    à la place du « release » par défaut. On ne peut pas lui indiquer de\n"
+"    marqueurs (flags) tel que le chemin vers un _build.xml_.\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid "`output: glob/to/output.apk`<a name=\"build_output\"></a>\n"
-msgstr ""
+msgstr "`output: glob/to/output.apk`<a name=\"build_output\"></a>\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -3512,74 +3517,63 @@ msgid ""
 "    specified, the build is manual. You should run your build commands,\n"
 "    such as `make`, in _build_.\n"
 msgstr ""
+":   Spécifie un chemin global où devrait se trouver l'APK non signé issue de\n"
+"    la compilation. Ceci peut être utiliser avec des méthodes de compilation\n"
+"    comme `gradle=yes` ou `maven=yes`. Si aucune méthode n'est précisée\n"
+"    la compilation est manuelle. Vous devrez exécuter vos commandes de\n"
+"    compilation tel que `make` dans _build_.\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-#, fuzzy, no-wrap
-#| msgid "`build: xxxx`<a name=\"build_build\"></a>\n"
+#, no-wrap
 msgid "`postbuild: xxxx`<a name=\"build_postbuild\"></a>\n"
-msgstr "`build: xxxx`<a name=\"build_build\"></a>\n"
+msgstr "`postbuild: xxxx`<a name=\"build_postbuild\"></a>\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-#, fuzzy, no-wrap
-#| msgid ""
-#| ":   As for 'prebuild', but runs during the actual build phase (but\n"
-#| "    before the main Ant/Maven build). Use this only for actions that do\n"
-#| "    actual building. Any preparation of the source code should be done\n"
-#| "    using 'init' or 'prebuild'.\n"
+#, no-wrap
 msgid ""
 ":   As for 'prebuild', but runs after the actual build phase (the main Ant/Maven build).\n"
 "    Use this only for actions that perform some post-processing on the build outputs.\n"
 msgstr ""
-":   Fonctionne de la même manière que « prebuild », mais est utilisé durant la phase de\n"
-"    compilation (néanmoins avant la compilation principale de Ant/Maven). Utilisation\n"
-"    uniquement pour les actions qui font la réelle compilation. Toute préparation du\n"
-"    code source doit être fait en utilisant « init » ou « »prebuild ».\n"
+":   Fonctionne de la même manière que « prebuild », mais est utilisé après la phase de compilation (la compilation principale de\n"
+"    Ant/Maven). Son utilisation est réservée aux actions qui réalisent des post-traitements sur le résultat de la compilation.\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-#, fuzzy, no-wrap
-#| msgid ""
-#| "    You can use \\$\\$name\\$\\$ to substitute the path to a referenced\n"
-#| "    srclib - see the `srclib` directory for details of this.\n"
+#, no-wrap
 msgid ""
 "    You can use `$$name$$` to substitute the path to a referenced\n"
 "    srclib - see the `srclib` directory for details of this.\n"
 msgstr ""
-"    Vous pouvez utiliser \\$\\$name\\$\\$ pour remplacer le chemin d'accès vers un srclib\n"
-"    référencé — regardez le répertoire `srclib` pour plus de détails.\n"
+"    Vous pouvez utiliser `$$name$$` pour remplacer le chemin d'accès vers\n"
+"    un srclib référencé — regardez le répertoire `srclib` pour plus de détails.\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-#, fuzzy, no-wrap
-#| msgid ""
-#| "    You can use \\$\\$SDK\\$\\$ and \\$\\$NDK\\$\\$ to substitute the paths to the\n"
-#| "    Android SDK and NDK directories respectively. The following\n"
-#| "    per-build variables are available likewise: \\$\\$VERSION\\$\\$,\n"
-#| "    \\$\\$VERCODE\\$\\$ and \\$\\$COMMIT\\$\\$.\n"
+#, no-wrap
 msgid ""
 "    You can use `$$SDK$$` and `$$NDK$$` to substitute the paths to\n"
 "    the Android SDK and NDK directories respectively. The following\n"
 "    per-build variables are available likewise: `$$VERSION$$`,\n"
 "    `$$VERCODE$$` and `$$COMMIT$$`.\n"
 msgstr ""
-"    Vous pouvez utiliser \\$\\$SDK\\$\\$ et \\$\\$NDK\\$\\$ pour substitutuer\n"
+"    Vous pouvez utiliser `$$SDK$$` et `$$NDK$$` pour substitutuer\n"
 "    les chemins aux dossiers du SDK et NDK Android respectivement \n"
 "    Les variables suivantes sont disponibles par compilation de cette\n"
-"    façon : \\$\\$VERSION\\$\\$, \\$\\$VERCODE\\$\\$ et \\$\\$COMMIT\\$\\$.\n"
+"    façon : `$$VERSION$$`, `$$VERCODE$$` et `$$COMMIT$$`.\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid "    The path to the output APK is available with `$$OUT$$`.\n"
-msgstr ""
+msgstr "    Le chemin vers l'APK résultant est disponible avec `$$OUT$$`.\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid "`novcheck: true`<a name=\"build_novcheck\"></a>\n"
-msgstr ""
+msgstr "`novcheck: true`<a name=\"build_novcheck\"></a>\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -3593,9 +3587,9 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "`antifeatures: <antifeature1>[,<antifeature2>,...]`<a name=\"build_antifeatures\"></a>\n"
-msgstr "`antifonctions : <antifeature1>[,<antifeature2>,...]`\n"
+msgstr "`antifeatures: <antifonction1>[,<antifonction2>, …]`<a name=\"build_antifeatures\"></a>\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -3611,7 +3605,7 @@ msgstr ""
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid "_AllowedAPKSigningKeys_<a name=\"AllowedAPKSigningKeys\"></a>"
-msgstr ""
+msgstr "_AllowedAPKSigningKeys_(clés autorisées à signer les APK)<a name=\"AllowedAPKSigningKeys\"></a>"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -3622,7 +3616,7 @@ msgstr ""
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid "apksigner verify --print-certs example.apk | grep SHA-256\n"
-msgstr ""
+msgstr "apksigner verify --print-certs exemple.apk | grep SHA-256\n"
 
 #. type: Title ###
 #: _docs/Build_Metadata_Reference.md
@@ -6051,10 +6045,9 @@ msgstr ""
 
 #. type: Yaml Front Matter Hash Value: title
 #: _docs/Get_F-Droid.md
-#, fuzzy, no-wrap
-#| msgid "In the F-Droid repo"
+#, no-wrap
 msgid "Get F-Droid"
-msgstr "Dans le dépôt F-Droid"
+msgstr "Obtenir F-Droid"
 
 #. type: Plain text
 #: _docs/Get_F-Droid.md
