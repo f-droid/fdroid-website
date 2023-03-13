@@ -22,10 +22,9 @@ The discussions are logged on
 
 An F-Droid matrix space grouping together all F-Droid related rooms exists at [#fdroid-space:f-droid.org](https://matrix.to/#/#fdroid-space:f-droid.org), and can be joined by anyone.
 
-There are also bridges to Telegram and Jabber/XMPP (experimental).
-To join via Telegram, click [this link](https://matrix.f-droid.org/fdroid/telegram/).
-For Jabber/XMPP,
-join [#fdroid#matrix.org@matrix.org](xmpp:#fdroid#matrix.org@matrix.org?join).
+XMPP users can join via a [Biboumi](https://doc.biboumi.louiz.org/) gateway that connects to IRC, easiest way is to ask your XMPP server admin to host one, but if not possible, try one of the public ones. Copy and paste the address in your XMPP clients channel input field `#fdroid%irc.oftc.net@irc.jabberfr.org` _(hosted by [JabberFR](https://jabberfr.org/))_ or `#fdroid%irc.oftc.net@irc.hmm.st` _(hosted by [hmm.st](https://hmm.st/))_
+
+There is also a Matrix bridge to Telegram, to join it click [this link](https://matrix.f-droid.org/fdroid/telegram/).
 
 F-Droid contributors also run a social-media account on the Fediverse. You can
 interact with us or follow us on [@fdroidorg@floss.social](https://floss.social/@fdroidorg).
