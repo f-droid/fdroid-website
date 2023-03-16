@@ -4,7 +4,7 @@ author: downeym
 layout: post
 ---
 
-THE INTERNET,20 March 2023 — The global F-Droid community is pleased to announce that it has officially accepted the merge request to adopt an official governance plan, and an inaugural board of directors consisting of community-nominated members.
+THE INTERNET, 20 March 2023 — The global F-Droid community is pleased to announce that it has officially accepted the merge request to adopt an official governance plan, and an inaugural board of directors consisting of community-nominated members.
 
 The community has been legally established through [The Commons Conservancy](https://commonsconservancy.org/), a Netherlands-based foundation (["Stichting"](https://en.wikipedia.org/wiki/Stichting)) that exists as a home for technology efforts in the public interest. While The Commons Conservancy is our official and new legal home, F-Droid has established its own independent volunteer board of directors, who are entrusted by the F-Droid community to develop strategy, identify areas of improvement, help to resolve conflicts, and oversee technical projects and decisions by the community to reduce risk and increase trust of F-Droid users around the world. With so many recent changes to existing app store policies and government regulations, it's an interesting time for FOSS app stores like F-Droid. (Our new board member John Sullivan recently [spoke about this during FOSDEM 2023](https://fosdem.org/2023/schedule/event/app_store_changes/).) 
 
@@ -12,8 +12,8 @@ For the past several months, prospective board members drafted and refined inter
 
 Inaugural board members were selected through F-Droid community discussion and will serve in staggered 2-year terms: Morgan Lemmer Webber (Chair), John Sullivan (Vice Chair), Michael Downey (Treasurer), Matthias Kirschner, Andrew Lewman (Clerk), and Max Mehl. The Board also includes a special role of Technical Lead which will ensure representation of the F-Droid developer community, initially filled by Hans-Christoph Steiner.
 
-![Screenshot of Jitsi meeting of several board members and observers following signing of Statutes.]({% asset posts/2023-03-20-f-droid-board/fdroid-board-signing.png %})
-*Board members and observers at virtual Statutes signing over Jitsi.*
+![Screenshot of Jitsi meeting with several board members and observers, following signing of statutes.]({% asset posts/2023-03-20-f-droid-board/fdroid-board-signing.png %})
+*Board members and community observers attend the virtual singing of the board statutes.*
 
 Although announcements of new governance bodies for free & open source software projects often include plans for the new organization to raise money, the F-Droid community plans to retain its existing donations model with individual donors contributing directly to community members via [Liberapay](https://liberapay.com/F-Droid-Data/) and [Open Collective](https://opencollective.com/f-droid). The newly-established Board of Directors has created a treasurer role, who will work with the existing stewards of those funds to help ensure funds are spent on the most impactful and important community priorities.
 
