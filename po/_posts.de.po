@@ -18,8 +18,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
 "POT-Creation-Date: 2023-03-09 17:37+0100\n"
-"PO-Revision-Date: 2023-03-16 23:55+0000\n"
-"Last-Translator: VfBFan <drop0815@posteo.de>\n"
+"PO-Revision-Date: 2023-03-20 14:59+0000\n"
+"Last-Translator: \"C. Rüdinger\" <Mail-an-CR@web.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/f-droid/website-posts/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
@@ -18979,38 +18979,38 @@ msgstr "Nur was sich ändert wird aktualisiert"
 #. type: Plain text
 #: _posts/2023-03-01-new-repo-format-faster-smaller-updates.md
 msgid "Our repository index is in JSON format and we decided to make use of [RFC 7396 JSON Merge Patch](https://datatracker.ietf.org/doc/html/rfc7396)  to create much smaller JSON files that only contain the changes since your F-Droid app last updated.  Technically, this works by downloading a new [`entry.json`](https://f-droid.org/repo/entry.json) file instead of the full index.  This entry file points to the full index in case the app had never updated before and needs all app metadata anyway.  But the entry also contains pointers to various smaller *diff*erence files.  The app automatically picks the right diff and only downloads that much smaller file instead of the full index.  This not only saves bandwidth, it also makes updating the index much faster as only the minimum amount of data needs to be downloaded, processed and stored.  As of writing, the latest diff is `80 KB` compressed which is `241 KB` uncompressed which is only `1%` of the full index.  Version `1.16` of the official F-Droid client app for Android supports this new repository format."
-msgstr ""
+msgstr "Unser Repository-Index ist im JSON-Format und wir entschieden uns dafür, vom [RFC 7396 JSON Merge Patch](https://datatracker.ietf.org/doc/html/rfc7396)  Gebrauch zu machen, um viel kleinere JSON-Dateien zu erstellen, die nur noch die Änderungen seit der letzten Aktualisierung eurer F-Droid-App enthalten.  Technisch funktioniert das so, dass eine neue Datei mit Namen [`entry.json`](https://f-droid.org/repo/entry.json) statt des kompletten Index heruntergeladen wird.  Diese „entry“-Datei verweist auf den kompletten Index, sollte die App nie zuvor aktualisiert worden sein und ohnehin alle Metadaten benötigen.  Aber die „entry“ beinhaltet auch Verweise auf verschiedene kleinere *Diff*erenz-Dateien.  Die App sucht sich automatisch die richtige Diff und lädt nur die viel kleinere Datei statt des kompletten Index herunter.  Das spart nicht nur Datenvolumen, es macht die Aktualisierung des Index auch viel schneller, da nur die kleinst mögliche Datenmenge heruntegeladen, verarbeitet und gespeichert werden muss.  Während dies hier geschrieben wird, betrug die Größe der neusten Diff komprimiert `80 KB`, was unkomprimiert `241 KB` entspricht, nur `1%` des kompletten Index.  Die Version `1.16` der offiziellen F-Droid-App für Android unterstützt dieses neue Repository-Format."
 
 #. type: Title ##
 #: _posts/2023-03-01-new-repo-format-faster-smaller-updates.md
 #, no-wrap
 msgid "Other improvements"
-msgstr ""
+msgstr "Weitere Verbesserungen"
 
 #. type: Plain text
 #: _posts/2023-03-01-new-repo-format-faster-smaller-updates.md
 msgid "The new version has a large number of radical changes under the hood.  For example, the entire database had to be replaced to support the new difference based repository format.  We also used the opportunity to improve various bit and pieces along the way:"
-msgstr ""
+msgstr "Die neue Version bringt eine große Zahl radikaler Veränderungen mit sich.  Zum Besipiel musste die ganze Datenbank ersetzt werden, um das neue differenzbasierte Repository-Format zu unterstützen.  Wir nutzten auf dem Weg dorthin die Gelegenheit, verschiedenen Kleinkram zu verbessern:"
 
 #. type: Bullet: '  * '
 #: _posts/2023-03-01-new-repo-format-faster-smaller-updates.md
 msgid "improved mirror support: all files (e.g. images) now get loaded from mirrors reducing the load on the main server"
-msgstr ""
+msgstr "verbesserte Spiegelserver-Unterstützung: alle Dateien (z. B. Bilder) werden nun von Spiegelservern geladen, was die Belastung des Hauptservers reduziert"
 
 #. type: Bullet: '  * '
 #: _posts/2023-03-01-new-repo-format-faster-smaller-updates.md
 msgid "better support for low RAM devices, because the index now gets streamed into the DB instead of loading all of it into memory"
-msgstr ""
+msgstr "bessere Unterstützung von Geräten mit geringem RAM, weil der Index jetzt in die Datenbank einfließt, statt ihn komplett in den Speicher zu laden"
 
 #. type: Bullet: '  * '
 #: _posts/2023-03-01-new-repo-format-faster-smaller-updates.md
 msgid "hash verification: The SHA256 hash of *all* files is now part of the repository metadata and gets verified while downloading"
-msgstr ""
+msgstr "Hash-Verifizierung: Der SHA256-Hash *aller* Dateien ist nun Teil der Repository-Metadaten und wird während des Downloads verifiziert"
 
 #. type: Bullet: '  * '
 #: _posts/2023-03-01-new-repo-format-faster-smaller-updates.md
 msgid "stronger digest algorithm for repository signing: We now use SHA256 instead of SHA1 for the index signature"
-msgstr ""
+msgstr "stärkerer Algorithmus zur Repository-Signierung: Wir verwenden jetzt SHA256 statt SHA1 für die Indexsignatur"
 
 #. type: Bullet: '  * '
 #: _posts/2023-03-01-new-repo-format-faster-smaller-updates.md
@@ -19020,54 +19020,54 @@ msgstr "Unterstützung für das Herunterladen von Repository-Dateien über IPFS"
 #. type: Bullet: '  * '
 #: _posts/2023-03-01-new-repo-format-faster-smaller-updates.md
 msgid "many bug fixes that came out of modernizing ancient code"
-msgstr ""
+msgstr "viele Fehlerkorrekturen als Resultat der Modernisierung alten Codes"
 
 #. type: Plain text
 #: _posts/2023-03-01-new-repo-format-faster-smaller-updates.md
 msgid "The new version went through [a series of alpha releases]({{ site.baseurl }}{% post_url 2022-11-30-upcoming-alpha-release-of-f-droid-client %})  with extended testing to make sure no severe issues make it into the stable release.  It is now considered ready for general use."
-msgstr ""
+msgstr "Die neue Version durchlief [eine Serie von Alpha-Versionen]({{ site.baseurl }}{% post_url 2022-11-30-upcoming-alpha-release-of-f-droid-client %})  mit ausführlicher Testung, um sicherzugehen, dass keine ernsten Probleme in der stabilen Version auftauchen.  Sie wird nun als bereit für den allgemeinen Gebrauch angesehen."
 
 #. type: Title ##
 #: _posts/2023-03-01-new-repo-format-faster-smaller-updates.md
 #, no-wrap
 msgid "Information for repository and client maintainers"
-msgstr ""
+msgstr "Informationen für Maintainer von Repository und Client"
 
 #. type: Plain text
 #: _posts/2023-03-01-new-repo-format-faster-smaller-updates.md
 msgid "Owners of third-party F-Droid repositories can enable the new format by upgrading to the latest version of [fdroidserver](https://gitlab.com/fdroid/fdroidserver) which will automatically publish the new format in addition to the old ones which we keep around to support older client apps."
-msgstr ""
+msgstr "Eigentümer von F-Droid-Repositorys von Drittanbietern können das neue Format aktivieren, indem sie ein Upgrade auf die neueste Version von [fdroidserver](https://gitlab.com/fdroid/fdroidserver) vornehmen, der automatisch das neue Format veröffentlichen wird, zusätzlich zum alten, welches erhalten bleibt, um ältere Client-Apps zu unterstützen."
 
 #. type: Plain text
 #: _posts/2023-03-01-new-repo-format-faster-smaller-updates.md
 msgid "Developers of third-party F-Droid clients are encouraged to adopt the new format either with their own implementations or by making use of the [new libraries](https://gitlab.com/fdroid/fdroidclient/-/tree/master/libs#f-droid-libraries)  we are publishing to make using this technology as easy as possible and to share as much code as possible between different F-Droid implementations."
-msgstr ""
+msgstr "Entwickler von F-Droid-Clients von Drittanbietern werden ermutigt, das neue Format zu übernehmen, entweder in Form eigener Implementationen oder durch Nutzung der [neuen Bibliotheken](https://gitlab.com/fdroid/fdroidclient/-/tree/master/libs#f-droid-libraries),  die wir veröffentlichen, um die Verwendung dieser Technologie so einfach wie möglich zu machen und um soviel Code wie möglich unter verschiedenen Implementationen zu teilen."
 
 #. type: Yaml Front Matter Hash Value: title
 #: _posts/2023-03-08-vpn-trust-requires-free-software.md
 #, no-wrap
 msgid "VPN trust requires free software"
-msgstr ""
+msgstr "Ein vertrauenswürdiges VPN benötigt freie Software"
 
 #. type: Plain text
 #: _posts/2023-03-08-vpn-trust-requires-free-software.md
 msgid "VPNs have become popular and are often touted as a tool to improve privacy.  While this is sometimes true, it is important to tread carefully when choosing an VPN.  A good place to start is looking at which VPN providers meet the [requirements](https://guardianproject.info/2023/02/28/steps-towards-trusted-vpns/) for running a trustworthy VPN service.  A trustworthy VPNs must be free software, that is non-negotiable.  First, inspection is required in order trust software.  Having the source is the only way to see all the things the software is doing.  F-Droid reviews the apps that we ship on this website, which lets us spot potential issues and anti-features.  And we are happy to hear that reputable VPN providers make the effort to get their apps on f-droid.org to build trust with their users.  From there, [Reproducible Builds]({{ site.baseurl }}/docs/Reproducible_Builds) provides a strong link between the source code and the actual app binaries that run on the device."
-msgstr ""
+msgstr "VPNs sind populär geworden und werden oft als Instrument zur Verbesserung des Datenschutzes angepriesen.  Auch wenn das manchmal richtig ist, ist es wichtig, bei der Auswahl eines VPN sorgfältig vorzugehen.  Ein guter Ausgangspunkt dafür ist, darauf zu achten, welche VPN-Anbieter die [Anforderungen](https://guardianproject.info/2023/02/28/steps-towards-trusted-vpns/) für einen vertrauenswürdigen VPN-Betrieb erfüllen.  Ein vertrauenswürdiges VPN muss freie Software sein, das ist nicht verhandelbar.  Zuallererst ist Inspektion erforderlich, um Software zu vertrauen.  Der Besitz des Quellcodes ist der einzige Weg, alle Dinge zu sehen, welche die Software tut.  F-Droid überprüft die Apps, die wir auf dieser Website vertreiben, was es uns ermöglicht auf potentielle Probleme und unerwünschte Merkmale hinzuweisen.  Und wir sind glücklich zu hören, dass angesehene VPN-Anbieter Anstrengungen unternehmen, ihre Apps auf f-droid.org zu bekommen, um ihren Anwendern Vertauen zu vermitteln.  [Reproduzierbare Builds]({{ site.baseurl }}/docs/Reproducible_Builds) bieten daher eine starke Verknüpfung zwischen dem Quellcode und den eigentlichen App-Binärdateien, die auf dem Gerät laufen."
 
 #. type: Plain text
 #: _posts/2023-03-08-vpn-trust-requires-free-software.md
 msgid "The best VPNs are the ones that use free software both for the client app, and for running the services.  Indeed all OpenVPN, Shadowsocks, and WireGuard VPNs are based on free software since those standards are defined by free software projects.  F-Droid looks into this as part of the reviews, and marks apps with relevant Anti-Features, like the [Non-Free Network Services](https://f-droid.org/docs/Anti-Features/#NonFreeNet) mark if the server side is not free software.  And there are a number of free software projects that make it a lot easier to setup and run a VPN or proxy services.  Here are some that are on f-droid.org:"
-msgstr ""
+msgstr "Die besten VPNs sind diejenigen, die sowohl für die Client-App als auch den Serverbetrieb freie Software verwenden.  In der Tat basieren alle VPNs von OpenVPN, Shadowsocks und WireGuard auf freier Software, nachdem deren Standards durch freie Softwareprojekte definiert sind.  F-Droid sieht im Rahmen der Prüfung nach und markiert Apps mit relevanten Anti-Features, wie der Markierung als [proprietären Netzwerkdienst](https://f-droid.org/docs/Anti-Features/#NonFreeNet), falls auf Serverseite keine freie Software läuft.  Und es gibt da eine Vielzahl an freier Software, die es sehr viel leichter macht, ein VPN oder einen Proxy-Server einzurichten und zu betreiben.  Hier einige, die auf f-droid.org sind:"
 
 #. type: Bullet: '* '
 #: _posts/2023-03-08-vpn-trust-requires-free-software.md
 msgid "[Bitmask](https://f-droid.org/packages/se.leap.bitmaskclient/) is a generic client for the [LEAP](https://leap.se/) VPN setup which powers [Calyx VPN](https://f-droid.org/packages/org.calyxinstitute.vpn/), [Riseup VPN](https://f-droid.org/packages/se.leap.riseupvpn/), and more."
-msgstr ""
+msgstr "[Bitmask](https://f-droid.org/packages/se.leap.bitmaskclient/) ist ein allgemeiner Client zur Einrichtung des [LEAP](https://leap.se/)-VPNs, das [Calyx VPN](https://f-droid.org/packages/org.calyxinstitute.vpn/), [Riseup VPN](https://f-droid.org/packages/se.leap.riseupvpn/) und weitere antreibt."
 
 #. type: Bullet: '* '
 #: _posts/2023-03-08-vpn-trust-requires-free-software.md
 msgid "[eduVPN](https://f-droid.org/packages/nl.eduvpn.app/) is a VPN client for [Let's Connect](https://www.letsconnect-vpn.org/) VPN setup which powers [eduVPN](https://www.eduvpn.org/)."
-msgstr ""
+msgstr "[eduVPN](https://f-droid.org/packages/nl.eduvpn.app/) ist ein VPN-Client zum Einrichten eines [Let's Connect](https://www.letsconnect-vpn.org/)-VPN, das [eduVPN](https://www.eduvpn.org/) versorgt."
 
 #. type: Bullet: '* '
 #: _posts/2023-03-08-vpn-trust-requires-free-software.md
@@ -19077,7 +19077,7 @@ msgstr "[OpenVPN for Android](https://f-droid.org/packages/de.blinkt.openvpn/) i
 #. type: Bullet: '* '
 #: _posts/2023-03-08-vpn-trust-requires-free-software.md
 msgid "[Outline](https://f-droid.org/packages/org.outline.android.client/) is an offering designed to let anyone run their own VPN based on Shadowsocks."
-msgstr ""
+msgstr "[Outline](https://f-droid.org/packages/org.outline.android.client/) ist ein Angebot, das so gestaltet ist, dass jeder sein eigenes auf Shadowsocks basierendes VPN betreiben kann."
 
 #. type: Bullet: '* '
 #: _posts/2023-03-08-vpn-trust-requires-free-software.md
