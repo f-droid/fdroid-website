@@ -19,7 +19,7 @@ Although announcements of new governance bodies for free & open source software 
 
 "The significant investments of creativity and energy by our community volunteers has made F-Droid the leading FOSS mobile app catalogue," said Morgan Lemmer Webber, the newly-elected Chair of the Board of Directors. "We are very excited to be able to help guide the project through its next phases of growth and maturity by providing advice and resources to everyone who has been involved in making F-Droid a success, and those who are eager to join us with their individual talents and skills."
 
-The new Board would like to thank everyone from the community who participated in this process over the past few months, with extra thanks to those who helped in drafting our new foundational documents, including Rivka Karasik, Andrew Lewman, Michael Pöhn, Jochen Sprickerhof, and Licaon Kter.
+The new Board would like to thank everyone from the community who participated in this process over the past few months, with extra thanks to those who helped in drafting our new foundational documents, including Rivka Karasik, Andrew Lewman, Michael Pöhn, Jochen Sprickerhof, and Licaon_Kter.
 
 To download F-Droid and start using it today, head to https://f-droid.org/. For more information about the new F-Droid Board of Directors, review the newly-adopted [Statutes or Roles & Regulations](https://gitlab.com/fdroid/admin/-/tree/master/board) documents in the F-Droid administrative code repository. And if you'd like to [contribute to our ongoing work](https://f-droid.org/en/contribute/), we look forward to you joining the community! We also look forward to hearing from you in our [online forum, chat channels, and on the Fediverse.](https://f-droid.org/en/about/)
 
