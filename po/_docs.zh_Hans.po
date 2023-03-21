@@ -27,15 +27,15 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
 "POT-Creation-Date: 2023-03-09 17:37+0100\n"
-"PO-Revision-Date: 2023-02-17 14:40+0000\n"
-"Last-Translator: linsui <linsui@inbox.lv>\n"
+"PO-Revision-Date: 2023-03-19 08:39+0000\n"
+"Last-Translator: Eric <hamburger2048@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Chinese (Simplified) <https://hosted.weblate.org/projects/f-droid/website-docs/zh_Hans/>\n"
 "Language: zh_Hans\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 4.16-dev\n"
+"X-Generator: Weblate 4.16.2-dev\n"
 
 #. type: Yaml Front Matter Hash Value: title
 #: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
@@ -1999,10 +1999,8 @@ msgstr "[_Builds.output_ (输出)](#build_output)"
 
 #. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
-#, fuzzy
-#| msgid "[_Builds.build_](#build_build)"
 msgid "[_Builds.postbuild_](#build_postbuild)"
-msgstr "[_Builds.build_](#build_build)"
+msgstr "[_Builds.postbuild_](#build_postbuild)"
 
 #. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
@@ -3420,63 +3418,49 @@ msgstr "：指定构建的未签名版本 APK 的 glob 路径。这可以 `gradl
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-#, fuzzy, no-wrap
-#| msgid "`build: xxxx`<a name=\"build_build\"></a>\n"
+#, no-wrap
 msgid "`postbuild: xxxx`<a name=\"build_postbuild\"></a>\n"
-msgstr "`build: xxxx`<a name=\"build_build\"></a>\n"
+msgstr "`postbuild: xxxx`<a name=\"build_postbuild\"></a>\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-#, fuzzy, no-wrap
-#| msgid ""
-#| ":   As for 'prebuild', but runs during the actual build phase (but\n"
-#| "    before the main Ant/Maven build). Use this only for actions that do\n"
-#| "    actual building. Any preparation of the source code should be done\n"
-#| "    using 'init' or 'prebuild'.\n"
+#, no-wrap
 msgid ""
 ":   As for 'prebuild', but runs after the actual build phase (the main Ant/Maven build).\n"
 "    Use this only for actions that perform some post-processing on the build outputs.\n"
 msgstr ""
-":   类似 'prebuild'，但在实际构建阶段期间运行 (不过在主 Ant/Maven 构建前)。 \n"
-"    请只对进行实际构建的操作使用它。\n"
-"    任何的源码准备都应使用\n"
-"    'init' 或 'prebuild' 来完成。\n"
+":   类似 'prebuild'，但在实际构建阶段之后运行 （主 Ant/Maven 构建）。\n"
+"    仅将此用于对构建输出执行某些后处理的操作。\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-#, fuzzy, no-wrap
-#| msgid ""
-#| "    You can use \\$\\$name\\$\\$ to substitute the path to a referenced\n"
-#| "    srclib - see the `srclib` directory for details of this.\n"
+#, no-wrap
 msgid ""
 "    You can use `$$name$$` to substitute the path to a referenced\n"
 "    srclib - see the `srclib` directory for details of this.\n"
-msgstr "    可以使用 \\$\\$name\\$\\$ 将路径替换为引用的 srclib - 有关详细信息，请参阅 `srclib` 目录。\n"
+msgstr ""
+"    可以使用 `$$name$$` 将路径替换为引用的 srclib - \n"
+"    有关详细信息，请参阅 `srclib` 目录。\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-#, fuzzy, no-wrap
-#| msgid ""
-#| "    You can use \\$\\$SDK\\$\\$ and \\$\\$NDK\\$\\$ to substitute the paths to the\n"
-#| "    Android SDK and NDK directories respectively. The following\n"
-#| "    per-build variables are available likewise: \\$\\$VERSION\\$\\$,\n"
-#| "    \\$\\$VERCODE\\$\\$ and \\$\\$COMMIT\\$\\$.\n"
+#, no-wrap
 msgid ""
 "    You can use `$$SDK$$` and `$$NDK$$` to substitute the paths to\n"
 "    the Android SDK and NDK directories respectively. The following\n"
 "    per-build variables are available likewise: `$$VERSION$$`,\n"
 "    `$$VERCODE$$` and `$$COMMIT$$`.\n"
 msgstr ""
-"    你可以使用 \\$\\$SDK\\$\\$ 和 \\$\\$NDK\\$\\$ 分别替换\n"
+"    你可以使用 `SDK` 和 `$$NDK$$` 分别替换\n"
 "    Android SDK 和 NDK 目录路径。以下\n"
-"    不同构建的变量同样可用：\\$\\$VERSION\\$\\$、\n"
-"    \\$\\$VERCODE\\$\\$ 和 \\$\\$COMMIT\\$\\$。\n"
+"    不同构建的变量同样可用：`$$VERSION$$`、\n"
+"    `$$VERCODE$$` 和 `$$COMMIT$$`。\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid "    The path to the output APK is available with `$$OUT$$`.\n"
-msgstr ""
+msgstr "    使用 `$$OUT$$` 设置输出 APK 文件的路径。\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -6150,121 +6134,120 @@ msgstr ""
 
 #. type: Yaml Front Matter Hash Value: title
 #: _docs/Get_F-Droid.md
-#, fuzzy, no-wrap
-#| msgid "In the F-Droid repo"
+#, no-wrap
 msgid "Get F-Droid"
-msgstr "位于 F-Droid 存储库中"
+msgstr "获取 F-Droid"
 
 #. type: Plain text
 #: _docs/Get_F-Droid.md
 msgid "Here's a list of ways to getting setup to use F-Droid. Please note that this document just tries to help users getting kick-started, but not an official endorsement of any products, vendors, etc."
-msgstr ""
+msgstr "这是准备好使用 F-Droid 的方式列表。请注意，本文档只是试图帮助用户入门，并非对任何产品、供应商等的官方背书。"
 
 #. type: Title ###
 #: _docs/Get_F-Droid.md
 #, no-wrap
 msgid "Buy a phone with pre-installed F-Droid"
-msgstr ""
+msgstr "购买预先安装了 F-Droid 的手机"
 
 #. type: Bullet: '* '
 #: _docs/Get_F-Droid.md
 msgid "__CalyxOS__ - Calyx Institute is an privacy research NGO in the USA.  Some of their [membership plans](https://members.calyxinstitute.org/enroll/membership/phone) come with a phone where F-Droid is pre-installed."
-msgstr ""
+msgstr "__CalyxOS__ - Calyx Institute 是一家位于美国的隐私研究非盈利机构。  该机构的某些 [成员计划](https://members.calyxinstitute.org/enroll/membership/phone) 、包括预装了 F-Droid 的手机。"
 
 #. type: Bullet: '* '
 #: _docs/Get_F-Droid.md
 msgid "__ShiftOS-Light__ - Shift Phone is a German phone vendor specializing in sustainable electronics.  With some [manual steps](https://www.shiftphones.com/hilfe_faqs/was-ist-shiftos-l/) their [SHIFT5mq](https://shop.shiftphones.com/shift5me.html) and [SHIFT6mq model](https://shop.shiftphones.com/shift6mq.htm) can be updated to ShiftOS-Light.  F-Droid is pre-installed on ShiftOS-Light."
-msgstr ""
+msgstr "__ShiftOS-Light__ - Shift Phone 是一家专攻可持续电子设备的德国手机厂商。  经由一些 [手动步骤](https://www.shiftphones.com/hilfe_faqs/was-ist-shiftos-l/)，该厂商的 [SHIFT5mq](https://shop.shiftphones.com/shift5me.html) 和 [SHIFT6mq model](https://shop.shiftphones.com/shift6mq.htm) 可以更新到 ShiftOS-Light。  F-Droid 是ShiftOS-Light 系统的预装应用。"
 
 #. type: Title ###
 #: _docs/Get_F-Droid.md
 #, no-wrap
 msgid "Side-load F-Droid"
-msgstr ""
+msgstr "旁加载 F-Droid"
 
 #. type: Plain text
 #: _docs/Get_F-Droid.md
 msgid "Mind: Side-loading F-Droid has some limitations. Most notably Android will prompt users for confirmation for each and every individual update."
-msgstr ""
+msgstr "请注意：旁加载 F-Droid 有某些限制。最明显的是 Android 系统会提示用户确认允许每次单独更新。"
 
 #. type: Plain text
 #: _docs/Get_F-Droid.md
 msgid "To side-load our app store you may simply have to download the [official F-Droid APK](https://f-droid.org/F-Droid.apk) and install it."
-msgstr ""
+msgstr "要旁加载我们的应用商店，你只需下载 [官方 F-Droid APK](https://f-droid.org/F-Droid.apk) 并安装它。"
 
 #. type: Title ###
 #: _docs/Get_F-Droid.md
 #, no-wrap
 msgid "Advanced ways to install F-Droid"
-msgstr ""
+msgstr "安装 F-Droid 的高级方式"
 
 #. type: Plain text
 #: _docs/Get_F-Droid.md
 msgid "For users with technical background or interest, there are also other ways to get F-Droid."
-msgstr ""
+msgstr "对于有技术背景或兴趣的用户，也有其他获得 F-Droid 的方法。"
 
 #. type: Title ####
 #: _docs/Get_F-Droid.md
 #, no-wrap
 msgid "Install an Android ROM with built-in F-Droid"
-msgstr ""
+msgstr "安装内置 F-Droid 的 Android ROM"
 
 #. type: Plain text
 #: _docs/Get_F-Droid.md
 msgid "If you're planning on flashing a custom ROM, these ROMs might be interesting for you because the come with F-Droid built-in and ready to use:"
-msgstr ""
+msgstr "如果你正计划刷入自定义 ROM，你可能对这些 ROM 感兴趣，因它们内置了 F-Droid，开箱可用："
 
 #. type: Bullet: '- '
 #: _docs/Get_F-Droid.md
 msgid "__CalyxOS__ - https://calyxos.org"
-msgstr ""
+msgstr "__CalyxOS__ - https://calyxos.org"
 
 #. type: Bullet: '- '
 #: _docs/Get_F-Droid.md
 msgid "__DivestOS__ - https://divestos.org"
-msgstr ""
+msgstr "__DivestOS__ - https://divestos.org"
 
 #. type: Bullet: '- '
 #: _docs/Get_F-Droid.md
 msgid "__LineageOS for MicroG__ - https://lineage.microg.org"
-msgstr ""
+msgstr "__LineageOS for MicroG__ - https://lineage.microg.org"
 
 #. type: Title ####
 #: _docs/Get_F-Droid.md
 #, no-wrap
 msgid "Flash F-Droid OTA"
-msgstr ""
+msgstr "刷入 F-Droid OTA"
 
 #. type: Plain text
 #: _docs/Get_F-Droid.md
 msgid "When you intend on flashing a ROM which doesn-t come preloaded with F-Droid we recommend to flash F-Droid privileged extension OTA. This option works great with [LineageOS](https://lineageos.org/) for example."
-msgstr ""
+msgstr "当你打算刷入未预置 F-Droid 的 ROM 时，我们推荐刷入 F-Droid 特权扩展 OTA。此选项与 [LineageOS](https://lineageos.org/) 系统配合得很好。"
 
 #. type: Bullet: '- '
 #: _docs/Get_F-Droid.md
 msgid "download the latest [F-Droid privileged extension OTA](https://f-droid.org/en/packages/org.fdroid.fdroid.privileged.ota/#suggested)."
-msgstr ""
+msgstr "下载最新版 [F-Droid 特权扩展 OTA](https://f-droid.org/en/packages/org.fdroid.fdroid.privileged.ota/#suggested)。"
 
 #. type: Bullet: '- '
 #: _docs/Get_F-Droid.md
 msgid "boot your phone into recovery mode"
-msgstr ""
+msgstr "启动你的手机进入恢复模式"
 
 #. type: Bullet: '- '
 #: _docs/Get_F-Droid.md
 msgid "side-load / install the OTA zip file to your phone, the same way you would install a custom ROM. (eg. with `adb`, `heimdall`, etc.)"
-msgstr ""
+msgstr "旁加载/安装 OTA zip 文件到你的手机，和你安装定制 ROM 的方法一样（如使用 `adb`、 `heimdall` 等）"
 
 #. type: Title ##
 #: _docs/Get_F-Droid.md
 #, no-wrap
 msgid "Disclaimer"
-msgstr ""
+msgstr "免责声明"
 
 #. type: Plain text
 #: _docs/Get_F-Droid.md
 msgid "F-Droid and it's contributors might or might not be affiliated with any of the ROMs, Device Vendors, etc. listed above. The listing is neither complete nor are any of the linked projects officially endorsed by F-Droid. We reserve the right to change the listing above as our team sees fit. An official policy on criteria to get listed here is still in the works, see [admin#352](https://gitlab.com/fdroid/admin/-/issues/352) for more information.  If you think something on this listing is incorrect or missing please let us know: [team@f-droid.org](mailto:team@f-droid.org)"
-msgstr ""
+msgstr "F-Droid 及其贡献者可能与上面列出的任何 ROM、设备供应商有关联，也可能没有。该清单不完整，且所链接的项目中没有一个获得 F-Droid 的官方背书。我们保留在我们团队认为合适的情况下更改上述列表的权利。关于纳入此清单标准的官方政策仍在制定中，请访问 [admin#352](https://gitlab.com/fdroid/admin/-/issues/352) 了解更多信息。如果你认为此列表中的某些内容不正确或不完整，请告诉我们：[team@f-droid.org](mailto:team@f-droid.org)"
 
 #. type: Yaml Front Matter Hash Value: title
 #: _docs/Getting_logcat_messages_after_crash.md
@@ -7187,7 +7170,7 @@ msgstr "必须在我们支持的、可公开访问的版本控制系统（git、
 #. type: Bullet: '-   '
 #: _docs/Inclusion_Policy.md
 msgid "The software must not download additional executable binary files (e.g.  addons, auto-updates, etc.) without explicit user consent. Consent means it needs to be opt-in (it must not be harder to decline than to accept or presented in a way users are likely to press accept without reading) and structured in a way that clearly explains to users that they're choosing to bypass F-Droid's checks if they activate it."
-msgstr ""
+msgstr "此软件在缺乏明确用户同意的情况下禁止下载额外的可执行二进制文件（如附加组件、自动更新等）。同意意味着需要用户主动选择加入（禁止拒绝的难度大于接受，或以用户可能在未阅读相关警告便同意的方式呈现）且应清晰地向用户解释，激活它意味着选择绕过 F-Droid 的检查。"
 
 #. type: Bullet: '-   '
 #: _docs/Inclusion_Policy.md
@@ -9618,14 +9601,7 @@ msgstr "在不同的构建机器上，使用不同的 NDK 路径和不同的项�
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
-#, fuzzy, no-wrap
-#| msgid ""
-#| "One possible solution is adding `-Wl,--build-id=none` to link options which\n"
-#| "will disable _build-id_ generation completely. For `ndk-build`, `LOCAL_LDFLAGS += -Wl,--build-id=none`\n"
-#| "can be added to `Android.mk` files. For CMake versions since 3.13, `add_link_options(-Wl,--build-id=none)`\n"
-#| "can be added to `CMakeLists.txt` globally. For CMake versions before 3.13,\n"
-#| "`target_link_libraries(<target> -Wl,--build-id=none)` can be used instead for\n"
-#| "every target.\n"
+#, no-wrap
 msgid ""
 "One possible solution is adding `-Wl,--build-id=none` to link options which\n"
 "will disable _build-id_ generation completely. For `ndk-build`, `LOCAL_LDFLAGS += -Wl,--build-id=none`\n"
@@ -9636,7 +9612,7 @@ msgid ""
 msgstr ""
 "一个可能的解决方案是添加 `-Wl,--build-id=none` 到链接选项， 这\n"
 "会彻底禁止 _build-id_ 生成。对于 `ndk-build`，可以添加 `LOCAL_LDFLAGS += -Wl,--build-id=none`\n"
-"到 `Android.mk` 文件。对于 3.13 起的 CMake 版本，可以全局添加`add_link_options(-Wl,--build-id=none)`\n"
+"到 `Android.mk` 文件。对于 3.13 起的 CMake 版本，可以全局添加`add_link_options(LINKER:--build-id=none)`\n"
 "到 `CMakeLists.txt`。 对于 3.13 之前的 CMake 版本，\n"
 "可以对每个目标使用\n"
 "`target_link_libraries(<target> -Wl,--build-id=none)`。\n"
@@ -9645,12 +9621,12 @@ msgstr ""
 #: _docs/Reproducible_Builds.md
 #, no-wrap
 msgid "NDK hash style"
-msgstr ""
+msgstr "NDK 哈希样式"
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
 msgid "On different build machines, NDK may use different hash style. Setting the hash style explicitly can fix this problem. For CMake versions since 3.13, `add_link_options(LINKER:--hash-style=gnu)` can be added to `CMakeLists.txt` globally."
-msgstr ""
+msgstr "在不同的构建机器上，NDK 可能使用不同的哈希样式。明确设置哈希样式可修复这个问题。对于 3.13 起的 CMake 版本，可将`add_link_options(LINKER:--hash-style=gnu)`全局添加到 `CMakeLists.txt`。"
 
 #. type: Title ####
 #: _docs/Reproducible_Builds.md
@@ -9909,10 +9885,8 @@ msgstr "[由 navigation.safeargs.kotlin 生成的不可重复/不确定的代码
 
 #. type: Bullet: '* '
 #: _docs/Reproducible_Builds.md
-#, fuzzy
-#| msgid "[Unreproducible/non-deterministic code generation by navigation.safeargs.kotlin](https://issuetracker.google.com/issues/189498001) (_Google login and JavaScript required_)"
 msgid "[unneeded DEX code differences based on number of CPUs used in build process](https://issuetracker.google.com/issues/269181868)  (_Google login and JavaScript required_)"
-msgstr "[由 navigation.safeargs.kotlin 生成的不可重复/不确定的代码](https://issuetracker.google.com/issues/189498001) （_需要 Google 账号登录以及 JavaScript_）"
+msgstr "[基于构建过程中所用 CPU 数量的不必要的 DEX 代码差异](https://issuetracker.google.com/issues/269181868)  (_需要 Google 账户登录和开启 JavaScript_)"
 
 #. type: Yaml Front Matter Hash Value: title
 #: _docs/Running_a_Mirror.md
@@ -11712,11 +11686,11 @@ msgstr ""
 " <item>https://guardianproject.info/fdroid/repo</item>\n"
 " <!-- description -->\n"
 " <item>\n"
-"   The official app repository of The Guardian\n"
-"   Project. Applications in this repository are official\n"
-"   binaries build by the original application developers and\n"
-"   signed by the same key as the APKs that are released in the\n"
-"   Google Play store.\n"
+"   The Guardian Project 的官方应用仓库。\n"
+"    此仓库中的应用是\n"
+"    官方二进制文件，由原始应用开发者构建，并使用\n"
+"   和发布在 Google Play商店中版本一样的密钥\n"
+"   进行签名。\n"
 " </item>\n"
 " <!-- version -->\n"
 " <item>13</item>\n"
