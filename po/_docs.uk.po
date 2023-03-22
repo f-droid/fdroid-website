@@ -14,7 +14,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
 "POT-Creation-Date: 2023-03-09 17:37+0100\n"
-"PO-Revision-Date: 2023-03-04 17:41+0000\n"
+"PO-Revision-Date: 2023-03-22 09:30+0000\n"
 "Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/f-droid/website-docs/uk/>\n"
 "Language: uk\n"
@@ -1998,10 +1998,8 @@ msgstr "[_Builds.output_](#build_output)"
 
 #. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
-#, fuzzy
-#| msgid "[_Builds.build_](#build_build)"
 msgid "[_Builds.postbuild_](#build_postbuild)"
-msgstr "[_Builds.build_](#build_build)"
+msgstr "[_Builds.postbuild_](#build_postbuild)"
 
 #. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
@@ -3518,65 +3516,49 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-#, fuzzy, no-wrap
-#| msgid "`build: xxxx`<a name=\"build_build\"></a>\n"
+#, no-wrap
 msgid "`postbuild: xxxx`<a name=\"build_postbuild\"></a>\n"
-msgstr "`build: xxxx`<a name=\"build_build\"></a>\n"
+msgstr "`postbuild: xxxx`<a name=\"build_postbuild\"></a>\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-#, fuzzy, no-wrap
-#| msgid ""
-#| ":   As for 'prebuild', but runs during the actual build phase (but\n"
-#| "    before the main Ant/Maven build). Use this only for actions that do\n"
-#| "    actual building. Any preparation of the source code should be done\n"
-#| "    using 'init' or 'prebuild'.\n"
+#, no-wrap
 msgid ""
 ":   As for 'prebuild', but runs after the actual build phase (the main Ant/Maven build).\n"
 "    Use this only for actions that perform some post-processing on the build outputs.\n"
 msgstr ""
-":   Як «prebuild», але спрацьовує під час власне збірки (проте до\n"
-"    запуску основної збірки Ant/Maven). Використовуйте це лише для\n"
-"    дій, що справді щось збирають. Будь-яку підготовку вихідного коду\n"
-"    слід виконувати в «init» чи «prebuild».\n"
+":   Як «prebuild», але спрацьовує після власне збірки (основної збірки Ant/Maven).\n"
+"    Використовуйте це лише для дій, які виконують деяку післяобробку на виводах збірки.\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-#, fuzzy, no-wrap
-#| msgid ""
-#| "    You can use \\$\\$name\\$\\$ to substitute the path to a referenced\n"
-#| "    srclib - see the `srclib` directory for details of this.\n"
+#, no-wrap
 msgid ""
 "    You can use `$$name$$` to substitute the path to a referenced\n"
 "    srclib - see the `srclib` directory for details of this.\n"
 msgstr ""
-"    Замість \\$\\$name\\$\\$ буде підставлено шлях відповідної\n"
-"    srclib, докладніше про це — в каталозі `srclib`.\n"
+"    Замість `$$name$$` буде підставлено шлях відповідної\n"
+"    srclib, докладніше про це в каталозі `srclib`.\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-#, fuzzy, no-wrap
-#| msgid ""
-#| "    You can use \\$\\$SDK\\$\\$ and \\$\\$NDK\\$\\$ to substitute the paths to the\n"
-#| "    Android SDK and NDK directories respectively. The following\n"
-#| "    per-build variables are available likewise: \\$\\$VERSION\\$\\$,\n"
-#| "    \\$\\$VERCODE\\$\\$ and \\$\\$COMMIT\\$\\$.\n"
+#, no-wrap
 msgid ""
 "    You can use `$$SDK$$` and `$$NDK$$` to substitute the paths to\n"
 "    the Android SDK and NDK directories respectively. The following\n"
 "    per-build variables are available likewise: `$$VERSION$$`,\n"
 "    `$$VERCODE$$` and `$$COMMIT$$`.\n"
 msgstr ""
-"    Можете використати \\$\\$SDK\\$\\$ і \\$\\$NDK\\$\\$, щоб підставити\n"
+"    Можете використати `$$SDK$$` і `$$NDK$$`, щоб підставити\n"
 "    шляхи до каталогів Android SDK і NDK відповідно. Для кожної\n"
-"    збірки аналогічно стають доступними такі змінні : \\$\\$VERSION\\$\\$,\n"
-"    \\$\\$VERCODE\\$\\$ і \\$\\$COMMIT\\$\\$.\n"
+"    збірки аналогічно стають доступними такі змінні : `$$VERSION$$`,\n"
+"    `$$VERCODE$$` і `$$COMMIT$$`.\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid "    The path to the output APK is available with `$$OUT$$`.\n"
-msgstr ""
+msgstr "    Шлях до вихідного APK доступний за адресою `$$OUT$$`.\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -6262,121 +6244,120 @@ msgstr ""
 
 #. type: Yaml Front Matter Hash Value: title
 #: _docs/Get_F-Droid.md
-#, fuzzy, no-wrap
-#| msgid "In the F-Droid repo"
+#, no-wrap
 msgid "Get F-Droid"
-msgstr "У репозиторії F-Droid"
+msgstr "Отримати F-Droid"
 
 #. type: Plain text
 #: _docs/Get_F-Droid.md
 msgid "Here's a list of ways to getting setup to use F-Droid. Please note that this document just tries to help users getting kick-started, but not an official endorsement of any products, vendors, etc."
-msgstr ""
+msgstr "Ось список способів налаштування для користування F-Droid. Зверніть увагу, що цей документ лише намагається допомогти користувачам розпочати роботу, але не є офіційною підтримкою будь-яких продуктів, постачальників тощо."
 
 #. type: Title ###
 #: _docs/Get_F-Droid.md
 #, no-wrap
 msgid "Buy a phone with pre-installed F-Droid"
-msgstr ""
+msgstr "Купити телефон з попередньо встановленим F-Droid"
 
 #. type: Bullet: '* '
 #: _docs/Get_F-Droid.md
 msgid "__CalyxOS__ - Calyx Institute is an privacy research NGO in the USA.  Some of their [membership plans](https://members.calyxinstitute.org/enroll/membership/phone) come with a phone where F-Droid is pre-installed."
-msgstr ""
+msgstr "__CalyxOS__ - Calyx Institute — неурядова організація, що досліджує питання приватності у США.  Деякі з їхніх [планів для учасників](https://members.calyxinstitute.org/enroll/membership/phone) постачаються з телефоном, на якому попередньо встановлено F-Droid."
 
 #. type: Bullet: '* '
 #: _docs/Get_F-Droid.md
 msgid "__ShiftOS-Light__ - Shift Phone is a German phone vendor specializing in sustainable electronics.  With some [manual steps](https://www.shiftphones.com/hilfe_faqs/was-ist-shiftos-l/) their [SHIFT5mq](https://shop.shiftphones.com/shift5me.html) and [SHIFT6mq model](https://shop.shiftphones.com/shift6mq.htm) can be updated to ShiftOS-Light.  F-Droid is pre-installed on ShiftOS-Light."
-msgstr ""
+msgstr "__ShiftOS-Light__ - Shift Phone — німецький виробник телефонів, що спеціалізується на екологічно чистій електроніці.  За допомогою деяких [дій вручну](https://www.shiftphones.com/hilfe_faqs/was-ist-shiftos-l/) їхні [SHIFT5mq](https://shop.shiftphones.com/shift5me.html) та [модель SHIFT6mq](https://shop.shiftphones.com/shift6mq.htm) можна оновити до ShiftOS-Light.  F-Droid попередньо встановлений на ShiftOS-Light."
 
 #. type: Title ###
 #: _docs/Get_F-Droid.md
 #, no-wrap
 msgid "Side-load F-Droid"
-msgstr ""
+msgstr "Стороннє завантаження F-Droid"
 
 #. type: Plain text
 #: _docs/Get_F-Droid.md
 msgid "Mind: Side-loading F-Droid has some limitations. Most notably Android will prompt users for confirmation for each and every individual update."
-msgstr ""
+msgstr "Зауважте: стороннє завантаження F-Droid має деякі обмеження. Зокрема, Android запитуватиме підтвердження для кожного окремого оновлення."
 
 #. type: Plain text
 #: _docs/Get_F-Droid.md
 msgid "To side-load our app store you may simply have to download the [official F-Droid APK](https://f-droid.org/F-Droid.apk) and install it."
-msgstr ""
+msgstr "Для стороннього завантаження нашої крамниці застосунків вам просто потрібно завантажити [офіційний APK F-Droid](https://f-droid.org/F-Droid.apk) і встановити його."
 
 #. type: Title ###
 #: _docs/Get_F-Droid.md
 #, no-wrap
 msgid "Advanced ways to install F-Droid"
-msgstr ""
+msgstr "Додаткові способи встановлення F-Droid"
 
 #. type: Plain text
 #: _docs/Get_F-Droid.md
 msgid "For users with technical background or interest, there are also other ways to get F-Droid."
-msgstr ""
+msgstr "Для користувачів з технічними знаннями або зацікавленими в техніці існують також інші способи отримати F-Droid."
 
 #. type: Title ####
 #: _docs/Get_F-Droid.md
 #, no-wrap
 msgid "Install an Android ROM with built-in F-Droid"
-msgstr ""
+msgstr "Установіть ROM Android із вбудованим F-Droid"
 
 #. type: Plain text
 #: _docs/Get_F-Droid.md
 msgid "If you're planning on flashing a custom ROM, these ROMs might be interesting for you because the come with F-Droid built-in and ready to use:"
-msgstr ""
+msgstr "Якщо ви плануєте прошивати власні ROM, вони можуть вас зацікавити, оскільки вони поставляються із вбудованим F-Droid, готовим до користування:"
 
 #. type: Bullet: '- '
 #: _docs/Get_F-Droid.md
 msgid "__CalyxOS__ - https://calyxos.org"
-msgstr ""
+msgstr "__CalyxOS__ - https://calyxos.org"
 
 #. type: Bullet: '- '
 #: _docs/Get_F-Droid.md
 msgid "__DivestOS__ - https://divestos.org"
-msgstr ""
+msgstr "__DivestOS__ - https://divestos.org"
 
 #. type: Bullet: '- '
 #: _docs/Get_F-Droid.md
 msgid "__LineageOS for MicroG__ - https://lineage.microg.org"
-msgstr ""
+msgstr "__LineageOS for MicroG__ - https://lineage.microg.org"
 
 #. type: Title ####
 #: _docs/Get_F-Droid.md
 #, no-wrap
 msgid "Flash F-Droid OTA"
-msgstr ""
+msgstr "Прошивка F-Droid OTA"
 
 #. type: Plain text
 #: _docs/Get_F-Droid.md
 msgid "When you intend on flashing a ROM which doesn-t come preloaded with F-Droid we recommend to flash F-Droid privileged extension OTA. This option works great with [LineageOS](https://lineageos.org/) for example."
-msgstr ""
+msgstr "Якщо ви маєте намір прошити ROM, який не постачається з попередньо встановленим F-Droid, ми радимо прошити привілейоване розширення F-Droid OTA. Цей варіант чудово працює, наприклад, з [LineageOS](https://lineageos.org/)."
 
 #. type: Bullet: '- '
 #: _docs/Get_F-Droid.md
 msgid "download the latest [F-Droid privileged extension OTA](https://f-droid.org/en/packages/org.fdroid.fdroid.privileged.ota/#suggested)."
-msgstr ""
+msgstr "завантажте найновішу версію [привілейованого розширення F-droid OTA](https://f-droid.org/uk/packages/org.fdroid.fdroid.privileged.ota/#suggested)."
 
 #. type: Bullet: '- '
 #: _docs/Get_F-Droid.md
 msgid "boot your phone into recovery mode"
-msgstr ""
+msgstr "завантажте телефон у режим відновлення"
 
 #. type: Bullet: '- '
 #: _docs/Get_F-Droid.md
 msgid "side-load / install the OTA zip file to your phone, the same way you would install a custom ROM. (eg. with `adb`, `heimdall`, etc.)"
-msgstr ""
+msgstr "завантажте / установіть zip-файл OTA на ваш телефон так само як ви встановлюєте власний ROM. (наприклад, за допомогою `adb`, `heimdall` тощо)"
 
 #. type: Title ##
 #: _docs/Get_F-Droid.md
 #, no-wrap
 msgid "Disclaimer"
-msgstr ""
+msgstr "Застереження"
 
 #. type: Plain text
 #: _docs/Get_F-Droid.md
 msgid "F-Droid and it's contributors might or might not be affiliated with any of the ROMs, Device Vendors, etc. listed above. The listing is neither complete nor are any of the linked projects officially endorsed by F-Droid. We reserve the right to change the listing above as our team sees fit. An official policy on criteria to get listed here is still in the works, see [admin#352](https://gitlab.com/fdroid/admin/-/issues/352) for more information.  If you think something on this listing is incorrect or missing please let us know: [team@f-droid.org](mailto:team@f-droid.org)"
-msgstr ""
+msgstr "F-Droid та його учасники можуть бути, а можуть і не бути пов'язані з будь-яким з перерахованих вище виробників ПЗП, пристроїв тощо. Цей список не повний, і жоден з пов'язаних проєктів не є офіційно схваленим F-Droid. Ми залишаємо за собою право змінювати список вище, як наша команда вважає за потрібне. Офіційна політика щодо критеріїв потрапляння до цього списку досі розробляється. Читайте [admin#352](https://gitlab.com/fdroid/admin/-/issues/352) для отримання додаткової інформації.  Якщо ви вважаєте, що щось у цьому списку неправильне або відсутнє, будь ласка, повідомте нам про це: [team@f-droid.org](mailto:team@f-droid.org)"
 
 #. type: Yaml Front Matter Hash Value: title
 #: _docs/Getting_logcat_messages_after_crash.md
@@ -7301,7 +7282,7 @@ msgstr "Вихідний код застосунку мусить супрово
 #. type: Bullet: '-   '
 #: _docs/Inclusion_Policy.md
 msgid "The software must not download additional executable binary files (e.g.  addons, auto-updates, etc.) without explicit user consent. Consent means it needs to be opt-in (it must not be harder to decline than to accept or presented in a way users are likely to press accept without reading) and structured in a way that clearly explains to users that they're choosing to bypass F-Droid's checks if they activate it."
-msgstr ""
+msgstr "Програмне забезпечення не повинно завантажувати додаткові виконувані двійкові файли (наприклад, додатки, автооновлення тощо) без явної згоди користувача. Згода означає, що вона має бути добровільною (її не повинно бути важче відхилити, ніж погодити, або представлено таким чином, щоб користувачі могли натиснути «погодитись», не читаючи) і структурованою таким чином, щоб чітко пояснити користувачам, що вони обирають обхід перевірок F-Droid, якщо вони активують її."
 
 #. type: Bullet: '-   '
 #: _docs/Inclusion_Policy.md
@@ -9734,14 +9715,7 @@ msgstr "На різних комп'ютерах використовуються
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
-#, fuzzy, no-wrap
-#| msgid ""
-#| "One possible solution is adding `-Wl,--build-id=none` to link options which\n"
-#| "will disable _build-id_ generation completely. For `ndk-build`, `LOCAL_LDFLAGS += -Wl,--build-id=none`\n"
-#| "can be added to `Android.mk` files. For CMake versions since 3.13, `add_link_options(-Wl,--build-id=none)`\n"
-#| "can be added to `CMakeLists.txt` globally. For CMake versions before 3.13,\n"
-#| "`target_link_libraries(<target> -Wl,--build-id=none)` can be used instead for\n"
-#| "every target.\n"
+#, no-wrap
 msgid ""
 "One possible solution is adding `-Wl,--build-id=none` to link options which\n"
 "will disable _build-id_ generation completely. For `ndk-build`, `LOCAL_LDFLAGS += -Wl,--build-id=none`\n"
@@ -9750,23 +9724,23 @@ msgid ""
 "`target_link_libraries(<target> -Wl,--build-id=none)` can be used instead for\n"
 "every target.\n"
 msgstr ""
-"Одне з можливих рішень — додавання `-Wl,--build-id=none` до параметрів посилання, що\n"
-"повністю вимкне генерування _build-id_. Для `ndk-build`, `LOCAL_LDFLAGS += -Wl,--build-id=none`\n"
-"можна додати до файлів `Android.mk`. Для версій CMake починаючи з 3.13, `add_link_options(-Wl,--build-id=none)`\n"
-"можна додати до `CMakeLists.txt` глобально. Для версій CMake до 3.13,\n"
-"`target_link_libraries(<target> -Wl,--build-id=none)` можна використовувати замість цього для\n"
-"кожної цілі.\n"
+"Одне з можливих рішень — додавання `-Wl,--build-id=none` до параметрів посилання,\n"
+"що повністю вимкне генерування _build-id_. Для `ndk-build`, `LOCAL_LDFLAGS += -Wl,--build-id=none`\n"
+"можна додати до файлів `Android.mk`. Для версій CMake починаючи з 3.13,\n"
+"`add_link_options(LINKER:--build-id=none)` можна додати до `CMakeLists.txt` глобально. Для версій\n"
+"CMake до 3.13, `target_link_libraries(<target> -Wl,--build-id=none)` можна використовувати замість\n"
+"цього для кожної цілі.\n"
 
 #. type: Title ####
 #: _docs/Reproducible_Builds.md
 #, no-wrap
 msgid "NDK hash style"
-msgstr ""
+msgstr "Стиль хешування NDK"
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
 msgid "On different build machines, NDK may use different hash style. Setting the hash style explicitly can fix this problem. For CMake versions since 3.13, `add_link_options(LINKER:--hash-style=gnu)` can be added to `CMakeLists.txt` globally."
-msgstr ""
+msgstr "На різних машинах збірки NDK може використовувати різні стилі хешування. Явне встановлення стилю хешування може усунути цю проблему. Для версій CMake, починаючи з 3.13, `add_link_options(LINKER:--hash-style=gnu)` можна додати до `CMakeLists.txt` глобально."
 
 #. type: Title ####
 #: _docs/Reproducible_Builds.md
@@ -10025,10 +9999,8 @@ msgstr "[Генерація коду navigation.safeargs.kotlin недетерм
 
 #. type: Bullet: '* '
 #: _docs/Reproducible_Builds.md
-#, fuzzy
-#| msgid "[Unreproducible/non-deterministic code generation by navigation.safeargs.kotlin](https://issuetracker.google.com/issues/189498001) (_Google login and JavaScript required_)"
 msgid "[unneeded DEX code differences based on number of CPUs used in build process](https://issuetracker.google.com/issues/269181868)  (_Google login and JavaScript required_)"
-msgstr "[Генерація коду navigation.safeargs.kotlin недетерміністична й невідтворювана](https://issuetracker.google.com/issues/189498001) (_потрібні JavaScript та обліковий запис Google_)"
+msgstr "[непотрібні розбіжності в коді DEX на основі кількості процесорів, що використовуються в процесі збірки](https://issuetracker.google.com/issues/269181868)  (_Потрібні облікові дані Google і JavaScript_)"
 
 #. type: Yaml Front Matter Hash Value: title
 #: _docs/Running_a_Mirror.md
