@@ -315,7 +315,19 @@ different _build-id_, which is preserved after stripping.
 
 One possible solution is adding `-Wl,--build-id=none` to link options which
 will disable _build-id_ generation completely. For `ndk-build`, `LOCAL_LDFLAGS += -Wl,--build-id=none`
-can be added to `Android.mk` files. For CMake versions since 3.13, `add_link_options(LINKER:--build-id=none)`
+can be added to `Android.mk` files or to `build.gradle/.kts`:
+```
+android {
+    defaultConfig {
+        externalNativeBuild {
+            ndkBuild {
+                arguments "LOCAL_LDFLAGS += -Wl,--build-id=none"
+            }
+        }
+    }
+}
+```
+For CMake versions since 3.13, `add_link_options(LINKER:--build-id=none)`
 can be added to `CMakeLists.txt` globally. For CMake versions before 3.13,
 `target_link_libraries(<target> -Wl,--build-id=none)` can be used instead for
 every target.
