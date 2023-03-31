@@ -133,9 +133,9 @@ function calls to do this).
 ### I've published a new release. Why is it not in the repository?
 
 When we detect a new release, it may take a few days to make it into the
-repository as the build process runs only once a day. Before the build
-has completed, the monitor page for your app will list it in
-[F-Droid Monitor - Need updating](https://monitor.f-droid.org/builds/needsupdate). As long
+repository as the build process [has several steps](https://gitlab.com/fdroid/wiki/-/wikis/FAQ#how-long-does-it-take-for-my-app-to-show-up-on-website-and-client) and runs only
+once a day. Before the build has completed, the monitor page for your app
+will list it in [F-Droid Monitor - Need updating](https://monitor.f-droid.org/builds/needsupdate). As long
 as the text under *Versions* stating "The current (recommended) version
 is *xxx* (version code *yyy*)" shows the version numbers corresponding
 to your latest release, we detected it and the APK should be available
@@ -186,9 +186,10 @@ However, things will improve over time.
 
 ### Can APKs signed by my key be included?
 
-Only APKs built by F-Droid are included in the official F-Droid
-repo. We can try to reproduce your APK, as mentioned above, but if
-this fails (or e.g. when you want to distribute an app with
+Yes, for [reproducible builds](../Reproducible_Builds) F-Droid will
+include your signed APKs in the official F-Droid repo after they were
+verified as being so. If this fails (e.g. your app can't be built in
+a reproducible way or when you want to distribute an app with
 closed-source components or API keys etc.), you can put any APK in
 your own "[F-Droid binary repo](../Setup_an_F-Droid_App_Repo)", and
 people can add your repo to their F-Droid client in order to get your
