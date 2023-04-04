@@ -77,7 +77,7 @@ Ideally:
 
 -   Releases should be clearly tagged (or otherwise marked).
 
-Though we tried to build everyting from source, we still need some prebuild binaries. Therefore we have some exceptions:
+Though we tried to build everything from source, we still need some prebuild binaries. Therefore we have some exceptions:
 
 -   Trusted maven repository. While there is no guarantee that those binaries are
     free and correspondent to the source code, F-Droid allows the following known
@@ -106,8 +106,8 @@ Though we tried to build everyting from source, we still need some prebuild bina
 -   Binaries from pip wheels. Some apps install deps with pip and we just trust the untrustworthy Pypi.
 -   Binaries from Nix cache. These binaries are mostly reproducible.
 -   Rust/Rustup. Currently we download them from the developer website with the scripts in the rustup srclib. We may be able to use the Debian packages.
--   Golang & Nodejs. They are available in Debian but we are using a very old Debian version so recent versions are not available. Currently we download them from the developer website.
--   Some other compilers/build tools not packaged in our very old Debian version.
+-   Golang & Nodejs. They are available in Debian but recent versions are not available immediately. Currently we might download them from the developer website.
+-   Some other compilers/build tools not packaged in our Debian version.
 
 Some software, while being Free and Open Source, may engage in practices
 which are undesirable to some or all users. Where possible, we still
