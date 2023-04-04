@@ -74,7 +74,7 @@ if the application's _build.gradle_ says `applicationId "com.example"`:
 git clone --depth=1 https://gitlab.com/YOUR_ACCOUNT/fdroiddata ~/fdroiddata
 cd ~/fdroiddata
 git checkout -b com.example
-cp templates/app-full metadata/com.example.yml
+cp templates/build-gradle.yml metadata/com.example.yml
 ```
 
 Fill _~/fdroiddata/metadata/com.example.yml_ according to the [build metadata
