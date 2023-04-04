@@ -584,6 +584,18 @@ configuration to the build. These are (roughly in order of application):
 :   If specified, the package version code in the _AndroidManifest.xml_ is
     replaced with the version code for the build. See also forceversion.
 
+`binary: URL`<a name="build_binary"></a>
+
+:   The location of a binary used in verification process for this build.
+
+    If specified, F-Droid will verify the output APK file of a build against
+    the one specified. You can use %v and %c to point to the version name
+    and version code of the current build. To verify the F-Droid client
+    itself you could use:
+    `binary: https://f-droid.org/repo/org.fdroid.fdroid_%c.apk`
+
+    F-Droid will use the upstream binary if the verification succeeded.
+
 `rm: <path1>[,<path2>,...]`<a name="build_rm"></a>
 
 :   Specifies the relative paths of files or directories to delete
