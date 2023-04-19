@@ -4,6 +4,9 @@ title: Security Model
 
 ---
 
+* Do not remove this line (it will not be displayed)
+{:toc}
+
 The security architecture is based on integrating models proven by
 [Debian](https://wiki.debian.org/SecureApt) and [The Update
 Framework](https://github.com/theupdateframework/specification/blob/master/tuf-spec.md)
@@ -109,7 +112,7 @@ to make it as hard as possible to exploit this vector.
   browser, eliminating all possibility of XSS attacks
 
 
-### F-Droid as built-in app store
+## F-Droid as built-in app store
 
 When F-Droid is built into Android, either as part of the ROM or by
 flashing an
@@ -132,7 +135,7 @@ ROM projects.  It is already included in
 [Fairphone Open](https://code.fairphone.com/projects/fp-osos/).
 
 
-### Protecting against malicious contributor-generated data
+## Protecting against malicious contributor-generated data
 
 The app descriptions are submitted by all sorts of people, and they
 can also be taken from the app's source repository.  This data is
