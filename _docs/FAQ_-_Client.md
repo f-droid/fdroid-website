@@ -40,49 +40,57 @@ that it is honest and transparent about what it is doing.
 
 Here are the permissions that F-Droid current uses:
 
-Download apps from f-droid.org and other app repositories
+<dl><dt><tt><a href="https://developer.android.com/reference/android/Manifest.permission.html#ACCESS_COARSE_LOCATION" target="_blank">android.permission.ACCESS_COARSE_LOCATION</a></tt><br/>
+<tt><a href="https://developer.android.com/reference/android/Manifest.permission.html#ACCESS_NETWORK_STATE" target="_blank">android.permission.ACCESS_NETWORK_STATE</a></tt><br/>
+<tt><a href="https://developer.android.com/reference/android/Manifest.permission.html#CHANGE_NETWORK_STATE" target="_blank">android.permission.CHANGE_NETWORK_STATE</a></tt><br/>
+<tt><a href="https://developer.android.com/reference/android/Manifest.permission.html#CHANGE_WIFI_MULTICAST_STATE" target="_blank">android.permission.CHANGE_WIFI_MULTICAST_STATE</a></tt><br/>
+<tt><a href="https://developer.android.com/reference/android/Manifest.permission.html#CHANGE_WIFI_STATE" target="_blank">android.permission.CHANGE_WIFI_STATE</a></tt><br/>
+<tt><a href="https://developer.android.com/reference/android/Manifest.permission.html#ACCESS_WIFI_STATE" target="_blank">android.permission.ACCESS_WIFI_STATE</a></tt></dt><dd>
 
-    android.permission.INTERNET
+For app swap to get current Wi-Fi status, and prompt the user to enable Wi-Fi when swapping.
 
-Start itself automatically at boot time so that it can receive updates:
-
-    android.permission.RECEIVE_BOOT_COMPLETED
-
-For app swap to get current WiFi status, and prompt the user to enable
-WiFi when swapping:
-
-    android.permission.ACCESS_NETWORK_STATE
-    android.permission.ACCESS_WIFI_STATE
-    android.permission.CHANGE_WIFI_MULTICAST_STATE
-    android.permission.CHANGE_NETWORK_STATE
-    android.permission.CHANGE_WIFI_STATE
+</dd><dt><tt><a href="https://developer.android.com/reference/android/Manifest.permission.html#BLUETOOTH" target="_blank">android.permission.BLUETOOTH</a></tt><br/>
+<tt><a href="https://developer.android.com/reference/android/Manifest.permission.html#BLUETOOTH_ADMIN" target="_blank">android.permission.BLUETOOTH_ADMIN</a></tt><br/>
+<tt><a href="https://developer.android.com/reference/android/Manifest.permission.html#BLUETOOTH_CONNECT" target="_blank">android.permission.BLUETOOTH_CONNECT</a></tt></dt><dd>
 
 For app swap to see the Bluetooth state, and prompt the user to enable
-Bluetooth when swapping:
+Bluetooth when swapping.
 
-    android.permission.BLUETOOTH
-    android.permission.BLUETOOTH_ADMIN
+</dd><dt><tt><a href="https://developer.android.com/reference/android/Manifest.permission.html#INTERNET" target="_blank">android.permission.INTERNET</a></tt></dt><dd>
 
-Read app repository URLs via NFC, for both swap and regular app
-repositories:
+Download apps from f-droid.org and other app repositories.
 
-    android.permission.NFC
+</dd><dt><tt><a href="https://developer.android.com/reference/android/Manifest.permission.html#NFC" target="_blank">android.permission.NFC</a></tt></dt><dd>
 
-Temporarily store downloaded files on the SD Card:
+Exchange repository information via the Repo Details screen, and to optionally assist nearby swap connection.
 
-    android.permission.WRITE_EXTERNAL_STORAGE
+</dd><dt><tt><a href="https://developer.android.com/reference/android/Manifest.permission.html#READ_EXTERNAL_STORAGE" target="_blank">android.permission.READ_EXTERNAL_STORAGE</a></tt></dt><dd>
 
-Use F-Droid Privileged Extension which gives F-Droid system
-&lt;code&gt;priv-app access. This improves security by
-allowing automatic app updates as well as letting the user leave the
-"Unknown Sources" setting off:
+Scan external storage to find compatible repositories and mirrors.
 
-    org.fdroid.fdroid.privileged.USE_SERVICE
+</dd><dt><tt><a href="https://developer.android.com/reference/android/Manifest.permission.html#RECEIVE_BOOT_COMPLETED" target="_blank">android.permission.RECEIVE_BOOT_COMPLETED</a></tt></dt><dd>
 
-Use root access to install F-Droid Privileged Extension as a system
-&lt;code&gt;priv-app:
+Start itself automatically at boot time so that it can receive updates.
 
-    android.permission.ACCESS_SUPERUSER
+</dd><dt><tt><a href="https://developer.android.com/reference/android/Manifest.permission.html#USB_PERMISSION" target="_blank">android.permission.USB_PERMISSION</a></tt></dt><dd>
+
+Detect when a USB thumb drive has been inserted, so it can be scanned to find compatible repositories and mirrors.
+
+</dd><dt><tt><a href="https://developer.android.com/reference/android/Manifest.permission.html#WAKE_LOCK" target="_blank">android.permission.WAKE_LOCK</a></tt></dt><dd>
+
+Allow the nearby service to stay running as long as the user leaves it running.
+
+</dd><dt><tt><a href="https://developer.android.com/reference/android/Manifest.permission.html#WRITE_EXTERNAL_STORAGE" target="_blank">android.permission.WRITE_EXTERNAL_STORAGE</a></tt></dt><dd>
+
+Temporarily store downloaded files on the SD Card.
+
+</dd><dt><tt><a href="https://developer.android.com/reference/android/Manifest.permission.html#WRITE_SETTINGS" target="_blank">android.permission.WRITE_SETTINGS</a></tt></dt><dd>
+
+Allow the user to enable Wi-Fi AP Hotspot mode from the nearby service.
+
+</dd></dl>
+
+F-Droid [Privileged Extension](https://gitlab.com/fdroid/privileged-extension/) is also relevant here, although it falls outside of the Android system of declaring permissions. Privileged Extension is installed with [`priv-app`](https://source.android.com/docs/core/permissions/perms-allowlist) permissions, which gives F-Droid system-level access privileges to Android. The use of Privileged Extension improves security by allowing automatic app updates as well as letting the user leave the "Unknown Sources" setting off. Privileged Extension is designed on the principals of "least privilege", so that elevated powers are only granted where they are absolutely needed, and those powers are limited as much as possible.  In order to make it possible outside reviewers to confirm that, we have made Privileged Extension as simple and small as possible.
 
 
 ### What is expert mode?
