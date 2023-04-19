@@ -154,6 +154,18 @@ CSS/HTML/JavaScript injection with a
 [HTTP Content Security Policy](https://observatory.mozilla.org/analyze.html?host=repomaker.grobox.de).
 
 
+## HTTPS/TLS configuration
+
+F-Droid has a long history of supporting all Android devices that are still running, that means maintaining compatibility as long as possible.  Towards that end, as long as users running current Android versions are not put at risk, old TLS configurations are still supported.  This is why we leave TLSv1.0 and TLSv1.1 enabled on our websites.   We believe there is no added risk for people who keep their software updated. And a device running Android 1.6 should be able to install an old version of F-Droid, and have a working app store.
+
+Some security scanners will flag this site because TLSv1.1 and TLSv1.0 are still supported.  More importantly, this site supports TLSv1.3 and TLSv1.2, both of which offer downgrade protections.  On top of that, the latest browsers and F-Droid clients entirely disable TLSv1.1 and TLSv1.0, making it impossible to force those devices to use those vulnerable TLS versions.  So the only connections using old TLS versions actually needs those old versions to function.  If you are on a device that still needs to use TLS 1.0 or 1.1, then there are already so many well known security vulnerabilities that this one is not particularly interesting.
+
+If you would like to test whether your browser still supports TLS 1.0 or 1.1, click on the links below and see if they give you an error message.
+
+    https://tls-v1-0.badssl.com:1010/
+    https://tls-v1-1.badssl.com:1011/
+
+
 ## Security Audits
 
 1. There was a quick, informal
