@@ -40,7 +40,15 @@ that it is honest and transparent about what it is doing.
 
 Here are the permissions that F-Droid current uses:
 
-<dl><dt><tt><a href="https://developer.android.com/reference/android/Manifest.permission.html#ACCESS_COARSE_LOCATION" target="_blank">android.permission.ACCESS_COARSE_LOCATION</a></tt><br/>
+<dl><dt><tt><a href="https://developer.android.com/reference/android/Manifest.permission.html#INTERNET" target="_blank">android.permission.INTERNET</a></tt></dt><dd>
+
+Download apps from f-droid.org and other app repositories.
+
+</dd><dt><tt><a href="https://developer.android.com/reference/android/Manifest.permission.html#RECEIVE_BOOT_COMPLETED" target="_blank">android.permission.RECEIVE_BOOT_COMPLETED</a></tt></dt><dd>
+
+Start itself automatically at boot time so that it can receive updates.
+
+</dd><dt><tt><a href="https://developer.android.com/reference/android/Manifest.permission.html#ACCESS_COARSE_LOCATION" target="_blank">android.permission.ACCESS_COARSE_LOCATION</a></tt><br/>
 <tt><a href="https://developer.android.com/reference/android/Manifest.permission.html#ACCESS_NETWORK_STATE" target="_blank">android.permission.ACCESS_NETWORK_STATE</a></tt><br/>
 <tt><a href="https://developer.android.com/reference/android/Manifest.permission.html#CHANGE_NETWORK_STATE" target="_blank">android.permission.CHANGE_NETWORK_STATE</a></tt><br/>
 <tt><a href="https://developer.android.com/reference/android/Manifest.permission.html#CHANGE_WIFI_MULTICAST_STATE" target="_blank">android.permission.CHANGE_WIFI_MULTICAST_STATE</a></tt><br/>
@@ -56,37 +64,29 @@ For app swap to get current Wi-Fi status, and prompt the user to enable Wi-Fi wh
 For app swap to see the Bluetooth state, and prompt the user to enable
 Bluetooth when swapping.
 
-</dd><dt><tt><a href="https://developer.android.com/reference/android/Manifest.permission.html#INTERNET" target="_blank">android.permission.INTERNET</a></tt></dt><dd>
-
-Download apps from f-droid.org and other app repositories.
-
 </dd><dt><tt><a href="https://developer.android.com/reference/android/Manifest.permission.html#NFC" target="_blank">android.permission.NFC</a></tt></dt><dd>
 
 Exchange repository information via the Repo Details screen, and to optionally assist nearby swap connection.
+
+</dd><dt><tt><a href="https://developer.android.com/reference/android/Manifest.permission.html#WRITE_SETTINGS" target="_blank">android.permission.WRITE_SETTINGS</a></tt></dt><dd>
+
+For app swap allow the user to enable Wi-Fi AP Hotspot mode from the nearby service.
+
+</dd><dt><tt><a href="https://developer.android.com/reference/android/Manifest.permission.html#WAKE_LOCK" target="_blank">android.permission.WAKE_LOCK</a></tt></dt><dd>
+
+For app swap allow the nearby service to stay running as long as the user leaves it running.
 
 </dd><dt><tt><a href="https://developer.android.com/reference/android/Manifest.permission.html#READ_EXTERNAL_STORAGE" target="_blank">android.permission.READ_EXTERNAL_STORAGE</a></tt></dt><dd>
 
 Scan external storage to find compatible repositories and mirrors.
 
-</dd><dt><tt><a href="https://developer.android.com/reference/android/Manifest.permission.html#RECEIVE_BOOT_COMPLETED" target="_blank">android.permission.RECEIVE_BOOT_COMPLETED</a></tt></dt><dd>
-
-Start itself automatically at boot time so that it can receive updates.
-
 </dd><dt><tt><a href="https://developer.android.com/reference/android/Manifest.permission.html#USB_PERMISSION" target="_blank">android.permission.USB_PERMISSION</a></tt></dt><dd>
 
 Detect when a USB thumb drive has been inserted, so it can be scanned to find compatible repositories and mirrors.
 
-</dd><dt><tt><a href="https://developer.android.com/reference/android/Manifest.permission.html#WAKE_LOCK" target="_blank">android.permission.WAKE_LOCK</a></tt></dt><dd>
-
-Allow the nearby service to stay running as long as the user leaves it running.
-
 </dd><dt><tt><a href="https://developer.android.com/reference/android/Manifest.permission.html#WRITE_EXTERNAL_STORAGE" target="_blank">android.permission.WRITE_EXTERNAL_STORAGE</a></tt></dt><dd>
 
 Temporarily store downloaded files on the SD Card.
-
-</dd><dt><tt><a href="https://developer.android.com/reference/android/Manifest.permission.html#WRITE_SETTINGS" target="_blank">android.permission.WRITE_SETTINGS</a></tt></dt><dd>
-
-Allow the user to enable Wi-Fi AP Hotspot mode from the nearby service.
 
 </dd></dl>
 
