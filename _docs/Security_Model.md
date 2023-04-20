@@ -4,6 +4,9 @@ title: Security Model
 
 ---
 
+* Do not remove this line (it will not be displayed)
+{:toc}
+
 The security architecture is based on integrating models proven by
 [Debian](https://wiki.debian.org/SecureApt) and [The Update
 Framework](https://github.com/theupdateframework/specification/blob/master/tuf-spec.md)
@@ -16,7 +19,7 @@ Framework](https://github.com/theupdateframework/specification/blob/master/tuf-s
 -   [Android verifies updates](https://developer.android.com/studio/publish/app-signing.html#considerations) based on the signature of the installed app
 -   [file integrity](https://gitlab.com/fdroid/fdroidclient/blob/v0.101-alpha2/app/src/main/java/org/fdroid/fdroid/installer/ApkCache.java#L57) protected by [signed metadata](https://gitlab.com/fdroid/fdroidclient/blob/v0.101-alpha2/app/src/main/java/org/fdroid/fdroid/RepoUpdater.java#L212)
 -   As of [_index-v2_](https://gitlab.com/fdroid/fdroidserver/-/merge_requests/1092), files from the repo are verified based on SHA-256, including icons, screenshots, etc.
--   _index-v2_ uses any algorithm supported by [_apksigner_](https://gitlab.com/fdroid/fdroidserver/-/merge_requests/1134) and [_android-23_](https://developer.android.com/reference/java/security/Signature) and newer, and relies on OpenJDK's and Google's maintenance of the currently valid signing algorithms.  When _index-v2_ was launched, the signature algorithm in use was `SHA256withRSA` and the digest algorithm was `SHA-256`.  _index-v1_ is signed by `SHA1withRSA`.  As of this writing, SHA1 are still considered strong against [second preimage attacks](https://crypto.stackexchange.com/a/48291), which is what is relevant for index JARs.
+-   _index-v2_ uses any algorithm supported by [_apksigner_](https://gitlab.com/fdroid/fdroidserver/-/merge_requests/1134) and [_android-23_](https://developer.android.com/reference/java/security/Signature) and newer, and relies on OpenJDK's and Google's maintenance of the currently valid signing algorithms.  When _index-v2_ was launched, the signature algorithm in use was `SHA256withRSA` and the digest algorithm was `SHA-256`.  _index-v1_ is signed by `SHA1withRSA`.  As of this writing, SHA1 are still considered strong against [second pre-image attacks](https://crypto.stackexchange.com/a/48291), which is what is relevant for index JARs.
 -   Production signing is handled by [reproducible builds](https://tests.reproducible-builds.org/debian/rb-pkg/unstable/amd64/android-platform-tools-apksig.html) of _apksigner_ from Debian.
 -   signed metadata includes hashes of [the app](https://gitlab.com/fdroid/fdroidserver/blob/0.6.0/fdroidserver/update.py#L460) and its [signing key](https://gitlab.com/fdroid/fdroidserver/blob/0.6.0/fdroidserver/update.py#L558)
 -   [signed metadata generated on a separate machine](https://gitlab.com/fdroid/fdroidserver/blob/0.6.0/fdroidserver/update.py#L989) (which is fully offline for f-droid.org and guardianproject.info)
@@ -28,7 +31,7 @@ Framework](https://github.com/theupdateframework/specification/blob/master/tuf-s
     and
     [expiry](https://gitlab.com/fdroid/fdroidserver/blob/0.6.0/fdroidserver/update.py#L775)
 -   easy Tor support via Settings
--   [client-side HTTP “etag” cache check](https://gitlab.com/fdroid/fdroidclient/issues/562)
+-   [client-side HTTP ETag cache check](https://gitlab.com/fdroid/fdroidclient/issues/562)
     so the ETag cannot be abused to track users
 -   list of official mirrors included in signed metadata, then the
     client
@@ -109,7 +112,7 @@ to make it as hard as possible to exploit this vector.
   browser, eliminating all possibility of XSS attacks
 
 
-### F-Droid as built-in app store
+## F-Droid as built-in app store
 
 When F-Droid is built into Android, either as part of the ROM or by
 flashing an
@@ -132,7 +135,7 @@ ROM projects.  It is already included in
 [Fairphone Open](https://code.fairphone.com/projects/fp-osos/).
 
 
-### Protecting against malicious contributor-generated data
+## Protecting against malicious contributor-generated data
 
 The app descriptions are submitted by all sorts of people, and they
 can also be taken from the app's source repository.  This data is
@@ -151,6 +154,18 @@ CSS/HTML/JavaScript injection with a
 [HTTP Content Security Policy](https://observatory.mozilla.org/analyze.html?host=repomaker.grobox.de).
 
 
+## HTTPS/TLS configuration
+
+F-Droid has a long history of supporting all Android devices that are still running, that means maintaining compatibility as long as possible.  Towards that end, as long as users running current Android versions are not put at risk, old TLS configurations are still supported.  This is why we leave TLSv1.0 and TLSv1.1 enabled on our websites.   We believe there is no added risk for people who keep their software updated. And a device running Android 1.6 should be able to install an old version of F-Droid, and have a working app store.
+
+Some security scanners will flag this site because TLSv1.1 and TLSv1.0 are still supported.  More importantly, this site supports TLSv1.3 and TLSv1.2, both of which offer downgrade protections.  On top of that, the latest browsers and F-Droid clients entirely disable TLSv1.1 and TLSv1.0, making it impossible to force those devices to use those vulnerable TLS versions.  So the only connections using old TLS versions actually needs those old versions to function.  If you are on a device that still needs to use TLS 1.0 or 1.1, then there are already so many well known security vulnerabilities that this one is not particularly interesting.
+
+If you would like to test whether your browser still supports TLS 1.0 or 1.1, click on the links below and see if they give you an error message.
+
+    https://tls-v1-0.badssl.com:1010/
+    https://tls-v1-1.badssl.com:1011/
+
+
 ## Security Audits
 
 1. There was a quick, informal
@@ -162,7 +177,7 @@ CSS/HTML/JavaScript injection with a
    [external public audit]({{ site.baseurl }}/2018/01/20/upcoming-security-audit.html)
    from [Cure53](https://cure53.de)
 
-3. The second "Bazaar2" project funded by Open Tech Fund included an
+3. The second "Bazaar 2" project funded by Open Tech Fund included an
    [external public audit]({{ site.baseurl }}/2018/09/04/second-security-audit-results.html)
    from [Radically Open Security](https://radicallyopensecurity.com/)
 

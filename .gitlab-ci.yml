@@ -176,8 +176,13 @@ spellcheckbot:
           echo "Spellchecking $CHANGED";
           git checkout --force ${FROM_CI_COMMIT_SHA};
       fi
-    - apt-get install hunspell-en-us nodejs npm python3-gitlab python3-requests
+    - apt-get install hunspell-en-us jq nodejs npm python3-gitlab python3-requests
     - ./tools/fetch-spelling-words.py >> .spelling
+    # Android permission strings
+    - jq --raw-output 'keys[]' _data/android_permissions.json >> .spelling
+    # version strings
+    - grep --no-filename -rEo 'v[0-9]+(:?\.[0-9]+)+' _* | sort -u >> .spelling
+
     - npm i markdown-spellcheck -g
     - (mdspell --report --en-gb --ignore-numbers --ignore-acronyms $CHANGED > output.txt 2>&1)
         || ./tools/spellcheckbot.py
