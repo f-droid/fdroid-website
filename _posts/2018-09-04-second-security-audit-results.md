@@ -203,7 +203,7 @@ stop parts of the system from working.
 
 ### Experimental drozer integration
 
-As part of the Bazaar2 funding, an experimental feature for
+As part of the Bazaar 2 funding, an experimental feature for
 integrating Drozer into the fdroid release project was built.  This
 feature is still alpha and is not deployed on any production setup.
 These issues are real issues, but there are no plans to fix them
