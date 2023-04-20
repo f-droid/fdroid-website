@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2023-03-20 17:26+0100\n"
+"POT-Creation-Date: 2023-04-20 12:04+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -5418,7 +5418,7 @@ msgstr ""
 #. type: Plain text
 #: _posts/2018-09-04-second-security-audit-results.md
 #, markdown-text
-msgid "As part of the Bazaar 2 funding, an experimental feature for integrating Drozer into the fdroid release project was built.  This feature is still alpha and is not deployed on any production setup.  These issues are real issues, but there are no plans to fix them currently since there are no plans to move forward with the Drozer integration.  We welcome contributions by those who want to see that happen."
+msgid "As part of the Bazaar2 funding, an experimental feature for integrating Drozer into the fdroid release project was built.  This feature is still alpha and is not deployed on any production setup.  These issues are real issues, but there are no plans to fix them currently since there are no plans to move forward with the Drozer integration.  We welcome contributions by those who want to see that happen."
 msgstr ""
 
 #. type: Bullet: '* '
@@ -21210,7 +21210,7 @@ msgstr ""
 #. type: Plain text
 #: _posts/2022-12-22-third-audit-results.md
 #, markdown-text
-msgid "This was only ever used to sign the app index file used in the Nearby app swapping, which only works over the local network.  The signature is on a short-lived file that is generated on the fly, and is almost always used in a one-to-one interaction.  A lot of other pieces would have to be in place for this to be exploited.  Plus it would require a fair amount of expense to crack the cryptography on the file that was signed seconds or minutes before, and probably will only be in use for around 10 minutes.  Any app updates received via Nearby swapping will still have the full protection of the APK signature.  For these reasons, it is also still safe to use the SHA1 algorithm, which is necessary here for compatibility.  This use case falls under the \"[second pre-image attack](https://crypto.stackexchange.com/questions/48289/how-secure-is-sha1-what-are-the-chances-of-a-real-exploit/48291#48291)\" case, meaning that the attacker cannot affect the data before it is signed. Git can also still rely on SHA1 for this reason."
+msgid "This was only ever used to sign the app index file used in the Nearby app swapping, which only works over the local network.  The signature is on a short-lived file that is generated on the fly, and is almost always used in a one-to-one interaction.  A lot of other pieces would have to be in place for this to be exploited.  Plus it would require a fair amount of expense to crack the cryptography on the file that was signed seconds or minutes before, and probably will only be in use for around 10 minutes.  Any app updates received via Nearby swapping will still have the full protection of the APK signature.  For these reasons, it is also still safe to use the SHA1 algorithm, which is necessary here for compatibility.  This use case falls under the \"[second preimage attack](https://crypto.stackexchange.com/questions/48289/how-secure-is-sha1-what-are-the-chances-of-a-real-exploit/48291#48291)\" case, meaning that the attacker cannot affect the data before it is signed. Git can also still rely on SHA1 for this reason."
 msgstr ""
 
 #. type: Plain text
@@ -21619,141 +21619,6 @@ msgstr ""
 #: _posts/2023-03-08-vpn-trust-requires-free-software.md
 #, markdown-text
 msgid "We also get lots of direct messages asking us to include various proprietary VPN apps, or promote various VPN services for a fee.  That is of course a non-starter.  The first step is free software."
-msgstr ""
-
-#. type: Yaml Front Matter Hash Value: title
-#: _posts/2023-03-17-privacy-audit.md
-#, no-wrap
-msgid "Privacy Audit"
-msgstr ""
-
-#. type: Plain text
-#: _posts/2023-03-17-privacy-audit.md
-#, markdown-text
-msgid "F-Droid is working to ensure that we can have truly private mobile devices free of surveillance capitalism and its ills.  Whenever possible, we develop clear technical solutions for building our infrastructure that are private by default.  We aim to provide privacy protections that do not require you to trust the operators of the service in order to know that it is not tracking you.  So we are constantly working to find ways to reduce information leakage in our systems.  If the client app leaks very little metadata, there is nothing that the servers can do to get that information."
-msgstr ""
-
-#. type: Bullet: '* '
-#: _posts/2023-03-17-privacy-audit.md
-#, markdown-text
-msgid "Other app stores are built around [accounts](TODO no user accounts) and gathering as much as possible about users.  F-Droid not only does not keep data on users, we also work to eliminate leaks of metadata to our systems, so that it is not even possible for it to be gathered on our infrastructure."
-msgstr ""
-
-#. type: Plain text
-#: _posts/2023-03-17-privacy-audit.md
-#, markdown-text, no-wrap
-msgid ""
-"* Our client app is free software,\n"
-"publicly audited, and reproducibly built. That provides the highest possible\n"
-"assurance that your privacy is protected.\n"
-msgstr ""
-
-#. type: Plain text
-#: _posts/2023-03-17-privacy-audit.md
-#, markdown-text
-msgid "Towards that end, we recently received some audit activity that looked into what kinds of data that the F-Droid [client](https://gitlab.com/fdroid/fdroidclient)  leaks to our servers.  Most security audits treat the servers as part of the system, but we want to reduce our servers to bit shufflers that only see the data they have to see, and nothing more.  The signed index [security model]({{site.baseurl }}/docs/Security_Model) already means that the servers do not need to be trusted to safely provide unmodified files to the client, since the client verifies files based on the built-in signing key."
-msgstr ""
-
-#. type: Plain text
-#: _posts/2023-03-17-privacy-audit.md
-#, markdown-text
-msgid "Thanks to [@nervuri](https://nervuri.net/) for their recent [audit](https://gitlab.com/fdroid/fdroidclient/-/issues/984#note_822766198).  Some key findings are already fixed in v1.16-alpha0, and we are working to address all of the issues mentioned.  There are lots of ideas in that thread for minimizing metadata leaks, and we welcome contributions to help us implement them all."
-msgstr ""
-
-#. type: Title #
-#: _posts/2023-03-17-privacy-audit.md
-#, markdown-text, no-wrap
-msgid "TODO document how we addressed the issues listed in fdroidclient#984"
-msgstr ""
-
-#. type: Plain text
-#: _posts/2023-03-17-privacy-audit.md
-#, markdown-text
-msgid "Whenever we receive an official security audit, we ask the auditors to think about data and metadata leaks.  Additionally, we suggest they think about our own servers as untrusted.  We are finalizing the report on the most recent audit, there i"
-msgstr ""
-
-#. type: Title #
-#: _posts/2023-03-17-privacy-audit.md
-#, markdown-text, no-wrap
-msgid "TODO v1.15 includes changes to improve the privacy protections"
-msgstr ""
-
-#. type: Bullet: '* '
-#: _posts/2023-03-17-privacy-audit.md
-#, markdown-text
-msgid "XXE and Logging fixes in 1.15.4"
-msgstr ""
-
-#. type: Bullet: '* '
-#: _posts/2023-03-17-privacy-audit.md
-#, markdown-text
-msgid "The f-droid.org webserver now supports TLSv1.3 and OCSP Stapling."
-msgstr ""
-
-#. type: Bullet: '* '
-#: _posts/2023-03-17-privacy-audit.md
-#, markdown-text
-msgid "Although F-Droid uses standard HTTP clients and servers, the client app does not need to implement all of HTTP.  For example, HTTP 30x redirects have been implicated in a number of security issues, so the F-Droid client will [not follow redirects](https://gitlab.com/fdroid/fdroidclient/-/issues/1041)."
-msgstr ""
-
-#. type: Bullet: '* '
-#: _posts/2023-03-17-privacy-audit.md
-#, markdown-text
-msgid "[Rejection of TLS 1.1 and older as well as rejection of weak ciphers](https://gitlab.com/fdroid/fdroidclient/-/blob/1.16/libs/download/src/androidAndroidTest/kotlin/org/fdroid/download/HttpManagerInstrumentationTest.kt)"
-msgstr ""
-
-#. type: Bullet: '* '
-#: _posts/2023-03-17-privacy-audit.md
-#, markdown-text
-msgid "No DNS requests when using Tor as a proxy"
-msgstr ""
-
-#. type: Bullet: '* '
-#: _posts/2023-03-17-privacy-audit.md
-#, markdown-text
-msgid "short TLS session timeout to prevent tracking and key re-use"
-msgstr ""
-
-#. type: Bullet: '* '
-#: _posts/2023-03-17-privacy-audit.md
-#, markdown-text
-msgid "TLS Session Tickets are now kept for 60 seconds."
-msgstr ""
-
-#. type: Bullet: '* '
-#: _posts/2023-03-17-privacy-audit.md
-#, markdown-text
-msgid "TODO Only include major.minor version in User Agent"
-msgstr ""
-
-#. type: Bullet: '* '
-#: _posts/2023-03-17-privacy-audit.md
-#, markdown-text
-msgid "TODO Only send versioned User Agent to canonical URL"
-msgstr ""
-
-#. type: Bullet: '* '
-#: _posts/2023-03-17-privacy-audit.md
-#, markdown-text
-msgid "TODO include f-droid.org IP addresses"
-msgstr ""
-
-#. type: Bullet: '* '
-#: _posts/2023-03-17-privacy-audit.md
-#, markdown-text
-msgid "TODO session timeout to 1 second + keep-alive to 60 seconds"
-msgstr ""
-
-#. type: Bullet: '* '
-#: _posts/2023-03-17-privacy-audit.md
-#, markdown-text
-msgid "TODO new test in HttpManagerInstrumentationTestto make sure [JA3 fingerprint](https://engineering.salesforce.com/tls-fingerprinting-with-ja3-and-ja3s-247362855967) does not change, based on https://tlsprivacy.nervuri.net/json/v1"
-msgstr ""
-
-#. type: Plain text
-#: _posts/2023-03-17-privacy-audit.md
-#, markdown-text
-msgid "There have been recent technologies developed in the name of privacy, things like [differential privacy](TODO) and TODO.  These are useful for cases where the only way to achieve the goal is by working with private data.  Public health surveys and censuses are two examples of this.  But things like differential privacy are also used by companies that use private data to sell advertising.  Advertising serves a company's business model, there is nothing about modern mobile devices that requires keeping large data sets of personally identifiable information on users.  Even systems that are built on analysis of this data could be built to run entirely on the device, so that the user's data never leaves their own device.  The surveillance capitalism business models are what have driven the large scale data collection and mining, not serving users."
 msgstr ""
 
 #. type: Yaml Front Matter Hash Value: title
