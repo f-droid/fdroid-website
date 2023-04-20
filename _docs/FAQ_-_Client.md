@@ -40,55 +40,54 @@ that it is honest and transparent about what it is doing.
 
 Here are the permissions that F-Droid current uses:
 
-<dl><dt><tt><a href="https://developer.android.com/reference/android/Manifest.permission.html#INTERNET" target="_blank">android.permission.INTERNET</a></tt></dt><dd>
+<dl><dt>
 
-Download apps from f-droid.org and other app repositories.
+Download apps from f-droid.org and other app repositories:
 
-</dd><dt><tt><a href="https://developer.android.com/reference/android/Manifest.permission.html#RECEIVE_BOOT_COMPLETED" target="_blank">android.permission.RECEIVE_BOOT_COMPLETED</a></tt></dt><dd>
+</dt><dd><tt><a href="https://developer.android.com/reference/android/Manifest.permission.html#INTERNET" target="_blank">android.permission.INTERNET</a></tt></dd><dt>
 
-Start itself automatically at boot time so that it can receive updates.
+Start itself automatically at boot time so that it can receive updates:
 
-</dd><dt><tt><a href="https://developer.android.com/reference/android/Manifest.permission.html#ACCESS_COARSE_LOCATION" target="_blank">android.permission.ACCESS_COARSE_LOCATION</a></tt><br/>
+</dt><dd><tt><a href="https://developer.android.com/reference/android/Manifest.permission.html#RECEIVE_BOOT_COMPLETED" target="_blank">android.permission.RECEIVE_BOOT_COMPLETED</a></tt></dd><dt>
+
+For the nearby service to get current Wi-Fi status, and prompt the user to enable Wi-Fi when swapping:
+
+</dt><dd><tt><a href="https://developer.android.com/reference/android/Manifest.permission.html#ACCESS_COARSE_LOCATION" target="_blank">android.permission.ACCESS_COARSE_LOCATION</a></tt><br/>
 <tt><a href="https://developer.android.com/reference/android/Manifest.permission.html#ACCESS_NETWORK_STATE" target="_blank">android.permission.ACCESS_NETWORK_STATE</a></tt><br/>
 <tt><a href="https://developer.android.com/reference/android/Manifest.permission.html#CHANGE_NETWORK_STATE" target="_blank">android.permission.CHANGE_NETWORK_STATE</a></tt><br/>
 <tt><a href="https://developer.android.com/reference/android/Manifest.permission.html#CHANGE_WIFI_MULTICAST_STATE" target="_blank">android.permission.CHANGE_WIFI_MULTICAST_STATE</a></tt><br/>
 <tt><a href="https://developer.android.com/reference/android/Manifest.permission.html#CHANGE_WIFI_STATE" target="_blank">android.permission.CHANGE_WIFI_STATE</a></tt><br/>
-<tt><a href="https://developer.android.com/reference/android/Manifest.permission.html#ACCESS_WIFI_STATE" target="_blank">android.permission.ACCESS_WIFI_STATE</a></tt></dt><dd>
+<tt><a href="https://developer.android.com/reference/android/Manifest.permission.html#ACCESS_WIFI_STATE" target="_blank">android.permission.ACCESS_WIFI_STATE</a></tt></dd><dt>
 
-For app swap to get current Wi-Fi status, and prompt the user to enable Wi-Fi when swapping.
+For the nearby service to see the Bluetooth state, and prompt the user to enable Bluetooth when swapping:
 
-</dd><dt><tt><a href="https://developer.android.com/reference/android/Manifest.permission.html#BLUETOOTH" target="_blank">android.permission.BLUETOOTH</a></tt><br/>
+</dt><dd><tt><a href="https://developer.android.com/reference/android/Manifest.permission.html#BLUETOOTH" target="_blank">android.permission.BLUETOOTH</a></tt><br/>
 <tt><a href="https://developer.android.com/reference/android/Manifest.permission.html#BLUETOOTH_ADMIN" target="_blank">android.permission.BLUETOOTH_ADMIN</a></tt><br/>
-<tt><a href="https://developer.android.com/reference/android/Manifest.permission.html#BLUETOOTH_CONNECT" target="_blank">android.permission.BLUETOOTH_CONNECT</a></tt></dt><dd>
+<tt><a href="https://developer.android.com/reference/android/Manifest.permission.html#BLUETOOTH_CONNECT" target="_blank">android.permission.BLUETOOTH_CONNECT</a></tt></dd><dt>
 
-For app swap to see the Bluetooth state, and prompt the user to enable
-Bluetooth when swapping.
+Exchange repository information via the Repo Details screen, and to optionally assist nearby swap connection:
 
-</dd><dt><tt><a href="https://developer.android.com/reference/android/Manifest.permission.html#NFC" target="_blank">android.permission.NFC</a></tt></dt><dd>
+</dt><dd><tt><a href="https://developer.android.com/reference/android/Manifest.permission.html#NFC" target="_blank">android.permission.NFC</a></tt></dd><dt>
 
-Exchange repository information via the Repo Details screen, and to optionally assist nearby swap connection.
+Allow the user to enable Wi-Fi AP Hotspot mode from the nearby service:
 
-</dd><dt><tt><a href="https://developer.android.com/reference/android/Manifest.permission.html#WRITE_SETTINGS" target="_blank">android.permission.WRITE_SETTINGS</a></tt></dt><dd>
+</dt><dd><tt><a href="https://developer.android.com/reference/android/Manifest.permission.html#WRITE_SETTINGS" target="_blank">android.permission.WRITE_SETTINGS</a></tt></dd><dt>
 
-For app swap allow the user to enable Wi-Fi AP Hotspot mode from the nearby service.
+Allows the nearby service to stay running as long as the user leaves it running:
 
-</dd><dt><tt><a href="https://developer.android.com/reference/android/Manifest.permission.html#WAKE_LOCK" target="_blank">android.permission.WAKE_LOCK</a></tt></dt><dd>
+</dt><dd><tt><a href="https://developer.android.com/reference/android/Manifest.permission.html#WAKE_LOCK" target="_blank">android.permission.WAKE_LOCK</a></tt></dd><dt>
 
-For app swap allow the nearby service to stay running as long as the user leaves it running.
+Find and use compatible repositories and mirrors on external storage:
 
-</dd><dt><tt><a href="https://developer.android.com/reference/android/Manifest.permission.html#READ_EXTERNAL_STORAGE" target="_blank">android.permission.READ_EXTERNAL_STORAGE</a></tt></dt><dd>
+</dt><dd><tt><a href="https://developer.android.com/reference/android/Manifest.permission.html#READ_EXTERNAL_STORAGE" target="_blank">android.permission.READ_EXTERNAL_STORAGE</a></tt></dd><dt>
 
-Scan external storage to find compatible repositories and mirrors.
+Detect when a USB thumb drive has been inserted, so it can be scanned to find compatible repositories and mirrors:
 
-</dd><dt><tt><a href="https://developer.android.com/reference/android/Manifest.permission.html#USB_PERMISSION" target="_blank">android.permission.USB_PERMISSION</a></tt></dt><dd>
+</dt><dd><tt><a href="https://developer.android.com/reference/android/Manifest.permission.html#USB_PERMISSION" target="_blank">android.permission.USB_PERMISSION</a></tt></dd><dt>
 
-Detect when a USB thumb drive has been inserted, so it can be scanned to find compatible repositories and mirrors.
+Temporarily store and use downloaded files on external storage:
 
-</dd><dt><tt><a href="https://developer.android.com/reference/android/Manifest.permission.html#WRITE_EXTERNAL_STORAGE" target="_blank">android.permission.WRITE_EXTERNAL_STORAGE</a></tt></dt><dd>
-
-Temporarily store downloaded files on the SD Card.
-
-</dd></dl>
+</dt><dd><tt><a href="https://developer.android.com/reference/android/Manifest.permission.html#WRITE_EXTERNAL_STORAGE" target="_blank">android.permission.WRITE_EXTERNAL_STORAGE</a></tt></dd></dl>
 
 F-Droid [Privileged Extension](https://gitlab.com/fdroid/privileged-extension/) is also relevant here, although it falls outside of the Android system of declaring permissions. Privileged Extension is installed with [`priv-app`](https://source.android.com/docs/core/permissions/perms-allowlist) permissions, which gives F-Droid system-level access privileges to Android. The use of Privileged Extension improves security by allowing automatic app updates as well as letting the user leave the "Unknown Sources" setting off. Privileged Extension is designed on the principals of "least privilege", so that elevated powers are only granted where they are absolutely needed, and those powers are limited as much as possible.  In order to make it possible outside reviewers to confirm that, we have made Privileged Extension as simple and small as possible.
 
