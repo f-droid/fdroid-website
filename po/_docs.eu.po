@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
-"POT-Creation-Date: 2022-05-16 21:26+0200\n"
+"POT-Creation-Date: 2023-04-20 09:55+0200\n"
 "PO-Revision-Date: 2020-04-30 19:47+0000\n"
 "Last-Translator: Osoitz <oelkoro@gmail.com>\n"
 "Language-Team: Basque <https://hosted.weblate.org/projects/f-droid/website-docs/eu/>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 4.0.2\n"
 
-#. type: YAML Front Matter: title
+#. type: Yaml Front Matter Hash Value: title
 #: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
 #, no-wrap
 msgid "All About Descriptions, Graphics, and Screenshots"
@@ -38,7 +38,7 @@ msgstr ""
 #: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
 #: _docs/Build_Server_Setup.md _docs/FAQ_-_App_Developers.md
 #: _docs/FAQ_-_Client.md _docs/FAQ_-_General.md
-#: _docs/Installing_the_Server_and_Repo_Tools.md
+#: _docs/Installing_the_Server_and_Repo_Tools.md _docs/Security_Model.md
 #: _docs/Setup_an_F-Droid_App_Repo.md
 #, no-wrap
 msgid ""
@@ -66,6 +66,11 @@ msgstr ""
 
 #. type: Bullet: '* '
 #: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
+msgid "Icon"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
 msgid "Summary"
 msgstr ""
 
@@ -83,7 +88,7 @@ msgstr "Lizentzia"
 
 #. type: Bullet: '* '
 #: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
-msgid "a What’s New entry for at least one release"
+msgid "a What's New entry for at least one release"
 msgstr ""
 
 #. type: Bullet: '* '
@@ -138,7 +143,12 @@ msgstr ""
 
 #. type: Bullet: '* '
 #: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
-msgid "Common tags like `li`, `a` with `href`, `ul`, `ol`, `li`, `b`, `u` and `i` are supported."
+msgid "These simple layout tags are [supported](https://gitlab.com/fdroid/jekyll-fdroid/-/blob/master/lib/fdroid/Package.rb#L21): `b`, `big`, `blockquote`, `br`, `cite`, `em`, `i`, `li`, `ol`, `small`, `strike`, `strong`, `sub`, `sup`, `tt`, `u`, `ul`."
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
+msgid "`a` with `href` is currently allowed, but might be removed without notice."
 msgstr ""
 
 #. type: Plain text
@@ -147,7 +157,7 @@ msgstr ""
 msgid ""
 "* Certain tags are explicitly prohibited, namely `applet`, `base`, `body`, `button`, `embed`, `form`, `head`, `html`,\n"
 "`iframe`, `img`, `input`, `link`, `object`, `picture`, `script`, `source`, `style`, `svg` and `video`.\n"
-"* Note that a linebreak will automatically be converted to a `br` tag.\n"
+"* Note that a line break will automatically be converted to a `br` tag.\n"
 "* You may not make use of JavaScript.\n"
 msgstr ""
 
@@ -192,7 +202,7 @@ msgstr ""
 #. type: Plain text
 #: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
 #, fuzzy
-msgid "Please be aware that texts in the app’s metadata file will override all other descriptive texts provided through the structures explained below. This affects [_Name_](../Build_Metadata_Reference/#Name), [_Summary_](../Build_Metadata_Reference/#Summary), and [_Description_](../Build_Metadata_Reference/#Description).  Once metadata fields that were previously in the metadata file have been moved to the app’s source repo, please file a [merge request](https://gitlab.com/fdroid/fdroiddata/merge_requests) or [issue](https://gitlab.com/fdroid/fdroiddata/issues) to remove _Summary_ and _Description_ from the app's metadata file."
+msgid "Please be aware that texts in the app's metadata file will override all other descriptive texts provided through the structures explained below. This affects [_Name_](../Build_Metadata_Reference/#Name), [_Summary_](../Build_Metadata_Reference/#Summary), and [_Description_](../Build_Metadata_Reference/#Description).  Once metadata fields that were previously in the metadata file have been moved to the app's source repo, please file a [merge request](https://gitlab.com/fdroid/fdroiddata/merge_requests) or [issue](https://gitlab.com/fdroid/fdroiddata/issues) to remove _Summary_ and _Description_ from the app's metadata file."
 msgstr "Azken xehetasun garrantzitsua, aplikazioaren metadatuetako fitxategiko testuek  _Fastlane_ edo _Triple-T_ bidez sortutako deskipzio testuak gainidatziko ditzute. Hau da [Izena](../Build_Metadata_Reference/#Name), [Laburpena](../Build_Metadata_Reference/#Summary), eta [Deskripzioa](../Build_Metadata_Reference/#Description). Behin aplikazioaren deskripzio testuak iturburuaren biltegira mugituta, sortu [bateratzeko eskaria](https://gitlab.com/fdroid/fdroiddata/merge_requests)  edo [arazoa](https://gitlab.com/fdroid/fdroiddata/issues) _Laburpena_ eta _Deskripzioa_ aplikazioaren metadatuetako fitxategitik kentzeko."
 
 #. type: Plain text
@@ -391,12 +401,12 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
-msgid "The ultimate destination for files from the app’s source repo and *fdroiddata* metadata sub-directories is in the F-Droid repo. The text all gets included into the index file (aka *index-v1.json*). All of the graphics files can be directly included in the repo."
+msgid "The ultimate destination for files from the app's source repo and *fdroiddata* metadata sub-directories is in the F-Droid repo. The text all gets included into the index file (aka *index-v1.json*). All of the graphics files can be directly included in the repo."
 msgstr ""
 
 #. type: Plain text
 #: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
-msgid "If graphics files are also in the app’s source or *fdroiddata*, then the files directly in the repo will be overwritten."
+msgid "If graphics files are also in the app's source or *fdroiddata*, then the files directly in the repo will be overwritten."
 msgstr ""
 
 #. type: Plain text
@@ -489,10 +499,10 @@ msgstr ""
 
 #. type: Bullet: '* '
 #: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
-msgid "Graphic files from the app’s source of *fdroiddata* overwrites files in the repo."
+msgid "Graphic files from the app's source of *fdroiddata* overwrites files in the repo."
 msgstr ""
 
-#. type: YAML Front Matter: title
+#. type: Yaml Front Matter Hash Value: title
 #: _docs/All_our_APIs.md
 #, no-wrap
 msgid "All our APIs"
@@ -571,7 +581,38 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/All_our_APIs.md
-msgid "F-Droid is built around a signed index of all the apps and packages that are available.  This is a JSON file, though more of an index than an API since all the information is distributed via a single file.  The repo index is in the form of a signed JAR file that contains _index-v1.json_.  The best method is to verify the JAR signature, then extract _index-v1.json_ if it validates. The _fdroidserver_ Python library provides `fdroidserver.download_repo_index()` to make this easy to do.  It is also possible to just read _index-v1.json_ using any ZIP library."
+msgid "F-Droid is built around a signed index of all the apps and packages that are available.  This is a JSON file, though more of an index than an API since all the information is distributed via a single file.  * <https://f-droid.org/repo/index-v2.json> * <https://f-droid.org/repo/index-v1.json> * <https://f-droid.org/archive/index-v2.json> * <https://f-droid.org/archive/index-v1.json>"
+msgstr ""
+
+#. type: Plain text
+#: _docs/All_our_APIs.md
+msgid "As of index-v2, there is support for files that only contain the changes, known as \"diff\" files.  There is also a separate entry point, which is signed by a JAR and a GPG signature and lists the available index and diff files."
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/All_our_APIs.md
+#, fuzzy
+#| msgid "<https://f-droid.org/repo/index-v1.jar>"
+msgid "<https://f-droid.org/repo/entry.jar>"
+msgstr "<https://f-droid.org/repo/index-v1.jar>"
+
+#. type: Bullet: '* '
+#: _docs/All_our_APIs.md
+#, fuzzy
+#| msgid "<https://f-droid.org/repo/status/deploy.json>"
+msgid "<https://f-droid.org/repo/entry.json>"
+msgstr "<https://f-droid.org/repo/status/deploy.json>"
+
+#. type: Bullet: '* '
+#: _docs/All_our_APIs.md
+#, fuzzy
+#| msgid "<https://f-droid.org/repo/status/deploy.json>"
+msgid "<https://f-droid.org/repo/entry.json.asc>"
+msgstr "<https://f-droid.org/repo/status/deploy.json>"
+
+#. type: Plain text
+#: _docs/All_our_APIs.md
+msgid "The v1 repo index formats come in the form of a signed JAR file that contains _index-v1.json_.  The best method is to verify the JAR signature, then extract _index-v1.json_ if it validates. The _fdroidserver_ Python library provides `fdroidserver.download_repo_index()` to make this easy to do."
 msgstr ""
 
 #. type: Bullet: '* '
@@ -582,6 +623,39 @@ msgstr "<https://f-droid.org/repo/index-v1.jar>"
 #. type: Bullet: '* '
 #: _docs/All_our_APIs.md
 msgid "<https://f-droid.org/archive/index-v1.jar>"
+msgstr "<https://f-droid.org/archive/index-v1.jar>"
+
+#. type: Plain text
+#: _docs/All_our_APIs.md
+msgid "There are also GPG signatures for verifying the JSON files:"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/All_our_APIs.md
+#, fuzzy
+#| msgid "<https://f-droid.org/repo/index-v1.jar>"
+msgid "<https://f-droid.org/repo/index-v2.json.asc>"
+msgstr "<https://f-droid.org/repo/index-v1.jar>"
+
+#. type: Bullet: '* '
+#: _docs/All_our_APIs.md
+#, fuzzy
+#| msgid "<https://f-droid.org/repo/index-v1.jar>"
+msgid "<https://f-droid.org/repo/index-v1.json.asc>"
+msgstr "<https://f-droid.org/repo/index-v1.jar>"
+
+#. type: Bullet: '* '
+#: _docs/All_our_APIs.md
+#, fuzzy
+#| msgid "<https://f-droid.org/archive/index-v1.jar>"
+msgid "<https://f-droid.org/archive/index-v2.json.asc>"
+msgstr "<https://f-droid.org/archive/index-v1.jar>"
+
+#. type: Bullet: '* '
+#: _docs/All_our_APIs.md
+#, fuzzy
+#| msgid "<https://f-droid.org/archive/index-v1.jar>"
+msgid "<https://f-droid.org/archive/index-v1.json.asc>"
 msgstr "<https://f-droid.org/archive/index-v1.jar>"
 
 #. type: Title ###
@@ -676,13 +750,15 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/All_our_APIs.md
+msgid "_verification.f-droid.org_ is a rebuilder that rebuilds the official releases from _f-droid.org_, then checks to see if they were [reproducibly built](https://reproducible-builds.org/). There is an entry point for each package based on the package name: <https://verification.f-droid.org/org.fdroid.fdroid.json>"
+msgstr ""
+
+#. type: Plain text
+#: _docs/All_our_APIs.md
 #, no-wrap
 msgid ""
-"_verification.f-droid.org_ is a rebuilder that rebuilds the official releases\n"
-"from _f-droid.org_, then checks to see if they were [reproducibly\n"
-"built](https://reproducible-builds.org/). There is a JSON file per APK that has\n"
-"been checked, where the filename follows the pattern\n"
-"`<ApplicationId>_<VersionCode>.apk.json`, for example:\n"
+"Then there is a JSON file per APK that has been checked, where the filename\n"
+"follows the pattern `<ApplicationId>_<VersionCode>.apk.json`, for example:\n"
 "<https://verification.f-droid.org/org.fdroid.fdroid_1010050.apk.json>\n"
 msgstr ""
 
@@ -699,12 +775,7 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/All_our_APIs.md
-msgid "[Binary transparency](https://wiki.mozilla.org/Security/Binary_Transparency) is the idea that all released packages should be logged as they are published.  This provides a way to check if a given binary was produced by the publisher, or came from somewhere else, e.g. as an exploit.  _fdroidserver_ has built in tools for managing a binary transparency log of the index files as part of the release process. This has been enabled on the Guardian Project repo: <https://github.com/guardianproject/binary_transparency_log>"
-msgstr ""
-
-#. type: Plain text
-#: _docs/All_our_APIs.md
-msgid "There is also a prototype for running a binary transparency log for _f-droid.org_. <https://gitlab.com/eighthave/f-droid.org-binary-transparency>"
+msgid "[Binary transparency](https://wiki.mozilla.org/Security/Binary_Transparency) is the idea that all released packages should be logged as they are published.  This provides a way to check if a given binary was produced by the publisher, or came from somewhere else, e.g. as an exploit.  _fdroidserver_ has built in tools for managing a binary transparency log of the index files as part of the release process. This has been enabled on _f-droid.org_: <https://gitlab.com/fdroid/f-droid.org-transparency-log>"
 msgstr ""
 
 #. type: Plain text
@@ -773,7 +844,7 @@ msgstr ""
 msgid "Each _git_ repo has lots of interesting metadata.  The _GitStats_ project generates nice charts from that data.  This is not quite an API, but it is related since it is using public project data.  Pre-generated pages for each of the central git repos are visible here: <https://fdroid.gitlab.io/>."
 msgstr ""
 
-#. type: YAML Front Matter: title
+#. type: Yaml Front Matter Hash Value: title
 #: _docs/Anti-Features.md
 #, no-wrap
 msgid "Anti-Features"
@@ -817,7 +888,7 @@ msgstr ""
 
 #. type: Bullet: '* '
 #: _docs/Anti-Features.md
-msgid "[Non-Free Network Services](#NonFreeNet) - promotes or depends entirely on a non-libre network service"
+msgid "[Non-Free Network Services](#NonFreeNet) - promotes or depends entirely on a non-free network service"
 msgstr ""
 
 #. type: Bullet: '* '
@@ -954,7 +1025,7 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/Anti-Features.md
-msgid "This Anti-Feature is applied to apps that promote or depend entirely on a Non-Free network service."
+msgid "This Anti-Feature is applied to apps that promote or depend entirely on a Non-Free network service which is impossible, or not easy to replace.  Replacement requires changes to the app or service. This antifeature would not apply, if there is a simple configuration option that allows pointing the app to a running instance of an alternative, publicly available, self-hostable, free software server solution."
 msgstr ""
 
 #. type: Plain text
@@ -1115,7 +1186,7 @@ msgstr ""
 msgid "The Free Software Foundation (FSF) also has a similar idea, and it is also known as \"anti-features\".  [\"Anti-features are sold to customers as features but are fundamental or unavoidable aspects of systems that can only be removed or withheld through technological effort\"](https://www.fsf.org/blogs/community/antifeatures).  Another way of thinking about Anti-Features is that they are [\"functionality that a technology developer will charge users to not include\"](https://www.fsf.org/bulletin/2007/fall/antifeatures/).  The F-Droid definition was initially inspired by FSF's, but our definition has evolved over the years into something different."
 msgstr ""
 
-#. type: YAML Front Matter: title
+#. type: Yaml Front Matter Hash Value: title
 #: _docs/Building_Applications.md
 #, no-wrap
 msgid "Building Applications"
@@ -1143,7 +1214,9 @@ msgstr "Iturburu kodea ez da nahiko emandako bitarra sortzeko."
 
 #. type: Bullet: '3.  '
 #: _docs/Building_Applications.md
-msgid "The ’source code’ contains binary files of unknown origin, or with proprietary licenses."
+#, fuzzy
+#| msgid "The ’source code’ contains binary files of unknown origin, or with proprietary licenses."
+msgid "The 'source code' contains binary files of unknown origin, or with proprietary licenses."
 msgstr "'Iturburu kodea'k jatorri ezezaguneko fitxategi bitarrak dauzka, lizentzia jabedunekin."
 
 #. type: Plain text
@@ -1184,7 +1257,7 @@ msgstr "Aplikazioen datuen direktorioa, edo _fdroiddata_"
 
 #. type: Plain text
 #: _docs/Building_Applications.md
-msgid "To do anything, you’ll need at least one repository data directory. It’s from this directory that you run the `fdroid` command to perform all repository management tasks. You can either create a brand new one, or grab a copy of the data used by the main F-Droid repository:"
+msgid "To do anything, you'll need at least one repository data directory. It's from this directory that you run the `fdroid` command to perform all repository management tasks. You can either create a brand new one, or grab a copy of the data used by the main F-Droid repository:"
 msgstr ""
 
 #. type: Fenced code block (bash)
@@ -1222,7 +1295,7 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/Building_Applications.md
-msgid "When run without any parameters, `fdroid build` will build any and all versions of applications that you don’t already have in the `repo` directory (or more accurately, the `unsigned` directory). There are various other things you can do. As with all the tools, the `--help` option is your friend, but a few annotated examples and discussion of the more common usage modes follows:"
+msgid "When run without any parameters, `fdroid build` will build any and all versions of applications that you don't already have in the `repo` directory (or more accurately, the `unsigned` directory). There are various other things you can do. As with all the tools, the `--help` option is your friend, but a few annotated examples and discussion of the more common usage modes follows:"
 msgstr ""
 
 #. type: Plain text
@@ -1277,7 +1350,7 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/Building_Applications.md
-msgid "If you’re building purely for the purposes of testing, and not intending to push the results to a repository, at least yet, the `--test` option can be used to direct output to the `tmp` directory instead of `unsigned`. A similar effect could be achieved by simply deleting the output files from `unsigned` after the build, but with the risk of forgetting to do so!"
+msgid "If you're building purely for the purposes of testing, and not intending to push the results to a repository, at least yet, the `--test` option can be used to direct output to the `tmp` directory instead of `unsigned`. A similar effect could be achieved by simply deleting the output files from `unsigned` after the build, but with the risk of forgetting to do so!"
 msgstr ""
 
 #. type: Plain text
@@ -1287,7 +1360,7 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/Building_Applications.md
-msgid "If the build was unsuccessful, you can find out why by looking at the output in the _logs/_ directory. If that isn’t illuminating, try building the app the regular way, step by step: android update project, ndk-build, ant debug."
+msgid "If the build was unsuccessful, you can find out why by looking at the output in the _logs/_ directory. If that isn't illuminating, try building the app the regular way, step by step: android update project, ndk-build, ant debug."
 msgstr ""
 
 #. type: Plain text
@@ -1298,12 +1371,12 @@ msgstr ""
 #. type: Title ###
 #: _docs/Building_Applications.md
 #, no-wrap
-msgid "Running `fdroid build` in your app’s source"
+msgid "Running `fdroid build` in your app's source"
 msgstr ""
 
 #. type: Plain text
 #: _docs/Building_Applications.md
-msgid "Another option for using `fdroid build` is to use a metadata file that is included in the app’s source itself, rather than in a _metadata/_ folder with lots of other apps. The _.fdroid.yml_ metadata file should be in the root of your source repo."
+msgid "Another option for using `fdroid build` is to use a metadata file that is included in the app's source itself, rather than in a _metadata/_ folder with lots of other apps. The _.fdroid.yml_ metadata file should be in the root of your source repo."
 msgstr ""
 
 #. type: Plain text
@@ -1330,10 +1403,10 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/Building_Applications.md
-msgid "You can also build and install directly to a connected device or emulator using the `fdroid install` command. If you do this without passing packages as arguments then all the latest built and signed version available of each package will be installed . In most cases, this will not be what you want to do, so execution will stop straight away. However, you can override this if you’re sure that’s what you want, by using `--all`. Note that currently, no sanity checks are performed with this mode, so if the files in the signed output directory were modified, you won’t be notified."
+msgid "You can also build and install directly to a connected device or emulator using the `fdroid install` command. If you do this without passing packages as arguments then all the latest built and signed version available of each package will be installed . In most cases, this will not be what you want to do, so execution will stop straight away. However, you can override this if you're sure that's what you want, by using `--all`. Note that currently, no sanity checks are performed with this mode, so if the files in the signed output directory were modified, you won't be notified."
 msgstr ""
 
-#. type: YAML Front Matter: title
+#. type: Yaml Front Matter Hash Value: title
 #: _docs/Building_a_Signing_Server.md
 #, no-wrap
 msgid "Building a Signing Server"
@@ -1494,7 +1567,7 @@ msgstr ""
 msgid "Ideally all of these practices would be put into place, but each of these security measures comes at a cost of difficulty, expense, and complexity.  They can also delay the process of getting regular updates out.  So there are risks of implementing too strict security policies, much like the risks of not implementing enough."
 msgstr ""
 
-#. type: YAML Front Matter: title
+#. type: Yaml Front Matter Hash Value: title
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid "Build Metadata Reference"
@@ -1844,6 +1917,11 @@ msgstr ""
 
 #. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
+msgid "[_Builds.postbuild_](#build_postbuild)"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/Build_Metadata_Reference.md
 msgid "[_Builds.novcheck_](#build_novcheck)"
 msgstr ""
 
@@ -2040,7 +2118,7 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-msgid "The title of the application, with optional descriptive phrase. This field will override all other sources of the application name, including scraped from the APK and from [localized metadata](../All_About_Descriptions_Graphics_and_Screenshots).  Setting _Name_ is usually not needed, since the application’s correct name is retrieved from the APK file.  However, in a situation where an APK contains a bad or missing application name, it can be overridden using this. Note that this only overrides the name in the list of apps presented in the client; it doesn’t change the name or application label in the source code."
+msgid "The title of the application, with optional descriptive phrase. This field will override all other sources of the application name, including scraped from the APK and from [localized metadata](../All_About_Descriptions_Graphics_and_Screenshots).  Setting _Name_ is usually not needed, since the application's correct name is retrieved from the APK file.  However, in a situation where an APK contains a bad or missing application name, it can be overridden using this. Note that this only overrides the name in the list of apps presented in the client; it doesn't change the name or application label in the source code."
 msgstr ""
 
 #. type: Plain text
@@ -2067,7 +2145,7 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-msgid "The URL for the application’s web site. If there is no relevant web site, this can be omitted (or left blank)."
+msgid "The URL for the application's web site. If there is no relevant web site, this can be omitted (or left blank)."
 msgstr ""
 
 #. type: Plain text
@@ -2084,7 +2162,7 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-msgid "The URL to view or obtain the application’s source code. This should be something human-friendly. Machine-readable source-code is covered in the _Repo_ field."
+msgid "The URL to view or obtain the application's source code. This should be something human-friendly. Machine-readable source-code is covered in the _Repo_ field."
 msgstr ""
 
 #. type: Plain text
@@ -2101,7 +2179,7 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-msgid "The URL for the application’s issue tracker. Optional, since not all applications have one."
+msgid "The URL for the application's issue tracker. Optional, since not all applications have one."
 msgstr ""
 
 #. type: Plain text
@@ -2118,7 +2196,7 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-msgid "The URL for the application’s translation portal or at least a guide.  Optional, since not all applications have one."
+msgid "The URL for the application's translation portal or at least a guide.  Optional, since not all applications have one."
 msgstr ""
 
 #. type: Plain text
@@ -2134,7 +2212,7 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-msgid "The URL for the application’s changelog. Optional, since not all applications have one."
+msgid "The URL for the application's changelog. Optional, since not all applications have one."
 msgstr ""
 
 #. type: Plain text
@@ -2151,12 +2229,12 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-msgid "The URL to donate to the project. This should be the project’s donate page if it has one."
+msgid "The URL to donate to the project. This should be the project's donate page if it has one."
 msgstr ""
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-msgid "It is possible to use a direct PayPal link here, if that is all that is available. However, bear in mind that the developer may not be aware of that direct link, and if they later changed to a different PayPal account, or the PayPal link format changed, things could go wrong. It is always best to use a link that the developer explicitly makes public, rather than something that is auto-generated ’button code’."
+msgid "It is possible to use a direct PayPal link here, if that is all that is available. However, bear in mind that the developer may not be aware of that direct link, and if they later changed to a different PayPal account, or the PayPal link format changed, things could go wrong. It is always best to use a link that the developer explicitly makes public, rather than something that is auto-generated 'button code'."
 msgstr ""
 
 #. type: Plain text
@@ -2173,7 +2251,7 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-msgid "The project’s Flattr (https://flattr.com) ID, if it has one. This should be a numeric ID, such that (for example) https://flattr.com/thing/xxxx leads directly to the page to donate to the project."
+msgid "The project's Flattr (https://flattr.com) ID, if it has one. This should be a numeric ID, such that (for example) https://flattr.com/thing/xxxx leads directly to the page to donate to the project."
 msgstr ""
 
 #. type: Plain text
@@ -2190,7 +2268,7 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-msgid "The project’s Liberapay (https://liberapay.com) user or group name, if it has one. This should be an alphanumeric name, such that (for example) https://liberapay.com/xxxxx which redirects to your account page. This used to be _LiberapayID_, which was a numeric ID fetched from Liberapay’s site by adding /public.json behind your team page."
+msgid "The project's Liberapay (https://liberapay.com) user or group name, if it has one. This should be an alphanumeric name, such that (for example) https://liberapay.com/xxxxx which redirects to your account page. This used to be _LiberapayID_, which was a numeric ID fetched from Liberapay's site by adding /public.json behind your team page."
 msgstr ""
 
 #. type: Plain text
@@ -2207,7 +2285,7 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-msgid "The project’s OpenCollective (https://opencollective.com) user or group name, if it has one. This should be an alphanumeric name, such that (for example) https://opencollective.com/xxxxx redirects to your account page."
+msgid "The project's OpenCollective (https://opencollective.com) user or group name, if it has one. This should be an alphanumeric name, such that (for example) https://opencollective.com/xxxxx redirects to your account page."
 msgstr ""
 
 #. type: Title ###
@@ -2279,7 +2357,7 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-msgid "A full description of the application, relevant to the latest version.  This can span multiple lines (which should be kept to a maximum of 80 characters), and is terminated by a line containing a single ’.’."
+msgid "A full description of the application, relevant to the latest version.  This can span multiple lines (which should be kept to a maximum of 80 characters), and is terminated by a line containing a single '.'."
 msgstr ""
 
 #. type: Plain text
@@ -2334,7 +2412,7 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-msgid "This is a multi-line field using the same rules and syntax as the description. It’s used to record notes for F-Droid maintainers to assist in maintaining and updating the application in the repository."
+msgid "This is a multi-line field using the same rules and syntax as the description. It's used to record notes for F-Droid maintainers to assist in maintaining and updating the application in the repository."
 msgstr ""
 
 #. type: Plain text
@@ -2355,32 +2433,32 @@ msgstr ""
 
 #. type: Bullet: '-   '
 #: _docs/Build_Metadata_Reference.md
-msgid "‘git’"
+msgid "'git'"
 msgstr ""
 
 #. type: Bullet: '-   '
 #: _docs/Build_Metadata_Reference.md
-msgid "‘svn’"
+msgid "'svn'"
 msgstr ""
 
 #. type: Bullet: '-   '
 #: _docs/Build_Metadata_Reference.md
-msgid "‘git-svn’"
+msgid "'git-svn'"
 msgstr ""
 
 #. type: Bullet: '-   '
 #: _docs/Build_Metadata_Reference.md
-msgid "‘hg’"
+msgid "'hg'"
 msgstr ""
 
 #. type: Bullet: '-   '
 #: _docs/Build_Metadata_Reference.md
-msgid "‘bzr’"
+msgid "'bzr'"
 msgstr ""
 
 #. type: Bullet: '-   '
 #: _docs/Build_Metadata_Reference.md
-msgid "‘srclib’"
+msgid "'srclib'"
 msgstr ""
 
 #. type: Title ###
@@ -2396,12 +2474,12 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-msgid "The git-svn option connects to an SVN repository, and you specify the URL in exactly the same way, but git is used as a back-end. This is preferable for performance reasons, and also because a local copy of the entire history is available in case the upstream repository disappears.  (It happens!). In order to use Tags as _UpdateCheckMode_ for this VCS type, the URL must have the tags= special argument set. Likewise, if you intend to use the RepoManifest/branch scheme, you would want to specify branches= as well. Finally, trunk= can also be added. All these special arguments will be passed to \"git svn\" in order, and their values must be relative paths to the svn repo root dir. Here’s an example of a complex git-svn _Repo_ URL: http://svn.code.sf.net/p/project/code/svn;trunk=trunk;tags=tags;branches=branches"
+msgid "The git-svn option connects to an SVN repository, and you specify the URL in exactly the same way, but git is used as a back-end. This is preferable for performance reasons, and also because a local copy of the entire history is available in case the upstream repository disappears.  (It happens!). In order to use Tags as _UpdateCheckMode_ for this VCS type, the URL must have the tags= special argument set. Likewise, if you intend to use the RepoManifest/branch scheme, you would want to specify branches= as well. Finally, trunk= can also be added. All these special arguments will be passed to \"git svn\" in order, and their values must be relative paths to the svn repo root dir. Here's an example of a complex git-svn _Repo_ URL: http://svn.code.sf.net/p/project/code/svn;trunk=trunk;tags=tags;branches=branches"
 msgstr ""
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-msgid "If the _RepoType_ is `srclib`, then you must specify the name of the according srclib .txt file. For example if `scrlibs/FooBar.txt` exist and you want to use this srclib, then you have to set _Repo_ to `FooBar`."
+msgid "If the _RepoType_ is `srclib`, then you must specify the name of the according srclib .yml file. For example if `srclibs/FooBar.yml` exist and you want to use this srclib, then you have to set _Repo_ to `FooBar`."
 msgstr ""
 
 #. type: Title ###
@@ -2507,7 +2585,7 @@ msgstr ""
 msgid ""
 ":   Disables this build, giving a reason why. (For backwards\n"
 "    compatibility, this can also be achieved by starting the commit ID\n"
-"    with ’!’)\n"
+"    with '!')\n"
 msgstr ""
 
 #. type: Plain text
@@ -2515,7 +2593,7 @@ msgstr ""
 #, no-wrap
 msgid ""
 "    The purpose of this feature is to allow non-buildable releases (e.g.\n"
-"    the source is not published) to be flagged, so the scripts don’t\n"
+"    the source is not published) to be flagged, so the scripts don't\n"
 "    generate repeated messages about them. (And also to record the\n"
 "    information for review later). If an APK has already been built,\n"
 "    disabling causes it to be deleted once `fdroid update` is run; this\n"
@@ -2533,7 +2611,7 @@ msgstr ""
 #, no-wrap
 msgid ""
 ":   Specifies to build from a subdirectory of the checked out source\n"
-"    code. Normally this directory is changed to before building,\n"
+"    code. This is the directory where the build scripts are run.\n"
 msgstr ""
 
 #. type: Plain text
@@ -2604,7 +2682,7 @@ msgstr ""
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid ""
-":   Like ’prebuild’, but runs on the source code BEFORE any other\n"
+":   Like 'prebuild', but runs on the source code BEFORE any other\n"
 "    processing takes place.\n"
 msgstr ""
 
@@ -2612,11 +2690,16 @@ msgstr ""
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid ""
-"    You can use \\$\\$SDK\\$\\$, \\$\\$NDK\\$\\$ and \\$\\$MVN3\\$\\$ to\n"
-"    substitute the paths to the android SDK and NDK directories and the maven 3\n"
-"    executable respectively. The following\n"
+"    You can use \\$\\$SDK\\$\\$ and \\$\\$NDK\\$\\$ to substitute the paths to the\n"
+"    Android SDK and NDK directories respectively. The following\n"
 "    per-build variables are available likewise: \\$\\$VERSION\\$\\$,\n"
 "    \\$\\$VERCODE\\$\\$ and \\$\\$COMMIT\\$\\$.\n"
+msgstr ""
+
+#. type: Plain text
+#: _docs/Build_Metadata_Reference.md
+#, no-wrap
+msgid "    This runs in [`subdir:`](#build_subdir) if set.\n"
 msgstr ""
 
 #. type: Plain text
@@ -2630,7 +2713,7 @@ msgstr ""
 #, no-wrap
 msgid ""
 ":   The sdk location in the repo is in an old format, or the build.xml\n"
-"    is expecting such. The ’new’ format is sdk.dir while the VERY OLD\n"
+"    is expecting such. The 'new' format is sdk.dir while the VERY OLD\n"
 "    format is sdk-location. Typically, if you get a message along the\n"
 "    lines of: \"com.android.ant.SetupTask cannot be found\" when trying to\n"
 "    build, then try enabling this option.\n"
@@ -2660,8 +2743,8 @@ msgstr ""
 msgid ""
 "    In the case of an Ant project, it modifies _project.properties_ of the\n"
 "    app and possibly sub-projects. This is likely to cause the whole\n"
-"    _build.xml_ to be rewritten, which is fine if it’s a ’standard’\n"
-"    android file or doesn’t already exist, but not a good idea if it’s\n"
+"    _build.xml_ to be rewritten, which is fine if it's a 'standard'\n"
+"    Android file or doesn't already exist, but not a good idea if it's\n"
 "    heavily customised.\n"
 msgstr ""
 
@@ -2675,17 +2758,17 @@ msgstr ""
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid ""
-":   By default, ’android update’ is used in Ant builds to generate or\n"
+":   By default, 'android update' is used in Ant builds to generate or\n"
 "    update the project and all its referenced projects. Specifying\n"
 "    update=no bypasses that. Note that this is useless in builds that\n"
-"    don’t use Ant.\n"
+"    don't use Ant.\n"
 msgstr ""
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid ""
-"    Default value is ’`auto`’, which recursively uses the paths in\n"
+"    Default value is '`auto`', which recursively uses the paths in\n"
 "    _project.properties_ to find all the subprojects to update.\n"
 msgstr ""
 
@@ -2694,7 +2777,7 @@ msgstr ""
 #, no-wrap
 msgid ""
 "    Otherwise, the value can be a comma-separated list of directories in\n"
-"    which to run ’android update’ relative to the application directory.\n"
+"    which to run 'android update' relative to the application directory.\n"
 msgstr ""
 
 #. type: Plain text
@@ -2708,8 +2791,8 @@ msgstr ""
 #, no-wrap
 msgid ""
 ":   Adds a java.encoding property to local.properties with the\n"
-"    given value. Generally the value will be ’utf-8’. This is picked up\n"
-"    by the SDK’s ant rules, and forces the Java compiler to interpret\n"
+"    given value. Generally the value will be 'utf-8'. This is picked up\n"
+"    by the SDK's ant rules, and forces the Java compiler to interpret\n"
 "    source files with this encoding. If you receive warnings during the\n"
 "    compile about character encodings, you probably need this.\n"
 msgstr ""
@@ -2756,6 +2839,35 @@ msgstr ""
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
+msgid "`binary: URL`<a name=\"build_binary\"></a>\n"
+msgstr ""
+
+#. type: Plain text
+#: _docs/Build_Metadata_Reference.md
+#, no-wrap
+msgid ":   The location of a binary used in verification process for this build.\n"
+msgstr ""
+
+#. type: Plain text
+#: _docs/Build_Metadata_Reference.md
+#, no-wrap
+msgid ""
+"    If specified, F-Droid will verify the output APK file of a build against\n"
+"    the one specified. You can use %v and %c to point to the version name\n"
+"    and version code of the current build. To verify the F-Droid client\n"
+"    itself you could use:\n"
+"    `binary: https://f-droid.org/repo/org.fdroid.fdroid_%c.apk`\n"
+msgstr ""
+
+#. type: Plain text
+#: _docs/Build_Metadata_Reference.md
+#, no-wrap
+msgid "    F-Droid will use the upstream binary if the verification succeeded.\n"
+msgstr ""
+
+#. type: Plain text
+#: _docs/Build_Metadata_Reference.md
+#, no-wrap
 msgid "`rm: <path1>[,<path2>,...]`<a name=\"build_rm\"></a>\n"
 msgstr ""
 
@@ -2775,7 +2887,7 @@ msgstr ""
 #, no-wrap
 msgid ""
 "    Multiple files/directories can be specified by separating them with\n"
-"    ’,’. Directories will be recursively deleted.\n"
+"    ','. Directories will be recursively deleted.\n"
 msgstr ""
 
 #. type: Plain text
@@ -2833,55 +2945,17 @@ msgid ""
 "    projects in the working directory and one level down; Prepare: can\n"
 "    be used for any kind of preparation: in particular if you need to\n"
 "    update the project with a particular target. You can then also use\n"
-"    \\$\\$name\\$\\$ in the init/prebuild/build command to substitute the\n"
-"    relative path to the library directory, but it could need tweaking\n"
-"    if you’ve changed into another directory.\n"
+"    `$$name$$` in the init/prebuild/build command to substitute the\n"
+"    absolute path to the library directory.\n"
 msgstr ""
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid ""
-"    Currently srclibs are necessary when upstream uses jar files or\n"
-"    pulls dependencies from non-trusted repositories. While there is no\n"
-"    guarantee that those binaries are free and correspondent to the\n"
-"    source code, F-Droid allows the following known repositories until a\n"
-"    source-built alternative is available:\n"
-msgstr ""
-
-#. type: Bullet: '    -   '
-#: _docs/Build_Metadata_Reference.md
-msgid "‘mavenCentral’ - the original repo, hardcoded in Maven and Gradle."
-msgstr ""
-
-#. type: Bullet: '    -   '
-#: _docs/Build_Metadata_Reference.md
-msgid "‘jCenter’ - hardcoded in Gradle, this repo by Bintray tries to provide easier handling. It should sync with mavenCentral from time to time."
-msgstr ""
-
-#. type: Bullet: '    -   '
-#: _docs/Build_Metadata_Reference.md
-msgid "‘OSS Sonatype’ - maintained by the people behind mavenCentral, this repository focuses on hosting services for open source project binaries."
-msgstr ""
-
-#. type: Bullet: '    -   '
-#: _docs/Build_Metadata_Reference.md
-msgid "‘OSS JFrog’ - maintained by the people behind jCenter, this repository focuses on hosting services for open source project binaries."
-msgstr ""
-
-#. type: Bullet: '    -   '
-#: _docs/Build_Metadata_Reference.md
-msgid "‘JitPack.io’ - builds directly from GitHub repositories.  However, they do not provide any option to reproduce or verify the resulting binaries. Builds pre-release versions in some cases."
-msgstr ""
-
-#. type: Bullet: '    -   '
-#: _docs/Build_Metadata_Reference.md
-msgid "‘Clojars’ - Clojure libraries repo."
-msgstr ""
-
-#. type: Bullet: '    -   '
-#: _docs/Build_Metadata_Reference.md
-msgid "‘CommonsWare’ - repo holding a collection of open-source libs."
+"    Currently srclibs are used when upstream uses jar files or\n"
+"    pulls dependencies from non-trusted repositories. Because srclibs\n"
+"    can't be updated automatically, git submodule is a better choice.\n"
 msgstr ""
 
 #. type: Plain text
@@ -2894,7 +2968,7 @@ msgstr ""
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid ""
-":   Apply patch(es). ’x’ names one (or more - comma-seperated) files\n"
+":   Apply patch(es). 'x' names one (or more - comma-seperated) files\n"
 "    within a directory below the metadata, with the same name as the\n"
 "    metadata file but without the extension. Each of these patches is\n"
 "    applied to the code in turn.\n"
@@ -2931,7 +3005,7 @@ msgid ""
 "    Note that nothing should be built during this prebuild phase -\n"
 "    scanning of the code and building of the source tarball, for\n"
 "    example, take place after this. For custom actions that actually\n"
-"    build things or produce binaries, use ’build’ instead.\n"
+"    build things or produce binaries, use 'build' instead.\n"
 msgstr ""
 
 #. type: Plain text
@@ -2946,12 +3020,11 @@ msgstr ""
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid ""
-"    You can use \\$\\$SDK\\$\\$, \\$\\$NDK\\$\\$ and \\$\\$MVN3\\$\\$ to substitute\n"
-"    the paths to the android SDK and NDK directories, and Maven 3\n"
-"    executable respectively e.g. for when you need to run\n"
-"    `android update project` explicitly. The following per-build\n"
-"    variables are available likewise: \\$\\$VERSION\\$\\$, \\$\\$VERCODE\\$\\$\n"
-"    and \\$\\$COMMIT\\$\\$.\n"
+"    You can use \\$\\$SDK\\$\\$ and \\$\\$NDK\\$\\$ to substitute the paths to\n"
+"    the Android SDK and NDK directories respectively e.g. for when you\n"
+"    need to run `android update project` explicitly. The following\n"
+"    per-build variables are available likewise: \\$\\$VERSION\\$\\$,\n"
+"    \\$\\$VERCODE\\$\\$ and \\$\\$COMMIT\\$\\$.\n"
 msgstr ""
 
 #. type: Plain text
@@ -3012,10 +3085,10 @@ msgstr ""
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid ""
-":   As for ’prebuild’, but runs during the actual build phase (but\n"
+":   As for 'prebuild', but runs during the actual build phase (but\n"
 "    before the main Ant/Maven build). Use this only for actions that do\n"
 "    actual building. Any preparation of the source code should be done\n"
-"    using ’init’ or ’prebuild’.\n"
+"    using 'init' or 'prebuild'.\n"
 msgstr ""
 
 #. type: Plain text
@@ -3031,10 +3104,9 @@ msgstr ""
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid ""
-"    You can use \\$\\$SDK\\$\\$, \\$\\$NDK\\$\\$ and \\$\\$MVN3\\$\\$ to substitute\n"
-"    the paths to the android SDK and NDK directories, and maven 3\n"
-"    executable respectively. The following per-build variables are\n"
-"    available likewise: \\$\\$VERSION\\$\\$, \\$\\$VERCODE\\$\\$\n"
+"    You can use \\$\\$SDK\\$\\$ and \\$\\$NDK\\$\\$ to substitute the paths to the\n"
+"    Android SDK and NDK directories respectively. The following per-build\n"
+"    variables are available likewise: \\$\\$VERSION\\$\\$, \\$\\$VERCODE\\$\\$\n"
 "    and \\$\\$COMMIT\\$\\$.\n"
 msgstr ""
 
@@ -3051,7 +3123,7 @@ msgid ""
 ":   Enables building of native code via the _ndk-build_ script before\n"
 "    doing the main Ant build. The value may be a list of directories\n"
 "    relative to the main application directory in which to run\n"
-"    ndk-build, or ’yes’ which corresponds to ’.’ . Using explicit list\n"
+"    ndk-build, or 'yes' which corresponds to '.' . Using explicit list\n"
 "    may be useful to build multi-component projects.\n"
 msgstr ""
 
@@ -3065,7 +3137,7 @@ msgid ""
 "    you can specify `no` here to avoid that. However, if the native code\n"
 "    is actually not required or used, remove the directory instead\n"
 "    (using `rm=jni` for example). Using `buildjni=no` when the jni code\n"
-"    isn’t used nor built will result in an error saying that native\n"
+"    isn't used nor built will result in an error saying that native\n"
 "    libraries were expected in the resulting package.\n"
 msgstr ""
 
@@ -3106,9 +3178,9 @@ msgstr ""
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid ""
-"    If only one flavour is given and it is ’yes’, no flavour will be\n"
+"    If only one flavour is given and it is 'yes', no flavour will be\n"
 "    used. Note that for projects with flavours, you must specify at\n"
-"    least one valid flavour since ’yes’ will build all of\n"
+"    least one valid flavour since 'yes' will build all of\n"
 "    them separately.\n"
 msgstr ""
 
@@ -3174,7 +3246,7 @@ msgstr ""
 #, no-wrap
 msgid ""
 ":   Specify an alternate set of Ant commands (target) instead of the\n"
-"    default ’release’. It can’t be given any flags, such as the path to\n"
+"    default 'release'. It can't be given any flags, such as the path to\n"
 "    a _build.xml_.\n"
 msgstr ""
 
@@ -3198,6 +3270,44 @@ msgstr ""
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
+msgid "`postbuild: xxxx`<a name=\"build_postbuild\"></a>\n"
+msgstr ""
+
+#. type: Plain text
+#: _docs/Build_Metadata_Reference.md
+#, no-wrap
+msgid ""
+":   As for 'prebuild', but runs after the actual build phase (the main Ant/Maven build).\n"
+"    Use this only for actions that perform some post-processing on the build outputs.\n"
+msgstr ""
+
+#. type: Plain text
+#: _docs/Build_Metadata_Reference.md
+#, no-wrap
+msgid ""
+"    You can use `$$name$$` to substitute the path to a referenced\n"
+"    srclib - see the `srclib` directory for details of this.\n"
+msgstr ""
+
+#. type: Plain text
+#: _docs/Build_Metadata_Reference.md
+#, no-wrap
+msgid ""
+"    You can use `$$SDK$$` and `$$NDK$$` to substitute the paths to\n"
+"    the Android SDK and NDK directories respectively. The following\n"
+"    per-build variables are available likewise: `$$VERSION$$`,\n"
+"    `$$VERCODE$$` and `$$COMMIT$$`.\n"
+msgstr ""
+
+#. type: Plain text
+#: _docs/Build_Metadata_Reference.md
+#, no-wrap
+msgid "    The path to the output APK is available with `$$OUT$$`.\n"
+msgstr ""
+
+#. type: Plain text
+#: _docs/Build_Metadata_Reference.md
+#, no-wrap
 msgid "`novcheck: true`<a name=\"build_novcheck\"></a>\n"
 msgstr ""
 
@@ -3205,10 +3315,10 @@ msgstr ""
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid ""
-":   Don’t check that the version name and code in the resulting APK are\n"
+":   Don't check that the version name and code in the resulting APK are\n"
 "    correct by looking at the build output - assume the metadata\n"
 "    is correct. This takes away a useful level of sanity checking, and\n"
-"    should only be used if the values can’t be extracted.\n"
+"    should only be used if the values can't be extracted.\n"
 msgstr ""
 
 #. type: Plain text
@@ -3255,57 +3365,57 @@ msgstr ""
 
 #. type: Bullet: '-   '
 #: _docs/Build_Metadata_Reference.md
-msgid "‘Ads’ - the application contains advertising."
+msgid "'Ads' - the application contains advertising."
 msgstr ""
 
 #. type: Bullet: '-   '
 #: _docs/Build_Metadata_Reference.md
-msgid "‘Tracking’ - user or activity data is tracked or leaks, by default.  True if the app or a feature can not be used without collecting and sharing such data, or doing requests to a data collecting network service (regard- less if the service is based on free software, or not). For example, activity-based down-loading of weather data, maps, avatars etc. (data hosting and delivery services), or uploading of crash logs etc."
+msgid "'Tracking' - user or activity data is tracked or leaks, by default.  True if the app or a feature can not be used without collecting and sharing such data, or doing requests to a data collecting network service (regard- less if the service is based on free software, or not). For example, activity-based down-loading of weather data, maps, avatars etc. (data hosting and delivery services), or uploading of crash logs etc."
 msgstr ""
 
 #. type: Bullet: '-   '
 #: _docs/Build_Metadata_Reference.md
-msgid "‘NonFreeNet’ - the application contains a feature that uses a Non-Free network service which is impossible, or not easy to replace. Replacement requires changes to the app or service. This antifeature would not apply, if there is a simple configuration option that allows pointing the app to a running instance of an alternative, publicly available, self-hostable, free software server solution."
+msgid "'NonFreeNet' - the application contains a feature that promotes or depends on a Non-Free network service which is impossible, or not easy to replace.  Replacement requires changes to the app or service. This antifeature would not apply, if there is a simple configuration option that allows pointing the app to a running instance of an alternative, publicly available, self-hostable, free software server solution."
 msgstr ""
 
 #. type: Bullet: '-   '
 #: _docs/Build_Metadata_Reference.md
-msgid "‘NonFreeAdd’ - the application promotes Non-Free add-ons, such that the app is effectively an advert for other Non-Free Software."
+msgid "'NonFreeAdd' - the application promotes Non-Free add-ons, such that the app is effectively an advert for other Non-Free Software."
 msgstr ""
 
 #. type: Bullet: '-   '
 #: _docs/Build_Metadata_Reference.md
-msgid "‘NonFreeDep’ - the application depends on a Non-Free application (e.g. Google Maps) - i.e. it requires it to be installed on the device, but does not include it."
+msgid "'NonFreeDep' - the application depends on a Non-Free application (e.g. Google Maps) - i.e. it requires it to be installed on the device, but does not include it."
 msgstr ""
 
 #. type: Bullet: '-   '
 #: _docs/Build_Metadata_Reference.md
-msgid "‘NSFW’ - the app contains content that the user may not want to be publicized or visible everywhere, comes from \"Not Safe For Work\"."
+msgid "'NSFW' - the app contains content that the user may not want to be publicized or visible everywhere, comes from \"Not Safe For Work\"."
 msgstr ""
 
 #. type: Bullet: '-   '
 #: _docs/Build_Metadata_Reference.md
-msgid "‘UpstreamNonFree’ - the application is or depends on Non-Free software. This does not mean that Non-Free Software is included with the app: Most likely, it has been patched in some way to remove the Non-Free code. However, functionality may be missing."
+msgid "'UpstreamNonFree' - the application is or depends on Non-Free software. This does not mean that Non-Free Software is included with the app: Most likely, it has been patched in some way to remove the Non-Free code. However, functionality may be missing."
 msgstr ""
 
 #. type: Bullet: '-   '
 #: _docs/Build_Metadata_Reference.md
-msgid "‘NonFreeAssets’ - the application contains and makes use of Non-Free assets. The most common case is apps using artwork - images, sounds, music, etc - under a non-commercial license."
+msgid "'NonFreeAssets' - the application contains and makes use of Non-Free assets. The most common case is apps using artwork - images, sounds, music, etc - under a non-commercial license."
 msgstr ""
 
 #. type: Bullet: '-   '
 #: _docs/Build_Metadata_Reference.md
-msgid "‘KnownVuln’ - the application has known security vulnerabilities."
+msgid "'KnownVuln' - the application has known security vulnerabilities."
 msgstr ""
 
 #. type: Bullet: '-   '
 #: _docs/Build_Metadata_Reference.md
-msgid "‘ApplicationDebuggable‘ - APK file is compiled for debugging (`application-debuggable`), which normally makes it unsuitable for regular users and use cases."
+msgid "'ApplicationDebuggable' - APK file is compiled for debugging (`application-debuggable`), which normally makes it unsuitable for regular users and use cases."
 msgstr ""
 
 #. type: Bullet: '-   '
 #: _docs/Build_Metadata_Reference.md
-msgid "‘NoSourceSince‘ - Upstream source for this app is no longer available. Either the app went commercial, the repo was dropped, or it has moved to a location currently unknown to us. This usually means there won't be further updates unless the source reappears."
+msgid "'NoSourceSince' - Upstream source for this app is no longer available. Either the app went commercial, the repo was dropped, or it has moved to a location currently unknown to us. This usually means there won't be further updates unless the source reappears."
 msgstr ""
 
 #. type: Plain text
@@ -3322,7 +3432,7 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-msgid "If this field is present, the application does not get put into the public index. This allows metadata to be retained while an application is temporarily disabled from being published. The value should be a description of why the application is disabled. No APKs or source code archives are deleted: to purge an APK see the Build Version section or delete manually for developer builds. The field is therefore used when an app has outlived it’s usefulness, because the source tarball is retained."
+msgid "If this field is present, the application does not get put into the public index. This allows metadata to be retained while an application is temporarily disabled from being published. The value should be a description of why the application is disabled. No APKs or source code archives are deleted: to purge an APK see the Build Version section or delete manually for developer builds. The field is therefore used when an app has outlived it's usefulness, because the source tarball is retained."
 msgstr ""
 
 #. type: Title ###
@@ -3360,7 +3470,7 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-msgid "Currently the only supported format is \"n versions\", where n is the number of versions to keep. Defaults to \"3 versions\"."
+msgid "Currently the only supported format is \"n versions\", where \"n\" is the number of versions to keep. Defaults to \"3 versions\". For apps with a list of [_VercodeOperation_](#VercodeOperation) the default is calculated as \"3 x number of operations\", eg. for an app with two operations, for two ABIs, 6 versions will be kept."
 msgstr ""
 
 #. type: Title ###
@@ -3381,7 +3491,7 @@ msgstr ""
 
 #. type: Bullet: '-   '
 #: _docs/Build_Metadata_Reference.md
-msgid "`None` - No checking is done because there’s no appropriate automated way of doing so. Updates should be checked for manually.  Use this, for example, when deploying unstable or patched versions; when builds are done in a directory different to where the _AndroidManifest.xml_ is; if the developers use the Gradle build system and store version info in a separate file; if the developers make a new branch for each release and don’t make tags; or if you’ve changed the package name or version code logic."
+msgid "`None` - No checking is done because there's no appropriate automated way of doing so. Updates should be checked for manually.  Use this, for example, when deploying unstable or patched versions; when builds are done in a directory different to where the _AndroidManifest.xml_ is; if the developers use the Gradle build system and store version info in a separate file; if the developers make a new branch for each release and don't make tags; or if you've changed the package name or version code logic."
 msgstr ""
 
 #. type: Bullet: '-   '
@@ -3391,7 +3501,7 @@ msgstr ""
 
 #. type: Bullet: '-   '
 #: _docs/Build_Metadata_Reference.md
-msgid "`RepoManifest` - At the most recent commit, the _AndroidManifest.xml_ and _build.gradle_ files are looked for in the directory where they were found in the the most recent build. The appropriateness of this method depends on the development process used by the application’s developers. You should not specify this method unless you’re sure it’s appropriate. For example, some developers bump the version when commencing development instead of when publishing. It will return an error if the _AndroidManifest.xml_ has moved to a different directory or if the package name has changed. The current version that it gives may not be accurate, since not all versions are fit to be published.  Therefore, before building, it is often necessary to check if the current version has been published somewhere by the upstream developers, either by checking for APKs that they distribute or for tags in the source code repository."
+msgid "`RepoManifest` - At the most recent commit, the _AndroidManifest.xml_ and _build.gradle_ files are looked for in the directory where they were found in the the most recent build. The appropriateness of this method depends on the development process used by the application's developers. You should not specify this method unless you're sure it's appropriate. For example, some developers bump the version when commencing development instead of when publishing. It will return an error if the _AndroidManifest.xml_ has moved to a different directory or if the package name has changed. The current version that it gives may not be accurate, since not all versions are fit to be published.  Therefore, before building, it is often necessary to check if the current version has been published somewhere by the upstream developers, either by checking for APKs that they distribute or for tags in the source code repository."
 msgstr ""
 
 #. type: Plain text
@@ -3403,19 +3513,19 @@ msgid ""
 "    may use \"RepoManifest/yourbranch\" as _UpdateCheckMode_ so that \"yourbranch\" would\n"
 "    be the branch used in place of the default one. The default values\n"
 "    are \"master\" for git, \"default\" for hg and none for git-svn (it\n"
-"    stays in the same branch). On the other hand, branch support hasn’t\n"
+"    stays in the same branch). On the other hand, branch support hasn't\n"
 "    been implemented yet in bzr and svn, but _RepoManifest_ may still be\n"
 "    used without it.\n"
 msgstr ""
 
 #. type: Bullet: '-   '
 #: _docs/Build_Metadata_Reference.md
-msgid "`RepoTrunk` - For svn and git-svn repositories, especially those who don’t have a bundled _AndroidManifest.xml_ file, the Tags and RepoManifest checks will not work, since there is no version information to obtain. But, for those apps who automate their build process with the commit ref that HEAD points to, RepoTrunk will set the _CurrentVersion_ and _CurrentVersionCode_ to that number."
+msgid "`RepoTrunk` - For svn and git-svn repositories, especially those who don't have a bundled _AndroidManifest.xml_ file, the Tags and RepoManifest checks will not work, since there is no version information to obtain. But, for those apps who automate their build process with the commit ref that HEAD points to, RepoTrunk will set the _CurrentVersion_ and _CurrentVersionCode_ to that number."
 msgstr ""
 
 #. type: Bullet: '-   '
 #: _docs/Build_Metadata_Reference.md
-msgid "`Tags` - The _AndroidManifest.xml_ and _build.gradle_ files in all tagged revisions in the source repository are checked, looking for the highest version code.  The appropriateness of this method depends on the development process used by the application’s developers. You should not specify this method unless you’re sure it’s appropriate. It shouldn’t be used if the developers like to tag unstable versions or are known to forget to tag releases. Like RepoManifest, it will not return the correct value if the directory containing the _AndroidManifest.xml_ has moved. Despite these caveats, it is the often the favourite _UpdateCheckMode_."
+msgid "`Tags` - The _AndroidManifest.xml_ and _build.gradle_ files in all tagged revisions in the source repository are checked, looking for the highest version code.  The appropriateness of this method depends on the development process used by the application's developers. You should not specify this method unless you're sure it's appropriate. It shouldn't be used if the developers like to tag unstable versions or are known to forget to tag releases. Like RepoManifest, it will not return the correct value if the directory containing the _AndroidManifest.xml_ has moved. Despite these caveats, it is the often the favourite _UpdateCheckMode_."
 msgstr ""
 
 #. type: Plain text
@@ -3436,6 +3546,7 @@ msgid ""
 "    apps tag non-release versions such as X.X-alpha, so you can filter\n"
 "    them out with something like `.*[0-9]$` which requires tag names to\n"
 "    end with a digit.\n"
+"    Example: `UpdateCheckMode: Tags .*[0-9]$`\n"
 msgstr ""
 
 #. type: Plain text
@@ -3469,7 +3580,7 @@ msgid ""
 "    Secondly, if `urlver` is non-empty, the document from that URL is\n"
 "    retrieved, and matched against the regular expression `exver`, with\n"
 "    the first group becoming the version name. The `urlver` field can be\n"
-"    set to simply ’.’ which says to use the same document returned for\n"
+"    set to simply '.' which says to use the same document returned for\n"
 "    the version code again, rather than retrieving a different one.\n"
 msgstr ""
 
@@ -3481,12 +3592,12 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-msgid "Operation to be applied to the vercode obtained by the defined _UpdateCheckMode_. `%c` will be replaced by the actual vercode, and the whole string will be passed to python’s `eval` function."
+msgid "Operation to be applied to the vercode obtained by the defined _UpdateCheckMode_. `%c` will be replaced by the actual vercode, and the whole string will be passed to python's `eval` function."
 msgstr ""
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-msgid "Especially useful with apps that we want to compile for different ABIs, but whose vercodes don’t always have trailing zeros. For example, with _VercodeOperation_ set at something like `%c*10 + 4`, we will be able to track updates and build up to four different versions of every upstream version."
+msgid "Especially useful with apps that we want to compile for different ABIs, but whose vercodes don't always have trailing zeros. For example, with _VercodeOperation_ set at something like `%c*10 + 4`, we will be able to track updates and build up to four different versions of every upstream version."
 msgstr ""
 
 #. type: Title ###
@@ -3497,7 +3608,7 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-msgid "When checking for updates (via _UpdateCheckMode_) this can be used to specify a regex which, if matched against the version name, causes that version to be ignored. For example, ’beta’ could be specified to ignore version names that include that text."
+msgid "When checking for updates (via _UpdateCheckMode_) this can be used to specify a regex which, if matched against the version name, causes that version to be ignored. For example, 'beta' could be specified to ignore version names that include that text."
 msgstr ""
 
 #. type: Plain text
@@ -3518,7 +3629,7 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-msgid "You can also use `Ignore` to ignore package name searching. This should only be used in some specific cases, for example if the app’s build.gradle file does not contain the package name."
+msgid "You can also use `Ignore` to ignore package name searching. This should only be used in some specific cases, for example if the app's build.gradle file does not contain the package name."
 msgstr ""
 
 #. type: Title ###
@@ -3529,7 +3640,7 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-msgid "Used in conjunction with _UpdateCheckMode_ `Tag` or `HTTP`."
+msgid "Used in conjunction with _UpdateCheckMode_ `Tags` or `HTTP`."
 msgstr ""
 
 #. type: Fenced code block
@@ -3550,7 +3661,7 @@ msgstr ""
 
 #. type: Bullet: '-   '
 #: _docs/Build_Metadata_Reference.md
-msgid "`versionName-location` - Same as vercode-location just for versionName. A .  means to take vercode-location, leave empty to check the tag name instead (only with `UpdateCheckMode: Tags`)."
+msgid "`versionName-location` - Same as vercode-location just for versionName. A `.` means to take vercode-location, leave empty to check the tag name instead (only with `UpdateCheckMode: Tags`)."
 msgstr ""
 
 #. type: Bullet: '-   '
@@ -3602,30 +3713,51 @@ msgstr ""
 
 #. type: Bullet: '-   '
 #: _docs/Build_Metadata_Reference.md
-msgid "`None` - No auto-updating is done"
+msgid "`None` - Auto-updating is disabled"
 msgstr ""
 
 #. type: Bullet: '-   '
 #: _docs/Build_Metadata_Reference.md
-msgid "`Version` - Generates a value (tag name) used for the `commit:` property of new build blocks. It is simply text in which %v and %c are replaced with the required version name and version code respectively. The resulting string must match an existing tag in the app's repo, which then will be used by F-Droid to build the corresponding version."
+msgid "`Version` - Auto-updating is enabled."
 msgstr ""
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid ""
-"    For example, if an app always has a tag \"2.7.2\" corresponding to\n"
-"    version 2.7.2, you would simply specify \"Version %v\". If an app\n"
-"    always has a tag \"ver\\_1234\" for a version with version code 1234,\n"
-"    you would specify \"Version ver\\_%c\".\n"
+"    If `UpdateCheckMode` is set to `Tags`, this should be set to\n"
+"    `Version` without any pattern. The checked tag is used directly.\n"
 msgstr ""
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid ""
-"    Continuing the first example above, you would specify that as \"Version\n"
-"    +-fdroid %v\" - \"-fdroid\" is the suffix F-Droid will then append to the\n"
+"    If `UpdateCheckMode` is set to `HTTP`, a pattern should be added\n"
+"    after the `Version`. The pattern is used to generate a value\n"
+"    (tag name) used for the `commit:` property of new build blocks.\n"
+"    It is simply text in which `%v` and `%c` are replaced with the required\n"
+"    version name and version code respectively. The resulting\n"
+"    string must match an existing tag in the app's repo, which then will be\n"
+"    used by F-Droid to build the corresponding version.\n"
+msgstr ""
+
+#. type: Plain text
+#: _docs/Build_Metadata_Reference.md
+#, no-wrap
+msgid ""
+"    For example, if an app always has a tag `2.7.2` corresponding to\n"
+"    version 2.7.2, you would simply specify `Version %v`. If an app\n"
+"    always has a tag `ver_1234` for a version with version code 1234,\n"
+"    you would specify `Version ver_%c`.\n"
+msgstr ""
+
+#. type: Plain text
+#: _docs/Build_Metadata_Reference.md
+#, no-wrap
+msgid ""
+"    Continuing the first example above, you would specify that as\n"
+"    `Version +-fdroid %v` - `-fdroid` is the suffix F-Droid will then append to the\n"
 "    `versionName` specified in e.g. `build.gradle` when building the APK.\n"
 msgstr ""
 
@@ -3634,17 +3766,9 @@ msgstr ""
 #, no-wrap
 msgid ""
 "    Additionally, a suffix can be added to the version name at this\n"
-"    stage, to differentiate F-Droid’s build from the original.\n"
+"    stage, to differentiate F-Droid's build from the original.\n"
 "    Continuing the first example above, you would specify that as\n"
-"    \"Version +-fdroid %v\" - \"-fdroid\" is the suffix.\n"
-msgstr ""
-
-#. type: Plain text
-#: _docs/Build_Metadata_Reference.md
-#, no-wrap
-msgid ""
-"    If UpdateCheckMode is set to `Tags` the generator string behind `Version`\n"
-"    is optional and not used for the `commit:` field.\n"
+"    `Version +-fdroid %v` - `-fdroid` is the suffix.\n"
 msgstr ""
 
 #. type: Title ###
@@ -3677,7 +3801,7 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-msgid "The [version code](https://developer.android.com/guide/topics/manifest/manifest-element.html#vcode) corresponding to the [_CurrentVersion_](#CurrentVersion) field. Both these fields must be correct and matching although it’s the current version code that’s used by Android to determine version order and by F-Droid client to determine which version should be recommended."
+msgid "The [version code](https://developer.android.com/guide/topics/manifest/manifest-element.html#vcode) corresponding to the [_CurrentVersion_](#CurrentVersion) field. Both these fields must be correct and matching although it's the current version code that's used by Android to determine version order and by F-Droid client to determine which version should be recommended."
 msgstr ""
 
 #. type: Plain text
@@ -3721,7 +3845,7 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-msgid "Comma-separated list of application IDs that this app provides. This field was only ever a stub and was never used for anything.  It was never supported in _index-v1.json nor _.yml_ metadata files."
+msgid "Comma-separated list of application IDs that this app provides. This field was only ever a stub and was never used for anything.  It was never supported in _index-v1.json_ nor _.yml_ metadata files."
 msgstr ""
 
 #. type: Plain text
@@ -3730,7 +3854,7 @@ msgstr ""
 msgid "This is converted to (`<provides>`) in the XML file (_index.xml_).\n"
 msgstr ""
 
-#. type: YAML Front Matter: title
+#. type: Yaml Front Matter Hash Value: title
 #: _docs/Build_Server_Setup.md
 #, no-wrap
 msgid "Build Server Setup"
@@ -3880,7 +4004,7 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
-msgid "In addition to the basic setup previously described, we ship a Vagrant-compatible Debian/stretch base box called ’fdroid/basebox-stretch64’."
+msgid "In addition to the basic setup previously described, we ship a Vagrant-compatible Debian/stretch base box called 'fdroid/basebox-stretch64'."
 msgstr ""
 
 #. type: Plain text
@@ -3896,7 +4020,7 @@ msgstr "Zuzenean F-Droid biltegian"
 
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
-msgid "Navigate to your clone of [F-Droid Server git](https://gitlab.com/fdroid/fdroidserver) and start by creating `makebuildserver.config.py`, using `./examples/makebuildserver.config.py` as a reference - look at the settings and documentation there to decide if any need changing to suit your environment. There is a path for retrieving the base box if it doesn’t exist, and an apt proxy definition, both of which may need customising for your environment. You can then go to the `fdroidserver` directory and run `makebuildserver`."
+msgid "Navigate to your clone of [F-Droid Server git](https://gitlab.com/fdroid/fdroidserver) and start by creating `makebuildserver.config.py`, using `./examples/makebuildserver.config.py` as a reference - look at the settings and documentation there to decide if any need changing to suit your environment. There is a path for retrieving the base box if it doesn't exist, and an apt proxy definition, both of which may need customising for your environment. You can then go to the `fdroidserver` directory and run `makebuildserver`."
 msgstr ""
 
 #. type: Fenced code block (bash)
@@ -3920,12 +4044,12 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
-msgid "Once it’s complete you’ll have a new base box called ’buildserver’ which is what’s used for your App build runs. Now you can build packages as as you used to, but when you run `fdroid build --server ...` App build runs will be isolated inside a virtual machine."
+msgid "Once it's complete you'll have a new base box called 'buildserver' which is what's used for your App build runs. Now you can build packages as as you used to, but when you run `fdroid build --server ...` App build runs will be isolated inside a virtual machine."
 msgstr ""
 
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
-msgid "The first time a build is done, a new virtual machine is created using the ’buildserver’ box as a base. A snapshot of this clean machine state is saved for use in future builds, to improve performance. You can force discarding of this snapshot and rebuilding from scratch using a switch: `fdroid build --resetserver ...`."
+msgid "The first time a build is done, a new virtual machine is created using the 'buildserver' box as a base. A snapshot of this clean machine state is saved for use in future builds, to improve performance. You can force discarding of this snapshot and rebuilding from scratch using a switch: `fdroid build --resetserver ...`."
 msgstr ""
 
 #. type: Title ###
@@ -3936,7 +4060,7 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
-msgid "The main SDK/NDK downloads will automatically be cached to speed things up the next time, but there’s no easy way of doing this for the longer sections which use the SDK’s `android` tool to install platforms, add-ons and tools. However, instead of allowing automatic caching, you can supply a pre-populated cache directory which includes not only these downloads, but also .tar.gz files for all the relevant additions. If the provisioning scripts detect these, they will be used in preference to running the android tools. For example, if you have `buildserver/addons/cache/platforms/android-19.tar.gz` that will be used when installing the android-19 platform, instead of re-downloading it using `android update sdk --no-ui -t android-19`. It is possible to create the cache files of this additions from a local installation of the SDK including these:"
+msgid "The main SDK/NDK downloads will automatically be cached to speed things up the next time, but there's no easy way of doing this for the longer sections which use the SDK's `android` tool to install platforms, add-ons and tools. However, instead of allowing automatic caching, you can supply a pre-populated cache directory which includes not only these downloads, but also .tar.gz files for all the relevant additions. If the provisioning scripts detect these, they will be used in preference to running the Android tools. For example, if you have `buildserver/addons/cache/platforms/android-19.tar.gz` that will be used when installing the android-19 platform, instead of re-downloading it using `android update sdk --no-ui -t android-19`. It is possible to create the cache files of this additions from a local installation of the SDK including these:"
 msgstr ""
 
 #. type: Fenced code block (bash)
@@ -4140,17 +4264,7 @@ msgstr ""
 msgid "The actually required configuration here depends on your cpu. You can find details in [libvirts manual](https://libvirt.org/formatdomain.html#elementsCPU).  The important part is that you forward _vmx_ (or _svm_ on amd) to the guest system."
 msgstr ""
 
-#. type: Plain text
-#: _docs/Build_Server_Setup.md
-msgid "This is the setup that is used in the Continuous Integration builds as part of the [reproducible builds](https://reproducible-builds.org) effort.  You can see this in action on the Debian Project's jenkins setup:"
-msgstr ""
-
-#. type: Plain text
-#: _docs/Build_Server_Setup.md
-msgid "- <https://jenkins.debian.net/job/reproducible_setup_fdroid_build_environment_profitbricks7/>"
-msgstr ""
-
-#. type: YAML Front Matter: title
+#. type: Yaml Front Matter Hash Value: title
 #: _docs/Client_Bug_Reports.md
 #, no-wrap
 msgid "Client Bug Reports"
@@ -4234,7 +4348,7 @@ msgstr ""
 msgid "[F-Droid issue tracker](https://f-droid.org/issues/) specifically [F-Droid client section](https://gitlab.com/fdroid/fdroidclient/issues)"
 msgstr ""
 
-#. type: YAML Front Matter: title
+#. type: Yaml Front Matter Hash Value: title
 #: _docs/Code_of_Conduct.md
 #, no-wrap
 msgid "Code of Conduct"
@@ -4346,7 +4460,7 @@ msgstr ""
 msgid "(_Based on the [Debian Code of Conduct](https://www.debian.org/code_of_conduct), Version 1.0 [ratified](https://www.debian.org/vote/2014/vote_002) on April 28th, 2014._)"
 msgstr ""
 
-#. type: YAML Front Matter: title
+#. type: Yaml Front Matter Hash Value: title
 #: _docs/Deploying_the_Website.md
 #, no-wrap
 msgid "Deploying the Website"
@@ -4537,7 +4651,7 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/Deploying_the_Website.md
-msgid "The second is to enable _mod_rewrite_, which is used to automatically choose the correct language for browsers that are not using Javascript.  The easiest way to do that is to run `sudo a2enmod rewrite`."
+msgid "The second is to enable _mod_rewrite_, which is used to automatically choose the correct language for browsers that are not using JavaScript.  The easiest way to do that is to run `sudo a2enmod rewrite`."
 msgstr ""
 
 #. type: Plain text
@@ -4621,7 +4735,7 @@ msgstr ""
 msgid "Note that this also depends on `mod_alias` and `mod_negotiation` being enabled, but this happens by default when installing apache2 on Debian."
 msgstr ""
 
-#. type: YAML Front Matter: title
+#. type: Yaml Front Matter Hash Value: title
 #: _docs/FAQ_-_App_Developers.md
 #, no-wrap
 msgid "FAQ - App Developers"
@@ -4777,7 +4891,7 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/FAQ_-_App_Developers.md
-msgid "When we detect a new release, it may take a few days to make it into the repository as the build process runs only once a day. Before the build has completed, the monitor page for your app will list it in [F-Droid Monitor - Need updating](https://monitor.f-droid.org/builds/needsupdate). As long as the text under *Versions* stating \"The current (recommended) version is *xxx* (version code *yyy*)\" shows the version numbers corresponding to your latest release, we detected it and the APK should be available soon. Just give it some time."
+msgid "When we detect a new release, it may take a few days to make it into the repository as the build process [has several steps](https://gitlab.com/fdroid/wiki/-/wikis/FAQ#how-long-does-it-take-for-my-app-to-show-up-on-website-and-client) and runs only once a day. Before the build has completed, the monitor page for your app will list it in [F-Droid Monitor - Need updating](https://monitor.f-droid.org/builds/needsupdate). As long as the text under *Versions* stating \"The current (recommended) version is *xxx* (version code *yyy*)\" shows the version numbers corresponding to your latest release, we detected it and the APK should be available soon. Just give it some time."
 msgstr ""
 
 #. type: Plain text
@@ -4819,7 +4933,7 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/FAQ_-_App_Developers.md
-msgid "Only APKs built by F-Droid are included in the official F-Droid repo. We can try to reproduce your APK, as mentioned above, but if this fails (or e.g. when you want to distribute an app with closed-source components or API keys etc.), you can put any APK in your own \"[F-Droid binary repo](../Setup_an_F-Droid_App_Repo)\", and people can add your repo to their F-Droid client in order to get your APKs."
+msgid "Yes, for [reproducible builds](../Reproducible_Builds) F-Droid will include your signed APKs in the official F-Droid repo after they were verified as being so. If this fails (e.g. your app can't be built in a reproducible way or when you want to distribute an app with closed-source components or API keys etc.), you can put any APK in your own \"[F-Droid binary repo](../Setup_an_F-Droid_App_Repo)\", and people can add your repo to their F-Droid client in order to get your APKs."
 msgstr ""
 
 #. type: Title ###
@@ -4852,7 +4966,7 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/FAQ_-_App_Developers.md
-msgid "You can, but if you include any kind of tracking or analytics in your application (even sending crash reports) this must be something that the user explicitly opts **in** to - i.e. you ask them on first run, before sending anything anywhere, or there's a preference that defaults to OFF.  In all other cases, we may still include the app, but it will be flagged with our 'Tracking' AntiFeature, which means users will only ever see the app if they choose to view such apps."
+msgid "You can, but if you include any kind of tracking or analytics in your application (even sending crash reports) this must be something that the user explicitly opts **in** to - i.e. you ask them on first run, before sending anything anywhere, or there's a preference that defaults to OFF.  In all other cases, we may still include the app, but it will be flagged with our 'Tracking' Anti-Feature, which means users will only ever see the app if they choose to view such apps."
 msgstr ""
 
 #. type: Plain text
@@ -5063,7 +5177,7 @@ msgstr ""
 msgid "This article includes a good discussion of \"feature branches\" versus \"release branches\" and short-lived vs. long-lived branches: <http://blogs.atlassian.com/2013/11/the-essence-of-branch-based-workflows/>"
 msgstr ""
 
-#. type: YAML Front Matter: title
+#. type: Yaml Front Matter Hash Value: title
 #: _docs/FAQ_-_Client.md
 #, no-wrap
 msgid "FAQ - Client"
@@ -5108,13 +5222,19 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/FAQ_-_Client.md
-msgid "Download apps from f-droid.org and other app repositories"
+#, no-wrap
+msgid "<dl><dt>\n"
+msgstr ""
+
+#. type: Plain text
+#: _docs/FAQ_-_Client.md
+msgid "Download apps from f-droid.org and other app repositories:"
 msgstr ""
 
 #. type: Plain text
 #: _docs/FAQ_-_Client.md
 #, no-wrap
-msgid "    android.permission.INTERNET\n"
+msgid "</dt><dd><tt><a href=\"https://developer.android.com/reference/android/Manifest.permission.html#INTERNET\" target=\"_blank\">android.permission.INTERNET</a></tt></dd><dt>\n"
 msgstr ""
 
 #. type: Plain text
@@ -5125,80 +5245,109 @@ msgstr ""
 #. type: Plain text
 #: _docs/FAQ_-_Client.md
 #, no-wrap
-msgid "    android.permission.RECEIVE_BOOT_COMPLETED\n"
+msgid "</dt><dd><tt><a href=\"https://developer.android.com/reference/android/Manifest.permission.html#RECEIVE_BOOT_COMPLETED\" target=\"_blank\">android.permission.RECEIVE_BOOT_COMPLETED</a></tt></dd><dt>\n"
 msgstr ""
 
 #. type: Plain text
 #: _docs/FAQ_-_Client.md
-msgid "For app swap to get current WiFi status, and prompt the user to enable WiFi when swapping:"
-msgstr ""
-
-#. type: Plain text
-#: _docs/FAQ_-_Client.md
-#, no-wrap
-msgid ""
-"    android.permission.ACCESS_NETWORK_STATE\n"
-"    android.permission.ACCESS_WIFI_STATE\n"
-"    android.permission.CHANGE_WIFI_MULTICAST_STATE\n"
-"    android.permission.CHANGE_NETWORK_STATE\n"
-"    android.permission.CHANGE_WIFI_STATE\n"
-msgstr ""
-
-#. type: Plain text
-#: _docs/FAQ_-_Client.md
-msgid "For app swap to see the Bluetooth state, and prompt the user to enable Bluetooth when swapping:"
+msgid "For the nearby service to get current Wi-Fi status, and prompt the user to enable Wi-Fi when swapping:"
 msgstr ""
 
 #. type: Plain text
 #: _docs/FAQ_-_Client.md
 #, no-wrap
 msgid ""
-"    android.permission.BLUETOOTH\n"
-"    android.permission.BLUETOOTH_ADMIN\n"
+"</dt><dd><tt><a href=\"https://developer.android.com/reference/android/Manifest.permission.html#ACCESS_COARSE_LOCATION\" target=\"_blank\">android.permission.ACCESS_COARSE_LOCATION</a></tt><br/>\n"
+"<tt><a href=\"https://developer.android.com/reference/android/Manifest.permission.html#ACCESS_NETWORK_STATE\" target=\"_blank\">android.permission.ACCESS_NETWORK_STATE</a></tt><br/>\n"
+"<tt><a href=\"https://developer.android.com/reference/android/Manifest.permission.html#CHANGE_NETWORK_STATE\" target=\"_blank\">android.permission.CHANGE_NETWORK_STATE</a></tt><br/>\n"
+"<tt><a href=\"https://developer.android.com/reference/android/Manifest.permission.html#CHANGE_WIFI_MULTICAST_STATE\" target=\"_blank\">android.permission.CHANGE_WIFI_MULTICAST_STATE</a></tt><br/>\n"
+"<tt><a href=\"https://developer.android.com/reference/android/Manifest.permission.html#CHANGE_WIFI_STATE\" target=\"_blank\">android.permission.CHANGE_WIFI_STATE</a></tt><br/>\n"
+"<tt><a href=\"https://developer.android.com/reference/android/Manifest.permission.html#ACCESS_WIFI_STATE\" target=\"_blank\">android.permission.ACCESS_WIFI_STATE</a></tt></dd><dt>\n"
 msgstr ""
 
 #. type: Plain text
 #: _docs/FAQ_-_Client.md
-msgid "Read app repository URLs via NFC, for both swap and regular app repositories:"
-msgstr ""
-
-#. type: Plain text
-#: _docs/FAQ_-_Client.md
-#, no-wrap
-msgid "    android.permission.NFC\n"
-msgstr ""
-
-#. type: Plain text
-#: _docs/FAQ_-_Client.md
-msgid "Temporarily store downloaded files on the SD Card:"
+msgid "For the nearby service to see the Bluetooth state, and prompt the user to enable Bluetooth when swapping:"
 msgstr ""
 
 #. type: Plain text
 #: _docs/FAQ_-_Client.md
 #, no-wrap
-msgid "    android.permission.WRITE_EXTERNAL_STORAGE\n"
+msgid ""
+"</dt><dd><tt><a href=\"https://developer.android.com/reference/android/Manifest.permission.html#BLUETOOTH\" target=\"_blank\">android.permission.BLUETOOTH</a></tt><br/>\n"
+"<tt><a href=\"https://developer.android.com/reference/android/Manifest.permission.html#BLUETOOTH_ADMIN\" target=\"_blank\">android.permission.BLUETOOTH_ADMIN</a></tt><br/>\n"
+"<tt><a href=\"https://developer.android.com/reference/android/Manifest.permission.html#BLUETOOTH_CONNECT\" target=\"_blank\">android.permission.BLUETOOTH_CONNECT</a></tt></dd><dt>\n"
 msgstr ""
 
 #. type: Plain text
 #: _docs/FAQ_-_Client.md
-msgid "Use F-Droid Privileged Extension which gives F-Droid system &lt;code&gt;priv-app access. This improves security by allowing automatic app updates as well as letting the user leave the \"Unknown Sources\" setting off:"
-msgstr ""
-
-#. type: Plain text
-#: _docs/FAQ_-_Client.md
-#, no-wrap
-msgid "    org.fdroid.fdroid.privileged.USE_SERVICE\n"
-msgstr ""
-
-#. type: Plain text
-#: _docs/FAQ_-_Client.md
-msgid "Use root access to install F-Droid Privileged Extension as a system &lt;code&gt;priv-app:"
+msgid "Exchange repository information via the Repo Details screen, and to optionally assist nearby swap connection:"
 msgstr ""
 
 #. type: Plain text
 #: _docs/FAQ_-_Client.md
 #, no-wrap
-msgid "    android.permission.ACCESS_SUPERUSER\n"
+msgid "</dt><dd><tt><a href=\"https://developer.android.com/reference/android/Manifest.permission.html#NFC\" target=\"_blank\">android.permission.NFC</a></tt></dd><dt>\n"
+msgstr ""
+
+#. type: Plain text
+#: _docs/FAQ_-_Client.md
+msgid "Allow the user to enable Wi-Fi AP Hotspot mode from the nearby service:"
+msgstr ""
+
+#. type: Plain text
+#: _docs/FAQ_-_Client.md
+#, no-wrap
+msgid "</dt><dd><tt><a href=\"https://developer.android.com/reference/android/Manifest.permission.html#WRITE_SETTINGS\" target=\"_blank\">android.permission.WRITE_SETTINGS</a></tt></dd><dt>\n"
+msgstr ""
+
+#. type: Plain text
+#: _docs/FAQ_-_Client.md
+msgid "Allows the nearby service to stay running as long as the user leaves it running:"
+msgstr ""
+
+#. type: Plain text
+#: _docs/FAQ_-_Client.md
+#, no-wrap
+msgid "</dt><dd><tt><a href=\"https://developer.android.com/reference/android/Manifest.permission.html#WAKE_LOCK\" target=\"_blank\">android.permission.WAKE_LOCK</a></tt></dd><dt>\n"
+msgstr ""
+
+#. type: Plain text
+#: _docs/FAQ_-_Client.md
+msgid "Find and use compatible repositories and mirrors on external storage:"
+msgstr ""
+
+#. type: Plain text
+#: _docs/FAQ_-_Client.md
+#, no-wrap
+msgid "</dt><dd><tt><a href=\"https://developer.android.com/reference/android/Manifest.permission.html#READ_EXTERNAL_STORAGE\" target=\"_blank\">android.permission.READ_EXTERNAL_STORAGE</a></tt></dd><dt>\n"
+msgstr ""
+
+#. type: Plain text
+#: _docs/FAQ_-_Client.md
+msgid "Detect when a USB thumb drive has been inserted, so it can be scanned to find compatible repositories and mirrors:"
+msgstr ""
+
+#. type: Plain text
+#: _docs/FAQ_-_Client.md
+#, no-wrap
+msgid "</dt><dd><tt><a href=\"https://developer.android.com/reference/android/Manifest.permission.html#USB_PERMISSION\" target=\"_blank\">android.permission.USB_PERMISSION</a></tt></dd><dt>\n"
+msgstr ""
+
+#. type: Plain text
+#: _docs/FAQ_-_Client.md
+msgid "Temporarily store and use downloaded files on external storage:"
+msgstr ""
+
+#. type: Plain text
+#: _docs/FAQ_-_Client.md
+#, no-wrap
+msgid "</dt><dd><tt><a href=\"https://developer.android.com/reference/android/Manifest.permission.html#WRITE_EXTERNAL_STORAGE\" target=\"_blank\">android.permission.WRITE_EXTERNAL_STORAGE</a></tt></dd></dl>\n"
+msgstr ""
+
+#. type: Plain text
+#: _docs/FAQ_-_Client.md
+msgid "F-Droid [Privileged Extension](https://gitlab.com/fdroid/privileged-extension/) is also relevant here, although it falls outside of the Android system of declaring permissions. Privileged Extension is installed with [`priv-app`](https://source.android.com/docs/core/permissions/perms-allowlist) permissions, which gives F-Droid system-level access privileges to Android. The use of Privileged Extension improves security by allowing automatic app updates as well as letting the user leave the \"Unknown Sources\" setting off. Privileged Extension is designed on the principals of \"least privilege\", so that elevated powers are only granted where they are absolutely needed, and those powers are limited as much as possible.  In order to make it possible outside reviewers to confirm that, we have made Privileged Extension as simple and small as possible."
 msgstr ""
 
 #. type: Title ###
@@ -5358,7 +5507,7 @@ msgstr ""
 msgid "The F-Droid security model started out with HTTPS connections and signed metadata. It has been evolving, inspired by [Debian](https://wiki.debian.org/SecureApt), [The Update Framework](https://github.com/theupdateframework/tuf/blob/develop/docs/tuf-spec.txt), and other things. You can read about details here: [Security Model](../Security_Model)."
 msgstr ""
 
-#. type: YAML Front Matter: title
+#. type: Yaml Front Matter Hash Value: title
 #: _docs/FAQ_-_General.md
 #, no-wrap
 msgid "FAQ - General"
@@ -5535,7 +5684,7 @@ msgstr ""
 msgid "Please note that we will have to remove this account, in case it gets abused."
 msgstr ""
 
-#. type: YAML Front Matter: title
+#. type: Yaml Front Matter Hash Value: title
 #: _docs/Feeds.md
 #, no-wrap
 msgid "Feeds"
@@ -5586,10 +5735,19 @@ msgstr ""
 msgid "You can subscribe to new [forum](https://forum.f-droid.org/) posts and threads via the following URLs:"
 msgstr ""
 
-#. type: Plain text
+#. type: Bullet: '* '
 #: _docs/Feeds.md
-msgid "- <https://forum.f-droid.org/posts.rss> - <https://forum.f-droid.org/latest.rss>"
-msgstr ""
+#, fuzzy
+#| msgid "<https://f-droid.org/repo/status/build.json>"
+msgid "<https://forum.f-droid.org/posts.rss>"
+msgstr "<https://f-droid.org/repo/status/build.json>"
+
+#. type: Bullet: '* '
+#: _docs/Feeds.md
+#, fuzzy
+#| msgid "<https://f-droid.org/repo/status/update.json>"
+msgid "<https://forum.f-droid.org/latest.rss>"
+msgstr "<https://f-droid.org/repo/status/update.json>"
 
 #. type: Title ###
 #: _docs/Feeds.md
@@ -5658,7 +5816,125 @@ msgid ""
 "</opml>\n"
 msgstr ""
 
-#. type: YAML Front Matter: title
+#. type: Yaml Front Matter Hash Value: title
+#: _docs/Get_F-Droid.md
+#, fuzzy, no-wrap
+#| msgid "Directly in the F-Droid repo"
+msgid "Get F-Droid"
+msgstr "Zuzenean F-Droid biltegian"
+
+#. type: Plain text
+#: _docs/Get_F-Droid.md
+msgid "Here's a list of ways to getting setup to use F-Droid. Please note that this document just tries to help users getting kick-started, but not an official endorsement of any products, vendors, etc."
+msgstr ""
+
+#. type: Title ###
+#: _docs/Get_F-Droid.md
+#, no-wrap
+msgid "Buy a phone with pre-installed F-Droid"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/Get_F-Droid.md
+msgid "__CalyxOS__ - Calyx Institute is an privacy research NGO in the USA.  Some of their [membership plans](https://members.calyxinstitute.org/enroll/membership/phone) come with a phone where F-Droid is pre-installed."
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/Get_F-Droid.md
+msgid "__ShiftOS-Light__ - Shift Phone is a German phone vendor specializing in sustainable electronics.  With some [manual steps](https://www.shiftphones.com/hilfe_faqs/was-ist-shiftos-l/) their [SHIFT5mq](https://shop.shiftphones.com/shift5me.html) and [SHIFT6mq model](https://shop.shiftphones.com/shift6mq.htm) can be updated to ShiftOS-Light.  F-Droid is pre-installed on ShiftOS-Light."
+msgstr ""
+
+#. type: Title ###
+#: _docs/Get_F-Droid.md
+#, no-wrap
+msgid "Side-load F-Droid"
+msgstr ""
+
+#. type: Plain text
+#: _docs/Get_F-Droid.md
+msgid "Mind: Side-loading F-Droid has some limitations. Most notably Android will prompt users for confirmation for each and every individual update."
+msgstr ""
+
+#. type: Plain text
+#: _docs/Get_F-Droid.md
+msgid "To side-load our app store you may simply have to download the [official F-Droid APK](https://f-droid.org/F-Droid.apk) and install it."
+msgstr ""
+
+#. type: Title ###
+#: _docs/Get_F-Droid.md
+#, no-wrap
+msgid "Advanced ways to install F-Droid"
+msgstr ""
+
+#. type: Plain text
+#: _docs/Get_F-Droid.md
+msgid "For users with technical background or interest, there are also other ways to get F-Droid."
+msgstr ""
+
+#. type: Title ####
+#: _docs/Get_F-Droid.md
+#, no-wrap
+msgid "Install an Android ROM with built-in F-Droid"
+msgstr ""
+
+#. type: Plain text
+#: _docs/Get_F-Droid.md
+msgid "If you're planning on flashing a custom ROM, these ROMs might be interesting for you because the come with F-Droid built-in and ready to use:"
+msgstr ""
+
+#. type: Bullet: '- '
+#: _docs/Get_F-Droid.md
+msgid "__CalyxOS__ - https://calyxos.org"
+msgstr ""
+
+#. type: Bullet: '- '
+#: _docs/Get_F-Droid.md
+msgid "__DivestOS__ - https://divestos.org"
+msgstr ""
+
+#. type: Bullet: '- '
+#: _docs/Get_F-Droid.md
+msgid "__LineageOS for MicroG__ - https://lineage.microg.org"
+msgstr ""
+
+#. type: Title ####
+#: _docs/Get_F-Droid.md
+#, no-wrap
+msgid "Flash F-Droid OTA"
+msgstr ""
+
+#. type: Plain text
+#: _docs/Get_F-Droid.md
+msgid "When you intend on flashing a ROM which doesn-t come preloaded with F-Droid we recommend to flash F-Droid privileged extension OTA. This option works great with [LineageOS](https://lineageos.org/) for example."
+msgstr ""
+
+#. type: Bullet: '- '
+#: _docs/Get_F-Droid.md
+msgid "download the latest [F-Droid privileged extension OTA](https://f-droid.org/en/packages/org.fdroid.fdroid.privileged.ota/#suggested)."
+msgstr ""
+
+#. type: Bullet: '- '
+#: _docs/Get_F-Droid.md
+msgid "boot your phone into recovery mode"
+msgstr ""
+
+#. type: Bullet: '- '
+#: _docs/Get_F-Droid.md
+msgid "side-load / install the OTA zip file to your phone, the same way you would install a custom ROM. (eg. with `adb`, `heimdall`, etc.)"
+msgstr ""
+
+#. type: Title ##
+#: _docs/Get_F-Droid.md
+#, no-wrap
+msgid "Disclaimer"
+msgstr ""
+
+#. type: Plain text
+#: _docs/Get_F-Droid.md
+msgid "F-Droid and it's contributors might or might not be affiliated with any of the ROMs, Device Vendors, etc. listed above. The listing is neither complete nor are any of the linked projects officially endorsed by F-Droid. We reserve the right to change the listing above as our team sees fit. An official policy on criteria to get listed here is still in the works, see [admin#352](https://gitlab.com/fdroid/admin/-/issues/352) for more information.  If you think something on this listing is incorrect or missing please let us know: [team@f-droid.org](mailto:team@f-droid.org)"
+msgstr ""
+
+#. type: Yaml Front Matter Hash Value: title
 #: _docs/Getting_logcat_messages_after_crash.md
 #, no-wrap
 msgid "Getting _logcat_ messages after crash"
@@ -5765,7 +6041,7 @@ msgstr ""
 msgid "This information can then be posted to a GitLab issue to help developers diagnose the issue. When posting to GitLab, surround the log in three backticks (```) before, and three backticks after to format it correctly."
 msgstr ""
 
-#. type: YAML Front Matter: title
+#. type: Yaml Front Matter Hash Value: title
 #: _docs/How_to_Help.md
 #, no-wrap
 msgid "How to Help"
@@ -5856,7 +6132,7 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/How_to_Help.md
-msgid "Optionally link \"no longer maintained\" to where that statement is found (if not directly on the app's Readme/Website). Or add \"(its repo has been archived)\" – whichever fits. If the repo is gone altogether, instead remove the entries for `RepoType` and `RepoURL`, and at the very end of the metadata YAML add a line saying `NoSourceSince: 0.1.2` (where 0.1.2 should be the versionName of the last build available) – this will automatically translate into an AntiFeature and thus be displayed prominently.  In the end make that an MR."
+msgid "Optionally link \"no longer maintained\" to where that statement is found (if not directly on the app's Readme/Website). Or add \"(its repo has been archived)\" – whichever fits. If the repo is gone altogether, instead remove the entries for `RepoType` and `RepoURL`, and at the very end of the metadata YAML add a line saying `NoSourceSince: 0.1.2` (where 0.1.2 should be the versionName of the last build available) – this will automatically translate into an Anti-Feature and thus be displayed prominently.  In the end make that an MR."
 msgstr ""
 
 #. type: Title ###
@@ -5940,7 +6216,7 @@ msgstr "Diseinua"
 msgid "We'd love any contributions to make the project prettier and easier to use. If you are good at writing we are working on improving the [Home page](https://f-droid.org/wiki/page/Home_page). If you can design mockups the client developers could use your help. Post them to the issue tracker for [client](https://gitlab.com/fdroid/fdroidclient/issues) or the [website](https://gitlab.com/fdroid/fdroid-website/issues)."
 msgstr "Proiektua ederrago eta erabilerrazago egingo duen ekarpenak ongo etorriak dira. Idazle ona bazara [Hasiera orria](https://f-droid.org/wiki/page/Home_page) hobetzeko lanean ari gara. Zirriborroak diseinatu baditzakezu bezeroaren garatzaileek zure laguntza eskertuko dute. Bidali hauek [bezero](https://gitlab.com/fdroid/fdroidclient/issues) edo [webgune](https://gitlab.com/fdroid/fdroid-website/issues)aren akatsen biltokietara."
 
-#. type: YAML Front Matter: title
+#. type: Yaml Front Matter Hash Value: title
 #: _docs/How_to_update_an_app.md
 #, no-wrap
 msgid "How to update an app"
@@ -6018,12 +6294,12 @@ msgstr ""
 
 #. type: Bullet: '-   '
 #: _docs/How_to_update_an_app.md
-msgid "`hg log -p` e.g. libs | _build.xml_ | _AndroidManifest.xml_ | _project.properties_ | res/raw | assets | _.gitmodules_ | _.classpath_ to take a closer look at the changes in some of the important files (as far as updating is concerned). If new jars (or new versions of old ones) are found then they must be verified to see they were found from canonical sources and are free with source code;the first thing to try is to open the jar to see the class names (`unzip -l`) and visit e.g.  <http://central.maven.org/maven2/io/netty/> where you will find checksums to compare with. Take a note of jars such as bugsense or acra which are used for bugreports"
+msgid "`hg log -p` e.g. libs | _build.xml_ | _AndroidManifest.xml_ | _project.properties_ | res/raw | assets | _.gitmodules_ | _.classpath_ to take a closer look at the changes in some of the important files (as far as updating is concerned). If new jars (or new versions of old ones) are found then they must be verified to see they were found from canonical sources and are free with source code;the first thing to try is to open the jar to see the class names (`unzip -l`) and visit e.g.  <http://central.maven.org/maven2/io/netty/> where you will find checksums to compare with. Take a note of jars such as bugsense or ACRA which are used for bug reports"
 msgstr ""
 
 #. type: Bullet: '-   '
 #: _docs/How_to_update_an_app.md
-msgid "If you find proprietary files add a dummy build version to the metadata with a few words about the reason, add _NoSourceSince_ to the bottom and a line to the descripion beginning with Status: to the description explaining the reason that the app can't be updated"
+msgid "If you find proprietary files add a dummy build version to the metadata with a few words about the reason, add _NoSourceSince_ to the bottom and a line to the description beginning with Status: to the description explaining the reason that the app can't be updated"
 msgstr ""
 
 #. type: Bullet: '-   '
@@ -6073,7 +6349,7 @@ msgstr ""
 
 #. type: Bullet: '-   '
 #: _docs/How_to_update_an_app.md
-msgid "Have a quick look at the description and urls to see if anything needs updating"
+msgid "Have a quick look at the description and URLs to see if anything needs updating"
 msgstr ""
 
 #. type: Bullet: '-   '
@@ -6091,7 +6367,7 @@ msgstr ""
 msgid "That's a lot of things to do, but experience shows that it's a good idea to be vigilant and of course the process gets faster with time... Good luck!"
 msgstr ""
 
-#. type: YAML Front Matter: title
+#. type: Yaml Front Matter Hash Value: title
 #: _docs/Importing_Applications.md
 #, no-wrap
 msgid "Importing Applications"
@@ -6189,7 +6465,7 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/Importing_Applications.md
-msgid "If it fails, you’ll be told why. If it got as far as retrieving the source code, you can inspect it further by looking in `tmp/importer` where a full checkout will exist."
+msgid "If it fails, you'll be told why. If it got as far as retrieving the source code, you can inspect it further by looking in `tmp/importer` where a full checkout will exist."
 msgstr ""
 
 #. type: Plain text
@@ -6197,7 +6473,7 @@ msgstr ""
 msgid "A frequent cause of initial failure is that the project directory is actually a subdirectory in the repository. In this case, run the importer again using the `--subdir` option to tell it where. It will not attempt to determine this automatically, since there may be several options."
 msgstr ""
 
-#. type: YAML Front Matter: title
+#. type: Yaml Front Matter Hash Value: title
 #: _docs/Inclusion_How-To.md
 #, no-wrap
 msgid "Inclusion How-To"
@@ -6350,7 +6626,7 @@ msgstr "[Ezaugarri zalantzagarriak](https://monitor.f-droid.org/anti-features) Z
 
 #. type: Bullet: '-   '
 #: _docs/Inclusion_How-To.md
-msgid "They will skim through the source code to see if your application uses Non-Free dependencies, shows advertisements, tracks users, promotes Non-Free services/applications, or does anything that is harmful or otherwise undesirable for users."
+msgid "They will skim through the source code to see if your application uses Non-Free dependencies, shows advertisements, tracks users, promotes or depends on Non-Free services/applications, or does anything that is harmful or otherwise undesirable for users."
 msgstr ""
 
 #. type: Bullet: '-   '
@@ -6433,7 +6709,12 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/Inclusion_How-To.md
-msgid "A record of the build process for each application is provided on the F-Droid wiki, as a subpage `lastbuild` of the applications information page (e.g. [here is the lastbuild page for the F-Droid Client](https://f-droid.org/wiki/page/org.fdroid.fdroid/lastbuild)).  This is useful to aid in diagnosing problems when the build unexpectedly failed."
+msgid "A record of a successful build process for one application is provided on the F-Droid's website page for that specific app (e.g. [see the Build Log for the F-Droid Client](https://f-droid.org/en/packages/org.fdroid.fdroid/#latest))."
+msgstr ""
+
+#. type: Plain text
+#: _docs/Inclusion_How-To.md
+msgid "Apps that fail will have the log available during the build cycle on the [F-Droid Monitor - Running](https://monitor.f-droid.org/builds/running) page or, if in the previous cycle, on the [Build](https://monitor.f-droid.org/builds/build) page.  This is useful to aid in diagnosing problems when the build unexpectedly failed."
 msgstr ""
 
 #. type: Title ###
@@ -6449,7 +6730,7 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/Inclusion_How-To.md
-msgid "Once metadata files are updated, the F-Droid Server will check them against a list of released APKs to constuct a list of new applications and/or versions that need to be built. It will then enter the application preprocessing process, followed by the build process for each of them."
+msgid "Once metadata files are updated, the F-Droid Server will check them against a list of released APKs to construct a list of new applications and/or versions that need to be built. It will then enter the application preprocessing process, followed by the build process for each of them."
 msgstr ""
 
 #. type: Title ###
@@ -6523,7 +6804,7 @@ msgstr ""
 msgid "[fdroiddata revision history](https://gitlab.com/fdroid/fdroiddata/commits/master)"
 msgstr ""
 
-#. type: YAML Front Matter: title
+#. type: Yaml Front Matter Hash Value: title
 #: _docs/Inclusion_Policy.md
 #, no-wrap
 msgid "Inclusion Policy"
@@ -6576,7 +6857,7 @@ msgstr ""
 
 #. type: Bullet: '-   '
 #: _docs/Inclusion_Policy.md
-msgid "The software should not download additional executable binary files (e.g. Non-Free addons, auto-updates, etc)."
+msgid "The software must not download additional executable binary files (e.g.  addons, auto-updates, etc.) without explicit user consent. Consent means it needs to be opt-in (it must not be harder to decline than to accept or presented in a way users are likely to press accept without reading) and structured in a way that clearly explains to users that they're choosing to bypass F-Droid's checks if they activate it."
 msgstr ""
 
 #. type: Bullet: '-   '
@@ -6606,7 +6887,7 @@ msgstr ""
 
 #. type: Bullet: '-   '
 #: _docs/Inclusion_Policy.md
-msgid "Binary dependencies such as JAR files have to be replaced by source-built versions or used from a trusted repository like Maven Central OSSRH (see manual)."
+msgid "Binary dependencies such as JAR files have to be built from source or installed from Debian repos."
 msgstr ""
 
 #. type: Plain text
@@ -6617,6 +6898,106 @@ msgstr ""
 #. type: Bullet: '-   '
 #: _docs/Inclusion_Policy.md
 msgid "Releases should be clearly tagged (or otherwise marked)."
+msgstr ""
+
+#. type: Plain text
+#: _docs/Inclusion_Policy.md
+msgid "Though we tried to build everything from source, we still need some prebuild binaries. Therefore we have some exceptions:"
+msgstr ""
+
+#. type: Bullet: '-   '
+#: _docs/Inclusion_Policy.md
+msgid "Trusted maven repository. While there is no guarantee that those binaries are free and correspondent to the source code, F-Droid allows the following known repositories currently:"
+msgstr ""
+
+#. type: Bullet: '    -   '
+#: _docs/Inclusion_Policy.md
+msgid "Maven Central - the original repo, hardcoded in Maven and Gradle."
+msgstr ""
+
+#. type: Bullet: '    -   '
+#: _docs/Inclusion_Policy.md
+msgid "Google Maven Repo - hardcoded in Gradle, this repo hosts Google's own libs."
+msgstr ""
+
+#. type: Bullet: '    -   '
+#: _docs/Inclusion_Policy.md
+msgid "JCenter - hardcoded in Gradle, this repo by Bintray tries to provide easier handling. It's synced with Maven Central, and include some extra libs. It's shutting down so please avoid this repo."
+msgstr ""
+
+#. type: Bullet: '    -   '
+#: _docs/Inclusion_Policy.md
+msgid "OSS Sonatype - maintained by the people behind mavenCentral, this repository focuses on hosting services for open source project binaries. It's synced with Maven Central, and include some extra libs"
+msgstr ""
+
+#. type: Bullet: '    -   '
+#: _docs/Inclusion_Policy.md
+msgid "OSS JFrog - maintained by the people behind jCenter, this repository focuses on hosting services for open source project binaries."
+msgstr ""
+
+#. type: Bullet: '    -   '
+#: _docs/Inclusion_Policy.md
+msgid "JitPack.io - builds directly from GitHub repositories.  However, they do not provide any option to reproduce or verify the resulting binaries. Builds pre-release versions in some cases."
+msgstr ""
+
+#. type: Bullet: '    -   '
+#: _docs/Inclusion_Policy.md
+msgid "Clojars - Clojure libraries repo."
+msgstr ""
+
+#. type: Bullet: '    -   '
+#: _docs/Inclusion_Policy.md
+msgid "CommonsWare - repo holding a collection of open-source libs."
+msgstr ""
+
+#. type: Bullet: '    -   '
+#: _docs/Inclusion_Policy.md
+msgid "Gradle plugin repo - hardcoded in Gradle, this repo hosts Gradle plugins."
+msgstr ""
+
+#. type: Bullet: '-   '
+#: _docs/Inclusion_Policy.md
+msgid "Android SDK/NDK. They are released as proprietary binaries but we don't have an alternative currently. There is in-progress work to package recent Android SDK versions in Debian."
+msgstr ""
+
+#. type: Bullet: '-   '
+#: _docs/Inclusion_Policy.md
+msgid "Gradle. Only some old versions of Gradle are packaged in Debian. Currently we download them from the developer website."
+msgstr ""
+
+#. type: Bullet: '-   '
+#: _docs/Inclusion_Policy.md
+msgid "Flutter SDK. They are FOSS but not packaged in Debian and we are not able to built it from source. Currently we download them from the developer website with the Flutter srclib scripts."
+msgstr ""
+
+#. type: Bullet: '-   '
+#: _docs/Inclusion_Policy.md
+msgid "JSC/Hermes. They can be built from source which takes hours. Currently we downloaded them from npm and scanignore them."
+msgstr ""
+
+#. type: Bullet: '-   '
+#: _docs/Inclusion_Policy.md
+msgid "Binaries from pip wheels. Some apps install deps with pip and we just trust the untrustworthy Pypi."
+msgstr ""
+
+#. type: Bullet: '-   '
+#: _docs/Inclusion_Policy.md
+msgid "Binaries from Nix cache. These binaries are mostly reproducible."
+msgstr ""
+
+#. type: Bullet: '-   '
+#: _docs/Inclusion_Policy.md
+msgid "Rust/Rustup. Currently we download them from the developer website with the scripts in the rustup srclib. We may be able to use the Debian packages."
+msgstr ""
+
+#. type: Bullet: '-   '
+#: _docs/Inclusion_Policy.md
+msgid "Golang & Nodejs. They are available in Debian but recent versions are not available immediately. Currently we might download them from the developer website."
+msgstr ""
+
+#. type: Bullet: '-   '
+#: _docs/Inclusion_Policy.md
+msgid "Some other compilers/build tools not packaged in our Debian version."
 msgstr ""
 
 #. type: Plain text
@@ -6659,7 +7040,7 @@ msgstr ""
 msgid "For more information on adding applications to the F-Droid Repository, see the [Inclusion How-To](../Inclusion_How-To)."
 msgstr ""
 
-#. type: YAML Front Matter: title
+#. type: Yaml Front Matter Hash Value: title
 #: _docs/Installing_the_Server_and_Repo_Tools.md
 #, no-wrap
 msgid "Installing the Server and Repo Tools"
@@ -7027,9 +7408,24 @@ msgstr ""
 msgid "In order to build all apps that are included in f-droid.org, then a lot more software packages are required:"
 msgstr ""
 
-#. type: Plain text
+#. type: Bullet: '* '
 #: _docs/Installing_the_Server_and_Repo_Tools.md
-msgid "- all SDK platforms requested by the apps you want to build - all Debian packages required by every app build process (maven, ant, etc)  - every source code management tool (git, subversion, mercurial, etc)  - every version of the Android NDK that apps use"
+msgid "all SDK platforms requested by the apps you want to build"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/Installing_the_Server_and_Repo_Tools.md
+msgid "all Debian packages required by every app build process (maven, ant, etc)"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/Installing_the_Server_and_Repo_Tools.md
+msgid "every source code management tool (git, subversion, mercurial, etc)"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/Installing_the_Server_and_Repo_Tools.md
+msgid "every version of the Android NDK that apps use"
 msgstr ""
 
 #. type: Plain text
@@ -7058,7 +7454,7 @@ msgstr ""
 msgid "Google APIs, used for building apps using Google Maps, are free to the extent that the library comes pre-installed on the device.  Google Play Services, Google Admob, GCM, and many other third party libraries are proprietary and cannot be included in the main F-Droid repository.  The [MicroG project](https://microg.org) is developing free software replacements for some of the most used proprietary Google libraries"
 msgstr ""
 
-#. type: YAML Front Matter: title
+#. type: Yaml Front Matter Hash Value: title
 #: _docs/Maintaining_the_Forum.md
 #, no-wrap
 msgid "Maintaining the forum"
@@ -7387,7 +7783,7 @@ msgstr "Informazio gehiago"
 msgid "You can find more info about updating and maintaining the forum as well as other admin tasks in the [F-Droid forum administrator training](https://forum.f-droid.org/t/f-droid-forum-administrator-training/5527?u=paulakreuzer) topic."
 msgstr ""
 
-#. type: YAML Front Matter: title
+#. type: Yaml Front Matter Hash Value: title
 #: _docs/MIA_Process.md
 #, no-wrap
 msgid "MIA Process"
@@ -7409,9 +7805,15 @@ msgstr ""
 msgid "What are F-Droid team members"
 msgstr ""
 
-#. type: Plain text
+#. type: Bullet: '- '
 #: _docs/MIA_Process.md
-msgid "- [Gitlab](https://gitlab.com/fdroid/admin/-/project_members)  - [Forum](https://forum.f-droid.org/g/contributors)"
+#, fuzzy
+msgid "[Gitlab](https://gitlab.com/fdroid/admin/-/project_members)"
+msgstr "[Zerbitzaria eta konpilazio tresnak](https://gitlab.com/fdroid/fdroidserver/issues)"
+
+#. type: Bullet: '- '
+#: _docs/MIA_Process.md
+msgid "[Forum](https://forum.f-droid.org/g/contributors)"
 msgstr ""
 
 #. type: Title ###
@@ -7420,9 +7822,19 @@ msgstr ""
 msgid "What are contributions"
 msgstr ""
 
-#. type: Plain text
+#. type: Bullet: '- '
 #: _docs/MIA_Process.md
-msgid "- Commits to one of the repos hosted on [Gitlab](https://gitlab.com/fdroid/).  - Contributions to issues on [Gitlab](https://gitlab.com/groups/fdroid/-/issues).  - Activity on the forum."
+msgid "Commits to one of the repos hosted on [Gitlab](https://gitlab.com/fdroid/)."
+msgstr ""
+
+#. type: Bullet: '- '
+#: _docs/MIA_Process.md
+msgid "Contributions to issues on [Gitlab](https://gitlab.com/groups/fdroid/-/issues)."
+msgstr ""
+
+#. type: Bullet: '- '
+#: _docs/MIA_Process.md
+msgid "Activity on the forum."
 msgstr ""
 
 #. type: Title ###
@@ -7470,7 +7882,7 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/MIA_Process.md
-msgid "Afterwards, MIA accounts are removed from all F-Droid directories (Gitlab) or downgraded to normal user account (forum) and the issue is closed."
+msgid "Afterwards, MIA accounts are removed from all F-Droid directories (Gitlab) or downgraded to normal user account (forum) and the issue is closed and made public if it was set to confidential."
 msgstr ""
 
 #. type: Title ###
@@ -7480,12 +7892,22 @@ msgstr ""
 msgid "References"
 msgstr "Hobespenak"
 
-#. type: Plain text
+#. type: Bullet: '- '
 #: _docs/MIA_Process.md
-msgid "- [Debian reference](https://www.debian.org/doc/manuals/developers-reference/beyond-pkging.html#dealing-with-inactive-and-or-unreachable-maintainers)  - [Debian team site](https://wiki.debian.org/Teams/MIA)  - [Debian tools](https://salsa.debian.org/qa/qa/tree/master/mia)"
+msgid "[Debian reference](https://www.debian.org/doc/manuals/developers-reference/beyond-pkging.html#dealing-with-inactive-and-or-unreachable-maintainers)"
 msgstr ""
 
-#. type: YAML Front Matter: title
+#. type: Bullet: '- '
+#: _docs/MIA_Process.md
+msgid "[Debian team site](https://wiki.debian.org/Teams/MIA)"
+msgstr ""
+
+#. type: Bullet: '- '
+#: _docs/MIA_Process.md
+msgid "[Debian tools](https://salsa.debian.org/qa/qa/tree/master/mia)"
+msgstr ""
+
+#. type: Yaml Front Matter Hash Value: title
 #: _docs/Publishing_Nightly_Builds.md
 #, no-wrap
 msgid "Publishing Nightly Builds"
@@ -7798,7 +8220,7 @@ msgstr ""
 msgid "For a real world example, see _Zom_: * <https://github.com/zom/Zom-Android-nightly> * <https://github.com/zom/Zom-Android/blob/master/.travis.yml> * <https://travis-ci.org/zom/Zom-Android>"
 msgstr ""
 
-#. type: YAML Front Matter: title
+#. type: Yaml Front Matter Hash Value: title
 #: _docs/Release_Channels_and_Signing_Keys.md
 #, no-wrap
 msgid "Release Channels and Signing Keys"
@@ -8078,7 +8500,7 @@ msgstr "Nola \"eguneratu metadatuak hemen:  gitlab.com/fdroid/fdroiddata\"."
 msgid "git tags signed by \"Hans-Christoph Steiner \\<hans@guardianproject.info>\" aka \"Hans-Christoph Steiner \\<hans@eds.org>\" aka \"Hans-Christoph Steiner \\<hans@at.or.at>\" with fingerprint: <br /> `EE66 20C7 136B 0D2C 456C 0A4D E9E2 8DEA 00AA 5556` or \"Nico Alt \\<nicoalt@posteo.de>\" with fingerprint: <br /> `558B E907 1CA6 CA44 DBF5 576B 95A0 DAF7 DBC7 B548`"
 msgstr ""
 
-#. type: YAML Front Matter: title
+#. type: Yaml Front Matter Hash Value: title
 #: _docs/Repository_Style_Guide.md
 #, no-wrap
 msgid "Repository Style Guide"
@@ -8250,10 +8672,24 @@ msgstr ""
 msgid "Updating"
 msgstr ""
 
-#. type: Plain text
+#. type: Bullet: '* '
 #: _docs/Repository_Style_Guide.md
-msgid "- *E.g.* <https://gitlab.com/fdroid/fdroidclient/graphs/master> & <https://gitlab.com/fdroid/fdroidclient/network/master> & <http://f-droid.org/news-and-reviews>"
-msgstr ""
+#, fuzzy
+msgid "<https://gitlab.com/fdroid/fdroidclient/graphs/master>"
+msgstr "Nola \"eguneratu metadatuak hemen:  gitlab.com/fdroid/fdroiddata\"."
+
+#. type: Bullet: '* '
+#: _docs/Repository_Style_Guide.md
+#, fuzzy
+msgid "<https://gitlab.com/fdroid/fdroidclient/network/master>"
+msgstr "Nola \"eguneratu metadatuak hemen:  gitlab.com/fdroid/fdroiddata\"."
+
+#. type: Bullet: '* '
+#: _docs/Repository_Style_Guide.md
+#, fuzzy
+#| msgid "<https://f-droid.org/repo/index-v1.jar>"
+msgid "<https://f-droid.org/news-and-reviews>"
+msgstr "<https://f-droid.org/repo/index-v1.jar>"
 
 #. type: Plain text
 #: _docs/Repository_Style_Guide.md
@@ -8273,7 +8709,7 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
-msgid "F-Droid supports [reproducible builds](https://reproducible-builds.org)  of apps, so that anyone can run the build process again and reproduce the same APK as the original release.  This means that F-Droid can verify that an app is 100% free software while still using the original developer's APK signatures.  Ideally, all of the built APKs will have the exact same hash, but that is a more difficult standard with less payoff. Right now, F-Droid verifies reproducible builds using the APK signature."
+msgid "F-Droid supports [reproducible builds](https://reproducible-builds.org) of apps, so that anyone can run the build process again and reproduce the same APK as the original release.  This means that F-Droid can verify that an app is 100% free software while still using the original developer's APK signatures.  F-Droid verifies reproducible builds using APK [signature copying](#reproducible-signatures)."
 msgstr ""
 
 #. type: Plain text
@@ -8289,12 +8725,7 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
-msgid "Publishing signed binaries from elsewhere (e.g. the upstream developer)  is now possible after verifying that they match ones built using a recipe. Publishing only takes place if there is a proper match. (Which seems very unlikely to be the case unless the exact same tool-chain is used, so I would imagine that unless the person building and signing the incoming binaries uses fdroidserver to build them, probably the exact same buildserver ID, they will not match. But at least we have the functionality to support that.)"
-msgstr ""
-
-#. type: Plain text
-#: _docs/Reproducible_Builds.md
-msgid "This procedures are implemented as part of `fdroid publish`. At the publish step, the reproducibility check will follow this logic:"
+msgid "Publishing signed binaries (APKs) from elsewhere (e.g. the upstream developer)  is now possible after verifying that they match ones built using an fdroiddata recipe.  Publishing only takes place if there is a proper match.  This procedure is implemented as part of `fdroid publish`.  The reproducibility check at the publishing step follows this logic:"
 msgstr ""
 
 #. type: Plain text
@@ -8305,17 +8736,17 @@ msgstr ""
 #. type: Title ####
 #: _docs/Reproducible_Builds.md
 #, no-wrap
-msgid "Publish both (upstream-)developer signed and F-Droid signed APKs"
+msgid "Publish both (upstream) developer-signed and F-Droid-signed APKs"
 msgstr ""
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
-msgid "Use this approach for shipping a version of an app, with both (upstream-)developer signed and F-Droid signed APKs. This enables us to ship updates for users who installed apps from other sources than F-Droid (eg. Play Store) which are therefore signed by the app-developers, while also shipping updates for apps which were built and signed by F-Droid."
+msgid "This approach allows publishing both APKs signed by the (upstream) developer and APKs signed by F-Droid.  This enables us to ship updates for users who installed apps from other sources than F-Droid (e.g. Play Store), while also shipping updates for apps which were built and signed by F-Droid."
 msgstr ""
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
-msgid "This requires to put (upstream-)developer signatures into fdroiddata.  We provide a command for easily extracting signatures from APKs:"
+msgid "This requires extracting and adding (upstream) developer signatures to fdroiddata.  These signatures are then later copied to the unsigned APK built from the fdroiddata recipe.  We provide a command for easily extracting signatures from APKs:"
 msgstr ""
 
 #. type: Fenced code block (console)
@@ -8328,7 +8759,12 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
-msgid "You may also supply HTTPS-URLs directly to `fdroid signatures` instead of local files. The signature files are extracted to the according metadata directory ready to be used with `fdroid publish`. A signature consists of 3-5 files and the result of extracting one will resemble these file listings:"
+msgid "Instead of local files, you can also supply HTTPS URLs to `fdroid signatures`."
+msgstr ""
+
+#. type: Plain text
+#: _docs/Reproducible_Builds.md
+msgid "The signature files are extracted to the app's metadata directory, ready to be used with `fdroid publish`.  A signature consists of 2-6 files: a v1 signature (manifest, signature file, and signature block file) and/or a v2/v3 signature (APK Signing Block and offset); if the APK was v1-signed with e.g.  `signflinger` instead of `apksigner` there will also be a `differences.json`.  The result of extracting one will resemble these file listings:"
 msgstr ""
 
 #. type: Fenced code block (console)
@@ -8343,7 +8779,7 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
-msgid "If you don't want to install `fdroidserver` or have an older version that doesn't support extracting v2/v3 signatures yet, you can also use [`apksigcopier`](https://github.com/obfusk/apksigcopier) (available in e.g. Debian unstable) instead of `fdroid signatures`:"
+msgid "If you don't want to install `fdroidserver` (or have an older version that doesn't support extracting v2/v3 signatures yet) you can also use [`apksigcopier`](https://github.com/obfusk/apksigcopier) (available in e.g.  Debian, Ubuntu, Arch Linux, NixOS) instead of `fdroid signatures`:"
 msgstr ""
 
 #. type: Fenced code block (console)
@@ -8359,70 +8795,41 @@ msgstr ""
 #. type: Title ####
 #: _docs/Reproducible_Builds.md
 #, no-wrap
-msgid "Exclusively publishing (upstream-)developer signed APKs"
+msgid "Exclusively publishing (upstream) developer-signed APKs"
 msgstr ""
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
-msgid "For using this older approach, everything in the metadata should be the same as normal, with the addition of the `Binaries:` directive to specify where to get the binaries from. In this case F-Droid will never attempt to ship APKs signed by F-Droid. Should `fdroid publish` manage to verify that a downloaded APK can be built reproducibly, the downloaded APK will be published. Otherwise F-Droid will skip publishing this version of the app."
+msgid "For this approach, everything in the metadata should be the same as normal, with the addition of the `Binaries:` directive to specify where to get the binaries (APKs) from.  In this case, F-Droid will never attempt to publish APKs signed by F-Droid.  If `fdroid publish` can verify that the downloaded APK matches the one built from the fdroiddata recipe, the downloaded APK will be published.  Otherwise F-Droid will skip publishing this version of the app."
 msgstr ""
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
-msgid "Here is an example for a _Binaries_ directive:"
+msgid "Here is an example of a `Binaries:` directive:"
 msgstr ""
 
 #. type: Fenced code block (yaml)
 #: _docs/Reproducible_Builds.md
 #, no-wrap
-msgid "Binaries: https://foo.com/path/to/myapp-%v.apk\n"
+msgid "Binaries: https://example.com/path/to/myapp-%v.apk\n"
 msgstr ""
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
-msgid "Also see: [Build Metadata Reference - Binaries](../Build_Metadata_Reference/#Binaries)"
+#, fuzzy
+#| msgid "Also see: [Build Metadata Reference - Binaries](../Build_Metadata_Reference/#Binaries)"
+msgid "See also: [Build Metadata Reference - Binaries](../Build_Metadata_Reference/#Binaries)"
 msgstr "Ikusi ere: [Eraiki metadatuen erreferentzia - Bitarrak](../Build_Metadata_Reference/#Binaries)"
 
 #. type: Title ###
 #: _docs/Reproducible_Builds.md
 #, no-wrap
-msgid "Verification builds"
+msgid "Reproducible signatures"
 msgstr ""
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
-msgid "Many people or organizations will only be interested in reproducing builds to make sure that the f-droid.org builds match the original source and nothing has been inserted in.  In that case, the resulting APKs are not published for installation.  The [Verification Server](../Verification_Server) automates this process."
-msgstr ""
-
-#. type: Plain text
-#: _docs/Reproducible_Builds.md
-msgid "An awful lot of builds already verify with no extra effort since Java code is often compiled into the same bytecode by a wide range of Java versions.  The Android SDK's _build-tools_ will create differences in the resulting XML, PNG, etc. files, but this is usually not a problem since the _build.gradle_ includes the exact version of _build-tools_ to use."
-msgstr ""
-
-#. type: Plain text
-#: _docs/Reproducible_Builds.md
-msgid "Anything built with the NDK will be much more sensitive.  For example, even for builds that use the exact same version of the NDK (e.g. _r13b_) but on different platforms (.e.g OSX version Ubuntu), the resulting binaries will have differences."
-msgstr ""
-
-#. type: Plain text
-#: _docs/Reproducible_Builds.md
-msgid "Additionally, we'll have to look out for anything that includes timestamping information, is sensitive to sort order, etc."
-msgstr ""
-
-#. type: Plain text
-#: _docs/Reproducible_Builds.md
-msgid "Google is also working towards reproducible builds of Android apps, so using recent versions of the Android SDK helps.  One specific case is starting with Gradle Android Plugin v2.2.2, timestamps in the APK file's ZIP header are automatically zeroed out."
-msgstr ""
-
-#. type: Title ###
-#: _docs/Reproducible_Builds.md
-#, no-wrap
-msgid "Reproducible Signatures"
-msgstr ""
-
-#. type: Plain text
-#: _docs/Reproducible_Builds.md
-msgid "F-Droid verifies reproducible builds using the APK signature, which requires [copying](https://github.com/obfusk/apksigcopier) the signature from a signed APK to an unsigned one and then checking if the latter verifies.  The old v1 (JAR) signatures only cover the *contents* of the APK (ZIP metadata and ordering are irrelevant), but v2/v3 signatures cover *all other bytes in the APK*.  Thus, the APKs must be completely identical *before* and *after* signing (apart from the signature) in order to verify correctly."
+msgid "F-Droid verifies reproducible builds using the [APK signature](https://source.android.com/docs/security/features/apksigning)  (a form of [embedded signature](https://reproducible-builds.org/docs/embedded-signatures/)), which requires [copying](https://github.com/obfusk/apksigcopier) the signature from a signed APK to an unsigned one and then checking if the latter verifies.  The old v1 (JAR) signatures only cover the *contents* of the APK (e.g. ZIP metadata and ordering are irrelevant), but v2/v3 signatures cover *all other bytes in the APK*.  Thus, the APKs must be completely identical *before* and *after* signing (apart from the signature) in order to verify correctly."
 msgstr ""
 
 #. type: Plain text
@@ -8433,124 +8840,269 @@ msgstr ""
 #. type: Title ###
 #: _docs/Reproducible_Builds.md
 #, no-wrap
-msgid "_platform_ Revisions"
+msgid "Verification builds"
 msgstr ""
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
-msgid "The Android SDK tools [were changed](https://issuetracker.google.com/issues/37132313) in 2014 to [stick two](https://android.googlesource.com/platform/frameworks/base/+/ad2d07d%5E!/)  [data elements](https://android.googlesource.com/platform/frameworks/base/+/5283fab%5E!/)  in _AndroidManifest.xml_ as part of the build process: `platformBuildVersionName` and `platformBuildVersionCode`.  `platformBuildVersionName` includes the \"revision\" of the _platforms_ package built against (e.g. _android-23_), however different \"revisions\" of the same _platforms_ package cannot be installed in parallel.  Plus the SDK tools do not support specifying the required revision as part of the build process.  This often results in an otherwise reproducible build where the only difference is the `platformBuildVersionName` attribute."
+msgid "Many people or organizations will be interested in reproducing builds to make sure that the f-droid.org builds match the original source and nothing has been modified.  In that case, the resulting APKs are not published for installation.  The [Verification Server](../Verification_Server) automates this process."
 msgstr ""
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
-msgid "The \"_platform_\" is part of the Android SDK that represents the standard library that is installed on the phone. They have two parts to their version: \"version code\", which is an integer that represents the SDK release, and the \"revision\", which represents bugfix versions to each platform. These versions can be seen in the included _build.prop_ file. Each revision has a different number in _ro.build.version.incremental_.  Gradle has no way to specify the revision in _compileSdkVersion_ or _targetSdkVersion_. Only one \"_platform-23_\" can be installed at a time, unlike _build-tools_, where every release can be installed in parallel."
+msgid "Quite a few builds already verify with no extra effort since Java code is often compiled into the same bytecode by a wide range of Java versions.  The Android SDK's `build-tools` will create differences in the resulting XML, PNG, etc.  files, but this is usually not a problem since the `build.gradle` includes the exact version of `build-tools` to use."
 msgstr ""
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
-msgid "Here are two examples where I think all the differences came from just different revisions of the platform:"
+msgid "Anything built using the NDK will be much more sensitive.  For example, even for builds that use the exact same version of the NDK (e.g. `r13b`) but on different platforms (e.g. macOS versus Ubuntu), the resulting binaries will have differences."
 msgstr ""
 
-#. type: Bullet: '* '
+#. type: Plain text
 #: _docs/Reproducible_Builds.md
-msgid "https://verification.f-droid.org/de.nico.asura_12.apk.diffoscope.html"
+msgid "Additionally, we'll have to look out for anything that includes timestamps or build paths, is sensitive to sort order, etc."
 msgstr ""
 
-#. type: Bullet: '* '
+#. type: Plain text
 #: _docs/Reproducible_Builds.md
-msgid "https://verification.f-droid.org/de.nico.ha_manager_25.apk.diffoscope.html"
+msgid "Google is also working towards reproducible builds of Android apps, so using recent versions of the Android SDK helps.  One specific case is starting with Gradle Android Plugin v2.2.2, timestamps in the APK file's ZIP metadata are automatically zeroed out."
 msgstr ""
 
 #. type: Title ###
 #: _docs/Reproducible_Builds.md
 #, no-wrap
-msgid "PNG Crush/Crunch"
+msgid "Reproducible APK tools"
 msgstr ""
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
-msgid "A standard part of the Android build process is to run some kind of PNG optimization tool, like `aapt singleCrunch` or `pngcrush`.  These do not provide deterministic output, it is still an open question as to why.  Since PNGs are normally committed to the source repo, a workaround to this problem is to run the tool of your choice on the PNG files, then commit those changes to the source repo (e.g. `git`).  Then, disable the default PNG optimization process by adding this to _build.gradle_:"
+msgid "The scripts from [reproducible-apk-tools](https://github.com/obfusk/reproducible-apk-tools)  (available in fdroiddata as a `srclib`) may help to make builds reproducible, e.g. by fixing newlines (CRLF vs LF) or making ZIP ordering deterministic, if removing the cause of the differences is not a realistic option.  Depending on specifics, these scripts need to be used by upstream developers before signing their APKs, by the fdroiddata recipe, or both."
 msgstr ""
 
-#. type: Fenced code block
+#. type: Plain text
+#: _docs/Reproducible_Builds.md
+msgid "Originally created to inject non-determinism in build processes, [disorderfs](https://salsa.debian.org/reproducible-builds/disorderfs) can also do the opposite: make reading from the filesystem deterministic.  In some cases this can make e.g. `resources.arsc` reproducible.  Here is an example from an existing recipe:"
+msgstr ""
+
+#. type: Fenced code block (console)
 #: _docs/Reproducible_Builds.md
 #, no-wrap
 msgid ""
-"android {\n"
-"    aaptOptions {\n"
-"        cruncherEnabled = false\n"
-"    }\n"
+"$ mv my.app my.app_underlying\n"
+"$ disorderfs --sort-dirents=yes --reverse-dirents=no my.app_underlying my.app\n"
+msgstr ""
+
+#. type: Title ###
+#: _docs/Reproducible_Builds.md
+#, no-wrap
+msgid "Potential sources of unreproducible builds"
+msgstr ""
+
+#. type: Plain text
+#: _docs/Reproducible_Builds.md
+msgid "There are various ways builds can be unreproducible.  Some are relatively easy to avoid, others are hard to fix.  We've tried to list some common sources below."
+msgstr ""
+
+#. type: Plain text
+#: _docs/Reproducible_Builds.md
+#, fuzzy
+msgid "See also [this GitLab issue](https://gitlab.com/fdroid/fdroiddata/-/issues/2816)."
+msgstr "Nola \"eguneratu metadatuak hemen:  gitlab.com/fdroid/fdroiddata\"."
+
+#. type: Title ####
+#: _docs/Reproducible_Builds.md
+#, no-wrap
+msgid "Bug: Android Studio builds have non-deterministic ZIP ordering"
+msgstr ""
+
+#. type: Plain text
+#: _docs/Reproducible_Builds.md
+msgid "[Non-deterministic order of ZIP entries in APK makes builds not reproducible](https://issuetracker.google.com/issues/265653160)  (may require a Google account to view)."
+msgstr ""
+
+#. type: Plain text
+#: _docs/Reproducible_Builds.md
+msgid "NB: this should be fixed in Android Gradle plugin (`com.android.tools.build:gradle` / `com.android.application`) `7.1.X` and later."
+msgstr ""
+
+#. type: Plain text
+#: _docs/Reproducible_Builds.md
+msgid "When building APKs with Android Studio, the ordering of the ZIP entries in the APK can be different from that of APKs built by invoking `gradle` directly, affecting reproducibility; the ordering can be completely non-deterministic, even differing between different builds of the same source code."
+msgstr ""
+
+#. type: Plain text
+#: _docs/Reproducible_Builds.md
+msgid "A workaround for older versions is to invoke `gradle` directly (as during F-Droid or CI builds), bypassing Android Studio:"
+msgstr ""
+
+#. type: Fenced code block (console)
+#: _docs/Reproducible_Builds.md
+#, no-wrap
+msgid "$ ./gradlew assembleRelease\n"
+msgstr ""
+
+#. type: Plain text
+#: _docs/Reproducible_Builds.md
+msgid "NB: depending on your signing configuration, this may require signing the APK with `apksigner` afterwards, since signing is not performed by Android Studio in this case."
+msgstr ""
+
+#. type: Title ####
+#: _docs/Reproducible_Builds.md
+#, no-wrap
+msgid "Bug: baseline.profm not deterministic"
+msgstr ""
+
+#. type: Plain text
+#: _docs/Reproducible_Builds.md
+msgid "[Non-stable `assets/dexopt/baseline.profm`](https://issuetracker.google.com/issues/231837768)  (may require a Google account to view)."
+msgstr ""
+
+#. type: Plain text
+#: _docs/Reproducible_Builds.md
+msgid "See also [this write-up of workarounds](https://gist.github.com/obfusk/61046e09cee352ae6dd109911534b12e)."
+msgstr ""
+
+#. type: Title ####
+#: _docs/Reproducible_Builds.md
+#, no-wrap
+msgid "Bug: coreLibraryDesugaring not deterministic"
+msgstr ""
+
+#. type: Plain text
+#: _docs/Reproducible_Builds.md
+msgid "NB: this should be fixed in R8 (`com.android.tools:r8`) `3.0.69` and later."
+msgstr ""
+
+#. type: Plain text
+#: _docs/Reproducible_Builds.md
+msgid "In some cases builds are not reproducible due to a [bug in `coreLibraryDesugaring`](https://issuetracker.google.com/issues/195968520)  (may require a Google account to view); this [affected NewPipe](https://github.com/TeamNewPipe/NewPipe/issues/6486)."
+msgstr ""
+
+#. type: Title ####
+#: _docs/Reproducible_Builds.md
+#, no-wrap
+msgid "Bug: line ending differences between Windows and Linux builds"
+msgstr ""
+
+#. type: Plain text
+#: _docs/Reproducible_Builds.md
+msgid "[Newline differences between building on Windows vs Linux make builds not reproducible](https://issuetracker.google.com/issues/266109851)  (may require a Google account to view)."
+msgstr ""
+
+#. type: Plain text
+#: _docs/Reproducible_Builds.md
+msgid "A workaround is to run [`fix-newlines.py`](https://github.com/obfusk/reproducible-apk-tools#fix-newlinespy)  on the *unsigned* APK with the \"wrong\" line endings to change them from LF to CRLF (or vice versa w/ `--from-crlf`) and `zipalign` it again afterwards."
+msgstr ""
+
+#. type: Title ####
+#: _docs/Reproducible_Builds.md
+#, no-wrap
+msgid "Concurrency: reproducibility can depend on the number of CPUs/cores"
+msgstr ""
+
+#. type: Plain text
+#: _docs/Reproducible_Builds.md
+msgid "This can affect `.dex` files (though that seems to be rare) or native code (e.g.  Rust)."
+msgstr ""
+
+#. type: Plain text
+#: _docs/Reproducible_Builds.md
+msgid "Using only 1 CPU/core as a workaround:"
+msgstr ""
+
+#. type: Fenced code block (console)
+#: _docs/Reproducible_Builds.md
+#, no-wrap
+msgid ""
+"export CPUS_MAX=1\n"
+"export CPUS=$(getconf _NPROCESSORS_ONLN)\n"
+"for (( c=$CPUS_MAX; c<$CPUS; c++ )) ; do echo 0 > /sys/devices/system/cpu/cpu$c/online; done\n"
+msgstr ""
+
+#. type: Plain text
+#: _docs/Reproducible_Builds.md
+msgid "NB: this workaround affects the entire machine, so using it in a non-persistent virtual machine or container is recommended."
+msgstr ""
+
+#. type: Plain text
+#: _docs/Reproducible_Builds.md
+msgid "For Rust code, you can set [`codegen-units = 1`](https://doc.rust-lang.org/rustc/codegen-options/index.html#codegen-units)."
+msgstr ""
+
+#. type: Plain text
+#: _docs/Reproducible_Builds.md
+msgid "See also [this GitLab issue](https://gitlab.com/fdroid/rfp/-/issues/1519#note_1226216164)."
+msgstr ""
+
+#. type: Title ####
+#: _docs/Reproducible_Builds.md
+#, no-wrap
+msgid "Embedded build paths"
+msgstr ""
+
+#. type: Plain text
+#: _docs/Reproducible_Builds.md
+msgid "Embedded [build paths](https://reproducible-builds.org/docs/build-path/) are a source of reproducibility issues affecting apps built with e.g. Flutter, python-for-android, or using native code (e.g. Rust, C/C++, any kind of `libfoo.so`).  Apps completely written in Java and/or Kotlin tend to be unaffected."
+msgstr ""
+
+#. type: Plain text
+#: _docs/Reproducible_Builds.md
+msgid "Often, the easiest solution is to always use the same working directory when building; e.g. `/builds/fdroid/fdroiddata/build/your.app.id` (F-Droid CI), `/home/vagrant/build/your.app.id` (F-Droid build server), or `/tmp/build`."
+msgstr ""
+
+#. type: Plain text
+#: _docs/Reproducible_Builds.md
+msgid "NB: using a subdirectory of the world-writeable `/tmp` can have security implications (on multi-user systems)."
+msgstr ""
+
+#. type: Title ####
+#: _docs/Reproducible_Builds.md
+#, no-wrap
+msgid "Embedded timestamps"
+msgstr ""
+
+#. type: Plain text
+#: _docs/Reproducible_Builds.md
+msgid "Embedded [timestamps](https://reproducible-builds.org/docs/timestamps/) are the most common source of reproducibility issues and are best avoided."
+msgstr ""
+
+#. type: Title #####
+#: _docs/Reproducible_Builds.md
+#, no-wrap
+msgid "AboutLibraries Gradle plugin"
+msgstr ""
+
+#. type: Plain text
+#: _docs/Reproducible_Builds.md
+msgid "You can prevent this plugin (`com.mikepenz.aboutlibraries.plugin`) from adding a timestamp to the JSON file it generates by adding this to `build.gradle`:"
+msgstr ""
+
+#. type: Fenced code block (gradle)
+#: _docs/Reproducible_Builds.md
+#, no-wrap
+msgid ""
+"aboutLibraries {\n"
+"    // Remove the \"generated\" timestamp to allow for reproducible builds\n"
+"    excludeFields = [\"generated\"]\n"
 "}\n"
 msgstr ""
 
-#. type: Title ###
-#: _docs/Reproducible_Builds.md
-#, no-wrap
-msgid "R8 Optimizer"
-msgstr ""
-
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
-msgid "It appears that some R8 optimizations done in nondeterministic way, producing different bytecode on different build runs."
+msgid "For `build.gradle.kts`, add this instead:"
 msgstr ""
 
-#. type: Plain text
-#: _docs/Reproducible_Builds.md
-msgid "For instance, R8 tries to optimize ServiceLoader usage making a static list of all services in the code. The order of this list may be different (or even incomplete) on each build run. The only way to avoid this behavior is disabling such optimizations declaring optimized classes in _proguard-rules.pro_:"
-msgstr ""
-
-#. type: Fenced code block
+#. type: Fenced code block (kts)
 #: _docs/Reproducible_Builds.md
 #, no-wrap
 msgid ""
-"-keep class kotlinx.coroutines.CoroutineExceptionHandler\n"
-"-keep class kotlinx.coroutines.internal.MainDispatcherFactory\n"
+"aboutLibraries {\n"
+"    // Remove the \"generated\" timestamp to allow for reproducible builds\n"
+"    excludeFields = arrayOf(\"generated\")\n"
+"}\n"
 msgstr ""
 
-#. type: Plain text
-#: _docs/Reproducible_Builds.md
-msgid "Be careful with R8. Always test your builds multiple times and disable optimizations which produce a nondeterministic output."
-msgstr ""
-
-#. type: Title ###
-#: _docs/Reproducible_Builds.md
-#, no-wrap
-msgid "Resource Shrinker"
-msgstr ""
-
-#. type: Plain text
-#: _docs/Reproducible_Builds.md
-msgid "It's possible to reduce the APK file size removing unused resources from the package. This is useful when a project depends on some bloat libraries such as AppCompat, especially when R8/ProGuard code shrinking is used."
-msgstr ""
-
-#. type: Plain text
-#: _docs/Reproducible_Builds.md
-msgid "However, it might be possible that resource shrinker will increase the APK size on different platforms, especially if there is not too many resources to shrink, in which case the original APK will be used instead of the shrinked one (nondeterministic behavior of Gradle plugin). Avoid using resource shrinker unless it decreases the APK file size significantly."
-msgstr ""
-
-#. type: Title ###
-#: _docs/Reproducible_Builds.md
-#, no-wrap
-msgid "coreLibraryDesugaring"
-msgstr ""
-
-#. type: Plain text
-#: _docs/Reproducible_Builds.md
-msgid "In some cases builds are not reproducible due to a [bug in `coreLibraryDesugaring`](https://issuetracker.google.com/issues/195968520) (requires a google account to view); this [currently affects NewPipe](https://github.com/TeamNewPipe/NewPipe/issues/6486)."
-msgstr ""
-
-#. type: Title ###
-#: _docs/Reproducible_Builds.md
-#, no-wrap
-msgid "zipflinger"
-msgstr ""
-
-#. type: Plain text
-#: _docs/Reproducible_Builds.md
-msgid "Recent versions of the Android gradle plugin will use *zipflinger* -- which arranges the contents of the APK differently -- which could result in e.g. [apksigcopier](https://github.com/obfusk/apksigcopier) failing to work in some cases.  You can tell the plugin not to use *zipflinger* by setting `android.useNewApkCreator=false` in `gradle.properties`."
-msgstr ""
-
-#. type: Title ###
+#. type: Title ####
 #: _docs/Reproducible_Builds.md
 #, no-wrap
 msgid "Native library stripping"
@@ -8558,7 +9110,7 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
-msgid "It seems that the stripping of native libraries, e.g. _libfoo.so_, can cause intermittent reproducibility issues.  It is important to use the exact NDK version when rebuilding, e.g. r21e.  Disabling stripping can sometimes help.  Gradle seems to strip shared libraries by default, even the app is receiving the shared libraries via an AAR library.  Here is how to disable it in Gradle:"
+msgid "It seems that the stripping of native libraries, e.g. `libfoo.so`, can cause intermittent reproducibility issues.  It is important to use the exact NDK version when rebuilding, e.g. `r21e`.  Disabling stripping can sometimes help.  Gradle seems to strip shared libraries by default, even the app is receiving the shared libraries via an AAR library.  Here is how to disable it in Gradle:"
 msgstr ""
 
 #. type: Fenced code block (gradle)
@@ -8572,7 +9124,7 @@ msgid ""
 "}\n"
 msgstr ""
 
-#. type: Title ###
+#. type: Title ####
 #: _docs/Reproducible_Builds.md
 #, no-wrap
 msgid "NDK _build-id_"
@@ -8580,49 +9132,190 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
-msgid "On different build machines different NDK paths and different paths to the project (and thus to its _jni_ directory) are used. This leads to different paths to the source files in debug symbols, causing linker to generate different _build-id_, which is preserved after stripping."
+msgid "On different build machines, different NDK paths and different paths to the project (and thus to its `jni` directory) are used.  This leads to different paths to the source files in debug symbols, causing the linker to generate a different _build-id_, which is preserved after stripping."
 msgstr ""
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
-msgid "One possible solution is adding `LOCAL_LDFLAGS += -Wl,--build-id=none` to _Android.mk_ files which will disable _build-id_ generation completely."
+msgid "One possible solution is adding `-Wl,--build-id=none` to link options which will disable _build-id_ generation completely. For `ndk-build`, `LOCAL_LDFLAGS += -Wl,--build-id=none` can be added to `Android.mk` files or to `build.gradle/.kts`:"
 msgstr ""
 
-#. type: Title ###
+#. type: Fenced code block
 #: _docs/Reproducible_Builds.md
 #, no-wrap
-msgid "Build Server IDs"
+msgid ""
+"android {\n"
+"    defaultConfig {\n"
+"        externalNativeBuild {\n"
+"            ndkBuild {\n"
+"                arguments \"LOCAL_LDFLAGS += -Wl,--build-id=none\"\n"
+"            }\n"
+"        }\n"
+"    }\n"
+"}\n"
 msgstr ""
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
-msgid "To describe the build environment used by F-Droid builds, APKs have two files inserted into them:"
+#, no-wrap
+msgid ""
+"For CMake versions since 3.13, `add_link_options(LINKER:--build-id=none)`\n"
+"can be added to `CMakeLists.txt` globally. For CMake versions before 3.13,\n"
+"`target_link_libraries(<target> -Wl,--build-id=none)` can be used instead for\n"
+"every target.\n"
+msgstr ""
+
+#. type: Title ####
+#: _docs/Reproducible_Builds.md
+#, no-wrap
+msgid "NDK hash style"
+msgstr ""
+
+#. type: Plain text
+#: _docs/Reproducible_Builds.md
+msgid "On different build machines, NDK may use different hash style. Setting the hash style explicitly can fix this problem. For CMake versions since 3.13, `add_link_options(LINKER:--hash-style=gnu)` can be added to `CMakeLists.txt` globally."
+msgstr ""
+
+#. type: Title ####
+#: _docs/Reproducible_Builds.md
+#, no-wrap
+msgid "_platform_ Revisions"
+msgstr ""
+
+#. type: Plain text
+#: _docs/Reproducible_Builds.md
+msgid "In 2014, the Android SDK tools [were changed](https://issuetracker.google.com/issues/37132313) to [stick two](https://android.googlesource.com/platform/frameworks/base/+/ad2d07d%5E!/)  [data elements](https://android.googlesource.com/platform/frameworks/base/+/5283fab%5E!/)  in `AndroidManifest.xml` as part of the build process: `platformBuildVersionName` and `platformBuildVersionCode`.  `platformBuildVersionName` includes the \"revision\" of the _platform_ package built against (e.g. `android-23`), however different \"revisions\" of the same _platform_ package cannot be installed in parallel.  Plus the SDK tools do not support specifying the required revision as part of the build process.  This often results in an otherwise reproducible build where the only difference is the `platformBuildVersionName` attribute."
+msgstr ""
+
+#. type: Plain text
+#: _docs/Reproducible_Builds.md
+msgid "The _platform_ is part of the Android SDK that represents the standard library that is installed on the phone.  They have two parts to their version: \"version code\", which is an integer that represents the SDK release, and the \"revision\", which represents bugfix versions to each platform.  These versions can be seen in the included `build.prop` file.  Each revision has a different number in `ro.build.version.incremental`.  Gradle has no way to specify the revision in `compileSdkVersion` or `targetSdkVersion`.  Only one `platform-23` can be installed at a time, unlike `build-tools`, where every release can be installed in parallel."
+msgstr ""
+
+#. type: Plain text
+#: _docs/Reproducible_Builds.md
+msgid "Here are two examples where all the differences are suspected to come from different revisions of the platform:"
 msgstr ""
 
 #. type: Bullet: '* '
 #: _docs/Reproducible_Builds.md
-msgid "_META-INF/fdroidserverid_ - git commit hash of [_fdroidserver_](https://gitlab.com/fdroid/fdroidserver) used for the build"
+msgid "https://verification.f-droid.org/de.nico.asura_12.apk.diffoscope.html"
 msgstr ""
 
 #. type: Bullet: '* '
 #: _docs/Reproducible_Builds.md
-msgid "_META-INF/buildserverid_ - git commit hash of [_makebuildserver_](https://gitlab.com/fdroid/fdroidserver/blob/master/makebuildserver) used for the build"
+msgid "https://verification.f-droid.org/de.nico.ha_manager_25.apk.diffoscope.html"
 msgstr ""
 
-#. type: Plain text
-#: _docs/Reproducible_Builds.md
-msgid "To ensure reproducibility, use the exact same revision of the `./makebuildserver` and `fdroid build`. You can find the commit hash of _fdroidserver_ by going to your git clone and running `git log -n1`.  The build server instance is stamped with the git commit hash on creation, and that ID is included in builds."
-msgstr ""
-
-#. type: Title ###
+#. type: Title ####
 #: _docs/Reproducible_Builds.md
 #, no-wrap
-msgid "ZIP entry info"
+msgid "PNG Crush/Crunch"
 msgstr ""
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
-msgid "The ZIP format was originally designed around the MSDOS FAT filesystem.  UNIX file permissions were added as an extension.  APKs only need the most basic ZIP format, without any of the extensions.  These extensions are often stripped out in the final release signing process.  But the APK build process can add them.  For example:"
+msgid "A standard part of the Android build process is to run some kind of PNG optimization tool, like `aapt singleCrunch`, `pngcrush`, `zopflipng` or `optipng`.  These do not provide deterministic output, it is still an open question as to why.  Since PNGs are normally committed to the source repo, a workaround to this problem is to run the tool of your choice on the PNG files, then commit those changes to the source repo (e.g. `git`).  Then, disable the default PNG optimization process by adding this to `build.gradle`:"
+msgstr ""
+
+#. type: Fenced code block (gradle)
+#: _docs/Reproducible_Builds.md
+#, no-wrap
+msgid ""
+"android {\n"
+"    aaptOptions {\n"
+"        cruncherEnabled = false\n"
+"    }\n"
+"}\n"
+msgstr ""
+
+#. type: Plain text
+#: _docs/Reproducible_Builds.md
+msgid "Note that tools such as `svgo` can do similar optimization to SVG files."
+msgstr ""
+
+#. type: Title ####
+#: _docs/Reproducible_Builds.md
+#, no-wrap
+msgid "PNGs generated from vector drawables"
+msgstr ""
+
+#. type: Plain text
+#: _docs/Reproducible_Builds.md
+msgid "[Android Gradle plugin generates PNG resources from vector drawables for old Android versions](https://developer.android.com/reference/tools/gradle-api/7.3/com/android/build/api/dsl/VectorDrawables#generateddensities).  Unfortunately, the generated PNG files are not reproducible."
+msgstr ""
+
+#. type: Plain text
+#: _docs/Reproducible_Builds.md
+msgid "You can disable generating the PNGs by adding this to `build.gradle`:"
+msgstr ""
+
+#. type: Fenced code block (gradle)
+#: _docs/Reproducible_Builds.md
+#, no-wrap
+msgid ""
+"android {\n"
+"    defaultConfig {\n"
+"        vectorDrawables.generatedDensities = []\n"
+"    }\n"
+"}\n"
+msgstr ""
+
+#. type: Title ####
+#: _docs/Reproducible_Builds.md
+#, no-wrap
+msgid "R8 Optimizer"
+msgstr ""
+
+#. type: Plain text
+#: _docs/Reproducible_Builds.md
+msgid "It appears that some R8 optimizations are non-deterministic, producing different bytecode on different build runs."
+msgstr ""
+
+#. type: Plain text
+#: _docs/Reproducible_Builds.md
+msgid "For instance, R8 tries to optimize `ServiceLoader` usage making a static list of all services in the code.  The order of this list may be different (or even incomplete) on each build run.  The only way to avoid this behavior is disabling such optimizations declaring optimized classes in `proguard-rules.pro`:"
+msgstr ""
+
+#. type: Fenced code block
+#: _docs/Reproducible_Builds.md
+#, no-wrap
+msgid ""
+"-keep class kotlinx.coroutines.CoroutineExceptionHandler\n"
+"-keep class kotlinx.coroutines.internal.MainDispatcherFactory\n"
+msgstr ""
+
+#. type: Plain text
+#: _docs/Reproducible_Builds.md
+msgid "Be careful with R8.  Always test your builds multiple times and disable optimizations which produce non-deterministic output."
+msgstr ""
+
+#. type: Title ####
+#: _docs/Reproducible_Builds.md
+#, no-wrap
+msgid "Resource Shrinker"
+msgstr ""
+
+#. type: Plain text
+#: _docs/Reproducible_Builds.md
+msgid "It's possible to reduce the APK file size by removing unused resources from the package.  This is useful when a project depends on some bloated libraries such as AppCompat, especially when R8/ProGuard code shrinking is used."
+msgstr ""
+
+#. type: Plain text
+#: _docs/Reproducible_Builds.md
+msgid "However, it might be possible that resource shrinker will increase the APK size on different platforms, especially if there are not many resources to shrink, in which case the original APK will be used instead of the shrunk one (non-deterministic behavior of Gradle plugin).  Avoid using resource shrinker unless it decreases the APK file size significantly."
+msgstr ""
+
+#. type: Title ####
+#: _docs/Reproducible_Builds.md
+#, fuzzy, no-wrap
+#| msgid "`metadata/`"
+msgid "ZIP metadata"
+msgstr "`metadata/`"
+
+#. type: Plain text
+#: _docs/Reproducible_Builds.md
+msgid "APKs use the ZIP file format, which was originally designed around the MSDOS FAT filesystem.  UNIX file permissions were added as an extension.  APKs only need the most basic ZIP format, without any of the extensions.  These extensions are often stripped out in the final release signing process.  But the APK build process can add them.  For example:"
 msgstr ""
 
 #. type: Fenced code block (diff)
@@ -8659,7 +9352,7 @@ msgstr ""
 
 #. type: Bullet: '* '
 #: _docs/Reproducible_Builds.md
-msgid "`aapt` versions produce different results (XML and res/ subfolder names)"
+msgid "`aapt` versions produce different results (XML and _res/_ subfolder names)"
 msgstr ""
 
 #. type: Title ####
@@ -8718,7 +9411,12 @@ msgstr ""
 msgid "[Unreproducible/non-deterministic code generation by navigation.safeargs.kotlin](https://issuetracker.google.com/issues/189498001) (_Google login and JavaScript required_)"
 msgstr ""
 
-#. type: YAML Front Matter: title
+#. type: Bullet: '* '
+#: _docs/Reproducible_Builds.md
+msgid "[unneeded DEX code differences based on number of CPUs used in build process](https://issuetracker.google.com/issues/269181868)  (_Google login and JavaScript required_)"
+msgstr ""
+
+#. type: Yaml Front Matter Hash Value: title
 #: _docs/Running_a_Mirror.md
 #, no-wrap
 msgid "Running a Mirror"
@@ -8972,7 +9670,48 @@ msgid ""
 "$ sudo chmod 0644 /home/fdroid/.ssh/authorized_keys\n"
 msgstr ""
 
-#. type: YAML Front Matter: title
+#. type: Yaml Front Matter Hash Value: title
+#: _docs/Running_on_old_Android_versions.md
+#, no-wrap
+msgid "Running on old Android versions"
+msgstr ""
+
+#. type: Plain text
+#: _docs/Running_on_old_Android_versions.md
+msgid "F-Droid repos generally maintain support for old F-Droid releases for a long time.  That means that old F-Droid releases will continue to work for years. That provides a path to run F-Droid on very old Android releases. Here are the download links for installing the newest release that runs on a given Android release:"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/Running_on_old_Android_versions.md
+msgid "Android 6.0 (API 23) and up: [F-Droid (latest stable)]({{ site.fdroid_apk_download_url }})"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/Running_on_old_Android_versions.md
+msgid "Android 5.1 (API 22): [F-Droid 1.15.6](https://f-droid.org/archive/org.fdroid.fdroid_1015056.apk)"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/Running_on_old_Android_versions.md
+msgid "Android 4.0 (API 14) to Android 5.0 (API 21): [F-Droid 1.12.1](https://f-droid.org/archive/org.fdroid.fdroid_1012051.apk)"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/Running_on_old_Android_versions.md
+msgid "Android 2.3.3 (API 10) to Android 3.2 (API 13): [F-Droid 1.2.2](https://f-droid.org/archive/org.fdroid.fdroid_1002052.apk)"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/Running_on_old_Android_versions.md
+msgid "Android 2.2 (API 8) to Android 2.3.2 (API 9): [F-Droid 0.100.1](https://f-droid.org/archive/org.fdroid.fdroid_100150.apk)"
+msgstr ""
+
+#. type: Plain text
+#: _docs/Running_on_old_Android_versions.md
+msgid "Please note that many apps on F-Droid may no longer support such old Android versions. It is recommended to enable the \"F-Droid Archive\" repository in the F-Droid app. Enabling the archive lets F-Droid show you older versions of apps, which may include versions that still work on your device."
+msgstr ""
+
+#. type: Yaml Front Matter Hash Value: title
 #: _docs/Security_Model.md
 #, no-wrap
 msgid "Security Model"
@@ -8980,7 +9719,12 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/Security_Model.md
-msgid "The security architecture is based on models proven by [Debian](https://wiki.debian.org/SecureApt), [The Update Framework](https://github.com/theupdateframework/specification/blob/master/tuf-spec.md)  , and others:"
+#, no-wrap
+msgid ""
+"The security architecture is based on integrating models proven by\n"
+"[Debian](https://wiki.debian.org/SecureApt) and [The Update\n"
+"Framework](https://github.com/theupdateframework/specification/blob/master/tuf-spec.md)\n"
+" into what the Android OS already provides.  The way F-Droid operates is greatly inspired by de facto security model of how reputable GNU/Linux distros like Debian, Fedora, Ubuntu, etc. operate.  There is a big emphasis on operating in the public and making everything publicly available. We include source tarballs and build logs when we publish binaries.  These are archived as long as possible, for retroactive review.  And all of this is mirrored in many places across the internet by many different parties.\n"
 msgstr ""
 
 #. type: Bullet: '-   '
@@ -9015,6 +9759,21 @@ msgstr ""
 
 #. type: Bullet: '-   '
 #: _docs/Security_Model.md
+msgid "As of [_index-v2_](https://gitlab.com/fdroid/fdroidserver/-/merge_requests/1092), files from the repo are verified based on SHA-256, including icons, screenshots, etc."
+msgstr ""
+
+#. type: Bullet: '-   '
+#: _docs/Security_Model.md
+msgid "_index-v2_ uses any algorithm supported by [_apksigner_](https://gitlab.com/fdroid/fdroidserver/-/merge_requests/1134) and [_android-23_](https://developer.android.com/reference/java/security/Signature) and newer, and relies on OpenJDK's and Google's maintenance of the currently valid signing algorithms.  When _index-v2_ was launched, the signature algorithm in use was `SHA256withRSA` and the digest algorithm was `SHA-256`.  _index-v1_ is signed by `SHA1withRSA`.  As of this writing, SHA1 are still considered strong against [second pre-image attacks](https://crypto.stackexchange.com/a/48291), which is what is relevant for index JARs."
+msgstr ""
+
+#. type: Bullet: '-   '
+#: _docs/Security_Model.md
+msgid "Production signing is handled by [reproducible builds](https://tests.reproducible-builds.org/debian/rb-pkg/unstable/amd64/android-platform-tools-apksig.html) of _apksigner_ from Debian."
+msgstr ""
+
+#. type: Bullet: '-   '
+#: _docs/Security_Model.md
 msgid "signed metadata includes hashes of [the app](https://gitlab.com/fdroid/fdroidserver/blob/0.6.0/fdroidserver/update.py#L460) and its [signing key](https://gitlab.com/fdroid/fdroidserver/blob/0.6.0/fdroidserver/update.py#L558)"
 msgstr ""
 
@@ -9040,7 +9799,7 @@ msgstr ""
 
 #. type: Bullet: '-   '
 #: _docs/Security_Model.md
-msgid "[client-side HTTP “etag” cache check](https://gitlab.com/fdroid/fdroidclient/issues/562)  so the ETag cannot be abused to track users"
+msgid "[client-side HTTP ETag cache check](https://gitlab.com/fdroid/fdroidclient/issues/562)  so the ETag cannot be abused to track users"
 msgstr ""
 
 #. type: Bullet: '-   '
@@ -9071,6 +9830,47 @@ msgstr ""
 #. type: Plain text
 #: _docs/Security_Model.md
 msgid "The security model of the [Build Server Setup](../Build_Server_Setup)  and the [Signing Process](../Signing_Process) are documented separately."
+msgstr ""
+
+#. type: Title ##
+#: _docs/Security_Model.md
+#, no-wrap
+msgid "App signing"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/Security_Model.md
+msgid "Apps can be distributed using the [developer's own](../Reproducible_Builds) signatures when the builds are fully reproducible."
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/Security_Model.md
+msgid "By default, the \"publish\" server will generate and manage a signing key for each individual app.  These signing keys are only shared between apps when specifically configured to do so using the [_keyaliases_](https://gitlab.com/fdroid/fdroidserver/-/blob/886394c9a4909/examples/config.yml#L156) mechanism in _config.yml_."
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/Security_Model.md
+msgid "All apps are signed by [the key devoted to that app](https://gitlab.com/fdroid/fdroidserver/-/blob/2.1.2/fdroidserver/publish.py#L420) unless the upstream [specifically](https://gitlab.com/fdroid/fdroiddata/-/merge_requests/10240) requests multiple apps be signed by the same key, and the _fdroiddata_ maintainers approve it."
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/Security_Model.md
+msgid "For _f-droid.org_, all app signing is done on a dedicated, air-gapped, offline machine."
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/Security_Model.md
+msgid "At any time, the developer's own signatures may be added their app(s) in _f-droid.org_ once reproducible builds have been achieved.  Additionally, releases signed by the _f-droid.org_ key will continue to be shipped."
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/Security_Model.md
+msgid "In the official F-Droid client app, the developer's own signature is the default for fresh installs."
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/Security_Model.md
+msgid "We encourage app developers and maintainers to think about whether they want to use a special Application ID for the app when published in _f-droid.org_ to avoid conflicts with other versions.  One common pattern is to add `.fdroid` to the end of the Application ID via a Gradle Build Flavor."
 msgstr ""
 
 #. type: Title ##
@@ -9124,7 +9924,7 @@ msgstr ""
 msgid "website is fully functional when JavaScript is disabled in the browser, eliminating all possibility of XSS attacks"
 msgstr ""
 
-#. type: Title ###
+#. type: Title ##
 #: _docs/Security_Model.md
 #, fuzzy, no-wrap
 msgid "F-Droid as built-in app store"
@@ -9140,7 +9940,7 @@ msgstr ""
 msgid "On top of this, F-Droid makes it as easy as possible to [build it into](https://gitlab.com/fdroid/privileged-extension/#how-do-i-build-it-into-my-rom)  ROM projects.  It is already included in [CalyxOS](https://calyxos.org/), [Replicant](https://www.replicant.us/), [LineageOS for microG](https://lineage.microg.org/) and [Fairphone Open](https://code.fairphone.com/projects/fp-osos/)."
 msgstr ""
 
-#. type: Title ###
+#. type: Title ##
 #: _docs/Security_Model.md
 #, no-wrap
 msgid "Protecting against malicious contributor-generated data"
@@ -9170,6 +9970,36 @@ msgstr ""
 #. type: Title ##
 #: _docs/Security_Model.md
 #, no-wrap
+msgid "HTTPS/TLS configuration"
+msgstr ""
+
+#. type: Plain text
+#: _docs/Security_Model.md
+#, no-wrap
+msgid "F-Droid has a long history of supporting all Android devices that are still running, that means maintaining compatibility as long as possible.  Towards that end, as long as users running current Android versions are not put at risk, old TLS configurations are still supported.  This is why we leave TLSv1.0 and TLSv1.1 enabled on our websites.   We believe there is no added risk for people who keep their software updated. And a device running Android 1.6 should be able to install an old version of F-Droid, and have a working app store.\n"
+msgstr ""
+
+#. type: Plain text
+#: _docs/Security_Model.md
+msgid "Some security scanners will flag this site because TLSv1.1 and TLSv1.0 are still supported.  More importantly, this site supports TLSv1.3 and TLSv1.2, both of which offer downgrade protections.  On top of that, the latest browsers and F-Droid clients entirely disable TLSv1.1 and TLSv1.0, making it impossible to force those devices to use those vulnerable TLS versions.  So the only connections using old TLS versions actually needs those old versions to function.  If you are on a device that still needs to use TLS 1.0 or 1.1, then there are already so many well known security vulnerabilities that this one is not particularly interesting."
+msgstr ""
+
+#. type: Plain text
+#: _docs/Security_Model.md
+msgid "If you would like to test whether your browser still supports TLS 1.0 or 1.1, click on the links below and see if they give you an error message."
+msgstr ""
+
+#. type: Plain text
+#: _docs/Security_Model.md
+#, no-wrap
+msgid ""
+"    https://tls-v1-0.badssl.com:1010/\n"
+"    https://tls-v1-1.badssl.com:1011/\n"
+msgstr ""
+
+#. type: Title ##
+#: _docs/Security_Model.md
+#, no-wrap
 msgid "Security Audits"
 msgstr ""
 
@@ -9188,7 +10018,12 @@ msgstr ""
 msgid "The second \"Bazaar 2\" project funded by Open Tech Fund included an [external public audit]({{ site.baseurl }}/2018/09/04/second-security-audit-results.html)  from [Radically Open Security](https://radicallyopensecurity.com/)"
 msgstr ""
 
-#. type: YAML Front Matter: title
+#. type: Bullet: '4. '
+#: _docs/Security_Model.md
+msgid "The NLnet-funded projects \"Tracking the Trackers\" and \"The Search for Ethical Apps\" provided an [audit]({{ site.baseurl }}{% post_url 2022-12-22-third-audit-results %}) performed by [Radically Open Security](https://radicallyopensecurity.com/)"
+msgstr ""
+
+#. type: Yaml Front Matter Hash Value: title
 #: _docs/Setup_an_F-Droid_App_Repo.md
 #, no-wrap
 msgid "Setup an F-Droid App Repo"
@@ -9242,12 +10077,12 @@ msgstr ""
 
 #. type: Bullet: '7.  '
 #: _docs/Setup_an_F-Droid_App_Repo.md
-msgid "To ease creation of metadata files, run `fdroid update` with the `-c` option. It will create ’skeleton’ metadata files that are missing, and you can then just edit them and fill in the details."
+msgid "To ease creation of metadata files, run `fdroid update` with the `-c` option. It will create 'skeleton' metadata files that are missing, and you can then just edit them and fill in the details."
 msgstr ""
 
 #. type: Bullet: '8.  '
 #: _docs/Setup_an_F-Droid_App_Repo.md
-msgid "Then, if you’ve changed things, run `fdroid update` again."
+msgid "Then, if you've changed things, run `fdroid update` again."
 msgstr ""
 
 #. type: Bullet: '9.  '
@@ -9409,7 +10244,7 @@ msgstr ""
 msgid "Now edit _config.yml_ to set `serverwebroot`, it is in the form of a standard SCP file destination. Then `fdroid deploy` will do the publishing via rsync over ssh. So both computers will have to have ssh and rsync installed and setup. You can also use your own existing signing key rather than the one generated by `fdroid init`, just edit `repo_keyalias`, `keystore`, `keystorepass`, `keypass`, and `keydname` in _~/fdroid/config.yml_."
 msgstr ""
 
-#. type: YAML Front Matter: title
+#. type: Yaml Front Matter Hash Value: title
 #: _docs/Signing_Process.md
 #, no-wrap
 msgid "Signing Process"
@@ -9461,7 +10296,7 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/Signing_Process.md
-msgid "In the above, replace _my.keystore_ with the name of the keystore file to be created, and ’repokey’ with a name to identify the repo index key by.  You’ll be asked for a password for the keystore, AND a password for the key. They shouldn’t be the same. In between, you’ll be asked for some identifying details which will go in the certificate."
+msgid "In the above, replace _my.keystore_ with the name of the keystore file to be created, and 'repokey' with a name to identify the repo index key by.  You'll be asked for a password for the keystore, AND a password for the key. They shouldn't be the same. In between, you'll be asked for some identifying details which will go in the certificate."
 msgstr ""
 
 #. type: Plain text
@@ -9533,15 +10368,30 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/Signing_Process.md
-msgid "For information on how to configure an F-Droid repo to use an HSM, see the \"smartcard\" sections of _examples/config.yml_, specifically `keystore` and `smartcardoptions`.  Most likely, [OpenSC](https://github.com/OpenSC/OpenSC) will need to be set up as a PKCS11 provider for Java."
+msgid "For information on how to configure an F-Droid repo to use an HSM, see the \"smartcard\" sections of _examples/config.yml_, specifically `keystore` and `smartcardoptions`.  Most likely, [OpenSC](https://github.com/OpenSC/OpenSC) will need to be set up as a PKCS11 provider for Java.  [_hsmwiz_](https://github.com/johndoe31415/hsmwiz) is a simpler way to work with smart card HSMs like the Nitrokey HSM.  Both OpenSC and _hsmwiz_ are available in Debian."
 msgstr ""
 
 #. type: Plain text
 #: _docs/Signing_Process.md
-msgid "For more in-depth information, see: * _fdroidserver_ example config file: [examples/config.yml](https://gitlab.com/fdroid/fdroidserver/-/blob/2.1a0/examples/config.yml#L125)  * [Publishing an F-Droid Repo using a Hardware Security Module]({{ site.baseurl }}/{% post_url 2020-10-05-ntrokey-signing %})  * [Security in a thumb drive: the promise and pain of hardware security modules, take one!](https://guardianproject.info/2014/03/28/security-in-a-thumb-drive-the-promise-and-pain-of-hardware-security-modules-take-one/)"
+msgid "For more in-depth information, see:"
 msgstr ""
 
-#. type: YAML Front Matter: title
+#. type: Bullet: '* '
+#: _docs/Signing_Process.md
+msgid "_fdroidserver_ example config file: [examples/config.yml](https://gitlab.com/fdroid/fdroidserver/-/blob/2.1a0/examples/config.yml#L125)"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/Signing_Process.md
+msgid "[Publishing an F-Droid Repo using a Hardware Security Module]({{ site.baseurl }}/{% post_url 2020-10-05-ntrokey-signing %})"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/Signing_Process.md
+msgid "[Security in a thumb drive: the promise and pain of hardware security modules, take one!](https://guardianproject.info/2014/03/28/security-in-a-thumb-drive-the-promise-and-pain-of-hardware-security-modules-take-one/)"
+msgstr ""
+
+#. type: Yaml Front Matter Hash Value: title
 #: _docs/Submitting_to_F-Droid_Quick_Start_Guide.md
 #, no-wrap
 msgid "Submitting to F-Droid Quick Start Guide"
@@ -9809,7 +10659,7 @@ msgstr ""
 msgid "You can [get help with F-Droid](../../about/#contact) via IRC, Matrix, XMPP, e-mail and some other channels."
 msgstr ""
 
-#. type: YAML Front Matter: title
+#. type: Yaml Front Matter Hash Value: title
 #: _docs/Take-Down_Requests.md
 #, no-wrap
 msgid "Take-Down Requests"
@@ -9869,7 +10719,7 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/Take-Down_Requests.md
-msgid "You can submit take-down requests [by starting a new issue on our issue tracker](https://gitlab.com/fdroid/fdroiddata/-/issues/new).  (This requires gitlab.com account.)"
+msgid "You can submit take-down requests [by starting a new issue on our issue tracker](https://gitlab.com/fdroid/fdroiddata/-/issues/new).  (This requires a gitlab.com account.)"
 msgstr ""
 
 #. type: Plain text
@@ -9879,7 +10729,7 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/Take-Down_Requests.md
-msgid "Take-down requests can not be confidential.  By submitting a take-down request you automatically grant us permission to publish your entire request on our web-sites and or issue trackers. We need this because all of our processes are worked on in public and for keeping accountable to our users."
+msgid "Take-down requests can not be confidential.  By submitting a take-down request you automatically grant us permission to publish your entire request on our web-sites and our issue trackers. We need this because all of our processes are worked on in public and for keeping accountable to our users."
 msgstr ""
 
 #. type: Title ##
@@ -9904,7 +10754,7 @@ msgstr ""
 msgid "Third party repositories are not under our control what so ever. If you think a 3rd party repository is violating your rights you will have to get in contact with their respective operators. Procedures described here apply exclusively to f-droid.org."
 msgstr ""
 
-#. type: YAML Front Matter: title
+#. type: Yaml Front Matter Hash Value: title
 #: _docs/Translation_and_Localization.md
 #, no-wrap
 msgid "Translation and Localization"
@@ -10032,7 +10882,7 @@ msgstr ""
 msgid "There are cases where having English as the fallback language is not helpful.  For example, much of the world would prefer to fall back to Chinese, Spanish, or Russian instead of English.  On Android 6.0 and older, F-Droid provides a \"Languages\" setting inside the app so that users can switch F-Droid to a different language.  Note that this might not handle localized format properly, just the language. Android 7.0 fixed this by allowing users to specify a list of language+country \"locales\", ordered by importance to the user."
 msgstr ""
 
-#. type: YAML Front Matter: title
+#. type: Yaml Front Matter Hash Value: title
 #: _docs/Update_Processing.md
 #, no-wrap
 msgid "Update Processing"
@@ -10066,7 +10916,7 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/Update_Processing.md
-msgid "Note that this only updates the metadata such that we know what the current published/recommended version is. It doesn’t make that version available in the repository - for that, see the next section."
+msgid "Note that this only updates the metadata such that we know what the current published/recommended version is. It doesn't make that version available in the repository - for that, see the next section."
 msgstr ""
 
 #. type: Title ###
@@ -10077,7 +10927,7 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/Update_Processing.md
-msgid "Adding updates (i.e. new versions of applications already included in the repository) happens in two ways. The simple case is applications where the APK files are binaries, retrieved from a developer’s published build. In this case, all that’s required is to place the new binary in the _Repo_ directory, and the next run of `fdroid update` will pick it up."
+msgid "Adding updates (i.e. new versions of applications already included in the repository) happens in two ways. The simple case is applications where the APK files are binaries, retrieved from a developer's published build. In this case, all that's required is to place the new binary in the _Repo_ directory, and the next run of `fdroid update` will pick it up."
 msgstr ""
 
 #. type: Plain text
@@ -10090,7 +10940,7 @@ msgstr ""
 msgid "For processing multiple updates in the metadata at once, it can be useful to run `fdroid update --interactive`. This will check all the applications in the repository, and where updates are required you will be prompted to \\[E\\]dit the metadata, \\[I\\]gnore the update, or \\[Q\\]uit altogether."
 msgstr ""
 
-#. type: YAML Front Matter: title
+#. type: Yaml Front Matter Hash Value: title
 #: _docs/Verification_Server.md
 #, no-wrap
 msgid "Verification Server"
@@ -10138,12 +10988,14 @@ msgstr ""
 msgid "Then you can find more on the process by reading [Build Server Setup](../Build_Server_Setup). You can also see the Continuous Integration scripts for this process to see how the whole thing can work:"
 msgstr ""
 
-#. type: Plain text
+#. type: Bullet: '* '
 #: _docs/Verification_Server.md
-msgid "- <https://gitlab.com/fdroid/fdroidserver/blob/master/jenkins-build-makebuildserver> - <https://jenkins.debian.net/job/reproducible_setup_fdroid_build_environment_profitbricks7/>"
-msgstr ""
+#, fuzzy
+#| msgid "<https://gitlab.com/fdroid/android-sdk-transparency-log/-/raw/master/checksums.json>"
+msgid "<https://gitlab.com/fdroid/fdroidserver/blob/master/jenkins-build-makebuildserver>"
+msgstr "<https://gitlab.com/fdroid/android-sdk-transparency-log/-/raw/master/checksums.json>"
 
-#. type: YAML Front Matter: title
+#. type: Yaml Front Matter Hash Value: title
 #: _docs/Whitelabel_Builds.md
 #, no-wrap
 msgid "Whitelabel Builds"

@@ -9,7 +9,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2023-03-09 17:37+0100\n"
+"POT-Creation-Date: 2023-04-20 09:55+0200\n"
 "PO-Revision-Date: 2023-03-19 08:39+0000\n"
 "Last-Translator: ssantos <ssantos@web.de>\n"
 "Language-Team: Portuguese <https://hosted.weblate.org/projects/f-droid/website-docs/pt/>\n"
@@ -40,7 +40,7 @@ msgstr "Isto é suportado a partir do F-Droid versão 0.103 e *fdroidserver* ver
 #: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
 #: _docs/Build_Server_Setup.md _docs/FAQ_-_App_Developers.md
 #: _docs/FAQ_-_Client.md _docs/FAQ_-_General.md
-#: _docs/Installing_the_Server_and_Repo_Tools.md
+#: _docs/Installing_the_Server_and_Repo_Tools.md _docs/Security_Model.md
 #: _docs/Setup_an_F-Droid_App_Repo.md
 #, no-wrap
 msgid ""
@@ -3035,6 +3035,39 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
+#, fuzzy, no-wrap
+#| msgid "`init: xxxx`<a name=\"build_init\"></a>\n"
+msgid "`binary: URL`<a name=\"build_binary\"></a>\n"
+msgstr "`init: xxxx`<a name=\"build_init\"></a>\n"
+
+#. type: Plain text
+#: _docs/Build_Metadata_Reference.md
+#, fuzzy, no-wrap
+#| msgid "The location of binaries used in verification process."
+msgid ":   The location of a binary used in verification process for this build.\n"
+msgstr "O local de binários usado no processo de verificação."
+
+#. type: Plain text
+#: _docs/Build_Metadata_Reference.md
+#, fuzzy, no-wrap
+#| msgid "If specified, F-Droid will verify the output APK file of a build against the one specified. You can use %v and %c to point to the version name and version code of the current build. To verify the F-Droid client itself you could use: `Binaries: https://f-droid.org/repo/org.fdroid.fdroid_%c.apk`"
+msgid ""
+"    If specified, F-Droid will verify the output APK file of a build against\n"
+"    the one specified. You can use %v and %c to point to the version name\n"
+"    and version code of the current build. To verify the F-Droid client\n"
+"    itself you could use:\n"
+"    `binary: https://f-droid.org/repo/org.fdroid.fdroid_%c.apk`\n"
+msgstr "Se especificado, o F-Droid irá verificar o ficheiro de saída de uma compilação contra o especificado. Pode usar %v e %c para apontar o nome da versão e o código da versão da compilação atual. Para verificar o cliente F-Droid pode usar: `Binaries: https://f-droid.org/repo/org.fdroid.fdroid_%c.apk`"
+
+#. type: Plain text
+#: _docs/Build_Metadata_Reference.md
+#, fuzzy, no-wrap
+#| msgid "F-Droid will use upstream binaries if the verification succeeded."
+msgid "    F-Droid will use the upstream binary if the verification succeeded.\n"
+msgstr "O F-Droid usará binários upstream se a verificação for bem-sucedida."
+
+#. type: Plain text
+#: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid "`rm: <path1>[,<path2>,...]`<a name=\"build_rm\"></a>\n"
 msgstr "`rm: <caminho1>[,<caminho2>,...]`<a name=\"build_rm\"></a>\n"
@@ -5472,7 +5505,7 @@ msgstr "Publiquei uma nova versão. Porque não está no repositório?"
 #: _docs/FAQ_-_App_Developers.md
 #, fuzzy
 #| msgid "When we detect a new release, it may take a few days to make it into the repository as the build process runs only once a day. Before the build has completed, the wiki page for your app will list it in [:Category:Apps to Update](https://f-droid.org/wiki/page/:Category:Apps_to_Update). As long as the text under *Versions* stating \"The current (recommended) version is *xxx* (version code *yyy*)\" shows the version numbers corresponding to your latest release, we detected it and the APK should be available soon. Just give it some time."
-msgid "When we detect a new release, it may take a few days to make it into the repository as the build process runs only once a day. Before the build has completed, the monitor page for your app will list it in [F-Droid Monitor - Need updating](https://monitor.f-droid.org/builds/needsupdate). As long as the text under *Versions* stating \"The current (recommended) version is *xxx* (version code *yyy*)\" shows the version numbers corresponding to your latest release, we detected it and the APK should be available soon. Just give it some time."
+msgid "When we detect a new release, it may take a few days to make it into the repository as the build process [has several steps](https://gitlab.com/fdroid/wiki/-/wikis/FAQ#how-long-does-it-take-for-my-app-to-show-up-on-website-and-client) and runs only once a day. Before the build has completed, the monitor page for your app will list it in [F-Droid Monitor - Need updating](https://monitor.f-droid.org/builds/needsupdate). As long as the text under *Versions* stating \"The current (recommended) version is *xxx* (version code *yyy*)\" shows the version numbers corresponding to your latest release, we detected it and the APK should be available soon. Just give it some time."
 msgstr "Quando detectamos uma nova versão, pode levar alguns dias para por-la no repositório, já que o processo de compilação é executado apenas uma vez por dia. Antes da compilação estar concluída, a página wiki do seu app será listada em [:Category:Aplicações para atualizar](https://f-droid.org/wiki/page/:Category:Apps_to_Update). Desde que o texto sob *Versões* a indicar \"A versão atual (recomendada) é *xxx* (código de versão *yyyy*)\" mostra os números de versão correspondentes à sua última versão, nós detectamo-la e a APK deve estar disponível em breve. Basta dar-lhe algum tempo."
 
 #. type: Plain text
@@ -5516,7 +5549,9 @@ msgstr "Podem APKs assinados pela minha chave ser incluídos?"
 
 #. type: Plain text
 #: _docs/FAQ_-_App_Developers.md
-msgid "Only APKs built by F-Droid are included in the official F-Droid repo. We can try to reproduce your APK, as mentioned above, but if this fails (or e.g. when you want to distribute an app with closed-source components or API keys etc.), you can put any APK in your own \"[F-Droid binary repo](../Setup_an_F-Droid_App_Repo)\", and people can add your repo to their F-Droid client in order to get your APKs."
+#, fuzzy
+#| msgid "Only APKs built by F-Droid are included in the official F-Droid repo. We can try to reproduce your APK, as mentioned above, but if this fails (or e.g. when you want to distribute an app with closed-source components or API keys etc.), you can put any APK in your own \"[F-Droid binary repo](../Setup_an_F-Droid_App_Repo)\", and people can add your repo to their F-Droid client in order to get your APKs."
+msgid "Yes, for [reproducible builds](../Reproducible_Builds) F-Droid will include your signed APKs in the official F-Droid repo after they were verified as being so. If this fails (e.g. your app can't be built in a reproducible way or when you want to distribute an app with closed-source components or API keys etc.), you can put any APK in your own \"[F-Droid binary repo](../Setup_an_F-Droid_App_Repo)\", and people can add your repo to their F-Droid client in order to get your APKs."
 msgstr "Somente APKs construídos pelo F-Droid são incluídos no repositório oficial do F-Droid. Podemos tentar reproduzir o seu APK, como mencionado acima, mas se isso falhar (ou, por exemplo, quando quiser distribuir uma app com componentes de código fechado ou chaves de API etc.), pode oferecer qualquer APK no seu próprio \"[repo F-Droid binário](../Setup_an_F-Droid_App_Repo)\" e as pessoas podem adicionar o seu repo ao cliente F-Droid para obter os seus APKs."
 
 #. type: Title ###
@@ -5807,14 +5842,22 @@ msgstr "Aqui estão as permissões que o F-Droid atualmente usa:"
 
 #. type: Plain text
 #: _docs/FAQ_-_Client.md
-msgid "Download apps from f-droid.org and other app repositories"
+#, no-wrap
+msgid "<dl><dt>\n"
+msgstr ""
+
+#. type: Plain text
+#: _docs/FAQ_-_Client.md
+#, fuzzy
+#| msgid "Download apps from f-droid.org and other app repositories"
+msgid "Download apps from f-droid.org and other app repositories:"
 msgstr "Descarregar apps de f-droid.org e de outros repositórios de app"
 
 #. type: Plain text
 #: _docs/FAQ_-_Client.md
 #, no-wrap
-msgid "    android.permission.INTERNET\n"
-msgstr "    android.permission.INTERNET\n"
+msgid "</dt><dd><tt><a href=\"https://developer.android.com/reference/android/Manifest.permission.html#INTERNET\" target=\"_blank\">android.permission.INTERNET</a></tt></dd><dt>\n"
+msgstr ""
 
 #. type: Plain text
 #: _docs/FAQ_-_Client.md
@@ -5824,88 +5867,116 @@ msgstr "Iniciar-se automaticamente no momento do boot para que possa receber act
 #. type: Plain text
 #: _docs/FAQ_-_Client.md
 #, no-wrap
-msgid "    android.permission.RECEIVE_BOOT_COMPLETED\n"
-msgstr "    android.permission.RECEIVE_BOOT_COMPLETED\n"
+msgid "</dt><dd><tt><a href=\"https://developer.android.com/reference/android/Manifest.permission.html#RECEIVE_BOOT_COMPLETED\" target=\"_blank\">android.permission.RECEIVE_BOOT_COMPLETED</a></tt></dd><dt>\n"
+msgstr ""
 
 #. type: Plain text
 #: _docs/FAQ_-_Client.md
-msgid "For app swap to get current WiFi status, and prompt the user to enable WiFi when swapping:"
+#, fuzzy
+#| msgid "For app swap to get current WiFi status, and prompt the user to enable WiFi when swapping:"
+msgid "For the nearby service to get current Wi-Fi status, and prompt the user to enable Wi-Fi when swapping:"
 msgstr "Para a troca de apps obter o estado atual do WiFi e pedir ao utilizador por ativar o WiFi ao trocar:"
 
 #. type: Plain text
 #: _docs/FAQ_-_Client.md
 #, no-wrap
 msgid ""
-"    android.permission.ACCESS_NETWORK_STATE\n"
-"    android.permission.ACCESS_WIFI_STATE\n"
-"    android.permission.CHANGE_WIFI_MULTICAST_STATE\n"
-"    android.permission.CHANGE_NETWORK_STATE\n"
-"    android.permission.CHANGE_WIFI_STATE\n"
+"</dt><dd><tt><a href=\"https://developer.android.com/reference/android/Manifest.permission.html#ACCESS_COARSE_LOCATION\" target=\"_blank\">android.permission.ACCESS_COARSE_LOCATION</a></tt><br/>\n"
+"<tt><a href=\"https://developer.android.com/reference/android/Manifest.permission.html#ACCESS_NETWORK_STATE\" target=\"_blank\">android.permission.ACCESS_NETWORK_STATE</a></tt><br/>\n"
+"<tt><a href=\"https://developer.android.com/reference/android/Manifest.permission.html#CHANGE_NETWORK_STATE\" target=\"_blank\">android.permission.CHANGE_NETWORK_STATE</a></tt><br/>\n"
+"<tt><a href=\"https://developer.android.com/reference/android/Manifest.permission.html#CHANGE_WIFI_MULTICAST_STATE\" target=\"_blank\">android.permission.CHANGE_WIFI_MULTICAST_STATE</a></tt><br/>\n"
+"<tt><a href=\"https://developer.android.com/reference/android/Manifest.permission.html#CHANGE_WIFI_STATE\" target=\"_blank\">android.permission.CHANGE_WIFI_STATE</a></tt><br/>\n"
+"<tt><a href=\"https://developer.android.com/reference/android/Manifest.permission.html#ACCESS_WIFI_STATE\" target=\"_blank\">android.permission.ACCESS_WIFI_STATE</a></tt></dd><dt>\n"
 msgstr ""
-"    android.permission.ACCESS_NETWORK_STATE\n"
-"    android.permission.ACCESS_WIFI_STATE\n"
-"    android.permission.CHANGE_WIFI_MULTICAST_STATE\n"
-"    android.permission.CHANGE_NETWORK_STATE\n"
-"    android.permission.CHANGE_WIFI_STATE\n"
 
 #. type: Plain text
 #: _docs/FAQ_-_Client.md
-msgid "For app swap to see the Bluetooth state, and prompt the user to enable Bluetooth when swapping:"
+#, fuzzy
+#| msgid "For app swap to see the Bluetooth state, and prompt the user to enable Bluetooth when swapping:"
+msgid "For the nearby service to see the Bluetooth state, and prompt the user to enable Bluetooth when swapping:"
 msgstr "Para a troca de apps para ver o estado do Bluetooth e pedir ao utilizador por ativar o Bluetooth ao trocar:"
 
 #. type: Plain text
 #: _docs/FAQ_-_Client.md
 #, no-wrap
 msgid ""
-"    android.permission.BLUETOOTH\n"
-"    android.permission.BLUETOOTH_ADMIN\n"
+"</dt><dd><tt><a href=\"https://developer.android.com/reference/android/Manifest.permission.html#BLUETOOTH\" target=\"_blank\">android.permission.BLUETOOTH</a></tt><br/>\n"
+"<tt><a href=\"https://developer.android.com/reference/android/Manifest.permission.html#BLUETOOTH_ADMIN\" target=\"_blank\">android.permission.BLUETOOTH_ADMIN</a></tt><br/>\n"
+"<tt><a href=\"https://developer.android.com/reference/android/Manifest.permission.html#BLUETOOTH_CONNECT\" target=\"_blank\">android.permission.BLUETOOTH_CONNECT</a></tt></dd><dt>\n"
 msgstr ""
-"    android.permission.BLUETOOTH\n"
-"    android.permission.BLUETOOTH_ADMIN\n"
 
 #. type: Plain text
 #: _docs/FAQ_-_Client.md
-msgid "Read app repository URLs via NFC, for both swap and regular app repositories:"
-msgstr "Ler URLs de repositório de apps via NFC, tanto para repositórios de apps de troca como regulares:"
+msgid "Exchange repository information via the Repo Details screen, and to optionally assist nearby swap connection:"
+msgstr ""
 
 #. type: Plain text
 #: _docs/FAQ_-_Client.md
 #, no-wrap
-msgid "    android.permission.NFC\n"
-msgstr "    android.permission.NFC\n"
+msgid "</dt><dd><tt><a href=\"https://developer.android.com/reference/android/Manifest.permission.html#NFC\" target=\"_blank\">android.permission.NFC</a></tt></dd><dt>\n"
+msgstr ""
 
 #. type: Plain text
 #: _docs/FAQ_-_Client.md
-msgid "Temporarily store downloaded files on the SD Card:"
+msgid "Allow the user to enable Wi-Fi AP Hotspot mode from the nearby service:"
+msgstr ""
+
+#. type: Plain text
+#: _docs/FAQ_-_Client.md
+#, no-wrap
+msgid "</dt><dd><tt><a href=\"https://developer.android.com/reference/android/Manifest.permission.html#WRITE_SETTINGS\" target=\"_blank\">android.permission.WRITE_SETTINGS</a></tt></dd><dt>\n"
+msgstr ""
+
+#. type: Plain text
+#: _docs/FAQ_-_Client.md
+msgid "Allows the nearby service to stay running as long as the user leaves it running:"
+msgstr ""
+
+#. type: Plain text
+#: _docs/FAQ_-_Client.md
+#, no-wrap
+msgid "</dt><dd><tt><a href=\"https://developer.android.com/reference/android/Manifest.permission.html#WAKE_LOCK\" target=\"_blank\">android.permission.WAKE_LOCK</a></tt></dd><dt>\n"
+msgstr ""
+
+#. type: Plain text
+#: _docs/FAQ_-_Client.md
+msgid "Find and use compatible repositories and mirrors on external storage:"
+msgstr ""
+
+#. type: Plain text
+#: _docs/FAQ_-_Client.md
+#, no-wrap
+msgid "</dt><dd><tt><a href=\"https://developer.android.com/reference/android/Manifest.permission.html#READ_EXTERNAL_STORAGE\" target=\"_blank\">android.permission.READ_EXTERNAL_STORAGE</a></tt></dd><dt>\n"
+msgstr ""
+
+#. type: Plain text
+#: _docs/FAQ_-_Client.md
+msgid "Detect when a USB thumb drive has been inserted, so it can be scanned to find compatible repositories and mirrors:"
+msgstr ""
+
+#. type: Plain text
+#: _docs/FAQ_-_Client.md
+#, no-wrap
+msgid "</dt><dd><tt><a href=\"https://developer.android.com/reference/android/Manifest.permission.html#USB_PERMISSION\" target=\"_blank\">android.permission.USB_PERMISSION</a></tt></dd><dt>\n"
+msgstr ""
+
+#. type: Plain text
+#: _docs/FAQ_-_Client.md
+#, fuzzy
+#| msgid "Temporarily store downloaded files on the SD Card:"
+msgid "Temporarily store and use downloaded files on external storage:"
 msgstr "Temporariamente armazenar os ficheiros descarregados no cartão SD:"
 
 #. type: Plain text
 #: _docs/FAQ_-_Client.md
 #, no-wrap
-msgid "    android.permission.WRITE_EXTERNAL_STORAGE\n"
-msgstr "    android.permission.WRITE_EXTERNAL_STORAGE\n"
+msgid "</dt><dd><tt><a href=\"https://developer.android.com/reference/android/Manifest.permission.html#WRITE_EXTERNAL_STORAGE\" target=\"_blank\">android.permission.WRITE_EXTERNAL_STORAGE</a></tt></dd></dl>\n"
+msgstr ""
 
 #. type: Plain text
 #: _docs/FAQ_-_Client.md
-msgid "Use F-Droid Privileged Extension which gives F-Droid system &lt;code&gt;priv-app access. This improves security by allowing automatic app updates as well as letting the user leave the \"Unknown Sources\" setting off:"
-msgstr "Usar o F-Droid Privileged Extension que dá acesso ao sistema F-Droid &lt;code&gt;priv-app. Isso melhora a segurança ao permitir atualizações automáticas de apps, bem como permitir que o utilizador deixe a configuração \"Fontes Desconhecidas\" desativada:"
-
-#. type: Plain text
-#: _docs/FAQ_-_Client.md
-#, no-wrap
-msgid "    org.fdroid.fdroid.privileged.USE_SERVICE\n"
-msgstr "    org.fdroid.fdroid.privileged.USE_SERVICE\n"
-
-#. type: Plain text
-#: _docs/FAQ_-_Client.md
-msgid "Use root access to install F-Droid Privileged Extension as a system &lt;code&gt;priv-app:"
-msgstr "Usar o acesso root para instalar o F-Droid Privileged Extension como um sistema &lt;code&gt;priv-app:"
-
-#. type: Plain text
-#: _docs/FAQ_-_Client.md
-#, no-wrap
-msgid "    android.permission.ACCESS_SUPERUSER\n"
-msgstr "    android.permission.ACCESS_SUPERUSER\n"
+msgid "F-Droid [Privileged Extension](https://gitlab.com/fdroid/privileged-extension/) is also relevant here, although it falls outside of the Android system of declaring permissions. Privileged Extension is installed with [`priv-app`](https://source.android.com/docs/core/permissions/perms-allowlist) permissions, which gives F-Droid system-level access privileges to Android. The use of Privileged Extension improves security by allowing automatic app updates as well as letting the user leave the \"Unknown Sources\" setting off. Privileged Extension is designed on the principals of \"least privilege\", so that elevated powers are only granted where they are absolutely needed, and those powers are limited as much as possible.  In order to make it possible outside reviewers to confirm that, we have made Privileged Extension as simple and small as possible."
+msgstr ""
 
 #. type: Title ###
 #: _docs/FAQ_-_Client.md
@@ -7603,12 +7674,16 @@ msgstr "Rust/Rustup. Atualmente descarregamo-los do site do programador com os s
 
 #. type: Bullet: '-   '
 #: _docs/Inclusion_Policy.md
-msgid "Golang & Nodejs. They are available in Debian but we are using a very old Debian version so recent versions are not available. Currently we download them from the developer website."
+#, fuzzy
+#| msgid "Golang & Nodejs. They are available in Debian but we are using a very old Debian version so recent versions are not available. Currently we download them from the developer website."
+msgid "Golang & Nodejs. They are available in Debian but recent versions are not available immediately. Currently we might download them from the developer website."
 msgstr "Golang & Nodejs. Estão disponíveis no Debian, mas usamos uma versão muito antiga do Debian, por isso versões recentes não estão disponíveis. Atualmente, descarregamo-las do site do programador."
 
 #. type: Bullet: '-   '
 #: _docs/Inclusion_Policy.md
-msgid "Some other compilers/build tools not packaged in our very old Debian version."
+#, fuzzy
+#| msgid "Some other compilers/build tools not packaged in our very old Debian version."
+msgid "Some other compilers/build tools not packaged in our Debian version."
 msgstr "Alguns outros compiladores/ferramentas de compilação não empacotados na nossa versão Debian muito antiga."
 
 #. type: Plain text
@@ -9984,11 +10059,50 @@ msgstr "Em diferentes máquinas de construção, diferentes caminhos do NDK e pa
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
+#, fuzzy
+#| msgid ""
+#| "One possible solution is adding `-Wl,--build-id=none` to link options which\n"
+#| "will disable _build-id_ generation completely. For `ndk-build`, `LOCAL_LDFLAGS += -Wl,--build-id=none`\n"
+#| "can be added to `Android.mk` files. For CMake versions since 3.13, `add_link_options(LINKER:--build-id=none)`\n"
+#| "can be added to `CMakeLists.txt` globally. For CMake versions before 3.13,\n"
+#| "`target_link_libraries(<target> -Wl,--build-id=none)` can be used instead for\n"
+#| "every target.\n"
+msgid "One possible solution is adding `-Wl,--build-id=none` to link options which will disable _build-id_ generation completely. For `ndk-build`, `LOCAL_LDFLAGS += -Wl,--build-id=none` can be added to `Android.mk` files or to `build.gradle/.kts`:"
+msgstr ""
+"Uma solução possível é adicionar `-Wl,--build-id=none` às opções de link que\n"
+"desativará completamente a geração _build-id_. Para `ndk-build`, `LOCAL_LDFLAGS += -Wl,--build-id=none`\n"
+"pode ser adicionado a ficheiros `Android.mk`. Para versões do CMake a partir do 3.13, `add_link_options(LINKER:--build-id=none)`\n"
+"pode ser adicionado a `CMakeLists.txt` globalmente. Para versões do CMake antes da 3.13,\n"
+"`target_link_libraries(<target> -Wl,--build-id=none)` pode ser usado em vez disso para\n"
+"cada alvo.\n"
+
+#. type: Fenced code block
+#: _docs/Reproducible_Builds.md
 #, no-wrap
 msgid ""
-"One possible solution is adding `-Wl,--build-id=none` to link options which\n"
-"will disable _build-id_ generation completely. For `ndk-build`, `LOCAL_LDFLAGS += -Wl,--build-id=none`\n"
-"can be added to `Android.mk` files. For CMake versions since 3.13, `add_link_options(LINKER:--build-id=none)`\n"
+"android {\n"
+"    defaultConfig {\n"
+"        externalNativeBuild {\n"
+"            ndkBuild {\n"
+"                arguments \"LOCAL_LDFLAGS += -Wl,--build-id=none\"\n"
+"            }\n"
+"        }\n"
+"    }\n"
+"}\n"
+msgstr ""
+
+#. type: Plain text
+#: _docs/Reproducible_Builds.md
+#, fuzzy, no-wrap
+#| msgid ""
+#| "One possible solution is adding `-Wl,--build-id=none` to link options which\n"
+#| "will disable _build-id_ generation completely. For `ndk-build`, `LOCAL_LDFLAGS += -Wl,--build-id=none`\n"
+#| "can be added to `Android.mk` files. For CMake versions since 3.13, `add_link_options(LINKER:--build-id=none)`\n"
+#| "can be added to `CMakeLists.txt` globally. For CMake versions before 3.13,\n"
+#| "`target_link_libraries(<target> -Wl,--build-id=none)` can be used instead for\n"
+#| "every target.\n"
+msgid ""
+"For CMake versions since 3.13, `add_link_options(LINKER:--build-id=none)`\n"
 "can be added to `CMakeLists.txt` globally. For CMake versions before 3.13,\n"
 "`target_link_libraries(<target> -Wl,--build-id=none)` can be used instead for\n"
 "every target.\n"
@@ -10601,8 +10715,17 @@ msgstr "Os repositórios do F-Droid geralmente mantêm o suporte para versões a
 
 #. type: Bullet: '* '
 #: _docs/Running_on_old_Android_versions.md
-msgid "Android 5.1 (API 22) and up: [F-Droid (latest stable)]({{ site.fdroid_apk_download_url }})"
+#, fuzzy
+#| msgid "Android 5.1 (API 22) and up: [F-Droid (latest stable)]({{ site.fdroid_apk_download_url }})"
+msgid "Android 6.0 (API 23) and up: [F-Droid (latest stable)]({{ site.fdroid_apk_download_url }})"
 msgstr "Android 5.1 (API 22) e superior: [F-Droid (mais recente estável)]({{ site.fdroid_apk_download_url }})"
+
+#. type: Bullet: '* '
+#: _docs/Running_on_old_Android_versions.md
+#, fuzzy
+#| msgid "Android 4.0 (API 14) to Android 5.0 (API 21): [F-Droid 1.12.1](https://f-droid.org/archive/org.fdroid.fdroid_1012051.apk)"
+msgid "Android 5.1 (API 22): [F-Droid 1.15.6](https://f-droid.org/archive/org.fdroid.fdroid_1015056.apk)"
+msgstr "Android 4.0 (API 14) até Android 5.0 (API 21): [F-Droid 1.12.1](https://f-droid.org/archive/org.fdroid.fdroid_1012051.apk)"
 
 #. type: Bullet: '* '
 #: _docs/Running_on_old_Android_versions.md
@@ -10716,7 +10839,9 @@ msgstr "suporte fácil do Tor via configurações"
 
 #. type: Bullet: '-   '
 #: _docs/Security_Model.md
-msgid "[client-side HTTP “etag” cache check](https://gitlab.com/fdroid/fdroidclient/issues/562)  so the ETag cannot be abused to track users"
+#, fuzzy
+#| msgid "[client-side HTTP “etag” cache check](https://gitlab.com/fdroid/fdroidclient/issues/562)  so the ETag cannot be abused to track users"
+msgid "[client-side HTTP ETag cache check](https://gitlab.com/fdroid/fdroidclient/issues/562)  so the ETag cannot be abused to track users"
 msgstr "[verificação de cache HTTP \"etag\" do lado do cliente](https://gitlab.com/fdroid/fdroidclient/issues/562) para que o ETag não possa ser abusado para rastrear utilizadores"
 
 #. type: Bullet: '-   '
@@ -10842,7 +10967,7 @@ msgstr "o site é [gerado estaticamente](https://gitlab.com/fdroid/fdroid-websit
 msgid "website is fully functional when JavaScript is disabled in the browser, eliminating all possibility of XSS attacks"
 msgstr "site web é totalmente funcional quando o JavaScript está desativado no navegador, a eliminar todas as possibilidades de ataques XSS"
 
-#. type: Title ###
+#. type: Title ##
 #: _docs/Security_Model.md
 #, no-wrap
 msgid "F-Droid as built-in app store"
@@ -10858,7 +10983,7 @@ msgstr "Quando o F-Droid está integrado no Android, seja como parte da ROM ou f
 msgid "On top of this, F-Droid makes it as easy as possible to [build it into](https://gitlab.com/fdroid/privileged-extension/#how-do-i-build-it-into-my-rom)  ROM projects.  It is already included in [CalyxOS](https://calyxos.org/), [Replicant](https://www.replicant.us/), [LineageOS for microG](https://lineage.microg.org/) and [Fairphone Open](https://code.fairphone.com/projects/fp-osos/)."
 msgstr "Além disso, o F-Droid torna o mais fácil possível [construí-lo em](https://gitlab.com/fdroid/privileged-extension/#how-do-i-build-it-into-my-rom) projetos de ROM.  Já está incluído em [CalyxOS](https://calyxos.org/), [Replicant](https://www.replicant.us/), [LineageOS para microG](https://lineage.microg.org/) e [Fairphone Open](https://code.fairphone.com/projects/fp-osos/)."
 
-#. type: Title ###
+#. type: Title ##
 #: _docs/Security_Model.md
 #, no-wrap
 msgid "Protecting against malicious contributor-generated data"
@@ -10894,6 +11019,36 @@ msgstr ""
 "* Repomaker filtra os textos através de \n"
 "[_bleach_](https://github.com/mozilla/bleach) da Mozilla e tem uma boa\n"
 "[Política de Segurança de Conteúdo HTTP](https://observatory.mozilla.org/analyze.html?host).\n"
+
+#. type: Title ##
+#: _docs/Security_Model.md
+#, no-wrap
+msgid "HTTPS/TLS configuration"
+msgstr ""
+
+#. type: Plain text
+#: _docs/Security_Model.md
+#, no-wrap
+msgid "F-Droid has a long history of supporting all Android devices that are still running, that means maintaining compatibility as long as possible.  Towards that end, as long as users running current Android versions are not put at risk, old TLS configurations are still supported.  This is why we leave TLSv1.0 and TLSv1.1 enabled on our websites.   We believe there is no added risk for people who keep their software updated. And a device running Android 1.6 should be able to install an old version of F-Droid, and have a working app store.\n"
+msgstr ""
+
+#. type: Plain text
+#: _docs/Security_Model.md
+msgid "Some security scanners will flag this site because TLSv1.1 and TLSv1.0 are still supported.  More importantly, this site supports TLSv1.3 and TLSv1.2, both of which offer downgrade protections.  On top of that, the latest browsers and F-Droid clients entirely disable TLSv1.1 and TLSv1.0, making it impossible to force those devices to use those vulnerable TLS versions.  So the only connections using old TLS versions actually needs those old versions to function.  If you are on a device that still needs to use TLS 1.0 or 1.1, then there are already so many well known security vulnerabilities that this one is not particularly interesting."
+msgstr ""
+
+#. type: Plain text
+#: _docs/Security_Model.md
+msgid "If you would like to test whether your browser still supports TLS 1.0 or 1.1, click on the links below and see if they give you an error message."
+msgstr ""
+
+#. type: Plain text
+#: _docs/Security_Model.md
+#, no-wrap
+msgid ""
+"    https://tls-v1-0.badssl.com:1010/\n"
+"    https://tls-v1-1.badssl.com:1011/\n"
+msgstr ""
 
 #. type: Title ##
 #: _docs/Security_Model.md
@@ -12171,6 +12326,61 @@ msgstr "Preferências"
 #: _docs/Whitelabel_Builds.md
 msgid "For a custom build that enables Automatic Updates by default, override _app/src/main/res/xml/preferences.xml_. You can customize the preferences and their default values in _app/src/mycompany/res/xml/preferences.xml_. The fully automatic update requires [Privileged Extension](https://gitlab.com/fdroid/privileged-extension). With regular access, the updates will only automatically download. The user still needs to click install on each one."
 msgstr "Para uma compilação personalizada que ativa Atualizações Automáticas por padrão, substitua _app/src/main/res/xml/preferences.xml_. Pode personalizar as preferências e os seus valores padrões em _app/src/minhaempresa/res/xml/preferences.xml_. A atualização totalmente automática requer [Extensões Privilegiadas](https://gitlab.com/fdroid/privileged-extension). Com acesso comum, as atualizações serão descarregar automaticamente. O utilizador ainda precisa clicar em instalar em cada um deles."
+
+#, no-wrap
+#~ msgid "    android.permission.INTERNET\n"
+#~ msgstr "    android.permission.INTERNET\n"
+
+#, no-wrap
+#~ msgid "    android.permission.RECEIVE_BOOT_COMPLETED\n"
+#~ msgstr "    android.permission.RECEIVE_BOOT_COMPLETED\n"
+
+#, no-wrap
+#~ msgid ""
+#~ "    android.permission.ACCESS_NETWORK_STATE\n"
+#~ "    android.permission.ACCESS_WIFI_STATE\n"
+#~ "    android.permission.CHANGE_WIFI_MULTICAST_STATE\n"
+#~ "    android.permission.CHANGE_NETWORK_STATE\n"
+#~ "    android.permission.CHANGE_WIFI_STATE\n"
+#~ msgstr ""
+#~ "    android.permission.ACCESS_NETWORK_STATE\n"
+#~ "    android.permission.ACCESS_WIFI_STATE\n"
+#~ "    android.permission.CHANGE_WIFI_MULTICAST_STATE\n"
+#~ "    android.permission.CHANGE_NETWORK_STATE\n"
+#~ "    android.permission.CHANGE_WIFI_STATE\n"
+
+#, no-wrap
+#~ msgid ""
+#~ "    android.permission.BLUETOOTH\n"
+#~ "    android.permission.BLUETOOTH_ADMIN\n"
+#~ msgstr ""
+#~ "    android.permission.BLUETOOTH\n"
+#~ "    android.permission.BLUETOOTH_ADMIN\n"
+
+#~ msgid "Read app repository URLs via NFC, for both swap and regular app repositories:"
+#~ msgstr "Ler URLs de repositório de apps via NFC, tanto para repositórios de apps de troca como regulares:"
+
+#, no-wrap
+#~ msgid "    android.permission.NFC\n"
+#~ msgstr "    android.permission.NFC\n"
+
+#, no-wrap
+#~ msgid "    android.permission.WRITE_EXTERNAL_STORAGE\n"
+#~ msgstr "    android.permission.WRITE_EXTERNAL_STORAGE\n"
+
+#~ msgid "Use F-Droid Privileged Extension which gives F-Droid system &lt;code&gt;priv-app access. This improves security by allowing automatic app updates as well as letting the user leave the \"Unknown Sources\" setting off:"
+#~ msgstr "Usar o F-Droid Privileged Extension que dá acesso ao sistema F-Droid &lt;code&gt;priv-app. Isso melhora a segurança ao permitir atualizações automáticas de apps, bem como permitir que o utilizador deixe a configuração \"Fontes Desconhecidas\" desativada:"
+
+#, no-wrap
+#~ msgid "    org.fdroid.fdroid.privileged.USE_SERVICE\n"
+#~ msgstr "    org.fdroid.fdroid.privileged.USE_SERVICE\n"
+
+#~ msgid "Use root access to install F-Droid Privileged Extension as a system &lt;code&gt;priv-app:"
+#~ msgstr "Usar o acesso root para instalar o F-Droid Privileged Extension como um sistema &lt;code&gt;priv-app:"
+
+#, no-wrap
+#~ msgid "    android.permission.ACCESS_SUPERUSER\n"
+#~ msgstr "    android.permission.ACCESS_SUPERUSER\n"
 
 #~ msgid "The software should not download additional executable binary files (e.g. Non-Free addons, auto-updates, etc)."
 #~ msgstr "O software não deve descarregar ficheiros binários executáveis adicionais (por exemplo, addons não livres, atualizações automáticas, etc)."
