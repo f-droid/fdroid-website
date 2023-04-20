@@ -14,7 +14,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
 "POT-Creation-Date: 2023-03-20 17:26+0100\n"
-"PO-Revision-Date: 2023-03-22 09:30+0000\n"
+"PO-Revision-Date: 2023-04-09 21:48+0000\n"
 "Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/f-droid/website-posts/uk/>\n"
 "Language: uk\n"
@@ -22,7 +22,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 4.16.2-dev\n"
+"X-Generator: Weblate 4.17-dev\n"
 
 #. type: Yaml Front Matter Hash Value: title
 #: _posts/2017-02-20-f-droid-supports-apk-expansion-files-aka-obb.md
@@ -427,7 +427,7 @@ msgstr "Чудово бачити, як вільні технології над
 #: _posts/2017-07-03-cuba.md
 #, no-wrap
 msgid "<hr />\n"
-msgstr "<hr />\n"
+msgstr "<hr>\n"
 
 #. type: Plain text
 #: _posts/2017-07-03-cuba.md
@@ -18966,201 +18966,182 @@ msgstr "Збільшення розміру репозиторію"
 #. type: Plain text
 #: _posts/2023-03-01-new-repo-format-faster-smaller-updates.md
 msgid "As more and more apps make their way into F-Droid, the official repository index that includes all apps and their metadata also keeps growing.  Currently, the size of the compressed index is `8 MB` which is `33 MB` uncompressed.  When updating the repository index, each F-Droid client app has to download and process those `8MB` again and again.  This problematic trend became apparent [a long time ago](https://gitlab.com/fdroid/fdroidclient/-/issues/649)."
-msgstr ""
+msgstr "Оскільки все більше і більше застосунків потрапляють до F-Droid, офіційний індекс репозиторію, який включає всі застосунки та їх метадані, також продовжує зростати.  Наразі розмір стисненого індексу становить `8 МБ`, а нестисненого — `33 МБ`.  Під час оновлення індексу репозиторію кожен клієнтський застосунок F-Droid має завантажувати й обробляти ці `8 МБ` знову і знову.  Ця проблемна тенденція стала очевидною [вже давно](https://gitlab.com/fdroid/fdroidclient/-/issues/649)."
 
 #. type: Title ##
 #: _posts/2023-03-01-new-repo-format-faster-smaller-updates.md
 #, no-wrap
 msgid "Updating only what has changed"
-msgstr ""
+msgstr "Оновлення лише того, що змінилося"
 
 #. type: Plain text
 #: _posts/2023-03-01-new-repo-format-faster-smaller-updates.md
 msgid "Our repository index is in JSON format and we decided to make use of [RFC 7396 JSON Merge Patch](https://datatracker.ietf.org/doc/html/rfc7396)  to create much smaller JSON files that only contain the changes since your F-Droid app last updated.  Technically, this works by downloading a new [`entry.json`](https://f-droid.org/repo/entry.json) file instead of the full index.  This entry file points to the full index in case the app had never updated before and needs all app metadata anyway.  But the entry also contains pointers to various smaller *diff*erence files.  The app automatically picks the right diff and only downloads that much smaller file instead of the full index.  This not only saves bandwidth, it also makes updating the index much faster as only the minimum amount of data needs to be downloaded, processed and stored.  As of writing, the latest diff is `80 KB` compressed which is `241 KB` uncompressed which is only `1%` of the full index.  Version `1.16` of the official F-Droid client app for Android supports this new repository format."
-msgstr ""
+msgstr "Наш індекс репозиторію у форматі JSON, і ми вирішили скористатися [RFC 7396 JSON Merge Patch](https://datatracker.ietf.org/doc/html/rfc7396) для створення значно менших файлів JSON, які містять лише зміни з часу останнього оновлення вашого застосунку F-Droid.  Технічно це працює шляхом завантаження нового [`entry.json`](https://f-droid.org/repo/entry.json) файлу замість повного індексу.  Цей файл запису вказує на повний індекс на випадок, якщо застосунок ніколи раніше не оновлювався і йому все одно потрібні всі метадані застосунку.  Але запис також містить вказівники на різні менші файли *diff*.  Застосунок автоматично вибирає потрібний diff і завантажує лише цей значно менший файл замість повного індексу.  Це не лише заощаджує трафік, але й пришвидшує оновлення індексу, оскільки потрібно завантажувати, обробляти й зберігати лише мінімальну кількість даних.  На момент написання статті остання різниця становить `80 КБ` стиснена і `241 КБ` нестиснена — лише `1%` від повного індексу.  Версія `1.16` офіційного клієнтського застосунку F-Droid для Android підтримує цей новий формат репозиторію."
 
 #. type: Title ##
 #: _posts/2023-03-01-new-repo-format-faster-smaller-updates.md
-#, fuzzy, no-wrap
-#| msgid "Other minor improvements and bug fixes"
+#, no-wrap
 msgid "Other improvements"
-msgstr "Інші незначні поліпшення і виправлення помилок"
+msgstr "Інші вдосконалення"
 
 #. type: Plain text
 #: _posts/2023-03-01-new-repo-format-faster-smaller-updates.md
 msgid "The new version has a large number of radical changes under the hood.  For example, the entire database had to be replaced to support the new difference based repository format.  We also used the opportunity to improve various bit and pieces along the way:"
-msgstr ""
+msgstr "Нова версія має велику кількість радикальних змін під капотом.  Наприклад, довелося замінити всю базу даних для підтримки нового формату репозиторію на основі розбіжностей.  Ми також скористалися можливістю покращити різні дрібниці в процесі роботи:"
 
 #. type: Bullet: '  * '
 #: _posts/2023-03-01-new-repo-format-faster-smaller-updates.md
 msgid "improved mirror support: all files (e.g. images) now get loaded from mirrors reducing the load on the main server"
-msgstr ""
+msgstr "поліпшено підтримку дзеркал: усі файли (наприклад, зображення) тепер завантажуються з дзеркал, що знижує навантаження на основний сервер"
 
 #. type: Bullet: '  * '
 #: _posts/2023-03-01-new-repo-format-faster-smaller-updates.md
 msgid "better support for low RAM devices, because the index now gets streamed into the DB instead of loading all of it into memory"
-msgstr ""
+msgstr "поліпшено підтримку пристроїв з низьким обсягом оперативної пам'яті, оскільки індекс тепер передається в БД потоком, а не завантажується повністю в пам'ять"
 
 #. type: Bullet: '  * '
 #: _posts/2023-03-01-new-repo-format-faster-smaller-updates.md
 msgid "hash verification: The SHA256 hash of *all* files is now part of the repository metadata and gets verified while downloading"
-msgstr ""
+msgstr "перевірка хешу: SHA256 хеш *усіх файлів* став частиною метаданих репозиторію і перевіряється під час завантаження"
 
 #. type: Bullet: '  * '
 #: _posts/2023-03-01-new-repo-format-faster-smaller-updates.md
 msgid "stronger digest algorithm for repository signing: We now use SHA256 instead of SHA1 for the index signature"
-msgstr ""
+msgstr "потужніший алгоритм дайджесту для підпису репозиторію: Відтепер ми використовуємо SHA256 замість SHA1 для підпису індексів"
 
 #. type: Bullet: '  * '
 #: _posts/2023-03-01-new-repo-format-faster-smaller-updates.md
-#, fuzzy
-#| msgid "Add support for mirroring repositories onto both IPFS and Filecoin."
 msgid "support for downloading repository files via IPFS"
-msgstr "Додати підтримку дзеркалювання репозиторіїв у IPFS і Filecoin."
+msgstr "підтримка завантаження файлів репозиторію через IPFS"
 
 #. type: Bullet: '  * '
 #: _posts/2023-03-01-new-repo-format-faster-smaller-updates.md
 msgid "many bug fixes that came out of modernizing ancient code"
-msgstr ""
+msgstr "багато виправлень помилок, які з'явилися в результаті модернізації давнього коду"
 
 #. type: Plain text
 #: _posts/2023-03-01-new-repo-format-faster-smaller-updates.md
 msgid "The new version went through [a series of alpha releases]({{ site.baseurl }}{% post_url 2022-11-30-upcoming-alpha-release-of-f-droid-client %})  with extended testing to make sure no severe issues make it into the stable release.  It is now considered ready for general use."
-msgstr ""
+msgstr "Нова версія пройшла [серію альфа-випусків]({{ site.baseurl }}{% post_url 2022-11-30-upcoming-alpha-release-of-f-droid-client %}) з розширеним тестуванням, щоб переконатися, що жодні серйозні проблеми не потрапить до стабільного випуску.  Наразі він вважається готовим для загального користування."
 
 #. type: Title ##
 #: _posts/2023-03-01-new-repo-format-faster-smaller-updates.md
 #, no-wrap
 msgid "Information for repository and client maintainers"
-msgstr ""
+msgstr "Інформація для супровідників репозиторію та клієнтів"
 
 #. type: Plain text
 #: _posts/2023-03-01-new-repo-format-faster-smaller-updates.md
 msgid "Owners of third-party F-Droid repositories can enable the new format by upgrading to the latest version of [fdroidserver](https://gitlab.com/fdroid/fdroidserver) which will automatically publish the new format in addition to the old ones which we keep around to support older client apps."
-msgstr ""
+msgstr "Власники сторонніх репозиторіїв F-Droid можуть увімкнути новий формат, оновивши їх до найновішої версії [fdroidserver](https://gitlab.com/fdroid/fdroidserver), яка автоматично опублікує новий формат на додачу до старих, які ми зберігаємо для підтримки старих клієнтських застосунків."
 
 #. type: Plain text
 #: _posts/2023-03-01-new-repo-format-faster-smaller-updates.md
 msgid "Developers of third-party F-Droid clients are encouraged to adopt the new format either with their own implementations or by making use of the [new libraries](https://gitlab.com/fdroid/fdroidclient/-/tree/master/libs#f-droid-libraries)  we are publishing to make using this technology as easy as possible and to share as much code as possible between different F-Droid implementations."
-msgstr ""
+msgstr "Розробники сторонніх клієнтів F-Droid заохочуються прийняти новий формат або у своїх власних реалізаціях, або використовуючи [нові бібліотеки](https://gitlab.com/fdroid/fdroidclient/-/tree/master/libs#f-droid-libraries), які ми публікуємо, щоб зробити користування цією технологією якомога простішим і обмінюватися якомога більшою кількістю коду між різними реалізаціями F-Droid."
 
 #. type: Yaml Front Matter Hash Value: title
 #: _posts/2023-03-08-vpn-trust-requires-free-software.md
 #, no-wrap
 msgid "VPN trust requires free software"
-msgstr ""
+msgstr "Для довіри до VPN, вона повинна бути вільним програмним забезпеченням"
 
 #. type: Plain text
 #: _posts/2023-03-08-vpn-trust-requires-free-software.md
 msgid "VPNs have become popular and are often touted as a tool to improve privacy.  While this is sometimes true, it is important to tread carefully when choosing an VPN.  A good place to start is looking at which VPN providers meet the [requirements](https://guardianproject.info/2023/02/28/steps-towards-trusted-vpns/) for running a trustworthy VPN service.  A trustworthy VPNs must be free software, that is non-negotiable.  First, inspection is required in order trust software.  Having the source is the only way to see all the things the software is doing.  F-Droid reviews the apps that we ship on this website, which lets us spot potential issues and anti-features.  And we are happy to hear that reputable VPN providers make the effort to get their apps on f-droid.org to build trust with their users.  From there, [Reproducible Builds]({{ site.baseurl }}/docs/Reproducible_Builds) provides a strong link between the source code and the actual app binaries that run on the device."
-msgstr ""
+msgstr "VPN стали популярними та часто рекламуються як інструмент для поліпшення приватності.  Хоча іноді це дійсно так, важливо бути обережним обираючи VPN.  Для початку варто звернути увагу на те, які провайдери VPN відповідають [вимогам](https://guardianproject.info/2023/02/28/steps-towards-trusted-vpns/) надання надійних послуг VPN.  Надійні VPN повинні бути вільним програмним забезпеченням, що не підлягає обговоренню.  По-перше, щоб довіряти програмному забезпеченню, необхідна перевірка.  Наявність програмного коду — це єдиний спосіб побачити все, що робить програма.  F-Droid перевіряє застосунки, які ми постачаємо на цьому вебсайті, що дає нам змогу виявляти потенційні проблеми та небажані функції.  І ми раді чути, що авторитетні VPN-провайдери докладають зусиль, щоб розмістити свої застосунки на f-droid.org, щоб завоювати довіру користувачів.  А [відтворюваність збірок]({{ site.baseurl }}/docs/Reproducible_Builds) забезпечує надійний зв'язок між програмним кодом і фактичними двійковими файлами застосунку, які запускаються на пристрої."
 
 #. type: Plain text
 #: _posts/2023-03-08-vpn-trust-requires-free-software.md
 msgid "The best VPNs are the ones that use free software both for the client app, and for running the services.  Indeed all OpenVPN, Shadowsocks, and WireGuard VPNs are based on free software since those standards are defined by free software projects.  F-Droid looks into this as part of the reviews, and marks apps with relevant Anti-Features, like the [Non-Free Network Services](https://f-droid.org/docs/Anti-Features/#NonFreeNet) mark if the server side is not free software.  And there are a number of free software projects that make it a lot easier to setup and run a VPN or proxy services.  Here are some that are on f-droid.org:"
-msgstr ""
+msgstr "Найкращі VPN — це ті, що використовують вільне програмне забезпечення як для клієнтського застосунку, так і для запуску служб.  Дійсно, всі OpenVPN, Shadowsocks і WireGuard VPN засновані на вільному програмному забезпеченні, оскільки ці стандарти визначаються проєктами вільного програмного забезпечення.  F-Droid перевіряє це в рамках оглядів і позначає застосунки відповідними небажаними функціями, наприклад, позначкою [Невільні мережеві служби](https://f-droid.org/docs/Anti-Features/#NonFreeNet), якщо серверна частина не є вільним програмним забезпеченням.  Існує низка проєктів вільного програмного забезпечення, які значно спрощують налаштування і роботу VPN або проксі-служб.  Ось деякі з них на f-droid.org:"
 
 #. type: Bullet: '* '
 #: _posts/2023-03-08-vpn-trust-requires-free-software.md
 msgid "[Bitmask](https://f-droid.org/packages/se.leap.bitmaskclient/) is a generic client for the [LEAP](https://leap.se/) VPN setup which powers [Calyx VPN](https://f-droid.org/packages/org.calyxinstitute.vpn/), [Riseup VPN](https://f-droid.org/packages/se.leap.riseupvpn/), and more."
-msgstr ""
+msgstr "[Bitmask](https://f-droid.org/packages/se.leap.bitmaskclient/) — універсальний клієнт для [LEAP](https://leap.se/) VPN, на якому працюють [Calyx VPN](https://f-droid.org/packages/org.calyxinstitute.vpn/), [Riseup VPN](https://f-droid.org/packages/se.leap.riseupvpn/) та інші."
 
 #. type: Bullet: '* '
 #: _posts/2023-03-08-vpn-trust-requires-free-software.md
 msgid "[eduVPN](https://f-droid.org/packages/nl.eduvpn.app/) is a VPN client for [Let's Connect](https://www.letsconnect-vpn.org/) VPN setup which powers [eduVPN](https://www.eduvpn.org/)."
-msgstr ""
+msgstr "[eduVPN](https://f-droid.org/packages/nl.eduvpn.app/) — це VPN-клієнт для налаштування VPN [Let's Connect](https://www.letsconnect-vpn.org/), який забезпечує роботу [eduVPN](https://www.eduvpn.org/)."
 
 #. type: Bullet: '* '
 #: _posts/2023-03-08-vpn-trust-requires-free-software.md
-#, fuzzy
-#| msgid "**[OpenVPN for Android](https://f-droid.org/packages/de.blinkt.openvpn/)** was updated from 0.7.7 to 0.7.8"
 msgid "[OpenVPN for Android](https://f-droid.org/packages/de.blinkt.openvpn/) is a generic OpenVPN client for any VPN provider that offers it."
-msgstr "**[OpenVPN для Android](https://f-droid.org/packages/de.blinkt.openvpn/)** оновлено з 0.7.7 до 0.7.8"
+msgstr "[OpenVPN для Android](https://f-droid.org/packages/de.blinkt.openvpn/) — це універсальний клієнт OpenVPN для будь-якого VPN-провайдера, який його пропонує."
 
 #. type: Bullet: '* '
 #: _posts/2023-03-08-vpn-trust-requires-free-software.md
 msgid "[Outline](https://f-droid.org/packages/org.outline.android.client/) is an offering designed to let anyone run their own VPN based on Shadowsocks."
-msgstr ""
+msgstr "[Outline](https://f-droid.org/packages/org.outline.android.client/) — це пропозиція, яка пропонує будь-кому запустити власну VPN на основі Shadowsocks."
 
 #. type: Bullet: '* '
 #: _posts/2023-03-08-vpn-trust-requires-free-software.md
-#, fuzzy
-#| msgid "[WireGuard](https://f-droid.org/packages/com.wireguard.android/): Next generation secure VPN network tunnel."
 msgid "[WireGuard](https://f-droid.org/packages/com.wireguard.android/) is a generic [WireGuard](https://www.wireguard.com/) client for any provider that offers it."
-msgstr "[WireGuard](https://f-droid.org/packages/com.wireguard.android/): Безпечний мережевий тунель VPN наступного покоління."
+msgstr "[WireGuard](https://f-droid.org/packages/com.wireguard.android/) — загальний клієнт [WireGuard](https://www.wireguard.com/) для будь-якого провайдера, який його пропонує."
 
 #. type: Plain text
 #: _posts/2023-03-08-vpn-trust-requires-free-software.md
 msgid "So far, none of the VPN providers have taken the plunge into fully supporting reproducible builds. There is some progress: some of the releases of [WireGuard](https://verification.f-droid.org/com.wireguard.android.json), [Tailscale](https://verification.f-droid.org/com.tailscale.ipn.json), and [Mysterium VPN](https://verification.f-droid.org/network.mysterium.vpn.json) have been reproduced on our verification server.  But these apps are not setup for the full reproducible publishing setup, which confirms that the f-droid.org version matches the upstream developer's version exactly, then publishes with the upstream signature.  The F-Droid community is helping more and more apps achieve reproducible builds, which VPN app will be the first?"
-msgstr ""
+msgstr "Поки що жоден з VPN-провайдерів не взяв на себе зобов'язання повністю підтримувати відтворювані збірки. Є певний прогрес: деякі випуски [WireGuard](https://verification.f-droid.org/com.wireguard.android.json), [Tailscale](https://verification.f-droid.org/com.tailscale.ipn.json) і [Mysterium VPN](https://verification.f-droid.org/network.mysterium.vpn.json) були відтворені на нашому верифікаційному сервері.  Але ці застосунки не налаштовані на повну відтворювану публікацію, яка підтверджує, що версія f-droid.org точно відповідає основній версії розробника, а потім публікується з підписом основного розробника.  Спільнота F-Droid допомагає все більшій кількості застосунків досягти відтворюваності збірок, який VPN-застосунок стане першим?"
 
 #. type: Plain text
 #: _posts/2023-03-08-vpn-trust-requires-free-software.md
 msgid "There are also a number of apps that are dedicated to a given provider.  Although there are generic clients available, there are good reasons for a free software provider to ship a custom app.  First, it can make configuration dead simple.  Calyx VPN and Riseup VPN have no accounts at all, so just install the app, and turn on the VPN.  Second, it allows the provider to include multiple methods of connecting and automatically switch between them, depending on what works best.  We decide which apps to include based on what is best for the users.  A VPN client that offers no additional functionality and just serves as a rebrand of an existing client does not serve users well.  In order for an app from a specific provider to be included, it must provide real value to our users.  Here is a list of some related examples:"
-msgstr ""
+msgstr "Існує також низка застосунків, призначених для певного постачальника.  Хоча існують основні клієнти, є вагомі причини, чому постачальник вільного програмного забезпечення повинен надавати власний застосунок.  По-перше, це може зробити конфігурацію надзвичайно простою.  Calyx VPN і Riseup VPN взагалі не мають облікових записів, тому просто встановіть застосунок і ввімкніть VPN.  По-друге, це дозволяє провайдеру включати кілька методів з'єднання й автоматично перемикатися між ними, залежно від того, що працює найкраще.  Ми вирішуємо, які застосунки включити, виходячи з того, що краще для користувачів.  VPN-клієнт, який не пропонує ніякої додаткової функціональності і є лише ребрендингом наявного клієнта, не приносить користі користувачам.  Щоб застосунок від певного постачальника був включений, він повинен надавати справжню користь для наших користувачів.  Ось список деяких прикладів на цю тему:"
 
 #. type: Bullet: '* '
 #: _posts/2023-03-08-vpn-trust-requires-free-software.md
-#, fuzzy
-#| msgid "**[IPFS](https://f-droid.org/packages/threads.server/)**"
 msgid "[IVPN](https://f-droid.org/packages/net.ivpn.client/)"
-msgstr "**[IPFS](https://f-droid.org/packages/threads.server/)**"
+msgstr "[IVPN](https://f-droid.org/packages/net.ivpn.client/)"
 
 #. type: Bullet: '* '
 #: _posts/2023-03-08-vpn-trust-requires-free-software.md
-#, fuzzy
-#| msgid "**[atop](https://f-droid.org/packages/com.atop/)**"
 msgid "[Lavabit Encrypted Proxy](https://f-droid.org/packages/com.lavabit.pahoehoe/)"
-msgstr "**[atop](https://f-droid.org/packages/com.atop/)**"
+msgstr "[Lavabit Encrypted Proxy](https://f-droid.org/packages/com.lavabit.pahoehoe/)"
 
 #. type: Bullet: '* '
 #: _posts/2023-03-08-vpn-trust-requires-free-software.md
-#, fuzzy
-#| msgid "**[Salasana](https://f-droid.org/packages/net.xvello.salasana/)**"
 msgid "[Mullvad VPN](https://f-droid.org/packages/net.mullvad.mullvadvpn/)"
-msgstr "**[Salasana](https://f-droid.org/packages/net.xvello.salasana/)**"
+msgstr "[Mullvad VPN](https://f-droid.org/packages/net.mullvad.mullvadvpn/)"
 
 #. type: Bullet: '* '
 #: _posts/2023-03-08-vpn-trust-requires-free-software.md
-#, fuzzy
-#| msgid "**[Calyx VPN](https://f-droid.org/packages/org.calyxinstitute.vpn/)**"
 msgid "[Mysterium VPN](https://f-droid.org/packages/network.mysterium.vpn/)"
-msgstr "**[Calyx VPN](https://f-droid.org/packages/org.calyxinstitute.vpn/)**"
+msgstr "[Mysterium VPN](https://f-droid.org/packages/network.mysterium.vpn/)"
 
 #. type: Bullet: '* '
 #: _posts/2023-03-08-vpn-trust-requires-free-software.md
-#, fuzzy
-#| msgid "**[atop](https://f-droid.org/packages/com.atop/)**"
 msgid "[ProtonVPN](https://f-droid.org/packages/ch.protonvpn.android/)"
-msgstr "**[atop](https://f-droid.org/packages/com.atop/)**"
+msgstr "[ProtonVPN](https://f-droid.org/packages/ch.protonvpn.android/)"
 
 #. type: Bullet: '* '
 #: _posts/2023-03-08-vpn-trust-requires-free-software.md
-#, fuzzy
-#| msgid "**[Librem Mail](https://f-droid.org/packages/one.librem.mail/)**"
 msgid "[Purism Librem Tunnel](https://f-droid.org/packages/one.librem.tunnel/)"
-msgstr "**[Librem пошта](https://f-droid.org/packages/one.librem.mail/)**"
+msgstr "[Purism Librem Tunnel](https://f-droid.org/packages/one.librem.tunnel/)"
 
 #. type: Plain text
 #: _posts/2023-03-08-vpn-trust-requires-free-software.md
 msgid "We also get lots of direct messages asking us to include various proprietary VPN apps, or promote various VPN services for a fee.  That is of course a non-starter.  The first step is free software."
-msgstr ""
+msgstr "Ми також отримуємо багато особистих повідомлень з проханням включити різні пропрієтарні застосунки VPN або просувати різні служби VPN за певну плату.  Звісно, з цього не варто починати.  Перший крок — це вільне програмне забезпечення."
 
 #. type: Yaml Front Matter Hash Value: title
 #: _posts/2023-03-17-privacy-audit.md
 #, no-wrap
 msgid "Privacy Audit"
-msgstr ""
+msgstr "Перевірка приватності"
 
 #. type: Plain text
 #: _posts/2023-03-17-privacy-audit.md
 msgid "F-Droid is working to ensure that we can have truly private mobile devices free of surveillance capitalism and its ills.  Whenever possible, we develop clear technical solutions for building our infrastructure that are private by default.  We aim to provide privacy protections that do not require you to trust the operators of the service in order to know that it is not tracking you.  So we are constantly working to find ways to reduce information leakage in our systems.  If the client app leaks very little metadata, there is nothing that the servers can do to get that information."
-msgstr ""
+msgstr "F-Droid працює над тим, щоб ми могли мати справді приватні мобільні пристрої, вільні від спостережного капіталізму та його хвороб.  Коли це можливо, ми розробляємо чіткі технічні рішення для побудови нашої інфраструктури, які усталено приватні.  Ми прагнемо забезпечити захист приватності, який не вимагає від вас довіри до операторів сервісу, щоб знати, що він не відстежує вас.  Тому ми постійно працюємо над тим, щоб знайти способи знизити витік інформації в наших системах.  Якщо клієнтський застосунок отримує дуже мало метаданих, сервери нічого не можуть зробити, щоб отримати цю інформацію."
 
 #. type: Bullet: '* '
 #: _posts/2023-03-17-privacy-audit.md
 msgid "Other app stores are built around [accounts](TODO no user accounts) and gathering as much as possible about users.  F-Droid not only does not keep data on users, we also work to eliminate leaks of metadata to our systems, so that it is not even possible for it to be gathered on our infrastructure."
-msgstr ""
+msgstr "Інші магазини застосунків побудовані навколо [облікових записів](TODO no user accounts) і збирають якомога більше інформації про користувачів.  F-Droid не тільки не зберігає дані про користувачів, ми також працюємо над усуненням витоків метаданих до наших систем, щоб унеможливити їх збір на нашій інфраструктурі."
 
 #. type: Plain text
 #: _posts/2023-03-17-privacy-audit.md
@@ -19170,6 +19151,9 @@ msgid ""
 "publicly audited, and reproducibly built. That provides the highest possible\n"
 "assurance that your privacy is protected.\n"
 msgstr ""
+"* Наш клієнтський застосунок — вільне програмне забезпечення,\n"
+"відкрито перевірене та відтворюване. Це забезпечує найвищу можливу\n"
+"гарантію того, що ваша приватність захищена.\n"
 
 #. type: Plain text
 #: _posts/2023-03-17-privacy-audit.md
