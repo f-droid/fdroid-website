@@ -162,8 +162,8 @@ Some security scanners will flag this site because TLSv1.1 and TLSv1.0 are still
 
 If you would like to test whether your browser still supports TLS 1.0 or 1.1, click on the links below and see if they give you an error message.
 
-    https://tls-v1-0.badssl.com:1010/
-    https://tls-v1-1.badssl.com:1011/
+* <https://tls-v1-0.badssl.com:1010/>
+* <https://tls-v1-1.badssl.com:1011/>
 
 
 ## Security Audits
