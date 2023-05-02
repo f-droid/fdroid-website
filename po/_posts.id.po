@@ -9,7 +9,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2023-04-20 12:04+0200\n"
+"POT-Creation-Date: 2023-05-02 15:43+0200\n"
 "PO-Revision-Date: 2022-12-15 13:16+0000\n"
 "Last-Translator: Linerly <linerly@protonmail.com>\n"
 "Language-Team: Indonesian <https://hosted.weblate.org/projects/f-droid/website-posts/id/>\n"
@@ -18977,6 +18977,168 @@ msgstr ""
 #: _posts/2023-03-20-f-droid-board.md
 msgid "For more information about The Commons Conservancy, visit: https://commonsconservancy.org/"
 msgstr ""
+
+#. type: Yaml Front Matter Hash Value: title
+#: _posts/2023-05-02-three-client-libraries.md
+#, no-wrap
+msgid "How to use the F-Droid libraries, like CalyxOS"
+msgstr ""
+
+#. type: Plain text
+#: _posts/2023-05-02-three-client-libraries.md
+msgid "When we built the [next-generation F-Droid client]({{ site.baseurl }}{% post_url 2023-03-01-new-repo-format-faster-smaller-updates %}), we rewrote our code to fit into re-usable libraries, so other projects can make use of F-Droid technology with minimal hassle."
+msgstr ""
+
+#. type: Title ##
+#: _posts/2023-05-02-three-client-libraries.md
+#, no-wrap
+msgid "The libraries"
+msgstr ""
+
+#. type: Plain text
+#: _posts/2023-05-02-three-client-libraries.md
+msgid "So far, we have published three libraries.  Two of them are written in Kotlin multi-platform, so they can be used outside Android as well.  For example, you could use them to write a command line or even an iOS client."
+msgstr ""
+
+#. type: Plain text
+#: _posts/2023-05-02-three-client-libraries.md
+msgid "Check out [their README](https://gitlab.com/fdroid/fdroidclient/-/tree/master/libs#f-droid-libraries)  for how to include them in your project."
+msgstr ""
+
+#. type: Title ###
+#: _posts/2023-05-02-three-client-libraries.md
+#, no-wrap
+msgid "Download library"
+msgstr ""
+
+#. type: Plain text
+#: _posts/2023-05-02-three-client-libraries.md
+msgid "This library includes everything you need to download F-Droid repositories and the APKs and images included in them.  It handles resuming of downloads, repository mirrors and takes care of the special HTTP cases that an F-Droid client can encounter."
+msgstr ""
+
+#. type: Plain text
+#: _posts/2023-05-02-three-client-libraries.md
+msgid "The Android version of the library also takes care of rejecting TLS older than 1.2 as well as weak ciphers.  It prevents DNS leaks when using Tor as a proxy and uses a short TLS session timeout to prevent tracking and key re-use.  If you use Glide as an image loader, it also comes with a special `ModelLoader` to be used with Glide."
+msgstr ""
+
+#. type: Plain text
+#: _posts/2023-05-02-three-client-libraries.md
+msgid "Please see the [API docs](https://fdroid.gitlab.io/fdroidclient/libs/download/) for details.  Check [how F-Droid switched to the download library](https://gitlab.com/fdroid/fdroidclient/-/merge_requests/1083)  for an example."
+msgstr ""
+
+#. type: Title ###
+#: _posts/2023-05-02-three-client-libraries.md
+#, no-wrap
+msgid "Index library"
+msgstr ""
+
+#. type: Plain text
+#: _posts/2023-05-02-three-client-libraries.md
+msgid "The multi-platform index library gives you everything you need to handle F-Droid repository indexes.  Of course, there's a parser for reading and representing the indexes internally.  For version 1 indexes, there is also a creator which F-Droid uses to create its own nearby swap repositories.  Both versions have a signature verifier, so you can always make sure that the repository is properly signed before working with its data."
+msgstr ""
+
+#. type: Plain text
+#: _posts/2023-05-02-three-client-libraries.md
+msgid "Apart from these basics, the library also has many useful classes that help you to choose the best translation based on the user's locale, to check if an app is compatible with the current device, and to check if an app has an update available in the repository index.  There are classes for processing streams of index data, so you don't need to load the entire index into memory which can be an issue on devices with little RAM.  If you prefer to work only with the version 2 format internally, the library features an index converter which can convert version 1 format into version 2."
+msgstr ""
+
+#. type: Plain text
+#: _posts/2023-05-02-three-client-libraries.md
+msgid "F-Droid clients wishing to make use of version 2 delta updates, also find helpful classes for this, so they don't have to re-invent the wheel themselves."
+msgstr ""
+
+#. type: Plain text
+#: _posts/2023-05-02-three-client-libraries.md
+msgid "Please see the [API docs](https://fdroid.gitlab.io/fdroidclient/libs/index/) for details.  Check [how F-Droid switched to the index library](https://gitlab.com/fdroid/fdroidclient/-/merge_requests/1120)  for an example."
+msgstr ""
+
+#. type: Title ###
+#: _posts/2023-05-02-three-client-libraries.md
+#, no-wrap
+msgid "Database library"
+msgstr ""
+
+#. type: Plain text
+#: _posts/2023-05-02-three-client-libraries.md
+msgid "In case you need to persist F-Droid repository information in your Android app, this library is for you.  It stores F-Droid related information such as repositories, apps and their versions.  Then allows you to query and search for them.  Under the hood, it uses a Room database which in turn uses sqlite."
+msgstr ""
+
+#. type: Plain text
+#: _posts/2023-05-02-three-client-libraries.md
+msgid "Besides database related classes, this library currently also includes classes related to updating repositories, so that information fetched from the internet (using the downloader library)  can be streamed directly into the database."
+msgstr ""
+
+#. type: Plain text
+#: _posts/2023-05-02-three-client-libraries.md
+msgid "Please see the [API docs](https://fdroid.gitlab.io/fdroidclient/libs/database/) for details.  Check [how F-Droid switched to the database library](https://gitlab.com/fdroid/fdroidclient/-/merge_requests/1135)  for an example."
+msgstr ""
+
+#. type: Title ##
+#: _posts/2023-05-02-three-client-libraries.md
+#, no-wrap
+msgid "CalyxOS"
+msgstr ""
+
+#. type: Plain text
+#: _posts/2023-05-02-three-client-libraries.md
+msgid "The first known user of these new libraries is CalyxOS which is already using them in two of their apps.  Thanks to the libraries, they can focus their development effort on the apps themselves and don't need to re-implement the F-Droid related bits."
+msgstr ""
+
+#. type: Plain text
+#: _posts/2023-05-02-three-client-libraries.md
+msgid "The first app is used as part of their setup wizard that shows up after initial install.  It allows the user to install additional apps on an opt-in basis, so they don't need to ship as non-removable system apps.  The benefit for CalyxOS is that they can load these apps from an F-Droid repository in the internet without needing to ship APKs as part of their ROM keeping its size minimal."
+msgstr ""
+
+#. type: Plain text
+#: _posts/2023-05-02-three-client-libraries.md
+msgid "This is [their method](https://gitlab.com/CalyxOS/platform_external_calyx_lupin/-/blob/e78b4e/shared/src/main/java/org/calyxos/lupin/RepoHelper.kt#L83-88)  to get an index representation from a file, making use of the index library:"
+msgstr ""
+
+#. type: Fenced code block (kotlin)
+#: _posts/2023-05-02-three-client-libraries.md
+#, no-wrap
+msgid ""
+"fun getIndex(file: File): IndexV2 = file.inputStream().use { inputStream ->\n"
+"    IndexParser.parseV2(inputStream)\n"
+"}\n"
+msgstr ""
+
+#. type: Plain text
+#: _posts/2023-05-02-three-client-libraries.md
+msgid "The second app uses F-Droid to keep its own essential apps up to date.  With a minimal UI, its main purpose is to regularly check for updates and install them in the background, once available."
+msgstr ""
+
+#. type: Plain text
+#: _posts/2023-05-02-three-client-libraries.md
+msgid "The app makes use of the `UpdateChecker` of the index library to check if updates are available:"
+msgstr ""
+
+#. type: Fenced code block (kotlin)
+#: _posts/2023-05-02-three-client-libraries.md
+#, no-wrap
+msgid ""
+"private fun getUpdate(packageName: String, packageVersions: List<PackageVersionV2>): PackageVersionV2? {\n"
+"    val packageInfo = packageManager.getPackageInfo(packageName, GET_SIGNATURES)\n"
+"    return updateChecker.getUpdate(packageVersions, packageInfo)\n"
+"}\n"
+msgstr ""
+
+#. type: Plain text
+#: _posts/2023-05-02-three-client-libraries.md
+msgid "([Full code example](https://gitlab.com/CalyxOS/platform_external_calyx_lupin/-/blob/e78b4e/updater/src/main/java/org/calyxos/lupin/updater/UpdateManager.kt#L154-168))"
+msgstr ""
+
+#. type: Plain text
+#: _posts/2023-05-02-three-client-libraries.md
+msgid "[Both of these apps](https://gitlab.com/CalyxOS/platform_external_calyx_lupin/) don't need to persist any data, so they only use the download and the index library."
+msgstr ""
+
+#. type: Plain text
+#: _posts/2023-05-02-three-client-libraries.md
+#, fuzzy
+#| msgid "_This work was funded by the [FFDW-DVD grant]({{ site.baseurl }}{% post_url 2022-02-05-decentralizing-distribution %})_"
+msgid "_The library work was funded by the [FFDW-DVD grant]({{ site.baseurl }}{% post_url 2022-02-05-decentralizing-distribution %})_"
+msgstr "_Pekerjaan ini didanai oleh [anugerah FFDW-DVD]({{ site.baseurl }}{% post_url 2022-02-05-decentralizing-distribution %})_"
 
 #~ msgid "This also means that there will be breakage, so this alpha will probably be more unstable than previous alphas have been over the years.  We always appreciate testing, feedback, issues, and crash reports.  But if your F-Droid is customized in a way you would rather not reset, then you might want to sit this alpha testing round out.  If you have a spare device, test device, or work with Android emulators, we also are happy to have testing on our [nightly builds](https://gitlab.com/fdroid/fdroidclient-nightly).  Be aware: the nightly builds come from GitLab CI/CD, so not as secure a release process as the official releases.  It is possible to have both official and nightly installed at the same time.  The easiest way to get started with the nightly builds is to add the [repo](https://gitlab.com/fdroid/fdroidclient-nightly/-/raw/master/fdroid/repo) to an existing F-Droid install, then search for \"Nightly\", then choose \"F-Droid Debug\"."
 #~ msgstr "Ini berarti ada hal yang rusak, jadi alfa ini mungkin lebih tidak stabil daripada alfa tahun-tahun sebelumnya.  Kami selalu mendorong untuk mencoba, masukan, laporan masalah, dan kemogokan.  Tetapi jika F-Droid Anda diatur menjadi sesuatu yang Anda tidak ingin setel ulang, Anda mungkin ingin tunggu sampai percobaan alfa ini selesai.  Jika Anda memiliki perangkat lain, perangkat percobaan, atau bekerja dengan emulator Android, kami juga senang untuk mencoba pada [bangunan nightly](https://gitlab.com/fdroid/fdroidclient-nightly).  Perhatian: bangunan nightly datang dari GitLab CI/CD, jadi tidak seaman proses rilis resmi.  Memiliki versi resmi dan nightly juga memungkinkan untuk dipasang bersamaan.  Cara yang paling mudah untuk memulai dengan bangunan nightly adalah untuk mengambahkan [repositori](https://gitlab.com/fdroid/fdroidclient-nightly/-/raw/master/fdroid/repo) ke pemasangan F-Droid yang sudah ada, lalu cari \"Nightly\", lalu pilih \"F-Droid Debug\"."
