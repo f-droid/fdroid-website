@@ -460,6 +460,20 @@ process can add them.  For example:
 +-rw-rw-rw-  2.3 unx    78984 b- stor 80-000-00 00:00 resources.arsc
 ```
 
+#### Mismatched Java version
+
+Sometimes there's a mismatch as upstream might use a different one (eg. Gradle 8 uses Java 17) and the recipe needs to be updated.
+
+The APK diff will have entries like this, eg. Java 17 vs Java 11:
+```diff
+-    .annotation system Ldalvik/annotation/Signature;
+-        value = {
+-            "()V"
+-        }
+-    .end annotation
+-
+```
+
 
 ### Migration to reproducible builds
 
