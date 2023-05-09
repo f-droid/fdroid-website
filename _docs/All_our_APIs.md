@@ -81,6 +81,14 @@ There are also GPG signatures for verifying the JSON files:
 * <https://f-droid.org/archive/index-v1.json.asc>
 
 
+###  App Search API
+
+We've got a basic web-api for performing a full-text searches on the
+_f-droid.org_ repository.
+
+* <https://search.f-droid.org/api/search_apps?q=f-droid>
+
+
 ###  App build metadata
 
 Every app in _f-droid.org_ has a corresponding
