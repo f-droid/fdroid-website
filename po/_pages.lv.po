@@ -1,42 +1,43 @@
 # SOME DESCRIPTIVE TITLE
 # Copyright (C) YEAR Free Software Foundation, Inc.
 # This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
+# Coool (github.com/Coool) <coool@mail.lv>, 2022.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2022-11-18 00:29+0100\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2022-12-15 13:16+0000\n"
+"Last-Translator: Coool (github.com/Coool) <coool@mail.lv>\n"
+"Language-Team: Latvian <https://hosted.weblate.org/projects/f-droid/website-pages/lv/>\n"
 "Language: lv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n % 10 == 0 || n % 100 >= 11 && n % 100 <= 19) ? 0 : ((n % 10 == 1 && n % 100 != 11) ? 1 : 2);\n"
+"X-Generator: Weblate 4.15-dev\n"
 
 #. type: YAML Front Matter: title
 #: _pages/403.md
 #, no-wrap
 msgid "403 Forbidden"
-msgstr ""
+msgstr "403 Piekļuve liegta"
 
 #. type: Plain text
 #: _pages/403.md _pages/404.md
 msgid "If you think there should be something here, please [submit an issue](https://gitlab.com/fdroid/fdroid-website/issues)."
-msgstr ""
+msgstr "Ja uzskatāt, ka šeit kaut kam vajadzētu būt, lūdzu, [iesniedziet problēmu](https://gitlab.com/fdroid/fdroid-website/issues)."
 
 #. type: YAML Front Matter: title
 #: _pages/404.md
 #, no-wrap
 msgid "404 Page Not Found"
-msgstr ""
+msgstr "404 Lapa nav atrasta"
 
 #. type: YAML Front Matter: title
 #: _pages/about.md
 #, no-wrap
 msgid "About"
-msgstr ""
+msgstr "Par F-Droid"
 
 #. type: Plain text
 #: _pages/about.md
@@ -46,18 +47,18 @@ msgstr ""
 #. type: Plain text
 #: _pages/about.md
 msgid "Donations for F-Droid development are handled via our [OpenCollective](https://opencollective.com/F-Droid/)."
-msgstr ""
+msgstr "Ziedojumi F-Droid izstrādei tiek pieņemti izmantojot [OpenCollective](https://opencollective.com/F-Droid/)."
 
 #. type: Title ###
 #: _pages/about.md
 #, no-wrap
 msgid "Contact"
-msgstr ""
+msgstr "Kontakti"
 
 #. type: Plain text
 #: _pages/about.md
 msgid "You can discuss F-Droid or get help on the [forum](https://forum.f-droid.org) and F-Droid's user chat."
-msgstr ""
+msgstr "Apspriest F-Droid vai saņemt palīdzību varat [forumā](https://forum.f-droid.org) und F-Droid lietotāja tērzēšanā čatā."
 
 #. type: Plain text
 #: _pages/about.md
@@ -104,7 +105,7 @@ msgstr ""
 #: _pages/about.md
 #, no-wrap
 msgid "License"
-msgstr ""
+msgstr "Licence"
 
 #. type: Bullet: '* '
 #: _pages/about.md
@@ -119,18 +120,18 @@ msgstr ""
 #. type: Bullet: '* '
 #: _pages/about.md
 msgid "The descriptive text and graphics for each app have a specific license from that project.  Free software should also have free descriptions and graphics."
-msgstr ""
+msgstr "Katras lietotnes aprakstam un attēlam ir sava īpašā projekta licence, kas norādīta projektā.  Parasti bezmaksas programmatūrai tā ir brīvi pieejama."
 
 #. type: Bullet: '* '
 #: _pages/about.md
 msgid "The F-Droid logo was created by William Theaker. Updates to that, and additional artwork, are by Robert Martinez."
-msgstr ""
+msgstr "F-Droid logo autors - William Theaker. Tā atjauninājumu un papildu grafikas autors - Robert Martinez."
 
 #. type: Title ###
 #: _pages/about.md
 #, no-wrap
 msgid "Terms, etc."
-msgstr ""
+msgstr "Izmantošanas noteikumi, utt."
 
 #. type: Plain text
 #: _pages/about.md
@@ -146,12 +147,12 @@ msgstr ""
 #: _pages/about.md
 #, no-wrap
 msgid "Contributors"
-msgstr ""
+msgstr "Līdzautori"
 
 #. type: Plain text
 #: _pages/about.md
 msgid "The F-Droid project was founded in 2010 by Ciaran Gultnieks, and is brought to you by at least the following people:"
-msgstr ""
+msgstr "F-Droid projektu 2010. gadā dibināja Kiarāns Gultnieks (Ciaran Gultnieks), un tā izstrādē piedalās vismaz šādi cilvēki:"
 
 #. type: Plain text
 #: _pages/about.md
@@ -187,6 +188,35 @@ msgid ""
 "{%- endfor -%}\n"
 "</ul>\n"
 msgstr ""
+"<ul>\n"
+"{%- for contributor in site.data.contributors -%}\n"
+"<li>\n"
+"{%- if contributor.gitlab -%}\n"
+"<a href=\"https://gitlab.com/{{ contributor.gitlab }}\" target=\"_blank\">\n"
+"{%- elsif contributor.weblate -%}\n"
+"<a href=\"https://hosted.weblate.org/user/{{ contributor.weblate }}\" target=\"_blank\">\n"
+"{%- endif -%}\n"
+"{%- if contributor.Arab and site.data.scripts[site.active_lang] == \"Arab\" -%}\n"
+"{{ contributor.Arab }}\n"
+"{%- elsif contributor.Cyrl and site.data.scripts[site.active_lang] == \"Cyrl\" -%}\n"
+"{{ contributor.Cyrl }}\n"
+"{%- elsif contributor.Jpan and site.data.scripts[site.active_lang] == \"Jpan\" -%}\n"
+"{{ contributor.Jpan }}\n"
+"{%- elsif contributor.Kore and site.data.scripts[site.active_lang] == \"Kore\" -%}\n"
+"{{ contributor.Kore }}\n"
+"{%- elsif contributor.Hans and site.data.scripts[site.active_lang] == \"Hans\" -%}\n"
+"{{ contributor.Hans }}\n"
+"{%- elsif contributor.Hant and site.data.scripts[site.active_lang] == \"Hant\" -%}\n"
+"{{ contributor.Hant }}\n"
+"{%- else -%}\n"
+"{{ contributor.name }}\n"
+"{%- endif -%}\n"
+"{%- if contributor.gitlab or contributor.weblate -%}\n"
+"</a>\n"
+"{%- endif -%}\n"
+"</li>\n"
+"{%- endfor -%}\n"
+"</ul>\n"
 
 #. type: Plain text
 #: _pages/about.md
@@ -196,13 +226,13 @@ msgstr ""
 #. type: Plain text
 #: _pages/about.md
 msgid "The original F-Droid client app was based on the Aptoide app developed by Roberto Jacinto."
-msgstr ""
+msgstr "Sākotnējā F-Droid klienta lietotne bija balstīta uz Aptoide lietotni, kuru izstrādāja Roberto Jacinto."
 
 #. type: YAML Front Matter: title
 #: _pages/consulting.md
 #, no-wrap
 msgid "Consulting"
-msgstr ""
+msgstr "Konsultācijas"
 
 #. type: Plain text
 #: _pages/consulting.md
@@ -221,6 +251,13 @@ msgid ""
 "  * Bug fixes or feature additions to the F-Droid client and server components\n"
 "  * Whitelabel solutions\n"
 msgstr ""
+"Paturiet prātā, ka F-Droid ekosistēma sastāv no vairākām komponentēm. Tāpēc konsultāciju pakalpojumi var piedāvāt daudz dažādus pakalpojumus, piemēram,\n"
+"  * F-Droid ieviešanu organizācijā\n"
+"  * F-Droid repozitoriju iestatīšanu un uzturēšanu\n"
+"  * Kursus lietotājiem un administratoriem\n"
+"  * Palīdzēt iesniegt lietotni, kas atbilst iekļaušanas prasībām, galvenajā f-droid.org repozitorijā\n"
+"  * Veikt kļūdu labojumus vai funkciju papildinājumus F-Droid klienta un servera komponentēm\n"
+"  * Zīmola nomaiņas risinājumus\n"
 
 #. type: Plain text
 #: _pages/consulting.md
