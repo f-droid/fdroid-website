@@ -1,21 +1,20 @@
 # SOME DESCRIPTIVE TITLE
 # Copyright (C) YEAR Free Software Foundation, Inc.
 # This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
+# WB <web0nst@tuta.io>, 2022.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2022-02-03 21:41+0100\n"
-"PO-Revision-Date: 2019-06-18 19:03+0000\n"
-"Last-Translator: Iván Seoane <ivanrsm1997@gmail.com>\n"
+"PO-Revision-Date: 2022-06-14 21:35+0000\n"
+"Last-Translator: WB <web0nst@tuta.io>\n"
 "Language-Team: Galician <https://hosted.weblate.org/projects/f-droid/website-pages/gl/>\n"
 "Language: gl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.7\n"
+"X-Generator: Weblate 4.13-dev\n"
 
 #. type: YAML Front Matter: title
 #: _pages/403.md
@@ -50,7 +49,7 @@ msgstr "O F-Droid é un robot cunha paixón polo software libre e aberto (FOSS) 
 #. type: Plain text
 #: _pages/about.md
 msgid "Donations for F-Droid development are handled via our [OpenCollective](https://opencollective.com/F-Droid/)."
-msgstr ""
+msgstr "As doazóns para o desenvolvemento de F-Droid son xestionados por [OpenCollective](https://opencollective.com/F-Droid/)."
 
 #. type: Title ###
 #: _pages/about.md
@@ -66,22 +65,22 @@ msgstr "Podes debater sobre o F-Droid e obter axuda no [foro](https://forum.f-dr
 #. type: Plain text
 #: _pages/about.md
 msgid "To chat with others about F-Droid, either join via IRC in the [#fdroid channel](https://webchat.oftc.net/?randomnick=1&channels=fdroid&prompt=1) on OFTC or join [#fdroid:f-droid.org](https://matrix.to/#/#fdroid:f-droid.org) on Matrix.  The discussions are logged on [matrix.f-droid.org](https://matrix.f-droid.org/alias/%23fdroid:f-droid.org)."
-msgstr ""
+msgstr "Para conversar con outros sobre F-Droid, xúntese vía IRC no [#fdroid channel](https://webchat.oftc.net/?randomnick=1&channels=fdroid&prompt=1) no OFTC ou por [#fdroid:f-droid.org](https://matrix.to/#/#fdroid:f-droid.org). As discusións son rexistradas en [matrix.f-droid.org](https://matrix.f-droid.org/alias/%23fdroid:f-droid.org)."
 
 #. type: Plain text
 #: _pages/about.md
 msgid "There are also bridges to Telegram and Jabber/XMPP (experimental).  To join via Telegram, click [this link](https://matrix.f-droid.org/fdroid/telegram/).  For Jabber/XMPP, join [#fdroid#matrix.org@matrix.org](xmpp:#fdroid#matrix.org@matrix.org?join)."
-msgstr ""
+msgstr "Tamén existen pontes para Telegram e Jabber/XMPP (experimental). Para se xuntar por Telegram, faga click [this link](https://matrix.f-droid.org/fdroid/telegram/). Para Jabber/XMPP, entre en [#fdroid#matrix.org@matrix.org](xmpp:#fdroid#matrix.org@matrix.org?join)."
 
 #. type: Plain text
 #: _pages/about.md
 msgid "F-Droid contributors also run a social-media account on the Fediverse. You can interact with us or follow us on [@fdroidorg@mastodon.technology](https://mastodon.technology/@fdroidorg)."
-msgstr ""
+msgstr "Os contribuidores de F-Droid tamén administan unha conta das redes sociais no Fediverso. Pode interactuar connosco ou seguirnos en [@fdroidorg@mastodon.technology](https://mastodon.technology/@fdroidorg)."
 
 #. type: Plain text
 #: _pages/about.md
 msgid "You can send email at [team@f-droid.org](mailto:team@f-droid.org), but messages are much more likely to be answered on the forum or #fdroid channel. If you want to help, you can [join us]({{ \"/contribute/\" | prepend: site.baseurl }})."
-msgstr ""
+msgstr "Tamén pode enviar un correo a [team@f-droid.org](mailto:team@f-droid.org), mais é máis probábel obter resposta no foro ou na canle #fdroid. Se quixer axudar, pode [xuntarse]({{ \"/contribute/\" | prepend: site.baseurl }})."
 
 #. type: Title ###
 #: _pages/about.md
@@ -99,7 +98,7 @@ msgstr "Se estás a levar unha organización que emprega o F-Droid ou gostaríac
 #. type: Plain text
 #: _pages/about.md
 msgid "[Find an F-Droid Consultant]({{ \"/consulting/\" | prepend: site.baseurl }})"
-msgstr ""
+msgstr "[Encontre un consultor F-Droid]({{ \"/consulting/\" | prepend: site.baseurl }})"
 
 #. type: Title ###
 #: _pages/about.md
@@ -193,6 +192,35 @@ msgid ""
 "{%- endfor -%}\n"
 "</ul>\n"
 msgstr ""
+"<ul>\n"
+"{%- for contributor in site.data.contributors -%}\n"
+"<li>\n"
+"{%- if contributor.gitlab -%}\n"
+"<a href=\"https://gitlab.com/{{ contributor.gitlab }}\" target=\"_blank\">\n"
+"{%- elsif contributor.weblate -%}\n"
+"<a href=\"https://hosted.weblate.org/user/{{ contributor.weblate }}\" target=\"_blank\">\n"
+"{%- endif -%}\n"
+"{%- if contributor.Arab and site.data.scripts[site.active_lang] == \"Arab\" -%}\n"
+"{{ contributor.Arab }}\n"
+"{%- elsif contributor.Cyrl and site.data.scripts[site.active_lang] == \"Cyrl\" -%}\n"
+"{{ contributor.Cyrl }}\n"
+"{%- elsif contributor.Jpan and site.data.scripts[site.active_lang] == \"Jpan\" -%}\n"
+"{{ contributor.Jpan }}\n"
+"{%- elsif contributor.Kore and site.data.scripts[site.active_lang] == \"Kore\" -%}\n"
+"{{ contributor.Kore }}\n"
+"{%- elsif contributor.Hans and site.data.scripts[site.active_lang] == \"Hans\" -%}\n"
+"{{ contributor.Hans }}\n"
+"{%- elsif contributor.Hant and site.data.scripts[site.active_lang] == \"Hant\" -%}\n"
+"{{ contributor.Hant }}\n"
+"{%- else -%}\n"
+"{{ contributor.name }}\n"
+"{%- endif -%}\n"
+"{%- if contributor.gitlab or contributor.weblate -%}\n"
+"</a>\n"
+"{%- endif -%}\n"
+"</li>\n"
+"{%- endfor -%}\n"
+"</ul>\n"
 
 #. type: Plain text
 #: _pages/about.md
@@ -215,11 +243,11 @@ msgstr "Consultoría"
 #. type: Plain text
 #: _pages/consulting.md
 msgid "If you're running an organisation that uses F-Droid or would like to use F-Droid, you will sometimes want to have an expert. This page is a list of companies and developers who contributed to F-Droid in one way or another and are available for consulting. By contracting one of these companies or developers, your organisation can also (indirectly) support the development of F-Droid."
-msgstr ""
+msgstr "Se está a executar unha organización que usa F-Droid ou gustaríalle usar o F-Droid, ás veces pode querer un especialista. Esta páxina é unha lista de empresas e desenvolvedores que contribuíron para o F-Droid dunha forma ou doutra e están dispoñíbeis para consultas. Ao contactar unha destas empresas ou desenvolvedor, a súa organización tamén pode (indirectamente) apoiar o desenvolvemento do F-Droid."
 
 #. type: Plain text
 #: _pages/consulting.md
-#, no-wrap
+#, fuzzy, no-wrap
 msgid ""
 "Keep in mind that the F-Droid ecosystem consists of several components. Thus, consulting services may offer a lot of different services, such as\n"
 "  * Deployment of F-Droid within an organisation\n"
@@ -229,6 +257,13 @@ msgid ""
 "  * Bug fixes or feature additions to the F-Droid client and server components\n"
 "  * Whitelabel solutions\n"
 msgstr ""
+"Teña en conta que o ecosistema F-Droid consiste de varios compoñentes. Así como, os servizos de consultoría poden ofrecer  moitos outros servizos, como\n"
+"  * Implantación do F-Droid nunha organización\n"
+"  * Configurafión e mantemento de repositorios F-Droid\n"
+"  * Talleres para usuarios e administadores\n"
+"  * Axuda na obtención dunha app compatíbel para a súa inclusión no repositorio principal f-droid.org\n"
+"  * Correccións de erros ou adición de características aos compoñentes cliente e servidor do F-Droid\n"
+"  * Solucións Whitelabel\n"
 
 #. type: Plain text
 #: _pages/consulting.md
@@ -282,7 +317,7 @@ msgstr "Felix C. Stegerman"
 #. type: Bullet: '* '
 #: _pages/consulting.md
 msgid "__Website:__ [obfusk.ch](https://obfusk.ch)"
-msgstr ""
+msgstr "__Sitio:__ [obfusk.ch](https://obfusk.ch)"
 
 #. type: Bullet: '* '
 #: _pages/consulting.md
@@ -293,17 +328,17 @@ msgstr "__Correo electrónico:__ [info@izzysoft.de](mailto:info@izzysoft.de)"
 #. type: Bullet: '* '
 #: _pages/consulting.md
 msgid "__Address:__ Nijmegen, Netherlands"
-msgstr ""
+msgstr "__Enderezo:__ Nijmegen, Países Baixos"
 
 #. type: Bullet: '* '
 #: _pages/consulting.md
 msgid "__Languages:__ English, Dutch (Nederlands), German (Deutsch), Japanese (日本語)"
-msgstr ""
+msgstr "__Idiomas:__ inglés (English), holandes (Nederlands), alemán (Deutsch), xapones (日本語)"
 
 #. type: Bullet: '* '
 #: _pages/consulting.md
 msgid "__Specialization:__ Diagnosing & fixing bugs/problems, [Reproducible Builds](https://f-droid.org/docs/Reproducible_Builds/), getting builds working, removing/replacing non-free components of apps to make them compliant."
-msgstr ""
+msgstr "__Especialización:__ diagnosticar e corrixir erros/problemas, [Builds reproducíbeis](https://f-droid.org/docs/Reproducible_Builds/), facendo con que as construcións funcionen, removendo/substituíndo compoñentes non-libres de aplicacións para tornalas compatíbeis."
 
 #. type: Title ###
 #: _pages/consulting.md
@@ -314,7 +349,7 @@ msgstr "Hans-Christoph Steiner"
 #. type: Bullet: '* '
 #: _pages/consulting.md
 msgid "__Website:__ [at.or.at](https://at.or.at)"
-msgstr ""
+msgstr "__Sitio:__ [at.or.at](https://at.or.at)"
 
 #. type: Bullet: '* '
 #: _pages/consulting.md
@@ -325,7 +360,7 @@ msgstr "__Correo electrónico:__ [info@izzysoft.de](mailto:info@izzysoft.de)"
 #. type: Bullet: '* '
 #: _pages/consulting.md
 msgid "__Address:__ Vienna, Austria"
-msgstr ""
+msgstr "__Enderezo:__ Viena, Austria"
 
 #. type: Bullet: '* '
 #: _pages/consulting.md
@@ -338,12 +373,12 @@ msgstr "__Especializacións:__ Despregamentos do F-Droid personalizados, extensi
 #: _pages/consulting.md
 #, no-wrap
 msgid "IzzySoft"
-msgstr ""
+msgstr "IzzySoft"
 
 #. type: Bullet: '* '
 #: _pages/consulting.md
 msgid "__Website:__ [android.izzysoft.de](https://android.izzysoft.de/), [www.izzysoft.de](https://www.izzysoft.de/)"
-msgstr ""
+msgstr "__Sitio web:__ [android.izzysoft.de](https://android.izzysoft.de/), [www.izzysoft.de](https://www.izzysoft.de/)"
 
 #. type: Bullet: '* '
 #: _pages/consulting.md
@@ -360,12 +395,12 @@ msgstr "__Teléfono:__ +49 531 3913154"
 #. type: Bullet: '* '
 #: _pages/consulting.md
 msgid "__Address:__ IzzySoft, 80796 München, Germany"
-msgstr ""
+msgstr "__Enderezo: __ IzzySoft, 80796 Munique, Alemaña"
 
 #. type: Bullet: '* '
 #: _pages/consulting.md
 msgid "__Specialization:__ [Binary Repositories](https://f-droid.org/docs/Setup_an_F-Droid_App_Repo/) & Metadata (creator & operator of the [IzzyOnDroid Repo](https://apt.izzysoft.de/fdroid/))"
-msgstr ""
+msgstr "__Especialización:__ [Repositorios Binarios](https://f-droid.org/docs/Setup_an_F-Droid_App_Repo/) & Metadados (creador e operador do [Repo IzzyOnDroid](https://apt.izzysoft.de/fdroid/))"
 
 #. type: Plain text
 #: _pages/consulting.md
@@ -454,243 +489,244 @@ msgstr "Hai catro repositorios git aloxados no GitLab – un para a [aplicación
 #. type: Plain text
 #: _pages/contribute.md
 msgid "For working with the server and data projects, it’s a good idea to read [the manual]({{ \"/docs/\" | prepend: site.baseurl }})."
-msgstr ""
+msgstr "Para traballar cos proxectos de servidor ou de dados, é unha boa idea ler [o manual]({{ \"/docs/\" | prepend: site.baseurl }})."
 
 #. type: Title ###
 #: _pages/contribute.md
 #, no-wrap
 msgid "Help with Infrastructure"
-msgstr ""
+msgstr "Axuda coa infraestrutura"
 
 #. type: Plain text
 #: _pages/contribute.md
 msgid "F-Droid provides multiple servers (builders, web portal, download areas...) which need regular maintenance, Ansible-based deployment, and hardware management.  Further information can be found by asking on [Matrix](https://matrix.to/#/#fdroid-dev:f-droid.org), [IRC](https://webchat.oftc.net/?randomnick=1&channels=fdroid&prompt=1) (#fdroid-dev on OFTC) or team@f-droid.org."
-msgstr ""
+msgstr "O F-Droid fornece varios servidores (compiladores, portal da web, áreas de descarregamentos...) que precisan de mantemento periódico, implantación baseada en Ansible e xestión de hardware. Pode encontrar mais información en [Matrix](https://matrix.to/#/#fdroid-dev:f-droid.org), [IRC](https://webchat.oftc.net/?randomnick=1&channels=fdroid&prompt=1) (#fdroid-dev on OFTC) ou en team@f-droid.org."
 
 #. type: YAML Front Matter: title
 #: _pages/docs.md
 #, no-wrap
 msgid "Docs"
-msgstr ""
+msgstr "Documentación"
 
 #. type: Plain text
 #: _pages/docs.md
 msgid "F-Droid is both a repository of verified free software Android apps as well as a whole \"app store kit\", providing all the tools needed to setup and run an app store. It is a community-run free software project developed by a wide range of contributors. It also includes complete build and release tools for managing the process of turning app source code into published builds."
-msgstr ""
+msgstr "O F-Droid é un repositorio de aplicacións Android de software libre verificadas, ben como um \"kit de tenda de aplicacións\" completo, fornecendo todas as ferramentas necesarias para configurar e executar unha tenda de aplicacións. É un proxecto de software libre xestionado pola comunidade desenvolvido por unha ampla gama de colaboradores. Tamém inclúe ferramentas completas de creación e lanzamento para xestionar o proceso de transformar o código fonte da aplicación en compilacións publicadas."
 
 #. type: Plain text
 #: _pages/docs.md
 msgid "The F-Droid server tools provide various scripts and tools that are used to maintain the main F-Droid application repository. You can use these same tools to create your own additional or alternative repository for publishing, or to assist in creating, testing and submitting metadata to the main repository."
-msgstr ""
+msgstr "As ferramentas do servidor F-Droid provén varios scripts e ferramentas que son usadas para manter o repositorio principal da aplicación F-Droid. Pode usar esas mesmas ferramentas para crear o seu proprio repositorio adicional ou alternativo para publicación ou para axudar na creación, test e envío de metadados para o repositorio principal."
 
 #. type: Title ###
 #: _pages/docs.md
 #, no-wrap
 msgid "Getting Started"
-msgstr ""
+msgstr "Primeiros pasos"
 
 #. type: Bullet: '* '
 #: _pages/docs.md
 msgid "[FAQ - General](FAQ_-_General) Frequently Asked Questions about F-Droid"
-msgstr ""
+msgstr "[FAQ - Xeral](FAQ_-_General) Perguntas máis frecuentes sobre o F-Droid"
 
 #. type: Bullet: '* '
 #: _pages/docs.md
 msgid "[FAQ - Client](FAQ_-_Client) Frequently Asked Questions about how to use the F-Droid app in Android."
-msgstr ""
+msgstr "[FAQ - Cliente](FAQ_-_Client) Perguntas máis frecuentes sobre como usar a aplicación F-Droid en Android."
 
 #. type: Bullet: '* '
 #: _pages/docs.md
+#, fuzzy
 msgid "[Anti-Features](Anti-Features) What they are, what they mean, and what apps have them."
-msgstr ""
+msgstr "[Funcionalidades indesexadas](Anti-Features) O que son, o que significan e cales aplicacións as teñen."
 
 #. type: Bullet: '* '
 #: _pages/docs.md
 msgid "[Tutorials](../tutorials) Step-by-step tutorials on features in F-Droid"
-msgstr ""
+msgstr "[Tutoriais](../tutorials) Tutoriais paso a paso sobre as funcionalidades no F-Droid"
 
 #. type: Title ###
 #: _pages/docs.md
 #, no-wrap
 msgid "More Information"
-msgstr ""
+msgstr "Máis información"
 
 #. type: Bullet: '* '
 #: _pages/docs.md
 msgid "[Code of Conduct](Code_of_Conduct) how to behave when communicating within F-Droid."
-msgstr ""
+msgstr "[Código de conduta](Code_of_Conduct) como se comportar ao comunicar dentro do F-Droid."
 
 #. type: Bullet: '* '
 #: _pages/docs.md
 msgid "[How to Help](How_to_Help) Different ways anyone can contribute to the F-Droid project."
-msgstr ""
+msgstr "[Como axudar](How_to_Help) Diferentes formas nas que calquera pode contribuír para o proxecto F-Droid."
 
 #. type: Bullet: '* '
 #: _pages/docs.md
 msgid "[Known Repositories](https://forum.f-droid.org/t/721) A list that tries to keep track of known F-Droid compatible repositories."
-msgstr ""
+msgstr "[Repositorios coñecidos](https://forum.f-droid.org/t/721) Unha lista que tenta manter o control dos repositorios coñecidos compatíbeis co F-Droid."
 
 #. type: Bullet: '* '
 #: _pages/docs.md
 msgid "[Release Channels and Signing Keys](Release_Channels_and_Signing_Keys) These are the various channels that F-Droid software are released on, with info to verify them based on signing keys."
-msgstr ""
+msgstr "[Lanzar canles e claves de sinatura](Release_Channels_and_Signing_Keys) Estas son as canles nas que o software F-Droid é lanzado, coa información para verificalos basada nas claves de sinatura."
 
 #. type: Bullet: '* '
 #: _pages/docs.md
 msgid "[Security Model](Security_Model) A brief explanation of how F-Droid delivers software to users securely."
-msgstr ""
+msgstr "[Modelo de seguranza](Security_Model) Unha breve explicación de como o F-Droid garante software con seguranza aos usuarios."
 
 #. type: Bullet: '* '
 #: _pages/docs.md
 msgid "[Repomaker](../repomaker) A user-friendly tool for managing custom repos"
-msgstr ""
+msgstr "[Repomaker](../repomaker) Unha ferramenta amigabel para xestionar repositorios personalizados"
 
 #. type: Bullet: '* '
 #: _pages/docs.md
 msgid "[Translation and Localization](Translation_and_Localization) How all the parts of F-Droid are localized."
-msgstr ""
+msgstr "[Tradución e localización](Translation_and_Localization) Como todas as partes do F-Droid están localizadas."
 
 #. type: Bullet: '* '
 #: _pages/docs.md
 msgid "[Tips & Tricks](https://forum.f-droid.org/c/wiki/tips-and-tricks) A collection of useful tips and tricks that make life around F-Droid easier."
-msgstr ""
+msgstr "[Dicas e trucos](https://forum.f-droid.org/c/wiki/tips-and-tricks) Unha colección de dicas e trucos útiles que facilitan a vida con F-Droid."
 
 #. type: Bullet: '* '
 #: _pages/docs.md
 msgid "[All our APIs](All_our_APIs) Public API endpoints for data about _f-droid.org_, repos, mirrors, Android, Gradle, and more"
-msgstr ""
+msgstr "[Todas as nosas APIs](All_our_APIs) Endpoints de API públicas para dados sobre _f-droid.org_, repos, mirrors, Android, Gradle, e máis"
 
 #. type: Bullet: '* '
 #: _pages/docs.md
 msgid "[Wiki](https://gitlab.com/fdroid/wiki/-/wikis/home) For everything else that people want to document."
-msgstr ""
+msgstr "[Wiki](https://gitlab.com/fdroid/wiki/-/wikis/home) Para todo o resto que as persoas queiran documentar."
 
 #. type: Bullet: '* '
 #: _pages/docs.md
 msgid "[Take-Down Requests](Take-Down_Requests) Our policy about requesting the removal of apps or content from _f-droid.org_."
-msgstr ""
+msgstr "[Pedidos de remoción](Take-Down_Requests) A nosa política en canto a pedidos para remover aplicacións ou contido de _f-droid.org_."
 
 #. type: Title ###
 #: _pages/docs.md
 #, no-wrap
 msgid "Developers"
-msgstr ""
+msgstr "Desenvolvedores"
 
 #. type: Bullet: '* '
 #: _pages/docs.md
 msgid "[FAQ - App Developers](FAQ_-_App_Developers) Frequently Asked Questions about F-Droid"
-msgstr ""
+msgstr "[FAQ - Desenvolvedores de aplicacións](FAQ_-_App_Developers) Perguntas máis frecuentes sobre o F-Droid"
 
 #. type: Bullet: '* '
 #: _pages/docs.md
 msgid "[Build Metadata Reference](Build_Metadata_Reference) All about the build \"recipes\""
-msgstr ""
+msgstr "[Referencia aos metadados de compilación](Build_Metadata_Reference) Todo sobre as \"receitas\" de compilación"
 
 #. type: Bullet: '* '
 #: _pages/docs.md
 msgid "[Submitting to F-Droid: Quick Start Guide](Submitting_to_F-Droid_Quick_Start_Guide) Add an app to f-droid.org"
-msgstr ""
+msgstr "[Publicar no F-Droid: guía de inicio rápido](Submitting_to_F-Droid_Quick_Start_Guide) Engada unha aplicación ao f-droid.org"
 
 #. type: Bullet: '* '
 #: _pages/docs.md
 msgid "[Update Processing](Update_Processing) How updates get detected and added."
-msgstr ""
+msgstr "[Proceso de actualización](Update_Processing) Como as actualizacións son detectadas e engadidas."
 
 #. type: Bullet: '* '
 #: _pages/docs.md
 msgid "[Inclusion Policy](Inclusion_Policy) & [Inclusion How-To](Inclusion_How-To)  Guidelines for how to request the inclusion of a new app."
-msgstr ""
+msgstr "[Política de inclusión](Inclusion_Policy) e [método de inclusión](Inclusion_How-To) Directrices sobre como solicitar a inclusión dunha nova aplicación."
 
 #. type: Bullet: '* '
 #: _pages/docs.md
 msgid "[Importing Applications](Importing_Applications) Using `fdroid import` to build a new project."
-msgstr ""
+msgstr "[Importar aplicacións](Importing_Applications) Usando o `fdroid import` para compilar un novo proxecto."
 
 #. type: Bullet: '* '
 #: _pages/docs.md
 msgid "[Building Applications](Building_Applications) Using `fdroid build` to build an app."
-msgstr ""
+msgstr "[Compilar aplicacións](Building_Applications) Usando o `fdroid build` para compilar unha aplicación."
 
 #. type: Bullet: '* '
 #: _pages/docs.md
 msgid "[All About Descriptions, Graphics, and Screenshots](All_About_Descriptions_Graphics_and_Screenshots) Showing off your app in F-Droid."
-msgstr ""
+msgstr "[Todo sobre descricións, gráficos e capturas de pantalla](All_About_Descriptions_Graphics_and_Screenshots) Mostrar a súa aplicación no F-Droid."
 
 #. type: Bullet: '* '
 #: _pages/docs.md
 msgid "[Publishing Nightly Builds](Publishing_Nightly_Builds) Make an automated repo of nightly builds of your app."
-msgstr ""
+msgstr "[Publicando compilacións nocturnas](Publishing_Nightly_Builds) Faga un repositorio automatizado coas compilacións nocturnas da súa aplicación."
 
 #. type: Bullet: '* '
 #: _pages/docs.md
 msgid "[Installing the Server and Repo Tools](Installing_the_Server_and_Repo_Tools) How to install fdroidserver, the tools for running repos and build servers."
-msgstr ""
+msgstr "[Instalando o servidor e as ferramentas de repositorio](Installing_the_Server_and_Repo_Tools) Como instalar o fdroidserver, as ferramentas para executar repositorios e compilar servidores."
 
 #. type: Bullet: '* '
 #: _pages/docs.md
 msgid "[Setup an F-Droid App Repo](Setup_an_F-Droid_App_Repo) How to setup your own repository of apps that users can easily add to their F-Droid client to get your apps directly from the source."
-msgstr ""
+msgstr "[Configurar un repositorio de aplicacións F-Droid](Setup_an_F-Droid_App_Repo) Como configurar o seu proprio repositorio de aplicacións que os utilizadores poden facilmente adicionar ao seu cliente F-Droid para obter as suas aplicacións directamente da fonte."
 
 #. type: Bullet: '* '
 #: _pages/docs.md
 msgid "[Build Server Setup](Build_Server_Setup) How to setup the complete f-droid.org build setup on your own machine."
-msgstr ""
+msgstr "[Configuración do servidor de compilacións](Build_Server_Setup) Como definir a configuración completa do f-droid.org na súa propria máquina."
 
 #. type: Bullet: '* '
 #: _pages/docs.md
 msgid "[Signing Process](Signing_Process) How to setup cryptographic signatures with F-Droid tools"
-msgstr ""
+msgstr "[Proceso de sinatura](Signing_Process) Como configurar sinaturas criptográficas con ferramentas do F-Droid"
 
 #. type: Bullet: '* '
 #: _pages/docs.md
 msgid "[Reproducible Builds](Reproducible_Builds) How to use the F-Droid tools to make reproducible builds easy."
-msgstr ""
+msgstr "[Compilacións reproducíbeis](Reproducible_Builds) Como usar as ferramentas do F-Droid para facilitar a creación de compilacións reproducíbeis."
 
 #. type: Bullet: '* '
 #: _pages/docs.md
 msgid "[Building a Signing Server](Building_a_Signing_Server) For higher security, isolate the signing keys from the rest."
-msgstr ""
+msgstr "[Compilar un servidor de sinatura](Building_a_Signing_Server) Para maior seguranza, ille as claves de sinatura do resto."
 
 #. type: Bullet: '* '
 #: _pages/docs.md
 msgid "[Verification Server](Verification_Server) Setting up a server to verify app builds are correct."
-msgstr ""
+msgstr "[Servidor de verificación](Verification_Server) A configuración dun servidor para verificar se as compilacións das aplicacións están corretcas."
 
 #. type: Bullet: '* '
 #: _pages/docs.md
 msgid "[Whitelabel Builds](Whitelabel_Builds) custom builds of F-Droid"
-msgstr ""
+msgstr "[Compilacións brancas](Whitelabel_Builds) creacións personalizadas do F-Droid"
 
 #. type: Bullet: '* '
 #: _pages/docs.md
 msgid "[Privileged Extension](https://gitlab.com/fdroid/privileged-extension/#f-droid-privileged-extension) How to use F-Droid Privileged Extension as a user and rom developer"
-msgstr ""
+msgstr "[Extensións privilexiadas](https://gitlab.com/fdroid/privileged-extension/#f-droid-privileged-extension) Como usar as 'Extensións privilexiadas F-Droid' como un usuario e un desenvolvedor de ROM"
 
 #. type: Bullet: '* '
 #: _pages/docs.md
 msgid "[Deploying the Website](Deploying_the_Website) How [fdroid-website.git](https://gitlab.com/fdroid/fdroid-website) becomes [f-droid.org](https://f-droid.org)"
-msgstr ""
+msgstr "[Implantando o sitio](Deploying_the_Website) Como [fdroid-website.git](https://gitlab.com/fdroid/fdroid-website) se torna [f-droid.org](https://f-droid.org)"
 
 #. type: Bullet: '* '
 #: _pages/docs.md
 msgid "[Maintaining the Forum](Maintaining_the_Forum) Useful information for administrators of [F-Droid's forum](https://forum.f-droid.org)"
-msgstr ""
+msgstr "[Manter o foro](Maintaining_the_Forum) Información útil para os administradores do [Foro do F-Droid](https://forum.f-droid.org)"
 
 #. type: Bullet: '* '
 #: _pages/docs.md
 msgid "[Running a Mirror](Running_a_Mirror) Instructions for setting up a repository mirror"
-msgstr ""
+msgstr "[Manter um Mirror](Running_a_Mirror) Instrucións para configurar un espello (\"mirror\") do repositorio"
 
 #. type: Bullet: '* '
 #: _pages/docs.md
 msgid "[MIA Process](MIA_Process) MIA (missing in action) maintainer removal process"
-msgstr ""
+msgstr "[Proceso MIA](MIA_Process) MIA (missing in action) proceso de borrado do mantedor"
 
 #. type: YAML Front Matter: title
 #: _pages/donate.md
 #, no-wrap
 msgid "Donations"
-msgstr ""
+msgstr "Doazóns"
 
 #. type: Plain text
 #: _pages/donate.md
@@ -700,48 +736,48 @@ msgstr "{% assign strings = site.data.strings.sidebars.donate %}"
 #. type: Plain text
 #: _pages/donate.md
 msgid "F-Droid is powered by your donations!"
-msgstr ""
+msgstr "O F-Droid é sustentado polas súas doazóns!"
 
 #. type: Plain text
 #: _pages/donate.md
 msgid "If you want to contribute financially, we recommend using a **free (as in free software) donation platform** like **[Liberapay](https://liberapay.com/F-Droid-Data/)** or **[Open Collective](https://opencollective.com/f-droid/)**. **Liberapay** has lower fees but **Open Collective** allows more flexibility and transparency on how the funds are used.  Both platforms allow for recurrent donations which are highly desirable for making F-Droid sustainable."
-msgstr ""
+msgstr "Se quixer contribuír financeiramente, recomendamos o uso dunha plataforma de doazóns **libre (como en software libre)** como **[Liberapay](https://liberapay.com/F-Droid-Data/)** ou **[Open Collective](https://opencollective.com/f-droid/)**. **Liberapay** ten taxas máis baixas, mais **Open Collective** permite máis flexibilidade e transparencia na forma como os fondos son utilizados.  Ambas as plataformas permiten doazóns recorrentes que son altamente desexábeis para tornar o F-Droid en sustentábel."
 
 #. type: Plain text
 #: _pages/donate.md
 msgid "Your donations will be used for:"
-msgstr ""
+msgstr "As súas doazóns serán utilizadas para:"
 
 #. type: Bullet: '* '
 #: _pages/donate.md
 msgid "Paying for server resources"
-msgstr ""
+msgstr "Pagar as infraestruturas do servidor"
 
 #. type: Bullet: '* '
 #: _pages/donate.md
 msgid "Pay for merchandise (stickers)"
-msgstr ""
+msgstr "Pagar os artigos promocionais (autocolantes)"
 
 #. type: Bullet: '* '
 #: _pages/donate.md
 msgid "Pay contributors for administration and development work"
-msgstr ""
+msgstr "Pagar a colaboradores polo traballo de administración e desenvolvemento"
 
 #. type: Bullet: '* '
 #: _pages/donate.md
 msgid "Travel sponsorship for contributors for conferences or meetups"
-msgstr ""
+msgstr "Patrocinio de viaxes para colaboradores en conferencias ou encontros"
 
 #. type: Title ###
 #: _pages/donate.md
 #, no-wrap
 msgid "What payment methods can I use?"
-msgstr ""
+msgstr "Que métodos de pagamento podo utilizar?"
 
 #. type: Plain text
 #: _pages/donate.md
 msgid "Right now, we only support the payment methods that our fiscal hosts offer.  The fiscal host determines which payment methods are available."
-msgstr ""
+msgstr "Neste momento, só temos dispoñíbeis os métodos de pagamento que os nosos anfitrións fiscais oferecen. É o anfitrión fiscal quen determina os métodos de pagamento dispoñíbeis."
 
 #. type: Plain text
 #: _pages/donate.md
@@ -770,12 +806,12 @@ msgstr ""
 #. type: Plain text
 #: _pages/donate.md
 msgid "Visit the info pages of our fiscal hosts to get more details on their fees:"
-msgstr ""
+msgstr "Visite as páxinas de información dos nossos anfitrións fiscais para obter máis detalles sobre as taxas deles:"
 
 #. type: Bullet: '* '
 #: _pages/donate.md
 msgid "[Liberapay](https://liberapay.com/about/faq#fees)"
-msgstr ""
+msgstr "[Liberapay](https://liberapay.com/about/faq#fees)"
 
 #. type: Bullet: '* '
 #: _pages/donate.md
@@ -790,18 +826,18 @@ msgstr ""
 #. type: Bullet: '* '
 #: _pages/donate.md
 msgid "[GitHub Sponsors](https://docs.github.com/en/billing/managing-billing-for-github-sponsors/about-billing-for-github-sponsors)"
-msgstr ""
+msgstr "[GitHub Sponsors](https://docs.github.com/en/billing/managing-billing-for-github-sponsors/about-billing-for-github-sponsors)"
 
 #. type: Title ####
 #: _pages/donate.md
 #, no-wrap
 msgid "IBAN Direct Bank Transfer"
-msgstr ""
+msgstr "Transferencia bancaria directa por IBAN"
 
 #. type: Plain text
 #: _pages/donate.md
 msgid "If you would like to donate via a direct IBAN bank transfer, then donate via [F-Droid (€)](https://opencollective.com/f-droid-euro) on OpenCollective:"
-msgstr ""
+msgstr "Se quixer facer unha donazón através dunha transferencia bancaria directa co número IBAN, entón faga a doazón polo [F-Droid (EUR)](https://opencollective.com/f-droid-euro) no OpenCollective:"
 
 #. type: Plain text
 #: _pages/donate.md
@@ -821,12 +857,12 @@ msgstr ""
 #: _pages/donate.md
 #, no-wrap
 msgid "Cryptocurrency"
-msgstr ""
+msgstr "Criptomoedas"
 
 #. type: Plain text
 #: _pages/donate.md
 msgid "All cryptocurrency donations to F-Droid, including Bitcoin and many others, are processed through OpenCollective:"
-msgstr ""
+msgstr "Todas as doazóns en criptomoedas para o F-Droid, incluíndo Bitcoin e moitas outras, son procesadas através do OpenCollective:"
 
 #. type: Plain text
 #: _pages/donate.md
@@ -872,7 +908,7 @@ msgstr ""
 #: _pages/donate.md
 #, no-wrap
 msgid "Swag"
-msgstr ""
+msgstr "Swag"
 
 #. type: Plain text
 #: _pages/donate.md
@@ -882,12 +918,15 @@ msgid ""
 "[![HELLOTUX]({% asset hellotux_banner.jpg %})](https://www.hellotux.com/f-droid)<br>\n"
 "(F-Droid will receive 3€ per shirt sold.)\n"
 msgstr ""
+"Ou merque unha camiseta 👕 de <br>\n"
+"[![HELLOTUX]({% asset hellotux_banner.jpg %})](https://www.hellotux.com/f-droid)<br>\n"
+"(F-Droid recebirá 3€ por camiseta vendida.)\n"
 
 #. type: Title ##
 #: _pages/donate.md
 #, no-wrap
 msgid "Previous Setup"
-msgstr ""
+msgstr "Configuración anterior"
 
 #. type: Plain text
 #: _pages/donate.md
@@ -900,7 +939,7 @@ msgstr "A infraestrutura principal do _f-droid.org_ é operada pola F-Droid Limi
 #: _pages/issues.md
 #, no-wrap
 msgid "Issues"
-msgstr ""
+msgstr "Problemas"
 
 #. type: Plain text
 #: _pages/issues.md
@@ -908,7 +947,7 @@ msgstr ""
 msgid ""
 "* [Client](https://gitlab.com/fdroid/fdroidclient/issues) issue tracker: If you’re having a problem with the F-Droid client application,\n"
 "please check if we already know about it, and/or report it in this issue tracker.\n"
-msgstr ""
+msgstr "* Rastrexador de problemas do [Cliente](https://gitlab.com/fdroid/fdroidclient/issues): se tiver un problema coa aplicación cliente do F-Droid. Por favor, verifique se xa temos coñecemento diso e/ou reláteo neste rastrexador de problemas.\n"
 
 #. type: Plain text
 #: _pages/issues.md
@@ -917,6 +956,8 @@ msgid ""
 "* [RFP](https://gitlab.com/fdroid/rfp/issues/) tracker: To request a new app be added, submit a \"Request For Packaging\" on the\n"
 "rfp tracker.\n"
 msgstr ""
+"* Rastrexador de [RFP](https://gitlab.com/fdroid/rfp/issues/): para solicitar que unha nova aplicación sexa engadida, envíe un\n"
+"\"Request For Packaging\" no Rastrexador de RFP.\n"
 
 #. type: Plain text
 #: _pages/issues.md
@@ -925,6 +966,9 @@ msgid ""
 "* [Data](https://gitlab.com/fdroid/fdroiddata/issues) issue tracker: For problems relating to the contents of the repository,\n"
 "such as missing or outdated applications, please use this issue tracker.\n"
 msgstr ""
+"* Rastrexador de problemas en [datos](https://gitlab.com/fdroid/fdroiddata/issues): para problemas relacionados co\n"
+"contido do repositorio,\n"
+"como aplicacións non existentes ou desactualizadas. Por favor, use este rastrexador de problemas.\n"
 
 #. type: Plain text
 #: _pages/issues.md
@@ -932,7 +976,7 @@ msgstr ""
 msgid ""
 "* [Server](https://gitlab.com/fdroid/fdroidserver/issues) issue tracker: For the server tools (used for building apps yourself,\n"
 "or running your own repo), please use this issue tracker.\n"
-msgstr ""
+msgstr "* Rastrexador de problemas do [Servidor](https://gitlab.com/fdroid/fdroidserver/issues): para as ferramentas de servidor (usadas para crear aplicacións por conta propia ou executando o seu propio repositorio). Por favor, use este rastrexador de problemas.\n"
 
 #. type: Plain text
 #: _pages/issues.md
@@ -940,7 +984,7 @@ msgstr ""
 msgid ""
 "* [Website](https://gitlab.com/fdroid/fdroid-website/issues) issue tracker: For issues relating to this web site, you can use\n"
 "this issue tracker.\n"
-msgstr ""
+msgstr "* Rastrexador de problemas do [sitio web](https://gitlab.com/fdroid/fdroid-website/issues): para cuestións relacionadas con este sitio. Pode usar este rastrexador de problemas.\n"
 
 #. type: Plain text
 #: _pages/issues.md
@@ -949,27 +993,29 @@ msgid ""
 "* [Website-Search](https://gitlab.com/fdroid/fdroid-website-search/issues) issue tracker: For issues relating to\n"
 "https://search.f-droid.org, you can use this issue tracker.\n"
 msgstr ""
+"* Rastrexador de problemas da [Procura no sitio web](https://gitlab.com/fdroid/fdroid-website-search/issues): para questións relacionadas con\n"
+"https://search.f-droid.org, pode usar este rastrexador de problemas.\n"
 
 #. type: YAML Front Matter: title
 #: _pages/repomaker.md
 #, no-wrap
 msgid "Repomaker"
-msgstr ""
+msgstr "Repomaker"
 
 #. type: Plain text
 #: _pages/repomaker.md
 msgid "F-Droid.org is just a repo out of hundreds of repos created by individuals all around the globe. With the tools of F-Droid, everyone can create their own repo. So whether you are a musician who wants to publish their music or a developer who wants to serve nightly builds of their app, you are free to create your own repo and share it with other people independently of F-Droid.org."
-msgstr ""
+msgstr "O F-Droid.org é só un repositorio de centenas de repositorios creados por persoas de todo o mundo. Coas ferramentas do F-Droid, todos poden crear o seu propio repositorio. Por iso, se é un músico que quere publicar a súa música ou un programador que quere fornecer versións nocturnas da súa aplicación, é libre para crear o seu propio repositorio e compartillalo con outras persoas, de forma independente do F-Droid.org."
 
 #. type: Plain text
 #: _pages/repomaker.md
 msgid "In the past, creating a repo has been difficult because you had to have knowledge on the command line, needed to edit text files to edit your packages' store details and had to paste screenshots in a special system of directories to have them served well inside the F-Droid app."
-msgstr ""
+msgstr "No pasado, crear en repositorio era difícil porque era preciso ter coñecimentos de liña de comandos, editar ficheiros de texto para modificar os detalles da tenda dos seus paquetes e tiña que pegar 'Capturas de pantalla' nun sistema especial de directorios para que fosen visualizados correctamente na aplicación F-Droid."
 
 #. type: Plain text
 #: _pages/repomaker.md
 msgid "This all got easier now: with Repomaker, you are able to create your own repo and do not need to have any special knowledge to do so.  Check out the [installation guide](https://gitlab.com/fdroid/repomaker/blob/master/README.md#installation)  for information on how you can install Repomaker on your device."
-msgstr ""
+msgstr "Todo ficou máis fácil agora: co Repomaker, pode crear o seu propio repositlrio e non precisa ter ningún coñecemento especial para iso. Consulte a [guía de instalación](https://gitlab.com/fdroid/repomaker/blob/master/README.md#installation) para máis información sobre como instalar o Repomaker no seu dispositivo."
 
 #. type: Plain text
 #: _pages/repomaker.md
@@ -978,6 +1024,8 @@ msgid ""
 "[![]({% asset repomaker-screenshots/repo-details.png %})]({% asset repomaker-screenshots/repo-details.png %})<br/>\n"
 "*Your repo can serve all types of media*\n"
 msgstr ""
+"[![]({% asset repomaker-screenshots/repo-details.png %})]({% asset repomaker-screenshots/repo-details.png %})<br/>\n"
+"*O seu repositorio pode servir todos os tipos de media*\n"
 
 #. type: Plain text
 #: _pages/repomaker.md
@@ -986,6 +1034,8 @@ msgid ""
 "[![]({% asset repomaker-screenshots/package-details.png %})]({% asset repomaker-screenshots/package-details.png %})<br/>\n"
 "*Editing your package store details never was easier*\n"
 msgstr ""
+"[![]({% asset repomaker-screenshots/package-details.png %})]({% asset repomaker-screenshots/package-details.png %})<br/>\n"
+"*Editar os detalles da sua tenda de paquetes nunca foi tan fácil*\n"
 
 #. type: Plain text
 #: _pages/repomaker.md
@@ -994,6 +1044,8 @@ msgid ""
 "[![]({% asset repomaker-screenshots/create-repo.png %})]({% asset repomaker-screenshots/create-repo.png %})<br/>\n"
 "*Creating a repo just takes you two clicks*\n"
 msgstr ""
+"[![]({% asset repomaker-screenshots/create-repo.png %})]({% asset repomaker-screenshots/create-repo.png %})<br/>\n"
+"*Crear un repositorio leva apenas dous clicks*\n"
 
 #. type: Plain text
 #: _pages/repomaker.md
@@ -1002,8 +1054,10 @@ msgid ""
 "[![]({% asset repomaker-screenshots/add-storage.png %})]({% asset repomaker-screenshots/add-storage.png %})<br/>\n"
 "*You have many possibilities where to upload your repo*\n"
 msgstr ""
+"[![]({% asset repomaker-screenshots/add-storage.png %})]({% asset repomaker-screenshots/add-storage.png %})<br/>\n"
+"*Ten moitas posibilidades onde publicar o seu repositorio*\n"
 
 #. type: Plain text
 #: _pages/repomaker.md
 msgid "Like any other project of F-Droid, Repomaker is free and open source software. You can find the source code and its license on [gitlab.com](https://gitlab.com/fdroid/repomaker)."
-msgstr ""
+msgstr "Como calquera outro proxecto do F-Droid, o Repomaker é un software libre e de código aberto. Pode encontrar o código fonte e a sua licenza en[GitLab.com](https://gitlab.com/fdroid/repomaker)."
