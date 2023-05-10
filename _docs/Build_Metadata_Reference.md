@@ -920,7 +920,7 @@ retained.
 
 ### _RequiresRoot_<a name="RequiresRoot"></a>
 
-Set this optional field to 'True' if the application requires root
+Set this optional field to `true` if the application requires root
 privileges to be usable. This lets the client filter it out if the user
 so desires. Whether root is required or not, it is good to give a
 paragraph in the description to the conditions on which root may be
