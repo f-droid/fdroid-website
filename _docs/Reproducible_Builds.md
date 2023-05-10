@@ -465,13 +465,13 @@ process can add them.  For example:
 Sometimes there's a mismatch as upstream might use a different one (eg. Gradle 8 uses Java 17) and the recipe needs to be updated.
 
 The APK diff will have entries like this, eg. Java 17 vs Java 11:
+
 ```diff
 -    .annotation system Ldalvik/annotation/Signature;
 -        value = {
 -            "()V"
 -        }
 -    .end annotation
--
 ```
 
 
