@@ -3,7 +3,7 @@ layout: page
 title: Contribute
 permalink: /contribute/
 ---
-The project is entirely developed and maintained by volunteers. You can help:
+The project is developed and maintained by community contributors. Volunteers form a core part of F-Droid.  You can help too:
 
 ### Report Problems
 
