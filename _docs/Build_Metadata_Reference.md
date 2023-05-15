@@ -868,7 +868,9 @@ description:
     Non-Free code. However, functionality may be missing.
 -   'NonFreeAssets' - the application contains and makes use of
     Non-Free assets. The most common case is apps using artwork -
-    images, sounds, music, etc - under a non-commercial license.
+    images, sounds, music, etc. - under a license that restricts commercial
+    usage or making derivative works (for example, any Creative Commons license with a
+    "Non-Commercial" (NC) or "No Derivatives" (ND) restriction).
 -   'KnownVuln' - the application has known security vulnerabilities.
 -   'ApplicationDebuggable' - APK file is compiled for debugging
     (`application-debuggable`), which normally makes it unsuitable

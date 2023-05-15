@@ -148,7 +148,9 @@ Here's the list of [apps with Upstream Non-Free](https://monitor.f-droid.org/ant
 
 This Anti-Feature is applied to apps that contain and make use of
 Non-Free assets. The most common case is apps using artwork -
-images, sounds, music, etc. - under a license that allows only non-commercial usage.
+images, sounds, music, etc. - under a license that restricts commercial
+usage or making derivative works (for example, any Creative Commons license with a
+"Non-Commercial" (NC) or "No Derivatives" (ND) restriction).
 
 Here's the list of [apps with Non-Free Assets](https://monitor.f-droid.org/anti-feature/NonFreeAssets).
 
