@@ -5,12 +5,22 @@ permalink: /contribute/
 ---
 The project is developed and maintained by community contributors. Volunteers form a core part of F-Droid.  You can help too:
 
+### Help Others
+
+If you already know something about F-Droid, then you can help others learn and
+get started.  Help answer questions that users and developers have about
+F-Droid!  Please be considerate of our [code of conduct]({{ site.baseurl
+}}/docs/Code_of_Conduct).  We want to provide a positive and enjoyable
+environment for everybody.
+
 ### Report Problems
 
 If you experience problems with the site or client software, you can report them
 in [the appropriate issue tracker]({{ "/issues/" | prepend: site.baseurl }}), or
 discuss them in the [Forum](https://forum.f-droid.org/), on
 [Matrix](https://matrix.to/#/#fdroid:f-droid.org) or IRC (#fdroid on OFTC).
+We also welcome help managing our issue trackers, including asking follow up
+questions, reviewing merge requests, adding labels, and more.
 
 ### Submit Applications
 
@@ -43,6 +53,14 @@ Start with the overview of
 also a [dedicated forum section](https://forum.f-droid.org/c/translation) for
 translation related discussions.
 
+### Test
+
+Testing upcoming F-Droid releases is the best way to make sure that a new
+release can do what you need it to do. And of course, if you report a problem to
+us, then we know about it and can fix it! If you have a bug to report, see the
+[issues page]({{ site.baseurl }}/issues/). One easy places to jump in is
+reviewing translation updates on <https://staging.f-droid.org/>.
+
 ### Develop
 
 There are four main git repositories hosted at GitLab:
@@ -69,3 +87,11 @@ management. Further information can be found by asking on
 [IRC](https://webchat.oftc.net/?randomnick=1&channels=fdroid&prompt=1)
 (#fdroid-dev on OFTC) or team@f-droid.org.
 
+### Data Science
+
+At its core, F-Droid is a giant collection of data about the apps we ship.
+There are build logs, app metadata, source code, APK metadata, and more.
+F-Droid also fits into the larger Android ecosystem, where there are even larger
+pools of data to dive into.  We also have some metrics data that remains mostly
+unexplored, and could reveal new insights in the F-Droid ecosystem.  One good
+way to dive in is to try out [our APIs]({{ site.baseurl}}/docs/All_our_APIs/)

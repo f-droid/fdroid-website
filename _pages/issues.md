@@ -43,3 +43,7 @@ For issues relating to https://search.f-droid.org or search results in this
 website, you can use 
 [this issue tracker](https://gitlab.com/fdroid/fdroid-website-search/issues).
 
+### The Fire Hose
+
+If you have not found the right place, try searching through [all of the issues](https://gitlab.com/groups/fdroid/-/issues/)
+tracked by the F-Droid project.
