@@ -37,7 +37,7 @@ which will drastically speed up the inclusion of the application.
 The same applies for helping to build newer versions of applications.
 
 Further information can be found in [the documentation](../docs), or by asking
-in [the chat]({{ site.baseurl }}/about/#contact)
+in [the chat]({{ site.baseurl }}/about/#contact).
 
 ### Translate
 
