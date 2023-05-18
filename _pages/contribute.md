@@ -16,10 +16,10 @@ environment for everybody.
 ### Report Problems
 
 If you experience problems with the site or client software, you can report them
-in [the appropriate issue tracker]({{ "/issues/" | prepend: site.baseurl }}), or
-discuss them in the [Forum](https://forum.f-droid.org/), on
-[Matrix](https://matrix.to/#/#fdroid:f-droid.org) or IRC (#fdroid on OFTC).
-We also welcome help managing our issue trackers, including asking follow up
+in [the appropriate issue tracker]({{ "/issues/" | prepend: site.baseurl }}),
+talk with us in the [Forums](https://forum.f-droid.org/) or join [the chat]({{ site.baseurl }}/about/#contact)
+via your protocol of choice.
+We also welcome help managing our issue trackers, including asking follow-up
 questions, reviewing merge requests, adding labels, and more.
 
 ### Submit Applications
@@ -37,9 +37,7 @@ which will drastically speed up the inclusion of the application.
 The same applies for helping to build newer versions of applications.
 
 Further information can be found in [the documentation](../docs), or by asking
-on [Matrix](https://matrix.to/#/#fdroid:f-droid.org) or
-[IRC](https://webchat.oftc.net/?randomnick=1&channels=fdroid&prompt=1)
-(#fdroid on OFTC).
+in [the chat]({{ site.baseurl }}/about/#contact)
 
 ### Translate
 
@@ -82,10 +80,8 @@ For working with the server and data projects, it’s a good idea to read
 
 F-Droid provides multiple servers (builders, web portal, download areas and
 more) which need regular maintenance, Ansible-based deployment and hardware
-management. Further information can be found by asking on
-[Matrix](https://matrix.to/#/#fdroid-dev:f-droid.org),
-[IRC](https://webchat.oftc.net/?randomnick=1&channels=fdroid&prompt=1)
-(#fdroid-dev on OFTC) or team@f-droid.org.
+management. Further information can be found by asking in
+[the chat]({{ site.baseurl }}/about/#contact) or via e-mail to team@f-droid.org.
 
 ### Data Science
 
