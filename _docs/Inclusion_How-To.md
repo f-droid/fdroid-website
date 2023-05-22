@@ -146,6 +146,41 @@ reviewing process will be much less intensive in several respects, and
 consumes much less time. Policy-violating applications that somehow
 sneaked in this way will be dealt with after the fact.
 
+## Reproducible Builds
+
+Reproducible builds are not a requirement for apps being on F-Droid. But we do
+consider their use best practice. And unfortunately, one can't easily switch to
+them later because Android doesn't allow updates with a different signing key,
+meaning users would have to reinstall. So we mainly encourage their use for new
+apps.
+
+The point of reproducible builds is that the developer's signature (from the APK
+they publish) guarantees that our build is identical to theirs (and thus doesn't
+contain anything it shouldn't) and at the same time our build server verifies
+that the developer's build matches the published source code (and thus doesn't
+contain anything it shouldn't either).
+
+This increases trust and makes supply-chain attacks harder. It also makes it
+impossible for there to be a bug in the F-Droid version only (or vice versa).
+Using the developer's key also means they have the option of providing updates
+to users themselves if we for some reason (temporarily) cannot.
+
+Some apps -- especially those without native code, using only Kotlin/Java -- are
+very easy to make reproducible. Others may require more work. Sadly, some apps
+cannot be made reproducible at all.
+
+We hope that developers agree with us that it's at least worth attempting to
+make their apps reproducible given the various benefits, but if they are unable
+or unwilling to spend time/resources on this, we of course respect their
+decision.
+
+For more information, see:
+
+* [Towards a reproducible F-Droid](https://f-droid.org/2023/01/15/towards-a-reproducible-fdroid.html)
+* [F-Droid's Reproducible Builds documentation](../Reproducible_Builds)
+* [Reproducible Builds project](https://reproducible-builds.org/)
+* [HOWTO: diff & fix APKs for Reproducible Builds](https://gitlab.com/fdroid/wiki/-/wikis/HOWTO:-diff-&-fix-APKs-for-Reproducible-Builds)
+
 ## Build Process
 
 After the application metadata is added to fdroiddata GitLab repository,
