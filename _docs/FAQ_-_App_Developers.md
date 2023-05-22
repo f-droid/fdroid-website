@@ -196,6 +196,13 @@ people can add your repo to their F-Droid client in order to get your
 APKs.
 
 
+### Are reproducible builds required?
+
+No. But we do consider them best practice and hope you'll consider trying to
+make your app reproducible. See our [inclusion how-to](../Inclusion_How-To) for
+more information.
+
+
 ### Can I run my own F-Droid package repository?<a name="Can_I_run_my_own_app_repo"></a>
 
 Yes! You can also setup and run your own F-Droid repository of apps
