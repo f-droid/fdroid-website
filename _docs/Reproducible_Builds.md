@@ -313,30 +313,16 @@ project (and thus to its `jni` directory) are used.  This leads to different
 paths to the source files in debug symbols, causing the linker to generate a
 different _build-id_, which is preserved after stripping.
 
-One possible solution is adding `-Wl,--build-id=none` to link options which
-will disable _build-id_ generation completely. For `ndk-build`, `LOCAL_LDFLAGS += -Wl,--build-id=none`
-can be added to `Android.mk` files or to `build.gradle/.kts`:
-```
-android {
-    defaultConfig {
-        externalNativeBuild {
-            ndkBuild {
-                arguments "LOCAL_LDFLAGS += -Wl,--build-id=none"
-            }
-        }
-    }
-}
-```
-For CMake versions since 3.13, `add_link_options(LINKER:--build-id=none)`
-can be added to `CMakeLists.txt` globally. For CMake versions before 3.13,
-`target_link_libraries(<target> -Wl,--build-id=none)` can be used instead for
-every target.
+One possible solution is passing `--build-id=none` to the linker which
+will disable _build-id_ generation completely.
 
 
 #### NDK hash style
 
-On different build machines, NDK may use different hash style. Setting the hash style explicitly can fix this problem. For CMake versions since 3.13, `add_link_options(LINKER:--hash-style=gnu)`
-can be added to `CMakeLists.txt` globally.
+LLVM passes different defaults to linkers on different platforms. After
+[this commit](https://github.com/llvm/llvm-project/commit/95dcaef00379e893dabc61cf598fe51c9d03414e#diff-061e3e32cfa3dd06717856cc16465106a3b72520eb9b0c2954513f194bd1696f)
+was merged into the NDK, `--hash-style=gnu` will be used on Debian by default. To change
+the hash style, `--hash-style=gnu` can be passed to the linker.
 
 
 #### _platform_ Revisions
@@ -474,6 +460,47 @@ The APK diff will have entries like this, eg. Java 17 vs Java 11:
 -    .end annotation
 ```
 
+
+#### Language-specific instructions
+
+Native libraries may be built with various tools and languages. Though they suffer
+from similar reproducible build issues, the methods for fixing them are different. Some
+known solutions are listed below:
+
+##### ndk-build
+
+`LOCAL_LDFLAGS += -Wl,<linker args>` can be added to `Android.mk` files or to
+`build.gradle`/`build.gradle.kts`:
+
+```
+android {
+    defaultConfig {
+        externalNativeBuild {
+            ndkBuild {
+                arguments "LOCAL_LDFLAGS += -Wl,<linker args>"
+            }
+        }
+    }
+}
+```
+
+##### CMake
+
+For CMake versions since 3.13, `add_link_options(LINKER:<linker args>)`
+can be added to `CMakeLists.txt` globally. For CMake versions before 3.13,
+`target_link_libraries(<target> LINKER:<linker args>)` can be used instead for
+every target.
+
+##### Golang
+
+Linker arguments can be added to `CGO_LDFLAGS`. Some other useful arguments that can be
+passed to `go build` are `-ldflags="-buildid="`, `-trimpath` (to avoid embedded build paths) and `-buildvcs=false`.
+
+##### Rust
+
+Compiler and linker arguments can be added to [`build.rustflags`](https://doc.rust-lang.org/cargo/reference/config.html#buildrustflags).
+Linker arguments can be added with `link-args=-Wl,<linker args>`; `--remap-path-prefix=<old>=<new>`
+can be added to strip build paths.
 
 ### Migration to reproducible builds
 
