@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2023-05-15 17:12+0200\n"
+"POT-Creation-Date: 2023-05-22 20:12+0200\n"
 "PO-Revision-Date: 2020-09-23 16:23+0000\n"
 "Last-Translator: Priit Jõerüüt <hwlate@joeruut.com>\n"
 "Language-Team: Estonian <https://hosted.weblate.org/projects/f-droid/website-docs/et/>\n"
@@ -4921,6 +4921,17 @@ msgstr ""
 #. type: Title ###
 #: _docs/FAQ_-_App_Developers.md
 #, no-wrap
+msgid "Are reproducible builds required?"
+msgstr ""
+
+#. type: Plain text
+#: _docs/FAQ_-_App_Developers.md
+msgid "No. But we do consider them best practice and hope you'll consider trying to make your app reproducible. See our [inclusion how-to](../Inclusion_How-To) for more information."
+msgstr ""
+
+#. type: Title ###
+#: _docs/FAQ_-_App_Developers.md
+#, no-wrap
 msgid "Can I run my own F-Droid package repository?<a name=\"Can_I_run_my_own_app_repo\"></a>"
 msgstr ""
 
@@ -6663,6 +6674,64 @@ msgstr ""
 #. type: Plain text
 #: _docs/Inclusion_How-To.md
 msgid "In an attempt to optimize the process, when you proposed inclusion via metadata merge request, F-Droid staff rely on several assumptions ([outlined above](#Proposal_by_Metadata_Merge_Request)). As such, the reviewing process will be much less intensive in several respects, and consumes much less time. Policy-violating applications that somehow sneaked in this way will be dealt with after the fact."
+msgstr ""
+
+#. type: Title ###
+#: _docs/Inclusion_How-To.md _docs/Reproducible_Builds.md
+#, no-wrap
+msgid "Reproducible Builds"
+msgstr ""
+
+#. type: Plain text
+#: _docs/Inclusion_How-To.md
+msgid "Reproducible builds are not a requirement for apps being on F-Droid. But we do consider their use best practice. And unfortunately, one can't easily switch to them later because Android doesn't allow updates with a different signing key, meaning users would have to reinstall. So we mainly encourage their use for new apps."
+msgstr ""
+
+#. type: Plain text
+#: _docs/Inclusion_How-To.md
+msgid "The point of reproducible builds is that the developer's signature (from the APK they publish) guarantees that our build is identical to theirs (and thus doesn't contain anything it shouldn't) and at the same time our build server verifies that the developer's build matches the published source code (and thus doesn't contain anything it shouldn't either)."
+msgstr ""
+
+#. type: Plain text
+#: _docs/Inclusion_How-To.md
+msgid "This increases trust and makes supply-chain attacks harder. It also makes it impossible for there to be a bug in the F-Droid version only (or vice versa).  Using the developer's key also means they have the option of providing updates to users themselves if we for some reason (temporarily) cannot."
+msgstr ""
+
+#. type: Plain text
+#: _docs/Inclusion_How-To.md
+msgid "Some apps -- especially those without native code, using only Kotlin/Java -- are very easy to make reproducible. Others may require more work. Sadly, some apps cannot be made reproducible at all."
+msgstr ""
+
+#. type: Plain text
+#: _docs/Inclusion_How-To.md
+msgid "We hope that developers agree with us that it's at least worth attempting to make their apps reproducible given the various benefits, but if they are unable or unwilling to spend time/resources on this, we of course respect their decision."
+msgstr ""
+
+#. type: Plain text
+#: _docs/Inclusion_How-To.md
+msgid "For more information, see:"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/Inclusion_How-To.md
+msgid "[Towards a reproducible F-Droid](https://f-droid.org/2023/01/15/towards-a-reproducible-fdroid.html)"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/Inclusion_How-To.md
+msgid "[F-Droid's Reproducible Builds documentation](../Reproducible_Builds)"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/Inclusion_How-To.md
+#, fuzzy
+#| msgid "<https://reproducible-builds.org>"
+msgid "[Reproducible Builds project](https://reproducible-builds.org/)"
+msgstr "<https://reproducible-builds.org>"
+
+#. type: Bullet: '* '
+#: _docs/Inclusion_How-To.md
+msgid "[HOWTO: diff & fix APKs for Reproducible Builds](https://gitlab.com/fdroid/wiki/-/wikis/HOWTO:-diff-&-fix-APKs-for-Reproducible-Builds)"
 msgstr ""
 
 #. type: Title ##
@@ -8663,12 +8732,6 @@ msgstr ""
 msgid "The most important is to know when new versions are published. We have three automatic methods and one manual: from tags; checking the _AndroidManifest.xml_ at the most recent revision in the repository; and checking Google Play. If these won't do, we must look at the version of the package published by the upstream developers, either by loading the Google Play web page or downloading an APK and checking its version.  Repository tags are the natural way of labelling new versions (look for them under \"releases\" on an example in [github.com](https://github.com/dschuermann/document-viewer/releases) or under the \"tags\" directory in the case of SVN repos). If you can't find tags it would be a helpful to make an issue about it on the issue tracker. In the example, we point to a changelog page as a backup check; other possiblities are a Google Code download page or a Google Play link."
 msgstr ""
 
-#. type: Title ###
-#: _docs/Reproducible_Builds.md
-#, no-wrap
-msgid "Reproducible Builds"
-msgstr ""
-
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
 msgid "F-Droid supports [reproducible builds](https://reproducible-builds.org) of apps, so that anyone can run the build process again and reproduce the same APK as the original release.  This means that F-Droid can verify that an app is 100% free software while still using the original developer's APK signatures.  F-Droid verifies reproducible builds using APK [signature copying](#reproducible-signatures)."
@@ -9096,32 +9159,7 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
-msgid "One possible solution is adding `-Wl,--build-id=none` to link options which will disable _build-id_ generation completely. For `ndk-build`, `LOCAL_LDFLAGS += -Wl,--build-id=none` can be added to `Android.mk` files or to `build.gradle/.kts`:"
-msgstr ""
-
-#. type: Fenced code block
-#: _docs/Reproducible_Builds.md
-#, no-wrap
-msgid ""
-"android {\n"
-"    defaultConfig {\n"
-"        externalNativeBuild {\n"
-"            ndkBuild {\n"
-"                arguments \"LOCAL_LDFLAGS += -Wl,--build-id=none\"\n"
-"            }\n"
-"        }\n"
-"    }\n"
-"}\n"
-msgstr ""
-
-#. type: Plain text
-#: _docs/Reproducible_Builds.md
-#, no-wrap
-msgid ""
-"For CMake versions since 3.13, `add_link_options(LINKER:--build-id=none)`\n"
-"can be added to `CMakeLists.txt` globally. For CMake versions before 3.13,\n"
-"`target_link_libraries(<target> -Wl,--build-id=none)` can be used instead for\n"
-"every target.\n"
+msgid "One possible solution is passing `--build-id=none` to the linker which will disable _build-id_ generation completely."
 msgstr ""
 
 #. type: Title ####
@@ -9132,7 +9170,7 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
-msgid "On different build machines, NDK may use different hash style. Setting the hash style explicitly can fix this problem. For CMake versions since 3.13, `add_link_options(LINKER:--hash-style=gnu)` can be added to `CMakeLists.txt` globally."
+msgid "LLVM passes different defaults to linkers on different platforms. After [this commit](https://github.com/llvm/llvm-project/commit/95dcaef00379e893dabc61cf598fe51c9d03414e#diff-061e3e32cfa3dd06717856cc16465106a3b72520eb9b0c2954513f194bd1696f)  was merged into the NDK, `--hash-style=gnu` will be used on Debian by default. To change the hash style, `--hash-style=gnu` can be passed to the linker."
 msgstr ""
 
 #. type: Title ####
@@ -9331,6 +9369,88 @@ msgstr ""
 #. type: Bullet: '-    '
 #: _docs/Reproducible_Builds.md
 msgid ".end annotation"
+msgstr ""
+
+#. type: Title ####
+#: _docs/Reproducible_Builds.md
+#, no-wrap
+msgid "Language-specific instructions"
+msgstr ""
+
+#. type: Plain text
+#: _docs/Reproducible_Builds.md
+msgid "Native libraries may be built with various tools and languages. Though they suffer from similar reproducible build issues, the methods for fixing them are different. Some known solutions are listed below:"
+msgstr ""
+
+#. type: Title #####
+#: _docs/Reproducible_Builds.md
+#, no-wrap
+msgid "ndk-build"
+msgstr ""
+
+#. type: Plain text
+#: _docs/Reproducible_Builds.md
+#, no-wrap
+msgid ""
+"`LOCAL_LDFLAGS += -Wl,<linker args>` can be added to `Android.mk` files or to\n"
+"`build.gradle`/`build.gradle.kts`:\n"
+msgstr ""
+
+#. type: Fenced code block
+#: _docs/Reproducible_Builds.md
+#, no-wrap
+msgid ""
+"android {\n"
+"    defaultConfig {\n"
+"        externalNativeBuild {\n"
+"            ndkBuild {\n"
+"                arguments \"LOCAL_LDFLAGS += -Wl,<linker args>\"\n"
+"            }\n"
+"        }\n"
+"    }\n"
+"}\n"
+msgstr ""
+
+#. type: Title #####
+#: _docs/Reproducible_Builds.md
+#, no-wrap
+msgid "CMake"
+msgstr ""
+
+#. type: Plain text
+#: _docs/Reproducible_Builds.md
+#, no-wrap
+msgid ""
+"For CMake versions since 3.13, `add_link_options(LINKER:<linker args>)`\n"
+"can be added to `CMakeLists.txt` globally. For CMake versions before 3.13,\n"
+"`target_link_libraries(<target> LINKER:<linker args>)` can be used instead for\n"
+"every target.\n"
+msgstr ""
+
+#. type: Title #####
+#: _docs/Reproducible_Builds.md
+#, no-wrap
+msgid "Golang"
+msgstr ""
+
+#. type: Plain text
+#: _docs/Reproducible_Builds.md
+msgid "Linker arguments can be added to `CGO_LDFLAGS`. Some other useful arguments that can be passed to `go build` are `-ldflags=\"-buildid=\"`, `-trimpath` (to avoid embedded build paths) and `-buildvcs=false`."
+msgstr ""
+
+#. type: Title #####
+#: _docs/Reproducible_Builds.md
+#, no-wrap
+msgid "Rust"
+msgstr ""
+
+#. type: Plain text
+#: _docs/Reproducible_Builds.md
+#, no-wrap
+msgid ""
+"Compiler and linker arguments can be added to [`build.rustflags`](https://doc.rust-lang.org/cargo/reference/config.html#buildrustflags).\n"
+"Linker arguments can be added with `link-args=-Wl,<linker args>`; `--remap-path-prefix=<old>=<new>`\n"
+"can be added to strip build paths.\n"
 msgstr ""
 
 #. type: Title ###

@@ -26,7 +26,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
-"POT-Creation-Date: 2023-05-10 11:57+0200\n"
+"POT-Creation-Date: 2023-05-22 20:12+0200\n"
 "PO-Revision-Date: 2023-05-11 15:52+0000\n"
 "Last-Translator: Eric <hamburger2048@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Chinese (Simplified) <https://hosted.weblate.org/projects/f-droid/website-docs/zh_Hans/>\n"
@@ -1206,7 +1206,9 @@ msgstr "非自由资产<a name=\"NonFreeAssets\" />"
 
 #. type: Plain text
 #: _docs/Anti-Features.md
-msgid "This Anti-Feature is applied to apps that contain and make use of Non-Free assets. The most common case is apps using artwork - images, sounds, music, etc. - under a non-commercial license."
+#, fuzzy
+#| msgid "This Anti-Feature is applied to apps that contain and make use of Non-Free assets. The most common case is apps using artwork - images, sounds, music, etc. - under a non-commercial license."
+msgid "This Anti-Feature is applied to apps that contain and make use of Non-Free assets. The most common case is apps using artwork - images, sounds, music, etc. - under a license that restricts commercial usage or making derivative works (for example, any Creative Commons license with a \"Non-Commercial\" (NC) or \"No Derivatives\" (ND) restriction)."
 msgstr "此负面特征适用于包含并使用非自由资产的应用。最常见的例子是应用使用了非商业许可证授权的作品，如图像，声音，音乐等。"
 
 #. type: Plain text
@@ -3611,7 +3613,9 @@ msgstr "'UpstreamNonFree' - 该应用是或依赖于非自由软件。这并不�
 
 #. type: Bullet: '-   '
 #: _docs/Build_Metadata_Reference.md
-msgid "'NonFreeAssets' - the application contains and makes use of Non-Free assets. The most common case is apps using artwork - images, sounds, music, etc - under a non-commercial license."
+#, fuzzy
+#| msgid "'NonFreeAssets' - the application contains and makes use of Non-Free assets. The most common case is apps using artwork - images, sounds, music, etc - under a non-commercial license."
+msgid "'NonFreeAssets' - the application contains and makes use of Non-Free assets. The most common case is apps using artwork - images, sounds, music, etc. - under a license that restricts commercial usage or making derivative works (for example, any Creative Commons license with a \"Non-Commercial\" (NC) or \"No Derivatives\" (ND) restriction)."
 msgstr "'NonFreeAssets' - 应用包含并使用非自由资产。最常见的例子是应用使用了非商业许可证授权的作品，如图像，声音，音乐等。"
 
 #. type: Bullet: '-   '
@@ -5322,6 +5326,18 @@ msgstr "由我的密钥签署的 APK 能否被包括在内？"
 #: _docs/FAQ_-_App_Developers.md
 msgid "Yes, for [reproducible builds](../Reproducible_Builds) F-Droid will include your signed APKs in the official F-Droid repo after they were verified as being so. If this fails (e.g. your app can't be built in a reproducible way or when you want to distribute an app with closed-source components or API keys etc.), you can put any APK in your own \"[F-Droid binary repo](../Setup_an_F-Droid_App_Repo)\", and people can add your repo to their F-Droid client in order to get your APKs."
 msgstr "是的，对于[可重复构建](../Reproducible_Builds)，在验证过它们的确可重复构建后，F-Droid会将你签过名的 APK 文件包含在官方 F-Droid 存储库中。如果失败了（比如你的应用不能以可重复的方式进行构建或者当你想要分发带闭源部件或 API 密钥等东西的应用时），你可以在你自己的\"[F-Droid 二进制文件存储库](../Setup_an_F-Droid_App_Repo)\"中放置任意 APK 文件，想获得你的 APK 的人可以将你的存储库添加到 F-Droid 客户端中。"
+
+#. type: Title ###
+#: _docs/FAQ_-_App_Developers.md
+#, fuzzy, no-wrap
+#| msgid "Reproducible builds"
+msgid "Are reproducible builds required?"
+msgstr "可重复构建"
+
+#. type: Plain text
+#: _docs/FAQ_-_App_Developers.md
+msgid "No. But we do consider them best practice and hope you'll consider trying to make your app reproducible. See our [inclusion how-to](../Inclusion_How-To) for more information."
+msgstr ""
 
 #. type: Title ###
 #: _docs/FAQ_-_App_Developers.md
@@ -7089,6 +7105,66 @@ msgstr "如果是来自 GitLab 的合并请求，审查过程理论上是一样�
 #: _docs/Inclusion_How-To.md
 msgid "In an attempt to optimize the process, when you proposed inclusion via metadata merge request, F-Droid staff rely on several assumptions ([outlined above](#Proposal_by_Metadata_Merge_Request)). As such, the reviewing process will be much less intensive in several respects, and consumes much less time. Policy-violating applications that somehow sneaked in this way will be dealt with after the fact."
 msgstr "为了优化流程，当你提议通过元数据合并请求包含时，F-Droid 工作人员依赖于几个假设（[上面概述](#Proposal_by_Metadata_Merge_Request)）。因此，审查过程在几个方面的强度会大大降低，并且消耗的时间也会少得多。以这种方式偷偷摸摸的违反政策的应用将在事后得到处理。"
+
+#. type: Title ###
+#: _docs/Inclusion_How-To.md _docs/Reproducible_Builds.md
+#, no-wrap
+msgid "Reproducible Builds"
+msgstr "可重复构建"
+
+#. type: Plain text
+#: _docs/Inclusion_How-To.md
+msgid "Reproducible builds are not a requirement for apps being on F-Droid. But we do consider their use best practice. And unfortunately, one can't easily switch to them later because Android doesn't allow updates with a different signing key, meaning users would have to reinstall. So we mainly encourage their use for new apps."
+msgstr ""
+
+#. type: Plain text
+#: _docs/Inclusion_How-To.md
+msgid "The point of reproducible builds is that the developer's signature (from the APK they publish) guarantees that our build is identical to theirs (and thus doesn't contain anything it shouldn't) and at the same time our build server verifies that the developer's build matches the published source code (and thus doesn't contain anything it shouldn't either)."
+msgstr ""
+
+#. type: Plain text
+#: _docs/Inclusion_How-To.md
+msgid "This increases trust and makes supply-chain attacks harder. It also makes it impossible for there to be a bug in the F-Droid version only (or vice versa).  Using the developer's key also means they have the option of providing updates to users themselves if we for some reason (temporarily) cannot."
+msgstr ""
+
+#. type: Plain text
+#: _docs/Inclusion_How-To.md
+msgid "Some apps -- especially those without native code, using only Kotlin/Java -- are very easy to make reproducible. Others may require more work. Sadly, some apps cannot be made reproducible at all."
+msgstr ""
+
+#. type: Plain text
+#: _docs/Inclusion_How-To.md
+msgid "We hope that developers agree with us that it's at least worth attempting to make their apps reproducible given the various benefits, but if they are unable or unwilling to spend time/resources on this, we of course respect their decision."
+msgstr ""
+
+#. type: Plain text
+#: _docs/Inclusion_How-To.md
+#, fuzzy
+#| msgid "For more in-depth information, see:"
+msgid "For more information, see:"
+msgstr "更深入的信息，请参阅："
+
+#. type: Bullet: '* '
+#: _docs/Inclusion_How-To.md
+msgid "[Towards a reproducible F-Droid](https://f-droid.org/2023/01/15/towards-a-reproducible-fdroid.html)"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/Inclusion_How-To.md
+msgid "[F-Droid's Reproducible Builds documentation](../Reproducible_Builds)"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/Inclusion_How-To.md
+#, fuzzy
+#| msgid "<https://reproducible-builds.org>"
+msgid "[Reproducible Builds project](https://reproducible-builds.org/)"
+msgstr "<https://reproducible-builds.org>"
+
+#. type: Bullet: '* '
+#: _docs/Inclusion_How-To.md
+msgid "[HOWTO: diff & fix APKs for Reproducible Builds](https://gitlab.com/fdroid/wiki/-/wikis/HOWTO:-diff-&-fix-APKs-for-Reproducible-Builds)"
+msgstr ""
 
 #. type: Title ##
 #: _docs/Inclusion_How-To.md
@@ -9227,12 +9303,6 @@ msgstr "将应用收录入资源库并不是故事的结尾：我们必须保持
 msgid "The most important is to know when new versions are published. We have three automatic methods and one manual: from tags; checking the _AndroidManifest.xml_ at the most recent revision in the repository; and checking Google Play. If these won't do, we must look at the version of the package published by the upstream developers, either by loading the Google Play web page or downloading an APK and checking its version.  Repository tags are the natural way of labelling new versions (look for them under \"releases\" on an example in [github.com](https://github.com/dschuermann/document-viewer/releases) or under the \"tags\" directory in the case of SVN repos). If you can't find tags it would be a helpful to make an issue about it on the issue tracker. In the example, we point to a changelog page as a backup check; other possiblities are a Google Code download page or a Google Play link."
 msgstr "最重要的是要知道何时发布新版本。我们有三种自动方式和一种手动方式：来自 tag；检查存储库中最新版本的 _AndroidManifest.xml_；并查看 Google Play。如果这些都不行，我们必须查看上游开发人员发布的软件包版本，方法是加载 Google Play 网页或下载 APK 并检查其版本。存储库标签是标记新版本的自然方式（在 [github.com](https://github.com/dschuermann/document-viewer/releases) 或“tag”下的示例中的“releases”下查找它们目录（在 SVN 存储库的情况下）。如果你找不到 tag，在问题跟踪器上提出问题会很有帮助。在示例中，我们指向一个变更日志页面作为备份检查；其他可能性是 Google 代码下载页面或 Google Play 链接。"
 
-#. type: Title ###
-#: _docs/Reproducible_Builds.md
-#, no-wrap
-msgid "Reproducible Builds"
-msgstr "可重复构建"
-
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
 msgid "F-Droid supports [reproducible builds](https://reproducible-builds.org) of apps, so that anyone can run the build process again and reproduce the same APK as the original release.  This means that F-Droid can verify that an app is 100% free software while still using the original developer's APK signatures.  F-Droid verifies reproducible builds using APK [signature copying](#reproducible-signatures)."
@@ -9688,46 +9758,10 @@ msgstr "在不同的构建机器上，使用不同的 NDK 路径和不同的项�
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
-msgid "One possible solution is adding `-Wl,--build-id=none` to link options which will disable _build-id_ generation completely. For `ndk-build`, `LOCAL_LDFLAGS += -Wl,--build-id=none` can be added to `Android.mk` files or to `build.gradle/.kts`:"
+#, fuzzy
+#| msgid "One possible solution is adding `-Wl,--build-id=none` to link options which will disable _build-id_ generation completely. For `ndk-build`, `LOCAL_LDFLAGS += -Wl,--build-id=none` can be added to `Android.mk` files or to `build.gradle/.kts`:"
+msgid "One possible solution is passing `--build-id=none` to the linker which will disable _build-id_ generation completely."
 msgstr "一个可能的解决方案时添加 `-Wl,--build-id=none` 到链接选项，这会完全禁用 _build-id_ 生成。 对于 `ndk-build`，可以添加 `LOCAL_LDFLAGS += -Wl,--build-id=none` 到 `Android.mk` 文件或者 `build.gradle/.kts`："
-
-#. type: Fenced code block
-#: _docs/Reproducible_Builds.md
-#, no-wrap
-msgid ""
-"android {\n"
-"    defaultConfig {\n"
-"        externalNativeBuild {\n"
-"            ndkBuild {\n"
-"                arguments \"LOCAL_LDFLAGS += -Wl,--build-id=none\"\n"
-"            }\n"
-"        }\n"
-"    }\n"
-"}\n"
-msgstr ""
-"android {\n"
-"    defaultConfig {\n"
-"        externalNativeBuild {\n"
-"            ndkBuild {\n"
-"                arguments \"LOCAL_LDFLAGS += -Wl,--build-id=none\"\n"
-"            }\n"
-"        }\n"
-"    }\n"
-"}\n"
-
-#. type: Plain text
-#: _docs/Reproducible_Builds.md
-#, no-wrap
-msgid ""
-"For CMake versions since 3.13, `add_link_options(LINKER:--build-id=none)`\n"
-"can be added to `CMakeLists.txt` globally. For CMake versions before 3.13,\n"
-"`target_link_libraries(<target> -Wl,--build-id=none)` can be used instead for\n"
-"every target.\n"
-msgstr ""
-"对于 3.13 起的 CMake 版本，可以全局添加`add_link_options(LINKER:--build-id=none)`\n"
-"到 `CMakeLists.txt`。 对于 3.13 之前的 CMake 版本，\n"
-"可以对每个目标使用\n"
-"`target_link_libraries(<target> -Wl,--build-id=none)`。\n"
 
 #. type: Title ####
 #: _docs/Reproducible_Builds.md
@@ -9737,8 +9771,8 @@ msgstr "NDK 哈希样式"
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
-msgid "On different build machines, NDK may use different hash style. Setting the hash style explicitly can fix this problem. For CMake versions since 3.13, `add_link_options(LINKER:--hash-style=gnu)` can be added to `CMakeLists.txt` globally."
-msgstr "在不同的构建机器上，NDK 可能使用不同的哈希样式。明确设置哈希样式可修复这个问题。对于 3.13 起的 CMake 版本，可将`add_link_options(LINKER:--hash-style=gnu)`全局添加到 `CMakeLists.txt`。"
+msgid "LLVM passes different defaults to linkers on different platforms. After [this commit](https://github.com/llvm/llvm-project/commit/95dcaef00379e893dabc61cf598fe51c9d03414e#diff-061e3e32cfa3dd06717856cc16465106a3b72520eb9b0c2954513f194bd1696f)  was merged into the NDK, `--hash-style=gnu` will be used on Debian by default. To change the hash style, `--hash-style=gnu` can be passed to the linker."
+msgstr ""
 
 #. type: Title ####
 #: _docs/Reproducible_Builds.md
@@ -9957,6 +9991,116 @@ msgstr "}"
 #: _docs/Reproducible_Builds.md
 msgid ".end annotation"
 msgstr ".end annotation"
+
+#. type: Title ####
+#: _docs/Reproducible_Builds.md
+#, no-wrap
+msgid "Language-specific instructions"
+msgstr ""
+
+#. type: Plain text
+#: _docs/Reproducible_Builds.md
+msgid "Native libraries may be built with various tools and languages. Though they suffer from similar reproducible build issues, the methods for fixing them are different. Some known solutions are listed below:"
+msgstr ""
+
+#. type: Title #####
+#: _docs/Reproducible_Builds.md
+#, no-wrap
+msgid "ndk-build"
+msgstr ""
+
+#. type: Plain text
+#: _docs/Reproducible_Builds.md
+#, no-wrap
+msgid ""
+"`LOCAL_LDFLAGS += -Wl,<linker args>` can be added to `Android.mk` files or to\n"
+"`build.gradle`/`build.gradle.kts`:\n"
+msgstr ""
+
+#. type: Fenced code block
+#: _docs/Reproducible_Builds.md
+#, fuzzy, no-wrap
+#| msgid ""
+#| "android {\n"
+#| "    defaultConfig {\n"
+#| "        externalNativeBuild {\n"
+#| "            ndkBuild {\n"
+#| "                arguments \"LOCAL_LDFLAGS += -Wl,--build-id=none\"\n"
+#| "            }\n"
+#| "        }\n"
+#| "    }\n"
+#| "}\n"
+msgid ""
+"android {\n"
+"    defaultConfig {\n"
+"        externalNativeBuild {\n"
+"            ndkBuild {\n"
+"                arguments \"LOCAL_LDFLAGS += -Wl,<linker args>\"\n"
+"            }\n"
+"        }\n"
+"    }\n"
+"}\n"
+msgstr ""
+"android {\n"
+"    defaultConfig {\n"
+"        externalNativeBuild {\n"
+"            ndkBuild {\n"
+"                arguments \"LOCAL_LDFLAGS += -Wl,--build-id=none\"\n"
+"            }\n"
+"        }\n"
+"    }\n"
+"}\n"
+
+#. type: Title #####
+#: _docs/Reproducible_Builds.md
+#, no-wrap
+msgid "CMake"
+msgstr ""
+
+#. type: Plain text
+#: _docs/Reproducible_Builds.md
+#, fuzzy, no-wrap
+#| msgid ""
+#| "For CMake versions since 3.13, `add_link_options(LINKER:--build-id=none)`\n"
+#| "can be added to `CMakeLists.txt` globally. For CMake versions before 3.13,\n"
+#| "`target_link_libraries(<target> -Wl,--build-id=none)` can be used instead for\n"
+#| "every target.\n"
+msgid ""
+"For CMake versions since 3.13, `add_link_options(LINKER:<linker args>)`\n"
+"can be added to `CMakeLists.txt` globally. For CMake versions before 3.13,\n"
+"`target_link_libraries(<target> LINKER:<linker args>)` can be used instead for\n"
+"every target.\n"
+msgstr ""
+"对于 3.13 起的 CMake 版本，可以全局添加`add_link_options(LINKER:--build-id=none)`\n"
+"到 `CMakeLists.txt`。 对于 3.13 之前的 CMake 版本，\n"
+"可以对每个目标使用\n"
+"`target_link_libraries(<target> -Wl,--build-id=none)`。\n"
+
+#. type: Title #####
+#: _docs/Reproducible_Builds.md
+#, no-wrap
+msgid "Golang"
+msgstr ""
+
+#. type: Plain text
+#: _docs/Reproducible_Builds.md
+msgid "Linker arguments can be added to `CGO_LDFLAGS`. Some other useful arguments that can be passed to `go build` are `-ldflags=\"-buildid=\"`, `-trimpath` (to avoid embedded build paths) and `-buildvcs=false`."
+msgstr ""
+
+#. type: Title #####
+#: _docs/Reproducible_Builds.md
+#, no-wrap
+msgid "Rust"
+msgstr ""
+
+#. type: Plain text
+#: _docs/Reproducible_Builds.md
+#, no-wrap
+msgid ""
+"Compiler and linker arguments can be added to [`build.rustflags`](https://doc.rust-lang.org/cargo/reference/config.html#buildrustflags).\n"
+"Linker arguments can be added with `link-args=-Wl,<linker args>`; `--remap-path-prefix=<old>=<new>`\n"
+"can be added to strip build paths.\n"
+msgstr ""
 
 #. type: Title ###
 #: _docs/Reproducible_Builds.md
@@ -11938,6 +12082,9 @@ msgstr "首选项"
 #: _docs/Whitelabel_Builds.md
 msgid "For a custom build that enables Automatic Updates by default, override _app/src/main/res/xml/preferences.xml_. You can customize the preferences and their default values in _app/src/mycompany/res/xml/preferences.xml_. The fully automatic update requires [Privileged Extension](https://gitlab.com/fdroid/privileged-extension). With regular access, the updates will only automatically download. The user still needs to click install on each one."
 msgstr "对于默认启用自动更新的自定义构建，覆盖 _app/src/main/res/xml/preferences.xml_。你可以在 _app/src/mycompany/res/xml/preferences.xml_ 中自定义首选项及其默认值。全自动更新需要 [特权扩展](https://gitlab.com/fdroid/privileged-extension)。通过定期访问，更新只会自动下载。用户仍然需要在每一个上点击安装。"
+
+#~ msgid "On different build machines, NDK may use different hash style. Setting the hash style explicitly can fix this problem. For CMake versions since 3.13, `add_link_options(LINKER:--hash-style=gnu)` can be added to `CMakeLists.txt` globally."
+#~ msgstr "在不同的构建机器上，NDK 可能使用不同的哈希样式。明确设置哈希样式可修复这个问题。对于 3.13 起的 CMake 版本，可将`add_link_options(LINKER:--hash-style=gnu)`全局添加到 `CMakeLists.txt`。"
 
 #, no-wrap
 #~ msgid "    android.permission.INTERNET\n"
