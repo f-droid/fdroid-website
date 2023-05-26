@@ -450,11 +450,13 @@ process can add them.  For example:
 +-rw-rw-rw-  2.3 unx    78984 b- stor 80-000-00 00:00 resources.arsc
 ```
 
-#### Mismatched Java version
+#### Mismatched Toolchains
 
-Sometimes there's a mismatch as upstream might use a different one (eg. Gradle 8 uses Java 17) and the recipe needs to be updated.
+Different toolchains may produce different binaries. A usual case is that different
+JDK versions/distributions are used to build the apk. Sometimes Gradle may mix defferent
+versions of JDKs to build an apk. To avoid such problems unused JDKs should be removed.
 
-The APK diff will have entries like this, eg. Java 17 vs Java 11:
+The APK diff will have entries in the `classes.dex` files like this, e.g. Java 17 vs Java 11:
 
 ```diff
 -    .annotation system Ldalvik/annotation/Signature;
