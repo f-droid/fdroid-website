@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
-"POT-Creation-Date: 2023-05-15 17:12+0200\n"
+"POT-Creation-Date: 2023-05-30 11:30+0200\n"
 "PO-Revision-Date: 2023-05-27 13:51+0000\n"
 "Last-Translator: WaldiS <sto@tutanota.de>\n"
 "Language-Team: Polish <https://hosted.weblate.org/projects/f-droid/website-docs/pl/>\n"
@@ -1700,11 +1700,6 @@ msgstr "Te pliki metadanych to proste, łatwe do edycji pliki tekstowe, zawsze n
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-msgid "Metadata files are written in [YAML](http://www.yaml.org/start.html) format"
-msgstr "Pliki metadanych zapisywane są w formacie [YAML](http://www.yaml.org/start.html)"
-
-#. type: Plain text
-#: _docs/Build_Metadata_Reference.md
 msgid "Note that although the metadata files are designed to be easily read and writable by humans, they are also processed and written by various scripts. They can be automatically cleaned up when necessary. The structure and comments will be preserved correctly, although the order of fields will be standardised. (In the event that the original file was in a different order, comments are considered as being attached to the field following them). In fact, you can standardise all packages in a repository using a single command, without changing the functional content, by running:"
 msgstr "Zauważ, że chociaż pliki metadanych są zaprojektowane tak, aby były łatwe do odczytania i zapisu przez ludzi, są one również przetwarzane i pisane przez różne skrypty. W razie potrzeby można je automatycznie oczyścić. Struktura i komentarze zostaną zachowane poprawnie, chociaż kolejność pól będzie ustandaryzowana. (W przypadku, gdy oryginalny plik był w innej kolejności, komentarze są traktowane jako dołączone do pola następującego po nich). W rzeczywistości można ujednolicić wszystkie pakiety w repozytorium za pomocą pojedynczego polecenia, bez zmiany zawartości funkcjonalnej, uruchamiając:"
 
@@ -1724,6 +1719,69 @@ msgstr "Lub po prostu uruchom go na konkretnej aplikacji:"
 #, no-wrap
 msgid "fdroid rewritemeta org.adaway\n"
 msgstr "fdroid rewritemeta org.adaway\n"
+
+#. type: Title ##
+#: _docs/Build_Metadata_Reference.md
+#, fuzzy, no-wrap
+#| msgid "Data format"
+msgid "Markup and Data Format"
+msgstr "Format danych"
+
+#. type: Plain text
+#: _docs/Build_Metadata_Reference.md
+msgid "F-Droid metadata files are written in YAML and have a file extension `.yml`.  The top-most data structure is a \"map\" or \"dictionary\", made up of key/value pairs.  All keys are strings.  There are some internal data types used for values:"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/Build_Metadata_Reference.md
+msgid "`TYPE_BOOL` - Either `true` or `false`."
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/Build_Metadata_Reference.md
+msgid "`TYPE_BUILD` - A list of build entries, which are maps of key/value pairs."
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/Build_Metadata_Reference.md
+msgid "`TYPE_INT` - An integer in decimal format."
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/Build_Metadata_Reference.md
+msgid "`TYPE_LIST` - A list of strings."
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/Build_Metadata_Reference.md
+msgid "`TYPE_MULTILINE` - A block of text with multiple lines."
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/Build_Metadata_Reference.md
+msgid "`TYPE_SCRIPT` - A string or list of strings to be executed as a _bash_ script."
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/Build_Metadata_Reference.md
+msgid "`TYPE_STRING` - A string."
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/Build_Metadata_Reference.md
+msgid "`TYPE_STRINGMAP` - A map of maps, the inner keys are BCP 47 locales and the values are human-readable text."
+msgstr ""
+
+#. type: Plain text
+#: _docs/Build_Metadata_Reference.md
+msgid "The canonical format is [YAML 1.2](https://yaml.org/spec/1.2.2/).  The process of reading metadata files is more tolerant, and will do some automatic type conversions when that can provide a reliable transformation.  `fdroid rewritemeta` will output YAML 1.2, so it will not preserve the original values as written, if they have been converted."
+msgstr ""
+
+#. type: Title ##
+#: _docs/Build_Metadata_Reference.md
+#, no-wrap
+msgid "Fields"
+msgstr ""
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -5435,6 +5493,18 @@ msgstr "Tylko pliki APK zbudowane przez F-Droid są zawarte w oficjalnym repozyt
 
 #. type: Title ###
 #: _docs/FAQ_-_App_Developers.md
+#, fuzzy, no-wrap
+#| msgid "Reproducible builds"
+msgid "Are reproducible builds required?"
+msgstr "Powtarzalne kompilacje"
+
+#. type: Plain text
+#: _docs/FAQ_-_App_Developers.md
+msgid "No. But we do consider them best practice and hope you'll consider trying to make your app reproducible. See our [inclusion how-to](../Inclusion_How-To) for more information."
+msgstr ""
+
+#. type: Title ###
+#: _docs/FAQ_-_App_Developers.md
 #, no-wrap
 msgid "Can I run my own F-Droid package repository?<a name=\"Can_I_run_my_own_app_repo\"></a>"
 msgstr "Czy mogę uruchomić własne repozytorium pakietów F-Droid?<a name=\"Can_I_run_my_own_app_repo\"></a>"
@@ -7201,6 +7271,66 @@ msgstr "W przypadku gdy włączenie pochodzi z wniosku o połączenie GitLab, pr
 #: _docs/Inclusion_How-To.md
 msgid "In an attempt to optimize the process, when you proposed inclusion via metadata merge request, F-Droid staff rely on several assumptions ([outlined above](#Proposal_by_Metadata_Merge_Request)). As such, the reviewing process will be much less intensive in several respects, and consumes much less time. Policy-violating applications that somehow sneaked in this way will be dealt with after the fact."
 msgstr "Aby zoptymalizować proces, proponując włączenie za pomocą żądania scalenia metadanych, pracownicy F-Droid opierają się na kilku założeniach ([opisane powyżej](#Proposal_by_Metadata_Merge_Request)). W związku z tym proces oceny będzie znacznie mniej intensywny pod kilkoma względami i pochłonie znacznie mniej czasu. Zgłaszane w ten sposób aplikacje naruszające zasady będą rozpatrywane po fakcie."
+
+#. type: Title ###
+#: _docs/Inclusion_How-To.md _docs/Reproducible_Builds.md
+#, no-wrap
+msgid "Reproducible Builds"
+msgstr "Powtarzalne kompilacje"
+
+#. type: Plain text
+#: _docs/Inclusion_How-To.md
+msgid "Reproducible builds are not a requirement for apps being on F-Droid. But we do consider their use best practice. And unfortunately, one can't easily switch to them later because Android doesn't allow updates with a different signing key, meaning users would have to reinstall. So we mainly encourage their use for new apps."
+msgstr ""
+
+#. type: Plain text
+#: _docs/Inclusion_How-To.md
+msgid "The point of reproducible builds is that the developer's signature (from the APK they publish) guarantees that our build is identical to theirs (and thus doesn't contain anything it shouldn't) and at the same time our build server verifies that the developer's build matches the published source code (and thus doesn't contain anything it shouldn't either)."
+msgstr ""
+
+#. type: Plain text
+#: _docs/Inclusion_How-To.md
+msgid "This increases trust and makes supply-chain attacks harder. It also makes it impossible for there to be a bug in the F-Droid version only (or vice versa).  Using the developer's key also means they have the option of providing updates to users themselves if we for some reason (temporarily) cannot."
+msgstr ""
+
+#. type: Plain text
+#: _docs/Inclusion_How-To.md
+msgid "Some apps -- especially those without native code, using only Kotlin/Java -- are very easy to make reproducible. Others may require more work. Sadly, some apps cannot be made reproducible at all."
+msgstr ""
+
+#. type: Plain text
+#: _docs/Inclusion_How-To.md
+msgid "We hope that developers agree with us that it's at least worth attempting to make their apps reproducible given the various benefits, but if they are unable or unwilling to spend time/resources on this, we of course respect their decision."
+msgstr ""
+
+#. type: Plain text
+#: _docs/Inclusion_How-To.md
+#, fuzzy
+#| msgid "For more in-depth information, see:"
+msgid "For more information, see:"
+msgstr "Aby zobaczyć więcej dogłębnych informacji, zobacz"
+
+#. type: Bullet: '* '
+#: _docs/Inclusion_How-To.md
+msgid "[Towards a reproducible F-Droid](https://f-droid.org/2023/01/15/towards-a-reproducible-fdroid.html)"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/Inclusion_How-To.md
+msgid "[F-Droid's Reproducible Builds documentation](../Reproducible_Builds)"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/Inclusion_How-To.md
+#, fuzzy
+#| msgid "<https://reproducible-builds.org>"
+msgid "[Reproducible Builds project](https://reproducible-builds.org/)"
+msgstr "<https://reproducible-builds.org>"
+
+#. type: Bullet: '* '
+#: _docs/Inclusion_How-To.md
+msgid "[HOWTO: diff & fix APKs for Reproducible Builds](https://gitlab.com/fdroid/wiki/-/wikis/HOWTO:-diff-&-fix-APKs-for-Reproducible-Builds)"
+msgstr ""
 
 #. type: Title ##
 #: _docs/Inclusion_How-To.md
@@ -9349,12 +9479,6 @@ msgstr "Zdobycie aplikacji w repozytorium nie jest końcem historii: musimy zach
 msgid "The most important is to know when new versions are published. We have three automatic methods and one manual: from tags; checking the _AndroidManifest.xml_ at the most recent revision in the repository; and checking Google Play. If these won't do, we must look at the version of the package published by the upstream developers, either by loading the Google Play web page or downloading an APK and checking its version.  Repository tags are the natural way of labelling new versions (look for them under \"releases\" on an example in [github.com](https://github.com/dschuermann/document-viewer/releases) or under the \"tags\" directory in the case of SVN repos). If you can't find tags it would be a helpful to make an issue about it on the issue tracker. In the example, we point to a changelog page as a backup check; other possiblities are a Google Code download page or a Google Play link."
 msgstr "Najważniejsze jest wiedzieć, kiedy zostaną opublikowane nowe wersje. Mamy trzy automatyczne metody i jeden podręcznik: od tagów; sprawdzanie _AndroidManifest.xml_ przy najnowszej wersji w repozytorium; i sprawdzanie Google Play. Jeśli tego nie zrobimy, musimy przyjrzeć się wersji pakietu opublikowanej przez programistów, poprzez załadowanie strony internetowej Google Play lub pobranie pliku APK i sprawdzenie jego wersji. Znaczniki repozytoriów są naturalnym sposobem etykietowania nowych wersji (szukaj ich w \"wydaniach\" na przykład w [github.com](https://github.com/dschuermann/document-viewer/releases) lub w \"tagach\" katalog w przypadku repozytoriów SVN). Jeśli nie możesz znaleźć tagów, byłoby pomocne w rozwiązaniu problemu w narzędziu do śledzenia problemów. W przykładzie wskazujemy stronę z changelogiem jako kontrolę zapasową; inne możliwości to strona pobierania Google Code lub link Google Play."
 
-#. type: Title ###
-#: _docs/Reproducible_Builds.md
-#, no-wrap
-msgid "Reproducible Builds"
-msgstr "Powtarzalne kompilacje"
-
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
 msgid "F-Droid supports [reproducible builds](https://reproducible-builds.org) of apps, so that anyone can run the build process again and reproduce the same APK as the original release.  This means that F-Droid can verify that an app is 100% free software while still using the original developer's APK signatures.  F-Droid verifies reproducible builds using APK [signature copying](#reproducible-signatures)."
@@ -9797,41 +9921,7 @@ msgstr "Na różnych maszynach budujących używane są różne ścieżki NDK i 
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
-msgid "One possible solution is adding `-Wl,--build-id=none` to link options which will disable _build-id_ generation completely. For `ndk-build`, `LOCAL_LDFLAGS += -Wl,--build-id=none` can be added to `Android.mk` files or to `build.gradle/.kts`:"
-msgstr ""
-
-#. type: Fenced code block
-#: _docs/Reproducible_Builds.md
-#, no-wrap
-msgid ""
-"android {\n"
-"    defaultConfig {\n"
-"        externalNativeBuild {\n"
-"            ndkBuild {\n"
-"                arguments \"LOCAL_LDFLAGS += -Wl,--build-id=none\"\n"
-"            }\n"
-"        }\n"
-"    }\n"
-"}\n"
-msgstr ""
-"android {\n"
-"    defaultConfig {\n"
-"        externalNativeBuild {\n"
-"            ndkBuild {\n"
-"                arguments \"LOCAL_LDFLAGS += -Wl,--build-id=none\"\n"
-"            }\n"
-"        }\n"
-"    }\n"
-"}\n"
-
-#. type: Plain text
-#: _docs/Reproducible_Builds.md
-#, no-wrap
-msgid ""
-"For CMake versions since 3.13, `add_link_options(LINKER:--build-id=none)`\n"
-"can be added to `CMakeLists.txt` globally. For CMake versions before 3.13,\n"
-"`target_link_libraries(<target> -Wl,--build-id=none)` can be used instead for\n"
-"every target.\n"
+msgid "One possible solution is passing `--build-id=none` to the linker which will disable _build-id_ generation completely."
 msgstr ""
 
 #. type: Title ####
@@ -9842,7 +9932,7 @@ msgstr "Styl hasza NDK"
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
-msgid "On different build machines, NDK may use different hash style. Setting the hash style explicitly can fix this problem. For CMake versions since 3.13, `add_link_options(LINKER:--hash-style=gnu)` can be added to `CMakeLists.txt` globally."
+msgid "LLVM passes different defaults to linkers on different platforms. After [this commit](https://github.com/llvm/llvm-project/commit/95dcaef00379e893dabc61cf598fe51c9d03414e#diff-061e3e32cfa3dd06717856cc16465106a3b72520eb9b0c2954513f194bd1696f)  was merged into the NDK, `--hash-style=gnu` will be used on Debian by default. To change the hash style, `--hash-style=gnu` can be passed to the linker."
 msgstr ""
 
 #. type: Title ####
@@ -10061,6 +10151,107 @@ msgstr ""
 #. type: Bullet: '-    '
 #: _docs/Reproducible_Builds.md
 msgid ".end annotation"
+msgstr ""
+
+#. type: Title ####
+#: _docs/Reproducible_Builds.md
+#, no-wrap
+msgid "Language-specific instructions"
+msgstr ""
+
+#. type: Plain text
+#: _docs/Reproducible_Builds.md
+msgid "Native libraries may be built with various tools and languages. Though they suffer from similar reproducible build issues, the methods for fixing them are different. Some known solutions are listed below:"
+msgstr ""
+
+#. type: Title #####
+#: _docs/Reproducible_Builds.md
+#, no-wrap
+msgid "ndk-build"
+msgstr ""
+
+#. type: Plain text
+#: _docs/Reproducible_Builds.md
+#, no-wrap
+msgid ""
+"`LOCAL_LDFLAGS += -Wl,<linker args>` can be added to `Android.mk` files or to\n"
+"`build.gradle`/`build.gradle.kts`:\n"
+msgstr ""
+
+#. type: Fenced code block
+#: _docs/Reproducible_Builds.md
+#, fuzzy, no-wrap
+#| msgid ""
+#| "android {\n"
+#| "    defaultConfig {\n"
+#| "        externalNativeBuild {\n"
+#| "            ndkBuild {\n"
+#| "                arguments \"LOCAL_LDFLAGS += -Wl,--build-id=none\"\n"
+#| "            }\n"
+#| "        }\n"
+#| "    }\n"
+#| "}\n"
+msgid ""
+"android {\n"
+"    defaultConfig {\n"
+"        externalNativeBuild {\n"
+"            ndkBuild {\n"
+"                arguments \"LOCAL_LDFLAGS += -Wl,<linker args>\"\n"
+"            }\n"
+"        }\n"
+"    }\n"
+"}\n"
+msgstr ""
+"android {\n"
+"    defaultConfig {\n"
+"        externalNativeBuild {\n"
+"            ndkBuild {\n"
+"                arguments \"LOCAL_LDFLAGS += -Wl,--build-id=none\"\n"
+"            }\n"
+"        }\n"
+"    }\n"
+"}\n"
+
+#. type: Title #####
+#: _docs/Reproducible_Builds.md
+#, no-wrap
+msgid "CMake"
+msgstr ""
+
+#. type: Plain text
+#: _docs/Reproducible_Builds.md
+#, no-wrap
+msgid ""
+"For CMake versions since 3.13, `add_link_options(LINKER:<linker args>)`\n"
+"can be added to `CMakeLists.txt` globally. For CMake versions before 3.13,\n"
+"`target_link_libraries(<target> LINKER:<linker args>)` can be used instead for\n"
+"every target.\n"
+msgstr ""
+
+#. type: Title #####
+#: _docs/Reproducible_Builds.md
+#, no-wrap
+msgid "Golang"
+msgstr ""
+
+#. type: Plain text
+#: _docs/Reproducible_Builds.md
+msgid "Linker arguments can be added to `CGO_LDFLAGS`. Some other useful arguments that can be passed to `go build` are `-ldflags=\"-buildid=\"`, `-trimpath` (to avoid embedded build paths) and `-buildvcs=false`."
+msgstr ""
+
+#. type: Title #####
+#: _docs/Reproducible_Builds.md
+#, no-wrap
+msgid "Rust"
+msgstr ""
+
+#. type: Plain text
+#: _docs/Reproducible_Builds.md
+#, no-wrap
+msgid ""
+"Compiler and linker arguments can be added to [`build.rustflags`](https://doc.rust-lang.org/cargo/reference/config.html#buildrustflags).\n"
+"Linker arguments can be added with `link-args=-Wl,<linker args>`; `--remap-path-prefix=<old>=<new>`\n"
+"can be added to strip build paths.\n"
 msgstr ""
 
 #. type: Title ###
@@ -12045,6 +12236,9 @@ msgstr "Preferencje"
 #: _docs/Whitelabel_Builds.md
 msgid "For a custom build that enables Automatic Updates by default, override _app/src/main/res/xml/preferences.xml_. You can customize the preferences and their default values in _app/src/mycompany/res/xml/preferences.xml_. The fully automatic update requires [Privileged Extension](https://gitlab.com/fdroid/privileged-extension). With regular access, the updates will only automatically download. The user still needs to click install on each one."
 msgstr "W przypadku niestandardowej kompilacji, która domyślnie włącza aktualizacje automatyczne, należy zastąpić _app/src/main/res/xml/preferences.xml_. Możesz dostosować preferencje i ich domyślne wartości w _app/src/mycompany/res/xml/preferences.xml_. W pełni automatyczna aktualizacja wymaga rozszerzenia [Uprzywilejowane rozszerzenie](https://gitlab.com/fdroid/privileged-extension). Przy regularnym dostępie aktualizacje będą pobierane automatycznie. Użytkownik musi kliknąć instalację na każdym z nich."
+
+#~ msgid "Metadata files are written in [YAML](http://www.yaml.org/start.html) format"
+#~ msgstr "Pliki metadanych zapisywane są w formacie [YAML](http://www.yaml.org/start.html)"
 
 #, no-wrap
 #~ msgid "    android.permission.INTERNET\n"

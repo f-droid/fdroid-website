@@ -26,7 +26,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
-"POT-Creation-Date: 2023-05-22 20:12+0200\n"
+"POT-Creation-Date: 2023-05-30 11:30+0200\n"
 "PO-Revision-Date: 2023-04-26 13:49+0000\n"
 "Last-Translator: Макар Разин <makarrazin14@gmail.com>\n"
 "Language-Team: Russian <https://hosted.weblate.org/projects/f-droid/website-docs/ru/>\n"
@@ -1719,11 +1719,6 @@ msgstr "Эти файлы метаданных представляют собо
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-msgid "Metadata files are written in [YAML](http://www.yaml.org/start.html) format"
-msgstr "Файлы метаданных записываются в формате [YAML](http://www.yaml.org/start.html)"
-
-#. type: Plain text
-#: _docs/Build_Metadata_Reference.md
 msgid "Note that although the metadata files are designed to be easily read and writable by humans, they are also processed and written by various scripts. They can be automatically cleaned up when necessary. The structure and comments will be preserved correctly, although the order of fields will be standardised. (In the event that the original file was in a different order, comments are considered as being attached to the field following them). In fact, you can standardise all packages in a repository using a single command, without changing the functional content, by running:"
 msgstr "Обратите внимание, что хотя файлы метаданных разработаны таким образом, чтобы их можно было легко читать и записывать человеком, они также обрабатываются и записываются различными скриптами. При необходимости они могут быть автоматически очищены. Структура и комментарии будут сохранены правильно, хотя порядок полей будет стандартизирован. (В случае, если исходный файл был в другом порядке, комментарии считаются присоединенными к следующему за ними полю). Фактически, вы можете стандартизировать все пакеты в хранилище с помощью одной команды, не изменяя функционального содержимого, выполнив:"
 
@@ -1743,6 +1738,69 @@ msgstr "Или просто запустите его в конкретном п
 #, no-wrap
 msgid "fdroid rewritemeta org.adaway\n"
 msgstr "fdroid rewritemeta org.adaway\n"
+
+#. type: Title ##
+#: _docs/Build_Metadata_Reference.md
+#, fuzzy, no-wrap
+#| msgid "Data format"
+msgid "Markup and Data Format"
+msgstr "Формат данных"
+
+#. type: Plain text
+#: _docs/Build_Metadata_Reference.md
+msgid "F-Droid metadata files are written in YAML and have a file extension `.yml`.  The top-most data structure is a \"map\" or \"dictionary\", made up of key/value pairs.  All keys are strings.  There are some internal data types used for values:"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/Build_Metadata_Reference.md
+msgid "`TYPE_BOOL` - Either `true` or `false`."
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/Build_Metadata_Reference.md
+msgid "`TYPE_BUILD` - A list of build entries, which are maps of key/value pairs."
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/Build_Metadata_Reference.md
+msgid "`TYPE_INT` - An integer in decimal format."
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/Build_Metadata_Reference.md
+msgid "`TYPE_LIST` - A list of strings."
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/Build_Metadata_Reference.md
+msgid "`TYPE_MULTILINE` - A block of text with multiple lines."
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/Build_Metadata_Reference.md
+msgid "`TYPE_SCRIPT` - A string or list of strings to be executed as a _bash_ script."
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/Build_Metadata_Reference.md
+msgid "`TYPE_STRING` - A string."
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/Build_Metadata_Reference.md
+msgid "`TYPE_STRINGMAP` - A map of maps, the inner keys are BCP 47 locales and the values are human-readable text."
+msgstr ""
+
+#. type: Plain text
+#: _docs/Build_Metadata_Reference.md
+msgid "The canonical format is [YAML 1.2](https://yaml.org/spec/1.2.2/).  The process of reading metadata files is more tolerant, and will do some automatic type conversions when that can provide a reliable transformation.  `fdroid rewritemeta` will output YAML 1.2, so it will not preserve the original values as written, if they have been converted."
+msgstr ""
+
+#. type: Title ##
+#: _docs/Build_Metadata_Reference.md
+#, no-wrap
+msgid "Fields"
+msgstr ""
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -12185,6 +12243,9 @@ msgstr "Предпочтения"
 #: _docs/Whitelabel_Builds.md
 msgid "For a custom build that enables Automatic Updates by default, override _app/src/main/res/xml/preferences.xml_. You can customize the preferences and their default values in _app/src/mycompany/res/xml/preferences.xml_. The fully automatic update requires [Privileged Extension](https://gitlab.com/fdroid/privileged-extension). With regular access, the updates will only automatically download. The user still needs to click install on each one."
 msgstr "Для пользовательской сборки, которая включает автоматические обновления по умолчанию, переопределите _app/src/main/res/xml/preferences.xml_. Вы можете настроить предпочтения и их значения по умолчанию в _app/src/mycompany/res/xml/preferences.xml_. Для полностью автоматического обновления требуется [Privileged Extension](https://gitlab.com/fdroid/privileged-extension). При обычном доступе обновления будут только автоматически загружаться. Пользователю по-прежнему необходимо нажимать кнопку установки на каждом из них."
+
+#~ msgid "Metadata files are written in [YAML](http://www.yaml.org/start.html) format"
+#~ msgstr "Файлы метаданных записываются в формате [YAML](http://www.yaml.org/start.html)"
 
 #~ msgid "Read app repository URLs via NFC, for both swap and regular app repositories:"
 #~ msgstr "Считывание URL-адресов хранилищ приложений с помощью NFC как для своп-, так и для обычных хранилищ приложений:"
