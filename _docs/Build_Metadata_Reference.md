@@ -20,8 +20,6 @@ releases of a package/app, the fields use CamelCase starting with an
 upper case letter.  All other fields use camelCase starting with a
 lower case letter, including per-build fields, localized fields, etc.
 
-Metadata files are written in [YAML](http://www.yaml.org/start.html) format
-
 Note that although the metadata files are designed to be easily read
 and writable by humans, they are also processed and written by various
 scripts. They can be automatically cleaned up when necessary. The
@@ -41,6 +39,31 @@ Or just run it on a specific app:
 ```
 fdroid rewritemeta org.adaway
 ```
+
+## Markup and Data Format
+
+F-Droid metadata files are written in YAML and have a file extension `.yml`.
+The top-most data structure is a "map" or "dictionary", made up of key/value
+pairs.  All keys are strings.  There are some internal data types used for
+values:
+
+* `TYPE_BOOL` - Either `true` or `false`.
+* `TYPE_BUILD` - A list of build entries, which are maps of key/value pairs.
+* `TYPE_INT` - An integer in decimal format.
+* `TYPE_LIST` - A list of strings.
+* `TYPE_MULTILINE` - A block of text with multiple lines.
+* `TYPE_SCRIPT` - A string or list of strings to be executed as a _bash_ script.
+* `TYPE_STRING` - A string.
+* `TYPE_STRINGMAP` - A map of maps, the inner keys are BCP 47 locales and the values are human-readable text.
+
+The canonical format is [YAML 1.2](https://yaml.org/spec/1.2.2/).  The process
+of reading metadata files is more tolerant, and will do some automatic type
+conversions when that can provide a reliable transformation.  `fdroid
+rewritemeta` will output YAML 1.2, so it will not preserve the original values
+as written, if they have been converted.
+
+
+## Fields
 
 The following sections describe the fields recognised within the file.
 
@@ -897,7 +920,7 @@ retained.
 
 ### _RequiresRoot_<a name="RequiresRoot"></a>
 
-Set this optional field to 'True' if the application requires root
+Set this optional field to `true` if the application requires root
 privileges to be usable. This lets the client filter it out if the user
 so desires. Whether root is required or not, it is good to give a
 paragraph in the description to the conditions on which root may be
