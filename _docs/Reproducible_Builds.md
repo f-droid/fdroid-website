@@ -256,11 +256,15 @@ unaffected.
 
 Often, the easiest solution is to always use the same working directory when
 building; e.g. `/builds/fdroid/fdroiddata/build/your.app.id` (F-Droid CI),
-`/home/vagrant/build/your.app.id` (F-Droid build server), or `/tmp/build`.
+`/home/vagrant/build/your.app.id` (F-Droid build server), `/tmp/build` or
+create one to mirror the upstream used folders, eg. for macOS `/Users/runner`.
 
 NB: using a subdirectory of the world-writeable `/tmp` can have security
 implications (on multi-user systems).
 
+If the SDK path ends up embedded in Flutter one can move the SDK to said path
+in the recipe and configure it with: `flutter config --android-sdk <path>` as
+setting `ANDROID_SDK_ROOT` might not be enough.
 
 #### Embedded timestamps
 
