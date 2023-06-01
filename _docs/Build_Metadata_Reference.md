@@ -939,14 +939,14 @@ that.
 
 The version specified via `CurrentVersionCode` is always considered the 
 newest version when deciding which versions to put into the archive.
-This means that when `ArchivePolicy` is set to "1 versions" only the APK
+This means that when `ArchivePolicy` is set to `1` only the APK
 corresponding to CVC is kept, which is not necessarily the one with the 
 highest version code.
 
-Currently the only supported format is "n versions", where "n" is the
-number of versions to keep. Defaults to "3 versions". For apps with a list
+Currently the only supported format is `n`, where `n` is the
+number of versions to keep. Defaults to `3`. For apps with a list
 of [_VercodeOperation_](#VercodeOperation) the default is calculated as
-"3 x number of operations", eg. for an app with two operations, for two
+`3 x number of operations`, eg. for an app with two operations, for two
 ABIs, 6 versions will be kept.
 
 
