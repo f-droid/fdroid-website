@@ -257,7 +257,7 @@ unaffected.
 Often, the easiest solution is to always use the same working directory when
 building; e.g. `/builds/fdroid/fdroiddata/build/your.app.id` (F-Droid CI),
 `/home/vagrant/build/your.app.id` (F-Droid build server), `/tmp/build` or
-create one to mirror the upstream used folders, eg. for macOS `/Users/runner`.
+create one to mirror the upstream used folders, e.g. for macOS `/Users/runner`.
 
 NB: using a subdirectory of the world-writeable `/tmp` can have security
 implications (on multi-user systems).
@@ -504,11 +504,13 @@ passed to `go build` are `-ldflags="-buildid="`, `-trimpath` (to avoid embedded 
 
 ##### Rust
 
-Compiler and linker arguments can be added to [`build.rustflags`](https://doc.rust-lang.org/cargo/reference/config.html#buildrustflags).
-Linker arguments can be added with `link-args=-Wl,<linker args>`; `--remap-path-prefix=<old>=<new>`
+Compiler and linker arguments can be added to [Cargo `build.rustflags`](https://doc.rust-lang.org/cargo/reference/config.html#buildrustflags) and [rustc Codegen Options](https://doc.rust-lang.org/rustc/codegen-options/index.html).
+Linker arguments can be added with `-C link-args=-Wl,<linker args>`; `--remap-path-prefix=<old>=<new>`
 can be added to strip build paths.
 
-### Migration to reproducible builds
+The Rust toolchain should be pinned to the same version as upstream. This can be done when installing rustup with `rustup-init.sh -y --default-toolchain <version>`.
+
+### migration to reproducible builds
 
 #### TODO
 
