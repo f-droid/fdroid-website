@@ -452,8 +452,7 @@ process can add them.  For example:
 
 #### Mismatched Toolchains
 
-Different toolchains may produce different binaries. A usual case is that different
-JDK versions/distributions are used to build the apk. Sometimes Gradle may mix defferent
+Different toolchains may produce different binaries. A usual case is when more than one JDK version/distribution are used to build the apk. Sometimes even Gradle may mix
 versions of JDKs to build an apk. To avoid such problems unused JDKs should be removed.
 
 The APK diff will have entries in the `classes.dex` files like this, e.g. Java 17 vs Java 11:
