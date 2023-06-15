@@ -16,7 +16,7 @@ servers, and we couldn't figure out how to make the app GDPR compliant just
 yet.
 
 Since it's a just an early prototype, it's nowhere near as complete as our
-[official Android app](https://f-droid.org/en/packages/org.fdroid.fdroid/).
+[official Android app](https://f-droid.org/packages/org.fdroid.fdroid/).
 Right now it only has some of the most basic features: Displaying basic
 repository informations; Providing a link/QR-code for adding the repository to
 your F-Droid client; Browsing and searching for apps; Displaying app details
