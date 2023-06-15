@@ -9,9 +9,9 @@ We've created a prototype of a progressive [web app for browsing F-Droid
 repositories](https://gitlab.com/uniqx/fdroid-webdash).  It's built with
 [Flutter](https://flutter.dev/), which is really great for working in rapid
 development cycles.  It also allows us to make it look and feel like a modern
-Android app.  As a trade-off the web-app is pretty big in size (~ 10 MByte).
+Android app.  As a trade-off the web-app is pretty big in size (~ 10 MB).
 So depending on your internet connection speed loading it for the first time
-might take a while.  Flutter is also notoriously trying to connect to Google
+might take a while.  Flutter is also notorious for trying to connect to Google
 servers, and we couldn't figure out how to make the app GDPR compliant just
 yet.
 
@@ -24,7 +24,7 @@ and app downloads.
 
 F-Droid repositories themselves are deployed like web-sites.  So naturally it's
 possible to deploy this web-app into any F-Droid repository and instantly make
-it browse-able on the web.  We're considering to add an option for deploying it
+it browse-able on the web.  We're considering adding an option for deploying it
 automatically to our tools for managing F-Droid repositories.
 
 Our team also came up with experimental solution for shipping iOS apps using
