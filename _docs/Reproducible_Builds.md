@@ -257,7 +257,7 @@ unaffected.
 Often, the easiest solution is to always use the same working directory when
 building; e.g. `/builds/fdroid/fdroiddata/build/your.app.id` (F-Droid CI),
 `/home/vagrant/build/your.app.id` (F-Droid build server), `/tmp/build` or
-create one to mirror the upstream used folders, eg. for macOS `/Users/runner`.
+create one to mirror the upstream used folders, e.g. for macOS `/Users/runner`.
 
 NB: using a subdirectory of the world-writeable `/tmp` can have security
 implications (on multi-user systems).
@@ -450,11 +450,12 @@ process can add them.  For example:
 +-rw-rw-rw-  2.3 unx    78984 b- stor 80-000-00 00:00 resources.arsc
 ```
 
-#### Mismatched Java version
+#### Mismatched Toolchains
 
-Sometimes there's a mismatch as upstream might use a different one (eg. Gradle 8 uses Java 17) and the recipe needs to be updated.
+Different toolchains may produce different binaries. A usual case is when more than one JDK version/distribution are used to build the apk. Sometimes even Gradle may mix
+versions of JDKs to build an apk. To avoid such problems unused JDKs should be removed.
 
-The APK diff will have entries like this, eg. Java 17 vs Java 11:
+The APK diff will have entries in the `classes.dex` files like this, e.g. Java 17 vs Java 11:
 
 ```diff
 -    .annotation system Ldalvik/annotation/Signature;
@@ -502,11 +503,13 @@ passed to `go build` are `-ldflags="-buildid="`, `-trimpath` (to avoid embedded 
 
 ##### Rust
 
-Compiler and linker arguments can be added to [`build.rustflags`](https://doc.rust-lang.org/cargo/reference/config.html#buildrustflags).
-Linker arguments can be added with `link-args=-Wl,<linker args>`; `--remap-path-prefix=<old>=<new>`
+Compiler and linker arguments can be added to [Cargo `build.rustflags`](https://doc.rust-lang.org/cargo/reference/config.html#buildrustflags) and [rustc Codegen Options](https://doc.rust-lang.org/rustc/codegen-options/index.html).
+Linker arguments can be added with `-C link-args=-Wl,<linker args>`; `--remap-path-prefix=<old>=<new>`
 can be added to strip build paths.
 
-### Migration to reproducible builds
+The Rust toolchain should be pinned to the same version as upstream. This can be done when installing rustup with `rustup-init.sh -y --default-toolchain <version>`.
+
+### migration to reproducible builds
 
 #### TODO
 
