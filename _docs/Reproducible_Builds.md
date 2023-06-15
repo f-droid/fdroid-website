@@ -285,7 +285,7 @@ aboutLibraries {
 
 For `build.gradle.kts`, add this instead:
 
-```kts
+```gradle
 aboutLibraries {
     // Remove the "generated" timestamp to allow for reproducible builds
     excludeFields = arrayOf("generated")
