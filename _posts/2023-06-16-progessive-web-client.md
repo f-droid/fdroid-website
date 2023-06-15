@@ -27,7 +27,7 @@ possible to deploy this web-app into any F-Droid repository and instantly make
 it browse-able on the web.  We're considering adding an option for deploying it
 automatically to our tools for managing F-Droid repositories.
 
-Our team also came up with experimental solution for shipping iOS apps using
+Our team also came up with [experimental](https://gitlab.com/fdroid/fdroidserver/-/merge_requests/1275) solution for shipping iOS apps using
 F-Droid repositories.  So our new PWA opens up a great opportunity to explore
 how F-Droid could work for iOS users.  However at this point, this is just
 research.  There are no plans to provide stable support for shipping iOS apps
