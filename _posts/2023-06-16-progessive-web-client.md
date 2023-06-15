@@ -27,8 +27,11 @@ possible to deploy this web-app into any F-Droid repository and instantly make
 it browse-able on the web.  We're considering adding an option for deploying it
 automatically to our tools for managing F-Droid repositories.
 
-Our team also came up with [experimental](https://gitlab.com/fdroid/fdroidserver/-/merge_requests/1275) solution for shipping iOS apps using
-F-Droid repositories.  So our new PWA opens up a great opportunity to explore
-how F-Droid could work for iOS users.  However at this point, this is just
-research.  There are no plans to provide stable support for shipping iOS apps
-and also no plans about bootstrapping a repository of FOSS apps for iOS.
+The tooling that runs the F-Droid community can easily be applied to other
+platforms like iOS. Our team came up with an
+[experimental](https://gitlab.com/fdroid/fdroidserver/-/merge_requests/1275)
+solution for shipping iOS apps using F-Droid repositories.  So our new PWA
+opens up an opportunity to explore how F-Droid could offer a tiny taste of
+freedom to iOS users.  While we hope to aid the expansion of free software
+everywhere, even on proprietary platforms like iOS, F-Droid will only ship on
+platforms that can be free software, like Android.
