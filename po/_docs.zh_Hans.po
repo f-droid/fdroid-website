@@ -26,9 +26,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
-"POT-Creation-Date: 2023-05-30 11:30+0200\n"
-"PO-Revision-Date: 2023-05-23 20:08+0000\n"
-"Last-Translator: Eric <hamburger2048@users.noreply.hosted.weblate.org>\n"
+"POT-Creation-Date: 2023-06-19 09:40+0200\n"
+"PO-Revision-Date: 2023-06-08 10:26+0000\n"
+"Last-Translator: JY3 <GeeyunJY3@gmail.com>\n"
 "Language-Team: Chinese (Simplified) <https://hosted.weblate.org/projects/f-droid/website-docs/zh_Hans/>\n"
 "Language: zh_Hans\n"
 "MIME-Version: 1.0\n"
@@ -1725,66 +1725,65 @@ msgstr "fdroid rewritemeta org.adaway\n"
 
 #. type: Title ##
 #: _docs/Build_Metadata_Reference.md
-#, fuzzy, no-wrap
-#| msgid "Data format"
+#, no-wrap
 msgid "Markup and Data Format"
-msgstr "数据格式"
+msgstr "标记和数据格式"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 msgid "F-Droid metadata files are written in YAML and have a file extension `.yml`.  The top-most data structure is a \"map\" or \"dictionary\", made up of key/value pairs.  All keys are strings.  There are some internal data types used for values:"
-msgstr ""
+msgstr "F-Droid 元数据用 YAML 写成，文件扩展名为 `.yml`。  最上面的数据结构是”地图“或”目录“，由 key/value 对组成。  所有的 key 均为字符串。  有一些用于 value 的内部数据类型："
 
 #. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
 msgid "`TYPE_BOOL` - Either `true` or `false`."
-msgstr ""
+msgstr "`TYPE_BOOL` - 要么 `true`，要么 `false`。"
 
 #. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
 msgid "`TYPE_BUILD` - A list of build entries, which are maps of key/value pairs."
-msgstr ""
+msgstr "`TYPE_BUILD` - 构建条目列表，条目是 key/value 对的映射。"
 
 #. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
 msgid "`TYPE_INT` - An integer in decimal format."
-msgstr ""
+msgstr "`TYPE_INT` - 十进制格式的整数。"
 
 #. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
 msgid "`TYPE_LIST` - A list of strings."
-msgstr ""
+msgstr "`TYPE_LIST` - 字符串列表。"
 
 #. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
 msgid "`TYPE_MULTILINE` - A block of text with multiple lines."
-msgstr ""
+msgstr "`TYPE_MULTILINE` - 多行文本的区块。"
 
 #. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
 msgid "`TYPE_SCRIPT` - A string or list of strings to be executed as a _bash_ script."
-msgstr ""
+msgstr "`TYPE_SCRIPT` - 将作为 _bash_ 脚本执行的字符串或字符串列表。"
 
 #. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
 msgid "`TYPE_STRING` - A string."
-msgstr ""
+msgstr "`TYPE_STRING` - 一条字符串。"
 
 #. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
 msgid "`TYPE_STRINGMAP` - A map of maps, the inner keys are BCP 47 locales and the values are human-readable text."
-msgstr ""
+msgstr "`TYPE_STRINGMAP` - 地图的地图，内部键是 BCP 47 区域设置，值是人类可读的文本。"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 msgid "The canonical format is [YAML 1.2](https://yaml.org/spec/1.2.2/).  The process of reading metadata files is more tolerant, and will do some automatic type conversions when that can provide a reliable transformation.  `fdroid rewritemeta` will output YAML 1.2, so it will not preserve the original values as written, if they have been converted."
-msgstr ""
+msgstr "标准格式是 [YAML 1.2](https://yaml.org/spec/1.2.2/)。  读取元数据文件的过程容忍度更高，并且在能够提供可靠转换的情况下会执行一些自动类型转换。  `fdroid rewritemeta` 将输出 YAML 1.2，因此如果原始值已被转换，则不会保留写入的原始值。"
 
 #. type: Title ##
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid "Fields"
-msgstr ""
+msgstr "字段"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -3734,12 +3733,16 @@ msgstr "如果配置了一个归档存储库的话，这决定了将应用的旧
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-msgid "The version specified via `CurrentVersionCode` is always considered the newest version when deciding which versions to put into the archive.  This means that when `ArchivePolicy` is set to \"1 versions\" only the APK corresponding to CVC is kept, which is not necessarily the one with the highest version code."
+#, fuzzy
+#| msgid "The version specified via `CurrentVersionCode` is always considered the newest version when deciding which versions to put into the archive.  This means that when `ArchivePolicy` is set to \"1 versions\" only the APK corresponding to CVC is kept, which is not necessarily the one with the highest version code."
+msgid "The version specified via `CurrentVersionCode` is always considered the newest version when deciding which versions to put into the archive.  This means that when `ArchivePolicy` is set to `1` only the APK corresponding to CVC is kept, which is not necessarily the one with the highest version code."
 msgstr "在决定将哪些版本放入存档时，通过 `CurrentVersionCode` 指定的版本始终被视为最新版本。这意味着当 `ArchivePolicy` 设置为 \"1 versions\" 时，只保留 CVC 对应的 APK，而不一定是版本号最高的那个。"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-msgid "Currently the only supported format is \"n versions\", where \"n\" is the number of versions to keep. Defaults to \"3 versions\". For apps with a list of [_VercodeOperation_](#VercodeOperation) the default is calculated as \"3 x number of operations\", eg. for an app with two operations, for two ABIs, 6 versions will be kept."
+#, fuzzy
+#| msgid "Currently the only supported format is \"n versions\", where \"n\" is the number of versions to keep. Defaults to \"3 versions\". For apps with a list of [_VercodeOperation_](#VercodeOperation) the default is calculated as \"3 x number of operations\", eg. for an app with two operations, for two ABIs, 6 versions will be kept."
+msgid "Currently the only supported format is `n`, where `n` is the number of versions to keep. Defaults to `3`. For apps with a list of [_VercodeOperation_](#VercodeOperation) the default is calculated as `3 x number of operations`, eg. for an app with two operations, for two ABIs, 6 versions will be kept."
 msgstr "\"n versions\"是当前唯一受支持的格式， “n”是要保留的版本数。 默认为“3 个版本”。 对于有[_VercodeOperation_](#VercodeOperation)列表的应用，默认计算方法为“3 x 操作数”，例如。 对于有两个操作的应用，对于两个 ABI，将保留 6 个版本。"
 
 #. type: Title ###
@@ -9704,13 +9707,24 @@ msgstr "嵌入的[构建路径](https://reproducible-builds.org/docs/build-path/
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
-msgid "Often, the easiest solution is to always use the same working directory when building; e.g. `/builds/fdroid/fdroiddata/build/your.app.id` (F-Droid CI), `/home/vagrant/build/your.app.id` (F-Droid build server), or `/tmp/build`."
+#, fuzzy
+#| msgid "Often, the easiest solution is to always use the same working directory when building; e.g. `/builds/fdroid/fdroiddata/build/your.app.id` (F-Droid CI), `/home/vagrant/build/your.app.id` (F-Droid build server), or `/tmp/build`."
+msgid "Often, the easiest solution is to always use the same working directory when building; e.g. `/builds/fdroid/fdroiddata/build/your.app.id` (F-Droid CI), `/home/vagrant/build/your.app.id` (F-Droid build server), `/tmp/build` or create one to mirror the upstream used folders, e.g. for macOS `/Users/runner`."
 msgstr "通常来说，最简单的解决方案是在构建时始终使用相同的工作目录；如，`/builds/fdroid/fdroiddata/build/your.app.id` (F-Droid CI), `/home/vagrant/build/your.app.id` (F-Droid build server), 或 `/tmp/build`。"
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
 msgid "NB: using a subdirectory of the world-writeable `/tmp` can have security implications (on multi-user systems)."
 msgstr "注：使用全局可写的 `tmp`的子目录可能会有安全影响（在多用户系统上）。"
+
+#. type: Plain text
+#: _docs/Reproducible_Builds.md
+#, no-wrap
+msgid ""
+"If the SDK path ends up embedded in Flutter one can move the SDK to said path\n"
+"in the recipe and configure it with: `flutter config --android-sdk <path>` as\n"
+"setting `ANDROID_SDK_ROOT` might not be enough.\n"
+msgstr ""
 
 #. type: Title ####
 #: _docs/Reproducible_Builds.md
@@ -9753,7 +9767,7 @@ msgstr ""
 msgid "For `build.gradle.kts`, add this instead:"
 msgstr "对于 `build.gradle.kts`，请添加这个："
 
-#. type: Fenced code block (kts)
+#. type: Fenced code block (gradle)
 #: _docs/Reproducible_Builds.md
 #, no-wrap
 msgid ""
@@ -10000,18 +10014,21 @@ msgstr ""
 
 #. type: Title ####
 #: _docs/Reproducible_Builds.md
-#, no-wrap
-msgid "Mismatched Java version"
+#, fuzzy, no-wrap
+#| msgid "Mismatched Java version"
+msgid "Mismatched Toolchains"
 msgstr "不匹配的 Java 版本"
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
-msgid "Sometimes there's a mismatch as upstream might use a different one (eg. Gradle 8 uses Java 17) and the recipe needs to be updated."
-msgstr "有时候会有不匹配的情况，因为上游可能使用不同的版本（如 Gradle 8 使用 Java 17），需要更新配方。"
+msgid "Different toolchains may produce different binaries. A usual case is when more than one JDK version/distribution are used to build the apk. Sometimes even Gradle may mix versions of JDKs to build an apk. To avoid such problems unused JDKs should be removed."
+msgstr ""
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
-msgid "The APK diff will have entries like this, eg. Java 17 vs Java 11:"
+#, fuzzy
+#| msgid "The APK diff will have entries like this, eg. Java 17 vs Java 11:"
+msgid "The APK diff will have entries in the `classes.dex` files like this, e.g. Java 17 vs Java 11:"
 msgstr "APK diff 会存在类似这样的条目，如 Java 17 vs Java 11："
 
 #. type: Bullet: '-    '
@@ -10129,20 +10146,31 @@ msgstr "Rust"
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
-#, no-wrap
+#, fuzzy, no-wrap
+#| msgid ""
+#| "Compiler and linker arguments can be added to [`build.rustflags`](https://doc.rust-lang.org/cargo/reference/config.html#buildrustflags).\n"
+#| "Linker arguments can be added with `link-args=-Wl,<linker args>`; `--remap-path-prefix=<old>=<new>`\n"
+#| "can be added to strip build paths.\n"
 msgid ""
-"Compiler and linker arguments can be added to [`build.rustflags`](https://doc.rust-lang.org/cargo/reference/config.html#buildrustflags).\n"
-"Linker arguments can be added with `link-args=-Wl,<linker args>`; `--remap-path-prefix=<old>=<new>`\n"
+"Compiler and linker arguments can be added to [Cargo `build.rustflags`](https://doc.rust-lang.org/cargo/reference/config.html#buildrustflags) and [rustc Codegen Options](https://doc.rust-lang.org/rustc/codegen-options/index.html).\n"
+"Linker arguments can be added with `-C link-args=-Wl,<linker args>`; `--remap-path-prefix=<old>=<new>`\n"
 "can be added to strip build paths.\n"
 msgstr ""
 "编译器和链接器参数可被添加到 [`build.rustflags`](https://doc.rust-lang.org/cargo/reference/config.html#buildrustflags)。\n"
 "添加链接器参数可带`link-args=-Wl,<linker args>`; `--remap-path-prefix=<old>=<new>`\n"
 "可被添加到 strip build 路径。\n"
 
-#. type: Title ###
+#. type: Plain text
 #: _docs/Reproducible_Builds.md
 #, no-wrap
-msgid "Migration to reproducible builds"
+msgid "The Rust toolchain should be pinned to the same version as upstream. This can be done when installing rustup with `rustup-init.sh -y --default-toolchain <version>`.\n"
+msgstr ""
+
+#. type: Title ###
+#: _docs/Reproducible_Builds.md
+#, fuzzy, no-wrap
+#| msgid "Migration to reproducible builds"
+msgid "migration to reproducible builds"
 msgstr "迁移到可重复构建"
 
 #. type: Title ####
@@ -10567,7 +10595,7 @@ msgid ""
 " into what the Android OS already provides.  The way F-Droid operates is greatly inspired by de facto security model of how reputable GNU/Linux distros like Debian, Fedora, Ubuntu, etc. operate.  There is a big emphasis on operating in the public and making everything publicly available. We include source tarballs and build logs when we publish binaries.  These are archived as long as possible, for retroactive review.  And all of this is mirrored in many places across the internet by many different parties.\n"
 msgstr ""
 "安全架构是基于把经\n"
-"[Debian](https://wiki.debian.org/SecureApt) a和 [The Update\n"
+"[Debian](https://wiki.debian.org/SecureApt) 和 [The Update\n"
 "Framework](https://github.com/theupdateframework/specification/blob/master/tuf-spec.md)\n"
 "证明的模型集成到 Android 系统已经提供的模型中去。  F-Droid 的运行方式很大程度上受到了 Debian、Fedora、Ubuntu 等知名 GNU/Linux 发行版运作方式的事实安全模型的启发。  我们非常强调在“阳光下运作”并使所有内容都公开可用。 我们发布二进制文件时会包括源代码压缩包和构建日志。  这些内容将尽可能长时间存档，以供回溯审查。  所有这一切被许多不同的团体镜像在互联网上的许多地方。\n"
 
@@ -11782,7 +11810,7 @@ msgstr "f-droid.org 网站"
 #. type: Plain text
 #: _docs/Translation_and_Localization.md
 msgid "For the f-droid.org website, it is a much more complicated system.  Each time the website is updated, thousands of pages must be regenerated per-locale.  Since this setup [cannot](https://gitlab.com/groups/fdroid/-/milestones/6)  support lots of languages, we have to put stricter requirements on it.  The core strings must be fully translated to be included.  They also must be maintained in order to stay included.  The documentation and tutorials are very useful to have translated.  The blog posts are the least important.  Each page must be fully translated before the translated version will be shown, otherwise, the site will show the original English."
-msgstr "f-droid.org 网站则是一个更复杂的系统。每次更新网站，必须为每种语言重新生成数千个页面。由于它[不能](https://gitlab.com/groups/fdroid/-/milestones/6)）支持很多语言，我们必须对它提出更严格的要求。 核心字符串必须被完全翻译才能被收录。 为保持收录状态，它们必须得到维护。 文档和教程的翻译是非常有用的。 博客文章是最不重要的。 每个页面在显示翻译版本之前都必须完全翻译，否则，网站将显示原始英文。"
+msgstr "f-droid.org 网站则是一个更复杂的系统。每次更新网站，必须为每种语言重新生成数千个页面。由于它[不能](https://gitlab.com/groups/fdroid/-/milestones/6)支持很多语言，我们必须对它提出更严格的要求。 核心字符串必须被完全翻译才能被收录。 为保持收录状态，它们必须得到维护。 文档和教程的翻译是非常有用的。 博客文章是最不重要的。 每个页面在显示翻译版本之前都必须完全翻译，否则，网站将显示原始英文。"
 
 #. type: Plain text
 #: _docs/Translation_and_Localization.md
@@ -12119,6 +12147,9 @@ msgstr "首选项"
 #: _docs/Whitelabel_Builds.md
 msgid "For a custom build that enables Automatic Updates by default, override _app/src/main/res/xml/preferences.xml_. You can customize the preferences and their default values in _app/src/mycompany/res/xml/preferences.xml_. The fully automatic update requires [Privileged Extension](https://gitlab.com/fdroid/privileged-extension). With regular access, the updates will only automatically download. The user still needs to click install on each one."
 msgstr "对于默认启用自动更新的自定义构建，覆盖 _app/src/main/res/xml/preferences.xml_。你可以在 _app/src/mycompany/res/xml/preferences.xml_ 中自定义首选项及其默认值。全自动更新需要 [特权扩展](https://gitlab.com/fdroid/privileged-extension)。通过定期访问，更新只会自动下载。用户仍然需要在每一个上点击安装。"
+
+#~ msgid "Sometimes there's a mismatch as upstream might use a different one (eg. Gradle 8 uses Java 17) and the recipe needs to be updated."
+#~ msgstr "有时候会有不匹配的情况，因为上游可能使用不同的版本（如 Gradle 8 使用 Java 17），需要更新配方。"
 
 #~ msgid "Metadata files are written in [YAML](http://www.yaml.org/start.html) format"
 #~ msgstr "元数据文件是用[YAML](http://www.yaml.org/start.html)格式编写的"

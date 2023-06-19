@@ -13,8 +13,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
-"POT-Creation-Date: 2023-05-30 11:30+0200\n"
-"PO-Revision-Date: 2023-05-27 13:51+0000\n"
+"POT-Creation-Date: 2023-06-19 09:40+0200\n"
+"PO-Revision-Date: 2023-05-31 18:52+0000\n"
 "Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/f-droid/website-docs/uk/>\n"
 "Language: uk\n"
@@ -1724,66 +1724,65 @@ msgstr "fdroid rewritemeta org.adaway\n"
 
 #. type: Title ##
 #: _docs/Build_Metadata_Reference.md
-#, fuzzy, no-wrap
-#| msgid "Data format"
+#, no-wrap
 msgid "Markup and Data Format"
-msgstr "Формат даних"
+msgstr "Розмітка та формат даних"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 msgid "F-Droid metadata files are written in YAML and have a file extension `.yml`.  The top-most data structure is a \"map\" or \"dictionary\", made up of key/value pairs.  All keys are strings.  There are some internal data types used for values:"
-msgstr ""
+msgstr "Файли метаданих F-Droid написані у форматі YAML і мають розширення `.yml`.  Найвища структура даних — \"карта\" або \"словник\", що складається з пар ключ/значення.  Усі ключі — це рядки.  Для значень використовуються деякі внутрішні типи даних:"
 
 #. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
 msgid "`TYPE_BOOL` - Either `true` or `false`."
-msgstr ""
+msgstr "`TYPE_BOOL` - Або `true`, або `false`."
 
 #. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
 msgid "`TYPE_BUILD` - A list of build entries, which are maps of key/value pairs."
-msgstr ""
+msgstr "`TYPE_BUILD` - Список записів збірки, які є картами пар ключ/значення."
 
 #. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
 msgid "`TYPE_INT` - An integer in decimal format."
-msgstr ""
+msgstr "`TYPE_INT` - Ціле число у десятковому форматі."
 
 #. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
 msgid "`TYPE_LIST` - A list of strings."
-msgstr ""
+msgstr "`TYPE_LIST` - Список рядків."
 
 #. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
 msgid "`TYPE_MULTILINE` - A block of text with multiple lines."
-msgstr ""
+msgstr "`TYPE_MULTILINE` - Блок тексту з кількох рядків."
 
 #. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
 msgid "`TYPE_SCRIPT` - A string or list of strings to be executed as a _bash_ script."
-msgstr ""
+msgstr "`TYPE_SCRIPT` - Рядок або список рядків для виконання як скрипту _bash_."
 
 #. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
 msgid "`TYPE_STRING` - A string."
-msgstr ""
+msgstr "`TYPE_STRING` - Рядок."
 
 #. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
 msgid "`TYPE_STRINGMAP` - A map of maps, the inner keys are BCP 47 locales and the values are human-readable text."
-msgstr ""
+msgstr "`TYPE_STRINGMAP` - Карта карт, внутрішні ключі якої розташування BCP 47, а значення — прочитний людиною текст."
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 msgid "The canonical format is [YAML 1.2](https://yaml.org/spec/1.2.2/).  The process of reading metadata files is more tolerant, and will do some automatic type conversions when that can provide a reliable transformation.  `fdroid rewritemeta` will output YAML 1.2, so it will not preserve the original values as written, if they have been converted."
-msgstr ""
+msgstr "Канонічний формат — [YAML 1.2](https://yaml.org/spec/1.2.2/).  Процес читання файлів метаданих толерантніший і виконує деякі автоматичні перетворення типів, коли це може забезпечити надійне перетворення. `fdroid rewritemeta` виводить YAML 1.2, тому не зберігає оригінальні значення у тому вигляді, в якому вони були записані, якщо їх було перетворено."
 
 #. type: Title ##
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid "Fields"
-msgstr ""
+msgstr "Поля"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -3834,12 +3833,16 @@ msgstr "Це визначає політику пересування стари
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-msgid "The version specified via `CurrentVersionCode` is always considered the newest version when deciding which versions to put into the archive.  This means that when `ArchivePolicy` is set to \"1 versions\" only the APK corresponding to CVC is kept, which is not necessarily the one with the highest version code."
+#, fuzzy
+#| msgid "The version specified via `CurrentVersionCode` is always considered the newest version when deciding which versions to put into the archive.  This means that when `ArchivePolicy` is set to \"1 versions\" only the APK corresponding to CVC is kept, which is not necessarily the one with the highest version code."
+msgid "The version specified via `CurrentVersionCode` is always considered the newest version when deciding which versions to put into the archive.  This means that when `ArchivePolicy` is set to `1` only the APK corresponding to CVC is kept, which is not necessarily the one with the highest version code."
 msgstr "Версія, зазначена як `CurrentVersionCode` (CVC), завжди вважається найновішою при визначенні, які версії слід архівувати. Тобто коли `ArchivePolicy` має значення `1 versions`, то зберігається лише той APK, що відповідає CVC, а не той, що має найвище значення коду версії."
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-msgid "Currently the only supported format is \"n versions\", where \"n\" is the number of versions to keep. Defaults to \"3 versions\". For apps with a list of [_VercodeOperation_](#VercodeOperation) the default is calculated as \"3 x number of operations\", eg. for an app with two operations, for two ABIs, 6 versions will be kept."
+#, fuzzy
+#| msgid "Currently the only supported format is \"n versions\", where \"n\" is the number of versions to keep. Defaults to \"3 versions\". For apps with a list of [_VercodeOperation_](#VercodeOperation) the default is calculated as \"3 x number of operations\", eg. for an app with two operations, for two ABIs, 6 versions will be kept."
+msgid "Currently the only supported format is `n`, where `n` is the number of versions to keep. Defaults to `3`. For apps with a list of [_VercodeOperation_](#VercodeOperation) the default is calculated as `3 x number of operations`, eg. for an app with two operations, for two ABIs, 6 versions will be kept."
 msgstr "Наразі єдиним підтримуваний формат — «n версій», де «n» — це кількість версій, які потрібно зберігати. Усталено — «3 версії». Для застосунків зі списком [_VercodeOperation_](#VercodeOperation) усталене значення обчислюється як «3 x кількість операцій», наприклад, для застосунку з двома операціями, для двох ABI, буде збережено 6 версій."
 
 #. type: Title ###
@@ -9818,13 +9821,24 @@ msgstr "Вбудовані [шляхи збірки](https://reproducible-builds
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
-msgid "Often, the easiest solution is to always use the same working directory when building; e.g. `/builds/fdroid/fdroiddata/build/your.app.id` (F-Droid CI), `/home/vagrant/build/your.app.id` (F-Droid build server), or `/tmp/build`."
+#, fuzzy
+#| msgid "Often, the easiest solution is to always use the same working directory when building; e.g. `/builds/fdroid/fdroiddata/build/your.app.id` (F-Droid CI), `/home/vagrant/build/your.app.id` (F-Droid build server), or `/tmp/build`."
+msgid "Often, the easiest solution is to always use the same working directory when building; e.g. `/builds/fdroid/fdroiddata/build/your.app.id` (F-Droid CI), `/home/vagrant/build/your.app.id` (F-Droid build server), `/tmp/build` or create one to mirror the upstream used folders, e.g. for macOS `/Users/runner`."
 msgstr "Часто найпростіше рішення — завжди використовувати один і той самий робочий каталог під час збирання; наприклад, `/builds/fdroid/fdroiddata/build/your.app.id` (F-Droid CI), `/home/vagrant/build/your.app.id` (сервер збирання F-Droid), або `/tmp/build`."
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
 msgid "NB: using a subdirectory of the world-writeable `/tmp` can have security implications (on multi-user systems)."
 msgstr "Примітка: використання підкаталогу з правами запису до `/tmp` може мати наслідки для безпеки (у багатокористувацьких системах)."
+
+#. type: Plain text
+#: _docs/Reproducible_Builds.md
+#, no-wrap
+msgid ""
+"If the SDK path ends up embedded in Flutter one can move the SDK to said path\n"
+"in the recipe and configure it with: `flutter config --android-sdk <path>` as\n"
+"setting `ANDROID_SDK_ROOT` might not be enough.\n"
+msgstr ""
 
 #. type: Title ####
 #: _docs/Reproducible_Builds.md
@@ -9867,7 +9881,7 @@ msgstr ""
 msgid "For `build.gradle.kts`, add this instead:"
 msgstr "Для `build.gradle.kts` додайте натомість це:"
 
-#. type: Fenced code block (kts)
+#. type: Fenced code block (gradle)
 #: _docs/Reproducible_Builds.md
 #, no-wrap
 msgid ""
@@ -10114,18 +10128,21 @@ msgstr ""
 
 #. type: Title ####
 #: _docs/Reproducible_Builds.md
-#, no-wrap
-msgid "Mismatched Java version"
+#, fuzzy, no-wrap
+#| msgid "Mismatched Java version"
+msgid "Mismatched Toolchains"
 msgstr "Невідповідна версія Java"
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
-msgid "Sometimes there's a mismatch as upstream might use a different one (eg. Gradle 8 uses Java 17) and the recipe needs to be updated."
-msgstr "Іноді виникає невідповідність, оскільки основний код може використовувати іншу версію (наприклад, Gradle 8 використовує Java 17), і рецепт потрібно оновити."
+msgid "Different toolchains may produce different binaries. A usual case is when more than one JDK version/distribution are used to build the apk. Sometimes even Gradle may mix versions of JDKs to build an apk. To avoid such problems unused JDKs should be removed."
+msgstr ""
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
-msgid "The APK diff will have entries like this, eg. Java 17 vs Java 11:"
+#, fuzzy
+#| msgid "The APK diff will have entries like this, eg. Java 17 vs Java 11:"
+msgid "The APK diff will have entries in the `classes.dex` files like this, e.g. Java 17 vs Java 11:"
 msgstr "APK diff матиме такі записи, наприклад, Java 17 проти Java 11:"
 
 #. type: Bullet: '-    '
@@ -10243,17 +10260,31 @@ msgstr "Rust"
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
-#, no-wrap
+#, fuzzy, no-wrap
+#| msgid ""
+#| "Compiler and linker arguments can be added to [`build.rustflags`](https://doc.rust-lang.org/cargo/reference/config.html#buildrustflags).\n"
+#| "Linker arguments can be added with `link-args=-Wl,<linker args>`; `--remap-path-prefix=<old>=<new>`\n"
+#| "can be added to strip build paths.\n"
 msgid ""
-"Compiler and linker arguments can be added to [`build.rustflags`](https://doc.rust-lang.org/cargo/reference/config.html#buildrustflags).\n"
-"Linker arguments can be added with `link-args=-Wl,<linker args>`; `--remap-path-prefix=<old>=<new>`\n"
+"Compiler and linker arguments can be added to [Cargo `build.rustflags`](https://doc.rust-lang.org/cargo/reference/config.html#buildrustflags) and [rustc Codegen Options](https://doc.rust-lang.org/rustc/codegen-options/index.html).\n"
+"Linker arguments can be added with `-C link-args=-Wl,<linker args>`; `--remap-path-prefix=<old>=<new>`\n"
 "can be added to strip build paths.\n"
+msgstr ""
+"Аргументи компілятора та компонувальника можна додати до [`build.rustflags`](https://doc.rust-lang.org/cargo/reference/config.html#buildrustflags).\n"
+"Аргументи компонувальника можна додати за допомогою `link-args=-Wl,<linker args>`; `--remap-path-prefix=<old>=<new>`\n"
+"можна додавати до шляхів збирання зрізів.\n"
+
+#. type: Plain text
+#: _docs/Reproducible_Builds.md
+#, no-wrap
+msgid "The Rust toolchain should be pinned to the same version as upstream. This can be done when installing rustup with `rustup-init.sh -y --default-toolchain <version>`.\n"
 msgstr ""
 
 #. type: Title ###
 #: _docs/Reproducible_Builds.md
-#, no-wrap
-msgid "Migration to reproducible builds"
+#, fuzzy, no-wrap
+#| msgid "Migration to reproducible builds"
+msgid "migration to reproducible builds"
 msgstr "Перехід до відтворюваних збірок"
 
 #. type: Title ####
@@ -12230,6 +12261,9 @@ msgstr "Параметри"
 #: _docs/Whitelabel_Builds.md
 msgid "For a custom build that enables Automatic Updates by default, override _app/src/main/res/xml/preferences.xml_. You can customize the preferences and their default values in _app/src/mycompany/res/xml/preferences.xml_. The fully automatic update requires [Privileged Extension](https://gitlab.com/fdroid/privileged-extension). With regular access, the updates will only automatically download. The user still needs to click install on each one."
 msgstr "Щоб усталено вимкнути автоматичні оновлення в своїй збірці, замініть _app/src/main/res/xml/preferences.xml_. Можете допрацювати параметри та їхні усталені значення в _app/src/mycompany/res/xml/preferences.xml_. Для повністю автоматичного оновлення потрібне [привілейоване розширення](https://gitlab.com/fdroid/privileged-extension). Без нього, оновлення будуть лише автоматично завантажуватись — і користувачці чи користувачу все ще доводитиметься торкати «Встановити» для кожного з них."
+
+#~ msgid "Sometimes there's a mismatch as upstream might use a different one (eg. Gradle 8 uses Java 17) and the recipe needs to be updated."
+#~ msgstr "Іноді виникає невідповідність, оскільки основний код може використовувати іншу версію (наприклад, Gradle 8 використовує Java 17), і рецепт потрібно оновити."
 
 #~ msgid "Metadata files are written in [YAML](http://www.yaml.org/start.html) format"
 #~ msgstr "Файли метаданих пишуться в форматі [YAML](http://www.yaml.org/start.html)"

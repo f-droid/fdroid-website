@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2023-05-30 11:30+0200\n"
+"POT-Creation-Date: 2023-06-19 09:40+0200\n"
 "PO-Revision-Date: 2021-05-04 09:31+0000\n"
 "Last-Translator: bruh <quangtrung02hn16@gmail.com>\n"
 "Language-Team: Vietnamese <https://hosted.weblate.org/projects/f-droid/website-docs/vi/>\n"
@@ -3607,12 +3607,12 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-msgid "The version specified via `CurrentVersionCode` is always considered the newest version when deciding which versions to put into the archive.  This means that when `ArchivePolicy` is set to \"1 versions\" only the APK corresponding to CVC is kept, which is not necessarily the one with the highest version code."
+msgid "The version specified via `CurrentVersionCode` is always considered the newest version when deciding which versions to put into the archive.  This means that when `ArchivePolicy` is set to `1` only the APK corresponding to CVC is kept, which is not necessarily the one with the highest version code."
 msgstr ""
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-msgid "Currently the only supported format is \"n versions\", where \"n\" is the number of versions to keep. Defaults to \"3 versions\". For apps with a list of [_VercodeOperation_](#VercodeOperation) the default is calculated as \"3 x number of operations\", eg. for an app with two operations, for two ABIs, 6 versions will be kept."
+msgid "Currently the only supported format is `n`, where `n` is the number of versions to keep. Defaults to `3`. For apps with a list of [_VercodeOperation_](#VercodeOperation) the default is calculated as `3 x number of operations`, eg. for an app with two operations, for two ABIs, 6 versions will be kept."
 msgstr ""
 
 #. type: Title ###
@@ -9260,12 +9260,21 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
-msgid "Often, the easiest solution is to always use the same working directory when building; e.g. `/builds/fdroid/fdroiddata/build/your.app.id` (F-Droid CI), `/home/vagrant/build/your.app.id` (F-Droid build server), or `/tmp/build`."
+msgid "Often, the easiest solution is to always use the same working directory when building; e.g. `/builds/fdroid/fdroiddata/build/your.app.id` (F-Droid CI), `/home/vagrant/build/your.app.id` (F-Droid build server), `/tmp/build` or create one to mirror the upstream used folders, e.g. for macOS `/Users/runner`."
 msgstr ""
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
 msgid "NB: using a subdirectory of the world-writeable `/tmp` can have security implications (on multi-user systems)."
+msgstr ""
+
+#. type: Plain text
+#: _docs/Reproducible_Builds.md
+#, no-wrap
+msgid ""
+"If the SDK path ends up embedded in Flutter one can move the SDK to said path\n"
+"in the recipe and configure it with: `flutter config --android-sdk <path>` as\n"
+"setting `ANDROID_SDK_ROOT` might not be enough.\n"
 msgstr ""
 
 #. type: Title ####
@@ -9305,7 +9314,7 @@ msgstr ""
 msgid "For `build.gradle.kts`, add this instead:"
 msgstr ""
 
-#. type: Fenced code block (kts)
+#. type: Fenced code block (gradle)
 #: _docs/Reproducible_Builds.md
 #, no-wrap
 msgid ""
@@ -9524,17 +9533,17 @@ msgstr ""
 #. type: Title ####
 #: _docs/Reproducible_Builds.md
 #, no-wrap
-msgid "Mismatched Java version"
+msgid "Mismatched Toolchains"
 msgstr ""
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
-msgid "Sometimes there's a mismatch as upstream might use a different one (eg. Gradle 8 uses Java 17) and the recipe needs to be updated."
+msgid "Different toolchains may produce different binaries. A usual case is when more than one JDK version/distribution are used to build the apk. Sometimes even Gradle may mix versions of JDKs to build an apk. To avoid such problems unused JDKs should be removed."
 msgstr ""
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
-msgid "The APK diff will have entries like this, eg. Java 17 vs Java 11:"
+msgid "The APK diff will have entries in the `classes.dex` files like this, e.g. Java 17 vs Java 11:"
 msgstr ""
 
 #. type: Bullet: '-    '
@@ -9639,16 +9648,23 @@ msgstr ""
 #: _docs/Reproducible_Builds.md
 #, no-wrap
 msgid ""
-"Compiler and linker arguments can be added to [`build.rustflags`](https://doc.rust-lang.org/cargo/reference/config.html#buildrustflags).\n"
-"Linker arguments can be added with `link-args=-Wl,<linker args>`; `--remap-path-prefix=<old>=<new>`\n"
+"Compiler and linker arguments can be added to [Cargo `build.rustflags`](https://doc.rust-lang.org/cargo/reference/config.html#buildrustflags) and [rustc Codegen Options](https://doc.rust-lang.org/rustc/codegen-options/index.html).\n"
+"Linker arguments can be added with `-C link-args=-Wl,<linker args>`; `--remap-path-prefix=<old>=<new>`\n"
 "can be added to strip build paths.\n"
+msgstr ""
+
+#. type: Plain text
+#: _docs/Reproducible_Builds.md
+#, no-wrap
+msgid "The Rust toolchain should be pinned to the same version as upstream. This can be done when installing rustup with `rustup-init.sh -y --default-toolchain <version>`.\n"
 msgstr ""
 
 #. type: Title ###
 #: _docs/Reproducible_Builds.md
-#, no-wrap
-msgid "Migration to reproducible builds"
-msgstr ""
+#, fuzzy, no-wrap
+#| msgid "Reproducible builds"
+msgid "migration to reproducible builds"
+msgstr "Bản dựng có thể tái tạo"
 
 #. type: Title ####
 #: _docs/Reproducible_Builds.md
