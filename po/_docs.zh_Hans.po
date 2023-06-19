@@ -26,7 +26,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
-"POT-Creation-Date: 2023-05-30 11:30+0200\n"
+"POT-Creation-Date: 2023-06-19 09:40+0200\n"
 "PO-Revision-Date: 2023-06-08 10:26+0000\n"
 "Last-Translator: JY3 <GeeyunJY3@gmail.com>\n"
 "Language-Team: Chinese (Simplified) <https://hosted.weblate.org/projects/f-droid/website-docs/zh_Hans/>\n"
@@ -3733,12 +3733,16 @@ msgstr "如果配置了一个归档存储库的话，这决定了将应用的旧
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-msgid "The version specified via `CurrentVersionCode` is always considered the newest version when deciding which versions to put into the archive.  This means that when `ArchivePolicy` is set to \"1 versions\" only the APK corresponding to CVC is kept, which is not necessarily the one with the highest version code."
+#, fuzzy
+#| msgid "The version specified via `CurrentVersionCode` is always considered the newest version when deciding which versions to put into the archive.  This means that when `ArchivePolicy` is set to \"1 versions\" only the APK corresponding to CVC is kept, which is not necessarily the one with the highest version code."
+msgid "The version specified via `CurrentVersionCode` is always considered the newest version when deciding which versions to put into the archive.  This means that when `ArchivePolicy` is set to `1` only the APK corresponding to CVC is kept, which is not necessarily the one with the highest version code."
 msgstr "在决定将哪些版本放入存档时，通过 `CurrentVersionCode` 指定的版本始终被视为最新版本。这意味着当 `ArchivePolicy` 设置为 \"1 versions\" 时，只保留 CVC 对应的 APK，而不一定是版本号最高的那个。"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-msgid "Currently the only supported format is \"n versions\", where \"n\" is the number of versions to keep. Defaults to \"3 versions\". For apps with a list of [_VercodeOperation_](#VercodeOperation) the default is calculated as \"3 x number of operations\", eg. for an app with two operations, for two ABIs, 6 versions will be kept."
+#, fuzzy
+#| msgid "Currently the only supported format is \"n versions\", where \"n\" is the number of versions to keep. Defaults to \"3 versions\". For apps with a list of [_VercodeOperation_](#VercodeOperation) the default is calculated as \"3 x number of operations\", eg. for an app with two operations, for two ABIs, 6 versions will be kept."
+msgid "Currently the only supported format is `n`, where `n` is the number of versions to keep. Defaults to `3`. For apps with a list of [_VercodeOperation_](#VercodeOperation) the default is calculated as `3 x number of operations`, eg. for an app with two operations, for two ABIs, 6 versions will be kept."
 msgstr "\"n versions\"是当前唯一受支持的格式， “n”是要保留的版本数。 默认为“3 个版本”。 对于有[_VercodeOperation_](#VercodeOperation)列表的应用，默认计算方法为“3 x 操作数”，例如。 对于有两个操作的应用，对于两个 ABI，将保留 6 个版本。"
 
 #. type: Title ###
@@ -9703,13 +9707,24 @@ msgstr "嵌入的[构建路径](https://reproducible-builds.org/docs/build-path/
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
-msgid "Often, the easiest solution is to always use the same working directory when building; e.g. `/builds/fdroid/fdroiddata/build/your.app.id` (F-Droid CI), `/home/vagrant/build/your.app.id` (F-Droid build server), or `/tmp/build`."
+#, fuzzy
+#| msgid "Often, the easiest solution is to always use the same working directory when building; e.g. `/builds/fdroid/fdroiddata/build/your.app.id` (F-Droid CI), `/home/vagrant/build/your.app.id` (F-Droid build server), or `/tmp/build`."
+msgid "Often, the easiest solution is to always use the same working directory when building; e.g. `/builds/fdroid/fdroiddata/build/your.app.id` (F-Droid CI), `/home/vagrant/build/your.app.id` (F-Droid build server), `/tmp/build` or create one to mirror the upstream used folders, e.g. for macOS `/Users/runner`."
 msgstr "通常来说，最简单的解决方案是在构建时始终使用相同的工作目录；如，`/builds/fdroid/fdroiddata/build/your.app.id` (F-Droid CI), `/home/vagrant/build/your.app.id` (F-Droid build server), 或 `/tmp/build`。"
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
 msgid "NB: using a subdirectory of the world-writeable `/tmp` can have security implications (on multi-user systems)."
 msgstr "注：使用全局可写的 `tmp`的子目录可能会有安全影响（在多用户系统上）。"
+
+#. type: Plain text
+#: _docs/Reproducible_Builds.md
+#, no-wrap
+msgid ""
+"If the SDK path ends up embedded in Flutter one can move the SDK to said path\n"
+"in the recipe and configure it with: `flutter config --android-sdk <path>` as\n"
+"setting `ANDROID_SDK_ROOT` might not be enough.\n"
+msgstr ""
 
 #. type: Title ####
 #: _docs/Reproducible_Builds.md
@@ -9752,7 +9767,7 @@ msgstr ""
 msgid "For `build.gradle.kts`, add this instead:"
 msgstr "对于 `build.gradle.kts`，请添加这个："
 
-#. type: Fenced code block (kts)
+#. type: Fenced code block (gradle)
 #: _docs/Reproducible_Builds.md
 #, no-wrap
 msgid ""
@@ -9999,18 +10014,21 @@ msgstr ""
 
 #. type: Title ####
 #: _docs/Reproducible_Builds.md
-#, no-wrap
-msgid "Mismatched Java version"
+#, fuzzy, no-wrap
+#| msgid "Mismatched Java version"
+msgid "Mismatched Toolchains"
 msgstr "不匹配的 Java 版本"
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
-msgid "Sometimes there's a mismatch as upstream might use a different one (eg. Gradle 8 uses Java 17) and the recipe needs to be updated."
-msgstr "有时候会有不匹配的情况，因为上游可能使用不同的版本（如 Gradle 8 使用 Java 17），需要更新配方。"
+msgid "Different toolchains may produce different binaries. A usual case is when more than one JDK version/distribution are used to build the apk. Sometimes even Gradle may mix versions of JDKs to build an apk. To avoid such problems unused JDKs should be removed."
+msgstr ""
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
-msgid "The APK diff will have entries like this, eg. Java 17 vs Java 11:"
+#, fuzzy
+#| msgid "The APK diff will have entries like this, eg. Java 17 vs Java 11:"
+msgid "The APK diff will have entries in the `classes.dex` files like this, e.g. Java 17 vs Java 11:"
 msgstr "APK diff 会存在类似这样的条目，如 Java 17 vs Java 11："
 
 #. type: Bullet: '-    '
@@ -10128,20 +10146,31 @@ msgstr "Rust"
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
-#, no-wrap
+#, fuzzy, no-wrap
+#| msgid ""
+#| "Compiler and linker arguments can be added to [`build.rustflags`](https://doc.rust-lang.org/cargo/reference/config.html#buildrustflags).\n"
+#| "Linker arguments can be added with `link-args=-Wl,<linker args>`; `--remap-path-prefix=<old>=<new>`\n"
+#| "can be added to strip build paths.\n"
 msgid ""
-"Compiler and linker arguments can be added to [`build.rustflags`](https://doc.rust-lang.org/cargo/reference/config.html#buildrustflags).\n"
-"Linker arguments can be added with `link-args=-Wl,<linker args>`; `--remap-path-prefix=<old>=<new>`\n"
+"Compiler and linker arguments can be added to [Cargo `build.rustflags`](https://doc.rust-lang.org/cargo/reference/config.html#buildrustflags) and [rustc Codegen Options](https://doc.rust-lang.org/rustc/codegen-options/index.html).\n"
+"Linker arguments can be added with `-C link-args=-Wl,<linker args>`; `--remap-path-prefix=<old>=<new>`\n"
 "can be added to strip build paths.\n"
 msgstr ""
 "编译器和链接器参数可被添加到 [`build.rustflags`](https://doc.rust-lang.org/cargo/reference/config.html#buildrustflags)。\n"
 "添加链接器参数可带`link-args=-Wl,<linker args>`; `--remap-path-prefix=<old>=<new>`\n"
 "可被添加到 strip build 路径。\n"
 
-#. type: Title ###
+#. type: Plain text
 #: _docs/Reproducible_Builds.md
 #, no-wrap
-msgid "Migration to reproducible builds"
+msgid "The Rust toolchain should be pinned to the same version as upstream. This can be done when installing rustup with `rustup-init.sh -y --default-toolchain <version>`.\n"
+msgstr ""
+
+#. type: Title ###
+#: _docs/Reproducible_Builds.md
+#, fuzzy, no-wrap
+#| msgid "Migration to reproducible builds"
+msgid "migration to reproducible builds"
 msgstr "迁移到可重复构建"
 
 #. type: Title ####
@@ -12118,6 +12147,9 @@ msgstr "首选项"
 #: _docs/Whitelabel_Builds.md
 msgid "For a custom build that enables Automatic Updates by default, override _app/src/main/res/xml/preferences.xml_. You can customize the preferences and their default values in _app/src/mycompany/res/xml/preferences.xml_. The fully automatic update requires [Privileged Extension](https://gitlab.com/fdroid/privileged-extension). With regular access, the updates will only automatically download. The user still needs to click install on each one."
 msgstr "对于默认启用自动更新的自定义构建，覆盖 _app/src/main/res/xml/preferences.xml_。你可以在 _app/src/mycompany/res/xml/preferences.xml_ 中自定义首选项及其默认值。全自动更新需要 [特权扩展](https://gitlab.com/fdroid/privileged-extension)。通过定期访问，更新只会自动下载。用户仍然需要在每一个上点击安装。"
+
+#~ msgid "Sometimes there's a mismatch as upstream might use a different one (eg. Gradle 8 uses Java 17) and the recipe needs to be updated."
+#~ msgstr "有时候会有不匹配的情况，因为上游可能使用不同的版本（如 Gradle 8 使用 Java 17），需要更新配方。"
 
 #~ msgid "Metadata files are written in [YAML](http://www.yaml.org/start.html) format"
 #~ msgstr "元数据文件是用[YAML](http://www.yaml.org/start.html)格式编写的"
