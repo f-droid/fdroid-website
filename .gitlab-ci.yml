@@ -153,6 +153,36 @@ rsync mirrors:
           || rsync --list-only rsync -axv ${f}::fdroid;
       done
 
+# Merge conflicts with Weblate are a big pain, so check they won't happen.
+weblate merge conflict:
+  stage: deploy
+  image: debian:bookworm-slim
+  only:
+    changes:
+      - .gitlab-ci.yml
+      - _data/*/strings.json
+      - _data/*/tutorials.json
+      - _data/strings.json
+      - _data/tutorials.json
+      - po/
+  script:
+    - apt-get update
+    - apt-get -qy upgrade
+    - apt-get -qy install --no-install-recommends ca-certificates git
+    - git config user.name "$CI_PIPELINE_ID/$CI_JOB_ID"
+    - git config user.email $CI_PROJECT_PATH@f-droid.org
+    - git fetch https://hosted.weblate.org/git/f-droid/website/
+    - git checkout -B weblate FETCH_HEAD
+    - export EXITVALUE=0
+    - if ! git rebase $CI_COMMIT_SHA; then
+          export EXITVALUE=1;
+          set -x;
+          while git rebase --skip; do echo; done;
+          set +x;
+      fi
+    - git diff --exit-code
+    - exit $EXITVALUE
+
 
 spellcheckbot:
   image: debian:bullseye
