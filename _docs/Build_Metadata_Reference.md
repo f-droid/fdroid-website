@@ -622,7 +622,7 @@ configuration to the build. These are (roughly in order of application):
 `rm: <path1>[,<path2>,...]`<a name="build_rm"></a>
 
 :   Specifies the relative paths of files or directories to delete
-    before the build is done. The paths are relative to the base of the
+    before the build is started. The paths are relative to the base of the
     build directory - i.e. the root of the directory structure checked
     out from the source respository - not necessarily the directory that
     contains _AndroidManifest.xml_.
