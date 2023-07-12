@@ -574,7 +574,7 @@ configuration to the build. These are (roughly in order of application):
 
 :   By default, 'android update' is used in Ant builds to generate or
     update the project and all its referenced projects. Specifying
-    update=no bypasses that. Note that this is useless in builds that
+    `androidupdate: no` bypasses that. Note that this is useless in builds that
     don't use Ant.
 
     Default value is '`auto`', which recursively uses the paths in
@@ -648,7 +648,7 @@ configuration to the build. These are (roughly in order of application):
     _project.properties_ as a library under the specified number. For
     example, if you specify `1:somelib@1.0`, F-Droid will automatically
     do the equivalent of the legacy practice
-    `prebuild=echo "android.library.reference.1=$$somelib$$" >> project.properties`.
+    `prebuild: echo "android.library.reference.1=$$somelib$$" >> project.properties`.
 
     Each srclib has a metadata file under srclibs/ in the repository
     directory, and the source code is stored in build/srclib/.
@@ -750,7 +750,7 @@ configuration to the build. These are (roughly in order of application):
     the native code is being built by other means like a Gradle task,
     you can specify `no` here to avoid that. However, if the native code
     is actually not required or used, remove the directory instead
-    (using `rm=jni` for example). Using `buildjni=no` when the jni code
+    (using `rm: jni` for example). Using `buildjni: no` when the jni code
     isn't used nor built will result in an error saying that native
     libraries were expected in the resulting package.
 
@@ -803,7 +803,7 @@ configuration to the build. These are (roughly in order of application):
 
 :   Specify a glob path where the resulting unsigned release APK from
     the build should be. This can be used in combination with build
-    methods like `gradle=yes` or `maven=yes`, but if no build method is
+    methods like `gradle: yes` or `maven: yes`, but if no build method is
     specified, the build is manual. You should run your build commands,
     such as `make`, in _build_.
 
