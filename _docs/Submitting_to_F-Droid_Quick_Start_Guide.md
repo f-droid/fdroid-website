@@ -138,6 +138,7 @@ In the container:
 ```sh
 . /etc/profile
 export PATH="$fdroidserver:$PATH" PYTHONPATH="$fdroidserver"
+export JAVA_HOME=$(java -XshowSettings:properties -version 2>&1 > /dev/null | grep 'java.home' | awk -F'=' '{print $2}' | tr -d ' ')
 cd /build
 fdroid readmeta
 fdroid rewritemeta com.example
