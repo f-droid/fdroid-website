@@ -14,7 +14,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
 "POT-Creation-Date: 2023-06-19 09:40+0200\n"
-"PO-Revision-Date: 2023-05-31 18:52+0000\n"
+"PO-Revision-Date: 2023-06-20 16:39+0000\n"
 "Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/f-droid/website-docs/uk/>\n"
 "Language: uk\n"
@@ -22,7 +22,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 4.18-dev\n"
+"X-Generator: Weblate 4.18.1\n"
 
 #. type: Yaml Front Matter Hash Value: title
 #: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
@@ -3833,17 +3833,13 @@ msgstr "Це визначає політику пересування стари
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-#, fuzzy
-#| msgid "The version specified via `CurrentVersionCode` is always considered the newest version when deciding which versions to put into the archive.  This means that when `ArchivePolicy` is set to \"1 versions\" only the APK corresponding to CVC is kept, which is not necessarily the one with the highest version code."
 msgid "The version specified via `CurrentVersionCode` is always considered the newest version when deciding which versions to put into the archive.  This means that when `ArchivePolicy` is set to `1` only the APK corresponding to CVC is kept, which is not necessarily the one with the highest version code."
-msgstr "Версія, зазначена як `CurrentVersionCode` (CVC), завжди вважається найновішою при визначенні, які версії слід архівувати. Тобто коли `ArchivePolicy` має значення `1 versions`, то зберігається лише той APK, що відповідає CVC, а не той, що має найвище значення коду версії."
+msgstr "Версія, зазначена як `CurrentVersionCode` (CVC), завжди вважається найновішою при визначенні, які версії слід архівувати. Тобто коли `ArchivePolicy` має значення `1`, то зберігається лише той APK, що відповідає CVC, а не той, що має найвище значення коду версії."
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-#, fuzzy
-#| msgid "Currently the only supported format is \"n versions\", where \"n\" is the number of versions to keep. Defaults to \"3 versions\". For apps with a list of [_VercodeOperation_](#VercodeOperation) the default is calculated as \"3 x number of operations\", eg. for an app with two operations, for two ABIs, 6 versions will be kept."
 msgid "Currently the only supported format is `n`, where `n` is the number of versions to keep. Defaults to `3`. For apps with a list of [_VercodeOperation_](#VercodeOperation) the default is calculated as `3 x number of operations`, eg. for an app with two operations, for two ABIs, 6 versions will be kept."
-msgstr "Наразі єдиним підтримуваний формат — «n версій», де «n» — це кількість версій, які потрібно зберігати. Усталено — «3 версії». Для застосунків зі списком [_VercodeOperation_](#VercodeOperation) усталене значення обчислюється як «3 x кількість операцій», наприклад, для застосунку з двома операціями, для двох ABI, буде збережено 6 версій."
+msgstr "Наразі єдиним підтримуваний формат — `n`, де `n` — це кількість версій, які потрібно зберігати. Усталено — `3`. Для застосунків зі списком [_VercodeOperation_](#VercodeOperation) усталене значення обчислюється як `3 x кількість операцій`, наприклад, для застосунку з двома операціями, для двох ABI, буде збережено 6 версій."
 
 #. type: Title ###
 #: _docs/Build_Metadata_Reference.md
@@ -9821,10 +9817,8 @@ msgstr "Вбудовані [шляхи збірки](https://reproducible-builds
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
-#, fuzzy
-#| msgid "Often, the easiest solution is to always use the same working directory when building; e.g. `/builds/fdroid/fdroiddata/build/your.app.id` (F-Droid CI), `/home/vagrant/build/your.app.id` (F-Droid build server), or `/tmp/build`."
 msgid "Often, the easiest solution is to always use the same working directory when building; e.g. `/builds/fdroid/fdroiddata/build/your.app.id` (F-Droid CI), `/home/vagrant/build/your.app.id` (F-Droid build server), `/tmp/build` or create one to mirror the upstream used folders, e.g. for macOS `/Users/runner`."
-msgstr "Часто найпростіше рішення — завжди використовувати один і той самий робочий каталог під час збирання; наприклад, `/builds/fdroid/fdroiddata/build/your.app.id` (F-Droid CI), `/home/vagrant/build/your.app.id` (сервер збирання F-Droid), або `/tmp/build`."
+msgstr "Часто найпростіше рішення — завжди використовувати один і той самий робочий каталог під час збирання; наприклад, `/builds/fdroid/fdroiddata/build/your.app.id` (F-Droid CI), `/home/vagrant/build/your.app.id` (сервер збирання F-Droid), `/tmp/build` або створити дзеркало використаних основних тек, наприклад, для macOS `/Users/runner`."
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
@@ -9839,6 +9833,9 @@ msgid ""
 "in the recipe and configure it with: `flutter config --android-sdk <path>` as\n"
 "setting `ANDROID_SDK_ROOT` might not be enough.\n"
 msgstr ""
+"Якщо шлях до SDK буде вбудовано у Flutter, ви можете перемістити SDK до цього шляху\n"
+"у рецепті й налаштувати його за допомогою: `flutter config --android-sdk <шлях>`\n"
+"оскільки налаштування `ANDROID_SDK_ROOT` може бути недостатньо.\n"
 
 #. type: Title ####
 #: _docs/Reproducible_Builds.md
@@ -10128,22 +10125,19 @@ msgstr ""
 
 #. type: Title ####
 #: _docs/Reproducible_Builds.md
-#, fuzzy, no-wrap
-#| msgid "Mismatched Java version"
+#, no-wrap
 msgid "Mismatched Toolchains"
-msgstr "Невідповідна версія Java"
+msgstr "Невідповідні ланцюжки інструментів"
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
 msgid "Different toolchains may produce different binaries. A usual case is when more than one JDK version/distribution are used to build the apk. Sometimes even Gradle may mix versions of JDKs to build an apk. To avoid such problems unused JDKs should be removed."
-msgstr ""
+msgstr "Різні набори інструментів можуть створювати різні двійкові файли. Типовий випадок — використання кількох версій/дистрибутивів JDK для збірки apk. Іноді навіть Gradle може змішувати версії JDK для створення apk. Щоб уникнути таких проблем, невикористовувані JDK слід вилучити."
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
-#, fuzzy
-#| msgid "The APK diff will have entries like this, eg. Java 17 vs Java 11:"
 msgid "The APK diff will have entries in the `classes.dex` files like this, e.g. Java 17 vs Java 11:"
-msgstr "APK diff матиме такі записи, наприклад, Java 17 проти Java 11:"
+msgstr "diff APK матиме записи у файлах `classes.dex` на зразок цього, наприклад, Java 17 vs Java 11:"
 
 #. type: Bullet: '-    '
 #: _docs/Reproducible_Builds.md
@@ -10260,32 +10254,27 @@ msgstr "Rust"
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
-#, fuzzy, no-wrap
-#| msgid ""
-#| "Compiler and linker arguments can be added to [`build.rustflags`](https://doc.rust-lang.org/cargo/reference/config.html#buildrustflags).\n"
-#| "Linker arguments can be added with `link-args=-Wl,<linker args>`; `--remap-path-prefix=<old>=<new>`\n"
-#| "can be added to strip build paths.\n"
+#, no-wrap
 msgid ""
 "Compiler and linker arguments can be added to [Cargo `build.rustflags`](https://doc.rust-lang.org/cargo/reference/config.html#buildrustflags) and [rustc Codegen Options](https://doc.rust-lang.org/rustc/codegen-options/index.html).\n"
 "Linker arguments can be added with `-C link-args=-Wl,<linker args>`; `--remap-path-prefix=<old>=<new>`\n"
 "can be added to strip build paths.\n"
 msgstr ""
-"Аргументи компілятора та компонувальника можна додати до [`build.rustflags`](https://doc.rust-lang.org/cargo/reference/config.html#buildrustflags).\n"
-"Аргументи компонувальника можна додати за допомогою `link-args=-Wl,<linker args>`; `--remap-path-prefix=<old>=<new>`\n"
+"Аргументи компілятора та компонувальника можна додати до [Cargo `build.rustflags`](https://doc.rust-lang.org/cargo/reference/config.html#buildrustflags) і [rustc Codegen Options](https://doc.rust-lang.org/rustc/codegen-options/index.html).\n"
+"Аргументи компонувальника можна додати за допомогою `-C link-args=-Wl,<linker args>`; `--remap-path-prefix=<old>=<new>`\n"
 "можна додавати до шляхів збирання зрізів.\n"
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
 #, no-wrap
 msgid "The Rust toolchain should be pinned to the same version as upstream. This can be done when installing rustup with `rustup-init.sh -y --default-toolchain <version>`.\n"
-msgstr ""
+msgstr "Набір інструментів Rust слід закріпити за тією ж версією, що і попередні версії. Це можна зробити під час встановлення rustup за допомогою `rustup-init.sh -y --default-toolchain <version>`.\n"
 
 #. type: Title ###
 #: _docs/Reproducible_Builds.md
-#, fuzzy, no-wrap
-#| msgid "Migration to reproducible builds"
+#, no-wrap
 msgid "migration to reproducible builds"
-msgstr "Перехід до відтворюваних збірок"
+msgstr "перехід до відтворюваних збірок"
 
 #. type: Title ####
 #: _docs/Reproducible_Builds.md
