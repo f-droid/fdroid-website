@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2023-07-24 17:52+0200\n"
-"PO-Revision-Date: 2023-05-31 18:52+0000\n"
+"PO-Revision-Date: 2023-07-25 23:04+0000\n"
 "Last-Translator: Licaon Kter <licaon.kter@protonmail.com>\n"
 "Language-Team: Romanian <https://hosted.weblate.org/projects/f-droid/website-posts/ro/>\n"
 "Language: ro\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n==1 ? 0 : (n==0 || (n%100 > 0 && n%100 < 20)) ? 1 : 2;\n"
-"X-Generator: Weblate 4.18-dev\n"
+"X-Generator: Weblate 5.0-dev\n"
 
 #. type: Yaml Front Matter Hash Value: title
 #: _posts/2017-02-20-f-droid-supports-apk-expansion-files-aka-obb.md
@@ -19388,186 +19388,182 @@ msgstr ""
 #: _posts/2023-07-15-community-controlled-backup-ceremony.md
 #, no-wrap
 msgid "Community-controlled Backup Ceremony"
-msgstr ""
+msgstr "Ceremonia copiei de rezervă controlată de comunitate"
 
 #. type: Plain text
 #: _posts/2023-07-15-community-controlled-backup-ceremony.md
 msgid "Seven core contributors and one board member met in Scotland, the birthplace of F-Droid, for the first in-person F-Droid team meeting.  One of the most pressing tasks we needed to take care of was setting up a contributor-controlled backup of all of our signing keys.  The requirements made it necessary to have a lengthy, in-person, consensus-driven planning session.  We found no good documentation of such a procedure, so we're going out on a limb here and publishing the general outline of our process.  This process was informally audited by multiple people with varying expertise before the public key was used to encrypt anything."
-msgstr ""
+msgstr "Șapte colaboratori de bază și un membru al consiliului de administrație s-au întâlnit în Scoția, locul de naștere al F-Droid, pentru prima întâlnire în persoană a echipei F-Droid.  Una dintre cele mai urgente sarcini de care trebuia să ne ocupăm a fost configurarea unei copii de rezervă, controlată de colaboratori, a tuturor cheilor noastre de semnare.  Cerințele au făcut necesară o sesiune de planificare îndelungată, în persoană, bazată pe consens.  Nu am găsit nicio documentație bună a unei astfel de proceduri, așa că ne riscăm și publicăm schița generală a procesului nostru.  Acest proces a fost auditat în mod informal de mai multe persoane cu expertiză variabilă înainte ca cheia publică să fie folosită pentru a cripta ceva."
 
 #. type: Plain text
 #: _posts/2023-07-15-community-controlled-backup-ceremony.md
 msgid "![F-Droid core contributors at midnight]({% asset posts/2023-07-15-community-controlled-backup-ceremony/fdroid-at-midnight.jpg %})"
-msgstr ""
+msgstr "![Colaboratorii de bază F-Droid la miezul nopții]({% asset posts/2023-07-15-community-controlled-backup-ceremony/fdroid-at-midnight.jpg %})"
 
 #. type: Plain text
 #: _posts/2023-07-15-community-controlled-backup-ceremony.md
 msgid "F-Droid manages secret signing keys for thousands of apps.  Someone who has control over those keys could create malicious app releases that could be transparently installed as updates.  On top of that, [Android](https://developer.android.com/about/versions/pie/android-9.0#apk-key-rotation) does [not](https://guardianproject.info/2015/12/29/how-to-migrate-your-android-apps-signing-key/) make it [easy](https://anandbose.gitlab.io/android-development/2020/05/08/android-signing-key-rotation-explained/) to rotate to new signing keys, unlike TLS or Signal. So [these keys]({{ site.baseurl }}/docs/Signing_Process/) are very important to [protect]({{ site.baseurl }}/docs/Building_a_Signing_Server/).  They are also very important to backup, since the Android OS uses the signing key combined with the Application ID as the unique identifier to represent each installed app. This meeting gave us the perfect opportunity to create a new backup process that ensures that at least 4 trusted community members must be physically present in order to decrypt the backup of all the keys.  First, we started with the requirements:"
-msgstr ""
+msgstr "F-Droid gestionează cheile secrete de semnare pentru mii de aplicații.  Cineva care deține controlul asupra acestor chei ar putea crea versiuni de aplicații rău intenționate care ar putea fi instalate în mod transparent ca actualizări.  În plus, [Android](https://developer.android.com/about/versions/pie/android-9.0#apk-key-rotation) [nu](https://guardianproject.info/2015/12/29/how-to-migrate-your-android-apps-signing-key/) facilitează [ușor](https://anandbose.gitlab.io/android-development/2020/05/08/android-signing-key-rotation-explained/) rotirea la noi chei de semnare, spre deosebire de TLS sau Signal. Așadar, [aceste chei]({{ site.baseurl }}/docs/Signing_Process/) sunt foarte importante pentru a fi [protejate]({{ site.baseurl }}/docs/Building_a_Signing_Server/).  Acestea sunt, de asemenea, foarte importante pentru a face copii de siguranță, deoarece sistemul de operare Android utilizează cheia de semnare combinată cu ID-ul aplicației ca identificator unic pentru a reprezenta fiecare aplicație instalată. Această întâlnire ne-a oferit ocazia perfectă de a crea un nou proces de creare a unei copii de rezervă care asigură că cel puțin 4 membri de încredere ai comunității trebuie să fie prezenți fizic pentru a decripta copia de rezervă a tuturor cheilor.  În primul rând, am început cu cerințele:"
 
 #. type: Bullet: '* '
 #: _posts/2023-07-15-community-controlled-backup-ceremony.md
 msgid "Regular backups as new keys get added."
-msgstr ""
+msgstr "Copii de siguranță regulate pe măsură ce se adaugă noi chei."
 
 #. type: Bullet: '* '
 #: _posts/2023-07-15-community-controlled-backup-ceremony.md
 msgid "Strong, proven encryption for all backups."
-msgstr ""
+msgstr "Criptare puternică și dovedită pentru toate copiile de rezervă."
 
 #. type: Bullet: '* '
 #: _posts/2023-07-15-community-controlled-backup-ceremony.md
 msgid "Minimum of four participants to decrypt."
-msgstr ""
+msgstr "Minimum patru participanți pentru decriptare."
 
 #. type: Bullet: '* '
 #: _posts/2023-07-15-community-controlled-backup-ceremony.md
 msgid "Specific technical experience should not be required to be a participant."
-msgstr ""
+msgstr "Nu ar trebui să fie necesară o experiență tehnică specifică pentru a fi participant."
 
 #. type: Bullet: '* '
 #: _posts/2023-07-15-community-controlled-backup-ceremony.md
 msgid "The components should be physically spread out across jurisdictions."
-msgstr ""
+msgstr "Componentele ar trebui să fie răspândite fizic în toate jurisdicțiile."
 
 #. type: Bullet: '* '
 #: _posts/2023-07-15-community-controlled-backup-ceremony.md
 msgid "Access should minimized as much as possible (e.g. the signing server maintainer does not need access to the backups)."
-msgstr ""
+msgstr "Accesul ar trebui să fie minimizat pe cât posibil (de exemplu, administratorul serverului de semnare nu are nevoie de acces la copiile de rezervă)."
 
 #. type: Bullet: '* '
 #: _posts/2023-07-15-community-controlled-backup-ceremony.md
 msgid "As low a stress level as possible for each participant."
-msgstr ""
+msgstr "Un nivel de stres cât mai scăzut posibil pentru fiecare participant."
 
 #. type: Bullet: '* '
 #: _posts/2023-07-15-community-controlled-backup-ceremony.md
 msgid "Each participant should be free to hand over their component if they are forced to, without jeopardizing the encryption."
-msgstr ""
+msgstr "Fiecare participant ar trebui să fie liber să își predea componenta dacă este obligat să o facă, fără a pune în pericol criptarea."
 
 #. type: Plain text
 #: _posts/2023-07-15-community-controlled-backup-ceremony.md
 msgid "Then we mapped out who was present:"
-msgstr ""
+msgstr "Apoi am stabilit cine era prezent:"
 
 #. type: Bullet: '* '
 #: _posts/2023-07-15-community-controlled-backup-ceremony.md
-#, fuzzy
-#| msgid "Becomes a contributor"
 msgid "Seven core contributors."
-msgstr "Devine un colaborator"
+msgstr "Șapte colaboratori de bază."
 
 #. type: Bullet: '* '
 #: _posts/2023-07-15-community-controlled-backup-ceremony.md
 msgid "One board member."
-msgstr ""
+msgstr "Un membru al consiliului."
 
 #. type: Bullet: '* '
 #: _posts/2023-07-15-community-controlled-backup-ceremony.md
 msgid "One trusted external witness."
-msgstr ""
+msgstr "Un martor extern de încredere."
 
 #. type: Bullet: '* '
 #: _posts/2023-07-15-community-controlled-backup-ceremony.md
 msgid "No one else."
-msgstr ""
+msgstr "Nimeni altcineva."
 
 #. type: Plain text
 #: _posts/2023-07-15-community-controlled-backup-ceremony.md
 msgid "From that, we built the process:"
-msgstr ""
+msgstr "Pornind de aici, am construit procesul:"
 
 #. type: Bullet: '* '
 #: _posts/2023-07-15-community-controlled-backup-ceremony.md
 msgid "Three roles for physical control: operator of the signing server, encrypted backup holder, passphrase shard holder."
-msgstr ""
+msgstr "Trei roluri pentru controlul fizic: operatorul serverului de semnare, deținătorul copiei de rezervă criptate, deținătorul unei bucăți."
 
 #. type: Bullet: '* '
 #: _posts/2023-07-15-community-controlled-backup-ceremony.md
 msgid "Each person only takes on a single role, for example, shard holders do not have access to the signing keys or the encrypted backup."
-msgstr ""
+msgstr "Fiecare persoană își asumă doar un singur rol, de exemplu, deținătorii de bucăți nu au acces la cheile de semnare sau la copia de rezervă criptată."
 
 #. type: Bullet: '* '
 #: _posts/2023-07-15-community-controlled-backup-ceremony.md
 msgid "The encryption key used for the data is public key cryptography."
-msgstr ""
+msgstr "Cheia de criptare utilizată pentru date este bazată pe criptografia cu cheie publică."
 
 #. type: Bullet: '* '
 #: _posts/2023-07-15-community-controlled-backup-ceremony.md
 msgid "The private key was generated on a one-time-use, in-memory, disposable [TAILS](https://tails.boum.org/) session."
-msgstr ""
+msgstr "Cheia privată a fost generată pe o sesiune [TAILS](https://tails.boum.org/) în memorie și de unică folosință."
 
 #. type: Bullet: '* '
 #: _posts/2023-07-15-community-controlled-backup-ceremony.md
 msgid "The private key was sharded using [Shamir's Secret Sharing](https://en.wikipedia.org/wiki/Shamir%27s_Secret_Sharing)."
-msgstr ""
+msgstr "Cheia privată a fost împărțită în bucăți folosind [sistemului de partajare a secretelor a lui Shamir](https://en.wikipedia.org/wiki/Shamir%27s_Secret_Sharing)."
 
 #. type: Bullet: '* '
 #: _posts/2023-07-15-community-controlled-backup-ceremony.md
 msgid "We used an implementation of Shamir's Secret Sharing that has been maintained for over 15 years.  The installation that was used was confirmed via reproducible builds."
-msgstr ""
+msgstr "Am folosit o implementare a sistemului de partajare a secretelor lui Shamir, care a fost menținută timp de peste 15 ani.  Instalarea utilizată a fost confirmată prin compilări reproductibile."
 
 #. type: Bullet: '* '
 #: _posts/2023-07-15-community-controlled-backup-ceremony.md
 msgid "Each shard was written to a removeable storage device bought in a store with cash without pre-order or registration."
-msgstr ""
+msgstr "Fiecare bucată a fost scrisă pe un dispozitiv de stocare detașabil cumpărat într-un magazin cu bani gheață, fără precomandă sau preînregistrare."
 
 #. type: Bullet: '* '
 #: _posts/2023-07-15-community-controlled-backup-ceremony.md
 msgid "Each removeable storage device with a shard was physically handed each shard holder to pack in a tamper-evident envelope as the others observed."
-msgstr ""
+msgstr "Fiecare dispozitiv de stocare detașabil cu o bucată a fost înmânat fizic fiecărui deținător pentru a fi ambalat într-un plic inviolabil, așa cum au observat ceilalți."
 
 #. type: Bullet: '* '
 #: _posts/2023-07-15-community-controlled-backup-ceremony.md
 msgid "Backups must not be transmitted over the internet, only exchanged via in-person meetings between people who know each other."
-msgstr ""
+msgstr "Copiile de siguranță nu trebuie să fie transmise pe internet, ci doar schimbate prin întâlniri personale între persoane care se cunosc."
 
 #. type: Bullet: '* '
 #: _posts/2023-07-15-community-controlled-backup-ceremony.md
 msgid "All involved sat around a table for the duration of the ceremony.  The security profile of in-person discussions is drastically easier to manage than secure online discussions."
-msgstr ""
+msgstr "Toți cei implicați s-au așezat în jurul unei mese pe toată durata ceremoniei.  Profilul de securitate al discuțiilor în persoană este drastic mai ușor de gestionat decât cel al discuțiilor securizate prin Internet."
 
 #. type: Bullet: '* '
 #: _posts/2023-07-15-community-controlled-backup-ceremony.md
 msgid "All present were observers of each step of the process, and verbally confirmed their agreement."
-msgstr ""
+msgstr "Toți cei prezenți au fost observatori la fiecare etapă a procesului și și-au confirmat verbal acordul."
 
 #. type: Bullet: '* '
 #: _posts/2023-07-15-community-controlled-backup-ceremony.md
 msgid "The operators of the signing server and the holders of the backup data verified each others' identities via F-Droid networks, PGP Web of Trust, and checks of government issued IDs."
-msgstr ""
+msgstr "Operatorii serverului de semnare și deținătorii datelor de rezervă și-au verificat reciproc identitatea prin intermediul rețelelor F-Droid, PGP Web of Trust și verificări ale actelor de identitate emise de guvern."
 
 #. type: Bullet: '* '
 #: _posts/2023-07-15-community-controlled-backup-ceremony.md
 msgid "Pieces from a minimum of two jurisdictions are required to decrypt: EU, Europe non-EU, US."
-msgstr ""
+msgstr "Pentru decriptare sunt necesare piese din cel puțin două jurisdicții: UE, Europa non-UE, SUA."
 
 #. type: Plain text
 #: _posts/2023-07-15-community-controlled-backup-ceremony.md
 msgid "One important factor in reliable backups is regular updates.  New apps are constantly being added, and those usually get a new signing key assigned.  So we needed a system where it was easy to update the backup data while involving as few people as possible.  An operator of the signing server receives the public key to encrypt the backups via in-person exchange with a holder of the backups.  The holders of the backup data receives the encrypted backups from an operator of the signing server via in-person exchange."
-msgstr ""
+msgstr "Un factor important în realizarea unor copii de rezervă fiabile este actualizarea regulată.  În mod constant se adaugă noi aplicații, iar acestora li se atribuie de obicei o nouă cheie de semnare.  Așadar, aveam nevoie de un sistem în care să fie ușor de actualizat datele copiei de rezervă, implicând în același timp cât mai puține persoane.  Un operator al serverului de semnare primește cheia publică pentru a cripta copiile de rezervă prin intermediul unui schimb personal cu un deținător al copiilor de rezervă.  Deținătorii datelor de rezervă primesc copiile de rezervă criptate de la un operator al serverului de semnare prin schimb personal."
 
 #. type: Plain text
 #: _posts/2023-07-15-community-controlled-backup-ceremony.md
 msgid "Holding such important secrets also brings some unavoidable stresses to the people holding them. One key design goal was to create a protocol that did not add to the stress of any existing operators.  Furthermore, we aimed to keep the individual stress as low as possible for all roles in this protocol.  That makes it possible to empower volunteer contributors without overburdening them."
-msgstr ""
+msgstr "Deținerea unor secrete atât de importante aduce, de asemenea, un stres inevitabil persoanelor care le dețin. Un obiectiv cheie a fost crearea unui protocol care să nu sporească stresul operatorilor existenți.  În plus, am urmărit să menținem stresul individual cât mai scăzut posibil pentru toate rolurile din acest protocol.  Acest lucru face posibilă împuternicirea colaboratorilor voluntari fără a-i suprasolicita."
 
 #. type: Plain text
 #: _posts/2023-07-15-community-controlled-backup-ceremony.md
 msgid "For restoring, we agreed that it should happen in an in-person meeting.  The process requires three shard holders meet with one encrypted backup holder, then the results need be given to a signing server operator. Requiring an in-person meeting could delay the restore process, but the added trust seemed worth it.  So this is the default process.  We could still switch to partially online process if the need arises.  That would require the agreement of five participants."
-msgstr ""
+msgstr "Pentru restaurare, am convenit că ar trebui să aibă loc în cadrul unei întâlniri în persoană.  Procesul necesită ca trei deținători de bucăți să se întâlnească cu un deținător al copiei de rezervă criptate, apoi rezultatele trebuie să fie date unui operator de server de semnare. Necesitatea unei întâlniri în persoană ar putea întârzia procesul de restaurare, dar încrederea suplimentară pare să merite.  Așadar, acesta este procesul implicit.  Am putea totuși să trecem la un proces parțial online dacă va fi nevoie.  Acest lucru ar necesita acordul a cinci participanți."
 
 #. type: Plain text
 #: _posts/2023-07-15-community-controlled-backup-ceremony.md
 msgid "We believe this is a secure and reliable backup procedure for very sensitive data.  We welcome further scrutiny and plan to update the procedure as needed in a future meeting."
-msgstr ""
+msgstr "Considerăm că aceasta este o procedură de copiere de rezervă sigură și fiabilă pentru datele foarte sensibile.  Ne bucurăm să avem parte de o examinare mai amănunțită și intenționăm să actualizăm procedura în funcție de necesități în cadrul unei reuniuni viitoare."
 
 #. type: Plain text
 #: _posts/2023-07-15-community-controlled-backup-ceremony.md
-#, fuzzy
-#| msgid "_This work was funded by the [FFDW-DVD grant]({{ site.baseurl }}{% post_url 2022-02-05-decentralizing-distribution %})_"
 msgid "(_This meeting was paid for by the [FFDW-DVD grant]({{ site.baseurl }}{% post_url 2022-02-05-decentralizing-distribution %})._)"
-msgstr "_Această muncă a fost finanțată de [grantul FFDW-DVD]({{ site.baseurl }}{% post_url 2022-02-05-decentralizing-distribution %})_"
+msgstr "(_Această întâlnire a fost plătită de [grantul FFDW-DVD]({{ site.baseurl }}{% post_url 2022-02-05-decentralizing-distribution %})._)."
 
 #~ msgid "* Maven Central * Google Maven Repo * JCenter * OSS Sonatype * OSS JFrog * JitPack.io * Clojars * CommonsWare * Gradle plugin repo"
 #~ msgstr ""
