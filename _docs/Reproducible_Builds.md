@@ -141,14 +141,28 @@ automatically zeroed out.
 
 ### Debugging Reproducible Builds
 
-[Diffoscope](https://diffoscope.org/) is a useful tool for finding the
-difference between the reference APK provided by the app developer and the APK
-that fdroidserver produced.
+#### Recommended tools
 
-You can find the APK that fdroidserver produced either under
+We recommend using [`diffoscope`](https://diffoscope.org/) for easily
+finding the difference between the reference APK provided by the app
+developer and the APK that `fdroidserver` produced.
+
+You can find the APK that `fdroidserver` produced either under e.g.
 `fdroiddata/build/com.example.app/app/build/outputs/apk/prod/release/example-1.0.0-prod-release-unsigned.apk`
-(when running locally) or in the pipeline artifacts (when using Gitlab CI).
-Adjust the path accordingly.
+(when running locally) or in the pipeline artifacts (when using GitLab
+CI).  Adjust the path accordingly (e.g. for flavours other than
+`prod`).
+
+#### Prioritising & fixing differences
+
+[HOWTO: diff & fix APKs for Reproducible
+Builds](https://gitlab.com/fdroid/wiki/-/wikis/HOWTO:-diff-&-fix-APKs-for-Reproducible-Builds)
+on the F-Droid wiki has detailed information on the various kinds of
+differences commonly encountered, which differences should usually be
+prioritised when debugging, and how to fix common issues.
+
+It also shows how to use various specialised tools that may provide
+better results when `diffoscope` is not sufficient.
 
 
 ### Reproducible APK tools
