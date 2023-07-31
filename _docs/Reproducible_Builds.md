@@ -139,6 +139,18 @@ Gradle Android Plugin v2.2.2, timestamps in the APK file's ZIP metadata are
 automatically zeroed out.
 
 
+### Debugging Reproducible Builds
+
+[Diffoscope](https://diffoscope.org/) is a useful tool for finding the
+difference between the reference APK provided by the app developer and the APK
+that fdroidserver produced.
+
+You can find the APK that fdroidserver produced either under
+`fdroiddata/build/com.example.app/app/build/outputs/apk/prod/release/example-1.0.0-prod-release-unsigned.apk`
+(when running locally) or in the pipeline artifacts (when using Gitlab CI).
+Adjust the path accordingly.
+
+
 ### Reproducible APK tools
 
 The scripts from
