@@ -27,7 +27,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
 "POT-Creation-Date: 2023-08-01 15:13+0200\n"
-"PO-Revision-Date: 2023-06-23 13:49+0000\n"
+"PO-Revision-Date: 2023-08-02 22:06+0000\n"
 "Last-Translator: Eric <hamburger2048@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Chinese (Simplified) <https://hosted.weblate.org/projects/f-droid/website-docs/zh_Hans/>\n"
 "Language: zh_Hans\n"
@@ -35,7 +35,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 4.18.1\n"
+"X-Generator: Weblate 5.0-dev\n"
 
 #. type: Yaml Front Matter Hash Value: title
 #: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
@@ -2938,12 +2938,7 @@ msgstr "`androidupdate: <auto/dirs>`<a name=\"build_androidupdate\"></a>\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-#, fuzzy, no-wrap
-#| msgid ""
-#| ":   By default, 'android update' is used in Ant builds to generate or\n"
-#| "    update the project and all its referenced projects. Specifying\n"
-#| "    update=no bypasses that. Note that this is useless in builds that\n"
-#| "    don't use Ant.\n"
+#, no-wrap
 msgid ""
 ":   By default, 'android update' is used in Ant builds to generate or\n"
 "    update the project and all its referenced projects. Specifying\n"
@@ -2952,7 +2947,7 @@ msgid ""
 msgstr ""
 ":   默认情况下， 'android update' 在 Ant 构建中用来生成或\n"
 "    更新项目及其所有引用的项目。 指定\n"
-"    update=no 可以绕过这个。 请注意，在不使用\n"
+"    `androidupdate: no` 可以绕过这个。 请注意，在不使用\n"
 "    Ant 的构建中，这不起作用。\n"
 
 #. type: Plain text
@@ -3078,20 +3073,19 @@ msgstr "`rm: <path1>[,<path2>,...]`<a name=\"build_rm\"></a>\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-#, fuzzy, no-wrap
-#| msgid ""
-#| ":   Specifies the relative paths of files or directories to delete\n"
-#| "    before the build is done. The paths are relative to the base of the\n"
-#| "    build directory - i.e. the root of the directory structure checked\n"
-#| "    out from the source respository - not necessarily the directory that\n"
-#| "    contains _AndroidManifest.xml_.\n"
+#, no-wrap
 msgid ""
 ":   Specifies the relative paths of files or directories to delete\n"
 "    before the build is started. The paths are relative to the base of the\n"
 "    build directory - i.e. the root of the directory structure checked\n"
 "    out from the source respository - not necessarily the directory that\n"
 "    contains _AndroidManifest.xml_.\n"
-msgstr "：指定构建之前删除的文件或文件夹的相对路径。这些路径相对于基础-构建目录 - 即从源代码库中检出的文件结构的根目录 - 不一定是包含 _AndroidManifest.xml_ 的目录。\n"
+msgstr ""
+":   指定构建开始前\n"
+"    要删除的文件或文件夹的相对路径。\n"
+"    这些路径相对于构建目录的基路径 - \n"
+"    即从源代码库中检出的目录结构的根目录 - \n"
+"    不一定是包含 _AndroidManifest.xml_ 的目录。\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -3136,14 +3130,7 @@ msgstr "：逗号分隔的源代码库或 Android 项目列表。每个条目为
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-#, fuzzy, no-wrap
-#| msgid ""
-#| "    For Ant projects, you can optionally append a number with a colon at\n"
-#| "    the beginning of a srclib item to automatically place it in\n"
-#| "    _project.properties_ as a library under the specified number. For\n"
-#| "    example, if you specify `1:somelib@1.0`, F-Droid will automatically\n"
-#| "    do the equivalent of the legacy practice\n"
-#| "    `prebuild=echo \"android.library.reference.1=$$somelib$$\" >> project.properties`.\n"
+#, no-wrap
 msgid ""
 "    For Ant projects, you can optionally append a number with a colon at\n"
 "    the beginning of a srclib item to automatically place it in\n"
@@ -3151,7 +3138,13 @@ msgid ""
 "    example, if you specify `1:somelib@1.0`, F-Droid will automatically\n"
 "    do the equivalent of the legacy practice\n"
 "    `prebuild: echo \"android.library.reference.1=$$somelib$$\" >> project.properties`.\n"
-msgstr "    对于 Ant 项目，你可以选择在一个 srclib 项目的开头加上一个带冒号的数字，以自动将其放在 _project.properties_ 中作为指定编号下的一个库。例如，如果你指定 `1:somelib@1.0`，F-Droid 会自动地执行等同于传统的做法 `prebuild=echo \"android.library.reference.1=$$somelib$$\">> project.properties`。\n"
+msgstr ""
+"    对于 Ant 项目，\n"
+"    你可以选择在 srclib 项目的开头加上一个带冒号的数字，\n"
+"    以自动将其放在 _project.properties_ 中\n"
+"    作为指定编号下的一个库。\n"
+"    例如，如果你指定 `1:somelib@1.0`，\n"
+"    F-Droid 会自动执行传统做法 `prebuild:echo \"android.library.reference.1=$$somelib$$\">> project.properties`的等效操作。\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -3388,16 +3381,7 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-#, fuzzy, no-wrap
-#| msgid ""
-#| "    The build and scan processes will complain (refuse to build) if this\n"
-#| "    parameter is not defined, but there is a `jni` directory present. If\n"
-#| "    the native code is being built by other means like a Gradle task,\n"
-#| "    you can specify `no` here to avoid that. However, if the native code\n"
-#| "    is actually not required or used, remove the directory instead\n"
-#| "    (using `rm=jni` for example). Using `buildjni=no` when the jni code\n"
-#| "    isn't used nor built will result in an error saying that native\n"
-#| "    libraries were expected in the resulting package.\n"
+#, no-wrap
 msgid ""
 "    The build and scan processes will complain (refuse to build) if this\n"
 "    parameter is not defined, but there is a `jni` directory present. If\n"
@@ -3413,8 +3397,8 @@ msgstr ""
 "    本机代码正由 Gradle 任务等其他方式构建，\n"
 "    你可以在此处指定 `no` 来避免这种情况。不过，如果实际上本机代码\n"
 "    不是必需的或不被使用，那么请删除该目录\n"
-"    (比如使用 `rm=jni`)。当 jni 代码既未被使用也未被\n"
-"    构建时使用 `buildjni=no` 会导致一条错误信息，表示\n"
+"    (比如使用 `rm:jni`)。当 jni 代码既未被使用也未被\n"
+"    构建时使用 `buildjni:no` 会导致一条错误信息，表示\n"
 "    生成的包中预期有本地库。\n"
 
 #. type: Plain text
@@ -3541,20 +3525,19 @@ msgstr "`output: glob/to/output.apk`<a name=\"build_output\"></a>\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-#, fuzzy, no-wrap
-#| msgid ""
-#| ":   Specify a glob path where the resulting unsigned release APK from\n"
-#| "    the build should be. This can be used in combination with build\n"
-#| "    methods like `gradle=yes` or `maven=yes`, but if no build method is\n"
-#| "    specified, the build is manual. You should run your build commands,\n"
-#| "    such as `make`, in _build_.\n"
+#, no-wrap
 msgid ""
 ":   Specify a glob path where the resulting unsigned release APK from\n"
 "    the build should be. This can be used in combination with build\n"
 "    methods like `gradle: yes` or `maven: yes`, but if no build method is\n"
 "    specified, the build is manual. You should run your build commands,\n"
 "    such as `make`, in _build_.\n"
-msgstr "：指定构建的未签名版本 APK 的 glob 路径。这可以 `gradle=yes` 或 `maven=yes` 这样的构建方法结合使用，但是如果没有指定构建方法，构建是手动的。你应该在 _build_ 中运行构建命令，例如 `make`。\n"
+msgstr ""
+":   指定构建的未签名版本 APK 应在的 glob 路径。\n"
+"    这可以和 `gradle:yes` 或 `maven:yes` 这样的构建方法结合使用，\n"
+"    但是如果没有指定构建方法，\n"
+"    构建是手动的。\n"
+"    你应该在 _build_ 中运行构建命令，例如 `make`。\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -9555,42 +9538,41 @@ msgstr "Google 也在努力实现 Android 应用的可重复构建，所以使�
 
 #. type: Title ###
 #: _docs/Reproducible_Builds.md
-#, fuzzy, no-wrap
-#| msgid "Reproducible Builds"
+#, no-wrap
 msgid "Debugging Reproducible Builds"
-msgstr "可重复构建"
+msgstr "调试可重复构建"
 
 #. type: Title ####
 #: _docs/Reproducible_Builds.md
 #, no-wrap
 msgid "Recommended tools"
-msgstr ""
+msgstr "推荐的工具"
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
 msgid "We recommend using [`diffoscope`](https://diffoscope.org/) for easily finding the difference between the reference APK provided by the app developer and the APK that `fdroidserver` produced."
-msgstr ""
+msgstr "我们推荐使用 [`diffoscope`](https://diffoscope.org/)轻松找出应用开发者提供的参考 APK 和`fdroidserver` 产生的 APK 之间的差异。"
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
 msgid "You can find the APK that `fdroidserver` produced either under e.g.  `fdroiddata/build/com.example.app/app/build/outputs/apk/prod/release/example-1.0.0-prod-release-unsigned.apk` (when running locally) or in the pipeline artifacts (when using GitLab CI).  Adjust the path accordingly (e.g. for flavours other than `prod`)."
-msgstr ""
+msgstr "`fdroidserve` 产生的 APK 所在位置要么形如 `fdroiddata/build/com.example.app/app/build/outputs/apk/prod/release/example-1.0.0-prod-release-unsigned.apk` (本地运行时），要么在 pipeline artifacts 中（使用 GitLab CI 时）。  请相应调整路径（比如对非 `prod` 的 flavours）。"
 
 #. type: Title ####
 #: _docs/Reproducible_Builds.md
 #, no-wrap
 msgid "Prioritising & fixing differences"
-msgstr ""
+msgstr "划分优先级 & 修复差异"
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
 msgid "[HOWTO: diff & fix APKs for Reproducible Builds](https://gitlab.com/fdroid/wiki/-/wikis/HOWTO:-diff-&-fix-APKs-for-Reproducible-Builds)  on the F-Droid wiki has detailed information on the various kinds of differences commonly encountered, which differences should usually be prioritised when debugging, and how to fix common issues."
-msgstr ""
+msgstr "F-Droid wiki 上的 [HOWTO: diff & fix APKs for Reproducible Builds](https://gitlab.com/fdroid/wiki/-/wikis/HOWTO:-diff-&-fix-APKs-for-Reproducible-Builds) 一文包含了经常遇到的各种差异的详细信息，调试时通常应把哪些差异置于高优先级以及如何修复常见问题。"
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
 msgid "It also shows how to use various specialised tools that may provide better results when `diffoscope` is not sufficient."
-msgstr ""
+msgstr "它还包含了当 `diffoscope` 不够用时，如何使用多种可以提供更好结果的专门工具的信息。"
 
 #. type: Title ###
 #: _docs/Reproducible_Builds.md
@@ -11630,16 +11612,7 @@ msgstr "在容器中："
 
 #. type: Fenced code block (sh)
 #: _docs/Submitting_to_F-Droid_Quick_Start_Guide.md
-#, fuzzy, no-wrap
-#| msgid ""
-#| ". /etc/profile\n"
-#| "export PATH=\"$fdroidserver:$PATH\" PYTHONPATH=\"$fdroidserver\"\n"
-#| "cd /build\n"
-#| "fdroid readmeta\n"
-#| "fdroid rewritemeta com.example\n"
-#| "fdroid checkupdates --allow-dirty com.example\n"
-#| "fdroid lint com.example\n"
-#| "fdroid build com.example\n"
+#, no-wrap
 msgid ""
 ". /etc/profile\n"
 "export PATH=\"$fdroidserver:$PATH\" PYTHONPATH=\"$fdroidserver\"\n"
