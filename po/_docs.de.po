@@ -19,15 +19,15 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
 "POT-Creation-Date: 2023-08-01 15:13+0200\n"
-"PO-Revision-Date: 2023-06-27 18:01+0000\n"
-"Last-Translator: \"C. Rüdinger\" <Mail-an-CR@web.de>\n"
+"PO-Revision-Date: 2023-08-02 22:06+0000\n"
+"Last-Translator: VfBFan <drop0815@posteo.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/f-droid/website-docs/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.18.1\n"
+"X-Generator: Weblate 5.0-dev\n"
 
 #. type: Yaml Front Matter Hash Value: title
 #: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
@@ -2968,12 +2968,7 @@ msgstr "`androidupdate: <auto/dirs>`<a name=\"build_androidupdate\"></a>\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-#, fuzzy, no-wrap
-#| msgid ""
-#| ":   By default, 'android update' is used in Ant builds to generate or\n"
-#| "    update the project and all its referenced projects. Specifying\n"
-#| "    update=no bypasses that. Note that this is useless in builds that\n"
-#| "    don't use Ant.\n"
+#, no-wrap
 msgid ""
 ":   By default, 'android update' is used in Ant builds to generate or\n"
 "    update the project and all its referenced projects. Specifying\n"
@@ -2982,8 +2977,8 @@ msgid ""
 msgstr ""
 ":   In Ant-Builds wird standardmäßig „android update“ verwendet, um das Projekt\n"
 "    und alle Projekte, auf die es verweist, zu erzeugen oder zu aktualisieren. Die Angabe\n"
-"    von „update=no“ umgeht das. Zu beachten ist, dass das in Builds, die kein Ant verwenden,\n"
-"    nutzlos ist.\n"
+"    von `androidupdate: no` umgeht das. Zu beachten ist, dass dies in Builds nutzlos ist,\n"
+"    die kein Ant verwenden.\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -3117,13 +3112,7 @@ msgstr "`rm: <path1>[,<path2>, …]`<a name=\"build_rm\"></a>\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-#, fuzzy, no-wrap
-#| msgid ""
-#| ":   Specifies the relative paths of files or directories to delete\n"
-#| "    before the build is done. The paths are relative to the base of the\n"
-#| "    build directory - i.e. the root of the directory structure checked\n"
-#| "    out from the source respository - not necessarily the directory that\n"
-#| "    contains _AndroidManifest.xml_.\n"
+#, no-wrap
 msgid ""
 ":   Specifies the relative paths of files or directories to delete\n"
 "    before the build is started. The paths are relative to the base of the\n"
@@ -3131,9 +3120,9 @@ msgid ""
 "    out from the source respository - not necessarily the directory that\n"
 "    contains _AndroidManifest.xml_.\n"
 msgstr ""
-":   Gibt die relativen Pfade zu Dateien oder Verzeichnissen an, die zu löschen sind, \n"
-"    bevor die Herstellung erfolgt. Die Pfade sind relativ zum Build-Grundverzeichnis,\n"
-"    d. h. dem Wurzelverzeichnis in der Verzeichnisstruktur des ausgecheckten\n"
+":   Gibt die relativen Pfade der zu löschenden Dateien oder Verzeichnisse an, \n"
+"    bevor der Build gestartet wird. Die Pfade sind relativ zum Build-Grundverzeichnis,\n"
+"    d. h. dem Wurzelverzeichnis in der Verzeichnisstruktur des ausgecheckten\n"
 "    Quell-Repository - nicht notwendigerweise zum Verzeichnis, \n"
 "    das _AndroidManifest.xml_ enthält.\n"
 
@@ -3187,14 +3176,7 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-#, fuzzy, no-wrap
-#| msgid ""
-#| "    For Ant projects, you can optionally append a number with a colon at\n"
-#| "    the beginning of a srclib item to automatically place it in\n"
-#| "    _project.properties_ as a library under the specified number. For\n"
-#| "    example, if you specify `1:somelib@1.0`, F-Droid will automatically\n"
-#| "    do the equivalent of the legacy practice\n"
-#| "    `prebuild=echo \"android.library.reference.1=$$somelib$$\" >> project.properties`.\n"
+#, no-wrap
 msgid ""
 "    For Ant projects, you can optionally append a number with a colon at\n"
 "    the beginning of a srclib item to automatically place it in\n"
@@ -3207,7 +3189,7 @@ msgstr ""
 "    Anfang des srclib-Eintrags angefügt werden, um ihn automatisch als eine Bibliothek\n"
 "    mit der festgelegten Nummer in _project.properties_ einzutragen. Zum Beispiel wird\n"
 "    F-Droid bei Angabe von `1:somelib@1.0` automatisch ausführen, was der altbekannten\n"
-"    Methode: `prebuild=echo \"android.library.reference.1=$$somelib$$\">>project.properties`\n"
+"    Methode: `prebuild: echo \"android.library.reference.1=$$somelib$$\">>project.properties`\n"
 "    entspricht.\n"
 
 #. type: Plain text
@@ -3468,16 +3450,7 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-#, fuzzy, no-wrap
-#| msgid ""
-#| "    The build and scan processes will complain (refuse to build) if this\n"
-#| "    parameter is not defined, but there is a `jni` directory present. If\n"
-#| "    the native code is being built by other means like a Gradle task,\n"
-#| "    you can specify `no` here to avoid that. However, if the native code\n"
-#| "    is actually not required or used, remove the directory instead\n"
-#| "    (using `rm=jni` for example). Using `buildjni=no` when the jni code\n"
-#| "    isn't used nor built will result in an error saying that native\n"
-#| "    libraries were expected in the resulting package.\n"
+#, no-wrap
 msgid ""
 "    The build and scan processes will complain (refuse to build) if this\n"
 "    parameter is not defined, but there is a `jni` directory present. If\n"
@@ -3488,12 +3461,12 @@ msgid ""
 "    isn't used nor built will result in an error saying that native\n"
 "    libraries were expected in the resulting package.\n"
 msgstr ""
-"    Die Build- und Scan-Prozesse werde sich beschweren (sie weigern sich zu bauen), wenn\n"
-"    dieser Parameter nicht definiert ist, aber es ist ein `jni` Verzeichnis vorhanden. Wenn\n"
-"    der native Code mit anderen Mitteln wie z. B. eines Gradle-Tasks, gebaut werden,\n"
+"    Die Build- und Scan-Prozesse werden sich beschweren (verweigern den Build), wenn\n"
+"    dieser Parameter nicht definiert ist, aber ein `jni` Verzeichnis vorhanden ist. Wenn\n"
+"    der native Code mit anderen Mitteln wie z. B. eines Gradle-Tasks gebaut wird,\n"
 "    können Sie hier `nein` angeben, um das zu vermeiden. Wenn jedoch der native Code\n"
 "    nicht benötigt oder verwendet wird, entfernen Sie stattdessen das Verzeichnis\n"
-"    (zum Beispiel mit `rm=jni`). Mit `buildjni=no` wenn der jni-Code nicht\n"
+"    (zum Beispiel mit `rm: jni`). Mit `buildjni: no` ,wenn der jni-Code nicht\n"
 "    verwendet oder gebaut wird, führt zu einem Fehler, der besagt, dass native\n"
 "    Bibliotheken in dem resultierenden Paket erwartet wurden.\n"
 
@@ -3639,13 +3612,7 @@ msgstr "`output: glob/to/output.apk`<a name=\"build_output\"></a>\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-#, fuzzy, no-wrap
-#| msgid ""
-#| ":   Specify a glob path where the resulting unsigned release APK from\n"
-#| "    the build should be. This can be used in combination with build\n"
-#| "    methods like `gradle=yes` or `maven=yes`, but if no build method is\n"
-#| "    specified, the build is manual. You should run your build commands,\n"
-#| "    such as `make`, in _build_.\n"
+#, no-wrap
 msgid ""
 ":   Specify a glob path where the resulting unsigned release APK from\n"
 "    the build should be. This can be used in combination with build\n"
@@ -3655,7 +3622,7 @@ msgid ""
 msgstr ""
 ":   Geben Sie einen Glob-Pfad an, in dem sich das resultierende unsignierte Release-APK\n"
 "    des Builds befinden sollte. Dies kann verwendet werden in Kombination mit Build-\n"
-"    Methoden wie `gradle=yes` oder `maven=yes`, aber wenn keine Build-Methode \n"
+"    Methoden wie `gradle: yes` oder `maven: yes`, aber wenn keine Build-Methode \n"
 "    angegeben ist, ist der Build manuell. Sie sollten Ihre Build-Befehle ausführen,\n"
 "    z. B. `make` in _build_.\n"
 
@@ -9673,16 +9640,15 @@ msgstr "Google arbeitet auch an reproduzierbaren Builds von Android-Apps, so das
 
 #. type: Title ###
 #: _docs/Reproducible_Builds.md
-#, fuzzy, no-wrap
-#| msgid "Reproducible Builds"
+#, no-wrap
 msgid "Debugging Reproducible Builds"
-msgstr "Reproduzierbare Builds"
+msgstr "Debugging reproduzierbarer Builds"
 
 #. type: Title ####
 #: _docs/Reproducible_Builds.md
 #, no-wrap
 msgid "Recommended tools"
-msgstr ""
+msgstr "Empfohlene Werkzeuge"
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
@@ -9698,7 +9664,7 @@ msgstr ""
 #: _docs/Reproducible_Builds.md
 #, no-wrap
 msgid "Prioritising & fixing differences"
-msgstr ""
+msgstr "Priorisierung und Beheben von Unterschieden"
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
@@ -11749,16 +11715,7 @@ msgstr "Im Container:"
 
 #. type: Fenced code block (sh)
 #: _docs/Submitting_to_F-Droid_Quick_Start_Guide.md
-#, fuzzy, no-wrap
-#| msgid ""
-#| ". /etc/profile\n"
-#| "export PATH=\"$fdroidserver:$PATH\" PYTHONPATH=\"$fdroidserver\"\n"
-#| "cd /build\n"
-#| "fdroid readmeta\n"
-#| "fdroid rewritemeta com.example\n"
-#| "fdroid checkupdates --allow-dirty com.example\n"
-#| "fdroid lint com.example\n"
-#| "fdroid build com.example\n"
+#, no-wrap
 msgid ""
 ". /etc/profile\n"
 "export PATH=\"$fdroidserver:$PATH\" PYTHONPATH=\"$fdroidserver\"\n"
