@@ -96,7 +96,7 @@ Every app in _f-droid.org_ has a corresponding
 [_fdroiddata_](https://gitlab.com/fdroid/fdroiddata).  In order to encourage
 more creative reuse, we keep our data in standard formats in easy to find
 places.  The whole app collection is in [YAML format]({{ site.baseurl }}/{%
-post_url 2019-09-11-yaml-metadata %}).  The file can either be directly accessed
+post_url 2019-09-11-yaml-metadata %}).  The file can be directly accessed
 by Application ID using the GitLab Raw URL
 `https://gitlab.com/fdroid/fdroiddata/-/raw/master/metadata/<ApplicationID>.yml`
 (e.g. <https://gitlab.com/fdroid/fdroiddata/-/raw/master/metadata/org.fdroid.fdroid.yml>).
