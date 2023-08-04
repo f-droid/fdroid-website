@@ -30,7 +30,7 @@ Notably:
     about an untainted build flavor (either using a FLOSS analytics
     software like ACRA or by removing Non-Free dependencies completely).
 -   We cannot build apps using proprietary ad libraries. We have nothing
-    against advertisments (see [_Anti-Features_](../Anti-Features)),
+    against advertisements (see [_Anti-Features_](../Anti-Features)),
     but they must be provided by a FLOSS-compatible way.
 -   We cannot build apps requiring Non-Free build tools, including
     Oracle's JDK or some pre-release toolchains.
