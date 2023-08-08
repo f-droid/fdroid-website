@@ -80,8 +80,8 @@ This is a nonexhaustive list of what a reviewer would do:
 
 -   They will go to your source code repository, and look for copyright
     notices in license files, including README, to check that the
-    proposed application is released under [recognized Free
-    Software license(s)](https://www.gnu.org/licenses/license-list.html).
+    proposed application is released under a [recognized Free
+    Software and/or OSI license(s)](https://spdx.org/licenses/).
 -   They will look at your build script to see which build system you
     use, and whether F-Droid build server can handle it (Ant and Gradle
     are the most common and easiest ones).
@@ -205,8 +205,8 @@ When the scheduled building time arrives, the F-Droid build server will
 fetch changes from the fdroiddata GitLab repository and merge it to a local
 repository. Then, update checks will be performed for all
 applications. If a new version is found, their metadata files will be
-updated and committed to the repository by the author `F-Droid
-Builder <admin@f-droid.org>`.
+updated and committed to the repository by the author `F-Droid checkupdates
+(@fdroidci)`.
 
 Once metadata files are updated, the F-Droid Server will check them against a
 list of released APKs to construct a list of new applications and/or
