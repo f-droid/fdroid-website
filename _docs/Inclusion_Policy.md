@@ -14,7 +14,8 @@ track record.  Specifically, we acknowledge these standards:
 [DFSG](https://wiki.debian.org/DFSGLicenses),
 [FSF](https://www.fsf.org/licensing),
 [GNU](https://www.gnu.org/licenses/license-list.html), and
-[OSI](https://opensource.org/licenses).
+[OSI](https://opensource.org/licenses) _(read a quick overview of them
+all on [SPDX](https://spdx.org/licenses/))_.
 
 For software to be FLOSS, the software in its entirety must be so -
 including all libraries and dependencies used. Additionally, it must be
