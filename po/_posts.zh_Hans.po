@@ -25,7 +25,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
 "POT-Creation-Date: 2023-07-24 17:52+0200\n"
-"PO-Revision-Date: 2023-08-08 06:32+0000\n"
+"PO-Revision-Date: 2023-08-09 13:50+0000\n"
 "Last-Translator: linsui <linsui@inbox.lv>\n"
 "Language-Team: Chinese (Simplified) <https://hosted.weblate.org/projects/f-droid/website-posts/zh_Hans/>\n"
 "Language: zh_Hans\n"
@@ -19374,7 +19374,7 @@ msgstr "社区控制的备份仪式"
 #. type: Plain text
 #: _posts/2023-07-15-community-controlled-backup-ceremony.md
 msgid "Seven core contributors and one board member met in Scotland, the birthplace of F-Droid, for the first in-person F-Droid team meeting.  One of the most pressing tasks we needed to take care of was setting up a contributor-controlled backup of all of our signing keys.  The requirements made it necessary to have a lengthy, in-person, consensus-driven planning session.  We found no good documentation of such a procedure, so we're going out on a limb here and publishing the general outline of our process.  This process was informally audited by multiple people with varying expertise before the public key was used to encrypt anything."
-msgstr ""
+msgstr "七位核心贡献者和一位委员会成员在苏格兰，F-Droid 的诞生地，相聚参加第一次 F-Droid 团队线下会议。我们需要处理的最紧迫的任务之一是设置一个由贡献者控制的我们所有签名密钥的备份。冗长，面对面，由共识驱动的计划过程对于这个需求是必要的。我们没有找到关于这个流程的比较好的文档，因此我们冒昧发布了我们的流程的大致框架。在公钥被用于加密之前，这个流程经过了多个具有不同专业技能的人的非正式审计。"
 
 #. type: Plain text
 #: _posts/2023-07-15-community-controlled-backup-ceremony.md
@@ -19384,52 +19384,52 @@ msgstr "![F-Droid 核心贡献者在半夜]({% asset posts/2023-07-15-community-
 #. type: Plain text
 #: _posts/2023-07-15-community-controlled-backup-ceremony.md
 msgid "F-Droid manages secret signing keys for thousands of apps.  Someone who has control over those keys could create malicious app releases that could be transparently installed as updates.  On top of that, [Android](https://developer.android.com/about/versions/pie/android-9.0#apk-key-rotation) does [not](https://guardianproject.info/2015/12/29/how-to-migrate-your-android-apps-signing-key/) make it [easy](https://anandbose.gitlab.io/android-development/2020/05/08/android-signing-key-rotation-explained/) to rotate to new signing keys, unlike TLS or Signal. So [these keys]({{ site.baseurl }}/docs/Signing_Process/) are very important to [protect]({{ site.baseurl }}/docs/Building_a_Signing_Server/).  They are also very important to backup, since the Android OS uses the signing key combined with the Application ID as the unique identifier to represent each installed app. This meeting gave us the perfect opportunity to create a new backup process that ensures that at least 4 trusted community members must be physically present in order to decrypt the backup of all the keys.  First, we started with the requirements:"
-msgstr ""
+msgstr "F-Droid 管理数以千计应用的签名密钥。掌控这些密钥的人可以发布恶意版本并作为更新透明安装。更重要的是，与 TLS 或 Signal 不同，[Android](https://developer.android.com/about/versions/pie/android-9.0#apk-key-rotation) [并未](https://guardianproject.info/2015/12/29/how-to-migrate-your-android-apps-signing-key/)提供[容易](https://anandbose.gitlab.io/android-development/2020/05/08/android-signing-key-rotation-explained/)的轮转密钥的方法。因此[保护]({{ site.baseurl }}/docs/Building_a_Signing_Server/)[这些密钥]({{ site.baseurl }}/docs/Signing_Process/)非常重要。备份也很重要，因为 Android 操作系统使用签名密钥和应用 ID 作为表示每个已安装应用的唯一标识符。这次会面给了我们一个完美的机会，使我们可以创建一个新的备份流程，确保至少有 4 位受信任的社区成员亲自出席以解密所有密钥的备份。首先，我们从以下要求开始："
 
 #. type: Bullet: '* '
 #: _posts/2023-07-15-community-controlled-backup-ceremony.md
 msgid "Regular backups as new keys get added."
-msgstr ""
+msgstr "添加新密钥时定期备份。"
 
 #. type: Bullet: '* '
 #: _posts/2023-07-15-community-controlled-backup-ceremony.md
 msgid "Strong, proven encryption for all backups."
-msgstr ""
+msgstr "对所有备份进行高强度，已证明的加密。"
 
 #. type: Bullet: '* '
 #: _posts/2023-07-15-community-controlled-backup-ceremony.md
 msgid "Minimum of four participants to decrypt."
-msgstr ""
+msgstr "解密需要最少四名参与者。"
 
 #. type: Bullet: '* '
 #: _posts/2023-07-15-community-controlled-backup-ceremony.md
 msgid "Specific technical experience should not be required to be a participant."
-msgstr ""
+msgstr "参与不需要特殊技术经验。"
 
 #. type: Bullet: '* '
 #: _posts/2023-07-15-community-controlled-backup-ceremony.md
 msgid "The components should be physically spread out across jurisdictions."
-msgstr ""
+msgstr "各部分物理分散到不同的司法管辖区。"
 
 #. type: Bullet: '* '
 #: _posts/2023-07-15-community-controlled-backup-ceremony.md
 msgid "Access should minimized as much as possible (e.g. the signing server maintainer does not need access to the backups)."
-msgstr ""
+msgstr "访问权限最小化（例如，签名服务器的维护者不需要备份的访问权限）。"
 
 #. type: Bullet: '* '
 #: _posts/2023-07-15-community-controlled-backup-ceremony.md
 msgid "As low a stress level as possible for each participant."
-msgstr ""
+msgstr "每个参与者的压力尽可能小。"
 
 #. type: Bullet: '* '
 #: _posts/2023-07-15-community-controlled-backup-ceremony.md
 msgid "Each participant should be free to hand over their component if they are forced to, without jeopardizing the encryption."
-msgstr ""
+msgstr "每个参与者如果不得不交出他们保管的组件，加密不会受到影响。"
 
 #. type: Plain text
 #: _posts/2023-07-15-community-controlled-backup-ceremony.md
 msgid "Then we mapped out who was present:"
-msgstr ""
+msgstr "然后出席的人如下："
 
 #. type: Bullet: '* '
 #: _posts/2023-07-15-community-controlled-backup-ceremony.md
@@ -19439,107 +19439,107 @@ msgstr "七名核心贡献者。"
 #. type: Bullet: '* '
 #: _posts/2023-07-15-community-controlled-backup-ceremony.md
 msgid "One board member."
-msgstr ""
+msgstr "一位委员会成员。"
 
 #. type: Bullet: '* '
 #: _posts/2023-07-15-community-controlled-backup-ceremony.md
 msgid "One trusted external witness."
-msgstr ""
+msgstr "一位受信任的外部观察员。"
 
 #. type: Bullet: '* '
 #: _posts/2023-07-15-community-controlled-backup-ceremony.md
 msgid "No one else."
-msgstr ""
+msgstr "没有其他人。"
 
 #. type: Plain text
 #: _posts/2023-07-15-community-controlled-backup-ceremony.md
 msgid "From that, we built the process:"
-msgstr ""
+msgstr "基于此，我们构建了如下流程："
 
 #. type: Bullet: '* '
 #: _posts/2023-07-15-community-controlled-backup-ceremony.md
 msgid "Three roles for physical control: operator of the signing server, encrypted backup holder, passphrase shard holder."
-msgstr ""
+msgstr "物理控制的三个角色：签名服务器管理员，加密备份持有者，密码片段持有者。"
 
 #. type: Bullet: '* '
 #: _posts/2023-07-15-community-controlled-backup-ceremony.md
 msgid "Each person only takes on a single role, for example, shard holders do not have access to the signing keys or the encrypted backup."
-msgstr ""
+msgstr "每个人只承担其中一个角色，例如，片段持有者不能访问签名密钥或加密备份。"
 
 #. type: Bullet: '* '
 #: _posts/2023-07-15-community-controlled-backup-ceremony.md
 msgid "The encryption key used for the data is public key cryptography."
-msgstr ""
+msgstr "数据的加密密钥是公钥加密。"
 
 #. type: Bullet: '* '
 #: _posts/2023-07-15-community-controlled-backup-ceremony.md
 msgid "The private key was generated on a one-time-use, in-memory, disposable [TAILS](https://tails.boum.org/) session."
-msgstr ""
+msgstr "私钥在一个一次性，内存中运行的 [TAILS](https://tails.boum.org/) 会话中生成。"
 
 #. type: Bullet: '* '
 #: _posts/2023-07-15-community-controlled-backup-ceremony.md
 msgid "The private key was sharded using [Shamir's Secret Sharing](https://en.wikipedia.org/wiki/Shamir%27s_Secret_Sharing)."
-msgstr ""
+msgstr "私钥使用 [Shamir's Secret Sharing](https://en.wikipedia.org/wiki/Shamir%27s_Secret_Sharing) 进行分片。"
 
 #. type: Bullet: '* '
 #: _posts/2023-07-15-community-controlled-backup-ceremony.md
 msgid "We used an implementation of Shamir's Secret Sharing that has been maintained for over 15 years.  The installation that was used was confirmed via reproducible builds."
-msgstr ""
+msgstr "我们使用一个已经维护了 15 年的 Shamir's Secret Sharing 实现。使用的安装通过可重复构建确认。"
 
 #. type: Bullet: '* '
 #: _posts/2023-07-15-community-controlled-backup-ceremony.md
 msgid "Each shard was written to a removeable storage device bought in a store with cash without pre-order or registration."
-msgstr ""
+msgstr "每个片段写入在商店使用现金购买未登记或预订的便携存储设备上。"
 
 #. type: Bullet: '* '
 #: _posts/2023-07-15-community-controlled-backup-ceremony.md
 msgid "Each removeable storage device with a shard was physically handed each shard holder to pack in a tamper-evident envelope as the others observed."
-msgstr ""
+msgstr "每个写入密码片段的便携存储设备在其他人见证下装在防篡改信封中当面交给片段持有者。"
 
 #. type: Bullet: '* '
 #: _posts/2023-07-15-community-controlled-backup-ceremony.md
 msgid "Backups must not be transmitted over the internet, only exchanged via in-person meetings between people who know each other."
-msgstr ""
+msgstr "备份严禁通过互联网传输，仅能在相互认识的人的面对面会议中交换。"
 
 #. type: Bullet: '* '
 #: _posts/2023-07-15-community-controlled-backup-ceremony.md
 msgid "All involved sat around a table for the duration of the ceremony.  The security profile of in-person discussions is drastically easier to manage than secure online discussions."
-msgstr ""
+msgstr "所有参与者在仪式期间坐在一张桌子旁。管理面对面讨论的安全配置比安全的线上讨论容易得多。"
 
 #. type: Bullet: '* '
 #: _posts/2023-07-15-community-controlled-backup-ceremony.md
 msgid "All present were observers of each step of the process, and verbally confirmed their agreement."
-msgstr ""
+msgstr "所有出席的人都是每个过程的观察者，并口头表示同意。"
 
 #. type: Bullet: '* '
 #: _posts/2023-07-15-community-controlled-backup-ceremony.md
 msgid "The operators of the signing server and the holders of the backup data verified each others' identities via F-Droid networks, PGP Web of Trust, and checks of government issued IDs."
-msgstr ""
+msgstr "签名服务器的管理员和备份数据的持有者通过 F-Droid 网络，PGP 信任网络和检查政府签署的身份标识验证彼此的身份。"
 
 #. type: Bullet: '* '
 #: _posts/2023-07-15-community-controlled-backup-ceremony.md
 msgid "Pieces from a minimum of two jurisdictions are required to decrypt: EU, Europe non-EU, US."
-msgstr ""
+msgstr "需要至少来自两个司法管辖区的片段才能解密：欧盟，欧洲非欧盟地区，美国。"
 
 #. type: Plain text
 #: _posts/2023-07-15-community-controlled-backup-ceremony.md
 msgid "One important factor in reliable backups is regular updates.  New apps are constantly being added, and those usually get a new signing key assigned.  So we needed a system where it was easy to update the backup data while involving as few people as possible.  An operator of the signing server receives the public key to encrypt the backups via in-person exchange with a holder of the backups.  The holders of the backup data receives the encrypted backups from an operator of the signing server via in-person exchange."
-msgstr ""
+msgstr "可靠备份的一个重要因素是定期更新。新应用不断添加，并且通常会分配新签名密钥。所以我们需要一个可以轻易更新备份数据但涉及尽可能少的人的系统。一名签名服务器管理员面对面收到加密备份的公钥。备份数据的持有者面对面从签名服务器管理员收到加密的备份。"
 
 #. type: Plain text
 #: _posts/2023-07-15-community-controlled-backup-ceremony.md
 msgid "Holding such important secrets also brings some unavoidable stresses to the people holding them. One key design goal was to create a protocol that did not add to the stress of any existing operators.  Furthermore, we aimed to keep the individual stress as low as possible for all roles in this protocol.  That makes it possible to empower volunteer contributors without overburdening them."
-msgstr ""
+msgstr "持有如此重要的秘密也给持有它们的人带来了不可避免的压力。一个关键设计目标是插件一个不给任何现存管理员增加压力的协议。进一步，我们致力于使协议中每个角色的个人压力尽可能低。这使得给志愿贡献者赋权而不增加过重的负担成为可能。"
 
 #. type: Plain text
 #: _posts/2023-07-15-community-controlled-backup-ceremony.md
 msgid "For restoring, we agreed that it should happen in an in-person meeting.  The process requires three shard holders meet with one encrypted backup holder, then the results need be given to a signing server operator. Requiring an in-person meeting could delay the restore process, but the added trust seemed worth it.  So this is the default process.  We could still switch to partially online process if the need arises.  That would require the agreement of five participants."
-msgstr ""
+msgstr "我们同意应当在面对面会议中恢复备份。这个过程要求三位片段持有者和一位加密备份持有者会面，然后将数据交给签名服务器管理员。要求面对面会议会推迟恢复过程，但相比增加的信任是值得的。因此这是默认流程。如果有需要我们仍然可以切换到部分线上流程。这将需要五位参与者的同意。"
 
 #. type: Plain text
 #: _posts/2023-07-15-community-controlled-backup-ceremony.md
 msgid "We believe this is a secure and reliable backup procedure for very sensitive data.  We welcome further scrutiny and plan to update the procedure as needed in a future meeting."
-msgstr ""
+msgstr "我们相信对于非常敏感的数据这是一个安全可靠的备份程序。我们欢迎进一步的仔细审查并计划在未来的会议中按需更新这个程序。"
 
 #. type: Plain text
 #: _posts/2023-07-15-community-controlled-backup-ceremony.md
