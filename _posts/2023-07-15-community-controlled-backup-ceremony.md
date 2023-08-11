@@ -17,7 +17,7 @@ F-Droid manages secret signing keys for thousands of apps.  Someone who has cont
 * The components should be physically spread out across jurisdictions.
 * Access should minimized as much as possible (e.g. the signing server maintainer does not need access to the backups).
 * As low a stress level as possible for each participant.
-* Each participant should be free to hand over their component if they are forced to, without jeopardizing the encryption.
+* Each participant could hand over their component if they are forced to, without jeopardizing the encryption.
 
 Then we mapped out who was present:
 
