@@ -52,6 +52,7 @@ This API is already used by shields.io project to provide F-Droid badges, [like 
 F-Droid is built around a signed index of all the apps and packages that are
 available.  This is a JSON file, though more of an index than an API since all
 the information is distributed via a single file.
+
 * <https://f-droid.org/repo/index-v2.json>
 * <https://f-droid.org/repo/index-v1.json>
 * <https://f-droid.org/archive/index-v2.json>
