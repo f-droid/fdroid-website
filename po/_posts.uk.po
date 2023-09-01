@@ -14,7 +14,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
 "POT-Creation-Date: 2023-07-24 17:52+0200\n"
-"PO-Revision-Date: 2023-06-20 16:39+0000\n"
+"PO-Revision-Date: 2023-08-25 21:56+0000\n"
 "Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/f-droid/website-posts/uk/>\n"
 "Language: uk\n"
@@ -22,7 +22,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 4.18.1\n"
+"X-Generator: Weblate 5.0.1-dev\n"
 
 #. type: Yaml Front Matter Hash Value: title
 #: _posts/2017-02-20-f-droid-supports-apk-expansion-files-aka-obb.md
@@ -16518,7 +16518,7 @@ msgid ""
 "[_fdroiddata_](https://gitlab.com/fdroid/fdroiddata).  In order to encourage\n"
 "more creative reuse, we keep our data in standard formats in easy to find\n"
 "places.  The whole app collection is in [YAML format]({{ site.baseurl }}/{%\n"
-"post_url 2019-09-11-yaml-metadata %}).  The file can either be directly accessed\n"
+"post_url 2019-09-11-yaml-metadata %}).  The file can be directly accessed\n"
 "by Application ID using the GitLab Raw URL\n"
 "`https://gitlab.com/fdroid/fdroiddata/-/raw/master/metadata/<ApplicationID>.yml`\n"
 "(e.g. <https://gitlab.com/fdroid/fdroiddata/-/raw/master/metadata/org.fdroid.fdroid.yml>).\n"
@@ -19380,119 +19380,117 @@ msgstr "Інструментарій, яким користується спіл
 #: _posts/2023-07-15-community-controlled-backup-ceremony.md
 #, no-wrap
 msgid "Community-controlled Backup Ceremony"
-msgstr ""
+msgstr "Церемонія резервного копіювання під контролем спільноти"
 
 #. type: Plain text
 #: _posts/2023-07-15-community-controlled-backup-ceremony.md
 msgid "Seven core contributors and one board member met in Scotland, the birthplace of F-Droid, for the first in-person F-Droid team meeting.  One of the most pressing tasks we needed to take care of was setting up a contributor-controlled backup of all of our signing keys.  The requirements made it necessary to have a lengthy, in-person, consensus-driven planning session.  We found no good documentation of such a procedure, so we're going out on a limb here and publishing the general outline of our process.  This process was informally audited by multiple people with varying expertise before the public key was used to encrypt anything."
-msgstr ""
+msgstr "Сім основних розробників і один член правління зустрілися в Шотландії, на батьківщині F-Droid, на першій особистій зустрічі команди F-Droid.  Одним з найнагальніших завдань, яке нам потрібно було вирішити, було створення контрольованої учасниками резервної копії всіх наших ключів підпису.  Вимоги зробили необхідним проведення тривалого особистого сеансу планування на основі консенсусу.  Ми не знайшли належного документування такої процедури, тому ми ризикуємо і публікуємо загальну схему нашого процесу.  Цей процес був неофіційно перевірений кількома людьми з різним досвідом, перш ніж відкритий ключ був використаний для шифрування чого-небудь."
 
 #. type: Plain text
 #: _posts/2023-07-15-community-controlled-backup-ceremony.md
 msgid "![F-Droid core contributors at midnight]({% asset posts/2023-07-15-community-controlled-backup-ceremony/fdroid-at-midnight.jpg %})"
-msgstr ""
+msgstr "![Основні розробники F-Droid в нічний час]({% asset posts/2023-07-15-community-controlled-backup-ceremony/fdroid-at-midnight.jpg %})"
 
 #. type: Plain text
 #: _posts/2023-07-15-community-controlled-backup-ceremony.md
 msgid "F-Droid manages secret signing keys for thousands of apps.  Someone who has control over those keys could create malicious app releases that could be transparently installed as updates.  On top of that, [Android](https://developer.android.com/about/versions/pie/android-9.0#apk-key-rotation) does [not](https://guardianproject.info/2015/12/29/how-to-migrate-your-android-apps-signing-key/) make it [easy](https://anandbose.gitlab.io/android-development/2020/05/08/android-signing-key-rotation-explained/) to rotate to new signing keys, unlike TLS or Signal. So [these keys]({{ site.baseurl }}/docs/Signing_Process/) are very important to [protect]({{ site.baseurl }}/docs/Building_a_Signing_Server/).  They are also very important to backup, since the Android OS uses the signing key combined with the Application ID as the unique identifier to represent each installed app. This meeting gave us the perfect opportunity to create a new backup process that ensures that at least 4 trusted community members must be physically present in order to decrypt the backup of all the keys.  First, we started with the requirements:"
-msgstr ""
+msgstr "F-Droid керує таємними ключами підпису для тисяч застосунків.  Той, хто має контроль над цими ключами, може створювати шкідливі версії застосунків, які можуть бути прозоро встановлені як оновлення.  Крім того [Android](https://developer.android.com/about/versions/pie/android-9.0#apk-key-rotation) не [дозволяє](https://guardianproject.info/2015/12/29/how-to-migrate-your-android-apps-signing-key/) [легко](https://anandbose.gitlab.io/android-development/2020/05/08/android-signing-key-rotation-explained/) перейти на нові ключі підпису, на відміну від TLS або Signal. Тому [ці ключі]({{ site.baseurl }}/docs/Signing_Process/) надзвичайно важливі для [захисту]({{ site.baseurl }}/docs/Building_a_Signing_Server/).  Вони також дуже важливі для резервного копіювання, оскільки ОС Android використовує ключ підпису в поєднанні з ID застосунку як унікальний ідентифікатор для представлення кожного встановленого застосунку. Ця зустріч дала нам чудову нагоду створити новий процес резервного копіювання, який гарантує фізичну присутність щонайменше 4 довірених учасників громади, щоб розшифрувати резервну копію всіх ключів.  По-перше, ми почали з вимог:"
 
 #. type: Bullet: '* '
 #: _posts/2023-07-15-community-controlled-backup-ceremony.md
 msgid "Regular backups as new keys get added."
-msgstr ""
+msgstr "Регулярне резервне копіювання в міру додавання нових ключів."
 
 #. type: Bullet: '* '
 #: _posts/2023-07-15-community-controlled-backup-ceremony.md
 msgid "Strong, proven encryption for all backups."
-msgstr ""
+msgstr "Надійне, перевірене шифрування для всіх резервних копій."
 
 #. type: Bullet: '* '
 #: _posts/2023-07-15-community-controlled-backup-ceremony.md
 msgid "Minimum of four participants to decrypt."
-msgstr ""
+msgstr "Мінімум чотири учасники для розшифрування."
 
 #. type: Bullet: '* '
 #: _posts/2023-07-15-community-controlled-backup-ceremony.md
 msgid "Specific technical experience should not be required to be a participant."
-msgstr ""
+msgstr "Для участі в конкурсі не потрібен спеціальний технічний досвід."
 
 #. type: Bullet: '* '
 #: _posts/2023-07-15-community-controlled-backup-ceremony.md
 msgid "The components should be physically spread out across jurisdictions."
-msgstr ""
+msgstr "Компоненти повинні бути фізично розподілені між юрисдикціями."
 
 #. type: Bullet: '* '
 #: _posts/2023-07-15-community-controlled-backup-ceremony.md
 msgid "Access should minimized as much as possible (e.g. the signing server maintainer does not need access to the backups)."
-msgstr ""
+msgstr "Доступ повинен бути мінімізований настільки, наскільки це можливо (наприклад, адміністратор сервера підпису не повинен мати доступ до резервних копій)."
 
 #. type: Bullet: '* '
 #: _posts/2023-07-15-community-controlled-backup-ceremony.md
 msgid "As low a stress level as possible for each participant."
-msgstr ""
+msgstr "Максимально низький рівень стресу для кожного учасника."
 
 #. type: Bullet: '* '
 #: _posts/2023-07-15-community-controlled-backup-ceremony.md
-msgid "Each participant should be free to hand over their component if they are forced to, without jeopardizing the encryption."
-msgstr ""
+msgid "Each participant could hand over their component if they are forced to, without jeopardizing the encryption."
+msgstr "Кожен учасник повинен мати можливість вільно передати свій компонент, якщо його змусять, без загрози для шифрування."
 
 #. type: Plain text
 #: _posts/2023-07-15-community-controlled-backup-ceremony.md
 msgid "Then we mapped out who was present:"
-msgstr ""
+msgstr "Потім ми визначили, хто був присутній:"
 
 #. type: Bullet: '* '
 #: _posts/2023-07-15-community-controlled-backup-ceremony.md
-#, fuzzy
-#| msgid "Becomes a contributor"
 msgid "Seven core contributors."
-msgstr "Перехід у помічники"
+msgstr "Сім основних учасників."
 
 #. type: Bullet: '* '
 #: _posts/2023-07-15-community-controlled-backup-ceremony.md
 msgid "One board member."
-msgstr ""
+msgstr "Один з членів правління."
 
 #. type: Bullet: '* '
 #: _posts/2023-07-15-community-controlled-backup-ceremony.md
 msgid "One trusted external witness."
-msgstr ""
+msgstr "Один зовнішній довірений свідок."
 
 #. type: Bullet: '* '
 #: _posts/2023-07-15-community-controlled-backup-ceremony.md
 msgid "No one else."
-msgstr ""
+msgstr "І більше ніхто."
 
 #. type: Plain text
 #: _posts/2023-07-15-community-controlled-backup-ceremony.md
 msgid "From that, we built the process:"
-msgstr ""
+msgstr "Ось із чого ми створили процес:"
 
 #. type: Bullet: '* '
 #: _posts/2023-07-15-community-controlled-backup-ceremony.md
 msgid "Three roles for physical control: operator of the signing server, encrypted backup holder, passphrase shard holder."
-msgstr ""
+msgstr "Три ролі для фізичного контролю: оператор сервера підпису, власник зашифрованої резервної копії, власник частини парольної фрази."
 
 #. type: Bullet: '* '
 #: _posts/2023-07-15-community-controlled-backup-ceremony.md
 msgid "Each person only takes on a single role, for example, shard holders do not have access to the signing keys or the encrypted backup."
-msgstr ""
+msgstr "Кожна особа виконує лише одну роль, наприклад, власники фрагментів не мають доступу до ключів підпису або зашифрованої резервної копії."
 
 #. type: Bullet: '* '
 #: _posts/2023-07-15-community-controlled-backup-ceremony.md
 msgid "The encryption key used for the data is public key cryptography."
-msgstr ""
+msgstr "Ключ шифрування, який використовується для даних, є криптографією з відкритим ключем."
 
 #. type: Bullet: '* '
 #: _posts/2023-07-15-community-controlled-backup-ceremony.md
 msgid "The private key was generated on a one-time-use, in-memory, disposable [TAILS](https://tails.boum.org/) session."
-msgstr ""
+msgstr "Закритий ключ було згенеровано під час одноразового сеансу [TAILS](https://tails.boum.org/), що зберігається в пам'яті та є одноразовим."
 
 #. type: Bullet: '* '
 #: _posts/2023-07-15-community-controlled-backup-ceremony.md
 msgid "The private key was sharded using [Shamir's Secret Sharing](https://en.wikipedia.org/wiki/Shamir%27s_Secret_Sharing)."
-msgstr ""
+msgstr "Закритий ключ було розбито на частини за допомогою [Shamir's Secret Sharing](https://en.wikipedia.org/wiki/Shamir%27s_Secret_Sharing)."
 
 #. type: Bullet: '* '
 #: _posts/2023-07-15-community-controlled-backup-ceremony.md
@@ -19552,14 +19550,12 @@ msgstr ""
 #. type: Plain text
 #: _posts/2023-07-15-community-controlled-backup-ceremony.md
 msgid "We believe this is a secure and reliable backup procedure for very sensitive data.  We welcome further scrutiny and plan to update the procedure as needed in a future meeting."
-msgstr ""
+msgstr "Ми вважаємо, що це безпечна і надійна процедура резервного копіювання для дуже конфіденційних даних. Ми вітаємо подальшу перевірку та плануємо оновити процедуру в майбутньому."
 
 #. type: Plain text
 #: _posts/2023-07-15-community-controlled-backup-ceremony.md
-#, fuzzy
-#| msgid "_This work was funded by the [FFDW-DVD grant]({{ site.baseurl }}{% post_url 2022-02-05-decentralizing-distribution %})_"
 msgid "(_This meeting was paid for by the [FFDW-DVD grant]({{ site.baseurl }}{% post_url 2022-02-05-decentralizing-distribution %})._)"
-msgstr "_Ця робота була профінансована коштом [гранту FFDW-DVD]({{ site.baseurl }}{% post_url 2022-02-05-decentralizing-distribution %})_"
+msgstr "_Ця зустріч була профінансована коштом [гранту FFDW-DVD]({{ site.baseurl }}{% post_url 2022-02-05-decentralizing-distribution %})._)"
 
 #, no-wrap
 #~ msgid "Privacy Audit"

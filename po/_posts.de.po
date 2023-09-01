@@ -18,8 +18,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
 "POT-Creation-Date: 2023-07-24 17:52+0200\n"
-"PO-Revision-Date: 2023-07-30 17:10+0000\n"
-"Last-Translator: VfBFan <drop0815@posteo.de>\n"
+"PO-Revision-Date: 2023-08-10 14:51+0000\n"
+"Last-Translator: \"C. Rüdinger\" <Mail-an-CR@web.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/f-droid/website-posts/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
@@ -16520,7 +16520,7 @@ msgid ""
 "[_fdroiddata_](https://gitlab.com/fdroid/fdroiddata).  In order to encourage\n"
 "more creative reuse, we keep our data in standard formats in easy to find\n"
 "places.  The whole app collection is in [YAML format]({{ site.baseurl }}/{%\n"
-"post_url 2019-09-11-yaml-metadata %}).  The file can either be directly accessed\n"
+"post_url 2019-09-11-yaml-metadata %}).  The file can be directly accessed\n"
 "by Application ID using the GitLab Raw URL\n"
 "`https://gitlab.com/fdroid/fdroiddata/-/raw/master/metadata/<ApplicationID>.yml`\n"
 "(e.g. <https://gitlab.com/fdroid/fdroiddata/-/raw/master/metadata/org.fdroid.fdroid.yml>).\n"
@@ -19387,84 +19387,82 @@ msgstr ""
 #. type: Plain text
 #: _posts/2023-07-15-community-controlled-backup-ceremony.md
 msgid "Seven core contributors and one board member met in Scotland, the birthplace of F-Droid, for the first in-person F-Droid team meeting.  One of the most pressing tasks we needed to take care of was setting up a contributor-controlled backup of all of our signing keys.  The requirements made it necessary to have a lengthy, in-person, consensus-driven planning session.  We found no good documentation of such a procedure, so we're going out on a limb here and publishing the general outline of our process.  This process was informally audited by multiple people with varying expertise before the public key was used to encrypt anything."
-msgstr ""
+msgstr "Sieben Mitwirkende aus der Kerngruppe und ein Gremiumsmitglied trafen sich in Schottland, dem Geburtsort von F-Droid, zur ersten persönlichen Tagung des F-Droid-Teams.  Eine der drängendsten Aufgaben, um die wir uns kümmern mussten, war die Einrichtung einer von den Mitwirkenden kontrollierten Sicherung all unserer Signierschlüssel.  Die Anforderungen machten es notwendig, eine langatmige, konsensgelenkte Planungssitzung mit persönlicher Anwesenheit abzuhalten.  Wir fanden keine gute Dokumentation zu solch einem Vorgang, so gingen wir hier das Risiko ein und veröffentlichten den allgemeinen Entwurf unseres Prozesses.  Dieser Prozess wurde formlos von vielen Leuten mit unterschiedlichen Expertisen auditiert, bevor der öffentliche Schlüssel dazu verwendet wurde, irgendetwas zu verschlüsseln."
 
 #. type: Plain text
 #: _posts/2023-07-15-community-controlled-backup-ceremony.md
 msgid "![F-Droid core contributors at midnight]({% asset posts/2023-07-15-community-controlled-backup-ceremony/fdroid-at-midnight.jpg %})"
-msgstr ""
+msgstr "![F-Droid-Kerngruppe um Mitternacht]({% asset posts/2023-07-15-community-controlled-backup-ceremony/fdroid-at-midnight.jpg %})"
 
 #. type: Plain text
 #: _posts/2023-07-15-community-controlled-backup-ceremony.md
 msgid "F-Droid manages secret signing keys for thousands of apps.  Someone who has control over those keys could create malicious app releases that could be transparently installed as updates.  On top of that, [Android](https://developer.android.com/about/versions/pie/android-9.0#apk-key-rotation) does [not](https://guardianproject.info/2015/12/29/how-to-migrate-your-android-apps-signing-key/) make it [easy](https://anandbose.gitlab.io/android-development/2020/05/08/android-signing-key-rotation-explained/) to rotate to new signing keys, unlike TLS or Signal. So [these keys]({{ site.baseurl }}/docs/Signing_Process/) are very important to [protect]({{ site.baseurl }}/docs/Building_a_Signing_Server/).  They are also very important to backup, since the Android OS uses the signing key combined with the Application ID as the unique identifier to represent each installed app. This meeting gave us the perfect opportunity to create a new backup process that ensures that at least 4 trusted community members must be physically present in order to decrypt the backup of all the keys.  First, we started with the requirements:"
-msgstr ""
+msgstr "F-Droid verwaltet geheime Signierschlüssel für Tausende von Apps.  Jemand, der die Kontrolle über diese Schlüssel erlangt, könnte bösartige App-Veröffentlichungen erschaffen, die sich als Aktualisierungen zu erkennen gäben.  Obendrein macht es einem [Android](https://developer.android.com/about/versions/pie/android-9.0#apk-key-rotation) does [not](https://guardianproject.info/2015/12/29/how-to-migrate-your-android-apps-signing-key/) [leicht](https://anandbose.gitlab.io/android-development/2020/05/08/android-signing-key-rotation-explained/) zu neuen Signierschlüsseln zu wechseln, anders als TLS oder Signal. Somit ist es äußerst wichtig [diese Schlüssel]({{ site.baseurl }}/docs/Signing_Process/) zu [schützen]({{ site.baseurl }}/docs/Building_a_Signing_Server/).  Es ist auch sehr wichtig, sie zu sichern, weil das Android OS den Signierschlüssel in Kombination mit der App-ID als den eindeutigen Indentifikator nutzt, der jede einzelne installierte App repräsentiert. Dieses Treffen gab uns die perfekte Gelegenheit ein neues Sicherungsverfahren zu schaffen, das sicherstellt, dass mindestens 4 vertrauenswürdige Mitglieder aus der Community physisch anwesend sein müssen, um die Sicherung aller Schlüssel zu entschlüsseln.  Zunächst begannen wir mit den Anforderungen:"
 
 #. type: Bullet: '* '
 #: _posts/2023-07-15-community-controlled-backup-ceremony.md
 msgid "Regular backups as new keys get added."
-msgstr ""
+msgstr "Regelmäßige Sicherungen werden als neue Schlüssel hinzugefügt."
 
 #. type: Bullet: '* '
 #: _posts/2023-07-15-community-controlled-backup-ceremony.md
 msgid "Strong, proven encryption for all backups."
-msgstr ""
+msgstr "Starke, bewährte Verschlüsselung für alle Sicherungen."
 
 #. type: Bullet: '* '
 #: _posts/2023-07-15-community-controlled-backup-ceremony.md
 msgid "Minimum of four participants to decrypt."
-msgstr ""
+msgstr "Mindestens vier Teilnehmer beim Entschlüsseln."
 
 #. type: Bullet: '* '
 #: _posts/2023-07-15-community-controlled-backup-ceremony.md
 msgid "Specific technical experience should not be required to be a participant."
-msgstr ""
+msgstr "Es sollten keine speziellen technischen Kenntnisse erforderlich sein, um Teilnehmer zu werden."
 
 #. type: Bullet: '* '
 #: _posts/2023-07-15-community-controlled-backup-ceremony.md
 msgid "The components should be physically spread out across jurisdictions."
-msgstr ""
+msgstr "Die Komponenten sollten physisch quer durch die Zuständigkeitsbereiche verteilt sein."
 
 #. type: Bullet: '* '
 #: _posts/2023-07-15-community-controlled-backup-ceremony.md
 msgid "Access should minimized as much as possible (e.g. the signing server maintainer does not need access to the backups)."
-msgstr ""
+msgstr "Der Zugriff sollte soweit wie möglich minimiert sein (z. B. muss der Betreuer des Signierservers keinen Zugriff auf die Sicherungen haben)."
 
 #. type: Bullet: '* '
 #: _posts/2023-07-15-community-controlled-backup-ceremony.md
 msgid "As low a stress level as possible for each participant."
-msgstr ""
+msgstr "Geringstmögliches Stressniveau für jeden Teilnehmer."
 
 #. type: Bullet: '* '
 #: _posts/2023-07-15-community-controlled-backup-ceremony.md
-msgid "Each participant should be free to hand over their component if they are forced to, without jeopardizing the encryption."
-msgstr ""
+msgid "Each participant could hand over their component if they are forced to, without jeopardizing the encryption."
+msgstr "Jeder Teilnehmer sollte frei entscheiden, seine Komponente auszuhändigen, wenn dies nötig wird, ohne dabei die Verschlüsselung zu gefährden."
 
 #. type: Plain text
 #: _posts/2023-07-15-community-controlled-backup-ceremony.md
 msgid "Then we mapped out who was present:"
-msgstr ""
+msgstr "Dann arbeiteten wir aus, wer anwesend war:"
 
 #. type: Bullet: '* '
 #: _posts/2023-07-15-community-controlled-backup-ceremony.md
-#, fuzzy
-#| msgid "Becomes a contributor"
 msgid "Seven core contributors."
-msgstr "Wird zum Mitwirkenden"
+msgstr "Sieben Hauptmitwirkende."
 
 #. type: Bullet: '* '
 #: _posts/2023-07-15-community-controlled-backup-ceremony.md
 msgid "One board member."
-msgstr ""
+msgstr "Ein Gremiumsmitglied."
 
 #. type: Bullet: '* '
 #: _posts/2023-07-15-community-controlled-backup-ceremony.md
 msgid "One trusted external witness."
-msgstr ""
+msgstr "Ein vertrauter externer Zeuge."
 
 #. type: Bullet: '* '
 #: _posts/2023-07-15-community-controlled-backup-ceremony.md
 msgid "No one else."
-msgstr ""
+msgstr "Niemand sonst."
 
 #. type: Plain text
 #: _posts/2023-07-15-community-controlled-backup-ceremony.md
@@ -19558,10 +19556,8 @@ msgstr ""
 
 #. type: Plain text
 #: _posts/2023-07-15-community-controlled-backup-ceremony.md
-#, fuzzy
-#| msgid "_This work was funded by the [FFDW-DVD grant]({{ site.baseurl }}{% post_url 2022-02-05-decentralizing-distribution %})_"
 msgid "(_This meeting was paid for by the [FFDW-DVD grant]({{ site.baseurl }}{% post_url 2022-02-05-decentralizing-distribution %})._)"
-msgstr "_Diese Arbeit wurde durch einen [FFDW-DVD-Zuschuss]({{ site.baseurl }}{% post_url 2022-02-05-decentralizing-distribution %}) gefördert_"
+msgstr "(_Dieses Treffen wurde durch einen [FFDW-DVD-Zuschuss]({{ site.baseurl }}{% post_url 2022-02-05-decentralizing-distribution %}) finanziert._)"
 
 #~ msgid "* Maven Central * Google Maven Repo * JCenter * OSS Sonatype * OSS JFrog * JitPack.io * Clojars * CommonsWare * Gradle plugin repo"
 #~ msgstr "* Maven Central * Google Maven Repo * JCenter * OSS Sonatype * OSS JFrog * JitPack.io * Clojars * CommonsWare * Gradle plugin repo"

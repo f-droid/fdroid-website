@@ -9,7 +9,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2023-08-01 15:13+0200\n"
+"POT-Creation-Date: 2023-09-01 12:50+0200\n"
 "PO-Revision-Date: 2023-03-19 08:39+0000\n"
 "Last-Translator: ssantos <ssantos@web.de>\n"
 "Language-Team: Portuguese <https://hosted.weblate.org/projects/f-droid/website-docs/pt/>\n"
@@ -759,7 +759,7 @@ msgid ""
 "[_fdroiddata_](https://gitlab.com/fdroid/fdroiddata).  In order to encourage\n"
 "more creative reuse, we keep our data in standard formats in easy to find\n"
 "places.  The whole app collection is in [YAML format]({{ site.baseurl }}/{%\n"
-"post_url 2019-09-11-yaml-metadata %}).  The file can either be directly accessed\n"
+"post_url 2019-09-11-yaml-metadata %}).  The file can be directly accessed\n"
 "by Application ID using the GitLab Raw URL\n"
 "`https://gitlab.com/fdroid/fdroiddata/-/raw/master/metadata/<ApplicationID>.yml`\n"
 "(e.g. <https://gitlab.com/fdroid/fdroiddata/-/raw/master/metadata/org.fdroid.fdroid.yml>).\n"
@@ -7366,7 +7366,9 @@ msgstr "Esta é uma lista incompleta do que um revisor faria:"
 
 #. type: Bullet: '-   '
 #: _docs/Inclusion_How-To.md
-msgid "They will go to your source code repository, and look for copyright notices in license files, including README, to check that the proposed application is released under [recognized Free Software license(s)](https://www.gnu.org/licenses/license-list.html)."
+#, fuzzy
+#| msgid "They will go to your source code repository, and look for copyright notices in license files, including README, to check that the proposed application is released under a [recognized Free Software license(s)](https://www.gnu.org/licenses/license-list.html)."
+msgid "They will go to your source code repository, and look for copyright notices in license files, including README, to check that the proposed application is released under a [recognized Free Software and/or OSI license(s)](https://spdx.org/licenses/)."
 msgstr "Eles irão ao seu repositório de código-fonte e procurarão avisos de direitos autorais em ficheiros de licença, a incluir o README, para verificar se a aplicação proposta foi lançado sob [licença(s) de Software Livre reconhecida(s)](https://www.gnu.org/licenses/license-list.html)."
 
 #. type: Bullet: '-   '
@@ -7560,8 +7562,8 @@ msgstr "Processo de atualização de metadados"
 
 #. type: Plain text
 #: _docs/Inclusion_How-To.md
-msgid "When the scheduled building time arrives, the F-Droid build server will fetch changes from the fdroiddata GitLab repository and merge it to a local repository. Then, update checks will be performed for all applications. If a new version is found, their metadata files will be updated and committed to the repository by the author `F-Droid Builder <admin@f-droid.org>`."
-msgstr "Quando o tempo de compilação agendado chega, o servidor de compilação do F-Droid irá buscar alterações do repositório do GitLab do fdroiddata e mesclá-lo num repositório local. Em seguida, as verificações de atualização serão executadas para todas as aplicações. Se uma nova versão for encontrada, seus ficheiros de metadados serão atualizados e enviados para o repositório pelo autor `F-Droid Builder <admin@f-droid.org>`."
+msgid "When the scheduled building time arrives, the F-Droid build server will fetch changes from the fdroiddata GitLab repository and merge it to a local repository. Then, update checks will be performed for all applications. If a new version is found, their metadata files will be updated and committed to the repository by the author `F-Droid checkupdates (@fdroidci)`."
+msgstr "Quando o tempo de compilação agendado chega, o servidor de compilação do F-Droid irá buscar alterações do repositório do GitLab do fdroiddata e mesclá-lo num repositório local. Em seguida, as verificações de atualização serão executadas para todas as aplicações. Se uma nova versão for encontrada, seus ficheiros de metadados serão atualizados e enviados para o repositório pelo autor `F-Droid checkupdates (@fdroidci)`."
 
 #. type: Plain text
 #: _docs/Inclusion_How-To.md
@@ -7649,7 +7651,7 @@ msgstr "Política de Inclusão"
 #: _docs/Inclusion_Policy.md
 #, fuzzy
 #| msgid "All applications in the repository must be Free, Libre and Open Source software – for example, released under a GPL or Apache license. Every effort is made to verify that this is actually the case, both by visual inspection of the source, and by building the application from the published source. If in doubt about a license, please refer to the [GNU license list](https://www.gnu.org/licenses/license-list.html)."
-msgid "All applications in the repository must be Free, Libre and Open Source Software (FLOSS) – for example, released under a GPL or Apache license. Every effort is made to verify that this is actually the case, both by visual inspection of the source, and by building the application from the published source.  To determine which licenses are FLOSS, We defer to widely trusted organizations that have a proven track record.  Specifically, we acknowledge these standards: [DFSG](https://wiki.debian.org/DFSGLicenses), [FSF](https://www.fsf.org/licensing), [GNU](https://www.gnu.org/licenses/license-list.html), and [OSI](https://opensource.org/licenses)."
+msgid "All applications in the repository must be Free, Libre and Open Source Software (FLOSS) – for example, released under a GPL or Apache license. Every effort is made to verify that this is actually the case, both by visual inspection of the source, and by building the application from the published source.  To determine which licenses are FLOSS, We defer to widely trusted organizations that have a proven track record.  Specifically, we acknowledge these standards: [DFSG](https://wiki.debian.org/DFSGLicenses), [FSF](https://www.fsf.org/licensing), [GNU](https://www.gnu.org/licenses/license-list.html), and [OSI](https://opensource.org/licenses) _(read a quick overview of them all on [SPDX](https://spdx.org/licenses/))_."
 msgstr "Todos as aplicações no repositório devem ser softwares livres e de código aberto - por exemplo, lançados sob uma licença GPL ou Apache. Todos os esforços são feitos para verificar se é realmente o caso, tanto pela inspeção visual da fonte, como pela construção da aplicação da fonte publicada. Se estiver em dúvida sobre uma licença, consulte por favor a [lista de licenças GNU](https://www.gnu.org/licenses/license-list.html)."
 
 #. type: Plain text
@@ -7676,7 +7678,7 @@ msgstr "Não podemos compilar apps a usar dependências proprietárias de rastre
 
 #. type: Bullet: '-   '
 #: _docs/Inclusion_Policy.md
-msgid "We cannot build apps using proprietary ad libraries. We have nothing against advertisments (see [_Anti-Features_](../Anti-Features)), but they must be provided by a FLOSS-compatible way."
+msgid "We cannot build apps using proprietary ad libraries. We have nothing against advertisements (see [_Anti-Features_](../Anti-Features)), but they must be provided by a FLOSS-compatible way."
 msgstr "Não podemos criar apps a usar bibliotecas de anúncios proprietárias. Não temos nada contra anúncios (veja [_Anti-Features_](../Anti-Features)), mas eles devem ser fornecidos de forma compatível com FLOSS."
 
 #. type: Bullet: '-   '
@@ -11098,6 +11100,34 @@ msgstr "Android 2.3.3 (API 10) até Android 3.2 (API 13): [F-Droid 1.2.2](https:
 #: _docs/Running_on_old_Android_versions.md
 msgid "Android 2.2 (API 8) to Android 2.3.2 (API 9): [F-Droid 0.100.1](https://f-droid.org/archive/org.fdroid.fdroid_100150.apk)"
 msgstr "Android 2.2 (API 8) até Android 2.3.2 (API 9): [F-Droid 0.100.1](https://f-droid.org/archive/org.fdroid.fdroid_100150.apk)"
+
+#. type: Bullet: '* '
+#: _docs/Running_on_old_Android_versions.md
+#, fuzzy
+#| msgid "Android 4.0 (API 14) to Android 5.0 (API 21): [F-Droid 1.12.1](https://f-droid.org/archive/org.fdroid.fdroid_1012051.apk)"
+msgid "Android 2.1 (API 7): [F-Droid 0.91](https://f-droid.org/archive/org.fdroid.fdroid_910.apk)"
+msgstr "Android 4.0 (API 14) até Android 5.0 (API 21): [F-Droid 1.12.1](https://f-droid.org/archive/org.fdroid.fdroid_1012051.apk)"
+
+#. type: Bullet: '* '
+#: _docs/Running_on_old_Android_versions.md
+#, fuzzy
+#| msgid "Android 2.2 (API 8) to Android 2.3.2 (API 9): [F-Droid 0.100.1](https://f-droid.org/archive/org.fdroid.fdroid_100150.apk)"
+msgid "Android 2.0 (API 5) to Android 2.0.1 (API 6): [F-Droid 0.69](https://f-droid.org/archive/org.fdroid.fdroid_690.apk)"
+msgstr "Android 2.2 (API 8) até Android 2.3.2 (API 9): [F-Droid 0.100.1](https://f-droid.org/archive/org.fdroid.fdroid_100150.apk)"
+
+#. type: Bullet: '* '
+#: _docs/Running_on_old_Android_versions.md
+#, fuzzy
+#| msgid "Android 4.0 (API 14) to Android 5.0 (API 21): [F-Droid 1.12.1](https://f-droid.org/archive/org.fdroid.fdroid_1012051.apk)"
+msgid "Android 1.6 (API 4): [F-Droid 0.56](https://f-droid.org/archive/org.fdroid.fdroid_560.apk)"
+msgstr "Android 4.0 (API 14) até Android 5.0 (API 21): [F-Droid 1.12.1](https://f-droid.org/archive/org.fdroid.fdroid_1012051.apk)"
+
+#. type: Bullet: '* '
+#: _docs/Running_on_old_Android_versions.md
+#, fuzzy
+#| msgid "Android 4.0 (API 14) to Android 5.0 (API 21): [F-Droid 1.12.1](https://f-droid.org/archive/org.fdroid.fdroid_1012051.apk)"
+msgid "Android 1.5 (API 3): [F-Droid 0.45](https://f-droid.org/archive/org.fdroid.fdroid_45.apk)"
+msgstr "Android 4.0 (API 14) até Android 5.0 (API 21): [F-Droid 1.12.1](https://f-droid.org/archive/org.fdroid.fdroid_1012051.apk)"
 
 #. type: Plain text
 #: _docs/Running_on_old_Android_versions.md

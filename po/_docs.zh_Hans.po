@@ -26,8 +26,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
-"POT-Creation-Date: 2023-08-01 15:13+0200\n"
-"PO-Revision-Date: 2023-06-23 13:49+0000\n"
+"POT-Creation-Date: 2023-09-01 12:50+0200\n"
+"PO-Revision-Date: 2023-08-02 22:06+0000\n"
 "Last-Translator: Eric <hamburger2048@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Chinese (Simplified) <https://hosted.weblate.org/projects/f-droid/website-docs/zh_Hans/>\n"
 "Language: zh_Hans\n"
@@ -35,7 +35,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 4.18.1\n"
+"X-Generator: Weblate 5.0-dev\n"
 
 #. type: Yaml Front Matter Hash Value: title
 #: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
@@ -766,7 +766,7 @@ msgid ""
 "[_fdroiddata_](https://gitlab.com/fdroid/fdroiddata).  In order to encourage\n"
 "more creative reuse, we keep our data in standard formats in easy to find\n"
 "places.  The whole app collection is in [YAML format]({{ site.baseurl }}/{%\n"
-"post_url 2019-09-11-yaml-metadata %}).  The file can either be directly accessed\n"
+"post_url 2019-09-11-yaml-metadata %}).  The file can be directly accessed\n"
 "by Application ID using the GitLab Raw URL\n"
 "`https://gitlab.com/fdroid/fdroiddata/-/raw/master/metadata/<ApplicationID>.yml`\n"
 "(e.g. <https://gitlab.com/fdroid/fdroiddata/-/raw/master/metadata/org.fdroid.fdroid.yml>).\n"
@@ -2938,12 +2938,7 @@ msgstr "`androidupdate: <auto/dirs>`<a name=\"build_androidupdate\"></a>\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-#, fuzzy, no-wrap
-#| msgid ""
-#| ":   By default, 'android update' is used in Ant builds to generate or\n"
-#| "    update the project and all its referenced projects. Specifying\n"
-#| "    update=no bypasses that. Note that this is useless in builds that\n"
-#| "    don't use Ant.\n"
+#, no-wrap
 msgid ""
 ":   By default, 'android update' is used in Ant builds to generate or\n"
 "    update the project and all its referenced projects. Specifying\n"
@@ -2952,7 +2947,7 @@ msgid ""
 msgstr ""
 ":   默认情况下， 'android update' 在 Ant 构建中用来生成或\n"
 "    更新项目及其所有引用的项目。 指定\n"
-"    update=no 可以绕过这个。 请注意，在不使用\n"
+"    `androidupdate: no` 可以绕过这个。 请注意，在不使用\n"
 "    Ant 的构建中，这不起作用。\n"
 
 #. type: Plain text
@@ -3078,20 +3073,19 @@ msgstr "`rm: <path1>[,<path2>,...]`<a name=\"build_rm\"></a>\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-#, fuzzy, no-wrap
-#| msgid ""
-#| ":   Specifies the relative paths of files or directories to delete\n"
-#| "    before the build is done. The paths are relative to the base of the\n"
-#| "    build directory - i.e. the root of the directory structure checked\n"
-#| "    out from the source respository - not necessarily the directory that\n"
-#| "    contains _AndroidManifest.xml_.\n"
+#, no-wrap
 msgid ""
 ":   Specifies the relative paths of files or directories to delete\n"
 "    before the build is started. The paths are relative to the base of the\n"
 "    build directory - i.e. the root of the directory structure checked\n"
 "    out from the source respository - not necessarily the directory that\n"
 "    contains _AndroidManifest.xml_.\n"
-msgstr "：指定构建之前删除的文件或文件夹的相对路径。这些路径相对于基础-构建目录 - 即从源代码库中检出的文件结构的根目录 - 不一定是包含 _AndroidManifest.xml_ 的目录。\n"
+msgstr ""
+":   指定构建开始前\n"
+"    要删除的文件或文件夹的相对路径。\n"
+"    这些路径相对于构建目录的基路径 - \n"
+"    即从源代码库中检出的目录结构的根目录 - \n"
+"    不一定是包含 _AndroidManifest.xml_ 的目录。\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -3136,14 +3130,7 @@ msgstr "：逗号分隔的源代码库或 Android 项目列表。每个条目为
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-#, fuzzy, no-wrap
-#| msgid ""
-#| "    For Ant projects, you can optionally append a number with a colon at\n"
-#| "    the beginning of a srclib item to automatically place it in\n"
-#| "    _project.properties_ as a library under the specified number. For\n"
-#| "    example, if you specify `1:somelib@1.0`, F-Droid will automatically\n"
-#| "    do the equivalent of the legacy practice\n"
-#| "    `prebuild=echo \"android.library.reference.1=$$somelib$$\" >> project.properties`.\n"
+#, no-wrap
 msgid ""
 "    For Ant projects, you can optionally append a number with a colon at\n"
 "    the beginning of a srclib item to automatically place it in\n"
@@ -3151,7 +3138,13 @@ msgid ""
 "    example, if you specify `1:somelib@1.0`, F-Droid will automatically\n"
 "    do the equivalent of the legacy practice\n"
 "    `prebuild: echo \"android.library.reference.1=$$somelib$$\" >> project.properties`.\n"
-msgstr "    对于 Ant 项目，你可以选择在一个 srclib 项目的开头加上一个带冒号的数字，以自动将其放在 _project.properties_ 中作为指定编号下的一个库。例如，如果你指定 `1:somelib@1.0`，F-Droid 会自动地执行等同于传统的做法 `prebuild=echo \"android.library.reference.1=$$somelib$$\">> project.properties`。\n"
+msgstr ""
+"    对于 Ant 项目，\n"
+"    你可以选择在 srclib 项目的开头加上一个带冒号的数字，\n"
+"    以自动将其放在 _project.properties_ 中\n"
+"    作为指定编号下的一个库。\n"
+"    例如，如果你指定 `1:somelib@1.0`，\n"
+"    F-Droid 会自动执行传统做法 `prebuild:echo \"android.library.reference.1=$$somelib$$\">> project.properties`的等效操作。\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -3388,16 +3381,7 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-#, fuzzy, no-wrap
-#| msgid ""
-#| "    The build and scan processes will complain (refuse to build) if this\n"
-#| "    parameter is not defined, but there is a `jni` directory present. If\n"
-#| "    the native code is being built by other means like a Gradle task,\n"
-#| "    you can specify `no` here to avoid that. However, if the native code\n"
-#| "    is actually not required or used, remove the directory instead\n"
-#| "    (using `rm=jni` for example). Using `buildjni=no` when the jni code\n"
-#| "    isn't used nor built will result in an error saying that native\n"
-#| "    libraries were expected in the resulting package.\n"
+#, no-wrap
 msgid ""
 "    The build and scan processes will complain (refuse to build) if this\n"
 "    parameter is not defined, but there is a `jni` directory present. If\n"
@@ -3413,8 +3397,8 @@ msgstr ""
 "    本机代码正由 Gradle 任务等其他方式构建，\n"
 "    你可以在此处指定 `no` 来避免这种情况。不过，如果实际上本机代码\n"
 "    不是必需的或不被使用，那么请删除该目录\n"
-"    (比如使用 `rm=jni`)。当 jni 代码既未被使用也未被\n"
-"    构建时使用 `buildjni=no` 会导致一条错误信息，表示\n"
+"    (比如使用 `rm:jni`)。当 jni 代码既未被使用也未被\n"
+"    构建时使用 `buildjni:no` 会导致一条错误信息，表示\n"
 "    生成的包中预期有本地库。\n"
 
 #. type: Plain text
@@ -3541,20 +3525,19 @@ msgstr "`output: glob/to/output.apk`<a name=\"build_output\"></a>\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-#, fuzzy, no-wrap
-#| msgid ""
-#| ":   Specify a glob path where the resulting unsigned release APK from\n"
-#| "    the build should be. This can be used in combination with build\n"
-#| "    methods like `gradle=yes` or `maven=yes`, but if no build method is\n"
-#| "    specified, the build is manual. You should run your build commands,\n"
-#| "    such as `make`, in _build_.\n"
+#, no-wrap
 msgid ""
 ":   Specify a glob path where the resulting unsigned release APK from\n"
 "    the build should be. This can be used in combination with build\n"
 "    methods like `gradle: yes` or `maven: yes`, but if no build method is\n"
 "    specified, the build is manual. You should run your build commands,\n"
 "    such as `make`, in _build_.\n"
-msgstr "：指定构建的未签名版本 APK 的 glob 路径。这可以 `gradle=yes` 或 `maven=yes` 这样的构建方法结合使用，但是如果没有指定构建方法，构建是手动的。你应该在 _build_ 中运行构建命令，例如 `make`。\n"
+msgstr ""
+":   指定构建的未签名版本 APK 应在的 glob 路径。\n"
+"    这可以和 `gradle:yes` 或 `maven:yes` 这样的构建方法结合使用，\n"
+"    但是如果没有指定构建方法，\n"
+"    构建是手动的。\n"
+"    你应该在 _build_ 中运行构建命令，例如 `make`。\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -7097,7 +7080,9 @@ msgstr "这是一个非详尽的列表，列出了审核者会做什么："
 
 #. type: Bullet: '-   '
 #: _docs/Inclusion_How-To.md
-msgid "They will go to your source code repository, and look for copyright notices in license files, including README, to check that the proposed application is released under [recognized Free Software license(s)](https://www.gnu.org/licenses/license-list.html)."
+#, fuzzy
+#| msgid "They will go to your source code repository, and look for copyright notices in license files, including README, to check that the proposed application is released under a [recognized Free Software license(s)](https://www.gnu.org/licenses/license-list.html)."
+msgid "They will go to your source code repository, and look for copyright notices in license files, including README, to check that the proposed application is released under a [recognized Free Software and/or OSI license(s)](https://spdx.org/licenses/)."
 msgstr "他们将转到你的源代码存储库，并在许可文件（包括 README）中查找版权声明，以检查提议的应用是基于 [公认的自由软件许可](https://www.gnu.org/licenses/license-list.html) 发布。"
 
 #. type: Bullet: '-   '
@@ -7281,8 +7266,8 @@ msgstr "元数据刷新过程"
 
 #. type: Plain text
 #: _docs/Inclusion_How-To.md
-msgid "When the scheduled building time arrives, the F-Droid build server will fetch changes from the fdroiddata GitLab repository and merge it to a local repository. Then, update checks will be performed for all applications. If a new version is found, their metadata files will be updated and committed to the repository by the author `F-Droid Builder <admin@f-droid.org>`."
-msgstr "当预定的构建时间到达时，F-Droid 构建服务器将从 fdroiddata GitLab 代码库中获取更改并将其合并到本地代码库。然后，将对所有应用执行更新检查。如果发现新版本，其元数据文件将由作者 `F-Droid Builder <admin@f-droid.org>` 更新并提交到存储库。"
+msgid "When the scheduled building time arrives, the F-Droid build server will fetch changes from the fdroiddata GitLab repository and merge it to a local repository. Then, update checks will be performed for all applications. If a new version is found, their metadata files will be updated and committed to the repository by the author `F-Droid checkupdates (@fdroidci)`."
+msgstr "当预定的构建时间到达时，F-Droid 构建服务器将从 fdroiddata GitLab 代码库中获取更改并将其合并到本地代码库。然后，将对所有应用执行更新检查。如果发现新版本，其元数据文件将由作者 `F-Droid checkupdates (@fdroidci)` 更新并提交到存储库。"
 
 #. type: Plain text
 #: _docs/Inclusion_How-To.md
@@ -7368,7 +7353,9 @@ msgstr "收录政策"
 
 #. type: Plain text
 #: _docs/Inclusion_Policy.md
-msgid "All applications in the repository must be Free, Libre and Open Source Software (FLOSS) – for example, released under a GPL or Apache license. Every effort is made to verify that this is actually the case, both by visual inspection of the source, and by building the application from the published source.  To determine which licenses are FLOSS, We defer to widely trusted organizations that have a proven track record.  Specifically, we acknowledge these standards: [DFSG](https://wiki.debian.org/DFSGLicenses), [FSF](https://www.fsf.org/licensing), [GNU](https://www.gnu.org/licenses/license-list.html), and [OSI](https://opensource.org/licenses)."
+#, fuzzy
+#| msgid "All applications in the repository must be Free, Libre and Open Source Software (FLOSS) – for example, released under a GPL or Apache license. Every effort is made to verify that this is actually the case, both by visual inspection of the source, and by building the application from the published source.  To determine which licenses are FLOSS, We defer to widely trusted organizations that have a proven track record.  Specifically, we acknowledge these standards: [DFSG](https://wiki.debian.org/DFSGLicenses), [FSF](https://www.fsf.org/licensing), [GNU](https://www.gnu.org/licenses/license-list.html), and [OSI](https://opensource.org/licenses)."
+msgid "All applications in the repository must be Free, Libre and Open Source Software (FLOSS) – for example, released under a GPL or Apache license. Every effort is made to verify that this is actually the case, both by visual inspection of the source, and by building the application from the published source.  To determine which licenses are FLOSS, We defer to widely trusted organizations that have a proven track record.  Specifically, we acknowledge these standards: [DFSG](https://wiki.debian.org/DFSGLicenses), [FSF](https://www.fsf.org/licensing), [GNU](https://www.gnu.org/licenses/license-list.html), and [OSI](https://opensource.org/licenses) _(read a quick overview of them all on [SPDX](https://spdx.org/licenses/))_."
 msgstr "存储库中的所有应用都必须是自由开源软件(FLOSS)——例如，在 GPL 或 Apache 许可下发布。检查源代码、从已发布的源代码构建应用，以尽可能地确保情况确实如此。为了确定哪些许可证是 FLOSS 的，我们遵从拥有良好记录的广受信任的组织。具体来说，我们承认这些标准：[DFSG](https://wiki.debian.org/DFSGLicenses)、 [FSF](https://www.fsf.org/licensing)、[GNU](https://www.gnu.org/licenses/license-list.html) 和 [OSI](https://opensource.org/licenses)。"
 
 #. type: Plain text
@@ -7393,7 +7380,7 @@ msgstr "我们不能使用像 Crashlytics 和 Firebase 这样的专有跟踪/分
 
 #. type: Bullet: '-   '
 #: _docs/Inclusion_Policy.md
-msgid "We cannot build apps using proprietary ad libraries. We have nothing against advertisments (see [_Anti-Features_](../Anti-Features)), but they must be provided by a FLOSS-compatible way."
+msgid "We cannot build apps using proprietary ad libraries. We have nothing against advertisements (see [_Anti-Features_](../Anti-Features)), but they must be provided by a FLOSS-compatible way."
 msgstr "我们无法使用专有广告库构建应用。我们并不反对广告（请参阅[_负面特征_](../Anti-Features)），但必须以与 FLOSS 兼容的方式提供广告。"
 
 #. type: Bullet: '-   '
@@ -9555,42 +9542,41 @@ msgstr "Google 也在努力实现 Android 应用的可重复构建，所以使�
 
 #. type: Title ###
 #: _docs/Reproducible_Builds.md
-#, fuzzy, no-wrap
-#| msgid "Reproducible Builds"
+#, no-wrap
 msgid "Debugging Reproducible Builds"
-msgstr "可重复构建"
+msgstr "调试可重复构建"
 
 #. type: Title ####
 #: _docs/Reproducible_Builds.md
 #, no-wrap
 msgid "Recommended tools"
-msgstr ""
+msgstr "推荐的工具"
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
 msgid "We recommend using [`diffoscope`](https://diffoscope.org/) for easily finding the difference between the reference APK provided by the app developer and the APK that `fdroidserver` produced."
-msgstr ""
+msgstr "我们推荐使用 [`diffoscope`](https://diffoscope.org/)轻松找出应用开发者提供的参考 APK 和`fdroidserver` 产生的 APK 之间的差异。"
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
 msgid "You can find the APK that `fdroidserver` produced either under e.g.  `fdroiddata/build/com.example.app/app/build/outputs/apk/prod/release/example-1.0.0-prod-release-unsigned.apk` (when running locally) or in the pipeline artifacts (when using GitLab CI).  Adjust the path accordingly (e.g. for flavours other than `prod`)."
-msgstr ""
+msgstr "`fdroidserve` 产生的 APK 所在位置要么形如 `fdroiddata/build/com.example.app/app/build/outputs/apk/prod/release/example-1.0.0-prod-release-unsigned.apk` (本地运行时），要么在 pipeline artifacts 中（使用 GitLab CI 时）。  请相应调整路径（比如对非 `prod` 的 flavours）。"
 
 #. type: Title ####
 #: _docs/Reproducible_Builds.md
 #, no-wrap
 msgid "Prioritising & fixing differences"
-msgstr ""
+msgstr "划分优先级 & 修复差异"
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
 msgid "[HOWTO: diff & fix APKs for Reproducible Builds](https://gitlab.com/fdroid/wiki/-/wikis/HOWTO:-diff-&-fix-APKs-for-Reproducible-Builds)  on the F-Droid wiki has detailed information on the various kinds of differences commonly encountered, which differences should usually be prioritised when debugging, and how to fix common issues."
-msgstr ""
+msgstr "F-Droid wiki 上的 [HOWTO: diff & fix APKs for Reproducible Builds](https://gitlab.com/fdroid/wiki/-/wikis/HOWTO:-diff-&-fix-APKs-for-Reproducible-Builds) 一文包含了经常遇到的各种差异的详细信息，调试时通常应把哪些差异置于高优先级以及如何修复常见问题。"
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
 msgid "It also shows how to use various specialised tools that may provide better results when `diffoscope` is not sufficient."
-msgstr ""
+msgstr "它还包含了当 `diffoscope` 不够用时，如何使用多种可以提供更好结果的专门工具的信息。"
 
 #. type: Title ###
 #: _docs/Reproducible_Builds.md
@@ -10634,6 +10620,34 @@ msgstr "Android 2.3.3 (API 10) 到 Android 3.2 (API 13): [F-Droid 1.2.2](https:/
 msgid "Android 2.2 (API 8) to Android 2.3.2 (API 9): [F-Droid 0.100.1](https://f-droid.org/archive/org.fdroid.fdroid_100150.apk)"
 msgstr "Android 2.2 (API 8) 到 Android 2.3.2 (API 9): [F-Droid 0.100.1](https://f-droid.org/archive/org.fdroid.fdroid_100150.apk)"
 
+#. type: Bullet: '* '
+#: _docs/Running_on_old_Android_versions.md
+#, fuzzy
+#| msgid "Android 5.1 (API 22): [F-Droid 1.15.6](https://f-droid.org/archive/org.fdroid.fdroid_1015056.apk)"
+msgid "Android 2.1 (API 7): [F-Droid 0.91](https://f-droid.org/archive/org.fdroid.fdroid_910.apk)"
+msgstr "Android 5.1 (API 22) ：[F-Droid 1.15.6](https://f-droid.org/archive/org.fdroid.fdroid_1015056.apk)"
+
+#. type: Bullet: '* '
+#: _docs/Running_on_old_Android_versions.md
+#, fuzzy
+#| msgid "Android 2.2 (API 8) to Android 2.3.2 (API 9): [F-Droid 0.100.1](https://f-droid.org/archive/org.fdroid.fdroid_100150.apk)"
+msgid "Android 2.0 (API 5) to Android 2.0.1 (API 6): [F-Droid 0.69](https://f-droid.org/archive/org.fdroid.fdroid_690.apk)"
+msgstr "Android 2.2 (API 8) 到 Android 2.3.2 (API 9): [F-Droid 0.100.1](https://f-droid.org/archive/org.fdroid.fdroid_100150.apk)"
+
+#. type: Bullet: '* '
+#: _docs/Running_on_old_Android_versions.md
+#, fuzzy
+#| msgid "Android 5.1 (API 22): [F-Droid 1.15.6](https://f-droid.org/archive/org.fdroid.fdroid_1015056.apk)"
+msgid "Android 1.6 (API 4): [F-Droid 0.56](https://f-droid.org/archive/org.fdroid.fdroid_560.apk)"
+msgstr "Android 5.1 (API 22) ：[F-Droid 1.15.6](https://f-droid.org/archive/org.fdroid.fdroid_1015056.apk)"
+
+#. type: Bullet: '* '
+#: _docs/Running_on_old_Android_versions.md
+#, fuzzy
+#| msgid "Android 5.1 (API 22): [F-Droid 1.15.6](https://f-droid.org/archive/org.fdroid.fdroid_1015056.apk)"
+msgid "Android 1.5 (API 3): [F-Droid 0.45](https://f-droid.org/archive/org.fdroid.fdroid_45.apk)"
+msgstr "Android 5.1 (API 22) ：[F-Droid 1.15.6](https://f-droid.org/archive/org.fdroid.fdroid_1015056.apk)"
+
 #. type: Plain text
 #: _docs/Running_on_old_Android_versions.md
 msgid "Please note that many apps on F-Droid may no longer support such old Android versions. It is recommended to enable the \"F-Droid Archive\" repository in the F-Droid app. Enabling the archive lets F-Droid show you older versions of apps, which may include versions that still work on your device."
@@ -11630,16 +11644,7 @@ msgstr "在容器中："
 
 #. type: Fenced code block (sh)
 #: _docs/Submitting_to_F-Droid_Quick_Start_Guide.md
-#, fuzzy, no-wrap
-#| msgid ""
-#| ". /etc/profile\n"
-#| "export PATH=\"$fdroidserver:$PATH\" PYTHONPATH=\"$fdroidserver\"\n"
-#| "cd /build\n"
-#| "fdroid readmeta\n"
-#| "fdroid rewritemeta com.example\n"
-#| "fdroid checkupdates --allow-dirty com.example\n"
-#| "fdroid lint com.example\n"
-#| "fdroid build com.example\n"
+#, no-wrap
 msgid ""
 ". /etc/profile\n"
 "export PATH=\"$fdroidserver:$PATH\" PYTHONPATH=\"$fdroidserver\"\n"
