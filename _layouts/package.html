@@ -207,7 +207,7 @@ layout: default-package-sidebar
 					{% assign source_code_url = site.fdroid-repo | append: '/' | append: package.srcname %}
 					{{ strings.signed_by_fdroid | replace: fmt_source_code_url, source_code_url }}
 					{% else %}
-					{{ strings.signed_by_developer }}
+					{{ strings.signed_by_developer | replace: fmt_source_code_url, source_code_url }}
 					{% endif %}
 				</p>
 
