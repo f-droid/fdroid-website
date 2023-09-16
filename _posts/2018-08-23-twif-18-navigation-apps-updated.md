@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "TWIF 18: Navigation Apps Updated" 
+title: "TWIF 18: Navigation Apps Updated"
 author: "Blendergeek"
 featured: '<em style="padding: 0.15em 0.5em 0.10em; margin-right: 0.5ex; box-shadow: 0.1em 0.05em 0.1em rgba(0, 0, 0, 0.3); border-radius: 1em; color: black; background: linear-gradient(orange, yellow);">Featured</em>'
 ---

@@ -282,3 +282,26 @@ Vagrantfile:
     - ruby -c Vagrantfile || set_error
     - vagrant validate || set_error;
     - exit $EXITVALUE
+
+
+YAML Front Matter:
+  stage: deploy
+  image: debian:bullseye-slim
+  only:
+    changes:
+      - .gitlab-ci.yml
+      - _docs/*.md
+      - _pages/*.md
+      - _posts/*.md
+  script:
+    - apt-get update
+    - apt-get -qy install --no-install-recommends python3-yaml yamllint
+
+    - EXITVALUE=0
+    - for f in _docs/*.md _pages/*.md _posts/*.md; do
+          echo $f;
+          python3 -c "import re; print(re.match(r'---\n.*?---',  open('$f').read(), re.DOTALL).group())" > ${f}.yml;
+          if ! yamllint ${f}.yml; then cat ${f}.yml; export EXITVALUE=1; fi;
+      done
+    - ./tools/check-yaml-front-matter.py
+    - exit $EXITVALUE
