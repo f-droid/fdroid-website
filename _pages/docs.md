@@ -42,6 +42,7 @@ the main repository.
 * [All our APIs](All_our_APIs) Public API endpoints for data about _f-droid.org_, repos, mirrors, Android, Gradle, and more
 * [Wiki](https://gitlab.com/fdroid/wiki/-/wikis/home) For everything else that people want to document.
 * [Take-Down Requests](Take-Down_Requests) Our policy about requesting the removal of apps or content from _f-droid.org_.
+* [Verifying downloaded F-Droid.apk](Verifying_Downloaded_APK) Verifying downloaded F-Droid.apk.
 
 
 ### Developers
@@ -63,7 +64,7 @@ the main repository.
 * [Building a Signing Server](Building_a_Signing_Server) For higher security, isolate the signing keys from the rest.
 * [Verification Server](Verification_Server) Setting up a server to verify app builds are correct.
 * [Whitelabel Builds](Whitelabel_Builds) custom builds of F-Droid
-* [Privileged Extension](https://gitlab.com/fdroid/privileged-extension/#f-droid-privileged-extension) How to use F-Droid Privileged Extension as a user and rom developer
+* [Privileged Extension](https://gitlab.com/fdroid/privileged-extension/#f-droid-privileged-extension) How to use F-Droid Privileged Extension as a user and ROM developer
 * [Deploying the Website](Deploying_the_Website) How [fdroid-website.git](https://gitlab.com/fdroid/fdroid-website) becomes [f-droid.org](https://f-droid.org)
 * [Maintaining the Forum](Maintaining_the_Forum) Useful information for administrators of [F-Droid's forum](https://forum.f-droid.org)
 * [Running a Mirror](Running_a_Mirror) Instructions for setting up a repository mirror
