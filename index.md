@@ -15,11 +15,11 @@ permalink: /
         <div class="button">
             <a id="fdroid-download" data-donate-link="{{ site.baseurl }}/donate" class="material-button" href="{{ site.fdroid_apk_download_url }}">{{ strings.download_fdroid }}</a>
         </div>
-        <div class="gpg">
-            <a href="{{ site.fdroid_apk_download_url }}.asc">{{ strings.gpg_signature }}</a>
-        </div>
         <div class="qr">
             <img src="{% asset download-fdroid-qr.png %}" />
+        </div>
+        <div class="pgp-verification">
+          <a href="{{ site.fdroid_apk_pgp_verification_instructions_url }}">{{ strings.pgp_verification_instructions }}</a>
         </div>
     </div>
     <div class="screenshot">
