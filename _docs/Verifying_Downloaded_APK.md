@@ -6,10 +6,10 @@ title: Verifying downloaded F-Droid.apk
 
 Some details on this can be found in our documentation at [Release Channels and Signing Keys](../Release_Channels_and_Signing_Keys). To make it easier to understand for non-devs, here are the steps in short:
 
--   download [https://f-droid.org/F-Droid.apk.asc](https://f-droid.org/F-Droid.apk.asc) and [https://f-droid.org/F-Droid.apk](https://f-droid.org/F-Droid.apk)
--   load the public key for `admin@f-droid.org`
--   compare the fingerprint with what the documentation mentioned above states
--   verify the file
+* download [https://f-droid.org/F-Droid.apk.asc](https://f-droid.org/F-Droid.apk.asc) and [https://f-droid.org/F-Droid.apk](https://f-droid.org/F-Droid.apk)
+* load the public key for `admin@f-droid.org`
+* compare the fingerprint with what the documentation mentioned above states
+* verify the file
 
 On Linux, this is what it would look like:
 
