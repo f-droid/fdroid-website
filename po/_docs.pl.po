@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
-"POT-Creation-Date: 2023-09-01 12:50+0200\n"
+"POT-Creation-Date: 2023-09-19 16:17+0200\n"
 "PO-Revision-Date: 2023-07-20 19:08+0000\n"
 "Last-Translator: WaldiS <sto@tutanota.de>\n"
 "Language-Team: Polish <https://hosted.weblate.org/projects/f-droid/website-docs/pl/>\n"
@@ -664,8 +664,38 @@ msgstr "Index repozytorium"
 
 #. type: Plain text
 #: _docs/All_our_APIs.md
-msgid "F-Droid is built around a signed index of all the apps and packages that are available.  This is a JSON file, though more of an index than an API since all the information is distributed via a single file.  * <https://f-droid.org/repo/index-v2.json> * <https://f-droid.org/repo/index-v1.json> * <https://f-droid.org/archive/index-v2.json> * <https://f-droid.org/archive/index-v1.json>"
+#, fuzzy
+#| msgid "F-Droid is built around a signed index of all the apps and packages that are available.  This is a JSON file, though more of an index than an API since all the information is distributed via a single file.  * <https://f-droid.org/repo/index-v2.json> * <https://f-droid.org/repo/index-v1.json> * <https://f-droid.org/archive/index-v2.json> * <https://f-droid.org/archive/index-v1.json>"
+msgid "F-Droid is built around a signed index of all the apps and packages that are available.  This is a JSON file, though more of an index than an API since all the information is distributed via a single file."
 msgstr "F-Droid jest zbudowane wokół podpisanego indeksu wszystkich dostępnych aplikacji i pakietów.  Jest to plik JSON, choć jest to bardziej indeks niż API, ponieważ wszystkie informacje znajdują się w jednym pliku.  * <https://f-droid.org/repo/index-v2.json> * <https://f-droid.org/repo/index-v1.json> * <https://f-droid.org/archive/index-v2.json> * <https://f-droid.org/archive/index-v1.json>"
+
+#. type: Bullet: '* '
+#: _docs/All_our_APIs.md
+#, fuzzy
+#| msgid "<https://f-droid.org/repo/index-v2.json.asc>"
+msgid "<https://f-droid.org/repo/index-v2.json>"
+msgstr "<https://f-droid.org/repo/index-v2.json>"
+
+#. type: Bullet: '* '
+#: _docs/All_our_APIs.md
+#, fuzzy
+#| msgid "<https://f-droid.org/repo/index-v1.json.asc>"
+msgid "<https://f-droid.org/repo/index-v1.json>"
+msgstr "<https://f-droid.org/repo/index-v1.json>"
+
+#. type: Bullet: '* '
+#: _docs/All_our_APIs.md
+#, fuzzy
+#| msgid "<https://f-droid.org/archive/index-v2.json.asc>"
+msgid "<https://f-droid.org/archive/index-v2.json>"
+msgstr "<https://f-droid.org/archive/index-v2.json>"
+
+#. type: Bullet: '* '
+#: _docs/All_our_APIs.md
+#, fuzzy
+#| msgid "<https://f-droid.org/archive/index-v1.json.asc>"
+msgid "<https://f-droid.org/archive/index-v1.json>"
+msgstr "<https://f-droid.org/archive/index-v1.json>"
 
 #. type: Plain text
 #: _docs/All_our_APIs.md
@@ -12179,6 +12209,118 @@ msgstr "Następnie możesz znaleźć więcej informacji na temat procesu, czytaj
 #: _docs/Verification_Server.md
 msgid "<https://gitlab.com/fdroid/fdroidserver/blob/master/jenkins-build-makebuildserver>"
 msgstr "<https://gitlab.com/fdroid/fdroidserver/blob/master/jenkins-build-makebuildserver>"
+
+#. type: Yaml Front Matter Hash Value: title
+#: _docs/Verifying_Downloaded_APK.md
+#, no-wrap
+msgid "Verifying downloaded F-Droid.apk"
+msgstr ""
+
+#. type: Plain text
+#: _docs/Verifying_Downloaded_APK.md
+msgid "Some details on this can be found in our documentation at [Release Channels and Signing Keys](../Release_Channels_and_Signing_Keys). To make it easier to understand for non-devs, here are the steps in short:"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/Verifying_Downloaded_APK.md
+msgid "download [https://f-droid.org/F-Droid.apk.asc](https://f-droid.org/F-Droid.apk.asc) and [https://f-droid.org/F-Droid.apk](https://f-droid.org/F-Droid.apk)"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/Verifying_Downloaded_APK.md
+msgid "load the public key for `admin@f-droid.org`"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/Verifying_Downloaded_APK.md
+msgid "compare the fingerprint with what the documentation mentioned above states"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/Verifying_Downloaded_APK.md
+#, fuzzy
+#| msgid "Overview of the setup"
+msgid "verify the file"
+msgstr "Omówienie konfiguracji"
+
+#. type: Plain text
+#: _docs/Verifying_Downloaded_APK.md
+msgid "On Linux, this is what it would look like:"
+msgstr ""
+
+#. type: Fenced code block
+#: _docs/Verifying_Downloaded_APK.md
+#, no-wrap
+msgid ""
+"# download the files\n"
+"wget -q https://f-droid.org/F-Droid.apk.asc\n"
+"wget -q https://f-droid.org/F-Droid.apk\n"
+"# load the public key\n"
+"gpg --keyserver keyserver.ubuntu.com --recv-key 37D2C98789D8311948394E3E41E7044E1DBA2E89\n"
+"# verify the file\n"
+"gpg --verify F-Droid.apk.asc F-Droid.apk\n"
+msgstr ""
+
+#. type: Plain text
+#: _docs/Verifying_Downloaded_APK.md
+msgid "The expected output of the last command should look like:"
+msgstr ""
+
+#. type: Fenced code block
+#: _docs/Verifying_Downloaded_APK.md
+#, no-wrap
+msgid ""
+"gpg: Signature made Mon 09 Aug 2021 11:17:55 PM CEST\n"
+"gpg:                using RSA key 802A9799016112346E1FEFF47A029E54DD5DCE7A\n"
+"gpg: Good signature from \"F-Droid <admin@f-droid.org>\" [unknown]\n"
+"gpg: WARNING: This key is not certified with a trusted signature!\n"
+"gpg:          There is no indication that the signature belongs to the owner.\n"
+"Primary key fingerprint: 37D2 C987 89D8 3119 4839  4E3E 41E7 044E 1DBA 2E89\n"
+"     Subkey fingerprint: 802A 9799 0161 1234 6E1F  EFF4 7A02 9E54 DD5D CE7A\n"
+msgstr ""
+
+#. type: Plain text
+#: _docs/Verifying_Downloaded_APK.md
+msgid "The warning about the key not being certified with a trusted signature can be ignored. The important part is the indication of a good signature and that it has the same fingerprint (`37D2 C987 89D8 3119 4839 4E3E 41E7 044E 1DBA 2E89`) that was used to download the key. If the warning bothers you: having verified the signature, you can express your trust in the key and sign it locally (i.e. just for you):"
+msgstr ""
+
+#. type: Fenced code block
+#: _docs/Verifying_Downloaded_APK.md
+#, no-wrap
+msgid ""
+"gpg --edit-key 37D2C98789D8311948394E3E41E7044E1DBA2E89\n"
+"gpg> trust\n"
+"3\n"
+"gpg> lsign\n"
+"gpg> save\n"
+msgstr ""
+
+#. type: Plain text
+#: _docs/Verifying_Downloaded_APK.md
+msgid "(The value `3` passed to the `trust` command above means trusting the key marginally.)"
+msgstr ""
+
+#. type: Plain text
+#: _docs/Verifying_Downloaded_APK.md
+msgid "Run the `gpg --verify` command again and the warning will be gone:"
+msgstr ""
+
+#. type: Fenced code block
+#: _docs/Verifying_Downloaded_APK.md
+#, no-wrap
+msgid ""
+"gpg: Signature made Mon 09 Aug 2021 11:17:55 PM CEST\n"
+"gpg:                using RSA key 802A9799016112346E1FEFF47A029E54DD5DCE7A\n"
+"gpg: checking the trustdb\n"
+"gpg: marginals needed: 3  completes needed: 1  trust model: pgp\n"
+"gpg: depth: 0  valid:   3  signed:  19  trust: 0-, 0q, 0n, 0m, 0f, 3u\n"
+"gpg: depth: 1  valid:  19  signed:   1  trust: 1-, 0q, 0n, 14m, 4f, 0u\n"
+"gpg: depth: 2  valid:   1  signed:   0  trust: 0-, 0q, 0n, 0m, 1f, 0u\n"
+"gpg: next trustdb check due at 2021-11-05\n"
+"gpg: Good signature from \"F-Droid <admin@f-droid.org>\" [full]\n"
+"Primary key fingerprint: 37D2 C987 89D8 3119 4839  4E3E 41E7 044E 1DBA 2E89\n"
+"     Subkey fingerprint: 802A 9799 0161 1234 6E1F  EFF4 7A02 9E54 DD5D CE7A\n"
+msgstr ""
 
 #. type: Yaml Front Matter Hash Value: title
 #: _docs/Whitelabel_Builds.md
