@@ -35,6 +35,4 @@ Primary key fingerprint: 37D2 C987 89D8 3119 4839  4E3E 41E7 044E 1DBA 2E89
      Subkey fingerprint: 802A 9799 0161 1234 6E1F  EFF4 7A02 9E54 DD5D CE7A
 ```
 
-The warning about the key not being certified with a trusted signature can be ignored. The important part is the indication of a good signature and that it has the same fingerprint (`37D2 C987 89D8 3119 4839 4E3E 41E7 044E 1DBA 2E89`) that was used to download the key. 
-
-The dates will vary as the client .APK is updated, it's not an issue if they are newer, just make sure the keys and fingerprints match.
+The date will vary as the client .APK is updated, it's not an issue if it is newer. The warning about the key not being certified with a trusted signature can be ignored. The important part is the indication of a good signature and that it has the same fingerprint (`37D2 C987 89D8 3119 4839 4E3E 41E7 044E 1DBA 2E89`) that was used to download the key. 
