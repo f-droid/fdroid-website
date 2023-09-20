@@ -47,6 +47,8 @@ gpg> save
 
 (The value `3` passed to the `trust` command above means trusting the key marginally.)
 
+(`lsign` might fail if a key was never generated, you can setup one with `gpg --generate-key` and give it at least a name)
+
 Run the `gpg --verify` command again and the warning will be gone:
 
 ```
@@ -59,7 +61,7 @@ gpg: depth: 1  valid:  19  signed:   1  trust: 1-, 0q, 0n, 14m, 4f, 0u
 gpg: depth: 2  valid:   1  signed:   0  trust: 0-, 0q, 0n, 0m, 1f, 0u
 gpg: next trustdb check due at 2021-11-05
 gpg: Good signature from "F-Droid <admin@f-droid.org>" [full]
-Primary key fingerprint: 37D2 C987 89D8 3119 4839  4E3E 41E7 044E 1DBA 2E89
-     Subkey fingerprint: 802A 9799 0161 1234 6E1F  EFF4 7A02 9E54 DD5D CE7A
 ```
+(The dates will vary as the client .APK is updated, it's not an issue if they are newer, just make sure the keys and fingerprints match)
 
+(While the `trust` command output said `marginally` the verify command will count it as trusted `full`)
