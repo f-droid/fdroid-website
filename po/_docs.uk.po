@@ -15,8 +15,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
 "POT-Creation-Date: 2023-09-19 16:17+0200\n"
-"PO-Revision-Date: 2023-09-19 15:24+0000\n"
-"Last-Translator: Hans-Christoph Steiner <hans@guardianproject.info>\n"
+"PO-Revision-Date: 2023-09-20 08:40+0000\n"
+"Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/f-droid/website-docs/uk/>\n"
 "Language: uk\n"
 "MIME-Version: 1.0\n"
@@ -12147,39 +12147,37 @@ msgstr "<https://gitlab.com/fdroid/fdroidserver/blob/master/jenkins-build-makebu
 #: _docs/Verifying_Downloaded_APK.md
 #, no-wrap
 msgid "Verifying downloaded F-Droid.apk"
-msgstr ""
+msgstr "Перевірка завантажених F-Droid.apk"
 
 #. type: Plain text
 #: _docs/Verifying_Downloaded_APK.md
 msgid "Some details on this can be found in our documentation at [Release Channels and Signing Keys](../Release_Channels_and_Signing_Keys). To make it easier to understand for non-devs, here are the steps in short:"
-msgstr ""
+msgstr "Докладніше про це можна прочитати у нашій документації про [Канали випуску та ключі підпису](../Release_Channels_and_Signing_Keys). Щоб полегшити розуміння для не розробників, ми коротко опишемо ці кроки:"
 
 #. type: Bullet: '* '
 #: _docs/Verifying_Downloaded_APK.md
 msgid "download [https://f-droid.org/F-Droid.apk.asc](https://f-droid.org/F-Droid.apk.asc) and [https://f-droid.org/F-Droid.apk](https://f-droid.org/F-Droid.apk)"
-msgstr ""
+msgstr "завантажте [https://f-droid.org/F-Droid.apk.asc](https://f-droid.org/F-Droid.apk.asc) і [https://f-droid.org/F-Droid.apk](https://f-droid.org/F-Droid.apk)"
 
 #. type: Bullet: '* '
 #: _docs/Verifying_Downloaded_APK.md
 msgid "load the public key for `admin@f-droid.org`"
-msgstr ""
+msgstr "завантажте відкритий ключ `admin@f-droid.org`"
 
 #. type: Bullet: '* '
 #: _docs/Verifying_Downloaded_APK.md
 msgid "compare the fingerprint with what the documentation mentioned above states"
-msgstr ""
+msgstr "порівняйте цифровий відбиток із зазначеним в документації вище"
 
 #. type: Bullet: '* '
 #: _docs/Verifying_Downloaded_APK.md
-#, fuzzy
-#| msgid "Overview of the setup"
 msgid "verify the file"
-msgstr "Огляд налаштування"
+msgstr "перевірте файл"
 
 #. type: Plain text
 #: _docs/Verifying_Downloaded_APK.md
 msgid "On Linux, this is what it would look like:"
-msgstr ""
+msgstr "На Linux це матиме такий вигляд:"
 
 #. type: Fenced code block
 #: _docs/Verifying_Downloaded_APK.md
@@ -12193,11 +12191,18 @@ msgid ""
 "# verify the file\n"
 "gpg --verify F-Droid.apk.asc F-Droid.apk\n"
 msgstr ""
+"# download the files\n"
+"wget -q https://f-droid.org/F-Droid.apk.asc\n"
+"wget -q https://f-droid.org/F-Droid.apk\n"
+"# load the public key\n"
+"gpg --keyserver keyserver.ubuntu.com --recv-key 37D2C98789D8311948394E3E41E7044E1DBA2E89\n"
+"# verify the file\n"
+"gpg --verify F-Droid.apk.asc F-Droid.apk\n"
 
 #. type: Plain text
 #: _docs/Verifying_Downloaded_APK.md
 msgid "The expected output of the last command should look like:"
-msgstr ""
+msgstr "Очікуваний вивід останньої команди повинен бути схожим на:"
 
 #. type: Fenced code block
 #: _docs/Verifying_Downloaded_APK.md
@@ -12211,11 +12216,18 @@ msgid ""
 "Primary key fingerprint: 37D2 C987 89D8 3119 4839  4E3E 41E7 044E 1DBA 2E89\n"
 "     Subkey fingerprint: 802A 9799 0161 1234 6E1F  EFF4 7A02 9E54 DD5D CE7A\n"
 msgstr ""
+"gpg: Signature made Mon 09 Aug 2021 11:17:55 PM CEST\n"
+"gpg:                using RSA key 802A9799016112346E1FEFF47A029E54DD5DCE7A\n"
+"gpg: Good signature from \"F-Droid <admin@f-droid.org>\" [unknown]\n"
+"gpg: WARNING: This key is not certified with a trusted signature!\n"
+"gpg:          There is no indication that the signature belongs to the owner.\n"
+"Primary key fingerprint: 37D2 C987 89D8 3119 4839  4E3E 41E7 044E 1DBA 2E89\n"
+"     Subkey fingerprint: 802A 9799 0161 1234 6E1F  EFF4 7A02 9E54 DD5D CE7A\n"
 
 #. type: Plain text
 #: _docs/Verifying_Downloaded_APK.md
 msgid "The warning about the key not being certified with a trusted signature can be ignored. The important part is the indication of a good signature and that it has the same fingerprint (`37D2 C987 89D8 3119 4839 4E3E 41E7 044E 1DBA 2E89`) that was used to download the key. If the warning bothers you: having verified the signature, you can express your trust in the key and sign it locally (i.e. just for you):"
-msgstr ""
+msgstr "Попередження про те, що ключ не сертифікований довіреним підписом, можна знехтувати. Важлива частина — вказівка на хороший підпис і на те, що він має той самий відбиток (`37D2 C987 89D8 3119 4839 4E3E 41E7 044E 1DBA 2E89`), який був використаний для завантаження ключа. Якщо вас турбує попередження: перевіривши підпис, ви можете висловити свою довіру до ключа і підписати його локально (тобто тільки для себе):"
 
 #. type: Fenced code block
 #: _docs/Verifying_Downloaded_APK.md
@@ -12231,12 +12243,12 @@ msgstr ""
 #. type: Plain text
 #: _docs/Verifying_Downloaded_APK.md
 msgid "(The value `3` passed to the `trust` command above means trusting the key marginally.)"
-msgstr ""
+msgstr "(Значення `3`, передане в команду `trust` вище, означає мінімальну довіру до ключа)."
 
 #. type: Plain text
 #: _docs/Verifying_Downloaded_APK.md
 msgid "Run the `gpg --verify` command again and the warning will be gone:"
-msgstr ""
+msgstr "Запустіть команду `gpg --verify` ще раз, і попередження зникне:"
 
 #. type: Fenced code block
 #: _docs/Verifying_Downloaded_APK.md
@@ -12254,6 +12266,17 @@ msgid ""
 "Primary key fingerprint: 37D2 C987 89D8 3119 4839  4E3E 41E7 044E 1DBA 2E89\n"
 "     Subkey fingerprint: 802A 9799 0161 1234 6E1F  EFF4 7A02 9E54 DD5D CE7A\n"
 msgstr ""
+"gpg: Signature made Mon 09 Aug 2021 11:17:55 PM CEST\n"
+"gpg:                using RSA key 802A9799016112346E1FEFF47A029E54DD5DCE7A\n"
+"gpg: checking the trustdb\n"
+"gpg: marginals needed: 3  completes needed: 1  trust model: pgp\n"
+"gpg: depth: 0  valid:   3  signed:  19  trust: 0-, 0q, 0n, 0m, 0f, 3u\n"
+"gpg: depth: 1  valid:  19  signed:   1  trust: 1-, 0q, 0n, 14m, 4f, 0u\n"
+"gpg: depth: 2  valid:   1  signed:   0  trust: 0-, 0q, 0n, 0m, 1f, 0u\n"
+"gpg: next trustdb check due at 2021-11-05\n"
+"gpg: Good signature from \"F-Droid <admin@f-droid.org>\" [full]\n"
+"Primary key fingerprint: 37D2 C987 89D8 3119 4839  4E3E 41E7 044E 1DBA 2E89\n"
+"     Subkey fingerprint: 802A 9799 0161 1234 6E1F  EFF4 7A02 9E54 DD5D CE7A\n"
 
 #. type: Yaml Front Matter Hash Value: title
 #: _docs/Whitelabel_Builds.md
