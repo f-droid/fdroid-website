@@ -14,17 +14,17 @@ Donations for F-Droid development are handled via our [OpenCollective](https://o
 You can discuss F-Droid or get help on the
 [forum](https://forum.f-droid.org) and F-Droid's user chat.
 
-To chat with others about F-Droid, either join via IRC in the
+To chat with others in real time about F-Droid, either join via IRC in the
 [#fdroid channel](https://webchat.oftc.net/?randomnick=1&channels=fdroid&prompt=1) on
 OFTC or join [#fdroid:f-droid.org](https://matrix.to/#/#fdroid:f-droid.org) on Matrix.
-The discussions are logged on
-[matrix.f-droid.org](https://matrix.f-droid.org/alias/%23fdroid:f-droid.org).
 
 An F-Droid matrix space grouping together all F-Droid related rooms exists at [#fdroid-space:f-droid.org](https://matrix.to/#/#fdroid-space:f-droid.org), and can be joined by anyone.
 
 XMPP users can join via a [Biboumi](https://doc.biboumi.louiz.org/) gateway that connects to IRC, easiest way is to ask your XMPP server admin to host one, but if not possible, try one of the public ones. Copy and paste the address in your XMPP clients channel input field `#fdroid%irc.oftc.net@irc.jabberfr.org` _(hosted by [JabberFR](https://jabberfr.org/))_ or `#fdroid%irc.oftc.net@irc.hmm.st` _(hosted by [hmm.st](https://hmm.st/))_
 
 There is also a Matrix bridge to Telegram, to join it click [this link](https://matrix.f-droid.org/fdroid/telegram/).
+
+Translators can coordinate via the special IRC channel [#fdroid-translators](https://webchat.oftc.net/?randomnick=1&channels=fdroid-translators&prompt=1) on OFTC, [#fdroid-translators:f-droid.org](https://matrix.to/#/#fdroid-translators:f-droid.org) room on Matrix, `#fdroid-translators%irc.oftc.net@irc.jabberfr.org` / `#fdroid-translators%irc.oftc.net@irc.hmm.st` bridges for XMPP or by clicking [this link](https://t.me/+CLSY2Pp7p1ozZTM0) for Telegram
 
 F-Droid contributors also run a social-media account on the Fediverse. You can
 interact with us or follow us on [@fdroidorg@floss.social](https://floss.social/@fdroidorg).
