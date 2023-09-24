@@ -28,10 +28,10 @@ No submissions done this week. :(
 
 #### Removed Apps
 ##### 4 apps were removed
-Aurora Droid
-COVID Certificate
-COVID Certificate Check
-LibreCHovid
+* Aurora Droid
+* COVID Certificate
+* COVID Certificate Check
+* LibreCHovid
 
 
 #### Newly Added Apps
