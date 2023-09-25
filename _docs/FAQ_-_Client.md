@@ -79,7 +79,8 @@ Allows the nearby service to stay running as long as the user leaves it running:
 
 Find and use compatible repositories and mirrors on external storage:
 
-</dt><dd><tt><a href="https://developer.android.com/reference/android/Manifest.permission.html#READ_EXTERNAL_STORAGE" target="_blank">android.permission.READ_EXTERNAL_STORAGE</a></tt></dd><dt>
+</dt><dd><tt><a href="https://developer.android.com/reference/android/Manifest.permission.html#READ_EXTERNAL_STORAGE" target="_blank">android.permission.READ_EXTERNAL_STORAGE</a></tt><br/>
+<tt><a href="https://developer.android.com/reference/android/Manifest.permission.html#MANAGE_EXTERNAL_STORAGE" target="_blank">android.permission.MANAGE_EXTERNAL_STORAGE</a></tt></dd><dt>
 
 Detect when a USB thumb drive has been inserted, so it can be scanned to find compatible repositories and mirrors:
 
