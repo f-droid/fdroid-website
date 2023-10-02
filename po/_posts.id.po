@@ -9,7 +9,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2023-09-29 20:01+0200\n"
+"POT-Creation-Date: 2023-10-02 09:59+0200\n"
 "PO-Revision-Date: 2022-12-15 13:16+0000\n"
 "Last-Translator: Linerly <linerly@protonmail.com>\n"
 "Language-Team: Indonesian <https://hosted.weblate.org/projects/f-droid/website-posts/id/>\n"
@@ -19671,6 +19671,136 @@ msgstr ""
 #. type: Bullet: '* '
 #: _posts/2023-09-26-calyx-client-maintainer-sponsorship.md
 msgid "No extra privileges required!"
+msgstr ""
+
+#. type: Yaml Front Matter Hash Value: title
+#: _posts/2023-10-02-infrastructure-as-code-migration.md
+#, no-wrap
+msgid "Infrastructure-as-code migration"
+msgstr ""
+
+#. type: Plain text
+#: _posts/2023-10-02-infrastructure-as-code-migration.md
+#, no-wrap
+msgid "We just completed migrating one more key piece of our infrastructure to a completely automated setup: the \"_originserver_\".   The _originserver_ is the holder of all of the public files for the website and the f-droid.org repository.  It is also responsible for pushing out the updates to all of the primary mirrors.  So it is safe to say that the _originserver_ is central to our operations.  Ciaran Gultnieks, the founder of the F-Droid project, has been quietly and dutifully maintaining the _originserver_ since he first set it up more than a decade ago.  The F-Droid users and community owe him a debt of gratitude for so many years of faithful service, keeping things going through thick and thin.\n"
+msgstr ""
+
+#. type: Plain text
+#: _posts/2023-10-02-infrastructure-as-code-migration.md
+msgid "The main reason why we undertook this migration is to improve our \"[bus factor](https://en.wikipedia.org/wiki/Bus_factor)\".  F-Droid relies on contributors to keep it running, but no single person should be solely responsible for any key piece of infrastructure.  We are still a small team, so we focused on migrating this central server to be \"[Infrastructure as code](https://en.wikipedia.org/wiki/Infrastructure_as_code)\".  Specifically, the whole central web and mirroring setup is now maintained in Ansible projects in the F-Droid GitLab group.  Maintaining servers as code has a number of key advantages:"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _posts/2023-10-02-infrastructure-as-code-migration.md
+msgid "The servers can be easily recreated by anyone who can run Ansible."
+msgstr ""
+
+#. type: Bullet: '* '
+#: _posts/2023-10-02-infrastructure-as-code-migration.md
+msgid "Automated server config makes it feasible to create highly detailed, custom security sandboxes."
+msgstr ""
+
+#. type: Bullet: '* '
+#: _posts/2023-10-02-infrastructure-as-code-migration.md
+msgid "Temporary instances making auditing easy, anyone with access to the code can test."
+msgstr ""
+
+#. type: Plain text
+#: _posts/2023-10-02-infrastructure-as-code-migration.md
+msgid "This provides a huge \"bus factor\" improvement.  Now anyone with access to the code can recreate a copy of our infrastructure.  The F-Droid board controls the domain names, so in case of emergency, the board can direct the domain name to point to new infrastructure.  Since F-Droid is all about free software, there are very few things that need to be kept secret, basically, just the cryptographic keys for signing, encryption, and access control.  These keys can be regenerated and set up where they are needed (e.g. mirrors).  The f-droid.org data is replicated across many mirrors around the world.  And the f-droid.org website and repository comes from pulling in many public source code repositories to build the apps."
+msgstr ""
+
+#. type: Title ##
+#: _posts/2023-10-02-infrastructure-as-code-migration.md
+#, no-wrap
+msgid "Last one: signing server"
+msgstr ""
+
+#. type: Plain text
+#: _posts/2023-10-02-infrastructure-as-code-migration.md
+msgid "There is one last production server that is not maintained as Ansible code: the signing server.  We do intend to eventually manage that machine as code as well.  It is a quite simple setup, so converting it to Ansible is currently not high priority.  It requires a bare bones Debian install with _fdroidserver_ installed from the Git repository.  We have pushed the rest of the required tools, like _apksigner_, to Debian, where they are maintained and available to all.  If you are looking for a fun project to contribute, we still need an Ansible project for creating a standalone [signing servers]({{ site.baseurl }}/docs/Building_a_Signing_Server/). Once we have that, we can iterate on it to build a very hardened setup."
+msgstr ""
+
+#. type: Title ##
+#: _posts/2023-10-02-infrastructure-as-code-migration.md
+#, no-wrap
+msgid "Infrastructure as code"
+msgstr ""
+
+#. type: Plain text
+#: _posts/2023-10-02-infrastructure-as-code-migration.md
+msgid "Here are the key servers that are now managed as code. Not all of these are public yet, we want to ensure they are carefully reviewed and audited before publishing them (let us know if you want to contribute auditing or pentesting, and we can set something up)."
+msgstr ""
+
+#. type: Bullet: '* '
+#: _posts/2023-10-02-infrastructure-as-code-migration.md
+#, fuzzy
+#| msgid "_fdroidserver_ [v2.0](https://gitlab.com/fdroid/fdroidserver/-/milestones/10)a2"
+msgid "_buildserver_: <https://gitlab.com/fdroid/fdroid-bootstrap-buildserver/>"
+msgstr "_fdroidserver_ [v2.0](https://gitlab.com/fdroid/fdroidserver/-/milestones/10)a2"
+
+#. type: Bullet: '* '
+#: _posts/2023-10-02-infrastructure-as-code-migration.md
+#, fuzzy
+#| msgid "_fdroidserver_ [v2.0](https://gitlab.com/fdroid/fdroidserver/-/milestones/10)a2"
+msgid "_f-droid.org deployserver_: <https://gitlab.com/fdroid/fdroid-deployserver/>"
+msgstr "_fdroidserver_ [v2.0](https://gitlab.com/fdroid/fdroidserver/-/milestones/10)a2"
+
+#. type: Bullet: '* '
+#: _posts/2023-10-02-infrastructure-as-code-migration.md
+#, fuzzy
+#| msgid "_fdroidserver_ [v2.0](https://gitlab.com/fdroid/fdroidserver/-/milestones/10)a2"
+msgid "_f-droid.org_: <https://gitlab.com/fdroid/fdroid-http-fronters/>"
+msgstr "_fdroidserver_ [v2.0](https://gitlab.com/fdroid/fdroidserver/-/milestones/10)a2"
+
+#. type: Bullet: '* '
+#: _posts/2023-10-02-infrastructure-as-code-migration.md
+#, fuzzy
+#| msgid "_fdroidserver_ [v2.0](https://gitlab.com/fdroid/fdroidserver/-/milestones/10)a2"
+msgid "_fdroid.link_: <https://gitlab.com/fdroid/fdroid-http-fronters/>"
+msgstr "_fdroidserver_ [v2.0](https://gitlab.com/fdroid/fdroidserver/-/milestones/10)a2"
+
+#. type: Bullet: '* '
+#: _posts/2023-10-02-infrastructure-as-code-migration.md
+#, fuzzy
+#| msgid "_fdroidserver_ [v2.0](https://gitlab.com/fdroid/fdroidserver/-/milestones/10)a2"
+msgid "_fdroidstatus.org_: <https://gitlab.com/fdroid/fdroid-statuspage-deployment/>"
+msgstr "_fdroidserver_ [v2.0](https://gitlab.com/fdroid/fdroidserver/-/milestones/10)a2"
+
+#. type: Bullet: '* '
+#: _posts/2023-10-02-infrastructure-as-code-migration.md
+msgid "_forum.f-droid.org_: <{{ site.baseurl }}/docs/Maintaining_the_Forum/>"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _posts/2023-10-02-infrastructure-as-code-migration.md
+msgid "IPFS pinning server: <https://gitlab.com/fdroid/ipfs-pinning-server>"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _posts/2023-10-02-infrastructure-as-code-migration.md
+#, fuzzy
+#| msgid "<https://gitlab.com/fdroid/wiki/-/wikis/Running-emulators-in-GitLab-CI>"
+msgid "_matrix.f-droid.org_: <https://gitlab.com/fdroid/wiki/-/wikis/Internal/Servers#matrixf-droidorg>"
+msgstr "<https://gitlab.com/fdroid/wiki/-/wikis/Running-emulators-in-GitLab-CI>"
+
+#. type: Bullet: '* '
+#: _posts/2023-10-02-infrastructure-as-code-migration.md
+#, fuzzy
+#| msgid "_fdroidserver_ [v2.0](https://gitlab.com/fdroid/fdroidserver/-/milestones/10)a2"
+msgid "_monitor.f-droid.org_: <https://gitlab.com/fdroid/fdroid-monitor-deployment/>"
+msgstr "_fdroidserver_ [v2.0](https://gitlab.com/fdroid/fdroidserver/-/milestones/10)a2"
+
+#. type: Bullet: '* '
+#: _posts/2023-10-02-infrastructure-as-code-migration.md
+#, fuzzy
+#| msgid "_fdroidserver_ [v2.0](https://gitlab.com/fdroid/fdroidserver/-/milestones/10)a2"
+msgid "_search.f-droid.org_: <https://gitlab.com/fdroid/fdroid-website-search-deployment/>"
+msgstr "_fdroidserver_ [v2.0](https://gitlab.com/fdroid/fdroidserver/-/milestones/10)a2"
+
+#. type: Plain text
+#: _posts/2023-10-02-infrastructure-as-code-migration.md
+msgid "The F-Droid community works to serve its users as openly and transparently as possible.  This is a big step to making F-Droid ever more accountable to all of you who trust us to provide the apps you need."
 msgstr ""
 
 #~ msgid "This also means that there will be breakage, so this alpha will probably be more unstable than previous alphas have been over the years.  We always appreciate testing, feedback, issues, and crash reports.  But if your F-Droid is customized in a way you would rather not reset, then you might want to sit this alpha testing round out.  If you have a spare device, test device, or work with Android emulators, we also are happy to have testing on our [nightly builds](https://gitlab.com/fdroid/fdroidclient-nightly).  Be aware: the nightly builds come from GitLab CI/CD, so not as secure a release process as the official releases.  It is possible to have both official and nightly installed at the same time.  The easiest way to get started with the nightly builds is to add the [repo](https://gitlab.com/fdroid/fdroidclient-nightly/-/raw/master/fdroid/repo) to an existing F-Droid install, then search for \"Nightly\", then choose \"F-Droid Debug\"."
