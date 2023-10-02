@@ -90,4 +90,4 @@ There are build logs, app metadata, source code, APK metadata, and more.
 F-Droid also fits into the larger Android ecosystem, where there are even larger
 pools of data to dive into.  We also have some metrics data that remains mostly
 unexplored, and could reveal new insights in the F-Droid ecosystem.  One good
-way to dive in is to try out [our APIs]({{ site.baseurl}}/docs/All_our_APIs/)
+way to dive in is to try out [our APIs]({{ site.baseurl }}/docs/All_our_APIs/)
