@@ -29,7 +29,7 @@ Here are the key servers that are now managed as code. Not all of these are publ
 * _f-droid.org_: <https://gitlab.com/fdroid/fdroid-http-fronters/>
 * _fdroid.link_: <https://gitlab.com/fdroid/fdroid-http-fronters/>
 * _fdroidstatus.org_: <https://gitlab.com/fdroid/fdroid-statuspage-deployment/>
-* _forum.f-droid.org_: <{{ site.baseurl }}/docs/Maintaining_the_Forum/>
+* _forum.f-droid.org_: <https://f-droid.org/docs/Maintaining_the_Forum/>
 * IPFS pinning server: <https://gitlab.com/fdroid/ipfs-pinning-server>
 * _matrix.f-droid.org_: <https://gitlab.com/fdroid/wiki/-/wikis/Internal/Servers#matrixf-droidorg>
 * _monitor.f-droid.org_: <https://gitlab.com/fdroid/fdroid-monitor-deployment/>
