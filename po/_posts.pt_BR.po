@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
-"POT-Creation-Date: 2023-10-02 09:59+0200\n"
+"POT-Creation-Date: 2023-10-05 10:57+0200\n"
 "PO-Revision-Date: 2023-08-18 10:51+0000\n"
 "Last-Translator: The Cats <philosoph@danwin1210.de>\n"
 "Language-Team: Portuguese (Brazil) <https://hosted.weblate.org/projects/f-droid/website-posts/pt_BR/>\n"
@@ -19808,4 +19808,31 @@ msgstr "_fdroidserver_ [v2.0](https://gitlab.com/fdroid/fdroidserver/-/milestone
 #. type: Plain text
 #: _posts/2023-10-02-infrastructure-as-code-migration.md
 msgid "The F-Droid community works to serve its users as openly and transparently as possible.  This is a big step to making F-Droid ever more accountable to all of you who trust us to provide the apps you need."
+msgstr ""
+
+#. type: Yaml Front Matter Hash Value: title
+#: _posts/2023-10-10-f-droid-maintains-in-debian.md
+#, fuzzy, no-wrap
+#| msgid "F-Droid and the Janus Vulnerability"
+msgid "F-Droid maintains in Debian"
+msgstr "F-Droid e a vulnerabilidade Janus"
+
+#. type: Plain text
+#: _posts/2023-10-10-f-droid-maintains-in-debian.md
+msgid "Free software enables more efficient ways to run large scale software.  F-Droid can serve so many people with minimal resources because of this super power.  Instead of each project handling development and maintenance of the whole thing, free software enables sharing development and maintenance.  This is why F-Droid is built on [Debian](https://www.debian.org).  That only works when projects that use free software also contribute back.  F-Droid works to ensure that as much of our work as possible goes back upstream to the original projects.  For production code, we use the Debian packages.  When we need to use a new library, we make sure it is added to Debian and maintained there.  We use [Debian Backports](https://backports.debian.org/) when we need some new dependencies in the stable release."
+msgstr ""
+
+#. type: Plain text
+#: _posts/2023-10-10-f-droid-maintains-in-debian.md
+msgid "To illustrate this in action, let's take a look at some recent security issues in one of our dependencies: GitPython. [CVE-2022-24439](https://security-tracker.debian.org/tracker/CVE-2022-24439), [CVE-2023-40267](https://security-tracker.debian.org/tracker/CVE-2023-40267) and [CVE-2023-41040](https://security-tracker.debian.org/tracker/CVE-2023-41040) are three vulnerabilities that affect mostly projects that feed untrusted input in and process it with GitPython.  GitPython usages that operate on known inputs are not really affected.  Since our build process accepts Git repositories from thousands of developers, our code processes inputs from thousands of people.  There are layers of validation those inputs that provide protection, but no validation is perfect.  So we need to ensure that each step is safe.  So we patched the Debian packages that we use in production.  We built on Ubuntu LTS's patched [package](https://packages.ubuntu.com/source/lunar/python-git) which was in turn built from the patched [package](https://packages.debian.org/source/buster/python-git) made for [Debian LTS](https://www.debian.org/lts/), as funded by Freexian.  It is a classic example of how free software makes fixing security issues much easier."
+msgstr ""
+
+#. type: Plain text
+#: _posts/2023-10-10-f-droid-maintains-in-debian.md
+msgid "We are of course not alone in this, many other projects are also built on Debian.  Recently, [Tor Project](https://blog.torproject.org/built-with-purpose-puppet-debian/) outlined many key benefits of building off of Debian.  What is clear is that the effort that we put into Debian maintenance more than pays for itself by reducing work and stress on our core contributors, especially those who are running servers. [Software supply-chain attacks](https://en.wikipedia.org/wiki/Supply_chain_attack) have become common across a range of packaging systems.  A well configured Debian server has the strongest protection that exists for any server software distribution system."
+msgstr ""
+
+#. type: Plain text
+#: _posts/2023-10-10-f-droid-maintains-in-debian.md
+msgid "There is a similar trend in software that ships all its own dependencies, like Android apps.  There are a wide variety of bots that check that projects are including the latest versions of libraries.  This is common in Android apps, since they have to include all of their own dependencies.  Android provides only the core libraries.  When we base our systems on Debian, then we only need to update the dependencies in Debian, and all the of the projects automatically receive those updates.  When combined with Debian's [`unattended-upgrades`](https://wiki.debian.org/UnattendedUpgrades), this approach provides a very low effort way to keep software updated.  Normally, automatic updates without human review are a dangerous thing to do in software.  Silently installing new software provides a channel that can be exploited by malicious actors.  Debian's free software requirement, stable releases, reproducible builds, and strong package distribution channels make it possible to enable unattended upgrades in a trustworthy way."
 msgstr ""
