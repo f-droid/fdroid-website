@@ -1043,7 +1043,6 @@ Valid modes are:
     the version code again, rather than retrieving a different one.
 
 
-
 ### _VercodeOperation_<a name="VercodeOperation"></a>
 
 Operation to be applied to the vercode obtained by the defined
@@ -1052,10 +1051,19 @@ the whole string will be passed to python's `eval` function.
 
 Especially useful with apps that we want to compile for different ABIs,
 but whose vercodes don't always have trailing zeros. For example, with
-_VercodeOperation_ set at something like `%c*10 + 4`, we will be able
-to track updates and build up to four different versions of every
-upstream version.
+multiple _VercodeOperation_ we can track updates and build up to four
+different versions of every upstream version, say for 4 architectures:
 
+```
+VercodeOperation:
+  - 100 * %c + 1
+  - 100 * %c + 2
+  - 100 * %c + 3
+  - 100 * %c + 4
+```
+
+So 4 build blocks are copied from above and added as an update with their
+vercode calculated by doing each math operation.
 
 ### _UpdateCheckIgnore_<a name="UpdateCheckIgnore"></a>
 
@@ -1152,6 +1160,9 @@ Valid modes are:
     Continuing the first example above, you would specify that as
     `Version +-fdroid %v` - `-fdroid` is the suffix.
 
+
+For apps with a list of [_VercodeOperation_](#VercodeOperation) the number of builds
+is equal to the number of items in the list.
 
 ### _CurrentVersion_<a name="CurrentVersion"></a>
 
