@@ -19,7 +19,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
-"POT-Creation-Date: 2023-09-25 12:46+0200\n"
+"POT-Creation-Date: 2023-10-06 08:55+0200\n"
 "PO-Revision-Date: 2023-09-23 14:01+0000\n"
 "Last-Translator: \"C. Rüdinger\" <Mail-an-CR@web.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/f-droid/website-docs/de/>\n"
@@ -8140,7 +8140,9 @@ msgstr "Allgemeine Informationen"
 
 #. type: Plain text
 #: _docs/Maintaining_the_Forum.md
-msgid "Here is some general, non-sensitive information about our instance.  When setting up the forum, we followed [Docker's](https://docs.docker.com/engine/installation/linux/docker-ce/debian)  and [Dicourse's](https://github.com/discourse/discourse/blob/master/docs/INSTALL-cloud.md)  official installation guides.  Posts from the old forum were not imported due to time restrictions of the voluntary administrators."
+#, fuzzy
+#| msgid "Here is some general, non-sensitive information about our instance.  When setting up the forum, we followed [Docker's](https://docs.docker.com/engine/installation/linux/docker-ce/debian)  and [Dicourse's](https://github.com/discourse/discourse/blob/master/docs/INSTALL-cloud.md)  official installation guides.  Posts from the old forum were not imported due to time restrictions of the voluntary administrators."
+msgid "Here is some general, non-sensitive information about our instance.  When setting up the forum, we followed [Discourse's](https://github.com/discourse/discourse/blob/master/docs/INSTALL-cloud.md)  official installation guides.  Posts from the old forum were not imported due to time restrictions of the voluntary administrators."
 msgstr "Hier einige allgemeine Informationen zu unserer Instanz.  Bei Einrichtung des Forums wurden die offiziellen Installationsanleitungen von [Docker](https://docs.docker.com/engine/installation/linux/docker-ce/debian)  und [Dicourse](https://github.com/discourse/discourse/blob/master/docs/INSTALL-cloud.md)  befolgt.  Posts aus dem alten Forum wurden aufgrund des damit verbundenen Zeitaufwands für die ehrenamtlichen Administratoren nicht importiert."
 
 #. type: Bullet: '* '
@@ -8150,18 +8152,22 @@ msgstr "Installationstyp: [docker-ce](https://github.com/discourse/discourse_doc
 
 #. type: Bullet: '* '
 #: _docs/Maintaining_the_Forum.md
-msgid "Storage driver: [AUFS](https://docs.docker.com/engine/userguide/storagedriver/aufs-driver/)"
-msgstr "Speichertreiber: [AUFS](https://docs.docker.com/engine/userguide/storagedriver/aufs-driver/)"
-
-#. type: Bullet: '* '
-#: _docs/Maintaining_the_Forum.md
-msgid "Sever's specifications: 2 cores, 4GB RAM, 30GB SSD"
+#, fuzzy
+#| msgid "Server specifications: 2 cores, 4GB RAM, 30GB SSD"
+msgid "Server's specifications: 2 cores, 4GB RAM, 75GB SSD"
 msgstr "Severaufbau: 2 Cores, 4GB RAM, 30GB SSD"
 
 #. type: Bullet: '* '
 #: _docs/Maintaining_the_Forum.md
 msgid "Server's location: Amsterdam"
 msgstr "Serverstandort: Amsterdam"
+
+#. type: Bullet: '* '
+#: _docs/Maintaining_the_Forum.md
+#, fuzzy
+#| msgid "git repo: <https://gitlab.com/fdroid/fdroidserver>"
+msgid "Ansible Playbook: <https://gitlab.com/fdroid/fdroid-forum-server>"
+msgstr "Git-Repo: <https://gitlab.com/fdroid/fdroidserver>"
 
 #. type: Title ####
 #: _docs/Maintaining_the_Forum.md
@@ -8352,84 +8358,6 @@ msgstr "Installationsprotokoll"
 #: _docs/Maintaining_the_Forum.md
 msgid "In case we need to set up the virtual machine because of some problem, you can use this instruction to do so quickly."
 msgstr "Für den Fall, dass die virtuelle Maschine aufgrund einiger Probleme eingerichtet werden muss, können Sie die folgenden Angaben verwenden, um dies schnell zu erledigen."
-
-#. type: Plain text
-#: _docs/Maintaining_the_Forum.md
-#, no-wrap
-msgid "Install Docker"
-msgstr "Docker installieren"
-
-#. type: Plain text
-#: _docs/Maintaining_the_Forum.md
-msgid "References:"
-msgstr "Referenz:"
-
-#. type: Bullet: '* '
-#: _docs/Maintaining_the_Forum.md
-msgid "https://docs.docker.com/engine/installation/linux/docker-ce/debian"
-msgstr "https://docs.docker.com/engine/installation/linux/docker-ce/debian"
-
-#. type: Plain text
-#: _docs/Maintaining_the_Forum.md
-msgid "Download Docker's PGP key"
-msgstr "Docker's PGP-Key herunterladen"
-
-#. type: Fenced code block (bash)
-#: _docs/Maintaining_the_Forum.md
-#, no-wrap
-msgid ""
-"wget -O docker-gpg https://download.docker.com/linux/debian/gpg\n"
-"apt-key add docker-gpg\n"
-msgstr ""
-"wget -O docker-gpg https://download.docker.com/linux/debian/gpg\n"
-"apt-key add docker-gpg\n"
-
-#. type: Plain text
-#: _docs/Maintaining_the_Forum.md
-msgid "Check PGP key"
-msgstr "PGP-Key prüfen"
-
-#. type: Fenced code block (bash)
-#: _docs/Maintaining_the_Forum.md
-#, no-wrap
-msgid ""
-"# Must match '9DC8 5822 9FC7 DD38 854A E2D8 8D81 803C 0EBF CD88'\n"
-"apt-key fingerprint 0EBFCD88\n"
-msgstr ""
-"# Muss übereinstimmen mit '9DC8 5822 9FC7 DD38 854A E2D8 8D81 803C 0EBF CD88'\n"
-"apt-key fingerprint 0EBFCD88\n"
-
-#. type: Plain text
-#: _docs/Maintaining_the_Forum.md
-msgid "Add Docker repository"
-msgstr "Docker-Repository hinzufügen"
-
-#. type: Fenced code block (bash)
-#: _docs/Maintaining_the_Forum.md
-#, no-wrap
-msgid ""
-"echo 'deb [arch=amd64] https://download.docker.com/linux/debian stretch stable' >> /etc/apt/sources.list.d/docker.com.list\n"
-"apt update\n"
-msgstr ""
-"echo 'deb [arch=amd64] https://download.docker.com/linux/debian stretch stable' >> /etc/apt/sources.list.d/docker.com.list\n"
-"apt update\n"
-
-#. type: Fenced code block (bash)
-#: _docs/Maintaining_the_Forum.md
-#, no-wrap
-msgid "apt install docker-ce\n"
-msgstr "apt install docker-ce\n"
-
-#. type: Plain text
-#: _docs/Maintaining_the_Forum.md
-msgid "Check Docker"
-msgstr "Docker prüfen"
-
-#. type: Fenced code block (bash)
-#: _docs/Maintaining_the_Forum.md
-#, no-wrap
-msgid "docker run hello-world\n"
-msgstr "docker run hello-world\n"
 
 #. type: Title ####
 #: _docs/Maintaining_the_Forum.md
@@ -12431,3 +12359,60 @@ msgstr "Einstellungen"
 #: _docs/Whitelabel_Builds.md
 msgid "For a custom build that enables Automatic Updates by default, override _app/src/main/res/xml/preferences.xml_. You can customize the preferences and their default values in _app/src/mycompany/res/xml/preferences.xml_. The fully automatic update requires [Privileged Extension](https://gitlab.com/fdroid/privileged-extension). With regular access, the updates will only automatically download. The user still needs to click install on each one."
 msgstr "Für eine angepasste F-Droid-Variante, die Automatische Aktualisierungen standardmäßig aktiviert, überschreiben Sie _app/src/main/res/xml/preferences.xml_. Sie können die Einstellungen und deren Standardwerte in _app/src/mycompany/res/xml/preferences.xml_ anpassen. Das vollautomatische Update benötigt [System-/Root-Zugriff](https://gitlab.com/fdroid/privileged-extension). Mit Standardberechtigungen werden die Updates nur automatisch heruntergeladen. Der Nutzer muss weiterhin jedes Update einzeln installieren."
+
+#~ msgid "Storage driver: [AUFS](https://docs.docker.com/engine/userguide/storagedriver/aufs-driver/)"
+#~ msgstr "Speichertreiber: [AUFS](https://docs.docker.com/engine/userguide/storagedriver/aufs-driver/)"
+
+#, no-wrap
+#~ msgid "Install Docker"
+#~ msgstr "Docker installieren"
+
+#~ msgid "References:"
+#~ msgstr "Referenz:"
+
+#~ msgid "https://docs.docker.com/engine/installation/linux/docker-ce/debian"
+#~ msgstr "https://docs.docker.com/engine/installation/linux/docker-ce/debian"
+
+#~ msgid "Download Docker's PGP key"
+#~ msgstr "Docker's PGP-Key herunterladen"
+
+#, no-wrap
+#~ msgid ""
+#~ "wget -O docker-gpg https://download.docker.com/linux/debian/gpg\n"
+#~ "apt-key add docker-gpg\n"
+#~ msgstr ""
+#~ "wget -O docker-gpg https://download.docker.com/linux/debian/gpg\n"
+#~ "apt-key add docker-gpg\n"
+
+#~ msgid "Check PGP key"
+#~ msgstr "PGP-Key prüfen"
+
+#, no-wrap
+#~ msgid ""
+#~ "# Must match '9DC8 5822 9FC7 DD38 854A E2D8 8D81 803C 0EBF CD88'\n"
+#~ "apt-key fingerprint 0EBFCD88\n"
+#~ msgstr ""
+#~ "# Muss übereinstimmen mit '9DC8 5822 9FC7 DD38 854A E2D8 8D81 803C 0EBF CD88'\n"
+#~ "apt-key fingerprint 0EBFCD88\n"
+
+#~ msgid "Add Docker repository"
+#~ msgstr "Docker-Repository hinzufügen"
+
+#, no-wrap
+#~ msgid ""
+#~ "echo 'deb [arch=amd64] https://download.docker.com/linux/debian stretch stable' >> /etc/apt/sources.list.d/docker.com.list\n"
+#~ "apt update\n"
+#~ msgstr ""
+#~ "echo 'deb [arch=amd64] https://download.docker.com/linux/debian stretch stable' >> /etc/apt/sources.list.d/docker.com.list\n"
+#~ "apt update\n"
+
+#, no-wrap
+#~ msgid "apt install docker-ce\n"
+#~ msgstr "apt install docker-ce\n"
+
+#~ msgid "Check Docker"
+#~ msgstr "Docker prüfen"
+
+#, no-wrap
+#~ msgid "docker run hello-world\n"
+#~ msgstr "docker run hello-world\n"

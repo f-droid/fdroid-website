@@ -14,16 +14,15 @@ the forum are stored.
 
 Here is some general, non-sensitive information about our instance.
 When setting up the forum, we followed
-[Docker's](https://docs.docker.com/engine/installation/linux/docker-ce/debian)
-and [Dicourse's](https://github.com/discourse/discourse/blob/master/docs/INSTALL-cloud.md)
+[Discourse's](https://github.com/discourse/discourse/blob/master/docs/INSTALL-cloud.md)
 official installation guides.
 Posts from the old forum were not imported
 due to time restrictions of the voluntary administrators.
 
 * Installation type: [docker-ce](https://github.com/discourse/discourse_docker)
-* Storage driver: [AUFS](https://docs.docker.com/engine/userguide/storagedriver/aufs-driver/)
-* Sever's specifications: 2 cores, 4GB RAM, 30GB SSD
+* Server's specifications: 2 cores, 4GB RAM, 75GB SSD
 * Server's location: Amsterdam
+* Ansible Playbook: <https://gitlab.com/fdroid/fdroid-forum-server>
 
 #### Paths
 
@@ -105,45 +104,6 @@ With this, the following things get deleted:
 
 In case we need to set up the virtual machine because of some problem,
 you can use this instruction to do so quickly.
-
-#### Install Docker
-
-References:
-
-* https://docs.docker.com/engine/installation/linux/docker-ce/debian
-
-Download Docker's PGP key
-
-```bash
-wget -O docker-gpg https://download.docker.com/linux/debian/gpg
-apt-key add docker-gpg
-```
-
-Check PGP key
-
-```bash
-# Must match '9DC8 5822 9FC7 DD38 854A E2D8 8D81 803C 0EBF CD88'
-apt-key fingerprint 0EBFCD88
-```
-
-Add Docker repository
-
-```bash
-echo 'deb [arch=amd64] https://download.docker.com/linux/debian stretch stable' >> /etc/apt/sources.list.d/docker.com.list
-apt update
-```
-
-Install Docker
-
-```bash
-apt install docker-ce
-```
-
-Check Docker
-
-```bash
-docker run hello-world
-```
 
 #### Install Discourse
 

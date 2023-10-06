@@ -8,7 +8,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2023-09-25 12:46+0200\n"
+"POT-Creation-Date: 2023-10-06 08:55+0200\n"
 "PO-Revision-Date: 2023-09-21 18:36+0000\n"
 "Last-Translator: Licaon Kter <licaon.kter@protonmail.com>\n"
 "Language-Team: Romanian <https://hosted.weblate.org/projects/f-droid/website-docs/ro/>\n"
@@ -8131,7 +8131,9 @@ msgstr "Informații generale"
 
 #. type: Plain text
 #: _docs/Maintaining_the_Forum.md
-msgid "Here is some general, non-sensitive information about our instance.  When setting up the forum, we followed [Docker's](https://docs.docker.com/engine/installation/linux/docker-ce/debian)  and [Dicourse's](https://github.com/discourse/discourse/blob/master/docs/INSTALL-cloud.md)  official installation guides.  Posts from the old forum were not imported due to time restrictions of the voluntary administrators."
+#, fuzzy
+#| msgid "Here is some general, non-sensitive information about our instance.  When setting up the forum, we followed [Docker's](https://docs.docker.com/engine/installation/linux/docker-ce/debian)  and [Dicourse's](https://github.com/discourse/discourse/blob/master/docs/INSTALL-cloud.md)  official installation guides.  Posts from the old forum were not imported due to time restrictions of the voluntary administrators."
+msgid "Here is some general, non-sensitive information about our instance.  When setting up the forum, we followed [Discourse's](https://github.com/discourse/discourse/blob/master/docs/INSTALL-cloud.md)  official installation guides.  Posts from the old forum were not imported due to time restrictions of the voluntary administrators."
 msgstr "Iată câteva informații generale, nesensibile, despre instanța noastră.  La configurarea forumului, am urmat ghidurile oficiale de instalare [Docker](https://docs.docker.com/engine/installation/linux/docker-ce/debian) și [Dicourse](https://github.com/discourse/discourse/blob/master/docs/INSTALL-cloud.md).  Mesajele de pe vechiul forum nu au fost importate din cauza restricțiilor de timp ale administratorilor voluntari."
 
 #. type: Bullet: '* '
@@ -8141,18 +8143,22 @@ msgstr "Tipul de instalare: [docker-ce](https://github.com/discourse/discourse_d
 
 #. type: Bullet: '* '
 #: _docs/Maintaining_the_Forum.md
-msgid "Storage driver: [AUFS](https://docs.docker.com/engine/userguide/storagedriver/aufs-driver/)"
-msgstr "Driver de stocare: [AUFS](https://docs.docker.com/engine/userguide/storagedriver/aufs-driver/)"
-
-#. type: Bullet: '* '
-#: _docs/Maintaining_the_Forum.md
-msgid "Sever's specifications: 2 cores, 4GB RAM, 30GB SSD"
+#, fuzzy
+#| msgid "Server specifications: 2 cores, 4GB RAM, 30GB SSD"
+msgid "Server's specifications: 2 cores, 4GB RAM, 75GB SSD"
 msgstr "Specificațiile lui Sever: 2 nuclee, 4GB RAM, 30GB SSD"
 
 #. type: Bullet: '* '
 #: _docs/Maintaining_the_Forum.md
 msgid "Server's location: Amsterdam"
 msgstr "Locația serverului: Amsterdam"
+
+#. type: Bullet: '* '
+#: _docs/Maintaining_the_Forum.md
+#, fuzzy
+#| msgid "git repo: <https://gitlab.com/fdroid/fdroidserver>"
+msgid "Ansible Playbook: <https://gitlab.com/fdroid/fdroid-forum-server>"
+msgstr "repo-ul git: <https://gitlab.com/fdroid/fdroidserver>"
 
 #. type: Title ####
 #: _docs/Maintaining_the_Forum.md
@@ -8343,84 +8349,6 @@ msgstr "Jurnal de instalare"
 #: _docs/Maintaining_the_Forum.md
 msgid "In case we need to set up the virtual machine because of some problem, you can use this instruction to do so quickly."
 msgstr "În cazul în care trebuie să configurăm mașina virtuală din cauza unei probleme, puteți utiliza această instrucțiune pentru a face acest lucru rapid."
-
-#. type: Plain text
-#: _docs/Maintaining_the_Forum.md
-#, no-wrap
-msgid "Install Docker"
-msgstr "Instalați Docker"
-
-#. type: Plain text
-#: _docs/Maintaining_the_Forum.md
-msgid "References:"
-msgstr "Referințe:"
-
-#. type: Bullet: '* '
-#: _docs/Maintaining_the_Forum.md
-msgid "https://docs.docker.com/engine/installation/linux/docker-ce/debian"
-msgstr "https://docs.docker.com/engine/installation/linux/docker-ce/debian"
-
-#. type: Plain text
-#: _docs/Maintaining_the_Forum.md
-msgid "Download Docker's PGP key"
-msgstr "Descărcați cheia PGP a lui Docker"
-
-#. type: Fenced code block (bash)
-#: _docs/Maintaining_the_Forum.md
-#, no-wrap
-msgid ""
-"wget -O docker-gpg https://download.docker.com/linux/debian/gpg\n"
-"apt-key add docker-gpg\n"
-msgstr ""
-"wget -O docker-gpg https://download.docker.com/linux/debian/gpg\n"
-"apt-key add docker-gpg\n"
-
-#. type: Plain text
-#: _docs/Maintaining_the_Forum.md
-msgid "Check PGP key"
-msgstr "Verificați cheia PGP"
-
-#. type: Fenced code block (bash)
-#: _docs/Maintaining_the_Forum.md
-#, no-wrap
-msgid ""
-"# Must match '9DC8 5822 9FC7 DD38 854A E2D8 8D81 803C 0EBF CD88'\n"
-"apt-key fingerprint 0EBFCD88\n"
-msgstr ""
-"# Must match '9DC8 5822 9FC7 DD38 854A E2D8 8D81 803C 0EBF CD88'\n"
-"apt-key fingerprint 0EBFCD88\n"
-
-#. type: Plain text
-#: _docs/Maintaining_the_Forum.md
-msgid "Add Docker repository"
-msgstr "Adăugați depozitul Docker"
-
-#. type: Fenced code block (bash)
-#: _docs/Maintaining_the_Forum.md
-#, no-wrap
-msgid ""
-"echo 'deb [arch=amd64] https://download.docker.com/linux/debian stretch stable' >> /etc/apt/sources.list.d/docker.com.list\n"
-"apt update\n"
-msgstr ""
-"echo 'deb [arch=amd64] https://download.docker.com/linux/debian stretch stable' >> /etc/apt/sources.list.d/docker.com.list\n"
-"apt update\n"
-
-#. type: Fenced code block (bash)
-#: _docs/Maintaining_the_Forum.md
-#, no-wrap
-msgid "apt install docker-ce\n"
-msgstr "apt install docker-ce\n"
-
-#. type: Plain text
-#: _docs/Maintaining_the_Forum.md
-msgid "Check Docker"
-msgstr "Verificați Docker"
-
-#. type: Fenced code block (bash)
-#: _docs/Maintaining_the_Forum.md
-#, no-wrap
-msgid "docker run hello-world\n"
-msgstr "docker rulează hello-world\n"
 
 #. type: Title ####
 #: _docs/Maintaining_the_Forum.md
@@ -12415,3 +12343,60 @@ msgstr "Preferințe"
 #: _docs/Whitelabel_Builds.md
 msgid "For a custom build that enables Automatic Updates by default, override _app/src/main/res/xml/preferences.xml_. You can customize the preferences and their default values in _app/src/mycompany/res/xml/preferences.xml_. The fully automatic update requires [Privileged Extension](https://gitlab.com/fdroid/privileged-extension). With regular access, the updates will only automatically download. The user still needs to click install on each one."
 msgstr "Pentru o construcție personalizată care activează actualizările automate în mod implicit, suprascrieți fișierul _app/src/main/res/xml/preferences.xml_. Puteți personaliza preferințele și valorile implicite ale acestora în _app/src/mycompany/res/xml/preferences.xml_. Actualizarea complet automată necesită [Privileged Extension](https://gitlab.com/fdroid/privileged-extension). Cu acces obișnuit, actualizările se vor descărca doar automat. Utilizatorul trebuie în continuare să facă clic pe instalare pentru fiecare dintre ele."
+
+#~ msgid "Storage driver: [AUFS](https://docs.docker.com/engine/userguide/storagedriver/aufs-driver/)"
+#~ msgstr "Driver de stocare: [AUFS](https://docs.docker.com/engine/userguide/storagedriver/aufs-driver/)"
+
+#, no-wrap
+#~ msgid "Install Docker"
+#~ msgstr "Instalați Docker"
+
+#~ msgid "References:"
+#~ msgstr "Referințe:"
+
+#~ msgid "https://docs.docker.com/engine/installation/linux/docker-ce/debian"
+#~ msgstr "https://docs.docker.com/engine/installation/linux/docker-ce/debian"
+
+#~ msgid "Download Docker's PGP key"
+#~ msgstr "Descărcați cheia PGP a lui Docker"
+
+#, no-wrap
+#~ msgid ""
+#~ "wget -O docker-gpg https://download.docker.com/linux/debian/gpg\n"
+#~ "apt-key add docker-gpg\n"
+#~ msgstr ""
+#~ "wget -O docker-gpg https://download.docker.com/linux/debian/gpg\n"
+#~ "apt-key add docker-gpg\n"
+
+#~ msgid "Check PGP key"
+#~ msgstr "Verificați cheia PGP"
+
+#, no-wrap
+#~ msgid ""
+#~ "# Must match '9DC8 5822 9FC7 DD38 854A E2D8 8D81 803C 0EBF CD88'\n"
+#~ "apt-key fingerprint 0EBFCD88\n"
+#~ msgstr ""
+#~ "# Must match '9DC8 5822 9FC7 DD38 854A E2D8 8D81 803C 0EBF CD88'\n"
+#~ "apt-key fingerprint 0EBFCD88\n"
+
+#~ msgid "Add Docker repository"
+#~ msgstr "Adăugați depozitul Docker"
+
+#, no-wrap
+#~ msgid ""
+#~ "echo 'deb [arch=amd64] https://download.docker.com/linux/debian stretch stable' >> /etc/apt/sources.list.d/docker.com.list\n"
+#~ "apt update\n"
+#~ msgstr ""
+#~ "echo 'deb [arch=amd64] https://download.docker.com/linux/debian stretch stable' >> /etc/apt/sources.list.d/docker.com.list\n"
+#~ "apt update\n"
+
+#, no-wrap
+#~ msgid "apt install docker-ce\n"
+#~ msgstr "apt install docker-ce\n"
+
+#~ msgid "Check Docker"
+#~ msgstr "Verificați Docker"
+
+#, no-wrap
+#~ msgid "docker run hello-world\n"
+#~ msgstr "docker rulează hello-world\n"

@@ -26,7 +26,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
-"POT-Creation-Date: 2023-09-25 12:46+0200\n"
+"POT-Creation-Date: 2023-10-06 08:55+0200\n"
 "PO-Revision-Date: 2023-09-21 15:12+0000\n"
 "Last-Translator: Eric <hamburger2048@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Chinese (Simplified) <https://hosted.weblate.org/projects/f-droid/website-docs/zh_Hans/>\n"
@@ -8046,7 +8046,9 @@ msgstr "常规信息"
 
 #. type: Plain text
 #: _docs/Maintaining_the_Forum.md
-msgid "Here is some general, non-sensitive information about our instance.  When setting up the forum, we followed [Docker's](https://docs.docker.com/engine/installation/linux/docker-ce/debian)  and [Dicourse's](https://github.com/discourse/discourse/blob/master/docs/INSTALL-cloud.md)  official installation guides.  Posts from the old forum were not imported due to time restrictions of the voluntary administrators."
+#, fuzzy
+#| msgid "Here is some general, non-sensitive information about our instance.  When setting up the forum, we followed [Docker's](https://docs.docker.com/engine/installation/linux/docker-ce/debian)  and [Dicourse's](https://github.com/discourse/discourse/blob/master/docs/INSTALL-cloud.md)  official installation guides.  Posts from the old forum were not imported due to time restrictions of the voluntary administrators."
+msgid "Here is some general, non-sensitive information about our instance.  When setting up the forum, we followed [Discourse's](https://github.com/discourse/discourse/blob/master/docs/INSTALL-cloud.md)  official installation guides.  Posts from the old forum were not imported due to time restrictions of the voluntary administrators."
 msgstr "以下是我们这个实例的一些常规非敏感信息。在搭建论坛时，我们遵循了 [Docker](https://docs.docker.com/engine/installation/linux/docker-ce/debian) 和 [Dicourse](https://github.com/discourse/discourse/blob/master/docs/INSTALL-cloud.md) 的官方安装指南。由于义务管理员的时间有限，我们没有导入旧论坛的帖子。"
 
 #. type: Bullet: '* '
@@ -8056,18 +8058,22 @@ msgstr "安装类型：[docker-ce](https://github.com/discourse/discourse_docker
 
 #. type: Bullet: '* '
 #: _docs/Maintaining_the_Forum.md
-msgid "Storage driver: [AUFS](https://docs.docker.com/engine/userguide/storagedriver/aufs-driver/)"
-msgstr "存储驱动程序：[AUFS](https://docs.docker.com/engine/userguide/storagedriver/aufs-driver/)"
-
-#. type: Bullet: '* '
-#: _docs/Maintaining_the_Forum.md
-msgid "Sever's specifications: 2 cores, 4GB RAM, 30GB SSD"
+#, fuzzy
+#| msgid "Server specifications: 2 cores, 4GB RAM, 30GB SSD"
+msgid "Server's specifications: 2 cores, 4GB RAM, 75GB SSD"
 msgstr "服务器规格：2核，4GB RAM，30GB SSD"
 
 #. type: Bullet: '* '
 #: _docs/Maintaining_the_Forum.md
 msgid "Server's location: Amsterdam"
 msgstr "服务器位置：阿姆斯特丹"
+
+#. type: Bullet: '* '
+#: _docs/Maintaining_the_Forum.md
+#, fuzzy
+#| msgid "git repo: <https://gitlab.com/fdroid/fdroidserver>"
+msgid "Ansible Playbook: <https://gitlab.com/fdroid/fdroid-forum-server>"
+msgstr "git repo: <https://gitlab.com/fdroid/fdroidserver>"
 
 #. type: Title ####
 #: _docs/Maintaining_the_Forum.md
@@ -8256,84 +8262,6 @@ msgstr "安装日志"
 #: _docs/Maintaining_the_Forum.md
 msgid "In case we need to set up the virtual machine because of some problem, you can use this instruction to do so quickly."
 msgstr "如果因为一些问题需要搭建虚拟机，则可以使用以下步骤快速完成。"
-
-#. type: Plain text
-#: _docs/Maintaining_the_Forum.md
-#, no-wrap
-msgid "Install Docker"
-msgstr "安装 Docker"
-
-#. type: Plain text
-#: _docs/Maintaining_the_Forum.md
-msgid "References:"
-msgstr "参见："
-
-#. type: Bullet: '* '
-#: _docs/Maintaining_the_Forum.md
-msgid "https://docs.docker.com/engine/installation/linux/docker-ce/debian"
-msgstr "https://docs.docker.com/engine/installation/linux/docker-ce/debian"
-
-#. type: Plain text
-#: _docs/Maintaining_the_Forum.md
-msgid "Download Docker's PGP key"
-msgstr "下载 Docker 的 PGP 公钥"
-
-#. type: Fenced code block (bash)
-#: _docs/Maintaining_the_Forum.md
-#, no-wrap
-msgid ""
-"wget -O docker-gpg https://download.docker.com/linux/debian/gpg\n"
-"apt-key add docker-gpg\n"
-msgstr ""
-"wget -O docker-gpg https://download.docker.com/linux/debian/gpg\n"
-"apt-key add docker-gpg\n"
-
-#. type: Plain text
-#: _docs/Maintaining_the_Forum.md
-msgid "Check PGP key"
-msgstr "检查 PGP 公钥"
-
-#. type: Fenced code block (bash)
-#: _docs/Maintaining_the_Forum.md
-#, no-wrap
-msgid ""
-"# Must match '9DC8 5822 9FC7 DD38 854A E2D8 8D81 803C 0EBF CD88'\n"
-"apt-key fingerprint 0EBFCD88\n"
-msgstr ""
-"# 结果必须符合 '9DC8 5822 9FC7 DD38 854A E2D8 8D81 803C 0EBF CD88'\n"
-"apt-key fingerprint 0EBFCD88\n"
-
-#. type: Plain text
-#: _docs/Maintaining_the_Forum.md
-msgid "Add Docker repository"
-msgstr "添加 Docker 存储库"
-
-#. type: Fenced code block (bash)
-#: _docs/Maintaining_the_Forum.md
-#, no-wrap
-msgid ""
-"echo 'deb [arch=amd64] https://download.docker.com/linux/debian stretch stable' >> /etc/apt/sources.list.d/docker.com.list\n"
-"apt update\n"
-msgstr ""
-"echo 'deb [arch=amd64] https://download.docker.com/linux/debian stretch stable' >> /etc/apt/sources.list.d/docker.com.list\n"
-"apt update\n"
-
-#. type: Fenced code block (bash)
-#: _docs/Maintaining_the_Forum.md
-#, no-wrap
-msgid "apt install docker-ce\n"
-msgstr "apt install docker-ce\n"
-
-#. type: Plain text
-#: _docs/Maintaining_the_Forum.md
-msgid "Check Docker"
-msgstr "检查 Docker"
-
-#. type: Fenced code block (bash)
-#: _docs/Maintaining_the_Forum.md
-#, no-wrap
-msgid "docker run hello-world\n"
-msgstr "docker run hello-world\n"
 
 #. type: Title ####
 #: _docs/Maintaining_the_Forum.md
@@ -12333,3 +12261,60 @@ msgstr "首选项"
 #: _docs/Whitelabel_Builds.md
 msgid "For a custom build that enables Automatic Updates by default, override _app/src/main/res/xml/preferences.xml_. You can customize the preferences and their default values in _app/src/mycompany/res/xml/preferences.xml_. The fully automatic update requires [Privileged Extension](https://gitlab.com/fdroid/privileged-extension). With regular access, the updates will only automatically download. The user still needs to click install on each one."
 msgstr "对于默认启用自动更新的自定义构建，覆盖 _app/src/main/res/xml/preferences.xml_。你可以在 _app/src/mycompany/res/xml/preferences.xml_ 中自定义首选项及其默认值。全自动更新需要 [特权扩展](https://gitlab.com/fdroid/privileged-extension)。通过定期访问，更新只会自动下载。用户仍然需要在每一个上点击安装。"
+
+#~ msgid "Storage driver: [AUFS](https://docs.docker.com/engine/userguide/storagedriver/aufs-driver/)"
+#~ msgstr "存储驱动程序：[AUFS](https://docs.docker.com/engine/userguide/storagedriver/aufs-driver/)"
+
+#, no-wrap
+#~ msgid "Install Docker"
+#~ msgstr "安装 Docker"
+
+#~ msgid "References:"
+#~ msgstr "参见："
+
+#~ msgid "https://docs.docker.com/engine/installation/linux/docker-ce/debian"
+#~ msgstr "https://docs.docker.com/engine/installation/linux/docker-ce/debian"
+
+#~ msgid "Download Docker's PGP key"
+#~ msgstr "下载 Docker 的 PGP 公钥"
+
+#, no-wrap
+#~ msgid ""
+#~ "wget -O docker-gpg https://download.docker.com/linux/debian/gpg\n"
+#~ "apt-key add docker-gpg\n"
+#~ msgstr ""
+#~ "wget -O docker-gpg https://download.docker.com/linux/debian/gpg\n"
+#~ "apt-key add docker-gpg\n"
+
+#~ msgid "Check PGP key"
+#~ msgstr "检查 PGP 公钥"
+
+#, no-wrap
+#~ msgid ""
+#~ "# Must match '9DC8 5822 9FC7 DD38 854A E2D8 8D81 803C 0EBF CD88'\n"
+#~ "apt-key fingerprint 0EBFCD88\n"
+#~ msgstr ""
+#~ "# 结果必须符合 '9DC8 5822 9FC7 DD38 854A E2D8 8D81 803C 0EBF CD88'\n"
+#~ "apt-key fingerprint 0EBFCD88\n"
+
+#~ msgid "Add Docker repository"
+#~ msgstr "添加 Docker 存储库"
+
+#, no-wrap
+#~ msgid ""
+#~ "echo 'deb [arch=amd64] https://download.docker.com/linux/debian stretch stable' >> /etc/apt/sources.list.d/docker.com.list\n"
+#~ "apt update\n"
+#~ msgstr ""
+#~ "echo 'deb [arch=amd64] https://download.docker.com/linux/debian stretch stable' >> /etc/apt/sources.list.d/docker.com.list\n"
+#~ "apt update\n"
+
+#, no-wrap
+#~ msgid "apt install docker-ce\n"
+#~ msgstr "apt install docker-ce\n"
+
+#~ msgid "Check Docker"
+#~ msgstr "检查 Docker"
+
+#, no-wrap
+#~ msgid "docker run hello-world\n"
+#~ msgstr "docker run hello-world\n"
