@@ -25,7 +25,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
-"POT-Creation-Date: 2023-10-06 08:55+0200\n"
+"POT-Creation-Date: 2023-10-11 09:18+0200\n"
 "PO-Revision-Date: 2023-09-19 15:24+0000\n"
 "Last-Translator: Hans-Christoph Steiner <hans@guardianproject.info>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/f-droid/website-docs/fr/>\n"
@@ -4025,8 +4025,26 @@ msgstr "L’opération à appliquer au code de version obtenu par le _UpdateChec
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-msgid "Especially useful with apps that we want to compile for different ABIs, but whose vercodes don't always have trailing zeros. For example, with _VercodeOperation_ set at something like `%c*10 + 4`, we will be able to track updates and build up to four different versions of every upstream version."
+#, fuzzy
+#| msgid "Especially useful with apps that we want to compile for different ABIs, but whose vercodes don't always have trailing zeros. For example, with _VercodeOperation_ set at something like `%c*10 + 4`, we will be able to track updates and build up to four different versions of every upstream version."
+msgid "Especially useful with apps that we want to compile for different ABIs, but whose vercodes don't always have trailing zeros. For example, with multiple _VercodeOperation_ we can track updates and build up to four different versions of every upstream version, say for 4 architectures:"
 msgstr "Utile avec les applications que nous voulons compiler pour différentes ABI, mais dont les codes de version ne se finissent pas toujours par des zéros. Par exemple, avec _VercodeOperation_ défini sur quelque chose comme `%c*10 + 4`, nous pourrons suivre les mises à jour et créer jusqu'à quatre versions différentes de chaque version en amont."
+
+#. type: Fenced code block
+#: _docs/Build_Metadata_Reference.md
+#, no-wrap
+msgid ""
+"VercodeOperation:\n"
+"  - 100 * %c + 1\n"
+"  - 100 * %c + 2\n"
+"  - 100 * %c + 3\n"
+"  - 100 * %c + 4\n"
+msgstr ""
+
+#. type: Plain text
+#: _docs/Build_Metadata_Reference.md
+msgid "So 4 build blocks are copied from above and added as an update with their vercode calculated by doing each math operation."
+msgstr ""
 
 #. type: Title ###
 #: _docs/Build_Metadata_Reference.md
@@ -4200,6 +4218,11 @@ msgid ""
 "    stage, to differentiate F-Droid's build from the original.\n"
 "    Continuing the first example above, you would specify that as\n"
 "    `Version +-fdroid %v` - `-fdroid` is the suffix.\n"
+msgstr ""
+
+#. type: Plain text
+#: _docs/Build_Metadata_Reference.md
+msgid "For apps with a list of [_VercodeOperation_](#VercodeOperation) the number of builds is equal to the number of items in the list."
 msgstr ""
 
 #. type: Title ###
