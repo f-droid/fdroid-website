@@ -87,7 +87,10 @@ for d in sorted(glob.glob(os.path.join(resdir, 'values*'))):
             and ((not overwritekeys or key in overwritekeys)
                  or key not in data.get('permissions', []))):
             writechanges = True
-            text = re.sub('\s+', ' ', e.text.strip().strip('"').replace("\\'", "'"))
+            text = e.text.strip()
+            if text.startswith('"') and text.endswith('"'):
+                text = text[1:-1]
+            text = re.sub('\s+', ' ', text.replace('\\"', '"').replace("\\'", "'"))
             if not text:
                 continue
             if 'permissions' not in data:
