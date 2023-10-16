@@ -12,6 +12,7 @@ skipkeys = (
     'perm_costs_money',
     'permission_request_notification_title',
     'permission_request_notification_with_subtitle',
+    'permission_request_notification_for_app_with_subtitle',
     'perms_description_app',
 )
 
@@ -39,7 +40,6 @@ overwritekeys = (
     "permgroupdesc_nearby_devices",
     "permgrouplab_nearby_devices",
     "permgrouplab_storage",
-    "permission_request_notification_for_app_with_subtitle",
     "permlab_backgroundCamera",
     "permlab_bluetooth_advertise",
     "permlab_bluetooth_connect",
