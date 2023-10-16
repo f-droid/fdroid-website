@@ -15,7 +15,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
 "POT-Creation-Date: 2023-10-11 09:18+0200\n"
-"PO-Revision-Date: 2023-10-07 01:18+0000\n"
+"PO-Revision-Date: 2023-10-13 13:03+0000\n"
 "Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/f-droid/website-docs/uk/>\n"
 "Language: uk\n"
@@ -4015,10 +4015,8 @@ msgstr "Дія, що застосовується до коду версії, о
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-#, fuzzy
-#| msgid "Especially useful with apps that we want to compile for different ABIs, but whose vercodes don't always have trailing zeros. For example, with _VercodeOperation_ set at something like `%c*10 + 4`, we will be able to track updates and build up to four different versions of every upstream version."
 msgid "Especially useful with apps that we want to compile for different ABIs, but whose vercodes don't always have trailing zeros. For example, with multiple _VercodeOperation_ we can track updates and build up to four different versions of every upstream version, say for 4 architectures:"
-msgstr "Особливо корисно, якщо треба зібрати для різних ABI застосунок, коди версій якого не завжди закінчуються нулями. Наприклад, якщо вказати _VercodeOperation_ щось на кшталт `%c*10 + 4`, то при виявленні оновлень вдаватиметься збирати до чотирьох включно різних варіантів кожної версії оригіналу."
+msgstr "Особливо корисно, якщо треба зібрати для різних ABI застосунок, коди версій якого не завжди закінчуються нулями. Наприклад, якщо вказати кілька _VercodeOperation_, ми зможемо відстежувати оновлення та створювати до чотирьох різних версій кожної основної версії, скажімо, для 4-х архітектур:"
 
 #. type: Fenced code block
 #: _docs/Build_Metadata_Reference.md
@@ -4030,11 +4028,16 @@ msgid ""
 "  - 100 * %c + 3\n"
 "  - 100 * %c + 4\n"
 msgstr ""
+"VercodeOperation:\n"
+"  - 100 * %c + 1\n"
+"  - 100 * %c + 2\n"
+"  - 100 * %c + 3\n"
+"  - 100 * %c + 4\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 msgid "So 4 build blocks are copied from above and added as an update with their vercode calculated by doing each math operation."
-msgstr ""
+msgstr "Отже, 4 блоки збірки копіюються зверху і додаються як оновлення з їх верифікаційним кодом, який обчислюється під час виконання кожної математичної операції."
 
 #. type: Title ###
 #: _docs/Build_Metadata_Reference.md
@@ -4244,7 +4247,7 @@ msgstr ""
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 msgid "For apps with a list of [_VercodeOperation_](#VercodeOperation) the number of builds is equal to the number of items in the list."
-msgstr ""
+msgstr "Для застосунків зі списком з [_VercodeOperation_](#VercodeOperation) кількість збірок дорівнює кількості елементів у списку."
 
 #. type: Title ###
 #: _docs/Build_Metadata_Reference.md
