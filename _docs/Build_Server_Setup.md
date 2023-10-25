@@ -80,13 +80,11 @@ root:~# adduser --disabled-password fdroid
 root:~# su fdroid
 ```
 
-Clone source code and configure the buildserver settings, running
-as _fdroid_ user:
+Clone source code running as _fdroid_ user:
 
 ```bash
 fdroid:~$ cd ~
 fdroid:~$ git clone https://gitlab.com/fdroid/fdroidserver.git
-fdroid:~$ cp fdroidserver/examples/makebuildserver.config.py fdroidserver/
 ```
 
 You also have to make sure your `ANDROID_HOME` environment variable is
@@ -117,7 +115,7 @@ fdroid:~$ sed -i "s@^[# ]*build_server_always.*@build_server_always: true@" fdro
 ## Setting up a build server
 
 In addition to the basic setup previously described, we ship
-a Vagrant-compatible Debian/stretch base box called 'fdroid/basebox-stretch64'.
+a Vagrant-compatible Debian/bullseye base box called 'fdroid/bullseye64'.
 
 We are bootstrapping the Debian Vagrant boxes for our buildserver
 from scratch. Fetching and verifying our pre-build Vagrant boxes
@@ -128,24 +126,9 @@ want to bootstrap those by yourself you should look at:
 
 ### Creating the F-Droid buildserver box
 
-
-Navigate to your clone of
-[F-Droid Server git](https://gitlab.com/fdroid/fdroidserver) and start by
-creating `makebuildserver.config.py`, using
-`./examples/makebuildserver.config.py` as a reference - look at the
-settings and documentation there to decide if any need changing to suit
-your environment. There is a path for retrieving the base box if it
-doesn't exist, and an apt proxy definition, both of which may need
-customising for your environment. You can then go to the `fdroidserver`
-directory and run `makebuildserver`.
-
-
 ```bash
 # navigate to your clone of F-Droid Server
 cd .../fdroidserver
-
-# copy example config file
-cp examples/makebuildserver.config.py makebuildserver.config.py
 
 # start building the your basebox image
 ./makebuildserver
@@ -162,6 +145,8 @@ Once it's complete you'll have a new base box called 'buildserver' which
 is what's used for your App build runs. Now you can build packages as
 as you used to, but when you run `fdroid build --server ...` App build
 runs will be isolated inside a virtual machine.
+
+While the created image has allocated a limited amount of CPU cores and memory, you can edit `~/fdroiddata/builder/Vagrantfile` to modify them dynamically at run time, eg. `libvirt.cpus = 6` and `libvirt.memory = 12288`, but do make sure to not go over the host machines' limits else the VM might get killed.
 
 The first time a build is done, a new virtual machine is created using
 the 'buildserver' box as a base. A snapshot of this clean machine state
@@ -233,14 +218,7 @@ EOF
 root:~# service libvirtd restart
 ```
 
-Then create a _makebuildserver.config.py_ next to _makebuildserver_
-and add:
-
-```python
-vm_provider = 'libvirt'
-```
-
-##### Debian/stretch and Ubuntu/xenial
+##### Debian/bullseye and Ubuntu/xenial
 
 ```console
 root:~# adduser fdroid libvirt
