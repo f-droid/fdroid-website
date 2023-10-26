@@ -1,23 +1,35 @@
 ---
 layout: post
-title: "Enter-post-title-here"
-author: "Enter-your-name-here"
+title: "Contributor Highlights"
+author: "paulali"
 ---
-
-
 
 
 ### TWIF generated on Thursday, 26 Oct 2023 ,Week 43
 
 
 #### F-Droid core
-
-
-* [An Entity] (https://not.a.real.link.com/fake). I am responsible for a couple of things, please watch this space!
+* **[F-Droid](https://f-droid.org/packages/org.fdroid.fdroid)** and **[F-Droid Basic](https://f-droid.org/packages/org.fdroid.basic)** were updated from 1.18.0 to 1.19.0-alpha0, now with support for automatic background updates on Android 12+ as announced [last week](https://f-droid.org/en/2023/10/19/twif-client-alpha-kde-removal-by-google.html). _Note that this is still in `beta` so brave users need to install this manually (enable Beta updates for the app or from Client expert settings)._
 
 
 #### Community News
-* [An Entity] (https://not.a.real.link.com/fake). I am responsible for a couple of things, please watch this space!
+
+[@Licaon_Kter](https://gitlab.com/licaon-kter) comments:
+
+
+* **[Aurora Store](https://f-droid.org/packages/com.aurora.store)** was updated from 4.3.3 to 4.3.5 fixing an important installation issue so users are advised to update.
+* **[Conversations](https://f-droid.org/packages/eu.siacs.conversations)** was updated from 2.12.11+free to 2.12.12-beta.2+free adding experimental support for Private DNS (DNS over TLS), themed icon on Android 13+ and many other fixes. _Note that this is still in `beta` so brave users need to install this manually (enable Beta updates for the app or from Client expert settings)._
+* **[Linphone - open source SIP client](https://f-droid.org/packages/org.linphone)** was updated from 5.1.3 to 5.1.4 and now supports the narrow-band vocoder-based audio data compression algorithm G.729.
+
+[@linsui](https://gitlab.com/linsui) comments:
+
+I want to highlight some updates of this week:
+
+- [Image Toolbox](https://f-droid.org/packages/ru.tech.imageresizershrinker/) is finally updated again. Since 2.1.3 [we can't build the apk reproducibly](https://github.com/T8RIN/ImageToolbox/discussions/151). Then some prebuilt libs are added which introduces more problems. Thanks to the effort of [@Licaon_Kter](https://gitlab.com/licaon-kter) and [@T8RIN](https://github.com/T8RIN) those binaries are cleaned up and the apk is reproducible again after 4 months.
+- [Kubenav](https://f-droid.org/en/packages/io.kubenav.kubenav/) is rewriten in Flutter and Go since 4.0.0. This broke the update checker and we only noticed that recently. [@linsui](https://gitlab.com/linsui) [added](https://gitlab.com/fdroid/fdroiddata/-/merge_requests/13850) [v4.2.3](https://github.com/kubenav/kubenav/releases/tag/v4.2.3) and patched out some new non-free deps. It should be updated automatically in the future.
+- [Standard Notes](https://f-droid.org/packages/com.standardnotes/) is back! The license of Standard Notes was [changed](https://github.com/standardnotes/app/commit/9e908f344c6a15c961310b6b57e1c56032ac50df) from AGPL3 to BY-NC-SA 4.0 which is not an FOSS license. After it was [reported](https://gitlab.com/fdroid/fdroiddata/-/issues/3069), we [disabled affected versions and don't update it anymore](https://gitlab.com/fdroid/fdroiddata/-/commit/ee585f7f512e78518556c66f44dbb398a5db2475). Recently, the change was [reverted](https://github.com/standardnotes/app/commit/d254e1c4e34793c23b0c62c24bb239dda5187365) so Standard Notes is FOSS again! More details can be found [here](https://github.com/standardnotes/forum/discussions/3196). [@proletarius101](https://gitlab.com/proletarius101) [re-enabled](https://gitlab.com/fdroid/fdroiddata/-/merge_requests/13878) with an update.
+- [Sayboard](https://f-droid.org/packages/com.elishaazaria.sayboard/), a voice IME, is in F-Droid now. We have many open source IME but none of them have voice input support. Now we have an open source voice IME based on Vosk.Yay!!!
+- [TIDY Text-to-Image Discovery](https://f-droid.org/packages/com.slavabarkov.tidy), a local image search tool, is in F-Droid now. It brings the power of AI to your phone, running totally offline!
 
 
 #### Removed Apps
@@ -26,7 +38,7 @@ author: "Enter-your-name-here"
 
 **RadioBeacon** and **Radiocells.org UnifiedNlp Backend** used a backend database that is no longer accessible ([#3102](https://gitlab.com/fdroid/fdroiddata/-/issues/3102))
 
-**WireGuard**'s in-app updater makes it no longer eligible for inclusion in F-Droid. WireGuard users can get updates directly from upstream or switch to one of the alternatives.
+**WireGuard**'s in-app updater makes it no longer eligible for [inclusion](https://f-droid.org/docs/Inclusion_Policy/) in F-Droid. WireGuard users can get updates directly from upstream or switch to one of the alternatives.
 
 
 #### Newly Added Apps
@@ -55,7 +67,7 @@ author: "Enter-your-name-here"
 * **[Arcticons Light](https://f-droid.org/packages/com.donnnno.arcticons.light)** was updated from 7.3.7 to 7.5.4
 * **[Arcticons You](https://f-droid.org/packages/com.donnnno.arcticons.you)** was updated from 7.3.7 to 7.5.4
 * **[Audio Share](https://f-droid.org/packages/io.github.mkckr0.audio_share_app)** was updated from 0.0.9 to 0.0.11
-* **[Aurora Store](https://f-droid.org/packages/com.aurora.store)** was updated from 4.3.3 to 4.3.5 fixing an important installation issue so users are advised to update.
+* **[Aurora Store](https://f-droid.org/packages/com.aurora.store)** was updated from 4.3.3 to 4.3.5
 * **[Auto Auto-Rotate](https://f-droid.org/packages/com.jarsilio.android.autoautorotate)** was updated from 0.12.2 to 0.12.3
 * **[Aves Libre](https://f-droid.org/packages/deckers.thibault.aves.libre)** was updated from 1.9.6 to 1.9.7
 * **[BOINC](https://f-droid.org/packages/edu.berkeley.boinc)** was updated from 7.22.2 to 7.24.1
@@ -70,7 +82,7 @@ author: "Enter-your-name-here"
 * **[Chip Defense](https://f-droid.org/packages/de.chadenas.cpudefense)** was updated from 1.21 to 1.22
 * **[Clipious](https://f-droid.org/packages/com.github.lamarios.clipious)** was updated from 1.16.4 to 1.17.0
 * **[Commons](https://f-droid.org/packages/fr.free.nrw.commons)** was updated from 4.1.0 to 4.2.0
-* **[Conversations](https://f-droid.org/packages/eu.siacs.conversations)** was updated from 2.12.11+free to 2.12.12-beta.2+free adding experimental support for Private DNS (DNS over TLS), themed icon on Android 13+ and many fixes. _Note that this is still in `beta` so brave users need to install this manually (enable Beta updates for the app or from Client expert settings)._
+* **[Conversations](https://f-droid.org/packages/eu.siacs.conversations)** was updated from 2.12.11+free to 2.12.12-beta.2+free
 * **[Diaguard: Diabetes Diary](https://f-droid.org/packages/com.faltenreich.diaguard)** was updated from 3.11.1 to 3.12.1
 * **[Drinkable](https://f-droid.org/packages/com.moimob.drinkable)** was updated from 1.39.0 to 1.40.0
 * **[Droid-ify](https://f-droid.org/packages/com.looker.droidify)** was updated from 0.5.9 Patch 1 to 0.5.9 Patch 2
@@ -78,7 +90,8 @@ author: "Enter-your-name-here"
 * **[DuckDuckGo Privacy Browser](https://f-droid.org/packages/com.duckduckgo.mobile.android)** was updated from 5.172.2 to 5.174.0
 * **[Easy Diary](https://f-droid.org/packages/me.blog.korn123.easydiary)** was updated from 1.4.302.202309180 to 1.4.303.202310160
 * **[EinkBro](https://f-droid.org/packages/info.plateaukao.einkbro)** was updated from 10.14.0 to 10.15.0
-* **[F-Droid](https://f-droid.org/packages/org.fdroid.fdroid)** and **[F-Droid Basic](https://f-droid.org/packages/org.fdroid.basic)** were updated from 1.18.0 to 1.19.0-alpha0, now with support for automatic background updates on Android 12+ as announced [last week](https://f-droid.org/en/2023/10/19/twif-client-alpha-kde-removal-by-google.html). _Note that this is still in `beta` so brave users need to install this manually (enable Beta updates for the app or from Client expert settings)._
+* **[F-Droid](https://f-droid.org/packages/org.fdroid.fdroid)** was updated from 1.18.0 to 1.19.0-alpha0
+* **[F-Droid Basic](https://f-droid.org/packages/org.fdroid.basic)** was updated from 1.18.0 to 1.19.0-alpha0
 * **[FFUpdater](https://f-droid.org/packages/de.marmaro.krt.ffupdater)** was updated from 78.2.4 to 78.3.0
 * **[FairEmail](https://f-droid.org/packages/eu.faircode.email)** was updated from 1.2108 to 1.2112
 * **[Fast Draw](https://f-droid.org/packages/peterfajdiga.fastdraw)** was updated from 1.6 to 1.7
@@ -90,7 +103,7 @@ author: "Enter-your-name-here"
 * **[Graded - Grade tracker](https://f-droid.org/packages/com.NightDreamGames.Grade.ly)** was updated from 2.4.1 to 2.4.2
 * **[HexViewer](https://f-droid.org/packages/fr.ralala.hexviewer)** was updated from 1.46 to 1.47
 * **[IITC-CE Mobile](https://f-droid.org/packages/org.exarhteam.iitc_mobile)** was updated from 0.36.1 to 0.37.0
-* **[Image Toolbox (Resizer)](https://f-droid.org/packages/ru.tech.imageresizershrinker)** is finally updated again. Since 2.1.3 [we couldn't build the apk reproducibly](https://github.com/T8RIN/ImageToolbox/discussions/151). Then some prebuilt libs were added which introduced more problems. Thanks to the efforts of [@Licaon_Kter](https://gitlab.com/licaon-kter) and [@T8RIN](https://github.com/T8RIN) those binaries are cleaned up and the APK are reproducible again after 4 months.
+* **[Image Toolbox (Resizer)](https://f-droid.org/packages/ru.tech.imageresizershrinker)** was updated from 2.0.5 to 2.4.1
 * **[Immich](https://f-droid.org/packages/app.alextran.immich)** was updated from 1.81.0 to 1.82.0
 * **[Infomaniak Mail](https://f-droid.org/packages/com.infomaniak.mail)** was updated from 1.0.15 to 1.0.16
 * **[Infomaniak kDrive](https://f-droid.org/packages/com.infomaniak.drive)** was updated from 4.2.30 to 4.2.31
@@ -104,7 +117,7 @@ author: "Enter-your-name-here"
 * **[LavSeeker](https://f-droid.org/packages/org.woheller69.lavatories)** was updated from 2.1 to 2.2
 * **[LibrePass](https://f-droid.org/packages/dev.medzik.librepass.android)** was updated from 1.0.0-alpha04 to 1.0.0-alpha06
 * **[LibreTube](https://f-droid.org/packages/com.github.libretube)** was updated from 0.18.1 to 0.19.0
-* **[Linphone - open source SIP client](https://f-droid.org/packages/org.linphone)** was updated from 5.1.3 to 5.1.4 and now supports the narrow-band vocoder-based audio data compression algorithm G.729.
+* **[Linphone - open source SIP client](https://f-droid.org/packages/org.linphone)** was updated from 5.1.3 to 5.1.4
 * **[Linwood Butterfly](https://f-droid.org/packages/dev.linwood.butterfly.nightly)** was updated from 2.0.0-beta.9 to 2.0.0-beta.11
 * **[Locus](https://f-droid.org/packages/app.myzel394.locus)** was updated from 0.15.1 to 0.15.2
 * **[LogFox](https://f-droid.org/packages/com.f0x1d.logfox)** was updated from 1.4.4 to 1.4.6
@@ -148,7 +161,7 @@ author: "Enter-your-name-here"
 * **[Sithakuru](https://f-droid.org/packages/kasun.sinhala.keyboard)** was updated from 1.0.9 to 1.1.0
 * **[Spotube](https://f-droid.org/packages/oss.krtirtho.spotube)** was updated from 3.1.2 to 3.2.0
 * **[Squawker](https://f-droid.org/packages/org.ca.squawker)** was updated from 3.4.4 to 3.5.0
-* **[Standard Notes](https://f-droid.org/packages/com.standardnotes)** is back! The license of Standard Notes was [changed](https://github.com/standardnotes/app/commit/9e908f344c6a15c961310b6b57e1c56032ac50df) from `AGPL3` to `BY-NC-SA 4.0` which is not an FOSS license. After it was [reported](https://gitlab.com/fdroid/fdroiddata/-/issues/3069), we [disabled afftected versions and stopped updating it](https://gitlab.com/fdroid/fdroiddata/-/commit/ee585f7f512e78518556c66f44dbb398a5db2475). Recently, the change was [reverted](https://github.com/standardnotes/app/commit/d254e1c4e34793c23b0c62c24bb239dda5187365) so Standard Notes is FOSS again! More details can be found [here](https://github.com/standardnotes/forum/discussions/3196). [@proletarius101](https://gitlab.com/proletarius101) [re-enabled](https://gitlab.com/fdroid/fdroiddata/-/merge_requests/13878) with an update.
+* **[Standard Notes](https://f-droid.org/packages/com.standardnotes)** was updated from 3.167.25 to 3.178.5
 * **[Stingle Photos](https://f-droid.org/packages/org.stingle.photos)** was updated from 2.10.2 to 2.11.0
 * **[Super Retro Mega Wars](https://f-droid.org/packages/com.serwylo.retrowars)** was updated from 0.31.11 to 0.31.12
 * **[TRIfA](https://f-droid.org/packages/com.zoffcc.applications.trifa)** was updated from 1.0.219 to 1.0.220
@@ -176,7 +189,7 @@ author: "Enter-your-name-here"
 * **[ente - encrypted photo storage](https://f-droid.org/packages/io.ente.photos.fdroid)** was updated from 0.7.100 to 0.7.102
 * **[ente Authenticator](https://f-droid.org/packages/io.ente.auth)** was updated from 2.0.8 to 2.0.12
 * **[jtx Board journals & notes & tasks](https://f-droid.org/packages/at.techbee.jtx)** was updated from 2.06.00.ose to 2.06.01.ose
-* **[kubenav](https://f-droid.org/packages/io.kubenav.kubenav)** has been rewriten in Flutter and Go since 4.0.0. This broke the update checker and we only noticed that recently. [@linsui](https://gitlab.com/linsui) [added](https://gitlab.com/fdroid/fdroiddata/-/merge_requests/13850) [v4.2.3](https://github.com/kubenav/kubenav/releases/tag/v4.2.3) and patched out some new non-free deps. It should be updated automatically in the future.
+* **[kubenav](https://f-droid.org/packages/io.kubenav.kubenav)** was updated from 3.9.0 to 4.2.3
 * **[openHAB Beta](https://f-droid.org/packages/org.openhab.habdroid.beta)** was updated from 3.7.6-beta to 3.7.7-beta
 * **[ownCloud](https://f-droid.org/packages/com.owncloud.android)** was updated from 4.1.0 to 4.1.1
 * **[wX](https://f-droid.org/packages/joshuatee.wx)** was updated from 55835 to 55836
@@ -187,5 +200,4 @@ Please subscribe to the RSS feed at https://f-droid.org/news/ on your favourite 
 
 
 You are welcome to join the [TWIF forum thread](https://forum.f-droid.org/t/new-twif-submission-thread/23546) if you have any news from around the community, maybe it will be featured next week.;)
-
 
