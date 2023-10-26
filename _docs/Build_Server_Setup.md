@@ -58,7 +58,7 @@ really ready for proper packaging. Also, it will likely only work on
 Debian, Ubuntu and other Debian-derivatives since F-Droid only uses
 Debian in its infrastructure (we welcome porting contributions!).
 
-The base server needs to be at minimum Debian/jessie, or there will
+The base server needs to be at minimum Debian/bullseye, or there will
 need to be some heavy tweaking. If you run Ubuntu or derivative
 distro, you can get any packages missing from your version, like
 _vagrant-cachier_, from this PPA:
@@ -72,10 +72,12 @@ packages are installed and the _fdroid_ user is created, nothing else
 in this process should be run using root or _sudo_.
 
 ```bash
-root:~# apt-get install vagrant virtualbox git python3-certifi \
+root:~# apt-get install vagrant git python3-certifi \
         python3-libvirt python3-requestbuilder python3-yaml \
         python3-clint python3-vagrant python3-paramiko python3-pyasn1 \
         python3-pyasn1-modules python3-requests python3-git
+        vagrant-mutate vagrant-libvirt ebtables dnsmasq-base \
+        libvirt-clients libvirt-daemon-system qemu-kvm qemu-utils
 root:~# adduser --disabled-password fdroid
 root:~# su fdroid
 ```
@@ -94,13 +96,6 @@ For your convenience you optionally may add the fdroid executable to your path:
 
 ```bash
 fdroid:~$ echo "PATH=\$PATH:$HOME/fdroidserver" >> ~/.bashrc
-```
-
-Create the base buildserver image... (downloading the basebox and all the sdk platforms can take long time).
-
-```bash
-fdroid:~$ cd fdroidserver
-fdroid:~/fdroidserver$ ./makebuildserver
 ```
 
 Get all of the app build metadata from the fdroiddata repo...
@@ -126,12 +121,17 @@ want to bootstrap those by yourself you should look at:
 
 ### Creating the F-Droid buildserver box
 
-```bash
-# navigate to your clone of F-Droid Server
-cd .../fdroidserver
 
-# start building the your basebox image
-./makebuildserver
+Create a config file for Vagrant as `~/fdroidserver/buildserver/Vagrantfile.yaml` which contains:
+```
+vm_provider: libvirt
+```
+
+Then the base buildserver image... (downloading the basebox and all the sdk platforms can take long time).
+
+```bash
+fdroid:~$ cd fdroidserver
+fdroid:~/fdroidserver$ ./makebuildserver --verbose
 ```
 
 This will take a long time, use a lot of bandwidth and disk space -
@@ -143,7 +143,7 @@ run that script again and the existing one will be updated in place.
 
 Once it's complete you'll have a new base box called 'buildserver' which
 is what's used for your App build runs. Now you can build packages as
-as you used to, but when you run `fdroid build --server ...` App build
+as you used to, but when you run `fdroid build --verbose --server ...` App build
 runs will be isolated inside a virtual machine.
 
 While the created image has allocated a limited amount of CPU cores and memory, you can edit `~/fdroiddata/builder/Vagrantfile` to modify them dynamically at run time, eg. `libvirt.cpus = 6` and `libvirt.memory = 12288`, but do make sure to not go over the host machines' limits else the VM might get killed.
@@ -195,21 +195,15 @@ fdroid:~/fdroidserver$ cd ~/fdroiddata
 fdroid:~/fdroiddata$ ~/fdroidserver/fdroid build org.fdroid.fdroid -l --server
 ```
 
-## Optionally using QEMU/KVM/libvirt instead of VirtualBox
+## Setting us QEMU/KVM/libvirt
 
-It is also possible to QEMU/KVM guest VMs via libvirt instead of the
-default VirtualBox.  VirtualBox is still the recommended setup since
-that is what is used by f-droid.org, but there are cases where it is
-not possible to run VirtualBox, like on a machine that is already
-running QEMU/KVM guests.  In order to make the libvirt image files
-directly readable by `vagrant package`, _libvirt_'s QEMU needs to be
-configured to always set the ownership to `libvirt.libvirt`.
+While VirtualBox was used in the past, QEMU/KVM guest VMs via libvirt is
+still the recommended setup since that is what is used by f-droid.or. In
+order to make the libvirt image files directly readable by `vagrant package`,
+_libvirt_'s QEMU needs to be configured to always set the ownership to
+`libvirt.libvirt`.
 
 ```console
-root:~# apt-get install vagrant vagrant-mutate vagrant-libvirt ebtables dnsmasq-base \
-        python3-libvirt libvirt-clients libvirt-daemon-system qemu-kvm qemu-utils git \
-        python3-yaml python3-clint python3-vagrant python3-pyasn1 python3-pyasn1-modules \
-        python3-requests python3-git
 root:~# cat << EOF >> /etc/libvirt/qemu.conf
 user = "libvirt"
 group = "libvirt"
