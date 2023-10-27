@@ -29,7 +29,7 @@ author: "paulali"
 
 I want to highlight some updates of this week:
 
-**[Image Toolbox](https://f-droid.org/packages/ru.tech.imageresizershrinker/)** is finally updated again. Since 2.1.3 [we can't build the apk reproducibly](https://github.com/T8RIN/ImageToolbox/discussions/151). Then some prebuilt libs are added which introduces more problems. Thanks to the effort of [@Licaon_Kter](https://gitlab.com/licaon-kter) and [@T8RIN](https://github.com/T8RIN) those binaries are cleaned up and the apk is reproducible again after 4 months.
+**[Image Toolbox](https://f-droid.org/packages/ru.tech.imageresizershrinker/)** is finally updated again. Since 2.1.3 [we can't build the APK reproducibly](https://github.com/T8RIN/ImageToolbox/discussions/151). Then some prebuilt libs are added which introduces more problems. Thanks to the effort of [@Licaon_Kter](https://gitlab.com/licaon-kter) and [@T8RIN](https://github.com/T8RIN) those binaries are cleaned up and the APK is reproducible again after 4 months.
 
 **[Kubenav](https://f-droid.org/en/packages/io.kubenav.kubenav/)** is rewriten in Flutter and Go since 4.0.0. This broke the update checker and we only noticed that recently. [@linsui](https://gitlab.com/linsui) [added](https://gitlab.com/fdroid/fdroiddata/-/merge_requests/13850) [v4.2.3](https://github.com/kubenav/kubenav/releases/tag/v4.2.3) and patched out some new non-free deps. It should be updated automatically in the future.
 
