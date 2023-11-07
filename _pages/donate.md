@@ -52,25 +52,7 @@ If you would like to donate via a direct IBAN bank transfer, then donate via [F-
 
 #### Cryptocurrency
 
-All cryptocurrency donations to F-Droid, including Bitcoin and many others, are processed through OpenCollective:
-
-<p align="center">
-<a href="https://opencollective.com/f-droid/donate/crypto" target="_blank">
-<img class="crypto-logos" src="{% asset crypto-logos/BTC.svg %}" alt="BTC (Bitcoin)" />
-<img class="crypto-logos" src="{% asset crypto-logos/ETH.svg %}" alt="ETH (Ethereum)" />
-<img class="crypto-logos" src="{% asset crypto-logos/BCH.svg %}" alt="BCH (Bitcoin Cash)" />
-<img class="crypto-logos" src="{% asset crypto-logos/LTC.svg %}" alt="LTC (Litecoin)" />
-<img class="crypto-logos" src="{% asset crypto-logos/ZEC.svg %}" alt="ZEC (Zcash)" />
-<img class="crypto-logos" src="{% asset crypto-logos/LINK.svg %}" alt="LINK (Chainlink)" />
-<img class="crypto-logos" src="{% asset crypto-logos/BAT.svg %}" alt="BAT (Basic Attention Token)" />
-<img class="crypto-logos" src="{% asset crypto-logos/DAI.svg %}" alt="DAI (Dai)" />
-<img class="crypto-logos" src="{% asset crypto-logos/OXT.svg %}" alt="OXT (Orchid)" />
-<img class="crypto-logos" src="{% asset crypto-logos/STORJ.svg %}" alt="STORJ (Storj)" />
-<img class="crypto-logos" src="{% asset crypto-logos/AMP.svg %}" alt="AMP (Amp)" />
-<img class="crypto-logos" src="{% asset crypto-logos/ZRX.svg %}" alt="ZRX (Ox)" />
-<img class="crypto-logos" src="{% asset crypto-logos/DOGE.svg %}" alt="DOGE (Dogecoin)" />
-</a>
-</p>
+All cryptocurrency donations to F-Droid, including Bitcoin and many others, are on hold for the time being, this page will be updated as soon as possible.
 
 
 ## Swag
