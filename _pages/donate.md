@@ -52,7 +52,7 @@ If you would like to donate via a direct IBAN bank transfer, then donate via [F-
 
 #### Cryptocurrency
 
-All cryptocurrency donations to F-Droid, including Bitcoin and many others, are on hold for the time being, this page will be updated as soon as possible.
+All cryptocurrency donations to F-Droid, including Bitcoin and many others, are [on hold](https://opencollective.com/opensource/updates/open-source-collective-is-disabling-contributions-in-cryptocurrencies) for the time being, this page will be updated if there any related changes.
 
 
 ## Swag
