@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
-"POT-Creation-Date: 2023-10-11 09:18+0200\n"
+"POT-Creation-Date: 2023-11-10 09:27+0100\n"
 "PO-Revision-Date: 2023-09-19 15:24+0000\n"
 "Last-Translator: Hans-Christoph Steiner <hans@guardianproject.info>\n"
 "Language-Team: Polish <https://hosted.weblate.org/projects/f-droid/website-docs/pl/>\n"
@@ -4423,7 +4423,9 @@ msgstr "W ten sposób można skonfigurować działający serwer kompilacji, zacz
 
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
-msgid "The base server needs to be at minimum Debian/jessie, or there will need to be some heavy tweaking. If you run Ubuntu or derivative distro, you can get any packages missing from your version, like _vagrant-cachier_, from this PPA: <https://launchpad.net/~fdroid/+archive/ubuntu/buildserver/>"
+#, fuzzy
+#| msgid "The base server needs to be at minimum Debian/jessie, or there will need to be some heavy tweaking. If you run Ubuntu or derivative distro, you can get any packages missing from your version, like _vagrant-cachier_, from this PPA: <https://launchpad.net/~fdroid/+archive/ubuntu/buildserver/>"
+msgid "The base server needs to be at minimum Debian/bullseye, or there will need to be some heavy tweaking. If you run Ubuntu or derivative distro, you can get any packages missing from your version, like _vagrant-cachier_, from this PPA: <https://launchpad.net/~fdroid/+archive/ubuntu/buildserver/>"
 msgstr "Podstawowy serwer musi mieć co najmniej Debian/jessie albo będzie wymagał wprowadzenia kilku poważnych zmian. Jeśli używasz Ubuntu lub pochodnej dystrybucji, możesz uzyskać brakujące pakiety z Twojej wersji, takie jak _vagrant-cachier_, z tego PPA: <https://launchpad.net/~fdroid/+archive/ubuntu/buildserver/>"
 
 #. type: Plain text
@@ -4433,12 +4435,21 @@ msgstr "Najpierw zainstaluj niezbędne pakiety i utwórz nowego użytkownika, ab
 
 #. type: Fenced code block (bash)
 #: _docs/Build_Server_Setup.md
-#, no-wrap
+#, fuzzy, no-wrap
+#| msgid ""
+#| "root:~# apt-get install vagrant virtualbox git python3-certifi \\\n"
+#| "        python3-libvirt python3-requestbuilder python3-yaml \\\n"
+#| "        python3-clint python3-vagrant python3-paramiko python3-pyasn1 \\\n"
+#| "        python3-pyasn1-modules python3-requests python3-git\n"
+#| "root:~# adduser --disabled-password fdroid\n"
+#| "root:~# su fdroid\n"
 msgid ""
-"root:~# apt-get install vagrant virtualbox git python3-certifi \\\n"
+"root:~# apt-get install vagrant git python3-certifi \\\n"
 "        python3-libvirt python3-requestbuilder python3-yaml \\\n"
 "        python3-clint python3-vagrant python3-paramiko python3-pyasn1 \\\n"
 "        python3-pyasn1-modules python3-requests python3-git\n"
+"        vagrant-mutate vagrant-libvirt ebtables dnsmasq-base \\\n"
+"        libvirt-clients libvirt-daemon-system qemu-kvm qemu-utils\n"
 "root:~# adduser --disabled-password fdroid\n"
 "root:~# su fdroid\n"
 msgstr ""
@@ -4451,20 +4462,19 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
-msgid "Clone source code and configure the buildserver settings, running as _fdroid_ user:"
+#, fuzzy
+#| msgid "Clone source code and configure the buildserver settings, running as _fdroid_ user:"
+msgid "Clone source code running as _fdroid_ user:"
 msgstr "Sklonuj kod źródłowy i skonfiguruj ustawienia buildserver, działając jako _fdroid_ user:"
 
 #. type: Fenced code block (bash)
 #: _docs/Build_Server_Setup.md
-#, no-wrap
+#, fuzzy, no-wrap
+#| msgid "$ git clone https://gitlab.com/fdroid/fdroid-website\n"
 msgid ""
 "fdroid:~$ cd ~\n"
 "fdroid:~$ git clone https://gitlab.com/fdroid/fdroidserver.git\n"
-"fdroid:~$ cp fdroidserver/examples/makebuildserver.config.py fdroidserver/\n"
-msgstr ""
-"fdroid:~$ cd ~\n"
-"fdroid:~$ git clone https://gitlab.com/fdroid/fdroidserver.git\n"
-"fdroid:~$ cp fdroidserver/examples/makebuildserver.config.py fdroidserver/\n"
+msgstr "$ sklonuj git https://gitlab.com/fdroid/fdroid-website\n"
 
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
@@ -4481,21 +4491,6 @@ msgstr "Dla Twojej wygody opcjonalnie możesz dodać plik wykonywalny fdroid do 
 #, no-wrap
 msgid "fdroid:~$ echo \"PATH=\\$PATH:$HOME/fdroidserver\" >> ~/.bashrc\n"
 msgstr "fdroid:~$ echo \"PATH=\\$PATH:$HOME/fdroidserver\" >> ~/.bashrc\n"
-
-#. type: Plain text
-#: _docs/Build_Server_Setup.md
-msgid "Create the base buildserver image... (downloading the basebox and all the sdk platforms can take long time)."
-msgstr "Utwórz podstawowy obraz instalatora build... (pobieranie basebox i wszystkich platform sdk może zająć dużo czasu)."
-
-#. type: Fenced code block (bash)
-#: _docs/Build_Server_Setup.md
-#, no-wrap
-msgid ""
-"fdroid:~$ cd fdroidserver\n"
-"fdroid:~/fdroidserver$ ./makebuildserver\n"
-msgstr ""
-"fdroid:~$ cd fdroidserver\n"
-"fdroid:~/fdroidserver$ ./makebuildserver\n"
 
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
@@ -4524,7 +4519,9 @@ msgstr "Konfigurowanie serwera kompilacji"
 
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
-msgid "In addition to the basic setup previously described, we ship a Vagrant-compatible Debian/stretch base box called 'fdroid/basebox-stretch64'."
+#, fuzzy
+#| msgid "In addition to the basic setup previously described, we ship a Vagrant-compatible Debian/stretch base box called 'fdroid/basebox-stretch64'."
+msgid "In addition to the basic setup previously described, we ship a Vagrant-compatible Debian/bullseye base box called 'fdroid/bullseye64'."
 msgstr "Oprócz konfiguracji podstawowej opisanej wcześniej, wysyłamy w sposób zgodny z Vagrant Debian/stretch base box o nazwie 'fdroid/basebox-stretch64 '."
 
 #. type: Plain text
@@ -4540,30 +4537,35 @@ msgstr "Tworzenie skrzynki serwera F-Droid buildserver"
 
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
-msgid "Navigate to your clone of [F-Droid Server git](https://gitlab.com/fdroid/fdroidserver) and start by creating `makebuildserver.config.py`, using `./examples/makebuildserver.config.py` as a reference - look at the settings and documentation there to decide if any need changing to suit your environment. There is a path for retrieving the base box if it doesn't exist, and an apt proxy definition, both of which may need customising for your environment. You can then go to the `fdroidserver` directory and run `makebuildserver`."
-msgstr "Przejdź do swojego klonu [F-Droid Server git](https://gitlab.com/fdroid/fdroidserver) i zacznij od stworzenia `makebuildserver.config.py`, używając `./examples/makebuildserver.config.py` jako wzoru — spójrz na ustawienia i dokumentację, aby zdecydować, czy istnieje potrzeba zmian pod Twoje środowisko. Istnieje ścieżka pobierania base box, jeśli nie istnieje, oraz definicja proxy apt, które mogą wymagać dostosowania pod Twoje środowisko. Następnie możesz przejść do katalogu `fdroidserver` i uruchomić `makebuildserver`."
+msgid "Create a config file for Vagrant as `~/fdroidserver/buildserver/Vagrantfile.yaml` which contains:"
+msgstr ""
+
+#. type: Fenced code block
+#: _docs/Build_Server_Setup.md
+#, fuzzy, no-wrap
+#| msgid "vm_provider = 'libvirt'\n"
+msgid "vm_provider: libvirt\n"
+msgstr "vm_provider = 'libvirt'\n"
+
+#. type: Plain text
+#: _docs/Build_Server_Setup.md
+#, fuzzy
+#| msgid "Create the base buildserver image... (downloading the basebox and all the sdk platforms can take long time)."
+msgid "Then the base buildserver image... (downloading the basebox and all the sdk platforms can take long time)."
+msgstr "Utwórz podstawowy obraz instalatora build... (pobieranie basebox i wszystkich platform sdk może zająć dużo czasu)."
 
 #. type: Fenced code block (bash)
 #: _docs/Build_Server_Setup.md
-#, no-wrap
+#, fuzzy, no-wrap
+#| msgid ""
+#| "fdroid:~$ cd fdroidserver\n"
+#| "fdroid:~/fdroidserver$ ./makebuildserver\n"
 msgid ""
-"# navigate to your clone of F-Droid Server\n"
-"cd .../fdroidserver\n"
-"\n"
-"# copy example config file\n"
-"cp examples/makebuildserver.config.py makebuildserver.config.py\n"
-"\n"
-"# start building the your basebox image\n"
-"./makebuildserver\n"
+"fdroid:~$ cd fdroidserver\n"
+"fdroid:~/fdroidserver$ ./makebuildserver --verbose\n"
 msgstr ""
-"# przejdź do klonu serwera F-Droid\n"
-"cd .../fdroidserver\n"
-"\n"
-"# skopiuj przykładowy plik konfiguracji\n"
-"cp examples/makebuildserver.config.py makebuildserver.config.py\n"
-"\n"
-"# zacznij kompilację swojego obrazu basebox\n"
-"./makebuildserver\n"
+"fdroid:~$ cd fdroidserver\n"
+"fdroid:~/fdroidserver$ ./makebuildserver\n"
 
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
@@ -4572,8 +4574,15 @@ msgstr "Zajmie to dużo czasu, będzie wymagało dużej przepustowości i miejsc
 
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
-msgid "Once it's complete you'll have a new base box called 'buildserver' which is what's used for your App build runs. Now you can build packages as as you used to, but when you run `fdroid build --server ...` App build runs will be isolated inside a virtual machine."
+#, fuzzy
+#| msgid "Once it's complete you'll have a new base box called 'buildserver' which is what's used for your App build runs. Now you can build packages as as you used to, but when you run `fdroid build --server ...` App build runs will be isolated inside a virtual machine."
+msgid "Once it's complete you'll have a new base box called 'buildserver' which is what's used for your App build runs. Now you can build packages as as you used to, but when you run `fdroid build --verbose --server ...` App build runs will be isolated inside a virtual machine."
 msgstr "Po zakończeniu otrzymasz nową skrzynkę bazową o nazwie 'buildserver', która jest używana do tworzenia aplikacji. Teraz możesz budować pakiety tak jak kiedyś, ale po uruchomieniu `fdroid build --server ...`, uruchomione kompilacje aplikacji będą izolowane wewnątrz maszyny wirtualnej."
+
+#. type: Plain text
+#: _docs/Build_Server_Setup.md
+msgid "While the created image has allocated a limited amount of CPU cores and memory, you can edit `~/fdroiddata/builder/Vagrantfile` to modify them dynamically at run time, eg. `libvirt.cpus = 6` and `libvirt.memory = 12288`, but do make sure to not go over the host machines' limits else the VM might get killed."
+msgstr ""
 
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
@@ -4647,22 +4656,20 @@ msgstr ""
 #. type: Title ##
 #: _docs/Build_Server_Setup.md
 #, no-wrap
-msgid "Optionally using QEMU/KVM/libvirt instead of VirtualBox"
-msgstr "Opcjonalnie za pomocą QEMU/KVM/libvirt zamiast VirtualBox"
+msgid "Setting us QEMU/KVM/libvirt"
+msgstr ""
 
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
-msgid "It is also possible to QEMU/KVM guest VMs via libvirt instead of the default VirtualBox.  VirtualBox is still the recommended setup since that is what is used by f-droid.org, but there are cases where it is not possible to run VirtualBox, like on a machine that is already running QEMU/KVM guests.  In order to make the libvirt image files directly readable by `vagrant package`, _libvirt_'s QEMU needs to be configured to always set the ownership to `libvirt.libvirt`."
+#, fuzzy
+#| msgid "It is also possible to QEMU/KVM guest VMs via libvirt instead of the default VirtualBox.  VirtualBox is still the recommended setup since that is what is used by f-droid.org, but there are cases where it is not possible to run VirtualBox, like on a machine that is already running QEMU/KVM guests.  In order to make the libvirt image files directly readable by `vagrant package`, _libvirt_'s QEMU needs to be configured to always set the ownership to `libvirt.libvirt`."
+msgid "While VirtualBox was used in the past, QEMU/KVM guest VMs via libvirt is still the recommended setup since that is what is used by f-droid.or. In order to make the libvirt image files directly readable by `vagrant package`, _libvirt_'s QEMU needs to be configured to always set the ownership to `libvirt.libvirt`."
 msgstr "Możliwe jest również użycie maszyn VM QEMU/KVM przez libvirt zamiast domyślnego VirtualBox. VirtualBox jest nadal zalecanym ustawieniem, ponieważ jest to używane przez f-droid.org, ale zdarzają się przypadki, w których nie można uruchomić VirtualBox, jak na komputerze, na którym już działają goście QEMU/KVM. Aby pliki obrazów libvirt można było odczytywać bezpośrednio za pomocą `pakietu vagrant`, należy skonfigurować użytkownika QEMU _libvirt_ tak, aby zawsze ustawiało prawo własności do `libvirt.libvirt`."
 
 #. type: Fenced code block (console)
 #: _docs/Build_Server_Setup.md
 #, no-wrap
 msgid ""
-"root:~# apt-get install vagrant vagrant-mutate vagrant-libvirt ebtables dnsmasq-base \\\n"
-"        python3-libvirt libvirt-clients libvirt-daemon-system qemu-kvm qemu-utils git \\\n"
-"        python3-yaml python3-clint python3-vagrant python3-pyasn1 python3-pyasn1-modules \\\n"
-"        python3-requests python3-git\n"
 "root:~# cat << EOF >> /etc/libvirt/qemu.conf\n"
 "user = \"libvirt\"\n"
 "group = \"libvirt\"\n"
@@ -4670,32 +4677,12 @@ msgid ""
 "EOF\n"
 "root:~# service libvirtd restart\n"
 msgstr ""
-"root:~# apt-get install vagrant vagrant-mutate vagrant-libvirt ebtables dnsmasq-base \\\n"
-"        python3-libvirt libvirt-clients libvirt-daemon-system qemu-kvm qemu-utils git \\\n"
-"        python3-yaml python3-clint python3-vagrant python3-pyasn1 python3-pyasn1-modules \\\n"
-"        python3-requests python3-git\n"
-"root:~# cat << EOF >> /etc/libvirt/qemu.conf\n"
-"user = \"libvirt\"\n"
-"group = \"libvirt\"\n"
-"dynamic_ownership = 1\n"
-"EOF\n"
-"root:~# service libvirtd restart\n"
-
-#. type: Plain text
-#: _docs/Build_Server_Setup.md
-msgid "Then create a _makebuildserver.config.py_ next to _makebuildserver_ and add:"
-msgstr "Następnie utwórz _makebuildserver.config.py_ obok _makebuildserver_ i dodaj:"
-
-#. type: Fenced code block (python)
-#: _docs/Build_Server_Setup.md
-#, no-wrap
-msgid "vm_provider = 'libvirt'\n"
-msgstr "vm_provider = 'libvirt'\n"
 
 #. type: Title #####
 #: _docs/Build_Server_Setup.md
-#, no-wrap
-msgid "Debian/stretch and Ubuntu/xenial"
+#, fuzzy, no-wrap
+#| msgid "Debian/stretch and Ubuntu/xenial"
+msgid "Debian/bullseye and Ubuntu/xenial"
 msgstr "Debian/stretch i Ubuntu/xenial"
 
 #. type: Fenced code block (console)
@@ -12423,6 +12410,70 @@ msgstr "Preferencje"
 #: _docs/Whitelabel_Builds.md
 msgid "For a custom build that enables Automatic Updates by default, override _app/src/main/res/xml/preferences.xml_. You can customize the preferences and their default values in _app/src/mycompany/res/xml/preferences.xml_. The fully automatic update requires [Privileged Extension](https://gitlab.com/fdroid/privileged-extension). With regular access, the updates will only automatically download. The user still needs to click install on each one."
 msgstr "W przypadku niestandardowej kompilacji, która domyślnie włącza aktualizacje automatyczne, należy zastąpić _app/src/main/res/xml/preferences.xml_. Możesz dostosować preferencje i ich domyślne wartości w _app/src/mycompany/res/xml/preferences.xml_. W pełni automatyczna aktualizacja wymaga rozszerzenia [Uprzywilejowane rozszerzenie](https://gitlab.com/fdroid/privileged-extension). Przy regularnym dostępie aktualizacje będą pobierane automatycznie. Użytkownik musi kliknąć instalację na każdym z nich."
+
+#, no-wrap
+#~ msgid ""
+#~ "fdroid:~$ cd ~\n"
+#~ "fdroid:~$ git clone https://gitlab.com/fdroid/fdroidserver.git\n"
+#~ "fdroid:~$ cp fdroidserver/examples/makebuildserver.config.py fdroidserver/\n"
+#~ msgstr ""
+#~ "fdroid:~$ cd ~\n"
+#~ "fdroid:~$ git clone https://gitlab.com/fdroid/fdroidserver.git\n"
+#~ "fdroid:~$ cp fdroidserver/examples/makebuildserver.config.py fdroidserver/\n"
+
+#~ msgid "Navigate to your clone of [F-Droid Server git](https://gitlab.com/fdroid/fdroidserver) and start by creating `makebuildserver.config.py`, using `./examples/makebuildserver.config.py` as a reference - look at the settings and documentation there to decide if any need changing to suit your environment. There is a path for retrieving the base box if it doesn't exist, and an apt proxy definition, both of which may need customising for your environment. You can then go to the `fdroidserver` directory and run `makebuildserver`."
+#~ msgstr "Przejdź do swojego klonu [F-Droid Server git](https://gitlab.com/fdroid/fdroidserver) i zacznij od stworzenia `makebuildserver.config.py`, używając `./examples/makebuildserver.config.py` jako wzoru — spójrz na ustawienia i dokumentację, aby zdecydować, czy istnieje potrzeba zmian pod Twoje środowisko. Istnieje ścieżka pobierania base box, jeśli nie istnieje, oraz definicja proxy apt, które mogą wymagać dostosowania pod Twoje środowisko. Następnie możesz przejść do katalogu `fdroidserver` i uruchomić `makebuildserver`."
+
+#, no-wrap
+#~ msgid ""
+#~ "# navigate to your clone of F-Droid Server\n"
+#~ "cd .../fdroidserver\n"
+#~ "\n"
+#~ "# copy example config file\n"
+#~ "cp examples/makebuildserver.config.py makebuildserver.config.py\n"
+#~ "\n"
+#~ "# start building the your basebox image\n"
+#~ "./makebuildserver\n"
+#~ msgstr ""
+#~ "# przejdź do klonu serwera F-Droid\n"
+#~ "cd .../fdroidserver\n"
+#~ "\n"
+#~ "# skopiuj przykładowy plik konfiguracji\n"
+#~ "cp examples/makebuildserver.config.py makebuildserver.config.py\n"
+#~ "\n"
+#~ "# zacznij kompilację swojego obrazu basebox\n"
+#~ "./makebuildserver\n"
+
+#, no-wrap
+#~ msgid "Optionally using QEMU/KVM/libvirt instead of VirtualBox"
+#~ msgstr "Opcjonalnie za pomocą QEMU/KVM/libvirt zamiast VirtualBox"
+
+#, no-wrap
+#~ msgid ""
+#~ "root:~# apt-get install vagrant vagrant-mutate vagrant-libvirt ebtables dnsmasq-base \\\n"
+#~ "        python3-libvirt libvirt-clients libvirt-daemon-system qemu-kvm qemu-utils git \\\n"
+#~ "        python3-yaml python3-clint python3-vagrant python3-pyasn1 python3-pyasn1-modules \\\n"
+#~ "        python3-requests python3-git\n"
+#~ "root:~# cat << EOF >> /etc/libvirt/qemu.conf\n"
+#~ "user = \"libvirt\"\n"
+#~ "group = \"libvirt\"\n"
+#~ "dynamic_ownership = 1\n"
+#~ "EOF\n"
+#~ "root:~# service libvirtd restart\n"
+#~ msgstr ""
+#~ "root:~# apt-get install vagrant vagrant-mutate vagrant-libvirt ebtables dnsmasq-base \\\n"
+#~ "        python3-libvirt libvirt-clients libvirt-daemon-system qemu-kvm qemu-utils git \\\n"
+#~ "        python3-yaml python3-clint python3-vagrant python3-pyasn1 python3-pyasn1-modules \\\n"
+#~ "        python3-requests python3-git\n"
+#~ "root:~# cat << EOF >> /etc/libvirt/qemu.conf\n"
+#~ "user = \"libvirt\"\n"
+#~ "group = \"libvirt\"\n"
+#~ "dynamic_ownership = 1\n"
+#~ "EOF\n"
+#~ "root:~# service libvirtd restart\n"
+
+#~ msgid "Then create a _makebuildserver.config.py_ next to _makebuildserver_ and add:"
+#~ msgstr "Następnie utwórz _makebuildserver.config.py_ obok _makebuildserver_ i dodaj:"
 
 #~ msgid "Storage driver: [AUFS](https://docs.docker.com/engine/userguide/storagedriver/aufs-driver/)"
 #~ msgstr "Sterownik pamięci masowej: [AUFS](https://docs.docker.com/engine/userguide/storagedriver/aufs-driver/)"

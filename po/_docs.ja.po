@@ -10,7 +10,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2023-10-11 09:18+0200\n"
+"POT-Creation-Date: 2023-11-10 09:27+0100\n"
 "PO-Revision-Date: 2023-07-23 18:09+0000\n"
 "Last-Translator: NPL <alterlinuxer@gmail.com>\n"
 "Language-Team: Japanese <https://hosted.weblate.org/projects/f-droid/website-docs/ja/>\n"
@@ -3998,7 +3998,7 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
-msgid "The base server needs to be at minimum Debian/jessie, or there will need to be some heavy tweaking. If you run Ubuntu or derivative distro, you can get any packages missing from your version, like _vagrant-cachier_, from this PPA: <https://launchpad.net/~fdroid/+archive/ubuntu/buildserver/>"
+msgid "The base server needs to be at minimum Debian/bullseye, or there will need to be some heavy tweaking. If you run Ubuntu or derivative distro, you can get any packages missing from your version, like _vagrant-cachier_, from this PPA: <https://launchpad.net/~fdroid/+archive/ubuntu/buildserver/>"
 msgstr ""
 
 #. type: Plain text
@@ -4010,27 +4010,29 @@ msgstr ""
 #: _docs/Build_Server_Setup.md
 #, no-wrap
 msgid ""
-"root:~# apt-get install vagrant virtualbox git python3-certifi \\\n"
+"root:~# apt-get install vagrant git python3-certifi \\\n"
 "        python3-libvirt python3-requestbuilder python3-yaml \\\n"
 "        python3-clint python3-vagrant python3-paramiko python3-pyasn1 \\\n"
 "        python3-pyasn1-modules python3-requests python3-git\n"
+"        vagrant-mutate vagrant-libvirt ebtables dnsmasq-base \\\n"
+"        libvirt-clients libvirt-daemon-system qemu-kvm qemu-utils\n"
 "root:~# adduser --disabled-password fdroid\n"
 "root:~# su fdroid\n"
 msgstr ""
 
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
-msgid "Clone source code and configure the buildserver settings, running as _fdroid_ user:"
+msgid "Clone source code running as _fdroid_ user:"
 msgstr ""
 
 #. type: Fenced code block (bash)
 #: _docs/Build_Server_Setup.md
-#, no-wrap
+#, fuzzy, no-wrap
+#| msgid "git clone https://gitlab.com/fdroid/fdroiddata.git\n"
 msgid ""
 "fdroid:~$ cd ~\n"
 "fdroid:~$ git clone https://gitlab.com/fdroid/fdroidserver.git\n"
-"fdroid:~$ cp fdroidserver/examples/makebuildserver.config.py fdroidserver/\n"
-msgstr ""
+msgstr "git clone https://gitlab.com/fdroid/fdroiddata.git\n"
 
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
@@ -4046,19 +4048,6 @@ msgstr ""
 #: _docs/Build_Server_Setup.md
 #, no-wrap
 msgid "fdroid:~$ echo \"PATH=\\$PATH:$HOME/fdroidserver\" >> ~/.bashrc\n"
-msgstr ""
-
-#. type: Plain text
-#: _docs/Build_Server_Setup.md
-msgid "Create the base buildserver image... (downloading the basebox and all the sdk platforms can take long time)."
-msgstr ""
-
-#. type: Fenced code block (bash)
-#: _docs/Build_Server_Setup.md
-#, no-wrap
-msgid ""
-"fdroid:~$ cd fdroidserver\n"
-"fdroid:~/fdroidserver$ ./makebuildserver\n"
 msgstr ""
 
 #. type: Plain text
@@ -4084,7 +4073,7 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
-msgid "In addition to the basic setup previously described, we ship a Vagrant-compatible Debian/stretch base box called 'fdroid/basebox-stretch64'."
+msgid "In addition to the basic setup previously described, we ship a Vagrant-compatible Debian/bullseye base box called 'fdroid/bullseye64'."
 msgstr ""
 
 #. type: Plain text
@@ -4100,21 +4089,27 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
-msgid "Navigate to your clone of [F-Droid Server git](https://gitlab.com/fdroid/fdroidserver) and start by creating `makebuildserver.config.py`, using `./examples/makebuildserver.config.py` as a reference - look at the settings and documentation there to decide if any need changing to suit your environment. There is a path for retrieving the base box if it doesn't exist, and an apt proxy definition, both of which may need customising for your environment. You can then go to the `fdroidserver` directory and run `makebuildserver`."
+msgid "Create a config file for Vagrant as `~/fdroidserver/buildserver/Vagrantfile.yaml` which contains:"
+msgstr ""
+
+#. type: Fenced code block
+#: _docs/Build_Server_Setup.md
+#, fuzzy, no-wrap
+#| msgid "vm_provider = 'libvirt'\n"
+msgid "vm_provider: libvirt\n"
+msgstr "vm_provider = 'libvirt'\n"
+
+#. type: Plain text
+#: _docs/Build_Server_Setup.md
+msgid "Then the base buildserver image... (downloading the basebox and all the sdk platforms can take long time)."
 msgstr ""
 
 #. type: Fenced code block (bash)
 #: _docs/Build_Server_Setup.md
 #, no-wrap
 msgid ""
-"# navigate to your clone of F-Droid Server\n"
-"cd .../fdroidserver\n"
-"\n"
-"# copy example config file\n"
-"cp examples/makebuildserver.config.py makebuildserver.config.py\n"
-"\n"
-"# start building the your basebox image\n"
-"./makebuildserver\n"
+"fdroid:~$ cd fdroidserver\n"
+"fdroid:~/fdroidserver$ ./makebuildserver --verbose\n"
 msgstr ""
 
 #. type: Plain text
@@ -4124,7 +4119,12 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
-msgid "Once it's complete you'll have a new base box called 'buildserver' which is what's used for your App build runs. Now you can build packages as as you used to, but when you run `fdroid build --server ...` App build runs will be isolated inside a virtual machine."
+msgid "Once it's complete you'll have a new base box called 'buildserver' which is what's used for your App build runs. Now you can build packages as as you used to, but when you run `fdroid build --verbose --server ...` App build runs will be isolated inside a virtual machine."
+msgstr ""
+
+#. type: Plain text
+#: _docs/Build_Server_Setup.md
+msgid "While the created image has allocated a limited amount of CPU cores and memory, you can edit `~/fdroiddata/builder/Vagrantfile` to modify them dynamically at run time, eg. `libvirt.cpus = 6` and `libvirt.memory = 12288`, but do make sure to not go over the host machines' limits else the VM might get killed."
 msgstr ""
 
 #. type: Plain text
@@ -4192,22 +4192,18 @@ msgstr ""
 #. type: Title ##
 #: _docs/Build_Server_Setup.md
 #, no-wrap
-msgid "Optionally using QEMU/KVM/libvirt instead of VirtualBox"
+msgid "Setting us QEMU/KVM/libvirt"
 msgstr ""
 
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
-msgid "It is also possible to QEMU/KVM guest VMs via libvirt instead of the default VirtualBox.  VirtualBox is still the recommended setup since that is what is used by f-droid.org, but there are cases where it is not possible to run VirtualBox, like on a machine that is already running QEMU/KVM guests.  In order to make the libvirt image files directly readable by `vagrant package`, _libvirt_'s QEMU needs to be configured to always set the ownership to `libvirt.libvirt`."
+msgid "While VirtualBox was used in the past, QEMU/KVM guest VMs via libvirt is still the recommended setup since that is what is used by f-droid.or. In order to make the libvirt image files directly readable by `vagrant package`, _libvirt_'s QEMU needs to be configured to always set the ownership to `libvirt.libvirt`."
 msgstr ""
 
 #. type: Fenced code block (console)
 #: _docs/Build_Server_Setup.md
 #, no-wrap
 msgid ""
-"root:~# apt-get install vagrant vagrant-mutate vagrant-libvirt ebtables dnsmasq-base \\\n"
-"        python3-libvirt libvirt-clients libvirt-daemon-system qemu-kvm qemu-utils git \\\n"
-"        python3-yaml python3-clint python3-vagrant python3-pyasn1 python3-pyasn1-modules \\\n"
-"        python3-requests python3-git\n"
 "root:~# cat << EOF >> /etc/libvirt/qemu.conf\n"
 "user = \"libvirt\"\n"
 "group = \"libvirt\"\n"
@@ -4216,21 +4212,10 @@ msgid ""
 "root:~# service libvirtd restart\n"
 msgstr ""
 
-#. type: Plain text
-#: _docs/Build_Server_Setup.md
-msgid "Then create a _makebuildserver.config.py_ next to _makebuildserver_ and add:"
-msgstr ""
-
-#. type: Fenced code block (python)
-#: _docs/Build_Server_Setup.md
-#, no-wrap
-msgid "vm_provider = 'libvirt'\n"
-msgstr "vm_provider = 'libvirt'\n"
-
 #. type: Title #####
 #: _docs/Build_Server_Setup.md
 #, no-wrap
-msgid "Debian/stretch and Ubuntu/xenial"
+msgid "Debian/bullseye and Ubuntu/xenial"
 msgstr ""
 
 #. type: Fenced code block (console)
