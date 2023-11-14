@@ -142,7 +142,7 @@ recipes change (e.g. when packages need to be added) you can just
 run that script again and the existing one will be updated in place.
 
 Once it's complete you'll have a new base box called 'buildserver' which
-is what's used for your App build runs. Now you can build packages as
+is what's used for your App build runs. Now you can build packages
 as you used to, but when you run `fdroid build --verbose --server ...` App build
 runs will be isolated inside a virtual machine.
 
@@ -195,10 +195,10 @@ fdroid:~/fdroidserver$ cd ~/fdroiddata
 fdroid:~/fdroiddata$ ~/fdroidserver/fdroid build org.fdroid.fdroid -l --server
 ```
 
-## Setting us QEMU/KVM/libvirt
+## Setting up QEMU/KVM/libvirt
 
 While VirtualBox was used in the past, QEMU/KVM guest VMs via libvirt is
-still the recommended setup since that is what is used by f-droid.or. In
+still the recommended setup since that is what is used by f-droid.org. In
 order to make the libvirt image files directly readable by `vagrant package`,
 _libvirt_'s QEMU needs to be configured to always set the ownership to
 `libvirt.libvirt`.
