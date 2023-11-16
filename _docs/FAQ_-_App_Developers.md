@@ -203,6 +203,21 @@ make your app reproducible. See our [inclusion how-to](../Inclusion_How-To) for
 more information.
 
 
+### How can I handle "fsck error in packed object" for my app?
+
+In order to ensure that our _buildserver_ gets the exact same commits as you put
+into _git_, [`git fsck`](https://git-scm.com/docs/git-fsck#_fsck_messages) is
+enabled by default whenever new commits are fetched.  Enabling _git fsck_
+[ensures](https://web.archive.org/web/20230407012910/https://groups.google.com/g/binary-transparency/c/f-BI4o8HZW0)
+that the commits [match](https://git-scm.com/docs/git-fsck#_discussion) their
+SHA1 checksum.  Sometimes, _git_ repos have corrupt but usable commits in them
+that cannot be changed since the whole history is based on the corrupt commit.
+For those cases, we have the
+[_skipList_](https://git-scm.com/docs/git-fsck#Documentation/git-fsck.txt-fsckskipList)
+functionality in
+[_fdroiddata_](https://gitlab.com/fdroid/fdroiddata/-/merge_requests/14014/diffs)
+
+
 ### Can I run my own F-Droid package repository?<a name="Can_I_run_my_own_app_repo"></a>
 
 Yes! You can also setup and run your own F-Droid repository of apps
