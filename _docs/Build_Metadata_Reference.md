@@ -995,12 +995,6 @@ Valid modes are:
     been implemented yet in bzr and svn, but _RepoManifest_ may still be
     used without it.
 
--   `RepoTrunk` - For svn and git-svn repositories, especially those who
-    don't have a bundled _AndroidManifest.xml_ file, the Tags and
-    RepoManifest checks will not work, since there is no version
-    information to obtain. But, for those apps who automate their build
-    process with the commit ref that HEAD points to, RepoTrunk will set
-    the _CurrentVersion_ and _CurrentVersionCode_ to that number.
 -   `Tags` - The _AndroidManifest.xml_ and _build.gradle_ files in all
     tagged revisions in the source repository are checked, looking for
     the highest version code.  The appropriateness of this method
