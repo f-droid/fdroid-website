@@ -297,27 +297,6 @@ setting `ANDROID_SDK_ROOT` might not be enough.
 Embedded [timestamps](https://reproducible-builds.org/docs/timestamps/) are the
 most common source of reproducibility issues and are best avoided.
 
-##### AboutLibraries Gradle plugin
-
-You can prevent this plugin (`com.mikepenz.aboutlibraries.plugin`) from adding a
-timestamp to the JSON file it generates by adding this to `build.gradle`:
-
-```gradle
-aboutLibraries {
-    // Remove the "generated" timestamp to allow for reproducible builds
-    excludeFields = ["generated"]
-}
-```
-
-For `build.gradle.kts`, add this instead:
-
-```gradle
-aboutLibraries {
-    // Remove the "generated" timestamp to allow for reproducible builds
-    excludeFields = arrayOf("generated")
-}
-```
-
 
 #### Native library stripping
 
@@ -503,7 +482,7 @@ known solutions are listed below:
 `LOCAL_LDFLAGS += -Wl,<linker args>` can be added to `Android.mk` files or to
 `build.gradle`/`build.gradle.kts`:
 
-```
+```gradle
 android {
     defaultConfig {
         externalNativeBuild {
@@ -520,7 +499,19 @@ android {
 For CMake versions since 3.13, `add_link_options(LINKER:<linker args>)`
 can be added to `CMakeLists.txt` globally. For CMake versions before 3.13,
 `target_link_libraries(<target> LINKER:<linker args>)` can be used instead for
-every target.
+every target. It can also be set in Gradle files:
+
+```gradle
+android {
+    defaultConfig {
+        externalNativeBuild.cmake {
+          cFlags "-DCMAKE_SHARED_LINKER_FLAGS=-Wl,<linker args>"
+        }
+    }
+}
+```
+
+`-ffile-prefix-map` can be used to remove embedded build path.
 
 ##### Golang
 
@@ -534,6 +525,36 @@ Linker arguments can be added with `-C link-args=-Wl,<linker args>`; `--remap-pa
 can be added to strip build paths.
 
 The Rust toolchain should be pinned to the same version as upstream. This can be done when installing rustup with `rustup-init.sh -y --default-toolchain <version>`.
+
+#### Library-specific instructions
+
+Some libraries generate non-deterministic code due to timestamps, unsorted iterations etc. Some known fixes are documented below:
+
+##### AboutLibraries Gradle plugin
+
+You can prevent this plugin (`com.mikepenz.aboutlibraries.plugin`) from adding a
+timestamp to the JSON file it generates by adding this to `build.gradle`:
+
+```gradle
+aboutLibraries {
+    // Remove the "generated" timestamp to allow for reproducible builds
+    excludeFields = ["generated"]
+}
+```
+
+For `build.gradle.kts`, add this instead:
+
+```gradle
+aboutLibraries {
+    // Remove the "generated" timestamp to allow for reproducible builds
+    excludeFields = arrayOf("generated")
+}
+```
+
+##### EventBus
+
+It generates [non-deterministic code](https://github.com/greenrobot/EventBus/issues/715) which can be sorted after the classes are generated. The detailed instructions can be found in [Eternity's source code](https://codeberg.org/Bazsalanszky/Eternity/commit/05123c70682e5988ad5f0ff111f97b66a87d8806).
+
 
 ### migration to reproducible builds
 
