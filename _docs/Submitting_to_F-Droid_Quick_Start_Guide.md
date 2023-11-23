@@ -99,8 +99,8 @@ Builds:
     # Where build.gradle is:
     subdir: app
     sudo:
-      - apt-get update || apt-get update
-      - apt-get install -y librsvg2-bin openjdk-11-jdk-headless
+      - apt-get update
+      - apt-get install -y librsvg2-bin openjdk-17-jdk-headless
       - update-alternatives --auto java
     gradle:
       - yes
@@ -118,9 +118,9 @@ Adjust or remove the relevant _sudo_ lines if needed:
   Debian repositories. All such dependencies should be specified in the app's
   _README_.
 
-* _build.gradle_ mentions `com.android.tools.build:gradle:7.1.0`,
-  and the Gradle Android plugin version 7 is known to depend on Java 11. So we
-  install _openjdk-11-jdk-headless_ and select it as the _java_ alternative.
+* `gradle/wrapper/gradle-wrapper.properties` mentions `gradle-8.0`,
+  and Gradle 8 is known to depend on Java 17. So we
+  install _openjdk-17-jdk-headless_ and select it as the _java_ alternative.
 
 Download and launch the latest version of the server tools container:
 
