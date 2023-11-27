@@ -26,7 +26,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
-"POT-Creation-Date: 2023-11-10 09:27+0100\n"
+"POT-Creation-Date: 2023-11-27 17:13+0100\n"
 "PO-Revision-Date: 2023-09-19 15:24+0000\n"
 "Last-Translator: Hans-Christoph Steiner <hans@guardianproject.info>\n"
 "Language-Team: Russian <https://hosted.weblate.org/projects/f-droid/website-docs/ru/>\n"
@@ -4031,11 +4031,6 @@ msgstr ""
 
 #. type: Bullet: '-   '
 #: _docs/Build_Metadata_Reference.md
-msgid "`RepoTrunk` - For svn and git-svn repositories, especially those who don't have a bundled _AndroidManifest.xml_ file, the Tags and RepoManifest checks will not work, since there is no version information to obtain. But, for those apps who automate their build process with the commit ref that HEAD points to, RepoTrunk will set the _CurrentVersion_ and _CurrentVersionCode_ to that number."
-msgstr "`RepoTrunk` - Для svn и git-svn репозиториев, особенно для тех, у которых нет встроенного _AndroidManifest.xml_ файла, проверки Tags и RepoManifest не будут работать, так как нет информации о версии, которую можно получить. Но для тех приложений, которые автоматизируют свой процесс сборки с помощью ссылки на коммит, на который указывает HEAD, RepoTrunk установит _CurrentVersion_ и _CurrentVersionCode_ на этот номер."
-
-#. type: Bullet: '-   '
-#: _docs/Build_Metadata_Reference.md
 msgid "`Tags` - The _AndroidManifest.xml_ and _build.gradle_ files in all tagged revisions in the source repository are checked, looking for the highest version code.  The appropriateness of this method depends on the development process used by the application's developers. You should not specify this method unless you're sure it's appropriate. It shouldn't be used if the developers like to tag unstable versions or are known to forget to tag releases. Like RepoManifest, it will not return the correct value if the directory containing the _AndroidManifest.xml_ has moved. Despite these caveats, it is the often the favourite _UpdateCheckMode_."
 msgstr "`Tags` - Проверяются файлы _AndroidManifest.xml_ и _build.gradle_ во всех помеченных ревизиях в хранилище исходных текстов, ищется код наивысшей версии.  Целесообразность использования этого метода зависит от процесса разработки, используемого разработчиками приложения. Не следует указывать этот метод, если вы не уверены в его целесообразности. Его не следует использовать, если разработчики любят помечать нестабильные версии или, как известно, забывают помечать релизы. Как и RepoManifest, он не вернет правильное значение, если каталог, содержащий _AndroidManifest.xml_, переместился. Несмотря на эти предостережения, это часто любимый _UpdateCheckMode_."
 
@@ -5595,6 +5590,17 @@ msgstr "Нужны ли воспроизводимые сборки?"
 #. type: Plain text
 #: _docs/FAQ_-_App_Developers.md
 msgid "No. But we do consider them best practice and hope you'll consider trying to make your app reproducible. See our [inclusion how-to](../Inclusion_How-To) for more information."
+msgstr ""
+
+#. type: Title ###
+#: _docs/FAQ_-_App_Developers.md
+#, no-wrap
+msgid "How can I handle \"fsck error in packed object\" for my app?"
+msgstr ""
+
+#. type: Plain text
+#: _docs/FAQ_-_App_Developers.md
+msgid "In order to ensure that our _buildserver_ gets the exact same commits as you put into _git_, [`git fsck`](https://git-scm.com/docs/git-fsck#_fsck_messages) is enabled by default whenever new commits are fetched.  Enabling _git fsck_ [ensures](https://web.archive.org/web/20230407012910/https://groups.google.com/g/binary-transparency/c/f-BI4o8HZW0)  that the commits [match](https://git-scm.com/docs/git-fsck#_discussion) their SHA1 checksum.  Sometimes, _git_ repos have corrupt but usable commits in them that cannot be changed since the whole history is based on the corrupt commit.  For those cases, we have the [_skipList_](https://git-scm.com/docs/git-fsck#Documentation/git-fsck.txt-fsckskipList)  functionality in [_fdroiddata_](https://gitlab.com/fdroid/fdroiddata/-/merge_requests/14014/diffs)"
 msgstr ""
 
 #. type: Title ###
@@ -9935,42 +9941,6 @@ msgstr ""
 msgid "Embedded [timestamps](https://reproducible-builds.org/docs/timestamps/) are the most common source of reproducibility issues and are best avoided."
 msgstr ""
 
-#. type: Title #####
-#: _docs/Reproducible_Builds.md
-#, no-wrap
-msgid "AboutLibraries Gradle plugin"
-msgstr ""
-
-#. type: Plain text
-#: _docs/Reproducible_Builds.md
-msgid "You can prevent this plugin (`com.mikepenz.aboutlibraries.plugin`) from adding a timestamp to the JSON file it generates by adding this to `build.gradle`:"
-msgstr ""
-
-#. type: Fenced code block (gradle)
-#: _docs/Reproducible_Builds.md
-#, no-wrap
-msgid ""
-"aboutLibraries {\n"
-"    // Remove the \"generated\" timestamp to allow for reproducible builds\n"
-"    excludeFields = [\"generated\"]\n"
-"}\n"
-msgstr ""
-
-#. type: Plain text
-#: _docs/Reproducible_Builds.md
-msgid "For `build.gradle.kts`, add this instead:"
-msgstr ""
-
-#. type: Fenced code block (gradle)
-#: _docs/Reproducible_Builds.md
-#, no-wrap
-msgid ""
-"aboutLibraries {\n"
-"    // Remove the \"generated\" timestamp to allow for reproducible builds\n"
-"    excludeFields = arrayOf(\"generated\")\n"
-"}\n"
-msgstr ""
-
 #. type: Title ####
 #: _docs/Reproducible_Builds.md
 #, no-wrap
@@ -10286,7 +10256,7 @@ msgid ""
 "`build.gradle`/`build.gradle.kts`:\n"
 msgstr ""
 
-#. type: Fenced code block
+#. type: Fenced code block (gradle)
 #: _docs/Reproducible_Builds.md
 #, fuzzy, no-wrap
 #| msgid ""
@@ -10333,7 +10303,44 @@ msgid ""
 "For CMake versions since 3.13, `add_link_options(LINKER:<linker args>)`\n"
 "can be added to `CMakeLists.txt` globally. For CMake versions before 3.13,\n"
 "`target_link_libraries(<target> LINKER:<linker args>)` can be used instead for\n"
-"every target.\n"
+"every target. It can also be set in Gradle files:\n"
+msgstr ""
+
+#. type: Fenced code block (gradle)
+#: _docs/Reproducible_Builds.md
+#, fuzzy, no-wrap
+#| msgid ""
+#| "android {\n"
+#| "    defaultConfig {\n"
+#| "        externalNativeBuild {\n"
+#| "            ndkBuild {\n"
+#| "                arguments \"LOCAL_LDFLAGS += -Wl,--build-id=none\"\n"
+#| "            }\n"
+#| "        }\n"
+#| "    }\n"
+#| "}\n"
+msgid ""
+"android {\n"
+"    defaultConfig {\n"
+"        externalNativeBuild.cmake {\n"
+"          cFlags \"-DCMAKE_SHARED_LINKER_FLAGS=-Wl,<linker args>\"\n"
+"        }\n"
+"    }\n"
+"}\n"
+msgstr ""
+"android {\n"
+"    defaultConfig {\n"
+"        externalNativeBuild {\n"
+"            ndkBuild {\n"
+"                arguments \"LOCAL_LDFLAGS += -Wl,<linker args>\"\n"
+"            }\n"
+"        }\n"
+"    }\n"
+"}\n"
+
+#. type: Plain text
+#: _docs/Reproducible_Builds.md
+msgid "`-ffile-prefix-map` can be used to remove embedded build path."
 msgstr ""
 
 #. type: Title #####
@@ -10366,6 +10373,64 @@ msgstr ""
 #: _docs/Reproducible_Builds.md
 #, no-wrap
 msgid "The Rust toolchain should be pinned to the same version as upstream. This can be done when installing rustup with `rustup-init.sh -y --default-toolchain <version>`.\n"
+msgstr ""
+
+#. type: Title ####
+#: _docs/Reproducible_Builds.md
+#, no-wrap
+msgid "Library-specific instructions"
+msgstr ""
+
+#. type: Plain text
+#: _docs/Reproducible_Builds.md
+msgid "Some libraries generate non-deterministic code due to timestamps, unsorted iterations etc. Some known fixes are documented below:"
+msgstr ""
+
+#. type: Title #####
+#: _docs/Reproducible_Builds.md
+#, no-wrap
+msgid "AboutLibraries Gradle plugin"
+msgstr ""
+
+#. type: Plain text
+#: _docs/Reproducible_Builds.md
+msgid "You can prevent this plugin (`com.mikepenz.aboutlibraries.plugin`) from adding a timestamp to the JSON file it generates by adding this to `build.gradle`:"
+msgstr ""
+
+#. type: Fenced code block (gradle)
+#: _docs/Reproducible_Builds.md
+#, no-wrap
+msgid ""
+"aboutLibraries {\n"
+"    // Remove the \"generated\" timestamp to allow for reproducible builds\n"
+"    excludeFields = [\"generated\"]\n"
+"}\n"
+msgstr ""
+
+#. type: Plain text
+#: _docs/Reproducible_Builds.md
+msgid "For `build.gradle.kts`, add this instead:"
+msgstr ""
+
+#. type: Fenced code block (gradle)
+#: _docs/Reproducible_Builds.md
+#, no-wrap
+msgid ""
+"aboutLibraries {\n"
+"    // Remove the \"generated\" timestamp to allow for reproducible builds\n"
+"    excludeFields = arrayOf(\"generated\")\n"
+"}\n"
+msgstr ""
+
+#. type: Title #####
+#: _docs/Reproducible_Builds.md
+#, no-wrap
+msgid "EventBus"
+msgstr ""
+
+#. type: Plain text
+#: _docs/Reproducible_Builds.md
+msgid "It generates [non-deterministic code](https://github.com/greenrobot/EventBus/issues/715) which can be sorted after the classes are generated. The detailed instructions can be found in [Eternity's source code](https://codeberg.org/Bazsalanszky/Eternity/commit/05123c70682e5988ad5f0ff111f97b66a87d8806)."
 msgstr ""
 
 #. type: Title ###
@@ -11706,8 +11771,8 @@ msgid ""
 "    # Where build.gradle is:\n"
 "    subdir: app\n"
 "    sudo:\n"
-"      - apt-get update || apt-get update\n"
-"      - apt-get install -y librsvg2-bin openjdk-11-jdk-headless\n"
+"      - apt-get update\n"
+"      - apt-get install -y librsvg2-bin openjdk-17-jdk-headless\n"
 "      - update-alternatives --auto java\n"
 "    gradle:\n"
 "      - yes\n"
@@ -11730,7 +11795,7 @@ msgstr ""
 
 #. type: Bullet: '* '
 #: _docs/Submitting_to_F-Droid_Quick_Start_Guide.md
-msgid "_build.gradle_ mentions `com.android.tools.build:gradle:7.1.0`, and the Gradle Android plugin version 7 is known to depend on Java 11. So we install _openjdk-11-jdk-headless_ and select it as the _java_ alternative."
+msgid "`gradle/wrapper/gradle-wrapper.properties` mentions `gradle-8.0`, and Gradle 8 is known to depend on Java 17. So we install _openjdk-17-jdk-headless_ and select it as the _java_ alternative."
 msgstr ""
 
 #. type: Plain text
@@ -11844,12 +11909,12 @@ msgstr "Введение"
 
 #. type: Plain text
 #: _docs/Take-Down_Requests.md
-msgid "This document covers how you may send a request to remove content or apps from the official f-droid.org repository.  Our team checks all app submissions we receive for compliance with our [inclusion policy](../Inclusion_Policy) to the best of their abilities.  Please let us know if an app the official f-droid.org repository infringes on your rights by submitting a take-down request."
+msgid "This document covers how you may send a request to remove content or apps from the official f-droid.org repository.  Our team checks all app submissions we receive for compliance with our [inclusion policy](../Inclusion_Policy) to the best of their abilities.  Please let us know if an app in the official f-droid.org repository infringes on your rights by submitting a take-down request."
 msgstr ""
 
 #. type: Plain text
 #: _docs/Take-Down_Requests.md
-msgid "The official f-droid.org repository is a distribution service for FOSS apps and will be called downstream in the remainder of this document.  F-Droid does not hold any rights to the apps in official f-droid.org repository other than granted by their respective license.  The authors of said apps will be called upstream in the remainder of this document."
+msgid "The official f-droid.org repository is a distribution service/platform for FOSS apps and will be called downstream in the remainder of this document.  F-Droid does not hold any rights to the apps in the official f-droid.org repository other than those granted by their respective license.  The authors/copyright holders of said apps will be called upstream in the remainder of this document."
 msgstr ""
 
 #. type: Title ##
@@ -11860,37 +11925,53 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/Take-Down_Requests.md
-msgid "Please take some time to familiarize yourself with our policies any take-down procedure before submitting any take-down requests.  If you submit an incomplete request, we will have to ask you for clarifications maybe even re-submitting a revised request."
+msgid "Please take some time to familiarize yourself with our policies and take-down procedure before submitting any take-down requests.  You have to make sure that requests you're submitting to us, contain all information required by our team to check the legitimacy of your claims.  If you submit an incomplete request, we will have to ask you for clarifications."
 msgstr ""
 
 #. type: Plain text
 #: _docs/Take-Down_Requests.md
-msgid "You have to make sure that requests you're submitting to us, contain all information required by our team to verify the legitimacy of your claims.  This can include a variety of informations like copyright and licensing information, trademark registrations, etc."
+#, no-wrap
+msgid ""
+"Copyright based take-down requests must at least include:\n"
+"- link to the infringing content on f-droid.org\n"
+"- full copyright attribution (author/artists/copyright holder, copyright date, ...)\n"
+"- publishing information (publisher, publishing medium, publishing date, web\n"
+"  links to postings/store-listings/e-commerce-listings/etc., ...)\n"
+"- license information\n"
+"- written description of the copyrighted material\n"
+"- short statement about the author/artist/copyright holder/etc. which\n"
+"  explains their field of expertise/field of interest/business/etc.\n"
+"or a concise explanation why this information is not available.\n"
 msgstr ""
 
 #. type: Plain text
 #: _docs/Take-Down_Requests.md
-msgid "Please note that downstream has and will never agree to 3rd party Terms of Service, Terms of Use or similar agreements for services not utilized by downstream.  Therefore such agreements usually do not provide an enforceable basis for take-down requests."
+msgid "If your take-down request is not based on copyright, you will still need to supply ample information that allows us to check your request. (e.g. trademark registration information, inclusion policy violation information, etc.)"
 msgstr ""
 
 #. type: Plain text
 #: _docs/Take-Down_Requests.md
-msgid "Also please note that we are an volunteer driven organization.  We prioritize take-down requests, but we can't guarantee instant responses."
+msgid "Note that some apps distributed by downstream may connect to 3rd party services or rely on 3rd party software.  Downstream does not connect to these services or rely on this software, so their Terms of Service, Terms of Use or similar agreements usually do not provide an enforceable basis for take-down requests."
 msgstr ""
 
 #. type: Plain text
 #: _docs/Take-Down_Requests.md
-msgid "You can submit take-down requests [by starting a new issue on our issue tracker](https://gitlab.com/fdroid/fdroiddata/-/issues/new).  (This requires a gitlab.com account.)"
+msgid "Also please note that f-droid.org is a volunteer driven organization.  We prioritize take-down requests, but we can't guarantee instant responses."
 msgstr ""
 
 #. type: Plain text
 #: _docs/Take-Down_Requests.md
-msgid "Alternatively if you prefer you can send your request to our team E-Mail account.  [team@f-droid.org](mailto:team@f-droid.org) (Our team will still open a public issue on our issue trackers and quote your entire request there.)"
+msgid "You should preferably submit take-down requests [by starting a new issue in our issue tracker](https://gitlab.com/fdroid/fdroiddata/-/issues/new).  (This requires a gitlab.com account.)"
 msgstr ""
 
 #. type: Plain text
 #: _docs/Take-Down_Requests.md
-msgid "Take-down requests can not be confidential.  By submitting a take-down request you automatically grant us permission to publish your entire request on our web-sites and our issue trackers. We need this because all of our processes are worked on in public and for keeping accountable to our users."
+msgid "Alternatively if you prefer you can send your request to our team E-Mail account.  [team@f-droid.org](mailto:team@f-droid.org) (Our team will still open a public issue in our issue tracker and quote your request there.)"
+msgstr ""
+
+#. type: Plain text
+#: _docs/Take-Down_Requests.md
+msgid "Take-down requests can not be confidential.  By submitting a take-down request you automatically grant us permission to publish your request on our web-sites and our issue trackers."
 msgstr ""
 
 #. type: Title ##
@@ -12422,6 +12503,9 @@ msgstr "Предпочтения"
 #: _docs/Whitelabel_Builds.md
 msgid "For a custom build that enables Automatic Updates by default, override _app/src/main/res/xml/preferences.xml_. You can customize the preferences and their default values in _app/src/mycompany/res/xml/preferences.xml_. The fully automatic update requires [Privileged Extension](https://gitlab.com/fdroid/privileged-extension). With regular access, the updates will only automatically download. The user still needs to click install on each one."
 msgstr "Для пользовательской сборки, которая включает автоматические обновления по умолчанию, переопределите _app/src/main/res/xml/preferences.xml_. Вы можете настроить предпочтения и их значения по умолчанию в _app/src/mycompany/res/xml/preferences.xml_. Для полностью автоматического обновления требуется [Privileged Extension](https://gitlab.com/fdroid/privileged-extension). При обычном доступе обновления будут только автоматически загружаться. Пользователю по-прежнему необходимо нажимать кнопку установки на каждом из них."
+
+#~ msgid "`RepoTrunk` - For svn and git-svn repositories, especially those who don't have a bundled _AndroidManifest.xml_ file, the Tags and RepoManifest checks will not work, since there is no version information to obtain. But, for those apps who automate their build process with the commit ref that HEAD points to, RepoTrunk will set the _CurrentVersion_ and _CurrentVersionCode_ to that number."
+#~ msgstr "`RepoTrunk` - Для svn и git-svn репозиториев, особенно для тех, у которых нет встроенного _AndroidManifest.xml_ файла, проверки Tags и RepoManifest не будут работать, так как нет информации о версии, которую можно получить. Но для тех приложений, которые автоматизируют свой процесс сборки с помощью ссылки на коммит, на который указывает HEAD, RepoTrunk установит _CurrentVersion_ и _CurrentVersionCode_ на этот номер."
 
 #~ msgid "Navigate to your clone of [F-Droid Server git](https://gitlab.com/fdroid/fdroidserver) and start by creating `makebuildserver.config.py`, using `./examples/makebuildserver.config.py` as a reference - look at the settings and documentation there to decide if any need changing to suit your environment. There is a path for retrieving the base box if it doesn't exist, and an apt proxy definition, both of which may need customising for your environment. You can then go to the `fdroidserver` directory and run `makebuildserver`."
 #~ msgstr "Перейдите к своему клону [F-Droid Server git](https://gitlab.com/fdroid/fdroidserver) и начните с создания `makebuildserver.config.py`, используя `./examples/makebuildserver.config.py` в качестве ссылки - посмотрите на настройки и документацию, чтобы решить, нужно ли что-то изменить для вашего окружения. Там есть путь для получения базового ящика, если он не существует, и определение apt-прокси, оба параметра могут потребовать настройки для вашего окружения. Затем вы можете перейти в каталог `fdroidserver` и запустить `makebuildserver`."

@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
-"POT-Creation-Date: 2023-11-10 09:27+0100\n"
+"POT-Creation-Date: 2023-11-27 17:13+0100\n"
 "PO-Revision-Date: 2023-10-13 13:03+0000\n"
 "Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/f-droid/website-docs/uk/>\n"
@@ -3917,11 +3917,6 @@ msgstr ""
 
 #. type: Bullet: '-   '
 #: _docs/Build_Metadata_Reference.md
-msgid "`RepoTrunk` - For svn and git-svn repositories, especially those who don't have a bundled _AndroidManifest.xml_ file, the Tags and RepoManifest checks will not work, since there is no version information to obtain. But, for those apps who automate their build process with the commit ref that HEAD points to, RepoTrunk will set the _CurrentVersion_ and _CurrentVersionCode_ to that number."
-msgstr "`RepoTrunk` — для репозиторіїв svn та git-svn, особливо без файлу _AndroidManifest.xml_, перевірки Tags і RepoManifest неможливі, бо нема звідки отримувати дані про версію. Але для тих застосунків, процес збірки яких автоматизовано за допомогою посилання на HEAD-коміт, RepoTrunk може робити це посилання значенням полів _CurrentVersion_ і _CurrentVersionCode_."
-
-#. type: Bullet: '-   '
-#: _docs/Build_Metadata_Reference.md
 msgid "`Tags` - The _AndroidManifest.xml_ and _build.gradle_ files in all tagged revisions in the source repository are checked, looking for the highest version code.  The appropriateness of this method depends on the development process used by the application's developers. You should not specify this method unless you're sure it's appropriate. It shouldn't be used if the developers like to tag unstable versions or are known to forget to tag releases. Like RepoManifest, it will not return the correct value if the directory containing the _AndroidManifest.xml_ has moved. Despite these caveats, it is the often the favourite _UpdateCheckMode_."
 msgstr "`Tags` — перевіряються файли _AndroidManifest.xml_ і _build.gradle_ у всіх ревізіях репозиторію вихідного коду, що мають теги, в пошуках найвищого коду версії. Доречність цього способу залежить від робочого процесу команди розробки застосунку. Не вказуйте цього способу, якщо не певні в його доречності. Зокрема не вказуйте його, якщо команда розробки позначає тегами нестабільні версії чи забуває позначати випуски тегами. Аналогічно RepoManifest, виникає помилка, якщо було посунуто каталог, де знаходиться _AndroidManifest.xml_. Незважаючи на ці перешкоди, часто саме цей _UpdateCheckMode_ обрати найдоречніше."
 
@@ -5534,6 +5529,17 @@ msgstr "Чи обов'язкові відтворювані збірки?"
 #: _docs/FAQ_-_App_Developers.md
 msgid "No. But we do consider them best practice and hope you'll consider trying to make your app reproducible. See our [inclusion how-to](../Inclusion_How-To) for more information."
 msgstr "Ні, але ми вважаємо їх найкращою практикою і сподіваємося, що ви спробуєте зробити свій застосунок відтворюваним. Перегляньте наші [поради з інклюзивності](../Inclusion_How-To) для отримання додаткової інформації."
+
+#. type: Title ###
+#: _docs/FAQ_-_App_Developers.md
+#, no-wrap
+msgid "How can I handle \"fsck error in packed object\" for my app?"
+msgstr ""
+
+#. type: Plain text
+#: _docs/FAQ_-_App_Developers.md
+msgid "In order to ensure that our _buildserver_ gets the exact same commits as you put into _git_, [`git fsck`](https://git-scm.com/docs/git-fsck#_fsck_messages) is enabled by default whenever new commits are fetched.  Enabling _git fsck_ [ensures](https://web.archive.org/web/20230407012910/https://groups.google.com/g/binary-transparency/c/f-BI4o8HZW0)  that the commits [match](https://git-scm.com/docs/git-fsck#_discussion) their SHA1 checksum.  Sometimes, _git_ repos have corrupt but usable commits in them that cannot be changed since the whole history is based on the corrupt commit.  For those cases, we have the [_skipList_](https://git-scm.com/docs/git-fsck#Documentation/git-fsck.txt-fsckskipList)  functionality in [_fdroiddata_](https://gitlab.com/fdroid/fdroiddata/-/merge_requests/14014/diffs)"
+msgstr ""
 
 #. type: Title ###
 #: _docs/FAQ_-_App_Developers.md
@@ -9846,50 +9852,6 @@ msgstr "Вбудовані мітки часу"
 msgid "Embedded [timestamps](https://reproducible-builds.org/docs/timestamps/) are the most common source of reproducibility issues and are best avoided."
 msgstr "Вбудовані [мітки часу](https://reproducible-builds.org/docs/timestamps/) — найпоширеніше джерело проблем з відтворенням, і їх краще уникати."
 
-#. type: Title #####
-#: _docs/Reproducible_Builds.md
-#, no-wrap
-msgid "AboutLibraries Gradle plugin"
-msgstr "Плагін AboutLibraries Gradle"
-
-#. type: Plain text
-#: _docs/Reproducible_Builds.md
-msgid "You can prevent this plugin (`com.mikepenz.aboutlibraries.plugin`) from adding a timestamp to the JSON file it generates by adding this to `build.gradle`:"
-msgstr "Ви можете заборонити цьому плагіну (`com.mikepenz.aboutlibraries.plugin`) додавати мітку часу до JSON-файлу, який він генерує, додавши це до `build.gradle`:"
-
-#. type: Fenced code block (gradle)
-#: _docs/Reproducible_Builds.md
-#, no-wrap
-msgid ""
-"aboutLibraries {\n"
-"    // Remove the \"generated\" timestamp to allow for reproducible builds\n"
-"    excludeFields = [\"generated\"]\n"
-"}\n"
-msgstr ""
-"aboutLibraries {\n"
-"    // Вилучає \"згенеровану\" мітку часу, щоб дозволити відтворювані збірки\n"
-"    excludeFields = [\"generated\"]\n"
-"}\n"
-
-#. type: Plain text
-#: _docs/Reproducible_Builds.md
-msgid "For `build.gradle.kts`, add this instead:"
-msgstr "Для `build.gradle.kts` додайте натомість це:"
-
-#. type: Fenced code block (gradle)
-#: _docs/Reproducible_Builds.md
-#, no-wrap
-msgid ""
-"aboutLibraries {\n"
-"    // Remove the \"generated\" timestamp to allow for reproducible builds\n"
-"    excludeFields = arrayOf(\"generated\")\n"
-"}\n"
-msgstr ""
-"aboutLibraries {\n"
-"    // Вилучає \"згенеровану\" мітку часу, щоб дозволити відтворювані збірки\n"
-"    excludeFields = arrayOf(\"generated\")\n"
-"}\n"
-
 #. type: Title ####
 #: _docs/Reproducible_Builds.md
 #, no-wrap
@@ -10189,7 +10151,7 @@ msgstr ""
 "`LOCAL_LDFLAGS += -Wl,<linker args>` можуть бути додані до файлів `Android.mk` або до\n"
 "`build.gradle`/`build.gradle.kts`:\n"
 
-#. type: Fenced code block
+#. type: Fenced code block (gradle)
 #: _docs/Reproducible_Builds.md
 #, no-wrap
 msgid ""
@@ -10221,17 +10183,59 @@ msgstr "CMake"
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
-#, no-wrap
+#, fuzzy, no-wrap
+#| msgid ""
+#| "For CMake versions since 3.13, `add_link_options(LINKER:<linker args>)`\n"
+#| "can be added to `CMakeLists.txt` globally. For CMake versions before 3.13,\n"
+#| "`target_link_libraries(<target> LINKER:<linker args>)` can be used instead for\n"
+#| "every target.\n"
 msgid ""
 "For CMake versions since 3.13, `add_link_options(LINKER:<linker args>)`\n"
 "can be added to `CMakeLists.txt` globally. For CMake versions before 3.13,\n"
 "`target_link_libraries(<target> LINKER:<linker args>)` can be used instead for\n"
-"every target.\n"
+"every target. It can also be set in Gradle files:\n"
 msgstr ""
 "Для версій CMake починаючи з 3.13, `add_link_options(LINKER:<linker args>)`\n"
 "можна додати до `CMakeLists.txt` глобально. Для версій CMake до 3.13,\n"
 "`target_link_libraries(<target> LINKER:<linker args>)` можна використовувати замість\n"
 "цього для кожної цілі.\n"
+
+#. type: Fenced code block (gradle)
+#: _docs/Reproducible_Builds.md
+#, fuzzy, no-wrap
+#| msgid ""
+#| "android {\n"
+#| "    defaultConfig {\n"
+#| "        externalNativeBuild {\n"
+#| "            ndkBuild {\n"
+#| "                arguments \"LOCAL_LDFLAGS += -Wl,<linker args>\"\n"
+#| "            }\n"
+#| "        }\n"
+#| "    }\n"
+#| "}\n"
+msgid ""
+"android {\n"
+"    defaultConfig {\n"
+"        externalNativeBuild.cmake {\n"
+"          cFlags \"-DCMAKE_SHARED_LINKER_FLAGS=-Wl,<linker args>\"\n"
+"        }\n"
+"    }\n"
+"}\n"
+msgstr ""
+"android {\n"
+"    defaultConfig {\n"
+"        externalNativeBuild {\n"
+"            ndkBuild {\n"
+"                arguments \"LOCAL_LDFLAGS += -Wl,<linker args>\"\n"
+"            }\n"
+"        }\n"
+"    }\n"
+"}\n"
+
+#. type: Plain text
+#: _docs/Reproducible_Builds.md
+msgid "`-ffile-prefix-map` can be used to remove embedded build path."
+msgstr ""
 
 #. type: Title #####
 #: _docs/Reproducible_Builds.md
@@ -10267,6 +10271,73 @@ msgstr ""
 #, no-wrap
 msgid "The Rust toolchain should be pinned to the same version as upstream. This can be done when installing rustup with `rustup-init.sh -y --default-toolchain <version>`.\n"
 msgstr "Набір інструментів Rust слід закріпити за тією ж версією, що і попередні версії. Це можна зробити під час встановлення rustup за допомогою `rustup-init.sh -y --default-toolchain <version>`.\n"
+
+#. type: Title ####
+#: _docs/Reproducible_Builds.md
+#, fuzzy, no-wrap
+#| msgid "Language-specific instructions"
+msgid "Library-specific instructions"
+msgstr "Інструкції для окремих мов"
+
+#. type: Plain text
+#: _docs/Reproducible_Builds.md
+msgid "Some libraries generate non-deterministic code due to timestamps, unsorted iterations etc. Some known fixes are documented below:"
+msgstr ""
+
+#. type: Title #####
+#: _docs/Reproducible_Builds.md
+#, no-wrap
+msgid "AboutLibraries Gradle plugin"
+msgstr "Плагін AboutLibraries Gradle"
+
+#. type: Plain text
+#: _docs/Reproducible_Builds.md
+msgid "You can prevent this plugin (`com.mikepenz.aboutlibraries.plugin`) from adding a timestamp to the JSON file it generates by adding this to `build.gradle`:"
+msgstr "Ви можете заборонити цьому плагіну (`com.mikepenz.aboutlibraries.plugin`) додавати мітку часу до JSON-файлу, який він генерує, додавши це до `build.gradle`:"
+
+#. type: Fenced code block (gradle)
+#: _docs/Reproducible_Builds.md
+#, no-wrap
+msgid ""
+"aboutLibraries {\n"
+"    // Remove the \"generated\" timestamp to allow for reproducible builds\n"
+"    excludeFields = [\"generated\"]\n"
+"}\n"
+msgstr ""
+"aboutLibraries {\n"
+"    // Вилучає \"згенеровану\" мітку часу, щоб дозволити відтворювані збірки\n"
+"    excludeFields = [\"generated\"]\n"
+"}\n"
+
+#. type: Plain text
+#: _docs/Reproducible_Builds.md
+msgid "For `build.gradle.kts`, add this instead:"
+msgstr "Для `build.gradle.kts` додайте натомість це:"
+
+#. type: Fenced code block (gradle)
+#: _docs/Reproducible_Builds.md
+#, no-wrap
+msgid ""
+"aboutLibraries {\n"
+"    // Remove the \"generated\" timestamp to allow for reproducible builds\n"
+"    excludeFields = arrayOf(\"generated\")\n"
+"}\n"
+msgstr ""
+"aboutLibraries {\n"
+"    // Вилучає \"згенеровану\" мітку часу, щоб дозволити відтворювані збірки\n"
+"    excludeFields = arrayOf(\"generated\")\n"
+"}\n"
+
+#. type: Title #####
+#: _docs/Reproducible_Builds.md
+#, no-wrap
+msgid "EventBus"
+msgstr ""
+
+#. type: Plain text
+#: _docs/Reproducible_Builds.md
+msgid "It generates [non-deterministic code](https://github.com/greenrobot/EventBus/issues/715) which can be sorted after the classes are generated. The detailed instructions can be found in [Eternity's source code](https://codeberg.org/Bazsalanszky/Eternity/commit/05123c70682e5988ad5f0ff111f97b66a87d8806)."
+msgstr ""
 
 #. type: Title ###
 #: _docs/Reproducible_Builds.md
@@ -11590,7 +11661,34 @@ msgstr "Заповніть _~/fdroiddata/metadata/com.example.yml_ згідно 
 
 #. type: Fenced code block (yaml)
 #: _docs/Submitting_to_F-Droid_Quick_Start_Guide.md
-#, no-wrap
+#, fuzzy, no-wrap
+#| msgid ""
+#| "Categories:\n"
+#| "  - Internet\n"
+#| "  - Navigation\n"
+#| "License: GPL-3.0-or-later\n"
+#| "SourceCode: https://gitlab.com/APPLICATION_UPSTREAM/ExampleCom\n"
+#| "\n"
+#| "RepoType: git\n"
+#| "Repo: https://gitlab.com/APPLICATION_UPSTREAM/ExampleCom\n"
+#| "\n"
+#| "Builds:\n"
+#| "  - versionName: '1.0'\n"
+#| "    versionCode: 123\n"
+#| "    commit: v1.0\n"
+#| "    # Where build.gradle is:\n"
+#| "    subdir: app\n"
+#| "    sudo:\n"
+#| "      - apt-get update || apt-get update\n"
+#| "      - apt-get install -y librsvg2-bin openjdk-11-jdk-headless\n"
+#| "      - update-alternatives --auto java\n"
+#| "    gradle:\n"
+#| "      - yes\n"
+#| "\n"
+#| "AutoUpdateMode: Version\n"
+#| "UpdateCheckMode: Tags\n"
+#| "CurrentVersion: '1.0'\n"
+#| "CurrentVersionCode: 123\n"
 msgid ""
 "Categories:\n"
 "  - Internet\n"
@@ -11608,8 +11706,8 @@ msgid ""
 "    # Where build.gradle is:\n"
 "    subdir: app\n"
 "    sudo:\n"
-"      - apt-get update || apt-get update\n"
-"      - apt-get install -y librsvg2-bin openjdk-11-jdk-headless\n"
+"      - apt-get update\n"
+"      - apt-get install -y librsvg2-bin openjdk-17-jdk-headless\n"
 "      - update-alternatives --auto java\n"
 "    gradle:\n"
 "      - yes\n"
@@ -11658,7 +11756,9 @@ msgstr "Застосунок-приклад у _build.gradle_ виконує _rs
 
 #. type: Bullet: '* '
 #: _docs/Submitting_to_F-Droid_Quick_Start_Guide.md
-msgid "_build.gradle_ mentions `com.android.tools.build:gradle:7.1.0`, and the Gradle Android plugin version 7 is known to depend on Java 11. So we install _openjdk-11-jdk-headless_ and select it as the _java_ alternative."
+#, fuzzy
+#| msgid "_build.gradle_ mentions `com.android.tools.build:gradle:7.1.0`, and the Gradle Android plugin version 7 is known to depend on Java 11. So we install _openjdk-11-jdk-headless_ and select it as the _java_ alternative."
+msgid "`gradle/wrapper/gradle-wrapper.properties` mentions `gradle-8.0`, and Gradle 8 is known to depend on Java 17. So we install _openjdk-17-jdk-headless_ and select it as the _java_ alternative."
 msgstr "_build.gradle_ містить `com.android.tools.build:gradle:7.1.0`, а плагін Gradle Android версії 7, як відомо, залежить від Java 11. Тож ми встановлюємо _openjdk-11-jdk-headless_ та обираємо його як альтернативу _java_."
 
 #. type: Plain text
@@ -11772,12 +11872,16 @@ msgstr "Вступ"
 
 #. type: Plain text
 #: _docs/Take-Down_Requests.md
-msgid "This document covers how you may send a request to remove content or apps from the official f-droid.org repository.  Our team checks all app submissions we receive for compliance with our [inclusion policy](../Inclusion_Policy) to the best of their abilities.  Please let us know if an app the official f-droid.org repository infringes on your rights by submitting a take-down request."
+#, fuzzy
+#| msgid "This document covers how you may send a request to remove content or apps from the official f-droid.org repository.  Our team checks all app submissions we receive for compliance with our [inclusion policy](../Inclusion_Policy) to the best of their abilities.  Please let us know if an app the official f-droid.org repository infringes on your rights by submitting a take-down request."
+msgid "This document covers how you may send a request to remove content or apps from the official f-droid.org repository.  Our team checks all app submissions we receive for compliance with our [inclusion policy](../Inclusion_Policy) to the best of their abilities.  Please let us know if an app in the official f-droid.org repository infringes on your rights by submitting a take-down request."
 msgstr "Цей документ описує, яким чином ви можете надіслати запит на вилучення вмісту чи застосунків з офіційного репозиторію fdroid.org. Наша команда якнайретельніше перевіряє всі надіслані нам застосунки на відповідність нашій [політиці додання](../Inclusion_Policy). Якщо певний застосунок в офіційному репозиторії f-droid.org порушує ваші права, будь ласка, повідомте нам про це, надіславши запит на вилучення."
 
 #. type: Plain text
 #: _docs/Take-Down_Requests.md
-msgid "The official f-droid.org repository is a distribution service for FOSS apps and will be called downstream in the remainder of this document.  F-Droid does not hold any rights to the apps in official f-droid.org repository other than granted by their respective license.  The authors of said apps will be called upstream in the remainder of this document."
+#, fuzzy
+#| msgid "The official f-droid.org repository is a distribution service for FOSS apps and will be called downstream in the remainder of this document.  F-Droid does not hold any rights to the apps in official f-droid.org repository other than granted by their respective license.  The authors of said apps will be called upstream in the remainder of this document."
+msgid "The official f-droid.org repository is a distribution service/platform for FOSS apps and will be called downstream in the remainder of this document.  F-Droid does not hold any rights to the apps in the official f-droid.org repository other than those granted by their respective license.  The authors/copyright holders of said apps will be called upstream in the remainder of this document."
 msgstr "Офіційний репозиторій f-droid.org поширює вільні застосунки й надалі в цьому документі називатиметься поширювачем. F-Droid не має жодних прав на застосунки в офіційному репозиторії f-droid.org, крім наданих їхніми відповідними ліцензіями. Команди розробки цих застосунків називатимуться джерелом надалі в цьому документі."
 
 #. type: Title ##
@@ -11788,37 +11892,65 @@ msgstr "Надсилання запитів на вилучення"
 
 #. type: Plain text
 #: _docs/Take-Down_Requests.md
-msgid "Please take some time to familiarize yourself with our policies any take-down procedure before submitting any take-down requests.  If you submit an incomplete request, we will have to ask you for clarifications maybe even re-submitting a revised request."
+#, fuzzy
+#| msgid "Please take some time to familiarize yourself with our policies any take-down procedure before submitting any take-down requests.  If you submit an incomplete request, we will have to ask you for clarifications maybe even re-submitting a revised request."
+msgid "Please take some time to familiarize yourself with our policies and take-down procedure before submitting any take-down requests.  You have to make sure that requests you're submitting to us, contain all information required by our team to check the legitimacy of your claims.  If you submit an incomplete request, we will have to ask you for clarifications."
 msgstr "Будь ласка, ретельно ознайомтеся з нашою політикою та процесом вилучення, перш ніж надіслати будь-який запит на вилучення. Якщо ви надішлете неповний запит, нам доведеться попросити вас уточнити запит чи навіть переробити його й надіслати повторно."
 
 #. type: Plain text
 #: _docs/Take-Down_Requests.md
-msgid "You have to make sure that requests you're submitting to us, contain all information required by our team to verify the legitimacy of your claims.  This can include a variety of informations like copyright and licensing information, trademark registrations, etc."
-msgstr "Вам слід переконатись, що запити, які ви нам надсилаєте, містять усі дані, потрібні нашій команді для перевірки правомірності ваших претензій. Зокрема дані про авторські права й ліцензування, реєстрацію торгової марки тощо."
+#, no-wrap
+msgid ""
+"Copyright based take-down requests must at least include:\n"
+"- link to the infringing content on f-droid.org\n"
+"- full copyright attribution (author/artists/copyright holder, copyright date, ...)\n"
+"- publishing information (publisher, publishing medium, publishing date, web\n"
+"  links to postings/store-listings/e-commerce-listings/etc., ...)\n"
+"- license information\n"
+"- written description of the copyrighted material\n"
+"- short statement about the author/artist/copyright holder/etc. which\n"
+"  explains their field of expertise/field of interest/business/etc.\n"
+"or a concise explanation why this information is not available.\n"
+msgstr ""
 
 #. type: Plain text
 #: _docs/Take-Down_Requests.md
-msgid "Please note that downstream has and will never agree to 3rd party Terms of Service, Terms of Use or similar agreements for services not utilized by downstream.  Therefore such agreements usually do not provide an enforceable basis for take-down requests."
+msgid "If your take-down request is not based on copyright, you will still need to supply ample information that allows us to check your request. (e.g. trademark registration information, inclusion policy violation information, etc.)"
+msgstr ""
+
+#. type: Plain text
+#: _docs/Take-Down_Requests.md
+#, fuzzy
+#| msgid "Please note that downstream has and will never agree to 3rd party Terms of Service, Terms of Use or similar agreements for services not utilized by downstream.  Therefore such agreements usually do not provide an enforceable basis for take-down requests."
+msgid "Note that some apps distributed by downstream may connect to 3rd party services or rely on 3rd party software.  Downstream does not connect to these services or rely on this software, so their Terms of Service, Terms of Use or similar agreements usually do not provide an enforceable basis for take-down requests."
 msgstr "Зауважте, поширювач ніколи не погоджувався й не погоджуватиметься з умовами надання послуг, правилами використання чи іншими подібними угодами сторонніх осіб, що надають послуги, не використовувані поширювачем. Тож такі угоди зазвичай не є чинною підставою для запитів на вилучення."
 
 #. type: Plain text
 #: _docs/Take-Down_Requests.md
-msgid "Also please note that we are an volunteer driven organization.  We prioritize take-down requests, but we can't guarantee instant responses."
+#, fuzzy
+#| msgid "Also please note that we are an volunteer driven organization.  We prioritize take-down requests, but we can't guarantee instant responses."
+msgid "Also please note that f-droid.org is a volunteer driven organization.  We prioritize take-down requests, but we can't guarantee instant responses."
 msgstr "Також зауважте, що ми — волонтерська організація. Запити на вилучення для нас важливі, але наші відповіді не будуть негайними."
 
 #. type: Plain text
 #: _docs/Take-Down_Requests.md
-msgid "You can submit take-down requests [by starting a new issue on our issue tracker](https://gitlab.com/fdroid/fdroiddata/-/issues/new).  (This requires a gitlab.com account.)"
+#, fuzzy
+#| msgid "You can submit take-down requests [by starting a new issue on our issue tracker](https://gitlab.com/fdroid/fdroiddata/-/issues/new).  (This requires a gitlab.com account.)"
+msgid "You should preferably submit take-down requests [by starting a new issue in our issue tracker](https://gitlab.com/fdroid/fdroiddata/-/issues/new).  (This requires a gitlab.com account.)"
 msgstr "Щоб надіслати запит на вилучення, [створіть обговорення в нашому трекері обговорень](https://gitlab.com/fdroid/fdroiddata/-/issues/new). (Для цього вам потрібен обліковий запис на gitlab.com.)"
 
 #. type: Plain text
 #: _docs/Take-Down_Requests.md
-msgid "Alternatively if you prefer you can send your request to our team E-Mail account.  [team@f-droid.org](mailto:team@f-droid.org) (Our team will still open a public issue on our issue trackers and quote your entire request there.)"
+#, fuzzy
+#| msgid "Alternatively if you prefer you can send your request to our team E-Mail account.  [team@f-droid.org](mailto:team@f-droid.org) (Our team will still open a public issue on our issue trackers and quote your entire request there.)"
+msgid "Alternatively if you prefer you can send your request to our team E-Mail account.  [team@f-droid.org](mailto:team@f-droid.org) (Our team will still open a public issue in our issue tracker and quote your request there.)"
 msgstr "Або, якщо вам так зручніше, надішліть запит на е-пошту нашої команди: [team@f-droid.org](mailto:team@f-droid.org) (Наша команда все одно створить загальнодоступне обговорення в нашому трекері обговорень із повною цитатою вашого запиту.)"
 
 #. type: Plain text
 #: _docs/Take-Down_Requests.md
-msgid "Take-down requests can not be confidential.  By submitting a take-down request you automatically grant us permission to publish your entire request on our web-sites and our issue trackers. We need this because all of our processes are worked on in public and for keeping accountable to our users."
+#, fuzzy
+#| msgid "Take-down requests can not be confidential.  By submitting a take-down request you automatically grant us permission to publish your entire request on our web-sites and our issue trackers. We need this because all of our processes are worked on in public and for keeping accountable to our users."
+msgid "Take-down requests can not be confidential.  By submitting a take-down request you automatically grant us permission to publish your request on our web-sites and our issue trackers."
 msgstr "Запити на вилучення не можуть бути конфіденційними. Надсилаючи запит на вилучення, ви автоматично надаєте нам дозвіл повністю оприлюднити ваш запит на наших вебсайтах і/або трекерах обговорень. Це потрібно, бо всі наші робочі процеси публічні й ми відповідальні перед авдиторією."
 
 #. type: Title ##
@@ -12362,6 +12494,12 @@ msgstr "Параметри"
 #: _docs/Whitelabel_Builds.md
 msgid "For a custom build that enables Automatic Updates by default, override _app/src/main/res/xml/preferences.xml_. You can customize the preferences and their default values in _app/src/mycompany/res/xml/preferences.xml_. The fully automatic update requires [Privileged Extension](https://gitlab.com/fdroid/privileged-extension). With regular access, the updates will only automatically download. The user still needs to click install on each one."
 msgstr "Щоб усталено вимкнути автоматичні оновлення в своїй збірці, замініть _app/src/main/res/xml/preferences.xml_. Можете допрацювати параметри та їхні усталені значення в _app/src/mycompany/res/xml/preferences.xml_. Для повністю автоматичного оновлення потрібне [привілейоване розширення](https://gitlab.com/fdroid/privileged-extension). Без нього, оновлення будуть лише автоматично завантажуватись — і користувачці чи користувачу все ще доводитиметься торкати «Встановити» для кожного з них."
+
+#~ msgid "`RepoTrunk` - For svn and git-svn repositories, especially those who don't have a bundled _AndroidManifest.xml_ file, the Tags and RepoManifest checks will not work, since there is no version information to obtain. But, for those apps who automate their build process with the commit ref that HEAD points to, RepoTrunk will set the _CurrentVersion_ and _CurrentVersionCode_ to that number."
+#~ msgstr "`RepoTrunk` — для репозиторіїв svn та git-svn, особливо без файлу _AndroidManifest.xml_, перевірки Tags і RepoManifest неможливі, бо нема звідки отримувати дані про версію. Але для тих застосунків, процес збірки яких автоматизовано за допомогою посилання на HEAD-коміт, RepoTrunk може робити це посилання значенням полів _CurrentVersion_ і _CurrentVersionCode_."
+
+#~ msgid "You have to make sure that requests you're submitting to us, contain all information required by our team to verify the legitimacy of your claims.  This can include a variety of informations like copyright and licensing information, trademark registrations, etc."
+#~ msgstr "Вам слід переконатись, що запити, які ви нам надсилаєте, містять усі дані, потрібні нашій команді для перевірки правомірності ваших претензій. Зокрема дані про авторські права й ліцензування, реєстрацію торгової марки тощо."
 
 #, no-wrap
 #~ msgid ""
