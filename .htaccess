@@ -282,34 +282,62 @@ RewriteRule ^(.*)$ /%1/$1? [L,R=302]
 
 # This site needs hardly any JS features, so disable them. There is no
 # way to set the default to none yet, once that is available, this
-# should switch to a simple "default 'none';"
+# should switch to a simple "default=();"
 # https://github.com/w3c/webappsec-feature-policy/issues/189
+# 
+# Growing list of features:
+# https://github.com/w3c/webappsec-permissions-policy/blob/main/features.md
 #
 <FilesMatch "\.(css|js|pdf|svg|html(\.[a-z][a-z](|_[A-Z][A-Z]|_Han[st])))?$">
-Header always set Feature-Policy: "\
-accelerometer 'none'; \
-ambient-light-sensor 'none'; \
-autoplay 'none'; \
-camera 'none'; \
-display-capture 'none'; \
-document-domain 'none'; \
-document-write 'none'; \
-encrypted-media 'none'; \
-fullscreen 'none'; \
-geolocation 'none'; \
-gyroscope 'none'; \
-magnetometer 'none'; \
-microphone 'none'; \
-midi 'none'; \
-payment 'none'; \
-picture-in-picture 'none'; \
-speaker 'none'; \
-sync-xhr 'none'; \
-usb 'none'; \
-wake-lock 'none'; \
-webauthn 'none'; \
-vr 'none'; \
-xr 'none'; \
+Header always set Permissions-Policy: "\
+accelerometer=(), \
+ambient-light-sensor=(), \
+autoplay=(), \
+battery=(), \
+bluetooth=(), \
+browsing-topics=(), \
+camera=(), \
+ch-ua=(), \
+clipboard-read=(), \
+clipboard-write=(), \
+conversion-measurement=(), \
+display-capture=(), \
+document-domain=(), \
+document-write=(), \
+encrypted-media=(), \
+execution-while-not-rendered=(), \
+execution-while-out-of-viewport=(), \
+focus-without-user-activation=(), \
+fullscreen=(), \
+gamepad=(), \
+geolocation=(), \
+gyroscope=(), \
+hid=(), \
+idle-detection=(), \
+interest-cohort=(), \
+keyboard-map=(), \
+local-fonts=(), \
+magnetometer=(), \
+microphone=(), \
+midi=(), \
+navigation-override=(), \
+payment=(), \
+picture-in-picture=(), \
+publickey-credentials-get=(), \
+screen-wake-lock=(), \
+serial=(), \
+speaker=(), \
+speaker-selection=(), \
+sync-xhr=(), \
+trust-token-redemption=(), \
+usb=(), \
+wake-lock=(), \
+webauthn=(), \
+web-share=(), \
+window-placement=(), \
+vr=(), \
+xr=(), \
+xr-spatial-tracking=(), \
 "
 
 
@@ -340,11 +368,6 @@ style-src 'self' 'unsafe-inline';\
 # information.
 #
 Header always set Referrer-Policy: "strict-origin"
-
-#
-# Instruct FLoC capable browsers to not profile users on our website
-#
-Header always set Permissions-Policy: "interest-cohort=()"
 
 #
 # Setting this header will prevent MSIE from interpreting files as
