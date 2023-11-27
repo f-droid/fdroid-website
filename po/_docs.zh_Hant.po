@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
-"POT-Creation-Date: 2023-10-11 09:18+0200\n"
+"POT-Creation-Date: 2023-11-27 17:13+0100\n"
 "PO-Revision-Date: 2023-09-19 15:24+0000\n"
 "Last-Translator: Hans-Christoph Steiner <hans@guardianproject.info>\n"
 "Language-Team: Chinese (Traditional) <https://hosted.weblate.org/projects/f-droid/website-docs/zh_Hant/>\n"
@@ -3770,11 +3770,6 @@ msgstr "    目前，它在不同程度上適用於除了 srclib 軟體庫類型
 
 #. type: Bullet: '-   '
 #: _docs/Build_Metadata_Reference.md
-msgid "`RepoTrunk` - For svn and git-svn repositories, especially those who don't have a bundled _AndroidManifest.xml_ file, the Tags and RepoManifest checks will not work, since there is no version information to obtain. But, for those apps who automate their build process with the commit ref that HEAD points to, RepoTrunk will set the _CurrentVersion_ and _CurrentVersionCode_ to that number."
-msgstr "`RepoTrunk` - 對於 svn 和 git-svn 倉庫，特別是那些沒有附帶 _AndroidManifest.xml_ 檔案的倉庫，Tags 和 RepoManifest 檢查將無法工作，因為沒有版本資訊可以獲取。但是，對於那些用 HEAD 指向的提交註釋自動化構建過程的應用程式，RepoTrunk 將把 _CurrentVersion_ 和 _CurrentVersionCode_ 設為該數位。"
-
-#. type: Bullet: '-   '
-#: _docs/Build_Metadata_Reference.md
 msgid "`Tags` - The _AndroidManifest.xml_ and _build.gradle_ files in all tagged revisions in the source repository are checked, looking for the highest version code.  The appropriateness of this method depends on the development process used by the application's developers. You should not specify this method unless you're sure it's appropriate. It shouldn't be used if the developers like to tag unstable versions or are known to forget to tag releases. Like RepoManifest, it will not return the correct value if the directory containing the _AndroidManifest.xml_ has moved. Despite these caveats, it is the often the favourite _UpdateCheckMode_."
 msgstr "`Tags` - 檢查原始碼軟體庫中所有被旗標的 revision 中的 _AndroidManifest.xml_ 和 _build.gradle_ 檔案，回饋最高版本代碼。這種方法是否合適，取決於應用程式的開發者所使用的開發過程。你不應該指定這種方法，除非你確定它是合適的。如果開發者喜歡旗標不穩定的版本，或已知忘記旗標發布版本，就不應該使用這種方法。像 RepoManifest 一樣，如果包含 _AndroidManifest.xml_ 的目錄已經移動，它將不會傳回正確的值。儘管有這些注意事項，它往往是最受歡迎的 _UpdateCheckMode_。"
 
@@ -4221,7 +4216,9 @@ msgstr "這是從完全乾淨的最小 Debian/stable 安裝開始如何設定一
 
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
-msgid "The base server needs to be at minimum Debian/jessie, or there will need to be some heavy tweaking. If you run Ubuntu or derivative distro, you can get any packages missing from your version, like _vagrant-cachier_, from this PPA: <https://launchpad.net/~fdroid/+archive/ubuntu/buildserver/>"
+#, fuzzy
+#| msgid "The base server needs to be at minimum Debian/jessie, or there will need to be some heavy tweaking. If you run Ubuntu or derivative distro, you can get any packages missing from your version, like _vagrant-cachier_, from this PPA: <https://launchpad.net/~fdroid/+archive/ubuntu/buildserver/>"
+msgid "The base server needs to be at minimum Debian/bullseye, or there will need to be some heavy tweaking. If you run Ubuntu or derivative distro, you can get any packages missing from your version, like _vagrant-cachier_, from this PPA: <https://launchpad.net/~fdroid/+archive/ubuntu/buildserver/>"
 msgstr "基礎伺服器至少需要 Debian/jessie，否則需要進行一些繁重的調整。如果你執行 Ubuntu 或衍生髮行版，你可以從這個 PPA 中獲得任何缺少的軟體包，比如 _vagrant-cachier_：<https://launchpad.net/~fdroid/+archive/ubuntu/buildserver/>"
 
 #. type: Plain text
@@ -4233,30 +4230,30 @@ msgstr "首先，安裝必要的軟體包，並建立一個新的用戶執行這
 #: _docs/Build_Server_Setup.md
 #, no-wrap
 msgid ""
-"root:~# apt-get install vagrant virtualbox git python3-certifi \\\n"
+"root:~# apt-get install vagrant git python3-certifi \\\n"
 "        python3-libvirt python3-requestbuilder python3-yaml \\\n"
 "        python3-clint python3-vagrant python3-paramiko python3-pyasn1 \\\n"
 "        python3-pyasn1-modules python3-requests python3-git\n"
+"        vagrant-mutate vagrant-libvirt ebtables dnsmasq-base \\\n"
+"        libvirt-clients libvirt-daemon-system qemu-kvm qemu-utils\n"
 "root:~# adduser --disabled-password fdroid\n"
 "root:~# su fdroid\n"
 msgstr ""
 
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
-msgid "Clone source code and configure the buildserver settings, running as _fdroid_ user:"
+#, fuzzy
+#| msgid "Clone source code and configure the buildserver settings, running as _fdroid_ user:"
+msgid "Clone source code running as _fdroid_ user:"
 msgstr "複製原始碼並配置 builderver 設定，以 _fdroid_ 用戶身份執行："
 
 #. type: Fenced code block (bash)
 #: _docs/Build_Server_Setup.md
-#, no-wrap
+#, fuzzy, no-wrap
 msgid ""
 "fdroid:~$ cd ~\n"
 "fdroid:~$ git clone https://gitlab.com/fdroid/fdroidserver.git\n"
-"fdroid:~$ cp fdroidserver/examples/makebuildserver.config.py fdroidserver/\n"
-msgstr ""
-"fdroid:~$ cd ~\n"
-"fdroid:~$ git clone https://gitlab.com/fdroid/fdroidserver.git\n"
-"fdroid:~$ cp fdroidserver/examples/makebuildserver.config.py fdroidserver/\n"
+msgstr "*例如* <https://gitlab.com/fdroid/fdroidclient/tree/master>"
 
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
@@ -4273,21 +4270,6 @@ msgstr "為了方便，你可以選擇將 fdroid 可執行檔案加入到你的�
 #, no-wrap
 msgid "fdroid:~$ echo \"PATH=\\$PATH:$HOME/fdroidserver\" >> ~/.bashrc\n"
 msgstr "fdroid:~$ echo \"PATH=\\$PATH:$HOME/fdroidserver\" >> ~/.bashrc\n"
-
-#. type: Plain text
-#: _docs/Build_Server_Setup.md
-msgid "Create the base buildserver image... (downloading the basebox and all the sdk platforms can take long time)."
-msgstr "建立基本的構建伺服器鏡像...（下載 basebox 和所有 sdk platforms 可能需要很長的時間）。"
-
-#. type: Fenced code block (bash)
-#: _docs/Build_Server_Setup.md
-#, no-wrap
-msgid ""
-"fdroid:~$ cd fdroidserver\n"
-"fdroid:~/fdroidserver$ ./makebuildserver\n"
-msgstr ""
-"fdroid:~$ cd fdroidserver\n"
-"fdroid:~/fdroidserver$ ./makebuildserver\n"
 
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
@@ -4316,7 +4298,9 @@ msgstr "設定構建伺服器"
 
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
-msgid "In addition to the basic setup previously described, we ship a Vagrant-compatible Debian/stretch base box called 'fdroid/basebox-stretch64'."
+#, fuzzy
+#| msgid "In addition to the basic setup previously described, we ship a Vagrant-compatible Debian/stretch base box called 'fdroid/basebox-stretch64'."
+msgid "In addition to the basic setup previously described, we ship a Vagrant-compatible Debian/bullseye base box called 'fdroid/bullseye64'."
 msgstr "除了前面描述的基本設定之外，我們還提供了一個與 Vagrant 相容的 Debian/stretch 基礎系統，稱為 'fdroid/basebox-stretch64'。"
 
 #. type: Plain text
@@ -4332,22 +4316,35 @@ msgstr "創建 F-Droid 構建伺服器"
 
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
-msgid "Navigate to your clone of [F-Droid Server git](https://gitlab.com/fdroid/fdroidserver) and start by creating `makebuildserver.config.py`, using `./examples/makebuildserver.config.py` as a reference - look at the settings and documentation there to decide if any need changing to suit your environment. There is a path for retrieving the base box if it doesn't exist, and an apt proxy definition, both of which may need customising for your environment. You can then go to the `fdroidserver` directory and run `makebuildserver`."
-msgstr "導覽到你的 [F-Droid Server git](https://gitlab.com/fdroid/fdroidserver) 複製，從建立 `makebuildserver.config.py` 開始，以 `./examples/makebuildserver.config.py` 作為參考 - 檢視其中的設定和文檔，以確定是否需要進行更改以適應你的環境。如果基礎系統不存在，則有一個用於獲取它的路徑，以及一個 apt 代理定義，這兩者都可能需要針對你的環境進行自訂。然後，你可以轉到 `fdroidserver` 檔案夾並執行 `makebuildserver`。"
+msgid "Create a config file for Vagrant as `~/fdroidserver/buildserver/Vagrantfile.yaml` which contains:"
+msgstr ""
+
+#. type: Fenced code block
+#: _docs/Build_Server_Setup.md
+#, fuzzy, no-wrap
+#| msgid "vm_provider = 'libvirt'\n"
+msgid "vm_provider: libvirt\n"
+msgstr "vm_provider = 'libvirt'\n"
+
+#. type: Plain text
+#: _docs/Build_Server_Setup.md
+#, fuzzy
+#| msgid "Create the base buildserver image... (downloading the basebox and all the sdk platforms can take long time)."
+msgid "Then the base buildserver image... (downloading the basebox and all the sdk platforms can take long time)."
+msgstr "建立基本的構建伺服器鏡像...（下載 basebox 和所有 sdk platforms 可能需要很長的時間）。"
 
 #. type: Fenced code block (bash)
 #: _docs/Build_Server_Setup.md
-#, no-wrap
+#, fuzzy, no-wrap
+#| msgid ""
+#| "fdroid:~$ cd fdroidserver\n"
+#| "fdroid:~/fdroidserver$ ./makebuildserver\n"
 msgid ""
-"# navigate to your clone of F-Droid Server\n"
-"cd .../fdroidserver\n"
-"\n"
-"# copy example config file\n"
-"cp examples/makebuildserver.config.py makebuildserver.config.py\n"
-"\n"
-"# start building the your basebox image\n"
-"./makebuildserver\n"
+"fdroid:~$ cd fdroidserver\n"
+"fdroid:~/fdroidserver$ ./makebuildserver --verbose\n"
 msgstr ""
+"fdroid:~$ cd fdroidserver\n"
+"fdroid:~/fdroidserver$ ./makebuildserver\n"
 
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
@@ -4356,8 +4353,15 @@ msgstr "這將需要很長的時間，使用大量的頻寬和磁盤空間 - 其
 
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
-msgid "Once it's complete you'll have a new base box called 'buildserver' which is what's used for your App build runs. Now you can build packages as you used to, but when you run `fdroid build --server ...` App build runs will be isolated inside a virtual machine."
+#, fuzzy
+#| msgid "Once it's complete you'll have a new base box called 'buildserver' which is what's used for your App build runs. Now you can build packages as you used to, but when you run `fdroid build --server ...` App build runs will be isolated inside a virtual machine."
+msgid "Once it's complete you'll have a new base box called 'buildserver' which is what's used for your App build runs. Now you can build packages as you used to, but when you run `fdroid build --verbose --server ...` App build runs will be isolated inside a virtual machine."
 msgstr "一旦完成，你就會有一個新的基礎系統叫做 'buildserver'，用於你的應用程式構建執行。現在你可以像以前一樣構建軟體包，但是當你執行 `fdroid build --server ...` 時應用程式構建執行將被隔離在一個虛擬機內。"
+
+#. type: Plain text
+#: _docs/Build_Server_Setup.md
+msgid "While the created image has allocated a limited amount of CPU cores and memory, you can edit `~/fdroiddata/builder/Vagrantfile` to modify them dynamically at run time, eg. `libvirt.cpus = 6` and `libvirt.memory = 12288`, but do make sure to not go over the host machines' limits else the VM might get killed."
+msgstr ""
 
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
@@ -4433,22 +4437,20 @@ msgstr ""
 #. type: Title ##
 #: _docs/Build_Server_Setup.md
 #, no-wrap
-msgid "Optionally using QEMU/KVM/libvirt instead of VirtualBox"
-msgstr "可選擇使用 QEMU/KVM/libvirt 而不是 VirtualBox"
+msgid "Setting up QEMU/KVM/libvirt"
+msgstr ""
 
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
-msgid "It is also possible to QEMU/KVM guest VMs via libvirt instead of the default VirtualBox.  VirtualBox is still the recommended setup since that is what is used by f-droid.org, but there are cases where it is not possible to run VirtualBox, like on a machine that is already running QEMU/KVM guests.  In order to make the libvirt image files directly readable by `vagrant package`, _libvirt_'s QEMU needs to be configured to always set the ownership to `libvirt.libvirt`."
+#, fuzzy
+#| msgid "It is also possible to QEMU/KVM guest VMs via libvirt instead of the default VirtualBox.  VirtualBox is still the recommended setup since that is what is used by f-droid.org, but there are cases where it is not possible to run VirtualBox, like on a machine that is already running QEMU/KVM guests.  In order to make the libvirt image files directly readable by `vagrant package`, _libvirt_'s QEMU needs to be configured to always set the ownership to `libvirt.libvirt`."
+msgid "While VirtualBox was used in the past, QEMU/KVM guest VMs via libvirt is still the recommended setup since that is what is used by f-droid.org. In order to make the libvirt image files directly readable by `vagrant package`, _libvirt_'s QEMU needs to be configured to always set the ownership to `libvirt.libvirt`."
 msgstr "它也可以透過 libvirt 使用 QEMU/KVM 客戶虛擬機代替預設的 VirtualBox。 VirtualBox 仍然是推薦的設定，因為 f-droid.org 使用的是 VirtualBox，但有些情況下不可能執行 VirtualBox，比如在已經執行 QEMU/KVM 客戶機的機器上。為了使 libvirt 映像檔案能被 `vagrant package` 直接讀取，_libvirt_ 的 QEMU 需要被配置為始終將所有權設定為 `libvirt.libvirt` 。"
 
 #. type: Fenced code block (console)
 #: _docs/Build_Server_Setup.md
 #, no-wrap
 msgid ""
-"root:~# apt-get install vagrant vagrant-mutate vagrant-libvirt ebtables dnsmasq-base \\\n"
-"        python3-libvirt libvirt-clients libvirt-daemon-system qemu-kvm qemu-utils git \\\n"
-"        python3-yaml python3-clint python3-vagrant python3-pyasn1 python3-pyasn1-modules \\\n"
-"        python3-requests python3-git\n"
 "root:~# cat << EOF >> /etc/libvirt/qemu.conf\n"
 "user = \"libvirt\"\n"
 "group = \"libvirt\"\n"
@@ -4456,33 +4458,13 @@ msgid ""
 "EOF\n"
 "root:~# service libvirtd restart\n"
 msgstr ""
-"root:~# apt-get install vagrant vagrant-mutate vagrant-libvirt ebtables dnsmasq-base \\\n"
-"        python3-libvirt libvirt-clients libvirt-daemon-system qemu-kvm qemu-utils git \\\n"
-"        python3-yaml python3-clint python3-vagrant python3-pyasn1 python3-pyasn1-modules \\\n"
-"        python3-requests python3-git\n"
-"root:~# cat << EOF >> /etc/libvirt/qemu.conf\n"
-"user = \"libvirt\"\n"
-"group = \"libvirt\"\n"
-"dynamic_ownership = 1\n"
-"EOF\n"
-"root:~# service libvirtd restart\n"
-
-#. type: Plain text
-#: _docs/Build_Server_Setup.md
-msgid "Then create a _makebuildserver.config.py_ next to _makebuildserver_ and add:"
-msgstr "然後在 _makebuildserver_ 旁邊建立一個 _makebuildserver.config.py_ 並加入："
-
-#. type: Fenced code block (python)
-#: _docs/Build_Server_Setup.md
-#, no-wrap
-msgid "vm_provider = 'libvirt'\n"
-msgstr "vm_provider = 'libvirt'\n"
 
 #. type: Title #####
 #: _docs/Build_Server_Setup.md
-#, no-wrap
-msgid "Debian/stretch and Ubuntu/xenial"
-msgstr ""
+#, fuzzy, no-wrap
+#| msgid "older Debian and Ubuntu"
+msgid "Debian/bullseye and Ubuntu/xenial"
+msgstr "更舊版本的 Debian 和 Ubuntu"
 
 #. type: Fenced code block (console)
 #: _docs/Build_Server_Setup.md
@@ -5290,6 +5272,17 @@ msgstr "可重複構建"
 #. type: Plain text
 #: _docs/FAQ_-_App_Developers.md
 msgid "No. But we do consider them best practice and hope you'll consider trying to make your app reproducible. See our [inclusion how-to](../Inclusion_How-To) for more information."
+msgstr ""
+
+#. type: Title ###
+#: _docs/FAQ_-_App_Developers.md
+#, no-wrap
+msgid "How can I handle \"fsck error in packed object\" for my app?"
+msgstr ""
+
+#. type: Plain text
+#: _docs/FAQ_-_App_Developers.md
+msgid "In order to ensure that our _buildserver_ gets the exact same commits as you put into _git_, [`git fsck`](https://git-scm.com/docs/git-fsck#_fsck_messages) is enabled by default whenever new commits are fetched.  Enabling _git fsck_ [ensures](https://web.archive.org/web/20230407012910/https://groups.google.com/g/binary-transparency/c/f-BI4o8HZW0)  that the commits [match](https://git-scm.com/docs/git-fsck#_discussion) their SHA1 checksum.  Sometimes, _git_ repos have corrupt but usable commits in them that cannot be changed since the whole history is based on the corrupt commit.  For those cases, we have the [_skipList_](https://git-scm.com/docs/git-fsck#Documentation/git-fsck.txt-fsckskipList)  functionality in [_fdroiddata_](https://gitlab.com/fdroid/fdroiddata/-/merge_requests/14014/diffs)"
 msgstr ""
 
 #. type: Title ###
@@ -9478,42 +9471,6 @@ msgstr ""
 msgid "Embedded [timestamps](https://reproducible-builds.org/docs/timestamps/) are the most common source of reproducibility issues and are best avoided."
 msgstr ""
 
-#. type: Title #####
-#: _docs/Reproducible_Builds.md
-#, no-wrap
-msgid "AboutLibraries Gradle plugin"
-msgstr ""
-
-#. type: Plain text
-#: _docs/Reproducible_Builds.md
-msgid "You can prevent this plugin (`com.mikepenz.aboutlibraries.plugin`) from adding a timestamp to the JSON file it generates by adding this to `build.gradle`:"
-msgstr ""
-
-#. type: Fenced code block (gradle)
-#: _docs/Reproducible_Builds.md
-#, no-wrap
-msgid ""
-"aboutLibraries {\n"
-"    // Remove the \"generated\" timestamp to allow for reproducible builds\n"
-"    excludeFields = [\"generated\"]\n"
-"}\n"
-msgstr ""
-
-#. type: Plain text
-#: _docs/Reproducible_Builds.md
-msgid "For `build.gradle.kts`, add this instead:"
-msgstr ""
-
-#. type: Fenced code block (gradle)
-#: _docs/Reproducible_Builds.md
-#, no-wrap
-msgid ""
-"aboutLibraries {\n"
-"    // Remove the \"generated\" timestamp to allow for reproducible builds\n"
-"    excludeFields = arrayOf(\"generated\")\n"
-"}\n"
-msgstr ""
-
 #. type: Title ####
 #: _docs/Reproducible_Builds.md
 #, no-wrap
@@ -9807,7 +9764,7 @@ msgid ""
 "`build.gradle`/`build.gradle.kts`:\n"
 msgstr ""
 
-#. type: Fenced code block
+#. type: Fenced code block (gradle)
 #: _docs/Reproducible_Builds.md
 #, fuzzy, no-wrap
 #| msgid ""
@@ -9854,7 +9811,42 @@ msgid ""
 "For CMake versions since 3.13, `add_link_options(LINKER:<linker args>)`\n"
 "can be added to `CMakeLists.txt` globally. For CMake versions before 3.13,\n"
 "`target_link_libraries(<target> LINKER:<linker args>)` can be used instead for\n"
-"every target.\n"
+"every target. It can also be set in Gradle files:\n"
+msgstr ""
+
+#. type: Fenced code block (gradle)
+#: _docs/Reproducible_Builds.md
+#, fuzzy, no-wrap
+#| msgid ""
+#| "android {\n"
+#| "    defaultConfig {\n"
+#| "        externalNativeBuild {\n"
+#| "            ndkBuild {\n"
+#| "                arguments \"LOCAL_LDFLAGS += -Wl,--build-id=none\"\n"
+#| "            }\n"
+#| "        }\n"
+#| "    }\n"
+#| "}\n"
+msgid ""
+"android {\n"
+"    defaultConfig {\n"
+"        externalNativeBuild.cmake {\n"
+"          cFlags \"-DCMAKE_SHARED_LINKER_FLAGS=-Wl,<linker args>\"\n"
+"        }\n"
+"    }\n"
+"}\n"
+msgstr ""
+"android {\n"
+"    defaultConfig {\n"
+"        externalNativeBuild.cmake {\n"
+"          cFlags \"-DCMAKE_SHARED_LINKER_FLAGS=-Wl,<linker args>\"\n"
+"        }\n"
+"    }\n"
+"}\n"
+
+#. type: Plain text
+#: _docs/Reproducible_Builds.md
+msgid "`-ffile-prefix-map` can be used to remove embedded build path."
 msgstr ""
 
 #. type: Title #####
@@ -9887,6 +9879,64 @@ msgstr ""
 #: _docs/Reproducible_Builds.md
 #, no-wrap
 msgid "The Rust toolchain should be pinned to the same version as upstream. This can be done when installing rustup with `rustup-init.sh -y --default-toolchain <version>`.\n"
+msgstr ""
+
+#. type: Title ####
+#: _docs/Reproducible_Builds.md
+#, no-wrap
+msgid "Library-specific instructions"
+msgstr ""
+
+#. type: Plain text
+#: _docs/Reproducible_Builds.md
+msgid "Some libraries generate non-deterministic code due to timestamps, unsorted iterations etc. Some known fixes are documented below:"
+msgstr ""
+
+#. type: Title #####
+#: _docs/Reproducible_Builds.md
+#, no-wrap
+msgid "AboutLibraries Gradle plugin"
+msgstr ""
+
+#. type: Plain text
+#: _docs/Reproducible_Builds.md
+msgid "You can prevent this plugin (`com.mikepenz.aboutlibraries.plugin`) from adding a timestamp to the JSON file it generates by adding this to `build.gradle`:"
+msgstr ""
+
+#. type: Fenced code block (gradle)
+#: _docs/Reproducible_Builds.md
+#, no-wrap
+msgid ""
+"aboutLibraries {\n"
+"    // Remove the \"generated\" timestamp to allow for reproducible builds\n"
+"    excludeFields = [\"generated\"]\n"
+"}\n"
+msgstr ""
+
+#. type: Plain text
+#: _docs/Reproducible_Builds.md
+msgid "For `build.gradle.kts`, add this instead:"
+msgstr ""
+
+#. type: Fenced code block (gradle)
+#: _docs/Reproducible_Builds.md
+#, no-wrap
+msgid ""
+"aboutLibraries {\n"
+"    // Remove the \"generated\" timestamp to allow for reproducible builds\n"
+"    excludeFields = arrayOf(\"generated\")\n"
+"}\n"
+msgstr ""
+
+#. type: Title #####
+#: _docs/Reproducible_Builds.md
+#, no-wrap
+msgid "EventBus"
+msgstr ""
+
+#. type: Plain text
+#: _docs/Reproducible_Builds.md
+msgid "It generates [non-deterministic code](https://github.com/greenrobot/EventBus/issues/715) which can be sorted after the classes are generated. The detailed instructions can be found in [Eternity's source code](https://codeberg.org/Bazsalanszky/Eternity/commit/05123c70682e5988ad5f0ff111f97b66a87d8806)."
 msgstr ""
 
 #. type: Title ###
@@ -11150,8 +11200,8 @@ msgid ""
 "    # Where build.gradle is:\n"
 "    subdir: app\n"
 "    sudo:\n"
-"      - apt-get update || apt-get update\n"
-"      - apt-get install -y librsvg2-bin openjdk-11-jdk-headless\n"
+"      - apt-get update\n"
+"      - apt-get install -y librsvg2-bin openjdk-17-jdk-headless\n"
 "      - update-alternatives --auto java\n"
 "    gradle:\n"
 "      - yes\n"
@@ -11174,7 +11224,7 @@ msgstr ""
 
 #. type: Bullet: '* '
 #: _docs/Submitting_to_F-Droid_Quick_Start_Guide.md
-msgid "_build.gradle_ mentions `com.android.tools.build:gradle:7.1.0`, and the Gradle Android plugin version 7 is known to depend on Java 11. So we install _openjdk-11-jdk-headless_ and select it as the _java_ alternative."
+msgid "`gradle/wrapper/gradle-wrapper.properties` mentions `gradle-8.0`, and Gradle 8 is known to depend on Java 17. So we install _openjdk-17-jdk-headless_ and select it as the _java_ alternative."
 msgstr ""
 
 #. type: Plain text
@@ -11284,12 +11334,12 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/Take-Down_Requests.md
-msgid "This document covers how you may send a request to remove content or apps from the official f-droid.org repository.  Our team checks all app submissions we receive for compliance with our [inclusion policy](../Inclusion_Policy) to the best of their abilities.  Please let us know if an app the official f-droid.org repository infringes on your rights by submitting a take-down request."
+msgid "This document covers how you may send a request to remove content or apps from the official f-droid.org repository.  Our team checks all app submissions we receive for compliance with our [inclusion policy](../Inclusion_Policy) to the best of their abilities.  Please let us know if an app in the official f-droid.org repository infringes on your rights by submitting a take-down request."
 msgstr ""
 
 #. type: Plain text
 #: _docs/Take-Down_Requests.md
-msgid "The official f-droid.org repository is a distribution service for FOSS apps and will be called downstream in the remainder of this document.  F-Droid does not hold any rights to the apps in official f-droid.org repository other than granted by their respective license.  The authors of said apps will be called upstream in the remainder of this document."
+msgid "The official f-droid.org repository is a distribution service/platform for FOSS apps and will be called downstream in the remainder of this document.  F-Droid does not hold any rights to the apps in the official f-droid.org repository other than those granted by their respective license.  The authors/copyright holders of said apps will be called upstream in the remainder of this document."
 msgstr ""
 
 #. type: Title ##
@@ -11300,37 +11350,53 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/Take-Down_Requests.md
-msgid "Please take some time to familiarize yourself with our policies any take-down procedure before submitting any take-down requests.  If you submit an incomplete request, we will have to ask you for clarifications maybe even re-submitting a revised request."
+msgid "Please take some time to familiarize yourself with our policies and take-down procedure before submitting any take-down requests.  You have to make sure that requests you're submitting to us, contain all information required by our team to check the legitimacy of your claims.  If you submit an incomplete request, we will have to ask you for clarifications."
 msgstr ""
 
 #. type: Plain text
 #: _docs/Take-Down_Requests.md
-msgid "You have to make sure that requests you're submitting to us, contain all information required by our team to verify the legitimacy of your claims.  This can include a variety of informations like copyright and licensing information, trademark registrations, etc."
+#, no-wrap
+msgid ""
+"Copyright based take-down requests must at least include:\n"
+"- link to the infringing content on f-droid.org\n"
+"- full copyright attribution (author/artists/copyright holder, copyright date, ...)\n"
+"- publishing information (publisher, publishing medium, publishing date, web\n"
+"  links to postings/store-listings/e-commerce-listings/etc., ...)\n"
+"- license information\n"
+"- written description of the copyrighted material\n"
+"- short statement about the author/artist/copyright holder/etc. which\n"
+"  explains their field of expertise/field of interest/business/etc.\n"
+"or a concise explanation why this information is not available.\n"
 msgstr ""
 
 #. type: Plain text
 #: _docs/Take-Down_Requests.md
-msgid "Please note that downstream has and will never agree to 3rd party Terms of Service, Terms of Use or similar agreements for services not utilized by downstream.  Therefore such agreements usually do not provide an enforceable basis for take-down requests."
+msgid "If your take-down request is not based on copyright, you will still need to supply ample information that allows us to check your request. (e.g. trademark registration information, inclusion policy violation information, etc.)"
 msgstr ""
 
 #. type: Plain text
 #: _docs/Take-Down_Requests.md
-msgid "Also please note that we are an volunteer driven organization.  We prioritize take-down requests, but we can't guarantee instant responses."
+msgid "Note that some apps distributed by downstream may connect to 3rd party services or rely on 3rd party software.  Downstream does not connect to these services or rely on this software, so their Terms of Service, Terms of Use or similar agreements usually do not provide an enforceable basis for take-down requests."
 msgstr ""
 
 #. type: Plain text
 #: _docs/Take-Down_Requests.md
-msgid "You can submit take-down requests [by starting a new issue on our issue tracker](https://gitlab.com/fdroid/fdroiddata/-/issues/new).  (This requires a gitlab.com account.)"
+msgid "Also please note that f-droid.org is a volunteer driven organization.  We prioritize take-down requests, but we can't guarantee instant responses."
 msgstr ""
 
 #. type: Plain text
 #: _docs/Take-Down_Requests.md
-msgid "Alternatively if you prefer you can send your request to our team E-Mail account.  [team@f-droid.org](mailto:team@f-droid.org) (Our team will still open a public issue on our issue trackers and quote your entire request there.)"
+msgid "You should preferably submit take-down requests [by starting a new issue in our issue tracker](https://gitlab.com/fdroid/fdroiddata/-/issues/new).  (This requires a gitlab.com account.)"
 msgstr ""
 
 #. type: Plain text
 #: _docs/Take-Down_Requests.md
-msgid "Take-down requests can not be confidential.  By submitting a take-down request you automatically grant us permission to publish your entire request on our web-sites and our issue trackers. We need this because all of our processes are worked on in public and for keeping accountable to our users."
+msgid "Alternatively if you prefer you can send your request to our team E-Mail account.  [team@f-droid.org](mailto:team@f-droid.org) (Our team will still open a public issue in our issue tracker and quote your request there.)"
+msgstr ""
+
+#. type: Plain text
+#: _docs/Take-Down_Requests.md
+msgid "Take-down requests can not be confidential.  By submitting a take-down request you automatically grant us permission to publish your request on our web-sites and our issue trackers."
 msgstr ""
 
 #. type: Title ##
@@ -11825,6 +11891,53 @@ msgstr "偏好"
 #: _docs/Whitelabel_Builds.md
 msgid "For a custom build that enables Automatic Updates by default, override _app/src/main/res/xml/preferences.xml_. You can customize the preferences and their default values in _app/src/mycompany/res/xml/preferences.xml_. The fully automatic update requires [Privileged Extension](https://gitlab.com/fdroid/privileged-extension). With regular access, the updates will only automatically download. The user still needs to click install on each one."
 msgstr ""
+
+#~ msgid "`RepoTrunk` - For svn and git-svn repositories, especially those who don't have a bundled _AndroidManifest.xml_ file, the Tags and RepoManifest checks will not work, since there is no version information to obtain. But, for those apps who automate their build process with the commit ref that HEAD points to, RepoTrunk will set the _CurrentVersion_ and _CurrentVersionCode_ to that number."
+#~ msgstr "`RepoTrunk` - 對於 svn 和 git-svn 倉庫，特別是那些沒有附帶 _AndroidManifest.xml_ 檔案的倉庫，Tags 和 RepoManifest 檢查將無法工作，因為沒有版本資訊可以獲取。但是，對於那些用 HEAD 指向的提交註釋自動化構建過程的應用程式，RepoTrunk 將把 _CurrentVersion_ 和 _CurrentVersionCode_ 設為該數位。"
+
+#, no-wrap
+#~ msgid ""
+#~ "fdroid:~$ cd ~\n"
+#~ "fdroid:~$ git clone https://gitlab.com/fdroid/fdroidserver.git\n"
+#~ "fdroid:~$ cp fdroidserver/examples/makebuildserver.config.py fdroidserver/\n"
+#~ msgstr ""
+#~ "fdroid:~$ cd ~\n"
+#~ "fdroid:~$ git clone https://gitlab.com/fdroid/fdroidserver.git\n"
+#~ "fdroid:~$ cp fdroidserver/examples/makebuildserver.config.py fdroidserver/\n"
+
+#~ msgid "Navigate to your clone of [F-Droid Server git](https://gitlab.com/fdroid/fdroidserver) and start by creating `makebuildserver.config.py`, using `./examples/makebuildserver.config.py` as a reference - look at the settings and documentation there to decide if any need changing to suit your environment. There is a path for retrieving the base box if it doesn't exist, and an apt proxy definition, both of which may need customising for your environment. You can then go to the `fdroidserver` directory and run `makebuildserver`."
+#~ msgstr "導覽到你的 [F-Droid Server git](https://gitlab.com/fdroid/fdroidserver) 複製，從建立 `makebuildserver.config.py` 開始，以 `./examples/makebuildserver.config.py` 作為參考 - 檢視其中的設定和文檔，以確定是否需要進行更改以適應你的環境。如果基礎系統不存在，則有一個用於獲取它的路徑，以及一個 apt 代理定義，這兩者都可能需要針對你的環境進行自訂。然後，你可以轉到 `fdroidserver` 檔案夾並執行 `makebuildserver`。"
+
+#, no-wrap
+#~ msgid "Optionally using QEMU/KVM/libvirt instead of VirtualBox"
+#~ msgstr "可選擇使用 QEMU/KVM/libvirt 而不是 VirtualBox"
+
+#, no-wrap
+#~ msgid ""
+#~ "root:~# apt-get install vagrant vagrant-mutate vagrant-libvirt ebtables dnsmasq-base \\\n"
+#~ "        python3-libvirt libvirt-clients libvirt-daemon-system qemu-kvm qemu-utils git \\\n"
+#~ "        python3-yaml python3-clint python3-vagrant python3-pyasn1 python3-pyasn1-modules \\\n"
+#~ "        python3-requests python3-git\n"
+#~ "root:~# cat << EOF >> /etc/libvirt/qemu.conf\n"
+#~ "user = \"libvirt\"\n"
+#~ "group = \"libvirt\"\n"
+#~ "dynamic_ownership = 1\n"
+#~ "EOF\n"
+#~ "root:~# service libvirtd restart\n"
+#~ msgstr ""
+#~ "root:~# apt-get install vagrant vagrant-mutate vagrant-libvirt ebtables dnsmasq-base \\\n"
+#~ "        python3-libvirt libvirt-clients libvirt-daemon-system qemu-kvm qemu-utils git \\\n"
+#~ "        python3-yaml python3-clint python3-vagrant python3-pyasn1 python3-pyasn1-modules \\\n"
+#~ "        python3-requests python3-git\n"
+#~ "root:~# cat << EOF >> /etc/libvirt/qemu.conf\n"
+#~ "user = \"libvirt\"\n"
+#~ "group = \"libvirt\"\n"
+#~ "dynamic_ownership = 1\n"
+#~ "EOF\n"
+#~ "root:~# service libvirtd restart\n"
+
+#~ msgid "Then create a _makebuildserver.config.py_ next to _makebuildserver_ and add:"
+#~ msgstr "然後在 _makebuildserver_ 旁邊建立一個 _makebuildserver.config.py_ 並加入："
 
 #~ msgid "Metadata files are written in [YAML](http://www.yaml.org/start.html) format"
 #~ msgstr "中介資料檔案是用[YAML](http://www.yaml.org/start.html)格式編寫的"
