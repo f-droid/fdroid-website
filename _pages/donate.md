@@ -29,7 +29,7 @@ Right now, we only support the payment methods that our fiscal hosts offer.  The
 |------|----------|--------------|---------------|--------|--------|
 | [<img src="{% asset liberapay_donate_button.svg %}" alt="{{ strings.liberapay_alt }}" height="24" />](https://liberapay.com/F-Droid-Data/)           | | ✓ | | ✓ | |
 | [<img src="{% asset opencollectivelogo.svg %}" height="20" alt="{{ strings.opencollective_alt }}" /> <small>F-Droid-Euro</small>](https://opencollective.com/f-droid-euro) | EUR | ✓ |  | |
-| [<img src="{% asset opencollectivelogo.svg %}" height="20" alt="{{ strings.opencollective_alt }}" /> <small>F-Droid</small>](https://opencollective.com/f-droid)   | USD | ✓ | ✓ | ✓ | ✓ |
+| [<img src="{% asset opencollectivelogo.svg %}" height="20" alt="{{ strings.opencollective_alt }}" /> <small>F-Droid</small>](https://opencollective.com/f-droid)   | USD | ✓ | ✓ | ✓ | |
 | [<img src="{% asset github-sponsors.svg %}" height="20" alt="GitHub Sponsors" />](https://github.com/sponsors/f-droid) |  | ✓ | | ✓ | |
 
 Visit the info pages of our fiscal hosts to get more details on their fees:
