@@ -1,5 +1,4 @@
 #!/bin/sh -ex
 
-last_tag=`git tag | grep -E '[2-9]\.[0-9]+' | sort -n | tail -1`
-version=`python3 -c "l='$last_tag'.split('.');print('%s.%d' % (l[0], int(l[-1]) + 1))"`
-git tag --sign $version --message "tagging release v$version" $1
+NEXT_TAG=$(git tag | grep -E '^[0-9]\.[0-9]+$' | python3 -c 'import sys; from packaging import version as v; l=sorted([v.parse(x) for x in sys.stdin.readlines()])[-1]; print("{}.{}".format(l.major, l.minor+1))')
+git tag --sign $NEXT_TAG --message "tagging release v$NEXT_TAG" $1
