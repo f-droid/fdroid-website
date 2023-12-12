@@ -24,7 +24,7 @@ XMPP users can join via a [Biboumi](https://doc.biboumi.louiz.org/) gateway that
 
 There is also a Matrix bridge to Telegram, to join it click [this link](https://matrix.f-droid.org/fdroid/telegram/).
 
-Translators can coordinate via the special IRC channel [#fdroid-translators](https://webchat.oftc.net/?randomnick=1&channels=fdroid-translators&prompt=1) on OFTC, [#fdroid-translators:f-droid.org](https://matrix.to/#/#fdroid-translators:f-droid.org) room on Matrix, `#fdroid-translators%irc.oftc.net@irc.jabberfr.org` / `#fdroid-translators%irc.oftc.net@irc.hmm.st` bridges for XMPP or by clicking [this link](https://t.me/+CLSY2Pp7p1ozZTM0) for Telegram
+Translators can coordinate via the special IRC channel [#fdroid-translators](https://webchat.oftc.net/?randomnick=1&channels=fdroid-translators&prompt=1) on OFTC, [#fdroid-translators:f-droid.org](https://matrix.to/#/#fdroid-translators:f-droid.org) room on Matrix, `#fdroid-translators%irc.oftc.net@irc.jabberfr.org` / `#fdroid-translators%irc.oftc.net@irc.hmm.st` bridges for XMPP or by clicking [this link](https://t.me/fdroid_translators) for Telegram
 
 F-Droid contributors also run a social-media account on the Fediverse. You can
 interact with us or follow us on [@fdroidorg@floss.social](https://floss.social/@fdroidorg).
