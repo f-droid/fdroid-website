@@ -21,15 +21,15 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
 "POT-Creation-Date: 2023-11-27 17:13+0100\n"
-"PO-Revision-Date: 2023-11-16 04:33+0000\n"
-"Last-Translator: \"C. Rüdinger\" <Mail-an-CR@web.de>\n"
+"PO-Revision-Date: 2023-12-02 18:03+0000\n"
+"Last-Translator: VfBFan <VfBFan@users.noreply.hosted.weblate.org>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/f-droid/website-docs/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.2-dev\n"
+"X-Generator: Weblate 5.3-dev\n"
 
 #. type: Yaml Front Matter Hash Value: title
 #: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
@@ -1725,7 +1725,7 @@ msgstr "lokalisierbare Texte und Grafiken [im Quellcode der App eingebunden](../
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 msgid "These metadata files are simple, easy to edit text files, always named as the \"package name\" with file type appended.  There are a wide range of available fields for adding information to describe packages and/or apps.  For all of the fields like _AuthorName_ that apply to all releases of a package/app, the fields use CamelCase starting with an upper case letter.  All other fields use camelCase starting with a lower case letter, including per-build fields, localized fields, etc."
-msgstr "Diese Metadaten-Dateien sind einfache, leicht zu bearbeitende Textdateien, die immer nach dem „Paketnamen“ gefolgt vom Dateityp-Suffix benannt sind.  Es stehen eine Vielzahl von Feldern zur Verfügung, um Informationen zur Beschreibung der Pakete und/oder Apps hinzuzufügen.  Bei allen Feldern, wie _AuthorName_, die auf alle Versionen eines Pakets/einer App angewendet werden, wird CamelCase mit einem Großbuchstaben am Anfang verwendet.  Alle anderen Felder verwenden camelCase mit einem Kleinbuchstaben am Anfang, einschließlich der per-build Felder, lokalisierter Felder, etc."
+msgstr "Diese Metadaten-Dateien sind einfache, leicht zu bearbeitende Textdateien, die immer nach dem „Paketnamen“ gefolgt vom Dateityp-Suffix benannt sind.  Es stehen eine Vielzahl von Feldern zur Verfügung, um Informationen zur Beschreibung der Pakete und/oder Apps hinzuzufügen.  Bei allen Feldern, wie _AuthorName_, die auf alle Versionen eines Pakets/einer App angewendet werden, wird CamelCase mit einem Großbuchstaben am Anfang verwendet.  Alle anderen Felder verwenden camelCase mit einem Kleinbuchstaben am Anfang, einschließlich der per-build Felder, lokalisierter Felder, usw."
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -4639,6 +4639,12 @@ msgid ""
 "EOF\n"
 "root:~# service libvirtd restart\n"
 msgstr ""
+"root:~# cat << EOF >> /etc/libvirt/qemu.conf\n"
+"user = \"libvirt\"\n"
+"group = \"libvirt\"\n"
+"dynamic_ownership = 1\n"
+"EOF\n"
+"root:~# service libvirtd restart\n"
 
 #. type: Title #####
 #: _docs/Build_Server_Setup.md
@@ -10175,12 +10181,7 @@ msgstr "CMake"
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
-#, fuzzy, no-wrap
-#| msgid ""
-#| "For CMake versions since 3.13, `add_link_options(LINKER:<linker args>)`\n"
-#| "can be added to `CMakeLists.txt` globally. For CMake versions before 3.13,\n"
-#| "`target_link_libraries(<target> LINKER:<linker args>)` can be used instead for\n"
-#| "every target.\n"
+#, no-wrap
 msgid ""
 "For CMake versions since 3.13, `add_link_options(LINKER:<linker args>)`\n"
 "can be added to `CMakeLists.txt` globally. For CMake versions before 3.13,\n"
@@ -10190,21 +10191,11 @@ msgstr ""
 "Für CMake-Versionen ab 3.13 kann `add_link_options(LINKER,<linker args>)`\n"
 "global zu `CMakeLists.txt` hinzugefügt werden. Für CMake-Versionen vor 3.13\n"
 "kann stattdessen `target_link_libraries(<target> LINKER:<linker args>)` für jedes\n"
-"Target verwendet werden.\n"
+"Target verwendet werden. Es kann auch in Gradle-Dateien gesetzt werden:\n"
 
 #. type: Fenced code block (gradle)
 #: _docs/Reproducible_Builds.md
-#, fuzzy, no-wrap
-#| msgid ""
-#| "android {\n"
-#| "    defaultConfig {\n"
-#| "        externalNativeBuild {\n"
-#| "            ndkBuild {\n"
-#| "                arguments \"LOCAL_LDFLAGS += -Wl,<linker args>\"\n"
-#| "            }\n"
-#| "        }\n"
-#| "    }\n"
-#| "}\n"
+#, no-wrap
 msgid ""
 "android {\n"
 "    defaultConfig {\n"
@@ -10264,10 +10255,9 @@ msgstr "Die Rust-Toolchain sollte an dieselbe Version wie die des Upstreams gehe
 
 #. type: Title ####
 #: _docs/Reproducible_Builds.md
-#, fuzzy, no-wrap
-#| msgid "Language-specific instructions"
+#, no-wrap
 msgid "Library-specific instructions"
-msgstr "Sprachspezifische Anweisungen"
+msgstr "Bibliotheksspezifische Anweisungen"
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
@@ -10322,7 +10312,7 @@ msgstr ""
 #: _docs/Reproducible_Builds.md
 #, no-wrap
 msgid "EventBus"
-msgstr ""
+msgstr "EventBus"
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
@@ -10779,7 +10769,7 @@ msgstr ""
 "Die Sicherheitsarchitektur basiert auf der Integration von Modellen, die sich in\n"
 "[Debian](https://wiki.debian.org/SecureApt) und [The Update\n"
 "Framework](https://github.com/theupdateframework/specification/blob/master/tuf-spec.md) bewährt haben,\n"
-" in das, was das Android-OS bereits mitbringt.  Die Art und Weise wie F-Droid agiert, ist größtenteils von de facto Sicherheitsmodellen beeinflusst, wie sie in angesehenen GNU/Linux-Distributionen wie Debian, Fedora, Ubuntu, etc. funktionieren.  Der Schwerpunkt dort liegt darauf öffentlich zu arbeiten und alles öffentlich zugänglich zu machen. Wir schließen Source Tarballs und Build-Protokolle ein, wenn wir Binärdateien veröffentlichen.  Diese werden so lange wie möglich für retrospektive Prüfungen archiviert.  Und all dies wird an vielen, über das Internet verteilten Plätzen von vielen verschiedenen Parteien gespiegelt.\n"
+" in das, was das Android-OS bereits mitbringt.  Die Art und Weise wie F-Droid agiert, ist größtenteils von de facto Sicherheitsmodellen beeinflusst, wie sie in angesehenen GNU/Linux-Distributionen wie Debian, Fedora, Ubuntu, usw. funktionieren.  Der Schwerpunkt dort liegt darauf öffentlich zu arbeiten und alles öffentlich zugänglich zu machen. Wir schließen Source Tarballs und Build-Protokolle ein, wenn wir Binärdateien veröffentlichen.  Diese werden so lange wie möglich für retrospektive Prüfungen archiviert.  Und all dies wird an vielen, über das Internet verteilten Plätzen von vielen verschiedenen Parteien gespiegelt.\n"
 
 #. type: Bullet: '-   '
 #: _docs/Security_Model.md
@@ -11154,7 +11144,7 @@ msgstr "Haben Sie Dinge verändert, wiederholen Sie schließlich `fdroid update`
 #. type: Bullet: '9.  '
 #: _docs/Setup_an_F-Droid_App_Repo.md
 msgid "Running `fdroid update` adds an _icons_ directory into the repo directory, and also creates the repository index files (_index.xml_, _index.jar_, etc) __NOTE: To make this process secure, read [Real World Setup](#real-world-setup) below!__"
-msgstr "Das Ausführen von `fdroid update` fügt ein _icons_-Verzeichnis in das Repo-Verzeichnis ein und erstellt auch die Repository-Indexdateien (_index.xml_, _index.jar_, etc.) __HINWEIS: Wie dieser Vorgang sicher wird, lesen Sie unter [Reales Setup](#real-world-setup) weiter unten!__"
+msgstr "Das Ausführen von `fdroid update` fügt ein _icons_-Verzeichnis in das Repo-Verzeichnis ein und erstellt auch die Repository-Indexdateien (_index.xml_, _index.jar_, usw.) __HINWEIS: Wie dieser Vorgang sicher wird, lesen Sie unter [Reales Setup](#real-world-setup) weiter unten!__"
 
 #. type: Bullet: '0.  '
 #: _docs/Setup_an_F-Droid_App_Repo.md
@@ -11282,7 +11272,7 @@ msgstr "App-Metadaten"
 #. type: Plain text
 #: _docs/Setup_an_F-Droid_App_Repo.md
 msgid "You can control lots of aspects of how an app is represented in your repo by editing the app's metadata. Running `fdroid update --create-metadata` creates stub files for you, in order to have a working repo. Then you can edit those files to add a description, donation links, bug tracker, license, home page, etc. See the [Build Metadata Reference](../Build_Metadata_Reference) for more info on what all the options are."
-msgstr "Sie können viele Aspekte der Darstellung einer App in Ihrem Repo steuern, indem Sie die Metadaten der App bearbeiten. Das Ausführen von `fdroid update --create-metadata` erzeugt Stub-Dateien für Sie, um ein funktionierendes Repo zu erhalten. Sie können dann diese Dateien bearbeiten, um eine Beschreibung, Spenden-Links, Bug-Tracker, Lizenz, Homepage, etc. hinzuzufügen. Weitere Informationen zu allen Optionen finden Sie unter [Build-Metadatenreferenz](../Build_Metadata_Reference)."
+msgstr "Sie können viele Aspekte der Darstellung einer App in Ihrem Repo steuern, indem Sie die Metadaten der App bearbeiten. Das Ausführen von `fdroid update --create-metadata` erzeugt Stub-Dateien für Sie, um ein funktionierendes Repo zu erhalten. Sie können dann diese Dateien bearbeiten, um eine Beschreibung, Spenden-Links, Bug-Tracker, Lizenz, Homepage, usw. hinzuzufügen. Weitere Informationen zu allen Optionen finden Sie unter [Build-Metadatenreferenz](../Build_Metadata_Reference)."
 
 #. type: Plain text
 #: _docs/Setup_an_F-Droid_App_Repo.md
@@ -11651,34 +11641,7 @@ msgstr "Füllen Sie _~/fdroiddata/metadata/com.example.yml_ nach der [Build-Meta
 
 #. type: Fenced code block (yaml)
 #: _docs/Submitting_to_F-Droid_Quick_Start_Guide.md
-#, fuzzy, no-wrap
-#| msgid ""
-#| "Categories:\n"
-#| "  - Internet\n"
-#| "  - Navigation\n"
-#| "License: GPL-3.0-or-later\n"
-#| "SourceCode: https://gitlab.com/APPLICATION_UPSTREAM/ExampleCom\n"
-#| "\n"
-#| "RepoType: git\n"
-#| "Repo: https://gitlab.com/APPLICATION_UPSTREAM/ExampleCom\n"
-#| "\n"
-#| "Builds:\n"
-#| "  - versionName: '1.0'\n"
-#| "    versionCode: 123\n"
-#| "    commit: v1.0\n"
-#| "    # Where build.gradle is:\n"
-#| "    subdir: app\n"
-#| "    sudo:\n"
-#| "      - apt-get update || apt-get update\n"
-#| "      - apt-get install -y librsvg2-bin openjdk-11-jdk-headless\n"
-#| "      - update-alternatives --auto java\n"
-#| "    gradle:\n"
-#| "      - yes\n"
-#| "\n"
-#| "AutoUpdateMode: Version\n"
-#| "UpdateCheckMode: Tags\n"
-#| "CurrentVersion: '1.0'\n"
-#| "CurrentVersionCode: 123\n"
+#, no-wrap
 msgid ""
 "Categories:\n"
 "  - Internet\n"
@@ -11720,11 +11683,11 @@ msgstr ""
 "  - versionName: '1.0'\n"
 "    versionCode: 123\n"
 "    commit: v1.0\n"
-"    # Wo build.gradle zu finden ist:\n"
+"    # Where build.gradle is:\n"
 "    subdir: app\n"
 "    sudo:\n"
-"      - apt-get update || apt-get update\n"
-"      - apt-get install -y librsvg2-bin openjdk-11-jdk-headless\n"
+"      - apt-get update\n"
+"      - apt-get install -y librsvg2-bin openjdk-17-jdk-headless\n"
 "      - update-alternatives --auto java\n"
 "    gradle:\n"
 "      - yes\n"
@@ -11862,30 +11825,24 @@ msgstr "Einführung"
 
 #. type: Plain text
 #: _docs/Take-Down_Requests.md
-#, fuzzy
-#| msgid "This document covers how you may send a request to remove content or apps from the official f-droid.org repository.  Our team checks all app submissions we receive for compliance with our [inclusion policy](../Inclusion_Policy) to the best of their abilities.  Please let us know if an app the official f-droid.org repository infringes on your rights by submitting a take-down request."
 msgid "This document covers how you may send a request to remove content or apps from the official f-droid.org repository.  Our team checks all app submissions we receive for compliance with our [inclusion policy](../Inclusion_Policy) to the best of their abilities.  Please let us know if an app in the official f-droid.org repository infringes on your rights by submitting a take-down request."
-msgstr "Dieses Dokument behandelt, wie Sie eine Anfrage zur Entfernung von Inhalten oder Apps aus dem offiziellen f-droid.org-Repository starten können.  Unser Team prüft nach bestem Wissen und Gewissen alle Aingaben zur App, die wir erhalten auf Übereinstimmung mit unseren [Aufnahmekriterien](../Inclusion_Policy).  Bitte lassen Sie uns wissen, wenn eine App im offiziellen f-droid.org-Repository Ihre Rechte verletzt, indem Sie einen Rücknahmewunsch einreichen."
+msgstr "Dieses Dokument beschreibt, wie Sie eine Anfrage zur Entfernung von Inhalten oder Apps aus dem offiziellen f-droid.org Repository starten können.  Unser Team prüft alle erhaltenen App-Einsendungen, nach bestem Wissen und Gewissen auf Übereinstimmung mit unseren [Aufnahmekriterien](../Inclusion_Policy).  Bitte teilen Sie uns mit, wenn eine App im offiziellen f-droid.org-Repository Ihre Rechte verletzt, indem Sie einen Rücknahmewunsch einreichen."
 
 #. type: Plain text
 #: _docs/Take-Down_Requests.md
-#, fuzzy
-#| msgid "The official f-droid.org repository is a distribution service for FOSS apps and will be called downstream in the remainder of this document.  F-Droid does not hold any rights to the apps in official f-droid.org repository other than granted by their respective license.  The authors of said apps will be called upstream in the remainder of this document."
 msgid "The official f-droid.org repository is a distribution service/platform for FOSS apps and will be called downstream in the remainder of this document.  F-Droid does not hold any rights to the apps in the official f-droid.org repository other than those granted by their respective license.  The authors/copyright holders of said apps will be called upstream in the remainder of this document."
-msgstr "Das offizielle f-droid.org-Repository ist ein Vertriebsdienst für FOSS-Apps und wird im Rest dieses Dokuments Downstream genannt werden.   F-Droid hält keinerlei Rechte an den Apps im offiziellen f-droid.org-Repository außer denjenigen in deren jeweiliger Lizenz gewährten.  Die Autoren der beschriebenen Apps werden im Folgenden Upstream genannt."
+msgstr "Das offizielle f-droid.org-Repository ist ein Vertriebsdienst/eine Plattform für FOSS-Apps und wird im weiteren Verlauf dieses Dokuments als Downstream bezeichnet.  F-Droid hält keinerlei Rechte an den Apps im offiziellen f-droid.org-Repository, außer denen, die durch die jeweilige Lizenz gewährt werden.  Die Autoren/Copyright-Inhaber dieser Apps werden im weiteren Verlauf dieses Dokuments als Upstream bezeichnet."
 
 #. type: Title ##
 #: _docs/Take-Down_Requests.md
 #, no-wrap
 msgid "Submitting Take-Down Requests"
-msgstr "Einreichung von Rücknahmewünschen"
+msgstr "Einreichen von Rücknahmewünschen"
 
 #. type: Plain text
 #: _docs/Take-Down_Requests.md
-#, fuzzy
-#| msgid "Please take some time to familiarize yourself with our policies any take-down procedure before submitting any take-down requests.  If you submit an incomplete request, we will have to ask you for clarifications maybe even re-submitting a revised request."
 msgid "Please take some time to familiarize yourself with our policies and take-down procedure before submitting any take-down requests.  You have to make sure that requests you're submitting to us, contain all information required by our team to check the legitimacy of your claims.  If you submit an incomplete request, we will have to ask you for clarifications."
-msgstr "Bitte nehmen Sie sich etwas Zeit, um sich mit unseren Grundsätzen zum Vorgang einer Rücknahme vertraut zu machen, bevor Sie irgendeinen Rücknahmewunsch  übermitteln.  Wenn Sie einen unvollständigen Antrag einreichen, werden wir Sie um Klarstellung, möglicherweise sogar um erneute Einreichung eines überarbeiteten Antrags bitten müssen."
+msgstr "Bitte nehmen Sie sich etwas Zeit, um sich mit unseren Richtlinien und dem Verfahren von Rücknahmen vertraut zu machen, bevor Sie einen Rücknahmewunsch einreichen.  Sie müssen sicherstellen, dass die an uns gerichteten Anträge alle Informationen enthalten, die unser Team benötigt, um die Rechtmäßigkeit Ihrer Forderungen zu prüfen.  Wenn Sie eine unvollständige Anfrage einreichen, müssen wir Sie um Klärung bitten."
 
 #. type: Plain text
 #: _docs/Take-Down_Requests.md
@@ -11902,46 +11859,46 @@ msgid ""
 "  explains their field of expertise/field of interest/business/etc.\n"
 "or a concise explanation why this information is not available.\n"
 msgstr ""
+"Auf dem Urheberrecht basierende Rücknahmewünsche müssen mindestens Folgendes enthalten:\n"
+"- Einen Link zu dem verletzenden Inhalt auf f-droid.org\n"
+"- Vollständige Urheberrechtsangabe (Autor/Künstler/Copyright-Inhaber, Copyright-Datum, …)\n"
+"- Informationen zur Veröffentlichung (Herausgeber, Veröffentlichungsmedium, Veröffentlichungsdatum, Web-\n"
+"  Links zu Postings/Store-Listings/e-Commerce-Listings/usw., …)\n"
+"- Lizenzinformationen\n"
+"- Schriftliche Beschreibung des urheberrechtlich geschützten Materials\n"
+"- Kurze Erklärung über den Autor/Künstler/Urheberrechtsinhaber/usw., die\n"
+"  ihr Fachgebiet/Interessengebiet/Geschäft/usw. erklärt\n"
+"oder eine kurze Erklärung, warum diese Informationen nicht verfügbar sind.\n"
 
 #. type: Plain text
 #: _docs/Take-Down_Requests.md
 msgid "If your take-down request is not based on copyright, you will still need to supply ample information that allows us to check your request. (e.g. trademark registration information, inclusion policy violation information, etc.)"
-msgstr ""
+msgstr "Wenn Ihr Rücknahmewunsch nicht auf dem Urheberrecht beruht, müssen Sie dennoch ausreichend Informationen zur Verfügung stellen, damit wir Ihre Anfrage prüfen können. (z. B. Informationen zur Markenregistrierung, Informationen zu Verstößen gegen die Aufnahmekriterien usw.)"
 
 #. type: Plain text
 #: _docs/Take-Down_Requests.md
-#, fuzzy
-#| msgid "Please note that downstream has and will never agree to 3rd party Terms of Service, Terms of Use or similar agreements for services not utilized by downstream.  Therefore such agreements usually do not provide an enforceable basis for take-down requests."
 msgid "Note that some apps distributed by downstream may connect to 3rd party services or rely on 3rd party software.  Downstream does not connect to these services or rely on this software, so their Terms of Service, Terms of Use or similar agreements usually do not provide an enforceable basis for take-down requests."
-msgstr "Bitte beachten Sie, dass der Downstream nie in Drittanbieter-Dienstleistungsbedingungen, Nutzungsbedingungen oder ähnliche Vereinbarungen für Dienste eingewilligt hat oder einwilligen wird, die nicht vom Downstream gebraucht werden.  Daher bieten solche Einwilligungen keine belastbare Grundlage für Rücknahmewünsche."
+msgstr "Beachten Sie, dass einige von Downstream vertriebene Anwendungen mit Drittanbieterdiensten verbunden sein können oder auf Software von Drittanbietern angewiesen sind.  Downstream stellt keine Verbindung zu diesen Diensten her und stützt sich nicht auf diese Software, so dass ihre Allgemeinen Geschäftsbedingungen, Nutzungsbedingungen oder ähnliche Vereinbarungen in der Regel keine durchsetzbare Grundlage für Rücknahmewünsche darstellen."
 
 #. type: Plain text
 #: _docs/Take-Down_Requests.md
-#, fuzzy
-#| msgid "Also please note that we are an volunteer driven organization.  We prioritize take-down requests, but we can't guarantee instant responses."
 msgid "Also please note that f-droid.org is a volunteer driven organization.  We prioritize take-down requests, but we can't guarantee instant responses."
-msgstr "Beachten Sie bitte auch, dass wir eine von Freiwilligen betriebene Organisation sind.  Wir priorisieren Rücknahmewünsche, können aber keine sofortigen Stellungnahmen garantieren."
+msgstr "Bitte beachten Sie auch, dass f-droid.org eine von Freiwilligen betriebene Organisation ist.  Wir priorisieren Rücknahmewünsche, können aber keine sofortige Antwort garantieren."
 
 #. type: Plain text
 #: _docs/Take-Down_Requests.md
-#, fuzzy
-#| msgid "You can submit take-down requests [by starting a new issue on our issue tracker](https://gitlab.com/fdroid/fdroiddata/-/issues/new).  (This requires a gitlab.com account.)"
 msgid "You should preferably submit take-down requests [by starting a new issue in our issue tracker](https://gitlab.com/fdroid/fdroiddata/-/issues/new).  (This requires a gitlab.com account.)"
-msgstr "Sie können einen Rücknahmewunsch äußern, indem Sie [ein neues Ticket in unserem Ticketsystem lösen](https://gitlab.com/fdroid/fdroiddata/-/issues/new).  (Dies erfordert ein Konto bei gitlab.com.)"
+msgstr "Sie sollten vorzugsweise Rücknahmewünsche einreichen [indem Sie ein neues Ticket in unserem Ticketsystem eröffnen](https://gitlab.com/fdroid/fdroiddata/-/issues/new).  (Dies erfordert ein gitlab.com-Konto.)"
 
 #. type: Plain text
 #: _docs/Take-Down_Requests.md
-#, fuzzy
-#| msgid "Alternatively if you prefer you can send your request to our team E-Mail account.  [team@f-droid.org](mailto:team@f-droid.org) (Our team will still open a public issue on our issue trackers and quote your entire request there.)"
 msgid "Alternatively if you prefer you can send your request to our team E-Mail account.  [team@f-droid.org](mailto:team@f-droid.org) (Our team will still open a public issue in our issue tracker and quote your request there.)"
-msgstr "Als Alternative können Sie, wenn Sie das lieber möchten, Ihren Wunsch an das E-Mail-Konto unseres Teams senden.  [team@f-droid.org](mailto:team@f-droid.org) (Unser Team wird dann ein öffentliches Ticket in unserem Ticketsystem eröffnen und dort Ihren gesamten Antrag zitieren.)"
+msgstr "Alternativ können Sie Ihre Anfrage auch an das E-Mail-Konto unseres Teams senden.  [team@f-droid.org](mailto:team@f-droid.org) (Unser Team wird trotzdem ein öffentliches Ticket in unserem Ticketsystem eröffnen und Ihre Anfrage dort zitieren.)"
 
 #. type: Plain text
 #: _docs/Take-Down_Requests.md
-#, fuzzy
-#| msgid "Take-down requests can not be confidential.  By submitting a take-down request you automatically grant us permission to publish your entire request on our web-sites and our issue trackers. We need this because all of our processes are worked on in public and for keeping accountable to our users."
 msgid "Take-down requests can not be confidential.  By submitting a take-down request you automatically grant us permission to publish your request on our web-sites and our issue trackers."
-msgstr "Rücknahmewünsche können nicht vertraulich sein.  Durch Einreichung eines Rücknahmewunsches gewähren Sie uns automatisch das Recht, Ihren Antrag auf unserer Internetseite und/oder in unserem Ticketsystem zu veröffentlichen. Dies ist notwendig, damit all unsere Arbeitsabläufe öffentlich und für unsere Anwender nachvollziehbar bleiben."
+msgstr "Rücknahmewünsche können nicht vertraulich behandelt werden.  Durch Einreichung eines Rücknahmewunsches gewähren Sie uns automatisch das Recht, Ihre Anfrage auf unserer Internetseite und/oder in unserem Ticketsystem zu veröffentlichen."
 
 #. type: Title ##
 #: _docs/Take-Down_Requests.md
