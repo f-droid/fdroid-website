@@ -15,7 +15,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
 "POT-Creation-Date: 2023-11-27 17:13+0100\n"
-"PO-Revision-Date: 2023-10-13 13:03+0000\n"
+"PO-Revision-Date: 2023-12-07 21:37+0000\n"
 "Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/f-droid/website-docs/uk/>\n"
 "Language: uk\n"
@@ -23,7 +23,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 5.1-dev\n"
+"X-Generator: Weblate 5.3-dev\n"
 
 #. type: Yaml Front Matter Hash Value: title
 #: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
@@ -4391,10 +4391,8 @@ msgstr "Налаштуємо працездатний сервер збірки,
 
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
-#, fuzzy
-#| msgid "The base server needs to be at minimum Debian/jessie, or there will need to be some heavy tweaking. If you run Ubuntu or derivative distro, you can get any packages missing from your version, like _vagrant-cachier_, from this PPA: <https://launchpad.net/~fdroid/+archive/ubuntu/buildserver/>"
 msgid "The base server needs to be at minimum Debian/bullseye, or there will need to be some heavy tweaking. If you run Ubuntu or derivative distro, you can get any packages missing from your version, like _vagrant-cachier_, from this PPA: <https://launchpad.net/~fdroid/+archive/ubuntu/buildserver/>"
-msgstr "Основою сервера має бути як мінімум Debian/jessie, інакше багато чого доведеться змінити. Якщо у вас Ubuntu чи похідний дистрибутив, завантажте відсутні у вашій версії пакунки, як-от _vagrant-cachier_, із цього PPA: <https://launchpad.net/~fdroid/+archive/ubuntu/buildserver/>"
+msgstr "Основою сервера має бути як мінімум Debian/bullseye, інакше багато чого доведеться змінити. Якщо у вас Ubuntu чи похідний дистрибутив, завантажте відсутні у вашій версії пакунки, як-от _vagrant-cachier_, із цього PPA: <https://launchpad.net/~fdroid/+archive/ubuntu/buildserver/>"
 
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
@@ -4403,14 +4401,7 @@ msgstr "Насамперед встановіть необхідні пакун�
 
 #. type: Fenced code block (bash)
 #: _docs/Build_Server_Setup.md
-#, fuzzy, no-wrap
-#| msgid ""
-#| "root:~# apt-get install vagrant virtualbox git python3-certifi \\\n"
-#| "        python3-libvirt python3-requestbuilder python3-yaml \\\n"
-#| "        python3-clint python3-vagrant python3-paramiko python3-pyasn1 \\\n"
-#| "        python3-pyasn1-modules python3-requests python3-git\n"
-#| "root:~# adduser --disabled-password fdroid\n"
-#| "root:~# su fdroid\n"
+#, no-wrap
 msgid ""
 "root:~# apt-get install vagrant git python3-certifi \\\n"
 "        python3-libvirt python3-requestbuilder python3-yaml \\\n"
@@ -4421,28 +4412,29 @@ msgid ""
 "root:~# adduser --disabled-password fdroid\n"
 "root:~# su fdroid\n"
 msgstr ""
-"root:~# apt-get install vagrant virtualbox git python3-certifi \\\n"
+"root:~# apt-get install vagrant git python3-certifi \\\n"
 "        python3-libvirt python3-requestbuilder python3-yaml \\\n"
 "        python3-clint python3-vagrant python3-paramiko python3-pyasn1 \\\n"
 "        python3-pyasn1-modules python3-requests python3-git\n"
+"        vagrant-mutate vagrant-libvirt ebtables dnsmasq-base \\\n"
+"        libvirt-clients libvirt-daemon-system qemu-kvm qemu-utils\n"
 "root:~# adduser --disabled-password fdroid\n"
 "root:~# su fdroid\n"
 
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
-#, fuzzy
-#| msgid "Clone source code and configure the buildserver settings, running as _fdroid_ user:"
 msgid "Clone source code running as _fdroid_ user:"
-msgstr "Клонуйте код і сконфігуруйте налаштування сервера збірки, працюючи як користувач _fdroid_:"
+msgstr "Клонуйте початковий код як користувач _fdroid_:"
 
 #. type: Fenced code block (bash)
 #: _docs/Build_Server_Setup.md
-#, fuzzy, no-wrap
-#| msgid "$ git clone https://gitlab.com/fdroid/fdroid-website\n"
+#, no-wrap
 msgid ""
 "fdroid:~$ cd ~\n"
 "fdroid:~$ git clone https://gitlab.com/fdroid/fdroidserver.git\n"
-msgstr "$ git clone https://gitlab.com/fdroid/fdroid-website\n"
+msgstr ""
+"fdroid:~$ cd ~\n"
+"fdroid:~$ git clone https://gitlab.com/fdroid/fdroidserver.git\n"
 
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
@@ -4487,10 +4479,8 @@ msgstr "Налаштування сервера збірки"
 
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
-#, fuzzy
-#| msgid "In addition to the basic setup previously described, we ship a Vagrant-compatible Debian/stretch base box called 'fdroid/basebox-stretch64'."
 msgid "In addition to the basic setup previously described, we ship a Vagrant-compatible Debian/bullseye base box called 'fdroid/bullseye64'."
-msgstr "Крім описаних угорі кроків налаштування, ми надаємо «fdroid/basebox-stretch64» — basebox, сумісний із Vagrant, на основі Debian/stretch."
+msgstr "Крім описаного раніше базового налаштування, ми постачаємо сумісну з Vagrant базову комплектацію Debian/bullseye, яка називається \"fdroid/bullseye64\"."
 
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
@@ -4506,34 +4496,28 @@ msgstr "Створення образу сервера збірки F-Droid"
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
 msgid "Create a config file for Vagrant as `~/fdroidserver/buildserver/Vagrantfile.yaml` which contains:"
-msgstr ""
+msgstr "Створіть конфігураційний файл для Vagrant `~/fdroidserver/buildserver/Vagrantfile.yaml`, який міститиме:"
 
 #. type: Fenced code block
 #: _docs/Build_Server_Setup.md
-#, fuzzy, no-wrap
-#| msgid "vm_provider = 'libvirt'\n"
+#, no-wrap
 msgid "vm_provider: libvirt\n"
-msgstr "vm_provider = 'libvirt'\n"
+msgstr "vm_provider: libvirt\n"
 
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
-#, fuzzy
-#| msgid "Create the base buildserver image... (downloading the basebox and all the sdk platforms can take long time)."
 msgid "Then the base buildserver image... (downloading the basebox and all the sdk platforms can take long time)."
-msgstr "Створіть основу — образ buildserver… (на завантаження basebox та всіх sdk-платформ може знадобитись чимало часу)."
+msgstr "Потім основу — образ buildserver… (на завантаження basebox та всіх sdk-платформ може знадобитись чимало часу)."
 
 #. type: Fenced code block (bash)
 #: _docs/Build_Server_Setup.md
-#, fuzzy, no-wrap
-#| msgid ""
-#| "fdroid:~$ cd fdroidserver\n"
-#| "fdroid:~/fdroidserver$ ./makebuildserver\n"
+#, no-wrap
 msgid ""
 "fdroid:~$ cd fdroidserver\n"
 "fdroid:~/fdroidserver$ ./makebuildserver --verbose\n"
 msgstr ""
 "fdroid:~$ cd fdroidserver\n"
-"fdroid:~/fdroidserver$ ./makebuildserver\n"
+"fdroid:~/fdroidserver$ ./makebuildserver --verbose\n"
 
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
@@ -4625,7 +4609,7 @@ msgstr ""
 #: _docs/Build_Server_Setup.md
 #, no-wrap
 msgid "Setting up QEMU/KVM/libvirt"
-msgstr ""
+msgstr "Налаштування QEMU/KVM/libvirt"
 
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
@@ -4645,13 +4629,18 @@ msgid ""
 "EOF\n"
 "root:~# service libvirtd restart\n"
 msgstr ""
+"root:~# cat << EOF >> /etc/libvirt/qemu.conf\n"
+"user = \"libvirt\"\n"
+"group = \"libvirt\"\n"
+"dynamic_ownership = 1\n"
+"EOF\n"
+"root:~# service libvirtd restart\n"
 
 #. type: Title #####
 #: _docs/Build_Server_Setup.md
-#, fuzzy, no-wrap
-#| msgid "Debian/stretch and Ubuntu/xenial"
+#, no-wrap
 msgid "Debian/bullseye and Ubuntu/xenial"
-msgstr "Debian/stretch і Ubuntu/xenial"
+msgstr "Debian/bullseye і Ubuntu/xenial"
 
 #. type: Fenced code block (console)
 #: _docs/Build_Server_Setup.md
@@ -10202,17 +10191,7 @@ msgstr ""
 
 #. type: Fenced code block (gradle)
 #: _docs/Reproducible_Builds.md
-#, fuzzy, no-wrap
-#| msgid ""
-#| "android {\n"
-#| "    defaultConfig {\n"
-#| "        externalNativeBuild {\n"
-#| "            ndkBuild {\n"
-#| "                arguments \"LOCAL_LDFLAGS += -Wl,<linker args>\"\n"
-#| "            }\n"
-#| "        }\n"
-#| "    }\n"
-#| "}\n"
+#, no-wrap
 msgid ""
 "android {\n"
 "    defaultConfig {\n"
@@ -10272,10 +10251,9 @@ msgstr "Набір інструментів Rust слід закріпити з�
 
 #. type: Title ####
 #: _docs/Reproducible_Builds.md
-#, fuzzy, no-wrap
-#| msgid "Language-specific instructions"
+#, no-wrap
 msgid "Library-specific instructions"
-msgstr "Інструкції для окремих мов"
+msgstr "Інструкції для окремих бібліотек"
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
@@ -10330,7 +10308,7 @@ msgstr ""
 #: _docs/Reproducible_Builds.md
 #, no-wrap
 msgid "EventBus"
-msgstr ""
+msgstr "EventBus"
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
@@ -11659,34 +11637,7 @@ msgstr "Заповніть _~/fdroiddata/metadata/com.example.yml_ згідно 
 
 #. type: Fenced code block (yaml)
 #: _docs/Submitting_to_F-Droid_Quick_Start_Guide.md
-#, fuzzy, no-wrap
-#| msgid ""
-#| "Categories:\n"
-#| "  - Internet\n"
-#| "  - Navigation\n"
-#| "License: GPL-3.0-or-later\n"
-#| "SourceCode: https://gitlab.com/APPLICATION_UPSTREAM/ExampleCom\n"
-#| "\n"
-#| "RepoType: git\n"
-#| "Repo: https://gitlab.com/APPLICATION_UPSTREAM/ExampleCom\n"
-#| "\n"
-#| "Builds:\n"
-#| "  - versionName: '1.0'\n"
-#| "    versionCode: 123\n"
-#| "    commit: v1.0\n"
-#| "    # Where build.gradle is:\n"
-#| "    subdir: app\n"
-#| "    sudo:\n"
-#| "      - apt-get update || apt-get update\n"
-#| "      - apt-get install -y librsvg2-bin openjdk-11-jdk-headless\n"
-#| "      - update-alternatives --auto java\n"
-#| "    gradle:\n"
-#| "      - yes\n"
-#| "\n"
-#| "AutoUpdateMode: Version\n"
-#| "UpdateCheckMode: Tags\n"
-#| "CurrentVersion: '1.0'\n"
-#| "CurrentVersionCode: 123\n"
+#, no-wrap
 msgid ""
 "Categories:\n"
 "  - Internet\n"
@@ -11719,20 +11670,20 @@ msgstr ""
 "  - Internet\n"
 "  - Navigation\n"
 "License: GPL-3.0-or-later\n"
-"SourceCode: https://gitlab.com/ДЖЕРЕЛО_ЗАСТОСУНКУ/ExampleCom\n"
+"SourceCode: https://gitlab.com/APPLICATION_UPSTREAM/ExampleCom\n"
 "\n"
 "RepoType: git\n"
-"Repo: https://gitlab.com/ДЖЕРЕЛО_ЗАСТОСУНКУ/ExampleCom\n"
+"Repo: https://gitlab.com/APPLICATION_UPSTREAM/ExampleCom\n"
 "\n"
 "Builds:\n"
 "  - versionName: '1.0'\n"
 "    versionCode: 123\n"
 "    commit: v1.0\n"
-"    # Де розміщено build.gradle:\n"
+"    # Where build.gradle is:\n"
 "    subdir: app\n"
 "    sudo:\n"
-"      - apt-get update || apt-get update\n"
-"      - apt-get install -y librsvg2-bin openjdk-11-jdk-headless\n"
+"      - apt-get update\n"
+"      - apt-get install -y librsvg2-bin openjdk-17-jdk-headless\n"
 "      - update-alternatives --auto java\n"
 "    gradle:\n"
 "      - yes\n"
@@ -11870,10 +11821,8 @@ msgstr "Вступ"
 
 #. type: Plain text
 #: _docs/Take-Down_Requests.md
-#, fuzzy
-#| msgid "This document covers how you may send a request to remove content or apps from the official f-droid.org repository.  Our team checks all app submissions we receive for compliance with our [inclusion policy](../Inclusion_Policy) to the best of their abilities.  Please let us know if an app the official f-droid.org repository infringes on your rights by submitting a take-down request."
 msgid "This document covers how you may send a request to remove content or apps from the official f-droid.org repository.  Our team checks all app submissions we receive for compliance with our [inclusion policy](../Inclusion_Policy) to the best of their abilities.  Please let us know if an app in the official f-droid.org repository infringes on your rights by submitting a take-down request."
-msgstr "Цей документ описує, яким чином ви можете надіслати запит на вилучення вмісту чи застосунків з офіційного репозиторію fdroid.org. Наша команда якнайретельніше перевіряє всі надіслані нам застосунки на відповідність нашій [політиці додання](../Inclusion_Policy). Якщо певний застосунок в офіційному репозиторії f-droid.org порушує ваші права, будь ласка, повідомте нам про це, надіславши запит на вилучення."
+msgstr "Цей документ описує, яким чином ви можете надіслати запит на вилучення вмісту чи застосунків з офіційного репозиторію fdroid.org. Наша команда якнайретельніше перевіряє всі надіслані нам застосунки на відповідність нашій [політиці додавання](../Inclusion_Policy). Якщо певний застосунок в офіційному репозиторії f-droid.org порушує ваші права, будь ласка, повідомте нам про це, надіславши запит на вилучення."
 
 #. type: Plain text
 #: _docs/Take-Down_Requests.md
@@ -11925,10 +11874,8 @@ msgstr "Зауважте, поширювач ніколи не погоджув�
 
 #. type: Plain text
 #: _docs/Take-Down_Requests.md
-#, fuzzy
-#| msgid "Also please note that we are an volunteer driven organization.  We prioritize take-down requests, but we can't guarantee instant responses."
 msgid "Also please note that f-droid.org is a volunteer driven organization.  We prioritize take-down requests, but we can't guarantee instant responses."
-msgstr "Також зауважте, що ми — волонтерська організація. Запити на вилучення для нас важливі, але наші відповіді не будуть негайними."
+msgstr "Також зауважте, що f-droid.org — волонтерська організація. Запити на вилучення для нас важливі, але наші відповіді не будуть негайними."
 
 #. type: Plain text
 #: _docs/Take-Down_Requests.md
@@ -11939,17 +11886,13 @@ msgstr "Щоб надіслати запит на вилучення, [ство�
 
 #. type: Plain text
 #: _docs/Take-Down_Requests.md
-#, fuzzy
-#| msgid "Alternatively if you prefer you can send your request to our team E-Mail account.  [team@f-droid.org](mailto:team@f-droid.org) (Our team will still open a public issue on our issue trackers and quote your entire request there.)"
 msgid "Alternatively if you prefer you can send your request to our team E-Mail account.  [team@f-droid.org](mailto:team@f-droid.org) (Our team will still open a public issue in our issue tracker and quote your request there.)"
-msgstr "Або, якщо вам так зручніше, надішліть запит на е-пошту нашої команди: [team@f-droid.org](mailto:team@f-droid.org) (Наша команда все одно створить загальнодоступне обговорення в нашому трекері обговорень із повною цитатою вашого запиту.)"
+msgstr "Або, якщо вам так зручніше, надішліть запит на е-пошту нашої команди: [team@f-droid.org](mailto:team@f-droid.org) (Наша команда все одно створить загальнодоступне обговорення в нашому трекері обговорень із цитатою вашого запиту.)"
 
 #. type: Plain text
 #: _docs/Take-Down_Requests.md
-#, fuzzy
-#| msgid "Take-down requests can not be confidential.  By submitting a take-down request you automatically grant us permission to publish your entire request on our web-sites and our issue trackers. We need this because all of our processes are worked on in public and for keeping accountable to our users."
 msgid "Take-down requests can not be confidential.  By submitting a take-down request you automatically grant us permission to publish your request on our web-sites and our issue trackers."
-msgstr "Запити на вилучення не можуть бути конфіденційними. Надсилаючи запит на вилучення, ви автоматично надаєте нам дозвіл повністю оприлюднити ваш запит на наших вебсайтах і/або трекерах обговорень. Це потрібно, бо всі наші робочі процеси публічні й ми відповідальні перед авдиторією."
+msgstr "Запити на вилучення не можуть бути конфіденційними. Надсилаючи запит на вилучення, ви автоматично надаєте нам дозвіл оприлюднити ваш запит на наших вебсайтах і/або трекерах обговорень."
 
 #. type: Title ##
 #: _docs/Take-Down_Requests.md
