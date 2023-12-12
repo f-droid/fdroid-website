@@ -28,7 +28,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
 "POT-Creation-Date: 2023-11-27 17:13+0100\n"
-"PO-Revision-Date: 2023-11-10 12:20+0000\n"
+"PO-Revision-Date: 2023-11-29 09:25+0000\n"
 "Last-Translator: Eric <zxmegaxqug@hldrive.com>\n"
 "Language-Team: Chinese (Simplified) <https://hosted.weblate.org/projects/f-droid/website-docs/zh_Hans/>\n"
 "Language: zh_Hans\n"
@@ -36,7 +36,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 5.2-dev\n"
+"X-Generator: Weblate 5.3-dev\n"
 
 #. type: Yaml Front Matter Hash Value: title
 #: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
@@ -5431,12 +5431,12 @@ msgstr "不。但我们认为它们是最佳实践并希望你会考虑试着让
 #: _docs/FAQ_-_App_Developers.md
 #, no-wrap
 msgid "How can I handle \"fsck error in packed object\" for my app?"
-msgstr ""
+msgstr "我怎样处理我的应用出现的 \"fsck error in packed object\"？"
 
 #. type: Plain text
 #: _docs/FAQ_-_App_Developers.md
 msgid "In order to ensure that our _buildserver_ gets the exact same commits as you put into _git_, [`git fsck`](https://git-scm.com/docs/git-fsck#_fsck_messages) is enabled by default whenever new commits are fetched.  Enabling _git fsck_ [ensures](https://web.archive.org/web/20230407012910/https://groups.google.com/g/binary-transparency/c/f-BI4o8HZW0)  that the commits [match](https://git-scm.com/docs/git-fsck#_discussion) their SHA1 checksum.  Sometimes, _git_ repos have corrupt but usable commits in them that cannot be changed since the whole history is based on the corrupt commit.  For those cases, we have the [_skipList_](https://git-scm.com/docs/git-fsck#Documentation/git-fsck.txt-fsckskipList)  functionality in [_fdroiddata_](https://gitlab.com/fdroid/fdroiddata/-/merge_requests/14014/diffs)"
-msgstr ""
+msgstr "为了确保我们的 _构建服务器_ 得到和你在 _git_中的输入完全相同的提交，无论何时获取新代码提交，我们都默认启用[`git fsck`](https://git-scm.com/docs/git-fsck#_fsck_messages)。  启用 _git fsck_ [确保](https://web.archive.org/web/20230407012910/https://groups.google.com/g/binary-transparency/c/f-BI4o8HZW0)  代码提交 [匹配](https://git-scm.com/docs/git-fsck#_discussion) 它们的SHA1校验和 。  有时， _git_ 仓库中有损坏且不稳定的提交，这些提交无法被更改，因为整个历史是以损坏的提交为基础的。  对于这些情况，我们有 [_skipList_](https://git-scm.com/docs/git-fsck#Documentation/git-fsck.txt-fsckskipList)  功能，它位于 [_fdroiddata_](https://gitlab.com/fdroid/fdroiddata/-/merge_requests/14014/diffs)"
 
 #. type: Title ###
 #: _docs/FAQ_-_App_Developers.md
@@ -10076,12 +10076,7 @@ msgstr "CMake"
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
-#, fuzzy, no-wrap
-#| msgid ""
-#| "For CMake versions since 3.13, `add_link_options(LINKER:<linker args>)`\n"
-#| "can be added to `CMakeLists.txt` globally. For CMake versions before 3.13,\n"
-#| "`target_link_libraries(<target> LINKER:<linker args>)` can be used instead for\n"
-#| "every target.\n"
+#, no-wrap
 msgid ""
 "For CMake versions since 3.13, `add_link_options(LINKER:<linker args>)`\n"
 "can be added to `CMakeLists.txt` globally. For CMake versions before 3.13,\n"
@@ -10091,21 +10086,11 @@ msgstr ""
 "对于 3.13 起的 CMake 版本，可以全局添加`add_link_options(LINKER:<linker args>)`\n"
 "到 `CMakeLists.txt`。 对于 3.13 之前的 CMake 版本，\n"
 "可以对每个目标使用\n"
-"`target_link_libraries(<target> LINKER:<linker args>)`。\n"
+"`target_link_libraries(<target> LINKER:<linker args>)`。也可以在 Gradle 文件中设置它。\n"
 
 #. type: Fenced code block (gradle)
 #: _docs/Reproducible_Builds.md
-#, fuzzy, no-wrap
-#| msgid ""
-#| "android {\n"
-#| "    defaultConfig {\n"
-#| "        externalNativeBuild {\n"
-#| "            ndkBuild {\n"
-#| "                arguments \"LOCAL_LDFLAGS += -Wl,<linker args>\"\n"
-#| "            }\n"
-#| "        }\n"
-#| "    }\n"
-#| "}\n"
+#, no-wrap
 msgid ""
 "android {\n"
 "    defaultConfig {\n"
@@ -10126,7 +10111,7 @@ msgstr ""
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
 msgid "`-ffile-prefix-map` can be used to remove embedded build path."
-msgstr ""
+msgstr "`-ffile-prefix-map` 可用来删除嵌入的构建路径。"
 
 #. type: Title #####
 #: _docs/Reproducible_Builds.md
@@ -10164,15 +10149,14 @@ msgstr "Rust 工具链应被固定在和上游一样的版本。安装 rustup �
 
 #. type: Title ####
 #: _docs/Reproducible_Builds.md
-#, fuzzy, no-wrap
-#| msgid "Language-specific instructions"
+#, no-wrap
 msgid "Library-specific instructions"
-msgstr "特定于编程语言的操作指南"
+msgstr "特定于库文件的操作指南"
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
 msgid "Some libraries generate non-deterministic code due to timestamps, unsorted iterations etc. Some known fixes are documented below:"
-msgstr ""
+msgstr "某些库由于时间戳、未排序的迭代等会生成非确定代码。下面的文档包含了一些已知的修复办法："
 
 #. type: Title #####
 #: _docs/Reproducible_Builds.md
@@ -10222,12 +10206,12 @@ msgstr ""
 #: _docs/Reproducible_Builds.md
 #, no-wrap
 msgid "EventBus"
-msgstr ""
+msgstr "EventBus"
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
 msgid "It generates [non-deterministic code](https://github.com/greenrobot/EventBus/issues/715) which can be sorted after the classes are generated. The detailed instructions can be found in [Eternity's source code](https://codeberg.org/Bazsalanszky/Eternity/commit/05123c70682e5988ad5f0ff111f97b66a87d8806)."
-msgstr ""
+msgstr "它生成[非确定代码](https://github.com/greenrobot/EventBus/issues/715)，可以在生成 class 后对代码进行排序。详细操作方法见 [Eternity's source code](https://codeberg.org/Bazsalanszky/Eternity/commit/05123c70682e5988ad5f0ff111f97b66a87d8806)。"
 
 #. type: Title ###
 #: _docs/Reproducible_Builds.md
@@ -11551,34 +11535,7 @@ msgstr "填写 _~/fdroiddata/metadata/com.example.yml_，依据是 [构建元数
 
 #. type: Fenced code block (yaml)
 #: _docs/Submitting_to_F-Droid_Quick_Start_Guide.md
-#, fuzzy, no-wrap
-#| msgid ""
-#| "Categories:\n"
-#| "  - Internet\n"
-#| "  - Navigation\n"
-#| "License: GPL-3.0-or-later\n"
-#| "SourceCode: https://gitlab.com/APPLICATION_UPSTREAM/ExampleCom\n"
-#| "\n"
-#| "RepoType: git\n"
-#| "Repo: https://gitlab.com/APPLICATION_UPSTREAM/ExampleCom\n"
-#| "\n"
-#| "Builds:\n"
-#| "  - versionName: '1.0'\n"
-#| "    versionCode: 123\n"
-#| "    commit: v1.0\n"
-#| "    # Where build.gradle is:\n"
-#| "    subdir: app\n"
-#| "    sudo:\n"
-#| "      - apt-get update || apt-get update\n"
-#| "      - apt-get install -y librsvg2-bin openjdk-11-jdk-headless\n"
-#| "      - update-alternatives --auto java\n"
-#| "    gradle:\n"
-#| "      - yes\n"
-#| "\n"
-#| "AutoUpdateMode: Version\n"
-#| "UpdateCheckMode: Tags\n"
-#| "CurrentVersion: '1.0'\n"
-#| "CurrentVersionCode: 123\n"
+#, no-wrap
 msgid ""
 "Categories:\n"
 "  - Internet\n"
@@ -11623,8 +11580,8 @@ msgstr ""
 "    # Where build.gradle is:\n"
 "    subdir: app\n"
 "    sudo:\n"
-"      - apt-get update || apt-get update\n"
-"      - apt-get install -y librsvg2-bin openjdk-11-jdk-headless\n"
+"      - apt-get update\n"
+"      - apt-get install -y librsvg2-bin openjdk-17-jdk-headless\n"
 "      - update-alternatives --auto java\n"
 "    gradle:\n"
 "      - yes\n"
@@ -11646,10 +11603,8 @@ msgstr "示例应用的 _build.gradle_ 执行 _rsvg-convert_ 来栅格化它的�
 
 #. type: Bullet: '* '
 #: _docs/Submitting_to_F-Droid_Quick_Start_Guide.md
-#, fuzzy
-#| msgid "_build.gradle_ mentions `com.android.tools.build:gradle:7.1.0`, and the Gradle Android plugin version 7 is known to depend on Java 11. So we install _openjdk-11-jdk-headless_ and select it as the _java_ alternative."
 msgid "`gradle/wrapper/gradle-wrapper.properties` mentions `gradle-8.0`, and Gradle 8 is known to depend on Java 17. So we install _openjdk-17-jdk-headless_ and select it as the _java_ alternative."
-msgstr "_build.gradle_ 提到了 `com.android.tools.build:gradle:7.1.0`，Gradle Android 插件版本 7 依赖于Java 11。因而我们安装 _openjdk-11-jdk-headless_ 并选中它作为 _java_ 备选。"
+msgstr "`gradle/wrapper/gradle-wrapper.properties` 提到了 `gradle-8.0`, 而 Gradle 8 已知依赖于 Java 17。我们因而安装 _openjdk-17-jdk-headless_ 并选择它为 _java_ 备选。"
 
 #. type: Plain text
 #: _docs/Submitting_to_F-Droid_Quick_Start_Guide.md
@@ -11762,17 +11717,13 @@ msgstr "介绍"
 
 #. type: Plain text
 #: _docs/Take-Down_Requests.md
-#, fuzzy
-#| msgid "This document covers how you may send a request to remove content or apps from the official f-droid.org repository.  Our team checks all app submissions we receive for compliance with our [inclusion policy](../Inclusion_Policy) to the best of their abilities.  Please let us know if an app the official f-droid.org repository infringes on your rights by submitting a take-down request."
 msgid "This document covers how you may send a request to remove content or apps from the official f-droid.org repository.  Our team checks all app submissions we receive for compliance with our [inclusion policy](../Inclusion_Policy) to the best of their abilities.  Please let us know if an app in the official f-droid.org repository infringes on your rights by submitting a take-down request."
 msgstr "本文档涵盖了如何发送请求从官方 f-droid.org 存储库中删除内容或应用程序。  我们的团队尽最大努力检查收到的所有应用程序提交是否符合我们的[收录政策](../Inclusion_Policy)。  如官方 f-droid.org 存储库中的应用侵犯了您的权利，请提交下架请求让我们得知。"
 
 #. type: Plain text
 #: _docs/Take-Down_Requests.md
-#, fuzzy
-#| msgid "The official f-droid.org repository is a distribution service for FOSS apps and will be called downstream in the remainder of this document.  F-Droid does not hold any rights to the apps in official f-droid.org repository other than granted by their respective license.  The authors of said apps will be called upstream in the remainder of this document."
 msgid "The official f-droid.org repository is a distribution service/platform for FOSS apps and will be called downstream in the remainder of this document.  F-Droid does not hold any rights to the apps in the official f-droid.org repository other than those granted by their respective license.  The authors/copyright holders of said apps will be called upstream in the remainder of this document."
-msgstr "官方 f-droid.org 存储库是自由开源软件应用程序的分发服务，在本文的其余部分将被称为“下游”。  除官方 f-droid.org 存储库中应用各自的许可证授予的权利外，F-Droid 不持有这些应用的任何权利。  上述应用程序的作者将在本文的其余部分被称为“上游”。"
+msgstr "官方 f-droid.org 存储库是自由开源软件应用程序的分发服务/平台，在本文的其余部分将被称为“下游”。  除官方 f-droid.org 存储库中应用各自的许可证授予的权利外，F-Droid 不持有这些应用的任何权利，除了那些由各自相应许可授权的应用。  上述应用程序的作者/版权持有人将在本文的其余部分被称为“上游”。"
 
 #. type: Title ##
 #: _docs/Take-Down_Requests.md
@@ -11782,10 +11733,8 @@ msgstr "提交下架请求"
 
 #. type: Plain text
 #: _docs/Take-Down_Requests.md
-#, fuzzy
-#| msgid "Please take some time to familiarize yourself with our policies any take-down procedure before submitting any take-down requests.  If you submit an incomplete request, we will have to ask you for clarifications maybe even re-submitting a revised request."
 msgid "Please take some time to familiarize yourself with our policies and take-down procedure before submitting any take-down requests.  You have to make sure that requests you're submitting to us, contain all information required by our team to check the legitimacy of your claims.  If you submit an incomplete request, we will have to ask you for clarifications."
-msgstr "在提交任何下架请求之前，请先花些时间熟悉我们的政策和下架流程。  如果您提交的请求不完整，我们将要求您澄清，甚至重新提交修改后的请求。"
+msgstr "在提交任何下架请求之前，请先花些时间熟悉我们的政策和下架流程。  您必须确保您提交给我们的请求包含所有我们团队检查您陈诉合法性所需的全部信息。如果您提交的请求不完整，我们将要求您澄清。"
 
 #. type: Plain text
 #: _docs/Take-Down_Requests.md
@@ -11802,46 +11751,46 @@ msgid ""
 "  explains their field of expertise/field of interest/business/etc.\n"
 "or a concise explanation why this information is not available.\n"
 msgstr ""
+"基于版权的下架请求必须至少包括：\n"
+"- f-droid.org 上侵权内容的链接\n"
+"- 完整版权归因 (作者/艺术家/版权持有人、版权日期等 ...)\n"
+"- 出版信息 (出版商、出版媒介、出版日期、正式公告/商店上架信息/电商上架信息等\n"
+"  的网页链接)\n"
+"- 许可信息\n"
+"- 版权材料的书面描述\n"
+"- 有关作者/艺术家/版权持有人等的简短声明，用于解释\n"
+"  专业领域 / 兴趣领域 / 业务等.\n"
+"或者简短解释为何此信息不可用。\n"
 
 #. type: Plain text
 #: _docs/Take-Down_Requests.md
 msgid "If your take-down request is not based on copyright, you will still need to supply ample information that allows us to check your request. (e.g. trademark registration information, inclusion policy violation information, etc.)"
-msgstr ""
+msgstr "即使您的下架请求不是以版权为基础，您仍需要提供充分信息，来允许我们检查您的请求（如商标注册信息、收入政策违规信息等）"
 
 #. type: Plain text
 #: _docs/Take-Down_Requests.md
-#, fuzzy
-#| msgid "Please note that downstream has and will never agree to 3rd party Terms of Service, Terms of Use or similar agreements for services not utilized by downstream.  Therefore such agreements usually do not provide an enforceable basis for take-down requests."
 msgid "Note that some apps distributed by downstream may connect to 3rd party services or rely on 3rd party software.  Downstream does not connect to these services or rely on this software, so their Terms of Service, Terms of Use or similar agreements usually do not provide an enforceable basis for take-down requests."
-msgstr "请注意，对于下游未使用的服务，下游已经并且永远不会同意第三方的服务条款、使用条款或类似的协议。  因此，此类协议通常不为下架请求提供强制执行的依据。"
+msgstr "请注意，某些由下游分发的应用可能连接到第三方服务或依赖于第三方软件。  下游不连接到这些服务或者依赖于此软件，那些它们的服务条款、使用条款或类似协议通常不提供下架请求的可强制基础。"
 
 #. type: Plain text
 #: _docs/Take-Down_Requests.md
-#, fuzzy
-#| msgid "Also please note that we are an volunteer driven organization.  We prioritize take-down requests, but we can't guarantee instant responses."
 msgid "Also please note that f-droid.org is a volunteer driven organization.  We prioritize take-down requests, but we can't guarantee instant responses."
-msgstr "同时请注意，我们是一个由志愿者驱动的组织。  我们会优先处理下架请求，但不能保证立即回应。"
+msgstr "同时请注意，F-Droid 是一个由志愿者驱动的组织。  我们会优先处理下架请求，但不能保证立即回应。"
 
 #. type: Plain text
 #: _docs/Take-Down_Requests.md
-#, fuzzy
-#| msgid "You can submit take-down requests [by starting a new issue on our issue tracker](https://gitlab.com/fdroid/fdroiddata/-/issues/new).  (This requires a gitlab.com account.)"
 msgid "You should preferably submit take-down requests [by starting a new issue in our issue tracker](https://gitlab.com/fdroid/fdroiddata/-/issues/new).  (This requires a gitlab.com account.)"
-msgstr "要提交下架请求，您可以 [在我们的问题跟踪器上新开一个 issue](https://gitlab.com/fdroid/fdroiddata/-/issues/new).  （这需要 gitlab.com 帐户。）"
+msgstr "要提交下架请求，您应该优先选择 [在我们的问题跟踪器上新开一个 issue](https://gitlab.com/fdroid/fdroiddata/-/issues/new).  （这需要 gitlab.com 帐户。）"
 
 #. type: Plain text
 #: _docs/Take-Down_Requests.md
-#, fuzzy
-#| msgid "Alternatively if you prefer you can send your request to our team E-Mail account.  [team@f-droid.org](mailto:team@f-droid.org) (Our team will still open a public issue on our issue trackers and quote your entire request there.)"
 msgid "Alternatively if you prefer you can send your request to our team E-Mail account.  [team@f-droid.org](mailto:team@f-droid.org) (Our team will still open a public issue in our issue tracker and quote your request there.)"
-msgstr "或者，如果您愿意，您可以将您的请求发送到我们团队的电子邮件帐户。  [team@f-droid.org](mailto:team@f-droid.org) (我们的团队仍然会在我们的问题跟踪器上公开这个 issue，并在 issue 中完整引用您的邮件正文。)"
+msgstr "或者，如果您愿意，您可以将您的请求发送到我们团队的电子邮件账户。  [team@f-droid.org](mailto:team@f-droid.org) (我们的团队仍然会在我们的问题跟踪器上公开这个 issue，并在 issue 中引用您的请求。)"
 
 #. type: Plain text
 #: _docs/Take-Down_Requests.md
-#, fuzzy
-#| msgid "Take-down requests can not be confidential.  By submitting a take-down request you automatically grant us permission to publish your entire request on our web-sites and our issue trackers. We need this because all of our processes are worked on in public and for keeping accountable to our users."
 msgid "Take-down requests can not be confidential.  By submitting a take-down request you automatically grant us permission to publish your request on our web-sites and our issue trackers."
-msgstr "下架请求不能秘而不宣。  提交下架请求，意味着您自动授予我们在我们的网站或问题跟踪器上公开您完整请求的权限。我们需要这一点，因为我们所有的过程都是公开的，并对我们的用户负责。"
+msgstr "下架请求不能秘而不宣。  提交下架请求，意味着您自动授予我们在我们的网站或问题跟踪器上公开您请求的权限。"
 
 #. type: Title ##
 #: _docs/Take-Down_Requests.md
