@@ -6,6 +6,7 @@ EXITVALUE=0
 
 grep -ER \
   --exclude-dir=.git \
+  --exclude-dir=.jekyll-cache \
   --exclude-dir=.sass-cache \
   --exclude='*~' \
   --exclude='*.swp' \
@@ -17,6 +18,7 @@ grep -ER \
 
 grep -ER \
   --exclude-dir=.git \
+  --exclude-dir=.jekyll-cache \
   --exclude-dir=.sass-cache \
   --exclude='*~' \
   --exclude='*.swp' \
