@@ -148,9 +148,11 @@ rsync mirrors:
     - apt-get update
     - apt-get -qy install rsync
     - for f in `sed 's,[^:]*:,,' _data/rsync_mirrors.yaml`; do
-          rsync --list-only rsync -axv ${f}::fdroid \
-          || rsync --list-only rsync -axv ${f}::fdroid \
-          || rsync --list-only rsync -axv ${f}::fdroid;
+          echo '==============================================================';
+          echo "$f";
+          rsync --list-only ${f}::fdroid \
+          || rsync --list-only ${f}::fdroid \
+          || rsync --list-only ${f}::fdroid;
       done
 
 # Merge conflicts with Weblate are a big pain, so check they won't happen.
