@@ -63,11 +63,10 @@ reviewing translation updates on <https://staging.f-droid.org/>.
 
 There are four main git repositories hosted at GitLab:
 
-- [Android client application](https://gitlab.com/fdroid/fdroidclient)
-- [server tools](https://gitlab.com/fdroid/fdroidserver) for running a
-repository and building or installing applications locally
-- associated [metadata files for applications in the main F-Droid repository](https://gitlab.com/fdroid/fdroiddata)
-- [website and documentation](https://gitlab.com/fdroid/fdroid-website)
+* [Android client application](https://gitlab.com/fdroid/fdroidclient).
+* [Server tools](https://gitlab.com/fdroid/fdroidserver) for running a repository and building or installing applications locally.
+* Associated [metadata files for applications in the main F-Droid repository](https://gitlab.com/fdroid/fdroiddata).
+* [Website and documentation](https://gitlab.com/fdroid/fdroid-website).
 
 The easiest way to contribute to development is to make clones of these projects
 and submit merge requests. If you are making large changes, it would be good to
