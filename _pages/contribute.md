@@ -62,7 +62,8 @@ reviewing translation updates on <https://staging.f-droid.org/>.
 ### Develop
 
 There are four main git repositories hosted at GitLab:
-- [Android client application](https://gitlab.com/fdroid/fdroidclient),
+
+- [Android client application](https://gitlab.com/fdroid/fdroidclient)
 - [server tools](https://gitlab.com/fdroid/fdroidserver) for running a
 repository and building or installing applications locally
 - associated [metadata files for applications in the main F-Droid repository](https://gitlab.com/fdroid/fdroiddata)
@@ -90,4 +91,4 @@ There are build logs, app metadata, source code, APK metadata, and more.
 F-Droid also fits into the larger Android ecosystem, where there are even larger
 pools of data to dive into.  We also have some metrics data that remains mostly
 unexplored, and could reveal new insights in the F-Droid ecosystem.  One good
-way to dive in is to try out [our APIs]({{ site.baseurl }}/docs/All_our_APIs/)
+way to dive in is to try out [our APIs]({{ site.baseurl }}/docs/All_our_APIs/).
