@@ -19,7 +19,7 @@ You can read the TL;DR [here](https://www.theverge.com/23994174/epic-google-tria
 
 
 #### Community News
-[Danilo Bargen](https://bargen.dev/) announces us that the [Threema](https://threema.ch/en) app, an end-to-end encrypted messenger, which has been [open source](https://threema.ch/open-source) for a few years, is now included in the official F-Droid repository as **[“Threema Libre”](https://f-droid.org/packages/ch.threema.app.libre/)**! 
+@dbrgn from Threema announces that the [Threema](https://threema.ch/en) app, an end-to-end encrypted messenger, which has been [open source](https://threema.ch/open-source) for a few years, is now included in the official F-Droid repository as **[“Threema Libre”](https://f-droid.org/packages/ch.threema.app.libre/)**! 
 
 > Previously the messenger was already installable through a [custom repository](https://threema.ch/en/faq/libre_installation), but many users [asked](https://gitlab.com/fdroid/rfp/-/issues/1596) whether it could be included in the official repo as well. Thanks to the work done by [@linsui](https://gitlab.com/linsui), [@obfusk](https://gitlab.com/obfusk), [@Mynacol](https://gitlab.com/Mynacol) and others, our [reproducible build](https://threema.ch/en/open-source/reproducible-builds) could be successfully verified! Thus, builds from our custom repository can be published in identical form through the F-Droid repository. This means that users can use our repository if they want faster updates, or simply use the official F-Droid sources without having to set up any custom repo.
 > 
