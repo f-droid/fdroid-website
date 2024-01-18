@@ -6,6 +6,8 @@ permalink: /about/
 
 F-Droid is a robot with a passion for Free and Open Source Software (FOSS) on the Android platform. On this site you’ll find a repository of FOSS apps, along with an Android client to perform installations and updates, news, reviews, and other features covering all things Android and software-freedom related.
 
+F-Droid is legally represented by our [Commons Conservancy Programme](https://commonsconservancy.org/programmes/#F-Droid) which is regulated by our [statutes](https://dracc.commonsconservancy.org/0039/).
+
 Donations for F-Droid development are handled via our [OpenCollective](https://opencollective.com/F-Droid/).
 
 
