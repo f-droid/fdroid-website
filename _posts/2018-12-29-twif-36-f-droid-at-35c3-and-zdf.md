@@ -85,7 +85,7 @@ In total, **{{ page.number_of_updated_apps }}** apps were updated this week. Her
 
 * **[Mysplash](https://f-droid.org/packages/com.wangdaye.mysplash/)** was [updated](https://github.com/WangDaYeeeeee/Mysplash/releases) from 3.4.1 to 3.4.5, now with an app downloader, select downloader option, auto night mode, and various smaller changes and bug fixes.
 
-* {{ page.featured }} **[Conversations](https://f-droid.org/packages/eu.siacs.conversations/)** & **[Quicksy](https://f-droid.org/packages/im.quicksy.client/)** [updated](https://github.com/siacs/Conversations/blob/HEAD/CHANGELOG.md): Just a point release since [TWIF 34]({{ site.baseurl }}{% post_url 2018-12-13-twif-34-f-droid-is-a-planet %}), but 2.3.10+fcr has some nice improvements:
+* {{ page.featured }} **[Conversations](https://f-droid.org/packages/eu.siacs.conversations/)** & **[Quicksy](https://f-droid.org/packages/im.quicksy.client/)** [updated](https://github.com/siacs/Conversations/blob/HEAD/CHANGELOG.md): Just a point release since [TWIF 34]({% post_url 2018-12-13-twif-34-f-droid-is-a-planet %}), but 2.3.10+fcr has some nice improvements:
   * Synchronize group chat join/leaves across multiple clients
   * Fixed sending PGP encrypted messages from quick reply
   * Try to guess initial location in ShareLocation based on SIM card

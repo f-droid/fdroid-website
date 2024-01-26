@@ -4,7 +4,7 @@ title: .yml is the only metadata format, the others will be removed
 author: "F-Droid"
 ---
 
-Back in September, we [announced]({{ site.baseurl }}/{% post_url 2019-09-11-yaml-metadata %})
+Back in September, we [announced]({% post_url 2019-09-11-yaml-metadata %})
 that the F-Droid ecosystem is moving fully to YAML formats.  That
 means the old `.txt` custom metadata format as well as the JSON
 metadata format will be entirely removed from all the tools, like

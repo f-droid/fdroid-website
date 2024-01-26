@@ -6,7 +6,7 @@ author: "uniqx"
 
 F-Droid has a long history of transparently warning users about potential risks
 with apps we're distributing. Our team is currently specifically focusing on:
-[tracking]({{ site.baseurl }}{% post_url 2020-01-16-tracking-the-trackers %}).
+[tracking]({% post_url 2020-01-16-tracking-the-trackers %}).
 Usually tracking is perfectly opaque to users. In privacy policies this
 collected data often is described as metadata, which is usually is a crude
 over-simplification.  Metadata usually reveals: communication partners and

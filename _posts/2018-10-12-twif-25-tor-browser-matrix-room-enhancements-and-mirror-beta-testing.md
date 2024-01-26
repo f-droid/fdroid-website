@@ -44,7 +44,7 @@ Finally, the room can now be reached at [#fdroid:matrix.org](https://matrix.to/#
 
 #### Tutanota on F-Droid spotlighted at Linux Journal
 
-Tutanota, and the story of how they made their app suitable for F-Droid, have been [spotlighted](https://www.linuxjournal.com/content/foss-project-spotlight-tutanota-first-encrypted-email-service-app-f-droid) at Linux Journal. Of course, if you've been [following our blog]({{ site.baseurl }}{% post_url 2018-09-03-replacing-gcm-in-tutanota %}), this will sound very familiar.
+Tutanota, and the story of how they made their app suitable for F-Droid, have been [spotlighted](https://www.linuxjournal.com/content/foss-project-spotlight-tutanota-first-encrypted-email-service-app-f-droid) at Linux Journal. Of course, if you've been [following our blog]({% post_url 2018-09-03-replacing-gcm-in-tutanota %}), this will sound very familiar.
 
 #### Beta mirror up for testing
 

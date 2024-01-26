@@ -26,7 +26,7 @@ to help push out future updates.  The process is mostly automated, we
 mostly need help editing the forum submissions then sheparding the
 post through the publishing process.  Posts are now published much
 faster, thanks to the new
-[deploy server]({{ site.baseurl }}/{% post_url 2019-07-06-improving-our-bus-factor %}).
+[deploy server]({% post_url 2019-07-06-improving-our-bus-factor %}).
 
 #### F-Droid news
 

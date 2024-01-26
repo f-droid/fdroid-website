@@ -50,7 +50,7 @@ We also used the opportunity to improve various bit and pieces along the way:
   * many bug fixes that came out of modernizing ancient code
 
 The new version went through
-[a series of alpha releases]({{ site.baseurl }}{% post_url 2022-11-30-upcoming-alpha-release-of-f-droid-client %})
+[a series of alpha releases]({% post_url 2022-11-30-upcoming-alpha-release-of-f-droid-client %})
 with extended testing to make sure no severe issues make it into the stable release.
 It is now considered ready for general use.
 
@@ -65,4 +65,4 @@ or by making use of the [new libraries](https://gitlab.com/fdroid/fdroidclient/-
 we are publishing to make using this technology as easy as possible
 and to share as much code as possible between different F-Droid implementations.
 
-_This work was funded by the [FFDW-DVD grant]({{ site.baseurl }}{% post_url 2022-02-05-decentralizing-distribution %})_
+_This work was funded by the [FFDW-DVD grant]({% post_url 2022-02-05-decentralizing-distribution %})_

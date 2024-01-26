@@ -6,7 +6,7 @@ layout: post
 ---
 
 When we built the
-[next-generation F-Droid client]({{ site.baseurl }}{% post_url 2023-03-01-new-repo-format-faster-smaller-updates %}),
+[next-generation F-Droid client]({% post_url 2023-03-01-new-repo-format-faster-smaller-updates %}),
 we rewrote our code to fit into re-usable libraries,
 so other projects can make use of F-Droid technology with minimal hassle.
 
@@ -111,4 +111,4 @@ private fun getUpdate(packageName: String, packageVersions: List<PackageVersionV
 [Both of these apps](https://gitlab.com/CalyxOS/platform_external_calyx_lupin/) don't need to persist any data,
 so they only use the download and the index library.
 
-_The library work was funded by the [FFDW-DVD grant]({{ site.baseurl }}{% post_url 2022-02-05-decentralizing-distribution %})_
+_The library work was funded by the [FFDW-DVD grant]({% post_url 2022-02-05-decentralizing-distribution %})_

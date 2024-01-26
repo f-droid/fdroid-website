@@ -44,7 +44,7 @@ Every app in _f-droid.org_ has a corresponding
 [build metadata file]({{ site.baseurl }}/docs/Build_Metadata_Reference) in
 [_fdroiddata_](https://gitlab.com/fdroid/fdroiddata).  In order to encourage
 more creative reuse, we keep our data in standard formats in easy to find
-places.  The whole app collection is in [YAML format]({{ site.baseurl }}/{%
+places.  The whole app collection is in [YAML format]({%
 post_url 2019-09-11-yaml-metadata %}).  The file can be directly accessed
 by Application ID using the GitLab Raw URL
 `https://gitlab.com/fdroid/fdroiddata/-/raw/master/metadata/<ApplicationID>.yml`
@@ -131,7 +131,7 @@ entry points:
 
 ### Metrics
 
-[Usage data]({{ site.baseurl }}/{% post_url 2019-04-15-privacy-preserving-analytics %})
+[Usage data]({% post_url 2019-04-15-privacy-preserving-analytics %})
 is gathered from [various F-Droid websites](https://fdroid.gitlab.io/metrics/)
 and published with no personally identifiable information (PII).  It is
 published with one JSON file per-week, with a JSON index file per website.  For

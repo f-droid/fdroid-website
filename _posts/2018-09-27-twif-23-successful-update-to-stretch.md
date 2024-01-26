@@ -29,7 +29,7 @@ As of the latest index update, the [SET Anti-Feature](https://f-droid.org/wiki/p
 
 #### New F-Droid sweatshirts coming
 
-<span style="font-variant: small-caps; text-transform: lowercase;">Hellotux</span>, whom you may remember from [TWIF 15]({{ site.baseurl }}{% post_url 2018-08-03-twif-15-announcing-f-droid-1-3 %}), is bringing new [F-Droid sweatshirts](https://www.hellotux.com/f-droid) on-line. These should be available soon, in addition to the T-shirts and polo shirts already for sale. Remember that F-Droid gets €3 for every shirt sold!
+<span style="font-variant: small-caps; text-transform: lowercase;">Hellotux</span>, whom you may remember from [TWIF 15]({% post_url 2018-08-03-twif-15-announcing-f-droid-1-3 %}), is bringing new [F-Droid sweatshirts](https://www.hellotux.com/f-droid) on-line. These should be available soon, in addition to the T-shirts and polo shirts already for sale. Remember that F-Droid gets €3 for every shirt sold!
 
 #### New apps
 

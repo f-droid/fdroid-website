@@ -46,7 +46,7 @@ Most likely, this will include Wikimedia and F-Droid for prototypes, with **[@un
 
 #### F-Droid Matrix server up and running
 
-The [Matrix](https://matrix.org) server we [wrote about last week]({{ site.baseurl }}{% post_url 2018-11-10-twif-29-new-matrix-server-and-mirror-testers-wanted %}#f-droid-matrix-server) is up and running! Consequently, our Matrix rooms are now available as "[#fdroid:f-droid.org](https://matrix.to/#/#fdroid:f-droid.org)" and "[#fdroid-dev:f-droid.org](https://matrix.to/#/#fdroid-dev:f-droid.org)"!
+The [Matrix](https://matrix.org) server we [wrote about last week]({% post_url 2018-11-10-twif-29-new-matrix-server-and-mirror-testers-wanted %}#f-droid-matrix-server) is up and running! Consequently, our Matrix rooms are now available as "[#fdroid:f-droid.org](https://matrix.to/#/#fdroid:f-droid.org)" and "[#fdroid-dev:f-droid.org](https://matrix.to/#/#fdroid-dev:f-droid.org)"!
 
 Registration is restricted to F-Droid contributors, so if you are a core F-Droid contributor and want an account, ask **[Mathijs](https://forum.f-droid.org/u/mvgorcum)** or **[@nicoalt](https://forum.f-droid.org/u/nicoalt)** to make one for you. Resource consumption is currently quite low, and we'd like to keep it that way. Therefore you mustn't join any public rooms, other than the ones we agreed upon beforehand. (This is not a Matrix server for personal use.) Opening internal discussion rooms and 1:1 chats is fine though.
 

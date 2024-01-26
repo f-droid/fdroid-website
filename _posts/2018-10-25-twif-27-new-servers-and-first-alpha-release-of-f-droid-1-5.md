@@ -26,7 +26,7 @@ In this edition: Two new heavy duty servers, first alpha release of F-Droid 1.5,
 
 #### Two new servers from the GCC Compile Farm Project
 
-Many thanks to the [GCC Compile Farm Project](https://cfarm.tetaneutral.net), who have arranged two bare-metal servers for F-Droid, each with 16 cores, 145 GB RAM, and 2.6 TB disk. These are actually old Facebook machines, but the specs are still pretty impressive! And this is _in addition to_ the [F-Droid mirror from Tetaneutral]({{ site.baseurl }}{% post_url 2018-10-12-twif-25-tor-browser-matrix-room-enhancements-and-mirror-beta-testing %}#beta-mirror-up-for-testing).
+Many thanks to the [GCC Compile Farm Project](https://cfarm.tetaneutral.net), who have arranged two bare-metal servers for F-Droid, each with 16 cores, 145 GB RAM, and 2.6 TB disk. These are actually old Facebook machines, but the specs are still pretty impressive! And this is _in addition to_ the [F-Droid mirror from Tetaneutral]({% post_url 2018-10-12-twif-25-tor-browser-matrix-room-enhancements-and-mirror-beta-testing %}#beta-mirror-up-for-testing).
 
 The _GCC Compile Farm Project_ is a facilitator for free software developers to get access to resources. The management system for this project is hosted by [Tetaneutral](https://tetaneutral.net), and the machines themselves are hosted by various organizations around the world. These two machines will actually be hosted by the [Oregon State University Open Source Lab](https://osuosl.org) (OSUOSL).
 

@@ -33,9 +33,9 @@ It is scheduled to update once a week.
 
 #### New apps
 
-* **[Rocket.Chat](https://f-droid.org/packages/chat.rocket.android/)** is in! We've mentioned this briefly in [TWIF 16]({{ site.baseurl }}{% post_url 2018-08-10-twif-16-the-note-taking-todo-text-editor-edition %}#community-news), and now **[@Bubu](https://forum.f-droid.org/u/Bubu)**'s work is paying off even as he is on vacation.
+* **[Rocket.Chat](https://f-droid.org/packages/chat.rocket.android/)** is in! We've mentioned this briefly in [TWIF 16]({% post_url 2018-08-10-twif-16-the-note-taking-todo-text-editor-edition %}#community-news), and now **[@Bubu](https://forum.f-droid.org/u/Bubu)**'s work is paying off even as he is on vacation.
 
-  Note that the app is without push notifications right now, so you'll have to enter the app to see if there's anything new. The developers seem to be interested in exploring non-[FCM](https://en.wikipedia.org/wiki/Firebase_Cloud_Messaging) push though. Maybe they can take inspiration from [Tutanota's solution]({{ site.baseurl }}{% post_url 2018-09-03-replacing-gcm-in-tutanota %}).
+  Note that the app is without push notifications right now, so you'll have to enter the app to see if there's anything new. The developers seem to be interested in exploring non-[FCM](https://en.wikipedia.org/wiki/Firebase_Cloud_Messaging) push though. Maybe they can take inspiration from [Tutanota's solution]({% post_url 2018-09-03-replacing-gcm-in-tutanota %}).
 
 * **[Neural Network Simulator](https://f-droid.org/packages/com.EthanHeming.NeuralNetworkSimulator/)**: Educational tool to learn about computational neuroscience and electrophysology
 
