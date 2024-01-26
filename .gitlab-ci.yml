@@ -1,4 +1,4 @@
-image: debian:buster
+image: debian:bookworm
 
 stages:
  - deploy
@@ -140,7 +140,7 @@ pages:
 
 # check rsync mirrors still available
 rsync mirrors:
-  image: debian:bullseye-slim
+  image: debian:bookworm-slim
   stage: deploy
   only:
     - master@fdroid/fdroidserver
@@ -187,7 +187,7 @@ weblate merge conflict:
 
 
 spellcheckbot:
-  image: debian:bullseye
+  image: debian:bookworm
   stage: deploy
   allow_failure: true
   only:
@@ -271,7 +271,7 @@ check_fdroid_apk_bot:
 # basic checks for dev setup
 Vagrantfile:
   stage: deploy
-  image: debian:bullseye-slim
+  image: debian:bookworm-slim
   only:
     changes:
       - .gitlab-ci.yml
@@ -288,7 +288,7 @@ Vagrantfile:
 
 YAML Front Matter:
   stage: deploy
-  image: debian:bullseye-slim
+  image: debian:bookworm-slim
   only:
     changes:
       - .gitlab-ci.yml
