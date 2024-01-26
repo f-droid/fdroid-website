@@ -7,7 +7,7 @@ require 'tempfile'
 require 'yaml'
 
 srvpath = Pathname.new(File.dirname(__FILE__)).realpath
-configfile = YAML.load_file(File.join(srvpath, "/.gitlab-ci.yml"))
+configfile = YAML.safe_load_file(File.join(srvpath, "/.gitlab-ci.yml"), aliases: true)
 ci_project_dir = '/vagrant'
 
 sourcepath = '/etc/profile.d/env.sh'
@@ -38,7 +38,7 @@ end
 script_file.rewind
 
 Vagrant.configure("2") do |config|
-  config.vm.box = "debian/buster64"
+  config.vm.box = "debian/bookworm64"
   config.vm.network "forwarded_port", guest: 4000, host: 4000
   config.vm.provision "file", source: env_file.path, destination: 'env.sh'
   config.vm.provision :shell, inline: <<-SHELL
