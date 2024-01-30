@@ -35,7 +35,7 @@ get F-Droid.
 #### Install an Android ROM with built-in F-Droid
 
 If you're planning on flashing a custom ROM, these ROMs might be interesting
-for you because the come with F-Droid built-in and ready to use:
+for you because they come with F-Droid built-in and ready to use:
 
 - __CalyxOS__ - https://calyxos.org
 - __DivestOS__ - https://divestos.org
