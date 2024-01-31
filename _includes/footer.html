@@ -4,7 +4,10 @@
 
     <div class="site-description">
       <p>
-        {{ site.copyright }}
+        {%- assign section = page.path | split: "/" | first -%}
+        {%- if section != "packages" -%}
+          {{ site.copyright }}
+        {%- endif %}
         <span class="version">
           ({% fdroid_repo_info %}, fdroid-website <a href="https://gitlab.com/fdroid/fdroid-website/tree/{% git_hash %}">{% git_tag %}</a>)
         </span>
@@ -22,7 +25,6 @@
 	    {{ site.data.strings.navigation.edit_on_gitlab }}
 	  </a>
 	  {%- else -%}
-	  {%- assign section = page.path | split: "/" | first -%}
 	  {%- assign slug = section | replace_first: "_", "" -%}
 	  {%- assign filename = page.path | split: "/" | last -%}
 	  {%- if section == "packages" -%}
