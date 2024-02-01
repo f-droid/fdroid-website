@@ -9,13 +9,14 @@
 # Sebastian Korotkiewicz <skorotkiewicz@gmail.com>, 2023.
 # Eryk Michalak <gnu.ewm@protonmail.com>, 2023.
 # 7Havn <fishbart@gmail.com>, 2024.
+# r5jyhte <ioulykttr@proton.me>, 2024.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
 "POT-Creation-Date: 2023-11-27 17:13+0100\n"
-"PO-Revision-Date: 2024-01-20 10:40+0000\n"
-"Last-Translator: 7Havn <fishbart@gmail.com>\n"
+"PO-Revision-Date: 2024-01-30 12:39+0000\n"
+"Last-Translator: r5jyhte <ioulykttr@proton.me>\n"
 "Language-Team: Polish <https://hosted.weblate.org/projects/f-droid/website-docs/pl/>\n"
 "Language: pl\n"
 "MIME-Version: 1.0\n"
@@ -2984,22 +2985,17 @@ msgstr "`androidupdate: <auto/dirs>`<a name=\"build_androidupdate\"></a>\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-#, fuzzy, no-wrap
-#| msgid ""
-#| ":   By default, 'android update' is used in Ant builds to generate or\n"
-#| "    update the project and all its referenced projects. Specifying\n"
-#| "    update=no bypasses that. Note that this is useless in builds that\n"
-#| "    don't use Ant.\n"
+#, no-wrap
 msgid ""
 ":   By default, 'android update' is used in Ant builds to generate or\n"
 "    update the project and all its referenced projects. Specifying\n"
 "    `androidupdate: no` bypasses that. Note that this is useless in builds that\n"
 "    don't use Ant.\n"
 msgstr ""
-":   Domyślnie 'aktualizacja Android' jest używana w kompilacjach Ant do generowania lub\n"
-"    aktualizacji projektu i wszystkie powiązane projekty. Określanie\n"
-"    update=no pomija to. Zauważ, że jest to bezużyteczne w takich kompilacjach\n"
-"    nie używaj Ant.\n"
+":\tDomyślnie 'aktualizacja Android' jest używana w kompilacjach Ant do generowania lub\n"
+"\taktualizacji projektu i wszystkich powiązanych projektów. Określanie\n"
+"\t`androidupdate: no` pomija to. Zauważ, że jest to bezużyteczne w kompilacjach\n"
+"\tnie używaj Ant.\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -3866,10 +3862,8 @@ msgstr "Wersja określona za pomocą `CurrentVersionCode` jest zawsze uważana z
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-#, fuzzy
-#| msgid "Currently the only supported format is \"n versions\", where \"n\" is the number of versions to keep. Defaults to \"3 versions\". For apps with a list of [_VercodeOperation_](#VercodeOperation) the default is calculated as \"3 x number of operations\", eg. for an app with two operations, for two ABIs, 6 versions will be kept."
 msgid "Currently the only supported format is `n`, where `n` is the number of versions to keep. Defaults to `3`. For apps with a list of [_VercodeOperation_](#VercodeOperation) the default is calculated as `3 x number of operations`, eg. for an app with two operations, for two ABIs, 6 versions will be kept."
-msgstr "Obecnie, jedynym obsługiwanym formatem jest \"n versions\", gdzie \"n\" jest ilością przechowywanych wersji. Domyślnie jest to \"3 versions\". Dla aplikacji z listą [_VercodeOperation_](#VercodeOperation), domyślna wartość to \"3 x liczba operacji\", np. kiedy aplikacja ma dwie operacje, dla dwóch ABI, będą przechowywane 6 wersji."
+msgstr "Obecnie, jedynym obsługiwanym formatem jest `n`, gdzie `n` jest ilością przechowywanych wersji. Domyślnie jest to `3`. Dla aplikacji z listą [_VercodeOperation_](#VercodeOperation), domyślna wartość to `3 x liczba operacji`, np. kiedy aplikacja ma dwie operacje, dla dwóch ABI, będą przechowywane 6 wersji."
 
 #. type: Title ###
 #: _docs/Build_Metadata_Reference.md
@@ -4018,10 +4012,8 @@ msgstr "Operacje mają być stosowane do wersji kodu uzyskane przez zdefiniowane
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-#, fuzzy
-#| msgid "Especially useful with apps that we want to compile for different ABIs, but whose vercodes don't always have trailing zeros. For example, with _VercodeOperation_ set at something like `%c*10 + 4`, we will be able to track updates and build up to four different versions of every upstream version."
 msgid "Especially useful with apps that we want to compile for different ABIs, but whose vercodes don't always have trailing zeros. For example, with multiple _VercodeOperation_ we can track updates and build up to four different versions of every upstream version, say for 4 architectures:"
-msgstr "Jest to szczególnie przydatne w przypadku aplikacji, które chcemy skompilować dla różnych ABI, ale których kody kreskowe nie zawsze mają końcowe zera. Na przykład, przy _VercodeOperation_ ustawionym na coś w stylu `%c*10 + 4`, będziemy mogli śledzić aktualizacje i budować do czterech różnych wersji każdej poprzedniej wersji."
+msgstr "Jest to szczególnie przydatne w przypadku aplikacji, które chcemy skompilować dla różnych ABI, ale których kody kreskowe nie zawsze mają końcowe zera. Na przykład, przy wielu  _VercodeOperation_ możemy śledzić aktualizacje i budować do czterech różnych wersji z każdej odgórnej wersji, na przykład dla 4 różnych architektur."
 
 #. type: Fenced code block
 #: _docs/Build_Metadata_Reference.md
@@ -4033,11 +4025,16 @@ msgid ""
 "  - 100 * %c + 3\n"
 "  - 100 * %c + 4\n"
 msgstr ""
+"VercodeOperation:\n"
+"  - 100 * %c + 1\n"
+"  - 100 * %c + 2\n"
+"  - 100 * %c + 3\n"
+"  - 100 * %c + 4\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 msgid "So 4 build blocks are copied from above and added as an update with their vercode calculated by doing each math operation."
-msgstr ""
+msgstr "4 zbudowane bloki są kopiowane z góry i dodawane jako aktualizacja z ich kodem wersji obliczonym poprzez wykonanie każdej z operacji matematycznych."
 
 #. type: Title ###
 #: _docs/Build_Metadata_Reference.md
@@ -4240,7 +4237,7 @@ msgstr ""
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 msgid "For apps with a list of [_VercodeOperation_](#VercodeOperation) the number of builds is equal to the number of items in the list."
-msgstr ""
+msgstr "Dla aplikacji z listą [_VercodeOperation_](#VercodeOperation) ilość zbudowanych paczek jest równa ilości rzeczy w liście."
 
 #. type: Title ###
 #: _docs/Build_Metadata_Reference.md
@@ -4389,10 +4386,8 @@ msgstr "W ten sposób można skonfigurować działający serwer kompilacji, zacz
 
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
-#, fuzzy
-#| msgid "The base server needs to be at minimum Debian/jessie, or there will need to be some heavy tweaking. If you run Ubuntu or derivative distro, you can get any packages missing from your version, like _vagrant-cachier_, from this PPA: <https://launchpad.net/~fdroid/+archive/ubuntu/buildserver/>"
 msgid "The base server needs to be at minimum Debian/bullseye, or there will need to be some heavy tweaking. If you run Ubuntu or derivative distro, you can get any packages missing from your version, like _vagrant-cachier_, from this PPA: <https://launchpad.net/~fdroid/+archive/ubuntu/buildserver/>"
-msgstr "Podstawowy serwer musi mieć co najmniej Debian/jessie albo będzie wymagał wprowadzenia kilku poważnych zmian. Jeśli używasz Ubuntu lub pochodnej dystrybucji, możesz uzyskać brakujące pakiety z Twojej wersji, takie jak _vagrant-cachier_, z tego PPA: <https://launchpad.net/~fdroid/+archive/ubuntu/buildserver/>"
+msgstr "Podstawowy serwer musi mieć co najmniej Debian/bullseye albo będzie wymagał wprowadzenia kilku poważnych zmian. Jeśli używasz Ubuntu lub pochodnej dystrybucji, możesz uzyskać brakujące pakiety z Twojej wersji, takie jak _vagrant-cachier_, z tego PPA: <https://launchpad.net/~fdroid/+archive/ubuntu/buildserver/>"
 
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
@@ -4401,14 +4396,7 @@ msgstr "Najpierw zainstaluj niezbędne pakiety i utwórz nowego użytkownika, ab
 
 #. type: Fenced code block (bash)
 #: _docs/Build_Server_Setup.md
-#, fuzzy, no-wrap
-#| msgid ""
-#| "root:~# apt-get install vagrant virtualbox git python3-certifi \\\n"
-#| "        python3-libvirt python3-requestbuilder python3-yaml \\\n"
-#| "        python3-clint python3-vagrant python3-paramiko python3-pyasn1 \\\n"
-#| "        python3-pyasn1-modules python3-requests python3-git\n"
-#| "root:~# adduser --disabled-password fdroid\n"
-#| "root:~# su fdroid\n"
+#, no-wrap
 msgid ""
 "root:~# apt-get install vagrant git python3-certifi \\\n"
 "        python3-libvirt python3-requestbuilder python3-yaml \\\n"
@@ -4419,28 +4407,29 @@ msgid ""
 "root:~# adduser --disabled-password fdroid\n"
 "root:~# su fdroid\n"
 msgstr ""
-"root:~# apt-get install vagrant virtualbox git python3-certifi \\\n"
+"root:~# apt-get install vagrant git python3-certifi \\\n"
 "        python3-libvirt python3-requestbuilder python3-yaml \\\n"
 "        python3-clint python3-vagrant python3-paramiko python3-pyasn1 \\\n"
 "        python3-pyasn1-modules python3-requests python3-git\n"
+"        vagrant-mutate vagrant-libvirt ebtables dnsmasq-base \\\n"
+"        libvirt-clients libvirt-daemon-system qemu-kvm qemu-utils\n"
 "root:~# adduser --disabled-password fdroid\n"
 "root:~# su fdroid\n"
 
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
-#, fuzzy
-#| msgid "Clone source code and configure the buildserver settings, running as _fdroid_ user:"
 msgid "Clone source code running as _fdroid_ user:"
-msgstr "Sklonuj kod źródłowy i skonfiguruj ustawienia buildserver, działając jako _fdroid_ user:"
+msgstr "Sklonuj kod źródłowy i uruchom jako użytkownik _fdroid_ :"
 
 #. type: Fenced code block (bash)
 #: _docs/Build_Server_Setup.md
-#, fuzzy, no-wrap
-#| msgid "$ git clone https://gitlab.com/fdroid/fdroid-website\n"
+#, no-wrap
 msgid ""
 "fdroid:~$ cd ~\n"
 "fdroid:~$ git clone https://gitlab.com/fdroid/fdroidserver.git\n"
-msgstr "$ sklonuj git https://gitlab.com/fdroid/fdroid-website\n"
+msgstr ""
+"fdroid:~$ cd ~\n"
+"fdroid:~$ git clone https://gitlab.com/fdroid/fdroidserver.git\n"
 
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
@@ -4485,10 +4474,8 @@ msgstr "Konfigurowanie serwera kompilacji"
 
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
-#, fuzzy
-#| msgid "In addition to the basic setup previously described, we ship a Vagrant-compatible Debian/stretch base box called 'fdroid/basebox-stretch64'."
 msgid "In addition to the basic setup previously described, we ship a Vagrant-compatible Debian/bullseye base box called 'fdroid/bullseye64'."
-msgstr "Oprócz konfiguracji podstawowej opisanej wcześniej, wysyłamy w sposób zgodny z Vagrant Debian/stretch base box o nazwie 'fdroid/basebox-stretch64 '."
+msgstr "Oprócz konfiguracji podstawowej opisanej wcześniej, wysyłamy w sposób zgodny z Vagrant Debian/bullseye base box o nazwie 'fdroid/bullseye64 '."
 
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
@@ -4504,34 +4491,28 @@ msgstr "Tworzenie skrzynki serwera F-Droid buildserver"
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
 msgid "Create a config file for Vagrant as `~/fdroidserver/buildserver/Vagrantfile.yaml` which contains:"
-msgstr ""
+msgstr "Stwórz plik konfiguracyjny dla Vagrant jako `~/fdroidserer/buildserver/Vagrantfile.yaml` który zawiera:"
 
 #. type: Fenced code block
 #: _docs/Build_Server_Setup.md
-#, fuzzy, no-wrap
-#| msgid "vm_provider = 'libvirt'\n"
+#, no-wrap
 msgid "vm_provider: libvirt\n"
-msgstr "vm_provider = 'libvirt'\n"
+msgstr "vm_provider: libvirt\n"
 
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
-#, fuzzy
-#| msgid "Create the base buildserver image... (downloading the basebox and all the sdk platforms can take long time)."
 msgid "Then the base buildserver image... (downloading the basebox and all the sdk platforms can take long time)."
-msgstr "Utwórz podstawowy obraz instalatora build... (pobieranie basebox i wszystkich platform sdk może zająć dużo czasu)."
+msgstr "Wtedy podstawowy obraz instalatora build... (pobieranie basebox i wszystkich platform sdk może zająć dużo czasu)."
 
 #. type: Fenced code block (bash)
 #: _docs/Build_Server_Setup.md
-#, fuzzy, no-wrap
-#| msgid ""
-#| "fdroid:~$ cd fdroidserver\n"
-#| "fdroid:~/fdroidserver$ ./makebuildserver\n"
+#, no-wrap
 msgid ""
 "fdroid:~$ cd fdroidserver\n"
 "fdroid:~/fdroidserver$ ./makebuildserver --verbose\n"
 msgstr ""
 "fdroid:~$ cd fdroidserver\n"
-"fdroid:~/fdroidserver$ ./makebuildserver\n"
+"fdroid:~/fdroidserver$ ./makebuildserver --verbose\n"
 
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
@@ -4540,15 +4521,13 @@ msgstr "Zajmie to dużo czasu, będzie wymagało dużej przepustowości i miejsc
 
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
-#, fuzzy
-#| msgid "Once it's complete you'll have a new base box called 'buildserver' which is what's used for your App build runs. Now you can build packages as you used to, but when you run `fdroid build --server ...` App build runs will be isolated inside a virtual machine."
 msgid "Once it's complete you'll have a new base box called 'buildserver' which is what's used for your App build runs. Now you can build packages as you used to, but when you run `fdroid build --verbose --server ...` App build runs will be isolated inside a virtual machine."
-msgstr "Po zakończeniu otrzymasz nową skrzynkę bazową o nazwie 'buildserver', która jest używana do tworzenia aplikacji. Teraz możesz budować pakiety tak jak kiedyś, ale po uruchomieniu `fdroid build --server ...`, uruchomione kompilacje aplikacji będą izolowane wewnątrz maszyny wirtualnej."
+msgstr "Po zakończeniu otrzymasz nową skrzynkę bazową o nazwie 'buildserver', która jest używana do tworzenia aplikacji. Teraz możesz budować pakiety tak jak kiedyś, ale po uruchomieniu `fdroid build --verbose --server ...`, uruchomione kompilacje aplikacji będą izolowane wewnątrz maszyny wirtualnej."
 
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
 msgid "While the created image has allocated a limited amount of CPU cores and memory, you can edit `~/fdroiddata/builder/Vagrantfile` to modify them dynamically at run time, eg. `libvirt.cpus = 6` and `libvirt.memory = 12288`, but do make sure to not go over the host machines' limits else the VM might get killed."
-msgstr ""
+msgstr "Chociaż stworzony obraz zaalokował limitowaną ilość rdzeni CPU i pamięci operacyjnej, możesz edytować `~/fdroiddata/builder/Vagrantfile` aby zmodyfikować je dynamicznie podczas uruchomienia, np. `libvirt.cpus = 6` and `libvirt.memory = 12288`, ale upewnij się, że nie przekraczasz limitu maszyny hostującej, inaczej proces VM może zostać zakończony."
 
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
@@ -4623,14 +4602,12 @@ msgstr ""
 #: _docs/Build_Server_Setup.md
 #, no-wrap
 msgid "Setting up QEMU/KVM/libvirt"
-msgstr ""
+msgstr "Konfiguracja QEMU/KVM/libvirt"
 
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
-#, fuzzy
-#| msgid "It is also possible to QEMU/KVM guest VMs via libvirt instead of the default VirtualBox.  VirtualBox is still the recommended setup since that is what is used by f-droid.org, but there are cases where it is not possible to run VirtualBox, like on a machine that is already running QEMU/KVM guests.  In order to make the libvirt image files directly readable by `vagrant package`, _libvirt_'s QEMU needs to be configured to always set the ownership to `libvirt.libvirt`."
 msgid "While VirtualBox was used in the past, QEMU/KVM guest VMs via libvirt is still the recommended setup since that is what is used by f-droid.org. In order to make the libvirt image files directly readable by `vagrant package`, _libvirt_'s QEMU needs to be configured to always set the ownership to `libvirt.libvirt`."
-msgstr "Możliwe jest również użycie maszyn VM QEMU/KVM przez libvirt zamiast domyślnego VirtualBox. VirtualBox jest nadal zalecanym ustawieniem, ponieważ jest to używane przez f-droid.org, ale zdarzają się przypadki, w których nie można uruchomić VirtualBox, jak na komputerze, na którym już działają goście QEMU/KVM. Aby pliki obrazów libvirt można było odczytywać bezpośrednio za pomocą `pakietu vagrant`, należy skonfigurować użytkownika QEMU _libvirt_ tak, aby zawsze ustawiało prawo własności do `libvirt.libvirt`."
+msgstr "Chociaż VirttalBox był używany w przeszłości, gościnne maszyny wirtualne QEMU/KVM poprzez libvirt są obecnie zalecanym ustawieniem ponieważ jest ono używane przez f-droid.org. Aby pliki obrazów libvirt można było odczytywać bezpośrednio za pomocą `pakietu vagrant`, należy skonfigurować użytkownika QEMU _libvirt_ tak, aby zawsze ustawiało prawo własności do `libvirt.libvirt`."
 
 #. type: Fenced code block (console)
 #: _docs/Build_Server_Setup.md
@@ -4643,13 +4620,18 @@ msgid ""
 "EOF\n"
 "root:~# service libvirtd restart\n"
 msgstr ""
+"root:~# cat << EOF >> /etc/libvirt/qemu.conf\n"
+"user = \"libvirt\"\n"
+"group = \"libvirt\"\n"
+"dynamic_ownership = 1\n"
+"EOF\n"
+"root:~# service libvirtd restart\n"
 
 #. type: Title #####
 #: _docs/Build_Server_Setup.md
-#, fuzzy, no-wrap
-#| msgid "Debian/stretch and Ubuntu/xenial"
+#, no-wrap
 msgid "Debian/bullseye and Ubuntu/xenial"
-msgstr "Debian/stretch i Ubuntu/xenial"
+msgstr "Debian/bullseye i Ubuntu/xenial"
 
 #. type: Fenced code block (console)
 #: _docs/Build_Server_Setup.md
@@ -5472,10 +5454,8 @@ msgstr "Opublikowalem nowe wydanie. Dlaczego nie znajduje się w repozytorium?"
 
 #. type: Plain text
 #: _docs/FAQ_-_App_Developers.md
-#, fuzzy
-#| msgid "When we detect a new release, it may take a few days to make it into the repository as the build process runs only once a day. Before the build has completed, the monitor page for your app will list it in [F-Droid Monitor - Need updating](https://monitor.f-droid.org/builds/needsupdate). As long as the text under *Versions* stating \"The current (recommended) version is *xxx* (version code *yyy*)\" shows the version numbers corresponding to your latest release, we detected it and the APK should be available soon. Just give it some time."
 msgid "When we detect a new release, it may take a few days to make it into the repository as the build process [has several steps](https://gitlab.com/fdroid/wiki/-/wikis/FAQ#how-long-does-it-take-for-my-app-to-show-up-on-website-and-client) and runs only once a day. Before the build has completed, the monitor page for your app will list it in [F-Droid Monitor - Need updating](https://monitor.f-droid.org/builds/needsupdate). As long as the text under *Versions* stating \"The current (recommended) version is *xxx* (version code *yyy*)\" shows the version numbers corresponding to your latest release, we detected it and the APK should be available soon. Just give it some time."
-msgstr "Gdy wykryjemy nową wersję, może minąć kilka dni, zanim trafi ona do repozytorium, ponieważ proces kompilacji jest uruchamiany tylko raz dziennie. Przed zakończeniem kompilacji strona monitora dla Twojej aplikacji wyświetli ją w [F-Droid Monitor - Need updating](https://monitor.f-droid.org/builds/needsupdate). Dopóki tekst pod *Wersje* stwierdzający „Obecna (zalecana) wersja to *xxx* (kod wersji *yyy*)” zawiera numery wersji odpowiadające najnowszej wersji, wykryliśmy to i pakiet APK powinien być wkrótce dostępny. Po prostu daj mu trochę czasu."
+msgstr "Gdy wykryjemy nową wersję, może minąć kilka dni, zanim trafi ona do repozytorium, ponieważ proces kompilacji [ma wiele kroków](https://gitlab.com/fdroid/wiki/-/wikis/FAQ#how-long-does-it-take-for-my-app-to-show-up-on-website-and-client) i jest uruchamiany tylko raz dziennie. Przed zakończeniem kompilacji strona monitora dla Twojej aplikacji wyświetli ją w [F-Droid Monitor - Potrzebna aktualizacja](https://monitor.f-droid.org/builds/needsupdate). Dopóki tekst pod *Wersje* stwierdzający „Obecna (zalecana) wersja to *xxx* (kod wersji *yyy*)” zawiera numery wersji odpowiadające najnowszej wersji, wykryliśmy to i pakiet APK powinien być wkrótce dostępny. Po prostu daj mu trochę czasu."
 
 #. type: Plain text
 #: _docs/FAQ_-_App_Developers.md
@@ -5531,13 +5511,13 @@ msgstr "Powtarzalne kompilacje"
 #. type: Plain text
 #: _docs/FAQ_-_App_Developers.md
 msgid "No. But we do consider them best practice and hope you'll consider trying to make your app reproducible. See our [inclusion how-to](../Inclusion_How-To) for more information."
-msgstr ""
+msgstr "Nie, ale nie uznajemy tego za dobrą praktykę i mamy nadzieję, że pomyślisz o sprawienu by twoja aplikacja była reproduktowalna. Zobacz nasz [poradnik dołączania](../Inclusion_How-To) aby poznać więcej informacji."
 
 #. type: Title ###
 #: _docs/FAQ_-_App_Developers.md
 #, no-wrap
 msgid "How can I handle \"fsck error in packed object\" for my app?"
-msgstr ""
+msgstr "Jak mogę poradzić sobie z \"fsck error in packed object\" dla mojej aplikacji?"
 
 #. type: Plain text
 #: _docs/FAQ_-_App_Developers.md
@@ -5899,7 +5879,7 @@ msgstr ""
 #. type: Plain text
 #: _docs/FAQ_-_Client.md
 msgid "Exchange repository information via the Repo Details screen, and to optionally assist nearby swap connection:"
-msgstr ""
+msgstr "Zmień informacjie repozytorium poprzez ekran Detali Repo i opcjonalnie asysty połączenia pobliskiej wymiany:"
 
 #. type: Plain text
 #: _docs/FAQ_-_Client.md
@@ -5910,7 +5890,7 @@ msgstr "</dt><dd><tt><a href=\"https://developer.android.com/reference/android/M
 #. type: Plain text
 #: _docs/FAQ_-_Client.md
 msgid "Allow the user to enable Wi-Fi AP Hotspot mode from the nearby service:"
-msgstr ""
+msgstr "Pozwól użytkownikowi włączyć tryb Wi-Fi Hotspot AP z poziomu serwisu w pobliżu:"
 
 #. type: Plain text
 #: _docs/FAQ_-_Client.md
@@ -5921,7 +5901,7 @@ msgstr "</dt><dd><tt><a href=\"https://developer.android.com/reference/android/M
 #. type: Plain text
 #: _docs/FAQ_-_Client.md
 msgid "Allows the nearby service to stay running as long as the user leaves it running:"
-msgstr ""
+msgstr "Pozwól serwisowi w pobliżu pozostać uruchomionym tak długo aż użytkownik go nie zamknie:"
 
 #. type: Plain text
 #: _docs/FAQ_-_Client.md
@@ -5932,7 +5912,7 @@ msgstr "</dt><dd><tt><a href=\"https://developer.android.com/reference/android/M
 #. type: Plain text
 #: _docs/FAQ_-_Client.md
 msgid "Find and use compatible repositories and mirrors on external storage:"
-msgstr ""
+msgstr "Znajdź i wykorzystaj kompatybilne repozytoria i ich kopie na zewnętrznym nośniku danych:"
 
 #. type: Plain text
 #: _docs/FAQ_-_Client.md
@@ -5947,7 +5927,7 @@ msgstr ""
 #. type: Plain text
 #: _docs/FAQ_-_Client.md
 msgid "Detect when a USB thumb drive has been inserted, so it can be scanned to find compatible repositories and mirrors:"
-msgstr ""
+msgstr "Wykryj kiedy dysk USB został podłączony aby mógł zostać przeskanowany w celu znalezienia kompatybilnych repozytoriów i ich kopii:"
 
 #. type: Plain text
 #: _docs/FAQ_-_Client.md
