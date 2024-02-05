@@ -14,7 +14,7 @@ the forum are stored.
 
 Here is some general, non-sensitive information about our instance.
 When setting up the forum, we followed
-[Discourse's](https://github.com/discourse/discourse/blob/master/docs/INSTALL-cloud.md)
+[Discourse's](https://github.com/discourse/discourse/blob/main/docs/INSTALL-cloud.md)
 official installation guides.
 Posts from the old forum were not imported
 due to time restrictions of the voluntary administrators.
@@ -32,7 +32,7 @@ due to time restrictions of the voluntary administrators.
 
 #### Discourse
 
-* Version: _tests-passed_
+* Version: _stable_
 * SSL: Let's Encrypt
 * Login methods: local, GitHub
 * Backup frequency: daily
@@ -61,10 +61,7 @@ _docker_manager_ has available updates which need to happen before _discourse_
 In case something goes wrong with the forum, stay calm, you're likely
 not the first to be affected by this. Mostly a quick internet search
 gives you detailed instructions on how to fix a problem.
-There is also a really good guide called
-[Advanced Troubleshooting with Docker](https://meta.discourse.org/t/advanced-troubleshooting-with-docker/15927)
-on Discourse's forum. In the past, the following instructions were
-helpful:
+In the past, the following instructions were helpful:
 
 #### Rebuilding the container
 
@@ -79,7 +76,6 @@ to refuse updates through its web interface.
 
 ```bash
 cd /var/discourse
-git pull
 ./launcher rebuild app
 ```
 
@@ -112,9 +108,8 @@ you can simply deploy it on the new server and start it by
 `./launcher rebuild app`.
 
 Follow the
-[official installation guide](https://github.com/discourse/discourse/blob/master/docs/INSTALL-cloud.md).
+[official installation guide](https://github.com/discourse/discourse/blob/main/docs/INSTALL-cloud.md).
 
 #### More Info
 
 You can find more info about updating and maintaining the forum as well as other admin tasks in the [F-Droid forum administrator training](https://forum.f-droid.org/t/f-droid-forum-administrator-training/5527?u=paulakreuzer) topic.
-
