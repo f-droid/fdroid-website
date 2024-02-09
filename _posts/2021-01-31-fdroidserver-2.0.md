@@ -18,7 +18,7 @@ repos](https://gitlab.com/guardianproject/wind-repo/-/blob/master/scripts/fdroid
 or [_issuebot_](https://gitlab.com/fdroid/issuebot/-/blob/master/issuebot.py).
 It is now also possible to extend the command line interface using the new
 [plugins](https://gitlab.com/fdroid/fdroidserver/-/blob/master/examples/fdroid_fetchsrclibs.py).
-The app metadata files are now purely [YAML]({{ site.baseurl }}/{% post_url
+The app metadata files are now purely [YAML]({% post_url
 2019-09-11-yaml-metadata %}), so they are an API in themselves, easily parsable
 and writeable by any standard YAML library.  Also, the preferred format for the
 repo config file is now YAML (_config.yml_).

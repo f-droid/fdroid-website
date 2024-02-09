@@ -15,11 +15,11 @@ In this edition: Second security audit completed, automating the buildserver set
 
 #### Second security audit completed
 
-In case you missed it, [our second security audit has been completed]({{ site.baseurl }}{% post_url 2018-09-04-second-security-audit-results %}). All important issues have been fixed, and work on the remaining issues is ongoing. **[@Tovok7](https://blog.grobox.de)** has been working on [repomaker](https://gitlab.com/fdroid/repomaker) issues found in the audit, uploaded a pre-release to [pypi](https://pypi.org) and started to write [installation instructions](https://gitlab.com/fdroid/repomaker#installation). If you are a developer or a power user, we could use your help with testing these.
+In case you missed it, [our second security audit has been completed]({% post_url 2018-09-04-second-security-audit-results %}). All important issues have been fixed, and work on the remaining issues is ongoing. **[@Tovok7](https://blog.grobox.de)** has been working on [repomaker](https://gitlab.com/fdroid/repomaker) issues found in the audit, uploaded a pre-release to [pypi](https://pypi.org) and started to write [installation instructions](https://gitlab.com/fdroid/repomaker#installation). If you are a developer or a power user, we could use your help with testing these.
 
-**[@\_hc](https://forum.f-droid.org/u/hans)** writes: <q>We are satisfied with the results, which confirmed again that the core security model and standard operations are solid.</q> [_Read more_]({{ site.baseurl }}{% post_url 2018-09-04-second-security-audit-results %}).
+**[@\_hc](https://forum.f-droid.org/u/hans)** writes: <q>We are satisfied with the results, which confirmed again that the core security model and standard operations are solid.</q> [_Read more_]({% post_url 2018-09-04-second-security-audit-results %}).
 
-For those who are curious about the _first_ security audit, which happened in 2015, [this post]({{ site.baseurl }}{% post_url 2018-01-20-upcoming-security-audit %}) looks back on it.
+For those who are curious about the _first_ security audit, which happened in 2015, [this post]({% post_url 2018-01-20-upcoming-security-audit %}) looks back on it.
 
 #### Automating buildserver setup with ansible
 
@@ -27,7 +27,7 @@ For those who are curious about the _first_ security audit, which happened in 20
 
 #### Community News
 
-* Öffi returns to the Google Play Store ([article in German](https://www.heise.de/newsticker/meldung/Nahverkehrs-App-Oeffi-ist-zurueck-im-Play-Store-4153880.html)), after being [kicked out]({{ site.baseurl }}{% post_url 2018-07-12-this-week-in-fdroid-w28 %}) and [open sourced in response]({{ site.baseurl }}{% post_url 2018-07-21-twif-13-public-transport-edition %}) earlier.
+* Öffi returns to the Google Play Store ([article in German](https://www.heise.de/newsticker/meldung/Nahverkehrs-App-Oeffi-ist-zurueck-im-Play-Store-4153880.html)), after being [kicked out]({% post_url 2018-07-12-this-week-in-fdroid-w28 %}) and [open sourced in response]({% post_url 2018-07-21-twif-13-public-transport-edition %}) earlier.
 
 #### New apps
 

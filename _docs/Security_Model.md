@@ -181,4 +181,4 @@ If you would like to test whether your browser still supports TLS 1.0 or 1.1, cl
    [external public audit]({{ site.baseurl }}/2018/09/04/second-security-audit-results.html)
    from [Radically Open Security](https://radicallyopensecurity.com/)
 
-4. The NLnet-funded projects "Tracking the Trackers" and "The Search for Ethical Apps" provided an [audit]({{ site.baseurl }}{% post_url 2022-12-22-third-audit-results %}) performed by [Radically Open Security](https://radicallyopensecurity.com/)
+4. The NLnet-funded projects "Tracking the Trackers" and "The Search for Ethical Apps" provided an [audit]({% post_url 2022-12-22-third-audit-results %}) performed by [Radically Open Security](https://radicallyopensecurity.com/)

@@ -126,8 +126,8 @@ Guardian Project is developing [Clean Insights](https://cleaninsights.org/) to
 promote the idea that usage analytics can provide useful insights that only
 benefit the end users. For this to happen, there must be absolutely no way to
 track users: no tracking IDs, no user accounts, no nothing.  F-Droid has done
-[some]({{ site.baseurl }}{% post_url 2019-04-15-privacy-preserving-analytics %})
-[experiments]({{ site.baseurl }}{% post_url 2021-03-01-fdroid-metrics-and-clean-insights %})
+[some]({% post_url 2019-04-15-privacy-preserving-analytics %})
+[experiments]({% post_url 2021-03-01-fdroid-metrics-and-clean-insights %})
 with Clean Insights, and the approach looks quite promising.  Any kind of
 analytics needs to go beyond concerns of privacy in order to serve users.  We
 also need to consider that digital media has the power to
@@ -141,7 +141,7 @@ files without access controls, it unlocks all sorts of flexibility.  Mirrors of
 the _f-droid.org/repo_ repository can be safely delivered via services around
 the world, [local Raspberry Pis](https://gitlab.com/guardianproject/wind-offline-fdroid-repo-on-rpi),
 or even a USB thumb drive.  Any content can be archived by anyone
-[without permission or centralized services]({{ site.baseurl }}{% post_url 2022-02-05-decentralizing-distribution %})
+[without permission or centralized services]({% post_url 2022-02-05-decentralizing-distribution %})
 using [IPFS](https://en.wikipedia.org/wiki/InterPlanetary_File_System).
 
 

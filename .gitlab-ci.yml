@@ -1,4 +1,4 @@
-image: debian:buster
+image: debian:bookworm
 
 stages:
  - deploy
@@ -24,9 +24,6 @@ variables:
       > /etc/apt/apt.conf.d/99gitlab
   apt-get update
   apt-get install ca-certificates
-  sed -i 's,http:,https:,g' /etc/apt/sources.list
-  echo "deb https://deb.debian.org/debian/ buster-backports main" >> /etc/apt/sources.list
-  printf "Package\x3a po4a ruby-git ruby-jekyll-include-cache ruby-jekyll-last-modified-at ruby-jekyll-paginate-v2 ruby-jekyll-redirect-from ruby-jekyll-sitemap ruby-loofah ruby-nokogiri ruby-rchardet ruby-rouge ruby-zip\nPin\x3a release a=buster-backports\nPin-Priority\x3a 500\n" > /etc/apt/preferences.d/debian-buster-backports.pref
   apt-get update
   apt-get dist-upgrade
 
@@ -49,6 +46,7 @@ variables:
     ruby-git \
     ruby-jekyll-include-cache \
     ruby-jekyll-paginate-v2 \
+    ruby-jekyll-polyglot \
     ruby-jekyll-redirect-from \
     ruby-json \
     ruby-loofah \
@@ -140,7 +138,7 @@ pages:
 
 # check rsync mirrors still available
 rsync mirrors:
-  image: debian:bullseye-slim
+  image: debian:bookworm-slim
   stage: deploy
   only:
     - master@fdroid/fdroidserver
@@ -187,7 +185,7 @@ weblate merge conflict:
 
 
 spellcheckbot:
-  image: debian:bullseye
+  image: debian:bookworm
   stage: deploy
   allow_failure: true
   only:
@@ -271,7 +269,7 @@ check_fdroid_apk_bot:
 # basic checks for dev setup
 Vagrantfile:
   stage: deploy
-  image: debian:bullseye-slim
+  image: debian:bookworm-slim
   only:
     changes:
       - .gitlab-ci.yml
@@ -288,7 +286,7 @@ Vagrantfile:
 
 YAML Front Matter:
   stage: deploy
-  image: debian:bullseye-slim
+  image: debian:bookworm-slim
   only:
     changes:
       - .gitlab-ci.yml

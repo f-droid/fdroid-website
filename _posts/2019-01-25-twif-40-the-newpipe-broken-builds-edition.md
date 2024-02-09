@@ -28,7 +28,7 @@ There are **{{ page.number_of_added_apps }}** new and **{{ page.number_of_update
 
 <!--more-->
 
-Hi everyone, here's a fresh new TWIF for you! Many thanks to **[@Licaon\_Kter](https://forum.f-droid.org/u/Licaon_Kter)** for writing [edition 38]({{ site.baseurl }}{% post_url 2019-01-12-twif-38 %})! Unfortunately we had a problem with updating the website, which means it was delayed by almost two weeks. We now have a temporary solution in place for faster updates and are working on a permanent one. This edition will cover both TWIF 39 and 40.
+Hi everyone, here's a fresh new TWIF for you! Many thanks to **[@Licaon\_Kter](https://forum.f-droid.org/u/Licaon_Kter)** for writing [edition 38]({% post_url 2019-01-12-twif-38 %})! Unfortunately we had a problem with updating the website, which means it was delayed by almost two weeks. We now have a temporary solution in place for faster updates and are working on a permanent one. This edition will cover both TWIF 39 and 40.
 
 ### NewPipe and broken builds
 

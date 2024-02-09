@@ -5,7 +5,7 @@ author: "izzy"
 authorWebsite: "https://android.izzysoft.de/"
 ---
 
-Earlier this year, we reported about our progress concerning [reproducible builds]({{ site.baseurl }}/{% post_url 2023-01-15-towards-a-reproducible-fdroid %}). Meanwhile, more and more apps are using this; you can find [some statistics here](https://gitlab.com/obfusk/fdroid-misc-scripts/-/blob/master/reproducible/overview.md): compared to about 20 apps in November 2022, the number of apps being built reproducibly went up by almost a factor of 10 to around 191 in September 2023\. About 2 out of every 3 apps newly added to F-Droid are using this path. But what exactly does „reproducible build“ mean, in easy terms and without all the „tech-buzz“?
+Earlier this year, we reported about our progress concerning [reproducible builds]({% post_url 2023-01-15-towards-a-reproducible-fdroid %}). Meanwhile, more and more apps are using this; you can find [some statistics here](https://gitlab.com/obfusk/fdroid-misc-scripts/-/blob/master/reproducible/overview.md): compared to about 20 apps in November 2022, the number of apps being built reproducibly went up by almost a factor of 10 to around 191 in September 2023\. About 2 out of every 3 apps newly added to F-Droid are using this path. But what exactly does „reproducible build“ mean, in easy terms and without all the „tech-buzz“?
 
 All the years before, F-Droid created a dedicated key for each app to sign the published APKs, but now with reproducible builds F-Droid ships APKs that are signed by the upstream developer(s). Which proves to you that the developer confirmed: „this is what I intended to publish, this was built from my code“. And that it's distributed by F-Droid tells you: „F-Droid confirms, too, that this is the APK built from the very code the developer provided“. So neither of the two could have „sneaked in“ something not contained in the app's source code repository.
 
@@ -70,7 +70,7 @@ The bad part: the importance of keeping the keystore safe seems not to be self-e
 
 
 ### Lessons learned #2: how to keep your key safe and what measures to take for the event of loss?
-The obvious: Make backups! Not just on your development machine. Have another backup off-device – e.g. on an encrypted thumbdrive stored in a secure place, on a trustable server/machine elsewhere (with a friend, a family member, or a cloud service – again, an **encrypted** backup). And be sure you know how to restore it. You might not need a Backup Ceremony like the one the [F-Droid team performed]({{ site.baseurl }}/{% post_url 2023-07-15-community-controlled-backup-ceremony %}) – but some measures should be taken. And no: uploading them to your app's public git repo is **not** a good idea, not even for a backup (don't laugh, but that happened, too).
+The obvious: Make backups! Not just on your development machine. Have another backup off-device – e.g. on an encrypted thumbdrive stored in a secure place, on a trustable server/machine elsewhere (with a friend, a family member, or a cloud service – again, an **encrypted** backup). And be sure you know how to restore it. You might not need a Backup Ceremony like the one the [F-Droid team performed]({% post_url 2023-07-15-community-controlled-backup-ceremony %}) – but some measures should be taken. And no: uploading them to your app's public git repo is **not** a good idea, not even for a backup (don't laugh, but that happened, too).
 
 The less obvious: make sure someone/something can „vouch“ for you. Again, from the cases encountered:
 

@@ -50,4 +50,4 @@ For restoring, we agreed that it should happen in an in-person meeting.  The pro
 
 We believe this is a secure and reliable backup procedure for very sensitive data.  We welcome further scrutiny and plan to update the procedure as needed in a future meeting.
 
-(_This meeting was paid for by the [FFDW-DVD grant]({{ site.baseurl }}{% post_url 2022-02-05-decentralizing-distribution %})._)
+(_This meeting was paid for by the [FFDW-DVD grant]({% post_url 2022-02-05-decentralizing-distribution %})._)

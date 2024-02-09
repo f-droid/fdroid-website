@@ -30,7 +30,7 @@ Successful exploitation of this would require either a) the attacker was able to
 
 For f-droid.org and the Guardian Project repo, the index files are monitored, and changes to them are logged. So we can say with high confidence that _index-v1.jar_ was never removed, which is a prerequisite for exploiting this vulnerability.
 
-F-Droid client v1.15.4 disables all support for XML External Entities. The v1.16-alpha0 no longer supports XML indexes at all, and all code related to the XML index parsing and generation was removed.  We will also be working on improving the security of adding repos as part of the [FFDW-DVD]({{ site.baseurl }}{% post_url 2022-02-05-decentralizing-distribution %}) funding.
+F-Droid client v1.15.4 disables all support for XML External Entities. The v1.16-alpha0 no longer supports XML indexes at all, and all code related to the XML index parsing and generation was removed.  We will also be working on improving the security of adding repos as part of the [FFDW-DVD]({% post_url 2022-02-05-decentralizing-distribution %}) funding.
 
 
 ## CLN-005 -- Vulnerable TLS versions accepted
@@ -113,7 +113,7 @@ Logging sensitive information in the Android log is not a recommended practice a
 
 Privacy is important, and we want to ensure that any potentially private information is not leaked, even at the cost of easier debugging or service analytics.  So we appreciate the auditor's level of attention in reporting this issue and have removed the URLs from the logging on release builds.
 
-This vulnerability does not affect the security of operations.  Many web services put private tokens in URLs, and logging those would be like leaking clear text passwords.  All the well known repositories including f-droid.org are run as a static website, so there are [no user accounts]({{ site.baseurl }}{% post_url 2022-02-28-no-user-accounts-by-design %}).  The issue here is if someone got the "logcat" text, which is generally protected in Android, and apps cannot simply read the text anymore.  One potential leak scenario would be if someone installed a sensitive app, then uninstalled it.  That app install and uninstall would be listed in the log, available if the user was compelled to provide that log, or if the device was exploited to get access to protected data.
+This vulnerability does not affect the security of operations.  Many web services put private tokens in URLs, and logging those would be like leaking clear text passwords.  All the well known repositories including f-droid.org are run as a static website, so there are [no user accounts]({% post_url 2022-02-28-no-user-accounts-by-design %}).  The issue here is if someone got the "logcat" text, which is generally protected in Android, and apps cannot simply read the text anymore.  One potential leak scenario would be if someone installed a sensitive app, then uninstalled it.  That app install and uninstall would be listed in the log, available if the user was compelled to provide that log, or if the device was exploited to get access to protected data.
 
 This [will be fixed](https://gitlab.com/fdroid/fdroidclient/-/issues/2500) in the final v1.16 release.
 
