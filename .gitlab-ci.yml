@@ -311,3 +311,17 @@ YAML Front Matter:
       done
     - ./tools/check-yaml-front-matter.py
     - exit $EXITVALUE
+
+
+yamllint:
+  image: debian:bookworm-slim
+  stage: deploy
+  only:
+    changes:
+      - ".*.yml"
+      - "*.yml"
+      - ".yamllint"
+  script:
+    - *apt-template
+    - apt-get install yamllint
+    - yamllint .yamllint .*.yml _config.yml
