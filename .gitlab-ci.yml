@@ -1,8 +1,10 @@
+---
+
 image: debian:bookworm
 
 stages:
- - deploy
- - production
+  - deploy
+  - production
 
 variables:
   LC_ALL: C.UTF-8
@@ -83,18 +85,18 @@ f-droid.org:
     - master@fdroid/fdroidserver
   when: manual
   script:
-   - '[ ! -d /builds/output ] && echo "ERROR: /builds/output is not mounted inside docker!" && exit 1'
-   - *apt-template
-   - *setup_for_jekyll
-   - sed -Ei
-         -e "s,^(url\x3a).*,\1 https://f-droid.org,"
-         -e 's,^(baseurl\x3a).*,\1 "",'
-         _config.yml
-   - echo "Jekyll config used for CI:" && cat _config.yml
-   - jekyll build -d $OUT_DIR --trace
-   - ./tools/prepare-multi-lang.sh $OUT_DIR
-   - ./tools/deploy-external-assets.sh $OUT_DIR
-   - rsync -ax --delete $OUT_DIR /builds/output/
+    - '[ ! -d /builds/output ] && echo "ERROR: /builds/output is not mounted inside docker!" && exit 1'
+    - *apt-template
+    - *setup_for_jekyll
+    - sed -Ei
+        -e "s,^(url\x3a).*,\1 https://f-droid.org,"
+        -e 's,^(baseurl\x3a).*,\1 "",'
+        _config.yml
+    - echo "Jekyll config used for CI:" && cat _config.yml
+    - jekyll build -d $OUT_DIR --trace
+    - ./tools/prepare-multi-lang.sh $OUT_DIR
+    - ./tools/deploy-external-assets.sh $OUT_DIR
+    - rsync -ax --delete $OUT_DIR /builds/output/
 
 
 pages:
@@ -107,36 +109,37 @@ pages:
     expire_in: 1w
     when: always
   script:
-   - (find _*/ -type f | grep -Ev '\.(html|json|md|rb|scss|xml|yaml)$')
+    - (find _*/ -type f | grep -Ev '\.(html|json|md|rb|scss|xml|yaml)$')
          && (echo "ERROR The above files have a bad or missing file extension"; exit 1)
 
-   - *apt-template
-   - apt-get install curl python3-colorama python3-yaml
-   - ./tools/trigger-spellcheckbot
-   # use the 'gitlab ci' subset of languages
-   - sed -i 's,^languages:,ignored_languages:,' _config.yml
-   - sed -i 's,^gitlab_ci_languages:,languages:,' _config.yml
-   - *setup_for_jekyll
-   - ./tools/check-liquid-strings-var-names.py
-   - ./tools/check-format-strings.py
-   - ./tools/check-page-links.py
-   - ./tools/check-yaml-front-matter.py
-   - ./tools/check-do-not-translate
-   - ./tools/check-markdown-headers-are-localizable.py
-   # This is where GitLab pages will deploy to by default (e.g. "https://fdroid.gitlab.io/fdroid-website")
-   # so we need to make sure that the Jekyll configuration understands this.
-   - sed -Ei
-         -e "s,^(url\x3a).*,\1 'https://$CI_PROJECT_NAMESPACE.gitlab.io',"
-         -e "s,^(baseurl\x3a).*,\1 '/$CI_PROJECT_NAME',"
-         _config.yml
-   - echo "Jekyll config used for CI:" && cat _config.yml
-   - jekyll build -d public --trace --future
-   - cp public/robots.txt.noindex public/robots.txt
-   - ./tools/prepare-multi-lang.sh public --no-type-maps
-   - mkdir linkchecker/
-   - ln -s ../public linkchecker/$CI_PROJECT_NAME
-   - ruby -run -e httpd linkchecker/ -p 4000 > /dev/null 2>&1 &
-   - linkchecker http://localhost:4000/$CI_PROJECT_NAME --config=.linkcheckerrc
+    - *apt-template
+    - apt-get install curl python3-colorama python3-yaml
+    - ./tools/trigger-spellcheckbot
+    # use the 'gitlab ci' subset of languages
+    - sed -i 's,^languages:,ignored_languages:,' _config.yml
+    - sed -i 's,^gitlab_ci_languages:,languages:,' _config.yml
+    - *setup_for_jekyll
+    - ./tools/check-liquid-strings-var-names.py
+    - ./tools/check-format-strings.py
+    - ./tools/check-page-links.py
+    - ./tools/check-yaml-front-matter.py
+    - ./tools/check-do-not-translate
+    - ./tools/check-markdown-headers-are-localizable.py
+
+    # This is where GitLab pages will deploy to by default (e.g. "https://fdroid.gitlab.io/fdroid-website")
+    # so we need to make sure that the Jekyll configuration understands this.
+    - sed -Ei
+        -e "s,^(url\x3a).*,\1 'https://$CI_PROJECT_NAMESPACE.gitlab.io',"
+        -e "s,^(baseurl\x3a).*,\1 '/$CI_PROJECT_NAME',"
+        _config.yml
+    - echo "Jekyll config used for CI:" && cat _config.yml
+    - jekyll build -d public --trace --future
+    - cp public/robots.txt.noindex public/robots.txt
+    - ./tools/prepare-multi-lang.sh public --no-type-maps
+    - mkdir linkchecker/
+    - ln -s ../public linkchecker/$CI_PROJECT_NAME
+    - ruby -run -e httpd linkchecker/ -p 4000 > /dev/null 2>&1 &
+    - linkchecker http://localhost:4000/$CI_PROJECT_NAME --config=.linkcheckerrc
 
 
 # check rsync mirrors still available
