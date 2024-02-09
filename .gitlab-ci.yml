@@ -11,6 +11,8 @@ variables:
 
 # This template needs to be in text block format since gitlab-runner
 # exec cannot handling templates in list format.
+#
+# start with https:// even though ca-certificates is not installed
 .apt-template: &apt-template |
   set -x
   set -e
@@ -22,9 +24,11 @@ variables:
        'Acquire::Retries "20";' \
        'Dpkg::Use-Pty "0";' \
       > /etc/apt/apt.conf.d/99gitlab
+  sed -i s,http:,https:, /etc/apt/sources.list.d/debian.sources
+  echo 'Acquire::https::Verify-Peer "false";' > /etc/apt/apt.conf.d/99nocacertificates
   apt-get update
   apt-get install ca-certificates
-  apt-get update
+  rm /etc/apt/apt.conf.d/99nocacertificates
   apt-get dist-upgrade
 
 
