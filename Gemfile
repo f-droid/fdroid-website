@@ -10,7 +10,8 @@ gem "jekyll"
 group :jekyll_plugins do
     gem "jekyll-redirect-from"
     gem "jekyll-paginate-v2"
-    gem "jekyll-polyglot"
+    gem "jekyll-polyglot", :git => 'https://gitlab.com/fdroid/jekyll-polyglot.git',
+        :ref => '0760eda11055862afab9e30e3fd9f44b4190d753'
     gem 'jekyll-fdroid', :git => 'https://gitlab.com/fdroid/jekyll-fdroid.git',
         :ref => 'aafd701ad4dffcf0434f9c3ef93a56e88a9b3163'
     gem 'git'
