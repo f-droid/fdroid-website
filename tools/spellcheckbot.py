@@ -14,8 +14,8 @@ ci_pipeline_id = int(os.getenv('FROM_CI_PIPELINE_ID'))
 merge_request = None
 for mr in project.mergerequests.list(status='open'):
     print(mr.title, mr.id)
-    for pipeline in mr.pipelines():
-        if ci_pipeline_id == pipeline['id']:
+    for pipeline in mr.pipelines.list():
+        if ci_pipeline_id == pipeline.id:
             merge_request = mr
             break
     if merge_request:
