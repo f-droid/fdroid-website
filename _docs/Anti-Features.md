@@ -36,7 +36,7 @@ are shipping:
 
 * [Ads](#Ads) - advertising
 * [Tracking](#Tracking) - tracks and/or reports your activity to somewhere, even when it can be turned off
-* [Non-Free Network Services](#NonFreeNet) - promotes or depends entirely on a non-free network service
+* [Non-Free Network Services](#NonFreeNet) - promotes or depends entirely on a non-changeable or non-free network service
 * [Non-Free Addons](#NonFreeAdd) - promotes other non-libre apps or plugins
 * [Non-Free Dependencies](#NonFreeDep) - needs a non-libre app to work (e.g. Google Maps, Market)
 * [NSFW](#NSFW) - contains content that the user may not want to be publicized or visible everywhere
@@ -95,7 +95,7 @@ Here's the list of [apps with Tracking](https://monitor.f-droid.org/anti-feature
 ### Non-Free Network Services<a name="NonFreeNet" />
 
 This Anti-Feature is applied to apps that promote or depend entirely on
-a Non-Free network service which is impossible, or not easy to replace.
+a Non-Free network service, or any service which is impossible, or not easy to replace.
 Replacement requires changes to the app or service. This antifeature would
 not apply, if there is a simple configuration option that allows pointing the
 app to a running instance of an alternative, publicly available, self-hostable,

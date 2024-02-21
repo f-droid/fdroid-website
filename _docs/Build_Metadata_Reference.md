@@ -873,7 +873,7 @@ description:
     activity-based down-loading of weather data, maps, avatars etc. (data 
     hosting and delivery services), or uploading of crash logs etc.
 -   'NonFreeNet' - the application contains a feature that promotes or depends 
-    on a  Non-Free network service which is impossible, or not easy to replace.
+    on a Non-Free network service, or any service which is impossible, or not easy to replace.
     Replacement requires changes to the app or service. This antifeature would
     not apply, if there is a simple configuration option that allows pointing
     the app to a running instance of an alternative, publicly available,
