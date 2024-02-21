@@ -61,6 +61,7 @@ module Jekyll::FDroidFilters
     31 => '12',
     32 => '12L',
     33 => '13',
+    34 => '14',
   }
 
   # Convert a file size to a human-readable String.
