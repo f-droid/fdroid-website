@@ -72,15 +72,23 @@ module Jekyll::FDroidFilters
   # Returns human-readable String.
   def file_size_human_readable(input)
     input = input.to_f
-    i = SUFFIX.length - 1
+    site = @context.registers[:site]
+    p = site.data["strings"]["package"]
+    units = [
+      p["file_size_tebibytes"],
+      p["file_size_gibibytes"],
+      p["file_size_mebibytes"],
+      p["file_size_kibibytes"],
+      p["file_size_bytes"]
+    ]
+    i = units.length - 1
     while input > 512 && i > 0
       i -= 1
       input /= 1024
     end
-    ((input > 9 || input.modulo(1) < 0.1 ? '%d' : '%.1f') % input) + ' ' + SUFFIX[i]
+    number = ((input > 9 || input.modulo(1) < 0.1 ? '%d' : '%.1f') % input)
+    p["file_size_format"] % {:number => number, :unit => units[i]}
   end
-
-  SUFFIX = %w(TiB GiB MiB KiB B).freeze
 end
 
 Liquid::Template.register_filter(Jekyll::FDroidFilters)
