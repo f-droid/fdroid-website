@@ -22,11 +22,10 @@ pagination:
     </h3>
     <i class="post-meta">
       {% assign fmt_posted_on = '{{ post_date }}' %}
-      {% assign formatted_post_date = post.date | date: "%F" %}
-      {{ site.data.strings.news.posted_on | replace: fmt_posted_on, formatted_post_date }}
+      {% assign formatted_post_date = post.date | date: site.data.strings.news.date_format %}
 
       {% if post.author %}
-      {{ site.data.strings.news.by }}
+      {{ site.data.strings.news.posted_on_by | replace: fmt_posted_on, formatted_post_date }}
       {% if post.authorWebsite %}
       <a href="{{ post.authorWebsite }}">
         {% endif %}
@@ -45,6 +44,8 @@ pagination:
         {% if post.authorWebsite %}
       </a>
       {% endif %}
+      {% else %}
+      {{ site.data.strings.news.posted_on | replace: fmt_posted_on, formatted_post_date }}
       {% endif %}
     </i>
     <div>

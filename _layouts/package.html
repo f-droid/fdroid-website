@@ -177,10 +177,7 @@ layout: default-package-sidebar
 			<li class="package-version" {% if forloop.first %}id="latest"{% endif %}>
 			{% if page.suggested_version_name == package.version_name and suggestedDisplayed != true %}<a name="suggested"></a>{% endif %}
 				<div class="package-version-header">
-					{% comment %}
-					Use YYYY-MM-DD format, because it is more internationalizable than versions which include English month names.
-					{% endcomment %}
-					{% assign package_added_date = package.added | date: "%F" %}
+					{% assign package_added_date = package.added | date: site.data.strings.news.date_format %}
 					<a name="{{ package.version_name }}"></a>
 					<a name="{{ package.version_code }}"></a>
 					{% assign fmt_package_version = '{{ package_version }}' %}
