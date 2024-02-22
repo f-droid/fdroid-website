@@ -10,7 +10,11 @@ F-Droid's collection of apps and files are run on servers run by the core F-Droi
 
 There are two official F-Droid repository sections, the "repo" and the "archive". It's most important to mirror the "repo" since it is used much more than the "archive".
 
-The primary resources required by a mirror are disk space and upload bandwidth. Bandwidth requirements are reduced with each new mirror, but disk requirements grow at a [reasonable rate](https://ftp.fau.de/cgi-bin/show-ftp-stats.cgi?statstype=2&what=mirrorsize&mirrorname=fdroid&timespan=-1&graphsize=large&submit=Go%21). At time of writing (Mar 2019), the primary repository requires just over 60GB of disk space in 24K files, and the archive requires 300GB of disk space in 52K files. The amount of disk space required grows with every new app release.
+The primary resources required by a mirror are disk space and upload bandwidth.
+Bandwidth requirements are reduced with each new mirror, but disk requirements grow at a [reasonable rate](https://ftp.fau.de/cgi-bin/show-ftp-stats.cgi?statstype=2&what=mirrorsize&mirrorname=fdroid&timespan=-1&graphsize=large&submit=Go%21).
+In March 2019, the primary repository required just over 60GB of disk space in 24K files, and the archive required 300GB of disk space in 52K files.
+In February 2024, the primary repository required 450GB in 180K files, and the archive required 1.9TB in 430K files.
+The amount of disk space required grows with every new app release.
 
 There are many mirror servers which offer an _rsync_ connection, make sure to select the mirror closest to your mirror server:
 
@@ -65,47 +69,56 @@ This is an example server block for nginx. If used, it should be copied to _/etc
 server {
   listen [::]:80 ipv6only=off;
 
-  server_name fdroidmirror.example;
+  server_name fdroidmirror.example.com;
 
-  rewrite ^ https://fdroidmirror.example$request_uri permanent;
+  rewrite ^ https://$host$request_uri permanent;
 }
 
 server {
   listen [::]:443 ssl http2 ipv6only=off;
 
-  server_name fdroidmirror.example;
+  server_name fdroidmirror.example.com;
 
   root /var/www/fdroid/;
 
-  # TODO: https://gitlab.com/snippets/1834032
-  location /health {
-    proxy_pass http://127.0.0.1:8000/;
-  }
-
-  ssl_certificate /etc/letsencrypt/live/fdroidmirror.example/fullchain.pem;
-  ssl_certificate_key /etc/letsencrypt/live/fdroidmirror.example/privkey.pem;
+  ssl_certificate /etc/letsencrypt/live/fdroidmirror.example.com/fullchain.pem;
+  ssl_certificate_key /etc/letsencrypt/live/fdroidmirror.example.com/privkey.pem;
 
   # Insert here a TLS config from Mozilla SSL config generator https://mozilla.github.io/server-side-tls/ssl-config-generator/
 }
 ```
 
-5. Submit your mirror for inclusion
+5. Test that your mirror works
+
+Manually add your mirror to F-Droid to test that it works.
+
+Go to Settings -> Repositories, click the "+" button, and then manually enter your repository URL (don't use the QR code):
+https://fdroidmirror.example.com/fdroid/repo?fingerprint=43238D512C1E5EB2D6569F4A3AFBF5523418B82E0A3ED1552770ABB9A9C9CCAB
+
+Then disable the other mirrors except your new one, refresh the index with pull-to-refresh, and browse and install some apps!
+
+6. Set up a privacy policy
+
+Please include a privacy policy so that users can understand what happens with their metadata when using your mirror.
+For inspiration, see:
+
+* FAU: https://ftp.fau.de/datenschutz
+* Lysator: https://ftp.lysator.liu.se/datahanteringspolicy.txt
+* Purdue PLUG: https://plug-mirror.rcac.purdue.edu/info.html
+
+7. Submit your mirror for inclusion
 
 * Fork the [mirror monitor repo](https://gitlab.com/fdroid/mirror-monitor), add your mirror to the list in the README, and open a merge request.
 * Open an issue on the [admin repo](https://gitlab.com/fdroid/admin), including any pertinent information, requesting the inclusion of your mirror.
 * Once the core contributor team deems your mirror trustworthy and reliable, it will be accepted into the official list.
 
-Also, it would be nice to include a privacy policy so users can understand what happens with their metadata when using the mirror. Purdue PLUG https://plug-mirror.rcac.purdue.edu/info.html and FAU https://ftp.fau.de/datenschutz are two examples.
-
-
 #### Other considerations
 
-* Set up a privacy policy that describes what happens to the metadata (for example [FAU](https://ftp.fau.de/datenschutz/), [PLUG](https://plug-mirror.rcac.purdue.edu/info.html), [Lysator](https://ftp.lysator.liu.se/datahanteringspolicy.txt)).
 * Forward emails from cronjob failures so you know if the synchronization fails
-* Set up monitoring on your mirror so you know if it goes down (ideally keyword on _/srv/mymirror.org/htdocs/fdroid/repo/index-v1.jar_)
+* Monitor disk usage to prevent it from getting full
+* Monitor your mirror so you know if it goes down (ideally keyword on _/srv/mymirror.org/htdocs/fdroid/repo/index-v1.jar_)
 * Harden your SSH server config (disable password authentication, install _fail2ban_)
 * Enable unattended security upgrades (in Debian, just `apt-get install unattended-upgrades`)
-
 
 ## Running a Primary Mirror (receiving syncs via push)
 
