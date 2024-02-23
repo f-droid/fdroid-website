@@ -78,7 +78,7 @@ Ideally:
 
 -   Releases should be clearly tagged (or otherwise marked).
 
-Though we tried to build everything from source, we still need some prebuild binaries. Therefore we have some exceptions:
+Though we tried to build everything from source, we still need some prebuilt binaries. Therefore we have some exceptions:
 
 -   Trusted maven repository. While there is no guarantee that those binaries are
     free and correspondent to the source code, F-Droid allows the following known
@@ -102,7 +102,7 @@ Though we tried to build everything from source, we still need some prebuild bin
     -   Gradle plugin repo - hardcoded in Gradle, this repo hosts Gradle plugins.
 -   Android SDK/NDK. They are released as proprietary binaries but we don't have an alternative currently. There is in-progress work to package recent Android SDK versions in Debian.
 -   Gradle. Only some old versions of Gradle are packaged in Debian. Currently we download them from the developer website.
--   Flutter SDK. They are FOSS but not packaged in Debian and we are not able to built it from source. Currently we download them from the developer website with the Flutter srclib scripts.
+-   Flutter SDK. They are FOSS but not packaged in Debian and we are not able to build it from source. Currently we download them from the developer website with the Flutter srclib scripts.
 -   JSC/Hermes. They can be built from source which takes hours. Currently we downloaded them from npm and scanignore them.
 -   Binaries from pip wheels. Some apps install deps with pip and we just trust the untrustworthy Pypi.
 -   Binaries from Nix cache. These binaries are mostly reproducible.
