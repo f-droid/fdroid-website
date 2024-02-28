@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
-"POT-Creation-Date: 2024-02-07 17:38+0100\n"
+"POT-Creation-Date: 2024-02-28 10:52+0100\n"
 "PO-Revision-Date: 2024-02-22 18:32+0000\n"
 "Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/f-droid/website-docs/uk/>\n"
@@ -7236,7 +7236,9 @@ msgstr "Оглянути ваші некодові файли, щоб вияви
 
 #. type: Bullet: '-   '
 #: _docs/Inclusion_How-To.md
-msgid "They will skim through the source code to see if your application uses Non-Free dependencies, shows advertisements, tracks users, promotes or depends on Non-Free services/applications, or does anything that is harmful or otherwise undesirable for users."
+#, fuzzy
+#| msgid "They will skim through the source code to see if your application uses Non-Free dependencies, shows advertisements, tracks users, promotes or depends on Non-Free services/applications, or does anything that is harmful or otherwise undesirable for users."
+msgid "They will skim through the source code to see if your application uses Non-Free dependencies, shows advertisements, tracks users, promotes or depends on Non-Free or non-changeable services/applications, or does anything that is harmful or otherwise undesirable for users."
 msgstr "Оглянути джерельний код застосунку на наявність невільних залежностей, реклами, стеження за користувацькою поведінкою, просування або залежність від невільних служб чи застосунків і в цілому чогось шкідливого чи небажаного для авдиторії."
 
 #. type: Bullet: '-   '
@@ -7567,7 +7569,7 @@ msgstr "Явно позначати публічні версії: наприк�
 
 #. type: Plain text
 #: _docs/Inclusion_Policy.md
-msgid "Though we tried to build everything from source, we still need some prebuild binaries. Therefore we have some exceptions:"
+msgid "Though we tried to build everything from source, we still need some prebuilt binaries. Therefore we have some exceptions:"
 msgstr "Хоч ми намагалися зібрати все з джерельного коду, нам усе одно потрібні деякі двійкові файли попередньої збірки. Тому у нас є деякі винятки:"
 
 #. type: Bullet: '-   '
@@ -7632,7 +7634,7 @@ msgstr "Gradle. Лише деякі старі версії Gradle запако�
 
 #. type: Bullet: '-   '
 #: _docs/Inclusion_Policy.md
-msgid "Flutter SDK. They are FOSS but not packaged in Debian and we are not able to built it from source. Currently we download them from the developer website with the Flutter srclib scripts."
+msgid "Flutter SDK. They are FOSS but not packaged in Debian and we are not able to build it from source. Currently we download them from the developer website with the Flutter srclib scripts."
 msgstr "Flutter SDK. Вони FOSS, але не упаковані в Debian, і ми не можемо побудувати його з джерела. На разі ми завантажуємо їх з вебсайту розробника зі скриптами Flutter srclib."
 
 #. type: Bullet: '-   '
@@ -10412,7 +10414,9 @@ msgstr "Репозиторій F-Droid має два офіційні розді
 
 #. type: Plain text
 #: _docs/Running_a_Mirror.md
-msgid "The primary resources required by a mirror are disk space and upload bandwidth. Bandwidth requirements are reduced with each new mirror, but disk requirements grow at a [reasonable rate](https://ftp.fau.de/cgi-bin/show-ftp-stats.cgi?statstype=2&what=mirrorsize&mirrorname=fdroid&timespan=-1&graphsize=large&submit=Go%21). At time of writing (Mar 2019), the primary repository requires just over 60GB of disk space in 24K files, and the archive requires 300GB of disk space in 52K files. The amount of disk space required grows with every new app release."
+#, fuzzy
+#| msgid "The primary resources required by a mirror are disk space and upload bandwidth. Bandwidth requirements are reduced with each new mirror, but disk requirements grow at a [reasonable rate](https://ftp.fau.de/cgi-bin/show-ftp-stats.cgi?statstype=2&what=mirrorsize&mirrorname=fdroid&timespan=-1&graphsize=large&submit=Go%21). At time of writing (Mar 2019), the primary repository requires just over 60GB of disk space in 24K files, and the archive requires 300GB of disk space in 52K files. The amount of disk space required grows with every new app release."
+msgid "The primary resources required by a mirror are disk space and upload bandwidth.  Bandwidth requirements are reduced with each new mirror, but disk requirements grow at a [reasonable rate](https://ftp.fau.de/cgi-bin/show-ftp-stats.cgi?statstype=2&what=mirrorsize&mirrorname=fdroid&timespan=-1&graphsize=large&submit=Go%21).  In March 2019, the primary repository required just over 60GB of disk space in 24K files, and the archive required 300GB of disk space in 52K files.  In February 2024, the primary repository required 450GB in 180K files, and the archive required 1.9TB in 430K files.  The amount of disk space required grows with every new app release."
 msgstr "Передусім дзеркалу потрібні дисковий простір і широкий канал. Чим більше дзеркал, тим вужчого каналу достатньо кожному з них, але просторові вимоги [постійно зростають](https://ftp.fau.de/cgi-bin/show-ftp-stats.cgi?statstype=2&what=mirrorsize&mirrorname=fdroid&timespan=-1&graphsize=large&submit=Go%21). На момент написання (березень 2019), 24 000 файлів головного репозиторію потребують понад 60 ГБ простору, тоді як 52 000 файлів архіву важать 300 ГБ. Кожен випуск оновлення будь-якого застосунку збільшує вимоги до дискового простору."
 
 #. type: Plain text
@@ -10527,30 +10531,51 @@ msgstr "Ось зразок серверного блоку nginx. Для вик
 
 #. type: Fenced code block
 #: _docs/Running_a_Mirror.md
-#, no-wrap
+#, fuzzy, no-wrap
+#| msgid ""
+#| "server {\n"
+#| "  listen [::]:80 ipv6only=off;\n"
+#| "\n"
+#| "  server_name fdroidmirror.example;\n"
+#| "\n"
+#| "  rewrite ^ https://fdroidmirror.example$request_uri permanent;\n"
+#| "}\n"
+#| "\n"
+#| "server {\n"
+#| "  listen [::]:443 ssl http2 ipv6only=off;\n"
+#| "\n"
+#| "  server_name fdroidmirror.example;\n"
+#| "\n"
+#| "  root /var/www/fdroid/;\n"
+#| "\n"
+#| "  # TODO: https://gitlab.com/snippets/1834032\n"
+#| "  location /health {\n"
+#| "    proxy_pass http://127.0.0.1:8000/;\n"
+#| "  }\n"
+#| "\n"
+#| "  ssl_certificate /etc/letsencrypt/live/fdroidmirror.example/fullchain.pem;\n"
+#| "  ssl_certificate_key /etc/letsencrypt/live/fdroidmirror.example/privkey.pem;\n"
+#| "\n"
+#| "  # Insert here a TLS config from Mozilla SSL config generator https://mozilla.github.io/server-side-tls/ssl-config-generator/\n"
+#| "}\n"
 msgid ""
 "server {\n"
 "  listen [::]:80 ipv6only=off;\n"
 "\n"
-"  server_name fdroidmirror.example;\n"
+"  server_name fdroidmirror.example.com;\n"
 "\n"
-"  rewrite ^ https://fdroidmirror.example$request_uri permanent;\n"
+"  rewrite ^ https://$host$request_uri permanent;\n"
 "}\n"
 "\n"
 "server {\n"
 "  listen [::]:443 ssl http2 ipv6only=off;\n"
 "\n"
-"  server_name fdroidmirror.example;\n"
+"  server_name fdroidmirror.example.com;\n"
 "\n"
 "  root /var/www/fdroid/;\n"
 "\n"
-"  # TODO: https://gitlab.com/snippets/1834032\n"
-"  location /health {\n"
-"    proxy_pass http://127.0.0.1:8000/;\n"
-"  }\n"
-"\n"
-"  ssl_certificate /etc/letsencrypt/live/fdroidmirror.example/fullchain.pem;\n"
-"  ssl_certificate_key /etc/letsencrypt/live/fdroidmirror.example/privkey.pem;\n"
+"  ssl_certificate /etc/letsencrypt/live/fdroidmirror.example.com/fullchain.pem;\n"
+"  ssl_certificate_key /etc/letsencrypt/live/fdroidmirror.example.com/privkey.pem;\n"
 "\n"
 "  # Insert here a TLS config from Mozilla SSL config generator https://mozilla.github.io/server-side-tls/ssl-config-generator/\n"
 "}\n"
@@ -10583,6 +10608,56 @@ msgstr ""
 
 #. type: Bullet: '5. '
 #: _docs/Running_a_Mirror.md
+msgid "Test that your mirror works"
+msgstr ""
+
+#. type: Plain text
+#: _docs/Running_a_Mirror.md
+msgid "Manually add your mirror to F-Droid to test that it works."
+msgstr ""
+
+#. type: Plain text
+#: _docs/Running_a_Mirror.md
+#, no-wrap
+msgid ""
+"Go to Settings -> Repositories, click the \"+\" button, and then manually enter your repository URL (don't use the QR code):\n"
+"https://fdroidmirror.example.com/fdroid/repo?fingerprint=43238D512C1E5EB2D6569F4A3AFBF5523418B82E0A3ED1552770ABB9A9C9CCAB\n"
+msgstr ""
+
+#. type: Plain text
+#: _docs/Running_a_Mirror.md
+msgid "Then disable the other mirrors except your new one, refresh the index with pull-to-refresh, and browse and install some apps!"
+msgstr ""
+
+#. type: Bullet: '6. '
+#: _docs/Running_a_Mirror.md
+msgid "Set up a privacy policy"
+msgstr ""
+
+#. type: Plain text
+#: _docs/Running_a_Mirror.md
+#, fuzzy
+#| msgid "Also, it would be nice to include a privacy policy so users can understand what happens with their metadata when using the mirror. Purdue PLUG https://plug-mirror.rcac.purdue.edu/info.html and FAU https://ftp.fau.de/datenschutz are two examples."
+msgid "Please include a privacy policy so that users can understand what happens with their metadata when using your mirror.  For inspiration, see:"
+msgstr "Також варто додати політику приватності, щоб авдиторія розуміла, що відбувається з їхніми даними при використанні дзеркала. Зразки: Purdue PLUG https://plug-mirror.rcac.purdue.edu/info.html і FAU https://ftp.fau.de/datenschutz."
+
+#. type: Bullet: '* '
+#: _docs/Running_a_Mirror.md
+msgid "FAU: https://ftp.fau.de/datenschutz"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/Running_a_Mirror.md
+msgid "Lysator: https://ftp.lysator.liu.se/datahanteringspolicy.txt"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/Running_a_Mirror.md
+msgid "Purdue PLUG: https://plug-mirror.rcac.purdue.edu/info.html"
+msgstr ""
+
+#. type: Bullet: '7. '
+#: _docs/Running_a_Mirror.md
 msgid "Submit your mirror for inclusion"
 msgstr "Запропонуйте нам додати ваше дзеркало"
 
@@ -10601,11 +10676,6 @@ msgstr "Відкрийте обговорення в [адміністрацій
 msgid "Once the core contributor team deems your mirror trustworthy and reliable, it will be accepted into the official list."
 msgstr "Щойно команда F-Droid визнає ваше дзеркало довіреним і надійним, його буде додано в офіційний перелік."
 
-#. type: Plain text
-#: _docs/Running_a_Mirror.md
-msgid "Also, it would be nice to include a privacy policy so users can understand what happens with their metadata when using the mirror. Purdue PLUG https://plug-mirror.rcac.purdue.edu/info.html and FAU https://ftp.fau.de/datenschutz are two examples."
-msgstr "Також варто додати політику приватності, щоб авдиторія розуміла, що відбувається з їхніми даними при використанні дзеркала. Зразки: Purdue PLUG https://plug-mirror.rcac.purdue.edu/info.html і FAU https://ftp.fau.de/datenschutz."
-
 #. type: Title ####
 #: _docs/Running_a_Mirror.md
 #, no-wrap
@@ -10614,17 +10684,19 @@ msgstr "Що ще варто зробити"
 
 #. type: Bullet: '* '
 #: _docs/Running_a_Mirror.md
-msgid "Set up a privacy policy that describes what happens to the metadata (for example [FAU](https://ftp.fau.de/datenschutz/), [PLUG](https://plug-mirror.rcac.purdue.edu/info.html), [Lysator](https://ftp.lysator.liu.se/datahanteringspolicy.txt))."
-msgstr "Додайте політику приватності з описом того, що відбувається з метаданими (зразки: [FAU](https://ftp.fau.de/datenschutz/), [PLUG](https://plug-mirror.rcac.purdue.edu/info.html), [Lysator](https://ftp.lysator.liu.se/datahanteringspolicy.txt))."
-
-#. type: Bullet: '* '
-#: _docs/Running_a_Mirror.md
 msgid "Forward emails from cronjob failures so you know if the synchronization fails"
 msgstr "Налаштуйте cron таким чином, щоб отримувати листи про збої завдань синхронізації"
 
 #. type: Bullet: '* '
 #: _docs/Running_a_Mirror.md
-msgid "Set up monitoring on your mirror so you know if it goes down (ideally keyword on _/srv/mymirror.org/htdocs/fdroid/repo/index-v1.jar_)"
+msgid "Monitor disk usage to prevent it from getting full"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/Running_a_Mirror.md
+#, fuzzy
+#| msgid "Set up monitoring on your mirror so you know if it goes down (ideally keyword on _/srv/mymirror.org/htdocs/fdroid/repo/index-v1.jar_)"
+msgid "Monitor your mirror so you know if it goes down (ideally keyword on _/srv/mymirror.org/htdocs/fdroid/repo/index-v1.jar_)"
 msgstr "Автоматизуйте перевірки свого дзеркала, щоб одразу дізнаватись, коли воно стає недоступним (перевіряйте доступність файлу _/srv/mymirror.org/htdocs/fdroid/repo/index-v1.jar_)"
 
 #. type: Bullet: '* '
@@ -12425,6 +12497,9 @@ msgstr "Параметри"
 #: _docs/Whitelabel_Builds.md
 msgid "For a custom build that enables Automatic Updates by default, override _app/src/main/res/xml/preferences.xml_. You can customize the preferences and their default values in _app/src/mycompany/res/xml/preferences.xml_. The fully automatic update requires [Privileged Extension](https://gitlab.com/fdroid/privileged-extension). With regular access, the updates will only automatically download. The user still needs to click install on each one."
 msgstr "Щоб усталено вимкнути автоматичні оновлення в своїй збірці, замініть _app/src/main/res/xml/preferences.xml_. Можете допрацювати параметри та їхні усталені значення в _app/src/mycompany/res/xml/preferences.xml_. Для повністю автоматичного оновлення потрібне [привілейоване розширення](https://gitlab.com/fdroid/privileged-extension). Без нього, оновлення будуть лише автоматично завантажуватись — і користувачці чи користувачу все ще доводитиметься торкати «Встановити» для кожного з них."
+
+#~ msgid "Set up a privacy policy that describes what happens to the metadata (for example [FAU](https://ftp.fau.de/datenschutz/), [PLUG](https://plug-mirror.rcac.purdue.edu/info.html), [Lysator](https://ftp.lysator.liu.se/datahanteringspolicy.txt))."
+#~ msgstr "Додайте політику приватності з описом того, що відбувається з метаданими (зразки: [FAU](https://ftp.fau.de/datenschutz/), [PLUG](https://plug-mirror.rcac.purdue.edu/info.html), [Lysator](https://ftp.lysator.liu.se/datahanteringspolicy.txt))."
 
 #~ msgid "`RepoTrunk` - For svn and git-svn repositories, especially those who don't have a bundled _AndroidManifest.xml_ file, the Tags and RepoManifest checks will not work, since there is no version information to obtain. But, for those apps who automate their build process with the commit ref that HEAD points to, RepoTrunk will set the _CurrentVersion_ and _CurrentVersionCode_ to that number."
 #~ msgstr "`RepoTrunk` — для репозиторіїв svn та git-svn, особливо без файлу _AndroidManifest.xml_, перевірки Tags і RepoManifest неможливі, бо нема звідки отримувати дані про версію. Але для тих застосунків, процес збірки яких автоматизовано за допомогою посилання на HEAD-коміт, RepoTrunk може робити це посилання значенням полів _CurrentVersion_ і _CurrentVersionCode_."
