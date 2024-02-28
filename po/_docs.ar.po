@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
-"POT-Creation-Date: 2024-02-07 17:38+0100\n"
+"POT-Creation-Date: 2024-02-28 10:52+0100\n"
 "PO-Revision-Date: 2023-09-21 10:28+0000\n"
 "Last-Translator: jonnysemon <jonnysemon@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Arabic <https://hosted.weblate.org/projects/f-droid/website-docs/ar/>\n"
@@ -6730,7 +6730,7 @@ msgstr ""
 
 #. type: Bullet: '-   '
 #: _docs/Inclusion_How-To.md
-msgid "They will skim through the source code to see if your application uses Non-Free dependencies, shows advertisements, tracks users, promotes or depends on Non-Free services/applications, or does anything that is harmful or otherwise undesirable for users."
+msgid "They will skim through the source code to see if your application uses Non-Free dependencies, shows advertisements, tracks users, promotes or depends on Non-Free or non-changeable services/applications, or does anything that is harmful or otherwise undesirable for users."
 msgstr ""
 
 #. type: Bullet: '-   '
@@ -9745,7 +9745,7 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/Running_a_Mirror.md
-msgid "The primary resources required by a mirror are disk space and upload bandwidth. Bandwidth requirements are reduced with each new mirror, but disk requirements grow at a [reasonable rate](https://ftp.fau.de/cgi-bin/show-ftp-stats.cgi?statstype=2&what=mirrorsize&mirrorname=fdroid&timespan=-1&graphsize=large&submit=Go%21). At time of writing (Mar 2019), the primary repository requires just over 60GB of disk space in 24K files, and the archive requires 300GB of disk space in 52K files. The amount of disk space required grows with every new app release."
+msgid "The primary resources required by a mirror are disk space and upload bandwidth.  Bandwidth requirements are reduced with each new mirror, but disk requirements grow at a [reasonable rate](https://ftp.fau.de/cgi-bin/show-ftp-stats.cgi?statstype=2&what=mirrorsize&mirrorname=fdroid&timespan=-1&graphsize=large&submit=Go%21).  In March 2019, the primary repository required just over 60GB of disk space in 24K files, and the archive required 300GB of disk space in 52K files.  In February 2024, the primary repository required 450GB in 180K files, and the archive required 1.9TB in 430K files.  The amount of disk space required grows with every new app release."
 msgstr ""
 
 #. type: Plain text
@@ -9858,31 +9858,74 @@ msgid ""
 "server {\n"
 "  listen [::]:80 ipv6only=off;\n"
 "\n"
-"  server_name fdroidmirror.example;\n"
+"  server_name fdroidmirror.example.com;\n"
 "\n"
-"  rewrite ^ https://fdroidmirror.example$request_uri permanent;\n"
+"  rewrite ^ https://$host$request_uri permanent;\n"
 "}\n"
 "\n"
 "server {\n"
 "  listen [::]:443 ssl http2 ipv6only=off;\n"
 "\n"
-"  server_name fdroidmirror.example;\n"
+"  server_name fdroidmirror.example.com;\n"
 "\n"
 "  root /var/www/fdroid/;\n"
 "\n"
-"  # TODO: https://gitlab.com/snippets/1834032\n"
-"  location /health {\n"
-"    proxy_pass http://127.0.0.1:8000/;\n"
-"  }\n"
-"\n"
-"  ssl_certificate /etc/letsencrypt/live/fdroidmirror.example/fullchain.pem;\n"
-"  ssl_certificate_key /etc/letsencrypt/live/fdroidmirror.example/privkey.pem;\n"
+"  ssl_certificate /etc/letsencrypt/live/fdroidmirror.example.com/fullchain.pem;\n"
+"  ssl_certificate_key /etc/letsencrypt/live/fdroidmirror.example.com/privkey.pem;\n"
 "\n"
 "  # Insert here a TLS config from Mozilla SSL config generator https://mozilla.github.io/server-side-tls/ssl-config-generator/\n"
 "}\n"
 msgstr ""
 
 #. type: Bullet: '5. '
+#: _docs/Running_a_Mirror.md
+msgid "Test that your mirror works"
+msgstr ""
+
+#. type: Plain text
+#: _docs/Running_a_Mirror.md
+msgid "Manually add your mirror to F-Droid to test that it works."
+msgstr ""
+
+#. type: Plain text
+#: _docs/Running_a_Mirror.md
+#, no-wrap
+msgid ""
+"Go to Settings -> Repositories, click the \"+\" button, and then manually enter your repository URL (don't use the QR code):\n"
+"https://fdroidmirror.example.com/fdroid/repo?fingerprint=43238D512C1E5EB2D6569F4A3AFBF5523418B82E0A3ED1552770ABB9A9C9CCAB\n"
+msgstr ""
+
+#. type: Plain text
+#: _docs/Running_a_Mirror.md
+msgid "Then disable the other mirrors except your new one, refresh the index with pull-to-refresh, and browse and install some apps!"
+msgstr ""
+
+#. type: Bullet: '6. '
+#: _docs/Running_a_Mirror.md
+msgid "Set up a privacy policy"
+msgstr ""
+
+#. type: Plain text
+#: _docs/Running_a_Mirror.md
+msgid "Please include a privacy policy so that users can understand what happens with their metadata when using your mirror.  For inspiration, see:"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/Running_a_Mirror.md
+msgid "FAU: https://ftp.fau.de/datenschutz"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/Running_a_Mirror.md
+msgid "Lysator: https://ftp.lysator.liu.se/datahanteringspolicy.txt"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/Running_a_Mirror.md
+msgid "Purdue PLUG: https://plug-mirror.rcac.purdue.edu/info.html"
+msgstr ""
+
+#. type: Bullet: '7. '
 #: _docs/Running_a_Mirror.md
 msgid "Submit your mirror for inclusion"
 msgstr ""
@@ -9902,20 +9945,10 @@ msgstr ""
 msgid "Once the core contributor team deems your mirror trustworthy and reliable, it will be accepted into the official list."
 msgstr ""
 
-#. type: Plain text
-#: _docs/Running_a_Mirror.md
-msgid "Also, it would be nice to include a privacy policy so users can understand what happens with their metadata when using the mirror. Purdue PLUG https://plug-mirror.rcac.purdue.edu/info.html and FAU https://ftp.fau.de/datenschutz are two examples."
-msgstr ""
-
 #. type: Title ####
 #: _docs/Running_a_Mirror.md
 #, no-wrap
 msgid "Other considerations"
-msgstr ""
-
-#. type: Bullet: '* '
-#: _docs/Running_a_Mirror.md
-msgid "Set up a privacy policy that describes what happens to the metadata (for example [FAU](https://ftp.fau.de/datenschutz/), [PLUG](https://plug-mirror.rcac.purdue.edu/info.html), [Lysator](https://ftp.lysator.liu.se/datahanteringspolicy.txt))."
 msgstr ""
 
 #. type: Bullet: '* '
@@ -9925,7 +9958,12 @@ msgstr ""
 
 #. type: Bullet: '* '
 #: _docs/Running_a_Mirror.md
-msgid "Set up monitoring on your mirror so you know if it goes down (ideally keyword on _/srv/mymirror.org/htdocs/fdroid/repo/index-v1.jar_)"
+msgid "Monitor disk usage to prevent it from getting full"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/Running_a_Mirror.md
+msgid "Monitor your mirror so you know if it goes down (ideally keyword on _/srv/mymirror.org/htdocs/fdroid/repo/index-v1.jar_)"
 msgstr ""
 
 #. type: Bullet: '* '
