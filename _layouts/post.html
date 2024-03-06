@@ -7,9 +7,10 @@ layout: default
   <header class="post-header">
     <h2 class="post-title" itemprop="name headline">{{ page.title }}</h2>
     <i class="post-meta">
-		Posted on {{ page.date | date: "%F" }}
+		{% assign fmt_posted_on = '{{ post_date }}' %}
+		{% assign formatted_post_date = page.date | date: site.data.strings.news.date_format %}
 		{% if page.author %}
-			by
+			{{ site.data.strings.news.posted_on_by | replace: fmt_posted_on, formatted_post_date }}
 			{% if page.authorWebsite %}
 				<a href="{{ page.authorWebsite }}">
 			{% endif %}
@@ -28,6 +29,8 @@ layout: default
 			{% if page.authorWebsite %}
 				</a>
 			{% endif %}
+		{% else %}
+			{{ site.data.strings.news.posted_on | replace: fmt_posted_on, formatted_post_date }}
 		{% endif %}
 	</i>
   </header>
