@@ -29,7 +29,7 @@ infrastructure. Our app automatically selects a mirror for each download based
 on connection performance. F-Droid carefully curates a list of official
 mirrors. Our app gives users complete control over which mirrors they want to
 use. We are also exploring ways to provide more information about mirrors to
-assist users in making informed trust decisions.
+assist users in making informed trust decisions.  Towards that end, the country where the mirror is located is now [provided](https://gitlab.com/fdroid/fdroiddata/-/blob/040967b76bb064b9d6d2685a23baf79fca8167f9/config/mirrors.yml) for official mirrors, which the client will [soon use](https://gitlab.com/fdroid/fdroidclient/-/issues/2241) when choosing where to download from.  Additionally, we require a good privacy policy for new mirrors, and are working on a way to make that [visible](https://gitlab.com/fdroid/fdroidserver/-/merge_requests/1031) to users.
 
 As a side note, the popular proprietary CDN provider Cloudflare is sponsoring a
 mirror of our [website](https://cloudflare.f-droid.org) and
