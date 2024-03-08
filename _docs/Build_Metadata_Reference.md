@@ -131,12 +131,12 @@ The following sections describe the fields recognised within the file.
 * [_Disabled_](#Disabled)
 * [_RequiresRoot_](#RequiresRoot)
 * [_ArchivePolicy_](#ArchivePolicy)
+* [_AutoUpdateMode_](#AutoUpdateMode)
 * [_UpdateCheckMode_](#UpdateCheckMode)
 * [_UpdateCheckIgnore_](#UpdateCheckIgnore)
 * [_VercodeOperation_](#VercodeOperation)
 * [_UpdateCheckName_](#UpdateCheckName)
 * [_UpdateCheckData_](#UpdateCheckData)
-* [_AutoUpdateMode_](#AutoUpdateMode)
 * [_CurrentVersion_](#CurrentVersion)
 * [_CurrentVersionCode_](#CurrentVersionCode)
 * [_NoSourceSince_](#NoSourceSince)
@@ -950,6 +950,49 @@ of [_VercodeOperation_](#VercodeOperation) the default is calculated as
 ABIs, 6 versions will be kept.
 
 
+### _AutoUpdateMode_<a name="AutoUpdateMode"></a>
+
+This determines the method used for auto-generating new builds when
+new releases are available - in other words, adding a new Build
+Version line to the metadata. This happens in conjunction with the
+_UpdateCheckMode_ functionality - i.e. when an update is detected by
+that, it is also processed by this.
+
+Valid modes are:
+
+-   `None` - Auto-updating is disabled
+-   `Version` - Auto-updating is enabled.
+
+    If `UpdateCheckMode` is set to `Tags`, this should be set to
+    `Version` without any pattern. The checked tag is used directly.
+
+    If `UpdateCheckMode` is set to `HTTP`, a pattern should be added
+    after the `Version`. The pattern is used to generate a value
+    (tag name) used for the `commit:` property of new build blocks.
+    It is simply text in which `%v` and `%c` are replaced with the required
+    version name and version code respectively. The resulting
+    string must match an existing tag in the app's repo, which then will be
+    used by F-Droid to build the corresponding version.
+
+    For example, if an app always has a tag `2.7.2` corresponding to
+    version 2.7.2, you would simply specify `Version %v`. If an app
+    always has a tag `ver_1234` for a version with version code 1234,
+    you would specify `Version ver_%c`.
+
+    Continuing the first example above, you would specify that as
+    `Version +-fdroid %v` - `-fdroid` is the suffix F-Droid will then append to the
+    `versionName` specified in e.g. `build.gradle` when building the APK.
+
+    Additionally, a suffix can be added to the version name at this
+    stage, to differentiate F-Droid's build from the original.
+    Continuing the first example above, you would specify that as
+    `Version +-fdroid %v` - `-fdroid` is the suffix.
+
+
+For apps with a list of [_VercodeOperation_](#VercodeOperation) the number of builds
+is equal to the number of items in the list.
+
+
 ### _UpdateCheckMode_<a name="UpdateCheckMode"></a>
 
 This determines the method using for determining when new releases are
@@ -1115,48 +1158,6 @@ Examples for `UpdateCheckMode: HTTP`:
 -   `https://foo/version.json|"version_code":.*"(.*)"|.|"version_name":.*\"(.*)\",`
 -   `https://foo/version_fdroid.txt|versionCode=(.*)|.|versionName=(.*)`
 
-
-### _AutoUpdateMode_<a name="AutoUpdateMode"></a>
-
-This determines the method used for auto-generating new builds when
-new releases are available - in other words, adding a new Build
-Version line to the metadata. This happens in conjunction with the
-_UpdateCheckMode_ functionality - i.e. when an update is detected by
-that, it is also processed by this.
-
-Valid modes are:
-
--   `None` - Auto-updating is disabled
--   `Version` - Auto-updating is enabled.
-
-    If `UpdateCheckMode` is set to `Tags`, this should be set to
-    `Version` without any pattern. The checked tag is used directly.
-
-    If `UpdateCheckMode` is set to `HTTP`, a pattern should be added
-    after the `Version`. The pattern is used to generate a value
-    (tag name) used for the `commit:` property of new build blocks.
-    It is simply text in which `%v` and `%c` are replaced with the required
-    version name and version code respectively. The resulting
-    string must match an existing tag in the app's repo, which then will be
-    used by F-Droid to build the corresponding version.
-
-    For example, if an app always has a tag `2.7.2` corresponding to
-    version 2.7.2, you would simply specify `Version %v`. If an app
-    always has a tag `ver_1234` for a version with version code 1234,
-    you would specify `Version ver_%c`.
-
-    Continuing the first example above, you would specify that as
-    `Version +-fdroid %v` - `-fdroid` is the suffix F-Droid will then append to the
-    `versionName` specified in e.g. `build.gradle` when building the APK.
-
-    Additionally, a suffix can be added to the version name at this
-    stage, to differentiate F-Droid's build from the original.
-    Continuing the first example above, you would specify that as
-    `Version +-fdroid %v` - `-fdroid` is the suffix.
-
-
-For apps with a list of [_VercodeOperation_](#VercodeOperation) the number of builds
-is equal to the number of items in the list.
 
 ### _CurrentVersion_<a name="CurrentVersion"></a>
 
