@@ -66,37 +66,36 @@ module Jekyll::FDroidFilters
 
   def i18n_number(number)
     site = @context.registers[:site]
-    if site.active_lang == 'ar'
-      number.to_s.gsub(/[0-9.]/,
-                       '0'=>"\u{0660}",
-                       '1'=>"\u{0661}",
-                       '2'=>"\u{0662}",
-                       '3'=>"\u{0663}",
-                       '4'=>"\u{0664}",
-                       '5'=>"\u{0665}",
-                       '6'=>"\u{0666}",
-                       '7'=>"\u{0667}",
-                       '8'=>"\u{0668}",
-                       '9'=>"\u{0669}",
-                       '.'=>"\u{066B}",
-                      )
-    elsif site.active_lang == 'fa'
-      number.to_s.gsub(/[0-9.]/,
-                       '0'=>"\u{06F0}",
-                       '1'=>"\u{06F1}",
-                       '2'=>"\u{06F2}",
-                       '3'=>"\u{06F3}",
-                       '4'=>"\u{06F4}",
-                       '5'=>"\u{06F5}",
-                       '6'=>"\u{06F6}",
-                       '7'=>"\u{06F7}",
-                       '8'=>"\u{06F8}",
-                       '9'=>"\u{06F9}",
-                       '.'=>"\u{066B}",
-                      )
-    else
-      number
+    if site.active_lang == 'ar' and number.to_s.match?(/^[0-9.]+$/)
+      return number.to_s.gsub(/[0-9.]/,
+                              '0' => "\u{0660}",
+                              '1' => "\u{0661}",
+                              '2' => "\u{0662}",
+                              '3' => "\u{0663}",
+                              '4' => "\u{0664}",
+                              '5' => "\u{0665}",
+                              '6' => "\u{0666}",
+                              '7' => "\u{0667}",
+                              '8' => "\u{0668}",
+                              '9' => "\u{0669}",
+                              '.' => "\u{066B}",
+                             )
+    elsif site.active_lang == 'fa' and number.to_s.match?(/^[0-9.]+$/)
+      return number.to_s.gsub(/[0-9.]/,
+                              '0' => "\u{06F0}",
+                              '1' => "\u{06F1}",
+                              '2' => "\u{06F2}",
+                              '3' => "\u{06F3}",
+                              '4' => "\u{06F4}",
+                              '5' => "\u{06F5}",
+                              '6' => "\u{06F6}",
+                              '7' => "\u{06F7}",
+                              '8' => "\u{06F8}",
+                              '9' => "\u{06F9}",
+                              '.' => "\u{066B}",
+                             )
     end
+    return number  # return unchanged if none of the conditions were met
   end
 
   # Convert a file size to a human-readable String.

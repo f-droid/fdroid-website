@@ -23,7 +23,8 @@ layout: default-package-sidebar
 	{% if page.whats_new and page.suggested_version_name %}
 	<div class="package-whats-new">
 		{% assign fmt_latest_version = '{{ latest_version }}' %}
-		<div class="new-in-version">{{ strings.new_in_version | replace: fmt_latest_version, page.suggested_version_name }}</div>
+		{% assign version_name = page.suggested_version_name | i18n_number %}
+		<div class="new-in-version">{{ strings.new_in_version | replace: fmt_latest_version, version_name }}</div>
 		<div dir="auto">
 			{{ page.whats_new }}
 		</div>
@@ -182,9 +183,10 @@ layout: default-package-sidebar
 					<a name="{{ package.version_code }}"></a>
 					{% comment %}fmt_package_version_* are strings in the JSON that are replaced here{% endcomment %}
 					{% assign fmt_package_version = '{{ package_version }}' %}
+					{% assign version_name = package.version_name | i18n_number %}
 					{% assign fmt_package_version_code = '{{ package_version_code }}' %}
 					{% assign version_code = package.version_code | i18n_number %}
-					{{ strings.version_info | replace: fmt_package_version, package.version_name | replace: fmt_package_version_code, version_code }}
+					{{ strings.version_info | replace: fmt_package_version, version_name | replace: fmt_package_version_code, version_code }}
 					{% if page.suggested_version_name == package.version_name and suggestedDisplayed != true %}<span class="suggested-badge">{{ strings.suggested }}</span>{% assign suggestedDisplayed = true %}{% else %} - {% endif %}
 					{% assign fmt_package_added_date = '{{ package_added_date }}' %}
 					{{ strings.added_on | replace: fmt_package_added_date, package_added_date }}
