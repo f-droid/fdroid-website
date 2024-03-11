@@ -22,7 +22,7 @@ module Jekyll::FDroidFilters
   #
   # Returns the Android version.
   def android_sdk_level_to_version(input)
-    @@AndroidSdkLevelToVersionRelation.fetch(input, '?')
+    i18n_number(@@AndroidSdkLevelToVersionRelation.fetch(input, '?'))
   end
 
   # Hash with relation between Android SDK Level and Android version
@@ -64,6 +64,41 @@ module Jekyll::FDroidFilters
     34 => '14',
   }
 
+  def i18n_number(number)
+    site = @context.registers[:site]
+    if site.active_lang == 'ar'
+      number.to_s.gsub(/[0-9.]/,
+                       '0'=>"\u{0660}",
+                       '1'=>"\u{0661}",
+                       '2'=>"\u{0662}",
+                       '3'=>"\u{0663}",
+                       '4'=>"\u{0664}",
+                       '5'=>"\u{0665}",
+                       '6'=>"\u{0666}",
+                       '7'=>"\u{0667}",
+                       '8'=>"\u{0668}",
+                       '9'=>"\u{0669}",
+                       '.'=>"\u{066B}",
+                      )
+    elsif site.active_lang == 'fa'
+      number.to_s.gsub(/[0-9.]/,
+                       '0'=>"\u{06F0}",
+                       '1'=>"\u{06F1}",
+                       '2'=>"\u{06F2}",
+                       '3'=>"\u{06F3}",
+                       '4'=>"\u{06F4}",
+                       '5'=>"\u{06F5}",
+                       '6'=>"\u{06F6}",
+                       '7'=>"\u{06F7}",
+                       '8'=>"\u{06F8}",
+                       '9'=>"\u{06F9}",
+                       '.'=>"\u{066B}",
+                      )
+    else
+      number
+    end
+  end
+
   # Convert a file size to a human-readable String.
   # Source: https://codereview.stackexchange.com/q/9107
   #
@@ -87,7 +122,7 @@ module Jekyll::FDroidFilters
       input /= 1024
     end
     number = ((input > 9 || input.modulo(1) < 0.1 ? '%d' : '%.1f') % input)
-    p["file_size_format"] % {:number => number, :unit => units[i]}
+    p["file_size_format"] % {:number => i18n_number(number), :unit => units[i]}
   end
 end
 
