@@ -16,11 +16,12 @@ Donations for F-Droid development are handled via our [OpenCollective](https://o
 You can discuss F-Droid or get help on the
 [forum](https://forum.f-droid.org) and F-Droid's user chat.
 
-To chat with others in real time about F-Droid, either join via IRC in the
+To chat with others in real time about F-Droid, you can join via IRC in the
 [#fdroid channel](https://webchat.oftc.net/?randomnick=1&channels=fdroid&prompt=1) on
-OFTC or join [#fdroid:f-droid.org](https://matrix.to/#/#fdroid:f-droid.org) on Matrix.
+OFTC ([click here to join the webchat](https://webchat.oftc.net/?randomnick=1&channels=fdroid&prompt=1),
+but set a proper nickname, not `qwebirc*`).
 
-An F-Droid matrix space grouping together all F-Droid related rooms exists at [#fdroid-space:f-droid.org](https://matrix.to/#/#fdroid-space:f-droid.org), and can be joined by anyone.
+Matrix users can join [#fdroid:f-droid.org](https://matrix.to/#/#fdroid:f-droid.org). An F-Droid matrix space grouping together all F-Droid related rooms exists at [#fdroid-space:f-droid.org](https://matrix.to/#/#fdroid-space:f-droid.org), and can be joined by anyone.
 
 XMPP users can join via a [Biboumi](https://doc.biboumi.louiz.org/) gateway that connects to IRC, easiest way is to ask your XMPP server admin to host one, but if not possible, try one of the public ones. Copy and paste the address in your XMPP clients channel input field `#fdroid%irc.oftc.net@irc.jabberfr.org` _(hosted by [JabberFR](https://jabberfr.org/))_ or `#fdroid%irc.oftc.net@irc.hmm.st` _(hosted by [hmm.st](https://hmm.st/))_
 
