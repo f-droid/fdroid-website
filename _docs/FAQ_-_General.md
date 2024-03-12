@@ -12,10 +12,7 @@ title: FAQ - General
 We welcome all questions and have a few places to reach out to the
 F-Droid community:
 
--   the IRC chat room: [\#fdroid](ircs://irc.oftc.net:6697/fdroid) IRC
-    chatroom on OFTC ([click here to join the
-    webchat](https://webchat.oftc.net/?randomnick=1&channels=fdroid&prompt=1))
--   the [web forum](https://forum.f-droid.org/)
+-   using the [forum or chat rooms](https://f-droid.org/en/about/#contact)
 -   [issue tracker](https://gitlab.com/fdroid/fdroidclient/issues) for
     the Android app itself (aka client)
 -   [issue tracker](https://gitlab.com/fdroid/fdroidserver/issues) for
