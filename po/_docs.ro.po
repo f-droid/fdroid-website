@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2024-02-28 10:52+0100\n"
-"PO-Revision-Date: 2024-03-12 21:34+0000\n"
+"PO-Revision-Date: 2024-03-13 21:39+0000\n"
 "Last-Translator: Simona Iacob <s@zp1.net>\n"
 "Language-Team: Romanian <https://hosted.weblate.org/projects/f-droid/website-docs/ro/>\n"
 "Language: ro\n"
@@ -7315,12 +7315,12 @@ msgstr "Acest lucru sporește încrederea și îngreunează atacurile asupra lan
 #. type: Plain text
 #: _docs/Inclusion_How-To.md
 msgid "Some apps -- especially those without native code, using only Kotlin/Java -- are very easy to make reproducible. Others may require more work. Sadly, some apps cannot be made reproducible at all."
-msgstr ""
+msgstr "Unele aplicații - în special cele fără cod nativ, care folosesc doar Kotlin/Java - sunt foarte ușor de reprodus. Altele pot necesita mai multă muncă. Din nefericire, unele aplicații nu pot fi făcute reproductibile deloc."
 
 #. type: Plain text
 #: _docs/Inclusion_How-To.md
 msgid "We hope that developers agree with us that it's at least worth attempting to make their apps reproducible given the various benefits, but if they are unable or unwilling to spend time/resources on this, we of course respect their decision."
-msgstr ""
+msgstr "Sperăm că dezvoltatorii sunt de acord cu noi că merită cel puțin să încerce să facă aplicațiile lor reproductibile, având în vedere diversele beneficii, dar dacă nu pot sau nu doresc să cheltuiască timp/resurse în acest sens, le respectăm, desigur, decizia."
 
 #. type: Plain text
 #: _docs/Inclusion_How-To.md
@@ -7335,7 +7335,7 @@ msgstr ""
 #. type: Bullet: '* '
 #: _docs/Inclusion_How-To.md
 msgid "[F-Droid's Reproducible Builds documentation](../Reproducible_Builds)"
-msgstr ""
+msgstr "[F-Droid's Reproducible Builds documentation](../Reproducible_Builds)"
 
 #. type: Bullet: '* '
 #: _docs/Inclusion_How-To.md
@@ -9465,9 +9465,8 @@ msgstr "În loc de fișiere locale, puteți furniza, de asemenea, URL-uri HTTPS 
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
-#, fuzzy
 msgid "The signature files are extracted to the app's metadata directory, ready to be used with `fdroid publish`.  A signature consists of 2-6 files: a v1 signature (manifest, signature file, and signature block file) and/or a v2/v3 signature (APK Signing Block and offset); if the APK was v1-signed with e.g.  `signflinger` instead of `apksigner` there will also be a `differences.json`.  The result of extracting one will resemble these file listings:"
-msgstr "De asemenea, puteți furniza HTTPS-URL-uri direct la `fdroid signatures` în loc de fișiere locale. Fișierele de semnături sunt extrase în directorul de metadate corespunzător, gata să fie utilizate cu `fdroid publish`. O semnătură este formată din 3-5 fișiere, iar rezultatul extragerii uneia va semăna cu aceste liste de fișiere:"
+msgstr "Fișierele de semnătură sunt extrase în directorul de metadate al aplicației, gata de a fi utilizate cu `fdroid publish`.  O semnătură este formată din 2-6 fișiere: o semnătură v1 (manifest, fișier de semnătură și fișier de bloc de semnătură) și/sau o semnătură v2/v3 (APK Signing Block și offset); dacă APK-ul a fost semnat v1 cu, de exemplu, `signflinger` în loc de `apksigner`, va exista, de asemenea, un fișier `differences.json`.  Rezultatul extragerii unuia dintre ele va semăna cu aceste liste de fișiere:"
 
 #. type: Fenced code block (console)
 #: _docs/Reproducible_Builds.md
@@ -9765,6 +9764,9 @@ msgid ""
 "export CPUS=$(getconf _NPROCESSORS_ONLN)\n"
 "for (( c=$CPUS_MAX; c<$CPUS; c++ )) ; do echo 0 > /sys/devices/system/cpu/cpu$c/online; done\n"
 msgstr ""
+"export CPUS_MAX=1\n"
+"export CPUS=$(getconf _NPROCESSORS_ONLN)\n"
+"for (( c=$CPUS_MAX; c<$CPUS; c++ )) ; do echo 0 > /sys/devices/system/cpu/cpu$c/online; done\n"
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
@@ -9785,7 +9787,7 @@ msgstr "A se vedea, de asemenea, [această problemă GitLab](https://gitlab.com/
 #: _docs/Reproducible_Builds.md
 #, no-wrap
 msgid "Embedded build paths"
-msgstr ""
+msgstr "Căi de construire încorporate"
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
@@ -9810,17 +9812,20 @@ msgid ""
 "in the recipe and configure it with: `flutter config --android-sdk <path>` as\n"
 "setting `ANDROID_SDK_ROOT` might not be enough.\n"
 msgstr ""
+"În cazul în care calea SDK se termină încorporat în Flutter se poate muta SDK la calea respectivă\n"
+"în rețetă și să o configureze cu: `flutter config --android-sdk <path>` ca\n"
+"setarea `ANDROID_SDK_ROOT` s-ar putea să nu fie suficientă.\n"
 
 #. type: Title ####
 #: _docs/Reproducible_Builds.md
 #, no-wrap
 msgid "Embedded timestamps"
-msgstr ""
+msgstr "Marcaje de timp încorporate"
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
 msgid "Embedded [timestamps](https://reproducible-builds.org/docs/timestamps/) are the most common source of reproducibility issues and are best avoided."
-msgstr ""
+msgstr "[Timestamps] încorporate (https://reproducible-builds.org/docs/timestamps/) reprezintă cea mai frecventă sursă de probleme de reproductibilitate și este mai bine să fie evitate."
 
 #. type: Title ####
 #: _docs/Reproducible_Builds.md
@@ -9948,12 +9953,12 @@ msgstr ""
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
 msgid "[Android Gradle plugin generates PNG resources from vector drawables for old Android versions](https://developer.android.com/reference/tools/gradle-api/7.3/com/android/build/api/dsl/VectorDrawables#generateddensities).  Unfortunately, the generated PNG files are not reproducible."
-msgstr ""
+msgstr "[[Android Gradle plugin generates PNG resources from vector drawables for old Android versions](https://developer.android.com/reference/tools/gradle-api/7.3/com/android/build/api/dsl/VectorDrawables#generateddensities).  Din păcate, fișierele PNG generate nu sunt reproductibile."
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
 msgid "You can disable generating the PNGs by adding this to `build.gradle`:"
-msgstr ""
+msgstr "Puteți dezactiva generarea PNG-urilor adăugând acest lucru în `build.gradle`:"
 
 #. type: Fenced code block (gradle)
 #: _docs/Reproducible_Builds.md
