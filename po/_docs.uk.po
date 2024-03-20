@@ -16,7 +16,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
 "POT-Creation-Date: 2024-02-28 10:52+0100\n"
-"PO-Revision-Date: 2024-02-22 18:32+0000\n"
+"PO-Revision-Date: 2024-03-21 01:34+0000\n"
 "Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/f-droid/website-docs/uk/>\n"
 "Language: uk\n"
@@ -7236,10 +7236,8 @@ msgstr "Оглянути ваші некодові файли, щоб вияви
 
 #. type: Bullet: '-   '
 #: _docs/Inclusion_How-To.md
-#, fuzzy
-#| msgid "They will skim through the source code to see if your application uses Non-Free dependencies, shows advertisements, tracks users, promotes or depends on Non-Free services/applications, or does anything that is harmful or otherwise undesirable for users."
 msgid "They will skim through the source code to see if your application uses Non-Free dependencies, shows advertisements, tracks users, promotes or depends on Non-Free or non-changeable services/applications, or does anything that is harmful or otherwise undesirable for users."
-msgstr "Оглянути джерельний код застосунку на наявність невільних залежностей, реклами, стеження за користувацькою поведінкою, просування або залежність від невільних служб чи застосунків і в цілому чогось шкідливого чи небажаного для авдиторії."
+msgstr "Оглянути джерельний код застосунку на наявність невільних залежностей, реклами, стеження за користувацькою поведінкою, просування або залежність від невільних або незмінюваних служб чи застосунків і в цілому чогось шкідливого чи небажаного для авдиторії."
 
 #. type: Bullet: '-   '
 #: _docs/Inclusion_How-To.md
@@ -10414,10 +10412,8 @@ msgstr "Репозиторій F-Droid має два офіційні розді
 
 #. type: Plain text
 #: _docs/Running_a_Mirror.md
-#, fuzzy
-#| msgid "The primary resources required by a mirror are disk space and upload bandwidth. Bandwidth requirements are reduced with each new mirror, but disk requirements grow at a [reasonable rate](https://ftp.fau.de/cgi-bin/show-ftp-stats.cgi?statstype=2&what=mirrorsize&mirrorname=fdroid&timespan=-1&graphsize=large&submit=Go%21). At time of writing (Mar 2019), the primary repository requires just over 60GB of disk space in 24K files, and the archive requires 300GB of disk space in 52K files. The amount of disk space required grows with every new app release."
 msgid "The primary resources required by a mirror are disk space and upload bandwidth.  Bandwidth requirements are reduced with each new mirror, but disk requirements grow at a [reasonable rate](https://ftp.fau.de/cgi-bin/show-ftp-stats.cgi?statstype=2&what=mirrorsize&mirrorname=fdroid&timespan=-1&graphsize=large&submit=Go%21).  In March 2019, the primary repository required just over 60GB of disk space in 24K files, and the archive required 300GB of disk space in 52K files.  In February 2024, the primary repository required 450GB in 180K files, and the archive required 1.9TB in 430K files.  The amount of disk space required grows with every new app release."
-msgstr "Передусім дзеркалу потрібні дисковий простір і широкий канал. Чим більше дзеркал, тим вужчого каналу достатньо кожному з них, але просторові вимоги [постійно зростають](https://ftp.fau.de/cgi-bin/show-ftp-stats.cgi?statstype=2&what=mirrorsize&mirrorname=fdroid&timespan=-1&graphsize=large&submit=Go%21). На момент написання (березень 2019), 24 000 файлів головного репозиторію потребують понад 60 ГБ простору, тоді як 52 000 файлів архіву важать 300 ГБ. Кожен випуск оновлення будь-якого застосунку збільшує вимоги до дискового простору."
+msgstr "Передусім дзеркалу потрібні дисковий простір і широкий канал. Чим більше дзеркал, тим вужчого каналу достатньо кожному з них, але просторові вимоги [постійно зростають](https://ftp.fau.de/cgi-bin/show-ftp-stats.cgi?statstype=2&what=mirrorsize&mirrorname=fdroid&timespan=-1&graphsize=large&submit=Go%21). У березні 2019 року первинний репозиторій потребував трохи більш як 60 ГБ дискового простору для 24 тис. файлів, а архів — 300 ГБ дискового простору для 52 тис. файлів.  У лютому 2024 року основний репозиторій потребував 450 ГБ для 180 тис. файлів, а архів - 1,9 ТБ для 430 тис. файлів.  Обсяг необхідного дискового простору зростає з кожним новим випуском застосунку."
 
 #. type: Plain text
 #: _docs/Running_a_Mirror.md
@@ -10531,33 +10527,7 @@ msgstr "Ось зразок серверного блоку nginx. Для вик
 
 #. type: Fenced code block
 #: _docs/Running_a_Mirror.md
-#, fuzzy, no-wrap
-#| msgid ""
-#| "server {\n"
-#| "  listen [::]:80 ipv6only=off;\n"
-#| "\n"
-#| "  server_name fdroidmirror.example;\n"
-#| "\n"
-#| "  rewrite ^ https://fdroidmirror.example$request_uri permanent;\n"
-#| "}\n"
-#| "\n"
-#| "server {\n"
-#| "  listen [::]:443 ssl http2 ipv6only=off;\n"
-#| "\n"
-#| "  server_name fdroidmirror.example;\n"
-#| "\n"
-#| "  root /var/www/fdroid/;\n"
-#| "\n"
-#| "  # TODO: https://gitlab.com/snippets/1834032\n"
-#| "  location /health {\n"
-#| "    proxy_pass http://127.0.0.1:8000/;\n"
-#| "  }\n"
-#| "\n"
-#| "  ssl_certificate /etc/letsencrypt/live/fdroidmirror.example/fullchain.pem;\n"
-#| "  ssl_certificate_key /etc/letsencrypt/live/fdroidmirror.example/privkey.pem;\n"
-#| "\n"
-#| "  # Insert here a TLS config from Mozilla SSL config generator https://mozilla.github.io/server-side-tls/ssl-config-generator/\n"
-#| "}\n"
+#, no-wrap
 msgid ""
 "server {\n"
 "  listen [::]:80 ipv6only=off;\n"
@@ -10583,38 +10553,33 @@ msgstr ""
 "server {\n"
 "  listen [::]:80 ipv6only=off;\n"
 "\n"
-"  server_name fdroidmirror.example;\n"
+"  server_name fdroidmirror.example.com;\n"
 "\n"
-"  rewrite ^ https://fdroidmirror.example$request_uri permanent;\n"
+"  rewrite ^ https://$host$request_uri permanent;\n"
 "}\n"
 "\n"
 "server {\n"
 "  listen [::]:443 ssl http2 ipv6only=off;\n"
 "\n"
-"  server_name fdroidmirror.example;\n"
+"  server_name fdroidmirror.example.com;\n"
 "\n"
 "  root /var/www/fdroid/;\n"
 "\n"
-"  # TODO: https://gitlab.com/snippets/1834032\n"
-"  location /health {\n"
-"    proxy_pass http://127.0.0.1:8000/;\n"
-"  }\n"
+"  ssl_certificate /etc/letsencrypt/live/fdroidmirror.example.com/fullchain.pem;\n"
+"  ssl_certificate_key /etc/letsencrypt/live/fdroidmirror.example.com/privkey.pem;\n"
 "\n"
-"  ssl_certificate /etc/letsencrypt/live/fdroidmirror.example/fullchain.pem;\n"
-"  ssl_certificate_key /etc/letsencrypt/live/fdroidmirror.example/privkey.pem;\n"
-"\n"
-"  # Вставте сюди TLS-конфігурацію з генератора https://ssl-config.mozilla.org/\n"
+"  # Insert here a TLS config from Mozilla SSL config generator https://mozilla.github.io/server-side-tls/ssl-config-generator/\n"
 "}\n"
 
 #. type: Bullet: '5. '
 #: _docs/Running_a_Mirror.md
 msgid "Test that your mirror works"
-msgstr ""
+msgstr "Перевірте, чи працює ваше дзеркало"
 
 #. type: Plain text
 #: _docs/Running_a_Mirror.md
 msgid "Manually add your mirror to F-Droid to test that it works."
-msgstr ""
+msgstr "Вручну додайте ваше дзеркало до F-Droid, щоб перевірити, чи працює воно."
 
 #. type: Plain text
 #: _docs/Running_a_Mirror.md
@@ -10623,38 +10588,38 @@ msgid ""
 "Go to Settings -> Repositories, click the \"+\" button, and then manually enter your repository URL (don't use the QR code):\n"
 "https://fdroidmirror.example.com/fdroid/repo?fingerprint=43238D512C1E5EB2D6569F4A3AFBF5523418B82E0A3ED1552770ABB9A9C9CCAB\n"
 msgstr ""
+"Перейдіть до Налаштування -> Репозиторії, натисніть кнопку \"+\", а потім а потім вручну введіть URL-адресу вашого репозиторію (не використовуйте QR-код):\n"
+"https://fdroidmirror.example.com/fdroid/repo?fingerprint=43238D512C1E5EB2D6569F4A3AFBF5523418B82E0A3ED1552770ABB9A9C9CCAB\n"
 
 #. type: Plain text
 #: _docs/Running_a_Mirror.md
 msgid "Then disable the other mirrors except your new one, refresh the index with pull-to-refresh, and browse and install some apps!"
-msgstr ""
+msgstr "Потім вимкніть інші дзеркала, окрім вашого нового, оновіть індекс за допомогою потягнувши сторінку вниз, перегляньте та встановіть кілька застосунків!"
 
 #. type: Bullet: '6. '
 #: _docs/Running_a_Mirror.md
 msgid "Set up a privacy policy"
-msgstr ""
+msgstr "Налаштуйте політику приватності"
 
 #. type: Plain text
 #: _docs/Running_a_Mirror.md
-#, fuzzy
-#| msgid "Also, it would be nice to include a privacy policy so users can understand what happens with their metadata when using the mirror. Purdue PLUG https://plug-mirror.rcac.purdue.edu/info.html and FAU https://ftp.fau.de/datenschutz are two examples."
 msgid "Please include a privacy policy so that users can understand what happens with their metadata when using your mirror.  For inspiration, see:"
-msgstr "Також варто додати політику приватності, щоб авдиторія розуміла, що відбувається з їхніми даними при використанні дзеркала. Зразки: Purdue PLUG https://plug-mirror.rcac.purdue.edu/info.html і FAU https://ftp.fau.de/datenschutz."
+msgstr "Будь ласка, додайте політику приватності, щоб користувачі розуміли, що відбувається з їхніми метаданими під час використання вашого дзеркала.  Для натхнення перегляньте:"
 
 #. type: Bullet: '* '
 #: _docs/Running_a_Mirror.md
 msgid "FAU: https://ftp.fau.de/datenschutz"
-msgstr ""
+msgstr "FAU: https://ftp.fau.de/datenschutz"
 
 #. type: Bullet: '* '
 #: _docs/Running_a_Mirror.md
 msgid "Lysator: https://ftp.lysator.liu.se/datahanteringspolicy.txt"
-msgstr ""
+msgstr "Lysator: https://ftp.lysator.liu.se/datahanteringspolicy.txt"
 
 #. type: Bullet: '* '
 #: _docs/Running_a_Mirror.md
 msgid "Purdue PLUG: https://plug-mirror.rcac.purdue.edu/info.html"
-msgstr ""
+msgstr "Purdue PLUG: https://plug-mirror.rcac.purdue.edu/info.html"
 
 #. type: Bullet: '7. '
 #: _docs/Running_a_Mirror.md
@@ -10690,14 +10655,12 @@ msgstr "Налаштуйте cron таким чином, щоб отримува
 #. type: Bullet: '* '
 #: _docs/Running_a_Mirror.md
 msgid "Monitor disk usage to prevent it from getting full"
-msgstr ""
+msgstr "Відстежуйте використання диска, щоб запобігти його переповненню"
 
 #. type: Bullet: '* '
 #: _docs/Running_a_Mirror.md
-#, fuzzy
-#| msgid "Set up monitoring on your mirror so you know if it goes down (ideally keyword on _/srv/mymirror.org/htdocs/fdroid/repo/index-v1.jar_)"
 msgid "Monitor your mirror so you know if it goes down (ideally keyword on _/srv/mymirror.org/htdocs/fdroid/repo/index-v1.jar_)"
-msgstr "Автоматизуйте перевірки свого дзеркала, щоб одразу дізнаватись, коли воно стає недоступним (перевіряйте доступність файлу _/srv/mymirror.org/htdocs/fdroid/repo/index-v1.jar_)"
+msgstr "Стежте за своїм дзеркалом, щоб знати, якщо воно перестане працювати (в ідеалі — за ключовим словом у файлі _/srv/mymirror.org/htdocs/fdroid/repo/index-v1.jar_)"
 
 #. type: Bullet: '* '
 #: _docs/Running_a_Mirror.md
