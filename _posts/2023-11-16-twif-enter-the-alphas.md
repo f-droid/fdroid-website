@@ -12,12 +12,12 @@ author: "Licaon_Kter"
 
 
 #### Community News
-[@Licaon_Kter](https://gitlab.com/licaon-kter) highlights that **[Orgzly Revived](https://f-droid.org/packages/com.orgzlyrevived)** was newly added, and as its name spells it out, it's a fork of **[Orgzly](https://f-droid.org/packages/com.orgzly)** that appeared out of necessity given that Orgzly's main developer has not been seen for the last year. We hope [@Neven](https://github.com/nevenz) if fine and safe!
+[@Licaon_Kter](https://gitlab.com/licaon-kter) highlights that **[Orgzly Revived](https://f-droid.org/packages/com.orgzlyrevived)** was newly added, and as its name spells it out, it's a fork of **[Orgzly](https://f-droid.org/packages/com.orgzly)** that appeared out of necessity given that Orgzly's main developer has not been seen for the last year. We hope [@Neven](https://github.com/nevenz) is fine and safe!
 
-As announced last week **[Arcticons Dark](https://f-droid.org/packages/com.donnnno.arcticons)**, **[Arcticons Light](https://f-droid.org/packages/com.donnnno.arcticons.light)** and **[Arcticons You](https://f-droid.org/packages/com.donnnno.arcticons.you)** were updated to `8.0.6` so you can now enjoy more than 8000 icons. And if your favourite app is not yet in, do ask for it!
+As announced last week **[Arcticons Dark](https://f-droid.org/packages/com.donnnno.arcticons)**, **[Arcticons Light](https://f-droid.org/packages/com.donnnno.arcticons.light)** and **[Arcticons You](https://f-droid.org/packages/com.donnnno.arcticons.you)** were updated to `8.0.6` so you can now enjoy more than 8000 icons. And if your favorite app is not yet in, do ask for it!
 
 [@Vasyl Gello](https://forum.f-droid.org/u/basilgello) shared with us that **[RustDesk](https://f-droid.org/packages/com.carriez.flutter_hbb)** was updated to `1.2.3-1` bringing significant changes like:
-> * Hardware keyboard support for Android: now you can use your favourite mechanics paired to your phone to control other desktops, servers or even phones!
+> * Hardware keyboard support for Android: now you can use your favorite mechanics paired to your phone to control other desktops, servers or even phones!
 > * Updated libraries: fixes [CVE-2023-5217](https://www.openwall.com/lists/oss-security/2023/09/28/5) and several other security vulnerabilities exploited in the wild.
 > * Builds for all 4 platforms: arm, arm64, x86 and x86_64. Rustdesk becomes F-Droid’s first submission built with Flutter framework on 32-bit x86 Android.
 > * Automated update support: new versions will be built automatically as soon as new upstream version becomes public!
