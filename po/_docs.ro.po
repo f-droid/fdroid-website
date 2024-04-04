@@ -8,7 +8,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2024-02-28 10:52+0100\n"
+"POT-Creation-Date: 2024-04-04 12:03+0200\n"
 "PO-Revision-Date: 2024-03-16 18:56+0000\n"
 "Last-Translator: Simona Iacob <s@zp1.net>\n"
 "Language-Team: Romanian <https://hosted.weblate.org/projects/f-droid/website-docs/ro/>\n"
@@ -2126,6 +2126,11 @@ msgstr "[_ArchivePolicy_(Politica de arhivă)](#ArchivePolicy)"
 
 #. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
+msgid "[_AutoUpdateMode_](#AutoUpdateMode)"
+msgstr "[_AutoUpdateMode_(mod actualizare automat](#AutoUpdateMode)"
+
+#. type: Bullet: '* '
+#: _docs/Build_Metadata_Reference.md
 msgid "[_UpdateCheckMode_](#UpdateCheckMode)"
 msgstr "[_UpdateCheckMode_(Actualizare CheckMode)](#UpdateCheckMode)"
 
@@ -2148,11 +2153,6 @@ msgstr "[_UpdateCheckName_(Actualizare CheckName)](#UpdateCheckName)"
 #: _docs/Build_Metadata_Reference.md
 msgid "[_UpdateCheckData_](#UpdateCheckData)"
 msgstr "[_UpdateCheckData_(Actualizare CheckData)](#UpdateCheckData)"
-
-#. type: Bullet: '* '
-#: _docs/Build_Metadata_Reference.md
-msgid "[_AutoUpdateMode_](#AutoUpdateMode)"
-msgstr "[_AutoUpdateMode_(mod actualizare automat](#AutoUpdateMode)"
 
 #. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
@@ -3859,6 +3859,107 @@ msgstr "În prezent, singurul format acceptat este `n`, unde `n` este numărul d
 #. type: Title ###
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
+msgid "_AutoUpdateMode_<a name=\"AutoUpdateMode\"></a>"
+msgstr "_AutoUpdateMode_( AutoActualizareMod)<a name=\"AutoUpdateMode\"></a>"
+
+#. type: Plain text
+#: _docs/Build_Metadata_Reference.md
+msgid "This determines the method used for auto-generating new builds when new releases are available - in other words, adding a new Build Version line to the metadata. This happens in conjunction with the _UpdateCheckMode_ functionality - i.e. when an update is detected by that, it is also processed by this."
+msgstr "Aceasta determină metoda utilizată pentru generarea automată a noilor versiuni atunci când sunt disponibile noi versiuni - cu alte cuvinte, adăugarea unei noi linii Build Version la metadate. Acest lucru se întâmplă în combinație cu funcționalitatea _UpdateCheckMode_ - adică atunci când o actualizare este detectată de aceasta, este procesată și de aceasta."
+
+#. type: Plain text
+#: _docs/Build_Metadata_Reference.md
+msgid "Valid modes are:"
+msgstr "Modurile valabile sunt:"
+
+#. type: Bullet: '-   '
+#: _docs/Build_Metadata_Reference.md
+msgid "`None` - Auto-updating is disabled"
+msgstr "`None` - Actualizarea automată este dezactivată"
+
+#. type: Bullet: '-   '
+#: _docs/Build_Metadata_Reference.md
+msgid "`Version` - Auto-updating is enabled."
+msgstr "`Versiunea` - Actualizarea automată este activată."
+
+#. type: Plain text
+#: _docs/Build_Metadata_Reference.md
+#, no-wrap
+msgid ""
+"    If `UpdateCheckMode` is set to `Tags`, this should be set to\n"
+"    `Version` without any pattern. The checked tag is used directly.\n"
+msgstr ""
+"    În cazul în care `UpdateCheckMode` este setat la `Tags`, acesta ar trebui să fie setat la\n"
+"   `Version` fără niciun model. Eticheta verificată este utilizată direct.\n"
+
+#. type: Plain text
+#: _docs/Build_Metadata_Reference.md
+#, no-wrap
+msgid ""
+"    If `UpdateCheckMode` is set to `HTTP`, a pattern should be added\n"
+"    after the `Version`. The pattern is used to generate a value\n"
+"    (tag name) used for the `commit:` property of new build blocks.\n"
+"    It is simply text in which `%v` and `%c` are replaced with the required\n"
+"    version name and version code respectively. The resulting\n"
+"    string must match an existing tag in the app's repo, which then will be\n"
+"    used by F-Droid to build the corresponding version.\n"
+msgstr ""
+"    Dacă `UpdateCheckMode` este setat la `HTTP`, trebuie adăugat un model\n"
+"    după `Version` . Modelul este utilizat pentru a genera o valoare\n"
+"    (nume de etichetă) utilizată pentru `commit:` proprietate a noilor blocuri de construcție.\n"
+"    Acesta este pur și simplu un text în care `%v` și `%c` sunt înlocuite cu valorile necesare\n"
+"    numele versiunii și, respectiv, codul versiunii. Textul rezultat\n"
+"    șirul de caractere trebuie să se potrivească cu o etichetă existentă în depozitul aplicației, care apoi va fi\n"
+"    utilizat de F-Droid pentru a construi versiunea corespunzătoare.\n"
+
+#. type: Plain text
+#: _docs/Build_Metadata_Reference.md
+#, no-wrap
+msgid ""
+"    For example, if an app always has a tag `2.7.2` corresponding to\n"
+"    version 2.7.2, you would simply specify `Version %v`. If an app\n"
+"    always has a tag `ver_1234` for a version with version code 1234,\n"
+"    you would specify `Version ver_%c`.\n"
+msgstr ""
+"    De exemplu, dacă o aplicație are întotdeauna o etichetă `2.7.2` care corespunde la\n"
+"    versiunea 2.7.2, se va specifica pur și simplu `Version %v`. Dacă o aplicație\n"
+"    are întotdeauna o etichetă `ver_1234` pentru o versiune cu codul de versiune 1234,\n"
+"    veți specifica `Version ver_%c`.\n"
+
+#. type: Plain text
+#: _docs/Build_Metadata_Reference.md
+#, no-wrap
+msgid ""
+"    Continuing the first example above, you would specify that as\n"
+"    `Version +-fdroid %v` - `-fdroid` is the suffix F-Droid will then append to the\n"
+"    `versionName` specified in e.g. `build.gradle` when building the APK.\n"
+msgstr ""
+"    Continuând cu primul exemplu de mai sus, veți specifica acest lucru ca fiind\n"
+"   `Version +-fdroid %v` - `-fdroid` este sufixul pe care F-Droid îl va adăuga apoi la\n"
+"   `versionName` specificat, de exemplu, în `build.gradle` la construirea APK-ului.\n"
+
+#. type: Plain text
+#: _docs/Build_Metadata_Reference.md
+#, no-wrap
+msgid ""
+"    Additionally, a suffix can be added to the version name at this\n"
+"    stage, to differentiate F-Droid's build from the original.\n"
+"    Continuing the first example above, you would specify that as\n"
+"    `Version +-fdroid %v` - `-fdroid` is the suffix.\n"
+msgstr ""
+"    În plus, se poate adăuga un sufix la numele versiunii la această adresă\n"
+"    etapă, pentru a diferenția versiunea F-Droid de cea originală.\n"
+"    Continuând cu primul exemplu de mai sus, ați putea specifica acest lucru ca fiind\n"
+"   `Version +-fdroid %v` - `-fdroid` este sufixul.\n"
+
+#. type: Plain text
+#: _docs/Build_Metadata_Reference.md
+msgid "For apps with a list of [_VercodeOperation_](#VercodeOperation) the number of builds is equal to the number of items in the list."
+msgstr "Pentru aplicațiile cu o listă de [_VercodeOperation_](#VercodeOperation), numărul de compilări este egal cu numărul de elemente din listă."
+
+#. type: Title ###
+#: _docs/Build_Metadata_Reference.md
+#, no-wrap
 msgid "_UpdateCheckMode_<a name=\"UpdateCheckMode\"></a>"
 msgstr "_UpdateCheckMode_(Actualizare CheckMode)<a name=\"UpdateCheckMode\"></a>"
 
@@ -3866,11 +3967,6 @@ msgstr "_UpdateCheckMode_(Actualizare CheckMode)<a name=\"UpdateCheckMode\"></a>
 #: _docs/Build_Metadata_Reference.md
 msgid "This determines the method using for determining when new releases are available - in other words, the updating of the _CurrentVersion_ and _CurrentVersionCode_ fields in the metadata by the `fdroid checkupdates` process."
 msgstr "Aceasta determină metoda utilizată pentru a determina când sunt disponibile noi versiuni - cu alte cuvinte, actualizarea câmpurilor _CurrentVersion_ și _CurrentVersionCode_ din metadate de către procesul `fdroid checkupdates`."
-
-#. type: Plain text
-#: _docs/Build_Metadata_Reference.md
-msgid "Valid modes are:"
-msgstr "Modurile valabile sunt:"
 
 #. type: Bullet: '-   '
 #: _docs/Build_Metadata_Reference.md
@@ -4141,102 +4237,6 @@ msgstr ""
 "Exemple pentru `UpdateCheckMode: HTTP`:\n"
 "-    `https://foo/version.json|\"version_code\":.*\"(.*)\"|.|\"version_name\":.*\\\"(.*)\\\",`\n"
 "-    `https://foo/version_fdroid.txt|versionCode=(.*)|.|versionName=(.*)`\n"
-
-#. type: Title ###
-#: _docs/Build_Metadata_Reference.md
-#, no-wrap
-msgid "_AutoUpdateMode_<a name=\"AutoUpdateMode\"></a>"
-msgstr "_AutoUpdateMode_( AutoActualizareMod)<a name=\"AutoUpdateMode\"></a>"
-
-#. type: Plain text
-#: _docs/Build_Metadata_Reference.md
-msgid "This determines the method used for auto-generating new builds when new releases are available - in other words, adding a new Build Version line to the metadata. This happens in conjunction with the _UpdateCheckMode_ functionality - i.e. when an update is detected by that, it is also processed by this."
-msgstr "Aceasta determină metoda utilizată pentru generarea automată a noilor versiuni atunci când sunt disponibile noi versiuni - cu alte cuvinte, adăugarea unei noi linii Build Version la metadate. Acest lucru se întâmplă în combinație cu funcționalitatea _UpdateCheckMode_ - adică atunci când o actualizare este detectată de aceasta, este procesată și de aceasta."
-
-#. type: Bullet: '-   '
-#: _docs/Build_Metadata_Reference.md
-msgid "`None` - Auto-updating is disabled"
-msgstr "`None` - Actualizarea automată este dezactivată"
-
-#. type: Bullet: '-   '
-#: _docs/Build_Metadata_Reference.md
-msgid "`Version` - Auto-updating is enabled."
-msgstr "`Versiunea` - Actualizarea automată este activată."
-
-#. type: Plain text
-#: _docs/Build_Metadata_Reference.md
-#, no-wrap
-msgid ""
-"    If `UpdateCheckMode` is set to `Tags`, this should be set to\n"
-"    `Version` without any pattern. The checked tag is used directly.\n"
-msgstr ""
-"    În cazul în care `UpdateCheckMode` este setat la `Tags`, acesta ar trebui să fie setat la\n"
-"   `Version` fără niciun model. Eticheta verificată este utilizată direct.\n"
-
-#. type: Plain text
-#: _docs/Build_Metadata_Reference.md
-#, no-wrap
-msgid ""
-"    If `UpdateCheckMode` is set to `HTTP`, a pattern should be added\n"
-"    after the `Version`. The pattern is used to generate a value\n"
-"    (tag name) used for the `commit:` property of new build blocks.\n"
-"    It is simply text in which `%v` and `%c` are replaced with the required\n"
-"    version name and version code respectively. The resulting\n"
-"    string must match an existing tag in the app's repo, which then will be\n"
-"    used by F-Droid to build the corresponding version.\n"
-msgstr ""
-"    Dacă `UpdateCheckMode` este setat la `HTTP`, trebuie adăugat un model\n"
-"    după `Version` . Modelul este utilizat pentru a genera o valoare\n"
-"    (nume de etichetă) utilizată pentru `commit:` proprietate a noilor blocuri de construcție.\n"
-"    Acesta este pur și simplu un text în care `%v` și `%c` sunt înlocuite cu valorile necesare\n"
-"    numele versiunii și, respectiv, codul versiunii. Textul rezultat\n"
-"    șirul de caractere trebuie să se potrivească cu o etichetă existentă în depozitul aplicației, care apoi va fi\n"
-"    utilizat de F-Droid pentru a construi versiunea corespunzătoare.\n"
-
-#. type: Plain text
-#: _docs/Build_Metadata_Reference.md
-#, no-wrap
-msgid ""
-"    For example, if an app always has a tag `2.7.2` corresponding to\n"
-"    version 2.7.2, you would simply specify `Version %v`. If an app\n"
-"    always has a tag `ver_1234` for a version with version code 1234,\n"
-"    you would specify `Version ver_%c`.\n"
-msgstr ""
-"    De exemplu, dacă o aplicație are întotdeauna o etichetă `2.7.2` care corespunde la\n"
-"    versiunea 2.7.2, se va specifica pur și simplu `Version %v`. Dacă o aplicație\n"
-"    are întotdeauna o etichetă `ver_1234` pentru o versiune cu codul de versiune 1234,\n"
-"    veți specifica `Version ver_%c`.\n"
-
-#. type: Plain text
-#: _docs/Build_Metadata_Reference.md
-#, no-wrap
-msgid ""
-"    Continuing the first example above, you would specify that as\n"
-"    `Version +-fdroid %v` - `-fdroid` is the suffix F-Droid will then append to the\n"
-"    `versionName` specified in e.g. `build.gradle` when building the APK.\n"
-msgstr ""
-"    Continuând cu primul exemplu de mai sus, veți specifica acest lucru ca fiind\n"
-"   `Version +-fdroid %v` - `-fdroid` este sufixul pe care F-Droid îl va adăuga apoi la\n"
-"   `versionName` specificat, de exemplu, în `build.gradle` la construirea APK-ului.\n"
-
-#. type: Plain text
-#: _docs/Build_Metadata_Reference.md
-#, no-wrap
-msgid ""
-"    Additionally, a suffix can be added to the version name at this\n"
-"    stage, to differentiate F-Droid's build from the original.\n"
-"    Continuing the first example above, you would specify that as\n"
-"    `Version +-fdroid %v` - `-fdroid` is the suffix.\n"
-msgstr ""
-"    În plus, se poate adăuga un sufix la numele versiunii la această adresă\n"
-"    etapă, pentru a diferenția versiunea F-Droid de cea originală.\n"
-"    Continuând cu primul exemplu de mai sus, ați putea specifica acest lucru ca fiind\n"
-"   `Version +-fdroid %v` - `-fdroid` este sufixul.\n"
-
-#. type: Plain text
-#: _docs/Build_Metadata_Reference.md
-msgid "For apps with a list of [_VercodeOperation_](#VercodeOperation) the number of builds is equal to the number of items in the list."
-msgstr "Pentru aplicațiile cu o listă de [_VercodeOperation_](#VercodeOperation), numărul de compilări este egal cu numărul de elemente din listă."
 
 #. type: Title ###
 #: _docs/Build_Metadata_Reference.md
@@ -6123,13 +6123,8 @@ msgstr "Toate întrebările sunt binevenite și avem câteva locuri de contact c
 
 #. type: Bullet: '-   '
 #: _docs/FAQ_-_General.md
-msgid "the IRC chat room: [\\#fdroid](ircs://irc.oftc.net:6697/fdroid) IRC chatroom on OFTC ([click here to join the webchat](https://webchat.oftc.net/?randomnick=1&channels=fdroid&prompt=1))"
-msgstr "camera de chat IRC: [\\#fdroid](ircs://irc.oftc.net:6697/fdroid) Sala de chat IRC pe OFTC ([click here to join the webchat](https://webchat.oftc.net/?randomnick=1&channels=fdroid&prompt=1))"
-
-#. type: Bullet: '-   '
-#: _docs/FAQ_-_General.md
-msgid "the [web forum](https://forum.f-droid.org/)"
-msgstr "[web forum](https://forum.f-droid.org/)"
+msgid "using the [forum or chat rooms](https://f-droid.org/en/about/#contact)"
+msgstr ""
 
 #. type: Bullet: '-   '
 #: _docs/FAQ_-_General.md
@@ -10026,6 +10021,44 @@ msgstr "Cu toate acestea, ar putea fi posibil ca resource shrinker să măreasc�
 #. type: Title ####
 #: _docs/Reproducible_Builds.md
 #, no-wrap
+msgid "VCS Info"
+msgstr ""
+
+#. type: Plain text
+#: _docs/Reproducible_Builds.md
+msgid "Since Android Gradle Plugin 8.3, VCS info is generated by default and bundled in the apk in `META-INF/version-control-info.textproto`, e.g."
+msgstr ""
+
+#. type: Fenced code block
+#: _docs/Reproducible_Builds.md
+#, no-wrap
+msgid ""
+"repositories {\n"
+"  system: GIT\n"
+"  local_root_path: \"$PROJECT_DIR\"\n"
+"  revision: \"3a443877cd53e37d85cbc52adc8cfd558919d373\"\n"
+"}\n"
+msgstr ""
+
+#. type: Plain text
+#: _docs/Reproducible_Builds.md
+msgid "This may cause problem when there is no real code change but a different commit is used, e.g.  for changelog update. VCS info can be disabled in gradle as follows:"
+msgstr ""
+
+#. type: Fenced code block (gradle)
+#: _docs/Reproducible_Builds.md
+#, no-wrap
+msgid ""
+"    buildTypes {\n"
+"        release {\n"
+"           vcsInfo.include false\n"
+"        }\n"
+"    }\n"
+msgstr ""
+
+#. type: Title ####
+#: _docs/Reproducible_Builds.md
+#, no-wrap
 msgid "ZIP metadata"
 msgstr "ZIP metadata"
 
@@ -10755,6 +10788,11 @@ msgstr "În general, depozitele F-Droid mențin suportul pentru versiunile F-Dro
 msgid "Android 6.0 (API 23) and up: [F-Droid (latest stable)]({{ site.fdroid_apk_download_url }})"
 msgstr "Android 6.0 (API 23) și versiunile ulterioare: [F-Droid (ultima versiune stabilă)]({{ site.fdroid_apk_download_url }})"
 
+#. type: Plain text
+#: _docs/Running_on_old_Android_versions.md
+msgid "First issue older Android versions encounter will be certificate related, please read and follow the steps to [install the Let’s Encrypt ISRG Root X1 certificate](https://www.stoutner.com/lets-encrypt-isrg-root-x1-and-privacy-browser/) before proceeding. Android 6 and 7 are also affected, while the latest in-client mirroring system will alleviate this and cycle through mirrors until it finds one that is still compatible, users are encouraged to add the certificate anyway as this helps other apps too."
+msgstr ""
+
 #. type: Bullet: '* '
 #: _docs/Running_on_old_Android_versions.md
 msgid "Android 5.1 (API 22): [F-Droid 1.15.6](https://f-droid.org/archive/org.fdroid.fdroid_1015056.apk)"
@@ -10797,7 +10835,9 @@ msgstr "Android 1.5 (API 3): [F-Droid 0.45](https://f-droid.org/archive/org.fdro
 
 #. type: Plain text
 #: _docs/Running_on_old_Android_versions.md
-msgid "Please note that many apps on F-Droid may no longer support such old Android versions. It is recommended to enable the \"F-Droid Archive\" repository in the F-Droid app. Enabling the archive lets F-Droid show you older versions of apps, which may include versions that still work on your device."
+#, fuzzy
+#| msgid "Please note that many apps on F-Droid may no longer support such old Android versions. It is recommended to enable the \"F-Droid Archive\" repository in the F-Droid app. Enabling the archive lets F-Droid show you older versions of apps, which may include versions that still work on your device."
+msgid "Please note that many apps on F-Droid may no longer support such old Android versions. It is recommended to enable the \"F-Droid Archive\" repository in the F-Droid app. Enabling the Archive lets F-Droid show you older versions of apps, which may include versions that still work on your device."
 msgstr "Vă rugăm să rețineți că este posibil ca multe aplicații de pe F-Droid să nu mai fie compatibile cu versiunile vechi de Android. Se recomandă să activați depozitul \"Arhiva F-Droid\" în aplicația F-Droid. Activarea arhivei permite ca F-Droid să vă arate versiuni mai vechi ale aplicațiilor, care pot include versiuni care încă funcționează pe dispozitivul dvs."
 
 #. type: Yaml Front Matter Hash Value: title
@@ -12486,6 +12526,12 @@ msgstr "Preferințe"
 #: _docs/Whitelabel_Builds.md
 msgid "For a custom build that enables Automatic Updates by default, override _app/src/main/res/xml/preferences.xml_. You can customize the preferences and their default values in _app/src/mycompany/res/xml/preferences.xml_. The fully automatic update requires [Privileged Extension](https://gitlab.com/fdroid/privileged-extension). With regular access, the updates will only automatically download. The user still needs to click install on each one."
 msgstr "Pentru o construcție personalizată care activează actualizările automate în mod implicit, suprascrieți fișierul _app/src/main/res/xml/preferences.xml_. Puteți personaliza preferințele și valorile implicite ale acestora în _app/src/mycompany/res/xml/preferences.xml_. Actualizarea complet automată necesită [Privileged Extension](https://gitlab.com/fdroid/privileged-extension). Cu acces obișnuit, actualizările se vor descărca doar automat. Utilizatorul trebuie în continuare să facă clic pe instalare pentru fiecare dintre ele."
+
+#~ msgid "the IRC chat room: [\\#fdroid](ircs://irc.oftc.net:6697/fdroid) IRC chatroom on OFTC ([click here to join the webchat](https://webchat.oftc.net/?randomnick=1&channels=fdroid&prompt=1))"
+#~ msgstr "camera de chat IRC: [\\#fdroid](ircs://irc.oftc.net:6697/fdroid) Sala de chat IRC pe OFTC ([click here to join the webchat](https://webchat.oftc.net/?randomnick=1&channels=fdroid&prompt=1))"
+
+#~ msgid "the [web forum](https://forum.f-droid.org/)"
+#~ msgstr "[web forum](https://forum.f-droid.org/)"
 
 #~ msgid "Set up a privacy policy that describes what happens to the metadata (for example [FAU](https://ftp.fau.de/datenschutz/), [PLUG](https://plug-mirror.rcac.purdue.edu/info.html), [Lysator](https://ftp.lysator.liu.se/datahanteringspolicy.txt))."
 #~ msgstr "Stabiliți o politică de confidențialitate care să descrie ce se întâmplă cu metadatele (for example [FAU](https://ftp.fau.de/datenschutz/), [PLUG](https://plug-mirror.rcac.purdue.edu/info.html), [Lysator](https://ftp.lysator.liu.se/datahanteringspolicy.txt))."

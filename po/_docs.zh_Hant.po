@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
-"POT-Creation-Date: 2024-02-28 10:52+0100\n"
+"POT-Creation-Date: 2024-04-04 12:03+0200\n"
 "PO-Revision-Date: 2023-09-19 15:24+0000\n"
 "Last-Translator: Hans-Christoph Steiner <hans@guardianproject.info>\n"
 "Language-Team: Chinese (Traditional) <https://hosted.weblate.org/projects/f-droid/website-docs/zh_Hant/>\n"
@@ -2090,6 +2090,12 @@ msgstr "[_ArchivePolicy_ (存檔策略 )](#ArchivePolicy)"
 
 #. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
+#, fuzzy
+msgid "[_AutoUpdateMode_](#AutoUpdateMode)"
+msgstr "[_AutoUpdateMode_ (自動更新模式 )](#AutoUpdateMode)"
+
+#. type: Bullet: '* '
+#: _docs/Build_Metadata_Reference.md
 msgid "[_UpdateCheckMode_](#UpdateCheckMode)"
 msgstr ""
 
@@ -2116,12 +2122,6 @@ msgstr "[_UpdateCheckName_ (更新檢查名稱 )](#UpdateCheckName)"
 #, fuzzy
 msgid "[_UpdateCheckData_](#UpdateCheckData)"
 msgstr "[_UpdateCheckData_ (更新檢查資料 )](#UpdateCheckData)"
-
-#. type: Bullet: '* '
-#: _docs/Build_Metadata_Reference.md
-#, fuzzy
-msgid "[_AutoUpdateMode_](#AutoUpdateMode)"
-msgstr "[_AutoUpdateMode_ (自動更新模式 )](#AutoUpdateMode)"
 
 #. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
@@ -3726,6 +3726,109 @@ msgstr ""
 #. type: Title ###
 #: _docs/Build_Metadata_Reference.md
 #, fuzzy, no-wrap
+msgid "_AutoUpdateMode_<a name=\"AutoUpdateMode\"></a>"
+msgstr "自動更新模式 <a name=\"AutoUpdateMode\"></a>"
+
+#. type: Plain text
+#: _docs/Build_Metadata_Reference.md
+msgid "This determines the method used for auto-generating new builds when new releases are available - in other words, adding a new Build Version line to the metadata. This happens in conjunction with the _UpdateCheckMode_ functionality - i.e. when an update is detected by that, it is also processed by this."
+msgstr "這決定了在有新版本時自動生成新構建的方法 - 換句話說，在中介資料中加入新的構建版本行。這與 _UpdateCheckMode_ 功能共同進行 - 也就是說，當一個更新被檢測到時，它也會被此功能處理。"
+
+#. type: Plain text
+#: _docs/Build_Metadata_Reference.md
+msgid "Valid modes are:"
+msgstr "有效模式是："
+
+#. type: Bullet: '-   '
+#: _docs/Build_Metadata_Reference.md
+#, fuzzy
+#| msgid "`None` - No auto-updating is done"
+msgid "`None` - Auto-updating is disabled"
+msgstr "`None` - 不進行自動更新"
+
+#. type: Bullet: '-   '
+#: _docs/Build_Metadata_Reference.md
+#, fuzzy
+#| msgid "`None` - No auto-updating is done"
+msgid "`Version` - Auto-updating is enabled."
+msgstr "`None` - 不進行自動更新"
+
+#. type: Plain text
+#: _docs/Build_Metadata_Reference.md
+#, fuzzy, no-wrap
+#| msgid ""
+#| "    If UpdateCheckMode is set to `Tags` the generator string behind `Version`\n"
+#| "    is optional and not used for the `commit:` field.\n"
+msgid ""
+"    If `UpdateCheckMode` is set to `Tags`, this should be set to\n"
+"    `Version` without any pattern. The checked tag is used directly.\n"
+msgstr "    如果 UpdateCheckMode 被設定為 `Tags`，那麼 `Version` 後面的生成器字元串是可選的，並且不用於 `commit:` 字段。\n"
+
+#. type: Plain text
+#: _docs/Build_Metadata_Reference.md
+#, fuzzy, no-wrap
+#| msgid "`Version` - Generates a value (tag name) used for the `commit:` property of new build blocks. It is simply text in which %v and %c are replaced with the required version name and version code respectively. The resulting string must match an existing tag in the app's repo, which then will be used by F-Droid to build the corresponding version."
+msgid ""
+"    If `UpdateCheckMode` is set to `HTTP`, a pattern should be added\n"
+"    after the `Version`. The pattern is used to generate a value\n"
+"    (tag name) used for the `commit:` property of new build blocks.\n"
+"    It is simply text in which `%v` and `%c` are replaced with the required\n"
+"    version name and version code respectively. The resulting\n"
+"    string must match an existing tag in the app's repo, which then will be\n"
+"    used by F-Droid to build the corresponding version.\n"
+msgstr "`Version` - 產生一個用於新構建塊的 `commit:` 屬性的值（標籤名）。它是簡單的文本，其中 %v 和 %c 分別被替換成所需的版本名稱和版本代碼。產生的字元串必須與應用程式軟體庫中的現有標籤相匹配，然後 F-Droid 將使用該標籤來構建相應的版本。"
+
+#. type: Plain text
+#: _docs/Build_Metadata_Reference.md
+#, fuzzy, no-wrap
+#| msgid ""
+#| "    For example, if an app always has a tag \"2.7.2\" corresponding to\n"
+#| "    version 2.7.2, you would simply specify \"Version %v\". If an app\n"
+#| "    always has a tag \"ver\\_1234\" for a version with version code 1234,\n"
+#| "    you would specify \"Version ver\\_%c\".\n"
+msgid ""
+"    For example, if an app always has a tag `2.7.2` corresponding to\n"
+"    version 2.7.2, you would simply specify `Version %v`. If an app\n"
+"    always has a tag `ver_1234` for a version with version code 1234,\n"
+"    you would specify `Version ver_%c`.\n"
+msgstr "    例如，如果一個應用程式總是有一個標籤 \\\"2.7.2\\\" 對應於 2.7.2 版本，你可以簡單地指定 \\\"Version %v\\\"。如果一個應用程式總是有一個標籤 \\\"ver\\\\_1234\\\" 表示版本代碼為 1234 的版本，你可以指定 \\\"Version ver\\\\_%c\\\"。\n"
+
+#. type: Plain text
+#: _docs/Build_Metadata_Reference.md
+#, fuzzy, no-wrap
+#| msgid ""
+#| "    Continuing the first example above, you would specify that as \"Version\n"
+#| "    +-fdroid %v\" - \"-fdroid\" is the suffix F-Droid will then append to the\n"
+#| "    `versionName` specified in e.g. `build.gradle` when building the APK.\n"
+msgid ""
+"    Continuing the first example above, you would specify that as\n"
+"    `Version +-fdroid %v` - `-fdroid` is the suffix F-Droid will then append to the\n"
+"    `versionName` specified in e.g. `build.gradle` when building the APK.\n"
+msgstr "    繼續上面的第一個例子，你可以將其指定為 \\\"Version +-fdroid %v\\\" - \\\"-fdroid\\\" 是 F-Droid 將在構建 APK 時附加到例如在 `build.gradle`中指定的 `versionName` 的後綴。\n"
+
+#. type: Plain text
+#: _docs/Build_Metadata_Reference.md
+#, fuzzy, no-wrap
+#| msgid ""
+#| "    Additionally, a suffix can be added to the version name at this\n"
+#| "    stage, to differentiate F-Droid's build from the original.\n"
+#| "    Continuing the first example above, you would specify that as\n"
+#| "    \"Version +-fdroid %v\" - \"-fdroid\" is the suffix.\n"
+msgid ""
+"    Additionally, a suffix can be added to the version name at this\n"
+"    stage, to differentiate F-Droid's build from the original.\n"
+"    Continuing the first example above, you would specify that as\n"
+"    `Version +-fdroid %v` - `-fdroid` is the suffix.\n"
+msgstr "    此外，在這個階段，可以在版本名稱中加入一個後綴，以區分 F-Droid 的構建和原始版本。繼續上面的第一個例子，你可以將其指定為 \\\"Version +-fdroid %v\\\" - \\\"-fdroid\\\" 為後綴。\n"
+
+#. type: Plain text
+#: _docs/Build_Metadata_Reference.md
+msgid "For apps with a list of [_VercodeOperation_](#VercodeOperation) the number of builds is equal to the number of items in the list."
+msgstr ""
+
+#. type: Title ###
+#: _docs/Build_Metadata_Reference.md
+#, fuzzy, no-wrap
 msgid "_UpdateCheckMode_<a name=\"UpdateCheckMode\"></a>"
 msgstr "更新檢查模式 <a name=\"UpdateCheckMode\"></a>"
 
@@ -3733,11 +3836,6 @@ msgstr "更新檢查模式 <a name=\"UpdateCheckMode\"></a>"
 #: _docs/Build_Metadata_Reference.md
 msgid "This determines the method using for determining when new releases are available - in other words, the updating of the _CurrentVersion_ and _CurrentVersionCode_ fields in the metadata by the `fdroid checkupdates` process."
 msgstr "這決定了用於確定何時有新版本 - 換句話說，由 `fdroid checkupdates` 程式更新中介資料中 _CurrentVersion_ 和 _CurrentVersionCode_ 字段 - 的方法。"
-
-#. type: Plain text
-#: _docs/Build_Metadata_Reference.md
-msgid "Valid modes are:"
-msgstr "有效模式是："
 
 #. type: Bullet: '-   '
 #: _docs/Build_Metadata_Reference.md
@@ -3969,104 +4067,6 @@ msgid ""
 "Examples for `UpdateCheckMode: HTTP`:\n"
 "-   `https://foo/version.json|\"version_code\":.*\"(.*)\"|.|\"version_name\":.*\\\"(.*)\\\",`\n"
 "-   `https://foo/version_fdroid.txt|versionCode=(.*)|.|versionName=(.*)`\n"
-msgstr ""
-
-#. type: Title ###
-#: _docs/Build_Metadata_Reference.md
-#, fuzzy, no-wrap
-msgid "_AutoUpdateMode_<a name=\"AutoUpdateMode\"></a>"
-msgstr "自動更新模式 <a name=\"AutoUpdateMode\"></a>"
-
-#. type: Plain text
-#: _docs/Build_Metadata_Reference.md
-msgid "This determines the method used for auto-generating new builds when new releases are available - in other words, adding a new Build Version line to the metadata. This happens in conjunction with the _UpdateCheckMode_ functionality - i.e. when an update is detected by that, it is also processed by this."
-msgstr "這決定了在有新版本時自動生成新構建的方法 - 換句話說，在中介資料中加入新的構建版本行。這與 _UpdateCheckMode_ 功能共同進行 - 也就是說，當一個更新被檢測到時，它也會被此功能處理。"
-
-#. type: Bullet: '-   '
-#: _docs/Build_Metadata_Reference.md
-#, fuzzy
-#| msgid "`None` - No auto-updating is done"
-msgid "`None` - Auto-updating is disabled"
-msgstr "`None` - 不進行自動更新"
-
-#. type: Bullet: '-   '
-#: _docs/Build_Metadata_Reference.md
-#, fuzzy
-#| msgid "`None` - No auto-updating is done"
-msgid "`Version` - Auto-updating is enabled."
-msgstr "`None` - 不進行自動更新"
-
-#. type: Plain text
-#: _docs/Build_Metadata_Reference.md
-#, fuzzy, no-wrap
-#| msgid ""
-#| "    If UpdateCheckMode is set to `Tags` the generator string behind `Version`\n"
-#| "    is optional and not used for the `commit:` field.\n"
-msgid ""
-"    If `UpdateCheckMode` is set to `Tags`, this should be set to\n"
-"    `Version` without any pattern. The checked tag is used directly.\n"
-msgstr "    如果 UpdateCheckMode 被設定為 `Tags`，那麼 `Version` 後面的生成器字元串是可選的，並且不用於 `commit:` 字段。\n"
-
-#. type: Plain text
-#: _docs/Build_Metadata_Reference.md
-#, fuzzy, no-wrap
-#| msgid "`Version` - Generates a value (tag name) used for the `commit:` property of new build blocks. It is simply text in which %v and %c are replaced with the required version name and version code respectively. The resulting string must match an existing tag in the app's repo, which then will be used by F-Droid to build the corresponding version."
-msgid ""
-"    If `UpdateCheckMode` is set to `HTTP`, a pattern should be added\n"
-"    after the `Version`. The pattern is used to generate a value\n"
-"    (tag name) used for the `commit:` property of new build blocks.\n"
-"    It is simply text in which `%v` and `%c` are replaced with the required\n"
-"    version name and version code respectively. The resulting\n"
-"    string must match an existing tag in the app's repo, which then will be\n"
-"    used by F-Droid to build the corresponding version.\n"
-msgstr "`Version` - 產生一個用於新構建塊的 `commit:` 屬性的值（標籤名）。它是簡單的文本，其中 %v 和 %c 分別被替換成所需的版本名稱和版本代碼。產生的字元串必須與應用程式軟體庫中的現有標籤相匹配，然後 F-Droid 將使用該標籤來構建相應的版本。"
-
-#. type: Plain text
-#: _docs/Build_Metadata_Reference.md
-#, fuzzy, no-wrap
-#| msgid ""
-#| "    For example, if an app always has a tag \"2.7.2\" corresponding to\n"
-#| "    version 2.7.2, you would simply specify \"Version %v\". If an app\n"
-#| "    always has a tag \"ver\\_1234\" for a version with version code 1234,\n"
-#| "    you would specify \"Version ver\\_%c\".\n"
-msgid ""
-"    For example, if an app always has a tag `2.7.2` corresponding to\n"
-"    version 2.7.2, you would simply specify `Version %v`. If an app\n"
-"    always has a tag `ver_1234` for a version with version code 1234,\n"
-"    you would specify `Version ver_%c`.\n"
-msgstr "    例如，如果一個應用程式總是有一個標籤 \\\"2.7.2\\\" 對應於 2.7.2 版本，你可以簡單地指定 \\\"Version %v\\\"。如果一個應用程式總是有一個標籤 \\\"ver\\\\_1234\\\" 表示版本代碼為 1234 的版本，你可以指定 \\\"Version ver\\\\_%c\\\"。\n"
-
-#. type: Plain text
-#: _docs/Build_Metadata_Reference.md
-#, fuzzy, no-wrap
-#| msgid ""
-#| "    Continuing the first example above, you would specify that as \"Version\n"
-#| "    +-fdroid %v\" - \"-fdroid\" is the suffix F-Droid will then append to the\n"
-#| "    `versionName` specified in e.g. `build.gradle` when building the APK.\n"
-msgid ""
-"    Continuing the first example above, you would specify that as\n"
-"    `Version +-fdroid %v` - `-fdroid` is the suffix F-Droid will then append to the\n"
-"    `versionName` specified in e.g. `build.gradle` when building the APK.\n"
-msgstr "    繼續上面的第一個例子，你可以將其指定為 \\\"Version +-fdroid %v\\\" - \\\"-fdroid\\\" 是 F-Droid 將在構建 APK 時附加到例如在 `build.gradle`中指定的 `versionName` 的後綴。\n"
-
-#. type: Plain text
-#: _docs/Build_Metadata_Reference.md
-#, fuzzy, no-wrap
-#| msgid ""
-#| "    Additionally, a suffix can be added to the version name at this\n"
-#| "    stage, to differentiate F-Droid's build from the original.\n"
-#| "    Continuing the first example above, you would specify that as\n"
-#| "    \"Version +-fdroid %v\" - \"-fdroid\" is the suffix.\n"
-msgid ""
-"    Additionally, a suffix can be added to the version name at this\n"
-"    stage, to differentiate F-Droid's build from the original.\n"
-"    Continuing the first example above, you would specify that as\n"
-"    `Version +-fdroid %v` - `-fdroid` is the suffix.\n"
-msgstr "    此外，在這個階段，可以在版本名稱中加入一個後綴，以區分 F-Droid 的構建和原始版本。繼續上面的第一個例子，你可以將其指定為 \\\"Version +-fdroid %v\\\" - \\\"-fdroid\\\" 為後綴。\n"
-
-#. type: Plain text
-#: _docs/Build_Metadata_Reference.md
-msgid "For apps with a list of [_VercodeOperation_](#VercodeOperation) the number of builds is equal to the number of items in the list."
 msgstr ""
 
 #. type: Title ###
@@ -5890,12 +5890,7 @@ msgstr ""
 
 #. type: Bullet: '-   '
 #: _docs/FAQ_-_General.md
-msgid "the IRC chat room: [\\#fdroid](ircs://irc.oftc.net:6697/fdroid) IRC chatroom on OFTC ([click here to join the webchat](https://webchat.oftc.net/?randomnick=1&channels=fdroid&prompt=1))"
-msgstr ""
-
-#. type: Bullet: '-   '
-#: _docs/FAQ_-_General.md
-msgid "the [web forum](https://forum.f-droid.org/)"
+msgid "using the [forum or chat rooms](https://f-droid.org/en/about/#contact)"
 msgstr ""
 
 #. type: Bullet: '-   '
@@ -9672,6 +9667,44 @@ msgstr ""
 
 #. type: Title ####
 #: _docs/Reproducible_Builds.md
+#, no-wrap
+msgid "VCS Info"
+msgstr ""
+
+#. type: Plain text
+#: _docs/Reproducible_Builds.md
+msgid "Since Android Gradle Plugin 8.3, VCS info is generated by default and bundled in the apk in `META-INF/version-control-info.textproto`, e.g."
+msgstr ""
+
+#. type: Fenced code block
+#: _docs/Reproducible_Builds.md
+#, no-wrap
+msgid ""
+"repositories {\n"
+"  system: GIT\n"
+"  local_root_path: \"$PROJECT_DIR\"\n"
+"  revision: \"3a443877cd53e37d85cbc52adc8cfd558919d373\"\n"
+"}\n"
+msgstr ""
+
+#. type: Plain text
+#: _docs/Reproducible_Builds.md
+msgid "This may cause problem when there is no real code change but a different commit is used, e.g.  for changelog update. VCS info can be disabled in gradle as follows:"
+msgstr ""
+
+#. type: Fenced code block (gradle)
+#: _docs/Reproducible_Builds.md
+#, no-wrap
+msgid ""
+"    buildTypes {\n"
+"        release {\n"
+"           vcsInfo.include false\n"
+"        }\n"
+"    }\n"
+msgstr ""
+
+#. type: Title ####
+#: _docs/Reproducible_Builds.md
 #, fuzzy, no-wrap
 #| msgid "`metadata/`"
 msgid "ZIP metadata"
@@ -10329,6 +10362,11 @@ msgstr ""
 msgid "Android 6.0 (API 23) and up: [F-Droid (latest stable)]({{ site.fdroid_apk_download_url }})"
 msgstr ""
 
+#. type: Plain text
+#: _docs/Running_on_old_Android_versions.md
+msgid "First issue older Android versions encounter will be certificate related, please read and follow the steps to [install the Let’s Encrypt ISRG Root X1 certificate](https://www.stoutner.com/lets-encrypt-isrg-root-x1-and-privacy-browser/) before proceeding. Android 6 and 7 are also affected, while the latest in-client mirroring system will alleviate this and cycle through mirrors until it finds one that is still compatible, users are encouraged to add the certificate anyway as this helps other apps too."
+msgstr ""
+
 #. type: Bullet: '* '
 #: _docs/Running_on_old_Android_versions.md
 msgid "Android 5.1 (API 22): [F-Droid 1.15.6](https://f-droid.org/archive/org.fdroid.fdroid_1015056.apk)"
@@ -10371,7 +10409,7 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/Running_on_old_Android_versions.md
-msgid "Please note that many apps on F-Droid may no longer support such old Android versions. It is recommended to enable the \"F-Droid Archive\" repository in the F-Droid app. Enabling the archive lets F-Droid show you older versions of apps, which may include versions that still work on your device."
+msgid "Please note that many apps on F-Droid may no longer support such old Android versions. It is recommended to enable the \"F-Droid Archive\" repository in the F-Droid app. Enabling the Archive lets F-Droid show you older versions of apps, which may include versions that still work on your device."
 msgstr ""
 
 #. type: Yaml Front Matter Hash Value: title
