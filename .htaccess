@@ -93,8 +93,10 @@ ErrorDocument 404 /404.html
 ## Point the big download button to the latest stable F-droid APK.
 ##
 
-RewriteCond %{REQUEST_URI} ^/F-?Droid.apk(\.asc)?$  [nocase]
-RewriteRule ^.*$ /archive/org.fdroid.fdroid_1017050.apk%1 [last]
+RewriteCond %{REQUEST_URI} ^/F-?Droid\.apk\.asc$  [nocase]
+RewriteRule ^.*$ /archive/org.fdroid.fdroid_1017050.apk.asc%1 [last,type=application/pgp-signature]
+RewriteCond %{REQUEST_URI} ^/F-?Droid\.apk$  [nocase]
+RewriteRule ^.*$ /archive/org.fdroid.fdroid_1017050.apk%1 [last,type=application/vnd.android.package-archive]
 
 
 ##
