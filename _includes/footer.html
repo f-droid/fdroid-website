@@ -4,10 +4,16 @@
 
     <div class="site-description">
       <p>
-        {{ site.copyright }}
+        {%- assign section = page.path | split: "/" | first -%}
+        {%- if section != "packages" -%}
+          {{ site.copyright }}
+        {%- endif %}
+        {%- assign slug = section | replace_first: "_", "" -%}
+        {%- if slug == "pages" -%}
         <span class="version">
           ({% fdroid_repo_info %}, fdroid-website <a href="https://gitlab.com/fdroid/fdroid-website/tree/{% git_hash %}">{% git_tag %}</a>)
         </span>
+        {%- endif %}
 	<span class="edit-this-page-area">
 	  <a href="https://fdroidstatus.org/" target="_blank">
 	    {{ site.data.strings.navigation.statuspage }}
@@ -22,8 +28,6 @@
 	    {{ site.data.strings.navigation.edit_on_gitlab }}
 	  </a>
 	  {%- else -%}
-	  {%- assign section = page.path | split: "/" | first -%}
-	  {%- assign slug = section | replace_first: "_", "" -%}
 	  {%- assign filename = page.path | split: "/" | last -%}
 	  {%- if section == "packages" -%}
 	  <a href="https://hosted.weblate.org/translate/f-droid/fdroiddata/{{ site.active_lang }}/?q=state:<translated" target="_blank">
