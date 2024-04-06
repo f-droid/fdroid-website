@@ -100,7 +100,7 @@ sudo easy_install fdroidserver
 
 Starting with the Windows 10 "Anniversary Update", you can [enable an
 Ubuntu environment](https://msdn.microsoft.com/en-us/commandline/wsl/install_guide)
-that runs in Windows, known has "Bash on Windows", "Ubuntu on Windows",
+that runs in Windows, known as "Bash on Windows", "Ubuntu on Windows",
 or "Windows Subsystem for Linux".
 
 1.  [setup Windows Subsystem for Linux](https://msdn.microsoft.com/en-us/commandline/wsl/install_guide)
