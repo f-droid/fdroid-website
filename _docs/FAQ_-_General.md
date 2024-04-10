@@ -12,7 +12,7 @@ title: FAQ - General
 We welcome all questions and have a few places to reach out to the
 F-Droid community:
 
--   using the [forum or chat rooms](https://f-droid.org/en/about/#contact)
+-   using the [forum or chat rooms](https://f-droid.org/about/#contact)
 -   [issue tracker](https://gitlab.com/fdroid/fdroidclient/issues) for
     the Android app itself (aka client)
 -   [issue tracker](https://gitlab.com/fdroid/fdroidserver/issues) for
@@ -85,9 +85,7 @@ Pick your favourite reason (both are true and valid):
 ### How can I report bugs or request features?
 
 Use the [issue tracker](https://gitlab.com/fdroid/fdroidclient/issues)
-or email <team@f-droid.org>. You can also discuss them in the
-[\#fdroid](ircs://irc.oftc.net:6697/fdroid) IRC chatroom on OFTC
-([click here to join the webchat](https://webchat.oftc.net/?randomnick=1&channels=fdroid&prompt=1)).
+or email <team@f-droid.org>. You can also discuss them in the [forum or chat rooms](https://f-droid.org/about/#contact).
 
 If you do not already have an account, or do not want to create one,
 you can use our reusable account.  The issue tracker works better if

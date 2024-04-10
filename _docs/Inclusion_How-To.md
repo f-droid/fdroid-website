@@ -133,7 +133,7 @@ In case the inclusion is from a GitLab merge request, the review process is
 theoretically the same. They are done mostly to confirm that
 the proposed metadata is consistent with what is really in the
 application source code. Steps about writing and committing metadata
-are omitted, as they will use the original metadata file you proprosed.
+are omitted, as they will use the original metadata file you proposed.
 Feedback will be given on the original merge request thread that the
 application was proposed; and once the process is completed, the request
 will be merged to the `master` branch of the fdroiddata
@@ -194,7 +194,7 @@ all the submitter needs to do is to wait for it to finish.
 
 A record of a successful build process for one application is provided on the
 F-Droid's website page for that specific app (e.g. [see the Build Log for the F-Droid
-Client](https://f-droid.org/en/packages/org.fdroid.fdroid/#latest)).
+Client](https://f-droid.org/packages/org.fdroid.fdroid/#latest)).
 
 Apps that fail will have the log available during the build cycle on the [F-Droid Monitor - Running](https://monitor.f-droid.org/builds/running) page or, if in the previous cycle, on the [Build](https://monitor.f-droid.org/builds/build) page.
 This is useful to aid in diagnosing problems when the build unexpectedly failed.

@@ -18,8 +18,8 @@ on.
 
 If you experience problems with the site or client software, you can
 report them in the [issue tracker](https://gitlab.com/u/fdroid), discuss
-them in the [Forum](https://forum.f-droid.org/), on [Matrix](https://matrix.to/#/#fdroid:f-droid.org) or on IRC
-([#fdroid on OFTC](https://webchat.oftc.net/?randomnick=1&channels=fdroid&prompt=1)).
+them in the [forum or chat rooms](https://f-droid.org/about/#contact).
+
 Take a look at the [Repository Maintenance](https://monitor.f-droid.org/builds)
 page to see how you can help keeping apps and their metadata up to
 date.
