@@ -17,8 +17,8 @@ You can discuss F-Droid or get help on the
 [forum](https://forum.f-droid.org) and F-Droid's user chat.
 
 To chat with others in real time about F-Droid, you can join via IRC in the
-[#fdroid channel](https://webchat.oftc.net/?randomnick=1&channels=fdroid&prompt=1) on
-OFTC ([click here to join the webchat](https://webchat.oftc.net/?randomnick=1&channels=fdroid&prompt=1),
+[#fdroid channel](ircs://irc.oftc.net:6697/fdroid) on
+[OFTC](https://oftc.net/) ([click here to join the webchat](https://webchat.oftc.net/?randomnick=1&channels=fdroid&prompt=1),
 but set a proper nickname, not `qwebirc*`).
 
 Matrix users can join [#fdroid:f-droid.org](https://matrix.to/#/#fdroid:f-droid.org). An F-Droid matrix space grouping together all F-Droid related rooms exists at [#fdroid-space:f-droid.org](https://matrix.to/#/#fdroid-space:f-droid.org), and can be joined by anyone.

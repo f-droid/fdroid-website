@@ -43,12 +43,12 @@ for you because they come with F-Droid built-in and ready to use:
 
 #### Flash F-Droid OTA
 
-When you intend on flashing a ROM which doesn-t come preloaded with F-Droid we
+When you intend on flashing a ROM which doesn't come preloaded with F-Droid we
 recommend to flash F-Droid privileged extension OTA. This option works great
 with [LineageOS](https://lineageos.org/) for example.
 
 - download the latest [F-Droid privileged extension
-  OTA](https://f-droid.org/en/packages/org.fdroid.fdroid.privileged.ota/#suggested).
+  OTA](https://f-droid.org/packages/org.fdroid.fdroid.privileged.ota/#suggested).
 - boot your phone into recovery mode
 - side-load / install the OTA zip file to your phone, the same way you would
   install a custom ROM. (eg. with `adb`, `heimdall`, etc.)
