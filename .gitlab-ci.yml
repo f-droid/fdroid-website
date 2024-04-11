@@ -163,14 +163,15 @@ rsync mirrors:
 weblate merge conflict:
   stage: deploy
   image: debian:bookworm-slim
-  only:
-    changes:
-      - .gitlab-ci.yml
-      - _data/*/strings.json
-      - _data/*/tutorials.json
-      - _data/strings.json
-      - _data/tutorials.json
-      - po/
+  rules:
+    - if: $CI_PIPELINE_SOURCE != "trigger"
+      changes:
+        - .gitlab-ci.yml
+        - _data/*/strings.json
+        - _data/*/tutorials.json
+        - _data/strings.json
+        - _data/tutorials.json
+        - po/
   script:
     - apt-get update
     - apt-get -qy upgrade
@@ -276,10 +277,11 @@ check_fdroid_apk_bot:
 Vagrantfile:
   stage: deploy
   image: debian:bookworm-slim
-  only:
-    changes:
-      - .gitlab-ci.yml
-      - Vagrantfile
+  rules:
+    - if: $CI_PIPELINE_SOURCE != "trigger"
+      changes:
+        - .gitlab-ci.yml
+        - Vagrantfile
   script:
     - apt-get update
     - apt-get -qy install --no-install-recommends kmod procps ruby vagrant vagrant-libvirt
@@ -293,12 +295,13 @@ Vagrantfile:
 YAML Front Matter:
   stage: deploy
   image: debian:bookworm-slim
-  only:
-    changes:
-      - .gitlab-ci.yml
-      - _docs/*.md
-      - _pages/*.md
-      - _posts/*.md
+  rules:
+    - if: $CI_PIPELINE_SOURCE != "trigger"
+      changes:
+        - .gitlab-ci.yml
+        - _docs/*.md
+        - _pages/*.md
+        - _posts/*.md
   script:
     - apt-get update
     - apt-get -qy install --no-install-recommends python3-yaml yamllint
@@ -316,11 +319,12 @@ YAML Front Matter:
 yamllint:
   image: debian:bookworm-slim
   stage: deploy
-  only:
-    changes:
-      - ".*.yml"
-      - "*.yml"
-      - ".yamllint"
+  rules:
+    - if: $CI_PIPELINE_SOURCE != "trigger"
+      changes:
+        - ".*.yml"
+        - "*.yml"
+        - ".yamllint"
   script:
     - *apt-template
     - apt-get install yamllint
