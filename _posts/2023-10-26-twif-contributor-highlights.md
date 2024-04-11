@@ -9,7 +9,7 @@ author: "paulali"
 
 
 #### F-Droid core
-**[F-Droid](https://f-droid.org/packages/org.fdroid.fdroid)** and **[F-Droid Basic](https://f-droid.org/packages/org.fdroid.basic)** were updated from 1.18.0 to 1.19.0-alpha0, now with support for automatic background updates on Android 12+ as announced [last week](https://f-droid.org/en/2023/10/19/twif-client-alpha-kde-removal-by-google.html). _Note that this is still in `beta` so brave users need to install this manually (enable Beta updates for the app or from Client expert settings)._
+**[F-Droid](https://f-droid.org/packages/org.fdroid.fdroid)** and **[F-Droid Basic](https://f-droid.org/packages/org.fdroid.basic)** were updated from 1.18.0 to 1.19.0-alpha0, now with support for automatic background updates on Android 12+ as announced [last week](https://f-droid.org/2023/10/19/twif-client-alpha-kde-removal-by-google.html). _Note that this is still in `beta` so brave users need to install this manually (enable Beta updates for the app or from Client expert settings)._
 
 
 #### Community News
@@ -31,7 +31,7 @@ I want to highlight some updates of this week:
 
 **[Image Toolbox](https://f-droid.org/packages/ru.tech.imageresizershrinker/)** is finally updated again. Since 2.1.3 [we can't build the APK reproducibly](https://github.com/T8RIN/ImageToolbox/discussions/151). Then some prebuilt libs are added which introduces more problems. Thanks to the effort of [@Licaon_Kter](https://gitlab.com/licaon-kter) and [@T8RIN](https://github.com/T8RIN) those binaries are cleaned up and the APK is reproducible again after 4 months.
 
-**[Kubenav](https://f-droid.org/en/packages/io.kubenav.kubenav/)** is rewriten in Flutter and Go since 4.0.0. This broke the update checker and we only noticed that recently. [@linsui](https://gitlab.com/linsui) [added](https://gitlab.com/fdroid/fdroiddata/-/merge_requests/13850) [v4.2.3](https://github.com/kubenav/kubenav/releases/tag/v4.2.3) and patched out some new non-free deps. It should be updated automatically in the future.
+**[Kubenav](https://f-droid.org/packages/io.kubenav.kubenav/)** is rewriten in Flutter and Go since 4.0.0. This broke the update checker and we only noticed that recently. [@linsui](https://gitlab.com/linsui) [added](https://gitlab.com/fdroid/fdroiddata/-/merge_requests/13850) [v4.2.3](https://github.com/kubenav/kubenav/releases/tag/v4.2.3) and patched out some new non-free deps. It should be updated automatically in the future.
 
 **[Sayboard](https://f-droid.org/packages/com.elishaazaria.sayboard/)**, a voice IME, is in F-Droid now. We have many open source IME but none of them have voice input support. Now we have an open source voice IME based on Vosk.Yay!!!
 

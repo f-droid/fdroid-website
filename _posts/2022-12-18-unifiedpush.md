@@ -26,7 +26,7 @@ Establishing and maintaining a direct connection between an app and a server can
 
 Applications that support UnifiedPush can receive notifications via a dedicated UnifiedPush application that maintains a single server connection to receive all notifications. We call this "UnifiedPush application" a *distributor*; it distributes push notifications to other apps on the device. You can choose which distributor you want to use, self-host the server part, or even create your own. For more information on distributors, check out the [full list](https://unifiedpush.org/users/distributors/).
 
-To use UnifiedPush on an application that supports it, you have to install and configure your distributor. You can use [UP-Example](https://f-droid.org/en/packages/org.unifiedpush.example/) as a simple test app.
+To use UnifiedPush on an application that supports it, you have to install and configure your distributor. You can use [UP-Example](https://f-droid.org/packages/org.unifiedpush.example/) as a simple test app.
 
 ![An animated SVG that shows how all distributors and apps are interchangeable and still work together through the UnifiedPush protocol]({% asset posts/2022-12-18-unifiedpush/animation-options.svg %})  
 *All distributors are compatible with all apps*

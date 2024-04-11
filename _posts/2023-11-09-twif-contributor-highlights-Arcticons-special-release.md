@@ -31,7 +31,7 @@ To learn more about this, please read this [article](https://www.wired.com/story
 
 > After contributing for months to [Frost](https://github.com/dkanada/frost), a fill-based icon pack. I wanted to create something different (but with the same goal), a line-based icon pack. Because I lacked the technical skills to create an app, so gladly I came across Frost, which was a perfect app to use as a base for Arcticons.
 
-> In these three years, the project gained many contributors, and thanks to its low entry level. We’ve managed to do quite a lot in that time, like: Upgrading our app to have more features like icon request support, a variant with [black lines ](https://f-droid.org/en/packages/com.donnnno.arcticons.light/) and later one with [Material You colors ](https://f-droid.org/packages/com.donnnno.arcticons.you/), we’ve also created 7000+ icons together, and we’re expanding to Linux too!
+> In these three years, the project gained many contributors, and thanks to its low entry level. We’ve managed to do quite a lot in that time, like: Upgrading our app to have more features like icon request support, a variant with [black lines ](https://f-droid.org/packages/com.donnnno.arcticons.light/) and later one with [Material You colors ](https://f-droid.org/packages/com.donnnno.arcticons.you/), we’ve also created 7000+ icons together, and we’re expanding to Linux too!
 
 > This is all possible thanks to the open-source nature of the project, and it’s fantastic community
 
