@@ -495,6 +495,18 @@ The APK diff will have entries in the `classes.dex` files like this, e.g. Java 1
 -    .end annotation
 ```
 
+Or like this, e.g. Java 17 vs Java 21:
+
+```diff
+-    .annotation system Ldalvik/annotation/MethodParameters;
+-        accessFlags = {
+-            0x8010
+-        }
+-        names = {
+-            null
+-        }
+-    .end annotation
+```
 
 #### Language-specific instructions
 
