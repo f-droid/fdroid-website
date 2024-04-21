@@ -238,7 +238,8 @@ layout: default-package-sidebar
 							{{ strings.permissions }}
 						</summary>
 						<ul class="package-version-permissions-list">
-							{% for permission in package.uses_permission %}
+							{% assign unique_permissions = package.uses_permission | uniq %}
+							{% for permission in unique_permissions %}
 
 							<li class="permission">
 
