@@ -2,13 +2,9 @@
 
 import glob
 import io
-import os
 import re
-import shutil
-import subprocess
 import sys
-from babel.messages.pofile import read_po, write_po
-from babel.messages.catalog import Message
+from babel.messages.pofile import read_po
 
 errorcount = 0
 md_link_pattern = re.compile(r'](\([^h][^\)]+\))')
@@ -21,12 +17,11 @@ for f in sorted(glob.glob('po/*.po*')):
     with open(f) as fp:
         contents = fp.read()
     try:
-        catalog = read_po(io.StringIO(contents))
+        catalog = read_po(io.StringIO(contents), abort_invalid=True)
     except Exception as e:
         errorcount += 1
         output += 'ERROR: %s' % e
     for message in catalog:
-
         if message.fuzzy:
             continue
 
