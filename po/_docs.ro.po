@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2024-04-11 15:00+0200\n"
-"PO-Revision-Date: 2024-04-12 16:02+0000\n"
+"PO-Revision-Date: 2024-04-25 05:14+0000\n"
 "Last-Translator: Licaon Kter <licaon.kter@protonmail.com>\n"
 "Language-Team: Romanian <https://hosted.weblate.org/projects/f-droid/website-docs/ro/>\n"
 "Language: ro\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n==1 ? 0 : (n==0 || (n%100 > 0 && n%100 < 20)) ? 1 : 2;\n"
-"X-Generator: Weblate 5.5-dev\n"
+"X-Generator: Weblate 5.5.1-dev\n"
 
 #. type: Yaml Front Matter Hash Value: title
 #: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
@@ -7345,7 +7345,7 @@ msgstr "[Proiectul Reproducible Builds](https://reproducible-builds.org/)"
 #. type: Bullet: '* '
 #: _docs/Inclusion_How-To.md
 msgid "[HOWTO: diff & fix APKs for Reproducible Builds](https://gitlab.com/fdroid/wiki/-/wikis/HOWTO:-diff-&-fix-APKs-for-Reproducible-Builds)"
-msgstr "[HOWTO: diff & fix APKs for Reproducible Builds](https://gitlab.com/fdroid/wiki/-/wikis/HOWTO:-diff-&-fix-APKs-for-Reproducible-Builds)"
+msgstr "[Cum să afli diferențele și să rezolvi compilările reproductibile](https://gitlab.com/fdroid/wiki/-/wikis/HOWTO:-diff-&-fix-APKs-for-Reproducible-Builds)"
 
 #. type: Title ##
 #: _docs/Inclusion_How-To.md
@@ -10223,17 +10223,7 @@ msgstr ""
 
 #. type: Fenced code block (gradle)
 #: _docs/Reproducible_Builds.md
-#, fuzzy, no-wrap
-#| msgid ""
-#| "android {\n"
-#| "    defaultConfig {\n"
-#| "        externalNativeBuild {\n"
-#| "            ndkBuild {\n"
-#| "                arguments \"LOCAL_LDFLAGS += -Wl,<linker args>\"\n"
-#| "            }\n"
-#| "        }\n"
-#| "    }\n"
-#| "}\n"
+#, no-wrap
 msgid ""
 "android {\n"
 "    defaultConfig {\n"
@@ -10570,33 +10560,7 @@ msgstr "Acesta este un exemplu de bloc de server pentru nginx. Dacă este utiliz
 
 #. type: Fenced code block
 #: _docs/Running_a_Mirror.md
-#, fuzzy, no-wrap
-#| msgid ""
-#| "server {\n"
-#| "  listen [::]:80 ipv6only=off;\n"
-#| "\n"
-#| "  server_name fdroidmirror.example;\n"
-#| "\n"
-#| "  rewrite ^ https://fdroidmirror.example$request_uri permanent;\n"
-#| "}\n"
-#| "\n"
-#| "server {\n"
-#| "  listen [::]:443 ssl http2 ipv6only=off;\n"
-#| "\n"
-#| "  server_name fdroidmirror.example;\n"
-#| "\n"
-#| "  root /var/www/fdroid/;\n"
-#| "\n"
-#| "  # TODO: https://gitlab.com/snippets/1834032\n"
-#| "  location /health {\n"
-#| "    proxy_pass http://127.0.0.1:8000/;\n"
-#| "  }\n"
-#| "\n"
-#| "  ssl_certificate /etc/letsencrypt/live/fdroidmirror.example/fullchain.pem;\n"
-#| "  ssl_certificate_key /etc/letsencrypt/live/fdroidmirror.example/privkey.pem;\n"
-#| "\n"
-#| "  # Insert here a TLS config from Mozilla SSL config generator https://mozilla.github.io/server-side-tls/ssl-config-generator/\n"
-#| "}\n"
+#, no-wrap
 msgid ""
 "server {\n"
 "  listen [::]:80 ipv6only=off;\n"
@@ -10622,25 +10586,20 @@ msgstr ""
 "server {\n"
 "  listen [::]:80 ipv6only=off;\n"
 "\n"
-"  server_name fdroidmirror.example;\n"
+"  server_name fdroidmirror.example.com;\n"
 "\n"
-"  rewrite ^ https://fdroidmirror.example$request_uri permanent;\n"
+"  rewrite ^ https://$host$request_uri permanent;\n"
 "}\n"
 "\n"
 "server {\n"
 "  listen [::]:443 ssl http2 ipv6only=off;\n"
 "\n"
-"  server_name fdroidmirror.example;\n"
+"  server_name fdroidmirror.example.com;\n"
 "\n"
 "  root /var/www/fdroid/;\n"
 "\n"
-"  # TODO: https://gitlab.com/snippets/1834032\n"
-"  location /health {\n"
-"    proxy_pass http://127.0.0.1:8000/;\n"
-"  }\n"
-"\n"
-"  ssl_certificate /etc/letsencrypt/live/fdroidmirror.example/fullchain.pem;\n"
-"  ssl_certificate_key /etc/letsencrypt/live/fdroidmirror.example/privkey.pem;\n"
+"  ssl_certificate /etc/letsencrypt/live/fdroidmirror.example.com/fullchain.pem;\n"
+"  ssl_certificate_key /etc/letsencrypt/live/fdroidmirror.example.com/privkey.pem;\n"
 "\n"
 "  # Insert here a TLS config from Mozilla SSL config generator https://mozilla.github.io/server-side-tls/ssl-config-generator/\n"
 "}\n"
@@ -10675,10 +10634,8 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/Running_a_Mirror.md
-#, fuzzy
-#| msgid "Also, it would be nice to include a privacy policy so users can understand what happens with their metadata when using the mirror. Purdue PLUG https://plug-mirror.rcac.purdue.edu/info.html and FAU https://ftp.fau.de/datenschutz are two examples."
 msgid "Please include a privacy policy so that users can understand what happens with their metadata when using your mirror.  For inspiration, see:"
-msgstr "De asemenea, ar fi bine să fie inclusă o politică de confidențialitate pentru ca utilizatorii să înțeleagă ce se întâmplă cu metadatele lor atunci când folosesc oglinda. Purdue PLUG https://plug-mirror.rcac.purdue.edu/info.html și FAU https://ftp.fau.de/datenschutz sunt două exemple."
+msgstr "Vă rugăm să includeți o politică de confidențialitate pentru ca utilizatorii să înțeleagă ce se întâmplă cu metadatele lor atunci când folosesc serverul dvs. de rezzervă.  Pentru inspirație, consultați:"
 
 #. type: Bullet: '* '
 #: _docs/Running_a_Mirror.md
