@@ -46,6 +46,8 @@ Content-Type: application/json; charset=utf-8
 
 This API is already used by shields.io project to provide F-Droid badges, [like this](https://img.shields.io/f-droid/v/org.fdroid.fdroid).
 
+Note: the expected client behaviour is to install `suggestedVersionCode`, and if that's not available _(eg. if package [waits for a rebuild](https://monitor.f-droid.org/builds/missingbuilds) or if package [waits for manual update](https://monitor.f-droid.org/builds/needsupdate))_ then use the highest `versionCode` that is compatible with the device.
+
 
 ### The repo index
 
