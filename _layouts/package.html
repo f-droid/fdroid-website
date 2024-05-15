@@ -231,9 +231,8 @@ layout: default-package-sidebar
 				</div>
 				{% endif %}
 
-				{% if package.uses_permission != "" and package.uses_permission != nil %}
 				<div class="package-version-permissions">
-					{% if package.uses_permission %}
+					{% if package.uses_permission != empty and package.uses_permission != nil %}
 					<details {% if forloop.first %}open{% endif %}>
 						<summary class="package-version-permissions-summary">
 							{{ strings.permissions }}
@@ -272,13 +271,7 @@ layout: default-package-sidebar
 					<div class="no-permissions">{{ strings.no_permissions }}</div>
 					{% endif %}
 				</div>
-				{% endif %}
 
-				
-
-
-				
-				
 				<p class="package-version-download">
 					<b>
 						<a href="{{ site.fdroid-repo }}/{{ package.apk_name }}">
