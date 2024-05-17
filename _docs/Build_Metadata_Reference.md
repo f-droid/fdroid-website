@@ -844,6 +844,8 @@ fetched using:
 apksigner verify --print-certs example.apk | grep SHA-256
 ```
 
+Usually, APKs are signed using only one signer.  APKs that require verification by [multiple signers](https://developer.android.com/tools/apksigner#usage-sign) are currently not supported by `AllowedAPKSigningKeys` (this is quite rare).
+
 
 ### _AntiFeatures_<a name="AntiFeatures"></a>
 
