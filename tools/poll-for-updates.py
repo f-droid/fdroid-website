@@ -27,7 +27,7 @@ r.raise_for_status()
 date = '{:04g}-{:02g}-{:02g}'.format(*email.utils.parsedate(r.headers['Date'])).encode()
 
 data = None
-r = requests.get('https://staging.f-droid.org/en/index.html', headers=headers)
+r = requests.get('https://staging.f-droid.org/en/about/index.html', headers=headers)
 r.raise_for_status()
 for chunk in r.iter_content(chunk_size=1024):
     if chunk:  # filter out keep-alive new chunks
