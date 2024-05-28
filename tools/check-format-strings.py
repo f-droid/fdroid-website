@@ -25,6 +25,7 @@ basedir = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 datadir = os.path.join(basedir, '_data')
 
 formatpattern = re.compile(r'(\[[a-z][a-z0-9_]*\])([^(]|$)')
+rubypattern = re.compile(r'(%(?:[a-zA-Z]|{[^}]+}))')
 bracketspattern = re.compile(r'[\[\]][^(]')
 
 with open(os.path.join(datadir, 'strings.json')) as fp:
@@ -36,6 +37,12 @@ for k, v in sourcestrings.items():
     if m:
         formats[k] = m.group(1)
         print(k, '\tformat:', m.group(1))
+    if k == 'news.date_format':
+        # this is a special case
+        continue
+    for m in rubypattern.findall(v):
+        formats[k] = m
+        print(k, '\truby format:', m)
 
 exitvalue = 0
 for f in glob.glob(os.path.join(datadir, '*', 'strings.json')):
