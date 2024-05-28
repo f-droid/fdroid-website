@@ -15,7 +15,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2024-05-15 18:23+0200\n"
+"POT-Creation-Date: 2024-05-28 11:05+0200\n"
 "PO-Revision-Date: 2023-10-16 09:49+0000\n"
 "Last-Translator: Frankie McEyes <mceyes@protonmail.com>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/f-droid/website-posts/it/>\n"
@@ -20128,106 +20128,172 @@ msgid "Sebastian Crane on behalf of the F-Droid Board of Directors"
 msgstr ""
 
 #. type: Yaml Front Matter Hash Value: title
-#: _posts/2024-05-20-repository-overhaul-in-client-1-20.md
+#: _posts/2024-05-16-repository-overhaul-in-client-1-20.md
 #, no-wrap
 msgid "Repository Overhaul in new Client 1.20"
 msgstr ""
 
 #. type: Plain text
-#: _posts/2024-05-20-repository-overhaul-in-client-1-20.md
+#: _posts/2024-05-16-repository-overhaul-in-client-1-20.md
 msgid "Since [the early days of 2010](https://f-droid.org/2010/10/20/f-droid-repository-alpha.html), F-Droid is a *repository* of apps (not an app store).  Its client app [always allowed to add third-party repositories](https://gitlab.com/fdroid/fdroidclient/-/blob/0b71cb7e7331fb73ee762225d0225fd92ce99010/src/org/fdroid/fdroid/ManageRepo.java).  Today, there are [hundreds of repositories](https://forum.f-droid.org/t/known-repositories/721)  and [we are improving](https://gitlab.com/fdroid/wiki/-/wikis/Repository-Management-Overhaul)  how the client app is handling those:"
 msgstr ""
 
 #. type: Bullet: '* '
-#: _posts/2024-05-20-repository-overhaul-in-client-1-20.md
+#: _posts/2024-05-16-repository-overhaul-in-client-1-20.md
 msgid "the official repository is preferred by default"
 msgstr ""
 
 #. type: Bullet: '* '
-#: _posts/2024-05-20-repository-overhaul-in-client-1-20.md
+#: _posts/2024-05-16-repository-overhaul-in-client-1-20.md
 msgid "the repository an app comes from is prominently shown"
 msgstr ""
 
 #. type: Bullet: '* '
-#: _posts/2024-05-20-repository-overhaul-in-client-1-20.md
+#: _posts/2024-05-16-repository-overhaul-in-client-1-20.md
 msgid "if an app is available from more than one repository, you can choose where to get it from"
 msgstr ""
 
 #. type: Bullet: '* '
-#: _posts/2024-05-20-repository-overhaul-in-client-1-20.md
+#: _posts/2024-05-16-repository-overhaul-in-client-1-20.md
 msgid "power users can change global repository priorities"
 msgstr ""
 
 #. type: Bullet: '* '
-#: _posts/2024-05-20-repository-overhaul-in-client-1-20.md
+#: _posts/2024-05-16-repository-overhaul-in-client-1-20.md
 msgid "archives are part of their main repository and not listed separately"
 msgstr ""
 
 #. type: Plain text
-#: _posts/2024-05-20-repository-overhaul-in-client-1-20.md
+#: _posts/2024-05-16-repository-overhaul-in-client-1-20.md
 msgid "Previously, if you added a new repository, it would get added with a higher priority than the pre-added official F-Droid repository.  This allowed the newly added repository to *override* apps built by F-Droid.  They could alter the app description and offer their own versions of the app for installation.  With the new 1.20 release of the official F-Droid client app, newly added repositories get added with a lower priority, so that the apps from the F-Droid repository take precedence by default."
 msgstr ""
 
 #. type: Plain text
-#: _posts/2024-05-20-repository-overhaul-in-client-1-20.md
+#: _posts/2024-05-16-repository-overhaul-in-client-1-20.md
 msgid "Furthermore, when tapping an app, the user sees the app details screen as usual.  However, now a new box at the top clearly shows the repository the app comes from."
 msgstr ""
 
 #. type: Plain text
-#: _posts/2024-05-20-repository-overhaul-in-client-1-20.md
+#: _posts/2024-05-16-repository-overhaul-in-client-1-20.md
 #, no-wrap
 msgid "<img src=\"{% asset posts/2024-05-20-repository-overhaul-in-client-1-20/repo-box.png %}\" />\n"
 msgstr ""
 
 #. type: Plain text
-#: _posts/2024-05-20-repository-overhaul-in-client-1-20.md
+#: _posts/2024-05-16-repository-overhaul-in-client-1-20.md
 msgid "All information on that page including the versions of the app that are considered for installation are provided by the repository that is shown in the box at the top.  This was only implicit and hard to discover before."
 msgstr ""
 
 #. type: Plain text
-#: _posts/2024-05-20-repository-overhaul-in-client-1-20.md
+#: _posts/2024-05-16-repository-overhaul-in-client-1-20.md
 msgid "If the app is available from more than one repository, the box in the app details screen becomes a drop-down where the user can see all repositories and choose which one should be used for installation, updates and app information."
 msgstr ""
 
 #. type: Plain text
-#: _posts/2024-05-20-repository-overhaul-in-client-1-20.md
+#: _posts/2024-05-16-repository-overhaul-in-client-1-20.md
 #, no-wrap
 msgid "<img src=\"{% asset posts/2024-05-20-repository-overhaul-in-client-1-20/repo-change.webp %}\" />\n"
 msgstr ""
 
 #. type: Plain text
-#: _posts/2024-05-20-repository-overhaul-in-client-1-20.md
+#: _posts/2024-05-16-repository-overhaul-in-client-1-20.md
 msgid "The list of repositories available in the settings now has a defined order.  Before, repositories at the bottom implicitly had a higher priority than those at the top.  This was counter-intuitive and thus changed.  Since version 1.20, the repository at the top has the highest priority while the repo at the bottom has the lowest priority.  Users that upgrade from old versions may find that the order of their repositories has reversed.  This is to not force the new behavior upon them, but to keep priorities how they were before.  Note that the position or priority of a repository only matters if an app is available from more than one repo."
 msgstr ""
 
 #. type: Plain text
-#: _posts/2024-05-20-repository-overhaul-in-client-1-20.md
+#: _posts/2024-05-16-repository-overhaul-in-client-1-20.md
 msgid "It is now also possible to re-order the position of repositories in the list.  For example, if NewPipe's repo was added and the user always wants to prefer apps from that repo, they can move it to the top."
 msgstr ""
 
 #. type: Plain text
-#: _posts/2024-05-20-repository-overhaul-in-client-1-20.md
+#: _posts/2024-05-16-repository-overhaul-in-client-1-20.md
 #, no-wrap
 msgid "<img src=\"{% asset posts/2024-05-20-repository-overhaul-in-client-1-20/repo-reorder.webp %}\" />\n"
 msgstr ""
 
 #. type: Plain text
-#: _posts/2024-05-20-repository-overhaul-in-client-1-20.md
+#: _posts/2024-05-16-repository-overhaul-in-client-1-20.md
 msgid "Repositories can have an *archive* where old apps or old versions of apps that are no longer relevant get moved to.  Historically, these archives were shown as regular repositories to the user.  Now, they are no longer shown in the list, but have moved to the details screen of each repository."
 msgstr ""
 
 #. type: Plain text
-#: _posts/2024-05-20-repository-overhaul-in-client-1-20.md
+#: _posts/2024-05-16-repository-overhaul-in-client-1-20.md
 #, no-wrap
 msgid "<img src=\"{% asset posts/2024-05-20-repository-overhaul-in-client-1-20/repo-archive.png %}\" />\n"
 msgstr ""
 
 #. type: Plain text
-#: _posts/2024-05-20-repository-overhaul-in-client-1-20.md
+#: _posts/2024-05-16-repository-overhaul-in-client-1-20.md
 msgid "If, for some reason, you want to check the archive, you can enable it here.  For repositories that do not have an archive, enabling this will simply fail."
 msgstr ""
 
 #. type: Plain text
-#: _posts/2024-05-20-repository-overhaul-in-client-1-20.md
+#: _posts/2024-05-16-repository-overhaul-in-client-1-20.md
 msgid "All these changes are new in version 1.20 which goes through alpha and beta stages before published for everyone.  We encourage users to opt-in to beta testing of F-Droid by visiting the app details screen of F-Droid itself, then at the top right corner select the three dot menu and select \"Allow Beta Updates\".  The final version 1.20 is already live, but will undergo more testing until deemed _suggested_."
+msgstr ""
+
+#. type: Yaml Front Matter Hash Value: title
+#: _posts/2024-05-24-mobifree.md
+#, no-wrap
+msgid "Finally an alternative to Big Tech, your new open-source mobile ecosystem - Mobifree"
+msgstr ""
+
+#. type: Plain text
+#: _posts/2024-05-24-mobifree.md
+msgid "Have you ever wondered what it would be like to engage in a mobile ecosystem outside of the watchful eye of the Big Tech giants and gatekeepers? A system that includes everything from operating systems, to app stores, to cloud services, messaging apps, email servers and more? A system that puts your privacy first, believes in a democratic approach and healthy competition, and a system that relies on open-source solutions to drive its software? Welcome to [Mobifree](https://mobifree.org/), a human-centered, ethical alternative, that champions privacy over profit and believes in collaboration, sustainability and inclusiveness."
+msgstr ""
+
+#. type: Plain text
+#: _posts/2024-05-24-mobifree.md
+msgid "![NGI Mobifree logo]({% asset posts/2022-12-18-unifiedpush/animation-options.svg %})"
+msgstr ""
+
+#. type: Plain text
+#: _posts/2024-05-24-mobifree.md
+msgid "Everyone is locked into a mobile phone ecosystem where the terms are dictated by a handful of Big Tech companies all located in a single country.  From end users looking to download and use their favorite apps, to developers who run into roadblocks when trying to get their solutions published, to governments who are increasingly using apps as a way to provide services to their citizens, we are all impacted by the gatekeeping, data tracking, and railroading Big Tech is imposing on us in the current mobile ecosystem. A new alternative is required to shape a better future. And F-Droid is excited to be a part of creating that new mobile ecosystem, together with our other partners in Mobifree."
+msgstr ""
+
+#. type: Plain text
+#: _posts/2024-05-24-mobifree.md
+msgid "For an average user, it is difficult to discern how you are being tracked, where your private information is being saved, how it is being used and who it is being sold to. As a long-standing champion of user and developer rights, pushing for privacy over profit, F-Droid has always been committed to upholding high open-source standards in the technology we create. For more than 14 years, F-Droid has been developing solutions which act as pieces of the alternative mobile ecosystem puzzle. So it was a natural fit for F-Droid to become a contributing partner in the broader Mobifree project."
+msgstr ""
+
+#. type: Plain text
+#: _posts/2024-05-24-mobifree.md
+msgid "Of particular emphasis is the impact this alternative mobile ecosystem will have on the services governments provide their citizens. Governments at all levels are providing services through mobile apps. And in many cases, mobile apps are becoming the preferred way to access important services. These apps are only available via the Apple App Store or Google Play. And installing apps from those stores requires agreeing to their Terms of Services. Both app stores were built on tracking users to sell their data, thereby giving Apple and Google power over how citizens receive services from their own governments. Even the governments themselves are beholden to the Big Tech gatekeepers: citizens and government officials and employees must use apps that are only published on Apple and Google."
+msgstr ""
+
+#. type: Plain text
+#: _posts/2024-05-24-mobifree.md
+msgid "Austria provides a few specific examples of how governments interact with the current ecosystem at multiple levels. After COVID-19 countermeasures forced schools to adopt online learning, many public schools required education apps for their students, parents and teachers in order to stay connected. Public health insurance providers require a specific app called “Handy Signatur” to be downloaded in order for citizens to access their accounts online. People with the Handy Signatur app can sign petitions, and download vaccination certificates, sometimes required for work or leisure activities. Without this app, it is much more work and effort and is borderline impossible in some cases to engage in certain activities."
+msgstr ""
+
+#. type: Plain text
+#: _posts/2024-05-24-mobifree.md
+msgid "Governments around the world are taking action to reign in the dominance of Big Tech. South Africa and the [UK](https://theplatformlaw.blog/2021/12/17/the-interim-report-of-the-cmas-market-study-on-mobile-ecosystems-a-great-piece-of-work/) have changed their competition policy to include user freedom in what they [regulate](https://www.theverge.com/2024/5/24/24164204/uk-dmcc-law-big-tech-regulation).  Japan is working on new laws to [open up](https://content.clearygottlieb.com/antitrust/digital-markets-regulation-handbook/japan/index.html) their mobile markets. And even the US government and many individual US states have [sued Big Tech](https://www.npr.org/2023/12/19/1220202154/google-to-pay-700-million-in-case-over-whether-its-app-store-is-an-illegal-monop) to stop monopolistic behaviors."
+msgstr ""
+
+#. type: Plain text
+#: _posts/2024-05-24-mobifree.md
+msgid "The EU is also taking a step towards creating distance between its citizens and Big Tech gatekeepers. They passed a landmark law: the [Digital Markets Act](https://en.wikipedia.org/wiki/Digital_Markets_Act), representing a whole new approach to tackling gatekeeper companies that aim to keep all sorts of competition out.  It builds upon the successes of the EU’s General Data Protection Regulation (GDPR), taking an important step in a more ethical, democratic and citizens-first direction.  All of these efforts are helping to open up possibilities for mobile users. And thanks to the Mobifree partnership, funded by an EU Horizon Europe grant, F-Droid can share open-source, privacy-driven solutions with a larger audience."
+msgstr ""
+
+#. type: Plain text
+#: _posts/2024-05-24-mobifree.md
+msgid "In fact Europe is already seeing significant changes as a result of the Digital Markets Act (DMA). Google has shut out other app stores by ensuring that they have a third-class user experience. The DMA means that Google is now legally forbidden from giving preference to their own app store over alternatives like F-Droid.  Additionally, Apple has opened up to external app stores for the first time ever.  And while these are great first steps in the right direction, regulations and litigation do not build software. With this in mind, Mobifree is poised to take action on the new opportunities in the market, to build an unprecedented mobile experience for users and developers. One that centers around ethical practices, digital sovereignty, fairness, sustainability and inclusiveness."
+msgstr ""
+
+#. type: Plain text
+#: _posts/2024-05-24-mobifree.md
+msgid "F-Droid will play a major role in this project, tasked with creating a decentralized distribution system for developers to deliver apps to Android users. The impact will be an opening of the app market for Android, improving honest competition around app development. And a foundational guiding principle is to provide privacy controls to users, without locking anyone out from participating. The app distribution system will focus on a 3-party interaction between app developers, app stores and app users where every party will have freedom of choice at all points of interaction. The system will have no terms of service or even user accounts to sign up for. Developers can publish their own apps, via their own repositories. Any app store can use those repositories to provide users with a method to install those apps. And if the app is open source, it can be included in the main F-Droid.org repository, where it will be reviewed using F-Droid’s proven ethical review process. Users will be given true choice in terms of their apps and app store preferences, additional privacy guardrails and increased transparency into what is happening with their data."
+msgstr ""
+
+#. type: Plain text
+#: _posts/2024-05-24-mobifree.md
+msgid "F-Droid is one participating organization who has joined forces to help create this new mobile ecosystem. However, additional input, expertise, inspiration and work will be needed in order to break the traditional framework established by Big Tech. From community outreach to legal support, from developers, to researchers and end users, we welcome all forms of support. If you are a curious citizen interested in taking part in the Mobifree movement, we encourage you to reach out to us at f-droid.org and see how you can take part in this exciting mobile alternative."
+msgstr ""
+
+#. type: Plain text
+#: _posts/2024-05-24-mobifree.md
+msgid "(_We will be tracking work under this [grant](https://cordis.europa.eu/project/id/101135795) using the [Mobifree](https://gitlab.com/groups/fdroid/-/issues/?sort=updated_desc&state=all&label_name%5B%5D=Mobifree) label._)"
 msgstr ""
