@@ -31,7 +31,7 @@ Some common reasons:
     trying to resolve. Check the open [merge
     requests](https://gitlab.com/fdroid/fdroiddata/-/merge_requests);
 -   It's on our radar, but we haven't got to it yet. Search the
-    [issues](https://gitlab.com/fdroid/fdroiddata/-/issues);
+    [issues](https://gitlab.com/fdroid/rfp/-/issues);
 -   We don't know about it. See the [Inclusion Policy](../Inclusion_Policy).
 
 Otherwise if you think that an app respects the Inclusion Policy and
@@ -51,6 +51,8 @@ There are several ways of keeping up with new apps that are added:
 -   If you don't mind a detailed and potentially noisy stream of
     information that also includes updates and other changes, you could
     subscribe to [this feed](https://gitlab.com/fdroid/fdroiddata/commits/master.atom)
+-   In TWIF posts we talk about new apps and other news, you could
+    subscribe to [this feed](https://f-droid.org/feed.xml).
 
 We don't yet have a dedicated and user-friendly feed you can subscribe
 to for new additions, but we welcome contributions to make this work better.
