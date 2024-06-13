@@ -524,7 +524,7 @@ android {
     defaultConfig {
         externalNativeBuild {
             ndkBuild {
-                arguments "LOCAL_LDFLAGS += -Wl,<linker args>"
+                arguments "LOCAL_LDFLAGS+=-Wl,<linker args>"
             }
         }
     }
