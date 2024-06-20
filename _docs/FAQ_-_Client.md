@@ -161,17 +161,7 @@ device must have NFC and be running Android 4.0 or newer.
 
 ### How can I send the F-Droid app using NFC or Android Beam?
 
-Starting in v0.59, the F-Droid client supports sending the F-Droid app
-itself to another device to set it up for the first time. For this to
-work, both the sending and receiving device must have NFC, Android Beam,
-and be running Android 4.1 or newer.
-
-1.  go to the F-Droid main screen
-2.  put the devices together until you get the NFC zoom prompt
-3.  touch the screen with F-Droid installed
-4.  keep the devices near each other until the beam completes
-5.  on the receiving device, click the Android Beam notification and
-    install F-Droid
+Starting with v1.20, the F-Droid client does not support this feature anymore as the underlying code has been removed from the Android 14 SDK after being deprecated since Android 10. More info [here](https://www.xda-developers.com/android-beam-permanent-removal-android-14/).
 
 ### How can I send apps via Bluetooth or WiFi?
 
