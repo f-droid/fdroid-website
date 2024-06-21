@@ -63,6 +63,14 @@
     "android.permission.ACCESS_GPU_SERVICE": {
         "protectionLevel": "signature"
     },
+    "android.permission.ACCESS_HIDDEN_PROFILES": {
+        "description": "permdesc_accessHiddenProfile",
+        "label": "permlab_accessHiddenProfile",
+        "protectionLevel": "normal"
+    },
+    "android.permission.ACCESS_HIDDEN_PROFILES_FULL": {
+        "protectionLevel": "signature|privileged"
+    },
     "android.permission.ACCESS_IMS_CALL_SERVICE": {
         "description": "permdesc_accessImsCallService",
         "label": "permlab_accessImsCallService",
@@ -76,6 +84,11 @@
     },
     "android.permission.ACCESS_KEYGUARD_SECURE_STORAGE": {
         "protectionLevel": "signature|setup"
+    },
+    "android.permission.ACCESS_LAST_KNOWN_CELL_ID": {
+        "description": "permdesc_accessLastKnownCellId",
+        "label": "permlab_accessLastKnownCellId",
+        "protectionLevel": "signature"
     },
     "android.permission.ACCESS_LOCATION_EXTRA_COMMANDS": {
         "description": "permdesc_accessLocationExtraCommands",
@@ -359,6 +372,9 @@
     "android.permission.BIND_DISPLAY_HASHING_SERVICE": {
         "protectionLevel": "signature"
     },
+    "android.permission.BIND_DOMAIN_SELECTION_SERVICE": {
+        "protectionLevel": "signature"
+    },
     "android.permission.BIND_DOMAIN_VERIFICATION_AGENT": {
         "protectionLevel": "signature"
     },
@@ -417,12 +433,18 @@
         "protectionLevel": "signature"
     },
     "android.permission.BIND_NFC_SERVICE": {
-        "protectionLevel": "signature"
+        "protectionLevel": "signature|module"
     },
     "android.permission.BIND_NOTIFICATION_ASSISTANT_SERVICE": {
         "protectionLevel": "signature"
     },
     "android.permission.BIND_NOTIFICATION_LISTENER_SERVICE": {
+        "protectionLevel": "signature"
+    },
+    "android.permission.BIND_ON_DEVICE_INTELLIGENCE_SERVICE": {
+        "protectionLevel": "signature|privileged"
+    },
+    "android.permission.BIND_ON_DEVICE_TRUSTED_SERVICE": {
         "protectionLevel": "signature"
     },
     "android.permission.BIND_PACKAGE_VERIFIER": {
@@ -514,6 +536,9 @@
     },
     "android.permission.BIND_TRUST_AGENT": {
         "protectionLevel": "signature"
+    },
+    "android.permission.BIND_TV_AD_SERVICE": {
+        "protectionLevel": "signature|privileged"
     },
     "android.permission.BIND_TV_INPUT": {
         "protectionLevel": "signature|privileged"
@@ -664,6 +689,9 @@
         "label": "permlab_cameraOpenCloseListener",
         "protectionLevel": "signature"
     },
+    "android.permission.CAMERA_PRIVACY_ALLOWLIST": {
+        "protectionLevel": "signature|privileged"
+    },
     "android.permission.CAMERA_SEND_SYSTEM_EVENTS": {
         "protectionLevel": "signature|privileged"
     },
@@ -774,6 +802,9 @@
     "android.permission.CONFIGURE_DISPLAY_COLOR_MODE": {
         "protectionLevel": "signature"
     },
+    "android.permission.CONFIGURE_FACTORY_RESET_PROTECTION": {
+        "protectionLevel": "signature|privileged"
+    },
     "android.permission.CONFIGURE_INTERACT_ACROSS_PROFILES": {
         "protectionLevel": "signature|role"
     },
@@ -877,6 +908,9 @@
         "label": "permlab_detectScreenCapture",
         "protectionLevel": "normal"
     },
+    "android.permission.DETECT_SCREEN_RECORDING": {
+        "protectionLevel": "normal"
+    },
     "android.permission.DEVICE_POWER": {
         "protectionLevel": "signature|role"
     },
@@ -910,6 +944,12 @@
         "protectionLevel": "signature|privileged|development"
     },
     "android.permission.DVB_DEVICE": {
+        "protectionLevel": "signature|privileged"
+    },
+    "android.permission.EMBED_ANY_APP_IN_UNTRUSTED_MODE": {
+        "protectionLevel": "internal|role"
+    },
+    "android.permission.EMERGENCY_INSTALL_PACKAGES": {
         "protectionLevel": "signature|privileged"
     },
     "android.permission.ENABLE_TEST_HARNESS_MODE": {
@@ -995,6 +1035,11 @@
         "label": "permlab_foregroundServiceMediaPlayback",
         "protectionLevel": "normal|instant"
     },
+    "android.permission.FOREGROUND_SERVICE_MEDIA_PROCESSING": {
+        "description": "permdesc_foregroundServiceMediaProcessing",
+        "label": "permlab_foregroundServiceMediaProcessing",
+        "protectionLevel": "normal|instant"
+    },
     "android.permission.FOREGROUND_SERVICE_MEDIA_PROJECTION": {
         "description": "permdesc_foregroundServiceMediaProjection",
         "label": "permlab_foregroundServiceMediaProjection",
@@ -1046,10 +1091,13 @@
         "protectionLevel": "signature"
     },
     "android.permission.GET_APP_METADATA": {
-        "protectionLevel": "signature|installer"
+        "protectionLevel": "signature|installer|verifier"
     },
     "android.permission.GET_APP_OPS_STATS": {
         "protectionLevel": "signature|privileged|development"
+    },
+    "android.permission.GET_BACKGROUND_INSTALLED_PACKAGES": {
+        "protectionLevel": "signature|role"
     },
     "android.permission.GET_BINDING_UID_IMPORTANCE": {
         "protectionLevel": "signature|privileged"
@@ -1174,7 +1222,7 @@
         "protectionLevel": "signature|privileged|development|role"
     },
     "android.permission.INTERACT_ACROSS_USERS_FULL": {
-        "protectionLevel": "signature|installer|role"
+        "protectionLevel": "signature|installer|module|role"
     },
     "android.permission.INTERNAL_DELETE_CACHE_FILES": {
         "protectionLevel": "signature"
@@ -1333,7 +1381,7 @@
         "protectionLevel": "signature"
     },
     "android.permission.MANAGE_CONTENT_SUGGESTIONS": {
-        "protectionLevel": "signature"
+        "protectionLevel": "signature|role"
     },
     "android.permission.MANAGE_CRATES": {
         "protectionLevel": "signature"
@@ -1383,13 +1431,22 @@
     "android.permission.MANAGE_DEVICE_POLICY_APP_USER_DATA": {
         "protectionLevel": "internal|role"
     },
+    "android.permission.MANAGE_DEVICE_POLICY_ASSIST_CONTENT": {
+        "protectionLevel": "internal|role"
+    },
     "android.permission.MANAGE_DEVICE_POLICY_AUDIO_OUTPUT": {
+        "protectionLevel": "internal|role"
+    },
+    "android.permission.MANAGE_DEVICE_POLICY_AUDIT_LOGGING": {
         "protectionLevel": "internal|role"
     },
     "android.permission.MANAGE_DEVICE_POLICY_AUTOFILL": {
         "protectionLevel": "internal|role"
     },
     "android.permission.MANAGE_DEVICE_POLICY_BACKUP_SERVICE": {
+        "protectionLevel": "internal|role"
+    },
+    "android.permission.MANAGE_DEVICE_POLICY_BLOCK_UNINSTALL": {
         "protectionLevel": "internal|role"
     },
     "android.permission.MANAGE_DEVICE_POLICY_BLUETOOTH": {
@@ -1404,10 +1461,16 @@
     "android.permission.MANAGE_DEVICE_POLICY_CAMERA": {
         "protectionLevel": "internal|role"
     },
+    "android.permission.MANAGE_DEVICE_POLICY_CAMERA_TOGGLE": {
+        "protectionLevel": "internal|role"
+    },
     "android.permission.MANAGE_DEVICE_POLICY_CERTIFICATES": {
         "protectionLevel": "internal|role"
     },
     "android.permission.MANAGE_DEVICE_POLICY_COMMON_CRITERIA_MODE": {
+        "protectionLevel": "internal|role"
+    },
+    "android.permission.MANAGE_DEVICE_POLICY_CONTENT_PROTECTION": {
         "protectionLevel": "internal|role"
     },
     "android.permission.MANAGE_DEVICE_POLICY_DEBUGGING_FEATURES": {
@@ -1455,10 +1518,16 @@
     "android.permission.MANAGE_DEVICE_POLICY_LOCK_TASK": {
         "protectionLevel": "internal|role"
     },
+    "android.permission.MANAGE_DEVICE_POLICY_MANAGED_SUBSCRIPTIONS": {
+        "protectionLevel": "internal|role"
+    },
     "android.permission.MANAGE_DEVICE_POLICY_METERED_DATA": {
         "protectionLevel": "internal|role"
     },
     "android.permission.MANAGE_DEVICE_POLICY_MICROPHONE": {
+        "protectionLevel": "internal|role"
+    },
+    "android.permission.MANAGE_DEVICE_POLICY_MICROPHONE_TOGGLE": {
         "protectionLevel": "internal|role"
     },
     "android.permission.MANAGE_DEVICE_POLICY_MOBILE_NETWORK": {
@@ -1554,6 +1623,9 @@
     "android.permission.MANAGE_DEVICE_POLICY_SYSTEM_UPDATES": {
         "protectionLevel": "internal|role"
     },
+    "android.permission.MANAGE_DEVICE_POLICY_THEFT_DETECTION": {
+        "protectionLevel": "internal|role"
+    },
     "android.permission.MANAGE_DEVICE_POLICY_THREAD_NETWORK": {
         "protectionLevel": "internal|role"
     },
@@ -1595,6 +1667,9 @@
     },
     "android.permission.MANAGE_DYNAMIC_SYSTEM": {
         "protectionLevel": "signature"
+    },
+    "android.permission.MANAGE_ENHANCED_CONFIRMATION_STATES": {
+        "protectionLevel": "signature|installer"
     },
     "android.permission.MANAGE_ETHERNET_NETWORKS": {
         "protectionLevel": "signature"
@@ -1669,7 +1744,7 @@
         "protectionLevel": "signature"
     },
     "android.permission.MANAGE_ROLE_HOLDERS": {
-        "protectionLevel": "signature|installer"
+        "protectionLevel": "signature|installer|module"
     },
     "android.permission.MANAGE_ROLLBACKS": {
         "protectionLevel": "signature|privileged"
@@ -1841,6 +1916,9 @@
     "android.permission.MONITOR_KEYBOARD_BACKLIGHT": {
         "protectionLevel": "signature"
     },
+    "android.permission.MONITOR_STICKY_MODIFIER_STATE": {
+        "protectionLevel": "signature"
+    },
     "android.permission.MOUNT_FORMAT_FILESYSTEMS": {
         "protectionLevel": "signature|privileged"
     },
@@ -1934,7 +2012,7 @@
         "protectionLevel": "signature"
     },
     "android.permission.OBSERVE_ROLE_HOLDERS": {
-        "protectionLevel": "signature|installer"
+        "protectionLevel": "signature|installer|module"
     },
     "android.permission.OBSERVE_SENSOR_PRIVACY": {
         "protectionLevel": "internal|role|installer"
@@ -2240,6 +2318,9 @@
         "label": "permlab_readSyncStats",
         "protectionLevel": "normal"
     },
+    "android.permission.READ_SYSTEM_GRAMMATICAL_GENDER": {
+        "protectionLevel": "signature|privileged"
+    },
     "android.permission.READ_SYSTEM_UPDATE_INFO": {
         "protectionLevel": "signature|privileged"
     },
@@ -2291,6 +2372,9 @@
     },
     "android.permission.RECEIVE_SANDBOX_TRIGGER_AUDIO": {
         "protectionLevel": "signature|privileged|appop"
+    },
+    "android.permission.RECEIVE_SENSITIVE_NOTIFICATIONS": {
+        "protectionLevel": "signature|role"
     },
     "android.permission.RECEIVE_SMS": {
         "description": "permdesc_receiveSms",
@@ -2438,6 +2522,9 @@
         "label": "permlab_observeCompanionDevicePresence",
         "protectionLevel": "normal"
     },
+    "android.permission.REQUEST_OBSERVE_DEVICE_UUID_PRESENCE": {
+        "protectionLevel": "signature|privileged"
+    },
     "android.permission.REQUEST_PASSWORD_COMPLEXITY": {
         "description": "permdesc_requestPasswordComplexity",
         "label": "permlab_requestPasswordComplexity",
@@ -2492,6 +2579,9 @@
     },
     "android.permission.ROTATE_SURFACE_FLINGER": {
         "protectionLevel": "signature|recents"
+    },
+    "android.permission.RUN_BACKUP_JOBS": {
+        "protectionLevel": "signature|privileged|appop"
     },
     "android.permission.RUN_IN_BACKGROUND": {
         "description": "permdesc_runInBackground",
@@ -2562,6 +2652,9 @@
     "android.permission.SET_APP_SPECIFIC_LOCALECONFIG": {
         "protectionLevel": "signature"
     },
+    "android.permission.SET_BIOMETRIC_DIALOG_LOGO": {
+        "protectionLevel": "signature"
+    },
     "android.permission.SET_CLIP_SOURCE": {
         "protectionLevel": "signature|recents"
     },
@@ -2612,6 +2705,9 @@
     },
     "android.permission.SET_SYSTEM_AUDIO_CAPTION": {
         "protectionLevel": "signature|role"
+    },
+    "android.permission.SET_THEME_OVERLAY_CONTROLLER_READY": {
+        "protectionLevel": "signature|setup"
     },
     "android.permission.SET_TIME": {
         "protectionLevel": "signature|privileged|role"
@@ -2731,7 +2827,7 @@
         "protectionLevel": "normal"
     },
     "android.permission.SUBSCRIBE_TO_KEYGUARD_LOCKED_STATE": {
-        "protectionLevel": "signature|role"
+        "protectionLevel": "signature|module|role"
     },
     "android.permission.SUBSTITUTE_NOTIFICATION_APP_NAME": {
         "protectionLevel": "signature|privileged"
@@ -2896,7 +2992,7 @@
         "protectionLevel": "signature|setup|role"
     },
     "android.permission.USE_COMPANION_TRANSPORTS": {
-        "protectionLevel": "signature|module"
+        "protectionLevel": "signature"
     },
     "android.permission.USE_CREDENTIALS": {
         "protectionLevel": "normal"
@@ -2923,6 +3019,9 @@
     },
     "android.permission.USE_ICC_AUTH_WITH_DEVICE_IDENTIFIER": {
         "protectionLevel": "signature|appop"
+    },
+    "android.permission.USE_ON_DEVICE_INTELLIGENCE": {
+        "protectionLevel": "signature|privileged"
     },
     "android.permission.USE_REMOTE_AUTH": {
         "protectionLevel": "signature"
@@ -3069,6 +3168,11 @@
     },
     "android.permission.WRITE_USER_DICTIONARY": {
         "protectionLevel": "normal"
+    },
+    "android.permission.WRITE_VERIFICATION_STATE_E2EE_CONTACT_KEYS": {
+        "description": "permdesc_writeVerificationStateE2eeContactKeys",
+        "label": "permlab_writeVerificationStateE2eeContactKeys",
+        "protectionLevel": "signature|privileged"
     },
     "com.android.alarm.permission.SET_ALARM": {
         "description": "permdesc_setAlarm",
