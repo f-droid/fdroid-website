@@ -51,28 +51,24 @@ or rely on 3rd party software.  Downstream does not connect to these services or
 rely on this software, so their Terms of Service, Terms of Use or similar
 agreements usually do not provide an enforceable basis for take-down requests.
 
-Also please note that f-droid.org is a volunteer driven organization.  We
+Also please note that f-droid.org is a volunteer-driven organization.  We
 prioritize take-down requests, but we can't guarantee instant responses.
 
-You should preferably submit take-down requests [by starting a new issue in
-our issue tracker](https://gitlab.com/fdroid/fdroiddata/-/issues/new).  (This
-requires a gitlab.com account.)
+We accept take-down requests on our team E-Mail account.
+[team@f-droid.org](mailto:team@f-droid.org). Our team will open a public
+issue in our issue tracker and quote your request there.
 
-Alternatively if you prefer you can send your request to our team E-Mail
-account.  [team@f-droid.org](mailto:team@f-droid.org) (Our team will still open
-a public issue in our issue tracker and quote your request there.)
-
-Take-down requests can not be confidential.  By submitting a take-down request
+Take-down requests cannot be confidential.  By submitting a take-down request
 you automatically grant us permission to publish your request on our web-sites
-and our issue trackers.
+and our issue trackers.  Privacy-relevant information will be redacted.
 
 ## Transparency reporting
 
 All take-down requests we receive regarding apps on the official f-droid.org
 repository are transparently disclosed in our [issue
-tracker](https://gitlab.com/fdroid/fdroiddata/-/issues?scope=all&state=all&label_name[]=Takedown%20Request)
+tracker](https://gitlab.com/groups/fdroid/-/issues/?sort=created_date&state=all&label_name%5B%5D=Takedown%20Request)
 and [merge-request
-tracker](https://gitlab.com/fdroid/fdroiddata/-/merge_requests?scope=all&state=all&label_name[]=Takedown%20Request)
+tracker](https://gitlab.com/groups/fdroid/-/merge_requests?scope=all&state=all&label_name[]=Takedown%20Request)
 under the `Takedown Request` label.
 
 ## 3rd party repositories
