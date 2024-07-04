@@ -224,9 +224,11 @@ this case.
 
 #### `apksigner` from build-tools >= 35.0.0-rc1 outputs unverifiable APKs
 
-Using `apksigner` from build-tools version 34 produces APKs verifiable by `apksigcopier` but newer versions will fail.
+Using `apksigner` from build-tools version 34 produces APKs verifiable by `apksigcopier`, but newer versions will fail.
 We are tracking this issue in [#3299](https://gitlab.com/fdroid/fdroiddata/-/issues/3299) and there's more info in
-[apksigcopier issue2 105](https://github.com/obfusk/apksigcopier/issues/105).
+[apksigcopier issues 105](https://github.com/obfusk/apksigcopier/issues/105). Github Actions CI Ubuntu images starting
+July 2024 have version 35 included, so one needs to manually select the `apksigner` version from 34 instead of the default
+templated "latest version".
 
 
 #### Bug: baseline.profm not deterministic
