@@ -222,6 +222,13 @@ with `apksigner` afterwards, since signing is not performed by Android Studio in
 this case.
 
 
+#### `apksigner` from build-tools >= 35.0.0-rc1 outputs unverifiable APKs
+
+Using `apksigner` from build-tools version 34 produces APKs verifiable by `apksigcopier` but newer versions will fail.
+We are tracking this issue in [#3299](https://gitlab.com/fdroid/fdroiddata/-/issues/3299) and there's more info in
+[apksigcopier issue2 105](https://github.com/obfusk/apksigcopier/issues/105).
+
+
 #### Bug: baseline.profm not deterministic
 
 [Non-stable `assets/dexopt/baseline.profm`](https://issuetracker.google.com/issues/231837768)
@@ -459,6 +466,9 @@ for changelog update. VCS info can be disabled in gradle as follows:
     }
 ```
 
+While we understand that developers build and test during their normal workflow, please upload
+releases APKs build after tagging, from the actual tagged commit.
+
 
 #### ZIP metadata
 
@@ -508,11 +518,21 @@ Or like this, e.g. Java 17 vs Java 21:
 -    .end annotation
 ```
 
+
+#### Support 16 KB page sizes
+
+Beginning with Android 15, Android supports devices that are configured to use a page
+size of 16 KB (16 KB devices). If your app uses any NDK libraries, either directly or
+indirectly through an SDK, then you will need to rebuild your app for it to work on
+these 16 KB devices. More info [here](https://developer.android.com/guide/practices/page-sizes)
+
+
 #### Language-specific instructions
 
 Native libraries may be built with various tools and languages. Though they suffer
 from similar reproducible build issues, the methods for fixing them are different. Some
 known solutions are listed below:
+
 
 ##### ndk-build
 
