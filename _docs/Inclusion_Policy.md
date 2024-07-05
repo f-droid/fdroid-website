@@ -23,7 +23,7 @@ buildable with only FLOSS tools.
 
 Notably:
 -   The original app author has been notified (and does not oppose the inclusion).
-    Distributiong an app will bring more support cases for the developers, not
+    Distributing an app will bring more support cases for the developers, not
     only from the actual users but from F-Droid itself as app development is
     never a done and set deal in an ever evolving Android landscape.
 -   We cannot build apps using Google's proprietary "Play Services".
