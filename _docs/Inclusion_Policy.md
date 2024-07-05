@@ -22,7 +22,10 @@ including all libraries and dependencies used. Additionally, it must be
 buildable with only FLOSS tools.
 
 Notably:
-
+-   The original app author has been notified (and does not oppose the inclusion).
+    Distributing an app will bring more support cases for the developers, not
+    only from the actual users but from F-Droid itself as app development is
+    never a done and set deal in an ever evolving Android landscape.
 -   We cannot build apps using Google's proprietary "Play Services".
     Please talk to upstream about an untainted build flavor (either
     using microg or removing Non-Free dependencies completely).
