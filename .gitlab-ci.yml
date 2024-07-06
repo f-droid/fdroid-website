@@ -1,6 +1,6 @@
 ---
 
-image: debian:bookworm
+image: debian:bookworm-slim
 
 stages:
   - deploy
@@ -144,7 +144,6 @@ pages:
 
 # check rsync mirrors still available
 rsync mirrors:
-  image: debian:bookworm-slim
   stage: deploy
   only:
     - master@fdroid/fdroidserver
@@ -162,7 +161,6 @@ rsync mirrors:
 # Merge conflicts with Weblate are a big pain, so check they won't happen.
 weblate merge conflict:
   stage: deploy
-  image: debian:bookworm-slim
   rules:
     - if: $CI_PIPELINE_SOURCE != "trigger"
       changes:
@@ -192,7 +190,6 @@ weblate merge conflict:
 
 
 spellcheckbot:
-  image: debian:bookworm
   stage: deploy
   allow_failure: true
   only:
@@ -292,7 +289,6 @@ shellcheck:
 # basic checks for dev setup
 Vagrantfile:
   stage: deploy
-  image: debian:bookworm-slim
   rules:
     - if: $CI_PIPELINE_SOURCE != "trigger"
       changes:
@@ -310,7 +306,6 @@ Vagrantfile:
 
 YAML Front Matter:
   stage: deploy
-  image: debian:bookworm-slim
   rules:
     - if: $CI_PIPELINE_SOURCE != "trigger"
       changes:
@@ -333,7 +328,6 @@ YAML Front Matter:
 
 
 yamllint:
-  image: debian:bookworm-slim
   stage: deploy
   rules:
     - if: $CI_PIPELINE_SOURCE != "trigger"
