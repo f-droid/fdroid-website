@@ -42,7 +42,7 @@ EOF
         # for now, new TWIF posts are not translated
         [[ $f == _posts/202*twif*.md ]] && continue
         [[ $f == _posts/202*this-week-in-*.md ]] && continue
-	echo "[type: markdown] $f \$lang:$section/\$lang/$(basename $f)" >> $po4a_conf
+        echo "[type: markdown] $f \$lang:$section/\$lang/$(basename $f)" >> $po4a_conf
     done
     po4a --verbose $po4a_conf &
     eval pid${section}=$!
