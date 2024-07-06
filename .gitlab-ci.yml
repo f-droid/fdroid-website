@@ -113,7 +113,6 @@ pages:
   script:
     - (find _*/ -type f | grep -Ev '\.(html|json|md|rb|scss|xml|yaml)$')
          && (echo "ERROR The above files have a bad or missing file extension"; exit 1)
-
     - *apt-template
     - apt-get install curl python3-colorama python3-yaml
     - ./tools/trigger-spellcheckbot
@@ -150,8 +149,8 @@ rsync mirrors:
   only:
     - master@fdroid/fdroidserver
   script:
-    - apt-get update
-    - apt-get -qy install rsync
+    - *apt-template
+    - apt-get install rsync
     - for f in `sed 's,[^:]*:,,' _data/rsync_mirrors.yaml`; do
           echo '==============================================================';
           echo "$f";
@@ -173,9 +172,8 @@ weblate merge conflict:
         - _data/tutorials.json
         - po/
   script:
-    - apt-get update
-    - apt-get -qy upgrade
-    - apt-get -qy install --no-install-recommends ca-certificates git
+    - *apt-template
+    - apt-get install ca-certificates git
     - git config user.name "$CI_PIPELINE_ID/$CI_JOB_ID"
     - git config user.email $CI_PROJECT_PATH@f-droid.org
     - git fetch https://hosted.weblate.org/git/f-droid/website/
@@ -218,7 +216,6 @@ spellcheckbot:
     - jq --raw-output 'keys[]' _data/android_permissions.json >> .spelling
     # version strings
     - grep --no-filename -rEo 'v[0-9]+(:?\.[0-9]+)+' _* | sort -u >> .spelling
-
     - npm i markdown-spellcheck -g
     - (mdspell --report --en-gb --ignore-numbers --ignore-acronyms $CHANGED > output.txt 2>&1)
         || ./tools/spellcheckbot.py
@@ -297,8 +294,8 @@ Vagrantfile:
         - .gitlab-ci.yml
         - Vagrantfile
   script:
-    - apt-get update
-    - apt-get -qy install --no-install-recommends kmod procps ruby vagrant vagrant-libvirt
+    - *apt-template
+    - apt-get install kmod procps ruby vagrant vagrant-libvirt
     - export EXITVALUE=0
     - function set_error() { export EXITVALUE=1; printf "\x1b[31mERROR `history|tail -2|head -1|cut -b 6-500`\x1b[0m\n"; }
     - ruby -c Vagrantfile || set_error
@@ -316,9 +313,8 @@ YAML Front Matter:
         - _pages/*.md
         - _posts/*.md
   script:
-    - apt-get update
-    - apt-get -qy install --no-install-recommends python3-yaml yamllint
-
+    - *apt-template
+    - apt-get install python3-yaml yamllint
     - EXITVALUE=0
     - for f in _docs/*.md _pages/*.md _posts/*.md; do
           echo $f;
