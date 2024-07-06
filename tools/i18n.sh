@@ -1,6 +1,7 @@
 #!/bin/bash
 
 set -e
+set -x
 
 if ! which po4a; then
     echo "ERROR: Missing po4a (apt-get install po4a)" 1>&2
