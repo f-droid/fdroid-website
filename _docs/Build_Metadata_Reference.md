@@ -166,9 +166,6 @@ The name of the author, either full, abbreviated or pseudonym. If
 present, it should represent the name(s) as published by upstream, e.g.
 in their copyright or authors file. This can be omitted (or left blank).
 
-__Warning__: this overrides all _AuthorName_ entries
-[set in the app's source code](../All_About_Descriptions_Graphics_and_Screenshots).
-
 This is converted to (`<author>`) in the XML file (_index.xml_).
 
 
