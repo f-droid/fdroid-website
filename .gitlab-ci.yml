@@ -75,7 +75,7 @@ variables:
 #
 #  gitlab-runner exec docker f-droid.org --pre-build-script ./prepare-for-deploy.py \
 #    --docker-volumes "/root/deploy-whitelist-keyring.gpg:/root/.gnupg/pubring.gpg:ro" \
-#    --docker-volumes `pwd`/_site:/builds/output
+#    --docker-volumes $(pwd)/_site:/builds/output
 #
 # And when it is finished, you should have a directory in _site/build/
 # which includes the entire static site ready to be deployed to
@@ -151,7 +151,7 @@ rsync mirrors:
   script:
     - *apt-template
     - apt-get install rsync
-    - for f in `sed 's,[^:]*:,,' _data/rsync_mirrors.yaml`; do
+    - for f in $(sed 's,[^:]*:,,' _data/rsync_mirrors.yaml); do
           echo '==============================================================';
           echo "$f";
           rsync --list-only ${f}::fdroid \
@@ -200,10 +200,10 @@ spellcheckbot:
     - test -n ${FROM_CI_PROJECT_URL}
     - test -n ${FROM_CI_COMMIT_SHA}
     - git fetch ${FROM_CI_PROJECT_URL} ${FROM_CI_COMMIT_SHA}
-    - for f in `git diff --name-only --diff-filter=d HEAD...${FROM_CI_COMMIT_SHA}`; do
-          export CHANGED="$CHANGED `echo $f | grep '\.md$' || true`";
+    - for f in $(git diff --name-only --diff-filter=d HEAD...${FROM_CI_COMMIT_SHA}); do
+          export CHANGED="$CHANGED $(echo $f | grep '\.md$' || true)";
       done
-    - if [ -z "`echo $CHANGED | sed 's,\s*,,g'`" ]; then
+    - if [ -z "$(echo $CHANGED | sed 's,\s*,,g')" ]; then
           echo "No markdown files changed";
           exit 0;
       else
@@ -297,7 +297,7 @@ Vagrantfile:
     - *apt-template
     - apt-get install kmod procps ruby vagrant vagrant-libvirt
     - export EXITVALUE=0
-    - function set_error() { export EXITVALUE=1; printf "\x1b[31mERROR `history|tail -2|head -1|cut -b 6-500`\x1b[0m\n"; }
+    - function set_error() { export EXITVALUE=1; printf "\x1b[31mERROR $(history|tail -2|head -1|cut -b 6-500)\x1b[0m\n"; }
     - ruby -c Vagrantfile || set_error
     - vagrant validate || set_error;
     - exit $EXITVALUE
