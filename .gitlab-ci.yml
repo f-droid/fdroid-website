@@ -69,8 +69,11 @@ variables:
     -e "s,^(baseurl\x3a).*,\1 '$baseurl'," \
     _config.yml
   set +x
+  echo "Jekyll URL: $url$baseurl"
   echo "Jekyll config used for CI:"
+  echo "<config>"
   cat _config.yml
+  echo "</config>"
 
 
 # This is a manual task for building in preparation to deploy to
