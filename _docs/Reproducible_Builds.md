@@ -520,6 +520,7 @@ Or like this, e.g. Java 17 vs Java 21:
 -    .end annotation
 ```
 
+Different NDK versions also produce different binaries. Generally this can be recognized via the metadata, e.g. LLD version, in the native libs. However, since NDK r26d a weird behavior is observed that sometimes only the `.shstrtab` sections in ELF of the native libs are changed when NDK is installed. The native libs may be built along with the app or fetched from maven repo. If AGP finds that the NDK is installed, it will use NDK to strip the native lib but in fact it only messes up the `.shstrtab` section of the native lib. The NDK setup needs to be checked carefully to ensure it matches upstream setup, including the NDK version and if it's used by AGP.
 
 #### Support 16 KB page sizes
 
