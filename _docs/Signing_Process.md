@@ -82,7 +82,7 @@ $ mkdir unsigned
 $ cp /path/to/app-release-unsigned.apk unsigned/com.example.app_1234.apk
 $ fdroid publish --verbose
 $ fdroid update --verbose
-$ fdroid server update --verbose
+$ fdroid deploy --verbose
 ```
 
 
