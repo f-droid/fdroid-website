@@ -6,8 +6,8 @@ layout: post
 
 [Next Generation Internet (NGI)](https://www.ngi.eu/about/) funding has enabled substantial development of F-Droid -
 with the support of NGI grants via NLnet, F-Droid is now
-[better at protecting users' privacy](https://nlnet.nl/project/F-Droid-Trackers/), is
-[leading the way on security-enhancing 'reproducible builds'](https://nlnet.nl/project/Reproducible-F-Droid/) for mobile applications and gives users
+[better at protecting users' privacy](https://nlnet.nl/project/F-Droid-Trackers/), can
+[further improve security-enhancing 'reproducible builds'](https://nlnet.nl/project/Reproducible-F-Droid/) for mobile applications and gives users
 [more choice on where they download them from](https://nlnet.nl/project/EthicalApps/).
 
 The positive impact of NGI extends to numerous free and open source software (FOSS) mobile apps that you can download on F-Droid:
@@ -57,3 +57,11 @@ This is all the more essential in the current geopolitical context: the challeng
 <a name="1"></a>1. As defined by Horizon Europe, widening Member States are Bulgaria, Croatia, Cyprus, the Czech Republic, Estonia, Greece, Hungary, Latvia, Lituania, Malta, Poland, Portugal, Romania, Slovakia and Slovenia.
 Widening associated countries (under condition of an association agreement) include Albania, Armenia, Bosnia, Feroe Islands, Georgia, Kosovo, Moldavia, Montenegro, Morocco, North Macedonia, Serbia, Tunisia, Turkey and Ukraine.
 Widening overseas regions are: Guadeloupe, French Guyana, Martinique, Reunion Island, Mayotte, Saint-Martin, The Azores, Madeira, the Canary Islands.
+
+### Edits
+
+*2024-07-30*: 
+An earlier version of this post could be read in a way, that reproducible builds were enabled through NGI. 
+However, a big part of the work of reproducible builds was done by [obfusk](https://obfusk.ch/) (without funding), who maintains essential tooling like apksigcopier and reproducible-apk-tools.
+
+The reproducible builds funding from NGI started last year and enables us to further work on these implementations.
