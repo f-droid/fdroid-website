@@ -14,6 +14,7 @@ safe_html_pattern = re.compile(r'<https?://[^>]+>')
 for f in sorted(glob.glob('po/*.po*')):
     output = ''
     rewrite = False
+    print(f)
     with open(f) as fp:
         contents = fp.read()
     try:
