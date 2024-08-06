@@ -30,8 +30,13 @@
   {% comment %} the line below uses single quotes to prevet jekyll-polyglot from adding a language to the url {% endcomment -%}
   {% if page.package_name %}
   <link rel="canonical" href='{{ "/packages/" | append: page.package_name | append: "/" | absolute_url }}'/>
-  {% else %}
+  <meta property="og:url" content='{{ "/packages/" | append: page.package_name | append: "/" | absolute_url }}'/>
+  {% elsif page.permalink %}
   <link rel="canonical" href='{{ page.permalink | replace:'index.html','' | absolute_url }}'/>
+  <meta property="og:url" content='{{ page.permalink | replace:'index.html','' | absolute_url }}'/>
+  {% else %}
+  <link rel="canonical" href='{{ page.url | replace:'index.html','' | absolute_url }}'/>
+  <meta property="og:url" content='{{ page.url | replace:'index.html','' | absolute_url }}'/>
   {% endif %}
   <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ site.baseurl }}/feed.xml"/>
 
