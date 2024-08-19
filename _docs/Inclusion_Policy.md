@@ -88,8 +88,6 @@ Though we tried to build everything from source, we still need some prebuilt bin
     repositories currently:
     -   Maven Central - the original repo, hardcoded in Maven and Gradle.
     -   Google Maven Repo - hardcoded in Gradle, this repo hosts Google's own libs.
-    -   JCenter - hardcoded in Gradle, this repo by Bintray tries to provide easier
-        handling. It's synced with Maven Central, and include some extra libs. It's shutting down so please avoid this repo.
     -   OSS Sonatype - maintained by the people behind mavenCentral,
         this repository focuses on hosting services for open source
         project binaries. It's synced with Maven Central, and include some extra libs
