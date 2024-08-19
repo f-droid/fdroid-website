@@ -279,7 +279,7 @@ play-services, fabric, firebase) -- only the "Android support
 repository" is allowed.
 
 For external resources, please restrain yourself to "well known
-repositories", e.g. mavenCentral or JCenter (see complete listing in
+repositories", e.g. Maven Central or OSS Sonatype (see complete listing in
 the "srclib" section of
 [Build Metadata Reference](../Build_Metadata_Reference)). Please note
 that e.g. Bintray does not only offers JCenter, but user-repos as
