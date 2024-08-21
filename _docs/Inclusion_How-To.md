@@ -58,7 +58,7 @@ When proposing inclusion this way, it is assumed that:
 -   You know how to use [Git VCS](https://git-scm.com/), and know how
     a merge request (a.k.a. "pull request" in
     GitHub terminology) works in general.
--   You have an account on [GitLab](https://gitlab.com/).
+-   You have an account on [GitLab](https://gitlab.com/) _(NOTE: F-Droid CI runners are under Gitlab's FOSS program, so there's no need for you to pay for any CI time. If Gitlab starts asking for phone numbers or credit cards don't submit anything, just leave a note in the MR so we know we need to trigger the CI.)_
 -   You have a local instance of the F-Droid server software, and you know
     what you are doing.
 
