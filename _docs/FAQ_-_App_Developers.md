@@ -282,7 +282,7 @@ For external resources, please restrain yourself to "well known
 repositories", e.g. Maven Central or OSS Sonatype (see complete listing in
 the "srclib" section of
 [Build Metadata Reference](../Build_Metadata_Reference)). Please note
-that e.g. Bintray does not only offers JCenter, but user-repos as
+that sometimes these repos also host user-repos as
 well.  Those are not part of the trusted repository list.
 
 If you require dependencies that are not available through those
@@ -297,11 +297,11 @@ Note, that all of following are just subjective popularity-based
 suggestions; there may be other FOSS projects better suited for your
 needs.
 
--   Crittercism, BugSense — ACRA
+-   Crittercism, BugSense — ACRA, Bugmenot, Sentry
 -   Google Analytics — Piwik
 -   Google Maps — OpenStreetMap, e.g. through
-    [mapsforge](http://www.mapsforge.org) or
-    [osmdroid](http://osmdroid.org)
+    [mapsforge](http://www.mapsforge.org),
+    [osmdroid](http://osmdroid.org) or [maplibre](https://maplibre.org/)
 
 ### Aren't Google's SDK and libraries free, open source software?
 
