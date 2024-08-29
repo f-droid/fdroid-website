@@ -581,10 +581,12 @@ passed to `go build` are `-ldflags="-buildid="`, `-trimpath` (to avoid embedded 
 ##### Rust
 
 Compiler and linker arguments can be added to [Cargo `build.rustflags`](https://doc.rust-lang.org/cargo/reference/config.html#buildrustflags) and [rustc Codegen Options](https://doc.rust-lang.org/rustc/codegen-options/index.html).
-Linker arguments can be added with `-C link-args=-Wl,<linker args>`; `--remap-path-prefix=<old>=<new>`
+Linker arguments can be added with `-C link-args=-Wl,<linker args>` and `--remap-path-prefix=<old>=<new>`
 can be added to strip build paths.
 
 The Rust toolchain should be pinned to the same version as upstream. This can be done when installing rustup with `rustup-init.sh -y --default-toolchain <version>`.
+
+When `openssl` crate uses vendored OpenSSL build, the OpenSSL lib needs to be configured specially to be reproducible. `SOURCE_DATE_EPOCH` can be set to remove the embedded timestamps and `CARGO_TARGET_DIR` can be set to a absolute path, e.g. `/tmp/build` to make the embedded path reproducible between different machines. NDK also need to be in the same path which can be solved by linking it to the same path.
 
 #### Library-specific instructions
 
