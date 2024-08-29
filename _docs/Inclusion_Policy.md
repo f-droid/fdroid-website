@@ -91,8 +91,7 @@ Though we tried to build everything from source, we still need some prebuilt bin
     -   OSS Sonatype - maintained by the people behind mavenCentral,
         this repository focuses on hosting services for open source
         project binaries. It's synced with Maven Central, and include some extra libs
-    -   OSS JFrog - maintained by the people behind jCenter, this
-        repository focuses on hosting services for open source project
+    -   OSS JFrog - this repository focuses on hosting services for open source project
         binaries.
     -   JitPack.io - builds directly from GitHub repositories.
         However, they do not provide any option to reproduce or verify
