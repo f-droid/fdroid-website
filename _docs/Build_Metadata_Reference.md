@@ -858,47 +858,45 @@ apksigner verify --print-certs example.apk | grep SHA-256
 ### _AntiFeatures_<a name="AntiFeatures"></a>
 
 This is optional - if present, it contains a comma-separated list of any
-of the following values, describing an anti-feature the application has.
+of the following values, describing [an anti-feature](../Anti-Features) the application has.
 It is a good idea to mention the reasons for the anti-feature(s) in the
 description:
 
--   'Ads' - the application contains advertising.
--   'Tracking' - user or activity data is tracked or leaks, by default.
+-   `Ads` - the application contains advertising.
+-   `KnownVuln` - the application has known security vulnerabilities.
+-   `NonFreeAdd` - the application promotes Non-Free add-ons, such that
+    the app is effectively an advert for other Non-Free Software.
+-   `NonFreeAssets` - the application contains and makes use of
+    Non-Free assets. The most common case is apps using artwork -
+    images, sounds, music, etc. - under a license that restricts commercial
+    usage or making derivative works (for example, any Creative Commons license with a
+    "Non-Commercial" (NC) or "No Derivatives" (ND) restriction).
+-   `NonFreeDep` - the application depends on a Non-Free application
+    (e.g. Spotify, Whatsapp) - i.e. it requires it to be installed on the
+    device, but does not include it.
+-   `NonFreeNet` - the application promotes or depends entirely on a
+    proprietary network service.
+-   `NoSourceSince` - Upstream source for this app is no longer
+    available. Either the app went commercial, the repo was dropped,
+    or it has moved to a location currently unknown to us. This usually
+    means there won't be further updates unless the source reappears.
+-   `NSFW` - the app contains content that the user may not want to be
+    publicized or visible everywhere, comes from "Not Safe For Work".
+-   `TetheredNet` - the application depends entirely on a service which is
+    impossible (or not easy) to replace. Replacement requires changes to the
+    app or service. This Anti-Feature would not be applied if there is a simple
+    configuration option that allows pointing the app to a running instance of
+    an alternative, publicly available, self-hostable server solution.
+-   `Tracking` - user or activity data is tracked or leaks, by default.
     True if the app or a feature can not be used without collecting and sharing
     such data, or doing requests to a data collecting network service (regard-
     less if the service is based on free software, or not). For example, 
     activity-based down-loading of weather data, maps, avatars etc. (data 
     hosting and delivery services), or uploading of crash logs etc.
--   'NonFreeNet' - the application contains a feature that promotes or depends 
-    on a Non-Free network service, or any service which is impossible, or not easy to replace.
-    Replacement requires changes to the app or service. This antifeature would
-    not apply, if there is a simple configuration option that allows pointing
-    the app to a running instance of an alternative, publicly available,
-    self-hostable, free software server solution.
--   'NonFreeAdd' - the application promotes Non-Free add-ons, such that
-    the app is effectively an advert for other Non-Free Software.
--   'NonFreeDep' - the application depends on a Non-Free application
-    (e.g. Google Maps) - i.e. it requires it to be installed on the
-    device, but does not include it.
--   'NSFW' - the app contains content that the user may not want to be
-    publicized or visible everywhere, comes from "Not Safe For Work".
--   'UpstreamNonFree' - the application is or depends on Non-Free
+-   `UpstreamNonFree` - the application is or depends on Non-Free
     software. This does not mean that Non-Free Software is included with
     the app: Most likely, it has been patched in some way to remove the
     Non-Free code. However, functionality may be missing.
--   'NonFreeAssets' - the application contains and makes use of
-    Non-Free assets. The most common case is apps using artwork -
-    images, sounds, music, etc. - under a license that restricts commercial
-    usage or making derivative works (for example, any Creative Commons license with a
-    "Non-Commercial" (NC) or "No Derivatives" (ND) restriction).
--   'KnownVuln' - the application has known security vulnerabilities.
--   'ApplicationDebuggable' - APK file is compiled for debugging
-    (`application-debuggable`), which normally makes it unsuitable
-    for regular users and use cases.
--   'NoSourceSince' - Upstream source for this app is no longer
-    available. Either the app went commercial, the repo was dropped,
-    or it has moved to a location currently unknown to us. This usually
-    means there won't be further updates unless the source reappears.
 
 This is converted to (`<antifeatures>`) in the XML file (_index.xml_).
 
