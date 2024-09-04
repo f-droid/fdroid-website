@@ -16,7 +16,7 @@ F-Droid is of course an excellent FOSS based alternative for those looking for a
 
 ## User Research to Discover Pain Points and Potential Solutions
 
-To get started we began with a series of user research interviews to gain a deeper perspective on the current challenges developers and alternative app stores have, when it comes to app deployment. We paid particular attention to various compensation models favored by the developers and explored how to incorporate easy payment options into our solution
+To get started we began with a series of user research interviews to gain a deeper perspective on the current challenges developers and alternative app stores have, when it comes to app deployment. We paid particular attention to various compensation models favored by the developers and explored how to incorporate easy payment options into our solution.
 
 The results of the study were clear, developers are interested in listing their app on alternative app stores, but the app deployment and upload process to multiple stores is not straightforward. This results in a centralized market, with the majority of mainstream apps simply ending up on one app store. If we want to decentralize the market, and create more choice for developers and end users, then we need to make it easier for developers to list their app on multiple stores, streamline the update process, and consider developer compensation in our solution as well.
 
