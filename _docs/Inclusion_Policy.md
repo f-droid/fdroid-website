@@ -88,7 +88,7 @@ Though we tried to build everything from source, we still need some prebuilt bin
     repositories currently:
     -   Maven Central - the original repo, hardcoded in Maven and Gradle.
     -   Google Maven Repo - hardcoded in Gradle, this repo hosts Google's own libs.
-    -   OSS Sonatype - maintained by the people behind mavenCentral,
+    -   OSS Sonatype - maintained by the people behind Maven Central,
         this repository focuses on hosting services for open source
         project binaries. It's synced with Maven Central, and include some extra libs
     -   OSS JFrog - this repository focuses on hosting services for open source project
