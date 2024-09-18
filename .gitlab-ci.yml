@@ -273,6 +273,22 @@ check_fdroid_apk_bot:
       )
 
 
+# TODO make other shell scripts pass shellcheck
+shellcheck:
+  stage: deploy
+  image: debian:bookworm-slim
+  rules:
+    - if: $CI_PIPELINE_SOURCE != "trigger"
+      changes:
+        - .gitlab-ci.yml
+        - tools/check-asset-tags.sh
+        - tools/prepare-for-deploy.sh
+  script:
+    - *apt-template
+    - apt-get install shellcheck
+    - shellcheck tools/check-asset-tags.sh tools/prepare-for-deploy.sh
+
+
 # basic checks for dev setup
 Vagrantfile:
   stage: deploy
