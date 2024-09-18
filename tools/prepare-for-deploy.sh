@@ -9,6 +9,12 @@
 # This script assumes two things:
 # 1. the deploy machine includes the public GPG keys for tag verification
 # 2. the 'origin' remote is set to https://gitlab.com/fdroid/fdroid-website.git
+#
+# This script is run as a "pre_build_script", which is "executed on
+# the runner before executing the job."  That means this script is run
+# as root in the current configuration at the time of this writing.
+# https://docs.gitlab.com/runner/configuration/advanced-configuration.html#the-runners-section
+
 
 set -e
 set -x
@@ -16,15 +22,16 @@ set -x
 apt-get update
 apt-get -qy install --no-install-recommends ca-certificates git gpg
 
-git remote update --prune
-git fetch --tags
+git="sudo -u fdroid git"
+$git remote update --prune
+$git fetch --tags
 
-for tag in `git tag --sort=-taggerdate`; do
-    if git tag -v $tag; then
-	git clean -fdx
-	git checkout -B master $tag
+for tag in $($git tag --sort=-taggerdate); do
+    if $git tag -v "$tag"; then
+        $git clean -fdx
+        $git checkout -B master "$tag"
         echo "Set up $tag to deploy!"
-	exit
+        exit
     fi
 done
 
