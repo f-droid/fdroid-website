@@ -20,7 +20,7 @@ set -e
 set -x
 
 apt-get update
-apt-get -qy install --no-install-recommends ca-certificates git gpg
+apt-get -qy install --no-install-recommends ca-certificates git gpg sudo
 
 git="sudo -u fdroid git"
 $git remote update --prune
