@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
-"POT-Creation-Date: 2024-09-06 12:57+0200\n"
+"POT-Creation-Date: 2024-09-19 12:20+0200\n"
 "PO-Revision-Date: 2024-09-08 03:09+0000\n"
 "Last-Translator: 大王叫我来巡山 <hamburger2048@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Chinese (Simplified Han script) <https://hosted.weblate.org/projects/f-droid/website-docs/zh_Hans/>\n"
@@ -10580,9 +10580,11 @@ msgstr "本指南假设使用 Nginx 和基于 deb 的发行版，并镜像主存
 msgid "For assistance with this process, [feel free to reach out to us]({{ site.baseurl }}/about/)."
 msgstr "如需有关该过程的协助，[请随时与我们联络]({{ site.baseurl }}/about/)."
 
-#. type: Bullet: '1. '
+#. type: Title #####
 #: _docs/Running_a_Mirror.md
-msgid "Create appropriate directories"
+#, fuzzy, no-wrap
+#| msgid "Create appropriate directories"
+msgid "1. Create appropriate directories"
 msgstr "创建合适的目录"
 
 #. type: Fenced code block (console)
@@ -10597,9 +10599,17 @@ msgstr ""
 "$ sudo mkdir -p /var/www/fdroid/fdroid/archive\n"
 "$ sudo chown -R www-data.www-data /var/www/fdroid\n"
 
-#. type: Bullet: '2. '
+#. type: Title #####
 #: _docs/Running_a_Mirror.md
-msgid "Synchronize the repositories. These commands are best run in a terminal multiplexer (`screen`, `tmux` etc) as they will take some time to complete. With `--info=progress2` you can see the progress."
+#, no-wrap
+msgid "2. Synchronize the repositories."
+msgstr ""
+
+#. type: Plain text
+#: _docs/Running_a_Mirror.md
+#, fuzzy
+#| msgid "Synchronize the repositories. These commands are best run in a terminal multiplexer (`screen`, `tmux` etc) as they will take some time to complete. With `--info=progress2` you can see the progress."
+msgid "These commands are best run in a terminal multiplexer (`screen`, `tmux` etc) as they will take some time to complete. With `--info=progress2` you can see the progress."
 msgstr "同步存储库。这些命令最好在终端多路复用器（`screen`、`tmux` 等）中运行，因为它们需要一些时间才能完成。使用 `--info=progress2` 可以看到进度。"
 
 #. type: Fenced code block (console)
@@ -10612,9 +10622,11 @@ msgstr ""
 "$ sudo -u www-data -E /usr/bin/rsync -aHS  --delete --delete-delay --info=progress2 ftp.fau.de::fdroid/repo/ /var/www/fdroid/fdroid/repo/\n"
 "$ sudo -u www-data -E /usr/bin/rsync -aHS  --delete --delete-delay --info=progress2 ftp.fau.de::fdroid/archive/ /var/www/fdroid/fdroid/archive/\n"
 
-#. type: Bullet: '3. '
+#. type: Title #####
 #: _docs/Running_a_Mirror.md
-msgid "Establish a cronjob to keep the repositories up to date"
+#, fuzzy, no-wrap
+#| msgid "Establish a cronjob to keep the repositories up to date"
+msgid "3. Establish a cronjob to keep the repositories up to date"
 msgstr "建立一个 cronjob 以使存储库保持最新"
 
 #. type: Plain text
@@ -10643,9 +10655,11 @@ msgstr ""
 "35 */6 * * * www-data /usr/bin/rsync -aHS  --delete --delete-delay ftp.fau.de::fdroid/repo/ /var/www/fdroid/fdroid/repo/\n"
 "35 */6 * * * www-data /usr/bin/rsync -aHS  --delete --delete-delay ftp.fau.de::fdroid/archive/ /var/www/fdroid/fdroid/archive/\n"
 
-#. type: Bullet: '4. '
+#. type: Title #####
 #: _docs/Running_a_Mirror.md
-msgid "Configure your webserver"
+#, fuzzy, no-wrap
+#| msgid "Configure your webserver"
+msgid "4. Configure your webserver"
 msgstr "配置你的网络服务器"
 
 #. type: Plain text
@@ -10699,9 +10713,11 @@ msgstr ""
 "  # Insert here a TLS config from Mozilla SSL config generator https://mozilla.github.io/server-side-tls/ssl-config-generator/\n"
 "}\n"
 
-#. type: Bullet: '5. '
+#. type: Title #####
 #: _docs/Running_a_Mirror.md
-msgid "Test that your mirror works"
+#, fuzzy, no-wrap
+#| msgid "Test that your mirror works"
+msgid "5. Test that your mirror works"
 msgstr "测试你的镜像可以正常运作"
 
 #. type: Plain text
@@ -10724,9 +10740,11 @@ msgstr ""
 msgid "Then disable the other mirrors except your new one, refresh the index with pull-to-refresh, and browse and install some apps!"
 msgstr "接着停用除了你的新镜像之外的其他所有镜像，下拉刷新索引，浏览并安装一些应用！"
 
-#. type: Bullet: '6. '
+#. type: Title #####
 #: _docs/Running_a_Mirror.md
-msgid "Set up a privacy policy"
+#, fuzzy, no-wrap
+#| msgid "Set up a privacy policy"
+msgid "6. Set up a privacy policy"
 msgstr "设置隐私政策"
 
 #. type: Plain text
@@ -10749,9 +10767,11 @@ msgstr "Lysator: https://ftp.lysator.liu.se/datahanteringspolicy.txt"
 msgid "Purdue PLUG: https://plug-mirror.rcac.purdue.edu/info.html"
 msgstr "Purdue PLUG: https://plug-mirror.rcac.purdue.edu/info.html"
 
-#. type: Bullet: '7. '
+#. type: Title #####
 #: _docs/Running_a_Mirror.md
-msgid "Submit your mirror for inclusion"
+#, fuzzy, no-wrap
+#| msgid "Submit your mirror for inclusion"
+msgid "7. Submit your mirror for inclusion"
 msgstr "提交镜像以进行收录"
 
 #. type: Bullet: '* '
@@ -12180,6 +12200,11 @@ msgstr "[网站页面](https://hosted.weblate.org/projects/f-droid/website-pages
 #: _docs/Translation_and_Localization.md
 msgid "[Data](https://hosted.weblate.org/projects/f-droid/fdroiddata) component: at least 10% translated"
 msgstr "[数据](https://hosted.weblate.org/projects/f-droid/fdroiddata) 部件：至少翻译了 10%"
+
+#. type: Bullet: '* '
+#: _docs/Translation_and_Localization.md
+msgid "A blog post announcing support for the new language with an explanation the translation team."
+msgstr ""
 
 #. type: Plain text
 #: _docs/Translation_and_Localization.md

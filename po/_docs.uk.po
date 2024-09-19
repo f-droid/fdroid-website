@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
-"POT-Creation-Date: 2024-09-06 12:57+0200\n"
+"POT-Creation-Date: 2024-09-19 12:20+0200\n"
 "PO-Revision-Date: 2024-08-22 15:42+0000\n"
 "Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/f-droid/website-docs/uk/>\n"
@@ -10729,9 +10729,11 @@ msgstr "Інструкція вважає, що ви використовуєт�
 msgid "For assistance with this process, [feel free to reach out to us]({{ site.baseurl }}/about/)."
 msgstr "Щоб отримати підтримку щодо цього процесу, [не соромтеся звертатися до нас]({{ site.baseurl }}/about/)."
 
-#. type: Bullet: '1. '
+#. type: Title #####
 #: _docs/Running_a_Mirror.md
-msgid "Create appropriate directories"
+#, fuzzy, no-wrap
+#| msgid "Create appropriate directories"
+msgid "1. Create appropriate directories"
 msgstr "Створіть відповідні каталоги"
 
 #. type: Fenced code block (console)
@@ -10746,9 +10748,17 @@ msgstr ""
 "$ sudo mkdir -p /var/www/fdroid/fdroid/archive\n"
 "$ sudo chown -R www-data:www-data /var/www/fdroid\n"
 
-#. type: Bullet: '2. '
+#. type: Title #####
 #: _docs/Running_a_Mirror.md
-msgid "Synchronize the repositories. These commands are best run in a terminal multiplexer (`screen`, `tmux` etc) as they will take some time to complete. With `--info=progress2` you can see the progress."
+#, no-wrap
+msgid "2. Synchronize the repositories."
+msgstr ""
+
+#. type: Plain text
+#: _docs/Running_a_Mirror.md
+#, fuzzy
+#| msgid "Synchronize the repositories. These commands are best run in a terminal multiplexer (`screen`, `tmux` etc) as they will take some time to complete. With `--info=progress2` you can see the progress."
+msgid "These commands are best run in a terminal multiplexer (`screen`, `tmux` etc) as they will take some time to complete. With `--info=progress2` you can see the progress."
 msgstr "Синхронізуйте репозиторії. Ці команди краще за все запускати в мультиплексорі терміналів (`screen`, `tmux` тощо), бо вони виконуються тривалий час; `--info=progress2` показує хід виконання."
 
 #. type: Fenced code block (console)
@@ -10761,9 +10771,11 @@ msgstr ""
 "$ sudo -u www-data -E /usr/bin/rsync -aHS  --delete --delete-delay --info=progress2 fdroid.astra.in.ua::fdroid/repo/ /var/www/fdroid/fdroid/repo/\n"
 "$ sudo -u www-data -E /usr/bin/rsync -aHS  --delete --delete-delay --info=progress2 fdroid.astra.in.ua::fdroid/archive/ /var/www/fdroid/fdroid/archive/\n"
 
-#. type: Bullet: '3. '
+#. type: Title #####
 #: _docs/Running_a_Mirror.md
-msgid "Establish a cronjob to keep the repositories up to date"
+#, fuzzy, no-wrap
+#| msgid "Establish a cronjob to keep the repositories up to date"
+msgid "3. Establish a cronjob to keep the repositories up to date"
 msgstr "Налаштуйте cron-завдання, щоб репозиторії вчасно оновлювались"
 
 #. type: Plain text
@@ -10792,9 +10804,11 @@ msgstr ""
 "35 */6 * * * www-data /usr/bin/rsync -aHS  --delete --delete-delay fdroid.astra.in.ua::fdroid/repo/ /var/www/fdroid/fdroid/repo/\n"
 "35 */6 * * * www-data /usr/bin/rsync -aHS  --delete --delete-delay fdroid.astra.in.ua::fdroid/archive/ /var/www/fdroid/fdroid/archive/\n"
 
-#. type: Bullet: '4. '
+#. type: Title #####
 #: _docs/Running_a_Mirror.md
-msgid "Configure your webserver"
+#, fuzzy, no-wrap
+#| msgid "Configure your webserver"
+msgid "4. Configure your webserver"
 msgstr "Налаштуйте свій вебсервер"
 
 #. type: Plain text
@@ -10848,9 +10862,11 @@ msgstr ""
 "  # Insert here a TLS config from Mozilla SSL config generator https://mozilla.github.io/server-side-tls/ssl-config-generator/\n"
 "}\n"
 
-#. type: Bullet: '5. '
+#. type: Title #####
 #: _docs/Running_a_Mirror.md
-msgid "Test that your mirror works"
+#, fuzzy, no-wrap
+#| msgid "Test that your mirror works"
+msgid "5. Test that your mirror works"
 msgstr "Перевірте, чи працює ваше дзеркало"
 
 #. type: Plain text
@@ -10873,9 +10889,11 @@ msgstr ""
 msgid "Then disable the other mirrors except your new one, refresh the index with pull-to-refresh, and browse and install some apps!"
 msgstr "Потім вимкніть інші дзеркала, окрім вашого нового, оновіть індекс за допомогою потягнувши сторінку вниз, перегляньте та встановіть кілька застосунків!"
 
-#. type: Bullet: '6. '
+#. type: Title #####
 #: _docs/Running_a_Mirror.md
-msgid "Set up a privacy policy"
+#, fuzzy, no-wrap
+#| msgid "Set up a privacy policy"
+msgid "6. Set up a privacy policy"
 msgstr "Налаштуйте політику приватності"
 
 #. type: Plain text
@@ -10898,9 +10916,11 @@ msgstr "Lysator: https://ftp.lysator.liu.se/datahanteringspolicy.txt"
 msgid "Purdue PLUG: https://plug-mirror.rcac.purdue.edu/info.html"
 msgstr "Purdue PLUG: https://plug-mirror.rcac.purdue.edu/info.html"
 
-#. type: Bullet: '7. '
+#. type: Title #####
 #: _docs/Running_a_Mirror.md
-msgid "Submit your mirror for inclusion"
+#, fuzzy, no-wrap
+#| msgid "Submit your mirror for inclusion"
+msgid "7. Submit your mirror for inclusion"
 msgstr "Запропонуйте нам додати ваше дзеркало"
 
 #. type: Bullet: '* '
@@ -12337,6 +12357,11 @@ msgstr "Складник [Website Pages](https://hosted.weblate.org/projects/f-d
 #: _docs/Translation_and_Localization.md
 msgid "[Data](https://hosted.weblate.org/projects/f-droid/fdroiddata) component: at least 10% translated"
 msgstr "Складник [Data](https://hosted.weblate.org/projects/f-droid/fdroiddata): перекладено принаймні 10%"
+
+#. type: Bullet: '* '
+#: _docs/Translation_and_Localization.md
+msgid "A blog post announcing support for the new language with an explanation the translation team."
+msgstr ""
 
 #. type: Plain text
 #: _docs/Translation_and_Localization.md
