@@ -39,7 +39,9 @@ $ sudo mkdir -p /var/www/fdroid/fdroid/archive
 $ sudo chown -R www-data.www-data /var/www/fdroid
 ```
 
-##### 2. Synchronize the repositories. These commands are best run in a terminal multiplexer (`screen`, `tmux` etc) as they will take some time to complete. With `--info=progress2` you can see the progress.
+##### 2. Synchronize the repositories.
+
+These commands are best run in a terminal multiplexer (`screen`, `tmux` etc) as they will take some time to complete. With `--info=progress2` you can see the progress.
 
 ```console
 $ sudo -u www-data -E /usr/bin/rsync -aHS  --delete --delete-delay --info=progress2 ftp.fau.de::fdroid/repo/ /var/www/fdroid/fdroid/repo/
