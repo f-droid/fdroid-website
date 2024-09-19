@@ -26,8 +26,8 @@ apt-get update
 apt-get -qy install --no-install-recommends ca-certificates git gpg
 
 # avoid git safe.directory errors, since this runs as root
-git config --add safe.directory "$CI_PROJECT_DIR/.git"
-git config --add safe.directory "$CI_REPOSITORY_URL/.git"
+git config --global --add safe.directory "$CI_PROJECT_DIR/.git"
+git config --global --add safe.directory "$CI_REPOSITORY_URL/.git"
 
 git remote update --prune
 git fetch --tags
