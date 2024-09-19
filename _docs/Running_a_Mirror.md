@@ -31,7 +31,7 @@ This guide assumes the use of Nginx with a deb-based distribution, and mirroring
 
 For assistance with this process, [feel free to reach out to us]({{ site.baseurl }}/about/).
 
-1. Create appropriate directories
+##### 1. Create appropriate directories
 
 ```console
 $ sudo mkdir -p /var/www/fdroid/fdroid/repo
@@ -39,14 +39,14 @@ $ sudo mkdir -p /var/www/fdroid/fdroid/archive
 $ sudo chown -R www-data.www-data /var/www/fdroid
 ```
 
-2. Synchronize the repositories. These commands are best run in a terminal multiplexer (`screen`, `tmux` etc) as they will take some time to complete. With `--info=progress2` you can see the progress.
+##### 2. Synchronize the repositories. These commands are best run in a terminal multiplexer (`screen`, `tmux` etc) as they will take some time to complete. With `--info=progress2` you can see the progress.
 
 ```console
 $ sudo -u www-data -E /usr/bin/rsync -aHS  --delete --delete-delay --info=progress2 ftp.fau.de::fdroid/repo/ /var/www/fdroid/fdroid/repo/
 $ sudo -u www-data -E /usr/bin/rsync -aHS  --delete --delete-delay --info=progress2 ftp.fau.de::fdroid/archive/ /var/www/fdroid/fdroid/archive/
 ```
 
-3. Establish a cronjob to keep the repositories up to date
+##### 3. Establish a cronjob to keep the repositories up to date
 
 Create a cronjob file in `/etc/cron.d`
 
@@ -61,7 +61,7 @@ Fill the file with entries to update the repositories. These commands will run a
 35 */6 * * * www-data /usr/bin/rsync -aHS  --delete --delete-delay ftp.fau.de::fdroid/archive/ /var/www/fdroid/fdroid/archive/
 ```
 
-4. Configure your webserver
+##### 4. Configure your webserver
 
 This is an example server block for nginx. If used, it should be copied to _/etc/nginx/sites-available/_ and symlinked to _/etc/nginx/sites-enabled_. Note that it is important that your URI be `/fdroid/repo` so that the app can automatically add your mirror.
 
@@ -88,7 +88,7 @@ server {
 }
 ```
 
-5. Test that your mirror works
+##### 5. Test that your mirror works
 
 Manually add your mirror to F-Droid to test that it works.
 
@@ -97,7 +97,7 @@ https://fdroidmirror.example.com/fdroid/repo?fingerprint=43238D512C1E5EB2D6569F4
 
 Then disable the other mirrors except your new one, refresh the index with pull-to-refresh, and browse and install some apps!
 
-6. Set up a privacy policy
+##### 6. Set up a privacy policy
 
 Please include a privacy policy so that users can understand what happens with their metadata when using your mirror.
 For inspiration, see:
@@ -106,7 +106,7 @@ For inspiration, see:
 * Lysator: https://ftp.lysator.liu.se/datahanteringspolicy.txt
 * Purdue PLUG: https://plug-mirror.rcac.purdue.edu/info.html
 
-7. Submit your mirror for inclusion
+##### 7. Submit your mirror for inclusion
 
 * Fork the [mirror monitor repo](https://gitlab.com/fdroid/mirror-monitor), add your mirror to the list in the README, and open a merge request.
 * Open an issue on the [admin repo](https://gitlab.com/fdroid/admin), including any pertinent information, requesting the inclusion of your mirror.
