@@ -22,7 +22,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
-"POT-Creation-Date: 2024-09-06 12:57+0200\n"
+"POT-Creation-Date: 2024-09-19 12:32+0200\n"
 "PO-Revision-Date: 2024-09-16 05:09+0000\n"
 "Last-Translator: gallegonovato <fran-carro@hotmail.es>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/f-droid/website-docs/es/>\n"
@@ -10152,6 +10152,47 @@ msgstr ""
 #. type: Title ####
 #: _docs/Running_a_Mirror.md
 #, no-wrap
+msgid "Primary and Secondary Mirrors"
+msgstr ""
+
+#. type: Plain text
+#: _docs/Running_a_Mirror.md
+msgid "Whenever F-Droid has built a new index, it proactively pushes it to a selected set of mirrors, called the \"primary mirrors\".  In other words, primary mirrors are updated nearly immediately.  As of September 2024, the primary mirrors are ([latest list](https://gitlab.com/fdroid/web-services/-/blob/master/origin-04-mirror-push.yml)):"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/Running_a_Mirror.md
+msgid "ftp.agdsn.de"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/Running_a_Mirror.md
+msgid "ftp.lysator.liu.se"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/Running_a_Mirror.md
+msgid "plug-mirror.rcac.purdue.edu"
+msgstr ""
+
+#. type: Plain text
+#: _docs/Running_a_Mirror.md
+msgid "Most other mirrors are \"secondary mirrors\".  These mirrors sync periodically (e.g., every 4 hours) from one of the primary mirrors."
+msgstr ""
+
+#. type: Plain text
+#: _docs/Running_a_Mirror.md
+msgid "Therefore, secondary mirrors usually have a small propagation delay.  Nevertheless, note that in practice the time between any two index updates is dominated by the time to update and build the apps (in the order of days).  Not having too many primary mirrors also keeps the load on the F-Droid origin server small."
+msgstr ""
+
+#. type: Plain text
+#: _docs/Running_a_Mirror.md
+msgid "Technically, you can also have a \"tertiary mirror\" by syncing from a secondary mirror, and so on."
+msgstr ""
+
+#. type: Title ####
+#: _docs/Running_a_Mirror.md
+#, no-wrap
 msgid "Requirements"
 msgstr "Requisitos"
 
@@ -10202,9 +10243,11 @@ msgstr ""
 msgid "For assistance with this process, [feel free to reach out to us]({{ site.baseurl }}/about/)."
 msgstr ""
 
-#. type: Bullet: '1. '
+#. type: Title #####
 #: _docs/Running_a_Mirror.md
-msgid "Create appropriate directories"
+#, fuzzy, no-wrap
+#| msgid "Create appropriate directories"
+msgid "1. Create appropriate directories"
 msgstr "Crea carpetas apropiadas"
 
 #. type: Fenced code block (console)
@@ -10216,9 +10259,15 @@ msgid ""
 "$ sudo chown -R www-data.www-data /var/www/fdroid\n"
 msgstr ""
 
-#. type: Bullet: '2. '
+#. type: Title #####
 #: _docs/Running_a_Mirror.md
-msgid "Synchronize the repositories. These commands are best run in a terminal multiplexer (`screen`, `tmux` etc) as they will take some time to complete. With `--info=progress2` you can see the progress."
+#, no-wrap
+msgid "2. Synchronize the repositories."
+msgstr ""
+
+#. type: Plain text
+#: _docs/Running_a_Mirror.md
+msgid "These commands are best run in a terminal multiplexer (`screen`, `tmux` etc) as they will take some time to complete. With `--info=progress2` you can see the progress."
 msgstr ""
 
 #. type: Fenced code block (console)
@@ -10231,9 +10280,10 @@ msgstr ""
 "$ sudo -u www-data -E /usr/bin/rsync --links --delete --times --recursive --perms --hard-links --sparse --delay-updates --temp-dir /tmp/ ftp.fau.de::fdroid/repo/ /var/www/fdroid/fdroid/repo/\n"
 "$ sudo -u www-data -E /usr/bin/rsync --links --delete --times --recursive --perms --hard-links --sparse --delay-updates --temp-dir /tmp/ ftp.fau.de::fdroid/archive/ /var/www/fdroid/fdroid/archive/\n"
 
-#. type: Bullet: '3. '
+#. type: Title #####
 #: _docs/Running_a_Mirror.md
-msgid "Establish a cronjob to keep the repositories up to date"
+#, no-wrap
+msgid "3. Establish a cronjob to keep the repositories up to date"
 msgstr ""
 
 #. type: Plain text
@@ -10262,9 +10312,11 @@ msgstr ""
 "$ sudo -u www-data -E /usr/bin/rsync --links --delete --times --recursive --perms --hard-links --sparse --delay-updates --temp-dir /tmp/ ftp.fau.de::fdroid/repo/ /var/www/fdroid/fdroid/repo/\n"
 "$ sudo -u www-data -E /usr/bin/rsync --links --delete --times --recursive --perms --hard-links --sparse --delay-updates --temp-dir /tmp/ ftp.fau.de::fdroid/archive/ /var/www/fdroid/fdroid/archive/\n"
 
-#. type: Bullet: '4. '
+#. type: Title #####
 #: _docs/Running_a_Mirror.md
-msgid "Configure your webserver"
+#, fuzzy, no-wrap
+#| msgid "Configure your webserver"
+msgid "4. Configure your webserver"
 msgstr "Configura tu servidor web"
 
 #. type: Plain text
@@ -10298,9 +10350,10 @@ msgid ""
 "}\n"
 msgstr ""
 
-#. type: Bullet: '5. '
+#. type: Title #####
 #: _docs/Running_a_Mirror.md
-msgid "Test that your mirror works"
+#, no-wrap
+msgid "5. Test that your mirror works"
 msgstr ""
 
 #. type: Plain text
@@ -10321,9 +10374,10 @@ msgstr ""
 msgid "Then disable the other mirrors except your new one, refresh the index with pull-to-refresh, and browse and install some apps!"
 msgstr ""
 
-#. type: Bullet: '6. '
+#. type: Title #####
 #: _docs/Running_a_Mirror.md
-msgid "Set up a privacy policy"
+#, no-wrap
+msgid "6. Set up a privacy policy"
 msgstr ""
 
 #. type: Plain text
@@ -10346,9 +10400,10 @@ msgstr ""
 msgid "Purdue PLUG: https://plug-mirror.rcac.purdue.edu/info.html"
 msgstr ""
 
-#. type: Bullet: '7. '
+#. type: Title #####
 #: _docs/Running_a_Mirror.md
-msgid "Submit your mirror for inclusion"
+#, no-wrap
+msgid "7. Submit your mirror for inclusion"
 msgstr ""
 
 #. type: Bullet: '* '
@@ -11684,6 +11739,11 @@ msgstr ""
 #. type: Bullet: '* '
 #: _docs/Translation_and_Localization.md
 msgid "[Data](https://hosted.weblate.org/projects/f-droid/fdroiddata) component: at least 10% translated"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/Translation_and_Localization.md
+msgid "A blog post announcing support for the new language with an explanation the translation team."
 msgstr ""
 
 #. type: Plain text

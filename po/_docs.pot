@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2024-09-19 12:20+0200\n"
+"POT-Creation-Date: 2024-09-19 12:32+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -10847,6 +10847,54 @@ msgstr ""
 #: _docs/Running_a_Mirror.md
 #, markdown-text
 msgid "F-Droid's collection of apps and files are run on servers run by the core F-Droid contributors. Originally, this main repository was hosted only on [f-droid.org](https://f-droid.org/), but as F-Droid grew [f-droid.org](https://f-droid.org/) alone was no longer able to handle the entire load. F-Droid now supports \"mirror\" servers that replicate a full copy of the repositories. Hosting a mirror involves running an HTTPS webserver that has a full copy of the repository synchronized using `rsync`."
+msgstr ""
+
+#. type: Title ####
+#: _docs/Running_a_Mirror.md
+#, markdown-text, no-wrap
+msgid "Primary and Secondary Mirrors"
+msgstr ""
+
+#. type: Plain text
+#: _docs/Running_a_Mirror.md
+#, markdown-text
+msgid "Whenever F-Droid has built a new index, it proactively pushes it to a selected set of mirrors, called the \"primary mirrors\".  In other words, primary mirrors are updated nearly immediately.  As of September 2024, the primary mirrors are ([latest list](https://gitlab.com/fdroid/web-services/-/blob/master/origin-04-mirror-push.yml)):"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/Running_a_Mirror.md
+#, markdown-text
+msgid "ftp.agdsn.de"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/Running_a_Mirror.md
+#, markdown-text
+msgid "ftp.lysator.liu.se"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/Running_a_Mirror.md
+#, markdown-text
+msgid "plug-mirror.rcac.purdue.edu"
+msgstr ""
+
+#. type: Plain text
+#: _docs/Running_a_Mirror.md
+#, markdown-text
+msgid "Most other mirrors are \"secondary mirrors\".  These mirrors sync periodically (e.g., every 4 hours) from one of the primary mirrors."
+msgstr ""
+
+#. type: Plain text
+#: _docs/Running_a_Mirror.md
+#, markdown-text
+msgid "Therefore, secondary mirrors usually have a small propagation delay.  Nevertheless, note that in practice the time between any two index updates is dominated by the time to update and build the apps (in the order of days).  Not having too many primary mirrors also keeps the load on the F-Droid origin server small."
+msgstr ""
+
+#. type: Plain text
+#: _docs/Running_a_Mirror.md
+#, markdown-text
+msgid "Technically, you can also have a \"tertiary mirror\" by syncing from a secondary mirror, and so on."
 msgstr ""
 
 #. type: Title ####
