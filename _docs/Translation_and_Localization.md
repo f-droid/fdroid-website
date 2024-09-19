@@ -100,6 +100,7 @@ In order for a new language to be added to f-droid.org, it must have:
 * [Website](https://hosted.weblate.org/projects/f-droid/website) component: 100% translated
 * [Website Pages](https://hosted.weblate.org/projects/f-droid/website-pages/) component: 100% translated
 * [Data](https://hosted.weblate.org/projects/f-droid/fdroiddata) component: at least 10% translated
+* A blog post announcing support for the new language with an explanation the translation team.
 
 There is a [nightly build of the website](https://staging.f-droid.org)
 that includes all translations on Weblate, no matter how complete they
