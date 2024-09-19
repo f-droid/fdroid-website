@@ -6,6 +6,25 @@ title: Running a Mirror
 
 F-Droid's collection of apps and files are run on servers run by the core F-Droid contributors. Originally, this main repository was hosted only on [f-droid.org](https://f-droid.org/), but as F-Droid grew [f-droid.org](https://f-droid.org/) alone was no longer able to handle the entire load. F-Droid now supports "mirror" servers that replicate a full copy of the repositories. Hosting a mirror involves running an HTTPS webserver that has a full copy of the repository synchronized using `rsync`.
 
+#### Primary and Secondary Mirrors
+
+Whenever F-Droid has built a new index, it proactively pushes it to a selected set of mirrors, called the "primary mirrors".
+In other words, primary mirrors are updated nearly immediately.
+As of September 2024, the primary mirrors are ([latest list](https://gitlab.com/fdroid/web-services/-/blob/master/origin-04-mirror-push.yml)):
+
+* ftp.agdsn.de
+* ftp.lysator.liu.se
+* plug-mirror.rcac.purdue.edu
+
+Most other mirrors are "secondary mirrors".
+These mirrors sync periodically (e.g., every 4 hours) from one of the primary mirrors.
+
+Therefore, secondary mirrors usually have a small propagation delay.
+Nevertheless, note that in practice the time between any two index updates is dominated by the time to update and build the apps (in the order of days).
+Not having too many primary mirrors also keeps the load on the F-Droid origin server small.
+
+Technically, you can also have a "tertiary mirror" by syncing from a secondary mirror, and so on.
+
 #### Requirements
 
 There are two official F-Droid repository sections, the "repo" and the "archive". It's most important to mirror the "repo" since it is used much more than the "archive".
