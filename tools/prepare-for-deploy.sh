@@ -12,24 +12,30 @@
 #
 # This script is run as a "pre_build_script", which is "executed on
 # the runner before executing the job."  That means this script is run
-# as root in the current configuration at the time of this writing.
+# as root in the docker container in the current configuration.
 # https://docs.gitlab.com/runner/configuration/advanced-configuration.html#the-runners-section
 
 
 set -e
 set -x
 
+test -n "$CI_PROJECT_DIR"
+test -n "$CI_REPOSITORY_URL"
+
 apt-get update
-apt-get -qy install --no-install-recommends ca-certificates git gpg sudo
+apt-get -qy install --no-install-recommends ca-certificates git gpg
 
-git="sudo -u fdroid git"
-$git remote update --prune
-$git fetch --tags
+# avoid git safe.directory errors, since this runs as root
+git config --add safe.directory "$CI_PROJECT_DIR/.git"
+git config --add safe.directory "$CI_REPOSITORY_URL/.git"
 
-for tag in $($git tag --sort=-taggerdate); do
-    if $git tag -v "$tag"; then
-        $git clean -fdx
-        $git checkout -B master "$tag"
+git remote update --prune
+git fetch --tags
+
+for tag in $(git tag --sort=-taggerdate); do
+    if git tag -v "$tag"; then
+        git clean -fdx
+        git checkout -B master "$tag"
         echo "Set up $tag to deploy!"
         exit
     fi
