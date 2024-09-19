@@ -111,7 +111,7 @@ layout: default-package-sidebar
 		</li>
 	</ul>
 
-	{% if page.openCollective != nil or page.liberapay != nil or page.flattrID != nil or page.bitcoin != nil or page.litecoin != nil or page.donate != nil %}
+	{% if page.openCollective != nil or page.liberapay != nil or page.bitcoin != nil or page.litecoin != nil or page.donate != nil %}
 	<h3>{{ strings.donate }}</h3>
 	<ul class="package-links donate-options">
 		{% if page.openCollective != "" and page.openCollective != nil %}
@@ -132,11 +132,6 @@ layout: default-package-sidebar
 		{% if page.litecoin != "" and page.litecoin != nil %}
 		<li class="package-link">
 			<a href="https://live.blockcypher.com/ltc/address/{{ page.litecoin }}" title="{{ page.litecoin }}"><img src="{% asset litecoin.png %}" alt="{{ strings.litecoin_alt }}"/></a>
-		</li>
-		{% endif %}
-		{% if page.flattrID != "" and page.flattrID != nil %}
-		<li class="package-link">
-			<a href="https://flattr.com/thing/{{ page.flattrID }}">flattr.com/thing/{{ page.flattrID }}</a>
 		</li>
 		{% endif %}
 		{%- assign donatetest = page.donate | slice: 0, 8 -%}
