@@ -80,7 +80,6 @@ The following sections describe the fields recognised within the file.
 * [_Translation_](#Translation)
 * [_Changelog_](#Changelog)
 * [_Donate_](#Donate)
-* [_FlattrID_](#FlattrID)
 * [_Liberapay_](#Liberapay)
 * [_OpenCollective_](#OpenCollective)
 * [_Bitcoin_](#Bitcoin)
@@ -302,15 +301,6 @@ rather than something that is auto-generated 'button code'.
 
 This is converted to (`<donate>`) in the XML file (_index.xml_).
 
-
-
-### _FlattrID_<a name="FlattrID"></a>
-
-The project's Flattr (https://flattr.com) ID, if it has one. This should
-be a numeric ID, such that (for example) https://flattr.com/thing/xxxx
-leads directly to the page to donate to the project.
-
-This is converted to (`<flattr>`) in the XML file (_index.xml_).
 
 
 ### _Liberapay_<a name="Liberapay"></a><a name="LiberapayID"></a>

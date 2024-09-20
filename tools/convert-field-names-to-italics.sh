@@ -19,7 +19,7 @@ for f in 'Web Site' 'Vercode Operation' 'Update Check Name' 'Update Check Mode' 
         $basedir/*/*.md $basedir/po/*.po*
 done
 
-for f in AntiFeatures ArchivePolicy AuthorEmail AuthorName AuthorWebSite AutoName AutoUpdateMode Binaries Bitcoin Builds Categories Changelog CurrentVersion CurrentVersionCode Description Disabled Donate FlattrID IssueTracker LiberapayID License Litecoin MaintainerNotes Name NoSourceSince Provides Repo RepoType RequiresRoot SourceCode Summary Translation UpdateCheckData UpdateCheckIgnore UpdateCheckMode UpdateCheckName VercodeOperation WebSite; do
+for f in AntiFeatures ArchivePolicy AuthorEmail AuthorName AuthorWebSite AutoName AutoUpdateMode Binaries Bitcoin Builds Categories Changelog CurrentVersion CurrentVersionCode Description Disabled Donate IssueTracker LiberapayID License Litecoin MaintainerNotes Name NoSourceSince Provides Repo RepoType RequiresRoot SourceCode Summary Translation UpdateCheckData UpdateCheckIgnore UpdateCheckMode UpdateCheckName VercodeOperation WebSite; do
     backtick='`'$f'`'
     sed -i \
         -e "s,${backtick},_${f}_,g" \
