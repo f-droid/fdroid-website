@@ -19,6 +19,8 @@ To install F-Droid, choose one of those 4 options:
 
    * [Option 4. Flash F-Droid OTA.](#option-4-flash-f-droid-ota)
 
+   * [Option 5. Install F-Droid using `adb`.](#option-5-install-f-droid-using-adb)
+
 What is the difference between easy and advanced options?
 
 * If you do not have technical background or interest, do not need advanced features, or if you are not sure which option to choose, for you to get a better experience, it is suggested to consider choosing one of those [easy options](#easy-options) down below. So that you get a faster and easier start with F-Droid. While keeping in mind that you will get less advanced features.
@@ -89,6 +91,21 @@ with [LineageOS](https://lineageos.org/) for example.
 2. boot your phone into recovery mode
 3. side-load / install the OTA zip file to your phone, the same way you would
   install a custom ROM. (eg. with `adb`, `heimdall`, etc.)
+
+#### Option 5. Install F-Droid using `adb`.
+
+1. Download [this official F-Droid.apk](https://f-droid.org/F-Droid.apk) file
+1. Enable [_Developer options_](https://developer.android.com/studio/debug/dev-options#enable) on your phone
+1. In _Developer options_ enable _USB debugging_
+1. On your computer download "Android Debugging Bridge" (adb)
+1. Make sure your phone is connected via USB and visible in the output of: `adb devices -l`
+1. Push fdroid to your phone: `adb push "/path/to/F-Droid.apk" /data/local/tmp/F-Droid.apk`
+1. Install F-Droid: `adb shell pm install -i "org.fdroid.fdroid" -r /data/local/tmp/F-Droid.apk`
+1. Remove the old file: `adb shell rm /data/local/tmp/F-Droid.apk`
+
+**Note:** This method also works for installing apps if _Google Advanced Protection Program_ is enabled, which would otherwise result in the following error:
+
+> `INSTALL_FAILED_VERIFICATION_FAILURE: Install not allowed for file:///data/app/[…].tmp`
 
 ## Disclaimer
 
