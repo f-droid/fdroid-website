@@ -29,8 +29,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
 "POT-Creation-Date: 2024-09-19 12:32+0200\n"
-"PO-Revision-Date: 2024-09-21 04:40+0000\n"
-"Last-Translator: 大王叫我来巡山 <hamburger2048@users.noreply.hosted.weblate.org>\n"
+"PO-Revision-Date: 2024-09-29 18:04+0000\n"
+"Last-Translator: linsui <linsui@inbox.lv>\n"
 "Language-Team: Chinese (Simplified Han script) <https://hosted.weblate.org/projects/f-droid/website-docs/zh_Hans/>\n"
 "Language: zh_Hans\n"
 "MIME-Version: 1.0\n"
@@ -7385,7 +7385,7 @@ msgstr "一则某个应用成功构建过程的记录可以在该特定应用的
 #. type: Plain text
 #: _docs/Inclusion_How-To.md
 msgid "Apps that fail will have the log available during the build cycle on the [F-Droid Monitor - Running](https://monitor.f-droid.org/builds/running) page or, if in the previous cycle, on the [Build](https://monitor.f-droid.org/builds/build) page.  This is useful to aid in diagnosing problems when the build unexpectedly failed."
-msgstr "你可在 [F-Droid Monitor - Running](https://monitor.f-droid.org/builds/running) 页面查看本周期构建失败的应用的日志, 上一周期构建失败的应用的日志可在 [Build](https://monitor.f-droid.org/builds/build) 页面上找到。  这有助于在构建意外失败时帮助诊断问题。"
+msgstr "你可在 [F-Droid Monitor - Running](https://monitor.f-droid.org/builds/running) 页面查看本周期构建失败的应用的日志, 上一周期构建失败的应用的日志可在 [Build](https://monitor.f-droid.org/builds/build) 页面上找到。这有助于在构建意外失败时帮助诊断问题。"
 
 #. type: Title ###
 #: _docs/Inclusion_How-To.md
@@ -10218,7 +10218,7 @@ msgstr ""
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
 msgid "Different NDK versions also produce different binaries. Generally this can be recognized via the metadata, e.g. LLD version, in the native libs. However, since NDK r26d a weird behavior is observed that sometimes only the `.shstrtab` sections in ELF of the native libs are changed when NDK is installed. The native libs may be built along with the app or fetched from maven repo. If AGP finds that the NDK is installed, it will use NDK to strip the native lib but in fact it only messes up the `.shstrtab` section of the native lib. The NDK setup needs to be checked carefully to ensure it matches upstream setup, including the NDK version and if it's used by AGP."
-msgstr "不同的 NDK 版本也会产生不同的二进制文件。通常而言，这可以通过原生库中的元数据，如 LLD 版本，进行识别。不过，自 NDK r26d 起观察到了一个奇怪的行为。当 NDK 安装时，有时只有原生库 ELF 中的 `.shstrtab`部分发送变化。这些原生库可能是和应用一道构建的，也可能是从 maven 存储库获取的。如果 AGP 发现安装了 NDK，那么它会使用 NDK 来剥离原生库，但事实上，它仅仅弄乱了原生库的 `.shstrtab`部分。需要仔细检查 NDK 配置确保它匹配上游配置，包括 NDK 版本以及它是否被 AGP 使用。"
+msgstr "不同的 NDK 版本也会产生不同的二进制文件。通常而言，这可以通过原生库中的元数据，如 LLD 版本，进行识别。不过，自 NDK r26d 起观察到了一个奇怪的行为。当 NDK 安装时，有时只有原生库 ELF 中的 `.shstrtab`部分发生变化。这些原生库可能是和应用一道构建的，也可能是从 maven 存储库获取的。如果 AGP 发现安装了 NDK，那么它会使用 NDK 从原生库中移除调试符号，但事实上，它仅仅弄乱了原生库的 `.shstrtab`部分。需要仔细检查 NDK 配置确保它匹配上游配置，包括 NDK 版本以及它是否被 AGP 使用。"
 
 #. type: Title ####
 #: _docs/Reproducible_Builds.md
@@ -10901,7 +10901,7 @@ msgstr "在旧版本 Android 上运行"
 #. type: Plain text
 #: _docs/Running_on_old_Android_versions.md
 msgid "F-Droid repos generally maintain support for old F-Droid releases for a long time.  That means that old F-Droid releases will continue to work for years. That provides a path to run F-Droid on very old Android releases. Here are the download links for installing the newest release that runs on a given Android release:"
-msgstr "F-Droid 存储库通常会在很长一段时间内保持对旧 F-Droid 版本的支持。这意味着旧 F-Droid 版本将继续工作数年。这使 F-Droid 可以在非常老的 Android 系统上运行。以下是可以在特定版本 Android 系统上运行的最新版 F-Droid 的下载链接："
+msgstr "F-Droid 存储库通常会在很长一段时间内保持对旧 F-Droid 版本的支持。这意味着旧 F-Droid 版本将继续工作数年。这使 F-Droid 可以在非常旧的 Android 系统上运行。以下是可以在特定版本 Android 系统上运行的最新版 F-Droid 的下载链接："
 
 #. type: Bullet: '* '
 #: _docs/Running_on_old_Android_versions.md
@@ -10911,7 +10911,7 @@ msgstr "Android 6.0 (API 23) 及以上: [F-Droid（最新稳定版）]({{ site.f
 #. type: Plain text
 #: _docs/Running_on_old_Android_versions.md
 msgid "First issue older Android versions encounter will be certificate related, please read and follow the steps to [install the Let’s Encrypt ISRG Root X1 certificate](https://www.stoutner.com/lets-encrypt-isrg-root-x1-and-privacy-browser/) before proceeding. Android 6 and 7 are also affected, while the latest in-client mirroring system will alleviate this and cycle through mirrors until it finds one that is still compatible, users are encouraged to add the certificate anyway as this helps other apps too."
-msgstr "较老的 Android 版本遇到的第一个问题会和证书相关，请阅读并遵照步骤 [安装 Let’s Encrypt ISRG Root X1 证书](https://www.stoutner.com/lets-encrypt-isrg-root-x1-and-privacy-browser/)，然后再继续。Android 6 和 7 同样受影响，虽然最新的客户端内镜像系统会环节这个问题并在找到依旧兼容的镜像源之前不断循环查找，我们仍鼓励用户添加证书，因为这样做也可以帮助其他应用。"
+msgstr "较旧的 Android 版本遇到的第一个问题会和证书相关，请阅读并遵照步骤 [安装 Let’s Encrypt ISRG Root X1 证书](https://www.stoutner.com/lets-encrypt-isrg-root-x1-and-privacy-browser/)，然后再继续。Android 6 和 7 同样受影响，虽然最新的客户端内镜像系统会缓解这个问题，不断查找直到找到依旧兼容的镜像源，我们仍鼓励用户添加证书，因为这样做也可以帮助其他应用。"
 
 #. type: Bullet: '* '
 #: _docs/Running_on_old_Android_versions.md
