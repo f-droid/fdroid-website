@@ -41,7 +41,7 @@ started monitoring [certificates of our domain
 names](https://monitor.f-droid.org/services/tls-certs) in [certificate
 transparency logs](https://wikipedia.org/wiki/Certificate_Transparency). This
 will hopefully help us detect if someone tries to issue a malicious certificate
-in our name. These measures should significantly, raise the bar for man-in-the-middle
+in our name. These measures should significantly raise the bar for man-in-the-middle
 attacks on our transport encryption.
 
 Over the years, we have received many requests to enable
