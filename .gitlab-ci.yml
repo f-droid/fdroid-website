@@ -1,6 +1,6 @@
 ---
 
-image: debian:bookworm
+image: docker.io/debian:bookworm-slim
 
 stages:
   - deploy
@@ -30,8 +30,9 @@ variables:
   echo 'Acquire::https::Verify-Peer "false";' > /etc/apt/apt.conf.d/99nocacertificates
   apt-get update
   apt-get install ca-certificates
-  rm /etc/apt/apt.conf.d/99nocacertificates
+  rm -v /etc/apt/apt.conf.d/99nocacertificates
   apt-get dist-upgrade
+  set +x
 
 
 # Common steps required for each type of "Build" (f-droid.org, GitLab Pages, feature branches)
@@ -61,9 +62,10 @@ variables:
     ruby-rspec \
     ruby-zip \
     unzip
-  rm -f Gemfile.lock
+  rm -vf Gemfile.lock
   bundle install --local --verbose
   ./tools/i18n.sh
+  set +x
 
 
 # This is a manual task for building in preparation to deploy to
@@ -73,13 +75,14 @@ variables:
 #
 #  gitlab-runner exec docker f-droid.org --pre-build-script ./prepare-for-deploy.py \
 #    --docker-volumes "/root/deploy-whitelist-keyring.gpg:/root/.gnupg/pubring.gpg:ro" \
-#    --docker-volumes `pwd`/_site:/builds/output
+#    --docker-volumes $(pwd)/_site:/builds/output
 #
 # And when it is finished, you should have a directory in _site/build/
 # which includes the entire static site ready to be deployed to
 # https://f-droid.org.
 f-droid.org:
   stage: production
+  image: docker.io/debian:bookworm
   only:
     - tags@fdroid/fdroidserver
     - master@fdroid/fdroidserver
@@ -101,6 +104,7 @@ f-droid.org:
 
 pages:
   stage: deploy
+  image: docker.io/debian:bookworm
   except:
     - triggers
   artifacts:
@@ -111,7 +115,6 @@ pages:
   script:
     - (find _*/ -type f | grep -Ev '\.(html|json|md|rb|scss|xml|yaml)$')
          && (echo "ERROR The above files have a bad or missing file extension"; exit 1)
-
     - *apt-template
     - apt-get install curl python3-colorama python3-yaml
     - ./tools/trigger-spellcheckbot
@@ -134,24 +137,23 @@ pages:
         _config.yml
     - echo "Jekyll config used for CI:" && cat _config.yml
     - jekyll build -d public --trace --future
-    - cp robots.txt.noindex public/robots.txt
+    - cp -v robots.txt.noindex public/robots.txt
     - ./tools/prepare-multi-lang.sh public --no-type-maps
-    - mkdir linkchecker/
-    - ln -s ../public linkchecker/$CI_PROJECT_NAME
+    - mkdir -v linkchecker/
+    - ln -sv ../public linkchecker/$CI_PROJECT_NAME
     - ruby -run -e httpd linkchecker/ -p 4000 > /dev/null 2>&1 &
     - linkchecker http://localhost:4000/$CI_PROJECT_NAME --config=.linkcheckerrc
 
 
 # check rsync mirrors still available
 rsync mirrors:
-  image: debian:bookworm-slim
   stage: deploy
   only:
     - master@fdroid/fdroidserver
   script:
-    - apt-get update
-    - apt-get -qy install rsync
-    - for f in `sed 's,[^:]*:,,' _data/rsync_mirrors.yaml`; do
+    - *apt-template
+    - apt-get install rsync
+    - for f in $(sed 's,[^:]*:,,' _data/rsync_mirrors.yaml); do
           echo '==============================================================';
           echo "$f";
           rsync --list-only ${f}::fdroid \
@@ -162,7 +164,6 @@ rsync mirrors:
 # Merge conflicts with Weblate are a big pain, so check they won't happen.
 weblate merge conflict:
   stage: deploy
-  image: debian:bookworm-slim
   rules:
     - if: $CI_PIPELINE_SOURCE != "trigger"
       changes:
@@ -173,9 +174,8 @@ weblate merge conflict:
         - _data/tutorials.json
         - po/
   script:
-    - apt-get update
-    - apt-get -qy upgrade
-    - apt-get -qy install --no-install-recommends ca-certificates git
+    - *apt-template
+    - apt-get install ca-certificates git
     - git config user.name "$CI_PIPELINE_ID/$CI_JOB_ID"
     - git config user.email $CI_PROJECT_PATH@f-droid.org
     - git fetch https://hosted.weblate.org/git/f-droid/website/
@@ -192,7 +192,6 @@ weblate merge conflict:
 
 
 spellcheckbot:
-  image: debian:bookworm
   stage: deploy
   allow_failure: true
   only:
@@ -203,10 +202,10 @@ spellcheckbot:
     - test -n ${FROM_CI_PROJECT_URL}
     - test -n ${FROM_CI_COMMIT_SHA}
     - git fetch ${FROM_CI_PROJECT_URL} ${FROM_CI_COMMIT_SHA}
-    - for f in `git diff --name-only --diff-filter=d HEAD...${FROM_CI_COMMIT_SHA}`; do
-          export CHANGED="$CHANGED `echo $f | grep '\.md$' || true`";
+    - for f in $(git diff --name-only --diff-filter=d HEAD...${FROM_CI_COMMIT_SHA}); do
+          export CHANGED="$CHANGED $(echo $f | grep '\.md$' || true)";
       done
-    - if [ -z "`echo $CHANGED | sed 's,\s*,,g'`" ]; then
+    - if [ -z "$(echo $CHANGED | sed 's,\s*,,g')" ]; then
           echo "No markdown files changed";
           exit 0;
       else
@@ -219,7 +218,6 @@ spellcheckbot:
     - jq --raw-output 'keys[]' _data/android_permissions.json >> .spelling
     # version strings
     - grep --no-filename -rEo 'v[0-9]+(:?\.[0-9]+)+' _* | sort -u >> .spelling
-
     - npm i markdown-spellcheck -g
     - (mdspell --report --en-gb --ignore-numbers --ignore-acronyms $CHANGED > output.txt 2>&1)
         || ./tools/spellcheckbot.py
@@ -239,11 +237,11 @@ check_fdroid_apk_bot:
   only:
     - schedules
     - master@fdroid/fdroidserver
-  image: alpine:3.16
+  image: docker.io/alpine:3.16
   variables:
     apk: F-Droid.apk
     asc: F-Droid.apk.asc
-    curl: "curl --user-agent F-Droid --retry 99"
+    curl: "curl --fail --user-agent F-Droid --retry 99"
     fingerprint: 37D2C98789D8311948394E3E41E7044E1DBA2E89
     pip: pip3 --timeout 100 --retries 10
   artifacts:
@@ -292,17 +290,16 @@ shellcheck:
 # basic checks for dev setup
 Vagrantfile:
   stage: deploy
-  image: debian:bookworm-slim
   rules:
     - if: $CI_PIPELINE_SOURCE != "trigger"
       changes:
         - .gitlab-ci.yml
         - Vagrantfile
   script:
-    - apt-get update
-    - apt-get -qy install --no-install-recommends kmod procps ruby vagrant vagrant-libvirt
+    - *apt-template
+    - apt-get install kmod procps ruby vagrant vagrant-libvirt
     - export EXITVALUE=0
-    - function set_error() { export EXITVALUE=1; printf "\x1b[31mERROR `history|tail -2|head -1|cut -b 6-500`\x1b[0m\n"; }
+    - function set_error() { export EXITVALUE=1; printf "\x1b[31mERROR $(history|tail -2|head -1|cut -b 6-500)\x1b[0m\n"; }
     - ruby -c Vagrantfile || set_error
     - vagrant validate || set_error;
     - exit $EXITVALUE
@@ -310,7 +307,6 @@ Vagrantfile:
 
 YAML Front Matter:
   stage: deploy
-  image: debian:bookworm-slim
   rules:
     - if: $CI_PIPELINE_SOURCE != "trigger"
       changes:
@@ -319,9 +315,8 @@ YAML Front Matter:
         - _pages/*.md
         - _posts/*.md
   script:
-    - apt-get update
-    - apt-get -qy install --no-install-recommends python3-yaml yamllint
-
+    - *apt-template
+    - apt-get install python3-yaml yamllint
     - EXITVALUE=0
     - for f in _docs/*.md _pages/*.md _posts/*.md; do
           echo $f;
@@ -333,7 +328,6 @@ YAML Front Matter:
 
 
 yamllint:
-  image: debian:bookworm-slim
   stage: deploy
   rules:
     - if: $CI_PIPELINE_SOURCE != "trigger"

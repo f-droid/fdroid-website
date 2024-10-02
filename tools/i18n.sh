@@ -1,15 +1,16 @@
 #!/bin/bash
 
 set -e
+set -x
 
 if ! which po4a; then
-    echo "ERROR: Missing po4a (apt-get install po4a)"
+    echo "ERROR: Missing po4a (apt-get install po4a)" 1>&2
     exit 1
 fi
 
 version=$(po4a --version | sed -En 's,po4a version ([0-9][0-9.]+[0-9]).*,\1,p')
 if ruby -e "exit(Gem::Version.new('$version') < Gem::Version.new('0.58'))"; then
-    echo "ERROR: po4a v0.58 or higher required (try from backports)"
+    echo "ERROR: po4a v0.58 or higher required (try from backports)" 1>&2
     exit 1
 fi
 
@@ -42,7 +43,7 @@ EOF
         # for now, new TWIF posts are not translated
         [[ $f == _posts/202*twif*.md ]] && continue
         [[ $f == _posts/202*this-week-in-*.md ]] && continue
-	echo "[type: markdown] $f \$lang:$section/\$lang/$(basename $f)" >> $po4a_conf
+        echo "[type: markdown] $f \$lang:$section/\$lang/$(basename $f)" >> $po4a_conf
     done
     po4a --verbose $po4a_conf &
     eval pid${section}=$!
