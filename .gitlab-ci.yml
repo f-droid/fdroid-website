@@ -270,6 +270,24 @@ check_fdroid_apk_bot:
           ./tools/run-check-fdroid-apk-bot.py;
       )
 
+# There is a specific syntax in the filename of posts that specifies
+# both the publication date and the blog post title.
+Jekyll Post filename:
+  stage: deploy
+  rules:
+    - if: $CI_PIPELINE_SOURCE != "trigger"
+      changes:
+        - .gitlab-ci.yml
+        - _posts/*.*
+  script:
+    - export EXITVALUE=0
+    - for f in _posts/*.*; do
+          echo "$f" | grep -E '20[0-9][0-9]-[0-9][0-9]-[0-9][0-9]-\S+\.(md|html)' > /dev/null
+            || { echo "ERROR bad filename $f"; export EXITVALUE=1; }
+      done
+    - test $EXITVALUE -eq 0 || echo "See https://jekyllrb.com/docs/posts/"
+    - exit $EXITVALUE
+
 
 # TODO make other shell scripts pass shellcheck
 shellcheck:
