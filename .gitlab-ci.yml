@@ -83,10 +83,9 @@ variables:
 f-droid.org:
   stage: production
   image: docker.io/debian:bookworm
-  only:
-    - tags@fdroid/fdroidserver
-    - master@fdroid/fdroidserver
-  when: manual
+  rules:
+    - when: manual
+      if: $CI_PROJECT_PATH == "fdroid/fdroidserver"
   script:
     - '[ ! -d /builds/output ] && echo "ERROR: /builds/output is not mounted inside docker!" && exit 1'
     - *apt-template
@@ -105,8 +104,8 @@ f-droid.org:
 pages:
   stage: deploy
   image: docker.io/debian:bookworm
-  except:
-    - triggers
+  rules:
+    - if: $CI_PIPELINE_SOURCE != "trigger"
   artifacts:
     paths:
       - public
@@ -148,8 +147,8 @@ pages:
 # check rsync mirrors still available
 rsync mirrors:
   stage: deploy
-  only:
-    - master@fdroid/fdroidserver
+  rules:
+    - if: $CI_COMMIT_REF_NAME == "master" && $CI_PROJECT_PATH == "fdroid/fdroidserver"
   script:
     - *apt-template
     - apt-get install rsync
@@ -194,8 +193,8 @@ weblate merge conflict:
 spellcheckbot:
   stage: deploy
   allow_failure: true
-  only:
-    - triggers
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "trigger"
   script:
     - *apt-template
     - apt-get install git
@@ -234,9 +233,9 @@ spellcheckbot:
 
 check_fdroid_apk_bot:
   stage: deploy
-  only:
-    - schedules
-    - master@fdroid/fdroidserver
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "schedule"
+    - if: $CI_COMMIT_REF_NAME == "master" && $CI_PROJECT_PATH == "fdroid/fdroidserver"
   image: docker.io/alpine:3.16
   variables:
     apk: F-Droid.apk
