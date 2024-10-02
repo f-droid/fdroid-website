@@ -82,6 +82,7 @@ variables:
 # https://f-droid.org.
 f-droid.org:
   stage: production
+  image: docker.io/debian:bookworm
   only:
     - tags@fdroid/fdroidserver
     - master@fdroid/fdroidserver
@@ -103,6 +104,7 @@ f-droid.org:
 
 pages:
   stage: deploy
+  image: docker.io/debian:bookworm
   except:
     - triggers
   artifacts:
@@ -137,7 +139,7 @@ pages:
     - jekyll build -d public --trace --future
     - cp -v robots.txt.noindex public/robots.txt
     - ./tools/prepare-multi-lang.sh public --no-type-maps
-    - mkdir -pv linkchecker/
+    - mkdir -v linkchecker/
     - ln -sv ../public linkchecker/$CI_PROJECT_NAME
     - ruby -run -e httpd linkchecker/ -p 4000 > /dev/null 2>&1 &
     - linkchecker http://localhost:4000/$CI_PROJECT_NAME --config=.linkcheckerrc
@@ -235,7 +237,7 @@ check_fdroid_apk_bot:
   only:
     - schedules
     - master@fdroid/fdroidserver
-  image: alpine:3.16
+  image: docker.io/alpine:3.16
   variables:
     apk: F-Droid.apk
     asc: F-Droid.apk.asc
