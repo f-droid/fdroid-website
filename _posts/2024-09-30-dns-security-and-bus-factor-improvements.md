@@ -27,7 +27,7 @@ helps improve our "[bus factor](https://en.wikipedia.org/wiki/Bus_factor)",
 which means we are less dependent on a single person to keep the project running
 smoothly.
 
-We've used this opporunity to roll out additional DNS secuity measures. Since
+We've used this opporunity to roll out additional DNS security measures. Since
 the [jabber.ru incident](https://www.devever.net/~hl/xmpp-incident) happened,
 it seems to us that both migrating to more trustworthy hosting providers and
 increasing DNS security is more important than ever.
