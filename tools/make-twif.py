@@ -17,8 +17,7 @@ CACHE = Path.cwd() / "twif_cache"
 
 
 def dict_diff(source, target):
-    """
-    This is the function used to show diffs in index v2
+    """This is the function used to show diffs in index v2
     it can be found at https://gitlab.com/fdroid/fdroidserver/-/blob/master/fdroidserver/index.py#L477
     """
     if not isinstance(target, dict) or not isinstance(source, dict):
@@ -36,9 +35,7 @@ def dict_diff(source, target):
 
 
 class App:
-    """
-    Class to represent App/packagename body
-    """
+    """Class to represent App/packagename body"""
 
     def __init__(self, package_name, current_index, past_index):
         self.package_name = package_name
@@ -76,16 +73,19 @@ class App:
             .get(package_name, {})
             .get("metadata", {})
             .get("summary", {})
-            .get("en-US", "")
+        ) or (
+            past_index["packages"]
+            .get(package_name, {})
+            .get("metadata", {})
+            .get("summary", {})
         )
-        if not summary:
-            summary = (
-                past_index["packages"]
-                .get(package_name, {})
-                .get("metadata", {})
-                .get("summary", {})
-                .get("en-US", "")
-            )
+        en_summary = summary.get("en-US", "")
+        if not en_summary:
+            for locale in summary:
+                if locale.startswith("en"):
+                    en_summary = summary.get(locale)
+                    break
+        summary = en_summary.replace("\n", " ")
         return summary
 
     def _get_current_checksum(self, current_index, package_name):
@@ -194,7 +194,7 @@ def generate_diffs_of_new_and_previous_indexes(old_index, new_index):
 
 
 def print_out_frontmatter():
-    """prints out YAML Frontmatter"""
+    """Prints out YAML Frontmatter"""
     print(
         textwrap.dedent("""\
         ---
@@ -207,7 +207,7 @@ def print_out_frontmatter():
 
 
 def print_out_date_time_info_about_twif():
-    """prints out info on when TWIF was generated"""
+    """Prints out info on when TWIF was generated"""
     todays_date = date.today()
     day_and_date = todays_date.strftime("%A, %d %b %Y")
     week_number = todays_date.isocalendar().week
@@ -228,7 +228,7 @@ def print_fdroid_core_news_section():
 
 
 def print_community_news_section():
-    """prints out community news section"""
+    """Prints out community news section"""
     print("#### Community News")
     sample_username = "An Entity"
     sample_link = "https://not.a.real.link.example.com/fake"
@@ -238,8 +238,7 @@ def print_community_news_section():
 
 
 def print_blog_prefix():
-    """
-    prints the starting of the blog
+    """Prints the starting of the blog
     Namely:
      - the frontmatter
      - the date and time of twif
@@ -253,9 +252,7 @@ def print_blog_prefix():
 
 
 def print_blog_suffix():
-    """
-    prints footer of the blog post
-    """
+    """Prints footer of the blog post"""
     print(
         textwrap.dedent("""\
         Thank you for reading this week's TWIF 🙂
@@ -270,7 +267,7 @@ def print_blog_suffix():
 
 
 def display_output(diff_tuple):
-    """displays current output to file"""
+    """Displays current output to file"""
     added_apps = diff_tuple[0]
     removed_apps = diff_tuple[1]
     downgraded_apps = diff_tuple[2]
