@@ -3,12 +3,13 @@
 # This file is distributed under the same license as the PACKAGE package.
 # Hans-Christoph Steiner <hans@guardianproject.info>, 2024.
 # pitroig <ona@riseup.net>, 2024.
+# Dan <trikaphundo@users.noreply.hosted.weblate.org>, 2024.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2024-04-11 15:00+0200\n"
-"PO-Revision-Date: 2024-10-06 04:16+0000\n"
-"Last-Translator: pitroig <ona@riseup.net>\n"
+"PO-Revision-Date: 2024-10-06 19:06+0000\n"
+"Last-Translator: Dan <trikaphundo@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Catalan <https://hosted.weblate.org/projects/f-droid/website-pages/ca/>\n"
 "Language: ca\n"
 "MIME-Version: 1.0\n"
@@ -177,19 +178,19 @@ msgstr "L'F-Droid és un projecte [voluntari]({{ \"/contribute/\" | prepend: sit
 #: _pages/about.md
 #, markdown-text
 msgid "F-Droid respects your privacy. We don’t track you, or your device. We don’t track what you install. You don’t need an account to use the client, and it sends no additional identifying data when communicating with our web servers, other than its version number. We don’t even allow you to install other applications from the repository that track you, unless you first enable ‘Tracking’ in the `AntiFeatures` section of preferences. Any personal data you decide to give us (e.g. your email address when registering for an account to post on the forum) goes no further than us, and will not be used for anything other than allowing you to maintain your account."
-msgstr ""
+msgstr "F-Droid respecta la vostra privacitat. No us rastregem a vosaltres, el vostre dispositiu ni tampoc el que hi instal·leu. No cal cap compte per a utilitzar l'aplicació client i, a banda del número de la versió, no s'envia cap informació d'identificació al nostres servidors web quan es comunica amb ells. Ni tan sols permetem que instal·leu altres aplicacions del dipòsit que us rastregin, llevat que activeu l'opció «Seguiment» a la secció `Característiques no adients` de les Preferències. Qualssevol dades personals que decidiu donar-nos (p. ex. un correu electrònic per a obrir un compte al fòrum) no les comuniquem a tercers i s'utilitzen única i exclusivament per a mantenir el vostre compte."
 
 #. type: Title ###
 #: _pages/about.md
 #, markdown-text, no-wrap
 msgid "Contributors"
-msgstr ""
+msgstr "Contribuïdors"
 
 #. type: Plain text
 #: _pages/about.md
 #, markdown-text
 msgid "The F-Droid project was founded in 2010 by Ciaran Gultnieks, and is brought to you by at least the following people:"
-msgstr ""
+msgstr "El projecte F-Droid el fundà l'any 2010 en Ciaran Gultnieks i el podeu fer servir gràcies a, com a mínim, les següents persones:"
 
 #. type: Plain text
 #: _pages/about.md
@@ -225,34 +226,63 @@ msgid ""
 "{%- endfor -%}\n"
 "</ul>\n"
 msgstr ""
+"<ul>\n"
+"{%- for contributor in site.data.contributors -%}\n"
+"<li>\n"
+"{%- if contributor.gitlab -%}\n"
+"<a href=\"https://gitlab.com/{{ contributor.gitlab }}\" target=\"_blank\">\n"
+"{%- elsif contributor.weblate -%}\n"
+"<a href=\"https://hosted.weblate.org/user/{{ contributor.weblate }}\" target=\"_blank\">\n"
+"{%- endif -%}\n"
+"{%- if contributor.Arab and site.data.scripts[site.active_lang] == \"Arab\" -%}\n"
+"{{ contributor.Arab }}\n"
+"{%- elsif contributor.Cyrl and site.data.scripts[site.active_lang] == \"Cyrl\" -%}\n"
+"{{ contributor.Cyrl }}\n"
+"{%- elsif contributor.Jpan and site.data.scripts[site.active_lang] == \"Jpan\" -%}\n"
+"{{ contributor.Jpan }}\n"
+"{%- elsif contributor.Kore and site.data.scripts[site.active_lang] == \"Kore\" -%}\n"
+"{{ contributor.Kore }}\n"
+"{%- elsif contributor.Hans and site.data.scripts[site.active_lang] == \"Hans\" -%}\n"
+"{{ contributor.Hans }}\n"
+"{%- elsif contributor.Hant and site.data.scripts[site.active_lang] == \"Hant\" -%}\n"
+"{{ contributor.Hant }}\n"
+"{%- else -%}\n"
+"{{ contributor.name }}\n"
+"{%- endif -%}\n"
+"{%- if contributor.gitlab or contributor.weblate -%}\n"
+"</a>\n"
+"{%- endif -%}\n"
+"</li>\n"
+"{%- endfor -%}\n"
+"</ul>\n"
 
 #. type: Plain text
 #: _pages/about.md
 #, markdown-text
 msgid "If you have contributed to F-Droid and your name is missing, it’s a mistake and you should [add yourself to the list](https://gitlab.com/fdroid/fdroid-website/blob/master/_data/contributors.yaml)! Please include your Weblate username if you are a translator.  Keep it sorted by first name, please."
-msgstr ""
+msgstr "Si heu contribuit a l'F-Droid i no apareix el vostre nom a la llista, és un error: hauríeu d'[afegir-vos a la llista](https://gitlab.com/fdroid/fdroid-website/blob/master/_data/contributors.yaml). Si sou traductor, incloeu-hi el vostre compte del Weblate. Si us plau, mantingueu la llista ordenada per nom."
 
 #. type: Plain text
 #: _pages/about.md
 #, markdown-text
 msgid "The original F-Droid client app was based on the Aptoide app developed by Roberto Jacinto."
-msgstr ""
+msgstr "El client original d'F-Droid estava basat en Aptoide, una aplicació desenvolupada per Roberto Jacinto."
 
 #. type: Yaml Front Matter Hash Value: title
 #: _pages/consulting.md
 #, no-wrap
 msgid "Consulting"
-msgstr ""
+msgstr "Consultoria"
 
 #. type: Plain text
 #: _pages/consulting.md
 #, markdown-text
 msgid "If you're running an organisation that uses F-Droid or would like to use F-Droid, you will sometimes want to have an expert. This page is a list of companies and developers who contributed to F-Droid in one way or another and are available for consulting. By contracting one of these companies or developers, your organisation can also (indirectly) support the development of F-Droid."
-msgstr ""
+msgstr "Si dirigiu una organització que fa servir F-Droid o està interessada a fer-lo servir, eventualment podeu necessitar algú expert. Aquesta pàgina és una llista d'empreses i desenvolupadors que han contribuït a l'F-Droid d'alguna manera i estan disponibles per a serveis de consultoria. Contractant aquestes empreses o desenvolupadors, la vostra organització ajuda, indirectament, al desenvolupament d'F-Droid."
 
 #. type: Plain text
 #: _pages/consulting.md
-#, markdown-text, no-wrap
+#, fuzzy, markdown-text, no-wrap
 msgid ""
 "Keep in mind that the F-Droid ecosystem consists of several components. Thus, consulting services may offer a lot of different services, such as\n"
 "  * Deployment of F-Droid within an organisation\n"
@@ -262,192 +292,199 @@ msgid ""
 "  * Bug fixes or feature additions to the F-Droid client and server components\n"
 "  * Whitelabel solutions\n"
 msgstr ""
+"Tingueu present que l'ecosistema F-Droid esta compost de múltiples components. Per tant, els serveis de consultoria poden ser molt diferents, com ara\n"
+"  * Desplegament d'F-Droid a l'organització.\n"
+"  * Configuració i manteniment de dipòsits d'F-Droid.\n"
+"  * Tallers per a usuaris i administradors.\n"
+"  * Assessorament perquè una aplicació compleixi els requisits d'inclusió en el dipòsit principal d'F-Droid.\n"
+"  * Correcció d'errors o addició de funcionalitats als components client i servidor de l'F-Droid.\n"
+"  * Whitelabel solutions\n"
 
 #. type: Plain text
 #: _pages/consulting.md
 #, markdown-text
 msgid "Check out the descriptions to find an appropriate consultant for your needs."
-msgstr ""
+msgstr "Llegiu les descripcions per a trobar un consultor adient per a les vostres necessitats."
 
 #. type: Title ###
 #: _pages/consulting.md
-#, markdown-text, no-wrap
+#, fuzzy, markdown-text, no-wrap
 msgid "COTECH - Confidential Technologies GmbH"
-msgstr ""
+msgstr "COTECH - Confidential Technologies GmbH"
 
 #. type: Bullet: '* '
 #: _pages/consulting.md
 #, markdown-text
 msgid "__Website:__ [https://www.cotech.de/f-droid](https://www.cotech.de/f-droid)"
-msgstr ""
+msgstr "__Lloc web:__ [https://www.cotech.de/f-droid](https://www.cotech.de/f-droid)"
 
 #. type: Bullet: '* '
 #: _pages/consulting.md
 #, markdown-text
 msgid "__Email:__ [contact@cotech.de](mailto:contact@cotech.de)"
-msgstr ""
+msgstr "__Correu electrònic:__ [contact@cotech.de](mailto:contact@cotech.de)"
 
 #. type: Bullet: '* '
 #: _pages/consulting.md
 #, markdown-text
 msgid "__Phone:__ +49 531 22435119"
-msgstr ""
+msgstr "__Telèfon:__ +49 531 22435119"
 
 #. type: Bullet: '* '
 #: _pages/consulting.md
 #, markdown-text
 msgid "__Address:__ Confidential Technologies GmbH, Wilhelmsgarten 3, 38100 Braunschweig"
-msgstr ""
+msgstr "__Adreça:__ Confidential Technologies GmbH, Wilhelmsgarten 3, 38100 Braunschweig"
 
 #. type: Bullet: '* '
 #: _pages/consulting.md
 #, markdown-text
 msgid "__Languages:__ English, German"
-msgstr ""
+msgstr "__Llengües:__ anglès, alemany"
 
 #. type: Bullet: '* '
 #: _pages/consulting.md
-#, markdown-text
+#, fuzzy, markdown-text
 msgid "__Specializations:__ Custom F-Droid deployments, feature extensions, whitelabel solutions"
-msgstr ""
+msgstr "__Especialitats:__ Desplegaments a mida d'F-Droid, extensió de funcionalitats i solucions «whitelabel»"
 
 #. type: Title ###
 #: _pages/consulting.md
 #, markdown-text, no-wrap
 msgid "Hans-Christoph Steiner"
-msgstr ""
+msgstr "Hans-Christoph Steiner"
 
 #. type: Bullet: '* '
 #: _pages/consulting.md
 #, markdown-text
 msgid "__Website:__ [at.or.at](https://at.or.at)"
-msgstr ""
+msgstr "__Lloc web:__ [at.or.at](https://at.or.at)"
 
 #. type: Bullet: '* '
 #: _pages/consulting.md
 #, markdown-text
 msgid "__Email:__ [hans@eds.org](mailto:hans@eds.org)"
-msgstr ""
+msgstr "__Correu electrònic:__ [hans@eds.org](mailto:hans@eds.org)"
 
 #. type: Bullet: '* '
 #: _pages/consulting.md
 #, markdown-text
 msgid "__Address:__ Vienna, Austria"
-msgstr ""
+msgstr "__Adreça:__ Vienna, Austria"
 
 #. type: Bullet: '* '
 #: _pages/consulting.md
-#, markdown-text
+#, fuzzy, markdown-text
 msgid "__Specialization:__ Custom F-Droid deployments, reproducible builds, new features, whitelabel app stores, getting things merged."
-msgstr ""
+msgstr "__Especialitats:__ desplegaments a mida d'F-Droid, construccions reproduïbles, noves característiques, centres d'aplicacions «whitelabel», adequació als requisits de publicació en dipòsits."
 
 #. type: Title ###
 #: _pages/consulting.md
 #, markdown-text, no-wrap
 msgid "Hellebaard"
-msgstr ""
+msgstr "Hellebaard"
 
 #. type: Bullet: '* '
 #: _pages/consulting.md
 #, markdown-text
 msgid "__Website:__ [hellebaard.nl](http://hellebaard.nl)"
-msgstr ""
+msgstr "__Lloc web:__ [hellebaard.nl](http://hellebaard.nl)"
 
 #. type: Bullet: '* '
 #: _pages/consulting.md
 #, markdown-text
 msgid "__Email:__ [contact@hellebaard.nl](mailto:contact@hellebaard.nl)"
-msgstr ""
+msgstr "__Correu electrònic:__ [contact@hellebaard.nl](mailto:contact@hellebaard.nl)"
 
 #. type: Bullet: '* '
 #: _pages/consulting.md
 #, markdown-text
 msgid "__Address:__ Utrecht, the Netherlands"
-msgstr ""
+msgstr "__Adreça:__ Utrecht, the Netherlands"
 
 #. type: Bullet: '* '
 #: _pages/consulting.md
 #, markdown-text
 msgid "__Languages:__ English, Dutch"
-msgstr ""
+msgstr "__Llengües:__ anglès, neerlandès"
 
 #. type: Bullet: '* '
 #: _pages/consulting.md
 #, markdown-text
 msgid "__Specialization:__ Translations English ⟷ Dutch, descriptions, metadata, graphics and screenshots."
-msgstr ""
+msgstr "__Especialitats:__ Traduccions anglès⟷neerlandès, descripcions, metadades, gràfics i captures de pantalla."
 
 #. type: Title ###
 #: _pages/consulting.md
 #, markdown-text, no-wrap
 msgid "IzzySoft"
-msgstr ""
+msgstr "IzzySoft"
 
 #. type: Bullet: '* '
 #: _pages/consulting.md
 #, markdown-text
 msgid "__Website:__ [android.izzysoft.de](https://android.izzysoft.de/), [www.izzysoft.de](https://www.izzysoft.de/)"
-msgstr ""
+msgstr "__Lloc web:__ [android.izzysoft.de](https://android.izzysoft.de/), [www.izzysoft.de](https://www.izzysoft.de/)"
 
 #. type: Bullet: '* '
 #: _pages/consulting.md
 #, markdown-text
 msgid "__Email:__ [info@izzysoft.de](mailto:info@izzysoft.de)"
-msgstr ""
+msgstr "__Correu electrònic:__ [info@izzysoft.de](mailto:info@izzysoft.de)"
 
 #. type: Bullet: '* '
 #: _pages/consulting.md
 #, markdown-text
 msgid "__Phone:__ +49 89 27373746"
-msgstr ""
+msgstr "__Telèfon:__ +49 89 27373746"
 
 #. type: Bullet: '* '
 #: _pages/consulting.md
 #, markdown-text
 msgid "__Address:__ IzzySoft, 80796 München, Germany"
-msgstr ""
+msgstr "__Adreça:__ IzzySoft, 80796 München, Germany"
 
 #. type: Bullet: '* '
 #: _pages/consulting.md
 #, markdown-text
 msgid "__Specialization:__ [Binary Repositories](https://f-droid.org/docs/Setup_an_F-Droid_App_Repo/) & Metadata (creator & operator of the [IzzyOnDroid Repo](https://apt.izzysoft.de/fdroid/))"
-msgstr ""
+msgstr "__Especialitats:__ [Dipòsits binaris](https://f-droid.org/docs/Setup_an_F-Droid_App_Repo/) i Metadades (creador i operador del [dipòsit IzzyOnDroid](https://apt.izzysoft.de/fdroid/))"
 
 #. type: Plain text
 #: _pages/consulting.md
 #, markdown-text
 msgid "If you're missing, you can [add yourself to the list](https://gitlab.com/fdroid/fdroid-website/blob/master/_pages/consulting.md)! Keep it sorted alphabetically, please."
-msgstr ""
+msgstr "Si no consteu en aquesta pàgina i voleu ser-hi, podeu [afegir-vos-hi](https://gitlab.com/fdroid/fdroid-website/blob/master/_pages/consulting.md). Si us plau, mantingeu la llista ordenada alfabèticament."
 
 #. type: Yaml Front Matter Hash Value: title
 #: _pages/contribute.md
-#, no-wrap
+#, fuzzy, no-wrap
 msgid "Contribute"
-msgstr ""
+msgstr "Contribuir"
 
 #. type: Plain text
 #: _pages/contribute.md
-#, markdown-text
+#, fuzzy, markdown-text
 msgid "The project is developed and maintained by community contributors. Volunteers form a core part of F-Droid.  You can help too:"
-msgstr ""
+msgstr "El projecte el desenvolupa i manté una comunitat de contribuïdors. Els voluntaris son la part central d'F-Droid. Vosaltres també podeu ajudar:"
 
 #. type: Title ###
 #: _pages/contribute.md
 #, markdown-text, no-wrap
 msgid "Help Others"
-msgstr ""
+msgstr "Ajuda a altres"
 
 #. type: Plain text
 #: _pages/contribute.md
 #, markdown-text
 msgid "If you already know something about F-Droid, then you can help others learn and get started.  Help answer questions that users and developers have about F-Droid! Please be considerate of our [code of conduct]({{ site.baseurl }}/docs/Code_of_Conduct).  We want to provide a positive and enjoyable environment for everybody."
-msgstr ""
+msgstr "Si ja teniu coneixements sobre l'F-Droid, podeu ajudar a altres a aprendre'n i donar els primers passos. Podeu ajudar responent preguntes que els usuaris i desenvolupadors tenen sobre l'F-Droid. Tingueu present el nostre [codi de conducta]({{ site.baseurl }}/docs/Code_of_Conduct). Volem mantenir un entorn positiu per a tothom."
 
 #. type: Title ###
 #: _pages/contribute.md
 #, markdown-text, no-wrap
 msgid "Report Problems"
-msgstr ""
+msgstr "Informeu de problemes"
 
 #. type: Plain text
 #: _pages/contribute.md
@@ -459,7 +496,7 @@ msgstr ""
 #: _pages/contribute.md
 #, markdown-text, no-wrap
 msgid "Submit Applications"
-msgstr ""
+msgstr "Envieu aplicacions"
 
 #. type: Plain text
 #: _pages/contribute.md
@@ -489,7 +526,7 @@ msgstr ""
 #: _pages/contribute.md
 #, markdown-text, no-wrap
 msgid "Translate"
-msgstr ""
+msgstr "Traduïu"
 
 #. type: Plain text
 #: _pages/contribute.md
@@ -507,7 +544,7 @@ msgstr ""
 #: _pages/contribute.md
 #, markdown-text, no-wrap
 msgid "Test"
-msgstr ""
+msgstr "Feu proves"
 
 #. type: Plain text
 #: _pages/contribute.md
@@ -519,7 +556,7 @@ msgstr ""
 #: _pages/contribute.md
 #, markdown-text, no-wrap
 msgid "Develop"
-msgstr ""
+msgstr "Desenvolupeu"
 
 #. type: Plain text
 #: _pages/contribute.md
@@ -567,7 +604,7 @@ msgstr ""
 #: _pages/contribute.md
 #, markdown-text, no-wrap
 msgid "Maintain Infrastructure"
-msgstr ""
+msgstr "Manteniu la infraestructura"
 
 #. type: Plain text
 #: _pages/contribute.md
@@ -579,7 +616,7 @@ msgstr ""
 #: _pages/contribute.md
 #, markdown-text, no-wrap
 msgid "Data Science"
-msgstr ""
+msgstr "Anàlisi de dades"
 
 #. type: Plain text
 #: _pages/contribute.md
