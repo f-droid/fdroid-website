@@ -24,7 +24,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
 "POT-Creation-Date: 2024-10-02 16:26+0200\n"
-"PO-Revision-Date: 2024-10-04 12:41+0000\n"
+"PO-Revision-Date: 2024-10-06 19:06+0000\n"
 "Last-Translator: gallegonovato <fran-carro@hotmail.es>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/f-droid/website-docs/es/>\n"
 "Language: es\n"
@@ -2086,7 +2086,7 @@ msgstr "[_Builds.build_ (Versión)](#build_build)"
 #. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
 msgid "[_Builds.buildjni_](#build_buildjni)"
-msgstr ""
+msgstr "[_Builds.buildjni_](#build_buildjni)"
 
 #. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
@@ -2131,17 +2131,17 @@ msgstr "[_Builds.postbuild_](#build_postbuild)"
 #. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
 msgid "[_Builds.novcheck_](#build_novcheck)"
-msgstr ""
+msgstr "[_Builds.novcheck_](#build_novcheck)"
 
 #. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
 msgid "[_Builds.antifeatures_](#build_antifeatures)"
-msgstr ""
+msgstr "[_Builds.antifeatures_ (Características indeseables)](#build_antifeatures)"
 
 #. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
 msgid "[_AllowedAPKSigningKeys_](#AllowedAPKSigningKeys)"
-msgstr ""
+msgstr "[_AllowedAPKSigningKeys_(Claves de firma APK permitidas)](#AllowedAPKSigningKeys)"
 
 #. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
@@ -2663,20 +2663,18 @@ msgstr "La ubicación del repositorio. Generalmente un git: o svn: URL, por ejem
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 msgid "The git-svn option connects to an SVN repository, and you specify the URL in exactly the same way, but git is used as a back-end. This is preferable for performance reasons, and also because a local copy of the entire history is available in case the upstream repository disappears.  (It happens!). In order to use Tags as _UpdateCheckMode_ for this VCS type, the URL must have the tags= special argument set. Likewise, if you intend to use the RepoManifest/branch scheme, you would want to specify branches= as well. Finally, trunk= can also be added. All these special arguments will be passed to \"git svn\" in order, and their values must be relative paths to the svn repo root dir. Here's an example of a complex git-svn _Repo_ URL: http://svn.code.sf.net/p/project/code/svn;trunk=trunk;tags=tags;branches=branches"
-msgstr ""
+msgstr "La opción git-svn se conecta a un repositorio SVN, y se especifica la URL exactamente de la misma manera, pero se usa git como back-end. Esto es preferible por razones de rendimiento, y también porque una copia local de todo el historial está disponible en caso de que el repositorio de origen desaparezca.  (¡Sucede!). Para usar etiquetas como _UpdateCheckMode_ para este tipo de VCS, la URL debe tener el argumento especial tags= establecido. De la misma manera, si se pretende utilizar el esquema RepoManifest/branch, también se debe especificar branches=. Finalmente, trunk= también puede ser añadido. Todos estos argumentos especiales se pasarán a \"git svn\" en orden, y sus valores deben ser rutas relativas a la carpeta raíz de svn repo. Aquí hay un ejemplo de un complejo git-svn _Repositorio_ URL: http://svn.code.sf.net/p/project/code/svn;trunk=trunk;tags=tags;branches;tags"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-#, fuzzy
-#| msgid "If the _RepoType_ is `srclib`, then you must specify the name of the according srclib .txt file. For example if `scrlibs/FooBar.txt` exist and you want to use this srclib, then you have to set _Repo_ to `FooBar`."
 msgid "If the _RepoType_ is `srclib`, then you must specify the name of the according srclib .yml file. For example if `srclibs/FooBar.yml` exist and you want to use this srclib, then you have to set _Repo_ to `FooBar`."
-msgstr "Si el _RetroType_ es `srclib`, entonces deberás de especificar el nombre del archivo .txt srclib correspondiente. Por ejemplo, si `scrlibs/FooBar.txt` existe y quieres utilizar este srclib, entonces tienes que especificar _Repo_ como `FooBar`."
+msgstr "Si el _RepoType_ es `srclib`, entonces debe especificar el nombre del archivo srclib . yml correspondiente. Por ejemplo, si existe srclibs/FooBar.yml y desea utilizar este srclib, entonces debe establecer _Repo_ en `FooBar`."
 
 #. type: Title ###
 #: _docs/Build_Metadata_Reference.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "_Binaries_<a name=\"Binaries\"></a>"
-msgstr "Binarios<a name=\"Binaries\"></a>"
+msgstr "_Binaries_ (Binarios)<a name=\"Binaries\"></a>"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -2695,9 +2693,9 @@ msgstr "F-Droid utilizará los binarios upstream si la verificación se produjo 
 
 #. type: Title ###
 #: _docs/Build_Metadata_Reference.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "_Builds_<a name=\"Builds\"></a>"
-msgstr "Binarios<a name=\"Binaries\"></a>"
+msgstr "Builds (_Compilaciones_)<a name=\"Builds\"></a>"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -2779,6 +2777,9 @@ msgid ""
 "    compatibility, this can also be achieved by starting the commit ID\n"
 "    with '!')\n"
 msgstr ""
+":   Desactiva esta compilación, indicando el motivo. (Por compatibilidad\n"
+"    compatibilidad, esto también se puede lograr iniciando el ID de confirmación\n"
+"    con '!')\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -2791,6 +2792,12 @@ msgid ""
 "    disabling causes it to be deleted once `fdroid update` is run; this\n"
 "    is the procedure if ever a version has to be replaced.\n"
 msgstr ""
+"    El objetivo de esta función es permitir que las versiones no compilables (por ejemplo \n"
+"    el código fuente no está publicado) para que los scripts no generen\n"
+"    mensajes repetidos sobre ellas. (Y también para registrar la\n"
+"    información para revisarla más tarde). Si un APK ya ha sido construido,\n"
+"    deshabilitarlo hace que se elimine una vez que se ejecuta `fdroid update`; este\n"
+"    es el procedimiento si alguna vez una versión tiene que ser reemplazado.\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -3534,6 +3541,8 @@ msgid ""
 ":   List of Anti-Features for this specific build. They are described\n"
 "    in [_AntiFeatures_](#AntiFeatures).\n"
 msgstr ""
+":   Lista de Caracteristicas indeseables para esta compilación específica. Se describen\n"
+"    en [_Caracteristicas indeseables_](#AntiFeatures).\n"
 
 #. type: Title ###
 #: _docs/Build_Metadata_Reference.md
@@ -3554,9 +3563,9 @@ msgstr ""
 
 #. type: Title ###
 #: _docs/Build_Metadata_Reference.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "_AntiFeatures_<a name=\"AntiFeatures\"></a>"
-msgstr "Binarios<a name=\"Binaries\"></a>"
+msgstr "_Caracteristicas indeseables_<a name=\"AntiFeatures\"></a>"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -3636,7 +3645,7 @@ msgstr "Esto no significa que la aplicación incluya software propietario. Más 
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid "This is converted to (`<antifeatures>`) in the XML file (_index.xml_).\n"
-msgstr ""
+msgstr "Esto se convierte en (`<antifeatures>`) en el archivo XML (_index.xml_).\n"
 
 #. type: Title ###
 #: _docs/Build_Metadata_Reference.md
@@ -7042,7 +7051,7 @@ msgstr "Echarán un vistazo al código fuente para ver si su aplicación utiliza
 #. type: Bullet: '-   '
 #: _docs/Inclusion_How-To.md
 msgid "They will list a summary of any [_AntiFeatures_](https://monitor.f-droid.org/anti-features) in your application."
-msgstr ""
+msgstr "Enumerarán un resumen de cualquier [_Caracteristicas indeseables_](https://monitor.f-droid.org/anti-features) en su solicitud."
 
 #. type: Bullet: '-   '
 #: _docs/Inclusion_How-To.md
@@ -9071,12 +9080,12 @@ msgstr ""
 #: _docs/Repository_Style_Guide.md
 #, no-wrap
 msgid "AntiFeatures"
-msgstr "características indeseadas"
+msgstr "Características indeseadas"
 
 #. type: Plain text
 #: _docs/Repository_Style_Guide.md
 msgid "In addition some software, even being Free and Open Source software, may do practices which can be considered undesirable and that we consider [_AntiFeatures_](https://monitor.f-droid.org/anti-features)\". Where possible the F-Droid community still include these applications in the repository but flagging and cataloging these antifeatures in order to warn users (on the F-Droid client and on the web repository browser) by any antifeatures present on the app. Even though software can be included in the F-Droid even with antifeatures, it is frequently the case that software with these antifeatures is actually not entirely FOSS (for example advertising and tracking user activity is often enabled via Non-Free binary libraries) compromising in this way the inclusion of the app in the F-Droid repository."
-msgstr ""
+msgstr "Además algunos programas, aún siendo software Libre y de Código Abierto, pueden realizar prácticas que pueden ser consideradas indeseables y que consideramos [_Caracteristicas indeseables_](https://monitor.f-droid.org/anti-features)\". En la medida de lo posible, la comunidad F-Droid sigue incluyendo estas aplicaciones en el repositorio, pero marcando y catalogando estas Caracteristicas indeseables con el fin de advertir a los usuarios (en el cliente F-Droid y en el navegador web del repositorio) de cualquier Caracteristicas indeseables presente en la aplicación. A pesar de que el software puede ser incluido en el F-Droid incluso con Caracteristicas indeseables, es frecuente el caso de que el software con estas Caracteristicas indeseables en realidad no es totalmente FOSS (por ejemplo, la publicidad y el seguimiento de la actividad del usuario a menudo se habilita a través de bibliotecas binarias no libres) comprometiendo de esta manera la inclusión de la aplicación en el repositorio F-Droid."
 
 #. type: Title ###
 #: _docs/Repository_Style_Guide.md
