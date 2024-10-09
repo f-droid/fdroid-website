@@ -24,7 +24,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
 "POT-Creation-Date: 2024-10-02 16:26+0200\n"
-"PO-Revision-Date: 2024-10-06 19:06+0000\n"
+"PO-Revision-Date: 2024-10-09 17:33+0000\n"
 "Last-Translator: gallegonovato <fran-carro@hotmail.es>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/f-droid/website-docs/es/>\n"
 "Language: es\n"
@@ -2862,6 +2862,9 @@ msgid ""
 "    buildserver VM is forcefully terminated.  The default is 7200\n"
 "    (2 hours); 0 means no limit.\n"
 msgstr ""
+":   Límite de tiempo para esta compilación (en segundos).  Una vez transcurrido el tiempo,\n"
+"    buildserver VM es forzosamente terminado.  El valor predeterminado es 7200\n"
+"    (2 horas); 0 significa sin límite.\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -2870,12 +2873,14 @@ msgid ""
 "    Limitation is applied only in server mode, i.e. when `fdroid build`\n"
 "    is invoked with the `--server` option.\n"
 msgstr ""
+"    La limitación se aplica solo en modo servidor, es decir, cuando `fdroid build`\n"
+"    se invoca con la opción `--server`.\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid "`init: xxxx`<a name=\"build_init\"></a>\n"
-msgstr ""
+msgstr "`init: xxxx`<a name=\"build_init\"></a>\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -2884,6 +2889,8 @@ msgid ""
 ":   Like 'prebuild', but runs on the source code BEFORE any other\n"
 "    processing takes place.\n"
 msgstr ""
+":   Como 'precompilación', pero aplicado al código fuente ANTES de cualquier otro\n"
+"    tiene lugar el procesamiento.\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -2894,12 +2901,16 @@ msgid ""
 "    per-build variables are available likewise: \\$\\$VERSION\\$\\$,\n"
 "    \\$\\$VERCODE\\$\\$ and \\$\\$COMMIT\\$\\$.\n"
 msgstr ""
+"    Se puede utilizar \\$\\$SDK\\$\\$ y \\$\\$NDK\\$\\$ para reemplazar las rutas de acceso\n"
+"    a los directorios de Android SDK y NDK en consecuencia.\n"
+"    También están disponibles las siguientes variables por compilación: \\$\\$VERSION\\$\\$,\n"
+"    \\$\\$VERCODE$\\$ y \\$\\$COMMIT$\\$.\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid "    This runs in [`subdir:`](#build_subdir) if set.\n"
-msgstr ""
+msgstr "    Se ejecuta en [`subdir:`](#build_subdir) si está configurado.\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -2917,12 +2928,17 @@ msgid ""
 "    lines of: \"com.android.ant.SetupTask cannot be found\" when trying to\n"
 "    build, then try enabling this option.\n"
 msgstr ""
+":   La ubicación del sdk en el repositorio está en un formato antiguo, o el build.xml\n"
+"    lo espera. El 'nuevo' formato es sdk.dir mientras que el formato MUY VIEJO\n"
+"    es sdk-location. Por lo general, si usted recibe un mensaje a lo largo de las\n"
+"    líneas de: \"com.android.ant.SetupTask no se puede encontrar\" al intentar\n"
+"    construir, a continuación, intente habilitar esta opción.\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid "`target: <target>`<a name=\"build_target\"></a>\n"
-msgstr ""
+msgstr "`target: <destino>`<a name=\"build_target\"></a>\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -2935,6 +2951,12 @@ msgid ""
 "    the target SDK in the AndroidManifest.xml, which determines the\n"
 "    level of features that can be included in the build.\n"
 msgstr ""
+":   Especifica un objetivo SDK particular para la compilación, anulando el valor\n"
+"    definido en el código por upstream. Esto tiene diferentes efectos\n"
+"    dependiendo del sistema de compilación utilizado - esta bandera actualmente afecta a\n"
+"    Ant, Maven y Gradle. Tenga en cuenta que esto no cambia\n"
+"    el SDK de destino en el AndroidManifest.xml, que determina el\n"
+"    nivel de características que se pueden incluir en la compilación.\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
