@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2024-10-02 16:26+0200\n"
-"PO-Revision-Date: 2024-10-09 14:50+0000\n"
+"PO-Revision-Date: 2024-10-10 06:21+0000\n"
 "Last-Translator: Fjuro <fjuro@alius.cz>\n"
 "Language-Team: Czech <https://hosted.weblate.org/projects/f-droid/website-docs/cs/>\n"
 "Language: cs\n"
@@ -540,25 +540,25 @@ msgstr "Aktivní balíčky"
 #: _docs/All_our_APIs.md
 #, markdown-text
 msgid "There is a per-app API accessible via `https://f-droid.org/api/v1/packages`, which can be used to query information about the applications in the main repository. The JSON API currently lists the published and suggested versions. Archived applications and packages are not available in this API."
-msgstr ""
+msgstr "Máme k dispozici je rozhraní API pro jednotlivé aplikace, které je přístupné prostřednictvím `https://f-droid.org/api/v1/packages` a které lze použít k dotazování na informace o aplikacích v hlavním repozitáři. Rozhraní JSON API v současné době obsahuje seznam zveřejněných a navrhovaných verzí. Archivované aplikace a balíčky nejsou v tomto rozhraní API dostupné."
 
 #. type: Plain text
 #: _docs/All_our_APIs.md
 #, markdown-text
 msgid "Example request:"
-msgstr ""
+msgstr "Příklad žádosti:"
 
 #. type: Fenced code block
 #: _docs/All_our_APIs.md
 #, no-wrap
 msgid "GET https://f-droid.org/api/v1/packages/org.fdroid.fdroid HTTP/1.1\n"
-msgstr ""
+msgstr "GET https://f-droid.org/api/v1/packages/org.fdroid.fdroid HTTP/1.1\n"
 
 #. type: Plain text
 #: _docs/All_our_APIs.md
 #, markdown-text
 msgid "Example response:"
-msgstr ""
+msgstr "Příklad odpovědi:"
 
 #. type: Fenced code block
 #: _docs/All_our_APIs.md
@@ -589,24 +589,38 @@ msgid ""
 "  ]\n"
 "}\n"
 msgstr ""
+"{\n"
+"  \"packageName\": \"org.fdroid.fdroid\",\n"
+"  \"suggestedVersionCode\": 1009000,\n"
+"  \"packages\": [\n"
+"    {\n"
+"      \"versionName\": \"1.10-alpha0\",\n"
+"      \"versionCode\": 1010000\n"
+"    },\n"
+"    {\n"
+"      \"versionName\": \"1.9\",\n"
+"      \"versionCode\": 1009000\n"
+"    }\n"
+"  ]\n"
+"}\n"
 
 #. type: Plain text
 #: _docs/All_our_APIs.md
 #, markdown-text
 msgid "This API is already used by shields.io project to provide F-Droid badges, [like this](https://img.shields.io/f-droid/v/org.fdroid.fdroid)."
-msgstr ""
+msgstr "Toto rozhraní API již používá projekt shields.io pro poskytování odznaků F-Droid, [jako tento](https://img.shields.io/f-droid/v/org.fdroid.fdroid)."
 
 #. type: Title ###
 #: _docs/All_our_APIs.md
 #, markdown-text, no-wrap
 msgid "The repo index"
-msgstr ""
+msgstr "Index repozitáře"
 
 #. type: Plain text
 #: _docs/All_our_APIs.md
 #, markdown-text
 msgid "F-Droid is built around a signed index of all the apps and packages that are available.  This is a JSON file, though more of an index than an API since all the information is distributed via a single file."
-msgstr ""
+msgstr "F-Droid je postaven na podepsaném indexu všech dostupných aplikací a balíčků.  Jedná se o soubor JSON, i když spíše o index než o API, protože všechny informace jsou distribuovány prostřednictvím jediného souboru."
 
 #. type: Bullet: '* '
 #: _docs/All_our_APIs.md
@@ -6051,43 +6065,43 @@ msgstr "Navíc na technické úrovni tyto informace ani nesledujeme. Back-end se
 #: _docs/FAQ_-_Client.md
 #, markdown-text
 msgid "Finally, even assuming any of this information were available, what does it actually mean? Are you going to use an app just because lots of others do, or ignore it because few others have discovered it yet? Is this a sensible way to decide whether something is useful to you or not? Perhaps you should just try it."
-msgstr ""
+msgstr "Navíc, i kdybychom měli k dispozici všechny tyto informace, co vlastně znamenají? Budete aplikaci používat jen proto, že ji používá spousta jiných, nebo ji budete ignorovat, protože ji zatím objevilo jen málo jiných? Je to rozumný způsob, jak se rozhodnout, zda je pro vás něco užitečné, nebo ne? Možná byste aplikaci měli prostě vyzkoušet."
 
 #. type: Title ###
 #: _docs/FAQ_-_Client.md
 #, markdown-text, no-wrap
 msgid "How can I send or setup the F-Droid app using NFC or Android Beam?"
-msgstr ""
+msgstr "Jak mohu posílat nebo nastavit aplikaci F-Droid pomocí NFC nebo Android Beam?"
 
 #. type: Plain text
 #: _docs/FAQ_-_Client.md
 #, markdown-text
 msgid "Starting with v1.20, the F-Droid client does not support these features anymore as the underlying code has been removed from the Android 14 SDK after being deprecated since Android 10. More info [here](https://www.xda-developers.com/android-beam-permanent-removal-android-14/)."
-msgstr ""
+msgstr "Počínaje verzí 1.20 již klient F-Droid tyto funkce nepodporuje, protože základní kód byl z Androidu 14 SDK odstraněn poté, co byl od systému Android 10 zastaralý. Více informací [zde](https://www.xda-developers.com/android-beam-permanent-removal-android-14/)."
 
 #. type: Title ###
 #: _docs/FAQ_-_Client.md
 #, markdown-text, no-wrap
 msgid "How can I send apps via Bluetooth or WiFi?"
-msgstr ""
+msgstr "Jak mohu posílat aplikace přes Bluetooth nebo Wi-Fi?"
 
 #. type: Plain text
 #: _docs/FAQ_-_Client.md
 #, markdown-text
 msgid "This is done using the 'Nearby' Tab in F-Droid (previously called 'Swap').  See [here](../../tutorials/swap) for a walkthrough."
-msgstr ""
+msgstr "Aplikace můžete posílat pomocí karty „Nablízku“ v aplikaci F-Droid.  [Zde](../../tutorials/swap) najdete návod."
 
 #. type: Title ###
 #: _docs/FAQ_-_Client.md
 #, markdown-text, no-wrap
 msgid "What is the security model that F-Droid uses?"
-msgstr ""
+msgstr "Jaký bezpečnostní model F-Droid používá?"
 
 #. type: Plain text
 #: _docs/FAQ_-_Client.md
 #, markdown-text
 msgid "The F-Droid security model started out with HTTPS connections and signed metadata. It has been evolving, inspired by [Debian](https://wiki.debian.org/SecureApt), [The Update Framework](https://github.com/theupdateframework/tuf/blob/develop/docs/tuf-spec.txt), and other things. You can read about details here: [Security Model](../Security_Model)."
-msgstr ""
+msgstr "Bezpečnostní model systému F-Droid začal s připojeními HTTPS a podepsanými metadaty. Vyvíjel se, inspirován [Debianem](https://wiki.debian.org/SecureApt), [The Update Framework](https://github.com/theupdateframework/tuf/blob/develop/docs/tuf-spec.txt) a dalšími. Podrobnosti si můžete přečíst zde: [Bezpečnostní model](../Security_Model)."
 
 #. type: Yaml Front Matter Hash Value: title
 #: _docs/FAQ_-_General.md
