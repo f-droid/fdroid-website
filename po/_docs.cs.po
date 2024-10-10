@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2024-10-02 16:26+0200\n"
-"PO-Revision-Date: 2024-10-10 06:21+0000\n"
+"PO-Revision-Date: 2024-10-10 08:15+0000\n"
 "Last-Translator: Fjuro <fjuro@alius.cz>\n"
 "Language-Team: Czech <https://hosted.weblate.org/projects/f-droid/website-docs/cs/>\n"
 "Language: cs\n"
@@ -650,7 +650,7 @@ msgstr "<https://f-droid.org/archive/index-v1.json>"
 #: _docs/All_our_APIs.md
 #, markdown-text
 msgid "As of index-v2, there is support for files that only contain the changes, known as \"diff\" files.  There is also a separate entry point, which is signed by a JAR and a GPG signature and lists the available index and diff files."
-msgstr ""
+msgstr "Od index-v2 jsou podporovány soubory, které obsahují pouze změny, tzv. rozdílové („diff“) soubory.  K dispozici je také samostatný vstupní bod, který je podepsán souborem JAR a podpisem GPG a obsahuje seznam dostupných indexových a rozdílových souborů."
 
 #. type: Bullet: '* '
 #: _docs/All_our_APIs.md
@@ -674,7 +674,7 @@ msgstr "<https://f-droid.org/repo/entry.json.asc>"
 #: _docs/All_our_APIs.md
 #, markdown-text
 msgid "The v1 repo index formats come in the form of a signed JAR file that contains _index-v1.json_.  The best method is to verify the JAR signature, then extract _index-v1.json_ if it validates. The _fdroidserver_ Python library provides `fdroidserver.download_repo_index()` to make this easy to do."
-msgstr ""
+msgstr "Formáty v1 indexu repozitáře mají podobu podepsaného souboru JAR, který obsahuje soubor _index-v1.json_.  Nejlepší metodou je ověřit podpis souboru JAR a poté extrahovat soubor _index-v1.json_, pokud se potvrdí. Knihovna _fdroidserver_ v jazyce Python poskytuje funkci `fdroidserver.download_repo_index()`, která tento postup usnadňuje."
 
 #. type: Bullet: '* '
 #: _docs/All_our_APIs.md
@@ -692,7 +692,7 @@ msgstr "<https://f-droid.org/archive/index-v1.jar>"
 #: _docs/All_our_APIs.md
 #, markdown-text
 msgid "There are also GPG signatures for verifying the JSON files:"
-msgstr ""
+msgstr "K dispozici jsou také podpisy GPG pro ověření souborů JSON:"
 
 #. type: Bullet: '* '
 #: _docs/All_our_APIs.md
@@ -722,13 +722,13 @@ msgstr "<https://f-droid.org/archive/index-v1.json.asc>"
 #: _docs/All_our_APIs.md
 #, markdown-text, no-wrap
 msgid "App Search API"
-msgstr ""
+msgstr "API pro hledání aplikací"
 
 #. type: Plain text
 #: _docs/All_our_APIs.md
 #, markdown-text
 msgid "We've got a basic web-api for performing a full-text searches on the _f-droid.org_ repository."
-msgstr ""
+msgstr "Máme základní webové rozhraní pro fulltextové vyhledávání v repozitáři _f-droid.org_."
 
 #. type: Bullet: '* '
 #: _docs/All_our_APIs.md
@@ -740,7 +740,7 @@ msgstr "<https://search.f-droid.org/api/search_apps?q=f-droid>"
 #: _docs/All_our_APIs.md
 #, markdown-text, no-wrap
 msgid "App build metadata"
-msgstr ""
+msgstr "Metadata sestavení aplikace"
 
 #. type: Plain text
 #: _docs/All_our_APIs.md
@@ -761,18 +761,32 @@ msgid ""
 "mirror on GitHub,\n"
 "e.g. <https://raw.githubusercontent.com/f-droid/fdroiddata/master/metadata/org.fdroid.fdroid.yml>\n"
 msgstr ""
+"Každá aplikace v repozitáři _f-droid.org_ má odpovídající\n"
+"[soubor s metadaty sestavení]({{ site.baseurl }}/docs/Build_Metadata_Reference) v repozitáři\n"
+"[_fdroiddata_](https://gitlab.com/fdroid/fdroiddata).  S cílem podpořit\n"
+"kreativnější opětovné použití uchováváme naše data ve standardních formátech ve snadno nalezitelných\n"
+"místech.  Celá kolekce aplikací je ve formátu [YAML]({%\n"
+"post_url 2019-09-11-yaml-metadata %}).  K souboru lze přistupovat přímo\n"
+"podle ID aplikace pomocí GitLab Raw URL.\n"
+"`https://gitlab.com/fdroid/fdroiddata/-/raw/master/metadata/<ApplicationID>.yml`\n"
+"(např. <https://gitlab.com/fdroid/fdroiddata/-/raw/master/metadata/org.fdroid.fdroid.yml>).\n"
+"Index repozitáře a [API souborů repozitáře\n"
+"GitLab](https://docs.gitlab.com/ee/api/repository_files.html) lze použít k dotazování na to,\n"
+"která ID aplikací jsou k dispozici.  Tyto soubory jsou k dispozici také prostřednictvím\n"
+"zrcadla na GitHubu,\n"
+"např. <https://raw.githubusercontent.com/f-droid/fdroiddata/master/metadata/org.fdroid.fdroid.yml>\n"
 
 #. type: Title ###
 #: _docs/All_our_APIs.md
 #, markdown-text, no-wrap
 msgid "f-droid.org build server status"
-msgstr ""
+msgstr "Stav sestavovacího serveru f-droid.org"
 
 #. type: Plain text
 #: _docs/All_our_APIs.md
 #, markdown-text
 msgid "The four main steps of the build cycle are: _checkupdates_, _build_, _update_, and _deploy_.  There is a JSON file for each one of those with status information.  It is posted once that step completes running.  The step that is currently running is posted to _running_."
-msgstr ""
+msgstr "Čtyři hlavní kroky cyklu sestavení jsou: _checkupdates_, _build_, _update_ a _deploy_.  Pro každý z nich existuje soubor JSON s informacemi o stavu.  Ten je odeslán, jakmile daný krok dokončí svůj běh.  Krok, který právě běží, je odeslán do _running_."
 
 #. type: Bullet: '* '
 #: _docs/All_our_APIs.md
@@ -802,31 +816,31 @@ msgstr "<https://f-droid.org/repo/status/deploy.json>"
 #: _docs/All_our_APIs.md
 #, markdown-text
 msgid "Two examples of how these JSON APIs can be used are the [F-Droid Monitor](https://monitor.f-droid.org/) website and the [F-Droid Build Status]({{ site.baseurl }}/packages/de.storchp.fdroidbuildstatus/) app."
-msgstr ""
+msgstr "Dva příklady použití těchto rozhraní JSON API jsou webové stránky [F-Droid Monitor](https://monitor.f-droid.org/) a aplikace [F-Droid Build Status]({{ site.baseurl }}/packages/de.storchp.fdroidbuildstatus/)."
 
 #. type: Title ###
 #: _docs/All_our_APIs.md
 #, markdown-text, no-wrap
 msgid "Mirror and repo monitoring"
-msgstr ""
+msgstr "Monitorování zrcadel a repozitářů"
 
 #. type: Plain text
 #: _docs/All_our_APIs.md
 #, markdown-text
 msgid "[_mirror-monitor_](https://gitlab.com/fdroid/mirror-monitor) and [_repo-monitor_](https://gitlab.com/fdroid/repo-monitor) are automated jobs that check various stats about _f-droid.org_ mirrors and third party repos respectively.  They each provide a single, large JSON log of all the times the checks where run:"
-msgstr ""
+msgstr "[_mirror-monitor_](https://gitlab.com/fdroid/mirror-monitor) a [_repo-monitor_](https://gitlab.com/fdroid/repo-monitor) jsou automatické úlohy, které kontrolují různé statistiky o zrcadlech _f-droid.org_ a repozitářích třetích stran.  Každá z nich poskytuje jeden velký protokol JSON všech kontrol, které byly provedeny:"
 
 #. type: Bullet: '* '
 #: _docs/All_our_APIs.md
 #, markdown-text
 msgid "_f-droid.org_ mirror status: <https://fdroid.gitlab.io/mirror-monitor/report.json>"
-msgstr ""
+msgstr "stav zrcadel _f-droid.org_: <https://fdroid.gitlab.io/mirror-monitor/report.json>"
 
 #. type: Bullet: '* '
 #: _docs/All_our_APIs.md
 #, markdown-text
 msgid "third-party repo status: <https://fdroid.gitlab.io/repo-monitor/report.json>"
-msgstr ""
+msgstr "stav repozitářů třetích stran: <https://fdroid.gitlab.io/repo-monitor/report.json>"
 
 #. type: Title ###
 #: _docs/All_our_APIs.md
@@ -838,7 +852,7 @@ msgstr "Reprodukovatelná sestavení"
 #: _docs/All_our_APIs.md
 #, markdown-text
 msgid "_verification.f-droid.org_ is a rebuilder that rebuilds the official releases from _f-droid.org_, then checks to see if they were [reproducibly built](https://reproducible-builds.org/). There is an entry point for each package based on the package name: <https://verification.f-droid.org/org.fdroid.fdroid.json>"
-msgstr ""
+msgstr "_verification.f-droid.org_ je rebuilder, který znovu sestaví oficiální vydání z _f-droid.org_ a poté zkontroluje, zda byla [reprodukovatelně sestavena](https://reproducible-builds.org/). Pro každý balíček existuje vstupní bod založený na názvu balíčku: <https://verification.f-droid.org/org.fdroid.fdroid.json>"
 
 #. type: Plain text
 #: _docs/All_our_APIs.md
@@ -848,30 +862,33 @@ msgid ""
 "follows the pattern `<ApplicationId>_<VersionCode>.apk.json`, for example:\n"
 "<https://verification.f-droid.org/org.fdroid.fdroid_1010050.apk.json>\n"
 msgstr ""
+"Pro každý zkontrolovaný soubor APK je pak k dispozici soubor JSON, jehož název\n"
+"odpovídá vzoru `<ApplicationId>_<VersionCode>.apk.json`, například:\n"
+"<https://verification.f-droid.org/org.fdroid.fdroid_1010050.apk.json>\n"
 
 #. type: Plain text
 #: _docs/All_our_APIs.md
 #, markdown-text
 msgid "There is also a listing of all the successfully verified APKs: <https://verification.f-droid.org/verified.json>"
-msgstr ""
+msgstr "Také je k dispozici seznam úspěšně sestavených souborů APK: <https://verification.f-droid.org/verified.json>"
 
 #. type: Title ###
 #: _docs/All_our_APIs.md
 #, markdown-text, no-wrap
 msgid "Binary transparency logs"
-msgstr ""
+msgstr "Protokoly binární transparentnosti"
 
 #. type: Plain text
 #: _docs/All_our_APIs.md
 #, markdown-text
 msgid "[Binary transparency](https://wiki.mozilla.org/Security/Binary_Transparency) is the idea that all released packages should be logged as they are published.  This provides a way to check if a given binary was produced by the publisher, or came from somewhere else, e.g. as an exploit.  _fdroidserver_ has built in tools for managing a binary transparency log of the index files as part of the release process. This has been enabled on _f-droid.org_: <https://gitlab.com/fdroid/f-droid.org-transparency-log>"
-msgstr ""
+msgstr "[Binární transparentnost](https://wiki.mozilla.org/Security/Binary_Transparency) je myšlenka, že by všechny vydané balíčky měly být zaznamenány při jejich zveřejnění.  To poskytuje způsob, jak zkontrolovat, zda byl daný binární soubor vytvořen vydavatelem, nebo pochází odjinud, např. jako exploit.  _fdroidserver_ má zabudované nástroje pro správu protokolu o průhlednosti binárních indexových souborů v rámci procesu vydávání. To bylo povoleno na stránce _f-droid.org_: <https://gitlab.com/fdroid/f-droid.org-transparency-log>"
 
 #. type: Plain text
 #: _docs/All_our_APIs.md
 #, markdown-text
 msgid "Since Gradle and the Google Android Tools team does not publish one, F-Droid has done it.  The basic API is a JSON file with a listing of all URLs known to have be published.  Each URL then contains a list of SHA-256 checksums that the log process has seen.  There are also other files tracked, based on what the publisher provides."
-msgstr ""
+msgstr "Protože Gradle ani tým Google Android Tools žádný takový nástroj nevydává, udělal to F-Droid.  Základní API je soubor JSON se seznamem všech známých publikovaných adres URL.  Každá adresa URL pak obsahuje seznam kontrolních součtů SHA-256, které proces záznamu viděl.  Sledují se i další soubory podle toho, co vydavatel poskytne."
 
 #. type: Bullet: '* '
 #: _docs/All_our_APIs.md
@@ -895,7 +912,7 @@ msgstr "<tt>issuebot</tt>"
 #: _docs/All_our_APIs.md
 #, markdown-text
 msgid "[_issuebot_](https://gitlab.com/fdroid/issuebot#json-rest-api) runs on app merge requests and requests for packaging (RFP) to provide information to reviewers about the app.  Much of that information is also published in JSON format.  Each report is made of data from modules that run on a specific app.  There are two entry points:"
-msgstr ""
+msgstr "[_issuebot_](https://gitlab.com/fdroid/issuebot#json-rest-api) běží na žádostech o sloučení aplikací a žádostech o zabalení (RFP) a poskytuje kontrolorům informace o aplikaci.  Velká část těchto informací je také zveřejněna ve formátu JSON.  Každá zpráva se skládá z dat z modulů, které běží v konkrétní aplikaci.  Existují dva vstupní body:"
 
 #. type: Bullet: '* '
 #: _docs/All_our_APIs.md
@@ -913,13 +930,13 @@ msgstr "<https://fdroid.gitlab.io/rfp/issuebot/sourceUrls.json>"
 #: _docs/All_our_APIs.md
 #, markdown-text, no-wrap
 msgid "Metrics"
-msgstr ""
+msgstr "Metriky"
 
 #. type: Plain text
 #: _docs/All_our_APIs.md
 #, markdown-text
 msgid "[Usage data]({% post_url 2019-04-15-privacy-preserving-analytics %})  is gathered from [various F-Droid websites](https://fdroid.gitlab.io/metrics/)  and published with no personally identifiable information (PII).  It is published with one JSON file per-week, with a JSON index file per website.  For example, here is a week of search metrics: <https://fdroid.gitlab.io/metrics/search.f-droid.org/2021-01-18.json>"
-msgstr ""
+msgstr "[Údaje o používání]({% post_url 2019-04-15-privacy-preserving-analytics %}) jsou shromažďovány z [různých webových stránek F-Droid](https://fdroid.gitlab.io/metrics/) a zveřejňovány bez osobních údajů (PII).  Zveřejňuje se jeden soubor JSON týdně, přičemž na každou webovou stránku připadá jeden indexový soubor JSON.  Zde je například týdenní metrika vyhledávání: <https://fdroid.gitlab.io/metrics/search.f-droid.org/2024-09-23.json>"
 
 #. type: Plain text
 #: _docs/All_our_APIs.md
@@ -928,18 +945,20 @@ msgid ""
 "Though not really an API, the <ftp.fau.de> mirror does provide some metrics:\n"
 "https://ftp.fau.de/cgi-bin/show-ftp-stats.cgi\n"
 msgstr ""
+"Ačkoli se nejedná o API, zrcadlo <ftp.fau.de> poskytuje některé metriky:\n"
+"https://ftp.fau.de/cgi-bin/show-ftp-stats.cgi\n"
 
 #. type: Title ###
 #: _docs/All_our_APIs.md
 #, markdown-text, no-wrap
 msgid "Git stats"
-msgstr ""
+msgstr "Statistiky Gitu"
 
 #. type: Plain text
 #: _docs/All_our_APIs.md
 #, markdown-text
 msgid "Each _git_ repo has lots of interesting metadata.  The _GitStats_ project generates nice charts from that data.  This is not quite an API, but it is related since it is using public project data.  Pre-generated pages for each of the central git repos are visible here: <https://fdroid.gitlab.io/>."
-msgstr ""
+msgstr "Každý repozitář _git_ obsahuje spoustu zajímavých metadat.  Projekt _GitStats_ z těchto dat generuje pěkné grafy.  Není to tak docela API, ale souvisí to s ním, protože využívá veřejná data projektu.  Předem vygenerované stránky pro každé z centrálních repozitářů git jsou k vidění zde: <https://fdroid.gitlab.io/>."
 
 #. type: Yaml Front Matter Hash Value: title
 #: _docs/Anti-Features.md
