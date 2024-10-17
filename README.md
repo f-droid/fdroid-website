@@ -13,9 +13,8 @@ First, make sure [_buster-backports_ is enabled](https://backports.debian.org/In
 ```
 sudo apt-get install -t buster-backports \
   gettext linkchecker po4a python3 python3-babel rsync rubocop ruby-bundler \
-  ruby-git ruby-jekyll-include-cache ruby-jekyll-paginate-v2 \
-  ruby-jekyll-redirect-from ruby-json ruby-loofah ruby-rchardet ruby-rouge \
-  ruby-rspec ruby-zip unzip
+  ruby-git ruby-jekyll-include-cache ruby-jekyll-redirect-from ruby-json \
+  ruby-loofah ruby-rchardet ruby-rouge ruby-rspec ruby-zip unzip
 bundle install --local
 jekyll build
 ```
