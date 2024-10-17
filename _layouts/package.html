@@ -79,7 +79,12 @@ layout: default-package-sidebar
 		<li class="package-link">
 			{{ strings.license }}:
 			{% assign license = site.data.licenses.licenses[page.license] %}
-			<a href="{{ license.url }}">{{ license.name | default: page.license }}</a>
+			{% if page.license == "PublicDomain" %}
+				<a href="https://en.wikipedia.org/wiki/Public_domain">Public Domain</a>
+			{% else %}
+				<a href="https://spdx.org/licenses/{{ page.license }}.html">{{ license.name | default: page.license }}</a>
+			{% endif %}
+
 		</li>
 		{% if page.website != "" and page.website != nil %}
 		<li class="package-link">
