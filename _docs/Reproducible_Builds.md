@@ -556,8 +556,13 @@ android {
 
 ##### CMake
 
-For CMake versions since 3.13, `add_link_options(LINKER:<linker args>)`
-can be added to `CMakeLists.txt` globally. For CMake versions before 3.13,
+For CMake versions since 3.13, `add_link_options(LINKER:<linker args>)` can
+be added to `CMakeLists.txt` globally:
+```
+add_link_options("-Wl,--build-id=none")
+```
+
+For CMake versions before 3.13,
 `target_link_libraries(<target> LINKER:<linker args>)` can be used instead for
 every target. It can also be set in Gradle files:
 
