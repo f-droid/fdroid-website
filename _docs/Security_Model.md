@@ -92,6 +92,8 @@ to make it as hard as possible to exploit this vector.
   major browsers will only ever use HTTPS for all connections to
   _f-droid.org_
 * a [strong](https://observatory.mozilla.org/analyze/f-droid.org#third-party) TLS/HTTPS configuration
+* DNSSEC signatures on our [domain name](https://dnssec-analyzer.verisignlabs.com/f-droid.org) records
+* DNS Certification Authority Authorization (CAA) [policy](https://www.ssllabs.com/ssltest/analyze.html?d=f%2ddroid.org)
 * a [strong](https://observatory.mozilla.org/analyze/f-droid.org) HTTP Content Security Policy
 * [PGP-signature]({{ site.fdroid_apk_download_url }}.asc) on the initial
   install [download link]({{ site.fdroid_apk_download_url }})
