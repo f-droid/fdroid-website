@@ -15,9 +15,9 @@ out = {
     'releaseDate': data['releaseDate'],
 }
 for license in data['licenses']:
-    out['licenses'][license['licenseId']] = {
-        'name': license['name'],
-        'url': license['seeAlso'][0] if len(license.get('seeAlso', [])) > 0 else None
-    }
+    if (license.get('isOsiApproved') or license.get('isFsfLibre')) and not license.get('isDeprecatedLicenseId'):
+        out['licenses'][license['licenseId']] = {
+            'name': license['name'],
+        }
 with open('_data/licenses.json', 'w') as fp:
     json.dump(out, fp, indent=2, sort_keys=True)
