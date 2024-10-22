@@ -19,7 +19,7 @@ will be automatically included as long as they use the
 [supported layouts](../All_About_Descriptions_Graphics_and_Screenshots).
 If there are any issues with missing translations or broken localized
 formats, please
-[file an issue](https://gitlab.com/groups/fdroid/issues)
+[file an issue](https://gitlab.com/fdroid/fdroid-website/-/issues)
 so it can be fixed.
 
 
