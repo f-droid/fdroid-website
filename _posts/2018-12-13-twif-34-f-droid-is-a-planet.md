@@ -10,8 +10,8 @@ featured: '<em style="padding: 0.15em 0.5em 0.10em; margin-right: 0.1ex; border-
 major: '<em style="padding: 0.15em 0.5em 0.10em; margin-right: 0.1ex; border-style: solid; border-width: medium; border-radius: 1em; color: #8ab000; font-style: normal; font-weight: bold;">Major</em>'
 number_of_added_apps: 3
 number_of_updated_apps: 59
-mastodonAccount: "**[@fdroidorg@mastodon.technology](https://mastodon.technology/@fdroidorg)**"
-twifTag: "**[#TWIF](https://mastodon.technology/tags/twif)**"
+mastodonAccount: "**[@fdroidorg@floss.social](https://floss.social/@fdroidorg)**"
+twifTag: "**[#TWIF](https://floss.social/tags/twif)**"
 twifThread: "[TWIF submission thread](https://forum.f-droid.org/t/twif-submission-thread)"
 matrixRoom: "[#fdroid:f-droid.org](https://matrix.to/#/#fdroid:f-droid.org)"
 telegramRoom: "https://t.me/joinchat/AlRQekvjWDTuQrCgMYSNVA"

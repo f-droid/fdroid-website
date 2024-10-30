@@ -84,6 +84,6 @@ In total, **68** apps were updated this week. Here are the highlights:
 
 #### Tips and Feedback
 
-Do you have important app updates we should write about? Send in your tips via [Mastodon](https://joinmastodon.org)! Send them to **[@fdroidorg@mastodon.technology](https://mastodon.technology/@fdroidorg)** and remember to tag with **[#TWIF](https://mastodon.technology/tags/twif)**. Or use the [TWIF submission thread](https://forum.f-droid.org/t/twif-submission-thread) on the forum. The deadline to the next TWIF is **Thursday** 12:00 UTC.
+Do you have important app updates we should write about? Send in your tips via [Mastodon](https://joinmastodon.org)! Send them to **[@fdroidorg@floss.social](https://floss.social/@fdroidorg)** and remember to tag with **[#TWIF](https://floss.social/tags/twif)**. Or use the [TWIF submission thread](https://forum.f-droid.org/t/twif-submission-thread) on the forum. The deadline to the next TWIF is **Thursday** 12:00 UTC.
 
 General feedback can also be sent via Mastodon, or, if you'd like to have a live chat, you can find us in **#fdroid** on [Freenode](https://freenode.net), on Matrix via [#freenode_#fdroid:matrix.org](https://matrix.to/#/#freenode_#fdroid:matrix.org) or on [Telegram](https://t.me/joinchat/AlRQekvjWDTuQrCgMYSNVA). All of these spaces are bridged together, so the choice is yours. You can also join us on the **[forum](https://forum.f-droid.org/)**.

@@ -5,8 +5,8 @@ edition: 64
 author: "Hanna"
 authorWebsite: "https://tutanota.com/"
 date: 2019-07-11
-mastodonAccount: "**[@fdroidorg@mastodon.technology](https://mastodon.technology/@fdroidorg)**"
-twifTag: "**[#TWIF](https://mastodon.technology/tags/twif)**"
+mastodonAccount: "**[@fdroidorg@floss.social](https://floss.social/@fdroidorg)**"
+twifTag: "**[#TWIF](https://floss.social/tags/twif)**"
 twifThread: "[TWIF submission thread](https://forum.f-droid.org/t/twif-submission-thread)"
 matrixRoom: "[#fdroid:f-droid.org](https://matrix.to/#/#fdroid:f-droid.org)"
 telegramRoom: "https://t.me/joinchat/AlRQekvjWDTuQrCgMYSNVA"

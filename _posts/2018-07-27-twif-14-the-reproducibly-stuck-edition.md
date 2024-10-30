@@ -21,7 +21,7 @@ In this edition: Improved app descriptions in the repository, testers for beta 5
 
 #### Community News
 
-No news this week. Please send your tips tagged with [#TWIF](https://mastodon.technology/tags/twif) to [@fdroidorg@mastodon.technology](https://mastodon.technology/@fdroidorg).
+No news this week. Please send your tips tagged with [#TWIF](https://floss.social/tags/twif) to [@fdroidorg@floss.social](https://floss.social/@fdroidorg).
 
 #### New apps
 
@@ -57,10 +57,10 @@ In total, 40 apps were updated this week. Here are the highlights:
 
 There are way too many app updates to keep track of them all, so we need your help to highlight the important ones. And of course, if you're doing anything involving F-Droid in some way, we love to hear about it!
 
-Send tips to [@fdroidorg@mastodon.technology](https://mastodon.technology/@fdroidorg) and remember to tag with [#TWIF](https://mastodon.technology/tags/twif). Or use the [TWIF submission thread](https://forum.f-droid.org/t/twif-submission-thread) on the forum. The deadline to the next TWIF is Thursday 12:00 UTC.
+Send tips to [@fdroidorg@floss.social](https://floss.social/@fdroidorg) and remember to tag with [#TWIF](https://floss.social/tags/twif). Or use the [TWIF submission thread](https://forum.f-droid.org/t/twif-submission-thread) on the forum. The deadline to the next TWIF is Thursday 12:00 UTC.
 
 **Oh, and if you want to increase the chances that your app is featured in TWIF, you should [keep a changelog](https://keepachangelog.com)!**
 
 #### Feedback
 
-Got Feedback? We are very tootable at [@fdroidorg@mastodon.technology](https://mastodon.technology/@fdroidorg) on Mastodon. If you'd like to have a chat, you can find us in #fdroid on [Freenode](https://freenode.net/), on Matrix via [#freenode_#fdroid:matrix.org](https://matrix.to/#/#freenode_#fdroid:matrix.org) or on [Telegram](https://t.me/joinchat/AlRQekvjWDTuQrCgMYSNVA). All of these spaces are bridged together, so the choice is yours. You can also join us on the [forum](https://forum.f-droid.org/).
+Got Feedback? We are very tootable at [@fdroidorg@floss.social](https://floss.social/@fdroidorg) on Mastodon. If you'd like to have a chat, you can find us in #fdroid on [Freenode](https://freenode.net/), on Matrix via [#freenode_#fdroid:matrix.org](https://matrix.to/#/#freenode_#fdroid:matrix.org) or on [Telegram](https://t.me/joinchat/AlRQekvjWDTuQrCgMYSNVA). All of these spaces are bridged together, so the choice is yours. You can also join us on the [forum](https://forum.f-droid.org/).

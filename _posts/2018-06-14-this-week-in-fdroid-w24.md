@@ -9,7 +9,7 @@ authorWebsite: "https://forum.f-droid.org/u/coffee"
 
 #### F-Droid core
 
-* We broke 2500 followers on [Mastodon](https://mastodon.technology/@fdroidorg)!
+* We broke 2500 followers on [Mastodon](https://floss.social/@fdroidorg)!
 
 * [_hc](https://forum.f-droid.org/u/hans) is working full-time on the [whitelabel]({{ site.baseurl }}/docs/Whitelabel_Builds/) support this week, eliminating some technical debt in the process. This work is part of a paid contract.
 
@@ -52,6 +52,6 @@ The next TWIF will be an XL edition, covering the next two weeks. That's right, 
 
 As usual, please report interesting updates. There are way too many app updates to keep track of them all, so we need your help to highlight the most interesting changes. And of course, we love to hear about all things involving F-Droid in some way.
 
-Please tell us in the [TWIF submission thread](https://forum.f-droid.org/t/twif-submission-thread) on the forum, or tag your update [#fdroid](https://mastodon.technology/tags/fdroid) on Mastodon. (And cc [@fdroidorg@mastodon.technology](https://mastodon.technology/@fdroidorg) to make sure it reaches our instance.) The deadline to the next TWIF is Thursday 28 June 2018, 12:00 UTC.
+Please tell us in the [TWIF submission thread](https://forum.f-droid.org/t/twif-submission-thread) on the forum, or tag your update [#fdroid](https://floss.social/tags/fdroid) on Mastodon. (And cc [@fdroidorg@floss.social](https://floss.social/@fdroidorg) to make sure it reaches our instance.) The deadline to the next TWIF is Thursday 28 June 2018, 12:00 UTC.
 
-Feedback? Come talk to us in #fdroid on [Freenode](https://freenode.net/), on Matrix via [#freenode_#fdroid:matrix.org](https://matrix.to/#/#freenode_#fdroid:matrix.org) or on [Telegram](https://t.me/joinchat/AlRQekvjWDTuQrCgMYSNVA). All of these spaces are bridged together. You can also join us on the [forum](https://forum.f-droid.org/), toot at [@fdroidorg@mastodon.technology](https://mastodon.technology/@fdroidorg) on Mastodon, or, if you absolutely must, [tweet us](https://twitter.com/fdroidorg).
+Feedback? Come talk to us in #fdroid on [Freenode](https://freenode.net/), on Matrix via [#freenode_#fdroid:matrix.org](https://matrix.to/#/#freenode_#fdroid:matrix.org) or on [Telegram](https://t.me/joinchat/AlRQekvjWDTuQrCgMYSNVA). All of these spaces are bridged together. You can also join us on the [forum](https://forum.f-droid.org/), toot at [@fdroidorg@floss.social](https://floss.social/@fdroidorg) on Mastodon, or, if you absolutely must, [tweet us](https://twitter.com/fdroidorg).

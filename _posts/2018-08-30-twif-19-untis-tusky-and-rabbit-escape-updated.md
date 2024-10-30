@@ -81,7 +81,7 @@ Hey there, developers! Do you know what would be a good thing to do for your pro
 
 As great as changelogs are, don't forget to send in your tips! There are way too many app updates to keep track of them all, and we'd love your help in highlighting the important ones. And of course, if you're doing anything involving F-Droid in any way, tell us about it!
 
-Send tips to **[@fdroidorg@mastodon.technology](https://mastodon.technology/@fdroidorg)** and remember to tag with **[#TWIF](https://mastodon.technology/tags/twif)**. Or use the [TWIF submission thread](https://forum.f-droid.org/t/twif-submission-thread) on the forum. The deadline to the next TWIF is **Thursday** 12:00 UTC.
+Send tips to **[@fdroidorg@floss.social](https://floss.social/@fdroidorg)** and remember to tag with **[#TWIF](https://floss.social/tags/twif)**. Or use the [TWIF submission thread](https://forum.f-droid.org/t/twif-submission-thread) on the forum. The deadline to the next TWIF is **Thursday** 12:00 UTC.
 
 #### Dedication
 

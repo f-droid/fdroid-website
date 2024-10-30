@@ -5,7 +5,7 @@ author: "Coffee"
 authorWebsite: "https://forum.f-droid.org/u/coffee"
 ---
 
-Hi everyone! You have been telling us you liked the first [#twif](https://mastodon.technology/tags/twif), so have another! 
+Hi everyone! You have been telling us you liked the first [#twif](https://floss.social/tags/twif), so have another! 
 
 [F-Droid](https://f-droid.org/) is an installable [catalogue](https://f-droid.org/packages/) of [FOSS](https://en.wikipedia.org/wiki/Free_and_open-source_software) (Free and Open Source Software) applications for the Android platform. The [client](https://f-droid.org/packages/org.fdroid.fdroid/) makes it easy to browse, install, and keep track of updates on your device. This post lists notable things that happened in and around F-Droid this past week.
 
@@ -25,7 +25,7 @@ Hi everyone! You have been telling us you liked the first [#twif](https://mastod
 
   This was fixed last week for f-droid.org, but it affects all 3rd-party repositories as well. We'll try to get an fdroidserver bugfix release out soon, but meanwhile fdroidserver@master is fixed and will fix your repository index.
 
-* We're at almost 1900 followers on [Mastodon](https://mastodon.technology/@fdroidorg)!
+* We're at almost 1900 followers on [Mastodon](https://floss.social/@fdroidorg)!
 
 * Thanks to everyone who suggested apps to highlight. It's been very helpful! Unfortunately a few suggestions couldn't be processed because the apps in question weren't updated this week. Better luck next time!
 
@@ -87,7 +87,7 @@ No apps were moved to the archive this week.
 
 We'll obviously have more news from the F-Droid core team, but we also want to include news from the wider ecosystem, so if you are working on something F-Droid related, like to talk about your app that's getting updated or newly included in F-Droid, or have some news related to F-Droid, get in touch!
 
-Please post submissions to the [TWIF submission thread](https://forum.f-droid.org/t/twif-submission-thread) on the forum or mention [@fdroidorg@mastodon.technology](https://mastodon.technology/@fdroidorg) and tag [#fdroid](https://mastodon.technology/tags/fdroid) in your toot.
+Please post submissions to the [TWIF submission thread](https://forum.f-droid.org/t/twif-submission-thread) on the forum or mention [@fdroidorg@floss.social](https://floss.social/@fdroidorg) and tag [#fdroid](https://floss.social/tags/fdroid) in your toot.
 
-Feedback? Come talk to us in #fdroid on [Freenode](https://freenode.net/), on Matrix via [#freenode_#fdroid:matrix.org](https://matrix.to/#/#freenode_#fdroid:matrix.org) or on [Telegram](https://t.me/joinchat/AlRQekvjWDTuQrCgMYSNVA). All of these spaces are bridged together. You can also join us on the [forum](https://forum.f-droid.org/), [toot on Mastodon](https://mastodon.technology/@fdroidorg), or, if you absolutely must, [tweet us](https://twitter.com/fdroidorg).
+Feedback? Come talk to us in #fdroid on [Freenode](https://freenode.net/), on Matrix via [#freenode_#fdroid:matrix.org](https://matrix.to/#/#freenode_#fdroid:matrix.org) or on [Telegram](https://t.me/joinchat/AlRQekvjWDTuQrCgMYSNVA). All of these spaces are bridged together. You can also join us on the [forum](https://forum.f-droid.org/), [toot on Mastodon](https://floss.social/@fdroidorg), or, if you absolutely must, [tweet us](https://twitter.com/fdroidorg).
 

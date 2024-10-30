@@ -7,7 +7,7 @@ authorWebsite: "https://open.source.coffee"
 
 This Week In F-Droid 16, Week 32, 2018
 
-In this edition: Fixing nearby swap, download link broken and fixed again, a flaky build cycle, 3000 [Mastodon](https://mastodon.technology/@fdroidorg) followers, and Tutanota and Rocket Chat coming soon.
+In this edition: Fixing nearby swap, download link broken and fixed again, a flaky build cycle, 3000 [Mastodon](https://floss.social/@fdroidorg) followers, and Tutanota and Rocket Chat coming soon.
 <!--more-->
 
 [F-Droid](https://f-droid.org/) is a [repository](https://f-droid.org/packages/) of verified [free and open source](https://en.wikipedia.org/wiki/Free_and_open-source_software) Android apps, a [client](https://f-droid.org/packages/org.fdroid.fdroid/) to access it, as well as a whole "app store kit", providing all the tools needed to set up and run an app store. It is a community-run free software project developed by a wide range of contributors. This is their story this past week.
@@ -26,7 +26,7 @@ In this edition: Fixing nearby swap, download link broken and fixed again, a fla
 
 * The website build process also appears to be broken, meaning the website cannot be updated right now. If you are reading this, this has obviously been fixed.
 
-* We passed 3000 followers on [Mastodon](https://mastodon.technology/@fdroidorg) last Tuesday! Although we don't officially track anything, the number seems to be growing steadily and organically. Hard to tell if this is more due to new people joining Mastodon, or existing users finding out about us. I hope it's a healthy mix of both.
+* We passed 3000 followers on [Mastodon](https://floss.social/@fdroidorg) last Tuesday! Although we don't officially track anything, the number seems to be growing steadily and organically. Hard to tell if this is more due to new people joining Mastodon, or existing users finding out about us. I hope it's a healthy mix of both.
 
 #### Community News
 
@@ -90,8 +90,8 @@ Hey there, developers! Do you know what would be a good thing to do for your pro
 
 As great as changelogs are, don't forget to send in your tips! There are way too many app updates to keep track of them all, and we'd love your help in highlighting the important ones. And of course, if you're doing anything involving F-Droid in any way, tell us about it!
 
-Send tips to [@fdroidorg@mastodon.technology](https://mastodon.technology/@fdroidorg) and remember to tag with [#TWIF](https://mastodon.technology/tags/twif). Or use the [TWIF submission thread](https://forum.f-droid.org/t/twif-submission-thread) on the forum. The deadline to the next TWIF is Thursday 12:00 UTC.
+Send tips to [@fdroidorg@floss.social](https://floss.social/@fdroidorg) and remember to tag with [#TWIF](https://floss.social/tags/twif). Or use the [TWIF submission thread](https://forum.f-droid.org/t/twif-submission-thread) on the forum. The deadline to the next TWIF is Thursday 12:00 UTC.
 
 #### Feedback
 
-Got Feedback? We are very tootable at [@fdroidorg@mastodon.technology](https://mastodon.technology/@fdroidorg) on Mastodon. If you'd like to have a chat, you can find us in #fdroid on [Freenode](https://freenode.net), on Matrix via [#freenode_#fdroid:matrix.org](https://matrix.to/#/#freenode_#fdroid:matrix.org) or on [Telegram](https://t.me/joinchat/AlRQekvjWDTuQrCgMYSNVA). All of these spaces are bridged together, so the choice is yours. You can also join us on the [forum](https://forum.f-droid.org/).
+Got Feedback? We are very tootable at [@fdroidorg@floss.social](https://floss.social/@fdroidorg) on Mastodon. If you'd like to have a chat, you can find us in #fdroid on [Freenode](https://freenode.net), on Matrix via [#freenode_#fdroid:matrix.org](https://matrix.to/#/#freenode_#fdroid:matrix.org) or on [Telegram](https://t.me/joinchat/AlRQekvjWDTuQrCgMYSNVA). All of these spaces are bridged together, so the choice is yours. You can also join us on the [forum](https://forum.f-droid.org/).

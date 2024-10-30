@@ -13,8 +13,8 @@ number_of_removed_apps: 1
 number_of_updated_apps: 68
 number_of_beta_updated_apps: 3
 number_of_downgraded_apps: 1
-mastodonAccount: "**[@fdroidorg@mastodon.technology](https://mastodon.technology/@fdroidorg)**"
-twifTag: "**[#TWIF](https://mastodon.technology/tags/twif)**"
+mastodonAccount: "**[@fdroidorg@floss.social](https://floss.social/@fdroidorg)**"
+twifTag: "**[#TWIF](https://floss.social/tags/twif)**"
 twifThread: "[TWIF submission thread](https://forum.f-droid.org/t/twif-submission-thread)"
 matrixRoom: "[#fdroid:f-droid.org](https://matrix.to/#/#fdroid:f-droid.org)"
 telegramRoom: "https://t.me/joinchat/AlRQekvjWDTuQrCgMYSNVA"
@@ -37,7 +37,7 @@ There are **{{ page.number_of_added_apps }}** new and **{{ page.number_of_update
 
 ### Repomaker released to Flathub
 
-Only a few weeks after [our request for help](https://mastodon.technology/@fdroidorg/101125670095790694), **[@nicoalt](https://forum.f-droid.org/u/nicoalt)** was able to [report the release](https://mastodonten.de/@nicoalt/101246351037397549) of [Repomaker](https://f-droid.org/repomaker/) on [Flathub](https://flathub.org). For those who don't know, Repomaker is a web app allowing you to create F-Droid repositories without needing any special knowledge.
+Only a few weeks after [our request for help](https://floss.social/@fdroidorg/101125670095790694), **[@nicoalt](https://forum.f-droid.org/u/nicoalt)** was able to [report the release](https://mastodonten.de/@nicoalt/101246351037397549) of [Repomaker](https://f-droid.org/repomaker/) on [Flathub](https://flathub.org). For those who don't know, Repomaker is a web app allowing you to create F-Droid repositories without needing any special knowledge.
 
 Repomaker hasn't had an official release so far, but it's already usable, and we'll make an official release soon. If you're interested in trying it out before then, you can go to [Flathub](https://flathub.org/apps/details/org.fdroid.Repomaker) and install it easily on all major Linux distributions.
 
