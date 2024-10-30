@@ -65,4 +65,4 @@ Adding up the weekly donations to F-Droid from all sources, we are receiving abo
 
 [Click here to Donate to F-Droid!]({{ site.baseurl }}/donate/)
 
-We also appreciate you spreading the word about F-Droid, so feel free to mention us on the [Fediverse](https://mastodon.technology/@fdroidorg), talk with us in the [Forums](https://forum.f-droid.org/) or [join the discussions]({{ site.baseurl }}/about/#contact) via your protocol of choice.
+We also appreciate you spreading the word about F-Droid, so feel free to mention us on the [Fediverse](https://floss.social/@fdroidorg), talk with us in the [Forums](https://forum.f-droid.org/) or [join the discussions]({{ site.baseurl }}/about/#contact) via your protocol of choice.

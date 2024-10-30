@@ -55,6 +55,6 @@ This week, **24** apps were updated, which is by far the lightest week we've had
 
 Don't forget to send in your tips! There are way too many app updates to keep track of them all, and we'd love your help to find the important ones. And of course, if you're doing anything involving F-Droid in any way, tell us about it!
 
-Send tips via [Mastodon](https://joinmastodon.org) to **[@fdroidorg@mastodon.technology](https://mastodon.technology/@fdroidorg)** on and remember to tag with **[#TWIF](https://mastodon.technology/tags/twif)**. Or use the [TWIF submission thread](https://forum.f-droid.org/t/twif-submission-thread) on the forum. The deadline to the next TWIF is **Thursday** 12:00 UTC.
+Send tips via [Mastodon](https://joinmastodon.org) to **[@fdroidorg@floss.social](https://floss.social/@fdroidorg)** on and remember to tag with **[#TWIF](https://floss.social/tags/twif)**. Or use the [TWIF submission thread](https://forum.f-droid.org/t/twif-submission-thread) on the forum. The deadline to the next TWIF is **Thursday** 12:00 UTC.
 
 General feedback can also be sent via Mastodon, or, if you'd like to have a live chat, you can find us in **#fdroid** on [Freenode](https://freenode.net), on Matrix via [#freenode_#fdroid:matrix.org](https://matrix.to/#/#freenode_#fdroid:matrix.org) or on [Telegram](https://t.me/joinchat/AlRQekvjWDTuQrCgMYSNVA). All of these spaces are bridged together, so the choice is yours. You can also join us on the **[forum](https://forum.f-droid.org/)**.

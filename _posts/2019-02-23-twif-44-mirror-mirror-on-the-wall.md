@@ -13,8 +13,8 @@ number_of_removed_apps: 0
 number_of_updated_apps: 35
 number_of_beta_updated_apps: 1
 number_of_downgraded_apps: 0
-mastodonAccount: "**[@fdroidorg@mastodon.technology](https://mastodon.technology/@fdroidorg)**"
-twifTag: "**[#TWIF](https://mastodon.technology/tags/twif)**"
+mastodonAccount: "**[@fdroidorg@floss.social](https://floss.social/@fdroidorg)**"
+twifTag: "**[#TWIF](https://floss.social/tags/twif)**"
 twifThread: "[TWIF submission thread](https://forum.f-droid.org/t/twif-submission-thread)"
 matrixRoom: "[#fdroid:f-droid.org](https://matrix.to/#/#fdroid:f-droid.org)"
 telegramRoom: "https://t.me/joinchat/AlRQekvjWDTuQrCgMYSNVA"

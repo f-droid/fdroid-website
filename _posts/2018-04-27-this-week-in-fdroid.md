@@ -20,7 +20,7 @@ Hi everyone! This is a little experiment triggered by the [Matrix Project](https
 * CiaranG put androguard on the build server, which should finally fix [admin#65](https://gitlab.com/fdroid/admin/issues/65). This means that users of the Privileged Extension will finally be able to leave Unknown Sources off. It should also fix the arabic names and blank names.
 * The $22K grant for translation workflow has been officially confirmed. It will include some web dev work. It is expected that this will happen in June.
 * [Liberapay](https://liberapay.com/): The [F-Droid Data team](https://liberapay.com/F-Droid-Data) is currently receiving €61.05 per week from 144 patrons, making it the 5th largest team on Liberapay. Help us get that 3rd position back!
-* If you hadn't noticed yet, **Bubu** made F-Droid accounts on Mastodon ([@fdroidorg](https://mastodon.technology/@fdroidorg)) and Twitter ([@fdroidorg](https://twitter.com/fdroidorg)). We've been surprised and excited that our Mastodon has proven much more popular than our Twitter! The set-up automatically mirrors everything between the two accounts, and Bubu has been doing a good job of pushing regular updates and answering people's questions.
+* If you hadn't noticed yet, **Bubu** made F-Droid accounts on Mastodon ([@fdroidorg](https://floss.social/@fdroidorg)) and Twitter ([@fdroidorg](https://twitter.com/fdroidorg)). We've been surprised and excited that our Mastodon has proven much more popular than our Twitter! The set-up automatically mirrors everything between the two accounts, and Bubu has been doing a good job of pushing regular updates and answering people's questions.
 
 #### Other News
 
@@ -46,5 +46,5 @@ No new apps added this week.
 
 Will there be another edition of TWIF? That's up to you, dear reader! We are hoping to publish a new TWIF every friday, but we can't do this without your help. If you are working on something F-Droid related, like to talk about your app that's getting updated or newly included in F-Droid, or have some news related to F-Droid, get in touch!
 
-Come talk to us in #fdroid on [Freenode](https://freenode.net/), in Matrix via [#freenode_#fdroid:matrix.org](https://matrix.to/#/#freenode_#fdroid:matrix.org) or via [Telegram](https://t.me/joinchat/AlRQekvjWDTuQrCgMYSNVA). Join us on the [forum](https://forum.f-droid.org/). [Toot on Mastodon](https://mastodon.technology/@fdroidorg), or, if you absolutely must, [tweet us](https://twitter.com/fdroidorg).
+Come talk to us in #fdroid on [Freenode](https://freenode.net/), in Matrix via [#freenode_#fdroid:matrix.org](https://matrix.to/#/#freenode_#fdroid:matrix.org) or via [Telegram](https://t.me/joinchat/AlRQekvjWDTuQrCgMYSNVA). Join us on the [forum](https://forum.f-droid.org/). [Toot on Mastodon](https://floss.social/@fdroidorg), or, if you absolutely must, [tweet us](https://twitter.com/fdroidorg).
 
