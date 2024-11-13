@@ -9,7 +9,6 @@ stages:
 variables:
   LC_ALL: C.UTF-8
   DEBIAN_FRONTEND: noninteractive
-  OUT_DIR: build
 
 # This template needs to be in text block format since gitlab-runner
 # exec cannot handling templates in list format.
@@ -69,17 +68,15 @@ variables:
 
 
 # This is a manual task for building in preparation to deploy to
-# https://f-droid.org. The intention is for it to be run locally using
-# `gitlab-runner` each time a tag is found that is signed by a key in
-# the whitelist keyring.  Invoke like so:
+# https://f-droid.org. It is run on the deployserver using `docker
+# run` each time a tag is found that is signed by a key in the
+# whitelist keyring.  See:
 #
-#  gitlab-runner exec docker f-droid.org --pre-build-script ./prepare-for-deploy.py \
-#    --docker-volumes "/root/deploy-whitelist-keyring.gpg:/root/.gnupg/pubring.gpg:ro" \
-#    --docker-volumes $(pwd)/_site:/builds/output
+# https://gitlab.com/fdroid/fdroid-deployserver/-/blob/master/files/deploy-to-f-droid.org
+# https://gitlab.com/fdroid/fdroid-website/-/blob/master/tools/prepare-for-deploy.sh
 #
-# And when it is finished, you should have a directory in _site/build/
-# which includes the entire static site ready to be deployed to
-# https://f-droid.org.
+# When it is finished, the entire static site will be in $OUT_DIR,
+# ready to be deployed to https://f-droid.org.
 f-droid.org:
   stage: production
   image: docker.io/debian:bookworm
@@ -87,7 +84,8 @@ f-droid.org:
     - when: manual
       if: $CI_PROJECT_PATH == "fdroid/fdroidserver"
   script:
-    - '[ ! -d /builds/output ] && echo "ERROR: /builds/output is not mounted inside docker!" && exit 1'
+    - export JEKYLL_BUILD_DESTINATION=$CI_PROJECT_DIR/_site
+    - '[ ! -d $JEKYLL_BUILD_DESTINATION ] && echo "ERROR $JEKYLL_BUILD_DESTINATION is not mounted inside docker!" && exit 1'
     - *apt-template
     - *setup_for_jekyll
     - sed -Ei
@@ -95,10 +93,9 @@ f-droid.org:
         -e 's,^(baseurl\x3a).*,\1 "",'
         _config.yml
     - echo "Jekyll config used for CI:" && cat _config.yml
-    - jekyll build -d $OUT_DIR --trace
-    - ./tools/prepare-multi-lang.sh $OUT_DIR
-    - ./tools/deploy-external-assets.sh $OUT_DIR
-    - rsync -ax --delete $OUT_DIR /builds/output/
+    - jekyll build --destination $JEKYLL_BUILD_DESTINATION --trace
+    - ./tools/prepare-multi-lang.sh $JEKYLL_BUILD_DESTINATION
+    - ./tools/deploy-external-assets.sh $JEKYLL_BUILD_DESTINATION
 
 
 pages:
@@ -297,11 +294,11 @@ shellcheck:
       changes:
         - .gitlab-ci.yml
         - tools/check-asset-tags.sh
-        - tools/prepare-for-deploy.sh
+        - tools/deploy-cmd-*.sh
   script:
     - *apt-template
     - apt-get install shellcheck
-    - shellcheck tools/check-asset-tags.sh tools/prepare-for-deploy.sh
+    - shellcheck --severity=warning tools/check-asset-tags.sh tools/docker-cmd-*.sh
 
 
 # basic checks for dev setup
