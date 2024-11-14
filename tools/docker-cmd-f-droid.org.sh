@@ -34,6 +34,7 @@ for tag in $(git tag --sort=-taggerdate); do
     if git tag -v "$tag"; then
         git clean -fdx
         git checkout -B master "$tag"
+        mkdir _site
         echo "Set up $tag to deploy!"
         yq --raw-output '.["f-droid.org"]["script"][]' .gitlab-ci.yml | /bin/bash -e
         exit
