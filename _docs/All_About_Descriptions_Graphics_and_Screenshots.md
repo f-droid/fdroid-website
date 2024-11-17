@@ -59,6 +59,7 @@ for the following reasons:
 
 * The application's metadata is under direct control of the repository owners
 * Metadata from the repository is copied to the F-Droid repo automatically (thus no merge requests are needed)
+* It is the only way to provide images, such as the app icon or screenshots
 
 F-Droid supports two distinct file structures. These aim to be compatible with existing free software tools that allow publishing applications to Google Play. It is not required to install any of these
 tools, the file structure can easily be created manually instead.
@@ -94,7 +95,7 @@ needs to be place in the correct position as outlined below.
 │   ├── title.txt               (app name)
 │   ├── video.txt               (URL to a video introducing the app)
 │   ├── images
-│   │   ├── icon.png            (app icon, mandatory if your app doesn't include any png icon)
+│   │   ├── icon.png            (app icon)
 │   │   ├── featureGraphic.png  (promo banner, shown on top of the app desc in F-Droid client; landscape)
 │   │   ├── tvBanner.png        ("icon" for TV devices, currently not used)
 │   │   ├── phoneScreenshots
