@@ -67,7 +67,7 @@ layout: default-package-sidebar
 		{% if page.author_email != "" and page.author_email != nil %}
 		<li class="package-link">
 			{{ strings.author }}:
-			<a href="mailto:{{ page.author_email }}?subject={{ site.title }}%20on%20{{ site.baseurl }}">
+			<a href="mailto:{{ page.author_email }}?subject={{ page.title | cgi_escape | replace: '+', '%20' }}%20on%20F-Droid">
 				{% if page.author_name != "" and page.author_name != nil %}
 				{{ page.author_name }}
 				{% else %}
@@ -126,22 +126,22 @@ layout: default-package-sidebar
 	<ul class="package-links donate-options">
 		{% if page.openCollective != "" and page.openCollective != nil %}
 		<li class="package-link opencollective">
-			<a href="https://opencollective.com/{{ page.openCollective }}"><img src="{% asset opencollective_button.png %}" alt="{{ strings.opencollective_alt }}"/></a>
+			<a href="https://opencollective.com/{{ page.openCollective }}/donate"><img src="{% asset opencollective_button.png %}" alt="{{ strings.opencollective_alt }}"/></a>
 		</li>
 		{% endif %}
 		{% if page.liberapay != "" and page.liberapay != nil %}
 		<li class="package-link">
-			<a href="https://liberapay.com/{{ page.liberapay }}"><img src="{% asset liberapay_donate_button.svg %}" alt="{{ strings.liberapay_alt }}"/></a>
+			<a href="https://liberapay.com/{{ page.liberapay }}/donate"><img src="{% asset liberapay_donate_button.svg %}" alt="{{ strings.liberapay_alt }}"/></a>
 		</li>
 		{% endif %}
 		{% if page.bitcoin != "" and page.bitcoin != nil %}
 		<li class="package-link">
-			<a href="https://live.blockcypher.com/btc/address/{{ page.bitcoin }}" title="{{ page.bitcoin }}"><img src="{% asset bitcoin.png %}" alt="{{ strings.bitcoin_alt }}"/></a>
+			<a href="bitcoin:{{ page.bitcoin }}" title="{{ page.bitcoin }}"><img src="{% asset bitcoin.png %}" alt="{{ strings.bitcoin_alt }}"/></a>
 		</li>
 		{% endif %}
 		{% if page.litecoin != "" and page.litecoin != nil %}
 		<li class="package-link">
-			<a href="https://live.blockcypher.com/ltc/address/{{ page.litecoin }}" title="{{ page.litecoin }}"><img src="{% asset litecoin.png %}" alt="{{ strings.litecoin_alt }}"/></a>
+			<a href="litecoin:{{ page.litecoin }}" title="{{ page.litecoin }}"><img src="{% asset litecoin.png %}" alt="{{ strings.litecoin_alt }}"/></a>
 		</li>
 		{% endif %}
 		{%- assign donatetest = page.donate | slice: 0, 8 -%}
