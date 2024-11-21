@@ -211,7 +211,7 @@ layout: default-package-sidebar
 					{% if package.srcname != "" and package.srcname != nil %}
 					{% assign fmt_source_code_url = '{{ source_code_url }}' %}
 					{% assign source_code_url = site.fdroid-repo | append: '/' | append: package.srcname %}
-					{{ strings.signed_by_fdroid | replace: fmt_source_code_url, source_code_url }}
+					{{ strings.built_by_fdroid | replace: fmt_source_code_url, source_code_url }}
 					{% else %}
 					{{ strings.signed_by_developer | replace: fmt_source_code_url, source_code_url }}
 					{% endif %}
