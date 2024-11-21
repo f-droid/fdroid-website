@@ -31,7 +31,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
-"POT-Creation-Date: 2024-10-22 13:07+0200\n"
+"POT-Creation-Date: 2024-11-21 18:10+0100\n"
 "PO-Revision-Date: 2024-11-11 00:00+0000\n"
 "Last-Translator: gfbdrgng <hnaofegnp@hldrive.com>\n"
 "Language-Team: Russian <https://hosted.weblate.org/projects/f-droid/website-docs/ru/>\n"
@@ -219,6 +219,11 @@ msgstr "Метаданные приложения находятся под пр
 msgid "Metadata from the repository is copied to the F-Droid repo automatically (thus no merge requests are needed)"
 msgstr "Метаданные из репозитория автоматически копируются в репозиторий F-Droid (таким образом, запросы на слияние не требуются)"
 
+#. type: Bullet: '* '
+#: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
+msgid "It is the only way to provide images, such as the app icon or screenshots"
+msgstr ""
+
 #. type: Plain text
 #: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
 msgid "F-Droid supports two distinct file structures. These aim to be compatible with existing free software tools that allow publishing applications to Google Play. It is not required to install any of these tools, the file structure can easily be created manually instead."
@@ -262,7 +267,33 @@ msgstr "Базовая структура файла следующая. Обр�
 
 #. type: Fenced code block
 #: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
-#, no-wrap
+#, fuzzy, no-wrap
+#| msgid ""
+#| "├── en-US                       (en-US is the F-Droid fallback language)\n"
+#| "│   ├── short_description.txt   (short description, max 80 chars, mandatory)\n"
+#| "│   ├── full_description.txt    (full app description, mandatory)\n"
+#| "│   ├── title.txt               (app name)\n"
+#| "│   ├── video.txt               (URL to a video introducing the app)\n"
+#| "│   ├── images\n"
+#| "│   │   ├── icon.png            (app icon, mandatory if your app doesn't include any png icon)\n"
+#| "│   │   ├── featureGraphic.png  (promo banner, shown on top of the app desc in F-Droid client; landscape)\n"
+#| "│   │   ├── tvBanner.png        (\"icon\" for TV devices, currently not used)\n"
+#| "│   │   ├── phoneScreenshots\n"
+#| "│   │   │   ├── 1.png\n"
+#| "│   │   │   ├── 2.png\n"
+#| "│   │   │   ...\n"
+#| "│   │   ├── sevenInchScreenshots/\n"
+#| "│   │   ├── tenInchScreenshots/ (you may add different screenshots for different screen sizes)\n"
+#| "│   │   ├── tvScreenshots/\n"
+#| "│   │   └── wearScreenshots/\n"
+#| "│   └── changelogs\n"
+#| "│       ├── 100000.txt          (must correspond to versionCode, literally, no padding)\n"
+#| "│       ├── 100100.txt          (if the version code was set to 100100)\n"
+#| "│       └── 100101.txt          (maximum size: 500 characters)\n"
+#| "└── ru                          (other locale codes)\n"
+#| "    ...                         (localized metadata is always preferred by the client)\n"
+#| "    └── changelogs\n"
+#| "        └── 100100.txt\n"
 msgid ""
 "├── en-US                       (en-US is the F-Droid fallback language)\n"
 "│   ├── short_description.txt   (short description, max 80 chars, mandatory)\n"
@@ -270,7 +301,7 @@ msgid ""
 "│   ├── title.txt               (app name)\n"
 "│   ├── video.txt               (URL to a video introducing the app)\n"
 "│   ├── images\n"
-"│   │   ├── icon.png            (app icon, mandatory if your app doesn't include any png icon)\n"
+"│   │   ├── icon.png            (app icon)\n"
 "│   │   ├── featureGraphic.png  (promo banner, shown on top of the app desc in F-Droid client; landscape)\n"
 "│   │   ├── tvBanner.png        (\"icon\" for TV devices, currently not used)\n"
 "│   │   ├── phoneScreenshots\n"
@@ -5025,280 +5056,6 @@ msgstr "_\\<minor>_ увеличивается при каждом развер�
 #: _docs/Deploying_the_Website.md
 msgid "_\\<major>_ is only incremented when there are major changes"
 msgstr "_\\<major>_ увеличивается только при наличии серьезных изменений"
-
-#. type: Title ###
-#: _docs/Deploying_the_Website.md
-#, no-wrap
-msgid "Setting up and running the deploy procedure"
-msgstr "Настройка и выполнение процедуры развертывания"
-
-#. type: Plain text
-#: _docs/Deploying_the_Website.md
-msgid "The deploy procedure was tested on a machine running Debian/stretch.  It should be triggered whenever the repo index is published, so it can rebuild with the latest app information.  This whole procedure can be run as root, or just `gitlab-runner`.  This final procedure is not part of a script committed into the website git repo so that the commands that run outside of docker cannot be modified via git."
-msgstr "Процедура развертывания была протестирована на машине под управлением Debian/stretch.  Она должна запускаться всякий раз, когда публикуется индекс репозитория, чтобы можно было перестроить его с последней информацией о приложении.  Вся эта процедура может быть запущена от имени root или просто `gitlab-runner`.  Эта последняя процедура не является частью скрипта, зафиксированного в git-репозитории сайта, чтобы команды, выполняемые вне docker, не могли быть изменены через git."
-
-#. type: Bullet: '1. '
-#: _docs/Deploying_the_Website.md
-msgid "[setup docker](https://docs.docker.com/engine/installation/linux/debian/)"
-msgstr "[настройка docker](https://docs.docker.com/engine/installation/linux/debian/)"
-
-#. type: Bullet: '2. '
-#: _docs/Deploying_the_Website.md
-msgid "[setup gitlab-ci-multi-runner](https://docs.gitlab.com/runner/install/linux-repository.html)"
-msgstr "[настройка gitlab-ci-multi-runner](https://docs.gitlab.com/runner/install/linux-repository.html)"
-
-#. type: Bullet: '3. '
-#: _docs/Deploying_the_Website.md
-msgid "prepare _deploy-allowlist-keyring.gpg_ using GnuPG:"
-msgstr "подготовить _deploy-allowlist-keyring.gpg_ с помощью GnuPG:"
-
-#. type: Fenced code block (console)
-#: _docs/Deploying_the_Website.md
-#, no-wrap
-msgid ""
-"$ gpg --recv-keys 00aa5556\n"
-"$ gpg --fingerprint 00aa5556  # verify it!\n"
-"$ gpg --export 00aa5556 > /path/to/deploy-allowlist-keyring.gpg\n"
-msgstr ""
-
-#. type: Bullet: '4. '
-#: _docs/Deploying_the_Website.md
-msgid "get the website source code:"
-msgstr "получить исходный код сайта:"
-
-#. type: Fenced code block (console)
-#: _docs/Deploying_the_Website.md
-#, no-wrap
-msgid "$ git clone https://gitlab.com/fdroid/fdroid-website\n"
-msgstr ""
-
-#. type: Bullet: '5.  '
-#: _docs/Deploying_the_Website.md
-msgid "run the generation:"
-msgstr "запустить генерацию:"
-
-#. type: Fenced code block (console)
-#: _docs/Deploying_the_Website.md
-#, no-wrap
-msgid ""
-"$ cd fdroid-website\n"
-"$ git fetch --tags\n"
-"$ sudo gitlab-runner exec docker f-droid.org \\\n"
-"              --pre-build-script ./tools/prepare-for-deploy.py \\\n"
-"              --docker-volumes \"/path/to/deploy-allowlist-keyring.gpg:/root/.gnupg/pubring.gpg:ro\" \\\n"
-"              --docker-volumes `pwd`/_site:/builds/output\n"
-msgstr ""
-"$ cd fdroid-website\n"
-"$ git fetch --tags\n"
-"$ sudo gitlab-runner exec docker f-droid.org \\\n"
-"              --pre-build-script ./tools/prepare-for-deploy.py \\\n"
-"              --docker-volumes \"/path/to/deploy-allowlist-keyring.gpg:/root/.gnupg/pubring.gpg:ro\" \\\n"
-"              --docker-volumes `pwd`/_site:/builds/output\n"
-
-#. type: Bullet: '6. '
-#: _docs/Deploying_the_Website.md
-msgid "deploy the site's files to the webserver, while preventing the _jekyll_ generated files from overwriting [parts of the website](https://gitlab.com/fdroid/fdroid-website/blob/master/.rsync-deploy-exclude-list)  that other things manage:"
-msgstr "развернуть файлы сайта на веб-сервере, не позволяя _jekyll_ сгенерированным файлам перезаписывать [части сайта](https://gitlab.com/fdroid/fdroid-website/blob/master/.rsync-deploy-exclude-list), которыми управляют другие вещи:"
-
-#. type: Fenced code block (console)
-#: _docs/Deploying_the_Website.md
-#, no-wrap
-msgid "$ rsync -ax --delete --exclude-from=_site/build/.rsync-deploy-exclude-list  _site/build/  f-droid.org:/var/www/\n"
-msgstr "$ rsync -ax --delete --exclude-from=_site/build/.rsync-deploy-exclude-list  _site/build/  f-droid.org:/var/www/\n"
-
-#. type: Title ###
-#: _docs/Deploying_the_Website.md
-#, no-wrap
-msgid "Base Debian/Apache setup"
-msgstr "Базовая настройка Debian/Apache"
-
-#. type: Plain text
-#: _docs/Deploying_the_Website.md
-msgid "These instructions are based on Debian/stretch, but they should be very similar on both older and newer versions of Debian, as well as any Debian derivatives like Ubuntu, Mint, Elementary, etc."
-msgstr "Эти инструкции основаны на Debian/stretch, но они должны быть очень похожи как на более старых, так и на более новых версиях Debian, а также на любых производных Debian, таких как Ubuntu, Mint, Elementary и т.д."
-
-#. type: Fenced code block (console)
-#: _docs/Deploying_the_Website.md
-#, no-wrap
-msgid ""
-"$ sudo su -\n"
-"# apt install apache2 certbot tor ca-certificates geoip-bin libapache2-mod-geoip \\\n"
-"  python-certbot-apache rsync unattended-upgrades locales\n"
-"# dpkg-reconfigure unattended-upgrades  # turn them on!\n"
-"# sed -i 's,^# \\(.* UTF-8\\)$,\\1,' /etc/locale.gen  # enable all UTF-8 locales\n"
-"# locale-gen\n"
-"# a2dismod status\n"
-"# a2enmod headers\n"
-"# a2enmod rewrite\n"
-"# a2enmod ssl\n"
-"# a2enconf security\n"
-"# apachectl configtest && apachectl restart\n"
-"# certbot --apache\n"
-msgstr ""
-"$ sudo su -\n"
-"# apt install apache2 certbot tor ca-certificates geoip-bin libapache2-mod-geoip \\\n"
-"  python-certbot-apache rsync unattended-upgrades locales\n"
-"# dpkg-reconfigure unattended-upgrades # включите их!\n"
-"# sed -i 's,^# \\(.* UTF-8\\)$,\\1,' /etc/locale.gen # включить все UTF-8 локали\n"
-"# locale-gen\n"
-"# a2dismod status\n"
-"# a2enmod headers\n"
-"# a2enmod rewrite\n"
-"# a2enmod ssl\n"
-"# a2enconf security\n"
-"# apachectl configtest && apachectl restart\n"
-"# certbot --apache\n"
-
-#. type: Title ###
-#: _docs/Deploying_the_Website.md
-#, no-wrap
-msgid "Apache2 config"
-msgstr "Конфигурация Apache2"
-
-#. type: Plain text
-#: _docs/Deploying_the_Website.md
-msgid "The F-Droid website is translated into several languages.  There are a few things required to ensure this works."
-msgstr "Веб-сайт F-Droid переведен на несколько языков.  Для того чтобы это работало, необходимо выполнить несколько действий."
-
-#. type: Plain text
-#: _docs/Deploying_the_Website.md
-msgid "The first is taken care of by `.gitlab-ci.yml`, which is to run the `./tools/prepare-multi-langs.sh` script _without_ the `--no-type-maps` argument.  This ensures that each `.html` file is replaced with an Apache2 [TypeMap](https://httpd.apache.org/docs/current/mod/mod_negotiation.html#typemaps)."
-msgstr "О первом позаботится `.gitlab-ci.yml`, который заключается в запуске скрипта `./tools/prepare-multi-langs.sh` _без _ аргумента `--no-type-maps`.  Это гарантирует, что каждый файл `.html` будет заменен на Apache2 [TypeMap](https://httpd.apache.org/docs/current/mod/mod_negotiation.html#typemaps)."
-
-#. type: Plain text
-#: _docs/Deploying_the_Website.md
-msgid "The second is to enable _mod_rewrite_, which is used to automatically choose the correct language for browsers that are not using JavaScript.  The easiest way to do that is to run `sudo a2enmod rewrite`."
-msgstr "Второе - включить _mod_rewrite_, который используется для автоматического выбора правильного языка для браузеров, не использующих JavaScript.  Самый простой способ сделать это - выполнить команду `sudo a2enmod rewrite`."
-
-#. type: Plain text
-#: _docs/Deploying_the_Website.md
-msgid "The last is to add the following to the Apache2 server or _VirtualHost_ config so that the _TypeMaps_ are used correctly, telling apache where to find the translated version of the file (replace `/var/www/html` with the actual webroot):"
-msgstr "Последнее - добавить следующее в конфигурацию сервера Apache2 или _VirtualHost_, чтобы _TypeMaps_ использовались правильно, указывая apache, где найти переведенную версию файла (замените `/var/www/html` на фактический webroot):"
-
-#. type: Fenced code block (apache)
-#: _docs/Deploying_the_Website.md
-#, no-wrap
-msgid ""
-"<Directory /var/www/html>\n"
-"    Options FollowSymLinks\n"
-"    AllowOverride FileInfo\n"
-"</Directory>\n"
-"\n"
-"<Files *.html>\n"
-"    SetHandler type-map\n"
-"</Files>\n"
-"\n"
-"# Virtualize the language sub\"directories\"\n"
-"AliasMatch ^(?:/(?:ach|af|ak|sq|am|anp|ar|ar_DZ|ar_MA|an|es_AR|hy|as|ast|de_AT|ay|az|ba|eu|bar|be|be_Latn|bn|bn_BD|bn_IN|brx|bs|bs_Cyrl|bs_Latn|br|bg|my|ca|km|ch|chr|hne|cgg|zh|zh_HK|zh_Hans|zh_Hant|ksh|kw|cr|hr|cs|da|doi|nl|nl_BE|dz|en|en_AU|en_CA|en_IE|en_PH|en_ZA|en_GB|en_US|eo|et|fo|fil|fi|frp|fr|fr_CA|fy|fur|ff|gd|gl|ka|de|el|kl|gu|gun|ht|ha|haw|he|hi|hu|is|ig|id|ia|ga|it|ja|jv|kab|kn|ks|csb|kk|rw|tlh|tlh-qaak|kok|ko|ku|ckb|ky|lo|la|lv|li|ln|lt|jbo|nds|lb|mk|mai|mg|ms|ml|mt|mnk|mi|arn|mr|mni|mn|me|mfe|nqo|nah|nap|ne|se|no|nb_NO|nb|nn|ny|oc|or|oj|os|pap|nso|fa|pms|pr|pl|pt|pt_BR|pt_PT|pa|ps|ro|rm|ru|sa|sat|sc|sco|sr|sr_Cyrl|sr_Latn|sh|sn|szl|sd|si|sk|sl|so|son|st|es|es_US|es_MX|es_PR|su|sw|sv|de_CH|tl|tg|ta|tt|te|th|bo|ti|ts|tr|tk|ug|uk|hsb|ur|ur_PK|uz|uz_Latn|ca@valencia|ve|vec|vi|wa|cy|vls|wo|sah|yi|yo|yue|zu)/)?(.*)?$ /var/www/html/$1\n"
-"\n"
-"# Tell mod_negotiation which language to prefer\n"
-"SetEnvIf Request_URI ^/(ach|af|ak|sq|am|anp|ar|an|hy|as|ast|ay|az|ba|eu|bar|be|bn|brx|bs|br|bg|my|ca|km|ch|chr|hne|cgg|zh|ksh|kw|cr|hr|cs|da|doi|nl|dz|en|eo|et|fo|fil|fi|frp|fr|fy|fur|ff|gd|gl|ka|de|el|kl|gu|gun|ht|ha|haw|he|hi|hu|is|ig|id|ia|ga|it|ja|jv|kab|kn|ks|csb|kk|rw|tlh|tlh-qaak|kok|ko|ku|ckb|ky|lo|la|lv|li|ln|lt|jbo|nds|lb|mk|mai|mg|ms|ml|mt|mnk|mi|arn|mr|mni|mn|me|mfe|nqo|nah|nap|ne|se|no|nb|nn|ny|oc|or|oj|os|pap|nso|fa|pms|pr|pl|pt|pa|ps|ro|rm|ru|sa|sat|sc|sco|sr|sh|sn|szl|sd|si|sk|sl|so|son|st|es|su|sw|sv|tl|tg|ta|tt|te|th|bo|ti|ts|tr|tk|ug|uk|hsb|ur|uz|ca@valencia|ve|vec|vi|wa|cy|vls|wo|sah|yi|yo|yue|zu)/ prefer-language=$1\n"
-"\n"
-"# Language codes from Weblate containing capital letters and underscores need to be treated\n"
-"# differently, namely the language they refer to is lower case with a hyphen\n"
-"SetEnvIf Request_URI ^/ar_DZ/ prefer-language=ar-dz\n"
-"SetEnvIf Request_URI ^/ar_MA/ prefer-language=ar-ma\n"
-"SetEnvIf Request_URI ^/be_Latn/ prefer-language=be-latn\n"
-"SetEnvIf Request_URI ^/bn_BD/ prefer-language=bn-bd\n"
-"SetEnvIf Request_URI ^/bn_IN/ prefer-language=bn-in\n"
-"SetEnvIf Request_URI ^/bs_Cyrl/ prefer-language=bs-cyrl\n"
-"SetEnvIf Request_URI ^/bs_Latn/ prefer-language=bs-latn\n"
-"SetEnvIf Request_URI ^/de_AT/ prefer-language=de-at\n"
-"SetEnvIf Request_URI ^/de_CH/ prefer-language=de-ch\n"
-"SetEnvIf Request_URI ^/en_AU/ prefer-language=en-au\n"
-"SetEnvIf Request_URI ^/en_CA/ prefer-language=en-ca\n"
-"SetEnvIf Request_URI ^/en_GB/ prefer-language=en-gb\n"
-"SetEnvIf Request_URI ^/en_IE/ prefer-language=en-ie\n"
-"SetEnvIf Request_URI ^/en_PH/ prefer-language=en-ph\n"
-"SetEnvIf Request_URI ^/en_US/ prefer-language=en-us\n"
-"SetEnvIf Request_URI ^/en_ZA/ prefer-language=en-za\n"
-"SetEnvIf Request_URI ^/es_AR/ prefer-language=es-ar\n"
-"SetEnvIf Request_URI ^/es_MX/ prefer-language=es-mx\n"
-"SetEnvIf Request_URI ^/es_PR/ prefer-language=es-pr\n"
-"SetEnvIf Request_URI ^/es_US/ prefer-language=es-us\n"
-"SetEnvIf Request_URI ^/fr_CA/ prefer-language=fr-ca\n"
-"SetEnvIf Request_URI ^/nb_NO/ prefer-language=nb-no\n"
-"SetEnvIf Request_URI ^/nl_BE/ prefer-language=nl-be\n"
-"SetEnvIf Request_URI ^/pt_BR/ prefer-language=pt-br\n"
-"SetEnvIf Request_URI ^/pt_PT/ prefer-language=pt-pt\n"
-"SetEnvIf Request_URI ^/sr_Cyrl/ prefer-language=sr-cyrl\n"
-"SetEnvIf Request_URI ^/sr_Latn/ prefer-language=sr-latn\n"
-"SetEnvIf Request_URI ^/ur_PK/ prefer-language=ur-pk\n"
-"SetEnvIf Request_URI ^/uz_Latn/ prefer-language=uz-latn\n"
-"SetEnvIf Request_URI ^/zh_Hans/ prefer-language=zh-hans\n"
-"SetEnvIf Request_URI ^/zh_Hant/ prefer-language=zh-hant\n"
-"SetEnvIf Request_URI ^/zh_HK/ prefer-language=zh-hk\n"
-msgstr ""
-"<Directory /var/www/html>\n"
-"    Options FollowSymLinks\n"
-"    AllowOverride FileInfo\n"
-"</Directory>\n"
-"\n"
-"<Files *.html>\n"
-"    SetHandler type-map\n"
-"</Files>\n"
-"\n"
-"# Виртуализация языка sub \"directories\"\n"
-"AliasMatch ^(?:/(?:ach|af|ak|sq|am|anp|ar|ar_DZ|ar_MA|an|es_AR|hy|as|ast|de_AT|ay|az|ba|eu|bar|be|be_Latn|bn|bn_BD|bn_IN|brx|bs|bs_Cyrl|bs_Latn|br|bg|my|ca|km|ch|chr|hne|cgg|zh|zh_HK|zh_Hans|zh_Hant|ksh|kw|cr|hr|cs|da|doi|nl|nl_BE|dz|en|en_AU|en_CA|en_IE|en_PH|en_ZA|en_GB|en_US|eo|et|fo|fil|fi|frp|fr|fr_CA|fy|fur|ff|gd|gl|ka|de|el|kl|gu|gun|ht|ha|haw|he|hi|hu|is|ig|id|ia|ga|it|ja|jv|kab|kn|ks|csb|kk|rw|tlh|tlh-qaak|kok|ko|ku|ckb|ky|lo|la|lv|li|ln|lt|jbo|nds|lb|mk|mai|mg|ms|ml|mt|mnk|mi|arn|mr|mni|mn|me|mfe|nqo|nah|nap|ne|se|no|nb_NO|nb|nn|ny|oc|or|oj|os|pap|nso|fa|pms|pr|pl|pt|pt_BR|pt_PT|pa|ps|ro|rm|ru|sa|sat|sc|sco|sr|sr_Cyrl|sr_Latn|sh|sn|szl|sd|si|sk|sl|so|son|st|es|es_US|es_MX|es_PR|su|sw|sv|de_CH|tl|tg|ta|tt|te|th|bo|ti|ts|tr|tk|ug|uk|hsb|ur|ur_PK|uz|uz_Latn|ca@valencia|ve|vec|vi|wa|cy|vls|wo|sah|yi|yo|yue|zu)/)?(.*)?$ /var/www/html/$1\n"
-"\n"
-"# Сообщите mod_negotiation, какой язык предпочесть\n"
-"SetEnvIf Request_URI ^/(ach|af|ak|sq|am|anp|ar|an|hy|as|ast|ay|az|ba|eu|bar|be|bn|brx|bs|br|bg|my|ca|km|ch|chr|hne|cgg|zh|ksh|kw|cr|hr|cs|da|doi|nl|dz|en|eo|et|fo|fil|fi|frp|fr|fy|fur|ff|gd|gl|ka|de|el|kl|gu|gun|ht|ha|haw|he|hi|hu|is|ig|id|ia|ga|it|ja|jv|kab|kn|ks|csb|kk|rw|tlh|tlh-qaak|kok|ko|ku|ckb|ky|lo|la|lv|li|ln|lt|jbo|nds|lb|mk|mai|mg|ms|ml|mt|mnk|mi|arn|mr|mni|mn|me|mfe|nqo|nah|nap|ne|se|no|nb|nn|ny|oc|or|oj|os|pap|nso|fa|pms|pr|pl|pt|pa|ps|ro|rm|ru|sa|sat|sc|sco|sr|sh|sn|szl|sd|si|sk|sl|so|son|st|es|su|sw|sv|tl|tg|ta|tt|te|th|bo|ti|ts|tr|tk|ug|uk|hsb|ur|uz|ca@valencia|ve|vec|vi|wa|cy|vls|wo|sah|yi|yo|yue|zu)/ prefer-language=$1\n"
-"\n"
-"# Языковые коды из Weblate, содержащие заглавные буквы и знаки подчеркивания, должны обрабатываться\n"
-"# по-другому, а именно: язык, на который они ссылаются, должен быть в нижнем регистре с дефисом.\n"
-"SetEnvIf Request_URI ^/ar_DZ/ prefer-language=ar-dz\n"
-"SetEnvIf Request_URI ^/ar_MA/ prefer-language=ar-ma\n"
-"SetEnvIf Request_URI ^/be_Latn/ prefer-language=be-latn\n"
-"SetEnvIf Request_URI ^/bn_BD/ prefer-language=bn-bd\n"
-"SetEnvIf Request_URI ^/bn_IN/ prefer-language=bn-in\n"
-"SetEnvIf Request_URI ^/bs_Cyrl/ prefer-language=bs-cyrl\n"
-"SetEnvIf Request_URI ^/bs_Latn/ prefer-language=bs-latn\n"
-"SetEnvIf Request_URI ^/de_AT/ prefer-language=de-at\n"
-"SetEnvIf Request_URI ^/de_CH/ prefer-language=de-ch\n"
-"SetEnvIf Request_URI ^/en_AU/ prefer-language=en-au\n"
-"SetEnvIf Request_URI ^/en_CA/ prefer-language=en-ca\n"
-"SetEnvIf Request_URI ^/en_GB/ prefer-language=en-gb\n"
-"SetEnvIf Request_URI ^/en_IE/ prefer-language=en-ie\n"
-"SetEnvIf Request_URI ^/en_PH/ prefer-language=en-ph\n"
-"SetEnvIf Request_URI ^/en_US/ prefer-language=en-us\n"
-"SetEnvIf Request_URI ^/en_ZA/ prefer-language=en-za\n"
-"SetEnvIf Request_URI ^/es_AR/ prefer-language=es-ar\n"
-"SetEnvIf Request_URI ^/es_MX/ prefer-language=es-mx\n"
-"SetEnvIf Request_URI ^/es_PR/ prefer-language=es-pr\n"
-"SetEnvIf Request_URI ^/es_US/ prefer-language=es-us\n"
-"SetEnvIf Request_URI ^/fr_CA/ prefer-language=fr-ca\n"
-"SetEnvIf Request_URI ^/nb_NO/ prefer-language=nb-no\n"
-"SetEnvIf Request_URI ^/nl_BE/ prefer-language=nl-be\n"
-"SetEnvIf Request_URI ^/pt_BR/ prefer-language=pt-br\n"
-"SetEnvIf Request_URI ^/pt_PT/ prefer-language=pt-pt\n"
-"SetEnvIf Request_URI ^/sr_Cyrl/ prefer-language=sr-cyrl\n"
-"SetEnvIf Request_URI ^/sr_Latn/ prefer-language=sr-latn\n"
-"SetEnvIf Request_URI ^/ur_PK/ prefer-language=ur-pk\n"
-"SetEnvIf Request_URI ^/uz_Latn/ prefer-language=uz-latn\n"
-"SetEnvIf Request_URI ^/zh_Hans/ prefer-language=zh-hans\n"
-"SetEnvIf Request_URI ^/zh_Hant/ prefer-language=zh-hant\n"
-"SetEnvIf Request_URI ^/zh_HK/ prefer-language=zh-hk\n"
-
-#. type: Plain text
-#: _docs/Deploying_the_Website.md
-msgid "If this is not done or done incorrectly, then you will see something like the following when viewing any page:"
-msgstr "Если это не сделано или сделано неправильно, то при просмотре любой страницы вы увидите что-то вроде следующего:"
-
-#. type: Plain text
-#: _docs/Deploying_the_Website.md
-#, no-wrap
-msgid "> URI: index.html.en Content-language: en Content-type: text/html URI: index.html.fr Content-language: fr Content-type: text/html \n"
-msgstr ""
-
-#. type: Plain text
-#: _docs/Deploying_the_Website.md
-msgid "This is the result of the actual TypeMap being returned to the browser, rather than the translated file."
-msgstr "В результате браузеру возвращается реальная карта TypeMap, а не переведенный файл."
-
-#. type: Plain text
-#: _docs/Deploying_the_Website.md
-msgid "Note that this also depends on `mod_alias` and `mod_negotiation` being enabled, but this happens by default when installing apache2 on Debian."
-msgstr "Обратите внимание, что это также зависит от того, включены ли `mod_alias` и `mod_negotiation`, но это происходит по умолчанию при установке apache2 на Debian."
 
 #. type: Yaml Front Matter Hash Value: title
 #: _docs/FAQ_-_App_Developers.md
@@ -12821,3 +12578,212 @@ msgstr "Предпочтения"
 #: _docs/Whitelabel_Builds.md
 msgid "For a custom build that enables Automatic Updates by default, override _app/src/main/res/xml/preferences.xml_. You can customize the preferences and their default values in _app/src/mycompany/res/xml/preferences.xml_. The fully automatic update requires [Privileged Extension](https://gitlab.com/fdroid/privileged-extension). With regular access, the updates will only automatically download. The user still needs to click install on each one."
 msgstr "Для пользовательской сборки, которая включает автоматические обновления по умолчанию, переопределите _app/src/main/res/xml/preferences.xml_. Вы можете настроить предпочтения и их значения по умолчанию в _app/src/mycompany/res/xml/preferences.xml_. Для полностью автоматического обновления требуется [Privileged Extension](https://gitlab.com/fdroid/privileged-extension). При обычном доступе обновления будут только автоматически загружаться. Пользователю по-прежнему необходимо нажимать кнопку установки на каждом из них."
+
+#, no-wrap
+#~ msgid "Setting up and running the deploy procedure"
+#~ msgstr "Настройка и выполнение процедуры развертывания"
+
+#~ msgid "The deploy procedure was tested on a machine running Debian/stretch.  It should be triggered whenever the repo index is published, so it can rebuild with the latest app information.  This whole procedure can be run as root, or just `gitlab-runner`.  This final procedure is not part of a script committed into the website git repo so that the commands that run outside of docker cannot be modified via git."
+#~ msgstr "Процедура развертывания была протестирована на машине под управлением Debian/stretch.  Она должна запускаться всякий раз, когда публикуется индекс репозитория, чтобы можно было перестроить его с последней информацией о приложении.  Вся эта процедура может быть запущена от имени root или просто `gitlab-runner`.  Эта последняя процедура не является частью скрипта, зафиксированного в git-репозитории сайта, чтобы команды, выполняемые вне docker, не могли быть изменены через git."
+
+#~ msgid "[setup docker](https://docs.docker.com/engine/installation/linux/debian/)"
+#~ msgstr "[настройка docker](https://docs.docker.com/engine/installation/linux/debian/)"
+
+#~ msgid "[setup gitlab-ci-multi-runner](https://docs.gitlab.com/runner/install/linux-repository.html)"
+#~ msgstr "[настройка gitlab-ci-multi-runner](https://docs.gitlab.com/runner/install/linux-repository.html)"
+
+#~ msgid "prepare _deploy-allowlist-keyring.gpg_ using GnuPG:"
+#~ msgstr "подготовить _deploy-allowlist-keyring.gpg_ с помощью GnuPG:"
+
+#~ msgid "get the website source code:"
+#~ msgstr "получить исходный код сайта:"
+
+#~ msgid "run the generation:"
+#~ msgstr "запустить генерацию:"
+
+#, no-wrap
+#~ msgid ""
+#~ "$ cd fdroid-website\n"
+#~ "$ git fetch --tags\n"
+#~ "$ sudo gitlab-runner exec docker f-droid.org \\\n"
+#~ "              --pre-build-script ./tools/prepare-for-deploy.py \\\n"
+#~ "              --docker-volumes \"/path/to/deploy-allowlist-keyring.gpg:/root/.gnupg/pubring.gpg:ro\" \\\n"
+#~ "              --docker-volumes `pwd`/_site:/builds/output\n"
+#~ msgstr ""
+#~ "$ cd fdroid-website\n"
+#~ "$ git fetch --tags\n"
+#~ "$ sudo gitlab-runner exec docker f-droid.org \\\n"
+#~ "              --pre-build-script ./tools/prepare-for-deploy.py \\\n"
+#~ "              --docker-volumes \"/path/to/deploy-allowlist-keyring.gpg:/root/.gnupg/pubring.gpg:ro\" \\\n"
+#~ "              --docker-volumes `pwd`/_site:/builds/output\n"
+
+#~ msgid "deploy the site's files to the webserver, while preventing the _jekyll_ generated files from overwriting [parts of the website](https://gitlab.com/fdroid/fdroid-website/blob/master/.rsync-deploy-exclude-list)  that other things manage:"
+#~ msgstr "развернуть файлы сайта на веб-сервере, не позволяя _jekyll_ сгенерированным файлам перезаписывать [части сайта](https://gitlab.com/fdroid/fdroid-website/blob/master/.rsync-deploy-exclude-list), которыми управляют другие вещи:"
+
+#, no-wrap
+#~ msgid "$ rsync -ax --delete --exclude-from=_site/build/.rsync-deploy-exclude-list  _site/build/  f-droid.org:/var/www/\n"
+#~ msgstr "$ rsync -ax --delete --exclude-from=_site/build/.rsync-deploy-exclude-list  _site/build/  f-droid.org:/var/www/\n"
+
+#, no-wrap
+#~ msgid "Base Debian/Apache setup"
+#~ msgstr "Базовая настройка Debian/Apache"
+
+#~ msgid "These instructions are based on Debian/stretch, but they should be very similar on both older and newer versions of Debian, as well as any Debian derivatives like Ubuntu, Mint, Elementary, etc."
+#~ msgstr "Эти инструкции основаны на Debian/stretch, но они должны быть очень похожи как на более старых, так и на более новых версиях Debian, а также на любых производных Debian, таких как Ubuntu, Mint, Elementary и т.д."
+
+#, no-wrap
+#~ msgid ""
+#~ "$ sudo su -\n"
+#~ "# apt install apache2 certbot tor ca-certificates geoip-bin libapache2-mod-geoip \\\n"
+#~ "  python-certbot-apache rsync unattended-upgrades locales\n"
+#~ "# dpkg-reconfigure unattended-upgrades  # turn them on!\n"
+#~ "# sed -i 's,^# \\(.* UTF-8\\)$,\\1,' /etc/locale.gen  # enable all UTF-8 locales\n"
+#~ "# locale-gen\n"
+#~ "# a2dismod status\n"
+#~ "# a2enmod headers\n"
+#~ "# a2enmod rewrite\n"
+#~ "# a2enmod ssl\n"
+#~ "# a2enconf security\n"
+#~ "# apachectl configtest && apachectl restart\n"
+#~ "# certbot --apache\n"
+#~ msgstr ""
+#~ "$ sudo su -\n"
+#~ "# apt install apache2 certbot tor ca-certificates geoip-bin libapache2-mod-geoip \\\n"
+#~ "  python-certbot-apache rsync unattended-upgrades locales\n"
+#~ "# dpkg-reconfigure unattended-upgrades # включите их!\n"
+#~ "# sed -i 's,^# \\(.* UTF-8\\)$,\\1,' /etc/locale.gen # включить все UTF-8 локали\n"
+#~ "# locale-gen\n"
+#~ "# a2dismod status\n"
+#~ "# a2enmod headers\n"
+#~ "# a2enmod rewrite\n"
+#~ "# a2enmod ssl\n"
+#~ "# a2enconf security\n"
+#~ "# apachectl configtest && apachectl restart\n"
+#~ "# certbot --apache\n"
+
+#, no-wrap
+#~ msgid "Apache2 config"
+#~ msgstr "Конфигурация Apache2"
+
+#~ msgid "The F-Droid website is translated into several languages.  There are a few things required to ensure this works."
+#~ msgstr "Веб-сайт F-Droid переведен на несколько языков.  Для того чтобы это работало, необходимо выполнить несколько действий."
+
+#~ msgid "The first is taken care of by `.gitlab-ci.yml`, which is to run the `./tools/prepare-multi-langs.sh` script _without_ the `--no-type-maps` argument.  This ensures that each `.html` file is replaced with an Apache2 [TypeMap](https://httpd.apache.org/docs/current/mod/mod_negotiation.html#typemaps)."
+#~ msgstr "О первом позаботится `.gitlab-ci.yml`, который заключается в запуске скрипта `./tools/prepare-multi-langs.sh` _без _ аргумента `--no-type-maps`.  Это гарантирует, что каждый файл `.html` будет заменен на Apache2 [TypeMap](https://httpd.apache.org/docs/current/mod/mod_negotiation.html#typemaps)."
+
+#~ msgid "The second is to enable _mod_rewrite_, which is used to automatically choose the correct language for browsers that are not using JavaScript.  The easiest way to do that is to run `sudo a2enmod rewrite`."
+#~ msgstr "Второе - включить _mod_rewrite_, который используется для автоматического выбора правильного языка для браузеров, не использующих JavaScript.  Самый простой способ сделать это - выполнить команду `sudo a2enmod rewrite`."
+
+#~ msgid "The last is to add the following to the Apache2 server or _VirtualHost_ config so that the _TypeMaps_ are used correctly, telling apache where to find the translated version of the file (replace `/var/www/html` with the actual webroot):"
+#~ msgstr "Последнее - добавить следующее в конфигурацию сервера Apache2 или _VirtualHost_, чтобы _TypeMaps_ использовались правильно, указывая apache, где найти переведенную версию файла (замените `/var/www/html` на фактический webroot):"
+
+#, no-wrap
+#~ msgid ""
+#~ "<Directory /var/www/html>\n"
+#~ "    Options FollowSymLinks\n"
+#~ "    AllowOverride FileInfo\n"
+#~ "</Directory>\n"
+#~ "\n"
+#~ "<Files *.html>\n"
+#~ "    SetHandler type-map\n"
+#~ "</Files>\n"
+#~ "\n"
+#~ "# Virtualize the language sub\"directories\"\n"
+#~ "AliasMatch ^(?:/(?:ach|af|ak|sq|am|anp|ar|ar_DZ|ar_MA|an|es_AR|hy|as|ast|de_AT|ay|az|ba|eu|bar|be|be_Latn|bn|bn_BD|bn_IN|brx|bs|bs_Cyrl|bs_Latn|br|bg|my|ca|km|ch|chr|hne|cgg|zh|zh_HK|zh_Hans|zh_Hant|ksh|kw|cr|hr|cs|da|doi|nl|nl_BE|dz|en|en_AU|en_CA|en_IE|en_PH|en_ZA|en_GB|en_US|eo|et|fo|fil|fi|frp|fr|fr_CA|fy|fur|ff|gd|gl|ka|de|el|kl|gu|gun|ht|ha|haw|he|hi|hu|is|ig|id|ia|ga|it|ja|jv|kab|kn|ks|csb|kk|rw|tlh|tlh-qaak|kok|ko|ku|ckb|ky|lo|la|lv|li|ln|lt|jbo|nds|lb|mk|mai|mg|ms|ml|mt|mnk|mi|arn|mr|mni|mn|me|mfe|nqo|nah|nap|ne|se|no|nb_NO|nb|nn|ny|oc|or|oj|os|pap|nso|fa|pms|pr|pl|pt|pt_BR|pt_PT|pa|ps|ro|rm|ru|sa|sat|sc|sco|sr|sr_Cyrl|sr_Latn|sh|sn|szl|sd|si|sk|sl|so|son|st|es|es_US|es_MX|es_PR|su|sw|sv|de_CH|tl|tg|ta|tt|te|th|bo|ti|ts|tr|tk|ug|uk|hsb|ur|ur_PK|uz|uz_Latn|ca@valencia|ve|vec|vi|wa|cy|vls|wo|sah|yi|yo|yue|zu)/)?(.*)?$ /var/www/html/$1\n"
+#~ "\n"
+#~ "# Tell mod_negotiation which language to prefer\n"
+#~ "SetEnvIf Request_URI ^/(ach|af|ak|sq|am|anp|ar|an|hy|as|ast|ay|az|ba|eu|bar|be|bn|brx|bs|br|bg|my|ca|km|ch|chr|hne|cgg|zh|ksh|kw|cr|hr|cs|da|doi|nl|dz|en|eo|et|fo|fil|fi|frp|fr|fy|fur|ff|gd|gl|ka|de|el|kl|gu|gun|ht|ha|haw|he|hi|hu|is|ig|id|ia|ga|it|ja|jv|kab|kn|ks|csb|kk|rw|tlh|tlh-qaak|kok|ko|ku|ckb|ky|lo|la|lv|li|ln|lt|jbo|nds|lb|mk|mai|mg|ms|ml|mt|mnk|mi|arn|mr|mni|mn|me|mfe|nqo|nah|nap|ne|se|no|nb|nn|ny|oc|or|oj|os|pap|nso|fa|pms|pr|pl|pt|pa|ps|ro|rm|ru|sa|sat|sc|sco|sr|sh|sn|szl|sd|si|sk|sl|so|son|st|es|su|sw|sv|tl|tg|ta|tt|te|th|bo|ti|ts|tr|tk|ug|uk|hsb|ur|uz|ca@valencia|ve|vec|vi|wa|cy|vls|wo|sah|yi|yo|yue|zu)/ prefer-language=$1\n"
+#~ "\n"
+#~ "# Language codes from Weblate containing capital letters and underscores need to be treated\n"
+#~ "# differently, namely the language they refer to is lower case with a hyphen\n"
+#~ "SetEnvIf Request_URI ^/ar_DZ/ prefer-language=ar-dz\n"
+#~ "SetEnvIf Request_URI ^/ar_MA/ prefer-language=ar-ma\n"
+#~ "SetEnvIf Request_URI ^/be_Latn/ prefer-language=be-latn\n"
+#~ "SetEnvIf Request_URI ^/bn_BD/ prefer-language=bn-bd\n"
+#~ "SetEnvIf Request_URI ^/bn_IN/ prefer-language=bn-in\n"
+#~ "SetEnvIf Request_URI ^/bs_Cyrl/ prefer-language=bs-cyrl\n"
+#~ "SetEnvIf Request_URI ^/bs_Latn/ prefer-language=bs-latn\n"
+#~ "SetEnvIf Request_URI ^/de_AT/ prefer-language=de-at\n"
+#~ "SetEnvIf Request_URI ^/de_CH/ prefer-language=de-ch\n"
+#~ "SetEnvIf Request_URI ^/en_AU/ prefer-language=en-au\n"
+#~ "SetEnvIf Request_URI ^/en_CA/ prefer-language=en-ca\n"
+#~ "SetEnvIf Request_URI ^/en_GB/ prefer-language=en-gb\n"
+#~ "SetEnvIf Request_URI ^/en_IE/ prefer-language=en-ie\n"
+#~ "SetEnvIf Request_URI ^/en_PH/ prefer-language=en-ph\n"
+#~ "SetEnvIf Request_URI ^/en_US/ prefer-language=en-us\n"
+#~ "SetEnvIf Request_URI ^/en_ZA/ prefer-language=en-za\n"
+#~ "SetEnvIf Request_URI ^/es_AR/ prefer-language=es-ar\n"
+#~ "SetEnvIf Request_URI ^/es_MX/ prefer-language=es-mx\n"
+#~ "SetEnvIf Request_URI ^/es_PR/ prefer-language=es-pr\n"
+#~ "SetEnvIf Request_URI ^/es_US/ prefer-language=es-us\n"
+#~ "SetEnvIf Request_URI ^/fr_CA/ prefer-language=fr-ca\n"
+#~ "SetEnvIf Request_URI ^/nb_NO/ prefer-language=nb-no\n"
+#~ "SetEnvIf Request_URI ^/nl_BE/ prefer-language=nl-be\n"
+#~ "SetEnvIf Request_URI ^/pt_BR/ prefer-language=pt-br\n"
+#~ "SetEnvIf Request_URI ^/pt_PT/ prefer-language=pt-pt\n"
+#~ "SetEnvIf Request_URI ^/sr_Cyrl/ prefer-language=sr-cyrl\n"
+#~ "SetEnvIf Request_URI ^/sr_Latn/ prefer-language=sr-latn\n"
+#~ "SetEnvIf Request_URI ^/ur_PK/ prefer-language=ur-pk\n"
+#~ "SetEnvIf Request_URI ^/uz_Latn/ prefer-language=uz-latn\n"
+#~ "SetEnvIf Request_URI ^/zh_Hans/ prefer-language=zh-hans\n"
+#~ "SetEnvIf Request_URI ^/zh_Hant/ prefer-language=zh-hant\n"
+#~ "SetEnvIf Request_URI ^/zh_HK/ prefer-language=zh-hk\n"
+#~ msgstr ""
+#~ "<Directory /var/www/html>\n"
+#~ "    Options FollowSymLinks\n"
+#~ "    AllowOverride FileInfo\n"
+#~ "</Directory>\n"
+#~ "\n"
+#~ "<Files *.html>\n"
+#~ "    SetHandler type-map\n"
+#~ "</Files>\n"
+#~ "\n"
+#~ "# Виртуализация языка sub \"directories\"\n"
+#~ "AliasMatch ^(?:/(?:ach|af|ak|sq|am|anp|ar|ar_DZ|ar_MA|an|es_AR|hy|as|ast|de_AT|ay|az|ba|eu|bar|be|be_Latn|bn|bn_BD|bn_IN|brx|bs|bs_Cyrl|bs_Latn|br|bg|my|ca|km|ch|chr|hne|cgg|zh|zh_HK|zh_Hans|zh_Hant|ksh|kw|cr|hr|cs|da|doi|nl|nl_BE|dz|en|en_AU|en_CA|en_IE|en_PH|en_ZA|en_GB|en_US|eo|et|fo|fil|fi|frp|fr|fr_CA|fy|fur|ff|gd|gl|ka|de|el|kl|gu|gun|ht|ha|haw|he|hi|hu|is|ig|id|ia|ga|it|ja|jv|kab|kn|ks|csb|kk|rw|tlh|tlh-qaak|kok|ko|ku|ckb|ky|lo|la|lv|li|ln|lt|jbo|nds|lb|mk|mai|mg|ms|ml|mt|mnk|mi|arn|mr|mni|mn|me|mfe|nqo|nah|nap|ne|se|no|nb_NO|nb|nn|ny|oc|or|oj|os|pap|nso|fa|pms|pr|pl|pt|pt_BR|pt_PT|pa|ps|ro|rm|ru|sa|sat|sc|sco|sr|sr_Cyrl|sr_Latn|sh|sn|szl|sd|si|sk|sl|so|son|st|es|es_US|es_MX|es_PR|su|sw|sv|de_CH|tl|tg|ta|tt|te|th|bo|ti|ts|tr|tk|ug|uk|hsb|ur|ur_PK|uz|uz_Latn|ca@valencia|ve|vec|vi|wa|cy|vls|wo|sah|yi|yo|yue|zu)/)?(.*)?$ /var/www/html/$1\n"
+#~ "\n"
+#~ "# Сообщите mod_negotiation, какой язык предпочесть\n"
+#~ "SetEnvIf Request_URI ^/(ach|af|ak|sq|am|anp|ar|an|hy|as|ast|ay|az|ba|eu|bar|be|bn|brx|bs|br|bg|my|ca|km|ch|chr|hne|cgg|zh|ksh|kw|cr|hr|cs|da|doi|nl|dz|en|eo|et|fo|fil|fi|frp|fr|fy|fur|ff|gd|gl|ka|de|el|kl|gu|gun|ht|ha|haw|he|hi|hu|is|ig|id|ia|ga|it|ja|jv|kab|kn|ks|csb|kk|rw|tlh|tlh-qaak|kok|ko|ku|ckb|ky|lo|la|lv|li|ln|lt|jbo|nds|lb|mk|mai|mg|ms|ml|mt|mnk|mi|arn|mr|mni|mn|me|mfe|nqo|nah|nap|ne|se|no|nb|nn|ny|oc|or|oj|os|pap|nso|fa|pms|pr|pl|pt|pa|ps|ro|rm|ru|sa|sat|sc|sco|sr|sh|sn|szl|sd|si|sk|sl|so|son|st|es|su|sw|sv|tl|tg|ta|tt|te|th|bo|ti|ts|tr|tk|ug|uk|hsb|ur|uz|ca@valencia|ve|vec|vi|wa|cy|vls|wo|sah|yi|yo|yue|zu)/ prefer-language=$1\n"
+#~ "\n"
+#~ "# Языковые коды из Weblate, содержащие заглавные буквы и знаки подчеркивания, должны обрабатываться\n"
+#~ "# по-другому, а именно: язык, на который они ссылаются, должен быть в нижнем регистре с дефисом.\n"
+#~ "SetEnvIf Request_URI ^/ar_DZ/ prefer-language=ar-dz\n"
+#~ "SetEnvIf Request_URI ^/ar_MA/ prefer-language=ar-ma\n"
+#~ "SetEnvIf Request_URI ^/be_Latn/ prefer-language=be-latn\n"
+#~ "SetEnvIf Request_URI ^/bn_BD/ prefer-language=bn-bd\n"
+#~ "SetEnvIf Request_URI ^/bn_IN/ prefer-language=bn-in\n"
+#~ "SetEnvIf Request_URI ^/bs_Cyrl/ prefer-language=bs-cyrl\n"
+#~ "SetEnvIf Request_URI ^/bs_Latn/ prefer-language=bs-latn\n"
+#~ "SetEnvIf Request_URI ^/de_AT/ prefer-language=de-at\n"
+#~ "SetEnvIf Request_URI ^/de_CH/ prefer-language=de-ch\n"
+#~ "SetEnvIf Request_URI ^/en_AU/ prefer-language=en-au\n"
+#~ "SetEnvIf Request_URI ^/en_CA/ prefer-language=en-ca\n"
+#~ "SetEnvIf Request_URI ^/en_GB/ prefer-language=en-gb\n"
+#~ "SetEnvIf Request_URI ^/en_IE/ prefer-language=en-ie\n"
+#~ "SetEnvIf Request_URI ^/en_PH/ prefer-language=en-ph\n"
+#~ "SetEnvIf Request_URI ^/en_US/ prefer-language=en-us\n"
+#~ "SetEnvIf Request_URI ^/en_ZA/ prefer-language=en-za\n"
+#~ "SetEnvIf Request_URI ^/es_AR/ prefer-language=es-ar\n"
+#~ "SetEnvIf Request_URI ^/es_MX/ prefer-language=es-mx\n"
+#~ "SetEnvIf Request_URI ^/es_PR/ prefer-language=es-pr\n"
+#~ "SetEnvIf Request_URI ^/es_US/ prefer-language=es-us\n"
+#~ "SetEnvIf Request_URI ^/fr_CA/ prefer-language=fr-ca\n"
+#~ "SetEnvIf Request_URI ^/nb_NO/ prefer-language=nb-no\n"
+#~ "SetEnvIf Request_URI ^/nl_BE/ prefer-language=nl-be\n"
+#~ "SetEnvIf Request_URI ^/pt_BR/ prefer-language=pt-br\n"
+#~ "SetEnvIf Request_URI ^/pt_PT/ prefer-language=pt-pt\n"
+#~ "SetEnvIf Request_URI ^/sr_Cyrl/ prefer-language=sr-cyrl\n"
+#~ "SetEnvIf Request_URI ^/sr_Latn/ prefer-language=sr-latn\n"
+#~ "SetEnvIf Request_URI ^/ur_PK/ prefer-language=ur-pk\n"
+#~ "SetEnvIf Request_URI ^/uz_Latn/ prefer-language=uz-latn\n"
+#~ "SetEnvIf Request_URI ^/zh_Hans/ prefer-language=zh-hans\n"
+#~ "SetEnvIf Request_URI ^/zh_Hant/ prefer-language=zh-hant\n"
+#~ "SetEnvIf Request_URI ^/zh_HK/ prefer-language=zh-hk\n"
+
+#~ msgid "If this is not done or done incorrectly, then you will see something like the following when viewing any page:"
+#~ msgstr "Если это не сделано или сделано неправильно, то при просмотре любой страницы вы увидите что-то вроде следующего:"
+
+#~ msgid "This is the result of the actual TypeMap being returned to the browser, rather than the translated file."
+#~ msgstr "В результате браузеру возвращается реальная карта TypeMap, а не переведенный файл."
+
+#~ msgid "Note that this also depends on `mod_alias` and `mod_negotiation` being enabled, but this happens by default when installing apache2 on Debian."
+#~ msgstr "Обратите внимание, что это также зависит от того, включены ли `mod_alias` и `mod_negotiation`, но это происходит по умолчанию при установке apache2 на Debian."
