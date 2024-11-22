@@ -148,7 +148,7 @@ Place the following structure at `<module>/src/main/play/` or, for **build flavo
     │   ├── video-url.txt               (URL to a video introducing the app)
     │   ├── whatsnew                    (alternative changelog location; single file, no .txt)
     │   └── graphics
-    │       ├── icon                    (app icon; mandatory if your app doesn't include any png icon)
+    │       ├── icon                    (app icon)
     │       │   └── *.(png|jpg)         1 image, usually 512x512
     │       ├── feature-graphic         (promo banner, shown on top of the app desc in F-Droid client)
     │       │   └── *.(png|jpg)         1 image, usually 1024x500
