@@ -26,7 +26,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
 "POT-Creation-Date: 2024-11-21 18:10+0100\n"
-"PO-Revision-Date: 2024-11-26 15:53+0000\n"
+"PO-Revision-Date: 2024-11-27 13:22+0000\n"
 "Last-Translator: gfbdrgng <hnaofegnp@hldrive.com>\n"
 "Language-Team: Russian <https://hosted.weblate.org/projects/f-droid/website-posts/ru/>\n"
 "Language: ru\n"
@@ -18309,81 +18309,81 @@ msgstr ""
 #: _posts/2022-12-18-unifiedpush.md
 #, no-wrap
 msgid "UnifiedPush: a decentralized, open-source push notification protocol"
-msgstr ""
+msgstr "UnifiedPush: децентрализованный протокол push-уведомлений с открытым исходным кодом"
 
 #. type: Plain text
 #: _posts/2022-12-18-unifiedpush.md
 msgid "A modern Android smartphone relies on a lot of services, from app stores and calendars to messaging and push notifications. Most of them have open alternatives, but until now, the only option for push notifications was Google's proprietary service, *Firebase Cloud Messaging* (FCM). **UnifiedPush is a new alternative that allows you to get push notifications without being tied to a single company**."
-msgstr ""
+msgstr "Современный смартфон на базе Android полагается на множество сервисов, от магазинов приложений и календарей до обмена сообщениями и push-уведомлений. У большинства из них есть открытые альтернативы, но до сих пор единственным вариантом для получения push-уведомлений был собственный сервис Google *Firebase Cloud Messaging* (FCM). **UnifiedPush - это новая альтернатива, которая позволяет получать push-уведомления без привязки к одной компании**."
 
 #. type: Plain text
 #: _posts/2022-12-18-unifiedpush.md
 msgid "Push notifications are essential to the modern mobile experience because they allow apps to communicate with users in real-time, even when not actively in use.  Relying on Google-provided push notifications is a concern for both privacy and independence. The proprietary FCM library cannot be included in F-Droid apps and relies on having Google services. As a result, it is common to see FOSS applications adopt a persistent direct connection between the application and the server as an alternative."
-msgstr ""
+msgstr "Push-уведомления являются неотъемлемой частью современного мобильного опыта, поскольку они позволяют приложениям общаться с пользователями в режиме реального времени, даже если они не используются активно.  Полагаясь на push-уведомления, предоставляемые Google, вы нарушаете конфиденциальность и независимость. Собственная библиотека FCM не может быть включена в приложения для F-Droid и полагается на наличие сервисов Google. В результате в качестве альтернативы в FOSS-приложениях часто используется постоянное прямое соединение между приложением и сервером."
 
 #. type: Title ##
 #: _posts/2022-12-18-unifiedpush.md
 #, no-wrap
 msgid "The limitations of direct app-server connections"
-msgstr ""
+msgstr "Ограничения прямых соединений приложений с серверами"
 
 #. type: Plain text
 #: _posts/2022-12-18-unifiedpush.md
 msgid "While it is technically possible for each application to connect to its own server and receive notifications directly, there are several reasons why this approach may not be practical or effective."
-msgstr ""
+msgstr "Хотя технически возможно, чтобы каждое приложение подключалось к собственному серверу и получало уведомления напрямую, есть несколько причин, по которым такой подход может оказаться непрактичным и неэффективным."
 
 #. type: Plain text
 #: _posts/2022-12-18-unifiedpush.md
 msgid "Establishing and maintaining a direct connection between an app and a server can be resource-intensive, which can strain the device's battery, CPU, and network resources."
-msgstr ""
+msgstr "Установление и поддержание прямого соединения между приложением и сервером может быть ресурсоемким, что приводит к снижению нагрузки на аккумулятор, процессор и сетевые ресурсы устройства."
 
 #. type: Bullet: '* '
 #: _posts/2022-12-18-unifiedpush.md
 msgid "To minimize resource load, the operating system (OS) tries to suspend applications that are not actively in use. However, if each app actively maintains a server connection, the OS cannot suspend them."
-msgstr ""
+msgstr "Чтобы минимизировать нагрузку на ресурсы, операционная система (ОС) пытается приостановить работу приложений, которые активно не используются. Однако если каждое приложение активно поддерживает соединение с сервером, ОС не может приостановить их работу."
 
 #. type: Bullet: '* '
 #: _posts/2022-12-18-unifiedpush.md
 msgid "Multiple apps pinging their own servers at variable intervals can prevent the device from going into a low-power sleep mode, which can drain the device's battery faster."
-msgstr ""
+msgstr "Несколько приложений, пингующих свои собственные серверы через разные промежутки времени, могут помешать устройству перейти в спящий режим с низким энергопотреблением, что приведет к более быстрому разряду батареи."
 
 #. type: Bullet: '* '
 #: _posts/2022-12-18-unifiedpush.md
 msgid "Giving one special app the ability to make priority connections minimizes these problems and allows for the OS to efficiently suspend other applications and go to sleep, saving resources and reducing battery consumption."
-msgstr ""
+msgstr "Предоставление одному специальному приложению возможности устанавливать приоритетные соединения сводит эти проблемы к минимуму и позволяет ОС эффективно приостанавливать работу других приложений и переходить в спящий режим, экономя ресурсы и снижая расход батареи."
 
 #. type: Bullet: '* '
 #: _posts/2022-12-18-unifiedpush.md
 msgid "As a developer, managing background services and optimizing connections can be complex and time-consuming. By using a push notification service, you can offload this responsibility to a dedicated app, allowing you to focus on other aspects of your app."
-msgstr ""
+msgstr "Для разработчика управление фоновыми службами и оптимизация соединений могут быть сложными и отнимать много времени. Используя службу push-уведомлений, вы можете переложить эти обязанности на специальное приложение, что позволит вам сосредоточиться на других аспектах работы вашего приложения."
 
 #. type: Title ##
 #: _posts/2022-12-18-unifiedpush.md
 #, no-wrap
 msgid "How do I start with UnifiedPush, as a user?"
-msgstr ""
+msgstr "Как начать работу с UnifiedPush в качестве пользователя?"
 
 #. type: Plain text
 #: _posts/2022-12-18-unifiedpush.md
 msgid "Applications that support UnifiedPush can receive notifications via a dedicated UnifiedPush application that maintains a single server connection to receive all notifications. We call this \"UnifiedPush application\" a *distributor*; it distributes push notifications to other apps on the device. You can choose which distributor you want to use, self-host the server part, or even create your own. For more information on distributors, check out the [full list](https://unifiedpush.org/users/distributors/)."
-msgstr ""
+msgstr "Приложения, поддерживающие UnifiedPush, могут получать уведомления через специальное приложение UnifiedPush, которое поддерживает единое серверное соединение для получения всех уведомлений. Мы называем это \"приложение UnifiedPush\" *распространителем*; оно распределяет push-уведомления между другими приложениями на устройстве. Вы можете выбрать, какой дистрибутор вы хотите использовать, самостоятельно разместить серверную часть или даже создать свой собственный. Более подробную информацию о дистрибьюторах можно найти в [полном списке](https://unifiedpush.org/users/distributors/)."
 
 #. type: Plain text
 #: _posts/2022-12-18-unifiedpush.md
 msgid "To use UnifiedPush on an application that supports it, you have to install and configure your distributor. You can use [UP-Example](https://f-droid.org/packages/org.unifiedpush.example/) as a simple test app."
-msgstr ""
+msgstr "Чтобы использовать UnifiedPush в приложении, которое его поддерживает, необходимо установить и настроить дистрибутив. Вы можете использовать [UP-Example](https://f-droid.org/packages/org.unifiedpush.example/) в качестве простого тестового приложения."
 
 #. type: Plain text
 #: _posts/2022-12-18-unifiedpush.md
 #, no-wrap
 msgid "![An animated SVG that shows how all distributors and apps are interchangeable and still work together through the UnifiedPush protocol]({% asset posts/2022-12-18-unifiedpush/animation-options.svg %})  \n"
-msgstr ""
+msgstr "![Анимированный SVG, показывающий, как все дистрибьюторы и приложения взаимозаменяемы и при этом работают вместе по протоколу UnifiedPush]({% asset posts/2022-12-18-unifiedpush/animation-options.svg %})  \n"
 
 #. type: Plain text
 #: _posts/2022-12-18-unifiedpush.md
 #, no-wrap
 msgid "*All distributors are compatible with all apps*\n"
-msgstr ""
+msgstr "*Все дистрибьюторы совместимы со всеми приложениями*\n"
 
 #. type: Title ###
 #: _posts/2022-12-18-unifiedpush.md
@@ -18394,152 +18394,152 @@ msgstr "TL;DR на Android"
 #. type: Plain text
 #: _posts/2022-12-18-unifiedpush.md
 msgid "The easiest way to set UnifiedPush up with an [application that supports it](https://unifiedpush.org/users/apps/) is to:"
-msgstr ""
+msgstr "Самый простой способ установить UnifiedPush с [поддерживающим его приложением](https://unifiedpush.org/users/apps/) - это:"
 
 #. type: Bullet: '1. '
 #: _posts/2022-12-18-unifiedpush.md
 msgid "Install the [ntfy](https://ntfy.sh/#subscribe-phone) Android application; this is your distributor"
-msgstr ""
+msgstr "Установите приложение [ntfy](https://ntfy.sh/#subscribe-phone) для Android; это ваш дистрибьютор"
 
 #. type: Bullet: '2. '
 #: _posts/2022-12-18-unifiedpush.md
 msgid "Open it, and disable battery optimization for it"
-msgstr ""
+msgstr "Откройте его и отключите оптимизацию батареи для него"
 
 #. type: Bullet: '3. '
 #: _posts/2022-12-18-unifiedpush.md
 msgid "Turn on UnifiedPush in the application; it will detect ntfy automatically. (This step depends on the app's UX)"
-msgstr ""
+msgstr "Включите UnifiedPush в приложении; он обнаружит ntfy автоматически. (Этот шаг зависит от UX приложения)"
 
 #. type: Plain text
 #: _posts/2022-12-18-unifiedpush.md
 #, no-wrap
 msgid "![A screenshot of the distributor selection screen showing Gotify-UP, Google Services, ntfy, UP-FCM Distributor, NextPush, NoProvider2Push]({% asset posts/2022-12-18-unifiedpush/distributor-selection.png %}){: style=\"max-height:50%;\" }  \n"
-msgstr ""
+msgstr "![Скриншот экрана выбора дистрибьютора с изображением Gotify-UP, Google Services, ntfy, UP-FCM Distributor, NextPush, NoProvider2Push]({% asset posts/2022-12-18-unifiedpush/distributor-selection.png %}){: style=\"max-height:50%;\" }  \n"
 
 #. type: Plain text
 #: _posts/2022-12-18-unifiedpush.md
 msgid "_When there are multiple distributors available (yes, I know I have too many :P), you can pick between them. When there's just one, it is automatically selected._"
-msgstr ""
+msgstr "_Когда доступно несколько дистрибьюторов (да, я знаю, что у меня их слишком много :P), вы можете выбрать один из них. Когда есть только один, он выбирается автоматически._"
 
 #. type: Title ##
 #: _posts/2022-12-18-unifiedpush.md
 #, no-wrap
 msgid "How to add UnifiedPush support to my app, as a developer?"
-msgstr ""
+msgstr "Как добавить поддержку UnifiedPush в мое приложение, будучи разработчиком?"
 
 #. type: Plain text
 #: _posts/2022-12-18-unifiedpush.md
 msgid "To add UnifiedPush support to your application, you first need to ensure that your server is UnifiedPush compatible: it must be able to send notifications to different endpoints, which are URLs pointing to various servers used by users. If your application uses a gateway to work with Google push notifications, modifying the gateway can make it compatible with UnifiedPush."
-msgstr ""
+msgstr "Чтобы добавить поддержку UnifiedPush в свое приложение, сначала нужно убедиться, что ваш сервер совместим с UnifiedPush: он должен быть способен отправлять уведомления на различные конечные точки, которые представляют собой URL-адреса, указывающие на различные серверы, используемые пользователями. Если ваше приложение использует шлюз для работы с push-уведомлениями Google, модификация шлюза может сделать его совместимым с UnifiedPush."
 
 #. type: Plain text
 #: _posts/2022-12-18-unifiedpush.md
 msgid "On the mobile app side, once the user enables UnifiedPush, you have to check for installed distributors on the user's device. The app should then prompt the user to select the distributor they want to use. Afterward, you can register with it."
-msgstr ""
+msgstr "На стороне мобильного приложения, когда пользователь включает UnifiedPush, необходимо проверить наличие установленных дистрибьюторов на устройстве пользователя. Затем приложение должно предложить пользователю выбрать дистрибьютора, которого он хочет использовать. После этого можно зарегистрироваться у него."
 
 #. type: Plain text
 #: _posts/2022-12-18-unifiedpush.md
 msgid "The selected distributor will then send a new endpoint, which the application should forward to its server. Then, the app prepares to receive data sent to that endpoint by registering an Android BroadcastReceiver. This BroadcastReceiver handles the messages coming from your server (often a ping to fetch the notifications)."
-msgstr ""
+msgstr "Выбранный дистрибьютор отправит новую конечную точку, которую приложение должно перенаправить на свой сервер. Затем приложение готовится к приему данных, отправленных на эту конечную точку, регистрируя Android BroadcastReceiver. Этот BroadcastReceiver обрабатывает сообщения, поступающие с вашего сервера (часто это пинг для получения уведомлений)."
 
 #. type: Plain text
 #: _posts/2022-12-18-unifiedpush.md
 msgid "It is important to register the application with the selected distributor every time the application starts, in case they get out of sync. If the application receives the same endpoint again, it does not need to re-register it."
-msgstr ""
+msgstr "Важно регистрировать приложение у выбранного дистрибьютора при каждом запуске приложения, на случай если они рассинхронизируются. Если приложение снова получит ту же конечную точку, ему не нужно будет регистрировать ее заново."
 
 #. type: Plain text
 #: _posts/2022-12-18-unifiedpush.md
 msgid "Most of this is handled by the UnifiedPush library. You can find more detailed instructions on [our documentation website](https://unifiedpush.org/developers/android/)."
-msgstr ""
+msgstr "Большую часть этой работы выполняет библиотека UnifiedPush. Более подробные инструкции вы можете найти на [нашем сайте документации](https://unifiedpush.org/developers/android/)."
 
 #. type: Plain text
 #: _posts/2022-12-18-unifiedpush.md
 msgid "If you need help with implementing UnifiedPush in your app, we are happy to answer any questions you have on our [Matrix chat](https://matrix.to/#/#unifiedpush:matrix.org)."
-msgstr ""
+msgstr "Если вам нужна помощь с внедрением UnifiedPush в ваше приложение, мы будем рады ответить на любые ваши вопросы в нашем [Matrix chat](https://matrix.to/#/#unifiedpush:matrix.org)."
 
 #. type: Plain text
 #: _posts/2022-12-18-unifiedpush.md
 #, no-wrap
 msgid "*Note: This blog post focuses on Android; instructions to add UnifiedPush support on a Linux application can be found [on our website](https://unifiedpush.org/developers/go_c/).*\n"
-msgstr ""
+msgstr "*Примечание: эта статья в блоге посвящена Android; инструкции по добавлению поддержки UnifiedPush в приложения для Linux можно найти [на нашем сайте](https://unifiedpush.org/developers/go_c/).*\n"
 
 #. type: Title ##
 #: _posts/2022-12-18-unifiedpush.md
 #, no-wrap
 msgid "How does UnifiedPush work under the hood?"
-msgstr ""
+msgstr "Как работает UnifiedPush под капотом?"
 
 #. type: Plain text
 #: _posts/2022-12-18-unifiedpush.md
 msgid "At its core, UnifiedPush is a specification. That specification is split into two halves:"
-msgstr ""
+msgstr "По своей сути UnifiedPush - это спецификация. Эта спецификация разделена на две половины:"
 
 #. type: Bullet: '* '
 #: _posts/2022-12-18-unifiedpush.md
 msgid "On the device (client) side, it defines an Application Programming Interface (API) to allow **any end-user application** (ex. your messaging app) to communicate with **any distributor application** (ntfy, NextPush, etc.)"
-msgstr ""
+msgstr "На стороне устройства (клиента) он определяет интерфейс прикладного программирования (API), позволяющий **любому приложению конечного пользователя** (например, вашему приложению для обмена сообщениями) взаимодействовать с **любым приложением-распространителем** (ntfy, NextPush и т. д.)"
 
 #. type: Bullet: '* '
 #: _posts/2022-12-18-unifiedpush.md
 msgid "On the server side, the API describes how the **application server** (Matrix homeserver, Mastodon instance, etc.) sends messages to the **push server** (ntfy server, Nextcloud server, etc.)."
-msgstr ""
+msgstr "На стороне сервера API описывает, как **сервер приложений** (домашний сервер Matrix, экземпляр Mastodon и т. д.) отправляет сообщения на **push-сервер** (сервер ntfy, сервер Nextcloud и т. д.)."
 
 #. type: Plain text
 #: _posts/2022-12-18-unifiedpush.md
 msgid "Our client libraries and the reference proxies assist in implementing both sides of the specification, respectively."
-msgstr ""
+msgstr "Наши клиентские библиотеки и эталонные прокси помогают реализовать обе стороны спецификации соответственно."
 
 #. type: Plain text
 #: _posts/2022-12-18-unifiedpush.md
 msgid "To obtain a UnifiedPush endpoint (capability URL to send notifications to), the end-user application registers with the UnifiedPush distributor, which maintains a constant connection with the push server. Upon registration, the distributor provides the application with a unique URL pointing to the push server. This endpoint URL is then transmitted by the application client to the application server."
-msgstr ""
+msgstr "Чтобы получить конечную точку UnifiedPush (URL-адрес возможности для отправки уведомлений), приложение конечного пользователя регистрируется у дистрибьютора UnifiedPush, который поддерживает постоянное соединение с push-сервером. После регистрации дистрибьютор предоставляет приложению уникальный URL, указывающий на push-сервер. Этот URL конечной точки затем передается клиентом приложения на сервер приложений."
 
 #. type: Plain text
 #: _posts/2022-12-18-unifiedpush.md
 msgid "When the application server needs to send a push message to the end-user application, it sends the message to the push server with a simple HTTP POST request. The push server then forwards the push message to the distributor, which delivers it to the end-user application."
-msgstr ""
+msgstr "Когда серверу приложений нужно отправить push-сообщение приложению конечного пользователя, он отправляет его на push-сервер с помощью простого HTTP POST-запроса. Затем push-сервер пересылает push-сообщение дистрибьютору, который доставляет его приложению конечного пользователя."
 
 #. type: Plain text
 #: _posts/2022-12-18-unifiedpush.md
 msgid "One key feature of UnifiedPush is that the communication between the push server and the distributor is not specified. This means that a variety of technologies can be employed, such as WebSockets, Server-Sent Events, XMPP, raw TCP, or even SMS, whatever works best for the user."
-msgstr ""
+msgstr "Ключевой особенностью UnifiedPush является то, что связь между push-сервером и распространителем не задается. Это означает, что можно использовать различные технологии, такие как WebSockets, Server-Sent Events, XMPP, raw TCP или даже SMS - все, что больше подходит пользователю."
 
 #. type: Plain text
 #: _posts/2022-12-18-unifiedpush.md
 msgid "![An animated SVG showing a message moving through all the steps of UnifiedPush from the Application Server to the Push Server to (on the phone) Distributor app and the end-user application, which then wakes up and emits an Android notification]({% asset posts/2022-12-18-unifiedpush/animation-flow.svg %})"
-msgstr ""
+msgstr "![Анимированный SVG, показывающий, как сообщение проходит все этапы UnifiedPush от сервера приложений до Push-сервера, приложения-распространителя и приложения конечного пользователя (на телефоне), которое затем просыпается и отправляет уведомление для Android]({% asset posts/2022-12-18-unifiedpush/animation-flow.svg %})"
 
 #. type: Plain text
 #: _posts/2022-12-18-unifiedpush.md
 msgid "The distributor uses platform-specific IPC mechanisms, such as Broadcast Intents on Android or D-Bus on Linux, to wake the app and allow it to handle the push message. The app can then process the data and decide whether to show a notification based on the content. It is important to note that UnifiedPush does not handle the display of user-visible notifications; it only delivers data to the app. Consequently, apps can support notification features in various platforms without involvement from UnifiedPush or the server."
-msgstr ""
+msgstr "Распространитель использует специфические для платформы механизмы IPC, такие как Broadcast Intents в Android или D-Bus в Linux, чтобы разбудить приложение и позволить ему обработать push-сообщение. Затем приложение может обработать данные и решить, показывать ли уведомление, основываясь на его содержании. Важно отметить, что UnifiedPush не обрабатывает отображение видимых пользователем уведомлений; он только доставляет данные в приложение. Следовательно, приложения могут поддерживать функции уведомлений на различных платформах без участия UnifiedPush или сервера."
 
 #. type: Plain text
 #: _posts/2022-12-18-unifiedpush.md
 msgid "In cases where the application server does not natively support UnifiedPush, a Push Gateway can convert application-specific notifications to the UnifiedPush server protocol. Some popular Push Gateways, such as the one for Matrix, are integrated directly into push servers for self-hosting convenience. In addition, Rewrite Proxies are used in rare cases where the push server does not support UnifiedPush, such as the FCM distributor sending UnifiedPush-over-FCM."
-msgstr ""
+msgstr "В тех случаях, когда сервер приложений не поддерживает UnifiedPush, Push-шлюз может преобразовать уведомления, специфичные для приложения, в протокол сервера UnifiedPush. Некоторые популярные Push-шлюзы, например, для Matrix, интегрированы непосредственно в push-серверы для удобства самостоятельной установки. Кроме того, Rewrite Proxies используются в редких случаях, когда push-сервер не поддерживает UnifiedPush, например, дистрибьютор FCM отправляет UnifiedPush-over-FCM."
 
 #. type: Plain text
 #: _posts/2022-12-18-unifiedpush.md
 msgid "![A static image showing all the components described above linking to one another]({% asset posts/2022-12-18-unifiedpush/detailed-component-diagram.png %})  _Push Provider = Push Server_"
-msgstr ""
+msgstr "![Статическая картинка, показывающая все компоненты, описанные выше, связанные друг с другом]({% asset posts/2022-12-18-unifiedpush/detailed-component-diagram.png %}) _Push Provider = Push Server_"
 
 #. type: Title ##
 #: _posts/2022-12-18-unifiedpush.md
 #, no-wrap
 msgid "Compatibility between UnifiedPush and WebPush"
-msgstr ""
+msgstr "Совместимость между UnifiedPush и WebPush"
 
 #. type: Plain text
 #: _posts/2022-12-18-unifiedpush.md
 msgid "Now, you might be looking at the elephant in the room: WebPush (RFC8030). WebPush is the open standard that browsers use for their push notifications. And the good news is that UnifiedPush is WebPush compatible ... mostly."
-msgstr ""
+msgstr "Теперь, возможно, вы смотрите на слона в комнате: WebPush (RFC8030). WebPush - это открытый стандарт, который браузеры используют для своих push-уведомлений. И хорошая новость заключается в том, что UnifiedPush совместим с WebPush... в основном."
 
 #. type: Plain text
 #: _posts/2022-12-18-unifiedpush.md
 msgid "Basically, application servers that support WebPush but *do not need its advanced features* and *do not restrict push to only popular WebPush servers* (those from browser vendors) should work without problems with UnifiedPush providers. We are working on solutions to ensure better and more stable WebPush support."
-msgstr ""
+msgstr "В принципе, серверы приложений, которые поддерживают WebPush, но *не нуждаются в его расширенных возможностях* и *не ограничивают push только популярными серверами WebPush* (те, что от производителей браузеров), должны без проблем работать с провайдерами UnifiedPush. Мы работаем над решениями для обеспечения лучшей и более стабильной поддержки WebPush."
 
 #. type: Title ##
 #: _posts/2022-12-18-unifiedpush.md
@@ -18555,32 +18555,32 @@ msgstr "Чем больше приложений используют UnifiedPus
 #. type: Bullet: '* '
 #: _posts/2022-12-18-unifiedpush.md
 msgid "Improving WebPush support will also help to increase the number of apps that can use UnifiedPush. We are working towards better WebPush compatibility with UnifiedPush."
-msgstr ""
+msgstr "Улучшение поддержки WebPush также поможет увеличить количество приложений, которые могут использовать UnifiedPush. Мы работаем над улучшением совместимости WebPush с UnifiedPush."
 
 #. type: Bullet: '* '
 #: _posts/2022-12-18-unifiedpush.md
 msgid "What about built-in distributors in custom Android ROMs like Lineage OS or /e/OS (murena)? Their support could hugely accelerate UnifiedPush-support in the De-Googled community."
-msgstr ""
+msgstr "А как насчет встроенных дистрибутивов в пользовательских ПЗУ Android, таких как Lineage OS или /e/OS (murena)? Их поддержка могла бы значительно ускорить поддержку UnifiedPush в сообществе De-Googled."
 
 #. type: Bullet: '* '
 #: _posts/2022-12-18-unifiedpush.md
 msgid "Linux platforms can also benefit from UnifiedPush. Improving the Linux specification and increasing its adoption will help improve battery life and reactivity."
-msgstr ""
+msgstr "Платформы Linux также могут получить преимущества от UnifiedPush. Улучшение спецификации Linux и ее более широкое внедрение поможет увеличить время автономной работы и повысить реактивность."
 
 #. type: Bullet: '* '
 #: _posts/2022-12-18-unifiedpush.md
 msgid "As UnifiedPush is very flexible, some platforms could achieve even greater efficiency gains by using low-power hardware for the distributor: keeping it on the modem or a low-power core while the phone is asleep."
-msgstr ""
+msgstr "Поскольку UnifiedPush очень гибок, некоторые платформы могут добиться еще большего повышения эффективности, используя для распределителя маломощное оборудование: держать его на модеме или маломощном ядре, пока телефон находится в спящем режиме."
 
 #. type: Plain text
 #: _posts/2022-12-18-unifiedpush.md
 msgid "At the end of the day, if you use a Matrix or Mastodon app or one of the other [supported apps](https://unifiedpush.org/users/apps/) on Android, there's a good chance that you can use UnifiedPush to get your push notifications without relying on Google. You can start using UnifiedPush today by just installing [ntfy](https://ntfy.sh/#subscribe-phone) or [choosing another distributor](https://unifiedpush.org/users/distributors/)."
-msgstr ""
+msgstr "В конце концов, если вы используете приложение Matrix, Mastodon или одно из других [поддерживаемых приложений](https://unifiedpush.org/users/apps/) на Android, есть большая вероятность, что вы можете использовать UnifiedPush для получения push-уведомлений, не полагаясь на Google. Вы можете начать использовать UnifiedPush уже сегодня, просто установив [ntfy](https://ntfy.sh/#subscribe-phone) или [выбрав другой дистрибутив](https://unifiedpush.org/users/distributors/)."
 
 #. type: Plain text
 #: _posts/2022-12-18-unifiedpush.md
 msgid "If you are an app developer interested in your app receiving push notifications when installed from F-Droid and allowing your users to have independent, self-hosted infrastructure, check out UnifiedPush and feel free to [talk to us](https://matrix.to/#/#unifiedpush:matrix.org) if you have any questions!"
-msgstr ""
+msgstr "Если вы разработчик приложений, заинтересованный в том, чтобы ваше приложение получало push-уведомления при установке с F-Droid и позволяло вашим пользователям иметь независимую, самостоятельную инфраструктуру, ознакомьтесь с UnifiedPush и обращайтесь к нам [https://matrix.to/#/#unifiedpush:matrix.org), если у вас возникнут вопросы!"
 
 #. type: Yaml Front Matter Hash Value: title
 #: _posts/2022-12-22-third-audit-results.md
@@ -18591,348 +18591,346 @@ msgstr "Результаты третьего аудита"
 #. type: Plain text
 #: _posts/2022-12-22-third-audit-results.md
 msgid "We received an audit on the new \"index-v2\" work in official Android client app + API (3 days) and the new front end webserver setup (1 day).  There were no findings for the webserver setup, so the analysis in this post deals with the F-Droid client app.  The audit was conducted by [Radically Open Security](https://www.radicallyopensecurity.com), which is a natural partner for F-Droid since they share a focus on free software and open processes.  Thanks to [NLnet](https://nlnet.nl) for finding the auditor and covering the costs of hiring them.  We are making the original report available for [download]({% asset posts/2022-12-22-third-audit-results/report_nlnet-ngip-trackingthetrackers.pdf %})."
-msgstr ""
+msgstr "Мы получили аудит по новой работе \"index-v2\" в официальном клиентском приложении для Android + API (3 дня) и новой настройке фронт-энд веб-сервера (1 день).  По веб-серверу не было найдено никаких находок, поэтому анализ в этом посте касается клиентского приложения F-Droid.  Аудит проводился компанией [Radically Open Security](https://www.radicallyopensecurity.com), которая является естественным партнером для F-Droid, поскольку они разделяют ориентацию на свободное программное обеспечение и открытые процессы.  Спасибо [NLnet](https://nlnet.nl) за поиск аудитора и покрытие расходов на его наем.  Мы предоставляем оригинальный отчет для [скачивания]({% asset posts/2022-12-22-third-audit-results/report_nlnet-ngip-trackingthetrackers.pdf %})."
 
 #. type: Plain text
 #: _posts/2022-12-22-third-audit-results.md
-#, fuzzy
-#| msgid "For more information about F-Droid's security practices, see the documentation about the [Security Model]({{ site.baseurl }}/docs/Security_Model/)."
 msgid "This post was written in the spirit of transparency with technical detail about the risks of each vulnerability.  We welcome further scrutiny.  For more information about F-Droid's security practices, see the documentation about the [Security Model]({{ site.baseurl }}/docs/Security_Model/)."
-msgstr "Для получения дополнительной информации о практике безопасности F-Droid смотрите документацию о [Модели безопасности]({{ site.baseurl }}/docs/Security_Model/)."
+msgstr "Этот пост был написан в духе прозрачности с техническими подробностями о рисках каждой уязвимости.  Мы приветствуем дальнейшее изучение.  Более подробную информацию о методах обеспечения безопасности F-Droid можно найти в документации по [Модели безопасности]({{ site.baseurl }}/docs/Security_Model/)."
 
 #. type: Title ##
 #: _posts/2022-12-22-third-audit-results.md
 #, no-wrap
 msgid "CLN-002 -- XML parsers might be vulnerable to XXE attacks"
-msgstr ""
+msgstr "CLN-002 -- Парсеры XML могут быть уязвимы для XXE-атак"
 
 #. type: Bullet: '* '
 #: _posts/2022-12-22-third-audit-results.md
 msgid "Vulnerability type: Input validation"
-msgstr ""
+msgstr "Тип уязвимости: Проверка правильности ввода"
 
 #. type: Bullet: '* '
 #: _posts/2022-12-22-third-audit-results.md
 msgid "Threat level: Elevated"
-msgstr ""
+msgstr "Уровень угрозы: Повышенный"
 
 #. type: Plain text
 #: _posts/2022-12-22-third-audit-results.md
 msgid "The application's XML parser implementation might be vulnerable to XML External Entity (XXE) attacks."
-msgstr ""
+msgstr "Реализация XML-парсера приложения может быть уязвима к атакам XML External Entity (XXE)."
 
 #. type: Title ####
 #: _posts/2022-12-22-third-audit-results.md
 #, no-wrap
 msgid "Impact"
-msgstr ""
+msgstr "Воздействие"
 
 #. type: Plain text
 #: _posts/2022-12-22-third-audit-results.md
 msgid "If the XML parser has no restrictions for external and internal entities, then this might lead to arbitrary file disclosures or server-side request forgery (SSRF) vulnerabilities when XML input is parsed."
-msgstr ""
+msgstr "Если парсер XML не имеет ограничений для внешних и внутренних сущностей, то это может привести к раскрытию произвольных файлов или уязвимостям подделки запросов на стороне сервера (SSRF) при разборе XML-ввода."
 
 #. type: Title ###
 #: _posts/2022-12-22-third-audit-results.md
 #, no-wrap
 msgid "Our Response"
-msgstr ""
+msgstr "Наш ответ"
 
 #. type: Plain text
 #: _posts/2022-12-22-third-audit-results.md
 msgid "The original index file, the version 0 format, is an XML file generated as part of any repo.  It is available at either _index.xml_ or the more recent signed version at _index.jar_.  Recent versions of the client will always try _index-v1.jar_ first, which is a signed JSON format.  If that is not available, the client will fallback to _index.jar_.  _index.jar_ is also used for the \"nearby\" app swapping functionality.  All of these _index.jar_ files must pass the signature verification before the XML is parsed."
-msgstr ""
+msgstr "Оригинальный индексный файл, формат версии 0, представляет собой XML-файл, создаваемый как часть любого репозитория.  Он доступен либо по адресу _index.xml_, либо по адресу _index.jar_ - более новая подписанная версия.  Последние версии клиента всегда сначала пробуют _index-v1.jar_, который представляет собой подписанный формат JSON.  Если он недоступен, клиент вернется к _index.jar_.  _index.jar_ также используется для функции замены приложений \"поблизости\".  Все эти файлы _index.jar_ должны пройти проверку подписи перед разбором XML."
 
 #. type: Plain text
 #: _posts/2022-12-22-third-audit-results.md
 msgid "Successful exploitation of this would require either a) the attacker was able to get the target to add a malicious repo, or b) the attacker was able to get the repo signing keys and then break into an existing repo's server and replace the index files.  For example, a malicious actor could try to exploit someone via Nearby app swapping, so only get apps from people you trust.  The way that the client is set up to parse the XML was vulnerable, and would allow a successful attacker to read files that the F-Droid app can read"
-msgstr ""
+msgstr "Для успешного использования этой возможности потребуется либо а) заставить злоумышленника добавить вредоносное репо, либо б) получить ключи подписи репо, а затем взломать сервер существующего репо и заменить индексные файлы.  Например, злоумышленник может попытаться использовать кого-то через обмен приложениями поблизости, поэтому получайте приложения только от людей, которым вы доверяете.  Способ, которым клиент настроен для разбора XML, оказался уязвимым и позволил бы успешному злоумышленнику читать файлы, которые может читать приложение F-Droid"
 
 #. type: Plain text
 #: _posts/2022-12-22-third-audit-results.md
 msgid "For f-droid.org and the Guardian Project repo, the index files are monitored, and changes to them are logged. So we can say with high confidence that _index-v1.jar_ was never removed, which is a prerequisite for exploiting this vulnerability."
-msgstr ""
+msgstr "Для f-droid.org и репо Guardian Project индексные файлы отслеживаются, и их изменения регистрируются. Поэтому мы можем с большой долей уверенности сказать, что _index-v1.jar_ никогда не удалялся, что является необходимым условием для эксплуатации этой уязвимости."
 
 #. type: Plain text
 #: _posts/2022-12-22-third-audit-results.md
 msgid "F-Droid client v1.15.4 disables all support for XML External Entities. The v1.16-alpha0 no longer supports XML indexes at all, and all code related to the XML index parsing and generation was removed.  We will also be working on improving the security of adding repos as part of the [FFDW-DVD]({% post_url 2022-02-05-decentralizing-distribution %}) funding."
-msgstr ""
+msgstr "В клиенте F-Droid версии 1.15.4 полностью отключена поддержка внешних сущностей XML. Версия v1.16-alpha0 больше не поддерживает XML-индексы вообще, и весь код, связанный с разбором и генерацией XML-индексов, был удален.  Мы также будем работать над улучшением безопасности добавления репозиториев в рамках финансирования [FFDW-DVD]({% post_url 2022-02-05-decentralizing-distribution %})."
 
 #. type: Title ##
 #: _posts/2022-12-22-third-audit-results.md
 #, no-wrap
 msgid "CLN-005 -- Vulnerable TLS versions accepted"
-msgstr ""
+msgstr "CLN-005 -- Принятие уязвимых версий TLS"
 
 #. type: Bullet: '* '
 #: _posts/2022-12-22-third-audit-results.md
 msgid "Vulnerability type: Insecure configuration"
-msgstr ""
+msgstr "Тип уязвимости: Небезопасная конфигурация"
 
 #. type: Plain text
 #: _posts/2022-12-22-third-audit-results.md
 msgid "The backend domains used by the application accept obsolete TLS 1.0 and TLS 1.1 protocols."
-msgstr ""
+msgstr "Внутренние домены, используемые приложением, принимают устаревшие протоколы TLS 1.0 и TLS 1.1."
 
 #. type: Plain text
 #: _posts/2022-12-22-third-audit-results.md
 msgid "Use of TLS 1.0 and 1.1 make the communication susceptible to downgrade attacks, as they work on SHA-1 hash for the integrity of exchanged messages. The handshake authentication is also done on SHA-1, which makes it easier for an attacker to impersonate a server for MITM attacks. The PCI DSS (Payment Card Industry Data Security Standard) specifies that TLS 1.0 may no longer be used as of June 30, 2018, and also strongly recommends disabling 1.1, so this may impact compliance with regulations."
-msgstr ""
+msgstr "Использование TLS 1.0 и 1.1 делает связь восприимчивой к атакам на понижение, поскольку они работают на хэше SHA-1 для обеспечения целостности обмениваемых сообщений. Аутентификация при рукопожатии также выполняется на SHA-1, что облегчает злоумышленникам выдачу себя за сервер для MITM-атак. Стандарт PCI DSS (Payment Card Industry Data Security Standard) указывает, что TLS 1.0 больше не может использоваться с 30 июня 2018 года, а также настоятельно рекомендует отключить 1.1, так что это может повлиять на соответствие нормативным требованиям."
 
 #. type: Plain text
 #: _posts/2022-12-22-third-audit-results.md
 msgid "F-Droid places a high importance on maintaining compatibility as long as possible.  This is why we leave TLS 1.0 and TLS 1.1 enabled on our websites.  We believe there is no added risk for people who keep their software updated.  The F-Droid Client app does not allow TLS 1.1 or 1.0 connections.  TLS 1.3 provides good downgrade protection, TLS 1.2 less. Any reputable TLS implementation from the past years make it quite difficult to force a connection to use TLS 1.0 or 1.1.  [Recent browser releases](https://knowledge.broadcom.com/external/article/195935/major-web-browsers-removing-support-for.html) are entirely removing support for TLS 1.0 and 1.1 anyway.  That means that any browser or client version that connects over TLS 1.0 or 1.1 actually needs that to function.  A device running Android 1.6 should be able to install an old version of F-Droid, and have a working app store."
-msgstr ""
+msgstr "F-Droid придает большое значение сохранению совместимости как можно дольше.  Именно поэтому мы оставляем TLS 1.0 и TLS 1.1 включенными на наших сайтах.  Мы считаем, что для тех, кто постоянно обновляет свое программное обеспечение, это не представляет дополнительного риска.  Приложение F-Droid Client не разрешает соединения TLS 1.1 или 1.0.  TLS 1.3 обеспечивает хорошую защиту от понижения, TLS 1.2 - меньшую. В любой авторитетной реализации TLS прошлых лет довольно сложно заставить соединение использовать TLS 1.0 или 1.1.  [Последние релизы браузеров](https://knowledge.broadcom.com/external/article/195935/major-web-browsers-removing-support-for.html) в любом случае полностью удаляют поддержку TLS 1.0 и 1.1.  Это означает, что любой браузер или клиентская версия, подключающаяся по TLS 1.0 или 1.1, фактически нуждается в этом для функционирования.  Устройство под управлением Android 1.6 должно иметь возможность установить старую версию F-Droid и иметь рабочий магазин приложений."
 
 #. type: Plain text
 #: _posts/2022-12-22-third-audit-results.md
 msgid "If you are on a device that still needs to use TLS 1.0 or 1.1, then there are already so many well known security vulnerabilities that this one is not particularly interesting.  If you would like to test whether your browser still supports TLS 1.0 or 1.1, click on the links below and see if they give you an error message."
-msgstr ""
+msgstr "Если вы работаете на устройстве, которое все еще использует TLS 1.0 или 1.1, то в нем уже так много известных уязвимостей, что эта не особенно интересна.  Если вы хотите проверить, поддерживает ли ваш браузер TLS 1.0 или 1.1, щелкните по приведенным ниже ссылкам и посмотрите, выдают ли они сообщение об ошибке."
 
 #. type: Bullet: '* '
 #: _posts/2022-12-22-third-audit-results.md
+#, fuzzy
 msgid "<a href=\"https://tls-v1-0.badssl.com:1010/\" target=\"_blank\">https://tls-v1-0.badssl.com:1010/</a>"
-msgstr ""
+msgstr "<a href=\"https://tls-v1-0.badssl.com:1010/\" target=\"_blank\">https://tls-v1-0.badssl.com:1010/</a>"
 
 #. type: Bullet: '* '
 #: _posts/2022-12-22-third-audit-results.md
+#, fuzzy
 msgid "<a href=\"https://tls-v1-1.badssl.com:1011/\" target=\"_blank\">https://tls-v1-1.badssl.com:1011/</a>"
-msgstr ""
+msgstr "<a href=\"https://tls-v1-1.badssl.com:1011/\" target=\"_blank\">https://tls-v1-1.badssl.com:1011/</a>"
 
 #. type: Title ##
 #: _posts/2022-12-22-third-audit-results.md
 #, no-wrap
 msgid "CLN-001 -- Encryption algorithms using insecure mode and padding scheme"
-msgstr ""
+msgstr "CLN-001 -- Алгоритмы шифрования, использующие незащищенный режим и схему набивки"
 
 #. type: Bullet: '* '
 #: _posts/2022-12-22-third-audit-results.md
 msgid "Vulnerability type: Weak Cryptography"
-msgstr ""
+msgstr "Тип уязвимости: Слабая криптография"
 
 #. type: Bullet: '* '
 #: _posts/2022-12-22-third-audit-results.md
 msgid "Threat level: Low"
-msgstr ""
+msgstr "Уровень угрозы: Низкий"
 
 #. type: Plain text
 #: _posts/2022-12-22-third-audit-results.md
 msgid "The encryption algorithms used in the app use an insecure mode and padding scheme."
-msgstr ""
+msgstr "Алгоритмы шифрования, используемые в приложении, используют небезопасный режим и схему набивки."
 
 #. type: Plain text
 #: _posts/2022-12-22-third-audit-results.md
 msgid "If sensitive data is being encrypted using an insecure mode and padding, it might lead to data being stolen or recovered from the encrypted data."
-msgstr ""
+msgstr "Если конфиденциальные данные шифруются с использованием небезопасного режима и подложки, это может привести к краже или восстановлению зашифрованных данных."
 
 #. type: Plain text
 #: _posts/2022-12-22-third-audit-results.md
 msgid "This was only ever used to sign the app index file used in the Nearby app swapping, which only works over the local network.  The signature is on a short-lived file that is generated on the fly, and is almost always used in a one-to-one interaction.  A lot of other pieces would have to be in place for this to be exploited.  Plus it would require a fair amount of expense to crack the cryptography on the file that was signed seconds or minutes before, and probably will only be in use for around 10 minutes.  Any app updates received via Nearby swapping will still have the full protection of the APK signature.  For these reasons, it is also still safe to use the SHA1 algorithm, which is necessary here for compatibility.  This use case falls under the \"[second preimage attack](https://crypto.stackexchange.com/questions/48289/how-secure-is-sha1-what-are-the-chances-of-a-real-exploit/48291#48291)\" case, meaning that the attacker cannot affect the data before it is signed. Git can also still rely on SHA1 for this reason."
-msgstr ""
+msgstr "Она использовалась только для подписи индексного файла приложения, используемого при замене приложений поблизости, которая работает только по локальной сети.  Подпись находится в недолговечном файле, который генерируется на лету и почти всегда используется при взаимодействии один на один.  Для того чтобы это можно было использовать, необходимо наличие множества других элементов.  Кроме того, потребуется немало средств, чтобы взломать криптографию файла, который был подписан за несколько секунд или минут до этого и, вероятно, будет использоваться всего около 10 минут.  Любые обновления приложений, полученные с помощью свопинга Nearby, по-прежнему будут иметь полную защиту подписи APK.  По этим причинам также безопасно использовать алгоритм SHA1, который необходим здесь для совместимости.  Этот случай использования подпадает под \"[атаку второго предварительного образа](https://crypto.stackexchange.com/questions/48289/how-secure-is-sha1-what-are-the-chances-of-a-real-exploit/48291#48291)\", что означает, что злоумышленник не может повлиять на данные до того, как они будут подписаны. По этой причине Git все еще может полагаться на SHA1."
 
 #. type: Plain text
 #: _posts/2022-12-22-third-audit-results.md
 msgid "F-Droid client v1.15.4 and v1.16-alpha1 switched from `RSA/ECB/PKCS1Padding` to the standard `SHA1withRSA` algorithm for signing the Nearby _index.jar_.  The new \"index-v2\" for repositories added in v1.16-alpha0 uses `SHA256withRSA` as the signing algorithm.  The official client always starts by trying the latest index version in each repository, and v1.16 added downgrade protection so a repo that already offers index-v2 can't be downgraded to index-v1."
-msgstr ""
+msgstr "F-Droid клиент v1.15.4 и v1.16-alpha1 перешел с `RSA/ECB/PKCS1Padding` на стандартный алгоритм `SHA1withRSA` для подписи Nearby _index.jar_.  Новый \"index-v2\" для репозиториев, добавленный в v1.16-alpha0, использует в качестве алгоритма подписи `SHA256withRSA`.  Официальный клиент всегда запускается с последней версии индекса в каждом репозитории, а в v1.16 добавлена защита от понижения, поэтому репозиторий, который уже предлагает index-v2, не может быть понижен до index-v1."
 
 #. type: Title ##
 #: _posts/2022-12-22-third-audit-results.md
 #, no-wrap
 msgid "CLN-003 -- Clear text traffic is enabled in the application"
-msgstr ""
+msgstr "CLN-003 -- В приложении включен трафик чистого текста"
 
 #. type: Plain text
 #: _posts/2022-12-22-third-audit-results.md
 msgid "The base network config of the application allows clear-text traffic."
-msgstr ""
+msgstr "Базовая сетевая конфигурация приложения разрешает трафик с открытым текстом."
 
 #. type: Plain text
 #: _posts/2022-12-22-third-audit-results.md
 msgid "Allowing clear-text traffic impacts confidentiality, authenticity, and protection against tampering. An attacker performing a machine-in-the-middle attack can eavesdrop on transmitted data and modify it without being detected."
-msgstr ""
+msgstr "Разрешение трафика с открытым текстом влияет на конфиденциальность, подлинность и защиту от несанкционированного доступа. Злоумышленник, совершающий атаку \"машина посередине\", может подслушать передаваемые данные и изменить их незаметно для себя."
 
 #. type: Plain text
 #: _posts/2022-12-22-third-audit-results.md
 msgid "This Android feature for blocking clear text HTTP connections is a good feature that apps should use.  Having this disabled is obviously not ideal, but it is something we had to do to support the local HTTP swap functionality, and also HTTP .onion addresses in the past (there is another workaround possible these days). So we have taken extra measures to enforce HTTPS:"
-msgstr ""
+msgstr "Эта функция Android для блокировки HTTP-соединений с открытым текстом - хорошая функция, которую должны использовать приложения.  Отключение этой функции, конечно, не идеальный вариант, но нам пришлось пойти на это, чтобы поддержать функцию локальной подмены HTTP, а также HTTP-адреса .onion в прошлом (в настоящее время существует другое обходное решение). Поэтому мы приняли дополнительные меры для обеспечения HTTPS:"
 
 #. type: Bullet: '* '
 #: _posts/2022-12-22-third-audit-results.md
 msgid "[All built-in repository URLs are hardcoded to HTTPS](https://gitlab.com/fdroid/fdroidclient/-/blob/audit-2022-09-05/app/src/main/res/values/default_repos.xml)"
-msgstr ""
+msgstr "[Все URL-адреса встроенных репозиториев жестко привязаны к HTTPS](https://gitlab.com/fdroid/fdroidclient/-/blob/audit-2022-09-05/app/src/main/res/values/default_repos.xml)"
 
 #. type: Bullet: '* '
 #: _posts/2022-12-22-third-audit-results.md
 msgid "[Popular cloud hosting for repos is forced to HTTPS](https://gitlab.com/fdroid/fdroidclient/-/blob/audit-2022-09-05/app/src/main/java/org/fdroid/fdroid/data/NewRepoConfig.java#L193)"
-msgstr ""
+msgstr "[Популярный облачный хостинг для репо вынужден перейти на HTTPS](https://gitlab.com/fdroid/fdroidclient/-/blob/audit-2022-09-05/app/src/main/java/org/fdroid/fdroid/data/NewRepoConfig.java#L193)"
 
 #. type: Bullet: '* '
 #: _posts/2022-12-22-third-audit-results.md
 msgid "[The default user prompt for adding repos includes `https://`](https://gitlab.com/fdroid/fdroidclient/-/blob/audit-2022-09-05/app/src/main/java/org/fdroid/fdroid/views/ManageReposActivity.java#L101)"
-msgstr ""
+msgstr "[Стандартный пользовательский запрос на добавление репо включает `https://`](https://gitlab.com/fdroid/fdroidclient/-/blob/audit-2022-09-05/app/src/main/java/org/fdroid/fdroid/views/ManageReposActivity.java#L101)"
 
 #. type: Plain text
 #: _posts/2022-12-22-third-audit-results.md
 msgid "This vulnerability applies to the exact same context as CLN-001: Nearby app swapping.  So it is already a quite limited environment for malicious actors to operate in. This does not affect built-in repos at all, since they are hard-coded to HTTPS.  Plus good webserver setups like f-droid.org do not allow data to be sent over plain HTTP."
-msgstr ""
+msgstr "Эта уязвимость относится к тому же контексту, что и CLN-001: подмена приложений поблизости.  Таким образом, это уже довольно ограниченная среда для действий злоумышленников. Это вообще не затрагивает встроенные репозитории, поскольку они жестко привязаны к HTTPS.  К тому же хорошие веб-серверы, такие как f-droid.org, не позволяют отправлять данные по обычному HTTP."
 
 #. type: Title ##
 #: _posts/2022-12-22-third-audit-results.md
 #, no-wrap
 msgid "CLN-004 -- HTTP Request URLs are logged"
-msgstr ""
+msgstr "CLN-004 -- URL-адреса HTTP-запросов регистрируются"
 
 #. type: Bullet: '* '
 #: _posts/2022-12-22-third-audit-results.md
 msgid "Vulnerability type: Information leakage"
-msgstr ""
+msgstr "Тип уязвимости: Утечка информации"
 
 #. type: Plain text
 #: _posts/2022-12-22-third-audit-results.md
 msgid "The Android app (org.fdroid.fdroid.debug ver. 1.14-alpha3-505-gc8514adb9-debug) logs URLs."
-msgstr ""
+msgstr "Приложение для Android (org.fdroid.fdroid.debug ver. 1.14-alpha3-505-gc8514adb9-debug) регистрирует URL-адреса."
 
 #. type: Plain text
 #: _posts/2022-12-22-third-audit-results.md
 msgid "Logging sensitive information in the Android log is not a recommended practice as this information can (in some scenarios) be accessed by other applications on the same device. URLs can contain tokens or other sensitive data which might be logged, leading to the disclosure of that data to other apps."
-msgstr ""
+msgstr "Запись конфиденциальной информации в журнал Android не рекомендуется, поскольку эта информация может быть (в некоторых случаях) доступна другим приложениям на том же устройстве. URL-адреса могут содержать токены или другие конфиденциальные данные, которые могут быть занесены в журнал, что приведет к раскрытию этих данных другим приложениям."
 
 #. type: Plain text
 #: _posts/2022-12-22-third-audit-results.md
 msgid "Privacy is important, and we want to ensure that any potentially private information is not leaked, even at the cost of easier debugging or service analytics.  So we appreciate the auditor's level of attention in reporting this issue and have removed the URLs from the logging on release builds."
-msgstr ""
+msgstr "Конфиденциальность очень важна, и мы хотим гарантировать, что любая потенциально приватная информация не будет утекать, даже ценой облегчения отладки или аналитики сервиса.  Поэтому мы ценим внимание аудитора, сообщившего об этой проблеме, и удалили URL-адреса из журналов регистрации в релизных сборках."
 
 #. type: Plain text
 #: _posts/2022-12-22-third-audit-results.md
 msgid "This vulnerability does not affect the security of operations.  Many web services put private tokens in URLs, and logging those would be like leaking clear text passwords.  All the well known repositories including f-droid.org are run as a static website, so there are [no user accounts]({% post_url 2022-02-28-no-user-accounts-by-design %}).  The issue here is if someone got the \"logcat\" text, which is generally protected in Android, and apps cannot simply read the text anymore.  One potential leak scenario would be if someone installed a sensitive app, then uninstalled it.  That app install and uninstall would be listed in the log, available if the user was compelled to provide that log, or if the device was exploited to get access to protected data."
-msgstr ""
+msgstr "Эта уязвимость не влияет на безопасность операций.  Многие веб-сервисы помещают приватные токены в URL, и занесение их в журнал было бы равносильно утечке паролей в открытом виде.  Все известные репозитории, включая f-droid.org, работают как статический сайт, поэтому там нет [никаких учетных записей пользователей]({% post_url 2022-02-28-no-user-accounts-by-design %}).  Проблема здесь в том, что если кто-то получил текст \"logcat\", который обычно защищен в Android, и приложения больше не могут просто прочитать этот текст.  Один из возможных сценариев утечки - если кто-то установил конфиденциальное приложение, а затем удалил его.  Информация об установке и удалении приложения будет указана в журнале, и ее можно будет получить, если пользователя заставят предоставить этот журнал или если устройство будет использовано для получения доступа к защищенным данным."
 
 #. type: Plain text
 #: _posts/2022-12-22-third-audit-results.md
-#, fuzzy
-#| msgid "add [missing features](https://gitlab.com/fdroid/fdroidclient/issues) to the Android client"
 msgid "This [will be fixed](https://gitlab.com/fdroid/fdroidclient/-/issues/2500) in the final v1.16 release."
-msgstr "добавить [недостающие возможности](https://gitlab.com/fdroid/fdroidclient/issues) в клиент для Android"
+msgstr "Это [будет исправлено](https://gitlab.com/fdroid/fdroidclient/-/issues/2500) в финальном выпуске v1.16."
 
 #. type: Yaml Front Matter Hash Value: title
 #: _posts/2023-01-15-towards-a-reproducible-fdroid.md
 #, no-wrap
 msgid "Towards a reproducible F-Droid"
-msgstr ""
+msgstr "На пути к воспроизводимому F-Droid"
 
 #. type: Plain text
 #: _posts/2023-01-15-towards-a-reproducible-fdroid.md
 msgid "A common criticism directed at F-Droid is that F-Droid signs published APKs with its own keys. Using our own keys doesn't mean insecure — we have a good track record (and [keep the keys on a dedicated, air-gapped, offline machine](https://f-droid.org/docs/Security_Model/#app-signing)) whilst others may not — but this does mean that our users need to trust a third party other than the upstream developers."
-msgstr ""
+msgstr "Частой критикой в адрес F-Droid является то, что F-Droid подписывает опубликованные APK своими собственными ключами. Использование собственных ключей не означает небезопасность - у нас хороший послужной список (и [храним ключи на выделенной, защищенной от воздуха, автономной машине](https://f-droid.org/docs/Security_Model/#app-signing)), в то время как другие могут этого не делать - но это означает, что наши пользователи должны доверять третьей стороне, а не разработчикам."
 
 #. type: Plain text
 #: _posts/2023-01-15-towards-a-reproducible-fdroid.md
 msgid "Having a different signature can also inconvenience users by making it impossible to install updates from other channels; this can be especially inconvenient when we have difficulty providing an update for an app. Developers also sometimes need to tweak their setup for F-Droid, e.g. disabling an in-app updater or adding the F-Droid signature for verification."
-msgstr ""
+msgstr "Наличие другой подписи также может доставить неудобства пользователям, сделав невозможной установку обновлений из других каналов; это может быть особенно неудобно, когда у нас возникают трудности с предоставлением обновлений для приложения. Разработчикам также иногда приходится настраивать свои параметры для F-Droid, например, отключать программу обновления в приложении или добавлять подпись F-Droid для проверки."
 
 #. type: Plain text
 #: _posts/2023-01-15-towards-a-reproducible-fdroid.md
 msgid "F-Droid is not the only app store publishing APKs signed with its own key — Google Play does the same now. With [\"code transparency for app bundles\"](https://developer.android.com/guide/app-bundle/code-transparency), Google provides a means to verify that the DEX files and native libraries in an APK are identical to those the developer provided. This does address some of these concerns, but code transparency does not protect many other important files in the APK, like interpreted code or assets. And unlike APK signatures, it is entirely optional (and an extra burden for developers) and verification must be performed manually. It also does not solve the inconvenience of being unable to install an APK with a different signature."
-msgstr ""
+msgstr "F-Droid - не единственный магазин приложений, публикующий APK, подписанные собственным ключом, - Google Play теперь делает то же самое. С помощью [\"прозрачности кода для пакетов приложений\"](https://developer.android.com/guide/app-bundle/code-transparency) Google предоставляет возможность проверить, что файлы DEX и нативные библиотеки в APK идентичны тем, которые предоставил разработчик. Это решает некоторые из этих проблем, но прозрачность кода не защищает многие другие важные файлы в APK, такие как интерпретируемый код или активы. И, в отличие от подписей APK, она совершенно необязательна (и является дополнительным бременем для разработчиков), а проверка должна выполняться вручную. Она также не решает неудобства, связанные с невозможностью установить APK с другой подписью."
 
 #. type: Plain text
 #: _posts/2023-01-15-towards-a-reproducible-fdroid.md
 msgid "F-Droid has had a better solution for these problems for [quite a while](https://gitlab.com/fdroid/fdroidserver/-/commit/8568805866dadbdcc6c07449ca6b84b80d0ab03c): [reproducible builds](https://f-droid.org/docs/Reproducible_Builds/). However, it was never widely used. One of the reasons is that it *sounds* difficult to achieve. We had few reproducible apps (to be precise: only 6) and some of them suffered from problems because of the use of reproducible builds. Basically, we didn't bother to mention reproducible builds unless the upstream developers showed an interest. As a result, many developers never even heard of reproducible builds, let alone that F-Droid supports them, or attempted to use them for their own apps."
-msgstr ""
+msgstr "У F-Droid есть лучшее решение для этих проблем уже [довольно давно](https://gitlab.com/fdroid/fdroidserver/-/commit/8568805866dadbdcc6c07449ca6b84b80d0ab03c): [воспроизводимые сборки](https://f-droid.org/docs/Reproducible_Builds/). Однако оно так и не получило широкого распространения. Одна из причин в том, что это *звучит* труднодостижимо. У нас было мало воспроизводимых приложений (если быть точным, всего 6), и некоторые из них страдали от проблем из-за использования воспроизводимых сборок. По сути, мы не утруждали себя упоминанием воспроизводимых сборок, если только разработчики не проявляли к этому интерес. В результате многие разработчики даже не слышали о воспроизводимых сборках, не говоря уже о том, что F-Droid их поддерживает, и не пытались использовать их в своих приложениях."
 
 #. type: Plain text
 #: _posts/2023-01-15-towards-a-reproducible-fdroid.md
 msgid "In response to some of those criticisms, we started [encouraging new apps to enable reproducible builds](https://gitlab.com/fdroid/fdroiddata/-/issues/2816). It turns out that reproducible builds are not so difficult to achieve for many apps. [In the past few months we've gotten many more reproducible apps in F-Droid than before.](https://gitlab.com/fdroid/fdroiddata/-/issues/2844) Currently we can't highlight which apps are reproducible in the client, so maybe you haven't noticed that there are many new apps signed with upstream developers' keys. If you have some third-party repositories enabled, e.g. the IzzySoft one, you may find that sometimes you can update the app from the main repository even if you installed it from another one."
-msgstr ""
+msgstr "В ответ на некоторые из этих критических замечаний мы начали [поощрять новые приложения к воспроизводимым сборкам](https://gitlab.com/fdroid/fdroiddata/-/issues/2816). Оказалось, что воспроизводимые сборки не так уж сложно получить для многих приложений. [За последние несколько месяцев мы получили гораздо больше воспроизводимых приложений в F-Droid, чем раньше](https://gitlab.com/fdroid/fdroiddata/-/issues/2844) В настоящее время мы не можем выделить, какие приложения воспроизводятся в клиенте, поэтому, возможно, вы не заметили, что появилось много новых приложений, подписанных ключами разработчиков из апстрима. Если у вас включены некоторые сторонние репозитории, например, репозиторий IzzySoft, вы можете обнаружить, что иногда вы можете обновить приложение из основного репозитория, даже если вы установили его из другого репозитория."
 
 #. type: Plain text
 #: _posts/2023-01-15-towards-a-reproducible-fdroid.md
 msgid "Meanwhile, now that we've encountered many more test cases than before, we also found many [new](https://gitlab.com/fdroid/fdroiddata/-/issues/2816#note_1152793493) [problems](https://gitlab.com/fdroid/fdroid-website/-/merge_requests/895) that affect reproducibility. Fortunately we also found workarounds for most of them and developed [some tools to make APKs reproducible](https://github.com/obfusk/reproducible-apk-tools), mainly thanks to @obfusk's contributions. There are still some open issues and we are still working hard to solve them. If you are interested in reproducible builds, contributions are always welcome."
-msgstr ""
+msgstr "Между тем, теперь, когда мы столкнулись с гораздо большим количеством тестовых случаев, чем раньше, мы также обнаружили множество [новых](https://gitlab.com/fdroid/fdroiddata/-/issues/2816#note_1152793493) [проблем](https://gitlab.com/fdroid/fdroid-website/-/merge_requests/895), которые влияют на воспроизводимость. К счастью, мы также нашли обходные пути для большинства из них и разработали [некоторые инструменты для обеспечения воспроизводимости APK](https://github.com/obfusk/reproducible-apk-tools), в основном благодаря вкладу @obfusk. Остались еще некоторые открытые проблемы, и мы продолжаем упорно работать над их решением. Если вы заинтересованы в воспроизводимых сборках, вклад всегда приветствуется."
 
 #. type: Yaml Front Matter Hash Value: title
 #: _posts/2023-02-09-donation-shift6mq.md
 #, no-wrap
 msgid "Donation SHIFT6mq"
-msgstr ""
+msgstr "Пожертвование SHIFT6mq"
 
 #. type: Plain text
 #: _posts/2023-02-09-donation-shift6mq.md
 msgid "In 2022, the German company SHIFT donated three smartphones of their model [SHIFT6mq](https://www.shiftphones.com/en/shift6mq/) as a *loan for life* to F-Droid team members. This was done without asking for anything in return. However, we do want to share our experiences with the devices."
-msgstr ""
+msgstr "В 2022 году немецкая компания SHIFT подарила членам команды F-Droid три смартфона своей модели [SHIFT6mq](https://www.shiftphones.com/en/shift6mq/) в качестве *пожизненного кредита*. Это было сделано без просьбы о чем-либо взамен. Однако мы хотим поделиться своим опытом использования этих устройств."
 
 #. type: Plain text
 #: _posts/2023-02-09-donation-shift6mq.md
 msgid "![Photo showing front and back of two SHIFT6mq devices.]({% asset posts/2023-02-09-donation-shift6mq/shift6mq.jpg %})  *The SHIFT6mq phone © SHIFT.*"
-msgstr ""
+msgstr "![Фотография, показывающая переднюю и заднюю части двух устройств SHIFT6mq.]({% asset posts/2023-02-09-donation-shift6mq/shift6mq.jpg %}) *Телефон SHIFT6mq © SHIFT.*"
 
 #. type: Plain text
 #: _posts/2023-02-09-donation-shift6mq.md
 msgid "First of all, SHIFT has a focus on making sustainable earphones, tablets and smartphones, called [SHIFTphone](https://en.wikipedia.org/wiki/Shiftphone) so they use fair trade materials and even substitute the use of a specific rare metal by using ceramic capacitors. All their products are modular and therefore easier to repair."
-msgstr ""
+msgstr "Прежде всего, SHIFT специализируется на производстве экологичных наушников, планшетов и смартфонов под названием [SHIFTphone](https://en.wikipedia.org/wiki/Shiftphone), поэтому они используют материалы, полученные в результате справедливой торговли, и даже заменяют использование определенного редкого металла керамическими конденсаторами. Все их продукты являются модульными и поэтому легче поддаются ремонту."
 
 #. type: Plain text
 #: _posts/2023-02-09-donation-shift6mq.md
 msgid "[![Still of YouTube video of SHIFTphone teardown.]({% asset posts/2023-02-09-donation-shift6mq/shift6mq-teardown.png %})](https://www.youtube.com/watch?v=scWxjE7IyMo)  *Link to YouTube video showing how modular the SHIFTphone is.*"
-msgstr ""
+msgstr "[![Кадр из видеоролика YouTube о разборке SHIFTphone.]({% asset posts/2023-02-09-donation-shift6mq/shift6mq-teardown.png %})](https://www.youtube.com/watch?v=scWxjE7IyMo) *Ссылка на видеоролик YouTube, демонстрирующий модульность SHIFTphone.*"
 
 #. type: Plain text
 #: _posts/2023-02-09-donation-shift6mq.md
 msgid "One of our team members really went to town with his SHIFT6mq. The devices come with their own flavour of Android which is called ShiftOS-G and is certified by Google. In his article [\"Android without Google: Shiftphones\"](https://android.izzysoft.de/articles/named/android-without-google-8) he reviews the device and its operating system. However, he takes it one step further and de-Googles it by installing ShiftOS-Light (ShiftOS-L). Best is to read that article before continuing here. That article also helped the other team members to explore this smartphone more thoroughly. Further feedback praised it for its battery life and less data use when de-Googled."
-msgstr ""
+msgstr "Один из членов нашей команды действительно побывал в городе со своим SHIFT6mq. Устройства поставляются с собственной версией Android, которая называется ShiftOS-G и сертифицирована Google. В своей статье [\"Android без Google: Shiftphones\"](https://android.izzysoft.de/articles/named/android-without-google-8) он рассматривает устройство и его операционную систему. Однако он делает еще один шаг вперед и де-гуглит устройство, устанавливая ShiftOS-Light (ShiftOS-L). Лучше всего прочитать эту статью, прежде чем продолжать здесь. Эта статья также помогла другим членам команды более тщательно изучить этот смартфон. В дальнейших отзывах они похвалили его за время автономной работы и меньшее потребление данных при де-гуглении."
 
 #. type: Plain text
 #: _posts/2023-02-09-donation-shift6mq.md
 msgid "At the moment, SHIFT6mq is the only model from SHIFT which is supported by [LineageOS](https://wiki.lineageos.org/devices/axolotl/), as this support is done by one of the developers of SHIFT. We expect that their future models also will work with LineageOS and SHIFT8 is due to be released at the end of this year. For those who don't know, LineageOS currently supports almost 200 different Android devices and works well together with F-Droid apps."
-msgstr ""
+msgstr "На данный момент SHIFT6mq - единственная модель от SHIFT, которая поддерживается [LineageOS](https://wiki.lineageos.org/devices/axolotl/), так как эта поддержка осуществляется одним из разработчиков SHIFT. Мы ожидаем, что их будущие модели также будут работать с LineageOS, а SHIFT8 должен выйти в конце этого года. Для тех, кто не знает, LineageOS в настоящее время поддерживает почти 200 различных Android-устройств и отлично работает вместе с приложениями F-Droid."
 
 #. type: Plain text
 #: _posts/2023-02-09-donation-shift6mq.md
 msgid "LineageOS for SHIFT6mq supports Calyx Institute's [SeedVault](https://calyxinstitute.org/projects/seedvault-encrypted-backup-for-android) for making complete backups of your device. And this will also be offered in upcoming version 12 of ShiftOS-L. Without going too much off-topic, for more information read NLnet's [article](https://nlnet.nl/project/Seedvault/) on it. See also SHIFT's well-maintained [forum](https://forum.shiftphones.com/), mostly in German, but you can ask your question in English too."
-msgstr ""
+msgstr "LineageOS для SHIFT6mq поддерживает [SeedVault](https://calyxinstitute.org/projects/seedvault-encrypted-backup-for-android) от Calyx Institute для создания полных резервных копий вашего устройства. И это также будет предложено в грядущей 12-й версии ShiftOS-L. Не сильно отклоняясь от темы, для получения дополнительной информации прочтите [статью](https://nlnet.nl/project/Seedvault/) NLnet об этом. Смотрите также хорошо поддерживаемый [форум](https://forum.shiftphones.com/) SHIFT, в основном на немецком языке, но вы можете задать вопрос и на английском."
 
 #. type: Plain text
 #: _posts/2023-02-09-donation-shift6mq.md
 msgid "![Screenshot of part of F-Droid's homepage showing a smartphone with the F-Droid client opened on it.]({% asset posts/2023-02-09-donation-shift6mq/shift6mq-fdroid.png %})  *F-Droid client with the SHIFT6mq smartphone frame as shown on F-Droid's homepage.*"
-msgstr ""
+msgstr "![Скриншот части главной страницы F-Droid, на котором изображен смартфон с открытым на нем клиентом F-Droid]({% asset posts/2023-02-09-donation-shift6mq/shift6mq-fdroid.png %}) * Клиент F-Droid с рамкой смартфона SHIFT6mq, как показано на главной странице F-Droid.*"
 
 #. type: Plain text
 #: _posts/2023-02-09-donation-shift6mq.md
 msgid "The F-Droid homepage used to show a smartphone frame around the screenshot of the F-Droid client from a *not so open manufacturer*. We wanted to replace that for a while. At our request the SHIFT team provided us with the design of the SHIFT6mq smartphone frame and permission to use it. Perhaps you have already noticed that as it is currently seen on our [homepage]({{ site.baseurl }})."
-msgstr ""
+msgstr "На главной странице F-Droid раньше отображалась рамка смартфона вокруг скриншота клиента F-Droid от *не очень открытого производителя*. Мы давно хотели заменить эту рамку. По нашей просьбе команда SHIFT предоставила нам дизайн рамки для смартфона SHIFT6mq и разрешение на его использование. Возможно, вы уже заметили ее, так как сейчас она видна на нашей [домашней странице]({{ site.baseurl }})."
 
 #. type: Yaml Front Matter Hash Value: title
 #: _posts/2023-03-01-new-repo-format-faster-smaller-updates.md
 #, no-wrap
 msgid "New repository format for faster and smaller updates"
-msgstr ""
+msgstr "Новый формат репозитория для более быстрого и компактного обновления"
 
 #. type: Plain text
 #: _posts/2023-03-01-new-repo-format-faster-smaller-updates.md
 msgid "We just released version `1.16` of the official F-Droid client app for Android which includes many radical changes under the hood as well as many bug fixes for long standing issue.  Read on for more details."
-msgstr ""
+msgstr "Мы только что выпустили версию `1.16` официального клиентского приложения F-Droid для Android, которая включает в себя множество радикальных изменений под капотом, а также исправление многих ошибок, связанных с давними проблемами.  Читайте далее для получения более подробной информации."
 
 #. type: Title ##
 #: _posts/2023-03-01-new-repo-format-faster-smaller-updates.md
 #, no-wrap
 msgid "Growing repository size"
-msgstr ""
+msgstr "Увеличение размера хранилища"
 
 #. type: Plain text
 #: _posts/2023-03-01-new-repo-format-faster-smaller-updates.md
 msgid "As more and more apps make their way into F-Droid, the official repository index that includes all apps and their metadata also keeps growing.  Currently, the size of the compressed index is `8 MB` which is `33 MB` uncompressed.  When updating the repository index, each F-Droid client app has to download and process those `8MB` again and again.  This problematic trend became apparent [a long time ago](https://gitlab.com/fdroid/fdroidclient/-/issues/649)."
-msgstr ""
+msgstr "По мере того, как все больше и больше приложений попадают в F-Droid, официальный индекс репозитория, включающий все приложения и их метаданные, также продолжает расти.  В настоящее время размер сжатого индекса составляет `8 МБ`, что в несжатом виде равно `33 МБ`.  При обновлении индекса хранилища каждому клиентскому приложению F-Droid приходится скачивать и обрабатывать эти `8 МБ` снова и снова.  Эта проблематичная тенденция стала очевидной [уже давно](https://gitlab.com/fdroid/fdroidclient/-/issues/649)."
 
 #. type: Title ##
 #: _posts/2023-03-01-new-repo-format-faster-smaller-updates.md
 #, no-wrap
 msgid "Updating only what has changed"
-msgstr ""
+msgstr "Обновление только того, что изменилось"
 
 #. type: Plain text
 #: _posts/2023-03-01-new-repo-format-faster-smaller-updates.md
 msgid "Our repository index is in JSON format and we decided to make use of [RFC 7396 JSON Merge Patch](https://datatracker.ietf.org/doc/html/rfc7396)  to create much smaller JSON files that only contain the changes since your F-Droid app last updated.  Technically, this works by downloading a new [`entry.json`](https://f-droid.org/repo/entry.json) file instead of the full index.  This entry file points to the full index in case the app had never updated before and needs all app metadata anyway.  But the entry also contains pointers to various smaller *diff*erence files.  The app automatically picks the right diff and only downloads that much smaller file instead of the full index.  This not only saves bandwidth, it also makes updating the index much faster as only the minimum amount of data needs to be downloaded, processed and stored.  As of writing, the latest diff is `80 KB` compressed which is `241 KB` uncompressed which is only `1%` of the full index.  Version `1.16` of the official F-Droid client app for Android supports this new repository format."
-msgstr ""
+msgstr "Индекс нашего репозитория имеет формат JSON, и мы решили использовать [RFC 7396 JSON Merge Patch](https://datatracker.ietf.org/doc/html/rfc7396) для создания JSON-файлов гораздо меньшего размера, которые содержат только изменения, произошедшие с момента последнего обновления вашего приложения F-Droid.  Технически это работает путем загрузки нового файла [`entry.json`](https://f-droid.org/repo/entry.json) вместо полного индекса.  Этот файл записи указывает на полный индекс в случае, если приложение никогда не обновлялось ранее и ему все равно нужны все метаданные приложения.  Но запись также содержит указатели на различные меньшие файлы *diff*erence.  Приложение автоматически выбирает нужный diff и загружает только этот файл меньшего размера вместо полного индекса.  Это не только экономит полосу пропускания, но и значительно ускоряет обновление индекса, так как нужно загрузить, обработать и сохранить только минимальное количество данных.  На момент написания статьи последняя версия diff имеет размер `80 КБ` в сжатом виде и `241 КБ` в несжатом, что составляет всего `1 %` от полного индекса.  Версия `1.16` официального клиентского приложения F-Droid для Android поддерживает этот новый формат репозитория."
 
 #. type: Title ##
 #: _posts/2023-03-01-new-repo-format-faster-smaller-updates.md
@@ -18943,60 +18941,58 @@ msgstr "Другие улучшения"
 #. type: Plain text
 #: _posts/2023-03-01-new-repo-format-faster-smaller-updates.md
 msgid "The new version has a large number of radical changes under the hood.  For example, the entire database had to be replaced to support the new difference based repository format.  We also used the opportunity to improve various bit and pieces along the way:"
-msgstr ""
+msgstr "Новая версия содержит большое количество радикальных изменений.  Например, пришлось полностью заменить базу данных для поддержки нового формата репозиториев, основанного на различиях.  Мы также использовали эту возможность для улучшения различных деталей:"
 
 #. type: Bullet: '  * '
 #: _posts/2023-03-01-new-repo-format-faster-smaller-updates.md
 msgid "improved mirror support: all files (e.g. images) now get loaded from mirrors reducing the load on the main server"
-msgstr ""
+msgstr "улучшена поддержка зеркал: теперь все файлы (например, изображения) загружаются с зеркал, что снижает нагрузку на основной сервер"
 
 #. type: Bullet: '  * '
 #: _posts/2023-03-01-new-repo-format-faster-smaller-updates.md
 msgid "better support for low RAM devices, because the index now gets streamed into the DB instead of loading all of it into memory"
-msgstr ""
+msgstr "улучшенная поддержка устройств с малым объемом оперативной памяти, поскольку индекс теперь передается в БД, а не загружается в память"
 
 #. type: Bullet: '  * '
 #: _posts/2023-03-01-new-repo-format-faster-smaller-updates.md
 msgid "hash verification: The SHA256 hash of *all* files is now part of the repository metadata and gets verified while downloading"
-msgstr ""
+msgstr "проверка хэша: SHA256-хэш *всех* файлов теперь является частью метаданных репозитория и проверяется при загрузке"
 
 #. type: Bullet: '  * '
 #: _posts/2023-03-01-new-repo-format-faster-smaller-updates.md
 msgid "stronger digest algorithm for repository signing: We now use SHA256 instead of SHA1 for the index signature"
-msgstr ""
+msgstr "более сильный алгоритм дайджеста для подписи репозитория: Теперь мы используем SHA256 вместо SHA1 для подписи индекса"
 
 #. type: Bullet: '  * '
 #: _posts/2023-03-01-new-repo-format-faster-smaller-updates.md
-#, fuzzy
-#| msgid "Add support for mirroring repositories onto both IPFS and Filecoin."
 msgid "support for downloading repository files via IPFS"
-msgstr "Добавьте поддержку зеркалирования репозиториев как в IPFS, так и в Filecoin."
+msgstr "поддержка загрузки файлов репозитория через IPFS"
 
 #. type: Bullet: '  * '
 #: _posts/2023-03-01-new-repo-format-faster-smaller-updates.md
 msgid "many bug fixes that came out of modernizing ancient code"
-msgstr ""
+msgstr "множество исправлений ошибок, возникших в результате модернизации древнего кода"
 
 #. type: Plain text
 #: _posts/2023-03-01-new-repo-format-faster-smaller-updates.md
 msgid "The new version went through [a series of alpha releases]({% post_url 2022-11-30-upcoming-alpha-release-of-f-droid-client %})  with extended testing to make sure no severe issues make it into the stable release.  It is now considered ready for general use."
-msgstr ""
+msgstr "Новая версия прошла через [серию альфа-релизов]({% post_url 2022-11-30-upcoming-alpha-release-of-f-droid-client %}) с расширенным тестированием, чтобы убедиться, что никакие серьезные проблемы не попадут в стабильный релиз.  Теперь он считается готовым для общего использования."
 
 #. type: Title ##
 #: _posts/2023-03-01-new-repo-format-faster-smaller-updates.md
 #, no-wrap
 msgid "Information for repository and client maintainers"
-msgstr ""
+msgstr "Информация для сопровождающих репозитория и клиентов"
 
 #. type: Plain text
 #: _posts/2023-03-01-new-repo-format-faster-smaller-updates.md
 msgid "Owners of third-party F-Droid repositories can enable the new format by upgrading to the latest version of [fdroidserver](https://gitlab.com/fdroid/fdroidserver) which will automatically publish the new format in addition to the old ones which we keep around to support older client apps."
-msgstr ""
+msgstr "Владельцы сторонних репозиториев F-Droid могут включить новый формат, обновив до последней версии [fdroidserver](https://gitlab.com/fdroid/fdroidserver), который будет автоматически публиковать новый формат в дополнение к старым, которые мы оставляем для поддержки старых клиентских приложений."
 
 #. type: Plain text
 #: _posts/2023-03-01-new-repo-format-faster-smaller-updates.md
 msgid "Developers of third-party F-Droid clients are encouraged to adopt the new format either with their own implementations or by making use of the [new libraries](https://gitlab.com/fdroid/fdroidclient/-/tree/master/libs#f-droid-libraries)  we are publishing to make using this technology as easy as possible and to share as much code as possible between different F-Droid implementations."
-msgstr ""
+msgstr "Разработчикам сторонних клиентов F-Droid рекомендуется принять новый формат либо с помощью собственных реализаций, либо используя [новые библиотеки](https://gitlab.com/fdroid/fdroidclient/-/tree/master/libs#f-droid-libraries), которые мы публикуем, чтобы сделать использование этой технологии как можно более простым и обеспечить как можно больше общего кода между различными реализациями F-Droid."
 
 #. type: Yaml Front Matter Hash Value: title
 #: _posts/2023-03-08-vpn-trust-requires-free-software.md
@@ -19007,51 +19003,47 @@ msgstr "Для доверия к VPN он должен быть свободны
 #. type: Plain text
 #: _posts/2023-03-08-vpn-trust-requires-free-software.md
 msgid "VPNs have become popular and are often touted as a tool to improve privacy.  While this is sometimes true, it is important to tread carefully when choosing an VPN.  A good place to start is looking at which VPN providers meet the [requirements](https://guardianproject.info/2023/02/28/steps-towards-trusted-vpns/) for running a trustworthy VPN service.  A trustworthy VPNs must be free software, that is non-negotiable.  First, inspection is required in order trust software.  Having the source is the only way to see all the things the software is doing.  F-Droid reviews the apps that we ship on this website, which lets us spot potential issues and anti-features.  And we are happy to hear that reputable VPN providers make the effort to get their apps on f-droid.org to build trust with their users.  From there, [Reproducible Builds]({{ site.baseurl }}/docs/Reproducible_Builds) provides a strong link between the source code and the actual app binaries that run on the device."
-msgstr ""
+msgstr "VPN стали популярны, и их часто называют инструментом для улучшения конфиденциальности.  Хотя иногда это действительно так, важно тщательно подходить к выбору VPN.  Для начала стоит посмотреть, какие VPN-провайдеры отвечают [требованиям](https://guardianproject.info/2023/02/28/steps-towards-trusted-vpns/) для работы надежного VPN-сервиса.  Надежный VPN должен быть свободным программным обеспечением, это не обсуждается.  Во-первых, для того чтобы доверять программному обеспечению, необходима проверка.  Наличие исходников - единственный способ увидеть все, что делает программа.  F-Droid проверяет приложения, которые мы размещаем на этом сайте, что позволяет нам выявлять потенциальные проблемы и анти-функции.  И мы рады слышать, что авторитетные VPN-провайдеры стараются выкладывать свои приложения на f-droid.org, чтобы укрепить доверие своих пользователей.  Далее, [Reproducible Builds]({{ site.baseurl }}/docs/Reproducible_Builds) обеспечивает прочную связь между исходным кодом и реальными двоичными файлами приложения, которые запускаются на устройстве."
 
 #. type: Plain text
 #: _posts/2023-03-08-vpn-trust-requires-free-software.md
 msgid "The best VPNs are the ones that use free software both for the client app, and for running the services.  Indeed all OpenVPN, Shadowsocks, and WireGuard VPNs are based on free software since those standards are defined by free software projects.  F-Droid looks into this as part of the reviews, and marks apps with relevant Anti-Features, like the [Non-Free Network Services](https://f-droid.org/docs/Anti-Features/#NonFreeNet) mark if the server side is not free software.  And there are a number of free software projects that make it a lot easier to setup and run a VPN or proxy services.  Here are some that are on f-droid.org:"
-msgstr ""
+msgstr "Лучшие VPN - это те, которые используют свободное программное обеспечение как для клиентского приложения, так и для работы сервисов.  Действительно, все VPN OpenVPN, Shadowsocks и WireGuard основаны на свободном программном обеспечении, поскольку эти стандарты определены проектами свободного программного обеспечения.  F-Droid изучает это в рамках обзоров и помечает приложения соответствующими анти-функциями, например, пометкой [Non-Free Network Services](https://f-droid.org/docs/Anti-Features/#NonFreeNet), если серверная часть не является свободным ПО.  Существует ряд проектов свободного программного обеспечения, которые значительно упрощают настройку и работу VPN или прокси-сервисов.  Вот некоторые из них на сайте f-droid.org:"
 
 #. type: Bullet: '* '
 #: _posts/2023-03-08-vpn-trust-requires-free-software.md
 msgid "[Bitmask](https://f-droid.org/packages/se.leap.bitmaskclient/) is a generic client for the [LEAP](https://leap.se/) VPN setup which powers [Calyx VPN](https://f-droid.org/packages/org.calyxinstitute.vpn/), [Riseup VPN](https://f-droid.org/packages/se.leap.riseupvpn/), and more."
-msgstr ""
+msgstr "[Bitmask](https://f-droid.org/packages/se.leap.bitmaskclient/) - это универсальный клиент для VPN-установки [LEAP](https://leap.se/), которая используется в [Calyx VPN](https://f-droid.org/packages/org.calyxinstitute.vpn/), [Riseup VPN](https://f-droid.org/packages/se.leap.riseupvpn/) и других."
 
 #. type: Bullet: '* '
 #: _posts/2023-03-08-vpn-trust-requires-free-software.md
 msgid "[eduVPN](https://f-droid.org/packages/nl.eduvpn.app/) is a VPN client for [Let's Connect](https://www.letsconnect-vpn.org/) VPN setup which powers [eduVPN](https://www.eduvpn.org/)."
-msgstr ""
+msgstr "[eduVPN](https://f-droid.org/packages/nl.eduvpn.app/) - это VPN-клиент для VPN-установки [Let's Connect](https://www.letsconnect-vpn.org/), на базе которой работает [eduVPN](https://www.eduvpn.org/)."
 
 #. type: Bullet: '* '
 #: _posts/2023-03-08-vpn-trust-requires-free-software.md
-#, fuzzy
-#| msgid "**[OpenVPN for Android](https://f-droid.org/packages/de.blinkt.openvpn/)** was updated from 0.7.7 to 0.7.8"
 msgid "[OpenVPN for Android](https://f-droid.org/packages/de.blinkt.openvpn/) is a generic OpenVPN client for any VPN provider that offers it."
-msgstr "**[OpenVPN для Android](https://f-droid.org/packages/de.blinkt.openvpn/)** был обновлен с 0.7.7 до 0.7.8"
+msgstr "[OpenVPN для Android](https://f-droid.org/packages/de.blinkt.openvpn/) - это универсальный клиент OpenVPN для любого VPN-провайдера, который его предлагает."
 
 #. type: Bullet: '* '
 #: _posts/2023-03-08-vpn-trust-requires-free-software.md
 msgid "[Outline](https://f-droid.org/packages/org.outline.android.client/) is an offering designed to let anyone run their own VPN based on Shadowsocks."
-msgstr ""
+msgstr "[Outline](https://f-droid.org/packages/org.outline.android.client/) - это предложение, предназначенное для того, чтобы каждый мог запустить свой собственный VPN на базе Shadowsocks."
 
 #. type: Bullet: '* '
 #: _posts/2023-03-08-vpn-trust-requires-free-software.md
-#, fuzzy
-#| msgid "[WireGuard](https://f-droid.org/packages/com.wireguard.android/): Next generation secure VPN network tunnel."
 msgid "[WireGuard](https://f-droid.org/packages/com.wireguard.android/) is a generic [WireGuard](https://www.wireguard.com/) client for any provider that offers it."
-msgstr "[WireGuard](https://f-droid.org/packages/com.wireguard.android/): Безопасный сетевой туннель VPN следующего поколения."
+msgstr "[WireGuard](https://f-droid.org/packages/com.wireguard.android/) - это универсальный клиент [WireGuard](https://www.wireguard.com/) для любого провайдера, который его предлагает."
 
 #. type: Plain text
 #: _posts/2023-03-08-vpn-trust-requires-free-software.md
 msgid "So far, none of the VPN providers have taken the plunge into fully supporting reproducible builds. There is some progress: some of the releases of [WireGuard](https://verification.f-droid.org/com.wireguard.android.json), [Tailscale](https://verification.f-droid.org/com.tailscale.ipn.json), and [Mysterium VPN](https://verification.f-droid.org/network.mysterium.vpn.json) have been reproduced on our verification server.  But these apps are not setup for the full reproducible publishing setup, which confirms that the f-droid.org version matches the upstream developer's version exactly, then publishes with the upstream signature.  The F-Droid community is helping more and more apps achieve reproducible builds, which VPN app will be the first?"
-msgstr ""
+msgstr "Пока что ни один из VPN-провайдеров не решился на полную поддержку воспроизводимых сборок. Есть некоторый прогресс: некоторые из релизов [WireGuard](https://verification.f-droid.org/com.wireguard.android.json), [Tailscale](https://verification.f-droid.org/com.tailscale.ipn.json) и [Mysterium VPN](https://verification.f-droid.org/network.mysterium.vpn.json) были воспроизведены на нашем проверочном сервере.  Но эти приложения не настроены для полной воспроизводимой публикации, которая подтверждает, что версия f-droid.org точно совпадает с версией разработчика, а затем публикуется с подписью upstream.  Сообщество F-Droid помогает все большему количеству приложений добиться воспроизводимых сборок, какое VPN-приложение станет первым?"
 
 #. type: Plain text
 #: _posts/2023-03-08-vpn-trust-requires-free-software.md
 msgid "There are also a number of apps that are dedicated to a given provider.  Although there are generic clients available, there are good reasons for a free software provider to ship a custom app.  First, it can make configuration dead simple.  Calyx VPN and Riseup VPN have no accounts at all, so just install the app, and turn on the VPN.  Second, it allows the provider to include multiple methods of connecting and automatically switch between them, depending on what works best.  We decide which apps to include based on what is best for the users.  A VPN client that offers no additional functionality and just serves as a rebrand of an existing client does not serve users well.  In order for an app from a specific provider to be included, it must provide real value to our users.  Here is a list of some related examples:"
-msgstr ""
+msgstr "Существует также ряд приложений, предназначенных для конкретного поставщика.  Несмотря на наличие типовых клиентов, у поставщика бесплатного программного обеспечения есть веские причины для создания собственного приложения.  Во-первых, это может значительно упростить настройку.  В Calyx VPN и Riseup VPN вообще нет учетных записей, так что просто установите приложение и включите VPN.  Во-вторых, это позволяет провайдеру включить несколько способов подключения и автоматически переключаться между ними в зависимости от того, что лучше работает.  Мы решаем, какие приложения включить, исходя из того, что лучше для пользователей.  VPN-клиент, который не предлагает никакой дополнительной функциональности и просто является ребрендингом существующего клиента, не принесет пользы пользователям.  Для того чтобы приложение от конкретного провайдера было включено в список, оно должно представлять реальную ценность для наших пользователей.  Вот список соответствующих примеров:"
 
 #. type: Bullet: '* '
 #: _posts/2023-03-08-vpn-trust-requires-free-software.md
@@ -19062,24 +19054,22 @@ msgstr "**[IPFS](https://f-droid.org/packages/threads.server/)**"
 
 #. type: Bullet: '* '
 #: _posts/2023-03-08-vpn-trust-requires-free-software.md
-#, fuzzy
-#| msgid "**[atop](https://f-droid.org/packages/com.atop/)**"
 msgid "[Lavabit Encrypted Proxy](https://f-droid.org/packages/com.lavabit.pahoehoe/)"
-msgstr "**[atop](https://f-droid.org/packages/com.atop/)**"
+msgstr "[Lavabit зашифрованный прокси](https://f-droid.org/packages/com.lavabit.pahoehoe/)"
 
 #. type: Bullet: '* '
 #: _posts/2023-03-08-vpn-trust-requires-free-software.md
 #, fuzzy
 #| msgid "**[Salasana](https://f-droid.org/packages/net.xvello.salasana/)**"
 msgid "[Mullvad VPN](https://f-droid.org/packages/net.mullvad.mullvadvpn/)"
-msgstr "**[Salasana](https://f-droid.org/packages/net.xvello.salasana/)**"
+msgstr "[Mullvad VPN](https://f-droid.org/packages/net.mullvad.mullvadvpn/)"
 
 #. type: Bullet: '* '
 #: _posts/2023-03-08-vpn-trust-requires-free-software.md
 #, fuzzy
 #| msgid "**[Calyx VPN](https://f-droid.org/packages/org.calyxinstitute.vpn/)**"
 msgid "[Mysterium VPN](https://f-droid.org/packages/network.mysterium.vpn/)"
-msgstr "**[Calyx VPN](https://f-droid.org/packages/org.calyxinstitute.vpn/)**"
+msgstr "[Mysterium VPN](https://f-droid.org/packages/network.mysterium.vpn/)"
 
 #. type: Bullet: '* '
 #: _posts/2023-03-08-vpn-trust-requires-free-software.md
@@ -19093,204 +19083,206 @@ msgstr "**[atop](https://f-droid.org/packages/com.atop/)**"
 #, fuzzy
 #| msgid "**[Librem Mail](https://f-droid.org/packages/one.librem.mail/)**"
 msgid "[Purism Librem Tunnel](https://f-droid.org/packages/one.librem.tunnel/)"
-msgstr "**[Librem Mail](https://f-droid.org/packages/one.librem.mail/)**"
+msgstr "[Purism Librem Tunnel](https://f-droid.org/packages/one.librem.tunnel/)"
 
 #. type: Plain text
 #: _posts/2023-03-08-vpn-trust-requires-free-software.md
 msgid "We also get lots of direct messages asking us to include various proprietary VPN apps, or promote various VPN services for a fee.  That is of course a non-starter.  The first step is free software."
-msgstr ""
+msgstr "Мы также получаем множество прямых сообщений с просьбой включить различные фирменные VPN-приложения или рекламировать различные платные VPN-сервисы.  Это, конечно, не выход.  Первый шаг - это бесплатное программное обеспечение."
 
 #. type: Yaml Front Matter Hash Value: title
 #: _posts/2023-03-20-f-droid-board.md
 #, no-wrap
 msgid "A new F-Droid board for a new era of growth"
-msgstr ""
+msgstr "Новая плата F-Droid для новой эры роста"
 
 #. type: Plain text
 #: _posts/2023-03-20-f-droid-board.md
 msgid "THE INTERNET, 20 March 2023 — The global F-Droid community is pleased to announce that it has officially accepted the merge request to adopt an official governance plan, and an inaugural board of directors consisting of community-nominated members."
-msgstr ""
+msgstr "ИНТЕРНЕТ, 20 марта 2023 г. - Мировое сообщество F-Droid с радостью сообщает, что оно официально приняло запрос на слияние для принятия официального плана управления и создания первого совета директоров, состоящего из членов, номинированных сообществом."
 
 #. type: Plain text
 #: _posts/2023-03-20-f-droid-board.md
 msgid "The community has been legally established through [The Commons Conservancy](https://commonsconservancy.org/), a Netherlands-based foundation ([\"Stichting\"](https://en.wikipedia.org/wiki/Stichting)) that exists as a home for technology efforts in the public interest. While The Commons Conservancy is our official and new legal home, F-Droid has established its own independent volunteer board of directors, who are entrusted by the F-Droid community to develop strategy, identify areas of improvement, help to resolve conflicts, and oversee technical projects and decisions by the community to reduce risk and increase trust of F-Droid users around the world. With so many recent changes to existing app store policies and government regulations, it's an interesting time for FOSS app stores like F-Droid. (Our new board member John Sullivan recently [spoke about this during FOSDEM 2023](https://fosdem.org/2023/schedule/event/app_store_changes/).)"
-msgstr ""
+msgstr "Сообщество было юридически оформлено через [The Commons Conservancy](https://commonsconservancy.org/), нидерландский фонд ([\"Stichting\"](https://en.wikipedia.org/wiki/Stichting)), который существует как дом для технологических усилий в общественных интересах. Хотя The Commons Conservancy является нашим официальным и новым юридическим домом, F-Droid создал свой собственный независимый совет директоров из добровольцев, которым сообщество F-Droid доверило разработку стратегии, определение областей улучшения, помощь в разрешении конфликтов и контроль за техническими проектами и решениями сообщества для снижения рисков и повышения доверия пользователей F-Droid по всему миру. В связи с недавними изменениями в политике магазинов приложений и правительственных постановлениях, это интересное время для магазинов приложений FOSS, таких как F-Droid. (Наш новый член правления Джон Салливан недавно [говорил об этом во время FOSDEM 2023] (https://fosdem.org/2023/schedule/event/app_store_changes/))"
 
 #. type: Plain text
 #: _posts/2023-03-20-f-droid-board.md
 msgid "For the past several months, prospective board members drafted and refined internal organizational statutes and regulations which will become part of The Commons Conservancy's organizing documents, and which will also live and grow in [the existing F-Droid administrative repositories](https://gitlab.com/fdroid/admin) where community members can provide feedback over time to improve governance. The official statutes were voted and approved by the board on 19 January, and the first official meeting of the board took place on 16 February."
-msgstr ""
+msgstr "В течение последних нескольких месяцев потенциальные члены правления составляли и дорабатывали внутренние организационные уставы и положения, которые станут частью организационных документов The Commons Conservancy, а также будут жить и развиваться в [существующих административных репозиториях F-Droid](https://gitlab.com/fdroid/admin), где члены сообщества смогут со временем оставлять отзывы для улучшения управления. Официальный устав был проголосован и утвержден советом 19 января, а первое официальное заседание совета состоялось 16 февраля."
 
 #. type: Plain text
 #: _posts/2023-03-20-f-droid-board.md
 msgid "Inaugural board members were selected through F-Droid community discussion and will serve in staggered 2-year terms: Morgan Lemmer Webber (Chair), John Sullivan (Vice Chair), Michael Downey (Treasurer), Matthias Kirschner, Andrew Lewman (Clerk), and Max Mehl. The Board also includes a special role of Technical Lead which will ensure representation of the F-Droid developer community, initially filled by Hans-Christoph Steiner."
-msgstr ""
+msgstr "Члены совета были выбраны путем обсуждения в сообществе F-Droid и будут работать в течение двух лет в шахматном порядке: Морган Леммер Веббер (председатель), Джон Салливан (вице-председатель), Майкл Дауни (казначей), Маттиас Киршнер, Эндрю Льюман (секретарь) и Макс Мель. Совет также включает в себя специальную роль технического лидера, который будет обеспечивать представительство сообщества разработчиков F-Droid; первоначально эту роль выполнял Ханс-Кристоф Штайнер."
 
 #. type: Plain text
 #: _posts/2023-03-20-f-droid-board.md
 msgid "![Screenshot of Jitsi meeting with several board members and observers, following signing of statutes.]({% asset posts/2023-03-20-f-droid-board/fdroid-board-signing.png %})  *Board members and community observers attend the virtual singing of the board statutes.*"
-msgstr ""
+msgstr "![Скриншот встречи Джитси с несколькими членами правления и наблюдателями после подписания устава]({% asset posts/2023-03-20-f-droid-board/fdroid-board-signing.png %}) *Члены правления и наблюдатели от сообщества присутствуют на виртуальном исполнении устава правления.*"
 
 #. type: Plain text
 #: _posts/2023-03-20-f-droid-board.md
 msgid "Although announcements of new governance bodies for free & open source software projects often include plans for the new organization to raise money, the F-Droid community plans to retain its existing donations model with individual donors contributing directly to community members via [Liberapay](https://liberapay.com/F-Droid-Data/) and [Open Collective](https://opencollective.com/f-droid). The newly-established Board of Directors has created a treasurer role, who will work with the existing stewards of those funds to help ensure funds are spent on the most impactful and important community priorities."
-msgstr ""
+msgstr "Хотя объявления о создании новых органов управления проектами свободного программного обеспечения с открытым исходным кодом часто включают планы по сбору средств для новой организации, сообщество F-Droid планирует сохранить существующую модель пожертвований, при которой индивидуальные доноры вносят взносы непосредственно членам сообщества через [Liberapay](https://liberapay.com/F-Droid-Data/) и [Open Collective](https://opencollective.com/f-droid). Вновь созданный совет директоров назначил казначея, который будет работать с существующими распорядителями этих средств, чтобы обеспечить расходование средств на наиболее значимые и важные приоритеты сообщества."
 
 #. type: Plain text
 #: _posts/2023-03-20-f-droid-board.md
 msgid "\"The significant investments of creativity and energy by our community volunteers has made F-Droid the leading FOSS mobile app catalogue,\" said Morgan Lemmer Webber, the newly-elected Chair of the Board of Directors. \"We are very excited to be able to help guide the project through its next phases of growth and maturity by providing advice and resources to everyone who has been involved in making F-Droid a success, and those who are eager to join us with their individual talents and skills.\""
-msgstr ""
+msgstr "\"Значительные вложения творческих сил и энергии добровольцев нашего сообщества сделали F-Droid ведущим каталогом мобильных приложений FOSS\", - сказал Морган Леммер Веббер, вновь избранный председатель совета директоров. \"Мы очень рады возможности помочь проекту пройти следующие этапы роста и зрелости, предоставляя советы и ресурсы всем, кто участвовал в создании F-Droid, а также тем, кто стремится присоединиться к нам со своими индивидуальными талантами и навыками\""
 
 #. type: Plain text
 #: _posts/2023-03-20-f-droid-board.md
 msgid "The new Board would like to thank everyone from the community who participated in this process over the past few months, with extra thanks to those who helped in drafting our new foundational documents, including Rivka Karasik, Andrew Lewman, Michael Pöhn, Jochen Sprickerhof, and Licaon_Kter."
-msgstr ""
+msgstr "Новый состав Совета директоров благодарит всех членов сообщества, принявших участие в этом процессе в течение последних нескольких месяцев, и выражает особую благодарность тем, кто помогал в составлении наших новых основополагающих документов, включая Ривку Карасик, Эндрю Льюмана, Михаэля Пена, Йохена Шприкерхофа и Ликаон _Ктер."
 
 #. type: Plain text
 #: _posts/2023-03-20-f-droid-board.md
 msgid "To download F-Droid and start using it today, head to https://f-droid.org/. For more information about the new F-Droid Board of Directors, review the newly-adopted [Statutes or Roles & Regulations](https://gitlab.com/fdroid/admin/-/tree/master/board) documents in the F-Droid administrative code repository. And if you'd like to [contribute to our ongoing work](https://f-droid.org/contribute/), we look forward to you joining the community! We also look forward to hearing from you in our [online forum, chat channels, and on the Fediverse.](https://f-droid.org/about/)"
-msgstr ""
+msgstr "Чтобы загрузить F-Droid и начать пользоваться им уже сегодня, перейдите по ссылке https://f-droid.org/. Для получения дополнительной информации о новом Совете директоров F-Droid ознакомьтесь с недавно принятыми документами [Устав или Роли и Правила](https://gitlab.com/fdroid/admin/-/tree/master/board) в репозитории административного кодекса F-Droid. А если вы хотите [внести свой вклад в нашу текущую работу](https://f-droid.org/contribute/), мы будем рады, если вы присоединитесь к сообществу! Мы также будем рады услышать вас на нашем [онлайн-форуме, в чате и на Fediverse](https://f-droid.org/about/)"
 
 #. type: Plain text
 #: _posts/2023-03-20-f-droid-board.md
 msgid "For more information about The Commons Conservancy, visit: https://commonsconservancy.org/"
-msgstr ""
+msgstr "Дополнительную информацию о The Commons Conservancy можно найти на сайте: https://commonsconservancy.org/"
 
 #. type: Yaml Front Matter Hash Value: title
 #: _posts/2023-05-02-three-client-libraries.md
 #, no-wrap
 msgid "How to use the F-Droid libraries, like CalyxOS"
-msgstr ""
+msgstr "Как использовать библиотеки F-Droid, например CalyxOS"
 
 #. type: Plain text
 #: _posts/2023-05-02-three-client-libraries.md
 msgid "When we built the [next-generation F-Droid client]({% post_url 2023-03-01-new-repo-format-faster-smaller-updates %}), we rewrote our code to fit into re-usable libraries, so other projects can make use of F-Droid technology with minimal hassle."
-msgstr ""
+msgstr "Когда мы создали [клиент F-Droid нового поколения]({% post_url 2023-03-01-new-repo-format-faster-smaller-updates %}), мы переписали наш код, чтобы он помещался в библиотеки многократного использования, и другие проекты могли использовать технологию F-Droid с минимальными трудностями."
 
 #. type: Title ##
 #: _posts/2023-05-02-three-client-libraries.md
 #, no-wrap
 msgid "The libraries"
-msgstr ""
+msgstr "Библиотеки"
 
 #. type: Plain text
 #: _posts/2023-05-02-three-client-libraries.md
 msgid "So far, we have published three libraries.  Two of them are written in Kotlin multi-platform, so they can be used outside Android as well.  For example, you could use them to write a command line or even an iOS client."
-msgstr ""
+msgstr "На данный момент мы опубликовали три библиотеки.  Две из них написаны на мультиплатформенном Kotlin, поэтому их можно использовать и за пределами Android.  Например, вы можете использовать их для написания командной строки или даже клиента для iOS."
 
 #. type: Plain text
 #: _posts/2023-05-02-three-client-libraries.md
 msgid "Check out [their README](https://gitlab.com/fdroid/fdroidclient/-/tree/master/libs#f-droid-libraries)  for how to include them in your project."
-msgstr ""
+msgstr "Посмотрите [их README](https://gitlab.com/fdroid/fdroidclient/-/tree/master/libs#f-droid-libraries), чтобы узнать, как включить их в свой проект."
 
 #. type: Title ###
 #: _posts/2023-05-02-three-client-libraries.md
-#, fuzzy, no-wrap
-#| msgid "F-Droid PHP library"
+#, no-wrap
 msgid "Download library"
-msgstr "PHP-библиотека F-Droid"
+msgstr "Скачать библиотеку"
 
 #. type: Plain text
 #: _posts/2023-05-02-three-client-libraries.md
 msgid "This library includes everything you need to download F-Droid repositories and the APKs and images included in them.  It handles resuming of downloads, repository mirrors and takes care of the special HTTP cases that an F-Droid client can encounter."
-msgstr ""
+msgstr "Эта библиотека включает в себя все необходимое для загрузки репозиториев F-Droid и входящих в них APK и изображений.  Она обрабатывает возобновление загрузки, зеркала репозиториев и заботится о специальных случаях HTTP, с которыми может столкнуться клиент F-Droid."
 
 #. type: Plain text
 #: _posts/2023-05-02-three-client-libraries.md
 msgid "The Android version of the library also takes care of rejecting TLS older than 1.2 as well as weak ciphers.  It prevents DNS leaks when using Tor as a proxy and uses a short TLS session timeout to prevent tracking and key re-use.  If you use Glide as an image loader, it also comes with a special `ModelLoader` to be used with Glide."
-msgstr ""
+msgstr "В версии библиотеки для Android также предусмотрена возможность отклонения TLS старше 1.2, а также слабых шифров.  Она предотвращает утечки DNS при использовании Tor в качестве прокси и использует короткий таймаут сессии TLS для предотвращения отслеживания и повторного использования ключей.  Если вы используете Glide в качестве загрузчика изображений, в комплект поставки также входит специальный `ModelLoader` для использования с Glide."
 
 #. type: Plain text
 #: _posts/2023-05-02-three-client-libraries.md
 msgid "Please see the [API docs](https://fdroid.gitlab.io/fdroidclient/libs/download/) for details.  Check [how F-Droid switched to the download library](https://gitlab.com/fdroid/fdroidclient/-/merge_requests/1083)  for an example."
-msgstr ""
+msgstr "Подробности смотрите в [документации по API](https://fdroid.gitlab.io/fdroidclient/libs/download/).  Посмотрите [как F-Droid перешел на библиотеку загрузок](https://gitlab.com/fdroid/fdroidclient/-/merge_requests/1083) для примера."
 
 #. type: Title ###
 #: _posts/2023-05-02-three-client-libraries.md
 #, no-wrap
 msgid "Index library"
-msgstr ""
+msgstr "Библиотека индексов"
 
 #. type: Plain text
 #: _posts/2023-05-02-three-client-libraries.md
 msgid "The multi-platform index library gives you everything you need to handle F-Droid repository indexes.  Of course, there's a parser for reading and representing the indexes internally.  For version 1 indexes, there is also a creator which F-Droid uses to create its own nearby swap repositories.  Both versions have a signature verifier, so you can always make sure that the repository is properly signed before working with its data."
-msgstr ""
+msgstr "Мультиплатформенная библиотека индексов предоставляет вам все необходимое для работы с индексами репозиториев F-Droid.  Конечно, есть парсер для чтения и внутреннего представления индексов.  Для индексов версии 1 есть также создатель, который F-Droid использует для создания собственных близлежащих своп-репозиториев.  В обеих версиях есть верификатор подписи, так что вы всегда можете убедиться, что хранилище правильно подписано, прежде чем работать с его данными."
 
 #. type: Plain text
 #: _posts/2023-05-02-three-client-libraries.md
 msgid "Apart from these basics, the library also has many useful classes that help you to choose the best translation based on the user's locale, to check if an app is compatible with the current device, and to check if an app has an update available in the repository index.  There are classes for processing streams of index data, so you don't need to load the entire index into memory which can be an issue on devices with little RAM.  If you prefer to work only with the version 2 format internally, the library features an index converter which can convert version 1 format into version 2."
-msgstr ""
+msgstr "Помимо этих основ, в библиотеке есть множество полезных классов, которые помогают выбрать оптимальный перевод в зависимости от локали пользователя, проверить совместимость приложения с текущим устройством, а также проверить, доступно ли обновление приложения в индексе репозитория.  Есть классы для обработки потоков данных индекса, поэтому вам не нужно загружать весь индекс в память, что может быть проблемой на устройствах с небольшим объемом оперативной памяти.  Если вы предпочитаете работать только с форматом версии 2, в библиотеке есть конвертер индексов, который может преобразовать формат версии 1 в версию 2."
 
 #. type: Plain text
 #: _posts/2023-05-02-three-client-libraries.md
 msgid "F-Droid clients wishing to make use of version 2 delta updates, also find helpful classes for this, so they don't have to re-invent the wheel themselves."
-msgstr ""
+msgstr "Клиенты F-Droid, желающие использовать дельта-обновления версии 2, также найдут полезные уроки для этого, чтобы не изобретать колесо самостоятельно."
 
 #. type: Plain text
 #: _posts/2023-05-02-three-client-libraries.md
 msgid "Please see the [API docs](https://fdroid.gitlab.io/fdroidclient/libs/index/) for details.  Check [how F-Droid switched to the index library](https://gitlab.com/fdroid/fdroidclient/-/merge_requests/1120)  for an example."
-msgstr ""
+msgstr "Подробности смотрите в [документации по API](https://fdroid.gitlab.io/fdroidclient/libs/index/).  Посмотрите [как F-Droid перешел на индексную библиотеку](https://gitlab.com/fdroid/fdroidclient/-/merge_requests/1120) для примера."
 
 #. type: Title ###
 #: _posts/2023-05-02-three-client-libraries.md
 #, no-wrap
 msgid "Database library"
-msgstr ""
+msgstr "Библиотека баз данных"
 
 #. type: Plain text
 #: _posts/2023-05-02-three-client-libraries.md
 msgid "In case you need to persist F-Droid repository information in your Android app, this library is for you.  It stores F-Droid related information such as repositories, apps and their versions.  Then allows you to query and search for them.  Under the hood, it uses a Room database which in turn uses sqlite."
-msgstr ""
+msgstr "Если вам нужно сохранить информацию о репозитории F-Droid в вашем приложении для Android, эта библиотека для вас.  Она хранит информацию, связанную с F-Droid, такую как репозитории, приложения и их версии.  Затем позволяет запрашивать и искать их.  Под капотом она использует базу данных Room, которая, в свою очередь, использует sqlite."
 
 #. type: Plain text
 #: _posts/2023-05-02-three-client-libraries.md
 msgid "Besides database related classes, this library currently also includes classes related to updating repositories, so that information fetched from the internet (using the downloader library)  can be streamed directly into the database."
-msgstr ""
+msgstr "Помимо классов, связанных с базами данных, эта библиотека в настоящее время также включает классы, связанные с обновлением репозиториев, так что информация, полученная из Интернета (с помощью библиотеки загрузчика), может быть направлена непосредственно в базу данных."
 
 #. type: Plain text
 #: _posts/2023-05-02-three-client-libraries.md
 msgid "Please see the [API docs](https://fdroid.gitlab.io/fdroidclient/libs/database/) for details.  Check [how F-Droid switched to the database library](https://gitlab.com/fdroid/fdroidclient/-/merge_requests/1135)  for an example."
-msgstr ""
+msgstr "Подробности смотрите в [документации по API](https://fdroid.gitlab.io/fdroidclient/libs/database/).  Посмотрите [как F-Droid перешел на библиотеку баз данных](https://gitlab.com/fdroid/fdroidclient/-/merge_requests/1135) для примера."
 
 #. type: Title ##
 #: _posts/2023-05-02-three-client-libraries.md
-#, no-wrap
+#, fuzzy, no-wrap
 msgid "CalyxOS"
-msgstr ""
+msgstr "CalyxOS"
 
 #. type: Plain text
 #: _posts/2023-05-02-three-client-libraries.md
 msgid "The first known user of these new libraries is CalyxOS which is already using them in two of their apps.  Thanks to the libraries, they can focus their development effort on the apps themselves and don't need to re-implement the F-Droid related bits."
-msgstr ""
+msgstr "Первым известным пользователем этих новых библиотек стала компания CalyxOS, которая уже использует их в двух своих приложениях.  Благодаря библиотекам они могут сосредоточить свои усилия по разработке на самих приложениях, и им не нужно заново реализовывать части, связанные с F-Droid."
 
 #. type: Plain text
 #: _posts/2023-05-02-three-client-libraries.md
 msgid "The first app is used as part of their setup wizard that shows up after initial install.  It allows the user to install additional apps on an opt-in basis, so they don't need to ship as non-removable system apps.  The benefit for CalyxOS is that they can load these apps from an F-Droid repository in the internet without needing to ship APKs as part of their ROM keeping its size minimal."
-msgstr ""
+msgstr "Первое приложение используется как часть мастера настройки, который появляется после первоначальной установки.  Оно позволяет пользователю устанавливать дополнительные приложения по желанию, поэтому их не нужно поставлять в виде неснимаемых системных приложений.  Преимущество CalyxOS в том, что они могут загружать эти приложения из репозитория F-Droid в интернете без необходимости поставлять APK как часть своего ROM, сохраняя его размер минимальным."
 
 #. type: Plain text
 #: _posts/2023-05-02-three-client-libraries.md
 msgid "This is [their method](https://gitlab.com/CalyxOS/platform_external_calyx_lupin/-/blob/e78b4e/shared/src/main/java/org/calyxos/lupin/RepoHelper.kt#L83-88)  to get an index representation from a file, making use of the index library:"
-msgstr ""
+msgstr "Это [их метод](https://gitlab.com/CalyxOS/platform_external_calyx_lupin/-/blob/e78b4e/shared/src/main/java/org/calyxos/lupin/RepoHelper.kt#L83-88) для получения индексного представления из файла, использующий индексную библиотеку:"
 
 #. type: Fenced code block (kotlin)
 #: _posts/2023-05-02-three-client-libraries.md
-#, no-wrap
+#, fuzzy, no-wrap
 msgid ""
 "fun getIndex(file: File): IndexV2 = file.inputStream().use { inputStream ->\n"
 "    IndexParser.parseV2(inputStream)\n"
 "}\n"
 msgstr ""
+"fun getIndex(file: File): IndexV2 = file.inputStream().use { inputStream ->\n"
+"    IndexParser.parseV2(inputStream)\n"
+"}\n"
 
 #. type: Plain text
 #: _posts/2023-05-02-three-client-libraries.md
 msgid "The second app uses F-Droid to keep its own essential apps up to date.  With a minimal UI, its main purpose is to regularly check for updates and install them in the background, once available."
-msgstr ""
+msgstr "Второе приложение использует F-Droid для поддержания в актуальном состоянии собственных важных приложений.  Имея минимальный пользовательский интерфейс, его основная задача - регулярно проверять наличие обновлений и устанавливать их в фоновом режиме, как только они станут доступны."
 
 #. type: Plain text
 #: _posts/2023-05-02-three-client-libraries.md
 msgid "The app makes use of the `UpdateChecker` of the index library to check if updates are available:"
-msgstr ""
+msgstr "Приложение использует `UpdateChecker` из индексной библиотеки для проверки наличия обновлений:"
 
 #. type: Fenced code block (kotlin)
 #: _posts/2023-05-02-three-client-libraries.md
@@ -19309,250 +19301,250 @@ msgstr ""
 #. type: Plain text
 #: _posts/2023-05-02-three-client-libraries.md
 msgid "([Full code example](https://gitlab.com/CalyxOS/platform_external_calyx_lupin/-/blob/e78b4e/updater/src/main/java/org/calyxos/lupin/updater/UpdateManager.kt#L154-168))"
-msgstr ""
+msgstr "([Полный пример кода](https://gitlab.com/CalyxOS/platform_external_calyx_lupin/-/blob/e78b4e/updater/src/main/java/org/calyxos/lupin/updater/UpdateManager.kt#L154-168))"
 
 #. type: Plain text
 #: _posts/2023-05-02-three-client-libraries.md
 msgid "[Both of these apps](https://gitlab.com/CalyxOS/platform_external_calyx_lupin/) don't need to persist any data, so they only use the download and the index library."
-msgstr ""
+msgstr "[Обоим этим приложениям](https://gitlab.com/CalyxOS/platform_external_calyx_lupin/) не нужно сохранять данные, поэтому они используют только загрузку и индексную библиотеку."
 
 #. type: Plain text
 #: _posts/2023-05-02-three-client-libraries.md
 msgid "_The library work was funded by the [FFDW-DVD grant]({% post_url 2022-02-05-decentralizing-distribution %})_"
-msgstr ""
+msgstr "Работа над библиотекой была профинансирована [грантом FFDW-DVD]({% post_url 2022-02-05-decentralizing-distribution %})_"
 
 #. type: Yaml Front Matter Hash Value: title
 #: _posts/2023-06-16-progessive-web-client.md
 #, no-wrap
 msgid "Progressive web-app client for F-Droid"
-msgstr ""
+msgstr "Прогрессивный клиент веб-приложений для F-Droid"
 
 #. type: Plain text
 #: _posts/2023-06-16-progessive-web-client.md
 msgid "We've created a prototype of a progressive [web app for browsing F-Droid repositories](https://gitlab.com/uniqx/fdroid-webdash).  It's built with [Flutter](https://flutter.dev/), which is really great for working in rapid development cycles.  It also allows us to make it look and feel like a modern Android app.  As a trade-off the web-app is pretty big in size (~ 10 MB).  So depending on your internet connection speed loading it for the first time might take a while.  Flutter is also notorious for trying to connect to Google servers, and we couldn't figure out how to make the app GDPR compliant just yet."
-msgstr ""
+msgstr "Мы создали прототип прогрессивного [веб-приложения для просмотра репозиториев F-Droid](https://gitlab.com/uniqx/fdroid-webdash).  Оно создано с помощью [Flutter](https://flutter.dev/), что очень удобно для работы в быстрых циклах разработки.  Это также позволяет нам сделать так, чтобы оно выглядело и ощущалось как современное приложение для Android.  В качестве компромисса веб-приложение имеет довольно большой размер (~ 10 МБ).  Поэтому в зависимости от скорости вашего интернет-соединения его загрузка в первый раз может занять некоторое время.  Flutter также печально известен тем, что пытается подключиться к серверам Google, и мы пока не смогли придумать, как сделать приложение соответствующим требованиям GDPR."
 
 #. type: Plain text
 #: _posts/2023-06-16-progessive-web-client.md
 msgid "Since it's a just an early prototype, it's nowhere near as complete as our [official Android app](https://f-droid.org/packages/org.fdroid.fdroid/).  Right now it only has some of the most basic features: Displaying basic repository informations; Providing a link/QR-code for adding the repository to your F-Droid client; Browsing and searching for apps; Displaying app details and app downloads."
-msgstr ""
+msgstr "Поскольку это всего лишь ранний прототип, он еще не настолько полный, как наше [официальное приложение для Android](https://f-droid.org/packages/org.fdroid.fdroid/).  Сейчас в нем есть только самые основные функции: Отображение основной информации о репозитории; Предоставление ссылки/QR-кода для добавления репозитория в ваш F-Droid клиент; Просмотр и поиск приложений; Отображение информации о приложениях и их загрузках."
 
 #. type: Plain text
 #: _posts/2023-06-16-progessive-web-client.md
 msgid "F-Droid repositories themselves are deployed like web-sites.  So naturally it's possible to deploy this web-app into any F-Droid repository and instantly make it browse-able on the web.  We're considering adding an option for deploying it automatically to our tools for managing F-Droid repositories."
-msgstr ""
+msgstr "Сами репозитории F-Droid развертываются как веб-сайты.  Поэтому, естественно, можно развернуть это веб-приложение в любом репозитории F-Droid и сразу же сделать его доступным для просмотра в Интернете.  Мы рассматриваем возможность добавления опции для автоматического развертывания в наши инструменты для управления репозиториями F-Droid."
 
 #. type: Plain text
 #: _posts/2023-06-16-progessive-web-client.md
 msgid "The tooling that runs the F-Droid community can easily be applied to other platforms like iOS. Our team came up with an [experimental](https://gitlab.com/fdroid/fdroidserver/-/merge_requests/1275)  solution for shipping iOS apps using F-Droid repositories.  So our new PWA opens up an opportunity to explore how F-Droid could offer a tiny taste of freedom to iOS users.  While we hope to aid the expansion of free software everywhere, even on proprietary platforms like iOS, F-Droid will only ship on platforms that can be free software, like Android."
-msgstr ""
+msgstr "Инструментарий, на котором работает сообщество F-Droid, можно легко применить и для других платформ, например iOS. Наша команда разработала [экспериментальное](https://gitlab.com/fdroid/fdroidserver/-/merge_requests/1275) решение для отправки приложений для iOS с помощью репозиториев F-Droid.  Таким образом, наш новый PWA открывает возможность исследовать, как F-Droid может предложить крошечный вкус свободы пользователям iOS.  Хотя мы надеемся способствовать распространению свободного программного обеспечения повсюду, даже на проприетарных платформах вроде iOS, F-Droid будет поставляться только на платформы, которые могут быть свободными, например на Android."
 
 #. type: Yaml Front Matter Hash Value: title
 #: _posts/2023-07-15-community-controlled-backup-ceremony.md
 #, no-wrap
 msgid "Community-controlled Backup Ceremony"
-msgstr ""
+msgstr "Церемония резервного копирования под контролем сообщества"
 
 #. type: Plain text
 #: _posts/2023-07-15-community-controlled-backup-ceremony.md
 msgid "Seven core contributors and one board member met in Scotland, the birthplace of F-Droid, for the first in-person F-Droid team meeting.  One of the most pressing tasks we needed to take care of was setting up a contributor-controlled backup of all of our signing keys.  The requirements made it necessary to have a lengthy, in-person, consensus-driven planning session.  We found no good documentation of such a procedure, so we're going out on a limb here and publishing the general outline of our process.  This process was informally audited by multiple people with varying expertise before the public key was used to encrypt anything."
-msgstr ""
+msgstr "Семь основных участников и один член совета директоров встретились в Шотландии, на родине F-Droid, для первого очного собрания команды F-Droid.  Одной из самых неотложных задач, которую нам нужно было решить, была организация контролируемого участниками резервного копирования всех наших ключей подписи.  В связи с этими требованиями потребовалось провести длительную очную сессию планирования, основанного на консенсусе.  Мы не нашли хорошей документации по такой процедуре, поэтому мы решили пойти на хитрость и опубликовать общий план нашего процесса.  Этот процесс был неофициально проверен несколькими людьми с разным опытом, прежде чем открытый ключ был использован для шифрования чего-либо."
 
 #. type: Plain text
 #: _posts/2023-07-15-community-controlled-backup-ceremony.md
 msgid "![F-Droid core contributors at midnight]({% asset posts/2023-07-15-community-controlled-backup-ceremony/fdroid-at-midnight.jpg %})"
-msgstr ""
+msgstr "![F-Droid ядро контрибьюторов в полночь]({% asset posts/2023-07-15-community-controlled-backup-ceremony/fdroid-at-midnight.jpg %})"
 
 #. type: Plain text
 #: _posts/2023-07-15-community-controlled-backup-ceremony.md
 msgid "F-Droid manages secret signing keys for thousands of apps.  Someone who has control over those keys could create malicious app releases that could be transparently installed as updates.  On top of that, [Android](https://developer.android.com/about/versions/pie/android-9.0#apk-key-rotation) does [not](https://guardianproject.info/2015/12/29/how-to-migrate-your-android-apps-signing-key/) make it [easy](https://anandbose.gitlab.io/android-development/2020/05/08/android-signing-key-rotation-explained/) to rotate to new signing keys, unlike TLS or Signal. So [these keys]({{ site.baseurl }}/docs/Signing_Process/) are very important to [protect]({{ site.baseurl }}/docs/Building_a_Signing_Server/).  They are also very important to backup, since the Android OS uses the signing key combined with the Application ID as the unique identifier to represent each installed app. This meeting gave us the perfect opportunity to create a new backup process that ensures that at least 4 trusted community members must be physically present in order to decrypt the backup of all the keys.  First, we started with the requirements:"
-msgstr ""
+msgstr "F-Droid управляет секретными ключами подписи для тысяч приложений.  Тот, кто имеет контроль над этими ключами, может создать вредоносные выпуски приложений, которые будут прозрачно установлены как обновления.  Кроме того, [Android](https://developer.android.com/about/versions/pie/android-9.0#apk-key-rotation) не делает [легкой](https://guardianproject.info/2015/12/29/how-to-migrate-your-android-apps-signing-key/) ротацию на новые ключи подписи, в отличие от TLS или Signal. Поэтому [эти ключи]({{ site.baseurl }}/docs/Signing_Process/) очень важны для [защиты]({{ site.baseurl }}/docs/Building_a_Signing_Server/).  Они также очень важны для резервного копирования, поскольку ОС Android использует ключ подписи в сочетании с идентификатором приложения в качестве уникального идентификатора для каждого установленного приложения. Эта встреча дала нам прекрасную возможность создать новый процесс резервного копирования, который гарантирует, что как минимум 4 доверенных члена сообщества должны физически присутствовать, чтобы расшифровать резервную копию всех ключей.  Во-первых, мы начали с требований:"
 
 #. type: Bullet: '* '
 #: _posts/2023-07-15-community-controlled-backup-ceremony.md
 msgid "Regular backups as new keys get added."
-msgstr ""
+msgstr "Регулярное резервное копирование по мере добавления новых ключей."
 
 #. type: Bullet: '* '
 #: _posts/2023-07-15-community-controlled-backup-ceremony.md
 msgid "Strong, proven encryption for all backups."
-msgstr ""
+msgstr "Надежное и проверенное шифрование всех резервных копий."
 
 #. type: Bullet: '* '
 #: _posts/2023-07-15-community-controlled-backup-ceremony.md
 msgid "Minimum of four participants to decrypt."
-msgstr ""
+msgstr "Для расшифровки требуется минимум четыре участника."
 
 #. type: Bullet: '* '
 #: _posts/2023-07-15-community-controlled-backup-ceremony.md
 msgid "Specific technical experience should not be required to be a participant."
-msgstr ""
+msgstr "Для участия в конкурсе не требуется особый технический опыт."
 
 #. type: Bullet: '* '
 #: _posts/2023-07-15-community-controlled-backup-ceremony.md
 msgid "The components should be physically spread out across jurisdictions."
-msgstr ""
+msgstr "Компоненты должны быть физически распределены по юрисдикциям."
 
 #. type: Bullet: '* '
 #: _posts/2023-07-15-community-controlled-backup-ceremony.md
 msgid "Access should minimized as much as possible (e.g. the signing server maintainer does not need access to the backups)."
-msgstr ""
+msgstr "Доступ должен быть максимально минимизирован (например, сопровождающему сервера подписей не нужен доступ к резервным копиям)."
 
 #. type: Bullet: '* '
 #: _posts/2023-07-15-community-controlled-backup-ceremony.md
 msgid "As low a stress level as possible for each participant."
-msgstr ""
+msgstr "Как можно более низкий уровень стресса для каждого участника."
 
 #. type: Bullet: '* '
 #: _posts/2023-07-15-community-controlled-backup-ceremony.md
 msgid "Each participant could hand over their component if they are forced to, without jeopardizing the encryption."
-msgstr ""
+msgstr "Каждый участник может передать свой компонент, если его заставят это сделать, не подвергая опасности шифрование."
 
 #. type: Plain text
 #: _posts/2023-07-15-community-controlled-backup-ceremony.md
 msgid "Then we mapped out who was present:"
-msgstr ""
+msgstr "Затем мы составили карту присутствующих:"
 
 #. type: Bullet: '* '
 #: _posts/2023-07-15-community-controlled-backup-ceremony.md
 msgid "Seven core contributors."
-msgstr ""
+msgstr "Семь основных контрибуторов."
 
 #. type: Bullet: '* '
 #: _posts/2023-07-15-community-controlled-backup-ceremony.md
 msgid "One board member."
-msgstr ""
+msgstr "Один член совета директоров."
 
 #. type: Bullet: '* '
 #: _posts/2023-07-15-community-controlled-backup-ceremony.md
 msgid "One trusted external witness."
-msgstr ""
+msgstr "Один надежный внешний свидетель."
 
 #. type: Bullet: '* '
 #: _posts/2023-07-15-community-controlled-backup-ceremony.md
 msgid "No one else."
-msgstr ""
+msgstr "Никого больше."
 
 #. type: Plain text
 #: _posts/2023-07-15-community-controlled-backup-ceremony.md
 msgid "From that, we built the process:"
-msgstr ""
+msgstr "Исходя из этого, мы выстроили процесс:"
 
 #. type: Bullet: '* '
 #: _posts/2023-07-15-community-controlled-backup-ceremony.md
 msgid "Three roles for physical control: operator of the signing server, encrypted backup holder, passphrase shard holder."
-msgstr ""
+msgstr "Три роли для физического контроля: оператор сервера подписи, держатель зашифрованной резервной копии, держатель осколка парольной фразы."
 
 #. type: Bullet: '* '
 #: _posts/2023-07-15-community-controlled-backup-ceremony.md
 msgid "Each person only takes on a single role, for example, shard holders do not have access to the signing keys or the encrypted backup."
-msgstr ""
+msgstr "Каждый человек выполняет только одну роль, например, владельцы шардов не имеют доступа к ключам подписи или зашифрованным резервным копиям."
 
 #. type: Bullet: '* '
 #: _posts/2023-07-15-community-controlled-backup-ceremony.md
 msgid "The encryption key used for the data is public key cryptography."
-msgstr ""
+msgstr "Ключ шифрования данных используется в криптографии с открытым ключом."
 
 #. type: Bullet: '* '
 #: _posts/2023-07-15-community-controlled-backup-ceremony.md
 msgid "The private key was generated on a one-time-use, in-memory, disposable [TAILS](https://tails.boum.org/) session."
-msgstr ""
+msgstr "Закрытый ключ был сгенерирован в одноразовой одноразовой сессии [TAILS](https://tails.boum.org/), хранящейся в памяти."
 
 #. type: Bullet: '* '
 #: _posts/2023-07-15-community-controlled-backup-ceremony.md
 msgid "The private key was sharded using [Shamir's Secret Sharing](https://en.wikipedia.org/wiki/Shamir%27s_Secret_Sharing)."
-msgstr ""
+msgstr "Закрытый ключ был разделен с помощью [Shamir's Secret Sharing](https://en.wikipedia.org/wiki/Shamir%27s_Secret_Sharing)."
 
 #. type: Bullet: '* '
 #: _posts/2023-07-15-community-controlled-backup-ceremony.md
 msgid "We used an implementation of Shamir's Secret Sharing that has been maintained for over 15 years.  The installation that was used was confirmed via reproducible builds."
-msgstr ""
+msgstr "Мы использовали реализацию Shamir's Secret Sharing, которая поддерживается уже более 15 лет.  Используемая установка была подтверждена воспроизводимыми сборками."
 
 #. type: Bullet: '* '
 #: _posts/2023-07-15-community-controlled-backup-ceremony.md
 msgid "Each shard was written to a removeable storage device bought in a store with cash without pre-order or registration."
-msgstr ""
+msgstr "Каждый осколок был записан на съемный накопитель, купленный в магазине за наличные без предварительного заказа или регистрации."
 
 #. type: Bullet: '* '
 #: _posts/2023-07-15-community-controlled-backup-ceremony.md
 msgid "Each removeable storage device with a shard was physically handed each shard holder to pack in a tamper-evident envelope as the others observed."
-msgstr ""
+msgstr "Каждое съемное устройство хранения с осколком физически передавалось держателю осколка для упаковки в конверт с защитой от несанкционированного доступа, за чем наблюдали остальные."
 
 #. type: Bullet: '* '
 #: _posts/2023-07-15-community-controlled-backup-ceremony.md
 msgid "Backups must not be transmitted over the internet, only exchanged via in-person meetings between people who know each other."
-msgstr ""
+msgstr "Резервные копии не должны передаваться через Интернет, обмен ими может осуществляться только при личной встрече между людьми, которые знают друг друга."
 
 #. type: Bullet: '* '
 #: _posts/2023-07-15-community-controlled-backup-ceremony.md
 msgid "All involved sat around a table for the duration of the ceremony.  The security profile of in-person discussions is drastically easier to manage than secure online discussions."
-msgstr ""
+msgstr "Все участники сидели за столом на протяжении всей церемонии.  Безопасность личных обсуждений значительно проще, чем безопасность обсуждений в Интернете."
 
 #. type: Bullet: '* '
 #: _posts/2023-07-15-community-controlled-backup-ceremony.md
 msgid "All present were observers of each step of the process, and verbally confirmed their agreement."
-msgstr ""
+msgstr "Все присутствующие наблюдали за каждым этапом процесса и устно подтвердили свое согласие."
 
 #. type: Bullet: '* '
 #: _posts/2023-07-15-community-controlled-backup-ceremony.md
 msgid "The operators of the signing server and the holders of the backup data verified each others' identities via F-Droid networks, PGP Web of Trust, and checks of government issued IDs."
-msgstr ""
+msgstr "Операторы сервера подписи и владельцы резервных данных проверили личности друг друга с помощью сетей F-Droid, PGP Web of Trust и проверки государственных удостоверений личности."
 
 #. type: Bullet: '* '
 #: _posts/2023-07-15-community-controlled-backup-ceremony.md
 msgid "Pieces from a minimum of two jurisdictions are required to decrypt: EU, Europe non-EU, US."
-msgstr ""
+msgstr "Для расшифровки требуются куски минимум из двух юрисдикций: ЕС, Европа, не входящая в ЕС, США."
 
 #. type: Plain text
 #: _posts/2023-07-15-community-controlled-backup-ceremony.md
 msgid "One important factor in reliable backups is regular updates.  New apps are constantly being added, and those usually get a new signing key assigned.  So we needed a system where it was easy to update the backup data while involving as few people as possible.  An operator of the signing server receives the public key to encrypt the backups via in-person exchange with a holder of the backups.  The holders of the backup data receives the encrypted backups from an operator of the signing server via in-person exchange."
-msgstr ""
+msgstr "Одним из важных факторов надежного резервного копирования является регулярное обновление.  Постоянно добавляются новые приложения, которым обычно назначается новый ключ подписи.  Поэтому нам нужна была система, в которой можно было бы легко обновлять резервные копии, привлекая к этому как можно меньше людей.  Оператор сервера подписи получает открытый ключ для шифрования резервных копий путем личного обмена с владельцем резервных копий.  Владельцы резервных данных получают зашифрованные резервные копии от оператора подписывающего сервера путем личного обмена."
 
 #. type: Plain text
 #: _posts/2023-07-15-community-controlled-backup-ceremony.md
 msgid "Holding such important secrets also brings some unavoidable stresses to the people holding them. One key design goal was to create a protocol that did not add to the stress of any existing operators.  Furthermore, we aimed to keep the individual stress as low as possible for all roles in this protocol.  That makes it possible to empower volunteer contributors without overburdening them."
-msgstr ""
+msgstr "Хранение таких важных секретов также приводит к неизбежному стрессу для людей, владеющих ими. Одной из ключевых целей разработки было создание протокола, который не увеличивал бы стресс ни одного из существующих операторов.  Кроме того, мы стремились к тому, чтобы индивидуальный стресс был как можно ниже для всех ролей в этом протоколе.  Это позволяет расширить возможности добровольцев, не перегружая их."
 
 #. type: Plain text
 #: _posts/2023-07-15-community-controlled-backup-ceremony.md
 msgid "For restoring, we agreed that it should happen in an in-person meeting.  The process requires three shard holders meet with one encrypted backup holder, then the results need be given to a signing server operator. Requiring an in-person meeting could delay the restore process, but the added trust seemed worth it.  So this is the default process.  We could still switch to partially online process if the need arises.  That would require the agreement of five participants."
-msgstr ""
+msgstr "Что касается восстановления, мы решили, что оно должно происходить на личной встрече.  Этот процесс требует, чтобы три держателя осколков встретились с одним держателем зашифрованной резервной копии, а затем результаты должны быть переданы оператору сервера подписи. Требование личной встречи может затянуть процесс восстановления, но дополнительное доверие, похоже, того стоит.  Таким образом, это процесс по умолчанию.  Если возникнет необходимость, мы можем перейти на частично онлайновый процесс.  Для этого потребуется согласие пяти участников."
 
 #. type: Plain text
 #: _posts/2023-07-15-community-controlled-backup-ceremony.md
 msgid "We believe this is a secure and reliable backup procedure for very sensitive data.  We welcome further scrutiny and plan to update the procedure as needed in a future meeting."
-msgstr ""
+msgstr "Мы считаем, что это безопасная и надежная процедура резервного копирования очень чувствительных данных.  Мы приветствуем дальнейшее изучение и планируем обновить процедуру по мере необходимости на одном из следующих заседаний."
 
 #. type: Plain text
 #: _posts/2023-07-15-community-controlled-backup-ceremony.md
 msgid "(_This meeting was paid for by the [FFDW-DVD grant]({% post_url 2022-02-05-decentralizing-distribution %})._)"
-msgstr ""
+msgstr "(_Эта встреча была оплачена грантом [FFDW-DVD]({% post_url 2022-02-05-decentralizing-distribution %})._)"
 
 #. type: Yaml Front Matter Hash Value: title
 #: _posts/2023-09-03-reproducible-builds-signing-keys-and-binary-repos.md
 #, no-wrap
 msgid "Reproducible builds, signing keys, and binary repos"
-msgstr ""
+msgstr "Воспроизводимые сборки, ключи подписи и бинарные репозитории"
 
 #. type: Plain text
 #: _posts/2023-09-03-reproducible-builds-signing-keys-and-binary-repos.md
 msgid "Earlier this year, we reported about our progress concerning [reproducible builds]({% post_url 2023-01-15-towards-a-reproducible-fdroid %}). Meanwhile, more and more apps are using this; you can find [some statistics here](https://gitlab.com/obfusk/fdroid-misc-scripts/-/blob/master/reproducible/overview.md): compared to about 20 apps in November 2022, the number of apps being built reproducibly went up by almost a factor of 10 to around 191 in September 2023\\. About 2 out of every 3 apps newly added to F-Droid are using this path. But what exactly does „reproducible build“ mean, in easy terms and without all the „tech-buzz“?"
-msgstr ""
+msgstr "Ранее в этом году мы сообщали о нашем прогрессе в области [воспроизводимых сборок]({% post_url 2023-01-15-towards-a-reproducible-fdroid %}). Тем временем все больше и больше приложений используют эту возможность; вы можете найти [некоторую статистику здесь](https://gitlab.com/obfusk/fdroid-misc-scripts/-/blob/master/reproducible/overview.md): по сравнению с примерно 20 приложениями в ноябре 2022 года, количество приложений, собираемых воспроизводимым способом, увеличилось почти в 10 раз и составило около 191 в сентябре 2023 года\\. Примерно 2 из 3 новых приложений, добавленных в F-Droid, используют этот путь. Но что именно означает \"воспроизводимая сборка\", если говорить простым языком и без всяких \"технологических заморочек\"?"
 
 #. type: Plain text
 #: _posts/2023-09-03-reproducible-builds-signing-keys-and-binary-repos.md
 msgid "All the years before, F-Droid created a dedicated key for each app to sign the published APKs, but now with reproducible builds F-Droid ships APKs that are signed by the upstream developer(s). Which proves to you that the developer confirmed: „this is what I intended to publish, this was built from my code“. And that it's distributed by F-Droid tells you: „F-Droid confirms, too, that this is the APK built from the very code the developer provided“. So neither of the two could have „sneaked in“ something not contained in the app's source code repository."
-msgstr ""
+msgstr "Все годы до этого F-Droid создавала специальный ключ для каждого приложения, чтобы подписывать опубликованные APK, но теперь с воспроизводимыми сборками F-Droid поставляет APK, подписанные разработчиком(ами). Что доказывает вам, что разработчик подтвердил: \"это то, что я намеревался опубликовать, это было собрано из моего кода\". А то, что его распространяет F-Droid, говорит вам: \"F-Droid тоже подтверждает, что это APK, собранный из того самого кода, который предоставил разработчик\". Так что никто из них не мог \"подсунуть\" что-то, не содержащееся в репозитории исходного кода приложения."
 
 #. type: Plain text
 #: _posts/2023-09-03-reproducible-builds-signing-keys-and-binary-repos.md
 msgid "Verification at F-Droid, again in easy terms, happens this way: the app is built from the source code on F-Droid's build servers. Then the corresponding APK built by the developer is fetched, and compared against it. The only differences should be the signature files – as the APKs from the developer was signed using their private key, which F-Droid has no access to. If this is the case (i.e. the two APKs match), it was proven to be the very same „binary“ – and F-Droid can distribute the one signed by the developer."
-msgstr ""
+msgstr "Проверка в F-Droid, если говорить простым языком, происходит следующим образом: приложение собирается из исходного кода на серверах сборки F-Droid. Затем берется соответствующий APK, созданный разработчиком, и сравнивается с ним. Отличия должны быть только в файлах подписи - ведь APK от разработчика был подписан с помощью его приватного ключа, к которому у F-Droid нет доступа. Если это так (т.е. два APK совпадают), то доказано, что это один и тот же \"бинарник\" - и F-Droid может распространять тот, который подписан разработчиком."
 
 #. type: Plain text
 #: _posts/2023-09-03-reproducible-builds-signing-keys-and-binary-repos.md
 msgid "You can find an outline of the process [here]({{ site.baseurl }}/en/docs/Inclusion_How-To/#reproducible-builds), and technical details in [this documentation]({{ site.baseurl }}/docs/Reproducible_Builds/)."
-msgstr ""
+msgstr "Краткое описание процесса можно найти [здесь]({{ site.baseurl }}/en/docs/Inclusion_How-To/#reproducible-builds), а технические подробности - в [этой документации]({{ site.baseurl }}/docs/Reproducible_Builds/)."
 
 #. type: Title ###
 #: _posts/2023-09-03-reproducible-builds-signing-keys-and-binary-repos.md
@@ -19563,12 +19555,12 @@ msgstr "Победы и предостережения"
 #. type: Plain text
 #: _posts/2023-09-03-reproducible-builds-signing-keys-and-binary-repos.md
 msgid "A few advantages are pretty clear: higher trust is the first thing coming to mind, as now two parties (F-Droid and the developer) can both confirm the integrity of the distributed APK. But there's more to it. For one, if a developer has to push out some „emergency update“ (e.g. to fix a security issue, or something critical was broken) you'd no longer need to wait for a full build cycle or two to get hold of it. As the APK you've installed from F-Droid was signed using the developers' private key, you can simply take an APK they provide you directly by other means (e.g. via the app's repository at Codeberg, GitLab or Github) and update to that – provided you trust the developer enough – which you then must, as such builds are not (yet) verified by F-Droid."
-msgstr ""
+msgstr "Несколько преимуществ вполне очевидны: первое, что приходит на ум, - это повышение доверия, поскольку теперь две стороны (F-Droid и разработчик) могут подтвердить целостность распространяемого APK. Но есть и другие преимущества. Например, если разработчику нужно выпустить какое-то \"экстренное обновление\" (например, чтобы исправить проблему безопасности или сломать что-то критически важное), вам больше не придется ждать полного цикла сборки или двух, чтобы получить его. Поскольку APK, установленный с F-Droid, был подписан с помощью приватного ключа разработчиков, вы можете просто взять APK, который они предоставили вам напрямую другими способами (например, через репозиторий приложения на Codeberg, GitLab или Github), и обновиться до него - при условии, что вы достаточно доверяете разработчику, а это необходимо, поскольку такие сборки не проверяются (пока) F-Droid."
 
 #. type: Plain text
 #: _posts/2023-09-03-reproducible-builds-signing-keys-and-binary-repos.md
 msgid "So are there any „drawbacks“? Why does the header mention „caveats“? Well… F-Droid now provides APKs it did not sign itself. So what if an app's source repo was compromised by a malicious party which then modified the code and provided their own release, while the original author e.g. was on vacation, at the hospital or otherwise indisposed? They'd of course sign the APK with their own private key (as hopefully the original author kept their private key safe). But that must somehow be considered and dealt with. So meet:"
-msgstr ""
+msgstr "Так есть ли какие-нибудь \"недостатки\"? Почему в заголовке упоминаются \"предостережения\"? Ну... F-Droid теперь предоставляет APK, которые он сам не подписывал. Что делать, если исходный репозиторий приложения был взломан злоумышленниками, которые изменили код и выпустили свой собственный релиз, в то время как оригинальный автор, например, был в отпуске, в больнице или иным образом нездоров? Конечно, они подпишут APK своим собственным закрытым ключом (как, надеюсь, и оригинальный автор хранил свой закрытый ключ в безопасности). Но это нужно как-то учитывать и решать. Итак, знакомьтесь:"
 
 #. type: Title ###
 #: _posts/2023-09-03-reproducible-builds-signing-keys-and-binary-repos.md
@@ -19579,7 +19571,7 @@ msgstr ""
 #. type: Plain text
 #: _posts/2023-09-03-reproducible-builds-signing-keys-and-binary-repos.md
 msgid "Whenever a reproducible build is established at F-Droid, the hash of the corresponding developer's certificate used to sign their APKs is stored along with the other metadata on F-Droid's end. The keyword for that in the [Build Metadata]({{ site.baseurl }}/docs/Build_Metadata_Reference) is `AllowedAPKSigningKeys`. So when the developer's APK is fetched for comparison, the signature is compared against that:"
-msgstr ""
+msgstr "Всякий раз, когда воспроизводимая сборка создается в F-Droid, хэш сертификата соответствующего разработчика, используемого для подписи его APK, сохраняется вместе с другими метаданными на стороне F-Droid. Ключевое слово для этого в [Build Metadata]({{ site.baseurl }}/docs/Build_Metadata_Reference) - `AllowedAPKSigningKeys`. Таким образом, когда APK разработчика извлекается для сравнения, подпись сравнивается с этой подписью:"
 
 #. type: Fenced code block
 #: _posts/2023-09-03-reproducible-builds-signing-keys-and-binary-repos.md
@@ -19592,23 +19584,23 @@ msgstr ""
 #. type: Plain text
 #: _posts/2023-09-03-reproducible-builds-signing-keys-and-binary-repos.md
 msgid "will give us the SHA-256 hash of the certificate used to sign the APK. Should it not match, the APK will be rejected – and the build is considered „failed“. This ensures that F-Droid really only ships the intended APKs, signed by the proper key – and the above mentioned potential „malicious party“ cannot easily „sneak in things“. A good security feature to be used in this context, though it originally was intended for something else:"
-msgstr ""
+msgstr "даст нам хэш SHA-256 сертификата, используемого для подписи APK. Если он не совпадает, APK будет отклонен, и сборка будет считаться \"неудачной\". Это гарантирует, что F-Droid действительно поставляет только предназначенные APK, подписанные правильным ключом - и вышеупомянутая потенциальная \"вредоносная сторона\" не сможет легко \"прокрасться в вещи\". Хорошая функция безопасности для использования в данном контексте, хотя изначально она предназначалась для чего-то другого:"
 
 #. type: Title ###
 #: _posts/2023-09-03-reproducible-builds-signing-keys-and-binary-repos.md
 #, no-wrap
 msgid "Binary repositories"
-msgstr ""
+msgstr "Бинарные репозитории"
 
 #. type: Plain text
 #: _posts/2023-09-03-reproducible-builds-signing-keys-and-binary-repos.md
 msgid "What is that you ask? Well: F-Droid is not tied to the single repository operated by F-Droid itself. Everyone can set up a custom repository. Like the apps F-Droid distributes, all its code is free and libre, too. One of the best known third-party repositories probably is the one known as „[IzzyOnDroid Repo](https://apt.izzysoft.de/fdroid)“ or „IzzySoft Repo“, currently providing more than 1,111 apps. There, `AllowedAPKSigningKeys` was established for all its apps in the first week of August 2023. As this repo takes its APKs directly from the developers' repositories instead of building them from the source code, this extra measure of security is especially useful – for the reason outlined above: to ensure all updates are „legit“ (and not placed to the repo by a malicious actor)."
-msgstr ""
+msgstr "Что это такое, спросите вы? Ну: F-Droid не привязан к единому хранилищу, которым управляет сама F-Droid. Каждый может создать свой собственный репозиторий. Как и приложения, которые распространяет F-Droid, весь ее код также свободен и либерти. Одним из самых известных сторонних репозиториев, вероятно, является репозиторий под названием \"[IzzyOnDroid Repo](https://apt.izzysoft.de/fdroid)\" или \"IzzySoft Repo\", в котором на данный момент представлено более 1 111 приложений. Там, `AllowedAPKSigningKeys` был установлен для всех его приложений в первую неделю августа 2023 года. Поскольку это репо берет свои APK непосредственно из репозиториев разработчиков, а не собирает их из исходного кода, эта дополнительная мера безопасности особенно полезна - по причине, указанной выше: чтобы убедиться, что все обновления \"легальны\" (и не помещены в репо злоумышленником)."
 
 #. type: Plain text
 #: _posts/2023-09-03-reproducible-builds-signing-keys-and-binary-repos.md
 msgid "So whenever the updater fetches a new APK from the corresponding app's repo at Codeberg, GitLab, Github etc., fdroidserver validates it was really signed with the key of its author. If it was not, it will never be included in the repository's index (so it will not be shipped to you and thus cannot endanger you). Instead, the repo's maintainer will receive an alert and has to investigate:"
-msgstr ""
+msgstr "Поэтому всякий раз, когда программа обновления получает новый APK из репозитория соответствующего приложения на Codeberg, GitLab, Github и т. д., fdroidserver проверяет, действительно ли он подписан ключом его автора. Если это не так, он никогда не будет включен в индекс репозитория (поэтому он не будет отправлен вам и, следовательно, не может представлять для вас опасности). Вместо этого сопровождающий репозитория получит предупреждение и должен будет провести расследование:"
 
 #. type: Fenced code block
 #: _posts/2023-09-03-reproducible-builds-signing-keys-and-binary-repos.md
@@ -19621,132 +19613,132 @@ msgstr ""
 #. type: Plain text
 #: _posts/2023-09-03-reproducible-builds-signing-keys-and-binary-repos.md
 msgid "Which means: Now it's time to investigate what happened. As the APK will never reach the index before the new key has been acknowledged by the repository maintainer, this can be done thoroughly without haste."
-msgstr ""
+msgstr "А это значит: Настало время выяснить, что произошло. Поскольку APK никогда не попадет в индекс до того, как новый ключ будет подтвержден сопровождающим репозитория, это можно сделать тщательно и без спешки."
 
 #. type: Title ###
 #: _posts/2023-09-03-reproducible-builds-signing-keys-and-binary-repos.md
 #, no-wrap
 msgid "Is that really a frequent issue?"
-msgstr ""
+msgstr "Это действительно частая проблема?"
 
 #. type: Plain text
 #: _posts/2023-09-03-reproducible-builds-signing-keys-and-binary-repos.md
 msgid "Unfortunately, it is. During the process of updating the metadata at the IzzyOnDroid repository, 26 of the 1105 apps checked encountered that issue: the signing keys were changed since the first version present. That makes 2.35% of the apps checked. As if that wouldn't be bad enough, not one of the following 4 weeks passed without at least one other app encountering that issue. Making the raw stats: the year has 52 weeks, the repo has 1000+ apps – with just one app per week, roughly one out of 20 apps (5%) are affected by this problem at least once!"
-msgstr ""
+msgstr "К сожалению, это так. В процессе обновления метаданных в репозитории IzzyOnDroid 26 из 1105 проверенных приложений столкнулись с этой проблемой: ключи подписи были изменены с момента появления первой версии. Это составляет 2,35 % от всех проверенных приложений. Как будто этого недостаточно, ни одна из последующих 4 недель не прошла без того, чтобы хотя бы одно приложение не столкнулось с этой проблемой. Если прикинуть сырую статистику: в году 52 недели, в репозитории 1000 с лишним приложений - при наличии всего одного приложения в неделю, примерно одно из 20 приложений (5%) хотя бы раз сталкивалось с этой проблемой!"
 
 #. type: Plain text
 #: _posts/2023-09-03-reproducible-builds-signing-keys-and-binary-repos.md
 msgid "In each case, the corresponding developer was reached out to so the reason could be found, and the issue (hopefully) be fixed. You might wonder what could have caused this, so here are some of the reasons given. All of them meant, one way or the other:"
-msgstr ""
+msgstr "В каждом случае с соответствующим разработчиком связывались, чтобы найти причину и (надеемся) устранить проблему. Вы можете задаться вопросом, что могло вызвать это, поэтому вот некоторые из названных причин. Все они, так или иначе, имеют значение:"
 
 #. type: Plain text
 #: _posts/2023-09-03-reproducible-builds-signing-keys-and-binary-repos.md
 #, no-wrap
 msgid "> „Ugh, I lost the signing key…“\n"
-msgstr ""
+msgstr "> \"Уф, я потерял ключ подписи...\"\n"
 
 #. type: Bullet: '* '
 #: _posts/2023-09-03-reproducible-builds-signing-keys-and-binary-repos.md
 msgid "disk crashes (or entire PCs giving up)"
-msgstr ""
+msgstr "сбои в работе диска (или отказ всего компьютера)"
 
 #. type: Bullet: '* '
 #: _posts/2023-09-03-reproducible-builds-signing-keys-and-binary-repos.md
 msgid "accidentally deleting the directory where the „important stuff“ is in"
-msgstr ""
+msgstr "случайное удаление каталога, в котором хранятся \"важные вещи\""
 
 #. type: Bullet: '* '
 #: _posts/2023-09-03-reproducible-builds-signing-keys-and-binary-repos.md
 msgid "signing was done by a team member that left (with the key)"
-msgstr ""
+msgstr "Подпись была сделана членом команды, который ушел (с ключом)"
 
 #. type: Bullet: '* '
 #: _posts/2023-09-03-reproducible-builds-signing-keys-and-binary-repos.md
 msgid "the development environment was freshly set up, or moved to a new machine – and somehow the keystore was not moved along (when the problem was discovered, the original environment was no longer accessible)"
-msgstr ""
+msgstr "среда разработки была только что создана или перенесена на новую машину - и каким-то образом хранилище ключей не было перенесено (когда проблема была обнаружена, исходная среда была уже недоступна)"
 
 #. type: Bullet: '* '
 #: _posts/2023-09-03-reproducible-builds-signing-keys-and-binary-repos.md
 msgid "the developer had used a „debug key“ when development was started (fine if you locally develop things for yourself – but not a good thing if the app shall be distributed), so they had to switch to a „release key“"
-msgstr ""
+msgstr "разработчик использовал \"ключ отладки\" в начале разработки (хорошо, если вы разрабатываете что-то для себя - но не очень хорошо, если приложение будет распространяться), поэтому ему пришлось перейти на \"ключ релиза\""
 
 #. type: Bullet: '* '
 #: _posts/2023-09-03-reproducible-builds-signing-keys-and-binary-repos.md
 msgid "the original key was „too weak“ and had to be replaced by a stronger one"
-msgstr ""
+msgstr "оригинальный ключ был \"слишком слабым\", и его пришлось заменить на более сильный"
 
 #. type: Plain text
 #: _posts/2023-09-03-reproducible-builds-signing-keys-and-binary-repos.md
 msgid "In the last two cases, legitimacy was easy to establish by providing the latest APK in two variants: the very same build, but once signed with the original, and another with the new key. Thus the two APKs could be compared similarly to the procedure used with reproducible builds – provided the original key was not already deleted for being „obsolete“."
-msgstr ""
+msgstr "В последних двух случаях легитимность было легко установить, предоставив последнюю версию APK в двух вариантах: одна и та же сборка, но подписанная оригинальным, а другая - новым ключом. Таким образом, два APK можно было сравнить аналогично процедуре, используемой для воспроизводимых сборок - при условии, что оригинальный ключ не был уже удален за \"устарелость\"."
 
 #. type: Title ###
 #: _posts/2023-09-03-reproducible-builds-signing-keys-and-binary-repos.md
 #, no-wrap
 msgid "Lessons learned #1: the repository maintainer"
-msgstr ""
+msgstr "Урок № 1: сопровождающий репозитория"
 
 #. type: Plain text
 #: _posts/2023-09-03-reproducible-builds-signing-keys-and-binary-repos.md
 msgid "It is a good measure to establish `AllowedAPKSigningKeys` in your binary repo for **all** apps it contains. This issue happens far too often to be ignored. The apps you distribute must be safe: you have a responsibility towards the people using your repository. While such updates would be rejected if the app was already installed on a device („incompatible signature“), the problem won't be detected by those installing the app „freshly“, for the first time. Those must be protected as well."
-msgstr ""
+msgstr "Хорошей мерой будет установить `AllowedAPKSigningKeys` в вашем бинарном репозитории для **всех** приложений, которые он содержит. Эта проблема возникает слишком часто, чтобы ее можно было игнорировать. Приложения, которые вы распространяете, должны быть безопасными: вы несете ответственность перед людьми, использующими ваш репозиторий. Хотя такие обновления будут отклонены, если приложение уже установлено на устройстве (\"несовместимая подпись\"), проблема не будет обнаружена теми, кто устанавливает приложение \"свежим\", в первый раз. Их также необходимо защитить."
 
 #. type: Plain text
 #: _posts/2023-09-03-reproducible-builds-signing-keys-and-binary-repos.md
 msgid "The good part: in none of the cases, a malicious action was the reason for the key change. That does not mean it will never be the case – but it's good to know we can trust our FOSS developers pretty well."
-msgstr ""
+msgstr "Самое приятное: ни в одном из случаев причиной смены ключа не было злонамеренное действие. Это не значит, что такого никогда не будет - но приятно знать, что мы можем вполне доверять нашим FOSS-разработчикам."
 
 #. type: Plain text
 #: _posts/2023-09-03-reproducible-builds-signing-keys-and-binary-repos.md
 msgid "The bad part: the importance of keeping the keystore safe seems not to be self-evident enough. We need to raise awareness for this."
-msgstr ""
+msgstr "Плохая сторона: важность сохранения хранилища ключей кажется недостаточно очевидной. Нам необходимо повысить осведомленность об этом."
 
 #. type: Title ###
 #: _posts/2023-09-03-reproducible-builds-signing-keys-and-binary-repos.md
 #, no-wrap
 msgid "Lessons learned #2: how to keep your key safe and what measures to take for the event of loss?"
-msgstr ""
+msgstr "Урок №2: как хранить ключи и какие меры предпринять в случае их потери?"
 
 #. type: Plain text
 #: _posts/2023-09-03-reproducible-builds-signing-keys-and-binary-repos.md
 msgid "The obvious: Make backups! Not just on your development machine. Have another backup off-device – e.g. on an encrypted thumbdrive stored in a secure place, on a trustable server/machine elsewhere (with a friend, a family member, or a cloud service – again, an **encrypted** backup). And be sure you know how to restore it. You might not need a Backup Ceremony like the one the [F-Droid team performed]({% post_url 2023-07-15-community-controlled-backup-ceremony %}) – but some measures should be taken. And no: uploading them to your app's public git repo is **not** a good idea, not even for a backup (don't laugh, but that happened, too)."
-msgstr ""
+msgstr "Очевидное: создавайте резервные копии! Не только на своей машине для разработки. Имейте еще одну резервную копию вне устройства - например, на зашифрованном флешке, хранящейся в безопасном месте, на надежном сервере/машине в другом месте (у друга, члена семьи или в облачном сервисе - опять же, **зашифрованная** резервная копия). И убедитесь, что вы знаете, как ее восстановить. Возможно, вам не понадобится церемония резервного копирования, подобная той, которую провела [команда F-Droid]({% post_url 2023-07-15-community-controlled-backup-ceremony %}) - но некоторые меры следует принять. И нет: загружать их в публичное git-репо вашего приложения - это **не** хорошая идея, даже для резервного копирования (не смейтесь, но такое тоже случалось)."
 
 #. type: Plain text
 #: _posts/2023-09-03-reproducible-builds-signing-keys-and-binary-repos.md
 msgid "The less obvious: make sure someone/something can „vouch“ for you. Again, from the cases encountered:"
-msgstr ""
+msgstr "Менее очевидный вариант: убедитесь, что кто-то/что-то может \"поручиться\" за вас. Опять же, из числа встреченных случаев:"
 
 #. type: Bullet: '* '
 #: _posts/2023-09-03-reproducible-builds-signing-keys-and-binary-repos.md
 msgid "sign your commits (GPG/PGP), ideally all of them and from the very start. And of course keep your GPG/PGP key safe as well. That way your signed commits from **after** the event prove you're still in control of that key. It's rather unlikely someone compromised your Git repo **and** your GPG/PGP key but not your keystore for signing the apps."
-msgstr ""
+msgstr "подписывайте свои коммиты (GPG/PGP), в идеале - все и с самого начала. И, конечно, храните свой ключ GPG/PGP в безопасности. Таким образом, подписанные коммиты, сделанные **после** события, докажут, что вы все еще контролируете этот ключ. Маловероятно, что кто-то скомпрометировал ваше Git-репо **и** ваш GPG/PGP-ключ, но не ваше хранилище ключей для подписи приложений."
 
 #. type: Bullet: '* '
 #: _posts/2023-09-03-reproducible-builds-signing-keys-and-binary-repos.md
 msgid "provide different (independent) ways to contact you. Your Git repo compromised **could** mean it was entered via your compromised mail account – but probably not your XMPP or Matrix account. This information should also be available from early on: all details provided only afterwards could come from the potential „malicious actor“ and would not prove your ownership."
-msgstr ""
+msgstr "предоставляют различные (независимые) способы связаться с вами. Взлом вашего Git-репозитория **может** означать, что он был осуществлен через взломанный почтовый аккаунт - но, вероятно, не через XMPP- или Matrix-аккаунт. Эта информация также должна быть доступна с самого начала: все детали, предоставленные только после этого, могут исходить от потенциального \"злоумышленника\" и не доказывать вашу принадлежность."
 
 #. type: Bullet: '* '
 #: _posts/2023-09-03-reproducible-builds-signing-keys-and-binary-repos.md
 msgid "again early on, introduce a person knowing you that can vouch for you – for example as they can verify your story by giving you a phone call or meeting you in person, and then testify about it. Ideally, this person is a contributor to your repo. But most importantly, the community must know they can trust them. Which is either because it's a well-known person – or at least someone introduced long before the incident."
-msgstr ""
+msgstr "опять же на раннем этапе, представьте человека, который знает вас и может за вас поручиться - например, он может подтвердить вашу историю, позвонив вам по телефону или встретившись с вами лично, а затем дать о ней показания. В идеале этот человек должен быть автором вашего репозитория. Но самое главное - сообщество должно знать, что ему можно доверять. Либо потому, что это известный человек - или, по крайней мере, тот, с кем познакомились задолго до инцидента."
 
 #. type: Title ###
 #: _posts/2023-09-03-reproducible-builds-signing-keys-and-binary-repos.md
 #, no-wrap
 msgid "Lessons learned #3: what to do when it happened?"
-msgstr ""
+msgstr "Урок № 3: что делать, когда это случилось?"
 
 #. type: Plain text
 #: _posts/2023-09-03-reproducible-builds-signing-keys-and-binary-repos.md
 msgid "Most important: do **not** try to simply „cover up“ or „hush up“. This is a security incident; sweeping it under the carpet just makes you lose trust entirely. Updates won't work without uninstall/reinstall, so folks will notice anyway (except on Google Play Store, which re-signs the APKs). Rather be transparent about it:"
-msgstr ""
+msgstr "Самое главное: **не** пытайтесь просто \"прикрыть\" или \"замять\". Это инцидент, связанный с безопасностью; замалчивая его, вы только потеряете доверие. Обновления не будут работать без удаления/переустановки, так что люди заметят это в любом случае (за исключением Google Play Store, который переподписывает APK). Лучше быть прозрачным в этом вопросе:"
 
 #. type: Bullet: '* '
 #: _posts/2023-09-03-reproducible-builds-signing-keys-and-binary-repos.md
 msgid "mention it in the release notes (and in the per-release changelogs if you use [Fastlane](https://gitlab.com/-/snippets/1895688) or [Triple-T](https://gitlab.com/snippets/1901490))."
-msgstr ""
+msgstr "Упомяните об этом в примечаниях к выпуску (и в журналах изменений каждого выпуска, если вы используете [Fastlane](https://gitlab.com/-/snippets/1895688) или [Triple-T](https://gitlab.com/snippets/1901490))."
 
 #. type: Bullet: '* '
 #: _posts/2023-09-03-reproducible-builds-signing-keys-and-binary-repos.md
