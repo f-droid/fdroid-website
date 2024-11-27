@@ -33,8 +33,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
 "POT-Creation-Date: 2024-11-21 18:10+0100\n"
-"PO-Revision-Date: 2024-11-27 13:22+0000\n"
-"Last-Translator: gfbdrgng <hnaofegnp@hldrive.com>\n"
+"PO-Revision-Date: 2024-11-27 18:26+0000\n"
+"Last-Translator: Golubev Alexander <fatzer2@gmail.com>\n"
 "Language-Team: Russian <https://hosted.weblate.org/projects/f-droid/website-docs/ru/>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
@@ -3321,10 +3321,10 @@ msgid ""
 "    example, take place after this. For custom actions that actually\n"
 "    build things or produce binaries, use 'build' instead.\n"
 msgstr ""
-"    Обратите внимание, что на этом этапе предварительной сборки ничего не должно быть собрано -\n"
-"    сканирование кода и сборка исходного тарбала,\n"
-"    например, происходят после этого. Для пользовательских действий, которые фактически\n"
-"    сборки или создания двоичных файлов, используйте 'build' вместо этого.\n"
+"    Обратите внимание, что на этом этапе `prebuild` ничего не должно быть собираться;\n"
+"    так, например, сканирование кода и сборка tar-архива c исходным кодом происходят\n"
+"    после этого. Для особых действий по собственно сборке или созданию двоичных файлов\n"
+"    вместо этого используйте `build`.\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -3333,8 +3333,8 @@ msgid ""
 "    You can use \\$\\$name\\$\\$ to substitute the path to a referenced\n"
 "    srclib - see the `srclib` directory for details of this.\n"
 msgstr ""
-"    Вы можете использовать \\$\\$\\$name\\$\\$ для подстановки пути к ссылаемому файлу.\n"
-"    srclib - подробности см. в каталоге `srclib`.\n"
+"    Вы можете использовать `$$name$$` для подстановки пути к связанным \n"
+"    библиотекам исходного кода; подробности см. в описание `srclib`.\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -3346,17 +3346,17 @@ msgid ""
 "    per-build variables are available likewise: \\$\\$VERSION\\$\\$,\n"
 "    \\$\\$VERCODE\\$\\$ and \\$\\$COMMIT\\$\\$.\n"
 msgstr ""
-"    Вы можете использовать \\$\\$SDK\\$\\$ и \\$\\$NDK\\$\\$ для замены\n"
-"    пути к каталогам android SDK и NDK исполняемого файла соответственно,\n"
-"     например, для случая, когда вам нужно запустить `android update project`\n"
-"     в явном виде. Следующие переменные для каждой сборки также доступны:\n"
-"      \\$\\$VERSION\\$\\$, \\$\\$VERCODE\\$\\$ и \\$\\$COMMIT\\$\\$.\n"
+"    Чтобы подставить пути к каталогам Android SDK и NDK, вы можете\n"
+"    использовать переменные `$$SDK$$` и `$$NDK$$` соответственно, например\n"
+"    если вам нужно явно запустить `android update project`. Также\n"
+"    в `prebuild` доступны следующие переменные:\n"
+"    `$$VERSION$$`, `$$VERCODE$$` и `$$COMMIT$$`.\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid "`scanignore: <path1>[,<path2>,...]`<a name=\"build_scanignore\"></a>\n"
-msgstr "`scanignore: <path1>[,<path2>,...]`<a name=\"build_scanignore\"></a>\n"
+msgstr "`scanignore: <путь1>[,<путь2>,...]`<a name=\"build_scanignore\"></a>\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -3368,8 +3368,8 @@ msgid ""
 "    is necessary.\n"
 msgstr ""
 ":   Позволяет исключить один или несколько файлов/путей из процесса сканирования.\n"
-"     Этот параметр следует использовать только при наличии очень веских причин,\n"
-"    и, возможно, сопровождается комментарием, объясняющим почему\n"
+"    Этот параметр следует использовать только при наличии очень веских причин,\n"
+"    и, вероятно, сопровождать комментарием, объясняющим почему именно\n"
 "    это необходимо.\n"
 
 #. type: Plain text
@@ -3379,14 +3379,14 @@ msgid ""
 "    When scanning the source tree for problems, matching files whose\n"
 "    relative paths start with any of the paths given here are ignored.\n"
 msgstr ""
-"    При сканировании дерева источника на наличие проблем, совпадающие файлы, чьи\n"
-"    относительные пути которых начинаются с любого из указанных здесь путей, игнорируются.\n"
+"    При сканировании дерева исходных кодов на наличие проблем, все файлы, чьи относительные \n"
+"    пути начинаются с любого из указанных в данном параметре путей, будут проигнорированы.\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid "`scandelete: <path1>[,<path2>,...]`<a name=\"build_scandelete\"></a>\n"
-msgstr "`scandelete: <path1>[,<path2>,...]`<a name=\"build_scandelete\"></a>\n"
+msgstr "`scandelete: <путь1>[,<путь2>,...]`<a name=\"build_scandelete\"></a>\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -3396,8 +3396,8 @@ msgid ""
 "    binaries - will be removed. It acts just like _scanignore_, but\n"
 "    instead of ignoring the files, it removes them.\n"
 msgstr ""
-":   При запуске процесса сканирования все файлы, вызывающие ошибки, такие как\n"
-"    двоичные файлы - будут удалены. Действует так же, как _scanignore_, но\n"
+":   В процессе сканирования все файлы, вызывающие ошибки, как например, в частности,\n"
+"    двоичные файлы, будут удалены. Данный параметр действует так же, как `scanignore`, но\n"
 "    вместо того, чтобы игнорировать файлы, он их удаляет.\n"
 
 #. type: Plain text
@@ -3408,9 +3408,9 @@ msgid ""
 "    unwanted files which are not needed for the build. Instead of\n"
 "    removing them manually via _rm_, using _scandelete_ is easier.\n"
 msgstr ""
-"    Полезно, когда хранилище исходного кода включает двоичные файлы или другие\n"
-"    ненужные файлы, которые не нужны для сборки. Вместо того чтобы\n"
-"    удалять их вручную через _rm_, проще использовать _scandelete_.\n"
+"    Полезно, когда хранилище исходного кода включает двоичные или другие\n"
+"    нежелательные файлы, которые не нужны для сборки. Вместо того чтобы\n"
+"    удалять их вручную с помощью _rm_, проще использовать _scandelete_.\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -3427,10 +3427,10 @@ msgid ""
 "    actual building. Any preparation of the source code should be done\n"
 "    using 'init' or 'prebuild'.\n"
 msgstr ""
-":   Как и в случае с 'prebuild', но запускается во время фактической фазы сборки (но\n"
-"    перед основной сборкой Ant/Maven). Используйте это только для действий, которые выполняют\n"
-"    фактическую сборку. Любая подготовка исходного кода должна быть выполнена\n"
-"    с помощью 'init' или 'prebuild'.\n"
+":   Аналогичен `prebuild`, но будет запущен собственно на этапе сборки (но\n"
+"    перед основной сборкой Ant/Maven). Используйте данный параметр только для действий, которые выполняют\n"
+"    фактическую сборку. Любая подготовка исходного кода должна выполняться\n"
+"    с помощью `init` или `prebuild`.\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -3441,7 +3441,7 @@ msgid ""
 "    environment right before _build_ (or the final build) is run.\n"
 msgstr ""
 "    Любая сборка, выполненная до _build_, будет проигнорирована, так как\n"
-"    либо Ant, mvn или gradle будут выполнены для очистки среды сборки\n"
+"    Ant, mvn или gradle будут выполнены для очистки среды сборки\n"
 "    непосредственно перед запуском _build_ (или финальной сборки).\n"
 
 #. type: Plain text
@@ -3453,16 +3453,16 @@ msgid ""
 "    variables are available likewise: \\$\\$VERSION\\$\\$, \\$\\$VERCODE\\$\\$\n"
 "    and \\$\\$COMMIT\\$\\$.\n"
 msgstr ""
-"    Вы можете использовать \\$\\$SDK\\$\\$ и \\$\\$NDK\\$\\$ для замены\n"
-"    пути к каталогам android SDK и NDK соответственно.\n"
-"    Следующие переменные для каждой сборки доступны аналогичным \n"
-"    образом: \\$\\$VERSION\\$\\$, \\$\\$VERCODE\\$\\$ и \\$\\$COMMIT\\$\\$.\n"
+"    Чтобы подставить пути к каталогам Android SDK и NDK, вы можете\n"
+"    использовать переменные `$$SDK$$` и `$$NDK$$` соответственно.\n"
+"    Также доступны следующие переменные аналогичные этапу `prebuild`:\n"
+"    `$$VERSION$$`, `$$VERCODE$$` и `$$COMMIT$$`.\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid "`buildjni: [yes|no|<dir list>]`<a name=\"build_buildjni\"></a>\n"
-msgstr "`buildjni: [yes|no|<dir list>]`<a name=\"build_buildjni\"></a>\n"
+msgstr "`buildjni: [yes|no|<список каталогов>]`<a name=\"build_buildjni\"></a>\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
