@@ -34,7 +34,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
 "POT-Creation-Date: 2024-11-21 18:10+0100\n"
 "PO-Revision-Date: 2024-11-30 10:16+0000\n"
-"Last-Translator: gfbdrgng <hnaofegnp@hldrive.com>\n"
+"Last-Translator: Golubev Alexander <fatzer2@gmail.com>\n"
 "Language-Team: Russian <https://hosted.weblate.org/projects/f-droid/website-docs/ru/>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
@@ -3509,10 +3509,10 @@ msgid ""
 "    may be useful to build multi-component projects.\n"
 msgstr ""
 ":   Позволяет собирать нативный код с помощью сценария _ndk-build_ до того, как\n"
-"    выполнится основная сборка Ant. Значение может представлять собой список каталогов\n"
-"    относительно основного каталога приложения, в котором следует запустить\n"
-"    ndk-build, или 'yes', что соответствует '.'. Использование явного списка\n"
-"    может быть полезно для сборки многокомпонентных проектов.\n"
+"    будет запущена основная сборка Ant. В качестве значения может использоваться или список путей к каталогам\n"
+"    (относительно основного каталога приложения), в которых следует запустить\n"
+"    ndk-build, или 'yes', что равносильно '.'. Использование явного списка\n"
+"    может быть полезно для сборки проектов состоящих из множества компонентов.\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -3527,20 +3527,20 @@ msgid ""
 "    isn't used nor built will result in an error saying that native\n"
 "    libraries were expected in the resulting package.\n"
 msgstr ""
-"    Процессы сборки и сканирования выдадут ошибку (отказ в сборке), если этот\n"
-"    параметр не определен, но присутствует каталог `jni`. Если\n"
-"    нативный код собирается другим способом, например, с помощью задачи Gradle,\n"
-"    вы можете указать `no` здесь, чтобы избежать этого. Однако, если нативный код\n"
-"    на самом деле не требуется или не используется, удалите каталог вместо этого\n"
+"    Процессы сборки и сканирования будут выдавать ошибку (и не будут собираться), если этот\n"
+"    параметр не определён, но присутствует каталог `jni`. Если\n"
+"    нативный код должен быть собран с помощью других средств, например, непосредственно Gradle,\n"
+"    то чтобы избежать этих ошибок, вы можете указать `no` в данном параметре. Однако если нативный код\n"
+"    на самом деле не требуется и не используется, то вместо указания `no` удалите каталог\n"
 "    (например, с помощью `rm:jni`). Использование `buildjni:no`, когда код jni\n"
-"    не используется и не собирается, приведет к ошибке, говорящей о том, что ожидаются родные\n"
-"    библиотеки в результирующем пакете.\n"
+"    не используется и не собирается, приведёт к ошибке, сообщающей о том, что в итоговом пакете\n"
+"    ожидается наличие нативных библиотек.\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid "`ndk: <version>`<a name=\"build_ndk\"></a>\n"
-msgstr "`ndk: <version>`<a name=\"build_ndk\"></a>\n"
+msgstr "`ndk: <версия>`<a name=\"build_ndk\"></a>\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -3553,11 +3553,11 @@ msgid ""
 "    `ANDROID_SDK_ROOT` environment variable will be set to the first version in\n"
 "    the list.\n"
 msgstr ""
-":   Версия NDK для использования в этой сборке.  Значение представляет собой версию NDK в виде\n"
-"    строка в одной из двух официальных схем версий, например, _r21e_ или\n"
-"    _21.4.7075529_.  Поддерживается NDK r10e или более поздняя версия.  Это также может быть список\n"
-"    версий, и все перечисленные версии будут установлены.  Адрес\n"
-"    переменная окружения `ANDROID_SDK_ROOT` будет установлена на первую версию в\n"
+":   Версия NDK для использования в этой сборке. Значение представляет собой строку\n"
+"    версии NDK в одной из двух официальных схем: например, _r21e_ или\n"
+"    _21.4.7075529_. Поддерживаются версии NDK не меньше _r10e_. Это также может быть список\n"
+"    версий, в таком случае все перечисленные версии будут установлены. Переменной\n"
+"    окружения `ANDROID_SDK_ROOT` будет присвоено значение первой версии в\n"
 "    списке.\n"
 
 #. type: Plain text
@@ -3575,7 +3575,7 @@ msgid ""
 "    as well.\n"
 msgstr ""
 ":   Собирать с помощью Gradle вместо Ant, с указанием, какие варианты сборки (flavours) использовать.\n"
-"    Варианты сборки чувствительны к регистру, также как и путь к итоговому APK-вайлу.\n"
+"    Варианты сборки чувствительны к регистру, также как и путь к итоговому APK-файлу.\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -3596,7 +3596,7 @@ msgstr ""
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid "`maven: yes[@<dir>]`<a name=\"build_maven\"></a>\n"
-msgstr "`maven: yes[@<dir>]`<a name=\"build_maven\"></a>\n"
+msgstr "`maven: yes[@<каталог>]`<a name=\"build_maven\"></a>\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -3606,9 +3606,9 @@ msgid ""
 "    to run Maven inside that relative subdirectory. Sometimes it is\n"
 "    needed to use @.. so that builds happen correctly.\n"
 msgstr ""
-":   Сборка с помощью Maven вместо Ant. Дополнительный @&lt;dir&gt; указывает F-Droid\n"
-"    запустить Maven внутри этого относительного подкаталога. Иногда\n"
-"    необходимо использовать @..., чтобы сборка происходила правильно.\n"
+":   Собирать с помощью Maven вместо Ant. Добавление `@<каталог>` к параметрам указывает F-Droid\n"
+"    запускать Maven внутри указанного подкаталога. Иногда для корректной сборки\n"
+"    необходимо использовать `@..`.\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -3624,7 +3624,7 @@ msgid ""
 "    project build.\n"
 msgstr ""
 ":   Список задач Gradle, которые должны быть запущены перед задачей сборки\n"
-"    при сборке проекта Gradle.\n"
+"    при сборке проекта с помощью Gradle.\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -3639,7 +3639,7 @@ msgid ""
 ":   List of Gradle properties to pass via the command line to Gradle. A\n"
 "    property can be of the form `foo` or of the form `key=value`.\n"
 msgstr ""
-":   Список свойств Gradle, которые будут переданы Gradle в командной строку.\n"
+":   Список свойств Gradle, которые будут переданы Gradle в командной строке.\n"
 "    Свойства могут иметь форму `foo` или `key=value`.\n"
 
 #. type: Plain text
@@ -3654,9 +3654,9 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "`antcommands: <target1>[,<target2>,...]`<a name=\"build_antcommands\"></a>\n"
-msgstr "`antcommands: <target1>[,<target2>,...]`<a name=\"build_antcommands\"></a>\n"
+msgstr "`antcommands: <цель1>[,<цель2>,...]`<a name=\"build_antcommands\"></a>\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -3666,15 +3666,15 @@ msgid ""
 "    default 'release'. It can't be given any flags, such as the path to\n"
 "    a _build.xml_.\n"
 msgstr ""
-":   Укажите альтернативный набор команд Ant (целевой) вместо\n"
-"    стандартного 'release'. Ему не могут быть заданы никакие флаги, например, путь к\n"
-"    _build.xml_.\n"
+":   Укажите альтернативный набор команд (целей) Ant вместо\n"
+"    стандартной 'release'. Никакие флаги (вроде пути к\n"
+"    _build.xml_) не могут быть переданы вместе целью.\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "`output: glob/to/output.apk`<a name=\"build_output\"></a>\n"
-msgstr "`output: glob/to/output.apk`<a name=\"build_output\"></a>\n"
+msgstr "`output: <glob-путь/к/output.apk>`<a name=\"build_output\"></a>\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -3686,21 +3686,17 @@ msgid ""
 "    specified, the build is manual. You should run your build commands,\n"
 "    such as `make`, in _build_.\n"
 msgstr ""
-": Укажите глобальный путь, где должен находиться результирующий неподписанный релиз APK из\n"
-"\n"
-"    сборки. Это можно использовать в сочетании с методами сборки\n"
-"\n"
-"    такими методами, как `gradle: yes` или `maven: yes`, но если метод сборки не указан\n"
-"\n"
-"    то сборка будет ручной. Вам следует запускать команды сборки,\n"
-"\n"
-"    такие как `make`, в _build_.\n"
+":   Задаёт glob-путь (который может включать джокеры, как `*` и `?`), где должен находиться выходной\n"
+"    не подписанный APK-файл релиза, полученный в результате сборки. Этот параметр можно использовать\n"
+"    в сочетании с методами сборки, как например `gradle: yes` или `maven: yes`, но если не используется\n"
+"    ни один из методов сборки то сборка должна осуществляться вручную: вам следует запускать команды\n"
+"    сборки, как например `make`, на этапе _build_.\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid "`postbuild: xxxx`<a name=\"build_postbuild\"></a>\n"
-msgstr "`построение: xxxx`<a name=\"build_postbuild\"></a>\n"
+msgstr "`postbuild: xxxx`<a name=\"build_postbuild\"></a>\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -3709,8 +3705,7 @@ msgid ""
 ":   As for 'prebuild', but runs after the actual build phase (the main Ant/Maven build).\n"
 "    Use this only for actions that perform some post-processing on the build outputs.\n"
 msgstr ""
-":    Как и 'prebuild', но запускается после фазы сборки (основной сборки Ant/Maven).\n"
-"\n"
+":   Аналогично 'prebuild', но запускается после фазы собственно сборки (`build`, основной сборки с помощью Ant/Maven).\n"
 "    Используйте это только для действий, которые выполняют некоторую постобработку результатов сборки.\n"
 
 #. type: Plain text
@@ -3720,9 +3715,8 @@ msgid ""
 "    You can use `$$name$$` to substitute the path to a referenced\n"
 "    srclib - see the `srclib` directory for details of this.\n"
 msgstr ""
-"    Вы можете использовать `$$name$$` для подстановки пути к ссылаемому\n"
-"\n"
-"    srclib - подробности об этом смотрите в каталоге `srclib`.\n"
+"    Вы можете использовать `$$name$$` для подстановки пути к библиотекам\n"
+"    исходного кода (srclib); подробности см. в `srclib`.\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -3733,25 +3727,22 @@ msgid ""
 "    per-build variables are available likewise: `$$VERSION$$`,\n"
 "    `$$VERCODE$$` and `$$COMMIT$$`.\n"
 msgstr ""
-"    Вы можете использовать `$$SDK$$` и `$$NDK$$`, чтобы заменить пути к\n"
-"\n"
-"каталогам Android SDK и NDK соответственно. Следующие\n"
-"\n"
-"также доступны переменные для каждой сборки: `$$VERSION$$`,\n"
-"\n"
-"`$$VERCODE$$` и `$$COMMIT$$`.\n"
+"    Чтобы подставить пути к каталогам Android SDK и NDK, вы можете\n"
+"    использовать переменные `$$SDK$$` и `$$NDK$$` соответственно.\n"
+"    Также для каждой сборки доступны следующие переменные:\n"
+"    `$$VERSION$$`, `$$VERCODE$$` и `$$COMMIT$$`.\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid "    The path to the output APK is available with `$$OUT$$`.\n"
-msgstr "    Путь к выходному APK доступен через `$$OUT$$`.\n"
+msgstr "    Путь к выходному APK-файлу доступен в `$$OUT$$`.\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid "`novcheck: true`<a name=\"build_novcheck\"></a>\n"
-msgstr "`новый контроль: истина`<a name=\"build_novcheck\"></a>\n"
+msgstr "`novcheck: true`<a name=\"build_novcheck\"></a>\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -3762,16 +3753,16 @@ msgid ""
 "    is correct. This takes away a useful level of sanity checking, and\n"
 "    should only be used if the values can't be extracted.\n"
 msgstr ""
-":   Не проверяйте, что имя версии и код в полученном APK являются\n"
-"    правильными, глядя на результат сборки - считайте, что метаданные\n"
-"    верны. Это лишает полезного уровня проверки на вменяемость, и\n"
-"    следует использовать только в том случае, если значения не могут быть извлечены.\n"
+":   Не производить проверку корректности версии и кодового номера версии\n"
+"    непосредственно в самом полученном APK. Считать, что метаданные\n"
+"    верны. Этот параметр убирает полезную проверку на адекватность, так что его\n"
+"    следует использовать только в том случае, если эти значения не могут быть извлечены.\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "`antifeatures: <antifeature1>[,<antifeature2>,...]`<a name=\"build_antifeatures\"></a>\n"
-msgstr "`antifeatures: <antifeature1>[,<antifeature2>,...]`<a name=\"build_antifeatures\"></a>\n"
+msgstr "`antifeatures: <анти-функция1>[,<анти-функция2>,...]`<a name=\"build_antifeatures\"></a>\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -3780,7 +3771,7 @@ msgid ""
 ":   List of Anti-Features for this specific build. They are described\n"
 "    in [_AntiFeatures_](#AntiFeatures).\n"
 msgstr ""
-":   Список анти-функций для данного конкретного билда. Они описаны\n"
+":   Список анти-функций для данной конкретной сборки. Они описаны\n"
 "    в [_AntiFeatures_](#AntiFeatures).\n"
 
 #. type: Title ###
@@ -3792,7 +3783,7 @@ msgstr "_AllowedAPKSigningKeys_(Разрешённые ключи подписи
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 msgid "When making automated binary repositories with `fdroid update`, it is generally easy to find out the expected signing key for the APKs that are gathered.  `AllowedAPKSigningKeys` lets the repo operator set the expected signing keys, then `fdroid update` will check that the APKs are signed by one of those keys.  If not, the mismatched APKs will not be included in the repo.  If `fdroid update --delete-unknown` is specified, the mismatched APKs will be deleted.  Then an automated process can be used to download newer APKs to the repo, and they will only be included if they have a known good signature.  The value is a lowercase hex value of the SHA-256 fingerprint of the signing certificate.  This can be fetched using:"
-msgstr "При создании автоматизированных бинарных репозиториев с помощью `fdroid update`, как правило, легко узнать ожидаемый ключ подписи для собираемых APK. `AllowedAPKSigningKeys` позволяет оператору репозитория задать ожидаемые ключи подписи, после чего `fdroid update` проверит, что APK подписаны одним из этих ключей. Если нет, то несовпадающие APK не будут включены в репо. Если указано `fdroid update --delete-unknown`, то несовпадающие APK будут удалены. Затем можно использовать автоматизированный процесс для загрузки новых APK в репозиторий, и они будут включены только в том случае, если у них есть известная хорошая подпись. Значение - это строчное шестнадцатеричное значение отпечатка SHA-256 сертификата подписи. Его можно получить с помощью:"
+msgstr "При создании автоматизированных бинарных репозиториев с помощью `fdroid update`, как правило, легко узнать ожидаемый ключ подписи для собираемых APK. `AllowedAPKSigningKeys` позволяет оператору репозитория задать ожидаемые ключи подписи, после чего `fdroid update` проверит, что APK-файлы подписаны одним из этих ключей. APK, чьи подписи не прошли проверку не будут включены в репозиторий. Если указано `fdroid update --delete-unknown`, то эти APK будут удалены. Затем можно использовать автоматизированный процесс для загрузки новых APK в репозиторий, и они будут добавлены только в том случае, если у них известная корректная подпись. Значение — шестнадцатеричный (в нижнем регистре) SHA-256-отпечаток сертификата, используемого для подписи. Его можно получить с помощью:"
 
 #. type: Fenced code block
 #: _docs/Build_Metadata_Reference.md
@@ -3803,7 +3794,7 @@ msgstr "apksigner verify --print-certs example.apk | grep SHA-256\n"
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 msgid "Usually, APKs are signed using only one signer.  APKs that require verification by [multiple signers](https://developer.android.com/tools/apksigner#usage-sign) are currently not supported by `AllowedAPKSigningKeys` (this is quite rare)."
-msgstr "Обычно APK подписываются только одним подписывающим лицом. APK, требующие проверки [несколькими подписантами](https://developer.android.com/tools/apksigner#usage-sign), в настоящее время не поддерживаются `AllowedAPKSigningKeys` (это довольно редкое явление)."
+msgstr "Обычно APK подписываются только одним подписывающим лицом. APK, требующие проверки [несколькими подписантами](https://developer.android.com/tools/apksigner#usage-sign), в настоящее время не поддерживаются в `AllowedAPKSigningKeys` (это довольно редкое явление)."
 
 #. type: Title ###
 #: _docs/Build_Metadata_Reference.md
@@ -3814,52 +3805,52 @@ msgstr "_AntiFeatures_(Анти-функции)<a name=\"AntiFeatures\"></a>"
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 msgid "This is optional - if present, it contains a comma-separated list of any of the following values, describing [an anti-feature](../Anti-Features) the application has.  It is a good idea to mention the reasons for the anti-feature(s) in the description:"
-msgstr "Этот параметр необязателен - если он присутствует, то содержит разделенный запятыми список любых из следующих значений, описывающих [анти-функцию](../Anti-Features), которой обладает приложение. В описании целесообразно указать причины, побудившие вас к использованию анти-функций:"
+msgstr "Этот параметр необязателен; если он присутствует, то содержит разделённый запятыми список из одного или нескольких из следующих значений, описывающих [анти-функции](../Anti-Features), которые есть в приложении. В описании целесообразно также указать, зачем в приложении нужны эти анти-функции:"
 
 #. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
 msgid "`Ads` - the application contains advertising."
-msgstr "`Ads` - приложение содержит рекламу."
+msgstr "`Ads` — приложение содержит рекламу."
 
 #. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
 msgid "`KnownVuln` - the application has known security vulnerabilities."
-msgstr "`KnownVuln` - приложение имеет известные уязвимости в системе безопасности."
+msgstr "`KnownVuln` — приложение имеет известные уязвимости в системе безопасности."
 
 #. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
 msgid "`NonFreeAdd` - the application promotes Non-Free add-ons, such that the app is effectively an advert for other Non-Free Software."
-msgstr "`NonFreeAdd` - приложение продвигает несвободные дополнения, так что приложение фактически является рекламой других несвободных программ."
+msgstr "`NonFreeAdd` — приложение продвигает несвободные дополнения, так что приложение фактически является рекламой других несвободных программ."
 
 #. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
 msgid "`NonFreeAssets` - the application contains and makes use of Non-Free assets. The most common case is apps using artwork - images, sounds, music, etc. - under a license that restricts commercial usage or making derivative works (for example, any Creative Commons license with a \"Non-Commercial\" (NC) or \"No Derivatives\" (ND) restriction)."
-msgstr "`NonFreeAssets` - приложение содержит и использует несвободные активы. Наиболее распространенный случай - приложения, использующие произведения искусства - изображения, звуки, музыку и т. д. - по лицензии, которая ограничивает коммерческое использование или создание производных работ (например, любая лицензия Creative Commons с ограничением \"Некоммерческая\" (NC) или \"Без производных\" (ND))."
+msgstr "`NonFreeAssets` — приложение содержит и использует несвободные ресурсы. Наиболее распространённый случай — приложения, использующие некоторые художественные работы (изображения, звуки, музыку и т.д.) с лицензиями, которые ограничивают коммерческое использование или создание производных работ (например, любая лицензия Creative Commons с ограничением «Некоммерчески» (NC) или «Без производных произведений» (ND))."
 
 #. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
 msgid "`NonFreeDep` - the application depends on a Non-Free application (e.g. Spotify, Whatsapp) - i.e. it requires it to be installed on the device, but does not include it."
-msgstr "`NonFreeDep` - приложение зависит от несвободного приложения (например, Spotify, Whatsapp) - то есть оно требует его установки на устройство, но не включает его."
+msgstr "`NonFreeDep` — приложение зависит от другого несвободного приложения (например, Spotify, Whatsapp); то есть оно требует его установки на устройство, но не включает его."
 
 #. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
 msgid "`NonFreeNet` - the application promotes or depends entirely on a proprietary network service."
-msgstr "`NonFreeNet` - приложение продвигает или полностью зависит от проприетарного сетевого сервиса."
+msgstr "`NonFreeNet` — приложение продвигает или полностью зависит от проприетарного сетевого сервиса."
 
 #. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
 msgid "`NoSourceSince` - Upstream source for this app is no longer available. Either the app went commercial, the repo was dropped, or it has moved to a location currently unknown to us. This usually means there won't be further updates unless the source reappears."
-msgstr "`NoSourceSince` - Источник для этого приложения больше не доступен. Либо приложение стало коммерческим, либо репозиторий был закрыт, либо оно переехало в неизвестное нам место. Обычно это означает, что обновлений больше не будет, пока источник не появится вновь."
+msgstr "`NoSourceSince` — Вышележащий репозиторий для этого приложения больше недоступен. Либо приложение стало коммерческим, либо репозиторий был закрыт, либо он переехал в неизвестное нам место. Обычно это означает, что обновлений больше не будет, пока источник не появится вновь."
 
 #. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
 msgid "`NSFW` - the app contains content that the user may not want to be publicized or visible everywhere, comes from \"Not Safe For Work\"."
-msgstr "`NSFW` - приложение содержит контент, который пользователь может не захотеть обнародовать или видеть повсюду, происходит от \"Not Safe For Work\"."
+msgstr "`NSFW` — приложение содержит контент, который пользователь может не захотеть обнародовать или видеть повсюду, происходит от «Not Safe For Work» («не безопасно для работы»)."
 
 #. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
 msgid "`TetheredNet` - the application depends entirely on a service which is impossible (or not easy) to replace. Replacement requires changes to the app or service. This Anti-Feature would not be applied if there is a simple configuration option that allows pointing the app to a running instance of an alternative, publicly available, self-hostable server solution."
-msgstr "`TetheredNet` - приложение полностью зависит от сервиса, который невозможно (или нелегко) заменить. Замена требует изменений в приложении или сервисе. Эта анти-функция не будет применяться, если существует простая опция конфигурации, позволяющая указать приложению на работающий экземпляр альтернативного, общедоступного, самостоятельно размещаемого серверного решения."
+msgstr "`TetheredNet` — приложение полностью зависит от сервиса, который невозможно (или нелегко) заменить. Замена требует изменений в приложении или сервисе. Эта анти-функция не будет применяться, если существует простая опция конфигурации, позволяющая указать приложению на работающий экземпляр альтернативного, общедоступного, самостоятельно размещаемого серверного решения."
 
 #. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
