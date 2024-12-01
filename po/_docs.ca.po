@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2024-11-21 18:10+0100\n"
-"PO-Revision-Date: 2024-11-24 18:41+0000\n"
+"PO-Revision-Date: 2024-12-02 10:00+0000\n"
 "Last-Translator: pitroig <ona@riseup.net>\n"
 "Language-Team: Catalan <https://hosted.weblate.org/projects/f-droid/website-docs/ca/>\n"
 "Language: ca\n"
@@ -191,7 +191,7 @@ msgstr ""
 #. type: Bullet: '* '
 #: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
 msgid "It is the only way to provide images, such as the app icon or screenshots"
-msgstr ""
+msgstr "És l'única manera de proporcionar imatges, com ara la icona de l'aplicació o les captures de pantalla"
 
 #. type: Plain text
 #: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
@@ -264,6 +264,31 @@ msgid ""
 "    └── changelogs\n"
 "        └── 100100.txt\n"
 msgstr ""
+"├── en-US                       (en-US és el llenguatge alternatiu F-Droid)\n"
+"│   ├── short_description.txt   (descripció curta, màxim 80 caràcters, obligatòria)\n"
+"│   ├── full_description.txt    (descripció completa de l'aplicació, obligatòria)\n"
+"│   ├── title.txt               (nom de l'aplicació)\n"
+"│   ├── video.txt               (URL a un vídeo que introdueix l'aplicació)\n"
+"│   ├── images\n"
+"│   │   ├── icon.png            (nom de l'aplicació)\n"
+"│   │   ├── featureGraphic.png  (anunci promocional, mostrat a la part superior de l'app desc en el client F-Droid; paisatgisme)\n"
+"│   │   ├── tvBanner.png        (\"icona\" per a dispositius de TV, actualment no utilitzats)\n"
+"│   │   ├── phoneScreenshots\n"
+"│   │   │   ├── 1.png\n"
+"│   │   │   ├── 2.png\n"
+"│   │   │   ...\n"
+"│   │   ├── sevenInchScreenshots/\n"
+"│   │   ├── tenInchScreenshots/ (podeu afegir captures de pantalla diferents per a diferents mides de pantalla)\n"
+"│   │   ├── tvScreenshots/\n"
+"│   │   └── wearScreenshots/\n"
+"│   └── changelogs\n"
+"│       ├── 100000.txt          (ha de correspondre a versionCode, literalment, sense farciment)\n"
+"│       ├── 100100.txt          (si el codi de versió s'ha establert a 100100)\n"
+"│       └── 100101.txt          (mida màxima: 500 caràcters)\n"
+"└── ru                          (altres codis locals)\n"
+"    ...                         (les metadades localitzades sempre són preferides pel client)\n"
+"    └── changelogs\n"
+"        └── 100100.txt\n"
 
 #. type: Plain text
 #: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
@@ -346,6 +371,37 @@ msgid ""
 "    ├── de                              (other locales)\n"
 "        ├── ...\n"
 msgstr ""
+"├── contact-email.txt                   (correu electrònic de la persona desenvolupadora/ autora)\n"
+"├── contact-website.txt                 (web de la persona desenvolupadora/ autora)\n"
+"├── release-notes                 (notes de llançament)\n"
+"│   └── en-US\n"
+"│       └── default.txt                 (el darrer registre de canvis)\n"
+"└── listings\n"
+"    ├── en-US                           (en-US és la configuració regional predeterminada a l'F-Droid)\n"
+"    │   ├── title.txt                   (app name)\n"
+"    │   ├── short-description.txt       (descripció curta, màxim 80 caràcters, obligatòria)\n"
+"    │   ├── full-description.txt        (descripció completa de l'aplicació, obligatòria)\n"
+"    │   ├── video-url.txt               (URL a un vídeo que introdueix l'aplicació)\n"
+"    │   ├── whatsnew                    (alternative changelog location; single file, no .txt)\n"
+"    │   └── graphics                    (gràfics)\n"
+"    │       ├── icon                    (icona d'app)\n"
+"    │       │   └── *.(png|jpg)         1 imatge, normalment 512x512\n"
+"    │       ├── feature-graphic         (anunci promocional, mostrat a la part superior de l'app desc al client F-Droid\n"
+"    │       │   └── *.(png|jpg)         1 imatge, normalment 1024x500\n"
+"    │       ├── phone-screenshots\n"
+"    │       │   └── *.(png|jpg)\n"
+"    │       ├── tablet-screenshots\n"
+"    │       │   └── *.(png|jpg)\n"
+"    │       ├── large-tablet-screenshots\n"
+"    │       │   └── *.(png|jpg)\n"
+"    │       ├── tv-banner               (\"icona\" per a dispositius de TV, actualment no s'utilitza)\n"
+"    │       │   └── *.(png|jpg)\n"
+"    │       ├── tv-screenshots\n"
+"    │       │   └── *.(png|jpg)\n"
+"    │       └── wear-screenshots\n"
+"    │           └── *.(png|jpg)\n"
+"    ├── de                              (altres locales)\n"
+"        ├── ...\n"
 
 #. type: Title ###
 #: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
@@ -508,7 +564,7 @@ msgstr "Exemple de petició:"
 #: _docs/All_our_APIs.md
 #, no-wrap
 msgid "GET https://f-droid.org/api/v1/packages/org.fdroid.fdroid HTTP/1.1\n"
-msgstr "GET https://f-droid.org/api/v1/packages/org.fdroid.fdroid HTTP/1.1\n"
+msgstr "OBTÉ https://f-droid.org/api/v1/packages/org.fdroid.fdroid HTTP/1.1\n"
 
 #. type: Plain text
 #: _docs/All_our_APIs.md
@@ -598,7 +654,7 @@ msgstr "<https://f-droid.org/archive/index-v1.json>"
 #. type: Plain text
 #: _docs/All_our_APIs.md
 msgid "As of index-v2, there is support for files that only contain the changes, known as \"diff\" files.  There is also a separate entry point, which is signed by a JAR and a GPG signature and lists the available index and diff files."
-msgstr "A partir d'«index-v2», hi ha suport per a fitxers que només contenen els canvis coneguts com a fitxers «diff».  Hi ha també un punt d'entrada separat, que està signat per un JAR i una signatura GPG, i que llista els fitxers d'índex i «diff» que estan disponibles."
+msgstr "A partir d'«index-v2», hi ha suport per a fitxers que només contenen els canvis coneguts com a fitxers «diff». Hi ha també un punt d'entrada separat, que està signat per un JAR i una signatura GPG, i que llista els fitxers d'índex i «diff» que estan disponibles."
 
 #. type: Bullet: '* '
 #: _docs/All_our_APIs.md
@@ -696,6 +752,20 @@ msgid ""
 "mirror on GitHub,\n"
 "e.g. <https://raw.githubusercontent.com/f-droid/fdroiddata/master/metadata/org.fdroid.fdroid.yml>\n"
 msgstr ""
+"Totes les aplicacions de _af-droid.org_ tenen correspondència\n"
+"[construeix el fitxer de metadades]({{ site.baseurl }}/docs/Build_Metadata_Reference) a\n"
+"[_fdroiddata_](https://gitlab.com/fdroid/fdroiddata).  Per tal de fomentar\n"
+"més reutilització creativa, mantenim les nostres dades en formats estàndard en fàcil cerca\n"
+"llocs.  Tota la col·lecció d'aplicacions està en format [YAML]({%\n"
+"post_url 2019-09-11-yaml-metadata %}).  Es pot accedir directament al fitxer\n"
+"pel ID d'aplicació que utilitza l'URL RAW de GitLab\n"
+"`https://gitlab.com/fdroid/fdroiddata/-/raw/master/metadata/<ApplicationID>.yml`\n"
+"(p. ex. <https://gitlab.com/fdroid/fdroiddata/-/raw/master/metadata/org.fdroid.fdroid.yml>).\n"
+"L'índex del dipòsit i els \n"
+"[fitxers API del dipòsit GitLab](https://docs.gitlab.com/ee/api/repository tofiles.html) es pot utilitzar per a consultar\n"
+"quins IDs d'aplicació estan disponibles. Aquests fitxers també estan disponibles a través de\n"
+"mirall a GitHub,\n"
+"p. ex. <https://raw.githubusercontent.com/f-droid/fdroiddata/master/metadata/org.fdroid.fdroid.yml>\n"
 
 #. type: Title ###
 #: _docs/All_our_APIs.md
@@ -763,7 +833,7 @@ msgstr "Construccions reproduïbles"
 #. type: Plain text
 #: _docs/All_our_APIs.md
 msgid "_verification.f-droid.org_ is a rebuilder that rebuilds the official releases from _f-droid.org_, then checks to see if they were [reproducibly built](https://reproducible-builds.org/). There is an entry point for each package based on the package name: <https://verification.f-droid.org/org.fdroid.fdroid.json>"
-msgstr ""
+msgstr "_verification.f-droid.org_ és un reconstruïdor que reconstrueix les versions oficials de _f-droid.org_, després comprova si s'han [construït de manera repetible](https://reproducible-builds.org/). Hi ha un punt d'entrada per a cada paquet basat en el nom del paquet: <https://verification.f-droid.org/org.fdroid.fdroid.json>"
 
 #. type: Plain text
 #: _docs/All_our_APIs.md
@@ -773,17 +843,20 @@ msgid ""
 "follows the pattern `<ApplicationId>_<VersionCode>.apk.json`, for example:\n"
 "<https://verification.f-droid.org/org.fdroid.fdroid_1010050.apk.json>\n"
 msgstr ""
+"Després hi ha un fitxer JSON per APK que s'ha comprovat, on el nom de fitxer\n"
+"segueix el patró `<ApplicationId>_<VersionCode>.apk.json`, per exemple:\n"
+"<https://verification.f-droid.org/org.fdroid.fdroid_1010050.apk.json>\n"
 
 #. type: Plain text
 #: _docs/All_our_APIs.md
 msgid "There is also a listing of all the successfully verified APKs: <https://verification.f-droid.org/verified.json>"
-msgstr ""
+msgstr "També hi ha una llista de tots els APK verificats amb èxit: <https://verification.f-droid.org/verified.json>"
 
 #. type: Title ###
 #: _docs/All_our_APIs.md
 #, no-wrap
 msgid "Binary transparency logs"
-msgstr ""
+msgstr "Registres de transparència binaris"
 
 #. type: Plain text
 #: _docs/All_our_APIs.md
@@ -793,17 +866,17 @@ msgstr ""
 #. type: Plain text
 #: _docs/All_our_APIs.md
 msgid "Since Gradle and the Google Android Tools team does not publish one, F-Droid has done it.  The basic API is a JSON file with a listing of all URLs known to have be published.  Each URL then contains a list of SHA-256 checksums that the log process has seen.  There are also other files tracked, based on what the publisher provides."
-msgstr ""
+msgstr "Des que Gradle i l'equip de Google Android Tools no en publiquen cap, l'F-Droid ho ha fet. L'API bàsica és un fitxer JSON amb una llista de tots els URL coneguts que s'han publicat. Cada URL conté una llista de sumes de verificació SHA-256 que el procés de registre ha vist. També hi ha altres fitxers rastrejats, basats en el que proporciona l'editor."
 
 #. type: Bullet: '* '
 #: _docs/All_our_APIs.md
 msgid "<https://gitlab.com/fdroid/gradle-transparency-log/-/raw/master/checksums.json>"
-msgstr ""
+msgstr "<https://gitlab.com/fdroid/gradle-transparency-log/-/raw/master/checksums.json>"
 
 #. type: Bullet: '* '
 #: _docs/All_our_APIs.md
 msgid "<https://gitlab.com/fdroid/android-sdk-transparency-log/-/raw/master/checksums.json>"
-msgstr ""
+msgstr "<https://gitlab.com/fdroid/android-sdk-transparency-log/-/raw/master/checksums.json>"
 
 #. type: Title ###
 #: _docs/All_our_APIs.md
@@ -814,28 +887,28 @@ msgstr ""
 #. type: Plain text
 #: _docs/All_our_APIs.md
 msgid "[_issuebot_](https://gitlab.com/fdroid/issuebot#json-rest-api) runs on app merge requests and requests for packaging (RFP) to provide information to reviewers about the app.  Much of that information is also published in JSON format.  Each report is made of data from modules that run on a specific app.  There are two entry points:"
-msgstr ""
+msgstr "[_issuebot_](https://gitlab.com/fdroid/issuebot.json-rest-api) s'executa en sol·licituds de fusió d'aplicacions i sol·licituds d'empaquetament (RFP) per proporcionar informació a qui revisa sobre l'aplicació. Gran part d'aquesta informació també es publica en format JSON. Cada informe està fet de dades de mòduls que s'executen en una aplicació específica. Hi ha dos punts d'entrada:"
 
 #. type: Bullet: '* '
 #: _docs/All_our_APIs.md
 msgid "<https://fdroid.gitlab.io/rfp/issuebot/applicationIds.json>"
-msgstr ""
+msgstr "<https://fdroid.gitlab.io/rfp/issuebot/applicationIds.json>"
 
 #. type: Bullet: '* '
 #: _docs/All_our_APIs.md
 msgid "<https://fdroid.gitlab.io/rfp/issuebot/sourceUrls.json>"
-msgstr ""
+msgstr "<https://fdroid.gitlab.io/rfp/issuebot/sourceUrls.json>"
 
 #. type: Title ###
 #: _docs/All_our_APIs.md
 #, no-wrap
 msgid "Metrics"
-msgstr ""
+msgstr "Mètriques"
 
 #. type: Plain text
 #: _docs/All_our_APIs.md
 msgid "[Usage data]({% post_url 2019-04-15-privacy-preserving-analytics %})  is gathered from [various F-Droid websites](https://fdroid.gitlab.io/metrics/)  and published with no personally identifiable information (PII).  It is published with one JSON file per-week, with a JSON index file per website.  For example, here is a week of search metrics: <https://fdroid.gitlab.io/metrics/search.f-droid.org/2021-01-18.json>"
-msgstr ""
+msgstr "Les [dades d'ús]({% post_url 2019-04-15-privacy-preserving-analytics %}) es recullen des de [diversos llocs web F-Droid](https://fdroid.gitlab.io/metrics/) i es publiquen sense informació d'identificació personal (IPI). Es publica amb un fitxer JSON per setmana, amb un fitxer índex JSON per lloc web. Per exemple, aquí teniu una setmana de mètriques de cerca: <https://fdroid.gitlab.io/metrics/search.f-droid.org/2021-01-18.json>"
 
 #. type: Plain text
 #: _docs/All_our_APIs.md
@@ -844,44 +917,46 @@ msgid ""
 "Though not really an API, the <ftp.fau.de> mirror does provide some metrics:\n"
 "https://ftp.fau.de/cgi-bin/show-ftp-stats.cgi\n"
 msgstr ""
+"Encara que no és realment una API, la rèplica <ftp.fau.de> proporciona algunes mètriques:\n"
+"https://ftp.fau.de/cgi-bin/show-ftp-stats.cgi\n"
 
 #. type: Title ###
 #: _docs/All_our_APIs.md
 #, no-wrap
 msgid "Git stats"
-msgstr ""
+msgstr "Estadístiques del Git"
 
 #. type: Plain text
 #: _docs/All_our_APIs.md
 msgid "Each _git_ repo has lots of interesting metadata.  The _GitStats_ project generates nice charts from that data.  This is not quite an API, but it is related since it is using public project data.  Pre-generated pages for each of the central git repos are visible here: <https://fdroid.gitlab.io/>."
-msgstr ""
+msgstr "Cada dipòsit _git_ té moltes metadades interessants. El projecte _TheGitStats_ genera gràfics bonics a partir d'aquestes dades. Això no és una API, però està relacionat ja que està utilitzant dades de projectes públics. Les pàgines pregenerades per a cadascun dels dipòsits centrals de git són visibles aquí: <https://fdroid.gitlab.io/>."
 
 #. type: Yaml Front Matter Hash Value: title
 #: _docs/Anti-Features.md
 #, no-wrap
 msgid "Anti-Features"
-msgstr ""
+msgstr "Característiques no adients"
 
 #. type: Plain text
 #: _docs/Anti-Features.md
 msgid "When reviewing apps to accept, F-Droid takes the user's point of view, first and foremost.  We start with [strict acceptance criteria](../Inclusion_Policy) based on the principles of free software and user control.  There are some things about an app that might not block it from inclusion, but many users might not want to accept them.  For these kinds of things, F-Droid has a defined set of Anti-Features.  Apps can then be marked with these Anti-Features so users can clearly choose whether the app is still acceptable."
-msgstr ""
+msgstr "En revisar les aplicacions a acceptar, l'F-Droid pren el punt de vista de qui l'utilitza, en primer lloc. Comencem amb [criteris d'acceptació estrictes]../Inclusion_Policy) basats en els principis del programari lliure i el control de l'usuari. Hi ha algunes coses sobre una aplicació que pot no bloquejar-la de la inclusió, però és possible que molta gen que ho utilitza no vulgui acceptar-les. Per a aquest tipus de coses, l'F-Droid té un conjunt definit de característiques no adients. Les aplicacions es poden marcar amb aquestes Característiques no adients perquè la gent pugui triar clarament si l'aplicació encara és acceptable."
 
 #. type: Plain text
 #: _docs/Anti-Features.md
 msgid "Anti-Features are organized into \"flags\" that packagers can use to mark apps, warning of possibly undesirable behaviour from the user's perspective, often serving the interest of the developer or a third party.  Free software packages do not exist in a bubble.  For one piece of software to be useful, it usually has to integrate with some other software.  Therefore, users that want free software also want to know if an app depends on or promotes any proprietary software.  Sometimes, there are concepts in Anti-Features that overlap with tactics used by third parties against users.  F-Droid always marks Anti-Features from the user's point of view.  For example, [NSFW](#NSFW) might be construed as similar to a censor's blocklists, but in our case, the focus is on the user's context and keeping the user in control."
-msgstr ""
+msgstr "Les Característiques no adients s'organitzen en \"banderes\" que qui empaqueta pot utilitzar per marcar aplicacions, advertint de possibles comportaments indesitjables des de la perspectiva de qui l'utilitza, sovint servint a l'interès de qui ho desenvolupa o d'un tercer. Els paquets de programari lliure no existeixen en una bombolla. Perquè una peça de programari sigui útil, normalment s'ha d'integrar amb algun altre programari. Per tant, qui l'utilitza i vol programari lliure també volen saber si una aplicació depèn o promou qualsevol programari propietari. De vegades, hi ha conceptes en Característiques no adients que se superposen amb tàctiques utilitzades per tercers contra qui ho utilitza. L'F-Droid sempre marca Característiques no adients des del punt de vista de qui ho utilitza. Per exemple, [NSFW](#NSFW) es podria interpretar com a similar a les llistes de bloqueig de censura, però en el nostre cas, el focus està en el context de qui ho utilitza i mantenint-lo en control."
 
 #. type: Plain text
 #: _docs/Anti-Features.md
 msgid "You will see our Anti-Features in action when viewing the details of any app containing one or more Anti-Features, whether in the F-Droid client or on this website.  The F-Droid client also provides settings to hide apps with certain Anti-Features."
-msgstr ""
+msgstr "En veure els detalls de qualsevol aplicació que contingui una o més Característiques no adients, ja sigui en el client de l'F-Droid o en aquest lloc web, veuràs les nostres Característiques no adients en acció. El client F-Droid també proporciona paràmetres per ocultar aplicacions amb certes Característiques no adients."
 
 #. type: Title ##
 #: _docs/Anti-Features.md
 #, no-wrap
 msgid "List of Anti-Features"
-msgstr ""
+msgstr "Llista de Característiques no adients"
 
 #. type: Plain text
 #: _docs/Anti-Features.md
@@ -1010,17 +1085,17 @@ msgstr ""
 #: _docs/Anti-Features.md
 #, no-wrap
 msgid "Non-Free Addons<a name=\"NonFreeAdd\" />"
-msgstr ""
+msgstr "Complements no lliures<a name=\"NonFreeAdd\" />"
 
 #. type: Plain text
 #: _docs/Anti-Features.md
 msgid "This Anti-Feature is applied to apps that, although Free Software themselves, promote other Non-Free applications or plugins."
-msgstr ""
+msgstr "Aquesta característica no adient s'aplica a aplicacions que, tot i que són deProgramari Lliure, promouen altres aplicacions o connectors no lliures."
 
 #. type: Plain text
 #: _docs/Anti-Features.md
 msgid "Here's the list of [apps with Non-Free Addons](https://monitor.f-droid.org/anti-feature/NonFreeAdd)."
-msgstr ""
+msgstr "Aquesta és la llista de [aplicacions amb complements no lliures](https://monitor.f-droid.org/anti-feature/NonFreeAdd)."
 
 #. type: Title ###
 #: _docs/Anti-Features.md
