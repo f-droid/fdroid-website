@@ -27,7 +27,7 @@ Although this visit was kindly funded by the [FSFE](https://fsfe.org/), this fun
 
 ### Community
 
-The [F-Droid forum](https://forum.f-droid.org) is a vibrant place to discuss free software and the Android ecosystem. In the last 30 days, it [had over 1000 posts](https://forum.f-droid.org/about). A forum this size relies on volunteers for moderation and maintenance.
+The [F-Droid Forum](https://forum.f-droid.org) is a vibrant place to discuss free software and the Android ecosystem. In the last 30 days, it [had over 1000 posts](https://forum.f-droid.org/about). A forum this size relies on volunteers for moderation and maintenance.
 
 ### Maintaining Apps
 
