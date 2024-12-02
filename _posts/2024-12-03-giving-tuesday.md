@@ -61,7 +61,7 @@ In a single week in November, this website (not counting the [many mirrors](http
 #### Build Servers
 
 Each day, the "checkupdates" job runs to see if there are any new versions of apps to build.
-A [typical job](https://gitlab.com/fdroid/checkupdates-runner/-/pipelines/1566771879/builds) will require 10 servers, each to download the source code repositories of over 500 apps.
+A [typical job](https://gitlab.com/fdroid/checkupdates-runner/-/pipelines/1566771879/builds) downloads the source code repositories for over 5000 apps to perform this task.
 
 Once new versions are identified, a buildserver with 20 CPUs and 32GB of RAM will build each updated app, ready to serve to your phone.
 
