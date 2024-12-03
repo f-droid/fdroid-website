@@ -4,9 +4,6 @@ title: "Giving Tuesday - December 3rd, 2024"
 author: "pserwylo"
 ---
 
-## Giving Tuesday - December 3rd, 2024
-
-
 Are you tired of Black Friday sales encouraging you to buy more things you don't need? 
 How about Cyber Monday advertisements asking you to sign up for subscriptions to services you didn't know existed?
 
@@ -52,6 +49,7 @@ The sheer scale of the F-Droid project is sometimes best understood by looking a
 https://f-droid.org is the home of the F-Droid website, and crucially the apps, assets, and metadata required for apps in the main F-Droid repository.
 
 In a single week in November, this website (not counting the [many mirrors](https://fdroid.gitlab.io/mirror-monitor/) generously contributed by the community):
+
 * served over 100,000,000 HTTP requests,
 * handled over 500,000 downloads of the main F-Droid package,
 * and received over 230,000 hits on the home page.
