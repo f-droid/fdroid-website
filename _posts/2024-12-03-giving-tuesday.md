@@ -65,7 +65,7 @@ A [typical job](https://gitlab.com/fdroid/checkupdates-runner/-/pipelines/156677
 
 Once new versions are identified, a buildserver with 20 CPUs and 32GB of RAM will build each updated app, ready to serve to your phone.
 
-## Summary
+## In Summary
 
 In a world dominated by large proprietary app stores, F-Droid is a beacon in the free software ecosystem.
 
