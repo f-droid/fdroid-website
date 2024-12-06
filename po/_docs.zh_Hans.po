@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
-"POT-Creation-Date: 2024-11-21 18:10+0100\n"
+"POT-Creation-Date: 2024-12-06 10:52+0100\n"
 "PO-Revision-Date: 2024-11-22 01:26+0000\n"
 "Last-Translator: 大王叫我来巡山 <hamburger2048@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Chinese (Simplified Han script) <https://hosted.weblate.org/projects/f-droid/website-docs/zh_Hans/>\n"
@@ -2613,34 +2613,38 @@ msgstr "_RepoType_ (存储库类别)<a name=\"RepoType\"></a>"
 msgid "The type of repository - for automatic building from source. If this is not specified, automatic building is disabled for this application.  Possible values are:"
 msgstr "存储库类型 - 用于从源代码自动构建。如果不指定这个，这个应用的自动构建将被禁用。可能的值为："
 
-#. type: Bullet: '-   '
+#. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
-msgid "'git'"
-msgstr "'git'"
+msgid "`git`"
+msgstr ""
 
-#. type: Bullet: '-   '
+#. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
-msgid "'svn'"
-msgstr "'svn'"
+msgid "`svn`"
+msgstr ""
 
-#. type: Bullet: '-   '
+#. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
-msgid "'git-svn'"
+#, fuzzy
+#| msgid "'git-svn'"
+msgid "`git-svn`"
 msgstr "'git-svn'"
 
-#. type: Bullet: '-   '
+#. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
-msgid "'hg'"
-msgstr "'hg'"
+msgid "`hg`"
+msgstr ""
 
-#. type: Bullet: '-   '
+#. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
-msgid "'bzr'"
-msgstr "'bzr'"
+msgid "`bzr`"
+msgstr ""
 
-#. type: Bullet: '-   '
+#. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
-msgid "'srclib'"
+#, fuzzy
+#| msgid "'srclib'"
+msgid "`srclib`"
 msgstr "'srclib'"
 
 #. type: Title ###
@@ -2656,12 +2660,16 @@ msgstr "存储库的位置。通常是 git: 或 svn: URL。"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-msgid "The git-svn option connects to an SVN repository, and you specify the URL in exactly the same way, but git is used as a back-end. This is preferable for performance reasons, and also because a local copy of the entire history is available in case the upstream repository disappears.  (It happens!). In order to use Tags as _UpdateCheckMode_ for this VCS type, the URL must have the tags= special argument set. Likewise, if you intend to use the RepoManifest/branch scheme, you would want to specify branches= as well. Finally, trunk= can also be added. All these special arguments will be passed to \"git svn\" in order, and their values must be relative paths to the svn repo root dir. Here's an example of a complex git-svn _Repo_ URL: http://svn.code.sf.net/p/project/code/svn;trunk=trunk;tags=tags;branches=branches"
+#, fuzzy
+#| msgid "The git-svn option connects to an SVN repository, and you specify the URL in exactly the same way, but git is used as a back-end. This is preferable for performance reasons, and also because a local copy of the entire history is available in case the upstream repository disappears.  (It happens!). In order to use Tags as _UpdateCheckMode_ for this VCS type, the URL must have the tags= special argument set. Likewise, if you intend to use the RepoManifest/branch scheme, you would want to specify branches= as well. Finally, trunk= can also be added. All these special arguments will be passed to \"git svn\" in order, and their values must be relative paths to the svn repo root dir. Here's an example of a complex git-svn _Repo_ URL: http://svn.code.sf.net/p/project/code/svn;trunk=trunk;tags=tags;branches=branches"
+msgid "The `git-svn` option connects to an SVN repository, and you specify the URL in exactly the same way, but git is used as a back-end. This is preferable for performance reasons, and also because a local copy of the entire history is available in case the upstream repository disappears.  (It happens!). In order to use Tags as [_UpdateCheckMode_](#UpdateCheckMode)  for this VCS type, the URL must have the `tags=` special argument set.  Likewise, if you intend to use the `RepoManifest/branch` scheme, you would want to specify `branches=` as well. Finally, `trunk=` can also be added. All these special arguments will be passed to \"git svn\" in order, and their values must be relative paths to the svn repo root dir.  Here's an example of a complex git-svn _Repo_ URL: `http://svn.code.sf.net/p/project/code/svn;trunk=trunk;tags=tags;branches=branches`"
 msgstr "git-svn 选项连接到一个 SVN 仓库，你以完全相同的方式指定 URL，但 git 被用作后端。出于性能方面的考虑，这样做比较好，而且还因为在上游仓库消失的情况下，可以在本地拷贝整个历史。（这种情况时有发生！）为了将 Tags 作为 _UpdateCheckMode_ 用于该 VCS 类型，URL 必须设置 tags= 特殊参数。同样，如果你打算使用 RepoManifest/branch 方案，你也要指定 branch=。最后，还可以加上 trunk=。所有这些特殊参数将依次传递给 \"git svn\"，其值必须是 svn repo 根目录的相对路径。下面是一个复杂的 git-svn _Repo_ URL 的例子：http://svn.code.sf.net/p/project/code/svn;trunk=trunk;tags=tags;branch=branches"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-msgid "If the _RepoType_ is `srclib`, then you must specify the name of the according srclib .yml file. For example if `srclibs/FooBar.yml` exist and you want to use this srclib, then you have to set _Repo_ to `FooBar`."
+#, fuzzy
+#| msgid "If the _RepoType_ is `srclib`, then you must specify the name of the according srclib .yml file. For example if `srclibs/FooBar.yml` exist and you want to use this srclib, then you have to set _Repo_ to `FooBar`."
+msgid "If the [_RepoType_](#RepoType) is `srclib`, then you must specify the name of the according srclib `.yml` file. For example if `srclibs/FooBar.yml` exist and you want to use this srclib, then you have to set _Repo_ to `FooBar`."
 msgstr "如果 _RepoType_ 是 `srclib`，那么你必须指定相应的 srclib .yml 文件的名称。例如，如果存在 `srclibs/FooBar.yml` 并且你想使用这个 srclib，那么你必须将 _Repo_ 设置为 `FooBar`。"
 
 #. type: Title ###
@@ -2677,7 +2685,9 @@ msgstr "验证过程中使用的二进制文件的位置。"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-msgid "If specified, F-Droid will verify the output APK file of a build against the one specified. You can use %v and %c to point to the version name and version code of the current build. To verify the F-Droid client itself you could use: `Binaries: https://f-droid.org/repo/org.fdroid.fdroid_%c.apk`"
+#, fuzzy
+#| msgid "If specified, F-Droid will verify the output APK file of a build against the one specified. You can use %v and %c to point to the version name and version code of the current build. To verify the F-Droid client itself you could use: `Binaries: https://f-droid.org/repo/org.fdroid.fdroid_%c.apk`"
+msgid "If specified, F-Droid will verify the output APK file of a build against the one specified. You can use `%v` and `%c` to point to the version name and version code of the current build. To verify the F-Droid client itself you could use: `Binaries: https://f-droid.org/repo/org.fdroid.fdroid_%c.apk`"
 msgstr "如果指定了，F-Droid 将验证输出的 APK 文件和指定的文件。你可以使用 %v 和 %c 来指向当前构建的版本名称和版本代码。为了验证 F-Droid 客户端本身，你可以使用：`Binaries: https://f-droid.org/repo/org.fdroid.fdroid_%c.apk`"
 
 #. type: Plain text
@@ -2696,7 +2706,7 @@ msgstr "_Builds_ (版本)<a name=\"Builds\"></a>"
 msgid "Any number of sub-entries can be present, each specifying a version to automatically build from source.  For example:"
 msgstr "可以有任何数量的子条目，每个条目都指定了一个从源代码自动构建的版本。例如："
 
-#. type: Fenced code block
+#. type: Fenced code block (yaml)
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid ""
@@ -2752,7 +2762,12 @@ msgstr "：_commit_ 参数指定了在源代码库中构建它的标签、提交
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-msgid "In addition to the three, always required, parameters described above, further parameters can be added (in `name: value` format) to apply further configuration to the build. These are (roughly in order of application):"
+#, fuzzy, no-wrap
+#| msgid "In addition to the three, always required, parameters described above, further parameters can be added (in `name: value` format) to apply further configuration to the build. These are (roughly in order of application):"
+msgid ""
+"    In addition to the three, always required, parameters described above,\n"
+"    further parameters can be added (in `name: value` format) to apply further\n"
+"    configuration to the build. These are (roughly in order of application):\n"
 msgstr "除了上述三个始终需要的参数外，还可以添加更多的参数（以 `name: value` 的格式）来对构建进行进一步配置。这些参数是（大致按应用顺序排列）："
 
 #. type: Plain text
@@ -2873,27 +2888,35 @@ msgstr "`init: xxxx`<a name=\"build_init\"></a>\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-#, no-wrap
+#, fuzzy, no-wrap
+#| msgid ""
+#| ":   Like 'prebuild', but runs on the source code BEFORE any other\n"
+#| "    processing takes place.\n"
 msgid ""
-":   Like 'prebuild', but runs on the source code BEFORE any other\n"
-"    processing takes place.\n"
+":   Like [`prebuild`](#build_prebuild), but runs on the source code BEFORE any\n"
+"    other processing takes place.\n"
 msgstr ""
 ":   与 'prebuild' 类似，但在任何其他处理发生之前\n"
 "    在源代码上运行。\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-#, no-wrap
+#, fuzzy, no-wrap
+#| msgid ""
+#| "    You can use `$$SDK$$` and `$$NDK$$` to substitute the paths to\n"
+#| "    the Android SDK and NDK directories respectively. The following\n"
+#| "    per-build variables are available likewise: `$$VERSION$$`,\n"
+#| "    `$$VERCODE$$` and `$$COMMIT$$`.\n"
 msgid ""
-"    You can use \\$\\$SDK\\$\\$ and \\$\\$NDK\\$\\$ to substitute the paths to the\n"
+"    You can use `$$SDK$$` and `$$NDK$$` to substitute the paths to the\n"
 "    Android SDK and NDK directories respectively. The following\n"
-"    per-build variables are available likewise: \\$\\$VERSION\\$\\$,\n"
-"    \\$\\$VERCODE\\$\\$ and \\$\\$COMMIT\\$\\$.\n"
+"    per-build variables are available likewise: `$$VERSION$$`,\n"
+"    `$$VERCODE$$` and `$$COMMIT$$`.\n"
 msgstr ""
-"    你可以使用 \\$\\$SDK\\$\\$ 和 \\$\\$NDK\\$\\$ 分别替换\n"
+"    你可以使用 `SDK` 和 `$$NDK$$` 分别替换\n"
 "    Android SDK 和 NDK 目录路径。以下\n"
-"    不同构建的变量同样可用：\\$\\$VERSION\\$\\$、\n"
-"    \\$\\$VERCODE\\$\\$ 和 \\$\\$COMMIT\\$\\$。\n"
+"    不同构建的变量同样可用：`$$VERSION$$`、\n"
+"    `$$VERCODE$$` 和 `$$COMMIT$$`。\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -2959,8 +2982,9 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-#, no-wrap
-msgid "`androidupdate: <auto/dirs>`<a name=\"build_androidupdate\"></a>\n"
+#, fuzzy, no-wrap
+#| msgid "`androidupdate: <auto/dirs>`<a name=\"build_androidupdate\"></a>\n"
+msgid "`androidupdate: auto|<path1>[,<path2>,...]`<a name=\"build_androidupdate\"></a>\n"
 msgstr "`androidupdate: <auto/dirs>`<a name=\"build_androidupdate\"></a>\n"
 
 #. type: Plain text
@@ -2979,9 +3003,12 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-#, no-wrap
+#, fuzzy, no-wrap
+#| msgid ""
+#| "    Default value is '`auto`', which recursively uses the paths in\n"
+#| "    _project.properties_ to find all the subprojects to update.\n"
 msgid ""
-"    Default value is '`auto`', which recursively uses the paths in\n"
+"    Default value is `auto`, which recursively uses the paths in\n"
 "    _project.properties_ to find all the subprojects to update.\n"
 msgstr ""
 "    默认值是 '`auto`'，\n"
@@ -3072,10 +3099,16 @@ msgstr ":   此构建验证过程中所使用的二进制文件的位置。\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-#, no-wrap
+#, fuzzy, no-wrap
+#| msgid ""
+#| "    If specified, F-Droid will verify the output APK file of a build against\n"
+#| "    the one specified. You can use %v and %c to point to the version name\n"
+#| "    and version code of the current build. To verify the F-Droid client\n"
+#| "    itself you could use:\n"
+#| "    `binary: https://f-droid.org/repo/org.fdroid.fdroid_%c.apk`\n"
 msgid ""
 "    If specified, F-Droid will verify the output APK file of a build against\n"
-"    the one specified. You can use %v and %c to point to the version name\n"
+"    the one specified. You can use `%v` and `%c` to point to the version name\n"
 "    and version code of the current build. To verify the F-Droid client\n"
 "    itself you could use:\n"
 "    `binary: https://f-droid.org/repo/org.fdroid.fdroid_%c.apk`\n"
@@ -3100,12 +3133,18 @@ msgstr "`rm: <path1>[,<path2>,...]`<a name=\"build_rm\"></a>\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-#, no-wrap
+#, fuzzy, no-wrap
+#| msgid ""
+#| ":   Specifies the relative paths of files or directories to delete\n"
+#| "    before the build is started. The paths are relative to the base of the\n"
+#| "    build directory - i.e. the root of the directory structure checked\n"
+#| "    out from the source respository - not necessarily the directory that\n"
+#| "    contains _AndroidManifest.xml_.\n"
 msgid ""
 ":   Specifies the relative paths of files or directories to delete\n"
 "    before the build is started. The paths are relative to the base of the\n"
 "    build directory - i.e. the root of the directory structure checked\n"
-"    out from the source respository - not necessarily the directory that\n"
+"    out from the source repository - not necessarily the directory that\n"
 "    contains _AndroidManifest.xml_.\n"
 msgstr ""
 ":   指定构建开始前\n"
@@ -3175,18 +3214,29 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-#, no-wrap
+#, fuzzy, no-wrap
+#| msgid ""
+#| "    Each srclib has a metadata file under srclibs/ in the repository\n"
+#| "    directory, and the source code is stored in build/srclib/.\n"
+#| "    _RepoType_ and _Repo_ are specified in the same way\n"
+#| "    as for apps; Subdir: can be a comma separated list, for when\n"
+#| "    directories are renamed by upstream; Update Project: updates the\n"
+#| "    projects in the working directory and one level down; Prepare: can\n"
+#| "    be used for any kind of preparation: in particular if you need to\n"
+#| "    update the project with a particular target. You can then also use\n"
+#| "    `$$name$$` in the init/prebuild/build command to substitute the\n"
+#| "    absolute path to the library directory.\n"
 msgid ""
-"    Each srclib has a metadata file under srclibs/ in the repository\n"
-"    directory, and the source code is stored in build/srclib/.\n"
-"    _RepoType_ and _Repo_ are specified in the same way\n"
-"    as for apps; Subdir: can be a comma separated list, for when\n"
-"    directories are renamed by upstream; Update Project: updates the\n"
-"    projects in the working directory and one level down; Prepare: can\n"
+"    Each srclib has a metadata file under `srclibs/` in the repository\n"
+"    directory, and the source code is stored in `build/srclib/`.\n"
+"    [_RepoType_](#RepoType) and [_Repo_](#Repo) are specified in the same way\n"
+"    as for apps; _Subdir:_ can be a comma-separated list, for\n"
+"    when directories are renamed by upstream; _Update Project:_ updates the\n"
+"    projects in the working directory and one level down; _Prepare:_ can\n"
 "    be used for any kind of preparation: in particular if you need to\n"
 "    update the project with a particular target. You can then also use\n"
-"    `$$name$$` in the init/prebuild/build command to substitute the\n"
-"    absolute path to the library directory.\n"
+"    `$$name$$` in the [`init`](#build_init)/[`prebuild`](#build_prebuild)/[`build`](#build_build)\n"
+"    commands to substitute the absolute path to the library directory.\n"
 msgstr ""
 "    每个 srclib 有一个元数据文件，\n"
 "    位于存储库目录中的 srclibs/ 下，\n"
@@ -3219,9 +3269,14 @@ msgstr "`patch: x`<a name=\"build_patch\"></a>\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-#, no-wrap
+#, fuzzy, no-wrap
+#| msgid ""
+#| ":   Apply patch(es). 'x' names one (or more - comma-seperated) files\n"
+#| "    within a directory below the metadata, with the same name as the\n"
+#| "    metadata file but without the extension. Each of these patches is\n"
+#| "    applied to the code in turn.\n"
 msgid ""
-":   Apply patch(es). 'x' names one (or more - comma-seperated) files\n"
+":   Apply patch(es). 'x' names one (or more - comma-separated) files\n"
 "    within a directory below the metadata, with the same name as the\n"
 "    metadata file but without the extension. Each of these patches is\n"
 "    applied to the code in turn.\n"
@@ -3239,9 +3294,16 @@ msgstr "`prebuild: xxxx`<a name=\"build_prebuild\"></a>\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-#, no-wrap
+#, fuzzy, no-wrap
+#| msgid ""
+#| ":   Specifies a shell command (or commands - chain with &&) to run\n"
+#| "    before the build takes place. Backslash can be used as an escape\n"
+#| "    character to insert literal commas, or as the last character on a\n"
+#| "    line to join that line with the next. It has no special meaning in\n"
+#| "    other contexts; in particular, literal backslashes should not\n"
+#| "    be escaped.\n"
 msgid ""
-":   Specifies a shell command (or commands - chain with &&) to run\n"
+":   Specifies a shell command (or commands - chain with `&&`) to run\n"
 "    before the build takes place. Backslash can be used as an escape\n"
 "    character to insert literal commas, or as the last character on a\n"
 "    line to join that line with the next. It has no special meaning in\n"
@@ -3273,19 +3335,27 @@ msgstr ""
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid ""
-"    You can use \\$\\$name\\$\\$ to substitute the path to a referenced\n"
+"    You can use `$$name$$` to substitute the path to a referenced\n"
 "    srclib - see the `srclib` directory for details of this.\n"
-msgstr "    可以使用 \\$\\$name\\$\\$ 将路径替换为引用的 srclib - 有关详细信息，请参阅 `srclib` 目录。\n"
+msgstr ""
+"    可以使用 `$$name$$` 将路径替换为引用的 srclib - \n"
+"    有关详细信息，请参阅 `srclib` 目录。\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-#, no-wrap
+#, fuzzy, no-wrap
+#| msgid ""
+#| "    You can use \\$\\$SDK\\$\\$ and \\$\\$NDK\\$\\$ to substitute the paths to\n"
+#| "    the Android SDK and NDK directories respectively e.g. for when you\n"
+#| "    need to run `android update project` explicitly. The following\n"
+#| "    per-build variables are available likewise: \\$\\$VERSION\\$\\$,\n"
+#| "    \\$\\$VERCODE\\$\\$ and \\$\\$COMMIT\\$\\$.\n"
 msgid ""
-"    You can use \\$\\$SDK\\$\\$ and \\$\\$NDK\\$\\$ to substitute the paths to\n"
+"    You can use `$$SDK$$` and `$$NDK$$` to substitute the paths to\n"
 "    the Android SDK and NDK directories respectively e.g. for when you\n"
 "    need to run `android update project` explicitly. The following\n"
-"    per-build variables are available likewise: \\$\\$VERSION\\$\\$,\n"
-"    \\$\\$VERCODE\\$\\$ and \\$\\$COMMIT\\$\\$.\n"
+"    per-build variables are available likewise: `$$VERSION$$`,\n"
+"    `$$VERCODE$$` and `$$COMMIT$$`.\n"
 msgstr ""
 "    你可以使用 \\$\\$SDK\\$\\$ 和 \\$\\$NDK\\$\\$ 分别替换\n"
 "    Android SDK 和 NDK 目录路径。比如，当你\n"
@@ -3325,20 +3395,29 @@ msgstr "`scandelete: <path1>[,<path2>,...]`<a name=\"build_scandelete\"></a>\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-#, no-wrap
+#, fuzzy, no-wrap
+#| msgid ""
+#| ":   When running the scan process, any files that trigger errors - like\n"
+#| "    binaries - will be removed. It acts just like _scanignore_, but\n"
+#| "    instead of ignoring the files, it removes them.\n"
 msgid ""
 ":   When running the scan process, any files that trigger errors - like\n"
-"    binaries - will be removed. It acts just like _scanignore_, but\n"
-"    instead of ignoring the files, it removes them.\n"
+"    binaries - will be removed. It acts just like\n"
+"    [`scanignore`](#build_scanignore), but instead of ignoring the files,\n"
+"    it removes them.\n"
 msgstr "：运行扫描过程时，任何触发错误的文件 - 如二进制文件 - 将被删除。它与 _scanignore_ 行为一样，但是它不会忽略这些文件，而是删除它们。\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-#, no-wrap
+#, fuzzy, no-wrap
+#| msgid ""
+#| "    Useful when a source code repository includes binaries or other\n"
+#| "    unwanted files which are not needed for the build. Instead of\n"
+#| "    removing them manually via _rm_, using _scandelete_ is easier.\n"
 msgid ""
 "    Useful when a source code repository includes binaries or other\n"
-"    unwanted files which are not needed for the build. Instead of\n"
-"    removing them manually via _rm_, using _scandelete_ is easier.\n"
+"    unwanted files which are not needed for the build. Instead of removing\n"
+"    them manually via [`rm`](#build_rm), using `scandelete` is easier.\n"
 msgstr "    用于当源代码存储库包含二进制文件或其他构建不需要的文件。相比于通过 _rm_ 手动删除它们，使用 _scandelete_ 更容易。\n"
 
 #. type: Plain text
@@ -3349,12 +3428,17 @@ msgstr "`build: xxxx`<a name=\"build_build\"></a>\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-#, no-wrap
+#, fuzzy, no-wrap
+#| msgid ""
+#| ":   As for 'prebuild', but runs during the actual build phase (but\n"
+#| "    before the main Ant/Maven build). Use this only for actions that do\n"
+#| "    actual building. Any preparation of the source code should be done\n"
+#| "    using 'init' or 'prebuild'.\n"
 msgid ""
-":   As for 'prebuild', but runs during the actual build phase (but\n"
-"    before the main Ant/Maven build). Use this only for actions that do\n"
-"    actual building. Any preparation of the source code should be done\n"
-"    using 'init' or 'prebuild'.\n"
+":   As for [`prebuild`](#build_prebuild), but runs during the actual build\n"
+"    phase (but before the main Ant/Maven build). Use this only for actions that\n"
+"    do actual building. Any preparation of the source code should be done\n"
+"    using [`init`](#build_init) or [`prebuild`](#build_prebuild).\n"
 msgstr ""
 ":   类似 'prebuild'，但在实际构建阶段期间运行 (不过在主 Ant/Maven 构建前)。 \n"
 "    请只对进行实际构建的操作使用它。\n"
@@ -3363,26 +3447,35 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-#, no-wrap
+#, fuzzy, no-wrap
+#| msgid ""
+#| "    Any building that takes place before _build_ will be ignored, as\n"
+#| "    either Ant, mvn or gradle will be executed to clean the build\n"
+#| "    environment right before _build_ (or the final build) is run.\n"
 msgid ""
-"    Any building that takes place before _build_ will be ignored, as\n"
+"    Any building that takes place before `build` will be ignored, as\n"
 "    either Ant, mvn or gradle will be executed to clean the build\n"
-"    environment right before _build_ (or the final build) is run.\n"
+"    environment right before `build` (or the final build) is run.\n"
 msgstr "    在 _build_ 之前发生的任何构建都将被忽略，因为在运行 _build_（或最终构建）之前 Ant、mvn 或 gradle 将被执行以清理构建环境。\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-#, no-wrap
+#, fuzzy, no-wrap
+#| msgid ""
+#| "    You can use `$$SDK$$` and `$$NDK$$` to substitute the paths to\n"
+#| "    the Android SDK and NDK directories respectively. The following\n"
+#| "    per-build variables are available likewise: `$$VERSION$$`,\n"
+#| "    `$$VERCODE$$` and `$$COMMIT$$`.\n"
 msgid ""
-"    You can use \\$\\$SDK\\$\\$ and \\$\\$NDK\\$\\$ to substitute the paths to the\n"
+"    You can use `$$SDK$$` and `$$NDK$$` to substitute the paths to the\n"
 "    Android SDK and NDK directories respectively. The following per-build\n"
-"    variables are available likewise: \\$\\$VERSION\\$\\$, \\$\\$VERCODE\\$\\$\n"
-"    and \\$\\$COMMIT\\$\\$.\n"
+"    variables are available likewise: `$$VERSION$$`, `$$VERCODE$$`\n"
+"    and `$$COMMIT$$`.\n"
 msgstr ""
-"    你可以使用 \\$\\$SDK\\$\\$ 和 \\$\\$NDK\\$\\$ 分别替换\n"
-"    Android SDK 和 NDK 目录路径。下列不同构建\n"
-"    的变量同样可用： \\$\\$VERSION\\$\\$,、\\$\\$VERCODE\\$\\$\n"
-"    和 \\$\\$COMMIT\\$\\$。\n"
+"    你可以使用 `SDK` 和 `$$NDK$$` 分别替换\n"
+"    Android SDK 和 NDK 目录路径。以下\n"
+"    不同构建的变量同样可用：`$$VERSION$$`、\n"
+"    `$$VERCODE$$` 和 `$$COMMIT$$`。\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -3392,9 +3485,15 @@ msgstr "`buildjni: [yes|no|<dir list>]`<a name=\"build_buildjni\"></a>\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-#, no-wrap
+#, fuzzy, no-wrap
+#| msgid ""
+#| ":   Enables building of native code via the _ndk-build_ script before\n"
+#| "    doing the main Ant build. The value may be a list of directories\n"
+#| "    relative to the main application directory in which to run\n"
+#| "    ndk-build, or 'yes' which corresponds to '.' . Using explicit list\n"
+#| "    may be useful to build multi-component projects.\n"
 msgid ""
-":   Enables building of native code via the _ndk-build_ script before\n"
+":   Enables building of native code via the `ndk-build` script before\n"
 "    doing the main Ant build. The value may be a list of directories\n"
 "    relative to the main application directory in which to run\n"
 "    ndk-build, or 'yes' which corresponds to '.' . Using explicit list\n"
@@ -3408,15 +3507,24 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-#, no-wrap
+#, fuzzy, no-wrap
+#| msgid ""
+#| "    The build and scan processes will complain (refuse to build) if this\n"
+#| "    parameter is not defined, but there is a `jni` directory present. If\n"
+#| "    the native code is being built by other means like a Gradle task,\n"
+#| "    you can specify `no` here to avoid that. However, if the native code\n"
+#| "    is actually not required or used, remove the directory instead\n"
+#| "    (using `rm: jni` for example). Using `buildjni: no` when the jni code\n"
+#| "    isn't used nor built will result in an error saying that native\n"
+#| "    libraries were expected in the resulting package.\n"
 msgid ""
 "    The build and scan processes will complain (refuse to build) if this\n"
 "    parameter is not defined, but there is a `jni` directory present. If\n"
 "    the native code is being built by other means like a Gradle task,\n"
 "    you can specify `no` here to avoid that. However, if the native code\n"
 "    is actually not required or used, remove the directory instead\n"
-"    (using `rm: jni` for example). Using `buildjni: no` when the jni code\n"
-"    isn't used nor built will result in an error saying that native\n"
+"    (using [`rm: jni`](#build_rm) for example). Using `buildjni: no` when the\n"
+"    jni code isn't used nor built will result in an error saying that native\n"
 "    libraries were expected in the resulting package.\n"
 msgstr ""
 "    如果此参数未定义，却存在一个 `jni` 目录的话，\n"
@@ -3483,11 +3591,15 @@ msgstr "`maven: yes[@<dir>]`<a name=\"build_maven\"></a>\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-#, no-wrap
+#, fuzzy, no-wrap
+#| msgid ""
+#| ":   Build with Maven instead of Ant. An extra @&lt;dir&gt; tells F-Droid\n"
+#| "    to run Maven inside that relative subdirectory. Sometimes it is\n"
+#| "    needed to use @.. so that builds happen correctly.\n"
 msgid ""
-":   Build with Maven instead of Ant. An extra @&lt;dir&gt; tells F-Droid\n"
+":   Build with Maven instead of Ant. An extra `@<dir>` tells F-Droid\n"
 "    to run Maven inside that relative subdirectory. Sometimes it is\n"
-"    needed to use @.. so that builds happen correctly.\n"
+"    needed to use `@..` so that builds happen correctly.\n"
 msgstr "：用 Maven 而不是 Ant 构建。一个额外的 @&lt;dir&gt; 告诉 F-Droid 在该相对子文件夹下运行 Maven。有时需要使用 @... 才能正确地进行构建。\n"
 
 #. type: Plain text
@@ -3546,19 +3658,26 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-#, no-wrap
-msgid "`output: glob/to/output.apk`<a name=\"build_output\"></a>\n"
+#, fuzzy, no-wrap
+#| msgid "`output: glob/to/output.apk`<a name=\"build_output\"></a>\n"
+msgid "`output: <glob/to/output.apk>`<a name=\"build_output\"></a>\n"
 msgstr "`output: glob/to/output.apk`<a name=\"build_output\"></a>\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-#, no-wrap
+#, fuzzy, no-wrap
+#| msgid ""
+#| ":   Specify a glob path where the resulting unsigned release APK from\n"
+#| "    the build should be. This can be used in combination with build\n"
+#| "    methods like `gradle: yes` or `maven: yes`, but if no build method is\n"
+#| "    specified, the build is manual. You should run your build commands,\n"
+#| "    such as `make`, in _build_.\n"
 msgid ""
 ":   Specify a glob path where the resulting unsigned release APK from\n"
 "    the build should be. This can be used in combination with build\n"
-"    methods like `gradle: yes` or `maven: yes`, but if no build method is\n"
-"    specified, the build is manual. You should run your build commands,\n"
-"    such as `make`, in _build_.\n"
+"    methods like [`gradle: yes`](#build_gradle) or [`maven: yes`](#build_maven),\n"
+"    but if no build method is specified, the build is manual. You should run\n"
+"    your build commands, such as `make`, in [`build`](#build_build).\n"
 msgstr ""
 ":   指定构建的未签名版本 APK 应在的 glob 路径。\n"
 "    这可以和 `gradle:yes` 或 `maven:yes` 这样的构建方法结合使用，\n"
@@ -3574,23 +3693,17 @@ msgstr "`postbuild: xxxx`<a name=\"build_postbuild\"></a>\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-#, no-wrap
+#, fuzzy, no-wrap
+#| msgid ""
+#| ":   As for 'prebuild', but runs after the actual build phase (the main Ant/Maven build).\n"
+#| "    Use this only for actions that perform some post-processing on the build outputs.\n"
 msgid ""
-":   As for 'prebuild', but runs after the actual build phase (the main Ant/Maven build).\n"
-"    Use this only for actions that perform some post-processing on the build outputs.\n"
+":   As for [`prebuild`](#build_prebuild), but runs after the actual build phase\n"
+"    (the main Ant/Maven build).  Use this only for actions that perform some\n"
+"    post-processing on the build outputs.\n"
 msgstr ""
 ":   类似 'prebuild'，但在实际构建阶段之后运行 （主 Ant/Maven 构建）。\n"
 "    仅将此用于对构建输出执行某些后处理的操作。\n"
-
-#. type: Plain text
-#: _docs/Build_Metadata_Reference.md
-#, no-wrap
-msgid ""
-"    You can use `$$name$$` to substitute the path to a referenced\n"
-"    srclib - see the `srclib` directory for details of this.\n"
-msgstr ""
-"    可以使用 `$$name$$` 将路径替换为引用的 srclib - \n"
-"    有关详细信息，请参阅 `srclib` 目录。\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -3665,7 +3778,9 @@ msgstr "apksigner verify --print-certs example.apk | grep SHA-256\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-msgid "Usually, APKs are signed using only one signer.  APKs that require verification by [multiple signers](https://developer.android.com/tools/apksigner#usage-sign) are currently not supported by `AllowedAPKSigningKeys` (this is quite rare)."
+#, fuzzy
+#| msgid "Usually, APKs are signed using only one signer.  APKs that require verification by [multiple signers](https://developer.android.com/tools/apksigner#usage-sign) are currently not supported by `AllowedAPKSigningKeys` (this is quite rare)."
+msgid "Usually, APKs are signed using only one signer.  APKs that require verification by [multiple signers](https://developer.android.com/tools/apksigner#usage-sign) are currently not supported by _AllowedAPKSigningKeys_ (this is quite rare)."
 msgstr "APK 文件通常只使用一个签署者签名。    需要[多名签署者](https://developer.android.com/tools/apksigner#usage-sign)验证的 APK 当前不被 `AllowedAPKSigningKeys`所支持（这相当罕见）。"
 
 #. type: Title ###
@@ -3748,7 +3863,9 @@ msgstr "_Disabled_<a name=\"Disabled\"></a>"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-msgid "If this field is present, the application does not get put into the public index. This allows metadata to be retained while an application is temporarily disabled from being published. The value should be a description of why the application is disabled. No APKs or source code archives are deleted: to purge an APK see the Build Version section or delete manually for developer builds. The field is therefore used when an app has outlived it's usefulness, because the source tarball is retained."
+#, fuzzy
+#| msgid "If this field is present, the application does not get put into the public index. This allows metadata to be retained while an application is temporarily disabled from being published. The value should be a description of why the application is disabled. No APKs or source code archives are deleted: to purge an APK see the Build Version section or delete manually for developer builds. The field is therefore used when an app has outlived it's usefulness, because the source tarball is retained."
+msgid "If this field is present, the application does not get put into the public index. This allows metadata to be retained while an application is temporarily disabled from being published. The value should be a description of why the application is disabled. No APKs or source code archives are deleted: to purge an APK see [`disable`](#build_disable) in the _Builds_ section or delete it manually for developer builds. The field is therefore used when an app has outlived it's usefulness, because the source tarball is retained."
 msgstr "如果这个字段存在，该应用不会被放入公开索引。这允许在一个应用被暂时禁止发布时保留元数据。该值应该是对应用被禁用原因的描述。没有 APK 或源代码档案会被删除：要清除APK，请参见 Build Version 部分，或者对开发者构建的 APK 进行手动删除。因此，这个字段是在一个应用已经过期的情况下使用的，因为源代码压缩包被保留。"
 
 #. type: Title ###
@@ -3781,12 +3898,16 @@ msgstr "如果配置了一个归档存储库的话，这决定了将应用的旧
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-msgid "The version specified via `CurrentVersionCode` is always considered the newest version when deciding which versions to put into the archive.  This means that when `ArchivePolicy` is set to `1` only the APK corresponding to CVC is kept, which is not necessarily the one with the highest version code."
+#, fuzzy
+#| msgid "The version specified via `CurrentVersionCode` is always considered the newest version when deciding which versions to put into the archive.  This means that when `ArchivePolicy` is set to `1` only the APK corresponding to CVC is kept, which is not necessarily the one with the highest version code."
+msgid "The version specified via [_CurrentVersionCode_](#CurrentVersionCode) is always considered the newest version when deciding which versions to put into the archive.  This means that when _ArchivePolicy_ is set to `1` only the APK corresponding to CVC is kept, which is not necessarily the one with the highest version code."
 msgstr "在决定将哪些版本放入存档时，通过 `CurrentVersionCode` 指定的版本始终被视为最新版本。这意味着当 `ArchivePolicy` 设置为 `1` 时，只保留 CVC 对应的 APK，而不一定是版本号最高的那个。"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-msgid "Currently the only supported format is `n`, where `n` is the number of versions to keep. Defaults to `3`. For apps with a list of [_VercodeOperation_](#VercodeOperation) the default is calculated as `3 x number of operations`, eg. for an app with two operations, for two ABIs, 6 versions will be kept."
+#, fuzzy
+#| msgid "Currently the only supported format is `n`, where `n` is the number of versions to keep. Defaults to `3`. For apps with a list of [_VercodeOperation_](#VercodeOperation) the default is calculated as `3 x number of operations`, eg. for an app with two operations, for two ABIs, 6 versions will be kept."
+msgid "Currently the only supported format is `n`, where `n` is the number of versions to keep. Defaults to `3`. For apps with a list of [_VercodeOperation_](#VercodeOperation) the default is calculated as `3 × number of operations`, e.g. for an app with two operations, for two ABIs, 6 versions will be kept."
 msgstr "`n` 是当前唯一受支持的格式， `n`是要保留的版本数。 默认值为 `3`。 对于有[_VercodeOperation_](#VercodeOperation)列表的应用，默认计算方法为`3 x 操作数`，例如。 对于有两个操作的应用，对于两个 ABI，将保留 6 个版本。"
 
 #. type: Title ###
@@ -3797,7 +3918,9 @@ msgstr "_AutoUpdateMode_（自动更新模式）<a name=\"AutoUpdateMode\"></a>"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-msgid "This determines the method used for auto-generating new builds when new releases are available - in other words, adding a new Build Version line to the metadata. This happens in conjunction with the _UpdateCheckMode_ functionality - i.e. when an update is detected by that, it is also processed by this."
+#, fuzzy
+#| msgid "This determines the method used for auto-generating new builds when new releases are available - in other words, adding a new Build Version line to the metadata. This happens in conjunction with the _UpdateCheckMode_ functionality - i.e. when an update is detected by that, it is also processed by this."
+msgid "This determines the method used for auto-generating new builds when new releases are available - in other words, adding a new Build Version line to the metadata. This happens in conjunction with the [_UpdateCheckMode_](#UpdateCheckMode) functionality - i.e. when an update is detected by that, it is also processed by this."
 msgstr "这决定了在有新版本时自动生成新构建的方法 - 换句话说，在元数据中添加新的构建版本行。这与 _UpdateCheckMode_ 功能共同进行 - 也就是说，当一个更新被检测到时，它也会被此功能处理。"
 
 #. type: Plain text
@@ -3805,35 +3928,48 @@ msgstr "这决定了在有新版本时自动生成新构建的方法 - 换句话
 msgid "Valid modes are:"
 msgstr "有效模式是："
 
-#. type: Bullet: '-   '
+#. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
-msgid "`None` - Auto-updating is disabled"
+#, fuzzy
+#| msgid "`None` - Auto-updating is disabled"
+msgid "`None` - Auto-updating is disabled."
 msgstr "`None` - 自动更新被禁用"
 
-#. type: Bullet: '-   '
+#. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
 msgid "`Version` - Auto-updating is enabled."
 msgstr "`Version` - 已启用自动更新。"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-#, no-wrap
+#, fuzzy, no-wrap
+#| msgid ""
+#| "    If `UpdateCheckMode` is set to `Tags`, this should be set to\n"
+#| "    `Version` without any pattern. The checked tag is used directly.\n"
 msgid ""
-"    If `UpdateCheckMode` is set to `Tags`, this should be set to\n"
-"    `Version` without any pattern. The checked tag is used directly.\n"
+"    If [_UpdateCheckMode_](#UpdateCheckMode) is set to `Tags`, this should be\n"
+"    set to `Version` without any pattern. The checked tag is used directly.\n"
 msgstr ""
 "    如 `UpdateCheckMode` 设为 `Tags`，那么这个应设为\n"
 "    `Version`，不带任何正则模式。 勾选的标签被直接使用。\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-#, no-wrap
+#, fuzzy, no-wrap
+#| msgid ""
+#| "    If `UpdateCheckMode` is set to `HTTP`, a pattern should be added\n"
+#| "    after the `Version`. The pattern is used to generate a value\n"
+#| "    (tag name) used for the `commit:` property of new build blocks.\n"
+#| "    It is simply text in which `%v` and `%c` are replaced with the required\n"
+#| "    version name and version code respectively. The resulting\n"
+#| "    string must match an existing tag in the app's repo, which then will be\n"
+#| "    used by F-Droid to build the corresponding version.\n"
 msgid ""
 "    If `UpdateCheckMode` is set to `HTTP`, a pattern should be added\n"
 "    after the `Version`. The pattern is used to generate a value\n"
-"    (tag name) used for the `commit:` property of new build blocks.\n"
-"    It is simply text in which `%v` and `%c` are replaced with the required\n"
-"    version name and version code respectively. The resulting\n"
+"    (tag name) used for the [`commit:`](#build_commit) property of new build\n"
+"    blocks.  It is simply text in which `%v` and `%c` are replaced with the\n"
+"    required version name and version code respectively. The resulting\n"
 "    string must match an existing tag in the app's repo, which then will be\n"
 "    used by F-Droid to build the corresponding version.\n"
 msgstr ""
@@ -3861,24 +3997,19 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-#, no-wrap
-msgid ""
-"    Continuing the first example above, you would specify that as\n"
-"    `Version +-fdroid %v` - `-fdroid` is the suffix F-Droid will then append to the\n"
-"    `versionName` specified in e.g. `build.gradle` when building the APK.\n"
-msgstr ""
-"    继续上面的第一个例子，\n"
-"        你可以将其指定为 `Version +-fdroid %v` - `-fdroid` 是 F-Droid 将在构建 APK 时\n"
-"        附加到例如在 `build.gradle`中指定的 `versionName` 的后缀。\n"
-
-#. type: Plain text
-#: _docs/Build_Metadata_Reference.md
-#, no-wrap
+#, fuzzy, no-wrap
+#| msgid ""
+#| "    Additionally, a suffix can be added to the version name at this\n"
+#| "    stage, to differentiate F-Droid's build from the original.\n"
+#| "    Continuing the first example above, you would specify that as\n"
+#| "    `Version +-fdroid %v` - `-fdroid` is the suffix.\n"
 msgid ""
 "    Additionally, a suffix can be added to the version name at this\n"
 "    stage, to differentiate F-Droid's build from the original.\n"
 "    Continuing the first example above, you would specify that as\n"
-"    `Version +-fdroid %v` - `-fdroid` is the suffix.\n"
+"    `Version +-fdroid %v`, where `-fdroid` is the suffix that will be appended\n"
+"    to the [`versionName`](#build_versionName) specified in e.g. `build.gradle`\n"
+"    when building the APK.\n"
 msgstr ""
 "    此外，在这个阶段，\n"
 "        可以在版本名称中添加一个后缀，\n"
@@ -3898,35 +4029,64 @@ msgstr "_UpdateCheckMode_（更新检查模式）<a name=\"UpdateCheckMode\"></a
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-msgid "This determines the method using for determining when new releases are available - in other words, the updating of the _CurrentVersion_ and _CurrentVersionCode_ fields in the metadata by the `fdroid checkupdates` process."
+#, fuzzy
+#| msgid "This determines the method using for determining when new releases are available - in other words, the updating of the _CurrentVersion_ and _CurrentVersionCode_ fields in the metadata by the `fdroid checkupdates` process."
+msgid "This determines the method using for determining when new releases are available - in other words, the updating of the [_CurrentVersion_](#CurrentVersion)  and [_CurrentVersionCode_](#CurrentVersionCode) fields in the metadata by the `fdroid checkupdates` process."
 msgstr "这决定了用于确定何时有新版本 - 换句话说，由 `fdroid checkupdates` 进程更新元数据中 _CurrentVersion_ 和 _CurrentVersionCode_ 字段 - 的方法。"
 
-#. type: Bullet: '-   '
+#. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-msgid "`None` - No checking is done because there's no appropriate automated way of doing so. Updates should be checked for manually.  Use this, for example, when deploying unstable or patched versions; when builds are done in a directory different to where the _AndroidManifest.xml_ is; if the developers use the Gradle build system and store version info in a separate file; if the developers make a new branch for each release and don't make tags; or if you've changed the package name or version code logic."
-msgstr "`None` - 不进行检查，因为没有适当的自动化方法。应手动检查更新。例如，在部署不稳定或打补丁的版本时；当构建在与 _AndroidManifest.xml_ 不同的目录中完成时；如果开发人员使用 Gradle 构建系统并将版本信息存储在单独的文件中；如果开发人员为每个版本创建一个新分支并且不添加 tag；或者，如果你已更改包名称或版本代码逻辑，请使用此选项。"
-
-#. type: Bullet: '-   '
-#: _docs/Build_Metadata_Reference.md
-msgid "`Static` - No checking is done - either development has ceased or new versions are not desired. This method is also used when there is no other checking method available and the upstream developer keeps us posted on new versions."
-msgstr "`Static` - 不做任何检查 - 要么开发已经停止，要么不需要新版本。这种方法也用于没有其他检查方法的情况下，并且上游的开发者会向我们发布新的版本。"
-
-#. type: Bullet: '-   '
-#: _docs/Build_Metadata_Reference.md
-msgid "`RepoManifest` - At the most recent commit, the _AndroidManifest.xml_ and _build.gradle_ files are looked for in the directory where they were found in the the most recent build. The appropriateness of this method depends on the development process used by the application's developers. You should not specify this method unless you're sure it's appropriate. For example, some developers bump the version when commencing development instead of when publishing. It will return an error if the _AndroidManifest.xml_ has moved to a different directory or if the package name has changed. The current version that it gives may not be accurate, since not all versions are fit to be published.  Therefore, before building, it is often necessary to check if the current version has been published somewhere by the upstream developers, either by checking for APKs that they distribute or for tags in the source code repository."
+#, fuzzy, no-wrap
+#| msgid "`RepoManifest` - At the most recent commit, the _AndroidManifest.xml_ and _build.gradle_ files are looked for in the directory where they were found in the the most recent build. The appropriateness of this method depends on the development process used by the application's developers. You should not specify this method unless you're sure it's appropriate. For example, some developers bump the version when commencing development instead of when publishing. It will return an error if the _AndroidManifest.xml_ has moved to a different directory or if the package name has changed. The current version that it gives may not be accurate, since not all versions are fit to be published.  Therefore, before building, it is often necessary to check if the current version has been published somewhere by the upstream developers, either by checking for APKs that they distribute or for tags in the source code repository."
+msgid ""
+"* `None` - No checking is done because there's no appropriate\n"
+"    automated way of doing so. Updates should be checked for manually.\n"
+"    Use this, for example, when deploying unstable or patched versions;\n"
+"    when builds are done in a directory different to where the\n"
+"    _AndroidManifest.xml_ is; if the developers use the Gradle build\n"
+"    system and store version info in a separate file; if the developers\n"
+"    make a new branch for each release and don't make tags; or if you've\n"
+"    changed the package name or version code logic.\n"
+"* `Static` - No checking is done - either development has ceased or\n"
+"    new versions are not desired. This method is also used when there is\n"
+"    no other checking method available and the upstream developer keeps\n"
+"    us posted on new versions.\n"
+"* `RepoManifest` - At the most recent commit, the _AndroidManifest.xml_\n"
+"    and _build.gradle_ files are looked for in the directory where\n"
+"    they were found in the most recent build. The appropriateness of\n"
+"    this method depends on the development process used by the\n"
+"    application's developers. You should not specify this method unless\n"
+"    you're sure it's appropriate. For example, some developers bump the\n"
+"    version when commencing development instead of when publishing. It\n"
+"    will return an error if the _AndroidManifest.xml_ has moved to a\n"
+"    different directory or if the package name has changed. The current\n"
+"    version that it gives may not be accurate, since not all versions\n"
+"    are fit to be published.  Therefore, before building, it is often\n"
+"    necessary to check if the current version has been published\n"
+"    somewhere by the upstream developers, either by checking for APKs\n"
+"    that they distribute or for tags in the source code repository.\n"
 msgstr "`RepoManifest` - 在最近一次提交中，在最近一次构建时发现的目录中寻找 _AndroidManifest.xml_ 和 _build.gradle_ 文件。这种方法是否合适，取决于应用的开发者所使用的开发过程。你不应该指定这种方法除非你确定它是合适的。例如，有些开发者在开始开发时而不是在发布时提高版本。如果 _AndroidManifest.xml_ 被移到了不同的目录，或者包的名称发生了变化，它将返回一个错误。它给出的当前版本可能不准确，因为不是所有的版本都适合发布。因此，在构建之前，通常有必要检查当前版本是否已经被上游开发者发布在某个地方，可以通过检查他们发布的 APK 或者源代码存储库中的标签。"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-#, no-wrap
+#, fuzzy, no-wrap
+#| msgid ""
+#| "    It currently works for every repository type to different extents,\n"
+#| "    except the srclib repo type. For git, git-svn and hg repo types, you\n"
+#| "    may use \"RepoManifest/yourbranch\" as _UpdateCheckMode_ so that \"yourbranch\" would\n"
+#| "    be the branch used in place of the default one. The default values\n"
+#| "    are \"master\" for git, \"default\" for hg and none for git-svn (it\n"
+#| "    stays in the same branch). On the other hand, branch support hasn't\n"
+#| "    been implemented yet in bzr and svn, but _RepoManifest_ may still be\n"
+#| "    used without it.\n"
 msgid ""
 "    It currently works for every repository type to different extents,\n"
-"    except the srclib repo type. For git, git-svn and hg repo types, you\n"
-"    may use \"RepoManifest/yourbranch\" as _UpdateCheckMode_ so that \"yourbranch\" would\n"
+"    except the `srclib` repo type. For `git`, `git-svn` and `hg` repo types, you\n"
+"    may use `RepoManifest/yourbranch` as _UpdateCheckMode_ so that \"yourbranch\" would\n"
 "    be the branch used in place of the default one. The default values\n"
 "    are \"master\" for git, \"default\" for hg and none for git-svn (it\n"
 "    stays in the same branch). On the other hand, branch support hasn't\n"
-"    been implemented yet in bzr and svn, but _RepoManifest_ may still be\n"
+"    been implemented yet in `bzr` and `svn`, but `RepoManifest` may still be\n"
 "    used without it.\n"
 msgstr ""
 "    目前，它在不同程度上适用于除了 srclib 存储库类型以外的每种存储库类型。\n"
@@ -3938,27 +4098,50 @@ msgstr ""
 "    另一方面，分支支持还没有在 bzr 和 svn 中实现，\n"
 "    但_RepoManifest_ 仍然可以在没有它的情况下使用。\n"
 
-#. type: Bullet: '-   '
+#. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-msgid "`Tags` - The _AndroidManifest.xml_ and _build.gradle_ files in all tagged revisions in the source repository are checked, looking for the highest version code.  The appropriateness of this method depends on the development process used by the application's developers. You should not specify this method unless you're sure it's appropriate. It shouldn't be used if the developers like to tag unstable versions or are known to forget to tag releases. Like RepoManifest, it will not return the correct value if the directory containing the _AndroidManifest.xml_ has moved. Despite these caveats, it is the often the favourite _UpdateCheckMode_."
+#, fuzzy, no-wrap
+#| msgid "`Tags` - The _AndroidManifest.xml_ and _build.gradle_ files in all tagged revisions in the source repository are checked, looking for the highest version code.  The appropriateness of this method depends on the development process used by the application's developers. You should not specify this method unless you're sure it's appropriate. It shouldn't be used if the developers like to tag unstable versions or are known to forget to tag releases. Like RepoManifest, it will not return the correct value if the directory containing the _AndroidManifest.xml_ has moved. Despite these caveats, it is the often the favourite _UpdateCheckMode_."
+msgid ""
+"* `Tags` - The _AndroidManifest.xml_ and _build.gradle_ files in all\n"
+"    tagged revisions in the source repository are checked, looking for\n"
+"    the highest version code.  The appropriateness of this method\n"
+"    depends on the development process used by the application's\n"
+"    developers. You should not specify this method unless you're sure\n"
+"    it's appropriate. It shouldn't be used if the developers like to tag\n"
+"    unstable versions or are known to forget to tag releases. Like\n"
+"    `RepoManifest`, it will not return the correct value if the\n"
+"    _AndroidManifest.xml_ were moved to another directory. Despite these\n"
+"    caveats, it is often the favourite _UpdateCheckMode_.\n"
 msgstr "`Tags` - 检查源代码存储库中所有被标记的 revision 中的 _AndroidManifest.xml_ 和 _build.gradle_ 文件，寻找最高版本代码。这种方法是否合适，取决于应用的开发者所使用的开发过程。你不应该指定这种方法，除非你确定它是合适的。如果开发者喜欢标记不稳定的版本，或已知忘记标记发布版本，就不应该使用这种方法。像 RepoManifest 一样，如果包含 _AndroidManifest.xml_ 的目录已经移动，它将不会返回正确的值。尽管有这些注意事项，它往往是最受欢迎的 _UpdateCheckMode_。"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-#, no-wrap
+#, fuzzy, no-wrap
+#| msgid ""
+#| "    It currently only works for git, hg, bzr and git-svn repositories.\n"
+#| "    In the case of the latter, the repo URL must contain the path to the\n"
+#| "    trunk and tags or else no tags will be found.\n"
 msgid ""
-"    It currently only works for git, hg, bzr and git-svn repositories.\n"
+"    It currently only works for `git`, `hg`, `bzr` and `git-svn` repositories.\n"
 "    In the case of the latter, the repo URL must contain the path to the\n"
-"    trunk and tags or else no tags will be found.\n"
+"    `trunk` and `tags` or else no tags will be found.\n"
 msgstr "    目前它只适用于 git，hg，bzr 和 git-svn 存储库。在后者的情况下，存储库的 URL 必须包含通往 trunk 和标签的路径，否则将找不到标签。\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-#, no-wrap
+#, fuzzy, no-wrap
+#| msgid ""
+#| "    Optionally append a regex pattern at the end - separated with a\n"
+#| "    space - to only check the tags matching said pattern. Useful when\n"
+#| "    apps tag non-release versions such as X.X-alpha, so you can filter\n"
+#| "    them out with something like `.*[0-9]$` which requires tag names to\n"
+#| "    end with a digit.\n"
+#| "    Example: `UpdateCheckMode: Tags .*[0-9]$`\n"
 msgid ""
 "    Optionally append a regex pattern at the end - separated with a\n"
 "    space - to only check the tags matching said pattern. Useful when\n"
-"    apps tag non-release versions such as X.X-alpha, so you can filter\n"
+"    apps tag non-release versions such as `X.X-alpha`, so you can filter\n"
 "    them out with something like `.*[0-9]$` which requires tag names to\n"
 "    end with a digit.\n"
 "    Example: `UpdateCheckMode: Tags .*[0-9]$`\n"
@@ -3972,17 +4155,28 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-#, no-wrap
+#, fuzzy, no-wrap
+#| msgid ""
+#| "    Optionally `UpdateCheckData` can be specified to extract version code and\n"
+#| "    name from repository files you specify (instead of relying on the defaults\n"
+#| "    used to match against otherwise, which in most cases is `build.gradle` or\n"
+#| "    `AndroidManifest.xml`).\n"
 msgid ""
-"    Optionally `UpdateCheckData` can be specified to extract version code and\n"
-"    name from repository files you specify (instead of relying on the defaults\n"
-"    used to match against otherwise, which in most cases is `build.gradle` or\n"
+"    Optionally [_UpdateCheckData_](#UpdateCheckData) can be specified to\n"
+"    extract version code and name from repository files you specify (instead of\n"
+"    relying on the defaults, which in most cases is `build.gradle` or\n"
 "    `AndroidManifest.xml`).\n"
 msgstr "    可以指定 `UpdateCheckData` 以从你指定的存储库文件（而不是依靠默认值，在大多数情况下是 `build.gradle` 或 `AndroidManifest.xml`）中提取版本代码和名称。\n"
 
-#. type: Bullet: '-   '
+#. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-msgid "`HTTP` - HTTP requests are used to determine the current version code and version name. This is controlled by the _UpdateCheckData_ field, which is of the form `urlcode|excode|urlver|exver`."
+#, fuzzy, no-wrap
+#| msgid "`HTTP` - HTTP requests are used to determine the current version code and version name. This is controlled by the _UpdateCheckData_ field, which is of the form `urlcode|excode|urlver|exver`."
+msgid ""
+"* `HTTP` - HTTP requests are used to determine the current version\n"
+"    code and version name. This is controlled by the\n"
+"    [_UpdateCheckData_](#UpdateCheckData) field, which is of the form\n"
+"    `urlcode|excode|urlver|exver`.\n"
 msgstr "`HTTP` - HTTP 请求被用来确定当前的版本代码和版本名称。这由 _UpdateCheckData_ 字段控制，它的形式是 `urlcode|excode|urlver|exver`。"
 
 #. type: Plain text
@@ -4018,7 +4212,9 @@ msgstr "_VercodeOperation_（版本代码操作）<a name=\"VercodeOperation\"><
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-msgid "Operation to be applied to the vercode obtained by the defined _UpdateCheckMode_. `%c` will be replaced by the actual vercode, and the whole string will be passed to python's `eval` function."
+#, fuzzy
+#| msgid "Operation to be applied to the vercode obtained by the defined _UpdateCheckMode_. `%c` will be replaced by the actual vercode, and the whole string will be passed to python's `eval` function."
+msgid "Operation to be applied to the vercode obtained by the defined [_UpdateCheckMode_](#UpdateCheckMode). `%c` will be replaced by the actual vercode, and the whole string will be passed to python's `eval` function."
 msgstr "对通过定义的 _UpdateCheckMode_ 获得的版本代码进行操作。`%c` 将被实际的版本代码替换，整个字符串将被传递给 python 的 `eval` 函数。"
 
 #. type: Plain text
@@ -4026,7 +4222,7 @@ msgstr "对通过定义的 _UpdateCheckMode_ 获得的版本代码进行操作�
 msgid "Especially useful with apps that we want to compile for different ABIs, but whose vercodes don't always have trailing zeros. For example, with multiple _VercodeOperation_ we can track updates and build up to four different versions of every upstream version, say for 4 architectures:"
 msgstr "对于想为不同的 ABI 编译，但其版本代码并不总是有拖尾零的应用尤其有用。例如，通过多个 _VercodeOperation_ ，我们能够跟踪更新，并为每个上游版本构建最多四个不同的版本，也即四种架构："
 
-#. type: Fenced code block
+#. type: Fenced code block (yaml)
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid ""
@@ -4055,12 +4251,16 @@ msgstr "_UpdateCheckIgnore_（更新检查忽略）<a name=\"UpdateCheckIgnore\"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-msgid "When checking for updates (via _UpdateCheckMode_) this can be used to specify a regex which, if matched against the version name, causes that version to be ignored. For example, 'beta' could be specified to ignore version names that include that text."
+#, fuzzy
+#| msgid "When checking for updates (via _UpdateCheckMode_) this can be used to specify a regex which, if matched against the version name, causes that version to be ignored. For example, 'beta' could be specified to ignore version names that include that text."
+msgid "When checking for updates (via [_UpdateCheckMode_](#UpdateCheckMod)) this can be used to specify a regex which, if matched against the version name, causes that version to be ignored. For example, 'beta' could be specified to ignore version names that include that text."
 msgstr "当检查更新时（通过 _UpdateCheckMode_），这可以用来指定一个正则表达式，如果与版本名称相匹配，将导致该版本被忽略。例如，可以指定 \"beta\" 以忽略包含该文本的版本名称。"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-msgid "Only Available with _UpdateCheckMode_ `HTTP`."
+#, fuzzy
+#| msgid "Only Available with _UpdateCheckMode_ `HTTP`."
+msgid "Only Available with [_UpdateCheckMode_](#UpdateCheckMod) `HTTP`."
 msgstr "只在 _UpdateCheckMode_ `HTTP` 中可用。"
 
 #. type: Title ###
@@ -4076,7 +4276,9 @@ msgstr "当检查更新时（通过 _UpdateCheckMode_），这可以用来指定
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-msgid "You can also use `Ignore` to ignore package name searching. This should only be used in some specific cases, for example if the app's build.gradle file does not contain the package name."
+#, fuzzy
+#| msgid "You can also use `Ignore` to ignore package name searching. This should only be used in some specific cases, for example if the app's build.gradle file does not contain the package name."
+msgid "You can also use `Ignore` to ignore package name searching. This should only be used in some specific cases, for example if the app's `build.gradle` file does not contain the package name."
 msgstr "你也可以使用 `Ignore` 来忽略包名搜索。这只应在某些特殊情况下使用，例如，应用的 build.gradle 文件不包含包名。"
 
 #. type: Title ###
@@ -4087,79 +4289,78 @@ msgstr "_UpdateCheckData_（更新检查数据）<a name=\"UpdateCheckData\"></a
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-msgid "Used in conjunction with _UpdateCheckMode_ `Tags` or `HTTP`."
+#, fuzzy
+#| msgid "Used in conjunction with _UpdateCheckMode_ `Tags` or `HTTP`."
+msgid "Used in conjunction with [_UpdateCheckMode_](#UpdateCheckMode) `Tags` or `HTTP`."
 msgstr "与 _UpdateCheckMode_ `Tags` 或 `HTTP` 一起使用。"
 
-#. type: Fenced code block
+#. type: Fenced code block (yaml)
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid "UpdateCheckData: <vercode-location>|<RegEx-for-versionCode>|<versionName-location>|<RegEx-for-versionName>\n"
 msgstr "UpdateCheckData: <vercode-location>|<RegEx-for-versionCode>|<versionName-location>|<RegEx-for-versionName>\n"
 
-#. type: Bullet: '-   '
-#: _docs/Build_Metadata_Reference.md
-msgid "`vercode-location` - URL (with `UpdateCheckMode: HTTP`) or path/file relative to repo root, leave empty to check the tag name instead (with `UpdateCheckMode: Tags`)."
-msgstr "`vercode-location` - URL（使用 `UpdateCheckMode: HTTP` 时）或相对于存储库根的路径/文件，留空则检查标签名称（使用`UpdateCheckMode: Tags` 时）。"
-
-#. type: Bullet: '-   '
-#: _docs/Build_Metadata_Reference.md
-msgid "`RegEx-for-versionCode` - RegEx to match versionCode."
-msgstr "`RegEx-for-versionCode` - 匹配 versionCode 的正则表达式。"
-
-#. type: Bullet: '-   '
-#: _docs/Build_Metadata_Reference.md
-msgid "`versionName-location` - Same as vercode-location just for versionName. A `.` means to take vercode-location, leave empty to check the tag name instead (only with `UpdateCheckMode: Tags`)."
-msgstr "`versionName-location` - 与 vercode-location 相同，只是针对 versionName。`.`表示使用 vercode-location，留空则检查标签名称（仅适用于 `UpdateCheckMode: Tags`）。"
-
-#. type: Bullet: '-   '
-#: _docs/Build_Metadata_Reference.md
-msgid "`RegEx-for-versionName` - Similar to RegEx-for-versionCode, just for versionName."
-msgstr "`RegEx-for-versionName` - 与 RegEx-for-versionCode 类似，只是针对 versionName。"
-
-#. type: Bullet: '-   '
-#: _docs/Build_Metadata_Reference.md
-msgid "RegEx pipe operators are not supported at this time."
-msgstr "目前还不支持正则表达式管道操作符。"
-
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid ""
-"Examples for `UpdateCheckMode: Tags`:\n"
-"-   Flutter app with the `pubspec.yaml` in the repo root:\n"
-"    `pubspec.yaml|version:\\s.+\\+(\\d+)|.|version:\\s(.+)\\+`\n"
-"-   Use the git tag as version name:\n"
-"    `app/build.gradle|versionCode\\s(\\d+)||`\n"
-"-   Optionally a regex to extract the version name from the tag can be specified:\n"
-"    `app/build.gradle|versionCode\\s(\\d+)||Android-([\\d.]+)`\n"
-"-   If no file for the version code was specified, code and name can be extracted from the tag:\n"
-"    `'|\\+(\\d+)||Android-([\\d.]+)'`\n"
-"-   Note: Be sure to use *single* quotes around the entire value if you leave `vercode-location` empty:\n"
-"    `UpdateCheckData: '|\\+(\\d+)||Android-([\\d.]+)'`\n"
+"* `vercode-location` - URL (with `UpdateCheckMode: HTTP`) or path/file\n"
+"    relative to repo root, leave empty to check the tag name instead (with\n"
+"    `UpdateCheckMode: Tags`).\n"
+"* `RegEx-for-versionCode` - RegEx to match `versionCode`.\n"
+"* `versionName-location` - Same as vercode-location just for `versionName`. A `.`\n"
+"    means to take vercode-location, leave empty to check the tag name instead\n"
+"    (only with `UpdateCheckMode: Tags`).\n"
+"* `RegEx-for-versionName` - Similar to `RegEx-for-versionCode`, just for `versionName`.\n"
+"* RegEx pipe operators are not supported at this time.\n"
 msgstr ""
-"`UpdateCheckMode: Tags` 例子：\n"
-"-   代码库根目录中带`pubspec.yaml`的 Flutter 应用:\n"
-"    `pubspec.yaml|version:\\s.+\\+(\\d+)|.|version:\\s(.+)\\+`\n"
-"-   使用 git 标签作为版本名:\n"
-"    `app/build.gradle|versionCode\\s(\\d+)||`\n"
-"-   可指定从标签中提取版本名的正则表达式（可选）:\n"
-"    `app/build.gradle|versionCode\\s(\\d+)||Android-([\\d.]+)`\n"
-"-   如未指定版本代码文件，可从标签中提取代码和名称:\n"
-"    `'|\\+(\\d+)||Android-([\\d.]+)'`\n"
-"-   注意：如果你把 `vercode-location` 留空，一定要在整个值周围使用*单*引号:\n"
-"    `UpdateCheckData: '|\\+(\\d+)||Android-([\\d.]+)'`\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-#, no-wrap
-msgid ""
-"Examples for `UpdateCheckMode: HTTP`:\n"
-"-   `https://foo/version.json|\"version_code\":.*\"(.*)\"|.|\"version_name\":.*\\\"(.*)\\\",`\n"
-"-   `https://foo/version_fdroid.txt|versionCode=(.*)|.|versionName=(.*)`\n"
+msgid "Examples for `UpdateCheckMode: Tags`:"
 msgstr ""
-"`UpdateCheckMode: HTTP` 示例：\n"
-"- `https://foo/version.json|\"version_code\":.*\"(.*)\"|.|\"version_name\":.*\\\"(.*)\\\",`\n"
-"- `https://foo/version_fdroid.txt|versionCode=(.*)|.|versionName=(.*)`\n"
+
+#. type: Bullet: '* '
+#: _docs/Build_Metadata_Reference.md
+msgid "Flutter app with the `pubspec.yaml` in the repo root: `pubspec.yaml|version:\\s.+\\+(\\d+)|.|version:\\s(.+)\\+`"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/Build_Metadata_Reference.md
+msgid "Use the git tag as version name: `app/build.gradle|versionCode\\s(\\d+)||`"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/Build_Metadata_Reference.md
+msgid "Optionally a regex to extract the version name from the tag can be specified: `app/build.gradle|versionCode\\s(\\d+)||Android-([\\d.]+)`"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/Build_Metadata_Reference.md
+msgid "If no file for the version code was specified, code and name can be extracted from the tag: `'|\\+(\\d+)||Android-([\\d.]+)'`"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/Build_Metadata_Reference.md
+msgid "Note: Be sure to use *single* quotes around the entire value if you leave `vercode-location` empty: `UpdateCheckData: '|\\+(\\d+)||Android-([\\d.]+)'`"
+msgstr ""
+
+#. type: Plain text
+#: _docs/Build_Metadata_Reference.md
+#, fuzzy
+#| msgid "Only Available with _UpdateCheckMode_ `HTTP`."
+msgid "Examples for `UpdateCheckMode: HTTP`:"
+msgstr "只在 _UpdateCheckMode_ `HTTP` 中可用。"
+
+#. type: Bullet: '* '
+#: _docs/Build_Metadata_Reference.md
+msgid "`https://foo/version.json|\"version_code\":.*\"(.*)\"|.|\"version_name\":.*\\\"(.*)\\\",`"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/Build_Metadata_Reference.md
+msgid "`https://foo/version_fdroid.txt|versionCode=(.*)|.|versionName=(.*)`"
+msgstr ""
 
 #. type: Title ###
 #: _docs/Build_Metadata_Reference.md
@@ -4169,13 +4370,15 @@ msgstr "_CurrentVersion_（当前版本）<a name=\"CurrentVersion\"></a>"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-msgid "The [name of the version](https://developer.android.com/guide/topics/manifest/manifest-element.html#vname) that is the recommended release. There may be newer versions of the application than this (e.g. unstable versions), and there will almost certainly be older ones. This should be the one that is recommended for general use. In the event that there is no source code for the current version, or that Non-Free libraries are being used, this would ideally be the latest version that is still free, though it may still be expedient to retain the automatic update check — see No Source Since."
+#, fuzzy
+#| msgid "The [name of the version](https://developer.android.com/guide/topics/manifest/manifest-element.html#vname) that is the recommended release. There may be newer versions of the application than this (e.g. unstable versions), and there will almost certainly be older ones. This should be the one that is recommended for general use. In the event that there is no source code for the current version, or that Non-Free libraries are being used, this would ideally be the latest version that is still free, though it may still be expedient to retain the automatic update check — see No Source Since."
+msgid "The [name of the version](https://developer.android.com/guide/topics/manifest/manifest-element.html#vname) that is the recommended release. There may be newer versions of the application than this (e.g. unstable versions), and there will almost certainly be older ones. This should be the one that is recommended for general use. In the event that there is no source code for the current version, or that Non-Free libraries are being used, this would ideally be the latest version that is still free, though it may still be expedient to retain the automatic update check — see [_NoSourceSince_](#NoSourceSince)."
 msgstr "推荐的[版本的名称](https://developer.android.com/guide/topics/manifest/manifest-element.html#vname)。应用可能会有更新的版本（例如不稳定的版本），而且几乎肯定会有更老的版本。这应该是被推荐用于一般用途的版本。如果当前版本没有源代码，或者使用的是非自由库，那么最好是仍然自由的最新版本，尽管保留自动更新检查可能仍是权宜之计 - 参见 No Source Since。"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-msgid "This field is normally automatically updated - see _UpdateCheckMode_."
-msgstr "这个字段通常会自动更新 - 参见 _UpdateCheckMode_。"
+msgid "This field is normally automatically updated - see [_UpdateCheckMode_](#UpdateCheckMode)."
+msgstr "这个字段通常是自动更新的 - 见 [_UpdateCheckMode_](#UpdateCheckMode)。"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -4196,11 +4399,6 @@ msgstr "与 [_CurrentVersion_](#CurrentVersion) 字段相对应的[版本代码]
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-msgid "This field is normally automatically updated - see [_UpdateCheckMode_](#UpdateCheckMode)."
-msgstr "这个字段通常是自动更新的 - 见 [_UpdateCheckMode_](#UpdateCheckMode)。"
-
-#. type: Plain text
-#: _docs/Build_Metadata_Reference.md
 msgid "If not set, clients will recommend the highest version they can, as if the _CurrentVersionCode_ was infinite."
 msgstr "如果未设置，客户端将推荐它们能推荐的最高版本，如同 _CurrentVersionCode_ 是无限的。"
 
@@ -4218,7 +4416,9 @@ msgstr "_NoSourceSince_<a name=\"NoSourceSince\"></a>"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-msgid "In case we are missing the source code for the _CurrentVersion_ reported by Upstream, or that Non-Free elements have been introduced, this defines the first version that began to miss source code. Apps that are missing source code for just one or a few versions, but provide source code for newer ones are not to be considered here - this field is intended to illustrate which apps do not currently distribute source code, and since when have they been doing so."
+#, fuzzy
+#| msgid "In case we are missing the source code for the _CurrentVersion_ reported by Upstream, or that Non-Free elements have been introduced, this defines the first version that began to miss source code. Apps that are missing source code for just one or a few versions, but provide source code for newer ones are not to be considered here - this field is intended to illustrate which apps do not currently distribute source code, and since when have they been doing so."
+msgid "In case we are missing the source code for the [_CurrentVersion_](#CurrentVersion) reported by Upstream, or that Non-Free elements have been introduced, this defines the first version that began to miss source code. Apps that are missing source code for just one or a few versions, but provide source code for newer ones are not to be considered here - this field is intended to illustrate which apps do not currently distribute source code, and since when have they been doing so."
 msgstr "如果我们缺少上游报告的 _CurrentVersion_ 的源代码，或者非自由元素已经被引入，这里定义了开始缺少源代码的第一个版本。这里不考虑那些只缺少一个或几个版本的源代码，但提供较新版本的源代码的应用 - 这个字段旨在说明哪些应用目前没有分发源代码，以及它们从什么时候开始这样做。"
 
 #. type: Title #
@@ -12439,6 +12639,118 @@ msgstr "首选项"
 #: _docs/Whitelabel_Builds.md
 msgid "For a custom build that enables Automatic Updates by default, override _app/src/main/res/xml/preferences.xml_. You can customize the preferences and their default values in _app/src/mycompany/res/xml/preferences.xml_. The fully automatic update requires [Privileged Extension](https://gitlab.com/fdroid/privileged-extension). With regular access, the updates will only automatically download. The user still needs to click install on each one."
 msgstr "对于默认启用自动更新的自定义构建，覆盖 _app/src/main/res/xml/preferences.xml_。你可以在 _app/src/mycompany/res/xml/preferences.xml_ 中自定义首选项及其默认值。全自动更新需要 [特权扩展](https://gitlab.com/fdroid/privileged-extension)。通过定期访问，更新只会自动下载。用户仍然需要在每一个上点击安装。"
+
+#~ msgid "'git'"
+#~ msgstr "'git'"
+
+#~ msgid "'svn'"
+#~ msgstr "'svn'"
+
+#~ msgid "'hg'"
+#~ msgstr "'hg'"
+
+#~ msgid "'bzr'"
+#~ msgstr "'bzr'"
+
+#, no-wrap
+#~ msgid ""
+#~ "    You can use \\$\\$SDK\\$\\$ and \\$\\$NDK\\$\\$ to substitute the paths to the\n"
+#~ "    Android SDK and NDK directories respectively. The following\n"
+#~ "    per-build variables are available likewise: \\$\\$VERSION\\$\\$,\n"
+#~ "    \\$\\$VERCODE\\$\\$ and \\$\\$COMMIT\\$\\$.\n"
+#~ msgstr ""
+#~ "    你可以使用 \\$\\$SDK\\$\\$ 和 \\$\\$NDK\\$\\$ 分别替换\n"
+#~ "    Android SDK 和 NDK 目录路径。以下\n"
+#~ "    不同构建的变量同样可用：\\$\\$VERSION\\$\\$、\n"
+#~ "    \\$\\$VERCODE\\$\\$ 和 \\$\\$COMMIT\\$\\$。\n"
+
+#, no-wrap
+#~ msgid ""
+#~ "    You can use \\$\\$name\\$\\$ to substitute the path to a referenced\n"
+#~ "    srclib - see the `srclib` directory for details of this.\n"
+#~ msgstr "    可以使用 \\$\\$name\\$\\$ 将路径替换为引用的 srclib - 有关详细信息，请参阅 `srclib` 目录。\n"
+
+#, no-wrap
+#~ msgid ""
+#~ "    You can use \\$\\$SDK\\$\\$ and \\$\\$NDK\\$\\$ to substitute the paths to the\n"
+#~ "    Android SDK and NDK directories respectively. The following per-build\n"
+#~ "    variables are available likewise: \\$\\$VERSION\\$\\$, \\$\\$VERCODE\\$\\$\n"
+#~ "    and \\$\\$COMMIT\\$\\$.\n"
+#~ msgstr ""
+#~ "    你可以使用 \\$\\$SDK\\$\\$ 和 \\$\\$NDK\\$\\$ 分别替换\n"
+#~ "    Android SDK 和 NDK 目录路径。下列不同构建\n"
+#~ "    的变量同样可用： \\$\\$VERSION\\$\\$,、\\$\\$VERCODE\\$\\$\n"
+#~ "    和 \\$\\$COMMIT\\$\\$。\n"
+
+#, no-wrap
+#~ msgid ""
+#~ "    Continuing the first example above, you would specify that as\n"
+#~ "    `Version +-fdroid %v` - `-fdroid` is the suffix F-Droid will then append to the\n"
+#~ "    `versionName` specified in e.g. `build.gradle` when building the APK.\n"
+#~ msgstr ""
+#~ "    继续上面的第一个例子，\n"
+#~ "        你可以将其指定为 `Version +-fdroid %v` - `-fdroid` 是 F-Droid 将在构建 APK 时\n"
+#~ "        附加到例如在 `build.gradle`中指定的 `versionName` 的后缀。\n"
+
+#~ msgid "`None` - No checking is done because there's no appropriate automated way of doing so. Updates should be checked for manually.  Use this, for example, when deploying unstable or patched versions; when builds are done in a directory different to where the _AndroidManifest.xml_ is; if the developers use the Gradle build system and store version info in a separate file; if the developers make a new branch for each release and don't make tags; or if you've changed the package name or version code logic."
+#~ msgstr "`None` - 不进行检查，因为没有适当的自动化方法。应手动检查更新。例如，在部署不稳定或打补丁的版本时；当构建在与 _AndroidManifest.xml_ 不同的目录中完成时；如果开发人员使用 Gradle 构建系统并将版本信息存储在单独的文件中；如果开发人员为每个版本创建一个新分支并且不添加 tag；或者，如果你已更改包名称或版本代码逻辑，请使用此选项。"
+
+#~ msgid "`Static` - No checking is done - either development has ceased or new versions are not desired. This method is also used when there is no other checking method available and the upstream developer keeps us posted on new versions."
+#~ msgstr "`Static` - 不做任何检查 - 要么开发已经停止，要么不需要新版本。这种方法也用于没有其他检查方法的情况下，并且上游的开发者会向我们发布新的版本。"
+
+#~ msgid "`vercode-location` - URL (with `UpdateCheckMode: HTTP`) or path/file relative to repo root, leave empty to check the tag name instead (with `UpdateCheckMode: Tags`)."
+#~ msgstr "`vercode-location` - URL（使用 `UpdateCheckMode: HTTP` 时）或相对于存储库根的路径/文件，留空则检查标签名称（使用`UpdateCheckMode: Tags` 时）。"
+
+#~ msgid "`RegEx-for-versionCode` - RegEx to match versionCode."
+#~ msgstr "`RegEx-for-versionCode` - 匹配 versionCode 的正则表达式。"
+
+#~ msgid "`versionName-location` - Same as vercode-location just for versionName. A `.` means to take vercode-location, leave empty to check the tag name instead (only with `UpdateCheckMode: Tags`)."
+#~ msgstr "`versionName-location` - 与 vercode-location 相同，只是针对 versionName。`.`表示使用 vercode-location，留空则检查标签名称（仅适用于 `UpdateCheckMode: Tags`）。"
+
+#~ msgid "`RegEx-for-versionName` - Similar to RegEx-for-versionCode, just for versionName."
+#~ msgstr "`RegEx-for-versionName` - 与 RegEx-for-versionCode 类似，只是针对 versionName。"
+
+#~ msgid "RegEx pipe operators are not supported at this time."
+#~ msgstr "目前还不支持正则表达式管道操作符。"
+
+#, no-wrap
+#~ msgid ""
+#~ "Examples for `UpdateCheckMode: Tags`:\n"
+#~ "-   Flutter app with the `pubspec.yaml` in the repo root:\n"
+#~ "    `pubspec.yaml|version:\\s.+\\+(\\d+)|.|version:\\s(.+)\\+`\n"
+#~ "-   Use the git tag as version name:\n"
+#~ "    `app/build.gradle|versionCode\\s(\\d+)||`\n"
+#~ "-   Optionally a regex to extract the version name from the tag can be specified:\n"
+#~ "    `app/build.gradle|versionCode\\s(\\d+)||Android-([\\d.]+)`\n"
+#~ "-   If no file for the version code was specified, code and name can be extracted from the tag:\n"
+#~ "    `'|\\+(\\d+)||Android-([\\d.]+)'`\n"
+#~ "-   Note: Be sure to use *single* quotes around the entire value if you leave `vercode-location` empty:\n"
+#~ "    `UpdateCheckData: '|\\+(\\d+)||Android-([\\d.]+)'`\n"
+#~ msgstr ""
+#~ "`UpdateCheckMode: Tags` 例子：\n"
+#~ "-   代码库根目录中带`pubspec.yaml`的 Flutter 应用:\n"
+#~ "    `pubspec.yaml|version:\\s.+\\+(\\d+)|.|version:\\s(.+)\\+`\n"
+#~ "-   使用 git 标签作为版本名:\n"
+#~ "    `app/build.gradle|versionCode\\s(\\d+)||`\n"
+#~ "-   可指定从标签中提取版本名的正则表达式（可选）:\n"
+#~ "    `app/build.gradle|versionCode\\s(\\d+)||Android-([\\d.]+)`\n"
+#~ "-   如未指定版本代码文件，可从标签中提取代码和名称:\n"
+#~ "    `'|\\+(\\d+)||Android-([\\d.]+)'`\n"
+#~ "-   注意：如果你把 `vercode-location` 留空，一定要在整个值周围使用*单*引号:\n"
+#~ "    `UpdateCheckData: '|\\+(\\d+)||Android-([\\d.]+)'`\n"
+
+#, no-wrap
+#~ msgid ""
+#~ "Examples for `UpdateCheckMode: HTTP`:\n"
+#~ "-   `https://foo/version.json|\"version_code\":.*\"(.*)\"|.|\"version_name\":.*\\\"(.*)\\\",`\n"
+#~ "-   `https://foo/version_fdroid.txt|versionCode=(.*)|.|versionName=(.*)`\n"
+#~ msgstr ""
+#~ "`UpdateCheckMode: HTTP` 示例：\n"
+#~ "- `https://foo/version.json|\"version_code\":.*\"(.*)\"|.|\"version_name\":.*\\\"(.*)\\\",`\n"
+#~ "- `https://foo/version_fdroid.txt|versionCode=(.*)|.|versionName=(.*)`\n"
+
+#~ msgid "This field is normally automatically updated - see _UpdateCheckMode_."
+#~ msgstr "这个字段通常会自动更新 - 参见 _UpdateCheckMode_。"
 
 #, no-wrap
 #~ msgid "Setting up and running the deploy procedure"
