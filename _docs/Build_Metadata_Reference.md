@@ -400,12 +400,12 @@ The type of repository - for automatic building from source. If this is
 not specified, automatic building is disabled for this application.
 Possible values are:
 
--   'git'
--   'svn'
--   'git-svn'
--   'hg'
--   'bzr'
--   'srclib'
+-   `git`
+-   `svn`
+-   `git-svn`
+-   `hg`
+-   `bzr`
+-   `srclib`
 
 
 
@@ -413,22 +413,22 @@ Possible values are:
 
 The repository location. Usually a git: or svn: URL, for example.
 
-The git-svn option connects to an SVN repository, and you specify the
+The `git-svn` option connects to an SVN repository, and you specify the
 URL in exactly the same way, but git is used as a back-end. This is
 preferable for performance reasons, and also because a local copy of the
 entire history is available in case the upstream repository disappears.
-(It happens!). In order to use Tags as _UpdateCheckMode_ for this VCS
-type, the URL must have the tags= special argument set. Likewise, if you
-intend to use the RepoManifest/branch scheme, you would want to specify
-branches= as well. Finally, trunk= can also be added. All these special
-arguments will be passed to "git svn" in order, and their values must be
-relative paths to the svn repo root dir. Here's an example of a complex
+(It happens!). In order to use Tags as [_UpdateCheckMode_](#UpdateCheckMode)
+for this VCS type, the URL must have the `tags=` special argument set.
+Likewise, if you intend to use the `RepoManifest/branch` scheme, you would want
+to specify `branches=` as well. Finally, `trunk=` can also be added. All these
+special arguments will be passed to "git svn" in order, and their values must
+be relative paths to the svn repo root dir.  Here's an example of a complex
 git-svn _Repo_ URL:
-http://svn.code.sf.net/p/project/code/svn;trunk=trunk;tags=tags;branches=branches
+`http://svn.code.sf.net/p/project/code/svn;trunk=trunk;tags=tags;branches=branches`
 
-If the _RepoType_ is `srclib`, then you must specify the name of the
-according srclib .yml file. For example if `srclibs/FooBar.yml` exist
-and you want to use this srclib, then you have to set _Repo_ to `FooBar`.
+If the [_RepoType_](#RepoType) is `srclib`, then you must specify the name of
+the according srclib `.yml` file. For example if `srclibs/FooBar.yml` exist and
+you want to use this srclib, then you have to set _Repo_ to `FooBar`.
 
 
 
@@ -437,7 +437,7 @@ and you want to use this srclib, then you have to set _Repo_ to `FooBar`.
 The location of binaries used in verification process.
 
 If specified, F-Droid will verify the output APK file of a build against
-the one specified. You can use %v and %c to point to the version name
+the one specified. You can use `%v` and `%c` to point to the version name
 and version code of the current build. To verify the F-Droid client
 itself you could use:
 `Binaries: https://f-droid.org/repo/org.fdroid.fdroid_%c.apk`
@@ -524,13 +524,13 @@ configuration to the build. These are (roughly in order of application):
 
 `init: xxxx`<a name="build_init"></a>
 
-:   Like 'prebuild', but runs on the source code BEFORE any other
-    processing takes place.
+:   Like [`prebuild`](#build_prebuild), but runs on the source code BEFORE any
+    other processing takes place.
 
-    You can use \$\$SDK\$\$ and \$\$NDK\$\$ to substitute the paths to the
+    You can use `$$SDK$$` and `$$NDK$$` to substitute the paths to the
     Android SDK and NDK directories respectively. The following
-    per-build variables are available likewise: \$\$VERSION\$\$,
-    \$\$VERCODE\$\$ and \$\$COMMIT\$\$.
+    per-build variables are available likewise: `$$VERSION$$`,
+    `$$VERCODE$$` and `$$COMMIT$$`.
 
     This runs in [`subdir:`](#build_subdir) if set.
 
@@ -557,14 +557,14 @@ configuration to the build. These are (roughly in order of application):
     Android file or doesn't already exist, but not a good idea if it's
     heavily customised.
 
-`androidupdate: <auto/dirs>`<a name="build_androidupdate"></a>
+`androidupdate: auto|<path1>[,<path2>,...]`<a name="build_androidupdate"></a>
 
 :   By default, 'android update' is used in Ant builds to generate or
     update the project and all its referenced projects. Specifying
     `androidupdate: no` bypasses that. Note that this is useless in builds that
     don't use Ant.
 
-    Default value is '`auto`', which recursively uses the paths in
+    Default value is `auto`, which recursively uses the paths in
     _project.properties_ to find all the subprojects to update.
 
     Otherwise, the value can be a comma-separated list of directories in
@@ -599,7 +599,7 @@ configuration to the build. These are (roughly in order of application):
 :   The location of a binary used in verification process for this build.
 
     If specified, F-Droid will verify the output APK file of a build against
-    the one specified. You can use %v and %c to point to the version name
+    the one specified. You can use `%v` and `%c` to point to the version name
     and version code of the current build. To verify the F-Droid client
     itself you could use:
     `binary: https://f-droid.org/repo/org.fdroid.fdroid_%c.apk`
@@ -611,7 +611,7 @@ configuration to the build. These are (roughly in order of application):
 :   Specifies the relative paths of files or directories to delete
     before the build is started. The paths are relative to the base of the
     build directory - i.e. the root of the directory structure checked
-    out from the source respository - not necessarily the directory that
+    out from the source repository - not necessarily the directory that
     contains _AndroidManifest.xml_.
 
     Multiple files/directories can be specified by separating them with
@@ -637,16 +637,16 @@ configuration to the build. These are (roughly in order of application):
     do the equivalent of the legacy practice
     `prebuild: echo "android.library.reference.1=$$somelib$$" >> project.properties`.
 
-    Each srclib has a metadata file under srclibs/ in the repository
-    directory, and the source code is stored in build/srclib/.
-    _RepoType_ and _Repo_ are specified in the same way
-    as for apps; Subdir: can be a comma separated list, for when
-    directories are renamed by upstream; Update Project: updates the
-    projects in the working directory and one level down; Prepare: can
+    Each srclib has a metadata file under `srclibs/` in the repository
+    directory, and the source code is stored in `build/srclib/`.
+    [_RepoType_](#RepoType) and [_Repo_](#Repo) are specified in the same way
+    as for apps; _Subdir:_ can be a comma-separated list, for
+    when directories are renamed by upstream; _Update Project:_ updates the
+    projects in the working directory and one level down; _Prepare:_ can
     be used for any kind of preparation: in particular if you need to
     update the project with a particular target. You can then also use
-    `$$name$$` in the init/prebuild/build command to substitute the
-    absolute path to the library directory.
+    `$$name$$` in the [`init`](#build_init)/[`prebuild`](#build_prebuild)/[`build`](#build_build)
+    commands to substitute the absolute path to the library directory.
 
     Currently srclibs are used when upstream uses jar files or
     pulls dependencies from non-trusted repositories. Because srclibs
@@ -654,14 +654,14 @@ configuration to the build. These are (roughly in order of application):
 
 `patch: x`<a name="build_patch"></a>
 
-:   Apply patch(es). 'x' names one (or more - comma-seperated) files
+:   Apply patch(es). 'x' names one (or more - comma-separated) files
     within a directory below the metadata, with the same name as the
     metadata file but without the extension. Each of these patches is
     applied to the code in turn.
 
 `prebuild: xxxx`<a name="build_prebuild"></a>
 
-:   Specifies a shell command (or commands - chain with &&) to run
+:   Specifies a shell command (or commands - chain with `&&`) to run
     before the build takes place. Backslash can be used as an escape
     character to insert literal commas, or as the last character on a
     line to join that line with the next. It has no special meaning in
@@ -675,14 +675,14 @@ configuration to the build. These are (roughly in order of application):
     example, take place after this. For custom actions that actually
     build things or produce binaries, use 'build' instead.
 
-    You can use \$\$name\$\$ to substitute the path to a referenced
+    You can use `$$name$$` to substitute the path to a referenced
     srclib - see the `srclib` directory for details of this.
 
-    You can use \$\$SDK\$\$ and \$\$NDK\$\$ to substitute the paths to
+    You can use `$$SDK$$` and `$$NDK$$` to substitute the paths to
     the Android SDK and NDK directories respectively e.g. for when you
     need to run `android update project` explicitly. The following
-    per-build variables are available likewise: \$\$VERSION\$\$,
-    \$\$VERCODE\$\$ and \$\$COMMIT\$\$.
+    per-build variables are available likewise: `$$VERSION$$`,
+    `$$VERCODE$$` and `$$COMMIT$$`.
 
     This runs in [`subdir:`](#build_subdir) if set.
 
@@ -699,34 +699,35 @@ configuration to the build. These are (roughly in order of application):
 `scandelete: <path1>[,<path2>,...]`<a name="build_scandelete"></a>
 
 :   When running the scan process, any files that trigger errors - like
-    binaries - will be removed. It acts just like _scanignore_, but
-    instead of ignoring the files, it removes them.
+    binaries - will be removed. It acts just like
+    [`scanignore`](#build_scanignore), but instead of ignoring the files,
+    it removes them.
 
     Useful when a source code repository includes binaries or other
-    unwanted files which are not needed for the build. Instead of
-    removing them manually via _rm_, using _scandelete_ is easier.
+    unwanted files which are not needed for the build. Instead of removing
+    them manually via [`rm`](#build_rm), using `scandelete` is easier.
 
 `build: xxxx`<a name="build_build"></a>
 
-:   As for 'prebuild', but runs during the actual build phase (but
-    before the main Ant/Maven build). Use this only for actions that do
-    actual building. Any preparation of the source code should be done
-    using 'init' or 'prebuild'.
+:   As for [`prebuild`](#build_prebuild), but runs during the actual build
+    phase (but before the main Ant/Maven build). Use this only for actions that
+    do actual building. Any preparation of the source code should be done
+    using [`init`](#build_init) or [`prebuild`](#build_prebuild).
 
-    Any building that takes place before _build_ will be ignored, as
+    Any building that takes place before `build` will be ignored, as
     either Ant, mvn or gradle will be executed to clean the build
-    environment right before _build_ (or the final build) is run.
+    environment right before `build` (or the final build) is run.
 
-    You can use \$\$SDK\$\$ and \$\$NDK\$\$ to substitute the paths to the
+    You can use `$$SDK$$` and `$$NDK$$` to substitute the paths to the
     Android SDK and NDK directories respectively. The following per-build
-    variables are available likewise: \$\$VERSION\$\$, \$\$VERCODE\$\$
-    and \$\$COMMIT\$\$.
+    variables are available likewise: `$$VERSION$$`, `$$VERCODE$$`
+    and `$$COMMIT$$`.
 
     This runs in [`subdir:`](#build_subdir) if set.
 
 `buildjni: [yes|no|<dir list>]`<a name="build_buildjni"></a>
 
-:   Enables building of native code via the _ndk-build_ script before
+:   Enables building of native code via the `ndk-build` script before
     doing the main Ant build. The value may be a list of directories
     relative to the main application directory in which to run
     ndk-build, or 'yes' which corresponds to '.' . Using explicit list
@@ -737,8 +738,8 @@ configuration to the build. These are (roughly in order of application):
     the native code is being built by other means like a Gradle task,
     you can specify `no` here to avoid that. However, if the native code
     is actually not required or used, remove the directory instead
-    (using `rm: jni` for example). Using `buildjni: no` when the jni code
-    isn't used nor built will result in an error saying that native
+    (using [`rm: jni`](#build_rm) for example). Using `buildjni: no` when the
+    jni code isn't used nor built will result in an error saying that native
     libraries were expected in the resulting package.
 
 `ndk: <version>`<a name="build_ndk"></a>
@@ -763,9 +764,9 @@ configuration to the build. These are (roughly in order of application):
 
 `maven: yes[@<dir>]`<a name="build_maven"></a>
 
-:   Build with Maven instead of Ant. An extra @&lt;dir&gt; tells F-Droid
+:   Build with Maven instead of Ant. An extra `@<dir>` tells F-Droid
     to run Maven inside that relative subdirectory. Sometimes it is
-    needed to use @.. so that builds happen correctly.
+    needed to use `@..` so that builds happen correctly.
 
 `preassemble: <task1>[,<task2>,...]`<a name="build_preassemble"></a>
 
@@ -786,20 +787,21 @@ configuration to the build. These are (roughly in order of application):
     default 'release'. It can't be given any flags, such as the path to
     a _build.xml_.
 
-`output: glob/to/output.apk`<a name="build_output"></a>
+`output: <glob/to/output.apk>`<a name="build_output"></a>
 
 :   Specify a glob path where the resulting unsigned release APK from
     the build should be. This can be used in combination with build
-    methods like `gradle: yes` or `maven: yes`, but if no build method is
-    specified, the build is manual. You should run your build commands,
-    such as `make`, in _build_.
+    methods like [`gradle: yes`](#build_gradle) or [`maven: yes`](#build_maven),
+    but if no build method is specified, the build is manual. You should run
+    your build commands, such as `make`, in [`build`](#build_build).
 
     This runs in [`subdir:`](#build_subdir) if set.
 
 `postbuild: xxxx`<a name="build_postbuild"></a>
 
-:   As for 'prebuild', but runs after the actual build phase (the main Ant/Maven build).
-    Use this only for actions that perform some post-processing on the build outputs.
+:   As for [`prebuild`](#build_prebuild), but runs after the actual build phase
+    (the main Ant/Maven build).  Use this only for actions that perform some
+    post-processing on the build outputs.
 
     You can use `$$name$$` to substitute the path to a referenced
     srclib - see the `srclib` directory for details of this.
@@ -844,7 +846,7 @@ fetched using:
 apksigner verify --print-certs example.apk | grep SHA-256
 ```
 
-Usually, APKs are signed using only one signer.  APKs that require verification by [multiple signers](https://developer.android.com/tools/apksigner#usage-sign) are currently not supported by `AllowedAPKSigningKeys` (this is quite rare).
+Usually, APKs are signed using only one signer.  APKs that require verification by [multiple signers](https://developer.android.com/tools/apksigner#usage-sign) are currently not supported by _AllowedAPKSigningKeys_ (this is quite rare).
 
 
 ### _AntiFeatures_<a name="AntiFeatures"></a>
@@ -875,10 +877,10 @@ If this field is present, the application does not get put into the
 public index. This allows metadata to be retained while an application
 is temporarily disabled from being published. The value should be a
 description of why the application is disabled. No APKs or source code
-archives are deleted: to purge an APK see the Build Version section or
-delete manually for developer builds. The field is therefore used when
-an app has outlived it's usefulness, because the source tarball is
-retained.
+archives are deleted: to purge an APK see [`disable`](#build_disable) in the
+_Builds_ section or delete it manually for developer builds. The field is
+therefore used when an app has outlived it's usefulness, because the source
+tarball is retained.
 
 
 ### _RequiresRoot_<a name="RequiresRoot"></a>
@@ -900,16 +902,16 @@ maximum number of versions kept in the main repo, after which older ones
 are moved to the archive. This app-specific policy setting can override
 that.
 
-The version specified via `CurrentVersionCode` is always considered the 
-newest version when deciding which versions to put into the archive.
-This means that when `ArchivePolicy` is set to `1` only the APK
-corresponding to CVC is kept, which is not necessarily the one with the 
-highest version code.
+The version specified via [_CurrentVersionCode_](#CurrentVersionCode) is always
+considered the newest version when deciding which versions to put into the
+archive.  This means that when _ArchivePolicy_ is set to `1` only the APK
+corresponding to CVC is kept, which is not necessarily the one with the highest
+version code.
 
 Currently the only supported format is `n`, where `n` is the
 number of versions to keep. Defaults to `3`. For apps with a list
 of [_VercodeOperation_](#VercodeOperation) the default is calculated as
-`3 x number of operations`, eg. for an app with two operations, for two
+`3 × number of operations`, e.g. for an app with two operations, for two
 ABIs, 6 versions will be kept.
 
 
@@ -918,22 +920,22 @@ ABIs, 6 versions will be kept.
 This determines the method used for auto-generating new builds when
 new releases are available - in other words, adding a new Build
 Version line to the metadata. This happens in conjunction with the
-_UpdateCheckMode_ functionality - i.e. when an update is detected by
-that, it is also processed by this.
+[_UpdateCheckMode_](#UpdateCheckMode) functionality - i.e. when an update is
+detected by that, it is also processed by this.
 
 Valid modes are:
 
--   `None` - Auto-updating is disabled
+-   `None` - Auto-updating is disabled.
 -   `Version` - Auto-updating is enabled.
 
-    If `UpdateCheckMode` is set to `Tags`, this should be set to
-    `Version` without any pattern. The checked tag is used directly.
+    If [_UpdateCheckMode_](#UpdateCheckMode) is set to `Tags`, this should be
+    set to `Version` without any pattern. The checked tag is used directly.
 
     If `UpdateCheckMode` is set to `HTTP`, a pattern should be added
     after the `Version`. The pattern is used to generate a value
-    (tag name) used for the `commit:` property of new build blocks.
-    It is simply text in which `%v` and `%c` are replaced with the required
-    version name and version code respectively. The resulting
+    (tag name) used for the [`commit:`](#build_commit) property of new build
+    blocks.  It is simply text in which `%v` and `%c` are replaced with the
+    required version name and version code respectively. The resulting
     string must match an existing tag in the app's repo, which then will be
     used by F-Droid to build the corresponding version.
 
@@ -942,14 +944,12 @@ Valid modes are:
     always has a tag `ver_1234` for a version with version code 1234,
     you would specify `Version ver_%c`.
 
-    Continuing the first example above, you would specify that as
-    `Version +-fdroid %v` - `-fdroid` is the suffix F-Droid will then append to the
-    `versionName` specified in e.g. `build.gradle` when building the APK.
-
     Additionally, a suffix can be added to the version name at this
     stage, to differentiate F-Droid's build from the original.
     Continuing the first example above, you would specify that as
-    `Version +-fdroid %v` - `-fdroid` is the suffix.
+    `Version +-fdroid %v`, where `-fdroid` is the suffix that will be appended
+    to the [`versionName`](#build_versionName) specified in e.g. `build.gradle`
+    when building the APK.
 
 
 For apps with a list of [_VercodeOperation_](#VercodeOperation) the number of builds
@@ -959,9 +959,9 @@ is equal to the number of items in the list.
 ### _UpdateCheckMode_<a name="UpdateCheckMode"></a>
 
 This determines the method using for determining when new releases are
-available - in other words, the updating of the _CurrentVersion_ and
-_CurrentVersionCode_ fields in the metadata by the `fdroid checkupdates`
-process.
+available - in other words, the updating of the [_CurrentVersion_](#CurrentVersion)
+and [_CurrentVersionCode_](#CurrentVersionCode) fields in the metadata by the
+`fdroid checkupdates` process.
 
 Valid modes are:
 
@@ -979,7 +979,7 @@ Valid modes are:
     us posted on new versions.
 -   `RepoManifest` - At the most recent commit, the _AndroidManifest.xml_
     and _build.gradle_ files are looked for in the directory where
-    they were found in the the most recent build. The appropriateness of
+    they were found in the most recent build. The appropriateness of
     this method depends on the development process used by the
     application's developers. You should not specify this method unless
     you're sure it's appropriate. For example, some developers bump the
@@ -993,12 +993,12 @@ Valid modes are:
     that they distribute or for tags in the source code repository.
 
     It currently works for every repository type to different extents,
-    except the srclib repo type. For git, git-svn and hg repo types, you
-    may use "RepoManifest/yourbranch" as _UpdateCheckMode_ so that "yourbranch" would
+    except the `srclib` repo type. For `git`, `git-svn` and `hg` repo types, you
+    may use `RepoManifest/yourbranch` as _UpdateCheckMode_ so that "yourbranch" would
     be the branch used in place of the default one. The default values
     are "master" for git, "default" for hg and none for git-svn (it
     stays in the same branch). On the other hand, branch support hasn't
-    been implemented yet in bzr and svn, but _RepoManifest_ may still be
+    been implemented yet in `bzr` and `svn`, but `RepoManifest` may still be
     used without it.
 
 -   `Tags` - The _AndroidManifest.xml_ and _build.gradle_ files in all
@@ -1008,29 +1008,30 @@ Valid modes are:
     developers. You should not specify this method unless you're sure
     it's appropriate. It shouldn't be used if the developers like to tag
     unstable versions or are known to forget to tag releases. Like
-    RepoManifest, it will not return the correct value if the directory
-    containing the _AndroidManifest.xml_ has moved. Despite these caveats,
-    it is the often the favourite _UpdateCheckMode_.
+    `RepoManifest`, it will not return the correct value if the
+    _AndroidManifest.xml_ were moved to another directory. Despite these
+    caveats, it is often the favourite _UpdateCheckMode_.
 
-    It currently only works for git, hg, bzr and git-svn repositories.
+    It currently only works for `git`, `hg`, `bzr` and `git-svn` repositories.
     In the case of the latter, the repo URL must contain the path to the
-    trunk and tags or else no tags will be found.
+    `trunk` and `tags` or else no tags will be found.
 
     Optionally append a regex pattern at the end - separated with a
     space - to only check the tags matching said pattern. Useful when
-    apps tag non-release versions such as X.X-alpha, so you can filter
+    apps tag non-release versions such as `X.X-alpha`, so you can filter
     them out with something like `.*[0-9]$` which requires tag names to
     end with a digit.
     Example: `UpdateCheckMode: Tags .*[0-9]$`
 
-    Optionally `UpdateCheckData` can be specified to extract version code and
-    name from repository files you specify (instead of relying on the defaults
-    used to match against otherwise, which in most cases is `build.gradle` or
+    Optionally [_UpdateCheckData_](#UpdateCheckData) can be specified to
+    extract version code and name from repository files you specify (instead of
+    relying on the defaults, which in most cases is `build.gradle` or
     `AndroidManifest.xml`).
 
 -   `HTTP` - HTTP requests are used to determine the current version
-    code and version name. This is controlled by the _UpdateCheckData_
-    field, which is of the form `urlcode|excode|urlver|exver`.
+    code and version name. This is controlled by the
+    [_UpdateCheckData_](#UpdateCheckData) field, which is of the form
+    `urlcode|excode|urlver|exver`.
 
     Firstly, if `urlcode` is non-empty, the document from that URL is
     retrieved, and matched against the regular expression `excode`, with
@@ -1046,8 +1047,8 @@ Valid modes are:
 ### _VercodeOperation_<a name="VercodeOperation"></a>
 
 Operation to be applied to the vercode obtained by the defined
-_UpdateCheckMode_. `%c` will be replaced by the actual vercode, and
-the whole string will be passed to python's `eval` function.
+[_UpdateCheckMode_](#UpdateCheckMode). `%c` will be replaced by the actual
+vercode, and the whole string will be passed to python's `eval` function.
 
 Especially useful with apps that we want to compile for different ABIs,
 but whose vercodes don't always have trailing zeros. For example, with
@@ -1067,12 +1068,12 @@ vercode calculated by doing each math operation.
 
 ### _UpdateCheckIgnore_<a name="UpdateCheckIgnore"></a>
 
-When checking for updates (via _UpdateCheckMode_) this can be used to
-specify a regex which, if matched against the version name, causes that
-version to be ignored. For example, 'beta' could be specified to ignore
+When checking for updates (via [_UpdateCheckMode_](#UpdateCheckMod)) this can
+be used to specify a regex which, if matched against the version name, causes
+that version to be ignored. For example, 'beta' could be specified to ignore
 version names that include that text.
 
-Only Available with _UpdateCheckMode_ `HTTP`.
+Only Available with [_UpdateCheckMode_](#UpdateCheckMod) `HTTP`.
 
 
 ### _UpdateCheckName_<a name="UpdateCheckName"></a>
@@ -1084,12 +1085,12 @@ appending ".open" or ".free" at the end of the package name.
 
 You can also use `Ignore` to ignore package name searching. This should
 only be used in some specific cases, for example if the app's
-build.gradle file does not contain the package name.
+`build.gradle` file does not contain the package name.
 
 
 ### _UpdateCheckData_<a name="UpdateCheckData"></a>
 
-Used in conjunction with _UpdateCheckMode_ `Tags` or `HTTP`.
+Used in conjunction with [_UpdateCheckMode_](#UpdateCheckMode) `Tags` or `HTTP`.
 
 ```
 UpdateCheckData: <vercode-location>|<RegEx-for-versionCode>|<versionName-location>|<RegEx-for-versionName>
@@ -1098,23 +1099,23 @@ UpdateCheckData: <vercode-location>|<RegEx-for-versionCode>|<versionName-locatio
 -   `vercode-location` - URL (with `UpdateCheckMode: HTTP`) or path/file
     relative to repo root, leave empty to check the tag name instead (with
     `UpdateCheckMode: Tags`).
--   `RegEx-for-versionCode` - RegEx to match versionCode.
--   `versionName-location` - Same as vercode-location just for versionName. A `.`
+-   `RegEx-for-versionCode` - RegEx to match `versionCode`.
+-   `versionName-location` - Same as vercode-location just for `versionName`. A `.`
     means to take vercode-location, leave empty to check the tag name instead
     (only with `UpdateCheckMode: Tags`).
--   `RegEx-for-versionName` - Similar to RegEx-for-versionCode, just for versionName.
+-   `RegEx-for-versionName` - Similar to `RegEx-for-versionCode`, just for `versionName`.
 -   RegEx pipe operators are not supported at this time.
 
 Examples for `UpdateCheckMode: Tags`:
--   Flutter app with the `pubspec.yaml` in the repo root:
+-   Flutter app with the `pubspec.yaml` in the repo root:\
     `pubspec.yaml|version:\s.+\+(\d+)|.|version:\s(.+)\+`
--   Use the git tag as version name:
+-   Use the git tag as version name:\
     `app/build.gradle|versionCode\s(\d+)||`
--   Optionally a regex to extract the version name from the tag can be specified:
+-   Optionally a regex to extract the version name from the tag can be specified:\
     `app/build.gradle|versionCode\s(\d+)||Android-([\d.]+)`
--   If no file for the version code was specified, code and name can be extracted from the tag:
+-   If no file for the version code was specified, code and name can be extracted from the tag:\
     `'|\+(\d+)||Android-([\d.]+)'`
--   Note: Be sure to use *single* quotes around the entire value if you leave `vercode-location` empty:
+-   Note: Be sure to use *single* quotes around the entire value if you leave `vercode-location` empty:\
     `UpdateCheckData: '|\+(\d+)||Android-([\d.]+)'`
 
 Examples for `UpdateCheckMode: HTTP`:
@@ -1130,10 +1131,11 @@ almost certainly be older ones. This should be the one that is
 recommended for general use. In the event that there is no source code
 for the current version, or that Non-Free libraries are being used, this
 would ideally be the latest version that is still free, though it may
-still be expedient to retain the automatic update check — see No Source
-Since.
+still be expedient to retain the automatic update check — see
+[_NoSourceSince_](#NoSourceSince).
 
-This field is normally automatically updated - see _UpdateCheckMode_.
+This field is normally automatically updated - see
+[_UpdateCheckMode_](#UpdateCheckMode).
 
 This is converted to (`<marketversion>`) in the XML file (_index.xml_).
 
@@ -1156,13 +1158,13 @@ This is converted to (`<marketvercode>`) in the XML file (_index.xml_).
 
 ### _NoSourceSince_<a name="NoSourceSince"></a>
 
-In case we are missing the source code for the _CurrentVersion_ reported
-by Upstream, or that Non-Free elements have been introduced, this
-defines the first version that began to miss source code. Apps that are
-missing source code for just one or a few versions, but provide source
-code for newer ones are not to be considered here - this field is
-intended to illustrate which apps do not currently distribute source
-code, and since when have they been doing so.
+In case we are missing the source code for the
+[_CurrentVersion_](#CurrentVersion) reported by Upstream, or that Non-Free
+elements have been introduced, this defines the first version that began to
+miss source code. Apps that are missing source code for just one or a few
+versions, but provide source code for newer ones are not to be considered here
+- this field is intended to illustrate which apps do not currently distribute
+source code, and since when have they been doing so.
 
 
 
