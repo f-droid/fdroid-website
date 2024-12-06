@@ -400,12 +400,12 @@ The type of repository - for automatic building from source. If this is
 not specified, automatic building is disabled for this application.
 Possible values are:
 
--   `git`
--   `svn`
--   `git-svn`
--   `hg`
--   `bzr`
--   `srclib`
+* `git`
+* `svn`
+* `git-svn`
+* `hg`
+* `bzr`
+* `srclib`
 
 
 
@@ -452,7 +452,7 @@ Any number of sub-entries can be present, each specifying a version to
 automatically build from source.
 For example:
 
-```
+```yaml
 Builds:
   - versionName: '1.2'
     versionCode: 12
@@ -474,9 +474,9 @@ Builds:
 :   The _commit_ parameter specifies the tag, commit or revision number
     from which to build it in the source repository.
 
-In addition to the three, always required, parameters described above,
-further parameters can be added (in `name: value` format) to apply further
-configuration to the build. These are (roughly in order of application):
+    In addition to the three, always required, parameters described above,
+    further parameters can be added (in `name: value` format) to apply further
+    configuration to the build. These are (roughly in order of application):
 
 `disable: <message>`<a name="build_disable"></a>
 
@@ -925,8 +925,8 @@ detected by that, it is also processed by this.
 
 Valid modes are:
 
--   `None` - Auto-updating is disabled.
--   `Version` - Auto-updating is enabled.
+* `None` - Auto-updating is disabled.
+* `Version` - Auto-updating is enabled.
 
     If [_UpdateCheckMode_](#UpdateCheckMode) is set to `Tags`, this should be
     set to `Version` without any pattern. The checked tag is used directly.
@@ -965,7 +965,7 @@ and [_CurrentVersionCode_](#CurrentVersionCode) fields in the metadata by the
 
 Valid modes are:
 
--   `None` - No checking is done because there's no appropriate
+* `None` - No checking is done because there's no appropriate
     automated way of doing so. Updates should be checked for manually.
     Use this, for example, when deploying unstable or patched versions;
     when builds are done in a directory different to where the
@@ -973,11 +973,11 @@ Valid modes are:
     system and store version info in a separate file; if the developers
     make a new branch for each release and don't make tags; or if you've
     changed the package name or version code logic.
--   `Static` - No checking is done - either development has ceased or
+* `Static` - No checking is done - either development has ceased or
     new versions are not desired. This method is also used when there is
     no other checking method available and the upstream developer keeps
     us posted on new versions.
--   `RepoManifest` - At the most recent commit, the _AndroidManifest.xml_
+* `RepoManifest` - At the most recent commit, the _AndroidManifest.xml_
     and _build.gradle_ files are looked for in the directory where
     they were found in the most recent build. The appropriateness of
     this method depends on the development process used by the
@@ -1001,7 +1001,7 @@ Valid modes are:
     been implemented yet in `bzr` and `svn`, but `RepoManifest` may still be
     used without it.
 
--   `Tags` - The _AndroidManifest.xml_ and _build.gradle_ files in all
+* `Tags` - The _AndroidManifest.xml_ and _build.gradle_ files in all
     tagged revisions in the source repository are checked, looking for
     the highest version code.  The appropriateness of this method
     depends on the development process used by the application's
@@ -1028,7 +1028,7 @@ Valid modes are:
     relying on the defaults, which in most cases is `build.gradle` or
     `AndroidManifest.xml`).
 
--   `HTTP` - HTTP requests are used to determine the current version
+* `HTTP` - HTTP requests are used to determine the current version
     code and version name. This is controlled by the
     [_UpdateCheckData_](#UpdateCheckData) field, which is of the form
     `urlcode|excode|urlver|exver`.
@@ -1055,7 +1055,7 @@ but whose vercodes don't always have trailing zeros. For example, with
 multiple _VercodeOperation_ we can track updates and build up to four
 different versions of every upstream version, say for 4 architectures:
 
-```
+```yaml
 VercodeOperation:
   - 100 * %c + 1
   - 100 * %c + 2
@@ -1092,35 +1092,32 @@ only be used in some specific cases, for example if the app's
 
 Used in conjunction with [_UpdateCheckMode_](#UpdateCheckMode) `Tags` or `HTTP`.
 
-```
+```yaml
 UpdateCheckData: <vercode-location>|<RegEx-for-versionCode>|<versionName-location>|<RegEx-for-versionName>
 ```
 
--   `vercode-location` - URL (with `UpdateCheckMode: HTTP`) or path/file
+* `vercode-location` - URL (with `UpdateCheckMode: HTTP`) or path/file
     relative to repo root, leave empty to check the tag name instead (with
     `UpdateCheckMode: Tags`).
--   `RegEx-for-versionCode` - RegEx to match `versionCode`.
--   `versionName-location` - Same as vercode-location just for `versionName`. A `.`
+* `RegEx-for-versionCode` - RegEx to match `versionCode`.
+* `versionName-location` - Same as vercode-location just for `versionName`. A `.`
     means to take vercode-location, leave empty to check the tag name instead
     (only with `UpdateCheckMode: Tags`).
--   `RegEx-for-versionName` - Similar to `RegEx-for-versionCode`, just for `versionName`.
--   RegEx pipe operators are not supported at this time.
+* `RegEx-for-versionName` - Similar to `RegEx-for-versionCode`, just for `versionName`.
+* RegEx pipe operators are not supported at this time.
 
 Examples for `UpdateCheckMode: Tags`:
--   Flutter app with the `pubspec.yaml` in the repo root:\
-    `pubspec.yaml|version:\s.+\+(\d+)|.|version:\s(.+)\+`
--   Use the git tag as version name:\
-    `app/build.gradle|versionCode\s(\d+)||`
--   Optionally a regex to extract the version name from the tag can be specified:\
-    `app/build.gradle|versionCode\s(\d+)||Android-([\d.]+)`
--   If no file for the version code was specified, code and name can be extracted from the tag:\
-    `'|\+(\d+)||Android-([\d.]+)'`
--   Note: Be sure to use *single* quotes around the entire value if you leave `vercode-location` empty:\
-    `UpdateCheckData: '|\+(\d+)||Android-([\d.]+)'`
+
+* Flutter app with the `pubspec.yaml` in the repo root: `pubspec.yaml|version:\s.+\+(\d+)|.|version:\s(.+)\+`
+* Use the git tag as version name: `app/build.gradle|versionCode\s(\d+)||`
+* Optionally a regex to extract the version name from the tag can be specified: `app/build.gradle|versionCode\s(\d+)||Android-([\d.]+)`
+* If no file for the version code was specified, code and name can be extracted from the tag: `'|\+(\d+)||Android-([\d.]+)'`
+* Note: Be sure to use *single* quotes around the entire value if you leave `vercode-location` empty: `UpdateCheckData: '|\+(\d+)||Android-([\d.]+)'`
 
 Examples for `UpdateCheckMode: HTTP`:
--   `https://foo/version.json|"version_code":.*"(.*)"|.|"version_name":.*\"(.*)\",`
--   `https://foo/version_fdroid.txt|versionCode=(.*)|.|versionName=(.*)`
+
+* `https://foo/version.json|"version_code":.*"(.*)"|.|"version_name":.*\"(.*)\",`
+* `https://foo/version_fdroid.txt|versionCode=(.*)|.|versionName=(.*)`
 
 
 ### _CurrentVersion_<a name="CurrentVersion"></a>
