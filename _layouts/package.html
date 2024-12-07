@@ -153,11 +153,23 @@ layout: default-package-sidebar
 	</ul>
 	{% endif %}
 
-	{% if page.phone_screenshots %}
+	{% if page.phone_screenshots or page.seven_inch_screenshots or page.ten_inch_screenshots or page.tv_screenshots or page.wear_screenshots %}
 	<div id="screenshots" class="js_slides screenshots">
 		<div class="frame js_frame">
 			<ul class="slides js_slides gallery">
 				{% for screenshot in page.phone_screenshots %}
+				<li class="js_slide screenshot"><img src="{{ site.fdroid-repo}}/{{ page.package_name }}/{{ screenshot }}" alt="{{ strings.package_screenshot_alt }}" /></li>
+				{% endfor %}
+				{% for screenshot in page.seven_inch_screenshots %}
+				<li class="js_slide screenshot"><img src="{{ site.fdroid-repo}}/{{ page.package_name }}/{{ screenshot }}" alt="{{ strings.package_screenshot_alt }}" /></li>
+				{% endfor %}
+				{% for screenshot in page.ten_inch_screenshots %}
+				<li class="js_slide screenshot"><img src="{{ site.fdroid-repo}}/{{ page.package_name }}/{{ screenshot }}" alt="{{ strings.package_screenshot_alt }}" /></li>
+				{% endfor %}
+				{% for screenshot in page.tv_screenshots %}
+				<li class="js_slide screenshot"><img src="{{ site.fdroid-repo}}/{{ page.package_name }}/{{ screenshot }}" alt="{{ strings.package_screenshot_alt }}" /></li>
+				{% endfor %}
+				{% for screenshot in page.wear_screenshots %}
 				<li class="js_slide screenshot"><img src="{{ site.fdroid-repo}}/{{ page.package_name }}/{{ screenshot }}" alt="{{ strings.package_screenshot_alt }}" /></li>
 				{% endfor %}
 			</ul>
