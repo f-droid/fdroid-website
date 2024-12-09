@@ -127,7 +127,7 @@ Create a config file for Vagrant as `~/fdroidserver/buildserver/Vagrantfile.yaml
 vm_provider: libvirt
 ```
 
-Then the base buildserver image... (downloading the basebox and all the sdk platforms can take long time).
+Then the base buildserver image... (downloading the basebox and all the SDK platforms can take long time).
 
 ```bash
 fdroid:~$ cd fdroidserver

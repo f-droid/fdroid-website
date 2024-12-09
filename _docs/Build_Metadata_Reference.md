@@ -21,7 +21,7 @@ upper case letter.  All other fields use camelCase starting with a
 lower case letter, including per-build fields, localized fields, etc.
 
 Note that although the metadata files are designed to be easily read
-and writable by humans, they are also processed and written by various
+and written by humans, they are also processed and written by various
 scripts. They can be automatically cleaned up when necessary. The
 structure and comments will be preserved correctly, although the order
 of fields will be standardised. (In the event that the original file
@@ -183,7 +183,7 @@ This is converted to (`<email>`) in the XML file (_index.xml_).
 
 ### _AuthorWebSite_<a name="AuthorWebSite"></a>
 
-The website url of the author(s). This can be omitted (or left blank).
+The website URL of the author(s). This can be omitted (or left blank).
 
 __Warning__: this overrides all _AuthorWebSite_ entries
 [set in the app's source code](../All_About_Descriptions_Graphics_and_Screenshots).
@@ -308,8 +308,7 @@ This is converted to (`<donate>`) in the XML file (_index.xml_).
 The project's Liberapay (https://liberapay.com) user or group name, if
 it has one. This should be an alphanumeric name, such that (for
 example) https://liberapay.com/xxxxx which redirects to your account
-page. This used to be _LiberapayID_, which was a numeric ID fetched
-from Liberapay's site by adding /public.json behind your team page.
+page. This used to be _LiberapayID_, which was a numeric ID.
 
 This is converted to (`<liberapay>`) in the XML file (_index.xml_).
 
@@ -421,9 +420,9 @@ entire history is available in case the upstream repository disappears.
 for this VCS type, the URL must have the `tags=` special argument set.
 Likewise, if you intend to use the `RepoManifest/branch` scheme, you would want
 to specify `branches=` as well. Finally, `trunk=` can also be added. All these
-special arguments will be passed to "git svn" in order, and their values must
-be relative paths to the svn repo root dir.  Here's an example of a complex
-git-svn _Repo_ URL:
+special arguments will be passed to `git svn` in order, and their values must
+be relative paths to the SVN repo root dir.  Here's an example of a complex
+`git-svn` _Repo_ URL:
 `http://svn.code.sf.net/p/project/code/svn;trunk=trunk;tags=tags;branches=branches`
 
 If the [_RepoType_](#RepoType) is `srclib`, then you must specify the name of
@@ -536,9 +535,9 @@ Builds:
 
 `oldsdkloc: true`<a name="build_oldsdkloc"></a>
 
-:   The sdk location in the repo is in an old format, or the build.xml
-    is expecting such. The 'new' format is sdk.dir while the VERY OLD
-    format is sdk-location. Typically, if you get a message along the
+:   The SDK location in the repo is in an old format, or the _build.xml_
+    is expecting such. The 'new' format is `sdk.dir` while the VERY OLD
+    format is `sdk-location`. Typically, if you get a message along the
     lines of: "com.android.ant.SetupTask cannot be found" when trying to
     build, then try enabling this option.
 
@@ -572,7 +571,7 @@ Builds:
 
 `encoding: xxxx`<a name="build_encoding"></a>
 
-:   Adds a java.encoding property to local.properties with the
+:   Adds a `java.encoding` property to _local.properties_ with the
     given value. Generally the value will be 'utf-8'. This is picked up
     by the SDK's ant rules, and forces the Java compiler to interpret
     source files with this encoding. If you receive warnings during the
@@ -838,7 +837,7 @@ easy to find out the expected signing key for the APKs that are gathered.
 not, the mismatched APKs will not be included in the repo.  If `fdroid update
 --delete-unknown` is specified, the mismatched APKs will be deleted.  Then an
 automated process can be used to download newer APKs to the repo, and they will
-only be included if they have a known good signature.  The value is a lowercase
+only be included if they have a known good signature.  The value is a lower case
 hex value of the SHA-256 fingerprint of the signing certificate.  This can be
 fetched using:
 
@@ -1048,12 +1047,12 @@ Valid modes are:
 
 ### _VercodeOperation_<a name="VercodeOperation"></a>
 
-Operation to be applied to the vercode obtained by the defined
+Operation to be applied to the version code obtained by the defined
 [_UpdateCheckMode_](#UpdateCheckMode). `%c` will be replaced by the actual
-vercode, and the whole string will be passed to python's `eval` function.
+version code, and the whole string will be passed to python's `eval` function.
 
 Especially useful with apps that we want to compile for different ABIs,
-but whose vercodes don't always have trailing zeros. For example, with
+but whose version codes don't always have trailing zeros. For example, with
 multiple _VercodeOperation_ we can track updates and build up to four
 different versions of every upstream version, say for 4 architectures:
 
@@ -1066,23 +1065,23 @@ VercodeOperation:
 ```
 
 So 4 build blocks are copied from above and added as an update with their
-vercode calculated by doing each math operation.
+version code calculated by doing each math operation.
 
 ### _UpdateCheckIgnore_<a name="UpdateCheckIgnore"></a>
 
-When checking for updates (via [_UpdateCheckMode_](#UpdateCheckMod)) this can
+When checking for updates (via [_UpdateCheckMode_](#UpdateCheckMode)) this can
 be used to specify a regex which, if matched against the version name, causes
 that version to be ignored. For example, 'beta' could be specified to ignore
 version names that include that text.
 
-Only Available with [_UpdateCheckMode_](#UpdateCheckMod) `HTTP`.
+Only Available with [_UpdateCheckMode_](#UpdateCheckMode) `HTTP`.
 
 
 ### _UpdateCheckName_<a name="UpdateCheckName"></a>
 
 When checking for updates (via _UpdateCheckMode_) this can be used to
 specify the package name to search for. Useful when apps have a static
-package name but change it programmatically in some app flavors, by e.g.
+package name but change it programmatically in some app flavours, by e.g.
 appending ".open" or ".free" at the end of the package name.
 
 You can also use `Ignore` to ignore package name searching. This should
@@ -1102,8 +1101,8 @@ UpdateCheckData: <vercode-location>|<RegEx-for-versionCode>|<versionName-locatio
   relative to repo root, leave empty to check the tag name instead (with
   `UpdateCheckMode: Tags`).
 * `RegEx-for-versionCode` - RegEx to match `versionCode`.
-* `versionName-location` - Same as vercode-location just for `versionName`. A `.`
-  means to take vercode-location, leave empty to check the tag name instead
+* `versionName-location` - Same as `vercode-location` just for `versionName`. A `.`
+  means to take `vercode-location`, leave empty to check the tag name instead
   (only with `UpdateCheckMode: Tags`).
 * `RegEx-for-versionName` - Similar to `RegEx-for-versionCode`, just for `versionName`.
 * RegEx pipe operators are not supported at this time.
