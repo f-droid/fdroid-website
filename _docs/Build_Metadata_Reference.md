@@ -928,28 +928,28 @@ Valid modes are:
 * `None` - Auto-updating is disabled.
 * `Version` - Auto-updating is enabled.
 
-    If [_UpdateCheckMode_](#UpdateCheckMode) is set to `Tags`, this should be
-    set to `Version` without any pattern. The checked tag is used directly.
+  If [_UpdateCheckMode_](#UpdateCheckMode) is set to `Tags`, this should be
+  set to `Version` without any pattern. The checked tag is used directly.
 
-    If `UpdateCheckMode` is set to `HTTP`, a pattern should be added
-    after the `Version`. The pattern is used to generate a value
-    (tag name) used for the [`commit:`](#build_commit) property of new build
-    blocks.  It is simply text in which `%v` and `%c` are replaced with the
-    required version name and version code respectively. The resulting
-    string must match an existing tag in the app's repo, which then will be
-    used by F-Droid to build the corresponding version.
+  If _UpdateCheckMode_ is set to `HTTP`, a pattern should be added
+  after the `Version`. The pattern is used to generate a value
+  (tag name) used for the [`commit:`](#build_commit) property of new build
+  blocks.  It is simply text in which `%v` and `%c` are replaced with the
+  required version name and version code respectively. The resulting
+  string must match an existing tag in the app's repo, which then will be
+  used by F-Droid to build the corresponding version.
 
-    For example, if an app always has a tag `2.7.2` corresponding to
-    version 2.7.2, you would simply specify `Version %v`. If an app
-    always has a tag `ver_1234` for a version with version code 1234,
-    you would specify `Version ver_%c`.
+  For example, if an app always has a tag `2.7.2` corresponding to
+  version 2.7.2, you would simply specify `Version %v`. If an app
+  always has a tag `ver_1234` for a version with version code 1234,
+  you would specify `Version ver_%c`.
 
-    Additionally, a suffix can be added to the version name at this
-    stage, to differentiate F-Droid's build from the original.
-    Continuing the first example above, you would specify that as
-    `Version +-fdroid %v`, where `-fdroid` is the suffix that will be appended
-    to the [`versionName`](#build_versionName) specified in e.g. `build.gradle`
-    when building the APK.
+  Additionally, a suffix can be added to the version name at this
+  stage, to differentiate F-Droid's build from the original.
+  Continuing the first example above, you would specify that as
+  `Version +-fdroid %v`, where `-fdroid` is the suffix that will be appended
+  to the [`versionName`](#build_versionName) specified in e.g. `build.gradle`
+  when building the APK.
 
 
 For apps with a list of [_VercodeOperation_](#VercodeOperation) the number of builds
@@ -966,82 +966,84 @@ and [_CurrentVersionCode_](#CurrentVersionCode) fields in the metadata by the
 Valid modes are:
 
 * `None` - No checking is done because there's no appropriate
-    automated way of doing so. Updates should be checked for manually.
-    Use this, for example, when deploying unstable or patched versions;
-    when builds are done in a directory different to where the
-    _AndroidManifest.xml_ is; if the developers use the Gradle build
-    system and store version info in a separate file; if the developers
-    make a new branch for each release and don't make tags; or if you've
-    changed the package name or version code logic.
-* `Static` - No checking is done - either development has ceased or
-    new versions are not desired. This method is also used when there is
-    no other checking method available and the upstream developer keeps
-    us posted on new versions.
-* `RepoManifest` - At the most recent commit, the _AndroidManifest.xml_
-    and _build.gradle_ files are looked for in the directory where
-    they were found in the most recent build. The appropriateness of
-    this method depends on the development process used by the
-    application's developers. You should not specify this method unless
-    you're sure it's appropriate. For example, some developers bump the
-    version when commencing development instead of when publishing. It
-    will return an error if the _AndroidManifest.xml_ has moved to a
-    different directory or if the package name has changed. The current
-    version that it gives may not be accurate, since not all versions
-    are fit to be published.  Therefore, before building, it is often
-    necessary to check if the current version has been published
-    somewhere by the upstream developers, either by checking for APKs
-    that they distribute or for tags in the source code repository.
+  automated way of doing so. Updates should be checked for manually.
+  Use this, for example, when deploying unstable or patched versions;
+  when builds are done in a directory different to where the
+  _AndroidManifest.xml_ is; if the developers use the Gradle build
+  system and store version info in a separate file; if the developers
+  make a new branch for each release and don't make tags; or if you've
+  changed the package name or version code logic.
 
-    It currently works for every repository type to different extents,
-    except the `srclib` repo type. For `git`, `git-svn` and `hg` repo types, you
-    may use `RepoManifest/yourbranch` as _UpdateCheckMode_ so that "yourbranch" would
-    be the branch used in place of the default one. The default values
-    are "master" for git, "default" for hg and none for git-svn (it
-    stays in the same branch). On the other hand, branch support hasn't
-    been implemented yet in `bzr` and `svn`, but `RepoManifest` may still be
-    used without it.
+* `Static` - No checking is done - either development has ceased or
+  new versions are not desired. This method is also used when there is
+  no other checking method available and the upstream developer keeps
+  us posted on new versions.
+
+* `RepoManifest` - At the most recent commit, the _AndroidManifest.xml_
+  and _build.gradle_ files are looked for in the directory where
+  they were found in the most recent build. The appropriateness of
+  this method depends on the development process used by the
+  application's developers. You should not specify this method unless
+  you're sure it's appropriate. For example, some developers bump the
+  version when commencing development instead of when publishing. It
+  will return an error if the _AndroidManifest.xml_ has moved to a
+  different directory or if the package name has changed. The current
+  version that it gives may not be accurate, since not all versions
+  are fit to be published.  Therefore, before building, it is often
+  necessary to check if the current version has been published
+  somewhere by the upstream developers, either by checking for APKs
+  that they distribute or for tags in the source code repository.
+
+  It currently works for every repository type to different extents,
+  except the `srclib` repo type. For `git`, `git-svn` and `hg` repo types, you
+  may use `RepoManifest/yourbranch` as _UpdateCheckMode_ so that "yourbranch" would
+  be the branch used in place of the default one. The default values
+  are "master" for git, "default" for hg and none for git-svn (it
+  stays in the same branch). On the other hand, branch support hasn't
+  been implemented yet in `bzr` and `svn`, but `RepoManifest` may still be
+  used without it.
 
 * `Tags` - The _AndroidManifest.xml_ and _build.gradle_ files in all
-    tagged revisions in the source repository are checked, looking for
-    the highest version code.  The appropriateness of this method
-    depends on the development process used by the application's
-    developers. You should not specify this method unless you're sure
-    it's appropriate. It shouldn't be used if the developers like to tag
-    unstable versions or are known to forget to tag releases. Like
-    `RepoManifest`, it will not return the correct value if the
-    _AndroidManifest.xml_ were moved to another directory. Despite these
-    caveats, it is often the favourite _UpdateCheckMode_.
+  tagged revisions in the source repository are checked, looking for
+  the highest version code.  The appropriateness of this method
+  depends on the development process used by the application's
+  developers. You should not specify this method unless you're sure
+  it's appropriate. It shouldn't be used if the developers like to tag
+  unstable versions or are known to forget to tag releases. Like
+  `RepoManifest`, it will not return the correct value if the
+  _AndroidManifest.xml_ were moved to another directory. Despite these
+  caveats, it is often the favourite _UpdateCheckMode_.
 
-    It currently only works for `git`, `hg`, `bzr` and `git-svn` repositories.
-    In the case of the latter, the repo URL must contain the path to the
-    `trunk` and `tags` or else no tags will be found.
+  It currently only works for `git`, `hg`, `bzr` and `git-svn` repositories.
+  In the case of the latter, the repo URL must contain the path to the
+  `trunk` and `tags` or else no tags will be found.
 
-    Optionally append a regex pattern at the end - separated with a
-    space - to only check the tags matching said pattern. Useful when
-    apps tag non-release versions such as `X.X-alpha`, so you can filter
-    them out with something like `.*[0-9]$` which requires tag names to
-    end with a digit.
-    Example: `UpdateCheckMode: Tags .*[0-9]$`
+  Optionally append a regex pattern at the end - separated with a
+  space - to only check the tags matching said pattern. Useful when
+  apps tag non-release versions such as `X.X-alpha`, so you can filter
+  them out with something like `.*[0-9]$` which requires tag names to
+  end with a digit.
+  Example: `UpdateCheckMode: Tags .*[0-9]$`
 
-    Optionally [_UpdateCheckData_](#UpdateCheckData) can be specified to
-    extract version code and name from repository files you specify (instead of
-    relying on the defaults, which in most cases is `build.gradle` or
-    `AndroidManifest.xml`).
+  Optionally [_UpdateCheckData_](#UpdateCheckData) can be specified to
+  extract version code and name from repository files you specify (instead of
+  relying on the defaults, which in most cases is `build.gradle` or
+  `AndroidManifest.xml`).
 
 * `HTTP` - HTTP requests are used to determine the current version
-    code and version name. This is controlled by the
-    [_UpdateCheckData_](#UpdateCheckData) field, which is of the form
-    `urlcode|excode|urlver|exver`.
+  code and version name. This is controlled by the
+  [_UpdateCheckData_](#UpdateCheckData) field, which is of the form
+  `urlcode|excode|urlver|exver`.
 
-    Firstly, if `urlcode` is non-empty, the document from that URL is
-    retrieved, and matched against the regular expression `excode`, with
-    the first group becoming the version code.
+  Firstly, if `urlcode` is non-empty, the document from that URL is
+  retrieved, and matched against the regular expression `excode`, with
+  the first group becoming the version code.
 
-    Secondly, if `urlver` is non-empty, the document from that URL is
-    retrieved, and matched against the regular expression `exver`, with
-    the first group becoming the version name. The `urlver` field can be
-    set to simply '.' which says to use the same document returned for
-    the version code again, rather than retrieving a different one.
+  Secondly, if `urlver` is non-empty, the document from that URL is
+  retrieved, and matched against the regular expression `exver`, with
+  the first group becoming the version name. The `urlver` field can be
+  set to simply '.' which says to use the same document returned for
+  the version code again, rather than retrieving a different one.
 
 
 ### _VercodeOperation_<a name="VercodeOperation"></a>
@@ -1097,12 +1099,12 @@ UpdateCheckData: <vercode-location>|<RegEx-for-versionCode>|<versionName-locatio
 ```
 
 * `vercode-location` - URL (with `UpdateCheckMode: HTTP`) or path/file
-    relative to repo root, leave empty to check the tag name instead (with
-    `UpdateCheckMode: Tags`).
+  relative to repo root, leave empty to check the tag name instead (with
+  `UpdateCheckMode: Tags`).
 * `RegEx-for-versionCode` - RegEx to match `versionCode`.
 * `versionName-location` - Same as vercode-location just for `versionName`. A `.`
-    means to take vercode-location, leave empty to check the tag name instead
-    (only with `UpdateCheckMode: Tags`).
+  means to take vercode-location, leave empty to check the tag name instead
+  (only with `UpdateCheckMode: Tags`).
 * `RegEx-for-versionName` - Similar to `RegEx-for-versionCode`, just for `versionName`.
 * RegEx pipe operators are not supported at this time.
 
