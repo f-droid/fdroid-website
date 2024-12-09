@@ -1757,7 +1757,7 @@ msgstr "这些元数据文件是简单且易于编辑的文本文件，文件名
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-msgid "Note that although the metadata files are designed to be easily read and writable by humans, they are also processed and written by various scripts. They can be automatically cleaned up when necessary. The structure and comments will be preserved correctly, although the order of fields will be standardised. (In the event that the original file was in a different order, comments are considered as being attached to the field following them). In fact, you can standardise all packages in a repository using a single command, without changing the functional content, by running:"
+msgid "Note that although the metadata files are designed to be easily read and written by humans, they are also processed and written by various scripts. They can be automatically cleaned up when necessary. The structure and comments will be preserved correctly, although the order of fields will be standardised. (In the event that the original file was in a different order, comments are considered as being attached to the field following them). In fact, you can standardise all packages in a repository using a single command, without changing the functional content, by running:"
 msgstr "请注意，尽管元数据文件被设计为便于人类读取和写入，但它们也可以通过各种脚本进行处理和写入。必要时可自动格式化。结构和注释将正确保留，但字段顺序将标准化。（如果格式化后字段顺序与原文件中的不同，则注释被视为附加到其后面的字段中）。事实上，你可以通过运行以下命令，在不改变功能内容的情况下，使用单个命令标准化存储库中的所有包："
 
 #. type: Fenced code block
@@ -2268,7 +2268,7 @@ msgstr "_AuthorWebSite_ (作者网站) <a name=\"AuthorWebSite\"></a>"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-msgid "The website url of the author(s). This can be omitted (or left blank)."
+msgid "The website URL of the author(s). This can be omitted (or left blank)."
 msgstr "作者网站的链接。可省略（或留空）。"
 
 #. type: Plain text
@@ -2656,8 +2656,8 @@ msgstr "存储库的位置。通常是 git: 或 svn: URL。"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-msgid "The `git-svn` option connects to an SVN repository, and you specify the URL in exactly the same way, but git is used as a back-end. This is preferable for performance reasons, and also because a local copy of the entire history is available in case the upstream repository disappears.  (It happens!). In order to use Tags as [_UpdateCheckMode_](#UpdateCheckMode)  for this VCS type, the URL must have the `tags=` special argument set.  Likewise, if you intend to use the `RepoManifest/branch` scheme, you would want to specify `branches=` as well. Finally, `trunk=` can also be added. All these special arguments will be passed to \"git svn\" in order, and their values must be relative paths to the svn repo root dir.  Here's an example of a complex git-svn _Repo_ URL: `http://svn.code.sf.net/p/project/code/svn;trunk=trunk;tags=tags;branches=branches`"
-msgstr "`git-svn` 选项连接到一个 SVN 仓库，你以完全相同的方式指定 URL，但 git 被用作后端。出于性能方面的考虑，这样做比较好，而且还因为在上游仓库消失的情况下，可以在本地拷贝整个历史。（这种情况时有发生！）为了将 Tags 作为该 VCS 类型的 [_UpdateCheckMode_](#UpdateCheckMode)，URL 必须设置` tags`= special argument set.。同样，如果你打算使用 `RepoManifest/branch ` 方案，你也要指定 `branch=` 。最后，还可以加上` trunk=`。所有这些特殊参数将依次传递给 \"git svn\"，其值必须是 svn repo 根目录的相对路径。下面是一个复杂的 git-svn _Repo_ URL 的例子：`http://svn.code.sf.net/p/project/code/svn;trunk=trunk;tags=tags;branch=branches`"
+msgid "The `git-svn` option connects to an SVN repository, and you specify the URL in exactly the same way, but git is used as a back-end. This is preferable for performance reasons, and also because a local copy of the entire history is available in case the upstream repository disappears.  (It happens!). In order to use Tags as [_UpdateCheckMode_](#UpdateCheckMode)  for this VCS type, the URL must have the `tags=` special argument set.  Likewise, if you intend to use the `RepoManifest/branch` scheme, you would want to specify `branches=` as well. Finally, `trunk=` can also be added. All these special arguments will be passed to \"git svn\" in order, and their values must be relative paths to the SVN repo root dir.  Here's an example of a complex git-svn _Repo_ URL: `http://svn.code.sf.net/p/project/code/svn;trunk=trunk;tags=tags;branches=branches`"
+msgstr "`git-svn` 选项连接到一个 SVN 仓库，你以完全相同的方式指定 URL，但 git 被用作后端。出于性能方面的考虑，这样做比较好，而且还因为在上游仓库消失的情况下，可以在本地拷贝整个历史。（这种情况时有发生！）为了将 Tags 作为该 VCS 类型的 [_UpdateCheckMode_](#UpdateCheckMode)，URL 必须设置` tags`= special argument set.。同样，如果你打算使用 `RepoManifest/branch ` 方案，你也要指定 `branch=` 。最后，还可以加上` trunk=`。所有这些特殊参数将依次传递给 \"git svn\"，其值必须是 SVN repo 根目录的相对路径。下面是一个复杂的 git-svn _Repo_ URL 的例子：`http://svn.code.sf.net/p/project/code/svn;trunk=trunk;tags=tags;branch=branches`"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -2918,14 +2918,14 @@ msgstr "`oldsdkloc: true`<a name=\"build_oldsdkloc\"></a>\n"
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid ""
-":   The sdk location in the repo is in an old format, or the build.xml\n"
-"    is expecting such. The 'new' format is sdk.dir while the VERY OLD\n"
+":   The SDK location in the repo is in an old format, or the _build.xml_\n"
+"    is expecting such. The 'new' format is `sdk.dir` while the VERY OLD\n"
 "    format is sdk-location. Typically, if you get a message along the\n"
 "    lines of: \"com.android.ant.SetupTask cannot be found\" when trying to\n"
 "    build, then try enabling this option.\n"
 msgstr ""
-":  存储库中的 sdk 位置是旧格式，或者 build.xml\n"
-"    期望如此。 新格式是 sdk.dir ，而非常旧的\n"
+":  存储库中的 SDK 位置是旧格式，或者 _build.xml_\n"
+"    期望如此。 新格式是 `sdk.dir` ，而非常旧的\n"
 "    格式是 sdk-location。通常而言，如果当你试图\n"
 "    构建时，得到 \"com.android.ant.SetupTask cannot be found\"\n"
 "    消息，请尝试启用此选项。\n"
@@ -3014,13 +3014,13 @@ msgstr "`encoding: xxxx`<a name=\"build_encoding\"></a>\n"
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid ""
-":   Adds a java.encoding property to local.properties with the\n"
+":   Adds a `java.encoding` property to _local.properties_ with the\n"
 "    given value. Generally the value will be 'utf-8'. This is picked up\n"
 "    by the SDK's ant rules, and forces the Java compiler to interpret\n"
 "    source files with this encoding. If you receive warnings during the\n"
 "    compile about character encodings, you probably need this.\n"
 msgstr ""
-":   用给定的值添加一个 java.encoding 属性到 local.properties\n"
+":   用给定的值添加一个 `java.encoding` 属性到 _local.properties_\n"
 "   。这个值的编码通常会是 'utf-8'。这是由\n"
 "    SDK 的 ant 规则挑选的，并强迫 Java 编译器用这个编码\n"
 "    解释源文本。如果你在编译期间收到\n"
@@ -3675,7 +3675,7 @@ msgstr "_AllowedAPKSigningKeys_<a name=\"AllowedAPKSigningKeys\"></a>"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-msgid "When making automated binary repositories with `fdroid update`, it is generally easy to find out the expected signing key for the APKs that are gathered.  `AllowedAPKSigningKeys` lets the repo operator set the expected signing keys, then `fdroid update` will check that the APKs are signed by one of those keys.  If not, the mismatched APKs will not be included in the repo.  If `fdroid update --delete-unknown` is specified, the mismatched APKs will be deleted.  Then an automated process can be used to download newer APKs to the repo, and they will only be included if they have a known good signature.  The value is a lowercase hex value of the SHA-256 fingerprint of the signing certificate.  This can be fetched using:"
+msgid "When making automated binary repositories with `fdroid update`, it is generally easy to find out the expected signing key for the APKs that are gathered.  `AllowedAPKSigningKeys` lets the repo operator set the expected signing keys, then `fdroid update` will check that the APKs are signed by one of those keys.  If not, the mismatched APKs will not be included in the repo.  If `fdroid update --delete-unknown` is specified, the mismatched APKs will be deleted.  Then an automated process can be used to download newer APKs to the repo, and they will only be included if they have a known good signature.  The value is a lower case hex value of the SHA-256 fingerprint of the signing certificate.  This can be fetched using:"
 msgstr "当用 `fdroid update` 生成自动二进制存储库时，通常很容易找出所收集的 APK 的预期签名密钥。`AllowedAPKSigningKeys` 让仓库管理员设置预期的签名密钥，然后 `fdroid update` 将检查 APK 是否由这些密钥之一签署。如果不是，不匹配的 APK 将不被包含在存储库中。如果 `fdroid update --delete-unknown` 被指定，不匹配的 APK 将被删除。然后，可以使用一个自动程序将较新的 APK 下载到存储库中，只有当它们有一个已知的良好签名时才会被包含在内。该值是签名证书的 SHA-256 指纹的小写十六进制值。这可以通过以下方式获取："
 
 #. type: Fenced code block
@@ -4111,12 +4111,12 @@ msgstr "_VercodeOperation_（版本代码操作）<a name=\"VercodeOperation\"><
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-msgid "Operation to be applied to the vercode obtained by the defined [_UpdateCheckMode_](#UpdateCheckMode). `%c` will be replaced by the actual vercode, and the whole string will be passed to python's `eval` function."
+msgid "Operation to be applied to the version code obtained by the defined [_UpdateCheckMode_](#UpdateCheckMode). `%c` will be replaced by the actual version code, and the whole string will be passed to python's `eval` function."
 msgstr "对通过定义的 [_UpdateCheckMode_](#UpdateCheckMode)获得的版本代码进行操作。`%c` 将被实际的版本代码替换，整个字符串将被传递给 python 的 `eval` 函数。"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-msgid "Especially useful with apps that we want to compile for different ABIs, but whose vercodes don't always have trailing zeros. For example, with multiple _VercodeOperation_ we can track updates and build up to four different versions of every upstream version, say for 4 architectures:"
+msgid "Especially useful with apps that we want to compile for different ABIs, but whose version codes don't always have trailing zeros. For example, with multiple _VercodeOperation_ we can track updates and build up to four different versions of every upstream version, say for 4 architectures:"
 msgstr "对于想为不同的 ABI 编译，但其版本代码并不总是有拖尾零的应用尤其有用。例如，通过多个 _VercodeOperation_ ，我们能够跟踪更新，并为每个上游版本构建最多四个不同的版本，也即四种架构："
 
 #. type: Fenced code block (yaml)
@@ -4137,7 +4137,7 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-msgid "So 4 build blocks are copied from above and added as an update with their vercode calculated by doing each math operation."
+msgid "So 4 build blocks are copied from above and added as an update with their version code calculated by doing each math operation."
 msgstr "从上面复制了四个构建块并添加为一个更新，通过进行数学操作计算它们的版本码。"
 
 #. type: Title ###
@@ -4148,13 +4148,13 @@ msgstr "_UpdateCheckIgnore_（更新检查忽略）<a name=\"UpdateCheckIgnore\"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-msgid "When checking for updates (via [_UpdateCheckMode_](#UpdateCheckMod)) this can be used to specify a regex which, if matched against the version name, causes that version to be ignored. For example, 'beta' could be specified to ignore version names that include that text."
-msgstr "当检查更新时（通过[_UpdateCheckMode_](#UpdateCheckMod)），这可以用来指定一个正则表达式，如果与版本名称相匹配，将导致该版本被忽略。例如，可以指定 \"beta\" 以忽略包含该文本的版本名称。"
+msgid "When checking for updates (via [_UpdateCheckMode_](#UpdateCheckMode)) this can be used to specify a regex which, if matched against the version name, causes that version to be ignored. For example, 'beta' could be specified to ignore version names that include that text."
+msgstr "当检查更新时（通过[_UpdateCheckMode_](#UpdateCheckMode)），这可以用来指定一个正则表达式，如果与版本名称相匹配，将导致该版本被忽略。例如，可以指定 \"beta\" 以忽略包含该文本的版本名称。"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-msgid "Only Available with [_UpdateCheckMode_](#UpdateCheckMod) `HTTP`."
-msgstr "只在 [_UpdateCheckMode_](#UpdateCheckMod)`HTTP` 中可用。"
+msgid "Only Available with [_UpdateCheckMode_](#UpdateCheckMode) `HTTP`."
+msgstr "只在 [_UpdateCheckMode_](#UpdateCheckMode)`HTTP` 中可用。"
 
 #. type: Title ###
 #: _docs/Build_Metadata_Reference.md
@@ -4164,7 +4164,7 @@ msgstr "_UpdateCheckName_<a name=\"UpdateCheckName\"></a>"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-msgid "When checking for updates (via _UpdateCheckMode_) this can be used to specify the package name to search for. Useful when apps have a static package name but change it programmatically in some app flavors, by e.g.  appending \".open\" or \".free\" at the end of the package name."
+msgid "When checking for updates (via _UpdateCheckMode_) this can be used to specify the package name to search for. Useful when apps have a static package name but change it programmatically in some app flavours, by e.g.  appending \".open\" or \".free\" at the end of the package name."
 msgstr "当检查更新时（通过 _UpdateCheckMode_），这可以用来指定要搜索的软件包名称。当应用有一个静态的包名但在某些 flavor 中以编程方式改变它，例如在包名的末尾加上 \".open\" 或 \".free\" 时很有用。"
 
 #. type: Plain text
@@ -4197,8 +4197,8 @@ msgid ""
 "    relative to repo root, leave empty to check the tag name instead (with\n"
 "    `UpdateCheckMode: Tags`).\n"
 "* `RegEx-for-versionCode` - RegEx to match `versionCode`.\n"
-"* `versionName-location` - Same as vercode-location just for `versionName`. A `.`\n"
-"    means to take vercode-location, leave empty to check the tag name instead\n"
+"* `versionName-location` - Same as `vercode-location` just for `versionName`. A `.`\n"
+"    means to take `vercode-location`, leave empty to check the tag name instead\n"
 "    (only with `UpdateCheckMode: Tags`).\n"
 "* `RegEx-for-versionName` - Similar to `RegEx-for-versionCode`, just for `versionName`.\n"
 "* RegEx pipe operators are not supported at this time.\n"
@@ -4207,8 +4207,8 @@ msgstr ""
 "    或相对于存储库根目录的路径/文件，\n"
 "    留空检查标签名（使用 `UpdateCheckMode: Tags`）。\n"
 "* `RegEx-for-versionCode` - 匹配 versionCode`的正则表达式。\n"
-"* `versionName-location` - 与 vercode-location 相同，用于 `versionName`。\n"
-"    一个 `.` 表示带 vercode-location，\n"
+"* `versionName-location` - 与 `vercode-location` 相同，用于 `versionName`。\n"
+"    一个 `.` 表示带 `vercode-location`，\n"
 "    留空则检查标签名（仅用于 `UpdateCheckMode: Tags`）。\n"
 "* `RegEx-for-versionName` - 类似`RegEx-for-versionCode`，用于 `versionName`。\n"
 "* RegEx 管道操作符此刻尚不被支持。\n"
@@ -4515,8 +4515,8 @@ msgstr "vm_provider: libvirt\n"
 
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
-msgid "Then the base buildserver image... (downloading the basebox and all the sdk platforms can take long time)."
-msgstr "接着是基本构建服务器镜像...（下载 basebox 和所有 sdk platforms 可能需要很长的时间）。"
+msgid "Then the base buildserver image... (downloading the basebox and all the SDK platforms can take long time)."
+msgstr "接着是基本构建服务器镜像...（下载 basebox 和所有 SDK platforms 可能需要很长的时间）。"
 
 #. type: Fenced code block (bash)
 #: _docs/Build_Server_Setup.md
@@ -6907,8 +6907,8 @@ msgstr "GitHub - `https://github.com/<USER>/<PROJECT>`"
 
 #. type: Plain text
 #: _docs/Importing_Applications.md
-msgid "Depending on the project type, more or less information may be gathered.  A bare repo url, such as the git:// one, is the least preferable option of all, since you will have to enter much more information manually. While _gradle_ based builds should be auto-detected for all types, links to issue trackers can not be set for plain git projects. You can also use one of the following arguments to pre-fill your metadata:"
-msgstr "项目类型不同，收集到的信息量就可能不同。 裸代码库 URL（如 git:// url）是最不可取的选项，因为你必须手动输入很多信息。虽然基于 _gradle_ 的构建应该针对所有类型的版本进行自动检测，但对于普通 git 项目，不能设置指向问题跟踪器的链接。你还可以使用以下参数之一来预填充元数据："
+msgid "Depending on the project type, more or less information may be gathered.  A bare repo URL, such as the git:// one, is the least preferable option of all, since you will have to enter much more information manually. While _gradle_ based builds should be auto-detected for all types, links to issue trackers can not be set for plain git projects. You can also use one of the following arguments to pre-fill your metadata:"
+msgstr "项目类型不同，收集到的信息量就可能不同。 裸代码库 URL（如 git:// URL）是最不可取的选项，因为你必须手动输入很多信息。虽然基于 _gradle_ 的构建应该针对所有类型的版本进行自动检测，但对于普通 git 项目，不能设置指向问题跟踪器的链接。你还可以使用以下参数之一来预填充元数据："
 
 #. type: Bullet: '* '
 #: _docs/Importing_Applications.md
