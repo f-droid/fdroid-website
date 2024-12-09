@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
-"POT-Creation-Date: 2024-12-06 10:52+0100\n"
+"POT-Creation-Date: 2024-12-09 09:50+0100\n"
 "PO-Revision-Date: 2024-11-11 00:00+0000\n"
 "Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/f-droid/website-docs/uk/>\n"
@@ -2473,7 +2473,9 @@ msgstr "_Liberapay_<a name=\"Liberapay\"></a><a name=\"LiberapayID\"></a>"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-msgid "The project's Liberapay (https://liberapay.com) user or group name, if it has one. This should be an alphanumeric name, such that (for example) https://liberapay.com/xxxxx which redirects to your account page. This used to be _LiberapayID_, which was a numeric ID fetched from Liberapay's site by adding /public.json behind your team page."
+#, fuzzy
+#| msgid "The project's Liberapay (https://liberapay.com) user or group name, if it has one. This should be an alphanumeric name, such that (for example) https://liberapay.com/xxxxx which redirects to your account page. This used to be _LiberapayID_, which was a numeric ID fetched from Liberapay's site by adding /public.json behind your team page."
+msgid "The project's Liberapay (https://liberapay.com) user or group name, if it has one. This should be an alphanumeric name, such that (for example) https://liberapay.com/xxxxx which redirects to your account page. This used to be _LiberapayID_, which was a numeric ID."
 msgstr "Користувацьке чи командне ім'я на Liberapay (https://liberapay.com), якщо проєкт його має. Повинно складатись із таких літер і цифр, щоб (наприклад) посилання https://liberapay.com/літери-й-цифри вело на сторінку облікового запису. Раніше це був _LiberapayID_ — числовий ідентифікатор, отриманий доданням /public.json до Liberapay-адреси команди."
 
 #. type: Plain text
@@ -2687,7 +2689,7 @@ msgstr "Адреса репозиторію. Зазвичай це URL-адре�
 #: _docs/Build_Metadata_Reference.md
 #, fuzzy
 #| msgid "The git-svn option connects to an SVN repository, and you specify the URL in exactly the same way, but git is used as a back-end. This is preferable for performance reasons, and also because a local copy of the entire history is available in case the upstream repository disappears.  (It happens!). In order to use Tags as _UpdateCheckMode_ for this VCS type, the URL must have the tags= special argument set. Likewise, if you intend to use the RepoManifest/branch scheme, you would want to specify branches= as well. Finally, trunk= can also be added. All these special arguments will be passed to \"git svn\" in order, and their values must be relative paths to the SVN repo root dir. Here's an example of a complex git-svn _Repo_ URL: http://svn.code.sf.net/p/project/code/svn;trunk=trunk;tags=tags;branches=branches"
-msgid "The `git-svn` option connects to an SVN repository, and you specify the URL in exactly the same way, but git is used as a back-end. This is preferable for performance reasons, and also because a local copy of the entire history is available in case the upstream repository disappears.  (It happens!). In order to use Tags as [_UpdateCheckMode_](#UpdateCheckMode)  for this VCS type, the URL must have the `tags=` special argument set.  Likewise, if you intend to use the `RepoManifest/branch` scheme, you would want to specify `branches=` as well. Finally, `trunk=` can also be added. All these special arguments will be passed to \"git svn\" in order, and their values must be relative paths to the SVN repo root dir.  Here's an example of a complex git-svn _Repo_ URL: `http://svn.code.sf.net/p/project/code/svn;trunk=trunk;tags=tags;branches=branches`"
+msgid "The `git-svn` option connects to an SVN repository, and you specify the URL in exactly the same way, but git is used as a back-end. This is preferable for performance reasons, and also because a local copy of the entire history is available in case the upstream repository disappears.  (It happens!). In order to use Tags as [_UpdateCheckMode_](#UpdateCheckMode)  for this VCS type, the URL must have the `tags=` special argument set.  Likewise, if you intend to use the `RepoManifest/branch` scheme, you would want to specify `branches=` as well. Finally, `trunk=` can also be added. All these special arguments will be passed to `git svn` in order, and their values must be relative paths to the SVN repo root dir.  Here's an example of a complex `git-svn` _Repo_ URL: `http://svn.code.sf.net/p/project/code/svn;trunk=trunk;tags=tags;branches=branches`"
 msgstr "Опція git-svn з'єднується з репозиторієм SVN, тобто вказати слід саме URL-адресу SVN, просто git використовується як бекенд. Це має переваги: працює швидше, а в разі зникнення оригінального репозиторію (це дійсно трапляється) буде доступна локальна копія всієї історії. Щоб використовувати _UpdateCheckMode: Tags_ із цим видом VCS, у URL-адресі мусить бути особливий аргумент tags=. Якщо плануєте використовувати схему RepoManifest/гілка, то зазначте також branches=. Ще можете додати trunk=. Усі ці особливі аргументи буде передано «git svn» у тому ж порядку, а їхні значення мусять бути шляхами відносно кореневого каталогу репозиторію svn. Ось приклад _Repo_ зі складною URL-адресою git-svn: http://svn.code.sf.net/p/проєкт/code/svn;trunk=trunk;tags=tags;branches=branches"
 
 #. type: Plain text
@@ -2975,11 +2977,17 @@ msgstr "`oldsdkloc: true`<a name=\"build_oldsdkloc\"></a>\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-#, no-wrap
+#, fuzzy, no-wrap
+#| msgid ""
+#| ":   The SDK location in the repo is in an old format, or the _build.xml_\n"
+#| "    is expecting such. The 'new' format is `sdk.dir` while the VERY OLD\n"
+#| "    format is sdk-location. Typically, if you get a message along the\n"
+#| "    lines of: \"com.android.ant.SetupTask cannot be found\" when trying to\n"
+#| "    build, then try enabling this option.\n"
 msgid ""
 ":   The SDK location in the repo is in an old format, or the _build.xml_\n"
 "    is expecting such. The 'new' format is `sdk.dir` while the VERY OLD\n"
-"    format is sdk-location. Typically, if you get a message along the\n"
+"    format is `sdk-location`. Typically, if you get a message along the\n"
 "    lines of: \"com.android.ant.SetupTask cannot be found\" when trying to\n"
 "    build, then try enabling this option.\n"
 msgstr ""
@@ -4051,8 +4059,8 @@ msgstr "`Version` — автооновлення увімкнено."
 #| "    If `UpdateCheckMode` is set to `Tags`, this should be set to\n"
 #| "    `Version` without any pattern. The checked tag is used directly.\n"
 msgid ""
-"    If [_UpdateCheckMode_](#UpdateCheckMode) is set to `Tags`, this should be\n"
-"    set to `Version` without any pattern. The checked tag is used directly.\n"
+"  If [_UpdateCheckMode_](#UpdateCheckMode) is set to `Tags`, this should be\n"
+"  set to `Version` without any pattern. The checked tag is used directly.\n"
 msgstr ""
 "    Якщо `UpdateCheckMode` встановлено на `Tags`, то слід встановити на\n"
 "   `Version` без жодного шаблону. Позначений тег використовується безпосередньо.\n"
@@ -4069,13 +4077,13 @@ msgstr ""
 #| "    string must match an existing tag in the app's repo, which then will be\n"
 #| "    used by F-Droid to build the corresponding version.\n"
 msgid ""
-"    If `UpdateCheckMode` is set to `HTTP`, a pattern should be added\n"
-"    after the `Version`. The pattern is used to generate a value\n"
-"    (tag name) used for the [`commit:`](#build_commit) property of new build\n"
-"    blocks.  It is simply text in which `%v` and `%c` are replaced with the\n"
-"    required version name and version code respectively. The resulting\n"
-"    string must match an existing tag in the app's repo, which then will be\n"
-"    used by F-Droid to build the corresponding version.\n"
+"  If _UpdateCheckMode_ is set to `HTTP`, a pattern should be added\n"
+"  after the `Version`. The pattern is used to generate a value\n"
+"  (tag name) used for the [`commit:`](#build_commit) property of new build\n"
+"  blocks.  It is simply text in which `%v` and `%c` are replaced with the\n"
+"  required version name and version code respectively. The resulting\n"
+"  string must match an existing tag in the app's repo, which then will be\n"
+"  used by F-Droid to build the corresponding version.\n"
 msgstr ""
 "    Якщо `UpdateCheckMode` встановлено на `HTTP`, слід додати шаблон\n"
 "    після `Version`. Шаблон використовується для генерування значення\n"
@@ -4087,12 +4095,17 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-#, no-wrap
+#, fuzzy, no-wrap
+#| msgid ""
+#| "    For example, if an app always has a tag `2.7.2` corresponding to\n"
+#| "    version 2.7.2, you would simply specify `Version %v`. If an app\n"
+#| "    always has a tag `ver_1234` for a version with version code 1234,\n"
+#| "    you would specify `Version ver_%c`.\n"
 msgid ""
-"    For example, if an app always has a tag `2.7.2` corresponding to\n"
-"    version 2.7.2, you would simply specify `Version %v`. If an app\n"
-"    always has a tag `ver_1234` for a version with version code 1234,\n"
-"    you would specify `Version ver_%c`.\n"
+"  For example, if an app always has a tag `2.7.2` corresponding to\n"
+"  version 2.7.2, you would simply specify `Version %v`. If an app\n"
+"  always has a tag `ver_1234` for a version with version code 1234,\n"
+"  you would specify `Version ver_%c`.\n"
 msgstr ""
 "    Наприклад, якщо в застосунку тег `2.7.2` завжди відповідає\n"
 "    версії 2.7.2, то зазначте просто `Version %v`. Якщо в застосунку\n"
@@ -4108,12 +4121,12 @@ msgstr ""
 #| "    Continuing the first example above, you would specify that as\n"
 #| "    `Version +-fdroid %v` - `-fdroid` is the suffix.\n"
 msgid ""
-"    Additionally, a suffix can be added to the version name at this\n"
-"    stage, to differentiate F-Droid's build from the original.\n"
-"    Continuing the first example above, you would specify that as\n"
-"    `Version +-fdroid %v`, where `-fdroid` is the suffix that will be appended\n"
-"    to the [`versionName`](#build_versionName) specified in e.g. `build.gradle`\n"
-"    when building the APK.\n"
+"  Additionally, a suffix can be added to the version name at this\n"
+"  stage, to differentiate F-Droid's build from the original.\n"
+"  Continuing the first example above, you would specify that as\n"
+"  `Version +-fdroid %v`, where `-fdroid` is the suffix that will be appended\n"
+"  to the [`versionName`](#build_versionName) specified in e.g. `build.gradle`\n"
+"  when building the APK.\n"
 msgstr ""
 "    Суфікс, необов'язково доданий до назви версії цим кроком,\n"
 "    може підкреслити відмінність збірки F-Droid від оригіналу.\n"
@@ -4138,37 +4151,21 @@ msgstr "_UpdateCheckMode_ (Режим перевірки оновлень)<a nam
 msgid "This determines the method using for determining when new releases are available - in other words, the updating of the [_CurrentVersion_](#CurrentVersion)  and [_CurrentVersionCode_](#CurrentVersionCode) fields in the metadata by the `fdroid checkupdates` process."
 msgstr "Зазначає спосіб виявлення появи нових випусків — іншими словами, спосіб оновлення полів метаданих _CurrentVersion_ і _CurrentVersionCode_ у ході процесу `fdroid checkupdates`."
 
-#. type: Plain text
+#. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
-#, fuzzy, no-wrap
+msgid "`None` - No checking is done because there's no appropriate automated way of doing so. Updates should be checked for manually.  Use this, for example, when deploying unstable or patched versions; when builds are done in a directory different to where the _AndroidManifest.xml_ is; if the developers use the Gradle build system and store version info in a separate file; if the developers make a new branch for each release and don't make tags; or if you've changed the package name or version code logic."
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/Build_Metadata_Reference.md
+msgid "`Static` - No checking is done - either development has ceased or new versions are not desired. This method is also used when there is no other checking method available and the upstream developer keeps us posted on new versions."
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/Build_Metadata_Reference.md
+#, fuzzy
 #| msgid "`RepoManifest` - At the most recent commit, the _AndroidManifest.xml_ and _build.gradle_ files are looked for in the directory where they were found in the the most recent build. The appropriateness of this method depends on the development process used by the application's developers. You should not specify this method unless you're sure it's appropriate. For example, some developers bump the version when commencing development instead of when publishing. It will return an error if the _AndroidManifest.xml_ has moved to a different directory or if the package name has changed. The current version that it gives may not be accurate, since not all versions are fit to be published.  Therefore, before building, it is often necessary to check if the current version has been published somewhere by the upstream developers, either by checking for APKs that they distribute or for tags in the source code repository."
-msgid ""
-"* `None` - No checking is done because there's no appropriate\n"
-"    automated way of doing so. Updates should be checked for manually.\n"
-"    Use this, for example, when deploying unstable or patched versions;\n"
-"    when builds are done in a directory different to where the\n"
-"    _AndroidManifest.xml_ is; if the developers use the Gradle build\n"
-"    system and store version info in a separate file; if the developers\n"
-"    make a new branch for each release and don't make tags; or if you've\n"
-"    changed the package name or version code logic.\n"
-"* `Static` - No checking is done - either development has ceased or\n"
-"    new versions are not desired. This method is also used when there is\n"
-"    no other checking method available and the upstream developer keeps\n"
-"    us posted on new versions.\n"
-"* `RepoManifest` - At the most recent commit, the _AndroidManifest.xml_\n"
-"    and _build.gradle_ files are looked for in the directory where\n"
-"    they were found in the most recent build. The appropriateness of\n"
-"    this method depends on the development process used by the\n"
-"    application's developers. You should not specify this method unless\n"
-"    you're sure it's appropriate. For example, some developers bump the\n"
-"    version when commencing development instead of when publishing. It\n"
-"    will return an error if the _AndroidManifest.xml_ has moved to a\n"
-"    different directory or if the package name has changed. The current\n"
-"    version that it gives may not be accurate, since not all versions\n"
-"    are fit to be published.  Therefore, before building, it is often\n"
-"    necessary to check if the current version has been published\n"
-"    somewhere by the upstream developers, either by checking for APKs\n"
-"    that they distribute or for tags in the source code repository.\n"
+msgid "`RepoManifest` - At the most recent commit, the _AndroidManifest.xml_ and _build.gradle_ files are looked for in the directory where they were found in the most recent build. The appropriateness of this method depends on the development process used by the application's developers. You should not specify this method unless you're sure it's appropriate. For example, some developers bump the version when commencing development instead of when publishing. It will return an error if the _AndroidManifest.xml_ has moved to a different directory or if the package name has changed. The current version that it gives may not be accurate, since not all versions are fit to be published.  Therefore, before building, it is often necessary to check if the current version has been published somewhere by the upstream developers, either by checking for APKs that they distribute or for tags in the source code repository."
 msgstr "`RepoManifest` — завантажується найновіший коміт, і файли _AndroidManifest.xml_ та _build.gradle_ шукаються в тих же його каталогах, де їх було знайдено під час минулої збірки. Доречність цього способу залежить від робочого процесу команди розробки застосунку. Не вказуйте цього способу, якщо не певні в його доречності. Наприклад, деякі команди розробки збільшують версію на початку роботи, а не при її оприлюдненні. Виникає помилка, якщо _AndroidManifest.xml_ було посунуто до іншої теки чи якщо назву пакунку було змінено. Отримане значення поточної версії може бути неточним, оскільки не всі версії придатні до оприлюднення. Тому перед збіркою часто доводиться перевіряти, чи поточну версію справді десь оприлюднила команда розробки оригіналу: або дивитись, чи розповсюдили вони APK, або шукати тег у репозиторії вихідного коду."
 
 #. type: Plain text
@@ -4184,14 +4181,14 @@ msgstr "`RepoManifest` — завантажується найновіший к�
 #| "    been implemented yet in bzr and svn, but _RepoManifest_ may still be\n"
 #| "    used without it.\n"
 msgid ""
-"    It currently works for every repository type to different extents,\n"
-"    except the `srclib` repo type. For `git`, `git-svn` and `hg` repo types, you\n"
-"    may use `RepoManifest/yourbranch` as _UpdateCheckMode_ so that \"yourbranch\" would\n"
-"    be the branch used in place of the default one. The default values\n"
-"    are \"master\" for git, \"default\" for hg and none for git-svn (it\n"
-"    stays in the same branch). On the other hand, branch support hasn't\n"
-"    been implemented yet in `bzr` and `svn`, but `RepoManifest` may still be\n"
-"    used without it.\n"
+"  It currently works for every repository type to different extents,\n"
+"  except the `srclib` repo type. For `git`, `git-svn` and `hg` repo types, you\n"
+"  may use `RepoManifest/yourbranch` as _UpdateCheckMode_ so that \"yourbranch\" would\n"
+"  be the branch used in place of the default one. The default values\n"
+"  are \"master\" for git, \"default\" for hg and none for git-svn (it\n"
+"  stays in the same branch). On the other hand, branch support hasn't\n"
+"  been implemented yet in `bzr` and `svn`, but `RepoManifest` may still be\n"
+"  used without it.\n"
 msgstr ""
 "    Це наразі працює з усіма типами репозиторіїв (різною мірою),\n"
 "    крім srclib. Для репозиторіїв git, git-svn та hg, ви можете зазначити\n"
@@ -4202,21 +4199,11 @@ msgstr ""
 "    для bzr та svn, але _RepoManifest_ можна використовувати\n"
 "    й без зазначення гілки.\n"
 
-#. type: Plain text
+#. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
-#, fuzzy, no-wrap
+#, fuzzy
 #| msgid "`Tags` - The _AndroidManifest.xml_ and _build.gradle_ files in all tagged revisions in the source repository are checked, looking for the highest version code.  The appropriateness of this method depends on the development process used by the application's developers. You should not specify this method unless you're sure it's appropriate. It shouldn't be used if the developers like to tag unstable versions or are known to forget to tag releases. Like RepoManifest, it will not return the correct value if the directory containing the _AndroidManifest.xml_ has moved. Despite these caveats, it is the often the favourite _UpdateCheckMode_."
-msgid ""
-"* `Tags` - The _AndroidManifest.xml_ and _build.gradle_ files in all\n"
-"    tagged revisions in the source repository are checked, looking for\n"
-"    the highest version code.  The appropriateness of this method\n"
-"    depends on the development process used by the application's\n"
-"    developers. You should not specify this method unless you're sure\n"
-"    it's appropriate. It shouldn't be used if the developers like to tag\n"
-"    unstable versions or are known to forget to tag releases. Like\n"
-"    `RepoManifest`, it will not return the correct value if the\n"
-"    _AndroidManifest.xml_ were moved to another directory. Despite these\n"
-"    caveats, it is often the favourite _UpdateCheckMode_.\n"
+msgid "`Tags` - The _AndroidManifest.xml_ and _build.gradle_ files in all tagged revisions in the source repository are checked, looking for the highest version code.  The appropriateness of this method depends on the development process used by the application's developers. You should not specify this method unless you're sure it's appropriate. It shouldn't be used if the developers like to tag unstable versions or are known to forget to tag releases. Like `RepoManifest`, it will not return the correct value if the _AndroidManifest.xml_ were moved to another directory. Despite these caveats, it is often the favourite _UpdateCheckMode_."
 msgstr "`Tags` — перевіряються файли _AndroidManifest.xml_ і _build.gradle_ у всіх ревізіях репозиторію вихідного коду, що мають теги, в пошуках найвищого коду версії. Доречність цього способу залежить від робочого процесу команди розробки застосунку. Не вказуйте цього способу, якщо не певні в його доречності. Зокрема не вказуйте його, якщо команда розробки позначає тегами нестабільні версії чи забуває позначати випуски тегами. Аналогічно RepoManifest, виникає помилка, якщо було посунуто каталог, де знаходиться _AndroidManifest.xml_. Незважаючи на ці перешкоди, часто саме цей _UpdateCheckMode_ обрати найдоречніше."
 
 #. type: Plain text
@@ -4227,9 +4214,9 @@ msgstr "`Tags` — перевіряються файли _AndroidManifest.xml_ �
 #| "    In the case of the latter, the repo URL must contain the path to the\n"
 #| "    trunk and tags or else no tags will be found.\n"
 msgid ""
-"    It currently only works for `git`, `hg`, `bzr` and `git-svn` repositories.\n"
-"    In the case of the latter, the repo URL must contain the path to the\n"
-"    `trunk` and `tags` or else no tags will be found.\n"
+"  It currently only works for `git`, `hg`, `bzr` and `git-svn` repositories.\n"
+"  In the case of the latter, the repo URL must contain the path to the\n"
+"  `trunk` and `tags` or else no tags will be found.\n"
 msgstr ""
 "    Це наразі працює лише для репозиторіїв git, hg, bzr і git-svn.\n"
 "    У випадку останнього, URL-адреса репозиторію мусить містити\n"
@@ -4246,12 +4233,12 @@ msgstr ""
 #| "    end with a digit.\n"
 #| "    Example: `UpdateCheckMode: Tags .*[0-9]$`\n"
 msgid ""
-"    Optionally append a regex pattern at the end - separated with a\n"
-"    space - to only check the tags matching said pattern. Useful when\n"
-"    apps tag non-release versions such as `X.X-alpha`, so you can filter\n"
-"    them out with something like `.*[0-9]$` which requires tag names to\n"
-"    end with a digit.\n"
-"    Example: `UpdateCheckMode: Tags .*[0-9]$`\n"
+"  Optionally append a regex pattern at the end - separated with a\n"
+"  space - to only check the tags matching said pattern. Useful when\n"
+"  apps tag non-release versions such as `X.X-alpha`, so you can filter\n"
+"  them out with something like `.*[0-9]$` which requires tag names to\n"
+"  end with a digit.\n"
+"  Example: `UpdateCheckMode: Tags .*[0-9]$`\n"
 msgstr ""
 "    За потреби, можете додати в кінець регулярний вираз після\n"
 "    пробілу, щоб перевіряти лише відповідні йому теги. Це корисно,\n"
@@ -4269,34 +4256,34 @@ msgstr ""
 #| "    used to match against otherwise, which in most cases is `build.gradle` or\n"
 #| "    `AndroidManifest.xml`).\n"
 msgid ""
-"    Optionally [_UpdateCheckData_](#UpdateCheckData) can be specified to\n"
-"    extract version code and name from repository files you specify (instead of\n"
-"    relying on the defaults, which in most cases is `build.gradle` or\n"
-"    `AndroidManifest.xml`).\n"
+"  Optionally [_UpdateCheckData_](#UpdateCheckData) can be specified to\n"
+"  extract version code and name from repository files you specify (instead of\n"
+"  relying on the defaults, which in most cases is `build.gradle` or\n"
+"  `AndroidManifest.xml`).\n"
 msgstr ""
 "    Можете ще зазначити `UpdateCheckData`, щоб виймати код і назву\n"
 "    версії зі вказаних вами файлів репозиторію (інакше перевірки буде\n"
 "    застосовано до усталених, а це зазвичай `build.gradle` і\n"
 "    `AndroidManifest.xml`).\n"
 
-#. type: Plain text
+#. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
-#, fuzzy, no-wrap
+#, fuzzy
 #| msgid "`HTTP` - HTTP requests are used to determine the current version code and version name. This is controlled by the _UpdateCheckData_ field, which is of the form `urlcode|excode|urlver|exver`."
-msgid ""
-"* `HTTP` - HTTP requests are used to determine the current version\n"
-"    code and version name. This is controlled by the\n"
-"    [_UpdateCheckData_](#UpdateCheckData) field, which is of the form\n"
-"    `urlcode|excode|urlver|exver`.\n"
+msgid "`HTTP` - HTTP requests are used to determine the current version code and version name. This is controlled by the [_UpdateCheckData_](#UpdateCheckData) field, which is of the form `urlcode|excode|urlver|exver`."
 msgstr "`HTTP` — застосовувати HTTP-запити для визначення коду й назви поточної версії. Поведінкою керує поле _UpdateCheckData_, що має вигляд `urlcode|excode|urlver|exver`."
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-#, no-wrap
+#, fuzzy, no-wrap
+#| msgid ""
+#| "    Firstly, if `urlcode` is non-empty, the document from that URL is\n"
+#| "    retrieved, and matched against the regular expression `excode`, with\n"
+#| "    the first group becoming the version code.\n"
 msgid ""
-"    Firstly, if `urlcode` is non-empty, the document from that URL is\n"
-"    retrieved, and matched against the regular expression `excode`, with\n"
-"    the first group becoming the version code.\n"
+"  Firstly, if `urlcode` is non-empty, the document from that URL is\n"
+"  retrieved, and matched against the regular expression `excode`, with\n"
+"  the first group becoming the version code.\n"
 msgstr ""
 "    По-перше, якщо `urlcode` не порожній, документ за цією URL-адресою\n"
 "    завантажується й зіставляється з регулярним виразом `excode`,\n"
@@ -4304,13 +4291,19 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-#, no-wrap
+#, fuzzy, no-wrap
+#| msgid ""
+#| "    Secondly, if `urlver` is non-empty, the document from that URL is\n"
+#| "    retrieved, and matched against the regular expression `exver`, with\n"
+#| "    the first group becoming the version name. The `urlver` field can be\n"
+#| "    set to simply '.' which says to use the same document returned for\n"
+#| "    the version code again, rather than retrieving a different one.\n"
 msgid ""
-"    Secondly, if `urlver` is non-empty, the document from that URL is\n"
-"    retrieved, and matched against the regular expression `exver`, with\n"
-"    the first group becoming the version name. The `urlver` field can be\n"
-"    set to simply '.' which says to use the same document returned for\n"
-"    the version code again, rather than retrieving a different one.\n"
+"  Secondly, if `urlver` is non-empty, the document from that URL is\n"
+"  retrieved, and matched against the regular expression `exver`, with\n"
+"  the first group becoming the version name. The `urlver` field can be\n"
+"  set to simply '.' which says to use the same document returned for\n"
+"  the version code again, rather than retrieving a different one.\n"
 msgstr ""
 "    По-друге, якщо `urlver` не порожня, документ за цією URL-адресою\n"
 "    завантажується й зіставляється з регулярним виразом `exver`,\n"
@@ -4414,19 +4407,29 @@ msgstr "Використовується у поєднанні з _UpdateCheckMo
 msgid "UpdateCheckData: <vercode-location>|<RegEx-for-versionCode>|<versionName-location>|<RegEx-for-versionName>\n"
 msgstr "UpdateCheckData: <адреса-коду>|<регулярний-вираз-коду>|<адреса-назви>|<регулярний-вираз-назви>\n"
 
-#. type: Plain text
+#. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
-#, no-wrap
-msgid ""
-"* `vercode-location` - URL (with `UpdateCheckMode: HTTP`) or path/file\n"
-"    relative to repo root, leave empty to check the tag name instead (with\n"
-"    `UpdateCheckMode: Tags`).\n"
-"* `RegEx-for-versionCode` - RegEx to match `versionCode`.\n"
-"* `versionName-location` - Same as `vercode-location` just for `versionName`. A `.`\n"
-"    means to take `vercode-location`, leave empty to check the tag name instead\n"
-"    (only with `UpdateCheckMode: Tags`).\n"
-"* `RegEx-for-versionName` - Similar to `RegEx-for-versionCode`, just for `versionName`.\n"
-"* RegEx pipe operators are not supported at this time.\n"
+msgid "`vercode-location` - URL (with `UpdateCheckMode: HTTP`) or path/file relative to repo root, leave empty to check the tag name instead (with `UpdateCheckMode: Tags`)."
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/Build_Metadata_Reference.md
+msgid "`RegEx-for-versionCode` - RegEx to match `versionCode`."
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/Build_Metadata_Reference.md
+msgid "`versionName-location` - Same as `vercode-location` just for `versionName`. A `.` means to take `vercode-location`, leave empty to check the tag name instead (only with `UpdateCheckMode: Tags`)."
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/Build_Metadata_Reference.md
+msgid "`RegEx-for-versionName` - Similar to `RegEx-for-versionCode`, just for `versionName`."
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/Build_Metadata_Reference.md
+msgid "RegEx pipe operators are not supported at this time."
 msgstr ""
 
 #. type: Plain text
