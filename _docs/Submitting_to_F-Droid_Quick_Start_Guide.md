@@ -100,7 +100,8 @@ Builds:
     subdir: app
     sudo:
       - apt-get update
-      - apt-get install -y librsvg2-bin openjdk-17-jdk-headless
+      # see text below
+      - apt-get install -y librsvg2-bin
       - update-alternatives --auto java
     gradle:
       - yes
@@ -111,16 +112,12 @@ CurrentVersion: '1.0'
 CurrentVersionCode: 123
 ```
 
-Adjust or remove the relevant _sudo_ lines if needed:
+Adjust or remove the relevant _sudo_ lines if needed, eg: 
 
 * The example application's _build.gradle_ executes _rsvg-convert_ to
   rasterize its vector icons, so we install _librsvg2-bin_ from the official
   Debian repositories. All such dependencies should be specified in the app's
   _README_.
-
-* `gradle/wrapper/gradle-wrapper.properties` mentions `gradle-8.0`,
-  and Gradle 8 is known to depend on Java 17. So we
-  install _openjdk-17-jdk-headless_ and select it as the _java_ alternative.
 
 Download and launch the latest version of the server tools container:
 
