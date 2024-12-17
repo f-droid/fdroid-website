@@ -593,6 +593,8 @@ The Rust toolchain should be pinned to the same version as upstream. This can be
 
 When `openssl` crate uses vendored OpenSSL build, the OpenSSL lib needs to be configured specially to be reproducible. `SOURCE_DATE_EPOCH` can be set to remove the embedded timestamps and `CARGO_TARGET_DIR` can be set to a absolute path, e.g. `/tmp/build` to make the embedded path reproducible between different machines. NDK also need to be in the same path which can be solved by linking it to the same path.
 
+`CARGO_HOME` path plays an important part too and ends up in the built libs, it's recommended to match it between builds, eg. export it before running `rustup`, or any other build commands, and don't forget to source `env` from it.
+
 #### Library-specific instructions
 
 Some libraries generate non-deterministic code due to timestamps, unsorted iterations etc. Some known fixes are documented below:
