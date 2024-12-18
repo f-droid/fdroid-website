@@ -8,7 +8,7 @@ F-Droid is a robot with a passion for Free and Open Source Software (FOSS) on th
 
 F-Droid is legally represented by our [Commons Conservancy Programme](https://commonsconservancy.org/programmes/#F-Droid) which is regulated by our [statutes](https://dracc.commonsconservancy.org/0039/).
 
-Donations for F-Droid development are handled via our [OpenCollective](https://opencollective.com/F-Droid/).
+Donations for F-Droid development are handled via our [Open Collective](https://opencollective.com/F-Droid/).
 
 
 ### Contact

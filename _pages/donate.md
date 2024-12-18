@@ -42,7 +42,7 @@ Visit the info pages of our fiscal hosts to get more details on their fees:
 
 #### IBAN Direct Bank Transfer
 
-If you would like to donate via a direct IBAN bank transfer, then donate via [F-Droid (€)](https://opencollective.com/f-droid-euro) on OpenCollective:
+If you would like to donate via a direct IBAN bank transfer, then donate via [F-Droid (€)](https://opencollective.com/f-droid-euro) on Open Collective:
 
 <p align="center">
 <a href="https://opencollective.com/f-droid-euro"><img src="{% asset opencollective_button.png %}" height="40" alt="{{ strings.opencollective_alt }}"></a>

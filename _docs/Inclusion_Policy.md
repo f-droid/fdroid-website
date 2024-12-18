@@ -121,7 +121,7 @@ is often enabled via proprietary binary libraries which we cannot
 include.
 
 When including donation information, the relevant donation links (e.g.
-Liberapay/OpenCollective/Bitcoin/etc) must also be available either:
+Liberapay/Open Collective/Bitcoin/etc) must also be available either:
 
 -   In a README or similar file in the project's source code.
 -   In a [_FUNDING.yml_](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/displaying-a-sponsor-button-in-your-repository#about-funding-files) file included in the project's source code.
