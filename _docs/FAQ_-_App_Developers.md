@@ -67,7 +67,7 @@ that most users will probably access this straight from the F-Droid
 client on an Android device. You should also have this information
 accessible from within your application.
 
-We have fields in our metadata for Bitcoin, Litecoin, OpenCollective and Liberapay
+We have fields in our metadata for Bitcoin, Litecoin, Open Collective and Liberapay
 donations. Be sure to contact us if there is a change to any of those or if
 you stop accepting them; if you accept new methods you can contact us about that
 too.
@@ -377,7 +377,7 @@ of the free app against the feeling of justice that you'll get by seeing
 those illegal clones lose the few cents in ad revenue that they would
 have got. In the longer run we want to improve donations via F-Droid so
 you can be supported financially and we already support Bitcoin, Litecoin,
-OpenCollective and Liberapay as well as any other payment method
+Open Collective and Liberapay as well as any other payment method
 that you can suggest via a website.
 
 

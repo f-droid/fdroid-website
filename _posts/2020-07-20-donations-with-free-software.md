@@ -10,7 +10,7 @@ received enough donations to keep things running.  Thank you for your
 continued support over the years!  In recent years, two solid free software
 funding platforms have been established:
 [Liberapay](https://github.com/liberapay) and
-[OpenCollective](https://github.com/opencollective).  The F-Droid
+[Open Collective](https://github.com/opencollective).  The F-Droid
 community has worked hard to push free software in everything we do.
 When GitLab started, we switched to gitlab.com as our development
 platform.  We have always used free software for translations (now

@@ -315,7 +315,7 @@ This is converted to (`<liberapay>`) in the XML file (_index.xml_).
 
 ### _OpenCollective_<a name="OpenCollective"></a>
 
-The project's OpenCollective (https://opencollective.com) user or
+The project's Open Collective (https://opencollective.com) user or
 group name, if it has one. This should be an alphanumeric name, such
 that (for example) https://opencollective.com/xxxxx redirects to your
 account page.
