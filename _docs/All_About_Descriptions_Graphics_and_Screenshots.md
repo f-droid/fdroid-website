@@ -91,8 +91,8 @@ needs to be place in the correct position as outlined below.
 ```
 ├── en-US                       (en-US is the F-Droid fallback language)
 │   ├── short_description.txt   (short description, max 80 chars, mandatory)
-│   ├── full_description.txt    (full app description, mandatory)
-│   ├── title.txt               (app name)
+│   ├── full_description.txt    (full app description, max 4000 chars, mandatory)
+│   ├── title.txt               (app name, max 50 chars)
 │   ├── video.txt               (URL to a video introducing the app)
 │   ├── images
 │   │   ├── icon.png            (app icon)
@@ -109,7 +109,7 @@ needs to be place in the correct position as outlined below.
 │   └── changelogs
 │       ├── 100000.txt          (must correspond to versionCode, literally, no padding)
 │       ├── 100100.txt          (if the version code was set to 100100)
-│       └── 100101.txt          (maximum size: 500 characters)
+│       └── 100101.txt          (max 500 chars)
 └── ru                          (other locale codes)
     ...                         (localized metadata is always preferred by the client)
     └── changelogs
@@ -142,9 +142,9 @@ Place the following structure at `<module>/src/main/play/` or, for **build flavo
 │       └── default.txt                 (latest changelog)
 └── listings
     ├── en-US                           (en-US is the default locale in F-Droid)
-    │   ├── title.txt                   (app name)
+    │   ├── title.txt                   (app name, max 50 chars)
     │   ├── short-description.txt       (short description, max 80 chars, mandatory)
-    │   ├── full-description.txt        (full app description, mandatory)
+    │   ├── full-description.txt        (full app description, max 4000 chars, mandatory)
     │   ├── video-url.txt               (URL to a video introducing the app)
     │   ├── whatsnew                    (alternative changelog location; single file, no .txt)
     │   └── graphics
