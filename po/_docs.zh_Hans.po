@@ -29,8 +29,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
 "POT-Creation-Date: 2024-12-06 10:52+0100\n"
-"PO-Revision-Date: 2024-12-10 04:10+0000\n"
-"Last-Translator: 大王叫我来巡山 <hamburger2048@users.noreply.hosted.weblate.org>\n"
+"PO-Revision-Date: 2024-12-13 11:33+0000\n"
+"Last-Translator: linsui <linsui@inbox.lv>\n"
 "Language-Team: Chinese (Simplified Han script) <https://hosted.weblate.org/projects/f-droid/website-docs/zh_Hans/>\n"
 "Language: zh_Hans\n"
 "MIME-Version: 1.0\n"
@@ -1786,17 +1786,17 @@ msgstr "标记和数据格式"
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 msgid "F-Droid metadata files are written in YAML and have a file extension `.yml`.  The top-most data structure is a \"map\" or \"dictionary\", made up of key/value pairs.  All keys are strings.  There are some internal data types used for values:"
-msgstr "F-Droid 元数据用 YAML 写成，文件扩展名为 `.yml`。  最上面的数据结构是”地图“或”目录“，由 key/value 对组成。  所有的 key 均为字符串。  有一些用于 value 的内部数据类型："
+msgstr "F-Droid 元数据用 YAML 写成，文件扩展名为 `.yml`。最顶层的数据结构是“映射”或“字典”，由键值对组成。所有的键均为字符串。有一些用于值的内部数据类型："
 
 #. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
 msgid "`TYPE_BOOL` - Either `true` or `false`."
-msgstr "`TYPE_BOOL` - 要么 `true`，要么 `false`。"
+msgstr "`TYPE_BOOL` - `true` 或 `false`。"
 
 #. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
 msgid "`TYPE_BUILD` - A list of build entries, which are maps of key/value pairs."
-msgstr "`TYPE_BUILD` - 构建条目列表，条目是 key/value 对的映射。"
+msgstr "`TYPE_BUILD` - 构建条目列表，条目是键值对的映射。"
 
 #. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
@@ -1826,12 +1826,12 @@ msgstr "`TYPE_STRING` - 一条字符串。"
 #. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
 msgid "`TYPE_STRINGMAP` - A map of maps, the inner keys are BCP 47 locales and the values are human-readable text."
-msgstr "`TYPE_STRINGMAP` - 地图的地图，内部键是 BCP 47 区域设置，值是人类可读的文本。"
+msgstr "`TYPE_STRINGMAP` - 映射的映射，内部键是 BCP 47 区域设置，值是人类可读的文本。"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 msgid "The canonical format is [YAML 1.2](https://yaml.org/spec/1.2.2/).  The process of reading metadata files is more tolerant, and will do some automatic type conversions when that can provide a reliable transformation.  `fdroid rewritemeta` will output YAML 1.2, so it will not preserve the original values as written, if they have been converted."
-msgstr "标准格式是 [YAML 1.2](https://yaml.org/spec/1.2.2/)。  读取元数据文件的过程容忍度更高，并且在能够提供可靠转换的情况下会执行一些自动类型转换。  `fdroid rewritemeta` 将输出 YAML 1.2，因此如果原始值已被转换，则不会保留写入的原始值。"
+msgstr "标准格式是 [YAML 1.2](https://yaml.org/spec/1.2.2/)。读取元数据文件的过程容忍度更高，并且在能够提供可靠转换的情况下会执行一些自动类型转换。`fdroid rewritemeta` 将输出 YAML 1.2，因此如果原始值已被转换，则不会保留写入的原始值。"
 
 #. type: Title ##
 #: _docs/Build_Metadata_Reference.md
@@ -2202,7 +2202,7 @@ msgstr "[_CurrentVersionCode_ (当前版本代码)](#CurrentVersionCode)"
 #. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
 msgid "[_NoSourceSince_](#NoSourceSince)"
-msgstr "[_NoSourceSince_ (源代码不可用日期)](#NoSourceSince)"
+msgstr "[_NoSourceSince_ (源代码不可用版本)](#NoSourceSince)"
 
 #. type: Title ###
 #: _docs/Build_Metadata_Reference.md
@@ -2662,7 +2662,7 @@ msgstr "`git-svn` 选项连接到一个 SVN 仓库，你以完全相同的方式
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 msgid "If the [_RepoType_](#RepoType) is `srclib`, then you must specify the name of the according srclib `.yml` file. For example if `srclibs/FooBar.yml` exist and you want to use this srclib, then you have to set _Repo_ to `FooBar`."
-msgstr "如果 [_RepoType_](#RepoType)是`srclib`，那么你必须指定相应的 srclib .`yml` 文件的名称。例如，如果存在 `srclibs/FooBar.yml` 并且你想使用这个 srclib，那么你必须将 _Repo_ 设置为 `FooBar`。"
+msgstr "如果 [_RepoType_](#RepoType)是`srclib`，那么你必须指定相应的 srclib `.yml` 文件。例如，如果存在 `srclibs/FooBar.yml` 并且你想使用这个 srclib，那么你必须将 _Repo_ 设置为 `FooBar`。"
 
 #. type: Title ###
 #: _docs/Build_Metadata_Reference.md
@@ -2757,10 +2757,7 @@ msgid ""
 "    In addition to the three, always required, parameters described above,\n"
 "    further parameters can be added (in `name: value` format) to apply further\n"
 "    configuration to the build. These are (roughly in order of application):\n"
-msgstr ""
-"    除了上述三个始终需要的参数外，\n"
-"    还可以添加更多的参数（以 `name: value` 的格式）来\n"
-"    对构建进行进一步配置。这些参数是（大致按应用顺序排列）：\n"
+msgstr "    除了上述三个始终需要的参数外，还可以添加更多的参数（以 `name: value` 的格式）来对构建进行进一步配置。这些参数是（大致按应用顺序排列）：\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
