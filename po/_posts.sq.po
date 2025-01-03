@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2024-12-03 14:39+0100\n"
+"POT-Creation-Date: 2025-01-03 19:40+0100\n"
 "PO-Revision-Date: 2024-12-03 13:32+0000\n"
 "Last-Translator: Besnik Bleta <besnik@programeshqip.org>\n"
 "Language-Team: Albanian <https://hosted.weblate.org/projects/f-droid/website-posts/sq/>\n"
@@ -19843,6 +19843,7 @@ msgstr ""
 
 #. type: Plain text
 #: _posts/2024-04-29-board-appointments-2024.md
+#: _posts/2024-12-14-community-council-nominations-extension.md
 msgid "Dear members of the F-Droid community,"
 msgstr ""
 
@@ -19959,11 +19960,13 @@ msgstr ""
 
 #. type: Plain text
 #: _posts/2024-04-29-board-appointments-2024.md
+#: _posts/2024-12-14-community-council-nominations-extension.md
 msgid "Best regards,"
 msgstr ""
 
 #. type: Plain text
 #: _posts/2024-04-29-board-appointments-2024.md
+#: _posts/2024-12-14-community-council-nominations-extension.md
 msgid "Sebastian Crane on behalf of the F-Droid Board of Directors"
 msgstr ""
 
@@ -20675,4 +20678,128 @@ msgstr ""
 #. type: Plain text
 #: _posts/2024-12-03-giving-tuesday.md
 msgid "If you are in a position to do so, please consider giving this Giving Tuesday by either [donating](https://f-droid.org/donate/), or [contributing](https://f-droid.org/contribute/) to the project."
+msgstr ""
+
+#. type: Yaml Front Matter Hash Value: title
+#: _posts/2024-12-11-verified-first-time-installs.md
+#, no-wrap
+msgid "Verified first-time installs"
+msgstr ""
+
+#. type: Plain text
+#: _posts/2024-12-11-verified-first-time-installs.md
+msgid "When F-Droid is installed, it provides a strong, trusted channel to the apps you want to install.  Ideally, F-Droid comes pre-installed on your device, like with [CalyxOS](https://calyxos.org/), [LineageOS-for-microG](https://lineage.microg.org/) or [DivestOS](https://divestos.org/). Then there is already a verified version of F-Droid in place, ready to serve you."
+msgstr ""
+
+#. type: Plain text
+#: _posts/2024-12-11-verified-first-time-installs.md
+msgid "We work to make the f-droid.org web site as [hardened as possible](https://f-droid.org/docs/Security_Model/#initial-installs) to provide a trustworthy channel for first time installers to download the _F-Droid.apk_.  For example, we recently rolled out Domain Name System Security Extensions (DNSSEC) and DNS Certification Authority Authorization (CAA) protections for the f-droid.org domain name."
+msgstr ""
+
+#. type: Plain text
+#: _posts/2024-12-11-verified-first-time-installs.md
+msgid "If a user already knows about the _f-droid.org_ domain, or a trusted source tells them that _f-droid.org_ is the right domain, then they will get the right _F-Droid.apk_ directly from this website.  Unfortunately, on the web, there are lots of ways to trick users into believing they are visiting the right website.  This is usually known as \"phishing\".  For example, https://f-droid.org/de/ is the German version of this site, but https://f-droid.org.de/ is a site controlled by someone else who owns the _org.de_ domain.  Or some unknown owner has controlled [_f-droid.cn_](https://who.is/whois/f-droid.cn) since 2015.  We have not seen any activity on that domain, but it could still be used to lead users astray. We regularly buy domains that might be confusing to users to avoid them being misused.  But that alone is unfortunately not enough (_note: we'd love to buy that domain, let us know if you can help us find the owner_)."
+msgstr ""
+
+#. type: Plain text
+#: _posts/2024-12-11-verified-first-time-installs.md
+msgid "This problem led us to look for other \"[roots of trust](https://en.wikipedia.org/wiki/Root_of_trust)\".  When a user already knows and trusts a channel, they can use to fetch and verify the _F-Droid.apk_.  For GNU/Linux distros like Debian, there is a strong trust anchor provided by the built-in package manager.  For other operating systems, there are add-in package managers, like Homebrew for macOS.  So we made the new `fdroid install` command to take advantage of these trust anchors.  If you already trust your package manager, and it ships _fdroidserver_ v2.3.0 or newer (e.g. `apt-get install fdroidserver`), then you can just install that, run `fdroid install`, and get a cryptographically verified _F-Droid.apk_ to install on your device."
+msgstr ""
+
+#. type: Plain text
+#: _posts/2024-12-11-verified-first-time-installs.md
+msgid "On top of that, `fdroid install` will automatically try to download from a number of built-in mirrors.  So installing using `fdroid install` could be more reliable than trying to download _F-Droid.apk_ from this website.  For extra privacy, use `fdroid install --privacy-mode` and it will avoid downloading from <https://f-droid.org> and instead download from mirrors that host lots of different kinds of software.  Any network observers will not be able to see which specific software you are downloading from the mirror. The visible parts of your download traffic will not show that you are downloading something related to F-Droid.  It is important to note that the operator of that mirror will be able to see that you are downloading _F-Droid.apk_."
+msgstr ""
+
+#. type: Plain text
+#: _posts/2024-12-11-verified-first-time-installs.md
+msgid "As of this writing, here are some sources of the required version of _fdroidserver_:"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _posts/2024-12-11-verified-first-time-installs.md
+msgid "Debian/trixie and Ubuntu/plucky: `apt-get install fdroidserver`"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _posts/2024-12-11-verified-first-time-installs.md
+msgid "Debian/bookworm-backports: `apt-get install fdroidserver/bookworm-backports`"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _posts/2024-12-11-verified-first-time-installs.md
+msgid "Homebrew: `brew install fdroidserver`"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _posts/2024-12-11-verified-first-time-installs.md
+msgid "Python pip: `pip install fdroidserver`"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _posts/2024-12-11-verified-first-time-installs.md
+msgid "[Our Ubuntu PPA](https://f-droid.org/docs/Installing_the_Server_and_Repo_Tools/#getting-a-newer-version)"
+msgstr ""
+
+#. type: Yaml Front Matter Hash Value: title
+#: _posts/2024-12-13-security-of-the-updates-automation.md
+#, no-wrap
+msgid "Security of the updates automation"
+msgstr ""
+
+#. type: Plain text
+#: _posts/2024-12-13-security-of-the-updates-automation.md
+msgid "Automation is one key factor that lets the small F-Droid team provide apps to millions. The [@checkupdates-bot](https://gitlab.com/checkupdates-bot/) is a new reworking of an old piece of automation in F-Droid: _checkupdates_.  This goes through all of the existing apps, checks if they are [set up]({{ site.baseurl }}/docs/Build_Metadata_Reference/#UpdateCheckMode) for automatic updates, and if so, runs the process to automatically generate a new build entry for that release.  That gets added to [_fdroiddata_](https://gitlab.com/fdroid/fdroiddata/), which is what the production _buildserver_ processes in order to build and ship apps."
+msgstr ""
+
+#. type: Plain text
+#: _posts/2024-12-13-security-of-the-updates-automation.md
+msgid "Since the best security is provided by systems that follow the principal of [least privilege](https://en.wikipedia.org/wiki/Principle_of_least_privilege), we recently reorganized our setup and workflow around that principal so that the @checkupdates-bot has the least privileges needed to do its job.  The _checkupdates_ process now runs in its own isolated project, separate from _fdroiddata_ and any other F-Droid project on gitlab.com.  It now only pushes commits to its own [dedicated project](https://gitlab.com/fdroid/checkupdates-bot-fdroiddata), then makes a [merge request](https://gitlab.com/fdroid/fdroiddata/-/merge_requests/?sort=updated_desc&state=opened&author_username=checkupdates-bot&first_page_size=20) per app to _fdroiddata_.  Both our automated CI processes and our trusted human reviewers now handle all updates using the same process as for new apps."
+msgstr ""
+
+#. type: Plain text
+#: _posts/2024-12-13-security-of-the-updates-automation.md
+msgid "At the same time, we removed a key bit of cruft in our code: _stats/known_apks.txt_.  This file was the place that stored the dates when each app was added to the collection.  This file was updated on the _buildserver_ and maintained in _fdroiddata_.  That information is also in the index file, so we [switched](https://gitlab.com/fdroid/fdroidserver/-/merge_requests/1547) to fetching it from there instead.  That meant we could remove the last deploy key in use in _fdroiddata_.  Our operations no longer require any deploy keys in _fdroiddata_."
+msgstr ""
+
+#. type: Plain text
+#: _posts/2024-12-13-security-of-the-updates-automation.md
+msgid "While we were at it, we added some additional checks via the merge requests.  For example, now any time an image file is added or modified, a CI job [checks](https://gitlab.com/fdroid/fdroiddata/-/merge_requests/16129) whether the image contains any EXIF metadata, which can be used as an exploit vector.  We also added some additional enforcement to make sure changes to key files go through human review via merge requests."
+msgstr ""
+
+#. type: Title ##
+#: _posts/2024-12-13-security-of-the-updates-automation.md
+#, no-wrap
+msgid "Security issue as inspiration"
+msgstr ""
+
+#. type: Plain text
+#: _posts/2024-12-13-security-of-the-updates-automation.md
+msgid "About a month ago, [@SomberNight](https://gitlab.com/SomberNight) reported a [security issue](https://gitlab.com/fdroid/fdroiddata/-/issues/3411) to us in a confidential issue.  We appreciate this detailed report, and also want to highlight their diligent follow up.  In specific situations, the old setup was leaking the private deploy key which granted access to directly push commits to _fdroiddata_.  We immediately revoked that key, then removed all privileges from the [@fdroidci](https://gitlab.com/fdroidci) user that was associated with that private key.  We also investigated all the leads we could follow to see if someone had used this key to insert something into F-Droid.  We searched the activity of the @fdroidci user and found no evidence that unauthorized commits were added."
+msgstr ""
+
+#. type: Plain text
+#: _posts/2024-12-13-security-of-the-updates-automation.md
+msgid "To be sure, we did some additional investigations. Since _checkupdates_ had been running as part of the _fdroiddata_ project on gitlab.com, a malicious app build recipe could have also read the `CHECKUPDATES_SSH_DEPLOY_KEY` variable which contained the private key. We checked _fdroiddata_'s history for signs of exfiltration and found nothing.  We require that apps are built from source code, and that source code is in a source code management system like Git.  That ensures a local copy with history is retained on our _buildserver_.  We searched our local copy source code and found no evidence that any app build processes where trying to exfiltrate the _checkupdates_ private key."
+msgstr ""
+
+#. type: Plain text
+#: _posts/2024-12-13-security-of-the-updates-automation.md
+msgid "Do you have more ideas for things to search? Please dig in and let us know if you find anything suspicious.  Working in public means everyone is free to investigate and come to their own conclusions, and contribute to a more secure free software ecosystem on Android."
+msgstr ""
+
+#. type: Yaml Front Matter Hash Value: title
+#: _posts/2024-12-14-community-council-nominations-extension.md
+#, no-wrap
+msgid "More time to submit Community Council nominations"
+msgstr ""
+
+#. type: Plain text
+#: _posts/2024-12-14-community-council-nominations-extension.md
+msgid "Due to an error on the part of the Board of Directors, the [call for nominations to the F-Droid Community Council](https://f-droid.org/2024/12/01/call-for-community-council-nominations.html)  was not properly communicated on our [Mastodon profile](https://floss.social/@fdroidorg) and [forum](https://forum.f-droid.org/).  For this reason, we are extending the deadline for nominations from the 15th of December 2024 to the 29th of December 2024.  These nominations will be announced shortly before the New Year.  To ensure that everyone in the community has an opportunity to make comments or raise concerns, the deadline for community feedback on these nominations will be similarly extended from the 1st of January 2025 to the 15th of January 2025."
+msgstr ""
+
+#. type: Plain text
+#: _posts/2024-12-14-community-council-nominations-extension.md
+msgid "We apologize for any inconvenience, and we look forward to your nominations and feedback."
 msgstr ""
