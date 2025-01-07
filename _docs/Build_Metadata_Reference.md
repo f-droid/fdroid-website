@@ -149,10 +149,27 @@ Any number of categories for the application to be placed in. There is
 no fixed list of categories - both the client and the web site will
 automatically show any categories that exist in any applications.
 However, if your metadata is intended for the main F-Droid repository,
-you should use one of the existing categories (`Connectivity`,`Development`,
-`Games`,`Graphics`,`Internet`,`Money`,`Multimedia`,`Navigation`,`Phone & SMS`,
-`Reading`,`Science & Education`,`Security`,`Sports & Health`,`System`,`Theming`,
-`Time`,`Writing`), or discuss the proposal to add a new one. _Categories_
+you should use one of the existing categories:
+
+* `Connectivity`
+* `Development`
+* `Games`
+* `Graphics`
+* `Internet`
+* `Money`
+* `Multimedia`
+* `Navigation`
+* `Phone & SMS`
+* `Reading`
+* `Science & Education`
+* `Security`
+* `Sports & Health`
+* `System`
+* `Theming`
+* `Time`
+* `Writing`
+
+or discuss the proposal to add a new one. _Categories_
 must be a list of items, even if there is just one.
 
 This is converted to (`<categories>`) in the XML file (_index.xml_).
