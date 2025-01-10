@@ -430,6 +430,11 @@ such optimizations declaring optimized classes in `proguard-rules.pro`:
 Be careful with R8.  Always test your builds multiple times and disable
 optimizations which produce non-deterministic output.
 
+If the DEX bytecode is different and depends on the number of CPU cores, try to update R8 to version 8.6.33, 8.7.20, 8.8 or newer as some issues were fixed in this regard.
+
+#### DEX classes in wrong order
+
+Even if the contents might match, if the classes file names are switched, reproducibility will fail. This was fixed for bundles in AGP 8.8 but we've seen this issue for APKs too. Try with the newer AGP first.
 
 #### Resource Shrinker
 
@@ -647,3 +652,5 @@ It generates [non-deterministic code](https://github.com/greenrobot/EventBus/iss
 * [Google Issue #110237303 resources.arsc built with non-determism, prevents reproducible APK builds](https://issuetracker.google.com/issues/110237303) (_Google login and JavaScript required_)
 * [Unreproducible/non-deterministic code generation by navigation.safeargs.kotlin](https://issuetracker.google.com/issues/189498001) (_Google login and JavaScript required_)
 * [unneeded DEX code differences based on number of CPUs used in build process](https://issuetracker.google.com/issues/269181868)  (_Google login and JavaScript required_)
+* [Assembling the bundle with AssembleBundleTask produces DEX files in the wrong order, resulting in a checksum mismatch](https://issuetracker.google.com/issues/384870255)
+* [differing DEX bytecode depending on the number of CPU cores breaks Reproducible Builds](https://issuetracker.google.com/issues/366412380)
