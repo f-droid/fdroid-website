@@ -25,12 +25,12 @@ Right now, we only support the payment methods that our fiscal hosts offer.  The
 
 <div class="payment-methods"></div>
 
-|      | {{ strings.currency }} | {{ strings.credit_card }}  | {{ strings.via_bank_transfer }} | {{ strings.paypal }} | {{ strings.crypto }} |
-|------|----------|--------------|---------------|--------|--------|
-| [<img src="{% asset liberapay_donate_button.svg %}" alt="{{ strings.liberapay_alt }}" height="24" />](https://liberapay.com/F-Droid-Data/)           | | ✓ | | ✓ | |
-| [<img src="{% asset opencollectivelogo.svg %}" height="20" alt="{{ strings.opencollective_alt }}" /> <small>F-Droid-Euro</small>](https://opencollective.com/f-droid-euro) | EUR | ✓ |  | |
-| [<img src="{% asset opencollectivelogo.svg %}" height="20" alt="{{ strings.opencollective_alt }}" /> <small>F-Droid</small>](https://opencollective.com/f-droid)   | USD | ✓ | ✓ | ✓ | |
-| [<img src="{% asset github-sponsors.svg %}" height="20" alt="GitHub Sponsors" />](https://github.com/sponsors/f-droid) |  | ✓ | | ✓ | |
+|      | {{ strings.credit_card }} | {{ strings.paypal }} | {{ strings.via_bank_transfer }} | {{ strings.via_direct_debit }} |
+|------|---------------------------|----------------------|---------------------------------|--------------------------------|
+| [<img src="{% asset liberapay_donate_button.svg %}" height="20" alt="{{ strings.liberapay_alt }}" />](https://liberapay.com/F-Droid-Data/)                                 | ✓ |   |     | SEPA |
+| [<img src="{% asset opencollectivelogo.svg %}" height="20" alt="{{ strings.opencollective_alt }}" /> <small>F-Droid-Euro</small>](https://opencollective.com/f-droid-euro) | ✓ | ✓ | EUR | SEPA |
+| [<img src="{% asset opencollectivelogo.svg %}" height="20" alt="{{ strings.opencollective_alt }}" /> <small>F-Droid</small>](https://opencollective.com/f-droid)           | ✓ | ✓ | USD | ACH  |
+| [<img src="{% asset github-sponsors.svg %}" height="20" alt="GitHub Sponsors" />](https://github.com/sponsors/f-droid)                                                     | ✓ |   |     |      |
 
 Visit the info pages of our fiscal hosts to get more details on their fees:
 
