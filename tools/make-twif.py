@@ -257,7 +257,7 @@ def print_blog_suffix():
         textwrap.dedent("""\
         Thank you for reading this week's TWIF 🙂
 
-        Please subscribe to the [RSS feed](https://f-droid.org/news/) in your favourite RSS application to be updated of new TWIFs when they come up.
+        Please subscribe to the [RSS feed](https://f-droid.org/feed.xml) in your favourite RSS application to be updated of new TWIFs when they come up.
 
         You are welcome to join the [TWIF forum thread](https://forum.f-droid.org/t/new-twif-submission-thread/23546). If you have any news from the community, post it there, maybe it will be featured next week 😉
 
