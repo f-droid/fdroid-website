@@ -29,4 +29,4 @@ permalink: /
     </div>
 </div>
 
-<script src="{% asset donate.js %}" async></script>
+<script src="{% asset donate.js %}" defer></script>
