@@ -856,10 +856,16 @@ not, the mismatched APKs will not be included in the repo.  If `fdroid update
 automated process can be used to download newer APKs to the repo, and they will
 only be included if they have a known good signature.  The value is a lower case
 hex value of the SHA-256 fingerprint of the signing certificate.  This can be
-fetched using:
+fetched using `apksigner` from the Android SDK:
 
 ```
 apksigner verify --print-certs example.apk | grep SHA-256
+```
+
+Or alternatively with `keytool` from the Java Development Kit (JDK):
+
+```
+keytool -printcert -jarfile example.apk | sed -n 's/[[:space:]]*SHA256: //p' | tr -d ':' | tr '[:upper:]' '[:lower:]'
 ```
 
 Usually, APKs are signed using only one signer.  APKs that require verification by [multiple signers](https://developer.android.com/tools/apksigner#usage-sign) are currently not supported by _AllowedAPKSigningKeys_ (this is quite rare).
