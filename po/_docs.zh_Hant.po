@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
-"POT-Creation-Date: 2025-01-23 19:01+0100\n"
+"POT-Creation-Date: 2025-01-28 17:12+0100\n"
 "PO-Revision-Date: 2024-10-19 20:32+0000\n"
 "Last-Translator: JT <sedosanxb@mozmail.com>\n"
 "Language-Team: Chinese (Traditional Han script) <https://hosted.weblate.org/projects/f-droid/website-docs/zh_Hant/>\n"
@@ -3755,7 +3755,9 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-msgid "When making automated binary repositories with `fdroid update`, it is generally easy to find out the expected signing key for the APKs that are gathered.  `AllowedAPKSigningKeys` lets the repo operator set the expected signing keys, then `fdroid update` will check that the APKs are signed by one of those keys.  If not, the mismatched APKs will not be included in the repo.  If `fdroid update --delete-unknown` is specified, the mismatched APKs will be deleted.  Then an automated process can be used to download newer APKs to the repo, and they will only be included if they have a known good signature.  The value is a lower case hex value of the SHA-256 fingerprint of the signing certificate.  This can be fetched using:"
+#, fuzzy
+#| msgid "When making automated binary repositories with `fdroid update`, it is generally easy to find out the expected signing key for the APKs that are gathered.  `AllowedAPKSigningKeys` lets the repo operator set the expected signing keys, then `fdroid update` will check that the APKs are signed by one of those keys.  If not, the mismatched APKs will not be included in the repo.  If `fdroid update --delete-unknown` is specified, the mismatched APKs will be deleted.  Then an automated process can be used to download newer APKs to the repo, and they will only be included if they have a known good signature.  The value is a lower case hex value of the SHA-256 fingerprint of the signing certificate.  This can be fetched using:"
+msgid "When making automated binary repositories with `fdroid update`, it is generally easy to find out the expected signing key for the APKs that are gathered.  `AllowedAPKSigningKeys` lets the repo operator set the expected signing keys, then `fdroid update` will check that the APKs are signed by one of those keys.  If not, the mismatched APKs will not be included in the repo.  If `fdroid update --delete-unknown` is specified, the mismatched APKs will be deleted.  Then an automated process can be used to download newer APKs to the repo, and they will only be included if they have a known good signature.  The value is a lower case hex value of the SHA-256 fingerprint of the signing certificate.  This can be fetched using `apksigner` from the Android SDK:"
 msgstr "當用 `fdroid update` 生成自動二進制軟體庫時，通常很容易找出所收集的 APK 的預期簽名密鑰。 `AllowedAPKSigningKeys` 讓倉庫管理員設定預期的簽名密鑰，然後 `fdroid update` 將檢查 APK 是否由這些密鑰之一簽署。如果不是，不匹配的 APK 將不被包含在軟體庫中。如果 `fdroid update --delete-unknown` 被指定，不匹配的 APK 將被刪除。然後，可以使用一個自動程式將較新的 APK 下載到軟體庫中，只有當它們有一個已知的良好簽名時才會被包含在內。該值是簽名憑證的 SHA-256 指紋的小寫十六進制值。這可以透過以下方式獲取："
 
 #. type: Fenced code block
@@ -3763,6 +3765,17 @@ msgstr "當用 `fdroid update` 生成自動二進制軟體庫時，通常很容�
 #, no-wrap
 msgid "apksigner verify --print-certs example.apk | grep SHA-256\n"
 msgstr "apksigner verify --print-certs example.apk | grep SHA-256\n"
+
+#. type: Plain text
+#: _docs/Build_Metadata_Reference.md
+msgid "Or alternatively with `keytool` from the Java Development Kit (JDK):"
+msgstr ""
+
+#. type: Fenced code block
+#: _docs/Build_Metadata_Reference.md
+#, no-wrap
+msgid "keytool -printcert -jarfile example.apk | sed -n 's/[[:space:]]*SHA256: //p' | tr -d ':' | tr '[:upper:]' '[:lower:]'\n"
+msgstr ""
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md

@@ -9,7 +9,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2025-01-03 17:12+0100\n"
+"POT-Creation-Date: 2025-01-28 17:12+0100\n"
 "PO-Revision-Date: 2025-01-25 21:00+0000\n"
 "Last-Translator: Fjuro <fjuro@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Czech <https://hosted.weblate.org/projects/f-droid/website-docs/cs/>\n"
@@ -2108,7 +2108,99 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-msgid "Any number of categories for the application to be placed in. There is no fixed list of categories - both the client and the web site will automatically show any categories that exist in any applications.  However, if your metadata is intended for the main F-Droid repository, you should use one of the existing categories (`Connectivity`,`Development`, `Games`,`Graphics`,`Internet`,`Money`,`Multimedia`,`Navigation`,`Phone & SMS`, `Reading`,`Science & Education`,`Security`,`Sports & Health`,`System`,`Theming`, `Time`,`Writing`), or discuss the proposal to add a new one. _Categories_ must be a list of items, even if there is just one."
+msgid "Any number of categories for the application to be placed in. There is no fixed list of categories - both the client and the web site will automatically show any categories that exist in any applications.  However, if your metadata is intended for the main F-Droid repository, you should use one of the existing categories:"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/Build_Metadata_Reference.md
+msgid "`Connectivity`"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/Build_Metadata_Reference.md
+msgid "`Development`"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/Build_Metadata_Reference.md
+msgid "`Games`"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/Build_Metadata_Reference.md
+msgid "`Graphics`"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/Build_Metadata_Reference.md
+msgid "`Internet`"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/Build_Metadata_Reference.md
+msgid "`Money`"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/Build_Metadata_Reference.md
+msgid "`Multimedia`"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/Build_Metadata_Reference.md
+msgid "`Navigation`"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/Build_Metadata_Reference.md
+msgid "`Phone & SMS`"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/Build_Metadata_Reference.md
+msgid "`Reading`"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/Build_Metadata_Reference.md
+msgid "`Science & Education`"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/Build_Metadata_Reference.md
+#, fuzzy
+#| msgid "Security Model"
+msgid "`Security`"
+msgstr "Bezpečnostní model"
+
+#. type: Bullet: '* '
+#: _docs/Build_Metadata_Reference.md
+msgid "`Sports & Health`"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/Build_Metadata_Reference.md
+msgid "`System`"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/Build_Metadata_Reference.md
+msgid "`Theming`"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/Build_Metadata_Reference.md
+msgid "`Time`"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/Build_Metadata_Reference.md
+msgid "`Writing`"
+msgstr ""
+
+#. type: Plain text
+#: _docs/Build_Metadata_Reference.md
+msgid "or discuss the proposal to add a new one. _Categories_ must be a list of items, even if there is just one."
 msgstr ""
 
 #. type: Plain text
@@ -3419,13 +3511,24 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-msgid "When making automated binary repositories with `fdroid update`, it is generally easy to find out the expected signing key for the APKs that are gathered.  `AllowedAPKSigningKeys` lets the repo operator set the expected signing keys, then `fdroid update` will check that the APKs are signed by one of those keys.  If not, the mismatched APKs will not be included in the repo.  If `fdroid update --delete-unknown` is specified, the mismatched APKs will be deleted.  Then an automated process can be used to download newer APKs to the repo, and they will only be included if they have a known good signature.  The value is a lower case hex value of the SHA-256 fingerprint of the signing certificate.  This can be fetched using:"
+msgid "When making automated binary repositories with `fdroid update`, it is generally easy to find out the expected signing key for the APKs that are gathered.  `AllowedAPKSigningKeys` lets the repo operator set the expected signing keys, then `fdroid update` will check that the APKs are signed by one of those keys.  If not, the mismatched APKs will not be included in the repo.  If `fdroid update --delete-unknown` is specified, the mismatched APKs will be deleted.  Then an automated process can be used to download newer APKs to the repo, and they will only be included if they have a known good signature.  The value is a lower case hex value of the SHA-256 fingerprint of the signing certificate.  This can be fetched using `apksigner` from the Android SDK:"
 msgstr ""
 
 #. type: Fenced code block
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid "apksigner verify --print-certs example.apk | grep SHA-256\n"
+msgstr ""
+
+#. type: Plain text
+#: _docs/Build_Metadata_Reference.md
+msgid "Or alternatively with `keytool` from the Java Development Kit (JDK):"
+msgstr ""
+
+#. type: Fenced code block
+#: _docs/Build_Metadata_Reference.md
+#, no-wrap
+msgid "keytool -printcert -jarfile example.apk | sed -n 's/[[:space:]]*SHA256: //p' | tr -d ':' | tr '[:upper:]' '[:lower:]'\n"
 msgstr ""
 
 #. type: Plain text
@@ -9291,6 +9394,22 @@ msgstr ""
 msgid "Be careful with R8.  Always test your builds multiple times and disable optimizations which produce non-deterministic output."
 msgstr ""
 
+#. type: Plain text
+#: _docs/Reproducible_Builds.md
+msgid "If the DEX bytecode is different and depends on the number of CPU cores, try to update R8 to version 8.6.33, 8.7.20, 8.8 or newer as some issues were fixed in this regard."
+msgstr ""
+
+#. type: Title ####
+#: _docs/Reproducible_Builds.md
+#, no-wrap
+msgid "DEX classes in wrong order"
+msgstr ""
+
+#. type: Plain text
+#: _docs/Reproducible_Builds.md
+msgid "Even if the contents might match, if the classes file names are switched, reproducibility will fail. This was fixed for bundles in AGP 8.8 but we've seen this issue for APKs too. Try with the newer AGP first."
+msgstr ""
+
 #. type: Title ####
 #: _docs/Reproducible_Builds.md
 #, no-wrap
@@ -9331,7 +9450,7 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
-msgid "This may cause problem when there is no real code change but a different commit is used, e.g.  for changelog update. VCS info can be disabled in gradle as follows:"
+msgid "While we understand that developers build and test during their normal workflow, please upload release APKs built after tagging, from a clean tree at the actual tagged commit (i.e. without local changes or remaining artifacts from previous builds). Only in exceptional cases, when you cannot do this, should vcsInfo be disabled (as this might otherwise cause problems), which can be done as follows:"
 msgstr ""
 
 #. type: Fenced code block (gradle)
@@ -9748,6 +9867,16 @@ msgstr ""
 #. type: Bullet: '* '
 #: _docs/Reproducible_Builds.md
 msgid "[unneeded DEX code differences based on number of CPUs used in build process](https://issuetracker.google.com/issues/269181868)  (_Google login and JavaScript required_)"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/Reproducible_Builds.md
+msgid "[Assembling the bundle with AssembleBundleTask produces DEX files in the wrong order, resulting in a checksum mismatch](https://issuetracker.google.com/issues/384870255)"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/Reproducible_Builds.md
+msgid "[differing DEX bytecode depending on the number of CPU cores breaks Reproducible Builds](https://issuetracker.google.com/issues/366412380)"
 msgstr ""
 
 #. type: Yaml Front Matter Hash Value: title
