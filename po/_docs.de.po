@@ -24,7 +24,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
 "POT-Creation-Date: 2025-01-28 17:12+0100\n"
-"PO-Revision-Date: 2025-01-24 14:15+0000\n"
+"PO-Revision-Date: 2025-01-29 13:04+0000\n"
 "Last-Translator: VfBFan <drop0815@posteo.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/f-droid/website-docs/de/>\n"
 "Language: de\n"
@@ -3833,10 +3833,8 @@ msgstr "_AllowedAPKSigningKeys_<a name=\"AllowedAPKSigningKeys\"></a>"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-#, fuzzy
-#| msgid "When making automated binary repositories with `fdroid update`, it is generally easy to find out the expected signing key for the APKs that are gathered.  `AllowedAPKSigningKeys` lets the repo operator set the expected signing keys, then `fdroid update` will check that the APKs are signed by one of those keys.  If not, the mismatched APKs will not be included in the repo.  If `fdroid update --delete-unknown` is specified, the mismatched APKs will be deleted.  Then an automated process can be used to download newer APKs to the repo, and they will only be included if they have a known good signature.  The value is a lower case hex value of the SHA-256 fingerprint of the signing certificate.  This can be fetched using:"
 msgid "When making automated binary repositories with `fdroid update`, it is generally easy to find out the expected signing key for the APKs that are gathered.  `AllowedAPKSigningKeys` lets the repo operator set the expected signing keys, then `fdroid update` will check that the APKs are signed by one of those keys.  If not, the mismatched APKs will not be included in the repo.  If `fdroid update --delete-unknown` is specified, the mismatched APKs will be deleted.  Then an automated process can be used to download newer APKs to the repo, and they will only be included if they have a known good signature.  The value is a lower case hex value of the SHA-256 fingerprint of the signing certificate.  This can be fetched using `apksigner` from the Android SDK:"
-msgstr "Bei der Erstellung von automatisierten Binärdatei-Repositorys mit `fdroid update` ist es im Allgemeinen einfach, den erwarteten Signierschlüssel für die gesammelten APKs herauszufinden. Mit `AllowedAPKSigningKeys` kann der Repo-Betreiber die erwarteten Signierschlüssel festlegen, und `fdroid update` überprüft dann, ob die APKs mit einem dieser Schlüssel signiert sind. Ist dies nicht der Fall, werden die nicht übereinstimmenden APKs nicht in das Repo aufgenommen. Wenn `fdroid update --delete-unknown` angegeben wird, werden die nicht übereinstimmenden APKs gelöscht. Dann kann ein automatischer Prozess verwendet werden, um neuere APKs in das Repo herunterzuladen, und sie werden nur aufgenommen, wenn sie eine bekannt gute Signatur haben. Der Wert ist ein in Kleinbuchstaben geschriebener Hex-Wert des SHA-256-Fingerabdrucks des Signierzertifikats. Dieser kann mit abgerufen werden:"
+msgstr "Beim Erstellen von automatisierten Binärdatei-Repositorys mit `fdroid update` ist es im Allgemeinen einfach, den erwarteten Signierschlüssel für die gesammelten APKs herauszufinden. Mit `AllowedAPKSigningKeys` kann der Repo-Betreiber die erwarteten Signierschlüssel festlegen, und `fdroid update` überprüft dann, ob die APKs mit einem dieser Schlüssel signiert sind. Ist dies nicht der Fall, werden die nicht übereinstimmenden APKs nicht in das Repo aufgenommen. Wenn `fdroid update --delete-unknown` angegeben wird, werden die nicht übereinstimmenden APKs gelöscht. Dann kann ein automatischer Prozess verwendet werden, um neuere APKs in das Repo herunterzuladen, und sie werden nur aufgenommen, wenn sie eine bekannt gute Signatur haben. Der Wert ist ein in Kleinbuchstaben geschriebener Hex-Wert des SHA-256-Fingerabdrucks des Signierzertifikats. Dieser kann mit `apksigner` aus dem Android-SDK abgerufen werden:"
 
 #. type: Fenced code block
 #: _docs/Build_Metadata_Reference.md
@@ -3847,13 +3845,13 @@ msgstr "apksigner verify --print-certs example.apk | grep SHA-256\n"
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 msgid "Or alternatively with `keytool` from the Java Development Kit (JDK):"
-msgstr ""
+msgstr "Oder alternativ mit `keytool` aus dem Java Development Kit (JDK):"
 
 #. type: Fenced code block
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid "keytool -printcert -jarfile example.apk | sed -n 's/[[:space:]]*SHA256: //p' | tr -d ':' | tr '[:upper:]' '[:lower:]'\n"
-msgstr ""
+msgstr "keytool -printcert -jarfile example.apk | sed -n 's/[[:space:]]*SHA256: //p' | tr -d ':' | tr '[:upper:]' '[:lower:]'\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
