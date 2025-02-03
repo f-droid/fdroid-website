@@ -764,7 +764,7 @@ Builds:
     string in either of the two official version schemes, e.g. _r21e_ or
     _21.4.7075529_.  NDK r10e or later is supported.  This can also be a list of
     version strings, and all listed versions will be installed.  The
-    `ANDROID_SDK_ROOT` environment variable will be set to the first version in
+    `ANDROID_NDK` and `ANDROID_NDK_HOME` environment variables will be set to the first version in
     the list.
 
 `gradle: <flavour1>[,<flavour2>,...]`<a name="build_gradle"></a>
