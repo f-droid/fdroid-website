@@ -50,6 +50,7 @@ the main repository.
 * [FAQ - App Developers](FAQ_-_App_Developers) Frequently Asked Questions about F-Droid
 * [FAQ - Repository](https://gitlab.com/fdroid/wiki/-/wikis/FAQ) Frequently Asked Questions about the official F-Droid Repository
 * [Build Metadata Reference](Build_Metadata_Reference) All about the build "recipes"
+* [Get it on F-Droid Badges](Badges) How to use the badges
 * [Submitting to F-Droid: Quick Start Guide](Submitting_to_F-Droid_Quick_Start_Guide) Add an app to f-droid.org
 * [Update Processing](Update_Processing) How updates get detected and added.
 * [Inclusion Policy](Inclusion_Policy) & [Inclusion How-To](Inclusion_How-To)  Guidelines for how to request the inclusion of a new app.
