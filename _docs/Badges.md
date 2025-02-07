@@ -11,8 +11,8 @@ several languages.
     alt="Get it on F-Droid"
     height="80">
 
-The English badge is available at <https://f-droid.org/badge/get-it-on.png>
-in PNG format and at <https://f-droid.org/badge/get-it-on.svg> in SVG
+The English badge is available at `https://f-droid.org/badge/get-it-on.png`
+in PNG format and at `https://f-droid.org/badge/get-it-on.svg` in SVG
 format.
 
 ### Localized badges
