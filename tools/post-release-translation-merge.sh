@@ -1,4 +1,4 @@
-#!/bin/sh -ex
+#!/bin/sh -e
 #
 # This is for after running tools/pick-complete-translations.py and
 # all the checks, and having pushed the results to the upstream repo
@@ -7,6 +7,14 @@
 
 basedir=$(cd $(dirname $0)/..; pwd)
 cd $basedir
+
+if git status | grep -E '_(docs|pages|posts)/' > /dev/null; then
+    echo "ERROR: uncommitted changes should not be included in the translations!\n"
+    git status
+    exit 1
+fi
+
+set -x
 
 ./tools/i18n.sh --all
 
