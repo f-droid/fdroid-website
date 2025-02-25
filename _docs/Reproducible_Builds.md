@@ -582,7 +582,7 @@ android {
 }
 ```
 
-`-ffile-prefix-map` can be used to remove embedded build path.
+`add_compile_options("-ffile-prefix-map=old=new")` can be used to remove embedded build path.
 
 ##### Golang
 
