@@ -85,6 +85,13 @@ run `bundle config --delete local.jekyll-fdroid`.
 Alternatively you may also set the `jekyll-fdroid` dependeny line in Gemfile to
 your local clone, e.g.: `gem 'jekyll-fdroid', :path => './jekyll-fdroid'`
 
+### Some config changes
+
+To avoid building 4000+ packages you can change the F-Droid repo configuration for a smaller one:
+```
+  fdroid-repo: https://guardianproject.info/fdroid/repo
+```
+
 ## License
 
 This program is Free Software:
