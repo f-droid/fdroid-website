@@ -33,15 +33,15 @@ weblate.fetch()
 upstream = repo.remotes.upstream
 upstream.fetch()
 
-url = 'https://hosted.weblate.org/exports/stats/f-droid/website/?format=json'
+url = 'https://hosted.weblate.org/api/components/f-droid/website/statistics/?format=json'
 r = requests.get(url)
 r.raise_for_status()
-strings = r.json()
+strings = r.json()['results']
 
-url = 'https://hosted.weblate.org/exports/stats/f-droid/website-pages/?format=json'
+url = 'https://hosted.weblate.org/api/components/f-droid/website-pages/statistics/?format=json'
 r = requests.get(url)
 r.raise_for_status()
-pages = r.json()
+pages = r.json()['results']
 
 with open(os.path.join(projectbasedir, '_config.yml')) as fp:
     site_languages = yaml.safe_load(fp)['languages']

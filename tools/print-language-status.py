@@ -10,10 +10,10 @@ output = dict()
 for slug in ('f-droid', 'fdroiddata', 'repomaker', 'repomaker-javascript',
              'website', 'website-pages', 'website-docs', 'website-posts',
              'website-tutorials'):
-    r = requests.get('https://hosted.weblate.org/exports/stats/f-droid/%s/?format=json' % slug)
+    r = requests.get('https://hosted.weblate.org/api/components/f-droid/%s/statistics/?format=json' % slug)
     data = r.json()
     output[slug] = []
-    for item in data:
+    for item in data['results']:
         if item.get('translated_percent', 0) > 99.0:
             output[slug].append(item['code'])
 
