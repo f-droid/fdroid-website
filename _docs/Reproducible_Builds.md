@@ -576,7 +576,8 @@ every target. It can also be set in Gradle files:
 android {
     defaultConfig {
         externalNativeBuild.cmake {
-          cFlags "-DCMAKE_SHARED_LINKER_FLAGS=-Wl,<linker args>"
+          cFlags "-Wl,--build-id" // or
+          arguments "-DCMAKE_SHARED_LINKER_FLAGS=-Wl,<linker args>"
         }
     }
 }
