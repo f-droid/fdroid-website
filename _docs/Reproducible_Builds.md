@@ -582,7 +582,22 @@ android {
 }
 ```
 
-`add_compile_options("-ffile-prefix-map=old=new")` can be used to remove embedded build path.
+The `-ffile-prefix-map` flag can be used to remove embedded build path. It can be added to `CMakeLists.txt` directly:
+
+```cmake
+add_compile_options("-ffile-prefix-map=${CMAKE_CURRENT_SOURCE_DIR}=.")
+```
+
+or in `build.gradle`:
+
+```gradle
+externalNativeBuild {
+    cmake {
+        cFlags "-ffile-prefix-map=${rootDir}=."
+        cppFlags "-ffile-prefix-map=${rootDir}=."
+    }
+}
+```
 
 ##### Golang
 
