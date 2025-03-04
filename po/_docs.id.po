@@ -10,7 +10,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2025-02-25 10:56+0100\n"
+"POT-Creation-Date: 2025-03-04 20:07+0100\n"
 "PO-Revision-Date: 2024-12-26 16:09+0000\n"
 "Last-Translator: Doctorredits_here <alkaf.alkaf2018@tutamail.com>\n"
 "Language-Team: Indonesian <https://hosted.weblate.org/projects/f-droid/website-docs/id/>\n"
@@ -9926,7 +9926,8 @@ msgid ""
 "android {\n"
 "    defaultConfig {\n"
 "        externalNativeBuild.cmake {\n"
-"          cFlags \"-DCMAKE_SHARED_LINKER_FLAGS=-Wl,<linker args>\"\n"
+"          cFlags \"-Wl,--build-id\" // or\n"
+"          arguments \"-DCMAKE_SHARED_LINKER_FLAGS=-Wl,<linker args>\"\n"
 "        }\n"
 "    }\n"
 "}\n"
@@ -9941,7 +9942,30 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
-msgid "`-ffile-prefix-map` can be used to remove embedded build path."
+msgid "The `-ffile-prefix-map` flag can be used to remove embedded build path. It can be added to `CMakeLists.txt` directly:"
+msgstr ""
+
+#. type: Fenced code block (cmake)
+#: _docs/Reproducible_Builds.md
+#, no-wrap
+msgid "add_compile_options(\"-ffile-prefix-map=${CMAKE_CURRENT_SOURCE_DIR}=.\")\n"
+msgstr ""
+
+#. type: Plain text
+#: _docs/Reproducible_Builds.md
+msgid "or in `build.gradle`:"
+msgstr ""
+
+#. type: Fenced code block (gradle)
+#: _docs/Reproducible_Builds.md
+#, no-wrap
+msgid ""
+"externalNativeBuild {\n"
+"    cmake {\n"
+"        cFlags \"-ffile-prefix-map=${rootDir}=.\"\n"
+"        cppFlags \"-ffile-prefix-map=${rootDir}=.\"\n"
+"    }\n"
+"}\n"
 msgstr ""
 
 #. type: Title #####
