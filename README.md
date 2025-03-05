@@ -20,6 +20,7 @@ jekyll build
 ```
 
 If you experience an error during the build process, try also:
+
 ```
 bundle update
 ```
@@ -88,6 +89,7 @@ your local clone, e.g.: `gem 'jekyll-fdroid', :path => './jekyll-fdroid'`
 ### Some config changes
 
 To avoid building 4000+ packages you can change the F-Droid repo configuration for a smaller one:
+
 ```
   fdroid-repo: https://guardianproject.info/fdroid/repo
 ```
