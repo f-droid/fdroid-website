@@ -30,8 +30,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
 "POT-Creation-Date: 2025-03-04 20:07+0100\n"
-"PO-Revision-Date: 2025-03-03 12:04+0000\n"
-"Last-Translator: linsui <linsui@users.noreply.hosted.weblate.org>\n"
+"PO-Revision-Date: 2025-03-05 04:03+0000\n"
+"Last-Translator: 大王叫我来巡山 <hamburger2048@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Chinese (Simplified Han script) <https://hosted.weblate.org/projects/f-droid/website-docs/zh_Hans/>\n"
 "Language: zh_Hans\n"
 "MIME-Version: 1.0\n"
@@ -10389,15 +10389,7 @@ msgstr ""
 
 #. type: Fenced code block (gradle)
 #: _docs/Reproducible_Builds.md
-#, fuzzy, no-wrap
-#| msgid ""
-#| "android {\n"
-#| "    defaultConfig {\n"
-#| "        externalNativeBuild.cmake {\n"
-#| "          cFlags \"-DCMAKE_SHARED_LINKER_FLAGS=-Wl,<linker args>\"\n"
-#| "        }\n"
-#| "    }\n"
-#| "}\n"
+#, no-wrap
 msgid ""
 "android {\n"
 "    defaultConfig {\n"
@@ -10419,21 +10411,19 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
-#, fuzzy
-#| msgid "`-ffile-prefix-map` can be used to remove embedded build path."
 msgid "The `-ffile-prefix-map` flag can be used to remove embedded build path. It can be added to `CMakeLists.txt` directly:"
-msgstr "`-ffile-prefix-map` 可用来删除嵌入的构建路径。"
+msgstr "`-ffile-prefix-map` 标记可用来删除嵌入的构建路径。它可以被直接添加到 `CMakeLists.txt`："
 
 #. type: Fenced code block (cmake)
 #: _docs/Reproducible_Builds.md
 #, no-wrap
 msgid "add_compile_options(\"-ffile-prefix-map=${CMAKE_CURRENT_SOURCE_DIR}=.\")\n"
-msgstr ""
+msgstr "add_compile_options(\"-ffile-prefix-map=${CMAKE_CURRENT_SOURCE_DIR}=.\")\n"
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
 msgid "or in `build.gradle`:"
-msgstr ""
+msgstr "或在 `build.gradle`："
 
 #. type: Fenced code block (gradle)
 #: _docs/Reproducible_Builds.md
@@ -10446,6 +10436,12 @@ msgid ""
 "    }\n"
 "}\n"
 msgstr ""
+"externalNativeBuild {\n"
+"    cmake {\n"
+"        cFlags \"-ffile-prefix-map=${rootDir}=.\"\n"
+"        cppFlags \"-ffile-prefix-map=${rootDir}=.\"\n"
+"    }\n"
+"}\n"
 
 #. type: Title #####
 #: _docs/Reproducible_Builds.md
