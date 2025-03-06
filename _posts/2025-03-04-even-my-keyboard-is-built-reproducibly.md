@@ -48,6 +48,6 @@ We split our available keyboard apps based on their reproducible status as:
 
 * [Changjie Input Method](https://f-droid.org/packages/com.linkomnia.android.Changjie/), [Dasher](https://f-droid.org/packages/dasher.android/), [Mozc for Android](https://f-droid.org/packages/org.mozc.android.inputmethod.japanese/), [Sophia Keyboard](https://f-droid.org/packages/com.htruong.inputmethod.latin/)
 
-Interesting list, looks like we offer a large variety of input apps that, hopefully, not only cover your typing needs but also allow you to do this on a build reproducible verified app.
+Interesting list, looks like we offer a large variety of input apps that, hopefully, not only cover your typing needs but also allow you to do this on a verified reproducibly built app.
 
 This work was supported by your donations, and from [NLnet](https://nlnet.nl/project/Reproducible-F-Droid/).  To help support F-Droid, please check out the [donation page](https://f-droid.org/donate/) and contribute what you can.
