@@ -353,3 +353,28 @@ yamllint:
     - *apt-template
     - apt-get install yamllint
     - yamllint .yamllint .*.yml _config.yml
+
+
+markdownlint:
+  image: debian:trixie-slim
+  stage: deploy
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "merge_request_event"
+      changes:
+        - .gitlab-ci.yml
+        - .mdlrc
+        - CONTRIBUTING.md
+        - README.md
+        - _docs/*.md
+        - _pages/*.md
+        - _posts/*.md
+  script:
+    - *apt-template
+    - apt-get install git markdownlint
+    - |
+      for f in $(git diff --name-only origin/$CI_MERGE_REQUEST_TARGET_BRANCH_NAME...HEAD); do
+          if [ -f "$f" ] && [[ $f == *.md  ]]; then
+              echo "mdl $f"
+              mdl "$f"
+          fi
+      done

@@ -381,7 +381,7 @@ work across many app stores:
 * Basic HTML formatting can be used.
 * Newlines will be preserved.
 * Links to other packages on f-droid.org will show up as clickable on
-the website, other links will show up as plain text.
+  the website, other links will show up as plain text.
 
 It can be helpful to note information pertaining to updating from an
 earlier version; whether the app contains any prebuilts built by the
@@ -1183,8 +1183,8 @@ In case we are missing the source code for the
 [_CurrentVersion_](#CurrentVersion) reported by Upstream, or that Non-Free
 elements have been introduced, this defines the first version that began to
 miss source code. Apps that are missing source code for just one or a few
-versions, but provide source code for newer ones are not to be considered here
-- this field is intended to illustrate which apps do not currently distribute
+versions, but provide source code for newer ones are not to be considered here -
+this field is intended to illustrate which apps do not currently distribute
 source code, and since when have they been doing so.
 
 
