@@ -6,7 +6,7 @@ author: "Licaon_Kter"
 
 Two years ago, almost to the day, we've spoken about how ["VPN trust requires free software"](https://f-droid.org/2023/03/08/vpn-trust-requires-free-software.html) outlining the importance of [reproducible builds](https://reproducible-builds.org/) in general, and specially when it comes to your Internet connection security. That post sparked some interest and led to improvements in the way F-Droid packages reproducible builds.
 
-Last year we were sadden to read that [proprietary keyboards are (still) spying by their users](https://f-droid.org/2024/04/25/twif.html#community-news) and encouraged you to seek better FOSS keyboard apps.  The keyboard is perhaps the most sensitive app on the device.  Everything you write will go through the keyboard app, including passwords and private messages.  In order to have a trustworthy device, we need to know that our keyboard app is treating our secrets with the utmost care.  The best ones do not even request internet access or any other way to send our precious keystrokes anywhere besides where they are intended to go.
+Last year we were sadden to read that [proprietary keyboards are (still) spying on their users](https://f-droid.org/2024/04/25/twif.html#community-news) and encouraged you to seek better FOSS keyboard apps.  The keyboard is perhaps the most sensitive app on the device.  Everything you write will go through the keyboard app, including passwords and private messages.  In order to have a trustworthy device, we need to know that our keyboard app is treating our secrets with the utmost care.  The best ones do not even request internet access or any other way to send our precious keystrokes anywhere besides where they are intended to go.
 
 As we push for apps to be [reproducible when included](https://f-droid.org/docs/Inclusion_How-To/#reproducible-builds), let's take a look at the current F-Droid offer in regards to keyboards.
 
@@ -22,7 +22,7 @@ We split our available keyboard apps based on their reproducible status as:
 #### Reproducible:
 
 * Latin script: [Colemak Mod-DH Keyboard](https://f-droid.org/packages/io.github.colemakmods.mod_dh/), [Fossify Keyboard](https://f-droid.org/packages/org.fossify.keyboard/), [HeliBoard](https://f-droid.org/packages/helium314.keyboard/)
-* Asian script: [Fcitx5](https://f-droid.org/packages/org.fcitx.fcitx5.android/) + [plugins](https://search.f-droid.org/?q=org.fcitx.fcitx5.android.plugin), [Kuaizi IME](https://f-droid.org/packages/org.crazydan.studio.app.ime.kuaizi/), [Sithakuru](https://f-droid.org/packages/sithakuru.sinhala.keyboard/)
+* Asian script: [Fcitx5](https://f-droid.org/packages/org.fcitx.fcitx5.android/) & [plugins](https://search.f-droid.org/?q=org.fcitx.fcitx5.android.plugin), [Kuaizi IME](https://f-droid.org/packages/org.crazydan.studio.app.ime.kuaizi/), [Sithakuru](https://f-droid.org/packages/sithakuru.sinhala.keyboard/)
 * Special layout: [FlickBoard](https://f-droid.org/packages/se.nullable.flickboard/), [Thumb-Key](https://f-droid.org/packages/com.dessalines.thumbkey/), [Traditional T9](https://f-droid.org/packages/io.github.sspanak.tt9/)
 * Voice input: [Sayboard](https://f-droid.org/packages/com.elishaazaria.sayboard/)
 * Misc: [KryptEY](https://f-droid.org/packages/com.amnesica.kryptey/)
@@ -41,7 +41,7 @@ We split our available keyboard apps based on their reproducible status as:
 
 #### Not Verified:
 
-* Latin script: [AnySoftKeyboard](https://f-droid.org/packages/com.menny.android.anysoftkeyboard/) + [plugins](https://search.f-droid.org/?q=AnySoftKeyboard), [Hacker's Keyboard](https://f-droid.org/packages/org.pocketworkstation.pckeyboard/)
+* Latin script: [AnySoftKeyboard](https://f-droid.org/packages/com.menny.android.anysoftkeyboard/) & [plugins](https://search.f-droid.org/?q=AnySoftKeyboard), [Hacker's Keyboard](https://f-droid.org/packages/org.pocketworkstation.pckeyboard/)
 * Misc: [KeePassDX - FOSS Password Safe](https://f-droid.org/packages/com.kunzisoft.keepass.libre/)
 
 #### Too old to even be checked:
