@@ -343,6 +343,21 @@ was merged into the NDK, `--hash-style=gnu` will be used on Debian by default. T
 the hash style, `--hash-style=gnu` can be passed to the linker.
 
 
+#### NDK clang version string in .comment section
+
+Since NDK r26, the Clang version string in the comment section is different when building on MacOS and Linux, which looks like
+
+```
+Android (12027248, +pgo, -bolt, +lto, +mlgo, based on r522817) clang version 18.0.1 (https://android.googlesource.com/toolchain/llvm-project d8003a456d14a3deb8054cdaa529ffbf02d9b262)
+```
+
+due to different optimizations enabled for different platforms. The whole .comment section can be removed with
+
+```
+objcopy --remove-section .comment <file>
+```
+
+
 #### _platform_ Revisions
 
 In 2014, the Android SDK tools
