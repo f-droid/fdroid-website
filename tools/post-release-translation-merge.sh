@@ -18,7 +18,7 @@ set -x
 
 ./tools/i18n.sh --all
 
-wlc commit
+wlc commit || true  # this is optional but can be helpful
 git remote update -p weblate upstream
 git -C "$basedir" checkout -- `git diff upstream/master weblate/master --name-only --diff-filter=M`
 
