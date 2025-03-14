@@ -220,6 +220,7 @@ def print_out_date_time_info_about_twif():
 def print_fdroid_core_news_section():
     """Prints out news contained in fdroid core news section"""
     print("#### F-Droid core")
+    print()
     sample_username = "An Entity"
     sample_link = "https://not.a.real.link.example.com/fake"
     sample_str = "I am responsible for a couple of things, please watch this space"
@@ -230,6 +231,7 @@ def print_fdroid_core_news_section():
 def print_community_news_section():
     """Prints out community news section"""
     print("#### Community News")
+    print()
     sample_username = "An Entity"
     sample_link = "https://not.a.real.link.example.com/fake"
     sample_str = "I am responsible for a couple of things, please watch this space"
@@ -280,7 +282,9 @@ def display_output(diff_tuple):
     if removed_apps:
         num_removed_apps = str(len(removed_apps))
         print("#### Removed Apps")
+        print()
         print(f"##### {num_removed_apps} apps were removed")
+        print()
         for app in sorted(removed_apps, key=lambda app: app.name.lower()):
             app_str = f"* {markdown_escape(app.name)}: {markdown_escape(app.summary)}"
             print(app_str)
@@ -289,7 +293,9 @@ def display_output(diff_tuple):
     if added_apps:
         num_added_apps = str(len(added_apps))
         print("#### Newly Added Apps")
+        print()
         print(f"##### {num_added_apps} apps were newly added")
+        print()
         for app in sorted(added_apps, key=lambda app: app.name.lower()):
             app_str = f"* **[{markdown_escape(app.name)}]({fdroid_app_str}{app.package_name})**: {markdown_escape(app.summary)}"
             print(app_str)
@@ -298,7 +304,9 @@ def display_output(diff_tuple):
     if downgraded_apps:
         num_downgraded_apps = str(len(downgraded_apps))
         print("#### Downgraded Apps")
+        print()
         print(f"##### {num_downgraded_apps} apps were downgraded")
+        print()
         for app in sorted(downgraded_apps, key=lambda app: app.name.lower()):
             app_str = f"* **[{markdown_escape(app.name)}]({fdroid_app_str}{app.package_name})** was downgraded from `{app.previous_version_name}` to `{app.current_version_name}`"
             print(app_str)
@@ -307,6 +315,7 @@ def display_output(diff_tuple):
     if upgraded_apps:
         num_upgraded_apps = str(len(upgraded_apps))
         print("#### Updated Apps")
+        print()
         print("<details markdown=1>")
         print(
             f"<summary><h5>{num_upgraded_apps} apps were updated</h5> (expand for the full list)</summary>"
