@@ -8,7 +8,7 @@ Nominations are now open for this year's appointments to the F-Droid Board of Di
 Up to four new directors will be selected to serve for two years.
 
 You may nominate yourself or someone else (with their permission).
-Please send nominations by email to <board-nominations@fdroid.net> (one email per nomination) and make sure that the nominee is copied in.
+Please send nominations by email to <board-nominations@f-droid.org> (one email per nomination) and make sure that the nominee is copied in.
 
 We will confirm receipt of each nomination.
 To ensure consideration, please send nominations no later than the 14th of April, Anywhere on Earth (AoE).
