@@ -23,7 +23,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
-"POT-Creation-Date: 2025-03-04 20:07+0100\n"
+"POT-Creation-Date: 2025-03-11 15:15+0100\n"
 "PO-Revision-Date: 2025-03-26 12:44+0000\n"
 "Last-Translator: VfBFan <drop0815@posteo.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/f-droid/website-docs/de/>\n"
@@ -2805,12 +2805,13 @@ msgstr "Eine grundlegende HTML-Formatierung kann verwendet wird."
 msgid "Newlines will be preserved."
 msgstr "Zeilenvorschübe bleiben erhalten."
 
-#. type: Plain text
+#. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
-#, no-wrap
-msgid ""
-"* Links to other packages on f-droid.org will show up as clickable on\n"
-"the website, other links will show up as plain text.\n"
+#, fuzzy
+#| msgid ""
+#| "* Links to other packages on f-droid.org will show up as clickable on\n"
+#| "the website, other links will show up as plain text.\n"
+msgid "Links to other packages on f-droid.org will show up as clickable on the website, other links will show up as plain text."
 msgstr ""
 "* Links zu weiteren Paketen auf f-droid.org werden auf der Webseite\n"
 "anklickbar dargestellt, andere Links als einfacher Text.\n"
@@ -10032,6 +10033,34 @@ msgstr "NDK-Hash-Stil"
 #: _docs/Reproducible_Builds.md
 msgid "LLVM passes different defaults to linkers on different platforms. After [this commit](https://github.com/llvm/llvm-project/commit/95dcaef00379e893dabc61cf598fe51c9d03414e#diff-061e3e32cfa3dd06717856cc16465106a3b72520eb9b0c2954513f194bd1696f)  was merged into the NDK, `--hash-style=gnu` will be used on Debian by default. To change the hash style, `--hash-style=gnu` can be passed to the linker."
 msgstr "LLVM übergibt verschiedene Standards an Linker auf verschiedenen Plattformen. Nachdem [dieser Commit](https://github.com/llvm/llvm-project/commit/95dcaef00379e893dabc61cf598fe51c9d03414e#diff-061e3e32cfa3dd06717856cc16465106a3b72520eb9b0c2954513f194bd1696f)  ins NDK integriert wurde, wird in Debian `--hash-style=gnu` als Standard verwendet. Um den Hash-Typ zu ändern, kann `--hash-style=gnu` an den Linker übergeben werden."
+
+#. type: Title ####
+#: _docs/Reproducible_Builds.md
+#, no-wrap
+msgid "NDK clang version string in .comment section"
+msgstr ""
+
+#. type: Plain text
+#: _docs/Reproducible_Builds.md
+msgid "Since NDK r26, the Clang version string in the comment section is different when building on MacOS and Linux, which looks like"
+msgstr ""
+
+#. type: Fenced code block
+#: _docs/Reproducible_Builds.md
+#, no-wrap
+msgid "Android (12027248, +pgo, -bolt, +lto, +mlgo, based on r522817) clang version 18.0.1 (https://android.googlesource.com/toolchain/llvm-project d8003a456d14a3deb8054cdaa529ffbf02d9b262)\n"
+msgstr ""
+
+#. type: Plain text
+#: _docs/Reproducible_Builds.md
+msgid "due to different optimizations enabled for different platforms. The whole .comment section can be removed with"
+msgstr ""
+
+#. type: Fenced code block
+#: _docs/Reproducible_Builds.md
+#, no-wrap
+msgid "objcopy --remove-section .comment <file>\n"
+msgstr ""
 
 #. type: Title ####
 #: _docs/Reproducible_Builds.md
