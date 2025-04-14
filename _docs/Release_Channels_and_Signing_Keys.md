@@ -24,6 +24,7 @@ This is a list of all signing keys used for F-Droid releases.
     -   Primary key fingerprint: `37D2 C987 89D8 3119 4839 4E3E 41E7 044E 1DBA 2E89`
     -   Subkey fingerprint: `802A 9799 0161 1234 6E1F EFF4 7A02 9E54 DD5D CE7A`
     -   APK signing key:
+    
         ```
         Owner: CN=Ciaran Gultnieks, OU=Unknown, O=Unknown, L=Wetherby, ST=Unknown, C=UK
         Issuer: CN=Ciaran Gultnieks, OU=Unknown, O=Unknown, L=Wetherby, ST=Unknown, C=UK
