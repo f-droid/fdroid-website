@@ -98,6 +98,15 @@ RewriteRule ^.*$ /repo/org.fdroid.fdroid_1021051.apk.asc%1 [last,type=applicatio
 RewriteCond %{REQUEST_URI} ^/F-?Droid\.apk$  [nocase]
 RewriteRule ^.*$ /repo/org.fdroid.fdroid_1021051.apk%1 [last,type=application/vnd.android.package-archive]
 
+##
+## APK PERMANENT URL
+##
+## Make apk still available in /repo after archived
+##
+
+RewriteCond %{REQUEST_URI} ^/repo/.*$
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^repo/(.+)$ /archive/$1 [L]
 
 ##
 ## SEARCH QUERIES
