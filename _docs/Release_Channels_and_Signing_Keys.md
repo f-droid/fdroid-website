@@ -8,43 +8,44 @@ This is a list of all signing keys used for F-Droid releases.
 
 ## F-Droid client app for Android
 
--   git repo: <https://gitlab.com/fdroid/fdroidclient>
-    -   git tags signed by "Hans-Christoph Steiner
+*   git repo: <https://gitlab.com/fdroid/fdroidclient>
+    *   git tags signed by "Hans-Christoph Steiner
         \<hans@guardianproject.info>" aka "Hans-Christoph Steiner
         \<hans@eds.org>" aka "Hans-Christoph Steiner
         \<hans@at.or.at>" with fingerprint: <br />
         `EE66 20C7 136B 0D2C 456C 0A4D E9E2 8DEA 00AA 5556`
-    -   or previously signed by "Daniel Martí \<mvdan@mvdan.cc>" aka
+    *   or previously signed by "Daniel Martí \<mvdan@mvdan.cc>" aka
         "Daniel Martí \<mvdan@fsfe.org>" with fingerprint: <br
         />`A9DA 13CD F7A1 4ACD D3DE E530 F4CA FFDB 4348
         041C`
--   official binary releases:
+*   official binary releases:
     <https://f-droid.org/packages/org.fdroid.fdroid>
-    -   GPG signing key: "F-Droid \<admin@f-droid.org>"
-    -   Primary key fingerprint: `37D2 C987 89D8 3119 4839 4E3E 41E7 044E 1DBA 2E89`
-    -   Subkey fingerprint: `802A 9799 0161 1234 6E1F EFF4 7A02 9E54 DD5D CE7A`
-    -   APK signing key:
-    
-        ```
-        Owner: CN=Ciaran Gultnieks, OU=Unknown, O=Unknown, L=Wetherby, ST=Unknown, C=UK
-        Issuer: CN=Ciaran Gultnieks, OU=Unknown, O=Unknown, L=Wetherby, ST=Unknown, C=UK
-        Serial number: 4c49cd00
-        Valid from: Fri Jul 23 13:10:24 EDT 2010 until: Tue Dec 08 12:10:24 EST 2037
-        Certificate fingerprints:
-
-          MD5:  17:C5:5C:62:80:56:E1:93:E9:56:44:E9:89:79:27:86
-          SHA1: 05:F2:E6:59:28:08:89:81:B3:17:FC:9A:6D:BF:E0:4B:0F:A1:3B:4E
-          SHA256: 43:23:8D:51:2C:1E:5E:B2:D6:56:9F:4A:3A:FB:F5:52:34:18:B8:2E:0A:3E:D1:55:27:70:AB:B9:A9:C9:CC:AB
-        ```
-    - APK signing certificate fingerprint:
-      ```
-      43238d512c1e5eb2d6569f4a3afbf5523418b82e0a3ed1552770abb9a9c9ccab
-      ```
-
-And here is the whole certificate:
+    *   GPG signing key: "F-Droid \<admin@f-droid.org>"
+    *   Primary key fingerprint: `37D2 C987 89D8 3119 4839 4E3E 41E7 044E 1DBA 2E89`
+    *   Subkey fingerprint: `802A 9799 0161 1234 6E1F EFF4 7A02 9E54 DD5D CE7A`
+    *   APK signing certificate fingerprint:
 
 ```
+43238d512c1e5eb2d6569f4a3afbf5523418b82e0a3ed1552770abb9a9c9ccab
+```
 
+*   APK signing key:
+
+```
+Owner: CN=Ciaran Gultnieks, OU=Unknown, O=Unknown, L=Wetherby, ST=Unknown, C=UK
+Issuer: CN=Ciaran Gultnieks, OU=Unknown, O=Unknown, L=Wetherby, ST=Unknown, C=UK
+Serial number: 4c49cd00
+Valid from: Fri Jul 23 13:10:24 EDT 2010 until: Tue Dec 08 12:10:24 EST 2037
+Certificate fingerprints:
+
+  MD5:  17:C5:5C:62:80:56:E1:93:E9:56:44:E9:89:79:27:86
+  SHA1: 05:F2:E6:59:28:08:89:81:B3:17:FC:9A:6D:BF:E0:4B:0F:A1:3B:4E
+  SHA256: 43:23:8D:51:2C:1E:5E:B2:D6:56:9F:4A:3A:FB:F5:52:34:18:B8:2E:0A:3E:D1:55:27:70:AB:B9:A9:C9:CC:AB
+```
+
+* The complete signer certificate:
+
+```
 -----BEGIN PUBLIC KEY-----
 MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAltB15HwBTngiyJ/Wf3ld
 IyA+KohD9Tuk5rG/Xy/Q4iWTgmfPyuf79P5ZY0avuvQHD9uR9m+83yNIo9kkMFAo
