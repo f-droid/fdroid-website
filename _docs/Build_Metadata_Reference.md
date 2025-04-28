@@ -778,6 +778,8 @@ Builds:
     least one valid flavour since 'yes' will build all of
     them separately.
 
+    The Fastlane metadata for this flavor can be put into `./src/<buildFlavor>/fastlane/metadata/<locale>/` instead of `./fastlane/metadata/<locale>/`.
+
 `maven: yes[@<dir>]`<a name="build_maven"></a>
 
 :   Build with Maven instead of Ant. An extra `@<dir>` tells F-Droid
