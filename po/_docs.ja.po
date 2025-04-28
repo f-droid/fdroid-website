@@ -15,7 +15,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2025-04-23 19:06+0200\n"
+"POT-Creation-Date: 2025-04-28 13:07+0200\n"
 "PO-Revision-Date: 2025-03-19 02:05+0000\n"
 "Last-Translator: \"Maru-ni, Umebachi\" <maruniumebachi@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Japanese <https://hosted.weblate.org/projects/f-droid/website-docs/ja/>\n"
@@ -162,7 +162,7 @@ msgstr ""
 #, no-wrap
 msgid ""
 "* Certain tags are explicitly prohibited, namely `applet`, `base`, `body`, `button`, `embed`, `form`, `head`, `html`,\n"
-"`iframe`, `img`, `input`, `link`, `object`, `picture`, `script`, `source`, `style`, `svg` and `video`.\n"
+"   `iframe`, `img`, `input`, `link`, `object`, `picture`, `script`, `source`, `style`, `svg` and `video`.\n"
 "* Note that a line break will automatically be converted to a `br` tag.\n"
 "* You may not make use of JavaScript.\n"
 msgstr ""
@@ -278,30 +278,41 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
-msgid "This structure must be placed at one of the following locations from **the repository's root**:"
+msgid "This structure should be placed at one of the following locations from **the repository's root**:"
 msgstr ""
 
 #. type: Bullet: '* '
 #: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
-msgid "`metadata/`"
+#, fuzzy
+#| msgid "`metadata/`"
+msgid "`metadata/<locale>/`"
 msgstr "`metadata/`"
 
 #. type: Bullet: '* '
 #: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
-msgid "`fastlane/metadata/android/`"
+#, fuzzy
+#| msgid "`fastlane/metadata/android/`"
+msgid "`fastlane/metadata/android/<locale>/`"
 msgstr "`fastlane/metadata/android/`"
 
 #. type: Plain text
 #: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
-msgid "Note that placing the structure anywhere else, like in the gradle module's root, **won't work**."
+msgid "Alternatively, if a Gradle build flavor is specified in the Build Metadata, the following location is also supported:"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
+msgid "`src/<buildFlavor>/fastlane/metadata/<locale>/`"
 msgstr ""
 
 #. type: Plain text
 #: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
-#, no-wrap
-msgid ""
-"**Build flavors** and multiple apps inside one repository are currently not properly supported.\n"
-"(Follow [this issue](https://gitlab.com/fdroid/fdroidserver/issues/829) tracking the implementation of this.)\n"
+msgid "(Some use cases of **build flavors** and multiple apps inside one repository are currently not properly supported. Follow [this issue](https://gitlab.com/fdroid/fdroidserver/issues/829) tracking the implementation of this.)"
+msgstr ""
+
+#. type: Plain text
+#: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
+msgid "Note that placing the structure anywhere else, like in the gradle module's root, **won't work**."
 msgstr ""
 
 #. type: Title ####
@@ -475,7 +486,7 @@ msgstr ""
 #, no-wrap
 msgid ""
 "* For data that is also contained in the APK file like the app's name, the previous two options both overwrite the\n"
-"data from the APK file.\n"
+"   data from the APK file.\n"
 msgstr ""
 
 #. type: Plain text
@@ -515,7 +526,7 @@ msgstr "各アプリに関して `https://f-droid.org/api/v1/packages` でアク
 msgid "Example request:"
 msgstr "リクエストの例："
 
-#. type: Fenced code block
+#. type: Fenced code block (http)
 #: _docs/All_our_APIs.md
 #, no-wrap
 msgid "GET https://f-droid.org/api/v1/packages/org.fdroid.fdroid HTTP/1.1\n"
@@ -526,7 +537,7 @@ msgstr "GET https://f-droid.org/api/v1/packages/org.fdroid.fdroid HTTP/1.1\n"
 msgid "Example response:"
 msgstr "レスポンスの例："
 
-#. type: Fenced code block
+#. type: Fenced code block (http)
 #: _docs/All_our_APIs.md
 #, no-wrap
 msgid ""
@@ -572,7 +583,9 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/All_our_APIs.md
-msgid "This API is already used by shields.io project to provide F-Droid badges, [like this](https://img.shields.io/f-droid/v/org.fdroid.fdroid)."
+#, fuzzy, no-wrap
+#| msgid "This API is already used by shields.io project to provide F-Droid badges, [like this](https://img.shields.io/f-droid/v/org.fdroid.fdroid)."
+msgid "This API is already used by <tt>shields.io</tt> project to provide F-Droid badges, [like this](https://img.shields.io/f-droid/v/org.fdroid.fdroid).\n"
 msgstr "このAPIは、 [このような形で](https://img.shields.io/f-droid/v/org.fdroid.fdroid)F-Droidのバッチを表示するためにshields.io プロジェクトによって既に利用されています。"
 
 #. type: Title ###
@@ -668,13 +681,40 @@ msgstr "<https://f-droid.org/archive/index-v1.json.asc>"
 
 #. type: Title ###
 #: _docs/All_our_APIs.md
+#, fuzzy, no-wrap
+#| msgid "The repo index"
+msgid "Signer index"
+msgstr "リポジトリのインデックス"
+
+#. type: Plain text
+#: _docs/All_our_APIs.md
+#, no-wrap
+msgid "There is a simple index file that lists the SHA-256 fingerprint of each [signer](https://source.android.com/docs/security/features/apksigning/v2#apk-signature-scheme-v2-block) used by <tt>f-droid.org</tt> to sign each package.  This is the source of truth for determining the official <tt>f-droid.org</tt> signer for any given APK.  In order to know whether a given APK signed by <tt>f-droid.org</tt>, check the signer index:\n"
+msgstr ""
+
+#. type: Plain text
+#: _docs/All_our_APIs.md
+#, fuzzy
+#| msgid "<https://f-droid.org/repo/index-v2.json>"
+msgid "<https://f-droid.org/repo/signer-index.json>"
+msgstr "<https://f-droid.org/repo/index-v2.json>"
+
+#. type: Plain text
+#: _docs/All_our_APIs.md
+msgid "It is also signed via the signatures on _entry.json_, or direct [JAR](https://f-droid.org/repo/signer-index.jar) and [GPG](https://f-droid.org/repo/signer-index.json.asc) signatures."
+msgstr ""
+
+#. type: Title ###
+#: _docs/All_our_APIs.md
 #, no-wrap
 msgid "App Search API"
 msgstr "アプリの検索API"
 
 #. type: Plain text
 #: _docs/All_our_APIs.md
-msgid "We've got a basic web-api for performing a full-text searches on the _f-droid.org_ repository."
+#, fuzzy
+#| msgid "We've got a basic web-api for performing a full-text searches on the _f-droid.org_ repository."
+msgid "We've got a basic web API for performing a full-text searches on the _f-droid.org_ repository."
 msgstr "以下では、 _f-droid.org_ リポジトリを対象に全文検索を実行するための基本的なウェブAPIも提供しています。"
 
 #. type: Bullet: '* '
@@ -779,6 +819,11 @@ msgstr "_f-droid.org_ ミラーの状態：<https://fdroid.gitlab.io/mirror-moni
 msgid "third-party repo status: <https://fdroid.gitlab.io/repo-monitor/report.json>"
 msgstr "サードパーティーのリポジトリの状態：<https://fdroid.gitlab.io/repo-monitor/report.json>"
 
+#. type: Plain text
+#: _docs/All_our_APIs.md
+msgid "The list of official mirrors is in each index file.  It is also available directly via a GitLab raw URL: <https://gitlab.com/fdroid/fdroiddata/-/raw/master/config/mirrors.yml>"
+msgstr ""
+
 #. type: Title ###
 #: _docs/All_our_APIs.md
 #, no-wrap
@@ -867,11 +912,22 @@ msgstr "[使用状況のデータ]({% post_url 2019-04-15-privacy-preserving-ana
 
 #. type: Plain text
 #: _docs/All_our_APIs.md
-#, no-wrap
-msgid ""
-"Though not really an API, the <ftp.fau.de> mirror does provide some metrics:\n"
-"https://ftp.fau.de/cgi-bin/show-ftp-stats.cgi\n"
+#, fuzzy
+#| msgid ""
+#| "Though not really an API, the <ftp.fau.de> mirror does provide some metrics:\n"
+#| "https://ftp.fau.de/cgi-bin/show-ftp-stats.cgi\n"
+msgid "Though not really an API, some of the mirrors do provide some metrics:"
 msgstr "厳密にはAPIではありませんが、 <ftp.fau.de> のミラーが https://ftp.fau.de/cgi-bin/show-ftp-stats.cgi でメトリクスを提供しています。\n"
+
+#. type: Bullet: '* '
+#: _docs/All_our_APIs.md
+msgid "<https://ftp.fau.de/cgi-bin/show-ftp-stats.cgi>"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/All_our_APIs.md
+msgid "<https://mirror.level66.services/>"
+msgstr ""
 
 #. type: Title ###
 #: _docs/All_our_APIs.md
@@ -3513,6 +3569,12 @@ msgid ""
 "    used. Note that for projects with flavours, you must specify at\n"
 "    least one valid flavour since 'yes' will build all of\n"
 "    them separately.\n"
+msgstr ""
+
+#. type: Plain text
+#: _docs/Build_Metadata_Reference.md
+#, no-wrap
+msgid "    The Fastlane metadata for this flavor can be put into `./src/<buildFlavor>/fastlane/metadata/<locale>/` instead of `./fastlane/metadata/<locale>/`.\n"
 msgstr ""
 
 #. type: Plain text

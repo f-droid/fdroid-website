@@ -29,7 +29,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
-"POT-Creation-Date: 2025-04-23 19:06+0200\n"
+"POT-Creation-Date: 2025-04-28 13:07+0200\n"
 "PO-Revision-Date: 2025-04-24 07:47+0000\n"
 "Last-Translator: 大王叫我来巡山 <hamburger2048@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Chinese (Simplified Han script) <https://hosted.weblate.org/projects/f-droid/website-docs/zh_Hans/>\n"
@@ -173,10 +173,15 @@ msgstr "目前允许带 `href` 的 `a`，但可能会在不通知的情况下被
 
 #. type: Plain text
 #: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
-#, no-wrap
+#, fuzzy, no-wrap
+#| msgid ""
+#| "* Certain tags are explicitly prohibited, namely `applet`, `base`, `body`, `button`, `embed`, `form`, `head`, `html`,\n"
+#| "`iframe`, `img`, `input`, `link`, `object`, `picture`, `script`, `source`, `style`, `svg` and `video`.\n"
+#| "* Note that a line break will automatically be converted to a `br` tag.\n"
+#| "* You may not make use of JavaScript.\n"
 msgid ""
 "* Certain tags are explicitly prohibited, namely `applet`, `base`, `body`, `button`, `embed`, `form`, `head`, `html`,\n"
-"`iframe`, `img`, `input`, `link`, `object`, `picture`, `script`, `source`, `style`, `svg` and `video`.\n"
+"   `iframe`, `img`, `input`, `link`, `object`, `picture`, `script`, `source`, `style`, `svg` and `video`.\n"
 "* Note that a line break will automatically be converted to a `br` tag.\n"
 "* You may not make use of JavaScript.\n"
 msgstr ""
@@ -320,33 +325,50 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
-msgid "This structure must be placed at one of the following locations from **the repository's root**:"
+#, fuzzy
+#| msgid "This structure must be placed at one of the following locations from **the repository's root**:"
+msgid "This structure should be placed at one of the following locations from **the repository's root**:"
 msgstr "这个结构必须放置在**代码库根目录**的以下位置之一："
 
 #. type: Bullet: '* '
 #: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
-msgid "`metadata/`"
+#, fuzzy
+#| msgid "`metadata/`"
+msgid "`metadata/<locale>/`"
 msgstr "`metadata/`"
 
 #. type: Bullet: '* '
 #: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
-msgid "`fastlane/metadata/android/`"
+#, fuzzy
+#| msgid "`fastlane/metadata/android/`"
+msgid "`fastlane/metadata/android/<locale>/`"
 msgstr "`fastlane/metadata/android/`"
+
+#. type: Plain text
+#: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
+msgid "Alternatively, if a Gradle build flavor is specified in the Build Metadata, the following location is also supported:"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
+msgid "`src/<buildFlavor>/fastlane/metadata/<locale>/`"
+msgstr ""
+
+#. type: Plain text
+#: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
+#, fuzzy
+#| msgid ""
+#| "**Build flavors** and multiple apps inside one repository are currently not properly supported.\n"
+#| "(Follow [this issue](https://gitlab.com/fdroid/fdroidserver/issues/829) tracking the implementation of this.)\n"
+msgid "(Some use cases of **build flavors** and multiple apps inside one repository are currently not properly supported. Follow [this issue](https://gitlab.com/fdroid/fdroidserver/issues/829) tracking the implementation of this.)"
+msgstr ""
+"目前还没有支持**构建 Flavor** 或者在一个存储库内构建多个应用。\n"
+"（关注[此议题](https://gitlab.com/fdroid/fdroidserver/issues/829)跟踪此功能的实现。）\n"
 
 #. type: Plain text
 #: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
 msgid "Note that placing the structure anywhere else, like in the gradle module's root, **won't work**."
 msgstr "注意，把这个结构放在其他地方，比如在 gradle 模块的根目录下**将不能正常工作**。"
-
-#. type: Plain text
-#: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
-#, no-wrap
-msgid ""
-"**Build flavors** and multiple apps inside one repository are currently not properly supported.\n"
-"(Follow [this issue](https://gitlab.com/fdroid/fdroidserver/issues/829) tracking the implementation of this.)\n"
-msgstr ""
-"目前还没有支持**构建 Flavor** 或者在一个存储库内构建多个应用。\n"
-"（关注[此议题](https://gitlab.com/fdroid/fdroidserver/issues/829)跟踪此功能的实现。）\n"
 
 #. type: Title ####
 #: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
@@ -569,10 +591,13 @@ msgstr "*fdroiddata* 文件覆盖应用源代码中的元数据。"
 
 #. type: Plain text
 #: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
-#, no-wrap
+#, fuzzy, no-wrap
+#| msgid ""
+#| "* For data that is also contained in the APK file like the app's name, the previous two options both overwrite the\n"
+#| "data from the APK file.\n"
 msgid ""
 "* For data that is also contained in the APK file like the app's name, the previous two options both overwrite the\n"
-"data from the APK file.\n"
+"   data from the APK file.\n"
 msgstr "* 应用名称等数据也包含在 APK 文件中，前两个选项均会覆盖此类数据。\n"
 
 #. type: Plain text
@@ -612,7 +637,7 @@ msgstr "通过 `https://f-droid.org/api/v1/packages`可访问一个每应用 API
 msgid "Example request:"
 msgstr "示例请求："
 
-#. type: Fenced code block
+#. type: Fenced code block (http)
 #: _docs/All_our_APIs.md
 #, no-wrap
 msgid "GET https://f-droid.org/api/v1/packages/org.fdroid.fdroid HTTP/1.1\n"
@@ -623,7 +648,7 @@ msgstr "GET https://f-droid.org/api/v1/packages/org.fdroid.fdroid HTTP/1.1\n"
 msgid "Example response:"
 msgstr "示例响应："
 
-#. type: Fenced code block
+#. type: Fenced code block (http)
 #: _docs/All_our_APIs.md
 #, no-wrap
 msgid ""
@@ -669,7 +694,9 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/All_our_APIs.md
-msgid "This API is already used by shields.io project to provide F-Droid badges, [like this](https://img.shields.io/f-droid/v/org.fdroid.fdroid)."
+#, fuzzy, no-wrap
+#| msgid "This API is already used by shields.io project to provide F-Droid badges, [like this](https://img.shields.io/f-droid/v/org.fdroid.fdroid)."
+msgid "This API is already used by <tt>shields.io</tt> project to provide F-Droid badges, [like this](https://img.shields.io/f-droid/v/org.fdroid.fdroid).\n"
 msgstr "shields.io 已经使用这个 API 来提供 F-Droid 徽章，[像这样](https://img.shields.io/f-droid/v/org.fdroid.fdroid)。"
 
 #. type: Title ###
@@ -765,13 +792,40 @@ msgstr "<https://f-droid.org/archive/index-v1.json.asc>"
 
 #. type: Title ###
 #: _docs/All_our_APIs.md
+#, fuzzy, no-wrap
+#| msgid "The repo index"
+msgid "Signer index"
+msgstr "存储库索引"
+
+#. type: Plain text
+#: _docs/All_our_APIs.md
+#, no-wrap
+msgid "There is a simple index file that lists the SHA-256 fingerprint of each [signer](https://source.android.com/docs/security/features/apksigning/v2#apk-signature-scheme-v2-block) used by <tt>f-droid.org</tt> to sign each package.  This is the source of truth for determining the official <tt>f-droid.org</tt> signer for any given APK.  In order to know whether a given APK signed by <tt>f-droid.org</tt>, check the signer index:\n"
+msgstr ""
+
+#. type: Plain text
+#: _docs/All_our_APIs.md
+#, fuzzy
+#| msgid "<https://f-droid.org/repo/index-v2.json>"
+msgid "<https://f-droid.org/repo/signer-index.json>"
+msgstr "<https://f-droid.org/repo/index-v2.json>"
+
+#. type: Plain text
+#: _docs/All_our_APIs.md
+msgid "It is also signed via the signatures on _entry.json_, or direct [JAR](https://f-droid.org/repo/signer-index.jar) and [GPG](https://f-droid.org/repo/signer-index.json.asc) signatures."
+msgstr ""
+
+#. type: Title ###
+#: _docs/All_our_APIs.md
 #, no-wrap
 msgid "App Search API"
 msgstr "应用搜索 API"
 
 #. type: Plain text
 #: _docs/All_our_APIs.md
-msgid "We've got a basic web-api for performing a full-text searches on the _f-droid.org_ repository."
+#, fuzzy
+#| msgid "We've got a basic web-api for performing a full-text searches on the _f-droid.org_ repository."
+msgid "We've got a basic web API for performing a full-text searches on the _f-droid.org_ repository."
 msgstr "我们有了一个基础的 web-api 用来执行对 _f-droid_ 存储库的全文搜索。"
 
 #. type: Bullet: '* '
@@ -876,6 +930,11 @@ msgstr "_f-droid.org_ 镜像状态：<https://fdroid.gitlab.io/mirror-monitor/re
 msgid "third-party repo status: <https://fdroid.gitlab.io/repo-monitor/report.json>"
 msgstr "第三方存储库状态：<https://fdroid.gitlab.io/repo-monitor/report.json>"
 
+#. type: Plain text
+#: _docs/All_our_APIs.md
+msgid "The list of official mirrors is in each index file.  It is also available directly via a GitLab raw URL: <https://gitlab.com/fdroid/fdroiddata/-/raw/master/config/mirrors.yml>"
+msgstr ""
+
 #. type: Title ###
 #: _docs/All_our_APIs.md
 #, no-wrap
@@ -964,13 +1023,24 @@ msgstr "[使用数据]({% post_url 2019-04-15-privacy-preserving-analytics %})�
 
 #. type: Plain text
 #: _docs/All_our_APIs.md
-#, no-wrap
-msgid ""
-"Though not really an API, the <ftp.fau.de> mirror does provide some metrics:\n"
-"https://ftp.fau.de/cgi-bin/show-ftp-stats.cgi\n"
+#, fuzzy
+#| msgid ""
+#| "Though not really an API, the <ftp.fau.de> mirror does provide some metrics:\n"
+#| "https://ftp.fau.de/cgi-bin/show-ftp-stats.cgi\n"
+msgid "Though not really an API, some of the mirrors do provide some metrics:"
 msgstr ""
 "尽管并非真正的 API，<ftp.fau.de> 镜像提供一些统计数据：\n"
 "https://ftp.fau.de/cgi-bin/show-ftp-stats.cgi\n"
+
+#. type: Bullet: '* '
+#: _docs/All_our_APIs.md
+msgid "<https://ftp.fau.de/cgi-bin/show-ftp-stats.cgi>"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/All_our_APIs.md
+msgid "<https://mirror.level66.services/>"
+msgstr ""
 
 #. type: Title ###
 #: _docs/All_our_APIs.md
@@ -3746,6 +3816,12 @@ msgstr ""
 "    使用。请注意，对于有 flavours 的项目，你必须指定至少\n"
 "    一种有效的 flavour， 因为 'yes' 会分别\n"
 "    构建所有的 flavor。\n"
+
+#. type: Plain text
+#: _docs/Build_Metadata_Reference.md
+#, no-wrap
+msgid "    The Fastlane metadata for this flavor can be put into `./src/<buildFlavor>/fastlane/metadata/<locale>/` instead of `./fastlane/metadata/<locale>/`.\n"
+msgstr ""
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md

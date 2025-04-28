@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2025-04-23 19:06+0200\n"
+"POT-Creation-Date: 2025-04-28 13:07+0200\n"
 "PO-Revision-Date: 2021-05-04 09:31+0000\n"
 "Last-Translator: bruh <quangtrung02hn16@gmail.com>\n"
 "Language-Team: Vietnamese <https://hosted.weblate.org/projects/f-droid/website-docs/vi/>\n"
@@ -161,7 +161,7 @@ msgstr ""
 #| "* You may not make use of JavaScript.\n"
 msgid ""
 "* Certain tags are explicitly prohibited, namely `applet`, `base`, `body`, `button`, `embed`, `form`, `head`, `html`,\n"
-"`iframe`, `img`, `input`, `link`, `object`, `picture`, `script`, `source`, `style`, `svg` and `video`.\n"
+"   `iframe`, `img`, `input`, `link`, `object`, `picture`, `script`, `source`, `style`, `svg` and `video`.\n"
 "* Note that a line break will automatically be converted to a `br` tag.\n"
 "* You may not make use of JavaScript.\n"
 msgstr ""
@@ -334,33 +334,50 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
-msgid "This structure must be placed at one of the following locations from **the repository's root**:"
+#, fuzzy
+#| msgid "This structure must be placed at one of the following locations from **the repository's root**:"
+msgid "This structure should be placed at one of the following locations from **the repository's root**:"
 msgstr "Cấu trúc này phải được đặt ở một trong những vị trí sau đây từ **gốc của kho**:"
 
 #. type: Bullet: '* '
 #: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
-msgid "`metadata/`"
+#, fuzzy
+#| msgid "`metadata/`"
+msgid "`metadata/<locale>/`"
 msgstr "`metadata/`"
 
 #. type: Bullet: '* '
 #: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
-msgid "`fastlane/metadata/android/`"
+#, fuzzy
+#| msgid "`fastlane/metadata/android/`"
+msgid "`fastlane/metadata/android/<locale>/`"
 msgstr "`fastlane/metadata/android/`"
+
+#. type: Plain text
+#: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
+msgid "Alternatively, if a Gradle build flavor is specified in the Build Metadata, the following location is also supported:"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
+msgid "`src/<buildFlavor>/fastlane/metadata/<locale>/`"
+msgstr ""
+
+#. type: Plain text
+#: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
+#, fuzzy
+#| msgid ""
+#| "**Build flavors** and multiple apps inside one repository are currently not properly supported.\n"
+#| "(Follow [this issue](https://gitlab.com/fdroid/fdroidserver/issues/829) tracking the implementation of this.)\n"
+msgid "(Some use cases of **build flavors** and multiple apps inside one repository are currently not properly supported. Follow [this issue](https://gitlab.com/fdroid/fdroidserver/issues/829) tracking the implementation of this.)"
+msgstr ""
+"**Các biến thể xây dựng** và nhiều ứng dụng trong một kho hiện tại không được hỗ trợ đúng.\n"
+"(Hãy theo dõi [vấn đề này](https://gitlab.com/fdroid/fdroidserver/issues/829), nó theo dõi việc triển khai bổ sung điều này.)\n"
 
 #. type: Plain text
 #: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
 msgid "Note that placing the structure anywhere else, like in the gradle module's root, **won't work**."
 msgstr "Chú ý rằng việc đặt cấu trúc này ở bất kỳ chỗ nào khác, như là ở gốc của mô-đun gradle, **sẽ không được**."
-
-#. type: Plain text
-#: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
-#, no-wrap
-msgid ""
-"**Build flavors** and multiple apps inside one repository are currently not properly supported.\n"
-"(Follow [this issue](https://gitlab.com/fdroid/fdroidserver/issues/829) tracking the implementation of this.)\n"
-msgstr ""
-"**Các biến thể xây dựng** và nhiều ứng dụng trong một kho hiện tại không được hỗ trợ đúng.\n"
-"(Hãy theo dõi [vấn đề này](https://gitlab.com/fdroid/fdroidserver/issues/829), nó theo dõi việc triển khai bổ sung điều này.)\n"
 
 #. type: Title ####
 #: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
@@ -617,10 +634,13 @@ msgstr "Các tệp *fdroiddata* ghi đè lên dữ liệu meta từ mã nguồn 
 
 #. type: Plain text
 #: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
-#, no-wrap
+#, fuzzy, no-wrap
+#| msgid ""
+#| "* For data that is also contained in the APK file like the app's name, the previous two options both overwrite the\n"
+#| "data from the APK file.\n"
 msgid ""
 "* For data that is also contained in the APK file like the app's name, the previous two options both overwrite the\n"
-"data from the APK file.\n"
+"   data from the APK file.\n"
 msgstr ""
 "* Đối với dữ liệu cũng được chứa trong tệp APK như là tên ứng dụng, cả hai tuỳ chọn trước đều ghi đè lên\n"
 "dữ liệu từ tệp APK.\n"
@@ -664,7 +684,7 @@ msgstr ""
 msgid "Example request:"
 msgstr ""
 
-#. type: Fenced code block
+#. type: Fenced code block (http)
 #: _docs/All_our_APIs.md
 #, no-wrap
 msgid "GET https://f-droid.org/api/v1/packages/org.fdroid.fdroid HTTP/1.1\n"
@@ -675,7 +695,7 @@ msgstr ""
 msgid "Example response:"
 msgstr ""
 
-#. type: Fenced code block
+#. type: Fenced code block (http)
 #: _docs/All_our_APIs.md
 #, no-wrap
 msgid ""
@@ -705,7 +725,8 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/All_our_APIs.md
-msgid "This API is already used by shields.io project to provide F-Droid badges, [like this](https://img.shields.io/f-droid/v/org.fdroid.fdroid)."
+#, no-wrap
+msgid "This API is already used by <tt>shields.io</tt> project to provide F-Droid badges, [like this](https://img.shields.io/f-droid/v/org.fdroid.fdroid).\n"
 msgstr ""
 
 #. type: Title ###
@@ -827,13 +848,38 @@ msgstr "<https://f-droid.org/archive/index-v1.jar>"
 
 #. type: Title ###
 #: _docs/All_our_APIs.md
+#, fuzzy, no-wrap
+#| msgid "The repo index"
+msgid "Signer index"
+msgstr "Mục lục kho"
+
+#. type: Plain text
+#: _docs/All_our_APIs.md
+#, no-wrap
+msgid "There is a simple index file that lists the SHA-256 fingerprint of each [signer](https://source.android.com/docs/security/features/apksigning/v2#apk-signature-scheme-v2-block) used by <tt>f-droid.org</tt> to sign each package.  This is the source of truth for determining the official <tt>f-droid.org</tt> signer for any given APK.  In order to know whether a given APK signed by <tt>f-droid.org</tt>, check the signer index:\n"
+msgstr ""
+
+#. type: Plain text
+#: _docs/All_our_APIs.md
+#, fuzzy
+#| msgid "<https://f-droid.org/repo/index-v1.jar>"
+msgid "<https://f-droid.org/repo/signer-index.json>"
+msgstr "<https://f-droid.org/repo/index-v1.jar>"
+
+#. type: Plain text
+#: _docs/All_our_APIs.md
+msgid "It is also signed via the signatures on _entry.json_, or direct [JAR](https://f-droid.org/repo/signer-index.jar) and [GPG](https://f-droid.org/repo/signer-index.json.asc) signatures."
+msgstr ""
+
+#. type: Title ###
+#: _docs/All_our_APIs.md
 #, no-wrap
 msgid "App Search API"
 msgstr ""
 
 #. type: Plain text
 #: _docs/All_our_APIs.md
-msgid "We've got a basic web-api for performing a full-text searches on the _f-droid.org_ repository."
+msgid "We've got a basic web API for performing a full-text searches on the _f-droid.org_ repository."
 msgstr ""
 
 #. type: Bullet: '* '
@@ -924,6 +970,11 @@ msgstr "trạng thái máy chủ dự phòng của _f-droid.org_: <https://fdroi
 msgid "third-party repo status: <https://fdroid.gitlab.io/repo-monitor/report.json>"
 msgstr "trạng thái kho của bên thứ ba: <https://fdroid.gitlab.io/repo-monitor/report.json>"
 
+#. type: Plain text
+#: _docs/All_our_APIs.md
+msgid "The list of official mirrors is in each index file.  It is also available directly via a GitLab raw URL: <https://gitlab.com/fdroid/fdroiddata/-/raw/master/config/mirrors.yml>"
+msgstr ""
+
 #. type: Title ###
 #: _docs/All_our_APIs.md
 #, no-wrap
@@ -1009,10 +1060,17 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/All_our_APIs.md
-#, no-wrap
-msgid ""
-"Though not really an API, the <ftp.fau.de> mirror does provide some metrics:\n"
-"https://ftp.fau.de/cgi-bin/show-ftp-stats.cgi\n"
+msgid "Though not really an API, some of the mirrors do provide some metrics:"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/All_our_APIs.md
+msgid "<https://ftp.fau.de/cgi-bin/show-ftp-stats.cgi>"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/All_our_APIs.md
+msgid "<https://mirror.level66.services/>"
 msgstr ""
 
 #. type: Title ###
@@ -3655,6 +3713,12 @@ msgid ""
 "    used. Note that for projects with flavours, you must specify at\n"
 "    least one valid flavour since 'yes' will build all of\n"
 "    them separately.\n"
+msgstr ""
+
+#. type: Plain text
+#: _docs/Build_Metadata_Reference.md
+#, no-wrap
+msgid "    The Fastlane metadata for this flavor can be put into `./src/<buildFlavor>/fastlane/metadata/<locale>/` instead of `./fastlane/metadata/<locale>/`.\n"
 msgstr ""
 
 #. type: Plain text
