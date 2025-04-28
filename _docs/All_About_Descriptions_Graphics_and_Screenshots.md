@@ -44,7 +44,7 @@ The detailed app description may use HTML tags. Note that not all tags are suppo
 * These simple layout tags are [supported](https://gitlab.com/fdroid/jekyll-fdroid/-/blob/master/lib/fdroid/Package.rb#L21): `b`, `big`, `blockquote`, `br`, `cite`, `em`, `i`, `li`, `ol`, `small`, `strike`, `strong`, `sub`, `sup`, `tt`, `u`, `ul`.
 * `a` with `href` is currently allowed, but might be removed without notice.
 * Certain tags are explicitly prohibited, namely `applet`, `base`, `body`, `button`, `embed`, `form`, `head`, `html`,
-`iframe`, `img`, `input`, `link`, `object`, `picture`, `script`, `source`, `style`, `svg` and `video`.
+   `iframe`, `img`, `input`, `link`, `object`, `picture`, `script`, `source`, `style`, `svg` and `video`.
 * Note that a line break will automatically be converted to a `br` tag.
 * You may not make use of JavaScript.
 
@@ -116,15 +116,18 @@ needs to be place in the correct position as outlined below.
         └── 100100.txt
 ```
 
-This structure must be placed at one of the following locations from **the repository's root**:
+This structure should be placed at one of the following locations from **the repository's root**:
 
-* `metadata/`
-* `fastlane/metadata/android/`
+* `metadata/<locale>/`
+* `fastlane/metadata/android/<locale>/`
+
+Alternatively, if a Gradle build flavor is specified in the Build Metadata, the following location is also supported:
+
+* `src/<buildFlavor>/fastlane/metadata/<locale>/`
+
+(Some use cases of **build flavors** and multiple apps inside one repository are currently not properly supported. Follow [this issue](https://gitlab.com/fdroid/fdroidserver/issues/829) tracking the implementation of this.)
 
 Note that placing the structure anywhere else, like in the gradle module's root, **won't work**.
-
-**Build flavors** and multiple apps inside one repository are currently not properly supported.
-(Follow [this issue](https://gitlab.com/fdroid/fdroidserver/issues/829) tracking the implementation of this.)
 
 #### Triple-T structure
 
@@ -226,7 +229,7 @@ The following general precedence rules are applied when multiple of the above op
 * The metadata file (i. e. `<fdroiddata>/metadata/<packageId>.yml`) overwrites *fdroiddata* files, even localized ones.
 * The *fdroiddata* files overwrite metadata from the app source.
 * For data that is also contained in the APK file like the app's name, the previous two options both overwrite the
-data from the APK file.
+   data from the APK file.
 
 However, the following more specific rule also applies:
 
