@@ -18,15 +18,17 @@ versions. Archived applications and packages are not available in this API.
 
 Example request:
 
-```
+```http
 GET https://f-droid.org/api/v1/packages/org.fdroid.fdroid HTTP/1.1
 ```
 
 Example response:
-```
+
+```http
 HTTP/1.1 200 OK
 Content-Type: application/json; charset=utf-8
 ```
+
 ```json
 {
   "packageName": "org.fdroid.fdroid",
@@ -44,7 +46,7 @@ Content-Type: application/json; charset=utf-8
 }
 ```
 
-This API is already used by shields.io project to provide F-Droid badges, [like this](https://img.shields.io/f-droid/v/org.fdroid.fdroid).
+This API is already used by <tt>shields.io</tt> project to provide F-Droid badges, [like this](https://img.shields.io/f-droid/v/org.fdroid.fdroid).
 
 
 ### The repo index
@@ -81,16 +83,24 @@ There are also GPG signatures for verifying the JSON files:
 * <https://f-droid.org/archive/index-v2.json.asc>
 * <https://f-droid.org/archive/index-v1.json.asc>
 
+### Signer index
 
-###  App Search API
+There is a simple index file that lists the SHA-256 fingerprint of each [signer](https://source.android.com/docs/security/features/apksigning/v2#apk-signature-scheme-v2-block) used by <tt>f-droid.org</tt> to sign each package.  This is the source of truth for determining the official <tt>f-droid.org</tt> signer for any given APK.  In order to know whether a given APK signed by <tt>f-droid.org</tt>, check the signer index:
 
-We've got a basic web-api for performing a full-text searches on the
+<https://f-droid.org/repo/signer-index.json>
+
+It is also signed via the signatures on _entry.json_, or direct [JAR](https://f-droid.org/repo/signer-index.jar) and [GPG](https://f-droid.org/repo/signer-index.json.asc) signatures.
+
+
+### App Search API
+
+We've got a basic web API for performing a full-text searches on the
 _f-droid.org_ repository.
 
 * <https://search.f-droid.org/api/search_apps?q=f-droid>
 
 
-###  App build metadata
+### App build metadata
 
 Every app in _f-droid.org_ has a corresponding
 [build metadata file]({{ site.baseurl }}/docs/Build_Metadata_Reference) in
@@ -135,6 +145,8 @@ checks where run:
 
 * _f-droid.org_ mirror status: <https://fdroid.gitlab.io/mirror-monitor/report.json>
 * third-party repo status: <https://fdroid.gitlab.io/repo-monitor/report.json>
+
+The list of official mirrors is in each index file.  It is also available directly via a GitLab raw URL: <https://gitlab.com/fdroid/fdroiddata/-/raw/master/config/mirrors.yml>
 
 
 ### Reproducible builds
@@ -193,8 +205,10 @@ published with one JSON file per-week, with a JSON index file per website.  For
 example, here is a week of search metrics:
 <https://fdroid.gitlab.io/metrics/search.f-droid.org/2021-01-18.json>
 
-Though not really an API, the <ftp.fau.de> mirror does provide some metrics:
-https://ftp.fau.de/cgi-bin/show-ftp-stats.cgi
+Though not really an API, some of the mirrors do provide some metrics:
+
+* <https://ftp.fau.de/cgi-bin/show-ftp-stats.cgi>
+* <https://mirror.level66.services/>
 
 
 ### Git stats
