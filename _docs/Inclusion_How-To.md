@@ -11,7 +11,7 @@ F-Droid repository. It includes the technical details that a submitter should be
 
 To propose inclusion of a new application to the main F-Droid repository,
 one could post the applications relevant information to the Submission
-Queue. The more advanced alternative is writing a complete metadata file
+Queue. The more advanced and recommended alternative is writing a complete metadata file
 yourself, test, and propose inclusion (merge request) directly into
 the fdroiddata Git repository; speeding up the process. Both ways will be
 described below in detail.
@@ -22,11 +22,35 @@ Policy](../Inclusion_Policy) and [Repository Style
 Guide](../Repository_Style_Guide) for the policy aspect of this
 section.
 
+### Prepare and compliance check
+
+Before proposing inclusion of an application, the compliance with the [Inclusion
+Policy](../Inclusion_Policy) and [Repository Style
+Guide](../Repository_Style_Guide) should be checked carefully. Here is a short checklist.
+
+1. The app should have a public source code repository and a FOSS license file. Please
+  confirm that the repo has the real up-to-date source code in it instead of
+  some dummy files as placeholder.
+2. The app should only have FOSS dependencies. Firebase and GMS are some notable examples
+  of non-FOSS libs that are not accepted. If the app can work (in some capacity) without these,
+  please create a flavor/version without them.
+  The build tools should also be FOSS. If a proprietary IDE is required then it can't be
+  included. F-Droid builds from command line tools anyway, build instructions help contributors.
+3. The author of the app has been notified (and does not oppose the inclusion). If you
+  are not the author, please open an issue in the repo of the app, asking the author for
+  the permission.
+4. [The metadata files for descriptions](../All_About_Descriptions_Graphics_and_Screenshots)
+  are added to the repo. This is a simple structure with some text files and pictures and
+  should always be added before inclusion. While the folder structure follows Fastlane/Triple-T,
+  the actual tooling is not needed.
+
+With all these requirements satisfied, this app should be ready for inclusion.
+
 ### Proposal by Submission Queue
 
-This is the simplest way to get the application included. But due to an
-amount of reviewer labor required for each application, this is the
-slowest method.
+This is the simplest way to get the application included. Please note that this only
+makes an app appear on our radar as a candidate for inclusion. Depending on the interests of the contributors,
+this may take a long time until someone picks it up.
 
 Do this by creating a new ticket at the [F-Droid Submission Queue on
 GitLab](https://gitlab.com/fdroid/rfp/issues), add all details required
@@ -42,25 +66,27 @@ repository ([fdroiddata GitLab
 repository](https://gitlab.com/fdroid/fdroiddata/)). This will lead to
 much quicker inclusion as the already-available metadata file will reduce
 the burden on reviewers when inspecting your proposed metadata; the submitter
-assumes responsibility of providing a correct metadata file.
+assumes responsibility of providing a correct metadata file. You can prepare
+a [Build Metadata](../Build_Metadata_Reference) with `fdroid import` and [templates](https://gitlab.com/fdroid/fdroiddata/-/tree/master/templates).
+Other metadata in _fdroiddata_ are also good reference.
 
 When proposing inclusion this way, it is assumed that:
 
--   You have a good understanding of what [Free
-    Software](https://www.gnu.org/philosophy/free-sw.html) means, and
-    what F-Droid is for.
--   You already read and understand the [Inclusion
-    Policy](../Inclusion_Policy).
--   You already read and understand the [Repository Style
-    Guide](../Repository_Style_Guide).
--   You already read and understand
-    [the relevant parts of the F-Droid documentation](../Build_Metadata_Reference).
--   You know how to use [Git VCS](https://git-scm.com/), and know how
-    a merge request (a.k.a. "pull request" in
-    GitHub terminology) works in general.
--   You have an account on [GitLab](https://gitlab.com/) _(NOTE: F-Droid CI runners are under Gitlab's FOSS program, so there's no need for you to pay for any CI time. If Gitlab starts asking for phone numbers or credit cards don't submit anything, just leave a note in the MR so we know we need to trigger the CI.)_
--   You have a local instance of the F-Droid server software, and you know
-    what you are doing.
+- You have a good understanding of what [Free
+  Software](https://www.gnu.org/philosophy/free-sw.html) means, and
+  what F-Droid is for.
+- You already read and understand the [Inclusion
+  Policy](../Inclusion_Policy).
+- You already read and understand the [Repository Style
+  Guide](../Repository_Style_Guide).
+- You already read and understand
+  [the relevant parts of the F-Droid documentation](../Build_Metadata_Reference).
+- You know how to use [Git VCS](https://git-scm.com/), and know how
+  a merge request (a.k.a. "pull request" in
+  GitHub terminology) works in general.
+- You have an account on [GitLab](https://gitlab.com/) _(NOTE: F-Droid CI runners are under Gitlab's FOSS program, so there's no need for you to pay for any CI time. If Gitlab starts asking for phone numbers or credit cards don't submit anything, just leave a note in the MR so we know we need to trigger the CI.)_
+- You have a local instance of the F-Droid server software, and you know
+  what you are doing.
 
 Recommended steps to propose inclusion this way are written on the [F-Droid
 application metadata repository](https://gitlab.com/fdroid/fdroiddata/blob/master/CONTRIBUTING.md).
@@ -78,42 +104,42 @@ distributed from the F-Droid main repository are Free Software.
 
 This is a nonexhaustive list of what a reviewer would do:
 
--   They will go to your source code repository, and look for copyright
-    notices in license files, including README, to check that the
-    proposed application is released under a [recognized Free
-    Software and/or OSI license(s)](https://spdx.org/licenses/).
--   They will look at your build script to see which build system you
-    use, and whether F-Droid build server can handle it (Ant and Gradle
-    are the most common and easiest ones).
--   They will try to download a copy of your source code.
--   They will look in all source code files to verify that their
-    licenses are consistent with corresponding license/README files.
--   They will check if your application uses any pre-compiled libraries or
-    binary blobs.
--   They will look at your non-source code files to identify [Non-Free
-    resources](https://monitor.f-droid.org/anti-feature/NonFreeAssets) used in
-    your application.
--   They will skim through the source code to see if your application
-    uses Non-Free dependencies, shows advertisements, tracks users,
-    promotes or depends on Non-Free or non-changeable services/applications, or does
-    anything that is harmful or otherwise undesirable for users.
--   They will list a summary of any [_AntiFeatures_](https://monitor.f-droid.org/anti-features) in
-    your application.
--   They will try patching your application to remove usage of
-    third-party proprietary software (if there is any).
--   They will try to determine a suitable update process for your
-    application (e.g. by looking at how your releases relate to VCS tags
-    and/or version information
-    in _AndroidManifest.xml_).
--   They will try writing a suitable metadata file for your application,
-    and add it to local F-Droid build server instance.
-    (`fdroid rewritemeta`, `fdroid
-    lint` are used to ensure that metadata is well-formed)
--   They will try to build your application in an isolated environment to
-    see if the process succeeds and yield a functional APK.
--   If all went smoothly, they will add a new metadata file to their
-    local fdroiddata git repository and synchronizes the change
-    to GitLab.
+- They will go to your source code repository, and look for copyright
+  notices in license files, including README, to check that the
+  proposed application is released under a [recognized Free
+  Software and/or OSI license(s)](https://spdx.org/licenses/).
+- They will look at your build script to see which build system you
+  use, and whether F-Droid build server can handle it (Ant and Gradle
+  are the most common and easiest ones).
+- They will try to download a copy of your source code.
+- They will look in all source code files to verify that their
+  licenses are consistent with corresponding license/README files.
+- They will check if your application uses any pre-compiled libraries or
+  binary blobs.
+- They will look at your non-source code files to identify [Non-Free
+  resources](https://monitor.f-droid.org/anti-feature/NonFreeAssets) used in
+  your application.
+- They will skim through the source code to see if your application
+  uses Non-Free dependencies, shows advertisements, tracks users,
+  promotes or depends on Non-Free or non-changeable services/applications, or does
+  anything that is harmful or otherwise undesirable for users.
+- They will list a summary of any [_AntiFeatures_](https://monitor.f-droid.org/anti-features) in
+  your application.
+- They will try patching your application to remove usage of
+  third-party proprietary software (if there is any).
+- They will try to determine a suitable update process for your
+  application (e.g. by looking at how your releases relate to VCS tags
+  and/or version information
+  in _AndroidManifest.xml_).
+- They will try writing a suitable metadata file for your application,
+  and add it to local F-Droid build server instance.
+  (`fdroid rewritemeta`, `fdroid
+  lint` are used to ensure that metadata is well-formed)
+- They will try to build your application in an isolated environment to
+  see if the process succeeds and yield a functional APK.
+- If all went smoothly, they will add a new metadata file to their
+  local fdroiddata git repository and synchronizes the change
+  to GitLab.
 
 In the case that the application failed some steps in the review, feedback
 will be given in the original submission queue thread where the proposal
@@ -176,10 +202,10 @@ decision.
 
 For more information, see:
 
-* [Towards a reproducible F-Droid](https://f-droid.org/2023/01/15/towards-a-reproducible-fdroid.html)
-* [F-Droid's Reproducible Builds documentation](../Reproducible_Builds)
-* [Reproducible Builds project](https://reproducible-builds.org/)
-* [HOWTO: diff & fix APKs for Reproducible Builds](https://gitlab.com/fdroid/wiki/-/wikis/HOWTO:-diff-&-fix-APKs-for-Reproducible-Builds)
+- [Towards a reproducible F-Droid](https://f-droid.org/2023/01/15/towards-a-reproducible-fdroid.html)
+- [F-Droid's Reproducible Builds documentation](../Reproducible_Builds)
+- [Reproducible Builds project](https://reproducible-builds.org/)
+- [HOWTO: diff & fix APKs for Reproducible Builds](https://gitlab.com/fdroid/wiki/-/wikis/HOWTO:-diff-&-fix-APKs-for-Reproducible-Builds)
 
 ## Build Process
 
@@ -243,11 +269,11 @@ list](https://f-droid.org/).
 
 ## External Links
 
--   [F-Droid application submission queue on
-    GitLab](https://gitlab.com/fdroid/rfp/issues) (for new submissions)
--   [F-Droid application submission queue on
-    forum](https://f-droid.org/forums/forum/submission-queue/) (for
-    following-up old submissions)
--   [fdroiddata GitLab repository](https://gitlab.com/fdroid/fdroiddata/)
--   [fdroiddata revision
-    history](https://gitlab.com/fdroid/fdroiddata/commits/master)
+- [F-Droid application submission queue on
+  GitLab](https://gitlab.com/fdroid/rfp/issues) (for new submissions)
+- [F-Droid application submission queue on
+  forum](https://f-droid.org/forums/forum/submission-queue/) (for
+  following-up old submissions)
+- [fdroiddata GitLab repository](https://gitlab.com/fdroid/fdroiddata/)
+- [fdroiddata revision
+  history](https://gitlab.com/fdroid/fdroiddata/commits/master)
