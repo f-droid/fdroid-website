@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 
 import json
-import os
 import sys
 import textwrap
 from datetime import UTC, date, datetime, timedelta
@@ -184,12 +183,10 @@ def generate_diffs_of_new_and_previous_indexes(old_index, new_index):
             list_of_upgraded_apps,
         )
     else:
-        print_blog_prefix()
-        print("### No diffs found. The current index matches the previous index")
-        print_blog_suffix()
-        todays_date = str(datetime.date(datetime.now()))
-        file_name = "index-v2-" + todays_date + ".json"
-        os.remove(file_name)
+        print(
+            "No diffs found. The current index matches the previous index",
+            file=sys.stderr,
+        )
         sys.exit()
 
 
@@ -389,6 +386,12 @@ def get_index():
 
     old_url = f"{LOG_RAW_URL}{old_id}/repo/index-v2.json"
     new_url = f"{LOG_RAW_URL}{log_commits[0]['id']}/repo/index-v2.json"
+    if old_url == new_url:
+        print(
+            "No diffs found. The current index matches the previous index",
+            file=sys.stderr,
+        )
+        sys.exit()
     old_index = download_json(old_url, CACHE / "old_index.json")
     new_index = download_json(new_url, CACHE / "new_index.json")
     return old_index, new_index
