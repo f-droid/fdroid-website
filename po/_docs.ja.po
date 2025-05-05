@@ -12,19 +12,20 @@
 # Suguru Hirahara <shirahara@users.noreply.hosted.weblate.org>, 2024.
 # "Shuuji TAKAHASHI (shuuji3)" <shuuji3@gmail.com>, 2024.
 # "Maru-ni, Umebachi" <maruniumebachi@users.noreply.hosted.weblate.org>, 2025.
+# Liner Seven <linour7gmekiblo@gmail.com>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2025-04-28 13:07+0200\n"
-"PO-Revision-Date: 2025-03-19 02:05+0000\n"
-"Last-Translator: \"Maru-ni, Umebachi\" <maruniumebachi@users.noreply.hosted.weblate.org>\n"
+"PO-Revision-Date: 2025-05-02 05:02+0000\n"
+"Last-Translator: Liner Seven <linour7gmekiblo@gmail.com>\n"
 "Language-Team: Japanese <https://hosted.weblate.org/projects/f-droid/website-docs/ja/>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 5.11-dev\n"
+"X-Generator: Weblate 5.12-dev\n"
 
 #. type: Yaml Front Matter Hash Value: title
 #: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
@@ -166,6 +167,10 @@ msgid ""
 "* Note that a line break will automatically be converted to a `br` tag.\n"
 "* You may not make use of JavaScript.\n"
 msgstr ""
+"* 特定のタグは明示的に禁止されています。つまり、`applet`、`base`、`body`、 `button`、`embed`、`form`、`head`、 `html`、\n"
+"   `iframe`、`img`、`input`、`link`、`object`、`picture`、`script`、`source`、`style`、`svg`、`video`がそれです。\n"
+"* 改行は自動で `br`タグに変換される点には注意してください。\n"
+"* JavaScriptは使えません。\n"
 
 #. type: Title ##
 #: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
@@ -202,7 +207,7 @@ msgstr ""
 #. type: Bullet: '* '
 #: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
 msgid "It is the only way to provide images, such as the app icon or screenshots"
-msgstr ""
+msgstr "それはアプリのアイコンやスクリーンショット等の画像を提供する唯一の手段です"
 
 #. type: Plain text
 #: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
@@ -275,11 +280,36 @@ msgid ""
 "    └── changelogs\n"
 "        └── 100100.txt\n"
 msgstr ""
+"├── en-US                       (en-USはF-Droid縮退運用時基準言語)\n"
+"│   ├── short_description.txt   (短文の説明、最大80文字、必須)\n"
+"│   ├── full_description.txt    (アプリの完全な説明、最大4000文字、必須)\n"
+"│   ├── title.txt               (アプリ名称、最大50文字)\n"
+"│   ├── video.txt               (アプリ紹介ビデオのURL)\n"
+"│   ├── images\n"
+"│   │   ├── icon.png            (アプリのアイコン)\n"
+"│   │   ├── featureGraphic.png  (プロモバナー、F-Droidクライアントでアプリ上部に表示)\n"
+"│   │   ├── tvBanner.png        (テレビデバイス向け\"アイコン\"、現在不使用)\n"
+"│   │   ├── phoneScreenshots\n"
+"│   │   │   ├── 1.png\n"
+"│   │   │   ├── 2.png\n"
+"│   │   │   ...\n"
+"│   │   ├── sevenInchScreenshots/\n"
+"│   │   ├── tenInchScreenshots/ (画面サイズにより異なるスクリーンショットを追加可能)\n"
+"│   │   ├── tvScreenshots/\n"
+"│   │   └── wearScreenshots/\n"
+"│   └── changelogs\n"
+"│       ├── 100000.txt          (versionCode に対応しなければならず、 文字通りで、パディング無し)\n"
+"│       ├── 100100.txt          (もしバージョンコードが100100ならそれをセット)\n"
+"│       └── 100101.txt          (最大500文字)\n"
+"└── ru                          (他のロケールコード)\n"
+"    ...                         (ローカライズされたメタデータは常態的にクライアントにとって好ましい)\n"
+"    └── changelogs\n"
+"        └── 100100.txt\n"
 
 #. type: Plain text
 #: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
 msgid "This structure should be placed at one of the following locations from **the repository's root**:"
-msgstr ""
+msgstr "当該構造体は、**リポジトリのルート**から、以下のいずれかの場所へ配置する必要があります："
 
 #. type: Bullet: '* '
 #: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
@@ -298,7 +328,7 @@ msgstr "`fastlane/metadata/android/<locale>/`"
 #. type: Plain text
 #: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
 msgid "Alternatively, if a Gradle build flavor is specified in the Build Metadata, the following location is also supported:"
-msgstr ""
+msgstr "或いは、Gradleビルド・フレーバーがビルドメタデータに指定されている場合、以下の場所もサポートされます："
 
 #. type: Bullet: '* '
 #: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
@@ -308,7 +338,7 @@ msgstr "`src/<buildFlavor>/fastlane/metadata/<locale>/`"
 #. type: Plain text
 #: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
 msgid "(Some use cases of **build flavors** and multiple apps inside one repository are currently not properly supported. Follow [this issue](https://gitlab.com/fdroid/fdroidserver/issues/829) tracking the implementation of this.)"
-msgstr ""
+msgstr "(**ビルド・フレーバー**や、単一リポジトリ内に複数のアプリがあるような使用例が現状では適切にサポートされていません。このような実装については[this issue](https://gitlab.com/fdroid/fdroidserver/issues/829)に従ってください。）"
 
 #. type: Plain text
 #: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
@@ -368,6 +398,37 @@ msgid ""
 "    ├── de                              (other locales)\n"
 "        ├── ...\n"
 msgstr ""
+"├── contact-email.txt                   (開発者／管理者の電子メール)\n"
+"├── contact-website.txt                 (開発者／管理者のウェブサイト)\n"
+"├── release-notes\n"
+"│   └── en-US\n"
+"│       └── default.txt                 (最新の変更履歴)\n"
+"└── listings\n"
+"    ├── en-US                           (en-USがF-Droidのデフォルト・ロケール)\n"
+"    │   ├── title.txt                   (アプリ名、最大50文字)\n"
+"    │   ├── short-description.txt       (短文の説明、最大80文字、必須)\n"
+"    │   ├── full-description.txt        (アプリの完全な説明、最大4000文字、必須)\n"
+"    │   ├── video-url.txt               (アプリ紹介ビデオのURL)\n"
+"    │   ├── whatsnew                    (別の変更履歴の場所; 単一ファイルで, 非.txt形式)\n"
+"    │   └── graphics\n"
+"    │       ├── icon                    (アプリのアイコン)\n"
+"    │       │   └── *.(png|jpg)         1画像、通常は512x512\n"
+"    │       ├── feature-graphic         (プロモバナー、F-Droidクライアントでアプリ上部に表示)\n"
+"    │       │   └── *.(png|jpg)         1画像、通常は1024x500 \n"
+"    │       ├── phone-screenshots\n"
+"    │       │   └── *.(png|jpg)\n"
+"    │       ├── tablet-screenshots\n"
+"    │       │   └── *.(png|jpg)\n"
+"    │       ├── large-tablet-screenshots\n"
+"    │       │   └── *.(png|jpg)\n"
+"    │       ├── tv-banner               (テレビデバイス向け\"アイコン\"、現在不使用)\n"
+"    │       │   └── *.(png|jpg)\n"
+"    │       ├── tv-screenshots\n"
+"    │       │   └── *.(png|jpg)\n"
+"    │       └── wear-screenshots\n"
+"    │           └── *.(png|jpg)\n"
+"    ├── de                              (他のロケール)\n"
+"        ├── ...\n"
 
 #. type: Title ###
 #: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
@@ -488,6 +549,8 @@ msgid ""
 "* For data that is also contained in the APK file like the app's name, the previous two options both overwrite the\n"
 "   data from the APK file.\n"
 msgstr ""
+"* アプリ名称のようにAPKファイルにも含まれるデータについては、前の２つのオプションは\n"
+"   どちらもAPKファイルのデータを上書きします。\n"
 
 #. type: Plain text
 #: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
@@ -583,10 +646,9 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/All_our_APIs.md
-#, fuzzy, no-wrap
-#| msgid "This API is already used by shields.io project to provide F-Droid badges, [like this](https://img.shields.io/f-droid/v/org.fdroid.fdroid)."
+#, no-wrap
 msgid "This API is already used by <tt>shields.io</tt> project to provide F-Droid badges, [like this](https://img.shields.io/f-droid/v/org.fdroid.fdroid).\n"
-msgstr "このAPIは、 [このような形で](https://img.shields.io/f-droid/v/org.fdroid.fdroid)F-Droidのバッチを表示するためにshields.io プロジェクトによって既に利用されています。"
+msgstr "このAPIは、既に [このような形で](https://img.shields.io/f-droid/v/org.fdroid.fdroid)F-Droidのバッチを表示するため<tt>shields.io</tt>プロジェクトにより利用されています。\n"
 
 #. type: Title ###
 #: _docs/All_our_APIs.md
@@ -681,16 +743,15 @@ msgstr "<https://f-droid.org/archive/index-v1.json.asc>"
 
 #. type: Title ###
 #: _docs/All_our_APIs.md
-#, fuzzy, no-wrap
-#| msgid "The repo index"
+#, no-wrap
 msgid "Signer index"
-msgstr "リポジトリのインデックス"
+msgstr "署名者のインデックス"
 
 #. type: Plain text
 #: _docs/All_our_APIs.md
 #, no-wrap
 msgid "There is a simple index file that lists the SHA-256 fingerprint of each [signer](https://source.android.com/docs/security/features/apksigning/v2#apk-signature-scheme-v2-block) used by <tt>f-droid.org</tt> to sign each package.  This is the source of truth for determining the official <tt>f-droid.org</tt> signer for any given APK.  In order to know whether a given APK signed by <tt>f-droid.org</tt>, check the signer index:\n"
-msgstr ""
+msgstr "<tt>f-droid.org</tt>が各々のパッケージの署名に使ったSHA-256 フィンガープリントを列挙したシンプルなインデックスファイルがあります [署名者](https://source.android.com/docs/security/features/apksigning/v2#apk-signature-scheme-v2-block) 。  このファイルはAPKの署名要求者向けに<tt>f-droid.org</tt> が判定を行う際の情報源です。  APKが<tt>f-droid.org</tt>により署名付与されているか知るには、この署名者インデックスを確認します:\n"
 
 #. type: Plain text
 #: _docs/All_our_APIs.md
@@ -702,7 +763,7 @@ msgstr "<https://f-droid.org/repo/signer-index.json>"
 #. type: Plain text
 #: _docs/All_our_APIs.md
 msgid "It is also signed via the signatures on _entry.json_, or direct [JAR](https://f-droid.org/repo/signer-index.jar) and [GPG](https://f-droid.org/repo/signer-index.json.asc) signatures."
-msgstr ""
+msgstr "それはまた _entry.json_ 上のシグネチャー、或いは直接の [JAR](https://f-droid.org/repo/signer-index.jar)・[GPG](https://f-droid.org/repo/signer-index.json.asc) シグネチャーにより署名されます。"
 
 #. type: Title ###
 #: _docs/All_our_APIs.md
@@ -712,10 +773,8 @@ msgstr "アプリの検索API"
 
 #. type: Plain text
 #: _docs/All_our_APIs.md
-#, fuzzy
-#| msgid "We've got a basic web-api for performing a full-text searches on the _f-droid.org_ repository."
 msgid "We've got a basic web API for performing a full-text searches on the _f-droid.org_ repository."
-msgstr "以下では、 _f-droid.org_ リポジトリを対象に全文検索を実行するための基本的なウェブAPIも提供しています。"
+msgstr "私たちは、 _f-droid.org_ リポジトリを対象に全文検索を実行するための基本的なウェブAPIも提供しています。"
 
 #. type: Bullet: '* '
 #: _docs/All_our_APIs.md
@@ -822,7 +881,7 @@ msgstr "サードパーティーのリポジトリの状態：<https://fdroid.gi
 #. type: Plain text
 #: _docs/All_our_APIs.md
 msgid "The list of official mirrors is in each index file.  It is also available directly via a GitLab raw URL: <https://gitlab.com/fdroid/fdroiddata/-/raw/master/config/mirrors.yml>"
-msgstr ""
+msgstr "公式ミラーの一覧は各インデックスファイルにあります。  次のGitLab URLより直接入手も可能です：<https://gitlab.com/fdroid/fdroiddata/-/raw/master/config/mirrors.yml>"
 
 #. type: Title ###
 #: _docs/All_our_APIs.md
@@ -912,12 +971,8 @@ msgstr "[使用状況のデータ]({% post_url 2019-04-15-privacy-preserving-ana
 
 #. type: Plain text
 #: _docs/All_our_APIs.md
-#, fuzzy
-#| msgid ""
-#| "Though not really an API, the <ftp.fau.de> mirror does provide some metrics:\n"
-#| "https://ftp.fau.de/cgi-bin/show-ftp-stats.cgi\n"
 msgid "Though not really an API, some of the mirrors do provide some metrics:"
-msgstr "厳密にはAPIではありませんが、 <ftp.fau.de> のミラーが https://ftp.fau.de/cgi-bin/show-ftp-stats.cgi でメトリクスを提供しています。\n"
+msgstr "厳密にはAPIではありませんが、幾つかのミラーでは指標を提示しています："
 
 #. type: Bullet: '* '
 #: _docs/All_our_APIs.md
@@ -959,7 +1014,7 @@ msgstr ""
 #. type: Plain text
 #: _docs/Anti-Features.md
 msgid "You will see our Anti-Features in action when viewing the details of any app containing one or more Anti-Features, whether in the F-Droid client or on this website.  The F-Droid client also provides settings to hide apps with certain Anti-Features."
-msgstr ""
+msgstr "F-Droidクライアントか当ウェブサイト上で、１つ以上の好ましくない機能を含むアプリの詳細を表示する際、私達のAnti-Features機能が動作しているのを参照できます。 F-Droidクライアントでは、特定の好ましくない機能を持つアプリは非表示にする設定も提供しています。"
 
 #. type: Title ##
 #: _docs/Anti-Features.md
@@ -980,7 +1035,7 @@ msgstr "[広告](#Ads) - 広告の掲載"
 #. type: Bullet: '* '
 #: _docs/Anti-Features.md
 msgid "[Disabled Algorithm](#DisabledAlgorithm) - signed using an unsafe algorithm"
-msgstr ""
+msgstr "[無効なアルゴリズム](#DisabledAlgorithm) - 安全ではないアルゴリズムが使われた署名"
 
 #. type: Bullet: '* '
 #: _docs/Anti-Features.md
@@ -995,22 +1050,22 @@ msgstr "[不自由なアドオン](#NonFreeAdd) - 他の不自由なアプリや
 #. type: Bullet: '* '
 #: _docs/Anti-Features.md
 msgid "[Non-Free Assets](#NonFreeAssets) - non-libre media in things that are not code (e.g. images, sound, music, 3D-models, or video)"
-msgstr ""
+msgstr "[自由ではない資産](#NonFreeAssets) - コードではないもの（例えば画像、音声、音楽、3Dモデル、ビデオ等）に含まれる自由ではないメディア"
 
 #. type: Bullet: '* '
 #: _docs/Anti-Features.md
 msgid "[Non-Free Dependencies](#NonFreeDep) - needs a non-libre app to work (e.g. Spotify, Whatsapp)"
-msgstr ""
+msgstr "[自由ではない依存関係](#NonFreeDep) - 動作に自由ではないアプリを要する(例えばSpotify、Whatsapp等)"
 
 #. type: Bullet: '* '
 #: _docs/Anti-Features.md
 msgid "[Non-Free Network Services](#NonFreeNet) - promotes or depends entirely on a non-free network service"
-msgstr ""
+msgstr "[自由ではないネットワークサービス](#NonFreeNet) - 自由ではないネットワークサービスを宣伝、或いは完全に依存している"
 
 #. type: Bullet: '* '
 #: _docs/Anti-Features.md
 msgid "[No Source Since](#NoSourceSince) - source code no longer available, making new releases impossible"
-msgstr ""
+msgstr "[ソース提供の中断](#NoSourceSince) - ソースコードが入手できなくなり、新たなリリースが不可能な状態"
 
 #. type: Bullet: '* '
 #: _docs/Anti-Features.md
