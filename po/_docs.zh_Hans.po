@@ -29,7 +29,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
-"POT-Creation-Date: 2025-04-28 13:07+0200\n"
+"POT-Creation-Date: 2025-05-05 10:53+0200\n"
 "PO-Revision-Date: 2025-04-29 08:16+0000\n"
 "Last-Translator: 大王叫我来巡山 <hamburger2048@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Chinese (Simplified Han script) <https://hosted.weblate.org/projects/f-droid/website-docs/zh_Hans/>\n"
@@ -6183,21 +6183,6 @@ msgstr "如何报告 Bug 或提议添加功能？"
 msgid "Use the [issue tracker](https://gitlab.com/fdroid/fdroidclient/issues)  or email <team@f-droid.org>. You can also discuss them in the [forum or chat rooms](https://f-droid.org/about/#contact)."
 msgstr "使用 [问题跟踪器](https://gitlab.com/fdroid/fdroidclient/issues) 或发送电子邮件至 <team@f-droid.org>。你也可以在[论坛或聊天室](https://f-droid.org/about/#contact)讨论它们。"
 
-#. type: Plain text
-#: _docs/FAQ_-_General.md
-msgid "If you do not already have an account, or do not want to create one, you can use our reusable account.  The issue tracker works better if reporters use an account that will receive notifications.  Issue reports are usually a conversation, not just a single report."
-msgstr "如果你还没有账户，或者不想创建账户，你可以使用我们的可复用账户。 如果报告者使用一个能收到通知的账户，问题追踪器的效果会更好。 问题报告通常是交流和讨论，而非一次单向的报告。"
-
-#. type: Plain text
-#: _docs/FAQ_-_General.md
-msgid "That said, the account username is _fdroid-anyone_ and the password is _fdroid does not track_."
-msgstr "可复用账户的用户名是 _fdroid-anyone_，密码是 _fdroid does not track_。"
-
-#. type: Plain text
-#: _docs/FAQ_-_General.md
-msgid "Please note that we will have to remove this account, in case it gets abused."
-msgstr "请注意，如账户被滥用，我们将不得不删除它。"
-
 #. type: Yaml Front Matter Hash Value: title
 #: _docs/Feeds.md
 #, no-wrap
@@ -7204,7 +7189,9 @@ msgstr "应用收录提议"
 
 #. type: Plain text
 #: _docs/Inclusion_How-To.md
-msgid "To propose inclusion of a new application to the main F-Droid repository, one could post the applications relevant information to the Submission Queue. The more advanced alternative is writing a complete metadata file yourself, test, and propose inclusion (merge request) directly into the fdroiddata Git repository; speeding up the process. Both ways will be described below in detail."
+#, fuzzy
+#| msgid "To propose inclusion of a new application to the main F-Droid repository, one could post the applications relevant information to the Submission Queue. The more advanced alternative is writing a complete metadata file yourself, test, and propose inclusion (merge request) directly into the fdroiddata Git repository; speeding up the process. Both ways will be described below in detail."
+msgid "To propose inclusion of a new application to the main F-Droid repository, one could post the applications relevant information to the Submission Queue. The more advanced and recommended alternative is writing a complete metadata file yourself, test, and propose inclusion (merge request) directly into the fdroiddata Git repository; speeding up the process. Both ways will be described below in detail."
 msgstr "要提议将新应用收录到主 F-Droid 存储库中，你可以将此应用的相关信息发布到提交队列中。更高级的替代方法是自己编写一个完整的元数据文件，测试并直接向 fdroiddata Git 存储库提出收录（合并请求），这样可以加快收录进程。下面将详细描述这两种方式。"
 
 #. type: Plain text
@@ -7215,13 +7202,52 @@ msgstr "注意，即使你不是所提议的应用本身的开发者或维护者
 #. type: Title ###
 #: _docs/Inclusion_How-To.md
 #, no-wrap
+msgid "Prepare and compliance check"
+msgstr ""
+
+#. type: Plain text
+#: _docs/Inclusion_How-To.md
+#, fuzzy
+#| msgid "Note that you can propose inclusion even you are not a developer or maintainer of the proposed application itself. See [Inclusion Policy](../Inclusion_Policy) and [Repository Style Guide](../Repository_Style_Guide) for the policy aspect of this section."
+msgid "Before proposing inclusion of an application, the compliance with the [Inclusion Policy](../Inclusion_Policy) and [Repository Style Guide](../Repository_Style_Guide) should be checked carefully. Here is a short checklist."
+msgstr "注意，即使你不是所提议的应用本身的开发者或维护者，也可以提议收录。关于这部分的政策，请参见[收录政策](../Inclusion_Policy)和[版本库风格指南](../Repository_Style_Guide)。"
+
+#. type: Plain text
+#: _docs/Inclusion_How-To.md
+#, no-wrap
+msgid ""
+"1. The app should have a public source code repository and a FOSS license file. Please\n"
+"  confirm that the repo has the real up-to-date source code in it instead of\n"
+"  some dummy files as placeholder.\n"
+"2. The app should only have FOSS dependencies. Firebase and GMS are some notable examples\n"
+"  of non-FOSS libs that are not accepted. If the app can work (in some capacity) without these,\n"
+"  please create a flavor/version without them.\n"
+"  The build tools should also be FOSS. If a proprietary IDE is required then it can't be\n"
+"  included. F-Droid builds from command line tools anyway, build instructions help contributors.\n"
+"3. The author of the app has been notified (and does not oppose the inclusion). If you\n"
+"  are not the author, please open an issue in the repo of the app, asking the author for\n"
+"  the permission.\n"
+"4. [The metadata files for descriptions](../All_About_Descriptions_Graphics_and_Screenshots)\n"
+"  are added to the repo. This is a simple structure with some text files and pictures and\n"
+"  should always be added before inclusion. While the folder structure follows Fastlane/Triple-T,\n"
+"  the actual tooling is not needed.\n"
+msgstr ""
+
+#. type: Plain text
+#: _docs/Inclusion_How-To.md
+msgid "With all these requirements satisfied, this app should be ready for inclusion."
+msgstr ""
+
+#. type: Title ###
+#: _docs/Inclusion_How-To.md
+#, no-wrap
 msgid "Proposal by Submission Queue"
 msgstr "将提案发布到提交队列"
 
 #. type: Plain text
 #: _docs/Inclusion_How-To.md
-msgid "This is the simplest way to get the application included. But due to an amount of reviewer labor required for each application, this is the slowest method."
-msgstr "这是收录应用的最简单方法。但是由于每个应用都需要大量的审阅工作，这也是最慢的方法。"
+msgid "This is the simplest way to get the application included. Please note that this only makes an app appear on our radar as a candidate for inclusion. Depending on the interests of the contributors, this may take a long time until someone picks it up."
+msgstr ""
 
 #. type: Plain text
 #: _docs/Inclusion_How-To.md
@@ -7236,7 +7262,9 @@ msgstr "元数据合并请求的提案"
 
 #. type: Plain text
 #: _docs/Inclusion_How-To.md
-msgid "A more advanced alternative for application inclusion is to write an F-Droid metadata file for the application yourself, and propose inclusion by filing a git merge request on the F-Droid application metadata repository ([fdroiddata GitLab repository](https://gitlab.com/fdroid/fdroiddata/)). This will lead to much quicker inclusion as the already-available metadata file will reduce the burden on reviewers when inspecting your proposed metadata; the submitter assumes responsibility of providing a correct metadata file."
+#, fuzzy
+#| msgid "A more advanced alternative for application inclusion is to write an F-Droid metadata file for the application yourself, and propose inclusion by filing a git merge request on the F-Droid application metadata repository ([fdroiddata GitLab repository](https://gitlab.com/fdroid/fdroiddata/)). This will lead to much quicker inclusion as the already-available metadata file will reduce the burden on reviewers when inspecting your proposed metadata; the submitter assumes responsibility of providing a correct metadata file."
+msgid "A more advanced alternative for application inclusion is to write an F-Droid metadata file for the application yourself, and propose inclusion by filing a git merge request on the F-Droid application metadata repository ([fdroiddata GitLab repository](https://gitlab.com/fdroid/fdroiddata/)). This will lead to much quicker inclusion as the already-available metadata file will reduce the burden on reviewers when inspecting your proposed metadata; the submitter assumes responsibility of providing a correct metadata file. You can prepare a [Build Metadata](../Build_Metadata_Reference) with `fdroid import` and [templates](https://gitlab.com/fdroid/fdroiddata/-/tree/master/templates).  Other metadata in _fdroiddata_ are also good reference."
 msgstr "将应用收录进 F-Droid 存储库的一个更高级的替代方法是自己为应用编写一个 F-Droid 元数据文件，并在 F-Droid 应用元数据存储库（[fdroiddata GitLab 代码库](https://gitlab .com/fdroid/fdroiddata/)) 提交一个 git 合并请求来提议收录。这将加快应用收录速度，因为已经可用的元数据文件将减轻审阅者检查你提议的元数据的负担；由提交者来负责提供正确的元数据文件。"
 
 #. type: Plain text
@@ -7244,37 +7272,37 @@ msgstr "将应用收录进 F-Droid 存储库的一个更高级的替代方法是
 msgid "When proposing inclusion this way, it is assumed that:"
 msgstr "当以这种方式提议收录时，假设："
 
-#. type: Bullet: '-   '
+#. type: Bullet: '- '
 #: _docs/Inclusion_How-To.md
 msgid "You have a good understanding of what [Free Software](https://www.gnu.org/philosophy/free-sw.html) means, and what F-Droid is for."
 msgstr "你对 [自由软件](https://www.gnu.org/philosophy/free-sw.html) 的含义以及 F-Droid 的用途非常了解。"
 
-#. type: Bullet: '-   '
+#. type: Bullet: '- '
 #: _docs/Inclusion_How-To.md
 msgid "You already read and understand the [Inclusion Policy](../Inclusion_Policy)."
 msgstr "你已经阅读并理解 [收录政策](../Inclusion_Policy)。"
 
-#. type: Bullet: '-   '
+#. type: Bullet: '- '
 #: _docs/Inclusion_How-To.md
 msgid "You already read and understand the [Repository Style Guide](../Repository_Style_Guide)."
 msgstr "你已经阅读并理解了 [版本库风格指南](../Repository_Style_Guide)。"
 
-#. type: Bullet: '-   '
+#. type: Bullet: '- '
 #: _docs/Inclusion_How-To.md
 msgid "You already read and understand [the relevant parts of the F-Droid documentation](../Build_Metadata_Reference)."
 msgstr "你已经阅读并理解了 [F-Droid 文档的相关部分](../Build_Metadata_Reference)。"
 
-#. type: Bullet: '-   '
+#. type: Bullet: '- '
 #: _docs/Inclusion_How-To.md
 msgid "You know how to use [Git VCS](https://git-scm.com/), and know how a merge request (a.k.a. \"pull request\" in GitHub terminology) works in general."
 msgstr "你知道如何使用 [Git VCS](https://git-scm.com/)，并了解合并请求（在 GitHub 术语中也称为“拉取请求”）的一般工作原理。"
 
-#. type: Bullet: '-   '
+#. type: Bullet: '- '
 #: _docs/Inclusion_How-To.md
 msgid "You have an account on [GitLab](https://gitlab.com/) _(NOTE: F-Droid CI runners are under Gitlab's FOSS program, so there's no need for you to pay for any CI time. If Gitlab starts asking for phone numbers or credit cards don't submit anything, just leave a note in the MR so we know we need to trigger the CI.)_"
 msgstr "你在 [GitLab](https://gitlab.com/) 上有账户 _(注意：: F-Droid CI runners 在 Gitlab 的 FOSS 项目中，因此你无需为任何 CI 时间支付费用。如果 Gitlab 开始询问手机号或信用卡号，请不要提交任何信息，只需在合并请求中留下附注，这样我们就知道需要触发 CI 了)_"
 
-#. type: Bullet: '-   '
+#. type: Bullet: '- '
 #: _docs/Inclusion_How-To.md
 msgid "You have a local instance of the F-Droid server software, and you know what you are doing."
 msgstr "你有 F-Droid 服务器软件的本地实例，并且你知道自己在做什么。"
@@ -7305,67 +7333,67 @@ msgstr "由于 F-Droid 是一个向用户承诺自由软件的软件存储库，
 msgid "This is a nonexhaustive list of what a reviewer would do:"
 msgstr "这是一个非详尽的列表，列出了审核者会做什么："
 
-#. type: Bullet: '-   '
+#. type: Bullet: '- '
 #: _docs/Inclusion_How-To.md
 msgid "They will go to your source code repository, and look for copyright notices in license files, including README, to check that the proposed application is released under a [recognized Free Software and/or OSI license(s)](https://spdx.org/licenses/)."
 msgstr "他们将转到你的源代码存储库，并在许可文件（包括 README）中查找版权声明，以检查提议的应用是基于 [公认的自由软件和/或 OIS 许可证](https://spdx.org/licenses/) 发布的。"
 
-#. type: Bullet: '-   '
+#. type: Bullet: '- '
 #: _docs/Inclusion_How-To.md
 msgid "They will look at your build script to see which build system you use, and whether F-Droid build server can handle it (Ant and Gradle are the most common and easiest ones)."
 msgstr "他们会查看你的构建脚本，以了解你使用的构建系统，以及 F-Droid 构建服务器是否可以处理它（Ant 和 Gradle 是最常见和最简单的）。"
 
-#. type: Bullet: '-   '
+#. type: Bullet: '- '
 #: _docs/Inclusion_How-To.md
 msgid "They will try to download a copy of your source code."
 msgstr "他们将尝试下载你的源代码的副本。"
 
-#. type: Bullet: '-   '
+#. type: Bullet: '- '
 #: _docs/Inclusion_How-To.md
 msgid "They will look in all source code files to verify that their licenses are consistent with corresponding license/README files."
 msgstr "他们会查看所有的源代码文件，以验证其许可证是否与相应的许可证/README文件一致。"
 
-#. type: Bullet: '-   '
+#. type: Bullet: '- '
 #: _docs/Inclusion_How-To.md
 msgid "They will check if your application uses any pre-compiled libraries or binary blobs."
 msgstr "他们将检查应用是否使用任何预编译的库或二进制 blob。"
 
-#. type: Bullet: '-   '
+#. type: Bullet: '- '
 #: _docs/Inclusion_How-To.md
 msgid "They will look at your non-source code files to identify [Non-Free resources](https://monitor.f-droid.org/anti-feature/NonFreeAssets) used in your application."
 msgstr "它们会查看你的非源代码文件来识别用于你的应用中的[非自由资源](https://monitor.f-droid.org/anti-feature/NonFreeAssets)."
 
-#. type: Bullet: '-   '
+#. type: Bullet: '- '
 #: _docs/Inclusion_How-To.md
 msgid "They will skim through the source code to see if your application uses Non-Free dependencies, shows advertisements, tracks users, promotes or depends on Non-Free or non-changeable services/applications, or does anything that is harmful or otherwise undesirable for users."
 msgstr "他们将浏览源代码，以查看你的应用是否使用非自由依赖项、显示广告、跟踪用户、推广或依赖非自由或不可更改的服务/应用，或执行任何对用户有害或不受欢迎的操作。"
 
-#. type: Bullet: '-   '
+#. type: Bullet: '- '
 #: _docs/Inclusion_How-To.md
 msgid "They will list a summary of any [_AntiFeatures_](https://monitor.f-droid.org/anti-features) in your application."
 msgstr "他们将列出你的应用中所有 [_负面特征_](https://monitor.f-droid.org/anti-features) 的摘要。"
 
-#. type: Bullet: '-   '
+#. type: Bullet: '- '
 #: _docs/Inclusion_How-To.md
 msgid "They will try patching your application to remove usage of third-party proprietary software (if there is any)."
 msgstr "他们将尝试修补你的应用，以移除对第三方私有软件（若有）的使用。"
 
-#. type: Bullet: '-   '
+#. type: Bullet: '- '
 #: _docs/Inclusion_How-To.md
 msgid "They will try to determine a suitable update process for your application (e.g. by looking at how your releases relate to VCS tags and/or version information in _AndroidManifest.xml_)."
 msgstr "他们将尝试为你的应用确定一个合适的更新过程（例如，通过查看你的版本与 VCS 标签和/或 _AndroidManifest.xml_ 中的版本信息的关系）。"
 
-#. type: Bullet: '-   '
+#. type: Bullet: '- '
 #: _docs/Inclusion_How-To.md
 msgid "They will try writing a suitable metadata file for your application, and add it to local F-Droid build server instance.  (`fdroid rewritemeta`, `fdroid lint` are used to ensure that metadata is well-formed)"
 msgstr "他们将尝试为你的应用编写合适的元数据文件，并将其添加到本地 F-Droid 构建服务器实例。 （`fdroid rewritemeta`, `fdroid lint` 用于确保元数据格式良好）"
 
-#. type: Bullet: '-   '
+#. type: Bullet: '- '
 #: _docs/Inclusion_How-To.md
 msgid "They will try to build your application in an isolated environment to see if the process succeeds and yield a functional APK."
 msgstr "他们将尝试在隔离的环境中构建你的应用，以查看该过程是否成功并产生功能正常的 APK。"
 
-#. type: Bullet: '-   '
+#. type: Bullet: '- '
 #: _docs/Inclusion_How-To.md
 msgid "If all went smoothly, they will add a new metadata file to their local fdroiddata git repository and synchronizes the change to GitLab."
 msgstr "如果一切顺利，他们将向本地 fdroiddata git 存储库添加一个新的元数据文件，并将更改同步到 GitLab。"
@@ -7437,22 +7465,22 @@ msgstr "我们希望开发者认同我们的观点，即鉴于各种好处，至
 msgid "For more information, see:"
 msgstr "更多信息，请参阅："
 
-#. type: Bullet: '* '
+#. type: Bullet: '- '
 #: _docs/Inclusion_How-To.md
 msgid "[Towards a reproducible F-Droid](https://f-droid.org/2023/01/15/towards-a-reproducible-fdroid.html)"
 msgstr "[向着可重复的 F-Droid 前进](https://f-droid.org/2023/01/15/towards-a-reproducible-fdroid.html)"
 
-#. type: Bullet: '* '
+#. type: Bullet: '- '
 #: _docs/Inclusion_How-To.md
 msgid "[F-Droid's Reproducible Builds documentation](../Reproducible_Builds)"
 msgstr "[F-Droid 的可重复构建文档](../Reproducible_Builds)"
 
-#. type: Bullet: '* '
+#. type: Bullet: '- '
 #: _docs/Inclusion_How-To.md
 msgid "[Reproducible Builds project](https://reproducible-builds.org/)"
 msgstr "[可重复构建项目](https://reproducible-builds.org/)"
 
-#. type: Bullet: '* '
+#. type: Bullet: '- '
 #: _docs/Inclusion_How-To.md
 msgid "[HOWTO: diff & fix APKs for Reproducible Builds](https://gitlab.com/fdroid/wiki/-/wikis/HOWTO:-diff-&-fix-APKs-for-Reproducible-Builds)"
 msgstr "[HOWTO: diff & fix APKs for Reproducible Builds](https://gitlab.com/fdroid/wiki/-/wikis/HOWTO:-diff-&-fix-APKs-for-Reproducible-Builds)"
@@ -7550,22 +7578,22 @@ msgstr "尽管如此，你的应用还不会出现在 f-droid.org 的最新应�
 msgid "External Links"
 msgstr "外部链接"
 
-#. type: Bullet: '-   '
+#. type: Bullet: '- '
 #: _docs/Inclusion_How-To.md
 msgid "[F-Droid application submission queue on GitLab](https://gitlab.com/fdroid/rfp/issues) (for new submissions)"
 msgstr "[GitLab上的F-Droid应用提交队列](https://gitlab.com/fdroid/rfp/issues) (用于新的提交)"
 
-#. type: Bullet: '-   '
+#. type: Bullet: '- '
 #: _docs/Inclusion_How-To.md
 msgid "[F-Droid application submission queue on forum](https://f-droid.org/forums/forum/submission-queue/) (for following-up old submissions)"
 msgstr "[论坛上的 F-Droid 应用提交队列](https://f-droid.org/forums/forum/submission-queue/) (用于跟进旧的提交)"
 
-#. type: Bullet: '-   '
+#. type: Bullet: '- '
 #: _docs/Inclusion_How-To.md
 msgid "[fdroiddata GitLab repository](https://gitlab.com/fdroid/fdroiddata/)"
 msgstr "[fdroiddata GitLab 存储库](https://gitlab.com/fdroid/fdroiddata/)"
 
-#. type: Bullet: '-   '
+#. type: Bullet: '- '
 #: _docs/Inclusion_How-To.md
 msgid "[fdroiddata revision history](https://gitlab.com/fdroid/fdroiddata/commits/master)"
 msgstr "[fdroiddata 修订历史](https://gitlab.com/fdroid/fdroiddata/commits/master)"
@@ -12895,6 +12923,18 @@ msgstr "首选项"
 #: _docs/Whitelabel_Builds.md
 msgid "For a custom build that enables Automatic Updates by default, override _app/src/main/res/xml/preferences.xml_. You can customize the preferences and their default values in _app/src/mycompany/res/xml/preferences.xml_. The fully automatic update requires [Privileged Extension](https://gitlab.com/fdroid/privileged-extension). With regular access, the updates will only automatically download. The user still needs to click install on each one."
 msgstr "对于默认启用自动更新的自定义构建，覆盖 _app/src/main/res/xml/preferences.xml_。你可以在 _app/src/mycompany/res/xml/preferences.xml_ 中自定义首选项及其默认值。全自动更新需要 [特权扩展](https://gitlab.com/fdroid/privileged-extension)。通过定期访问，更新只会自动下载。用户仍然需要在每一个上点击安装。"
+
+#~ msgid "If you do not already have an account, or do not want to create one, you can use our reusable account.  The issue tracker works better if reporters use an account that will receive notifications.  Issue reports are usually a conversation, not just a single report."
+#~ msgstr "如果你还没有账户，或者不想创建账户，你可以使用我们的可复用账户。 如果报告者使用一个能收到通知的账户，问题追踪器的效果会更好。 问题报告通常是交流和讨论，而非一次单向的报告。"
+
+#~ msgid "That said, the account username is _fdroid-anyone_ and the password is _fdroid does not track_."
+#~ msgstr "可复用账户的用户名是 _fdroid-anyone_，密码是 _fdroid does not track_。"
+
+#~ msgid "Please note that we will have to remove this account, in case it gets abused."
+#~ msgstr "请注意，如账户被滥用，我们将不得不删除它。"
+
+#~ msgid "This is the simplest way to get the application included. But due to an amount of reviewer labor required for each application, this is the slowest method."
+#~ msgstr "这是收录应用的最简单方法。但是由于每个应用都需要大量的审阅工作，这也是最慢的方法。"
 
 #, no-wrap
 #~ msgid ""

@@ -14,7 +14,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2025-04-28 13:07+0200\n"
+"POT-Creation-Date: 2025-05-05 10:53+0200\n"
 "PO-Revision-Date: 2025-02-28 17:27+0000\n"
 "Last-Translator: ssantos <ssantos@web.de>\n"
 "Language-Team: Portuguese <https://hosted.weblate.org/projects/f-droid/website-docs/pt/>\n"
@@ -6606,21 +6606,6 @@ msgstr "Como posso relatar bugs ou solicitar recursos?"
 msgid "Use the [issue tracker](https://gitlab.com/fdroid/fdroidclient/issues)  or email <team@f-droid.org>. You can also discuss them in the [forum or chat rooms](https://f-droid.org/about/#contact)."
 msgstr "Use o [rastreador de problemas](https://gitlab.com/fdroid/fdroidclient/issues) ou e-mail <team@f-droid.org>. Também pode discuti-los na [ircs://irc.oftc.net:6697/fdroid] sala de chat IRC [\\#fdroid](ircs://irc.oftc.net:6697/fdroid) na OFTC ([clique aqui para se juntar ao webchat](https://webchat.oftc.net/?randomnick=1&channels=fdroid&prompt=1))."
 
-#. type: Plain text
-#: _docs/FAQ_-_General.md
-msgid "If you do not already have an account, or do not want to create one, you can use our reusable account.  The issue tracker works better if reporters use an account that will receive notifications.  Issue reports are usually a conversation, not just a single report."
-msgstr "Se ainda não tiver uma conta ou não quiser criar uma, pode usar nossa conta reutilizável.  O rastreador de problemas funciona melhor se os repórteres usarem uma conta que receberá notificações.  Relatórios de problemas são geralmente uma conversa, não apenas um único relatório."
-
-#. type: Plain text
-#: _docs/FAQ_-_General.md
-msgid "That said, the account username is _fdroid-anyone_ and the password is _fdroid does not track_."
-msgstr "Dito isto, o nome de utilizador da conta é _fdroid-anyone_ e a palavra-passe é _fdroid does not track_."
-
-#. type: Plain text
-#: _docs/FAQ_-_General.md
-msgid "Please note that we will have to remove this account, in case it gets abused."
-msgstr "Por favor note que teremos que remover esta conta, caso ela seja utilizada para fins abusivos."
-
 #. type: Yaml Front Matter Hash Value: title
 #: _docs/Feeds.md
 #, no-wrap
@@ -7632,7 +7617,9 @@ msgstr "Proposta de Inclusão de Aplicações"
 
 #. type: Plain text
 #: _docs/Inclusion_How-To.md
-msgid "To propose inclusion of a new application to the main F-Droid repository, one could post the applications relevant information to the Submission Queue. The more advanced alternative is writing a complete metadata file yourself, test, and propose inclusion (merge request) directly into the fdroiddata Git repository; speeding up the process. Both ways will be described below in detail."
+#, fuzzy
+#| msgid "To propose inclusion of a new application to the main F-Droid repository, one could post the applications relevant information to the Submission Queue. The more advanced alternative is writing a complete metadata file yourself, test, and propose inclusion (merge request) directly into the fdroiddata Git repository; speeding up the process. Both ways will be described below in detail."
+msgid "To propose inclusion of a new application to the main F-Droid repository, one could post the applications relevant information to the Submission Queue. The more advanced and recommended alternative is writing a complete metadata file yourself, test, and propose inclusion (merge request) directly into the fdroiddata Git repository; speeding up the process. Both ways will be described below in detail."
 msgstr "Para propor a inclusão de uma nova aplicação no repositório principal do F-Droid, pode-se postar as informações relevantes das aplicações na Fila de Submissão. A alternativa mais avançada é de escrever um ficheiro de metadados completo, testar e propor a inclusão (solicitação de mesclagem) diretamente no repositório Git fdroiddata; a acelerar o processo. Ambas as formas serão descritas abaixo em detalhe."
 
 #. type: Plain text
@@ -7643,13 +7630,52 @@ msgstr "Note que pode propor a inclusão mesmo que não seja um programador ou m
 #. type: Title ###
 #: _docs/Inclusion_How-To.md
 #, no-wrap
+msgid "Prepare and compliance check"
+msgstr ""
+
+#. type: Plain text
+#: _docs/Inclusion_How-To.md
+#, fuzzy
+#| msgid "Note that you can propose inclusion even you are not a developer or maintainer of the proposed application itself. See [Inclusion Policy](../Inclusion_Policy) and [Repository Style Guide](../Repository_Style_Guide) for the policy aspect of this section."
+msgid "Before proposing inclusion of an application, the compliance with the [Inclusion Policy](../Inclusion_Policy) and [Repository Style Guide](../Repository_Style_Guide) should be checked carefully. Here is a short checklist."
+msgstr "Note que pode propor a inclusão mesmo que não seja um programador ou mantenedor da aplicação proposto em si. Veja [Política de Inclusão](../Inclusion_Policy) e [Repository Style Guide](../Repository_Style_Guide) para o aspecto de política desta secção."
+
+#. type: Plain text
+#: _docs/Inclusion_How-To.md
+#, no-wrap
+msgid ""
+"1. The app should have a public source code repository and a FOSS license file. Please\n"
+"  confirm that the repo has the real up-to-date source code in it instead of\n"
+"  some dummy files as placeholder.\n"
+"2. The app should only have FOSS dependencies. Firebase and GMS are some notable examples\n"
+"  of non-FOSS libs that are not accepted. If the app can work (in some capacity) without these,\n"
+"  please create a flavor/version without them.\n"
+"  The build tools should also be FOSS. If a proprietary IDE is required then it can't be\n"
+"  included. F-Droid builds from command line tools anyway, build instructions help contributors.\n"
+"3. The author of the app has been notified (and does not oppose the inclusion). If you\n"
+"  are not the author, please open an issue in the repo of the app, asking the author for\n"
+"  the permission.\n"
+"4. [The metadata files for descriptions](../All_About_Descriptions_Graphics_and_Screenshots)\n"
+"  are added to the repo. This is a simple structure with some text files and pictures and\n"
+"  should always be added before inclusion. While the folder structure follows Fastlane/Triple-T,\n"
+"  the actual tooling is not needed.\n"
+msgstr ""
+
+#. type: Plain text
+#: _docs/Inclusion_How-To.md
+msgid "With all these requirements satisfied, this app should be ready for inclusion."
+msgstr ""
+
+#. type: Title ###
+#: _docs/Inclusion_How-To.md
+#, no-wrap
 msgid "Proposal by Submission Queue"
 msgstr "Proposta por Fila de Submissão"
 
 #. type: Plain text
 #: _docs/Inclusion_How-To.md
-msgid "This is the simplest way to get the application included. But due to an amount of reviewer labor required for each application, this is the slowest method."
-msgstr "Esta é a maneira mais simples de fazer incluír a aplicação. Mas devido à quantidade de mão-de-obra necessária para cada aplicação, este é o método mais lento."
+msgid "This is the simplest way to get the application included. Please note that this only makes an app appear on our radar as a candidate for inclusion. Depending on the interests of the contributors, this may take a long time until someone picks it up."
+msgstr ""
 
 #. type: Plain text
 #: _docs/Inclusion_How-To.md
@@ -7664,7 +7690,9 @@ msgstr "Proposta por Solicitação de Mesclagem de Metadados"
 
 #. type: Plain text
 #: _docs/Inclusion_How-To.md
-msgid "A more advanced alternative for application inclusion is to write an F-Droid metadata file for the application yourself, and propose inclusion by filing a git merge request on the F-Droid application metadata repository ([fdroiddata GitLab repository](https://gitlab.com/fdroid/fdroiddata/)). This will lead to much quicker inclusion as the already-available metadata file will reduce the burden on reviewers when inspecting your proposed metadata; the submitter assumes responsibility of providing a correct metadata file."
+#, fuzzy
+#| msgid "A more advanced alternative for application inclusion is to write an F-Droid metadata file for the application yourself, and propose inclusion by filing a git merge request on the F-Droid application metadata repository ([fdroiddata GitLab repository](https://gitlab.com/fdroid/fdroiddata/)). This will lead to much quicker inclusion as the already-available metadata file will reduce the burden on reviewers when inspecting your proposed metadata; the submitter assumes responsibility of providing a correct metadata file."
+msgid "A more advanced alternative for application inclusion is to write an F-Droid metadata file for the application yourself, and propose inclusion by filing a git merge request on the F-Droid application metadata repository ([fdroiddata GitLab repository](https://gitlab.com/fdroid/fdroiddata/)). This will lead to much quicker inclusion as the already-available metadata file will reduce the burden on reviewers when inspecting your proposed metadata; the submitter assumes responsibility of providing a correct metadata file. You can prepare a [Build Metadata](../Build_Metadata_Reference) with `fdroid import` and [templates](https://gitlab.com/fdroid/fdroiddata/-/tree/master/templates).  Other metadata in _fdroiddata_ are also good reference."
 msgstr "Uma alternativa mais avançada para a inclusão de aplicações é você mesmo escrever um ficheiro de metadados do F-Droid para a aplicação e propor a inclusão a preencher uma solicitação de mesclagem git no repositório de metadados da aplicação F-Droid ([fdroiddata repository GitLab](https://gitlab.com/fdroid/fdroiddata/)). Isto criará a uma inclusão muito mais rápida, uma vez que o ficheiro de metadados já disponível reduzirá os encargos para os revisores ao inspecionar os metadados propostos; o transmitente assume a responsabilidade de fornecer um ficheiro de metadados correcto."
 
 #. type: Plain text
@@ -7672,37 +7700,37 @@ msgstr "Uma alternativa mais avançada para a inclusão de aplicações é você
 msgid "When proposing inclusion this way, it is assumed that:"
 msgstr "Ao propor a inclusão desta forma, assume-se que:"
 
-#. type: Bullet: '-   '
+#. type: Bullet: '- '
 #: _docs/Inclusion_How-To.md
 msgid "You have a good understanding of what [Free Software](https://www.gnu.org/philosophy/free-sw.html) means, and what F-Droid is for."
 msgstr "Tem uma boa compreensão do que [Software Livre](https://www.gnu.org/philosophy/free-sw.html) significa e para que o F-Droid serve."
 
-#. type: Bullet: '-   '
+#. type: Bullet: '- '
 #: _docs/Inclusion_How-To.md
 msgid "You already read and understand the [Inclusion Policy](../Inclusion_Policy)."
 msgstr "Já leu e compreendeu a [Política de Inclusão](../Inclusion_Policy)."
 
-#. type: Bullet: '-   '
+#. type: Bullet: '- '
 #: _docs/Inclusion_How-To.md
 msgid "You already read and understand the [Repository Style Guide](../Repository_Style_Guide)."
 msgstr "Já leu e entendeu o [Guia de Estilo do Repositório](../Repository_Style_Guide)."
 
-#. type: Bullet: '-   '
+#. type: Bullet: '- '
 #: _docs/Inclusion_How-To.md
 msgid "You already read and understand [the relevant parts of the F-Droid documentation](../Build_Metadata_Reference)."
 msgstr "Já leu e compreendeu [as partes relevantes da documentação do F-Droid](../Build_Metadata_Reference)."
 
-#. type: Bullet: '-   '
+#. type: Bullet: '- '
 #: _docs/Inclusion_How-To.md
 msgid "You know how to use [Git VCS](https://git-scm.com/), and know how a merge request (a.k.a. \"pull request\" in GitHub terminology) works in general."
 msgstr "Sabe como usar o [VCS Git](https://git-scm.com/) e sabe como uma solicitação de mesclagem (também conhecida como \"pull request\" na terminologia do GitHub) funciona em geral."
 
-#. type: Bullet: '-   '
+#. type: Bullet: '- '
 #: _docs/Inclusion_How-To.md
 msgid "You have an account on [GitLab](https://gitlab.com/) _(NOTE: F-Droid CI runners are under Gitlab's FOSS program, so there's no need for you to pay for any CI time. If Gitlab starts asking for phone numbers or credit cards don't submit anything, just leave a note in the MR so we know we need to trigger the CI.)_"
 msgstr ""
 
-#. type: Bullet: '-   '
+#. type: Bullet: '- '
 #: _docs/Inclusion_How-To.md
 msgid "You have a local instance of the F-Droid server software, and you know what you are doing."
 msgstr "Tem uma instância local do software do servidor F-Droid e sabe o que está a fazer."
@@ -7733,67 +7761,67 @@ msgstr "Como o F-Droid é um repositório de software que promete software livre
 msgid "This is a nonexhaustive list of what a reviewer would do:"
 msgstr "Esta é uma lista incompleta do que um revisor faria:"
 
-#. type: Bullet: '-   '
+#. type: Bullet: '- '
 #: _docs/Inclusion_How-To.md
 msgid "They will go to your source code repository, and look for copyright notices in license files, including README, to check that the proposed application is released under a [recognized Free Software and/or OSI license(s)](https://spdx.org/licenses/)."
 msgstr "Irão ao seu repositório de código-fonte e procurarão avisos de direitos de autor nos ficheiros de licença, incluindo o README, para verificar se a aplicação proposta é lançada ao abrigo de uma [licença(s) reconhecida(s) de Software Livre e/ou OSI](https://spdx.org/licenses/)."
 
-#. type: Bullet: '-   '
+#. type: Bullet: '- '
 #: _docs/Inclusion_How-To.md
 msgid "They will look at your build script to see which build system you use, and whether F-Droid build server can handle it (Ant and Gradle are the most common and easiest ones)."
 msgstr "Eles olharão para o seu script de compilação para ver qual sistema de compilação usa e se o servidor de compilação F-Droid pode lidar com ele (Ant e Gradle são os mais comuns e fáceis)."
 
-#. type: Bullet: '-   '
+#. type: Bullet: '- '
 #: _docs/Inclusion_How-To.md
 msgid "They will try to download a copy of your source code."
 msgstr "Eles tentarão descarregar uma cópia do seu código-fonte."
 
-#. type: Bullet: '-   '
+#. type: Bullet: '- '
 #: _docs/Inclusion_How-To.md
 msgid "They will look in all source code files to verify that their licenses are consistent with corresponding license/README files."
 msgstr "Eles irão olhar em todos os ficheiros de código-fonte para verificar se suas licenças são consistentes com os ficheiros de licença/README correspondentes."
 
-#. type: Bullet: '-   '
+#. type: Bullet: '- '
 #: _docs/Inclusion_How-To.md
 msgid "They will check if your application uses any pre-compiled libraries or binary blobs."
 msgstr "Eles irão verificar se a sua aplicação utiliza quaisquer bibliotecas pré-compiladas ou blobs binários."
 
-#. type: Bullet: '-   '
+#. type: Bullet: '- '
 #: _docs/Inclusion_How-To.md
 msgid "They will look at your non-source code files to identify [Non-Free resources](https://monitor.f-droid.org/anti-feature/NonFreeAssets) used in your application."
 msgstr "Eles olharão aos seus ficheiros de não-código-fonte para identificar [recursos não livres](https://monitor.f-droid.org/anti-feature/NonFreeAssets) usados na sua aplicação."
 
-#. type: Bullet: '-   '
+#. type: Bullet: '- '
 #: _docs/Inclusion_How-To.md
 msgid "They will skim through the source code to see if your application uses Non-Free dependencies, shows advertisements, tracks users, promotes or depends on Non-Free or non-changeable services/applications, or does anything that is harmful or otherwise undesirable for users."
 msgstr "Eles irão analisar o código-fonte para ver se a sua aplicação utiliza dependências Não-Livres, mostra anúncios, rastreia utilizadores, promove ou depende de serviços/aplicações Não-Livres ou não-mutáveis, ou faz qualquer coisa que seja prejudicial ou indesejável para os utilizadores."
 
-#. type: Bullet: '-   '
+#. type: Bullet: '- '
 #: _docs/Inclusion_How-To.md
 msgid "They will list a summary of any [_AntiFeatures_](https://monitor.f-droid.org/anti-features) in your application."
 msgstr "Eles irão listar um resumo de qualquer [_AntiFeatures_](https://monitor.f-droid.org/anti-features) na sua aplicação."
 
-#. type: Bullet: '-   '
+#. type: Bullet: '- '
 #: _docs/Inclusion_How-To.md
 msgid "They will try patching your application to remove usage of third-party proprietary software (if there is any)."
 msgstr "Eles tentarão aplicar patches em sua aplicação para remover o uso de software proprietário de terceiros (se houver algum)."
 
-#. type: Bullet: '-   '
+#. type: Bullet: '- '
 #: _docs/Inclusion_How-To.md
 msgid "They will try to determine a suitable update process for your application (e.g. by looking at how your releases relate to VCS tags and/or version information in _AndroidManifest.xml_)."
 msgstr "Eles irão tentar determinar um processo de atualização adequado para sua aplicação (por exemplo, a olhar como as suas versões se relacionam com as tags VCS e/ou informações de versão em _AndroidManifest.xml_)."
 
-#. type: Bullet: '-   '
+#. type: Bullet: '- '
 #: _docs/Inclusion_How-To.md
 msgid "They will try writing a suitable metadata file for your application, and add it to local F-Droid build server instance.  (`fdroid rewritemeta`, `fdroid lint` are used to ensure that metadata is well-formed)"
 msgstr "Eles irão tentar escrever um ficheiro de metadados adequado para sua aplicação, e adicioná-lo à instância local do servidor de compilação F-Droid.  (`fdroid rewritemeta`, `fdroid lint` são usados para assegurar que os metadados estejam bem formados)"
 
-#. type: Bullet: '-   '
+#. type: Bullet: '- '
 #: _docs/Inclusion_How-To.md
 msgid "They will try to build your application in an isolated environment to see if the process succeeds and yield a functional APK."
 msgstr "Eles irão tentar construir a sua aplicação num ambiente isolado para ver se o processo é bem sucedido e produzir um APK funcional."
 
-#. type: Bullet: '-   '
+#. type: Bullet: '- '
 #: _docs/Inclusion_How-To.md
 msgid "If all went smoothly, they will add a new metadata file to their local fdroiddata git repository and synchronizes the change to GitLab."
 msgstr "Se tudo correr bem, eles irão adicionar um novo ficheiro de metadados ao seu repositório fdroiddata git local e sincronizar a alteração para o GitLab."
@@ -7867,24 +7895,24 @@ msgstr ""
 msgid "For more information, see:"
 msgstr "Para obter informações mais detalhadas, veja:"
 
-#. type: Bullet: '* '
+#. type: Bullet: '- '
 #: _docs/Inclusion_How-To.md
 msgid "[Towards a reproducible F-Droid](https://f-droid.org/2023/01/15/towards-a-reproducible-fdroid.html)"
 msgstr ""
 
-#. type: Bullet: '* '
+#. type: Bullet: '- '
 #: _docs/Inclusion_How-To.md
 msgid "[F-Droid's Reproducible Builds documentation](../Reproducible_Builds)"
 msgstr ""
 
-#. type: Bullet: '* '
+#. type: Bullet: '- '
 #: _docs/Inclusion_How-To.md
 #, fuzzy
 #| msgid "<https://reproducible-builds.org>"
 msgid "[Reproducible Builds project](https://reproducible-builds.org/)"
 msgstr "<https://reproducible-builds.org>"
 
-#. type: Bullet: '* '
+#. type: Bullet: '- '
 #: _docs/Inclusion_How-To.md
 msgid "[HOWTO: diff & fix APKs for Reproducible Builds](https://gitlab.com/fdroid/wiki/-/wikis/HOWTO:-diff-&-fix-APKs-for-Reproducible-Builds)"
 msgstr ""
@@ -7982,22 +8010,22 @@ msgstr "No entanto, sua aplicação ainda não aparecerá na lista de aplicaçõ
 msgid "External Links"
 msgstr "Ligações Externas"
 
-#. type: Bullet: '-   '
+#. type: Bullet: '- '
 #: _docs/Inclusion_How-To.md
 msgid "[F-Droid application submission queue on GitLab](https://gitlab.com/fdroid/rfp/issues) (for new submissions)"
 msgstr "[Fila de submissão de aplicações F-Droid no GitLab](https://gitlab.com/fdroid/rfp/issues) (para novas submissões)"
 
-#. type: Bullet: '-   '
+#. type: Bullet: '- '
 #: _docs/Inclusion_How-To.md
 msgid "[F-Droid application submission queue on forum](https://f-droid.org/forums/forum/submission-queue/) (for following-up old submissions)"
 msgstr "[Fila de submissão de aplicações F-Droid no fórum](https://f-droid.org/forums/forum/submission-queue/) (para acompanhamento de envios antigos)"
 
-#. type: Bullet: '-   '
+#. type: Bullet: '- '
 #: _docs/Inclusion_How-To.md
 msgid "[fdroiddata GitLab repository](https://gitlab.com/fdroid/fdroiddata/)"
 msgstr "[Repositório de fdroiddata GitLab](https://gitlab.com/fdroid/fdroiddata/)"
 
-#. type: Bullet: '-   '
+#. type: Bullet: '- '
 #: _docs/Inclusion_How-To.md
 msgid "[fdroiddata revision history](https://gitlab.com/fdroid/fdroiddata/commits/master)"
 msgstr "[histórico de revisões fdroiddata](https://gitlab.com/fdroid/fdroiddata/commits/master)"
@@ -13524,6 +13552,18 @@ msgstr "Preferências"
 #: _docs/Whitelabel_Builds.md
 msgid "For a custom build that enables Automatic Updates by default, override _app/src/main/res/xml/preferences.xml_. You can customize the preferences and their default values in _app/src/mycompany/res/xml/preferences.xml_. The fully automatic update requires [Privileged Extension](https://gitlab.com/fdroid/privileged-extension). With regular access, the updates will only automatically download. The user still needs to click install on each one."
 msgstr "Para uma compilação personalizada que ativa Atualizações Automáticas por padrão, substitua _app/src/main/res/xml/preferences.xml_. Pode personalizar as preferências e os seus valores padrões em _app/src/minhaempresa/res/xml/preferences.xml_. A atualização totalmente automática requer [Extensões Privilegiadas](https://gitlab.com/fdroid/privileged-extension). Com acesso comum, as atualizações serão descarregar automaticamente. O utilizador ainda precisa clicar em instalar em cada um deles."
+
+#~ msgid "If you do not already have an account, or do not want to create one, you can use our reusable account.  The issue tracker works better if reporters use an account that will receive notifications.  Issue reports are usually a conversation, not just a single report."
+#~ msgstr "Se ainda não tiver uma conta ou não quiser criar uma, pode usar nossa conta reutilizável.  O rastreador de problemas funciona melhor se os repórteres usarem uma conta que receberá notificações.  Relatórios de problemas são geralmente uma conversa, não apenas um único relatório."
+
+#~ msgid "That said, the account username is _fdroid-anyone_ and the password is _fdroid does not track_."
+#~ msgstr "Dito isto, o nome de utilizador da conta é _fdroid-anyone_ e a palavra-passe é _fdroid does not track_."
+
+#~ msgid "Please note that we will have to remove this account, in case it gets abused."
+#~ msgstr "Por favor note que teremos que remover esta conta, caso ela seja utilizada para fins abusivos."
+
+#~ msgid "This is the simplest way to get the application included. But due to an amount of reviewer labor required for each application, this is the slowest method."
+#~ msgstr "Esta é a maneira mais simples de fazer incluír a aplicação. Mas devido à quantidade de mão-de-obra necessária para cada aplicação, este é o método mais lento."
 
 #, no-wrap
 #~ msgid ""
