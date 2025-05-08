@@ -24,7 +24,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
 "POT-Creation-Date: 2025-05-05 10:53+0200\n"
-"PO-Revision-Date: 2025-04-29 11:40+0000\n"
+"PO-Revision-Date: 2025-05-06 14:34+0000\n"
 "Last-Translator: VfBFan <drop0815@posteo.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/f-droid/website-docs/de/>\n"
 "Language: de\n"
@@ -7248,10 +7248,8 @@ msgstr "Anwendungsaufnahmevorschlag"
 
 #. type: Plain text
 #: _docs/Inclusion_How-To.md
-#, fuzzy
-#| msgid "To propose inclusion of a new application to the main F-Droid repository, one could post the applications relevant information to the Submission Queue. The more advanced alternative is writing a complete metadata file yourself, test, and propose inclusion (merge request) directly into the fdroiddata Git repository; speeding up the process. Both ways will be described below in detail."
 msgid "To propose inclusion of a new application to the main F-Droid repository, one could post the applications relevant information to the Submission Queue. The more advanced and recommended alternative is writing a complete metadata file yourself, test, and propose inclusion (merge request) directly into the fdroiddata Git repository; speeding up the process. Both ways will be described below in detail."
-msgstr "Um die Aufnahme einer neuen Anwendung im F-Droid-Hauptrepository vorzuschlagen, könnten die für die Anwendung relevanten Informationen an die Submission Queue gesendet werden. Die Alternative für Fortgeschrittene wäre, eine komplette Metadaten-Datei selbst zu schreiben, zu testen, und die Aufnahme direkt im fdroiddata Git-Repository vorzuschlagen (Merge-Anfrage); was den Vorgang beschleunigt. Beide Arten werden weiter unten im Detail beschrieben."
+msgstr "Um die Aufnahme einer neuen Anwendung im F-Droid-Hauptrepository vorzuschlagen, könnten die für die Anwendung relevanten Informationen an die Submission Queue gesendet werden. Die fortschrittlichere und empfohlene Alternative wäre, eine komplette Metadaten-Datei selbst zu schreiben, zu testen, und die Aufnahme (Merge-Anfrage) direkt im fdroiddata Git-Repository vorzuschlagen; was den Vorgang beschleunigt. Beide Arten werden weiter unten im Detail beschrieben."
 
 #. type: Plain text
 #: _docs/Inclusion_How-To.md
@@ -7262,14 +7260,12 @@ msgstr "Zu beachten ist, dass Sie die Aufnahme selbst dann vorschlagen können, 
 #: _docs/Inclusion_How-To.md
 #, no-wrap
 msgid "Prepare and compliance check"
-msgstr ""
+msgstr "Vorbereitung und Konformitätsprüfung"
 
 #. type: Plain text
 #: _docs/Inclusion_How-To.md
-#, fuzzy
-#| msgid "Note that you can propose inclusion even you are not a developer or maintainer of the proposed application itself. See [Inclusion Policy](../Inclusion_Policy) and [Repository Style Guide](../Repository_Style_Guide) for the policy aspect of this section."
 msgid "Before proposing inclusion of an application, the compliance with the [Inclusion Policy](../Inclusion_Policy) and [Repository Style Guide](../Repository_Style_Guide) should be checked carefully. Here is a short checklist."
-msgstr "Zu beachten ist, dass Sie die Aufnahme selbst dann vorschlagen können, wenn Sie nicht selbst Entwickler oder Maintainer der vorgeschlagenen Anwendung sind. Im Hinblick auf Richtlinien in diesem Abschnitt, siehe [Aufnahmekriterien](../Inclusion_Policy) und [Repository-Aufbauanleitung](../Repository_Style_Guide)."
+msgstr "Bevor Sie die Aufnahme eines Antrags vorschlagen, sollten Sie sorgfältig prüfen, ob die [Aufnahmekriterien](../Inclusion_Policy) und [Repository-Aufbauanleitung](../Repository_Style_Guide) eingehalten werden. Hier ist eine kurze Checkliste."
 
 #. type: Plain text
 #: _docs/Inclusion_How-To.md
@@ -7291,11 +7287,26 @@ msgid ""
 "  should always be added before inclusion. While the folder structure follows Fastlane/Triple-T,\n"
 "  the actual tooling is not needed.\n"
 msgstr ""
+"1. Die App sollte über ein öffentliches Quellcode-Repository und eine FOSS-Lizenzdatei verfügen. Bitte\n"
+"  bestätigen Sie, dass das Repository den echten aktuellen Quellcode enthält und nicht\n"
+"  einige Dummy-Dateien als Platzhalter.\n"
+"2. Die App sollte nur FOSS-Abhängigkeiten haben. Firebase und GMS sind einige auffällige Beispiele\n"
+"  von Nicht-FOSS-Bibliotheken, die nicht akzeptiert werden. Wenn die App (in gewisser Weise) auch ohne sie funktionieren kann,\n"
+"  erstellen Sie bitte ein Flavor/eine Version ohne diese Abhängigkeiten.\n"
+"  Die Build-Tools sollten ebenfalls FOSS sein. Wenn eine proprietäre IDE erforderlich ist, darf diese nicht\n"
+"  enthalten sein. F-Droid wird ohnehin mit Kommandozeilen-Tools gebaut, Build-Anweisungen helfen den Mitwirkenden.\n"
+"3. Der Autor der Anwendung wurde benachrichtigt (und hat keine Einwände gegen die Aufnahme). Wenn Sie\n"
+"  nicht der Autor sind, öffnen Sie bitte ein Ticket im Repo der App und bitten Sie den Autor um\n"
+"  Erlaubnis.\n"
+"4. [Die Metadaten-Dateien für Beschreibungen](../All_About_Descriptions_Graphics_and_Screenshots)\n"
+"  werden dem Repo hinzugefügt. Dies ist eine einfache Struktur mit einigen Textdateien und Bildern und\n"
+"  sollte immer vor der Aufnahme hinzugefügt werden. Während die Ordnerstruktur Fastlane/Triple-T entspricht,\n"
+"  werden die eigentlichen Tools nicht benötigt.\n"
 
 #. type: Plain text
 #: _docs/Inclusion_How-To.md
 msgid "With all these requirements satisfied, this app should be ready for inclusion."
-msgstr ""
+msgstr "Wenn alle diese Anforderungen erfüllt sind, sollte die App zur Aufnahme bereit sein."
 
 #. type: Title ###
 #: _docs/Inclusion_How-To.md
@@ -7306,7 +7317,7 @@ msgstr "Vorschlag über die Submission Queue"
 #. type: Plain text
 #: _docs/Inclusion_How-To.md
 msgid "This is the simplest way to get the application included. Please note that this only makes an app appear on our radar as a candidate for inclusion. Depending on the interests of the contributors, this may take a long time until someone picks it up."
-msgstr ""
+msgstr "Dies ist der einfachste Weg, um die Anwendung aufzunehmen. Bitte beachten Sie, dass eine Anwendung dadurch nur auf unserem Blickfeld als Aufnahmekandidat erscheint. Je nach Interesse der Mitwirkenden kann es lange dauern, bis jemand die Anwendung berücksichtigt."
 
 #. type: Plain text
 #: _docs/Inclusion_How-To.md
@@ -7321,10 +7332,8 @@ msgstr "Vorschlag als Metadaten-Merge-Anfrage"
 
 #. type: Plain text
 #: _docs/Inclusion_How-To.md
-#, fuzzy
-#| msgid "A more advanced alternative for application inclusion is to write an F-Droid metadata file for the application yourself, and propose inclusion by filing a git merge request on the F-Droid application metadata repository ([fdroiddata GitLab repository](https://gitlab.com/fdroid/fdroiddata/)). This will lead to much quicker inclusion as the already-available metadata file will reduce the burden on reviewers when inspecting your proposed metadata; the submitter assumes responsibility of providing a correct metadata file."
 msgid "A more advanced alternative for application inclusion is to write an F-Droid metadata file for the application yourself, and propose inclusion by filing a git merge request on the F-Droid application metadata repository ([fdroiddata GitLab repository](https://gitlab.com/fdroid/fdroiddata/)). This will lead to much quicker inclusion as the already-available metadata file will reduce the burden on reviewers when inspecting your proposed metadata; the submitter assumes responsibility of providing a correct metadata file. You can prepare a [Build Metadata](../Build_Metadata_Reference) with `fdroid import` and [templates](https://gitlab.com/fdroid/fdroiddata/-/tree/master/templates).  Other metadata in _fdroiddata_ are also good reference."
-msgstr "Eine fortgeschrittenere Alternative zur Anwendungsaufnahme ist es, eine F-Droid-Metadaten-Datei für die Anwendung selbst zu schreiben und die Aufnahme vorzuschlagen, indem eine Git-Merge-Anfrage im Metadaten-Repository der F-Droid-Anwendung ([fdroiddata GitLab-Repository](https://gitlab.com/fdroid/fdroiddata/)) ausgefüllt wird. Dies wird zu einer viel schnelleren Aufnahme führen, da die bereits verfügbare Metadaten-Datei die Arbeitsbelastung für die Prüfer bei Durchsicht Ihrer vorgeschlagenen Metadaten reduzieren wird; der Antragsteller übernimmt die Verantwortung, eine korrekte Metadaten-Datei einzureichen."
+msgstr "Eine fortgeschrittenere Alternative zur Anwendungsaufnahme besteht darin, eine F-Droid-Metadaten-Datei für die Anwendung selbst zu schreiben und die Aufnahme vorzuschlagen, indem eine Git-Merge-Anfrage im Metadaten-Repository der F-Droid-Anwendung ([fdroiddata GitLab-Repository](https://gitlab.com/fdroid/fdroiddata/)) ausgefüllt wird. Dies wird zu einer viel schnelleren Aufnahme führen, da die bereits verfügbare Metadaten-Datei die Arbeitsbelastung für die Prüfer bei Durchsicht Ihrer vorgeschlagenen Metadaten reduzieren wird; der Antragsteller übernimmt die Verantwortung, eine korrekte Metadaten-Datei einzureichen. Sie können [Build-Metadaten](../Build_Metadata_Reference) mit `fdroid import` und [Vorlagen](https://gitlab.com/fdroid/fdroiddata/-/tree/master/templates) vorbereiten.  Andere Metadaten in _fdroiddata_ sind ebenfalls eine nützliche Referenz."
 
 #. type: Plain text
 #: _docs/Inclusion_How-To.md
@@ -9439,7 +9448,7 @@ msgstr "Git-Tags signiert durch „Hans-Christoph Steiner \\<hans@guardianprojec
 #: _docs/Release_Channels_and_Signing_Keys.md
 #, no-wrap
 msgid "F-Droid Jekyll Plugin"
-msgstr "F-Droid Jekyll Plugin"
+msgstr "F-Droid Jekyll-Plugin"
 
 #. type: Bullet: '-   '
 #: _docs/Release_Channels_and_Signing_Keys.md
@@ -9455,7 +9464,7 @@ msgstr "Git-Tags signiert durch „Hans-Christoph Steiner \\<hans@guardianprojec
 #: _docs/Repository_Style_Guide.md
 #, no-wrap
 msgid "Repository Style Guide"
-msgstr "Repository-Styleguide"
+msgstr "Repository-Aufbauanleitung"
 
 #. type: Plain text
 #: _docs/Repository_Style_Guide.md
