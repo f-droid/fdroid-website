@@ -30,7 +30,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
 "POT-Creation-Date: 2025-05-05 10:53+0200\n"
-"PO-Revision-Date: 2025-04-29 08:16+0000\n"
+"PO-Revision-Date: 2025-05-06 14:34+0000\n"
 "Last-Translator: 大王叫我来巡山 <hamburger2048@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Chinese (Simplified Han script) <https://hosted.weblate.org/projects/f-droid/website-docs/zh_Hans/>\n"
 "Language: zh_Hans\n"
@@ -7189,10 +7189,8 @@ msgstr "应用收录提议"
 
 #. type: Plain text
 #: _docs/Inclusion_How-To.md
-#, fuzzy
-#| msgid "To propose inclusion of a new application to the main F-Droid repository, one could post the applications relevant information to the Submission Queue. The more advanced alternative is writing a complete metadata file yourself, test, and propose inclusion (merge request) directly into the fdroiddata Git repository; speeding up the process. Both ways will be described below in detail."
 msgid "To propose inclusion of a new application to the main F-Droid repository, one could post the applications relevant information to the Submission Queue. The more advanced and recommended alternative is writing a complete metadata file yourself, test, and propose inclusion (merge request) directly into the fdroiddata Git repository; speeding up the process. Both ways will be described below in detail."
-msgstr "要提议将新应用收录到主 F-Droid 存储库中，你可以将此应用的相关信息发布到提交队列中。更高级的替代方法是自己编写一个完整的元数据文件，测试并直接向 fdroiddata Git 存储库提出收录（合并请求），这样可以加快收录进程。下面将详细描述这两种方式。"
+msgstr "要提议将新应用收录到主 F-Droid 存储库中，你可以将此应用的相关信息发布到提交队列中。更高级和推荐的替代方法是自己编写一个完整的元数据文件，测试并直接向 fdroiddata Git 存储库提出收录（合并请求），这样可以加快收录进程。下面将详细描述这两种方式。"
 
 #. type: Plain text
 #: _docs/Inclusion_How-To.md
@@ -7203,14 +7201,12 @@ msgstr "注意，即使你不是所提议的应用本身的开发者或维护者
 #: _docs/Inclusion_How-To.md
 #, no-wrap
 msgid "Prepare and compliance check"
-msgstr ""
+msgstr "准备和合规检查"
 
 #. type: Plain text
 #: _docs/Inclusion_How-To.md
-#, fuzzy
-#| msgid "Note that you can propose inclusion even you are not a developer or maintainer of the proposed application itself. See [Inclusion Policy](../Inclusion_Policy) and [Repository Style Guide](../Repository_Style_Guide) for the policy aspect of this section."
 msgid "Before proposing inclusion of an application, the compliance with the [Inclusion Policy](../Inclusion_Policy) and [Repository Style Guide](../Repository_Style_Guide) should be checked carefully. Here is a short checklist."
-msgstr "注意，即使你不是所提议的应用本身的开发者或维护者，也可以提议收录。关于这部分的政策，请参见[收录政策](../Inclusion_Policy)和[版本库风格指南](../Repository_Style_Guide)。"
+msgstr "提议将应用上架 F-Droid 前，应仔细检查是否符合 [上架政策](../Inclusion_Policy) and [存储库风格指南](../Repository_Style_Guide)。这里有一份简短的清单。"
 
 #. type: Plain text
 #: _docs/Inclusion_How-To.md
@@ -7232,11 +7228,26 @@ msgid ""
 "  should always be added before inclusion. While the folder structure follows Fastlane/Triple-T,\n"
 "  the actual tooling is not needed.\n"
 msgstr ""
+"1. 应用应当有公开的源代码存储库和 FOSS 许可证文件。请确认\n"
+"  存储库中有真实的最新源代码，而非\n"
+"  无意义的某些虚设文件。\n"
+"2. 应用应当只有 FOSS 依赖。Firebase 和 GMS 是\n"
+"  不被接受的非 FOSS 库的一些显著例子。如果没有这些非自由库应用能够（部分）工作，\n"
+"  请创建没有这些库的版本。\n"
+"  构建工具也应当是 FOSS 的。如果需要专有的 IDE，那么这样的应用无法\n"
+"  上架。F-Droid 从命令行工具构建，构建教程帮助贡献者\n"
+"3.已经通知了应用作者 （且作者不反对上架）。如你并非作者\n"
+"  请在应用的代码存储库那里新开 Issue，请求作者\n"
+"  的许可。\n"
+"4. [描述的元数据文件](../All_About_Descriptions_Graphics_and_Screenshots)\n"
+" 被添加到存储库中。 这是个简单的结构，有一些文本文件和图片，在上架前应始终\n"
+"  先添加它们。虽然文件夹结构遵循 Fastlane/Triple-T，\n"
+"  但无需实际加工处理。\n"
 
 #. type: Plain text
 #: _docs/Inclusion_How-To.md
 msgid "With all these requirements satisfied, this app should be ready for inclusion."
-msgstr ""
+msgstr "满足这些条件后，此应用就准备好上架了。"
 
 #. type: Title ###
 #: _docs/Inclusion_How-To.md
@@ -7247,7 +7258,7 @@ msgstr "将提案发布到提交队列"
 #. type: Plain text
 #: _docs/Inclusion_How-To.md
 msgid "This is the simplest way to get the application included. Please note that this only makes an app appear on our radar as a candidate for inclusion. Depending on the interests of the contributors, this may take a long time until someone picks it up."
-msgstr ""
+msgstr "这是让应用上架的最简单方法。请注意完成这些只是让应用作为候选出现在我们的视野中。取决于贡献者的兴趣，离真正上架可能还有相当长的时间。"
 
 #. type: Plain text
 #: _docs/Inclusion_How-To.md
@@ -7262,10 +7273,8 @@ msgstr "元数据合并请求的提案"
 
 #. type: Plain text
 #: _docs/Inclusion_How-To.md
-#, fuzzy
-#| msgid "A more advanced alternative for application inclusion is to write an F-Droid metadata file for the application yourself, and propose inclusion by filing a git merge request on the F-Droid application metadata repository ([fdroiddata GitLab repository](https://gitlab.com/fdroid/fdroiddata/)). This will lead to much quicker inclusion as the already-available metadata file will reduce the burden on reviewers when inspecting your proposed metadata; the submitter assumes responsibility of providing a correct metadata file."
 msgid "A more advanced alternative for application inclusion is to write an F-Droid metadata file for the application yourself, and propose inclusion by filing a git merge request on the F-Droid application metadata repository ([fdroiddata GitLab repository](https://gitlab.com/fdroid/fdroiddata/)). This will lead to much quicker inclusion as the already-available metadata file will reduce the burden on reviewers when inspecting your proposed metadata; the submitter assumes responsibility of providing a correct metadata file. You can prepare a [Build Metadata](../Build_Metadata_Reference) with `fdroid import` and [templates](https://gitlab.com/fdroid/fdroiddata/-/tree/master/templates).  Other metadata in _fdroiddata_ are also good reference."
-msgstr "将应用收录进 F-Droid 存储库的一个更高级的替代方法是自己为应用编写一个 F-Droid 元数据文件，并在 F-Droid 应用元数据存储库（[fdroiddata GitLab 代码库](https://gitlab .com/fdroid/fdroiddata/)) 提交一个 git 合并请求来提议收录。这将加快应用收录速度，因为已经可用的元数据文件将减轻审阅者检查你提议的元数据的负担；由提交者来负责提供正确的元数据文件。"
+msgstr "将应用收录进 F-Droid 存储库的一个更高级的替代方法是自己为应用编写一个 F-Droid 元数据文件，并在 F-Droid 应用元数据存储库（[fdroiddata GitLab 代码库](https://gitlab .com/fdroid/fdroiddata/)) 提交一个 git 合并请求来提议收录。这将加快应用收录速度，因为已经可用的元数据文件将减轻审阅者检查你提议的元数据的负担；由提交者来负责提供正确的元数据文件。你可以用 `fdroid import` 和 [模板](https://gitlab.com/fdroid/fdroiddata/-/tree/master/templates) 准备 [构建元数据](../Build_Metadata_Reference)。_fdroiddata_中的其他元数据也是不错的参考。"
 
 #. type: Plain text
 #: _docs/Inclusion_How-To.md
