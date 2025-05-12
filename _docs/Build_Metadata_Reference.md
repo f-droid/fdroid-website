@@ -106,6 +106,7 @@ The following sections describe the fields recognised within the file.
 * [_Builds.encoding_](#build_encoding)
 * [_Builds.forceversion_](#build_forceversion)
 * [_Builds.forcevercode_](#build_forcevercode)
+* [_Builds.binary_](#build_binary)
 * [_Builds.rm_](#build_rm)
 * [_Builds.extlibs_](#build_extlibs)
 * [_Builds.srclibs_](#build_srclibs)
