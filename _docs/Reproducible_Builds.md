@@ -386,8 +386,8 @@ in parallel.
 Here are two examples where all the differences are suspected to come from
 different revisions of the platform:
 
-* https://verification.f-droid.org/de.nico.asura_12.apk.diffoscope.html
-* https://verification.f-droid.org/de.nico.ha_manager_25.apk.diffoscope.html
+* <https://verification.f-droid.org/de.nico.ha_manager_25.apk.diffoscope.html>
+* <https://verification.f-droid.org/de.nico.asura_12.apk.diffoscope.html>
 
 
 #### PNG Crush/Crunch
