@@ -29,7 +29,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
-"POT-Creation-Date: 2025-05-15 19:30+0200\n"
+"POT-Creation-Date: 2025-05-21 18:14+0200\n"
 "PO-Revision-Date: 2025-05-16 16:36+0000\n"
 "Last-Translator: 大王叫我来巡山 <hamburger2048@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Chinese (Simplified Han script) <https://hosted.weblate.org/projects/f-droid/website-docs/zh_Hans/>\n"
@@ -12612,7 +12612,9 @@ msgstr "验证服务器"
 
 #. type: Plain text
 #: _docs/Verification_Server.md
-msgid "The idea of a [verification server](https://verification.f-droid.org)  is to automatically reproduce official releases published by f-droid.org (or any other server).  This ensures that everything in the release APK came from the source code, and nothing was inserted or included during the build process.  This is also useful for verifying that the build process is not including proprietary libraries."
+#, fuzzy
+#| msgid "The idea of a [verification server](https://verification.f-droid.org)  is to automatically reproduce official releases published by f-droid.org (or any other server).  This ensures that everything in the release APK came from the source code, and nothing was inserted or included during the build process.  This is also useful for verifying that the build process is not including proprietary libraries."
+msgid "The idea of a [verification server](https://verification.f-droid.org)  is to automatically reproduce official releases published by f-droid.org (or any other server).  Another name for this is a [rebuilder](https://reproducible-builds.org/tools/#rebuilder-backends).  This process ensures that everything in the release APK came from the source code, and nothing was inserted or included during the build process.  This is also useful for verifying that the build process is not including proprietary libraries."
 msgstr "[验证服务器](https://verification.f-droid.org) 的想法是自动复制由 f-droid.org（或任何其他服务器）发布的官方版本。这可以确保发布 APK 中的所有内容都来自源代码，并且在构建过程中没有插入或包含任何内容。这对于验证构建过程不包括私有库也很有用。"
 
 #. type: Plain text
@@ -12633,7 +12635,9 @@ msgstr "基于 APK 签名的验证"
 
 #. type: Plain text
 #: _docs/Verification_Server.md
-msgid "The verification process currently works by building a new unsigned APK, then copying the APK signature from the existing APK into the newly built unsigned APK.  If the APK signature verifies, then the APK has been reproduced, and is marked as verified.  If not, a [diffoscope](https://diffoscope.org) log is generated to show what the differences are between the two builds. The verification server needs no signing capability, just building."
+#, fuzzy
+#| msgid "The verification process currently works by building a new unsigned APK, then copying the APK signature from the existing APK into the newly built unsigned APK.  If the APK signature verifies, then the APK has been reproduced, and is marked as verified.  If not, a [diffoscope](https://diffoscope.org) log is generated to show what the differences are between the two builds. The verification server needs no signing capability, just building."
+msgid "The verification process [currently works](https://gitlab.com/fdroid/buildbot/-/blob/988fc009/master/master.cfg#L155)  by building a new unsigned APK, then [copying](https://gitlab.com/fdroid/fdroidserver/-/blob/2.4.0/fdroidserver/common.py#L3773)  the APK signature from the existing APK into the newly built unsigned APK.  If the APK signature verifies, then the APK has been reproduced, and is marked as verified.  If not, a [diffoscope](https://diffoscope.org) log is generated to show what the differences are between the two builds. The verification server needs no signing capability, just building."
 msgstr "目前的验证过程是构建一个新的未签名 APK，然后将 APK 签名从现有 APK 复制到新构建的未签名 APK 中。如果 APK 签名通过验证，则该 APK 已被复现，并被标记为已验证。如果不是，则会生成 [diffoscope](https://diffoscope.org) 日志以显示两个构建之间的差异。验证服务器不需要签名能力，只需要构建。"
 
 #. type: Title ##
@@ -12644,18 +12648,8 @@ msgstr "设置一个"
 
 #. type: Plain text
 #: _docs/Verification_Server.md
-msgid "This is still pretty raw, so expect some tinkering.  It also will likely only work on Debian, Ubuntu and other Debian-derivatives. The first step is getting the [_fdroidserver_ tools setup](../Installing_the_Server_and_Repo_Tools) and working. Run the _fdroidserver_ tools directly out of git (e.g. `~/code/fdroidserver/fdroid build org.adaway`), that's going to be the easiest for now since the verification server stuff is a moving target. The base server needs to be at minimum Debian/jessie, or there will need to be some heavy tweaking. If you run Ubuntu or derivative distro, you can get any packages missing from your version, like _vagrant-cachier_, from this PPA: <https://launchpad.net/~fdroid/+archive/ubuntu/buildserver/>"
-msgstr "这仍然很原始，所以期待一些修补。它也可能只适用于 Debian、Ubuntu 和其他 Debian 衍生产品。第一步是获取 [_fdroidserver_ 工具设置](../Installing_the_Server_and_Repo_Tools) 并开始工作。直接从 git 运行 _fdroidserver_ 工具（例如 `~/code/fdroidserver/fdroid build org.adaway`），这将是目前最简单的，因为验证服务器的东西是移动目标。基本服务器需要至少是 Debian/jessie，否则需要进行一些重大调整。如果你运行 Ubuntu 或衍生发行版，你可以从这个 PPA：<https://launchpad.net/~fdroid/+archive/ubuntu/buildserver/>"
-
-#. type: Plain text
-#: _docs/Verification_Server.md
-msgid "Then you can find more on the process by reading [Build Server Setup](../Build_Server_Setup). You can also see the Continuous Integration scripts for this process to see how the whole thing can work:"
-msgstr "然后你可以通过阅读 [构建服务器设置](../Build_Server_Setup) 找到有关该过程的更多信息。你还可以查看此过程的持续集成脚本，以了解整个过程是如何工作的："
-
-#. type: Bullet: '* '
-#: _docs/Verification_Server.md
-msgid "<https://gitlab.com/fdroid/fdroidserver/blob/master/jenkins-build-makebuildserver>"
-msgstr "<https://gitlab.com/fdroid/fdroidserver/blob/master/jenkins-build-makebuildserver>"
+msgid "The verification server is managed via an [Ansible Playbook](https://gitlab.com/fdroid/fdroid-verification-server) which is installed on a server running Debian/stable that is configured to run containers with rootless Podman. This is what runs <https://verification.f-droid.org>, but it is still pretty raw, so expect some tinkering.  We welcome contributions.  It is a goal that this setup become generic enough that the maintainer of any F-Droid compatible repository can use this setup as a rebuilder."
+msgstr ""
 
 #. type: Yaml Front Matter Hash Value: title
 #: _docs/Verifying_Downloaded_APK.md

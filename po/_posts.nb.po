@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
-"POT-Creation-Date: 2025-05-15 19:30+0200\n"
+"POT-Creation-Date: 2025-05-21 18:14+0200\n"
 "PO-Revision-Date: 2021-04-05 03:26+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/f-droid/website-posts/nb_NO/>\n"
@@ -21611,4 +21611,160 @@ msgstr ""
 #. type: Plain text
 #: _posts/2025-04-29-mobifree-client-funding.md
 msgid "The rewrite will be exclusively in Kotlin and use [Compose](https://developer.android.com/develop/ui/compose/documentation) for the UI while using modern architectural patterns that will make the app easier to maintain and more fun to contribute to.  It will also allow for a responsive UI that adapts to the available screen size, be it a phone, a foldable, a tablet or even a desktop screen."
+msgstr ""
+
+#. type: Yaml Front Matter Hash Value: title
+#: _posts/2025-05-21-making-reproducible-builds-visible.md
+#, no-wrap
+msgid "Making reproducible builds visible"
+msgstr ""
+
+#. type: Plain text
+#: _posts/2025-05-21-making-reproducible-builds-visible.md
+msgid "Our lives are moving into the digital realm, our private data flows through all sorts of software. As software controls more and more of our lives, it is becoming ever more important that we have software that we can trust. Currently, smartphone users are often forced to operate on faith that private data will not be shared inappropriately or even abused. It is clear that many software providers already abuse this trust. Trusting the software creators and hoping for the best has not proven effective. Gatekeepers are empowered when users are forced to trust a company, rather than trust the software itself, and centralized power leads to less accountability. When there is open source, automated reviews and code audits, it is possible to verify that that source code can be trusted. But source code does not run on computers; binaries do.  The app publishing process must be able to confirm that the binary running on your device matches the trusted source code. This is called [reproducible builds](https://reproducible-builds.org/)."
+msgstr ""
+
+#. type: Plain text
+#: _posts/2025-05-21-making-reproducible-builds-visible.md
+#, no-wrap
+msgid "F-Droid maintains a complete, free software system for securely making releases of Android apps in a fully automated way. This has been running <tt>f-droid.org</tt> since 2010. Reproducible builds make it possible to strongly link the actual app running on our devices with the source code which they were built from. When the source code has been thoroughly inspected and understood, reproducible builds make it possible to apply that same trust to the binary. Reproducible builds are essential in order to have trustworthy software.  So F-Droid has been delivering reproducible builds [since 2015](https://f-droid.org/2015/02/11/complete-reproducible-app-distribution-achieved.html).\n"
+msgstr ""
+
+#. type: Plain text
+#: _posts/2025-05-21-making-reproducible-builds-visible.md
+msgid "Last year, we received [funding from NLnet](https://nlnet.nl/project/Reproducible-F-Droid/) to overhaul our build infrastructure to follow the example of Debian Reproducible Builds.  The core goals are to enable mass rebuilds to find reproducibility issues, make verification rebuilders easy to deploy, and expose more information about reproducible builds to end users.  This improves the whole free software Android ecosystem."
+msgstr ""
+
+#. type: Title ##
+#: _posts/2025-05-21-making-reproducible-builds-visible.md
+#, no-wrap
+msgid "Representing reproducible builds to users"
+msgstr ""
+
+#. type: Plain text
+#: _posts/2025-05-21-making-reproducible-builds-visible.md
+msgid "As important as reproducible builds are, it is difficult to represent them to users.  Reproducible builds need to be about automatic confirmation by an inspectable process. In order to reach the full potential, it can not be based on assuming that someone did the right thing.  App developers are well set up to understand this, since they are building apps, so they can inspect and run these processes themselves. How can this be brought to users?"
+msgstr ""
+
+#. type: Plain text
+#: _posts/2025-05-21-making-reproducible-builds-visible.md
+#, no-wrap
+msgid "There is now a \"[Reproducibility Status](https://verification.f-droid.org/packages/com.nextcloud.client/)\" link for each app on <tt>f-droid.org</tt>, listed on every app's page.  Our verification server shows ✔️️ or 💔 based on its build results, where ✔️️ means our rebuilder reproduced the same APK file and 💔 means it did not. The IzzyOnDroid repository has developed a more elaborate [system of badges](https://android.izzysoft.de/articles/named/iod-rbs-mirrors-clients) which displays a ✅ for each rebuilder.  Additionally, there is a sketch of a five-level graph to represent some aspects about which processes were run.  Projects like Archlinux and Debian provide [developer](https://reproducible.archlinux.org/)-[facing](https://ci.debian.net/packages/f/fdroidserver/) tools to give feedback about reproducible builds, but do not display information about reproducible builds in the user-facing interfaces like the package management GUIs.\n"
+msgstr ""
+
+#. type: Plain text
+#: _posts/2025-05-21-making-reproducible-builds-visible.md
+msgid "Badges like these are simple to add, and users are used to seeing them.  For example, the browser shows a 🔒 when HTTPS is in use.  Keyoxide uses OpenPGP cryptography to verify the links between various online identities, and aims to make this [accessible](https://blog.keyoxide.org/nontechnical-introduction/) to non-technical users.  Bluesky has experimented with a badge that has [some level](https://www.neowin.net/news/angry-disappointed-users-react-to-blueskys-upcoming-blue-check-mark-verification-system/) of verification. Then there is Twitter's famous badge, which basically just means the user [paid for it](https://www.pcmag.com/news/this-is-fine-people-quickly-exploit-twitter-blue-to-pose-as-trump-lebron) or Elon Musk approved it."
+msgstr ""
+
+#. type: Plain text
+#: _posts/2025-05-21-making-reproducible-builds-visible.md
+msgid "What do these little badges really mean? What do they provide? These badges are an expression of whoever controls the website, so they still require trusting a person.  How can trustworthiness be reliably represented to users? Reproducible builds are ultimately about running a known process to confirm that nothing has actually changed.  If users just trust the badges, then they will not run the verification processes, and we're back to just trusting the people rather than the source code.  In terms of user perception, using badges puts us in very mixed company, and could even mislead those who do not understand how trivial it is to add a badge to a web page."
+msgstr ""
+
+#. type: Title ##
+#: _posts/2025-05-21-making-reproducible-builds-visible.md
+#, no-wrap
+msgid "Could users run a meaningful verification process?"
+msgstr ""
+
+#. type: Plain text
+#: _posts/2025-05-21-making-reproducible-builds-visible.md
+msgid "F-Droid was built on providing users with verified free software that has been reviewed by humans.  These are quite technical processes which non-technical people are unlikely to follow.  That means most users are trusting other people's judgement.  The F-Droid processes and their resulting data are published to make it easy for others to review the results and offer their judgement."
+msgstr ""
+
+#. type: Plain text
+#: _posts/2025-05-21-making-reproducible-builds-visible.md
+msgid "Similarly, reproducible builds are only actionable if one knows how to build apps from source code. Trust comes when someone actually runs the rebuild process and sees that the resulting binary is identical. Few users want to even think about running rebuilds. If apps are just marked with a checkbox, that means users have to trust that someone did the right thing, there is no info about they can verify it for themselves. It helps to make the badge link to more information, but still, that is not the same as running a verification process themselves."
+msgstr ""
+
+#. type: Plain text
+#: _posts/2025-05-21-making-reproducible-builds-visible.md
+msgid "Reproducible builds are most useful when used to catch the differences between builds.  Then those differences can be highlighted to provide leads on potential problems. What kinds of verification could a non-developer person verify? HTTPS provides a technical example that is simpler. If a user wants to verify HTTPS, they can put the URL into a different browser or tool like `wget`. The bar for verifying HTTPS is not so high. Internet users generally understand the basics what a URL means and represents.  There has been decades of effort in educating users on how to understand domain names and URLs.  And users understand well that a URL can represent a organization, company, or individual."
+msgstr ""
+
+#. type: Plain text
+#: _posts/2025-05-21-making-reproducible-builds-visible.md
+#, no-wrap
+msgid "On <tt>f-droid.org</tt>, the app's metadata can include a `Binaries:` URL where the original developer can post their own signed releases.  The build process downloads the signed release from there in order to compare it to the version that was just built on our _buildserver_.  This URL can also be presented to the user.  They can understand that `https://ltt.rs/fdroid/repo/Ltt.rs-0.4.4-release.apk` and `https://f-droid.org/repo/rs.ltt.android_19.apk` come from different domains, which can be separately controlled.  Of course, those URLs could point to the exact same file on the same server, so some level of trust is still required.  This kind of thing is more like evidence than proof.  A signature on an Android app must have come from specific signing key.  But still, there is no choice but to trust someone did the right thing with the choice of cryptography, managing the signing key, etc.  The domain name is like the signing key: a domain name and a signing key _can be_ separate.  The private signing key could be shared or leaked, then it loses its meaning. It no longer proves that the signed contents came from the trusted party.\n"
+msgstr ""
+
+#. type: Plain text
+#: _posts/2025-05-21-making-reproducible-builds-visible.md
+msgid "What can users do with these URLs? They could download them and compare them using any tool they know how to use. It could be a simple online tool like <https://try.diffoscope.org/> or tools installed locally.  The ecosystem benefits the most if there are many users verifying things many different ways.  Keybase shows links between social media accounts, with [cryptographic proofs](https://keybase.io/blog/keybase-proofs-for-mastodon-and-everyone) that client apps can verify, demonstrating a method to decentralize the verification process based on URLs."
+msgstr ""
+
+#. type: Plain text
+#: _posts/2025-05-21-making-reproducible-builds-visible.md
+#, no-wrap
+msgid "Ultimately, it is clear that reproducible builds should be represented by an action to take rather than a checkbox that someone did something.  Towards that end, the Reproducibility Status page for each app on <tt>f-droid.org</tt> lists all the verification attempts for that app, and points towards diffoscope output to highlight what the problem is.  On the [F-Droid client's page](https://verification.f-droid.org/packages/org.fdroid.fdroid/), it is easy to see back when upgrading Gradle broke reproducible builds.  We used that information to fix the Gradle setup and make the builds reproducible again.  Even non-technical users can do some kinds of verification of reproducibility, this is very fertile ground for exploration.\n"
+msgstr ""
+
+#. type: Title ##
+#: _posts/2025-05-21-making-reproducible-builds-visible.md
+#, no-wrap
+msgid "Running a rebuilder"
+msgstr ""
+
+#. type: Plain text
+#: _posts/2025-05-21-making-reproducible-builds-visible.md
+#, no-wrap
+msgid "In theory, reproducible builds mean anyone can know exactly what is running on their own computing devices. In order to deliver on the full promise of reproducible builds, third parties need to independently verify and run the build processes to confirm that the sources match the binaries.  For example, official Debian packages are also rebuilt by Linux Mint and gLinux.  The F-Droid ecosystem is organized around repositories.  Each repository is a root of trust, and we have put a lot of effort into making this understandable to users. That means explaining things to people who only know centralized ecosystems where there is just \"the app store that came with my device\".  This also applies to rebuilders since the repository serves as the entry point for the rebuilder to get all of the source code.  For <tt>f-droid.org</tt>, that entry point is called [_fdroiddata_](https://gitlab.com/fdroid/fdroiddata), for the Guardian Project repo, it is <https://gitlab.com/guardianproject/fdroid-metadata>, etc.  So an F-Droid rebuilder, also known as a [verification server](https://f-droid.org/docs/Verification_Server/), is rooted in the Git URL and commit ID of that repository.\n"
+msgstr ""
+
+#. type: Plain text
+#: _posts/2025-05-21-making-reproducible-builds-visible.md
+#, no-wrap
+msgid "Users who cannot run their own rebuilds will have to trust someone else to do that.  Most users already trust many people and organizations. Our goal is to make it really easy for anyone to set up and run a rebuilder.  Then organizations that users trust, like [EDRi](https://edri.org/), [CIPIT](https://cipit.strathmore.edu/) or [EFF](https://www.eff.org/), can run a rebuilder and publish the results.  Companies could run their own internal rebuilders for <tt>f-droid.org</tt>, for example, like how Google rebuilds Debian/testing for their gLinux.  These rebuilders [could provide](https://gitlab.com/fdroid/fdroidserver/-/issues/178) signed data streams to build up the portrait of trust for the users.  If you are interested in running a rebuilder, please [reach out](https://f-droid.org/about/#contact)!\n"
+msgstr ""
+
+#. type: Title ##
+#: _posts/2025-05-21-making-reproducible-builds-visible.md
+#, no-wrap
+msgid "Rewriting the _buildserver_"
+msgstr ""
+
+#. type: Plain text
+#: _posts/2025-05-21-making-reproducible-builds-visible.md
+msgid "This was also an opportunity to rethink how the core _buildserver_ infrastructure works. In order to do mass rebuilds, the build setup needed to be more efficient. That architecture is one of the oldest pieces of F-Droid that is still running.  It has grown organically from the beginning of F-Droid."
+msgstr ""
+
+#. type: Plain text
+#: _posts/2025-05-21-making-reproducible-builds-visible.md
+msgid "It is really quite amazing how a small team with free software can build up an automated system and keep it running stably and securely.  Debian provides the key foundation for building these kinds of systems, and we are forever thankful to have Debian.  Our _buildserver_ is a great example of that.  Its architecture was set up back in 2010 and has been running quite reliably since then with minimal interaction from the F-Droid team.  We have happily reached a point where its single-track architecture can barely keep up with the amount of apps we need to build. The basic structure was never designed for how many apps we're currently publishing.  With lots of clever tweaks and creative tricks, it still manages to keep up.  But it needs to be replaced to speed things up and handle the number of apps that people want from f-droid.org."
+msgstr ""
+
+#. type: Plain text
+#: _posts/2025-05-21-making-reproducible-builds-visible.md
+msgid "So we took this opportunity to total [rearchitect](https://gitlab.com/fdroid/wiki/-/wikis/Internal/Buildbot) our [_buildserver_](https://gitlab.com/fdroid/wiki/-/wikis/Buildserver/) infrastructure.  F-Droid works by converting source metadata into binary package files like Android APKs. Many pieces of our stack can be replaced by better, existing software. First, we wanted to restructure the tooling so that it was no longer tied to specific tools or frameworks.  For example, right now we are tied to Vagrant to run Virtual Machines, and the `fdroid build` command relies on custom code that controls Vagrant. Second, whenever it was clear that an existing framework could do a job better than our code, we aimed to replace our code."
+msgstr ""
+
+#. type: Plain text
+#: _posts/2025-05-21-making-reproducible-builds-visible.md
+msgid "Like-minded projects like Python and Blender are [built on Buildbot](https://github.com/buildbot/buildbot/wiki/SuccessStories).  And projects with huge maintenance resources, like WebKit and LLVM, rely on Buildbot, ensuring it is well maintained.  There is also extensive [documentation](https://docs.buildbot.net/current/).  All of this is a big improvement over the old, custom, undocumented, self-maintained code.  We also learned from projects that migrated away from Buildbot:"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _posts/2025-05-21-making-reproducible-builds-visible.md
+msgid "We learned a lot from Flathub's Buildbot setup since, structurally, it is a very similar project.  They just migrated to a proprietary replacement in order to have tighter integration with GitHub, a proprietary platform, and to handle the loss of their hardware sponsor.  Like our effort here, Flathub also moved to make their tooling [agnostic](https://docs.flathub.org/blog/flathub-build-infrastructure-revamp#justpak) to what build automation platform was running it."
+msgstr ""
+
+#. type: Bullet: '* '
+#: _posts/2025-05-21-making-reproducible-builds-visible.md
+msgid "Chromium's CI ran on Buildbot for years.  They [migrated](https://chromium.googlesource.com/chromium/src/+/71.0.3578.80/docs/luci_migration_faq.md) to their own [LUCI](https://luci.github.io/) project because they needed something even more complex than Buildbot.  LUCI is not an option for <tt>f-droid.org</tt> since it is undocumented, far more complicated than Buildbot, and seems to have no other users but Google.  Once <tt>f-droid.org</tt> hits Chromium's scale, perhaps LUCI will be worthwhile, until then, we can grow with Buildbot like Chromium did."
+msgstr ""
+
+#. type: Plain text
+#: _posts/2025-05-21-making-reproducible-builds-visible.md
+msgid "Our new Buildbot instance is already used in production for <https://verification.f-droid.org>. It runs four builds in parallel, unlocking the first step to large scale parallelization. Since it runs builds in Podman rather than Vagrant/libvirt, it can be hosted in a cheap VPS (Virtual Private Server). There is also now a staging instance of our Buildbot setup which is running Vagrant/libvirt on bare metal. That code will replace the production _buildserver_.  Production builds require the strong isolation that QEMU/KVM provides, so Podman is not for production. We are scheduling a security audit now, and after that, we will launch this setup to production with support for parallel builds."
+msgstr ""
+
+#. type: Plain text
+#: _posts/2025-05-21-making-reproducible-builds-visible.md
+msgid "This project laid down the foundation for parallelization of all the stages of production, including building packages, generating the index, signing APKs, etc. The Buildbot setup also makes it easy to add additional hardware to run more things in parallel. The central goal is to establish a fixed daily schedule where all completed builds are published at the end of each day.  Then we can easily add resources as needed to keep on schedule."
+msgstr ""
+
+#. type: Plain text
+#: _posts/2025-05-21-making-reproducible-builds-visible.md
+msgid "_(This work was supported by [NLnet](https://nlnet.nl/project/Reproducible-F-Droid/) and your donations.  To ensure F-Droid can continue this work, please check out the [donation page](https://f-droid.org/donate/) and contribute what you can.)_"
 msgstr ""
