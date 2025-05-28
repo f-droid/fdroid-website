@@ -5,24 +5,23 @@ title: Reproducible Builds
 ---
 
 
-F-Droid supports [reproducible builds](https://reproducible-builds.org) of apps,
-so that anyone can run the build process again and reproduce the same APK as the
-original release.  This means that F-Droid can verify that an app is 100% free
-software while still using the original developer's APK signatures.  F-Droid
-verifies reproducible builds using APK [signature copying](#reproducible-signatures).
+F-Droid works to spread [reproducible builds](https://reproducible-builds.org/docs/definition/) across the free software Android ecosystem.  The goal is to enable software build processes that anyone can run repeatedly and reproduce the exact same APK as the original release.  Our work is focused on three main areas:
 
-This concept is occasionally called "deterministic builds".  That is a much
-stricter standard: that means that the whole process runs with the same ordering
-each time.  The most important thing is that anyone can run the process and end
-up with the exact same result.
+* Our [build environment](https://gitlab.com/fdroid/fdroidserver/-/tree/master/buildserver) is designed to make reproducing builds easy while being itself reproducible and auditable.
+* We track issues in the build tools themselves that prevent reproducible builds, help the maintainers of the build tools fix these issues, and catalog workarounds for app developers here in this web page.
+* We help upstream app developers for any app shipped on <tt>f-droid.org</tt> fix issues with reproducible builds by providing developer support, filing issues and suggesting changes to the source code.
 
+F-Droid verifies reproducible builds using APK [signature copying](#reproducible-signatures). To find out if an app can be reproducibly built, check the "[Reproducibility Status](f-droid.org/packages/org.fdroid.fdroid/#reproducibility_status)" on any app's page on this website.
 
-### How it is implemented as of now
+### Diversity in the build environment
+
+The gold standard in reproducible builds for countering [Trusting Trust](https://www.cs.cmu.edu/~rdriley/487/papers/Thompson_1984_ReflectionsonTrustingTrust.pdf) issues is [Diverse Double-Compiling](https://dwheeler.com/trusting-trust/). The core idea is to use two entirely distinct sets of build tools to create the exact same binary.  This is a difficult standard to achieve, although quite valuable.  Some of the work to get there can be done incrementally.  Towards that end, F-Droid can reproduce the APKs that the upstream developer built on their own setup.  Often times, these are built with different toolchains or on different OSes.  To see which apps have enabled this approach, please check its [build metadata](https://gitlab.com/fdroid/fdroiddata/-/blob/master/metadata/{packageName}.yml) for the presence of build metadata fields [`Binaries:`](https://f-droid.org/docs/Build_Metadata_Reference/#Binaries) or [`binary:`](https://f-droid.org/docs/Build_Metadata_Reference/#build_binary).
+
+### Publishing APKs with the upstream developer's signature
 
 Publishing signed binaries (APKs) from elsewhere (e.g. the upstream developer)
-is now possible after verifying that they match ones built using an fdroiddata
-recipe.  Publishing only takes place if there is a proper match.  This procedure
-is implemented as part of `fdroid publish`.  The reproducibility check at the
+is now possible after verifying that they match ones built using an _fdroiddata_
+build recipe.  Publishing only takes place if there is a proper match. This means that F-Droid can verify that an app is free software while still using the original developer's APK signatures. This procedure is implemented as part of [`fdroid publish`](https://gitlab.com/fdroid/fdroidserver/-/blob/master/fdroidserver/publish.py).  The reproducibility check at the
 publishing step follows this logic:
 
 ![Flow-chart for reproducibility check]({% asset docs/reproducible-builds/publish.png %})
@@ -93,8 +92,7 @@ bytes in the APK*.  Thus, the APKs must be completely identical *before* and
 
 Copying the signature uses the same algorithm that `apksigner` uses when signing
 an APK.  It is therefore important that (upstream) developers do the same when
-signing APKs, ideally by using `apksigner`.
-
+signing APKs, ideally by using `apksigner` to make the signatures.  `apksigner` is also reproducibly built [in Debian](https://tests.reproducible-builds.org/debian/rb-pkg/trixie/amd64/android-platform-tools-apksig.html).
 
 ### Verification builds
 
