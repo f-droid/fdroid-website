@@ -5,7 +5,7 @@ title: Get F-Droid
 
 ## Install F-Droid
 
-To install F-Droid, choose one of those 4 options: 
+To install F-Droid, choose one of those 5 options: 
 
 * Easy options:
 
@@ -75,7 +75,6 @@ Below is the same steps as above. But with details if you are interested in thos
 If you're planning on flashing a custom ROM, these ROMs might be interesting for you because they come with F-Droid built-in and ready to use:
 
 - __CalyxOS__ - https://calyxos.org
-- __DivestOS__ - https://divestos.org
 - __LineageOS for MicroG__ - https://lineage.microg.org
 
 #### Option 4. Flash F-Droid OTA.
