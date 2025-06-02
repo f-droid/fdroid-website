@@ -24,7 +24,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
-"POT-Creation-Date: 2025-05-15 19:30+0200\n"
+"POT-Creation-Date: 2025-06-02 17:38+0200\n"
 "PO-Revision-Date: 2025-05-18 08:01+0000\n"
 "Last-Translator: metezd <metezd@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Turkish <https://hosted.weblate.org/projects/f-droid/website-docs/tr/>\n"
@@ -6125,7 +6125,9 @@ msgstr "F-Droid'i yükleyin"
 
 #. type: Plain text
 #: _docs/Get_F-Droid.md
-msgid "To install F-Droid, choose one of those 4 options:"
+#, fuzzy
+#| msgid "To install F-Droid, choose one of those 4 options:"
+msgid "To install F-Droid, choose one of those 5 options:"
 msgstr "F-Droid'i yüklemek için bu 4 seçenekten birini seçin:"
 
 #. type: Bullet: '* '
@@ -6304,11 +6306,6 @@ msgstr "Özel bir ROM yüklemeyi planlıyorsanız, bu ROM'lar sizin için ilgin�
 #: _docs/Get_F-Droid.md
 msgid "__CalyxOS__ - https://calyxos.org"
 msgstr "__CalyxOS__ - https://calyxos.org"
-
-#. type: Bullet: '- '
-#: _docs/Get_F-Droid.md
-msgid "__DivestOS__ - https://divestos.org"
-msgstr "__DivestOS__ - https://divestos.org"
 
 #. type: Bullet: '- '
 #: _docs/Get_F-Droid.md
@@ -10109,20 +10106,7 @@ msgstr ""
 #, no-wrap
 msgid ""
 "For CMake versions since 3.13, `add_link_options(LINKER:<linker args>)` can\n"
-"be added to `CMakeLists.txt` globally:\n"
-msgstr ""
-
-#. type: Fenced code block
-#: _docs/Reproducible_Builds.md
-#, no-wrap
-msgid "add_link_options(\"LINKER:--build-id=none\")\n"
-msgstr ""
-
-#. type: Plain text
-#: _docs/Reproducible_Builds.md
-#, no-wrap
-msgid ""
-"This command only works for libraries added after this command is invoked, so it should\n"
+"be added to `CMakeLists.txt` globally. This command only works for libraries added after this command is invoked, so it should\n"
 "be invoked at the beginning of the CMake file. For CMake versions before 3.13,\n"
 "`target_link_libraries(<target> LINKER:<linker args>)` can be used instead for\n"
 "every target. It can also be set in Gradle files:\n"
@@ -12089,7 +12073,7 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/Verification_Server.md
-msgid "The idea of a [verification server](https://verification.f-droid.org)  is to automatically reproduce official releases published by f-droid.org (or any other server).  This ensures that everything in the release APK came from the source code, and nothing was inserted or included during the build process.  This is also useful for verifying that the build process is not including proprietary libraries."
+msgid "The idea of a [verification server](https://verification.f-droid.org)  is to automatically reproduce official releases published by f-droid.org (or any other server).  Another name for this is a [rebuilder](https://reproducible-builds.org/tools/#rebuilder-backends).  This process ensures that everything in the release APK came from the source code, and nothing was inserted or included during the build process.  This is also useful for verifying that the build process is not including proprietary libraries."
 msgstr ""
 
 #. type: Plain text
@@ -12110,7 +12094,7 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/Verification_Server.md
-msgid "The verification process currently works by building a new unsigned APK, then copying the APK signature from the existing APK into the newly built unsigned APK.  If the APK signature verifies, then the APK has been reproduced, and is marked as verified.  If not, a [diffoscope](https://diffoscope.org) log is generated to show what the differences are between the two builds. The verification server needs no signing capability, just building."
+msgid "The verification process [currently works](https://gitlab.com/fdroid/buildbot/-/blob/988fc009/master/master.cfg#L155)  by building a new unsigned APK, then [copying](https://gitlab.com/fdroid/fdroidserver/-/blob/2.4.0/fdroidserver/common.py#L3773)  the APK signature from the existing APK into the newly built unsigned APK.  If the APK signature verifies, then the APK has been reproduced, and is marked as verified.  If not, a [diffoscope](https://diffoscope.org) log is generated to show what the differences are between the two builds. The verification server needs no signing capability, just building."
 msgstr ""
 
 #. type: Title ##
@@ -12121,18 +12105,8 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/Verification_Server.md
-msgid "This is still pretty raw, so expect some tinkering.  It also will likely only work on Debian, Ubuntu and other Debian-derivatives. The first step is getting the [_fdroidserver_ tools setup](../Installing_the_Server_and_Repo_Tools) and working. Run the _fdroidserver_ tools directly out of git (e.g. `~/code/fdroidserver/fdroid build org.adaway`), that's going to be the easiest for now since the verification server stuff is a moving target. The base server needs to be at minimum Debian/jessie, or there will need to be some heavy tweaking. If you run Ubuntu or derivative distro, you can get any packages missing from your version, like _vagrant-cachier_, from this PPA: <https://launchpad.net/~fdroid/+archive/ubuntu/buildserver/>"
+msgid "The verification server is managed via an [Ansible Playbook](https://gitlab.com/fdroid/fdroid-verification-server) which is installed on a server running Debian/stable that is configured to run containers with rootless Podman. This is what runs <https://verification.f-droid.org>, but it is still pretty raw, so expect some tinkering.  We welcome contributions.  It is a goal that this setup become generic enough that the maintainer of any F-Droid compatible repository can use this setup as a rebuilder."
 msgstr ""
-
-#. type: Plain text
-#: _docs/Verification_Server.md
-msgid "Then you can find more on the process by reading [Build Server Setup](../Build_Server_Setup). You can also see the Continuous Integration scripts for this process to see how the whole thing can work:"
-msgstr ""
-
-#. type: Bullet: '* '
-#: _docs/Verification_Server.md
-msgid "<https://gitlab.com/fdroid/fdroidserver/blob/master/jenkins-build-makebuildserver>"
-msgstr "<https://gitlab.com/fdroid/fdroidserver/blob/master/jenkins-build-makebuildserver>"
 
 #. type: Yaml Front Matter Hash Value: title
 #: _docs/Verifying_Downloaded_APK.md
@@ -12373,6 +12347,9 @@ msgstr ""
 #: _docs/Whitelabel_Builds.md
 msgid "For a custom build that enables Automatic Updates by default, override _app/src/main/res/xml/preferences.xml_. You can customize the preferences and their default values in _app/src/mycompany/res/xml/preferences.xml_. The fully automatic update requires [Privileged Extension](https://gitlab.com/fdroid/privileged-extension). With regular access, the updates will only automatically download. The user still needs to click install on each one."
 msgstr ""
+
+#~ msgid "<https://gitlab.com/fdroid/fdroidserver/blob/master/jenkins-build-makebuildserver>"
+#~ msgstr "<https://gitlab.com/fdroid/fdroidserver/blob/master/jenkins-build-makebuildserver>"
 
 #~ msgid "If you do not already have an account, or do not want to create one, you can use our reusable account.  The issue tracker works better if reporters use an account that will receive notifications.  Issue reports are usually a conversation, not just a single report."
 #~ msgstr "Halihazırda bir hesabınız yoksa veya bir hesap oluşturmak istemiyorsanız, yeniden kullanılabilir hesabımızı kullanabilirsiniz.  Sorun izleyici, raporlayanlar bildirim alacak bir hesap kullanırsa daha iyi çalışır.  Sorun raporları genellikle tek bir rapor değil, bir diyalog niteliğindedir."
