@@ -15,13 +15,15 @@ some time. The idea is to improve F-Droid's quality, not to hunt developers.
 
 ### What are F-Droid team members
 
-- [Gitlab](https://gitlab.com/fdroid/admin/-/project_members)
-- [Forum](https://forum.f-droid.org/g/contributors)
+* [Member of @fdroid group on gitlab.com](https://gitlab.com/groups/fdroid/-/group_members)
+* [Contributors on forum.f-droid.org](https://forum.f-droid.org/g/contributors)
+* [Reviewers on Weblate](https://hosted.weblate.org/projects/f-droid/#information)
 
 ### What are contributions
 
 * Commits to one of the repos hosted on [Gitlab](https://gitlab.com/fdroid/).
 * Contributions to issues on [Gitlab](https://gitlab.com/groups/fdroid/-/issues).
+* Translations on [Weblate](https://hosted.weblate.org/projects/f-droid/).
 * Activity on the forum.
 
 ### Who is MIA
@@ -42,9 +44,15 @@ person.
 * Status: Second warning -> wait 8 weeks.
 * Status: Final warning -> wait 4 weeks.
 
-Afterwards, MIA accounts are removed from all F-Droid directories (Gitlab) or
-downgraded to normal user account (forum) and the issue is closed and made
-public if it was set to confidential.
+Afterwards, MIA accounts are removed from all F-Droid directories, including:
+
+* Removed from [@fdroid group on gitlab.com](https://gitlab.com/fdroid/)
+* Downgraded to normal user account on <forum.f-droid.org>
+* Removed as Reviewer/Maintainer from [Weblate](https://hosted.weblate.org/projects/f-droid/#information)
+* Removed from list of [Maintainers](https://gitlab.com/fdroid/wiki/-/wikis/Maintainers)
+* Removed from email lists, including team@f-droid.org.
+
+After that, the issue is closed and made public if it was set to confidential.
 
 ### References
 
