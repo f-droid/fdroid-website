@@ -20,9 +20,9 @@ some time. The idea is to improve F-Droid's quality, not to hunt developers.
 
 ### What are contributions
 
-- Commits to one of the repos hosted on [Gitlab](https://gitlab.com/fdroid/).
-- Contributions to issues on [Gitlab](https://gitlab.com/groups/fdroid/-/issues).
-- Activity on the forum.
+* Commits to one of the repos hosted on [Gitlab](https://gitlab.com/fdroid/).
+* Contributions to issues on [Gitlab](https://gitlab.com/groups/fdroid/-/issues).
+* Activity on the forum.
 
 ### Who is MIA
 
@@ -38,9 +38,9 @@ person.
 
 ### The removal
 
-- Status: First warning -> wait 16 weeks.
-- Status: Second warning -> wait 8 weeks.
-- Status: Final warning -> wait 4 weeks.
+* Status: First warning -> wait 16 weeks.
+* Status: Second warning -> wait 8 weeks.
+* Status: Final warning -> wait 4 weeks.
 
 Afterwards, MIA accounts are removed from all F-Droid directories (Gitlab) or
 downgraded to normal user account (forum) and the issue is closed and made
@@ -48,6 +48,6 @@ public if it was set to confidential.
 
 ### References
 
-- [Debian reference](https://www.debian.org/doc/manuals/developers-reference/beyond-pkging.html#dealing-with-inactive-and-or-unreachable-maintainers)
-- [Debian team site](https://wiki.debian.org/Teams/MIA)
-- [Debian tools](https://salsa.debian.org/qa/qa/tree/master/mia)
+* [Debian reference](https://www.debian.org/doc/manuals/developers-reference/beyond-pkging.html#dealing-with-inactive-and-or-unreachable-maintainers)
+* [Debian team site](https://wiki.debian.org/Teams/MIA)
+* [Debian tools](https://salsa.debian.org/qa/qa/tree/master/mia)
