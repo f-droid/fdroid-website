@@ -576,7 +576,7 @@ android {
 ##### CMake
 
 For CMake versions since 3.13, `add_link_options(LINKER:<linker args>)` can
-be added to `CMakeLists.txt` globally:
+be added to `CMakeLists.txt` globally, eg. to remove `build-id`:
 
 ```
 add_link_options("LINKER:--build-id=none")
