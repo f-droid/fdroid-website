@@ -576,7 +576,13 @@ android {
 ##### CMake
 
 For CMake versions since 3.13, `add_link_options(LINKER:<linker args>)` can
-be added to `CMakeLists.txt` globally. This command only works for libraries added after this command is invoked, so it should
+be added to `CMakeLists.txt` globally:
+
+```
+add_link_options("LINKER:--build-id=none")
+```
+
+This command only works for libraries added after this command is invoked, so it should
 be invoked at the beginning of the CMake file. For CMake versions before 3.13,
 `target_link_libraries(<target> LINKER:<linker args>)` can be used instead for
 every target. It can also be set in Gradle files:
