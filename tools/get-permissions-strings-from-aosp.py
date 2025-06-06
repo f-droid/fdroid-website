@@ -1,11 +1,18 @@
 #!/usr/bin/env python3
 
+import base64
 import glob
 import json
 import os
 import sys
 import re
+import requests
 from xml.etree import ElementTree
+
+def get_clean_json_from_googlesource(url):
+    """Work around a bug where the JSON file starts with: )]}'"""
+    r = requests.get(url)
+    return json.loads(r.text[r.text.index('{'):])
 
 # these are not permissions, but have keys that match the pattern
 skipkeys = (
@@ -52,17 +59,35 @@ overwritekeys = (
     "permlab_uwb_ranging"
 )
 
-resdir = '/home/hans/code/android.googlesource.com/frameworks/base/core/res/res'
+# fetch most recent tag
+refs_url = 'https://android.googlesource.com/platform/frameworks/base/+refs?format=JSON'
+refs_json = get_clean_json_from_googlesource(refs_url)
+tags_to_sort = set()
+for ref in refs_json:
+    m = re.match(r'refs/tags/android-[1-9][0-9]+\.[0-9]+\.[0-9]+_r[0-9]+', ref)
+    if m:
+        t = m.group()
+        commit_id = refs_json[t]['value']
+        l = t[18:].replace('_r', '.').split('.')
+        l = tuple([int(n) for n in l] + [t])
+        tags_to_sort.add(l)
+tag = sorted(tags_to_sort)[-1][-1]
+print('Fetching from', tag, commit_id)
 
-for d in sorted(glob.glob(os.path.join(resdir, 'values*'))):
+res_url = 'https://android.googlesource.com/platform/frameworks/base/+/refs/tags/android-15.0.0_r36/core/res/res/?format=JSON'
+res_json = get_clean_json_from_googlesource(res_url)
+for entry in res_json['entries']:
+    d = entry['name']
     if os.path.basename(d) == 'values':
         locale = ''
-    else:
+    elif d.startswith('values-'):
         locale = d.split('/')[-1][7:].replace('-rCN', '_Hans').replace('-rTW', '_Hant').replace('-r', '_')
         if locale == 'iw':
             locale = 'he'
         elif locale == 'in':
             locale = 'id'
+    else:
+        continue
     jsonfile = os.path.join('/home/hans/code/fdroid/website/_data/', locale, 'strings.json')
 
     writechanges = False
@@ -71,15 +96,13 @@ for d in sorted(glob.glob(os.path.join(resdir, 'values*'))):
     with open(jsonfile) as fp:
         data = json.load(fp)
 
-    str_path = os.path.join(d, 'strings.xml')
-    if not os.path.exists(str_path):
+    url = f'https://android.googlesource.com/platform/frameworks/base/+/refs/tags/android-15.0.0_r36/core/res/res/{d}/strings.xml?format=TEXT'
+    r = requests.get(url)
+    if r.status_code != 200:
+        print(r.status_code, url)
         continue
 
-    with open(str_path, encoding='utf-8') as fp:
-        fulltext = fp.read()
-
-    tree = ElementTree.parse(str_path)
-    root = tree.getroot()
+    root = ElementTree.fromstring(base64.b64decode(r.text))
 
     for e in root.findall('.//string'):
         key = e.attrib['name']
