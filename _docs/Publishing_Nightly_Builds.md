@@ -165,13 +165,13 @@ jobs:
           export versionCode=$(date '+%s')
           sed -i "s,^|(|s*versionCode|)  *[0-9].*,|1 $versionCode," app/build.gradle*
           ./gradlew assembleDebug
-        - name: fdroid nightly
-          run: |
-            sudo add-apt-repository ppa:fdroid/fdroidserver
-            sudo apt-get update
-            sudo apt-get install apksigner fdroidserver --no-install-recommends
-            export DEBUG_KEYSTORE=${{ secrets.DEBUG_KEYSTORE }}
-            fdroid nightly --archive-older 10
+      - name: fdroid nightly
+        run: |
+          sudo add-apt-repository ppa:fdroid/fdroidserver
+          sudo apt-get update
+          sudo apt-get install apksigner fdroidserver --no-install-recommends
+          export DEBUG_KEYSTORE=${{ secrets.DEBUG_KEYSTORE }}
+          fdroid nightly --archive-older 10
 ```
 
 There is an alternate approach based on Docker maintained by @wardvl:
