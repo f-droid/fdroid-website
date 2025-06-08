@@ -139,7 +139,6 @@ tools.
 
 ```yaml
 name: Publish nightly build
-
 on:
   push:
     branches:
@@ -152,27 +151,27 @@ jobs:
     environment: nightly
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
       - name: Gradle Wrapper Validation
-        uses: gradle/wrapper-validation-action@v1
-      - name: Set up JDK 11
+        uses: gradle/wrapper-validation-action@v3
+      - name: Set up JDK 17
         uses: actions/setup-java@v2
         with:
           distribution: 'adopt'
-          java-version: 11
+          java-version: 17
       - name: Build
         run: |
           # use timestamp as Version Code
           export versionCode=$(date '+%s')
-          sed -i "s,^\(\s*versionCode\)  *[0-9].*,\1 $versionCode," app/build.gradle
+          sed -i "s,^|(|s*versionCode|)  *[0-9].*,|1 $versionCode," app/build.gradle*
           ./gradlew assembleDebug
-      - name: fdroid nightly
-        run: |
-          sudo add-apt-repository ppa:fdroid/fdroidserver
-          sudo apt-get update
-          sudo apt-get install apksigner fdroidserver --no-install-recommends
-          export DEBUG_KEYSTORE=${{ '{{' }} secrets.DEBUG_KEYSTORE }}
-          fdroid nightly --archive-older 10
+        - name: fdroid nightly
+          run: |
+            sudo add-apt-repository ppa:fdroid/fdroidserver
+            sudo apt-get update
+            sudo apt-get install apksigner fdroidserver --no-install-recommends
+            export DEBUG_KEYSTORE=${{ secrets.DEBUG_KEYSTORE }}
+            fdroid nightly --archive-older 10
 ```
 
 There is an alternate approach based on Docker maintained by @wardvl:
