@@ -61,19 +61,6 @@ $ ls metadata/your.app/signatures/42/                # v1 + v2/v3 signature
 APKSigningBlock  APKSigningBlockOffset  MANIFEST.MF  YOURKEY.RSA  YOURKEY.SF
 ```
 
-If you don't want to install `fdroidserver` (or have an older version that
-doesn't support extracting v2/v3 signatures yet) you can also use
-[`apksigcopier`](https://github.com/obfusk/apksigcopier) (available in e.g.
-Debian, Ubuntu, Arch Linux, NixOS) instead of `fdroid signatures`:
-
-```console
-$ cd /path/to/fdroiddata
-$ APPID=your.app VERSIONCODE=42
-$ mkdir metadata/$APPID/signatures/$VERSIONCODE
-$ apksigcopier extract --v1-only=auto Your.apk metadata/$APPID/signatures/$VERSIONCODE
-```
-
-
 #### Exclusively publishing (upstream) developer-signed APKs
 
 For this approach, everything in the metadata should be the same as normal, with
