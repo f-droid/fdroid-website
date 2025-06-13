@@ -23,7 +23,6 @@ all debug builds are interchangeable.  This makes debugging certain
 problems a lot easier since you can keep the app state when installing
 your own debug builds, for example, to add logging.
 
-
 ## Automatic Version Codes
 
 With nightly builds, the normal logic for setting `versionCode` in git
@@ -46,7 +45,6 @@ the most important part of the versionCode.  Any build with
 `DB_VERSION = 75`.  Then the minor part is the commit count, so it
 looks like (7502543, 7502544, 7702601, etc). with `DB_VERSION` as the
 first two digits, then a 0-padded commit count as the last 5 digits.
-
 
 ## Configuring GitLab CI
 
@@ -100,9 +98,9 @@ deploy_nightly:
 ```
 
 For a real world example using _gitlab-ci_, see _fdroidclient_:
+
 * <https://gitlab.com/fdroid/fdroidclient-nightly>
 * <https://gitlab.com/fdroid/fdroidclient/blob/master/.gitlab-ci.yml>
-
 
 ## Configuring for GitHub Actions
 
@@ -139,12 +137,10 @@ tools.
 
 ```yaml
 name: Publish nightly build
-
 on:
   push:
     branches:
       - main
-
 jobs:
   nightly:
     name: Publish nightly build
@@ -152,51 +148,54 @@ jobs:
     environment: nightly
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
       - name: Gradle Wrapper Validation
-        uses: gradle/wrapper-validation-action@v1
-      - name: Set up JDK 11
+        uses: gradle/wrapper-validation-action@v3
+      - name: Set up JDK 17
         uses: actions/setup-java@v2
         with:
           distribution: 'adopt'
-          java-version: 11
+          java-version: 17
       - name: Build
         run: |
           # use timestamp as Version Code
           export versionCode=$(date '+%s')
-          sed -i "s,^\(\s*versionCode\)  *[0-9].*,\1 $versionCode," app/build.gradle
+          sed -i "s,^|(|s*versionCode|)  *[0-9].*,|1 $versionCode," app/build.gradle*
           ./gradlew assembleDebug
       - name: fdroid nightly
         run: |
           sudo add-apt-repository ppa:fdroid/fdroidserver
           sudo apt-get update
           sudo apt-get install apksigner fdroidserver --no-install-recommends
-          export DEBUG_KEYSTORE=${{ '{{' }} secrets.DEBUG_KEYSTORE }}
+          export DEBUG_KEYSTORE=${{ secrets.DEBUG_KEYSTORE }}
           fdroid nightly --archive-older 10
 ```
 
 There is an alternate approach based on Docker maintained by @wardvl:
 [wardvl/f-droid-nightly-action](https://github.com/wardvl/f-droid-nightly-action/)
 
-
 ## Configuring for GitHub and Travis CI
 
 1. Generate a new _debug.keystore_ for each app, since GitHub only
    allows a deploy key to be used on a single repo.  Keep that file
    safe, since it is the signing key for your nightly build.
-```
+
+```bash
 keytool -genkey -v -keystore im.zom.messenger-debug.keystore \
   -keyalg RSA -keysize 2048 -validity 10000 \
   -alias androiddebugkey -storepass android -keypass android \
   -dname "CN=Android Debug,O=Android,C=US"
 ```
+
 2. Set a GitHub Deploy Key for
   `https://github.com/zom/zom-android-nightly` by going to
   `https://github.com/zom/zom-android-nightly/settings/keys`.  The
   public SSH key is printed out by running:
-```
+
+```bash
 fdroid nightly --keystore im.zom.messenger-debug.keystore
 ```
+
 3. check _Allow write access_ in the GitHub Deploy Key settings
 4. To print out the secret variable contents, use `--show-secret-var`.
    Careful!  That text is the entire _debug.keystore_, so protect it
@@ -205,7 +204,8 @@ fdroid nightly --keystore im.zom.messenger-debug.keystore
    `https://travis-ci.org/zom/Zom-Android/settings`. Call the variable
    `DEBUG_KEYSTORE` and make sure "Display value in build log" is
    __OFF__.
-```
+
+```bash
 fdroid nightly --keystore im.zom.messenger-debug.keystore --show-secret-var
 ```
 
@@ -241,6 +241,7 @@ after_success:
 ```
 
 For a real world example, see _Zom_:
+
 * <https://github.com/zom/Zom-Android-nightly>
 * <https://github.com/zom/Zom-Android/blob/master/.travis.yml>
 * <https://travis-ci.org/zom/Zom-Android>
