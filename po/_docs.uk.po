@@ -19,7 +19,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
-"POT-Creation-Date: 2025-06-04 17:07+0200\n"
+"POT-Creation-Date: 2025-06-13 09:37+0200\n"
 "PO-Revision-Date: 2025-06-05 16:17+0000\n"
 "Last-Translator: Максим Горпиніч <maksimgorpinic4@gmail.com>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/f-droid/website-docs/uk/>\n"
@@ -8855,8 +8855,22 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/Publishing_Nightly_Builds.md
-msgid "For a real world example using _gitlab-ci_, see _fdroidclient_: * <https://gitlab.com/fdroid/fdroidclient-nightly> * <https://gitlab.com/fdroid/fdroidclient/blob/master/.gitlab-ci.yml>"
-msgstr "Перегляньте зразок польового застосування _gitlab-ci_ — _fdroidclient_: * <https://gitlab.com/fdroid/fdroidclient-nightly> * <https://gitlab.com/fdroid/fdroidclient/blob/master/.gitlab-ci.yml>"
+msgid "For a real world example using _gitlab-ci_, see _fdroidclient_:"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/Publishing_Nightly_Builds.md
+#, fuzzy
+#| msgid "<https://gitlab.com/fdroid/fdroidclient/graphs/master>"
+msgid "<https://gitlab.com/fdroid/fdroidclient-nightly>"
+msgstr "<https://gitlab.com/fdroid/fdroidclient/graphs/master>"
+
+#. type: Bullet: '* '
+#: _docs/Publishing_Nightly_Builds.md
+#, fuzzy
+#| msgid "<https://gitlab.com/fdroid/fdroidclient/network/master>"
+msgid "<https://gitlab.com/fdroid/fdroidclient/blob/master/.gitlab-ci.yml>"
+msgstr "<https://gitlab.com/fdroid/fdroidclient/network/master>"
 
 #. type: Title ##
 #: _docs/Publishing_Nightly_Builds.md
@@ -8891,15 +8905,49 @@ msgstr "Додайте у свій _.github/workflows/_ етап _nightly_, як
 
 #. type: Fenced code block (yaml)
 #: _docs/Publishing_Nightly_Builds.md
-#, no-wrap
+#, fuzzy, no-wrap
+#| msgid ""
+#| "name: Publish nightly build\n"
+#| "\n"
+#| "on:\n"
+#| "  push:\n"
+#| "    branches:\n"
+#| "      - main\n"
+#| "\n"
+#| "jobs:\n"
+#| "  nightly:\n"
+#| "    name: Publish nightly build\n"
+#| "    runs-on: ubuntu-latest\n"
+#| "    environment: nightly\n"
+#| "    steps:\n"
+#| "      - name: Checkout\n"
+#| "        uses: actions/checkout@v2\n"
+#| "      - name: Gradle Wrapper Validation\n"
+#| "        uses: gradle/wrapper-validation-action@v1\n"
+#| "      - name: Set up JDK 11\n"
+#| "        uses: actions/setup-java@v2\n"
+#| "        with:\n"
+#| "          distribution: 'adopt'\n"
+#| "          java-version: 11\n"
+#| "      - name: Build\n"
+#| "        run: |\n"
+#| "          # use timestamp as Version Code\n"
+#| "          export versionCode=$(date '+%s')\n"
+#| "          sed -i \"s,^\\(\\s*versionCode\\)  *[0-9].*,\\1 $versionCode,\" app/build.gradle\n"
+#| "          ./gradlew assembleDebug\n"
+#| "      - name: fdroid nightly\n"
+#| "        run: |\n"
+#| "          sudo add-apt-repository ppa:fdroid/fdroidserver\n"
+#| "          sudo apt-get update\n"
+#| "          sudo apt-get install apksigner fdroidserver --no-install-recommends\n"
+#| "          export DEBUG_KEYSTORE=${{ '{{' }} secrets.DEBUG_KEYSTORE }}\n"
+#| "          fdroid nightly --archive-older 10\n"
 msgid ""
 "name: Publish nightly build\n"
-"\n"
 "on:\n"
 "  push:\n"
 "    branches:\n"
 "      - main\n"
-"\n"
 "jobs:\n"
 "  nightly:\n"
 "    name: Publish nightly build\n"
@@ -8907,26 +8955,26 @@ msgid ""
 "    environment: nightly\n"
 "    steps:\n"
 "      - name: Checkout\n"
-"        uses: actions/checkout@v2\n"
+"        uses: actions/checkout@v4\n"
 "      - name: Gradle Wrapper Validation\n"
-"        uses: gradle/wrapper-validation-action@v1\n"
-"      - name: Set up JDK 11\n"
+"        uses: gradle/wrapper-validation-action@v3\n"
+"      - name: Set up JDK 17\n"
 "        uses: actions/setup-java@v2\n"
 "        with:\n"
 "          distribution: 'adopt'\n"
-"          java-version: 11\n"
+"          java-version: 17\n"
 "      - name: Build\n"
 "        run: |\n"
 "          # use timestamp as Version Code\n"
 "          export versionCode=$(date '+%s')\n"
-"          sed -i \"s,^\\(\\s*versionCode\\)  *[0-9].*,\\1 $versionCode,\" app/build.gradle\n"
+"          sed -i \"s,^|(|s*versionCode|)  *[0-9].*,|1 $versionCode,\" app/build.gradle*\n"
 "          ./gradlew assembleDebug\n"
 "      - name: fdroid nightly\n"
 "        run: |\n"
 "          sudo add-apt-repository ppa:fdroid/fdroidserver\n"
 "          sudo apt-get update\n"
 "          sudo apt-get install apksigner fdroidserver --no-install-recommends\n"
-"          export DEBUG_KEYSTORE=${{ '{{' }} secrets.DEBUG_KEYSTORE }}\n"
+"          export DEBUG_KEYSTORE=${{ secrets.DEBUG_KEYSTORE }}\n"
 "          fdroid nightly --archive-older 10\n"
 msgstr ""
 "name: Publish nightly build\n"
@@ -8981,7 +9029,7 @@ msgstr "Налаштування для GitHub і Travis CI"
 msgid "Generate a new _debug.keystore_ for each app, since GitHub only allows a deploy key to be used on a single repo.  Keep that file safe, since it is the signing key for your nightly build."
 msgstr "Створіть окремі _debug.keystore_ для кожного застосунку, бо GitHub дає змогу використовувати кожен ключ вивантаження лише з одним репозиторієм. Зберігайте цей файл у безпечному місці: він буде ключем підпису ваших нічних збірок."
 
-#. type: Fenced code block
+#. type: Fenced code block (bash)
 #: _docs/Publishing_Nightly_Builds.md
 #, no-wrap
 msgid ""
@@ -9009,7 +9057,7 @@ msgstr ""
 "  `https://github.com/zom/zom-android-nightly/settings/keys`.\n"
 "  Перегляньте відкритий ключ SSH, виконавши:\n"
 
-#. type: Fenced code block
+#. type: Fenced code block (bash)
 #: _docs/Publishing_Nightly_Builds.md
 #, no-wrap
 msgid "fdroid nightly --keystore im.zom.messenger-debug.keystore\n"
@@ -9025,7 +9073,7 @@ msgstr "Дозвольте запис, поставивши пташку _Allow 
 msgid "To print out the secret variable contents, use `--show-secret-var`.  Careful! That text is the entire _debug.keystore_, so protect it accordingly! This prints out base64 text to be pasted into a Travis CI \"Environment Variable\" in `https://travis-ci.org/zom/Zom-Android/settings`. Call the variable `DEBUG_KEYSTORE` and make sure \"Display value in build log\" is __OFF__."
 msgstr "Виведіть вміст таємної змінної за допомогою `--show-secret-var`. Обережно! Цей текст — увесь вміст _debug.keystore_, тож не допускайте його оприлюднення! Буде виведено Base64 для вставлення в «змінну середовища» (environment variable) Travis CI на сторінці `https://travis-ci.org/zom/Zom-Android/settings`. Назвіть змінну `DEBUG_KEYSTORE` й переконайтесь, що журналювання значень (Display value in build log) __ВИМКНЕНО__."
 
-#. type: Fenced code block
+#. type: Fenced code block (bash)
 #: _docs/Publishing_Nightly_Builds.md
 #, no-wrap
 msgid "fdroid nightly --keystore im.zom.messenger-debug.keystore --show-secret-var\n"
@@ -9094,8 +9142,29 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/Publishing_Nightly_Builds.md
-msgid "For a real world example, see _Zom_: * <https://github.com/zom/Zom-Android-nightly> * <https://github.com/zom/Zom-Android/blob/master/.travis.yml> * <https://travis-ci.org/zom/Zom-Android>"
-msgstr "Перегляньте зразок польового застосування — _Zom_: * <https://github.com/zom/Zom-Android-nightly> * <https://github.com/zom/Zom-Android/blob/master/.travis.yml> * <https://travis-ci.org/zom/Zom-Android>"
+msgid "For a real world example, see _Zom_:"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/Publishing_Nightly_Builds.md
+#, fuzzy
+#| msgid "<https://gitlab.com/fdroid/fdroidclient/graphs/master>"
+msgid "<https://github.com/zom/Zom-Android-nightly>"
+msgstr "<https://gitlab.com/fdroid/fdroidclient/graphs/master>"
+
+#. type: Bullet: '* '
+#: _docs/Publishing_Nightly_Builds.md
+#, fuzzy
+#| msgid "<https://gitlab.com/fdroid/fdroidclient/network/master>"
+msgid "<https://github.com/zom/Zom-Android/blob/master/.travis.yml>"
+msgstr "<https://gitlab.com/fdroid/fdroidclient/network/master>"
+
+#. type: Bullet: '* '
+#: _docs/Publishing_Nightly_Builds.md
+#, fuzzy
+#| msgid "<https://microg.org/fdroid.html>"
+msgid "<https://travis-ci.org/zom/Zom-Android>"
+msgstr "<https://microg.org/fdroid.html>"
 
 #. type: Yaml Front Matter Hash Value: title
 #: _docs/Release_Channels_and_Signing_Keys.md
@@ -10568,7 +10637,26 @@ msgstr "CMake"
 #, no-wrap
 msgid ""
 "For CMake versions since 3.13, `add_link_options(LINKER:<linker args>)` can\n"
-"be added to `CMakeLists.txt` globally. This command only works for libraries added after this command is invoked, so it should\n"
+"be added to `CMakeLists.txt` globally, eg. to remove `build-id`:\n"
+msgstr ""
+
+#. type: Fenced code block
+#: _docs/Reproducible_Builds.md
+#, no-wrap
+msgid "add_link_options(\"LINKER:--build-id=none\")\n"
+msgstr ""
+
+#. type: Plain text
+#: _docs/Reproducible_Builds.md
+#, fuzzy, no-wrap
+#| msgid ""
+#| "For CMake versions since 3.13, `add_link_options(LINKER:<linker args>)` can\n"
+#| "be added to `CMakeLists.txt` globally. This command only works for libraries added after this command is invoked, so it should\n"
+#| "be invoked at the beginning of the CMake file. For CMake versions before 3.13,\n"
+#| "`target_link_libraries(<target> LINKER:<linker args>)` can be used instead for\n"
+#| "every target. It can also be set in Gradle files:\n"
+msgid ""
+"This command only works for libraries added after this command is invoked, so it should\n"
 "be invoked at the beginning of the CMake file. For CMake versions before 3.13,\n"
 "`target_link_libraries(<target> LINKER:<linker args>)` can be used instead for\n"
 "every target. It can also be set in Gradle files:\n"
@@ -12971,3 +13059,9 @@ msgstr "Параметри"
 #: _docs/Whitelabel_Builds.md
 msgid "For a custom build that enables Automatic Updates by default, override _app/src/main/res/xml/preferences.xml_. You can customize the preferences and their default values in _app/src/mycompany/res/xml/preferences.xml_. The fully automatic update requires [Privileged Extension](https://gitlab.com/fdroid/privileged-extension). With regular access, the updates will only automatically download. The user still needs to click install on each one."
 msgstr "Щоб усталено вимкнути автоматичні оновлення в своїй збірці, замініть _app/src/main/res/xml/preferences.xml_. Можете допрацювати параметри та їхні усталені значення в _app/src/mycompany/res/xml/preferences.xml_. Для повністю автоматичного оновлення потрібне [привілейоване розширення](https://gitlab.com/fdroid/privileged-extension). Без нього, оновлення будуть лише автоматично завантажуватись — і користувачці чи користувачу все ще доводитиметься торкати «Встановити» для кожного з них."
+
+#~ msgid "For a real world example using _gitlab-ci_, see _fdroidclient_: * <https://gitlab.com/fdroid/fdroidclient-nightly> * <https://gitlab.com/fdroid/fdroidclient/blob/master/.gitlab-ci.yml>"
+#~ msgstr "Перегляньте зразок польового застосування _gitlab-ci_ — _fdroidclient_: * <https://gitlab.com/fdroid/fdroidclient-nightly> * <https://gitlab.com/fdroid/fdroidclient/blob/master/.gitlab-ci.yml>"
+
+#~ msgid "For a real world example, see _Zom_: * <https://github.com/zom/Zom-Android-nightly> * <https://github.com/zom/Zom-Android/blob/master/.travis.yml> * <https://travis-ci.org/zom/Zom-Android>"
+#~ msgstr "Перегляньте зразок польового застосування — _Zom_: * <https://github.com/zom/Zom-Android-nightly> * <https://github.com/zom/Zom-Android/blob/master/.travis.yml> * <https://travis-ci.org/zom/Zom-Android>"

@@ -8,7 +8,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2025-06-08 21:52+0200\n"
+"POT-Creation-Date: 2025-06-13 09:37+0200\n"
 "PO-Revision-Date: 2025-05-27 14:47+0000\n"
 "Last-Translator: Licaon Kter <licaon.kter@protonmail.com>\n"
 "Language-Team: Romanian <https://hosted.weblate.org/projects/f-droid/website-docs/ro/>\n"
@@ -9065,8 +9065,22 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/Publishing_Nightly_Builds.md
-msgid "For a real world example using _gitlab-ci_, see _fdroidclient_: * <https://gitlab.com/fdroid/fdroidclient-nightly> * <https://gitlab.com/fdroid/fdroidclient/blob/master/.gitlab-ci.yml>"
-msgstr "Pentru un exemplu din lumea reală care utilizează _gitlab-ci_, consultați _fdroidclient_: * <https://gitlab.com/fdroid/fdroidclient-nightly> * <https://gitlab.com/fdroid/fdroidclient/blob/master/.gitlab-ci.yml>"
+msgid "For a real world example using _gitlab-ci_, see _fdroidclient_:"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/Publishing_Nightly_Builds.md
+#, fuzzy
+#| msgid "<https://gitlab.com/fdroid/fdroidclient/graphs/master>"
+msgid "<https://gitlab.com/fdroid/fdroidclient-nightly>"
+msgstr "<https://gitlab.com/fdroid/fdroidclient/graphs/master>"
+
+#. type: Bullet: '* '
+#: _docs/Publishing_Nightly_Builds.md
+#, fuzzy
+#| msgid "<https://gitlab.com/fdroid/fdroidclient/network/master>"
+msgid "<https://gitlab.com/fdroid/fdroidclient/blob/master/.gitlab-ci.yml>"
+msgstr "<https://gitlab.com/fdroid/fdroidclient/network/master>"
 
 #. type: Title ##
 #: _docs/Publishing_Nightly_Builds.md
@@ -9101,15 +9115,49 @@ msgstr "Adăugați o etapă _nightly_ la _.github/workflows/_ care produce doar 
 
 #. type: Fenced code block (yaml)
 #: _docs/Publishing_Nightly_Builds.md
-#, no-wrap
+#, fuzzy, no-wrap
+#| msgid ""
+#| "name: Publish nightly build\n"
+#| "\n"
+#| "on:\n"
+#| "  push:\n"
+#| "    branches:\n"
+#| "      - main\n"
+#| "\n"
+#| "jobs:\n"
+#| "  nightly:\n"
+#| "    name: Publish nightly build\n"
+#| "    runs-on: ubuntu-latest\n"
+#| "    environment: nightly\n"
+#| "    steps:\n"
+#| "      - name: Checkout\n"
+#| "        uses: actions/checkout@v2\n"
+#| "      - name: Gradle Wrapper Validation\n"
+#| "        uses: gradle/wrapper-validation-action@v1\n"
+#| "      - name: Set up JDK 11\n"
+#| "        uses: actions/setup-java@v2\n"
+#| "        with:\n"
+#| "          distribution: 'adopt'\n"
+#| "          java-version: 11\n"
+#| "      - name: Build\n"
+#| "        run: |\n"
+#| "          # use timestamp as Version Code\n"
+#| "          export versionCode=$(date '+%s')\n"
+#| "          sed -i \"s,^\\(\\s*versionCode\\)  *[0-9].*,\\1 $versionCode,\" app/build.gradle\n"
+#| "          ./gradlew assembleDebug\n"
+#| "      - name: fdroid nightly\n"
+#| "        run: |\n"
+#| "          sudo add-apt-repository ppa:fdroid/fdroidserver\n"
+#| "          sudo apt-get update\n"
+#| "          sudo apt-get install apksigner fdroidserver --no-install-recommends\n"
+#| "          export DEBUG_KEYSTORE=${{ '{{' }} secrets.DEBUG_KEYSTORE }}\n"
+#| "          fdroid nightly --archive-older 10\n"
 msgid ""
 "name: Publish nightly build\n"
-"\n"
 "on:\n"
 "  push:\n"
 "    branches:\n"
 "      - main\n"
-"\n"
 "jobs:\n"
 "  nightly:\n"
 "    name: Publish nightly build\n"
@@ -9117,26 +9165,26 @@ msgid ""
 "    environment: nightly\n"
 "    steps:\n"
 "      - name: Checkout\n"
-"        uses: actions/checkout@v2\n"
+"        uses: actions/checkout@v4\n"
 "      - name: Gradle Wrapper Validation\n"
-"        uses: gradle/wrapper-validation-action@v1\n"
-"      - name: Set up JDK 11\n"
+"        uses: gradle/wrapper-validation-action@v3\n"
+"      - name: Set up JDK 17\n"
 "        uses: actions/setup-java@v2\n"
 "        with:\n"
 "          distribution: 'adopt'\n"
-"          java-version: 11\n"
+"          java-version: 17\n"
 "      - name: Build\n"
 "        run: |\n"
 "          # use timestamp as Version Code\n"
 "          export versionCode=$(date '+%s')\n"
-"          sed -i \"s,^\\(\\s*versionCode\\)  *[0-9].*,\\1 $versionCode,\" app/build.gradle\n"
+"          sed -i \"s,^|(|s*versionCode|)  *[0-9].*,|1 $versionCode,\" app/build.gradle*\n"
 "          ./gradlew assembleDebug\n"
 "      - name: fdroid nightly\n"
 "        run: |\n"
 "          sudo add-apt-repository ppa:fdroid/fdroidserver\n"
 "          sudo apt-get update\n"
 "          sudo apt-get install apksigner fdroidserver --no-install-recommends\n"
-"          export DEBUG_KEYSTORE=${{ '{{' }} secrets.DEBUG_KEYSTORE }}\n"
+"          export DEBUG_KEYSTORE=${{ secrets.DEBUG_KEYSTORE }}\n"
 "          fdroid nightly --archive-older 10\n"
 msgstr ""
 "name: Publică compilarea nocturnă\n"
@@ -9191,7 +9239,7 @@ msgstr "Configurarea pentru GitHub și Travis CI"
 msgid "Generate a new _debug.keystore_ for each app, since GitHub only allows a deploy key to be used on a single repo.  Keep that file safe, since it is the signing key for your nightly build."
 msgstr "Generați un nou _debug.keystore_ pentru fiecare aplicație, deoarece GitHub permite utilizarea unei chei de implementare doar pentru un singur repo.  Păstrați acest fișier în siguranță, deoarece este cheia de semnare pentru construcția nocturnă."
 
-#. type: Fenced code block
+#. type: Fenced code block (bash)
 #: _docs/Publishing_Nightly_Builds.md
 #, no-wrap
 msgid ""
@@ -9219,7 +9267,7 @@ msgstr ""
 "   `https://github.com/zom/zom-android-nightly/settings/keys`.  Adresa\n"
 "   publică SSH key este tipărită prin rularea:\n"
 
-#. type: Fenced code block
+#. type: Fenced code block (bash)
 #: _docs/Publishing_Nightly_Builds.md
 #, no-wrap
 msgid "fdroid nightly --keystore im.zom.messenger-debug.keystore\n"
@@ -9235,7 +9283,7 @@ msgstr "bifați _Allow write access_ în setările GitHub Deploy Key"
 msgid "To print out the secret variable contents, use `--show-secret-var`.  Careful! That text is the entire _debug.keystore_, so protect it accordingly! This prints out base64 text to be pasted into a Travis CI \"Environment Variable\" in `https://travis-ci.org/zom/Zom-Android/settings`. Call the variable `DEBUG_KEYSTORE` and make sure \"Display value in build log\" is __OFF__."
 msgstr "Pentru a afișa conținutul variabilei secrete, utilizați `--show-secret-var`.  Aveți grijă! Acest text reprezintă întregul _debug.keystore_, așa că protejați-l corespunzător! Acest lucru tipărește textul base64 care trebuie lipit într-o \"Variabilă de mediu\" Travis CI în `https://travis-ci.org/zom/Zom-Android/settings`. Chemați variabila `DEBUG_KEYSTORE` și asigurați-vă că \"Display value in build log\" este __OFF__."
 
-#. type: Fenced code block
+#. type: Fenced code block (bash)
 #: _docs/Publishing_Nightly_Builds.md
 #, no-wrap
 msgid "fdroid nightly --keystore im.zom.messenger-debug.keystore --show-secret-var\n"
@@ -9304,8 +9352,29 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/Publishing_Nightly_Builds.md
-msgid "For a real world example, see _Zom_: * <https://github.com/zom/Zom-Android-nightly> * <https://github.com/zom/Zom-Android/blob/master/.travis.yml> * <https://travis-ci.org/zom/Zom-Android>"
-msgstr "Pentru un exemplu din lumea reală, consultați _Zom_: * <https://github.com/zom/Zom-Android-nightly> * <https://github.com/zom/Zom-Android/blob/master/.travis.yml> * <https://travis-ci.org/zom/Zom-Android>"
+msgid "For a real world example, see _Zom_:"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/Publishing_Nightly_Builds.md
+#, fuzzy
+#| msgid "<https://gitlab.com/fdroid/fdroidclient/graphs/master>"
+msgid "<https://github.com/zom/Zom-Android-nightly>"
+msgstr "<https://gitlab.com/fdroid/fdroidclient/graphs/master>"
+
+#. type: Bullet: '* '
+#: _docs/Publishing_Nightly_Builds.md
+#, fuzzy
+#| msgid "<https://gitlab.com/fdroid/fdroidclient/network/master>"
+msgid "<https://github.com/zom/Zom-Android/blob/master/.travis.yml>"
+msgstr "<https://gitlab.com/fdroid/fdroidclient/network/master>"
+
+#. type: Bullet: '* '
+#: _docs/Publishing_Nightly_Builds.md
+#, fuzzy
+#| msgid "<https://microg.org/fdroid.html>"
+msgid "<https://travis-ci.org/zom/Zom-Android>"
+msgstr "<https://microg.org/fdroid.html>"
 
 #. type: Yaml Front Matter Hash Value: title
 #: _docs/Release_Channels_and_Signing_Keys.md
@@ -13253,3 +13322,9 @@ msgstr "Preferințe"
 #: _docs/Whitelabel_Builds.md
 msgid "For a custom build that enables Automatic Updates by default, override _app/src/main/res/xml/preferences.xml_. You can customize the preferences and their default values in _app/src/mycompany/res/xml/preferences.xml_. The fully automatic update requires [Privileged Extension](https://gitlab.com/fdroid/privileged-extension). With regular access, the updates will only automatically download. The user still needs to click install on each one."
 msgstr "Pentru o construcție personalizată care activează actualizările automate în mod implicit, suprascrieți fișierul _app/src/main/res/xml/preferences.xml_. Puteți personaliza preferințele și valorile implicite ale acestora în _app/src/mycompany/res/xml/preferences.xml_. Actualizarea complet automată necesită [Privileged Extension](https://gitlab.com/fdroid/privileged-extension). Cu acces obișnuit, actualizările se vor descărca doar automat. Utilizatorul trebuie în continuare să facă clic pe instalare pentru fiecare dintre ele."
+
+#~ msgid "For a real world example using _gitlab-ci_, see _fdroidclient_: * <https://gitlab.com/fdroid/fdroidclient-nightly> * <https://gitlab.com/fdroid/fdroidclient/blob/master/.gitlab-ci.yml>"
+#~ msgstr "Pentru un exemplu din lumea reală care utilizează _gitlab-ci_, consultați _fdroidclient_: * <https://gitlab.com/fdroid/fdroidclient-nightly> * <https://gitlab.com/fdroid/fdroidclient/blob/master/.gitlab-ci.yml>"
+
+#~ msgid "For a real world example, see _Zom_: * <https://github.com/zom/Zom-Android-nightly> * <https://github.com/zom/Zom-Android/blob/master/.travis.yml> * <https://travis-ci.org/zom/Zom-Android>"
+#~ msgstr "Pentru un exemplu din lumea reală, consultați _Zom_: * <https://github.com/zom/Zom-Android-nightly> * <https://github.com/zom/Zom-Android/blob/master/.travis.yml> * <https://travis-ci.org/zom/Zom-Android>"
