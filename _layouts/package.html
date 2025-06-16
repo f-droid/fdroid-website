@@ -21,7 +21,7 @@ layout: default-package-sidebar
 		</div>
 	</header>
 	{% if page.whats_new and page.suggested_version_name %}
-	<div class="package-whats-new">
+	<div class="package-whats-new" id="whats_new">
 		{% assign fmt_latest_version = '{{ latest_version }}' %}
 		{% assign version_name = page.suggested_version_name | i18n_number %}
 		<div class="new-in-version">{{ strings.new_in_version | replace: fmt_latest_version, version_name }}</div>
@@ -34,7 +34,7 @@ layout: default-package-sidebar
 		{{ page.description }}
 	</div>
 	{% if page.anti_features != nil or page.versions.first.anti_features != nil %}
-	<div class="package-anti-features">
+	<div class="package-anti-features" id="anti_features">
 		<h3>{{ strings.anti_features }}</h3>
 		<p>{{ strings.anti_features_warning }} <a class="anti-features-more" href="{{ site.baseurl }}/docs/Anti-Features/">{{ strings.learn_more }}</a></p>
 		<ul class="package-version-anti-features-list">
@@ -63,20 +63,20 @@ layout: default-package-sidebar
 		</ul>
 	</div>
 	{% endif %}
-	<ul class="package-links">
+	<ul class="package-links" id="links">
 		{% if page.author_email != "" and page.author_email != nil %}
-		<li class="package-link">
+		<li class="package-link" id="author">
 			{{ strings.author }}:
 			<a href="mailto:{{ page.author_email }}?subject={{ site.title }}%20on%20{{ site.baseurl }}">
 				{{ page.author_name | default: page.author_email }}
 			</a>
 		</li>
 		{% elsif page.author_name != "" and page.author_name != nil %}
-		<li class="package-link">
+		<li class="package-link" id="author_name">
 			{{ strings.author }}: {{ page.author_name }}
 		</li>
 		{% endif %}
-		<li class="package-link">
+		<li class="package-link" id="license">
 			{{ strings.license }}:
 			{% assign license = site.data.licenses.licenses[page.license] %}
 			{% if page.license == "PublicDomain" %}
@@ -87,45 +87,45 @@ layout: default-package-sidebar
 
 		</li>
 		{% if page.website != "" and page.website != nil %}
-		<li class="package-link">
+		<li class="package-link" id="website">
 			<a href="{{ page.website }}">{{ strings.website }}</a>
 		</li>
 		{% endif %}
 		{% if page.video != "" and page.video != nil %}
-		<li class="package-link">
+		<li class="package-link" id="video">
 			<a href="{{ page.video }}">{{ strings.video }}</a>
 		</li>
 		{% endif %}
 		{% if page.issue_tracker != "" and page.issue_tracker != nil %}
-		<li class="package-link">
+		<li class="package-link" id="issue_tracker">
 			<a href="{{ page.issue_tracker }}">{{ strings.issue_tracker }}</a>
 		</li>
 		{% endif %}
 		{% if page.translation != "" and page.translation != nil %}
-		<li class="package-link">
+		<li class="package-link" id="translation">
 			<a href="{{ page.translation }}">{{ strings.translation }}</a>
 		</li>
 		{% endif %}
 		{% if page.source_code != "" and page.source_code != nil %}
-		<li class="package-link">
+		<li class="package-link" id="source_code">
 			<a href="{{ page.source_code }}">{{ strings.source_code }}</a>
 		</li>
 		{% endif %}
 		{% if page.changelog != "" and page.changelog != nil %}
-		<li class="package-link">
+		<li class="package-link" id="changelog">
 			<a href="{{ page.changelog }}">{{ strings.changelog }}</a>
 		</li>
 		{% endif %}
-		<li class="package-link">
+		<li class="package-link" id="build_metadata">
 			<a href="https://gitlab.com/fdroid/fdroiddata/tree/master/metadata/{{ page.package_name }}.yml">{{ strings.build_metadata }}</a>
 		</li>
-		<li class="package-link">
+		<li class="package-link" id="reproducibility_status">
 			<a href="https://verification.f-droid.org/packages/{{ page.package_name }}/">{{ strings.reproducibility_status }}</a>
 		</li>
 	</ul>
 
 	{% if page.openCollective != nil or page.liberapay != nil or page.bitcoin != nil or page.litecoin != nil or page.donate != nil %}
-	<h3>{{ strings.donate }}</h3>
+	<h3 id="donate">{{ strings.donate }}</h3>
 	<ul class="package-links donate-options">
 		{% if page.openCollective != "" and page.openCollective != nil %}
 		<li class="package-link opencollective">
