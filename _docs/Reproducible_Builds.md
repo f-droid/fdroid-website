@@ -8,7 +8,7 @@ title: Reproducible Builds
 F-Droid works to spread [reproducible builds](https://reproducible-builds.org/docs/definition/) across the free software Android ecosystem.  The goal is to enable software build processes that anyone can run repeatedly and reproduce the exact same APK as the original release.  Our work is focused on three main areas:
 
 * Our [build environment](https://gitlab.com/fdroid/fdroidserver/-/tree/master/buildserver) is designed to make reproducing builds easy while being itself reproducible and auditable.
-* We track issues in the build tools themselves that prevent reproducible builds, help the maintainers of the build tools fix these issues, and catalog workarounds for app developers here in this web page.
+* We track issues in the build tools themselves that prevent reproducible builds, help the maintainers of the build tools fix these issues, and catalogue workarounds for app developers here in this web page.
 * We help upstream app developers for any app shipped on <tt>f-droid.org</tt> fix issues with reproducible builds by providing developer support, filing issues and suggesting changes to the source code.
 
 F-Droid verifies reproducible builds using APK [signature copying](#reproducible-signatures). To find out if an app can be reproducibly built, check the "[Reproducibility Status](f-droid.org/packages/org.fdroid.fdroid/#reproducibility_status)" on any app's page on this website.
@@ -134,7 +134,7 @@ developer and the APK that `fdroidserver` produced.
 
 You can find the APK that `fdroidserver` produced either under e.g.
 `fdroiddata/build/com.example.app/app/build/outputs/apk/prod/release/example-1.0.0-prod-release-unsigned.apk`
-(when running locally) or in the pipeline artifacts (when using GitLab
+(when running locally) or in the pipeline artefacts (when using GitLab
 CI).  Adjust the path accordingly (e.g. for flavours other than
 `prod`).
 
@@ -419,7 +419,7 @@ bytecode on different build runs.
 
 For instance, R8 tries to optimize `ServiceLoader` usage making a static list of
 all services in the code.  The order of this list may be different (or even
-incomplete) on each build run.  The only way to avoid this behavior is disabling
+incomplete) on each build run.  The only way to avoid this behaviour is disabling
 such optimizations declaring optimized classes in `proguard-rules.pro`:
 
 ```
@@ -445,7 +445,7 @@ as AppCompat, especially when R8/ProGuard code shrinking is used.
 However, it might be possible that resource shrinker will increase the APK size
 on different platforms, especially if there are not many resources to shrink, in
 which case the original APK will be used instead of the shrunk one
-(non-deterministic behavior of Gradle plugin).  Avoid using resource shrinker
+(non-deterministic behaviour of Gradle plugin).  Avoid using resource shrinker
 unless it decreases the APK file size significantly.
 
 
@@ -462,7 +462,7 @@ repositories {
 }
 ```
 
-While we understand that developers build and test during their normal workflow, please upload release APKs built after tagging, from a clean tree at the actual tagged commit (i.e. without local changes or remaining artifacts from previous builds). Only in exceptional cases, when you cannot do this, should vcsInfo be disabled (as this might otherwise cause problems), which can be done as follows:
+While we understand that developers build and test during their normal workflow, please upload release APKs built after tagging, from a clean tree at the actual tagged commit (i.e. without local changes or remaining artefacts from previous builds). Only in exceptional cases, when you cannot do this, should `vcsInfo` be disabled (as this might otherwise cause problems), which can be done as follows:
 
 ```gradle
     buildTypes {
@@ -498,8 +498,8 @@ process can add them.  For example:
 
 #### Mismatched Toolchains
 
-Different toolchains may produce different binaries. A usual case is when more than one JDK version/distribution are used to build the apk. Sometimes even Gradle may mix
-versions of JDKs to build an apk. To avoid such problems unused JDKs should be removed.
+Different toolchains may produce different binaries. A usual case is when more than one JDK version/distribution are used to build the APK. Sometimes even Gradle may mix
+versions of JDKs to build an APK. To avoid such problems unused JDKs should be removed.
 
 The APK diff will have entries in the `classes.dex` files like this, e.g. Java 17 vs Java 11:
 
@@ -524,7 +524,7 @@ Or like this, e.g. Java 17 vs Java 21:
 -    .end annotation
 ```
 
-Different NDK versions also produce different binaries. Generally this can be recognized via the metadata, e.g. LLD version, in the native libs. However, since NDK r26d a weird behavior is observed that sometimes only the `.shstrtab` sections in ELF of the native libs are changed when NDK is installed. The native libs may be built along with the app or fetched from maven repo. If AGP finds that the NDK is installed, it will use NDK to strip the native lib but in fact it only messes up the `.shstrtab` section of the native lib. The NDK setup needs to be checked carefully to ensure it matches upstream setup, including the NDK version and if it's used by AGP.
+Different NDK versions also produce different binaries. Generally this can be recognized via the metadata, e.g. LLD version, in the native libs. However, since NDK r26d a weird behaviour is observed that sometimes only the `.shstrtab` sections in ELF of the native libs are changed when NDK is installed. The native libs may be built along with the app or fetched from maven repo. If AGP finds that the NDK is installed, it will use NDK to strip the native lib but in fact it only messes up the `.shstrtab` section of the native lib. The NDK setup needs to be checked carefully to ensure it matches upstream setup, including the NDK version and if it's used by AGP.
 
 #### Support 16 KB page sizes
 
@@ -561,7 +561,7 @@ android {
 ##### CMake
 
 For CMake versions since 3.13, `add_link_options(LINKER:<linker args>)` can
-be added to `CMakeLists.txt` globally, eg. to remove `build-id`:
+be added to `CMakeLists.txt` globally, e.g. to remove `build-id`:
 
 ```
 add_link_options("LINKER:--build-id=none")
@@ -615,7 +615,7 @@ The Rust toolchain should be pinned to the same version as upstream. This can be
 
 When `openssl` crate uses vendored OpenSSL build, the OpenSSL lib needs to be configured specially to be reproducible. `SOURCE_DATE_EPOCH` can be set to remove the embedded timestamps and `CARGO_TARGET_DIR` can be set to a absolute path, e.g. `/tmp/build` to make the embedded path reproducible between different machines. NDK also need to be in the same path which can be solved by linking it to the same path.
 
-`CARGO_HOME` path plays an important part too and ends up in the built libs, it's recommended to match it between builds, eg. export it before running `rustup`, or any other build commands, and don't forget to source `env` from it.
+`CARGO_HOME` path plays an important part too and ends up in the built libs, it's recommended to match it between builds, e.g. export it before running `rustup`, or any other build commands, and don't forget to source `env` from it.
 
 #### Library-specific instructions
 
