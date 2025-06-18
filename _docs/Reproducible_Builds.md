@@ -11,7 +11,7 @@ F-Droid works to spread [reproducible builds](https://reproducible-builds.org/do
 * We track issues in the build tools themselves that prevent reproducible builds, help the maintainers of the build tools fix these issues, and catalogue workarounds for app developers here in this web page.
 * We help upstream app developers for any app shipped on <tt>f-droid.org</tt> fix issues with reproducible builds by providing developer support, filing issues and suggesting changes to the source code.
 
-F-Droid verifies reproducible builds using APK [signature copying](#reproducible-signatures). To find out if an app can be reproducibly built, check the "[Reproducibility Status](f-droid.org/packages/org.fdroid.fdroid/#reproducibility_status)" on any app's page on this website.
+F-Droid verifies reproducible builds using APK [signature copying](#reproducible-signatures). To find out if an app can be reproducibly built, check the "[Reproducibility Status](https://f-droid.org/packages/org.fdroid.fdroid/#reproducibility_status)" on any app's page on this website.
 
 ### Diversity in the build environment
 
