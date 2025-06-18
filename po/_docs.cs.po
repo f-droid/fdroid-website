@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2025-06-13 09:37+0200\n"
-"PO-Revision-Date: 2025-05-27 14:47+0000\n"
+"PO-Revision-Date: 2025-06-16 11:53+0000\n"
 "Last-Translator: slrslr <adm@prnet.info>\n"
 "Language-Team: Czech <https://hosted.weblate.org/projects/f-droid/website-docs/cs/>\n"
 "Language: cs\n"
@@ -273,16 +273,39 @@ msgid ""
 "    └── changelogs\n"
 "        └── 100100.txt\n"
 msgstr ""
+"├── en-US                       (en-US je výchozí jazyk F-Droid)\n"
+"│   ├── short_description.txt   (krátký popis, max. 80 znaků, povinné)\n"
+"│   ├── full_description.txt    (celý popis aplikace, max. 4000 znaků, povinné)\n"
+"│   ├── title.txt               (název aplikace, max. 50 znaků)\n"
+"│   ├── video.txt               (URL videa představujícího aplikaci)\n"
+"│   ├── images\n"
+"│   │   ├── icon.png            (ikona aplikace)\n"
+"│   │   ├── featureGraphic.png  (reklamní banner, zobrazený nad popisem aplikace v klientu F-Droid; krajina)\n"
+"│   │   ├── tvBanner.png        (\"ikona\" pro TV zařízení, nyní nepoužívaná)\n"
+"│   │   ├── phoneScreenshots\n"
+"│   │   │   ├── 1.png\n"
+"│   │   │   ├── 2.png\n"
+"│   │   │   ...\n"
+"│   │   ├── sevenInchScreenshots/\n"
+"│   │   ├── tenInchScreenshots/ (může být potřeba přidat různé snímky obrazovky pro různé velikosti displejů)\n"
+"│   │   ├── tvScreenshots/\n"
+"│   │   └── wearScreenshots/\n"
+"│   └── changelogs\n"
+"│       ├── 100000.txt          (musí patřit k versionCode, doslova, bez paddingu)\n"
+"│       ├── 100100.txt          (pokud byl kód verze nastaven na 100100)\n"
+"│       └── 100101.txt          (max. 500 znaků)\n"
+"└── ru                          (jiné kódy prostředí - locale)\n"
+"    ...                         (lokalizovaná metadata jsou vždy upřednostňována klientem)\n"
+"    └── changelogs\n"
+"        └── 100100.txt\n"
 
 #. type: Plain text
 #: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
 msgid "This structure should be placed at one of the following locations from **the repository's root**:"
-msgstr ""
+msgstr "Tato struktura by měla být umístěna na jednom z následujících míst od ** rootu úložiště**:"
 
 #. type: Bullet: '* '
 #: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
-#, fuzzy
-#| msgid "`metadata/`"
 msgid "`metadata/<locale>/`"
 msgstr "`metadata/<locale>/`"
 
@@ -294,7 +317,7 @@ msgstr "`fastlane/metadata/android/<locale>/`"
 #. type: Plain text
 #: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
 msgid "Alternatively, if a Gradle build flavor is specified in the Build Metadata, the following location is also supported:"
-msgstr ""
+msgstr "Případně pokud je Gradle build flavor definován v metadatech sestavení (Build), je podporováno také následující umístění:"
 
 #. type: Bullet: '* '
 #: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
@@ -304,7 +327,7 @@ msgstr "`src/<buildFlavor>/fastlane/metadata/<locale>/`"
 #. type: Plain text
 #: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
 msgid "(Some use cases of **build flavors** and multiple apps inside one repository are currently not properly supported. Follow [this issue](https://gitlab.com/fdroid/fdroidserver/issues/829) tracking the implementation of this.)"
-msgstr ""
+msgstr "(Některé případy použití **build flavors** a více aplikací v jednom repozitáři nejsou v současné době správně podporovány. Sledujte [tento problém](https://gitlab.com/fdroid/fdroidserver/issues/829) který eviduje průběh implementace této možnosti)"
 
 #. type: Plain text
 #: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
@@ -364,6 +387,37 @@ msgid ""
 "    ├── de                              (other locales)\n"
 "        ├── ...\n"
 msgstr ""
+"├── contact-email.txt                   (E-mail vývojáře / AuthorEmail)\n"
+"├── contact-website.txt                 (Webová stránka vývojáře / AuthorWebSite)\n"
+"├── release-notes\n"
+"│   └── en-US\n"
+"│       └── default.txt                 (nejnovější seznam/log změn)\n"
+"└── listings\n"
+"    ├── en-US                           (en-US je výchozí jazykové prostředí v F-Droid)\n"
+"    │   ├── title.txt                   (název aplikace, max. 50 znaků)\n"
+"    │   ├── short-description.txt       (krátký popis, max. 80 znaků, povinné)\n"
+"    │   ├── full-description.txt        (celý popis aplikace, max. 4000 znaků, povinné)\n"
+"    │   ├── video-url.txt               (webová adresa videa představujícího aplikaci)\n"
+"    │   ├── whatsnew                    (alternativní umístění seznamu/logu změn; jeden soubor, ne .txt)\n"
+"    │   └── graphics\n"
+"    │       ├── icon                    (ikona aplikace)\n"
+"    │       │   └── *.(png|jpg)         1 obrázek, obvykle 512x512\n"
+"    │       ├── feature-graphic         (reklamní banner, zobrazený nad popisem aplikace v F-Droid klientovi)\n"
+"    │       │   └── *.(png|jpg)         1 obrázek, obvykle 1024x500\n"
+"    │       ├── phone-screenshots\n"
+"    │       │   └── *.(png|jpg)\n"
+"    │       ├── tablet-screenshots\n"
+"    │       │   └── *.(png|jpg)\n"
+"    │       ├── large-tablet-screenshots\n"
+"    │       │   └── *.(png|jpg)\n"
+"    │       ├── tv-banner               (\"ikona\" pro TV zařízení, momentálně není používáno)\n"
+"    │       │   └── *.(png|jpg)\n"
+"    │       ├── tv-screenshots\n"
+"    │       │   └── *.(png|jpg)\n"
+"    │       └── wear-screenshots\n"
+"    │           └── *.(png|jpg)\n"
+"    ├── de                              (jiná jazyková prostředí)\n"
+"        ├── ...\n"
 
 #. type: Title ###
 #: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
@@ -484,6 +538,8 @@ msgid ""
 "* For data that is also contained in the APK file like the app's name, the previous two options both overwrite the\n"
 "   data from the APK file.\n"
 msgstr ""
+"* Pro data, která jsou také obsažena v souboru APK jako je název aplikace, předchozí dvě možnosti přepisují\n"
+"   data ze souboru APK.\n"
 
 #. type: Plain text
 #: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
@@ -676,28 +732,25 @@ msgstr "<https://f-droid.org/archive/index-v1.json.asc>"
 
 #. type: Title ###
 #: _docs/All_our_APIs.md
-#, fuzzy, no-wrap
-#| msgid "The repo index"
+#, no-wrap
 msgid "Signer index"
-msgstr "Index repozitáře"
+msgstr "Index podepisovatele"
 
 #. type: Plain text
 #: _docs/All_our_APIs.md
 #, no-wrap
 msgid "There is a simple index file that lists the SHA-256 fingerprint of each [signer](https://source.android.com/docs/security/features/apksigning/v2#apk-signature-scheme-v2-block) used by <tt>f-droid.org</tt> to sign each package.  This is the source of truth for determining the official <tt>f-droid.org</tt> signer for any given APK.  In order to know whether a given APK signed by <tt>f-droid.org</tt>, check the signer index:\n"
-msgstr ""
+msgstr "Je zde jednoduchý soubor indexu, který obsahuje seznam otisků SHA-256 každého [podepisovatele](https://source.android.com/docs/security/features/apksigning/v2#apk-signature-scheme-v2-block) používaný <tt>f-droid.org</tt> k podepisování každého balíčku.  Toto je zdroj, díky kterému se určuje co je pravda při zjišťování oficiálního podepisovatele <tt>f-droid.org</tt> daného APK.  Abyste zjistili jestli je dané APK podepsáno na <tt>f-droid.org</tt>, zkontrolujte index podepisovatelů:\n"
 
 #. type: Plain text
 #: _docs/All_our_APIs.md
-#, fuzzy
-#| msgid "<https://f-droid.org/repo/index-v2.json>"
 msgid "<https://f-droid.org/repo/signer-index.json>"
 msgstr "<https://f-droid.org/repo/signer-index.json>"
 
 #. type: Plain text
 #: _docs/All_our_APIs.md
 msgid "It is also signed via the signatures on _entry.json_, or direct [JAR](https://f-droid.org/repo/signer-index.jar) and [GPG](https://f-droid.org/repo/signer-index.json.asc) signatures."
-msgstr ""
+msgstr "Je to také podepsáno podpisy na _entry.json_, nebo přímo podpisy [JAR](https://f-droid.org/repo/signer-index.jar) a [GPG](https://f-droid.org/repo/signer-index.json.asc)."
 
 #. type: Title ###
 #: _docs/All_our_APIs.md
@@ -707,10 +760,8 @@ msgstr "API pro hledání aplikací"
 
 #. type: Plain text
 #: _docs/All_our_APIs.md
-#, fuzzy
-#| msgid "We've got a basic web-api for performing a full-text searches on the _f-droid.org_ repository."
 msgid "We've got a basic web API for performing a full-text searches on the _f-droid.org_ repository."
-msgstr "Máme základní webové rozhraní pro fulltextové vyhledávání v repozitáři _f-droid.org_."
+msgstr "Máme základní webové rozhraní API pro provádění fulltextového vyhledávání v repozitáři _f-droid.org_."
 
 #. type: Bullet: '* '
 #: _docs/All_our_APIs.md
@@ -817,7 +868,7 @@ msgstr "stav repozitářů třetích stran: <https://fdroid.gitlab.io/repo-monit
 #. type: Plain text
 #: _docs/All_our_APIs.md
 msgid "The list of official mirrors is in each index file.  It is also available directly via a GitLab raw URL: <https://gitlab.com/fdroid/fdroiddata/-/raw/master/config/mirrors.yml>"
-msgstr ""
+msgstr "Seznam oficiálních zrcadel je v každém souboru indexu. Je také k dispozici přímo přes raw adresu GitLab: <https://gitlab.com/fdroid/fdroiddata/-/raw/master/config/mirrors.yml>"
 
 #. type: Title ###
 #: _docs/All_our_APIs.md
@@ -976,57 +1027,57 @@ msgstr "[Zakázaný algoritmus](#DisabledAlgorithm) - podepsáno pomocí nebezpe
 #. type: Bullet: '* '
 #: _docs/Anti-Features.md
 msgid "[Known Vulnerability](#KnownVuln) - known security vulnerability"
-msgstr ""
+msgstr "[Známá zranitelnost](#KnownVuln) - známá bezpečnostní zranitelnost"
 
 #. type: Bullet: '* '
 #: _docs/Anti-Features.md
 msgid "[Non-Free Addons](#NonFreeAdd) - promotes other non-libre apps or plugins"
-msgstr ""
+msgstr "[Doplňky Non-Free](#NonFreeAdd) - propaguje aplikace nebo doplňky, které nemají svobodný zdrojový kód"
 
 #. type: Bullet: '* '
 #: _docs/Anti-Features.md
 msgid "[Non-Free Assets](#NonFreeAssets) - non-libre media in things that are not code (e.g. images, sound, music, 3D-models, or video)"
-msgstr ""
+msgstr "[Non-Free aktiva](#NonFreeAssets) - nesvobodná média, která nejsou kódem (např. obrázky, zvuk, hudba, 3D modely, nebo video)"
 
 #. type: Bullet: '* '
 #: _docs/Anti-Features.md
 msgid "[Non-Free Dependencies](#NonFreeDep) - needs a non-libre app to work (e.g. Spotify, Whatsapp)"
-msgstr ""
+msgstr "[Non-Free závislosti](#NonFreeDep) - potřebující nesvobodnou aplikaci k práci (např. Spotify, Whatsapp)"
 
 #. type: Bullet: '* '
 #: _docs/Anti-Features.md
 msgid "[Non-Free Network Services](#NonFreeNet) - promotes or depends entirely on a non-free network service"
-msgstr ""
+msgstr "[Non-Free síťové služby](#NonFreeNet) - propaguje nebo závisí zcela na nesvobodné síťové službě"
 
 #. type: Bullet: '* '
 #: _docs/Anti-Features.md
 msgid "[No Source Since](#NoSourceSince) - source code no longer available, making new releases impossible"
-msgstr ""
+msgstr "[Žádný zdrojový kód](#NoSourceSince) - zdrojový kód již není k dispozici, znemožňující nová vydání"
 
 #. type: Bullet: '* '
 #: _docs/Anti-Features.md
 msgid "[NSFW](#NSFW) - contains content that the user may not want to be publicized or visible everywhere"
-msgstr ""
+msgstr "[NSFW](#NSFW) - obsahuje obsah, který možná uživatel nebude chtít zveřejňovat a zobrazovat komukoli"
 
 #. type: Bullet: '* '
 #: _docs/Anti-Features.md
 msgid "[Tethered Network Services](#TetheredNet) - depends entirely on a certain instance of a network service"
-msgstr ""
+msgstr "[Tethered síťové služby](#TetheredNet) - závisí zcela na určité instanci síťové služby"
 
 #. type: Bullet: '* '
 #: _docs/Anti-Features.md
 msgid "[Tracking](#Tracking) - tracks and/or reports your activity to somewhere, even when it can be turned off"
-msgstr ""
+msgstr "[Sledování](#Tracking) - sleduje a/nebo reportuje vaši aktivitu někam, může být možné toto vypnout"
 
 #. type: Bullet: '* '
 #: _docs/Anti-Features.md
 msgid "[Upstream Non-Free](#UpstreamNonFree) - upstream source code is not libre, and this version has those parts replaced or rewritten"
-msgstr ""
+msgstr "[Upstream Non-Free](#UpstreamNonFree) - upstream zdrojový kód není svobodný a tato verze má tyto části nahrazeny nebo přepsány"
 
 #. type: Plain text
 #: _docs/Anti-Features.md
 msgid "Here's a complete [list of all apps in F-Droid containing Anti-Features](https://monitor.f-droid.org/anti-features)."
-msgstr ""
+msgstr "Zde je kompletní [seznam všech aplikací v F-Droid obsahujících anti-vlastnosti](https://monitor.f-droid.org/anti-features)."
 
 #. type: Title ###
 #: _docs/Anti-Features.md
