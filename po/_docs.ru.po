@@ -34,7 +34,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
-"POT-Creation-Date: 2025-06-13 09:37+0200\n"
+"POT-Creation-Date: 2025-06-18 13:17+0200\n"
 "PO-Revision-Date: 2025-03-08 03:38+0000\n"
 "Last-Translator: Golubev Alexander <fatzer2@gmail.com>\n"
 "Language-Team: Russian <https://hosted.weblate.org/projects/f-droid/website-docs/ru/>\n"
@@ -9829,23 +9829,53 @@ msgstr "Самое важное - знать, когда публикуются 
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
-msgid "F-Droid supports [reproducible builds](https://reproducible-builds.org) of apps, so that anyone can run the build process again and reproduce the same APK as the original release.  This means that F-Droid can verify that an app is 100% free software while still using the original developer's APK signatures.  F-Droid verifies reproducible builds using APK [signature copying](#reproducible-signatures)."
-msgstr "F-Droid поддерживает [воспроизводимые сборки](https://reproducible-builds.org) приложений, так что любой может запустить процесс сборки снова и воспроизвести тот же APK, что и оригинальный релиз.  Это означает, что F-Droid может проверить, что приложение является 100% свободным программным обеспечением, используя при этом подписи APK оригинального разработчика.  F-Droid проверяет воспроизводимость сборок с помощью копирования APK [сигнатур](#reproducible-signatures)."
+msgid "F-Droid works to spread [reproducible builds](https://reproducible-builds.org/docs/definition/) across the free software Android ecosystem.  The goal is to enable software build processes that anyone can run repeatedly and reproduce the exact same APK as the original release.  Our work is focused on three main areas:"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/Reproducible_Builds.md
+msgid "Our [build environment](https://gitlab.com/fdroid/fdroidserver/-/tree/master/buildserver) is designed to make reproducing builds easy while being itself reproducible and auditable."
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/Reproducible_Builds.md
+msgid "We track issues in the build tools themselves that prevent reproducible builds, help the maintainers of the build tools fix these issues, and catalogue workarounds for app developers here in this web page."
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/Reproducible_Builds.md
+msgid "We help upstream app developers for any app shipped on <tt>f-droid.org</tt> fix issues with reproducible builds by providing developer support, filing issues and suggesting changes to the source code."
+msgstr ""
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
-msgid "This concept is occasionally called \"deterministic builds\".  That is a much stricter standard: that means that the whole process runs with the same ordering each time.  The most important thing is that anyone can run the process and end up with the exact same result."
-msgstr "Эту концепцию иногда называют «детерминированными сборками». Это гораздо более строгий стандарт: он означает, что весь процесс каждый раз выполняется с одинаковым порядком. Самое главное, что любой может запустить этот процесс и в итоге получить точно такой же результат."
+msgid "F-Droid verifies reproducible builds using APK [signature copying](#reproducible-signatures). To find out if an app can be reproducibly built, check the \"[Reproducibility Status](f-droid.org/packages/org.fdroid.fdroid/#reproducibility_status)\" on any app's page on this website."
+msgstr ""
 
 #. type: Title ###
 #: _docs/Reproducible_Builds.md
-#, no-wrap
-msgid "How it is implemented as of now"
-msgstr "Как это реализовано на данный момент"
+#, fuzzy, no-wrap
+#| msgid "Build environment"
+msgid "Diversity in the build environment"
+msgstr "Среда сборки"
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
-msgid "Publishing signed binaries (APKs) from elsewhere (e.g. the upstream developer)  is now possible after verifying that they match ones built using an fdroiddata recipe.  Publishing only takes place if there is a proper match.  This procedure is implemented as part of `fdroid publish`.  The reproducibility check at the publishing step follows this logic:"
+msgid "The gold standard in reproducible builds for countering [Trusting Trust](https://www.cs.cmu.edu/~rdriley/487/papers/Thompson_1984_ReflectionsonTrustingTrust.pdf) issues is [Diverse Double-Compiling](https://dwheeler.com/trusting-trust/). The core idea is to use two entirely distinct sets of build tools to create the exact same binary.  This is a difficult standard to achieve, although quite valuable.  Some of the work to get there can be done incrementally.  Towards that end, F-Droid can reproduce the APKs that the upstream developer built on their own setup.  Often times, these are built with different toolchains or on different OSes.  To see which apps have enabled this approach, please check its [build metadata](https://gitlab.com/fdroid/fdroiddata/-/blob/master/metadata/{packageName}.yml) for the presence of build metadata fields [`Binaries:`](https://f-droid.org/docs/Build_Metadata_Reference/#Binaries) or [`binary:`](https://f-droid.org/docs/Build_Metadata_Reference/#build_binary)."
+msgstr ""
+
+#. type: Title ###
+#: _docs/Reproducible_Builds.md
+#, fuzzy, no-wrap
+#| msgid "Publish both (upstream) developer-signed and F-Droid-signed APKs"
+msgid "Publishing APKs with the upstream developer's signature"
+msgstr "Публикация и APK, подписанный (вышестоящим) разработчиком, и подписанный F-Droid"
+
+#. type: Plain text
+#: _docs/Reproducible_Builds.md
+#, fuzzy
+#| msgid "Publishing signed binaries (APKs) from elsewhere (e.g. the upstream developer)  is now possible after verifying that they match ones built using an fdroiddata recipe.  Publishing only takes place if there is a proper match.  This procedure is implemented as part of `fdroid publish`.  The reproducibility check at the publishing step follows this logic:"
+msgid "Publishing signed binaries (APKs) from elsewhere (e.g. the upstream developer)  is now possible after verifying that they match ones built using an _fdroiddata_ build recipe.  Publishing only takes place if there is a proper match. This means that F-Droid can verify that an app is free software while still using the original developer's APK signatures. This procedure is implemented as part of [`fdroid publish`](https://gitlab.com/fdroid/fdroidserver/-/blob/master/fdroidserver/publish.py).  The reproducibility check at the publishing step follows this logic:"
 msgstr "Публикация подписанных двоичных файлов (APK) из других источников (например, от разработчика) теперь возможна после проверки их соответствия файлам, собранным по рецепту fdroiddata.  Публикация происходит только в случае совпадения.  Эта процедура реализована как часть `fdroid publish`.  Проверка воспроизводимости на этапе публикации следует этой логике:"
 
 #. type: Plain text
@@ -9903,25 +9933,6 @@ msgstr ""
 "$ ls metadata/your.app/signatures/42/                # подпись v1 + v2/v3\n"
 "APKSigningBlock  APKSigningBlockOffset  MANIFEST.MF  YOURKEY.RSA  YOURKEY.SF\n"
 
-#. type: Plain text
-#: _docs/Reproducible_Builds.md
-msgid "If you don't want to install `fdroidserver` (or have an older version that doesn't support extracting v2/v3 signatures yet) you can also use [`apksigcopier`](https://github.com/obfusk/apksigcopier) (available in e.g.  Debian, Ubuntu, Arch Linux, NixOS) instead of `fdroid signatures`:"
-msgstr "Если вы не хотите устанавливать `fdroidserver` (или у вас старая версия, которая еще не поддерживает извлечение подписей v2/v3), вы также можете использовать [`apksigcopier`](https://github.com/obfusk/apksigcopier) (доступен, например, в Debian, Ubuntu, Arch Linux, NixOS) вместо `fdroid signatures`:"
-
-#. type: Fenced code block (console)
-#: _docs/Reproducible_Builds.md
-#, no-wrap
-msgid ""
-"$ cd /path/to/fdroiddata\n"
-"$ APPID=your.app VERSIONCODE=42\n"
-"$ mkdir metadata/$APPID/signatures/$VERSIONCODE\n"
-"$ apksigcopier extract --v1-only=auto Your.apk metadata/$APPID/signatures/$VERSIONCODE\n"
-msgstr ""
-"$ cd /path/to/fdroiddata\n"
-"$ APPID=your.app VERSIONCODE=42\n"
-"$ mkdir metadata/$APPID/signatures/$VERSIONCODE\n"
-"$ apksigcopier extract --v1-only=auto Your.apk metadata/$APPID/signatures/$VERSIONCODE\n"
-
 #. type: Title ####
 #: _docs/Reproducible_Builds.md
 #, no-wrap
@@ -9962,7 +9973,9 @@ msgstr "F-Droid проверяет воспроизводимость сборо
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
-msgid "Copying the signature uses the same algorithm that `apksigner` uses when signing an APK.  It is therefore important that (upstream) developers do the same when signing APKs, ideally by using `apksigner`."
+#, fuzzy
+#| msgid "Copying the signature uses the same algorithm that `apksigner` uses when signing an APK.  It is therefore important that (upstream) developers do the same when signing APKs, ideally by using `apksigner`."
+msgid "Copying the signature uses the same algorithm that `apksigner` uses when signing an APK.  It is therefore important that (upstream) developers do the same when signing APKs, ideally by using `apksigner` to make the signatures.  `apksigner` is also reproducibly built [in Debian](https://tests.reproducible-builds.org/debian/rb-pkg/trixie/amd64/android-platform-tools-apksig.html)."
 msgstr "Копирование подписи использует тот же алгоритм, который `apksigner` использует при подписывании APK. Поэтому важно, чтобы разработчики (upstream) делали то же самое при подписании APK, в идеале, используя `apksigner`."
 
 #. type: Title ###
@@ -10015,7 +10028,9 @@ msgstr "Мы рекомендуем использовать [`diffoscope`](http
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
-msgid "You can find the APK that `fdroidserver` produced either under e.g.  `fdroiddata/build/com.example.app/app/build/outputs/apk/prod/release/example-1.0.0-prod-release-unsigned.apk` (when running locally) or in the pipeline artifacts (when using GitLab CI).  Adjust the path accordingly (e.g. for flavours other than `prod`)."
+#, fuzzy
+#| msgid "You can find the APK that `fdroidserver` produced either under e.g.  `fdroiddata/build/com.example.app/app/build/outputs/apk/prod/release/example-1.0.0-prod-release-unsigned.apk` (when running locally) or in the pipeline artifacts (when using GitLab CI).  Adjust the path accordingly (e.g. for flavours other than `prod`)."
+msgid "You can find the APK that `fdroidserver` produced either under e.g.  `fdroiddata/build/com.example.app/app/build/outputs/apk/prod/release/example-1.0.0-prod-release-unsigned.apk` (when running locally) or in the pipeline artefacts (when using GitLab CI).  Adjust the path accordingly (e.g. for flavours other than `prod`)."
 msgstr "APK, созданный `fdroidserver`, можно найти либо в каталоге `fdroiddata/build/com.example.app/app/build/outputs/apk/prod/release/example-1.0.0-prod-release-unsigned.apk` (при локальном запуске), либо в артефактах конвейера (при использовании GitLab CI).  Настройте путь соответствующим образом (например, для версий, отличных от `prod`)."
 
 #. type: Title ####
@@ -10453,7 +10468,9 @@ msgstr "Оказывается, что некоторые оптимизации
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
-msgid "For instance, R8 tries to optimize `ServiceLoader` usage making a static list of all services in the code.  The order of this list may be different (or even incomplete) on each build run.  The only way to avoid this behavior is disabling such optimizations declaring optimized classes in `proguard-rules.pro`:"
+#, fuzzy
+#| msgid "For instance, R8 tries to optimize `ServiceLoader` usage making a static list of all services in the code.  The order of this list may be different (or even incomplete) on each build run.  The only way to avoid this behavior is disabling such optimizations declaring optimized classes in `proguard-rules.pro`:"
+msgid "For instance, R8 tries to optimize `ServiceLoader` usage making a static list of all services in the code.  The order of this list may be different (or even incomplete) on each build run.  The only way to avoid this behaviour is disabling such optimizations declaring optimized classes in `proguard-rules.pro`:"
 msgstr "Например, R8 пытается оптимизировать использование `ServiceLoader`, составляя статический список всех сервисов в коде.  Порядок этого списка может быть разным (или даже неполным) при каждом запуске сборки.  Единственный способ избежать такого поведения - отключить подобную оптимизацию, объявив оптимизированные классы в `proguard-rules.pro`:"
 
 #. type: Fenced code block
@@ -10500,7 +10517,9 @@ msgstr "Можно уменьшить размер APK-файла, удалив 
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
-msgid "However, it might be possible that resource shrinker will increase the APK size on different platforms, especially if there are not many resources to shrink, in which case the original APK will be used instead of the shrunk one (non-deterministic behavior of Gradle plugin).  Avoid using resource shrinker unless it decreases the APK file size significantly."
+#, fuzzy
+#| msgid "However, it might be possible that resource shrinker will increase the APK size on different platforms, especially if there are not many resources to shrink, in which case the original APK will be used instead of the shrunk one (non-deterministic behavior of Gradle plugin).  Avoid using resource shrinker unless it decreases the APK file size significantly."
+msgid "However, it might be possible that resource shrinker will increase the APK size on different platforms, especially if there are not many resources to shrink, in which case the original APK will be used instead of the shrunk one (non-deterministic behaviour of Gradle plugin).  Avoid using resource shrinker unless it decreases the APK file size significantly."
 msgstr "Однако может случиться так, что сократитель ресурсов увеличит размер APK на разных платформах, особенно если ресурсов для сокращения не так много, и в этом случае вместо сокращенного APK будет использоваться оригинальный (недетерминированное поведение плагина Gradle).  Избегайте использования ресурсоуменьшителя, если он не уменьшает размер APK-файла значительно."
 
 #. type: Title ####
@@ -10532,7 +10551,9 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
-msgid "While we understand that developers build and test during their normal workflow, please upload release APKs built after tagging, from a clean tree at the actual tagged commit (i.e. without local changes or remaining artifacts from previous builds). Only in exceptional cases, when you cannot do this, should vcsInfo be disabled (as this might otherwise cause problems), which can be done as follows:"
+#, fuzzy
+#| msgid "While we understand that developers build and test during their normal workflow, please upload release APKs built after tagging, from a clean tree at the actual tagged commit (i.e. without local changes or remaining artifacts from previous builds). Only in exceptional cases, when you cannot do this, should vcsInfo be disabled (as this might otherwise cause problems), which can be done as follows:"
+msgid "While we understand that developers build and test during their normal workflow, please upload release APKs built after tagging, from a clean tree at the actual tagged commit (i.e. without local changes or remaining artefacts from previous builds). Only in exceptional cases, when you cannot do this, should `vcsInfo` be disabled (as this might otherwise cause problems), which can be done as follows:"
 msgstr "Хотя мы понимаем, что разработчики производят и сборку, и тестирование, как часть своего рабочего процесса, пожалуйста, загружайте релизные APK, собранные только после того, как добавите метку в репозиторий, и с чистым деревом, и на основе именно того коммита, которому соответствует метка (т.е. без локальных изменений или оставшихся артефактов от предыдущих сборок). Только в исключительных случаях, когда вы не можете этого сделать, следует отключать vcsInfo (так как в противном случае это могло бы вызвать проблемы), что можно сделать следующим образом:"
 
 #. type: Fenced code block (gradle)
@@ -10594,7 +10615,9 @@ msgstr "Несоответствующие цепочки инструменто
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
-msgid "Different toolchains may produce different binaries. A usual case is when more than one JDK version/distribution are used to build the apk. Sometimes even Gradle may mix versions of JDKs to build an apk. To avoid such problems unused JDKs should be removed."
+#, fuzzy
+#| msgid "Different toolchains may produce different binaries. A usual case is when more than one JDK version/distribution are used to build the apk. Sometimes even Gradle may mix versions of JDKs to build an apk. To avoid such problems unused JDKs should be removed."
+msgid "Different toolchains may produce different binaries. A usual case is when more than one JDK version/distribution are used to build the APK. Sometimes even Gradle may mix versions of JDKs to build an APK. To avoid such problems unused JDKs should be removed."
 msgstr "Разные цепочки инструментов могут создавать разные двоичные файлы. Обычный случай - когда для сборки apk используется более одной версии/расширения JDK. Иногда даже Gradle может смешивать версии JDK для сборки apk. Чтобы избежать подобных проблем, неиспользуемые JDK следует удалить."
 
 #. type: Plain text
@@ -10659,7 +10682,9 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
-msgid "Different NDK versions also produce different binaries. Generally this can be recognized via the metadata, e.g. LLD version, in the native libs. However, since NDK r26d a weird behavior is observed that sometimes only the `.shstrtab` sections in ELF of the native libs are changed when NDK is installed. The native libs may be built along with the app or fetched from maven repo. If AGP finds that the NDK is installed, it will use NDK to strip the native lib but in fact it only messes up the `.shstrtab` section of the native lib. The NDK setup needs to be checked carefully to ensure it matches upstream setup, including the NDK version and if it's used by AGP."
+#, fuzzy
+#| msgid "Different NDK versions also produce different binaries. Generally this can be recognized via the metadata, e.g. LLD version, in the native libs. However, since NDK r26d a weird behavior is observed that sometimes only the `.shstrtab` sections in ELF of the native libs are changed when NDK is installed. The native libs may be built along with the app or fetched from maven repo. If AGP finds that the NDK is installed, it will use NDK to strip the native lib but in fact it only messes up the `.shstrtab` section of the native lib. The NDK setup needs to be checked carefully to ensure it matches upstream setup, including the NDK version and if it's used by AGP."
+msgid "Different NDK versions also produce different binaries. Generally this can be recognized via the metadata, e.g. LLD version, in the native libs. However, since NDK r26d a weird behaviour is observed that sometimes only the `.shstrtab` sections in ELF of the native libs are changed when NDK is installed. The native libs may be built along with the app or fetched from maven repo. If AGP finds that the NDK is installed, it will use NDK to strip the native lib but in fact it only messes up the `.shstrtab` section of the native lib. The NDK setup needs to be checked carefully to ensure it matches upstream setup, including the NDK version and if it's used by AGP."
 msgstr "Разные версии NDK также создают разные двоичные файлы. Обычно это можно определить по метаданным, например, версии LLD, в нативных библиотеках. Однако, начиная с NDK r26d, наблюдается странное поведение: иногда при установке NDK изменяются только секции `.shstrtab` в ELF нативных библиотек. Нативные библиотеки могут быть собраны вместе с приложением или взяты из maven repo. Если AGP обнаружит, что NDK установлен, он будет использовать NDK для удаления нативных lib, но на самом деле он только испортит секцию `.shstrtab` нативной lib. Необходимо тщательно проверить установку NDK, чтобы убедиться, что она совпадает с установкой upstream, включая версию NDK и то, используется ли она AGP."
 
 #. type: Title ####
@@ -10735,7 +10760,7 @@ msgstr "CMake"
 #, no-wrap
 msgid ""
 "For CMake versions since 3.13, `add_link_options(LINKER:<linker args>)` can\n"
-"be added to `CMakeLists.txt` globally, eg. to remove `build-id`:\n"
+"be added to `CMakeLists.txt` globally, e.g. to remove `build-id`:\n"
 msgstr ""
 
 #. type: Fenced code block
@@ -10861,7 +10886,9 @@ msgstr "Когда крейт `openssl` использует вендовую с
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
-msgid "`CARGO_HOME` path plays an important part too and ends up in the built libs, it's recommended to match it between builds, eg. export it before running `rustup`, or any other build commands, and don't forget to source `env` from it."
+#, fuzzy
+#| msgid "`CARGO_HOME` path plays an important part too and ends up in the built libs, it's recommended to match it between builds, eg. export it before running `rustup`, or any other build commands, and don't forget to source `env` from it."
+msgid "`CARGO_HOME` path plays an important part too and ends up in the built libs, it's recommended to match it between builds, e.g. export it before running `rustup`, or any other build commands, and don't forget to source `env` from it."
 msgstr "Путь `CARGO_HOME` также играет важную роль и в итоге оказывается в собранных библиотеках, рекомендуется не менять его между сборками, например, экспортировать его перед запуском `rustup `, или любыми другими командами сборки, и не забывайте подхватывать переменные среды с помощью `source` из файла `$CARGO_HOME/env`."
 
 #. type: Title ####
@@ -13159,6 +13186,31 @@ msgstr "Предпочтения"
 #: _docs/Whitelabel_Builds.md
 msgid "For a custom build that enables Automatic Updates by default, override _app/src/main/res/xml/preferences.xml_. You can customize the preferences and their default values in _app/src/mycompany/res/xml/preferences.xml_. The fully automatic update requires [Privileged Extension](https://gitlab.com/fdroid/privileged-extension). With regular access, the updates will only automatically download. The user still needs to click install on each one."
 msgstr "Для пользовательской сборки, которая включает автоматические обновления по умолчанию, переопределите _app/src/main/res/xml/preferences.xml_. Вы можете настроить предпочтения и их значения по умолчанию в _app/src/mycompany/res/xml/preferences.xml_. Для полностью автоматического обновления требуется [Особое расширение F-Droid](https://gitlab.com/fdroid/privileged-extension). При обычном уровне доступа обновления будут только автоматически загружаться. Пользователю по-прежнему необходимо нажимать кнопку установки, каждый раз, когда какое-либо из них нужно установить."
+
+#~ msgid "F-Droid supports [reproducible builds](https://reproducible-builds.org) of apps, so that anyone can run the build process again and reproduce the same APK as the original release.  This means that F-Droid can verify that an app is 100% free software while still using the original developer's APK signatures.  F-Droid verifies reproducible builds using APK [signature copying](#reproducible-signatures)."
+#~ msgstr "F-Droid поддерживает [воспроизводимые сборки](https://reproducible-builds.org) приложений, так что любой может запустить процесс сборки снова и воспроизвести тот же APK, что и оригинальный релиз.  Это означает, что F-Droid может проверить, что приложение является 100% свободным программным обеспечением, используя при этом подписи APK оригинального разработчика.  F-Droid проверяет воспроизводимость сборок с помощью копирования APK [сигнатур](#reproducible-signatures)."
+
+#~ msgid "This concept is occasionally called \"deterministic builds\".  That is a much stricter standard: that means that the whole process runs with the same ordering each time.  The most important thing is that anyone can run the process and end up with the exact same result."
+#~ msgstr "Эту концепцию иногда называют «детерминированными сборками». Это гораздо более строгий стандарт: он означает, что весь процесс каждый раз выполняется с одинаковым порядком. Самое главное, что любой может запустить этот процесс и в итоге получить точно такой же результат."
+
+#, no-wrap
+#~ msgid "How it is implemented as of now"
+#~ msgstr "Как это реализовано на данный момент"
+
+#~ msgid "If you don't want to install `fdroidserver` (or have an older version that doesn't support extracting v2/v3 signatures yet) you can also use [`apksigcopier`](https://github.com/obfusk/apksigcopier) (available in e.g.  Debian, Ubuntu, Arch Linux, NixOS) instead of `fdroid signatures`:"
+#~ msgstr "Если вы не хотите устанавливать `fdroidserver` (или у вас старая версия, которая еще не поддерживает извлечение подписей v2/v3), вы также можете использовать [`apksigcopier`](https://github.com/obfusk/apksigcopier) (доступен, например, в Debian, Ubuntu, Arch Linux, NixOS) вместо `fdroid signatures`:"
+
+#, no-wrap
+#~ msgid ""
+#~ "$ cd /path/to/fdroiddata\n"
+#~ "$ APPID=your.app VERSIONCODE=42\n"
+#~ "$ mkdir metadata/$APPID/signatures/$VERSIONCODE\n"
+#~ "$ apksigcopier extract --v1-only=auto Your.apk metadata/$APPID/signatures/$VERSIONCODE\n"
+#~ msgstr ""
+#~ "$ cd /path/to/fdroiddata\n"
+#~ "$ APPID=your.app VERSIONCODE=42\n"
+#~ "$ mkdir metadata/$APPID/signatures/$VERSIONCODE\n"
+#~ "$ apksigcopier extract --v1-only=auto Your.apk metadata/$APPID/signatures/$VERSIONCODE\n"
 
 #~ msgid "For a real world example using _gitlab-ci_, see _fdroidclient_: * <https://gitlab.com/fdroid/fdroidclient-nightly> * <https://gitlab.com/fdroid/fdroidclient/blob/master/.gitlab-ci.yml>"
 #~ msgstr "Реальный пример использования _gitlab-ci_ см. в _fdroidclient_: * <https://gitlab.com/fdroid/fdroidclient-nightly> * <https://gitlab.com/fdroid/fdroidclient/blob/master/.gitlab-ci.yml>"
