@@ -5,24 +5,23 @@ title: Reproducible Builds
 ---
 
 
-F-Droid supports [reproducible builds](https://reproducible-builds.org) of apps,
-so that anyone can run the build process again and reproduce the same APK as the
-original release.  This means that F-Droid can verify that an app is 100% free
-software while still using the original developer's APK signatures.  F-Droid
-verifies reproducible builds using APK [signature copying](#reproducible-signatures).
+F-Droid works to spread [reproducible builds](https://reproducible-builds.org/docs/definition/) across the free software Android ecosystem.  The goal is to enable software build processes that anyone can run repeatedly and reproduce the exact same APK as the original release.  Our work is focused on three main areas:
 
-This concept is occasionally called "deterministic builds".  That is a much
-stricter standard: that means that the whole process runs with the same ordering
-each time.  The most important thing is that anyone can run the process and end
-up with the exact same result.
+* Our [build environment](https://gitlab.com/fdroid/fdroidserver/-/tree/master/buildserver) is designed to make reproducing builds easy while being itself reproducible and auditable.
+* We track issues in the build tools themselves that prevent reproducible builds, help the maintainers of the build tools fix these issues, and catalogue workarounds for app developers here in this web page.
+* We help upstream app developers for any app shipped on <tt>f-droid.org</tt> fix issues with reproducible builds by providing developer support, filing issues and suggesting changes to the source code.
 
+F-Droid verifies reproducible builds using APK [signature copying](#reproducible-signatures). To find out if an app can be reproducibly built, check the "[Reproducibility Status](f-droid.org/packages/org.fdroid.fdroid/#reproducibility_status)" on any app's page on this website.
 
-### How it is implemented as of now
+### Diversity in the build environment
+
+The gold standard in reproducible builds for countering [Trusting Trust](https://www.cs.cmu.edu/~rdriley/487/papers/Thompson_1984_ReflectionsonTrustingTrust.pdf) issues is [Diverse Double-Compiling](https://dwheeler.com/trusting-trust/). The core idea is to use two entirely distinct sets of build tools to create the exact same binary.  This is a difficult standard to achieve, although quite valuable.  Some of the work to get there can be done incrementally.  Towards that end, F-Droid can reproduce the APKs that the upstream developer built on their own setup.  Often times, these are built with different toolchains or on different OSes.  To see which apps have enabled this approach, please check its [build metadata](https://gitlab.com/fdroid/fdroiddata/-/blob/master/metadata/{packageName}.yml) for the presence of build metadata fields [`Binaries:`](https://f-droid.org/docs/Build_Metadata_Reference/#Binaries) or [`binary:`](https://f-droid.org/docs/Build_Metadata_Reference/#build_binary).
+
+### Publishing APKs with the upstream developer's signature
 
 Publishing signed binaries (APKs) from elsewhere (e.g. the upstream developer)
-is now possible after verifying that they match ones built using an fdroiddata
-recipe.  Publishing only takes place if there is a proper match.  This procedure
-is implemented as part of `fdroid publish`.  The reproducibility check at the
+is now possible after verifying that they match ones built using an _fdroiddata_
+build recipe.  Publishing only takes place if there is a proper match. This means that F-Droid can verify that an app is free software while still using the original developer's APK signatures. This procedure is implemented as part of [`fdroid publish`](https://gitlab.com/fdroid/fdroidserver/-/blob/master/fdroidserver/publish.py).  The reproducibility check at the
 publishing step follows this logic:
 
 ![Flow-chart for reproducibility check]({% asset docs/reproducible-builds/publish.png %})
@@ -61,19 +60,6 @@ $ ls metadata/your.app/signatures/42/                # v1 + v2/v3 signature
 APKSigningBlock  APKSigningBlockOffset  MANIFEST.MF  YOURKEY.RSA  YOURKEY.SF
 ```
 
-If you don't want to install `fdroidserver` (or have an older version that
-doesn't support extracting v2/v3 signatures yet) you can also use
-[`apksigcopier`](https://github.com/obfusk/apksigcopier) (available in e.g.
-Debian, Ubuntu, Arch Linux, NixOS) instead of `fdroid signatures`:
-
-```console
-$ cd /path/to/fdroiddata
-$ APPID=your.app VERSIONCODE=42
-$ mkdir metadata/$APPID/signatures/$VERSIONCODE
-$ apksigcopier extract --v1-only=auto Your.apk metadata/$APPID/signatures/$VERSIONCODE
-```
-
-
 #### Exclusively publishing (upstream) developer-signed APKs
 
 For this approach, everything in the metadata should be the same as normal, with
@@ -106,8 +92,7 @@ bytes in the APK*.  Thus, the APKs must be completely identical *before* and
 
 Copying the signature uses the same algorithm that `apksigner` uses when signing
 an APK.  It is therefore important that (upstream) developers do the same when
-signing APKs, ideally by using `apksigner`.
-
+signing APKs, ideally by using `apksigner` to make the signatures.  `apksigner` is also reproducibly built [in Debian](https://tests.reproducible-builds.org/debian/rb-pkg/trixie/amd64/android-platform-tools-apksig.html).
 
 ### Verification builds
 
@@ -149,7 +134,7 @@ developer and the APK that `fdroidserver` produced.
 
 You can find the APK that `fdroidserver` produced either under e.g.
 `fdroiddata/build/com.example.app/app/build/outputs/apk/prod/release/example-1.0.0-prod-release-unsigned.apk`
-(when running locally) or in the pipeline artifacts (when using GitLab
+(when running locally) or in the pipeline artefacts (when using GitLab
 CI).  Adjust the path accordingly (e.g. for flavours other than
 `prod`).
 
@@ -434,7 +419,7 @@ bytecode on different build runs.
 
 For instance, R8 tries to optimize `ServiceLoader` usage making a static list of
 all services in the code.  The order of this list may be different (or even
-incomplete) on each build run.  The only way to avoid this behavior is disabling
+incomplete) on each build run.  The only way to avoid this behaviour is disabling
 such optimizations declaring optimized classes in `proguard-rules.pro`:
 
 ```
@@ -460,7 +445,7 @@ as AppCompat, especially when R8/ProGuard code shrinking is used.
 However, it might be possible that resource shrinker will increase the APK size
 on different platforms, especially if there are not many resources to shrink, in
 which case the original APK will be used instead of the shrunk one
-(non-deterministic behavior of Gradle plugin).  Avoid using resource shrinker
+(non-deterministic behaviour of Gradle plugin).  Avoid using resource shrinker
 unless it decreases the APK file size significantly.
 
 
@@ -477,7 +462,7 @@ repositories {
 }
 ```
 
-While we understand that developers build and test during their normal workflow, please upload release APKs built after tagging, from a clean tree at the actual tagged commit (i.e. without local changes or remaining artifacts from previous builds). Only in exceptional cases, when you cannot do this, should vcsInfo be disabled (as this might otherwise cause problems), which can be done as follows:
+While we understand that developers build and test during their normal workflow, please upload release APKs built after tagging, from a clean tree at the actual tagged commit (i.e. without local changes or remaining artefacts from previous builds). Only in exceptional cases, when you cannot do this, should `vcsInfo` be disabled (as this might otherwise cause problems), which can be done as follows:
 
 ```gradle
     buildTypes {
@@ -513,8 +498,8 @@ process can add them.  For example:
 
 #### Mismatched Toolchains
 
-Different toolchains may produce different binaries. A usual case is when more than one JDK version/distribution are used to build the apk. Sometimes even Gradle may mix
-versions of JDKs to build an apk. To avoid such problems unused JDKs should be removed.
+Different toolchains may produce different binaries. A usual case is when more than one JDK version/distribution are used to build the APK. Sometimes even Gradle may mix
+versions of JDKs to build an APK. To avoid such problems unused JDKs should be removed.
 
 The APK diff will have entries in the `classes.dex` files like this, e.g. Java 17 vs Java 11:
 
@@ -539,7 +524,7 @@ Or like this, e.g. Java 17 vs Java 21:
 -    .end annotation
 ```
 
-Different NDK versions also produce different binaries. Generally this can be recognized via the metadata, e.g. LLD version, in the native libs. However, since NDK r26d a weird behavior is observed that sometimes only the `.shstrtab` sections in ELF of the native libs are changed when NDK is installed. The native libs may be built along with the app or fetched from maven repo. If AGP finds that the NDK is installed, it will use NDK to strip the native lib but in fact it only messes up the `.shstrtab` section of the native lib. The NDK setup needs to be checked carefully to ensure it matches upstream setup, including the NDK version and if it's used by AGP.
+Different NDK versions also produce different binaries. Generally this can be recognized via the metadata, e.g. LLD version, in the native libs. However, since NDK r26d a weird behaviour is observed that sometimes only the `.shstrtab` sections in ELF of the native libs are changed when NDK is installed. The native libs may be built along with the app or fetched from maven repo. If AGP finds that the NDK is installed, it will use NDK to strip the native lib but in fact it only messes up the `.shstrtab` section of the native lib. The NDK setup needs to be checked carefully to ensure it matches upstream setup, including the NDK version and if it's used by AGP.
 
 #### Support 16 KB page sizes
 
@@ -576,7 +561,7 @@ android {
 ##### CMake
 
 For CMake versions since 3.13, `add_link_options(LINKER:<linker args>)` can
-be added to `CMakeLists.txt` globally, eg. to remove `build-id`:
+be added to `CMakeLists.txt` globally, e.g. to remove `build-id`:
 
 ```
 add_link_options("LINKER:--build-id=none")
@@ -630,7 +615,7 @@ The Rust toolchain should be pinned to the same version as upstream. This can be
 
 When `openssl` crate uses vendored OpenSSL build, the OpenSSL lib needs to be configured specially to be reproducible. `SOURCE_DATE_EPOCH` can be set to remove the embedded timestamps and `CARGO_TARGET_DIR` can be set to a absolute path, e.g. `/tmp/build` to make the embedded path reproducible between different machines. NDK also need to be in the same path which can be solved by linking it to the same path.
 
-`CARGO_HOME` path plays an important part too and ends up in the built libs, it's recommended to match it between builds, eg. export it before running `rustup`, or any other build commands, and don't forget to source `env` from it.
+`CARGO_HOME` path plays an important part too and ends up in the built libs, it's recommended to match it between builds, e.g. export it before running `rustup`, or any other build commands, and don't forget to source `env` from it.
 
 #### Library-specific instructions
 
