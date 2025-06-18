@@ -25,8 +25,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
 "POT-Creation-Date: 2025-06-13 09:37+0200\n"
-"PO-Revision-Date: 2025-06-05 14:11+0000\n"
-"Last-Translator: Hans-Fritz Pommes <valarmmail@gmx.de>\n"
+"PO-Revision-Date: 2025-06-14 11:01+0000\n"
+"Last-Translator: VfBFan <drop0815@posteo.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/f-droid/website-docs/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
@@ -8870,19 +8870,15 @@ msgstr ""
 #. type: Plain text
 #: _docs/Publishing_Nightly_Builds.md
 msgid "For a real world example using _gitlab-ci_, see _fdroidclient_:"
-msgstr ""
+msgstr "Ein praktisches Beispiel für das Verwenden von _gitlab-ci_ finden Sie unter _fdroidclient_:"
 
 #. type: Bullet: '* '
 #: _docs/Publishing_Nightly_Builds.md
-#, fuzzy
-#| msgid "<https://gitlab.com/fdroid/fdroidclient/graphs/master>"
 msgid "<https://gitlab.com/fdroid/fdroidclient-nightly>"
 msgstr "<https://gitlab.com/fdroid/fdroidclient-nightly>"
 
 #. type: Bullet: '* '
 #: _docs/Publishing_Nightly_Builds.md
-#, fuzzy
-#| msgid "<https://gitlab.com/fdroid/fdroidclient/network/master>"
 msgid "<https://gitlab.com/fdroid/fdroidclient/blob/master/.gitlab-ci.yml>"
 msgstr "<https://gitlab.com/fdroid/fdroidclient/blob/master/.gitlab-ci.yml>"
 
@@ -8919,43 +8915,7 @@ msgstr "Ergänzen Sie eine _nightly_ Stufe in _.github/workflows/_, die nur den 
 
 #. type: Fenced code block (yaml)
 #: _docs/Publishing_Nightly_Builds.md
-#, fuzzy, no-wrap
-#| msgid ""
-#| "name: Publish nightly build\n"
-#| "\n"
-#| "on:\n"
-#| "  push:\n"
-#| "    branches:\n"
-#| "      - main\n"
-#| "\n"
-#| "jobs:\n"
-#| "  nightly:\n"
-#| "    name: Publish nightly build\n"
-#| "    runs-on: ubuntu-latest\n"
-#| "    environment: nightly\n"
-#| "    steps:\n"
-#| "      - name: Checkout\n"
-#| "        uses: actions/checkout@v2\n"
-#| "      - name: Gradle Wrapper Validation\n"
-#| "        uses: gradle/wrapper-validation-action@v1\n"
-#| "      - name: Set up JDK 11\n"
-#| "        uses: actions/setup-java@v2\n"
-#| "        with:\n"
-#| "          distribution: 'adopt'\n"
-#| "          java-version: 11\n"
-#| "      - name: Build\n"
-#| "        run: |\n"
-#| "          # use timestamp as Version Code\n"
-#| "          export versionCode=$(date '+%s')\n"
-#| "          sed -i \"s,^\\(\\s*versionCode\\)  *[0-9].*,\\1 $versionCode,\" app/build.gradle\n"
-#| "          ./gradlew assembleDebug\n"
-#| "      - name: fdroid nightly\n"
-#| "        run: |\n"
-#| "          sudo add-apt-repository ppa:fdroid/fdroidserver\n"
-#| "          sudo apt-get update\n"
-#| "          sudo apt-get install apksigner fdroidserver --no-install-recommends\n"
-#| "          export DEBUG_KEYSTORE=${{ '{{' }} secrets.DEBUG_KEYSTORE }}\n"
-#| "          fdroid nightly --archive-older 10\n"
+#, no-wrap
 msgid ""
 "name: Publish nightly build\n"
 "on:\n"
@@ -8992,12 +8952,10 @@ msgid ""
 "          fdroid nightly --archive-older 10\n"
 msgstr ""
 "name: Publish nightly build\n"
-"\n"
 "on:\n"
 "  push:\n"
 "    branches:\n"
 "      - main\n"
-"\n"
 "jobs:\n"
 "  nightly:\n"
 "    name: Publish nightly build\n"
@@ -9005,26 +8963,26 @@ msgstr ""
 "    environment: nightly\n"
 "    steps:\n"
 "      - name: Checkout\n"
-"        uses: actions/checkout@v2\n"
+"        uses: actions/checkout@v4\n"
 "      - name: Gradle Wrapper Validation\n"
-"        uses: gradle/wrapper-validation-action@v1\n"
-"      - name: Set up JDK 11\n"
+"        uses: gradle/wrapper-validation-action@v3\n"
+"      - name: Set up JDK 17\n"
 "        uses: actions/setup-java@v2\n"
 "        with:\n"
 "          distribution: 'adopt'\n"
-"          java-version: 11\n"
+"          java-version: 17\n"
 "      - name: Build\n"
 "        run: |\n"
 "          # Zeitstempel als Versionscode verwenden\n"
 "          export versionCode=$(date '+%s')\n"
-"          sed -i \"s,^\\(\\s*versionCode\\)  *[0-9].*,\\1 $versionCode,\" app/build.gradle\n"
+"          sed -i \"s,^|(|s*versionCode|)  *[0-9].*,|1 $versionCode,\" app/build.gradle*\n"
 "          ./gradlew assembleDebug\n"
 "      - name: fdroid nightly\n"
 "        run: |\n"
 "          sudo add-apt-repository ppa:fdroid/fdroidserver\n"
 "          sudo apt-get update\n"
 "          sudo apt-get install apksigner fdroidserver --no-install-recommends\n"
-"          export DEBUG_KEYSTORE=${{ '{{' }} secrets.DEBUG_KEYSTORE }}\n"
+"          export DEBUG_KEYSTORE=${{ secrets.DEBUG_KEYSTORE }}\n"
 "          fdroid nightly --archive-older 10\n"
 
 #. type: Plain text
@@ -9157,26 +9115,20 @@ msgstr ""
 #. type: Plain text
 #: _docs/Publishing_Nightly_Builds.md
 msgid "For a real world example, see _Zom_:"
-msgstr ""
+msgstr "Für ein Beispiel aus der Praxis, siehe _Zom_:"
 
 #. type: Bullet: '* '
 #: _docs/Publishing_Nightly_Builds.md
-#, fuzzy
-#| msgid "<https://gitlab.com/fdroid/fdroidclient/graphs/master>"
 msgid "<https://github.com/zom/Zom-Android-nightly>"
 msgstr "<https://github.com/zom/Zom-Android-nightly>"
 
 #. type: Bullet: '* '
 #: _docs/Publishing_Nightly_Builds.md
-#, fuzzy
-#| msgid "<https://gitlab.com/fdroid/fdroidclient/network/master>"
 msgid "<https://github.com/zom/Zom-Android/blob/master/.travis.yml>"
 msgstr "<https://github.com/zom/Zom-Android/blob/master/.travis.yml>"
 
 #. type: Bullet: '* '
 #: _docs/Publishing_Nightly_Builds.md
-#, fuzzy
-#| msgid "<https://microg.org/fdroid.html>"
 msgid "<https://travis-ci.org/zom/Zom-Android>"
 msgstr "<https://travis-ci.org/zom/Zom-Android>"
 
@@ -10690,30 +10642,25 @@ msgid ""
 "For CMake versions since 3.13, `add_link_options(LINKER:<linker args>)` can\n"
 "be added to `CMakeLists.txt` globally, eg. to remove `build-id`:\n"
 msgstr ""
+"Für CMake-Versionen ab 3.13 kann `add_link_options(LINKER:<linker args>)` unter\n"
+"global zu `CMakeLists.txt` hinzugefügt werden, um z. B. `build-id` zu entfernen:\n"
 
 #. type: Fenced code block
 #: _docs/Reproducible_Builds.md
 #, no-wrap
 msgid "add_link_options(\"LINKER:--build-id=none\")\n"
-msgstr ""
+msgstr "add_link_options(\"LINKER:--build-id=none\")\n"
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
-#, fuzzy, no-wrap
-#| msgid ""
-#| "For CMake versions since 3.13, `add_link_options(LINKER:<linker args>)` can\n"
-#| "be added to `CMakeLists.txt` globally. This command only works for libraries added after this command is invoked, so it should\n"
-#| "be invoked at the beginning of the CMake file. For CMake versions before 3.13,\n"
-#| "`target_link_libraries(<target> LINKER:<linker args>)` can be used instead for\n"
-#| "every target. It can also be set in Gradle files:\n"
+#, no-wrap
 msgid ""
 "This command only works for libraries added after this command is invoked, so it should\n"
 "be invoked at the beginning of the CMake file. For CMake versions before 3.13,\n"
 "`target_link_libraries(<target> LINKER:<linker args>)` can be used instead for\n"
 "every target. It can also be set in Gradle files:\n"
 msgstr ""
-"Für CMake-Versionen seit 3.13 kann `add_link_options(LINKER:<linker args>)`\n"
-"global zu `CMakeLists.txt` hinzugefügt werden. Dieser Befehl funktioniert nur für Bibliotheken, die nach Aufruf dieses Befehls hinzugefügt werden,\n"
+"Dieser Befehl funktioniert nur für Bibliotheken, die nach Aufruf dieses Befehls hinzugefügt werden,\n"
 "der Aufruf sollte also am Anfang der CMake-Datei stehen. Für CMake-Versionen vor 3.13\n"
 "kann stattdessen `target_link_libraries(<target> LINKER:<linker args>)` für\n"
 "jedes Ziel verwendet werden. Es kann auch in Gradle-Dateien gesetzt werden:\n"
