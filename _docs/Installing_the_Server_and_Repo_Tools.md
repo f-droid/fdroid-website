@@ -148,14 +148,14 @@ easiest way to run _fdroidserver_ is to use our
 
 The easiest way to install the fdroidserver tools from source is to use
 virtualenv and pip. First, make sure you have the Python3 version of
-_virtualenv_ or _pyvenv_ installed, it
+_virtualenv_ or _venv_ installed, it
 should be included in your OS's Python distribution or via other
 mechanisms like dnf/yum/pacman/emerge/Fink/MacPorts/Brew. Then here's
 how to install _fdroidserver_ into a Python "virtual
 env":
 
 ```bash
-pyvenv fdroidserver-env
+python -m venv fdroidserver-env
 . fdroidserver-env/bin/activate
 pip install git+https://gitlab.com/fdroid/fdroidserver.git
 ```
