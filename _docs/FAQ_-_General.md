@@ -43,8 +43,6 @@ first to do it: See the [Inclusion How-To](../Inclusion_How-To).
 
 There are several ways of keeping up with new apps that are added:
 
--   The website sidebar shows the three most recent updates,
-    as well as the three most recent additions
 -   In the client, the "Latest" tab shows all the apps updated
     during the last two months that have good [descriptions and
     graphics](../All_About_Descriptions_Graphics_and_Screenshots)
