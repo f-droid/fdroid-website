@@ -286,6 +286,11 @@ If the SDK path ends up embedded in Flutter one can move the SDK to said path
 in the recipe and configure it with: `flutter config --android-sdk <path>` as
 setting `ANDROID_SDK_ROOT` might not be enough.
 
+If the lib is not stripped properly, then debug info may be kept which usually has
+many paths. Enable strip can remove them. This can be done by setting NDK version
+correctly or pass `-s` to the linker. This can also be done manually, e.g., using
+`llvm-strip`.
+
 #### Embedded timestamps
 
 Embedded [timestamps](https://reproducible-builds.org/docs/timestamps/) are the
@@ -543,7 +548,7 @@ known solutions are listed below:
 
 ##### ndk-build
 
-`LOCAL_LDFLAGS += -Wl,<linker args>` can be added to `Android.mk` files or to
+`LOCAL_CFLAGS += <compiler args>` and `LOCAL_LDFLAGS += -Wl,<linker args>` can be added to `Android.mk` files or to
 `build.gradle`/`build.gradle.kts`:
 
 ```gradle
@@ -551,7 +556,7 @@ android {
     defaultConfig {
         externalNativeBuild {
             ndkBuild {
-                arguments "LOCAL_LDFLAGS+=-Wl,<linker args>"
+                arguments "LOCAL_CFLAGS+=<compiler args> LOCAL_LDFLAGS+=-Wl,<linker args>"
             }
         }
     }
@@ -560,7 +565,7 @@ android {
 
 ##### CMake
 
-For CMake versions since 3.13, `add_link_options(LINKER:<linker args>)` can
+For CMake versions since 3.13, `add_compile_options("<compiler args>")` and `add_link_options(LINKER:<linker args>)` can
 be added to `CMakeLists.txt` globally, e.g. to remove `build-id`:
 
 ```
@@ -569,15 +574,15 @@ add_link_options("LINKER:--build-id=none")
 
 This command only works for libraries added after this command is invoked, so it should
 be invoked at the beginning of the CMake file. For CMake versions before 3.13,
-`target_link_libraries(<target> LINKER:<linker args>)` can be used instead for
+`target_compile_options(<target> PRIVATE <compiler args>)` and `target_link_libraries(<target> LINKER:<linker args>)` can be used instead for
 every target. It can also be set in Gradle files:
 
 ```gradle
 android {
     defaultConfig {
         externalNativeBuild.cmake {
-          cFlags "-Wl,--build-id" // or
-          arguments "-DCMAKE_SHARED_LINKER_FLAGS=-Wl,<linker args>"
+          cFlags "<compiler args> -Wl,<linker args>" // or
+          arguments "-DCMAKE_C_FLAGS=<compiler args> -DCMAKE_SHARED_LINKER_FLAGS=-Wl,<linker args>"
         }
     }
 }
