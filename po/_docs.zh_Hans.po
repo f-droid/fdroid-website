@@ -30,7 +30,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
 "POT-Creation-Date: 2025-06-18 13:17+0200\n"
-"PO-Revision-Date: 2025-06-14 11:01+0000\n"
+"PO-Revision-Date: 2025-06-21 02:57+0000\n"
 "Last-Translator: 大王叫我来巡山 <hamburger2048@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Chinese (Simplified Han script) <https://hosted.weblate.org/projects/f-droid/website-docs/zh_Hans/>\n"
 "Language: zh_Hans\n"
@@ -38,7 +38,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 5.12-dev\n"
+"X-Generator: Weblate 5.13-dev\n"
 
 #. type: Yaml Front Matter Hash Value: title
 #: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
@@ -9659,53 +9659,49 @@ msgstr "最重要的是要知道何时发布新版本。我们有三种自动方
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
 msgid "F-Droid works to spread [reproducible builds](https://reproducible-builds.org/docs/definition/) across the free software Android ecosystem.  The goal is to enable software build processes that anyone can run repeatedly and reproduce the exact same APK as the original release.  Our work is focused on three main areas:"
-msgstr ""
+msgstr "F-Droid 从事在整个自由软件 Android 生态系统中普及 [可重复构建](https://reproducible-builds.org/docs/definition/) 的工作。目标是实现这样的软件构件过程：人人都可重复运行且生成的 APK 和原始发行版完全相同。 我们的工作聚焦三个主要方面："
 
 #. type: Bullet: '* '
 #: _docs/Reproducible_Builds.md
 msgid "Our [build environment](https://gitlab.com/fdroid/fdroidserver/-/tree/master/buildserver) is designed to make reproducing builds easy while being itself reproducible and auditable."
-msgstr ""
+msgstr "我们的 [构建环境](https://gitlab.com/fdroid/fdroidserver/-/tree/master/buildserver) 设计让可重复构建不费力且其自身可重复和可审计。"
 
 #. type: Bullet: '* '
 #: _docs/Reproducible_Builds.md
 msgid "We track issues in the build tools themselves that prevent reproducible builds, help the maintainers of the build tools fix these issues, and catalogue workarounds for app developers here in this web page."
-msgstr ""
+msgstr "我们跟踪构建工具自身阻止可重复构建的问题，帮助构建工具的维护者修复这些问题，并为应用开发者将临时解决方法分门别类列于本网页中。"
 
 #. type: Bullet: '* '
 #: _docs/Reproducible_Builds.md
 msgid "We help upstream app developers for any app shipped on <tt>f-droid.org</tt> fix issues with reproducible builds by providing developer support, filing issues and suggesting changes to the source code."
-msgstr ""
+msgstr "我们向上游应用开发者提供 <tt>f-droid.org</tt>上发布的任何应用的帮助，通过提供开发者支持修复可重复构建的问题，提出问题并就源代码改动提出建议。"
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
 msgid "F-Droid verifies reproducible builds using APK [signature copying](#reproducible-signatures). To find out if an app can be reproducibly built, check the \"[Reproducibility Status](https://f-droid.org/packages/org.fdroid.fdroid/#reproducibility_status)\" on any app's page on this website."
-msgstr ""
+msgstr "F-Droid 用 APK [签名复制](#reproducible-signatures) 验证可重复构建。要弄清应用是否可以进行可重复构建，可见本网站中任意应用页面的 \"[可重复性状态](https://f-droid.org/packages/org.fdroid.fdroid/#reproducibility_status)\" 。"
 
 #. type: Title ###
 #: _docs/Reproducible_Builds.md
-#, fuzzy, no-wrap
-#| msgid "Build environment"
+#, no-wrap
 msgid "Diversity in the build environment"
-msgstr "构建环境"
+msgstr "多样的构建环境"
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
 msgid "The gold standard in reproducible builds for countering [Trusting Trust](https://www.cs.cmu.edu/~rdriley/487/papers/Thompson_1984_ReflectionsonTrustingTrust.pdf) issues is [Diverse Double-Compiling](https://dwheeler.com/trusting-trust/). The core idea is to use two entirely distinct sets of build tools to create the exact same binary.  This is a difficult standard to achieve, although quite valuable.  Some of the work to get there can be done incrementally.  Towards that end, F-Droid can reproduce the APKs that the upstream developer built on their own setup.  Often times, these are built with different toolchains or on different OSes.  To see which apps have enabled this approach, please check its [build metadata](https://gitlab.com/fdroid/fdroiddata/-/blob/master/metadata/{packageName}.yml) for the presence of build metadata fields [`Binaries:`](https://f-droid.org/docs/Build_Metadata_Reference/#Binaries) or [`binary:`](https://f-droid.org/docs/Build_Metadata_Reference/#build_binary)."
-msgstr ""
+msgstr "可重复构建对抗 [托付信任](https://www.cs.cmu.edu/~rdriley/487/papers/Thompson_1984_ReflectionsonTrustingTrust.pdf) 问题的黄金标准是 [多样化的双重编译](https://dwheeler.com/trusting-trust/)。核心想法是用两套全然不同的构建工具来创建完全相同的二进制文件。  尽管相当有价值，但这是个难以实现的标准。   我们可以渐进式地做达成这个目标的一些工作。  为此，F-Droid 可以重复构建上游开发者用自己的配置构建的 APK。  这些 APK 常常使用不同的工具链或在不同的操作系统上构建。  要了解哪些应用已经启用了这样的构建方法，请查阅相关应用的 [build metadata](https://gitlab.com/fdroid/fdroiddata/-/blob/master/metadata/{packageName}.yml) 文件看看有没有有构建元数据字段 [`Binaries:`](https://f-droid.org/docs/Build_Metadata_Reference/#Binaries) 或 [`binary:`](https://f-droid.org/docs/Build_Metadata_Reference/#build_binary)。"
 
 #. type: Title ###
 #: _docs/Reproducible_Builds.md
-#, fuzzy, no-wrap
-#| msgid "Publish both (upstream) developer-signed and F-Droid-signed APKs"
+#, no-wrap
 msgid "Publishing APKs with the upstream developer's signature"
-msgstr "同时发布（上游）开发者签名和 F-Droid 签名的 APK"
+msgstr "用上游开发者的签名发布 APK"
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
-#, fuzzy
-#| msgid "Publishing signed binaries (APKs) from elsewhere (e.g. the upstream developer)  is now possible after verifying that they match ones built using an fdroiddata recipe.  Publishing only takes place if there is a proper match.  This procedure is implemented as part of `fdroid publish`.  The reproducibility check at the publishing step follows this logic:"
 msgid "Publishing signed binaries (APKs) from elsewhere (e.g. the upstream developer)  is now possible after verifying that they match ones built using an _fdroiddata_ build recipe.  Publishing only takes place if there is a proper match. This means that F-Droid can verify that an app is free software while still using the original developer's APK signatures. This procedure is implemented as part of [`fdroid publish`](https://gitlab.com/fdroid/fdroidserver/-/blob/master/fdroidserver/publish.py).  The reproducibility check at the publishing step follows this logic:"
-msgstr "在验证它们与使用 fdroiddata 配方构建的二进制文件匹配后，现在可以从其他地方(例如上游开发人员)发布已签名的二进制文件(APK)。只有在适当匹配的情况下才会发布。这一流程作为 `fdroid publish`的一部分实现的。发布阶段的可重现性检查遵循以下逻辑："
+msgstr "现在在验证了来自其他地方（例如上游开发人员) 的已签名二进制文件(APK) 和用 _fdroiddata_ 构建配方构建的 APK 相匹配后可以发布前者。只有在正确匹配的情况下才会发布。这代表 F-Droid 可以验证应用是自由软件同时仍然使用原开发者的 APK 签名。这一流程作为 [`fdroid publish`](https://gitlab.com/fdroid/fdroidserver/-/blob/master/fdroidserver/publish.py)的一部分而实施。发布阶段的可重复性检查遵循以下逻辑："
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
@@ -9802,10 +9798,8 @@ msgstr "F-Droid 使用 [APK 签名](https://source.android.com/docs/security/fea
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
-#, fuzzy
-#| msgid "Copying the signature uses the same algorithm that `apksigner` uses when signing an APK.  It is therefore important that (upstream) developers do the same when signing APKs, ideally by using `apksigner`."
 msgid "Copying the signature uses the same algorithm that `apksigner` uses when signing an APK.  It is therefore important that (upstream) developers do the same when signing APKs, ideally by using `apksigner` to make the signatures.  `apksigner` is also reproducibly built [in Debian](https://tests.reproducible-builds.org/debian/rb-pkg/trixie/amd64/android-platform-tools-apksig.html)."
-msgstr "复制签名使用的算法与 `apksigner` 签署 APK 时使用的算法相同。  因此，重要的是，（上游）开发人员在签署 APK 时也要这样做，最好是使用 `apksigner`。"
+msgstr "复制签名使用的算法与 `apksigner` 签署 APK 时使用的算法相同。  因此，重要的是，（上游）开发人员在签署 APK 时也要这样做，最好是使用 `apksigner` 制作签名。`apksigner`同样可以[在 Debian 上](https://tests.reproducible-builds.org/debian/rb-pkg/trixie/amd64/android-platform-tools-apksig.html) 以可重复的方式构建。"
 
 #. type: Title ###
 #: _docs/Reproducible_Builds.md
@@ -9857,8 +9851,6 @@ msgstr "我们推荐使用 [`diffoscope`](https://diffoscope.org/)轻松找出�
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
-#, fuzzy
-#| msgid "You can find the APK that `fdroidserver` produced either under e.g.  `fdroiddata/build/com.example.app/app/build/outputs/apk/prod/release/example-1.0.0-prod-release-unsigned.apk` (when running locally) or in the pipeline artifacts (when using GitLab CI).  Adjust the path accordingly (e.g. for flavours other than `prod`)."
 msgid "You can find the APK that `fdroidserver` produced either under e.g.  `fdroiddata/build/com.example.app/app/build/outputs/apk/prod/release/example-1.0.0-prod-release-unsigned.apk` (when running locally) or in the pipeline artefacts (when using GitLab CI).  Adjust the path accordingly (e.g. for flavours other than `prod`)."
 msgstr "`fdroidserve` 产生的 APK 所在位置要么形如 `fdroiddata/build/com.example.app/app/build/outputs/apk/prod/release/example-1.0.0-prod-release-unsigned.apk` (本地运行时），要么在 pipeline artifacts 中（使用 GitLab CI 时）。  请相应调整路径（比如对非 `prod` 的 flavours）。"
 
@@ -9939,7 +9931,7 @@ msgstr "注：该问题在 `7.1.X`及更新版本的 Android Gradle 插件 (`com
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
 msgid "When building APKs with Android Studio, the ordering of the ZIP entries in the APK can be different from that of APKs built by invoking `gradle` directly, affecting reproducibility; the ordering can be completely non-deterministic, even differing between different builds of the same source code."
-msgstr "在用 Android Studio 构建 APK 文件时，APK 中 ZIP 项目的顺序可能不同于直接调用 `gradle` 进行构建的 APK，这会影响可重现性；顺序可能是完全非确定性的，甚至在相同源码的不同构建之间也不一样。"
+msgstr "在用 Android Studio 构建 APK 文件时，APK 中 ZIP 项目的顺序可能不同于直接调用 `gradle` 进行构建的 APK，这会影响可重复性；顺序可能是完全非确定性的，甚至在相同源码的不同构建之间也不一样。"
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
@@ -10020,7 +10012,7 @@ msgstr "一个变通方法是在行结束符“错误”的*未签名* APK 文�
 #: _docs/Reproducible_Builds.md
 #, no-wrap
 msgid "Concurrency: reproducibility can depend on the number of CPUs/cores"
-msgstr "并发：可重现性可以取决于CPU/核心的数目"
+msgstr "并发：可重复性可以取决于CPU/核心的数目"
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
@@ -10293,8 +10285,6 @@ msgstr "似乎某些 R8 优化以不确定的方式完成，在不同的构建�
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
-#, fuzzy
-#| msgid "For instance, R8 tries to optimize `ServiceLoader` usage making a static list of all services in the code.  The order of this list may be different (or even incomplete) on each build run.  The only way to avoid this behavior is disabling such optimizations declaring optimized classes in `proguard-rules.pro`:"
 msgid "For instance, R8 tries to optimize `ServiceLoader` usage making a static list of all services in the code.  The order of this list may be different (or even incomplete) on each build run.  The only way to avoid this behaviour is disabling such optimizations declaring optimized classes in `proguard-rules.pro`:"
 msgstr "例如，R8 尝试优化 `ServiceLoader` 的使用，在代码中制作所有服务的静态列表。每次构建运行时，此列表的顺序可能不同（甚至不完整）。避免这种行为的唯一方法是禁用在 `proguard-rules.pro` 中声明优化类的优化："
 
@@ -10342,8 +10332,6 @@ msgstr "可以通过从包中删除未使用的资源来减小 APK 文件的大�
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
-#, fuzzy
-#| msgid "However, it might be possible that resource shrinker will increase the APK size on different platforms, especially if there are not many resources to shrink, in which case the original APK will be used instead of the shrunk one (non-deterministic behavior of Gradle plugin).  Avoid using resource shrinker unless it decreases the APK file size significantly."
 msgid "However, it might be possible that resource shrinker will increase the APK size on different platforms, especially if there are not many resources to shrink, in which case the original APK will be used instead of the shrunk one (non-deterministic behaviour of Gradle plugin).  Avoid using resource shrinker unless it decreases the APK file size significantly."
 msgstr "然而，在不同的平台上，资源收缩器可能会增加 APK 的大小，尤其是在没有许多资源需要压缩的情况下，在这种情况下，将使用原始的 APK 而不是收缩后的 APK（Gradle 插件的非确定性行为）。避免使用资源压缩器，除非它能显著减少 APK 文件的大小。"
 
@@ -10376,10 +10364,8 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
-#, fuzzy
-#| msgid "While we understand that developers build and test during their normal workflow, please upload release APKs built after tagging, from a clean tree at the actual tagged commit (i.e. without local changes or remaining artifacts from previous builds). Only in exceptional cases, when you cannot do this, should vcsInfo be disabled (as this might otherwise cause problems), which can be done as follows:"
 msgid "While we understand that developers build and test during their normal workflow, please upload release APKs built after tagging, from a clean tree at the actual tagged commit (i.e. without local changes or remaining artefacts from previous builds). Only in exceptional cases, when you cannot do this, should `vcsInfo` be disabled (as this might otherwise cause problems), which can be done as follows:"
-msgstr "我们理解开发者在正常工作流程期间进行构建和测试，但请在打过标签后从实际打了标签的代码提交的干净代码树处上传用于发布的 APK 文件（即没有本地更改或保留来自先前构建的 artifacts）。只有在无法这么操作的例外情形下，vcsinfo 才应当被停用（因不停用可能造成问题），要停用它，可以这么做："
+msgstr "我们理解开发者在正常工作流程期间进行构建和测试，但请在打过标签后从实际打了标签的代码提交的干净代码树处上传用于发布的 APK 文件（即没有本地更改或保留来自先前构建的 artifacts）。只有在无法这么操作的例外情形下，`vcsinfo` 才应当被停用（因不停用可能造成问题），要停用它，可以这么做："
 
 #. type: Fenced code block (gradle)
 #: _docs/Reproducible_Builds.md
@@ -10445,8 +10431,6 @@ msgstr "不匹配的工具链"
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
-#, fuzzy
-#| msgid "Different toolchains may produce different binaries. A usual case is when more than one JDK version/distribution are used to build the apk. Sometimes even Gradle may mix versions of JDKs to build an apk. To avoid such problems unused JDKs should be removed."
 msgid "Different toolchains may produce different binaries. A usual case is when more than one JDK version/distribution are used to build the APK. Sometimes even Gradle may mix versions of JDKs to build an APK. To avoid such problems unused JDKs should be removed."
 msgstr "工具链不同，产生的二进制文件便可能不一样。常见的情况是使用不止一个 JDK 版本/分发来构建 apk 文件。有时即便是 Gradle 也会混合不同版本的 JDK 来构建一个 apk 文件。要避免这样的问题，请去掉不使用的 JDK。"
 
@@ -10512,8 +10496,6 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
-#, fuzzy
-#| msgid "Different NDK versions also produce different binaries. Generally this can be recognized via the metadata, e.g. LLD version, in the native libs. However, since NDK r26d a weird behavior is observed that sometimes only the `.shstrtab` sections in ELF of the native libs are changed when NDK is installed. The native libs may be built along with the app or fetched from maven repo. If AGP finds that the NDK is installed, it will use NDK to strip the native lib but in fact it only messes up the `.shstrtab` section of the native lib. The NDK setup needs to be checked carefully to ensure it matches upstream setup, including the NDK version and if it's used by AGP."
 msgid "Different NDK versions also produce different binaries. Generally this can be recognized via the metadata, e.g. LLD version, in the native libs. However, since NDK r26d a weird behaviour is observed that sometimes only the `.shstrtab` sections in ELF of the native libs are changed when NDK is installed. The native libs may be built along with the app or fetched from maven repo. If AGP finds that the NDK is installed, it will use NDK to strip the native lib but in fact it only messes up the `.shstrtab` section of the native lib. The NDK setup needs to be checked carefully to ensure it matches upstream setup, including the NDK version and if it's used by AGP."
 msgstr "不同的 NDK 版本也会产生不同的二进制文件。通常而言，这可以通过原生库中的元数据，如 LLD 版本，进行识别。不过，自 NDK r26d 起观察到了一个奇怪的行为。当 NDK 安装时，有时只有原生库 ELF 中的 `.shstrtab`部分发生变化。这些原生库可能是和应用一道构建的，也可能是从 maven 存储库获取的。如果 AGP 发现安装了 NDK，那么它会使用 NDK 从原生库中移除调试符号，但事实上，它仅仅弄乱了原生库的 `.shstrtab`部分。需要仔细检查 NDK 配置确保它匹配上游配置，包括 NDK 版本以及它是否被 AGP 使用。"
 
@@ -10587,10 +10569,7 @@ msgstr "CMake"
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
-#, fuzzy, no-wrap
-#| msgid ""
-#| "For CMake versions since 3.13, `add_link_options(LINKER:<linker args>)` can\n"
-#| "be added to `CMakeLists.txt` globally, eg. to remove `build-id`:\n"
+#, no-wrap
 msgid ""
 "For CMake versions since 3.13, `add_link_options(LINKER:<linker args>)` can\n"
 "be added to `CMakeLists.txt` globally, e.g. to remove `build-id`:\n"
@@ -10716,8 +10695,6 @@ msgstr "当 `openssl` crate 使用厂商化 OpenSSL 构建时，需要特别配�
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
-#, fuzzy
-#| msgid "`CARGO_HOME` path plays an important part too and ends up in the built libs, it's recommended to match it between builds, eg. export it before running `rustup`, or any other build commands, and don't forget to source `env` from it."
 msgid "`CARGO_HOME` path plays an important part too and ends up in the built libs, it's recommended to match it between builds, e.g. export it before running `rustup`, or any other build commands, and don't forget to source `env` from it."
 msgstr "`CARGO_HOME` 路径同样扮演一个重要部分，并在 built libs 中结束，推荐在不同构建间匹配它，譬如在运行 `rustup`或任何其他构建命令前导出它，别忘了从它那里获取 `env`。"
 
