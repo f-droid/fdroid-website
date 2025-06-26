@@ -9,6 +9,7 @@
         "NonFreeAssets": "Az alkalmazás nem szabad erőforrásokat tartalmaz",
         "NonFreeDep": "Az alkalmazás egyéb, nem szabad alkalmazásoktól függ",
         "NonFreeNet": "Az alkalmazás nem szabad hálózati szolgáltatást támogat vagy teljesen attól függ",
+        "TetheredNet": "Az alkalmazás teljesen egy hálózati szolgáltatás egy adott példányától függ",
         "Tracking": "Az alkalmazás nyomon követi és jelenti a testmozgását",
         "UpstreamNonFree": "Az upstream forráskód nem teljesen szabad"
     },
@@ -30,7 +31,8 @@
         "Theming": "Stílus",
         "Time": "Idő",
         "Writing": "Írás",
-        "show_all_packages": "Mind a(z) %d megtekintése"
+        "show_all_packages": "Mind a(z) %d megtekintése",
+        "show_package": "Csomag megjelenítése"
     },
     "index": {
         "download_fdroid": "F-Droid letöltése",
@@ -63,9 +65,11 @@
         "translate_on_weblate": "Fordítás a Weblate-en"
     },
     "news": {
+        "date_format": "%Y. %B %d.",
         "newer_posts": "← Újabb bejegyzések",
         "older_posts": "Régebbi bejegyzések →",
-        "posted_on": "Közzétéve: {{ post_date }}"
+        "posted_on": "Közzétéve: {{ post_date }}",
+        "posted_on_by": "Közzétéve: {{ post_date }}, szerző:"
     },
     "package": {
         "added_on": "Hozzáadva: {{ package_added_date }}",
@@ -74,21 +78,31 @@
         "author": "Szerző",
         "build_log": "Összeállítási napló",
         "build_metadata": "Összeállítási metaadatok",
+        "built_by_fdroid": "Az F-Droid állítja össze, és garantáltan megfelel ennek a <a href=\"{{ source_code_url }}\">forráskódcsomagnak</a>.",
         "changelog": "Változásnapló",
         "donate": "Adományozás",
         "download": "{{ file_extension }} letöltése",
+        "file_size_bytes": "bájt",
+        "file_size_format": "%{number} %{unit}",
+        "file_size_gibibytes": "GiB",
+        "file_size_kibibytes": "KiB",
+        "file_size_mebibytes": "MiB",
+        "file_size_tebibytes": "TiB",
         "flattr": "Flattr",
         "gpg_signature": "PGP-aláírás",
         "issue_tracker": "Problémakövető",
+        "learn_more": "Tudjon meg többet!",
         "liberapay": "Liberapay",
         "license": "Licenc",
         "minimum_android_version": "Ez a verzió Android {{ android_version }} vagy újabb verziót igényel.",
         "new_in_version": "Újdonságok a(z) {{ latest_version }}. verzióban",
+        "no_permissions": "Nincsenek engedélyek",
         "opencollective": "Open Collective",
         "package_icon_alt": "csomagikon",
         "package_screenshot_alt": "alkalmazás-képernyőkép",
         "packages": "Csomagok",
         "permissions": "Engedélyek",
+        "reproducibility_status": "Reprodukálhatósági állapot",
         "signed_by_developer": "Az eredeti fejlesztő állította össze és írta alá, és garantáltan megfelel <a href=\"{{ source_code_url }}\">ennek a forrásarchívumnak</a>.",
         "signed_by_fdroid": "Az F-Droid állította össze és írta alá, és garantáltan megfelel <a href=\"{{ source_code_url }}\">ennek a forráscsomagnak</a>.",
         "source_code": "Forráskód",
@@ -97,6 +111,7 @@
         "translation": "Fordítás",
         "version_info": "<b>Verzió: {{ package_version }}</b> ({{ package_version_code }})",
         "versions": "Verziók",
+        "video": "Videó",
         "website": "Weboldal"
     },
     "permissions": {
@@ -139,7 +154,7 @@
         "permdesc_callCompanionApp": "Engedélyezi az alkalmazásnak az eszközön folyamatban lévő hívások megtekintését és vezérlését. Ebbe beletartoznak az olyan információk is, mint a hívásban részt vevő felek hívószáma és a hívások állapota.",
         "permdesc_callPhone": "Lehetővé teszi az alkalmazás számára, hogy az Ön jóváhagyása nélkül hívjon fel telefonszámokat. Ennek eredményeként váratlan terhelésekkel vagy telefonhívásokkal találkozhat. Vegye figyelembe, hogy ez nem teszi lehetővé segélyhívó számok hívását az alkalmazás számára. A rosszindulatú alkalmazások az Ön jóváhagyása nélkül kezdeményezhetnek hívásokat, így költségek merülhetnek fel.",
         "permdesc_camera": "Az alkalmazás a kamera használatával akkor készíthet fényképeket és videókat, amikor az alkalmazás használatban van.",
-        "permdesc_cameraHeadlessSystemUser": "Az alkalmazás hozzáférhet a kamerához headless rendszerfelhasználóként.",
+        "permdesc_cameraHeadlessSystemUser": "Az alkalmazás kijelző nélküli rendszerfelhasználóként férhet hozzá a kamerához .",
         "permdesc_cameraOpenCloseListener": "Az alkalmazás fogadhat visszahívásokat bármelyik kamera (adott alkalmazás általi) megnyitásakor vagy bezárásakor.",
         "permdesc_changeNetworkState": "Lehetővé teszi az alkalmazás számára a hálózati csatlakoztathatóság állapotának módosítását.",
         "permdesc_changeTetherState": "Lehetővé teszi az alkalmazás számára a megosztott hálózati csatlakoztathatóság állapotának módosítását.",
@@ -164,7 +179,7 @@
         "permdesc_foregroundServiceHealth": "Engedélyezi az alkalmazásnak az előtér-szolgáltatások használatát a következő típussal: „health”",
         "permdesc_foregroundServiceLocation": "Engedélyezi az alkalmazásnak az előtér-szolgáltatások használatát a következő típussal: „location”",
         "permdesc_foregroundServiceMediaPlayback": "Engedélyezi az alkalmazásnak az előtér-szolgáltatások használatát a következő típussal: „mediaPlayback”",
-        "permdesc_foregroundServiceMediaProcessing": "Engedélyezi az alkalmazásnak az előtérben lévő szolgáltatások használatát a következő típussal: „mediaProcessing”",
+        "permdesc_foregroundServiceMediaProcessing": "Engedélyezi az alkalmazásnak az előtér-szolgáltatások használatát a következő típussal: „mediaProcessing”",
         "permdesc_foregroundServiceMediaProjection": "Engedélyezi az alkalmazásnak az előtér-szolgáltatások használatát a következő típussal: „mediaProjection”",
         "permdesc_foregroundServiceMicrophone": "Engedélyezi az alkalmazásnak az előtér-szolgáltatások használatát a következő típussal: „microphone”",
         "permdesc_foregroundServicePhoneCall": "Engedélyezi az alkalmazásnak az előtér-szolgáltatások használatát a következő típussal: „phoneCall”",
@@ -234,7 +249,7 @@
         "permdesc_requestPasswordComplexity": "Lehetővé teszi az alkalmazás számára, hogy megismerje a képernyőzár összetettségi szintjét (magas, közepes, alacsony vagy nincs), amely jelzi a képernyőzár lehetséges típusát és hosszát. Az alkalmazás ezenkívül javaslatot tehet a felhasználóknak a képernyőzár bizonyos szintre való frissítésére, de ezt a javaslatot a felhasználók figyelmen kívül hagyhatják. A képernyőzárat nem egyszerű szöveges formátumban tárolja a rendszer, ezért az alkalmazás nem fogja tudni a pontos jelszót.",
         "permdesc_route_media_output": "Lehetővé teszi az alkalmazás számára, hogy más külső eszközökre irányítsa a médiafájlok lejátszását.",
         "permdesc_runInBackground": "Ez az alkalmazás futhat a háttérben. Ez gyorsabban merítheti az akkumulátort.",
-        "permdesc_schedule_exact_alarm": "Ez az alkalmazás lehetővé teszi a munkák valamilyen kívánt jövőbeli időpontban történő ütemezését. Ez azt is jelenti, hogy az alkalmazás akkor is futhat, ha nem használja aktívan az eszközt.",
+        "permdesc_schedule_exact_alarm": "Ez az alkalmazás ütemezheti a munkát, hogy megtörténjen egy kívánt időben a jövőben. Ez azt is jelenti, hogy az alkalmazás futhat, ha nem aktívan használja az eszközt.",
         "permdesc_sdcardRead": "Engedélyezi az alkalmazásnak a közös tárhely tartalmainak olvasását.",
         "permdesc_sdcardWrite": "Engedélyezi az alkalmazás számára a közös tárhely tartalmainak felülírását.",
         "permdesc_sendSms": "Lehetővé teszi az alkalmazás számára, hogy SMS-eket küldjön. Ennek eredményeként váratlan terhelésekkel találkozhat. A rosszindulatú alkalmazások az Ön jóváhagyása nélkül küldhetnek üzeneteket, így költségek merülhetnek fel.",
@@ -352,14 +367,14 @@
         "permlab_bluetoothAdmin": "Bluetooth-beállítások elérése",
         "permlab_bluetooth_advertise": "közzététel a közeli Bluetooth-eszközök számára",
         "permlab_bluetooth_connect": "csatlakozás párosított Bluetooth-eszközökhöz",
-        "permlab_bluetooth_scan": "közeli Bluetooth-eszközök felfedezése és párosítás",
+        "permlab_bluetooth_scan": "közeli Bluetooth-eszközök felfedezése és párosítása",
         "permlab_bodySensors": "hozzáférés a testérzékelőkhöz (például pulzusmérők)",
         "permlab_bodySensors_background": "Hozzáférés a testérzékelők adataihoz (pl. pulzusszám) a háttérben",
         "permlab_broadcastSticky": "ragadós üzenet küldése",
         "permlab_callCompanionApp": "hívások megtekintése és vezérlése a rendszeren keresztül.",
         "permlab_callPhone": "telefonszámok közvetlen hívása",
         "permlab_camera": "fotók és videók készítése",
-        "permlab_cameraHeadlessSystemUser": "Engedélyezheti a kívánt alkalmazás vagy szolgáltatás számára, hogy hozzáférjen a kamerához headless rendszerfelhasználóként.",
+        "permlab_cameraHeadlessSystemUser": "Engedélyezheti a kívánt alkalmazás vagy szolgáltatás számára, hogy kijelző nélküli rendszerfelhasználóként férjen hozzá a kamerához.",
         "permlab_cameraOpenCloseListener": "Visszahívás fogadásának engedélyezése alkalmazás vagy szolgáltatás számára, ha a kamerákat megnyitják vagy bezárják.",
         "permlab_changeNetworkState": "hálózati csatlakoztathatóság módosítása",
         "permlab_changeTetherState": "megosztott csatlakoztathatóság módosítása",
@@ -384,7 +399,7 @@
         "permlab_foregroundServiceHealth": "előtér-szolgáltatás futtatása a következő típussal: „health\"",
         "permlab_foregroundServiceLocation": "előtér-szolgáltatás futtatása a következő típussal: „location\"",
         "permlab_foregroundServiceMediaPlayback": "előtér-szolgáltatás futtatása a következő típussal: „mediaPlayback\"",
-        "permlab_foregroundServiceMediaProcessing": "előtérben lévő szolgáltatás futtatása a következő típussal: „mediaProcessing\"",
+        "permlab_foregroundServiceMediaProcessing": "előtér-szolgáltatás futtatása a következő típussal: „mediaProcessing\"",
         "permlab_foregroundServiceMediaProjection": "előtér-szolgáltatás futtatása a következő típussal: „mediaProjection\"",
         "permlab_foregroundServiceMicrophone": "előtér-szolgáltatás futtatása a következő típussal: „microphone\"",
         "permlab_foregroundServicePhoneCall": "előtér-szolgáltatás futtatása a következő típussal: „phoneCall\"",
@@ -494,7 +509,7 @@
         "permlab_writeHistoryBookmarks": "internetes könyvjelzők és előzmények írása",
         "permlab_writeSettings": "rendszerbeállítások módosítása",
         "permlab_writeSyncSettings": "szinkronizálás be-és kikapcsolása",
-        "permlab_writeVerificationStateE2eeContactKeys": "Az egyéb alkalmazásokhoz tartozó, végpontok közti titkosítással rendelkező kapcsolatkulcsok ellenőrzési állapotának frissítése"
+        "permlab_writeVerificationStateE2eeContactKeys": "egyéb alkalmazásokhoz tartozó, végpontok közti titkosítással rendelkező kapcsolatkulcsok ellenőrzési állapotának frissítése"
     },
     "sidebars": {
         "donate": {
@@ -515,7 +530,8 @@
             "paypal": "PayPal",
             "paypal_alt": "Adományozás PayPal használatával",
             "powered_by_donations": "A F-Droid az Önök adományára támaszkodik!",
-            "via_bank_transfer": "Banki átutalás"
+            "via_bank_transfer": "Banki átutalás",
+            "via_direct_debit": "Közvetlen terhelés"
         },
         "lang": {
             "change": "Módosítás"
