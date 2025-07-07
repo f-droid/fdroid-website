@@ -63,11 +63,35 @@ pip install -e .
 ```
 
 ## Guix
-The tools are also available in the main Guix channel. To install:  
+The tools are also available in the main Guix channel. To install:
 ```
 guix install fdroidserver
 ```
 
+## Nix/NixOS
+The package is directly available in [the nixpkgs repository](https://search.nixos.org/packages?channel=unstable&show=fdroidserver&type=packages&query=fdroidserver). Based on your setup, you can install it using:
+
+- _nix-env_ without flakes:
+```bash
+nix-env -iA nixpkgs.fdroidserver
+```
+
+- _nix-env_ with flakes:
+```bash
+nix profile install nixpkgs#fdroidserver
+```
+
+- your _NixOS configuration_:
+```nix
+environment.systemPackages = [
+  pkgs.fdroidserver
+];
+```
+
+- _nix-shell_:
+```bash
+nix-shell -p fdroidserver
+```
 
 ## macOS
 
