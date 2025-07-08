@@ -36,17 +36,18 @@ in the standard OS package repository is out of date.
 
 A newer version of _fdroidserver_ may be found in the F-Droid PPA or your OS's _backports_ repository.
 
--   Ubuntu/Mint: use the
-    [F-Droid PPA](https://launchpad.net/~fdroid/+archive/fdroidserver/+packages)
-    (fingerprint: `9AAC 2531 93B6 5D4D F1D0 A13E EC46 32C7 9C5E 0151`):
+* Ubuntu/Mint: use the
+  [F-Droid PPA](https://launchpad.net/~fdroid/+archive/fdroidserver/+packages)
+  (fingerprint: `9AAC 2531 93B6 5D4D F1D0 A13E EC46 32C7 9C5E 0151`):
 
-    ```bash
-    sudo add-apt-repository ppa:fdroid/fdroidserver
-    sudo apt-get update
-    sudo apt-get install fdroidserver
-    ```
+  ```bash
+  sudo add-apt-repository ppa:fdroid/fdroidserver
+  sudo apt-get update
+  sudo apt-get install fdroidserver
+  ```
 
--   Debian: first [setup backports](http://backports.debian.org/Instructions/#index2h2),
+
+*   Debian: first [setup backports](http://backports.debian.org/Instructions/#index2h2),
     then, substituting your Debian release for 'buster':
     ```bash
     apt-get install fdroidserver/buster-backports
@@ -63,11 +64,12 @@ pip install -e .
 ```
 
 ## Guix
+
 The tools are also available in the main Guix channel. To install:  
+
 ```
 guix install fdroidserver
 ```
-
 
 ## macOS
 
@@ -75,14 +77,15 @@ You can install `fdroidserver` directly using Homebrew, or `easy_install` as a l
 
 ### Homebrew:
 
-1. Preparation: Check [the Homebrew formula](https://formulae.brew.sh/formula/fdroidserver) for instructions. Example:
+* Preparation: Check [the Homebrew formula](https://formulae.brew.sh/formula/fdroidserver) for instructions. Example:
 
 ```bash
 brew install android-sdk
 android update sdk --no-ui --all --filter tools,platform-tools,build-tools-25.0.0
 ```
 
-2. Install _fdroidserver_:
+* Install _fdroidserver_:
+
 ```bash
 brew install fdroidserver
 ```
@@ -103,11 +106,12 @@ Ubuntu environment](https://msdn.microsoft.com/en-us/commandline/wsl/install_gui
 that runs in Windows, known as "Bash on Windows", "Ubuntu on Windows",
 or "Windows Subsystem for Linux".
 
-1.  [setup Windows Subsystem for Linux](https://msdn.microsoft.com/en-us/commandline/wsl/install_guide)
-2.  install *fdroidserver* from the
-    [F-Droid PPA](https://launchpad.net/~fdroid/+archive/fdroidserver/+packages)
-    (fingerprint: `9AAC 2531 93B6 5D4D F1D0 A13E EC46 32C7 9C5E 0151`)
-    by running this in the Bash shell window:
+1. [setup Windows Subsystem for Linux](https://msdn.microsoft.com/en-us/commandline/wsl/install_guide)
+2. install *fdroidserver* from the
+   [F-Droid PPA](https://launchpad.net/~fdroid/+archive/fdroidserver/+packages)
+   (fingerprint: `9AAC 2531 93B6 5D4D F1D0 A13E EC46 32C7 9C5E 0151`)
+   by running this in the Bash shell window:
+
 ```bash
 sudo add-apt-repository ppa:fdroid/fdroidserver
 sudo apt-get update
@@ -115,15 +119,15 @@ sudo apt-get install fdroidserver
 ```
 
 
-### Cygwin
+## Cygwin
 
-1.  add Java to your PATH:
-    <http://www.kingluddite.com/tools/how-do-i-add-java-to-my-windows-path>
-2.  Install Cygwin <https://www.sourceware.org/cygwin/>
-3.  in Cygwin, install these packages: *gcc-core git openssh python3
-    python3-pyasn1 python3-imaging python3-paramiko python3-requests
-    python3-setuptools rsync wget*
-4.  open a Cygwin bash shell and run: `easy_install fdroidserver`
+1. add Java to your PATH:
+   <http://www.kingluddite.com/tools/how-do-i-add-java-to-my-windows-path>
+2. Install Cygwin <https://www.sourceware.org/cygwin/>
+3. in Cygwin, install these packages: *gcc-core git openssh python3
+   python3-imaging python3-paramiko python3-requests
+   python3-setuptools rsync wget*
+4. open a Cygwin bash shell and run: `pip install fdroidserver`
 
 Then here's the repo setup:
 
