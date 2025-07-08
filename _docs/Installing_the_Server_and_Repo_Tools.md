@@ -186,7 +186,7 @@ setup before using _fdroidserver_.
 [Install the Android SDK](https://developer.android.com/sdk/index.html#downloads)
 and make sure the `ANDROID_HOME` environment variable is properly
 set. Be sure to verify the file you downloaded, you can double-check
-the SHA-1 Checksum on Google's download page.
+the SHA-1 checksum on Google's download page.
 
 ```bash
 $ sudo apt-get install fdroidserver
@@ -244,5 +244,5 @@ Google APIs, used for building apps using Google Maps, are free to the
 extent that the library comes pre-installed on the device.  Google
 Play Services, Google Admob, GCM, and many other third party libraries
 are proprietary and cannot be included in the main F-Droid repository.
-The [MicroG project](https://microg.org) is developing free software
+The [microG project](https://microg.org) is developing free software
 replacements for some of the most used proprietary Google libraries
