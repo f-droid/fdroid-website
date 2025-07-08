@@ -46,12 +46,12 @@ A newer version of _fdroidserver_ may be found in the F-Droid PPA or your OS's _
   sudo apt-get install fdroidserver
   ```
 
+* Debian: first [setup backports](http://backports.debian.org/Instructions/#index2h2),
+  then, substituting your Debian release for 'bookworm':
 
-*   Debian: first [setup backports](http://backports.debian.org/Instructions/#index2h2),
-    then, substituting your Debian release for 'buster':
-    ```bash
-    apt-get install fdroidserver/buster-backports
-    ```
+  ```bash
+  apt-get install -t bookworm-backports fdroidserver
+  ```
 
 ## Fedora/Archlinux
 
@@ -71,35 +71,15 @@ The tools are also available in the main Guix channel. To install:
 guix install fdroidserver
 ```
 
-## macOS
+## Homebrew
 
-You can install `fdroidserver` directly using Homebrew, or `easy_install` as a last resort:
-
-### Homebrew:
-
-* Preparation: Check [the Homebrew formula](https://formulae.brew.sh/formula/fdroidserver) for instructions. Example:
-
-```bash
-brew install android-sdk
-android update sdk --no-ui --all --filter tools,platform-tools,build-tools-25.0.0
-```
-
-* Install _fdroidserver_:
+Check [the Homebrew formula](https://formulae.brew.sh/formula/fdroidserver) for more details. 
 
 ```bash
 brew install fdroidserver
 ```
 
-### With only `easy_install`:
-
-```
-sudo easy_install fdroidserver
-```
-
-
-## Windows
-
-### Windows 10 Subsystem for Linux
+## Windows Subsystem for Linux
 
 Starting with the Windows 10 "Anniversary Update", you can [enable an
 Ubuntu environment](https://msdn.microsoft.com/en-us/commandline/wsl/install_guide)
