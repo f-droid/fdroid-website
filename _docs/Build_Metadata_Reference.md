@@ -152,22 +152,61 @@ automatically show any categories that exist in any applications.
 However, if your metadata is intended for the main F-Droid repository,
 you should use one of the existing categories:
 
+* `App Store & Updater`
+* `Bookmark`
+* `Browser`
+* `Calculator`
+* `Calendar & Agenda`
+* `Cloud Storage & File Sync`
 * `Connectivity`
+* `DNS & Hosts`
 * `Development`
+* `Draw`
+* `Ebook Reader`
+* `Email`
+* `File Encryption & Vault`
+* `File Transfer`
+* `Finance Manager`
+* `Gallery`
 * `Games`
 * `Graphics`
+* `Icon Pack`
 * `Internet`
+* `Keyboard & IME`
+* `Launcher`
+* `Local Media Player`
+* `Messaging`
 * `Money`
 * `Multimedia`
 * `Navigation`
+* `News`
+* `Note`
+* `Online Media Player`
+* `Pass Wallet`
+* `Password & 2FA`
 * `Phone & SMS`
+* `Podcast`
+* `Public Transport Map & Timetable`
 * `Reading`
+* `Recipe Manager`
 * `Science & Education`
 * `Security`
+* `Shopping List`
+* `Social Network`
 * `Sports & Health`
 * `System`
+* `Task`
+* `Text Editor`
 * `Theming`
 * `Time`
+* `Translation & Dictionary`
+* `Unit Convertor`
+* `VPN & Proxy`
+* `Voice & Video Chat`
+* `Wallet`
+* `Wallpaper`
+* `Weather`
+* `Workout`
 * `Writing`
 
 or discuss the proposal to add a new one. _Categories_
