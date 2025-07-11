@@ -930,7 +930,6 @@ description:
 * `NSFW` - the app contains content that the user may not want to be publicized or visible everywhere, comes from "Not Safe For Work".
 * `TetheredNet` - the application depends entirely on a service which is impossible (or not easy) to replace. Replacement requires changes to the app or service. This Anti-Feature would not be applied if there is a simple configuration option that allows pointing the app to a running instance of an alternative, publicly available, self-hostable server solution.
 * `Tracking` - user or activity data is tracked or leaks, by default. True if the app or a feature can not be used without collecting and sharing such data, or doing requests to a data collecting network service (regard- less if the service is based on free software, or not). For example,  activity-based down-loading of weather data, maps, avatars etc. (data  hosting and delivery services), or uploading of crash logs etc.
-* `UpstreamNonFree` - the application is or depends on Non-Free software. This does not mean that Non-Free Software is included with the app: Most likely, it has been patched in some way to remove the Non-Free code. However, functionality may be missing.
 
 This is converted to (`<antifeatures>`) in the XML file (_index.xml_).
 
