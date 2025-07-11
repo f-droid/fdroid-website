@@ -45,7 +45,6 @@ are shipping:
 * [NSFW](#NSFW) - contains content that the user may not want to be publicized or visible everywhere
 * [Tethered Network Services](#TetheredNet) - depends entirely on a certain instance of a network service
 * [Tracking](#Tracking) - tracks and/or reports your activity to somewhere, even when it can be turned off
-* [Upstream Non-Free](#UpstreamNonFree) - upstream source code is not libre, and this version has those parts replaced or rewritten
 
 Here's a complete [list of all apps in F-Droid containing Anti-Features](https://monitor.f-droid.org/anti-features).
 
@@ -158,24 +157,6 @@ e.g. Google Analytics or Flurry. Apps containing these proprietary libraries
 will **not** be found in the F-Droid repo.
 
 Here's the list of [apps with Tracking](https://monitor.f-droid.org/anti-feature/Tracking).
-
-### Upstream Non-Free<a name="UpstreamNonFree" />
-
-This Anti-Feature is applied to apps where the upstream source code
-includes proprietary software by default in their own releases.
-
-This does not mean that proprietary software is included in the app.
-Most likely, the F-Droid build has been patched in some way to remove
-the Non-Free code/libraries, and/or some functionality may be missing.
-The app's description will usually go into more detail about this.
-
-In our experience, where the upstream developer includes Non-Free libraries,
-sooner or later they will include more Non-Free libraries, or other
-Anti-Features. Frequently they become impossible to maintain/update in
-F-Droid. If there is an alternative, it is recommended that you avoid
-applications with this Anti-Feature if future updates are important to you.
-
-Here's the list of [apps with Upstream Non-Free](https://monitor.f-droid.org/anti-feature/UpstreamNonFree).
 
 ## Reporting Anti-Features
 
