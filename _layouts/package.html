@@ -189,10 +189,14 @@ layout: default-package-sidebar
 	<div class="package-versions">
 		<a name="versions"></a>
 		<h3>{{ strings.versions }}</h3>
+		{% if page.package_name == "org.fdroid.basic" %}
+			<!--no {{ site.data.strings.index.download_fdroid }} button because this is {{ page.package_name }} -->
+		{% else %}
 		<p>
 			{{ strings.suggest_downloading_via_fdroid }}
 		</p>
 		<a href="{{ site.fdroid_apk_download_url }}" class="material-button">{{ site.data.strings.index.download_fdroid }}</a>
+		{% endif %}
 		<ul class="package-versions-list">
 			{% for package in page.versions %}
 			<li class="package-version" {% if forloop.first %}id="latest"{% endif %}>
