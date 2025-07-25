@@ -5,27 +5,72 @@ title: Reproducible Builds
 ---
 
 
+### Introduction
+
 F-Droid works to spread [reproducible builds](https://reproducible-builds.org/docs/definition/) across the free software Android ecosystem.  The goal is to enable software build processes that anyone can run repeatedly and reproduce the exact same APK as the original release.  Our work is focused on three main areas:
 
 * Our [build environment](https://gitlab.com/fdroid/fdroidserver/-/tree/master/buildserver) is designed to make reproducing builds easy while being itself reproducible and auditable.
 * We track issues in the build tools themselves that prevent reproducible builds, help the maintainers of the build tools fix these issues, and catalogue workarounds for app developers here in this web page.
 * We help upstream app developers for any app shipped on <tt>f-droid.org</tt> fix issues with reproducible builds by providing developer support, filing issues and suggesting changes to the source code.
 
-F-Droid verifies reproducible builds using APK [signature copying](#reproducible-signatures). To find out if an app can be reproducibly built, check the "[Reproducibility Status](https://f-droid.org/packages/org.fdroid.fdroid/#reproducibility_status)" on any app's page on this website.
-
-### Diversity in the build environment
+F-Droid verifies reproducible builds using APK [signature copying](#reproducible-signatures) against upstream build and our rebuild. To find out if an app can be reproducibly rebuilt by our own buildserver, check the "[Reproducibility Status](https://f-droid.org/packages/org.fdroid.fdroid/#reproducibility_status)" on any app's page on this website. This can help us identify factors changing over time.
 
 The gold standard in reproducible builds for countering [Trusting Trust](https://www.cs.cmu.edu/~rdriley/487/papers/Thompson_1984_ReflectionsonTrustingTrust.pdf) issues is [Diverse Double-Compiling](https://dwheeler.com/trusting-trust/). The core idea is to use two entirely distinct sets of build tools to create the exact same binary.  This is a difficult standard to achieve, although quite valuable.  Some of the work to get there can be done incrementally.  Towards that end, F-Droid can reproduce the APKs that the upstream developer built on their own setup.  Often times, these are built with different toolchains or on different OSes.  To see which apps have enabled this approach, please check its [build metadata](https://gitlab.com/fdroid/fdroiddata/-/blob/master/metadata/{packageName}.yml) for the presence of build metadata fields [`Binaries:`](https://f-droid.org/docs/Build_Metadata_Reference/#Binaries) or [`binary:`](https://f-droid.org/docs/Build_Metadata_Reference/#build_binary).
 
+#### Reproducible signatures
+
+F-Droid verifies reproducible builds using the
+[APK signature](https://source.android.com/docs/security/features/apksigning)
+(a form of [embedded signature](https://reproducible-builds.org/docs/embedded-signatures/)),
+which requires [copying](https://github.com/obfusk/apksigcopier) the signature
+from a signed APK to an unsigned one and then checking if the latter verifies.
+The old v1 (JAR) signatures only cover the *contents* of the APK (e.g. ZIP
+metadata and ordering are irrelevant), but v2/v3 signatures cover *all other
+bytes in the APK*.  Thus, the APKs must be completely identical *before* and
+*after* signing (apart from the signature) in order to verify correctly.
+
+Copying the signature uses the same algorithm that `apksigner` uses when signing
+an APK.  It is therefore important that (upstream) developers do the same when
+signing APKs, ideally by using `apksigner` to make the signatures.  `apksigner` is also reproducibly built [in Debian](https://tests.reproducible-builds.org/debian/rb-pkg/trixie/amd64/android-platform-tools-apksig.html).
+
+#### Verification builds
+
+Many people or organizations will be interested in reproducing builds to make
+sure that the f-droid.org builds match the original source and nothing has been
+modified.  In that case, the resulting APKs are not published for installation.
+The [Verification Server](../Verification_Server) automates this process.
+
+
+#### Situation
+
+Quite a few builds already verify with no extra effort since Java code is often
+compiled into the same bytecode by a wide range of Java versions.  The Android
+SDK's `build-tools` will create differences in the resulting XML, PNG, etc.
+files, but this is usually not a problem since the `build.gradle` includes the
+exact version of `build-tools` to use.
+
+Anything built using the NDK will be much more sensitive.  For example, even for
+builds that use the exact same version of the NDK (e.g. `r13b`) but on different
+platforms (e.g. macOS versus Ubuntu), the resulting binaries will have
+differences.
+
+Additionally, we'll have to look out for anything that includes timestamps or
+build paths, is sensitive to sort order, etc.
+
+Google is also working towards reproducible builds of Android apps, so using
+recent versions of the Android SDK helps.  One specific case is starting with
+Gradle Android Plugin v2.2.2, timestamps in the APK file's ZIP metadata are
+automatically zeroed out.
+
 ### Publishing APKs with the upstream developer's signature
 
-Publishing signed binaries (APKs) from elsewhere (e.g. the upstream developer)
-is now possible after verifying that they match ones built using an _fdroiddata_
-build recipe.  Publishing only takes place if there is a proper match. This means that F-Droid can verify that an app is free software while still using the original developer's APK signatures. This procedure is implemented as part of [`fdroid publish`](https://gitlab.com/fdroid/fdroidserver/-/blob/master/fdroidserver/publish.py).  The reproducibility check at the
-publishing step follows this logic:
+An application can be setup to publish the signed binaries (APKs) from elsewhere (e.g. the upstream developer) after verifying that they match ones built using an _fdroiddata_ build recipe.  Publishing only takes place if there is a proper match. This means that F-Droid can verify that an app is free software while still using the original developer's APK signatures. This procedure is implemented as part of [`fdroid publish`](https://gitlab.com/fdroid/fdroidserver/-/blob/master/fdroidserver/publish.py).  The reproducibility check at the publishing step follows this logic:
 
 ![Flow-chart for reproducibility check]({% asset docs/reproducible-builds/publish.png %})
 
+#### Exclusively publishing (upstream) developer-signed APKs
+
+For this approach, everything in the metadata should be the same as normal, with the addition of the [`Binaries`](../Build_Metadata_Reference/#Binaries) or [`Builds.binary`](../Build_Metadata_Reference/#build_binary) directive to specify where to get the binaries (APKs) from, and [`AllowedAPKSigningKeys`](../Build_Metadata_Reference/#AllowedAPKSigningKeys) directive to ensure the expected signing key is used. In this case, F-Droid will never attempt to publish APKs signed by F-Droid.  If `fdroid publish` can verify that the downloaded APK matches the one built from the fdroiddata recipe, the downloaded APK will be published. Otherwise F-Droid will skip publishing this version of the app.
 
 #### Publish both (upstream) developer-signed and F-Droid-signed APKs
 
@@ -60,73 +105,9 @@ $ ls metadata/your.app/signatures/42/                # v1 + v2/v3 signature
 APKSigningBlock  APKSigningBlockOffset  MANIFEST.MF  YOURKEY.RSA  YOURKEY.SF
 ```
 
-#### Exclusively publishing (upstream) developer-signed APKs
+### Tools
 
-For this approach, everything in the metadata should be the same as normal, with
-the addition of the `Binaries:` directive to specify where to get the binaries
-(APKs) from.  In this case, F-Droid will never attempt to publish APKs signed by
-F-Droid.  If `fdroid publish` can verify that the downloaded APK matches the one
-built from the fdroiddata recipe, the downloaded APK will be published.
-Otherwise F-Droid will skip publishing this version of the app.
-
-Here is an example of a `Binaries:` directive:
-
-```yaml
-Binaries: https://example.com/path/to/myapp-%v.apk
-```
-
-See also: [Build Metadata Reference - Binaries](../Build_Metadata_Reference/#Binaries)
-
-
-### Reproducible signatures
-
-F-Droid verifies reproducible builds using the
-[APK signature](https://source.android.com/docs/security/features/apksigning)
-(a form of [embedded signature](https://reproducible-builds.org/docs/embedded-signatures/)),
-which requires [copying](https://github.com/obfusk/apksigcopier) the signature
-from a signed APK to an unsigned one and then checking if the latter verifies.
-The old v1 (JAR) signatures only cover the *contents* of the APK (e.g. ZIP
-metadata and ordering are irrelevant), but v2/v3 signatures cover *all other
-bytes in the APK*.  Thus, the APKs must be completely identical *before* and
-*after* signing (apart from the signature) in order to verify correctly.
-
-Copying the signature uses the same algorithm that `apksigner` uses when signing
-an APK.  It is therefore important that (upstream) developers do the same when
-signing APKs, ideally by using `apksigner` to make the signatures.  `apksigner` is also reproducibly built [in Debian](https://tests.reproducible-builds.org/debian/rb-pkg/trixie/amd64/android-platform-tools-apksig.html).
-
-### Verification builds
-
-Many people or organizations will be interested in reproducing builds to make
-sure that the f-droid.org builds match the original source and nothing has been
-modified.  In that case, the resulting APKs are not published for installation.
-The [Verification Server](../Verification_Server) automates this process.
-
-
-### Reproducible Builds
-
-Quite a few builds already verify with no extra effort since Java code is often
-compiled into the same bytecode by a wide range of Java versions.  The Android
-SDK's `build-tools` will create differences in the resulting XML, PNG, etc.
-files, but this is usually not a problem since the `build.gradle` includes the
-exact version of `build-tools` to use.
-
-Anything built using the NDK will be much more sensitive.  For example, even for
-builds that use the exact same version of the NDK (e.g. `r13b`) but on different
-platforms (e.g. macOS versus Ubuntu), the resulting binaries will have
-differences.
-
-Additionally, we'll have to look out for anything that includes timestamps or
-build paths, is sensitive to sort order, etc.
-
-Google is also working towards reproducible builds of Android apps, so using
-recent versions of the Android SDK helps.  One specific case is starting with
-Gradle Android Plugin v2.2.2, timestamps in the APK file's ZIP metadata are
-automatically zeroed out.
-
-
-### Debugging Reproducible Builds
-
-#### Recommended tools
+#### Diffing the apk
 
 We recommend using [`diffoscope`](https://diffoscope.org/) for easily
 finding the difference between the reference APK provided by the app
@@ -149,8 +130,7 @@ prioritised when debugging, and how to fix common issues.
 It also shows how to use various specialised tools that may provide
 better results when `diffoscope` is not sufficient.
 
-
-### Reproducible APK tools
+#### Reproducible APK tools
 
 The scripts from
 [reproducible-apk-tools](https://github.com/obfusk/reproducible-apk-tools)
