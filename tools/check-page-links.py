@@ -4,6 +4,7 @@ import glob
 import io
 import re
 import sys
+import traceback
 from babel.messages.pofile import read_po
 
 errorcount = 0
@@ -17,11 +18,16 @@ for f in sorted(glob.glob('po/*.po*')):
     print(f)
     with open(f) as fp:
         contents = fp.read()
+    catalog = []
     try:
         catalog = read_po(io.StringIO(contents), abort_invalid=True)
     except Exception as e:
+        exc = traceback.format_exc()
         errorcount += 1
-        output += 'ERROR: %s' % e
+        try:
+            output += f'ERROR on line {e.lineno} of {f}:\n{e.line}\n{exc}'
+        except AttributeError:
+            output += f'ERROR in {f}:\n{exc}'
     for message in catalog:
         if message.fuzzy:
             continue
