@@ -31,13 +31,14 @@
 # Laurent FAVOLE <laurentfavole03@gmail.com>, 2025.
 # Laurent FAVOLE <lfavole@users.noreply.hosted.weblate.org>, 2025.
 # Mickaël Binos <mickaelbinos@outlook.com>, 2025.
+# Hēphaistos <hephaistos@users.noreply.hosted.weblate.org>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
 "POT-Creation-Date: 2025-06-26 21:57+0200\n"
-"PO-Revision-Date: 2025-07-06 13:05+0000\n"
-"Last-Translator: Mickaël Binos <mickaelbinos@outlook.com>\n"
+"PO-Revision-Date: 2025-07-21 11:42+0000\n"
+"Last-Translator: Hēphaistos <hephaistos@users.noreply.hosted.weblate.org>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/f-droid/website-docs/fr/>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
@@ -3750,11 +3751,7 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-#, fuzzy, no-wrap
-#| msgid ""
-#| "    Useful when a source code repository includes binaries or other\n"
-#| "    unwanted files which are not needed for the build. Instead of\n"
-#| "    removing them manually via _rm_, using _scandelete_ is easier.\n"
+#, no-wrap
 msgid ""
 "    Useful when a source code repository includes binaries or other\n"
 "    unwanted files which are not needed for the build. Instead of removing\n"
@@ -3762,7 +3759,7 @@ msgid ""
 msgstr ""
 "    Utile lorsque le dépôt du code source contient des fichiers binaires ou d'autres\n"
 "    fichiers non désirés qui ne sont pas requis pour la compilation. Il est plus facile \n"
-"    d'utiliser _scandelete_ au lieu de les supprimer manuellement avec _rm_.\n"
+"    d'utiliser `scandelete` que de les supprimer manuellement avec [`rm`](#build_rm).\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -3891,14 +3888,7 @@ msgstr "`ndk: <version>`<a name=\"build_ndk\"></a>\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-#, fuzzy, no-wrap
-#| msgid ""
-#| ":   Version of the NDK to use in this build.  The value is the NDK version as a\n"
-#| "    string in either of the two official version schemes, e.g. _r21e_ or\n"
-#| "    _21.4.7075529_.  NDK r10e or later is supported.  This can also be a list of\n"
-#| "    version strings, and all listed versions will be installed.  The\n"
-#| "    `ANDROID_SDK_ROOT` environment variable will be set to the first version in\n"
-#| "    the list.\n"
+#, no-wrap
 msgid ""
 ":   Version of the NDK to use in this build.  The value is the NDK version as a\n"
 "    string in either of the two official version schemes, e.g. _r21e_ or\n"
@@ -3908,11 +3898,11 @@ msgid ""
 "    the list.\n"
 msgstr ""
 ":   La version du NDK utilisée pour compiler. La valeur est la version du\n"
-"    NDK en une chaîne de caractères dans l'un des deux schéma de\n"
-"    version officiel, par exemple _r21e_ ou _21.4.7075529_. Le NDK r10e\n"
-"    ou ultérieur est supporté. La valeur peut aussi être une liste de chaînes de\n"
-"    version, cela installera toutes les versions de la liste. La variable d'environnement\n"
-"    `ANDROID_SDK_ROOT` serait alors mis à la première valeur de la liste.\n"
+"    NDK en une chaîne de caractères dans l'un des deux schémas de\n"
+"    version officiels, par exemple _r21e_ ou _21.4.7075529_. Le NDK r10e\n"
+"    ou ultérieur est compatible. La valeur peut aussi être une liste de chaînes de\n"
+"    version, qui installera toutes les versions de la liste. Les variables d'environnement\n"
+"    `ANDROID_SDK_ROOT` et `ANDROID_NDK_HOME seront alors définies selon la première valeur de la liste.\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -3959,19 +3949,15 @@ msgstr "`maven: yes[@<dossier>]`<a name=\"build_maven\"></a>\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-#, fuzzy, no-wrap
-#| msgid ""
-#| ":   Build with Maven instead of Ant. An extra @&lt;dir&gt; tells F-Droid\n"
-#| "    to run Maven inside that relative subdirectory. Sometimes it is\n"
-#| "    needed to use @.. so that builds happen correctly.\n"
+#, no-wrap
 msgid ""
 ":   Build with Maven instead of Ant. An extra `@<dir>` tells F-Droid\n"
 "    to run Maven inside that relative subdirectory. Sometimes it is\n"
 "    needed to use `@..` so that builds happen correctly.\n"
 msgstr ""
-":   Compiler avec Maven au lieu de Ant. Un @&lt;dir&gt; supplémentaire dit à F-Droid\n"
-"    d'exécuter Maven dans ce sous-répertoire. Parfois il est nécessaire\n"
-"    d'utiliser @.. pour que l'installation se passe correctement.\n"
+"`:   Compiler avec Maven au lieu de Ant. Un `@<dir>` supplémentaire demande à F-Droid\n"
+"    d'exécuter Maven dans ce sous-répertoire relatif. Il est parfois nécessaire\n"
+"    d'utiliser `@..` pour que les compilations se passent correctement.\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -4042,13 +4028,7 @@ msgstr "`output: glob/to/output.apk`<a name=\"build_output\"></a>\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-#, fuzzy, no-wrap
-#| msgid ""
-#| ":   Specify a glob path where the resulting unsigned release APK from\n"
-#| "    the build should be. This can be used in combination with build\n"
-#| "    methods like `gradle: yes` or `maven: yes`, but if no build method is\n"
-#| "    specified, the build is manual. You should run your build commands,\n"
-#| "    such as `make`, in _build_.\n"
+#, no-wrap
 msgid ""
 ":   Specify a glob path where the resulting unsigned release APK from\n"
 "    the build should be. This can be used in combination with build\n"
@@ -4056,11 +4036,11 @@ msgid ""
 "    but if no build method is specified, the build is manual. You should run\n"
 "    your build commands, such as `make`, in [`build`](#build_build).\n"
 msgstr ""
-":   Spécifie un chemin global où devrait se trouver l’APK non signé issue de\n"
-"    la compilation. Ceci peut être utilisé avec des méthodes de compilation\n"
-"    comme `gradle: yes` ou `maven: yes`. Si aucune méthode n’est précisée\n"
-"    la compilation est manuelle. Vous devrez exécuter vos commandes de\n"
-"    compilation tel que `make` dans _build_.\n"
+":   Spécifie un chemin global où devrait se trouver l’APK non signé issu de la\n"
+"    compilation. Ceci peut être combiné avec des méthodes de compilation comme\n"
+"    [`gradle: yes`](#build_gradle) ou [`maven: yes`](#build_maven), mais si  \n"
+"    aucune méthode n’est précisée, la compilation est manuelle. Vous devriez \n"
+"    exécuter vos commandes de compilation telles que `make` dans [`build`](#build_build).\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -4117,10 +4097,10 @@ msgid ""
 "    is correct. This takes away a useful level of sanity checking, and\n"
 "    should only be used if the values can't be extracted.\n"
 msgstr ""
-":   Ne vérifie pas que le nom de la version et le code de l'APK resultant sont\n"
+":   Ne pas vérifier que le nom de la version et le code de l'APK resultant sont\n"
 "    corrects en regardant le produit de la compilation — suppose que les\n"
-"    métadonnées sont correctes. Ceci enlève un niveau utile de vérification, et\n"
-"    ne devrait être utilisé seulement si les valeurs ne peuvent pas être extraites.\n"
+"    métadonnées sont correctes. Cela enlève un niveau utile de vérification, et\n"
+"    ne devrait être utilisé que si les valeurs ne peuvent pas être extraites.\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -4149,7 +4129,7 @@ msgstr "_AllowedAPKSigningKeys_(clés autorisées à signer les APK)<a name=\"Al
 #, fuzzy
 #| msgid "When making automated binary repositories with `fdroid update`, it is generally easy to find out the expected signing key for the APKs that are gathered.  `AllowedAPKSigningKeys` lets the repo operator set the expected signing keys, then `fdroid update` will check that the APKs are signed by one of those keys.  If not, the mismatched APKs will not be included in the repo.  If `fdroid update --delete-unknown` is specified, the mismatched APKs will be deleted.  Then an automated process can be used to download newer APKs to the repo, and they will only be included if they have a known good signature.  The value is a lower case hex value of the SHA-256 fingerprint of the signing certificate.  This can be fetched using:"
 msgid "When making automated binary repositories with `fdroid update`, it is generally easy to find out the expected signing key for the APKs that are gathered.  `AllowedAPKSigningKeys` lets the repo operator set the expected signing keys, then `fdroid update` will check that the APKs are signed by one of those keys.  If not, the mismatched APKs will not be included in the repo.  If `fdroid update --delete-unknown` is specified, the mismatched APKs will be deleted.  Then an automated process can be used to download newer APKs to the repo, and they will only be included if they have a known good signature.  The value is a lower case hex value of the SHA-256 fingerprint of the signing certificate.  This can be fetched using `apksigner` from the Android SDK:"
-msgstr "Lorsque les dépôts binaires automatiques sont marqués `fdroid update`, c'est généralement facile de trouver la clé de signature pour les APK. `AllowedAPKSigningKeys` laisse l'opérateur du dépôt entrer la clé de signature attendu, alors `fdroid update` va vérifier que les APK sont signés par l'une de ces clés. Les APK dont ce n'est pas cas ne seront pas inclue dans le dépôt. Si `fdroid update --delete-unknown` est spécifié, les APK qui ne correspondent pas seront supprimés. Ensuite un processus automatique peut être utilisé pour télécharger les nouvelles APK dans le dépôt, et seront seulement inclue s'ils ont une bonne signature connue. La valeur est en hexadécimal minuscule de empreinte digitale SHA-256 du certificat de la signature. Ceci peut être traité avec :"
+msgstr "Lors de l'établissement de dépôts binaires automatisés avec `fdroid update`, il est généralement facile de trouver la clé de signature attendue pour les APK rassemblés. `AllowedAPKSigningKeys` laisse l'opérateur du dépôt définir les clés de signature attendues, tandis que `fdroid update` va ensuite vérifier que les APK sont signés par l'une de ces clés. Si ce n'est pas le cas, les APK refusées ne seront pas inclues dans le dépôt. Si `fdroid update --delete-unknown` est spécifié, les APK ne correspondant pas seront supprimés. Ensuite, un processus automatique peut être utilisé pour télécharger les nouveaux APK dans le dépôt, et ne seront inclus que si leur signature est correcte et connue. Celle-ci est une valeur hexadécimale en minuscule de l'empreinte digitale SHA-256 du certificat de la signature. Elle peut être retrouvée avec `apksigner` depuis le SDK d'Android :"
 
 #. type: Fenced code block
 #: _docs/Build_Metadata_Reference.md
@@ -4160,7 +4140,7 @@ msgstr "apksigner verify --print-certs exemple.apk | grep SHA-256\n"
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 msgid "Or alternatively with `keytool` from the Java Development Kit (JDK):"
-msgstr "Ou bien avec `keytool` du Java Development Kit (JDK) :"
+msgstr "Ou bien avec `keytool` du Kit de Développement Java (JDK) :"
 
 #. type: Fenced code block
 #: _docs/Build_Metadata_Reference.md
@@ -4187,7 +4167,7 @@ msgstr "Ceci est optionnel — s'il est présent, il contient une liste des vale
 #. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
 msgid "`Ads` - the application contains advertising."
-msgstr "« Ads » — l'application contient des publicités."
+msgstr "`Publicités` - l'application comporte de la publicité."
 
 #. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
@@ -4209,7 +4189,7 @@ msgstr "« NonFreeAssets » – l'application contient et utilise des ressourc
 #. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
 msgid "`NonFreeDep` - the application depends on a Non-Free application (e.g. Spotify, Whatsapp) - i.e. it requires it to be installed on the device, but does not include it."
-msgstr "« NonFreeDep » — l'application dépend d'une application non libre (par exemple Spotify ou WhatsApp) — i.e. elle a besoin que l'application non libre soit installée, mais elle ne l'inclue pas."
+msgstr "« NonFreeDep » — l'application dépend d'une application non libre (par exemple Spotify ou WhatsApp) — i.e. elle a besoin que l'application non libre soit installée, mais elle ne l'inclut pas."
 
 #. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
@@ -4257,7 +4237,7 @@ msgstr "Ceci est transformé en (`<antifeatures>`) dans le fichier XML (_index.x
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid "_Disabled_<a name=\"Disabled\"></a>"
-msgstr "_Disabled_ (désactivé)<a name=\"Disabled\"></a>"
+msgstr "_Désactivé_<a name=\"Disabled\"></a>"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -4296,10 +4276,8 @@ msgstr "Détermine la politique de déplacement des anciennes versions d'une app
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-#, fuzzy
-#| msgid "The version specified via `CurrentVersionCode` is always considered the newest version when deciding which versions to put into the archive.  This means that when `ArchivePolicy` is set to `1` only the APK corresponding to CVC is kept, which is not necessarily the one with the highest version code."
 msgid "The version specified via [_CurrentVersionCode_](#CurrentVersionCode) is always considered the newest version when deciding which versions to put into the archive.  This means that when _ArchivePolicy_ is set to `1` only the APK corresponding to CVC is kept, which is not necessarily the one with the highest version code."
-msgstr "La version spécifiée via `CurrentVersionCode` est toujours considérée comme la version la plus récente lors du choix des versions à mettre dans l'archive. Cela signifie que lorsque `ArchivePolicy` est défini sur `1` seul l'APK correspondant à CVC est conservé (ce n'est pas nécessairement l'APK avec la version de code la plus élevée)."
+msgstr "La version spécifiée via [_CurrentVersionCode_](#CurrentVersionCode) est toujours considérée comme la version la plus récente lors du choix des versions à mettre dans l'archive.   Cela signifie que lorsque _ArchivePolicy_ est paramétré sur `1` seul l'APK correspondant au CVC est conservé (ce n'est pas nécessairement l'APK avec le code de version le plus élevé)."
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -4327,20 +4305,20 @@ msgstr "Les modes valides sont :"
 #. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
 msgid "`None` - Auto-updating is disabled."
-msgstr "`None` - Mise à jour automatiques désactivées."
+msgstr "`Aucune` - La mise à jour automatique est désactivée."
 
 #. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
 msgid "`Version` - Auto-updating is enabled."
-msgstr "`Version` - Mise à jour automatique activée."
+msgstr "`Version` - La mise à jour automatique est activée."
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-#, no-wrap
+#, fuzzy, no-wrap
 msgid ""
 "  If [_UpdateCheckMode_](#UpdateCheckMode) is set to `Tags`, this should be\n"
 "  set to `Version` without any pattern. The checked tag is used directly.\n"
-msgstr ""
+msgstr "  Si [_UpdateCheckMode_](#UpdateCheckMode) est paramètré avec `Étiquettes`, `Version` sans aucun modèle devrait être sélectionné ici. L'étiquette vérifiée est utilisée directement.\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -4364,10 +4342,14 @@ msgid ""
 "  always has a tag `ver_1234` for a version with version code 1234,\n"
 "  you would specify `Version ver_%c`.\n"
 msgstr ""
+"  Par exemple, si une app comporte toujours une étiquette `2.7.2` \n"
+"  correspondant à la version 2.7.2, vous spécifierez simplement `Version %v`. \n"
+"  Si une app comporte toujours une étiquette `ver_1234` pour une version dont \n"
+"  le code est 1234, vous spécifierez `Version ver_%c`.\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-#, no-wrap
+#, fuzzy, no-wrap
 msgid ""
 "  Additionally, a suffix can be added to the version name at this\n"
 "  stage, to differentiate F-Droid's build from the original.\n"
@@ -4376,11 +4358,16 @@ msgid ""
 "  to the [`versionName`](#build_versionName) specified in e.g. `build.gradle`\n"
 "  when building the APK.\n"
 msgstr ""
+"  En outre, un suffixe peut être ajouté au nom de version lors de cette\n"
+"  étape, pour différentier la version de F-Droid de l'originale.\n"
+"  Pour poursuivre l'exemple ci-dessus, vous spécifieriez `Version +-fdroid %v`,\n"
+"  où `-fdroid` est le suffixe qui sera ajouté au [`versionName`](#build_versionName) \n"
+"  specifié dans e.g. `build.gradle` lors de la compilation de l'APK.\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 msgid "For apps with a list of [_VercodeOperation_](#VercodeOperation) the number of builds is equal to the number of items in the list."
-msgstr ""
+msgstr "Pour les apps comportant une liste de [_VercodeOperation_](#VercodeOperation), le nombre de versions est égal au nombre d'objets présents dans la liste."
 
 #. type: Title ###
 #: _docs/Build_Metadata_Reference.md
