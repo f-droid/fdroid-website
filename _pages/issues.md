@@ -24,7 +24,7 @@ To request a new application to be packaged (add an app to our app store),
 please, first check the app data issue tracker to see if that application was
 available in the past and got removed. Any remaining request for packaging
 (RFP) can be added to
-[this issue tracker](https://gitlab.com/fdroid/rfp/issues/).
+[this issue tracker](https://gitlab.com/fdroid/rfp/-/issues/).
 
 ### Server Tools
 
