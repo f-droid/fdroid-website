@@ -125,6 +125,10 @@ Alternatively, if a Gradle build flavor is specified in the Build Metadata, the 
 
 * `src/<buildFlavor>/fastlane/metadata/<locale>/`
 
+Or if the sub-directory is specified in the Build Metadata, the following location is also supported:
+
+* `<subdir>/fastlane/metadata/<locale>/`
+
 (Some use cases of **build flavors** and multiple apps inside one repository are currently not properly supported. Follow [this issue](https://gitlab.com/fdroid/fdroidserver/issues/829) tracking the implementation of this.)
 
 Note that placing the structure anywhere else, like in the gradle module's root, **won't work**.
