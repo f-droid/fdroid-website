@@ -38,6 +38,7 @@ Framework](https://github.com/theupdateframework/specification/blob/master/tuf-s
     [chooses mirrors](https://gitlab.com/fdroid/fdroidclient/issues/35)
     based on availability and freshness based on local criteria like
     whether Tor is in use
+-   Client [requires](https://gitlab.com/fdroid/fdroidclient/-/merge_requests/1577) that [TLS certificate transparency](https://developer.android.com/privacy-and-security/security-config#CertificateTransparencySummary) is enabled for f-droid.org and other domains commonly used by repos and mirrors.
 
 While the current setup is already a solid platform, there are a
 number of improvements that make sense to implement:
