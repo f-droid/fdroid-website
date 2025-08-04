@@ -3,7 +3,7 @@
 import json
 import sys
 import textwrap
-from datetime import UTC, date, datetime, timedelta
+from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 
 import requests
@@ -372,7 +372,7 @@ def download_json(url, path):
 
 def get_index():
     log_commits = download_json(LOG_COMMIT_API, CACHE / "commits.json")
-    today = datetime.now(UTC).replace(hour=0, minute=0, second=0, microsecond=0)
+    today = datetime.now(timezone.utc).replace(hour=0, minute=0, second=0, microsecond=0)
     last_friday = today - timedelta(days=(today.weekday() + 3) % 7)
 
     if OLD_INDEX_COMMIT:
