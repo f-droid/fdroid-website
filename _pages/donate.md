@@ -14,10 +14,13 @@ Both platforms allow for recurrent donations which are highly desirable for maki
 Your donations will be used for:
 
 * Paying for server resources
-* Pay for merchandise (stickers)
-* Pay contributors for administration and development work
+* Paying for merchandise (stickers)
+* Paying contributors for administration and development work
 * Travel sponsorship for contributors for conferences or meetups
 
+Your donations will NOT be used for:
+
+* Financially supporting the developers of apps that are published on F-Droid. _To donate to app developers, use the donations options listed for each app._
 
 ### What payment methods can I use?
 
