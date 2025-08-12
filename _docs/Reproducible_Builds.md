@@ -196,6 +196,33 @@ July 2024 have version 35 included, so one needs to manually select the `apksign
 templated "latest version".
 
 
+#### Bug: baseline.prof not deterministic
+
+Sometimes the `baselin.prof` file is not reproducible. There are some possible workarounds:
+
+1. Rerun the build until the file matches.
+1. Use the same CPU core number as upstream.
+1. Disable the baseline profile.
+  Add this to `build.gradle`:
+
+  ```groovy
+  tasks.whenTaskAdded { task ->
+      if (task.name.contains("ArtProfile")) {
+          task.enabled = false
+      }
+  }
+  ```
+
+  or this to `build.gradle.kts`:
+
+  ```kts
+  tasks.whenTaskAdded {
+    if (name.contains("ArtProfile")) {
+        enabled = false
+    }
+  }
+  ```
+
 #### Bug: baseline.profm not deterministic
 
 [Non-stable `assets/dexopt/baseline.profm`](https://issuetracker.google.com/issues/231837768)
