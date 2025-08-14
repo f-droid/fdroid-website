@@ -71,7 +71,7 @@ including Google Play, you should exercise caution regarding the
 permissions they request when you install them. If in doubt, don't
 install.
 
-For apps being built reproducible, and signed by the upstream developer, you can read more on [the dedicated page](https://f-droid.org/docs/Reproducible_Builds/#publish-both-upstream-developer-signed-and-f-droid-signed-apks).
+For apps being built reproducible, and signed by the upstream developer, you can read more on [the dedicated page](https://f-droid.org/docs/Reproducible_Builds/#publishing-apks-with-the-upstream-developers-signature).
 
 ### Why isn't F-Droid on Google Play?
 
