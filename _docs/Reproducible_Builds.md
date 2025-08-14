@@ -64,7 +64,7 @@ automatically zeroed out.
 
 ### Publishing APKs with the upstream developer's signature
 
-An application can be setup to publish the signed binaries (APKs) from elsewhere (e.g. the upstream developer) after verifying that they match ones built using an _fdroiddata_ build recipe.  Publishing only takes place if there is a proper match. This means that F-Droid can verify that an app is free software while still using the original developer's APK signatures. This procedure is implemented as part of [`fdroid publish`](https://gitlab.com/fdroid/fdroidserver/-/blob/master/fdroidserver/publish.py).  The reproducibility check at the publishing step follows this logic:
+An application can be setup to publish the signed binaries from the upstream developer after verifying that they match the ones built using an _fdroiddata_ build recipe.  Publishing only takes place if there is a proper match. This means that F-Droid can verify that an app is free software while still using the original developer's APK signatures. This procedure is implemented as part of [`fdroid publish`](https://gitlab.com/fdroid/fdroidserver/-/blob/master/fdroidserver/publish.py).  The reproducibility check at the publishing step follows this logic:
 
 ![Flow-chart for reproducibility check]({% asset docs/reproducible-builds/publish.png %})
 
