@@ -24,7 +24,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
-"POT-Creation-Date: 2025-07-28 14:15+0200\n"
+"POT-Creation-Date: 2025-08-21 15:30+0200\n"
 "PO-Revision-Date: 2025-08-16 08:02+0000\n"
 "Last-Translator: VfBFan <drop0815@posteo.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/f-droid/website-docs/de/>\n"
@@ -6400,7 +6400,9 @@ msgstr "Somit ja, soweit wir wissen, ist es sicher. Jedoch, wie bei allen Dingen
 
 #. type: Plain text
 #: _docs/FAQ_-_General.md
-msgid "For apps being built reproducible, and signed by the upstream developer, you can read more on [the dedicated page](https://f-droid.org/docs/Reproducible_Builds/#publish-both-upstream-developer-signed-and-f-droid-signed-apks)."
+#, fuzzy
+#| msgid "For apps being built reproducible, and signed by the upstream developer, you can read more on [the dedicated page](https://f-droid.org/docs/Reproducible_Builds/#publish-both-upstream-developer-signed-and-f-droid-signed-apks)."
+msgid "For apps being built reproducible, and signed by the upstream developer, you can read more on [the dedicated page](https://f-droid.org/docs/Reproducible_Builds/#publishing-apks-with-the-upstream-developers-signature)."
 msgstr "Weitere Informationen zu Apps, die reproduzierbar erstellt und vom Upstream-Entwickler signiert wurden, finden Sie auf [der zugehörigen Seite](https://f-droid.org/docs/Reproducible_Builds/#publish-both-upstream-developer-signed-and-f-droid-signed-apks)."
 
 #. type: Title ###
@@ -9984,7 +9986,9 @@ msgstr "Veröffentlichung von APKs mit der Upstream-Entwicklersignatur"
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
-msgid "An application can be setup to publish the signed binaries (APKs) from elsewhere (e.g. the upstream developer) after verifying that they match ones built using an _fdroiddata_ build recipe.  Publishing only takes place if there is a proper match. This means that F-Droid can verify that an app is free software while still using the original developer's APK signatures. This procedure is implemented as part of [`fdroid publish`](https://gitlab.com/fdroid/fdroidserver/-/blob/master/fdroidserver/publish.py).  The reproducibility check at the publishing step follows this logic:"
+#, fuzzy
+#| msgid "An application can be setup to publish the signed binaries (APKs) from elsewhere (e.g. the upstream developer) after verifying that they match ones built using an _fdroiddata_ build recipe.  Publishing only takes place if there is a proper match. This means that F-Droid can verify that an app is free software while still using the original developer's APK signatures. This procedure is implemented as part of [`fdroid publish`](https://gitlab.com/fdroid/fdroidserver/-/blob/master/fdroidserver/publish.py).  The reproducibility check at the publishing step follows this logic:"
+msgid "An application can be setup to publish the signed binaries from the upstream developer after verifying that they match the ones built using an _fdroiddata_ build recipe.  Publishing only takes place if there is a proper match. This means that F-Droid can verify that an app is free software while still using the original developer's APK signatures. This procedure is implemented as part of [`fdroid publish`](https://gitlab.com/fdroid/fdroidserver/-/blob/master/fdroidserver/publish.py).  The reproducibility check at the publishing step follows this logic:"
 msgstr "Eine Anwendung kann so eingerichtet werden, dass sie die signierten Binärdateien (APKs) von einer anderen Quelle (z. B. dem Upstream-Entwickler) veröffentlicht, nachdem überprüft wurde, dass sie mit denen übereinstimmen, die mit einem _fdroiddata_-Build-Rezept erstellt wurden. Die Veröffentlichung erfolgt nur, wenn eine korrekte Übereinstimmung vorliegt. Das bedeutet, dass F-Droid überprüfen kann, ob eine App Freie Software ist, während weiterhin die APK-Signaturen des ursprünglichen Entwicklers verwendet werden. Dieser Vorgang ist als Teil von [`fdroid publish`](https://gitlab.com/fdroid/fdroidserver/-/blob/master/fdroidserver/publish.py) implementiert. Die Reproduzierbarkeitsprüfung beim Veröffentlichungsschritt folgt dieser Logik:"
 
 #. type: Plain text
@@ -10180,6 +10184,77 @@ msgstr "`apksigner` aus build-tools >= 35.0.0-rc1 gibt nicht überprüfbare APKs
 #: _docs/Reproducible_Builds.md
 msgid "Using `apksigner` from build-tools version 34 produces APKs verifiable by `apksigcopier`, but newer versions will fail.  We are tracking this issue in [#3299](https://gitlab.com/fdroid/fdroiddata/-/issues/3299) and there's more info in [apksigcopier issues 105](https://github.com/obfusk/apksigcopier/issues/105). Github Actions CI Ubuntu images starting July 2024 have version 35 included, so one needs to manually select the `apksigner` version from 34 instead of the default templated \"latest version\"."
 msgstr "Die Verwendung von `apksigner` aus build-tools Version 34 erzeugt APKs, die von `apksigcopier` verifiziert werden können, aber neuere Versionen schlagen fehl.  Wir verfolgen dieses Problem in [#3299](https://gitlab.com/fdroid/fdroiddata/-/issues/3299) und es gibt mehr Informationen in [apksigcopier issues 105](https://github.com/obfusk/apksigcopier/issues/105). Github-Actions-CI-Ubuntu-Images ab Juli 2024 haben Version 35 enthalten, so dass man manuell die `apksigner`-Version von 34 anstelle der Standardvorlage „neueste Version“ auswählen muss."
+
+#. type: Title ####
+#: _docs/Reproducible_Builds.md
+#, fuzzy, no-wrap
+#| msgid "Bug: baseline.profm not deterministic"
+msgid "Bug: baseline.prof not deterministic"
+msgstr "Fehler: baseline.profm nicht deterministisch"
+
+#. type: Plain text
+#: _docs/Reproducible_Builds.md
+msgid "Sometimes the `baselin.prof` file is not reproducible. There are some possible workarounds:"
+msgstr ""
+
+#. type: Bullet: '1. '
+#: _docs/Reproducible_Builds.md
+msgid "Rerun the build until the file matches."
+msgstr ""
+
+#. type: Bullet: '1. '
+#: _docs/Reproducible_Builds.md
+msgid "Use the same CPU core number as upstream."
+msgstr ""
+
+#. type: Plain text
+#: _docs/Reproducible_Builds.md
+#, fuzzy, no-wrap
+#| msgid "You can disable generating the PNGs by adding this to `build.gradle`:"
+msgid ""
+"1. Disable the baseline profile.\n"
+"  Add this to `build.gradle`:\n"
+msgstr "Sie können die Generierung der PNGs deaktivieren, indem Sie dies zu `build.gradle` hinzufügen:"
+
+#. type: Fenced code block (groovy)
+#: _docs/Reproducible_Builds.md
+#, no-wrap
+msgid ""
+"  tasks.whenTaskAdded { task ->\n"
+"      if (task.name.contains(\"ArtProfile\")) {\n"
+"          task.enabled = false\n"
+"      }\n"
+"  }\n"
+msgstr ""
+
+#. type: Plain text
+#: _docs/Reproducible_Builds.md
+#, fuzzy, no-wrap
+#| msgid "or in `build.gradle`:"
+msgid "  or this to `build.gradle.kts`:\n"
+msgstr "oder in `build.gradle`:"
+
+#. type: Fenced code block (kts)
+#: _docs/Reproducible_Builds.md
+#, fuzzy, no-wrap
+#| msgid ""
+#| "android {\n"
+#| "    aaptOptions {\n"
+#| "        cruncherEnabled = false\n"
+#| "    }\n"
+#| "}\n"
+msgid ""
+"  tasks.whenTaskAdded {\n"
+"    if (name.contains(\"ArtProfile\")) {\n"
+"        enabled = false\n"
+"    }\n"
+"  }\n"
+msgstr ""
+"android {\n"
+"    aaptOptions {\n"
+"        cruncherEnabled = false\n"
+"    }\n"
+"}\n"
 
 #. type: Title ####
 #: _docs/Reproducible_Builds.md
@@ -11547,97 +11622,108 @@ msgstr ""
 "Framework](https://github.com/theupdateframework/specification/blob/master/tuf-spec.md) bewährt haben,\n"
 " in das, was das Android-OS bereits mitbringt.  Die Art und Weise wie F-Droid agiert, ist größtenteils von de facto Sicherheitsmodellen beeinflusst, wie sie in angesehenen GNU/Linux-Distributionen wie Debian, Fedora, Ubuntu, usw. funktionieren.  Der Schwerpunkt dort liegt darauf öffentlich zu arbeiten und alles öffentlich zugänglich zu machen. Wir schließen Quell-Tarballs und Build-Protokolle ein, wenn wir Binärdateien veröffentlichen.  Diese werden so lange wie möglich für retrospektive Prüfungen archiviert.  Und all dies wird an vielen, über das Internet verteilten Plätzen von vielen verschiedenen Parteien gespiegelt.\n"
 
-#. type: Bullet: '-   '
+#. type: Bullet: '* '
 #: _docs/Security_Model.md
 msgid "a repo is defined by having unique signing key, first and foremost"
 msgstr "Ein Repo ist, zuerst und vor allen Dingen, dadurch bestimmt, einen einzigartigen Signierschlüssel zu besitzen"
 
-#. type: Bullet: '-   '
+#. type: Bullet: '* '
 #: _docs/Security_Model.md
 msgid "[HTTPS connections by default](https://gitlab.com/fdroid/fdroidclient/blob/v0.100.1/app/src/main/res/values/default_repo.xml#L11)"
 msgstr "[HTTPS-Verbindungen als Standard](https://gitlab.com/fdroid/fdroidclient/blob/v0.100.1/app/src/main/res/values/default_repo.xml#L11)"
 
-#. type: Bullet: '-   '
+#. type: Bullet: '* '
 #: _docs/Security_Model.md
 msgid "server only works over HTTPS, [HTTP](http://f-droid.org) is a redirect"
 msgstr "der Server funktioniert nur über HTTPS, [HTTP](http://f-droid.org) fungiert als Weiterleitungsadresse"
 
-#. type: Bullet: '-   '
+#. type: Bullet: '* '
 #: _docs/Security_Model.md
 msgid "[Android enforces](https://developer.android.com/studio/publish/app-signing.html#considerations) that all apps have a valid signature over the entire contents of the APK file"
 msgstr "[Android fordert zwingend](https://developer.android.com/studio/publish/app-signing.html#considerations), dass alle Apps eine gültige Signatur besitzen, die sämtliche Inhalte der APK-Datei umfasst"
 
-#. type: Bullet: '-   '
+#. type: Bullet: '* '
 #: _docs/Security_Model.md
 msgid "[Android verifies updates](https://developer.android.com/studio/publish/app-signing.html#considerations) based on the signature of the installed app"
 msgstr "[Android überprüft Aktualisierungen](https://developer.android.com/studio/publish/app-signing.html#considerations) anhand der Signatur der installierten App"
 
-#. type: Bullet: '-   '
+#. type: Bullet: '* '
 #: _docs/Security_Model.md
 msgid "[file integrity](https://gitlab.com/fdroid/fdroidclient/blob/v0.101-alpha2/app/src/main/java/org/fdroid/fdroid/installer/ApkCache.java#L57) protected by [signed metadata](https://gitlab.com/fdroid/fdroidclient/blob/v0.101-alpha2/app/src/main/java/org/fdroid/fdroid/RepoUpdater.java#L212)"
 msgstr "Schutz der [Datenintegrität](https://gitlab.com/fdroid/fdroidclient/blob/v0.101-alpha2/app/src/main/java/org/fdroid/fdroid/installer/ApkCache.java#L57) durch [signierte Metadaten](https://gitlab.com/fdroid/fdroidclient/blob/v0.101-alpha2/app/src/main/java/org/fdroid/fdroid/RepoUpdater.java#L212)"
 
-#. type: Bullet: '-   '
+#. type: Bullet: '* '
 #: _docs/Security_Model.md
 msgid "As of [_index-v2_](https://gitlab.com/fdroid/fdroidserver/-/merge_requests/1092), files from the repo are verified based on SHA-256, including icons, screenshots, etc."
 msgstr "Ab [_index-v2_](https://gitlab.com/fdroid/fdroidserver/-/merge_requests/1092) werden Dateien aus dem Repo auf Basis von SHA-256 verifiziert, einschließlich Icons, Screenshots usw."
 
-#. type: Bullet: '-   '
+#. type: Bullet: '* '
 #: _docs/Security_Model.md
 msgid "_index-v2_ uses any algorithm supported by [_apksigner_](https://gitlab.com/fdroid/fdroidserver/-/merge_requests/1134) and [_android-23_](https://developer.android.com/reference/java/security/Signature) and newer, and relies on OpenJDK's and Google's maintenance of the currently valid signing algorithms.  When _index-v2_ was launched, the signature algorithm in use was `SHA256withRSA` and the digest algorithm was `SHA-256`.  _index-v1_ is signed by `SHA1withRSA`.  As of this writing, SHA1 are still considered strong against [second pre-image attacks](https://crypto.stackexchange.com/a/48291), which is what is relevant for index JARs."
 msgstr "_index-v2_ verwendet alle Algorithmen, die von [_apksigner_](https://gitlab.com/fdroid/fdroidserver/-/merge_requests/1134) und [_android-23_](https://developer.android.com/reference/java/security/Signature) und jünger unterstützt werden und vertraut auf die Aufrechterhaltung des momentan gültigen Signier-Algorithmus durch OpenJDK und Google.  Beim Start von _index-v2_ war der verwendete Signatur-Algorithmus `SHA256withRSA` und der Digest Algorithm `SHA-256`.  _index-v1_ ist durch `SHA1withRSA` signiert.  Während dies hier geschrieben wird, werden SHA1 immer noch als stark gegenüber [Second Preimage Attacks](https://crypto.stackexchange.com/a/48291) angesehen, was das Maßgebliche für Index-JARs ist."
 
-#. type: Bullet: '-   '
+#. type: Bullet: '* '
 #: _docs/Security_Model.md
 msgid "Production signing is handled by [reproducible builds](https://tests.reproducible-builds.org/debian/rb-pkg/unstable/amd64/android-platform-tools-apksig.html) of _apksigner_ from Debian."
 msgstr "Produktionssignierung wird durch [Reproduzierbare Builds](https://tests.reproducible-builds.org/debian/rb-pkg/unstable/amd64/android-platform-tools-apksig.html) des _apksigner_ von Debian erledigt."
 
-#. type: Bullet: '-   '
+#. type: Bullet: '* '
 #: _docs/Security_Model.md
 msgid "signed metadata includes hashes of [the app](https://gitlab.com/fdroid/fdroidserver/blob/0.6.0/fdroidserver/update.py#L460) and its [signing key](https://gitlab.com/fdroid/fdroidserver/blob/0.6.0/fdroidserver/update.py#L558)"
 msgstr "signierte Metadaten beinhalten Hashwerte für [die App](https://gitlab.com/fdroid/fdroidserver/blob/0.6.0/fdroidserver/update.py#L460) und deren [Signierschlüssel](https://gitlab.com/fdroid/fdroidserver/blob/0.6.0/fdroidserver/update.py#L558)"
 
-#. type: Bullet: '-   '
+#. type: Bullet: '* '
 #: _docs/Security_Model.md
 msgid "[signed metadata generated on a separate machine](https://gitlab.com/fdroid/fdroidserver/blob/0.6.0/fdroidserver/update.py#L989) (which is fully offline for f-droid.org and guardianproject.info)"
 msgstr "[signierte Metadaten, die auf einem gesonderten Rechner generiert werden](https://gitlab.com/fdroid/fdroidserver/blob/0.6.0/fdroidserver/update.py#L989) (der bei f-droid.org und guardianproject.info komplett offline ist)"
 
-#. type: Bullet: '-   '
+#. type: Bullet: '* '
 #: _docs/Security_Model.md
 msgid "[public key for verifying metadata signatures built into F-Droid client app](https://gitlab.com/fdroid/fdroidclient/blob/v0.100.1/app/src/main/res/values/default_repo.xml#L13)"
 msgstr "[in die F-Droid-App integrierter, öffentlicher Schlüssel zur Überprüfung der Metadaten-Signaturen](https://gitlab.com/fdroid/fdroidclient/blob/v0.100.1/app/src/main/res/values/default_repo.xml#L13)"
 
-#. type: Bullet: '-   '
+#. type: Bullet: '* '
 #: _docs/Security_Model.md
-msgid "signed metadata includes [timestamp](https://gitlab.com/fdroid/fdroidclient/commit/02b2090e530ab5d22b522d978728f34bb332b390)  and [expiry](https://gitlab.com/fdroid/fdroidserver/blob/0.6.0/fdroidserver/update.py#L775)"
+#, fuzzy
+#| msgid "signed metadata includes [timestamp](https://gitlab.com/fdroid/fdroidclient/commit/02b2090e530ab5d22b522d978728f34bb332b390)  and [expiry](https://gitlab.com/fdroid/fdroidserver/blob/0.6.0/fdroidserver/update.py#L775)"
+msgid "signed metadata includes [timestamp](https://gitlab.com/fdroid/fdroidclient/commit/02b2090e530ab5d22b522d978728f34bb332b390) and [expiry](https://gitlab.com/fdroid/fdroidserver/blob/0.6.0/fdroidserver/update.py#L775)"
 msgstr "signierte Metadaten enthalten einen [Zeitstempel](https://gitlab.com/fdroid/fdroidclient/commit/02b2090e530ab5d22b522d978728f34bb332b390)  und ein [Verfallsdatum](https://gitlab.com/fdroid/fdroidserver/blob/0.6.0/fdroidserver/update.py#L775)"
 
-#. type: Bullet: '-   '
+#. type: Bullet: '* '
 #: _docs/Security_Model.md
 msgid "easy Tor support via Settings"
 msgstr "einfache Tor-Unterstützung über die Einstellungen"
 
-#. type: Bullet: '-   '
+#. type: Bullet: '* '
 #: _docs/Security_Model.md
-msgid "[client-side HTTP ETag cache check](https://gitlab.com/fdroid/fdroidclient/issues/562)  so the ETag cannot be abused to track users"
+#, fuzzy
+#| msgid "[client-side HTTP ETag cache check](https://gitlab.com/fdroid/fdroidclient/issues/562)  so the ETag cannot be abused to track users"
+msgid "[client-side HTTP ETag cache check](https://gitlab.com/fdroid/fdroidclient/issues/562) so the ETag cannot be abused to track users"
 msgstr "[client-side HTTP ETag cache check](https://gitlab.com/fdroid/fdroidclient/issues/562)  so dass das ETag nicht missbraucht werden kann, um Benutzer zu verfolgen"
 
-#. type: Bullet: '-   '
+#. type: Bullet: '* '
 #: _docs/Security_Model.md
-msgid "list of official mirrors included in signed metadata, then the client [chooses mirrors](https://gitlab.com/fdroid/fdroidclient/issues/35)  based on availability and freshness based on local criteria like whether Tor is in use"
+#, fuzzy
+#| msgid "list of official mirrors included in signed metadata, then the client [chooses mirrors](https://gitlab.com/fdroid/fdroidclient/issues/35)  based on availability and freshness based on local criteria like whether Tor is in use"
+msgid "list of official mirrors included in signed metadata, then the client [chooses mirrors](https://gitlab.com/fdroid/fdroidclient/issues/35) based on availability and freshness based on local criteria like whether Tor is in use"
 msgstr "Liste der offiziellen Spiegel, die in signierten Metadaten enthalten sind, dann wählt der Client [Spiegel](https://gitlab.com/fdroid/fdroidclient/issues/35) basierend auf Verfügbarkeit und Aktualität basierend auf lokalen Kriterien wie z. B. ob Tor verwendet wird"
+
+#. type: Bullet: '* '
+#: _docs/Security_Model.md
+msgid "Client [requires](https://gitlab.com/fdroid/fdroidclient/-/merge_requests/1577) that [TLS certificate transparency](https://developer.android.com/privacy-and-security/security-config#CertificateTransparencySummary) is enabled for f-droid.org and other domains commonly used by repos and mirrors."
+msgstr ""
 
 #. type: Plain text
 #: _docs/Security_Model.md
 msgid "While the current setup is already a solid platform, there are a number of improvements that make sense to implement:"
 msgstr "Obwohl das aktuelle Setup bereits eine solide Plattform ist, gibt es eine Reihe von Verbesserungen, die sinnvoll sind:"
 
-#. type: Bullet: '-   '
+#. type: Bullet: '* '
 #: _docs/Security_Model.md
 msgid "better handling of index expiry aka \"max age\""
 msgstr "bessere Handhabung des Indexablaufs oder auch „max age“"
 
-#. type: Bullet: '-   '
+#. type: Bullet: '* '
 #: _docs/Security_Model.md
 msgid "[pinned TLS certificate built into the client app](https://gitlab.com/fdroid/fdroidclient/commit/0429b3f7dd4a6037fa11df64bfdd176ea378e6bf)"
 msgstr "[in den Client integriertes, fest verankertes TLS-Zertifikat](https://gitlab.com/fdroid/fdroidclient/commit/0429b3f7dd4a6037fa11df64bfdd176ea378e6bf)"
@@ -11736,7 +11822,9 @@ msgstr "[PGP-Signatur]({{ site.fdroid_apk_download_url }}.asc) der [Download-Ver
 
 #. type: Bullet: '* '
 #: _docs/Security_Model.md
-msgid "automated [regular](https://gitlab.com/fdroid/fdroid-website/-/jobs/47503948)  and [random](https://verification.f-droid.org/check-fdroid-apk)  [auditing](https://gitlab.com/fdroid/fdroidserver/blob/dfbe114af3c4cef15ce3aa5e979d9f4684f2acbc/tests/check-fdroid-apk)  that [F-Droid.apk]({{ site.fdroid_apk_download_url }}) has not been tampered with"
+#, fuzzy
+#| msgid "automated [regular](https://gitlab.com/fdroid/fdroid-website/-/jobs/47503948)  and [random](https://verification.f-droid.org/check-fdroid-apk)  [auditing](https://gitlab.com/fdroid/fdroidserver/blob/dfbe114af3c4cef15ce3aa5e979d9f4684f2acbc/tests/check-fdroid-apk)  that [F-Droid.apk]({{ site.fdroid_apk_download_url }}) has not been tampered with"
+msgid "automated [regular](https://gitlab.com/fdroid/fdroid-website/-/jobs/47503948) and [random](https://verification.f-droid.org/check-fdroid-apk) [auditing](https://gitlab.com/fdroid/fdroidserver/blob/dfbe114af3c4cef15ce3aa5e979d9f4684f2acbc/tests/check-fdroid-apk) that [F-Droid.apk]({{ site.fdroid_apk_download_url }}) has not been tampered with"
 msgstr "automatisierte [regelmäßige](https://gitlab.com/fdroid/fdroid-website/-/jobs/47503948)  und [stichprobenartige](https://verification.f-droid.org/check-fdroid-apk)  [Auditierungen](https://gitlab.com/fdroid/fdroidserver/blob/dfbe114af3c4cef15ce3aa5e979d9f4684f2acbc/tests/check-fdroid-apk),  dass an [F-Droid.apk]({{ site.fdroid_apk_download_url }}) keine unerlaubten Änderungen vorgenommen wurden"
 
 #. type: Bullet: '* '
@@ -11781,31 +11869,20 @@ msgstr "Schutz vor böswilligen Daten, die von Mitwirkenden erzeugt wurden"
 msgid "The app descriptions are submitted by all sorts of people, and they can also be taken from the app's source repository.  This data is ultimately delivered to the Android client or the user's browser via _f-droid.org_."
 msgstr "Die App-Beschreibungen werden von allen möglichen Personen eingereicht und können auch aus dem Quell-Repository der App entnommen werden.  Diese Daten werden schließlich über _f-droid.org_ an den Android-Client oder den Browser des Benutzers übermittelt."
 
-#. type: Plain text
+#. type: Bullet: '* '
 #: _docs/Security_Model.md
-#, no-wrap
-msgid ""
-"* the Android client never runs CSS, JavaScript, or dangerous HTML\n"
-"tags since it displays HTML via\n"
-"[`android.text.Html.fromHtml()`](https://gitlab.com/fdroid/fdroidclient/blob/1.3.1/app/src/main/java/org/fdroid/fdroid/views/AppDetailsRecyclerViewAdapter.java#L441)\n"
-"with image loading disabled\n"
-"* the _f-droid.org_ website protects against malicious and\n"
-"CSS/HTML/JavaScript injection with a\n"
-"[strict HTTP Content Security Policy](https://observatory.mozilla.org/analyze/f-droid.org).\n"
-"* Repomaker filters the texts through Mozilla's\n"
-"[_bleach_](https://github.com/mozilla/bleach) and has a good\n"
-"[HTTP Content Security Policy](https://observatory.mozilla.org/analyze.html?host=repomaker.grobox.de).\n"
+msgid "the Android client never runs CSS, JavaScript, or dangerous HTML tags since it displays HTML via [`android.text.Html.fromHtml()`](https://gitlab.com/fdroid/fdroidclient/blob/1.3.1/app/src/main/java/org/fdroid/fdroid/views/AppDetailsRecyclerViewAdapter.java#L441) with image loading disabled"
 msgstr ""
-"* der Android-Client führt niemals CSS, JavaScript oder gefährliches HTML Tags aus,\n"
-"da es HTML anzeigt via\n"
-"[`android.text.Html.fromHtml()`](https://gitlab.com/fdroid/fdroidclient/blob/1.3.1/app/src/main/java/org/fdroid/fdroid/views/AppDetailsRecyclerViewAdapter.java#L441)\n"
-"mit deaktiviertem Laden von Bilddern\n"
-"* die _f-droid.org_ Webseite schützt vor bösartiger und\n"
-"CSS/HTML/JavaScript-Injektion mit einer\n"
-"[strikten HTTP Inhaltssicherheitsrichtlinie](https://observatory.mozilla.org/analyze/f-droid.org).\n"
-"* Repomaker filtert die Texte durch Mozillas\n"
-"[_Bleach_](https://github.com/mozilla/bleach) und hat eine gute\n"
-"[HTTP Inhaltssicherheitsrichtlinie](https://observatory.mozilla.org/analyze.html?host=repomaker.grobox.de).\n"
+
+#. type: Bullet: '* '
+#: _docs/Security_Model.md
+msgid "the _f-droid.org_ website protects against malicious and CSS/HTML/JavaScript injection with a [strict HTTP Content Security Policy](https://observatory.mozilla.org/analyze/f-droid.org)."
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/Security_Model.md
+msgid "Repomaker filters the texts through Mozilla's [_bleach_](https://github.com/mozilla/bleach) and has a good [HTTP Content Security Policy](https://observatory.mozilla.org/analyze.html?host=repomaker.grobox.de)."
+msgstr ""
 
 #. type: Title ##
 #: _docs/Security_Model.md
@@ -11821,7 +11898,9 @@ msgstr "F-Droid hat eine lange Tradition, alle Android-Geräte zu unterstützen,
 
 #. type: Plain text
 #: _docs/Security_Model.md
-msgid "Some security scanners will flag this site because TLSv1.1 and TLSv1.0 are still supported.  More importantly, this site supports TLSv1.3 and TLSv1.2, both of which offer downgrade protections.  On top of that, the latest browsers and F-Droid clients entirely disable TLSv1.1 and TLSv1.0, making it impossible to force those devices to use those vulnerable TLS versions.  So the only connections using old TLS versions actually needs those old versions to function.  If you are on a device that still needs to use TLS 1.0 or 1.1, then there are already so many well known security vulnerabilities that this one is not particularly interesting."
+#, fuzzy
+#| msgid "Some security scanners will flag this site because TLSv1.1 and TLSv1.0 are still supported.  More importantly, this site supports TLSv1.3 and TLSv1.2, both of which offer downgrade protections.  On top of that, the latest browsers and F-Droid clients entirely disable TLSv1.1 and TLSv1.0, making it impossible to force those devices to use those vulnerable TLS versions.  So the only connections using old TLS versions actually needs those old versions to function.  If you are on a device that still needs to use TLS 1.0 or 1.1, then there are already so many well known security vulnerabilities that this one is not particularly interesting."
+msgid "Some security scanners will flag this site because TLSv1.1 and TLSv1.0 are still supported.  More importantly, this site supports TLSv1.3 and TLSv1.2, both of which offer downgrade protections.  On top of that, the latest browsers and F-Droid clients [entirely](https://blog.mozilla.org/security/2018/10/15/removing-old-versions-of-tls/) [disable](https://webkit.org/blog/8462/deprecation-of-legacy-tls-1-0-and-1-1-versions/) [TLSv1.1](https://blogs.windows.com/msedgedev/2018/10/15/modernizing-tls-edge-ie11/) and [TLSv1.0](https://security.googleblog.com/2018/10/modernizing-transport-security.html), making it impossible to force those devices to use those vulnerable TLS versions.  So the only connections using old TLS versions actually needs those old versions to function.  If you are on a device that still needs to use TLS 1.0 or 1.1, then there are already so many well known security vulnerabilities that this one is not particularly interesting."
 msgstr "Bestimmte Sicherheitsinstrumente werden diese Internetseite melden, weil hier noch TLSv1.1 and TLSv1.0 unterstützt wird.  Wichtiger ist, diese Seite unterstützt TLSv1.3 and TLSv1.2, von denen beide Abwärtsschutz bieten.  Zusätzlich deaktivieren die modernsten Browser sowie F-Droid-Clients TLSv1.1 und TLSv1.0 komplett, sodass es unmöglich wird, jene Geräte dazu zu zwingen, diese anfälligen TLS-Versionen zu verwenden.  Somit sind eigentlich die einzigen Verbindungen, die alte TLS-Versionen verwenden, jene durch alte Versionen, die diese brauchen um zu funktionieren.  Sollten Sie noch ein Gerät verwenden, das noch TLS 1.0 or 1.1 nutzen muss, dann gibt es bereits so viele bestens bekannte Sicherheitsrisiken, dass diese eine nicht mehr sonderlich interessant ist."
 
 #. type: Plain text
@@ -11847,17 +11926,23 @@ msgstr "Sicherheitsaudits"
 
 #. type: Bullet: '1. '
 #: _docs/Security_Model.md
-msgid "There was a quick, informal [security audit](https://dev.guardianproject.info/projects/bazaar/wiki/Initial_FDroid_Audit_by_pd0x)  ([_archived_](https://web.archive.org/web/20170317154208/https://dev.guardianproject.info/projects/bazaar/wiki/Initial_FDroid_Audit_by_pd0x))  done in 2013 by then graduate student Daniel McCarney aka _pd0x_."
+#, fuzzy
+#| msgid "There was a quick, informal [security audit](https://dev.guardianproject.info/projects/bazaar/wiki/Initial_FDroid_Audit_by_pd0x)  ([_archived_](https://web.archive.org/web/20170317154208/https://dev.guardianproject.info/projects/bazaar/wiki/Initial_FDroid_Audit_by_pd0x))  done in 2013 by then graduate student Daniel McCarney aka _pd0x_."
+msgid "There was a quick, informal [security audit](https://dev.guardianproject.info/projects/bazaar/wiki/Initial_FDroid_Audit_by_pd0x) ([_archived_](https://web.archive.org/web/20170317154208/https://dev.guardianproject.info/projects/bazaar/wiki/Initial_FDroid_Audit_by_pd0x)) done in 2013 by then graduate student Daniel McCarney aka _pd0x_."
 msgstr "Es wurde ein kurzes, informelles [Sicherheitsaudit](https://dev.guardianproject.info/projects/bazaar/wiki/Initial_FDroid_Audit_by_pd0x) ([_archiviert_](https://web.archive.org/web/20170317154208/https://dev.guardianproject.info/projects/bazaar/wiki/Initial_FDroid_Audit_by_pd0x))  im Jahr 2013 durch den damaligen Hochschulabsolventen Daniel McCarney, auch bekannt unter _pd0x_, durchgeführt."
 
 #. type: Bullet: '2. '
 #: _docs/Security_Model.md
-msgid "The first \"Bazaar\" project funded by [Open Tech Fund](https://opentech.fund) included an [external public audit]({{ site.baseurl }}/2018/01/20/upcoming-security-audit.html)  from [Cure53](https://cure53.de)"
+#, fuzzy
+#| msgid "The first \"Bazaar\" project funded by [Open Tech Fund](https://opentech.fund) included an [external public audit]({{ site.baseurl }}/2018/01/20/upcoming-security-audit.html)  from [Cure53](https://cure53.de)"
+msgid "The first \"Bazaar\" project funded by [Open Tech Fund](https://opentech.fund) included an [external public audit]({{ site.baseurl }}/2018/01/20/upcoming-security-audit.html) from [Cure53](https://cure53.de)"
 msgstr "Das erste, von [Open Tech Fund](https://opentech.fund) finanzierte „Bazaar“-Projekt schloss ein [externes öffentliches Audit]({{ site.baseurl }}/2018/01/20/upcoming-security-audit.html) von [Cure53](https://cure53.de) ein"
 
 #. type: Bullet: '3. '
 #: _docs/Security_Model.md
-msgid "The second \"Bazaar 2\" project funded by Open Tech Fund included an [external public audit]({{ site.baseurl }}/2018/09/04/second-security-audit-results.html)  from [Radically Open Security](https://radicallyopensecurity.com/)"
+#, fuzzy
+#| msgid "The second \"Bazaar 2\" project funded by Open Tech Fund included an [external public audit]({{ site.baseurl }}/2018/09/04/second-security-audit-results.html)  from [Radically Open Security](https://radicallyopensecurity.com/)"
+msgid "The second \"Bazaar 2\" project funded by Open Tech Fund included an [external public audit]({{ site.baseurl }}/2018/09/04/second-security-audit-results.html) from [Radically Open Security](https://radicallyopensecurity.com/)"
 msgstr "Das zweite, von Open Tech Fund finanzierte „Bazaar 2“-Projekt schloss ein [externes öffentliches Audit]({{ site.baseurl }}/2018/09/04/second-security-audit-results.html) von [Radically Open Security](https://radicallyopensecurity.com/) ein"
 
 #. type: Bullet: '4. '
@@ -13211,3 +13296,27 @@ msgstr "Einstellungen"
 #: _docs/Whitelabel_Builds.md
 msgid "For a custom build that enables Automatic Updates by default, override _app/src/main/res/xml/preferences.xml_. You can customize the preferences and their default values in _app/src/mycompany/res/xml/preferences.xml_. The fully automatic update requires [Privileged Extension](https://gitlab.com/fdroid/privileged-extension). With regular access, the updates will only automatically download. The user still needs to click install on each one."
 msgstr "Für eine angepasste F-Droid-Variante, die Automatische Aktualisierungen standardmäßig aktiviert, überschreiben Sie _app/src/main/res/xml/preferences.xml_. Sie können die Einstellungen und deren Standardwerte in _app/src/mycompany/res/xml/preferences.xml_ anpassen. Das vollautomatische Update benötigt [System-/Root-Zugriff](https://gitlab.com/fdroid/privileged-extension). Mit Standardberechtigungen werden die Updates nur automatisch heruntergeladen. Der Nutzer muss weiterhin jedes Update einzeln installieren."
+
+#, no-wrap
+#~ msgid ""
+#~ "* the Android client never runs CSS, JavaScript, or dangerous HTML\n"
+#~ "tags since it displays HTML via\n"
+#~ "[`android.text.Html.fromHtml()`](https://gitlab.com/fdroid/fdroidclient/blob/1.3.1/app/src/main/java/org/fdroid/fdroid/views/AppDetailsRecyclerViewAdapter.java#L441)\n"
+#~ "with image loading disabled\n"
+#~ "* the _f-droid.org_ website protects against malicious and\n"
+#~ "CSS/HTML/JavaScript injection with a\n"
+#~ "[strict HTTP Content Security Policy](https://observatory.mozilla.org/analyze/f-droid.org).\n"
+#~ "* Repomaker filters the texts through Mozilla's\n"
+#~ "[_bleach_](https://github.com/mozilla/bleach) and has a good\n"
+#~ "[HTTP Content Security Policy](https://observatory.mozilla.org/analyze.html?host=repomaker.grobox.de).\n"
+#~ msgstr ""
+#~ "* der Android-Client führt niemals CSS, JavaScript oder gefährliches HTML Tags aus,\n"
+#~ "da es HTML anzeigt via\n"
+#~ "[`android.text.Html.fromHtml()`](https://gitlab.com/fdroid/fdroidclient/blob/1.3.1/app/src/main/java/org/fdroid/fdroid/views/AppDetailsRecyclerViewAdapter.java#L441)\n"
+#~ "mit deaktiviertem Laden von Bilddern\n"
+#~ "* die _f-droid.org_ Webseite schützt vor bösartiger und\n"
+#~ "CSS/HTML/JavaScript-Injektion mit einer\n"
+#~ "[strikten HTTP Inhaltssicherheitsrichtlinie](https://observatory.mozilla.org/analyze/f-droid.org).\n"
+#~ "* Repomaker filtert die Texte durch Mozillas\n"
+#~ "[_Bleach_](https://github.com/mozilla/bleach) und hat eine gute\n"
+#~ "[HTTP Inhaltssicherheitsrichtlinie](https://observatory.mozilla.org/analyze.html?host=repomaker.grobox.de).\n"
