@@ -41,6 +41,7 @@ What is the difference between easy and advanced options?
   [SHIFT5mq](https://shop.shiftphones.com/shift5me.html) and [SHIFT6mq
   model](https://shop.shiftphones.com/shift6mq.htm) can be updated to ShiftOS-Light.
   F-Droid is pre-installed on ShiftOS-Light.
+* __Volla__ - [Volla Systems](https://volla.online/en/about/) (not to be confused with [Jolla](https://en.wikipedia.org/wiki/Jolla_(smartphone))) is an independent, German manufacturer of smartphones, optionally with its own Android operating system Volla OS or the mobile Linux distribution Ubuntu Touch. F-Droid comes pre-installed on, the Android based, VollaOS. F-Droid can also be installed on Ubuntu Touch following [this guide](https://docs.ubports.com/en/latest/userguide/dailyuse/waydroid.html).
 
 ### Option 2. Download and install F-Droid APK.
 
@@ -55,8 +56,7 @@ Below is the same steps as above. But with details if you are interested in thos
 
 **Details steps for newcomers to install F-Droid APK:**
 
-1. [Tap on this link](https://f-droid.org/F-Droid.apk) to both download and start the installation of the official F-Droid APK.
-    * Alternatively, if somehow your internet browser force you to download this `F-Droid.apk` file without automatically starting its installation, double check that this file is stored into your Android devise internal storage. So that it automatically has the appropriation permissions. Do not store this file into an external storage. Then using your Android file Manager, tap on the `F-Droid.apk` file.
+1. [Tap on this link](https://f-droid.org/F-Droid.apk) to both download and start the installation of the official F-Droid APK. (Alternatively, if somehow your internet browser force you to download this `F-Droid.apk` file without automatically starting its installation, double check that this file is stored into your Android devise internal storage. So that it automatically has the appropriation permissions. Do not store this file into an external storage. Then using your Android file Manager, tap on the `F-Droid.apk` file.)
 1. When Android prompts, allow the installation from Unknown Sources
 1. When prompts, tap on `Install` F-Droid
 1. When prompts, tap on `Open` F-Droid
@@ -74,8 +74,8 @@ Below is the same steps as above. But with details if you are interested in thos
 
 If you're planning on flashing a custom ROM, these ROMs might be interesting for you because they come with F-Droid built-in and ready to use:
 
-- __CalyxOS__ - https://calyxos.org
-- __LineageOS for MicroG__ - https://lineage.microg.org
+* __CalyxOS__ - https://calyxos.org
+* __LineageOS for MicroG__ - https://lineage.microg.org
 
 #### Option 4. Flash F-Droid OTA.
 
