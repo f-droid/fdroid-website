@@ -18,7 +18,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2025-08-21 15:30+0200\n"
-"PO-Revision-Date: 2025-08-21 12:02+0000\n"
+"PO-Revision-Date: 2025-08-27 14:40+0000\n"
 "Last-Translator: Liner Seven <linour7gmekiblo@gmail.com>\n"
 "Language-Team: Japanese <https://hosted.weblate.org/projects/f-droid/website-docs/ja/>\n"
 "Language: ja\n"
@@ -3283,6 +3283,10 @@ msgid ""
 "    source is cloned. Submodules are reset and cleaned like the main app\n"
 "    repository itself before each build.\n"
 msgstr ""
+":   (Gitのみ)プロジェクトにサブモジュールが含まれる場合に使用 - ソースのクローン後に\n"
+"    `git submodule update --init --recursive`を実行します。\n"
+"    サブモジュールは各ビルド前に、メインのアプリリポジトリと同様に\n"
+"    リセット及びクリーンアップがなされます。\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -3302,6 +3306,13 @@ msgid ""
 "    need very specific things that are not appropriate to install for\n"
 "    all builds, or for things that would conflict with other builds.\n"
 msgstr ""
+":   ビルド・サーバーのVMゲスト内で `sudo bash -x -c \"xxxx\"`を使用して\n"
+"    実行するスクリプトを指定します。  このスクリプトは完全なroot権限で実行されますが、\n"
+"    各ビルド後に状態はリセットされます。  殆どのアプリは\n"
+"    標準のDebian/stableベース環境でビルドされます。これは、\n"
+"    全てのビルドにインストールすべきではない非常に特殊な要件を必要とする複雑なビルド、\n"
+"    或いは他ビルドと競合する可能性のある要件を設定するために\n"
+"    ビルド・サーバーを構成する場合に有用です。\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -3317,6 +3328,9 @@ msgid ""
 "    buildserver VM is forcefully terminated.  The default is 7200\n"
 "    (2 hours); 0 means no limit.\n"
 msgstr ""
+":   当該ビルドの時間制限(秒単位)。  時間切れとなった後、\n"
+"    ビルド・サーバーのVMは強制終了されます。  標準では7200\n"
+"    (2時間); 0にした場合は無制限です。\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -3325,6 +3339,8 @@ msgid ""
 "    Limitation is applied only in server mode, i.e. when `fdroid build`\n"
 "    is invoked with the `--server` option.\n"
 msgstr ""
+"    サーバーモードでのみ制限適用されます。例えば `fdroid build` 時\n"
+"    に `--server` オプションで呼び出されます。\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -3339,6 +3355,8 @@ msgid ""
 ":   Like [`prebuild`](#build_prebuild), but runs on the source code BEFORE any\n"
 "    other processing takes place.\n"
 msgstr ""
+":   [`prebuild`](#build_prebuild)のようなもの、 ただし他の処理\n"
+"    の実施前にソースコード上で実行されます。\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -3349,6 +3367,10 @@ msgid ""
 "    per-build variables are available likewise: `$$VERSION$$`,\n"
 "    `$$VERCODE$$` and `$$COMMIT$$`.\n"
 msgstr ""
+"    Android SDK・NDKディレクトリのパスをそれぞれに置換するには\n"
+"    `$$SDK$$` および `$$NDK$$` を使用できます。同様に\n"
+"    ビルドごとに次の変数が利用可能です: `$$VERSION$$`、\n"
+"    `$$VERCODE$$` ・ `$$COMMIT$$`。\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -9850,11 +9872,11 @@ msgid ""
 "    }\n"
 "  }\n"
 msgstr ""
-"android {\n"
-"    aaptOptions {\n"
-"        cruncherEnabled = false\n"
+"  tasks.whenTaskAdded {\n"
+"    if (name.contains(\"ArtProfile\")) {\n"
+"        enabled = false\n"
 "    }\n"
-"}\n"
+"  }\n"
 
 #. type: Title ####
 #: _docs/Reproducible_Builds.md
