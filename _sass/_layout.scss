@@ -375,6 +375,10 @@ body {
 
             margin: 0 30px;
 
+            [dir='rtl'] & {
+                transform: scaleX(-1);
+            }
+
             @include media-query($phone) {
                 margin: 0;
             }
@@ -390,6 +394,10 @@ body {
             display: inline-block;
             vertical-align: middle;
             margin: 10px;
+
+            [dir='rtl'] & {
+                transform: scaleX(-1);
+            }
 
             @include media-query($phone) {
                 margin: 5px;
@@ -417,13 +425,30 @@ body {
 
         .next {
             right: 0;
+
+            [dir='rtl'] & {
+                left: 0;
+                right: unset;
+            }
+
             svg {
                 right: 0;
+
+                [dir='rtl'] & {
+                    left: 0;
+                    right: unset;
+                    transform: scaleX(-1);
+                }
             }
         }
 
         .prev {
             left: 0;
+            
+            [dir='rtl'] & {
+                left: unset;
+                right: 0;
+            }
         }
 
         .next svg, .prev svg {
@@ -432,6 +457,11 @@ body {
             position: absolute;
             top: 50%;
             margin-top: -25px;
+
+            [dir='rtl'] & {
+                right: 0;
+                transform: scaleX(-1);
+            }
         }
     }
 
