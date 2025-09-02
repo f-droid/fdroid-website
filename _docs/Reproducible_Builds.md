@@ -474,7 +474,11 @@ repositories {
 }
 ```
 
-While we understand that developers build and test during their normal workflow, please upload release APKs built after tagging, from a clean tree at the actual tagged commit (i.e. without local changes or remaining artefacts from previous builds). Only in exceptional cases, when you cannot do this, should `vcsInfo` be disabled (as this might otherwise cause problems), which can be done as follows:
+While we understand that developers build and test during their normal workflow, please upload
+release APKs built after tagging, from a clean tree at the actual tagged commit (i.e. without
+local changes or remaining artefacts from previous builds). Only in exceptional cases, when you
+cannot do this, should `vcsInfo` be disabled (as this might otherwise cause problems), which can
+be done as follows:
 
 ```gradle
     buildTypes {
@@ -483,9 +487,6 @@ While we understand that developers build and test during their normal workflow,
         }
     }
 ```
-
-While we understand that developers build and test during their normal workflow, please upload
-releases APKs build after tagging, from the actual tagged commit.
 
 
 #### ZIP metadata
