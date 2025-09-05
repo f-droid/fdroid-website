@@ -33,6 +33,7 @@ The primary resources required by a mirror are disk space and upload bandwidth.
 Bandwidth requirements are reduced with each new mirror, but disk requirements grow at a [reasonable rate](https://ftp.fau.de/cgi-bin/show-ftp-stats.cgi?statstype=2&what=mirrorsize&mirrorname=fdroid&timespan=-1&graphsize=large&submit=Go%21).
 In March 2019, the primary repository required just over 60GB of disk space in 24K files, and the archive required 300GB of disk space in 52K files.
 In February 2024, the primary repository required 450GB in 180K files, and the archive required 1.9TB in 430K files.
+In September 2025, the primary repository required 675GB in 189K files, and the archive required 3.78TB in 538K files.
 The amount of disk space required grows with every new app release.
 
 There are many mirror servers which offer an _rsync_ connection, make sure to select the mirror closest to your mirror server:
