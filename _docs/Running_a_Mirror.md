@@ -111,7 +111,7 @@ server {
 
 ##### 5. Test that your mirror works
 
-Manually add your mirror to F-Droid to test that it works.
+Manually add your mirror to [F-Droid client](https://f-droid.org/packages/org.fdroid.fdroid/) to test that it works.
 
 Go to Settings -> Repositories, click the "+" button, and then manually enter your repository URL (don't use the QR code):
 https://fdroidmirror.example.com/fdroid/repo?fingerprint=43238D512C1E5EB2D6569F4A3AFBF5523418B82E0A3ED1552770ABB9A9C9CCAB
