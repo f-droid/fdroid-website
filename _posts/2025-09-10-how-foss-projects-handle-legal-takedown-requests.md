@@ -12,7 +12,7 @@ When a legal takedown request arrives, whether it’s about copyright, censorshi
 
 ## A Pattern Emerges
 
-Despite differences in jurisdiction, size, and mission, a few common themes from our research appeared in how other projects handle takedown requests:
+Despite differences in jurisdiction, size, and mission, a few common themes from our research emerged when we asked how other projects handle takedown requests:
 
 ### 1. Don’t Be a Soft Target
 
