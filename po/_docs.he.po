@@ -8,7 +8,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2025-08-21 15:30+0200\n"
+"POT-Creation-Date: 2025-09-11 16:58+0200\n"
 "PO-Revision-Date: 2025-08-22 11:46+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/f-droid/website-docs/he/>\n"
@@ -6189,6 +6189,11 @@ msgstr ""
 msgid "__ShiftOS-Light__ - Shift Phone is a German phone vendor specializing in sustainable electronics.  With some [manual steps](https://www.shiftphones.com/hilfe_faqs/was-ist-shiftos-l/) their [SHIFT5mq](https://shop.shiftphones.com/shift5me.html) and [SHIFT6mq model](https://shop.shiftphones.com/shift6mq.htm) can be updated to ShiftOS-Light.  F-Droid is pre-installed on ShiftOS-Light."
 msgstr ""
 
+#. type: Bullet: '* '
+#: _docs/Get_F-Droid.md
+msgid "__Volla__ - [Volla Systems](https://volla.online/en/about/) (not to be confused with [Jolla](https://en.wikipedia.org/wiki/Jolla_(smartphone))) is an independent, German manufacturer of smartphones, optionally with its own Android operating system Volla OS or the mobile Linux distribution Ubuntu Touch. F-Droid comes pre-installed on, the Android based, VollaOS. F-Droid can also be installed on Ubuntu Touch following [this guide](https://docs.ubports.com/en/latest/userguide/dailyuse/waydroid.html)."
+msgstr ""
+
 #. type: Title ###
 #: _docs/Get_F-Droid.md
 #, no-wrap
@@ -6229,12 +6234,7 @@ msgstr ""
 
 #. type: Bullet: '1. '
 #: _docs/Get_F-Droid.md
-msgid "[Tap on this link](https://f-droid.org/F-Droid.apk) to both download and start the installation of the official F-Droid APK."
-msgstr ""
-
-#. type: Bullet: '    * '
-#: _docs/Get_F-Droid.md
-msgid "Alternatively, if somehow your internet browser force you to download this `F-Droid.apk` file without automatically starting its installation, double check that this file is stored into your Android devise internal storage. So that it automatically has the appropriation permissions. Do not store this file into an external storage. Then using your Android file Manager, tap on the `F-Droid.apk` file."
+msgid "[Tap on this link](https://f-droid.org/F-Droid.apk) to both download and start the installation of the official F-Droid APK. (Alternatively, if somehow your internet browser force you to download this `F-Droid.apk` file without automatically starting its installation, double check that this file is stored into your Android devise internal storage. So that it automatically has the appropriation permissions. Do not store this file into an external storage. Then using your Android file Manager, tap on the `F-Droid.apk` file.)"
 msgstr ""
 
 #. type: Bullet: '1. '
@@ -6288,12 +6288,12 @@ msgstr ""
 msgid "If you're planning on flashing a custom ROM, these ROMs might be interesting for you because they come with F-Droid built-in and ready to use:"
 msgstr ""
 
-#. type: Bullet: '- '
+#. type: Bullet: '* '
 #: _docs/Get_F-Droid.md
 msgid "__CalyxOS__ - https://calyxos.org"
 msgstr ""
 
-#. type: Bullet: '- '
+#. type: Bullet: '* '
 #: _docs/Get_F-Droid.md
 msgid "__LineageOS for MicroG__ - https://lineage.microg.org"
 msgstr ""
@@ -10029,11 +10029,6 @@ msgid ""
 "    }\n"
 msgstr ""
 
-#. type: Plain text
-#: _docs/Reproducible_Builds.md
-msgid "While we understand that developers build and test during their normal workflow, please upload releases APKs build after tagging, from the actual tagged commit."
-msgstr ""
-
 #. type: Title ####
 #: _docs/Reproducible_Builds.md
 #, fuzzy, no-wrap
@@ -10509,7 +10504,7 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/Running_a_Mirror.md
-msgid "Whenever F-Droid has built a new index, it proactively pushes it to a selected set of mirrors, called the \"primary mirrors\".  In other words, primary mirrors are updated nearly immediately.  As of September 2024, the primary mirrors are ([latest list](https://gitlab.com/fdroid/web-services/-/blob/master/origin-04-mirror-push.yml)):"
+msgid "Whenever F-Droid has built a new index, it proactively pushes it to a selected set of mirrors, called the \"primary mirrors\". In other words, primary mirrors are updated nearly immediately. The primary mirrors are configured in ([latest list](https://gitlab.com/fdroid/web-services/-/blob/master/origin-04-mirror-push.yml)):"
 msgstr ""
 
 #. type: Bullet: '* '
@@ -10529,18 +10524,18 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/Running_a_Mirror.md
-msgid "Most other mirrors are \"secondary mirrors\".  These mirrors sync periodically (e.g., every 4 hours) from one of the primary mirrors."
+msgid "The other mirrors are \"secondary mirrors\".  These mirrors should sync periodically (e.g., every 4 hours) from one of the primary mirrors. Therefore, secondary mirrors usually have a small propagation delay.  Nevertheless, note that in practice the time between any two index updates is dominated by the time to update and build the apps (in the order of days). Limiting the number of primary mirrors keeps the load on the _f-droid.org originserver_ small.  It is possible to have a \"tertiary mirror\" by syncing from a secondary mirror, which could make sense given local bandwidth constraints."
 msgstr ""
 
 #. type: Plain text
 #: _docs/Running_a_Mirror.md
-msgid "Therefore, secondary mirrors usually have a small propagation delay.  Nevertheless, note that in practice the time between any two index updates is dominated by the time to update and build the apps (in the order of days).  Not having too many primary mirrors also keeps the load on the F-Droid origin server small."
+msgid "There are many mirror servers which offer an _rsync_ connection, make sure to select the mirror closest to your mirror server:"
 msgstr ""
 
 #. type: Plain text
 #: _docs/Running_a_Mirror.md
-msgid "Technically, you can also have a \"tertiary mirror\" by syncing from a secondary mirror, and so on."
-msgstr ""
+msgid "{% include running-a-mirror-rsync.html %}"
+msgstr "{% include running-a-mirror-rsync.html %}"
 
 #. type: Title ####
 #: _docs/Running_a_Mirror.md
@@ -10555,18 +10550,28 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/Running_a_Mirror.md
-msgid "The primary resources required by a mirror are disk space and upload bandwidth.  Bandwidth requirements are reduced with each new mirror, but disk requirements grow at a [reasonable rate](https://ftp.fau.de/cgi-bin/show-ftp-stats.cgi?statstype=2&what=mirrorsize&mirrorname=fdroid&timespan=-1&graphsize=large&submit=Go%21).  In March 2019, the primary repository required just over 60GB of disk space in 24K files, and the archive required 300GB of disk space in 52K files.  In February 2024, the primary repository required 450GB in 180K files, and the archive required 1.9TB in 430K files.  The amount of disk space required grows with every new app release."
+msgid "Running a mirror mostly requires lots of disk space and bandwidth. Bandwidth requirements are reduced with each new mirror, but disk requirements grow at a [reasonable rate](https://ftp.fau.de/cgi-bin/show-ftp-stats.cgi?statstype=2&what=mirrorsize&mirrorname=fdroid&timespan=-1&graphsize=large&submit=Go%21)."
 msgstr ""
 
-#. type: Plain text
+#. type: Bullet: '* '
 #: _docs/Running_a_Mirror.md
-msgid "There are many mirror servers which offer an _rsync_ connection, make sure to select the mirror closest to your mirror server:"
+msgid "In March 2019, the primary repository required just over 60GB of disk space in 24K files, and the archive required 300GB of disk space in 52K files."
 msgstr ""
 
-#. type: Plain text
+#. type: Bullet: '* '
 #: _docs/Running_a_Mirror.md
-msgid "{% include running-a-mirror-rsync.html %}"
-msgstr "{% include running-a-mirror-rsync.html %}"
+msgid "In February 2024, the primary repository required 450GB in 180K files, and the archive required 1.9TB in 430K files."
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/Running_a_Mirror.md
+msgid "In September 2025, the primary repository required 675GB in 189K files, and the archive required 3.78TB in 538K files."
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/Running_a_Mirror.md
+msgid "The amount of disk space required grows with every new app release."
+msgstr ""
 
 #. type: Plain text
 #: _docs/Running_a_Mirror.md
@@ -10578,6 +10583,11 @@ msgstr ""
 #, no-wrap
 msgid "$ rsync --dry-run --recursive --stats --human-readable ftp.fau.de::fdroid .\n"
 msgstr "$ rsync --dry-run --recursive --stats --human-readable ftp.fau.de::fdroid .\n"
+
+#. type: Plain text
+#: _docs/Running_a_Mirror.md
+msgid "When a mirror meets the standards required by F-Droid, it can become an official mirror.  That is a mirror that the F-Droid client will use by default.  In order to become an official mirror, a mirror must have a track record of reliability, respecting privacy, and a good TLS configuration, among other considerations.  All known mirrors are tracked in the [mirror-monitor](https://fdroid.gitlab.io/mirror-monitor/).  For example, f-droid.org logs are kept for a few weeks.  Those logs are [processed](https://f-droid.org/2021/03/01/fdroid-metrics-and-clean-insights.html) to remove any personally identifiable information (PII) then keeps the minimized, safe data forever. A more common logging configuration for official mirrors is to keep the logs for 4 weeks, then delete them."
+msgstr ""
 
 #. type: Title ####
 #: _docs/Running_a_Mirror.md
@@ -10704,7 +10714,7 @@ msgstr ""
 
 #. type: Plain text
 #: _docs/Running_a_Mirror.md
-msgid "Manually add your mirror to F-Droid to test that it works."
+msgid "Manually add your mirror to [F-Droid client](https://f-droid.org/packages/org.fdroid.fdroid/) to test that it works."
 msgstr ""
 
 #. type: Plain text

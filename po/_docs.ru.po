@@ -36,7 +36,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
-"POT-Creation-Date: 2025-08-27 16:46+0200\n"
+"POT-Creation-Date: 2025-09-11 16:58+0200\n"
 "PO-Revision-Date: 2025-08-09 11:02+0000\n"
 "Last-Translator: homocomputeris <homocomputeris+git@gmail.com>\n"
 "Language-Team: Russian <https://hosted.weblate.org/projects/f-droid/website-docs/ru/>\n"
@@ -10698,11 +10698,6 @@ msgid ""
 "    }\n"
 msgstr ""
 
-#. type: Plain text
-#: _docs/Reproducible_Builds.md
-msgid "While we understand that developers build and test during their normal workflow, please upload releases APKs build after tagging, from the actual tagged commit."
-msgstr "Хотя мы понимаем, что разработчики собирают и тестируют в ходе своего обычного рабочего процесса, пожалуйста, загружайте релизы APK, собранные после тегирования, с фактического тегированного коммита."
-
 #. type: Title ####
 #: _docs/Reproducible_Builds.md
 #, no-wrap
@@ -11218,7 +11213,9 @@ msgstr "Первичное и вторичное зеркала"
 
 #. type: Plain text
 #: _docs/Running_a_Mirror.md
-msgid "Whenever F-Droid has built a new index, it proactively pushes it to a selected set of mirrors, called the \"primary mirrors\".  In other words, primary mirrors are updated nearly immediately.  As of September 2024, the primary mirrors are ([latest list](https://gitlab.com/fdroid/web-services/-/blob/master/origin-04-mirror-push.yml)):"
+#, fuzzy
+#| msgid "Whenever F-Droid has built a new index, it proactively pushes it to a selected set of mirrors, called the \"primary mirrors\".  In other words, primary mirrors are updated nearly immediately.  As of September 2024, the primary mirrors are ([latest list](https://gitlab.com/fdroid/web-services/-/blob/master/origin-04-mirror-push.yml)):"
+msgid "Whenever F-Droid has built a new index, it proactively pushes it to a selected set of mirrors, called the \"primary mirrors\". In other words, primary mirrors are updated nearly immediately. The primary mirrors are configured in ([latest list](https://gitlab.com/fdroid/web-services/-/blob/master/origin-04-mirror-push.yml)):"
 msgstr "Каждый раз, когда F-Droid создает новый индекс, он проактивно размещает его на выбранном наборе зеркал, называемых \"первичными зеркалами\".  Другими словами, первичные зеркала обновляются практически сразу.  По состоянию на сентябрь 2024 года основными зеркалами являются ([latest list](https://gitlab.com/fdroid/web-services/-/blob/master/origin-04-mirror-push.yml)):"
 
 #. type: Bullet: '* '
@@ -11238,18 +11235,20 @@ msgstr "plug-mirror.rcac.purdue.edu"
 
 #. type: Plain text
 #: _docs/Running_a_Mirror.md
-msgid "Most other mirrors are \"secondary mirrors\".  These mirrors sync periodically (e.g., every 4 hours) from one of the primary mirrors."
-msgstr "Большинство других зеркал - это \"вторичные зеркала\".  Эти зеркала периодически (например, каждые 4 часа) синхронизируются с одним из первичных зеркал."
-
-#. type: Plain text
-#: _docs/Running_a_Mirror.md
-msgid "Therefore, secondary mirrors usually have a small propagation delay.  Nevertheless, note that in practice the time between any two index updates is dominated by the time to update and build the apps (in the order of days).  Not having too many primary mirrors also keeps the load on the F-Droid origin server small."
+#, fuzzy
+#| msgid "Therefore, secondary mirrors usually have a small propagation delay.  Nevertheless, note that in practice the time between any two index updates is dominated by the time to update and build the apps (in the order of days).  Not having too many primary mirrors also keeps the load on the F-Droid origin server small."
+msgid "The other mirrors are \"secondary mirrors\".  These mirrors should sync periodically (e.g., every 4 hours) from one of the primary mirrors. Therefore, secondary mirrors usually have a small propagation delay.  Nevertheless, note that in practice the time between any two index updates is dominated by the time to update and build the apps (in the order of days). Limiting the number of primary mirrors keeps the load on the _f-droid.org originserver_ small.  It is possible to have a \"tertiary mirror\" by syncing from a secondary mirror, which could make sense given local bandwidth constraints."
 msgstr "Поэтому вторичные зеркала обычно имеют небольшую задержку распространения.  Тем не менее, обратите внимание, что на практике время между двумя обновлениями индекса доминирует над временем обновления и сборки приложений (порядка нескольких дней).  Отсутствие большого количества первичных зеркал также позволяет снизить нагрузку на исходный сервер F-Droid."
 
 #. type: Plain text
 #: _docs/Running_a_Mirror.md
-msgid "Technically, you can also have a \"tertiary mirror\" by syncing from a secondary mirror, and so on."
-msgstr "Технически, вы также можете иметь \"третичное зеркало\", синхронизируясь с вторичным зеркалом, и так далее."
+msgid "There are many mirror servers which offer an _rsync_ connection, make sure to select the mirror closest to your mirror server:"
+msgstr "Существует много серверов-зеркал, которые предлагают соединение _rsync_, убедитесь, что выбрали зеркало, ближайшее к вашему серверу-зеркалу:"
+
+#. type: Plain text
+#: _docs/Running_a_Mirror.md
+msgid "{% include running-a-mirror-rsync.html %}"
+msgstr "{% include running-a-mirror-rsync.html %}"
 
 #. type: Title ####
 #: _docs/Running_a_Mirror.md
@@ -11264,18 +11263,28 @@ msgstr "Существует два официальных раздела реп
 
 #. type: Plain text
 #: _docs/Running_a_Mirror.md
-msgid "The primary resources required by a mirror are disk space and upload bandwidth.  Bandwidth requirements are reduced with each new mirror, but disk requirements grow at a [reasonable rate](https://ftp.fau.de/cgi-bin/show-ftp-stats.cgi?statstype=2&what=mirrorsize&mirrorname=fdroid&timespan=-1&graphsize=large&submit=Go%21).  In March 2019, the primary repository required just over 60GB of disk space in 24K files, and the archive required 300GB of disk space in 52K files.  In February 2024, the primary repository required 450GB in 180K files, and the archive required 1.9TB in 430K files.  The amount of disk space required grows with every new app release."
-msgstr "Основными ресурсами, необходимыми для зеркала, являются дисковое пространство и пропускная способность.  Требования к пропускной способности снижаются с каждым новым зеркалом, но требования к дисковому пространству растут с [разумной скоростью](https://ftp.fau.de/cgi-bin/show-ftp-stats.cgi?statstype=2&what=mirrorsize&mirrorname=fdroid&timespan=-1&graphsize=large&submit=Go%21).  В марте 2019 года основному хранилищу требовалось чуть более 60 ГБ дискового пространства в 24 тыс. файлов, а архиву - 300 ГБ дискового пространства в 52 тыс. файлов.  В феврале 2024 года основному хранилищу требовалось 450 ГБ в 180 тыс. файлов, а архиву - 1,9 ТБ в 430 тыс. файлов.  Объем требуемого дискового пространства растет с каждым новым выпуском приложения."
+msgid "Running a mirror mostly requires lots of disk space and bandwidth. Bandwidth requirements are reduced with each new mirror, but disk requirements grow at a [reasonable rate](https://ftp.fau.de/cgi-bin/show-ftp-stats.cgi?statstype=2&what=mirrorsize&mirrorname=fdroid&timespan=-1&graphsize=large&submit=Go%21)."
+msgstr ""
 
-#. type: Plain text
+#. type: Bullet: '* '
 #: _docs/Running_a_Mirror.md
-msgid "There are many mirror servers which offer an _rsync_ connection, make sure to select the mirror closest to your mirror server:"
-msgstr "Существует много серверов-зеркал, которые предлагают соединение _rsync_, убедитесь, что выбрали зеркало, ближайшее к вашему серверу-зеркалу:"
+msgid "In March 2019, the primary repository required just over 60GB of disk space in 24K files, and the archive required 300GB of disk space in 52K files."
+msgstr ""
 
-#. type: Plain text
+#. type: Bullet: '* '
 #: _docs/Running_a_Mirror.md
-msgid "{% include running-a-mirror-rsync.html %}"
-msgstr "{% include running-a-mirror-rsync.html %}"
+msgid "In February 2024, the primary repository required 450GB in 180K files, and the archive required 1.9TB in 430K files."
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/Running_a_Mirror.md
+msgid "In September 2025, the primary repository required 675GB in 189K files, and the archive required 3.78TB in 538K files."
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/Running_a_Mirror.md
+msgid "The amount of disk space required grows with every new app release."
+msgstr ""
 
 #. type: Plain text
 #: _docs/Running_a_Mirror.md
@@ -11287,6 +11296,11 @@ msgstr "Вы можете найти актуальную информацию �
 #, no-wrap
 msgid "$ rsync --dry-run --recursive --stats --human-readable ftp.fau.de::fdroid .\n"
 msgstr "$ rsync --dry-run --recursive --stats --human-readable ftp.fau.de::fdroid .\n"
+
+#. type: Plain text
+#: _docs/Running_a_Mirror.md
+msgid "When a mirror meets the standards required by F-Droid, it can become an official mirror.  That is a mirror that the F-Droid client will use by default.  In order to become an official mirror, a mirror must have a track record of reliability, respecting privacy, and a good TLS configuration, among other considerations.  All known mirrors are tracked in the [mirror-monitor](https://fdroid.gitlab.io/mirror-monitor/).  For example, f-droid.org logs are kept for a few weeks.  Those logs are [processed](https://f-droid.org/2021/03/01/fdroid-metrics-and-clean-insights.html) to remove any personally identifiable information (PII) then keeps the minimized, safe data forever. A more common logging configuration for official mirrors is to keep the logs for 4 weeks, then delete them."
+msgstr ""
 
 #. type: Title ####
 #: _docs/Running_a_Mirror.md
@@ -11440,7 +11454,9 @@ msgstr "5. Проверьте, работает ли ваше зеркало"
 
 #. type: Plain text
 #: _docs/Running_a_Mirror.md
-msgid "Manually add your mirror to F-Droid to test that it works."
+#, fuzzy
+#| msgid "Manually add your mirror to F-Droid to test that it works."
+msgid "Manually add your mirror to [F-Droid client](https://f-droid.org/packages/org.fdroid.fdroid/) to test that it works."
 msgstr "Вручную добавьте зеркало в F-Droid, чтобы проверить, работает ли оно."
 
 #. type: Plain text
@@ -13339,3 +13355,15 @@ msgstr "Предпочтения"
 #: _docs/Whitelabel_Builds.md
 msgid "For a custom build that enables Automatic Updates by default, override _app/src/main/res/xml/preferences.xml_. You can customize the preferences and their default values in _app/src/mycompany/res/xml/preferences.xml_. The fully automatic update requires [Privileged Extension](https://gitlab.com/fdroid/privileged-extension). With regular access, the updates will only automatically download. The user still needs to click install on each one."
 msgstr "Для пользовательской сборки, которая включает автоматические обновления по умолчанию, переопределите _app/src/main/res/xml/preferences.xml_. Вы можете настроить предпочтения и их значения по умолчанию в _app/src/mycompany/res/xml/preferences.xml_. Для полностью автоматического обновления требуется [Особое расширение F-Droid](https://gitlab.com/fdroid/privileged-extension). При обычном уровне доступа обновления будут только автоматически загружаться. Пользователю по-прежнему необходимо нажимать кнопку установки, каждый раз, когда какое-либо из них нужно установить."
+
+#~ msgid "While we understand that developers build and test during their normal workflow, please upload releases APKs build after tagging, from the actual tagged commit."
+#~ msgstr "Хотя мы понимаем, что разработчики собирают и тестируют в ходе своего обычного рабочего процесса, пожалуйста, загружайте релизы APK, собранные после тегирования, с фактического тегированного коммита."
+
+#~ msgid "Most other mirrors are \"secondary mirrors\".  These mirrors sync periodically (e.g., every 4 hours) from one of the primary mirrors."
+#~ msgstr "Большинство других зеркал - это \"вторичные зеркала\".  Эти зеркала периодически (например, каждые 4 часа) синхронизируются с одним из первичных зеркал."
+
+#~ msgid "Technically, you can also have a \"tertiary mirror\" by syncing from a secondary mirror, and so on."
+#~ msgstr "Технически, вы также можете иметь \"третичное зеркало\", синхронизируясь с вторичным зеркалом, и так далее."
+
+#~ msgid "The primary resources required by a mirror are disk space and upload bandwidth.  Bandwidth requirements are reduced with each new mirror, but disk requirements grow at a [reasonable rate](https://ftp.fau.de/cgi-bin/show-ftp-stats.cgi?statstype=2&what=mirrorsize&mirrorname=fdroid&timespan=-1&graphsize=large&submit=Go%21).  In March 2019, the primary repository required just over 60GB of disk space in 24K files, and the archive required 300GB of disk space in 52K files.  In February 2024, the primary repository required 450GB in 180K files, and the archive required 1.9TB in 430K files.  The amount of disk space required grows with every new app release."
+#~ msgstr "Основными ресурсами, необходимыми для зеркала, являются дисковое пространство и пропускная способность.  Требования к пропускной способности снижаются с каждым новым зеркалом, но требования к дисковому пространству растут с [разумной скоростью](https://ftp.fau.de/cgi-bin/show-ftp-stats.cgi?statstype=2&what=mirrorsize&mirrorname=fdroid&timespan=-1&graphsize=large&submit=Go%21).  В марте 2019 года основному хранилищу требовалось чуть более 60 ГБ дискового пространства в 24 тыс. файлов, а архиву - 300 ГБ дискового пространства в 52 тыс. файлов.  В феврале 2024 года основному хранилищу требовалось 450 ГБ в 180 тыс. файлов, а архиву - 1,9 ТБ в 430 тыс. файлов.  Объем требуемого дискового пространства растет с каждым новым выпуском приложения."
