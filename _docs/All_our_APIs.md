@@ -210,6 +210,7 @@ Though not really an API, some of the mirrors do provide some metrics:
 * <https://ftp.fau.de/cgi-bin/show-ftp-stats.cgi>
 * <https://mirror.level66.services/>
 
+It is important to understand what this data is before trying to generate metrics from it.  F-Droid does not track users, so it is not currently possible to accurately report how many people use it.  It is possible to make estimates and to find certain trends in the data.  Throwing this data into standard web metrics systems will give you pretty pictures, but those results will be far from the truth. Much of the data is missing due to privacy concerns, and the rest is quite uneven.
 
 ### Git stats
 
