@@ -14,6 +14,12 @@ if git status | grep -E '_(docs|pages|posts)/' > /dev/null; then
     exit 1
 fi
 
+branch=$(git symbolic-ref --short HEAD)
+if [ $branch != "master" ]; then
+    echo "ERROR: must be on \"master\" branch, currently on \"$branch\"!"
+    exit 1
+fi
+
 set -x
 
 ./tools/i18n.sh --all
