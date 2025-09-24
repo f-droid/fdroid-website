@@ -193,7 +193,7 @@ link page.
 ## F-Droid Onion Link hits
 
 This table shows the number of connections that connected to the F-Droid Onion
-link that can be accesed via Tor.
+link that can be accessed via Tor.
 
 | Month   | Hits      |
 | ------- | --------- |
@@ -232,7 +232,7 @@ writing this blog is almost surpassing the number of apps downloaded in 2024.
 
 ## Conclusion
 
-The number above do show that over the yeras, F-Droid has become a service
+The number above do show that over the years, F-Droid has become a service
 that users trust and keep using on a daily basis.
 We do hope that you can support us by making a [donation](https://f-droid.org/en/donate/)
 so that we can keep doing this for another 15 more years.
