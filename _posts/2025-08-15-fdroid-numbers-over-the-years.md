@@ -10,7 +10,7 @@ as an open source project, has ensured that the people have the power to
 distribute their own Android apps using the [tools](https://gitlab.com/fdroid)
 created by the F-Droid contributors.
 
-To mark this celebration, we - the F-Droid contributors - decided yt look into
+To mark this celebration, we - the F-Droid contributors - decided to look into
 the data metrcis that we collect to better gauge how we are doing as a
 community. As a project that does not provide user accounts or collect
 any data that can be used to identify individual users this was a challenge,
