@@ -9,7 +9,7 @@ This year, F-Droid turns 15. F-Droid has not only been the front-runner in the d
 To mark this celebration, we - the F-Droid contributors - decided yt look into the data metrcis that we collect to better gauge how we are doing as a community. As a project that does not provide user accounts or collect any data that can be used to identify individual users this was a challenge, a fun one indeed.
 
 **What did we do.**  
-  
+
 Before 2020, the wasn't any effort in collecting data in a privacy preserving manner. Therefore, we can only speculate on the number of users who used F-Droid services then.
 
 In November of 2020, the [metrics](https://gitlab.com/fdroid/metrics) was launched. The data collected contains no Personally Identifiable Information (PII). The data is collected from the following f-droid services and metrics.
