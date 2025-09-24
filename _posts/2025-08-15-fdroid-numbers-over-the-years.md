@@ -28,8 +28,8 @@ launched. The data collected contains no Personally Identifiable Information
 
 * [F-Droid Search](https://fdroid.gitlab.io/metrics/search.f-droid.org/index.json)
 * F-Droid Fronter Hits
-  * [http02.fdroid.net](https://fdroid.gitlab.io/metrics/http02.fdroid.net/index.json)
-  * [http03.fdroid.net](https://fdroid.gitlab.io/metrics/http03.fdroid.net/index.json)
+   * [http02.fdroid.net](https://fdroid.gitlab.io/metrics/http02.fdroid.net/index.json)
+   * [http03.fdroid.net](https://fdroid.gitlab.io/metrics/http03.fdroid.net/index.json)
 * [F-Droid onion link](https://fdroid.gitlab.io/metrics/fdroidorg6cooksyluodepej4erfctzk7rrjpjbbr6wx24jh3lqyfwyd.onion/index.json)
 * F-Droid app download and upgrade numbers
 
