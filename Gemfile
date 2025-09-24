@@ -13,7 +13,7 @@ group :jekyll_plugins do
         :ref => '7bc2634c04c49120b674cc3506275f85c4389f5c'
     gem "jekyll-polyglot", :git => 'https://gitlab.com/fdroid/jekyll-polyglot.git',
         :ref => 'b4520fd8c638d43b6b96abd8b4462b1a398bb0e2'  # 1.8.0
-    gem 'jekyll-fdroid', :git => 'https://gitlab.com/fdroid/jekyll-fdroid.git',
-        :ref => '1d3f73538eaed1cf42c16e4c73de2c0a3c1b03b1'
+    gem 'jekyll-fdroid', :git => 'https://gitlab.com/heliocola/jekyll-fdroid.git',
+        :branch => 'index_v2'
     gem 'git'
 end
