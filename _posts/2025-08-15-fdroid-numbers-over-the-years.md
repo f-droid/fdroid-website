@@ -4,15 +4,27 @@ author: paulali
 layout: post
 ---
 
-This year, F-Droid turns 15. F-Droid has not only been the front-runner in the distribution of free and open source Android apps though fdroid.org, but also as an open source project, has ensured that the people have the power to distribute their own Android apps using the [tools](https://gitlab.com/fdroid) created by the F-Droid contributors.
+This year, F-Droid turns 15. F-Droid has not only been the front-runner in the
+distribution of free and open source Android apps though fdroid.org, but also
+as an open source project, has ensured that the people have the power to
+distribute their own Android apps using the [tools](https://gitlab.com/fdroid)
+created by the F-Droid contributors.
 
-To mark this celebration, we - the F-Droid contributors - decided yt look into the data metrcis that we collect to better gauge how we are doing as a community. As a project that does not provide user accounts or collect any data that can be used to identify individual users this was a challenge, a fun one indeed.
+To mark this celebration, we - the F-Droid contributors - decided yt look into
+the data metrcis that we collect to better gauge how we are doing as a
+community. As a project that does not provide user accounts or collect
+any data that can be used to identify individual users this was a challenge,
+a fun one indeed.
 
 **What did we do.**  
 
-Before 2020, the wasn't any effort in collecting data in a privacy preserving manner. Therefore, we can only speculate on the number of users who used F-Droid services then.
+Before 2020, the wasn't any effort in collecting data in a privacy preserving
+manner. Therefore, we can only speculate on the number of users who used
+F-Droid services then.
 
-In November of 2020, the [metrics](https://gitlab.com/fdroid/metrics) was launched. The data collected contains no Personally Identifiable Information (PII). The data is collected from the following f-droid services and metrics.
+In November of 2020, the [metrics](https://gitlab.com/fdroid/metrics) was
+launched. The data collected contains no Personally Identifiable Information
+(PII). The data is collected from the following f-droid services and metrics.
 
 * [F-Droid Search](https://fdroid.gitlab.io/metrics/search.f-droid.org/index.json)
 * F-Droid Fronter Hits
@@ -21,11 +33,14 @@ In November of 2020, the [metrics](https://gitlab.com/fdroid/metrics) was launch
 * [F-Droid onion link](https://fdroid.gitlab.io/metrics/fdroidorg6cooksyluodepej4erfctzk7rrjpjbbr6wx24jh3lqyfwyd.onion/index.json)
 * F-Droid app download and upgrade numbers
 
-Below are a further description of the data and what it means for each service and metric.
+Below is a further description of the data and what it means for each service
+and metric.
 
 ## F-Droid Search Metrics
 
-This metric shows the number of times users search for apps on f-droid.org using the [search](https://search.f-droid.org/?q=jobs&lang=en) feature on the [website](fdroid.org).
+This metric shows the number of times users search for apps on f-droid.org
+using the [search](https://search.f-droid.org/?q=jobs&lang=en) feature on
+the [website](fdroid.org).
 
 The numbers are presented in the table below.
 
@@ -90,12 +105,15 @@ The numbers are presented in the table below.
 | 2025-07 | 3,330,615 |
 | 2025-08 | 968,209   |
 
-The table above shows the number of connections that access F-Droid search from November 2011 to August 15th 2025.
-There is consistent growth month by month over the 5 year period.
+The table above shows the number of connections that access F-Droid search
+from November 2011 to August 15th 2025.There is consistent growth month by
+month over the 5 year period.
 
 ## F-Droid Fronter Hits
 
-This metric show the number of connections to the F-Droid website. Each fronter will have the number of connection it has shown below.
+This metric shows the number of connections to the F-Droid website. Each
+fronter will have the number of connection it received in the data collection
+period as shown below.
 
 ### http02 fronter hits
 
@@ -146,7 +164,8 @@ This metric show the number of connections to the F-Droid website. Each fronter 
 
 ## F-Droid link hits
 
-This table shows the number of connections that have connected to  the f-droid link page.
+This table shows the number of connections that have connected to the f-droid
+link page.
 
 | Month   | Hits    |
 | ------- | ------- |
@@ -173,7 +192,8 @@ This table shows the number of connections that have connected to  the f-droid l
 
 ## F-Droid Onion Link hits
 
-This table shows the number of connections that connected to the F-Droid Onion link that can be accesed using Tor.
+This table shows the number of connections that connected to the F-Droid Onion
+link that can be accesed via Tor.
 
 | Month   | Hits      |
 | ------- | --------- |
@@ -198,11 +218,12 @@ This table shows the number of connections that connected to the F-Droid Onion l
 | 2025-07 | 451,724   |
 | 2025-08 | 197,938   |
 
-
 ## F-Droid app download numbers
 
-The table below shows the number of app downloaded from [f-droid.org](fdroid.org).
-The number of apps downloaded in 2025 - August 15th - as of the time of writing this blog is almost surpassing the number of apps downloaded in 2024.
+The table below shows the number of app downloaded from
+[f-droid.org](fdroid.org).
+The number of apps downloaded in 2025 - August 15th - as of the time of
+writing this blog is almost surpassing the number of apps downloaded in 2024.
 
 | Year | Number of Downloaded Apps |
 | ---- | ------------------------- |
@@ -211,5 +232,9 @@ The number of apps downloaded in 2025 - August 15th - as of the time of writing 
 
 ## Conclusion
 
-The number above do show that over the yeras, F-Droid has become a service that users trust and keep using on a daily basis. 
-We do hope that you can support us by making a [donation](https://f-droid.org/en/donate/) so that we can keep doing this for another 15 more years.
+The number above do show that over the yeras, F-Droid has become a service
+that users trust and keep using on a daily basis.
+We do hope that you can support us by making a [donation](https://f-droid.org/en/donate/)
+so that we can keep doing this for another 15 more years.
+
+Thank you very much for using F-Droid.
