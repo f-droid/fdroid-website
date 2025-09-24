@@ -27,6 +27,9 @@ for f in _data/[a-z][a-z]*/strings.json; do
     size=`ls -l $f | awk '{ print $5 }'`
     test $size -gt $minsize || continue
     locale=`echo $f | sed 's,.*/\([a-z][a-z][a-zA-Z0-9_-]*\)/strings.json,\1,'`
+    # This translation has been consistently problematic, so disable
+    # it until the maintainers learn to fix the failing checks.
+    test $locale = "ta" && continue
     if [ -e po/_pages.${locale}.po ]; then
         languages="$languages $locale,"
     fi
