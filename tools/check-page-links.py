@@ -59,6 +59,9 @@ for f in sorted(glob.glob('po/*.po*')):
         if re.match(r'.*{ +{', message.string) or re.match(r'.*} +}', message.string):
             output += 'Broken Liquid tag:' + message.string
 
+        if re.match(r'.*{{.*[“”].*}}', message.string):
+            output += 'Wrong quotes used in Liquid tag: ' + message.string
+
         if 'type: Title #' in message.auto_comments:
             if message.string:
                 if '"' in (message.string[0], message.string[-1]) and message.string.count('"') % 2:
