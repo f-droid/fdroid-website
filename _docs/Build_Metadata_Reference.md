@@ -159,25 +159,29 @@ you should use one of the existing categories:
 * `Calendar & Agenda`
 * `Cloud Storage & File Sync`
 * `Connectivity`
-* `DNS & Hosts`
 * `Development`
+* `DNS & Hosts`
 * `Draw`
 * `Ebook Reader`
 * `Email`
 * `File Encryption & Vault`
 * `File Transfer`
 * `Finance Manager`
+* `Forum`
 * `Gallery`
 * `Games`
 * `Graphics`
+* `Habit Tracker`
 * `Icon Pack`
 * `Internet`
 * `Keyboard & IME`
 * `Launcher`
 * `Local Media Player`
+* `Location Tracker & Sharer`
 * `Messaging`
 * `Money`
 * `Multimedia`
+* `Music Practice Tool`
 * `Navigation`
 * `News`
 * `Note`
@@ -186,7 +190,7 @@ you should use one of the existing categories:
 * `Password & 2FA`
 * `Phone & SMS`
 * `Podcast`
-* `Public Transport Map & Timetable`
+* `Public Transport`
 * `Reading`
 * `Recipe Manager`
 * `Science & Education`
@@ -201,8 +205,8 @@ you should use one of the existing categories:
 * `Time`
 * `Translation & Dictionary`
 * `Unit Convertor`
-* `VPN & Proxy`
 * `Voice & Video Chat`
+* `VPN & Proxy`
 * `Wallet`
 * `Wallpaper`
 * `Weather`
