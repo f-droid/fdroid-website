@@ -66,11 +66,11 @@ As part of this project, F-Droid is:
 * Working with pro bono experts to create jurisdiction-specific escalation paths
 * Drafting a public-facing Legal Process Policy, outlining how requests must be submitted, who handles them, and what kinds of data are available (if any)
 
-We’re seeking to align with best practices from the FOSS and digital rights community balancing security, privacy, and our commitment to transparency.
+We’re seeking to align with best practices from FOSS and digital rights communities balancing security, privacy, respect for the rule of law, and our commitment to transparency
 
 ## Final Thoughts
 
-Government requests for user or developer data reflect a growing trend of legal pressure on FOSS projects. And while these requests can’t always be avoided, proactive safeguards like strict data retention policies and transparency reporting can significantly mitigate risks.
+Government requests for user or developer data reflect a growing trend of legal pressure on FOSS projects. There is also growing acknowledgement that the law has a role to play in reducing potential harms of platforms, software and the internet. And while these requests can’t always be avoided, proactive safeguards like strict data retention policies and transparency reporting can significantly mitigate risks.
 
 Key takeaways? Don’t collect more than you need. Don’t handle requests informally. And don’t let individuals face the pressure alone.
 
