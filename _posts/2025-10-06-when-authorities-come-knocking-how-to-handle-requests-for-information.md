@@ -7,7 +7,8 @@ layout: post
 ## Introduction
 
 In the previous article in this series, we examined how FOSS projects handle legal takedown requests. However another category of legal risk exists, one that’s often more sensitive and less visible: government requests for user or developer data.
-These requests can take many forms, from formal court orders and subpoenas, to vague emails from law enforcement or regulatory bodies. For projects that host apps, distribute binaries, or maintain logs, the question becomes: What data do you have, and what will you do if someone asks for it?
+
+These requests can take many forms, from formal court orders and subpoenas, to vague emails from law enforcement or regulatory bodies. For projects that host apps, distribute binaries, or maintain logs, the question becomes: What data do you have, and what will you do if someone asks for it?
 
 ## What Kind of Requests Are We Talking About?
 
@@ -17,7 +18,8 @@ Authority requests may include:
 * Access to user metadata, such as IP logs, download histories, or credit card information
 * Identification of people associated with specific content or behavior (e.g. contributors to controversial apps)
 * Demands to preserve data for later collection
-Many FOSS projects don’t consider themselves “platforms” and may not collect or store personal data at all. But that doesn’t always stop authorities from asking.
+
+Many FOSS projects don’t consider themselves “platforms” and may not collect or store personal data at all. But that doesn’t always stop authorities from asking.
 
 ## Common Themes from the Interviews
 
@@ -33,6 +35,7 @@ Several interviewees emphasized that the best way to avoid compliance risk is [n
 
 Think of it this way: every field you store is a risk. Don’t collect it if you don’t want to hand it over.
 
+
 ### 2. Separate Infrastructure and Individuals
 
 A number of organizations recommended limiting the exposure of individual contributors by:
@@ -47,12 +50,14 @@ Additional precautions include having individual conversations even pseudonymous
 ## Transparency and Silence
 
 Unlike takedown requests, authority demands for user or contributor data often come with [gag orders](https://calyxinstitute.org/about/press/2010-merrill-speaks-at-27th-CCC-berlin) or [implicit secrecy requirements](https://indiankanoon.org/doc/31135472/). In some countries, we were told it is even illegal to acknowledge receipt of a request. That makes transparency reporting difficult.
-Still, some projects do what they can:
+
+Still, some projects do what they can:
 
 * Publishing [aggregate data](https://transparency-archive.wikimedia.org/content.html) about the number and type of requests received
 * Stating publicly what kind of data they don’t retain
 * Including legal process [guidelines](https://github.com/github/transparency/tree/main/data/requests_to_disclose_user_information) in published policies (e.g., “All requests must be submitted via court order in our jurisdiction”)
-## What F-Droid Is Doing
+
+## What F-Droid Is Doing
 
 As part of this project, F-Droid is:
 
@@ -60,13 +65,16 @@ As part of this project, F-Droid is:
 * Updating contributor guidance to help reduce unnecessary exposure
 * Working with pro bono experts to create jurisdiction-specific escalation paths
 * Drafting a public-facing Legal Process Policy, outlining how requests must be submitted, who handles them, and what kinds of data are available (if any)
-We’re seeking to align with best practices from the FOSS and digital rights community balancing security, privacy, and our commitment to transparency.
+
+We’re seeking to align with best practices from the FOSS and digital rights community balancing security, privacy, and our commitment to transparency.
 
 ## Final Thoughts
 
 Government requests for user or developer data reflect a growing trend of legal pressure on FOSS projects. And while these requests can’t always be avoided, proactive safeguards like strict data retention policies and transparency reporting can significantly mitigate risks.
-Key takeaways? Don’t collect more than you need. Don’t handle requests informally. And don’t let individuals face the pressure alone.
-In our next post, we’ll explore three regional-specific regulations, the EU’s Digital Markets Act and Digital Security Act and the UK’s Online Safety Act.
+
+Key takeaways? Don’t collect more than you need. Don’t handle requests informally. And don’t let individuals face the pressure alone.
+
+In our next post, we’ll explore three regional-specific regulations, the EU’s Digital Markets Act and Digital Security Act and the UK’s Online Safety Act.
 
 ## Legal Disclaimer
 
