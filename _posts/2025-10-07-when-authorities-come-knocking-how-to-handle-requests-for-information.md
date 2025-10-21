@@ -8,7 +8,7 @@ layout: post
 
 In the previous article in this series, we examined how FOSS projects handle legal takedown requests. However another category of legal risk exists, one that’s often more sensitive and less visible: government requests for user or developer data.
 
-These requests can take many forms, from formal court orders and subpoenas, to vague emails from law enforcement or regulatory bodies. For projects that host apps, distribute binaries, or maintain logs, the question becomes: What data do you have, and what will you do if someone asks for it?
+These requests can take many forms,from formal court orders and subpoenas, to vague emails from law enforcement or regulatory bodies. For projects that host apps, distribute binaries, or maintain logs, the question becomes: What data do you have, and what will you do if someone asks for it?
 
 ## What Kind of Requests Are We Talking About?
 
@@ -43,7 +43,7 @@ A number of organizations recommended limiting the exposure of individual contri
 * Using role accounts or pseudonyms for public-facing contributions
 * Ensuring domain registrations and legal contacts are held by a legal entity not individuals
 * Use a fiscal host like [Open Collective](https://opencollective.com/) or [LiberaPay](https://liberapay.com/) to accept donations
-* Avoiding publishing contributor identities in places that can be scraped 
+* Avoiding publishing contributor identities in places that can be scraped
 
 Additional precautions include having individual conversations even pseudonymously, with contributors who are operating in known high-risk regions, to explain potential risks.
 

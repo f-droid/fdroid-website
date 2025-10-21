@@ -1,12 +1,12 @@
 ---
-title: Navigating the Digital Markets Act, Digital Services Act and the Online Safety Act 
+title: Navigating the Digital Markets Act, Digital Services Act and the Online Safety Act
 author: F-Droid
 layout: post
 ---
 
 ## Introduction
 
-In our previous article, we explored how Free and Open Source Software (FOSS) projects like F-Droid handle legal requests for user or developer data. In this post, we’re shifting focus to a broader and rapidly growing legal challenge: platform responsibility under laws like the [UK’s Online Safety Act (OSA)](https://www.gov.uk/government/publications/online-safety-act-explainer/online-safety-act-explainer), the [EU’s Digital Services Act (DSA)](https://commission.europa.eu/strategy-and-policy/priorities-2019-2024/europe-fit-digital-age/digital-services-act_en) and [Digital Markets Act (DMA)](https://commission.europa.eu/strategy-and-policy/priorities-2019-2024/europe-fit-digital-age/digital-markets-act-ensuring-fair-and-open-digital-markets_en). These frameworks redefine accountability for online platforms including FOSS ecosystems.
+In our previous article, we explored how Free and Open Source Software (FOSS) projects like F-Droid handle legal requests for user or developer data. In this post, we’re shifting focus to a broader andrapidly growing legal challenge: platform responsibility under laws like the [UK’s Online Safety Act (OSA)](https://www.gov.uk/government/publications/online-safety-act-explainer/online-safety-act-explainer), the [EU’s Digital Services Act (DSA)](https://commission.europa.eu/strategy-and-policy/priorities-2019-2024/europe-fit-digital-age/digital-services-act_en) and [Digital Markets Act (DMA)](https://commission.europa.eu/strategy-and-policy/priorities-2019-2024/europe-fit-digital-age/digital-markets-act-ensuring-fair-and-open-digital-markets_en). These frameworks redefine accountability for online platforms including FOSS ecosystems.
 
 These laws govern how platforms handle content, transparency, and user protections. While they are designed primarily for large tech platforms, their broad definitions can sometimes pull in smaller FOSS projects, especially those that distribute software or host third-party content.
 

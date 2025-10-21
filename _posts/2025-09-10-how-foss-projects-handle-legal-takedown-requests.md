@@ -36,7 +36,7 @@ Projects based in civil law jurisdictions, particularly in Europe, are often bet
 
 ## Notification and Appeals: Fairness and Transparency
 
-All of the projects we consulted emphasized the importance of notifying developers whose apps are being targeted, informing them (if possible) of the seriousness of the claim, and the proposed strategy F-Droid is taking to handle the claim. 
+All of the projects we consulted emphasized the importance of notifying developers whose apps are being targeted, informing them (if possible) of the seriousness of the claim, and the proposed strategy F-Droid is taking to handle the claim.
 
 If a threat is deemed to be valid and a developer’s content is flagged for takedown:
 

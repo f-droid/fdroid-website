@@ -40,13 +40,13 @@ What do we mean by this? It is often a requirement for organizations to have a d
 
 However in our experience, this can be abused, by law firms and specialized companies hired to send mass copyright infringement letters and takedown requests to individual maintainers, with the purpose of intimidation. So to simplify the channels for handling these requests, you can request legitimate and binding legal requests to be sent per post. Requesting all legal requests to come via snail mail provides a single channel to monitor that covers all binding legal requests. 
 
-This works insofar as it deters illegitimate threats such as AI generated bulk emails from law firms trying to intimidate overworked maintainers or policing authorities trying to extract user data without just cause. But what happens when you have a real threat that needs to be handled  “immediately” (by the way, “immediately” is sometimes a disputed amount of time ranging from hours to several days and is often not specified). Based on the interviews we conducted, many said having a legal email address as a first line of defense, followed up by a postal address, was a strong strategy. 
+This works insofar as it deters illegitimate threats such as AI generated bulk emails from law firms trying to intimidate overworked maintainers or policing authorities trying to extract user data without just cause. But what happens when you have a real threat that needs to be handled “immediately” (by the way, “immediately” is sometimes a disputed amount of time ranging from hours to several days and is often not specified). Based on the interviews we conducted, many said having a legal email address as a first line of defense, followed up by a postal address, was a strong strategy.
 
 It is equally important to state your jurisdiction publicly. Ultimately it is up to you to decide how easy you want to make it for lawyers and law enforcement to submit requests, illegitimate or not.
 
 ### Protecting individual maintainers and contributors
 
-One of the most important reasons for establishing a legal entity is to create a formal buffer between individual contributors and legal requests. 
+One of the most important reasons for establishing a legal entity is to create a formal buffer between individual contributors and legal requests.
 
 Forming a nonprofit organization or affiliating with one, as F-Droid has through The Commons Conservancy helps shift that burden. When a project operates under a legal entity, that entity assumes the legal burden. It can be named in court filings, enter into contracts, and handle complaints allowing individual contributors to remain shielded, at least in most cases.
 

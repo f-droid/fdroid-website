@@ -12,7 +12,7 @@ That article marked the beginning of a longer-term initiative, and today we're e
 
 Thanks to support from [OTF's FOSS Sustainability Fund](https://f-droid.org/2025/02/05/f-droid-awarded-otf-grant.html), this legal resilience project was launched to help F-Droid, and the people who contribute to and depend on it, become more resilient in the face of these legal complexities, and to navigate them safely and responsibly.
 
-F-Droid operates under the legal umbrella of [The Commons Conservancy](https://commonsconservancy.org/). The Commons Conservancy is a nonprofit foundation based in the Netherlands. This provides us with a clearly defined jurisdiction and a foundation for legal compliance. However, because F-Droid is built for a global community and operates in a European country we still face legal pressure from multiple jurisdictions and European regulations. 
+F-Droid operates under the legal umbrella of [The Commons Conservancy](https://commonsconservancy.org/). The Commons Conservancy is a nonprofit foundation based in the Netherlands. This provides us with a clearly defined jurisdiction and a foundation for legal compliance. However, because F-Droid is built for a global community and operates in a European country we still face legal pressure from multiple jurisdictions and European regulations.
 
 Our goals for the project are simple but vital:
 
@@ -57,7 +57,7 @@ Disclaimer: Please note, the information included in this and subsequent article
 
 ## Up Next
 
-In our next post, we'll dive into how to establish legal jurisdiction and legal entities. 
+In our next post, we'll dive into how to establish legal jurisdiction and legal entities.
 
 If you have feedback, questions, or legal experience you would like to share, we would love to hear from you at team@f-droid.org
 
