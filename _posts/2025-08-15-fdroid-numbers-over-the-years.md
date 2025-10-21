@@ -5,7 +5,7 @@ layout: post
 ---
 
 This year, F-Droid turns 15. F-Droid has not only been the front-runner in the
-distribution of free and open source Android apps though [F-Droid](fdroid.org),
+distribution of free and open source Android apps though [F-Droid](https://f-droid.org),
 but also as an open source project, has ensured that the people have the power
 to distribute their own Android apps using the [tools](https://gitlab.com/fdroid)
 created by the F-Droid contributors.
