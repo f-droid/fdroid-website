@@ -24,7 +24,7 @@ F-Droid services then.
 
 In November of 2020, the [metrics project](https://gitlab.com/fdroid/metrics) was
 launched. The data collected contains no Personally Identifiable Information
-(PII). The data is collected from the following f-droid services and metrics.
+(PII). The data is collected from the following F-Droid services and metrics (links to raw JSON data follow).
 
 * [F-Droid Search](https://fdroid.gitlab.io/metrics/search.f-droid.org/index.json)
 * F-Droid Fronter Hits
