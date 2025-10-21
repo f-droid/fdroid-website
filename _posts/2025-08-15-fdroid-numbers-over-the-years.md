@@ -22,7 +22,7 @@ Before 2020, there wasn't any effort to collecting data in a privacy preserving
 manner. Therefore, we can only speculate on the number of users who used
 F-Droid services then.
 
-In November of 2020, the [metrics](https://gitlab.com/fdroid/metrics) was
+In November of 2020, the [metrics project](https://gitlab.com/fdroid/metrics) was
 launched. The data collected contains no Personally Identifiable Information
 (PII). The data is collected from the following f-droid services and metrics.
 
