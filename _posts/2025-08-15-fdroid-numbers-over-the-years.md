@@ -18,7 +18,7 @@ a fun one indeed.
 
 **What did we do.**  
 
-Before 2020, the wasn't any effort in collecting data in a privacy preserving
+Before 2020, there wasn't any effort to collecting data in a privacy preserving
 manner. Therefore, we can only speculate on the number of users who used
 F-Droid services then.
 
