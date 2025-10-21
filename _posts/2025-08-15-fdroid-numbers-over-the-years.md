@@ -40,7 +40,7 @@ and metric.
 
 This metric shows the number of times users search for apps on f-droid.org
 using the [search](https://search.f-droid.org/?q=jobs&lang=en) feature on
-the [website](fdroid.org).
+the [website](https://f-droid.org).
 
 The numbers are presented in the table below.
 
