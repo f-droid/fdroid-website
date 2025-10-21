@@ -23,7 +23,7 @@ Still, we are not entirely outside the scope. There are some responsibilities th
 
 The UK’s Online Safety Act, passed in 2023, places obligations on services that either (1) host user-to-user content, or (2) function as general-purpose search engines. Its goal is to reduce online harm, particularly illegal or abusive content, guided by [Ofcom](https://www.ofcom.org.uk/) as the lead regulator.
 
-The F-Droid client does not meet either of those criteria:
+F-Droid does not meet either of those criteria:
 
 * We do not host user accounts
 * We do not function as a general-purpose search engine.
@@ -45,7 +45,7 @@ Now let’s take a look at some EU regulations.
 
 Unlike the UK’s OSA, the EU Digital Services Act (DSA) applies to a broader range of services, including app directories and repositories like F-Droid, if they are accessible within the EU. The DSA introduces tiers of responsibility based on the size and function of the platform.
 
-The F-Droid client does not meet any of these requirements:
+F-Droid does not meet any of these requirements:
 
 * A for-profit organization, but instead a community-run platform
 * Monetizing user data
