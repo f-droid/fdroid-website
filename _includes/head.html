@@ -7,9 +7,9 @@
   <meta property="og:title" content="{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}">
 
   {% if page.excerpt and page.excerpt != blank %}
-    {% assign page_description = page.excerpt | strip_html | strip_newlines | truncate: 160 %}
+    {% assign page_description = page.excerpt | strip_html | normalize_whitespace | truncate: 160 %}
   {% elsif page.summary and page.summary != blank %}
-    {% assign page_description = page.summary | strip_html | strip_newlines | truncate: 160 %}
+    {% assign page_description = page.summary | strip_html | normalize_whitespace | truncate: 160 %}
   {% else %}
     {% assign page_description = site.data.strings.index.introduction %}
   {% endif %}
