@@ -87,6 +87,13 @@ RewriteEngine On
 ErrorDocument 403 /403.html
 ErrorDocument 404 /404.html
 
+# Reinstate the original `prefer-language` environment variable set by
+# https://gitlab.com/fdroid/web-services/-/blob/master/templates/origin/site-fdroid.conf.j2
+# following internal redirections (eg by ErrorDocument).
+# This should allow error pages to pick up the locale hint
+# from the original request URL to be taken into account by mod_negotiation.
+SetEnvIf REDIRECT_prefer-language (.+) prefer-language=$1
+
 ##
 ## CURRENT FDROID APK
 ##
