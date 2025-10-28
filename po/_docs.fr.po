@@ -40,15 +40,15 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
 "POT-Creation-Date: 2025-10-03 19:27+0200\n"
-"PO-Revision-Date: 2025-10-20 04:50+0000\n"
-"Last-Translator: Ldm Public <ldmpub@gmail.com>\n"
+"PO-Revision-Date: 2025-10-27 15:02+0000\n"
+"Last-Translator: Mickaël Binos <mickaelbinos@outlook.com>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/f-droid/website-docs/fr/>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 5.14-dev\n"
+"X-Generator: Weblate 5.14.1-dev\n"
 
 #. type: Yaml Front Matter Hash Value: title
 #: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
@@ -4899,57 +4899,57 @@ msgstr "Ceci est converti en (`<marketversion>`) dans le fichier XML (_index.xml
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid "_CurrentVersionCode_<a name=\"CurrentVersionCode\"></a>"
-msgstr ""
+msgstr "_CurrentVersionCode_<a name=\"CurrentVersionCode\"></a>"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 msgid "The [version code](https://developer.android.com/guide/topics/manifest/manifest-element.html#vcode) corresponding to the [_CurrentVersion_](#CurrentVersion) field. Both these fields must be correct and matching although it's the current version code that's used by Android to determine version order and by F-Droid client to determine which version should be recommended."
-msgstr ""
+msgstr "Le [code de version](https://developer.android.com/guide/topics/manifest/manifest-element.html#vcode) correspondant au champ [_CurrentVersion_](#CurrentVersion). Ces deux champs doivent être corrects et concordants, même si c'est le code de version actuel qui est utilisé par Android pour déterminer l'ordre des versions et par le client F-Droid pour déterminer la version recommandée."
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 msgid "If not set, clients will recommend the highest version they can, as if the _CurrentVersionCode_ was infinite."
-msgstr ""
+msgstr "Si ce paramètre n'est pas défini, les clients recommanderont la version la plus élevée possible, comme si le _CurrentVersionCode_ était infini."
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid "This is converted to (`<marketvercode>`) in the XML file (_index.xml_).\n"
-msgstr ""
+msgstr "Ceci est converti en (`<marketvercode>`) dans le fichier XML (_index.xml_).\n"
 
 #. type: Title ###
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid "_NoSourceSince_<a name=\"NoSourceSince\"></a>"
-msgstr ""
+msgstr "_NoSourceSince_<a name=\"NoSourceSince\"></a>"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 msgid "In case we are missing the source code for the [_CurrentVersion_](#CurrentVersion) reported by Upstream, or that Non-Free elements have been introduced, this defines the first version that began to miss source code. Apps that are missing source code for just one or a few versions, but provide source code for newer ones are not to be considered here - this field is intended to illustrate which apps do not currently distribute source code, and since when have they been doing so."
-msgstr ""
+msgstr "Si le code source de la version [_CurrentVersion_](#CurrentVersion) signalée par Upstream est manquant, ou si des éléments non libres ont été introduits, ce champ définit la première version manquante. Les applications dont le code source est manquant pour une ou plusieurs versions seulement, mais qui fournissent le code source des versions plus récentes, ne sont pas prises en compte ici. Ce champ vise à indiquer quelles applications ne distribuent pas actuellement de code source et depuis quand."
 
 #. type: Title #
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid "Deprecated or Removed Fields"
-msgstr ""
+msgstr "Champs obsolètes ou supprimés"
 
 #. type: Title ###
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid "_Provides_<a name=\"Provides\"></a>"
-msgstr ""
+msgstr "_Fournit_<a name=\"Fournit\"></a>"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 msgid "Comma-separated list of application IDs that this app provides. This field was only ever a stub and was never used for anything.  It was never supported in _index-v1.json_ nor _.yml_ metadata files."
-msgstr ""
+msgstr "Liste séparée par des virgules des identifiants d'application fournis par cette application. Ce champ n'était qu'un stub et n'a jamais servi à quoi que ce soit. Il n'a jamais été pris en charge dans les fichiers de métadonnées _index-v1.json_ ni _.yml_."
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 #, no-wrap
 msgid "This is converted to (`<provides>`) in the XML file (_index.xml_).\n"
-msgstr ""
+msgstr "Ceci est converti en (`<provides>`) dans le fichier XML (_index.xml_).\n"
 
 #. type: Yaml Front Matter Hash Value: title
 #: _docs/Build_Server_Setup.md
@@ -5016,7 +5016,7 @@ msgstr ""
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
 msgid "The base server needs to be at minimum Debian/bullseye, or there will need to be some heavy tweaking. If you run Ubuntu or derivative distro, you can get any packages missing from your version, like _vagrant-cachier_, from this PPA: <https://launchpad.net/~fdroid/+archive/ubuntu/buildserver/>"
-msgstr ""
+msgstr "Le serveur de base doit être au minimum sous Debian/bullseye, sinon des ajustements importants seront nécessaires. Si vous utilisez Ubuntu ou une distribution dérivée, vous pouvez récupérer les paquets manquants dans votre version, comme _vagrant-cachier_, via ce PPA : <https://launchpad.net/~fdroid/+archive/ubuntu/buildserver/>"
 
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
@@ -5036,11 +5036,26 @@ msgid ""
 "root:~# adduser --disabled-password fdroid\n"
 "root:~# su fdroid\n"
 msgstr ""
+"root:~# apt-get install vagrant git python3-certifi \\\n"
+"\n"
+"python3-libvirt python3-requestbuilder python3-yaml \\\n"
+"\n"
+"python3-clint python3-vagrant python3-paramiko python3-pyasn1 \\\n"
+"\n"
+"python3-pyasn1-modules python3-requests python3-git\n"
+"\n"
+"vagrant-mutate vagrant-libvirt ebtables dnsmasq-base \\\n"
+"\n"
+"libvirt-clients libvirt-daemon-system qemu-kvm qemu-utils\n"
+"\n"
+"root:~# adduser --disabled-password fdroid\n"
+"\n"
+"root:~# su fdroid\n"
 
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
 msgid "Clone source code running as _fdroid_ user:"
-msgstr ""
+msgstr "Cloner le code source exécuté en tant qu'utilisateur _fdroid_ :"
 
 #. type: Fenced code block (bash)
 #: _docs/Build_Server_Setup.md
@@ -5091,7 +5106,7 @@ msgstr ""
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
 msgid "In addition to the basic setup previously described, we ship a Vagrant-compatible Debian/bullseye base box called 'fdroid/bullseye64'."
-msgstr ""
+msgstr "En plus de la configuration de base décrite précédemment, nous livrons une boîte de base Debian/bullseye compatible Vagrant appelée « fdroid/bullseye64 »."
 
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
@@ -5107,7 +5122,7 @@ msgstr "Directement dans le dépôt F-Droid"
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
 msgid "Create a config file for Vagrant as `~/fdroidserver/buildserver/Vagrantfile.yaml` which contains:"
-msgstr ""
+msgstr "Créez un fichier de configuration pour Vagrant sous le nom `~/fdroidserver/buildserver/Vagrantfile.yaml` qui contient :"
 
 #. type: Fenced code block
 #: _docs/Build_Server_Setup.md
@@ -5119,7 +5134,7 @@ msgstr "vm_provider = 'libvirt'\n"
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
 msgid "Then the base buildserver image... (downloading the basebox and all the SDK platforms can take long time)."
-msgstr ""
+msgstr "Ensuite, l'image du serveur de build de base... (le téléchargement de la basebox et de toutes les plateformes SDK peut prendre beaucoup de temps)."
 
 #. type: Fenced code block (bash)
 #: _docs/Build_Server_Setup.md
@@ -5128,6 +5143,8 @@ msgid ""
 "fdroid:~$ cd fdroidserver\n"
 "fdroid:~/fdroidserver$ ./makebuildserver --verbose\n"
 msgstr ""
+"fdroid:~$ cd fdroidserver\n"
+"fdroid:~/fdroidserver$ ./makebuildserver --verbose\n"
 
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
@@ -5137,12 +5154,12 @@ msgstr ""
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
 msgid "Once it's complete you'll have a new base box called 'buildserver' which is what's used for your App build runs. Now you can build packages as you used to, but when you run `fdroid build --verbose --server ...` App build runs will be isolated inside a virtual machine."
-msgstr ""
+msgstr "Une fois l'opération terminée, vous disposerez d'une nouvelle base appelée « buildserver », utilisée pour les builds de votre application. Vous pouvez désormais compiler vos paquets comme avant, mais lorsque vous exécuterez « fdroid build --verbose --server ... », les builds seront isolés dans une machine virtuelle."
 
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
 msgid "While the created image has allocated a limited amount of CPU cores and memory, you can edit `~/fdroiddata/builder/Vagrantfile` to modify them dynamically at run time, eg. `libvirt.cpus = 6` and `libvirt.memory = 12288`, but do make sure to not go over the host machines' limits else the VM might get killed."
-msgstr ""
+msgstr "Bien que l'image créée ait alloué une quantité limitée de cœurs de processeur et de mémoire, vous pouvez modifier `~/fdroiddata/builder/Vagrantfile` pour les modifier dynamiquement au moment de l'exécution, par exemple `libvirt.cpus = 6` et `libvirt.memory = 12288`, mais assurez-vous de ne pas dépasser les limites des machines hôtes, sinon la VM pourrait être tuée."
 
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
@@ -5210,12 +5227,12 @@ msgstr ""
 #: _docs/Build_Server_Setup.md
 #, no-wrap
 msgid "Setting up QEMU/KVM/libvirt"
-msgstr ""
+msgstr "Configuration de QEMU/KVM/libvirt"
 
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
 msgid "While VirtualBox was used in the past, QEMU/KVM guest VMs via libvirt is still the recommended setup since that is what is used by f-droid.org. In order to make the libvirt image files directly readable by `vagrant package`, _libvirt_'s QEMU needs to be configured to always set the ownership to `libvirt.libvirt`."
-msgstr ""
+msgstr "Bien que VirtualBox ait été utilisé par le passé, la configuration recommandée pour les machines virtuelles invitées QEMU/KVM via libvirt reste celle utilisée par f-droid.org. Pour que les fichiers image libvirt soient directement lisibles par le paquet vagrant, le QEMU de _libvirt_ doit être configuré pour toujours attribuer la propriété à libvirt.libvirt."
 
 #. type: Fenced code block (console)
 #: _docs/Build_Server_Setup.md
