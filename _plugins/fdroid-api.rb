@@ -1,25 +1,42 @@
-require 'fileutils'
 require 'json'
 
 module Jekyll
   class JsonApiGenerator < Generator
+    attr_accessor :alreadyBuilt
+
     def generate(site)
       return if site.active_lang != site.default_lang
-      dir = File.join(site.dest, 'api', 'v1', 'packages')
-      FileUtils.mkdir_p(dir)
-      site.pages.each do |page|
-        if page.data && page.data.key?('package_name')
-          # TODO temporary hack to stop https://gitlab.com/fdroid/fdroid-website/-/issues/517
-          next if /\.(coffee|css|html|js|md)$/ =~ page.data['package_name']
-          site.pages << JsonApi.new(site, dir, page.data)
+
+      # generator will only run on first build, not because of auto-regeneration
+      if @alreadyBuilt != true
+        @alreadyBuilt = true
+
+        pages = site.collections["packages"]&.docs
+        if pages && !pages.empty?
+          pages.each do |page|
+            site.pages << PackageJson.new(site, site.source, page.data)
+          end
         end
       end
     end
   end
 
   class JsonApi < Page
-    def initialize(site, dir, data)
-      name = data['package_name']
+    def initialize(site, base, json = nil)
+      @site = site
+      @base = base
+
+      self.ext = ''
+      self.basename = name
+      self.content = json&.to_json
+      self.data ||= {}
+    end
+  end
+
+  class PackageJson < JsonApi
+    def initialize(site, base, data)
+      @dir = 'api/v1/packages'
+      @name = data['package_name']
       json = {
         'packageName' => data['package_name'],
         'suggestedVersionCode' => data['suggested_version_code'],
@@ -30,10 +47,7 @@ module Jekyll
           }
         end
       }
-      File.open(File.join(dir, name), 'w') do |file|
-        file.write(json.to_json)
-      end
-      super(site, site.source, dir, name)
+      super(site, base, json)
     end
   end
 end
