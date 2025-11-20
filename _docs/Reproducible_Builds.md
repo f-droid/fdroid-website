@@ -683,3 +683,4 @@ It generates [non-deterministic code](https://github.com/greenrobot/EventBus/iss
 * [unneeded DEX code differences based on number of CPUs used in build process](https://issuetracker.google.com/issues/269181868)
 * [Assembling the bundle with AssembleBundleTask produces DEX files in the wrong order, resulting in a checksum mismatch](https://issuetracker.google.com/issues/384870255) 
 * [differing DEX bytecode depending on the number of CPU cores breaks Reproducible Builds](https://issuetracker.google.com/issues/366412380)
+* [unneeded DEX code differences based on number of CPUs used in build process](https://issuetracker.google.com/issues/269181868)
