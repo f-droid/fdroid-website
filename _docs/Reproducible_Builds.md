@@ -676,10 +676,10 @@ It generates [non-deterministic code](https://github.com/greenrobot/EventBus/iss
 * <https://reproducible-builds.org>
 * <https://wiki.debian.org/ReproducibleBuilds>
 * <https://gitian.org/>
-* [Google Issue #70292819 platform-27\_r01.zip was overwritten with a new update](https://issuetracker.google.com/issues/70292819) (_Google login and JavaScript required_)
-* [Google Issue #37132313 platformBuildVersionName makes builds difficult to reproduce, creates unneeded diffs](https://issuetracker.google.com/issues/37132313) (_Google login and JavaScript required_)
-* [Google Issue #110237303 resources.arsc built with non-determism, prevents reproducible APK builds](https://issuetracker.google.com/issues/110237303) (_Google login and JavaScript required_)
-* [Unreproducible/non-deterministic code generation by navigation.safeargs.kotlin](https://issuetracker.google.com/issues/189498001) (_Google login and JavaScript required_)
-* [unneeded DEX code differences based on number of CPUs used in build process](https://issuetracker.google.com/issues/269181868)  (_Google login and JavaScript required_)
-* [Assembling the bundle with AssembleBundleTask produces DEX files in the wrong order, resulting in a checksum mismatch](https://issuetracker.google.com/issues/384870255)
+* [Google Issue #70292819 platform-27\_r01.zip was overwritten with a new update](https://issuetracker.google.com/issues/70292819)
+* [Google Issue #37132313 platformBuildVersionName makes builds difficult to reproduce, creates unneeded diffs](https://issuetracker.google.com/issues/37132313)
+* [Google Issue #110237303 resources.arsc built with non-determism, prevents reproducible APK builds](https://issuetracker.google.com/issues/110237303)
+* [Unreproducible/non-deterministic code generation by navigation.safeargs.kotlin](https://issuetracker.google.com/issues/189498001)
+* [unneeded DEX code differences based on number of CPUs used in build process](https://issuetracker.google.com/issues/269181868)
+* [Assembling the bundle with AssembleBundleTask produces DEX files in the wrong order, resulting in a checksum mismatch](https://issuetracker.google.com/issues/384870255) 
 * [differing DEX bytecode depending on the number of CPU cores breaks Reproducible Builds](https://issuetracker.google.com/issues/366412380)
