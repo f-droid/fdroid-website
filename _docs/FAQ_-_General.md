@@ -13,25 +13,18 @@ We welcome all questions and have a few places to reach out to the
 F-Droid community:
 
 * using the [forum or chat rooms](https://f-droid.org/about/#contact)
-* [issue tracker](https://gitlab.com/fdroid/fdroidclient/issues) for
-    the Android app itself (aka client)
-* [issue tracker](https://gitlab.com/fdroid/fdroidserver/issues) for
-    the developer tools (aka server)
-* [issue tracker](https://gitlab.com/fdroid/rfp/issues) for
-    packaging new apps
-* [issue tracker](https://gitlab.com/fdroid/fdroiddata/issues) for
-    issues with published apps
+* [issue tracker](https://gitlab.com/fdroid/fdroidclient/issues) for the Android app itself (aka client)
+* [issue tracker](https://gitlab.com/fdroid/fdroidserver/issues) for the developer tools (aka server)
+* [issue tracker](https://gitlab.com/fdroid/rfp/issues) for packaging new apps
+* [issue tracker](https://gitlab.com/fdroid/fdroiddata/issues) for issues with published apps
 
 ### Why isn't my favourite app included?
 
 Some common reasons:
 
 * It's not [Free Software](https://www.gnu.org/philosophy/free-sw.html);
-* We're trying to include it, but there's a problem with it that we're
-    trying to resolve. Check the open [merge
-    requests](https://gitlab.com/fdroid/fdroiddata/-/merge_requests);
-* It's on our radar, but we haven't got to it yet. Search the
-    [issues](https://gitlab.com/fdroid/rfp/-/issues);
+* We're trying to include it, but there's a problem with it that we're trying to resolve. Check the open [merge requests](https://gitlab.com/fdroid/fdroiddata/-/merge_requests);
+* It's on our radar, but we haven't got to it yet. Search the [issues](https://gitlab.com/fdroid/rfp/-/issues);
 * We don't know about it. See the [Inclusion Policy](../Inclusion_Policy).
 
 Otherwise if you think that an app respects the Inclusion Policy and
@@ -43,14 +36,9 @@ first to do it: See the [Inclusion How-To](../Inclusion_How-To).
 
 There are several ways of keeping up with new apps that are added:
 
-* In the client, the "Latest" tab shows the latest 200 apps that were
-    updated and that have good [descriptions and
-    graphics](../All_About_Descriptions_Graphics_and_Screenshots)
-* If you don't mind a detailed and potentially noisy stream of
-    information that also includes updates and other changes, you could
-    subscribe to [this feed](https://gitlab.com/fdroid/fdroiddata/commits/master.atom)
-* In TWIF posts we talk about new apps and other news, you could
-    subscribe to [this feed](https://f-droid.org/feed.xml).
+* In the client, the "Latest" tab shows the latest 200 apps that were updated and that have good [descriptions and graphics](../All_About_Descriptions_Graphics_and_Screenshots)
+* If you don't mind a detailed and potentially noisy stream of information that also includes updates and other changes, you could subscribe to [this feed](https://gitlab.com/fdroid/fdroiddata/commits/master.atom)
+* In TWIF posts we talk about new apps and other news, you could subscribe to [this feed](https://f-droid.org/feed.xml).
 
 We don't yet have a dedicated and user-friendly feed you can subscribe
 to for new additions, but we welcome contributions to make this work better.
@@ -77,10 +65,8 @@ For apps being built reproducible, and signed by the upstream developer, you can
 
 Pick your favourite reason (both are true and valid):
 
-* We don't use proprietary software: Google Play is proprietary
-    software;
-* F-Droid, as an app that "competes" with Google Play, is against
-    their [Terms of Service (paragraph 4.5)](https://play.google.com/about/developer-distribution-agreement.html).
+* We don't use proprietary software: Google Play is proprietary software;
+* F-Droid, as an app that "competes" with Google Play, is against their [Terms of Service (paragraph 4.5)](https://play.google.com/about/developer-distribution-agreement.html).
 
 
 ### How can I report bugs or request features?
