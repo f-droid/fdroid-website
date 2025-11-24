@@ -461,35 +461,19 @@ not specified, automatic building is disabled for this application.
 Possible values are:
 
 * `git`
-* `svn`
-* `git-svn`
-* `hg`
-* `bzr`
 * `srclib`
-
 
 
 ### _Repo_<a name="Repo"></a>
 
-The repository location. Usually a git: or svn: URL, for example.
+The repository location.
 
-The `git-svn` option connects to an SVN repository, and you specify the
-URL in exactly the same way, but git is used as a back-end. This is
-preferable for performance reasons, and also because a local copy of the
-entire history is available in case the upstream repository disappears.
-(It happens!). In order to use Tags as [_UpdateCheckMode_](#UpdateCheckMode)
-for this VCS type, the URL must have the `tags=` special argument set.
-Likewise, if you intend to use the `RepoManifest/branch` scheme, you would want
-to specify `branches=` as well. Finally, `trunk=` can also be added. All these
-special arguments will be passed to `git svn` in order, and their values must
-be relative paths to the SVN repo root dir.  Here's an example of a complex
-`git-svn` _Repo_ URL:
-`http://svn.code.sf.net/p/project/code/svn;trunk=trunk;tags=tags;branches=branches`
+If [_RepoType_](#RepoType) is `git`, then the URL must be a public, use
+`https://`, and not require any kind of authentication.
 
 If the [_RepoType_](#RepoType) is `srclib`, then you must specify the name of
 the according srclib `.yml` file. For example if `srclibs/FooBar.yml` exist and
 you want to use this srclib, then you have to set _Repo_ to `FooBar`.
-
 
 
 ### _Binaries_<a name="Binaries"></a>
