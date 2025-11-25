@@ -1,6 +1,7 @@
 ---
 title: An experiment in automated building from source, 15 years later
 author: eighthave
+layout: post
 ---
 
 15 years ago this month, [@CiaranG](https://gitlab.com/CiaranG) started "[an experiment in automated building from source](https://gitlab.com/fdroid/fdroidserver/-/commit/25057c119e4070771a995a375b6ccc0ad311884b)". And so F-Droid began to automate building all our apps from source.  Before this, apps were either built manually or the binary files were fetched from trusted developers like Mozilla. Automating the build process was a key early step that set up F-Droid to lead on trustworthy computing. Since then, we moved to requiring apps to be built from source on our servers. Now we build apps from source as much as possible, and have expanded to Anti-Features, app reviews, [privacy checks](https://f-droid.org/2017/12/14/new-collaborations-on-exposing-tracking.html), reproducible builds, and more.
