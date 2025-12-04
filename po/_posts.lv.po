@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2025-10-28 17:32+0100\n"
+"POT-Creation-Date: 2025-12-04 22:03+0100\n"
 "PO-Revision-Date: 2025-06-28 05:20+0000\n"
 "Last-Translator: Edgars Andersons <Edgars+Weblate@gaitenis.id.lv>\n"
 "Language-Team: Latvian <https://hosted.weblate.org/projects/f-droid/website-posts/lv/>\n"
@@ -21646,6 +21646,7 @@ msgstr ""
 
 #. type: Plain text
 #: _posts/2025-05-21-making-reproducible-builds-visible.md
+#: _posts/2025-11-24-an-experiment-in-automated-building-from-source-15-years-later.md
 msgid "_(This work was supported by [NLnet](https://nlnet.nl/project/Reproducible-F-Droid/) and your donations.  To ensure F-Droid can continue this work, please check out the [donation page](https://f-droid.org/donate/) and contribute what you can.)_"
 msgstr ""
 
@@ -23434,4 +23435,70 @@ msgstr ""
 #. type: Plain text
 #: _posts/2025-10-28-sideloading.md
 msgid "Over half of all humankind uses an Android smartphone. Google does not own your phone. You own your phone. You have the right to decide who to trust, and where you can get your software from."
+msgstr ""
+
+#. type: Yaml Front Matter Hash Value: title
+#: _posts/2025-11-24-an-experiment-in-automated-building-from-source-15-years-later.md
+#, no-wrap
+msgid "An experiment in automated building from source, 15 years later"
+msgstr ""
+
+#. type: Plain text
+#: _posts/2025-11-24-an-experiment-in-automated-building-from-source-15-years-later.md
+msgid "15 years ago this month, [@CiaranG](https://gitlab.com/CiaranG) started \"[an experiment in automated building from source](https://gitlab.com/fdroid/fdroidserver/-/commit/25057c119e4070771a995a375b6ccc0ad311884b)\". And so F-Droid began to automate building all our apps from source.  Before this, apps were either built manually or the binary files were fetched from trusted developers like Mozilla. Automating the build process was a key early step that set up F-Droid to lead on trustworthy computing. Since then, we moved to requiring apps to be built from source on our servers. Now we build apps from source as much as possible, and have expanded to Anti-Features, app reviews, [privacy checks](https://f-droid.org/2017/12/14/new-collaborations-on-exposing-tracking.html), reproducible builds, and more."
+msgstr ""
+
+#. type: Plain text
+#: _posts/2025-11-24-an-experiment-in-automated-building-from-source-15-years-later.md
+msgid "Building from source is certainly not the easiest way to distribute software, but it is the [best way](https://wiki.debian.org/UpstreamGuide#Why_get_your_software_into_Debian.3F).  Automation is key to making it feasible. Developers already build the binary APK package locally as part of their development process, the easiest would be for them to just upload the APK directly to F-Droid.  In order to provide all the benefits of free software, APKs need to be built on our servers. The extra steps required are completed by computers as much as possible, rather than humans. By integrating directly with the git source repo, it is possible to make things quite automatic.  Our automation has gradually evolved over the 15 years to build over 5000 apps from source, handling a wide variety of quirks and edge cases. That also means that the code had grown quite unwieldy, since it mostly grew organically as F-Droid expanded."
+msgstr ""
+
+#. type: Plain text
+#: _posts/2025-11-24-an-experiment-in-automated-building-from-source-15-years-later.md
+msgid "So we have introduced a new structure, starting with rearchitecting the `fdroid build` command that runs the building part of the publishing cycle.  `fdroid build` manages starting the VM for the build, pulling in source code, running the scripts to build the package, checking the results, and pulling the unsigned package to be added to the publishing queue. The central goal is to make easily reusable modules of functionality.  Internally, they are known as \"[subcommands](https://gitlab.com/fdroid/fdroidserver/-/merge_requests/1709)\", since they are subcommands of the `fdroid` command (e.g. `fdroid fetch_repo`, `fdroid execute_sudo`, etc)."
+msgstr ""
+
+#. type: Plain text
+#: _posts/2025-11-24-an-experiment-in-automated-building-from-source-15-years-later.md
+msgid "Things have been massively refactored to be modular, testable and understandable. This new architecture decouples our build automation from any particular virtualization/containerization platform.  We started with a massive pile of tangled, 15 year old code that has faithfully kept building apps from source.  And we've broken everything down into logical modules that are designed to plug into virtualization/automation infrastructure like Buildbot, GitLab CI, Podman and Vagrant. If you have looked at the old build automation code before 😱 and were scared away, I invite you to take [another look](https://gitlab.com/fdroid/fdroidserver/-/merge_requests/?state=merged&milestone_title=buildbot)."
+msgstr ""
+
+#. type: Plain text
+#: _posts/2025-11-24-an-experiment-in-automated-building-from-source-15-years-later.md
+msgid "These automation subcommands are designed to plug into build automation. They are meant to run in scripted environments. They are not intended for interactive use. Although they sometimes might be useful interactively, it could also be dangerous to run some interactively because they assume they are run in a disposable environment (e.g. a container).  They modify the local environment or even run things as root.  For that reason, they are not listed in the help or other places that other human-facing commands are."
+msgstr ""
+
+#. type: Plain text
+#: _posts/2025-11-24-an-experiment-in-automated-building-from-source-15-years-later.md
+msgid "These new subcommands function in between an external API and an internal API:"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _posts/2025-11-24-an-experiment-in-automated-building-from-source-15-years-later.md
+msgid "The external API is a set of subcommands used in a build management system like Buildbot or GitLab CI."
+msgstr ""
+
+#. type: Bullet: '* '
+#: _posts/2025-11-24-an-experiment-in-automated-building-from-source-15-years-later.md
+msgid "The internal API for implementing alternate containerization methods for running the builds.  Currently, Vagrant (our legacy setup) and Podman are supported."
+msgstr ""
+
+#. type: Plain text
+#: _posts/2025-11-24-an-experiment-in-automated-building-from-source-15-years-later.md
+msgid "A key new concept has been introduced: each automation subcommand only operates on a single build, never more than one.  That keeps the code simple and makes it easy to integrate into build management systems, which generally have similar assumptions. Each of these new subcommands require exactly one pair of one Application ID and one Version Code, e.g. `org.fdroid.fdroid:1023051`.  This is the globally unique identifier for a specific build, based on the Application ID, which is the globally unique identifier for an Android app."
+msgstr ""
+
+#. type: Plain text
+#: _posts/2025-11-24-an-experiment-in-automated-building-from-source-15-years-later.md
+msgid "We're still figuring out exactly how fine-grained these modules should be.  One case that seems clear is that each [build step](https://f-droid.org/docs/Build_Metadata_Reference/#Builds) can be run in its own subcommand (e.g. `fdroid execute_sudo` runs what is listed in the `sudo:` build field).  As things solidify, they will be documented as part of our standard documentation. There are lots of notes in the [development wiki page](https://gitlab.com/fdroid/wiki/-/wikis/Internal/Buildbot) for those who want to dive in already."
+msgstr ""
+
+#. type: Plain text
+#: _posts/2025-11-24-an-experiment-in-automated-building-from-source-15-years-later.md
+msgid "Buildbot also provides us with a proven system for scheduling a variety of jobs in parallel, across many VMs, containers and bare metal machines. After [six months](https://f-droid.org/2025/05/21/making-reproducible-builds-visible.html#rewriting-the-buildserver) of running Buildbot, it has proven to be a solid system for build management. <https://verification.f-droid.org> runs this automation stack on Podman. We stuck with Vagrant for production because it has been working solidly since 2012.  The maintainers of Vagrant are [moving away from free software](https://lists.debian.org/debian-release/2025/06/msg00484.html), so we need to be ready to switch to something else.  Now both virtual machines and containers are easily supported, and there is a clear API for integrating with other systems. There has been some discussion of _debvm_ and Docker as additional options. Which system would you like to contribute support for? For parallelization of jobs, we're starting with four on <https://verification.f-droid.org> and planning on three for the production _buildserver_ host."
+msgstr ""
+
+#. type: Plain text
+#: _posts/2025-11-24-an-experiment-in-automated-building-from-source-15-years-later.md
+msgid "This is now the foundation for future work.  I hope that this can serve as the base architecture for splitting up all of the pieces that run the process behind f-droid.org following this architecture.  The next piece is `fdroid update`, which indexes all of the apps, finds localized app store entries and graphics, checks signatures, enforces automated inclusion rules, and more.  We have two prototypes already in process [`extract_icons`](https://gitlab.com/fdroid/fdroidserver/-/merge_requests/972) and [`fetch_metadata`](https://gitlab.com/fdroid/fdroidserver/-/merge_requests/1442).  The next 15 years of build automation are looking a lot brighter!"
 msgstr ""
