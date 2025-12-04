@@ -186,6 +186,12 @@ layout: default-package-sidebar
 	</div>
 	{% endif %}
 
+	{% comment %}
+		Opportunistically check against the list of official f-droid.org signers if present
+	{%- endcomment %}
+	{%- if site.data.fdroid-signers %}
+		{%- assign official_signer = site.data.fdroid-signers[page.package_name].signer %}
+	{%- endif %}
 	<div class="package-versions">
 		<a name="versions"></a>
 		<h3>{{ strings.versions }}</h3>
@@ -230,7 +236,15 @@ layout: default-package-sidebar
 					{% if package.srcname != "" and package.srcname != nil %}
 					{% assign fmt_source_code_url = '{{ source_code_url }}' %}
 					{% assign source_code_url = site.fdroid-repo | append: '/' | append: package.srcname %}
-					{{ strings.built_by_fdroid | replace: fmt_source_code_url, source_code_url }}
+					{%- if site.data.fdroid-signers %}
+						{%- if package.signer == official_signer %}
+							{{- strings.signed_by_fdroid | replace: fmt_source_code_url, source_code_url }}
+						{%- else %}
+							{{- strings.signed_by_developer | replace: fmt_source_code_url, source_code_url }}
+						{%- endif %}
+					{%- else %}
+						{{- strings.built_by_fdroid | replace: fmt_source_code_url, source_code_url }}
+					{%- endif %}
 					{% else %}
 					{{ strings.signed_by_developer | replace: fmt_source_code_url, source_code_url }}
 					{% endif %}
