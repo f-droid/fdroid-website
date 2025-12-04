@@ -17,9 +17,18 @@ Jekyll::Hooks.register :site, :post_read do |site|
     sleep(1)
     retry
   end
-  index = JSON.parse(response.body)
+
+  case response
+  when Net::HTTPSuccess then
+    index = JSON.parse(response.body)
+  when Net::HTTPClientError then
+    puts "HTTP Error #{response.code}: could not populate fdroid-signers from #{uri.to_s}"
+  when Net::HTTPRedirection then
+    puts "fdroid-signers #{uri.to_s} redirected to: #{response['location']}, ignoring."
+  end
+
   if index
     site.data['fdroid-signers'] = index
-    Jekyll::logger.info 'fdroid-signers', "Fetched and loaded official f-droid.org signers for #{index.size} packages from #{uri.to_s}"
+    Jekyll::logger.info 'fdroid-signers', "Fetched and loaded signers for #{index.size} packages from #{uri.to_s}"
   end
 end
