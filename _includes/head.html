@@ -3,42 +3,62 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
-  <meta property="og:title" content="{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}">
+  {% assign page_title = page.title | strip -%}
+  {% if page_title and page_title != empty -%}
+    {% assign page_title = page_title | append: " | " | append: site.title -%}
+  {% else -%}
+    {% assign page_title = site.title -%}
+  {% endif -%}
 
-  {% if page.excerpt and page.excerpt != blank %}
-    {% assign page_description = page.excerpt | strip_html | normalize_whitespace | truncate: 160 %}
-  {% elsif page.summary and page.summary != blank %}
-    {% assign page_description = page.summary | strip_html | normalize_whitespace | truncate: 160 %}
-  {% else %}
-    {% assign page_description = site.data.strings.index.introduction %}
-  {% endif %}
+  <title>{{ page_title }}</title>
+  <meta property="og:title" content="{{ page_title }}">
+
+  {% assign page_description = page.excerpt | strip -%}
+  {% unless page_description and page_description != empty -%}
+    {% assign page_description = page.summary | strip -%}
+  {% endunless -%}
+  {% if page_description and page_description != empty -%}
+    {% assign page_description = page_description | strip_html | normalize_whitespace | truncate: 160 -%}
+  {% else -%}
+    {% assign page_description = site.data.strings.index.introduction -%}
+  {% endif -%}
 
   <meta name="description" content="{{ page_description }}">
   <meta property="og:description" content="{{ page_description }}">
 
-  {% if page.icon and page.icon != blank %}
+  {% if page.icon and page.icon != empty -%}
     <meta property="og:image" content="{{ site.fdroid-repo }}/{{ page.icon }}">
-  {% else %}
+  {% else -%}
     <meta property="og:image" content="{{ site.url }}{% asset fdroid-logo.png %}">
-  {% endif %}
+  {%- endif %}
 
-  <link rel="preload" href="{% asset roboto.ttf %}" as="font" type="font/ttf" crossorigin />
-  <link rel="preload" as="style" href="{{ site.baseurl }}/css/main.css"/>
-  <link rel="dns-prefetch" href="https://search.f-droid.org"/>
-  <link rel="stylesheet" href="{{ site.baseurl }}/css/main.css"/>
-  {% comment %} the line below uses single quotes to prevet jekyll-polyglot from adding a language to the url {% endcomment -%}
-  {% if page.package_name %}
-  <link rel="canonical" href='{{ "/packages/" | append: page.package_name | append: "/" | absolute_url }}'/>
-  <meta property="og:url" content='{{ "/packages/" | append: page.package_name | append: "/" | absolute_url }}'/>
-  {% elsif page.permalink %}
-  <link rel="canonical" href='{{ page.permalink | replace:'index.html','' | absolute_url }}'/>
-  <meta property="og:url" content='{{ page.permalink | replace:'index.html','' | absolute_url }}'/>
-  {% else %}
-  <link rel="canonical" href='{{ page.url | replace:'index.html','' | absolute_url }}'/>
-  <meta property="og:url" content='{{ page.url | replace:'index.html','' | absolute_url }}'/>
-  {% endif %}
-  <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ site.baseurl }}/feed.xml"/>
+  <link rel="preload" href="{% asset roboto.ttf %}" as="font" type="font/ttf" crossorigin>
+  <link rel="preload" as="style" href="{{ site.baseurl }}/css/main.css">
+  <link rel="dns-prefetch" href="https://search.f-droid.org">
+  <link rel="stylesheet" href="{{ site.baseurl }}/css/main.css">
+
+  {% comment -%}
+    There seems to be a regression introduced in jekyll-polyglot v1.7.0 with the optional `lang_id` key in the frontmatter
+    which renders `page.permalink` to be potentially empty (namely, for blog posts);
+    fall back to use `page.url` as a workaround.
+  {%- endcomment -%}
+  {% if page.permalink -%}
+    {% assign page_permalink = page.permalink -%}
+  {% else -%}
+    {% assign page_permalink = page.url -%}
+  {% endif -%}
+
+  {% if page.package_name -%}
+    {% assign rel_page_url = "/packages/" | append: page.package_name | append: "/" -%}
+  {% else -%}
+    {% assign rel_page_url = page_permalink | replace:'index.html','' -%}
+  {% endif -%}
+
+  {% assign canonical_url = rel_page_url | absolute_url -%}
+  {% comment %} the line below uses single quotes to prevent jekyll-polyglot from adding a language to the url {% endcomment -%}
+  <link rel="canonical" href='{{ canonical_url }}'>
+  <meta property="og:url" content="{{ canonical_url }}">
+  <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ site.baseurl }}/feed.xml">
 
   <link href="{{ site.baseurl }}/osd.xml" rel="search" title="F-Droid" type="application/opensearchdescription+xml">
 
@@ -53,20 +73,12 @@
   <meta name="msapplication-config" content="{% asset browserconfig.xml %}">
   <meta name="theme-color" content="#ffffff">
 
-{%- comment %} the code below uses single quotes to prevet jekyll-polyglot from adding a language to the url {% endcomment -%}
-{% for lang in site.languages -%}
+{%- comment %} the code below uses single quotes to prevent jekyll-polyglot from adding a language to the url {% endcomment -%}
+{%- for lang in site.languages -%}
   {% if lang == site.default_lang -%}
     {% continue -%}
-  {% endif -%}
-  {%- if site.baseurl == '' and page.package_name %}
-  <link rel="alternate" hreflang="{{ lang | replace: '_', '-' }}" href='{{ "/" | append: lang | append: "/packages/" | append: page.package_name | append: "/" | absolute_url }}'>
-  {%- elsif site.baseurl == '' %}
-  <link rel="alternate" hreflang="{{ lang | replace: '_', '-' }}" href='{{ "/" | append: lang | append: page.permalink | replace:'index.html','' | absolute_url }}'>
-  {% endif -%}
-{% endfor -%}
-  {%- if page.package_name %}
-  <link rel="alternate" hreflang="x-default" href='{{ "/packages/" | append: page.package_name | append: "/" | absolute_url }}'>
-  {% else %}
-  <link rel="alternate" hreflang="x-default" href='{{ page.permalink | replace:'index.html','' | absolute_url }}'>
-  {% endif -%}
+  {% endif %}
+  <link rel="alternate" hreflang="{{ lang | replace: '_', '-' }}" href='{{ "/" | append: lang | append: rel_page_url | absolute_url }}'>
+{%- endfor %}
+  <link rel="alternate" hreflang="x-default" href='{{ canonical_url }}'>
 </head>
