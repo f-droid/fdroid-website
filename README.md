@@ -8,7 +8,7 @@ is based on Jekyll and you can find the development version
 
 ### Using Debian/buster
 
-First, make sure [_buster-backports_ is enabled](https://backports.debian.org/Instructions/).  
+First, make sure [_buster-backports_ is enabled](https://backports.debian.org/Instructions/).
 
 ```
 sudo apt-get install -t buster-backports \
@@ -73,6 +73,25 @@ vagrant@buster:/vagrant$ jekyll serve --host 0.0.0.0
 
 Then connect to http://localhost:4000 to see the generated site.
 
+## Index v1 and v2
+
+Building the website with Index V2 is just about ready.
+
+In order to build, using Index V2, you need to make the following changes:
+
+1. Change `_config.yml` to indicate you want to use Index v2 during the build phase:
+
+```
+jekyll-fdroid:
+  index_version: v2
+```
+
+2. Update `jekyll-fdroid` in the Gemfile to the a version that includes support to index-v2:
+
+```
+    gem 'jekyll-fdroid', :git => 'https://gitlab.com/fdroid/jekyll-fdroid',
+        :ref => 'the_one_that_supports_index_v2'
+```
 
 ## Local development
 
@@ -83,7 +102,7 @@ Then connect to http://localhost:4000 to see the generated site.
 If you want to use the official Git repository again,
 run `bundle config --delete local.jekyll-fdroid`.
 
-Alternatively you may also set the `jekyll-fdroid` dependeny line in Gemfile to
+Alternatively you may also set the `jekyll-fdroid` dependency line in Gemfile to
 your local clone, e.g.: `gem 'jekyll-fdroid', :path => './jekyll-fdroid'`
 
 ### Some config changes
@@ -132,4 +151,3 @@ includes all translations, whether they are complete or not.
 ### blog posts
 
 [![posts translation status](https://hosted.weblate.org/widgets/f-droid/-/website-posts/multi-auto.svg)](https://hosted.weblate.org/engage/f-droid/?utm_source=widget)
-
