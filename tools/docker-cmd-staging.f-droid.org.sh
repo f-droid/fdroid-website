@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 #
 # This script is the command provided to `docker run` to execute
 # within a disposible container.  This runs the "f-droid.org" job in
