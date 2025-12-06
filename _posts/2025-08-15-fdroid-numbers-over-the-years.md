@@ -5,16 +5,16 @@ layout: post
 ---
 
 This year, F-Droid turns 15. F-Droid has not only been the front-runner in the
-distribution of free and open source Android apps though [F-Droid](https://f-droid.org),
+distribution of free and open source Android apps through [F-Droid](https://f-droid.org),
 but also as an open source project, has ensured that the people have the power
 to distribute their own Android apps using the [tools](https://gitlab.com/fdroid)
-created by the F-Droid contributors.
+created and maintained by the F-Droid contributors.
 
 To mark this celebration, we - the F-Droid contributors - decided to look into
 the data metrics that we collect to better gauge how we are doing as a
 community. As a project that does not provide user accounts or collect
-any data that can be used to identify individual users this was a challenge,
-a fun one indeed.
+any data that can be used to identify individual users, this was a challenge,
+and a fun one indeed.
 
 **What did we do.**  
 
@@ -106,7 +106,7 @@ The numbers are presented in the table below.
 | 2025-08 | 968,209   |
 
 The table above shows the number of connections that access F-Droid search
-from November 2011 to August 15th 2025.There is consistent growth month by
+from November 2020 to August 15th 2025.There is consistent growth month by
 month over the 5 year period.
 
 ## F-Droid Fronter Hits
@@ -225,10 +225,10 @@ The table below shows the number of app downloaded from
 The number of apps downloaded in 2025 - August 15th - as of the time of
 writing this blog is almost surpassing the number of apps downloaded in 2024.
 
-| Year | Number of Downloaded Apps |
-| ---- | ------------------------- |
-| 2024 | 57,157,531                |
-| 2025 | 40,745,559                |
+| Year                   | Number of Downloaded Apps |
+| -----------------------| ------------------------- |
+| 2024                   | 57,157,531                |
+| January to August 2025 | 40,745,559                |
 
 ## Conclusion
 
