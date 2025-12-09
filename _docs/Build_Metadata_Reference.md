@@ -974,9 +974,8 @@ Version line to the metadata. This happens in conjunction with the
 [_UpdateCheckMode_](#UpdateCheckMode) functionality - i.e. when an update is
 detected by that, it is also processed by this.
 
-Valid modes are:
+To enable, set it to a supported mode:
 
-* `None` - Auto-updating is disabled.
 * `Version` - Auto-updating is enabled.
 
   If [_UpdateCheckMode_](#UpdateCheckMode) is set to `Tags`, this should be
@@ -1014,16 +1013,15 @@ available - in other words, the updating of the [_CurrentVersion_](#CurrentVersi
 and [_CurrentVersionCode_](#CurrentVersionCode) fields in the metadata by the
 `fdroid checkupdates` process.
 
-Valid modes are:
+By default, no checking is done because there's no appropriate automated way of
+doing so. Updates should be checked for manually.  Use this, for example, when
+deploying unstable or patched versions; when builds are done in a directory
+different to where the _AndroidManifest.xml_ is; if the developers use the
+Gradle build system and store version info in a separate file; if the developers
+make a new branch for each release and don't make tags; or if you've changed the
+package name or version code logic.
 
-* `None` - No checking is done because there's no appropriate
-  automated way of doing so. Updates should be checked for manually.
-  Use this, for example, when deploying unstable or patched versions;
-  when builds are done in a directory different to where the
-  _AndroidManifest.xml_ is; if the developers use the Gradle build
-  system and store version info in a separate file; if the developers
-  make a new branch for each release and don't make tags; or if you've
-  changed the package name or version code logic.
+To enable, set it to a supported mode:
 
 * `Static` - No checking is done - either development has ceased or
   new versions are not desired. This method is also used when there is
