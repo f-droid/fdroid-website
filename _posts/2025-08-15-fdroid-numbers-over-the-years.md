@@ -103,10 +103,13 @@ The numbers are presented in the table below.
 | 2025-05 | 3,156,053 |
 | 2025-06 | 4,098,797 |
 | 2025-07 | 3,330,615 |
-| 2025-08 | 968,209   |
+| 2025-08 | 3,372,221 |
+| 2025-09 | 4,154,186 |
+| 2025-10 | 3,325,428 |
+| 2025-11 | 3,656,648 |
 
-The table above shows the number of connections that access F-Droid search
-from November 2020 to August 15th 2025.There is consistent growth month by
+The table above shows the number of connections that accessed F-Droid search
+from November 2020 to November 2025.There is consistent growth month by
 month over the 5 year period.
 
 ## F-Droid Fronter Hits
@@ -138,7 +141,10 @@ period as shown below.
 | 2025-05 | 953,816,373   |
 | 2025-06 | 1,132,439,739 |
 | 2025-07 | 862,084,794   |
-| 2025-08 | 255,886,135   |
+| 2025-08 | 870,386,289   |
+| 2025-09 | 848,930,866   |
+| 2025-10 | 452,893,186   |
+| 2025-11 | 551,874,640   |
 
 ### http03 fronter hits
 
@@ -188,7 +194,10 @@ link page.
 | 2025-05 | 342,379 |
 | 2025-06 | 537,703 |
 | 2025-07 | 436,976 |
-| 2025-08 | 126,824 |
+| 2025-08 | 517,419 |
+| 2025-09 | 542,166 |
+| 2025-10 | 413,071 |
+| 2025-11 | 229,179 |
 
 ## F-Droid Onion Link hits
 
@@ -216,7 +225,10 @@ link that can be accessed via Tor.
 | 2025-05 | 562,671   |
 | 2025-06 | 485,385   |
 | 2025-07 | 451,724   |
-| 2025-08 | 197,938   |
+| 2025-08 | 798,294   |
+| 2025-09 | 711,292   |
+| 2025-10 | 269,173   |
+| 2025-11 | 288,840   |
 
 ## F-Droid app download numbers
 
