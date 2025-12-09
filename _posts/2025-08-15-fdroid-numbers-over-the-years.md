@@ -234,13 +234,14 @@ link that can be accessed via Tor.
 
 The table below shows the number of app downloaded from
 [f-droid.org](fdroid.org).
-The number of apps downloaded in 2025 - August 15th - as of the time of
-writing this blog is almost surpassing the number of apps downloaded in 2024.
+The number of apps downloaded and updated in 2025 - December 1st 2025 -
+as of the time of writing this blog is almost surpassing the number of
+apps downloaded and updated in 2024.
 
-| Year                   | Number of Downloaded Apps |
-| -----------------------| ------------------------- |
-| 2024                   | 57,157,531                |
-| January to August 2025 | 40,745,559                |
+| Year                         | Number of Downloaded Apps |
+| -----------------------------| ------------------------- |
+| 2024                         | 4,341,930,948             |
+| January to December 1st 2025 | 18,246,286,456            |
 
 ## Conclusion
 
