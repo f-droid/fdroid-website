@@ -431,21 +431,22 @@ make-automated-translation-pr:
     - export COMMIT_MSG=Translations-completed-on-`date +%Y-%m-%d`
   script:
     - apt-get install python3-git python3-requests git python3-yaml
-    - git clone git@gitlab.com:pmmayero/fdroid-website.git
-    - git -C fdroid-website/ remote add upstream git@gitlab.com:fdroid/fdroid-website.git
-    - git -C fdroid-website/ fetch upstream
-    - git -C fdroid-website/ checkout master
-    - git -C fdroid-website/ rebase upstream/master
-    - git -C fdroid-website/ push -f origin master
-    - git -C fdroid-website/ remote add weblate https://hosted.weblate.org/git/f-droid/website/
+    - git clone https://gitlab.com/pmmayero/fdroid-website.git
+    - cd fdroid-website/
+    - git remote add upstream https://gitlab.com/fdroid/fdroid-website.git
+    - git fetch upstream
+    - git checkout master
+    - git rebase upstream/master
+    - git push -f origin master
+    - git remote add weblate https://hosted.weblate.org/git/f-droid/website/
     - python3 fdroid-website/tools/pick-complete-translations.py
     - |
       if git diff --quiet && git diff --cached --quiet; then
         echo "No changes to commit. Exiting."
         exit 0
       fi
-    - git -C fdroid-website/ config user.name "$CI_PIPELINE_ID/$CI_JOB_ID"
-    - git -C fdroid-website/ config user.email $CI_PROJECT_PATH@f-droid.org
-    - git -C fdroid-website/_posts/ add .
-    - git -C fdroid-website/ commit -m $COMMIT_MSG
-    - git -C fdroid-website/ push -o merge_request.create -o merge_request.target=master origin $PUSH_BRANCH -o merge_request.description=$COMMIT_MSG -o merge_request.draft -o ci.skip
+    - git config user.name "$CI_PIPELINE_ID/$CI_JOB_ID"
+    - git config user.email $CI_PROJECT_PATH@f-droid.org
+    - git add .
+    - git commit -m $COMMIT_MSG
+    - git push -o merge_request.create -o merge_request.target=master origin $PUSH_BRANCH -o merge_request.description=$COMMIT_MSG -o merge_request.draft -o ci.skip
