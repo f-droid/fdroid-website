@@ -12,12 +12,15 @@ md_link_pattern = re.compile(r'](\([^h][^\)]+\))')
 url_link_pattern = re.compile(r'<(https?://[^>]+)>')
 bad_md_link = re.compile(r'.*\]\s+\(')
 safe_html_pattern = re.compile(r'<https?://[^>]+>')
+remove_fuzzy_obsolete_pattern = re.compile(r'(?:#, fuzzy\n)#~.? msg[a-z]+ "[^"]+"')
 for f in sorted(glob.glob('po/*.po*')):
     output = ''
     rewrite = False
     print(f)
     with open(f) as fp:
         contents = fp.read()
+    # replace fuzzy obsolete strings with newlines to preserve line counts
+    contents = remove_fuzzy_obsolete_pattern.sub('\n\n\n\n', contents)
     catalog = []
     try:
         catalog = read_po(io.StringIO(contents), abort_invalid=True)
