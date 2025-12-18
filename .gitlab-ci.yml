@@ -440,15 +440,23 @@ make-automated-translation-pr:
     - git push -f origin master
     - git remote add weblate https://hosted.weblate.org/git/f-droid/website/
     - git config --global user.email pmmayero@gmail.com
-    - python3 tools/pick-complete-translations.py
-    - git log --oneline -5
+    - python3 tools/pick-complete-translations.py > git-cherry-pick-hashes.txt
     - |
-      if git diff --quiet && git diff --cached --quiet; then
-        echo "No changes to commit. Exiting."
-        exit 0
+      set -euo pipefail
+
+      FILE="git-cherry-pick-hashes.txt"
+
+      # 1. Stop pipeline if file is empty
+      if [[ ! -s "$FILE" ]]; then
+        echo "❌ $FILE is empty. Stopping pipeline."
+        exit 1
       fi
+
+      # 2. Extract hashes into one line
+      CHERRYPICKS=$(awk '{print $3}' "$FILE" | xargs)
+
+      echo "Cherry-picks to apply:"
+      echo "$CHERRYPICKS"
     - git config user.name "$CI_PIPELINE_ID/$CI_JOB_ID"
     - git config user.email $CI_PROJECT_PATH@f-droid.org
-    - git add .
-    - git commit -m $COMMIT_MSG
     - git push -o merge_request.create -o merge_request.target=master origin $PUSH_BRANCH -o merge_request.description=$COMMIT_MSG -o merge_request.draft -o ci.skip
