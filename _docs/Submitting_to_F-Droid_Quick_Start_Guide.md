@@ -26,15 +26,16 @@ should have a tag. For example, if its AndroidManifest contains `versionName:
 '1.0'`, the commit needs a `v1.0` tag. It is strongly encouraged to add
 metadata in the application's source repo, too:
 
-* _metadata/en-US/short_description.txt_ (30-50 chars, no trailing dot)
-* _metadata/en-US/full_description.txt_
-* _metadata/en-US/images/icon.png_
-* _metadata/en-US/images/phoneScreenshots/screenshot.png_
+* _fastlane/metadata/android/en-US/short_description.txt_ (less than 80 characters, no trailing dot)
+* _fastlane/metadata/android/en-US/full_description.txt_
+* _fastlane/metadata/android/en-US/images/icon.png_
+* _fastlane/metadata/android/en-US/images/phoneScreenshots/1.png_
+* _fastlane/metadata/android/en-US/images/phoneScreenshots/2.png_
 
 If the AndroidManifest contains `versionCode: 123`, there should be a
 corresponding explanation of what's new in this version:
 
-* _metadata/en-US/changelogs/123.txt_ (max 500 characters)
+* _fastlane/metadata/android/en-US/changelogs/123.txt_ (max 500 characters)
 
 Browse the [F-Droid client
 metadata](https://gitlab.com/fdroid/fdroidclient/-/tree/master/metadata/en-US)
@@ -87,24 +88,35 @@ Categories:
   - Internet
   - Navigation
 License: GPL-3.0-or-later
+# Add info about you and the App so that the user can know the App and its author better
+AuthorName: FOSS Lover
+AuthorEmail: fosslover@f-droid.org
+WebSite: https://example.f-droid.app
 SourceCode: https://gitlab.com/APPLICATION_UPSTREAM/ExampleCom
+IssueTracker: https://gitlab.com/APPLICATION_UPSTREAM/ExampleCom/-/issues
 
 RepoType: git
 Repo: https://gitlab.com/APPLICATION_UPSTREAM/ExampleCom
+Binaries: https://gitlab.com/APPLICATION_UPSTREAM/ExampleCom/-/releases/v%v/downloads/app-release.apk
 
 Builds:
   - versionName: '1.0'
     versionCode: 123
-    commit: v1.0
+    # Use the commit hash which the App should be built from
+    commit: deadbeefdeadbeefdeadbeefdeadbeefdeadbeef
     # Where build.gradle is:
     subdir: app
     sudo:
-      - apt-get update
       # see text below
-      - apt-get install -y librsvg2-bin
+      - echo "deb https://deb.debian.org/debian trixie main" > /etc/apt/sources.list.d/trixie.list
+      - apt-get update
+      - apt-get install -y -t trixie openjdk-21-jdk-headless
       - update-alternatives --auto java
     gradle:
       - yes
+
+# Extract from your signed APK with `apksigner verify --print-certs`
+AllowedAPKSigningKeys: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 
 AutoUpdateMode: Version
 UpdateCheckMode: Tags
@@ -112,12 +124,11 @@ CurrentVersion: '1.0'
 CurrentVersionCode: 123
 ```
 
-Adjust or remove the relevant _sudo_ lines if needed, eg: 
+Adjust or remove the relevant _sudo_ lines if needed, eg:
 
-* The example application's _build.gradle_ executes _rsvg-convert_ to
-  rasterize its vector icons, so we install _librsvg2-bin_ from the official
-  Debian repositories. All such dependencies should be specified in the app's
-  _README_.
+* The example application requires JDK 21, so we install _openjdk-21-jdk-headless_ from the official
+  Debian repositories. The Debian version and default packages installed on F-Droid's _buildserver_
+  can be found in <https://gitlab.com/fdroid/fdroidserver/-/blob/master/buildserver/provision-apt-get-install>.
 
 Download and launch the latest version of the server tools container:
 
