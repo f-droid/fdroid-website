@@ -11,7 +11,7 @@ authorWebsite: https://s1m.fr
 
 It turns out I don't remember in details how all started, I need to read some historical pull requests and chats.
 
-# Why do I need push notifications?
+### Why do I need push notifications?
 
 I think I've installed my first alternative ROM, [LineageOS](https://lineageos.org/), around 2013, and never went back to stock ROMs since then. At this time, I didn't really care about the apps I was installing, it was mainly to take control of my devices and get rid of the bloatwares.
 
@@ -25,7 +25,7 @@ Even after using this new system, the experience was nearly the same. Why? Becau
 
 \* That's actually possible to use FCM (Google notifs) without Google lib, but I didn't know that at this moment. Cf. UnifiedPush blog post about [push notifications for decentralized applications](https://unifiedpush.org/news/20250131_push_for_decentralized/), or Molly [issue regarding FOSS FCM implementation](https://github.com/mollyim/mollyim-android/issues/637).
 
-# Gotify (2020)
+#### Gotify (2020)
 
 So, we're in 2020, and I finally want to look why I can't use microG with Fedilab and Element from F-Droid, and if we can replace microG with another notification app.
 
@@ -37,7 +37,7 @@ It looks like from the pull request history that "connector" comes from **jmatth
 
 At this moment, the feature has picked the interest of some persons, including **sorunome**, **karmanyaahm** and **sparchatus**. **Sorunome**, contributor to FluffyChat, told me that the feature may interest people in [OpenPush](https://bubu1.eu/openpush/) Matrix room.
 
-# First UnifiedPush version (2020)
+#### First UnifiedPush version (2020)
 
 Late 2020, looking at some p2p projects, I thought it would be cool having a p2p based solution too. So came the questions about ecosystem lock-in of a Gotify only solution, adoption, and fragmentation. If we have multiple applications able to provide push notifications, we should have a library that is compatible with all of them. When a new application providing push notifications is published, then all existing applications supporting the *thing* would be directly compatible. Going that way, we needed to specify how it should work first.
 
@@ -49,7 +49,7 @@ I published a first version of the specifications, a library, and a fork of Goti
 
 \* Which actually never happened 🤷
 
-# FluffyChat, Fedilab, and more (2021)
+#### FluffyChat, Fedilab, and more (2021)
 
 Early 2021, [FluffyChat](https://fluffy.chat/en/) was supporting UnifiedPush. And soon came [Fedilab](https://fedilab.app/) too, as the dev, **Thomas**, was directly interested.
 
@@ -59,11 +59,11 @@ After that, some applications started to implement the feature, such as a [Tox a
 
 Mid 2021, I implemented UnifiedPush support for [Element](https://github.com/element-hq/element-android/), which was soon merged by [SchildiChat](https://github.com/SchildiChat/SchildiChat-android/), a fork. I think the experience from SchildiChat helped for it being merged into Element mid 2022.
 
-# UnifiedPush for Linux (mid 2021)
+#### UnifiedPush for Linux (mid 2021)
 
 At this moment, vurpo came to UnifiedPush Matrix room to talk about push notifications for Linux devices. So we had UnifiedPush for Linux by mirroring the specifications for Android to D-Bus IPC.
 
-# ntfy, NextPush (2021)
+#### ntfy, NextPush (2021)
 
 During 2021, a new project appeared on the Internet: [ntfy](https://ntfy.sh/). A project like Gotify, that can work without any account, with a public server. The app is extremely easy to use, as you have nothing to set up. And the developer, **binwiederhier**, was directly interested in supporting UnifiedPush, to make ntfy a *distributor*.
 
@@ -73,13 +73,13 @@ I have also implemented [NextPush](https://codeberg.org/NextPush/nextpush-androi
 
 In the same time, Gotify developer informed us that they finally prefer not to merge the support, as they don't use it and prefer to avoid adding maintenance to their project, which is perfectly understandable. With this new position, the official support of UnifiedPush by ntfy, and the new NextPush app, I preferred to discontinued Gotify forks as well.
 
-# KUnifiedPush (mid 2022)
+#### KUnifiedPush (mid 2022)
 
 Mid 2022, the [KDE](https://kde.org/) team, and particularly **vkrause**, published [KUnifiedPush](https://invent.kde.org/libraries/kunifiedpush): a distributor for Linux, compatible with different push server, like ntfy or NextPush. Until then, we only had POC implementations of distributors for Linux. KUnifiedPush also provide libraries for KDE applications.
 
 This allowed Linux applications to finally support the protocol.
 
-# Full-time on UnifiedPush (2024 - 2025)
+#### Full-time on UnifiedPush (2024 - 2025)
 
 At the end of 2023, we have more than 20 applications supporting UnifiedPush, and another distributor: [Conversations](https://codeberg.org/iNPUTmice/Conversations). Element being probably the one with the larger user base at this moment. Someone advised me to apply for a grant with [NLnet](https://nlnet.nl/), as it would boost development of the project.
 
@@ -95,7 +95,7 @@ NLnet gave the opportunity to polish many things that were pending, to add a mig
 
 The idea is to increase the network effect: the more applications support UnifiedPush, the more UnifiedPush can be relevant for users, and the more users will use UnifiedPush. If the number of UnifiedPush users increases, it pushes applications' developers to support the protocol. At the end, we can use our phone with the push service we want, to get an expected user experience even without the Play Services.
 
-# Retrospective
+### Retrospective
 
 It was by chance that I started UnifiedPush and the project would never have existed without other projects like F-Droid, Gotify, Matrix, Fluffychat or Fedilab, and many more, without the help of many people.
 
@@ -115,7 +115,7 @@ I would love to continue working daily on UnifiedPush, and there are probably to
 
 Among other things, we still need to improve libraries for UnifiedPush on Linux, and it’d be great to have a UI for KUnifiedPush to publish it on Flatpak. There are some important applications, such as Mozilla sync service, that use an allow-list of authorized push servers, defeating the purpose of self-hosting: it would be great implementing a better anti-SSRF mechanism. We will probably have to build these blocks and others together. If you want to contribute, do not hesitate to PM on [Mastodon](https://fosstodon.org/@unifiedpush) or join [UnifiedPush matrix room](https://matrix.to/#/#unifiedpush:matrix.org).
 
-# UnifiedPush in 5 years
+### UnifiedPush in 5 years
 
 The best thing that could happen to UnifiedPush on Android in 5 years would be for it to no longer exist.
 
