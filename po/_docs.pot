@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2025-12-17 10:04+0100\n"
+"POT-Creation-Date: 2026-01-16 12:09+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -12781,25 +12781,31 @@ msgstr ""
 #. type: Bullet: '* '
 #: _docs/Submitting_to_F-Droid_Quick_Start_Guide.md
 #, markdown-text
-msgid "_metadata/en-US/short_description.txt_ (30-50 chars, no trailing dot)"
+msgid "_fastlane/metadata/android/en-US/short_description.txt_ (less than 80 characters, no trailing dot)"
 msgstr ""
 
 #. type: Bullet: '* '
 #: _docs/Submitting_to_F-Droid_Quick_Start_Guide.md
 #, markdown-text
-msgid "_metadata/en-US/full_description.txt_"
+msgid "_fastlane/metadata/android/en-US/full_description.txt_"
 msgstr ""
 
 #. type: Bullet: '* '
 #: _docs/Submitting_to_F-Droid_Quick_Start_Guide.md
 #, markdown-text
-msgid "_metadata/en-US/images/icon.png_"
+msgid "_fastlane/metadata/android/en-US/images/icon.png_"
 msgstr ""
 
 #. type: Bullet: '* '
 #: _docs/Submitting_to_F-Droid_Quick_Start_Guide.md
 #, markdown-text
-msgid "_metadata/en-US/images/phoneScreenshots/screenshot.png_"
+msgid "_fastlane/metadata/android/en-US/images/phoneScreenshots/1.png_"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/Submitting_to_F-Droid_Quick_Start_Guide.md
+#, markdown-text
+msgid "_fastlane/metadata/android/en-US/images/phoneScreenshots/2.png_"
 msgstr ""
 
 #. type: Plain text
@@ -12811,7 +12817,7 @@ msgstr ""
 #. type: Bullet: '* '
 #: _docs/Submitting_to_F-Droid_Quick_Start_Guide.md
 #, markdown-text
-msgid "_metadata/en-US/changelogs/123.txt_ (max 500 characters)"
+msgid "_fastlane/metadata/android/en-US/changelogs/123.txt_ (max 500 characters)"
 msgstr ""
 
 #. type: Plain text
@@ -12922,24 +12928,35 @@ msgid ""
 "  - Internet\n"
 "  - Navigation\n"
 "License: GPL-3.0-or-later\n"
+"# Add info about you and the App so that the user can know the App and its author better\n"
+"AuthorName: FOSS Lover\n"
+"AuthorEmail: fosslover@f-droid.org\n"
+"WebSite: https://example.f-droid.app\n"
 "SourceCode: https://gitlab.com/APPLICATION_UPSTREAM/ExampleCom\n"
+"IssueTracker: https://gitlab.com/APPLICATION_UPSTREAM/ExampleCom/-/issues\n"
 "\n"
 "RepoType: git\n"
 "Repo: https://gitlab.com/APPLICATION_UPSTREAM/ExampleCom\n"
+"Binaries: https://gitlab.com/APPLICATION_UPSTREAM/ExampleCom/-/releases/v%v/downloads/app-release.apk\n"
 "\n"
 "Builds:\n"
 "  - versionName: '1.0'\n"
 "    versionCode: 123\n"
-"    commit: v1.0\n"
+"    # Use the commit hash which the App should be built from\n"
+"    commit: deadbeefdeadbeefdeadbeefdeadbeefdeadbeef\n"
 "    # Where build.gradle is:\n"
 "    subdir: app\n"
 "    sudo:\n"
-"      - apt-get update\n"
 "      # see text below\n"
-"      - apt-get install -y librsvg2-bin\n"
+"      - echo \"deb https://deb.debian.org/debian trixie main\" > /etc/apt/sources.list.d/trixie.list\n"
+"      - apt-get update\n"
+"      - apt-get install -y -t trixie openjdk-21-jdk-headless\n"
 "      - update-alternatives --auto java\n"
 "    gradle:\n"
 "      - yes\n"
+"\n"
+"# Extract from your signed APK with `apksigner verify --print-certs`\n"
+"AllowedAPKSigningKeys: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\n"
 "\n"
 "AutoUpdateMode: Version\n"
 "UpdateCheckMode: Tags\n"
@@ -12956,7 +12973,7 @@ msgstr ""
 #. type: Bullet: '* '
 #: _docs/Submitting_to_F-Droid_Quick_Start_Guide.md
 #, markdown-text
-msgid "The example application's _build.gradle_ executes _rsvg-convert_ to rasterize its vector icons, so we install _librsvg2-bin_ from the official Debian repositories. All such dependencies should be specified in the app's _README_."
+msgid "The example application requires JDK 21, so we install _openjdk-21-jdk-headless_ from the official Debian repositories. The Debian version and default packages installed on F-Droid's _buildserver_ can be found in <https://gitlab.com/fdroid/fdroidserver/-/blob/master/buildserver/provision-apt-get-install>."
 msgstr ""
 
 #. type: Plain text

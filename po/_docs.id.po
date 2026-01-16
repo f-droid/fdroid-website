@@ -12,7 +12,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2025-12-17 10:04+0100\n"
+"POT-Creation-Date: 2026-01-16 12:09+0100\n"
 "PO-Revision-Date: 2025-12-26 06:00+0000\n"
 "Last-Translator: Arif Budiman <arifpedia@gmail.com>\n"
 "Language-Team: Indonesian <https://hosted.weblate.org/projects/f-droid/website-docs/id/>\n"
@@ -12757,22 +12757,37 @@ msgstr ""
 
 #. type: Bullet: '* '
 #: _docs/Submitting_to_F-Droid_Quick_Start_Guide.md
-msgid "_metadata/en-US/short_description.txt_ (30-50 chars, no trailing dot)"
+#, fuzzy
+#| msgid "_metadata/en-US/short_description.txt_ (30-50 chars, no trailing dot)"
+msgid "_fastlane/metadata/android/en-US/short_description.txt_ (less than 80 characters, no trailing dot)"
 msgstr "`_metadata/en-US/short_description.txt_` (30–50 karakter, tanpa tanda titik di akhir)"
 
 #. type: Bullet: '* '
 #: _docs/Submitting_to_F-Droid_Quick_Start_Guide.md
-msgid "_metadata/en-US/full_description.txt_"
+#, fuzzy
+#| msgid "_metadata/en-US/full_description.txt_"
+msgid "_fastlane/metadata/android/en-US/full_description.txt_"
 msgstr "`_metadata/en-US/full_description.txt_`"
 
 #. type: Bullet: '* '
 #: _docs/Submitting_to_F-Droid_Quick_Start_Guide.md
-msgid "_metadata/en-US/images/icon.png_"
+#, fuzzy
+#| msgid "_metadata/en-US/images/icon.png_"
+msgid "_fastlane/metadata/android/en-US/images/icon.png_"
 msgstr "`_metadata/en-US/images/icon.png_`"
 
 #. type: Bullet: '* '
 #: _docs/Submitting_to_F-Droid_Quick_Start_Guide.md
-msgid "_metadata/en-US/images/phoneScreenshots/screenshot.png_"
+#, fuzzy
+#| msgid "_metadata/en-US/images/phoneScreenshots/screenshot.png_"
+msgid "_fastlane/metadata/android/en-US/images/phoneScreenshots/1.png_"
+msgstr "`_metadata/en-US/images/phoneScreenshots/screenshot.png_`"
+
+#. type: Bullet: '* '
+#: _docs/Submitting_to_F-Droid_Quick_Start_Guide.md
+#, fuzzy
+#| msgid "_metadata/en-US/images/phoneScreenshots/screenshot.png_"
+msgid "_fastlane/metadata/android/en-US/images/phoneScreenshots/2.png_"
 msgstr "`_metadata/en-US/images/phoneScreenshots/screenshot.png_`"
 
 #. type: Plain text
@@ -12782,7 +12797,9 @@ msgstr "Jika AndroidManifest berisi `versionCode: 123`, maka harus ada penjelasa
 
 #. type: Bullet: '* '
 #: _docs/Submitting_to_F-Droid_Quick_Start_Guide.md
-msgid "_metadata/en-US/changelogs/123.txt_ (max 500 characters)"
+#, fuzzy
+#| msgid "_metadata/en-US/changelogs/123.txt_ (max 500 characters)"
+msgid "_fastlane/metadata/android/en-US/changelogs/123.txt_ (max 500 characters)"
 msgstr "`_metadata/en-US/changelogs/123.txt_` (maksimal 500 karakter)"
 
 #. type: Plain text
@@ -12894,59 +12911,41 @@ msgid ""
 "  - Internet\n"
 "  - Navigation\n"
 "License: GPL-3.0-or-later\n"
+"# Add info about you and the App so that the user can know the App and its author better\n"
+"AuthorName: FOSS Lover\n"
+"AuthorEmail: fosslover@f-droid.org\n"
+"WebSite: https://example.f-droid.app\n"
 "SourceCode: https://gitlab.com/APPLICATION_UPSTREAM/ExampleCom\n"
+"IssueTracker: https://gitlab.com/APPLICATION_UPSTREAM/ExampleCom/-/issues\n"
 "\n"
 "RepoType: git\n"
 "Repo: https://gitlab.com/APPLICATION_UPSTREAM/ExampleCom\n"
+"Binaries: https://gitlab.com/APPLICATION_UPSTREAM/ExampleCom/-/releases/v%v/downloads/app-release.apk\n"
 "\n"
 "Builds:\n"
 "  - versionName: '1.0'\n"
 "    versionCode: 123\n"
-"    commit: v1.0\n"
+"    # Use the commit hash which the App should be built from\n"
+"    commit: deadbeefdeadbeefdeadbeefdeadbeefdeadbeef\n"
 "    # Where build.gradle is:\n"
 "    subdir: app\n"
 "    sudo:\n"
-"      - apt-get update\n"
 "      # see text below\n"
-"      - apt-get install -y librsvg2-bin\n"
+"      - echo \"deb https://deb.debian.org/debian trixie main\" > /etc/apt/sources.list.d/trixie.list\n"
+"      - apt-get update\n"
+"      - apt-get install -y -t trixie openjdk-21-jdk-headless\n"
 "      - update-alternatives --auto java\n"
 "    gradle:\n"
 "      - yes\n"
+"\n"
+"# Extract from your signed APK with `apksigner verify --print-certs`\n"
+"AllowedAPKSigningKeys: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\n"
 "\n"
 "AutoUpdateMode: Version\n"
 "UpdateCheckMode: Tags\n"
 "CurrentVersion: '1.0'\n"
 "CurrentVersionCode: 123\n"
 msgstr ""
-"```yaml\n"
-"Categories:\n"
-"  - Internet\n"
-"  - Navigation\n"
-"License: GPL-3.0-or-later\n"
-"SourceCode: https://gitlab.com/APPLICATION_UPSTREAM/ExampleCom\n"
-"\n"
-"RepoType: git\n"
-"Repo: https://gitlab.com/APPLICATION_UPSTREAM/ExampleCom\n"
-"\n"
-"Builds:\n"
-"  - versionName: '1.0'\n"
-"    versionCode: 123\n"
-"    commit: v1.0\n"
-"    # Lokasi build.gradle:\n"
-"    subdir: app\n"
-"    sudo:\n"
-"      - apt-get update\n"
-"      # lihat catatan di bawah\n"
-"      - apt-get install -y librsvg2-bin\n"
-"      - update-alternatives --auto java\n"
-"    gradle:\n"
-"      - yes\n"
-"\n"
-"AutoUpdateMode: Version\n"
-"UpdateCheckMode: Tags\n"
-"CurrentVersion: '1.0'\n"
-"CurrentVersionCode: 123\n"
-"```\n"
 
 #. type: Plain text
 #: _docs/Submitting_to_F-Droid_Quick_Start_Guide.md
@@ -12955,10 +12954,8 @@ msgstr "Sesuaikan atau hapus baris _sudo_ yang tidak diperlukan sesuai kebutuhan
 
 #. type: Bullet: '* '
 #: _docs/Submitting_to_F-Droid_Quick_Start_Guide.md
-msgid "The example application's _build.gradle_ executes _rsvg-convert_ to rasterize its vector icons, so we install _librsvg2-bin_ from the official Debian repositories. All such dependencies should be specified in the app's _README_."
+msgid "The example application requires JDK 21, so we install _openjdk-21-jdk-headless_ from the official Debian repositories. The Debian version and default packages installed on F-Droid's _buildserver_ can be found in <https://gitlab.com/fdroid/fdroidserver/-/blob/master/buildserver/provision-apt-get-install>."
 msgstr ""
-"Aplikasi contoh menggunakan perintah _rsvg-convert_ di dalam _build.gradle_ untuk mengubah ikon vektor menjadi raster, sehingga perlu menginstal paket _librsvg2-bin_ dari repositori resmi Debian.  \n"
-"Semua dependensi seperti ini sebaiknya dijelaskan dalam berkas _README_ aplikasi."
 
 #. type: Plain text
 #: _docs/Submitting_to_F-Droid_Quick_Start_Guide.md
@@ -13815,3 +13812,68 @@ msgstr ""
 "\n"
 "Agar pembaruan bisa sepenuhnya otomatis, diperlukan [Privileged Extension](https://gitlab.com/fdroid/privileged-extension).  \n"
 "Tanpa ekstensi tersebut, sistem hanya akan mengunduh pembaruan secara otomatis, sementara pengguna tetap harus menekan tombol **Install** untuk setiap aplikasi."
+
+#, no-wrap
+#~ msgid ""
+#~ "Categories:\n"
+#~ "  - Internet\n"
+#~ "  - Navigation\n"
+#~ "License: GPL-3.0-or-later\n"
+#~ "SourceCode: https://gitlab.com/APPLICATION_UPSTREAM/ExampleCom\n"
+#~ "\n"
+#~ "RepoType: git\n"
+#~ "Repo: https://gitlab.com/APPLICATION_UPSTREAM/ExampleCom\n"
+#~ "\n"
+#~ "Builds:\n"
+#~ "  - versionName: '1.0'\n"
+#~ "    versionCode: 123\n"
+#~ "    commit: v1.0\n"
+#~ "    # Where build.gradle is:\n"
+#~ "    subdir: app\n"
+#~ "    sudo:\n"
+#~ "      - apt-get update\n"
+#~ "      # see text below\n"
+#~ "      - apt-get install -y librsvg2-bin\n"
+#~ "      - update-alternatives --auto java\n"
+#~ "    gradle:\n"
+#~ "      - yes\n"
+#~ "\n"
+#~ "AutoUpdateMode: Version\n"
+#~ "UpdateCheckMode: Tags\n"
+#~ "CurrentVersion: '1.0'\n"
+#~ "CurrentVersionCode: 123\n"
+#~ msgstr ""
+#~ "```yaml\n"
+#~ "Categories:\n"
+#~ "  - Internet\n"
+#~ "  - Navigation\n"
+#~ "License: GPL-3.0-or-later\n"
+#~ "SourceCode: https://gitlab.com/APPLICATION_UPSTREAM/ExampleCom\n"
+#~ "\n"
+#~ "RepoType: git\n"
+#~ "Repo: https://gitlab.com/APPLICATION_UPSTREAM/ExampleCom\n"
+#~ "\n"
+#~ "Builds:\n"
+#~ "  - versionName: '1.0'\n"
+#~ "    versionCode: 123\n"
+#~ "    commit: v1.0\n"
+#~ "    # Lokasi build.gradle:\n"
+#~ "    subdir: app\n"
+#~ "    sudo:\n"
+#~ "      - apt-get update\n"
+#~ "      # lihat catatan di bawah\n"
+#~ "      - apt-get install -y librsvg2-bin\n"
+#~ "      - update-alternatives --auto java\n"
+#~ "    gradle:\n"
+#~ "      - yes\n"
+#~ "\n"
+#~ "AutoUpdateMode: Version\n"
+#~ "UpdateCheckMode: Tags\n"
+#~ "CurrentVersion: '1.0'\n"
+#~ "CurrentVersionCode: 123\n"
+#~ "```\n"
+
+#~ msgid "The example application's _build.gradle_ executes _rsvg-convert_ to rasterize its vector icons, so we install _librsvg2-bin_ from the official Debian repositories. All such dependencies should be specified in the app's _README_."
+#~ msgstr ""
+#~ "Aplikasi contoh menggunakan perintah _rsvg-convert_ di dalam _build.gradle_ untuk mengubah ikon vektor menjadi raster, sehingga perlu menginstal paket _librsvg2-bin_ dari repositori resmi Debian.  \n"
+#~ "Semua dependensi seperti ini sebaiknya dijelaskan dalam berkas _README_ aplikasi."
