@@ -27,7 +27,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
 "POT-Creation-Date: 2026-01-16 12:09+0100\n"
-"PO-Revision-Date: 2026-01-11 19:01+0000\n"
+"PO-Revision-Date: 2026-01-18 06:01+0000\n"
 "Last-Translator: VfBFan <drop0815@posteo.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/f-droid/website-docs/de/>\n"
 "Language: de\n"
@@ -35,7 +35,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.15.1\n"
+"X-Generator: Weblate 5.15.2\n"
 
 #. type: Yaml Front Matter Hash Value: title
 #: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
@@ -12373,38 +12373,28 @@ msgstr "Jeder offizielle Release-Commit im Upstream-Git-Repository der Anwendung
 
 #. type: Bullet: '* '
 #: _docs/Submitting_to_F-Droid_Quick_Start_Guide.md
-#, fuzzy
-#| msgid "_metadata/en-US/short_description.txt_ (30-50 chars, no trailing dot)"
 msgid "_fastlane/metadata/android/en-US/short_description.txt_ (less than 80 characters, no trailing dot)"
-msgstr "_metadata/en-US/short_description.txt_ (30-50 Zeichen, kein Punkt am Ende)"
+msgstr "_fastlane/metadata/android/en-US/short_description.txt_ (weniger als 80 Zeichen, kein Punkt am Ende)"
 
 #. type: Bullet: '* '
 #: _docs/Submitting_to_F-Droid_Quick_Start_Guide.md
-#, fuzzy
-#| msgid "_metadata/en-US/full_description.txt_"
 msgid "_fastlane/metadata/android/en-US/full_description.txt_"
-msgstr "_metadata/en-US/full_description.txt_"
+msgstr "_fastlane/metadata/android/en-US/full_description.txt_"
 
 #. type: Bullet: '* '
 #: _docs/Submitting_to_F-Droid_Quick_Start_Guide.md
-#, fuzzy
-#| msgid "_metadata/en-US/images/icon.png_"
 msgid "_fastlane/metadata/android/en-US/images/icon.png_"
-msgstr "_metadata/en-US/images/icon.png_"
+msgstr "_fastlane/metadata/android/en-US/images/icon.png_"
 
 #. type: Bullet: '* '
 #: _docs/Submitting_to_F-Droid_Quick_Start_Guide.md
-#, fuzzy
-#| msgid "_metadata/en-US/images/phoneScreenshots/screenshot.png_"
 msgid "_fastlane/metadata/android/en-US/images/phoneScreenshots/1.png_"
-msgstr "_metadata/en-US/images/phoneScreenshots/screenshot.png_"
+msgstr "_fastlane/metadata/android/en-US/images/phoneScreenshots/1.png_"
 
 #. type: Bullet: '* '
 #: _docs/Submitting_to_F-Droid_Quick_Start_Guide.md
-#, fuzzy
-#| msgid "_metadata/en-US/images/phoneScreenshots/screenshot.png_"
 msgid "_fastlane/metadata/android/en-US/images/phoneScreenshots/2.png_"
-msgstr "_metadata/en-US/images/phoneScreenshots/screenshot.png_"
+msgstr "_fastlane/metadata/android/en-US/images/phoneScreenshots/2.png_"
 
 #. type: Plain text
 #: _docs/Submitting_to_F-Droid_Quick_Start_Guide.md
@@ -12413,10 +12403,8 @@ msgstr "Wenn das AndroidManifest `versionCode: 123` enthält, sollte es eine ent
 
 #. type: Bullet: '* '
 #: _docs/Submitting_to_F-Droid_Quick_Start_Guide.md
-#, fuzzy
-#| msgid "_metadata/en-US/changelogs/123.txt_ (max 500 characters)"
 msgid "_fastlane/metadata/android/en-US/changelogs/123.txt_ (max 500 characters)"
-msgstr "_metadata/en-US/changelogs/123.txt_ (max. 500 Zeichen)"
+msgstr "_fastlane/metadata/android/en-US/changelogs/123.txt_ (max. 500 Zeichen)"
 
 #. type: Plain text
 #: _docs/Submitting_to_F-Droid_Quick_Start_Guide.md
@@ -12551,6 +12539,44 @@ msgid ""
 "CurrentVersion: '1.0'\n"
 "CurrentVersionCode: 123\n"
 msgstr ""
+"Categories:\n"
+"  - Internet\n"
+"  - Navigation\n"
+"License: GPL-3.0-or-later\n"
+"# Fügen Sie Informationen über sich und die App hinzu, damit der Benutzer die App und ihren Autor besser kennenlernen kann.\n"
+"AuthorName: FOSS Lover\n"
+"AuthorEmail: fosslover@f-droid.org\n"
+"WebSite: https://example.f-droid.app\n"
+"SourceCode: https://gitlab.com/APPLICATION_UPSTREAM/ExampleCom\n"
+"IssueTracker: https://gitlab.com/APPLICATION_UPSTREAM/ExampleCom/-/issues\n"
+"\n"
+"RepoType: git\n"
+"Repo: https://gitlab.com/APPLICATION_UPSTREAM/ExampleCom\n"
+"Binaries: https://gitlab.com/APPLICATION_UPSTREAM/ExampleCom/-/releases/v%v/downloads/app-release.apk\n"
+"\n"
+"Builds:\n"
+"  - versionName: '1.0'\n"
+"    versionCode: 123\n"
+"    # Verwenden Sie den Commit-Hash, aus dem die App erstellt werden soll\n"
+"    commit: deadbeefdeadbeefdeadbeefdeadbeefdeadbeef\n"
+"    # Wo sich build.gradle befindet:\n"
+"    subdir: app\n"
+"    sudo:\n"
+"      # siehe Text unten\n"
+"      - echo \"deb https://deb.debian.org/debian trixie main\" > /etc/apt/sources.list.d/trixie.list\n"
+"      - apt-get update\n"
+"      - apt-get install -y -t trixie openjdk-21-jdk-headless\n"
+"      - update-alternatives --auto java\n"
+"    gradle:\n"
+"      - yes\n"
+"\n"
+"# Extrahieren Sie aus Ihrer signierten APK mit `apksigner verify --print-certs`\n"
+"AllowedAPKSigningKeys: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\n"
+"\n"
+"AutoUpdateMode: Version\n"
+"UpdateCheckMode: Tags\n"
+"CurrentVersion: '1.0'\n"
+"CurrentVersionCode: 123\n"
 
 #. type: Plain text
 #: _docs/Submitting_to_F-Droid_Quick_Start_Guide.md
@@ -12560,7 +12586,7 @@ msgstr "Passen Sie die entsprechenden _sudo_-Zeilen an oder entfernen Sie diese 
 #. type: Bullet: '* '
 #: _docs/Submitting_to_F-Droid_Quick_Start_Guide.md
 msgid "The example application requires JDK 21, so we install _openjdk-21-jdk-headless_ from the official Debian repositories. The Debian version and default packages installed on F-Droid's _buildserver_ can be found in <https://gitlab.com/fdroid/fdroidserver/-/blob/master/buildserver/provision-apt-get-install>."
-msgstr ""
+msgstr "Die Beispielanwendung erfordert JDK 21, daher installieren wir _openjdk-21-jdk-headless_ aus den offiziellen Debian-Repositorys. Die Debian-Version und die auf dem _buildserver_ von F-Droid installierten Standardpakete finden Sie unter <https://gitlab.com/fdroid/fdroidserver/-/blob/master/buildserver/provision-apt-get-install>."
 
 #. type: Plain text
 #: _docs/Submitting_to_F-Droid_Quick_Start_Guide.md
