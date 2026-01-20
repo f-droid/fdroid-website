@@ -6,7 +6,7 @@ permalink: /
 
 {% assign strings = site.data.strings.index %}
 
-<h2>{{strings.title}}</h2>
+<h3>{{strings.title}}</h3>
 
 {{strings.introduction}}
 
