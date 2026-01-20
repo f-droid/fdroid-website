@@ -26,7 +26,9 @@ context and keeping the user in control.
 You will see our Anti-Features in action when viewing the details of any app
 containing one or more Anti-Features, whether in the F-Droid client or on this
 website.  The F-Droid client also provides settings to hide apps with certain
-Anti-Features.
+Anti-Features.  For example, apps that are marked with [`Tracking`](#Tracking)
+are not displayed by default.  They can be enabled in the "Anti-Features"
+section of settings.
 
 
 ## List of Anti-Features

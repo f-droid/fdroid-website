@@ -35,6 +35,8 @@ for logging into Weblate since that same account can be used on all of
 the F-Droid projects on GitLab. you can find other translators on the
 [forum](https://forum.f-droid.org/c/translation).
 
+Translators also coordinate via the dedicated chat room, which is available on Matrix at [#fdroid-translators:f-droid.org](https://matrix.to/#/#fdroid-translators:f-droid.org), by clicking [this link](https://t.me/fdroid_translators) for Telegram, IRC at [#fdroid-translators](https://webchat.oftc.net/?randomnick=1&channels=fdroid-translators&prompt=1) on OFTC, or these bridges `#fdroid-translators%irc.oftc.net@irc.jabberfr.org` / `#fdroid-translators%irc.oftc.net@irc.hmm.st` for XMPP.
+
 
 ### Adding a new language
 
