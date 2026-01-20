@@ -43,6 +43,7 @@ the main repository.
 * [Wiki](https://gitlab.com/fdroid/wiki/-/wikis/home) For everything else that people want to document.
 * [Take-Down Requests](Take-Down_Requests) Our policy about requesting the removal of apps or content from _f-droid.org_.
 * [Verifying downloaded F-Droid.apk](Verifying_Downloaded_APK) Verifying downloaded F-Droid.apk.
+* [Licenses](Licenses) An overview of the licenses used throughout the project.
 
 
 ### Developers

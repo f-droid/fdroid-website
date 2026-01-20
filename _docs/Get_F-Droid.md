@@ -3,8 +3,6 @@ layout: page
 title: Get F-Droid
 ---
 
-## Install F-Droid
-
 To install F-Droid, choose one of those 5 options: 
 
 * Easy options:
@@ -41,7 +39,7 @@ What is the difference between easy and advanced options?
   [SHIFT5mq](https://shop.shiftphones.com/shift5me.html) and [SHIFT6mq
   model](https://shop.shiftphones.com/shift6mq.htm) can be updated to ShiftOS-Light.
   F-Droid is pre-installed on ShiftOS-Light.
-* __Volla__ - [Volla Systems](https://volla.online/en/about/) (not to be confused with [Jolla](https://en.wikipedia.org/wiki/Jolla_(smartphone))) is an independent, German manufacturer of smartphones, optionally with its own Android operating system Volla OS or the mobile Linux distribution Ubuntu Touch. F-Droid comes pre-installed on, the Android based, VollaOS. F-Droid can also be installed on Ubuntu Touch following [this guide](https://docs.ubports.com/en/latest/userguide/dailyuse/waydroid.html).
+* __Volla__ - [Volla Systems](https://volla.online/en/about/) (not to be confused with [Jolla](https://en.wikipedia.org/wiki/Jolla_(smartphone))) is an independent, German manufacturer of smartphones, optionally with its own Android operating system Volla OS or the mobile Linux distribution Ubuntu Touch. F-Droid comes pre-installed on, the Android based, Volla OS. F-Droid can also be installed on Ubuntu Touch following [this guide](https://docs.ubports.com/en/latest/userguide/dailyuse/waydroid.html).
 
 ### Option 2. Download and install F-Droid APK.
 
@@ -61,7 +59,7 @@ Below is the same steps as above. But with details if you are interested in thos
 1. When prompts, tap on `Install` F-Droid
 1. When prompts, tap on `Open` F-Droid
 1. The first time F-Droid is open, it will automatically download the F-Droid repository. Wait. Depending on the speed of your internet connection, wait 2 to 10 minutes.
-1. F-Droid will automatically display its catalog of apps. To search for apps, tap on the search button.
+1. F-Droid will automatically display its catalogue of apps. To search for apps, tap on the search button.
 1. When Android prompts, allow the F-Droid to install apps from Unknown Sources.
 1. Optionally, for stronger security, denied the Android internet browser or Android file manager to install apps from Unknown Sources. In the future, F-Droid APK will still be able to install and update any F-Droid apps to your liking.
 1. Done. You successfully install F-Droid APK.
