@@ -3,11 +3,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
+  {% assign site_title = site.data.strings.site.title | default: site.title | strip -%}
   {% assign page_title = page.title | strip -%}
   {% if page_title and page_title != empty -%}
-    {% assign page_title = page_title | append: " | " | append: site.title -%}
+    {% assign page_title = page_title | append: " | " | append: site_title -%}
   {% else -%}
-    {% assign page_title = site.title -%}
+    {% assign page_title = site_title -%}
   {% endif -%}
 
   <title>{{ page_title }}</title>
