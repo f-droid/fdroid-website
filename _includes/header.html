@@ -5,16 +5,22 @@
   </a>
 
   <nav class="site-nav">
-    {% for nav-item in site.data.navigation %}
-      {% if nav-item.key %}
-        {% assign title = site.data.strings.navigation[nav-item.key] %}
-        {% if nav-item.external %}
+    {%- for nav-item in site.data.navigation %}
+      {%- if nav-item.key %}
+        {%- assign title = site.data.strings.navigation[nav-item.key] %}
+        {%- if nav-item.external %}
           <a class="page-link" href="{{ nav-item.url }}">{{ title }}</a>
-        {% else %}
-          <a class="page-link {% if page.url contains nav-item.url %} current {% endif %}" href="{{ nav-item.url | prepend: site.baseurl }}">{{ title }}</a>
-        {% endif %}
-      {% endif %}
-    {% endfor %}
+        {%- else %}
+          {%- assign prefix = page.url | slice: 0, nav-item.url.size %}
+          {%- if page.collection == 'posts' %}
+            {%- assign prefix = '/news/' %}
+          {%- elsif page.app_category %}
+            {%- assign prefix = '/packages/' %}
+          {%- endif %}
+          <a class="page-link {%- if prefix == nav-item.url %} current" aria-current="page{% endif %}" href="{{ nav-item.url | prepend: site.baseurl }}">{{ title }}</a>
+        {%- endif %}
+      {%- endif %}
+    {%- endfor %}
   </nav>
 
 </header>
