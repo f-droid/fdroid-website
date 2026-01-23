@@ -84,7 +84,7 @@ Behind the scenes, we continued improving the infrastructure that
 builds, verifies, and publishes apps for the main F-Droid repository.
 
 This included ongoing work on
-[buildbot](https://gitlab.com/fdroid/buildbot), [reproducible
+[Buildbot](https://gitlab.com/fdroid/buildbot), [reproducible
 builds](https://f-droid.org/2025/11/27/twif.html), [repository
 tooling](https://gitlab.com/fdroid/fdroidserver), [metadata
 cleanup](https://gitlab.com/fdroid/admin/-/issues/377), [translation
@@ -203,7 +203,7 @@ We worked closely with partners including [Waag](https://waag.org/en/),
 [BioSense](https://biosens.rs/), [University of
 Amsterdam](https://www.ivir.nl/), [Murena](https://murena.com/), and [e
 Foundation](https://e.foundation/), supporting in the user testing and
-workshops and have already begun analyzing and mapping out how to
+workshops and have already begun analysing and mapping out how to
 implement the user feedback.
 
 In 2025, we presented our work to the European Commission during the
@@ -261,7 +261,7 @@ ecosystem for years to come.
 
 #### FLOSS Fund Recognition and Community Sustainability
 
-In 2025, F-Droid was [honored to be
+In 2025, F-Droid was [honoured to be
 selected](https://floss.fund/blog/second-tranche-2025-anniversary/) as a
 FLOSS/fund recipient. [FLOSS/fund](https://floss.fund/) recognizes that
 much of the modern technological landscape and even the internet itself
