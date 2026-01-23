@@ -95,6 +95,9 @@ for f in sorted(glob.glob('po/*.po*')):
         if (message.id and message.id[-1] == '\n') and (message.string and message.string[-1] != '\n'):
             output += ("\n'msgid' and 'msgstr' entries do not both end with '\\n': %s\n" % message.string)
 
+        if (message.string and message.string[-1] == '\n') and (message.id and message.id[-1] != '\n'):
+            output += ("\n'msgid' and 'msgstr' entries do not both end with '\\n': %s\n" % message.id)
+
         idlinks = []
         for m in url_link_pattern.findall(message.id):
             idlinks.append(m.replace('\n', ' '))
