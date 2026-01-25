@@ -400,7 +400,6 @@ make-automated-translation-pr:
   before_script:
     - 'command -v ssh-agent >/dev/null || ( apt-get update -y && apt-get install openssh-client -y )'
     - eval $(ssh-agent -s)
-    - echo "${SSH_PRIVATE_KEY}"
     ##
     ## Give the right permissions, otherwise ssh-add will refuse to add files
     ## Add the SSH key stored in SSH_PRIVATE_KEY file type CI/CD variable to the agent store
@@ -441,21 +440,5 @@ make-automated-translation-pr:
     - git remote add weblate https://hosted.weblate.org/git/f-droid/website/
     - git config user.name "$CI_PIPELINE_ID/$CI_JOB_ID"
     - git config user.email $CI_PROJECT_PATH@f-droid.org
-    - python3 tools/pick-complete-translations.py > git-cherry-pick-hashes.txt
-    - |
-      set -euo pipefail
-
-      FILE="git-cherry-pick-hashes.txt"
-
-      # Stop pipeline if file is empty
-      if [[ ! -s "$FILE" ]]; then
-        echo "❌ $FILE is empty. Stopping pipeline."
-        exit 1
-      fi
-
-      # Extract hashes into one line
-      CHERRYPICKS=$(awk '{print $3}' "$FILE" | xargs)
-
-      echo "Cherry-picks to apply:"
-      echo "$CHERRYPICKS"
-    - git push -o merge_request.create -o merge_request.target=master origin $PUSH_BRANCH -o merge_request.description=$COMMIT_MSG -o merge_request.draft -o ci.skip
+    - python3 tools/pick-complete-translations.py || exit 0  # nothing to merge
+    - git push --force -o merge_request.create -o merge_request.target=master origin $PUSH_BRANCH -o merge_request.description=$COMMIT_MSG -o merge_request.auto_merge
