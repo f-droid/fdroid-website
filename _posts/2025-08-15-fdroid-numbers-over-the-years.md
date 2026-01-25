@@ -168,6 +168,8 @@ period as shown below.
 | 2025-05 | 1,035,093,450 |
 | 2025-06 | 47,490,215    |
 
+(_http03 was replaced by http04 then shutdown, http04 metrics coming soon!_)
+
 ## F-Droid link hits
 
 This table shows the number of connections that have connected to the f-droid
