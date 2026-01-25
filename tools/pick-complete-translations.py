@@ -69,7 +69,7 @@ for locale in site_languages:
         merge_locales.append(locale)
 
 if not merge_locales:
-    exit()
+    exit(True)
 
 if 'merge_weblate' in repo.heads:
     merge_weblate = repo.heads['merge_weblate']
@@ -85,6 +85,7 @@ merge_weblate.checkout()
 
 email_pattern = re.compile(r'by (.*?) <(.*)>$')
 
+no_commits_picked = True
 for commit in reversed(
     list(
         repo.iter_commits(str(weblate.refs.master) + '...' + str(upstream.refs.master))
@@ -100,8 +101,11 @@ for commit in reversed(
             pick = True
             break
     if pick:
+        no_commits_picked = False
         print('git cherry-pick', commit)
         repo.git.cherry_pick(str(commit))
         m = email_pattern.search(commit.summary)
         if m:
             email = m.group(1) + ' <' + m.group(2) + '>'
+
+exit(no_commits_picked)
