@@ -441,4 +441,4 @@ make-automated-translation-pr:
     - git config user.name "$CI_PIPELINE_ID/$CI_JOB_ID"
     - git config user.email $CI_PROJECT_PATH@f-droid.org
     - python3 tools/pick-complete-translations.py || exit 0  # nothing to merge
-    - git push --force -o merge_request.create -o merge_request.target=master origin $PUSH_BRANCH -o merge_request.description=$COMMIT_MSG -o merge_request.auto_merge
+    - git push -o merge_request.create -o merge_request.target=master origin $PUSH_BRANCH -o merge_request.description=$COMMIT_MSG -o merge_request.auto_merge
