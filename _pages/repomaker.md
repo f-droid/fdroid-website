@@ -4,23 +4,30 @@ title: Repomaker
 permalink: /repomaker/
 ---
 
-F-Droid.org is just a repo out of hundreds of repos created by individuals
-all around the globe. With the tools of F-Droid, everyone can create their
-own repo. So whether you are a musician who wants to publish their music
-or a developer who wants to serve nightly builds of their app,
-you are free to create your own repo and share it with other people
+The F-Droid app store is essentially a collection of apps created by
+individuals all around the world. Collections of apps are also called
+repositories, or repos for short. So whether you are a musician who wants
+to publish their music or a developer who wants to serve nightly builds of
+their app, you can create your own repo and share it with other people
 independently of F-Droid.org.
 
-In the past, creating a repo has been difficult because you had to have
-knowledge on the command line, needed to edit text files to edit your
-packages' store details and had to paste screenshots in a special system
-of directories to have them served well inside the F-Droid app.
+In the past, creating a repo was difficult because you had to have knowledge
+of the command line, needed to know how to edit text files to edit your packages'
+store details and had to paste screenshots in a special system of directories
+to have them displayed inside the F-Droid app.
+
+This process is simplified thanks to Repomaker. Now you can create your own mini
+app store, using our simplified interface, guiding you through every step in the
+process.
 
 This all got easier now: with Repomaker, you are able to create your own
 repo and do not need to have any special knowledge to do so.
 Check out the
 [installation guide](https://gitlab.com/fdroid/repomaker/blob/master/README.md#installation)
 for information on how you can install Repomaker on your device.
+
+Try out the demo test instance [here](https://repomakerdemo.fdroid.net)
+and tell us what you think.
 
 [![]({% asset repomaker-screenshots/repo-details.png %})]({% asset repomaker-screenshots/repo-details.png %})<br/>
 *Your repo can serve all types of media*
