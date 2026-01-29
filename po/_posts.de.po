@@ -31,7 +31,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
 "POT-Creation-Date: 2026-01-23 13:44+0100\n"
-"PO-Revision-Date: 2026-01-24 11:37+0000\n"
+"PO-Revision-Date: 2026-01-28 12:05+0000\n"
 "Last-Translator: VfBFan <drop0815@posteo.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/f-droid/website-posts/de/>\n"
 "Language: de\n"
@@ -24100,54 +24100,54 @@ msgstr "5 Jahre UnifiedPush"
 #: _posts/2026-01-08-unifiedpush-5-years.md
 #, no-wrap
 msgid "> _Back in 2020, [\"OpenPush - A Free, Decentralized Push Messaging Framework for Android\"](https://f-droid.org/2020/02/03/openpush-talk.html) has been announced on F-Droid at its beginning, and in 2022 the UnifiedPush team posted on F-Droid their guide entitled [\"UnifiedPush: a decentralized, open-source push notification protocol\"](https://f-droid.org/2022/12/18/unifiedpush.html) that inspired a lot of developers. But did you know how UP came to be? Now you can. This is a repost from the author blog._\n"
-msgstr ""
+msgstr "> _Bereits im Jahr 2020 wurde [„OpenPush – Ein freies Push-Nachrichten-Framework für Android”](https://f-droid.org/2020/02/03/openpush-talk.html) auf F-Droid angekündigt, und 2022 veröffentlichte das UnifiedPush-Team auf F-Droid seinen Leitfaden mit dem Titel [„UnifiedPush: ein dezentrales, quelloffenes Push-Benachrichtigungsprotokoll”](https://f-droid.org/2022/12/18/unifiedpush.html), der viele Entwickler inspirierte. Aber wussten Sie auch, wie UP entstanden ist? Jetzt können Sie es erfahren. Dies ist ein Repost aus dem Blog des Autors._\n"
 
 #. type: Plain text
 #: _posts/2026-01-08-unifiedpush-5-years.md
 #, no-wrap
 msgid "**It has already been 5 years since UnifiedPush started!** It also means I don't have any Play Services, the official or microG reimplementation, for 5 years now. It is a good moment to do a recap, and think about what can be UnifiedPush in 5 years.\n"
-msgstr ""
+msgstr "**Es ist bereits 5 Jahre her, seit UnifiedPush gestartet ist!** Das bedeutet auch, dass ich seit 5 Jahren keine Play Services, weder die offiziellen noch die microG-Neuimplementierung, mehr habe. Es ist ein guter Zeitpunkt, um eine Zusammenfassung zu erstellen und darüber nachzudenken, was UnifiedPush in 5 Jahren sein könnte.\n"
 
 #. type: Plain text
 #: _posts/2026-01-08-unifiedpush-5-years.md
 msgid "It turns out I don't remember in details how all started, I need to read some historical pull requests and chats."
-msgstr ""
+msgstr "Es stellt sich heraus, dass ich mich nicht mehr genau daran erinnern kann, wie alles angefangen hat. Ich muss einige historische Pull Requests und Chats lesen."
 
 #. type: Title ###
 #: _posts/2026-01-08-unifiedpush-5-years.md
 #, no-wrap
 msgid "Why do I need push notifications?"
-msgstr ""
+msgstr "Warum brauche ich Push-Benachrichtigungen?"
 
 #. type: Plain text
 #: _posts/2026-01-08-unifiedpush-5-years.md
 msgid "I think I've installed my first alternative ROM, [LineageOS](https://lineageos.org/), around 2013, and never went back to stock ROMs since then. At this time, I didn't really care about the apps I was installing, it was mainly to take control of my devices and get rid of the bloatwares."
-msgstr ""
+msgstr "Ich denke, ich habe mein erstes alternatives ROM, [LineageOS](https://lineageos.org/), etwa 2013 installiert und bin seitdem nie wieder zu Standard-ROMs zurückgekehrt. Zu dieser Zeit war es mir nicht wirklich wichtig, welche Apps ich installierte, es ging mir hauptsächlich darum, die Kontrolle über meine Geräte zu übernehmen und die Bloatware loszuwerden."
 
 #. type: Plain text
 #: _posts/2026-01-08-unifiedpush-5-years.md
 msgid "I understood that I needed the Play Services, or a reimplementation, for some applications to properly work, and I was vaguely knowing why. So, every time I updated my phone, I had to boot into the custom recovery (TWRP), to flash a zip, to get microG. It was, well .. not the best user experience."
-msgstr ""
+msgstr "Ich wusste, dass ich die Play Services oder eine Neuimplementierung benötigte, damit einige Anwendungen ordnungsgemäß funktionierten, und ich wusste auch ungefähr, warum. Also musste ich jedes Mal, wenn ich mein Telefon aktualisierte, das benutzerdefinierte Wiederherstellungsprogramm (TWRP) starten, um eine ZIP-Datei zu flashen und microG zu erhalten. Das war, nun ja … nicht gerade das beste Nutzungserlebnis."
 
 #. type: Plain text
 #: _posts/2026-01-08-unifiedpush-5-years.md
 msgid "Then, I tried to stay without the Play Services, it was even worse, messages weren't reliable, the battery drained and there were many *foreground notifications*, which I understood were required to keep a service running."
-msgstr ""
+msgstr "Dann habe ich versucht, ohne die Play Services auszukommen, aber das war noch schlimmer: Die Nachrichten waren unzuverlässig, der Akku wurde schnell leer und es gab viele *Vordergrund-Benachrichtigungen*, die, wie ich verstanden habe, erforderlich waren, um einen Dienst am Laufen zu halten."
 
 #. type: Plain text
 #: _posts/2026-01-08-unifiedpush-5-years.md
 msgid "So I decided to go with a fork of LineageOS that includes microG by default, and distributed by microG team: [LineageOS for microG](https://lineage.microG.org/)."
-msgstr ""
+msgstr "Also entschied ich mich für eine Abspaltung von LineageOS, die standardmäßig microG enthält und vom microG-Team verteilt wird: [LineageOS für microG](https://lineage.microG.org/)."
 
 #. type: Plain text
 #: _posts/2026-01-08-unifiedpush-5-years.md
 msgid "Even after using this new system, the experience was nearly the same. Why? Because most of my apps were from F-Droid. Push notifications with Google (via microG) require the use of a proprietary library \\*, which comes with telemetry, unless explicitly configured to exclude them. F-Droid deny this library, which is fair given that their purpose is to promote free software."
-msgstr ""
+msgstr "Selbst nach der Umstellung auf dieses neue System war die Erfahrung nahezu identisch. Warum? Weil die meisten meiner Apps von F-Droid stammten. Push-Benachrichtigungen mit Google (über microG) erfordern das Verwenden einer proprietären Bibliothek \\*, die mit Telemetrie ausgestattet ist, sofern diese nicht explizit deaktiviert wird. F-Droid lehnt diese Bibliothek ab, was angesichts ihres Ziels, Freie Software zu fördern, nur fair ist."
 
 #. type: Plain text
 #: _posts/2026-01-08-unifiedpush-5-years.md
 msgid "\\* That's actually possible to use FCM (Google notifs) without Google lib, but I didn't know that at this moment. Cf. UnifiedPush blog post about [push notifications for decentralized applications](https://unifiedpush.org/news/20250131_push_for_decentralized/), or Molly [issue regarding FOSS FCM implementation](https://github.com/mollyim/mollyim-android/issues/637)."
-msgstr ""
+msgstr "* Es ist tatsächlich möglich, FCM (Google-Benachrichtigungen) ohne Google-Bibliothek zu verwenden, aber das wusste ich zu diesem Zeitpunkt noch nicht. Siehe dazu den Blogbeitrag von UnifiedPush über [Push-Benachrichtigungen für dezentrale Anwendungen](https://unifiedpush.org/news/20250131_push_for_decentralized/) oder Mollys [Problem bezüglich der FOSS-FCM-Implementierung](https://github.com/mollyim/mollyim-android/issues/637)."
 
 #. type: Title ####
 #: _posts/2026-01-08-unifiedpush-5-years.md
