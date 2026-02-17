@@ -906,3 +906,72 @@ div.payment-methods + table th {
 div.payment-methods + table th:nth-child(1n + 2) {
     border-bottom: 1px solid #ccc;
 }
+
+/*
+ * Banner to show along the top of the f-droid website.
+ * Initially used to draw attention to the Google developer verification issue as a call to action,
+ * but could equally be used for fundraising (if we change the color from "danger: red" to something nicer).
+ */
+.banner {
+  left: 0;
+  right: 0;
+  top: 0;
+  padding: 0.5em;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  position: relative;
+  z-index: 10;
+
+  &.banner--danger {
+    background: #ffb9b9;
+    border-bottom: 1px solid #540303;
+    color: #540303;
+
+    & svg {
+      fill: #540303;
+    }
+  }
+
+  & a {
+    white-space: nowrap;
+  }
+
+  & .banner--close {
+    position: absolute;
+    display: none; /* default to hidden, use JS to show, as those without JS will not have option to dismiss. */
+    align-items: center;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    border: none;
+    background: none;
+    cursor: pointer;
+    padding: 0 1em;
+
+    @include media-query($phone) {
+      padding: 0 0.5em;
+    }
+  }
+
+  & svg {
+    width: 24px;
+    height: 24px;
+
+    @include media-query($phone) {
+      width: 18px;
+      height: 18px;
+    }
+  }
+
+  .banner--text {
+    font-size: 1.2em;
+    margin-right: 24px; /* Make space for close icon, especially on small screens */
+
+    @include media-query($phone) {
+      font-size: 1em;
+    }
+  }
+}
