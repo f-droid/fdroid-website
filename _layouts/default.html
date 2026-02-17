@@ -5,6 +5,25 @@
 
   <body>
 
+    {% comment %}
+    Show a banner alerting users to the dangers of the Google developer verification scheme,
+    and asking them to visit keepandroidopen.org to help understand how they can help.
+
+    This is in the default.html instead of the header, as this is required to span the full page width.
+
+    Users can dismiss the banner if they have JS enabled. If so, it will show a close button that when
+    clicked stores a flag in localStorage. If JS is disabled, we leave the banner there.
+
+    Hopefully Google backs out of this crazy scheme and we can remove this code, but we can also
+    use similar schemes for other banners in the future, e.g. fundraising campaigns.
+    {% endcomment %}
+
+    {% include banner.html
+        name="keepandroidopen"
+        type="danger"
+        text=site.data.strings.banners.keepandroidopen
+        url=site.data.strings.banners.keepandroidopenUrl %}
+
     <div class="site-wrapper">
 
       {% include header.html %}
