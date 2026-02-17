@@ -1,4 +1,4 @@
-<div class="banner banner--{{ include.type | default 'default' }} banner--{{ include.name }}">
+<div class="banner banner--{{ include.type | default 'default' }} banner--name__{{ include.name }}">
 	<div class="banner--text">
 		{{ include.text }}
 
@@ -11,20 +11,4 @@
 	</button>
 </div>
 
-<script>
-	(function() {
-		const name = '{{ include.name }}';
-		const banner = document.querySelector('.banner--' + name);
-		const storageKey = 'banner.{{ include.name }}.hide';
-		if (localStorage.getItem(storageKey)) {
-			banner.style.display = 'none';
-		} else {
-			const close = document.querySelector('.banner--' + name + ' .banner--close');
-			close.style.display = 'flex';
-			close.addEventListener('click', function () {
-				banner.style.display = 'none';
-				localStorage.setItem('banner.' + name + '.hide', '1');
-			});
-		}
-	})();
-</script>
+<script src="{% asset banner.js %}" async></script>
