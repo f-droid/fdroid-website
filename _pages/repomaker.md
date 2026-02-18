@@ -26,7 +26,7 @@ Check out the
 [installation guide](https://gitlab.com/fdroid/repomaker/blob/master/README.md#installation)
 for information on how you can install Repomaker on your device.
 
-Try out the demo test instance [here](https://repomakerdemo.fdroid.net)
+Try out the demo test instance <https://repomakerdemo.fdroid.net>
 and tell us what you think.
 
 [![]({% asset repomaker-screenshots/repo-details.png %})]({% asset repomaker-screenshots/repo-details.png %})<br/>
