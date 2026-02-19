@@ -1,5 +1,5 @@
 ---
-title:  "An Open Letter Opposing Android Developer Verification"
+title: "An Open Letter Opposing Android Developer Verification"
 author: marcprux
 layout: post
 authorWebsite: "https://keepandroidopen.org"
