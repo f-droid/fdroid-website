@@ -30,7 +30,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
-"POT-Creation-Date: 2026-01-22 19:38+0100\n"
+"POT-Creation-Date: 2026-02-23 20:06+0100\n"
 "PO-Revision-Date: 2026-02-07 17:56+0000\n"
 "Last-Translator: 大王叫我来巡山 <hamburger2048@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Chinese (Simplified Han script) <https://hosted.weblate.org/projects/f-droid/website-docs/zh_Hans/>\n"
@@ -7785,232 +7785,184 @@ msgstr "收录政策"
 
 #. type: Plain text
 #: _docs/Inclusion_Policy.md
-msgid "All applications in the repository must be Free, Libre and Open Source Software (FLOSS) – for example, released under a GPL or Apache license. Every effort is made to verify that this is actually the case, both by visual inspection of the source, and by building the application from the published source.  To determine which licenses are FLOSS, We defer to widely trusted organizations that have a proven track record.  Specifically, we acknowledge these standards: [DFSG](https://wiki.debian.org/DFSGLicenses), [FSF](https://www.fsf.org/licensing), [GNU](https://www.gnu.org/licenses/license-list.html), and [OSI](https://opensource.org/licenses) _(read a quick overview of them all on [SPDX](https://spdx.org/licenses/))_."
+msgid "The purpose of this inclusion policy is to ensure that all applications included in the main F-Droid repository support F-Droid’s core mission: providing a trusted way to find and share privacy-respecting, free and open source software apps for Android.  If an app does not meet these criteria, you can still make the app available to F-Droid users via a separate repository."
+msgstr ""
+
+#. type: Title ##
+#: _docs/Inclusion_Policy.md
+#, fuzzy, no-wrap
+#| msgid "Network requirements:"
+msgid "Free Software Requirement"
+msgstr "网络要求："
+
+#. type: Plain text
+#: _docs/Inclusion_Policy.md
+#, fuzzy
+#| msgid "All applications in the repository must be Free, Libre and Open Source Software (FLOSS) – for example, released under a GPL or Apache license. Every effort is made to verify that this is actually the case, both by visual inspection of the source, and by building the application from the published source.  To determine which licenses are FLOSS, We defer to widely trusted organizations that have a proven track record.  Specifically, we acknowledge these standards: [DFSG](https://wiki.debian.org/DFSGLicenses), [FSF](https://www.fsf.org/licensing), [GNU](https://www.gnu.org/licenses/license-list.html), and [OSI](https://opensource.org/licenses) _(read a quick overview of them all on [SPDX](https://spdx.org/licenses/))_."
+msgid "All applications in the repository must be Free, Libre and Open Source Software (FLOSS) – for example, released under a [GPL](https://www.gnu.org/licenses/licenses.html) or [Apache](https://www.apache.org/licenses/) license. Every effort is made to verify that this is the case, both by visual inspection of the source and by building the application from the published source. To determine which licenses are FLOSS, we defer to widely trusted organizations that have a proven track record. Specifically, we acknowledge the following standards: Debian Free Software Guidelines ([DFSG](https://wiki.debian.org/DFSGLicenses)), Free Software Foundation ([FSF](https://www.fsf.org/licensing)), [GNU](https://www.gnu.org/licenses/license-list.html), and Open Source Initiative ([OSI](https://opensource.org/licenses)) (_read a brief overview of them all on System Package Data Exchange ([SPDX](https://spdx.org/licenses/))_)."
 msgstr "存储库中的所有应用都必须是自由开源软件 (FLOSS) - 例如，在 GPL 或 Apache 许可证下发布。通过检查源代码并从发布的源代码构建应用，我们尽最大努力保证满足这一要求。我们根据拥有良好记录的广受信任的组织的决定确定哪些许可证是 FLOSS 的。具体来说，我们承认这些标准：[DFSG](https://wiki.debian.org/DFSGLicenses)、 [FSF](https://www.fsf.org/licensing)、[GNU](https://www.gnu.org/licenses/license-list.html) 和 [OSI](https://opensource.org/licenses)。_（要阅读所有这些的快速概览，请访问 [SPDX](https://spdx.org/licenses/)) _。"
 
 #. type: Plain text
 #: _docs/Inclusion_Policy.md
-msgid "For software to be FLOSS, the software in its entirety must be so - including all libraries and dependencies used. Additionally, it must be buildable with only FLOSS tools."
-msgstr "要使软件成为 FLOSS，整个软件都必须如此——包括使用的所有库和依赖项。此外，它必须仅使用 FLOSS 工具即可构建。"
+msgid "All binary dependencies including JAR files must originate either from source compilation or Debian repository downloads. Prebuilt binaries should only come from authorized trusted sources."
+msgstr ""
 
 #. type: Plain text
+#: _docs/Inclusion_Policy.md
+msgid "Non-functional assets including artwork and fonts can utilize less restrictive licenses which include game art specific to the project but must allow redistribution when using non-commercial licenses. All assets need to have valid legal licenses or be in the public domain while being free of copyright infringement."
+msgstr ""
+
+#. type: Plain text
+#: _docs/Inclusion_Policy.md
+msgid "The implementation of proprietary tracking or advertising libraries and analytics tools such as Google Play Services and Firebase and Crashlytics and proprietary ad/tracking SDKs are strictly forbidden in all applications. Upstream developers must implement either a FLOSS alternative or a build flavour that does not require these dependencies when such features become necessary."
+msgstr ""
+
+#. type: Title ##
 #: _docs/Inclusion_Policy.md
 #, no-wrap
-msgid ""
-"Notably:\n"
-"-   The original app author has been notified (and does not oppose the inclusion).\n"
-"    Distributing an app will bring more support cases for the developers, not\n"
-"    only from the actual users but from F-Droid itself as app development is\n"
-"    never a done and set deal in an ever evolving Android landscape.\n"
-"-   We cannot build apps using Google's proprietary \"Play Services\".\n"
-"    Please talk to upstream about an untainted build flavor (either\n"
-"    using microg or removing Non-Free dependencies completely).\n"
-"-   We cannot build apps using proprietary tracking/analytic\n"
-"    dependencies like Crashlytics and Firebase. Please talk to upstream\n"
-"    about an untainted build flavor (either using a FLOSS analytics\n"
-"    software like ACRA or by removing Non-Free dependencies completely).\n"
-"-   We cannot build apps using proprietary ad libraries. We have nothing\n"
-"    against advertisements (see [_Anti-Features_](../Anti-Features)),\n"
-"    but they must be provided by a FLOSS-compatible way.\n"
-"-   We cannot build apps requiring Non-Free build tools, including\n"
-"    Oracle's JDK or some pre-release toolchains.\n"
+msgid "Build Transparency and Reproducibility"
 msgstr ""
-"注意事项：\n"
-"-   原应用作者已被通知（且不反对上架）。 分发一款应用会给开发者带来更多支持请求，不单来自实际用户，也来自F-Droid 自身，因为应用开发在始终变化的 Android 领域是一项永无止息的任务。.\n"
-"-   我们无法使用 Google 专有的 \"Play Services\"构建应用。有关使用替代方法构建应用的事宜请联系上游 （要么使用 microg，要么彻底删除非自由依赖项)。\n"
-"-   我们无法使用专有的跟踪/分析依赖，比如 Crashlytics 和 Firebase， 进行构建。关于使用替代方法进行构建的事宜也请联系上游 （要么使用 FLOSS 的分析软件，比如 ACRA，或彻底删除非自由依赖）。.\n"
-"-   我们无法构建使用专有广告库的应用。 我们并不反对广告 （见 [_Anti-Features_](../Anti-Features)），但它们须以兼容 FLOSS 的方式提供。\n"
-"-   我们无法构建需要非自由构建工具的应用，包括 Oracle 的 JDK 或某些预发布的工具链。\n"
 
 #. type: Plain text
 #: _docs/Inclusion_Policy.md
-msgid "Additionally:"
-msgstr "此外："
+msgid "The F-Droid infrastructure compiles applications from publicly accessible source code to verify that distributed binaries match their source code. The complete application building process requires a 100% FLOSS toolchain including Debian-packaged tools. The use of proprietary build tools are strictly forbidden, including Oracle's JDK and some pre-release toolchains. Though we try to build everything from source, sometimes prebuilt FLOSS binaries are the only feasible approach. The following sources can be allowed to provide prebuilt binaries:"
+msgstr ""
 
-#. type: Bullet: '-   '
+#. type: Bullet: '* '
 #: _docs/Inclusion_Policy.md
-msgid "The source code for the application must be maintained in a publicly accessible Version Control System which we have support for (git, hg, svn, bzr), and the source code needs to be maintained in an up to date state."
-msgstr "必须在我们支持的、可公开访问的版本控制系统（git、hg、svn、bzr）中维护应用的源代码，而且源代码需要保持最新状态。"
+msgid "Debian \"[_main_](https://www.debian.org/doc/debian-policy/ch-archive.html)\" package archive."
+msgstr ""
 
-#. type: Bullet: '-   '
+#. type: Bullet: '* '
 #: _docs/Inclusion_Policy.md
-msgid "The software must not download additional executable binary files (e.g.  addons, auto-updates, etc.) without explicit user consent. Consent means it needs to be opt-in (it must not be harder to decline than to accept or presented in a way users are likely to press accept without reading) and structured in a way that clearly explains to users that they're choosing to bypass F-Droid's checks if they activate it."
-msgstr "软件禁止在缺乏明确用户同意的情况下下载额外的可执行二进制文件（如附加组件、自动更新等）。同意意味着需要用户主动选择加入（拒绝的难度不能大于接受，或以用户可能在未阅读相关警告便同意的方式呈现）且应清晰地向用户解释，启用这一功能意味着选择绕过 F-Droid 的检查。"
+msgid "Applications can download prebuilt FLOSS binaries with specific conditions from trusted Maven repositories. Those include Maven Central, Google Maven, OSS Sonatype, OSS JFrog, JitPack.io and Clojars.  Those binaries must still be freely licensed, simply being included in one of those repositories is not enough."
+msgstr ""
 
-#. type: Bullet: '-   '
+#. type: Bullet: '* '
 #: _docs/Inclusion_Policy.md
-msgid "The software should use its own unique Android \"[Application ID](https://developer.android.com/studio/build/configure-app-module)\" based on a domain name under the developer's control.  For example, if the app is in a group called \"foo\" on [gitlab.com](https://gitlab.com), then the domain name could be `io.gitlab.foo`.  It should not be based on someone's domain name, (e.g. `com.google.foo`).  Maven Central OSSRH provides [good guidance](https://central.sonatype.org/publish/requirements/coordinates/)."
-msgstr "软件应使用基于开发者所控制的域名的独有 Andriod \"[应用 ID](https://developer.android.com/studio/build/configure-app-module)\"。比如，如果应用位于 [gitlab.com](https://gitlab.com) 上一个名为 \"foo\" 的组中，那么域名可以是 `io.gitlab.foo`。它不应基于其他人的域名（比如 `com.google.foo`）。Maven Central OSSRH 提供了[良好的指导](https://central.sonatype.org/publish/requirements/coordinates/)。"
+msgid "The Android SDK, Flutter SDK and Hermes have permission to use official prebuilt binaries until Debian provides alternative solutions."
+msgstr ""
 
-#. type: Bullet: '-   '
+#. type: Bullet: '* '
 #: _docs/Inclusion_Policy.md
-msgid "Where the application is a fork of another (even one not included in the F-Droid repository) it must have a new ID, different from the original. Make sure to rename your fork accordingly (including all active translations). Forks which only re-brand an app but do not add value for users might not get accepted."
-msgstr "如果应用是另一个分支（即使是不包含在 F-Droid 存储库中的应用），它必须有一个与原始 ID 不同的新 ID。确保相应地重命名你的分支（包括所有活动的翻译）。仅重新命名应用但没有为用户增加价值的复刻可能不会被接受。"
+msgid "The use of prebuilt FLOSS binaries from [PyPI](https://pypi.org/) Wheels, Nix cache, Rust/Rustup, Golang and Node.js (current versions) and compilers or build tools which are not included in Debian can be acceptable. Whenever possible, Debian-packaged dependencies should be chosen above other options."
+msgstr ""
 
-#. type: Bullet: '-   '
+#. type: Title ##
 #: _docs/Inclusion_Policy.md
-msgid "Although not ideal, \"non-functional\" assets (e.g. artwork) *may* be acceptable under less permissive licenses than functional code - an example would be artwork assets that are licensed only for use with that particular game. In any case though, they must be included under some kind of license, and not be copyright violations."
-msgstr "尽管不理想，“非功能性” 资产（例如艺术品）*可以* 使用比功能性代码更宽松的许可——例如，仅被许可用于该特定游戏的艺术品资产。但无论如何，它们必须包含在某种许可之下，而不是侵犯版权。"
+#, no-wrap
+msgid "Security & Legal Compliance"
+msgstr ""
 
-#. type: Bullet: '-   '
+#. type: Bullet: '1. '
 #: _docs/Inclusion_Policy.md
-msgid "Trademarks must not be infringed, and any other legal requirements must be adhered to."
-msgstr "不得侵犯商标权，必须遵守任何其他法律要求。"
-
-#. type: Bullet: '-   '
-#: _docs/Inclusion_Policy.md
-msgid "F-Droid does not sign up for any API keys. Even if provided by a third party, we include them in both, binary and sourcecode releases."
+#, fuzzy
+#| msgid "F-Droid does not sign up for any API keys. Even if provided by a third party, we include them in both, binary and sourcecode releases."
+msgid "F-Droid does not sign up for any API keys. Even if provided by a third party, we include them in both binary and source code releases."
 msgstr "F-Droid 不注册任何 API 密钥。即使密钥由第三方提供，我们也会将它们包含在二进制和源代码版本中。"
 
-#. type: Bullet: '-   '
+#. type: Bullet: '2. '
 #: _docs/Inclusion_Policy.md
-msgid "Binary dependencies such as JAR files have to be built from source or installed from Debian repos."
-msgstr "二进制依赖项(如 JAR 文件)必须从源代码构建或从 Debian 存储库中安装。"
+msgid "All donation links need verification by upstream developers to stop unauthorized alterations. F-Droid contributors can consider [_funding.json_](https://fundingjson.org/), [_FUNDING.yml_](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/displaying-a-sponsor-button-in-your-repository#about-funding-files) or _README_ files. Also, verification can happen via messages that come from the same account as the app's source code, e.g. `@foobar` for `https://gitlab.com/foobar/myapp`, if that account is on the same GitLab instance as F-Droid itself, e.g. `gitlab.com`. The application's main website can also host donation links."
+msgstr ""
+
+#. type: Bullet: '3. '
+#: _docs/Inclusion_Policy.md
+msgid "Applications must not infringe third party rights, including third party intellectual property rights such as copyright and trade marks. Applications need to obtain necessary trademark and copyright permissions. Any application with a duplicate android application ID matching another domain name will receive automatic rejection."
+msgstr ""
+
+#. type: Bullet: '4. '
+#: _docs/Inclusion_Policy.md
+msgid "F-Droid uses pre-defined labels known as [Anti-Features](../Anti-Features) which serve as warning indicators about user freedom, privacy or etc. without necessarily disqualifying applications from inclusion."
+msgstr ""
+
+#. type: Title ##
+#: _docs/Inclusion_Policy.md
+#, no-wrap
+msgid "Build & Verification Workflow"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/Inclusion_Policy.md
+msgid "__Unique ID:__ All applications must have their own distinct Android \"Application ID\"."
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/Inclusion_Policy.md
+msgid "__Your domain:__ It is advised to use an Application ID that stems from a domain name owned by the developer."
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/Inclusion_Policy.md
+msgid "__Forks:__ Forked applications need to obtain a fresh Android ID that differs from the original application even if the source app exists outside F-Droid and they must receive corresponding name, icon and string changes including translation adjustments. The inclusion policy does not accept applications that perform only minor rebranding and lack meaningful improvements."
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/Inclusion_Policy.md
+msgid "__Dependency Handling:__ Library dependencies must be built from source or provided in a trusted Maven repo.  Prebuilt SDKs (Android/Flutter) are permitted to use scanignore until Debian packaging finishes."
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/Inclusion_Policy.md
+msgid "__Automated Checks:__ F-Droid maintainers review applications through a verification process which examines license compliance and source availability, buildability and inclusion policy adherence. Reviewers conduct inspections for non-free dependencies alongside proprietary code, tracking features and advertising elements and other Anti-Features."
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/Inclusion_Policy.md
+msgid "__Manual Review:__ Our contributors will manually review apps and use their discretion to flag issues."
+msgstr ""
+
+#. type: Title ##
+#: _docs/Inclusion_Policy.md
+#, no-wrap
+msgid "Our mission and our inclusion policy"
+msgstr ""
 
 #. type: Plain text
 #: _docs/Inclusion_Policy.md
-msgid "Ideally:"
-msgstr "理想情况下:"
-
-#. type: Bullet: '-   '
-#: _docs/Inclusion_Policy.md
-msgid "Releases should be clearly tagged (or otherwise marked)."
-msgstr "应该使用 tag 或其他方式注明版本。"
+msgid "Our mission is to safely and transparently distribute free and open source applications, providing users of all ages around the world with useful and privacy-respecting apps."
+msgstr ""
 
 #. type: Plain text
 #: _docs/Inclusion_Policy.md
-msgid "Though we tried to build everything from source, we still need some prebuilt binaries. Therefore we have some exceptions:"
-msgstr "尽管我们尝试从源代码构建每样东西，但我们仍然需要一些预构建的二进制文件。 因此我们有一些例外："
-
-#. type: Bullet: '-   '
-#: _docs/Inclusion_Policy.md
-msgid "Trusted maven repository. While there is no guarantee that those binaries are free and correspondent to the source code, F-Droid allows the following known repositories currently:"
-msgstr "可信的 maven 存储库。虽然不能保证这些二进制文件是自由的，并对应于源代码，但 F-Droid 目前允许以下已知的存储库："
-
-#. type: Bullet: '    -   '
-#: _docs/Inclusion_Policy.md
-msgid "Maven Central - the original repo, hardcoded in Maven and Gradle."
-msgstr "Maven Central - 原始存储库，硬编码在 Maven 和 Gradle 中。"
-
-#. type: Bullet: '    -   '
-#: _docs/Inclusion_Policy.md
-msgid "Google Maven Repo - hardcoded in Gradle, this repo hosts Google's own libs."
-msgstr "谷歌 Maven 存储库 - 硬编码在 Gradle 中，这个存储库托管谷歌自己的库。"
-
-#. type: Bullet: '    -   '
-#: _docs/Inclusion_Policy.md
-msgid "OSS Sonatype - maintained by the people behind Maven Central, this repository focuses on hosting services for open source project binaries. It's synced with Maven Central, and include some extra libs"
-msgstr "OSS Sonatype - 由 mavenCentral 背后的人维护，这个仓库专注于为开源项目二进制文件提供托管服务。它与 Maven Central 同步，并包含一些额外的库"
-
-#. type: Bullet: '    -   '
-#: _docs/Inclusion_Policy.md
-msgid "OSS JFrog - this repository focuses on hosting services for open source project binaries."
-msgstr "OSS JFrog - 此存储库专注于开源项目二进制文件的托管服务。"
-
-#. type: Bullet: '    -   '
-#: _docs/Inclusion_Policy.md
-msgid "JitPack.io - builds directly from GitHub repositories.  However, they do not provide any option to reproduce or verify the resulting binaries. Builds pre-release versions in some cases."
-msgstr "JitPack.io - 直接从 GitHub 仓库构建。然而，他们不提供任何选项来复现或验证所产生的二进制文件。在某些情况下会构建预发布版本。"
-
-#. type: Bullet: '    -   '
-#: _docs/Inclusion_Policy.md
-msgid "Clojars - Clojure libraries repo."
-msgstr "Clojars - Clojure 库仓库。"
-
-#. type: Bullet: '    -   '
-#: _docs/Inclusion_Policy.md
-msgid "CommonsWare - repo holding a collection of open-source libs."
-msgstr "CommonsWare - 托管一系列开源库的仓库。"
-
-#. type: Bullet: '    -   '
-#: _docs/Inclusion_Policy.md
-msgid "Gradle plugin repo - hardcoded in Gradle, this repo hosts Gradle plugins."
-msgstr "Gradle 插件存储库 - 硬编码在 Gradle 中，这个仓库托管 Gradle 插件。"
-
-#. type: Bullet: '-   '
-#: _docs/Inclusion_Policy.md
-msgid "Android SDK/NDK. They are released as proprietary binaries but we don't have an alternative currently. There is in-progress work to package recent Android SDK versions in Debian."
-msgstr "Android SDK/NDK。 它们作为专有二进制文件发布，但我们目前没有替代方案。 在 Debian 中打包最新的 Android SDK 版本的工作正在进行中。"
-
-#. type: Bullet: '-   '
-#: _docs/Inclusion_Policy.md
-msgid "Gradle. Only some old versions of Gradle are packaged in Debian. Currently we download them from the developer website."
-msgstr "Gradle。 只有一些旧版本的 Gradle 被打包在 Debian 中。 我们目前从开发者网站下载它们。"
-
-#. type: Bullet: '-   '
-#: _docs/Inclusion_Policy.md
-msgid "Flutter SDK. They are FOSS but not packaged in Debian and we are not able to build it from source. Currently we download them from the developer website with the Flutter srclib scripts."
-msgstr "Flutter SDK。 它们是自由开源软件但未打包在 Debian 中，我们无法从源代码构建它。 目前我们使用 Flutter srclib 脚本从开发者网站下载它们。"
-
-#. type: Bullet: '-   '
-#: _docs/Inclusion_Policy.md
-msgid "JSC/Hermes. They can be built from source which takes hours. Currently we downloaded them from npm and scanignore them."
-msgstr "JSC/Hermes。 可以从源代码进行构建，但这需要几个小时。 我们目前从 npm 下载它们并 scanignore 它们。"
-
-#. type: Bullet: '-   '
-#: _docs/Inclusion_Policy.md
-msgid "Binaries from pip wheels. Some apps install deps with pip and we just trust the untrustworthy Pypi."
-msgstr "来自 pip wheels 的二进制文件。 一些应用使用 pip 安装依赖项，我们只好信任不可信的 Pypi。"
-
-#. type: Bullet: '-   '
-#: _docs/Inclusion_Policy.md
-msgid "Binaries from Nix cache. These binaries are mostly reproducible."
-msgstr "来自 Nix 缓存的二进制文件。 这些二进制文件大多是可重复的。"
-
-#. type: Bullet: '-   '
-#: _docs/Inclusion_Policy.md
-msgid "Rust/Rustup. Currently we download them from the developer website with the scripts in the rustup srclib. We may be able to use the Debian packages."
-msgstr "Rust/Rustup。 目前我们使用 rustup srclib 中的脚本从开发者网站下载它们。 我们也许可以使用 Debian 软件包。"
-
-#. type: Bullet: '-   '
-#: _docs/Inclusion_Policy.md
-msgid "Golang & Nodejs. They are available in Debian but recent versions are not available immediately. Currently we might download them from the developer website."
-msgstr "Golang 和 Nodejs。 它们在 Debian 中可用，但最近的版本不是马上可用。 目前我们可以从开发者网站下载它们。"
-
-#. type: Bullet: '-   '
-#: _docs/Inclusion_Policy.md
-msgid "Some other compilers/build tools not packaged in our Debian version."
-msgstr "一些没有打包在我们 Debian 版本中的其他编译器/构建工具。"
+msgid "When making inclusion decisions, we look to our core mission for guidance to determine what type of content is included in the main repo.  We also look at historical precedent when making inclusion decisions. If the proposed app is similar to an app we previously excluded, this will be taken into consideration. In addition to determining whether our app supports our mission, we take into consideration if an app is suitable for all F-Droid users, including children, when making inclusion decisions."
+msgstr ""
 
 #. type: Plain text
 #: _docs/Inclusion_Policy.md
-msgid "Some software, while being Free and Open Source, may engage in practices which are undesirable to some or all users. Where possible, we still include these applications in the repository, but they are flagged with the appropriate [_Anti-Features_](../Anti-Features). Even though such software can be included, when appropriately flagged, it is frequently the case that other \"FLOSS\" software with these features is actually not entirely free. For example, advertising and tracking users is often enabled via proprietary binary libraries which we cannot include."
-msgstr "一些软件虽然是自由和开源的，但可能会进行某些用户不欢迎的活动。我们仍可能将这些应用收录在存储库中，但会使用适当的 [_负面特征_](../Anti-Features) 标记它们。尽管这样的软件被适当标记后收录，通常情况下，其他具有这些特征的“FLOSS”软件实际上并非完全自由。例如，广告和用户跟踪通常是通过我们无法收录的专有二进制库实现的。"
+msgid "We acknowledge that this is not a precise science and try to make reasonable and rational decisions regarding our inclusion policy. If you believe that an app was wrongly excluded, you can email an appeal to team@f-droid.org and the appeal will be considered by a team member who was not involved in the original decision to exclude the app."
+msgstr ""
 
 #. type: Plain text
 #: _docs/Inclusion_Policy.md
-msgid "When including donation information, the relevant donation links (e.g.  Liberapay/Open Collective/Bitcoin/etc) must also be available either:"
-msgstr "包含捐赠信息时，还必需提供与以下位置一致的捐赠链接（例如 Liberapay/Open Collective/比特币等）："
+msgid "Please keep in mind that even if an app is excluded, you may choose to make the app available to F-Droid users, via your own, or a third party, app repository."
+msgstr ""
 
-#. type: Bullet: '-   '
+#. type: Title ##
 #: _docs/Inclusion_Policy.md
-msgid "In a README or similar file in the project's source code."
-msgstr "项目源代码中的 README 或类似文件。"
+#, no-wrap
+msgid "Policy Enforcement"
+msgstr ""
 
-#. type: Bullet: '-   '
+#. type: Bullet: '* '
 #: _docs/Inclusion_Policy.md
-msgid "In a [_FUNDING.yml_](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/displaying-a-sponsor-button-in-your-repository#about-funding-files) file included in the project's source code."
-msgstr "包含于项目源码中的 [_FUNDING.yml_](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/displaying-a-sponsor-button-in-your-repository#about-funding-files) 文件。"
+msgid "The repository will remove or reject non-compliant applications until developers fix their issues. The F-Droid community encourages developers to work together to achieve compliance."
+msgstr ""
 
-#. type: Bullet: '-   '
+#. type: Bullet: '* '
 #: _docs/Inclusion_Policy.md
-msgid "On the applications main website."
-msgstr "应用的主站。"
+msgid "Apps which fail to rebuild (such as requiring Play Services) or contain undisclosed anti-features will receive a rejection."
+msgstr ""
 
-#. type: Bullet: '-   '
+#. type: Bullet: '* '
 #: _docs/Inclusion_Policy.md
-msgid "If the software is hosted on GitLab, then it is sufficient that the person requesting donation info to be added to the fdroiddata repository is the same user account which manages the application source code."
-msgstr "如果软件托管在 GitLab 上，那么请求将捐赠信息添加到 fdroiddata 存储库的人与管理应用源代码的用户账户相同即可。"
+msgid "Upstream developers can ask for re-review after they make necessary fixes to their applications."
+msgstr ""
 
-#. type: Plain text
+#. type: Bullet: '* '
 #: _docs/Inclusion_Policy.md
-msgid "This is to prevent arbitrary people from maliciously changing the donation links of applications in the main F-Droid repository without the consent of upstream developers."
-msgstr "这是为了防止有人在未经上游开发者同意的情况下，恶意改变 F-Droid 存储库中应用的捐赠链接。"
-
-#. type: Plain text
-#: _docs/Inclusion_Policy.md
-msgid "For more information on adding applications to the F-Droid Repository, see the [Inclusion How-To](../Inclusion_How-To)."
-msgstr "有关将应用添加到 F-Droid 存储库的更多信息，请参阅[收录指南](../Inclusion_How-To)。"
+msgid "F-Droid maintains the authority to implement various actions against persistent offenders which may include warnings and temporary suspensions or permanent content removal while providing proper notification and appeal options. The documentation will record all removal actions."
+msgstr ""
 
 #. type: Yaml Front Matter Hash Value: title
 #: _docs/Installing_the_Server_and_Repo_Tools.md
