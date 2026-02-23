@@ -7,9 +7,11 @@
 
 {% assign strings = site.data.strings.sidebars.lang %}
 
+<h3>{{ site.data.strings.sidebars.lang.heading }}</h3>
+
 <form action="{{site.baseurl}}{{ page.url }}" method="get">
 
-  <select id="language-chooser-select" name="lang" autocomplete="off">
+  <select id="language-chooser-select" class="language-chooser-select" name="lang" autocomplete="off">
     {% for lang in site.languages %}
       <option value="{{ lang }}" {% if lang == site.active_lang %}selected="selected"{% endif %}>
         {{ site.data.languagenames[lang] }}
