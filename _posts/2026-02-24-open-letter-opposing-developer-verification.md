@@ -2,7 +2,6 @@
 title: "An Open Letter Opposing Android Developer Verification"
 author: marcprux
 layout: post
-date: 2026-02-24
 authorWebsite: "https://keepandroidopen.org"
 ---
 
