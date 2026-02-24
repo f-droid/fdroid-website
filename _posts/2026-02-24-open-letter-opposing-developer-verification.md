@@ -17,7 +17,7 @@ Google's official and unambiguous stance remains, according to their [developer 
 
 > _Starting in September 2026, Android will require all apps to be registered by verified developers in order to be installed on certified Android devices._
 
-Google has refused repeated requests for concrete information about what form their so-called advanced flow will take, but it is reasonable to predict that if and when it is ever made available at some future point after the lock-down takes effect, it will be maximally obscure and high-friction. Such uncertainty makes it impossible to assess the viability of any "advanced flow" as a work-around for preserving software freedom, and so we must disregard it until it has been demonstrated and vetted by the community.
+Google has refused repeated requests for concrete information about what form their so-called "advanced flow" will take, but it is reasonable to predict that if and when it is ever made available at some future point after the lock-down takes effect, it will be maximally obscure and high-friction. Such uncertainty makes it impossible to assess the viability of any "advanced flow" as a work-around for preserving software freedom, and so we must disregard it until it has been demonstrated and vetted by the community.
 
 ## Silence is consent; Resistance is not futile
 
@@ -25,7 +25,7 @@ According to their [official timeline](https://developer.android.com/developer-v
 
 **We unequivocally advise against signing up for this program, now or ever.**
 
-But mere inaction is insufficient to offer meaningful resistance to the program. Individual developers must also become advocates for software freedom: through their own projects, through blog posts, through social media, and by contacting their regional regulators. It is only through developer complicity that Google's lockdown of Android can succeed.
+But mere inaction is insufficient to offer meaningful resistance to the program. Individual developers must also become advocates for software freedom: through their own projects, through blog posts, through social media, and by contacting their regional regulators. It is only through developer complicity that Google's lock-down of Android can succeed.
 
 F-Droid stands in solidarity as a signatory to the open letter published today at [keepandroidopen.org/open-letter](https://keepandroidopen.org/open-letter). We join with such champions of free software and free speech as the Electronic Frontier Foundation, the Free Software Foundation Europe, the Software Freedom Conservancy, and dozens of other organizations around the world in repudiating Google's overreach.
 
