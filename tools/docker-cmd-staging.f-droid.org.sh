@@ -41,7 +41,6 @@ done
 sed -i \
     -e "s/^languages:.*/languages: [ $languages ]/" \
     -e "s,^fdroid-repo:.*,fdroid-repo: https://f-droid.org/repo," \
-    -e 's,^\(\s*index_version:\).*,\1 v2,' \
     _config.yml
 
 sed -i \

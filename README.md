@@ -73,25 +73,6 @@ vagrant@buster:/vagrant$ jekyll serve --host 0.0.0.0
 
 Then connect to http://localhost:4000 to see the generated site.
 
-## Index v1 and v2
-
-Building the website with Index V2 is just about ready.
-
-In order to build, using Index V2, you need to make the following changes:
-
-1. Change `_config.yml` to indicate you want to use Index v2 during the build phase:
-
-```
-jekyll-fdroid:
-  index_version: v2
-```
-
-2. Update `jekyll-fdroid` in the Gemfile to the a version that includes support to index-v2:
-
-```
-    gem 'jekyll-fdroid', :git => 'https://gitlab.com/fdroid/jekyll-fdroid',
-        :ref => 'the_one_that_supports_index_v2'
-```
 
 ## Local development
 
