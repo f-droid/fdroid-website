@@ -11,9 +11,9 @@ group :jekyll_plugins do
     gem "jekyll-redirect-from"
     gem "jekyll-paginate-v2", :git => 'https://github.com/sverrirs/jekyll-paginate-v2.git',
         :ref => '7bc2634c04c49120b674cc3506275f85c4389f5c'
-    gem "jekyll-polyglot", :git => 'https://gitlab.com/fdroid/jekyll-polyglot.git',
-        :ref => 'b4520fd8c638d43b6b96abd8b4462b1a398bb0e2'  # 1.8.0
+    gem "jekyll-polyglot", :git => 'https://github.com/untra/polyglot.git',
+        :ref => '2c977ff26f831189f1fc4d4a7c01ee43c702f633'  # 1.11.0
     gem 'jekyll-fdroid', :git => 'https://gitlab.com/fdroid/jekyll-fdroid.git',
-        :ref => '0ca3105553013a9c57bdcbed574c23c482e702ae'
+        :ref => 'e9760e71cca38ae7f437c0f32ebc8a87b548c99f'
     gem 'git'
 end

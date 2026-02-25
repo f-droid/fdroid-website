@@ -1043,14 +1043,10 @@ To enable, set it to a supported mode:
   somewhere by the upstream developers, either by checking for APKs
   that they distribute or for tags in the source code repository.
 
-  It currently works for every repository type to different extents,
-  except the `srclib` repo type. For `git`, `git-svn` and `hg` repo types, you
-  may use `RepoManifest/yourbranch` as _UpdateCheckMode_ so that "yourbranch" would
-  be the branch used in place of the default one. The default values
-  are "master" for git, "default" for hg and none for git-svn (it
-  stays in the same branch). On the other hand, branch support hasn't
-  been implemented yet in `bzr` and `svn`, but `RepoManifest` may still be
-  used without it.
+  For `git` repo types, you may use `RepoManifest/yourbranch` as
+  _UpdateCheckMode_ so that "yourbranch" would be the branch used in place of
+  the default one. The default branch is "_master_".  It does not work
+  for `srclib` repo types.
 
 * `Tags` - The _AndroidManifest.xml_ and _build.gradle_ files in all
   tagged revisions in the source repository are checked, looking for
@@ -1063,9 +1059,7 @@ To enable, set it to a supported mode:
   _AndroidManifest.xml_ were moved to another directory. Despite these
   caveats, it is often the favourite _UpdateCheckMode_.
 
-  It currently only works for `git`, `hg`, `bzr` and `git-svn` repositories.
-  In the case of the latter, the repo URL must contain the path to the
-  `trunk` and `tags` or else no tags will be found.
+  It currently only works for `git` repositories.
 
   Optionally append a regex pattern at the end - separated with a
   space - to only check the tags matching said pattern. Useful when

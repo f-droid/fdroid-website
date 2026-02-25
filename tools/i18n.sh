@@ -54,3 +54,7 @@ wait $pid_posts
 
 # no need to keep these around
 rm -f po/*.en.po
+for f in po/_*.*.po; do
+    msgattrib --no-obsolete --no-wrap -o $f $f &
+done
+wait
