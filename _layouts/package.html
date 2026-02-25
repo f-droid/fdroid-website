@@ -2,15 +2,15 @@
 layout: default-package-sidebar
 ---
 
-{% assign strings = site.data.strings.package %}
+{%- assign strings = site.data.strings.package -%}
 
 <article class="package">
 	<header class="package-header">
-		{% if page.icon != "" and page.icon != nil %}
+		{%- if page.icon != "" and page.icon != nil %}
 		<img class="package-icon" src="{{ site.fdroid-repo }}/{{ page.icon }}" alt="{{ strings.package_icon_alt }}" />
-		{% else %}
+		{%- else %}
 		<img class="package-icon" src="{% asset ic_repo_app_default.png %}" alt="{{ strings.package_icon_alt }}" />
-		{% endif %}
+		{%- endif %}
 		<div class="package-title">
 			<h3 class="package-name">
 				{{ page.title }}
@@ -20,102 +20,120 @@ layout: default-package-sidebar
 			</div>
 		</div>
 	</header>
-	{% if page.whats_new and page.suggested_version_name %}
+	{%- if page.whats_new and page.suggested_version_name %}
 	<div class="package-whats-new" id="whats_new">
-		{% assign fmt_latest_version = '{{ latest_version }}' %}
-		{% assign version_name = page.suggested_version_name | i18n_number %}
+		{%- assign fmt_latest_version = '{{ latest_version }}' %}
+		{%- assign version_name = page.suggested_version_name | i18n_number %}
 		<div class="new-in-version">{{ strings.new_in_version | replace: fmt_latest_version, version_name }}</div>
 		<div dir="auto">
 			{{ page.whats_new }}
 		</div>
 	</div>
-	{% endif %}
+	{%- endif %}
 	<div class="package-description" dir="auto">
 		{{ page.description }}
 	</div>
-	{% if page.anti_features != nil or page.versions.first.anti_features != nil %}
+	{%- assign latest_version = page.versions.first %}
+	{%- if page.anti_features != nil or page.versions.first.anti_features != nil %}
 	<div class="package-anti-features" id="anti_features">
 		<h3>{{ strings.anti_features }}</h3>
 		<p>{{ strings.anti_features_warning }} <a class="anti-features-more" href="{{ site.baseurl }}/docs/Anti-Features/">{{ strings.learn_more }}</a></p>
 		<ul class="package-version-anti-features-list">
-			{% comment %} Display Antifeatures for package {% endcomment %}
-			{% for anti_feature in page.anti_features %}
+			{%- comment %} Display Antifeatures for package (for index-v1) {% endcomment %}
+			{%- for anti_feature in page.anti_features %}
 			<li class="anti-feature-item">
-			  <a class="anti-feature-link" href="{{ site.baseurl }}/docs/Anti-Features/#{{ anti_feature }}">
+				<a class="anti-feature-link" href="{{ site.baseurl }}/docs/Anti-Features/#{{ anti_feature }}">
 					<img class="anti-feature-icon" src="{{ anti_feature | prepend: 'icons/antifeatures/' | append: '.svg' | asset }}" alt=""> 
 					<div class="anti-feature-text">
 						{{ site.data.strings.antifeatures[anti_feature] }}
 					</div>
-			  </a>
+				</a>
 			</li>
-			{% endfor %}
-			{% comment %} Display Antifeatures for most recent app release (Code active?) {% endcomment %}
-			{% for anti_feature in page.versions.first.anti_features %}
+			{%- endfor %}
+			{%- comment %} Display Antifeatures for most recent app release (for index-v2 where Antifeatures are at version level only) {% endcomment %}
+			{%- if latest_version.anti_features_v2 %}
+				{%- assign anti_features = latest_version.anti_features_v2 %}
+			{%- else %}
+				{%- assign anti_features = latest_version.anti_features %}
+			{%- endif %}
+			{%- for anti_feature in anti_features %}
+				{%- if anti_feature[0] %}
+					{%- assign anti_feature_key = anti_feature[0] %}
+				{%- else %}
+					{%- assign anti_feature_key = anti_feature %}
+				{%- endif %}
 			<li class="anti-feature-item">
-			  <a class="anti-feature-link" href="{{ site.baseurl }}/docs/Anti-Features/#{{ anti_feature }}">
-					<img class="anti-feature-icon" src="{{ anti_feature | prepend: 'icons/antifeatures/' | append: '.svg' | asset }}" alt=""> 
+				<a class="anti-feature-link" href="{{ site.baseurl }}/docs/Anti-Features/#{{ anti_feature_key }}">
+					<img class="anti-feature-icon" src="{{ anti_feature_key | prepend: 'icons/antifeatures/' | append: '.svg' | asset }}" alt="{% if page.repo.anti_features[anti_feature_key].name %}{{ page.repo.anti_features[anti_feature_key].name }}{%- endif %}"> 
 					<div class="anti-feature-text">
-						{{ site.data.strings.antifeatures[anti_feature] }}
+						<p>{% if page.repo.anti_features[anti_feature_key].description -%}
+							{{ page.repo.anti_features[anti_feature_key].description }}
+						{% else -%}
+							{{ site.data.strings.antifeatures[anti_feature_key] }}
+						{%- endif %}</p>
+						{%- comment %} Opportunistically display Antifeatures explanation text for index-v2 {% endcomment %}
+						{%- if anti_feature[1] %}
+						<p>{{ anti_feature[1] }}</p>
+					{%- endif %}
 					</div>
-			  </a>
+				</a>
 			</li>
-			{% endfor %}
+			{%- endfor %}
 		</ul>
 	</div>
-	{% endif %}
+	{%- endif %}
 	<ul class="package-links" id="links">
-		{% if page.author_email != "" and page.author_email != nil %}
+		{%- if page.author_email != "" and page.author_email != nil %}
 		<li class="package-link" id="author">
 			{{ strings.author }}:
 			<a href="mailto:{{ page.author_email }}?subject={{ site.title }}%20on%20{{ site.baseurl }}">
 				{{ page.author_name | default: page.author_email }}
 			</a>
 		</li>
-		{% elsif page.author_name != "" and page.author_name != nil %}
+		{%- elsif page.author_name != "" and page.author_name != nil %}
 		<li class="package-link" id="author_name">
 			{{ strings.author }}: {{ page.author_name }}
 		</li>
-		{% endif %}
+		{%- endif %}
 		<li class="package-link" id="license">
 			{{ strings.license }}:
-			{% assign license = site.data.licenses.licenses[page.license] %}
-			{% if page.license == "PublicDomain" %}
+			{%- assign license = site.data.licenses.licenses[page.license] %}
+			{%- if page.license == "PublicDomain" %}
 				<a href="https://en.wikipedia.org/wiki/Public_domain">Public Domain</a>
-			{% else %}
+			{%- else %}
 				<a href="https://spdx.org/licenses/{{ page.license }}.html">{{ license.name | default: page.license }}</a>
-			{% endif %}
-
+			{%- endif %}
 		</li>
-		{% if page.website != "" and page.website != nil %}
+		{%- if page.website != "" and page.website != nil %}
 		<li class="package-link" id="website">
 			<a href="{{ page.website }}">{{ strings.website }}</a>
 		</li>
-		{% endif %}
-		{% if page.video != "" and page.video != nil %}
+		{%- endif %}
+		{%- if page.video != "" and page.video != nil %}
 		<li class="package-link" id="video">
 			<a href="{{ page.video }}">{{ strings.video }}</a>
 		</li>
-		{% endif %}
-		{% if page.issue_tracker != "" and page.issue_tracker != nil %}
+		{%- endif %}
+		{%- if page.issue_tracker != "" and page.issue_tracker != nil %}
 		<li class="package-link" id="issue_tracker">
 			<a href="{{ page.issue_tracker }}">{{ strings.issue_tracker }}</a>
 		</li>
-		{% endif %}
-		{% if page.translation != "" and page.translation != nil %}
+		{%- endif %}
+		{%- if page.translation != "" and page.translation != nil %}
 		<li class="package-link" id="translation">
 			<a href="{{ page.translation }}">{{ strings.translation }}</a>
 		</li>
-		{% endif %}
-		{% if page.source_code != "" and page.source_code != nil %}
+		{%- endif %}
+		{%- if page.source_code != "" and page.source_code != nil %}
 		<li class="package-link" id="source_code">
 			<a href="{{ page.source_code }}">{{ strings.source_code }}</a>
 		</li>
-		{% endif %}
-		{% if page.changelog != "" and page.changelog != nil %}
+		{%- endif %}
+		{%- if page.changelog != "" and page.changelog != nil %}
 		<li class="package-link" id="changelog">
 			<a href="{{ page.changelog }}">{{ strings.changelog }}</a>
 		</li>
-		{% endif %}
+		{%- endif %}
 		<li class="package-link" id="build_metadata">
 			<a href="https://gitlab.com/fdroid/fdroiddata/tree/master/metadata/{{ page.package_name }}.yml">{{ strings.build_metadata }}</a>
 		</li>
@@ -124,57 +142,57 @@ layout: default-package-sidebar
 		</li>
 	</ul>
 
-	{% if page.openCollective != nil or page.liberapay != nil or page.bitcoin != nil or page.litecoin != nil or page.donate != nil %}
+	{% if page.openCollective != nil or page.liberapay != nil or page.bitcoin != nil or page.litecoin != nil or page.donate != nil -%}
 	<h3 id="donate">{{ strings.donate }}</h3>
 	<ul class="package-links donate-options">
-		{% if page.openCollective != "" and page.openCollective != nil %}
+		{%- if page.openCollective != "" and page.openCollective != nil %}
 		<li class="package-link opencollective">
 			<a href="https://opencollective.com/{{ page.openCollective }}/donate"><img src="{% asset opencollective_button.png %}" alt="{{ strings.opencollective_alt }}"/></a>
 		</li>
-		{% endif %}
-		{% if page.liberapay != "" and page.liberapay != nil %}
+		{%- endif %}
+		{%- if page.liberapay != "" and page.liberapay != nil %}
 		<li class="package-link">
 			<a href="https://liberapay.com/{{ page.liberapay }}/donate"><img src="{% asset liberapay_donate_button.svg %}" alt="{{ strings.liberapay_alt }}"/></a>
 		</li>
-		{% endif %}
-		{% if page.bitcoin != "" and page.bitcoin != nil %}
+		{%- endif %}
+		{%- if page.bitcoin != "" and page.bitcoin != nil %}
 		<li class="package-link">
 			<a href="https://live.blockcypher.com/btc/address/{{ page.bitcoin }}" title="{{ page.bitcoin }}"><img src="{% asset bitcoin.png %}" alt="{{ strings.bitcoin_alt }}"/></a>
 		</li>
-		{% endif %}
-		{% if page.litecoin != "" and page.litecoin != nil %}
+		{%- endif %}
+		{%- if page.litecoin != "" and page.litecoin != nil %}
 		<li class="package-link">
 			<a href="https://live.blockcypher.com/ltc/address/{{ page.litecoin }}" title="{{ page.litecoin }}"><img src="{% asset litecoin.png %}" alt="{{ strings.litecoin_alt }}"/></a>
 		</li>
-		{% endif %}
+		{%- endif %}
 		{%- assign donatetest = page.donate | slice: 0, 8 -%}
-		{% if page.donate != "" and page.donate != nil and donatetest == "https://" %}
+		{%- if page.donate != "" and page.donate != nil and donatetest == "https://" %}
 		<li class="package-link">
 			<a href="{{ page.donate }}">{{ page.donate | replace_first: "https://", "" }}</a>
 		</li>
-		{% endif %}
+		{%- endif %}
 	</ul>
-	{% endif %}
+	{%- endif %}
 
-	{% if page.phone_screenshots or page.seven_inch_screenshots or page.ten_inch_screenshots or page.tv_screenshots or page.wear_screenshots %}
+	{% if page.phone_screenshots or page.seven_inch_screenshots or page.ten_inch_screenshots or page.tv_screenshots or page.wear_screenshots -%}
 	<div id="screenshots" class="js_slides screenshots">
 		<div class="frame js_frame">
 			<ul class="slides js_slides gallery">
-				{% for screenshot in page.phone_screenshots %}
+				{%- for screenshot in page.phone_screenshots %}
 				<li class="js_slide screenshot"><img src="{{ site.fdroid-repo}}/{{ page.package_name }}/{{ screenshot }}" alt="{{ strings.package_screenshot_alt }}" /></li>
-				{% endfor %}
-				{% for screenshot in page.seven_inch_screenshots %}
+				{%- endfor %}
+				{%- for screenshot in page.seven_inch_screenshots %}
 				<li class="js_slide screenshot"><img src="{{ site.fdroid-repo}}/{{ page.package_name }}/{{ screenshot }}" alt="{{ strings.package_screenshot_alt }}" /></li>
-				{% endfor %}
-				{% for screenshot in page.ten_inch_screenshots %}
+				{%- endfor %}
+				{%- for screenshot in page.ten_inch_screenshots %}
 				<li class="js_slide screenshot"><img src="{{ site.fdroid-repo}}/{{ page.package_name }}/{{ screenshot }}" alt="{{ strings.package_screenshot_alt }}" /></li>
-				{% endfor %}
-				{% for screenshot in page.tv_screenshots %}
+				{%- endfor %}
+				{%- for screenshot in page.tv_screenshots %}
 				<li class="js_slide screenshot"><img src="{{ site.fdroid-repo}}/{{ page.package_name }}/{{ screenshot }}" alt="{{ strings.package_screenshot_alt }}" /></li>
-				{% endfor %}
-				{% for screenshot in page.wear_screenshots %}
+				{%- endfor %}
+				{%- for screenshot in page.wear_screenshots %}
 				<li class="js_slide screenshot"><img src="{{ site.fdroid-repo}}/{{ page.package_name }}/{{ screenshot }}" alt="{{ strings.package_screenshot_alt }}" /></li>
-				{% endfor %}
+				{%- endfor %}
 			</ul>
 		</div>
 		<span class="js_prev slider_nav prev" style="display: none">
@@ -184,7 +202,7 @@ layout: default-package-sidebar
 			<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 501.5 501.5"><g><path fill="#2E435A" d="M199.33 410.622l-55.77-55.508L247.425 250.75 143.56 146.384l55.77-55.507L358.44 250.75z"/></g></svg>
 		</span>
 	</div>
-	{% endif %}
+	{%- endif %}
 
 	{% comment %}
 		Opportunistically check against the list of official f-droid.org signers if present
@@ -192,128 +210,239 @@ layout: default-package-sidebar
 	{%- if site.data.fdroid-signers %}
 		{%- assign official_signer = site.data.fdroid-signers[page.package_name].signer %}
 	{%- endif %}
+	{%- assign packages_with_src = page.versions | where_exp: "package", "package.srcname != '' and package.srcname != nil" %}
 	<div class="package-versions">
 		<a name="versions"></a>
 		<h3>{{ strings.versions }}</h3>
-		{% if page.package_name == "org.fdroid.basic" %}
+		{%- if page.package_name == "org.fdroid.basic" %}
 			<!--no {{ site.data.strings.index.download_fdroid }} button because this is {{ page.package_name }} -->
-		{% else %}
+		{%- else %}
 		<p>
 			{{ strings.suggest_downloading_via_fdroid }}
 		</p>
 		<a href="{{ site.fdroid_apk_download_url }}" class="material-button">{{ site.data.strings.index.download_fdroid }}</a>
-		{% endif %}
+		{%- endif %}
 		<ul class="package-versions-list">
-			{% for package in page.versions %}
+			{%- assign last_version_name = page.suggested_version_name %}
+			{%- assign last_version_code = page.suggested_version_code %}
+			{%- assign last_whats_new = page.whats_new %}
+			{%- for package in page.versions %}
+			{% if package.whats_new != "" and package.whats_new != nil and package.version_name != last_version_name -%}
+			<div class="package-whats-new">
+				{%- assign version_name = package.version_name | i18n_number %}
+				<div class="new-in-version">{{ strings.new_in_version | replace: fmt_latest_version, version_name }}</div>
+				<div dir="auto">
+					{{ package.whats_new }}
+				</div>
+			</div>
+			{%- assign last_version_name = package.version_name %}
+			{%- assign last_version_code = package.version_code %}
+			{%- assign last_whats_new = package.whats_new %}
+			{%- endif %}
 			<li class="package-version" {% if forloop.first %}id="latest"{% endif %}>
-			{% if page.suggested_version_name == package.version_name and suggestedDisplayed != true %}<a name="suggested"></a>{% endif %}
+			{%- if page.suggested_version_name == package.version_name and suggestedDisplayed != true %}<a name="suggested"></a>{% endif %}
 				<div class="package-version-header">
-					{% assign package_added_date = package.added | date: site.data.strings.news.date_format %}
+					{%- assign package_added_date = package.added | date: site.data.strings.news.date_format %}
 					<a name="{{ package.version_name }}"></a>
 					<a name="{{ package.version_code }}"></a>
-					{% comment %}fmt_package_version_* are strings in the JSON that are replaced here{% endcomment %}
-					{% assign fmt_package_version = '{{ package_version }}' %}
-					{% assign version_name = package.version_name | i18n_number %}
-					{% assign fmt_package_version_code = '{{ package_version_code }}' %}
-					{% assign version_code = package.version_code | i18n_number %}
+					{%- comment %}fmt_package_version_* are strings in the JSON that are replaced here{% endcomment %}
+					{%- assign fmt_package_version = '{{ package_version }}' %}
+					{%- assign version_name = package.version_name | i18n_number %}
+					{%- assign fmt_package_version_code = '{{ package_version_code }}' %}
+					{%- assign version_code = package.version_code | i18n_number %}
 					{{ strings.version_info | replace: fmt_package_version, version_name | replace: fmt_package_version_code, version_code }}
-					{% if page.suggested_version_name == package.version_name and suggestedDisplayed != true %}<span class="suggested-badge">{{ strings.suggested }}</span>{% assign suggestedDisplayed = true %}{% else %} - {% endif %}
-					{% assign fmt_package_added_date = '{{ package_added_date }}' %}
+					{% assign version_badges = false %}
+					{%- if package.release_channels contains "Beta" %}<span class="beta-badge">{{ strings.beta | default: package.release_channels }}</span>{% assign version_badges = true %}{% endif %}
+					{%- if page.suggested_version_name == package.version_name and suggestedDisplayed != true %}<span class="suggested-badge">{{ strings.suggested }}</span>{% assign suggestedDisplayed = true %}{% assign version_badges = true %}{% endif %}
+					{%- unless version_badges %} - {% endunless %}
+					{%- assign fmt_package_added_date = '{{ package_added_date }}' %}
 					{{ strings.added_on | replace: fmt_package_added_date, package_added_date }}
 				</div>
 				<p class="package-version-nativecode">
-					{% for abi in package.nativecode %}
+					{%- for abi in package.nativecode %}
 					<code class="package-nativecode">{{ abi }}</code>
-					{% endfor %}
+					{%- endfor %}
 				</p>
 				<p class="package-version-requirement">
-					{% assign fmt_android_version = '{{ android_version }}' %}
-					{% assign android_version = package.min_sdk_version | android_sdk_level_to_version %}
+					{%- assign fmt_android_version = '{{ android_version }}' %}
+					{%- assign android_version = package.min_sdk_version | android_sdk_level_to_version %}
 					{{ strings.minimum_android_version | replace: fmt_android_version, android_version }}
 				</p>
 
 				<p class="package-version-source">
-					{% if package.srcname != "" and package.srcname != nil %}
-					{% assign fmt_source_code_url = '{{ source_code_url }}' %}
-					{% assign source_code_url = site.fdroid-repo | append: '/' | append: package.srcname %}
+					{%- if package.srcname != "" and package.srcname != nil %}
+					  {%- assign origin = strings.built_by_fdroid %}
+					  {%- assign src_package = package %}
+					{%- else %}
+					  {%- assign origin = strings.signed_by_developer %}
+					  {%- assign src_package = packages_with_src | where: "version_code", package.version_code | first %}
+					{%- endif %}
 					{%- if site.data.fdroid-signers %}
 						{%- if package.signer == official_signer %}
-							{{- strings.signed_by_fdroid | replace: fmt_source_code_url, source_code_url }}
+					    {%- assign origin = strings.signed_by_fdroid %}
 						{%- else %}
-							{{- strings.signed_by_developer | replace: fmt_source_code_url, source_code_url }}
+					    {%- assign origin = strings.signed_by_developer %}
 						{%- endif %}
-					{%- else %}
-						{{- strings.built_by_fdroid | replace: fmt_source_code_url, source_code_url }}
 					{%- endif %}
-					{% else %}
-					{{ strings.signed_by_developer | replace: fmt_source_code_url, source_code_url }}
-					{% endif %}
+					{%- if src_package %}
+					  {%- assign fmt_source_code_url = '{{ source_code_url }}' %}
+					  {%- assign source_code_url = site.fdroid-repo | append: '/' | append: src_package.srcname %}
+					{%- endif %}
+					{{- origin | replace: fmt_source_code_url, source_code_url }}
 				</p>
 
-				{% if package.anti_features != "" and package.anti_features != nil %}
+				{% if package.whats_new != "" and package.whats_new != nil and package.version_code != last_version_code and package.whats_new != last_whats_new -%}
+				<div class="package-whats-new">
+					<div dir="auto">
+						{{ package.whats_new }}
+					</div>
+				</div>
+				{%- assign last_version_code = package.version_code %}
+				{%- assign last_whats_new = package.whats_new %}
+				{%- endif %}
+				{%- comment %}
+				{% if package.anti_features != "" and package.anti_features != nil -%}
 				<div class="package-version-anti-features">
 					<details {% if forloop.first %}open{% endif %}>
 						<summary class="package-version-anti-features-summary">
 							{{ strings.anti_features }}
 						</summary>
 						<ul class="package-version-anti-features-list">
-							{% for anti_feature in package.anti_features %}
+						  {%- comment %}
+							{%- for anti_feature in package.anti_features %}
 							<li>
-							  <a href="{{ site.baseurl }}/docs/Anti-Features/#{{ anti_feature }}">
-							    {{ anti_feature }}
-							  </a>
+								<a href="{{ site.baseurl }}/docs/Anti-Features/#{{ anti_feature }}">
+									{{ anti_feature }}
+								</a>
 							</li>
-							{% endfor %}
+							{%- endfor %}
+							{%- endcomment %}
+							{%- if package.anti_features_v2 %}
+								{%- assign anti_features = package.anti_features_v2 %}
+							{%- else %}
+								{%- assign anti_features = package.anti_features %}
+							{%- endif %}
+							{%- for anti_feature in anti_features %}
+								{%- if anti_feature[0] %}
+									{%- assign anti_feature_key = anti_feature[0] %}
+								{%- else %}
+									{%- assign anti_feature_key = anti_feature %}
+								{%- endif %}
+							<li class="anti-feature-item">
+								<a class="anti-feature-link" href="{{ site.baseurl }}/docs/Anti-Features/#{{ anti_feature_key }}">
+									<img class="anti-feature-icon" src="{% if page.repo.anti_features[anti_feature_key].icon.name -%}
+									{{ site.fdroid-repo }}/{{ page.repo.anti_features[anti_feature_key].icon.name }}
+									{%- else -%}
+									{{ anti_feature_key | prepend: 'icons/antifeatures/' | append: '.svg' | asset }}
+									{%- endif %}" alt="{% if page.repo.anti_features[anti_feature_key].name %}{{ page.repo.anti_features[anti_feature_key].name }}{%- endif %}"> 
+									<div class="anti-feature-text">
+										<p>{% if page.repo.anti_features[anti_feature_key].description -%}
+											{{ page.repo.anti_features[anti_feature_key].description }}
+										{% else -%}
+											{{ site.data.strings.antifeatures[anti_feature_key] }}
+										{%- endif %}</p>
+										{%- if anti_feature[1] %}
+										<p>{{ anti_feature[1] }}</p>
+									{%- endif %}
+									</div>
+								</a>
+							</li>
+							{%- endfor %}
 						</ul>
 					</details>
 				</div>
-				{% endif %}
+				{%- endif %}
+				{%- endcomment %}
 
+				{%- assign uses_permissions = 0 %}
+				{%- if package.uses_permission != empty and package.uses_permission != nil %}
+					{%- assign uses_permissions = uses_permissions | plus: 1 %}
+				{%- endif %}
+				{%- if package.uses_permission_sdk_23 != empty and package.uses_permission_sdk_23 != nil %}
+					{%- assign uses_permissions = uses_permissions | plus: 2 %}
+				{%- endif %}
 				<div class="package-version-permissions">
-					{% if package.uses_permission != empty and package.uses_permission != nil %}
+					{%- if uses_permissions > 0 %}
 					<details {% if forloop.first %}open{% endif %}>
 						<summary class="package-version-permissions-summary">
 							{{ strings.permissions }}
 						</summary>
 						<ul class="package-version-permissions-list">
-							{% assign unique_permissions = package.uses_permission | uniq | sort: "permission" %}
-							{% for permission in unique_permissions %}
+							{%- if package.min_sdk_version >= 23 and uses_permissions >= 2 %}
+								{%- assign unique_permissions = package.uses_permission | concat: package.uses_permission_sdk_23 | uniq | sort: "permission" %}
+							{%- else %}
+								{%- assign unique_permissions = package.uses_permission | uniq | sort: "permission" %}
+							{%- endif %}
+							{% for permission in unique_permissions -%}
 
 							<li class="permission">
 
-							{% if site.data.android_permissions[permission.permission] != nil %}
-								{% assign perm = site.data.android_permissions[permission.permission] %}
+							{%- if site.data.android_permissions[permission.permission] != nil %}
+								{%- assign perm = site.data.android_permissions[permission.permission] %}
 								<div class="permission-label">
-								{% if perm.label %}
+								{%- if perm.label %}
 									{{ site.data.strings.permissions[perm.label] }}
-								{% else %}
+								{%- else %}
 									{{ permission.permission }}
-								{% endif %}
+								{%- endif %}
 								</div>
-								{% if perm.description %}
+								{%- if perm.description %}
 								<div class="permission-description">{{ site.data.strings.permissions[perm.description] }}</div>
-								{% endif %}								
-							{% else %}
+								{%- endif %}								
+							{%- else %}
 								<div class="permission-label">{{ permission.permission }}</div>
-							{% endif %}
+							{%- endif %}
 
-							{% if permission.min_sdk %}
+							{%- if permission.min_sdk %}
 							({{ permission.min_sdk | android_sdk_level_to_version }})
-							{% endif %}
+							{% endif -%}
 
 							</li>
-							{% endfor %}
+							{%- endfor %}
+							{%- if uses_permissions >= 2 and package.min_sdk_version < 23 %}
+							{%- assign runtime_permissions = package.uses_permission_sdk_23 | uniq | sort: "permission" %}
+							{%- assign sdk_badge = 23 | android_sdk_level_to_version | prepend: "Android " | append: "+" %}
+							{%- assign shown_permissions = unique_permissions | map: "permission" %}
+							{% for permission in runtime_permissions -%}
+							{% if shown_permissions contains permission.permission %}{% continue %}{% endif -%}
+
+							<li class="permission">
+
+							{%- if site.data.android_permissions[permission.permission] != nil %}
+								{%- assign perm = site.data.android_permissions[permission.permission] %}
+								<div class="permission-label">
+								{%- if perm.label %}
+									{{ site.data.strings.permissions[perm.label] }}
+								{%- else %}
+									{{ permission.permission }}
+								{%- endif %}
+								<span class="sdk-badge">{{ sdk_badge }}</span>
+								</div>
+								{%- if perm.description %}
+								<div class="permission-description">{{ site.data.strings.permissions[perm.description] }}</div>
+								{%- endif %}								
+							{%- else %}
+								<div class="permission-label">{{ permission.permission }}<span class="sdk-badge">{{ sdk_badge }}</span></div>
+							{%- endif %}
+
+							{%- if permission.min_sdk %}
+							({{ permission.min_sdk | android_sdk_level_to_version }})
+							{% endif -%}
+
+							</li>
+							{%- endfor %}
+							{%- endif %}
 						</ul>
 					</details>
-					{% else %}
+					{%- else %}
 					<div class="no-permissions">{{ strings.no_permissions }}</div>
-					{% endif %}
+					{%- endif %}
 				</div>
 
 				<p class="package-version-download">
 					<b>
 						<a href="{{ site.fdroid-repo }}/{{ package.apk_name }}">
-							{% assign fmt_file_extension = '{{ file_extension }}' %}
+							{%- assign fmt_file_extension = '{{ file_extension }}' %}
 							{{ strings.download | replace: fmt_file_extension, package.file_extension }}
 						</a>
 					</b>
@@ -325,12 +454,9 @@ layout: default-package-sidebar
 
 			</li>
 
-			{% endfor %}
-
+			{%- endfor %}
 		</ul>
-
 	</div>
-
 </article>
 
 <script src="{% asset lib/lory.min.js %}" async></script>
