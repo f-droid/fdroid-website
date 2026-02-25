@@ -33,6 +33,8 @@ You download the F-Droid app first. Then, you can browse or search for apps insi
 
 F-Droid is made by volunteers who care about free and open software. They work together to keep F-Droid safe and easy to use. If you want to follow along or participate, check out our [<u>GitLab</u>](https://gitlab.com/fdroid).
 
+F-Droid is legally represented by our [Commons Conservancy Programme](https://commonsconservancy.org/programmes/#F-Droid) which is regulated by our [statutes](https://dracc.commonsconservancy.org/0039/).
+
 ### Get Started
 
 Ready to try F-Droid? [Get the app]({{ site.baseurl }}/docs/Get_F-Droid/) and discover thousands of free and safe apps for your device.
