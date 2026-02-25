@@ -32,28 +32,14 @@ Jekyll::Hooks.register :site, :after_init do |site|
       end
     end
 
-    #
-    # Patches a bug in ruby-gpgme where Signature#from does not account for the exception when there's no public key
-    # ie EOFError from Ctx#get_key
-    #
-    module GPGME
-      class Signature
-        alias from_orig from
-        def from
-          begin
-            from_orig
-          rescue => e
-            Jekyll::logger.warn 'GPGME::Signature.from:', "Caught an exception: #{e.class} - #{e.message}"
-            fingerprint
-          end
-        end
-      end
-    end
-
     def verify_sig(sig, data)
       GPGME::Crypto.new.verify(sig, signed_text: data) do |signature|
-        puts "Signature #{signature.valid? ? 'valid' : 'invalid'}: #{signature}"
-        puts "Fingerprint: #{signature.fingerprint}, Summary: #{signature.summary}, Status: #{signature.status}"
+        begin
+          puts "Signature #{signature.valid? ? 'valid' : 'invalid'}: #{signature}"
+          puts "Fingerprint: #{signature.fingerprint}, Summary: #{signature.summary}, Status: #{signature.status}"
+        rescue => e
+          Jekyll::logger.warn 'GPGME::Signature:', "Caught an exception: #{e.class} - #{e.message}"
+        end
         return false unless signature.valid?
       end
       true
