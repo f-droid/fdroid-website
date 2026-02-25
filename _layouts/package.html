@@ -229,6 +229,7 @@ layout: default-package-sidebar
 			{%- for package in page.versions %}
 			{% if package.whats_new != "" and package.whats_new != nil and package.version_name != last_version_name -%}
 			<div class="package-whats-new">
+				{%- assign fmt_latest_version = '{{ latest_version }}' %}
 				{%- assign version_name = package.version_name | i18n_number %}
 				<div class="new-in-version">{{ strings.new_in_version | replace: fmt_latest_version, version_name }}</div>
 				<div dir="auto">
