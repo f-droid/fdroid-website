@@ -22,7 +22,7 @@ fi
 
 set -x
 
-./tools/i18n.sh --all
+./tools/i18n.sh
 
 wlc commit || true  # this is optional but can be helpful
 git remote update -p weblate upstream
