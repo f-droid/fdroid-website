@@ -21,7 +21,7 @@ if [ "$1" == "--all" ]; then
     # this is for syncing to the .pot and .po files, so do all languages
     languages=`sort -u  <(ls po/_*.*.po | cut -d . -f 2)  <(cd _data; find * -type d)`
 else
-    languages=$(ruby -ryaml -e "data = YAML::load(open('_config.yml')); puts data['languages']")
+    languages=$(ruby -ryaml -e "data = YAML::load(open('_config.yml')); puts data['languages']" | grep -v ^en)
 fi
 test -n "$languages"
 
@@ -53,7 +53,6 @@ wait $pid_pages
 wait $pid_posts
 
 # no need to keep these around
-rm -f po/*.en.po
 for f in po/_*.*.po; do
     msgattrib --no-obsolete --no-wrap -o $f $f &
 done
