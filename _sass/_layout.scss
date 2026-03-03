@@ -46,21 +46,49 @@ body {
 
 }
 
-.site-nav {
+.site-navbar-container {
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
     background: $primary-color;
+    .site-nav {
+        display: flex;
+        flex-wrap: wrap;
 
-    .page-link {
+        .page-link {
+            @include button-dark($primary-color);
+
+            &.current {
+                $border-height: 6px;
+                border-bottom: $border-height solid rgba(255, 255, 255, .4);
+
+                // Prevents the border from making the whole row higher:
+                line-height: calc((#{$spacing-unit} * 1.5) - (2 * #{$border-height}));
+                padding-top: $border-height;
+            }
+        }
+    }
+
+    .language-chooser-form {
         @include button-dark($primary-color);
+        padding: 0;
+        display: flex;
+    }
 
-        &.current {
-            $border-height: 6px;
-            border-bottom: $border-height solid rgba(255, 255, 255, .4);
+    .language-chooser-select {
+        appearance: unset;
+        background: url("../assets/ic_language_white_24px.svg") no-repeat center;
+        border: none;
+        padding-inline: 24px;
+        text-transform: none;
+        width: 24px;
 
-            // Prevents the border from making the whole row higher:
-            line-height: calc((#{$spacing-unit} * 1.5) - (2 * #{$border-height}));
-            padding-top: $border-height;
+        option {
+            color: #000;
+        }
+        
+        &:focus-visible {
+            outline: none;
         }
     }
 }
@@ -528,23 +556,23 @@ body {
 /**
  * Language chooser
  */
-.sidebar-widget.language {
-    .lang-flag {
-        margin: 0 0.1em;
-        vertical-align: middle;
-        max-width: 2em;
-        max-height: 1em;
-    }
-    .language-chooser-select {
-        background-color: #fff;
-        border-radius: 4px;
-        border: solid 1px #ccc;
-        font-size: 0.9em;
-        margin-bottom: calc(#{$spacing-unit} / 2);
-        padding: 0.4em;
-        width: 100%;
-    }
-}
+// .sidebar-widget.language {
+//     .lang-flag {
+//         margin: 0 0.1em;
+//         vertical-align: middle;
+//         max-width: 2em;
+//         max-height: 1em;
+//     }
+//     .language-chooser-select {
+//         background-color: #fff;
+//         border-radius: 4px;
+//         border: solid 1px #ccc;
+//         font-size: 0.9em;
+//         margin-bottom: calc(#{$spacing-unit} / 2);
+//         padding: 0.4em;
+//         width: 100%;
+//     }
+// }
 
 /**
  * Search results
