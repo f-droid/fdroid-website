@@ -5,7 +5,6 @@ image: docker.io/debian:bookworm-slim
 stages:
   - deploy
   - production
-  - fetch_completed_translations_from_weblate
 
 variables:
   LC_ALL: C.UTF-8
@@ -388,63 +387,3 @@ markdownlint:
               mdl "$f"
           fi
       done
-
-make-automated-translation-pr:
-  stage: fetch_completed_translations_from_weblate
-  image: debian:bookworm-slim
-  rules:
-    - if: $CI_PIPELINE_SOURCE == "schedule"
-  variables:
-    DEBIAN_FRONTEND: noninteractive
-    LANG: C.UTF-8
-  before_script:
-    - 'command -v ssh-agent >/dev/null || ( apt-get update -y && apt-get install openssh-client -y )'
-    - eval $(ssh-agent -s)
-    ##
-    ## Give the right permissions, otherwise ssh-add will refuse to add files
-    ## Add the SSH key stored in SSH_PRIVATE_KEY file type CI/CD variable to the agent store
-    ##
-    - chmod 400 "$SSH_PRIVATE_KEY"
-    - ssh-add "$SSH_PRIVATE_KEY"
-    ##
-    ## Create the SSH directory and give it the right permissions
-    ##
-    - mkdir -p ~/.ssh
-    - chmod 700 ~/.ssh
-    ## Use ssh-keyscan to scan the keys of your private server. Replace gitlab.com
-    ## with your own domain name. You can copy and repeat that command if you have
-    ## more than one server to connect to.
-    - ssh-keyscan gitlab.com >> ~/.ssh/known_hosts
-    - chmod 644 ~/.ssh/known_hosts
-    - echo Etc/UTC > /etc/timezone
-    - echo 'APT::Install-Recommends "0";'
-           'APT::Install-Suggests "0";'
-           'APT::Get::Assume-Yes "true";'
-           'Acquire::Retries "20";'
-           'Dpkg::Use-Pty "0";'
-           'quiet "1";'
-        >> /etc/apt/apt.conf.d/99gitlab
-    - apt-get update
-    - apt-get dist-upgrade
-    - export PUSH_BRANCH=merge_weblate
-    - export COMMIT_MSG=localization_bot_run_$CI_JOB_URL
-    - export COMMIT_TITLE=bot_pick_complete_translations
-  script:
-    - apt-get install python3-git python3-requests git python3-yaml
-    - git clone git@gitlab.com:pmmayero/fdroid-website.git
-    - cd fdroid-website/
-    - git remote add upstream git@gitlab.com:fdroid/fdroid-website.git
-    - git fetch upstream
-    - git checkout master
-    - git rebase upstream/master
-    - git push -f origin master
-    - git remote add weblate https://hosted.weblate.org/git/f-droid/website/
-    - git config user.name "$CI_PIPELINE_ID/$CI_JOB_ID"
-    - git config user.email $CI_PROJECT_PATH@f-droid.org
-    - python3 tools/pick-complete-translations.py || exit 0  # nothing to merge
-    - git push --force origin $PUSH_BRANCH
-      -o merge_request.create
-      -o merge_request.target=master
-      -o merge_request.title=$COMMIT_TITLE
-      -o merge_request.description=$COMMIT_MSG
-      -o merge_request.auto_merge
