@@ -145,9 +145,14 @@ body {
         @include media-query($phone) {
             justify-content: flex-end;
             margin-inline: calc(#{$spacing-unit} / 2 * (-1));
+            pointer-events: none;
             position: absolute;
             top: calc(#{$spacing-unit} / 2);
             width: 100%;
+
+            & > * {
+                pointer-events: auto;
+            } 
         }
     }
 }
