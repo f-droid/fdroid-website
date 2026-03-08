@@ -1,10 +1,28 @@
 <header class="site-header">
   <script src="{% asset sidebar-lang.js %}" async></script>
-  <a class="site-title" href="{{ site.baseurl }}/">
-    <img src="{% asset fdroid-logo-text.svg %}" alt="{{ site.header-title }}" />
-  </a>
+  <div class="site-title">
+    <a class="site-title-logo" href="{{ site.baseurl }}/">
+      <img src="{% asset fdroid-logo-text.svg %}" alt="{{ site.header-title }}" />
+    </a>
+    <div class="site-title-buttons">
+      <form class="language-chooser-form" action="{{site.baseurl}}{{ page.url }}" method="get">
+        <select id="language-chooser-select" class="language-chooser-select" name="lang" autocomplete="off">
+        {%- for lang in site.languages %}
+          <option value="{{ lang }}" {%- if lang == site.active_lang %}selected="selected"{%- endif %}>{{ site.data.languagenames[lang] }}</option>
+        {%- endfor %}
+        </select>
+        <noscript>
+          {% assign strings = site.data.strings.sidebars.lang %}
+          <input class="language-chooser-submit" id="language-chooser-submit" type="submit" value="{{ strings.change }}">
+        </noscript>
+      </form>
+      <label for="toggle-menu" class="site-title-menu-icon">
+      </label>
+    </div>
+  </div>
   <nav class="site-navbar-container">
     <div class="site-nav">
+      <input id="toggle-menu" type="checkbox">
       {%- for nav-item in site.data.navigation %}
         {%- if nav-item.key %}
           {%- assign title = site.data.strings.navigation[nav-item.key] %}
@@ -28,9 +46,9 @@
         <option value="{{ lang }}" {%- if lang == site.active_lang %}selected="selected"{%- endif %}>{{ site.data.languagenames[lang] }}</option>
       {%- endfor %}
       </select>
-      <!-- TODO: TEST -->
       <noscript>
-        <input id="language-chooser-submit" type="submit" value="{{ strings.change }}" />
+        {% assign strings = site.data.strings.sidebars.lang %}
+        <input class="language-chooser-submit" id="language-chooser-submit" type="submit" value="{{ strings.change }}">
       </noscript>
     </form>
   </nav>
