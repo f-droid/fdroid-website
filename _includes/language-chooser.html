@@ -1,0 +1,11 @@
+<form class="language-chooser-form" action="{{site.baseurl}}{{ page.url }}" method="get">
+  <select id="language-chooser-select" class="language-chooser-select" name="lang" autocomplete="off">
+  {%- for lang in site.languages %}
+    <option value="{{ lang }}" {%- if lang == site.active_lang %}selected="selected"{%- endif %}>{{ site.data.languagenames[lang] }}</option>
+  {%- endfor %}
+  </select>
+  <noscript>
+    {%- assign strings = site.data.strings.sidebars.lang %}
+    <input class="language-chooser-submit" id="language-chooser-submit" type="submit" value="{{ strings.change }}">
+  </noscript>
+</form>

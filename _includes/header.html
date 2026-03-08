@@ -5,17 +5,7 @@
       <img src="{% asset fdroid-logo-text.svg %}" alt="{{ site.header-title }}" />
     </a>
     <div class="site-title-buttons">
-      <form class="language-chooser-form" action="{{site.baseurl}}{{ page.url }}" method="get">
-        <select id="language-chooser-select" class="language-chooser-select" name="lang" autocomplete="off">
-        {%- for lang in site.languages %}
-          <option value="{{ lang }}" {%- if lang == site.active_lang %}selected="selected"{%- endif %}>{{ site.data.languagenames[lang] }}</option>
-        {%- endfor %}
-        </select>
-        <noscript>
-          {% assign strings = site.data.strings.sidebars.lang %}
-          <input class="language-chooser-submit" id="language-chooser-submit" type="submit" value="{{ strings.change }}">
-        </noscript>
-      </form>
+      {% include language-chooser.html %}
       <label for="toggle-menu" class="site-title-menu-icon">
       </label>
     </div>
@@ -40,16 +30,6 @@
         {%- endif %}
       {%- endfor %}
     </div>
-    <form class="language-chooser-form" action="{{site.baseurl}}{{ page.url }}" method="get">
-      <select id="language-chooser-select" class="language-chooser-select" name="lang" autocomplete="off">
-      {%- for lang in site.languages %}
-        <option value="{{ lang }}" {%- if lang == site.active_lang %}selected="selected"{%- endif %}>{{ site.data.languagenames[lang] }}</option>
-      {%- endfor %}
-      </select>
-      <noscript>
-        {% assign strings = site.data.strings.sidebars.lang %}
-        <input class="language-chooser-submit" id="language-chooser-submit" type="submit" value="{{ strings.change }}">
-      </noscript>
-    </form>
+    {% include language-chooser.html %}
   </nav>
 </header>
