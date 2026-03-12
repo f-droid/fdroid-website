@@ -152,13 +152,18 @@ automatically show any categories that exist in any applications.
 However, if your metadata is intended for the main F-Droid repository,
 you should use one of the existing categories:
 
+* `AI Chat`
+* `App Manager`
 * `App Store & Updater`
+* `Battery`
 * `Bookmark`
 * `Browser`
 * `Calculator`
 * `Calendar & Agenda`
+* `Clock`
 * `Cloud Storage & File Sync`
 * `Connectivity`
+* `Contact`
 * `Development`
 * `DNS & Hosts`
 * `Draw`
@@ -166,7 +171,9 @@ you should use one of the existing categories:
 * `Email`
 * `File Encryption & Vault`
 * `File Transfer`
+* `Firewall`
 * `Finance Manager`
+* `Flashlight`
 * `Forum`
 * `Gallery`
 * `Games`
@@ -174,6 +181,7 @@ you should use one of the existing categories:
 * `Habit Tracker`
 * `Icon Pack`
 * `Internet`
+* `Inventory`
 * `Keyboard & IME`
 * `Launcher`
 * `Local Media Player`
@@ -183,6 +191,7 @@ you should use one of the existing categories:
 * `Multimedia`
 * `Music Practice Tool`
 * `Navigation`
+* `Network Analyzer`
 * `News`
 * `Note`
 * `Online Media Player`
@@ -191,8 +200,11 @@ you should use one of the existing categories:
 * `Phone & SMS`
 * `Podcast`
 * `Public Transport`
+* `Radio`
 * `Reading`
 * `Recipe Manager`
+* `Remote Controller`
+* `Religion`
 * `Science & Education`
 * `Security`
 * `Shopping List`
