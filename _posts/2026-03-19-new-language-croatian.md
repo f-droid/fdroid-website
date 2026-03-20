@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "New language: Croatian / Hrvatski"
-author: Milo Ivir
+author: milotype
 authorWebsite: https://hosted.weblate.org/user/milotype/
 ---
 
