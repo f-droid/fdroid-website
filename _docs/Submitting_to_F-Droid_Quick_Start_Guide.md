@@ -108,9 +108,8 @@ Builds:
     subdir: app
     sudo:
       # see text below
-      - echo "deb https://deb.debian.org/debian trixie main" > /etc/apt/sources.list.d/trixie.list
       - apt-get update
-      - apt-get install -y -t trixie openjdk-21-jdk-headless
+      - apt-get install -y openjdk-25-jdk-headless
       - update-alternatives --auto java
     gradle:
       - yes
@@ -126,7 +125,7 @@ CurrentVersionCode: 123
 
 Adjust or remove the relevant _sudo_ lines if needed, eg:
 
-* The example application requires JDK 21, so we install _openjdk-21-jdk-headless_ from the official
+* The example application requires JDK 25, so we install _openjdk-25-jdk-headless_ from the official
   Debian repositories. The Debian version and default packages installed on F-Droid's _buildserver_
   can be found in <https://gitlab.com/fdroid/fdroidserver/-/blob/master/buildserver/provision-apt-get-install>.
 
