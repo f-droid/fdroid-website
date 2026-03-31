@@ -44,6 +44,7 @@ the main repository.
 * [Take-Down Requests](Take-Down_Requests) Our policy about requesting the removal of apps or content from _f-droid.org_.
 * [Verifying downloaded F-Droid.apk](Verifying_Downloaded_APK) Verifying downloaded F-Droid.apk.
 * [Licenses](Licenses) An overview of the licenses used throughout the project.
+* [Government Requests](Government_Requests) Listing of when F-Droid was legally required to turn over user data.
 
 
 ### Developers
