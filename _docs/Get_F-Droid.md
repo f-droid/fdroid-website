@@ -19,6 +19,19 @@ To install F-Droid, choose one of those 5 options:
 
    * [Option 5. Install F-Droid using `adb`.](#option-5-install-f-droid-using-adb)
 
+## Which install method should I choose?
+
+Most users should install F-Droid using the APK download (Option 2).
+It is the quickest and simplest way to get started.
+
+The other installation methods are mainly for advanced users:
+
+• Pre-installed phones – if you want a device that already includes F-Droid.  
+• Custom ROMs – for users who install their own Android operating system.  
+• OTA or adb – for developers, system integrators, or advanced setups.
+
+If you are unsure, simply download and install the APK.
+
 What is the difference between easy and advanced options?
 
 * If you do not have technical background or interest, do not need advanced features, or if you are not sure which option to choose, for you to get a better experience, it is suggested to consider choosing one of those [easy options](#easy-options) down below. So that you get a faster and easier start with F-Droid. While keeping in mind that you will get less advanced features.
