@@ -148,8 +148,7 @@ the previous cycle in [Build](https://monitor.f-droid.org/builds/build).
 
 ### What about signing?
 
-Packages built by F-Droid are signed by F-Droid, so all apps in the
-[official F-Droid repo](https://f-droid.org/repo) are signed by F-Droid
+Packages not setup for [reproducible builds](https://f-droid.org/docs/Reproducible_Builds/) are signed by F-Droid 
 keys. F-Droid will generate a new key for each app that is included. All
 of the different APKs built from different versions of an app will be
 signed by the same app key. But do note: if an app is also distributed
@@ -174,7 +173,8 @@ consequences of the uninstall are that the app's private data is removed
 (again, this is for security) so the user will probably want to export
 that first, and re-import it afterwards.
 
-We also support reproducible builds, so we can build a version from
+We also support and encourage you to setup apps to be ready for
+[reproducible builds](https://f-droid.org/docs/Reproducible_Builds/), so we can build a version from
 source and check against your official release. If they match (ignoring
 the signature) we can then publish your official APK with your signature
 used. This is a tedious task, since we have to standardize on the build
