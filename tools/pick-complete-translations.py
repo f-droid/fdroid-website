@@ -10,19 +10,17 @@ import requests
 import yaml
 
 
-LOCALE_REGEX = re.compile(
-    r'(?:_data/|po/_(?:docs|pages|posts)\.)(.*)(?:/(?:strings|tutorials)\.json|\.po)'
-)
+COMPONENTS = {
+    "website": "_data/%s/strings.json",
+    "website-tutorials": "_data/%s/tutorials.json",
+    "website-docs": "po/_docs.%s.po",
+    "website-pages": "po/_pages.%s.po",
+    "website-posts": "po/_posts.%s.po",
+}
 
 
-def get_paths_tuple(locale):
-    return (
-        '_data/%s/strings.json' % locale,
-        '_data/%s/tutorials.json' % locale,
-        'po/_docs.%s.po' % locale,
-        'po/_pages.%s.po' % locale,
-        'po/_posts.%s.po' % locale,
-    )
+def get_path(component, locale):
+    return COMPONENTS[component] % locale
 
 
 projectbasedir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -33,42 +31,29 @@ weblate.fetch()
 upstream = repo.remotes.upstream
 upstream.fetch()
 
-url = 'https://hosted.weblate.org/api/components/f-droid/website/statistics/?format=json'
-r = requests.get(url)
-r.raise_for_status()
-strings = r.json()['results']
+with open(os.path.join(projectbasedir, "_config.yml")) as fp:
+    site_languages = yaml.safe_load(fp)["languages"]
 
-url = 'https://hosted.weblate.org/api/components/f-droid/website-pages/statistics/?format=json'
-r = requests.get(url)
-r.raise_for_status()
-pages = r.json()['results']
+merge_paths = []
+for component in COMPONENTS:
+    url = f"https://hosted.weblate.org/api/components/f-droid/{component}/statistics/?format=json"
+    r = requests.get(url)
+    r.raise_for_status()
+    for entry in r.json()["results"]:
+        locale = entry["code"]
+        if locale not in site_languages:
+            continue
+        if entry["translated_percent"] > 98 and entry["failing"] == 0:
+            merge_paths.append(get_path(component, locale))
+            print(
+                component,
+                locale,
+                entry["translated_percent"],
+                entry["failing"],
+                sep="\t",
+            )
 
-with open(os.path.join(projectbasedir, '_config.yml')) as fp:
-    site_languages = yaml.safe_load(fp)['languages']
-
-strings_entries = dict()
-pages_entries = dict()
-
-merge_locales = []
-for entry in strings:
-    strings_entries[entry['code']] = entry
-for entry in pages:
-    pages_entries[entry['code']] = entry
-
-for locale in site_languages:
-    s = strings_entries.get(locale)
-    p = pages_entries.get(locale)
-    if (
-        s is not None
-        and s['translated_percent'] == 100
-        and s['failing'] == 0
-        and p is not None
-        and p['translated_percent'] > 98
-        and p['failing'] == 0
-    ):
-        merge_locales.append(locale)
-
-if not merge_locales:
+if not merge_paths:
     exit(True)
 
 if 'merge_weblate' in repo.heads:
@@ -93,16 +78,12 @@ for commit in reversed(
 ):
     pick = False
     for f in commit.stats.files.keys():
-        if f == '_data/zh_Hans/strings.json':  # ignore edit war
-            continue
-
-        m = LOCALE_REGEX.match(f)
-        if m and m.group(1) in merge_locales:
+        if f in merge_paths:
             pick = True
             break
     if pick:
         no_commits_picked = False
-        print('git cherry-pick', commit)
+        print('git cherry-pick', commit, f)
         repo.git.cherry_pick(str(commit))
         m = email_pattern.search(commit.summary)
         if m:
