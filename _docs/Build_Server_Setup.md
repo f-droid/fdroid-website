@@ -58,7 +58,7 @@ really ready for proper packaging. Also, it will likely only work on
 Debian, Ubuntu and other Debian-derivatives since F-Droid only uses
 Debian in its infrastructure (we welcome porting contributions!).
 
-The base server needs to be at minimum Debian/bullseye, or there will
+The base server needs to be at minimum Debian/trixie, or there will
 need to be some heavy tweaking. If you run Ubuntu or derivative
 distro, you can get any packages missing from your version, like
 _vagrant-cachier_, from this PPA:
