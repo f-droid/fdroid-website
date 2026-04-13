@@ -18,14 +18,10 @@ semi-automated ("you have updates available") fashion.
 Assume that an upstream source repository is compromised. A small
 selection of things that an attacker could do in such a situation:
 
-1.  Use custom build steps to execute virtually anything as the user
-    doing the build.
-2.  Access the keystore.
-3.  Modify the built APK files or source tarballs for other applications
-    in the repository.
-4.  Modify the metadata (which includes build scripts, which again, also
-    includes the ability to execute anything) for other applications in
-    the repository.
+1. Use custom build steps to execute virtually anything as the user doing the build.
+2. Access the keystore.
+3. Modify the built APK files or source tarballs for other applications in the repository.
+4. Modify the metadata (which includes build scripts, which again, also includes the ability to execute anything) for other applications in the repository.
 
 Through complete isolation, the repercussions are at least limited to
 the application in question. Not only is the build environment fresh
@@ -123,6 +119,7 @@ want to bootstrap those by yourself you should look at:
 
 
 Create a config file for Vagrant as `~/fdroidserver/buildserver/Vagrantfile.yaml` which contains:
+
 ```
 vm_provider: libvirt
 ```
