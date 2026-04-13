@@ -18,14 +18,10 @@ semi-automated ("you have updates available") fashion.
 Assume that an upstream source repository is compromised. A small
 selection of things that an attacker could do in such a situation:
 
-1.  Use custom build steps to execute virtually anything as the user
-    doing the build.
-2.  Access the keystore.
-3.  Modify the built APK files or source tarballs for other applications
-    in the repository.
-4.  Modify the metadata (which includes build scripts, which again, also
-    includes the ability to execute anything) for other applications in
-    the repository.
+1. Use custom build steps to execute virtually anything as the user doing the build.
+2. Access the keystore.
+3. Modify the built APK files or source tarballs for other applications in the repository.
+4. Modify the metadata (which includes build scripts, which again, also includes the ability to execute anything) for other applications in the repository.
 
 Through complete isolation, the repercussions are at least limited to
 the application in question. Not only is the build environment fresh
@@ -58,7 +54,7 @@ really ready for proper packaging. Also, it will likely only work on
 Debian, Ubuntu and other Debian-derivatives since F-Droid only uses
 Debian in its infrastructure (we welcome porting contributions!).
 
-The base server needs to be at minimum Debian/bullseye, or there will
+The base server needs to be at minimum Debian/trixie, or there will
 need to be some heavy tweaking. If you run Ubuntu or derivative
 distro, you can get any packages missing from your version, like
 _vagrant-cachier_, from this PPA:
@@ -74,7 +70,7 @@ in this process should be run using root or _sudo_.
 ```bash
 root:~# apt-get install vagrant git python3-certifi \
         python3-libvirt python3-requestbuilder python3-yaml \
-        python3-clint python3-vagrant python3-paramiko python3-pyasn1 \
+        python3-progress python3-vagrant python3-paramiko python3-pyasn1 \
         python3-pyasn1-modules python3-requests python3-git
         vagrant-mutate vagrant-libvirt ebtables dnsmasq-base \
         libvirt-clients libvirt-daemon-system qemu-kvm qemu-utils
@@ -123,6 +119,7 @@ want to bootstrap those by yourself you should look at:
 
 
 Create a config file for Vagrant as `~/fdroidserver/buildserver/Vagrantfile.yaml` which contains:
+
 ```
 vm_provider: libvirt
 ```
