@@ -43,7 +43,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
-"POT-Creation-Date: 2026-03-31 18:13+0200\n"
+"POT-Creation-Date: 2026-04-14 17:27+0200\n"
 "PO-Revision-Date: 2026-04-10 15:44+0000\n"
 "Last-Translator: Thomas Martial <thomas.martial@posteo.com>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/f-droid/website-docs/fr/>\n"
@@ -1958,7 +1958,9 @@ msgstr "Ces fichiers de métadonnées sont des fichiers de texte simples et faci
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-msgid "Note that although the metadata files are designed to be easily read and written by humans, they are also processed and written by various scripts. They can be automatically cleaned up when necessary. The structure and comments will be preserved correctly, although the order of fields will be standardised. (In the event that the original file was in a different order, comments are considered as being attached to the field following them). In fact, you can standardise all packages in a repository using a single command, without changing the functional content, by running:"
+#, fuzzy
+#| msgid "Note that although the metadata files are designed to be easily read and written by humans, they are also processed and written by various scripts. They can be automatically cleaned up when necessary. The structure and comments will be preserved correctly, although the order of fields will be standardised. (In the event that the original file was in a different order, comments are considered as being attached to the field following them). In fact, you can standardise all packages in a repository using a single command, without changing the functional content, by running:"
+msgid "Note that although the metadata files are designed to be easily read and written by humans, they are also processed and written by various scripts. They can be automatically cleaned up when necessary, eg.  comments are removed. The structure will be preserved correctly, although the order of fields will be standardised. In fact, you can standardise all packages in a repository using a single command, without changing the functional content, by running:"
 msgstr "Notez qu'en dépit du fait que les fichiers de métadonnées sont conçus pour être facilement lus et modifiés par les humains, ils sont aussi traités et écrits par plusieurs scriptes. Ils peuvent être automatiquement nettoyés quand nécessaire. La structure et les commentaires seront préservés correctement, mais l'ordre des champs sera normalisé. (Dans le cas où le fichier original était dans un ordre différent, les commentaires sont considérés à être liés au champ les suivant directement). En fait, vous pouvez normaliser tous les paquets dans un dépôt en utilisant une seule commande, sans changer le contenu fonctionnel, en exécutant :"
 
 #. type: Fenced code block
@@ -3929,12 +3931,17 @@ msgstr "`scanignore: <chemin1>[,<chemin2>,…]`<a name=\"build_scanignore\"></a>
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-#, no-wrap
+#, fuzzy, no-wrap
+#| msgid ""
+#| ":   Enables one or more files/paths to be excluded from the scan\n"
+#| "    process. This should only be used where there is a very good reason,\n"
+#| "    and probably accompanied by a comment explaining why it\n"
+#| "    is necessary.\n"
 msgid ""
 ":   Enables one or more files/paths to be excluded from the scan\n"
 "    process. This should only be used where there is a very good reason,\n"
 "    and probably accompanied by a comment explaining why it\n"
-"    is necessary.\n"
+"    is necessary in the Merge Request.\n"
 msgstr ""
 ":   Permet d'exclure des fichiers ou des dossiers de l'analyse.\n"
 "    A n'utiliser que si il y a des bonnes raisons et sûrement \n"
@@ -4988,22 +4995,22 @@ msgstr ""
 msgid "Assume that an upstream source repository is compromised. A small selection of things that an attacker could do in such a situation:"
 msgstr ""
 
-#. type: Bullet: '1.  '
+#. type: Bullet: '1. '
 #: _docs/Build_Server_Setup.md
 msgid "Use custom build steps to execute virtually anything as the user doing the build."
 msgstr ""
 
-#. type: Bullet: '2.  '
+#. type: Bullet: '2. '
 #: _docs/Build_Server_Setup.md
 msgid "Access the keystore."
 msgstr ""
 
-#. type: Bullet: '3.  '
+#. type: Bullet: '3. '
 #: _docs/Build_Server_Setup.md
 msgid "Modify the built APK files or source tarballs for other applications in the repository."
 msgstr ""
 
-#. type: Bullet: '4.  '
+#. type: Bullet: '4. '
 #: _docs/Build_Server_Setup.md
 msgid "Modify the metadata (which includes build scripts, which again, also includes the ability to execute anything) for other applications in the repository."
 msgstr ""
@@ -5831,7 +5838,9 @@ msgstr "Et la signature ?"
 
 #. type: Plain text
 #: _docs/FAQ_-_App_Developers.md
-msgid "Packages built by F-Droid are signed by F-Droid, so all apps in the [official F-Droid repo](https://f-droid.org/repo) are signed by F-Droid keys. F-Droid will generate a new key for each app that is included. All of the different APKs built from different versions of an app will be signed by the same app key. But do note: if an app is also distributed in an APK signed by the developer, like in the Google Play Store, then the F-Droid APK will have a different signature."
+#, fuzzy
+#| msgid "Packages built by F-Droid are signed by F-Droid, so all apps in the [official F-Droid repo](https://f-droid.org/repo) are signed by F-Droid keys. F-Droid will generate a new key for each app that is included. All of the different APKs built from different versions of an app will be signed by the same app key. But do note: if an app is also distributed in an APK signed by the developer, like in the Google Play Store, then the F-Droid APK will have a different signature."
+msgid "Packages not setup for [reproducible builds](https://f-droid.org/docs/Reproducible_Builds/) are signed by F-Droid keys. F-Droid will generate a new key for each app that is included. All of the different APKs built from different versions of an app will be signed by the same app key. But do note: if an app is also distributed in an APK signed by the developer, like in the Google Play Store, then the F-Droid APK will have a different signature."
 msgstr "Les paquets créés par F-Droid sont signés par F-Droid. Ainsi, toutes les applications du dépôt officiel F-Droid (https://f-droid.org/repo) sont signées par des clés F-Droid. F-Droid génère une nouvelle clé pour chaque application incluse. Tous les APK issus de différentes versions d'une même application seront signés par la même clé. Attention : si une application est également distribuée sous forme d'APK signé par le développeur, comme sur le Google Play Store, l'APK F-Droid aura une signature différente."
 
 #. type: Plain text
@@ -5846,7 +5855,7 @@ msgstr "Cette situation présente un inconvénient *mineur* pour les utilisateur
 
 #. type: Plain text
 #: _docs/FAQ_-_App_Developers.md
-msgid "We also support reproducible builds, so we can build a version from source and check against your official release. If they match (ignoring the signature) we can then publish your official APK with your signature used. This is a tedious task, since we have to standardize on the build parameters and tools, but it should be worth it in the long run. We also try to verify our own builds and get a lot of binary differences, see [our verification server results](https://verification.f-droid.org/).  However, things will improve over time."
+msgid "We also support and encourage you to setup apps to be ready for [reproducible builds](https://f-droid.org/docs/Reproducible_Builds/), so we can build a version from source and check against your official release. If they match (ignoring the signature) we can then publish your official APK with your signature used. This is a tedious task, since we have to standardize on the build parameters and tools, but it should be worth it in the long run. We also try to verify our own builds and get a lot of binary differences, see [our verification server results](https://verification.f-droid.org/).  However, things will improve over time."
 msgstr ""
 
 #. type: Title ###
