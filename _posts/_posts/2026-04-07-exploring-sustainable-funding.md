@@ -68,7 +68,7 @@ Based on the survey and interviews we identified several areas where F-Droid cou
 * Communicate our values, mission, and vision for F-Droid (completed in Feb 2026)
 * Include testimonials from past contributors and improve storytelling
 
-**Making FOSS financially sustainable**
+### Making FOSS financially sustainable
 
 As with most research projects, the end is only the beginning. There is more to explore, more to expand on and definitely more work to be done. Making FOSS financially sustainable requires participation, experimentation, and collaboration; things the FOSS community does really, really well. There isn't a lack of support when it comes to open source, but we do need better systems, governance and clearer communication between project contributors and their communities. Our research and the actions listed above are only the starting point to a much larger exploration into how we can make F-Droid and other FOSS projects more financially sustainable.
 
