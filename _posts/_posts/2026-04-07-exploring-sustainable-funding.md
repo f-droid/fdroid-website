@@ -22,7 +22,7 @@ Projects that run entirely on volunteer support can be fragile or struggle to sc
 
 Donations, grants, sponsorships, foundations and for-profit business models emerge as a way to tackle the issue. In some cases proprietary software companies hire and compensate developers to actively contribute to and maintain FOSS projects they use in their tech stack to ensure they remain stable and continue to develop. Some projects opt to use advertizing as a way to generate income, while others opt for free and enterprise versions to sustain themselves, because at the end of the day, if the developers don't have a way to receive monetary compensation, their volunteer time resources will always be in direct competition with their day jobs.
 
-***So what about F-Droid?***
+### So what about F-Droid?
 
 Like many open source projects, F-Droid relies heavily on volunteer contributions, grants and donations to support new feature and infrastructure development as well as maintain the project. However, challenges such as unclear value communication, lack of transparency, and friction in donation flows continue to limit the effectiveness of funding efforts.
 
