@@ -10,7 +10,7 @@ The first question, "But if it's free, how do the people that create it get paid
 
 And while it is an interesting question, It is not the right question. At least not at first.
 
-[Free Open Source Software](https://en.wikipedia.org/wiki/Free_and_open-source_software "https://en.wikipedia.org/wiki/Free_and_open-source_software") (FOSS) has an inherent marketing and communications problem, in that when most people see the word "free" they understand "without cost" or "gratis". [Free Libre Open Source Software](https://www.gnu.org/philosophy/floss-and-foss.html "https://www.gnu.org/philosophy/floss-and-foss.html") (FLOSS) does a somewhat better job at explaining this, however, those who are not familiar with French may not find the "Libre (L)" very helpful.
+[Free Open Source Software](https://en.wikipedia.org/wiki/Free_and_open-source_software) (FOSS) has an inherent marketing and communications problem, in that when most people see the word "free" they understand "without cost" or "gratis". [Free Libre Open Source Software](https://www.gnu.org/philosophy/floss-and-foss.html) (FLOSS) does a somewhat better job at explaining this, however, those who are not familiar with French may not find the "Libre (L)" very helpful.
 
 Once we get past the fact that free *can* mean without cost, but doesn't necessarily *always* mean without cost, we get to an arguably more interesting question, "What does free software mean?"
 
