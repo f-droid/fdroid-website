@@ -38,7 +38,7 @@ Now it's time to share our findings here with our community as well.
 
 Before we dive into results or the analysis, who took the survey? Of the 84 people that participated in the survey, 53 had contributed to FOSS projects, 27 were currently or had been FOSS project maintainers and 6 had been involved in running or conducting donation campaigns for FOSS projects. 19 out of the 84 had organized or participated in a donation campaign and reported their core challenges were organizing the campaign itself, including technical set up. They struggled with how to transparently report on the campaign and said they did not fully understand donor behavior and awareness, or the ethical aspects of receiving donations. Now what did they think about donations in FOSS?
 
-First of all, almost 100% said they believe it is acceptable for FOSS projects to ask for donations, indicating there was a shared understanding that donations were necessary in order to sustain and grow FOSS projects. More than half of respondents said asking for donations is extremely important.
+First of all, almost all said they believe it is acceptable for FOSS projects to ask for donations, indicating there was a shared understanding that donations were necessary in order to sustain and grow FOSS projects. More than half of respondents said asking for donations is extremely important.
 
 We were also interested in exploring which donation communication methods felt pushy and off-putting. The majority of the respondents reported that pop up notifications with a click to exit were their least favorite way of receiving information about donation campaigns. The key takeaway was that while donation campaigns are necessary, they should not be the first thing a user sees.
 
