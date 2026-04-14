@@ -1,7 +1,8 @@
-2026-04-07-Sustainable-Funding-for-Free-Software.md
-
-**Exploring Sustainable Funding for Free Software**
----------------------------------------------------
+---
+title: Exploring Sustainable Funding for Free Software
+layout: post
+author: HStill
+---
 
 If you have ever tried explaining the concept of free software to someone who is locked into a proprietary software ecosystem, you were probably met with some degree of confusion.
 
