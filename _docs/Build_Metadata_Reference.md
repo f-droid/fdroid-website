@@ -22,13 +22,11 @@ lower case letter, including per-build fields, localized fields, etc.
 
 Note that although the metadata files are designed to be easily read
 and written by humans, they are also processed and written by various
-scripts. They can be automatically cleaned up when necessary. The
-structure and comments will be preserved correctly, although the order
-of fields will be standardised. (In the event that the original file
-was in a different order, comments are considered as being attached to
-the field following them). In fact, you can standardise all packages
-in a repository using a single command, without changing the
-functional content, by running:
+scripts. They can be automatically cleaned up when necessary, eg.
+comments are removed. The structure will be preserved correctly,
+although the order of fields will be standardised. In fact, you can
+standardise all packages in a repository using a single command,
+without changing the functional content, by running:
 
 ```
 fdroid rewritemeta
@@ -747,7 +745,7 @@ Builds:
 :   Enables one or more files/paths to be excluded from the scan
     process. This should only be used where there is a very good reason,
     and probably accompanied by a comment explaining why it
-    is necessary.
+    is necessary in the Merge Request.
 
     When scanning the source tree for problems, matching files whose
     relative paths start with any of the paths given here are ignored.
