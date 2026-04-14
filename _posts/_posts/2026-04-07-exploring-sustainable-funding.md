@@ -58,23 +58,15 @@ The interviews closely aligned with survey results, with participants highlighti
 
 Based on the survey and interviews we identified several areas where F-Droid could improve its donations management, communications and campaigns, including the following:
 
--   Improve donation allocation transparency via consistent reporting and updating our donations allocation policies (started, new donation travel policy implemented with more to come)
-
--   Improve our website copy and design to communicate impact (completed in Feb 2026, donation page to be updated soon)
-
--   Launch our first campaign in 2026 using research best practices
-
--   Create donation campaign widgets and share with app devs to support them launching their own campaigns
-
--   Communicate with past donors, thanking them and sharing impact
-
--   Create clear donation tiers with impact description (completed in Feb 2026)
-
--   Exploring partnership opportunities
-
--   Communicate our values, mission, and vision for F-Droid (completed in Feb 2026)
-
--   Include testimonials from past contributors and improve storytelling
+* Improve donation allocation transparency via consistent reporting and updating our donations allocation policies (started, new donation travel policy implemented with more to come)
+* Improve our website copy and design to communicate impact (completed in Feb 2026, donation page to be updated soon)
+* Launch our first campaign in 2026 using research best practices
+* Create donation campaign widgets and share with app devs to support them launching their own campaigns
+* Communicate with past donors, thanking them and sharing impact
+* Create clear donation tiers with impact description (completed in Feb 2026)
+* Exploring partnership opportunities
+* Communicate our values, mission, and vision for F-Droid (completed in Feb 2026)
+* Include testimonials from past contributors and improve storytelling
 
 **Making FOSS financially sustainable**
 
