@@ -54,7 +54,7 @@ We also conducted a series of interviews with organizations from the FOSS ecosys
 
 The interviews closely aligned with survey results, with participants highlighting specific campaign and project goals, impact communication, transparency surrounding the campaign, reporting on who is handling the funds, and consistency in messaging and team members, as key strategies for organizing and managing donation funds. Notably having clear policies, consistency and governance were key recommendations as well.
 
-**Recommendations for F-Droid**
+### Recommendations for F-Droid
 
 Based on the survey and interviews we identified several areas where F-Droid could improve its donations management, communications and campaigns, including the following:
 
