@@ -34,7 +34,7 @@ Our research combined both quantitative and qualitative methods. We conducted a 
 
 Now it's time to share our findings here with our community as well.
 
-**Survey Says...**
+### Survey Says...
 
 Before we dive into results or the analysis, who took the survey? Of the 84 people that participated in the survey, 53 had contributed to FOSS projects, 27 were currently or had been FOSS project maintainers and 6 had been involved in running or conducting donation campaigns for FOSS projects. 19 out of the 84 had organized or participated in a donation campaign and reported their core challenges were organizing the campaign itself, including technical set up. They struggled with how to transparently report on the campaign and said they did not fully understand donor behavior and awareness, or the ethical aspects of receiving donations. Now what did they think about donations in FOSS?
 
