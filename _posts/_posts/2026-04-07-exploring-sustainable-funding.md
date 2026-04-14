@@ -30,7 +30,7 @@ So we asked the question, how can FOSS projects design donation management syste
 
 Over the past year, F-Droid has been researching this question as part of the **Open Technology Fund (OTF) FOSS Sustainability Grant**. This work allowed us to focus on understanding how FOSS projects manage donations, how users perceive funding requests, and what practices contribute to successful and sustainable donation management.
 
-Our research combined both quantitative and qualitative methods. We conducted a community survey with 84 responses and carried out a series of interviews with organizations, developers and users across the open source ecosystem. Then we shared the results of this work during a workshop at **FOSDEM 2026** titled *"*[*The Funding Gap in FOSS: What We Learned and How to Close It."*](https://video.fosdem.org/2026/ud2218a/YRVGCK-the_funding_gap_in_foss_what_we_learned_and_how_to_close_it.av1.webm "https://video.fosdem.org/2026/ud2218a/YRVGCK-the_funding_gap_in_foss_what_we_learned_and_how_to_close_it.av1.webm")
+Our research combined both quantitative and qualitative methods. We conducted a community survey with 84 responses and carried out a series of interviews with organizations, developers and users across the open source ecosystem. Then we shared the results of this work during a workshop at **FOSDEM 2026** titled ["The Funding Gap in FOSS: What We Learned and How to Close It"](https://fosdem.org/2026/schedule/event/YRVGCK-the_funding_gap_in_foss_what_we_learned_and_how_to_close_it/).
 
 Now it's time to share our findings here with our community as well.
 
