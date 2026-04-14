@@ -48,7 +48,7 @@ We also asked what kind of information donors would like FOSS projects to public
 
 Notably users consistently acknowledged that FOSS apps/projects put in a lot of good work and deserve to get donations. However, there is an assumption that the "free" in FOSS means "gratis", so users should not be pressured to donate. Indeed many FOSS projects do not ask for donations at all. Finally users reported that they are generally speaking alright with being asked to donate, so long as it is done properly and not in a way that spams, coerces or blocks usage of the apps. Alright, so what did the interviews tell us?
 
-**Interviews**
+### Interviews
 
 We also conducted a series of interviews with organizations from the FOSS ecosystem to understand their best practices for donation management, including how to structure and communicate campaigns, and how to receive funds transparently.
 
