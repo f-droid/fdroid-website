@@ -715,7 +715,7 @@ Builds:
 
 `prebuild: xxxx`<a name="build_prebuild"></a>
 
-:   Specifies a shell command (or commands - chain with `&&`) to run
+:   Specifies a shell command (or a list of commands) to run
     before the build takes place. Backslash can be used as an escape
     character to insert literal commas, or as the last character on a
     line to join that line with the next. It has no special meaning in
