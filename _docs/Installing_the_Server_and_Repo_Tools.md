@@ -78,9 +78,7 @@ You can also install the latest development version directly from GitLab:
 pip install git+https://gitlab.com/fdroid/fdroidserver.git@master
 ```
 
- It is strongly recommended to use a virtual environment to avoid sys<details><summary>Click to expand</summary>
-
-</details>tem-wide dependency issues.
+ NB:It is strongly recommended to use a virtual environment to avoid dependency issues.
 
 
 ## Guix
