@@ -3,7 +3,7 @@ layout: page
 title: Inclusion Policy
 ---
 
-The purpose of this inclusion policy is to ensure that all applications included in the main F-Droid repository support F-Droid’s core mission: providing a trusted way to find and share privacy-respecting, free and open source software apps for Android.  If an app does not meet these criteria, you can still make the app available to F-Droid users via a separate repository.
+The purpose of this inclusion policy is to ensure that all applications included in the main F-Droid repository support F-Droid’s core mission: providing a trusted way to find and share privacy-respecting, free and open source software apps for Android. If an app does not meet these criteria, you can still make the app available to F-Droid users via a separate repository.
 
 ## Free Software Requirement
 
@@ -20,10 +20,9 @@ The implementation of proprietary tracking or advertising libraries and analytic
 The F-Droid infrastructure compiles applications from publicly accessible source code to verify that distributed binaries match their source code. The complete application building process requires a 100% FLOSS toolchain including Debian-packaged tools. The use of proprietary build tools are strictly forbidden, including Oracle's JDK and some pre-release toolchains. Though we try to build everything from source, sometimes prebuilt FLOSS binaries are the only feasible approach. The following sources can be allowed to provide prebuilt binaries:
 
 * Debian "[_main_](https://www.debian.org/doc/debian-policy/ch-archive.html)" package archive.
-* Applications can download prebuilt FLOSS binaries with specific conditions from trusted Maven repositories. Those include Maven Central, Google Maven, OSS Sonatype, OSS JFrog, JitPack.io and Clojars.  Those binaries must still be freely licensed, simply being included in one of those repositories is not enough.
+* Applications can download prebuilt FLOSS binaries with specific conditions from trusted Maven repositories. Those include Maven Central, Google Maven, OSS Sonatype, OSS JFrog, JitPack.io and Clojars. Those binaries must still be freely licensed, simply being included in one of those repositories is not enough.
 * The Android SDK, Flutter SDK and Hermes have permission to use official prebuilt binaries until Debian provides alternative solutions.
 * The use of prebuilt FLOSS binaries from [PyPI](https://pypi.org/) Wheels, Nix cache, Rust/Rustup, Golang and Node.js (current versions) and compilers or build tools which are not included in Debian can be acceptable. Whenever possible, Debian-packaged dependencies should be chosen above other options.
-
 
 ## Security & Legal Compliance
 
@@ -33,13 +32,22 @@ The F-Droid infrastructure compiles applications from publicly accessible source
 4. F-Droid uses pre-defined labels known as [Anti-Features](../Anti-Features) which serve as warning indicators about user freedom, privacy or etc. without necessarily disqualifying applications from inclusion.
 5. Applications must not download additional executable binary files (e.g. add-ons, auto-updates, etc.) without explicit user consent. Consent means it needs to be opt-in _(it must not be harder to decline than to accept or presented in a way users are likely to press accept without reading)_ and structured in a way that clearly explains to users that they're choosing to bypass F-Droid's checks if they activate it.
 
+## Quality Control
+
+The applications should also meet some basic quality requirements when they are added to the repo.
+
+1. The application should be actively maintained when it's included and the author should commit to provide ongoing maintenance. Applications that are deprecated or unmaintained shouldn't be included.
+1. The application should be functional and implement all the features described in the description.
+1. The application should provide native features and enhancements when it wraps a website.
+1. The application should be useful to end users. Demo applications shouldn't be included.
+1. The application should provide some unique value. Applications that perform only minor rebranding and lack meaningful improvements over other actively maintained applications in the repo shouldn't be included.
 
 ## Build & Verification Workflow
 
 * __Unique ID:__ All applications must have their own distinct Android "Application ID".
 * __Your domain:__ It is advised to use an Application ID that stems from a domain name owned by the developer.
-* __Forks:__ Forked applications need to obtain a fresh Android ID that differs from the original application even if the source app exists outside F-Droid and they must receive corresponding name, icon and string changes including translation adjustments. The inclusion policy does not accept applications that perform only minor rebranding and lack meaningful improvements.
-* __Dependency Handling:__ Library dependencies must be built from source or provided in a trusted Maven repo.  Prebuilt SDKs (Android/Flutter) are permitted to use scanignore until Debian packaging finishes.
+* __Forks:__ Forked applications need to obtain a fresh Android ID that differs from the original application even if the source app exists outside F-Droid and they must receive corresponding name, icon and string changes including translation adjustments.
+* __Dependency Handling:__ Library dependencies must be built from source or provided in a trusted Maven repo. Prebuilt SDKs (Android/Flutter) are permitted to use scanignore until Debian packaging finishes.
 * __Automated Checks:__ F-Droid maintainers review applications through a verification process which examines license compliance and source availability, buildability and inclusion policy adherence. Reviewers conduct inspections for non-free dependencies alongside proprietary code, tracking features and advertising elements and other Anti-Features.
 * __Manual Review:__ Our contributors will manually review apps and use their discretion to flag issues.
 
@@ -50,7 +58,7 @@ Our mission is to safely and transparently distribute free and open source appli
 When making inclusion decisions, we look to our core mission for guidance to determine what type of content is included in the main repo.
 We also look at historical precedent when making inclusion decisions. If the proposed app is similar to an app we previously excluded, this will be taken into consideration. In addition to determining whether our app supports our mission, we take into consideration if an app is suitable for all F-Droid users, including children, when making inclusion decisions.
 
-We acknowledge that this is not a precise science and try to make reasonable and rational decisions regarding our inclusion policy. If you believe that an app was wrongly excluded, you can email an appeal to team@f-droid.org and the appeal will be considered by a team member who was not involved in the original decision to exclude the app.
+We acknowledge that this is not a precise science and try to make reasonable and rational decisions regarding our inclusion policy. If you believe that an app was wrongly excluded, you can email an appeal to <team@f-droid.org> and the appeal will be considered by a team member who was not involved in the original decision to exclude the app.
 
 Please keep in mind that even if an app is excluded, you may choose to make the app available to F-Droid users, via your own, or a third party, app repository.
 
