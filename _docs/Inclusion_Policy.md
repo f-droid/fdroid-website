@@ -36,7 +36,7 @@ The F-Droid infrastructure compiles applications from publicly accessible source
 
 The applications should also meet some basic quality requirements when they are added to the repo.
 
-1. The application should be actively maintained when it's included and the author should commit to provide ongoing maintenance. Applications has been or planned to be deprecated shouldn't be included.
+1. The application should be actively maintained when it's included and the author should commit to provide ongoing maintenance. Applications that are deprecated or unmaintained shouldn't be included.
 1. The application should be functional and implement all the features described in the description.
 1. The application should provide native features and enhancements when it wraps a website.
 1. The application should be useful to end users. Demo applications shouldn't be included.
