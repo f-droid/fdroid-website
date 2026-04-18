@@ -13,11 +13,11 @@ from several sources:
 * localizable texts and graphics [embedded in an app's source code](../All_About_Descriptions_Graphics_and_Screenshots#in-the-apps-source-repository)
 
 These metadata files are simple, easy to edit text files, always named
-as the "package name" with file type appended.  There are a wide range
+as the "package name" with file type appended. There are a wide range
 of available fields for adding information to describe packages and/or
-apps.  For all of the fields like _AuthorName_ that apply to all
+apps. For all of the fields like _AuthorName_ that apply to all
 releases of a package/app, the fields use CamelCase starting with an
-upper case letter.  All other fields use camelCase starting with a
+upper case letter. All other fields use camelCase starting with a
 lower case letter, including per-build fields, localized fields, etc.
 
 Note that although the metadata files are designed to be easily read
@@ -28,13 +28,13 @@ although the order of fields will be standardised. In fact, you can
 standardise all packages in a repository using a single command,
 without changing the functional content, by running:
 
-```
+```bash
 fdroid rewritemeta
 ```
 
 Or just run it on a specific app:
 
-```
+```bash
 fdroid rewritemeta org.adaway
 ```
 
@@ -42,7 +42,7 @@ fdroid rewritemeta org.adaway
 
 F-Droid metadata files are written in YAML and have a file extension `.yml`.
 The top-most data structure is a "map" or "dictionary", made up of key/value
-pairs.  All keys are strings.  There are some internal data types used for
+pairs. All keys are strings. There are some internal data types used for
 values:
 
 * `TYPE_BOOL` - Either `true` or `false`.
@@ -54,12 +54,11 @@ values:
 * `TYPE_STRING` - A string.
 * `TYPE_STRINGMAP` - A map of maps, the inner keys are BCP 47 locales and the values are human-readable text.
 
-The canonical format is [YAML 1.2](https://yaml.org/spec/1.2.2/).  The process
+The canonical format is [YAML 1.2](https://yaml.org/spec/1.2.2/). The process
 of reading metadata files is more tolerant, and will do some automatic type
-conversions when that can provide a reliable transformation.  `fdroid
+conversions when that can provide a reliable transformation. `fdroid
 rewritemeta` will output YAML 1.2, so it will not preserve the original values
 as written, if they have been converted.
-
 
 ## Fields
 
@@ -139,106 +138,24 @@ The following sections describe the fields recognised within the file.
 * [_CurrentVersionCode_](#CurrentVersionCode)
 * [_NoSourceSince_](#NoSourceSince)
 
-
-
 ### _Categories_<a name="Categories"></a>
-
 
 Any number of categories for the application to be placed in. There is
 no fixed list of categories - both the client and the web site will
 automatically show any categories that exist in any applications.
 However, if your metadata is intended for the main F-Droid repository,
-you should use one of the existing categories:
-
-* `AI Chat`
-* `App Manager`
-* `App Store & Updater`
-* `Battery`
-* `Bookmark`
-* `Browser`
-* `Calculator`
-* `Calendar & Agenda`
-* `Clock`
-* `Cloud Storage & File Sync`
-* `Connectivity`
-* `Contact`
-* `Development`
-* `DNS & Hosts`
-* `Draw`
-* `Ebook Reader`
-* `Email`
-* `File Encryption & Vault`
-* `File Transfer`
-* `Firewall`
-* `Finance Manager`
-* `Flashlight`
-* `Forum`
-* `Gallery`
-* `Games`
-* `Graphics`
-* `Habit Tracker`
-* `Icon Pack`
-* `Internet`
-* `Inventory`
-* `Keyboard & IME`
-* `Launcher`
-* `Local Media Player`
-* `Location Tracker & Sharer`
-* `Messaging`
-* `Money`
-* `Multimedia`
-* `Music Practice Tool`
-* `Navigation`
-* `Network Analyzer`
-* `News`
-* `Note`
-* `Online Media Player`
-* `Pass Wallet`
-* `Password & 2FA`
-* `Phone & SMS`
-* `Podcast`
-* `Public Transport`
-* `Radio`
-* `Reading`
-* `Recipe Manager`
-* `Remote Controller`
-* `Religion`
-* `Science & Education`
-* `Security`
-* `Shopping List`
-* `Social Network`
-* `Sports & Health`
-* `System`
-* `Task`
-* `Text Editor`
-* `Theming`
-* `Time`
-* `Translation & Dictionary`
-* `Unit Convertor`
-* `Voice & Video Chat`
-* `VPN & Proxy`
-* `Wallet`
-* `Wallpaper`
-* `Weather`
-* `Workout`
-* `Writing`
-
+you should use one of the existing categories
+[defined in _fdroiddata_](https://gitlab.com/fdroid/fdroiddata/-/blob/master/config/categories.yml)
 or discuss the proposal to add a new one. _Categories_
 must be a list of items, even if there is just one.
-
-This is converted to (`<categories>`) in the XML file (_index.xml_).
-
-
 
 ### _AuthorName_<a name="AuthorName"></a>
 
 The name of the author, either full, abbreviated or pseudonym. If
 present, it should represent the name(s) as published by upstream, e.g.
 in their copyright or authors file. This can be omitted (or left blank).
-
-This is converted to (`<author>`) in the XML file (_index.xml_).
-
-
+The same AuthorName should be used for apps from the same author so that
+other apps from the same author can be found.
 
 ### _AuthorEmail_<a name="AuthorEmail"></a>
 
@@ -248,18 +165,12 @@ blank).
 __Warning__: this overrides all _AuthorEmail_ entries
 [set in the app's source code](../All_About_Descriptions_Graphics_and_Screenshots).
 
-This is converted to (`<email>`) in the XML file (_index.xml_).
-
-
-
 ### _AuthorWebSite_<a name="AuthorWebSite"></a>
 
 The website URL of the author(s). This can be omitted (or left blank).
 
 __Warning__: this overrides all _AuthorWebSite_ entries
 [set in the app's source code](../All_About_Descriptions_Graphics_and_Screenshots).
-
-
 
 ### _License_<a name="License"></a>
 
@@ -268,16 +179,12 @@ the user can install. Values should correspond to short identifiers of
 the [SPDX](https://spdx.org/licenses/) license list. There can only be
 one license listed here. If there are multiple licenses that apply to
 the source code, then this field should contain the least restrictive
-license that the whole app can be used under.  When multiple licenses
+license that the whole app can be used under. When multiple licenses
 are combined, that usually means the most restrictive wins.
 
 This field cannot represent the complexity of licenses that apply to
 parts of the app, or apps that have the entire thing released under
 more than one license.
-
-This is converted to (`<license>`) in the XML file (_index.xml_).
-
-
 
 ### _AutoName_<a name="AutoName"></a>
 
@@ -288,38 +195,26 @@ application is found. The _AutoName_ entry is generated automatically
 when `fdroid checkupdates` is run, and is only used for the commit
 messages generated by `fdroid checkupdates`.
 
-
-
 ### _Name_<a name="Name"></a>
 
 The title of the application, with optional descriptive phrase. This
 field will override all other sources of the application name,
 including scraped from the APK and from [localized
 metadata](../All_About_Descriptions_Graphics_and_Screenshots).
-Setting _Name_ is usually not needed, since the application's correct
-name is retrieved from the APK file.  However, in a situation where an
-APK contains a bad or missing application name, it can be overridden
-using this. Note that this only overrides the name in the list of apps
-presented in the client; it doesn't change the name or application
-label in the source code.
+
+__Note__: Don't use this. The localized metadata in the app's source code should
+be used instead.
 
 __50 character limit__
 
 __Warning__: this overrides all _Name_/_title_ entries
 [set in the app's source code](../All_About_Descriptions_Graphics_and_Screenshots).
 
-This is converted to (`<name>`) in the XML file (_index.xml_).
-
-
-
 ### _WebSite_<a name="WebSite"></a>
 
 The URL for the application's web site. If there is no relevant web
-site, this can be omitted (or left blank).
-
-This is converted to (`<web>`) in the XML file (_index.xml_).
-
-
+site, this can be omitted (or left blank). Don't use the source code
+url as website.
 
 ### _SourceCode_<a name="SourceCode"></a>
 
@@ -327,36 +222,20 @@ The URL to view or obtain the application's source code. This should be
 something human-friendly. Machine-readable source-code is covered in the
 _Repo_ field.
 
-This is converted to (`<source>`) in the XML file (_index.xml_).
-
-
-
 ### _IssueTracker_<a name="IssueTracker"></a>
 
 The URL for the application's issue tracker. Optional, since not all
 applications have one.
-
-This is converted to (`<tracker>`) in the XML file (_index.xml_).
-
-
 
 ### _Translation_<a name="Translation"></a>
 
 The URL for the application's translation portal or at least a guide.
 Optional, since not all applications have one.
 
-This is converted to (`translation`) in the JSON file (_index.json_).
-
-
-
 ### _Changelog_<a name="Changelog"></a>
 
 The URL for the application's changelog. Optional, since not all
 applications have one.
-
-This is converted to (`<changelog>`) in the XML file (_index.xml_).
-
-
 
 ### _Donate_<a name="Donate"></a>
 
@@ -370,58 +249,41 @@ account, or the PayPal link format changed, things could go wrong. It is
 always best to use a link that the developer explicitly makes public,
 rather than something that is auto-generated 'button code'.
 
-This is converted to (`<donate>`) in the XML file (_index.xml_).
-
-
-
 ### _Liberapay_<a name="Liberapay"></a><a name="LiberapayID"></a>
 
-The project's Liberapay (https://liberapay.com) user or group name, if
+The project's Liberapay (<https://liberapay.com>) user or group name, if
 it has one. This should be an alphanumeric name, such that (for
-example) https://liberapay.com/xxxxx which redirects to your account
+example) <https://liberapay.com/xxxxx> which redirects to your account
 page. This used to be _LiberapayID_, which was a numeric ID.
-
-This is converted to (`<liberapay>`) in the XML file (_index.xml_).
-
 
 ### _OpenCollective_<a name="OpenCollective"></a>
 
-The project's Open Collective (https://opencollective.com) user or
+The project's Open Collective (<https://opencollective.com>) user or
 group name, if it has one. This should be an alphanumeric name, such
-that (for example) https://opencollective.com/xxxxx redirects to your
+that (for example) <https://opencollective.com/xxxxx> redirects to your
 account page.
-
 
 ### _Bitcoin_<a name="Bitcoin"></a>
 
 A bitcoin address for donating to the project.
 
-This is converted to (`<bitcoin>`) in the XML file (_index.xml_).
-
-
-
 ### _Litecoin_<a name="Litecoin"></a>
 
 A litecoin address for donating to the project.
 
-This is converted to (`<litecoin>`) in the XML file (_index.xml_).
-
-
-
 ### _Summary_<a name="Summary"></a>
 
-A brief summary of what the application is.  The _Summary_ is used in
+A brief summary of what the application is. The _Summary_ is used in
 the app list and tile views of the F-Droid client, and as a
 sub-headline in some other views.
+
+__Note__: Don't use this. The localized metadata in the app's source code should
+be used instead.
 
 __80 character limit__
 
 __Warning__: this overrides all _Summary_ aka "short description" entries
 [set in the app's source code](../All_About_Descriptions_Graphics_and_Screenshots).
-
-This is converted to (`<summary>`) in the XML file (_index.xml_).
-
-
 
 ### _Description_<a name="Description"></a>
 
@@ -445,24 +307,19 @@ behind the current version; whether the app supports multiple
 architectures or whether there is a maximum SDK specified (such info not
 being recorded in the index).
 
+__Note__: Don't use this. The localized metadata in the app's source code should
+be used instead.
+
 __4000 character limit__
 
 __Warning__: this overrides all _Description_ aka "full description" entries
 [set in the app's source code](../All_About_Descriptions_Graphics_and_Screenshots).
-
-This is converted to (`<desc>`) in the XML file (_index.xml_).
-
-
 
 ### _MaintainerNotes_<a name="MaintainerNotes"></a>
 
 This is a multi-line field using the same rules and syntax as the
 description. It's used to record notes for F-Droid maintainers to assist
 in maintaining and updating the application in the repository.
-
-This information is also published to the wiki.
-
-
 
 ### _RepoType_<a name="RepoType"></a>
 
@@ -472,7 +329,6 @@ Possible values are:
 
 * `git`
 * `srclib`
-
 
 ### _Repo_<a name="Repo"></a>
 
@@ -484,7 +340,6 @@ If [_RepoType_](#RepoType) is `git`, then the URL must be a public, use
 If the [_RepoType_](#RepoType) is `srclib`, then you must specify the name of
 the according srclib `.yml` file. For example if `srclibs/FooBar.yml` exist and
 you want to use this srclib, then you have to set _Repo_ to `FooBar`.
-
 
 ### _Binaries_<a name="Binaries"></a>
 
@@ -498,7 +353,8 @@ itself you could use:
 
 F-Droid will use upstream binaries if the verification succeeded.
 
-
+This url must be versioned and can be calculated from the versionName
+and versionCode.
 
 ### _Builds_<a name="Builds"></a>
 
@@ -528,6 +384,8 @@ Builds:
 :   The _commit_ parameter specifies the tag, commit or revision number
     from which to build it in the source repository.
 
+    __Note__: Don't use branch name or tag name. The full commit hash should be used.
+
     In addition to the three, always required, parameters described above,
     further parameters can be added (in `name: value` format) to apply further
     configuration to the build. These are (roughly in order of application):
@@ -548,7 +406,11 @@ Builds:
 `subdir: <path>`<a name="build_subdir"></a>
 
 :   Specifies to build from a subdirectory of the checked out source
-    code. This is the directory where the build scripts are run.
+    code. This is the directory where the build scripts are run. For
+    Gradle apps this should be the path where the `build` directory will
+    be generated in. For Flutter apps, this should be the directory where
+    `pubspec.yaml` file is in. The root of the source code repo is used by
+    default.
 
 `submodules: true`<a name="build_submodules"></a>
 
@@ -560,17 +422,18 @@ Builds:
 `sudo: xxxx`<a name="build_sudo"></a>
 
 :   Specifies a script to be run using `sudo bash -x -c "xxxx"` in the
-    buildserver VM guest.  This script is run with full root privileges,
-    but the state will be reset after each build.  The vast majority of
+    buildserver VM guest. This script is run with full root privileges,
+    but the state will be reset after each build. The vast majority of
     apps build using the standard Debian/stable base environment. This
     is useful for setting up the buildserver for complex builds that
     need very specific things that are not appropriate to install for
     all builds, or for things that would conflict with other builds.
+    Don't add commands which don't need root privileges here.
 
 `timeout: <seconds>`<a name="build_timeout"></a>
 
-:   Time limit for this build (in seconds).  After time is up,
-    buildserver VM is forcefully terminated.  The default is 7200
+:   Time limit for this build (in seconds). After time is up,
+    buildserver VM is forcefully terminated. The default is 7200
     (2 hours); 0 means no limit.
 
     Limitation is applied only in server mode, i.e. when `fdroid build`
@@ -596,6 +459,8 @@ Builds:
     lines of: "com.android.ant.SetupTask cannot be found" when trying to
     build, then try enabling this option.
 
+    __Note__: Only used by some old apps.
+
 `target: <target>`<a name="build_target"></a>
 
 :   Specifies a particular SDK target for compilation, overriding the
@@ -611,6 +476,8 @@ Builds:
     Android file or doesn't already exist, but not a good idea if it's
     heavily customised.
 
+    __Note__: Only used by some old apps.
+
 `androidupdate: auto|<path1>[,<path2>,...]`<a name="build_androidupdate"></a>
 
 :   By default, 'android update' is used in Ant builds to generate or
@@ -624,6 +491,8 @@ Builds:
     Otherwise, the value can be a comma-separated list of directories in
     which to run 'android update' relative to the application directory.
 
+    __Note__: Only used by some old apps.
+
 `encoding: xxxx`<a name="build_encoding"></a>
 
 :   Adds a `java.encoding` property to _local.properties_ with the
@@ -631,6 +500,8 @@ Builds:
     by the SDK's ant rules, and forces the Java compiler to interpret
     source files with this encoding. If you receive warnings during the
     compile about character encodings, you probably need this.
+
+    __Note__: Only used by some old apps.
 
 `forceversion: true`<a name="build_forceversion"></a>
 
@@ -676,6 +547,8 @@ Builds:
 :   Comma-separated list of external libraries (jar files) from the
     `build/extlib` library, which will be placed in the `libs` directory
     of the project.
+
+    __Note__: Only used by some old apps.
 
 `srclibs: [n:]a@r,[n:]b@r1,...`<a name="build_srclibs"></a>
 
@@ -769,8 +642,9 @@ Builds:
     using [`init`](#build_init) or [`prebuild`](#build_prebuild).
 
     Any building that takes place before `build` will be ignored, as
-    either Ant, mvn or gradle will be executed to clean the build
-    environment right before `build` (or the final build) is run.
+    either Ant, mvn will be executed to clean the build
+    environment right before `build` (or the final build) is run and
+    the source code will be scanned to ensure there is no binary.
 
     You can use `$$SDK$$` and `$$NDK$$` to substitute the paths to the
     Android SDK and NDK directories respectively. The following per-build
@@ -796,12 +670,14 @@ Builds:
     jni code isn't used nor built will result in an error saying that native
     libraries were expected in the resulting package.
 
+    __Note__: Only used by some old apps.
+
 `ndk: <version>`<a name="build_ndk"></a>
 
-:   Version of the NDK to use in this build.  The value is the NDK version as a
+:   Version of the NDK to use in this build. The value is the NDK version as a
     string in either of the two official version schemes, e.g. _r21e_ or
-    _21.4.7075529_.  NDK r10e or later is supported.  This can also be a list of
-    version strings, and all listed versions will be installed.  The
+    _21.4.7075529_. NDK r10e or later is supported. This can also be a list of
+    version strings, and all listed versions will be installed. The
     `ANDROID_NDK` and `ANDROID_NDK_HOME` environment variables will be set to the first version in
     the list.
 
@@ -814,7 +690,7 @@ Builds:
     If only one flavour is given and it is 'yes', no flavour will be
     used. Note that for projects with flavours, you must specify at
     least one valid flavour since 'yes' will build all of
-    them separately.
+    them separately. The Gradle task will be `assembel<flavors>Release`.
 
     The Fastlane metadata for this flavor can be put into `./src/<buildFlavor>/fastlane/metadata/<locale>/` instead of `./fastlane/metadata/<locale>/`.
 
@@ -843,6 +719,8 @@ Builds:
     default 'release'. It can't be given any flags, such as the path to
     a _build.xml_.
 
+    __Note__: Only used by some old apps.
+
 `output: <glob/to/output.apk>`<a name="build_output"></a>
 
 :   Specify a glob path where the resulting unsigned release APK from
@@ -856,7 +734,7 @@ Builds:
 `postbuild: xxxx`<a name="build_postbuild"></a>
 
 :   As for [`prebuild`](#build_prebuild), but runs after the actual build phase
-    (the main Ant/Maven build).  Use this only for actions that perform some
+    (the main Ant/Maven build). Use this only for actions that perform some
     post-processing on the build outputs.
 
     You can use `$$name$$` to substitute the path to a referenced
@@ -883,33 +761,30 @@ Builds:
 :   List of Anti-Features for this specific build. They are described
     in [_AntiFeatures_](#AntiFeatures).
 
-
-
 ### _AllowedAPKSigningKeys_<a name="AllowedAPKSigningKeys"></a>
 
 When making automated binary repositories with `fdroid update`, it is generally
 easy to find out the expected signing key for the APKs that are gathered.
 `AllowedAPKSigningKeys` lets the repo operator set the expected signing keys, then
-`fdroid update` will check that the APKs are signed by one of those keys.  If
-not, the mismatched APKs will not be included in the repo.  If `fdroid update
---delete-unknown` is specified, the mismatched APKs will be deleted.  Then an
+`fdroid update` will check that the APKs are signed by one of those keys. If
+not, the mismatched APKs will not be included in the repo. If `fdroid update
+--delete-unknown` is specified, the mismatched APKs will be deleted. Then an
 automated process can be used to download newer APKs to the repo, and they will
-only be included if they have a known good signature.  The value is a lower case
-hex value of the SHA-256 fingerprint of the signing certificate.  This can be
+only be included if they have a known good signature. The value is a lower case
+hex value of the SHA-256 fingerprint of the signing certificate. This can be
 fetched using `apksigner` from the Android SDK:
 
-```
+```bash
 apksigner verify --print-certs example.apk | grep SHA-256
 ```
 
 Or alternatively with `keytool` from the Java Development Kit (JDK):
 
-```
+```bash
 keytool -printcert -jarfile example.apk | sed -n 's/[[:space:]]*SHA256: //p' | tr -d ':' | tr '[:upper:]' '[:lower:]'
 ```
 
-Usually, APKs are signed using only one signer.  APKs that require verification by [multiple signers](https://developer.android.com/tools/apksigner#usage-sign) are currently not supported by _AllowedAPKSigningKeys_ (this is quite rare).
-
+Usually, APKs are signed using only one signer. APKs that require verification by [multiple signers](https://developer.android.com/tools/apksigner#usage-sign) are currently not supported by _AllowedAPKSigningKeys_ (this is quite rare).
 
 ### _AntiFeatures_<a name="AntiFeatures"></a>
 
@@ -927,10 +802,7 @@ description:
 * `NoSourceSince` - Upstream source for this app is no longer available. Either the app went commercial, the repo was dropped, or it has moved to a location currently unknown to us. This usually means there won't be further updates unless the source reappears.
 * `NSFW` - the app contains content that the user may not want to be publicized or visible everywhere, comes from "Not Safe For Work".
 * `TetheredNet` - the application depends entirely on a service which is impossible (or not easy) to replace. Replacement requires changes to the app or service. This Anti-Feature would not be applied if there is a simple configuration option that allows pointing the app to a running instance of an alternative, publicly available, self-hostable server solution.
-* `Tracking` - user or activity data is tracked or leaks, by default. True if the app or a feature can not be used without collecting and sharing such data, or doing requests to a data collecting network service (regard- less if the service is based on free software, or not). For example,  activity-based down-loading of weather data, maps, avatars etc. (data  hosting and delivery services), or uploading of crash logs etc.
-
-This is converted to (`<antifeatures>`) in the XML file (_index.xml_).
-
+* `Tracking` - user or activity data is tracked or leaks, by default. True if the app or a feature can not be used without collecting and sharing such data, or doing requests to a data collecting network service (regard- less if the service is based on free software, or not). For example, activity-based down-loading of weather data, maps, avatars etc. (data hosting and delivery services), or uploading of crash logs etc.
 
 ### _Disabled_<a name="Disabled"></a>
 
@@ -943,7 +815,6 @@ _Builds_ section or delete it manually for developer builds. The field is
 therefore used when an app has outlived it's usefulness, because the source
 tarball is retained.
 
-
 ### _RequiresRoot_<a name="RequiresRoot"></a>
 
 Set this optional field to `true` if the application requires root
@@ -951,9 +822,6 @@ privileges to be usable. This lets the client filter it out if the user
 so desires. Whether root is required or not, it is good to give a
 paragraph in the description to the conditions on which root may be
 asked for and the reason for it.
-
-This is converted to (`<requirements>`) in the XML file (_index.xml_).
-
 
 ### _ArchivePolicy_<a name="ArchivePolicy"></a>
 
@@ -965,7 +833,7 @@ that.
 
 The version specified via [_CurrentVersionCode_](#CurrentVersionCode) is always
 considered the newest version when deciding which versions to put into the
-archive.  This means that when _ArchivePolicy_ is set to `1` only the APK
+archive. This means that when _ArchivePolicy_ is set to `1` only the APK
 corresponding to CVC is kept, which is not necessarily the one with the highest
 version code.
 
@@ -974,7 +842,6 @@ number of versions to keep. Defaults to `3`. For apps with a list
 of [_VercodeOperation_](#VercodeOperation) the default is calculated as
 `3 × number of operations`, e.g. for an app with two operations, for two
 ABIs, 6 versions will be kept.
-
 
 ### _AutoUpdateMode_<a name="AutoUpdateMode"></a>
 
@@ -994,7 +861,7 @@ To enable, set it to a supported mode:
   If _UpdateCheckMode_ is set to `HTTP`, a pattern should be added
   after the `Version`. The pattern is used to generate a value
   (tag name) used for the [`commit:`](#build_commit) property of new build
-  blocks.  It is simply text in which `%v` and `%c` are replaced with the
+  blocks. It is simply text in which `%v` and `%c` are replaced with the
   required version name and version code respectively. The resulting
   string must match an existing tag in the app's repo, which then will be
   used by F-Droid to build the corresponding version.
@@ -1011,10 +878,8 @@ To enable, set it to a supported mode:
   to the [`versionName`](#build_versionName) specified in e.g. `build.gradle`
   when building the APK.
 
-
 For apps with a list of [_VercodeOperation_](#VercodeOperation) the number of builds
 is equal to the number of items in the list.
-
 
 ### _UpdateCheckMode_<a name="UpdateCheckMode"></a>
 
@@ -1024,7 +889,7 @@ and [_CurrentVersionCode_](#CurrentVersionCode) fields in the metadata by the
 `fdroid checkupdates` process.
 
 By default, no checking is done because there's no appropriate automated way of
-doing so. Updates should be checked for manually.  Use this, for example, when
+doing so. Updates should be checked for manually. Use this, for example, when
 deploying unstable or patched versions; when builds are done in a directory
 different to where the _AndroidManifest.xml_ is; if the developers use the
 Gradle build system and store version info in a separate file; if the developers
@@ -1048,19 +913,19 @@ To enable, set it to a supported mode:
   will return an error if the _AndroidManifest.xml_ has moved to a
   different directory or if the package name has changed. The current
   version that it gives may not be accurate, since not all versions
-  are fit to be published.  Therefore, before building, it is often
+  are fit to be published. Therefore, before building, it is often
   necessary to check if the current version has been published
   somewhere by the upstream developers, either by checking for APKs
   that they distribute or for tags in the source code repository.
 
   For `git` repo types, you may use `RepoManifest/yourbranch` as
   _UpdateCheckMode_ so that "yourbranch" would be the branch used in place of
-  the default one. The default branch is "_master_".  It does not work
+  the default one. The default branch is "_master_". It does not work
   for `srclib` repo types.
 
 * `Tags` - The _AndroidManifest.xml_ and _build.gradle_ files in all
   tagged revisions in the source repository are checked, looking for
-  the highest version code.  The appropriateness of this method
+  the highest version code. The appropriateness of this method
   depends on the development process used by the application's
   developers. You should not specify this method unless you're sure
   it's appropriate. It shouldn't be used if the developers like to tag
@@ -1098,7 +963,6 @@ To enable, set it to a supported mode:
   set to simply '.' which says to use the same document returned for
   the version code again, rather than retrieving a different one.
 
-
 ### _VercodeOperation_<a name="VercodeOperation"></a>
 
 Operation to be applied to the version code obtained by the defined
@@ -1130,7 +994,6 @@ version names that include that text.
 
 Only Available with [_UpdateCheckMode_](#UpdateCheckMode) `HTTP`.
 
-
 ### _UpdateCheckName_<a name="UpdateCheckName"></a>
 
 When checking for updates (via _UpdateCheckMode_) this can be used to
@@ -1141,7 +1004,6 @@ appending ".open" or ".free" at the end of the package name.
 You can also use `Ignore` to ignore package name searching. This should
 only be used in some specific cases, for example if the app's
 `build.gradle` file does not contain the package name.
-
 
 ### _UpdateCheckData_<a name="UpdateCheckData"></a>
 
@@ -1167,13 +1029,12 @@ Examples for `UpdateCheckMode: Tags`:
 * Use the git tag as version name: `app/build.gradle|versionCode\s(\d+)||`
 * Optionally a regex to extract the version name from the tag can be specified: `app/build.gradle|versionCode\s(\d+)||Android-([\d.]+)`
 * If no file for the version code was specified, code and name can be extracted from the tag: `'|\+(\d+)||Android-([\d.]+)'`
-* Note: Be sure to use *single* quotes around the entire value if you leave `vercode-location` empty: `UpdateCheckData: '|\+(\d+)||Android-([\d.]+)'`
+* Note: Be sure to use _single_ quotes around the entire value if you leave `vercode-location` empty: `UpdateCheckData: '|\+(\d+)||Android-([\d.]+)'`
 
 Examples for `UpdateCheckMode: HTTP`:
 
 * `https://foo/version.json|"version_code":.*"(.*)"|.|"version_name":.*\"(.*)\",`
 * `https://foo/version_fdroid.txt|versionCode=(.*)|.|versionName=(.*)`
-
 
 ### _CurrentVersion_<a name="CurrentVersion"></a>
 
@@ -1189,9 +1050,6 @@ still be expedient to retain the automatic update check — see
 This field is normally automatically updated - see
 [_UpdateCheckMode_](#UpdateCheckMode).
 
-This is converted to (`<marketversion>`) in the XML file (_index.xml_).
-
-
 ### _CurrentVersionCode_<a name="CurrentVersionCode"></a>
 
 The [version code](https://developer.android.com/guide/topics/manifest/manifest-element.html#vcode) corresponding to the [_CurrentVersion_](#CurrentVersion) field. Both these
@@ -1205,9 +1063,6 @@ This field is normally automatically updated - see
 If not set, clients will recommend the highest version they can, as if
 the _CurrentVersionCode_ was infinite.
 
-This is converted to (`<marketvercode>`) in the XML file (_index.xml_).
-
-
 ### _NoSourceSince_<a name="NoSourceSince"></a>
 
 In case we are missing the source code for the
@@ -1218,15 +1073,10 @@ versions, but provide source code for newer ones are not to be considered here -
 this field is intended to illustrate which apps do not currently distribute
 source code, and since when have they been doing so.
 
-
-
-
-# Deprecated or Removed Fields
+## Deprecated or Removed Fields
 
 ### _Provides_<a name="Provides"></a>
 
 Comma-separated list of application IDs that this app provides. This
-field was only ever a stub and was never used for anything.  It was
+field was only ever a stub and was never used for anything. It was
 never supported in _index-v1.json_ nor _.yml_ metadata files.
-
-This is converted to (`<provides>`) in the XML file (_index.xml_).
