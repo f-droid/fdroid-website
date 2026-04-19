@@ -53,11 +53,14 @@ A newer version of _fdroidserver_ may be found in the F-Droid PPA or your OS's _
   apt-get install -t bookworm-backports fdroidserver
   ```
 
-## Fedora/Archlinux
+## Fedora/Arch Linux
 
-Since packages in these distributions may be newer than those available on PyPI, it is recommended to install dependencies inside a Python virtual environment to avoid conflicts.
+Packages in these distributions may be newer than those available on PyPI, it is recommended to install dependencies inside a Python virtual environment to avoid conflicts.
 
-### Install using PyPI
+### Install from GitLab (Recommended)
+
+Install the latest development version of fdroidserver directly from GitLab.This ensures you are using the most up-to-date version.
+
 
 ```bash
 # Create a virtual environment
@@ -66,21 +69,24 @@ python3 -m venv env
 # Activate the environment
 source env/bin/activate
 
-# Install fdroidserver
-pip install fdroidserver
-```
-
-### Alternative: Install from GitLab
-
-You can also install the latest development version directly from GitLab:
-
-```bash
+# Install fdroidserver from GitLab
 pip install git+https://gitlab.com/fdroid/fdroidserver.git@master
 ```
 
- It is strongly recommended to use a virtual environment to avoid sys<details><summary>Click to expand</summary>
+### Install from PyPI
 
-</details>tem-wide dependency issues.
+You can also install fdroidserver from PyPI, preferably within a virtual environment:
+
+```bash
+# Create a virtual environment
+python3 -m venv env
+
+# Activate the environment
+source env/bin/activate
+
+# Install fdroidserver from PyPI
+pip install fdroidserver
+```
 
 
 ## Guix
