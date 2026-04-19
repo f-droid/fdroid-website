@@ -55,7 +55,7 @@ A newer version of _fdroidserver_ may be found in the F-Droid PPA or your OS's _
 
 ## Fedora/Archlinux
 
-Since packages in these distributions may be newer than those available on PyPI, it is recommended to install dependencies inside a Python virtual environment to avoid conflicts.
+Packages in these distributions may be newer than those available on PyPI, it is recommended to install dependencies inside a Python virtual environment to avoid conflicts.
 
 ### Install using PyPI
 
