@@ -72,6 +72,7 @@ source env/bin/activate
 # Install fdroidserver from GitLab
 pip install git+https://gitlab.com/fdroid/fdroidserver.git@master
 ```
+
 ### Install from PyPI
 
 You can also install fdroidserver from PyPI, preferably within a virtual environment:
