@@ -44,7 +44,6 @@ are shipping:
 * [Non-Free Dependencies](#NonFreeDep) - needs a non-libre app to work (e.g. Spotify, Whatsapp)
 * [Non-Free Network Services](#NonFreeNet) - promotes or depends entirely on a non-free network service
 * [No Source Since](#NoSourceSince) - source code no longer available, making new releases impossible
-* [NSFW](#NSFW) - contains content that the user may not want to be publicized or visible everywhere
 * [Tethered Network Services](#TetheredNet) - depends entirely on a certain instance of a network service
 * [Tracking](#Tracking) - tracks and/or reports your activity to somewhere, even when it can be turned off
 
@@ -120,12 +119,6 @@ currently not known to us. This means there will not be further updates unless
 the source reappears.
 
 Here's a list of [apps with No Source](https://monitor.f-droid.org/anti-feature/NoSourceSince).
-
-### NSFW<a name="NSFW" />
-
-This Anti-Feature is applied to an app that contains content that the user may not want to be publicized or visible everywhere. The marked app may contain nudity, profanity, slurs, violence, intense sexuality, political incorrectness, or other potentially disturbing subject matter.  This is especially relevant in environments like workplaces, schools, religious and family settings. The name comes from the Internet term "Not safe for work".
-
-Here's the list of [apps with NSFW](https://monitor.f-droid.org/anti-feature/NSFW).
 
 ### Tethered Network Services<a name="TetheredNet" />
 
