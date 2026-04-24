@@ -13,7 +13,7 @@ To propose inclusion of a new application to the main F-Droid repository,
 one could post the applications relevant information to the Submission
 Queue. The more advanced and recommended alternative is writing a complete metadata file
 yourself, test, and propose inclusion (merge request) directly into
-the fdroiddata Git repository; speeding up the process. Both ways will be
+the _fdroiddata_ Git repository; speeding up the process. Both ways will be
 described below in detail.
 
 Note that you can propose inclusion even you are not a developer or
@@ -138,14 +138,14 @@ This is a nonexhaustive list of what a reviewer would do:
 - They will try to build your application in an isolated environment to
   see if the process succeeds and yield a functional APK.
 - If all went smoothly, they will add a new metadata file to their
-  local fdroiddata git repository and synchronizes the change
+  local _fdroiddata_ git repository and synchronizes the change
   to GitLab.
 
 In the case that the application failed some steps in the review, feedback
 will be given in the original submission queue thread where the proposal
 was posted.
 
-Once the fdroiddata repository is updated on GitLab, it's mostly just a
+Once the _fdroiddata_ repository is updated on GitLab, it's mostly just a
 matter of time before F-Droid's official build server will fetch, build,
 and publish your application on the main F-Droid repository.
 
@@ -209,7 +209,7 @@ For more information, see:
 
 ## Build Process
 
-After the application metadata is added to fdroiddata GitLab repository,
+After the application metadata is added to _fdroiddata_ GitLab repository,
 the next step is for the main F-Droid build server to fetch
 the applications source code and related components, build the application,
 and publish it on the main F-Droid repository.
@@ -228,7 +228,7 @@ This is useful to aid in diagnosing problems when the build unexpectedly failed.
 ### Metadata Refreshing Process
 
 When the scheduled building time arrives, the F-Droid build server will
-fetch changes from the fdroiddata GitLab repository and merge it to a local
+fetch changes from the _fdroiddata_ GitLab repository and merge it to a local
 repository. Then, update checks will be performed for all
 applications. If a new version is found, their metadata files will be
 updated and committed to the repository by the author `F-Droid checkupdates
@@ -254,7 +254,7 @@ git repository on GitLab, **it won't immediately appear** in the main
 F-Droid repository.
 
 Provided that your application does not have any build problems, it would
-takes somewhere **around 24 to 48 hours** from fdroiddata merge
+takes somewhere **around 24 to 48 hours** from _fdroiddata_ merge
 until the application to appears in the main
 repository.[1](https://f-droid.org/forums/topic/how-fast-the-main-f-droid-repository-updates/)
 This timing limitation is due to the APK signing part of the build process,

@@ -70,7 +70,7 @@ An application can be setup to publish the signed binaries from the upstream dev
 
 #### Exclusively publishing (upstream) developer-signed APKs
 
-For this approach, everything in the metadata should be the same as normal, with the addition of the [`Binaries`](../Build_Metadata_Reference/#Binaries) or [`Builds.binary`](../Build_Metadata_Reference/#build_binary) directive to specify where to get the binaries (APKs) from, and [`AllowedAPKSigningKeys`](../Build_Metadata_Reference/#AllowedAPKSigningKeys) directive to ensure the expected signing key is used. In this case, F-Droid will never attempt to publish APKs signed by F-Droid.  If `fdroid publish` can verify that the downloaded APK matches the one built from the fdroiddata recipe, the downloaded APK will be published. Otherwise F-Droid will skip publishing this version of the app.
+For this approach, everything in the metadata should be the same as normal, with the addition of the [`Binaries`](../Build_Metadata_Reference/#Binaries) or [`Builds.binary`](../Build_Metadata_Reference/#build_binary) directive to specify where to get the binaries (APKs) from, and [`AllowedAPKSigningKeys`](../Build_Metadata_Reference/#AllowedAPKSigningKeys) directive to ensure the expected signing key is used. In this case, F-Droid will never attempt to publish APKs signed by F-Droid.  If `fdroid publish` can verify that the downloaded APK matches the one built from the _fdroiddata_ recipe, the downloaded APK will be published. Otherwise F-Droid will skip publishing this version of the app.
 
 #### Publish both (upstream) developer-signed and F-Droid-signed APKs
 
@@ -81,7 +81,7 @@ updates for apps which were built and signed by F-Droid.
 
 This requires extracting and adding (upstream) developer signatures to
 fdroiddata.  These signatures are then later copied to the unsigned APK built
-from the fdroiddata recipe.  We provide a command for easily extracting
+from the _fdroiddata_ recipe.  We provide a command for easily extracting
 signatures from APKs:
 
 ```console
@@ -134,11 +134,11 @@ better results when `diffoscope` is not sufficient.
 
 The scripts from
 [reproducible-apk-tools](https://github.com/obfusk/reproducible-apk-tools)
-(available in fdroiddata as a `srclib`) may help to make builds reproducible,
+(available in _fdroiddata_ as a `srclib`) may help to make builds reproducible,
 e.g. by fixing newlines (CRLF vs LF) or making ZIP ordering deterministic, if
 removing the cause of the differences is not a realistic option.  Depending on
 specifics, these scripts need to be used by upstream developers before signing
-their APKs, by the fdroiddata recipe, or both.
+their APKs, by the _fdroiddata_ recipe, or both.
 
 Originally created to inject non-determinism in build processes,
 [disorderfs](https://salsa.debian.org/reproducible-builds/disorderfs) can also

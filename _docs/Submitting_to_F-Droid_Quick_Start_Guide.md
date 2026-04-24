@@ -168,7 +168,7 @@ git push origin com.example
 ```
 
 Create a [merge request](https://gitlab.com/fdroid/fdroiddata/-/merge_requests)
-at the fdroiddata repository, selecting your _com.example_ source branch. Wait
+at the _fdroiddata_ repository, selecting your _com.example_ source branch. Wait
 for the packagers to pick up your merge request. Please keep track if they
 asked any questions and reply to them as soon as possible.
 

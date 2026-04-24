@@ -94,7 +94,7 @@ For your convenience you optionally may add the fdroid executable to your path:
 fdroid:~$ echo "PATH=\$PATH:$HOME/fdroidserver" >> ~/.bashrc
 ```
 
-Get all of the app build metadata from the fdroiddata repo...
+Get all of the app build metadata from the _fdroiddata_ repo...
 
 ```bash
 fdroid:~/fdroidserver$ cd ~

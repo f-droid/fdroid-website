@@ -57,7 +57,7 @@ at the top of that forum for more information.
 ### Update apps
 
 The procedure for updating apps is similar to adding new apps: changes
-are applied to the metadata in the fdroiddata git repository. You'll
+are applied to the metadata in the _fdroiddata_ git repository. You'll
 need to already be familiar with adding new apps. Even though it should
 take much less time to update an app one should still be cautious.
 Follow the steps in the [update guide](../How_to_update_an_app)
