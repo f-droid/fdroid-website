@@ -18,6 +18,23 @@ _fdroidserver_.  To run the full F-Droid build server setup, see
 * Do not remove this line (it will not be displayed)
 {:toc}
 
+### Which Installation method should you choose?
+
+If you are setting up an F-Droid repository or working with fdroidserver, the following guidelines may help you choose an installation method:
+
+- **Use your system package manager (e.g. `apt install fdroidserver`)** 
+  This is the simplest option and works well for most users who want a quick and stable setup.
+
+- **Use a Python virtual environment (`pip`)** 
+  This is recommended if you are developing, testing, or want to avoid conflicts with system packages.
+
+- **Use Docker** 
+  This is useful for reproducible environments or CI setups, but may require additional configuration.
+
+- **Install from source**
+  This is intended for advanced users who need the latest development version or want to modify the tools.
+
+In general, start with your system package manager unless you have a specific reason to use another method.
 
 ## Debian/Ubuntu/Mint/etc
 
@@ -65,7 +82,7 @@ pip install -e .
 
 ## Guix
 
-The tools are also available in the main Guix channel. To install:  
+The tools are also available in the main Guix channel. To install:
 
 ```
 guix install fdroidserver
