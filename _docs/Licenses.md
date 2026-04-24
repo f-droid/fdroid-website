@@ -10,4 +10,4 @@ F-Droid is built on free software and only produces free software.  We generally
 * The descriptive text and graphics for each app have a specific license from that project.  Free software should also have free descriptions and graphics.
 * The F-Droid logo was created by William Theaker. Updates to that, and additional artwork, are by Robert Martinez. You can see and improve the current artwork and badges in [the dedicated repository](https://gitlab.com/fdroid/artwork).
 
-Each individual project on our GitLab contains a `LICENSE` file if you want to find any specific licenses.
+Each individual project on our GitLab contains a _LICENSE_ file if you want to find any specific licenses.

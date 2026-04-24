@@ -50,9 +50,9 @@ components. However we will grant some flexibility when it comes to
 assets and resources; so if you have, for example, some music under a
 Creative Commons non-commercial licence (i.e. a Non-Free licence), then
 we will accept it. The important thing is to include copyright info for
-assets as well as source code, in the file headers and/or the README. A
-copy of the licences in the root of the repo is helpful (LICENSE or
-COPYING files). Also make a note of the copyright and licenses
+assets as well as source code, in the file headers and/or the _README_. A
+copy of the licences in the root of the repo is helpful (_LICENSE_ or
+_COPYING_ files). Also make a note of the copyright and licenses
 pertaining to external resources or programs and if it does connect to a
 free service, consider using the Affero GPL. See the [Inclusion
 Policy](../Inclusion_Policy) for more.

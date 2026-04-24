@@ -105,7 +105,7 @@ distributed from the F-Droid main repository are Free Software.
 This is a nonexhaustive list of what a reviewer would do:
 
 - They will go to your source code repository, and look for copyright
-  notices in license files, including README, to check that the
+  notices in license files, including _README_, to check that the
   proposed application is released under a [recognized Free
   Software and/or OSI license(s)](https://spdx.org/licenses/).
 - They will look at your build script to see which build system you

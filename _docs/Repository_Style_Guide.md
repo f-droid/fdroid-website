@@ -35,7 +35,7 @@ _build.gradle_ and are usually pulled from <http://mvnrepository.com>;
 for maven there will be `pom.xml` files which describe the dependencies.
 If native code pre-built libraries are used, these will often be found
 in `res/raw/` or `assets/`: there should be something said about these
-in the `README`. The example above has one jar file dependency with a
+in the _README_. The example above has one jar file dependency with a
 text reference and doesn't use any external libraries, so no extra
 references are needed.
 
@@ -45,7 +45,7 @@ references are needed.
 - *E.g.* Overall: <https://gitlab.com/fdroid/fdroidclient/blob/master/LICENSE> (overall of
 a source code under a *GPLv3+* license);
 - *E.g.* Source code header: <https://gitlab.com/fdroid/fdroidclient/blob/master/app/src/main/java/org/fdroid/fdroid/AppDetails.java> (header of a file under a *GPLv3+* license);
-- *E.g.* Libraries: <https://gitlab.com/fdroid/fdroidclient/tree/master/libs> (see the `LICENSE` file with the *Apache License, Version 2.0* license for that library);
+- *E.g.* Libraries: <https://gitlab.com/fdroid/fdroidclient/tree/master/libs> (see the _LICENSE_ file with the *Apache License, Version 2.0* license for that library);
 - *E.g.* Artwork: <https://f-droid.org/about> (see the *CC BY-SA 3.0* license for artworks)
 
 All apps in the F-Droid repository *must* be FOSS (Free and Open Source
@@ -54,7 +54,7 @@ listed as a Free Software License in the [GNU license
 list](http://www.gnu.org/licenses/license-list.html#SoftwareLicenses)
 then it probably isn't.
 
-If there aren't any `README` or `LICENSE` in the source code of the app
+If there aren't any _README_ or _LICENSE_ in the source code of the app
 it's very difficult for the F-Droid community verify that the entire
 source code, libraries and artwork each are released under a suitable
 Free and Open Source license. So, it's a good pratice to verify that the
