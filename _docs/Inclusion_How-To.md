@@ -150,7 +150,7 @@ matter of time before F-Droid's official build server will fetch, build,
 and publish your application on the main F-Droid repository.
 
 You can confirm the inclusion of your application by looking at the [GitLab
-fdroiddata revision
+_fdroiddata_ revision
 history](https://gitlab.com/fdroid/fdroiddata/commits/master).
 
 ### Special Consideration of Metadata Merge Request
@@ -162,8 +162,7 @@ application source code. Steps about writing and committing metadata
 are omitted, as they will use the original metadata file you proposed.
 Feedback will be given on the original merge request thread that the
 application was proposed; and once the process is completed, the request
-will be merged to the `master` branch of the fdroiddata
-GitLab repository.
+will be merged to the `master` branch of the _fdroiddata_ GitLab repository.
 
 In an attempt to optimize the process, when you proposed inclusion via
 metadata merge request, F-Droid staff rely on several assumptions
@@ -249,7 +248,7 @@ preprocessing process, followed by the build process for each of them.
 
 ## What to Expect
 
-When your application metadata is approved and accepted into the fdroiddata
+When your application metadata is approved and accepted into the _fdroiddata_
 git repository on GitLab, **it won't immediately appear** in the main
 F-Droid repository.
 

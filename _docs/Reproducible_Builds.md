@@ -80,7 +80,7 @@ apps from other sources than F-Droid (e.g. Play Store), while also shipping
 updates for apps which were built and signed by F-Droid.
 
 This requires extracting and adding (upstream) developer signatures to
-fdroiddata.  These signatures are then later copied to the unsigned APK built
+_fdroiddata_.  These signatures are then later copied to the unsigned APK built
 from the _fdroiddata_ recipe.  We provide a command for easily extracting
 signatures from APKs:
 
