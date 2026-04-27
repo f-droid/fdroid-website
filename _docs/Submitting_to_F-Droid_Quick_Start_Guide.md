@@ -17,7 +17,7 @@ _AndroidManifest.xml_ and _build.gradle_ files, and write down in which subdir
 the most detailed of them happen to be.
 
 Register on [GitLab](https://gitlab.com/) and fork the
-[fdroiddata](https://gitlab.com/fdroid/fdroiddata) repository.
+[_fdroiddata_](https://gitlab.com/fdroid/fdroiddata) repository.
 
 ## Upstream metadata
 
