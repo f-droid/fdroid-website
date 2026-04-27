@@ -62,7 +62,7 @@ application and do all necessary steps for you.
 A more advanced alternative for application inclusion is to
 write an F-Droid metadata file for the application yourself, and propose
 inclusion by filing a git merge request on the F-Droid application metadata
-repository ([fdroiddata GitLab
+repository ([_fdroiddata_ GitLab
 repository](https://gitlab.com/fdroid/fdroiddata/)). This will lead to
 much quicker inclusion as the already-available metadata file will reduce
 the burden on reviewers when inspecting your proposed metadata; the submitter
@@ -274,6 +274,6 @@ list](https://f-droid.org/).
 - [F-Droid application submission queue on
   forum](https://f-droid.org/forums/forum/submission-queue/) (for
   following-up old submissions)
-- [fdroiddata GitLab repository](https://gitlab.com/fdroid/fdroiddata/)
-- [fdroiddata revision
+- [_fdroiddata_ GitLab repository](https://gitlab.com/fdroid/fdroiddata/)
+- [_fdroiddata_ revision
   history](https://gitlab.com/fdroid/fdroiddata/commits/master)
