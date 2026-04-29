@@ -260,12 +260,12 @@ are not acceptable here.
 
 Yes, but:
 
-1.  Many users don't like ads and find them intrusive. We flag
-    applications that include ads, so people know what they're getting.
-    They can choose whether or not these apps will be shown to them.
-2.  Frequently incorporating ads into an app is done by including
-    proprietary software in the form of a binary library (jar file).
-    Obviously this would make your app ineligible for inclusion.
+1. Many users don't like ads and find them intrusive. We flag
+   applications that include ads, so people know what they're getting.
+   They can choose whether or not these apps will be shown to them.
+2. Frequently incorporating ads into an app is done by including
+   proprietary software in the form of a binary library (jar file).
+   Obviously this would make your app ineligible for inclusion.
 
 
 ### Which libraries and dependencies are good to use?
@@ -297,11 +297,11 @@ Note, that all of following are just subjective popularity-based
 suggestions; there may be other FOSS projects better suited for your
 needs.
 
--   Crittercism, BugSense — ACRA, Bugmenot, Sentry
--   Google Analytics — Piwik
--   Google Maps — OpenStreetMap, e.g. through
-    [mapsforge](http://www.mapsforge.org),
-    [osmdroid](http://osmdroid.org) or [maplibre](https://maplibre.org/)
+* Crittercism, BugSense — ACRA, Bugmenot, Sentry
+* Google Analytics — Piwik
+* Google Maps — OpenStreetMap, e.g. through
+  [mapsforge](http://www.mapsforge.org),
+  [osmdroid](http://osmdroid.org) or [maplibre](https://maplibre.org/)
 
 ### Aren't Google's SDK and libraries free, open source software?
 
@@ -390,23 +390,23 @@ F-Droid client app uses is relatively simple and based on the very common
 workflow established by github.com, gitlab.com and others like it.
 Here's a break down of what that means:
 
--   all development work happens in the `master` branch
--   code is submitted for inclusion via Merge Requests (MRs)
--   releases happen in a short-lived, stable release branch per major
-    release (e.g. `stable-0.95`, `stable-0.96`, `stable-0.97`, etc.)
--   the work that goes into the stable release branch must be tightly
-    focused and as small as possible to keep the release cycle as short
-    as possible
--   the `master` branch must never be merged with any stable release
-    branch
--   stable release branches must never be merged with the `master`
-    branch
--   Merge Requests for a stable release branch can include commits from
-    `master`
--   not all commits that are included in a stable release branch are
-    required to be in `master`
--   what you do in your git forks is up to you, but the final merge
-    request should not include merge commits
+* all development work happens in the `master` branch
+* code is submitted for inclusion via Merge Requests (MRs)
+* releases happen in a short-lived, stable release branch per major
+  release (e.g. `stable-0.95`, `stable-0.96`, `stable-0.97`, etc.)
+* the work that goes into the stable release branch must be tightly
+  focused and as small as possible to keep the release cycle as short
+  as possible
+* the `master` branch must never be merged with any stable release
+  branch
+* stable release branches must never be merged with the `master`
+  branch
+* Merge Requests for a stable release branch can include commits from
+  `master`
+* not all commits that are included in a stable release branch are
+  required to be in `master`
+* what you do in your git forks is up to you, but the final merge
+  request should not include merge commits
 
 Here is the discussion from the meeting where we nailed this down:
 <https://web.archive.org/web/20171220230923/https://botbot.me/freenode/fdroid-dev/2015-08-04/?msg=46407489&page=1>
