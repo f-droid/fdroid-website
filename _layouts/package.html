@@ -370,28 +370,28 @@ layout: default-package-sidebar
 						</summary>
 						<ul class="package-version-permissions-list">
 							{%- if package.min_sdk_version >= 23 and uses_permissions >= 2 %}
-								{%- assign unique_permissions = package.uses_permission | concat: package.uses_permission_sdk_23 | uniq | sort: "permission" %}
+								{%- assign unique_permissions = package.uses_permission | concat: package.uses_permission_sdk_23 | uniq | sort: "name" %}
 							{%- else %}
-								{%- assign unique_permissions = package.uses_permission | uniq | sort: "permission" %}
+								{%- assign unique_permissions = package.uses_permission | uniq | sort: "name" %}
 							{%- endif %}
 							{% for permission in unique_permissions -%}
 
 							<li class="permission">
 
-							{%- if site.data.android_permissions[permission.permission] != nil %}
-								{%- assign perm = site.data.android_permissions[permission.permission] %}
+							{%- if site.data.android_permissions[permission.name] != nil %}
+								{%- assign perm = site.data.android_permissions[permission.name] %}
 								<div class="permission-label">
 								{%- if perm.label %}
 									{{ site.data.strings.permissions[perm.label] }}
 								{%- else %}
-									{{ permission.permission }}
+									{{ permission.name }}
 								{%- endif %}
 								</div>
 								{%- if perm.description %}
 								<div class="permission-description">{{ site.data.strings.permissions[perm.description] }}</div>
 								{%- endif %}								
 							{%- else %}
-								<div class="permission-label">{{ permission.permission }}</div>
+								<div class="permission-label">{{ permission.name }}</div>
 							{%- endif %}
 
 							{%- if permission.min_sdk %}
@@ -401,21 +401,21 @@ layout: default-package-sidebar
 							</li>
 							{%- endfor %}
 							{%- if uses_permissions >= 2 and package.min_sdk_version < 23 %}
-							{%- assign runtime_permissions = package.uses_permission_sdk_23 | uniq | sort: "permission" %}
+							{%- assign runtime_permissions = package.uses_permission_sdk_23 | uniq | sort: "name" %}
 							{%- assign sdk_badge = 23 | android_sdk_level_to_version | prepend: "Android " | append: "+" %}
-							{%- assign shown_permissions = unique_permissions | map: "permission" %}
+							{%- assign shown_permissions = unique_permissions | map: "name" %}
 							{% for permission in runtime_permissions -%}
-							{% if shown_permissions contains permission.permission %}{% continue %}{% endif -%}
+							{% if shown_permissions contains permission.name %}{% continue %}{% endif -%}
 
 							<li class="permission">
 
-							{%- if site.data.android_permissions[permission.permission] != nil %}
-								{%- assign perm = site.data.android_permissions[permission.permission] %}
+							{%- if site.data.android_permissions[permission.name] != nil %}
+								{%- assign perm = site.data.android_permissions[permission.name] %}
 								<div class="permission-label">
 								{%- if perm.label %}
 									{{ site.data.strings.permissions[perm.label] }}
 								{%- else %}
-									{{ permission.permission }}
+									{{ permission.name }}
 								{%- endif %}
 								<span class="sdk-badge">{{ sdk_badge }}</span>
 								</div>
@@ -423,7 +423,7 @@ layout: default-package-sidebar
 								<div class="permission-description">{{ site.data.strings.permissions[perm.description] }}</div>
 								{%- endif %}								
 							{%- else %}
-								<div class="permission-label">{{ permission.permission }}<span class="sdk-badge">{{ sdk_badge }}</span></div>
+								<div class="permission-label">{{ permission.name }}<span class="sdk-badge">{{ sdk_badge }}</span></div>
 							{%- endif %}
 
 							{%- if permission.min_sdk %}
