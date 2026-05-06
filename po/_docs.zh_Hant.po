@@ -18,7 +18,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
 "POT-Creation-Date: 2026-05-05 12:20+0200\n"
-"PO-Revision-Date: 2026-05-01 07:09+0000\n"
+"PO-Revision-Date: 2026-05-06 08:28+0000\n"
 "Last-Translator: UDP <udp@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Chinese (Traditional Han script) <https://hosted.weblate.org/projects/f-droid/website-docs/zh_Hant/>\n"
 "Language: zh_Hant\n"
@@ -8859,9 +8859,8 @@ msgstr ""
 
 #. type: Bullet: '*   '
 #: _docs/Release_Channels_and_Signing_Keys.md
-#, fuzzy
 msgid "git repo: <https://gitlab.com/fdroid/fdroidclient>"
-msgstr "*例如* <https://gitlab.com/fdroid/fdroidclient/tree/master>"
+msgstr "git 儲存庫：<https://gitlab.com/fdroid/fdroidclient>"
 
 #. type: Bullet: '    -   '
 #: _docs/Release_Channels_and_Signing_Keys.md
@@ -9049,9 +9048,8 @@ msgstr ""
 
 #. type: Bullet: '-   '
 #: _docs/Release_Channels_and_Signing_Keys.md
-#, fuzzy
 msgid "git repo: <https://gitlab.com/fdroid/fdroidserver>"
-msgstr "*例如* <https://gitlab.com/fdroid/fdroidclient/tree/master>"
+msgstr "git 儲存庫：<https://gitlab.com/fdroid/fdroidserver>"
 
 #. type: Bullet: '    -   '
 #: _docs/Release_Channels_and_Signing_Keys.md
@@ -9118,9 +9116,8 @@ msgstr "「Repomaker」"
 
 #. type: Bullet: '-   '
 #: _docs/Release_Channels_and_Signing_Keys.md
-#, fuzzy
 msgid "git repo: <https://gitlab.com/fdroid/repomaker>"
-msgstr "*例如* <https://gitlab.com/fdroid/fdroidclient/tree/master>"
+msgstr "git 儲存庫：<https://gitlab.com/fdroid/repomaker>"
 
 #. type: Bullet: '    -   '
 #: _docs/Release_Channels_and_Signing_Keys.md
@@ -9145,9 +9142,8 @@ msgstr "特權的擴充功能"
 
 #. type: Bullet: '-   '
 #: _docs/Release_Channels_and_Signing_Keys.md
-#, fuzzy
 msgid "git repo: <https://gitlab.com/fdroid/privileged-extension>"
-msgstr "*例如* <https://gitlab.com/fdroid/fdroidclient/tree/master>"
+msgstr "git 儲存庫：<https://gitlab.com/fdroid/privileged-extension>"
 
 #. type: Bullet: '    -   '
 #: _docs/Release_Channels_and_Signing_Keys.md
@@ -9162,9 +9158,8 @@ msgstr ""
 
 #. type: Bullet: '-   '
 #: _docs/Release_Channels_and_Signing_Keys.md
-#, fuzzy
 msgid "git repo: <https://gitlab.com/fdroid/jekyll-fdroid>"
-msgstr "*例如* <https://gitlab.com/fdroid/fdroidclient/tree/master>"
+msgstr "git 儲存庫：<https://gitlab.com/fdroid/jekyll-fdroid>"
 
 #. type: Bullet: '    -   '
 #: _docs/Release_Channels_and_Signing_Keys.md
@@ -9345,15 +9340,11 @@ msgstr ""
 
 #. type: Bullet: '* '
 #: _docs/Repository_Style_Guide.md
-#, fuzzy
-#| msgid "*E.g* <https://gitlab.com/fdroid/fdroidclient/tree/master>"
 msgid "<https://gitlab.com/fdroid/fdroidclient/graphs/master>"
 msgstr "<https://gitlab.com/fdroid/fdroidclient/graphs/master>"
 
 #. type: Bullet: '* '
 #: _docs/Repository_Style_Guide.md
-#, fuzzy
-#| msgid "*E.g* <https://gitlab.com/fdroid/fdroidclient/tree/master>"
 msgid "<https://gitlab.com/fdroid/fdroidclient/network/master>"
 msgstr "<https://gitlab.com/fdroid/fdroidclient/network/master>"
 
@@ -9722,11 +9713,11 @@ msgid ""
 "    }\n"
 "  }\n"
 msgstr ""
-"android {\n"
-"    aaptOptions {\n"
-"        cruncherEnabled = false\n"
+"  tasks.whenTaskAdded {\n"
+"    if (name.contains(\"ArtProfile\")) {\n"
+"        enabled = false\n"
 "    }\n"
-"}\n"
+"  }\n"
 
 #. type: Title ####
 #: _docs/Reproducible_Builds.md
@@ -10146,10 +10137,9 @@ msgstr ""
 
 #. type: Title ####
 #: _docs/Reproducible_Builds.md
-#, fuzzy, no-wrap
-#| msgid "`metadata/`"
+#, no-wrap
 msgid "ZIP metadata"
-msgstr "`metadata/`"
+msgstr "ZIP 詮釋資料"
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
@@ -10373,8 +10363,8 @@ msgstr ""
 "android {\n"
 "    defaultConfig {\n"
 "        externalNativeBuild.cmake {\n"
-"          cFlags \"-Wl,--build-id\" // or\n"
-"          arguments \"-DCMAKE_SHARED_LINKER_FLAGS=-Wl,<linker args>\"\n"
+"          cFlags \"<compiler args> -Wl,<linker args>\" // or\n"
+"          arguments \"-DCMAKE_C_FLAGS=<compiler args> -DCMAKE_SHARED_LINKER_FLAGS=-Wl,<linker args>\"\n"
 "        }\n"
 "    }\n"
 "}\n"
@@ -11822,10 +11812,9 @@ msgstr ""
 
 #. type: Title ##
 #: _docs/Submitting_to_F-Droid_Quick_Start_Guide.md
-#, fuzzy, no-wrap
-#| msgid "The Physical Environment"
+#, no-wrap
 msgid "Build environment"
-msgstr "物理環境"
+msgstr "建置環境"
 
 #. type: Plain text
 #: _docs/Submitting_to_F-Droid_Quick_Start_Guide.md
@@ -11971,16 +11960,7 @@ msgstr "執行生成："
 
 #. type: Fenced code block (sh)
 #: _docs/Submitting_to_F-Droid_Quick_Start_Guide.md
-#, fuzzy, no-wrap
-#| msgid ""
-#| ". /etc/profile\n"
-#| "export PATH=\"$fdroidserver:$PATH\" PYTHONPATH=\"$fdroidserver\"\n"
-#| "cd /build\n"
-#| "fdroid readmeta\n"
-#| "fdroid rewritemeta com.example\n"
-#| "fdroid checkupdates --allow-dirty com.example\n"
-#| "fdroid lint com.example\n"
-#| "fdroid build com.example\n"
+#, no-wrap
 msgid ""
 ". /etc/profile\n"
 "export PATH=\"$fdroidserver:$PATH\" PYTHONPATH=\"$fdroidserver\"\n"
@@ -12108,10 +12088,9 @@ msgstr ""
 
 #. type: Title ##
 #: _docs/Take-Down_Requests.md
-#, fuzzy, no-wrap
-#| msgid "Binary transparency logs"
+#, no-wrap
 msgid "Transparency reporting"
-msgstr "二進位透明度紀錄"
+msgstr "透明度報告"
 
 #. type: Plain text
 #: _docs/Take-Down_Requests.md
@@ -12403,10 +12382,8 @@ msgstr ""
 
 #. type: Bullet: '* '
 #: _docs/Verifying_Downloaded_APK.md
-#, fuzzy
-#| msgid "Overview of the setup"
 msgid "verify the file"
-msgstr "設定概述"
+msgstr "驗證檔案"
 
 #. type: Plain text
 #: _docs/Verifying_Downloaded_APK.md
