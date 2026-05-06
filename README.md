@@ -6,12 +6,12 @@ is based on Jekyll and you can find the development version
 
 ## Building
 
-### Using Debian/buster
+### Using Debian/bookworm
 
-First, make sure [_buster-backports_ is enabled](https://backports.debian.org/Instructions/).
+First, make sure [_bookworm-backports_ is enabled](https://backports.debian.org/Instructions/).
 
 ```
-sudo apt-get install -t buster-backports \
+sudo apt-get install -t bookworm-backports \
   gettext linkchecker po4a python3 python3-babel rsync rubocop ruby-bundler \
   ruby-git ruby-jekyll-include-cache ruby-jekyll-redirect-from ruby-json \
   ruby-loofah ruby-rchardet ruby-rouge ruby-rspec ruby-zip unzip
@@ -66,9 +66,9 @@ locally, and have `jekyll serve` running in the VM.
 ```console
 $ vagrant up
 $ vagrant ssh
-vagrant@buster:~$ cd /vagrant
-vagrant@buster:/vagrant$ bundle install --local
-vagrant@buster:/vagrant$ jekyll serve --host 0.0.0.0
+vagrant@bookworm:~$ cd /vagrant
+vagrant@bookworm:/vagrant$ bundle install --local
+vagrant@bookworm:/vagrant$ jekyll serve --host 0.0.0.0
 ```
 
 Then connect to http://localhost:4000 to see the generated site.
