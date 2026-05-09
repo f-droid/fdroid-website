@@ -199,7 +199,7 @@ APKs.
 ### Are reproducible builds required?
 
 No. But we do consider them best practice and hope you'll consider trying to
-make your app reproducible. See our [inclusion how-to](../Inclusion_How-To) for
+make your app reproducible. See our [Submitting to F-Droid: Quick Start Guide](../Submitting_to_F-Droid_Quick_Start_Guide) for
 more information.
 
 
