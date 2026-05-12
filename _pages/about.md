@@ -55,9 +55,9 @@ Connect with the team, other members and the community to ask questions and shar
 
 <details><summary>Forum: <a href="https://forum.f-droid.org/">forum.f-droid.org</a></summary>Join our free software conversations and get support on Discourse.</details>
 
-<details><summary>Telegram&#8230;</summary>There is also a Matrix bridge to Telegram, to join it click <a href="https://matrix.f-droid.org/fdroid/telegram/">this link</a>.</details>
+<details><summary>Telegram&#8230;</summary>There is also a Matrix bridge to Telegram, to join it click <a href="https://matrix.f-droid.org/fdroid/telegram/">this link</a>. To join Telegram group chat, click <a href="https://t.me/+GvF3pDJmp_RkM2Ni">this link</a>.</details>
 
-<details><summary>XMPP&#8230;</summary>XMPP users can join via a <a href="https://codeberg.org/poezio/biboumi#readme">Biboumi</a> gateway that connects to IRC. The easiest way is to ask your XMPP server admin to host one, but if not possible, try one of the public ones. Copy and paste the address in your XMPP clients channel input field <tt>#fdroid%irc.oftc.net@irc.jabberfr.org</tt> <i>(hosted by <a href="https://jabberfr.org/">JabberFR</a>)</i> or <tt>#fdroid%irc.oftc.net@irc.hmm.st</tt> <i>(hosted by <a href="https://hmm.st/">hmm.st</a>)</i>.</details>
+<details><summary>XMPP&#8230;</summary>XMPP users can join via a <a href="https://codeberg.org/poezio/biboumi#readme">Biboumi</a> gateway that connects to IRC. The easiest way is to ask your XMPP server admin to host one, but if not possible, try one of the public ones. Copy and paste the address in your XMPP clients channel input field <tt>#fdroid%irc.oftc.net@irc.jabberfr.org</tt> <i>(hosted by <a href="https://jabberfr.org/">JabberFR</a>)</i> or <tt>#fdroid%irc.oftc.net@irc.hmm.st</tt> <i>(hosted by <a href="https://hmm.st/">hmm.st</a>)</i> or <tt>xmpp:fdroid@conference.movim.eu?join</tt> <i>(hosted by volunteers at <a href="https://movim.eu/">Movim</a>)</i>.</details>
 
 <details><summary>IRC: #fdroid on OFTC&#8230;</summary>Join the <a href="ircs://irc.oftc.net:6697/fdroid">#fdroid</a> channel on <a href="https://oftc.net/">OFTC</a>. Or click <a href="https://webchat.oftc.net/?randomnick=1&channels=fdroid&prompt=1">here</a> to join the web chat but set a proper nickname, not <tt>qwebirc*</tt>.</details>
 
