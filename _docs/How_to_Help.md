@@ -56,12 +56,14 @@ at the top of that forum for more information.
 
 ### Update apps
 
-The procedure for updating apps is similar to adding new apps: changes
-are applied to the metadata in the _fdroiddata_ git repository. You'll
-need to already be familiar with adding new apps. Even though it should
-take much less time to update an app one should still be cautious.
-Follow the steps in the [update guide](../How_to_update_an_app)
-to minimize the risk of messing up and don't be afraid to ask for help!
+Most apps are updated automatically. But if you find an outdated app, which
+doesn't have auto update enabled, or auto update doesn't work, you can update
+it manually and fix the auto update. The procedure for updating apps is similar
+to adding new apps: changes are applied to the metadata in the _fdroiddata_
+git repository. You need to copy the last build block (or blocks if there are
+more than one apks for the same version), append it to `Builds` and update the
+`versionName`, `versionCode` and `commit`. Other fields may also need to be update
+as needed. `CurrentVersion` and `CurrentVersionCode` should also be updated.
 
 
 ### Add information about no longer maintained apps
@@ -74,6 +76,10 @@ NOTE: This app is no longer maintained.
 
 Optionally link "no longer maintained" to where that statement is found (if not directly on the app's Readme/Website). Or add "(its repo has been archived)" – whichever fits. If the repo is gone altogether, instead remove the entries for `RepoType` and `RepoURL`, and at the very end of the metadata YAML add a line saying `NoSourceSince: 0.1.2` (where 0.1.2 should be the versionName of the last build available) – this will automatically translate into an Anti-Feature and thus be displayed prominently.
 In the end make that an MR.
+
+### Review apps waiting for test
+
+In _fdroiddata_ when a merge request for a new app is mostly ready, it will be marked as [review request](https://gitlab.com/fdroid/fdroiddata/-/merge_requests/?label_name%5B%5D=review-requested). The metadata has been good but the app itself needs to be tested and reviewed. If you'd like to help you can [test them](https://gitlab.com/fdroid/wiki/-/wikis/Internal/Reviewing-new-apps) and posting the result.
 
 
 ### Translate
@@ -93,15 +99,15 @@ for discussions about translation.
 
 There are three git repositories hosted at GitLab, as follows:
 
--   Android client application -
-    <https://gitlab.com/fdroid/fdroidclient>
-    Issues suitable for new contributors are tagged
-    [help-wanted](https://gitlab.com/fdroid/fdroidclient/issues?label_name=help-wanted)
--   Server tools, for the tools for running a repository and
-    building/installing applications locally -
-    <https://gitlab.com/fdroid/fdroidserver>
--   Metadata files for applications in the main F-Droid repository -
-    <https://gitlab.com/fdroid/fdroiddata>
+- Android client application -
+  <https://gitlab.com/fdroid/fdroidclient>
+  Issues suitable for new contributors are tagged
+  [help-wanted](https://gitlab.com/fdroid/fdroidclient/issues?label_name=help-wanted)
+- Server tools, for the tools for running a repository and
+  building/installing applications locally -
+  <https://gitlab.com/fdroid/fdroidserver>
+- Metadata files for applications in the main F-Droid repository -
+  <https://gitlab.com/fdroid/fdroiddata>
 
 The easiest way to contribute to development is to make clones of these
 projects and submit merge requests. If you are making large changes, it
@@ -116,7 +122,7 @@ For working with the server project, it's a good idea to read
 ### Help with Infrastructure
 
 F-Droid provides multiple servers (builders, web portal, download areas...) which need regular maintenance, Ansible-based deployment, and hardware management.
-Further information can be found by asking on [Matrix](https://matrix.to/#/#fdroid-dev:f-droid.org), [IRC](https://webchat.oftc.net/?randomnick=1&channels=fdroid&prompt=1) (#fdroid-dev on OFTC) or team@f-droid.org.
+Further information can be found by asking on [Matrix](https://matrix.to/#/#fdroid-dev:f-droid.org), [IRC](https://webchat.oftc.net/?randomnick=1&channels=fdroid&prompt=1) (#fdroid-dev on OFTC) or <team@f-droid.org>.
 
 ### Design
 
