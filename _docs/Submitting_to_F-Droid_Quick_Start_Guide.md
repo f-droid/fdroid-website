@@ -340,13 +340,16 @@ This is a nonexhaustive list of what a reviewer would do:
 * They will try to determine a suitable update process for your
   application (e.g. by looking at how your releases relate to VCS tags
   and/or version information
-  in _AndroidManifest.xml_).
+  in _AndroidManifest.xml_, build.gradle.kts, pubspec.yaml or elsewhere).
 * They will try writing a suitable metadata file for your application,
   and add it to local F-Droid build server instance.
   (`fdroid rewritemeta`, `fdroid
   lint` are used to ensure that metadata is well-formed)
 * They will try to build your application in an isolated environment to
   see if the process succeeds and yield a functional APK.
+* Usually the Gitlab CI will be used, but for apps that need more resources
+  _(storage, memory, time)_ than what the runners can offer, they might use
+  local machines to prepare and test the metadata.
 * If all went smoothly, they will add a new metadata file to their
   local _fdroiddata_ git repository and synchronizes the change
   to GitLab.
@@ -370,9 +373,12 @@ the next step is for the main F-Droid build server to fetch
 the applications source code and related components, build the application,
 and publish it on the main F-Droid repository.
 
-This build process is done **daily**, and applications are processed
-in batch. As steps are done behind the scene and are mostly automatic;
-all the submitter needs to do is to wait for it to finish.
+This build process is not running on a schedule, a cycle is started after the
+previous one has been published, applications are processed in batch _(you can
+infer the average frequency by looking at
+[past cycles](https://gitlab.com/fdroid/f-droid.org-transparency-log/-/commits/master))_.
+As steps are done behind the scene and are mostly automatic; all the submitter
+needs to do is to wait for it to finish.
 
 A record of a successful build process for one application is provided on the
 F-Droid's website page for that specific app (e.g. [see the Build Log for the F-Droid
@@ -395,11 +401,10 @@ This timing limitation is due to the APK signing part of the build process,
 which requires human intervention on keystore access
 step.[2](https://f-droid.org/forums/topic/encouraging-f-droid-participation-by-developers/#post-17868)
 
-Nevertheless, your application will not appear in f-droid.org's Lastest
-Apps list just yet, even though people can now already search and
-download it: Once the application appeared in the main F-Droid
-repository, it would take another day before appearing on [Latest Apps
-list](https://f-droid.org/).
+After publishing, the apps are immediately available in the repository
+and any client can now update or install. The f-droid.org website takes
+time to generate pages for updated apps and new apps, for all the
+languages, so there's a slight delay until it gets updated.
 
 ## External Links
 
