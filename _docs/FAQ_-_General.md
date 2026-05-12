@@ -29,7 +29,7 @@ Some common reasons:
 
 Otherwise if you think that an app respects the Inclusion Policy and
 actually nobody is talking about it in the forum, you can try to be the
-first to do it: See the [Inclusion How-To](../Inclusion_How-To).
+first to do it: See the [Submitting to F-Droid: Quick Start Guide](../Submitting_to_F-Droid_Quick_Start_Guide).
 
 
 ### How can I keep track of new apps?
