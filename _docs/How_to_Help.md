@@ -56,12 +56,14 @@ at the top of that forum for more information.
 
 ### Update apps
 
-The procedure for updating apps is similar to adding new apps: changes
-are applied to the metadata in the _fdroiddata_ git repository. You'll
-need to already be familiar with adding new apps. Even though it should
-take much less time to update an app one should still be cautious.
-Follow the steps in the [update guide](../How_to_update_an_app)
-to minimize the risk of messing up and don't be afraid to ask for help!
+Most apps are updated automatically. But if you find an outdated app, which
+doesn't have auto update enabled, or auto update doesn't work, you can update
+it manually and fix the auto update. The procedure for updating apps is similar
+to adding new apps: changes are applied to the metadata in the _fdroiddata_
+git repository. You need to copy the last build block (or blocks if there are
+more than one apks for the same version), append it to `Builds` and update the
+`versionName`, `versionCode` and `commit`. Other fields may also need to be update
+as needed. `CurrentVersion` and `CurrentVersionCode` should also be updated.
 
 
 ### Add information about no longer maintained apps
