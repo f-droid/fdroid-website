@@ -56,7 +56,6 @@ the main repository.
 * [Submitting to F-Droid: Quick Start Guide](Submitting_to_F-Droid_Quick_Start_Guide) Add an app to f-droid.org
 * [Update Processing](Update_Processing) How updates get detected and added.
 * [Inclusion Policy](Inclusion_Policy) The rules about which apps can be a part of our collection.
-* [Inclusion How-To](Inclusion_How-To) Guidelines for how to request the inclusion of a new app.
 * [Importing Applications](Importing_Applications) Using `fdroid import` to build a new project.
 * [Building Applications](Building_Applications) Using `fdroid build` to build an app.
 * [All About Descriptions, Graphics, and Screenshots](All_About_Descriptions_Graphics_and_Screenshots) Showing off your app in F-Droid.
