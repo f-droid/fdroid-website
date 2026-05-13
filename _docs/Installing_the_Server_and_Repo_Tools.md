@@ -34,7 +34,7 @@ If you are setting up an F-Droid repository or working with `fdroidserver`, the 
 
 - **Use Docker** 
   This is useful for reproducible environments, CI setups, and testing build configurations.
-  See: [Docker executable image](https://f-droid.org/en/docs/Installing_the_Server_and_Repo_Tools/#docker-executable-image-any-platform)
+  See: [Docker executable image](https://f-droid.org/docs/Installing_the_Server_and_Repo_Tools/#docker-executable-image-any-platform)
 
 In general, start with your system package manager unless you have a specific reason to use another method.
 
