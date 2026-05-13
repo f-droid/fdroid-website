@@ -24,7 +24,7 @@ If you are setting up an F-Droid repository or working with `fdroidserver`, the 
 
 - **Use your system package manager**
   Most development and testing of `fdroidserver` is done on Debian-based distributions such as Debian and Ubuntu.
-  See: [Debian/Ubuntu/Mint installation section](https://f-droid.org/en/docs/Installing_the_Server_and_Repo_Tools/#debianubuntumintetc)
+  See: [Debian/Ubuntu/Mint installation section](https://f-droid.org/docs/Installing_the_Server_and_Repo_Tools/#debianubuntumintetc)
   Using the system package manager on these platforms is generally the most straightforward way to get started.
 
   The tools are also available for other environments such as [Guix](https://f-droid.org/en/docs/Installing_the_Server_and_Repo_Tools/#guix), which may be preferred for reproducible setups.
