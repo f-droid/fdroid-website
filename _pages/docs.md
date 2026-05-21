@@ -31,6 +31,8 @@ the main repository.
 ### More Information
 
 * [Code of Conduct](Code_of_Conduct) How to behave when communicating within F-Droid.
+* [Decision-making Policy](Decision-making_Policy) How decisions get made within the F-Droid project.
+* [Conflict of Interest Policy](Conflict_of_Interest_Policy) Measures to protect the integrity and independence of the F-Droid project.
 * [How to Help](How_to_Help) Different ways anyone can contribute to the F-Droid project.
 * [Running on old Android versions](Running_on_old_Android_versions) A list of F-Droid releases for no longer supported Android versions.
 * [Known Repositories](https://forum.f-droid.org/t/721) A list that tries to keep track of known F-Droid compatible repositories.
