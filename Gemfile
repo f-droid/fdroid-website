@@ -17,7 +17,7 @@ group :jekyll_plugins do
     gem "jekyll-paginate-v2", :git => 'https://github.com/jameshi16/jekyll-paginate-v2.git',
         :ref => '8a1df6405618fdbe922b9f4419bed59cab9d31fd'  # branch: 'cache-mismatch-error'
     gem "jekyll-polyglot", :git => 'https://github.com/untra/polyglot.git',
-        :ref => '2c977ff26f831189f1fc4d4a7c01ee43c702f633'  # 1.11.0
+        :ref => 'e688c051e6d05c20730c9f482216bfb40024585a'  # 1.13.0
     gem 'jekyll-fdroid', :git => 'https://gitlab.com/fdroid/jekyll-fdroid.git',
         :ref => 'a6b4e861ff1de24551f8747a76411eccc34b27ca'
     gem 'git'
