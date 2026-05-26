@@ -16,7 +16,7 @@ The fund is currently focused on supporting existing, widely used and impactful 
 * [Submit](https://dir.floss.fund/submit) the application via the portal FLOSS Fund
 * Await feedback - the FLOSS Fund team is very responsive to emails. Once accepted, they will reach out for paperwork i.e., residency tax documents and an agreement as required by Indian law. The disbursement is done once the documents are received.
 
-[Here](https://dir.floss.fund/view/@f-droid.org) is what the F-Droid project page looks like to see an example and here you can find the [registry](https://dir.floss.fund/) of other projects requesting funding.
+[Here](https://dir.floss.fund/view/@f-droid.org) is what the F-Droid project page looks like to see an example and here you can find the [registry](https://dir.floss.fund/) of other projects requesting funding. Please note, we are aware that there is an error message on the page and FLOSSFund is actively fixing the bug :)
 
 #### How we will use the funds
 
