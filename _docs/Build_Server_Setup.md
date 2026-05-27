@@ -226,7 +226,7 @@ root:~# adduser fdroid kvm
 ### Advanced nested KVM Setup:
 
 This section is not relevant for using F-Droid in a normal setup. If you
-want to run `fdroid build --server` flag inside a KVM, this cheaper will
+want to run `fdroid build --server` flag inside a KVM, this chapter will
 help you getting started.
 
 Consider following basic nesting setup:
