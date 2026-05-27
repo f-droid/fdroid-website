@@ -25,6 +25,7 @@ Protocols are not silver bullets that, when deployed, simply create security and
 Completely avoiding the need to trust those who create and deployed software is hard, but reducing this trust to the bare minimum is feasible and desirable. It will always feel safer to trust a company saying "You don't have to trust us, you can trust our security and test it yourself" than one saying "Just trust us".
 
 Whether in the context of discussion around digital sovereignty or pushing back against digital monopolies, creating systems that offer built-in trust rather than requiring trust in companies offers security and autonomy guarantees that are hard to overstate. For mobile app for example, this translates into:
+
 - Open and trusted protocols: building on secure foundations that are battle tested, benefit from multiple implementations and supported by a community
 - Free and open source software: providing transparency that allows code auditing
 - [Reproducible builds](https://reproducible-builds.org/): providing certainty that what you are running is what the developer released and hasn't been altered
