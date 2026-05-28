@@ -43,7 +43,11 @@ for component in COMPONENTS:
         locale = entry["code"]
         if locale not in site_languages:
             continue
-        if entry["translated_percent"] > 98 and entry["failing"] == 0:
+        # require 100% translated, otherwise there are too many merge
+        # conflicts, like when the translator is still working, and the
+        # translation bot runs and makes a merge request using an almost
+        # complete translation.
+        if entry["translated_percent"] > 100 and entry["failing"] == 0:
             merge_paths.append(get_path(component, locale))
             print(
                 component,
