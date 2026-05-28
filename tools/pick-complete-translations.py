@@ -47,7 +47,7 @@ for component in COMPONENTS:
         # conflicts, like when the translator is still working, and the
         # translation bot runs and makes a merge request using an almost
         # complete translation.
-        if entry["translated_percent"] > 100 and entry["failing"] == 0:
+        if entry["translated_percent"] == 100 and entry["failing"] == 0:
             merge_paths.append(get_path(component, locale))
             print(
                 component,
