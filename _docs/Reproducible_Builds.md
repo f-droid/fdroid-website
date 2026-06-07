@@ -596,6 +596,27 @@ android {
 }
 ```
 
+And this can also be used to change the behavior of libs from pub for Flutter apps, e.g. for `jni` pub:
+
+```kts
+import com.android.build.gradle.LibraryExtension
+subprojects {
+    plugins.withId("com.android.library") {
+        if (name == "jni") {
+            extensions.configure<LibraryExtension>("android") {
+                defaultConfig {
+                    externalNativeBuild {
+                        cmake {
+                            arguments += "-DCMAKE_SHARED_LINKER_FLAGS=-Wl,--build-id=none"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+```
+
 The `-ffile-prefix-map` flag can be used to remove embedded build path. It can be added to `CMakeLists.txt` directly:
 
 ```cmake
