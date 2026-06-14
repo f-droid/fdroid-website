@@ -16,6 +16,8 @@ module Jekyll
       site = document.site
       value = document.data[frontmatter_key]
 
+      return unless value.is_a?(String)
+
       # Value has at least one word, followed by a dot, followed by more words and dots.
       return if value !~ /^[\w\-]+\.[\w\-.]+$/
 
