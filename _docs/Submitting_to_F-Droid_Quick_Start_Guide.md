@@ -83,7 +83,7 @@ The second part controls how to build the apk. It includes:
 
 * `RepoType` and `Repo`, the metadata of the VCS of the source code
 * `Builds`, a list of build blocks each of which corresponds to an apk which has been built or will be built
-* `Binaries` and `AllowedAPKSigningKeys`, the metadata of the reference bianry for reproducible build
+* `Binaries` and `AllowedAPKSigningKeys`, the metadata of the reference binary for reproducible build
 
 When there is a new build block in `Builds`, _fdroidserver_ start a build according to it. For example,
 the following build block defines such a process:
@@ -130,7 +130,7 @@ In the following steps, we assume that the application id of your app is
 `com.example`. Please use a unique id for you app, corresponding to your domain
 name. Fork `fdroiddata`, clone the repo and create a new branch from master,
 e.g., `com.example`. There are more details in <https://gitlab.com/fdroid/fdroiddata/-/blob/master/CONTRIBUTING.md>.
-It's also recommanded to [have fdroidserver
+It's also recommended to [have fdroidserver
 installed](../Installing_the_Server_and_Repo_Tools) when you write the
 metadata. It can help you format and lint the metadata.
 Create the metadata file at `metadata/com.example.yml`. Open
@@ -153,7 +153,7 @@ manually. The `output` must be set so that _fdroidserver_ can find the apk.
 Unless you have a special reason to control the update manually, you
 should setup auto update. This reduces the maintaince cost for both F-Droid
 maintainers and you. With auto update enabled, you just need to bump the
-version and tag a new release. F-Droid will check your repo reguarly and
+version and tag a new release. F-Droid will check your repo regularly and
 update the metadata when there is a new version found. For Gradle apps
 with the `versionName` and `versionCode` in the normal location, i.e., the
 `android` block or the `AndroidManifest.xml`, no special setup is needed.
@@ -174,7 +174,7 @@ the code in `prebuild` to control the ABI. These apks with different ABIs will b
 built one by one. Please note that the version codes of different ABIs must be
 set specially. F-Droid clients always updates the app to the apk with the highest
 version code that can be installed on the device, so generally the version codes should
-have such an order: armeabi-v7a < arm64-v8a < x86 < x86_64. Because _fdroidserver_
+have such an order: armeabi-v7a < arm64-v8a < x86 < x86\_64. Because _fdroidserver_
 only keeps the apks with the highest version codes in the `repo` and others are moved
 to `archive`, the version codes of a new version must be higher than the version codes
 of an old version. In other words, the digits representing the ABI must be put at the lowest
@@ -227,7 +227,7 @@ For more information, see:
 ## Test the metadata
 
 The initial build metadata may not work as expect. We need to test it. If you have
-fdrodiserver installed, run `fdroid lint <appid>` to get some hints about general
+fdroidserver installed, run `fdroid lint <appid>` to get some hints about general
 issues and `fdroid rewritemeta <appid>` to format the metadata file. Then we can
 try building the apk with the metadata. If you want to go the hard way, please read
 [the doc](../Build_Server_Setup) about how to run the build locally. Instead, you
@@ -305,7 +305,7 @@ e-mail and some other channels.
 
 Once the inclusion proposal is filed, the application will enter a
 reviewing process where F-Droid staff look into the applications source
-code and determine whether the it fits for inclusion (and when it's
+code and determine whether it fits for inclusion (and when it's
 not, determine all necessary steps to make it so).
 
 As F-Droid is a software repository which promises users free software,
