@@ -55,7 +55,7 @@ Adding metadata can be done in the following three ways.
 ### In the application's source repository
 
 For the official F-Droid repository, it is **strongly encouraged** to add metadata in the application's source repo for
-for the following reasons:
+the following reasons:
 
 * The application's metadata is under direct control of the repository owners
 * Metadata from the repository is copied to the F-Droid repo automatically (thus no merge requests are needed)
