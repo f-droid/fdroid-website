@@ -51,10 +51,8 @@ For administrators, this is the common way how to upgrade the forum:
 * [Make a backup of the forum](https://forum.f-droid.org/admin/backups)
 * Wait until the backup finished and download it (you'll get a link by mail)
 * Go to the [upgrade section](https://forum.f-droid.org/admin/upgrade)
-* Upgrade (the different parts of) the forum, e.g. sometimes
-_docker_manager_ has available updates which need to happen before _discourse_
-* Report that all updates were successful in the
-[maintenance log](https://forum.f-droid.org/t/maintenance-log/775)
+* Upgrade (the different parts of) the forum, e.g. sometimes _docker_manager_ has available updates which need to happen before _discourse_
+* Report that all updates were successful in the [maintenance log](https://forum.f-droid.org/t/maintenance-log/775)
 
 ### Troubleshooting
 
@@ -112,4 +110,4 @@ Follow the
 
 #### More Info
 
-You can find more info about updating and maintaining the forum as well as other admin tasks in the [F-Droid forum administrator training](https://forum.f-droid.org/t/f-droid-forum-administrator-training/5527?u=paulakreuzer) topic.
+You can find more info about updating and maintaining the forum as well as other admin tasks in the [F-Droid forum administrator training](https://forum.f-droid.org/t/f-droid-forum-administrator-training/5527) topic (needs signin, limited to contributors/administrators).
