@@ -7,7 +7,7 @@ tags: android, developer-verification, distribution, privacy, ecosystem
 
 Android’s developer verification system [continues](https://android-developers.googleblog.com/2026/06/android-developer-verification.html) its rollout across the ecosystem. What began as a security proposal is now becoming a platform-level requirement affecting how applications are distributed on Android, including outside Google Play.
 
-From F-Droid’s perspective[1](https://f-droid.org/en/2026/02/24/open-letter-opposing-developer-verification.html),[2](https://f-droid.org/en/2025/10/21/navigating-the-digital-markets-act-digital-services-act-and-the-online-safety-act.html), [3](https://f-droid.org/en/2025/09/22/google-developer-verification-policy-and-the-dma.html), this represents a structural shift away from open application distribution and towards a system where publishing software depends on centralised identity verification.
+From F-Droid’s view [1]https://f-droid.org/en/2026/02/24/open-letter-opposing-developer-verification.html), [2](https://f-droid.org/en/2025/10/21/navigating-the-digital-markets-act-digital-services-act-and-the-online-safety-act.html), [3](https://f-droid.org/en/2025/09/22/google-developer-verification-policy-and-the-dma.html), this represents a structural shift away from open application distribution and towards a system where publishing software depends on centralised identity verification.
 
 ---
 
@@ -50,6 +50,8 @@ This introduces a tiered model:
 - fully verified developers with standard distribution access  
 - restricted accounts with limited deployment scope  
 - unverified developers increasingly blocked from installation pathways on certified devices  
+
+Google’s [documentation](https://developer.android.com/developer-verification) describes these limited accounts as intended for students, hobbyists, and learners, with caps on distribution and reduced requirements.
 
 ---
 
