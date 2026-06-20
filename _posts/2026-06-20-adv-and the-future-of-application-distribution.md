@@ -35,7 +35,7 @@ If installation on certified Android devices requires verified developer identit
 
 This is not just a change in mechanics. It also touches how trust is established in software ecosystems.
 
-As discussed in F-Droid’s earlier work on trust, the emphasis has always been on building trust through transparent and verifiable processes, such as open source code, reproducible builds, and auditable infrastructure, rather than delegating trust to central authorities or identity systems (https://f-droid.org/en/2026/05/27/building-trust.html). The shift towards identity-based verification moves the centre of trust away from these mechanisms and towards platform-level approval.
+As discussed [earlier](https://f-droid.org/en/2026/05/27/building-trust.html), the emphasis has always been on building trust through transparent and verifiable processes, such as open source code, reproducible builds, and auditable infrastructure, rather than delegating trust to central authorities or identity systems. The shift towards identity-based verification moves the centre of trust away from these mechanisms and towards platform-level approval.
 
 ---
 
