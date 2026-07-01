@@ -44,7 +44,7 @@ by clicking [this link](https://t.me/fdroid_translators) for Telegram, IRC at
 on OFTC, or these bridges `#fdroid-translators%irc.oftc.net@irc.jabberfr.org` / 
 `#fdroid-translators%irc.oftc.net@irc.hmm.st` for XMPP.
 
-### How translations are added to existing languages
+### How to add translations to an existing language
 
 Once logged into the [F-Droid Weblate](https://hosted.weblate.org/projects/f-droid/),
 contributors will see the page below.
@@ -75,9 +75,34 @@ Skip the translation and move to another entry by clicking on the "Skip" button.
 
 In case you made an error and would like to rectify a translation. You can go back
 to the entry with the error and correct it.Click on the "Save and Continue" button
-to save the translation.
+to save the translation. This is the same action taken to a string which has a translation
+already and you'd like to edit the current translation.
 
 ![Weblate correct translation]({% asset docs/translation-and-localization/correct-incorrect-translation.gif %})
+
+### Review of already added translations
+
+Once a translation has been added, the translation can only appear on the
+component once it has been reviewed and accepted by the reviewers of the
+said language. These reviewers have the capacity to either approve a translation
+or state that it needs editing.
+
+The state of a translation can be seen in the "Review State" section in Weblate.
+
+![Weblate review state]({% asset docs/translation-and-localization/weblate-review-state.png %})
+
+Once a translation is added to a string,the "Review State"
+radio button automatically switches to "Waiting for review".
+
+For the translation to be accepted. The reviewer has to click the "Approved" radio
+button. That is how a translation is accepted.
+
+![Weblate approve translation]({% asset docs/translation-and-localization/weblate-save-and-accept-review.gif %})
+
+In case a translation is not clear enough. The reviewer can suggest
+a new translation.
+
+![Weblate suggest translation]({% asset docs/translation-and-localization/suggest-edit.gif %})
 
 
 ### Adding a new language
