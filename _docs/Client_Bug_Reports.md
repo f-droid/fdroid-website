@@ -24,7 +24,7 @@ Sometimes, we are unable to reproduce a particular bug, and so require more feed
 
 If, after a significant amount of time, there is no response, the issue will be closed, and probably labelled with a "cant-reproduce" label. If this happens to an issue of yours, feel free to re-open it if you come back and have more information which may help resolve the issue properly.
 
-Currently, there is not a set timeframe for which these issues will be closed (i.e. no response within 4 weeks), but in the future, we may decide to do this. The reason is that as the bug list grows, it becomes harder for us to manage, and harder for new contributors to decide what they could work on.
+Currently, there is not a set time frame for which these issues will be closed (i.e. no response within 4 weeks), but in the future, we may decide to do this. The reason is that as the bug list grows, it becomes harder for us to manage, and harder for new contributors to decide what they could work on.
 
 
 ### Where to file bug report
