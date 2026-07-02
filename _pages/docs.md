@@ -72,6 +72,5 @@ the main repository.
 * [Whitelabel Builds](Whitelabel_Builds) custom builds of F-Droid
 * [Privileged Extension](https://gitlab.com/fdroid/privileged-extension/#f-droid-privileged-extension) How to use F-Droid Privileged Extension as a user and ROM developer
 * [Deploying the Website](Deploying_the_Website) How [fdroid-website.git](https://gitlab.com/fdroid/fdroid-website) becomes [f-droid.org](https://f-droid.org)
-* [Maintaining the Forum](Maintaining_the_Forum) Useful information for administrators of [F-Droid's forum](https://forum.f-droid.org)
 * [Running a Mirror](Running_a_Mirror) Instructions for setting up a repository mirror
 * [MIA Process](MIA_Process) MIA (missing in action) maintainer removal process
