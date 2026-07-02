@@ -98,7 +98,7 @@ Some other notes:
     Obviously it's for Android. Obviously it's an app.
 -   Similary, don't say "it's free software" or "it's open source"
     because obviously it is.
--   There shouldn't be any compatiblity-related things in there (e.g.
+-   Do not include compatiblity-related notes in there (e.g.
     "for Android 2.3+") because this is handled automatically. Only
     include compatibility notes when the client app doesn't
     automatically detect them.
