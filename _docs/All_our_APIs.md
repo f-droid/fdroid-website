@@ -160,7 +160,7 @@ Then there is a JSON file per APK that has been checked, where the filename
 follows the pattern `<ApplicationId>_<VersionCode>.apk.json`, for example:
 <https://verification.f-droid.org/org.fdroid.fdroid_1010050.apk.json>
 
-There is also a listing of all the successfully verified APKs:
+There is also a list of all the successfully verified APKs:
 <https://verification.f-droid.org/verified.json>
 
 
