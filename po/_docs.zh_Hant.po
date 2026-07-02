@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
-"POT-Creation-Date: 2026-05-27 22:14+0200\n"
+"POT-Creation-Date: 2026-07-02 14:05+0200\n"
 "PO-Revision-Date: 2026-05-06 08:28+0000\n"
 "Last-Translator: UDP <udp@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Chinese (Traditional Han script) <https://hosted.weblate.org/projects/f-droid/website-docs/zh_Hant/>\n"
@@ -7884,14 +7884,14 @@ msgstr ""
 msgid "Go to the [upgrade section](https://forum.f-droid.org/admin/upgrade)"
 msgstr ""
 
-#. type: Plain text
+#. type: Bullet: '* '
 #: _docs/Maintaining_the_Forum.md
-#, no-wrap
-msgid ""
-"* Upgrade (the different parts of) the forum, e.g. sometimes\n"
-"_docker_manager_ has available updates which need to happen before _discourse_\n"
-"* Report that all updates were successful in the\n"
-"[maintenance log](https://forum.f-droid.org/t/maintenance-log/775)\n"
+msgid "Upgrade (the different parts of) the forum, e.g. sometimes _docker_manager_ has available updates which need to happen before _discourse_"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/Maintaining_the_Forum.md
+msgid "Report that all updates were successful in the [maintenance log](https://forum.f-droid.org/t/maintenance-log/775)"
 msgstr ""
 
 #. type: Title ###
@@ -8007,7 +8007,7 @@ msgstr "更多資訊"
 
 #. type: Plain text
 #: _docs/Maintaining_the_Forum.md
-msgid "You can find more info about updating and maintaining the forum as well as other admin tasks in the [F-Droid forum administrator training](https://forum.f-droid.org/t/f-droid-forum-administrator-training/5527?u=paulakreuzer) topic."
+msgid "You can find more info about updating and maintaining the forum as well as other admin tasks in the [F-Droid forum administrator training](https://forum.f-droid.org/t/f-droid-forum-administrator-training/5527) topic (needs signin, limited to contributors/administrators)."
 msgstr ""
 
 #. type: Yaml Front Matter Hash Value: title
@@ -10048,6 +10048,33 @@ msgstr ""
 "        }\n"
 "    }\n"
 "}\n"
+
+#. type: Plain text
+#: _docs/Reproducible_Builds.md
+msgid "And this can also be used to change the behavior of libs from pub for Flutter apps, e.g. for `jni` pub:"
+msgstr ""
+
+#. type: Fenced code block (kts)
+#: _docs/Reproducible_Builds.md
+#, no-wrap
+msgid ""
+"import com.android.build.gradle.LibraryExtension\n"
+"subprojects {\n"
+"    plugins.withId(\"com.android.library\") {\n"
+"        if (name == \"jni\") {\n"
+"            extensions.configure<LibraryExtension>(\"android\") {\n"
+"                defaultConfig {\n"
+"                    externalNativeBuild {\n"
+"                        cmake {\n"
+"                            arguments += \"-DCMAKE_SHARED_LINKER_FLAGS=-Wl,--build-id=none\"\n"
+"                        }\n"
+"                    }\n"
+"                }\n"
+"            }\n"
+"        }\n"
+"    }\n"
+"}\n"
+msgstr ""
 
 #. type: Plain text
 #: _docs/Reproducible_Builds.md

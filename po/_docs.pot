@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2026-05-27 22:14+0200\n"
+"POT-Creation-Date: 2026-07-02 14:05+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -8178,14 +8178,16 @@ msgstr ""
 msgid "Go to the [upgrade section](https://forum.f-droid.org/admin/upgrade)"
 msgstr ""
 
-#. type: Plain text
+#. type: Bullet: '* '
 #: _docs/Maintaining_the_Forum.md
-#, markdown-text, no-wrap
-msgid ""
-"* Upgrade (the different parts of) the forum, e.g. sometimes\n"
-"_docker_manager_ has available updates which need to happen before _discourse_\n"
-"* Report that all updates were successful in the\n"
-"[maintenance log](https://forum.f-droid.org/t/maintenance-log/775)\n"
+#, markdown-text
+msgid "Upgrade (the different parts of) the forum, e.g. sometimes _docker_manager_ has available updates which need to happen before _discourse_"
+msgstr ""
+
+#. type: Bullet: '* '
+#: _docs/Maintaining_the_Forum.md
+#, markdown-text
+msgid "Report that all updates were successful in the [maintenance log](https://forum.f-droid.org/t/maintenance-log/775)"
 msgstr ""
 
 #. type: Title ###
@@ -8314,7 +8316,7 @@ msgstr ""
 #. type: Plain text
 #: _docs/Maintaining_the_Forum.md
 #, markdown-text
-msgid "You can find more info about updating and maintaining the forum as well as other admin tasks in the [F-Droid forum administrator training](https://forum.f-droid.org/t/f-droid-forum-administrator-training/5527?u=paulakreuzer) topic."
+msgid "You can find more info about updating and maintaining the forum as well as other admin tasks in the [F-Droid forum administrator training](https://forum.f-droid.org/t/f-droid-forum-administrator-training/5527) topic (needs signin, limited to contributors/administrators)."
 msgstr ""
 
 #. type: Yaml Front Matter Hash Value: title
@@ -10422,6 +10424,34 @@ msgstr ""
 #. type: Plain text
 #: _docs/Reproducible_Builds.md
 #, markdown-text
+msgid "And this can also be used to change the behavior of libs from pub for Flutter apps, e.g. for `jni` pub:"
+msgstr ""
+
+#. type: Fenced code block (kts)
+#: _docs/Reproducible_Builds.md
+#, no-wrap
+msgid ""
+"import com.android.build.gradle.LibraryExtension\n"
+"subprojects {\n"
+"    plugins.withId(\"com.android.library\") {\n"
+"        if (name == \"jni\") {\n"
+"            extensions.configure<LibraryExtension>(\"android\") {\n"
+"                defaultConfig {\n"
+"                    externalNativeBuild {\n"
+"                        cmake {\n"
+"                            arguments += \"-DCMAKE_SHARED_LINKER_FLAGS=-Wl,--build-id=none\"\n"
+"                        }\n"
+"                    }\n"
+"                }\n"
+"            }\n"
+"        }\n"
+"    }\n"
+"}\n"
+msgstr ""
+
+#. type: Plain text
+#: _docs/Reproducible_Builds.md
+#, markdown-text
 msgid "The `-ffile-prefix-map` flag can be used to remove embedded build path. It can be added to `CMakeLists.txt` directly:"
 msgstr ""
 
@@ -12464,7 +12494,7 @@ msgstr ""
 #. type: Plain text
 #: _docs/Submitting_to_F-Droid_Quick_Start_Guide.md
 #, markdown-text
-msgid "Once the inclusion proposal is filed, the application will enter a reviewing process where F-Droid staff look into the applications source code and determine whether the it fits for inclusion (and when it's not, determine all necessary steps to make it so)."
+msgid "Once the inclusion proposal is filed, the application will enter a reviewing process where F-Droid staff look into the applications source code and determine whether it fits for inclusion (and when it's not, determine all necessary steps to make it so)."
 msgstr ""
 
 #. type: Plain text
