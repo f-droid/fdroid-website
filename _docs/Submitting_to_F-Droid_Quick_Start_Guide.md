@@ -227,7 +227,7 @@ For more information, see:
 ## Test the metadata
 
 The initial build metadata may not work as expect. We need to test it. If you have
-fdroidserver installed, run `fdroid lint <appid>` to get some hints about general
+_fdroidserver_ installed, run `fdroid lint <appid>` to get some hints about general
 issues and `fdroid rewritemeta <appid>` to format the metadata file. Then we can
 try building the apk with the metadata. If you want to go the hard way, please read
 [the doc](../Build_Server_Setup) about how to run the build locally. Instead, you
