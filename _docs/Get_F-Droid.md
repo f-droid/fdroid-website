@@ -75,7 +75,7 @@ Below is the same steps as above. But with details if you are interested in thos
 1. F-Droid will automatically display its catalogue of apps. To search for apps, tap on the search button.
 1. When Android prompts, allow the F-Droid to install apps from Unknown Sources.
 1. Optionally, for stronger security, denied the Android internet browser or Android file manager to install apps from Unknown Sources. In the future, F-Droid APK will still be able to install and update any F-Droid apps to your liking.
-1. Done. You successfully install F-Droid APK.
+1. Done. You successfully installed F-Droid APK.
 
 
 
