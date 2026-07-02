@@ -71,7 +71,7 @@ The fdroiddata repo contains the [Build Metadata](../Build_Metadata_Reference)
 for all the apps of the F-Droid main repository in the `metadata` folder. The
 [fdroidserver](https://gitlab.com/fdroid/fdroidserver) is used to process
 these metadata and run the build. The file name of the metadata, i.e. `org.fdroid.fdroid`,
-corresponds to the application id of the app.
+corresponds to the Application ID of the app.
 
 The first part of the metadata is totally descriptive, including `AntiFeatures`,
 `Categories`, `AuthorName`, `AuthorEmail`, `AuthorWebSite`, `License`, `WebSite`,
@@ -126,7 +126,7 @@ Guide](../Repository_Style_Guide).
 
 ## Write the build metadata for an Gradle app
 
-In the following steps, we assume that the application id of your app is
+In the following steps, we assume that the Application ID of your app is
 `com.example`. Please use a unique id for you app, corresponding to your domain
 name. Fork `fdroiddata`, clone the repo and create a new branch from master,
 e.g., `com.example`. There are more details in <https://gitlab.com/fdroid/fdroiddata/-/blob/master/CONTRIBUTING.md>.
