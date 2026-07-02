@@ -151,7 +151,7 @@ manually. The `output` must be set so that _fdroidserver_ can find the apk.
 ## Autoupdate configuration
 
 Unless you have a special reason to control the update manually, you
-should setup auto update. This reduces the maintaince cost for both F-Droid
+should setup auto update. This reduces the maintenance cost for both F-Droid
 maintainers and you. With auto update enabled, you just need to bump the
 version and tag a new release. F-Droid will check your repo regularly and
 update the metadata when there is a new version found. For Gradle apps
