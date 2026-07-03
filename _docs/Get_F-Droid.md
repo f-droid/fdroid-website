@@ -67,7 +67,7 @@ Below is the same steps as above. But with details if you are interested in thos
 
 **Details steps for newcomers to install F-Droid APK:**
 
-1. [Tap on this link](https://f-droid.org/F-Droid.apk) to both download and start the installation of the official F-Droid APK. (Alternatively, if somehow your internet browser force you to download this `F-Droid.apk` file without automatically starting its installation, double check that this file is stored into your Android device internal storage. So that it automatically has the appropriation permissions. Do not store this file into an external storage. Then using your Android file Manager, tap on the `F-Droid.apk` file.)
+1. [Tap on this link](https://f-droid.org/F-Droid.apk) to both download and start the installation of the official F-Droid APK. (Alternatively, if somehow your internet browser forces you to download this `F-Droid.apk` file without automatically starting its installation, double check that this file is stored into your Android device internal storage. So that it automatically has the appropriation permissions. Do not store this file into an external storage. Then using your Android file Manager, tap on the `F-Droid.apk` file.)
 1. When Android prompts, allow the installation from Unknown Sources
 1. When prompts, tap on `Install` F-Droid
 1. When prompts, tap on `Open` F-Droid
