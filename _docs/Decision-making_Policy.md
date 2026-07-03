@@ -60,7 +60,7 @@ If people with a conflict of interest do not self-identify, then others can noti
 
 Core contributors (those with Reporter status), maintainers, and the Board should attempt to resolve issues in Gitlab comments, collaborative documents, or meetings as needed.
 
-A designated timeframe should be set at the outset for efficient decision-making.
+A designated time frame should be set at the outset for efficient decision-making.
 Ideally, someone volunteers to track arguments, summarize points of agreement/disagreement, and guide the conversation.
 If consensus remains unattainable, the issue is put to a vote.
 

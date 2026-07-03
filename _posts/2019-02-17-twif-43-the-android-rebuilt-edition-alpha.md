@@ -44,7 +44,7 @@ The goal is to get it so that apps can use it instead of maven.google.com and an
 
 * DNS and ping is in generally working well
 * fdroid\_us is on average available at 88%
-* fdroid\_de is in the same timeframe available on 64%
+* fdroid\_de is in the same time frame available on 64%
 * nights (1-7 o'clock german time) are quite good (4-7 o'clock directly after an index update which contains often used apps) but daytime is in general bad performing (so taking more then 10s to respond on pings)
 
 You can checkout [this](https://monitor.msg-net.de/d/kXzI4Jliks/worldping-endpoint-f-droid-org?orgId=2&from=now%2Fw&to=now&refresh=1m) for "this week so far" or play with different settings on that dashboard.
