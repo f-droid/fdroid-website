@@ -18,7 +18,7 @@ forum: "https://forum.f-droid.org"
 
 This Week In F-Droid {{ page.edition }}, Week {{ page.date | date: "%V, %G" }} <a href="{{ site.baseurl }}/feed.xml"><img src="{% asset Feed-icon-16x16.png %}" alt="Feed"></a>
 
-In this edition: Not too much occured this week but we do have a good number of updated apps including updates to the much loved NewPipe YouTube client and a streaming music app for YouTube too. All total there are 6 new and {{ page.number_of_updated_apps }} updated apps.
+In this edition: Not too much occurred this week but we do have a good number of updated apps including updates to the much loved NewPipe YouTube client and a streaming music app for YouTube too. All total there are 6 new and {{ page.number_of_updated_apps }} updated apps.
 <!--more-->
 
 **[F-Droid](https://f-droid.org/)** is a [repository](https://f-droid.org/packages/) of verified [free and open source](https://en.wikipedia.org/wiki/Free_and_open-source_software) Android apps, a **[client](https://f-droid.org/packages/org.fdroid.fdroid/)** to access it, as well as a whole "app store kit", providing all the tools needed to set up and run an app store. It is a community-run free software project developed by a wide range of contributors. This is their story this past week.
