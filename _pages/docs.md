@@ -47,6 +47,7 @@ the main repository.
 * [Verifying downloaded F-Droid.apk](Verifying_Downloaded_APK) Verifying downloaded F-Droid.apk.
 * [Licenses](Licenses) An overview of the licenses used throughout the project.
 * [Government Requests](Government_Requests) Listing of when F-Droid was legally required to turn over user data.
+* [Hide F-Droid](Hide_F-Droid) How to hide F-Droid on your system.
 
 
 ### Developers
