@@ -147,10 +147,25 @@ module FDroid
         @category_groups_mapping ||= {}
       end
 
-      def self.process_category_groups(full = false)
+      def self.process_category_groups(sort_by_name = true, full = false)
         mapping = get_category_groups_mapping
-        strings = get_strings['en']
-        get_category_groups.each do |key, group|
+        groups = get_category_groups
+        keys = groups.keys
+        if sort_by_name
+          strings = get_strings['en']
+          keys.sort_by! do |key|
+            name = groups[key]['name']
+            if name&.start_with?('R.string.')
+              name = strings[name[9..-1]]
+            end
+            (name || key).to_s.downcase
+          end
+        end
+        i = 0
+        len = keys.length
+        while i < len
+          key = keys[i]
+          group = groups[key]
           if full
             mapping[key] = group.transform_values do |value|
               value.is_a?(String) && value.start_with?('R.string.') ? value[9..-1] : value
@@ -158,6 +173,7 @@ module FDroid
           else
             mapping[key] = group['categories']
           end
+          i = i.succ
         end
         mapping unless mapping.empty?
       end
