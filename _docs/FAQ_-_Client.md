@@ -123,10 +123,10 @@ don't do that, and we're not going to do it.
 Theoretically, the number of downloads is available via our web server
 logs. However, this would be a meaningless figure because:
 
-1.  I might download an app, and decide not to install it
-2.  I might download and install it, then uninstall it immediately
-    because I don't like it
-3.  I might download my app 1,000,000 times to make it look popular
+1. I might download an app, and decide not to install it
+2. I might download and install it, then uninstall it immediately
+   because I don't like it
+3. I might download my app 1,000,000 times to make it look popular
 
 Additionally, on a technical level, we don't even track that
 information. While the back-end server does track hits on each APK,
