@@ -9,23 +9,24 @@ title: FAQ - Client
 
 ### The client shows a newer version. Why didn't it notify me of an update?
 
-Assuming you have update notifications switched on (in Preferences) this
+Assuming you have update notifications switched on (in Settings) this
 probably means the newer version is not *recommended* for your device.
 
 In the list of versions in the client, the *recommended version* is
-identified by a '\*'. This is the version which is closest to the
+identified by a "Suggested" label. This is the version which is closest to the
 *current version* &ndash; the version that the developers of the
-application publish to Google Play or their website, or tag in their
-source code repository. There may be newer versions than this in the
-list &ndash; they could be, for example, test or beta versions. You can
+application publish in their source code repository and want users to install.
+There may be newer versions than this in the list &ndash; they could be, for
+example, test or beta versions. You can
 install these, but update notifications are not shown because the
 Version Code (Android's scheme for version numbering) is greater than
-the _CurrentVersionCode_.
+the _CurrentVersionCode_ defined in the repository metadata.
 
 For third-party repositories, it may also be the case that the
 maintainers neglected to update the current version in their
 repository's metadata.
 
+You can install a non-recommended version from the Versions list manually or on the app page, in the menu, F-Droid client offers an option to "Allow beta updates" that will always mark the highest available and compatible version as an update.
 
 ### Why does F-Droid need these permissions?
 
@@ -93,14 +94,6 @@ Temporarily store and use downloaded files on external storage:
 F-Droid [Privileged Extension](https://gitlab.com/fdroid/privileged-extension/) is also relevant here, although it falls outside of the Android system of declaring permissions. Privileged Extension is installed with [`priv-app`](https://source.android.com/docs/core/permissions/perms-allowlist) permissions, which gives F-Droid system-level access privileges to Android. The use of Privileged Extension improves security by allowing automatic app updates as well as letting the user leave the "Unknown Sources" setting off. Privileged Extension is designed on the principals of "least privilege", so that elevated powers are only granted where they are absolutely needed, and those powers are limited as much as possible.  In order to make it possible outside reviewers to confirm that, we have made Privileged Extension as simple and small as possible.
 
 
-### What is expert mode?
-
-Enabling the 'Expert Mode' setting in Preferences will make the client
-display additional information which is probably not useful to most
-people. This includes things like package IDs and signature hashes. Some
-extra configuration options also appear.
-
-
 ### I can download apps, but then "Install" is disabled. Why?
 
 Some users have apps such as Twilight installed, which draw directly to
@@ -116,6 +109,9 @@ See [Issue 151](https://gitlab.com/fdroid/fdroidclient/issues/151) or
 comment](https://plus.google.com/116713673773180618201/posts/UvW3tgSgdUp)
 for more details.
 
+Newer Android versions have a system feature for this already, so a 3-rd party app is
+not needed anymore.
+
 
 ### Why doesn't the client show the number of installs/downloads for each app?
 
@@ -127,10 +123,10 @@ don't do that, and we're not going to do it.
 Theoretically, the number of downloads is available via our web server
 logs. However, this would be a meaningless figure because:
 
-1.  I might download an app, and decide not to install it
-2.  I might download and install it, then uninstall it immediately
-    because I don't like it
-3.  I might download my app 1,000,000 times to make it look popular
+1. I might download an app, and decide not to install it
+2. I might download and install it, then uninstall it immediately
+   because I don't like it
+3. I might download my app 1,000,000 times to make it look popular
 
 Additionally, on a technical level, we don't even track that
 information. While the back-end server does track hits on each APK,
@@ -144,6 +140,8 @@ it actually mean? Are you going to use an app just because lots of
 others do, or ignore it because few others have discovered it yet? Is
 this a sensible way to decide whether something is useful to you or not?
 Perhaps you should just try it.
+
+Some [stats](https://fdroid.gitlab.io/metrics/) are published from the main servers, excluding mirrors. Since client version 2.0 these stats are used to display the "Most downloaded" list in the Discover screen, sorted by their last update.
 
 ### How can I send or setup the F-Droid app using NFC or Android Beam?
 
@@ -160,3 +158,15 @@ The F-Droid security model started out with HTTPS connections and signed
 metadata. It has been evolving, inspired by [Debian](https://wiki.debian.org/SecureApt), [The Update
 Framework](https://github.com/theupdateframework/tuf/blob/develop/docs/tuf-spec.txt),
 and other things. You can read about details here: [Security Model](../Security_Model).
+
+### How can I hide F-Droid on my system?
+
+Sometimes you may want to hide F-Droid app for some reasons. F-Droid 1.x version has a function to change the app icon in the launcher to a calculator. A real calculator is opened from the icon and you can input a secret code to get F-Droid back. Sounds interesting, right? But if you long press on the calculator icon and open the app info, you can see the app name and the icon which are not changed. There is not too much an app can do to hide itself. But there are some alternative approaches which work better. Do note that these tricks can't trick a professional checker. If you really want to hide something, just destroy your device completely. Always choose the approach based on your _threat model_, there is no perfect approach for everyone.
+
+#### Hide the icon from the launcher
+
+Many launchers support hiding apps from the drawer. It's likely the stock launcher supports it. If it's not supported in the stock launcher, you can get one from F-Droid, e.g., the KISS launcher. In different launchers the UI is different. Generally you can choose some apps in the settings of the launcher and they won't show in the drawer. You can still add them to the home screen and remove them quickly. If the checker only checks the app list in the launcher, this approach works. But if the checker looks at the app list in system settings, then they can still find all the installed apps.
+
+#### Install the app in Private Space
+
+Private Space is a new feature added in Android 15. You can install F-Droid in Private Space and it won't be shown in the launcher nor the app list in the system settings when the Private Space is locked. But the checker can still force you to open Private Space though - if they can force you to open the phone in the first place. You can even hide the Private Space entry from the launcher so that it's not shown unless you input a keyword in the search bar. However, the current implementation in AOSP doesn't support custom keywords so if the checker knows this function, they can open Private Space pretty easily. Some custom systems support similar but more powerful functions, e.g., in some systems, you can set a different pin or fingerprint to open the Private Space from the lock screen directly. If your system support such functions, you can have a try.
