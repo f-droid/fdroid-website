@@ -645,6 +645,8 @@ Compiler and linker arguments can be added to [Cargo `build.rustflags`](https://
 Linker arguments can be added with `-C link-args=-Wl,<linker args>` and `--remap-path-prefix=<old>=<new>`
 can be added to strip build paths.
 
+An unstable feature [trim-paths](https://doc.rust-lang.org/cargo/reference/unstable.html#profile-trim-paths-option) is added to Cargo to remove all the absolute paths in rust.
+
 The Rust toolchain should be pinned to the same version as upstream. This can be done when installing rustup with `rustup-init.sh -y --default-toolchain <version>`.
 
 When `openssl` crate uses vendored OpenSSL build, the OpenSSL lib needs to be configured specially to be reproducible. `SOURCE_DATE_EPOCH` can be set to remove the embedded timestamps and `CARGO_TARGET_DIR` can be set to a absolute path, e.g. `/tmp/build` to make the embedded path reproducible between different machines. NDK also need to be in the same path which can be solved by linking it to the same path.
