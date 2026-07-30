@@ -61,6 +61,7 @@ Guardian Project repo config enabled by default.
     "enabled": true
   }
 ]
+```
 
 #### How to add pre-installed repositories
 
