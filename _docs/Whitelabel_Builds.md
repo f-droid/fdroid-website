@@ -62,7 +62,6 @@ Guardian Project repo config enabled by default.
   }
 ]
 
-
 #### How to add pre-installed repositories
 
 If you are publishing an Android distribution, you can add some extra pre-installed repositories to the F-Droid app which otherwise only includes the official F-Droid repository.
