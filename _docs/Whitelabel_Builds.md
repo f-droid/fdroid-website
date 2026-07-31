@@ -4,6 +4,8 @@ title: Whitelabel Builds
 
 ---
 
+#### Customizing F-Droid client
+
 F-Droid can be rebranded and embedded in Android ROMs, building upon
 F-Droid as the "white-label" version. This is a basic introduction for
 how to do that. For this,
@@ -63,7 +65,7 @@ Guardian Project repo config enabled by default.
 ]
 ```
 
-#### How to add pre-installed repositories
+#### Add pre-installed repositories to your custom Android distribution
 
 If you are publishing an Android distribution, you can add some extra pre-installed repositories to the F-Droid app which otherwise only includes the official F-Droid repository.
 
