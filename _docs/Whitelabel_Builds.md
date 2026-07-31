@@ -132,13 +132,3 @@ _app/src/mycompany/res/menu/main.xml_, and removing and/or customizing
 the items there.
 
 
-#### Preferences
-
-For a custom build that enables Automatic Updates by default, override
-_app/src/main/res/xml/preferences.xml_. You can customize the
-preferences and their default values in
-_app/src/mycompany/res/xml/preferences.xml_. The fully automatic
-update requires
-[Privileged Extension](https://gitlab.com/fdroid/privileged-extension). With
-regular access, the updates will only automatically download. The user
-still needs to click install on each one.
