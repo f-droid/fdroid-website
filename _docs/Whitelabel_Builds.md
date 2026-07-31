@@ -124,11 +124,4 @@ The official variants of the F-Droid app have these package names that could rep
 * `org.fdroid.fdroid`
 * `org.fdroid.basic`
 
-#### Removing ActionBar/Menu Items
-
-To hide things like "Swap Apps" or "Repositories", override
-_app/src/main/res/menu/main.xml_ by copying it into
-_app/src/mycompany/res/menu/main.xml_, and removing and/or customizing
-the items there.
-
 
