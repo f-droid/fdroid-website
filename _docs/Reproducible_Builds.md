@@ -539,6 +539,16 @@ Or like this, e.g. Java 17 vs Java 21:
 
 Different NDK versions also produce different binaries. Generally this can be recognized via the metadata, e.g. LLD version, in the native libs. However, since NDK r26d a weird behaviour is observed that sometimes only the `.shstrtab` sections in ELF of the native libs are changed when NDK is installed. The native libs may be built along with the app or fetched from maven repo. If AGP finds that the NDK is installed, it will use NDK to strip the native lib but in fact it only messes up the `.shstrtab` section of the native lib. The NDK setup needs to be checked carefully to ensure it matches upstream setup, including the NDK version and if it's used by AGP.
 
+F-Droid build server currently supports the following JDK versions:
+
+* 25 from Debian Trixie
+* 21 from Debian Trixie
+* 17 from Debian Bookworm
+* 11 from Debian Bullseye
+* 8 from Debian Sid
+
+Note that versions not from the current Debian stable (Trixie) might become unavailable as time passes, so you are encouraged to update as much as possible.
+
 #### Support 16 KB page sizes
 
 Beginning with Android 15, Android supports devices that are configured to use a page
