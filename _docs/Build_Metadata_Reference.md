@@ -77,10 +77,6 @@ The following sections describe the fields recognised within the file.
 * [_Translation_](#Translation)
 * [_Changelog_](#Changelog)
 * [_Donate_](#Donate)
-* [_Liberapay_](#Liberapay)
-* [_OpenCollective_](#OpenCollective)
-* [_Bitcoin_](#Bitcoin)
-* [_Litecoin_](#Litecoin)
 * [_Summary_](#Summary)
 * [_Description_](#Description)
 * [_MaintainerNotes_](#MaintainerNotes)
@@ -252,28 +248,6 @@ and if they change to a different service or account, or if the link format
 changes, things could go wrong. It is always best to use a link that the
 developer explicitly makes public, rather than something that is auto-generated
 'button code' (e.g. PayPal, Stripe, Ko-Fi, Patreon, etc.).
-
-### _Liberapay_<a name="Liberapay"></a><a name="LiberapayID"></a>
-
-The project's Liberapay (<https://liberapay.com>) user or group name, if
-it has one. This should be an alphanumeric name, such that (for
-example) <https://liberapay.com/xxxxx> which redirects to your account
-page. This used to be _LiberapayID_, which was a numeric ID.
-
-### _OpenCollective_<a name="OpenCollective"></a>
-
-The project's Open Collective (<https://opencollective.com>) user or
-group name, if it has one. This should be an alphanumeric name, such
-that (for example) <https://opencollective.com/xxxxx> redirects to your
-account page.
-
-### _Bitcoin_<a name="Bitcoin"></a>
-
-A bitcoin address for donating to the project.
-
-### _Litecoin_<a name="Litecoin"></a>
-
-A litecoin address for donating to the project.
 
 ### _Summary_<a name="Summary"></a>
 
@@ -1084,3 +1058,37 @@ source code, and since when have they been doing so.
 Comma-separated list of application IDs that this app provides. This
 field was only ever a stub and was never used for anything. It was
 never supported in _index-v1.json_ nor _.yml_ metadata files.
+
+### _Liberapay_<a name="Liberapay"></a><a name="LiberapayID"></a>
+
+Deprecated: add the liberapay account/donate URL to [_Donate_](#Donate) instead
+of using this field.
+
+The project's Liberapay (<https://liberapay.com>) user or group name, if
+it has one. This should be an alphanumeric name, such that (for
+example) <https://liberapay.com/xxxxx> which redirects to your account
+page. This used to be _LiberapayID_, which was a numeric ID.
+
+### _OpenCollective_<a name="OpenCollective"></a>
+
+Deprecated: add the Open Collective account/donate URL to [_Donate_](#Donate)
+instead of using this field.
+
+The project's Open Collective (<https://opencollective.com>) user or
+group name, if it has one. This should be an alphanumeric name, such
+that (for example) <https://opencollective.com/xxxxx> redirects to your
+account page.
+
+### _Bitcoin_<a name="Bitcoin"></a>
+
+Deprecated: add the address URL to [_Donate_](#Donate) instead of using this
+field.
+
+A bitcoin address for donating to the project.
+
+### _Litecoin_<a name="Litecoin"></a>
+
+Deprecated: add the address URL to [_Donate_](#Donate) instead of using this
+field.
+
+A litecoin address for donating to the project.
