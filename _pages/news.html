@@ -33,7 +33,7 @@ pagination:
           src="{{ post.author | append: '.jpg' | asset }}"
           alt="{{ post.author }}"
           width="40"
-          {% unless forloop.first %}loading="lazy"{% endunless %}
+          loading="{% if forloop.first %}eager{% else %}lazy{% endif %}"
           />
         <span
           itemprop="author"
