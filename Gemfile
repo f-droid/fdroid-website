@@ -19,7 +19,7 @@ group :jekyll_plugins do
     gem "jekyll-polyglot", :git => 'https://github.com/untra/polyglot.git',
         :ref => 'e688c051e6d05c20730c9f482216bfb40024585a'  # 1.13.0
     gem 'jekyll-fdroid', :git => 'https://gitlab.com/fdroid/jekyll-fdroid.git',
-        :ref => 'a6b4e861ff1de24551f8747a76411eccc34b27ca'
+        :ref => '392966e1c1f4657551ae130b93311c43887d9f9a'
     gem 'git'
     gem 'jekyll-loading-lazy', :git => 'https://github.com/gildesmarais/jekyll-loading-lazy.git',
         :ref => '778dbfb15cf64e0bc7f950997ced0b902b4940a2'
