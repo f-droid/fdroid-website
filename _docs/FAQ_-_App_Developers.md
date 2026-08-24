@@ -379,38 +379,3 @@ have got. In the longer run we want to improve donations via F-Droid so
 you can be supported financially and we already support Bitcoin, Litecoin,
 Open Collective and Liberapay as well as any other payment method
 that you can suggest via a website.
-
-
-### How is the F-Droid client git workflow structured?
-
-`git` allows tons of flexibility in the workflow of how people work
-together, so it is important to clearly define the workflow of this
-community so that people know what to expect. The `git` workflow the
-F-Droid client app uses is relatively simple and based on the very common
-workflow established by github.com, gitlab.com and others like it.
-Here's a break down of what that means:
-
-* all development work happens in the `master` branch
-* code is submitted for inclusion via Merge Requests (MRs)
-* releases happen in a short-lived, stable release branch per major
-  release (e.g. `stable-0.95`, `stable-0.96`, `stable-0.97`, etc.)
-* the work that goes into the stable release branch must be tightly
-  focused and as small as possible to keep the release cycle as short
-  as possible
-* the `master` branch must never be merged with any stable release
-  branch
-* stable release branches must never be merged with the `master`
-  branch
-* Merge Requests for a stable release branch can include commits from
-  `master`
-* not all commits that are included in a stable release branch are
-  required to be in `master`
-* what you do in your git forks is up to you, but the final merge
-  request should not include merge commits
-
-Here is the discussion from the meeting where we nailed this down:
-<https://web.archive.org/web/20171220230923/https://botbot.me/freenode/fdroid-dev/2015-08-04/?msg=46407489&page=1>
-
-This article includes a good discussion of "feature branches" versus
-"release branches" and short-lived vs. long-lived branches:
-<http://blogs.atlassian.com/2013/11/the-essence-of-branch-based-workflows/>
