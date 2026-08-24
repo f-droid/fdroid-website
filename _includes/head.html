@@ -35,11 +35,6 @@
     <meta property="og:image" content="{{ site.url }}{% asset fdroid-logo.png %}">
   {%- endif %}
 
-  <link rel="preload" href="{% asset roboto.ttf %}" as="font" type="font/ttf" crossorigin>
-  <link rel="preload" as="style" href="{{ site.baseurl }}/css/main.css">
-  <link rel="dns-prefetch" href="https://search.f-droid.org">
-  <link rel="stylesheet" href="{{ site.baseurl }}/css/main.css">
-
   {% comment -%}
     There seems to be a regression introduced in jekyll-polyglot v1.7.0 with the optional `lang_id` key in the frontmatter
     which renders `page.permalink` to be potentially empty (namely, for blog posts);
@@ -56,6 +51,16 @@
   {% else -%}
     {% assign rel_page_url = page_permalink | replace:'index.html','' -%}
   {% endif -%}
+
+  <link rel="preload" href="{% asset roboto.ttf %}" as="font" type="font/ttf" crossorigin>
+  <link rel="preload" as="style" href="{{ site.baseurl }}/css/main.css">
+  {% if rel_page_url == '/' or page.url == '/' or page.permalink == '/' -%}
+  <link rel="preload" as="image" href="{{ site.baseurl }}/{% fdroid_screenshot %}" fetchpriority="high">
+  {%- elsif page.icon and page.icon != empty -%}
+  <link rel="preload" as="image" href="{{ site.fdroid-repo }}/{{ page.icon }}" fetchpriority="high">
+  {%- endif %}
+  <link rel="dns-prefetch" href="https://search.f-droid.org">
+  <link rel="stylesheet" href="{{ site.baseurl }}/css/main.css">
 
   {% assign canonical_url = rel_page_url | absolute_url -%}
   {% comment %} the line below uses single quotes to prevent jekyll-polyglot from adding a language to the url {% endcomment -%}
