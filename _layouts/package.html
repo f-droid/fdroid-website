@@ -43,7 +43,7 @@ layout: default-package-sidebar
 			{%- for anti_feature in page.anti_features %}
 			<li class="anti-feature-item">
 				<a class="anti-feature-link" href="{{ site.baseurl }}/docs/Anti-Features/#{{ anti_feature }}">
-					<img class="anti-feature-icon" src="{{ anti_feature | prepend: 'icons/antifeatures/' | append: '.svg' | asset }}" alt=""> 
+					<img class="anti-feature-icon" src="{{ anti_feature | prepend: 'icons/antifeatures/' | append: '.svg' | asset }}" alt="" loading="lazy"> 
 					<div class="anti-feature-text">
 						{{ site.data.strings.antifeatures[anti_feature] }}
 					</div>
@@ -64,7 +64,7 @@ layout: default-package-sidebar
 				{%- endif %}
 			<li class="anti-feature-item">
 				<a class="anti-feature-link" href="{{ site.baseurl }}/docs/Anti-Features/#{{ anti_feature_key }}">
-					<img class="anti-feature-icon" src="{{ anti_feature_key | prepend: 'icons/antifeatures/' | append: '.svg' | asset }}" alt="{% if page.repo.anti_features[anti_feature_key].name %}{{ page.repo.anti_features[anti_feature_key].name }}{%- endif %}"> 
+					<img class="anti-feature-icon" src="{{ anti_feature_key | prepend: 'icons/antifeatures/' | append: '.svg' | asset }}" alt="{% if page.repo.anti_features[anti_feature_key].name %}{{ page.repo.anti_features[anti_feature_key].name }}{%- endif %}" loading="lazy"> 
 					<div class="anti-feature-text">
 						<p>{% if page.repo.anti_features[anti_feature_key].description -%}
 							{{ page.repo.anti_features[anti_feature_key].description }}
@@ -147,22 +147,22 @@ layout: default-package-sidebar
 	<ul class="package-links donate-options">
 		{%- if page.openCollective != "" and page.openCollective != nil %}
 		<li class="package-link opencollective">
-			<a href="https://opencollective.com/{{ page.openCollective }}/donate"><img src="{% asset opencollective_button.png %}" alt="{{ strings.opencollective_alt }}"/></a>
+			<a href="https://opencollective.com/{{ page.openCollective }}/donate"><img src="{% asset opencollective_button.png %}" alt="{{ strings.opencollective_alt }}" loading="lazy"/></a>
 		</li>
 		{%- endif %}
 		{%- if page.liberapay != "" and page.liberapay != nil %}
 		<li class="package-link">
-			<a href="https://liberapay.com/{{ page.liberapay }}/donate"><img src="{% asset liberapay_donate_button.svg %}" alt="{{ strings.liberapay_alt }}"/></a>
+			<a href="https://liberapay.com/{{ page.liberapay }}/donate"><img src="{% asset liberapay_donate_button.svg %}" alt="{{ strings.liberapay_alt }}" loading="lazy"/></a>
 		</li>
 		{%- endif %}
 		{%- if page.bitcoin != "" and page.bitcoin != nil %}
 		<li class="package-link">
-			<a href="https://live.blockcypher.com/btc/address/{{ page.bitcoin }}" title="{{ page.bitcoin }}"><img src="{% asset bitcoin.png %}" alt="{{ strings.bitcoin_alt }}"/></a>
+			<a href="https://live.blockcypher.com/btc/address/{{ page.bitcoin }}" title="{{ page.bitcoin }}"><img src="{% asset bitcoin.png %}" alt="{{ strings.bitcoin_alt }}" loading="lazy"/></a>
 		</li>
 		{%- endif %}
 		{%- if page.litecoin != "" and page.litecoin != nil %}
 		<li class="package-link">
-			<a href="https://live.blockcypher.com/ltc/address/{{ page.litecoin }}" title="{{ page.litecoin }}"><img src="{% asset litecoin.png %}" alt="{{ strings.litecoin_alt }}"/></a>
+			<a href="https://live.blockcypher.com/ltc/address/{{ page.litecoin }}" title="{{ page.litecoin }}"><img src="{% asset litecoin.png %}" alt="{{ strings.litecoin_alt }}" loading="lazy"/></a>
 		</li>
 		{%- endif %}
 		{%- assign donatetest = page.donate | slice: 0, 8 -%}
@@ -179,19 +179,19 @@ layout: default-package-sidebar
 		<div class="frame js_frame">
 			<ul class="slides js_slides gallery">
 				{%- for screenshot in page.phone_screenshots %}
-				<li class="js_slide screenshot"><img src="{{ site.fdroid-repo}}/{{ page.package_name }}/{{ screenshot }}" alt="{{ strings.package_screenshot_alt }}" /></li>
+				<li class="js_slide screenshot"><img src="{{ site.fdroid-repo}}/{{ page.package_name }}/{{ screenshot }}" alt="{{ strings.package_screenshot_alt }}" loading="lazy" /></li>
 				{%- endfor %}
 				{%- for screenshot in page.seven_inch_screenshots %}
-				<li class="js_slide screenshot"><img src="{{ site.fdroid-repo}}/{{ page.package_name }}/{{ screenshot }}" alt="{{ strings.package_screenshot_alt }}" /></li>
+				<li class="js_slide screenshot"><img src="{{ site.fdroid-repo}}/{{ page.package_name }}/{{ screenshot }}" alt="{{ strings.package_screenshot_alt }}" loading="lazy" /></li>
 				{%- endfor %}
 				{%- for screenshot in page.ten_inch_screenshots %}
-				<li class="js_slide screenshot"><img src="{{ site.fdroid-repo}}/{{ page.package_name }}/{{ screenshot }}" alt="{{ strings.package_screenshot_alt }}" /></li>
+				<li class="js_slide screenshot"><img src="{{ site.fdroid-repo}}/{{ page.package_name }}/{{ screenshot }}" alt="{{ strings.package_screenshot_alt }}" loading="lazy" /></li>
 				{%- endfor %}
 				{%- for screenshot in page.tv_screenshots %}
-				<li class="js_slide screenshot"><img src="{{ site.fdroid-repo}}/{{ page.package_name }}/{{ screenshot }}" alt="{{ strings.package_screenshot_alt }}" /></li>
+				<li class="js_slide screenshot"><img src="{{ site.fdroid-repo}}/{{ page.package_name }}/{{ screenshot }}" alt="{{ strings.package_screenshot_alt }}" loading="lazy" /></li>
 				{%- endfor %}
 				{%- for screenshot in page.wear_screenshots %}
-				<li class="js_slide screenshot"><img src="{{ site.fdroid-repo}}/{{ page.package_name }}/{{ screenshot }}" alt="{{ strings.package_screenshot_alt }}" /></li>
+				<li class="js_slide screenshot"><img src="{{ site.fdroid-repo}}/{{ page.package_name }}/{{ screenshot }}" alt="{{ strings.package_screenshot_alt }}" loading="lazy" /></li>
 				{%- endfor %}
 			</ul>
 		</div>
@@ -335,7 +335,7 @@ layout: default-package-sidebar
 									{{ site.fdroid-repo }}/{{ page.repo.anti_features[anti_feature_key].icon.name }}
 									{%- else -%}
 									{{ anti_feature_key | prepend: 'icons/antifeatures/' | append: '.svg' | asset }}
-									{%- endif %}" alt="{% if page.repo.anti_features[anti_feature_key].name %}{{ page.repo.anti_features[anti_feature_key].name }}{%- endif %}"> 
+									{%- endif %}" alt="{% if page.repo.anti_features[anti_feature_key].name %}{{ page.repo.anti_features[anti_feature_key].name }}{%- endif %}" loading="lazy"> 
 									<div class="anti-feature-text">
 										<p>{% if page.repo.anti_features[anti_feature_key].description -%}
 											{{ page.repo.anti_features[anti_feature_key].description }}
