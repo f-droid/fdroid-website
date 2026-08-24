@@ -92,6 +92,10 @@ f-droid.org:
   rules:
     - when: manual
       if: $CI_PROJECT_PATH == "fdroid/fdroidserver"
+  cache:
+    key: "$CI_JOB_NAME-$CI_COMMIT_REF_SLUG"
+    paths:
+      - .jekyll-cache/
   script:
     - export JEKYLL_BUILD_DESTINATION=$CI_PROJECT_DIR/_site
     - '[ ! -d $JEKYLL_BUILD_DESTINATION ] && echo "ERROR $JEKYLL_BUILD_DESTINATION is not mounted inside docker!" && exit 1'
@@ -112,6 +116,10 @@ pages:
   image: docker.io/debian:bookworm
   rules:
     - if: $CI_PIPELINE_SOURCE != "trigger"
+  cache:
+    key: "$CI_JOB_NAME-$CI_COMMIT_REF_SLUG"
+    paths:
+      - .jekyll-cache/
   artifacts:
     paths:
       - public
