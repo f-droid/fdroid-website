@@ -16,7 +16,7 @@ permalink: /
             <a id="fdroid-download" data-donate-link="{{ site.baseurl }}/donate" class="material-button" href="{{ site.fdroid_apk_download_url }}">{{ strings.download_fdroid }}</a>
         </div>
         <div class="qr">
-            <img src="{% asset download-fdroid-qr.png %}" />
+            <img src="{% asset download-fdroid-qr.png %}" alt="QR code" width="200" height="200" decoding="async" />
         </div>
         <div class="pgp-verification">
           <a href="{{ site.fdroid_apk_pgp_verification_instructions_url }}">{{ strings.pgp_verification_instructions }}</a>
@@ -25,6 +25,7 @@ permalink: /
     <div class="screenshot">
         <img
             src="{% asset phone-frame.png %}" alt="{{ strings.screenshot }}"
+            width="413" height="754" fetchpriority="high" decoding="async"
             style="background: url('{{ site.baseurl }}/{% fdroid_screenshot %}') center center no-repeat; background-size: 78% auto" />
     </div>
 </div>
