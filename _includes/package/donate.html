@@ -1,0 +1,31 @@
+{% if page.openCollective != nil or page.liberapay != nil or page.bitcoin != nil or page.litecoin != nil or page.donate != nil -%}
+<h3 id="donate">{{ strings.donate }}</h3>
+<ul class="package-links donate-options">
+	{%- if page.openCollective != "" and page.openCollective != nil %}
+	<li class="package-link opencollective">
+		<a href="https://opencollective.com/{{ page.openCollective }}/donate"><img src="{% asset opencollective_button.png %}" alt="{{ strings.opencollective_alt }}"/></a>
+	</li>
+	{%- endif %}
+	{%- if page.liberapay != "" and page.liberapay != nil %}
+	<li class="package-link">
+		<a href="https://liberapay.com/{{ page.liberapay }}/donate"><img src="{% asset liberapay_donate_button.svg %}" alt="{{ strings.liberapay_alt }}"/></a>
+	</li>
+	{%- endif %}
+	{%- if page.bitcoin != "" and page.bitcoin != nil %}
+	<li class="package-link">
+		<a href="https://live.blockcypher.com/btc/address/{{ page.bitcoin }}" title="{{ page.bitcoin }}"><img src="{% asset bitcoin.png %}" alt="{{ strings.bitcoin_alt }}"/></a>
+	</li>
+	{%- endif %}
+	{%- if page.litecoin != "" and page.litecoin != nil %}
+	<li class="package-link">
+		<a href="https://live.blockcypher.com/ltc/address/{{ page.litecoin }}" title="{{ page.litecoin }}"><img src="{% asset litecoin.png %}" alt="{{ strings.litecoin_alt }}"/></a>
+	</li>
+	{%- endif %}
+	{%- assign donatetest = page.donate | slice: 0, 8 -%}
+	{%- if page.donate != "" and page.donate != nil and donatetest == "https://" %}
+	<li class="package-link">
+		<a href="{{ page.donate }}">{{ page.donate | replace_first: "https://", "" }}</a>
+	</li>
+	{%- endif %}
+</ul>
+{%- endif %}

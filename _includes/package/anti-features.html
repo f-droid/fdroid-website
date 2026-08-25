@@ -1,0 +1,49 @@
+{%- assign latest_version = page.versions.first %}
+{%- if page.anti_features != nil or page.versions.first.anti_features != nil %}
+<div class="package-anti-features" id="anti_features">
+	<h3>{{ strings.anti_features }}</h3>
+	<p>{{ strings.anti_features_warning }} <a class="anti-features-more" href="{{ site.baseurl }}/docs/Anti-Features/">{{ strings.learn_more }}</a></p>
+	<ul class="package-version-anti-features-list">
+		{%- comment %} Display Antifeatures for package (for index-v1) {% endcomment %}
+		{%- for anti_feature in page.anti_features %}
+		<li class="anti-feature-item">
+			<a class="anti-feature-link" href="{{ site.baseurl }}/docs/Anti-Features/#{{ anti_feature }}">
+				<img class="anti-feature-icon" src="{{ anti_feature | prepend: 'icons/antifeatures/' | append: '.svg' | asset }}" alt=""> 
+				<div class="anti-feature-text">
+					{{ site.data.strings.antifeatures[anti_feature] }}
+				</div>
+			</a>
+		</li>
+		{%- endfor %}
+		{%- comment %} Display Antifeatures for most recent app release (for index-v2 where Antifeatures are at version level only) {% endcomment %}
+		{%- if latest_version.anti_features_v2 %}
+			{%- assign anti_features = latest_version.anti_features_v2 %}
+		{%- else %}
+			{%- assign anti_features = latest_version.anti_features %}
+		{%- endif %}
+		{%- for anti_feature in anti_features %}
+			{%- if anti_feature[0] %}
+				{%- assign anti_feature_key = anti_feature[0] %}
+			{%- else %}
+				{%- assign anti_feature_key = anti_feature %}
+			{%- endif %}
+		<li class="anti-feature-item">
+			<a class="anti-feature-link" href="{{ site.baseurl }}/docs/Anti-Features/#{{ anti_feature_key }}">
+				<img class="anti-feature-icon" src="{{ anti_feature_key | prepend: 'icons/antifeatures/' | append: '.svg' | asset }}" alt="{% if page.repo.anti_features[anti_feature_key].name %}{{ page.repo.anti_features[anti_feature_key].name }}{%- endif %}"> 
+				<div class="anti-feature-text">
+					<p>{% if page.repo.anti_features[anti_feature_key].description -%}
+						{{ page.repo.anti_features[anti_feature_key].description }}
+					{% else -%}
+						{{ site.data.strings.antifeatures[anti_feature_key] }}
+					{%- endif %}</p>
+					{%- comment %} Opportunistically display Antifeatures explanation text for index-v2 {% endcomment %}
+					{%- if anti_feature[1] %}
+					<p>{{ anti_feature[1] }}</p>
+				{%- endif %}
+				</div>
+			</a>
+		</li>
+		{%- endfor %}
+	</ul>
+</div>
+{%- endif %}

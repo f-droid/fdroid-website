@@ -1,0 +1,28 @@
+<header class="package-header">
+	{%- if page.icon != "" and page.icon != nil %}
+	<img class="package-icon" src="{{ site.fdroid-repo }}/{{ page.icon }}" alt="{{ strings.package_icon_alt }}" />
+	{%- else %}
+	<img class="package-icon" src="{% asset ic_repo_app_default.png %}" alt="{{ strings.package_icon_alt }}" />
+	{%- endif %}
+	<div class="package-title">
+		<h3 class="package-name">
+			{{ page.title }}
+		</h3>
+		<div class="package-summary">
+			{{ page.summary }}
+		</div>
+	</div>
+</header>
+{%- if page.whats_new and page.suggested_version_name %}
+<div class="package-whats-new" id="whats_new">
+	{%- assign fmt_latest_version = '{{ latest_version }}' %}
+	{%- assign version_name = page.suggested_version_name | i18n_number %}
+	<div class="new-in-version">{{ strings.new_in_version | replace: fmt_latest_version, version_name }}</div>
+	<div dir="auto">
+		{{ page.whats_new }}
+	</div>
+</div>
+{%- endif %}
+<div class="package-description" dir="auto">
+	{{ page.description }}
+</div>
