@@ -60,21 +60,47 @@ Policy](../Inclusion_Policy) for more.
 
 ### How are donations handled?
 
-On the web site and in the F-Droid client, we provide links to donate to
-your project. Ideally you should have a dedicated page explaining how
-and why to donate your project, so we can link directly to it. Remember
-that most users will probably access this straight from the F-Droid
-client on an Android device. You should also have this information
-accessible from within your application.
+App listings on F-Droid support showing donation links to users. Those get
+published in our official Android App and on our website. We accept links to
+the donation section of your official website. Remember that most users will
+probably access this straight from the F-Droid client on an Android device. We
+also support linking directly to accounts on your donation and paypemt
+platforms. You should also have this information accessible from within your
+application.
 
-We have fields in our metadata for Bitcoin, Litecoin, Open Collective and Liberapay
-donations. Be sure to contact us if there is a change to any of those or if
-you stop accepting them; if you accept new methods you can contact us about that
-too.
+Be sure to contact us if there is a change to any of those or if you stop
+accepting them; if you accept new methods you can contact us about that too.
 
-If your app is in our repo but we are missing any of the above
-information, please make sure we know about it.
+If your app is in our repo but we are missing any of the above information,
+please make sure we know about it. You also can open a merge request on
+[F-Droid Data](https://gitlab.com/fdroid/fdroiddata) to update your
+[_Donate_](../Build_Metadata_Reference#Donate) links.
 
+
+### What platforms or payment services are supported to donation links on F-Droid?
+
+Currently, the following URL schemes are allowed for
+[_Donate_](../Build_Metadata_Reference#Donate) links: `https://`, `taler://`,
+`bitcoin:` and `litecoin:`.
+
+Links to donation accounts on these free and open source platforms/protocols
+receive user-friendly formatting on the official F-Droid website and app:
+Bitcoin, [Liberapay](https://liberapay.com), Litecoin, [Open
+Collective](https://opencollective.com), [Taler](https://taler.net).
+
+
+### How can I receive Taler donations?
+
+To receive donations using Taler, you need to sign up with a GNU Taler Merchant.
+Using the web interface or web API of your merchant, you'll have to create a
+_Template_. This is Taler lingo for a persistent link that can be used for
+accepting donations, and F-Droid supports adding it to the
+[_Donate_](../Build_Metadata_Reference#Donate) app metadata field.
+
+We are currently aware of these Taler merchants:
+
+* https://taler-ops.ch (currently only available for Swiss citizens)
+* https://backend.demo.taler.net (only for testing purposes)
 
 ### Will my app be built from source?
 
