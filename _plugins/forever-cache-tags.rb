@@ -36,6 +36,7 @@ require 'tmpdir'
 module Jekyll
   module ForeverCache
     @@assets = {}
+    @@digest_cache = {}
 
     def self.link_to_asset!(input)
       ext   = File.extname(input)
@@ -54,7 +55,7 @@ module Jekyll
     end
 
     def self.digest(path)
-      Base64.urlsafe_encode64(Digest::SHA256.file(File.join(*path.split('/'))).digest)
+      @@digest_cache[path] ||= Base64.urlsafe_encode64(Digest::SHA256.file(File.join(*path.split('/'))).digest)
     end
 
     def self.directory(ext)
