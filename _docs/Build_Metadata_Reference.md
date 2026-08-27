@@ -239,15 +239,19 @@ applications have one.
 
 ### _Donate_<a name="Donate"></a>
 
-The URL to donate to the project. This should be the project's donate
-page if it has one.
+Optional list/array of URLs to donate to the project. Publish donation
+addresses for this project here.
 
-It is possible to use a direct PayPal link here, if that is all that is
-available. However, bear in mind that the developer may not be aware of
-that direct link, and if they later changed to a different PayPal
-account, or the PayPal link format changed, things could go wrong. It is
-always best to use a link that the developer explicitly makes public,
-rather than something that is auto-generated 'button code'.
+Allowed URL schemes are `https://`, `taler://`, `bitcoin:` and `litecoin:`.
+Additionally, on our official app and website, we will present donation links
+to these supported platforms in a user-friendly way: `opencollective.com`,
+`liberapay.com`. The order of this list will be preserved.
+
+Bear in mind that developers may not be aware of donation links published here,
+and if they change to a different service or account, or if the link format
+changes, things could go wrong. It is always best to use a link that the
+developer explicitly makes public, rather than something that is auto-generated
+'button code' (e.g. PayPal, Stripe, Ko-Fi, Patreon, etc.).
 
 ### _Liberapay_<a name="Liberapay"></a><a name="LiberapayID"></a>
 
