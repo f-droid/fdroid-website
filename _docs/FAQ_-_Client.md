@@ -161,7 +161,7 @@ and other things. You can read about details here: [Security Model](../Security_
 
 ### How can I hide F-Droid on my system?
 
-Sometimes you may want to hide F-Droid app for some reasons. F-Droid 1.x version has a function to change the app icon in the launcher to a calculator. A real calculator is opened from the icon and you can input a secret code to get F-Droid back. Sounds interesting, right? But if you long press on the calculator icon and open the app info, you can see the app name and the icon which are not changed. There is not too much an app can do to hide itself. But there are some alternative approaches which work better. Do note that these tricks can't trick a professional checker. If you really want to hide something, just destroy your device completely. Always choose the approach based on your _threat model_, there is no perfect approach for everyone.
+Many apps can change their icons and even app names. This is visible where the apps are listed in the launcher. F-Droid can change itself into a calculator. A real calculator is opened from the icon and you can input a code to get F-Droid back. These kinds of disguises only obscure the app specifically in the launcher, not everywhere.  For example, if you long press the calculator icon and open App Info, the actual app name and the icon are there plain to see. There is not much an app can do to hide itself. But there are some alternative approaches that might work better for you.  Do note that these tricks can't trick a professional checker. If you really want to hide something, destroy your device completely. Always choose the approach based on your _threat model_, there is no perfect approach for everyone.
 
 #### Hide the icon from the launcher
 
