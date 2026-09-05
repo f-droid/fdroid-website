@@ -195,12 +195,12 @@ layout: default-package-sidebar
 				{%- endfor %}
 			</ul>
 		</div>
-		<span class="js_prev slider_nav prev" style="display: none">
+		<button type="button" class="js_prev slider_nav prev" style="display: none" aria-label="{{ strings.previous_screenshot }}">
 			<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 501.5 501.5"><g><path fill="#2E435A" d="M302.67 90.877l55.77 55.508L254.575 250.75 358.44 355.116l-55.77 55.506L143.56 250.75z"/></g></svg>
-		</span>
-		<span class="js_next slider_nav next" style="display: none">
+		</button>
+		<button type="button" class="js_next slider_nav next" style="display: none" aria-label="{{ strings.next_screenshot }}">
 			<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 501.5 501.5"><g><path fill="#2E435A" d="M199.33 410.622l-55.77-55.508L247.425 250.75 143.56 146.384l55.77-55.507L358.44 250.75z"/></g></svg>
-		</span>
+		</button>
 	</div>
 	{%- endif %}
 
@@ -212,8 +212,7 @@ layout: default-package-sidebar
 	{%- endif %}
 	{%- assign packages_with_src = page.versions | where_exp: "package", "package.srcname != '' and package.srcname != nil" %}
 	<div class="package-versions">
-		<a name="versions"></a>
-		<h3>{{ strings.versions }}</h3>
+		<h3 id="versions">{{ strings.versions }}</h3>
 		{%- if page.package_name == "org.fdroid.basic" %}
 			<!--no {{ site.data.strings.index.download_fdroid }} button because this is {{ page.package_name }} -->
 		{%- else %}
@@ -241,11 +240,11 @@ layout: default-package-sidebar
 			{%- assign last_whats_new = package.whats_new %}
 			{%- endif %}
 			<li class="package-version" {% if forloop.first %}id="latest"{% endif %}>
-			{%- if page.suggested_version_name == package.version_name and suggestedDisplayed != true %}<a name="suggested"></a>{% endif %}
+			{%- if page.suggested_version_name == package.version_name and suggestedDisplayed != true %}<span id="suggested"></span>{% endif %}
 				<div class="package-version-header">
 					{%- assign package_added_date = package.added | date: site.data.strings.news.date_format %}
-					<a name="{{ package.version_name }}"></a>
-					<a name="{{ package.version_code }}"></a>
+					<span id="{{ package.version_name }}"></span>
+					<span id="{{ package.version_code }}"></span>
 					{%- comment %}fmt_package_version_* are strings in the JSON that are replaced here{% endcomment %}
 					{%- assign fmt_package_version = '{{ package_version }}' %}
 					{%- assign version_name = package.version_name | i18n_number %}
