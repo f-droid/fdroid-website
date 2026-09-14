@@ -111,7 +111,7 @@ an F-Droid client on your Android device to test it out. That is done
 in the __Manage Repos__ screen available from the menu. Your repo URL
 will be the hostname or IP address of your machine with
 `/fdroid/repo/` added to the end of it, i.e.
-`https://mysecureserver.com/fdroid/repo/` or
+`https://example.com/fdroid/repo/` or
 `http://192.168.2.53/fdroid/repo/`. You can temporarily uncheck the
 official repos to easily see what F-Droid found in your new repo.
 
