@@ -16,6 +16,12 @@ which can be used to query information about the applications in the main
 repository. The JSON API currently lists the published and suggested
 versions. Archived applications and packages are not available in this API.
 
+**Note:** This API is intended for use in the pure display of information,
+e.g. showing badges.  It is not intended to be used for fetching or verifying
+apps.  For any use cases that have potential security concerns, we recommend
+using the [signed index files](#the-repo-index) and verifying the signature
+based on the pinned repo signer before using that information for signing.
+
 Example request:
 
 ```http
