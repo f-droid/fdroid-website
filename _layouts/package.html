@@ -145,6 +145,39 @@ layout: default-package-sidebar
 	{% if page.openCollective != nil or page.liberapay != nil or page.bitcoin != nil or page.litecoin != nil or page.donate != nil -%}
 	<h3 id="donate">{{ strings.donate }}</h3>
 	<ul class="package-links donate-options">
+		{%- for donate_link in page.donate %}
+		{%- comment %} Workaround jekyll template restrictions, slicing in if statements isn't supported {% endcomment %}
+		{%- assign donate_link_27 = donate_link | slice: 0, 27 %}
+		{%- assign donate_link_22 = donate_link | slice: 0, 22 %}
+		{%- assign donate_link_9 = donate_link | slice: 0, 9 %}
+		{%- assign donate_link_8 = donate_link | slice: 0, 8 %}
+
+		{%- if donate_link_27 == "https://opencollective.com/" %}
+		<li class="package-link opencollective">
+			<a href="{{ donate_link }}"><img src="{% asset opencollective_button.png %}" alt="{{ strings.opencollective_alt }}"/></a>
+		</li>
+		{%- elsif donate_link_22 == "https://liberapay.com/" %}
+		<li class="package-link">
+			<a href="{{ donate_link }}"><img src="{% asset liberapay_donate_button.svg %}" alt="{{ strings.liberapay_alt }}"/></a>
+		</li>
+		{%- elsif donate_link_8 == "bitcoin:" %}
+		{%- assign bitcoin  = donate_link | replace_first: "bitcoin:", "" -%}
+		<li class="package-link">
+			<a href="https://live.blockcypher.com/btc/address/{{ bitcoin }}" title="{{ bitcoin }}"><img src="{% asset bitcoin.png %}" alt="{{ strings.bitcoin_alt }}"/></a>
+		</li>
+		{%- elsif donate_link_9 == "litecoin:" %}
+		{%- assign litecoin  = donate_link | replace_first: "litecoin:", "" -%}
+		<li class="package-link">
+			<a href="https://live.blockcypher.com/ltc/address/{{ litecoin }}" title="{{ litecoin }}"><img src="{% asset litecoin.png %}" alt="{{ strings.litecoin_alt }}"/></a>
+		</li>
+		{%- elsif donate_link_8 == "https://" %}
+		<li class="package-link">
+			<a href="{{ donate_link }}">{{ donate_link | replace_first: "https://", "" }}</a>
+		</li>
+		{%- else %}
+		<li class="package-link">{{ donate_link }}</li>
+		{%- endif %}
+		{%- endfor %}
 		{%- if page.openCollective != "" and page.openCollective != nil %}
 		<li class="package-link opencollective">
 			<a href="https://opencollective.com/{{ page.openCollective }}/donate"><img src="{% asset opencollective_button.png %}" alt="{{ strings.opencollective_alt }}"/></a>
@@ -163,12 +196,6 @@ layout: default-package-sidebar
 		{%- if page.litecoin != "" and page.litecoin != nil %}
 		<li class="package-link">
 			<a href="https://live.blockcypher.com/ltc/address/{{ page.litecoin }}" title="{{ page.litecoin }}"><img src="{% asset litecoin.png %}" alt="{{ strings.litecoin_alt }}"/></a>
-		</li>
-		{%- endif %}
-		{%- assign donatetest = page.donate | slice: 0, 8 -%}
-		{%- if page.donate != "" and page.donate != nil and donatetest == "https://" %}
-		<li class="package-link">
-			<a href="{{ page.donate }}">{{ page.donate | replace_first: "https://", "" }}</a>
 		</li>
 		{%- endif %}
 	</ul>
