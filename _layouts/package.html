@@ -142,7 +142,7 @@ layout: default-package-sidebar
 		</li>
 	</ul>
 
-	{% if page.openCollective != nil or page.liberapay != nil or page.bitcoin != nil or page.litecoin != nil or page.donate != nil -%}
+	{% if page.donate != nil -%}
 	<h3 id="donate">{{ strings.donate }}</h3>
 	<ul class="package-links donate-options">
 		{%- for donate_link in page.donate %}
@@ -178,26 +178,6 @@ layout: default-package-sidebar
 		<li class="package-link">{{ donate_link }}</li>
 		{%- endif %}
 		{%- endfor %}
-		{%- if page.openCollective != "" and page.openCollective != nil %}
-		<li class="package-link opencollective">
-			<a href="https://opencollective.com/{{ page.openCollective }}/donate"><img src="{% asset opencollective_button.png %}" alt="{{ strings.opencollective_alt }}"/></a>
-		</li>
-		{%- endif %}
-		{%- if page.liberapay != "" and page.liberapay != nil %}
-		<li class="package-link">
-			<a href="https://liberapay.com/{{ page.liberapay }}/donate"><img src="{% asset liberapay_donate_button.svg %}" alt="{{ strings.liberapay_alt }}"/></a>
-		</li>
-		{%- endif %}
-		{%- if page.bitcoin != "" and page.bitcoin != nil %}
-		<li class="package-link">
-			<a href="https://live.blockcypher.com/btc/address/{{ page.bitcoin }}" title="{{ page.bitcoin }}"><img src="{% asset bitcoin.png %}" alt="{{ strings.bitcoin_alt }}"/></a>
-		</li>
-		{%- endif %}
-		{%- if page.litecoin != "" and page.litecoin != nil %}
-		<li class="package-link">
-			<a href="https://live.blockcypher.com/ltc/address/{{ page.litecoin }}" title="{{ page.litecoin }}"><img src="{% asset litecoin.png %}" alt="{{ strings.litecoin_alt }}"/></a>
-		</li>
-		{%- endif %}
 	</ul>
 	{%- endif %}
 
