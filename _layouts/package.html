@@ -142,43 +142,60 @@ layout: default-package-sidebar
 		</li>
 	</ul>
 
-	{% if page.donate != nil -%}
-	<h3 id="donate">{{ strings.donate }}</h3>
-	<ul class="package-links donate-options">
-		{%- for donate_link in page.donate %}
-		{%- comment %} Workaround jekyll template restrictions, slicing in if statements isn't supported {% endcomment %}
-		{%- assign donate_link_27 = donate_link | slice: 0, 27 %}
-		{%- assign donate_link_22 = donate_link | slice: 0, 22 %}
-		{%- assign donate_link_9 = donate_link | slice: 0, 9 %}
-		{%- assign donate_link_8 = donate_link | slice: 0, 8 %}
-
-		{%- if donate_link_27 == "https://opencollective.com/" %}
-		<li class="package-link opencollective">
-			<a href="{{ donate_link }}"><img src="{% asset opencollective_button.png %}" alt="{{ strings.opencollective_alt }}"/></a>
-		</li>
-		{%- elsif donate_link_22 == "https://liberapay.com/" %}
-		<li class="package-link">
-			<a href="{{ donate_link }}"><img src="{% asset liberapay_donate_button.svg %}" alt="{{ strings.liberapay_alt }}"/></a>
-		</li>
-		{%- elsif donate_link_8 == "bitcoin:" %}
-		{%- assign bitcoin  = donate_link | replace_first: "bitcoin:", "" -%}
-		<li class="package-link">
-			<a href="https://live.blockcypher.com/btc/address/{{ bitcoin }}" title="{{ bitcoin }}"><img src="{% asset bitcoin.png %}" alt="{{ strings.bitcoin_alt }}"/></a>
-		</li>
-		{%- elsif donate_link_9 == "litecoin:" %}
-		{%- assign litecoin  = donate_link | replace_first: "litecoin:", "" -%}
-		<li class="package-link">
-			<a href="https://live.blockcypher.com/ltc/address/{{ litecoin }}" title="{{ litecoin }}"><img src="{% asset litecoin.png %}" alt="{{ strings.litecoin_alt }}"/></a>
-		</li>
-		{%- elsif donate_link_8 == "https://" %}
-		<li class="package-link">
-			<a href="{{ donate_link }}">{{ donate_link | replace_first: "https://", "" }}</a>
-		</li>
+	{% if page.donate_data != nil and page.donate_data.size > 0 -%}
+	<div class="donate">
+		<h3 id="donate">{{ strings.donate }}</h3>
+		{%- for donate_item in page.donate_data %}
+		{%- if donate_item.type == "liberapay" %}
+		<a href="{{ donate_item.url }}">
+			<div class="donate-item">
+				<img class="donate-icon" src="{% asset icons/donate/liberapay.svg %}" />
+				<span>Liberapay</span>
+				<span class="donate-subtitle"> {{ donate_item.subtitle }}</span>
+			</div>
+		</a>
+		{%- elsif donate_item.type == "opencollective" %}
+		<a href="{{ donate_item.url }}">
+			<div class="donate-item">
+				<img class="donate-icon" src="{% asset icons/donate/opencollective.svg %}" />
+				<span>Open Collective</span>
+				<span class="donate-subtitle"> {{ donate_item.subtitle }}</span>
+			</div>
+		</a>
+		{%- elsif donate_item.type == "bitcoin" %}
+		<a href="{{ donate_item.url }}">
+			<div class="donate-item">
+				<img class="donate-icon" src="{% asset icons/donate/bitcoin.svg %}" />
+				<span>Bitcoin</span>
+				<span class="donate-subtitle"> {{ donate_item.subtitle }}</span>
+			</div>
+		</a>
+		{%- elsif donate_item.type == "litecoin" %}
+		<a href="{{ donate_item.url }}">
+			<div class="donate-item">
+				<img class="donate-icon" src="{% asset icons/donate/litecoin.svg %}" />
+				<span>Litecoin</span>
+				<span class="donate-subtitle"> {{ donate_item.subtitle }}</span>
+			</div>
+		</a>
+		{%- elsif donate_item.type == "taler" %}
+		<a href="{{ donate_item.url }}">
+			<div class="donate-item">
+				<img class="donate-icon" src="{% asset icons/donate/taler.svg %}" />
+				<span>Taler</span>
+				<span class="donate-subtitle"> {{ donate_item.subtitle }}</span>
+			</div>
+		</a>
 		{%- else %}
-		<li class="package-link">{{ donate_link }}</li>
+		<a href="{{ donate_item.url }}">
+			<div class="donate-item">
+				<img class="donate-icon" src="{% asset icons/donate/volunteer_activism_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg %}" />
+			{{ donate_item.url }}
+			</div>
+		</a>
 		{%- endif %}
 		{%- endfor %}
-	</ul>
+	</div>
 	{%- endif %}
 
 	{% if page.phone_screenshots or page.seven_inch_screenshots or page.ten_inch_screenshots or page.tv_screenshots or page.wear_screenshots -%}
