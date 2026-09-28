@@ -19,6 +19,6 @@ group :jekyll_plugins do
     gem "jekyll-polyglot", :git => 'https://github.com/untra/polyglot.git',
         :ref => 'e688c051e6d05c20730c9f482216bfb40024585a'  # 1.13.0
     gem 'jekyll-fdroid', :git => 'https://gitlab.com/fdroid/jekyll-fdroid.git',
-        :ref => 'a6b4e861ff1de24551f8747a76411eccc34b27ca'
+        :ref => '78cde40fbe37fa34ef0fe9ab22f4ed3f3d7eab17'
     gem 'git'
 end
