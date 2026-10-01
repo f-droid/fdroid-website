@@ -82,65 +82,6 @@ layout: default-package-sidebar
 		</ul>
 	</div>
 	{%- endif %}
-	<ul class="package-links" id="links">
-		{%- if page.author_email != "" and page.author_email != nil %}
-		<li class="package-link" id="author">
-			{{ strings.author }}:
-			<a href="mailto:{{ page.author_email }}?subject={{ site.title }}%20on%20{{ site.baseurl }}">
-				{{ page.author_name | default: page.author_email }}
-			</a>
-		</li>
-		{%- elsif page.author_name != "" and page.author_name != nil %}
-		<li class="package-link" id="author_name">
-			{{ strings.author }}: {{ page.author_name }}
-		</li>
-		{%- endif %}
-		<li class="package-link" id="license">
-			{{ strings.license }}:
-			{%- assign license = site.data.licenses.licenses[page.license] %}
-			{%- if page.license == "PublicDomain" %}
-				<a href="https://en.wikipedia.org/wiki/Public_domain">Public Domain</a>
-			{%- else %}
-				<a href="https://spdx.org/licenses/{{ page.license }}.html">{{ license.name | default: page.license }}</a>
-			{%- endif %}
-		</li>
-		{%- if page.website != "" and page.website != nil %}
-		<li class="package-link" id="website">
-			<a href="{{ page.website }}">{{ strings.website }}</a>
-		</li>
-		{%- endif %}
-		{%- if page.video != "" and page.video != nil %}
-		<li class="package-link" id="video">
-			<a href="{{ page.video }}">{{ strings.video }}</a>
-		</li>
-		{%- endif %}
-		{%- if page.issue_tracker != "" and page.issue_tracker != nil %}
-		<li class="package-link" id="issue_tracker">
-			<a href="{{ page.issue_tracker }}">{{ strings.issue_tracker }}</a>
-		</li>
-		{%- endif %}
-		{%- if page.translation != "" and page.translation != nil %}
-		<li class="package-link" id="translation">
-			<a href="{{ page.translation }}">{{ strings.translation }}</a>
-		</li>
-		{%- endif %}
-		{%- if page.source_code != "" and page.source_code != nil %}
-		<li class="package-link" id="source_code">
-			<a href="{{ page.source_code }}">{{ strings.source_code }}</a>
-		</li>
-		{%- endif %}
-		{%- if page.changelog != "" and page.changelog != nil %}
-		<li class="package-link" id="changelog">
-			<a href="{{ page.changelog }}">{{ strings.changelog }}</a>
-		</li>
-		{%- endif %}
-		<li class="package-link" id="build_metadata">
-			<a href="https://gitlab.com/fdroid/fdroiddata/tree/master/metadata/{{ page.package_name }}.yml">{{ strings.build_metadata }}</a>
-		</li>
-		<li class="package-link" id="reproducibility_status">
-			<a href="https://verification.f-droid.org/packages/{{ page.package_name }}/">{{ strings.reproducibility_status }}</a>
-		</li>
-	</ul>
 
 	{% if page.donate_data != nil and page.donate_data.size > 0 -%}
 	<div class="donate">
@@ -227,6 +168,66 @@ layout: default-package-sidebar
 		</span>
 	</div>
 	{%- endif %}
+
+	<ul class="package-links" id="links">
+		{%- if page.author_email != "" and page.author_email != nil %}
+		<li class="package-link" id="author">
+			{{ strings.author }}:
+			<a href="mailto:{{ page.author_email }}?subject={{ site.title }}%20on%20{{ site.baseurl }}">
+				{{ page.author_name | default: page.author_email }}
+			</a>
+		</li>
+		{%- elsif page.author_name != "" and page.author_name != nil %}
+		<li class="package-link" id="author_name">
+			{{ strings.author }}: {{ page.author_name }}
+		</li>
+		{%- endif %}
+		<li class="package-link" id="license">
+			{{ strings.license }}:
+			{%- assign license = site.data.licenses.licenses[page.license] %}
+			{%- if page.license == "PublicDomain" %}
+				<a href="https://en.wikipedia.org/wiki/Public_domain">Public Domain</a>
+			{%- else %}
+				<a href="https://spdx.org/licenses/{{ page.license }}.html">{{ license.name | default: page.license }}</a>
+			{%- endif %}
+		</li>
+		{%- if page.website != "" and page.website != nil %}
+		<li class="package-link" id="website">
+			<a href="{{ page.website }}">{{ strings.website }}</a>
+		</li>
+		{%- endif %}
+		{%- if page.video != "" and page.video != nil %}
+		<li class="package-link" id="video">
+			<a href="{{ page.video }}">{{ strings.video }}</a>
+		</li>
+		{%- endif %}
+		{%- if page.issue_tracker != "" and page.issue_tracker != nil %}
+		<li class="package-link" id="issue_tracker">
+			<a href="{{ page.issue_tracker }}">{{ strings.issue_tracker }}</a>
+		</li>
+		{%- endif %}
+		{%- if page.translation != "" and page.translation != nil %}
+		<li class="package-link" id="translation">
+			<a href="{{ page.translation }}">{{ strings.translation }}</a>
+		</li>
+		{%- endif %}
+		{%- if page.source_code != "" and page.source_code != nil %}
+		<li class="package-link" id="source_code">
+			<a href="{{ page.source_code }}">{{ strings.source_code }}</a>
+		</li>
+		{%- endif %}
+		{%- if page.changelog != "" and page.changelog != nil %}
+		<li class="package-link" id="changelog">
+			<a href="{{ page.changelog }}">{{ strings.changelog }}</a>
+		</li>
+		{%- endif %}
+		<li class="package-link" id="build_metadata">
+			<a href="https://gitlab.com/fdroid/fdroiddata/tree/master/metadata/{{ page.package_name }}.yml">{{ strings.build_metadata }}</a>
+		</li>
+		<li class="package-link" id="reproducibility_status">
+			<a href="https://verification.f-droid.org/packages/{{ page.package_name }}/">{{ strings.reproducibility_status }}</a>
+		</li>
+	</ul>
 
 	{% comment %}
 		Opportunistically check against the list of official f-droid.org signers if present
