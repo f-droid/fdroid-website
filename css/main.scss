@@ -21,11 +21,18 @@ $bold-font-weight:  600;
 
 $spacing-unit:      32px;
 
-$global-background: #e5e5e5;
-$content-background: #fff;
+// Colours that change with the light/dark theme are CSS custom properties,
+// defined in the light-theme and dark-theme mixins below.
+$global-background:  var(--global-background);
+$content-background: var(--content-background);
 
-$text-color:        lighten(#000, 13%);
-$text-color-light:  lighten(#000, 46%);
+$text-color:        var(--text-color);
+$text-color-light:  var(--text-color-light);
+$link-color:        var(--link-color);
+$border-color:      var(--border-color);
+
+// Brand colour, used for the navigation bar and buttons in both themes.
+// This must stay a plain colour, as it is passed to lighten()/darken().
 $primary-color:     #1976d2;
 
 $content-width:     1000px;
@@ -38,6 +45,99 @@ $tablet:            750px;
     @media screen and (max-width: $device) {
         @content;
     }
+}
+
+@mixin light-theme {
+    color-scheme: light;
+
+    --global-background: #e5e5e5;
+    --content-background: #fff;
+    --surface-background: #f5f5f5;
+    --surface-background-alt: #f9f9f9;
+    --highlight-background: #eff4f9;
+
+    --text-color: #{lighten(#000, 13%)};
+    --text-color-secondary: #444;
+    --text-color-light: #{lighten(#000, 46%)};
+    --text-color-disabled: #bbb;
+
+    --link-color: #{$primary-color};
+    --link-color-visited: #{darken($primary-color, 15%)};
+    --heading-accent-color: #0066cc;
+
+    --border-color: #ccc;
+    --input-border-color: #aaa;
+    --image-shadow-color: #aaa;
+    --code-shadow-color: #ccc;
+    --slider-arrow-color: #2e435a;
+    --icon-filter: none;
+
+    --browse-nav-active-background: #{lighten($primary-color, 50%)};
+    --browse-nav-hover-background: #{lighten($primary-color, 15%)};
+
+    --banner-danger-background: #ffb9b9;
+    --banner-danger-color: #540303;
+}
+
+@mixin dark-theme {
+    color-scheme: dark;
+
+    --global-background: #121212;
+    --content-background: #1e1e1e;
+    --surface-background: #2a2a2a;
+    --surface-background-alt: #252525;
+    --highlight-background: #1f2a36;
+
+    --text-color: #e0e0e0;
+    --text-color-secondary: #bdbdbd;
+    --text-color-light: #9e9e9e;
+    --text-color-disabled: #616161;
+
+    --link-color: #64b5f6;
+    --link-color-visited: #90a4f8;
+    --heading-accent-color: #64b5f6;
+
+    --border-color: #424242;
+    --input-border-color: #616161;
+    --image-shadow-color: rgba(0, 0, 0, .6);
+    --code-shadow-color: rgba(0, 0, 0, .6);
+    --slider-arrow-color: #b0bec5;
+    --icon-filter: invert(1);
+
+    --browse-nav-active-background: #{darken($primary-color, 20%)};
+    --browse-nav-hover-background: #{darken($primary-color, 5%)};
+
+    --banner-danger-background: #4a1414;
+    --banner-danger-color: #ffcdd2;
+}
+
+// Styles that only apply to the dark theme, for things that can't be
+// expressed with the custom properties above.
+@mixin when-dark-theme {
+    @media (prefers-color-scheme: dark) {
+        :root:not([data-theme="light"]) & {
+            @content;
+        }
+    }
+    :root[data-theme="dark"] & {
+        @content;
+    }
+}
+
+// The theme follows the operating system unless the user picked one with
+// the theme chooser, which sets data-theme on <html> (see js/theme.js).
+:root {
+    @include light-theme;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+        @include dark-theme;
+    }
+}
+
+:root[data-theme="dark"] {
+    @include dark-theme;
 }
 
 @import

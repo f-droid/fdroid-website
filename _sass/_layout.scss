@@ -1,5 +1,24 @@
 @import "jekyll-fdroid";
 
+// Make the package browsing navigation from jekyll-fdroid follow the theme.
+.browse-navigation .nav {
+    .label {
+        border-color: var(--input-border-color);
+    }
+
+    &.disabled {
+        color: var(--text-color-disabled);
+    }
+
+    &.active .label {
+        background-color: var(--browse-nav-active-background);
+    }
+
+    a:hover {
+        background: var(--browse-nav-hover-background);
+    }
+}
+
 body {
     background: $global-background;
 }
@@ -28,6 +47,19 @@ body {
 
     &:hover {
         text-decoration: none;
+    }
+
+    .site-logo-dark {
+        display: none;
+    }
+
+    @include when-dark-theme {
+        .site-logo-light {
+            display: none;
+        }
+        .site-logo-dark {
+            display: block;
+        }
     }
 
     img {
@@ -62,6 +94,35 @@ body {
             line-height: calc((#{$spacing-unit} * 1.5) - (2 * #{$border-height}));
             padding-top: $border-height;
         }
+    }
+}
+
+.theme-chooser {
+    margin-inline-start: auto;
+    padding: 0 calc(#{$spacing-unit}/2);
+    border: 0;
+    background: transparent;
+    color: #fff;
+    font: inherit;
+    font-weight: $bold-font-weight;
+    font-size: $small-font-size;
+    text-transform: uppercase;
+    cursor: pointer;
+
+    &:hover {
+        background-color: lighten($primary-color, 10%);
+    }
+
+    &:focus-visible {
+        outline: 2px solid #fff;
+        outline-offset: -4px;
+    }
+
+    // The drop down list itself uses the page colours, not the nav bar ones.
+    option {
+        background: $content-background;
+        color: $text-color;
+        text-transform: none;
     }
 }
 
@@ -120,7 +181,7 @@ body {
 
     &:not(:last-of-type) {
         padding-bottom: $spacing-unit;
-        border-bottom: 1px solid #ccc;
+        border-bottom: 1px solid $border-color;
     }
 
     @import "sidebar-donate";
@@ -162,7 +223,7 @@ body {
         margin: 0.5em;
         flex-grow: 1;
         max-width: 300px;
-        box-shadow: 3px 3px 6px #aaa;
+        box-shadow: 3px 3px 6px var(--image-shadow-color);
     }
 }
 
@@ -172,7 +233,7 @@ body {
 .post {
     .post-content {
         img {
-            box-shadow: 3px 3px 6px #aaa;
+            box-shadow: 3px 3px 6px var(--image-shadow-color);
         }
     }
 }
@@ -199,7 +260,7 @@ body {
             margin-bottom: 0.4em;
          }
 
-         background: #eff4f9;
+         background: var(--highlight-background);
          padding: 1em;
          margin-bottom: 0.5em;
      }
@@ -215,7 +276,7 @@ body {
      .package-version {
         margin: 20px 0;
         padding: 16px;
-        background: #F5F5F5;
+        background: var(--surface-background);
         // border-bottom: 1px solid #eee;
         p {
           margin: .4em 0;
@@ -247,7 +308,7 @@ body {
 
       .package-anti-features {
         padding: 1em 0;
-        border-top: solid 1px #ccc;
+        border-top: solid 1px $border-color;
         h3 {
           margin-bottom: .1em;
         }
@@ -274,7 +335,7 @@ body {
           display: flex;
           list-style: none;
           align-items: start;
-          color: #000;
+          color: $text-color;
           align-items: center;
           &:hover {
             text-decoration: none;
@@ -286,7 +347,7 @@ body {
           }
           .anti-feature-text {
             width: 85%;
-            color: #444;
+            color: var(--text-color-secondary);
             margin-right: 20px;
             font-size: .9em;
             line-height: 1.3em;
@@ -309,8 +370,8 @@ body {
      .package-links {
          @include reset-ul;
 
-         border-top: solid 1px #ccc;
-         border-bottom: solid 1px #ccc;
+         border-top: solid 1px $border-color;
+         border-bottom: solid 1px $border-color;
          padding-top: 1em;
          padding-bottom: 1em;
          margin-bottom: 1em;
@@ -473,6 +534,10 @@ body {
         .next svg, .prev svg {
             width: 25px;
 
+            path {
+                fill: var(--slider-arrow-color);
+            }
+
             position: absolute;
             top: 50%;
             margin-top: -25px;
@@ -497,13 +562,13 @@ body {
           height: 3px;
           margin-top: .7em;
           margin-inline-start: -.9em;
-          background-color: #444;
+          background-color: var(--text-color-secondary);
         }
         .permission-label {
           font-weight: bold;
         }
         .permission-description {
-          color: #444;
+          color: var(--text-color-secondary);
           font-size: .9em;
           line-height: 1.3em;
         }
@@ -580,12 +645,26 @@ body {
 }
 
 .search-input-wrp {
+  position: relative;
   margin: 0 6px 0 0;
   html[dir=rtl] & {
     margin: 0 0 0 6px;
   }
   display: flex;
   flex: 1;
+
+  // The search icon is a pseudo-element, so it can be inverted in the dark theme
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 10px;
+    width: 24px;
+    background: url('../assets/ic_search_black_24px.svg') no-repeat center;
+    filter: var(--icon-filter);
+    pointer-events: none;
+  }
 }
 
 .search-input {
@@ -594,9 +673,10 @@ body {
   box-sizing: border-box;
   width: 100%;
   padding-left: 40px;
-  background: url('../assets/ic_search_black_24px.svg') no-repeat 10px center;
+  background: transparent;
+  color: inherit;
   border-radius: 4px;
-  border: solid 1px #aaa;
+  border: solid 1px var(--input-border-color);
 }
 
 .post-content {
@@ -696,7 +776,7 @@ img {
  */
 .tutorial {
     h2 {
-        color: #0066cc;
+        color: var(--heading-accent-color);
     }
 
     h3 {
@@ -707,7 +787,7 @@ img {
     h4 {
         /*font-family: HelveticaNeue-Medium, serif;*/
         font-size: 12px;
-        color: #757575;
+        color: $text-color-light;
         letter-spacing: 0.13px;
         text-transform: uppercase;
         margin-bottom: 8px;
@@ -717,19 +797,30 @@ img {
         @include reset-ul;
 
         & > li {
+            position: relative;
             padding: 10px 0 10px 50px;
 
-            background: no-repeat left center;
+            // The icon is a pseudo-element, so it can be inverted in the dark theme
+            &:before {
+                content: "";
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                width: 50px;
+                background: no-repeat left center;
+                filter: var(--icon-filter);
+            }
 
-            &.link {
+            &.link:before {
                 background-image: url('../assets/tutorials/add-repo/icons/ic_link.svg');
             }
 
-            &.qr {
+            &.qr:before {
                 background-image: url('../assets/tutorials/add-repo/icons/ic_qr.svg');
             }
 
-            &.no-internet {
+            &.no-internet:before {
                 background-image: url('../assets/tutorials/add-repo/icons/ic_no_internet.svg');
             }
         }
@@ -759,7 +850,7 @@ img {
                 max-width: 100%;
 
                 &:not(.irregular) {
-                    box-shadow: #aaa 0 2px 5px;
+                    box-shadow: var(--image-shadow-color) 0 2px 5px;
                 }
             }
 
@@ -811,22 +902,44 @@ img {
         padding: calc(#{$spacing-unit} / 2);
         display: flex;
         justify-content: space-between;
-        background-color: #f9f9f9;
+        background-color: var(--surface-background-alt);
+
+        // The arrows are pseudo-elements, so they can be inverted in the dark theme
+        .next a, .previous a {
+            position: relative;
+
+            &:before {
+                content: "";
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                width: 32px;
+                filter: var(--icon-filter);
+            }
+        }
 
         .next a {
             text-align: right;
             padding-right: 32px;
-            background: url('../assets/tutorials/icons/ic_right.svg') no-repeat right 5px;
+
+            &:before {
+                right: 0;
+                background: url('../assets/tutorials/icons/ic_right.svg') no-repeat right 5px;
+            }
         }
 
         .previous a {
             padding-left: 32px;
-            background: url('../assets/tutorials/icons/ic_left.svg') no-repeat left 5px;
+
+            &:before {
+                left: 0;
+                background: url('../assets/tutorials/icons/ic_left.svg') no-repeat left 5px;
+            }
         }
 
         a {
             display: block;
-            color: black;
+            color: $text-color;
 
             &:hover {
                 text-decoration: none;
@@ -918,7 +1031,7 @@ div.payment-methods + table td {
     text-align: left;
 }
 div.payment-methods + table td:nth-child(1n + 2) {
-    border-right: 1px solid #ccc;
+    border-right: 1px solid $border-color;
     text-align: center;
 }
 div.payment-methods + table small {
@@ -932,7 +1045,7 @@ div.payment-methods + table th {
     padding-right: 4px;
 }
 div.payment-methods + table th:nth-child(1n + 2) {
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid $border-color;
 }
 
 /*
@@ -954,12 +1067,12 @@ div.payment-methods + table th:nth-child(1n + 2) {
   z-index: 10;
 
   &.banner--danger {
-    background: #ffb9b9;
-    border-bottom: 1px solid #540303;
-    color: #540303;
+    background: var(--banner-danger-background);
+    border-bottom: 1px solid var(--banner-danger-color);
+    color: var(--banner-danger-color);
 
     & svg {
-      fill: #540303;
+      fill: var(--banner-danger-color);
     }
   }
 

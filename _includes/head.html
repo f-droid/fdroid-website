@@ -39,6 +39,8 @@
   <link rel="preload" as="style" href="{{ site.baseurl }}/css/main.css">
   <link rel="dns-prefetch" href="https://search.f-droid.org">
   <link rel="stylesheet" href="{{ site.baseurl }}/css/main.css">
+  {% comment %} not async: the theme must be applied before the page is painted {% endcomment -%}
+  <script src="{% asset theme.js %}"></script>
 
   {% comment -%}
     There seems to be a regression introduced in jekyll-polyglot v1.7.0 with the optional `lang_id` key in the frontmatter
@@ -74,7 +76,8 @@
   <link rel="shortcut icon" href="{% asset favicon.ico %}">
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="msapplication-config" content="{% asset browserconfig.xml %}">
-  <meta name="theme-color" content="#ffffff">
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#1e1e1e" media="(prefers-color-scheme: dark)">
 
 {%- comment %} the code below uses single quotes to prevent jekyll-polyglot from adding a language to the url {% endcomment -%}
 {%- for lang in site.languages -%}
