@@ -8,6 +8,9 @@
  *
  * This is loaded synchronously from <head>, so the theme is applied before the
  * page is first painted. It is an external file because of the strict CSP.
+ *
+ * search.f-droid.org can't read this site's localStorage, so a forced theme is
+ * also passed to it as the "theme" parameter of the search forms.
  */
 (function() {
     var storageKey = 'theme';
@@ -30,9 +33,20 @@
         }
     }
 
+    function updateSearchForms(theme) {
+        var inputs = document.querySelectorAll('input.search-theme');
+        for (var i = 0; i < inputs.length; i++) {
+            inputs[i].value = theme;
+            // Disabled inputs are not submitted, so "auto" adds nothing to the URL.
+            inputs[i].disabled = theme !== 'light' && theme !== 'dark';
+        }
+    }
+
     applyTheme(getStoredTheme());
 
     document.addEventListener('DOMContentLoaded', function() {
+        updateSearchForms(getStoredTheme());
+
         var chooser = document.getElementById('theme-chooser-select');
         if (!chooser) {
             return;
@@ -54,6 +68,7 @@
                 // Storage is unavailable, so the choice only lasts for this page.
             }
             applyTheme(theme);
+            updateSearchForms(theme);
         };
     });
 })();
