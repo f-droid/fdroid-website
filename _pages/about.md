@@ -35,6 +35,8 @@ F-Droid is made by volunteers who care about free and open software. They work t
 
 F-Droid is legally represented by our [Commons Conservancy Programme](https://commonsconservancy.org/programmes/#F-Droid) which is regulated by our [statutes](https://dracc.commonsconservancy.org/0039/).
 
+The F-Droid Board provides governance and oversight for the project, supporting its long-term sustainability and helping ensure that F-Droid stays aligned with its mission of software freedom, privacy, and transparency. For more information, visit the [Board information](https://gitlab.com/fdroid/wiki/-/wikis/F-Droid-Board) and see the current [Members list](https://gitlab.com/fdroid/wiki/-/wikis/Internal/F-Droid-Board-Members).
+
 ### Get Started
 
 Ready to try F-Droid? [Get the app]({{ site.baseurl }}/docs/Get_F-Droid/) and discover thousands of free and safe apps for your device.
