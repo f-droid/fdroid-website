@@ -1,11 +1,19 @@
-
 {% assign strings = site.data.strings.sidebars.donate %}
 
 ### {{ strings.heading }}
 
-{{ strings.powered_by_donations }}
+<div>
+    {{ strings.powered_by_donations }}
+</div>
 
-{: .donate-options}
- * {:.donate-option .opencollective} [![{{ strings.opencollective_alt }}]({% asset opencollective_button.png %})](https://opencollective.com/f-droid/donate)
- * {:.donate-option .liberapay} [![{{ strings.liberapay_alt }}]({% asset liberapay_donate_button.svg %})](https://liberapay.com/F-Droid-Data/donate)
- * {:.donate-option .more} [{{ strings.more_options }}]({{ site.baseurl }}/donate)
+<div class="donate-cta">
+    <a class="donate-button" href="{{ site.baseurl}}/donate">{{ strings.donate_button_label }}</a>
+</div>
+
+<div class="donate-icons">
+    <img class="donate-option-icon sc-p9" alt="" aria-hidden="true" src="{% asset icons/donate/liberapay.svg %}">
+    <img class="donate-option-icon sc-p9" alt="" aria-hidden="true" src="{% asset icons/donate/opencollective.svg %}">
+    <img class="donate-option-icon" alt="" aria-hidden="true" src="{% asset icons/donate/taler.svg %}">
+    <img class="donate-option-icon" alt="" aria-hidden="true" src="{% asset icons/donate/noto-color-emoji-u1f3e6.svg %}" />
+    <img class="donate-option-icon" alt="" aria-hidden="true" src="{% asset icons/donate/noto-color-emoji-u1f4b3.svg %}" />
+</div>
