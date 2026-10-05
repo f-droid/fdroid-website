@@ -178,6 +178,101 @@ body {
 }
 
 /**
+ * Donate
+ */
+
+$badge-gap: 8px;
+
+.donate-quick-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $badge-gap;
+  margin-top: 48px;
+  margin-bottom: 48px;
+
+  .donate-quick-badge {
+    display: flex;
+    flex-direction: column;
+
+    background-color: $bluebox-background;
+    border: 2px solid $primary-color;
+    border-radius: 8px;
+    padding: 8px;
+
+    box-sizing: border-box;
+    min-width: 0;
+    flex: 0 0 calc((100% - 3 * #{$badge-gap}) / 4);
+
+    > a {
+      text-decoration: none;
+      &:hover {
+        text-decoration: none;
+      }
+
+      .donate-quick-title {
+        color: $primary-color;
+        text-align: center;
+        flex: 0 0 auto;
+
+        text-decoration: none;
+        &:hover {
+          text-decoration: none;
+        }
+      }
+
+      .donate-quick-lineitem {
+        flex: 1; /* fills the remaining height */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+
+        color: $text-color;
+        text-decoration: none;
+        &:hover {
+          text-decoration: none;
+        }
+
+        .donate-quick-label {
+          text-align: start;
+          margin-inline-start: 8px;
+        }
+
+        .donate-quick-big {
+          font-size: 2.5em;
+          font-weight: bold;
+
+          .donate-quick-big-sup {
+            font-size: .5em;
+          }
+        }
+
+        .donate-quick-icon {
+          font-size: 1.66em;
+        }
+
+        .donate-quick-timeframe {
+          margin-inline-start: 8px;
+          font-size: .8em;
+        }
+      }
+    }
+  }
+
+  @include media-query($content-width) {
+    .donate-quick-badge {
+      flex-basis: calc((100% - #{$badge-gap}) / 2);
+    }
+  }
+
+  @include media-query($phone) {
+    .donate-quick-badge {
+      flex-basis: 100%
+    }
+  }
+}
+
+/**
  * Package
  */
  .package {
@@ -199,7 +294,7 @@ body {
             margin-bottom: 0.4em;
          }
 
-         background: #eff4f9;
+         background: $bluebox-background;
          padding: 1em;
          margin-bottom: 0.5em;
      }

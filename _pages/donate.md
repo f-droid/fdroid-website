@@ -19,6 +19,8 @@ Received donations are an integral part of F-Droid as they support in:
 * Travel sponsorship for core contributors to organize, attend and host sessions at conferences, helping create an even bigger impact.
 * Outreach materials
 
+{% include donate-quick.html %}
+
 Donations are NOT used to financially support individual apps published on F-Droid. _To donate to app developers, use the donations options listed for each app._
 
 ### How to donate
