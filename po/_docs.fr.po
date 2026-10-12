@@ -49,7 +49,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
 "POT-Creation-Date: 2026-08-28 19:53+0200\n"
-"PO-Revision-Date: 2026-09-24 07:25+0000\n"
+"PO-Revision-Date: 2026-09-28 21:31+0000\n"
 "Last-Translator: Ldm Public <ldmpub@gmail.com>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/f-droid/website-docs/fr/>\n"
 "Language: fr\n"
@@ -2564,19 +2564,17 @@ msgstr "_Donate_ (Faire un don)<a name=\"Donate\"></a>"
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 msgid "Optional list/array of URLs to donate to the project. Publish donation addresses for this project here."
-msgstr ""
+msgstr "Liste ou tableau optionnel d'URLs permettant de faire une donation au projet. Publiez les adresses de donation du projet ici."
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
 msgid "Allowed URL schemes are `https://`, `taler://`, `bitcoin:` and `litecoin:`.  Additionally, on our official app and website, we will present donation links to these supported platforms in a user-friendly way: `opencollective.com`, `liberapay.com`. The order of this list will be preserved."
-msgstr ""
+msgstr "Les schémas de lien URL autorisés sont https://`, `taler://`, `bitcoin:` and `litecoin:`. Par ailleurs sur notre application et notre site officiels, nous présenterons de manière simple des liens de dons vers les plateformes suivantes : `opencollective.com`, `liberapay.com`. L'ordre de cette liste sera préservée."
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-#, fuzzy
-#| msgid "It is possible to use a direct PayPal link here, if that is all that is available. However, bear in mind that the developer may not be aware of that direct link, and if they later changed to a different PayPal account, or the PayPal link format changed, things could go wrong. It is always best to use a link that the developer explicitly makes public, rather than something that is auto-generated 'button code'."
 msgid "Bear in mind that developers may not be aware of donation links published here, and if they change to a different service or account, or if the link format changes, things could go wrong. It is always best to use a link that the developer explicitly makes public, rather than something that is auto-generated 'button code' (e.g. PayPal, Stripe, Ko-Fi, Patreon, etc.)."
-msgstr "Il est possible d'utiliser un lien direct à PayPal ici, si c'est tout ce qui est disponible. Cependant, il est possible que le développeur ne soit pas au courant de ce lien et s'il change plus tard à un autre compte PayPal, ou le format de lien PayPal change, ça pourrait ne pas fonctionner. Il est toujours meilleur d'utiliser un lien que le développeur rend explicitement public, plutôt que quelque chose qui est généré automatiquement."
+msgstr "Gardez à l'esprit qu'il est possible que le développeur ne soit pas au courant des liens de dons présent ici et s'il change plus tard de service ou de compte, ou bien si le format de lien change, cela pourrait ne pas fonctionner. Il est toujours mieux d'utiliser un lien que le développeur rend explicitement public, plutôt que quelque chose qui est généré automatiquement via 'button code' (p.ex. PayPal, Stripe, Ko-Fi, Patreon, etc.)."
 
 #. type: Title ###
 #: _docs/Build_Metadata_Reference.md
@@ -2755,9 +2753,8 @@ msgstr "L'emplacement des fichiers binaires utilisés dans le procédé de véri
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-#, fuzzy
 msgid "If specified, F-Droid will verify the output APK file of a build against the one specified. You can use `%v` and `%c` to point to the version name and version code of the current build. To verify the F-Droid client itself you could use: `Binaries: https://f-droid.org/repo/org.fdroid.fdroid_%c.apk`"
-msgstr "Si spécifié, F-Droid comparera le fichier APK de sortie d'une build à celui spécifié. Vous pouvez utiliser «%v» et «%c» pour pointer vers le nom et le code de version de la build actuelle. Pour vérifier le client F-Droid lui-même, vous pouvez utiliser: «Binaries: https://f-droid.org/repo/org.fdroid.fdroid_%c.apk»."
+msgstr "Si spécifié, F-Droid comparera le fichier APK de sortie d'une build à celui spécifié. Vous pouvez utiliser `%v` et `%c` pour pointer vers le nom et le code de version de la build actuelle. Pour vérifier le client F-Droid lui-même, vous pouvez utiliser : `Binaries: https://f-droid.org/repo/org.fdroid.fdroid_%c.apk`."
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -2844,12 +2841,15 @@ msgstr "    __Note__ : Ne pas utiliser le nom d'une branche ou d'une balise. Le
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "    In addition to the three, always required, parameters described above,\n"
 "    further parameters can be added (in `name: value` format) to apply further\n"
 "    configuration to the build. These are (roughly in order of application):\n"
-msgstr "    En plus des trois paramètres obligatoires décrits ci-dessus, d'autres paramètres peuvent être ajoutés (au format «nom: valeur») pour appliquer une configuration supplémentaire à la compilation. Les voici (par ordre d'application approximatif):\n"
+msgstr ""
+"    En plus des trois paramètres obligatoires décrits ci-dessus, \n"
+"…d'autres paramètres peuvent être ajoutés (au format `nom: valeur` ) pour appliquer \n"
+"…une configuration supplémentaire à la compilation. Les voici (par ordre d'application approximatif):\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -2939,15 +2939,7 @@ msgstr "`sudo: xxxx`<a name=\"build_sudo\"></a>\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-#, fuzzy, no-wrap
-#| msgid ""
-#| ":   Specifies a script to be run using `sudo bash -x -c \"xxxx\"` in the\n"
-#| "    buildserver VM guest.  This script is run with full root privileges,\n"
-#| "    but the state will be reset after each build.  The vast majority of\n"
-#| "    apps build using the standard Debian/stable base environment. This\n"
-#| "    is useful for setting up the buildserver for complex builds that\n"
-#| "    need very specific things that are not appropriate to install for\n"
-#| "    all builds, or for things that would conflict with other builds.\n"
+#, no-wrap
 msgid ""
 ":   Specifies a script to be run using `sudo bash -x -c \"xxxx\"` in the\n"
 "    buildserver VM guest. This script is run with full root privileges,\n"
@@ -2958,13 +2950,15 @@ msgid ""
 "    all builds, or for things that would conflict with other builds.\n"
 "    Don't add commands which don't need root privileges here.\n"
 msgstr ""
-":   Spécifie un scripte qui est executé avec `sudo bash -x -c \"xxxx\"` dans le\n"
-"    l'invité de VM buildserver. Ce scripte est executé avec les privilèges de racine,\n"
-"    mais l'état sera réinitialisé après chaque compilation. La vaste majorité\n"
-"    d'applications est compilé avec l'environnement de base standard Debian/stable. Ceci\n"
-"    est utile pour configuret le buildserver pour les compilations complexes qui\n"
-"    ont besoin de choses très spécifiques qui ne sont pas appropriés à installer pour\n"
-"    toutes les compilations, ou qui auront un conflit avec d'autres compilations.\n"
+":   script qui sera exécuté par `sudo bash -x -c \"xxxx\"` dans le\n"
+"    système invité (guest) de la VM du serveur de construction.\n"
+"    Ce script est exécuté avec les privilèges root complets\n"
+"    mais l'état sera réinitialisé après chaque compilation. La grande majorité\n"
+"    des applications est compilée avec l'environnement stable standard Debian. Ceci\n"
+"    est utile pour configurer le serveur de construction pour les compilations complexes qui\n"
+"    requièrent des choses très spécifiques qui ne sont pas appropriés d'installer pour\n"
+"    toutes les compilations ou qui entreront en conflit avec d'autres compilations.\n"
+"    N'ajoutez que des commandes qui nécessitent les privilèges root.\n"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
