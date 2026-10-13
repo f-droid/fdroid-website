@@ -23,6 +23,10 @@ Received donations are an integral part of F-Droid as they support in:
 
 Donations are NOT used to financially support individual apps published on F-Droid. _To donate to app developers, use the donations options listed for each app._
 
+### Choose the right platform for you
+
+{% include donate-platforms.html %}
+
 ### How to donate
 
 We recommend using donation platforms like [**Liberapay**](https://liberapay.com/F-Droid-Data/ "https://liberapay.com/F-Droid-Data/") or [**Open Collective**](https://opencollective.com/f-droid/ "https://opencollective.com/f-droid/"). These free software, community-driven donation platforms, support low-fee and transparent donations.

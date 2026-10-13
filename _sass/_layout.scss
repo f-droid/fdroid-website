@@ -272,6 +272,115 @@ $badge-gap: 8px;
   }
 }
 
+.donate-platform-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $badge-gap;
+  margin-top: 48px;
+  margin-bottom: 48px;
+
+  .donate-platform-badge {
+    display: flex;
+    flex-direction: column;
+
+    background-color: $bluebox-background;
+    border: 2px solid $primary-color;
+    border-radius: 8px;
+    padding: 12px;
+
+    box-sizing: border-box;
+    min-width: 0;
+    flex: calc((100% - #{$badge-gap}) / 2);
+
+    .donate-platform-content {
+      display: flex;
+      position: relative;
+      transition: opacity .2s;
+
+      &:has(.donate-platform-badge-clickpane:hover) {
+        opacity: 0.6;
+      }
+
+      .donate-platform-badge-clickpane {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 1;
+        pointer-events: auto;
+      }
+
+      .donate-platform-main {
+        flex: 1;
+
+        .donate-platform-title {
+          display: flex;
+          align-items: center;
+          margin-bottom: 12px;
+
+          .donate-platform-icon {
+            flex-shrink: 1;
+
+            width: 24px;
+            height: 24px;
+          }
+          .donate-platform-label {
+            flex: 1;
+            margin-inline-start: 4px;
+            color: $primary-color;
+            font-weight: bold;
+          }
+        }
+
+        .donate-platform-info {
+          font-size: 0.8em;
+          margin-top: 4px;
+        }
+        .donate-platform-supporticons {
+          margin-top: 8px;
+          > img {
+            width: 24px;
+            height: 24px;
+          }
+        }
+      }
+
+      .donate-platform-aside {
+        flex-shrink: 0;
+
+        .donate-platform-preferred {
+          color: #0d49a3;
+          font-weight: bold;
+        }
+
+        .donate-platform-currency {
+          position: relative;
+          z-index: 2;
+          display: block;
+          margin-top: 8px;
+          border: 1px solid $primary-color;
+          border-radius: 10px;
+          padding: 1px;
+          text-align: center;
+          transition: opacity .2s;
+          text-decoration: none;
+
+          &:hover {
+            text-decoration: none;
+          }
+        }
+      }
+    }
+  }
+
+  @include media-query($content-width) {
+    .donate-platform-badge {
+      flex-basis: 100%
+    }
+  }
+}
+
 /**
  * Package
  */
