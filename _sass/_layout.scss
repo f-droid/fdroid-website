@@ -198,66 +198,69 @@ $badge-gap: 8px;
     border: 2px solid $primary-color;
     border-radius: 8px;
     padding: 8px;
+    height: 96px;
 
     box-sizing: border-box;
     min-width: 0;
     flex: 0 0 calc((100% - 3 * #{$badge-gap}) / 4);
 
     > a {
+      height: 100%;
+
       text-decoration: none;
       &:hover {
         text-decoration: none;
       }
 
-      .donate-quick-title {
-        color: $primary-color;
-        text-align: center;
-        flex: 0 0 auto;
-
-        text-decoration: none;
-        &:hover {
-          text-decoration: none;
-        }
-      }
-
-      .donate-quick-lineitem {
-        flex: 1; /* fills the remaining height */
+      .donate-quick-main {
         display: flex;
+        flex-direction: column;
         align-items: center;
-        justify-content: center;
-        text-align: center;
+        height: 32px;
 
-        color: $text-color;
-        text-decoration: none;
-        &:hover {
-          text-decoration: none;
-        }
-
-        .donate-quick-label {
-          text-align: start;
-          margin-inline-start: 8px;
-        }
-
-        .donate-quick-big {
-          font-size: 2.5em;
+        .donate-quick-title {
+          color: $primary-color;
+          flex-shrink: 1;
           font-weight: bold;
-
-          .donate-quick-big-sup {
-            font-size: .5em;
-          }
+          font-size: .95em;
         }
 
-        .donate-quick-icon {
-          font-size: 1.66em;
-          > img {
-            width: 32px;
-            height: 32px;
-          }
-        }
+        .donate-quick-lineitem {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
 
-        .donate-quick-timeframe {
-          margin-inline-start: 8px;
-          font-size: .8em;
+          flex: 1;
+          color: $text-color;
+
+          .donate-quick-big {
+            font-size: 2.5em;
+            font-weight: bold;
+
+            .donate-quick-big-sup {
+              font-size: .5em;
+            }
+          }
+
+          .donate-quick-timeframe {
+            margin-inline-start: 8px;
+            font-size: .8em;
+          }
+
+          .donate-quick-icon {
+            flex: 1;
+
+            > img {
+              height: 32px;
+              width: 32px;
+              float: inline-end;
+            }
+          }
+
+          .donate-quick-label {
+            flex: 2;
+            margin-inline-start: 8px;
+          }
         }
       }
     }
