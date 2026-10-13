@@ -10,8 +10,6 @@ F-Droid is powered by your donations! Donate to keep free software thriving.
 
 ### Why your donation matters
 
-Everyday, people choose F-Droid to escape surveillance, ad trackers and proprietary control that dominates mainstream app stores. F-Droid represents more than an app store. It functions as a global system which protects user privacy, digital freedom and self-determination. Donations allow F-Droid to remain open source while ensuring security and operational independence.
-
 Received donations are an integral part of F-Droid as they support in:
 
 * Server maintenance and support
@@ -37,24 +35,6 @@ Monthly donations keep F-Droid sustainable. By setting up a recurring monthly do
 
 The small gift of €5/month, when multiplied by thousands of supporters, results in a reliable funding stream for maintenance, innovation, security and outreach programs. Donors that support us on a recurring basis are key allies, helping us realize F-Droid's core mission - fighting for software freedom and privacy protection. Your recurring support empowers long term impact that one-time donations can't match.
 
-## Donation Tiers - The power of your support
-
-Your donation to F-Droid keeps free software thriving so we have established different tiers to demonstrate how your support benefits the project.
-
-F-Droid would achieve sustainability if all users donated $1/month.
-
-### F-Droid Supporter ($12/year)
-
-Plant the seed of digital freedom by supporting ongoing maintenance. Your support contributes to the expansion of the free software ecosystem.
-
-### F-Droid Backer ($5/month)
-
-Fuel the momentum behind free software. Your ongoing support strengthens the broader mission of F-Droid and helps us keep growing in ways that serves users and developers alike.
-
-### F-Droid Sponsor ($100+/month)
-
-Champion digital autonomy at a bigger scale. Your generosity provides meaningful capacity for us to advance F-Droid's long term resilience, reach and positive impact.
-
 ### Custom Donations
 
 If your donation amount or frequency does not fit into one of the other categories, feel free to donate a custom amount once or multiple times per year. Your support helps sustain the project, its mission of user freedom and open, trustworthy software for everyone.
@@ -67,18 +47,6 @@ Major gifts help turn community momentum into durable impact, supporting mainten
 ### What payment methods can I use?
 
 We only support the payment methods that our fiscal hosts (legally registered organizations that hold and manage funds for F-Droid) offer. The fiscal host determines which payment methods are available as shown below:
-
-How the donation platforms compare:
-
-
-<div class="payment-methods"></div>
-
-|      | {{ strings.credit_card }} | {{ strings.paypal }} | {{ strings.via_bank_transfer }} | {{ strings.via_direct_debit }} |
-|------|---------------------------|----------------------|---------------------------------|--------------------------------|
-| [<img src="{% asset liberapay_donate_button.svg %}" height="20" alt="{{ strings.liberapay_alt }}" />](https://liberapay.com/F-Droid-Data/)                                 | ✓ |   |     | SEPA |
-| [<img src="{% asset opencollectivelogo.svg %}" height="20" alt="{{ strings.opencollective_alt }}" /> <small>F-Droid-Euro</small>](https://opencollective.com/f-droid-euro) | ✓ | ✓ | EUR | SEPA |
-| [<img src="{% asset opencollectivelogo.svg %}" height="20" alt="{{ strings.opencollective_alt }}" /> <small>F-Droid</small>](https://opencollective.com/f-droid)           | ✓ | ✓ | USD | ACH  |
-| [<img src="{% asset github-sponsors.svg %}" height="20" alt="GitHub Sponsors" />](https://github.com/sponsors/f-droid)                                                     | ✓ |   |     |      |
 
 Visit the info pages of our fiscal hosts to get more details on their fees:
 
@@ -96,12 +64,6 @@ If you would like to donate via a direct IBAN bank transfer, then donate via [F-
 <a href="https://opencollective.com/f-droid-euro"><img src="{% asset opencollective_button.png %}" height="40" alt="{{ strings.opencollective_alt }}"></a>
 &nbsp; &nbsp; &nbsp;
 </p>
-
-
-#### Cryptocurrency
-
-All cryptocurrency donations to F-Droid, including Bitcoin and many others, are [on hold](https://opencollective.com/opensource/updates/open-source-collective-is-disabling-contributions-in-cryptocurrencies) for the time being, this page will be updated if there any related changes.
-
 
 ## Swag
 
