@@ -1,0 +1,201 @@
+{% comment %}
+	Opportunistically check against the list of official f-droid.org signers if present
+{%- endcomment %}
+{%- if site.data.fdroid-signers %}
+	{%- assign official_signer = site.data.fdroid-signers[page.package_name].signer %}
+{%- endif %}
+{%- assign packages_with_src = page.versions | where_exp: "package", "package.srcname != '' and package.srcname != nil" %}
+<div class="package-versions">
+	<a name="versions"></a>
+	<h3>{{ strings.versions }}</h3>
+	{%- if page.package_name == "org.fdroid.basic" %}
+		<!--no {{ site.data.strings.index.download_fdroid }} button because this is {{ page.package_name }} -->
+	{%- else %}
+	<p>
+		{{ strings.suggest_downloading_via_fdroid }}
+	</p>
+	<a href="{{ site.fdroid_apk_download_url }}" class="material-button">{{ site.data.strings.index.download_fdroid }}</a>
+	{%- endif %}
+	<ul class="package-versions-list">
+		{%- assign last_version_name = page.suggested_version_name %}
+		{%- assign last_version_code = page.suggested_version_code %}
+		{%- assign last_whats_new = page.whats_new %}
+		{%- for package in page.versions %}
+		{% if package.whats_new != "" and package.whats_new != nil and package.version_name != last_version_name -%}
+		<div class="package-whats-new">
+			{%- assign fmt_latest_version = '{{ latest_version }}' %}
+			{%- assign version_name = package.version_name | i18n_number %}
+			<div class="new-in-version">{{ strings.new_in_version | replace: fmt_latest_version, version_name }}</div>
+			<div dir="auto">
+				{{ package.whats_new }}
+			</div>
+		</div>
+		{%- assign last_version_name = package.version_name %}
+		{%- assign last_version_code = package.version_code %}
+		{%- assign last_whats_new = package.whats_new %}
+		{%- endif %}
+		<li class="package-version" {% if forloop.first %}id="latest"{% endif %}>
+		{%- if page.suggested_version_name == package.version_name and suggestedDisplayed != true %}<a name="suggested"></a>{% endif %}
+			<div class="package-version-header">
+				{%- assign package_added_date = package.added | date: site.data.strings.news.date_format %}
+				<a name="{{ package.version_name }}"></a>
+				<a name="{{ package.version_code }}"></a>
+				{%- comment %}fmt_package_version_* are strings in the JSON that are replaced here{% endcomment %}
+				{%- assign fmt_package_version = '{{ package_version }}' %}
+				{%- assign version_name = package.version_name | i18n_number %}
+				{%- assign fmt_package_version_code = '{{ package_version_code }}' %}
+				{%- assign version_code = package.version_code | i18n_number %}
+				{{ strings.version_info | replace: fmt_package_version, version_name | replace: fmt_package_version_code, version_code }}
+				{% assign version_badges = false %}
+				{%- if package.release_channels contains "Beta" %}<span class="beta-badge">{{ strings.beta | default: package.release_channels }}</span>{% assign version_badges = true %}{% endif %}
+				{%- if page.suggested_version_name == package.version_name and suggestedDisplayed != true %}<span class="suggested-badge">{{ strings.suggested }}</span>{% assign suggestedDisplayed = true %}{% assign version_badges = true %}{% endif %}
+				{%- unless version_badges %} - {% endunless %}
+				{%- assign fmt_package_added_date = '{{ package_added_date }}' %}
+				{{ strings.added_on | replace: fmt_package_added_date, package_added_date }}
+			</div>
+			<p class="package-version-nativecode">
+				{%- for abi in package.nativecode %}
+				<code class="package-nativecode">{{ abi }}</code>
+				{%- endfor %}
+			</p>
+			<p class="package-version-requirement">
+				{%- assign fmt_android_version = '{{ android_version }}' %}
+				{%- assign android_version = package.min_sdk_version | android_sdk_level_to_version %}
+				{{ strings.minimum_android_version | replace: fmt_android_version, android_version }}
+			</p>
+
+			<p class="package-version-source">
+				{%- if package.srcname != "" and package.srcname != nil %}
+				  {%- assign origin = strings.built_by_fdroid %}
+				  {%- assign src_package = package %}
+				{%- else %}
+				  {%- assign origin = strings.signed_by_developer %}
+				  {%- assign src_package = packages_with_src | where: "version_code", package.version_code | first %}
+				{%- endif %}
+				{%- if site.data.fdroid-signers %}
+					{%- if package.signer == official_signer %}
+				    {%- assign origin = strings.signed_by_fdroid %}
+					{%- else %}
+				    {%- assign origin = strings.signed_by_developer %}
+					{%- endif %}
+				{%- endif %}
+				{%- if src_package %}
+				  {%- assign fmt_source_code_url = '{{ source_code_url }}' %}
+				  {%- assign source_code_url = site.fdroid-repo | append: '/' | append: src_package.srcname %}
+				{%- endif %}
+				{{- origin | replace: fmt_source_code_url, source_code_url }}
+			</p>
+
+			{% if package.whats_new != "" and package.whats_new != nil and package.version_code != last_version_code and package.whats_new != last_whats_new -%}
+			<div class="package-whats-new">
+				<div dir="auto">
+					{{ package.whats_new }}
+				</div>
+			</div>
+			{%- assign last_version_code = package.version_code %}
+			{%- assign last_whats_new = package.whats_new %}
+			{%- endif %}
+
+			{%- assign uses_permissions = 0 %}
+			{%- if package.uses_permission != empty and package.uses_permission != nil %}
+				{%- assign uses_permissions = uses_permissions | plus: 1 %}
+			{%- endif %}
+			{%- if package.uses_permission_sdk_23 != empty and package.uses_permission_sdk_23 != nil %}
+				{%- assign uses_permissions = uses_permissions | plus: 2 %}
+			{%- endif %}
+			<div class="package-version-permissions">
+				{%- if uses_permissions > 0 %}
+				<details {% if forloop.first %}open{% endif %}>
+					<summary class="package-version-permissions-summary">
+						{{ strings.permissions }}
+					</summary>
+					<ul class="package-version-permissions-list">
+						{%- if package.min_sdk_version >= 23 and uses_permissions >= 2 %}
+							{%- assign unique_permissions = package.uses_permission | concat: package.uses_permission_sdk_23 | uniq | sort: "name" %}
+						{%- else %}
+							{%- assign unique_permissions = package.uses_permission | uniq | sort: "name" %}
+						{%- endif %}
+						{% for permission in unique_permissions -%}
+
+						<li class="permission">
+
+						{%- if site.data.android_permissions[permission.name] != nil %}
+							{%- assign perm = site.data.android_permissions[permission.name] %}
+							<div class="permission-label">
+							{%- if perm.label %}
+								{{ site.data.strings.permissions[perm.label] }}
+							{%- else %}
+								{{ permission.name }}
+							{%- endif %}
+							</div>
+							{%- if perm.description %}
+							<div class="permission-description">{{ site.data.strings.permissions[perm.description] }}</div>
+							{%- endif %}								
+						{%- else %}
+							<div class="permission-label">{{ permission.name }}</div>
+						{%- endif %}
+
+						{%- if permission.min_sdk %}
+						({{ permission.min_sdk | android_sdk_level_to_version }})
+						{% endif -%}
+
+						</li>
+						{%- endfor %}
+						{%- if uses_permissions >= 2 and package.min_sdk_version < 23 %}
+						{%- assign runtime_permissions = package.uses_permission_sdk_23 | uniq | sort: "name" %}
+						{%- assign sdk_badge = 23 | android_sdk_level_to_version | prepend: "Android " | append: "+" %}
+						{%- assign shown_permissions = unique_permissions | map: "name" %}
+						{% for permission in runtime_permissions -%}
+						{% if shown_permissions contains permission.name %}{% continue %}{% endif -%}
+
+						<li class="permission">
+
+						{%- if site.data.android_permissions[permission.name] != nil %}
+							{%- assign perm = site.data.android_permissions[permission.name] %}
+							<div class="permission-label">
+							{%- if perm.label %}
+								{{ site.data.strings.permissions[perm.label] }}
+							{%- else %}
+								{{ permission.name }}
+							{%- endif %}
+							<span class="sdk-badge">{{ sdk_badge }}</span>
+							</div>
+							{%- if perm.description %}
+							<div class="permission-description">{{ site.data.strings.permissions[perm.description] }}</div>
+							{%- endif %}								
+						{%- else %}
+							<div class="permission-label">{{ permission.name }}<span class="sdk-badge">{{ sdk_badge }}</span></div>
+						{%- endif %}
+
+						{%- if permission.min_sdk %}
+						({{ permission.min_sdk | android_sdk_level_to_version }})
+						{% endif -%}
+
+						</li>
+						{%- endfor %}
+						{%- endif %}
+					</ul>
+				</details>
+				{%- else %}
+				<div class="no-permissions">{{ strings.no_permissions }}</div>
+				{%- endif %}
+			</div>
+
+			<p class="package-version-download">
+				<b>
+					<a href="{{ site.fdroid-repo }}/{{ package.apk_name }}">
+						{%- assign fmt_file_extension = '{{ file_extension }}' %}
+						{{ strings.download | replace: fmt_file_extension, package.file_extension }}
+					</a>
+				</b>
+				{{ package.size | file_size_human_readable }}
+				<a href="{{ site.fdroid-repo }}/{{ package.apk_name }}.asc">{{ strings.gpg_signature }}</a>
+				&#124;
+				<a href="{{ site.fdroid-repo }}/{{ package.apk_name | split: '.' | pop | join: '.' }}.log.gz">{{ strings.build_log }}</a>
+			</p>
+
+		</li>
+
+		{%- endfor %}
+	</ul>
+</div>
