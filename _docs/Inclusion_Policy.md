@@ -41,6 +41,10 @@ The applications should also meet some basic quality requirements when they are 
 1. The application should provide native features and enhancements when it wraps a website.
 1. The application should be useful to end users. Demo applications shouldn't be included.
 1. The application should provide some unique value. Applications that perform only minor rebranding and lack meaningful improvements over other actively maintained applications in the repo shouldn't be included.
+1. The application should have been actively developed for at least 3 months, unless:
+    1. The application has been proven to have some users.
+    1. The author has been maintaining other apps on F-Droid.
+    1. The application is developed only for an event.
 
 ## Build & Verification Workflow
 
