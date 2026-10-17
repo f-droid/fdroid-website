@@ -73,7 +73,16 @@ variables:
   rm -vf Gemfile.lock
   bundle install --local --verbose
   ./tools/i18n.sh
+  sed -Ei \
+    -e "s,^(url\x3a).*,\1 '$url'," \
+    -e "s,^(baseurl\x3a).*,\1 '$baseurl'," \
+    _config.yml
   set +x
+  echo "Jekyll URL: $url$baseurl"
+  echo "Jekyll config used for CI:"
+  echo "<config>"
+  cat _config.yml
+  echo "</config>"
 
 
 # This is a manual task for building in preparation to deploy to
@@ -92,6 +101,9 @@ f-droid.org:
   rules:
     - when: manual
       if: $CI_PROJECT_PATH == "fdroid/fdroidserver"
+  variables:
+    url: https://$CI_JOB_NAME
+    baseurl: ""
   script:
     - export JEKYLL_BUILD_DESTINATION=$CI_PROJECT_DIR/_site
     - '[ ! -d $JEKYLL_BUILD_DESTINATION ] && echo "ERROR $JEKYLL_BUILD_DESTINATION is not mounted inside docker!" && exit 1'
@@ -117,6 +129,8 @@ pages:
       - public
     expire_in: 1w
     when: always
+  variables:
+    url: https://$CI_PROJECT_ROOT_NAMESPACE.$CI_PAGES_DOMAIN
   script:
     - (find _*/ -type f | grep -Ev '\.(html|json|md|rb|scss|xml|yaml)$')
          && (echo "ERROR The above files have a bad or missing file extension"; exit 1)
@@ -126,6 +140,9 @@ pages:
     # use the 'gitlab ci' subset of languages
     - sed -i 's,^languages:,ignored_languages:,' _config.yml
     - sed -i 's,^gitlab_ci_languages:,languages:,' _config.yml
+    # This is where GitLab pages will deploy to by default (e.g. "https://fdroid.gitlab.io/fdroid-website")
+    # so we need to make sure that the Jekyll configuration understands this.
+    - baseurl=${CI_PROJECT_PATH/$CI_PROJECT_ROOT_NAMESPACE}
     - *setup_for_jekyll
     - ./tools/check-liquid-strings-var-names.py
     - ./tools/check-format-strings.py
@@ -133,21 +150,13 @@ pages:
     - ./tools/check-yaml-front-matter.py
     - ./tools/check-do-not-translate
     - ./tools/check-markdown-headers-are-localizable.py
-
-    # This is where GitLab pages will deploy to by default (e.g. "https://fdroid.gitlab.io/fdroid-website")
-    # so we need to make sure that the Jekyll configuration understands this.
-    - sed -Ei
-        -e "s,^(url\x3a).*,\1 'https://$CI_PROJECT_NAMESPACE.gitlab.io',"
-        -e "s,^(baseurl\x3a).*,\1 '/$CI_PROJECT_NAME',"
-        _config.yml
-    - echo "Jekyll config used for CI:" && cat _config.yml
     - jekyll build -d public --trace --future
     - cp -v robots.txt.noindex public/robots.txt
     - ./tools/prepare-multi-lang.sh public --no-type-maps
-    - mkdir -v linkchecker/
-    - ln -sv ../public linkchecker/$CI_PROJECT_NAME
+    - mkdir -pv $(dirname linkchecker/$baseurl)
+    - ln -svf $(pwd)/public linkchecker/$baseurl
     - ruby -run -e httpd linkchecker/ -p 4000 > /dev/null 2>&1 &
-    - linkchecker http://localhost:4000/$CI_PROJECT_NAME --config=.linkcheckerrc
+    - linkchecker http://localhost:4000/$baseurl --config=.linkcheckerrc
 
 
 # check rsync mirrors still available
