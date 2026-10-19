@@ -33,6 +33,7 @@ pagination:
           src="{{ post.author | append: '.jpg' | asset }}"
           alt="{{ post.author }}"
           width="40"
+          loading="{% if forloop.first %}eager{% else %}lazy{% endif %}"
           />
         <span
           itemprop="author"
@@ -74,7 +75,7 @@ pagination:
   {% endif %}
 
   <p class="rss-subscribe"><a href="{{ "/feed.xml" | relative_url }}">
-      <img src="{% asset Feed-icon-16x16.png %}" alt="RSS"/> RSS
+      <img src="{% asset Feed-icon-16x16.png %}" alt="RSS" loading="lazy" />
   </a></p>
 
 </div>

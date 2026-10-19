@@ -9,7 +9,8 @@ several languages.
 
 <img src="https://f-droid.org/badge/get-it-on.png"
     alt="Get it on F-Droid"
-    height="80">
+    height="80"
+    loading="lazy">
 
 The English badge is available at `https://f-droid.org/badge/get-it-on.png`
 in PNG format and at `https://f-droid.org/badge/get-it-on.svg` in SVG
@@ -23,8 +24,8 @@ at https://f-droid.org/badge/get-it-on-xx.svg in SVG format, where `xx` is a loc
 
 For instance:
 
-<img src="https://f-droid.org/badge/get-it-on-ja.png" height="80">
-<img src="https://f-droid.org/badge/get-it-on-he.png" height="80">
+<img src="https://f-droid.org/badge/get-it-on-ja.png" height="80" loading="lazy">
+<img src="https://f-droid.org/badge/get-it-on-he.png" height="80" loading="lazy">
 
 Localization of the badges is handled via Weblate at
 <https://hosted.weblate.org/projects/f-droid/badge/>.
