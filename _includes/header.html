@@ -1,7 +1,8 @@
 <header class="site-header">
 
   <a class="site-title" href="{{ site.baseurl }}/">
-    <img src="{% asset fdroid-logo-text.svg %}" alt="{{ site.header-title }}" />
+    <img class="site-logo-light" src="{% asset fdroid-logo-text.svg %}" alt="{{ site.header-title }}" />
+    <img class="site-logo-dark" src="{% asset fdroid-logo-text-dark.svg %}" alt="{{ site.header-title }}" />
   </a>
 
   <nav class="site-nav">
@@ -21,6 +22,14 @@
         {%- endif %}
       {%- endif %}
     {%- endfor %}
+
+    {%- assign nav_strings = site.data.strings.navigation %}
+    {% comment %} hidden until js/theme.js shows it, as it needs JavaScript to work {% endcomment %}
+    <select id="theme-chooser-select" class="theme-chooser" aria-label="{{ nav_strings.theme }}" title="{{ nav_strings.theme }}" autocomplete="off" hidden>
+      <option value="auto">{{ nav_strings.theme_auto }}</option>
+      <option value="light">{{ nav_strings.theme_light }}</option>
+      <option value="dark">{{ nav_strings.theme_dark }}</option>
+    </select>
   </nav>
 
 </header>
