@@ -13,7 +13,6 @@
 <div class="donate-icons">
     <img class="donate-option-icon sc-p9" alt="" aria-hidden="true" src="{% asset icons/donate/liberapay.svg %}">
     <img class="donate-option-icon sc-p9" alt="" aria-hidden="true" src="{% asset icons/donate/opencollective.svg %}">
-    <img class="donate-option-icon" alt="" aria-hidden="true" src="{% asset icons/donate/taler.svg %}">
     <img class="donate-option-icon" alt="" aria-hidden="true" src="{% asset icons/donate/noto-color-emoji-u1f3e6.svg %}" />
     <img class="donate-option-icon" alt="" aria-hidden="true" src="{% asset icons/donate/noto-color-emoji-u1f4b3.svg %}" />
 </div>
