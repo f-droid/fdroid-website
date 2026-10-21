@@ -25,6 +25,11 @@ Donations are NOT used to financially support individual apps published on F-Dro
 
 {% include donate-platforms.html %}
 
+<img src="{% asset taler-logo-2021.svg %}" alt="Taler Logo" width="100">
+
+F-Droid is excited to start accepting donations via [GNU
+Taler](https://taler.net) as soon as it becomes available to EU citizens.
+
 ### How to donate
 
 We recommend using donation platforms like [**Liberapay**](https://liberapay.com/F-Droid-Data/ "https://liberapay.com/F-Droid-Data/") or [**Open Collective**](https://opencollective.com/f-droid/ "https://opencollective.com/f-droid/"). These free software, community-driven donation platforms, support low-fee and transparent donations.
