@@ -7,9 +7,9 @@ layout: default-package-sidebar
 <article class="package">
 	<header class="package-header">
 		{%- if page.icon != "" and page.icon != nil %}
-		<img class="package-icon" src="{{ site.fdroid-repo }}/{{ page.icon }}" alt="{{ strings.package_icon_alt }}" />
+		<img class="package-icon" src="{{ site.fdroid-repo }}/{{ page.icon }}" alt="{{ strings.package_icon_alt }}" width="76" height="76" fetchpriority="high" decoding="async" />
 		{%- else %}
-		<img class="package-icon" src="{% asset ic_repo_app_default.png %}" alt="{{ strings.package_icon_alt }}" />
+		<img class="package-icon" src="{% asset ic_repo_app_default.png %}" alt="{{ strings.package_icon_alt }}" width="76" height="76" fetchpriority="high" decoding="async" />
 		{%- endif %}
 		<div class="package-title">
 			<h3 class="package-name">
@@ -43,7 +43,7 @@ layout: default-package-sidebar
 			{%- for anti_feature in page.anti_features %}
 			<li class="anti-feature-item">
 				<a class="anti-feature-link" href="{{ site.baseurl }}/docs/Anti-Features/#{{ anti_feature }}">
-					<img class="anti-feature-icon" src="{{ anti_feature | prepend: 'icons/antifeatures/' | append: '.svg' | asset }}" alt=""> 
+					<img class="anti-feature-icon" src="{{ anti_feature | prepend: 'icons/antifeatures/' | append: '.svg' | asset }}" alt="" width="40" height="40" decoding="async"> 
 					<div class="anti-feature-text">
 						{{ site.data.strings.antifeatures[anti_feature] }}
 					</div>
@@ -64,7 +64,7 @@ layout: default-package-sidebar
 				{%- endif %}
 			<li class="anti-feature-item">
 				<a class="anti-feature-link" href="{{ site.baseurl }}/docs/Anti-Features/#{{ anti_feature_key }}">
-					<img class="anti-feature-icon" src="{{ anti_feature_key | prepend: 'icons/antifeatures/' | append: '.svg' | asset }}" alt="{% if page.repo.anti_features[anti_feature_key].name %}{{ page.repo.anti_features[anti_feature_key].name }}{%- endif %}"> 
+					<img class="anti-feature-icon" src="{{ anti_feature_key | prepend: 'icons/antifeatures/' | append: '.svg' | asset }}" alt="{% if page.repo.anti_features[anti_feature_key].name %}{{ page.repo.anti_features[anti_feature_key].name }}{%- endif %}" width="40" height="40" decoding="async"> 
 					<div class="anti-feature-text">
 						<p>{% if page.repo.anti_features[anti_feature_key].description -%}
 							{{ page.repo.anti_features[anti_feature_key].description }}
@@ -147,22 +147,22 @@ layout: default-package-sidebar
 	<ul class="package-links donate-options">
 		{%- if page.openCollective != "" and page.openCollective != nil %}
 		<li class="package-link opencollective">
-			<a href="https://opencollective.com/{{ page.openCollective }}/donate"><img src="{% asset opencollective_button.png %}" alt="{{ strings.opencollective_alt }}"/></a>
+			<a href="https://opencollective.com/{{ page.openCollective }}/donate"><img src="{% asset opencollective_button.png %}" alt="{{ strings.opencollective_alt }}" width="248" height="40" decoding="async"/></a>
 		</li>
 		{%- endif %}
 		{%- if page.liberapay != "" and page.liberapay != nil %}
 		<li class="package-link">
-			<a href="https://liberapay.com/{{ page.liberapay }}/donate"><img src="{% asset liberapay_donate_button.svg %}" alt="{{ strings.liberapay_alt }}"/></a>
+			<a href="https://liberapay.com/{{ page.liberapay }}/donate"><img src="{% asset liberapay_donate_button.svg %}" alt="{{ strings.liberapay_alt }}" width="83" height="30" decoding="async"/></a>
 		</li>
 		{%- endif %}
 		{%- if page.bitcoin != "" and page.bitcoin != nil %}
 		<li class="package-link">
-			<a href="https://live.blockcypher.com/btc/address/{{ page.bitcoin }}" title="{{ page.bitcoin }}"><img src="{% asset bitcoin.png %}" alt="{{ strings.bitcoin_alt }}"/></a>
+			<a href="https://live.blockcypher.com/btc/address/{{ page.bitcoin }}" title="{{ page.bitcoin }}"><img src="{% asset bitcoin.png %}" alt="{{ strings.bitcoin_alt }}" width="84" height="22" decoding="async"/></a>
 		</li>
 		{%- endif %}
 		{%- if page.litecoin != "" and page.litecoin != nil %}
 		<li class="package-link">
-			<a href="https://live.blockcypher.com/ltc/address/{{ page.litecoin }}" title="{{ page.litecoin }}"><img src="{% asset litecoin.png %}" alt="{{ strings.litecoin_alt }}"/></a>
+			<a href="https://live.blockcypher.com/ltc/address/{{ page.litecoin }}" title="{{ page.litecoin }}"><img src="{% asset litecoin.png %}" alt="{{ strings.litecoin_alt }}" width="84" height="23" decoding="async"/></a>
 		</li>
 		{%- endif %}
 		{%- assign donatetest = page.donate | slice: 0, 8 -%}
@@ -179,19 +179,19 @@ layout: default-package-sidebar
 		<div class="frame js_frame">
 			<ul class="slides js_slides gallery">
 				{%- for screenshot in page.phone_screenshots %}
-				<li class="js_slide screenshot"><img src="{{ site.fdroid-repo}}/{{ page.package_name }}/{{ screenshot }}" alt="{{ strings.package_screenshot_alt }}" /></li>
+				<li class="js_slide screenshot"><img src="{{ site.fdroid-repo}}/{{ page.package_name }}/{{ screenshot }}" alt="{{ strings.package_screenshot_alt }}" decoding="async" /></li>
 				{%- endfor %}
 				{%- for screenshot in page.seven_inch_screenshots %}
-				<li class="js_slide screenshot"><img src="{{ site.fdroid-repo}}/{{ page.package_name }}/{{ screenshot }}" alt="{{ strings.package_screenshot_alt }}" /></li>
+				<li class="js_slide screenshot"><img src="{{ site.fdroid-repo}}/{{ page.package_name }}/{{ screenshot }}" alt="{{ strings.package_screenshot_alt }}" decoding="async" /></li>
 				{%- endfor %}
 				{%- for screenshot in page.ten_inch_screenshots %}
-				<li class="js_slide screenshot"><img src="{{ site.fdroid-repo}}/{{ page.package_name }}/{{ screenshot }}" alt="{{ strings.package_screenshot_alt }}" /></li>
+				<li class="js_slide screenshot"><img src="{{ site.fdroid-repo}}/{{ page.package_name }}/{{ screenshot }}" alt="{{ strings.package_screenshot_alt }}" decoding="async" /></li>
 				{%- endfor %}
 				{%- for screenshot in page.tv_screenshots %}
-				<li class="js_slide screenshot"><img src="{{ site.fdroid-repo}}/{{ page.package_name }}/{{ screenshot }}" alt="{{ strings.package_screenshot_alt }}" /></li>
+				<li class="js_slide screenshot"><img src="{{ site.fdroid-repo}}/{{ page.package_name }}/{{ screenshot }}" alt="{{ strings.package_screenshot_alt }}" decoding="async" /></li>
 				{%- endfor %}
 				{%- for screenshot in page.wear_screenshots %}
-				<li class="js_slide screenshot"><img src="{{ site.fdroid-repo}}/{{ page.package_name }}/{{ screenshot }}" alt="{{ strings.package_screenshot_alt }}" /></li>
+				<li class="js_slide screenshot"><img src="{{ site.fdroid-repo}}/{{ page.package_name }}/{{ screenshot }}" alt="{{ strings.package_screenshot_alt }}" decoding="async" /></li>
 				{%- endfor %}
 			</ul>
 		</div>
