@@ -8,7 +8,12 @@ F-Droid repos generally maintain support for old F-Droid releases for a long tim
 
 * Android 7.0 (API 24) and up: [F-Droid (latest stable)]({{ site.fdroid_apk_download_url }})
 
-First issue older Android versions encounter will be certificate related, please read and follow the steps to [install the Let’s Encrypt ISRG Root X1 certificate](https://www.stoutner.com/lets-encrypt-isrg-root-x1-and-privacy-browser/) before proceeding. Android 6 and 7 are also affected, while the latest in-client mirroring system will alleviate this and cycle through mirrors until it finds one that is still compatible, users are encouraged to add the certificate anyway as this helps other apps too.
+First issues older Android versions encounter will be certificate related:
+
+* For Android 6 and older, please read and follow the steps to [install the Let’s Encrypt ISRG Root X1 certificate](https://www.stoutner.com/lets-encrypt-isrg-root-x1-and-privacy-browser/) before proceeding. Android 7 is also affected, while the latest in-client mirroring system will alleviate this and cycle through mirrors until it finds one that is still compatible, users are encouraged to add the certificate anyway as this helps other apps too.
+* In October 2026 some certificates issued by eMudhra were compromised, if your system still gets Android updates this should be fixed soon, if it does not, or if you want to fix it faster, you can go into Settings, find Trusted Credentials _(might be named differently on your Android)_, System and toggle off those named "eMudhra".
+
+Links to download older versions:
 
 * Android 6.0 (API 23): [F-Droid 1.23.2](https://f-droid.org/repo/org.fdroid.fdroid_1023052.apk)
 * Android 5.1 (API 22): [F-Droid 1.15.6](https://f-droid.org/archive/org.fdroid.fdroid_1015056.apk)
