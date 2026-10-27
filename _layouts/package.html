@@ -83,55 +83,112 @@ layout: default-package-sidebar
 	</div>
 	{%- endif %}
 
-	{% if page.donate_data != nil and page.donate_data.size > 0 -%}
+	{%- if page.donate != nil and page.donate.size > 0 %}
+	{%- assign delimiter = ";DLM;" %}
+	{%- assign type_mapping = "" | split: "" %}
+	{%- assign subtitle_mapping = "" %}
+	{%- assign taler_count = 0 %}
+	{%- assign bitcoin_count = 0 %}
+	{%- assign liberapay_count = 0 %}
+	{%- assign litecoin_count = 0 %}
+	{%- assign opencollective_count = 0 %}
+	{%- for url in page.donate %}
+		{%- assign prefix8 = url | slice: 0, 8 %}
+		{%- assign prefix9 = url | slice: 0, 9 %}
+		{%- assign prefix22 = url | slice: 0, 22 %}
+		{%- assign prefix27 = url | slice: 0, 27 %}
+
+		{%- if prefix8 == "taler://" %}
+			{%- assign type_mapping = type_mapping | push: "taler" %}
+			{%- assign taler_count = taler_count | plus: 1 %}
+			{%- assign subtitle = url | split: "/" |  last %}
+			{%- assign subtitle_mapping = subtitle_mapping | append: delimiter | append: subtitle %}
+		{%- elsif prefix8 == "bitcoin:" %}
+			{%- assign type_mapping = type_mapping | push: "bitcoin" %}
+			{%- assign bitcoin_count = bitcoin_count | plus: 1 %}
+			{%- assign subtitle = url | remove_first: "bitcoin:" %}
+			{%- assign subtitle_mapping = subtitle_mapping | append: delimiter | append: subtitle %}
+		{%- elsif prefix9 == "litecoin:" %}
+			{%- assign type_mapping = type_mapping | push: "litecoin" %}
+			{%- assign litecoin_count = litecoin_count | plus: 1 %}
+			{%- assign subtitle = url | remove_first: "litecoin:" %}
+			{%- assign subtitle_mapping = subtitle_mapping | append: delimiter | append: subtitle %}
+		{%- elsif prefix22 == "https://liberapay.com/" %}
+			{%- assign type_mapping = type_mapping | push: "liberapay" %}
+			{%- assign liberapay_count = liberapay_count | plus: 1 %}
+			{%- assign subtitle = url | remove_first: "https://liberapay.com/" | split: "/" | first %}
+			{%- assign subtitle_mapping = subtitle_mapping | append: delimiter | append: subtitle %}
+		{%- elsif prefix27 == "https://opencollective.com/" %}
+			{%- assign type_mapping = type_mapping | push: "opencollective" %}
+			{%- assign opencollective_count = opencollective_count | plus: 1 %}
+			{%- assign subtitle = url | remove_first: "https://opencollective.com/" | split: "/" | first %}
+			{%- assign subtitle_mapping = subtitle_mapping | append: delimiter | append: subtitle %}
+		{%- else %}
+			{%- assign type_mapping = type_mapping | push: "other" %}
+			{%- assign subtitle_mapping = subtitle_mapping | append: delimiter %}
+		{%- endif %}
+	{%- endfor %}
+	{%- assign subtitle_mapping = subtitle_mapping | remove_first: delimiter | split: delimiter %}
+
 	<div class="donate">
 		<h3 id="donate">{{ strings.donate }}</h3>
-		{%- for donate_item in page.donate_data %}
-		{%- if donate_item.type == "liberapay" %}
-		<a href="{{ donate_item.url }}">
+		{%- for donate_url in page.donate %}
+		{% assign i = forloop.index | minus: 1 %}
+		{%- if type_mapping[i] == "liberapay" %}
+		<a href="{{ donate_url }}">
 			<div class="donate-item">
 				<img class="donate-icon" src="{% asset icons/donate/liberapay.svg %}" />
 				<span>Liberapay</span>
-				<span class="donate-subtitle"> {{ donate_item.subtitle }}</span>
+				{%- if liberapay_count > 1 %}
+				<span class="donate-subtitle">{{ subtitle_mapping[i] }}</span>
+				{%- endif %}
 			</div>
 		</a>
-		{%- elsif donate_item.type == "opencollective" %}
-		<a href="{{ donate_item.url }}">
+		{%- elsif type_mapping[i] == "opencollective" %}
+		<a href="{{ donate_url }}">
 			<div class="donate-item">
 				<img class="donate-icon" src="{% asset icons/donate/opencollective.svg %}" />
 				<span>Open Collective</span>
-				<span class="donate-subtitle"> {{ donate_item.subtitle }}</span>
+				{%- if opencollective_count > 1 %}
+				<span class="donate-subtitle">{{ subtitle_mapping[i] }}</span>
+				{%- endif %}
 			</div>
 		</a>
-		{%- elsif donate_item.type == "bitcoin" %}
-		<a href="{{ donate_item.url }}">
+		{%- elsif type_mapping[i] == "bitcoin" %}
+		<a href="https://live.blockcypher.com/btc/address/{{ subtitle_mapping[i] }}">
 			<div class="donate-item">
 				<img class="donate-icon" src="{% asset icons/donate/bitcoin.svg %}" />
 				<span>Bitcoin</span>
-				<span class="donate-subtitle"> {{ donate_item.subtitle }}</span>
+				{%- if bitcoin_count > 1 %}
+				<span class="donate-subtitle">{{ subtitle_mapping[i] }}</span>
+				{%- endif %}
 			</div>
 		</a>
-		{%- elsif donate_item.type == "litecoin" %}
-		<a href="{{ donate_item.url }}">
+		{%- elsif type_mapping[i] == "litecoin" %}
+		<a href="https://live.blockcypher.com/ltc/address/{{ subtitle_mapping[i] }}">
 			<div class="donate-item">
 				<img class="donate-icon" src="{% asset icons/donate/litecoin.svg %}" />
 				<span>Litecoin</span>
-				<span class="donate-subtitle"> {{ donate_item.subtitle }}</span>
+				{%- if litecoin_count > 1 %}
+				<span class="donate-subtitle">{{ subtitle_mapping[i] }}</span>
+				{%- endif %}
 			</div>
 		</a>
-		{%- elsif donate_item.type == "taler" %}
-		<a href="{{ donate_item.url }}">
+		{%- elsif type_mapping[i] == "taler" %}
+		<a href="{{ donate_url }}">
 			<div class="donate-item">
 				<img class="donate-icon" src="{% asset icons/donate/taler.svg %}" />
 				<span>Taler</span>
-				<span class="donate-subtitle"> {{ donate_item.subtitle }}</span>
+				{%- if taler_count > 1 %}
+				<span class="donate-subtitle">{{ subtitle_mapping[i] }}</span>
+				{%- endif %}
 			</div>
 		</a>
 		{%- else %}
-		<a href="{{ donate_item.url }}">
+		<a href="{{ donate_url }}">
 			<div class="donate-item">
 				<img class="donate-icon" src="{% asset icons/donate/volunteer_activism_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg %}" />
-			{{ donate_item.url }}
+			{{ donate_url }}
 			</div>
 		</a>
 		{%- endif %}
