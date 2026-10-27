@@ -1,26 +1,42 @@
 <header class="site-header">
-
+  <script src="{% asset sidebar-lang.js %}" async></script>
   <a class="site-title" href="{{ site.baseurl }}/">
     <img src="{% asset fdroid-logo-text.svg %}" alt="{{ site.header-title }}" />
   </a>
-
-  <nav class="site-nav">
-    {%- for nav-item in site.data.navigation %}
-      {%- if nav-item.key %}
-        {%- assign title = site.data.strings.navigation[nav-item.key] %}
-        {%- if nav-item.external %}
-          <a class="page-link" href="{{ nav-item.url }}">{{ title }}</a>
-        {%- else %}
-          {%- assign prefix = page.url | slice: 0, nav-item.url.size %}
-          {%- if page.collection == 'posts' %}
-            {%- assign prefix = '/news/' %}
-          {%- elsif page.app_category %}
-            {%- assign prefix = '/packages/' %}
+  <nav class="site-navbar-container">
+    <div class="site-nav">
+      <input id="toggle-menu" type="checkbox">
+      {%- for nav-item in site.data.navigation %}
+        {%- if nav-item.key %}
+          {%- assign title = site.data.strings.navigation[nav-item.key] %}
+          {%- if nav-item.external %}
+            <a class="page-link" href="{{ nav-item.url }}">{{ title }}</a>
+          {%- else %}
+            {%- assign prefix = page.url | slice: 0, nav-item.url.size %}
+            {%- if page.collection == 'posts' %}
+              {%- assign prefix = '/news/' %}
+            {%- elsif page.app_category %}
+              {%- assign prefix = '/packages/' %}
+            {%- endif %}
+            <a class="page-link {%- if prefix == nav-item.url %} current" aria-current="page{% endif %}" href="{{ nav-item.url | prepend: site.baseurl }}">{{ title }}</a>
           {%- endif %}
-          <a class="page-link {%- if prefix == nav-item.url %} current" aria-current="page{% endif %}" href="{{ nav-item.url | prepend: site.baseurl }}">{{ title }}</a>
         {%- endif %}
-      {%- endif %}
-    {%- endfor %}
+      {%- endfor %}
+    </div>
+    <div class="adaptative-navbar-buttons">
+      <form class="language-chooser-form" id="language-chooser-form" action="{{site.baseurl}}{{ page.url }}" method="get">
+        <select class="language-chooser-select" id="language-chooser-select" name="lang" autocomplete="off" form="language-chooser-form">
+        {%- for lang in site.languages %}
+          <option value="{{ lang }}" {%- if lang == site.active_lang %}selected="selected"{%- endif %}>{{ site.data.languagenames[lang] }}</option>
+        {%- endfor %}
+        </select>
+        <noscript>
+          {%- assign strings = site.data.strings.sidebars.lang %}
+          <input class="language-chooser-submit" id="language-chooser-submit" type="submit" value="{{ strings.change }}" form="language-chooser-form">
+        </noscript>
+      </form>
+      <label class="navbar-menu-icon" for="toggle-menu">
+      </label>
+    </div>
   </nav>
-
 </header>

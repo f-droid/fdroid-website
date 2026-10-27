@@ -23,16 +23,12 @@ body {
 }
 
 .site-title {
-    display: flex;
     align-items: center;
-
-    &:hover {
-        text-decoration: none;
-    }
-
+    display: inline-flex;
+    
     img {
-        margin: calc(#{$spacing-unit} * 2 / 3);
         height: calc(#{$spacing-unit} * 3);
+        margin: calc(#{$spacing-unit} * 2 / 3);
 
         @include media-query($tablet) {
             height: calc(#{$spacing-unit} * 2);
@@ -44,24 +40,131 @@ body {
         }
     }
 
+    &:hover {
+        text-decoration: none;
+    }
 }
 
-.site-nav {
+.site-navbar-container {
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
     background: $primary-color;
+    .site-nav {
+        display: flex;
+        flex-wrap: wrap;
 
-    .page-link {
-        @include button-dark($primary-color);
+        .page-link {
+            @include button-dark($primary-color);
 
-        &.current {
-            $border-height: 6px;
-            border-bottom: $border-height solid rgba(255, 255, 255, .4);
+            &.current {
+                $border-height: 6px;
+                border-bottom: $border-height solid rgba(255, 255, 255, .4);
 
-            // Prevents the border from making the whole row higher:
-            line-height: calc((#{$spacing-unit} * 1.5) - (2 * #{$border-height}));
-            padding-top: $border-height;
+                // Prevents the border from making the whole row higher:
+                line-height: calc((#{$spacing-unit} * 1.5) - (2 * #{$border-height}));
+                padding-top: $border-height;
+            }
+
+            @include media-query($phone) {
+                display: none;
+                text-align: center;
+            }
         }
+
+        @include media-query($phone) {
+            align-items: center;
+            flex-direction: column;
+            width: 100%;
+        }
+    }
+
+    .adaptative-navbar-buttons {
+        display: flex;
+
+      /**
+       * Language chooser
+       */
+        .language-chooser-form {
+            @include button-dark($primary-color);
+            display: flex;
+            padding: 0;
+            
+            @include media-query($phone) {
+                background: none;
+            }
+
+            &:hover, &:active {
+                @include media-query($phone) {
+                    background: none;
+                }
+            }
+
+            .language-chooser-select {
+                appearance: unset;
+                background: url("../assets/ic_language_white_24px.svg") no-repeat center;
+                border: none;
+                cursor: pointer;
+                height: 24px;
+                padding: 24px;
+                text-transform: none;
+                width: 24px;
+
+                option {
+                    color: #000;
+                }
+                
+                &:focus-visible {
+                    outline: none;
+                }
+
+                @include media-query($phone) {
+                    background: url("../assets/ic_language_black_24px.svg") no-repeat center;
+                }
+            }
+
+            .language-chooser-submit {
+                @include button-dark($primary-color);
+                border: none;
+            }
+        }
+
+        .navbar-menu-icon {
+            display: none;
+            background: url("../assets/ic_menu_black_24px.svg") no-repeat center;
+            cursor: pointer;
+            height: 24px;
+            padding: 12px;
+            width: 24px;
+
+            @include media-query($phone) {
+                display: block;
+            }
+        }
+
+        @include media-query($phone) {
+            justify-content: flex-end;
+            margin-inline: calc(#{$spacing-unit} / 2 * (-1));
+            pointer-events: none;
+            position: absolute;
+            top: calc(#{$spacing-unit} / 2);
+            width: 100%;
+
+            & > * {
+                pointer-events: auto;
+            } 
+        }
+    }
+}
+
+input#toggle-menu {
+    display: none;
+}
+#toggle-menu {
+    &:checked ~ .page-link {
+        display: block;
+        padding: 0;
+        width: 100%;
     }
 }
 
@@ -524,22 +627,6 @@ body {
     }
  }
 
-
-/**
- * Language chooser
- */
-.sidebar-widget.language {
-    padding-bottom: 0.5em;
-    text-align: end;
-
-    .lang-flag {
-        margin: 0 0.1em;
-        vertical-align: middle;
-        max-width: 2em;
-        max-height: 1em;
-    }
-}
-
 /**
  * Search results
  */
@@ -589,14 +676,15 @@ body {
 }
 
 .search-input {
-  padding: 0.4em;
-  font-size: 1.1em;
-  box-sizing: border-box;
-  width: 100%;
-  padding-left: 40px;
   background: url('../assets/ic_search_black_24px.svg') no-repeat 10px center;
   border-radius: 4px;
-  border: solid 1px #aaa;
+  border: solid 1px #ccc;
+  box-sizing: border-box;
+  color: #757575;
+  font-size: 0.9em;
+  padding: 0.4em;
+  padding-left: 40px;
+  width: 100%;
 }
 
 .post-content {
