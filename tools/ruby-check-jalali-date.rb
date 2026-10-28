@@ -4,7 +4,7 @@
 # tools/jalali-leap-years.txt, the official table of Jalali new year dates
 # and leap years.
 #
-#   bundle exec ruby tools/check-jalali-date.rb
+#   bundle exec ruby tools/ruby-check-jalali-date.rb
 
 require 'date'
 require 'liquid'

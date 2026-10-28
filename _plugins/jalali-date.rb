@@ -25,7 +25,7 @@ module Jekyll
   # year started and counting from there.
   #
   # The cycle matches the official calendar from 1210 to 1498 (1831 to 2119)
-  # and tools/check-jalali-date.rb checks every day of that range. Outside
+  # and tools/ruby-check-jalali-date.rb checks every day of that range. Outside
   # it we return nil rather than a date we can't vouch for.
   module JalaliDate
     module_function
