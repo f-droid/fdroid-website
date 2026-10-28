@@ -243,7 +243,7 @@ layout: default-package-sidebar
 			<li class="package-version" {% if forloop.first %}id="latest"{% endif %}>
 			{%- if page.suggested_version_name == package.version_name and suggestedDisplayed != true %}<a name="suggested"></a>{% endif %}
 				<div class="package-version-header">
-					{%- assign package_added_date = package.added | date: site.data.strings.news.date_format %}
+					{%- assign package_added_date = package.added | localized_date: site.data.strings.news.date_format %}
 					<a name="{{ package.version_name }}"></a>
 					<a name="{{ package.version_code }}"></a>
 					{%- comment %}fmt_package_version_* are strings in the JSON that are replaced here{% endcomment %}
