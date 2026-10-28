@@ -8,6 +8,7 @@ gem "jekyll"
 # verifies a signed git tag, which then will include the SHA1 commit
 # ID, which git will verify.
 group :jekyll_plugins do
+    gem "jekyll-include-cache"
     gem "jekyll-redirect-from"
     # gem "jekyll-paginate-v2", :git => 'https://github.com/sverrirs/jekyll-paginate-v2.git',
     #     :ref => '7bc2634c04c49120b674cc3506275f85c4389f5c'
