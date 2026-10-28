@@ -24,7 +24,7 @@ set -x
 
 ./tools/i18n.sh
 
-wlc commit || true  # this is optional but can be helpful
+timeout 1m wlc commit || true  # this is optional but can be helpful
 git remote update -p weblate upstream
 git -C "$basedir" checkout -- `git diff upstream/master weblate/master --name-only --diff-filter=M`
 
