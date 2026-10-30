@@ -73,7 +73,7 @@ If you would like to donate via a direct IBAN bank transfer, then donate via [F-
 ## Swag
 
 Or buy a 👕 T-shirt 👕 from <br>
-[![HELLOTUX]({% asset hellotux_banner.jpg %})](https://www.hellotux.com/f-droid)<br>
+[![{{ strings.hellotux_alt }}]({% asset hellotux_banner.jpg %})](https://www.hellotux.com/f-droid)<br>
 (F-Droid will receive 3€ per shirt sold.)
 
 See our FAQ section below for answers to common questions and tips for making the most of your donation experience.
