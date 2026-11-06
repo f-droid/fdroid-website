@@ -56,15 +56,15 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
 "POT-Creation-Date: 2026-10-28 15:18+0100\n"
-"PO-Revision-Date: 2026-11-04 16:51+0000\n"
-"Last-Translator: Phil <sib64@users.noreply.hosted.weblate.org>\n"
+"PO-Revision-Date: 2026-11-06 07:44+0000\n"
+"Last-Translator: Lewis Bertin <lewis@tactiqual.tech>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/f-droid/website-docs/fr/>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 2026.11.1.dev0\n"
+"X-Generator: Weblate 2026.11.2.dev0\n"
 
 #. type: Yaml Front Matter Hash Value: title
 #: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
@@ -4448,38 +4448,38 @@ msgstr "Accéder au magasin de clés."
 #. type: Bullet: '3. '
 #: _docs/Build_Server_Setup.md
 msgid "Modify the built APK files or source tarballs for other applications in the repository."
-msgstr ""
+msgstr "Modifier les fichiers APK compilés ou les archives de sources pour d'autres applications du dépôt."
 
 #. type: Bullet: '4. '
 #: _docs/Build_Server_Setup.md
 msgid "Modify the metadata (which includes build scripts, which again, also includes the ability to execute anything) for other applications in the repository."
-msgstr ""
+msgstr "Modifier les métadonnées (qui incluent les scripts de compilation, lesquels permettent eux aussi d'exécuter n'importe quoi) pour d'autres applications du dépôt."
 
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
 msgid "Through complete isolation, the repercussions are at least limited to the application in question. Not only is the build environment fresh for each build, and thrown away afterwards, but it is also totally isolated from the signing environment."
-msgstr ""
+msgstr "Grâce à l'isolation complète, les conséquences sont au moins limitées à l'application concernée. L'environnement de compilation est non seulement neuf pour chaque compilation et jeté ensuite, mais il est aussi totalement isolé de l'environnement de signature."
 
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
 msgid "Aside from security issues, there are some applications which have strange requirements such as old versions of the NDK. It would be impractical (or at least extremely messy) to start modifying and restoring the SDK on a multi-purpose system, but within the confines of a throwaway single-use virtual machine, anything is possible."
-msgstr ""
+msgstr "Outre les problèmes de sécurité, certaines applications ont des exigences particulières, comme d'anciennes versions du NDK. Il serait peu pratique (ou du moins extrêmement compliqué) de modifier puis de restaurer le SDK sur un système polyvalent, alors que, dans les limites d'une machine virtuelle jetable à usage unique, tout est possible."
 
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
 msgid "All this is in addition to the obvious advantage of having a standardised and completely reproducible environment in which builds are made. Additionally, it allows for specialised custom build environments for particular applications."
-msgstr ""
+msgstr "Tout cela s'ajoute à l'avantage évident d'un environnement standardisé et entièrement reproductible dans lequel les compilations sont effectuées. Il permet en outre de disposer d'environnements de compilation personnalisés et spécialisés pour certaines applications."
 
 #. type: Title ##
 #: _docs/Build_Server_Setup.md
 #, no-wrap
 msgid "Overview of the setup"
-msgstr ""
+msgstr "Vue d'ensemble de la configuration"
 
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
 msgid "This is how to set up a working build server, starting from a completely clean minimal Debian/stable install.  This HOWTO assumes you have already [setup _fdroidserver_](../Installing_the_Server_and_Repo_Tools). Running the _fdroidserver_ tools directly out of [git](https://gitlab.com/fdroid/fdroidserver)  (e.g. `~/fdroidserver/fdroid build org.adaway`), will likely be the easiest for now since the build server setup scripts are not really ready for proper packaging. Also, it will likely only work on Debian, Ubuntu and other Debian-derivatives since F-Droid only uses Debian in its infrastructure (we welcome porting contributions!)."
-msgstr ""
+msgstr "Voici comment mettre en place un serveur de compilation fonctionnel, à partir d'une installation Debian/stable minimale et entièrement propre. Ce guide suppose que vous avez déjà [configuré _fdroidserver_](../Installing_the_Server_and_Repo_Tools). Exécuter directement les outils _fdroidserver_ depuis [git](https://gitlab.com/fdroid/fdroidserver) (par exemple `~/fdroidserver/fdroid build org.adaway`) sera sans doute le plus simple pour l'instant, car les scripts de configuration du serveur de compilation ne sont pas encore vraiment prêts pour un empaquetage correct. Par ailleurs, cela ne fonctionnera probablement que sous Debian, Ubuntu et les autres dérivés de Debian, car F-Droid n'utilise que Debian dans son infrastructure (les contributions pour le portage sont les bienvenues !)."
 
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
@@ -4489,7 +4489,7 @@ msgstr "Le serveur de base doit être au minimum sous Debian/trixie, sinon des a
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
 msgid "First, install the necessary packages and create a new user to run the whole process here, e.g. _fdroid_. These are only the packages required by all builds, you might need to install additional packages to build apps, for example, _mercurial_ or _subversion_. Once the packages are installed and the _fdroid_ user is created, nothing else in this process should be run using root or _sudo_."
-msgstr ""
+msgstr "Commencez par installer les paquets nécessaires et créer un nouvel utilisateur pour exécuter l'ensemble du processus, par exemple _fdroid_. Ce sont uniquement les paquets requis pour toutes les compilations ; vous aurez peut-être besoin d'installer des paquets supplémentaires pour compiler certaines applications, par exemple _mercurial_ ou _subversion_. Une fois les paquets installés et l'utilisateur _fdroid_ créé, rien d'autre dans ce processus ne doit être exécuté avec root ou _sudo_."
 
 #. type: Fenced code block (bash)
 #: _docs/Build_Server_Setup.md
@@ -4537,18 +4537,18 @@ msgstr "$ git clone https://gitlab.com/fdroid/fdroid-website\n"
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
 msgid "You also have to make sure your `ANDROID_HOME` environment variable is [set up](../Installing_the_Server_and_Repo_Tools#building-apps) correctly."
-msgstr ""
+msgstr "Vous devez également vous assurer que votre variable d'environnement `ANDROID_HOME` est correctement [définie](../Installing_the_Server_and_Repo_Tools#building-apps)."
 
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
 msgid "For your convenience you optionally may add the fdroid executable to your path:"
-msgstr ""
+msgstr "Pour plus de commodité, vous pouvez éventuellement ajouter l'exécutable fdroid à votre PATH :"
 
 #. type: Fenced code block (bash)
 #: _docs/Build_Server_Setup.md
 #, no-wrap
 msgid "fdroid:~$ echo \"PATH=\\$PATH:$HOME/fdroidserver\" >> ~/.bashrc\n"
-msgstr ""
+msgstr "fdroid:~$ echo \"PATH=\\$PATH:$HOME/fdroidserver\" >> ~/.bashrc\n"
 
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
@@ -4564,6 +4564,10 @@ msgid ""
 "fdroid:~$ cp fdroidserver/examples/config.yml fdroiddata/\n"
 "fdroid:~$ sed -i \"s@^[# ]*build_server_always.*@build_server_always: true@\" fdroiddata/config.yml\n"
 msgstr ""
+"fdroid:~/fdroidserver$ cd ~\n"
+"fdroid:~$ git clone https://gitlab.com/fdroid/fdroiddata.git\n"
+"fdroid:~$ cp fdroidserver/examples/config.yml fdroiddata/\n"
+"fdroid:~$ sed -i \"s@^[# ]*build_server_always.*@build_server_always: true@\" fdroiddata/config.yml\n"
 
 #. type: Title ##
 #: _docs/Build_Server_Setup.md
