@@ -32,7 +32,7 @@ Taler](https://taler.net) as soon as it becomes available to EU citizens.
 
 ### How to donate
 
-We recommend using donation platforms like [**Liberapay**](https://liberapay.com/F-Droid-Data/ "https://liberapay.com/F-Droid-Data/") or [**Open Collective**](https://opencollective.com/f-droid/ "https://opencollective.com/f-droid/"). These free software, community-driven donation platforms, support low-fee and transparent donations.
+We recommend using donation platforms like [**Liberapay**](https://liberapay.com/F-Droid-Data/) or [**Open Collective**](https://opencollective.com/f-droid/). These free software, community-driven donation platforms, support low-fee and transparent donations.
 
 You can support F-Droid via monthly recurring donations or with one-time gifts.
 
