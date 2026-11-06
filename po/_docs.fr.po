@@ -56,15 +56,15 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
 "POT-Creation-Date: 2026-10-28 15:18+0100\n"
-"PO-Revision-Date: 2026-10-31 17:34+0000\n"
-"Last-Translator: Phil <sib64@users.noreply.hosted.weblate.org>\n"
+"PO-Revision-Date: 2026-11-04 16:51+0000\n"
+"Last-Translator: Lewis Bertin <lewis@tactiqual.tech>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/f-droid/website-docs/fr/>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 2026.11.dev0\n"
+"X-Generator: Weblate 2026.11.1.dev0\n"
 
 #. type: Yaml Front Matter Hash Value: title
 #: _docs/All_About_Descriptions_Graphics_and_Screenshots.md
@@ -3991,10 +3991,8 @@ msgstr "La version spécifiée via [_CurrentVersionCode_](#CurrentVersionCode) e
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-#, fuzzy
-#| msgid "Currently the only supported format is `n`, where `n` is the number of versions to keep. Defaults to `3`. For apps with a list of [_VercodeOperation_](#VercodeOperation) the default is calculated as `3 x number of operations`, eg. for an app with two operations, for two ABIs, 6 versions will be kept."
 msgid "Currently the only supported format is `n`, where `n` is the number of versions to keep. Defaults to `3`. For apps with a list of [_VercodeOperation_](#VercodeOperation) the default is calculated as `3 × number of operations`, e.g. for an app with two operations, for two ABIs, 6 versions will be kept."
-msgstr "Actuellement, le seul format pris en charge est `n` où `n` est le nombre de versions à conserver, par défaut `3`. Pour les applications avec une liste de [_VercodeOperation_](#VercodeOperation) la valeur par défaut est calculée comme `3 x nombre d'opérations`, par ex. pour une application à deux opérations, pour deux ABI, 6 versions seront conservées."
+msgstr "Actuellement, le seul format pris en charge est `n`, où `n` est le nombre de versions à conserver. La valeur par défaut est `3`. Pour les applications disposant d'une liste de [_VercodeOperation_](#VercodeOperation), la valeur par défaut est calculée comme `3 × number of operations`. Par exemple, pour une application à deux opérations et deux ABI, 6 versions seront conservées."
 
 #. type: Title ###
 #: _docs/Build_Metadata_Reference.md
@@ -4092,17 +4090,13 @@ msgstr "_UpdateCheckMode (Mode de vérification des mises à jour)_<a name=\"Upd
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-#, fuzzy
-#| msgid "This determines the method using for determining when new releases are available - in other words, the updating of the _CurrentVersion_ and _CurrentVersionCode_ fields in the metadata by the `fdroid checkupdates` process."
 msgid "This determines the method using for determining when new releases are available - in other words, the updating of the [_CurrentVersion_](#CurrentVersion)  and [_CurrentVersionCode_](#CurrentVersionCode) fields in the metadata by the `fdroid checkupdates` process."
-msgstr "Définit la méthode utilisée pour déterminer quand de nouvelles versions sont disponibles - en d'autres terme : définit la mise à jour des champs _CurrentVersion_ et _CurrentVersionCode_ dans les métadonnées du processus `fdroid checkupdates`."
+msgstr "Ceci détermine la méthode utilisée pour savoir quand de nouvelles versions sont disponibles, autrement dit la mise à jour des champs [_CurrentVersion_](#CurrentVersion) et [_CurrentVersionCode_](#CurrentVersionCode) dans les métadonnées par le processus `fdroid checkupdates`."
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-#, fuzzy
-#| msgid "`None` - No checking is done because there's no appropriate automated way of doing so. Updates should be checked for manually.  Use this, for example, when deploying unstable or patched versions; when builds are done in a directory different to where the _AndroidManifest.xml_ is; if the developers use the Gradle build system and store version info in a separate file; if the developers make a new branch for each release and don't make tags; or if you've changed the package name or version code logic."
 msgid "By default, no checking is done because there's no appropriate automated way of doing so. Updates should be checked for manually. Use this, for example, when deploying unstable or patched versions; when builds are done in a directory different to where the _AndroidManifest.xml_ is; if the developers use the Gradle build system and store version info in a separate file; if the developers make a new branch for each release and don't make tags; or if you've changed the package name or version code logic."
-msgstr "`None` - Aucune vérification n'est effectuée, car il n'existe aucun moyen automatisé approprié de le faire. Les mises à jour doivent être vérifiées manuellement. Utilisez cette option, par exemple, lors du déploiement de versions instables ou corrigées ; lorsque les builds sont effectuées dans un répertoire différent de celui où se trouve le fichier _AndroidManifest.xml_ ; si les développeurs utilisent le système de build Gradle et stockent les informations de version dans un fichier séparé ; s'ils créent une nouvelle branche pour chaque version sans créer de balises ; ou si vous avez modifié le nom du package ou la logique du code de version."
+msgstr "Par défaut, aucune vérification n'est effectuée, car il n'existe aucun moyen automatisé approprié de le faire. Les mises à jour doivent être vérifiées manuellement. Utilisez cette option, par exemple, lors du déploiement de versions instables ou corrigées ; lorsque les compilations sont effectuées dans un répertoire différent de celui où se trouve le fichier _AndroidManifest.xml_ ; si les développeurs utilisent le système de compilation Gradle et stockent les informations de version dans un fichier séparé ; s'ils créent une nouvelle branche pour chaque version sans créer de balises ; ou si vous avez modifié le nom du paquet ou la logique du code de version."
 
 #. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
@@ -4111,31 +4105,27 @@ msgstr "`Statique` - aucune vérification n'est effectuée, soit le développeme
 
 #. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
-#, fuzzy
-#| msgid "`RepoManifest` - At the most recent commit, the _AndroidManifest.xml_ and _build.gradle_ files are looked for in the directory where they were found in the the most recent build. The appropriateness of this method depends on the development process used by the application's developers. You should not specify this method unless you're sure it's appropriate. For example, some developers bump the version when commencing development instead of when publishing. It will return an error if the _AndroidManifest.xml_ has moved to a different directory or if the package name has changed. The current version that it gives may not be accurate, since not all versions are fit to be published.  Therefore, before building, it is often necessary to check if the current version has been published somewhere by the upstream developers, either by checking for APKs that they distribute or for tags in the source code repository."
 msgid "`RepoManifest` - At the most recent commit, the _AndroidManifest.xml_ and _build.gradle_ files are looked for in the directory where they were found in the most recent build. The appropriateness of this method depends on the development process used by the application's developers. You should not specify this method unless you're sure it's appropriate. For example, some developers bump the version when commencing development instead of when publishing. It will return an error if the _AndroidManifest.xml_ has moved to a different directory or if the package name has changed. The current version that it gives may not be accurate, since not all versions are fit to be published. Therefore, before building, it is often necessary to check if the current version has been published somewhere by the upstream developers, either by checking for APKs that they distribute or for tags in the source code repository."
-msgstr "`RepoManifest` - Lors de la validation la plus récente, les fichiers _AndroidManifest.xml_ et _build.gradle_ sont recherchés dans le répertoire où ils ont été trouvés dans la version la plus récente. La pertinence de cette méthode dépend des développeurs de l'application. Vous ne devez pas spécifier cette méthode à moins d'être sûr qu'elle est appropriée. Par exemple, certains développeurs augmentent la version au début du développement plutôt qu'au moment de la publication. Il renverra une erreur si _AndroidManifest.xml_ a été déplacé vers un autre répertoire ou si le nom du package a changé. La version actuelle qu'il donne peut ne pas être exacte, car toutes les versions ne sont pas aptes à être publiées. Par conséquent, avant de construire, il est souvent nécessaire de vérifier si la version actuelle a été publiée quelque part par les développeurs en amont, en vérifiant soit les APK qu'ils distribuent, soit les balises dans le référentiel de code source."
+msgstr "`RepoManifest` - au dernier commit, les fichiers _AndroidManifest.xml_ et _build.gradle_ sont recherchés dans le répertoire où ils ont été trouvés lors de la compilation la plus récente. La pertinence de cette méthode dépend du processus de développement suivi par les développeurs de l'application. Ne spécifiez pas cette méthode, sauf si vous êtes sûr de sa pertinence. Par exemple, certains développeurs augmentent le numéro de version au début du développement plutôt qu'au moment de la publication. Elle renverra une erreur si le fichier _AndroidManifest.xml_ a été déplacé dans un autre répertoire ou si le nom du paquet a changé. La version actuelle qu'elle indique peut ne pas être exacte, car toutes les versions ne sont pas bonnes à publier. Il est donc souvent nécessaire, avant de compiler, de vérifier si la version actuelle a été publiée quelque part par les développeurs en amont, soit en contrôlant les APK qu'ils distribuent, soit en recherchant des balises dans le dépôt de code source."
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid ""
 "  For `git` repo types, you may use `RepoManifest/yourbranch` as\n"
 "  _UpdateCheckMode_ so that \"yourbranch\" would be the branch used in place of\n"
 "  the default one. The default branch is \"_master_\". It does not work\n"
 "  for `srclib` repo types.\n"
 msgstr ""
-"  Pour les types de dépôts `git`, vous pouvez utiliser `RepoManifest/votrebranche` comme\n"
-"  _UpdateCheckMode_ afin que « votrebranche » soit la branche utilisée à la place de\n"
+"  Pour les types de dépôts `git`, vous pouvez utiliser `RepoManifest/yourbranch` comme\n"
+"  _UpdateCheckMode_ afin que « yourbranch » soit la branche utilisée à la place de\n"
 "  la branche par défaut. La branche par défaut est « _master_ ». Cela ne fonctionne pas\n"
 "  pour les types de dépôts `srclib`.\n"
 
 #. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
-#, fuzzy
-#| msgid "`Tags` - The _AndroidManifest.xml_ and _build.gradle_ files in all tagged revisions in the source repository are checked, looking for the highest version code.  The appropriateness of this method depends on the development process used by the application's developers. You should not specify this method unless you're sure it's appropriate. It shouldn't be used if the developers like to tag unstable versions or are known to forget to tag releases. Like RepoManifest, it will not return the correct value if the directory containing the _AndroidManifest.xml_ has moved. Despite these caveats, it is the often the favourite _UpdateCheckMode_."
 msgid "`Tags` - The _AndroidManifest.xml_ and _build.gradle_ files in all tagged revisions in the source repository are checked, looking for the highest version code. The appropriateness of this method depends on the development process used by the application's developers. You should not specify this method unless you're sure it's appropriate. It shouldn't be used if the developers like to tag unstable versions or are known to forget to tag releases. Like `RepoManifest`, it will not return the correct value if the _AndroidManifest.xml_ were moved to another directory. Despite these caveats, it is often the favourite _UpdateCheckMode_."
-msgstr "`Tags` - Les fichiers _AndroidManifest.xml_ et _build.gradle_ dans toutes les révisions étiquetées du dépôt source sont vérifiés, à la recherche du code de version le plus élevé. La pertinence de cette méthode dépend du processus de développement utilisé par les développeurs de l'application. Vous ne devez pas spécifier cette méthode à moins d'être sûr qu'elle est appropriée. Il ne doit pas être utilisé si les développeurs aiment étiqueter les versions instables ou sont connus pour oublier de étiqueter les versions. Comme RepoManifest, il ne renverra pas la valeur correcte si le répertoire contenant le _AndroidManifest.xml_ a été déplacé. Malgré ces mises en garde, c'est souvent le _UpdateCheckMode_ préféré."
+msgstr "`Tags` - les fichiers _AndroidManifest.xml_ et _build.gradle_ de toutes les révisions étiquetées du dépôt source sont vérifiés, à la recherche du code de version le plus élevé. La pertinence de cette méthode dépend du processus de développement suivi par les développeurs de l'application. Ne spécifiez pas cette méthode, sauf si vous êtes sûr de sa pertinence. Elle ne doit pas être utilisée si les développeurs aiment étiqueter des versions instables ou s'ils sont connus pour oublier d'étiqueter les versions. Comme `RepoManifest`, elle ne renverra pas la bonne valeur si le fichier _AndroidManifest.xml_ a été déplacé dans un autre répertoire. Malgré ces mises en garde, c'est souvent le _UpdateCheckMode_ préféré."
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -4177,10 +4167,8 @@ msgstr ""
 
 #. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
-#, fuzzy
-#| msgid "`HTTP` - HTTP requests are used to determine the current version code and version name. This is controlled by the _UpdateCheckData_ field, which is of the form `urlcode|excode|urlver|exver`."
 msgid "`HTTP` - HTTP requests are used to determine the current version code and version name. This is controlled by the [_UpdateCheckData_](#UpdateCheckData) field, which is of the form `urlcode|excode|urlver|exver`."
-msgstr "`HTTP` - Les requêtes HTTP sont utilisées pour déterminer le code et le nom de la version actuelle . Ceci est contrôlé par le champ _UpdateCheckData_, de forme `urlcode|excode|urlver|exver`."
+msgstr "`HTTP` - des requêtes HTTP servent à déterminer le code de version actuel et le nom de version. Cela est contrôlé par le champ [_UpdateCheckData_](#UpdateCheckData), qui a la forme `urlcode|excode|urlver|exver`."
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -4218,10 +4206,8 @@ msgstr "_VercodeOperation_<a name=\"VercodeOperation\"></a>"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-#, fuzzy
-#| msgid "Operation to be applied to the version code obtained by the defined _UpdateCheckMode_. `%c` will be replaced by the actual version code, and the whole string will be passed to python's `eval` function."
 msgid "Operation to be applied to the version code obtained by the defined [_UpdateCheckMode_](#UpdateCheckMode). `%c` will be replaced by the actual version code, and the whole string will be passed to python's `eval` function."
-msgstr "L’opération à appliquer au code de version obtenu par le _UpdateCheckMode_ défini. `%c` sera remplacé par le code de version réel, et la chaîne entière sera passée à la fonction `eval` de python."
+msgstr "Opération à appliquer au code de version obtenu par le [_UpdateCheckMode_](#UpdateCheckMode) défini. `%c` sera remplacé par le code de version réel, et la chaîne entière sera transmise à la fonction `eval` de Python."
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -4257,17 +4243,13 @@ msgstr "_UpdateCheckIgnore (Ignorer la vérification des mises à jour)_<a name=
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-#, fuzzy
-#| msgid "When checking for updates (via _UpdateCheckMode_) this can be used to specify a regex which, if matched against the version name, causes that version to be ignored. For example, 'beta' could be specified to ignore version names that include that text."
 msgid "When checking for updates (via [_UpdateCheckMode_](#UpdateCheckMode)) this can be used to specify a regex which, if matched against the version name, causes that version to be ignored. For example, 'beta' could be specified to ignore version names that include that text."
-msgstr "Peut être utilisé lors de la vérification des mises à jour (via _UpdateCheckMode_) pour spécifier une expression régulière qui, si elle correspond au nom de la version, entraîne l’ignorance de cette version. Par exemple, 'beta' peut être spécifié pour ignorer les noms de version l'incluant."
+msgstr "Lors de la vérification des mises à jour (via [_UpdateCheckMode_](#UpdateCheckMode)), ce champ peut servir à spécifier une expression régulière qui, si elle correspond au nom de version, fait ignorer cette version. Par exemple, « beta » peut être indiqué pour ignorer les noms de version qui contiennent ce texte."
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-#, fuzzy
-#| msgid "Only Available with _UpdateCheckMode_ `HTTP`."
 msgid "Only Available with [_UpdateCheckMode_](#UpdateCheckMode) `HTTP`."
-msgstr "Exclusivement disponible avec _UpdateCheckMode_ `HTTP`."
+msgstr "Disponible uniquement avec [_UpdateCheckMode_](#UpdateCheckMode) `HTTP`."
 
 #. type: Title ###
 #: _docs/Build_Metadata_Reference.md
@@ -4282,10 +4264,8 @@ msgstr "Peut être utilisé lors de la recherche de mises à jour (via _UpdateCh
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-#, fuzzy
-#| msgid "You can also use `Ignore` to ignore package name searching. This should only be used in some specific cases, for example if the app's build.gradle file does not contain the package name."
 msgid "You can also use `Ignore` to ignore package name searching. This should only be used in some specific cases, for example if the app's `build.gradle` file does not contain the package name."
-msgstr "Vous pouvez utiliser `Ignore` pour ignorer la recherche de nom de paquet. Cela ne doit être utilisé que dans certains cas spécifiques, par exemple si le fichier build.gradle de l’application ne contient pas le nom du paquet."
+msgstr "Vous pouvez aussi utiliser `Ignore` pour ignorer la recherche du nom de paquet. Cela ne doit être utilisé que dans certains cas particuliers, par exemple si le fichier `build.gradle` de l'application ne contient pas le nom du paquet."
 
 #. type: Title ###
 #: _docs/Build_Metadata_Reference.md
@@ -4295,10 +4275,8 @@ msgstr "_UpdateCheckData (Données pour la vérification des mises à jour)_<a n
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-#, fuzzy
-#| msgid "Used in conjunction with _UpdateCheckMode_ `Tags` or `HTTP`."
 msgid "Used in conjunction with [_UpdateCheckMode_](#UpdateCheckMode) `Tags` or `HTTP`."
-msgstr "Utilisé conjointement avec _UpdateCheckMode_ `Tags` ou `HTTP`."
+msgstr "À utiliser conjointement avec [_UpdateCheckMode_](#UpdateCheckMode) `Tags` ou `HTTP`."
 
 #. type: Fenced code block (yaml)
 #: _docs/Build_Metadata_Reference.md
@@ -4358,10 +4336,8 @@ msgstr "Si aucun fichier correspondant au code de version n'a été spécifié, 
 
 #. type: Bullet: '* '
 #: _docs/Build_Metadata_Reference.md
-#, fuzzy
-#| msgid "Note: Be sure to use *single* quotes around the entire value if you leave `vercode-location` empty: `UpdateCheckData: '|\\+(\\d+)||Android-([\\d.]+)'`"
 msgid "Note: Be sure to use _single_ quotes around the entire value if you leave `vercode-location` empty: `UpdateCheckData: '|\\+(\\d+)||Android-([\\d.]+)'`"
-msgstr "Remarque: assurez-vous d'utiliser des guillemets *simples* autour de la valeur entière si vous laissez `vercode-location` vide: `UpdateCheckData: '|\\+(\\d+)||Android-([\\d.]+)'`"
+msgstr "Remarque : veillez à utiliser des guillemets _simples_ autour de toute la valeur si vous laissez `vercode-location` vide : `UpdateCheckData: '|\\+(\\d+)||Android-([\\d.]+)'`"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
@@ -4435,36 +4411,34 @@ msgstr "_Fournit_<a name=\"Fournit\"></a>"
 
 #. type: Plain text
 #: _docs/Build_Metadata_Reference.md
-#, fuzzy
-#| msgid "Comma-separated list of application IDs that this app provides. This field was only ever a stub and was never used for anything.  It was never supported in _index-v1.json_ nor _.yml_ metadata files."
 msgid "Comma-separated list of application IDs that this app provides. This field was only ever a stub and was never used for anything. It was never supported in _index-v1.json_ nor _.yml_ metadata files."
-msgstr "Liste séparée par des virgules des identifiants d'application fournis par cette application. Ce champ n'était qu'un stub et n'a jamais servi à quoi que ce soit. Il n'a jamais été pris en charge dans les fichiers de métadonnées _index-v1.json_ ni _.yml_."
+msgstr "Liste séparée par des virgules des identifiants d'application que fournit cette application. Ce champ n'était qu'une ébauche et n'a jamais servi à rien. Il n'a jamais été pris en charge dans les fichiers de métadonnées _index-v1.json_ ni _.yml_."
 
 #. type: Yaml Front Matter Hash Value: title
 #: _docs/Build_Server_Setup.md
 #, no-wrap
 msgid "Build Server Setup"
-msgstr ""
+msgstr "Configuration du serveur de compilation"
 
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
 msgid "The F-Droid build server isolates the builds for each package within a clean, isolated and secure throwaway virtual machine environment. Building thousands of apps, especially with automated and/or unattended processes, could be considered a dangerous pastime from a security perspective. This is even more the case when the products of the build are also distributed widely and in a semi-automated (\"you have updates available\") fashion."
-msgstr ""
+msgstr "Le serveur de compilation de F-Droid isole la compilation de chaque paquet dans un environnement de machine virtuelle jetable, propre, isolé et sécurisé. Compiler des milliers d'applications, en particulier avec des processus automatisés ou sans surveillance, peut être considéré comme une activité dangereuse du point de vue de la sécurité. C'est d'autant plus vrai lorsque les produits de la compilation sont aussi distribués largement et de manière semi-automatisée (« vous avez des mises à jour disponibles »)."
 
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
 msgid "Assume that an upstream source repository is compromised. A small selection of things that an attacker could do in such a situation:"
-msgstr ""
+msgstr "Supposez qu'un dépôt de sources en amont soit compromis. Voici une petite sélection de ce qu'un attaquant pourrait faire dans cette situation :"
 
 #. type: Bullet: '1. '
 #: _docs/Build_Server_Setup.md
 msgid "Use custom build steps to execute virtually anything as the user doing the build."
-msgstr ""
+msgstr "Utiliser des étapes de compilation personnalisées pour exécuter pratiquement n'importe quoi sous l'identité de l'utilisateur qui effectue la compilation."
 
 #. type: Bullet: '2. '
 #: _docs/Build_Server_Setup.md
 msgid "Access the keystore."
-msgstr ""
+msgstr "Accéder au magasin de clés."
 
 #. type: Bullet: '3. '
 #: _docs/Build_Server_Setup.md
