@@ -356,7 +356,7 @@ def download(url, path):
                 print(e, file=sys.stderr)
                 path.unlink(missing_ok=True)
         elif code == 304:
-            print("Remote remote file not changed", file=sys.stderr)
+            print("Remote file not changed", file=sys.stderr)
             break
         else:
             print(f"Failed to download from {url}: {code}!", file=sys.stderr)
@@ -372,15 +372,17 @@ def download_json(url, path):
 
 def get_index():
     log_commits = download_json(LOG_COMMIT_API, CACHE / "commits.json")
-    today = datetime.now(timezone.utc).replace(hour=0, minute=0, second=0, microsecond=0)
-    last_friday = today - timedelta(days=(today.weekday() + 3) % 7)
+    today = datetime.now(timezone.utc).replace(
+        hour=0, minute=0, second=0, microsecond=0
+    )
+    last_week = today - timedelta(days=7)
 
     if OLD_INDEX_COMMIT:
         old_id = OLD_INDEX_COMMIT
     else:
         for commit in log_commits:
             commit_date = datetime.fromisoformat(commit["created_at"])
-            if commit_date < last_friday:
+            if commit_date < last_week:
                 old_id = commit["id"]
                 break
 
