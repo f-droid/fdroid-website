@@ -1,6 +1,5 @@
 ---
-
-image: docker.io/debian:bookworm-slim
+image: docker.io/debian:trixie-slim
 
 stages:
   - deploy
@@ -42,7 +41,6 @@ variables:
   apt-get dist-upgrade
   set +x
 
-
 # Common steps required for each type of "Build" (f-droid.org, GitLab Pages, feature branches)
 #
 # This template needs to be in text block format since gitlab-runner
@@ -75,7 +73,6 @@ variables:
   ./tools/i18n.sh
   set +x
 
-
 # This is a manual task for building in preparation to deploy to
 # https://f-droid.org. It is run on the deployserver using `docker
 # run` each time a tag is found that is signed by a key in the
@@ -88,7 +85,7 @@ variables:
 # ready to be deployed to https://f-droid.org.
 f-droid.org:
   stage: production
-  image: docker.io/debian:bookworm
+  image: docker.io/debian:trixie
   rules:
     - when: manual
       if: $CI_PROJECT_PATH == "fdroid/fdroidserver"
@@ -98,18 +95,17 @@ f-droid.org:
     - *apt-template
     - *setup_for_jekyll
     - sed -Ei
-        -e "s,^(url\x3a).*,\1 https://f-droid.org,"
-        -e 's,^(baseurl\x3a).*,\1 "",'
-        _config.yml
+      -e "s,^(url\x3a).*,\1 https://f-droid.org,"
+      -e 's,^(baseurl\x3a).*,\1 "",'
+      _config.yml
     - echo "Jekyll config used for CI:" && cat _config.yml
     - jekyll build --destination $JEKYLL_BUILD_DESTINATION --trace
     - ./tools/prepare-multi-lang.sh $JEKYLL_BUILD_DESTINATION
     - ./tools/deploy-external-assets.sh $JEKYLL_BUILD_DESTINATION
 
-
 pages:
   stage: deploy
-  image: docker.io/debian:bookworm
+  image: docker.io/debian:trixie
   rules:
     - if: $CI_PIPELINE_SOURCE != "trigger"
   artifacts:
@@ -119,7 +115,7 @@ pages:
     when: always
   script:
     - (find _*/ -type f | grep -Ev '\.(html|json|md|rb|scss|xml|yaml)$')
-         && (echo "ERROR The above files have a bad or missing file extension"; exit 1)
+      && (echo "ERROR The above files have a bad or missing file extension"; exit 1)
     - *apt-template
     - apt-get install curl python3-colorama python3-yaml
     - ./tools/trigger-spellcheckbot
@@ -138,9 +134,9 @@ pages:
     # This is where GitLab pages will deploy to by default (e.g. "https://fdroid.gitlab.io/fdroid-website")
     # so we need to make sure that the Jekyll configuration understands this.
     - sed -Ei
-        -e "s,^(url\x3a).*,\1 'https://$CI_PROJECT_NAMESPACE.gitlab.io',"
-        -e "s,^(baseurl\x3a).*,\1 '/$CI_PROJECT_NAME',"
-        _config.yml
+      -e "s,^(url\x3a).*,\1 'https://$CI_PROJECT_NAMESPACE.gitlab.io',"
+      -e "s,^(baseurl\x3a).*,\1 '/$CI_PROJECT_NAME',"
+      _config.yml
     - echo "Jekyll config used for CI:" && cat _config.yml
     - jekyll build -d public --trace --future
     - cp -v robots.txt.noindex public/robots.txt
@@ -149,7 +145,6 @@ pages:
     - ln -sv ../public linkchecker/$CI_PROJECT_NAME
     - ruby -run -e httpd linkchecker/ -p 4000 > /dev/null 2>&1 &
     - linkchecker http://localhost:4000/$CI_PROJECT_NAME --config=.linkcheckerrc
-
 
 # check rsync mirrors still available
 rsync mirrors:
@@ -160,11 +155,11 @@ rsync mirrors:
     - *apt-template
     - apt-get install rsync
     - for f in $(sed 's,[^:]*:,,' _data/rsync_mirrors.yaml); do
-          echo '==============================================================';
-          echo "$f";
-          rsync --list-only ${f}::fdroid \
-          || rsync --list-only ${f}::fdroid \
-          || rsync --list-only ${f}::fdroid;
+      echo '==============================================================';
+      echo "$f";
+      rsync --list-only ${f}::fdroid \
+      || rsync --list-only ${f}::fdroid \
+      || rsync --list-only ${f}::fdroid;
       done
 
 # Merge conflicts with Weblate are a big pain, so check they won't happen.
@@ -188,14 +183,13 @@ weblate merge conflict:
     - git checkout -B weblate FETCH_HEAD
     - export EXITVALUE=0
     - if ! git rebase $CI_COMMIT_SHA; then
-          export EXITVALUE=1;
-          set -x;
-          while git rebase --skip; do echo; done;
-          set +x;
+      export EXITVALUE=1;
+      set -x;
+      while git rebase --skip; do echo; done;
+      set +x;
       fi
     - git diff --exit-code
     - exit $EXITVALUE
-
 
 spellcheckbot:
   stage: deploy
@@ -209,14 +203,14 @@ spellcheckbot:
     - test -n ${FROM_CI_COMMIT_SHA}
     - git fetch ${FROM_CI_PROJECT_URL} ${FROM_CI_COMMIT_SHA}
     - for f in $(git diff --name-only --diff-filter=d HEAD...${FROM_CI_COMMIT_SHA}); do
-          export CHANGED="$CHANGED $(echo $f | grep '\.md$' || true)";
+      export CHANGED="$CHANGED $(echo $f | grep '\.md$' || true)";
       done
     - if [ -z "$(echo $CHANGED | sed 's,\s*,,g')" ]; then
-          echo "No markdown files changed";
-          exit 0;
+      echo "No markdown files changed";
+      exit 0;
       else
-          echo "Spellchecking $CHANGED";
-          git checkout --force ${FROM_CI_COMMIT_SHA};
+      echo "Spellchecking $CHANGED";
+      git checkout --force ${FROM_CI_COMMIT_SHA};
       fi
     - apt-get install hunspell-en-us jq nodejs npm python3-gitlab python3-requests
     - ./tools/fetch-spelling-words.py >> .spelling
@@ -226,9 +220,8 @@ spellcheckbot:
     - grep --no-filename -rEo 'v[0-9]+(:?\.[0-9]+)+' _* | sort -u >> .spelling
     - npm i markdown-spellcheck -g
     - (mdspell --report --en-gb --ignore-numbers --ignore-acronyms $CHANGED > output.txt 2>&1)
-        || ./tools/spellcheckbot.py
+      || ./tools/spellcheckbot.py
     - cat output.txt
-
 
 # Download and verify that the FDroid.apk is signed by the right PGP
 # key.  The only time that F-Droid's signed metadata does not verify
@@ -270,10 +263,10 @@ check_fdroid_apk_bot:
     - ls -l $apk $asc
     - sha256sum $apk
     - gpg --batch --trust-model always --verify $asc $apk || (
-          apk add --no-cache python3;
-          python3 -m ensurepip;
-          $pip install python-gitlab;
-          ./tools/run-check-fdroid-apk-bot.py;
+      apk add --no-cache python3;
+      python3 -m ensurepip;
+      $pip install python-gitlab;
+      ./tools/run-check-fdroid-apk-bot.py;
       )
 
 # There is a specific syntax in the filename of posts that specifies
@@ -288,17 +281,16 @@ Jekyll Post filename:
   script:
     - export EXITVALUE=0
     - for f in _posts/*.*; do
-          echo "$f" | grep -E '20[0-9][0-9]-[0-9][0-9]-[0-9][0-9]-\S+\.(md|html)' > /dev/null
-            || { echo "ERROR bad filename $f"; export EXITVALUE=1; }
+      echo "$f" | grep -E '20[0-9][0-9]-[0-9][0-9]-[0-9][0-9]-\S+\.(md|html)' > /dev/null
+      || { echo "ERROR bad filename $f"; export EXITVALUE=1; }
       done
     - test $EXITVALUE -eq 0 || echo "See https://jekyllrb.com/docs/posts/"
     - exit $EXITVALUE
 
-
 # TODO make other shell scripts pass shellcheck
 shellcheck:
   stage: deploy
-  image: debian:bookworm-slim
+  image: debian:trixie-slim
   rules:
     - if: $CI_PIPELINE_SOURCE != "trigger"
       changes:
@@ -309,7 +301,6 @@ shellcheck:
     - *apt-template
     - apt-get install shellcheck
     - shellcheck --severity=warning tools/check-asset-tags.sh tools/docker-cmd-*.sh
-
 
 # basic checks for dev setup
 Vagrantfile:
@@ -328,7 +319,6 @@ Vagrantfile:
     - vagrant validate || set_error;
     - exit $EXITVALUE
 
-
 YAML Front Matter:
   stage: deploy
   rules:
@@ -343,13 +333,12 @@ YAML Front Matter:
     - apt-get install python3-yaml yamllint
     - EXITVALUE=0
     - for f in _docs/*.md _pages/*.md _posts/*.md; do
-          echo $f;
-          python3 -c "import re; print(re.match(r'---\n.*?---',  open('$f').read(), re.DOTALL).group())" > ${f}.yml;
-          if ! yamllint ${f}.yml; then cat ${f}.yml; export EXITVALUE=1; fi;
+      echo $f;
+      python3 -c "import re; print(re.match(r'---\n.*?---',  open('$f').read(), re.DOTALL).group())" > ${f}.yml;
+      if ! yamllint ${f}.yml; then cat ${f}.yml; export EXITVALUE=1; fi;
       done
     - ./tools/check-yaml-front-matter.py
     - exit $EXITVALUE
-
 
 yamllint:
   stage: deploy
@@ -363,7 +352,6 @@ yamllint:
     - *apt-template
     - apt-get install yamllint
     - yamllint .yamllint .*.yml _config.yml
-
 
 markdownlint:
   image: debian:trixie-slim
