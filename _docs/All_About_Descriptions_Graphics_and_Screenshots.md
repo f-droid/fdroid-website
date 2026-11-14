@@ -153,7 +153,7 @@ Place the following structure at `<module>/src/main/play/` or, for **build flavo
     │   ├── short-description.txt       (short description, max 80 chars, mandatory)
     │   ├── full-description.txt        (full app description, max 4000 chars, mandatory)
     │   ├── video-url.txt               (URL to a video introducing the app)
-    │   ├── whatsnew                    (alternative changelog location; single file, no .txt)
+    │   ├── whatsnew                    (alternative changelog location; single file, no .txt; not supported in the latest version of Triple-T plugin)
     │   └── graphics
     │       ├── icon                    (app icon)
     │       │   └── *.(png|jpg)         1 image, usually 512x512
