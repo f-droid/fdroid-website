@@ -22,7 +22,7 @@ kind enough to offer F-Droid a booth in addition to the speaking opportunity -
 # Running Android on your Raspberry Pi
 
 Android is an [open-source operating system](https://source.android.com/) that
-can run on multiple devices.Currently, Android has been ported to run on a
+can run on multiple devices. Currently, Android has been ported to run on a
 variety of devices such as smartphones, tablets, smart watches,
 fitness trackers, televisions, streaming boxes,automotive systems, smart glasses,
 E-readers, Point of Sale terminals, digital cameras, media players,
@@ -41,17 +41,16 @@ mentions that Google uses a computer with 72 CPUs, 400GB of Hard Disk and 64 GB
 of RAM which takes about 40 minutes to build AOSP for a custom device.
 
 If those requirements are a bit too much, there are a number of alternatives
-available. There is [Emteria](https://emteria.com/) a company that provides
+available. There is [Emteria](https://emteria.com/), a company that provides
 custom android builds for Raspberry pi and [other hardware](https://emteria.com/supported-hardware).
 These custom builds come [pre-installed with F-Droid](https://emteria.com/kb/intro-f-droid).
-Here is a cool guide on [running Android on Raspberry pi 5 using Emteria Android
-builds](https://emteria.com/lp/raspberry-pi-imager-android-rpi5).
+Here is a cool guide on [running Android on Raspberry pi 5 using Emteria Android builds](https://emteria.com/lp/raspberry-pi-imager-android-rpi5).
 Emteria lowers the barrier for entry by creating a solution that
 can be downloaded and installed without necessarily doing a custom port
 of AOSP.
 
-There is also [LineageOS](https://lineageos.org/) which offers unofficial
-and unsupported builds that can run on Raspberry Pi. These builds are developed
+There are unofficial builds of [LineageOS](https://lineageos.org/)
+that can run on Raspberry Pi. These builds are developed
 and maintained by [Konstakang](https://konstakang.com/). Konstakang makes
 custom builds for Raspberry pi 4 and they can all be found on this [webpage
 listing all builds available for the device](https://konstakang.com/devices/rpi4/).
@@ -89,7 +88,7 @@ the booth.
 The high quality of free and open source applications available on f-droid.org
 was the main selling point. Visitors to the booth could not believe that there
 was a place from where privacy preserving apps that do not serve any ads could be
-downloaded from. Notable youtube clients like [NewPipe](https://f-droid.org/en/packages/org.schabi.newpipe/)
+downloaded from. Notable YouTube clients like [NewPipe](https://f-droid.org/en/packages/org.schabi.newpipe/)
 and [Noutube](https://f-droid.org/en/packages/jp.nonbili.noutube/) were put to the
 test and gained a few more users.
 
@@ -98,7 +97,7 @@ test and gained a few more users.
 This is where the work that [Licaon_Kter](https://gitlab.com/licaon-kter),[Linsui](https://gitlab.com/linsui)
 and [ducknii](https://gitlab.com/seekme-seekyou) and other F-Droid data team
 members was highlighted. I explained the [app submission policy](https://f-droid.org/en/docs/Submitting_to_F-Droid_Quick_Start_Guide/)
-and emphasised the [inclusion policy](https://f-droid.org/en/docs/Inclusion_Policy/).
+and emphasized the [inclusion policy](https://f-droid.org/en/docs/Inclusion_Policy/).
 
 Given that we use a hybrid approach of human contributors and automated checks,
 this has ensured that our users are able to get
@@ -119,7 +118,7 @@ creating the repo, uploading the apk, pushing it to the cloud provider,
 and scanning the QR code using the F-Droid client.
 This was a bit difficult for people new to the project to follow
 because of all the required pre-requisite knowledge, high level concepts presented
-and command line use.However, fans of the linux terminal and more technical users
+and command line use.However, fans of the Linux terminal and more technical users
 loved it.
 
 The second approach was [Repomaker](https://f-droid.org/en/repomaker/).
@@ -138,7 +137,7 @@ device. We need your help. https://keepandroidopen.org/
 
 There was some awareness on Google changing the way apps were being installed
 on Android. It was easy to explain to them why the changes made by Google
-to limit Android's capacity to run sideloaded apps was detrimental to F-Droid's
+to limit Android's capacity to run side-loaded apps was detrimental to F-Droid's
 existence. We agreed that it was a bit too early
 to come to a concrete conclusion because various conversations about how
 the Google change affects third party app stores is still ongoing.
@@ -166,6 +165,9 @@ F-Droid and its capabilities.That also counts as contributing to F-Droid!
 
 ![]({% asset posts/2026-11-11-fdroid-at-droidcon-uganda/happy-folks-who-learnt-about-fdoid.jpg %})<br/>
 *Some of the people who can talk about F-droid confidently*
+
+We gave out all of the t-shirts and stickers that we had. The Droidcon Uganda community
+has shown F-Droid support beyond measure.
 
 Droidcon Uganda 2026 was great. Though it did not have a lot of participants
 as the previous year, we still got the chance to talk about F-Droid at a major
