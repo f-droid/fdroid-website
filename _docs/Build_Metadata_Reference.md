@@ -798,6 +798,7 @@ It is a good idea to mention the reasons for the anti-feature(s) in the
 description:
 
 * `Ads` - the application contains advertising.
+* `DisabledAlgorithm` - the application was signed using a signature algorithm that is considered outdated or unsafe.
 * `KnownVuln` - the application has known security vulnerabilities.
 * `NonFreeAdd` - the application promotes Non-Free add-ons, such that the app is effectively an advert for other Non-Free Software.
 * `NonFreeAssets` - the application contains and makes use of Non-Free assets. The most common case is apps using artwork - images, sounds, music, etc. - under a license that restricts commercial usage or making derivative works (for example, any Creative Commons license with a "Non-Commercial" (NC) or "No Derivatives" (ND) restriction).
