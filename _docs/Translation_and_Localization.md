@@ -37,7 +37,72 @@ the F-Droid projects on GitLab. you can find other translators on the
 
 <a name="contact"/>
 
-Translators also coordinate via the dedicated chat room, which is available on Matrix at [#fdroid-translators:f-droid.org](https://matrix.to/#/#fdroid-translators:f-droid.org), by clicking [this link](https://t.me/fdroid_translators) for Telegram, IRC at [#fdroid-translators](https://webchat.oftc.net/?randomnick=1&channels=fdroid-translators&prompt=1) on OFTC, or these bridges `#fdroid-translators%irc.oftc.net@irc.jabberfr.org` / `#fdroid-translators%irc.oftc.net@irc.hmm.st` for XMPP.
+Translators also coordinate via the dedicated chat room, which is available
+on Matrix at [#fdroid-translators:f-droid.org](https://matrix.to/#/#fdroid-translators:f-droid.org),
+by clicking [this link](https://t.me/fdroid_translators) for Telegram, IRC at
+[#fdroid-translators](https://webchat.oftc.net/?randomnick=1&channels=fdroid-translators&prompt=1)
+on OFTC, or these bridges `#fdroid-translators%irc.oftc.net@irc.jabberfr.org` / 
+`#fdroid-translators%irc.oftc.net@irc.hmm.st` for XMPP.
+
+### How to add translations to an existing language
+
+Once logged into the [F-Droid Weblate](https://hosted.weblate.org/projects/f-droid/),
+contributors will see the page below.
+
+![F-Droid weblate homepage for contributors]({% asset docs/translation-and-localization/F-Droid-weblate-homepage.png %})
+
+It lists all the available languages that F-Droid and F-Droid projects are
+available in. These are  the languages you can translate F-Droid to.
+
+To translate F-Droid to a specific language, look for the language you are
+interested in. Once you find it, click on the language. The page will redirect to
+the translation overview of the selected language. Click the "Translate" button
+to contribute translations.
+
+![Weblate translations getting started]({% asset docs/translation-and-localization/webalte-translation-get-started.gif %})
+
+Contributions to untranslated strings are preferred. Once on the translations
+page, Click on the "Filters" and select "Untranslated strings; state empty "
+from the drop-down menu. Add the translation to the textbox of your language.
+Click on the "Save and Continue" button to move to the next entry.
+
+![Weblate translate untranslated string]({% asset docs/translation-and-localization/weblate-translation-of-untranslated-string.gif %})
+
+In the event you come across a word whose translation you don't know.
+Skip the translation and move to another entry by clicking on the "Skip" button.
+
+![Weblate skip translation]({% asset docs/translation-and-localization/weblate-skip-translation.gif %})
+
+In case you made an error and would like to rectify a translation. You can go back
+to the entry with the error and correct it.Click on the "Save and Continue" button
+to save the translation. This is the same action taken to a string which has a translation
+already and you'd like to edit the current translation.
+
+![Weblate correct translation]({% asset docs/translation-and-localization/correct-incorrect-translation.gif %})
+
+### Review of already added translations
+
+Once a translation has been added, the translation can only appear on the
+component once it has been reviewed and accepted by the reviewers of the
+said language. These reviewers have the capacity to either approve a translation
+or state that it needs editing.
+
+The state of a translation can be seen in the "Review State" section in Weblate.
+
+![Weblate review state]({% asset docs/translation-and-localization/weblate-review-state.png %})
+
+Once a translation is added to a string,the "Review State"
+radio button automatically switches to "Waiting for review".
+
+For the translation to be accepted. The reviewer has to click the "Approved" radio
+button. That is how a translation is accepted.
+
+![Weblate approve translation]({% asset docs/translation-and-localization/weblate-save-and-accept-review.gif %})
+
+In case a translation is not clear enough. The reviewer can suggest
+a new translation.
+
+![Weblate suggest translation]({% asset docs/translation-and-localization/suggest-edit.gif %})
 
 
 ### Adding a new language
