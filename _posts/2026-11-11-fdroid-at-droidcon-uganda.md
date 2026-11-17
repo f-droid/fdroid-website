@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Droidcon Uganda 2026: Bringing F-Droid to Android Developers"
+title: "F-Droid at Droidcon Uganda 2026"
 author: "paulali"
 ---
 
