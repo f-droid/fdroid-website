@@ -76,6 +76,7 @@ Connect with the team, other members and the community to ask questions and shar
 * [F-Droid forum](https://forum.f-droid.org/) - community discussions on F-Droid
 * [F-Droid on GitLab](https://gitlab.com/fdroid) - where developers and contributors work on the ecosystem
 * [F-Droid Monitor](https://monitor.f-droid.org) - transparent overview and reporting on the ecosystem
+* [Status](https://monitor.f-droid.org/services) - continuous monitoring of f-droid.org online services
 
 
 ### Consulting / Commercial Support
