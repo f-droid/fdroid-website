@@ -56,7 +56,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: team@f-droid.org\n"
 "POT-Creation-Date: 2026-10-28 15:18+0100\n"
-"PO-Revision-Date: 2026-11-06 07:44+0000\n"
+"PO-Revision-Date: 2026-11-10 08:16+0000\n"
 "Last-Translator: Lewis Bertin <lewis@tactiqual.tech>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/f-droid/website-docs/fr/>\n"
 "Language: fr\n"
@@ -4573,7 +4573,7 @@ msgstr ""
 #: _docs/Build_Server_Setup.md
 #, no-wrap
 msgid "Setting up a build server"
-msgstr ""
+msgstr "Configuration d'un serveur de compilation"
 
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
@@ -4583,13 +4583,13 @@ msgstr "En plus de la configuration de base décrite précédemment, nous livron
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
 msgid "We are bootstrapping the Debian Vagrant boxes for our buildserver from scratch. Fetching and verifying our pre-build Vagrant boxes is fully automated. (If you are interested in this process or want to bootstrap those by yourself you should look at: [F-Droid Base Box](https://gitlab.com/fdroid/basebox#fdroid_basebox))"
-msgstr ""
+msgstr "Nous créons à partir de zéro les boîtes Vagrant Debian de notre serveur de compilation. La récupération et la vérification de nos boîtes Vagrant précompilées sont entièrement automatisées. (Si ce processus vous intéresse ou si vous souhaitez créer ces boîtes vous-même, consultez : [F-Droid Base Box](https://gitlab.com/fdroid/basebox#fdroid_basebox))"
 
 #. type: Title ###
 #: _docs/Build_Server_Setup.md
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "Creating the F-Droid buildserver box"
-msgstr "Directement dans le dépôt F-Droid"
+msgstr "Création de la boîte du serveur de compilation F-Droid"
 
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
@@ -4598,10 +4598,9 @@ msgstr "Créez un fichier de configuration pour Vagrant sous le nom `~/fdroidser
 
 #. type: Fenced code block
 #: _docs/Build_Server_Setup.md
-#, fuzzy, no-wrap
-#| msgid "vm_provider = 'libvirt'\n"
+#, no-wrap
 msgid "vm_provider: libvirt\n"
-msgstr "vm_provider = 'libvirt'\n"
+msgstr "vm_provider: libvirt\n"
 
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
@@ -4621,13 +4620,12 @@ msgstr ""
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
 msgid "This will take a long time, use a lot of bandwidth and disk space - most of it spent installing the necessary parts of the Android SDK for all the various platforms. Luckily you only need to do it occasionally. Once you have a working build server image, if the recipes change (e.g. when packages need to be added) you can just run that script again and the existing one will be updated in place."
-msgstr ""
+msgstr "Cette opération prend beaucoup de temps et utilise beaucoup de bande passante et d'espace disque, la majeure partie servant à installer les éléments nécessaires du SDK Android pour toutes les plateformes. Heureusement, vous n'avez à le faire que de temps en temps. Une fois que vous disposez d'une image de serveur de compilation fonctionnelle, si les recettes changent (par exemple lorsque des paquets doivent être ajoutés), il suffit de relancer ce script : l'image existante sera mise à jour sur place."
 
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
-#, fuzzy
 msgid "Once it's complete you'll have a new base box called 'buildserver' which is what's used for your App build runs. Now you can build packages as you used to, but when you run `fdroid build --verbose --server ...` App build runs will be isolated inside a virtual machine."
-msgstr "Une fois l'opération terminée, vous disposerez d'une nouvelle base appelée « buildserver », utilisée pour les builds de votre application. Vous pouvez désormais compiler vos paquets comme avant, mais lorsque vous exécuterez « fdroid build --verbose --server ... », les builds seront isolés dans une machine virtuelle."
+msgstr "Une fois l'opération terminée, vous disposerez d'une nouvelle boîte de base appelée « buildserver », utilisée pour les compilations de vos applications. Vous pouvez désormais compiler vos paquets comme avant, mais lorsque vous exécutez `fdroid build --verbose --server ...`, les compilations d'applications seront isolées dans une machine virtuelle."
 
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
@@ -4637,18 +4635,18 @@ msgstr "Bien que l'image créée ait alloué une quantité limitée de cœurs de
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
 msgid "The first time a build is done, a new virtual machine is created using the 'buildserver' box as a base. A snapshot of this clean machine state is saved for use in future builds, to improve performance. You can force discarding of this snapshot and rebuilding from scratch using a switch: `fdroid build --resetserver ...`."
-msgstr ""
+msgstr "La première fois qu'une compilation est lancée, une nouvelle machine virtuelle est créée à partir de la boîte « buildserver ». Un instantané de cet état propre de la machine est enregistré pour les compilations suivantes, afin d'améliorer les performances. Vous pouvez forcer la suppression de cet instantané et le recréer depuis zéro à l'aide de l'option : `fdroid build --resetserver ...`."
 
 #. type: Title ###
 #: _docs/Build_Server_Setup.md
 #, no-wrap
 msgid "makebuildserver caching tweaks (optional)"
-msgstr ""
+msgstr "Réglages du cache de makebuildserver (facultatif)"
 
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
 msgid "The main SDK/NDK downloads will automatically be cached to speed things up the next time, but there's no easy way of doing this for the longer sections which use the SDK's `android` tool to install platforms, add-ons and tools. However, instead of allowing automatic caching, you can supply a pre-populated cache directory which includes not only these downloads, but also .tar.gz files for all the relevant additions. If the provisioning scripts detect these, they will be used in preference to running the Android tools. For example, if you have `buildserver/addons/cache/platforms/android-19.tar.gz` that will be used when installing the android-19 platform, instead of re-downloading it using `android update sdk --no-ui -t android-19`. It is possible to create the cache files of this additions from a local installation of the SDK including these:"
-msgstr ""
+msgstr "Les téléchargements principaux du SDK et du NDK sont automatiquement mis en cache pour accélérer les choses la prochaine fois, mais il n'existe pas de moyen simple de faire de même pour les étapes plus longues qui utilisent l'outil `android` du SDK pour installer les plateformes, les modules complémentaires et les outils. Toutefois, au lieu d'autoriser la mise en cache automatique, vous pouvez fournir un répertoire de cache pré-rempli, qui contient non seulement ces téléchargements, mais aussi des fichiers .tar.gz pour tous les ajouts pertinents. Si les scripts de provisionnement les détectent, ils seront utilisés de préférence à l'exécution des outils Android. Par exemple, si vous disposez de `buildserver/addons/cache/platforms/android-19.tar.gz`, ce fichier sera utilisé lors de l'installation de la plateforme android-19, au lieu de la télécharger à nouveau avec `android update sdk --no-ui -t android-19`. Il est possible de créer les fichiers de cache de ces ajouts à partir d'une installation locale du SDK, en y incluant ces éléments :"
 
 #. type: Fenced code block (bash)
 #: _docs/Build_Server_Setup.md
@@ -4658,11 +4656,14 @@ msgid ""
 "tar czf android-19.tar.gz android-19\n"
 "mv android-19.tar.gz /path/to/buildserver/addons/cache/platforms/\n"
 msgstr ""
+"cd /path/to/android-sdk/platforms\n"
+"tar czf android-19.tar.gz android-19\n"
+"mv android-19.tar.gz /path/to/buildserver/addons/cache/platforms/\n"
 
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
 msgid "If you have already built a buildserver it is also possible to get this files directly from the buildserver:"
-msgstr ""
+msgstr "Si vous avez déjà créé un serveur de compilation, il est également possible d'obtenir ces fichiers directement depuis celui-ci :"
 
 #. type: Fenced code block (bash)
 #: _docs/Build_Server_Setup.md
@@ -4671,22 +4672,24 @@ msgid ""
 "vagrant ssh -- -C 'tar -C ~/android-sdk/platforms czf android-19.tar.gz android-19'\n"
 "vagrant ssh -- -C 'cat ~/android-sdk/platforms/android-19.tar.gz' > /path/to/fdroidserver/buildserver/cache/platforms/android19.tar.gz\n"
 msgstr ""
+"vagrant ssh -- -C 'tar -C ~/android-sdk/platforms czf android-19.tar.gz android-19'\n"
+"vagrant ssh -- -C 'cat ~/android-sdk/platforms/android-19.tar.gz' > /path/to/fdroidserver/buildserver/cache/platforms/android19.tar.gz\n"
 
 #. type: Title ##
 #: _docs/Build_Server_Setup.md
 #, no-wrap
 msgid "Running builds"
-msgstr ""
+msgstr "Lancer des compilations"
 
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
 msgid "When using the buildserver, running `fdroid` directly from a git checkout of _fdroidserver_ will be the easiest.  If you don't already have the _fdroidserver_ tools installed and setup, you will need to do that next: [Installing the Server and Repo Tools](../Installing_the_Server_and_Repo_Tools).  That provides all of the dependencies needed to run _fdroidserver_ from git."
-msgstr ""
+msgstr "Lorsque vous utilisez le serveur de compilation, le plus simple sera d'exécuter `fdroid` directement depuis une copie git de _fdroidserver_. Si les outils _fdroidserver_ ne sont pas encore installés et configurés, vous devrez le faire ensuite : [Installation des outils serveur et dépôt](../Installing_the_Server_and_Repo_Tools). Cela fournit toutes les dépendances nécessaires pour exécuter _fdroidserver_ depuis git."
 
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
 msgid "Now you are ready to run builds. Test by building the latest fdroid version:"
-msgstr ""
+msgstr "Vous êtes maintenant prêt à lancer des compilations. Testez en compilant la dernière version de fdroid :"
 
 #. type: Fenced code block (bash)
 #: _docs/Build_Server_Setup.md
@@ -4695,6 +4698,8 @@ msgid ""
 "fdroid:~/fdroidserver$ cd ~/fdroiddata\n"
 "fdroid:~/fdroiddata$ ~/fdroidserver/fdroid build org.fdroid.fdroid -l --server\n"
 msgstr ""
+"fdroid:~/fdroidserver$ cd ~/fdroiddata\n"
+"fdroid:~/fdroiddata$ ~/fdroidserver/fdroid build org.fdroid.fdroid -l --server\n"
 
 #. type: Title ##
 #: _docs/Build_Server_Setup.md
@@ -4704,9 +4709,8 @@ msgstr "Configuration de QEMU/KVM/libvirt"
 
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
-#, fuzzy
 msgid "While VirtualBox was used in the past, QEMU/KVM guest VMs via libvirt is still the recommended setup since that is what is used by f-droid.org. In order to make the libvirt image files directly readable by `vagrant package`, _libvirt_'s QEMU needs to be configured to always set the ownership to `libvirt.libvirt`."
-msgstr "Bien que VirtualBox ait été utilisé par le passé, la configuration recommandée pour les machines virtuelles invitées QEMU/KVM via libvirt reste celle utilisée par f-droid.org. Pour que les fichiers image libvirt soient directement lisibles par le paquet vagrant, le QEMU de _libvirt_ doit être configuré pour toujours attribuer la propriété à libvirt.libvirt."
+msgstr "Bien que VirtualBox ait été utilisé par le passé, la configuration recommandée reste celle des machines virtuelles invitées QEMU/KVM via libvirt, car c'est celle qu'utilise f-droid.org. Pour que les fichiers image libvirt soient directement lisibles par `vagrant package`, le QEMU de _libvirt_ doit être configuré pour toujours attribuer la propriété à `libvirt.libvirt`."
 
 #. type: Fenced code block (console)
 #: _docs/Build_Server_Setup.md
@@ -4739,12 +4743,14 @@ msgid ""
 "root:~# adduser fdroid libvirt\n"
 "root:~# adduser fdroid libvirt-qemu\n"
 msgstr ""
+"root:~# adduser fdroid libvirt\n"
+"root:~# adduser fdroid libvirt-qemu\n"
 
 #. type: Title #####
 #: _docs/Build_Server_Setup.md
 #, no-wrap
 msgid "older Debian and Ubuntu"
-msgstr ""
+msgstr "Debian et Ubuntu plus anciens"
 
 #. type: Fenced code block (console)
 #: _docs/Build_Server_Setup.md
@@ -4753,12 +4759,14 @@ msgid ""
 "root:~# adduser fdroid libvirtd\n"
 "root:~# adduser fdroid kvm\n"
 msgstr ""
+"root:~# adduser fdroid libvirtd\n"
+"root:~# adduser fdroid kvm\n"
 
 #. type: Title ###
 #: _docs/Build_Server_Setup.md
 #, no-wrap
 msgid "Advanced nested KVM Setup:"
-msgstr ""
+msgstr "Configuration avancée de KVM imbriqué :"
 
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
@@ -4768,7 +4776,7 @@ msgstr "Cette section n'est pas pertinente pour l'utilisation de F-Droid dans un
 #. type: Plain text
 #: _docs/Build_Server_Setup.md
 msgid "Consider following basic nesting setup:"
-msgstr ""
+msgstr "Envisagez la configuration d'imbrication de base suivante :"
 
 #. type: Fenced code block
 #: _docs/Build_Server_Setup.md
