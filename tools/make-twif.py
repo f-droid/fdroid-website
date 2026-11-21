@@ -9,7 +9,7 @@ from pathlib import Path
 import requests
 
 LOG_COMMIT_API = "https://gitlab.com/api/v4/projects/40377142/repository/commits"
-LOG_RAW_URL = "https://gitlab.com/fdroid/f-droid.org-transparency-log/-/raw/"
+LOG_URL = "https://gitlab.com/api/v4/projects/40377142/repository/files/repo%2Findex-v2.json/raw?ref="
 OLD_INDEX_COMMIT = ""
 RETRY = 3
 CACHE = Path.cwd() / "twif_cache"
@@ -330,23 +330,14 @@ def display_output(diff_tuple):
 
 def download(url, path):
     print(f"Downloading from {url} to {path}", file=sys.stderr)
-    etag_path = path.with_suffix(".etag")
     for _ in range(RETRY):
-        headers = {}
-        if etag_path.is_file():
-            etag = etag_path.read_text()
-            headers = {"If-None-Match": etag}
-
         try:
-            res = requests.get(url, headers=headers)
+            res = requests.get(url)
         except requests.exceptions.RequestException as e:
             print(f"Failed to download from {url}: {e}!", file=sys.stderr)
             continue
         code = res.status_code
         if code == 200:
-            etag = res.headers.get("ETag")
-            if etag:
-                etag_path.write_text(etag)
             try:
                 with path.open("wb") as fd:
                     for chunk in res.iter_content(chunk_size=128):
@@ -356,7 +347,7 @@ def download(url, path):
                 print(e, file=sys.stderr)
                 path.unlink(missing_ok=True)
         elif code == 304:
-            print("Remote remote file not changed", file=sys.stderr)
+            print("Remote file not changed", file=sys.stderr)
             break
         else:
             print(f"Failed to download from {url}: {code}!", file=sys.stderr)
@@ -370,30 +361,42 @@ def download_json(url, path):
     return json.load(path.open())
 
 
+def download_index(commit):
+    path = Path(CACHE / commit)
+    if path.exists():
+        return json.load(path.open())
+    else:
+        return download_json(f"{LOG_URL}{commit}", path)
+
+
 def get_index():
     log_commits = download_json(LOG_COMMIT_API, CACHE / "commits.json")
-    today = datetime.now(timezone.utc).replace(hour=0, minute=0, second=0, microsecond=0)
-    last_friday = today - timedelta(days=(today.weekday() + 3) % 7)
+    today = datetime.now(timezone.utc).replace(
+        hour=0, minute=0, second=0, microsecond=0
+    )
+    last_week = today - timedelta(days=7)
 
     if OLD_INDEX_COMMIT:
-        old_id = OLD_INDEX_COMMIT
+        old_commit = OLD_INDEX_COMMIT
     else:
         for commit in log_commits:
             commit_date = datetime.fromisoformat(commit["created_at"])
-            if commit_date < last_friday:
-                old_id = commit["id"]
+            if commit_date < last_week:
+                old_commit = commit["id"]
                 break
-
-    old_url = f"{LOG_RAW_URL}{old_id}/repo/index-v2.json"
-    new_url = f"{LOG_RAW_URL}{log_commits[0]['id']}/repo/index-v2.json"
-    if old_url == new_url:
+    new_commit = log_commits[0]["id"]
+    if old_commit == new_commit:
         print(
             "No diffs found. The current index matches the previous index",
             file=sys.stderr,
         )
         sys.exit()
-    old_index = download_json(old_url, CACHE / "old_index.json")
-    new_index = download_json(new_url, CACHE / "new_index.json")
+
+    old_index = download_index(old_commit)
+    new_index = download_index(new_commit)
+    for f in Path(CACHE).glob("*.json"):
+        if f.stem not in (old_commit, new_commit):
+            f.unlink()
     return old_index, new_index
 
 
