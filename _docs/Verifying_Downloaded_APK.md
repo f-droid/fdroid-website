@@ -19,7 +19,9 @@ wget -q https://f-droid.org/F-Droid.apk.asc
 wget -q https://f-droid.org/F-Droid.apk
 # load the public key
 gpg --keyserver keyserver.ubuntu.com --recv-key 37D2C98789D8311948394E3E41E7044E1DBA2E89
-# verify the file
+# verify the file (one liner)
+gpg --verify F-Droid.apk.asc F-Droid.apk 2>&1 | tr -s ' ' | grep -q "Primary key fingerprint: 37D2 C987 89D8 3119 4839 4E3E 41E7 044E 1DBA 2E89$" && echo "Verify: OK" || echo "Verify: FAILED. DO NOT PROCEED! Revisit: https://f-droid.org/docs/Verifying_Downloaded_APK/"
+# verify the file (gpg only)
 gpg --verify F-Droid.apk.asc F-Droid.apk
 ```
 
@@ -37,4 +39,6 @@ Primary key fingerprint: 37D2 C987 89D8 3119 4839  4E3E 41E7 044E 1DBA 2E89
 
 The date will vary as the client APK is updated, it's not an issue if it is newer. The warning about the key not being certified with a trusted signature can be ignored. The important part is the indication of a good signature and that it has the same fingerprint that was used to download the key:
 
-    37D2 C987 89D8 3119 4839 4E3E 41E7 044E 1DBA 2E89
+```
+37D2 C987 89D8 3119 4839 4E3E 41E7 044E 1DBA 2E89
+```
