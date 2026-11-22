@@ -258,7 +258,7 @@ Download and launch the latest version of the server tools container:
 ```sh
 git clone --depth=1 https://gitlab.com/fdroid/fdroidserver ~/fdroidserver
 sudo sh -c 'apt-get update &&apt-get install -y docker.io'
-sudo docker run --rm -itu vagrant --entrypoint /bin/bash \
+sudo docker run --pull=always --rm -itu vagrant --entrypoint /bin/bash \
   -v ~/fdroiddata:/build:z \
   -v ~/fdroidserver:/home/vagrant/fdroidserver:Z \
   registry.gitlab.com/fdroid/fdroidserver:buildserver
@@ -269,6 +269,7 @@ In the container:
 ```sh
 . /etc/profile
 export PATH="$fdroidserver:$PATH" PYTHONPATH="$fdroidserver"
+export serverwebroot=/build
 export JAVA_HOME=$(java -XshowSettings:properties -version 2>&1 > /dev/null | grep 'java.home' | awk -F'=' '{print $2}' | tr -d ' ')
 cd /build
 fdroid readmeta
